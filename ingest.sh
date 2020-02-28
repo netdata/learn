@@ -12,7 +12,7 @@ DOCS_DIR="$PWD/docs/"
 # Otherwise, just pull the repo instead of cloning it again.
 if [ ! -d ${TMP_DIR} ]
 then
-  git clone https://github.com/netdata/netdata.git ${TMP_DIR}  
+  git clone -b frontmatter https://github.com/joelhans/netdata.git ${TMP_DIR}  
 else
   cd ${TMP_DIR}
   git pull origin master
@@ -39,5 +39,7 @@ rsync -a \
   --prune-empty-dirs \
   --delete --delete-excluded \
   ${TMP_DIR} ${DOCS_DIR}
+
+# Make 
 
 echo "Done ingesting."

@@ -1,3 +1,11 @@
+<!--
+---
+title: Getting started guide
+description: In this getting started guide, we'll quickly walk you through the first steps you should take
+after getting Netdata installed.
+---
+-->
+
 # Getting started guide
 
 Thanks for trying Netdata! In this getting started guide, we'll quickly walk you through the first steps you should take
