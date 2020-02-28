@@ -1,6 +1,7 @@
-# Website
+# Netdata Learn
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/).
+A public site to learn about Netdata built on
+[Docusaurus 2](https://v2.docusaurus.io/).
 
 ## Installation
 
