@@ -31,6 +31,11 @@
   --ifm-color-secondary-lighter: #377bc6;
   --ifm-color-secondary-lightest: #508cce;
 
+  --ifm-color-accent: #FFC300;
+
+  /* Grid/spacing */
+  /* --ifm-footer-padding-vertical: 4rem; */
+
   /* Base fonts */
   --ifm-font-base-color: #35414A;
   --ifm-font-family-base: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
@@ -44,6 +49,15 @@
   /* Code */
   --ifm-code-font-size: 95%;
 
+  /* Navbar */
+  --ifm-navbar-link-hover-color: var(--ifm-color-secondary-lightest);
+
+  /* Footer */
+  --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-footer-color: var(--ifm-color-accent);
+  --ifm-footer-link-color: var(--ifm-color-accent);
+  --ifm-footer-link-hover-color: var(--ifm-color-accent);
+
 }
 
 /* Dark theme */
@@ -51,9 +65,19 @@ html[data-theme='dark'] {
 
   /* Colors */
   --ifm-background-color: #252d34;
+  --ifm-navbar-background-color: #252d34;
+  --ifm-contents-border-color: var(--ifm-color-gray-600);
+
+  --ifm-menu-color-active: var(--ifm-color-primary-lightest);
+
+  /* Navbar */
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-lightest);
 
   /* Base fonts */
   --ifm-font-base-color: #f5f6f7;
+
+  /* Borders */
+  --ifm-contents-border-color: 
 
 }
 
@@ -67,6 +91,7 @@ html[data-theme='dark'] {
  * Everything else
  */
 
+/* Links */
 a {
   font-weight: var(--ifm-font-weight-semibold);
 }
@@ -75,6 +100,26 @@ a:hover {
   color: var(--ifm-color-secondary);
 }
 
+html[data-theme='dark'] a {
+  color: var(--ifm-color-primary-lightest);
+}
+
+html[data-theme='dark'] a:hover {
+  color: var(--ifm-color-accent);
+}
+
+/* Footer */
+.footer.footer--dark {
+  --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-footer-title-color: var(--ifm-font-base-color);
+  /* --ifm-footer-link-color: var(--ifm-color-gray-300); */
+}
+
+.footer .footer__links {
+  margin-bottom: 3rem;
+}
+
+/* Code highlight */
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
