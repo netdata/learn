@@ -128,27 +128,8 @@ Signing out from Netdata Cloud and returning to your private registry *does not 
 
 But, upon signout, your Nodes List on all dashboards will once more be populated by your private registry and not Netdata Cloud.
 
-
-Once signed in to Netdata Cloud, the Nodes List dropdown will now show a button labeled `Synchronize with netdata.cloud`. 
-
-The `Synchronize with Netdata Cloud` button is a migration (or import) tool for Netdata Cloud. If either the public or your private registry contains a list of nodes associated with your `person_guid`, it will import them into Netdata Cloud and associate them with the `accounts` information in the Netdata Cloud registry.
-
-When you click the `Synchronize with netdata.cloud` button, you will receive one of two popup messages based on whether you were using the public registry (at `registry.my-netdata.io`) or a private registry.
-
-**Public registry**:
-
-![Screenshot of the synchronization warning for public registries](https://user-images.githubusercontent.com/1153921/59807540-3a806000-92ad-11e9-99b7-e2254d817ed4.png)
-
-**Private registry**:
-
-![Screenshot of the synchronization warning for private registries](https://user-images.githubusercontent.com/1153921/59807459-d8bff600-92ac-11e9-997f-e84b909f266e.png)
-
-If you do not want to synchronize your registry of choice with Netdata Cloud, click `Cancel`.
-
-If you do, click `Synchronize`. This will push GUIDs, hostnames, and URLs to Netdata Cloud's registry.
-
-
 ## What's next?
 
 Learn how to use the [Nodes View](nodes-view.md) to monitor many nodes concurrently.
 
+[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fnetdata-cloud%2Fsigning-in&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
