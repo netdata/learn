@@ -4,16 +4,75 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,400i,500&display=swap');
+
+/**
+ * Infima variable overrides
+ */
+
+/* Root */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+
+  /* Colors */
+  --ifm-color-primary: #00AB44;
+  --ifm-color-primary-dark: #009a3d;
+  --ifm-color-primary-darker: #00913a;
+  --ifm-color-primary-darkest: #007830;
+  --ifm-color-primary-light: #00bc4b;
+  --ifm-color-primary-lighter: #00c54e;
+  --ifm-color-primary-lightest: #00de58;
+
+  --ifm-color-secondary: #306BAC;
+  --ifm-color-secondary-dark: #2b609b;
+  --ifm-color-secondary-darker: #295b92;
+  --ifm-color-secondary-darkest: #224b78;
+  --ifm-color-secondary-light: #3576bd;
+  --ifm-color-secondary-lighter: #377bc6;
+  --ifm-color-secondary-lightest: #508cce;
+
+  /* Base fonts */
+  --ifm-font-base-color: #35414A;
+  --ifm-font-family-base: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ifm-font-family-monospace: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --ifm-font-size-base: 18px;
+  --ifm-line-height-base: 1.6;
+
+  /* Headings */
+  --ifm-heading-font-weight: 500;
+
+  /* Code */
   --ifm-code-font-size: 95%;
+
+}
+
+/* Dark theme */
+html[data-theme='dark'] {
+
+  /* Colors */
+  --ifm-background-color: #252d34;
+
+  /* Base fonts */
+  --ifm-font-base-color: #f5f6f7;
+
+}
+
+/* Markdown-only */
+.markdown {
+  /* Vertical rhythm */
+  --ifm-heading-vertical-rhythm-bottom: 1;
+}
+
+/**
+ * Everything else
+ */
+
+a {
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+a:hover {
+  color: var(--ifm-color-secondary);
 }
 
 .docusaurus-highlight-code-line {
