@@ -1,33 +1,75 @@
 # Website
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus 2](https://v2.docusaurus.io/).
 
-### Installation
+## Installation
 
+Install [Docker Desktop 18+](https://www.docker.com/products/docker-desktop).
+
+Clone this repository.
+
+    git clone <repo>
+    cd netdata-learn-docusaurus
+
+## Development
+
+Build the Docker image.
+
+    docker-compose build
+
+Run the image inside a container.
+
+    docker-compose up
+
+Browse to http://localhost:3000
+
+To run individual commands in the Docker container (the container is named
+`docusaurus`).
+
+```bash
+docker-compose run --rm docusaurus <command>
 ```
-$ yarn
+
+If a container is already running you can run commands in it.
+
+```bash
+docker-compose exec docusaurus <command>
 ```
 
-### Local Development
+To shell into a running container.
 
-```
-$ yarn start
-```
-
-This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
+```bash
+docker-compose exec docusaurus /bin/sh
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Updating Dependencies
 
-### Deployment
+Any time you change your package's dependencies, you must rebuild.
 
+```bash
+docker-compose build
 ```
-$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+
+A shortcut for building and restarting in one step is.
+
+```bash
+docker-compose up --build
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+**NOTE:** If a dependency is installed and exists in the `package.json` but
+you get erros saying it cannot be found, clear out the anonymous volumes with
+the `-V` flag.
+
+```bash
+docker-compose up --build -V
+```
+
+## Build
+
+To generate the static content into the `/build` directory.
+
+    docker-compose run --rm docusaurus npm run build
+
+## Deployment
+
+**TODO: deployment instructions**
