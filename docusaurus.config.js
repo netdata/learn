@@ -14,7 +14,7 @@ module.exports = {
         src: 'img/logo.svg',
       },
       links: [
-        {to: 'docs/doc1', label: 'Docs', position: 'left'},
+        {to: 'docs/README', label: 'Docs', position: 'left'},
         {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
@@ -31,11 +31,11 @@ module.exports = {
           items: [
             {
               label: 'Style Guide',
-              to: 'docs/doc1',
+              to: 'docs/README',
             },
             {
               label: 'Second Doc',
-              to: 'docs/doc2',
+              to: 'docs/CHANGELOG',
             },
           ],
         },
