@@ -52,6 +52,9 @@ rsync -a \
 echo "Strip comments around frontmatter and GA tags."
 find ${DOCS_DIR} -name '*.md' -exec sed -i '/<!--/d;/-->/d;/\[!\[analytics\].*\(\<\>\)/d' {} \;
 
+# Move all files inside of new `docs/docs/` folder up one step to just `docs/`.
+mv ${DOCS_DIR}/docs/* ${DOCS_DIR}
+
 # Strip h1 (#) elements.
 # This can only be uncommented when frontmatter is put into place.
 # echo "Strip h1 (#) elements."

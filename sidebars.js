@@ -13,7 +13,7 @@ module.exports = {
     },
     {
       type: 'doc',
-      id: 'docs/getting-started',
+      id: 'getting-started',
     },
     {
       type: 'category',
