@@ -108,6 +108,12 @@ html[data-theme='dark'] a:hover {
   color: var(--ifm-color-accent);
 }
 
+/* Header */
+
+.navbar .navbar__brand strong {
+  font-weight: 500;
+}
+
 /* Footer */
 .footer.footer--dark {
   --ifm-footer-background-color: var(--ifm-background-color);
