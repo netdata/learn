@@ -52,8 +52,32 @@ rsync -a \
 echo "Strip comments around frontmatter and GA tags."
 find ${DOCS_DIR} -name '*.md' -exec sed -i '/<!--/d;/-->/d;/\[!\[analytics\].*\(\<\>\)/d' {} \;
 
-# Move all files inside of new `docs/docs/` folder up one step to just `docs/`.
+# Move all files inside of new 'docs/docs/' folder up one step to just 'docs/'.
+echo "Move all files inside of new 'docs/docs/' folder up one step to just 'docs/'."
 mv ${DOCS_DIR}/docs/* ${DOCS_DIR}
+
+# Move files with name 'README.md' up one step in the directory tree and rename
+# them based on the folder that contained them. A hacky way to make pretty URLs.
+# For example, 'collectors/README.md' becomes 'collectors.md'.
+
+# WORKING
+# find ${DOCS_DIR} -name 'README.md' -execdir mv "{}" ../ \;
+
+# find ${DOCS_DIR} -name 'README.md' -exec s="${s%/*}" && echo "${s##*/}" \;
+
+
+# find ${DOCS_DIR} -name 'README.md' -exec mv -n -- {} ../{}.md \; -empty -delete
+# find ${DOCS_DIR} -type f -name "README.md" -exec mv -vn {} ../ \;
+
+for README in `find ${DOCS_DIR} -type f -name "README.md"`;
+do
+  # echo $README
+  # echo "$(basename -- "$(dirname -- "$README")").md"
+  # echo "$(dirname -- "$README").md"
+  mv "$README" "$(dirname -- "$README").md"
+done
+
+# TODO: Change filenames to lowercase.
 
 # Strip h1 (#) elements.
 # This can only be uncommented when frontmatter is put into place.
