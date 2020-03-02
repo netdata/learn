@@ -1,23 +1,23 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
+  title: 'Learn @ Netdata',
+  tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Documentation, tutorials, blogs, and much more.',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'netdata', // Usually your GitHub org/user name.
+  projectName: 'netdata', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Learn @ Netdata',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Netdata Learn logo',
         src: 'img/logo.svg',
       },
       links: [
         {to: 'docs/introduction', label: 'Docs', position: 'left'},
         {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/netdata/netdata',
           label: 'GitHub',
           position: 'right',
         },
@@ -27,15 +27,48 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'About',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/README',
+              label: 'Netdata, Inc.',
+              href: 'https://netdata.cloud',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/CHANGELOG',
+              label: 'What is Netdata?',
+              to: 'docs/docs/what-is-netdata',
+            },
+            {
+              label: 'Netdata Blog',
+              to: 'https://blog.netdata.cloud',
+            },
+          ],
+        },
+        {
+          title: 'Get started',
+          items: [
+            {
+              label: 'Installation',
+              to: 'docs/packaging/installer/README',
+            },
+            {
+              label: 'Getting started guide',
+              to: 'docs/docs/getting-started',
+            },
+            {
+              label: 'Step-by-step tutorial',
+              to: 'docs/docs/step-by-step/step-00',
+            },
+            {
+              label: 'Configuration',
+              to: 'docs/docs/configuration-guide',
+            },
+            {
+              label: 'Collecting metrics',
+              to: 'docs/collectors/README',
+            },
+            {
+              label: 'Health monitoring',
+              to: 'docs/health/README',
             },
           ],
         },
@@ -43,34 +76,29 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'Social',
-          items: [
-            {
               label: 'Blog',
               to: 'blog',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/netdata/netdata',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/linuxnetdata',
+            },
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com/linuxnetdata/',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/my-netdata.io/',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Netdata, Inc. Built with Docusaurus.`,
     },
   },
   presets: [
@@ -80,7 +108,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/netdata/netdata/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
