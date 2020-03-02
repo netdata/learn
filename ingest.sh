@@ -3,6 +3,10 @@
 # ingest.sh: Ingests and processes documentation from the netdata/netdata and
 # netdata/go.d.plugin repositories.
 
+# TODO: Figure out how to run everything after the git clone/git pull on *ONLY*
+# the files that changed from the last run. It's wastful to sanitize every
+# Markdown file every time we make a change to any individual one.
+
 HOME=$PWD
 TMP_DIR="$PWD/ingest/"
 GO_DIR="${TMP_DIR}collectors/go.d.plugin"
