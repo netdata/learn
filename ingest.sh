@@ -40,6 +40,7 @@ fi
 echo "Sync .md files from ingest directory to documentation directory."
 rsync -a \
   --exclude=".github/" --exclude=".travis/" \
+  --exclude="introduction.md" --exclude="README.md" \
   --exclude="HISTORICAL_CHANGELOG.md" --exclude="DOCUMENTATION.md" \
   --exclude="contrib/sles11/README.md" \
   --include="*/" --include="*.md" \
@@ -50,7 +51,7 @@ rsync -a \
 
 # Strip comments around frontmatter.
 echo "Strip comments around frontmatter and GA tags."
-find ${DOCS_DIR} -name '*.md' -exec sed -i '/<!--/d;/-->/d;/\[!\[analytics\].*\(\<\>\)/d' {} \;
+find ${DOCS_DIR} -name '*.md' -exec sed -i "/<!--/d;/-->/d;/\[!\[analytics\].*\(\<\>\)/d" {} \;
 
 # Move all files inside of new 'docs/docs/' folder up one step to just 'docs/'.
 echo "Move all files inside of new 'docs/docs/' folder up one step to just 'docs/'."
@@ -64,8 +65,10 @@ do
   mv "$README" "$(dirname -- "$README").md"
 done
 
-# TODO: Change filenames to lowercase.
+# TODO: Change links.
+# find ${DOCS_DIR} -name '*.md' -exec sed -i "s/README.md//g" {} \;
 
+# TODO: Change filenames to lowercase.
 
 # Strip h1 (#) elements.
 # This can only be uncommented when frontmatter is put into place.
