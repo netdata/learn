@@ -44,7 +44,7 @@ fi
 echo "Sync .md files from ingest directory to documentation directory."
 rsync -a \
   --exclude=".github/" --exclude=".travis/" \
-  --exclude="introduction.md" --exclude="README.md" \
+  --exclude="introduction.md" \
   --exclude="HISTORICAL_CHANGELOG.md" --exclude="DOCUMENTATION.md" \
   --exclude="contrib/sles11/README.md" \
   --include="*/" --include="*.md" \
@@ -69,10 +69,11 @@ do
   mv "$README" "$(dirname -- "$README").md"
 done
 
-# TODO: Change links.
+# Change links.
 # find ${DOCS_DIR} -name '*.md' -exec sed -i "s/README.md//g" {} \;
 
 # TODO: Change filenames to lowercase.
+
 
 # Strip h1 (#) elements.
 # This can only be uncommented when frontmatter is put into place.
