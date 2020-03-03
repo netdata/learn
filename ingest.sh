@@ -44,9 +44,11 @@ fi
 echo "Sync .md files from ingest directory to documentation directory."
 rsync -a \
   --exclude=".github/" --exclude=".travis/" \
-  --exclude="introduction.md" \
+  --exclude="/README.md" \
   --exclude="HISTORICAL_CHANGELOG.md" --exclude="DOCUMENTATION.md" \
+  --exclude="docs/README.md" \
   --exclude="contrib/sles11/README.md" \
+  --filter 'protect introduction.md' \
   --include="*/" --include="*.md" \
   --exclude="*" \
   --prune-empty-dirs \
