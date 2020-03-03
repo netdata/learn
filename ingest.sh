@@ -13,7 +13,7 @@ GO_DIR="${TMP_DIR}collectors/go.d.plugin"
 DOCS_DIR="$PWD/docs/"
 
 REPO_CORE="https://github.com/joelhans/netdata.git"
-BRANCH_CORE="frontmatter"
+BRANCH_CORE="frontmatter-health"
 
 # Check if ingest directory already exists. If it doesn't, clone the core repo
 # from the repo and branch specified above. That would usually be

@@ -1,3 +1,12 @@
+---
+title: Health monitoring
+description: "Use hundreds of pre-configured alarms, write new alarms, and integrate alarm notifications with dozens of popular systems."
+custom_edit_url: https://github.com/netdata/netdata/edit/master/health/README.md
+keywords:
+  - health monitoring
+  - alerts
+---
+
 # Health monitoring
 
 With Netdata, you can monitor the health and performance of your systems and applications. You start with hundreds of
