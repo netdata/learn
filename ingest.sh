@@ -64,8 +64,7 @@ mv ${DOCS_DIR}/docs/* ${DOCS_DIR}
 # Move files with name 'README.md' up one step in the directory tree and rename
 # them based on the folder that contained them. A hacky way to make pretty URLs.
 # For example, 'collectors/README.md' becomes 'collectors.md'.
-for README in `find ${DOCS_DIR} -type f -name "README.md"`;
-do
+for README in `find ${DOCS_DIR} -type f -name "README.md"`; do
   mv "$README" "$(dirname -- "$README").md"
 done
 
@@ -73,7 +72,9 @@ done
 # find ${DOCS_DIR} -name '*.md' -exec sed -i "s/README.md//g" {} \;
 
 # TODO: Change filenames to lowercase.
-
+for README in `find ${DOCS_DIR} -type f -name "*.md"`; do
+  [[ -f "$README" ]] && mv "$README" "${README,,}" 2>/dev/null
+done
 
 # Strip h1 (#) elements.
 # This can only be uncommented when frontmatter is put into place.
