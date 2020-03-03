@@ -7,6 +7,14 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,400i,500&display=swap');
 
+/* Border box */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /**
  * Infima variable overrides
  */
@@ -48,6 +56,12 @@
 
   /* Code */
   --ifm-code-font-size: 95%;
+
+  /* Buttons */
+  --ifm-button-background-color: var(--ifm-color-primary);
+  --ifm-button-border-radius: 2px;
+  --ifm-button-font-weight: 500;
+  --ifm-button-size-multiplier: 2;
 
   /* Navbar */
   --ifm-navbar-link-hover-color: var(--ifm-color-secondary-lightest);
@@ -109,7 +123,6 @@ html[data-theme='dark'] a:hover {
 }
 
 /* Header */
-
 .navbar .navbar__brand strong {
   font-weight: 500;
 }
@@ -125,7 +138,42 @@ html[data-theme='dark'] a:hover {
   margin-bottom: 3rem;
 }
 
+/* Buttons */
+.button {
+  border: 2px solid var(--ifm-color-primary);
+}
+
+.button:hover {
+  border: 2px solid var(--ifm-color-primary-lightest);
+}
+
+.button:active {
+  background: var(--ifm-color-primary-lightest);
+}
+
+.button.button--secondary {
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 1px var(--ifm-color-primary);
+  background: white;
+  color: var(--ifm-color-primary);
+}
+
+.button.button--secondary:hover {
+  box-shadow: 0 0 0 1px var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-lightest);
+}
+
+.button.button.button--secondary:active {
+  background: var(--ifm-color-primary-lightest);
+  color: white;
+  border-color: transparent;
+}
+
 /* Code highlight */
+.prism-code {
+  position: relative;
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;

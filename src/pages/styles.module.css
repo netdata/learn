@@ -4,7 +4,7 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 8rem 0 6rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -12,17 +12,25 @@
 
 @media screen and (max-width: 966px) {
   .heroBanner {
-    padding: 2rem;
+    padding: 4rem 0 2rem;
   }
 }
 
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  width: 80%;
+  margin: 3rem auto 0;
 }
 
-.features {
+@media screen and (max-width: 966px) {
+  .buttons {
+    width: 100%;
+  }
+}
+
+.contents {
   display: flex;
   align-items: center;
   padding: 2rem 0;

@@ -6,51 +6,52 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
 
-const features = [
+import CodeBlock from '@theme/CodeBlock'
+
+const install = `bash <(curl -Ss https://my-netdata.io/kickstart.sh)`
+const lang = `bash`
+
+const contents = [
   {
-    title: <>Easy to Use</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: <>Docs</>,
+    href: 'docs/',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Configure metrics retention, build streaming connections, collect metrics 
+        from custom apps, create custom dashboards, and much more.
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <>Tutorials</>,
+    href: 'tutorials/',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        From beginner to expert sysadmin, our step-by-step tutorials give you the 
+        right foundational skills to monitor the health and performance of your 
+        systems and applications.
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: <>Blog</>,
+    href: 'blog/',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Read about releases, new features, and our vision for bringing real-time 
+        monitoring to every headless system in the world.
       </>
     ),
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({imageUrl, title, href, description}) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={classnames('col col--4', styles.feature)}>
-      {imgUrl && (
-        <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
-        </div>
-      )}
+    <a href={href} className={classnames('col col--4', styles.feature)}>
       <h3>{title}</h3>
       <p>{description}</p>
-    </div>
+    </a>
   );
 }
 
@@ -61,34 +62,61 @@ function Home() {
     <Layout
       title={`Hello from ${siteConfig.title}`}
       description="Description will go into a meta tag in <head />">
-      <header className={classnames('hero hero--primary', styles.heroBanner)}>
+      <header className={classnames('hero', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <h1 className="hero__title">All your monitoring education in one place.</h1>
+          <p className="hero__subtitle">Learn alongside thousands of others who want to know more about their systems and applications with powerful health monitoring and performance troubleshooting.</p>
           <div className={styles.buttons}>
             <Link
               className={classnames(
-                'button button--outline button--secondary button--lg',
+                'button button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/doc1')}>
-              Get Started
+              to={useBaseUrl('docs/packaging/installer')}>
+              Install Netdata
+            </Link>
+            <Link
+              className={classnames(
+                'button button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={useBaseUrl('docs/')}>
+              Read documentation
+            </Link>
+            <Link
+              className={classnames(
+                'button button--secondary button--lg',
+                styles.getStarted,
+              )}
+              to={useBaseUrl('docs/')}>
+              Learn Netdata step-by-step
             </Link>
           </div>
         </div>
       </header>
       <main>
-        {features && features.length && (
-          <section className={styles.features}>
+        {/* {contents && contents.length && (
+          <section className={styles.contents}>
             <div className="container">
               <div className="row">
-                {features.map((props, idx) => (
+                {contents.map((props, idx) => (
                   <Feature key={idx} {...props} />
                 ))}
               </div>
             </div>
           </section>
-        )}
+        )} */}
+        <section className={styles.install}>
+          <div className="container">
+            <div className="row">
+              <div class="col col--9">
+                <h2>Install Netdata on with a one-liner</h2>
+                <p>Click <strong>Copy</strong>, paste into your system’s terminal, and hit <strong>Enter</strong>. Open your favorite browser and navigate to <code>http://localhost:19999</code> to find Netdata’s dashboard.</p>
+                <CodeBlock className="home-prism" language={lang}>{install}</CodeBlock>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </Layout>
   );
