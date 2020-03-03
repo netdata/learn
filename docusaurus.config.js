@@ -14,8 +14,8 @@ module.exports = {
         src: 'img/logo.svg',
       },
       links: [
-        {to: 'docs/README', label: 'Docs', position: 'left'},
-        {to: 'blog', label: 'Dev Blog', position: 'left'},
+        {to: 'docs/introduction', label: 'Docs', position: 'left'},
+        {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/netdata/netdata',
           label: 'GitHub',

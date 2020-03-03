@@ -9,17 +9,17 @@ module.exports = {
   docs: [
     {
       type: 'doc',
-      id: 'README'
+      id: 'introduction'
     },
     {
       type: 'doc',
-      id: 'docs/getting-started',
+      id: 'getting-started',
     },
     {
       type: 'category',
       label: 'Collecting metrics',
       items: [
-        'collectors/README',
+        'collectors',
         'collectors/QUICKSTART',
         'collectors/REFERENCE',
         'collectors/COLLECTORS',
@@ -27,24 +27,24 @@ module.exports = {
           type: 'category',
           label: 'Internal plugins',
           items: [
-            'collectors/ebpf_process.plugin/README'
+            'collectors/ebpf_process.plugin'
           ]
         },
         {
           type: 'category',
           label: 'External plugins',
           items: [
-            'collectors/plugins.d/README',
+            'collectors/plugins.d',
             {
               type: 'category',
               label: 'Go',
               items: [
-                'collectors/go.d.plugin/README',
+                'collectors/go.d.plugin',
                 {
                   type: 'category',
                   label: 'Modules',
                   items: [
-                    'collectors/go.d.plugin/modules/activemq/README',
+                    'collectors/go.d.plugin/modules/activemq',
                   ]
                 },
               ]
@@ -56,7 +56,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Web',
-      items: ['web/README']
+      items: ['web']
     },
   ]
 };

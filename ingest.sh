@@ -3,6 +3,10 @@
 # ingest.sh: Ingests and processes documentation from the netdata/netdata and
 # netdata/go.d.plugin repositories.
 
+# TODO: Figure out how to run everything after the git clone/git pull on *ONLY*
+# the files that changed from the last run. It's wastful to sanitize every
+# Markdown file every time we make a change to any individual one.
+
 HOME=$PWD
 TMP_DIR="$PWD/ingest/"
 GO_DIR="${TMP_DIR}collectors/go.d.plugin"
@@ -40,6 +44,7 @@ fi
 echo "Sync .md files from ingest directory to documentation directory."
 rsync -a \
   --exclude=".github/" --exclude=".travis/" \
+  --exclude="introduction.md" \
   --exclude="HISTORICAL_CHANGELOG.md" --exclude="DOCUMENTATION.md" \
   --exclude="contrib/sles11/README.md" \
   --include="*/" --include="*.md" \
@@ -50,7 +55,25 @@ rsync -a \
 
 # Strip comments around frontmatter.
 echo "Strip comments around frontmatter and GA tags."
-find ${DOCS_DIR} -name '*.md' -exec sed -i '/<!--/d;/-->/d;/\[!\[analytics\].*\(\<\>\)/d' {} \;
+find ${DOCS_DIR} -name '*.md' -exec sed -i "/<!--/d;/-->/d;/\[!\[analytics\].*\(\<\>\)/d" {} \;
+
+# Move all files inside of new 'docs/docs/' folder up one step to just 'docs/'.
+echo "Move all files inside of new 'docs/docs/' folder up one step to just 'docs/'."
+mv ${DOCS_DIR}/docs/* ${DOCS_DIR}
+
+# Move files with name 'README.md' up one step in the directory tree and rename
+# them based on the folder that contained them. A hacky way to make pretty URLs.
+# For example, 'collectors/README.md' becomes 'collectors.md'.
+for README in `find ${DOCS_DIR} -type f -name "README.md"`;
+do
+  mv "$README" "$(dirname -- "$README").md"
+done
+
+# Change links.
+# find ${DOCS_DIR} -name '*.md' -exec sed -i "s/README.md//g" {} \;
+
+# TODO: Change filenames to lowercase.
+
 
 # Strip h1 (#) elements.
 # This can only be uncommented when frontmatter is put into place.
