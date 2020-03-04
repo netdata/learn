@@ -1,3 +1,10 @@
+---
+title: Stop notifications for individual alarms
+description: "Tired of seeing a certain alarm? You can silence individual alarms by changing a single line in a given
+health entity."
+custom_edit_url: <https://github.com/netdata/netdata/edit/master/health/tutorials/stop-notifications-alarms.md>
+---
+
 # Stop notifications for individual alarms
 
 In this short tutorial, you'll learn how to stop notifications for individual alarms in Netdata's health

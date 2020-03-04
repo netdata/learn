@@ -1,3 +1,10 @@
+---
+title: Health configuration reference
+description: "This reference guide contains information about editing health configuration files to tweak existing 
+alarms or create new health entities that are customized to the needs of your infrastructure."
+custom_edit_url: <https://github.com/netdata/netdata/edit/master/health/REFERENCE.md>
+---
+
 # Health configuration reference
 
 Welcome to the health configuration reference.
