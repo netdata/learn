@@ -1,5 +1,6 @@
 const axios = require('axios')
 const frontmatter = require('front-matter')
+const { Remarkable } = require('remarkable')
 
 var doc = `<!--
 ---
@@ -65,10 +66,15 @@ content.
 // strip comment tags around frontmatter
 doc = doc.replace(/^<!--\s+(---\s+.*?\s+---)\s+-->/gs, '$1')
 
+// strip level 1 heading
+doc = doc.replace(/^#\s+.*/m, '')
+
+console.log(doc)
+
 // parse frontmatter
-const fm = frontmatter(doc)
+// const fm = frontmatter(doc)
 
-
+// var md = new Remarkable()
 
 // async function start() {
 //   const response = await axios.get('https://raw.githubusercontent.com/joelhans/netdata/frontmatter-health/health/README.md')
