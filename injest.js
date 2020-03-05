@@ -69,6 +69,9 @@ doc = doc.replace(/^<!--\s+(---\s+.*?\s+---)\s+-->/gs, '$1')
 // strip level 1 heading
 doc = doc.replace(/^#\s+.*/m, '')
 
+// strip analytics pixel
+doc = doc.replace(/^\[\!\[analytics\].*/m, '')
+
 console.log(doc)
 
 // parse frontmatter
