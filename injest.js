@@ -63,19 +63,26 @@ content.
 [![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fhealth%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
 `
 
-// strip comment tags around frontmatter
-doc = doc.replace(/^<!--\s+(---\s+.*?\s+---)\s+-->/gs, '$1')
+function sanitize(doc) {
+  // strip comment tags around frontmatter
+  doc = doc.replace(/^<!--\s+(---\s+.*?\s+---)\s+-->/gs, '$1')
 
-// strip level 1 heading
-doc = doc.replace(/^#\s+.*/m, '')
+  // strip level 1 heading
+  doc = doc.replace(/^#\s+.*/m, '')
 
-// strip analytics pixel
-doc = doc.replace(/^\[\!\[analytics\].*/m, '')
+  // strip analytics pixel
+  doc = doc.replace(/^\[\!\[analytics\].*/m, '')
 
-console.log(doc)
+  return doc
+}
+
+const sanitized = sanitize(doc)
 
 // parse frontmatter
-// const fm = frontmatter(doc)
+const fm = frontmatter(sanitized)
+
+console.log(sanitized)
+console.log(fm.attributes)
 
 // var md = new Remarkable()
 
@@ -85,3 +92,6 @@ console.log(doc)
 // }
 
 // start()
+
+// TODO: remove remarkable?
+// TODO: remove yaml
