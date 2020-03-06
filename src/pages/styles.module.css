@@ -3,41 +3,77 @@
  * and scoped locally.
  */
 
+/**
+ * Hero
+ */
+
 .heroBanner {
   padding: 8rem 0 6rem;
-  text-align: center;
   position: relative;
-  overflow: hidden;
-}
-
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 4rem 0 2rem;
-  }
 }
 
 .buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 80%;
-  margin: 3rem auto 0;
+  margin: 3rem 0 0;
 }
 
-@media screen and (max-width: 966px) {
-  .buttons {
-    width: 100%;
-  }
+.getStarted {
+  margin-right: 2rem;
 }
 
-.contents {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+.heroImageContainer {
+  position: relative;
 }
 
-.featureImage {
-  height: 200px;
-  width: 200px;
+.heroImage {
+  position: absolute;
+  top: -70px;
+  right: -100px;
+}
+
+/**
+ * Installation
+ */
+
+.install {
+  padding: 8rem 0
+}
+
+.install h2 {
+  font-size: 2rem;
+}
+
+.installSelection pre {
+  margin-top: var(--ifm-paragraph-margin-bottom);
+}
+
+.installSelection pre code {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.installMethods {
+  display: grid !important;
+  grid-template-columns: repeat(4, [col-start] 1fr);
+  grid-gap: 2rem;
+  margin-top: 4rem;
+}
+
+.installMethod {
+  grid-column: span 2;
+  border: 1px solid var(--ifm-color-gray-300);
+  border-radius: 2px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.installMethod:hover {
+  border: 1px solid var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-lightest);
+}
+
+.installMethod img {
+  display: block;
+  margin: 0 auto 0rem;
+
 }

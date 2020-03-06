@@ -43,6 +43,7 @@ html {
 
   /* Grid/spacing */
   /* --ifm-footer-padding-vertical: 4rem; */
+  --ifm-container-width: 1200px;
 
   /* Base fonts */
   --ifm-font-base-color: #35414A;
@@ -128,6 +129,10 @@ html[data-theme='dark'] a:hover {
 }
 
 /* Footer */
+.footer {
+  padding-top: 6rem;
+}
+
 .footer.footer--dark {
   --ifm-footer-background-color: var(--ifm-background-color);
   --ifm-footer-title-color: var(--ifm-font-base-color);
