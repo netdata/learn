@@ -81,40 +81,15 @@ function sanitize(doc) {
 // parse frontmatter
 // const fm = frontmatter(sanitized)
 
-// console.log(sanitized)
-// console.log(fm.attributes)
-
-// var md = new Remarkable()
-
 // bb951397e6ba4934885c74242d9152183eb58646
 
-async function get(url) {
-  // const response = await axios.get('https://raw.githubusercontent.com/joelhans/netdata/frontmatter-health/health/README.md')
-  const { data } = await axios.get(url)
-
-  return data.reduce(async (acc, item) => {
-    if (item.type === 'file') {
-      if (item.download_url.endsWith('.md')) {
-        acc.push(item.download_url)
-      }
-    // } else if (item.type === 'dir') {
-    //   const childUrls = await get(item.url)
-    //   acc.concat(childUrls)
-    }
-
-    return acc
-  }, [])
-
-  // const reses = await Promise.all(downloadUrls.map(url => axios.get(url)))
-  // const sanitizeds = reses.map(({ data }) => sanitize(data))
-
-  // console.log(sanitizeds)
+async function getPages() {
+  const { data } = axios.get('https://api.github.com/repos/joelhans/netdata/git/trees/5434e1b4d1317cad1d87757b7aef2e8093f209fc?recursive=true')
+  console.log(data)
 }
 
-get('https://api.github.com/repos/joelhans/netdata/contents/health?ref=master')
-.then((urls) => {
-  console.log(urls)
-})
+
+
 
 // TODO: remove remarkable?
 // TODO: remove yaml
