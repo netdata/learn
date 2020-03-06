@@ -59,34 +59,40 @@ function Home() {
   const [currentCommandUpdates, setCurrentCommandUpdates] = useState('');
   const [currentCommandRelease, setCurrentCommandRelease] = useState('');
   const [currentCommandStatistics, setCurrentCommandStatistics] = useState('');
-  const [currentCommandChecked, setCurrentCommandChecked] = useState(true);
+  const [updatesChecked, setUpdatesChecked] = useState(true);
+  const [releaseChecked, setReleaseChecked] = useState(true);
+  const [statsChecked, setStatsChecked] = useState(true);
 
   let currentCommand = `bash <(curl -Ss https://my-netdata.io/kickstart.sh)${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}`;
   const lang = `bash`
 
   function handleUpdatesChange() {
-    if (currentCommandUpdates === '') {
+    if (currentCommandUpdates === '' && updatesChecked == true) {
       setCurrentCommandUpdates(' --no-updates');
+      setUpdatesChecked(false);
     } else {
       setCurrentCommandUpdates('');
+      setUpdatesChecked(true);
     }
   }
 
   function handleReleaseChange() {
-    if (currentCommandRelease === '') {
+    if (currentCommandRelease === '' && releaseChecked == true) {
       setCurrentCommandRelease(' --stable-channel');
+      setReleaseChecked(false);
     } else {
       setCurrentCommandRelease('');
+      setReleaseChecked(true);
     }
   }
 
   function handleStatisticsChange() {
-    if (currentCommandStatistics === '' && currentCommandChecked == true) {
+    if (currentCommandStatistics === '' && statsChecked == true) {
       setCurrentCommandStatistics(' --disable-telemetry');
-      setCurrentCommandChecked(false);
+      setStatsChecked(false);
     } else {
       setCurrentCommandStatistics('');
-      setCurrentCommandChecked(true);
+      setStatsChecked(true);
     }
   }
 
@@ -96,8 +102,8 @@ function Home() {
       description="Description will go into a meta tag in <head />">
       <header className={classnames('hero', styles.heroBanner)}>
         <div className="container">
-          <div class="row">
-            <div class="col col--6">
+          <div className={classnames('row')}>
+            <div className={classnames('col col--6')}>
               <h1 className="hero__title">All your monitoring education in one place.</h1>
               <p className="hero__subtitle">Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.</p>
               <div className={styles.buttons}>
@@ -115,7 +121,7 @@ function Home() {
                     styles.getStarted,
                   )}
                   to={useBaseUrl('docs/introduction')}>
-                  Read documentation
+                  Read the docs
                 </Link>
               </div>
             </div>
@@ -129,65 +135,74 @@ function Home() {
         <section id="installation" className={styles.install}>
           <div className="container">
             <div className="row">
-              <div class="col col--8">
+              <div className={classnames('col col--8')}>
                 <h2>Get Netdata on Linux with a one-liner</h2>
-                <p>Click <strong>Copy</strong>, paste into your system’s terminal, and hit <strong>Enter</strong>. Open your favorite browser and navigate to <code>http://localhost:19999</code> to find Netdata’s dashboard.</p>
                 <div className={styles.installSelection}>
-                  <div class="installation__method">
-                    <label for="toggle" class="switch">Automatic updates</label>
+                  <div>
                     <input 
                       onChange={handleUpdatesChange}
-                      type="checkbox" id="toggle" class="checkbox" />
+                      checked={updatesChecked}
+                      type="checkbox" id="toggle__updates"/>
+                    <label htmlFor="toggle__updates">Do you want automatic updates? <code>default: enabled</code></label>
                   </div>
-                  <div class="installation__method">
-                    <label for="toggle" class="switch">Release type</label>
+                  <div>
                     <input 
                       onChange={handleReleaseChange}
-                      type="checkbox" id="toggle" class="checkbox" />
+                      checked={releaseChecked}
+                      type="checkbox" id="toggle__type" />
+                    <label htmlFor="toggle__type">Do you want nightly or stable releases? <code>default: nightly</code></label>
                   </div>
-                  <div class="installation__method">
-                    <label for="toggle" class="switch">Anonymous statistics</label>
+                  <div>
                     <input 
                       onChange={handleStatisticsChange}
-                      checked={currentCommandChecked}
-                      type="checkbox" id="toggle" class="checkbox" />
+                      checked={statsChecked}
+                      type="checkbox" id="toggle__stats" />
+                    <label htmlFor="toggle__stats">Do you you want to contribute anonymous statistics? <code>default: enabled</code></label>
                   </div>
                   <CodeBlock className={classnames('bash', styles.installCommand)} language={lang}>{currentCommand}</CodeBlock>
+                  <p>Click <strong>Copy</strong>, paste into your system’s terminal, and hit <strong>Enter</strong>.</p>
+                  <p>Open your favorite browser and navigate to <code>http://localhost:19999</code> to find Netdata’s real-time dashboard with hundreds of pre-configured charts and alarms.</p>
                 </div>
               </div>
               <div className={classnames('col col--4', styles.installMethods)}>
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/packaging/installer/methods/packages')}>
-                  <img src="img/methods/packages.png" alt="" />
+                  <img src="img/methods/packages.png" alt="Install Netdata with .deb/.rpm packages" />
                   .deb/.rpm packages
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/packaging/docker')}>
+                  <img src="img/methods/docker.png" alt="Install Netdata with Docker" />
                   Docker
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/packaging/installer/methods/macos')}>
+                    <img src="img/methods/macos.png" alt="Install Netdata on macOS" />
                   macOS
                 </Link>
                 <a 
                   className={classnames(styles.installMethod)}
                   href="https://github.com/netdata/helmchart#netdata-helm-chart-for-kubernetes-deployments"
                 >
+                  <img src="img/methods/kubernetes.png" alt="Install Netdata on Kubernetes" />
                   Kubernetes
                 </a>
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/packaging/installer/methods/cloud-providers')}>
+                  <img src="img/methods/cloud.png" alt="Install Netdata on cloud providers" />
                   Cloud providers
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/packaging/installer/methods/freebsd')}>
+                    <img src="img/methods/freebsd.png" alt="Install Netdata on FreeBSD" />
                   FreeBSD
                 </Link>
+                <p><Link to="docs/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>
               </div>
             </div>
           </div>

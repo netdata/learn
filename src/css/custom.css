@@ -57,6 +57,7 @@ html {
 
   /* Code */
   --ifm-code-font-size: 95%;
+  --ifm-code-background: rgb(235, 238, 241);
 
   /* Buttons */
   --ifm-button-background-color: var(--ifm-color-primary);
