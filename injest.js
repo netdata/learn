@@ -84,10 +84,20 @@ function sanitize(doc) {
 // bb951397e6ba4934885c74242d9152183eb58646
 
 async function getPages() {
-  const { data } = axios.get('https://api.github.com/repos/joelhans/netdata/git/trees/5434e1b4d1317cad1d87757b7aef2e8093f209fc?recursive=true')
-  console.log(data)
+  const { data } = await axios.get('https://api.github.com/repos/joelhans/netdata/git/trees/5434e1b4d1317cad1d87757b7aef2e8093f209fc?recursive=true')
+
+  const node = data.tree.find(node => node.path === 'README.md')
+
+  // decode base64 content
+  const { data: { content: rawDoc } } = await axios.get(node.url)
+  const doc = Buffer.from(rawDoc, 'base64').toString('binary')
+
+  const sanitized = sanitize(doc)
+
+  console.log(sanitized)
 }
 
+getPages()
 
 
 
