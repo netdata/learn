@@ -76,22 +76,45 @@ function sanitize(doc) {
   return doc
 }
 
-const sanitized = sanitize(doc)
+// const sanitized = sanitize(doc)
 
 // parse frontmatter
-const fm = frontmatter(sanitized)
+// const fm = frontmatter(sanitized)
 
-console.log(sanitized)
-console.log(fm.attributes)
+// console.log(sanitized)
+// console.log(fm.attributes)
 
 // var md = new Remarkable()
 
-// async function start() {
-//   const response = await axios.get('https://raw.githubusercontent.com/joelhans/netdata/frontmatter-health/health/README.md')
-//   console.log(response)
-// }
+// bb951397e6ba4934885c74242d9152183eb58646
 
-// start()
+async function get(url) {
+  // const response = await axios.get('https://raw.githubusercontent.com/joelhans/netdata/frontmatter-health/health/README.md')
+  const { data } = await axios.get(url)
+
+  return data.reduce(async (acc, item) => {
+    if (item.type === 'file') {
+      if (item.download_url.endsWith('.md')) {
+        acc.push(item.download_url)
+      }
+    // } else if (item.type === 'dir') {
+    //   const childUrls = await get(item.url)
+    //   acc.concat(childUrls)
+    }
+
+    return acc
+  }, [])
+
+  // const reses = await Promise.all(downloadUrls.map(url => axios.get(url)))
+  // const sanitizeds = reses.map(({ data }) => sanitize(data))
+
+  // console.log(sanitizeds)
+}
+
+get('https://api.github.com/repos/joelhans/netdata/contents/health?ref=master')
+.then((urls) => {
+  console.log(urls)
+})
 
 // TODO: remove remarkable?
 // TODO: remove yaml
