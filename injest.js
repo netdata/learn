@@ -1,5 +1,7 @@
 const axios = require('axios')
 const frontmatter = require('front-matter')
+const fs = require('fs').promises
+const path = require('path')
 // const { Remarkable } = require('remarkable')
 
 function sanitize(doc) {
@@ -31,16 +33,26 @@ async function getPages(root, pattern) {
 
   // decode base64 content
   const { data: { content: rawDoc } } = await axios.get(node.url)
-  return {
+
+  return [{
     meta: node,
     body: Buffer.from(rawDoc, 'base64').toString('binary')
-  }
+  }]
 }
+
+const baseDir = 'junk'
+const outDir = path.join(__dirname, baseDir)
 
 async function ingest() {
   const pages = await getPages('https://api.github.com/repos/joelhans/netdata/git/trees/5434e1b4d1317cad1d87757b7aef2e8093f209fc')
 
-  console.log(pages)
+  pages.forEach(async (page) => {
+    const fullPath = path.join(outDir, page.meta.path)
+    // because the page path may contain additional directories
+    const fullDir = path.dirname(fullPath)
+    await fs.mkdir(fullDir, { recursive: true })
+    await fs.writeFile(fullPath, page.body)
+  })
 
   // const sanitized = sanitize(doc)
 }
