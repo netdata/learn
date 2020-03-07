@@ -36,15 +36,17 @@ async function getRootSha() {
   return sha
 }
 
-async function getPages(root) {
+async function getNodes(root) {
   // TODO: use proper URL building
   const { data } = await ax.get(`${root}?recursive=true`)
 
-  const nodes = data.tree.filter(node => (
+  return data.tree.filter(node => (
     node.type === 'blob' &&
     node.path.match(/^[^\.].*?\.md$/) // exclude dot folders, include markdown
   ))
+}
 
+async function getPages(nodes) {
   return Promise.all(nodes.map(async node => {
     const { data: { content: rawDoc } } = await ax.get(node.url)
 
@@ -66,10 +68,12 @@ async function ingest() {
   const rootSha = await getRootSha()
   console.log('rootSha', rootSha)
 
-  console.log('Fetching')
+  const nodes = await getNodes(`git/trees/${rootSha}`)
+
+  console.log(`Fetching ${nodes.length} pages...`)
   const fetchStartTime = new Date()
 
-  const pages = await getPages(`git/trees/${rootSha}`)
+  const pages = await getPages(nodes)
 
   const fetchEndTime = new Date()
   console.log(`Fetching completed in ${fetchEndTime - fetchStartTime} ms`)
@@ -77,7 +81,7 @@ async function ingest() {
   console.log('Clearing', baseDir)
   await clearDir(baseDir)
 
-  console.log('Writing to', baseDir)
+  console.log(`Writing to ${baseDir}`)
   const writeStartTime = new Date()
 
   pages.forEach(async (page) => {
