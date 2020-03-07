@@ -55,7 +55,7 @@ async function getPages(root) {
   }))
 }
 
-const baseDir = 'junk'
+const baseDir = './junk'
 const outDir = path.join(__dirname, baseDir)
 
 async function clearDir(dir) {
@@ -65,9 +65,20 @@ async function clearDir(dir) {
 async function ingest() {
   const rootSha = await getRootSha()
   console.log('rootSha', rootSha)
+
+  console.log('Fetching')
+  const fetchStartTime = new Date()
+
   const pages = await getPages(`git/trees/${rootSha}`)
 
+  const fetchEndTime = new Date()
+  console.log(`Fetching completed in ${fetchEndTime - fetchStartTime} ms`)
+
+  console.log('Clearing', baseDir)
   await clearDir(baseDir)
+
+  console.log('Writing to', baseDir)
+  const writeStartTime = new Date()
 
   pages.forEach(async (page) => {
     const fullPath = path.join(outDir, page.meta.path)
@@ -79,6 +90,9 @@ async function ingest() {
 
     await fs.writeFile(fullPath, sanitized)
   })
+
+  const writeEndTime = new Date()
+  console.log(`Writing completed in ${writeEndTime - writeStartTime} ms`)
 }
 
 ingest()
