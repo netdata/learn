@@ -4,6 +4,15 @@ const fs = require('fs').promises
 const path = require('path')
 // const { Remarkable } = require('remarkable')
 
+const githubToken = 'bb951397e6ba4934885c74242d9152183eb58646'
+
+const ax = axios.create({
+  baseURL: 'https://api.github.com/repos/joelhans/netdata/',
+  headers: {
+    'Authorization': `token ${githubToken}`
+  }
+})
+
 function sanitize(doc) {
   // strip comment tags around frontmatter
   doc = doc.replace(/^<!--\s+(---\s+.*?\s+---)\s+-->/gs, '$1')
@@ -22,36 +31,43 @@ function sanitize(doc) {
 // parse frontmatter
 // const fm = frontmatter(sanitized)
 
-// bb951397e6ba4934885c74242d9152183eb58646
-
 async function getRootSha() {
-  const { data: { commit: { sha } } } = await axios.get('https://api.github.com/repos/joelhans/netdata/branches/master')
+  const { data: { commit: { sha } } } = await ax.get('branches/master')
   return sha
 }
 
-// TODO: filter pattern
-async function getPages(root, pattern) {
+async function getPages(root) {
   // TODO: use proper URL building
-  const { data } = await axios.get(`${root}?recursive=true`)
+  const { data } = await ax.get(`${root}?recursive=true`)
 
-  const node = data.tree.find(node => node.path === 'health/README.md')
+  const nodes = data.tree.filter(node => (
+    node.type === 'blob' &&
+    node.path.match(/^[^\.].*?\.md$/) // exclude dot folders, include markdown
+  ))
 
-  // decode base64 content
-  const { data: { content: rawDoc } } = await axios.get(node.url)
+  return Promise.all(nodes.map(async node => {
+    const { data: { content: rawDoc } } = await ax.get(node.url)
 
-  return [{
-    meta: node,
-    body: Buffer.from(rawDoc, 'base64').toString('binary')
-  }]
+    return {
+      meta: { ...node },
+      body: Buffer.from(rawDoc, 'base64').toString('binary')
+    }
+  }))
 }
 
 const baseDir = 'junk'
 const outDir = path.join(__dirname, baseDir)
 
+async function clearDir(dir) {
+  return fs.rmdir(dir, { recursive: true })
+}
+
 async function ingest() {
   const rootSha = await getRootSha()
   console.log('rootSha', rootSha)
-  const pages = await getPages(`https://api.github.com/repos/joelhans/netdata/git/trees/${rootSha}`)
+  const pages = await getPages(`git/trees/${rootSha}`)
+
+  await clearDir(baseDir)
 
   pages.forEach(async (page) => {
     const fullPath = path.join(outDir, page.meta.path)
