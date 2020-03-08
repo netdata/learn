@@ -3,10 +3,8 @@ const frontmatter = require('front-matter')
 const fs = require('fs').promises
 const path = require('path')
 
-// TODO: move contents of docs up a level
-// TODO: readme to pretty url?
 // TODO: error handling
-
+// TODO: env for githubToken, warn if not present or rate limit is low (60, instead of 5000)
 // TODO: remove remarkable, yaml, frontmatter
 
 const githubToken = 'bb951397e6ba4934885c74242d9152183eb58646'
@@ -14,7 +12,7 @@ const baseDir = './docs'
 const outDir = path.join(__dirname, baseDir)
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/joelhans/netdata/',
+  baseURL: 'https://api.github.com/repos/joelhans/',
   headers: {
     'Authorization': `token ${githubToken}`
   }
@@ -37,22 +35,26 @@ async function getRateLimit() {
   }
 }
 
-async function getRootSha() {
-  const { data: { commit: { sha } } } = await ax.get('branches/master')
+async function getRootSha(repo = 'netdata', branch = 'master') {
+  const { data: { commit: { sha } } } = await ax.get(`${repo}/branches/${branch}`)
   return sha
 }
 
-async function getNodes(rootSha) {
-  const { data: { tree } } = await ax.get(`git/trees/${rootSha}?recursive=true`)
+async function getNodes(rootSha, repo = 'netdata') {
+  const { data: { tree } } = await ax.get(`${repo}/git/trees/${rootSha}?recursive=true`)
   return tree
 }
 
 function filterNodes(nodes) {
+  // TODO: allow excludes array
   return nodes.filter(node => (
     node.type === 'blob' && // include only files (blobs)
     !node.path.startsWith('.') && // exclude dot folders
     !node.path.startsWith('README.md') && // exclude root readme
     !node.path.startsWith('docs/README.md') && // exclude /docs/readme
+    !node.path.startsWith('DOCUMENTATION.md') &&
+    !node.path.startsWith('HISTORICAL_CHANGELOG.md') &&
+    !node.path.startsWith('contrib/sles11/README.md') &&
     node.path.match(/^[^\.].*?\.md$/) // include only markdown
   ))
 }
@@ -68,12 +70,27 @@ async function getPages(nodes) {
   }))
 }
 
+function moveDocs(pages) {
+  return pages.map(page => {
+    return {
+      meta: {
+        ...page.meta,
+        path: page.meta.path.startsWith('docs/') ? page.meta.path.slice(5) : page.meta.path
+      },
+      body: page.body
+    }
+  })
+}
+
 function normalizeLinks(pages) {
   return pages.map(page => {
     const tokens = path.parse(page.meta.path)
 
     const body = page.body.replace(/\[(.*?)\]\((.*?)\)/g, (match, text, url) => {
-      return `[${text}](${path.join(baseDir, tokens.dir, url)})`
+      const normalizedUrl = url.startsWith('http')
+        ? url
+        : path.join('/', baseDir, tokens.dir, url)
+      return `[${text}](${normalizedUrl})`
     })
 
     return {
@@ -105,6 +122,7 @@ function renameReadmes(pages) {
 }
 
 async function clearDir(dir) {
+  // TODO: allow excludes array
   return fs.rmdir(dir, { recursive: true })
 }
 
@@ -143,7 +161,7 @@ async function ingest() {
   const rate = await getRateLimit()
   console.log(`Rate limit ${rate.remaining} / ${rate.limit} requests per hour remaining. Reset in ${rate.resetMinutes} minutes.`)
 
-  const rootSha = await getRootSha()
+  const rootSha = await getRootSha('netdata')
   console.log('rootSha', rootSha)
 
   const nodes = await getNodes(rootSha)
@@ -157,8 +175,11 @@ async function ingest() {
   const fetchEndTime = new Date()
   console.log(`Fetching completed in ${fetchEndTime - fetchStartTime} ms`)
 
+  console.log(`Moving /docs to root`)
+  const movedPages = moveDocs(pages)
+
   console.log(`Sanitizing ${pages.length} pages`)
-  const sanitizedPages = sanitizePages(pages)
+  const sanitizedPages = sanitizePages(movedPages)
 
   console.log(`Normalizing links in ${pages.length} pages`)
   const normalizedPages = normalizeLinks(sanitizedPages)
