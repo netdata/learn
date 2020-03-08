@@ -3,7 +3,10 @@ const frontmatter = require('front-matter')
 const fs = require('fs').promises
 const path = require('path')
 
-// TODO: /collectors/go.d.plugin
+// TODO: strip github badges, see /docs/what-is-netdata
+// TODO: update readme links in renameReadmes()
+// TODO: allow excludes array from filterNodes
+// TODO: allow excludes array from clearDir
 // TODO: error handling
 // TODO: env for githubToken, warn if not present or rate limit is low (60, instead of 5000)
 // TODO: remove remarkable, yaml, frontmatter
@@ -146,6 +149,8 @@ function sanitize(doc) {
   // strip analytics pixel
   doc = doc.replace(/^\[\!\[analytics\].*/m, '')
 
+  // TODO: strip github badges
+
   return doc
 }
 
@@ -171,22 +176,22 @@ async function ingest() {
   const rate = await getRateLimit()
   console.log(`Rate limit ${rate.remaining} / ${rate.limit} requests per hour remaining. Reset in ${rate.resetMinutes} minutes.`)
 
-  console.log('1')
+  console.log(`Fetching root SHA for 'netdata' repo...`)
   const rootSha = await getRootSha('netdata')
-  console.log('2')
+  console.log(`Fetching nodes from 'netdata' repo...`)
   const nodes = await getNodes(rootSha)
 
-  console.log('3')
+  console.log(`Fetching root SHA for 'go.d.plugin' repo...`)
   const goRootSha = await getRootSha('go.d.plugin')
-  console.log('4')
+  console.log(`Fetching nodes from 'go.d.plugin' repo...`)
   const goNodes = await getNodes(goRootSha, 'go.d.plugin')
 
-  console.log('5')
   const goPrefixedNodes = prefixNodes(goNodes, 'collectors/go.d.plugin/')
-  console.log(goPrefixedNodes)
 
   const combinedNodes = [...nodes, ...goPrefixedNodes]
+
   const filteredNodes = filterNodes(combinedNodes)
+  console.log(`Filtering ${combinedNodes.length} nodes to ${filteredNodes.length}`)
 
   console.log(`Fetching ${filteredNodes.length} pages...`)
   const fetchStartTime = new Date()
