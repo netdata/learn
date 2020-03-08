@@ -138,21 +138,21 @@ function Home() {
               <div className={classnames('col col--8')}>
                 <h2>Get Netdata on Linux with a one-liner</h2>
                 <div className={styles.installSelection}>
-                  <div>
+                  <div className={styles.installCheckbox}>
                     <input 
                       onChange={handleUpdatesChange}
                       checked={updatesChecked}
                       type="checkbox" id="toggle__updates"/>
                     <label htmlFor="toggle__updates">Do you want automatic updates? <code>default: enabled</code></label>
                   </div>
-                  <div>
+                  <div className={styles.installCheckbox}>
                     <input 
                       onChange={handleReleaseChange}
                       checked={releaseChecked}
                       type="checkbox" id="toggle__type" />
                     <label htmlFor="toggle__type">Do you want nightly or stable releases? <code>default: nightly</code></label>
                   </div>
-                  <div>
+                  <div className={styles.installCheckbox}>
                     <input 
                       onChange={handleStatisticsChange}
                       checked={statsChecked}
@@ -165,10 +165,11 @@ function Home() {
                 </div>
               </div>
               <div className={classnames('col col--4', styles.installMethods)}>
+                <h3>Not on Linux? Want to try a different method?</h3>
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/packaging/installer/methods/packages')}>
-                  <img src="img/methods/packages.png" alt="Install Netdata with .deb/.rpm packages" />
+                  <img src="img/methods/package.png" alt="Install Netdata with .deb/.rpm packages" />
                   .deb/.rpm packages
                 </Link>
                 <Link

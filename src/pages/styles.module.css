@@ -42,6 +42,56 @@
   font-size: 2rem;
 }
 
+.installCheckbox input[type="checkbox"] {
+  opacity: 0;
+}
+
+.installCheckbox label {
+  position: relative;
+}
+
+.installCheckbox label::before{
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: -20px;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  border-radius: 2px;
+}
+
+.installCheckbox input[type="checkbox"] + label::before {
+  background: white;
+  border: 1px solid var(--ifm-color-gray-300);
+}
+
+.installCheckbox input[type="checkbox"]:checked + label::before {
+  background: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+}
+
+.installCheckbox label::after {
+  content: "";
+  position: absolute;
+  left: -17px;
+  top: 7px;
+  display: inline-block;
+  height: 6px;
+  width: 9px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg);
+}
+
+.installCheckbox input[type="checkbox"] + label::after {
+  content: none;
+}
+
+.installCheckbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
 .installSelection label code {
   font-size: var(--ifm-h6-font-size);
 }
@@ -60,7 +110,13 @@
 .installMethods {
   display: grid !important;
   grid-template-columns: repeat(4, [col-start] 1fr);
-  grid-gap: 2rem;
+  grid-gap: 1rem;
+}
+
+.installMethods h3 {
+  grid-column: span 4;
+  text-align: center;
+  margin: 0;
 }
 
 .installMethod {
