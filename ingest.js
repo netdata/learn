@@ -3,18 +3,14 @@ const frontmatter = require('front-matter')
 const fs = require('fs').promises
 const path = require('path')
 
-// TODO: do not write root readme.md or docs/readme.md
 // TODO: move contents of docs up a level
-// TODO: link sanitization
 // TODO: readme to pretty url?
 // TODO: error handling
 
-// TODO: remove remarkable
-// TODO: remove yaml
-// TODO: remove frontmatter
+// TODO: remove remarkable, yaml, frontmatter
 
 const githubToken = 'bb951397e6ba4934885c74242d9152183eb58646'
-const baseDir = './junk'
+const baseDir = './docs'
 const outDir = path.join(__dirname, baseDir)
 
 const ax = axios.create({
@@ -72,18 +68,38 @@ async function getPages(nodes) {
   }))
 }
 
+function normalizeLinks(pages) {
+  return pages.map(page => {
+    const tokens = path.parse(page.meta.path)
+
+    const body = page.body.replace(/\[(.*?)\]\((.*?)\)/g, (match, text, url) => {
+      return `[${text}](${path.join(baseDir, tokens.dir, url)})`
+    })
+
+    return {
+      meta: { ...page.meta },
+      body
+    }
+  })
+}
+
 function renameReadmes(pages) {
   return pages.map(page => {
     const tokens = path.parse(page.meta.path)
 
+    const pagePath = tokens.base.toLowerCase() === 'readme.md' && tokens.dir.length
+      ? tokens.dir + tokens.ext
+      : page.meta.path
+
+    // TODO: update readme links
+    const body = page.body
+
     return {
-      body: page.body,
       meta: {
         ...page.meta,
-        path: tokens.base.toLowerCase() === 'readme.md' && tokens.dir.length
-              ? tokens.dir + tokens.ext
-              : page.meta.path
-      }
+        path: pagePath
+      },
+      body
     }
   })
 }
@@ -113,14 +129,14 @@ function sanitizePages(pages) {
 }
 
 async function writePages(pages) {
-  pages.forEach(async (page) => {
+  return Promise.all(pages.map(async (page) => {
     const fullPath = path.join(outDir, page.meta.path).toLowerCase()
     // because the page path may contain additional directories
     const fullDir = path.dirname(fullPath)
     await fs.mkdir(fullDir, { recursive: true })
 
     await fs.writeFile(fullPath, page.body)
-  })
+  }))
 }
 
 async function ingest() {
@@ -144,8 +160,11 @@ async function ingest() {
   console.log(`Sanitizing ${pages.length} pages`)
   const sanitizedPages = sanitizePages(pages)
 
+  console.log(`Normalizing links in ${pages.length} pages`)
+  const normalizedPages = normalizeLinks(sanitizedPages)
+
   console.log(`Renaming README.md files`)
-  const renamedPages = renameReadmes(sanitizedPages)
+  const renamedPages = renameReadmes(normalizedPages)
 
   console.log('Clearing', baseDir)
   await clearDir(baseDir)
