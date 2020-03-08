@@ -30,22 +30,27 @@ async function getRootSha() {
 }
 
 async function getNodes(rootSha) {
-  // TODO: use proper URL building
-  const { data } = await ax.get(`git/trees/${rootSha}?recursive=true`)
+  const { data: { tree } } = await ax.get(`git/trees/${rootSha}?recursive=true`)
+  return tree
+}
 
-  return data.tree.filter(node => (
-    node.type === 'blob' &&
-    node.path.match(/^[^\.].*?\.md$/) // exclude dot folders, include markdown
+function filterNodes(nodes) {
+  return nodes.tree.filter(node => (
+    node.type === 'blob' && // include only files (blobs)
+    !node.path.startsWith('.') && // exclude dot folders
+    !node.path.startsWith('README.md') && // exclude root readme
+    !node.path.startsWith('docs/README.md') && // exclude /docs/readme
+    node.path.match(/^[^\.].*?\.md$/) // include only markdown
   ))
 }
 
 async function getPages(nodes) {
   return Promise.all(nodes.map(async node => {
-    const { data: { content: rawDoc } } = await ax.get(node.url)
+    const { data: { content } } = await ax.get(node.url)
 
     return {
       meta: { ...node },
-      body: Buffer.from(rawDoc, 'base64').toString('binary')
+      body: Buffer.from(content, 'base64').toString('binary')
     }
   }))
 }
@@ -94,11 +99,12 @@ async function ingest() {
   console.log('rootSha', rootSha)
 
   const nodes = await getNodes(rootSha)
+  const filteredNodes = filterNodes(nodes)
 
-  console.log(`Fetching ${nodes.length} pages...`)
+  console.log(`Fetching ${filteredNodes.length} pages...`)
   const fetchStartTime = new Date()
 
-  const pages = await getPages(nodes)
+  const pages = await getPages(filteredNodes)
 
   const fetchEndTime = new Date()
   console.log(`Fetching completed in ${fetchEndTime - fetchStartTime} ms`)
