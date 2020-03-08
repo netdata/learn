@@ -3,6 +3,7 @@ const frontmatter = require('front-matter')
 const fs = require('fs').promises
 const path = require('path')
 
+// TODO: /collectors/go.d.plugin
 // TODO: error handling
 // TODO: env for githubToken, warn if not present or rate limit is low (60, instead of 5000)
 // TODO: remove remarkable, yaml, frontmatter
@@ -12,7 +13,7 @@ const baseDir = './docs'
 const outDir = path.join(__dirname, baseDir)
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/joelhans/',
+  baseURL: 'https://api.github.com/repos/netdata/',
   headers: {
     'Authorization': `token ${githubToken}`
   }
@@ -43,6 +44,15 @@ async function getRootSha(repo = 'netdata', branch = 'master') {
 async function getNodes(rootSha, repo = 'netdata') {
   const { data: { tree } } = await ax.get(`${repo}/git/trees/${rootSha}?recursive=true`)
   return tree
+}
+
+function prefixNodes(nodes, prefix) {
+  return nodes.map(node => {
+    return {
+      ...node,
+      path: path.join(prefix, node.path)
+    }
+  })
 }
 
 function filterNodes(nodes) {
@@ -161,11 +171,22 @@ async function ingest() {
   const rate = await getRateLimit()
   console.log(`Rate limit ${rate.remaining} / ${rate.limit} requests per hour remaining. Reset in ${rate.resetMinutes} minutes.`)
 
+  console.log('1')
   const rootSha = await getRootSha('netdata')
-  console.log('rootSha', rootSha)
-
+  console.log('2')
   const nodes = await getNodes(rootSha)
-  const filteredNodes = filterNodes(nodes)
+
+  console.log('3')
+  const goRootSha = await getRootSha('go.d.plugin')
+  console.log('4')
+  const goNodes = await getNodes(goRootSha, 'go.d.plugin')
+
+  console.log('5')
+  const goPrefixedNodes = prefixNodes(goNodes, 'collectors/go.d.plugin/')
+  console.log(goPrefixedNodes)
+
+  const combinedNodes = [...nodes, ...goPrefixedNodes]
+  const filteredNodes = filterNodes(combinedNodes)
 
   console.log(`Fetching ${filteredNodes.length} pages...`)
   const fetchStartTime = new Date()
