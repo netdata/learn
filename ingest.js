@@ -72,8 +72,20 @@ async function getPages(nodes) {
   }))
 }
 
-async function transformPages(pages) {
+function renameReadmes(pages) {
+  return pages.map(page => {
+    const tokens = path.parse(page.meta.path)
 
+    return {
+      body: page.body,
+      meta: {
+        ...page.meta,
+        path: tokens.base.toLowerCase() === 'readme.md' && tokens.dir.length
+              ? tokens.dir + tokens.ext
+              : page.meta.path
+      }
+    }
+  })
 }
 
 async function clearDir(dir) {
@@ -113,7 +125,7 @@ async function writePages(pages) {
 
 async function ingest() {
   const rate = await getRateLimit()
-  console.log(`Rate limit ${rate.remaining} / ${rate.limit} per hour. Reset in ${rate.resetMinutes} minutes.`)
+  console.log(`Rate limit ${rate.remaining} / ${rate.limit} requests per hour remaining. Reset in ${rate.resetMinutes} minutes.`)
 
   const rootSha = await getRootSha()
   console.log('rootSha', rootSha)
@@ -129,22 +141,25 @@ async function ingest() {
   const fetchEndTime = new Date()
   console.log(`Fetching completed in ${fetchEndTime - fetchStartTime} ms`)
 
-  const sanitizedPages = sanitizePages(pages)
   console.log(`Sanitizing ${pages.length} pages`)
+  const sanitizedPages = sanitizePages(pages)
+
+  console.log(`Renaming README.md files`)
+  const renamedPages = renameReadmes(sanitizedPages)
 
   console.log('Clearing', baseDir)
   await clearDir(baseDir)
 
-  console.log(`Writing ${sanitizedPages.length} to ${baseDir}`)
+  console.log(`Writing ${renamedPages.length} to ${baseDir}`)
   const writeStartTime = new Date()
 
-  writePages(sanitizedPages)
+  await writePages(renamedPages)
 
   const writeEndTime = new Date()
   console.log(`Writing completed in ${writeEndTime - writeStartTime} ms`)
 
   const rateAfter = await getRateLimit()
-  console.log(`Rate limit ${rateAfter.remaining} / ${rateAfter.limit} per hour. Reset in ${rateAfter.resetMinutes} minutes.`)
+  console.log(`Rate limit ${rateAfter.remaining} / ${rateAfter.limit} requests per hour remaining. Reset in ${rateAfter.resetMinutes} minutes.`)
 }
 
 ingest()
