@@ -24,6 +24,23 @@ const ax = axios.create({
   }
 })
 
+async function getRateLimit() {
+  const { data: { rate } } = await ax.get('https://api.github.com/rate_limit')
+
+  const resetDate = new Date(parseInt(rate.reset, 10) * 1000)
+  const resetMilliseconds = resetDate - new Date()
+  const resetSeconds = Math.ceil(resetMilliseconds / 1000)
+  const resetMinutes = Math.ceil(resetMilliseconds / 1000 / 60)
+
+  return {
+    ...rate,
+    resetDate,
+    resetMilliseconds,
+    resetSeconds,
+    resetMinutes
+  }
+}
+
 async function getRootSha() {
   const { data: { commit: { sha } } } = await ax.get('branches/master')
   return sha
@@ -35,7 +52,7 @@ async function getNodes(rootSha) {
 }
 
 function filterNodes(nodes) {
-  return nodes.tree.filter(node => (
+  return nodes.filter(node => (
     node.type === 'blob' && // include only files (blobs)
     !node.path.startsWith('.') && // exclude dot folders
     !node.path.startsWith('README.md') && // exclude root readme
@@ -95,6 +112,9 @@ async function writePages(pages) {
 }
 
 async function ingest() {
+  const rate = await getRateLimit()
+  console.log(`Rate limit ${rate.remaining} / ${rate.limit} per hour. Reset in ${rate.resetMinutes} minutes.`)
+
   const rootSha = await getRootSha()
   console.log('rootSha', rootSha)
 
@@ -122,6 +142,9 @@ async function ingest() {
 
   const writeEndTime = new Date()
   console.log(`Writing completed in ${writeEndTime - writeStartTime} ms`)
+
+  const rateAfter = await getRateLimit()
+  console.log(`Rate limit ${rateAfter.remaining} / ${rateAfter.limit} per hour. Reset in ${rateAfter.resetMinutes} minutes.`)
 }
 
 ingest()
