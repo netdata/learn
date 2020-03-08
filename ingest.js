@@ -2,9 +2,20 @@ const axios = require('axios')
 const frontmatter = require('front-matter')
 const fs = require('fs').promises
 const path = require('path')
-// const { Remarkable } = require('remarkable')
+
+// TODO: do not write root readme.md or docs/readme.md
+// TODO: move contents of docs up a level
+// TODO: link sanitization
+// TODO: readme to pretty url?
+// TODO: error handling
+
+// TODO: remove remarkable
+// TODO: remove yaml
+// TODO: remove frontmatter
 
 const githubToken = 'bb951397e6ba4934885c74242d9152183eb58646'
+const baseDir = './junk'
+const outDir = path.join(__dirname, baseDir)
 
 const ax = axios.create({
   baseURL: 'https://api.github.com/repos/joelhans/netdata/',
@@ -13,32 +24,14 @@ const ax = axios.create({
   }
 })
 
-function sanitize(doc) {
-  // strip comment tags around frontmatter
-  doc = doc.replace(/^<!--\s+(---\s+.*?\s+---)\s+-->/gs, '$1')
-
-  // strip level 1 heading
-  doc = doc.replace(/^#\s+.*/m, '')
-
-  // strip analytics pixel
-  doc = doc.replace(/^\[\!\[analytics\].*/m, '')
-
-  return doc
-}
-
-// const sanitized = sanitize(doc)
-
-// parse frontmatter
-// const fm = frontmatter(sanitized)
-
 async function getRootSha() {
   const { data: { commit: { sha } } } = await ax.get('branches/master')
   return sha
 }
 
-async function getNodes(root) {
+async function getNodes(rootSha) {
   // TODO: use proper URL building
-  const { data } = await ax.get(`${root}?recursive=true`)
+  const { data } = await ax.get(`git/trees/${rootSha}?recursive=true`)
 
   return data.tree.filter(node => (
     node.type === 'blob' &&
@@ -57,18 +50,50 @@ async function getPages(nodes) {
   }))
 }
 
-const baseDir = './junk'
-const outDir = path.join(__dirname, baseDir)
+async function transformPages(pages) {
+
+}
 
 async function clearDir(dir) {
   return fs.rmdir(dir, { recursive: true })
+}
+
+function sanitize(doc) {
+  // strip comment tags around frontmatter
+  doc = doc.replace(/^<!--\s+(---\s+.*?\s+---)\s+-->/gs, '$1')
+
+  // strip level 1 heading
+  doc = doc.replace(/^#\s+.*/m, '')
+
+  // strip analytics pixel
+  doc = doc.replace(/^\[\!\[analytics\].*/m, '')
+
+  return doc
+}
+
+function sanitizePages(pages) {
+  return pages.map(page => ({
+    ...page,
+    body: sanitize(page.body)
+  }))
+}
+
+async function writePages(pages) {
+  pages.forEach(async (page) => {
+    const fullPath = path.join(outDir, page.meta.path).toLowerCase()
+    // because the page path may contain additional directories
+    const fullDir = path.dirname(fullPath)
+    await fs.mkdir(fullDir, { recursive: true })
+
+    await fs.writeFile(fullPath, page.body)
+  })
 }
 
 async function ingest() {
   const rootSha = await getRootSha()
   console.log('rootSha', rootSha)
 
-  const nodes = await getNodes(`git/trees/${rootSha}`)
+  const nodes = await getNodes(rootSha)
 
   console.log(`Fetching ${nodes.length} pages...`)
   const fetchStartTime = new Date()
@@ -78,28 +103,19 @@ async function ingest() {
   const fetchEndTime = new Date()
   console.log(`Fetching completed in ${fetchEndTime - fetchStartTime} ms`)
 
+  const sanitizedPages = sanitizePages(pages)
+  console.log(`Sanitizing ${pages.length} pages`)
+
   console.log('Clearing', baseDir)
   await clearDir(baseDir)
 
-  console.log(`Writing to ${baseDir}`)
+  console.log(`Writing ${sanitizedPages.length} to ${baseDir}`)
   const writeStartTime = new Date()
 
-  pages.forEach(async (page) => {
-    const fullPath = path.join(outDir, page.meta.path)
-    // because the page path may contain additional directories
-    const fullDir = path.dirname(fullPath)
-    await fs.mkdir(fullDir, { recursive: true })
-
-    const sanitized = sanitize(page.body)
-
-    await fs.writeFile(fullPath, sanitized)
-  })
+  writePages(sanitizedPages)
 
   const writeEndTime = new Date()
   console.log(`Writing completed in ${writeEndTime - writeStartTime} ms`)
 }
 
 ingest()
-
-// TODO: remove remarkable?
-// TODO: remove yaml
