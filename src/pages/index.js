@@ -98,8 +98,8 @@ function Home() {
 
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`All your monitoring education in one place. ${siteConfig.title}`}
+      description="Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.">
       <header className={classnames('hero', styles.heroBanner)}>
         <div className="container">
           <div className={classnames('row')}>

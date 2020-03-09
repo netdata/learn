@@ -42,8 +42,8 @@ html {
   --ifm-color-accent: #FFC300;
 
   /* Grid/spacing */
-  /* --ifm-footer-padding-vertical: 4rem; */
   --ifm-container-width: 1200px;
+  --ifm-spacing-horizontal: 2rem;
 
   /* Base fonts */
   --ifm-font-base-color: #35414A;
@@ -64,6 +64,9 @@ html {
   --ifm-button-border-radius: 2px;
   --ifm-button-font-weight: 500;
   --ifm-button-size-multiplier: 2;
+
+  /* Etc */
+  --ifm-global-radius: 2px;
 
   /* Navbar */
   --ifm-navbar-link-hover-color: var(--ifm-color-secondary-lightest);
@@ -178,6 +181,20 @@ html[data-theme='dark'] a:hover {
 /* Code highlight */
 .prism-code {
   position: relative;
+}
+
+.prism-code button {
+  visibility: visible;
+  opacity: 1;
+}
+
+.prism-code button:hover {
+  border: 1px solid var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-lightest);
+}
+
+pre.prism-code code {
+  padding: var(--ifm-pre-padding) 2rem var(--ifm-pre-padding) var(--ifm-pre-padding);
 }
 
 .docusaurus-highlight-code-line {

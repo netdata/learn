@@ -35,7 +35,11 @@
  */
 
 .install {
-  padding: 8rem 0
+  padding: 8rem 0;
+}
+
+#installation .row {
+  background: var(--ifm-color-gray-300);
 }
 
 .install h2 {
@@ -59,16 +63,8 @@
   height: 16px;
   width: 16px;
   border-radius: 2px;
-}
-
-.installCheckbox input[type="checkbox"] + label::before {
   background: white;
   border: 1px solid var(--ifm-color-gray-300);
-}
-
-.installCheckbox input[type="checkbox"]:checked + label::before {
-  background: var(--ifm-color-primary);
-  border: 1px solid var(--ifm-color-primary);
 }
 
 .installCheckbox label::after {
@@ -79,8 +75,8 @@
   display: inline-block;
   height: 6px;
   width: 9px;
-  border-left: 2px solid white;
-  border-bottom: 2px solid white;
+  border-left: 2px solid var(--ifm-color-primary);
+  border-bottom: 2px solid var(--ifm-color-primary);
   transform: rotate(-45deg);
 }
 
