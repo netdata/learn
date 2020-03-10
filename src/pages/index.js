@@ -5,12 +5,13 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
+import { FiBox, FiAlertTriangle, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGrid, FiHardDrive, FiLock } from "react-icons/fi";
 
 import CodeBlock from '@theme/CodeBlock'
 
-const contents = [
+const tutorials = [
   {
-    title: <>Docs</>,
+    title: <>Getting started guide</>,
     href: 'docs/',
     description: (
       <>
@@ -50,6 +51,17 @@ function Feature({imageUrl, title, href, description}) {
       <p>{description}</p>
     </a>
   );
+}
+
+function StepByStepLink({icon, title, href}) {
+  return (
+    <Link 
+      className={styles.stepByStepLink}
+      to={useBaseUrl(href)}>
+      <div className={styles.stepByStepIcon}>{icon}</div>
+      {title}
+    </Link>
+  )
 }
 
 function Home() {
@@ -101,7 +113,7 @@ function Home() {
       title={`All your monitoring education in one place. ${siteConfig.title}`}
       description="Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.">
       <header className={classnames('hero', styles.heroBanner)}>
-        <div className="container">
+        <div className={classnames('container')}>
           <div className={classnames('row')}>
             <div className={classnames('col col--6')}>
               <h1 className="hero__title">All your monitoring education in one place.</h1>
@@ -133,8 +145,8 @@ function Home() {
       </header>
       <main>
         <section id="installation" className={styles.install}>
-          <div className="container">
-            <div className="row">
+          <div className={classnames('container shadow--lw', styles.installContainer)}>
+            <div className={classnames('row')}>
               <div className={classnames('col col--8')}>
                 <h2>Get Netdata on Linux with a one-liner</h2>
                 <div className={styles.installSelection}>
@@ -181,7 +193,7 @@ function Home() {
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/packaging/installer/methods/macos')}>
-                    <img src="img/methods/macos.png" alt="Install Netdata on macOS" />
+                  <img src="img/methods/macos.png" alt="Install Netdata on macOS" />
                   macOS
                 </Link>
                 <a 
@@ -200,10 +212,88 @@ function Home() {
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/packaging/installer/methods/freebsd')}>
-                    <img src="img/methods/freebsd.png" alt="Install Netdata on FreeBSD" />
+                  <img src="img/methods/freebsd.png" alt="Install Netdata on FreeBSD" />
                   FreeBSD
                 </Link>
                 <p><Link to="docs/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={styles.stepByStep}>
+          <div className={classnames('container')}>
+            <div className={classnames('row')}>
+              <div className={classnames('col', styles.stepByStepBox)}>
+                <h2>Learn Netdata step-by-step</h2>
+                <div className={classnames('row')}>
+                  <div className={classnames('col col--4')}>
+                    <img src="img/index/step-by-step.png" />
+                  </div>
+                  <div className={classnames('col col--4')}>
+                    <StepByStepLink
+                      href="docs/step-by-step/step-01"
+                      icon={<FiBox />}
+                      title="Netdata's building blocks"
+                    />
+                    <StepByStepLink
+                      href="docs/step-by-step/step-02"
+                      icon={<FiHome />}
+                      title="Get to know Netdata's dashboard"
+                    />
+                    <StepByStepLink
+                      href="docs/step-by-step/step-03"
+                      icon={<FiServer />}
+                      title="Monitor more than one system with Netdata"
+                    />
+                    <StepByStepLink
+                      href="docs/step-by-step/step-04"
+                      icon={<FiSliders />}
+                      title="The basics of configuring Netdata"
+                    />
+                    <StepByStepLink
+                      href="docs/step-by-step/step-05"
+                      icon={<FiActivity />}
+                      title="Health monitoring alarms and notifications"
+                    />
+                    <StepByStepLink
+                      href="docs/step-by-step/step-06"
+                      icon={<FiCpu />}
+                      title="Collect metrics from more services and apps"
+                    />
+                    <StepByStepLink
+                      href="docs/step-by-step/step-07"
+                      icon={<FiMonitor />}
+                      title="Netdata’s dashboard in depth"
+                    />
+                    <StepByStepLink
+                      href="docs/step-by-step/step-08"
+                      icon={<FiGrid />}
+                      title="Building your first custom dashboard"
+                    />
+                    <StepByStepLink
+                      href="docs/step-by-step/step-09"
+                      icon={<FiHardDrive />}
+                      title="Long-term metrics storage"
+                    />
+                    <StepByStepLink
+                      href="docs/step-by-step/step-10"
+                      icon={<FiLock />}
+                      title="Set up a proxy"
+                    />
+                  </div>
+                  <div className={classnames('col col--4')}>
+                    <p>Take a guided tour through Netdata's core features, including its famous dashboard, creating new alarms, and collecting metrics from your favorite services and applications.</p>
+                    <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with health monitoring and performance troubleshooting.</p>
+                    <p>
+                      <Link
+                        to={useBaseUrl('docs/step-by-step/step-00')}
+                        className={classnames('button button--lg')}
+                      >
+                        Try the guide
+                      </Link>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

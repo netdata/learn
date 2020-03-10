@@ -8,8 +8,13 @@
  */
 
 .heroBanner {
-  padding: 8rem 0 6rem;
   position: relative;
+  padding: 8rem 0 6rem;
+  background: linear-gradient(to bottom, white 40%, var(--ifm-color-secondary-lightest) 600%);
+}
+
+html[data-theme='dark'] .heroBanner {
+  background: linear-gradient(to bottom, var(--ifm-background-color) 40%, black 600%);
 }
 
 .buttons {
@@ -26,20 +31,43 @@
 
 .heroImage {
   position: absolute;
-  top: -70px;
-  right: -100px;
+  top: 0px;
+  right: -93px;
+  max-width: 650px;
+}
+
+@media (max-width: 1400px) {
+  .heroImage {
+    top: 30px;
+    right: 0;
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 996px) {
+  .heroImage {
+    display: none;
+  }
 }
 
 /**
  * Installation
  */
 
-.install {
-  padding: 8rem 0;
+/* .install {
+  padding: 10rem 0 6rem;
 }
 
-#installation .row {
-  background: var(--ifm-color-gray-300);
+@media (max-width: 996px) {
+  .install {
+    padding: 3rem 0;
+  }
+} */
+
+.installContainer {
+  padding-top: 8rem;
+
+  background: var(--ifm-color-gray-100);
 }
 
 .install h2 {
@@ -62,9 +90,10 @@
   display: inline-block;
   height: 16px;
   width: 16px;
-  border-radius: 2px;
+  
   background: white;
   border: 1px solid var(--ifm-color-gray-300);
+  border-radius: 2px;
 }
 
 .installCheckbox label::after {
@@ -138,4 +167,64 @@
   grid-column: span 4;
   font-size: var(--ifm-h5-font-size);
   text-align: center;
+}
+
+/* Step-by-step */
+
+.stepByStep {
+  padding: 8rem 0;
+}
+
+.stepByStepBox {
+  border-radius: var(--ifm-global-radius);
+  padding-top: calc(1.5 * var(--ifm-spacing-vertical));
+  padding-bottom: calc(1.5 * var(--ifm-spacing-vertical));
+}
+
+@media (max-width: 1200px) {
+  .stepByStepBox.col--8 {
+    flex: 0 0 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
+.stepByStep h2 {
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 996px) {
+  .stepByStep img {
+    display: none;
+  }
+}
+
+.stepByStepLink {
+  display: block;
+  margin-bottom: 0.4rem;
+
+  font-size: 0.9rem;
+}
+
+.stepByStepIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  padding: 4px;
+  margin-right: 1rem;
+
+  background: white;
+  border: 1px solid #35414A;
+  border-radius: 2px;
+}
+
+.stepByStepIcon svg {
+  display: 18px;
+  width: 143px;
+  height: 14px;
+  
+  color: #35414A;
 }
