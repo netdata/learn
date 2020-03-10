@@ -99,11 +99,11 @@ function normalizeLinks(pages) {
   return pages.map(page => {
     const tokens = path.parse(page.meta.path)
 
-    const body = page.body.replace(/\[(.*?)\]\((.*?)\)/g, (match, text, url) => {
+    const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
       const normalizedUrl = url.startsWith('http')
         ? url
-        : path.join('/', baseDir, tokens.dir, url)
-      return `[${text}](${normalizedUrl})`
+        : path.join('/', baseDir, tokens.dir, url).toLowerCase()
+      return `](${normalizedUrl})`
     })
 
     return {
@@ -113,6 +113,7 @@ function normalizeLinks(pages) {
   })
 }
 
+// rename readme after parent directory, then move it up a directory
 function renameReadmes(pages) {
   return pages.map(page => {
     const tokens = path.parse(page.meta.path)
@@ -121,8 +122,22 @@ function renameReadmes(pages) {
       ? tokens.dir + tokens.ext
       : page.meta.path
 
-    // TODO: update readme links
-    const body = page.body
+    const body = page.body.replace(/\]\((.*?)\)/g, (match, url) => {
+      if (url.startsWith('http')) return `](${url})`
+
+      // we need to extract any hash and querystring args
+      const parsedUrl = new URL(url, 'http://__FAKE__')
+
+      const urlTokens = path.parse(url)
+      const renameUrl = (
+        urlTokens.base.toLowerCase().startsWith('readme.md') &&
+        urlTokens.dir.length
+      )
+        ? urlTokens.dir + urlTokens.ext + parsedUrl.hash + parsedUrl.search
+        : url
+
+      return `](${renameUrl.toLowerCase()})`
+    })
 
     return {
       meta: {
