@@ -7,6 +7,10 @@ module.exports = {
   organizationName: 'netdata', // Usually your GitHub org/user name.
   projectName: 'netdata', // Usually your repo name.
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-64295674-3',
+      anonymizeIP: true,
+    },
     navbar: {
       title: 'Learn @ Netdata',
       logo: {
@@ -117,6 +121,7 @@ module.exports = {
     ],
   ],
   plugins: [
-    '@docusaurus/plugin-sitemap'
-  ]
+    '@docusaurus/plugin-sitemap',
+    // '@docusaurus/plugin-google-analytics'
+  ],
 };
