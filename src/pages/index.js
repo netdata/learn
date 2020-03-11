@@ -5,14 +5,14 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
-import { FiBox, FiAlertTriangle, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGrid, FiHardDrive, FiLock } from "react-icons/fi";
+import { FiBox, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGrid, FiHardDrive, FiLock } from "react-icons/fi";
 
 import CodeBlock from '@theme/CodeBlock'
 
-const tutorials = [
+const docs = [
   {
     title: <>Getting started guide</>,
-    href: 'docs/',
+    href: 'docs/getting-started',
     description: (
       <>
         Configure metrics retention, build streaming connections, collect metrics 
@@ -21,35 +21,58 @@ const tutorials = [
     ),
   },
   {
-    title: <>Tutorials</>,
-    href: 'tutorials/',
+    title: <>Configuration</>,
+    href: 'docs/configuration-guide',
     description: (
       <>
-        From beginner to expert sysadmin, our step-by-step tutorials give you the 
-        right foundational skills to monitor the health and performance of your 
-        systems and applications.
+        Use Netdata’s expansive customization possibilities to suit any service, any system, and any infrastructure.
       </>
     ),
   },
   {
-    title: <>Blog</>,
-    href: 'blog/',
+    title: <>Collect metrics</>,
+    href: 'docs/collectors',
     description: (
       <>
-        Read about releases, new features, and our vision for bringing real-time 
-        monitoring to every headless system in the world.
+        Add more charts to Netdata via its intelligent auto-detection of popular web servers, databases, mail servers, security apps, and dozens more.
+      </>
+    ),
+  },
+  {
+    title: <>Health monitoring</>,
+    href: 'docs/health',
+    description: (
+      <>
+        Tune existing alarms or create new ones, and enable any number of notification systems based on roles and severity.
+      </>
+    ),
+  },
+  {
+    title: <>Netdata Cloud</>,
+    href: 'docs/netdata-cloud',
+    description: (
+      <>
+        Learn how to view real-time, distributed health monitoring and performance troubleshooting data for all your systems in one place.
+      </>
+    ),
+  },
+  {
+    title: <>Custom dashboards</>,
+    href: 'docs/web/custom',
+    description: (
+      <>
+        Build bespoke dashboards with simple HTML and JavaScript to put all of your most important metrics in one easy-to-understand place.
       </>
     ),
   },
 ];
 
-function Feature({imageUrl, title, href, description}) {
-  const imgUrl = useBaseUrl(imageUrl);
+function DocBox({title, href, description}) {
   return (
-    <a href={href} className={classnames('col col--4', styles.feature)}>
+    <Link to={useBaseUrl(href)} className={classnames('col col--4', styles.docBox)}>
       <h3>{title}</h3>
       <p>{description}</p>
-    </a>
+    </Link>
   );
 }
 
@@ -112,10 +135,11 @@ function Home() {
     <Layout
       title={`All your monitoring education in one place. ${siteConfig.title}`}
       description="Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.">
-      <header className={classnames('hero', styles.heroBanner)}>
+      <header className={classnames(styles.hero)}>
         <div className={classnames('container')}>
           <div className={classnames('row')}>
             <div className={classnames('col col--6')}>
+              <span>Learn @ Netdata</span>
               <h1 className="hero__title">All your monitoring education in one place.</h1>
               <p className="hero__subtitle">Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.</p>
               <div className={styles.buttons}>
@@ -149,6 +173,7 @@ function Home() {
             <div className={classnames('row')}>
               <div className={classnames('col col--8')}>
                 <h2>Get Netdata on Linux with a one-liner</h2>
+                <p>Or choose the appropriate OS or alternative method for your system. 👉</p> 
                 <div className={styles.installSelection}>
                   <div className={styles.installCheckbox}>
                     <input 
@@ -169,7 +194,7 @@ function Home() {
                       onChange={handleStatisticsChange}
                       checked={statsChecked}
                       type="checkbox" id="toggle__stats" />
-                    <label htmlFor="toggle__stats">Do you you want to contribute anonymous statistics? <code>default: enabled</code></label>
+                    <label htmlFor="toggle__stats">Do you want to contribute anonymous statistics? <code>default: enabled</code></label>
                   </div>
                   <CodeBlock className={classnames('bash', styles.installCommand)} language={lang}>{currentCommand}</CodeBlock>
                   <p>Click <strong>Copy</strong>, paste into your system’s terminal, and hit <strong>Enter</strong>.</p>
@@ -177,7 +202,6 @@ function Home() {
                 </div>
               </div>
               <div className={classnames('col col--4', styles.installMethods)}>
-                <h3>Not on Linux? Want to try a different method?</h3>
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/packaging/installer/methods/packages')}>
@@ -223,78 +247,85 @@ function Home() {
         <section className={styles.stepByStep}>
           <div className={classnames('container')}>
             <div className={classnames('row')}>
-              <div className={classnames('col', styles.stepByStepBox)}>
+              <div className={classnames('col col--12')}>
                 <h2>Learn Netdata step-by-step</h2>
-                <div className={classnames('row')}>
-                  <div className={classnames('col col--4')}>
-                    <img src="img/index/step-by-step.png" />
-                  </div>
-                  <div className={classnames('col col--4')}>
-                    <StepByStepLink
-                      href="docs/step-by-step/step-01"
-                      icon={<FiBox />}
-                      title="Netdata's building blocks"
-                    />
-                    <StepByStepLink
-                      href="docs/step-by-step/step-02"
-                      icon={<FiHome />}
-                      title="Get to know Netdata's dashboard"
-                    />
-                    <StepByStepLink
-                      href="docs/step-by-step/step-03"
-                      icon={<FiServer />}
-                      title="Monitor more than one system with Netdata"
-                    />
-                    <StepByStepLink
-                      href="docs/step-by-step/step-04"
-                      icon={<FiSliders />}
-                      title="The basics of configuring Netdata"
-                    />
-                    <StepByStepLink
-                      href="docs/step-by-step/step-05"
-                      icon={<FiActivity />}
-                      title="Health monitoring alarms and notifications"
-                    />
-                    <StepByStepLink
-                      href="docs/step-by-step/step-06"
-                      icon={<FiCpu />}
-                      title="Collect metrics from more services and apps"
-                    />
-                    <StepByStepLink
-                      href="docs/step-by-step/step-07"
-                      icon={<FiMonitor />}
-                      title="Netdata’s dashboard in depth"
-                    />
-                    <StepByStepLink
-                      href="docs/step-by-step/step-08"
-                      icon={<FiGrid />}
-                      title="Building your first custom dashboard"
-                    />
-                    <StepByStepLink
-                      href="docs/step-by-step/step-09"
-                      icon={<FiHardDrive />}
-                      title="Long-term metrics storage"
-                    />
-                    <StepByStepLink
-                      href="docs/step-by-step/step-10"
-                      icon={<FiLock />}
-                      title="Set up a proxy"
-                    />
-                  </div>
-                  <div className={classnames('col col--4')}>
-                    <p>Take a guided tour through Netdata's core features, including its famous dashboard, creating new alarms, and collecting metrics from your favorite services and applications.</p>
-                    <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with health monitoring and performance troubleshooting.</p>
-                    <p>
-                      <Link
-                        to={useBaseUrl('docs/step-by-step/step-00')}
-                        className={classnames('button button--lg')}
-                      >
-                        Try the guide
-                      </Link>
-                    </p>
-                  </div>
-                </div>
               </div>
+              <div className={classnames('col col--4')}>
+                <img src="img/index/step-by-step.png" />
+              </div>
+              <div className={classnames('col col--4', styles.stepByStepLinks)}>
+                <StepByStepLink
+                  href="docs/step-by-step/step-01"
+                  icon={<FiBox />}
+                  title="Netdata's building blocks"
+                />
+                <StepByStepLink
+                  href="docs/step-by-step/step-02"
+                  icon={<FiHome />}
+                  title="Get to know Netdata's dashboard"
+                />
+                <StepByStepLink
+                  href="docs/step-by-step/step-03"
+                  icon={<FiServer />}
+                  title="Monitor more than one system with Netdata"
+                />
+                <StepByStepLink
+                  href="docs/step-by-step/step-04"
+                  icon={<FiSliders />}
+                  title="The basics of configuring Netdata"
+                />
+                <StepByStepLink
+                  href="docs/step-by-step/step-05"
+                  icon={<FiActivity />}
+                  title="Health monitoring alarms and notifications"
+                />
+                <StepByStepLink
+                  href="docs/step-by-step/step-06"
+                  icon={<FiCpu />}
+                  title="Collect metrics from more services and apps"
+                />
+                <StepByStepLink
+                  href="docs/step-by-step/step-07"
+                  icon={<FiMonitor />}
+                  title="Netdata’s dashboard in depth"
+                />
+                <StepByStepLink
+                  href="docs/step-by-step/step-08"
+                  icon={<FiGrid />}
+                  title="Building your first custom dashboard"
+                />
+                <StepByStepLink
+                  href="docs/step-by-step/step-09"
+                  icon={<FiHardDrive />}
+                  title="Long-term metrics storage"
+                />
+                <StepByStepLink
+                  href="docs/step-by-step/step-10"
+                  icon={<FiLock />}
+                  title="Set up a proxy"
+                />
+              </div>
+              <div className={classnames('col col--4')}>
+                <p>Take a guided tour through Netdata's core features, including its famous dashboard, creating new alarms, and collecting metrics from your favorite services and applications.</p>
+                <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with monitoring and troubleshooting.</p>
+                <p>
+                  <Link
+                    to={useBaseUrl('docs/step-by-step/step-00')}
+                    className={classnames('button button--lg')}
+                  >
+                    Try the guide
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className={styles.docs}>
+          <div className={classnames('container')}>
+            <div className={classnames('row')}>
+              {docs.map((props, idx) => (
+                <DocBox key={idx} {...props} />
+              ))}
             </div>
           </div>
         </section>
