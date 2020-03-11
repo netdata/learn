@@ -122,5 +122,5 @@ module.exports = {
   ],
   plugins: [
     '@docusaurus/plugin-sitemap'
-  ],
+  ]
 };
