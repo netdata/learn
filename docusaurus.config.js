@@ -121,7 +121,6 @@ module.exports = {
     ],
   ],
   plugins: [
-    '@docusaurus/plugin-sitemap',
-    // '@docusaurus/plugin-google-analytics'
+    '@docusaurus/plugin-sitemap'
   ],
 };
