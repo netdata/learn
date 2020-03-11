@@ -3,8 +3,8 @@ const frontmatter = require('front-matter')
 const fs = require('fs').promises
 const path = require('path')
 
+// TODO: /docs/docs still exist in links /docs/packaging/installer.md
 // TODO: strip github badges, see /docs/what-is-netdata
-// TODO: update readme links in renameReadmes()
 // TODO: allow excludes array from filterNodes
 // TODO: allow excludes array from clearDir
 // TODO: error handling
@@ -90,7 +90,7 @@ function moveDocs(pages) {
         ...page.meta,
         path: page.meta.path.startsWith('docs/') ? page.meta.path.slice(5) : page.meta.path
       },
-      body: page.body
+      body: page.body.replace(/\]\((.*?)docs\/(.*?)\)/gs, ']($1$2)')
     }
   })
 }
@@ -122,7 +122,7 @@ function renameReadmes(pages) {
       ? tokens.dir + tokens.ext
       : page.meta.path
 
-    const body = page.body.replace(/\]\((.*?)\)/g, (match, url) => {
+    const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
       if (url.startsWith('http')) return `](${url})`
 
       // we need to extract any hash and querystring args
