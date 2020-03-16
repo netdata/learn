@@ -12,17 +12,34 @@ module.exports = {
       anonymizeIP: true,
     },
     navbar: {
-      title: 'Learn @ Netdata',
+      title: '',
       logo: {
         alt: 'Netdata Learn logo',
         src: 'img/logo.svg',
       },
       links: [
-        {to: 'docs/introduction', label: 'Docs', position: 'left'},
-        {to: 'blog', label: 'Blog', position: 'left'},
+        {
+          to: '/', 
+          label: 'Learn', 
+          position: 'left'},
+        {
+          to: 'docs/introduction', 
+          label: 'Docs', 
+          position: 'left'
+        },
+        {
+          to: 'blog', 
+          label: 'Blog', 
+          position: 'left'
+        },
         {
           href: 'https://github.com/netdata/netdata',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://netdata.cloud',
+          label: 'Netdata',
           position: 'right',
         },
       ],
