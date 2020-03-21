@@ -1,5 +1,4 @@
 const axios = require('axios')
-const frontmatter = require('front-matter')
 const fs = require('fs').promises
 const path = require('path')
 
