@@ -6,7 +6,6 @@ const path = require('path')
 // TODO: strip github badges, see /docs/what-is-netdata
 // TODO: error handling
 // TODO: env for githubToken, warn if not present or rate limit is low (60, instead of 5000)
-// TODO: remove remarkable, yaml, frontmatter
 
 const githubToken = 'bb951397e6ba4934885c74242d9152183eb58646'
 const baseDir = './docs'
