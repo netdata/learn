@@ -7,7 +7,7 @@ const path = require('path')
 // TODO: error handling
 // TODO: env for githubToken, warn if not present or rate limit is low (60, instead of 5000)
 
-const githubToken = 'bb951397e6ba4934885c74242d9152183eb58646'
+const githubToken = process.env.GITHUB_TOKEN
 const baseDir = './docs'
 const outDir = path.join(__dirname, baseDir)
 // will not be cleared, relative to baseDir
@@ -276,4 +276,8 @@ async function ingest() {
   console.log(`Rate limit ${rateAfter.remaining} / ${rateAfter.limit} requests per hour remaining. Reset in ${rateAfter.resetMinutes} minutes.`)
 }
 
-ingest()
+if (githubToken) {
+  ingest()
+} else {
+  console.warn('Missing GITHUB_TOKEN environment variable. Rate limit will be reduced from 5000 to 60 requests per hour.')
+}
