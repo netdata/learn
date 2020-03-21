@@ -4,8 +4,6 @@ const fs = require('fs').promises
 const path = require('path')
 
 // TODO: strip github badges, see /docs/what-is-netdata
-// TODO: allow excludes array from filterNodes
-// TODO: allow excludes array from clearDir
 // TODO: error handling
 // TODO: env for githubToken, warn if not present or rate limit is low (60, instead of 5000)
 // TODO: remove remarkable, yaml, frontmatter
@@ -62,17 +60,11 @@ function prefixNodes(nodes, prefix) {
   })
 }
 
-function filterNodes(nodes) {
-  // TODO: allow excludes array
+function filterNodes(nodes, includePatterns=[], excludePatterns=[]) {
   return nodes.filter(node => (
     node.type === 'blob' && // include only files (blobs)
-    !node.path.startsWith('.') && // exclude dot folders
-    !node.path.startsWith('README.md') && // exclude root readme
-    !node.path.startsWith('docs/README.md') && // exclude /docs/readme
-    !node.path.startsWith('DOCUMENTATION.md') &&
-    !node.path.startsWith('HISTORICAL_CHANGELOG.md') &&
-    !node.path.startsWith('contrib/sles11/README.md') &&
-    node.path.match(/^[^\.].*?\.md$/) // include only markdown
+    includePatterns.every(p => node.path.match(p)) &&
+    excludePatterns.every(p => !node.path.match(p))
   ))
 }
 
@@ -226,8 +218,22 @@ async function ingest() {
 
   const combinedNodes = [...nodes, ...goPrefixedNodes]
 
-  const filteredNodes = filterNodes(combinedNodes)
+  const filteredNodes = filterNodes(
+    combinedNodes,
+    includePatterns=[
+      /^[^\.].*?\.md$/ // only markdown files
+    ],
+    excludePatterns=[
+      /^\./, // exclude dot files and directories
+      /^README\.md/, // exclude root readme
+      /docs\/README\.md/, // exclude /docs/readme
+      /DOCUMENTATION\.md/,
+      /HISTORICAL_CHANGELOG\.md/,
+      /contrib\/sles11\/README\.md/,
+    ]
+  )
   console.log(`Filtering ${combinedNodes.length} nodes to ${filteredNodes.length}`)
+  return
 
   console.log(`Fetching ${filteredNodes.length} pages...`)
   const fetchStartTime = new Date()
