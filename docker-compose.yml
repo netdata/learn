@@ -8,5 +8,6 @@ services:
     volumes:
       - .:/src
       - /src/node_modules
+    # see the README.md for instructions to set up a .env file
     env_file:
       - .env

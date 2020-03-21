@@ -5,12 +5,12 @@ const path = require('path')
 
 // TODO: strip github badges, see /docs/what-is-netdata
 // TODO: error handling
-// TODO: env for githubToken, warn if not present or rate limit is low (60, instead of 5000)
 
+// see the README.md for instructions to set up a github access token
 const githubToken = process.env.GITHUB_TOKEN
 const baseDir = './docs'
 const outDir = path.join(__dirname, baseDir)
-// will not be cleared, relative to baseDir
+// the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
 const retainPaths = [
   path.join(baseDir, 'introduction.md')
