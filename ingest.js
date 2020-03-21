@@ -3,7 +3,6 @@ const frontmatter = require('front-matter')
 const fs = require('fs').promises
 const path = require('path')
 
-// TODO: /docs/docs still exist in links /docs/packaging/installer.md
 // TODO: strip github badges, see /docs/what-is-netdata
 // TODO: allow excludes array from filterNodes
 // TODO: allow excludes array from clearDir
@@ -14,6 +13,10 @@ const path = require('path')
 const githubToken = 'bb951397e6ba4934885c74242d9152183eb58646'
 const baseDir = './docs'
 const outDir = path.join(__dirname, baseDir)
+// will not be cleared, relative to baseDir
+// necessary to keep local docs that are not fetched from other repos
+const retainFiles = ['./introduction.md']
+
 
 const ax = axios.create({
   baseURL: 'https://api.github.com/repos/netdata/',
@@ -149,9 +152,21 @@ function renameReadmes(pages) {
   })
 }
 
-async function clearDir(dir) {
-  // TODO: allow excludes array
-  return fs.rmdir(dir, { recursive: true })
+// retainPaths are relative to dir
+async function clearDir(dir, retainPaths=[]) {
+  // read all the files we want to keep into memory
+  const retainedFiles = await Promise.all(retainPaths.map(async p => {
+    const f = await fs.readFile(path.join(dir, p), { encoding: 'utf8' })
+    return [path.join(dir, p), f]
+  }))
+
+  await fs.rmdir(dir, { recursive: true })
+
+  // restore files from memory back to the file system
+  await Promise.all(retainedFiles.map(async ([p, f]) => {
+    await fs.mkdir(path.dirname(p), { recursive: true })
+    return fs.writeFile(p, f, { encoding: 'utf8' })
+  }))
 }
 
 function sanitize(doc) {
@@ -229,7 +244,12 @@ async function ingest() {
   const renamedPages = renameReadmes(normalizedPages)
 
   console.log('Clearing', baseDir)
-  await clearDir(baseDir)
+  await clearDir(baseDir, ['./introduction.md'])
+
+  console.log('Retained files...')
+  retainFiles.map(f => {
+    console.log(`  ${path.join(baseDir, f)}`)
+  })
 
   console.log(`Writing ${renamedPages.length} to ${baseDir}`)
   const writeStartTime = new Date()
