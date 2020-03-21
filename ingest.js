@@ -233,7 +233,6 @@ async function ingest() {
     ]
   )
   console.log(`Filtering ${combinedNodes.length} nodes to ${filteredNodes.length}`)
-  return
 
   console.log(`Fetching ${filteredNodes.length} pages...`)
   const fetchStartTime = new Date()
