@@ -12,6 +12,22 @@ Clone this repository.
     git clone <repo>
     cd netdata-learn-docusaurus
 
+Create a `.env` file in the project root. This file will be ignored by Git and
+should **NOT** be comitted as it will contain sensitive environment variables.
+
+    touch .env
+
+Edit the `.env` file and add the following.
+
+    GITHUB_TOKEN=<token>
+
+Generate a new GitHub personal access token [here](https://github.com/settings/tokens).
+
+- Set the token note as `netdata-learn`.
+- Check `repo`.
+- Click **Generate**.
+- Copy the token and replace `<token>` in the `.env` file with it.
+
 ## Development
 
 Build the Docker image.
