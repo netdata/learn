@@ -15,8 +15,9 @@ const baseDir = './docs'
 const outDir = path.join(__dirname, baseDir)
 // will not be cleared, relative to baseDir
 // necessary to keep local docs that are not fetched from other repos
-const retainFiles = ['./introduction.md']
-
+const retainPaths = [
+  path.join(baseDir, 'introduction.md')
+]
 
 const ax = axios.create({
   baseURL: 'https://api.github.com/repos/netdata/',
@@ -152,22 +153,27 @@ function renameReadmes(pages) {
   })
 }
 
-// retainPaths are relative to dir
-async function clearDir(dir, retainPaths=[]) {
-  // read all the files we want to keep into memory
-  const retainedFiles = await Promise.all(retainPaths.map(async p => {
-    const f = await fs.readFile(path.join(dir, p), { encoding: 'utf8' })
-    return [path.join(dir, p), f]
+// read files that we want to keep into memory
+async function retainFiles(retainPaths=[]) {
+  return Promise.all(retainPaths.map(async p => {
+    const f = await fs.readFile(p, { encoding: 'utf8' })
+    return [p, f]
   }))
+}
 
-  await fs.rmdir(dir, { recursive: true })
-
-  // restore files from memory back to the file system
-  await Promise.all(retainedFiles.map(async ([p, f]) => {
+// restore files from memory back to the file system
+// expects an array of arrays [[path, file], [path, file], ...]
+async function restoreFiles(files=[]) {
+  return Promise.all(files.map(async ([p, f]) => {
     await fs.mkdir(path.dirname(p), { recursive: true })
     return fs.writeFile(p, f, { encoding: 'utf8' })
   }))
 }
+
+async function clearDir(dir) {
+  await fs.rmdir(dir, { recursive: true })
+}
+
 
 function sanitize(doc) {
   // strip comment tags around frontmatter
@@ -243,13 +249,16 @@ async function ingest() {
   console.log(`Renaming README.md files`)
   const renamedPages = renameReadmes(normalizedPages)
 
+  console.log('Retaining files...')
+  retainPaths.map(f => console.log(`  ${f}`))
+  const retainedFiles = await retainFiles(retainPaths)
+
   console.log('Clearing', baseDir)
   await clearDir(baseDir, ['./introduction.md'])
 
-  console.log('Retained files...')
-  retainFiles.map(f => {
-    console.log(`  ${path.join(baseDir, f)}`)
-  })
+  console.log('Restoring files...')
+  retainedFiles.map(([p]) => console.log(`  ${p}`))
+  await restoreFiles(retainedFiles)
 
   console.log(`Writing ${renamedPages.length} to ${baseDir}`)
   const writeStartTime = new Date()
