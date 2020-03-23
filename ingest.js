@@ -200,11 +200,11 @@ async function writePages(pages) {
 
 async function ingest() {
   const rate = await getRateLimit()
-  console.log(`Rate limit ${rate.remaining} / ${rate.limit} requests per hour remaining. Reset in ${rate.resetMinutes} minutes.`)
+  console.log(`Rate limit ${rate.remaining} / ${rate.limit} requests per hour remaining. Resets at ${rate.date} (${rate.resetMinutes} minutes from now).`)
 
   // ensure we have enough remaining rate to perform node fetching
-  if (rate.remaining > 50) {
-    console.error('Rate limit reached. Exiting...')
+  if (rate.remaining < 50) {
+    console.error('Rate limit reached. Retry in ${rate.resetMinutes} minutes.')
     return
   }
 
