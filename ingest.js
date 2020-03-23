@@ -202,7 +202,8 @@ async function ingest() {
   const rate = await getRateLimit()
   console.log(`Rate limit ${rate.remaining} / ${rate.limit} requests per hour remaining. Reset in ${rate.resetMinutes} minutes.`)
 
-  if (rate.remaining === 0) {
+  // ensure we have enough remaining rate to perform node fetching
+  if (rate.remaining > 50) {
     console.error('Rate limit reached. Exiting...')
     return
   }
