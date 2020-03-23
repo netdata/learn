@@ -202,6 +202,11 @@ async function ingest() {
   const rate = await getRateLimit()
   console.log(`Rate limit ${rate.remaining} / ${rate.limit} requests per hour remaining. Reset in ${rate.resetMinutes} minutes.`)
 
+  if (rate.remaining === 0) {
+    console.error('Rate limit reached. Exiting...')
+    return
+  }
+
   console.log(`Fetching root SHA for 'netdata' repo...`)
   const rootSha = await getRootSha('netdata')
   console.log(`Fetching nodes from 'netdata' repo...`)
@@ -231,6 +236,11 @@ async function ingest() {
     ]
   )
   console.log(`Filtering ${combinedNodes.length} nodes to ${filteredNodes.length}`)
+
+  if (filteredNodes.length > rate.remaining) {
+    console.error(`Rate limit too low to fetch all documents. Retry in ${rate.resetMinutes} minutes.`)
+    return
+  }
 
   console.log(`Fetching ${filteredNodes.length} pages...`)
   const fetchStartTime = new Date()
