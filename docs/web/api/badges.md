@@ -1,4 +1,9 @@
-# Netdata badges
+---
+title: "Netdata badges"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/web/api/badges/README.md
+---
+
+
 
 **Badges are cool!**
 
@@ -20,7 +25,7 @@ Similarly, there is [a chart that shows outbound bandwidth per class](http://lon
 
 The right one is a **volume** calculation. Netdata calculated the total of the last 86.400 seconds (a day) which gives `kilobits`, then divided it by 8 to make it KB, then by 1024 to make it MB and then by 1024 to make it GB. Calculations like this are quite accurate, since for every value collected, every second, Netdata interpolates it to second boundary using microsecond calculations.
 
-Let's see a few more badge examples (they come from the [Netdata registry](../../../registry/)):
+Let's see a few more badge examples (they come from the [Netdata registry](/docs/registry/)):
 
 -   **cpu usage of user `root`** (you can pick any user; 100% = 1 core). This will be `green <10%`, `yellow <20%`, `orange <50%`, `blue <100%` (1 core), `red` otherwise (you define thresholds and colors on the URL).
 
@@ -293,7 +298,7 @@ These are options dedicated to badges:
 </script>
 ```
 
-A more advanced badges refresh method is to include `http://your.netdata.ip:19999/refresh-badges.js` in your page. For more information and use example, [check this](../../gui/refresh-badges.js).
+A more advanced badges refresh method is to include `http://your.netdata.ip:19999/refresh-badges.js` in your page. For more information and use example, [check this](/docs/web/gui/refresh-badges.js).
 
 ---
 
@@ -355,4 +360,4 @@ You can refresh them from your browser console though. Press F12 to open the web
 var len = document.images.length; while(len--) { document.images[len].src = document.images[len].src.replace(/\?cacheBuster=\d*/, "") + "?cacheBuster=" + new Date().getTime().toString(); };
 ```
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fweb%2Fapi%2Fbadges%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

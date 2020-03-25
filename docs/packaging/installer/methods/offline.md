@@ -1,4 +1,9 @@
-# Install Netdata on offline systems
+---
+title: "Install Netdata on offline systems"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md
+---
+
+
 
 You can install Netdata on systems without internet access, but you need to take a few extra steps to make it work.
 
@@ -69,8 +74,8 @@ bash kickstart.sh --local-files /tmp/netdata-version-number-here.tar.gz /tmp/sha
 bash kickstart-static64.sh --local-files /tmp/netdata-version-number-here.gz.run /tmp/sha256sums.txt
 ```
 
-Now that Netdata is installed, be sure to visit our [getting started guide](../../../docs/getting-started.md) for a
+Now that Netdata is installed, be sure to visit our [getting started guide](/docs/getting-started.md) for a
 quick overview of configuring Netdata, enabling plugins, and controlling Netdata's daemon. 
 
 Or, get the full guided tour of Netdata's capabilities with our [step-by-step
-tutorial](../../../docs/step-by-step/step-00.md)!
+tutorial](/docs/step-by-step/step-00.md)!

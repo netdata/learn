@@ -1,4 +1,9 @@
-# External build-system
+---
+title: "External build-system"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/build_external/README.md
+---
+
+
 
 This wraps the build-system in Docker so that the host system and the target system are
 decoupled. This allows:

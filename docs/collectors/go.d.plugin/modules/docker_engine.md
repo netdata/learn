@@ -1,6 +1,6 @@
-# Docker Engine monitoring with Netdata
 
-[`Docker Engine`](https://docs.docker.com/engine/) is the industry’s de facto container runtime that runs on various Linux (CentOS, Debian, Fedora, Oracle Linux, RHEL, SUSE, and Ubuntu) and Windows Server operating systems.
+
+[`Docker Engine`](https://docs.docker.com/engine/) is the industryâs de facto container runtime that runs on various Linux (CentOS, Debian, Fedora, Oracle Linux, RHEL, SUSE, and Ubuntu) and Windows Server operating systems.
 
 This module will monitor one or more `Docker Engines` applications, depending on your configuration.
 
@@ -27,7 +27,7 @@ If Docker is running in in [Swarm mode](https://docs.docker.com/engine/swarm/) a
 ## Configuration
 
 Edit the `go.d/docker_engine.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

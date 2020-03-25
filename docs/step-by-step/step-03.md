@@ -1,20 +1,25 @@
-# Step 3. Monitor more than one system with Netdata
+---
+title: "Step 3. Monitor more than one system with Netdata"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-03.md
+---
+
+
 
 The Netdata agent is _distributed_ by design. That means each agent operates independently from any other, collecting
 and creating charts only for the system you installed it on. We made this decision a long time ago to [improve security
-and performance](step-01.md).
+and performance](/docs/step-by-step/step-01.md).
 
 You might be thinking, "So, now I have to remember all these IP addresses, and type them into my browser
 manually, to move from one system to another? Maybe I should just make a bunch of bookmarks. What's a few more tabs
-on top of the hundred I have already? 🤬"
+on top of the hundred I have already? ð¤¬"
 
-We get it. That's why we built [Netdata Cloud](../netdata-cloud/README.md), which connects many distributed agents
+We get it. That's why we built [Netdata Cloud](/docs/netdata-cloud.md), which connects many distributed agents
 together for a seamless experience when monitoring multiple systems.
 
 All without remembering IPs or making a bunch of bookmarks.
 
 > If you're interested in streaming the metrics from one Netdata agent to another, that's unfortunately not part of this
-> tutorial. You'll want to reference our [streaming documentation](../../streaming/README.md) when you're finished with
+> tutorial. You'll want to reference our [streaming documentation](/streaming.md) when you're finished with
 > these steps.
 
 Even if you don't have multiple systems right now, keep reading. The instructions to follow will show you how to test
@@ -25,10 +30,10 @@ right away.
 
 In this step of the Netdata guid, we'll talk about the following:
 
--   [Why you should use Netdata Cloud](#why-use-netdata-cloud)
--   [Add nodes to your Netdata Cloud account](#add-nodes-to-your-netdata-cloud-account)
--   [Navigate between your nodes via the **My nodes** menu](#navigate-between-your-nodes-via-the-my-nodes-menu)
--   [Try out the Nodes View](#try-out-the-nodes-view)
+-   [Why you should use Netdata Cloud](/docs/step-by-step/#why-use-netdata-cloud)
+-   [Add nodes to your Netdata Cloud account](/docs/step-by-step/#add-nodes-to-your-netdata-cloud-account)
+-   [Navigate between your nodes via the **My nodes** menu](/docs/step-by-step/#navigate-between-your-nodes-via-the-my-nodes-menu)
+-   [Try out the Nodes View](/docs/step-by-step/#try-out-the-nodes-view)
 
 ## Why use Netdata Cloud?
 
@@ -113,7 +118,7 @@ Nodes View is a feature built in to Netdata Cloud that offers a different interf
 multiple nodes.
 
 > Learn more about all the features within Nodes View and what charts/metrics are represented there in our
-> [documentation](../netdata-cloud/nodes-view.md).
+> [documentation](/docs/netdata-cloud/nodes-view.md).
 
 You can visit Nodes View by navigating to `https://netdata.cloud/console` in your browser. Or, you can click on the
 **Nodes View** button in any Netdata dashboard. If you're not logged in to Netdata Cloud yet, you'll be asked to log in
@@ -132,7 +137,7 @@ overview** sidebar.
 mp4](https://user-images.githubusercontent.com/1153921/65067327-192a2100-d93b-11e9-9824-80e142ac62c5.gif)
 
 You can also view raised alarms and see real-time metrics from a [select number of
-services/applications](../netdata-cloud/nodes-view.md#services-available-in-the-nodes-view) using the various tabs
+services/applications](/docs/netdata-cloud/nodes-view.md#services-available-in-the-nodes-view) using the various tabs
 available in the node overview sidebar.
 
 If you add a large number of nodes to the Nodes View, you may want to look into the different view and sorting options.
@@ -165,4 +170,4 @@ Now that you know how to add multiple nodes to your Netdata Cloud agent and navi
 more about how you can configure Netdata to your liking. From there, you'll be able to customize your Netdata experience
 to your exact infrastructure and the information you need.
 
-[Next: The basics of configuring Netdata &rarr;](step-04.md)
+[Next: The basics of configuring Netdata &rarr;](/docs/step-by-step/step-04.md)

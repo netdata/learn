@@ -1,6 +1,11 @@
-# What is Netdata?
+---
+title: "What is Netdata?"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/what-is-netdata.md
+---
 
-[![Build Status](https://travis-ci.com/netdata/netdata.svg?branch=master)](https://travis-ci.com/netdata/netdata) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2231/badge)](https://bestpractices.coreinfrastructure.org/projects/2231) [![License: GPL v3+](https://img.shields.io/badge/License-GPL%20v3%2B-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Freadme&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+
+
+[![Build Status](https://travis-ci.com/netdata/netdata.svg?branch=master)](https://travis-ci.com/netdata/netdata) [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2231/badge)](https://bestpractices.coreinfrastructure.org/projects/2231) [![License: GPL v3+](https://img.shields.io/badge/License-GPL%20v3%2B-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Freadme&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](/docs/<>)
 
 [![Code Climate](https://codeclimate.com/github/netdata/netdata/badges/gpa.svg)](https://codeclimate.com/github/netdata/netdata) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a994873f30d045b9b4b83606c3eb3498)](https://www.codacy.com/app/netdata/netdata?utm_source=github.com&utm_medium=referral&utm_content=netdata/netdata&utm_campaign=Badge_Grade) [![LGTM C](https://img.shields.io/lgtm/grade/cpp/g/netdata/netdata.svg?logo=lgtm)](https://lgtm.com/projects/g/netdata/netdata/context:cpp) [![LGTM JS](https://img.shields.io/lgtm/grade/javascript/g/netdata/netdata.svg?logo=lgtm)](https://lgtm.com/projects/g/netdata/netdata/context:javascript) [![LGTM PYTHON](https://img.shields.io/lgtm/grade/python/g/netdata/netdata.svg?logo=lgtm)](https://lgtm.com/projects/g/netdata/netdata/context:python)
 
@@ -43,7 +48,7 @@ We provide docker images for the most common architectures. These are statistics
 
 ### Registry
 
-When you install multiple Netdata, they are integrated into **one distributed application**, via a [Netdata registry](../registry/). This is a web browser feature and it allows us to count the number of unique users and unique Netdata servers installed. The following information comes from the global public Netdata registry we run:
+When you install multiple Netdata, they are integrated into **one distributed application**, via a [Netdata registry](/registry/). This is a web browser feature and it allows us to count the number of unique users and unique Netdata servers installed. The following information comes from the global public Netdata registry we run:
 
 [![User Base](https://registry.my-netdata.io/api/v1/badge.svg?chart=netdata.registry_entries&dimensions=persons&label=user%20base&units=M&value_color=blue&precision=2&divide=1000000&v43)](https://registry.my-netdata.io/#menu_netdata_submenu_registry) [![Monitored Servers](https://registry.my-netdata.io/api/v1/badge.svg?chart=netdata.registry_entries&dimensions=machines&label=servers%20monitored&units=k&divide=1000&value_color=orange&precision=2&v43)](https://registry.my-netdata.io/#menu_netdata_submenu_registry) [![Sessions Served](https://registry.my-netdata.io/api/v1/badge.svg?chart=netdata.registry_sessions&label=sessions%20served&units=M&value_color=yellowgreen&precision=2&divide=1000000&v43)](https://registry.my-netdata.io/#menu_netdata_submenu_registry)
 
@@ -91,12 +96,12 @@ This is how it works:
 
 |Function|Description|Documentation|
 |:------:|:----------|:-----------:|
-|**Collect**|Multiple independent data collection workers are collecting metrics from their sources using the optimal protocol for each application and push the metrics to the database. Each data collection worker has lockless write access to the metrics it collects.|[`collectors`](../collectors/)|
-|**Store**|Metrics are stored in RAM in a round robin database (ring buffer), using a custom made floating point number for minimal footprint.|[`database`](../database/)|
-|**Check**|A lockless independent watchdog is evaluating **health checks** on the collected metrics, triggers alarms, maintains a health transaction log and dispatches alarm notifications.|[`health`](../health/)|
-|**Stream**|An lockless independent worker is streaming metrics, in full detail and in real-time, to remote Netdata servers, as soon as they are collected.|[`streaming`](../streaming/)|
-|**Archive**|A lockless independent worker is down-sampling the metrics and pushes them to **backend** time-series databases.|[`backends`](../backends/)|
-|**Query**|Multiple independent workers are attached to the [internal web server](../web/server/), servicing API requests, including [data queries](../web/api/queries/README.md).|[`web/api`](../web/api/)|
+|**Collect**|Multiple independent data collection workers are collecting metrics from their sources using the optimal protocol for each application and push the metrics to the database. Each data collection worker has lockless write access to the metrics it collects.|[`collectors`](/collectors/)|
+|**Store**|Metrics are stored in RAM in a round robin database (ring buffer), using a custom made floating point number for minimal footprint.|[`database`](/database/)|
+|**Check**|A lockless independent watchdog is evaluating **health checks** on the collected metrics, triggers alarms, maintains a health transaction log and dispatches alarm notifications.|[`health`](/health/)|
+|**Stream**|An lockless independent worker is streaming metrics, in full detail and in real-time, to remote Netdata servers, as soon as they are collected.|[`streaming`](/streaming/)|
+|**Archive**|A lockless independent worker is down-sampling the metrics and pushes them to **backend** time-series databases.|[`backends`](/backends/)|
+|**Query**|Multiple independent workers are attached to the [internal web server](/web/server/), servicing API requests, including [data queries](/web/api/queries.md).|[`web/api`](/web/api/)|
 
 The result is a highly efficient, low latency system, supporting multiple readers and one writer on each metric.
 
@@ -118,7 +123,7 @@ This is what you should expect from Netdata:
 -   **1s granularity** - the highest possible resolution for all metrics.
 -   **Unlimited metrics** - collects all the available metrics, the more the better.
 -   **1% CPU utilization of a single core** - it is super fast, unbelievably optimized.
--   **A few MB of RAM** - by default it uses 25MB RAM. [You size it](../database).
+-   **A few MB of RAM** - by default it uses 25MB RAM. [You size it](/database).
 -   **Zero disk I/O** - while it runs, it does not load or save anything (except `error` and `access` logs).
 -   **Zero configuration** - auto-detects everything, it can collect up to 10000 metrics per server out of the box.
 -   **Zero maintenance** - You just run it, it does the rest.
@@ -129,18 +134,18 @@ This is what you should expect from Netdata:
 ### Health Monitoring & Alarms
 
 -   **Sophisticated alerting** - comes with hundreds of alarms, **out of the box**! Supports dynamic thresholds, hysteresis, alarm templates, multiple role-based notification methods.
--   **Notifications**: [alerta.io](../health/notifications/alerta/), [amazon sns](../health/notifications/awssns/), [discordapp.com](../health/notifications/discord/), [email](../health/notifications/email/), [flock.com](../health/notifications/flock/), [irc](../health/notifications/irc/), [kavenegar.com](../health/notifications/kavenegar/), [messagebird.com](../health/notifications/messagebird/), [pagerduty.com](../health/notifications/pagerduty/), [prowl](../health/notifications/prowl/), [pushbullet.com](../health/notifications/pushbullet/), [pushover.net](../health/notifications/pushover/), [rocket.chat](../health/notifications/rocketchat/), [slack.com](../health/notifications/slack/), [smstools3](../health/notifications/smstools3/), [syslog](../health/notifications/syslog/), [telegram.org](../health/notifications/telegram/), [twilio.com](../health/notifications/twilio/), [web](../health/notifications/web/) and [custom notifications](../health/notifications/custom/).
+-   **Notifications**: [alerta.io](/health/notifications/alerta/), [amazon sns](/health/notifications/awssns/), [discordapp.com](/health/notifications/discord/), [email](/health/notifications/email/), [flock.com](/health/notifications/flock/), [irc](/health/notifications/irc/), [kavenegar.com](/health/notifications/kavenegar/), [messagebird.com](/health/notifications/messagebird/), [pagerduty.com](/health/notifications/pagerduty/), [prowl](/health/notifications/prowl/), [pushbullet.com](/health/notifications/pushbullet/), [pushover.net](/health/notifications/pushover/), [rocket.chat](/health/notifications/rocketchat/), [slack.com](/health/notifications/slack/), [smstools3](/health/notifications/smstools3/), [syslog](/health/notifications/syslog/), [telegram.org](/health/notifications/telegram/), [twilio.com](/health/notifications/twilio/), [web](/health/notifications/web/) and [custom notifications](/health/notifications/custom/).
 
 ### Integrations
 
--   **time-series dbs** - can archive its metrics to **Graphite**, **OpenTSDB**, **Prometheus**, **AWS Kinesis**, **JSON document DBs**, in the same or lower resolution (lower: to prevent it from congesting these servers due to the amount of data collected). Netdata also supports **Prometheus remote write API** which allows storing metrics to **Elasticsearch**, **Gnocchi**, **InfluxDB**, **Kafka**, **PostgreSQL/TimescaleDB**, **Splunk**, **VictoriaMetrics** and a lot of other [storage providers](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage).
+-   **time-series dbs** - can archive its metrics to **Graphite**, **OpenTSDB**, **Prometheus**, **AWS Kinesis**, **JSON document DBs**, in the same or lower resolution (lower: to prevent it from congesting these servers due to the amount of data collected). Netdata also supports **Prometheus remote write API** which allows storing metrics to **Elasticsearch**, **Gnocchi**, **InfluxDB**, **Kafka**, **PostgreSQL/TimescaleDB**, **Splunk**, **VictoriaMetrics** and a lot of other [storage providers](https://prometheus.io/operating/integrations/#remote-endpoints-and-storage).
 
 ## Visualization
 
 -   **Stunning interactive dashboards** - mouse, touchpad and touch-screen friendly in 2 themes: `slate` (dark) and `white`.
 -   **Amazingly fast visualization** - responds to all queries in less than 1 ms per metric, even on low-end hardware.
 -   **Visual anomaly detection** - the dashboards are optimized for detecting anomalies visually.
--   **Embeddable** - its charts can be embedded on your web pages, wikis and blogs. You can even use [Atlassian's Confluence as a monitoring dashboard](../web/gui/confluence/).
+-   **Embeddable** - its charts can be embedded on your web pages, wikis and blogs. You can even use [Atlassian's Confluence as a monitoring dashboard](/web/gui/confluence/).
 -   **Customizable** - custom dashboards can be built using simple HTML (no javascript necessary).
 
 ### Positive and negative values
@@ -167,7 +172,7 @@ Charts on Netdata dashboards are synchronized to each other. There is no master 
 
 _Charts are panned by dragging them with the mouse. Charts can be zoomed in/out with`SHIFT` + `mouse wheel` while the mouse pointer is over a chart._
 
-> The visible time-frame (pan and zoom) is propagated from Netdata server to Netdata server, when navigating via the [node menu](../registry#registry).
+> The visible time-frame (pan and zoom) is propagated from Netdata server to Netdata server, when navigating via the [node menu](/registry#registry).
 
 ### Highlighted time-frame
 
@@ -177,25 +182,25 @@ To improve visual anomaly detection across charts, the user can highlight a time
 
 _A highlighted time-frame can be given by pressing `ALT` + `mouse selection` on any chart. Netdata will highlight the same range on all charts._
 
-> Highlighted ranges are propagated from Netdata server to Netdata server, when navigating via the [node menu](../registry#registry).
+> Highlighted ranges are propagated from Netdata server to Netdata server, when navigating via the [node menu](/registry#registry).
 
 ## What Netdata monitors
 
 Netdata can collect metrics from 200+ popular services and applications, on top of dozens of system-related metrics
 jocs, such as CPU, memory, disks, filesystems, networking, and more. We call these **collectors**, and they're managed
-by [**plugins**](../collectors/plugins.d/), which support a variety of programming languages, including Go and Python.
+by [**plugins**](/collectors/plugins.d/), which support a variety of programming languages, including Go and Python.
 
 Popular collectors include **Nginx**, **Apache**, **MySQL**, **statsd**, **cgroups** (containers, Docker, Kubernetes,
 LXC, and more), **Traefik**, **web server `access.log` files**, and much more. 
 
-See the **full list of [supported collectors](../collectors/COLLECTORS.md)**.
+See the **full list of [supported collectors](/collectors/collectors.md)**.
 
 Netdata's data collection is **extensible**, which means you can monitor anything you can get a metric for. You can even
-write a collector for your custom application using our [plugin API](../collectors/plugins.d/README.md).
+write a collector for your custom application using our [plugin API](/collectors/plugins.d.md).
 
 ## Community
 
-We welcome [contributions](../CONTRIBUTING.md). So, feel free to join the team.
+We welcome [contributions](/contributing.md). So, feel free to join the team.
 
 To report bugs, or get help, use [GitHub Issues](https://github.com/netdata/netdata/issues).
 
@@ -209,6 +214,6 @@ You can also find Netdata on:
 
 ## License
 
-Netdata is [GPLv3+](../LICENSE).
+Netdata is [GPLv3+](/license).
 
-Netdata re-distributes other open-source tools and libraries. Please check the [third party licenses](../REDISTRIBUTED.md).
+Netdata re-distributes other open-source tools and libraries. Please check the [third party licenses](/redistributed.md).

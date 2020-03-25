@@ -1,27 +1,32 @@
-# Netdata style guide
+---
+title: "Netdata style guide"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md
+---
+
+
 
 This in-progress style guide establishes editorial guidelines for anyone who wants to write documentation for Netdata
 products.
 
 ## Table of contents
 
--   [Welcome!](#welcome)
--   [Goals of the Netdata style guide](#goals-of-the-Netdata-style-guide)
--   [General principles](#general-principles)
--   [Tone and content](#tone-and-content)
--   [Language and grammar](#language-and-grammar)
--   [Markdown syntax](#markdown-syntax)
--   [Accessibility](#accessibility)
+-   [Welcome!](/docs/contributing/#welcome)
+-   [Goals of the Netdata style guide](/docs/contributing/#goals-of-the-netdata-style-guide)
+-   [General principles](/docs/contributing/#general-principles)
+-   [Tone and content](/docs/contributing/#tone-and-content)
+-   [Language and grammar](/docs/contributing/#language-and-grammar)
+-   [Markdown syntax](/docs/contributing/#markdown-syntax)
+-   [Accessibility](/docs/contributing/#accessibility)
 
 ## Welcome
 
 Proper documentation is essential to the success of any open-source project. Netdata is no different. The health of our
 monitoring agent, and the community it's created, depends on this effort.
 
-We’re here to make developers, sysadmins, and DevOps engineers better at their jobs, after all!
+Weâre here to make developers, sysadmins, and DevOps engineers better at their jobs, after all!
 
 We welcome contributions to Netdata's documentation. Begin with the [contributing to documentation
-guide](contributing-documentation.md), followed by this style guide.
+guide](/docs/contributing/contributing-documentation.md), followed by this style guide.
 
 ## Goals of the Netdata style guide
 
@@ -50,30 +55,30 @@ Yes, this style guide is pretty overwhelming! Establishing standards for a globa
 
 Here's a few key points to start with. Where relevant, they link to more in-depth information about a given rule.
 
-**[Tone and content](#tone-and-content)**:
+**[Tone and content](/docs/contributing/#tone-and-content)**:
 
--   Be [conversational and friendly](#conversational-and-friendly-tone).
--   Write [concisely](#write-concisely).
--   Don't use words like **here** when [creating hyperlinks](#use-informational-hyperlinks).
--   Don't mention [future releases or features](#mentioning-future-releases-or-features) in documentation.
+-   Be [conversational and friendly](/docs/contributing/#conversational-and-friendly-tone).
+-   Write [concisely](/docs/contributing/#write-concisely).
+-   Don't use words like **here** when [creating hyperlinks](/docs/contributing/#use-informational-hyperlinks).
+-   Don't mention [future releases or features](/docs/contributing/#mentioning-future-releases-or-features) in documentation.
 
-**[Language and grammar](#language-and-grammar)**:
+**[Language and grammar](/docs/contributing/#language-and-grammar)**:
 
--   [Capitalize words](#capitalization) at the beginning of sentences, for proper nouns, and at the beginning of
+-   [Capitalize words](/docs/contributing/#capitalization) at the beginning of sentences, for proper nouns, and at the beginning of
     document titles and section headers.
--   Use [second person](#second-person)—"you" rather than "we"—when giving instructions.
--   Use [active voice](#active-voice) to make clear who or what is performing an action.
--   Always employ an [Oxford comma](#oxford-comma) on lists.
+-   Use [second person](/docs/contributing/#second-person)â"you" rather than "we"âwhen giving instructions.
+-   Use [active voice](/docs/contributing/#active-voice) to make clear who or what is performing an action.
+-   Always employ an [Oxford comma](/docs/contributing/#oxford-comma) on lists.
 
-**[Markdown syntax](#markdown-syntax)**:
+**[Markdown syntax](/docs/contributing/#markdown-syntax)**:
 
--   [Reference UI elements](#references-to-ui-elements) with bold text.
--   Use our [built-in syntax highlighter](#language-specific-syntax-highlighting-in-code-blocks) to improve the
+-   [Reference UI elements](/docs/contributing/#references-to-ui-elements) with bold text.
+-   Use our [built-in syntax highlighter](/docs/contributing/#language-specific-syntax-highlighting-in-code-blocks) to improve the
     readability and usefulness of code blocks.
 
-**[Accessibility](#accessibility)**:
+**[Accessibility](/docs/contributing/#accessibility)**:
 
--   Include [alt tags on images](#images).
+-   Include [alt tags on images](/docs/contributing/#images).
 
 ---
 
@@ -137,7 +142,7 @@ and concisely as you can.
 
 > White-box monitoring: Monitoring of a system or application based on the metrics it directly exposes, such as logs.
 
-Avoid emojis whenever possible for the same reasons—they can be difficult to understand immediately and don't translate
+Avoid emojis whenever possible for the same reasonsâthey can be difficult to understand immediately and don't translate
 well.
 
 ### Mentioning future releases or features
@@ -226,7 +231,7 @@ Use active voice instead of passive voice, because active voice is more concise 
 When using voice, the subject of the sentence is performing the action. In passive voice, the subject is being acted
 upon. A famous example of passive voice is the phrase "mistakes were made."
 
-```
+```plain
 # Not recommended (passive)
 When an alarm is triggered by a metric, a notification is sent by Netdata...
 
@@ -236,7 +241,7 @@ When a metric triggers an alarm, Netdata sends a notification...
 
 ### Standard American spelling
 
-While the Netdata team is mostly *not* American, we still aspire to use American spelling whenever possible, as it is
+While the Netdata team is mostly _not_ American, we still aspire to use American spelling whenever possible, as it is
 more commonly used within the monitoring industry.
 
 ### Clause order
@@ -244,7 +249,7 @@ more commonly used within the monitoring industry.
 If you want to instruct your reader to take some action in a particular circumstance, such as optional steps, the
 beginning of the sentence should indicate that circumstance.
 
-```
+```markup
 # Not recommended
 Read the reference guide if you'd like to learn more about custom dashboards.
 
@@ -253,19 +258,43 @@ If you'd like to learn more about custom dashboards, read the reference guide.
 ```
 
 By placing the circumstance at the beginning of the sentence, those who don't want to follow can stop reading and move
-on. Those who *do* want to read it are less likely to skip over the sentence.
+on. Those who _do_ want to read it are less likely to skip over the sentence.
 
 ### Oxford comma
 
 The Oxford comma is the comma used after the second-to-last item in a list of three or more items. It appears just
 before "and" or "or."
 
-```
+```markup
 # Not recommended
 Netdata can monitor RAM, disk I/O, MySQL queries per second and lm-sensors.
 
 # Recommended
 Netdata can monitor RAM, disk I/O, MySQL queries per second, and lm-sensors.
+```
+
+### Abbreviations (acronyms and initialisms)
+
+Use abbreviations (including [acronyms and initialisms](https://www.dictionary.com/e/acronym-vs-abbreviation/)) in
+documentation when one exists, when it's widely-accepted within the monitoring/sysadmin community, and when it improves
+the readability of a document.
+
+When introducing an abbreviation to a document for the first time, give the reader both the spelled-out version and the
+shortened version at the same time. For example:
+
+```markup
+You can use Netdata to monitor Extended Berkeley Packet Filter (eBPF) metrics in real-time.
+```
+
+After you define an abbreviation, don't switch back and forthâuse only the abbreviation for the rest of the document.
+
+You can also use abbreviations in a document's title to keep the title short and relevant. If you do this, you should
+still introduce the spelled-out name alongside the abbreviation as soon as possible.
+
+```markup
+# Monitoring HDFS with Netdata
+
+You can now use Netdata to collect real-time metrics from your Hadoop Distributed File System (HDFS).
 ```
 
 ## Markdown syntax
@@ -293,11 +322,9 @@ Click on the **Sign in** button.
 !!! note Whenever possible, avoid using directional language to orient readers, because not every reader can use
     instructions like "look at the top-left corner" to find their way around an interface.
 
-```
-If you feel that you must use directional language, perhaps use an [image](#images) (with proper alt text) instead.
+If you feel that you must use directional language, perhaps use an [image](/docs/contributing/#images) (with proper alt text) instead.
 
 We're also working to establish standards for how we refer to certain elements of the Netdata's web interface. We'll include that in this style guide as soon as it's complete.
-```
 
 ### Language-specific syntax highlighting in code blocks
 
@@ -313,7 +340,7 @@ no language is specified, the Highlight extension doesn't apply syntax highlight
 Include the language directly after the three backticks (```` ``` ````) that start the code block. For highlighting C
 code, for example:
 
-````
+````c
 ```c
 inline char *health_stock_config_dir(void) {
     char buffer[FILENAME_MAX + 1];
@@ -347,7 +374,7 @@ Or, multiple lines: `hl_lines="1 2 4 12`.
 ## Accessibility
 
 Netdata's documentation should be as accessible as possible to as many people as possible. While the rules about [tone
-and content](#tone-and-content) and [language and grammar](#language-and-grammar) are helpful to an extent, we also need
+and content](/docs/contributing/#tone-and-content) and [language and grammar](/docs/contributing/#language-and-grammar) are helpful to an extent, we also need
 some additional rules to improve the reading experience for all readers.
 
 ### Images
@@ -362,11 +389,11 @@ text-based instructions to ensure that every reader can access the information i
 Provide alt text for every image you include in Netdata's documentation. It should summarize the intent and content of
 the image.
 
-In Markdown, use the standard image syntax, `![]()`, and place the alt text between the brackets `[]`. Here's an example
+In Markdown, use the standard image syntax, `![](/docs/contributing)`, and place the alt text between the brackets `[]`. Here's an example
 using our logo:
 
 ```
-![The Netdata logo](../../web/gui/images/netdata-logomark.svg)
+![The Netdata logo](/web/gui/images/netdata-logomark.svg)
 ```
 
 #### Images of text
@@ -374,4 +401,4 @@ using our logo:
 Don't use images of text, code samples, or terminal output. Instead, put that text content in a code block so that all
 devices can render it clearly and screen readers can parse it.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fcontributing%2Fstyle-guide&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

@@ -1,4 +1,9 @@
-# prowl
+---
+title: "prowl"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/prowl/README.md
+---
+
+
 
 (Prowl)[1] is a push notification service for iOS devices.  Netdata
 supprots delivering notifications to iOS devices through Prowl.

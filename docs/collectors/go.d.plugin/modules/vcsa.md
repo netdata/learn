@@ -1,6 +1,6 @@
-# vCenter Server Appliance monitoring with Netdata
 
-The [`vCenter Server Appliance`](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vcsa.doc/GUID-223C2821-BD98-4C7A-936B-7DBE96291BA4.html) using [`Health API`](https://code.vmware.com/apis/60/vcenter-server-appliance-management) is a preconfigured Linux virtual machine, which is optimized for running VMware vCenter Server® and the associated services on Linux.
+
+The [`vCenter Server Appliance`](https://docs.vmware.com/en/VMware-vSphere/6.5/com.vmware.vsphere.vcsa.doc/GUID-223C2821-BD98-4C7A-936B-7DBE96291BA4.html) using [`Health API`](https://code.vmware.com/apis/60/vcenter-server-appliance-management) is a preconfigured Linux virtual machine, which is optimized for running VMware vCenter ServerÂ® and the associated services on Linux.
 
 This module collects health statistics from one or more `vCenter Server Appliance` servers, depending on your configuration.
 
@@ -52,7 +52,7 @@ Software Updates Health:
 ## Configuration
 
 Edit the `go.d/vsca.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

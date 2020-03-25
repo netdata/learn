@@ -1,24 +1,22 @@
 ---
-title: Health quickstart
-description: "In this getting started guide, you'll learn the basics of editing health configuration files, then 
-customize alarms to your heart's content."
+title: "Health quickstart"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/QUICKSTART.md
 ---
 
-# Health quickstart
+
 
 In this getting started guide, you'll learn the basics of editing health configuration files. With this knowledge, you
 will be able to customize how and when Netdata triggers alarms based on the health and performance of your system or
 infrastructure.
 
-To learn about more advanced health configurations, visit the [health reference guide](REFERENCE.md).
+To learn about more advanced health configurations, visit the [health reference guide](/docs/health/reference.md).
 
 ## What's in this getting started guide
 
--   [Edit health configuration files](#edit-health-configuration-files)
--   [Reference Netdata's stock health configuration files](#reference-netdatas-stock-health-configuration-files)
--   [Write a new health entity](#write-a-new-health-entity)
--   [Reload health configuration](#reload-health-configuration)
+-   [Edit health configuration files](/docs/health/#edit-health-configuration-files)
+-   [Reference Netdata's stock health configuration files](/docs/health/#reference-netdatas-stock-health-configuration-files)
+-   [Write a new health entity](/docs/health/#write-a-new-health-entity)
+-   [Reload health configuration](/docs/health/#reload-health-configuration)
 
 ## Edit health configuration files
 
@@ -37,15 +35,15 @@ cd /etc/netdata/ # Replace with your Netdata configuration directory, if not /et
 > You may need to use `sudo` or another method of elevating your privileges: `sudo ./edit-config health.d/cpu.conf`.
 >
 > You can also use the `$EDITOR` environment variable to use your preferred terminal editor with `edit-config`. See 
-> [this page](../docs/step-by-step/step-04.md#use-edit-config-to-open-netdataconf) for details.
+> [this page](/docs/step-by-step/step-04.md#use-edit-config-to-open-netdataconf) for details.
 
 Each health configuration file contains one or more health entities, which always begin with an `alarm:` or `template:`
 line. You can edit these entities based on your needs. To make any changes live, be sure to [reload your health
-configuration](#reload-health-configuration).
+configuration](/docs/health/#reload-health-configuration).
 
 ## Reference Netdata's stock health configuration files
 
-While you should always [use `edit-config`](#edit-health-configuration-files), you might also want to view the stock
+While you should always [use `edit-config`](/docs/health/#edit-health-configuration-files), you might also want to view the stock
 health configuration files Netdata ships with. Stock files can be useful as reference material, or to determine which
 file you should edit with `edit-config`.
 
@@ -70,8 +68,8 @@ apache.conf fronius.conf mysql.conf swap.conf
 ...
 ```
 
-> ⚠️ If you edit configuration files in your stock health configuration directory, Netdata will overwrite them during
-> any updates. Please use `edit-config` as described in the [section above](#edit-health-configuration-files).
+> â ï¸ If you edit configuration files in your stock health configuration directory, Netdata will overwrite them during
+> any updates. Please use `edit-config` as described in the [section above](/docs/health/#edit-health-configuration-files).
 
 ## Write a new health entity
 
@@ -138,11 +136,11 @@ killall -USR2 netdata
 
 ## What's next?
 
-To learn about all of Netdata's health configuration options, view the [reference guide](REFERENCE.md).
+To learn about all of Netdata's health configuration options, view the [reference guide](/docs/health/reference.md).
 
-Or, get guided insights into specific health configurations with our [health tutorials](README.md#tutorials).
+Or, get guided insights into specific health configurations with our [health tutorials](/docs/health.md#tutorials#tutorials).
 
-Finally, move on to Netdata's [notification system](notifications/README.md) to learn more about how Netdata can let you
+Finally, move on to Netdata's [notification system](/docs/health/notifications.md) to learn more about how Netdata can let you
 know when the health of your systems or apps goes awry.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fhealth%2Fquickstart%2F&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

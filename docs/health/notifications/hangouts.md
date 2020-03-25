@@ -1,4 +1,9 @@
-# Hangouts Chat
+---
+title: "Hangouts Chat"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/hangouts/README.md
+---
+
+
 
 This is what you will get:
 ![Netdata on Hangouts](https://user-images.githubusercontent.com/1153921/66427166-47de6900-e9c8-11e9-8322-b4b03f084dc1.png)

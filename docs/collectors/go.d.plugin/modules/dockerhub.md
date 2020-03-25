@@ -1,4 +1,4 @@
-# Docker Hub repositories monitoring with Netdata
+
 
 [`Docker Hub`](https://docs.docker.com/docker-hub/) is a service provided by Docker for finding and sharing container images with your team.
  
@@ -18,7 +18,7 @@ It produces the following charts:
 ## Configuration
 
 Edit the `go.d/dockerhub.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

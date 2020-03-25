@@ -1,12 +1,17 @@
-# Registry
+---
+title: "Registry"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/registry/README.md
+---
+
+
 
 The Netdata registry implements the node menu on the top left corner of the Netdata dashboards and enables the Netdata
 cloud features, such as the node view. The node menu lists the Netdata servers you have visited. The node view offers a
 lot of additional features on top of the menu, [with many more to
 come](https://blog.netdata.cloud/posts/netdata-cloud-announcement/). To enable the global Netdata registry and the cloud
 features, you need to Sign In to Netdata cloud. By signing in, you opt in to let the registry receive and store the
-information described [here](#what-data-does-the-registry-store). You can still get the node menu, but not the cloud
-features, if you [run your own registry](#run-your-own-registry).
+information described [here](/docs/registry/#what-data-does-the-registry-store). You can still get the node menu, but not the cloud
+features, if you [run your own registry](/docs/registry/#run-your-own-registry).
 
 ## Why?
 
@@ -74,7 +79,7 @@ in the Netdata registry regardless of whether you sign in or not.
 ## Who talks to the registry?
 
 Your web browser **only**! If sending this information is against your policies, you can [run your own
-registry](#run-your-own-registry)
+registry](/docs/registry/#run-your-own-registry)
 
 Your Netdata servers do not talk to the registry. This is a UML diagram of its operation:
 
@@ -140,7 +145,7 @@ Netdata v1.9+ support limiting access to the registry from given IPs, like this:
     allow from = *
 ```
 
-`allow from` settings are [Netdata simple patterns](../libnetdata/simple_pattern/): string matches that use `*` as
+`allow from` settings are [Netdata simple patterns](/docs/libnetdata/simple_pattern/): string matches that use `*` as
 wildcard (any number of times) and a `!` prefix for a negative match. So: `allow from = !10.1.2.3 10.*` will allow all
 IPs in `10.*` except `10.1.2.3`. The order is important: left to right, the first positive or negative match is used.
 
@@ -206,4 +211,4 @@ ERROR 409: Cannot ACCESS netdata registry: https://registry.my-netdata.io respon
 
 This error is printed on your web browser console (press F12 on your browser to see it).
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fregistry%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

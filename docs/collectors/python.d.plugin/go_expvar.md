@@ -1,4 +1,9 @@
-# Go application monitoring with Netdata
+---
+title: "Go application monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/go_expvar/README.md
+---
+
+
 
 Monitors Go application that exposes its metrics with the use of `expvar` package from the Go standard library.  The package produces charts for Go runtime memory statistics and optionally any number of custom charts.
 
@@ -109,7 +114,7 @@ the use of `netdata`s `go_expvar` module.
 
 ### Using Netdata go_expvar module
 
-The `go_expvar` module is disabled by default. To enable it, edit [`python.d.conf`](../python.d.conf)
+The `go_expvar` module is disabled by default. To enable it, edit [`python.d.conf`](/docs/collectors/python.d.plugin/python.d.conf)
 (to edit it on your system run `/etc/netdata/edit-config python.d.conf`), and change the `go_expvar`
 variable to `yes`:
 
@@ -127,7 +132,7 @@ go_expvar: yes
 ...
 ```
 
-Next, we need to edit the module configuration file (found at [`/etc/netdata/python.d/go_expvar.conf`](go_expvar.conf) by default)
+Next, we need to edit the module configuration file (found at [`/etc/netdata/python.d/go_expvar.conf`](/docs/collectors/python.d.plugin/go_expvar/go_expvar.conf) by default)
 (to edit it on your system run `/etc/netdata/edit-config python.d/go_expvar.conf`).
 The module configuration consists of jobs, where each job can be used to monitor a separate Go application.
 Let's see a sample job configuration:
@@ -205,8 +210,8 @@ See [this issue](https://github.com/netdata/netdata/pull/1902#issuecomment-28449
 
 Please see these two links to the official Netdata documentation for more information about the values:
 
--   [External plugins - charts](../../plugins.d/#chart)
--   [Chart variables](../#global-variables-order-and-chart)
+-   [External plugins - charts](/docs/collectors/plugins.d/#chart)
+-   [Chart variables](/docs/collectors/python.d.plugin/#global-variables-order-and-chart)
 
 **Line definitions**
 
@@ -229,7 +234,7 @@ hidden: False
 ```
 
 Please see the following link for more information about the options and their default values:
-[External plugins - dimensions](../../plugins.d/#dimension)
+[External plugins - dimensions](/docs/collectors/plugins.d/#dimension)
 
 Apart from top-level expvars, this plugin can also parse expvars stored in a multi-level map;
 All dicts in the resulting JSON document are then flattened to one level.
@@ -251,7 +256,7 @@ the first defined key wins and all subsequent keys with the same name are ignore
 ## Configuration
 
 Edit the `python.d/go_expvar.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different
@@ -299,4 +304,4 @@ The images below show how do the final charts in Netdata look.
 
 ![Custom charts](https://cloud.githubusercontent.com/assets/15180106/26762051/62ae915e-493b-11e7-8518-bd25a3886650.png)
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fcollectors%2Fpython.d.plugin%2Fgo_expvar%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

@@ -1,4 +1,10 @@
-# The standard web dashboard
+---
+title: "The standard web dashboard"
+date: 2020-03-11
+custom_edit_url: https://github.com/netdata/netdata/edit/master/web/gui/README.md
+---
+
+
 
 The standard web dashboard is the heart of Netdata's performance troubleshooting
 toolkit. You've probably seen it before:
@@ -7,25 +13,29 @@ toolkit. You've probably seen it before:
 dashboard](https://user-images.githubusercontent.com/2662304/48307727-9175c800-e55b-11e8-92d8-a581d60a4889.gif)
 
 Learn more about how dashboards work and how they're populated using the
-`dashboards.js` file in our [web dashboards overview](../).
+`dashboards.js` file in our [web dashboards overview](/docs/web/).
 
 By default, Netdata starts a web server for its dashboard at port `19999`. Open
 up your web browser of choice and navigate to `http://SERVER-IP:19999`, or
 `http://localhost:19999` on `localhost`.
 
-Netdata uses an [internal, static-threaded web server](../server/) to host the
+Netdata uses an [internal, static-threaded web server](/docs/web/server/) to host the
 HTML, CSS, and JavaScript files that make up the standard dashboard. You don't
 have to configure anything to access it, although you can adjust [your
-settings](../server/#other-netdataconf-web-section-options) in the
+settings](/docs/web/server/#other-netdataconf-web-section-options) in the
 `netdata.conf` file, or run Netdata behind an Nginx proxy, and so on.
+
+<details markdown="1"><summary>Want to see the dashboard and its features in action? Check out our video.</summary>
+<iframe width="720" height="405" src="https://www.youtube.com/embed/Ob6-Wkb6ZBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</details>
 
 ## Navigating the standard dashboard
 
 Beyond charts, the standard dashboard can be broken down into three key areas:
 
-1.  [**Sections**](#sections)
-2.  [**Menus/submenus**](#menus)
-3.  [**Nodes menu**](#nodes-menu)
+1.  [**Sections**](/docs/web/gui/#sections)
+2.  [**Menus/submenus**](/docs/web/gui/#menus)
+3.  [**Nodes menu**](/docs/web/gui/#nodes-menu)
 
 ![Annotated screenshot of the
 dashboard](https://user-images.githubusercontent.com/1153921/62810777-ef681980-bab3-11e9-9310-ec7a0c9f4faa.png)
@@ -34,8 +44,8 @@ dashboard](https://user-images.githubusercontent.com/1153921/62810777-ef681980-b
 
 Netdata is broken up into multiple **sections**, such as **System Overview**,
 **CPU**, **Disk**, and more. Inside each section you'll find a number of charts,
-broken down into [contexts](../#contexts) and
-[families](../#families).
+broken down into [contexts](/docs/web/#contexts) and
+[families](/docs/web/#families).
 
 An example of the **Memory** section on a Linux desktop system.
 
@@ -44,7 +54,7 @@ dashboard](https://user-images.githubusercontent.com/1153921/62811044-1410c100-b
 
 All sections and their associated charts appear on a single "page," so all you
 need to do to view different sections is scroll up and down the page. But it's
-usually quicker to use the [menus](#menus).
+usually quicker to use the [menus](/docs/web/gui/#menus).
 
 ### Menus
 
@@ -56,7 +66,7 @@ associated with.
 menu](https://user-images.githubusercontent.com/1153921/62811361-38b96880-bab6-11e9-8d41-4d9b29778e86.png)
 
 Most menu items will contain several **submenu** entries, which represent any
-[families](../#families) from that section. Netdata automatically
+[families](/docs/web/#families) from that section. Netdata automatically
 generates these submenu entries.
 
 Here's a **Disks** menu with several submenu entries for each disk drive and
@@ -71,22 +81,22 @@ The nodes menu appears in the top-left corner of the standard dashboard and is
 labeled with the hostname of the system Netdata is monitoring.
 
 Clicking on it will display a drop-down menu of any nodes you might have
-connected via the [Netdata registry](../../registry/). By default, you'll find
+connected via the [Netdata registry](/docs/registry/). By default, you'll find
 nothing under the **My nodes** heading, but you can try out any of the demo
 Netdata nodes to see how the nodes menu works.
 
 ![Screenshot of the default (empty) nodes
 menu](https://user-images.githubusercontent.com/1153921/62795508-c3d13900-ba8b-11e9-98ed-f0be1b201340.png)
 
-Once you add nodes via [Netdata Cloud](../../docs/netdata-cloud/) or a [private
-registry](../../registry/#run-your-own-registry), you will see them appear under
+Once you add nodes via [Netdata Cloud](/docs/netdata-cloud/) or a [private
+registry](/docs/registry/#run-your-own-registry), you will see them appear under
 the **My nodes** heading.
 
 ![Screenshot of a nodes menu populated by registry
 agents](https://user-images.githubusercontent.com/1153921/62795509-c3d13900-ba8b-11e9-8459-e85bf71f7ceb.png)
 
 The nodes menu will also show the master netdata node and all slave nodes
-streaming to that master, if you have [configured streaming](../../streaming).
+streaming to that master, if you have [configured streaming](/docs/streaming).
 
 ![Screenshot of a nodes menu populated by streaming
 agents.](https://user-images.githubusercontent.com/1153921/62965774-90a7e600-bdba-11e9-8b80-495f35b29ecb.png)
@@ -115,7 +125,7 @@ overwrite the file when it's updated. Instead, you should create a new file with
 your customizations.
 
 We created an example file at
-[`dashboard_info_custom_example.js`](dashboard_info_custom_example.js). You can
+[`dashboard_info_custom_example.js`](/docs/web/gui/dashboard_info_custom_example.js). You can
 copy this to a new file with a name of your choice in the `web/` directory. This
 directory changes based on your operating system and installation method. If
 you're on a Linux system, it should be at `/usr/share/netdata/web/`.
@@ -154,6 +164,6 @@ file](https://user-images.githubusercontent.com/1153921/62798924-570e6c80-ba94-1
 ## Custom dashboards
 
 For information on creating custom dashboards from scratch, see the [custom
-dashboards](custom/) or [Atlassian Confluence dashboards](confluence/) guides.
+dashboards](/docs/web/gui/custom/) or [Atlassian Confluence dashboards](/docs/web/gui/confluence/) guides.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fweb%2Fgui%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)]()
+

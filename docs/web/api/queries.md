@@ -1,4 +1,9 @@
-# Database Queries
+---
+title: "Database Queries"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/web/api/queries/README.md
+---
+
+
 
 Netdata database can be queried with `/api/v1/data` and `/api/v1/badge.svg` REST API methods.
 
@@ -64,12 +69,12 @@ There are 2 uses that enable this feature:
 
 Using `points` and `gtime` the query engine tries to find a best fit for **database-points**
 vs **result-points** (we call this ratio `group points`). It always tries to keep `group points`
-an integer. Keep in mind the query engine may shift `after` if required. See also the [example](#example).
+an integer. Keep in mind the query engine may shift `after` if required. See also the [example](/docs/web/api/queries/#example).
 
 #### Time-frame Alignment
 
 Alignment is a very important aspect of Netdata queries. Without it, the animated
-charts on the dashboards would constantly [change shape](#example) during incremental updates.
+charts on the dashboards would constantly [change shape](/docs/web/api/queries/#example) during incremental updates.
 
 To provide consistent grouping through time, the query engine (by default) aligns
 `after` and `before` to be a multiple of `group points`.
@@ -83,7 +88,7 @@ To disable alignment, pass `&options=unaligned` to the query.
 
 To execute the query, the engine evaluates all dimensions of the chart, one after another.
 
-The engine does not evaluate dimensions that do not match the [simple pattern](../../../libnetdata/simple_pattern)
+The engine does not evaluate dimensions that do not match the [simple pattern](/docs/libnetdata/simple_pattern)
 given at the `dimensions` parameter, except when `options=percentage` is given (this option
 requires all the dimensions to be evaluated to find the percentage of each dimension vs to chart
 total).
@@ -168,4 +173,4 @@ So, the proper way to query the database is to also set at least `after`. The fo
 
 When you keep calling this URL, you will see that it returns one new value every 10 seconds, and the timestamp always ends with zero. Similarly, if you say `points=1&after=-5` it will always return timestamps ending with 0 or 5.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fweb%2Fapi%2Fqueries%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

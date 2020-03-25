@@ -1,6 +1,6 @@
-# HDFS monitoring with Netdata
 
-The [`Hadoop Distributed File System (HDFS)`](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) is a distributed file system designed to run on commodity hardware.
+
+The [`Hadoop Distributed File System (HDFS)`](https://hadoop.apache.org/r1.2.1/hdfs_design.html) is a distributed file system designed to run on commodity hardware.
 
 This module monitors one or more `Hadoop Distributed File System` nodes, depending on your configuration.
 
@@ -56,7 +56,7 @@ For `datanode`:
 ## Configuration
 
 Edit the `go.d/hdfs.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

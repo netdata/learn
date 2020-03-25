@@ -1,4 +1,9 @@
-# tc.plugin
+---
+title: "tc.plugin"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/tc.plugin/README.md
+---
+
+
 
 Live demo - **[see it in action here](https://registry.my-netdata.io/#menu_tc)** !
 
@@ -8,9 +13,9 @@ Netdata monitors `tc` QoS classes for all interfaces.
 
 If you also use [FireQOS](http://firehol.org/tutorial/fireqos-new-user/) it will collect interface and class names.
 
-There is a [shell helper](tc-qos-helper.sh.in) for this (all parsing is done by the plugin in `C` code - this shell script is just a configuration for the command to run to get `tc` output).
+There is a [shell helper](/docs/collectors/tc.plugin/tc-qos-helper.sh.in) for this (all parsing is done by the plugin in `C` code - this shell script is just a configuration for the command to run to get `tc` output).
 
-The source of the tc plugin is [here](plugin_tc.c). It is somewhat complex, because a state machine was needed to keep track of all the `tc` classes, including the pseudo classes tc dynamically creates.
+The source of the tc plugin is [here](/docs/collectors/tc.plugin/plugin_tc.c). It is somewhat complex, because a state machine was needed to keep track of all the `tc` classes, including the pseudo classes tc dynamically creates.
 
 ## Motivation
 
@@ -62,7 +67,7 @@ QoS is about 2 features:
 
     When your system is under a DDoS attack, it will get a lot more bandwidth compared to the one it can handle and probably your applications will crash. Setting a limit on the inbound traffic using QoS, will protect your servers (throttle the requests) and depending on the size of the attack may allow your legitimate users to access the server, while the attack is taking place.
 
-    Using QoS together with a [SYNPROXY](../../collectors/proc.plugin/README.md) will provide a great degree of protection against most DDoS attacks. Actually when I wrote that article, a few folks tried to DDoS the Netdata demo site to see in real-time the SYNPROXY operation. They did not do it right, but anyway a great deal of requests reached the Netdata server. What saved Netdata was QoS. The Netdata demo server has QoS installed, so the requests were throttled and the server did not even reach the point of resource starvation. Read about it [here](../../collectors/proc.plugin/README.md).
+    Using QoS together with a [SYNPROXY](/docs/collectors/proc.plugin.md) will provide a great degree of protection against most DDoS attacks. Actually when I wrote that article, a few folks tried to DDoS the Netdata demo site to see in real-time the SYNPROXY operation. They did not do it right, but anyway a great deal of requests reached the Netdata server. What saved Netdata was QoS. The Netdata demo server has QoS installed, so the requests were throttled and the server did not even reach the point of resource starvation. Read about it [here](/docs/collectors/proc.plugin.md).
 
 On top of all these, QoS is extremely light. You will configure it once, and this is it. It will not bother you again and it will not use any noticeable CPU resources, especially on application and database servers.
 
@@ -111,7 +116,7 @@ For example, do you know that for matching a simple port range in `tc`, e.g. all
 32768/0x8000
 ```
 
-To do it the hard way, you can go through the [tc configuration steps](#qos-configuration-with-tc). An easier way is to use  **[FireQOS](https://firehol.org/tutorial/fireqos-new-user/)**, a tool that simplifies QoS management in Linux.
+To do it the hard way, you can go through the [tc configuration steps](/docs/collectors/tc.plugin/#qos-configuration-with-tc). An easier way is to use  **[FireQOS](https://firehol.org/tutorial/fireqos-new-user/)**, a tool that simplifies QoS management in Linux.
 
 ## Qos Configuration with FireHOL
 
@@ -197,4 +202,4 @@ Finally, create `/etc/netdata/tc-qos-helper.conf` with this content:
 
 Please note, that by default Netdata will enable monitoring metrics only when they are not zero. If they are constantly zero they are ignored. Metrics that will start having values, after Netdata is started, will be detected and charts will be automatically added to the dashboard (a refresh of the dashboard is needed for them to appear though). Set `yes` for a chart instead of `auto` to enable it permanently. You can also set the `enable zero metrics` option to `yes` in the `[global]` section which enables charts with zero metrics for all internal Netdata plugins.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fcollectors%2Ftc.plugin%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

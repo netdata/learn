@@ -1,4 +1,9 @@
-# Database engine
+---
+title: "Database engine"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/database/engine/README.md
+---
+
+
 
 The Database Engine works like a traditional database. There is some amount of RAM dedicated to data caching and
 indexing and the rest of the data reside compressed on disk. The number of history entries is not fixed in this case,
@@ -39,7 +44,7 @@ can select the memory mode for localhost by editing netdata.conf and setting:
 ```
 
 For setting the memory mode for the rest of the nodes you should look at
-[streaming](../../streaming/).
+[streaming](/docs/streaming/).
 
 The `history` configuration option is meaningless for `memory mode = dbengine` and is ignored for any metrics being
 stored in the DB engine.
@@ -58,7 +63,7 @@ in **MiB**. All DB engine instances will allocate the configured resources separ
 
 The `page cache size` option determines the amount of RAM in **MiB** that is dedicated to caching Netdata metric values
 themselves as far as queries are concerned. The total page cache size will be greater since data collection itself will
-consume additional memory as is described in the [Memory requirements](#memory-requirements) section.
+consume additional memory as is described in the [Memory requirements](/docs/database/engine/#memory-requirements) section.
 
 The `dbengine disk space` option determines the amount of disk space in **MiB** that is dedicated to storing Netdata
 metric values and all related metadata describing them.
@@ -194,4 +199,4 @@ and generate a read load of 1.7M/sec, whereas in the CPU-bound scenario the read
 Consequently, there is a significant degree of interference by the reader threads, that slow down the writer threads.
 This is also possible because the interference effects are greater than the SSD impact on data generation throughput.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdatabase%2Fengine%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

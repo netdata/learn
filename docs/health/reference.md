@@ -1,31 +1,29 @@
 ---
-title: Health configuration reference
-description: "This reference guide contains information about editing health configuration files to tweak existing 
-alarms or create new health entities that are customized to the needs of your infrastructure."
-custom_edit_url: <https://github.com/netdata/netdata/edit/master/health/REFERENCE.md>
+title: "Health configuration reference"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/health/REFERENCE.md
 ---
 
-# Health configuration reference
+
 
 Welcome to the health configuration reference.
 
 This guide contains information about editing health configuration files to tweak existing alarms or create new health
 entities that are customized to the needs of your infrastructure.
 
-To learn the basics of locating and editing health configuration files, see the [health quickstart](QUICKSTART.md).
+To learn the basics of locating and editing health configuration files, see the [health quickstart](/docs/health/quickstart.md).
 
 ## What's in this reference guide
 
--   [Health entity reference](#health-entity-reference)
-    -   [Entity types](#entity-types)
-    -   [Entity format](#entity-format)
--   [Expressions](#expressions)
-    -   [Special use of the conditional operator](#special-use-of-the-conditional-operator)
--   [Variables](#variables)
--   [Alarm statuses](#alarm-statuses)
--   [Example alarms](#example-alarms)
--   [Troubleshooting](#troubleshooting)
--   [Disabling health checks or silencing notifications at runtime](#disabling-health-checks-or-silencing-notifications-at-runtime)
+-   [Health entity reference](/docs/health/#health-entity-reference)
+    -   [Entity types](/docs/health/#entity-types)
+    -   [Entity format](/docs/health/#entity-format)
+-   [Expressions](/docs/health/#expressions)
+    -   [Special use of the conditional operator](/docs/health/#special-use-of-the-conditional-operator)
+-   [Variables](/docs/health/#variables)
+-   [Alarm statuses](/docs/health/#alarm-statuses)
+-   [Example alarms](/docs/health/#example-alarms)
+-   [Troubleshooting](/docs/health/#troubleshooting)
+-   [Disabling health checks or silencing notifications at runtime](/docs/health/#disabling-health-checks-or-silencing-notifications-at-runtime)
 
 ## Health entity reference
 
@@ -36,7 +34,7 @@ Entities are written into `.conf` files, inside of the `health.d/` directory, us
 
 ### Entity types
 
-There are two entity types: **alarms** and **templates**. They have the same format and feature set—the only difference
+There are two entity types: **alarms** and **templates**. They have the same format and feature setâthe only difference
 is their label.
 
 **Alarms** are attached to specific charts and use the `alarm` label.
@@ -55,33 +53,33 @@ Netdata parses the following lines. Beneath the table is an in-depth explanation
 -   Each entity **must** have one of the following lines: `calc`, `warn`, or `crit`.
 -   The `alarm` or `template` line must be the first line of any entity.
 -   A few lines use space-separated lists to define how the entity behaves. You can use `*` as a wildcard or prefix with
-    `!` for a negative match. Order is important, too! See our [simple patterns docs](../libnetdata/simple_pattern/) for
+    `!` for a negative match. Order is important, too! See our [simple patterns docs](/docs/libnetdata/simple_pattern/) for
     more examples.
 
 | line                                                | required        | functionality                                                                         |
 | --------------------------------------------------- | --------------- | ------------------------------------------------------------------------------------- |
-| [`alarm`/`template`](#alarm-line-alarm-or-template) | yes             | Name of the alarm/template.                                                           |
-| [`on`](#alarm-line-on)                              | yes             | The chart this alarm should attach to.                                                |
-| [`os`](#alarm-line-os)                              | no              | Which operating systems to run this chart.                                            |
-| [`hosts`](#alarm-line-hosts)                        | no              | Which hostnames will run this alarm.                                                  |
-| [`families`](#alarm-line-families)                  | no              | Restrict a template to only certain families.                                         |
-| [`lookup`](#alarm-line-lookup)                      | yes             | The database lookup to find and process metrics for the chart specified through `on`. |
-| [`calc`](#alarm-line-calc)                          | yes (see above) | A calculation to apply to the value found via `lookup` or another variable.           |
-| [`every`](#alarm-line-every)                        | no              | The frequency of the alarm.                                                           |
-| [`green`/`red`](#alarm-lines-green-and-red)         | no              | Set the green and red thresholds of a chart.                                          |
-| [`warn`/`crit`](#alarm-lines-warn-and-crit)         | yes (see above) | Expressions evaluating to true or false, and when true, will trigger the alarm.       |
-| [`to`](#alarm-line-to)                              | no              | A list of roles to send notifications to.                                             |
-| [`exec`](#alarm-line-exec)                          | no              | The script to execute when the alarm changes status.                                  |
-| [`delay`](#alarm-line-delay)                        | no              | Optional hysteresis settings to prevent floods of notifications.                      |
-| [`repeat`](#alarm-line-repeat)                      | no              | The interval for sending notifications when an alarm is in WARNING or CRITICAL mode.  |
-| [`option`](#alarm-line-option)                      | no              | Add an option to not clear alarms.                                                    |
-| [`host labels`](#alarm-line-host-labels)            | no              | List of labels present on a host.                                                     |
+| [`alarm`/`template`](/docs/health/#alarm-line-alarm-or-template) | yes             | Name of the alarm/template.                                                           |
+| [`on`](/docs/health/#alarm-line-on)                              | yes             | The chart this alarm should attach to.                                                |
+| [`os`](/docs/health/#alarm-line-os)                              | no              | Which operating systems to run this chart.                                            |
+| [`hosts`](/docs/health/#alarm-line-hosts)                        | no              | Which hostnames will run this alarm.                                                  |
+| [`families`](/docs/health/#alarm-line-families)                  | no              | Restrict a template to only certain families.                                         |
+| [`lookup`](/docs/health/#alarm-line-lookup)                      | yes             | The database lookup to find and process metrics for the chart specified through `on`. |
+| [`calc`](/docs/health/#alarm-line-calc)                          | yes (see above) | A calculation to apply to the value found via `lookup` or another variable.           |
+| [`every`](/docs/health/#alarm-line-every)                        | no              | The frequency of the alarm.                                                           |
+| [`green`/`red`](/docs/health/#alarm-lines-green-and-red)         | no              | Set the green and red thresholds of a chart.                                          |
+| [`warn`/`crit`](/docs/health/#alarm-lines-warn-and-crit)         | yes (see above) | Expressions evaluating to true or false, and when true, will trigger the alarm.       |
+| [`to`](/docs/health/#alarm-line-to)                              | no              | A list of roles to send notifications to.                                             |
+| [`exec`](/docs/health/#alarm-line-exec)                          | no              | The script to execute when the alarm changes status.                                  |
+| [`delay`](/docs/health/#alarm-line-delay)                        | no              | Optional hysteresis settings to prevent floods of notifications.                      |
+| [`repeat`](/docs/health/#alarm-line-repeat)                      | no              | The interval for sending notifications when an alarm is in WARNING or CRITICAL mode.  |
+| [`option`](/docs/health/#alarm-line-option)                      | no              | Add an option to not clear alarms.                                                    |
+| [`host labels`](/docs/health/#alarm-line-host-labels)            | no              | List of labels present on a host.                                                     |
 
 The `alarm` or `template` line must be the first line of any entity.
 
 #### Alarm line `alarm` or `template`
 
-This line starts an alarm or template based on the [entity type](#entity-types) you're interested in creating.
+This line starts an alarm or template based on the [entity type](/docs/health/#entity-types) you're interested in creating.
 
 **Alarm:**
 
@@ -159,7 +157,7 @@ hosts: server1 server2 database* !redis3 redis*
 The `families` line, used only alongside templates, filters which families within the context this alarm should apply
 to. The value is a space-separated list.
 
-The value is a space-separate list of simple patterns. See our [simple patterns docs](../libnetdata/simple_pattern/) for
+The value is a space-separate list of simple patterns. See our [simple patterns docs](/docs/libnetdata/simple_pattern/) for
 some examples.
 
 For example, you can create a template on the `disk.io` context, but filter it to only the `sda` and `sdb` families:
@@ -178,7 +176,7 @@ The format is:
 lookup: METHOD AFTER [at BEFORE] [every DURATION] [OPTIONS] [of DIMENSIONS] [foreach DIMENSIONS]
 ```
 
-Everything is the same with [badges](../web/api/badges/). In short:
+Everything is the same with [badges](/docs/web/api/badges/). In short:
 
 -   `METHOD` is one of `average`, `min`, `max`, `sum`, `incremental-sum`.
      This is required.
@@ -220,9 +218,9 @@ and critical expressions.
 When paired with `lookup`, `calc` will perform the calculation just after `lookup` has retreived a value from Netdata's
 database.
 
-You can use `calc` without `lookup` if you are using [other available variables](#variables).
+You can use `calc` without `lookup` if you are using [other available variables](/docs/health/#variables).
 
-The `calc` line uses [expressions](#expressions) for its syntax.
+The `calc` line uses [expressions](/docs/health/#expressions) for its syntax.
 
 ```yaml
 calc: EXPRESSION
@@ -260,7 +258,7 @@ red: NUMBER
 Define the expression that triggers either a warning or critical alarm. These are optional, and should evaluate to
 either true or false (or zero/non-zero).
 
-The format uses Netdata's [expressions syntax](#expressions).
+The format uses Netdata's [expressions syntax](/docs/health/#expressions).
 
 ```yaml
 warn: EXPRESSION
@@ -381,7 +379,7 @@ good idea to tell Netdata to not clear the notification, by using the `no-clear-
 
 #### Alarm line `host labels`
 
-Defines the list of labels present on a host. See our [host labels tutorial](../docs/tutorials/using-host-labels.md) for
+Defines the list of labels present on a host. See our [host labels tutorial](/docs/tutorials/using-host-labels.md) for
 an explanation of host labels and how to implement them.
 
 For example, let's suppose that `netdata.conf` is configured with the following labels:
@@ -414,11 +412,11 @@ that will be applied to all hosts installed in the last decade with the followin
 host labels: installed = 201*
 ```
 
-See our [simple patterns docs](../libnetdata/simple_pattern/) for more examples.
+See our [simple patterns docs](/docs/libnetdata/simple_pattern/) for more examples.
 
 ## Expressions
 
-Netdata has an internal [infix expression parser](../libnetdata/eval). This parses expressions and creates an internal
+Netdata has an internal [infix expression parser](/docs/libnetdata/eval). This parses expressions and creates an internal
 structure that allows fast execution of them.
 
 These operators are supported `+`, `-`, `*`, `/`, `<`, `<=`, `<>`, `!=`, `>`, `>=`, `&&`, `||`, `!`, `AND`, `OR`, `NOT`.
@@ -484,17 +482,17 @@ You can find all the variables that can be used for a given chart, using
 `http://your.netdata.ip:19999/api/v1/alarm_variables?chart=CHART_NAME` Example: [variables for the `system.cpu` chart of
 the registry](https://registry.my-netdata.io/api/v1/alarm_variables?chart=system.cpu).
 
-> If you don't know how to find the CHART_NAME, you can read about it [here](../web/README.md#charts).
+> If you don't know how to find the CHART_NAME, you can read about it [here](/docs/web.md#charts#charts).
 
 Netdata supports 3 internal indexes for variables that will be used in health monitoring.
 
 <details markdown="1"><summary>The variables below can be used in both chart alarms and context templates.</summary>
 
 Although the `alarm_variables` link shows you variables for a particular chart, the same variables can also be used in
-templates for charts belonging to a given [context](../web/README.md#contexts). The reason is that all charts of a given
-context are essentially identical, with the only difference being the [family](../web/README.md#families) that
+templates for charts belonging to a given [context](/docs/web.md#contexts#contexts). The reason is that all charts of a given
+context are essentially identical, with the only difference being the [family](/docs/web.md#families#families) that
 identifies a particular hardware or software instance. Charts and templates do not apply to specific families anyway,
-unless if you explicitly limit an alarm with the [alarm line `families`](#alarm-line-families).
+unless if you explicitly limit an alarm with the [alarm line `families`](/docs/health/#alarm-line-families).
 
 </details>
 
@@ -744,7 +742,7 @@ Netdata will create alarms for all dimensions of the chart.
 
 ## Troubleshooting
 
-You can compile Netdata with [debugging](../daemon/README.md#debugging) and then set in `netdata.conf`:
+You can compile Netdata with [debugging](/docs/daemon.md#debugging#debugging) and then set in `netdata.conf`:
 
 ```yaml
 [global]
@@ -767,6 +765,6 @@ expression.
 It's currently not possible to schedule notifications from within the alarm template. For those scenarios where you need
 to temporary disable notifications (for instance when running backups triggers a disk alert) you can disable or silence
 notifications are runtime. The health checks can be controlled at runtime via the [health management
-api](../web/api/health/).
+api](/docs/web/api/health/).
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fhealth%2Freference%2F&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

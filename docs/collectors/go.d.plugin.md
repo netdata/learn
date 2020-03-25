@@ -1,4 +1,4 @@
-# go.d.plugin
+
 
 [![CircleCI](https://circleci.com/gh/netdata/go.d.plugin.svg?style=svg)](https://circleci.com/gh/netdata/go.d.plugin)
 
@@ -53,6 +53,7 @@ If you have time and willing to help, there are a lof of ways to contribute:
 | [phpfpm](https://github.com/netdata/go.d.plugin/tree/master/modules/phpfpm)               | `PHP-FPM`                  | yes     |
 | [pihole](https://github.com/netdata/go.d.plugin/tree/master/modules/pihole)               | `Pi-hole`                  |         |
 | [portcheck](https://github.com/netdata/go.d.plugin/tree/master/modules/portcheck)         | `Any TCP Endpoint`         |         |
+| [pulsar](https://github.com/netdata/go.d.plugin/tree/master/modules/portcheck)            | `Apache Pulsar`            |         |
 | [rabbitmq](https://github.com/netdata/go.d.plugin/tree/master/modules/rabbitmq)           | `RabbitMQ`                 | yes     |
 | [scaleio](https://github.com/netdata/go.d.plugin/tree/master/modules/scaleio)             | `Dell EMC ScaleIO`         |         |
 | [solr](https://github.com/netdata/go.d.plugin/tree/master/modules/solr)                   | `Solr`                     |         |
@@ -85,7 +86,7 @@ To enable module please do the following:
 If case of problems:
 
 -   check `error.log` for module related errors (`grep <module name> error.log`)
--   run plugin in [debug mode](#troubleshooting)
+-   run plugin in [debug mode](/docs/collectors/go.d.plugin/#troubleshooting)
 
 ## Configuration
 
@@ -96,6 +97,14 @@ Configurations are written in [YAML](http://yaml.org/).
 
 -   [plugin configuration](https://github.com/netdata/go.d.plugin/blob/master/config/go.d.conf)
 -   [specific module configuration](https://github.com/netdata/go.d.plugin/tree/master/config/go.d)
+
+## Developing
+
+-   Add your module to the [modules dir](https://github.com/netdata/go.d.plugin/tree/master/modules).
+-   Import the module in the [main.go](https://github.com/netdata/go.d.plugin/blob/master/cmd/godplugin/main.go).
+-   To build it execute `make` from the plugin root dir or `hack/go-build.sh`.
+-   Run it in the debug mode `bin/godplugin -d -m <MODULE_NAME>`.
+-   Use `make clean` when you are done with testing.
 
 ## Troubleshooting
 
@@ -125,4 +134,4 @@ sudo su -s /bin/bash netdata
 ```
 
 Change `<module name>` to the module name you want to debug.
-See the [whole list](#available-modules) of available modules.
+See the [whole list](/docs/collectors/go.d.plugin/#available-modules) of available modules.

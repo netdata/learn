@@ -1,4 +1,9 @@
-# Metrics long term archiving
+---
+title: "Metrics long term archiving"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/backends/README.md
+---
+
+
 
 Netdata supports backends for archiving the metrics, or providing long term dashboards, using Grafana or other tools,
 like this:
@@ -29,17 +34,17 @@ So, although Netdata collects metrics every second, it can send to the backend s
 
         metrics are sent to a document db, `JSON` formatted.
 
-    -   **prometheus** is described at [prometheus page](prometheus/) since it pulls data from Netdata.
+    -   **prometheus** is described at [prometheus page](/docs/backends/prometheus/) since it pulls data from Netdata.
 
     -   **prometheus remote write** (a binary snappy-compressed protocol buffer encoding over HTTP used by
         **Elasticsearch**, **Gnocchi**, **Graphite**, **InfluxDB**, **Kafka**, **OpenTSDB**, **PostgreSQL/TimescaleDB**,
         **Splunk**, **VictoriaMetrics**, and a lot of other [storage
-        providers](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage))
+        providers](https://prometheus.io/operating/integrations/#remote-endpoints-and-storage))
 
         metrics are labeled in the format, which is used by Netdata for the [plaintext prometheus
-        protocol](prometheus/). Notes on using the remote write backend are [here](prometheus/remote_write/).
+        protocol](/docs/backends/prometheus/). Notes on using the remote write backend are [here](/docs/backends/prometheus/remote_write/).
 
-    -   **TimescaleDB** via [community-built connector](TIMESCALE.md) that takes JSON streams from a Netdata client
+    -   **TimescaleDB** via [community-built connector](/docs/backends/timescale.md) that takes JSON streams from a Netdata client
         and writes them to a TimescaleDB table.
 
     -   **AWS Kinesis Data Streams**
@@ -136,14 +141,14 @@ from your Netdata):
    When multiple servers are defined, Netdata will try the next one when the first one fails. This allows you to
    load-balance different servers: give your backend servers in different order on each Netdata.
 
-   Netdata also ships [`nc-backend.sh`](nc-backend.sh), a script that can be used as a fallback backend to save the
+   Netdata also ships [`nc-backend.sh`](/docs/backends/nc-backend.sh), a script that can be used as a fallback backend to save the
    metrics to disk and push them to the time-series database when it becomes available again. It can also be used to
    monitor / trace / debug the metrics Netdata generates.
 
    For kinesis backend `destination` should be set to an AWS region (for example, `us-east-1`).
 
    The MongoDB backend doesn't use the `destination` option for its configuration. It uses the `mongodb.conf`
-   [configuration file](../backends/mongodb/) instead.
+   [configuration file](/docs/backends/mongodb/) instead.
 
 -   `data source = as collected`, or `data source = average`, or `data source = sum`, selects the kind of data that will
      be sent to the backend.
@@ -215,7 +220,7 @@ Netdata provides 5 charts:
 
 ## alarms
 
-The latest version of the alarms configuration for monitoring the backend is [here](../health/health.d/backend.conf)
+The latest version of the alarms configuration for monitoring the backend is [here](/docs/health/health.d/backend.conf)
 
 Netdata adds 4 alarms:
 
@@ -227,4 +232,4 @@ Netdata adds 4 alarms:
 
 ![image](https://cloud.githubusercontent.com/assets/2662304/20463779/a46ed1c2-af43-11e6-91a5-07ca4533cac3.png)
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fbackends%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

@@ -1,8 +1,13 @@
-# Install Netdata on cloud providers
+---
+title: "Install Netdata on cloud providers"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/cloud-providers.md
+---
+
+
 
 Netdata is fully compatible with popular cloud providers like Google Cloud Platform (GCP), Amazon Web Services (AWS),
 Azure, and others. You can install Netdata on cloud instances to monitor the apps/services running there, or use
-multiple instances in a [master/slave streaming](../../../streaming/README.md) configuration.
+multiple instances in a [master/slave streaming](/docs/streaming.md) configuration.
 
 In some cases, using Netdata on these cloud providers requires unique installation or configuration steps. This page
 aims to document some of those steps for popular cloud providers.
@@ -12,18 +17,18 @@ aims to document some of those steps for popular cloud providers.
 > issue](https://github.com/netdata/netdata/issues/new?labels=feature+request%2C+needs+triage&template=feature_request.md)
 > with your process and instructions on using the provider's interface to complete the workaround.
 
--   [Recommended installation methods for cloud providers](#recommended-installation-methods-for-cloud-providers)
--   [Post-installation configuration](#post-installation-configuration)
-    -   [Add a firewall rule to access Netdata's dashboard](#add-a-firewall-rule-to-access-netdatas-dashboard)
+-   [Recommended installation methods for cloud providers](/docs/packaging/installer/methods/#recommended-installation-methods-for-cloud-providers)
+-   [Post-installation configuration](/docs/packaging/installer/methods/#post-installation-configuration)
+    -   [Add a firewall rule to access Netdata's dashboard](/docs/packaging/installer/methods/#add-a-firewall-rule-to-access-netdatas-dashboard)
 
 ## Recommended installation methods for cloud providers
 
 The best installation method depends on the instance's operating system, distribution, and version. For Linux instances,
-we recommend either the [`kickstart.sh` automatic installation script](kickstart.md) or [.deb/.rpm
-packages](packages.md).
+we recommend either the [`kickstart.sh` automatic installation script](/docs/packaging/installer/methods/kickstart.md) or [.deb/.rpm
+packages](/docs/packaging/installer/methods/packages.md).
 
 To see the full list of approved methods for each operating system/version we support, see our [distribution
-matrix](../../DISTRIBUTIONS.md). That table will guide you to the various supported methods for your cloud instance.
+matrix](/docs/packaging/distributions.md). That table will guide you to the various supported methods for your cloud instance.
 
 If you have issues with Netdata after installation, look to the sections below to find the issue you're experiencing,
 followed by the solution for your provider.
@@ -51,11 +56,11 @@ command from a remote system, and it fails, it's likely that a firewall is block
 Another option is to put Netdata behind web server, which will proxy requests through standard HTTP/HTTPS ports
 (80/443), which are likely already open on your instance. We have a number of guides available:
 
--   [Apache](../../../docs/Running-behind-apache.md)
--   [Nginx](../../../docs/Running-behind-nginx.md)
--   [Caddy](../../../docs/Running-behind-caddy.md)
--   [HAProxy](../../../docs/Running-behind-haproxy.md)
--   [lighttpd](../../../docs/Running-behind-lighttpd.md)
+-   [Apache](/docs/running-behind-apache.md)
+-   [Nginx](/docs/running-behind-nginx.md)
+-   [Caddy](/docs/running-behind-caddy.md)
+-   [HAProxy](/docs/running-behind-haproxy.md)
+-   [lighttpd](/docs/running-behind-lighttpd.md)
 
 The next few sections outline how to add firewall rules to GCP, AWS, and Azure instances.
 
@@ -77,7 +82,7 @@ Action: allow
 Priority: 1000
 ```
 
-Read GCP's [firewall documentation](https://cloud.google.com/vpc/docs/using-firewalls) for specific instructions on how
+Read GCP's [firewall documentation](https://cloud.google.com/vpc/using-firewalls) for specific instructions on how
 to create a new firewall rule.
 
 #### Amazon Web Services (AWS) / EC2

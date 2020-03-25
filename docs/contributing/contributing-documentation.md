@@ -1,4 +1,9 @@
-# Contributing to documentation
+---
+title: "Contributing to documentation"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/contributing/contributing-documentation.md
+---
+
+
 
 We welcome contributions to Netdata's already extensive documentation, which we host at
 [docs.netdata.cloud](https://docs.netdata.cloud/) and store inside of the [main
@@ -6,9 +11,9 @@ repository](https://github.com/netdata/netdata) on GitHub.
 
 Like all contributing to all other aspects of Netdata, we ask that anyone who wants to help with documentation read and
 abide by the [Contributor Convenant Code of Conduct](https://docs.netdata.cloud/code_of_conduct/) and follow the
-instructions outlined in our [Contributing document](../../CONTRIBUTING.md).
+instructions outlined in our [Contributing document](/contributing.md).
 
-We also ask you to read our [documentation style guide](style-guide.md), which, while not complete, will give you some
+We also ask you to read our [documentation style guide](/docs/contributing/style-guide.md), which, while not complete, will give you some
 guidance on how we write and organize our documentation.
 
 All our documentation uses the Markdown syntax. If you're not familiar with how it works, please read the [Markdown
@@ -19,8 +24,8 @@ Markdown](https://guides.github.com/features/mastering-markdown/) guide from Git
 
 There are two ways to contribute to Netdata's documentation: 
 
-1.  Edit documentation [directly in GitHub](#edit-documentation-directly-on-github).
-2.  Download the repository and [edit documentation locally](#edit-documentation-locally).
+1.  Edit documentation [directly in GitHub](/docs/contributing/#edit-documentation-directly-on-github).
+2.  Download the repository and [edit documentation locally](/docs/contributing/#edit-documentation-locally).
 
 Editing in GitHub is a simpler process and is perfect for quick edits to a single document, such as fixing a typo or
 clarifying a confusing sentence.
@@ -35,8 +40,8 @@ which might help you catch any lingering issues.
 
 To continue, follow one of the paths below:
 
--   [Edit documentation directly in GitHub](#edit-documentation-directly-on-github)
--   [Edit documentation locally](#edit-documentation-locally)
+-   [Edit documentation directly in GitHub](/docs/contributing/#edit-documentation-directly-on-github)
+-   [Edit documentation locally](/docs/contributing/#edit-documentation-locally)
 
 ## Edit documentation directly on GitHub
 
@@ -61,7 +66,7 @@ concise descrition of what you've changed and why you think it's important. Then
 button. 
 
 After you've hit that button, jump down to our instructions on [pull requests and
-cleanup](#pull-requests-and-final-steps) for your next steps. 
+cleanup](/docs/contributing/#pull-requests-and-final-steps) for your next steps. 
 
 !!! note This process will create a branch directly on the `netdata/netdata` repository, which then requires manual
     cleanup. If you're going to make significant documentation contributions, or contribute often, we recommend the
@@ -107,9 +112,9 @@ folder and either name it `README.md` for generic documentation, or with another
 
 #### The `docs` folder
 
-At the root of the Netdata repository is a `docs/` folder. Inside this folder we place documentation that does not have
+At the root of the Netdata repository is a `` folder. Inside this folder we place documentation that does not have
 a direct relationship to a specific component of Netdata. It's where we house our [getting started
-guide](../../docs/getting-started.md), guides on [running Netdata behind Nginx](../../docs/Running-behind-nginx.md), and
+guide](/docs/getting-started.md), guides on [running Netdata behind Nginx](/running-behind-nginx.md), and
 more.
 
 If the documentation you're working on doesn't have a direct relaionship to a component of Netdata, it can be placed in
@@ -118,10 +123,10 @@ this `docs/` folder.
 ### Make your edits
 
 Now that you're set up and understand where to find or create your `.md` file, you can now begin to make your edits.
-Just use your favorite editor and keep in mind our [style guide](style-guide.md) as you work.
+Just use your favorite editor and keep in mind our [style guide](/docs/contributing/style-guide.md) as you work.
 
 If you add a new file to the documentation, you may need to modify the `buildyaml.sh` file to ensure it's added to the
-site's navigation. This is true for any file added to the `docs/` folder.
+site's navigation. This is true for any file added to the `` folder.
 
 Be sure to periodically add/commit your edits so that you don't lose your work! We use version control software for a
 reason.
@@ -144,7 +149,7 @@ docker run -i -t -v $PWD:/netdata netdata/docs
 ----
 
 if you are using a GNU/Linux based system for developing / contribiting to our documentation, you may build the
-docs with the provided Shell scripts in `./docs/generator/buildhtml.sh`. This requires GNU Bash and findutils
+docs with the provided Shell scripts in `./generator/buildhtml.sh`. This requires GNU Bash and findutils
 as well as Python/pip and some Python packages `mkdocs` and `mkdocs-material` installed in your environment.
 
 Follow the [Python installation instructions](https://www.python.org/downloads/) for your machine.
@@ -163,7 +168,7 @@ When `pip` is finished installing, navigate to the root directory of the Netdata
 generator script.
 
 ```bash
-sh docs/generator/buildhtml.sh
+sh generator/buildhtml.sh
 ```
 
 This process will take some time. Once finished, the built documentation site will be located at
@@ -195,6 +200,6 @@ and overall quality. We may point to specific sections and ask for additional in
 
 ## What's next
 
--   Read up on the Netdata documentation [style guide](style-guide.md).
+-   Read up on the Netdata documentation [style guide](/docs/contributing/style-guide.md).
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fcontributing%2Fcontributing-documentation&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

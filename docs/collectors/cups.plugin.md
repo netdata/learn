@@ -1,4 +1,9 @@
-# cups.plugin
+---
+title: "cups.plugin"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/cups.plugin/README.md
+---
+
+
 
 `cups.plugin` collects Common Unix Printing System (CUPS) metrics.
 

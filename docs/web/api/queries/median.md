@@ -1,4 +1,9 @@
-# Median
+---
+title: "Median"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/web/api/queries/median/README.md
+---
+
+
 
 The median is the value separating the higher half from the lower half of a data sample
 (a population or a probability distribution). For a data set, it may be thought of as the
@@ -36,4 +41,4 @@ Examining last 1 minute `successful` web server responses:
 
 -   <https://en.wikipedia.org/wiki/Median>.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fweb%2Fapi%2Fqueries%2Fmedian%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

@@ -1,24 +1,35 @@
-# Step 2. Get to know Netdata's dashboard
+---
+title: "Step 2. Get to know Netdata's dashboard"
+date: 2020-03-11
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-02.md
+---
+
+
 
 Welcome to Netdata proper! Now that you understand how Netdata works, how it's built, and why we built it, you can start
 working with the dashboard directly.
 
 This step-by-step guide assumes you've already installed Netdata on a system of yours. If you haven't yet, hop back over
-to ["step 0"](step-00.md#before-we-get-started) for information about our one-line installer script. Or, view the
-[installation docs](../../packaging/installer) to learn more. Once you have Netdata installed, you can hop back over
+to ["step 0"](/docs/step-by-step/step-00.md#before-we-get-started) for information about our one-line installer script. Or, view the
+[installation docs](/packaging/installer) to learn more. Once you have Netdata installed, you can hop back over
 here and dig in.
 
 ## What you'll learn in this step
 
 In this step of the Netdata guide, you'll learn how to:
 
--   [Visit and explore the dashboard](#visit-and-explore-the-dashboard)
--   [Explore available charts using menus](#explore-available-charts-using-menus)
--   [Read the descriptions accompanying charts](#read-the-descriptions-accompanying-charts)
--   [Interact with charts](#interact-with-charts)
--   [See raised alarms and the alarm log](#see-raised-alarms-and-the-alarm-log)
+-   [Visit and explore the dashboard](/docs/step-by-step/#visit-and-explore-the-dashboard)
+-   [Explore available charts using menus](/docs/step-by-step/#explore-available-charts-using-menus)
+-   [Read the descriptions accompanying charts](/docs/step-by-step/#read-the-descriptions-accompanying-charts)
+-   [Interact with charts](/docs/step-by-step/#interact-with-charts)
+-   [See raised alarms and the alarm log](/docs/step-by-step/#see-raised-alarms-and-the-alarm-log)
 
 Let's get started!
+
+<details markdown="1"><summary>Like shortcuts? Watch our six-minute quickstart video for Netdata's dashboard.</summary>
+<iframe width="720" height="405" src="https://www.youtube.com/embed/Ob6-Wkb6ZBA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Once you've finished, <a href="#whats-next">skip ahead</a> or scroll down for the text-based dashboard quickstart.</p>
+</details>
 
 ## Visit and explore the dashboard
 
@@ -29,7 +40,7 @@ If you installed Netdata on the same system you're using to open your browser, n
 
 If you installed Netdata on a remote system, navigate to `http://HOST:19999/` after replacing `HOST` with the IP address
 of that system. To connect to a virtual private server (VPS), for example, you might navigate to
-`http://203.0.113.0:19999`. We'll learn more on monitoring remote systems and [multiple systems](step-03.md)
+`http://203.0.113.0:19999`. We'll learn more on monitoring remote systems and [multiple systems](/docs/step-by-step/step-03.md)
 later on.
 
 > From here on out in this tutorial, we'll refer to the address you use to view your dashboard as `HOST`. Be sure to 
@@ -56,9 +67,9 @@ what it's collecting. If you run Netdata on many different systems using differe
 menus and submenus may look a little different for each one.
 
 To learn more about menus, see our documentation about [navigating the standard
-dashboard](../../web/gui/README.md#menus).
+dashboard](/web/gui.md#menus#menus).
 
-> ❗ By default, Netdata only creates and displays charts if the metrics are _not zero_. So, you may be missing some
+> â By default, Netdata only creates and displays charts if the metrics are _not zero_. So, you may be missing some
 > charts, menus, and submenus if those charts have zero metrics. You can change this by changing the **Which dimensions
 > to show?** setting to **All**. In addition, if you start Netdata and immediately load the dashboard, not all
 > charts/menus/submenus may be displayed, as some collectors can take a while to initialize.
@@ -106,7 +117,7 @@ looking at its name or hovering over the chart's date.
 It's important to understand these differences, as Netdata uses charts, dimensions, families, and contexts to create
 health alarms and configure collectors. To read even more about the differences between all these elements of the
 dashboard, and how they affect other parts of Netdata, read our [dashboards
-documentation](../../web/README.md#charts-contexts-families).
+documentation](/web.md#charts-contexts-families#charts-contexts-families).
 
 ## Interact with charts
 
@@ -116,7 +127,7 @@ Netdata's charts are fully interactive. You can pan through historical metrics, 
 timeframes for further analysis, resize charts, and more.
 
 Best of all, Whenever you use a chart in this way, Netdata synchronizes all the other charts to match it. This even
-applies across different Netdata agents if you connect them using the [**My nodes** menu](../../registry/README.md)!
+applies across different Netdata agents if you connect them using the [**My nodes** menu](/registry.md)!
 
 ![Aniamted GIF of chart
 synchronziation](https://user-images.githubusercontent.com/1153921/63464271-c03a9c00-c413-11e9-971d-245238926193.gif)
@@ -128,7 +139,7 @@ You can change how charts show their metrics in a few different ways, each of wh
 | Change                                            | Method #1                           | Method #2                                                 | Method #3                                                  |
 | ------------------------------------------------- | ----------------------------------- | --------------------------------------------------------- | ---------------------------------------------------------- |
 | **Reset** charts to default auto-refreshing state | `double click`                      | `double tap` (touchpad/touchscreen)                       |                                                            |
-| **Select** a certain timeframe                    | `ALT` + `mouse selection`           | `⌘` + `mouse selection` (macOS)                           |                                                            |
+| **Select** a certain timeframe                    | `ALT` + `mouse selection`           | `â` + `mouse selection` (macOS)                           |                                                            |
 | **Pan** forward or back in time                   | `click and drag`                    | `touch and drag` (touchpad/touchscreen)                   |                                                            |
 | **Zoom** to a specific timeframe                  | `SHIFT` + `mouse selection`         |                                                           |                                                            |
 | **Zoom** in/out                                   | `SHIFT`/`ALT` + `mouse scrollwheel` | `SHIFT`/`ALT` + `two-finger pinch` (touchpad/touchscreen) | `SHIFT`/`ALT` + `two-finger scroll` (touchpad/touchscreen) |
@@ -152,7 +163,7 @@ chart to its original height, double-click the same icon.
 ![Animated GIF of resizing a chart and resetting it to the default
 height](https://user-images.githubusercontent.com/1153921/65066675-aec4b100-d939-11e9-9b5d-cee7316428f6.gif)
 
-To learn more about other options and chart interactivity, read our [dashboard documentation](../../web/README.md).
+To learn more about other options and chart interactivity, read our [dashboard documentation](/web.md).
 
 ## See raised alarms and the alarm log
 
@@ -207,4 +218,4 @@ In this step of the Netdata tutorial, you learned how to:
 
 Next, you'll learn how to monitor multiple nodes through the dashboard.
 
-[Next: Monitor more than one system with Netdata →](step-03.md)
+[Next: Monitor more than one system with Netdata â](/docs/step-by-step/step-03.md)
