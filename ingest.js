@@ -5,8 +5,10 @@ const path = require('path')
 // TODO: strip github badges, see /docs/what-is-netdata
 // TODO: error handling
 
+const MIN_RATE_LIMIT = 50
+
 // see the README.md for instructions to set up a github access token
-const githubToken = process.env.GITHUB_TOKEN
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const baseDir = './docs'
 const outDir = path.join(__dirname, baseDir)
 // the following files will not be cleared during the clearDir step
@@ -18,7 +20,7 @@ const retainPaths = [
 const ax = axios.create({
   baseURL: 'https://api.github.com/repos/netdata/',
   headers: {
-    'Authorization': `token ${githubToken}`
+    'Authorization': `token ${GITHUB_TOKEN}`
   }
 })
 
@@ -203,8 +205,8 @@ async function ingest() {
   console.log(`Rate limit ${rate.remaining} / ${rate.limit} requests per hour remaining. Resets at ${rate.date} (${rate.resetMinutes} minutes from now).`)
 
   // ensure we have enough remaining rate to perform node fetching
-  if (rate.remaining < 50) {
-    console.error('Rate limit reached. Retry in ${rate.resetMinutes} minutes.')
+  if (rate.remaining < MIN_RATE_LIMIT) {
+    console.error('Rate limit too low. Retry in ${rate.resetMinutes} minutes.')
     return
   }
 
@@ -268,7 +270,7 @@ async function ingest() {
   const retainedFiles = await retainFiles(retainPaths)
 
   console.log('Clearing', baseDir)
-  await clearDir(baseDir, ['./introduction.md'])
+  await clearDir(baseDir)
 
   console.log('Restoring files...')
   retainedFiles.map(([p]) => console.log(`  ${p}`))
@@ -286,7 +288,7 @@ async function ingest() {
   console.log(`Rate limit ${rateAfter.remaining} / ${rateAfter.limit} requests per hour remaining. Reset in ${rateAfter.resetMinutes} minutes.`)
 }
 
-if (githubToken) {
+if (GITHUB_TOKEN) {
   ingest()
 } else {
   console.warn('Missing GITHUB_TOKEN environment variable. Rate limit will be reduced from 5000 to 60 requests per hour.')
