@@ -90,3 +90,5 @@ To generate the static content into the `/build` directory.
 ## Deployment
 
 **TODO: deployment instructions**
+
+Configure the `GITHUB_TOKEN` environment variable in Netlify.
