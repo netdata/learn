@@ -102,11 +102,7 @@ function normalizeLinks(pages) {
       const normalizedUrl = url.startsWith('http')
         ? url
         : path.join('/', baseDir, tokens.dir, url).toLowerCase()
-
-      // remove .md from routes
-      const prettyUrl = normalizedUrl.replace(/\.md/, '/')
-
-      return `](${prettyUrl})`
+      return `](${normalizedUrl})`
     })
 
     return {
@@ -128,8 +124,8 @@ function renameReadmes(pages) {
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
       if (url.startsWith('http')) return `](${url})`
 
-      // we need to extract any hash and querystring args
-      const parsedUrl = new URL(url, 'http://__FAKE__')
+      // // we need to extract any hash and querystring args
+      // const parsedUrl = new URL(url, 'http://__FAKE__')
 
       const urlTokens = path.parse(url)
       const renameUrl = (
@@ -147,6 +143,28 @@ function renameReadmes(pages) {
         ...page.meta,
         path: pagePath
       },
+      body
+    }
+  })
+}
+
+// // remove .md from routes
+// const prettyUrl = normalizedUrl.replace(/\.md/, '/')
+
+
+// remove .md extensions from links in pages so they are all slashes
+function beautifyLinks(pages) {
+  return pages.map(page => {
+    const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
+      // ignore absolute urls and external links alone
+      const prettyUrl = url.startsWith('http')
+        ? url
+        : url.replace(/\.md/, '/')
+      return `](${prettyUrl})`
+    })
+
+    return {
+      meta: { ...page.meta },
       body
     }
   })
@@ -266,11 +284,14 @@ async function ingest() {
   console.log(`Sanitizing ${pages.length} pages`)
   const sanitizedPages = sanitizePages(movedPages)
 
-  console.log(`Renaming README.md files`)
-  const renamedPages = renameReadmes(sanitizedPages)
-
   console.log(`Normalizing links in ${pages.length} pages`)
-  const normalizedPages = normalizeLinks(renamedPages)
+  const normalizedPages = normalizeLinks(sanitizedPages)
+
+  console.log(`Renaming README.md files`)
+  const renamedPages = renameReadmes(normalizedPages)
+
+  console.log(`Beautifying URLs...`)
+  const beautifiedPages = beautifyLinks(renamedPages)
 
   console.log('Retaining files...')
   retainPaths.map(f => console.log(`  ${f}`))
@@ -283,10 +304,10 @@ async function ingest() {
   retainedFiles.map(([p]) => console.log(`  ${p}`))
   await restoreFiles(retainedFiles)
 
-  console.log(`Writing ${normalizedPages.length} to ${baseDir}`)
+  console.log(`Writing ${beautifiedPages.length} to ${baseDir}`)
   const writeStartTime = new Date()
 
-  await writePages(normalizedPages)
+  await writePages(beautifiedPages)
 
   const writeEndTime = new Date()
   console.log(`Writing completed in ${writeEndTime - writeStartTime} ms`)
