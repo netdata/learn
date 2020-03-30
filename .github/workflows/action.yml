@@ -3,34 +3,41 @@ name: Check URLs
 on: [push, pull_request]
 
 jobs:
-  build:
+  check-links:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: urls-checker
-      uses: urlstechie/urlchecker-action@0.1.7
-      with:
-        # A subfolder or path to navigate to in the present or cloned repository
-        subfolder: docs
+    - name: 'restqa-404-links'
+      uses: restqa/404-links@1.0.0
 
-        # A comma-separated list of file types to cover in the URL checks
-        file_types: .md
+  # build:
+  #   runs-on: ubuntu-latest
 
-        # Choose whether to include file with no URLs in the prints.
-        print_all: false
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: urls-checker
+  #     uses: urlstechie/urlchecker-action@0.1.7
+  #     with:
+  #       # A subfolder or path to navigate to in the present or cloned repository
+  #       subfolder: docs
 
-        # The timeout seconds to provide to requests, defaults to 5 seconds
-        timeout: 5
+  #       # A comma-separated list of file types to cover in the URL checks
+  #       file_types: .md
 
-        # How many times to retry a failed request (each is logged, defaults to 1)
-        retry_count: 1
+  #       # Choose whether to include file with no URLs in the prints.
+  #       print_all: false
 
-        # A comma separated links to exclude during URL checks
-        white_listed_urls: 
+  #       # The timeout seconds to provide to requests, defaults to 5 seconds
+  #       timeout: 5
 
-        # A comma separated patterns to exclude during URL checks
-        white_listed_patterns: 
+  #       # How many times to retry a failed request (each is logged, defaults to 1)
+  #       retry_count: 1
 
-        # choose if the force pass or not
-        force_pass : true
+  #       # A comma separated links to exclude during URL checks
+  #       white_listed_urls: 
+
+  #       # A comma separated patterns to exclude during URL checks
+  #       white_listed_patterns: 
+
+  #       # choose if the force pass or not
+  #       force_pass : false
