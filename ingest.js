@@ -98,6 +98,7 @@ function normalizeLinks(pages) {
     const tokens = path.parse(page.meta.path)
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
+      // ignore absolute urls and external links alone
       const normalizedUrl = url.startsWith('http')
         ? url
         : path.join('/', baseDir, tokens.dir, url).toLowerCase()
@@ -135,7 +136,7 @@ function renameReadmes(pages) {
         urlTokens.base.toLowerCase().startsWith('readme.md') &&
         urlTokens.dir.length
       )
-        ? urlTokens.dir + urlTokens.ext + parsedUrl.hash + parsedUrl.search
+        ? urlTokens.dir + urlTokens.ext// + parsedUrl.hash + parsedUrl.search
         : url
 
       return `](${renameUrl.toLowerCase()})`
@@ -265,11 +266,11 @@ async function ingest() {
   console.log(`Sanitizing ${pages.length} pages`)
   const sanitizedPages = sanitizePages(movedPages)
 
-  console.log(`Normalizing links in ${pages.length} pages`)
-  const normalizedPages = normalizeLinks(sanitizedPages)
-
   console.log(`Renaming README.md files`)
-  const renamedPages = renameReadmes(normalizedPages)
+  const renamedPages = renameReadmes(sanitizedPages)
+
+  console.log(`Normalizing links in ${pages.length} pages`)
+  const normalizedPages = normalizeLinks(renamedPages)
 
   console.log('Retaining files...')
   retainPaths.map(f => console.log(`  ${f}`))
@@ -282,10 +283,10 @@ async function ingest() {
   retainedFiles.map(([p]) => console.log(`  ${p}`))
   await restoreFiles(retainedFiles)
 
-  console.log(`Writing ${renamedPages.length} to ${baseDir}`)
+  console.log(`Writing ${normalizedPages.length} to ${baseDir}`)
   const writeStartTime = new Date()
 
-  await writePages(renamedPages)
+  await writePages(normalizedPages)
 
   const writeEndTime = new Date()
   console.log(`Writing completed in ${writeEndTime - writeStartTime} ms`)
@@ -296,6 +297,14 @@ async function ingest() {
 
 if (GITHUB_TOKEN) {
   ingest()
+
+  // TODO: remove, testing normalize links
+  // console.log(normalizeLinks([{
+  //   meta: {
+  //     path: '/docs'
+  //   },
+  //   body: 'this is [testing](/something.md#whatever)'
+  // }]))
 } else {
   console.warn('Missing GITHUB_TOKEN environment variable. Rate limit will be reduced from 5000 to 60 requests per hour.')
 }
