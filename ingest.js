@@ -3,7 +3,9 @@ const fs = require('fs').promises
 const path = require('path')
 
 // TODO: strip github badges, see /docs/what-is-netdata
-// TODO: error handling
+
+// TODO: doubled anchors /docs/daemon click 'database engine'
+// TODO: http://localhost:3000/docs/step-by-step/step-06 'Netdata's collection architecture'
 
 const MIN_RATE_LIMIT = 50
 
@@ -99,7 +101,11 @@ function normalizeLinks(pages) {
       const normalizedUrl = url.startsWith('http')
         ? url
         : path.join('/', baseDir, tokens.dir, url).toLowerCase()
-      return `](${normalizedUrl})`
+
+      // remove .md from routes
+      const prettyUrl = normalizedUrl.replace(/\.md$/, '/')
+
+      return `](${prettyUrl})`
     })
 
     return {
