@@ -103,7 +103,7 @@ function normalizeLinks(pages) {
         : path.join('/', baseDir, tokens.dir, url).toLowerCase()
 
       // remove .md from routes
-      const prettyUrl = normalizedUrl.replace(/\.md$/, '/')
+      const prettyUrl = normalizedUrl.replace(/\.md/, '/')
 
       return `](${prettyUrl})`
     })
