@@ -3,12 +3,24 @@ name: Check URLs
 on: [push, pull_request]
 
 jobs:
-  check-links:
+
+  markdown-link-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: 'restqa-404-links'
-      uses: restqa/404-links@1.0.0
+    - uses: actions/checkout@master
+    - uses: gaurav-nelson/github-action-markdown-link-check@0.6.0
+      with:
+        use-quiet-mode: 'yes'
+        use-verbose-mode: 'yes'
+        # config-file: 'mlc_config.json'
+        folder-path: 'docs/'
+
+  # check-links:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: 'restqa-404-links'
+  #     uses: restqa/404-links@1.0.0
 
   # build:
   #   runs-on: ubuntu-latest
