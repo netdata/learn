@@ -11,7 +11,7 @@ const MIN_RATE_LIMIT = 50
 
 // see the README.md for instructions to set up a github access token
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
-const baseDir = './docs'
+const baseDir = '/docs'
 const outDir = path.join(__dirname, baseDir)
 // the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
@@ -97,12 +97,23 @@ function normalizeLinks(pages) {
   return pages.map(page => {
     const tokens = path.parse(page.meta.path)
 
+    // TODO: check if it actually contains a path
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
+      // anchors should include the entire path
+      const dir = url.startsWith('#')
+        ? path.join(tokens.dir, tokens.name, tokens.ext)
+        : tokens.dir
+
       // ignore absolute urls and external links alone
       const normalizedUrl = url.startsWith('http')
         ? url
-        : path.join('/', baseDir, tokens.dir, url).toLowerCase()
-      return `](${normalizedUrl})`
+        : path.join('/', baseDir, dir, url).toLowerCase()
+
+      // ensure relative URLs did not go back too far and exclude /docs
+      const docsUrl = normalizedUrl.startsWith(baseDir)
+        ? normalizedUrl
+        : path.join(baseDir, normalizedUrl)
+      return `](${docsUrl})`
     })
 
     return {
@@ -118,7 +129,7 @@ function renameReadmes(pages) {
     const tokens = path.parse(page.meta.path)
 
     const pagePath = tokens.base.toLowerCase() === 'readme.md' && tokens.dir.length
-      ? tokens.dir + tokens.ext
+      ? path.join(tokens.dir, tokens.ext)
       : page.meta.path
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
@@ -148,10 +159,6 @@ function renameReadmes(pages) {
   })
 }
 
-// // remove .md from routes
-// const prettyUrl = normalizedUrl.replace(/\.md/, '/')
-
-
 // remove .md extensions from links in pages so they are all slashes
 function beautifyLinks(pages) {
   return pages.map(page => {
@@ -159,7 +166,7 @@ function beautifyLinks(pages) {
       // ignore absolute urls and external links alone
       const prettyUrl = url.startsWith('http')
         ? url
-        : url.replace(/\.md/, '/')
+        : url.replace(/\.md/gs, '')
       return `](${prettyUrl})`
     })
 
@@ -173,7 +180,8 @@ function beautifyLinks(pages) {
 // read files that we want to keep into memory
 async function retainFiles(retainPaths=[]) {
   return Promise.all(retainPaths.map(async p => {
-    const f = await fs.readFile(p, { encoding: 'utf8' })
+    const relativePath = `.${p}`
+    const f = await fs.readFile(relativePath, { encoding: 'utf8' })
     return [p, f]
   }))
 }
@@ -182,8 +190,9 @@ async function retainFiles(retainPaths=[]) {
 // expects an array of arrays [[path, file], [path, file], ...]
 async function restoreFiles(files=[]) {
   return Promise.all(files.map(async ([p, f]) => {
-    await fs.mkdir(path.dirname(p), { recursive: true })
-    return fs.writeFile(p, f, { encoding: 'utf8' })
+    const relativePath = `.${p}`
+    await fs.mkdir(path.dirname(relativePath), { recursive: true })
+    return fs.writeFile(relativePath, f, { encoding: 'utf8' })
   }))
 }
 
