@@ -3,9 +3,8 @@ const fs = require('fs').promises
 const path = require('path')
 
 // TODO: strip github badges, see /docs/what-is-netdata
-
-// TODO: doubled anchors /docs/daemon click 'database engine'
-// TODO: http://localhost:3000/docs/step-by-step/step-06 'Netdata's collection architecture'
+// TODO: http://localhost:3000/docs/step-by-step/step-99 http(s) is being prefixed
+// TODO: reset at undefined on rate limit
 
 const MIN_RATE_LIMIT = 50
 
@@ -99,7 +98,7 @@ function normalizeLinks(pages) {
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
       // skip the whole process if a relative anchor
-      if (url.startsWith('#')) return `](${url})`
+      if (url.startsWith('#') || url.startsWith('http')) return `](${url})`
 
       // // anchors should include the entire path
       // const dir =
@@ -111,7 +110,7 @@ function normalizeLinks(pages) {
         ? url
         : path.join('/', baseDir, tokens.dir, url).toLowerCase()
 
-      // ensure relative URLs did not go back too far and exclude /docs
+      // ensure relative URLs did not go back too far, excluding /docs
       const withBaseUrl = normalizedUrl.startsWith(baseDir)
         ? normalizedUrl
         : path.join(baseDir, normalizedUrl)
@@ -134,11 +133,6 @@ function renameReadmes(pages) {
     const pagePath = tokens.base.toLowerCase() === 'readme.md' && tokens.dir.length
       ? tokens.dir + tokens.ext
       : page.meta.path
-
-    if (tokens.base.toLowerCase() === 'readme.md') {
-      console.log(tokens)
-      console.log(pagePath)
-    }
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
       if (url.startsWith('http')) return `](${url})`
@@ -234,10 +228,6 @@ function sanitizePages(pages) {
 async function writePages(pages) {
   return Promise.all(pages.map(async (page) => {
     const fullPath = path.join(outDir, page.meta.path).toLowerCase()
-
-    if (fullPath.includes('aclk')) {
-      console.log(fullPath)
-    }
 
     // because the page path may contain additional directories
     const fullDir = path.dirname(fullPath)
