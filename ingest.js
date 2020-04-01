@@ -97,23 +97,26 @@ function normalizeLinks(pages) {
   return pages.map(page => {
     const tokens = path.parse(page.meta.path)
 
-    // TODO: check if it actually contains a path
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
-      // anchors should include the entire path
-      const dir = url.startsWith('#')
-        ? path.join(tokens.dir, tokens.name, tokens.ext)
-        : tokens.dir
+      // skip the whole process if a relative anchor
+      if (url.startsWith('#')) return `](${url})`
 
-      // ignore absolute urls and external links alone
+      // // anchors should include the entire path
+      // const dir =
+      //   ? path.join(tokens.dir, tokens.name, tokens.ext)
+      //   : tokens.dir
+
+      // ignore absolute urls and external links
       const normalizedUrl = url.startsWith('http')
         ? url
-        : path.join('/', baseDir, dir, url).toLowerCase()
+        : path.join('/', baseDir, tokens.dir, url).toLowerCase()
 
       // ensure relative URLs did not go back too far and exclude /docs
-      const docsUrl = normalizedUrl.startsWith(baseDir)
+      const withBaseUrl = normalizedUrl.startsWith(baseDir)
         ? normalizedUrl
         : path.join(baseDir, normalizedUrl)
-      return `](${docsUrl})`
+
+      return `](${withBaseUrl})`
     })
 
     return {
@@ -129,8 +132,13 @@ function renameReadmes(pages) {
     const tokens = path.parse(page.meta.path)
 
     const pagePath = tokens.base.toLowerCase() === 'readme.md' && tokens.dir.length
-      ? path.join(tokens.dir, tokens.ext)
+      ? tokens.dir + tokens.ext
       : page.meta.path
+
+    if (tokens.base.toLowerCase() === 'readme.md') {
+      console.log(tokens)
+      console.log(pagePath)
+    }
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
       if (url.startsWith('http')) return `](${url})`
@@ -226,12 +234,22 @@ function sanitizePages(pages) {
 async function writePages(pages) {
   return Promise.all(pages.map(async (page) => {
     const fullPath = path.join(outDir, page.meta.path).toLowerCase()
+
+    if (fullPath.includes('aclk')) {
+      console.log(fullPath)
+    }
+
     // because the page path may contain additional directories
     const fullDir = path.dirname(fullPath)
     await fs.mkdir(fullDir, { recursive: true })
 
     await fs.writeFile(fullPath, page.body)
   }))
+}
+
+async function debugMetas(pages, filename = 'debug.txt') {
+  const metas = pages.map(page => page.meta)
+  await fs.writeFile(filename, JSON.stringify(metas, null, 2), { encoding: 'utf8' })
 }
 
 async function ingest() {
@@ -289,25 +307,29 @@ async function ingest() {
 
   console.log(`Moving /docs to root`)
   const movedPages = moveDocs(pages)
+  // await debugMetas(movedPages, 'debug-moved.txt')
 
   console.log(`Sanitizing ${pages.length} pages`)
   const sanitizedPages = sanitizePages(movedPages)
-
-  console.log(`Normalizing links in ${pages.length} pages`)
-  const normalizedPages = normalizeLinks(sanitizedPages)
+  // await debugMetas(sanitizedPages, 'debug-sanitized.txt')
 
   console.log(`Renaming README.md files`)
-  const renamedPages = renameReadmes(normalizedPages)
+  const renamedPages = renameReadmes(sanitizedPages)
+
+  console.log(`Normalizing links in ${pages.length} pages`)
+  const normalizedPages = normalizeLinks(renamedPages)
+  // await debugMetas(normalizedPages, 'debug-normalized.txt')
 
   console.log(`Beautifying URLs...`)
-  const beautifiedPages = beautifyLinks(renamedPages)
+  const beautifiedPages = beautifyLinks(normalizedPages)
+  // await debugMetas(beautifiedPages, 'debug-beautified.txt')
 
   console.log('Retaining files...')
   retainPaths.map(f => console.log(`  ${f}`))
   const retainedFiles = await retainFiles(retainPaths)
 
   console.log('Clearing', baseDir)
-  await clearDir(baseDir)
+  await clearDir(`.${baseDir}`)
 
   console.log('Restoring files...')
   retainedFiles.map(([p]) => console.log(`  ${p}`))
@@ -328,13 +350,21 @@ async function ingest() {
 if (GITHUB_TOKEN) {
   ingest()
 
-  // TODO: remove, testing normalize links
-  // console.log(normalizeLinks([{
+  //TODO: remove, testing normalize links
+  // const p = [{
   //   meta: {
-  //     path: '/docs'
+  //     path: 'collectors/go.d.plugin/pkg/matcher/README.md'
   //   },
-  //   body: 'this is [testing](/something.md#whatever)'
-  // }]))
+  //   body: 'this [whatever](#ding) is [testing](../something/README.md#whatever)'
+  // }]
+
+  // console.log(p)
+  // const r = renameReadmes(p)
+  // console.log(r)
+  // const n = normalizeLinks(r)
+  // console.log(n)
+  // const b = beautifyLinks(n)
+  // console.log(b)
 } else {
   console.warn('Missing GITHUB_TOKEN environment variable. Rate limit will be reduced from 5000 to 60 requests per hour.')
 }
