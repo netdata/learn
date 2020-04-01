@@ -34,7 +34,7 @@ So, although Netdata collects metrics every second, it can send to the backend s
 
         metrics are sent to a document db, `JSON` formatted.
 
-    -   **prometheus** is described at [prometheus page](/docs/backends/prometheus/) since it pulls data from Netdata.
+    -   **prometheus** is described at [prometheus page](/docs/prometheus/) since it pulls data from Netdata.
 
     -   **prometheus remote write** (a binary snappy-compressed protocol buffer encoding over HTTP used by
         **Elasticsearch**, **Gnocchi**, **Graphite**, **InfluxDB**, **Kafka**, **OpenTSDB**, **PostgreSQL/TimescaleDB**,
@@ -42,9 +42,9 @@ So, although Netdata collects metrics every second, it can send to the backend s
         providers](https://prometheus.io/operating/integrations/#remote-endpoints-and-storage))
 
         metrics are labeled in the format, which is used by Netdata for the [plaintext prometheus
-        protocol](/docs/backends/prometheus/). Notes on using the remote write backend are [here](/docs/backends/prometheus/remote_write/).
+        protocol](/docs/prometheus/). Notes on using the remote write backend are [here](/docs/prometheus/remote_write/).
 
-    -   **TimescaleDB** via [community-built connector](/docs/backends/timescale.md) that takes JSON streams from a Netdata client
+    -   **TimescaleDB** via [community-built connector](/docs/timescale) that takes JSON streams from a Netdata client
         and writes them to a TimescaleDB table.
 
     -   **AWS Kinesis Data Streams**
@@ -141,7 +141,7 @@ from your Netdata):
    When multiple servers are defined, Netdata will try the next one when the first one fails. This allows you to
    load-balance different servers: give your backend servers in different order on each Netdata.
 
-   Netdata also ships [`nc-backend.sh`](/docs/backends/nc-backend.sh), a script that can be used as a fallback backend to save the
+   Netdata also ships [`nc-backend.sh`](/docs/nc-backend.sh), a script that can be used as a fallback backend to save the
    metrics to disk and push them to the time-series database when it becomes available again. It can also be used to
    monitor / trace / debug the metrics Netdata generates.
 

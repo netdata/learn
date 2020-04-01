@@ -5,14 +5,14 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-clo
 
 
 
-To use the features of [Netdata Cloud](/docs/netdata-cloud.md), you must first register an account with Netdata Cloud and associate your first Netdata node with the Netdata Cloud [registry](/registry.md). **Netdata Cloud is entirely free for all Netdata users**, and does not store any metrics created by your machines. You keep your dataâNetdata Cloud just connects it all together.
+To use the features of [Netdata Cloud](/docs/netdata-cloud/readme), you must first register an account with Netdata Cloud and associate your first Netdata node with the Netdata Cloud [registry](/docs/registry). **Netdata Cloud is entirely free for all Netdata users**, and does not store any metrics created by your machines. You keep your dataâNetdata Cloud just connects it all together.
 
 !!! attention "Opting-in to Netdata Cloud"
-    By [signing in](/docs/netdata-cloud/signing-in.md) to Netdata Cloud, you opt-in to let Netdata Cloud receive and store the information described [here](/registry.md#what-data-does-the-registry-store#what-data-does-the-registry-store). We never store the metrics collected by Netdata agents, just machine GUIDs, person GUID, URLs, and account information.
+    By [signing in](/docs/netdata-cloud/signing-in) to Netdata Cloud, you opt-in to let Netdata Cloud receive and store the information described [here](/docs/registry#what-data-does-the-registry-store). We never store the metrics collected by Netdata agents, just machine GUIDs, person GUID, URLs, and account information.
 
 ## Registering a Netdata Cloud account
 
-There is only one prerequisite to using Netdata Cloud: A working Netdata agent. If you don't have a running Netdata agent yet, check out the [installation guides](/packaging/installer/) for more information.
+There is only one prerequisite to using Netdata Cloud: A working Netdata agent. If you don't have a running Netdata agent yet, check out the [installation guides](/docs/packaging/installer/) for more information.
 
 To begin, visit the web dashboard of your Netdata agent by navigating your browser of choice to `http://SERVER-IP:19999`. Youâll see a dashboard much like this:
 
@@ -47,7 +47,7 @@ A second route can be found in the Nodes Listâthe drop-down menu in the top
 
 ![A screenshot of the private registry warning modal](https://user-images.githubusercontent.com/1153921/59782901-ca091d00-9273-11e9-9f9a-0cb18f78ca26.png)
 
-If you agree to use Netdata Cloud over your private registry, and opt-in to let Netdata Cloud receive and store the information described [here](/registry.md#what-data-does-the-registry-store#what-data-does-the-registry-store), you should click the **Sign in** button again. If not, click the **Cancel** button to continue using your private registry.
+If you agree to use Netdata Cloud over your private registry, and opt-in to let Netdata Cloud receive and store the information described [here](/docs/registry#what-data-does-the-registry-store), you should click the **Sign in** button again. If not, click the **Cancel** button to continue using your private registry.
 
 
 ### Choosing your registration or sign in method
@@ -65,7 +65,7 @@ Click the **Authorize with Google** button to begin registration. You will be re
 
 ![Screenshot of the Google authentication screen for Netdata Cloud](https://user-images.githubusercontent.com/1153921/59786094-50752d00-927b-11e9-9411-5d7ce2b71ab0.png)
 
-Click on the account you would like to connect to Netdata Cloud to continue and then skip down to [Visiting Netdata Cloud for the first time](/docs/netdata-cloud/#visiting-the-nodes-view-for-the-first-time) for further instructions.
+Click on the account you would like to connect to Netdata Cloud to continue and then skip down to [Visiting Netdata Cloud for the first time](#visiting-the-nodes-view-for-the-first-time) for further instructions.
 
 ### Registration via GitHub
 
@@ -73,7 +73,7 @@ Click the **Authorize with GitHub** button to begin registration. You will be re
 
 ![Screenshot of the GitHub authentication screen for Netdata Cloud](https://user-images.githubusercontent.com/1153921/59786227-a2b64e00-927b-11e9-939b-6fc51ef453b0.png)
 
-Click the **Authorize Netdata** button to continue and then skip down to [Visiting Netdata Cloud for the first time](/docs/netdata-cloud/#visiting-the-nodes-view-for-the-first-time) for further instructions.
+Click the **Authorize Netdata** button to continue and then skip down to [Visiting Netdata Cloud for the first time](#visiting-the-nodes-view-for-the-first-time) for further instructions.
 
 ### Registration via email
 
@@ -81,7 +81,7 @@ Enter your preferred email into the field and click the **Authorize** button.
 
 Open your email account and check for the verification emailâit should arrive in less than a minute. If it doesn't show up, check your spam folder or click the **Resend email** button in the Netdata Cloud interface.
 
-When the email arrives, open it and click on the green **Sign in** button and then skip down to [Visiting Netdata Cloud for the first time](/docs/netdata-cloud/#visiting-the-nodes-view-for-the-first-time) for further instructions.
+When the email arrives, open it and click on the green **Sign in** button and then skip down to [Visiting Netdata Cloud for the first time](#visiting-the-nodes-view-for-the-first-time) for further instructions.
 
 ![Screenshot of the verification email](https://user-images.githubusercontent.com/1153921/59783969-338a2b00-9276-11e9-84b8-a4f678de1242.png)
 
@@ -89,17 +89,17 @@ When the email arrives, open it and click on the green **Sign in** button and th
 
 Regardless of which sign in method you used, you'll now be redirected back to your Netdata agent's dashboard. This node has now been associated with your Netdata Cloud account. Netdata Cloud uses a list of nodes associated with your account to populate the Nodes List dropdown in the dashboard and the Nodes View feature of Netdata Cloud.
 
-**For more information on how to use the Nodes View, visit the [Nodes View guide](/docs/netdata-cloud/nodes-view.md).**
+**For more information on how to use the Nodes View, visit the [Nodes View guide](/docs/netdata-cloud/nodes-view).**
 
 ## Signing in to your Netdata Cloud account
 
-The process of signing in to an existing Netdata Cloud account the same as [registering for a new account](/docs/netdata-cloud/#registering-a-netdata-cloud-account). The recommended method is to use the **Sign in** button at the top-right corner of a Netdata nodes's dashboard. Choose the method you used to register for your Netdata Cloud account and complete the process.
+The process of signing in to an existing Netdata Cloud account the same as [registering for a new account](#registering-a-netdata-cloud-account). The recommended method is to use the **Sign in** button at the top-right corner of a Netdata nodes's dashboard. Choose the method you used to register for your Netdata Cloud account and complete the process.
 
 ![A screenshot of the Sign in button in the Netdata dashboard](https://user-images.githubusercontent.com/1153921/59782688-6252d200-9273-11e9-9975-52be0d6714bf.png)
 
 ## Adding additional nodes to your Netdata Cloud account
 
-There is currently only one way to associate additional Netdata nodes with your Netdata Cloud account: You must visit the web dashboard for each node and click the **Sign in** button and complete the [sign in process](/docs/netdata-cloud/#signing-in-to-your-netdata-cloud-account).
+There is currently only one way to associate additional Netdata nodes with your Netdata Cloud account: You must visit the web dashboard for each node and click the **Sign in** button and complete the [sign in process](#signing-in-to-your-netdata-cloud-account).
 
 !!! note ""
     We are aware that the process of registering each node individually is cumbersome for those who want to implement Netdata Cloud's features across a large infrastructure. 
@@ -110,15 +110,15 @@ Please view [this comment on issue #6318](https://github.com/netdata/netdata/iss
 
 ## Private registries and Netdata Cloud
 
-If you use a [private registry](/registry.md#run-your-own-registry#run-your-own-registry), and sign in to Netdata Cloud, you'll be using the Netdata Cloud registry in addition to your private registry.
+If you use a [private registry](/docs/registry#run-your-own-registry), and sign in to Netdata Cloud, you'll be using the Netdata Cloud registry in addition to your private registry.
 
 Clicking the **Sign in** button on the Netdata dashboard will display a modal window warning you about the synchronization of your private registry's entries to the Netdata Cloud's registry.
 
 ![A screenshot of the private registry warning modal](https://user-images.githubusercontent.com/1153921/59807493-fd1bd280-92ac-11e9-8017-98efb2cbbed8.png)
 
-If your company's data policies don't allow storing information about your nodes on the Netdata Cloud registry, you should click the **Cancel** button and continue using your private registry. You'll be able to access the Nodes List in the top-left corner of a Netdata dashboard, but you won't be able to use the [Nodes View](/docs/netdata-cloud/nodes-view.md) feature within Netdata Cloud, or any of the [additional features](https://blog.netdata.cloud/posts/netdata-cloud-announcement/#what-features-will-netdata-cloud-offer) on our roadmap. You can also sign up for the waiting list for the [hosted and/or on-premises versions of Netdata Cloud](/docs/netdata-cloud.md#running-netdata-cloud-on-premises-or-as-a-hosted-instance#running-netdata-cloud-on-premises-or-as-a-hosted-instance) that we're working on.
+If your company's data policies don't allow storing information about your nodes on the Netdata Cloud registry, you should click the **Cancel** button and continue using your private registry. You'll be able to access the Nodes List in the top-left corner of a Netdata dashboard, but you won't be able to use the [Nodes View](/docs/netdata-cloud/nodes-view) feature within Netdata Cloud, or any of the [additional features](https://blog.netdata.cloud/posts/netdata-cloud-announcement/#what-features-will-netdata-cloud-offer) on our roadmap. You can also sign up for the waiting list for the [hosted and/or on-premises versions of Netdata Cloud](/docs/netdata-cloud/readme#running-netdata-cloud-on-premises-or-as-a-hosted-instance) that we're working on.
 
-If you agree to use Netdata Cloud over your private registry, and opt-in to let Netdata Cloud receive and store the information described [here](/registry.md#what-data-does-the-registry-store#what-data-does-the-registry-store), you should click the **Sign in** button again to continue the registration/sign in process.
+If you agree to use Netdata Cloud over your private registry, and opt-in to let Netdata Cloud receive and store the information described [here](/docs/registry#what-data-does-the-registry-store), you should click the **Sign in** button again to continue the registration/sign in process.
 
 ### Returning to your private registry
 
@@ -129,7 +129,7 @@ You can sign out in two ways:
 1.  **From a node's dashboard**: In the top-right corner you will find a dropdown menu with your email address. Click that and then click the **Sign Out** button.
 2.  **From Netdata Cloud**: Click on your profile picture in the top-right corner and then click on the **Sign Out** button.
 
-Signing out from Netdata Cloud and returning to your private registry *does not remove* the [information stored](/registry.md#what-data-does-the-registry-store#what-data-does-the-registry-store) about your nodes or account details.
+Signing out from Netdata Cloud and returning to your private registry *does not remove* the [information stored](/docs/registry#what-data-does-the-registry-store) about your nodes or account details.
 
 But, upon signout, your Nodes List on all dashboards will once more be populated by your private registry and not Netdata Cloud.
 
@@ -157,6 +157,6 @@ Now, when you visit the Nodes View, you will be able to see all the nodes that w
 
 ## What's next?
 
-Learn how to use the [Nodes View](/docs/netdata-cloud/nodes-view.md) to monitor many nodes concurrently.
+Learn how to use the [Nodes View](/docs/netdata-cloud/nodes-view) to monitor many nodes concurrently.
 
 

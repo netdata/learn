@@ -16,7 +16,7 @@ We have currently released packages following the .RPM format with version
 
 Netdata is committed to support installation of our solution to all operating systems. This is a constant battle for
 Netdata, as we strive to automate and make things easier for our users. For the operating system support matrix, please
-visit our [distributions](/docs/packaging/distributions.md) support page.
+visit our [distributions](/docs/packaging/distributions) support page.
 
 We provide two separate repositories, one for our stable releases and one for our nightly releases.
 
@@ -48,8 +48,8 @@ If you are using such a setup, there are a couple of ways you can work around th
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00.md)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs.
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](/docs/getting-started.md) for a quick overview.
+guide](/docs/getting-started) for a quick overview.

@@ -28,6 +28,6 @@ reload-claiming-state
     Reload agent claiming state from disk.
 ```
 
-Those commands are the same that can be sent to netdata via [signals](/docs/daemon.md#command-line-options#command-line-options).
+Those commands are the same that can be sent to netdata via [signals](/docs/daemon#command-line-options).
 
 

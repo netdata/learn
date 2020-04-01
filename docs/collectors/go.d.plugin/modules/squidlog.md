@@ -68,14 +68,14 @@ squidlog understands these groups of codes:
 
 ## Custom Log Format
 
-Custom log format is easy. Use [known fields](/docs/collectors/go.d.plugin/modules/squidlog/#known-fields) to construct your log format.
+Custom log format is easy. Use [known fields](#known-fields) to construct your log format.
 
 -   If using CSV parser
 
 **Note**: can be used only if all known squid format codes are separated by csv delimiter.
 For example, if you have `%Ss:%Sh`, csv parser cant extract `%Ss` and `%Sh` from it and you need to use RegExp parser.
 
-Copy your current log format. Replace all known squid format codes with corresponding [known](/docs/collectors/go.d.plugin/modules/squidlog/#known-fields) fields. Replaces others with "-".
+Copy your current log format. Replace all known squid format codes with corresponding [known](#known-fields) fields. Replaces others with "-".
 
 ```yaml
 jobs:
@@ -88,7 +88,7 @@ jobs:
 
 -   If using LTSV parser
 
-Provide fields mapping. You need to map your label names to [known](/docs/collectors/go.d.plugin/modules/squidlog/#known-fields) fields.
+Provide fields mapping. You need to map your label names to [known](#known-fields) fields.
 
 ```yaml
   - name: squid_log_custom_ltsv_exampla
@@ -103,7 +103,7 @@ Provide fields mapping. You need to map your label names to [known](/docs/collec
 
 -   If using RegExp parser
 
-Use pattern with subexpressions names. These names should be [known](/docs/collectors/go.d.plugin/modules/squidlog/#known-fields) by squidlog.
+Use pattern with subexpressions names. These names should be [known](#known-fields) by squidlog.
 We recommend to use https://regex101.com/ to test your regular expression.
 
 ```yaml
@@ -118,7 +118,7 @@ jobs:
 ## Configuration
 
 Edit the `go.d/squidlog.conf` configuration file using `edit-config` from the your agent's [config
-directory](/docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory
@@ -126,7 +126,7 @@ sudo ./edit-config go.d/squidlog.conf
 ```
 
 This module needs only `path` to log file if you use [native log format](https://wiki.squid-cache.org/Features/LogFormat#Squid_native_access.log_format_in_detail).
-If you use custom log format you need [to set it manually](/docs/collectors/go.d.plugin/modules/squidlog/#custom-log-format). 
+If you use custom log format you need [to set it manually](#custom-log-format). 
 
 ```yaml
 jobs:

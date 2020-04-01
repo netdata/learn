@@ -14,7 +14,7 @@ kernel. For now, the main goal of this plugin is to monitor IO and process manag
 </figure>
 
 With this eBPF collector, you can monitor sophisticated system-level metrics about your complex applications while
-maintaining Netdata's [high standards for performance](/docs/collectors/ebpf_process.plugin/#performance).
+maintaining Netdata's [high standards for performance](#performance).
 
 ## Enable the collector on Linux
 
@@ -37,7 +37,7 @@ grep CONFIG_KPROBES=y /boot/config-$(uname -r)
 zgrep CONFIG_KPROBES=y /proc/config.gz
 ```
 
-If `Kprobes` is enabled, you will see `CONFIG_KPROBES=y` as the command's output, and can skip ahead to the next step: [mount `debugfs` and `tracefs`](/docs/collectors/ebpf_process.plugin/#mount-debugfs-and-tracefs).
+If `Kprobes` is enabled, you will see `CONFIG_KPROBES=y` as the command's output, and can skip ahead to the next step: [mount `debugfs` and `tracefs`](#mount-debugfs-and-tracefs).
 
 If you don't see `CONFIG_KPROBES=y` for any of the commands above, you will have to recompile your kernel to enable it.
 
@@ -69,8 +69,8 @@ commands. You can also configure your system's `/etc/fstab` configuration to mou
 
 eBPF collection is only enabled if you install Netdata with the `--enable-ebpf` option. 
 
-If you installed via the [one-line installation script](/docs/packaging/installer.md), [64-bit
-binary](/docs/packaging/installer/methods/kickstart-64.md), or [manually](/docs/packaging/installer/methods/manual.md),
+If you installed via the [one-line installation script](/docs/packaging/installer), [64-bit
+binary](/docs/packaging/installer/methods/kickstart-64), or [manually](/docs/packaging/installer/methods/manual),
 you can append the `--enable-ebpf` option when you reinstall.
 
 For example, if you used the one-line installation script, you can reinstall Netdata with the following:
@@ -212,6 +212,6 @@ Because eBPF monitoring is complex, we are evaluating the performance of this ne
 conditions, across various system loads, and when monitoring complex applications.
 
 Our [initial testing](https://github.com/netdata/netdata/issues/8195) shows the performance of the eBPF collector is
-nearly identical to our [apps.plugin collector](/docs/collectors/apps.plugin/), despite collecting and displaying much more
+nearly identical to our [apps.plugin collector](/docs/apps.plugin/), despite collecting and displaying much more
 sophisticated metrics. You can now use the eBPF to gather deeper insights without affecting the performance of your
 complex applications at any load.

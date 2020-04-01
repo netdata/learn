@@ -89,7 +89,7 @@ If replication is configured and `replicationMetricsEnabled` is set to true:
 ## Configuration
 
 Edit the `go.d/pulsar.conf` configuration file using `edit-config` from the your agent's [config
-directory](/docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory
@@ -112,7 +112,7 @@ For all available options please see module [configuration file](https://github.
 ## Topic filtering
 
 By default module collects data for all topics but it supports topic filtering.
-Filtering doesnt exclude a topic stats from the [summary](/docs/collectors/go.d.plugin/modules/pulsar/#summary)/[namespace](/docs/collectors/go.d.plugin/modules/pulsar/#namespace) stats, it only removes the topic from the [topic](/docs/collectors/go.d.plugin/modules/pulsar/#topic) charts.
+Filtering doesnt exclude a topic stats from the [summary](#summary)/[namespace](#namespace) stats, it only removes the topic from the [topic](#topic) charts.
 
 To check matcher syntax see [matcher documentation](https://github.com/netdata/go.d.plugin/blob/master/pkg/matcher/README.md).
 

@@ -20,7 +20,7 @@ The current version of Nodes uses the API available on each Netdata agent to che
 
 ## The Nodes View
 
-To access the Nodes View, you must first be signed in to Netdata Cloud. To register for an account, or sign in to an existing account, visit our [signing in guide](/docs/netdata-cloud/signing-in.md) for details.
+To access the Nodes View, you must first be signed in to Netdata Cloud. To register for an account, or sign in to an existing account, visit our [signing in guide](/docs/netdata-cloud/signing-in) for details.
 
 Once you're signed in to Netdata Cloud, clicking on any of the **Nodes Beta** buttons in the node's web dashboard will lead you to the Nodes View. Find one (`1`) in the dropdown menu in the upper-right corner, a second (`2`) in the top navigation bar, and a third (`3`) in the dropdown menu in the top-left corner of the Netdata dashboard.
 
@@ -32,7 +32,7 @@ The primary component of the Nodes View is a list of all the nodes with Netdata 
 
 ![A screenshot of the Netdata Cloud web interface](https://user-images.githubusercontent.com/1153921/59883580-657cb980-936a-11e9-8651-a51832a5f41e.png)
 
-Depending on which [view mode](/docs/netdata-cloud/#view-modes) you're using, Nodes View will present you with information about that node, such as its hostname, operating system, warnings/critical alerts, and any [supported services](/docs/netdata-cloud/#services-available-in-the-nodes-view) that are running on that node. Here is an example of the **full** view mode:
+Depending on which [view mode](#view-modes) you're using, Nodes View will present you with information about that node, such as its hostname, operating system, warnings/critical alerts, and any [supported services](#services-available-in-the-nodes-view) that are running on that node. Here is an example of the **full** view mode:
 
 ![Annotated screenshot of the icons visible in the node entries](https://user-images.githubusercontent.com/1153921/60219761-9eb0a000-9828-11e9-9f77-b492dad016f9.png)
 
@@ -80,7 +80,7 @@ _Network_ displays visualizations for `Bandwidth` for every available networking
 
 #### Services tab
 
-The **Services** tab will show visualizations for any [supported services](/docs/netdata-cloud/#services-available-in-the-nodes-view) that are running on that node. Three selectors are available: _Databases_, _Web_, and _Messaging_. If there are no services under any of these categories, the selector will not be clickable.
+The **Services** tab will show visualizations for any [supported services](#services-available-in-the-nodes-view) that are running on that node. Three selectors are available: _Databases_, _Web_, and _Messaging_. If there are no services under any of these categories, the selector will not be clickable.
 
 #### Alarms tab
 
@@ -112,7 +112,7 @@ The view mode button lets you switch between three view modes:
     -   Operating system
     -   Critical/warning alerts in two separate indicators
     -   Hostname
-    -   Icons for [supported services](/docs/netdata-cloud/#services-available-in-the-nodes-view)
+    -   Icons for [supported services](#services-available-in-the-nodes-view)
 
 ![Annotated screenshot of the full view mode](https://user-images.githubusercontent.com/1153921/60219885-15e63400-9829-11e9-8654-b49f119efb9a.png)
 
@@ -125,7 +125,7 @@ The view mode button lets you switch between three view modes:
     -   Operating system
     -   Critical/warning alerts in two separate indicators
     -   Hostname
-    -   Icons for [supported services](/docs/netdata-cloud/#services-available-in-the-nodes-view) 
+    -   Icons for [supported services](#services-available-in-the-nodes-view) 
 
 ![Annotated screenshot of the detailed view mode](https://user-images.githubusercontent.com/1153921/60220574-56df4800-982b-11e9-8300-aa9190bbf09f.png)
 
@@ -143,7 +143,7 @@ Play around with the options until you find a setup that works for you.
 
 ## Adding more agents to the Nodes View
 
-There is currently only one way to associate additional Netdata nodes with your Netdata Cloud account. You must visit the web dashboard for each node and click the **Sign in** button and complete the [sign in process](/docs/netdata-cloud/signing-in.md#signing-in-to-your-netdata-cloud-account).
+There is currently only one way to associate additional Netdata nodes with your Netdata Cloud account. You must visit the web dashboard for each node and click the **Sign in** button and complete the [sign in process](/docs/netdata-cloud/signing-in#signing-in-to-your-netdata-cloud-account).
 
 !!! note ""
     We are aware that the process of registering each node individually is cumbersome for those who want to implement Netdata Cloud's features across a large infrastructure. 
@@ -154,7 +154,7 @@ Please view [this comment on issue #6318](https://github.com/netdata/netdata/iss
 
 ## Services available in the Nodes View
 
-The following tables elaborate on which services will appear in the Nodes View. Alerts from [other collectors](/collectors.md), when entered an alarm status, will show up in the _Alarms_ tab despite not appearing 
+The following tables elaborate on which services will appear in the Nodes View. Alerts from [other collectors](/docs/collectors), when entered an alarm status, will show up in the _Alarms_ tab despite not appearing 
 
 ### Databases
 

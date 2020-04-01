@@ -19,9 +19,9 @@ Let's dive in and walk through the process of monitoring CockroachDB metrics wit
 
 ## What's in this guide
 
--   [Configure the CockroachDB collector](/docs/tutorials/#configure-the-cockroachdb-collector)
-    -   [Manual setup for a local CockroachDB database](/docs/tutorials/#manual-setup-for-a-local-cockroachdb-database)
--   [Tweak CockroachDB alarms](/docs/tutorials/#tweak-cockroachdb-alarms)
+-   [Configure the CockroachDB collector](#configure-the-cockroachdb-collector)
+    -   [Manual setup for a local CockroachDB database](#manual-setup-for-a-local-cockroachdb-database)
+-   [Tweak CockroachDB alarms](#tweak-cockroachdb-alarms)
 
 ## Configure the CockroachDB collector
 
@@ -31,7 +31,7 @@ display them on the dashboard.
 
 If your CockroachDB instance is accessible through `http://localhost:8080/` or `http://127.0.0.1:8080`, your setup is
 complete. Restart Netdata with `service netdata restart`, or use the [appropriate
-method](/docs/getting-started.md#start-stop-and-restart-netdata) for your system, and refresh your browser. You should see
+method](/docs/getting-started#start-stop-and-restart-netdata) for your system, and refresh your browser. You should see
 CockroachDB metrics in your Netdata dashboard!
 
 <figure>
@@ -109,7 +109,7 @@ cd /etc/netdata/ # Replace with your Netdata configuration directory, if not /et
 ```
 
 For more information about editing the defaults or writing new alarm entities, see our health monitoring [quickstart
-guide](/health/quickstart.md).
+guide](/docs/health/quickstart).
 
 ## What's next?
 

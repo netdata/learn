@@ -44,6 +44,6 @@ Netdata collects, stores and visualizes everything, every single metric exposed 
 
 Due to Netdata's distributed nature, the number of metrics collected does not have any noticeable effect on the performance or the cost of the monitoring infrastructure.
 
-Of course, since Netdata is also about [meaningful presentation](/docs/why-netdata/meaningful-presentation.md), the number of metrics makes Netdata development slower. We, the Netdata developers, need to have a good understanding of the metrics before adding them into Netdata. We need to organize the metrics, add information related to them, configure alarms for them, so that you, the Netdata users, will have the best out-of-the-box experience and all the information required to kill the console for troubleshooting slowdowns.
+Of course, since Netdata is also about [meaningful presentation](/docs/why-netdata/meaningful-presentation), the number of metrics makes Netdata development slower. We, the Netdata developers, need to have a good understanding of the metrics before adding them into Netdata. We need to organize the metrics, add information related to them, configure alarms for them, so that you, the Netdata users, will have the best out-of-the-box experience and all the information required to kill the console for troubleshooting slowdowns.
 
 

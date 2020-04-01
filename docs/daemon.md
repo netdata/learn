@@ -10,7 +10,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/daemon/README.md
 -   You can start Netdata by executing it with `/usr/sbin/netdata` (the installer will also start it).
 
 -   You can stop Netdata by killing it with `killall netdata`. You can stop and start Netdata at any point. When
-    exiting, the [database engine](/docs/database/engine.md) saves metrics to `/var/cache/netdata/dbengine/` so that
+    exiting, the [database engine](/docs/database/engine) saves metrics to `/var/cache/netdata/dbengine/` so that
     it can continue when started again.
 
 Access to the web site, for all graphs, is by default on port `19999`, so go to:
@@ -249,7 +249,7 @@ where:
 
 ### debug.log
 
-See [debugging](/docs/daemon/#debugging).
+See [debugging](#debugging).
 
 ## OOM Score
 

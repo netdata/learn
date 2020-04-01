@@ -69,12 +69,12 @@ There are 2 uses that enable this feature:
 
 Using `points` and `gtime` the query engine tries to find a best fit for **database-points**
 vs **result-points** (we call this ratio `group points`). It always tries to keep `group points`
-an integer. Keep in mind the query engine may shift `after` if required. See also the [example](/docs/web/api/queries/#example).
+an integer. Keep in mind the query engine may shift `after` if required. See also the [example](#example).
 
 #### Time-frame Alignment
 
 Alignment is a very important aspect of Netdata queries. Without it, the animated
-charts on the dashboards would constantly [change shape](/docs/web/api/queries/#example) during incremental updates.
+charts on the dashboards would constantly [change shape](#example) during incremental updates.
 
 To provide consistent grouping through time, the query engine (by default) aligns
 `after` and `before` to be a multiple of `group points`.

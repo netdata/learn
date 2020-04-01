@@ -14,11 +14,11 @@ really flexible. ð¤¸
 
 In this step of the Netdata guide, you'll learn:
 
--   [Why you might want a custom dashboard](/docs/step-by-step/#why-should-i-create-a-custom-dashboard)
--   [How to create and prepare your `custom-dashboard.html` file](/docs/step-by-step/#create-and-prepare-your-custom-dashboardhtml-file)
--   [Where to add `dashboard.js` to your custom dashboard file](/docs/step-by-step/#add-dashboardjs-to-your-custom-dashboard-file)
--   [How to add basic styling](/docs/step-by-step/#add-some-basic-styling)
--   [How to add charts of different types, shapes, and sizes](/docs/step-by-step/#creating-your-dashboards-charts)
+-   [Why you might want a custom dashboard](#why-should-i-create-a-custom-dashboard)
+-   [How to create and prepare your `custom-dashboard.html` file](#create-and-prepare-your-custom-dashboardhtml-file)
+-   [Where to add `dashboard.js` to your custom dashboard file](#add-dashboardjs-to-your-custom-dashboard-file)
+-   [How to add basic styling](#add-some-basic-styling)
+-   [How to add charts of different types, shapes, and sizes](#creating-your-dashboards-charts)
 
 Let's get on with it!
 
@@ -145,7 +145,7 @@ charts on a single page.
 ### The chart unique ID (required)
 
 You need to specify the unique ID of a chart to show it on your custom dashboard. If you forgot how to find the unique
-ID, head back over to [step 2](/docs/step-by-step/step-02.md#understand-charts-dimensions-families-and-contexts) for a
+ID, head back over to [step 2](/docs/step-by-step/step-02#understand-charts-dimensions-families-and-contexts) for a
 re-introduction.
 
 You can then put this unique ID into a `<div>` element with the `data-netdata` attribute. Put this in the `<body>` of
@@ -385,9 +385,9 @@ In this guide, you learned the fundamentals of building a custom Netdata dashboa
 charts to your `custom-dashboard.html`, change the charts that are already there, and size them according to your needs.
 
 Of course, the custom dashboarding features covered here are just the beginning. Be sure to read up on our [custom
-dashboard documentation](/web/gui/custom/) for details on how you can use other chart libraries, pull metrics from
+dashboard documentation](/docs/web/gui/custom/) for details on how you can use other chart libraries, pull metrics from
 multiple Netdata agents, and choose which dimensions a given chart shows.
 
 Next, you'll learn how to store long-term historical metrics in Netdata!
 
-[Next: Long-term metrics storage &rarr;](/docs/step-by-step/step-09.md)
+[Next: Long-term metrics storage &rarr;](/docs/step-by-step/step-09)

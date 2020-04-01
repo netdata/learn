@@ -16,10 +16,10 @@ Next up: configuration.
 
 We'll talk about Netdata's default configuration, and then you'll learn how to do the following:
 
--   [Find your `netdata.conf` file](/docs/step-by-step/#find-your-netdataconf-file)
--   [Use edit-config to open `netdata.conf`](/docs/step-by-step/#use-edit-config-to-open-netdataconf)
--   [Navigate the structure of `netdata.conf`](/docs/step-by-step/#the-structure-of-netdataconf)
--   [Edit your `netdata.conf` file](/docs/step-by-step/#edit-your-netdataconf-file)
+-   [Find your `netdata.conf` file](#find-your-netdataconf-file)
+-   [Use edit-config to open `netdata.conf`](#use-edit-config-to-open-netdataconf)
+-   [Navigate the structure of `netdata.conf`](#the-structure-of-netdataconf)
+-   [Edit your `netdata.conf` file](#edit-your-netdataconf-file)
 
 ## Find your `netdata.conf` file
 
@@ -42,7 +42,7 @@ In the system represented by the screenshot, the line reads: `config directory =
 `netdata.conf`, and all the other configuration files, can be found at `/etc/netdata`.
 
 > For more details on where your Netdata config directory is, take a look at our [installation
-> instructions](/packaging/installer/).
+> instructions](/docs/packaging/installer/).
 
 For the rest of this tutorial, we'll assume you're editing files or running scripts from _within_ your **Netdata
 configuration directory**.
@@ -95,7 +95,7 @@ section and give it the value of `1`.
 ```
 
 Restart Netdata with `service restart netdata` or the [appropriate
-alternative](/docs/getting-started.md#start-stop-and-restart-netdata) for your system.
+alternative](/docs/getting-started#start-stop-and-restart-netdata) for your system.
 
 Now, open up your browser and navigate to `http://HOST:19999/netdata.conf`. You'll see that Netdata has recognized
 that our fake option isn't valid and added a notice that Netdata will ignore it.
@@ -123,8 +123,8 @@ Once you're done, restart Netdata and refresh the dashboard. Say hello to your r
 netdata.conf](https://user-images.githubusercontent.com/1153921/65470784-86e5b980-de21-11e9-87bf-fabec7989738.gif)
 
 Netdata has dozens upon dozens of options you can change. To see them all, read our [daemon
-configuration](/daemon/config/), or hop into our popular tutorial on [increasing long-term metrics
-storage](/docs/tutorials/longer-metrics-storage.md).
+configuration](/docs/daemon/config/), or hop into our popular tutorial on [increasing long-term metrics
+storage](/docs/tutorials/longer-metrics-storage).
 
 ## What's next?
 
@@ -138,4 +138,4 @@ In the next step, we're going to cover one of Netdata's core functions: monitori
 and notifications. You'll learn how to disable alarms, create new ones, and push notifications to the system of your
 choosing.
 
-[Next: Health monitoring alarms and notifications &rarr;](/docs/step-by-step/step-05.md)
+[Next: Health monitoring alarms and notifications &rarr;](/docs/step-by-step/step-05)

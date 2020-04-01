@@ -21,13 +21,13 @@ modal](https://user-images.githubusercontent.com/1153921/76559153-d5cced00-645b-
 If your agent can be updated, use one of the methods below. **The method you chose for updating Netdata depends on how
 you installed it.** Choose from the following list to see the appropriate update instructions for your system.
 
--   [One-line installer script (`kickstart.sh`)](/docs/packaging/installer/#one-line-installer-script-kickstartsh)
--   [`.deb` or `.rpm` packages](/docs/packaging/installer/#deb-or-rpm-packages)
+-   [One-line installer script (`kickstart.sh`)](#one-line-installer-script-kickstartsh)
+-   [`.deb` or `.rpm` packages](#deb-or-rpm-packages)
 -   [Pre-built static binary for 64-bit systems
-    (`kickstart-static64.sh`)](/docs/packaging/installer/#pre-built-static-binary-for-64-bit-systems-kickstart-static64sh)
--   [Docker](/docs/packaging/installer/#docker)
--   [macOS](/docs/packaging/installer/#macos)
--   [Manual installation from Git](/docs/packaging/installer/#manual-installation-from-git)
+    (`kickstart-static64.sh`)](#pre-built-static-binary-for-64-bit-systems-kickstart-static64sh)
+-   [Docker](#docker)
+-   [macOS](#macos)
+-   [Manual installation from Git](#manual-installation-from-git)
 
 ## One-line installer script (`kickstart.sh`)
 
@@ -43,7 +43,7 @@ bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 
 > â ï¸ If you installed Netdata with any optional parameters, such as `--no-updates` to disable automatic updates, and
 > want to retain those settings, you need to set them again during this process. See the [`kickstart.sh`
-> documentation](/docs/packaging/installer/methods/kickstart.md#optional-parameters-to-alter-your-installation) for more information on these
+> documentation](/docs/packaging/installer/methods/kickstart#optional-parameters-to-alter-your-installation) for more information on these
 > parameters and what they do.
 
 ## `.deb` or `.rpm` packages
@@ -78,7 +78,7 @@ bash <(curl -Ss https://my-netdata.io/kickstart-static64.sh)
 
 > â ï¸ If you installed Netdata with any optional parameters, such as `--no-updates` to disable automatic updates, and
 > want to retain those settings, you need to set them again during this process. See the [`kickstart-static64.sh`
-> documentation](/docs/packaging/installer/methods/kickstart-64.md#optional-parameters-to-alter-your-installation) for more information on these
+> documentation](/docs/packaging/installer/methods/kickstart-64#optional-parameters-to-alter-your-installation) for more information on these
 > parameters and what they do.
 
 ## Docker
@@ -94,7 +94,7 @@ docker pull netdata/netdata:latest
 ```
 
 Next, to stop and remove any containers using the `netdata/netdata` image. Replace `netdata` if you changed
-it from the default in our [Docker installation instructions](/docs/packaging/docker.md#run-netdata-with-the-docker-command#run-netdata-with-the-docker-command).
+it from the default in our [Docker installation instructions](/docs/packaging/docker#run-netdata-with-the-docker-command).
 
 ```bash
 docker stop netdata
@@ -102,7 +102,7 @@ docker rm netdata
 ```
 
 You can now re-create your Netdata container using the `docker` command or a `docker-compose.yml` file. See our [Docker
-installation instructions](/docs/packaging/docker.md#run-netdata-with-the-docker-command#run-netdata-with-the-docker-command) for details. For example, using the
+installation instructions](/docs/packaging/docker#run-netdata-with-the-docker-command) for details. For example, using the
 `docker` command:
 
 ```bash

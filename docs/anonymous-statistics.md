@@ -21,7 +21,7 @@ Netdata sends information to Google Analytics via two different channels:
     script](https://github.com/netdata/netdata/blob/6469cf92724644f5facf343e4bdd76ac0551a418/daemon/anonymous-statistics.sh.in)
     when Netdata starts, stops cleanly, or fails.
 
-You can opt-out from sending anonymous statistics to Netdata through three different [opt-out mechanisms](/docs/#opt-out).
+You can opt-out from sending anonymous statistics to Netdata through three different [opt-out mechanisms](#opt-out).
 
 ## Google tag manager
 
@@ -29,7 +29,7 @@ Google tag manager (GTM) is the recommended way of collecting statistics for new
 older API, the logic of when to send information to GA and what information to send is controlled centrally.
 
 We have configured GTM to trigger the tag only when the variable `anonymous_statistics` is true. The value of this
-variable is controlled via the [opt-out mechanism](/docs/#opt-out).
+variable is controlled via the [opt-out mechanism](#opt-out).
 
 To ensure anonymity of the stored information, we have configured GTM's GA variable "Fields to set" as follows: 
 
@@ -82,13 +82,13 @@ installation, including manual, offline, and macOS installations. Create the fil
 .opt-out-from-anonymous-statistics` from your Netdata configuration directory.
 
 **Pass the option `--disable-telemetry` to any of the installer scripts in the [installation
-docs](/packaging/installer.md).** You can append this option during the initial installation or a manual
+docs](/docs/packaging/installer).** You can append this option during the initial installation or a manual
 update. You can also export the environment variable `DO_NOT_TRACK` with a non-zero or non-empty value
 (e.g: `export DO_NOT_TRACK=1`).
 
 When using Docker, **set your `DO_NOT_TRACK` environment variable to `1`.** You can set this variable with the following
 command: `export DO_NOT_TRACK=1`. When creating a container using Netdata's [Docker
-image](/packaging/docker.md#run-netdata-with-the-docker-command#run-netdata-with-the-docker-command) for the first time, this variable will disable
+image](/docs/packaging/docker#run-netdata-with-the-docker-command) for the first time, this variable will disable
 the anonymous statistics script inside of the container.
 
 Each of these opt-out processes does the following:

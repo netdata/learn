@@ -6,15 +6,15 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/instal
 
 
 Netdata works on macOS, albeit with some limitations. The number of charts displaying system metrics is limited, but you
-can use any of Netdata's [external plugins](/docs/collectors/plugins.d.md) to monitor any services you might
+can use any of Netdata's [external plugins](/docs/collectors/plugins.d) to monitor any services you might
 have installed on your macOS system. You could also use a macOS system as the master node in a [streaming
-configuration](/docs/streaming.md).
+configuration](/docs/streaming).
 
 We recommend installing Netdata with the community-created and -maintained [**Homebrew
-package**](/docs/packaging/installer/methods/#install-netdata-with-the-homebrew-package). 
+package**](#install-netdata-with-the-homebrew-package). 
 
--   [Install Netdata via the Homebrew package](/docs/packaging/installer/methods/#install-netdata-with-the-homebrew-package)
--   [Install Netdata from source](/docs/packaging/installer/methods/#install-netdata-from-source)
+-   [Install Netdata via the Homebrew package](#install-netdata-with-the-homebrew-package)
+-   [Install Netdata from source](#install-netdata-from-source)
 
 ## Install Netdata with the Homebrew package
 
@@ -34,7 +34,7 @@ brew install netdata
 > and the files in this directory to configure Netdata. For reference, you can find stock configuration files at
 > `/usr/local/Cellar/netdata/{NETDATA_VERSION}/lib/netdata/conf.d/`.
 
-Skip on ahead to the [What's next?](/docs/packaging/installer/methods/#whats-next) section to find links to helpful post-installation guides.
+Skip on ahead to the [What's next?](#whats-next) section to find links to helpful post-installation guides.
 
 ## Install Netdata from source
 
@@ -54,7 +54,7 @@ to install some of Netdata's prerequisites.
 brew install ossp-uuid autoconf automake pkg-config libuv lz4 json-c openssl@1.1
 ```
 
-If you want to use the [database engine](/docs/database/engine.md) to store your metrics, you need to download
+If you want to use the [database engine](/docs/database/engine) to store your metrics, you need to download
 and install the [Judy library](https://sourceforge.net/projects/judy/) before proceeding compiling Netdata.
 
 Next, download Netdata from our GitHub repository:
@@ -77,8 +77,8 @@ sudo ./netdata-installer.sh --install /usr/local
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00.md)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs.
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](/docs/getting-started.md) for a quick overview.
+guide](/docs/getting-started) for a quick overview.

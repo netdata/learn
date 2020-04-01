@@ -5,10 +5,10 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/Add-more-ch
 
 
 
-This file has been deprecated. Please see our [collectors docs](/collectors.md) or the collectors [quickstart
-guide](/collectors/quickstart.md) for more information. 
+This file has been deprecated. Please see our [collectors docs](/docs/collectors) or the collectors [quickstart
+guide](/docs/collectors/quickstart) for more information. 
 
 ## Available data collection modules
 
-See the [list of supported collectors](/collectors/collectors.md) to see all the sources Netdata can collect metrics
+See the [list of supported collectors](/docs/collectors/collectors) to see all the sources Netdata can collect metrics
 from.

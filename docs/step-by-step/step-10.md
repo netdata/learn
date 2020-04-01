@@ -18,16 +18,16 @@ publicly-accessible remote server.
 
 > ââ This tutorial requires more advanced administration skills than previous parts. If you're still working on your
 > Linux administration skills, and would rather get back to Netdata, you might want to [skip this
-> step](/docs/step-by-step/step-99.md) for now and return to it later.
+> step](/docs/step-by-step/step-99) for now and return to it later.
 
 ## What you'll learn in this step
 
 In this step of the Netdata guide, you'll learn:
 
--   [What a proxy is and the benefits of using one](/docs/step-by-step/#wait-whats-a-proxy)
--   [How to connect Netdata to Nginx](/docs/step-by-step/#connect-netdata-to-nginx)
--   [How to enable HTTPS in Nginx](/docs/step-by-step/#enable-https-in-nginx)
--   [How to secure your Netdata dashboard with a password](/docs/step-by-step/#secure-your-netdata-dashboard-with-a-password)
+-   [What a proxy is and the benefits of using one](#wait-whats-a-proxy)
+-   [How to connect Netdata to Nginx](#connect-netdata-to-nginx)
+-   [How to enable HTTPS in Nginx](#enable-https-in-nginx)
+-   [How to secure your Netdata dashboard with a password](#secure-your-netdata-dashboard-with-a-password)
 
 Let's dive in!
 
@@ -207,12 +207,12 @@ You're a real sysadmin now!
 
 If you want to configure your Nginx proxy further, check out the following:
 
--   [Running Netdata behind Nginx](/docs/running-behind-nginx.md)
--   [High-performance Netdata](/docs/high-performance-netdata.md)
--   [Enabling TLS on Netdata's dashboard](/web/server.md#enabling-tls-support#enabling-tls-support)
+-   [Running Netdata behind Nginx](/docs/running-behind-nginx)
+-   [High-performance Netdata](/docs/high-performance-netdata)
+-   [Enabling TLS on Netdata's dashboard](/docs/web/server#enabling-tls-support)
 
 And... you're _almost_ done with the Netdata tutorial.
 
 For some celebratory emoji and a clap on the back, head on over to our final step.
 
-[Next: The end. &rarr;](/docs/step-by-step/step-99.md)
+[Next: The end. &rarr;](/docs/step-by-step/step-99)

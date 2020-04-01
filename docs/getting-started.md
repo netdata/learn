@@ -13,9 +13,9 @@ Netdata can collect thousands of metrics in real-time and use its database for l
 configuration, but there are some valuable things to know to get the most out of Netdata based on your needs.
 
 We'll skip right into some technical details, so if you're brand-new to monitoring the health and performance of systems
-and applications, our [**step-by-step tutorial**](/docs/step-by-step/step-00.md) might be a better fit.
+and applications, our [**step-by-step tutorial**](/docs/step-by-step/step-00) might be a better fit.
 
-> If you haven't installed Netdata yet, visit the [installation instructions](/packaging/installer) for details,
+> If you haven't installed Netdata yet, visit the [installation instructions](/docs/packaging/installer) for details,
 > including our one-liner script, which automatically installs Netdata on almost all Linux distributions.
 
 ## Access the dashboard
@@ -31,9 +31,9 @@ dashboard](https://user-images.githubusercontent.com/1153921/63463901-fcb9c800-c
 
 **What's next?**: 
 
--   Read more about the [standard Netdata dashboard](/web/gui/).
--   Learn all the specifics of [using charts](/web.md#using-charts#using-charts) or the differences between [charts,
-    context, and families](/web.md#charts-contexts-families#charts-contexts-families).
+-   Read more about the [standard Netdata dashboard](/docs/web/gui/).
+-   Learn all the specifics of [using charts](/docs/web#using-charts) or the differences between [charts,
+    context, and families](/docs/web#charts-contexts-families).
 
 ## Configuration basics
 
@@ -48,16 +48,16 @@ The `netdata.conf` file is broken up into various sections, such as `[global]`, 
 default, most options are commented, so you'll have to uncomment them (remove the `#`) for Netdata to recognize your
 change.
 
-Once you save your changes, [restart Netdata](/docs/#start-stop-and-restart-netdata) to load your new configuration.
+Once you save your changes, [restart Netdata](#start-stop-and-restart-netdata) to load your new configuration.
 
 **What's next?**:
 
--   [Change how long Netdata stores metrics](/docs/#change-how-long-netdata-stores-metrics) by changing the `page cache size`
+-   [Change how long Netdata stores metrics](#change-how-long-netdata-stores-metrics) by changing the `page cache size`
     and `dbengine disk space` settings in `netdata.conf`.
 -   Move Netdata's dashboard to a [different port](https://docs.netdata.cloud/web/server/) or enable TLS/HTTPS
     encryption.
--   See all the `netdata.conf` options in our [daemon configuration documentation](/daemon/config/).
--   Run your own [registry](/registry.md#run-your-own-registry#run-your-own-registry).
+-   See all the `netdata.conf` options in our [daemon configuration documentation](/docs/daemon/config/).
+-   Run your own [registry](/docs/registry#run-your-own-registry).
 
 ## Change how long Netdata stores metrics
 
@@ -68,26 +68,26 @@ configuration keeps RAM usage low while allowing for long-term, on-disk metrics 
 You can tweak this custom _database engine_ to store a much larger dataset than your system's available RAM,
 particularly if you allow Netdata to use slightly more RAM and disk space than the default configuration.
 
-Read our tutorial, [**Changing how long Netdata stores metrics**](/tutorials/longer-metrics-storage.md), to learn
+Read our tutorial, [**Changing how long Netdata stores metrics**](/docs/tutorials/longer-metrics-storage), to learn
 more.
 
 **What's next?**:
 
--   Learn more about the [memory requirements for the database engine](/database/engine.md#memory-requirements#memory-requirements)
+-   Learn more about the [memory requirements for the database engine](/docs/database/engine#memory-requirements)
     to understand how much RAM/disk space you should commit to storing historical metrics.
 
 ## Collect data from more sources
 
 When Netdata _starts_, it auto-detects dozens of **data sources**, such as database servers, web servers, and more. To
 auto-detect and collect metrics from a service or application you just installed, you need to [restart
-Netdata](/docs/#start-stop-and-restart-netdata).
+Netdata](#start-stop-and-restart-netdata).
 
 > There is one exception: When Netdata is running on the host (as in not in a container itself), it will always
 > auto-detect containers and VMs.
 
 However, auto-detection only works if you installed the source using its standard installation procedure. If Netdata
 isn't collecting metrics after a restart, your source probably isn't configured correctly. Look at the [external plugin
-documentation](/collectors/plugins.d/) to find the appropriate module for your source. Those pages will contain more
+documentation](/docs/collectors/plugins.d/) to find the appropriate module for your source. Those pages will contain more
 information about how to configure your source for auto-detection.
 
 Some modules, like `chrony`, are disabled by default and must be enabled manually for auto-detection to work.
@@ -154,12 +154,12 @@ changes based on your particular Nginx setup.
 
 **What's next?**:
 
--   Look at the [full list of data collection modules](/collectors/collectors.md)
+-   Look at the [full list of data collection modules](/docs/collectors/collectors)
     to configure your sources for auto-detection and monitoring.
--   Improve the [performance](/docs/performance.md) of Netdata on low-memory systems.
+-   Improve the [performance](/docs/performance) of Netdata on low-memory systems.
 -   Configure `systemd` to expose [systemd services
-    utilization](/collectors/cgroups.plugin.md#monitoring-systemd-services#monitoring-systemd-services) metrics automatically.
--   [Reconfigure individual charts](/daemon/config.md#per-chart-configuration#per-chart-configuration) in `netdata.conf`.
+    utilization](/docs/collectors/cgroups.plugin#monitoring-systemd-services) metrics automatically.
+-   [Reconfigure individual charts](/docs/daemon/config#per-chart-configuration) in `netdata.conf`.
 
 ## Health monitoring and alarms
 
@@ -184,18 +184,18 @@ Find the `SEND_EMAIL="YES"` line and change it to `SEND_EMAIL="NO"`.
 
 **What's next?**:
 
--   Follow the [health quickstart](/health/quickstart.md) to locate and edit existing health entities, and then create
+-   Follow the [health quickstart](/docs/health/quickstart) to locate and edit existing health entities, and then create
     your own.
--   See all the alarm options via the [health configuration reference](/health/reference.md).
--   Add a new notification method, like [Slack](/health/notifications/slack/).
+-   See all the alarm options via the [health configuration reference](/docs/health/reference).
+-   Add a new notification method, like [Slack](/docs/health/notifications/slack/).
 
 ## Monitoring multiple systems with Netdata
 
 If you have Netdata installed on multiple systems, you can have them all appear in the **My nodes** menu at the top-left
 corner of the dashboard.
 
-To show all your servers in that menu, you need to [register for or sign in](/netdata-cloud/signing-in.md) to
-[Netdata Cloud](/netdata-cloud/) from each system. Each system will then appear in the **My nodes** menu, which
+To show all your servers in that menu, you need to [register for or sign in](/docs/netdata-cloud/signing-in) to
+[Netdata Cloud](/docs/netdata-cloud/) from each system. Each system will then appear in the **My nodes** menu, which
 you can use to navigate between your systems quickly.
 
 ![Animated GIF of the My Nodes menu in
@@ -209,9 +209,9 @@ You can now seamlessly track performance anomalies across your entire infrastruc
 
 **What's next?**:
 
--   Read up on how the [Netdata Cloud registry works](/registry/), and what kind of data it stores and sends to your
+-   Read up on how the [Netdata Cloud registry works](/docs/registry/), and what kind of data it stores and sends to your
     web browser.
--   Familiarize yourself with the [Nodes View](/netdata-cloud/nodes-view.md)
+-   Familiarize yourself with the [Nodes View](/docs/netdata-cloud/nodes-view)
 
 ## Start, stop, and restart Netdata
 
@@ -236,11 +236,11 @@ added all your systems to the **My nodes** menu, you've just gotten started with
 
 Take a look at some more advanced features and configurations:
 
--   Centralize Netdata metrics from many systems with [streaming](/streaming)
--   Enable long-term archiving of Netdata metrics via [backends](/backends) to time-series databases.
--   Improve security by putting Netdata behind an [Nginx proxy with SSL](/docs/running-behind-nginx.md).
+-   Centralize Netdata metrics from many systems with [streaming](/docs/streaming)
+-   Enable long-term archiving of Netdata metrics via [backends](/docs/backends) to time-series databases.
+-   Improve security by putting Netdata behind an [Nginx proxy with SSL](/docs/running-behind-nginx).
 
-Or, learn more about how you can contribute to [Netdata core](/contributing.md) or our
-[documentation](/contributing/contributing-documentation.md)!
+Or, learn more about how you can contribute to [Netdata core](/docs/contributing) or our
+[documentation](/docs/contributing/contributing-documentation)!
 
 

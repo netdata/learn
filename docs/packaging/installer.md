@@ -9,19 +9,19 @@ Netdata is a monitoring agent designed to run on all your systems: physical and 
 IoT/edge devices. Netdata runs on Linux, FreeBSD, macOS, Kubernetes, Docker, and all their derivatives.
 
 The best way to install Netdata is with our [**automatic one-line installation
-script**](/docs/packaging/installer/#automatic-one-line-installation-script), which works with all Linux distributions, or our [**.deb/rpm
-packages**](/docs/packaging/installer/methods/packages.md), which seamlessly install with your distribution's package manager.
+script**](#automatic-one-line-installation-script), which works with all Linux distributions, or our [**.deb/rpm
+packages**](/docs/packaging/methods/packages), which seamlessly install with your distribution's package manager.
 
 If you want to install Netdata with Docker, on a Kubernetes cluster, or a different operating system, see [Have a
 different operating system, or want to try another
-method?](/docs/packaging/installer/#have-a-different-operating-system-or-want-to-try-another-method)
+method?](#have-a-different-operating-system-or-want-to-try-another-method)
 
 Some third parties, such as the packaging teams at various Linux distributions, distribute old, broken, or altered
 packages. We recommend you install Netdata using one of the methods listed below to guarantee you get the latest
 checksum-verified packages.
 
 Starting with v1.12, Netdata collects anonymous usage information by default and sends it to Google Analytics. Read
-about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/anonymous-statistics.md)
+about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/anonymous-statistics)
 page.
 
 The usage statistics are _vital_ for us, as we use them to discover bugs and prioritize new features. We thank you for
@@ -40,21 +40,21 @@ bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 ```
 
 To see more information about this installation script, including how to disable automatic updates, get nightly vs.
-stable releases, or disable anonymous statistics, see the [`kickstart.sh` method page](/docs/packaging/installer/methods/kickstart.md). 
+stable releases, or disable anonymous statistics, see the [`kickstart.sh` method page](/docs/packaging/methods/kickstart). 
 
-Scroll down for details about [automatic updates](/docs/packaging/installer/#automatic-updates) or [nightly vs. stable
-releases](/docs/packaging/installer/#nightly-vs-stable-releases).
+Scroll down for details about [automatic updates](#automatic-updates) or [nightly vs. stable
+releases](#nightly-vs-stable-releases).
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00.md)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs. 
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](/docs/getting-started.md) for a quick overview.
+guide](/docs/getting-started) for a quick overview.
 
 ## Have a different operating system, or want to try another method?
 
 Netdata works on many different operating systems, each with a few possible installation methods. To see the full list
-of approved methods for each operating system/version we support, see our [distribution matrix](/docs/packaging/distributions.md).
+of approved methods for each operating system/version we support, see our [distribution matrix](/docs/distributions).
 
 Below, you can find a few additional installation methods, followed by separate instructions for a variety of unique
 operating systems.
@@ -65,15 +65,15 @@ operating systems.
 
 [![Install with .deb or .rpm
 packages](https://user-images.githubusercontent.com/1153921/76029431-aebd6b00-5ef1-11ea-92b4-06704dabb93e.png) Install
-with .deb or .rpm packages](/docs/packaging/installer/methods/packages.md)
+with .deb or .rpm packages](/docs/packaging/methods/packages)
 
 [![Install with a pre-built static binary for 64-bit
 systems](https://user-images.githubusercontent.com/1153921/73030303-94727680-3df6-11ea-963e-6f2cb0ce762c.png) Install
-with a pre-built static binary for 64-bit systems](/docs/packaging/installer/methods/kickstart-64.md)
+with a pre-built static binary for 64-bit systems](/docs/packaging/methods/kickstart-64)
 
 [![Install Netdata on
 Docker](https://user-images.githubusercontent.com/1153921/76029355-85044400-5ef1-11ea-96f4-79edc58f9b5c.png) Install
-Netdata on Docker](/docs/packaging/docker.md)
+Netdata on Docker](/docs/docker)
 
 [![Install Netdata on
 Kubernetes](https://user-images.githubusercontent.com/1153921/76029478-cc8ad000-5ef1-11ea-8981-dd04744b00da.png) Install
@@ -82,39 +82,39 @@ chart](https://github.com/netdata/helmchart#netdata-helm-chart-for-kubernetes-de
 
 [![Install Netdata on cloud providers
 (GCP/AWS/Azure)](https://user-images.githubusercontent.com/1153921/76029431-aebd6b00-5ef1-11ea-92b4-06704dabb93e.png)
-Install Netdata on cloud providers (GCP/AWS/Azure)](/docs/packaging/installer/methods/cloud-providers.md)
+Install Netdata on cloud providers (GCP/AWS/Azure)](/docs/packaging/methods/cloud-providers)
 
 [![Install Netdata on
 macOS](https://user-images.githubusercontent.com/1153921/76029616-1673b600-5ef2-11ea-888a-4a1375a42246.png) Install
-Netdata on macOS](/docs/packaging/installer/methods/macos.md)
+Netdata on macOS](/docs/packaging/methods/macos)
 
 [![Install Netdata on
 FreeBSD](https://user-images.githubusercontent.com/1153921/76029787-5fc40580-5ef2-11ea-9461-23e9049aa8f8.png) Install
-Netdata on FreeBSD](/docs/packaging/installer/methods/freebsd.md)
+Netdata on FreeBSD](/docs/packaging/methods/freebsd)
 
 [![Install manually from
 source](https://user-images.githubusercontent.com/1153921/73032280-f1246000-3dfb-11ea-870d-7fbddd9a6f76.png) Install
-manually from source](/docs/packaging/installer/methods/manual.md)
+manually from source](/docs/packaging/methods/manual)
 
 [![Install on offline/air-gapped
 systems](https://user-images.githubusercontent.com/1153921/73032239-c89c6600-3dfb-11ea-8224-c8a9f7a50c53.png) Install on
-offline/air-gapped systems](/docs/packaging/installer/methods/offline.md)
+offline/air-gapped systems](/docs/packaging/methods/offline)
 
 [![Installation on
 PFSense](https://user-images.githubusercontent.com/1153921/76030071-cb0dd780-5ef2-11ea-87cd-607d943dc521.png)
-Installation on PFSense](/docs/packaging/installer/methods/pfsense.md)
+Installation on PFSense](/docs/packaging/methods/pfsense)
 
 [![Install Netdata on
 Synology](https://user-images.githubusercontent.com/1153921/76029789-5fc40580-5ef2-11ea-9d35-c022f682da77.png) Install
-Netdata on Synology](/docs/packaging/installer/methods/synology.md)
+Netdata on Synology](/docs/packaging/methods/synology)
 
 [![Manual installation on
 FreeNAS](https://user-images.githubusercontent.com/1153921/76030537-1c1dcb80-5ef3-11ea-9cf9-f130e7d41712.png) Manual
-installation on FreeNAS](/docs/packaging/installer/methods/freenas.md)
+installation on FreeNAS](/docs/packaging/methods/freenas)
 
 [![Manual installation on
 Alpine](https://user-images.githubusercontent.com/1153921/76029682-37d4a200-5ef2-11ea-9a2c-a8ffeb1d13c3.png) Manual
-installation on Alpine](/docs/packaging/installer/methods/alpine.md)
+installation on Alpine](/docs/packaging/methods/alpine)
 
 </div>
 
@@ -124,13 +124,13 @@ By default, Netdata's installation scripts enable automatic updates for both nig
 
 If you would prefer to update your Netdata agent manually, you can disable automatic updates by using the `--no-updates`
 option when you install or update Netdata using the [automatic one-line installation
-script](/docs/packaging/installer/#automatic-one-line-installation-script).
+script](#automatic-one-line-installation-script).
 
 ```bash
 bash <(curl -Ss https://my-netdata.io/kickstart.sh) --no-updates
 ```
 
-With automatic updates disabled, you can choose exactly when and how you [update Netdata](/docs/packaging/installer/update.md).
+With automatic updates disabled, you can choose exactly when and how you [update Netdata](/docs/packaging/update).
 
 ## Nightly vs. stable releases
 

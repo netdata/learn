@@ -8,15 +8,15 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-ste
 Welcome to the seventh step of the Netdata guide!
 
 This step of the guide aims to get you more familiar with the features of the dashboard not previously mentioned in
-[step 2](/docs/step-by-step/step-02.md).
+[step 2](/docs/step-by-step/step-02).
 
 ## What you'll learn in this step
 
 In this step of the Netdata guide, you'll learn how to:
 
--   [Change the dashboard's settings](/docs/step-by-step/#change-the-dashboards-settings)
--   [Check if there's an update to Netdata](/docs/step-by-step/#check-if-theres-an-update-to-netdata)
--   [Export and import a snapshot](/docs/step-by-step/#export-and-import-a-snapshot)
+-   [Change the dashboard's settings](#change-the-dashboards-settings)
+-   [Check if there's an update to Netdata](#check-if-theres-an-update-to-netdata)
+-   [Export and import a snapshot](#export-and-import-a-snapshot)
 
 Let's get started!
 
@@ -58,9 +58,9 @@ modal](https://user-images.githubusercontent.com/12263278/64876743-be957a00-d647
 
 If an update is available, you'll see a modal similar to the one above.
 
-When you use the [automatic one-line installer script](/packaging/installer.md) attempt to update every day.
-If you choose to update it manually, there are [several well-documented methods](/packaging/installer/update.md) to
-achieve that. However, it is best practice for you to first go over the [changelog](/changelog.md).
+When you use the [automatic one-line installer script](/docs/packaging/installer) attempt to update every day.
+If you choose to update it manually, there are [several well-documented methods](/docs/packaging/installer/update) to
+achieve that. However, it is best practice for you to first go over the [changelog](/docs/changelog).
 
 ## Export and import a snapshot
 
@@ -114,4 +114,4 @@ In this step of the Netdata tutorial, you learned how to:
 
 Next, you'll learn how to build your first custom dashboard!
 
-[Next: Build your first custom dashboard &rarr;](/docs/step-by-step/step-08.md)
+[Next: Build your first custom dashboard &rarr;](/docs/step-by-step/step-08)

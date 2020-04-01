@@ -11,9 +11,9 @@ repository](https://github.com/netdata/netdata) on GitHub.
 
 Like all contributing to all other aspects of Netdata, we ask that anyone who wants to help with documentation read and
 abide by the [Contributor Convenant Code of Conduct](https://docs.netdata.cloud/code_of_conduct/) and follow the
-instructions outlined in our [Contributing document](/contributing.md).
+instructions outlined in our [Contributing document](/docs/contributing).
 
-We also ask you to read our [documentation style guide](/docs/contributing/style-guide.md), which, while not complete, will give you some
+We also ask you to read our [documentation style guide](/docs/contributing/style-guide), which, while not complete, will give you some
 guidance on how we write and organize our documentation.
 
 All our documentation uses the Markdown syntax. If you're not familiar with how it works, please read the [Markdown
@@ -24,8 +24,8 @@ Markdown](https://guides.github.com/features/mastering-markdown/) guide from Git
 
 There are two ways to contribute to Netdata's documentation: 
 
-1.  Edit documentation [directly in GitHub](/docs/contributing/#edit-documentation-directly-on-github).
-2.  Download the repository and [edit documentation locally](/docs/contributing/#edit-documentation-locally).
+1.  Edit documentation [directly in GitHub](#edit-documentation-directly-on-github).
+2.  Download the repository and [edit documentation locally](#edit-documentation-locally).
 
 Editing in GitHub is a simpler process and is perfect for quick edits to a single document, such as fixing a typo or
 clarifying a confusing sentence.
@@ -40,8 +40,8 @@ which might help you catch any lingering issues.
 
 To continue, follow one of the paths below:
 
--   [Edit documentation directly in GitHub](/docs/contributing/#edit-documentation-directly-on-github)
--   [Edit documentation locally](/docs/contributing/#edit-documentation-locally)
+-   [Edit documentation directly in GitHub](#edit-documentation-directly-on-github)
+-   [Edit documentation locally](#edit-documentation-locally)
 
 ## Edit documentation directly on GitHub
 
@@ -66,7 +66,7 @@ concise descrition of what you've changed and why you think it's important. Then
 button. 
 
 After you've hit that button, jump down to our instructions on [pull requests and
-cleanup](/docs/contributing/#pull-requests-and-final-steps) for your next steps. 
+cleanup](#pull-requests-and-final-steps) for your next steps. 
 
 !!! note This process will create a branch directly on the `netdata/netdata` repository, which then requires manual
     cleanup. If you're going to make significant documentation contributions, or contribute often, we recommend the
@@ -114,7 +114,7 @@ folder and either name it `README.md` for generic documentation, or with another
 
 At the root of the Netdata repository is a `` folder. Inside this folder we place documentation that does not have
 a direct relationship to a specific component of Netdata. It's where we house our [getting started
-guide](/docs/getting-started.md), guides on [running Netdata behind Nginx](/running-behind-nginx.md), and
+guide](/docs/getting-started), guides on [running Netdata behind Nginx](/docs/running-behind-nginx), and
 more.
 
 If the documentation you're working on doesn't have a direct relaionship to a component of Netdata, it can be placed in
@@ -123,7 +123,7 @@ this `docs/` folder.
 ### Make your edits
 
 Now that you're set up and understand where to find or create your `.md` file, you can now begin to make your edits.
-Just use your favorite editor and keep in mind our [style guide](/docs/contributing/style-guide.md) as you work.
+Just use your favorite editor and keep in mind our [style guide](/docs/contributing/style-guide) as you work.
 
 If you add a new file to the documentation, you may need to modify the `buildyaml.sh` file to ensure it's added to the
 site's navigation. This is true for any file added to the `` folder.
@@ -200,6 +200,6 @@ and overall quality. We may point to specific sections and ask for additional in
 
 ## What's next
 
--   Read up on the Netdata documentation [style guide](/docs/contributing/style-guide.md).
+-   Read up on the Netdata documentation [style guide](/docs/contributing/style-guide).
 
 

@@ -29,9 +29,9 @@ be)](https://blog.netdata.cloud/posts/redefining-monitoring-netdata/)_.
 
 In the first step of the Netdata guide, you'll learn about:
 
--   [Netdata's core features](/docs/step-by-step/#netdatas-core-features)
--   [Why you should use Netdata](/docs/step-by-step/#why-you-should-use-netdata)
--   [How Netdata has complementary systems, not competitors](/docs/step-by-step/#how-netdata-has-complementary-systems-not-competitors)
+-   [Netdata's core features](#netdatas-core-features)
+-   [Why you should use Netdata](#why-you-should-use-netdata)
+-   [How Netdata has complementary systems, not competitors](#how-netdata-has-complementary-systems-not-competitors)
 
 Let's get started!
 
@@ -40,27 +40,27 @@ Let's get started!
 Netdata has only been around for a few years, but it's a complex piece of software. Here are just some of the features
 we'll cover throughout this tutorial.
 
--   A sophisticated **dashboard**, which we'll cover in [step 2](/docs/step-by-step/step-02.md). The real-time, highly-granular dashboard,
+-   A sophisticated **dashboard**, which we'll cover in [step 2](/docs/step-by-step/step-02). The real-time, highly-granular dashboard,
     with hundreds of charts, is your main source of information about the health and performance of your systems/
     applications. We designed the dashboard with anomaly detection and quick analysis in mind. We'll return to
-    dashboard-related topics in both [step 7](/docs/step-by-step/step-07.md) and [step 8](/docs/step-by-step/step-08.md).
+    dashboard-related topics in both [step 7](/docs/step-by-step/step-07) and [step 8](/docs/step-by-step/step-08).
 -   **Long-term metrics storage** by default. With our new database engine, you can store days, weeks, or months of
     per-second historical metrics. Or you can archive metrics to another database, like MongoDB or Prometheus. We'll
-    cover all these options in [step 9](/docs/step-by-step/step-09.md).
+    cover all these options in [step 9](/docs/step-by-step/step-09).
 -   **No configuration necessary**. Without any configuration, you'll get thousands of real-time metrics and hundreds of
     alarms designed by our community of sysadmin experts. But you _can_ configure Netdata in a lot of ways, some of
-    which we'll cover in [step 4](/docs/step-by-step/step-04.md).
+    which we'll cover in [step 4](/docs/step-by-step/step-04).
 -   **Distributed, per-system installation**. Instead of centralizing metrics in one location, you install Netdata on
     _every_ system, and each system is responsible for its metrics. Having distributed agents reduces cost and lets
     Netdata run on devices with little available resources, such as IoT and edge devices, without affecting their core
     purpose.
--   **Sophisticated health monitoring** to ensure you always know when an anomaly hits. In [step 5](/docs/step-by-step/step-05.md), we dive
+-   **Sophisticated health monitoring** to ensure you always know when an anomaly hits. In [step 5](/docs/step-by-step/step-05), we dive
     into how you can tune alarms, write your own alarm, and enable two types of notifications.
 -   **High-speed, low-resource collectors** that allow you to collect thousands of metrics every second while using only
     a fraction of your system's CPU resources and a few MiB of RAM.
 -   **Netdata Cloud** is our SaaS toolkit that helps Netdata users monitor the health and performance of entire
     infrastructures, whether they are two or two thousand (or more!) systems. We'll cover Netdata Cloud in [step
-    3](/docs/step-by-step/step-03.md).
+    3](/docs/step-by-step/step-03).
 
 ## Why you should use Netdata
 
@@ -69,7 +69,7 @@ just mentioned. And it's free!
 
 All these may be valid reasons, but let's step back and talk about Netdata's _principles_ for health monitoring and
 performance troubleshooting. We have a lot of [complementary
-systems](/docs/step-by-step/#how-netdata-has-complementary-systems-not-competitors), and we think there's a good reason why Netdata should
+systems](#how-netdata-has-complementary-systems-not-competitors), and we think there's a good reason why Netdata should
 always be your first choice when troubleshooting an anomaly.
 
 We built Netdata on four principles.
@@ -139,7 +139,7 @@ easy!
 We'll cover this quickly, as you're probably eager to get on with using Netdata itself.
 
 We don't want to lock you in to using Netdata by itself, and forever. By supporting [archiving to
-backends](/backends.md) like Graphite, Prometheus, OpenTSDB, MongoDB, and others, you can use Netdata _in
+backends](/docs/backends) like Graphite, Prometheus, OpenTSDB, MongoDB, and others, you can use Netdata _in
 conjunction_ with software that might seem like our competitors.
 
 We don't want to "wage war" with another monitoring solution, whether it's commercial, open-source, or anything in
@@ -151,4 +151,4 @@ ours. Our mission is helping people create more extraordinary infrastructures!
 We think it's imperative you understand why we built Netdata the way we did. But now that we have that behind us, let's
 get right into that dashboard you've heard so much about.
 
-[Next: Get to know Netdata's dashboard &rarr;](/docs/step-by-step/step-02.md)
+[Next: Get to know Netdata's dashboard &rarr;](/docs/step-by-step/step-02)

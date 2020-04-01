@@ -5,7 +5,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-ste
 
 
 
-By default, Netdata stores metrics in a custom database we call the [database engine](/database/engine/), which
+By default, Netdata stores metrics in a custom database we call the [database engine](/docs/database/engine/), which
 stores recent metrics in your system's RAM and "spills" historical metrics to disk. By using both RAM and disk, the
 database engine helps you store a much larger dataset than the amount of RAM your system has.
 
@@ -23,9 +23,9 @@ examples.
 
 In this step of the Netdata guide, you'll learn how to:
 
--   [Tweak the database engine's settings](/docs/step-by-step/#tweak-the-database-engines-settings)
--   [Archive metrics to a backend](/docs/step-by-step/#archive-metrics-to-a-backend)
-    -   [Use the MongoDB backend](/docs/step-by-step/#archive-metrics-via-the-mongodb-backend)
+-   [Tweak the database engine's settings](#tweak-the-database-engines-settings)
+-   [Archive metrics to a backend](#archive-metrics-to-a-backend)
+    -   [Use the MongoDB backend](#archive-metrics-via-the-mongodb-backend)
 
 Let's get started!
 
@@ -53,7 +53,7 @@ the database engine to use. The higher those values, the more metrics Netdata wi
 every second.
 
 > Before you make changes, we recommended you read up on the [database
-> engine's](/database/engine.md#memory-requirements#memory-requirements) to ensure you don't overwhelm your system. Out of
+> engine's](/docs/database/engine#memory-requirements) to ensure you don't overwhelm your system. Out of
 > memory errors are no fun!
 
 ```conf
@@ -63,7 +63,7 @@ every second.
     dbengine disk space = 512
 ```
 
-After you've made your changes, [restart Netdata](/docs/getting-started.md#start-stop-and-restart-netdata).
+After you've made your changes, [restart Netdata](/docs/getting-started#start-stop-and-restart-netdata).
 
 To confirm the database engine is working, go to your Netdata dashboard and click on the **Netdata Monitoring** menu on
 the right-hand side. You can find `dbengine` metrics after `queries`.
@@ -76,7 +76,7 @@ Dashboard](https://user-images.githubusercontent.com/12263278/64781383-9c71fe00-
 You can archive all the metrics collected by Netdata to what we call **backends**. The supported backends include
 Graphite, OpenTSDB, Prometheus, AWS Kinesis Data Streams, MongoDB, and the list is always growing.
 
-As we said in [step 1](/docs/step-by-step/step-01.md), we have only complimentary systems, not competitors! We're happy to support these
+As we said in [step 1](/docs/step-by-step/step-01), we have only complimentary systems, not competitors! We're happy to support these
 archiving methods and are always working to improve them.
 
 A lot of Netdata users archive their metrics to one of these backends for long-term storage or further analysis. Since
@@ -159,14 +159,14 @@ database = netdata
 collection = netdata_metrics
 ```
 
-[Restart](/docs/getting-started.md#start-stop-and-restart-netdata) Netdata to enable the MongoDB backend. Click on the
+[Restart](/docs/getting-started#start-stop-and-restart-netdata) Netdata to enable the MongoDB backend. Click on the
 **Netdata Montioring** menu and check out the **backend** sub-menu. You should start seeing these charts fill up with
 data about your MongoDB backend!
 
 ![image](https://user-images.githubusercontent.com/1153921/70443852-25171200-1a56-11ea-8be3-494544b1c295.png)
 
 If you'd like to try connecting Netdata to another backend, such as Prometheus or OpenTSDB, read our [backends
-documentation](/backends.md).
+documentation](/docs/backends).
 
 ## What's next?
 
@@ -176,4 +176,4 @@ metrics to MongoDB for long-term storage.
 In the last step of this step-by-step tutorial, we'll put our sysadmin hat on and use Nginx to proxy traffic to and from
 our Netdata dashboard.
 
-[Next: Set up a proxy &rarr;](/docs/step-by-step/step-10.md)
+[Next: Set up a proxy &rarr;](/docs/step-by-step/step-10)

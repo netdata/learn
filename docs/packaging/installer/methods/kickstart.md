@@ -17,8 +17,8 @@ updates_, run the following as your normal user:
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 ```
 
-> See our [installation guide](/docs/packaging/installer.md) for details about [automatic updates](/docs/packaging/installer.md#automatic-updates#automatic-updates) or
-> [nightly vs. stable releases](/docs/packaging/installer.md#nightly-vs-stable-releases#nightly-vs-stable-releases).
+> See our [installation guide](/docs/packaging/installer/methods/..) for details about [automatic updates](/docs/packaging/installer/methods/..#automatic-updates) or
+> [nightly vs. stable releases](/docs/packaging/installer/methods/..#nightly-vs-stable-releases).
 
 ## What does `kickstart.sh` do?
 
@@ -28,9 +28,9 @@ The `kickstart.sh` script does the following after being downloaded and run usin
     the `--dont-wait` option, it will ask for your permission first.
 -   Downloads the latest Netdata source tree to `/usr/src/netdata.git`.
 -   Installs Netdata by running `./netdata-installer.sh` from the source tree, using any [optional
-    parameters](/docs/packaging/installer/methods/#optional-parameters-to-alter-your-installation) you have specified.
+    parameters](#optional-parameters-to-alter-your-installation) you have specified.
 -   Installs `netdata-updater.sh` to `cron.daily`, so your Netdata installation will be updated with new nightly
-    versions, unless you override that with an [optional parameter](/docs/packaging/installer/methods/#optional-parameters-to-alter-your-installation).
+    versions, unless you override that with an [optional parameter](#optional-parameters-to-alter-your-installation).
 -   Prints a message whether installation succeeded or failed for QA purposes.
 
 ## Optional parameters to alter your installation
@@ -42,10 +42,10 @@ installation. Here are a few important parameters:
 -   `--dont-start-it`: Prevent the installer from starting Netdata automatically.
 -   `--stable-channel`: Automatically update only on the release of new major versions.
 -   `--nightly-channel`: Automatically update on every new nightly build.
--   `--disable-telemetry`: Opt-out of [anonymous statistics](/docs/anonymous-statistics.md) we use to make
+-   `--disable-telemetry`: Opt-out of [anonymous statistics](/docs/anonymous-statistics) we use to make
     Netdata better.
 -   `--no-updates`: Prevent automatic updates of any kind.
--   `--local-files`: Used for [offline installations](/docs/packaging/installer/methods/offline.md). Pass four file paths: the Netdata
+-   `--local-files`: Used for [offline installations](/docs/packaging/installer/methods/offline). Pass four file paths: the Netdata
     tarball, the checksum file, the go.d plugin tarball, and the go.d plugin config tarball, to force kickstart run the
     process using those files. This option conflicts with the `--stable-channel` option. If you set this _and_
     `--stable-channel`, Netdata will use the local files.
@@ -63,8 +63,8 @@ If the script is valid, this command will return `OK, VALID`.
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00.md)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs.
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](/docs/getting-started.md) for a quick overview.
+guide](/docs/getting-started) for a quick overview.

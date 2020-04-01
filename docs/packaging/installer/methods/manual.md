@@ -7,11 +7,11 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/instal
 
 To install the latest git version of Netdata, please follow these 2 steps:
 
-1.  [Prepare your system](/docs/packaging/installer/methods/#prepare-your-system)
+1.  [Prepare your system](#prepare-your-system)
 
     Install the required packages on your system.
 
-2.  [Install Netdata](/docs/packaging/installer/methods/#install-netdata)
+2.  [Install Netdata](#install-netdata)
 
     Download and install Netdata. You can also update it the same way.
 
@@ -206,8 +206,8 @@ To apply the changes you made, you have to restart Netdata.
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00.md)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs.
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](/docs/getting-started.md) for a quick overview.
+guide](/docs/getting-started) for a quick overview.

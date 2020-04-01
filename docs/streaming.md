@@ -28,7 +28,7 @@ Alarms for the `slave` are served by the `master`.
 
 In this mode the `slave` is just a plain data collector. It spawns all external plugins, but instead
 of maintaining a local database and accepting dashboard requests, it streams all metrics to the
-`master`. The memory footprint is reduced significantly, to between 6 MiB and 40 MiB, depending on the enabled plugins. To reduce the memory usage as much as possible, refer to [running Netdata in embedded devices](/docs/performance.md#running-netdata-in-embedded-devices).
+`master`. The memory footprint is reduced significantly, to between 6 MiB and 40 MiB, depending on the enabled plugins. To reduce the memory usage as much as possible, refer to [running Netdata in embedded devices](/docs/performance#running-netdata-in-embedded-devices).
 
 The same `master` can collect data for any number of `slaves`.
 
@@ -109,7 +109,7 @@ this host).
 
 ### streaming configuration
 
-A new file is introduced: [stream.conf](/docs/streaming/stream.conf) (to edit it on your system run
+A new file is introduced: [stream.conf](/docs/stream.conf) (to edit it on your system run
 `/etc/netdata/edit-config stream.conf`). This file holds streaming configuration for both the
 sending and the receiving Netdata.
 
@@ -142,7 +142,7 @@ This is an overview of how these options can be combined:
 | proxy with db|not `none`|not `none`|`yes`|possible|possible|yes|
 | central netdata|not `none`|not `none`|`no`|possible|possible|yes|
 
-For the options to encrypt the data stream between the slave and the master, refer to [securing the communication](/docs/streaming/#securing-streaming-communications)
+For the options to encrypt the data stream between the slave and the master, refer to [securing the communication](#securing-streaming-communications)
 
 ##### options for the receiving node
 
@@ -242,7 +242,7 @@ When TLS/SSL is enabled on the slave, the default behavior will be to not connec
 
 #### Trusted certificate
 
-If you've enabled [certificate verification](/docs/streaming/#certificate-verification), you might see errors from the OpenSSL library when there's a problem with checking the certificate chain (`X509_V_ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY`). More importantly, OpenSSL will reject self-signed certificates.
+If you've enabled [certificate verification](#certificate-verification), you might see errors from the OpenSSL library when there's a problem with checking the certificate chain (`X509_V_ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY`). More importantly, OpenSSL will reject self-signed certificates.
 
 Given these known issues, you have two options. If you trust your certificate, you can set the options `CApath` and `CAfile` to inform Netdata where your certificates, and the certificate trusted file, are stored.
 
@@ -509,12 +509,12 @@ When they maintain a database, they can also run health checks (alarms and notif
 for the remote host that is streaming the metrics.
 
 To configure a proxy, configure it as a receiving and a sending Netdata at the same time,
-using [stream.conf](/docs/streaming/stream.conf).
+using [stream.conf](/docs/stream.conf).
 
 The sending side of a Netdata proxy, connects and disconnects to the final destination of the
 metrics, following the same pattern of the receiving side.
 
-For a practical example see [Monitoring ephemeral nodes](/docs/streaming/#monitoring-ephemeral-nodes).
+For a practical example see [Monitoring ephemeral nodes](#monitoring-ephemeral-nodes).
 
 ## Troubleshooting streaming connections
 

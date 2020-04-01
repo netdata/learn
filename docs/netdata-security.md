@@ -9,16 +9,16 @@ We have given special attention to all aspects of Netdata, ensuring that everyth
 
 **Table of Contents**
 
-1.  [Your data are safe with Netdata](/docs/#your-data-are-safe-with-netdata)
-2.  [Your systems are safe with Netdata](/docs/#your-systems-are-safe-with-netdata)
-3.  [Netdata is read-only](/docs/#netdata-is-read-only)
-4.  [Netdata viewers authentication](/docs/#netdata-viewers-authentication)
-    -   [Why Netdata should be protected](/docs/#why-netdata-should-be-protected)
-    -   [Protect Netdata from the internet](/docs/#protect-netdata-from-the-internet)
-        		\- [Expose Netdata only in a private LAN](/docs/#expose-netdata-only-in-a-private-lan)
-        		\- [Use an authenticating web server in proxy mode](/docs/#use-an-authenticating-web-server-in-proxy-mode)
-        		\- [Other methods](/docs/#other-methods)
-5.  [Registry or how to not send any information to a third party server](/docs/#registry-or-how-to-not-send-any-information-to-a-third-party-server)
+1.  [Your data are safe with Netdata](#your-data-are-safe-with-netdata)
+2.  [Your systems are safe with Netdata](#your-systems-are-safe-with-netdata)
+3.  [Netdata is read-only](#netdata-is-read-only)
+4.  [Netdata viewers authentication](#netdata-viewers-authentication)
+    -   [Why Netdata should be protected](#why-netdata-should-be-protected)
+    -   [Protect Netdata from the internet](#protect-netdata-from-the-internet)
+        		\- [Expose Netdata only in a private LAN](#expose-netdata-only-in-a-private-lan)
+        		\- [Use an authenticating web server in proxy mode](#use-an-authenticating-web-server-in-proxy-mode)
+        		\- [Other methods](#other-methods)
+5.  [Registry or how to not send any information to a third party server](#registry-or-how-to-not-send-any-information-to-a-third-party-server)
 
 ## Your data are safe with Netdata
 
@@ -128,7 +128,7 @@ to IP addresses within the `160.1.x.x` range and that reverse DNS is setup for t
 
 #### Use an authenticating web server in proxy mode
 
-Use one web server to provide authentication in front of **all your Netdata servers**. So, you will be accessing all your Netdata with URLs like `http://{HOST}/netdata/{NETDATA_HOSTNAME}/` and authentication will be shared among all of them (you will sign-in once for all your servers). Instructions are provided on how to set the proxy configuration to have Netdata run behind [nginx](/docs/running-behind-nginx.md), [Apache](/docs/running-behind-apache.md), [lighthttpd](/docs/running-behind-lighttpd.md) and [Caddy](/docs/running-behind-caddy.md).
+Use one web server to provide authentication in front of **all your Netdata servers**. So, you will be accessing all your Netdata with URLs like `http://{HOST}/netdata/{NETDATA_HOSTNAME}/` and authentication will be shared among all of them (you will sign-in once for all your servers). Instructions are provided on how to set the proxy configuration to have Netdata run behind [nginx](/docs/running-behind-nginx), [Apache](/docs/running-behind-apache), [lighthttpd](/docs/running-behind-lighttpd) and [Caddy](/docs/running-behind-caddy).
 
 To use this method, you should firewall protect all your Netdata servers, so that only the web server IP will allowed to directly access Netdata. To do this, run this on each of your servers (or use your firewall manager):
 
@@ -194,17 +194,17 @@ Of course, there are many more methods you could use to protect Netdata:
 
 ### Registry or how to not send any information to a third party server
 
-The default configuration uses a public registry under registry.my-netdata.io (more information about the registry here: [mynetdata-menu-item](/registry/) ). Please be aware that if you use that public registry, you submit the following information to a third party server: 
+The default configuration uses a public registry under registry.my-netdata.io (more information about the registry here: [mynetdata-menu-item](/docs/registry/) ). Please be aware that if you use that public registry, you submit the following information to a third party server: 
 
 -   The url where you open the web-ui in the browser (via http request referrer)
 -   The hostnames of the Netdata servers
 
-If sending this information to the central Netdata registry violates your security policies, you can configure Netdat to [run your own registry](/registry/#run-your-own-registry).
+If sending this information to the central Netdata registry violates your security policies, you can configure Netdat to [run your own registry](/docs/registry/#run-your-own-registry).
 
 ### Opt-out of anonymous statistics
 
 Starting with v1.12, Netdata collects anonymous usage information by default and sends it to Google Analytics. Read
-about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/anonymous-statistics.md) page.
+about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/anonymous-statistics) page.
 
 The usage statistics are _vital_ for us, as we use them to discover bugs and priortize new features. We thank you for
 _actively_ contributing to Netdata's future.

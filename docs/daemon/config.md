@@ -12,15 +12,15 @@ This config file **is not needed by default**. Netdata works fine out of the box
 
 `netdata.conf` has sections stated with `[section]`. You will see the following sections:
 
-1.  `[global]` to [configure](/docs/daemon/config/#global-section-options) the [Netdata daemon](/docs/daemon/).
+1.  `[global]` to [configure](#global-section-options) the [Netdata daemon](/docs/).
 2.  `[web]` to [configure the web server](/docs/web/server).
-3.  `[plugins]` to [configure](/docs/daemon/config/#plugins-section-options) which [collectors](/docs/collectors) to use and PATH settings.
-4.  `[health]` to [configure](/docs/daemon/config/#health-section-options) general settings for [health monitoring](/docs/health)
+3.  `[plugins]` to [configure](#plugins-section-options) which [collectors](/docs/collectors) to use and PATH settings.
+4.  `[health]` to [configure](#health-section-options) general settings for [health monitoring](/docs/health)
 5.  `[registry]` for the [Netdata registry](/docs/registry).
 6.  `[backend]` to set up [streaming and replication](/docs/streaming) options.
 7.  `[statsd]` for the general settings of the [stats.d.plugin](/docs/collectors/statsd.plugin).
-8.  `[plugin:NAME]` sections for each collector plugin, under the comment [Per plugin configuration](/docs/daemon/config/#per-plugin-configuration).
-9.  `[CHART_NAME]` sections for each chart defined, under the comment [Per chart configuration](/docs/daemon/config/#per-chart-configuration).
+8.  `[plugin:NAME]` sections for each collector plugin, under the comment [Per plugin configuration](#per-plugin-configuration).
+9.  `[CHART_NAME]` sections for each chart defined, under the comment [Per chart configuration](#per-chart-configuration).
 
 The configuration file is a `name = value` dictionary. Netdata will not complain if you set options unknown to it. When you check the running configuration by accessing the URL `/netdata.conf` on your Netdata server, Netdata will add a comment on settings it does not currently use.
 
@@ -46,16 +46,16 @@ Please note that your data history will be lost if you have modified `history` p
 
 | setting|default|info|||
 |:-----:|:-----:|:---|---|---|
-| process scheduling policy|`keep`|See [Netdata process scheduling policy](/docs/daemon/#netdata-process-scheduling-policy)|||
-| OOM score|`1000`|See [OOM score](/docs/daemon/#oom-score)|||
-| glibc malloc arena max for plugins|`1`|See [Virtual memory](/docs/daemon/#virtual-memory).|||
-| glibc malloc arena max for Netdata|`1`|See [Virtual memory](/docs/daemon/#virtual-memory).|||
+| process scheduling policy|`keep`|See [Netdata process scheduling policy](/docs/#netdata-process-scheduling-policy)|||
+| OOM score|`1000`|See [OOM score](/docs/#oom-score)|||
+| glibc malloc arena max for plugins|`1`|See [Virtual memory](/docs/#virtual-memory).|||
+| glibc malloc arena max for Netdata|`1`|See [Virtual memory](/docs/#virtual-memory).|||
 | hostname|auto-detected|The hostname of the computer running Netdata.|||
-| history|`3996`| Used with `memory mode = save/map/ram/alloc`, not the default `memory mode = dbengine`. This number reflects the number of entries the `netdata` daemon will by default keep in memory for each chart dimension. This setting can also be configured per chart. Check [Memory Requirements](/docs/database.md#database#database) for more information. |||
-| update every|`1`|The frequency in seconds, for data collection. For more information see [Performance](/docs/performance.md#performance).|||
+| history|`3996`| Used with `memory mode = save/map/ram/alloc`, not the default `memory mode = dbengine`. This number reflects the number of entries the `netdata` daemon will by default keep in memory for each chart dimension. This setting can also be configured per chart. Check [Memory Requirements](/docs/database#database) for more information. |||
+| update every|`1`|The frequency in seconds, for data collection. For more information see [Performance](/docs/performance#performance).|||
 | config directory|`/etc/netdata`|The directory configuration files are kept.|||
 | stock config directory|`/usr/lib/netdata/conf.d`||||
-| log directory|`/var/log/netdata`|The directory in which the [log files](/docs/daemon/#log-files) are kept.|||
+| log directory|`/var/log/netdata`|The directory in which the [log files](/docs/#log-files) are kept.|||
 | web files directory|`/usr/share/netdata/web`|The directory the web static files are kept.|||
 | cache directory|`/var/cache/netdata`|The directory the memory database will be stored if and when Netdata exits. Netdata will re-read the database when it will start again, to continue from the same point.|||
 | lib directory|`/var/lib/netdata`|Contains the alarm log and the Netdata instance guid.|||
@@ -68,8 +68,8 @@ Please note that your data history will be lost if you have modified `history` p
 | memory deduplication (ksm)|`yes`|When set to `yes`, Netdata will offer its in-memory round robin database to kernel same page merging (KSM) for deduplication. For more information check [Memory Deduplication - Kernel Same Page Merging - KSM](/docs/database/#ksm)|||
 | TZ environment variable|`:/etc/localtime`|Where to find the timezone|||
 | timezone|auto-detected|The timezone retrieved from the environment variable|||
-| debug flags|`0x0000000000000000`|Bitmap of debug options to enable. For more information check [Tracing Options](/docs/daemon/#debugging).|||
-| debug log|`/var/log/netdata/debug.log`|The filename to save debug information. This file will not be created if debugging is not enabled. You can also set it to `syslog` to send the debug messages to syslog, or `none` to disable this log. For more information check [Tracing Options](/docs/daemon/#debugging).|||
+| debug flags|`0x0000000000000000`|Bitmap of debug options to enable. For more information check [Tracing Options](/docs/#debugging).|||
+| debug log|`/var/log/netdata/debug.log`|The filename to save debug information. This file will not be created if debugging is not enabled. You can also set it to `syslog` to send the debug messages to syslog, or `none` to disable this log. For more information check [Tracing Options](/docs/#debugging).|||
 | error log|`/var/log/netdata/error.log`|The filename to save error messages for Netdata daemon and all plugins (`stderr` is sent here for all Netdata programs, including the plugins). You can also set it to `syslog` to send the errors to syslog, or `none` to disable this log.|||
 | access log|`/var/log/netdata/access.log`|The filename to save the log of web clients accessing Netdata charts. You can also set it to `syslog` to send the access log to syslog, or `none` to disable this log.|||
 | errors flood protection period|`1200`|UNUSED - Length of period (in sec) during which the number of errors should not exceed the `errors to trigger flood protection`.|||
@@ -118,7 +118,7 @@ Specific alarms are configured in per-collector config files under the `health.d
 | health configuration directory|`/etc/netdata/health.d`|The directory containing the user alarm configuration files, to override the stock configurations|
 | run at least every seconds|`10`|Controls how often all alarm conditions should be evaluated.|
 | postpone alarms during hibernation for seconds|`60`|Prevents false alarms. May need to be increased if you get alarms during hibernation.|
-| rotate log every lines|2000|Controls the number of alarm log entries stored in `<lib directory>/health-log.db`, where `<lib directory>` is the one configured in the [\[global\] section](/docs/daemon/config/#global-section-options)|
+| rotate log every lines|2000|Controls the number of alarm log entries stored in `<lib directory>/health-log.db`, where `<lib directory>` is the one configured in the [\[global\] section](#global-section-options)|
 
 ### [registry] section options
 
@@ -144,7 +144,7 @@ External plugins will have only 2 options at `netdata.conf`:
 
 | setting | default | info |
 | :-----:|:-----:|:---|
-| update every | the value of `[global].update every` setting|The frequency in seconds the plugin should collect values. For more information check [Performance](/docs/performance.md#performance).|
+| update every | the value of `[global].update every` setting|The frequency in seconds the plugin should collect values. For more information check [Performance](/docs/performance#performance).|
 | command options | _empty_ | Additional command line options to pass to the plugin.|
 
 External plugins that need additional configuration may support a dedicated file in `/etc/netdata`. Check their documentation.
@@ -155,7 +155,7 @@ In this area of `netdata.conf` you can find configuration options for individual
 following the pattern `[NAME]`.
 
 Using the settings and values under these sections, you can control all aspects of a specific chart. You can change its
-title, make it appear higher in Netdata's [menu](/docs/web/gui.md#menus#menus), tweak its dimensions, and much more.
+title, make it appear higher in Netdata's [menu](/docs/web/gui#menus), tweak its dimensions, and much more.
 
 To find the name of a given chart, and thus the name of its section in `netdata.conf`, look at the top-left corner of a
 chart:
@@ -168,16 +168,16 @@ that is information about lines that begin with `dim`, which affect a chart's di
 
 | Setting           | Function                                                                                                                                                                                                                                                        |
 | :---------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `history`         | Override the `history` setting in the [[global] options](/docs/daemon/config/#global-section-options) for this particular chart. Should be less than or equal to the global `history` setting.                                                                                      |
+| `history`         | Override the `history` setting in the [[global] options](#global-section-options) for this particular chart. Should be less than or equal to the global `history` setting.                                                                                      |
 | `enabled`         | A boolean (`yes` or `no`) that explicitly enables or disables the chart in question.                                                                                                                                                                            |
 | `cache directory` | The directory where cache files for this plugin, if needed, are stored.                                                                                                                                                                                         |
 | `chart type`      | Defines what type of chart to display. It can be `line`, `area`, or `stacked`. If empty or missing, `line` will be used.                                                                                                                                        |
-| `type`            | Uniquely identify which [menu](/docs/web/gui.md#menus#menus) on the Netdata dashboard this chart should appear under. Some examples include `system` (**System**), `disk` (**Disks**), `net` (**Network Interfaces**), and `netdata` (**Netdata Monitoring**). |
-| `family`          | Change the chart's [family](/docs/web.md#families#families) from its default. For example, you could force a disk space chart to collect metrics for family `sdb` instead of family `sda`.                                                                        |
+| `type`            | Uniquely identify which [menu](/docs/web/gui#menus) on the Netdata dashboard this chart should appear under. Some examples include `system` (**System**), `disk` (**Disks**), `net` (**Network Interfaces**), and `netdata` (**Netdata Monitoring**). |
+| `family`          | Change the chart's [family](/docs/web#families) from its default. For example, you could force a disk space chart to collect metrics for family `sdb` instead of family `sda`.                                                                        |
 | `units`           | Text for the label of the vertical axis of the chart. This means all dimensions should have the same unit of measurement.                                                                                                                                       |
-| `context`         | Change the default [context](/docs/web.md#contexts#contexts) of the chart. Changing this setting will affect what metrics and metrics the chart displays, and which alarms are attached to it.                                                                    |
+| `context`         | Change the default [context](/docs/web#contexts) of the chart. Changing this setting will affect what metrics and metrics the chart displays, and which alarms are attached to it.                                                                    |
 | `priority`        | Define where the chart should appear on the Netdata dashboard. Lower values equal higher priority, so a priority of `1` will place the chart highest, while a priority of `9999999` would place the chart at the bottom of the Netdata dashboard.               |
-| `name`            | The name of the chart that appears in the top-left corner, after the chart's title. You can also use this name when writing [health entities](/docs/health/reference.md#health-entity-reference).                                                               |
+| `name`            | The name of the chart that appears in the top-left corner, after the chart's title. You can also use this name when writing [health entities](/docs/health/reference#health-entity-reference).                                                               |
 | `title`           | The text that appears above the chart in the Netdata dashboard.                                                                                                                                                                                                 |
 
 ### Dimension settings

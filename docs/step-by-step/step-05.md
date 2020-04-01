@@ -20,9 +20,9 @@ Luckily, Netdata's alarm and notification system are incredibly adaptable to you
 
 We'll talk about Netdata's default configuration, and then you'll learn how to do the following:
 
--   [Tune Netdata's pre-configured alarms](/docs/step-by-step/#tune-netdatas-pre-configured-alarms)
--   [Write your first health entity](/docs/step-by-step/#write-your-first-health-entity)
--   [Enable Netdata's notification systems](/docs/step-by-step/#enable-netdatas-notification-systems)
+-   [Tune Netdata's pre-configured alarms](#tune-netdatas-pre-configured-alarms)
+-   [Write your first health entity](#write-your-first-health-entity)
+-   [Enable Netdata's notification systems](#enable-netdatas-notification-systems)
 
 ## Tune Netdata's pre-configured alarms
 
@@ -37,7 +37,7 @@ entity](https://user-images.githubusercontent.com/1153921/67034648-ebb4cc80-f0cc
 
 Look at the `source` row in the table. This means the `system.cpu` chart sources its health alarms from
 `4@/usr/lib/netdata/conf.d/health.d/cpu.conf`. To tune these alarms, you'll need to edit the alarm file at
-`health.d/cpu.conf`. Go to your [Netdata config directory](/docs/step-by-step/step-04.md#find-your-netdataconf-file) and use the
+`health.d/cpu.conf`. Go to your [Netdata config directory](/docs/step-by-step/step-04#find-your-netdataconf-file) and use the
 `edit-config` script.
 
 ```bash
@@ -69,7 +69,7 @@ the `warn` and `crit` lines to the values of your choosing. For example:
     crit: $this > (($status == $CRITICAL) ? (75) : (85))
 ```
 
-You _can_ [restart Netdata](/docs/getting-started.md#start-stop-and-restart-netdata) to enable your tune, but you can also
+You _can_ [restart Netdata](/docs/getting-started#start-stop-and-restart-netdata) to enable your tune, but you can also
 send a signal to Netdata to reload _only_ the health monitoring component.
 
 ```bash
@@ -77,7 +77,7 @@ killall -USR2 netdata
 ```
 
 You can also tune any other aspect of the default alarms. To better understand how each line in a health entity works,
-read our [health documentation](/health/).
+read our [health documentation](/docs/health/).
 
 ### Silence an individual alarm
 
@@ -180,7 +180,7 @@ These lines will trigger a warning if that average RAM usage goes above 80%, and
 > health entities.
 
 Finish off with the `info` line, which creates a description of the alarm that will then appear in any
-[notification](/docs/step-by-step/#enable-netdatas-notification-systems) you set up. This line is optional, but it has valueâthink of it as
+[notification](#enable-netdatas-notification-systems) you set up. This line is optional, but it has valueâthink of it as
 documentation for a health entity!
 
 ```yaml
@@ -213,7 +213,7 @@ stress -m 1 --vm-bytes 8G --vm-keep
 ```
 
 Netdata is capable of understanding much more complicated entities. To better understand how they work, read the [health
-documentation](/health.md), look at some [examples](/health/reference.md#example-alarms), and open the
+documentation](/docs/health), look at some [examples](/docs/health/reference#example-alarms), and open the
 files containing the default entities on your system.
 
 ## Enable Netdata's notification systems
@@ -222,7 +222,7 @@ Health alarms, while great on their own, are pretty useless without some way of 
 That's why Netdata comes with a notification system that supports more than a dozen services, such as email, Slack,
 Discord, PagerDuty, Twilio, Amazon SNS, and much more.
 
-To see all the supported systems, visit our [notifications documentation](/health/notifications/).
+To see all the supported systems, visit our [notifications documentation](/docs/health/notifications/).
 
 We'll cover email and Slack notifications here, but with this knowledge you should be able to enable any other type of
 notifications instead of or in addition to these.
@@ -328,9 +328,9 @@ applications.
 To further configure your email or Slack notification setup, or to enable other notification systems, check out the
 following documentation:
 
--   [Email notifications](/health/notifications/email/)
--   [Slack notifications](/health/notifications/slack/)
--   [Netdata's notification system](/health/notifications/)
+-   [Email notifications](/docs/health/notifications/email/)
+-   [Slack notifications](/docs/health/notifications/slack/)
+-   [Netdata's notification system](/docs/health/notifications/)
 
 ## What's next?
 
@@ -343,4 +343,4 @@ You're coming along quick!
 Next up, we're going to cover how Netdata collects its metrics, and how you can get Netdata to collect real-time metrics
 from hundreds of services with almost no configuration on your part. Onward!
 
-[Next: Collect metrics from more services and apps &rarr;](/docs/step-by-step/step-06.md)
+[Next: Collect metrics from more services and apps &rarr;](/docs/step-by-step/step-06)

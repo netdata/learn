@@ -13,16 +13,16 @@ toolkit. You've probably seen it before:
 dashboard](https://user-images.githubusercontent.com/2662304/48307727-9175c800-e55b-11e8-92d8-a581d60a4889.gif)
 
 Learn more about how dashboards work and how they're populated using the
-`dashboards.js` file in our [web dashboards overview](/docs/web/).
+`dashboards.js` file in our [web dashboards overview](/docs/).
 
 By default, Netdata starts a web server for its dashboard at port `19999`. Open
 up your web browser of choice and navigate to `http://SERVER-IP:19999`, or
 `http://localhost:19999` on `localhost`.
 
-Netdata uses an [internal, static-threaded web server](/docs/web/server/) to host the
+Netdata uses an [internal, static-threaded web server](/docs/server/) to host the
 HTML, CSS, and JavaScript files that make up the standard dashboard. You don't
 have to configure anything to access it, although you can adjust [your
-settings](/docs/web/server/#other-netdataconf-web-section-options) in the
+settings](/docs/server/#other-netdataconf-web-section-options) in the
 `netdata.conf` file, or run Netdata behind an Nginx proxy, and so on.
 
 <details markdown="1"><summary>Want to see the dashboard and its features in action? Check out our video.</summary>
@@ -33,9 +33,9 @@ settings](/docs/web/server/#other-netdataconf-web-section-options) in the
 
 Beyond charts, the standard dashboard can be broken down into three key areas:
 
-1.  [**Sections**](/docs/web/gui/#sections)
-2.  [**Menus/submenus**](/docs/web/gui/#menus)
-3.  [**Nodes menu**](/docs/web/gui/#nodes-menu)
+1.  [**Sections**](#sections)
+2.  [**Menus/submenus**](#menus)
+3.  [**Nodes menu**](#nodes-menu)
 
 ![Annotated screenshot of the
 dashboard](https://user-images.githubusercontent.com/1153921/62810777-ef681980-bab3-11e9-9310-ec7a0c9f4faa.png)
@@ -44,8 +44,8 @@ dashboard](https://user-images.githubusercontent.com/1153921/62810777-ef681980-b
 
 Netdata is broken up into multiple **sections**, such as **System Overview**,
 **CPU**, **Disk**, and more. Inside each section you'll find a number of charts,
-broken down into [contexts](/docs/web/#contexts) and
-[families](/docs/web/#families).
+broken down into [contexts](/docs/#contexts) and
+[families](/docs/#families).
 
 An example of the **Memory** section on a Linux desktop system.
 
@@ -54,7 +54,7 @@ dashboard](https://user-images.githubusercontent.com/1153921/62811044-1410c100-b
 
 All sections and their associated charts appear on a single "page," so all you
 need to do to view different sections is scroll up and down the page. But it's
-usually quicker to use the [menus](/docs/web/gui/#menus).
+usually quicker to use the [menus](#menus).
 
 ### Menus
 
@@ -66,7 +66,7 @@ associated with.
 menu](https://user-images.githubusercontent.com/1153921/62811361-38b96880-bab6-11e9-8d41-4d9b29778e86.png)
 
 Most menu items will contain several **submenu** entries, which represent any
-[families](/docs/web/#families) from that section. Netdata automatically
+[families](/docs/#families) from that section. Netdata automatically
 generates these submenu entries.
 
 Here's a **Disks** menu with several submenu entries for each disk drive and
@@ -125,7 +125,7 @@ overwrite the file when it's updated. Instead, you should create a new file with
 your customizations.
 
 We created an example file at
-[`dashboard_info_custom_example.js`](/docs/web/gui/dashboard_info_custom_example.js). You can
+[`dashboard_info_custom_example.js`](/docs/web/dashboard_info_custom_example.js). You can
 copy this to a new file with a name of your choice in the `web/` directory. This
 directory changes based on your operating system and installation method. If
 you're on a Linux system, it should be at `/usr/share/netdata/web/`.
@@ -164,6 +164,6 @@ file](https://user-images.githubusercontent.com/1153921/62798924-570e6c80-ba94-1
 ## Custom dashboards
 
 For information on creating custom dashboards from scratch, see the [custom
-dashboards](/docs/web/gui/custom/) or [Atlassian Confluence dashboards](/docs/web/gui/confluence/) guides.
+dashboards](/docs/web/custom/) or [Atlassian Confluence dashboards](/docs/web/confluence/) guides.
 
 

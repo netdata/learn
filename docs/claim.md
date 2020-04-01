@@ -24,7 +24,7 @@ following arguments:
 -rooms=ROOM1,ROOM2,...
     where ROOMX is the workspace war-room to join. This list is optional.
 -url=URL_BASE
-    where URL_BASE is the Netdata Cloud endpoint base URL. By default, this is https://netdata.cloud.
+    where URL_BASE is the Netdata Cloud endpoint base URL. By default, this is https://app.netdata.cloud.
 -id=AGENT_ID
     where AGENT_ID is the unique identifier of the agent. This is the agent's MACHINE_GUID by default.
 -hostname=HOSTNAME
@@ -62,7 +62,7 @@ For example:
 ```
 
 If need be, the user can override the agent's defaults by providing additional arguments like those described
-[here](/docs/claim/#claiming-script).
+[here](#claiming-script).
 
 ## Claiming directory
 
@@ -87,7 +87,7 @@ netdata-claim.sh -token=MYTOKEN1234567 -rooms=room1,room2 -proxy=socks5h://127.0
 
 When claiming via the `netdata` binary set the following options in the config:
 ```
-[agent_cloud_link]
+[cloud]
     proxy = socks5://X.X.X.X:YYYY
 ```
 Proceed to claim using the command-line syntax:

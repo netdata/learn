@@ -14,23 +14,23 @@ team and the community, but you can also customize them yourself.
 
 There are two primary ways to view Netdata's dashboards:
 
-1.  The [standard web dashboard](/docs/web/gui/) that comes pre-configured with every
+1.  The [standard web dashboard](/docs/gui/) that comes pre-configured with every
    Netdata installation. You can see it at `http://SERVER-IP:19999`, or
    `http://localhost:19999` on `localhost`. You can customize the contents and
    colors of the standard dashboard [using
-   JavaScript](/docs/web/gui/#customizing-the-standard-dashboard).
+   JavaScript](/docs/gui/#customizing-the-standard-dashboard).
 
-2.  The [`dashboard.js` JavaScript library](/docs/web/#dashboardjs), which helps you
-   [customize the standard dashboards](/docs/web/gui/#customizing-the-standard-dashboard)
-   using JavaScript, or create entirely new [custom dashboards](/docs/web/gui/custom/) or
-   [Atlassian Confluence dashboards](/docs/web/gui/confluence/).
+2.  The [`dashboard.js` JavaScript library](#dashboardjs), which helps you
+   [customize the standard dashboards](/docs/gui/#customizing-the-standard-dashboard)
+   using JavaScript, or create entirely new [custom dashboards](/docs/gui/custom/) or
+   [Atlassian Confluence dashboards](/docs/gui/confluence/).
 
-You can also view all the data Netdata collects through the [REST API v1](/docs/web/api/).
+You can also view all the data Netdata collects through the [REST API v1](/docs/api/).
 
 No matter where you use Netdata's charts, you'll want to know how to
-[use](/docs/web/#using-charts) them. You'll also want to understand how Netdata defines
-[charts](/docs/web/#charts), [dimensions](/docs/web/#dimensions), [families](/docs/web/#families), and
-[contexts](/docs/web/#contexts).
+[use](#using-charts) them. You'll also want to understand how Netdata defines
+[charts](#charts), [dimensions](#dimensions), [families](#families), and
+[contexts](#contexts).
 
 ## Using charts
 
@@ -38,7 +38,7 @@ Netdata's charts are far from static. They are interactive, real-time, and work
 with your mouse, touchpad, or touchscreen!
 
 Hover over any chart to temporarily pause it and see the exact values presented
-as different [dimensions](/docs/web/#dimensions). Click or tap stop the chart from automatically updating with new metrics, thereby locking it to a single timeframe.
+as different [dimensions](#dimensions). Click or tap stop the chart from automatically updating with new metrics, thereby locking it to a single timeframe.
 
 ![Animated GIF of hovering over a chart to see
 values](https://user-images.githubusercontent.com/1153921/62968279-9227dd00-bdbf-11e9-9112-1d21444d0f31.gif)
@@ -93,7 +93,7 @@ dashboard](https://user-images.githubusercontent.com/1153921/62720972-0b8a8e80-b
 Netdata displays a chart's name in parentheses above the chart. For example, if
 you navigate to the system CPU chart, you'll see the label: **Total CPU
 utilization (system.cpu)**. In this case, the chart's name is `system.cpu`.
-Netdata derives the name from the chart's [context](/docs/web/#contexts).
+Netdata derives the name from the chart's [context](#contexts).
 
 ### Dimensions
 
@@ -181,7 +181,7 @@ shows you two pieces of information: the collector that produces the chart, and
 the chart's context.
 
 Netdata also uses [contexts for alarm
-templates](/docs/health/reference.md#alarm-line-on). You can create an
+templates](/docs/health/reference#alarm-line-on). You can create an
 alarm for the `net.packets` context to receive alerts for any chart with that
 context, no matter which family it's attached to.
 
@@ -213,7 +213,7 @@ all the charts and other visualizations that appear on any Netdata dashboard.
 You need to put `dashboard.js` on any HTML page that's going to render Netdata
 charts.
 
-The [custom dashboards documentation](/docs/web/gui/custom/) contains examples of such
+The [custom dashboards documentation](/docs/gui/custom/) contains examples of such
 custom HTML pages.
 
 ### Generating dashboard.js

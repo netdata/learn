@@ -6,6 +6,6 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/pytho
 
 
 An example python data collection module.
-You can use this example to help you [write a new Python module](/docs/collectors/python.d.plugin/#how-to-write-a-new-module).
+You can use this example to help you [write a new Python module](/docs/collectors/#how-to-write-a-new-module).
 
 

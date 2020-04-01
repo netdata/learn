@@ -23,8 +23,8 @@ alternative, like the guide available from
 
 For more specifics on the collection modules used in this tutorial, read the respective pages in our documentation:
 
--   [HDFS](/collectors/go.d.plugin/modules/hdfs.md)
--   [Zookeeper](/collectors/go.d.plugin/modules/zookeeper.md)
+-   [HDFS](/docs/collectors/go.d.plugin/modules/hdfs)
+-   [Zookeeper](/docs/collectors/go.d.plugin/modules/zookeeper)
 
 ## Set up your HDFS and Zookeeper installations
 
@@ -186,7 +186,7 @@ sudo /etc/netdata/edit-config health.d/zookeeper.conf
 ```
 
 For more information about editing the defaults or writing new alarm entities, see our [health monitoring
-documentation](/health.md).
+documentation](/docs/health).
 
 ## What's next?
 

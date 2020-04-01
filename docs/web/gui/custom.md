@@ -17,13 +17,13 @@ You can also add Netdata charts to existing web pages.
 
 Check this **[very simple working example of a custom
 dashboard](http://netdata.firehol.org/demo.html)**, and its **[html
-source](/docs/web/gui/demo.html)**.
+source](/docs/web/demo.html)**.
 
 You should also look at the [custom dashboard
 template](https://my-netdata.io/dashboard.html), which contains samples of all
-supported charts. The code is [here](/docs/web/gui/dashboard.html).
+supported charts. The code is [here](/docs/web/dashboard.html).
 
-If you plan to put the dashboard on TV, check out [tv.html](/docs/web/gui/tv.html). Here's
+If you plan to put the dashboard on TV, check out [tv.html](/docs/web/tv.html). Here's
 is a screenshot of it, monitoring two servers on the same page:
 
 ![image](https://cloud.githubusercontent.com/assets/2662304/14252187/d8d5f78e-fa8e-11e5-990d-99821d38c874.png)
@@ -492,7 +492,7 @@ it, using this:
 
 ### API options
 
-You can append Netdata **[REST API v1](/docs/web/api)** data options, using this:
+You can append Netdata **[REST API v1](/docs/api)** data options, using this:
 
 ```html
 <div data-netdata="unique.id"

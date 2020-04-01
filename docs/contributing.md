@@ -73,7 +73,7 @@ Our documentation is in need of constant improvement and expansion. As Netdata's
 
 We also need to produce beginner-level tutorials on using Netdata to monitor common applications, web servers, and more.
 
-Start with the [guide for contributing to documentation](/docs/contributing/contributing-documentation.md), and then review the [documentation style guide](/docs/contributing/style-guide.md) for specifics on how we write our documentation.
+Start with the [guide for contributing to documentation](/docs/contributing/contributing-documentation), and then review the [documentation style guide](/docs/contributing/style-guide) for specifics on how we write our documentation.
 
 Don't be afraid to submit a pull request with your corrections or additions! We need a lot of help and are willing to guide new contributors through the process.
 
@@ -117,7 +117,7 @@ across most of our code-base, but we prefer new contributions that match the lin
 
 #### Code of Conduct and CLA
 
-We expect all contributors to abide by the [Contributor Covenant Code of Conduct](/docs/code_of_conduct.md). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/docs/contributors.md), as part of the PR process.
+We expect all contributors to abide by the [Contributor Covenant Code of Conduct](/docs/code_of_conduct). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/docs/contributors), as part of the PR process.
 
 #### Performance and efficiency
 
@@ -182,7 +182,7 @@ There are several guides for pull requests, such as the following:
 -   <https://thenewstack.io/getting-legit-with-git-and-github-your-first-pull-request/>
 -   <https://github.com/firstcontributions/first-contributions#first-contributions>
 
-However, it's not always that simple. Our [PR approval process](/docs/#pr-approval-process) and the several merges we do every day may cause your fork to get behind the Netdata master. If you worked on something that has changed in the meantime, you will be required to do a git rebase, to bring your fork to the correct state. A very easy to follow guide on how to do it without learning all the intricacies of GitHub can be found [here](https://medium.com/@ruthmpardee/git-fork-workflow-using-rebase-587a144be470)
+However, it's not always that simple. Our [PR approval process](#pr-approval-process) and the several merges we do every day may cause your fork to get behind the Netdata master. If you worked on something that has changed in the meantime, you will be required to do a git rebase, to bring your fork to the correct state. A very easy to follow guide on how to do it without learning all the intricacies of GitHub can be found [here](https://medium.com/@ruthmpardee/git-fork-workflow-using-rebase-587a144be470)
 
 One thing you will need to do only for your first pull request in Netdata is to accept the CLA. Until you do, the automated check for the CLA acceptance will be showing as failed. 
 

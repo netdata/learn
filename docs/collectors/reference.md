@@ -11,18 +11,18 @@ This guide contains detailed information about enabling/disabling plugins or mod
 the internal plugins API.
 
 To learn the basics of collecting metrics from other applications and services, see the [collector
-quickstart](/docs/collectors/quickstart.md).
+quickstart](/docs/collectors/quickstart).
 
 ## What's in this reference guide
 
--   [Netdata's collector architecture](/docs/collectors/#netdatas-collector-architecture)
--   [Enable, configure, and disable modules](/docs/collectors/#enable-configure-and-disable-modules)
--   [Troubleshoot a collector](/docs/collectors/#troubleshoot-a-collector)
--   [Enable and disable plugins](/docs/collectors/#enable-and-disable-plugins)
--   [Internal plugins](/docs/collectors/#internal-plugins)
-    -   [Internal plugins API](/docs/collectors/#internal-plugins-api)
--   [External plugins](/docs/collectors/#external-plugins)
--   [Write a custom collector](/docs/collectors/#write-a-custom-collector)
+-   [Netdata's collector architecture](#netdatas-collector-architecture)
+-   [Enable, configure, and disable modules](#enable-configure-and-disable-modules)
+-   [Troubleshoot a collector](#troubleshoot-a-collector)
+-   [Enable and disable plugins](#enable-and-disable-plugins)
+-   [Internal plugins](#internal-plugins)
+    -   [Internal plugins API](#internal-plugins-api)
+-   [External plugins](#external-plugins)
+-   [Write a custom collector](#write-a-custom-collector)
 
 ## Netdata's collector architecture
 
@@ -33,8 +33,8 @@ independent processes in a variety of programming languages based on their purpo
 MySQL database, among many others.
 
 For most users, enabling individual collectors for the application/service you're interested in is far more important
-than knowing which plugin it uses. See our [collectors list](/docs/collectors/collectors.md) to see whether your favorite app/service has
-a collector, and then read the [collectors quickstart](/docs/collectors/quickstart.md) and the documentation for that specific collector
+than knowing which plugin it uses. See our [collectors list](/docs/collectors/collectors) to see whether your favorite app/service has
+a collector, and then read the [collectors quickstart](/docs/collectors/quickstart) and the documentation for that specific collector
 to figure out how to enable it.
 
 There are three types of plugins:
@@ -46,7 +46,7 @@ There are three types of plugins:
     independent processes. They communicate with the daemon via pipes.
 -   **Plugin orchestrators**, which are external plugins that instead support a number of **modules**. Modules are a
     type of collector. We have a few plugin orchestrators available for those who want to develop their own collectors,
-    but focus most of our efforts on the [Go plugin](/docs/collectors/go.d.plugin.md).
+    but focus most of our efforts on the [Go plugin](/docs/collectors/go.d.plugin).
 
 ## Enable, configure, and disable modules
 
@@ -57,7 +57,7 @@ However, there are cases that auto-detection fails. Usually, the reason is that 
 allow Netdata to connect. In most of the cases, allowing the user `netdata` from `localhost` to connect and collect
 metrics, will automatically enable data collection for the application in question (it will require a Netdata restart).
 
-View our [collectors quickstart](/docs/collectors/quickstart.md) for explict details on enabling and configuring collector modules.
+View our [collectors quickstart](/docs/collectors/quickstart) for explict details on enabling and configuring collector modules.
 
 ## Troubleshoot a collector
 
@@ -73,7 +73,7 @@ sudo su -s /bin/bash netdata
 The next step is based on the collector's orchestrator. You can figure out which orchestrator the collector uses by 
 
 uses either
-by viewing the [collectors list](/docs/collectors/collectors.md) and referencing the _configuration file_ field. For example, if that
+by viewing the [collectors list](/docs/collectors/collectors) and referencing the _configuration file_ field. For example, if that
 field contains `go.d`, that collector uses the Go orchestrator.
 
 ```bash

@@ -86,7 +86,7 @@ To enable module please do the following:
 If case of problems:
 
 -   check `error.log` for module related errors (`grep <module name> error.log`)
--   run plugin in [debug mode](/docs/collectors/go.d.plugin/#troubleshooting)
+-   run plugin in [debug mode](#troubleshooting)
 
 ## Configuration
 
@@ -134,4 +134,4 @@ sudo su -s /bin/bash netdata
 ```
 
 Change `<module name>` to the module name you want to debug.
-See the [whole list](/docs/collectors/go.d.plugin/#available-modules) of available modules.
+See the [whole list](#available-modules) of available modules.

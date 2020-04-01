@@ -10,8 +10,8 @@ cloud features, such as the node view. The node menu lists the Netdata servers y
 lot of additional features on top of the menu, [with many more to
 come](https://blog.netdata.cloud/posts/netdata-cloud-announcement/). To enable the global Netdata registry and the cloud
 features, you need to Sign In to Netdata cloud. By signing in, you opt in to let the registry receive and store the
-information described [here](/docs/registry/#what-data-does-the-registry-store). You can still get the node menu, but not the cloud
-features, if you [run your own registry](/docs/registry/#run-your-own-registry).
+information described [here](#what-data-does-the-registry-store). You can still get the node menu, but not the cloud
+features, if you [run your own registry](#run-your-own-registry).
 
 ## Why?
 
@@ -79,7 +79,7 @@ in the Netdata registry regardless of whether you sign in or not.
 ## Who talks to the registry?
 
 Your web browser **only**! If sending this information is against your policies, you can [run your own
-registry](/docs/registry/#run-your-own-registry)
+registry](#run-your-own-registry)
 
 Your Netdata servers do not talk to the registry. This is a UML diagram of its operation:
 

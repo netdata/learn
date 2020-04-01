@@ -105,7 +105,7 @@ $host:$server_port $remote_addr - - [$time_local] "$request" $status $body_bytes
 ```
 
 The first one that matches will be used later. If you use default Apache/NGINX log format auto-detect will do for you.
-If it doesnt work you need [to set format manually](/docs/collectors/go.d.plugin/modules/weblog/#custom-log-format).
+If it doesnt work you need [to set format manually](#custom-log-format).
 
 ## Known Fields
 
@@ -132,7 +132,7 @@ Weblog is aware how to parse and interpret the fields:
 | $ssl_protocol           | -         | Protocol of an established SSL connection.
 | $ssl_cipher             | -         | String of ciphers used for an established SSL connection.
 
-In addition to that weblog understands [user defined fields](/docs/collectors/go.d.plugin/modules/weblog/#custom-fields-feature).
+In addition to that weblog understands [user defined fields](#custom-fields-feature).
 
 Notes:
 
@@ -151,7 +151,7 @@ Notes:
 
 ## Custom Log Format
 
-Custom log format is easy. Use [known fields](/docs/collectors/go.d.plugin/modules/weblog/#known-fields) to construct your log format.
+Custom log format is easy. Use [known fields](#known-fields) to construct your log format.
 
 -   If using CSV parser
 
@@ -244,14 +244,14 @@ we still can get some info from them.
 ## Configuration
 
 Edit the `go.d/web_log.conf` configuration file using `edit-config` from the your agent's [config
-directory](/docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory
 sudo ./edit-config go.d/web_log.conf
 ```
 
-This module needs only `path` to log file. If it fails to auto-detect your log format you need [to set it manually](/docs/collectors/go.d.plugin/modules/weblog/#custom-log-format). 
+This module needs only `path` to log file. If it fails to auto-detect your log format you need [to set it manually](#custom-log-format). 
 
 ```yaml
 jobs:

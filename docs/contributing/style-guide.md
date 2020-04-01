@@ -10,13 +10,13 @@ products.
 
 ## Table of contents
 
--   [Welcome!](/docs/contributing/#welcome)
--   [Goals of the Netdata style guide](/docs/contributing/#goals-of-the-netdata-style-guide)
--   [General principles](/docs/contributing/#general-principles)
--   [Tone and content](/docs/contributing/#tone-and-content)
--   [Language and grammar](/docs/contributing/#language-and-grammar)
--   [Markdown syntax](/docs/contributing/#markdown-syntax)
--   [Accessibility](/docs/contributing/#accessibility)
+-   [Welcome!](#welcome)
+-   [Goals of the Netdata style guide](#goals-of-the-netdata-style-guide)
+-   [General principles](#general-principles)
+-   [Tone and content](#tone-and-content)
+-   [Language and grammar](#language-and-grammar)
+-   [Markdown syntax](#markdown-syntax)
+-   [Accessibility](#accessibility)
 
 ## Welcome
 
@@ -26,7 +26,7 @@ monitoring agent, and the community it's created, depends on this effort.
 Weâre here to make developers, sysadmins, and DevOps engineers better at their jobs, after all!
 
 We welcome contributions to Netdata's documentation. Begin with the [contributing to documentation
-guide](/docs/contributing/contributing-documentation.md), followed by this style guide.
+guide](/docs/contributing/contributing-documentation), followed by this style guide.
 
 ## Goals of the Netdata style guide
 
@@ -55,30 +55,30 @@ Yes, this style guide is pretty overwhelming! Establishing standards for a globa
 
 Here's a few key points to start with. Where relevant, they link to more in-depth information about a given rule.
 
-**[Tone and content](/docs/contributing/#tone-and-content)**:
+**[Tone and content](#tone-and-content)**:
 
--   Be [conversational and friendly](/docs/contributing/#conversational-and-friendly-tone).
--   Write [concisely](/docs/contributing/#write-concisely).
--   Don't use words like **here** when [creating hyperlinks](/docs/contributing/#use-informational-hyperlinks).
--   Don't mention [future releases or features](/docs/contributing/#mentioning-future-releases-or-features) in documentation.
+-   Be [conversational and friendly](#conversational-and-friendly-tone).
+-   Write [concisely](#write-concisely).
+-   Don't use words like **here** when [creating hyperlinks](#use-informational-hyperlinks).
+-   Don't mention [future releases or features](#mentioning-future-releases-or-features) in documentation.
 
-**[Language and grammar](/docs/contributing/#language-and-grammar)**:
+**[Language and grammar](#language-and-grammar)**:
 
--   [Capitalize words](/docs/contributing/#capitalization) at the beginning of sentences, for proper nouns, and at the beginning of
+-   [Capitalize words](#capitalization) at the beginning of sentences, for proper nouns, and at the beginning of
     document titles and section headers.
--   Use [second person](/docs/contributing/#second-person)â"you" rather than "we"âwhen giving instructions.
--   Use [active voice](/docs/contributing/#active-voice) to make clear who or what is performing an action.
--   Always employ an [Oxford comma](/docs/contributing/#oxford-comma) on lists.
+-   Use [second person](#second-person)â"you" rather than "we"âwhen giving instructions.
+-   Use [active voice](#active-voice) to make clear who or what is performing an action.
+-   Always employ an [Oxford comma](#oxford-comma) on lists.
 
-**[Markdown syntax](/docs/contributing/#markdown-syntax)**:
+**[Markdown syntax](#markdown-syntax)**:
 
--   [Reference UI elements](/docs/contributing/#references-to-ui-elements) with bold text.
--   Use our [built-in syntax highlighter](/docs/contributing/#language-specific-syntax-highlighting-in-code-blocks) to improve the
+-   [Reference UI elements](#references-to-ui-elements) with bold text.
+-   Use our [built-in syntax highlighter](#language-specific-syntax-highlighting-in-code-blocks) to improve the
     readability and usefulness of code blocks.
 
-**[Accessibility](/docs/contributing/#accessibility)**:
+**[Accessibility](#accessibility)**:
 
--   Include [alt tags on images](/docs/contributing/#images).
+-   Include [alt tags on images](#images).
 
 ---
 
@@ -322,7 +322,7 @@ Click on the **Sign in** button.
 !!! note Whenever possible, avoid using directional language to orient readers, because not every reader can use
     instructions like "look at the top-left corner" to find their way around an interface.
 
-If you feel that you must use directional language, perhaps use an [image](/docs/contributing/#images) (with proper alt text) instead.
+If you feel that you must use directional language, perhaps use an [image](#images) (with proper alt text) instead.
 
 We're also working to establish standards for how we refer to certain elements of the Netdata's web interface. We'll include that in this style guide as soon as it's complete.
 
@@ -374,7 +374,7 @@ Or, multiple lines: `hl_lines="1 2 4 12`.
 ## Accessibility
 
 Netdata's documentation should be as accessible as possible to as many people as possible. While the rules about [tone
-and content](/docs/contributing/#tone-and-content) and [language and grammar](/docs/contributing/#language-and-grammar) are helpful to an extent, we also need
+and content](#tone-and-content) and [language and grammar](#language-and-grammar) are helpful to an extent, we also need
 some additional rules to improve the reading experience for all readers.
 
 ### Images
@@ -393,7 +393,7 @@ In Markdown, use the standard image syntax, `![](/docs/contributing)`, and place
 using our logo:
 
 ```
-![The Netdata logo](/web/gui/images/netdata-logomark.svg)
+![The Netdata logo](/docs/web/gui/images/netdata-logomark.svg)
 ```
 
 #### Images of text

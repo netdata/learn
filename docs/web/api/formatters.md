@@ -12,18 +12,18 @@ The following formats are supported:
 
 | format|module|content type|description|
 |:----:|:----:|:----------:|:----------|
-| `array`|[ssv](/docs/web/api/formatters/ssv)|application/json|a JSON array|
-| `csv`|[csv](/docs/web/api/formatters/csv)|text/plain|a text table, comma separated, with a header line (dimension names) and `\r\n` at the end of the lines|
-| `csvjsonarray`|[csv](/docs/web/api/formatters/csv)|application/json|a JSON array, with each row as another array (the first row has the dimension names)|
-| `datasource`|[json](/docs/web/api/formatters/json)|application/json|a Google Visualization Provider `datasource` javascript callback|
-| `datatable`|[json](/docs/web/api/formatters/json)|application/json|a Google `datatable`|
-| `html`|[csv](/docs/web/api/formatters/csv)|text/html|an html table|
-| `json`|[json](/docs/web/api/formatters/json)|application/json|a JSON object|
-| `jsonp`|[json](/docs/web/api/formatters/json)|application/json|a JSONP javascript callback|
-| `markdown`|[csv](/docs/web/api/formatters/csv)|text/plain|a markdown table|
-| `ssv`|[ssv](/docs/web/api/formatters/ssv)|text/plain|a space separated list of values|
-| `ssvcomma`|[ssv](/docs/web/api/formatters/ssv)|text/plain|a comma separated list of values|
-| `tsv`|[csv](/docs/web/api/formatters/csv)|text/plain|a TAB delimited `csv` (MS Excel flavor)|
+| `array`|[ssv](/docs/web/api/ssv)|application/json|a JSON array|
+| `csv`|[csv](/docs/web/api/csv)|text/plain|a text table, comma separated, with a header line (dimension names) and `\r\n` at the end of the lines|
+| `csvjsonarray`|[csv](/docs/web/api/csv)|application/json|a JSON array, with each row as another array (the first row has the dimension names)|
+| `datasource`|[json](/docs/web/api/json)|application/json|a Google Visualization Provider `datasource` javascript callback|
+| `datatable`|[json](/docs/web/api/json)|application/json|a Google `datatable`|
+| `html`|[csv](/docs/web/api/csv)|text/html|an html table|
+| `json`|[json](/docs/web/api/json)|application/json|a JSON object|
+| `jsonp`|[json](/docs/web/api/json)|application/json|a JSONP javascript callback|
+| `markdown`|[csv](/docs/web/api/csv)|text/plain|a markdown table|
+| `ssv`|[ssv](/docs/web/api/ssv)|text/plain|a space separated list of values|
+| `ssvcomma`|[ssv](/docs/web/api/ssv)|text/plain|a comma separated list of values|
+| `tsv`|[csv](/docs/web/api/csv)|text/plain|a TAB delimited `csv` (MS Excel flavor)|
 
 For examples of each format, check the relative module documentation.
 

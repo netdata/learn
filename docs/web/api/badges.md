@@ -298,7 +298,7 @@ These are options dedicated to badges:
 </script>
 ```
 
-A more advanced badges refresh method is to include `http://your.netdata.ip:19999/refresh-badges.js` in your page. For more information and use example, [check this](/docs/web/gui/refresh-badges.js).
+A more advanced badges refresh method is to include `http://your.netdata.ip:19999/refresh-badges.js` in your page. For more information and use example, [check this](/docs/gui/refresh-badges.js).
 
 ---
 
