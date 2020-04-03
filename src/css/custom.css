@@ -72,7 +72,7 @@ html {
   --ifm-navbar-padding-horizontal: 2rem;
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: var(--ifm-color-primary-lightest);
-  --ifm-navbar-height: 68px;
+  --ifm-navbar-height: 77px;
 
   /* Footer */
   --ifm-footer-background-color: var(--ifm-background-color);
@@ -140,6 +140,8 @@ html[data-theme='dark'] a:hover {
 }
 
 .navbar .navbar__logo {
+  position: relative;
+  top: -1px;
   height: 24px;
 }
 
