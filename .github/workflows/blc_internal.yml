@@ -7,9 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     name: Check for broken links
     steps:
+      - name: Waiting for 200 from the Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1
+        id: waitFor200
+        with:
+          site_name: "netdata-docusaurus"
+          max_timeout: 300
       - name: Check for broken links
         id: link-report
-        uses: celinekurpershoek/github-actions-link-checker@{version}
+        uses: celinekurpershoek/github-actions-link-checker@v1.0.0
         with:
           url: 'https://deploy-preview-${{ github.event.pull_request.number }}--netdata-learn.netlify.com'
           honorRobotExclusions: false
