@@ -1,7 +1,10 @@
 {
   "ignorePatterns": [
     {
-      "pattern": "^http://github.com/netdata/netdata/"
+      "pattern": "^http://"
+    },
+    {
+      "pattern": "^https://"
     }
-  ],
+  ]
 }
