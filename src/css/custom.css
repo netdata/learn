@@ -7,6 +7,14 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,400i,500&display=swap');
 
+/* Border box */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 /**
  * Infima variable overrides
  */
@@ -34,7 +42,8 @@
   --ifm-color-accent: #FFC300;
 
   /* Grid/spacing */
-  /* --ifm-footer-padding-vertical: 4rem; */
+  --ifm-container-width: 1200px;
+  --ifm-spacing-horizontal: 2rem;
 
   /* Base fonts */
   --ifm-font-base-color: #35414A;
@@ -48,6 +57,16 @@
 
   /* Code */
   --ifm-code-font-size: 95%;
+  --ifm-code-background: rgb(235, 238, 241);
+
+  /* Buttons */
+  --ifm-button-background-color: var(--ifm-color-primary);
+  --ifm-button-border-radius: 2px;
+  --ifm-button-font-weight: 500;
+  --ifm-button-size-multiplier: 2;
+
+  /* Etc */
+  --ifm-global-radius: 2px;
 
   /* Navbar */
   --ifm-navbar-link-hover-color: var(--ifm-color-secondary-lightest);
@@ -91,6 +110,10 @@ html[data-theme='dark'] {
  * Everything else
  */
 
+/* .main-wrapper {
+  overflow-x: hidden;
+} */
+
 /* Links */
 a {
   font-weight: var(--ifm-font-weight-semibold);
@@ -109,12 +132,16 @@ html[data-theme='dark'] a:hover {
 }
 
 /* Header */
-
 .navbar .navbar__brand strong {
   font-weight: 500;
 }
 
 /* Footer */
+.footer {
+  padding-top: 4rem;
+  border-top: 1px solid var(--ifm-contents-border-color);
+}
+
 .footer.footer--dark {
   --ifm-footer-background-color: var(--ifm-background-color);
   --ifm-footer-title-color: var(--ifm-font-base-color);
@@ -125,7 +152,82 @@ html[data-theme='dark'] a:hover {
   margin-bottom: 3rem;
 }
 
+/* Buttons */
+.button {
+  border: 2px solid var(--ifm-color-primary);
+}
+
+.button:hover {
+  border: 2px solid var(--ifm-color-primary-lightest);
+}
+
+.button:active {
+  background: var(--ifm-color-primary-lightest);
+}
+
+.button.button--secondary {
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 1px var(--ifm-color-primary);
+  background: white;
+  color: var(--ifm-color-primary);
+}
+
+.button.button--secondary:hover {
+  box-shadow: 0 0 0 1px var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary-lightest);
+}
+
+.button.button.button--secondary:active {
+  background: var(--ifm-color-primary-lightest);
+  color: white;
+  border-color: transparent;
+}
+
+html[data-theme='dark'] .button {
+  color: white;
+}
+
+html[data-theme='dark'] .button:hover {
+  color: white;
+}
+
+html[data-theme='dark'] .button.button--secondary {
+  color: white;
+  background: var(--ifm-color-gray-800);
+}
+
+html[data-theme='dark'] .button.button--secondary:hover {
+  color: var(--ifm-color-primary-lightest);
+}
+
 /* Code highlight */
+div[class^="mdxCodeBlock"] button,
+div[class^="codeBlockContent"] button {
+  visibility: visible;
+  opacity: 1;
+
+  color: var(--ifm-color-primary-lightest);
+  border: 1px solid var(--ifm-color-primary-lightest);
+}
+
+div[class^="mdxCodeBlock"] button:hover,
+div[class^="codeBlockContent"] button:hover {
+  color: white;
+  border: 1px solid white;
+}
+
+.prism-code {
+  border-radius: var(--ifm-global-radius);
+}
+
+pre.prism-code code {
+  padding: var(--ifm-pre-padding) 2rem var(--ifm-pre-padding) var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] code {
+  background: var(--ifm-color-gray-800);
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
   display: block;
