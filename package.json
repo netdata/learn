@@ -17,8 +17,7 @@
     "classnames": "^2.2.6",
     "front-matter": "^3.1.0",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-icons": "^3.9.0"
+    "react-dom": "^16.8.4"
   },
   "browserslist": {
     "production": [
@@ -31,5 +30,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-icons": "^3.9.0"
   }
 }
