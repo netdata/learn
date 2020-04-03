@@ -1,4 +1,9 @@
-# Install Netdata on Linux manually
+---
+title: "Install Netdata on Linux manually"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md
+---
+
+
 
 To install the latest git version of Netdata, please follow these 2 steps:
 
@@ -12,9 +17,9 @@ To install the latest git version of Netdata, please follow these 2 steps:
 
 ## Prepare your system
 
-Try our experimental automatic requirements installer (no need to be root). This will try to find the packages that
-should be installed on your system to build and run Netdata. It supports most major Linux distributions released after
-2010:
+Use our automatic requirements installer (_no need to be `root`_), which attempts to find the packages that
+should be installed on your system to build and run Netdata. It supports a large variety of major Linux distributions
+and other operating systems and is regularly tested. You can find this tool [here](https://raw.githubusercontent.com/netdata/netdata/master/packaging/installer/install-required-packages.sh) or run it directly with `bash <(curl -sSL https://raw.githubusercontent.com/netdata/netdata/master/packaging/installer/install-required-packages.sh)`. Otherwise read on for how to get requires packages manually:
 
 -   **Alpine** Linux and its derivatives
     -   You have to install `bash` yourself, before using the installer.
@@ -201,8 +206,8 @@ To apply the changes you made, you have to restart Netdata.
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](../../../docs/step-by-step/step-00.md)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs.
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](../../../docs/getting-started.md) for a quick overview.
+guide](/docs/getting-started) for a quick overview.

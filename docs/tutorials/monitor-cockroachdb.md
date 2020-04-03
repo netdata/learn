@@ -1,4 +1,9 @@
-# Monitor CockroachDB metrics with Netdata
+---
+title: "Monitor CockroachDB metrics with Netdata"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/tutorials/monitor-cockroachdb.md
+---
+
+
 
 [CockroachDB](https://github.com/cockroachdb/cockroach) is an open-source project that brings SQL databases into
 scalable, disaster-resilient cloud deployments. Thanks to a [new CockroachDB
@@ -26,7 +31,7 @@ display them on the dashboard.
 
 If your CockroachDB instance is accessible through `http://localhost:8080/` or `http://127.0.0.1:8080`, your setup is
 complete. Restart Netdata with `service netdata restart`, or use the [appropriate
-method](../getting-started.md#start-stop-and-restart-netdata) for your system, and refresh your browser. You should see
+method](/docs/getting-started#start-stop-and-restart-netdata) for your system, and refresh your browser. You should see
 CockroachDB metrics in your Netdata dashboard!
 
 <figure>
@@ -55,7 +60,7 @@ required, and everything else is optional.
 
 For a production cluster, you'll use either an IP address or the system's hostname. Be sure that your remote system
 allows TCP communication on port 8080, or whichever port you have configured CockroachDB's [Admin
-UI](https://www.cockroachlabs.com/docs/stable/monitoring-and-alerting.html#prometheus-endpoint) to listen on.
+UI](https://www.cockroachlabs.com/stable/monitoring-and-alerting.html#prometheus-endpoint) to listen on.
 
 ```yaml
 # [ JOBS ]
@@ -81,7 +86,7 @@ jobs:
     tls_skip_verify: yes # If your certificate is self-signed
 ```
 
-You can add as many jobs as you'd like based on how many CockroachDB databases you have—Netdata will create separate
+You can add as many jobs as you'd like based on how many CockroachDB databases you haveâNetdata will create separate
 charts for each job. Once you've edited `cockroachdb.conf` according to the needs of your infrastructure, restart
 Netdata to see your new charts.
 
@@ -104,7 +109,7 @@ cd /etc/netdata/ # Replace with your Netdata configuration directory, if not /et
 ```
 
 For more information about editing the defaults or writing new alarm entities, see our health monitoring [quickstart
-guide](../../health/QUICKSTART.md).
+guide](/docs/health/quickstart).
 
 ## What's next?
 
@@ -121,8 +126,8 @@ Also, be sure to check out these useful resources:
 -   [Netdata's CockroachDB
     alarms](https://github.com/netdata/netdata/blob/29d9b5e51603792ee27ef5a21f1de0ba8e130158/health/health.d/cockroachdb.conf)
 -   [CockroachDB homepage](https://www.cockroachlabs.com/product/)
--   [CockroachDB documentation](https://www.cockroachlabs.com/docs/stable/)
+-   [CockroachDB documentation](https://www.cockroachlabs.com/stable/)
 -   [`_status/vars` endpoint
-    docs](https://www.cockroachlabs.com/docs/stable/monitoring-and-alerting.html#prometheus-endpoint)
+    docs](https://www.cockroachlabs.com/stable/monitoring-and-alerting.html#prometheus-endpoint)
 -   [Monitor CockroachDB with
-    Prometheus](https://www.cockroachlabs.com/docs/stable/monitor-cockroachdb-with-prometheus.html)
+    Prometheus](https://www.cockroachlabs.com/stable/monitor-cockroachdb-with-prometheus.html)

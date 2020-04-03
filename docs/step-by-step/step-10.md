@@ -1,4 +1,9 @@
-# Step 10. Set up a proxy
+---
+title: "Step 10. Set up a proxy"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-10.md
+---
+
+
 
 You're almost through! At this point, you should be pretty familiar with now Netdata works and how to configure it to
 your liking.
@@ -7,13 +12,13 @@ In this step of the tutorial, we're going to add a proxy in front of Netdata. We
 performance and security, so we highly recommend following these steps. Doubly so if you installed Netdata on a
 publicly-accessible remote server.
 
-> ❗ If you installed Netdata on the machine you're currently using (e.g. on `localhost`), and have been accessing
+> â If you installed Netdata on the machine you're currently using (e.g. on `localhost`), and have been accessing
 > Netdata at `http://localhost:19999`, you can skip this step of the tutorial. In most cases, there is no benefit to
 > setting up a proxy for a service running locally.
 
-> ❗❗ This tutorial requires more advanced administration skills than previous parts. If you're still working on your
+> ââ This tutorial requires more advanced administration skills than previous parts. If you're still working on your
 > Linux administration skills, and would rather get back to Netdata, you might want to [skip this
-> step](step-99.md) for now and return to it later.
+> step](/docs/step-by-step/step-99) for now and return to it later.
 
 ## What you'll learn in this step
 
@@ -202,12 +207,12 @@ You're a real sysadmin now!
 
 If you want to configure your Nginx proxy further, check out the following:
 
--   [Running Netdata behind Nginx](../Running-behind-nginx.md)
--   [High-performance Netdata](../high-performance-netdata.md)
--   [Enabling TLS on Netdata's dashboard](../../web/server/README.md#enabling-tls-support)
+-   [Running Netdata behind Nginx](/docs/running-behind-nginx)
+-   [High-performance Netdata](/docs/high-performance-netdata)
+-   [Enabling TLS on Netdata's dashboard](/docs/web/server#enabling-tls-support)
 
 And... you're _almost_ done with the Netdata tutorial.
 
 For some celebratory emoji and a clap on the back, head on over to our final step.
 
-[Next: The end. &rarr;](step-99.md)
+[Next: The end. &rarr;](/docs/step-by-step/step-99)

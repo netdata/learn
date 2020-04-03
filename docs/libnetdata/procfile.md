@@ -1,4 +1,9 @@
-# PROCFILE
+---
+title: "PROCFILE"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/libnetdata/procfile/README.md
+---
+
+
 
 procfile is a library for reading text data files (i.e `/proc` files) in the fastest possible way.
 
@@ -23,7 +28,7 @@ For each iteration, the caller:
 -   calls `procfile_readall()` to read updated contents.
      This call also rewinds (`lseek()` to 0) before reading it.
 
-     For every file, a [BUFFER](../buffer/) is used that is automatically adjusted to fit
+     For every file, a [BUFFER](/docs/buffer/) is used that is automatically adjusted to fit
      the entire file contents of the file. So the file is read with a single `read()` call
      (providing atomicity / consistency when the data are read from the kernel).
 
@@ -59,4 +64,4 @@ and the data are inside the processor's caches.
 
 This library is extensively used in Netdata and its plugins.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Flibnetdata%2Fprocfile%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

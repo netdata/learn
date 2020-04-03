@@ -1,4 +1,9 @@
-# Access Point monitoring with Netdata
+---
+title: "Access Point monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/ap/README.md
+---
+
+
 
 The `ap` collector visualizes data related to access points.
 
@@ -77,7 +82,7 @@ Station 40:b8:37:5a:ed:5e (on wlan0)
 ## Configuration
 
 Edit the `charts.d/ap.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different
@@ -90,4 +95,4 @@ You can only set `ap_update_every=NUMBER` to change the data collection frequenc
 
 The plugin is able to auto-detect if you are running access points on your linux box.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fcollectors%2Fcharts.d.plugin%2Fap%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

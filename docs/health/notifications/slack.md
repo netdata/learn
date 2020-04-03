@@ -1,4 +1,9 @@
-# Slack
+---
+title: "Slack"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/slack/README.md
+---
+
+
 
 This is what you will get:
 ![image](https://cloud.githubusercontent.com/assets/2662304/18407116/bbd0fee6-7710-11e6-81cf-58c0defaee2b.png)
@@ -42,4 +47,4 @@ role_recipients_slack[dba]="databases systems"
 role_recipients_slack[webmaster]="marketing development"
 ```
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fhealth%2Fnotifications%2Fslack%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

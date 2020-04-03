@@ -1,4 +1,4 @@
-# Apache monitoring with Netdata
+
 
 [`Apache`](https://httpd.apache.org/) is an open-source HTTP server for modern operating systems including UNIX and Windows.
 
@@ -6,7 +6,7 @@ This module will monitor one or more `Apache` servers, depending on your configu
 
 ## Requirements
 
--   `Apache` with enabled [`mod_status`](https://httpd.apache.org/docs/2.4/mod/mod_status.html)
+-   `Apache` with enabled [`mod_status`](https://httpd.apache.org/2.4/mod/mod_status.html)
 
 ## Charts
 
@@ -25,7 +25,7 @@ It produces the following charts:
 ## Configuration
 
 Edit the `go.d/apache.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

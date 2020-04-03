@@ -1,4 +1,9 @@
-# Install Netdata with .deb/.rpm packages
+---
+title: "Install Netdata with .deb/.rpm packages"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/packages.md
+---
+
+
 
 ![](https://raw.githubusercontent.com/netdata/netdata/master/web/gui/images/packaging-beta-tag.svg?sanitize=true)
 
@@ -6,14 +11,12 @@ We provide our own flavour of binary packages for the most common operating syst
 packaging formats.
 
 We have currently released packages following the .RPM format with version
-[1.16.0](https://github.com/netdata/netdata/releases/tag/v1.16.0). We have planned to release packages following the
-.DEB format with version [1.17.0](https://github.com/netdata/netdata/releases/tag/v1.17.0). Early adopters may
-experiment with our .DEB formatted packages using our nightly releases. Our current packaging infrastructure provider is
-[Package Cloud](https://packagecloud.io).
+[1.16.0](https://github.com/netdata/netdata/releases/tag/v1.16.0) and packages following the
+.DEB format with version [1.17.0](https://github.com/netdata/netdata/releases/tag/v1.17.0). Our current packaging infrastructure provider is [Package Cloud](https://packagecloud.io).
 
 Netdata is committed to support installation of our solution to all operating systems. This is a constant battle for
 Netdata, as we strive to automate and make things easier for our users. For the operating system support matrix, please
-visit our [distributions](../../DISTRIBUTIONS.md) support page.
+visit our [distributions](/docs/packaging/distributions) support page.
 
 We provide two separate repositories, one for our stable releases and one for our nightly releases.
 
@@ -45,8 +48,8 @@ If you are using such a setup, there are a couple of ways you can work around th
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](../../../docs/step-by-step/step-00.md)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs.
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](../../../docs/getting-started.md) for a quick overview.
+guide](/docs/getting-started) for a quick overview.

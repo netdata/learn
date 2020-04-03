@@ -1,4 +1,9 @@
-# apps.plugin
+---
+title: "apps.plugin"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/apps.plugin/README.md
+---
+
+
 
 `apps.plugin` breaks down system resource usage to **processes**, **users** and **user groups**.
 
@@ -7,7 +12,7 @@ for every process found running.
 
 Since Netdata needs to present this information in charts and track them through time,
 instead of presenting a `top` like list, `apps.plugin` uses a pre-defined list of **process groups**
-to which it assigns all running processes. This list is [customizable](apps_groups.conf) and Netdata
+to which it assigns all running processes. This list is [customizable](/docs/collectors/apps_groups.conf) and Netdata
 ships with a good default for most cases (to edit it on your system run `/etc/netdata/edit-config apps_groups.conf`).
 
 So, `apps.plugin` builds a process tree (much like `ps fax` does in Linux), and groups
@@ -15,7 +20,7 @@ processes together (evaluating both child and parent processes) so that the resu
 a predefined set of members (of course, only process groups found running are reported).
 
 > If you find that `apps.plugin` categorizes standard applications as `other`, we would be
-> glad to accept pull requests improving the [defaults](apps_groups.conf) shipped with Netdata.
+> glad to accept pull requests improving the [defaults](/docs/collectors/apps_groups.conf) shipped with Netdata.
 
 Unlike traditional process monitoring tools (like `top`), `apps.plugin` is able to account the resource
 utilization of exit processes. Their utilization is accounted at their currently running parents.
@@ -60,7 +65,7 @@ Each of these sections provides the same number of charts:
 
 The above are reported:
 
--   For **Applications** per [target configured](apps_groups.conf).
+-   For **Applications** per [target configured](/docs/collectors/apps_groups.conf).
 -   For **Users** per username or UID (when the username is not available).
 -   For **User Groups** per groupname or GID (when groupname is not available).
 
@@ -90,7 +95,7 @@ its CPU resources will be cut in half, and data collection will be once every 2 
 
 ## Configuration
 
-The configuration file is `/etc/netdata/apps_groups.conf` (the default is [here](apps_groups.conf)).
+The configuration file is `/etc/netdata/apps_groups.conf` (the default is [here](/docs/collectors/apps_groups.conf)).
 To edit it on your system run `/etc/netdata/edit-config apps_groups.conf`.
 
 The configuration file works accepts multiple lines, each having this format:
@@ -217,7 +222,7 @@ Examples below for process group `sql`:
 -   Open Pipes ![image](https://registry.my-netdata.io/api/v1/badge.svg?chart=apps.pipes&dimensions=sql&value_color=green=0%7Cred)
 -   Open Sockets ![image](https://registry.my-netdata.io/api/v1/badge.svg?chart=apps.sockets&dimensions=sql&value_color=green%3E=3%7Cred)
 
-For more information about badges check [Generating Badges](../../web/api/badges)
+For more information about badges check [Generating Badges](/docs/web/api/badges)
 
 ## Comparison with console tools
 
@@ -352,7 +357,7 @@ So, the `ssh` session is using 95% CPU time.
 Why `ssh`?
 
 `apps.plugin` groups all processes based on its configuration file
-[`/etc/netdata/apps_groups.conf`](apps_groups.conf)
+[`/etc/netdata/apps_groups.conf`](/docs/collectors/apps_groups.conf)
 (to edit it on your system run `/etc/netdata/edit-config apps_groups.conf`).
 The default configuration has nothing for `bash`, but it has for `sshd`, so Netdata accumulates
 all ssh sessions to a dimension on the charts, called `ssh`. This includes all the processes in
@@ -382,4 +387,4 @@ if you sum the CPU utilization of all processes, you might have more CPU time th
 total cpu time of the system. Netdata solves this, by adapting the per process cpu utilization to
 the total of the system. [Netdata adds charts that document this normalization](https://london.my-netdata.io/default.html#menu_netdata_submenu_apps_plugin).
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fcollectors%2Fapps.plugin%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

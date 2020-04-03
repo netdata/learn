@@ -1,4 +1,9 @@
-# Install Netdata on Synology
+---
+title: "Install Netdata on Synology"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/synology.md
+---
+
+
 
 The documentation previously recommended installing the Debian Chroot package from the Synology community package
 sources and then running Netdata from within the chroot. This does not work, as the chroot environment does not have
@@ -17,7 +22,7 @@ installations run it as the `netdata` user, you might wish to do the same. This 
 2.  Create a user `netdata` via the Synology user interface. Give it no access to anything and a random password. Assign
     the user to the `netdata` group. Netdata will chuid to this user when running.
 3.  Change ownership of the following directories, as defined in [Netdata
-    Security](../../../docs/netdata-security.md#security-design):
+    Security](/docs/netdata-security#security-design):
 
 ```sh
 chown -R root:netdata /opt/netdata/usr/share/netdata

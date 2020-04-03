@@ -1,4 +1,9 @@
-# Install Netdata with Docker
+---
+title: "Install Netdata with Docker"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/docker/README.md
+---
+
+
 
 Running Netdata in a container works best for an internal network or to quickly analyze a host. Docker helps you get set
 up quickly, and doesn't install anything permanent on the system, which makes uninstalling Netdata easy.
@@ -84,7 +89,7 @@ VIRTUALIZATION=$(systemd-detect-virt -v) docker-compose up
 ```
 
 Starting with v1.12, Netdata collects anonymous usage information by default and sends it to Google Analytics. Read
-about the information collected, and learn how to-opt, on our [anonymous statistics](../../docs/anonymous-statistics.md)
+about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/anonymous-statistics)
 page.
 
 The usage statistics are _vital_ for us, as we use them to discover bugs and priortize new features. We thank you for
@@ -98,7 +103,7 @@ your machine from within the container. Please read the following carefully.
 #### Docker socket proxy (safest option)
 
 Deploy a Docker socket proxy that accepts and filters out requests using something like
-[HAProxy](https://docs.netdata.cloud/docs/running-behind-haproxy/) so that it restricts connections to read-only access
+[HAProxy](https://docs.netdata.cloud/running-behind-haproxy/) so that it restricts connections to read-only access
 to the CONTAINERS endpoint.
 
 The reason it's safer to expose the socket to the proxy is because Netdata has a TCP port exposed outside the Docker
@@ -174,7 +179,7 @@ Netdata will be running on, using the [command instruction](https://docs.docker.
 ## Install Netdata using docker-compose with SSL/TLS enabled HTTP Proxy
 
 For a permanent installation on a public server, you should [secure the Netdata
-instance](../../docs/netdata-security.md). This section contains an example of how to install Netdata with an SSL
+instance](/docs/netdata-security). This section contains an example of how to install Netdata with an SSL
 reverse proxy and basic authentication.
 
 You can use the following `docker-compose.yml` and Caddyfile files to run Netdata with Docker. Replace the domains and
@@ -232,7 +237,7 @@ services:
 
 ### Restrict access with basic auth
 
-You can restrict access by following [official caddy guide](https://caddyserver.com/docs/basicauth) and adding lines to
+You can restrict access by following [official caddy guide](https://caddyserver.com/basicauth) and adding lines to
 Caddyfile.
 
 ## Publish a test image to your own repository
@@ -317,4 +322,4 @@ Once you have contacted the Netdata owners to setup you up on Github and Travis,
 Having followed these instructions, your forked repository should be all set up for integration with Travis CI. Happy
 testing!
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fpackaging%2Fdocker%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

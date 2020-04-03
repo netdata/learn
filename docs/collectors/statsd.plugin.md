@@ -1,4 +1,9 @@
-# statsd.plugin
+---
+title: "statsd.plugin"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/statsd.plugin/README.md
+---
+
+
 
 statsd is a system to collect data from any application. Applications are sending metrics to it, usually via non-blocking UDP communication, and statsd servers collect these metrics, perform a few simple calculations on them and push them to backend time-series databases.
 
@@ -519,4 +524,4 @@ statsd "metric1:10|g" "metric2:10|c" ...
 
 The function is smart enough to call `nc` just once and pass all the metrics to it. It will also automatically switch to TCP if the metrics to send are above 1000 bytes.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fcollectors%2Fstatsd.plugin%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

@@ -1,17 +1,27 @@
-# eBPF monitoring with Netdata
+---
+title: "eBPF monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/ebpf_process.plugin/README.md
+---
 
-This collector plugin uses eBPF to monitor system calls inside your operating system's kernel. For now, the main goal of
-this plugin is to monitor IO and process management on the host where it is running.
+
+
+This collector plugin uses eBPF (Extended Berkeley Packet Filter) to monitor system calls inside your operating system's
+kernel. For now, the main goal of this plugin is to monitor IO and process management on the host where it is running.
 
 <figure>
   <img src="https://user-images.githubusercontent.com/1153921/74746434-ad6a1e00-5222-11ea-858a-a7882617ae02.png" alt="An example of VFS charts, made possible by the eBPF collector plugin" />
   <figcaption>An example of VFS charts, made possible by the eBPF collector plugin</figcaption>
 </figure>
 
+With this eBPF collector, you can monitor sophisticated system-level metrics about your complex applications while
+maintaining Netdata's [high standards for performance](#performance).
+
 ## Enable the collector on Linux
 
-Currently, this `ebpf_process` collector only works on Linux systems. Because it adds overhead to the system running it,
-the collector is also disabled by default.
+eBPF is only available on Linux systems, which means this collector only works on Linux.
+
+The collector is currently in an _alpha_ stage, as we are still working on improving compatibility with more Linux
+distributions and versions, and to ensure the collector works as expected.
 
 Follow the next few steps to ensure compatibility, prepare your system, install Netdata with eBPF compiled, and enable
 the collector.
@@ -51,7 +61,7 @@ filesystems using the commands below:
 sudo mount -t debugfs nodev /sys/kernel/debug
 sudo mount -t tracefs nodev /sys/kernel/tracing
 ```
-​
+â
 If they are already mounted, you will see an error. If they are not mounted, they should be after running those two
 commands. You can also configure your system's `/etc/fstab` configuration to mount these filesystems.
 
@@ -59,8 +69,8 @@ commands. You can also configure your system's `/etc/fstab` configuration to mou
 
 eBPF collection is only enabled if you install Netdata with the `--enable-ebpf` option. 
 
-If you installed via the [one-line installation script](../../packaging/installer/README.md), [64-bit
-binary](../../packaging/installer/methods/kickstart-64.md), or [manually](../../packaging/installer/methods/manual.md),
+If you installed via the [one-line installation script](/docs/packaging/installer), [64-bit
+binary](/docs/packaging/installer/methods/kickstart-64), or [manually](/docs/packaging/installer/methods/manual),
 you can append the `--enable-ebpf` option when you reinstall.
 
 For example, if you used the one-line installation script, you can reinstall Netdata with the following:
@@ -109,7 +119,7 @@ descriptors.
 
 This chart contains two dimensions that show the number of calls to the functions `do_sys_open` and `__close_fd`. These
 functions are not commonly called from software, but they are behind the system cals `open(2)`, `openat(2)`, and
-`close(2)`. ​
+`close(2)`. â
 
 #### File error
 
@@ -183,15 +193,25 @@ In this section we define variables applied to the whole collector and the other
 
 #### load
 
-The collector has three different eBPF programs. These programs monitor the same functions inside the kernel, but they
+The collector has two different eBPF programs. These programs monitor the same functions inside the kernel, but they
 monitor, process, and display different kinds of information.
 
 By default, this plugin uses the `entry` mode. Changing this mode can create significant overhead on your operating
 system, but also offer important information if you are developing or debugging software. The `load` option accepts the
-following values: ​
+following values: â
 
 -   `entry`: This is the default mode. In this mode, Netdata monitors only calls for the functions described in the
     sections above. When this mode is selected, Netdata does not show charts related to errors.
 -   `return`: In this mode, Netdata also monitors the calls to function. In the `entry` mode, Netdata only traces kernel
     functions, but with `return`, Netdata also monitors the return of each function. This mode creates more charts, but
     also creates an overhead of roughly 110 nanosections for each function call.
+
+## Performance
+
+Because eBPF monitoring is complex, we are evaluating the performance of this new collector in various real-world
+conditions, across various system loads, and when monitoring complex applications.
+
+Our [initial testing](https://github.com/netdata/netdata/issues/8195) shows the performance of the eBPF collector is
+nearly identical to our [apps.plugin collector](/docs/apps.plugin/), despite collecting and displaying much more
+sophisticated metrics. You can now use the eBPF to gather deeper insights without affecting the performance of your
+complex applications at any load.

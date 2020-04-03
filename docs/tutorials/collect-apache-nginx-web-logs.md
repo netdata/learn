@@ -1,14 +1,19 @@
-# Monitor Nginx or Apache web server log files with Netdata
+---
+title: "Monitor Nginx or Apache web server log files with Netdata"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/tutorials/collect-apache-nginx-web-logs.md
+---
+
+
 
 Log files have been a critical resource for developers and system administrators who want to understand the health and
 performance of their web servers, and Netdata is taking important steps to make them even more valuable.
 
 By parsing web server log files with Netdata, and seeing the volume of redirects, requests, or server errors over time,
 you can better understand what's happening on your infrastructure. Too many bad requests? Maybe a recent deploy missed a
-few small SVG icons. Too many requsests? Time to batten down the hatches—it's a DDoS.
+few small SVG icons. Too many requsests? Time to batten down the hatchesâit's a DDoS.
 
 Netdata has been capable of monitoring web log files for quite some time, thanks for the [weblog python.d
-module](../../collectors/python.d.plugin/web_log/README.md), but we recently refactored this module in Go, and that
+module](/docs/collectors/python.d.plugin/web_log), but we recently refactored this module in Go, and that
 effort comes with a ton of improvements.
 
 You can now use the [LTSV log format](http://ltsv.org/), track TLS and cipher usage, and the whole parser is faster than
@@ -123,7 +128,7 @@ web server's access log and begin showing real-time charts!
 The web log collector is capable of parsing custom Nginx and Apache log formats and presenting them as charts, but we'll
 leave that topic for a separate tutorial.
 
-We do have [extensive documentation](../../collectors/go.d.plugin/modules/weblog/#custom-log-format) on how to build
+We do have [extensive documentation](/docs/collectors/go.d.plugin/modules/weblog/#custom-log-format) on how to build
 custom parsing for Nginx and Apache logs.
 
 ## Tweak web log collector alarms
@@ -141,15 +146,15 @@ You can also edit this file directly with `edit-config`:
 ```
 
 For more information about editing the defaults or writing new alarm entities, see our [health monitoring
-documentation](../../health/README.md).
+documentation](/docs/health).
 
 ## What's next?
 
 Now that you have web log collection up and running, we recommend you take a look at the documentation for our
-[python.d](../../collectors/python.d.plugin/web_log/README.md) for some ideas of how you can turn these rather "boring"
+[python.d](/docs/collectors/python.d.plugin/web_log) for some ideas of how you can turn these rather "boring"
 logs into powerful real-time tools for keeping your servers happy.
 
-Don't forget to give GitHub user [Wing924](https://github.com/Wing924) a big 👍 for his hard work in starting up the Go
+Don't forget to give GitHub user [Wing924](https://github.com/Wing924) a big ð for his hard work in starting up the Go
 refactoring effort.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Ftutorials%2Fweb-log-collector&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

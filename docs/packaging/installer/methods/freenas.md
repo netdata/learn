@@ -1,4 +1,9 @@
-# Install Netdata on FreeNAS
+---
+title: "Install Netdata on FreeNAS"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freenas.md
+---
+
+
 
 On FreeNAS-Corral-RELEASE (>=10.0.3 and <11.3), Netdata is pre-installed.
 

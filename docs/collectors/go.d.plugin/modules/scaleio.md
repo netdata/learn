@@ -1,4 +1,4 @@
-# ScaleIO monitoring with Netdata
+
 
 [`Dell EMC ScaleIO`](https://www.dellemc.com/en-us/storage/data-storage/software-defined-storage.htm) is a software-defined storage product from Dell EMC that creates a server-based storage area network from local application server storage using existing customer hardware or EMC servers.
 
@@ -61,7 +61,7 @@ It produces the following charts:
 ## Configuration
 
 Edit the `go.d/scaleio.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

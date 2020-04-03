@@ -1,6 +1,6 @@
-# K8S Kubelet monitoring with Netdata
 
-[`Kubelet`](https://kubernetes.io/docs/concepts/overview/components/#kubelet) is an agent that runs on each node in the cluster. It makes sure that containers are running in a pod.
+
+[`Kubelet`](https://kubernetes.io/concepts/overview/components/#kubelet) is an agent that runs on each node in the cluster. It makes sure that containers are running in a pod.
 
 This module will monitor one or more `kubelet` instances, depending on your configuration.
 
@@ -33,7 +33,7 @@ Per every plugin:
 ## Configuration
 
 Edit the `go.d/k8s_kubelet.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

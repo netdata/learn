@@ -1,8 +1,13 @@
-# Streaming and replication
+---
+title: "Streaming and replication"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/streaming/README.md
+---
+
+
 
 Each Netdata is able to replicate/mirror its database to another Netdata, by streaming collected
 metrics, in real-time to it. This is quite different to [data archiving to third party time-series
-databases](../backends).
+databases](/docs/backends).
 
 When Netdata streams metrics to another Netdata, the receiving one is able to perform everything a Netdata instance is capable of:
 
@@ -23,7 +28,7 @@ Alarms for the `slave` are served by the `master`.
 
 In this mode the `slave` is just a plain data collector. It spawns all external plugins, but instead
 of maintaining a local database and accepting dashboard requests, it streams all metrics to the
-`master`. The memory footprint is reduced significantly, to between 6 MiB and 40 MiB, depending on the enabled plugins. To reduce the memory usage as much as possible, refer to [running Netdata in embedded devices](../docs/Performance.md#running-netdata-in-embedded-devices).
+`master`. The memory footprint is reduced significantly, to between 6 MiB and 40 MiB, depending on the enabled plugins. To reduce the memory usage as much as possible, refer to [running Netdata in embedded devices](/docs/performance#running-netdata-in-embedded-devices).
 
 The same `master` can collect data for any number of `slaves`.
 
@@ -104,7 +109,7 @@ this host).
 
 ### streaming configuration
 
-A new file is introduced: [stream.conf](stream.conf) (to edit it on your system run
+A new file is introduced: [stream.conf](/docs/stream.conf) (to edit it on your system run
 `/etc/netdata/edit-config stream.conf`). This file holds streaming configuration for both the
 sending and the receiving Netdata.
 
@@ -179,7 +184,7 @@ You can also use `default memory mode = dbengine` for an API key or `memory mode
 
 ##### allow from
 
-`allow from` settings are [Netdata simple patterns](../libnetdata/simple_pattern): string matches
+`allow from` settings are [Netdata simple patterns](/docs/libnetdata/simple_pattern): string matches
 that use `*` as wildcard (any number of times) and a `!` prefix for a negative match.
 So: `allow from = !10.1.2.3 10.*` will allow all IPs in `10.*` except `10.1.2.3`. The order is
 important: left to right, the first positive or negative match is used.
@@ -214,7 +219,7 @@ For Netdata v1.9+, streaming can also be monitored via `access.log`.
 
 ### Securing streaming communications
 
-Netdata does not activate TLS encryption by default. To encrypt streaming connections, you first need to [enable TLS support](../web/server/#enabling-tls-support) on the master. With encryption enabled on the receiving side, you need to instruct the slave to use TLS/SSL as well. On the slave's `stream.conf`, configure the destination as follows:
+Netdata does not activate TLS encryption by default. To encrypt streaming connections, you first need to [enable TLS support](/docs/web/server/#enabling-tls-support) on the master. With encryption enabled on the receiving side, you need to instruct the slave to use TLS/SSL as well. On the slave's `stream.conf`, configure the destination as follows:
 
 ```
 [stream]
@@ -241,7 +246,7 @@ If you've enabled [certificate verification](#certificate-verification), you mig
 
 Given these known issues, you have two options. If you trust your certificate, you can set the options `CApath` and `CAfile` to inform Netdata where your certificates, and the certificate trusted file, are stored.
 
-For more details about these options, you can read about [verify locations](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_load_verify_locations.html).
+For more details about these options, you can read about [verify locations](https://www.openssl.org/man1.1.1/man3/SSL_CTX_load_verify_locations.html).
 
 Before you changed your streaming configuration, you need to copy your trusted certificate to your slave system and add the certificate to OpenSSL's list.
 
@@ -477,7 +482,7 @@ The `master` Netdata node can also archive metrics, for all `slaves`, to a time-
 -   json document DBs
 -   all the compatibles to the above (e.g. kairosdb, influxdb, etc)
 
-Check the Netdata [backends documentation](../backends) for configuring this.
+Check the Netdata [backends documentation](/docs/backends) for configuring this.
 
 This is how such a solution will work:
 
@@ -504,7 +509,7 @@ When they maintain a database, they can also run health checks (alarms and notif
 for the remote host that is streaming the metrics.
 
 To configure a proxy, configure it as a receiving and a sending Netdata at the same time,
-using [stream.conf](stream.conf).
+using [stream.conf](/docs/stream.conf).
 
 The sending side of a Netdata proxy, connects and disconnects to the final destination of the
 metrics, following the same pattern of the receiving side.
@@ -572,7 +577,7 @@ ERROR : STREAM_SENDER[SLAVE HOSTNAME] : STREAM SLAVE HOSTNAME [send to MASTER HO
 Chart data needs to be consistent between slave and master agents. If there are differences between chart data on a
 master and a slave, such as gaps in metrics collection, it most often means your slave's `memory mode` does not match
 the master's. To learn more about the different ways Netdata can store metrics, and thus keep chart data consistent,
-read our [memory mode documentation](../database).
+read our [memory mode documentation](/docs/database).
 
 ### Forbidding access
 
@@ -607,4 +612,4 @@ file descriptor given is not a valid stream
 
 After logging this error, Netdata will close the stream.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fstreaming%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

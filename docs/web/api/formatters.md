@@ -1,4 +1,9 @@
-# Query formatting
+---
+title: "Query formatting"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/web/api/formatters/README.md
+---
+
+
 
 API data queries need to be formatted before returned to the caller.
 Using API parameters, the caller may define the format he/she wishes to get back.
@@ -7,18 +12,18 @@ The following formats are supported:
 
 | format|module|content type|description|
 |:----:|:----:|:----------:|:----------|
-| `array`|[ssv](ssv)|application/json|a JSON array|
-| `csv`|[csv](csv)|text/plain|a text table, comma separated, with a header line (dimension names) and `\r\n` at the end of the lines|
-| `csvjsonarray`|[csv](csv)|application/json|a JSON array, with each row as another array (the first row has the dimension names)|
-| `datasource`|[json](json)|application/json|a Google Visualization Provider `datasource` javascript callback|
-| `datatable`|[json](json)|application/json|a Google `datatable`|
-| `html`|[csv](csv)|text/html|an html table|
-| `json`|[json](json)|application/json|a JSON object|
-| `jsonp`|[json](json)|application/json|a JSONP javascript callback|
-| `markdown`|[csv](csv)|text/plain|a markdown table|
-| `ssv`|[ssv](ssv)|text/plain|a space separated list of values|
-| `ssvcomma`|[ssv](ssv)|text/plain|a comma separated list of values|
-| `tsv`|[csv](csv)|text/plain|a TAB delimited `csv` (MS Excel flavor)|
+| `array`|[ssv](/docs/web/api/ssv)|application/json|a JSON array|
+| `csv`|[csv](/docs/web/api/csv)|text/plain|a text table, comma separated, with a header line (dimension names) and `\r\n` at the end of the lines|
+| `csvjsonarray`|[csv](/docs/web/api/csv)|application/json|a JSON array, with each row as another array (the first row has the dimension names)|
+| `datasource`|[json](/docs/web/api/json)|application/json|a Google Visualization Provider `datasource` javascript callback|
+| `datatable`|[json](/docs/web/api/json)|application/json|a Google `datatable`|
+| `html`|[csv](/docs/web/api/csv)|text/html|an html table|
+| `json`|[json](/docs/web/api/json)|application/json|a JSON object|
+| `jsonp`|[json](/docs/web/api/json)|application/json|a JSONP javascript callback|
+| `markdown`|[csv](/docs/web/api/csv)|text/plain|a markdown table|
+| `ssv`|[ssv](/docs/web/api/ssv)|text/plain|a space separated list of values|
+| `ssvcomma`|[ssv](/docs/web/api/ssv)|text/plain|a comma separated list of values|
+| `tsv`|[csv](/docs/web/api/csv)|text/plain|a TAB delimited `csv` (MS Excel flavor)|
 
 For examples of each format, check the relative module documentation.
 
@@ -58,7 +63,7 @@ This is such an object:
 
 ## Downloading data query result files
 
-Following the [Google Visualization Provider guidelines](https://developers.google.com/chart/interactive/docs/dev/implementing_data_source),
+Following the [Google Visualization Provider guidelines](https://developers.google.com/chart/interactive/dev/implementing_data_source),
 Netdata supports parsing `tqx` options.
 
 Using these options, any Netdata data query can instruct the web browser to download
@@ -70,4 +75,4 @@ For example, to download a CSV file with CPU utilization of the last hour,
 This is done by appending `&tqx=outFileName:FILENAME` to any data query.
 The output will be in the format given with `&format=`.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fweb%2Fapi%2Fformatters%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

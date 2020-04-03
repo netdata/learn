@@ -1,4 +1,9 @@
-# Use host labels to organize systems, metrics, and alarms
+---
+title: "Use host labels to organize systems, metrics, and alarms"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/tutorials/using-host-labels.md
+---
+
+
 
 When you use Netdata to monitor and troubleshoot an entire infrastructure, whether that's dozens or hundreds of systems,
 you need sophisticated ways of keeping everything organized. You need alarms that adapt to the system's purpose, or
@@ -22,7 +27,7 @@ sudo ./edit-config netdata.conf
 ```
 
 Create a new `[host labels]` section defining a new host label and its value for the system in question. Make sure not
-to violate any of the [host label naming rules](../configuration-guide.md#netdata-labels).
+to violate any of the [host label naming rules](/docs/configuration-guide#netdata-labels).
 
 ```conf
 [host labels]
@@ -92,11 +97,11 @@ Now, if you'd like to remind yourself of how much RAM a certain slave system has
 `http://localhost:19999/host/SLAVE_NAME/api/v1/info` and reference the automatically-generated host labels from the
 slave system. It's a vastly simplified way of accessing critical information about your infrastructure.
 
-> ⚠️ Because automatic labels for slave nodes are accessible via API calls, and contain sensitive information like
+> â ï¸ Because automatic labels for slave nodes are accessible via API calls, and contain sensitive information like
 > kernel and operating system versions, you should secure streaming connections with SSL. See the [streaming
-> documentation](../..//streaming/README.md#securing-streaming-communications) for details. You may also want to use
-> [access lists](../../web/server/README.md#access-lists) or [expose the API only to LAN/localhost
-> connections](../netdata-security.md#expose-netdata-only-in-a-private-lan).
+> documentation](/docs/streaming#securing-streaming-communications) for details. You may also want to use
+> [access lists](/docs/web/server#access-lists) or [expose the API only to LAN/localhost
+> connections](/docs/netdata-security#expose-netdata-only-in-a-private-lan).
 
 You can also use `_is_master`, `_is_slave`, and any other host labels in both health entities and metrics exporting.
 Speaking of which...
@@ -147,11 +152,11 @@ Or when ephemeral Docker nodes are involved:
 ```
 
 Of course, there are many more possibilities for intuitively organizing your systems with host labels. See the [health
-documentation](../../health/REFERENCE.md#alarm-line-host-labels) for more details, and then get creative!
+documentation](/docs/health/reference#alarm-line-host-labels) for more details, and then get creative!
 
 ## Host labels in metrics exporting
 
-If you have enabled any metrics exporting via our experimental [exporters](../../exporting/README.md), any new host
+If you have enabled any metrics exporting via our experimental [exporters](/docs/exporting), any new host
 labels you created manually are sent to the destination database alongside metrics. You can change this behavior by
 editing `exporting.conf`, and you can even send automatically-generated labels on with exported metrics.
 
@@ -176,7 +181,7 @@ send automatic labels = yes
 ```
 
 By applying labels to exported metrics, you can more easily parse historical metrics with the labels applied. To learn
-more about exporting, read the [documentation](../../exporting/README.md).
+more about exporting, read the [documentation](/docs/exporting).
 
 ## What's next?
 
@@ -188,15 +193,15 @@ the Netdata team first kicked off this work.
 It should be noted that while the Netdata dashboard does not expose either user-configured or automatic host labels, API
 queries _do_ showcase this information. As always, we recommend you secure Netdata 
 
--   [Expose Netdata only in a private LAN](../netdata-security.md#expose-netdata-only-in-a-private-lan)
--   [Enable TLS/SSL for web/API requests](../../web/server/README.md#enabling-tls-support)
+-   [Expose Netdata only in a private LAN](/docs/netdata-security#expose-netdata-only-in-a-private-lan)
+-   [Enable TLS/SSL for web/API requests](/docs/web/server#enabling-tls-support)
 -   Put Netdata behind a proxy
     -   [Use an authenticating web server in proxy
-        mode](../netdata-security.md#use-an-authenticating-web-server-in-proxy-mode)
-    -   [Nginx proxy](../Running-behind-nginx.md)
-    -   [Apache proxy](../Running-behind-apache.md)
-    -   [Lighttpd](../Running-behind-lighttpd.md)
-    -   [Caddy](../Running-behind-caddy.md)
+        mode](/docs/netdata-security#use-an-authenticating-web-server-in-proxy-mode)
+    -   [Nginx proxy](/docs/running-behind-nginx)
+    -   [Apache proxy](/docs/running-behind-apache)
+    -   [Lighttpd](/docs/running-behind-lighttpd)
+    -   [Caddy](/docs/running-behind-caddy)
 
 If you have issues or questions around using host labels, don't hesitate to [file an
 issue](https://github.com/netdata/netdata/issues/new?labels=bug%2C+needs+triage&template=bug_report.md) on GitHub. We're
