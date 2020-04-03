@@ -110,9 +110,9 @@ html[data-theme='dark'] {
  * Everything else
  */
 
-.main-wrapper {
+/* .main-wrapper {
   overflow-x: hidden;
-}
+} */
 
 /* Links */
 a {
@@ -201,18 +201,23 @@ html[data-theme='dark'] .button.button--secondary:hover {
 }
 
 /* Code highlight */
-.prism-code {
-  position: relative;
-}
-
-.prism-code button {
+div[class^="mdxCodeBlock"] button,
+div[class^="codeBlockContent"] button {
   visibility: visible;
   opacity: 1;
+
+  color: var(--ifm-color-primary-lightest);
+  border: 1px solid var(--ifm-color-primary-lightest);
 }
 
-.prism-code button:hover {
-  border: 1px solid var(--ifm-color-primary-lightest);
-  color: var(--ifm-color-primary-lightest);
+div[class^="mdxCodeBlock"] button:hover,
+div[class^="codeBlockContent"] button:hover {
+  color: white;
+  border: 1px solid white;
+}
+
+.prism-code {
+  border-radius: var(--ifm-global-radius);
 }
 
 pre.prism-code code {
