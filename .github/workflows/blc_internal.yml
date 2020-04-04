@@ -19,7 +19,6 @@ jobs:
         with:
           url: 'https://deploy-preview-${{ github.event.pull_request.number }}--netdata-docusaurus.netlify.com'
           honorRobotExclusions: false
-          ignorePatterns: 'http://*,https://*'
       - name: Get the result
         run: echo "${{steps.link-report.outputs.result}}"
 
