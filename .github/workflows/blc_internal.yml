@@ -3,57 +3,21 @@ name: Check for broken links
 on: [pull_request, push]
 
 jobs:
-  my-broken-link-checker:
-    name: Check broken links
-    runs-on: ubuntu-18.04
+  broken_link_checker_job:
+    runs-on: ubuntu-latest
+    name: Check for broken links
     steps:
-      - name: Wait for 200 response from the Netlify deploy preview
+      - name: Waiting for 200 from the Netlify Preview
         uses: jakepartusch/wait-for-netlify-action@v1
         id: waitFor200
         with:
-          site_name: 'netdata-docusaurus'
+          site_name: "netdata-docusaurus"
           max_timeout: 300
-      
-      - name: Check jehbs
-        uses: ruzickap/action-my-broken-link-checker@v1
+
+      - name: Check for broken links
+        id: link-report
+        uses: joelhans/github-actions-link-checker@v1.0.0
         with:
           url: 'https://deploy-preview-${{ github.event.pull_request.number }}--netdata-docusaurus.netlify.com'
-          cmd_params: '--buffer-size=8192 --concurrency=10 --skip-tls-verification --limit-redirections=5 --timeout=20 --exclude=(github.com/netdata/netdata)'
-
-#jobs:
-#  broken_link_checker_job:
-#    runs-on: ubuntu-latest
-#    name: Check for broken links
-#    steps:
-#      - name: Waiting for 200 from the Netlify Preview
-#        uses: jakepartusch/wait-for-netlify-action@v1
-#        id: waitFor200
-#        with:
-#          site_name: "netdata-docusaurus"
-#          max_timeout: 300
-#      - name: Check for broken links
-#        id: link-report
-#        uses: celinekurpershoek/github-actions-link-checker@v1.0.0
-#        with:
-#          url: 'https://deploy-preview-${{ github.event.pull_request.number }}--netdata-docusaurus.netlify.com'
-#          honorRobotExclusions: false
-#      - name: Get the result
-#        run: echo "${{steps.link-report.outputs.result}}"
-
-
-# name: Check URLs
-
-# on: [push, pull_request]
-
-# jobs:
-
-#   markdown-link-check:
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@master
-#     - uses: gaurav-nelson/github-action-markdown-link-check@0.6.0
-#       with:
-#         use-quiet-mode: 'yes'
-#         use-verbose-mode: 'yes'
-#         config-file: 'mlc_config.json'
-#         folder-path: 'docs/' 
+      - name: Get the result
+        run: echo "${{steps.link-report.outputs.result}}"
