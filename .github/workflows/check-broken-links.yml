@@ -1,4 +1,4 @@
-name: Broken Links Checker
+name: Test internal links
 on:
   schedule:
     - cron:  '30 0 * * *'
@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run Broken Links Checker
-      run: npx broken-link-checker $WEBSITE_URL --ordered --recursive
+    - name: Run BLC on internal links
+      run: npx broken-link-checker $WEBSITE_URL --ordered --recursive --exclude-external
 
     - uses: actions/checkout@v2
       if: failure()
