@@ -16,7 +16,7 @@ jobs:
 
       - name: Check for broken links
         id: link-report
-        uses: joelhans/github-actions-link-checker@v1.0.0
+        uses: joelhans/link-checker@master
         with:
           url: 'https://deploy-preview-${{ github.event.pull_request.number }}--netdata-docusaurus.netlify.com'
       - name: Get the result
