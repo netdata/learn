@@ -28,11 +28,6 @@ module.exports = {
           position: 'left'
         },
         {
-          to: 'blog', 
-          label: 'Blog', 
-          position: 'left'
-        },
-        {
           href: 'https://github.com/netdata/netdata',
           label: 'GitHub',
           position: 'right',
@@ -56,7 +51,7 @@ module.exports = {
             },
             {
               label: 'What is Netdata?',
-              to: 'docs/docs/what-is-netdata',
+              to: 'docs/what-is-netdata',
             },
             {
               label: 'Netdata Blog',
@@ -69,27 +64,27 @@ module.exports = {
           items: [
             {
               label: 'Installation',
-              to: 'docs/packaging/installer/README',
+              to: 'docs/packaging/installer',
             },
             {
               label: 'Getting started guide',
-              to: 'docs/docs/getting-started',
+              to: 'docs/getting-started',
             },
             {
               label: 'Step-by-step tutorial',
-              to: 'docs/docs/step-by-step/step-00',
+              to: 'docs/step-by-step/step-00',
             },
             {
               label: 'Configuration',
-              to: 'docs/docs/configuration-guide',
+              to: 'docs/configuration-guide',
             },
             {
               label: 'Collecting metrics',
-              to: 'docs/collectors/README',
+              to: 'docs/collectors',
             },
             {
               label: 'Health monitoring',
-              to: 'docs/health/README',
+              to: 'docs/health',
             },
           ],
         },
