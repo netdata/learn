@@ -1,7 +1,7 @@
 name: Broken Links Checker
 on:
   schedule:
-    - cron:  '25 17 * * *'
+    - cron:  '30 0 * * *'
 env:
   WEBSITE_URL: "https://learn.netdata.cloud/"
   ISSUE_TEMPLATE: ".github/workflows/check-broken-links.md"
