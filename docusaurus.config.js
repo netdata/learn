@@ -8,7 +8,7 @@ module.exports = {
   projectName: 'netdata', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Learn @ Netdata',
+      title: '',
       logo: {
         alt: 'Netdata Learn logo',
         src: 'img/logo.svg',
@@ -56,15 +56,15 @@ module.exports = {
             },
             {
               label: 'Getting started guide',
-              to: 'agent/docs/agent/getting-started',
+              to: 'agent/docs/getting-started',
             },
             {
               label: 'Step-by-step tutorial',
-              to: 'agent/docs/docs/step-by-step/step-00',
+              to: 'agent/docs/step-by-step/step-00',
             },
             {
               label: 'Configuration',
-              to: 'agent/docs/docs/configuration-guide',
+              to: 'agent/docs/configuration-guide',
             },
             {
               label: 'Collecting metrics',
@@ -79,10 +79,6 @@ module.exports = {
         {
           title: 'Community',
           items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
             {
               label: 'GitHub',
               href: 'https://github.com/netdata/netdata',
