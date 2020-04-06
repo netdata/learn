@@ -3,7 +3,6 @@ const fs = require('fs').promises
 const path = require('path')
 
 // TODO: strip github badges, see /docs/what-is-netdata
-// TODO: http://localhost:3000/docs/step-by-step/step-99 http(s) is being prefixed
 // TODO: reset at undefined on rate limit
 
 const MIN_RATE_LIMIT = 50
@@ -100,11 +99,6 @@ function normalizeLinks(pages) {
       // skip the whole process if a relative anchor
       if (url.startsWith('#') || url.startsWith('http')) return `](${url})`
 
-      // // anchors should include the entire path
-      // const dir =
-      //   ? path.join(tokens.dir, tokens.name, tokens.ext)
-      //   : tokens.dir
-
       // ignore absolute urls and external links
       const normalizedUrl = url.startsWith('http')
         ? url
@@ -130,15 +124,27 @@ function renameReadmes(pages) {
   return pages.map(page => {
     const tokens = path.parse(page.meta.path)
 
-    const pagePath = tokens.base.toLowerCase() === 'readme.md' && tokens.dir.length
+    const isReadme = tokens.base.toLowerCase() === 'readme.md'
+
+    const pagePath = isReadme && tokens.dir.length
       ? tokens.dir + tokens.ext
       : page.meta.path
 
-    const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
-      if (url.startsWith('http')) return `](${url})`
+    // offset links for URLs inside readmes
+    const body = page.body
+    .replace(/\]\((.*?)\)/gs, (match, url) => {
+      if (url.startsWith('http') || url.startsWith('#')) return `](${url})`
 
-      // // we need to extract any hash and querystring args
-      // const parsedUrl = new URL(url, 'http://__FAKE__')
+      const urlTokens = path.parse(url)
+
+      const renameUrl = isReadme
+        ? path.join(tokens.dir, urlTokens.dir, urlTokens.name) + urlTokens.ext
+        : url
+
+      return `](${renameUrl.toLowerCase()})`
+    })
+    .replace(/\]\((.*?)\)/gs, (match, url) => {
+      if (url.startsWith('http')) return `](${url})`
 
       const urlTokens = path.parse(url)
       const renameUrl = (
@@ -225,9 +231,9 @@ function sanitizePages(pages) {
   }))
 }
 
-async function writePages(pages) {
+async function writePages(pages, outputPath=outDir) {
   return Promise.all(pages.map(async (page) => {
-    const fullPath = path.join(outDir, page.meta.path).toLowerCase()
+    const fullPath = path.join(outputPath, page.meta.path).toLowerCase()
 
     // because the page path may contain additional directories
     const fullDir = path.dirname(fullPath)
@@ -292,6 +298,10 @@ async function ingest() {
 
   const pages = await getPages(filteredNodes)
 
+  // used for debugging, writing raw pages to .docs directory for inspection
+  // writePages(pages, './.docs')
+  // return
+
   const fetchEndTime = new Date()
   console.log(`Fetching completed in ${fetchEndTime - fetchStartTime} ms`)
 
@@ -305,6 +315,10 @@ async function ingest() {
 
   console.log(`Renaming README.md files`)
   const renamedPages = renameReadmes(sanitizedPages)
+
+  // TODO: debugging, remove
+  // await writePages(renamedPages)
+  // return
 
   console.log(`Normalizing links in ${pages.length} pages`)
   const normalizedPages = normalizeLinks(renamedPages)
