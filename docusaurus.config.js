@@ -92,10 +92,6 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
               label: 'GitHub',
               href: 'https://github.com/netdata/netdata',
             },
