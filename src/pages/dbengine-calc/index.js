@@ -149,7 +149,7 @@ function Wizard() {
             <div className={classnames("col col--4", styles.calcResults)}>
 
               <p>With the current settings, the Netdata Agent will use {finalDisk} MiB in disk space to store your metrics for {state.retention} days.</p>
-              <p>You should edit your <code>netdata.conf</code> file to change the <code>dbengine disk space</code> setting to <code>dbengine disk space = {finalDisk}</code>.</p>
+              <p>You should edit your <code>netdata.conf</code> file to change the <code>dbengine disk space</code> setting:</p>
               <CodeBlock className={classnames('conf')} language='conf'>{conf}</CodeBlock>
               <p>The Netdata Agent will also use {finalRAM} MiB of system memory.</p>
 
