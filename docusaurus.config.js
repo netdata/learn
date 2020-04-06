@@ -1,40 +1,24 @@
 module.exports = {
   title: 'Learn @ Netdata',
   tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Documentation, tutorials, blogs, and much more.',
-  url: 'https://learn.netdata.cloud',
+  url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'netdata', // Usually your GitHub org/user name.
   projectName: 'netdata', // Usually your repo name.
   themeConfig: {
-    googleAnalytics: {
-      trackingID: 'UA-64295674-3',
-      anonymizeIP: true,
-    },
     navbar: {
-      title: '',
+      title: 'Learn @ Netdata',
       logo: {
         alt: 'Netdata Learn logo',
         src: 'img/logo.svg',
       },
       links: [
-        {
-          to: '/', 
-          label: 'Learn', 
-          position: 'left'},
-        {
-          to: 'docs/introduction', 
-          label: 'Docs', 
-          position: 'left'
-        },
+        {to: 'docs/agent', label: 'Agent', position: 'left'},
+        {to: 'docs/cloud', label: 'Cloud', position: 'left'},
         {
           href: 'https://github.com/netdata/netdata',
           label: 'GitHub',
-          position: 'right',
-        },
-        {
-          href: 'https://netdata.cloud',
-          label: 'Netdata',
           position: 'right',
         },
       ],
@@ -50,8 +34,12 @@ module.exports = {
               href: 'https://netdata.cloud',
             },
             {
-              label: 'What is Netdata?',
-              to: 'docs/what-is-netdata',
+              label: 'Agent Docs',
+              to: 'agent/home',
+            },
+            {
+              label: 'Cloud Docs',
+              to: 'cloud/home',
             },
             {
               label: 'Netdata Blog',
@@ -64,33 +52,37 @@ module.exports = {
           items: [
             {
               label: 'Installation',
-              to: 'docs/packaging/installer',
+              to: 'agent/docs/packaging/installer',
             },
             {
               label: 'Getting started guide',
-              to: 'docs/getting-started',
+              to: 'agent/docs/agent/getting-started',
             },
             {
               label: 'Step-by-step tutorial',
-              to: 'docs/step-by-step/step-00',
+              to: 'agent/docs/docs/step-by-step/step-00',
             },
             {
               label: 'Configuration',
-              to: 'docs/configuration-guide',
+              to: 'agent/docs/docs/configuration-guide',
             },
             {
               label: 'Collecting metrics',
-              to: 'docs/collectors',
+              to: 'agent/docs/collectors',
             },
             {
               label: 'Health monitoring',
-              to: 'docs/health',
+              to: 'agent/docs/health',
             },
           ],
         },
         {
           title: 'Community',
           items: [
+            {
+              label: 'Blog',
+              to: 'blog',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/netdata/netdata',
@@ -126,6 +118,12 @@ module.exports = {
           customCss: require.resolve('./src/css/custom.css'),
         },
       },
+      '@docusaurus/plugin-content-docs',
+      {
+        path: 'cloud',
+        routeBasePath: 'cloud',
+        include: ['**/*.md', '**/*.mdx'], // Extensions to include.
+      }
     ],
   ],
   plugins: [
