@@ -54,6 +54,13 @@
   font-size: 1.2rem;
 }
 
+@media screen and (max-width: 768px) {
+  .calcInput {
+    order: 2;
+    margin-top: 1rem;
+  }
+}
+
 .calcInstruction label {
   font-size: 110%;
   font-weight: 500;
@@ -89,12 +96,22 @@
   font-size: 120%;
 }
 
+@media screen and (max-width: 768px) {
+  .calcResults {
+    margin-top: 3rem;
+  }
+}
+
 .calcResults p code {
   font-size: 1rem;
 }
 
 .calcResults div[class^='codeBlockContent'] {
   margin-bottom: 2rem;
-  
+
   font-size: 0.9rem;
+}
+
+.calcResults div[class^='codeBlockContent'] button {
+  display: none;
 }
