@@ -52,6 +52,7 @@ html {
   --ifm-font-family-monospace: 'IBM Plex Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --ifm-font-size-base: 18px;
   --ifm-line-height-base: 1.6;
+  --ifm-font-weight-bold: 500;
 
   /* Headings */
   --ifm-heading-font-weight: 500;
