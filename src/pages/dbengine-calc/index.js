@@ -124,8 +124,7 @@ function Wizard() {
                 </div>
                 <div className={classnames('col col--10', styles.calcInstruction)}>
                   <label htmlFor="compression">What is your compression savings ratio?</label>
-                  <p>To find this value, click on the <strong>Netdata Monitoring</strong> &rarr; <strong>dbengine</strong> items in the right-hand menu and look at the first chart under the <strong>dbengine</strong> section. You can also use your browser's search feature to look for <strong>compression savings ratio</strong>.</p>
-                  <p>Take an average value for this metric over time to input to the left.</p>
+                  <p>To find this value, click on the <strong>Netdata Monitoring</strong> &rarr; <strong>dbengine</strong> items in the right-hand menu and look at the first chart under the <strong>dbengine</strong> section. You can also use your browser's search feature to look for <strong>compression savings ratio</strong>. Estimate an average value to input into the calculator.</p>
                   {/* <img 
                     className={styles.fullWidth}
                     src='img/dbengine-calc/dbengine_compression.png'
