@@ -113,8 +113,9 @@ entry in the menu and new interactive charts!
 Collector not working? Learn about collector troubleshooting in our [collector
 reference](/docs/agent/collectors/reference#troubleshoot-a-collector).
 
-View our [collectors tutorials](/docs/agent/collectors/readme#tutorials) to get specific instructions on enabling new and popular
-collectors.
+View our [collectors tutorials](/docs/agent/collectors#tutorials) to get specific instructions on enabling new and
+popular collectors.
 
 Finally, learn more advanced collector features, such as disabling plugins or developing a custom collector, in our
-[internal plugin API](/docs/agent/collectors/reference#internal-plugins-api) or our [external plugin docs](/docs/agent/collectors/plugins.d).
+[internal plugin API](/docs/agent/collectors/reference#internal-plugins-api) or our [external plugin
+docs](/docs/agent/collectors/plugins.d).

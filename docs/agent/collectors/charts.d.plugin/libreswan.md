@@ -21,7 +21,7 @@ The following charts are created, **per tunnel**:
 ## Configuration
 
 Edit the `charts.d/libreswan.conf` configuration file using `edit-config` from the your agent's [config
-directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/agent/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different

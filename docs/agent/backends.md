@@ -43,7 +43,7 @@ So, although Netdata collects metrics every second, it can send to the backend s
         providers](https://prometheus.io/operating/integrations/#remote-endpoints-and-storage))
 
         metrics are labeled in the format, which is used by Netdata for the [plaintext prometheus
-        protocol](/docs/agent/prometheus/). Notes on using the remote write backend are [here](/docs/agent/backends/prometheus/remote_write).
+        protocol](/docs/agent/backends/prometheus). Notes on using the remote write backend are [here](/docs/agent/backends/prometheus/remote_write).
 
     -   **TimescaleDB** via [community-built connector](/docs/agent/backends/timescale) that takes JSON streams from a Netdata
         client and writes them to a TimescaleDB table.

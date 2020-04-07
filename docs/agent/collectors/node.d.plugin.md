@@ -38,7 +38,7 @@ collectors in node.js. It also manages all its data collectors (placed in `/usr/
 instance of node, thus lowering the memory footprint of data collection.
 
 Of course, there can be independent plugins written in node.js (placed in `/usr/libexec/netdata/plugins`).
-These will have to be developed using the guidelines of **[External Plugins](/docs/agent/collectors/plugins.d/)**.
+These will have to be developed using the guidelines of **[External Plugins](/docs/agent/collectors/plugins.d)**.
 
 To run `node.js` plugins you need to have `node` installed in your system.
 
@@ -231,6 +231,6 @@ The `service` object defines a set of functions to allow you send information to
 ---
 
 _FIXME: document an operational node.d.plugin data collector - the best example is the
-[snmp collector](/docs/agent/collectors/snmp/snmp.node.js)_
+[snmp collector](https://raw.githubusercontent.com/netdata/netdata/master/collectors/node.d.plugin/snmp/snmp.node.js)_
 
 
