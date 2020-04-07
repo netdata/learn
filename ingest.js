@@ -96,15 +96,13 @@ function normalizeLinks(pages) {
     const tokens = path.parse(page.meta.path)
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
-      // skip the whole process if a relative anchor
+      // ignore anchors and absolute urls
       if (url.startsWith('#') || url.startsWith('http')) return `](${url})`
 
-      // ignore absolute urls and external links
-      const normalizedUrl = url.startsWith('http')
-        ? url
-        : path.join('/', baseDir, tokens.dir, url).toLowerCase()
+      // prepend file dir and resolve all the relative paths
+      const normalizedUrl = path.join('/', tokens.dir, url).toLowerCase()
 
-      // ensure relative URLs did not go back too far, excluding /docs
+      // prepend baseDir but do not double prepend
       const withBaseUrl = normalizedUrl.startsWith(baseDir)
         ? normalizedUrl
         : path.join(baseDir, normalizedUrl)
@@ -297,12 +295,15 @@ async function ingest() {
 
   const pages = await getPages(filteredNodes)
 
-  // used for debugging, writing raw pages to .docs directory for inspection
-  // writePages(pages, './.docs')
-  // return
-
   const fetchEndTime = new Date()
   console.log(`Fetching completed in ${fetchEndTime - fetchStartTime} ms`)
+
+  console.log(`Normalizing links in ${pages.length} pages`)
+  const res = normalizeLinks(pages)
+
+  // used for debugging, writing raw pages to .docs directory for inspection
+  writePages(res, './.docs')
+  return
 
   console.log(`Moving /docs to root`)
   const movedPages = moveDocs(pages)
