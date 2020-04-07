@@ -21,7 +21,7 @@ const retainPaths = [
 ]
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/joelhans/',
+  baseURL: 'https://api.github.com/repos/netdata/',
   headers: {
     'Authorization': `token ${GITHUB_TOKEN}`
   }
@@ -44,7 +44,7 @@ async function getRateLimit() {
   }
 }
 
-async function getForkSha(repo = 'netdata', branch = 'link-sanitize') {
+async function getForkSha(repo = 'netdata', branch = 'master') {
   const { data: { commit: { sha } } } = await ax.get(`${repo}/branches/${branch}`)
   return sha
 }
@@ -266,7 +266,7 @@ async function ingest() {
   }
 
   console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getForkSha('netdata')
+  const rootSha = await getRootSha('netdata')
   console.log(`Fetching nodes from 'netdata' repo...`)
   const nodes = await getNodes(rootSha)
 
