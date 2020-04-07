@@ -196,7 +196,7 @@ If you have Netdata installed on multiple systems, you can have them all appear 
 corner of the dashboard.
 
 To show all your servers in that menu, you need to [register for or sign in](/docs/agent/netdata-cloud/signing-in) to
-[Netdata Cloud](/docs/agent/netdata-cloud/) from each system. Each system will then appear in the **My nodes** menu, which you
+[Netdata Cloud](/docs/agent/netdata-cloud) from each system. Each system will then appear in the **My nodes** menu, which you
 can use to navigate between your systems quickly.
 
 ![Animated GIF of the My Nodes menu in
@@ -238,10 +238,10 @@ added all your systems to the **My nodes** menu, you've just gotten started with
 Take a look at some more advanced features and configurations:
 
 -   Centralize Netdata metrics from many systems with [streaming](/docs/agent/streaming)
--   Enable long-term archiving of Netdata metrics via [backends](/docs/agent/backends/) to time-series databases.
+-   Enable long-term archiving of Netdata metrics via [backends](/docs/agent/backends) to time-series databases.
 -   Improve security by putting Netdata behind an [Nginx proxy with SSL](/docs/agent/running-behind-nginx).
 
 Or, learn more about how you can contribute to [Netdata core](/docs/agent/contributing) or our
-[documentation](/docs/contributing/contributing-documentation)!
+[documentation](/docs/agent/contributing/contributing-documentation)!
 
 

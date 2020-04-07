@@ -40,9 +40,6 @@ In this step of the Netdata guid, we'll talk about the following:
 We built Netdata Cloud to give users a way to bridge the gap between many distributed agents running concurrently, all
 without creating a centralized database for all your systems' metrics.
 
-> Read more: [_Introducing Netdata Cloud: our vision for distributed health and performance 
-> monitoring_](https://blog.netdata.cloud/posts/netdata-cloud-announcement/).
-
 Netdata Cloud gives you a better way to observe and take action on slowdowns, anomalies, or outages in your systems and
 applications. It connects all your Netdata agents through your _web browser_, allowing you to move between different
 nodes quickly and use the Nodes View to see a handful or hundreds of Netdata-monitored nodes on a single screen.

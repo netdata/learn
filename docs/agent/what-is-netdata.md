@@ -53,17 +53,16 @@ Netdata!](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&la
 2.  [Our userbase](#user-base) - Enterprises we help monitor and our userbase
 3.  [Quickstart](#quickstart) - How to try it now on your systems
 4.  [Why Netdata](#why-netdata) - Why people love Netdata and how it compares with other solutions
-5.  [News](#news) - The latest news about Netdata
-6.  [How Netdata works](#how-it-works) - A high-level diagram of how Netdata works
-7.  [Infographic](#infographic) - Everything about Netdata in a single graphic
-8.  [Features](#features) - How you'll use Netdata on your systems
-9.  [Visualization](#visualization) - Learn about visual anomaly detection
-10. [What Netdata monitors](#what-netdata-monitors) - See which apps/services Netdata auto-detects
-11. [Documentation](#documentation) - Read the documentation
-12. [Community](#community) - Discuss Netdata with others and get support
-13. [License](#license) - Check Netdata's licencing
-14. [Is it any good?](#is-it-any-good) - Yes.
-15. [Is it awesome?](#is-it-awesome) - Yes.
+5.  [How Netdata works](#how-it-works) - A high-level diagram of how Netdata works
+6.  [Infographic](#infographic) - Everything about Netdata in a single graphic
+7.  [Features](#features) - How you'll use Netdata on your systems
+8.  [Visualization](#visualization) - Learn about visual anomaly detection
+9. [What Netdata monitors](#what-netdata-monitors) - See which apps/services Netdata auto-detects
+10. [Documentation](#documentation) - Read the documentation
+11. [Community](#community) - Discuss Netdata with others and get support
+12. [License](#license) - Check Netdata's licencing
+13. [Is it any good?](#is-it-any-good) - Yes.
+14. [Is it awesome?](#is-it-awesome) - Yes.
 
 ## What does it look like?
 
@@ -263,17 +262,18 @@ This is what you should expect from Netdata:
 
 -   **Sophisticated alerting** - Netdata comes with hundreds of alarms **out of the box**! It supports dynamic
     thresholds, hysteresis, alarm templates, multiple role-based notification methods, and more.
--   **Notifications**: [alerta.io](/docs/agent/health/notifications/alerta/), [amazon sns](/docs/agent/health/notifications/awssns/),
-    [discordapp.com](/docs/agent/health/notifications/discord/), [email](/docs/agent/health/notifications/email/),
-    [flock.com](/docs/agent/health/notifications/flock/), [hangouts](/docs/agent/health/notifications/hangouts/),
-    [irc](/docs/agent/health/notifications/irc/), [kavenegar.com](/docs/agent/health/notifications/kavenegar/),
-    [messagebird.com](/docs/agent/health/notifications/messagebird/), [pagerduty.com](/docs/agent/health/notifications/pagerduty/),
-    [prowl](/docs/agent/health/notifications/prowl/), [pushbullet.com](/docs/agent/health/notifications/pushbullet/),
-    [pushover.net](/docs/agent/health/notifications/pushover/), [rocket.chat](/docs/agent/health/notifications/rocketchat/),
-    [slack.com](/docs/agent/health/notifications/slack/), [smstools3](/docs/agent/health/notifications/smstools3/),
-    [syslog](/docs/agent/health/notifications/syslog/), [telegram.org](/docs/agent/health/notifications/telegram/),
-    [twilio.com](/docs/agent/health/notifications/twilio/), [web](/docs/agent/health/notifications/web/) and [custom
-    notifications](/docs/agent/health/notifications/custom/).
+-   **Notifications**: [alerta.io](/docs/agent/health/notifications/alerta), [amazon
+    sns](/docs/agent/health/notifications/awssns), [discordapp.com](/docs/agent/health/notifications/discord),
+    [email](/docs/agent/health/notifications/email), [flock.com](/docs/agent/health/notifications/flock),
+    [hangouts](/docs/agent/health/notifications/hangouts), [irc](/docs/agent/health/notifications/irc),
+    [kavenegar.com](/docs/agent/health/notifications/kavenegar), [messagebird.com](/docs/agent/health/notifications/messagebird/),
+    [pagerduty.com](/docs/agent/health/notifications/pagerduty), [prowl](/docs/agent/health/notifications/prowl),
+    [pushbullet.com](/docs/agent/health/notifications/pushbullet),
+    [pushover.net](/docs/agent/health/notifications/pushover), [rocket.chat](/docs/agent/health/notifications/rocketchat),
+    [slack.com](/docs/agent/health/notifications/slack), [smstools3](/docs/agent/health/notifications/smstools3),
+    [syslog](/docs/agent/health/notifications/syslog), [telegram.org](/docs/agent/health/notifications/telegram),
+    [twilio.com](/docs/agent/health/notifications/twilio), [web](/docs/agent/health/notifications/web) and [custom
+    notifications](/docs/agent/health/notifications/custom).
 
 ### Integrations
 

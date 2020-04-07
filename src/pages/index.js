@@ -59,7 +59,7 @@ const docs = [
   },
   {
     title: <>Custom dashboards</>,
-    href: 'docs/agent/web/custom',
+    href: 'docs/agent/web/gui/custom',
     description: (
       <>
         Build bespoke dashboards with simple HTML and JavaScript to put all of your most important metrics in one easy-to-understand place.

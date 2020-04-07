@@ -61,7 +61,7 @@ it there.
 #### Increase the long-term metrics retention period
 
 Increase the values for the `page cache size` and `dbengine disk space` settings in the [`[global]`
-section](/docs/daemon/config#global-section-options) of `netdata.conf`. Read our tutorial on [increasing
+section](/docs/agent/daemon/config#global-section-options) of `netdata.conf`. Read our tutorial on [increasing
 long-term metrics storage](/docs/agent/tutorials/longer-metrics-storage) and the [memory requirements for the database
 engine](/docs/agent/database/engine#memory-requirements).
 
@@ -149,7 +149,7 @@ documentation](/docs/agent/web/server#binding-netdata-to-multiple-ports) for mor
 
 #### Reduce the resources Netdata uses
 
-The page on [Netdata performance](/docs/agent/erformance) has an excellent guide on how to reduce the Netdata cpu/disk/RAM
+The page on [Netdata performance](/docs/agent/performance) has an excellent guide on how to reduce the Netdata cpu/disk/RAM
 utilization to levels suitable even for the weakest [IoT devices](/docs/agent/netdata-for-iot).
 
 #### Change when Netdata saves metrics to disk
