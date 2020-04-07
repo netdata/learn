@@ -77,7 +77,7 @@ killall -USR2 netdata
 ```
 
 You can also tune any other aspect of the default alarms. To better understand how each line in a health entity works,
-read our [health documentation](/docs/health/).
+read our [health documentation](/docs/agent/health).
 
 ### Silence an individual alarm
 
@@ -173,11 +173,10 @@ These lines will trigger a warning if that average RAM usage goes above 80%, and
 
 > â Most default Netdata alarms come with more complicated `warn` and `crit` lines. You may have noticed the line `warn:
 > $this > (($status >= $WARNING)  ? (75) : (85))` in one of the health entity examples above, which is an example of
-> using the [conditional operator for
-> hysteresis](https://docs.netdata.cloud/health/reference/#special-use-of-the-conditional-operator). Hysteresis is used
-> to keep Netdata from triggering a ton of alerts if the metric being tracked quickly goes above and then falls below
-> the threshold. For this very simple example, we'll skip hysteresis, but recommend implementing it in your future
-> health entities.
+> using the [conditional operator for hysteresis](/docs/agent/health/reference/#special-use-of-the-conditional-operator).
+> Hysteresis is used to keep Netdata from triggering a ton of alerts if the metric being tracked quickly goes above and
+> then falls below the threshold. For this very simple example, we'll skip hysteresis, but recommend implementing it in
+> your future health entities.
 
 Finish off with the `info` line, which creates a description of the alarm that will then appear in any
 [notification](#enable-netdatas-notification-systems) you set up. This line is optional, but it has valueâthink of it as
@@ -213,8 +212,8 @@ stress -m 1 --vm-bytes 8G --vm-keep
 ```
 
 Netdata is capable of understanding much more complicated entities. To better understand how they work, read the [health
-documentation](/docs/health), look at some [examples](/docs/health/reference#example-alarms), and open the
-files containing the default entities on your system.
+documentation](/docs/health), look at some [examples](/docs/agent/health/reference#example-alarms), and open the files
+containing the default entities on your system.
 
 ## Enable Netdata's notification systems
 
@@ -222,7 +221,7 @@ Health alarms, while great on their own, are pretty useless without some way of 
 That's why Netdata comes with a notification system that supports more than a dozen services, such as email, Slack,
 Discord, PagerDuty, Twilio, Amazon SNS, and much more.
 
-To see all the supported systems, visit our [notifications documentation](/docs/health/notifications/).
+To see all the supported systems, visit our [notifications documentation](/docs/agent/health/notifications/).
 
 We'll cover email and Slack notifications here, but with this knowledge you should be able to enable any other type of
 notifications instead of or in addition to these.
@@ -328,9 +327,9 @@ applications.
 To further configure your email or Slack notification setup, or to enable other notification systems, check out the
 following documentation:
 
--   [Email notifications](/docs/health/notifications/email/)
--   [Slack notifications](/docs/health/notifications/slack/)
--   [Netdata's notification system](/docs/health/notifications/)
+-   [Email notifications](/docs/agent/health/notifications/email)
+-   [Slack notifications](/docs/agent/health/notifications/slack)
+-   [Netdata's notification system](/docs/agent/health/notifications)
 
 ## What's next?
 

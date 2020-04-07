@@ -13,7 +13,7 @@ Depending on your installation method, Netdata will have been installed either d
 
 Under that directory you will see the following:
 
--   `netdata.conf` is [the main configuration file](/docs/daemon/config#daemon-configuration) 
+-   `netdata.conf` is [the main configuration file](/docs/agent/daemon/config#daemon-configuration) 
 -   `edit-config` is an sh script that you can use to easily and safely edit the configuration. Just run it to see its
     usage.
 -   Other directories, initially empty, where your custom configurations for alarms and collector plugins/modules will
@@ -24,7 +24,7 @@ Under that directory you will see the following:
         notifications](/docs/health/notifications#netdata-alarm-notifications). 
     -   `health.d` is the directory that contains the alarm triggers for [health
         monitoring](/docs/health#health-monitoring). It contains one .conf file per collector. 
-    -   The [modular plugin orchestrators](/docs/collectors/plugins.d#external-plugins-overview) have:
+    -   The [modular plugin orchestrators](/docs/agent/collectors/plugins.d#external-plugins-overview) have:
         -   One config file each, mainly to turn their modules on and off: `python.d.conf` for
             [python](/docs/collectors/python.d.plugin#pythondplugin), `node.d.conf` for
             [nodejs](/docs/collectors/node.d.plugin#nodedplugin) and `charts.d.conf` for

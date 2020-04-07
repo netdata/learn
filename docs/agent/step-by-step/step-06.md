@@ -14,8 +14,8 @@ However, auto-detection only works if you installed the source using its standar
 procedure. If Netdata isn't collecting metrics after a restart, your source probably isn't configured
 correctly.
 
-Check out the [collectors that come pre-installed with Netdata](/docs/collectors/collectors) to find the module for
-the source you want to monitor.
+Check out the [collectors that come pre-installed with Netdata](/docs/agent/collectors/collectors) to find the module for the
+source you want to monitor.
 
 ## What you'll learn in this step
 
@@ -37,9 +37,9 @@ are organized and manged by plugins. **Internal** plugins collect system metrics
 non-system metrics, and **orchestrator** plugins group individal collectors together based on the programming language
 they were built in.
 
-These modules are primarily written in [Go](/docs/collectors/go.d.plugin/) (`go.d`) and
-[Python](/docs/collectors/python.d.plugin/), although some use [Bash](/docs/collectors/charts.d.plugin/) (`charts.d`) or
-[Node.js](/docs/collectors/node.d.plugin/) (`node.d`).
+These modules are primarily written in [Go](/docs/agent/collectors/go.d.plugin) (`go.d`) and
+[Python](/docs/agent/collectors/python.d.plugin), although some use [Bash](/docs/agent/collectors/charts.d.plugin)
+(`charts.d`) or [Node.js](/docs/agent/collectors/node.d.plugin) (`node.d`).
 
 ## Enable and disable plugins
 

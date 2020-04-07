@@ -43,7 +43,7 @@ In the system represented by the screenshot, the line reads: `config directory =
 `netdata.conf`, and all the other configuration files, can be found at `/etc/netdata`.
 
 > For more details on where your Netdata config directory is, take a look at our [installation
-> instructions](/docs/packaging/installer/).
+> instructions](/docs/agent/packaging/installer).
 
 For the rest of this tutorial, we'll assume you're editing files or running scripts from _within_ your **Netdata
 configuration directory**.

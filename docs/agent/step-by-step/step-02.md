@@ -11,8 +11,8 @@ working with the dashboard directly.
 
 This step-by-step guide assumes you've already installed Netdata on a system of yours. If you haven't yet, hop back over
 to ["step 0"](/docs/agent/step-by-step/step-00#before-we-get-started) for information about our one-line installer script. Or, view the
-[installation docs](/docs/packaging/installer) to learn more. Once you have Netdata installed, you can hop back over
-here and dig in.
+[installation docs](/docs/agent/packaging/installer) to learn more. Once you have Netdata installed, you can hop back
+over here and dig in.
 
 ## What you'll learn in this step
 
@@ -67,7 +67,7 @@ what it's collecting. If you run Netdata on many different systems using differe
 menus and submenus may look a little different for each one.
 
 To learn more about menus, see our documentation about [navigating the standard
-dashboard](/docs/web/gui#menus).
+dashboard](/docs/agent/web/gui#menus).
 
 > â By default, Netdata only creates and displays charts if the metrics are _not zero_. So, you may be missing some
 > charts, menus, and submenus if those charts have zero metrics. You can change this by changing the **Which dimensions
@@ -117,7 +117,7 @@ looking at its name or hovering over the chart's date.
 It's important to understand these differences, as Netdata uses charts, dimensions, families, and contexts to create
 health alarms and configure collectors. To read even more about the differences between all these elements of the
 dashboard, and how they affect other parts of Netdata, read our [dashboards
-documentation](/docs/web#charts-contexts-families).
+documentation](/docs/agent/web#charts-contexts-families).
 
 ## Interact with charts
 
@@ -127,7 +127,7 @@ Netdata's charts are fully interactive. You can pan through historical metrics, 
 timeframes for further analysis, resize charts, and more.
 
 Best of all, Whenever you use a chart in this way, Netdata synchronizes all the other charts to match it. This even
-applies across different Netdata agents if you connect them using the [**My nodes** menu](/docs/registry)!
+applies across different Netdata agents if you connect them using the [**My nodes** menu](/docs/agent/registry)!
 
 ![Aniamted GIF of chart
 synchronziation](https://user-images.githubusercontent.com/1153921/63464271-c03a9c00-c413-11e9-971d-245238926193.gif)
@@ -163,7 +163,7 @@ chart to its original height, double-click the same icon.
 ![Animated GIF of resizing a chart and resetting it to the default
 height](https://user-images.githubusercontent.com/1153921/65066675-aec4b100-d939-11e9-9b5d-cee7316428f6.gif)
 
-To learn more about other options and chart interactivity, read our [dashboard documentation](/docs/web).
+To learn more about other options and chart interactivity, read our [dashboard documentation](/docs/agent/web).
 
 ## See raised alarms and the alarm log
 
