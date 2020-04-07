@@ -21,7 +21,7 @@ const retainPaths = [
 ]
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/joelhans/',
+  baseURL: 'https://api.github.com/repos/netdata/',
   headers: {
     'Authorization': `token ${GITHUB_TOKEN}`
   }
@@ -42,11 +42,6 @@ async function getRateLimit() {
     resetSeconds,
     resetMinutes
   }
-}
-
-async function getForkSha(repo = 'netdata', branch = 'link-sanitize') {
-  const { data: { commit: { sha } } } = await ax.get(`${repo}/branches/${branch}`)
-  return sha
 }
 
 async function getRootSha(repo = 'netdata', branch = 'master') {
@@ -109,7 +104,6 @@ function normalizeLinks(pages) {
 
       // if the link is already a absolute-relative
       if (url.startsWith('/')) {
-        console.log(`catch abs-rel! ${url}`)
         const withAgentUrl = path.join(agentDir, url)
         return `](${withAgentUrl})`
       }
@@ -267,7 +261,7 @@ async function ingest() {
   }
 
   console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getForkSha('netdata')
+  const rootSha = await getRootSha('netdata')
   console.log(`Fetching nodes from 'netdata' repo...`)
   const nodes = await getNodes(rootSha)
 
