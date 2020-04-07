@@ -157,7 +157,7 @@ function Home() {
                     'button button--secondary button--lg',
                     styles.getStarted,
                   )}
-                  to={useBaseUrl('docs/introduction')}>
+                  to={useBaseUrl('docs/agent')}>
                   Read the docs
                 </Link>
               </div>
@@ -205,19 +205,19 @@ function Home() {
               <div className={classnames('col col--4', styles.installMethods)}>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/packaging/installer/methods/packages')}>
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/packages')}>
                   <img src="img/methods/package.png" alt="Install Netdata with .deb/.rpm packages" />
                   .deb/.rpm packages
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/packaging/docker')}>
+                  to={useBaseUrl('docs/agent/packaging/docker')}>
                   <img src="img/methods/docker.png" alt="Install Netdata with Docker" />
                   Docker
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/packaging/installer/methods/macos')}>
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/macos')}>
                   <img src="img/methods/macos.png" alt="Install Netdata on macOS" />
                   macOS
                 </Link>
@@ -230,17 +230,17 @@ function Home() {
                 </a>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/packaging/installer/methods/cloud-providers')}>
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}>
                   <img src="img/methods/cloud.png" alt="Install Netdata on cloud providers" />
                   Cloud providers
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/packaging/installer/methods/freebsd')}>
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/freebsd')}>
                   <img src="img/methods/freebsd.png" alt="Install Netdata on FreeBSD" />
                   FreeBSD
                 </Link>
-                <p><Link to="docs/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>
+                <p><Link to="docs/agent/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>
               </div>
             </div>
           </div>
