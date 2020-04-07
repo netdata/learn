@@ -1,4 +1,9 @@
-# High performance Netdata
+---
+title: "High performance Netdata"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/high-performance-netdata.md
+---
+
+
 
 If you plan to run a Netdata public on the internet, you will get the most performance out of it by following these
 rules:
@@ -144,9 +149,9 @@ View of the files:
 ```sh
 # tree /etc/systemd/system/*service.d/etc/systemd/system/netdata.service.d
 /etc/systemd/system/netdata.service.d
-└── limits.conf
+âââ limits.conf
 /etc/systemd/system/nginx.service.d
-└── limits.conf
+âââ limits.conf
 
 0 directories, 2 files
 
@@ -157,4 +162,4 @@ Max open files            30000                30000                files
 Max open files            30000                30000                files     
 ```
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fhigh-performance-netdata&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

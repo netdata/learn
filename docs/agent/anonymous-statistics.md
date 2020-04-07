@@ -1,4 +1,9 @@
-# Anonymous statistics
+---
+title: "Anonymous statistics"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/anonymous-statistics.md
+---
+
+
 
 Starting with v1.12, Netdata collects anonymous usage information by default and sends it to Google Analytics. We use
 the statistics gathered from this information for two purposes:
@@ -77,13 +82,13 @@ installation, including manual, offline, and macOS installations. Create the fil
 .opt-out-from-anonymous-statistics` from your Netdata configuration directory.
 
 **Pass the option `--disable-telemetry` to any of the installer scripts in the [installation
-docs](../packaging/installer/README.md).** You can append this option during the initial installation or a manual
+docs](/docs/packaging/installer).** You can append this option during the initial installation or a manual
 update. You can also export the environment variable `DO_NOT_TRACK` with a non-zero or non-empty value
 (e.g: `export DO_NOT_TRACK=1`).
 
 When using Docker, **set your `DO_NOT_TRACK` environment variable to `1`.** You can set this variable with the following
 command: `export DO_NOT_TRACK=1`. When creating a container using Netdata's [Docker
-image](../packaging/docker/README.md#run-netdata-with-the-docker-command) for the first time, this variable will disable
+image](/docs/packaging/docker#run-netdata-with-the-docker-command) for the first time, this variable will disable
 the anonymous statistics script inside of the container.
 
 Each of these opt-out processes does the following:

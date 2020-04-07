@@ -1,21 +1,26 @@
-# Terms of Use
+---
+title: "Terms of Use"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/terms-of-use.md
+---
+
+
 
 Netdata Master Terms of Use
 Effective as of 09 Aug 2019
 
 ## 1. General Information Regarding These Terms of Use
 
-Master terms: Welcome, and thank you for your interest in Netdata (“Netdata, Inc.” “ND,” “we,” “our,” or “us”). Unless otherwise noted on a particular site or service, these master terms of use (“Master Terms”) apply to your use of all of the websites that Netdata Corporation operates. These include <https://my-netdata.io> and <https://netdata.cloud>, together with all other subdomains thereof, (collectively, the “Websites”). The Master Terms also apply to all products, information, and services provided through the Websites, such as the NDID Login Service.
+Master terms: Welcome, and thank you for your interest in Netdata (âNetdata, Inc.â âND,â âwe,â âour,â or âusâ). Unless otherwise noted on a particular site or service, these master terms of use (âMaster Termsâ) apply to your use of all of the websites that Netdata Corporation operates. These include <https://my-netdata.io> and <https://netdata.cloud>, together with all other subdomains thereof, (collectively, the âWebsitesâ). The Master Terms also apply to all products, information, and services provided through the Websites, such as the NDID Login Service.
 
-Additional terms: In addition to the Master Terms, your use of any Services may also be subject to specific terms applicable to a particular Service (“Additional Terms”). If there is any conflict between the Additional Terms and the Master Terms, then the Additional Terms apply in relation to the relevant Service.
+Additional terms: In addition to the Master Terms, your use of any Services may also be subject to specific terms applicable to a particular Service (âAdditional Termsâ). If there is any conflict between the Additional Terms and the Master Terms, then the Additional Terms apply in relation to the relevant Service.
 
-Collectively, the Terms: The Master Terms, together with any Additional Terms, form a binding legal agreement between you and Netdata in relation to your use of the Services. Collectively, this legal agreement is referred to below as the “Terms.”
+Collectively, the Terms: The Master Terms, together with any Additional Terms, form a binding legal agreement between you and Netdata in relation to your use of the Services. Collectively, this legal agreement is referred to below as the âTerms.â
 
 Human-readable summary of Sec 1: These terms, together with any special terms for particular websites, create a contract between you and Netdata. The contract governs your use of all websites operated by Netdata, unless a particular website indicates otherwise. These human-readable summaries of each section are not part of the contract, but are intended to help you understand its terms.
 
 ## 2. Your Agreement to the Terms
 
-BY ACCESSING OR USING ANY OF THE SERVICES, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREED TO BE BOUND BY THE TERMS. By accessing or using any Services you also represent that you have the legal authority to accept the Terms on behalf of yourself and any party you represent in connection with your use of any Services. If you do not agree to the Terms, you are not authorized to use any Services. If you are an individual who is entering into these Terms on behalf of an entity, you represent and warrant that you have the power to bind that entity, and you hereby agree on that entity’s behalf to be bound by these Terms, with the terms “you,” and “your” applying to you, that entity, and other users accessing the Services on behalf of that entity.
+BY ACCESSING OR USING ANY OF THE SERVICES, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND AGREED TO BE BOUND BY THE TERMS. By accessing or using any Services you also represent that you have the legal authority to accept the Terms on behalf of yourself and any party you represent in connection with your use of any Services. If you do not agree to the Terms, you are not authorized to use any Services. If you are an individual who is entering into these Terms on behalf of an entity, you represent and warrant that you have the power to bind that entity, and you hereby agree on that entityâs behalf to be bound by these Terms, with the terms âyou,â and âyourâ applying to you, that entity, and other users accessing the Services on behalf of that entity.
 
 Human-readable summary of Sec 2: Please read these terms and only use our sites and services if you agree to them.
 
@@ -29,17 +34,17 @@ Human-readable summary of Sec 3: These terms may change. When the changes are im
 
 Netdata is not a law firm, does not provide legal advice, and is not a substitute for a law firm. Sending us an email or using any of the Services, including the licenses, public domain tools, and choosers, does not constitute legal advice or create an attorney-client relationship.
 
-Human-readable summary of Sec 4: Some of us are lawyers, but we aren’t your lawyer. Please consult your own attorney if you need legal advice.
+Human-readable summary of Sec 4: Some of us are lawyers, but we arenât your lawyer. Please consult your own attorney if you need legal advice.
 
 ## 5. Content Available through the Services
 
-Provided as-is: You acknowledge that Netdata does not make any representations or warranties about the material, data, and information, such as data files, text, computer software, code, music, audio files or other sounds, photographs, videos, or other images (collectively, the “Content”) which you may have access to as part of, or through your use of, the Services. Under no circumstances is Netdata liable in any way for any Content, including, but not limited to: any infringing Content, any errors or omissions in Content, or for any loss or damage of any kind incurred as a result of the use of any Content posted, transmitted, linked from, or otherwise accessible through or made available via the Services. You understand that by using the Services, you may be exposed to Content that is offensive, indecent, or objectionable.
+Provided as-is: You acknowledge that Netdata does not make any representations or warranties about the material, data, and information, such as data files, text, computer software, code, music, audio files or other sounds, photographs, videos, or other images (collectively, the âContentâ) which you may have access to as part of, or through your use of, the Services. Under no circumstances is Netdata liable in any way for any Content, including, but not limited to: any infringing Content, any errors or omissions in Content, or for any loss or damage of any kind incurred as a result of the use of any Content posted, transmitted, linked from, or otherwise accessible through or made available via the Services. You understand that by using the Services, you may be exposed to Content that is offensive, indecent, or objectionable.
 
 You agree that you are solely responsible for your reuse of Content made available through the Services, including providing proper attribution. You should review the terms of the applicable license before you use the Content so that you know what you can and cannot do.
 
 Licensing: ND-Owned Content: Other than the text of Netdata licenses, ND licenses, and other legal tools and the text of the deeds for all legal tools, Netdata trademarks (subject to the Trademark Policy), and the software code, all Content on the Websites is licensed under the Creative Commons Attribution 4.0 license, unless otherwise marked. See the ND Policies page for more information.
 
-ND-Owned Code: All of CC’s software code is free software; please check our code repository for the specific license on software you want to reuse.
+ND-Owned Code: All of CCâs software code is free software; please check our code repository for the specific license on software you want to reuse.
 
 Search Tools: On some of its Websites, Netdata provides website search tools, including ND Search, which return Content based on any information our search tools are able to locate and interpret. Those search tools may return Content that is not ND licensed, and you should independently verify the terms of the license attached to any Content you intend to use.
 
@@ -47,7 +52,7 @@ Human-readable summary of Sec 5: We try our best to have useful information on o
 
 ## 6. Content Supplied by You
 
-Your responsibility: You represent, warrant, and agree that no Content posted or otherwise shared by you on or through any of the Services (“Your Content”), violates or infringes upon the rights of any third party, including copyright, trademark, privacy, publicity, or other personal or proprietary rights, breaches or conflicts with any obligation, such as a confidentiality obligation, or contains libelous, defamatory, or otherwise unlawful material.
+Your responsibility: You represent, warrant, and agree that no Content posted or otherwise shared by you on or through any of the Services (âYour Contentâ), violates or infringes upon the rights of any third party, including copyright, trademark, privacy, publicity, or other personal or proprietary rights, breaches or conflicts with any obligation, such as a confidentiality obligation, or contains libelous, defamatory, or otherwise unlawful material.
 
 Licensing Your Content: You retain any copyright that you may have in Your Content. You hereby agree that Your Content: (a) is hereby licensed under the CC Attribution 4.0 License and may be used under the terms of that license or any later version of a CC Attribution License, or (b) is in the public domain (such as Content that is not copyrightable or Content you make available under CC0), or (c) if not owned by you, (i) is available under a CC Attribution 4.0 License or (ii) is a media file that is available under any CC license or that you are authorized by law to post or share through any of the Services, such as under the fair use doctrine, and that is prominently marked as being subject to third party copyright. All of Your Content must be appropriately marked with licensing (or other permission status such as fair use) and attribution information.
 
@@ -69,7 +74,7 @@ You may not use the Services or any information provided through the Services fo
 
 ### 3. Disruption:
 
-You may not use the Services in any manner that could disable, overburden, damage, or impair the Services, or interfere with any other party’s use and enjoyment of the Services; including by (a) uploading or otherwise disseminating any virus, adware, spyware, worm or other malicious code, or (b) interfering with or disrupting any network, equipment, or server connected to or used to provide any of the Services, or violating any regulation, policy, or procedure of any network, equipment, or server.
+You may not use the Services in any manner that could disable, overburden, damage, or impair the Services, or interfere with any other partyâs use and enjoyment of the Services; including by (a) uploading or otherwise disseminating any virus, adware, spyware, worm or other malicious code, or (b) interfering with or disrupting any network, equipment, or server connected to or used to provide any of the Services, or violating any regulation, policy, or procedure of any network, equipment, or server.
 
 ### 4. Harming others:
 
@@ -79,10 +84,10 @@ You may not intimidate or harass another through the Services; and, you may not 
 ### 5. Impersonation or unauthorized access:
 
 You may not impersonate another person or entity, or misrepresent your affiliation with a person or entity when using the Services;
-You may not use or attempt to use another’s account or personal information without authorization; and
+You may not use or attempt to use anotherâs account or personal information without authorization; and
 You may not attempt to gain unauthorized access to the Services, or the computer systems or networks connected to the Services, through hacking password mining or any other means.
 
-Human-readable summary of Sec 7: Play nice. Be yourself. Don’t break the law or be disruptive.
+Human-readable summary of Sec 7: Play nice. Be yourself. Donât break the law or be disruptive.
 
 ## 8. DISCLAIMER OF WARRANTIES
 
@@ -102,7 +107,7 @@ Human-readable summary of Sec 9: ND is not responsible for the content on the si
 
 ## 10. Indemnification
 
-To the extent authorized by law, you agree to indemnify and hold harmless Netdata, its employees, officers, directors, affiliates, and agents from and against any and all claims, losses, expenses, damages, and costs, including reasonable attorneys’ fees, resulting directly or indirectly from or arising out of (a) your violation of the Terms, (b) your use of any of the Services, and/or (c) the Content you make available on any of the Services.
+To the extent authorized by law, you agree to indemnify and hold harmless Netdata, its employees, officers, directors, affiliates, and agents from and against any and all claims, losses, expenses, damages, and costs, including reasonable attorneysâ fees, resulting directly or indirectly from or arising out of (a) your violation of the Terms, (b) your use of any of the Services, and/or (c) the Content you make available on any of the Services.
 
 Human-readable summary of Sec 10: If something happens because you violate these terms, because of your use of the services, or because of the content you post on the sites, you agree to repay ND for the damage it causes.
 
@@ -114,13 +119,13 @@ Human-readable summary of Sec 11: Please read our Privacy Policy. It is part of 
 
 ## 12. Trademark Policy
 
-ND’s name, logos, icons, and other trademarks may only be used in accordance with our Trademark Policy, which is incorporated by reference into these Master Terms. Please review the Trademark Policy so you understand how ND’s trademarks may be used.
+NDâs name, logos, icons, and other trademarks may only be used in accordance with our Trademark Policy, which is incorporated by reference into these Master Terms. Please review the Trademark Policy so you understand how NDâs trademarks may be used.
 
 Human-readable summary of Sec 12: Please read our Trademark Policy. It is part of these terms, too.
 
 ## 13. Copyright Complaints
 
-Netdata respects copyright, and we prohibit users of the Services from submitting, uploading, posting, or otherwise transmitting any Content on the Services that violates another person’s proprietary rights.
+Netdata respects copyright, and we prohibit users of the Services from submitting, uploading, posting, or otherwise transmitting any Content on the Services that violates another personâs proprietary rights.
 
 To report allegedly infringing Content hosted on a website owned or controlled by ND, send a Notice of Infringing Materials to info@netdata.cloud.
 
@@ -148,7 +153,7 @@ Dispute resolution: The parties agree that any disputes between Netdata and you 
 
 If you are an authorized agent of a government or intergovernmental entity using the Services in your official capacity, including an authorized agent of the federal, state, or local government in the United States, and you are legally restricted from accepting the controlling law, jurisdiction, or venue clauses above, then those clauses do not apply to you. For any such U.S. federal government entities, these Terms and any action related thereto will be governed by the laws of the United States of America (without reference to conflict of laws) and, in the absence of federal law and to the extent permitted under federal law, the laws of the State of Delaware (excluding its choice of law rules).
 
-No waiver: Either party’s failure to insist on or enforce strict performance of any of the Terms will not be construed as a waiver of any provision or right.
+No waiver: Either partyâs failure to insist on or enforce strict performance of any of the Terms will not be construed as a waiver of any provision or right.
 
 Severability: If any part of the Terms is held to be invalid or unenforceable by any law or regulation or final determination of a competent court or tribunal, that provision will be deemed severable and will not affect the validity and enforceability of the remaining provisions.
 
@@ -158,4 +163,4 @@ Integration: These Master Terms and any applicable Additional Terms constitute t
 
 Human-readable summary of Sec 15: If there is a lawsuit arising from these terms, it should be in Delaware and governed by Delaware law. We are glad you use our sites, but this agreement does not mean we are partners.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fterms-of-use&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

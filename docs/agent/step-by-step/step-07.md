@@ -1,9 +1,14 @@
-# Step 7. Netdata's dashboard in depth
+---
+title: "Step 7. Netdata's dashboard in depth"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-07.md
+---
+
+
 
 Welcome to the seventh step of the Netdata guide!
 
 This step of the guide aims to get you more familiar with the features of the dashboard not previously mentioned in
-[step 2](step-02.md).
+[step 2](/docs/agent/step-by-step/step-02).
 
 ## What you'll learn in this step
 
@@ -53,9 +58,9 @@ modal](https://user-images.githubusercontent.com/12263278/64876743-be957a00-d647
 
 If an update is available, you'll see a modal similar to the one above.
 
-When you use the [automatic one-line installer script](../../packaging/installer/README.md) attempt to update every day.
-If you choose to update it manually, there are [several well-documented methods](../../packaging/installer/UPDATE.md) to
-achieve that. However, it is best practice for you to first go over the [changelog](../../CHANGELOG.md).
+When you use the [automatic one-line installer script](/docs/packaging/installer) attempt to update every day.
+If you choose to update it manually, there are [several well-documented methods](/docs/packaging/installer/update) to
+achieve that. However, it is best practice for you to first go over the [changelog](/docs/changelog).
 
 ## Export and import a snapshot
 
@@ -70,7 +75,7 @@ Snapshots can be incredibly useful for diagnosing anomalies after they've alread
 an alarm while you were sleeping. In the morning, you can look up the exact moment the alarm was raised, export a
 snapshot, and send it to a colleague for further analysis.
 
-> ❗ Know how you shouldn't go around downloading software from suspicious-looking websites? Same policy goes for loading
+> â Know how you shouldn't go around downloading software from suspicious-looking websites? Same policy goes for loading
 > snapshots from untrusted or anonymous sources. Importing a snapshot loads quite a bit of data into your web browser,
 > and so you should always err on the side of protecting your system.
 
@@ -109,4 +114,4 @@ In this step of the Netdata tutorial, you learned how to:
 
 Next, you'll learn how to build your first custom dashboard!
 
-[Next: Build your first custom dashboard &rarr;](step-08.md)
+[Next: Build your first custom dashboard &rarr;](/docs/agent/step-by-step/step-08)

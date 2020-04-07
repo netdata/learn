@@ -1,18 +1,17 @@
 ---
-title: Health configuration reference
-description: "This reference guide contains information about editing health configuration files to tweak existing 
-alarms or create new health entities that are customized to the needs of your infrastructure."
-custom_edit_url: <https://github.com/netdata/netdata/edit/master/health/REFERENCE.md>
+title: "Health configuration reference"
+date: 2020-03-31
+custom_edit_url: https://github.com/netdata/netdata/edit/master/health/REFERENCE.md
 ---
 
-# Health configuration reference
+
 
 Welcome to the health configuration reference.
 
 This guide contains information about editing health configuration files to tweak existing alarms or create new health
 entities that are customized to the needs of your infrastructure.
 
-To learn the basics of locating and editing health configuration files, see the [health quickstart](QUICKSTART.md).
+To learn the basics of locating and editing health configuration files, see the [health quickstart](/docs/agent/health/quickstart).
 
 ## What's in this reference guide
 
@@ -36,7 +35,7 @@ Entities are written into `.conf` files, inside of the `health.d/` directory, us
 
 ### Entity types
 
-There are two entity types: **alarms** and **templates**. They have the same format and feature set—the only difference
+There are two entity types: **alarms** and **templates**. They have the same format and feature setâthe only difference
 is their label.
 
 **Alarms** are attached to specific charts and use the `alarm` label.
@@ -55,7 +54,7 @@ Netdata parses the following lines. Beneath the table is an in-depth explanation
 -   Each entity **must** have one of the following lines: `calc`, `warn`, or `crit`.
 -   The `alarm` or `template` line must be the first line of any entity.
 -   A few lines use space-separated lists to define how the entity behaves. You can use `*` as a wildcard or prefix with
-    `!` for a negative match. Order is important, too! See our [simple patterns docs](../libnetdata/simple_pattern/) for
+    `!` for a negative match. Order is important, too! See our [simple patterns docs](/docs/agent/libnetdata/simple_pattern/) for
     more examples.
 
 | line                                                | required        | functionality                                                                         |
@@ -136,7 +135,7 @@ If you create a template using the `disk.io` context, it will apply an alarm to 
 The alarm or template will be used only if the operating system of the host matches this list specified in `os`. The
 value is a space-separated list.
 
-The following example enables the entity on Linux, FreeBSD, and MacOS, but no other operating systems.
+The following example enables the entity on Linux, FreeBSD, and macOS, but no other operating systems.
 
 ```yaml
 os: linux freebsd macos
@@ -159,7 +158,7 @@ hosts: server1 server2 database* !redis3 redis*
 The `families` line, used only alongside templates, filters which families within the context this alarm should apply
 to. The value is a space-separated list.
 
-The value is a space-separate list of simple patterns. See our [simple patterns docs](../libnetdata/simple_pattern/) for
+The value is a space-separate list of simple patterns. See our [simple patterns docs](/docs/agent/libnetdata/simple_pattern/) for
 some examples.
 
 For example, you can create a template on the `disk.io` context, but filter it to only the `sda` and `sdb` families:
@@ -178,7 +177,7 @@ The format is:
 lookup: METHOD AFTER [at BEFORE] [every DURATION] [OPTIONS] [of DIMENSIONS] [foreach DIMENSIONS]
 ```
 
-Everything is the same with [badges](../web/api/badges/). In short:
+Everything is the same with [badges](/docs/agent/web/api/badges/). In short:
 
 -   `METHOD` is one of `average`, `min`, `max`, `sum`, `incremental-sum`.
      This is required.
@@ -381,7 +380,7 @@ good idea to tell Netdata to not clear the notification, by using the `no-clear-
 
 #### Alarm line `host labels`
 
-Defines the list of labels present on a host. See our [host labels tutorial](../docs/tutorials/using-host-labels.md) for
+Defines the list of labels present on a host. See our [host labels tutorial](/docs/agent/tutorials/using-host-labels) for
 an explanation of host labels and how to implement them.
 
 For example, let's suppose that `netdata.conf` is configured with the following labels:
@@ -414,11 +413,11 @@ that will be applied to all hosts installed in the last decade with the followin
 host labels: installed = 201*
 ```
 
-See our [simple patterns docs](../libnetdata/simple_pattern/) for more examples.
+See our [simple patterns docs](/docs/agent/libnetdata/simple_pattern/) for more examples.
 
 ## Expressions
 
-Netdata has an internal [infix expression parser](../libnetdata/eval). This parses expressions and creates an internal
+Netdata has an internal [infix expression parser](/docs/agent/libnetdata/eval). This parses expressions and creates an internal
 structure that allows fast execution of them.
 
 These operators are supported `+`, `-`, `*`, `/`, `<`, `<=`, `<>`, `!=`, `>`, `>=`, `&&`, `||`, `!`, `AND`, `OR`, `NOT`.
@@ -484,15 +483,15 @@ You can find all the variables that can be used for a given chart, using
 `http://your.netdata.ip:19999/api/v1/alarm_variables?chart=CHART_NAME` Example: [variables for the `system.cpu` chart of
 the registry](https://registry.my-netdata.io/api/v1/alarm_variables?chart=system.cpu).
 
-> If you don't know how to find the CHART_NAME, you can read about it [here](../web/README.md#charts).
+> If you don't know how to find the CHART_NAME, you can read about it [here](/docs/agent/web#charts).
 
 Netdata supports 3 internal indexes for variables that will be used in health monitoring.
 
 <details markdown="1"><summary>The variables below can be used in both chart alarms and context templates.</summary>
 
 Although the `alarm_variables` link shows you variables for a particular chart, the same variables can also be used in
-templates for charts belonging to a given [context](../web/README.md#contexts). The reason is that all charts of a given
-context are essentially identical, with the only difference being the [family](../web/README.md#families) that
+templates for charts belonging to a given [context](/docs/agent/web#contexts). The reason is that all charts of a given
+context are essentially identical, with the only difference being the [family](/docs/agent/web#families) that
 identifies a particular hardware or software instance. Charts and templates do not apply to specific families anyway,
 unless if you explicitly limit an alarm with the [alarm line `families`](#alarm-line-families).
 
@@ -744,7 +743,7 @@ Netdata will create alarms for all dimensions of the chart.
 
 ## Troubleshooting
 
-You can compile Netdata with [debugging](../daemon/README.md#debugging) and then set in `netdata.conf`:
+You can compile Netdata with [debugging](/docs/agent/daemon#debugging) and then set in `netdata.conf`:
 
 ```yaml
 [global]
@@ -767,6 +766,6 @@ expression.
 It's currently not possible to schedule notifications from within the alarm template. For those scenarios where you need
 to temporary disable notifications (for instance when running backups triggers a disk alert) you can disable or silence
 notifications are runtime. The health checks can be controlled at runtime via the [health management
-api](../web/api/health/).
+api](/docs/agent/web/api/health/).
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fhealth%2Freference%2F&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

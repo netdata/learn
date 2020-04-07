@@ -1,4 +1,9 @@
-# Install Netdata on Alpine 3.x
+---
+title: "Install Netdata on Alpine 3.x"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/alpine.md
+---
+
+
 
 Execute these commands to install Netdata in Alpine Linux 3.x:
 

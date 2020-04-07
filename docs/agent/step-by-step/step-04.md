@@ -1,4 +1,10 @@
-# Step 4. The basics of configuring Netdata
+---
+title: "Step 4. The basics of configuring Netdata"
+date: 2020-03-31
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-04.md
+---
+
+
 
 Welcome to the fourth step of the Netdata tutorial.
 
@@ -37,7 +43,7 @@ In the system represented by the screenshot, the line reads: `config directory =
 `netdata.conf`, and all the other configuration files, can be found at `/etc/netdata`.
 
 > For more details on where your Netdata config directory is, take a look at our [installation
-> instructions](../../packaging/installer/).
+> instructions](/docs/packaging/installer/).
 
 For the rest of this tutorial, we'll assume you're editing files or running scripts from _within_ your **Netdata
 configuration directory**.
@@ -54,7 +60,7 @@ an example file to your Netdata config directory and then allow you to edit it b
 > change permanent](https://stackoverflow.com/questions/13046624/how-to-permanently-export-a-variable-in-linux).
 
 Let's give it a shot. Navigate to your Netdata config directory. To use `edit-config` on `netdata.conf`, you need to
-have permissions to edit the file. On Linux/MacOS systems, you can usually use `sudo` to elevate your permissions.
+have permissions to edit the file. On Linux/macOS systems, you can usually use `sudo` to elevate your permissions.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different as found in the steps above
@@ -90,7 +96,7 @@ section and give it the value of `1`.
 ```
 
 Restart Netdata with `service restart netdata` or the [appropriate
-alternative](../getting-started.md#start-stop-and-restart-netdata) for your system.
+alternative](/docs/agent/getting-started#start-stop-and-restart-netdata) for your system.
 
 Now, open up your browser and navigate to `http://HOST:19999/netdata.conf`. You'll see that Netdata has recognized
 that our fake option isn't valid and added a notice that Netdata will ignore it.
@@ -100,7 +106,7 @@ Here's the process in GIF form!
 ![Animated GIF of creating a fake option in
 netdata.conf](https://user-images.githubusercontent.com/1153921/65470254-4422e200-de1f-11e9-9597-a97c89ee59b8.gif)
 
-Now, let's make a slightly more substantial edit to `netdata.conf`—change the agent's name.
+Now, let's make a slightly more substantial edit to `netdata.conf`âchange the agent's name.
 
 If you edit the value of the `hostname` option, you can change the name of your Netdata agent on the dashboard and a
 handful of other places, like the **My nodes** menu.
@@ -118,8 +124,8 @@ Once you're done, restart Netdata and refresh the dashboard. Say hello to your r
 netdata.conf](https://user-images.githubusercontent.com/1153921/65470784-86e5b980-de21-11e9-87bf-fabec7989738.gif)
 
 Netdata has dozens upon dozens of options you can change. To see them all, read our [daemon
-configuration](../../daemon/config/), or hop into our popular tutorial on [increasing long-term metrics
-storage](../tutorials/longer-metrics-storage.md).
+configuration](/docs/daemon/config/), or hop into our popular tutorial on [increasing long-term metrics
+storage](/docs/agent/tutorials/longer-metrics-storage).
 
 ## What's next?
 
@@ -133,4 +139,4 @@ In the next step, we're going to cover one of Netdata's core functions: monitori
 and notifications. You'll learn how to disable alarms, create new ones, and push notifications to the system of your
 choosing.
 
-[Next: Health monitoring alarms and notifications &rarr;](step-05.md)
+[Next: Health monitoring alarms and notifications &rarr;](/docs/agent/step-by-step/step-05)

@@ -1,4 +1,9 @@
-# Running Netdata behind Nginx
+---
+title: "Running Netdata behind Nginx"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/Running-behind-nginx.md
+---
+
+
 
 ## Intro
 
@@ -22,7 +27,7 @@ All Nginx configurations can be found in the `/etc/nginx/` directory. The main c
 
 Configuration options in Nginx are known as directives. Directives are organized into groups known as blocks or contexts. The two terms can be used interchangeably.
 
-Depending on your installation source, you’ll find an example configuration file at `/etc/nginx/conf.d/default.conf` or `etc/nginx/sites-enabled/default`, in some cases you may have to manually create the `sites-available` and `sites-enabled` directories. 
+Depending on your installation source, youâll find an example configuration file at `/etc/nginx/conf.d/default.conf` or `etc/nginx/sites-enabled/default`, in some cases you may have to manually create the `sites-available` and `sites-enabled` directories. 
 
 You can edit the Nginx configuration file with Nano, Vim or any other text editors you are comfortable with.
 
@@ -158,14 +163,14 @@ Using the above, you access Netdata on the backend servers, like this:
 
 ### Encrypt the communication between Nginx and Netdata
 
-In case Netdata's web server has been [configured to use TLS](../web/server/#enabling-tls-support), it is necessary to specify inside the Nginx configuration that the final destination is using TLS. To do this, please, append the following parameters in your `nginx.conf`
+In case Netdata's web server has been [configured to use TLS](/docs/web/server/#enabling-tls-support), it is necessary to specify inside the Nginx configuration that the final destination is using TLS. To do this, please, append the following parameters in your `nginx.conf`
 
 ```conf
 proxy_set_header X-Forwarded-Proto https;
 proxy_pass https://localhost:19999;
 ```
 
-Optionally it is also possible to [enable TLS/SSL on Nginx](http://nginx.org/en/docs/http/configuring_https_servers.html), this way the user will encrypt not only the communication between Nginx and Netdata but also between the user and Nginx.
+Optionally it is also possible to [enable TLS/SSL on Nginx](http://nginx.org/en/http/configuring_https_servers.html), this way the user will encrypt not only the communication between Nginx and Netdata but also between the user and Nginx.
 
 If Nginx is not configured as described here, you will probably receive the error `SSL_ERROR_RX_RECORD_TOO_LONG`.
 
@@ -231,7 +236,7 @@ If your Nginx server is not on localhost, you can set:
 
 *note: Netdata v1.9+ support `allow connections from`*
 
-`allow connections from` accepts [Netdata simple patterns](../libnetdata/simple_pattern/) to match against the connection IP address.
+`allow connections from` accepts [Netdata simple patterns](/docs/libnetdata/simple_pattern/) to match against the connection IP address.
 
 ## Prevent the double access.log
 
@@ -253,4 +258,4 @@ If you get an 502 Bad Gateway error you might check your Nginx error log:
 
 If you see something like the above, chances are high that SELinux prevents nginx from connecting to the backend server. To fix that, just use this policy: `setsebool -P httpd_can_network_connect true`.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2FRunning-behind-nginx&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

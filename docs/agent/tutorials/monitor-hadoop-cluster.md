@@ -1,25 +1,30 @@
-# Monitor a Hadoop cluster with Netdata
+---
+title: "Monitor a Hadoop cluster with Netdata"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/tutorials/monitor-hadoop-cluster.md
+---
+
+
 
 Hadoop is an [Apache project](https://hadoop.apache.org/) is a framework for processing large sets of data across a
 distributed cluster of systems.
 
 And while Hadoop is designed to be a highly-available and fault-tolerant service, those who operate a Hadoop cluster
 will want to monitor the health and performance of their [Hadoop Distributed File System
-(HDFS)](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) and [Zookeeper](https://zookeeper.apache.org/)
+(HDFS)](https://hadoop.apache.org/r1.2.1/hdfs_design.html) and [Zookeeper](https://zookeeper.apache.org/)
 implementations.
 
 Netdata comes with built-in and pre-configured support for monitoring both HDFS and Zookeeper.
 
 This tutorial assumes you have a Hadoop cluster, with HDFS and Zookeeper, running already. If you don't, please follow
 the [official Hadoop
-instructions](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html) or an
+instructions](http://hadoop.apache.org/stable/hadoop-project-dist/hadoop-common/SingleCluster.html) or an
 alternative, like the guide available from
 [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-18-04).
 
 For more specifics on the collection modules used in this tutorial, read the respective pages in our documentation:
 
--   [HDFS](../../collectors/go.d.plugin/modules/hdfs/README.md)
--   [Zookeeper](../../collectors/go.d.plugin/modules/zookeeper/README.md)
+-   [HDFS](/docs/collectors/go.d.plugin/modules/hdfs)
+-   [Zookeeper](/docs/collectors/go.d.plugin/modules/zookeeper)
 
 ## Set up your HDFS and Zookeeper installations
 
@@ -163,7 +168,7 @@ sudo service restart netdata
 ```
 
 Upon restart, Netdata should recognize your HDFS/Zookeeper servers, enable the HDFS and Zookeeper modules, and begin
-showing real-time metrics for both in your Netdata dashboard. 🎉
+showing real-time metrics for both in your Netdata dashboard. ð
 
 ## Configuring HDFS and Zookeeper alarms
 
@@ -181,7 +186,7 @@ sudo /etc/netdata/edit-config health.d/zookeeper.conf
 ```
 
 For more information about editing the defaults or writing new alarm entities, see our [health monitoring
-documentation](../../health/README.md).
+documentation](/docs/health).
 
 ## What's next?
 
@@ -196,4 +201,4 @@ issue](https://github.com/netdata/netdata/issues/new?labels=bug%2C+needs+triage&
     file](https://github.com/netdata/go.d.plugin/blob/master/config/go.d/zookeeper.conf) to understand how to configure
     global options or per-job options, timeouts, TLS certificates, and more.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Ftutorials%2Fmonitor-hadoop-cluster&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

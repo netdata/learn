@@ -1,21 +1,26 @@
-# Netdata Cloud
+---
+title: "Netdata Cloud"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md
+---
+
+
 
 Netdata Cloud is core to our ongoing mission to provide real-time, distributed health monitoring and performance troubleshooting. It's the foundation of an ecosystem of tools that will help you build more extraordinary infrastructures.
 
-Netdata Cloud is also the next iteration of our global Netdata registry. For technical information about how our registries work, what information they store, and how your web browser "talks" to both, visit our [registry documentation](../../registry).
+Netdata Cloud is also the next iteration of our global Netdata registry. For technical information about how our registries work, what information they store, and how your web browser "talks" to both, visit our [registry documentation](/docs/registry).
 
 Learn more about the future of Netdata Cloud on our [announcement post](https://blog.netdata.cloud/posts/netdata-cloud-announcement/).
 
 ## Registering for or signing in to Netdata Cloud
 
-**If you're ready to register for a new Netdata Cloud account, or sign in to your existing Netdata Cloud account, visit our [signing in guide](signing-in.md) for details.**
+**If you're ready to register for a new Netdata Cloud account, or sign in to your existing Netdata Cloud account, visit our [signing in guide](/docs/agent/signing-in) for details.**
 
 !!! attention "Private registries and Netdata Cloud"
-    If you're running a private registry and are interested in trying out Netdata Cloud as a replacement for your private registry, read [our notice](signing-in.md#private-registries-and-netdata-cloud) about transitioning from a private registry to our Netdata Cloud registry.
+    If you're running a private registry and are interested in trying out Netdata Cloud as a replacement for your private registry, read [our notice](/docs/agent/signing-in#private-registries-and-netdata-cloud) about transitioning from a private registry to our Netdata Cloud registry.
 
 ## Netdata Cloud features
 
-Netdata Cloud currently enables two features: the **My nodes** in the top-left corner of the Netdata dashboard, and the [**Nodes View**](nodes-view.md).
+Netdata Cloud currently enables two features: the **My nodes** in the top-left corner of the Netdata dashboard, and the [**Nodes View**](/docs/agent/nodes-view).
 
 We have an aggressive roadmap of new features, such as Workspaces for different parts of your infrastructure, Rooms to collaborate with colleagues, and the ability to receive alarms from any number of distributed Netdata agents in a single place. Read more about our proposed features [here](https://blog.netdata.cloud/posts/netdata-cloud-announcement/#what-features-will-netdata-cloud-offer).
 
@@ -37,10 +42,10 @@ Again, we expect that the vast majority of Netdata's users won't need these feat
 
 ## Running Netdata without Netdata Cloud
 
-Netdata Cloud is entirely optional. The application will never force you to create a Netdata Cloud account or associate nodes with the public registries. But, if you choose not to use Netdata Cloud, you will be missing out on the [Nodes View](nodes-view.md) and other upcoming features.
+Netdata Cloud is entirely optional. The application will never force you to create a Netdata Cloud account or associate nodes with the public registries. But, if you choose not to use Netdata Cloud, you will be missing out on the [Nodes View](/docs/agent/nodes-view) and other upcoming features.
 
 ## Running Netdata Cloud on-premises or as a hosted instance
 
-We plan on making both on-premises and hosted instances of Netdata Cloud available to enterprises. Until then, we are creating a list of people and businesses interested in either of these options. To add yourself or your organization to this list, email us at [info@netdata.cloud](mailto:info@netdata.cloud).
+We plan on making both on-premises and hosted instances of Netdata Cloud available to enterprises. Until then, we are creating a list of people and businesses interested in either of these options. To add yourself or your organization to this list, email us at [info@netdata.cloud](/docs/agent/mailto:info@netdata.cloud).
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdocs%2Fnetdata-cloud%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

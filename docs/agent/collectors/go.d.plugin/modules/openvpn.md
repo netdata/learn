@@ -1,4 +1,4 @@
-# OpenVPN monitoring with Netdata
+
 
 [`OpenVPN`](https://openvpn.net/) is an open-source commercial software that implements virtual private network techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.
 
@@ -30,7 +30,7 @@ Reason:
 We disabled it to not break other tools which uses `Management Interface`.
 
 Edit the `go.d/openvpn.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

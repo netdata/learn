@@ -1,4 +1,9 @@
-# Registry
+---
+title: "Registry"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/registry/README.md
+---
+
+
 
 The Netdata registry implements the node menu on the top left corner of the Netdata dashboards and enables the Netdata
 cloud features, such as the node view. The node menu lists the Netdata servers you have visited. The node view offers a
@@ -140,7 +145,7 @@ Netdata v1.9+ support limiting access to the registry from given IPs, like this:
     allow from = *
 ```
 
-`allow from` settings are [Netdata simple patterns](../libnetdata/simple_pattern/): string matches that use `*` as
+`allow from` settings are [Netdata simple patterns](/docs/libnetdata/simple_pattern/): string matches that use `*` as
 wildcard (any number of times) and a `!` prefix for a negative match. So: `allow from = !10.1.2.3 10.*` will allow all
 IPs in `10.*` except `10.1.2.3`. The order is important: left to right, the first positive or negative match is used.
 
@@ -206,4 +211,4 @@ ERROR 409: Cannot ACCESS netdata registry: https://registry.my-netdata.io respon
 
 This error is printed on your web browser console (press F12 on your browser to see it).
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fregistry%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

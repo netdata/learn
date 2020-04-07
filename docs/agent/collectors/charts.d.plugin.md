@@ -1,4 +1,9 @@
-# charts.d.plugin
+---
+title: "charts.d.plugin"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/README.md
+---
+
+
 
 `charts.d.plugin` is a Netdata external plugin. It is an **orchestrator** for data collection modules written in `BASH` v4+.
 
@@ -55,11 +60,11 @@ For a module called `X`, the following criteria must be met:
          the collector cannot be used).
 
     -   `X_create()` - creates the Netdata charts, following the standard Netdata plugin guides as described in
-         **[External Plugins](../plugins.d/)** (commands `CHART` and `DIMENSION`).
+         **[External Plugins](/docs/agent/plugins.d/)** (commands `CHART` and `DIMENSION`).
          The return value does matter: 0 = OK, 1 = FAILED.
 
     -   `X_update()` - collects the values for the defined charts, following the standard Netdata plugin guides
-         as described in **[External Plugins](../plugins.d/)** (commands `BEGIN`, `SET`, `END`).
+         as described in **[External Plugins](/docs/agent/plugins.d/)** (commands `BEGIN`, `SET`, `END`).
          The return value also matters: 0 = OK, 1 = FAILED.
 
 5.  The following global variables are available to be set:
@@ -67,7 +72,7 @@ For a module called `X`, the following criteria must be met:
 
 The module script may use more functions or variables. But all of them must begin with `X_`.
 
-The standard Netdata plugin variables are also available (check **[External Plugins](../plugins.d/)**). 
+The standard Netdata plugin variables are also available (check **[External Plugins](/docs/agent/plugins.d/)**). 
 
 ### X_check()
 
@@ -81,7 +86,7 @@ connect to a local mysql database to find out if it can read the values it needs
 ### X_create()
 
 The purpose of the BASH function `X_create()` is to create the charts and dimensions using the standard Netdata
-plugin guides (**[External Plugins](../plugins.d/)**).
+plugin guides (**[External Plugins](/docs/agent/plugins.d/)**).
 
 `X_create()` will be called just once and only after `X_check()` was successful.
 You can however call it yourself when there is need for it (for example to add a new dimension to an existing chart).
@@ -91,7 +96,7 @@ A non-zero return value will disable the collector.
 ### X_update()
 
 `X_update()` will be called repeatedly every `X_update_every` seconds, to collect new values and send them to Netdata,
-following the Netdata plugin guides (**[External Plugins](../plugins.d/)**).
+following the Netdata plugin guides (**[External Plugins](/docs/agent/plugins.d/)**).
 
 The function will be called with one parameter: microseconds since the last time it was run. This value should be
 appended to the `BEGIN` statement of every chart updated by the collector script.
@@ -190,4 +195,4 @@ This is what you need to do:
 Execute the above in this order, since Netdata will (by default) attempt to start new plugins soon after they are
 created in `/usr/libexec/netdata/plugins.d/`.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fcollectors%2Fcharts.d.plugin%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

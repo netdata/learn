@@ -1,4 +1,9 @@
-# External plugins overview
+---
+title: "External plugins overview"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/plugins.d/README.md
+---
+
+
 
 `plugins.d` is the Netdata internal plugin that collects metrics
 from external processes, thus allowing Netdata to use **external plugins**.
@@ -7,18 +12,18 @@ from external processes, thus allowing Netdata to use **external plugins**.
 
 |plugin|language|O/S|description|
 |:----:|:------:|:-:|:----------|
-|[apps.plugin](../apps.plugin/)|`C`|linux, freebsd|monitors the whole process tree on Linux and FreeBSD and breaks down system resource usage by **process**, **user** and **user group**.|
-|[charts.d.plugin](../charts.d.plugin/)|`BASH`|all|a **plugin orchestrator** for data collection modules written in `BASH` v4+.|
-|[cups.plugin](../cups.plugin/)|`C`|all|monitors **CUPS**|
-|[fping.plugin](../fping.plugin/)|`C`|all|measures network latency, jitter and packet loss between the monitored node and any number of remote network end points.|
-|[ioping.plugin](../ioping.plugin/)|`C`|all|measures disk latency.|
-|[freeipmi.plugin](../freeipmi.plugin/)|`C`|linux|collects metrics from enterprise hardware sensors, on Linux servers.|
-|[nfacct.plugin](../nfacct.plugin/)|`C`|linux|collects netfilter firewall, connection tracker and accounting metrics using `libmnl` and `libnetfilter_acct`.|
-|[xenstat.plugin](../xenstat.plugin/)|`C`|linux|collects XenServer and XCP-ng metrics using `lxenstat`.|
-|[perf.plugin](../perf.plugin/)|`C`|linux|collects CPU performance metrics using performance monitoring units (PMU).|
-|[node.d.plugin](../node.d.plugin/)|`node.js`|all|a **plugin orchestrator** for data collection modules written in `node.js`.|
-|[python.d.plugin](../python.d.plugin/)|`python`|all|a **plugin orchestrator** for data collection modules written in `python` v2 or v3 (both are supported).|
-|[slabinfo.plugin](../slabinfo.plugin/)|`C`|linux|collects kernel internal cache objects (SLAB) metrics.|
+|[apps.plugin](/docs/agent/apps.plugin/)|`C`|linux, freebsd|monitors the whole process tree on Linux and FreeBSD and breaks down system resource usage by **process**, **user** and **user group**.|
+|[charts.d.plugin](/docs/agent/charts.d.plugin/)|`BASH`|all|a **plugin orchestrator** for data collection modules written in `BASH` v4+.|
+|[cups.plugin](/docs/agent/cups.plugin/)|`C`|all|monitors **CUPS**|
+|[fping.plugin](/docs/agent/fping.plugin/)|`C`|all|measures network latency, jitter and packet loss between the monitored node and any number of remote network end points.|
+|[ioping.plugin](/docs/agent/ioping.plugin/)|`C`|all|measures disk latency.|
+|[freeipmi.plugin](/docs/agent/freeipmi.plugin/)|`C`|linux|collects metrics from enterprise hardware sensors, on Linux servers.|
+|[nfacct.plugin](/docs/agent/nfacct.plugin/)|`C`|linux|collects netfilter firewall, connection tracker and accounting metrics using `libmnl` and `libnetfilter_acct`.|
+|[xenstat.plugin](/docs/agent/xenstat.plugin/)|`C`|linux|collects XenServer and XCP-ng metrics using `lxenstat`.|
+|[perf.plugin](/docs/agent/perf.plugin/)|`C`|linux|collects CPU performance metrics using performance monitoring units (PMU).|
+|[node.d.plugin](/docs/agent/node.d.plugin/)|`node.js`|all|a **plugin orchestrator** for data collection modules written in `node.js`.|
+|[python.d.plugin](/docs/agent/python.d.plugin/)|`python`|all|a **plugin orchestrator** for data collection modules written in `python` v2 or v3 (both are supported).|
+|[slabinfo.plugin](/docs/agent/slabinfo.plugin/)|`C`|linux|collects kernel internal cache objects (SLAB) metrics.|
 
 Plugin orchestrators may also be described as **modular plugins**. They are modular since they accept custom made modules to be included. Writing modules for these plugins is easier than accessing the native Netdata API directly. You will find modules already available for each orchestrator under the directory of the particular modular plugin (e.g. under python.d.plugin for the python orchestrator).
 Each of these modular plugins has each own methods for defining modules. Please check the examples and their documentation.
@@ -378,15 +383,15 @@ or do not output the line at all.
 
 ## Modular Plugins
 
-1.  **python**, use `python.d.plugin`, there are many examples in the [python.d directory](../python.d.plugin/)
+1.  **python**, use `python.d.plugin`, there are many examples in the [python.d directory](/docs/agent/python.d.plugin/)
 
     python is ideal for Netdata plugins. It is a simple, yet powerful way to collect data, it has a very small memory footprint, although it is not the most CPU efficient way to do it.
 
-2.  **node.js**, use `node.d.plugin`, there are a few examples in the [node.d directory](../node.d.plugin/)
+2.  **node.js**, use `node.d.plugin`, there are a few examples in the [node.d directory](/docs/agent/node.d.plugin/)
 
     node.js is the fastest scripting language for collecting data. If your plugin needs to do a lot of work, compute values, etc, node.js is probably the best choice before moving to compiled code. Keep in mind though that node.js is not memory efficient; it will probably need more RAM compared to python.
 
-3.  **BASH**, use `charts.d.plugin`, there are many examples in the [charts.d directory](../charts.d.plugin/)
+3.  **BASH**, use `charts.d.plugin`, there are many examples in the [charts.d directory](/docs/agent/charts.d.plugin/)
 
     BASH is the simplest scripting language for collecting values. It is the less efficient though in terms of CPU resources. You can use it to collect data quickly, but extensive use of it might use a lot of system resources.
 
@@ -473,4 +478,4 @@ There are a few rules for writing plugins properly:
 
 4.  If possible, try to autodetect if your plugin should be enabled, without any configuration.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fcollectors%2Fplugins.d%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

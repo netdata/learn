@@ -1,4 +1,9 @@
-# Contributing
+---
+title: "Contributing"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/CONTRIBUTING.md
+---
+
+
 
 Thank you for considering contributing to Netdata.
 
@@ -41,7 +46,7 @@ Netdata is all about simplicity and meaningful presentation. A "sponsor" for a c
 
 #### Sponsor a backend
 
-We already support various [backends](backends) and we intend to support more. A "sponsor" for a backend: 
+We already support various [backends](/docs/agent/backends) and we intend to support more. A "sponsor" for a backend: 
 
 -   Suggests ways in which the information in Netdata could best be exposed to the particular backend, to facilitate meaningful presentation.
 -   When the implementation passes QA, tests the implementation in production.
@@ -50,7 +55,7 @@ We already support various [backends](backends) and we intend to support more. A
 
 #### Sponsor a notification method
 
-Netdata delivers alarms via various [notification methods](health/notifications). A "sponsor" for a notification method:
+Netdata delivers alarms via various [notification methods](/docs/agent/health/notifications). A "sponsor" for a notification method:
 
 -   Points the devs to the documentation for the API and identifies any unusual features of interest (e.g. the ability in Slack to send a notification either to a channel or to a user). 
 -   Uses the notification method in production and provides feedback.
@@ -68,15 +73,15 @@ Our documentation is in need of constant improvement and expansion. As Netdata's
 
 We also need to produce beginner-level tutorials on using Netdata to monitor common applications, web servers, and more.
 
-Start with the [guide for contributing to documentation](docs/contributing/contributing-documentation.md), and then review the [documentation style guide](docs/contributing/style-guide.md) for specifics on how we write our documentation.
+Start with the [guide for contributing to documentation](/docs/agent/contributing/contributing-documentation), and then review the [documentation style guide](/docs/agent/contributing/style-guide) for specifics on how we write our documentation.
 
 Don't be afraid to submit a pull request with your corrections or additions! We need a lot of help and are willing to guide new contributors through the process.
 
 ## Developers
 
-We expect most contributions to be for new data collection plugins. You can read about how external plugins work [here](collectors/plugins.d/). Additional instructions are available for [Node.js plugins](collectors/node.d.plugin) and [Python plugins](collectors/python.d.plugin).
+We expect most contributions to be for new data collection plugins. You can read about how external plugins work [here](/docs/agent/collectors/plugins.d/). Additional instructions are available for [Node.js plugins](/docs/agent/collectors/node.d.plugin) and [Python plugins](/docs/agent/collectors/python.d.plugin).
 
-Of course we appreciate contributions for any other part of the NetData agent, including the [daemon](daemon), [backends for long term archiving](backends/), innovative ways of using the [REST API](web/api) to create cool [Custom Dashboards](web/gui/custom/) or to include NetData charts in other applications, similarly to what can be done with [Confluence](web/gui/confluence/).
+Of course we appreciate contributions for any other part of the NetData agent, including the [daemon](/docs/agent/daemon), [backends for long term archiving](/docs/agent/backends/), innovative ways of using the [REST API](/docs/agent/web/api) to create cool [Custom Dashboards](/docs/agent/web/gui/custom/) or to include NetData charts in other applications, similarly to what can be done with [Confluence](/docs/agent/web/gui/confluence/).
 
 If you are working on the C source code please be aware that we have a standard build configuration that we use. This
 is meant to keep the source tree clean and free of warnings. When you are preparing to work on the code:
@@ -112,7 +117,7 @@ across most of our code-base, but we prefer new contributions that match the lin
 
 #### Code of Conduct and CLA
 
-We expect all contributors to abide by the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](CONTRIBUTORS.md), as part of the PR process.
+We expect all contributors to abide by the [Contributor Covenant Code of Conduct](/docs/agent/code_of_conduct). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/docs/agent/contributors), as part of the PR process.
 
 #### Performance and efficiency
 
@@ -191,6 +196,13 @@ Improvements must have the title "[Area or module] : [Added/Refactored/Improved/
 
 New collectors must have the title "[New collector] : [Name of collector]".
 
+#### Commit messages when PRs are merged
+
+When a PR gets squashed and merged into master, the title of the commit message (first line) must be the PR title
+followed by the PR number.
+
+The body of the commit message should be a short description of the work, preferably taken from the connected issue.
+
 ### PR approval process
 
 Each PR automatically [requires a review](https://help.github.com/articles/about-required-reviews-for-pull-requests/) from the code owners specified in `.github/CODEOWNERS`. Depending on the files contained in your PR, several people may be need to approve it.
@@ -199,4 +211,4 @@ We also have a series of automated checks running, such as linters to check code
 
 One special type of automated check is the "WIP" check. You may add "[WIP]" to the title of the PR, to tell us that the particular request is "Work In Progress" and should not be merged. You're still not done with it, you created it to get some feedback. When you're ready to get the final approvals and get it merged, just remove the "[WIP]" string from the title of your PR and the "WIP" check will pass.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2FCONTRIBUTING&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

@@ -1,8 +1,13 @@
-# Telegram
+---
+title: "Telegram"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/telegram/README.md
+---
 
-[Telegram](https://telegram.org/) is a messaging app with a focus on speed and security, it’s super-fast, simple and free. You can use Telegram on all your devices at the same time — your messages sync seamlessly across any number of your phones, tablets or computers.
 
-With Telegram, you can send messages, photos, videos and files of any type (doc, zip, mp3, etc), as well as create groups for up to 100,000 people or channels for broadcasting to unlimited audiences. You can write to your phone contacts and find people by their usernames. As a result, Telegram is like SMS and email combined — and can take care of all your personal or business messaging needs.
+
+[Telegram](https://telegram.org/) is a messaging app with a focus on speed and security, itâs super-fast, simple and free. You can use Telegram on all your devices at the same time â your messages sync seamlessly across any number of your phones, tablets or computers.
+
+With Telegram, you can send messages, photos, videos and files of any type (doc, zip, mp3, etc), as well as create groups for up to 100,000 people or channels for broadcasting to unlimited audiences. You can write to your phone contacts and find people by their usernames. As a result, Telegram is like SMS and email combined â and can take care of all your personal or business messaging needs.
 
 Netdata will send warning messages without vibration.
 
@@ -37,4 +42,4 @@ Telegram messages look like this:
 
 ![Netdata notifications via Telegram](https://user-images.githubusercontent.com/1153921/66612223-f07dfb80-eb75-11e9-976f-5734ffd93ecd.png)
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fhealth%2Fnotifications%2Ftelegram%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

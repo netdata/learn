@@ -1,4 +1,9 @@
-# Atlassian Confluence dashboards
+---
+title: "Atlassian Confluence dashboards"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/web/gui/confluence/README.md
+---
+
+
 
 With Netdata you can build **live, interactive, monitoring dashboards** directly on Atlassian's **Confluence** pages.
 
@@ -78,7 +83,7 @@ Hit **update** and you will get this:
 
 This badge is now auto-refreshing. It will update itself based on the update frequency of the alarm.
 
-> Keep in mind you can add badges with custom Netdata queries too. Netdata automatically creates badges for all the alarms, but every chart, every dimension on every chart, can be used for a badge. And Netdata badges are quite powerful! Check [Creating Badges](../../api/badges/) for more information on badges.
+> Keep in mind you can add badges with custom Netdata queries too. Netdata automatically creates badges for all the alarms, but every chart, every dimension on every chart, can be used for a badge. And Netdata badges are quite powerful! Check [Creating Badges](/docs/agent/api/badges/) for more information on badges.
 
 So, let's create a table and add this badge for both our web servers:
 
@@ -1009,4 +1014,4 @@ NETDATA.options.current.eliminate_zero_dimensions = false;
 </div>
 ```
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fweb%2Fgui%2Fconfluence%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

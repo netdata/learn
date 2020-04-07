@@ -1,4 +1,9 @@
-# Spring Boot2 monitoring with Netdata
+---
+title: "Spring Boot2 monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/springboot/README.md
+---
+
+
 
 Monitors one or more Java Spring-boot applications depending on configuration.
 Netdata can be used to monitor running Java [Spring Boot](https://spring.io/) applications that expose their metrics with the use of the **Spring Boot Actuator** included in Spring Boot library.
@@ -63,7 +68,7 @@ public class HeapPoolMetrics implements PublicMetrics {
 }
 ```
 
-Please refer [Spring Boot Actuator: Production-ready Features](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready) and [81. Actuator - Part IX. ‘How-to’ guides](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-actuator) for more information.
+Please refer [Spring Boot Actuator: Production-ready Features](https://docs.spring.io/spring-boot/current/reference/html/production-ready-features.html#production-ready) and [81. Actuator - Part IX. âHow-toâ guides](https://docs.spring.io/spring-boot/current/reference/html/howto.html#howto-actuator) for more information.
 
 ## Charts
 
@@ -95,7 +100,7 @@ Please refer [Spring Boot Actuator: Production-ready Features](https://docs.spri
 ## Usage
 
 Edit the `python.d/springboot.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different
@@ -132,6 +137,6 @@ You can disable the default charts by set `defaults.<chart-id>: false`.
 
 The dimension name of extras charts should replace `.` to `_`.
 
-Please check [springboot.conf](springboot.conf) for more examples.
+Please check [springboot.conf](/docs/agent/collectors/python.d.plugin/springboot.conf) for more examples.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fcollectors%2Fpython.d.plugin%2Fspringboot%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

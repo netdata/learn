@@ -1,9 +1,14 @@
-# Redistributed software
+---
+title: "Redistributed software"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md
+---
+
+
 
 Netdata copyright info:
  Copyright 2016-2018, Costa Tsaousis.
  Copyright 2018, Netdata Inc.
- Released under [GPL v3 or later](LICENSE).
+ Released under [GPL v3 or later](/docs/agent/license).
 
 Netdata uses SPDX license tags to identify the license for its files.
 Individual licenses referenced in the tags are available on the [SPDX project site](http://spdx.org/licenses/).
@@ -48,7 +53,7 @@ connectivity is not available.
       Copyright 2013, Olly Smith
       [Simplified BSD License](http://morrisjs.github.io/morris.js/)
 
--   [Raphaël](http://dmitrybaranovskiy.github.io/raphael/)
+-   [RaphaÃ«l](http://dmitrybaranovskiy.github.io/raphael/)
 
       Copyright 2008, Dmitry Baranovskiy
       [MIT License](http://dmitrybaranovskiy.github.io/raphael/license.html)
@@ -85,7 +90,7 @@ connectivity is not available.
 
 -   [bootstrap-table](http://bootstrap-table.wenzhixin.net.cn/)
 
-      Copyright (c) 2012-2016 Zhixin Wen [wenzhixin2010@gmail.com](mailto:wenzhixin2010@gmail.com)
+      Copyright (c) 2012-2016 Zhixin Wen [wenzhixin2010@gmail.com](/docs/agent/mailto:wenzhixin2010@gmail.com)
       [MIT License](https://github.com/wenzhixin/bootstrap-table/blob/master/LICENSE)
 
 -   [tableExport.jquery.plugin](https://github.com/hhurz/tableExport.jquery.plugin)
@@ -156,7 +161,7 @@ connectivity is not available.
       Copyright (c) 2014 Lucas Garron
       [MIT License](https://github.com/lgarron/clipboard-polyfill/blob/master/LICENSE.md)
 
--   [Utilities for writing code that runs on Python 2 and 3](collectors/python.d.plugin/python_modules/urllib3/packages/six.py)
+-   [Utilities for writing code that runs on Python 2 and 3](/docs/agent/collectors/python.d.plugin/python_modules/urllib3/packages/six.py)
 
       Copyright (c) 2010-2015 Benjamin Peterson
       [MIT License](https://github.com/benjaminp/six/blob/master/LICENSE)
@@ -168,7 +173,7 @@ connectivity is not available.
 
 -   [monotonic](https://github.com/atdt/monotonic)
 
-      Copyright 2014, 2015, 2016 Ori Livneh [ori@wikimedia.org](mailto:ori@wikimedia.org)
+      Copyright 2014, 2015, 2016 Ori Livneh [ori@wikimedia.org](/docs/agent/mailto:ori@wikimedia.org)
       [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2FREDISTRIBUTED&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

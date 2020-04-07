@@ -1,8 +1,13 @@
-# alerta.io
+---
+title: "alerta.io"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/alerta/README.md
+---
+
+
 
 The [Alerta](https://alerta.io) monitoring system is a tool used to
 consolidate and de-duplicate alerts from multiple sources for quick
-‘at-a-glance’ visualisation. With just one system you can monitor
+âat-a-glanceâ visualisation. With just one system you can monitor
 alerts from many other monitoring tools on a single screen.
 
 ![](https://docs.alerta.io/en/latest/_images/alerta-screen-shot-3.png)
@@ -85,4 +90,4 @@ that let us test each state one by one will be useful.
 
 For more information see <https://docs.alerta.io>
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fhealth%2Fnotifications%2Falerta%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

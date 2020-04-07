@@ -11,15 +11,17 @@ const MIN_RATE_LIMIT = 50
 // see the README.md for instructions to set up a github access token
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const baseDir = '/docs'
-const outDir = path.join(__dirname, baseDir)
+const agentDir = '/docs/agent'
+const outDir = path.join(__dirname, agentDir)
 // the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
 const retainPaths = [
-  path.join(baseDir, 'introduction.md')
+  path.join(baseDir, 'agent.md'),
+  path.join(baseDir, 'cloud.md')
 ]
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/netdata/',
+  baseURL: 'https://api.github.com/repos/joelhans/',
   headers: {
     'Authorization': `token ${GITHUB_TOKEN}`
   }
@@ -40,6 +42,11 @@ async function getRateLimit() {
     resetSeconds,
     resetMinutes
   }
+}
+
+async function getForkSha(repo = 'netdata', branch = 'link-sanitize') {
+  const { data: { commit: { sha } } } = await ax.get(`${repo}/branches/${branch}`)
+  return sha
 }
 
 async function getRootSha(repo = 'netdata', branch = 'master') {
@@ -100,6 +107,13 @@ function normalizeLinks(pages) {
       // skip the whole process if a relative anchor
       if (url.startsWith('#') || url.startsWith('http')) return `](${url})`
 
+      // if the link is already a absolute-relative
+      if (url.startsWith('/')) {
+        console.log(`catch abs-rel! ${url}`)
+        const withAgentUrl = path.join(agentDir, url)
+        return `](${withAgentUrl})`
+      }
+
       // // anchors should include the entire path
       // const dir =
       //   ? path.join(tokens.dir, tokens.name, tokens.ext)
@@ -108,7 +122,7 @@ function normalizeLinks(pages) {
       // ignore absolute urls and external links
       const normalizedUrl = url.startsWith('http')
         ? url
-        : path.join('/', baseDir, tokens.dir, url).toLowerCase()
+        : path.join('/', agentDir, '/', tokens.dir, url).toLowerCase()
 
       // ensure relative URLs did not go back too far, excluding /docs
       const withBaseUrl = normalizedUrl.startsWith(baseDir)
@@ -253,7 +267,7 @@ async function ingest() {
   }
 
   console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getRootSha('netdata')
+  const rootSha = await getForkSha('netdata')
   console.log(`Fetching nodes from 'netdata' repo...`)
   const nodes = await getNodes(rootSha)
 
@@ -318,14 +332,14 @@ async function ingest() {
   retainPaths.map(f => console.log(`  ${f}`))
   const retainedFiles = await retainFiles(retainPaths)
 
-  console.log('Clearing', baseDir)
-  await clearDir(`.${baseDir}`)
+  console.log('Clearing', agentDir)
+  await clearDir(`.${agentDir}`)
 
   console.log('Restoring files...')
   retainedFiles.map(([p]) => console.log(`  ${p}`))
   await restoreFiles(retainedFiles)
 
-  console.log(`Writing ${beautifiedPages.length} to ${baseDir}`)
+  console.log(`Writing ${beautifiedPages.length} to ${agentDir}`)
   const writeStartTime = new Date()
 
   await writePages(beautifiedPages)

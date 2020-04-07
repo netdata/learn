@@ -1,4 +1,9 @@
-# Custom dashboards
+---
+title: "Custom dashboards"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/web/gui/custom/README.md
+---
+
+
 
 You can:
 
@@ -12,13 +17,13 @@ You can also add Netdata charts to existing web pages.
 
 Check this **[very simple working example of a custom
 dashboard](http://netdata.firehol.org/demo.html)**, and its **[html
-source](../demo.html)**.
+source](/docs/agent/web/demo.html)**.
 
 You should also look at the [custom dashboard
 template](https://my-netdata.io/dashboard.html), which contains samples of all
-supported charts. The code is [here](../dashboard.html).
+supported charts. The code is [here](/docs/agent/web/dashboard.html).
 
-If you plan to put the dashboard on TV, check out [tv.html](../tv.html). Here's
+If you plan to put the dashboard on TV, check out [tv.html](/docs/agent/web/tv.html). Here's
 is a screenshot of it, monitoring two servers on the same page:
 
 ![image](https://cloud.githubusercontent.com/assets/2662304/14252187/d8d5f78e-fa8e-11e5-990d-99821d38c874.png)
@@ -43,19 +48,21 @@ header:
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Your dashboard</title>
+Â Â <title>Your dashboard</title>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+Â Â <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+Â Â <meta charset="utf-8">
+Â Â <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+Â Â <meta name="viewport" content="width=device-width, initial-scale=1">
+Â Â <meta name="apple-mobile-web-app-capable" content="yes">
+Â Â <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+Â Â <!-- here we will add dashboard.js -->
 
 </head>
 <body>
 
+<!-- here we will add charts -->
 
 </body>
 </html>
@@ -293,7 +300,7 @@ Each chart can get data from a different Netdata server. You can specify the Net
 ```
 
 If you have ephemeral monitoring setup ([More info
-here](../../../streaming/#monitoring-ephemeral-nodes)) and have no direct access
+here](/docs/streaming/#monitoring-ephemeral-nodes)) and have no direct access
 to the nodes dashboards, you can use the following:
 
 ```html
@@ -417,7 +424,7 @@ select specific dimensions using this:
 ```
 
 Netdata supports coma (`,`) or pipe (`|`) separated [simple
-patterns](../../../libnetdata/simple_pattern/) for dimensions. By default it
+patterns](/docs/libnetdata/simple_pattern/) for dimensions. By default it
 searches for both dimension IDs and dimension NAMEs. You can control the target
 of the match with: `data-append-options="match-ids"` or
 `data-append-options="match-names"`. Spaces in `data-dimensions=""` are matched
@@ -485,7 +492,7 @@ it, using this:
 
 ### API options
 
-You can append Netdata **[REST API v1](../../api)** data options, using this:
+You can append Netdata **[REST API v1](/docs/agent/api)** data options, using this:
 
 ```html
 <div data-netdata="unique.id"
@@ -642,7 +649,7 @@ to 50.
  data-points="1200"
  data-after="-1200"
  data-dimensions="actual"
- data-units="°C"
+ data-units="Â°C"
  data-easypiechart-max-value="50"
  data-easypiechart-min-value="40"
  data-common-max="netdata-hotwater-max"
@@ -653,4 +660,4 @@ to 50.
 ![hot water
 chart](https://user-images.githubusercontent.com/12159026/28666665-a7d68ad2-72c8-11e7-9a96-f6bf9691b471.png)
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fweb%2Fgui%2Fcustom%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)]()
+

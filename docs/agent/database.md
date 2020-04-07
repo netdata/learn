@@ -1,14 +1,19 @@
-# Database
+---
+title: "Database"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/database/README.md
+---
+
+
 
 Netdata is fully capable of long-term metrics storage, at per-second granularity, via its default database engine
 (`dbengine`). But to remain as flexible as possible, Netdata supports a number of types of metrics storage:
 
-1. `dbengine`, (the default) data are in database files. The [Database Engine](engine/) works like a traditional
+1. `dbengine`, (the default) data are in database files. The [Database Engine](/docs/agent/engine/) works like a traditional
     database. There is some amount of RAM dedicated to data caching and indexing and the rest of the data reside
     compressed on disk. The number of history entries is not fixed in this case, but depends on the configured disk
     space and the effective compression ratio of the data stored. This is the **only mode** that supports changing the
     data collection update frequency (`update_every`) **without losing** the previously stored metrics. For more details
-    see [here](engine/).
+    see [here](/docs/agent/engine/).
 
 2.  `ram`, data are purely in memory. Data are never saved on disk. This mode uses `mmap()` and supports [KSM](#ksm).
 
@@ -53,7 +58,7 @@ seconds. This will **cut in half** both CPU and RAM resources consumed by Netdat
 weak devices you might have to use `update every = 5` and `history = 720` (still 1 hour of data, but 1/5 of the CPU and
 RAM resources).
 
-You can also disable [data collection plugins](../collectors) you don't need. Disabling such plugins will also free both
+You can also disable [data collection plugins](/docs/collectors) you don't need. Disabling such plugins will also free both
 CPU and RAM resources.
 
 ## Running a dedicated central Netdata server
@@ -141,7 +146,7 @@ There is another memory mode to help overcome the memory size problem. What is *
 
 ### dbengine
 
-In this mode, the database of Netdata is stored in database files. The [Database Engine](engine/) works like a
+In this mode, the database of Netdata is stored in database files. The [Database Engine](/docs/agent/engine/) works like a
 traditional database. There is some amount of RAM dedicated to data caching and indexing and the rest of the data reside
 compressed on disk. The number of history entries is not fixed in this case, but depends on the configured disk space
 and the effective compression ratio of the data stored.
@@ -149,7 +154,7 @@ and the effective compression ratio of the data stored.
 We suggest to use **this** mode on nodes that also run other applications. The Database Engine uses direct I/O to avoid
 polluting the OS filesystem caches and does not generate excessive I/O traffic so as to create the minimum possible
 interference with other applications. Using memory mode `dbengine` we can overcome most memory restrictions. For more
-details see [here](engine/).
+details see [here](/docs/agent/engine/).
 
 ## KSM
 
@@ -206,4 +211,4 @@ Netdata will create charts for kernel memory de-duplication performance, like th
 
 ![image](https://cloud.githubusercontent.com/assets/2662304/11998786/eb23ae54-aab6-11e5-94d4-e848e8a5c56a.png)
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fdatabase%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

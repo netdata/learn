@@ -1,4 +1,9 @@
-# Using Netdata with Prometheus
+---
+title: "Using Netdata with Prometheus"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/backends/prometheus/README.md
+---
+
+
 
 > IMPORTANT: the format Netdata sends metrics to prometheus has changed since Netdata v1.7. The new prometheus backend
 > for Netdata supports a lot more features and is aligned to the development of the rest of the Netdata backends.
@@ -12,7 +17,7 @@ are starting at a fresh ubuntu shell (whether you'd like to follow along in a VM
 
 ### Installing Netdata
 
-There are number of ways to install Netdata according to [Installation](../../packaging/installer/). The suggested way
+There are number of ways to install Netdata according to [Installation](/docs/packaging/installer/). The suggested way
 of installing the latest Netdata and keep it upgrade automatically. Using one line installation:
 
 ```sh
@@ -447,4 +452,4 @@ through a web proxy, or when multiple prometheus servers are NATed to a single I
 `&server=NAME` to the URL. This `NAME` is used by Netdata to uniquely identify each prometheus server and keep track of
 its last access time.
 
-[![analytics](https://www.google-analytics.com/collect?v=1&aip=1&t=pageview&_s=1&ds=github&dr=https%3A%2F%2Fgithub.com%2Fnetdata%2Fnetdata&dl=https%3A%2F%2Fmy-netdata.io%2Fgithub%2Fbackends%2Fprometheus%2FREADME&_u=MAC~&cid=5792dfd7-8dc4-476b-af31-da2fdb9f93d2&tid=UA-64295674-3)](<>)
+

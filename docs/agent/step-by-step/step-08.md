@@ -1,9 +1,14 @@
-# Step 8. Build your first custom dashboard
+---
+title: "Step 8. Build your first custom dashboard"
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-08.md
+---
+
+
 
 In previous steps of the tutorial, you have learned how several sections of the Netdata dashboard worked. 
 
 This step will show you how to set up a custom dashboard to fit your unique needs. If nothing else, Netdata is really,
-really flexible. 🤸
+really flexible. ð¤¸
 
 ## What you'll learn in this step
 
@@ -54,6 +59,7 @@ following:
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+  <!-- Add dashboard.js here! -->
 
 </head>
 <body>
@@ -62,6 +68,7 @@ following:
 
     <h1>My custom dashboard</h1>
 
+    <!-- Add charts here! -->
 
   </main>
 
@@ -86,6 +93,7 @@ You need to include the `dashboard.js` file of a Netdata agent to add Netdata ch
 of your custom dashboard page and change `HOST` according to your setup.
 
 ```html
+  <!-- Add dashboard.js here! -->
   <script type="text/javascript" src="http://HOST:19999/dashboard.js"></script>
 ```
 
@@ -100,6 +108,7 @@ While not necessary, let's add some basic styling to make our dashboard look a l
 basic CSS into a `<style>` tag inside of the page's `<head>` element.
 
 ```html
+  <!-- Add dashboard.js here! -->
   <script type="text/javascript" src="http://HOST:19999/dashboard.js"></script>
 
   <style>
@@ -136,7 +145,7 @@ charts on a single page.
 ### The chart unique ID (required)
 
 You need to specify the unique ID of a chart to show it on your custom dashboard. If you forgot how to find the unique
-ID, head back over to [step 2](step-02.md#understand-charts-dimensions-families-and-contexts) for a
+ID, head back over to [step 2](/docs/agent/step-by-step/step-02#understand-charts-dimensions-families-and-contexts) for a
 re-introduction.
 
 You can then put this unique ID into a `<div>` element with the `data-netdata` attribute. Put this in the `<body>` of
@@ -151,6 +160,7 @@ your custom dashboard file beneath the helpful comment.
 
     <div class="charts">
 
+      <!-- Add charts here! -->
       <div data-netdata="system.cpu"></div>
 
     </div>
@@ -165,6 +175,7 @@ Reload the page, and you should see a real-time `system.cpu` chart!
 ... and a whole lot of white space. Let's fix that by adding a few more charts.
 
 ```html
+      <!-- Add charts here! -->
       <div data-netdata="system.cpu"></div>
       <div data-netdata="apps.cpu"></div>
       <div data-netdata="groups.cpu"></div>
@@ -183,6 +194,7 @@ do so, add a new `data-after=""` attribute to each chart.
 custom dashboard to display the _last 5 minutes_ (`5m * 60s = 300s`) of data.
 
 ```html
+      <!-- Add charts here! -->
       <div data-netdata="system.cpu"
            data-after="-300">
       </div>
@@ -276,6 +288,7 @@ Prefer a dark theme? Add this to your `<head>` _above_ where you added `dashboar
     var netdataTheme = 'slate';
   </script>
 
+  <!-- Add dashboard.js here! -->
   <script type="text/javascript" src="https://HOST/dashboard.js"></script>
 ```
 
@@ -305,6 +318,7 @@ In case you got lost along the way, here's the final version of the `custom-dash
     var netdataTheme = 'slate';
   </script>
 
+  <!-- Add dashboard.js here! -->
   <script type="text/javascript" src="http://localhost:19999/dashboard.js"></script>
 
   <style>
@@ -339,6 +353,7 @@ In case you got lost along the way, here's the final version of the `custom-dash
 
     <div class="charts">
 
+      <!-- Add charts here! -->
       <div data-netdata="system.cpu"
            data-after="-300"
            data-height="250px"
@@ -370,9 +385,9 @@ In this guide, you learned the fundamentals of building a custom Netdata dashboa
 charts to your `custom-dashboard.html`, change the charts that are already there, and size them according to your needs.
 
 Of course, the custom dashboarding features covered here are just the beginning. Be sure to read up on our [custom
-dashboard documentation](../../web/gui/custom/) for details on how you can use other chart libraries, pull metrics from
+dashboard documentation](/docs/web/gui/custom/) for details on how you can use other chart libraries, pull metrics from
 multiple Netdata agents, and choose which dimensions a given chart shows.
 
 Next, you'll learn how to store long-term historical metrics in Netdata!
 
-[Next: Long-term metrics storage &rarr;](step-09.md)
+[Next: Long-term metrics storage &rarr;](/docs/agent/step-by-step/step-09)

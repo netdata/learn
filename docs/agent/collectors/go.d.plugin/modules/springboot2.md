@@ -1,4 +1,4 @@
-# Any Spring Boot 2 application monitoring with Netdata
+
 
 This module monitors one or more Java Spring-boot 2 applications depending on configuration.
 Netdata can be used to monitor running Java [Spring Boot 2](https://spring.io/) applications that expose their metrics with the use of the **Spring Boot Actuator** included in Spring Boot library.
@@ -18,7 +18,7 @@ Springboot2 module looks up `http://localhost:8080/actuator/prometheus` and `htt
 ## Configuration
 
 Edit the `go.d/springboot2.conf` configuration file using `edit-config` from the your agent's [config
-directory](../../../../docs/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory
@@ -30,8 +30,8 @@ The Spring Boot Actuator exposes these metrics over HTTP and is very easy to use
 -   add `org.springframework.boot:spring-boot-starter-actuator` and `io.micrometer:micrometer-registry-prometheus` to your application dependencies
 -   set `management.endpoints.web.exposure.include=*` in your `application.properties`
 
-Please refer to the [Spring Boot Actuator: Production-ready features](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready.html) 
-and [81. Actuator - Part IX. ‘How-to’ guides](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-actuator.html) for more information.
+Please refer to the [Spring Boot Actuator: Production-ready features](https://docs.spring.io/spring-boot/current/reference/html/production-ready.html) 
+and [81. Actuator - Part IX. âHow-toâ guides](https://docs.spring.io/spring-boot/current/reference/html/howto-actuator.html) for more information.
 
 Here is an example for 2 servers:
 
