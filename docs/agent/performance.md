@@ -32,13 +32,13 @@ To prove Netdata scalability, check issue [#1323](https://github.com/netdata/net
 
 In embedded systems, if the Netdata daemon is using a lot of CPU without any web clients accessing it, you should lower the data collection frequency. To set the data collection frequency, edit `/etc/netdata/netdata.conf` and set `update_every` to a higher number (this is the frequency in seconds data are collected for all charts: higher number of seconds = lower frequency, the default is 1 for per second data collection). You can also set this frequency per module or chart. Check the [daemon configuration](/docs/daemon/config) for plugins and charts. For specific modules, the configuration needs to be changed in:
 
--   `python.d.conf` for [python](/docs/collectors/python.d.plugin/#pythondplugin)
--   `node.d.conf` for [nodejs](/docs/collectors/node.d.plugin/#nodedplugin)
--   `charts.d.conf` for [bash](/docs/collectors/charts.d.plugin/#chartsdplugin)
+-   `python.d.conf` for [python](/docs/agent/collectors/python.d.plugin)
+-   `node.d.conf` for [nodejs](/docs/agent/collectors/node.d.plugin)
+-   `charts.d.conf` for [bash](/docs/agent/collectors/charts.d.plugin)
 
 ## Plugins
 
-If a plugin is using a lot of CPU, you should lower its update frequency, or if you wrote it, re-factor it to be more CPU efficient. Check [External Plugins](/docs/collectors/plugins.d/) for more details on writing plugins.
+If a plugin is using a lot of CPU, you should lower its update frequency, or if you wrote it, re-factor it to be more CPU efficient. Check [External Plugins](/docs/agent/collectors/plugins.d) for more details on writing plugins.
 
 ## CPU consumption when web clients are accessing dashboards
 
@@ -53,7 +53,7 @@ To lower the CPU utilization of Netdata when clients are accessing the dashboard
 ## Monitoring a heavily-loaded system
 
 While running, Netdata does not depend much on disk I/O aside from writing to log files and the [database
-engine](/docs/database/engine) "spilling" historical metrics to disk when it uses all its available RAM.
+engine](/docs/agent/database/engine) "spilling" historical metrics to disk when it uses all its available RAM.
 
 Under a heavy system load, plugins that need disk may stop and show gaps during heavy system load, but the Netdata
 daemon itself should be able to work and collect values from `/proc` and `/sys` and serve web clients accessing it.
@@ -157,7 +157,7 @@ In this section you can select which modules of the `proc` plugin you need. All 
 ...
 ```
 
-Refer to the [proc.plugins documentation](/docs/collectors/proc.plugin/) for the list and description of all the proc plugin modules.
+Refer to the [proc.plugins documentation](/docs/agent/collectors/proc.plugin) for the list and description of all the proc plugin modules.
 
 ### 3. Lower internal plugin update frequency
 
@@ -194,7 +194,7 @@ following settings in the `[global]` section of `netdata.conf`:
 	# dbengine disk space = 256
 ```
 
-See the [database engine documentation](/docs/database/engine) or our [tutorial on metrics
+See the [database engine documentation](/docs/agent/database/engine) or our [tutorial on metrics
 retention](/docs/agent/tutorials/longer-metrics-storage) for more details on lowering the database engine's memory requirements.
 
 ### 6. Disable gzip compression of responses
