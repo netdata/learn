@@ -423,7 +423,7 @@ select specific dimensions using this:
 ```
 
 Netdata supports coma (`,`) or pipe (`|`) separated [simple
-patterns](/docs/libnetdata/simple_pattern/) for dimensions. By default it
+patterns](/docs/agent/libnetdata/simple_pattern) for dimensions. By default it
 searches for both dimension IDs and dimension NAMEs. You can control the target
 of the match with: `data-append-options="match-ids"` or
 `data-append-options="match-names"`. Spaces in `data-dimensions=""` are matched
@@ -491,7 +491,7 @@ it, using this:
 
 ### API options
 
-You can append Netdata **[REST API v1](/docs/agent/api)** data options, using this:
+You can append Netdata **[REST API v1](/docs/agent/web/api)** data options, using this:
 
 ```html
 <div data-netdata="unique.id"

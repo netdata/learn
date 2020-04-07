@@ -93,8 +93,6 @@ tcp:
   port         : 5432
 ```
 
-For all available options please see module [configuration file](/docs/agent/collectors/python.d.plugin/postgres.conf).
-
 ---
 
 
