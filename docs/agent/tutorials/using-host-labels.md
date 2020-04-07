@@ -99,8 +99,8 @@ slave system. It's a vastly simplified way of accessing critical information abo
 
 > â ï¸ Because automatic labels for slave nodes are accessible via API calls, and contain sensitive information like
 > kernel and operating system versions, you should secure streaming connections with SSL. See the [streaming
-> documentation](/docs/streaming#securing-streaming-communications) for details. You may also want to use
-> [access lists](/docs/web/server#access-lists) or [expose the API only to LAN/localhost
+> documentation](/docs/agent/streaming#securing-streaming-communications) for details. You may also want to use
+> [access lists](/docs/agent/web/server#access-lists) or [expose the API only to LAN/localhost
 > connections](/docs/agent/netdata-security#expose-netdata-only-in-a-private-lan).
 
 You can also use `_is_master`, `_is_slave`, and any other host labels in both health entities and metrics exporting.
@@ -152,11 +152,11 @@ Or when ephemeral Docker nodes are involved:
 ```
 
 Of course, there are many more possibilities for intuitively organizing your systems with host labels. See the [health
-documentation](/docs/health/reference#alarm-line-host-labels) for more details, and then get creative!
+documentation](/docs/agent/health/reference#alarm-line-host-labels) for more details, and then get creative!
 
 ## Host labels in metrics exporting
 
-If you have enabled any metrics exporting via our experimental [exporters](/docs/exporting), any new host
+If you have enabled any metrics exporting via our experimental [exporters](/docs/agent/exporting), any new host
 labels you created manually are sent to the destination database alongside metrics. You can change this behavior by
 editing `exporting.conf`, and you can even send automatically-generated labels on with exported metrics.
 
@@ -181,7 +181,7 @@ send automatic labels = yes
 ```
 
 By applying labels to exported metrics, you can more easily parse historical metrics with the labels applied. To learn
-more about exporting, read the [documentation](/docs/exporting).
+more about exporting, read the [documentation](/docs/agent/exporting).
 
 ## What's next?
 
@@ -194,7 +194,7 @@ It should be noted that while the Netdata dashboard does not expose either user-
 queries _do_ showcase this information. As always, we recommend you secure Netdata 
 
 -   [Expose Netdata only in a private LAN](/docs/agent/netdata-security#expose-netdata-only-in-a-private-lan)
--   [Enable TLS/SSL for web/API requests](/docs/web/server#enabling-tls-support)
+-   [Enable TLS/SSL for web/API requests](/docs/agent/web/server#enabling-tls-support)
 -   Put Netdata behind a proxy
     -   [Use an authenticating web server in proxy
         mode](/docs/agent/netdata-security#use-an-authenticating-web-server-in-proxy-mode)

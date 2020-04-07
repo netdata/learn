@@ -88,7 +88,7 @@ To disable alignment, pass `&options=unaligned` to the query.
 
 To execute the query, the engine evaluates all dimensions of the chart, one after another.
 
-The engine does not evaluate dimensions that do not match the [simple pattern](/docs/libnetdata/simple_pattern)
+The engine does not evaluate dimensions that do not match the [simple pattern](/docs/agent/libnetdata/simple_pattern)
 given at the `dimensions` parameter, except when `options=percentage` is given (this option
 requires all the dimensions to be evaluated to find the percentage of each dimension vs to chart
 total).

@@ -5,7 +5,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/web/api/formatte
 
 
 
-The Value formatter presents [results of database queries](/docs/agent/web/queries) as a single value.
+The Value formatter presents [results of database queries](/docs/agent/web/api/queries) as a single value.
 
 To calculate the single value to be returned, it sums the values of all dimensions.
 
@@ -18,7 +18,7 @@ The Value formatter respects the following API `&options=`:
 | `min2max` | yes       | to return the delta from the minimum value to the maximum value (across dimensions)|
 
 The Value formatter is not exposed by the API by itself.
-Instead it is used by the [`ssv`](/docs/agent/web/api/ssv) formatter
-and [health monitoring queries](/docs/health).
+Instead it is used by the [`ssv`](/docs/agent/web/api/queries/ssv) formatter
+and [health monitoring queries](/docs/agent/health).
 
 

@@ -5,14 +5,19 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-clo
 
 
 
-To use the features of [Netdata Cloud](/docs/agent/netdata-cloud/readme), you must first register an account with Netdata Cloud and associate your first Netdata node with the Netdata Cloud [registry](/docs/registry). **Netdata Cloud is entirely free for all Netdata users**, and does not store any metrics created by your machines. You keep your dataâNetdata Cloud just connects it all together.
+To use the features of [Netdata Cloud](/docs/agent/netdata-cloud/readme), you must first register an account with Netdata Cloud and associate
+your first Netdata node with the Netdata Cloud [registry](/docs/agent/registry). **Netdata Cloud is entirely free for all
+Netdata users**, and does not store any metrics created by your machines. You keep your dataâNetdata Cloud just connects
+it all together.
 
-!!! attention "Opting-in to Netdata Cloud"
-    By [signing in](/docs/agent/netdata-cloud/signing-in) to Netdata Cloud, you opt-in to let Netdata Cloud receive and store the information described [here](/docs/registry#what-data-does-the-registry-store). We never store the metrics collected by Netdata agents, just machine GUIDs, person GUID, URLs, and account information.
+> By [signing in](/docs/agent/netdata-cloud/signing-in) to Netdata Cloud, you opt-in to let Netdata Cloud receive and store
+> the information described [here](/docs/agent/registry#what-data-does-the-registry-store). We never store the metrics
+> collected by Netdata agents, just machine GUIDs, person GUID, URLs, and account information.
 
 ## Registering a Netdata Cloud account
 
-There is only one prerequisite to using Netdata Cloud: A working Netdata agent. If you don't have a running Netdata agent yet, check out the [installation guides](/docs/packaging/installer/) for more information.
+There is only one prerequisite to using Netdata Cloud: A working Netdata agent. If you don't have a running Netdata
+agent yet, check out the [installation guides](/docs/agent/packaging/installer) for more information.
 
 To begin, visit the web dashboard of your Netdata agent by navigating your browser of choice to `http://SERVER-IP:19999`. Youâll see a dashboard much like this:
 

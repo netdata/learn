@@ -13,16 +13,16 @@ toolkit. You've probably seen it before:
 dashboard](https://user-images.githubusercontent.com/2662304/48307727-9175c800-e55b-11e8-92d8-a581d60a4889.gif)
 
 Learn more about how dashboards work and how they're populated using the
-`dashboards.js` file in our [web dashboards overview](/docs/agent/).
+`dashboards.js` file in our [web dashboards overview](/docs/agent/web).
 
 By default, Netdata starts a web server for its dashboard at port `19999`. Open
 up your web browser of choice and navigate to `http://SERVER-IP:19999`, or
 `http://localhost:19999` on `localhost`.
 
-Netdata uses an [internal, static-threaded web server](/docs/agent/server/) to host the
+Netdata uses an [internal, static-threaded web server](/docs/agent/web/server) to host the
 HTML, CSS, and JavaScript files that make up the standard dashboard. You don't
 have to configure anything to access it, although you can adjust [your
-settings](/docs/agent/server/#other-netdataconf-web-section-options) in the
+settings](/docs/agent/web/server#other-netdataconf-web-section-options) in the
 `netdata.conf` file, or run Netdata behind an Nginx proxy, and so on.
 
 <details markdown="1"><summary>Want to see the dashboard and its features in action? Check out our video.</summary>
@@ -44,8 +44,8 @@ dashboard](https://user-images.githubusercontent.com/1153921/62810777-ef681980-b
 
 Netdata is broken up into multiple **sections**, such as **System Overview**,
 **CPU**, **Disk**, and more. Inside each section you'll find a number of charts,
-broken down into [contexts](/docs/agent/#contexts) and
-[families](/docs/agent/#families).
+broken down into [contexts](/docs/agent/web/server#contexts) and
+[families](/docs/agent/web/server#families).
 
 An example of the **Memory** section on a Linux desktop system.
 
@@ -66,7 +66,7 @@ associated with.
 menu](https://user-images.githubusercontent.com/1153921/62811361-38b96880-bab6-11e9-8d41-4d9b29778e86.png)
 
 Most menu items will contain several **submenu** entries, which represent any
-[families](/docs/agent/#families) from that section. Netdata automatically
+[families](/docs/agent/web/server#families) from that section. Netdata automatically
 generates these submenu entries.
 
 Here's a **Disks** menu with several submenu entries for each disk drive and
@@ -81,22 +81,22 @@ The nodes menu appears in the top-left corner of the standard dashboard and is
 labeled with the hostname of the system Netdata is monitoring.
 
 Clicking on it will display a drop-down menu of any nodes you might have
-connected via the [Netdata registry](/docs/registry/). By default, you'll find
+connected via the [Netdata registry](/docs/agent/registry). By default, you'll find
 nothing under the **My nodes** heading, but you can try out any of the demo
 Netdata nodes to see how the nodes menu works.
 
 ![Screenshot of the default (empty) nodes
 menu](https://user-images.githubusercontent.com/1153921/62795508-c3d13900-ba8b-11e9-98ed-f0be1b201340.png)
 
-Once you add nodes via [Netdata Cloud](/docs/netdata-cloud/) or a [private
-registry](/docs/registry/#run-your-own-registry), you will see them appear under
+Once you add nodes via [Netdata Cloud](/docs/agent/netdata-cloud) or a [private
+registry](/docs/agent/registry#run-your-own-registry), you will see them appear under
 the **My nodes** heading.
 
 ![Screenshot of a nodes menu populated by registry
 agents](https://user-images.githubusercontent.com/1153921/62795509-c3d13900-ba8b-11e9-8459-e85bf71f7ceb.png)
 
 The nodes menu will also show the master netdata node and all slave nodes
-streaming to that master, if you have [configured streaming](/docs/streaming).
+streaming to that master, if you have [configured streaming](/docs/agent/streaming).
 
 ![Screenshot of a nodes menu populated by streaming
 agents.](https://user-images.githubusercontent.com/1153921/62965774-90a7e600-bdba-11e9-8b80-495f35b29ecb.png)
@@ -124,8 +124,7 @@ If you want to customize this information, you should avoid editing
 overwrite the file when it's updated. Instead, you should create a new file with
 your customizations.
 
-We created an example file at
-[`dashboard_info_custom_example.js`](/docs/agent/web/dashboard_info_custom_example.js). You can
+We created an example file at `dashboard_info_custom_example.js`. You can
 copy this to a new file with a name of your choice in the `web/` directory. This
 directory changes based on your operating system and installation method. If
 you're on a Linux system, it should be at `/usr/share/netdata/web/`.
@@ -163,7 +162,7 @@ file](https://user-images.githubusercontent.com/1153921/62798924-570e6c80-ba94-1
 
 ## Custom dashboards
 
-For information on creating custom dashboards from scratch, see the [custom
-dashboards](/docs/agent/web/custom/) or [Atlassian Confluence dashboards](/docs/agent/web/confluence/) guides.
+For information on creating custom dashboards from scratch, see the [custom dashboards](/docs/agent/web/custom) or
+[Atlassian Confluence dashboards](/docs/agent/web/custom/confluence) guides.
 
 

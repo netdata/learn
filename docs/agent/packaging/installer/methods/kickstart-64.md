@@ -20,8 +20,9 @@ bash <(curl -Ss https://my-netdata.io/kickstart-static64.sh)
 
 > This script installs Netdata at `/opt/netdata`.
 
-> See our [installation guide](/docs/agent/packaging/installer/methods/..) for details about [automatic updates](/docs/agent/packaging/installer/methods/..#automatic-updates) or
-> [nightly vs. stable releases](/docs/agent/packaging/installer/methods/..#nightly-vs-stable-releases).
+> See our [installation guide](/docs/agent/packaging/installer) for details about [automatic
+> updates](/docs/agent/packaging/installer#automatic-updates) or [nightly vs. stable
+> releases](/docs/agent/packaging/installer#nightly-vs-stable-releases).
 
 ## What does `kickstart-static64.sh` do?
 
@@ -62,10 +63,10 @@ your installation. Here are a few important parameters:
 -   `--disable-telemetry`: Opt-out of [anonymous statistics](/docs/agent/anonymous-statistics) we use to make
     Netdata better.
 -   `--no-updates`: Prevent automatic updates of any kind.
--   `--local-files`: Used for [offline installations](/docs/agent/packaging/installer/methods/offline). Pass four file paths: the Netdata
-    tarball, the checksum file, the go.d plugin tarball, and the go.d plugin config tarball, to force kickstart run the
-    process using those files. This option conflicts with the `--stable-channel` option. If you set this _and_
-    `--stable-channel`, Netdata will use the local files.
+-   `--local-files`: Used for [offline installations](/docs/agent/packaging/installer/methods/offline). Pass four file paths:
+    the Netdata tarball, the checksum file, the go.d plugin tarball, and the go.d plugin config tarball, to force
+    kickstart run the process using those files. This option conflicts with the `--stable-channel` option. If you set
+    this _and_ `--stable-channel`, Netdata will use the local files.
 
 ## Verify script integrity
 
@@ -80,8 +81,8 @@ If the script is valid, this command will return `OK, VALID`.
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/agent/step-by-step/step-00)
-for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs. 
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/agent/step-by-step/step-00) for a
+fully-guided tour into Netdata's capabilities and how to configure it according to your needs. 
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
 guide](/docs/agent/getting-started) for a quick overview.

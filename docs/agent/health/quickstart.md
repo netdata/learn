@@ -138,9 +138,9 @@ killall -USR2 netdata
 
 To learn about all of Netdata's health configuration options, view the [reference guide](/docs/agent/health/reference).
 
-Or, get guided insights into specific health configurations with our [health tutorials](/docs/agent/health/readme#tutorials).
+Or, get guided insights into specific health configurations with our [health tutorials](/docs/agent/health#tutorials).
 
-Finally, move on to Netdata's [notification system](/docs/agent/health/notifications) to learn more about how Netdata can let you
-know when the health of your systems or apps goes awry.
+Finally, move on to Netdata's [notification system](/docs/agent/health/notifications) to learn more about how Netdata can
+let you know when the health of your systems or apps goes awry.
 
 

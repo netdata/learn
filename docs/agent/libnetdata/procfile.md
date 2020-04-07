@@ -28,9 +28,9 @@ For each iteration, the caller:
 -   calls `procfile_readall()` to read updated contents.
      This call also rewinds (`lseek()` to 0) before reading it.
 
-     For every file, a [BUFFER](/docs/agent/buffer/) is used that is automatically adjusted to fit
-     the entire file contents of the file. So the file is read with a single `read()` call
-     (providing atomicity / consistency when the data are read from the kernel).
+     For every file, a [BUFFER](/docs/agent/libnetdata/buffer) is used that is automatically adjusted to fit the entire
+     file contents of the file. So the file is read with a single `read()` call (providing atomicity / consistency when
+     the data are read from the kernel).
 
      Once the data are read, 2 arrays of pointers are updated:
 
