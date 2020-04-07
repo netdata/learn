@@ -136,7 +136,6 @@ function renameReadmes(pages) {
       if (url.startsWith('http') || url.startsWith('#')) return `](${url})`
 
       const urlTokens = path.parse(url)
-
       const renameUrl = isReadme
         ? path.join(tokens.dir, urlTokens.dir, urlTokens.name) + urlTokens.ext
         : url
