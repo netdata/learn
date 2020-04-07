@@ -6,7 +6,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/chart
 
 
 > THIS MODULE IS OBSOLETE.
-> USE [THE PYTHON ONE](/docs/agent/python.d.plugin/sensors) - IT SUPPORTS MULTIPLE JOBS AND IT IS MORE EFFICIENT
+> USE [THE PYTHON ONE](/docs/agent/collectors/python.d.plugin/sensors) - IT SUPPORTS MULTIPLE JOBS AND IT IS MORE EFFICIENT
 >
 > Unlike the python one, this module can collect temperature on RPi.
 

@@ -105,11 +105,10 @@ function normalizeLinks(pages) {
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
       // skip the whole process if a relative anchor
-      if (url.startsWith('#') || url.startsWith('http')) return `](${url})`
+      if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
 
       // if the link is already a absolute-relative
       if (url.startsWith('/')) {
-        console.log(`catch abs-rel! ${url}`)
         const withAgentUrl = path.join(agentDir, url)
         return `](${withAgentUrl})`
       }

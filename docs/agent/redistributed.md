@@ -90,7 +90,7 @@ connectivity is not available.
 
 -   [bootstrap-table](http://bootstrap-table.wenzhixin.net.cn/)
 
-      Copyright (c) 2012-2016 Zhixin Wen [wenzhixin2010@gmail.com](/docs/agent/mailto:wenzhixin2010@gmail.com)
+      Copyright (c) 2012-2016 Zhixin Wen [wenzhixin2010@gmail.com](mailto:wenzhixin2010@gmail.com)
       [MIT License](https://github.com/wenzhixin/bootstrap-table/blob/master/LICENSE)
 
 -   [tableExport.jquery.plugin](https://github.com/hhurz/tableExport.jquery.plugin)
@@ -173,7 +173,7 @@ connectivity is not available.
 
 -   [monotonic](https://github.com/atdt/monotonic)
 
-      Copyright 2014, 2015, 2016 Ori Livneh [ori@wikimedia.org](/docs/agent/mailto:ori@wikimedia.org)
+      Copyright 2014, 2015, 2016 Ori Livneh [ori@wikimedia.org](mailto:ori@wikimedia.org)
       [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 
