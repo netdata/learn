@@ -35,11 +35,11 @@ module.exports = {
             },
             {
               label: 'Agent Docs',
-              to: 'agent/home',
+              to: 'docs/agent',
             },
             {
               label: 'Cloud Docs',
-              to: 'cloud/home',
+              to: 'docs/cloud',
             },
             {
               label: 'Netdata Blog',
@@ -52,27 +52,27 @@ module.exports = {
           items: [
             {
               label: 'Installation',
-              to: 'agent/docs/packaging/installer',
+              to: 'docs/agent/packaging/installer',
             },
             {
               label: 'Getting started guide',
-              to: 'agent/docs/getting-started',
+              to: 'docs/agent/getting-started',
             },
             {
               label: 'Step-by-step tutorial',
-              to: 'agent/docs/step-by-step/step-00',
+              to: 'docs/agent/step-by-step/step-00',
             },
             {
               label: 'Configuration',
-              to: 'agent/docs/configuration-guide',
+              to: 'docs/agent/configuration-guide',
             },
             {
               label: 'Collecting metrics',
-              to: 'agent/docs/collectors',
+              to: 'docs/agent/collectors',
             },
             {
               label: 'Health monitoring',
-              to: 'agent/docs/health',
+              to: 'docs/agent/health',
             },
           ],
         },
