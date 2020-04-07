@@ -44,6 +44,11 @@ async function getRateLimit() {
   }
 }
 
+async function getForkSha(repo = 'netdata', branch = 'master') {
+  const { data: { commit: { sha } } } = await ax.get(`${repo}/branches/${branch}`)
+  return sha
+}
+
 async function getRootSha(repo = 'netdata', branch = 'master') {
   const { data: { commit: { sha } } } = await ax.get(`${repo}/branches/${branch}`)
   return sha
@@ -100,7 +105,7 @@ function normalizeLinks(pages) {
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
       // skip the whole process if a relative anchor
-      if (url.startsWith('#') || url.startsWith('http')) return `](${url})`
+      if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
 
       // if the link is already a absolute-relative
       if (url.startsWith('/')) {

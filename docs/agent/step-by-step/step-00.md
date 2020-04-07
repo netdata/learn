@@ -32,7 +32,7 @@ Click on the **issues** tab to see all the conversations we're having with Netda
 previously-written advice for your specific problem, and if you don't see any results, hit the **New issue** button to
 send us a question.
 
-Or, if that's too complicated, feel free to send this tutorial's author [an email](/docs/agent/step-by-step/mailto:joel@netdata.cloud).
+Or, if that's too complicated, feel free to send this tutorial's author [an email](mailto:joel@netdata.cloud).
 
 ## Before we get started
 

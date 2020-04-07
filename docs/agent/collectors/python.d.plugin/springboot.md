@@ -137,6 +137,8 @@ You can disable the default charts by set `defaults.<chart-id>: false`.
 
 The dimension name of extras charts should replace `.` to `_`.
 
-Please check [springboot.conf](/docs/agent/collectors/python.d.plugin/springboot.conf) for more examples.
+Please check
+[springboot.conf](https://raw.githubusercontent.com/netdata/netdata/master/collectors/python.d.plugin/springboot/springboot.conf)
+for more examples.
 
 

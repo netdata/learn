@@ -10,9 +10,9 @@ Netdata uses collectors to help you gather metrics from your favorite applicatio
 real-time, interactive charts. The following list includes collectors for both internal system metrics, and external
 apps/services metrics.
 
-Read more about collectors and how to enable them in our [collectors documentation](/docs/agent/collectors/readme), or use the [collector
-quickstart](/docs/agent/collectors/quickstart) to figure out how to collect metrics from your favorite app/service with auto-detection and
-minimal configuration.
+Read more about collectors and how to enable them in our [collectors documentation](/docs/agent/collectors), or use the
+[collector quickstart](/docs/agent/collectors/quickstart) to figure out how to collect metrics from your favorite app/service
+with auto-detection and minimal configuration.
 
 If you don't see the app/service you'd like to monitor here, check out our [GitHub
 issues](https://github.com/netdata/netdata/issues). Use the search bar to look for previous discussions about that

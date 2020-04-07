@@ -1,17 +1,18 @@
 
 
-This module checks the time until a x509 certificate expiration.
+This module checks the time until a x509 certificate expiration and its revocation status.
 
 ## Charts
 
-It produces only one chart:
+It produces the following charts:
 
 -   Time Until Certificate Expiration in `seconds`
+-   Revocation Status in `status`
  
 ## Configuration
 
 Edit the `go.d/x509check.conf` configuration file using `edit-config` from the your agent's [config
-directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/agent/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory
@@ -39,6 +40,17 @@ jobs:
 ```
 
 For all available options and defaults please see module [configuration file](https://github.com/netdata/go.d.plugin/blob/master/config/go.d/x509check.conf).
+
+## Revocation status
+
+Revocation status check is disabled by default. To enable it set `check_revocation_status` to yes.
+
+```yaml
+jobs:
+  - name: my_site_cert
+    source: https://my_site.org:443
+    check_revocation_status: yes
+```
 
 ## Troubleshooting
 

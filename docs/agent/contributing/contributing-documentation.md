@@ -10,8 +10,8 @@ We welcome contributions to Netdata's already extensive documentation, which we 
 repository](https://github.com/netdata/netdata) on GitHub.
 
 Like all contributing to all other aspects of Netdata, we ask that anyone who wants to help with documentation read and
-abide by the [Contributor Convenant Code of Conduct](https://docs.netdata.cloud/code_of_conduct/) and follow the
-instructions outlined in our [Contributing document](/docs/contributing).
+abide by the [Contributor Convenant Code of Conduct](/docs/agent/code_of_conduct) and follow the
+instructions outlined in our [Contributing document](/docs/agent/contributing).
 
 We also ask you to read our [documentation style guide](/docs/agent/contributing/style-guide), which, while not complete, will give you some
 guidance on how we write and organize our documentation.
@@ -114,8 +114,7 @@ folder and either name it `README.md` for generic documentation, or with another
 
 At the root of the Netdata repository is a `` folder. Inside this folder we place documentation that does not have
 a direct relationship to a specific component of Netdata. It's where we house our [getting started
-guide](/docs/docs/getting-started), guides on [running Netdata behind Nginx](/docs/running-behind-nginx), and
-more.
+guide](/docs/agent/docs/getting-started), guides on [running Netdata behind Nginx](/docs/agent/running-behind-nginx), and more.
 
 If the documentation you're working on doesn't have a direct relaionship to a component of Netdata, it can be placed in
 this `docs/` folder.

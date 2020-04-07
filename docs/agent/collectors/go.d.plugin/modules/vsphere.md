@@ -6,7 +6,9 @@ This module collects hosts and vms performance statistics from one or more `vCen
 
 ## Charts
 
-It produces the following charts for every virtual machine:
+It produces the following charts:
+
+#### Virtual Machine
 
 -   Cpu Usage Total in `%`
 -   Memory Usage Percentage in `%`
@@ -21,7 +23,7 @@ It produces the following charts for every virtual machine:
 -   Overall Alarm Status in `status`
 -   System Uptime in `seconds`
 
-For every host:
+#### Host
 
 -   Cpu Usage Total in `%`
 -   Memory Usage Percentage in `%`
@@ -40,7 +42,7 @@ For every host:
 ## Configuration
 
 Edit the `go.d/vsphere.conf` configuration file using `edit-config` from the your agent's [config
-directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/agent/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

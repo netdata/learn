@@ -91,7 +91,7 @@ To auto-detect parser type the module checks if the line is in LTSV format first
 
 To auto-detect CSV format weblog uses list of predefined csv formats. It tries to parse the line using each of them in the following order:
 
-```
+```sh
 $host:$server_port $remote_addr - - [$time_local] "$request" $status $body_bytes_sent - - $request_length $request_time $upstream_response_time
 $host:$server_port $remote_addr - - [$time_local] "$request" $status $body_bytes_sent - - $request_length $request_time
 $host:$server_port $remote_addr - - [$time_local] "$request" $status $body_bytes_sent     $request_length $request_time $upstream_response_time
@@ -244,7 +244,7 @@ we still can get some info from them.
 ## Configuration
 
 Edit the `go.d/web_log.conf` configuration file using `edit-config` from the your agent's [config
-directory](/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/docs/agent/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory
@@ -261,7 +261,7 @@ jobs:
   - name: apache
     path: /var/log/apache2/access.log
     log_type: csv
-    csv_config
+    csv_config:
       format: '- - %h - - %t \"%r\" %>s %b'
 ```
  
