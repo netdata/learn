@@ -79,14 +79,34 @@ async function getPages(nodes) {
   }))
 }
 
-function moveDocs(pages) {
+function movePages(pages, strip=baseDir) {
   return pages.map(page => {
+    const pagePath = page.meta.path.startsWith('docs/')
+      ? page.meta.path.slice(5)
+      : page.meta.path
+
+    if (pagePath.startsWith('docs')) {
+      console.log(pagePath)
+    }
+
+    // TODO: prepend /docs to urls unless url already has it as a prefix
+    const body = page.body
+    // .replace(/\]\((.*?)\)/gs, (match, url) => {
+    //   if (url.startsWith('#') || url.startsWith('http')) return `](${url})`
+
+    //   const movedUrl = url.startsWith(`${strip}/`)
+    //     ? url.slice(strip.length + 1)
+    //     : url
+
+    //   return `](${movedUrl})`
+    // })
+
     return {
       meta: {
         ...page.meta,
-        path: page.meta.path.startsWith('docs/') ? page.meta.path.slice(5) : page.meta.path
+        path: pagePath
       },
-      body: page.body.replace(/\]\((.*?)docs\/(.*?)\)/gs, ']($1$2)')
+      body
     }
   })
 }
@@ -103,11 +123,11 @@ function normalizeLinks(pages) {
       const normalizedUrl = path.join('/', tokens.dir, url).toLowerCase()
 
       // prepend baseDir but do not double prepend
-      const withBaseUrl = normalizedUrl.startsWith(baseDir)
-        ? normalizedUrl
-        : path.join(baseDir, normalizedUrl)
+      // const withBaseUrl = normalizedUrl.startsWith(baseDir)
+      //   ? normalizedUrl
+      //   : path.join(baseDir, normalizedUrl)
 
-      return `](${withBaseUrl})`
+      return `](${normalizedUrl})`
     })
 
     return {
@@ -135,7 +155,7 @@ function renameReadmes(pages) {
 
       const urlTokens = path.parse(url)
       const renameUrl = isReadme
-        ? path.join(tokens.dir, urlTokens.dir, urlTokens.name) + urlTokens.ext
+        ? path.join(urlTokens.dir, urlTokens.name) + urlTokens.ext
         : url
 
       return `](${renameUrl.toLowerCase()})`
@@ -298,35 +318,24 @@ async function ingest() {
   const fetchEndTime = new Date()
   console.log(`Fetching completed in ${fetchEndTime - fetchStartTime} ms`)
 
-  console.log(`Normalizing links in ${pages.length} pages`)
-  const res = normalizeLinks(pages)
-
-  // used for debugging, writing raw pages to .docs directory for inspection
-  writePages(res, './.docs')
-  return
-
-  console.log(`Moving /docs to root`)
-  const movedPages = moveDocs(pages)
-  // await debugMetas(movedPages, 'debug-moved.txt')
-
   console.log(`Sanitizing ${pages.length} pages`)
-  const sanitizedPages = sanitizePages(movedPages)
-  // await debugMetas(sanitizedPages, 'debug-sanitized.txt')
+  const sanitizedPages = sanitizePages(pages)
+
+  console.log(`Normalizing links in ${pages.length} pages`)
+  const normalizedPages = normalizeLinks(sanitizedPages)
 
   console.log(`Renaming README.md files`)
-  const renamedPages = renameReadmes(sanitizedPages)
+  const renamedPages = renameReadmes(normalizedPages)
 
-  // TODO: debugging, remove
-  // await writePages(renamedPages)
-  // return
-
-  console.log(`Normalizing links in ${pages.length} pages`)
-  const normalizedPages = normalizeLinks(renamedPages)
-  // await debugMetas(normalizedPages, 'debug-normalized.txt')
+  console.log(`moving ${renamedPages.length} pages`)
+  const movedPages = movePages(renamedPages)
 
   console.log(`Beautifying URLs...`)
-  const beautifiedPages = beautifyLinks(normalizedPages)
-  // await debugMetas(beautifiedPages, 'debug-beautified.txt')
+  const beautifiedPages = beautifyLinks(movedPages)
+
+  // // used for debugging, writing raw pages to .docs directory for inspection
+  // writePages(beautifiedPages, './.docs')
+  // return
 
   console.log('Retaining files...')
   retainPaths.map(f => console.log(`  ${f}`))
