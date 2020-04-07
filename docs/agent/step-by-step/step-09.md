@@ -5,7 +5,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-ste
 
 
 
-By default, Netdata stores metrics in a custom database we call the [database engine](/docs/database/engine/), which
+By default, Netdata stores metrics in a custom database we call the [database engine](/docs/agent/database/engine), which
 stores recent metrics in your system's RAM and "spills" historical metrics to disk. By using both RAM and disk, the
 database engine helps you store a much larger dataset than the amount of RAM your system has.
 
@@ -53,8 +53,8 @@ the database engine to use. The higher those values, the more metrics Netdata wi
 every second.
 
 > Before you make changes, we recommended you read up on the [database
-> engine's](/docs/database/engine#memory-requirements) to ensure you don't overwhelm your system. Out of
-> memory errors are no fun!
+> engine's](/docs/agent/database/engine#memory-requirements) to ensure you don't overwhelm your system. Out of memory
+> errors are no fun!
 
 ```conf
 [global]
@@ -76,8 +76,8 @@ Dashboard](https://user-images.githubusercontent.com/12263278/64781383-9c71fe00-
 You can archive all the metrics collected by Netdata to what we call **backends**. The supported backends include
 Graphite, OpenTSDB, Prometheus, AWS Kinesis Data Streams, MongoDB, and the list is always growing.
 
-As we said in [step 1](/docs/agent/step-by-step/step-01), we have only complimentary systems, not competitors! We're happy to support these
-archiving methods and are always working to improve them.
+As we said in [step 1](/docs/agent/step-by-step/step-01), we have only complimentary systems, not competitors! We're happy
+to support these archiving methods and are always working to improve them.
 
 A lot of Netdata users archive their metrics to one of these backends for long-term storage or further analysis. Since
 Netdata collects so many metrics every second, they can quickly overload small devices or even big servers that are
@@ -166,7 +166,7 @@ data about your MongoDB backend!
 ![image](https://user-images.githubusercontent.com/1153921/70443852-25171200-1a56-11ea-8be3-494544b1c295.png)
 
 If you'd like to try connecting Netdata to another backend, such as Prometheus or OpenTSDB, read our [backends
-documentation](/docs/backends).
+documentation](/docs/agent/backends).
 
 ## What's next?
 

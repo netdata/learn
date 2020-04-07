@@ -209,7 +209,7 @@ If you want to configure your Nginx proxy further, check out the following:
 
 -   [Running Netdata behind Nginx](/docs/agent/running-behind-nginx)
 -   [High-performance Netdata](/docs/agent/high-performance-netdata)
--   [Enabling TLS on Netdata's dashboard](/docs/web/server#enabling-tls-support)
+-   [Enabling TLS on Netdata's dashboard](/docs/agent/web/server#enabling-tls-support)
 
 And... you're _almost_ done with the Netdata tutorial.
 

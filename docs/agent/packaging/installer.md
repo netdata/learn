@@ -40,12 +40,13 @@ bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 ```
 
 To see more information about this installation script, including how to disable automatic updates, get nightly vs.
-stable releases, or disable anonymous statistics, see the [`kickstart.sh` method page](/docs/agent/packaging/methods/kickstart). 
+stable releases, or disable anonymous statistics, see the [`kickstart.sh` method
+page](/docs/agent/packaging/installer/methods/kickstart). 
 
 Scroll down for details about [automatic updates](#automatic-updates) or [nightly vs. stable
 releases](#nightly-vs-stable-releases).
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/step-by-step/step-00)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/agent/step-by-step/step-00)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs. 
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
@@ -54,7 +55,8 @@ guide](/docs/getting-started) for a quick overview.
 ## Have a different operating system, or want to try another method?
 
 Netdata works on many different operating systems, each with a few possible installation methods. To see the full list
-of approved methods for each operating system/version we support, see our [distribution matrix](/docs/agent/distributions).
+of approved methods for each operating system/version we support, see our [distribution
+matrix](/docs/agent/packaging/distributions).
 
 Below, you can find a few additional installation methods, followed by separate instructions for a variety of unique
 operating systems.
@@ -86,35 +88,35 @@ Install Netdata on cloud providers (GCP/AWS/Azure)](/docs/agent/packaging/instal
 
 [![Install Netdata on
 macOS](https://user-images.githubusercontent.com/1153921/76029616-1673b600-5ef2-11ea-888a-4a1375a42246.png) Install
-Netdata on macOS](/docs/agent/packaging/methods/macos)
+Netdata on macOS](/docs/agent/packaging/installer/methods/macos)
 
 [![Install Netdata on
 FreeBSD](https://user-images.githubusercontent.com/1153921/76029787-5fc40580-5ef2-11ea-9461-23e9049aa8f8.png) Install
-Netdata on FreeBSD](/docs/agent/packaging/methods/freebsd)
+Netdata on FreeBSD](/docs/agent/packaging/installer/methods/freebsd)
 
 [![Install manually from
 source](https://user-images.githubusercontent.com/1153921/73032280-f1246000-3dfb-11ea-870d-7fbddd9a6f76.png) Install
-manually from source](/docs/agent/packaging/methods/manual)
+manually from source](/docs/agent/packaging/installer/methods/manual)
 
 [![Install on offline/air-gapped
 systems](https://user-images.githubusercontent.com/1153921/73032239-c89c6600-3dfb-11ea-8224-c8a9f7a50c53.png) Install on
-offline/air-gapped systems](/docs/agent/packaging/methods/offline)
+offline/air-gapped systems](/docs/agent/packaging/installer/methods/offline)
 
 [![Installation on
 PFSense](https://user-images.githubusercontent.com/1153921/76030071-cb0dd780-5ef2-11ea-87cd-607d943dc521.png)
-Installation on PFSense](/docs/agent/packaging/methods/pfsense)
+Installation on PFSense](/docs/agent/packaging/installer/methods/pfsense)
 
 [![Install Netdata on
 Synology](https://user-images.githubusercontent.com/1153921/76029789-5fc40580-5ef2-11ea-9d35-c022f682da77.png) Install
-Netdata on Synology](/docs/agent/packaging/methods/synology)
+Netdata on Synology](/docs/agent/packaging/installer/methods/synology)
 
 [![Manual installation on
 FreeNAS](https://user-images.githubusercontent.com/1153921/76030537-1c1dcb80-5ef3-11ea-9cf9-f130e7d41712.png) Manual
-installation on FreeNAS](/docs/agent/packaging/methods/freenas)
+installation on FreeNAS](/docs/agent/packaging/installer/methods/freenas)
 
 [![Manual installation on
 Alpine](https://user-images.githubusercontent.com/1153921/76029682-37d4a200-5ef2-11ea-9a2c-a8ffeb1d13c3.png) Manual
-installation on Alpine](/docs/agent/packaging/methods/alpine)
+installation on Alpine](/docs/agent/packaging/installer/methods/alpine)
 
 </div>
 
@@ -130,7 +132,8 @@ script](#automatic-one-line-installation-script).
 bash <(curl -Ss https://my-netdata.io/kickstart.sh) --no-updates
 ```
 
-With automatic updates disabled, you can choose exactly when and how you [update Netdata](/docs/agent/packaging/update).
+With automatic updates disabled, you can choose exactly when and how you [update
+Netdata](/docs/agent/packaging/installer/update).
 
 ## Nightly vs. stable releases
 

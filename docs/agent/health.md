@@ -19,9 +19,9 @@ and the needs of your infrastructure, are your only limits.
 
 <DocsSteps>
 
-[<FiPlay /> Quickstart](/docs/agent/quickstart)
+[<FiPlay /> Quickstart](/docs/agent/health/quickstart)
 
-[<FiCode /> Configuration reference](/docs/agent/reference)
+[<FiCode /> Configuration reference](/docs/agent/health/reference)
 
 [<FiBook /> Tutorials](#tutorials)
 
@@ -47,6 +47,7 @@ content.
 
 ## Related features
 
-**[Health notifications](/docs/agent/notifications)**: Get notified about Netdata's alarms via your favorite platform(s).
+**[Health notifications](/docs/agent/health/notifications)**: Get notified about Netdata's alarms via your favorite
+platform(s).
 
 

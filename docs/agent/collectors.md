@@ -21,31 +21,31 @@ guide](/docs/agent/quickstart).
 
 ## Take your next steps with collectors
 
-[Collectors quickstart](/docs/agent/quickstart)
+[Collectors quickstart](/docs/agent/collectors/quickstart)
 
-[Supported collectors list](/docs/agent/collectors)
+[Supported collectors list](/docs/agent/collectors/collectors)
 
-[Collectors configuration reference](/docs/agent/reference)
+[Collectors configuration reference](/docs/agent/collectors/reference)
 
 ## Tutorials
 
-[Monitor Nginx or Apache web server log files with Netdata](/docs/tutorials/collect-apache-nginx-web-logs)
+[Monitor Nginx or Apache web server log files with Netdata](/docs/agent/tutorials/collect-apache-nginx-web-logs)
 
-[Monitor CockroadchDB metrics with Netdata](/docs/tutorials/monitor-cockroachdb)
+[Monitor CockroadchDB metrics with Netdata](/docs/agent/tutorials/monitor-cockroachdb)
 
-[Monitor Unbound DNS servers with Netdata](/docs/tutorials/collect-unbound-metrics)
+[Monitor Unbound DNS servers with Netdata](/docs/agent/tutorials/collect-unbound-metrics)
 
-[Monitor a Hadoop cluster with Netdata](/docs/tutorials/monitor-hadoop-cluster)
+[Monitor a Hadoop cluster with Netdata](/docs/agent/tutorials/monitor-hadoop-cluster)
 
 ## Related features
 
-**[Dashboards](/docs/web)**: Vizualize your newly-collect metrics in real-time using Netdata's [built-in
-dashboard](/docs/web/gui). 
+**[Dashboards](/docs/agent/web)**: Vizualize your newly-collect metrics in real-time using Netdata's [built-in
+dashboard](/docs/agent/web/gui). 
 
-**[Backends](/docs/backends)**: Extend our built-in [database engine](/docs/agent/), which supports long-term metrics
-storage, by archiving metrics to like Graphite, Prometheus, MongoDB, TimescaleDB, and more.
+**[Backends](/docs/agent/backends)**: Extend our built-in [database engine](/docs/agent/database/engine), which supports
+long-term metrics storage, by archiving metrics to like Graphite, Prometheus, MongoDB, TimescaleDB, and more.
 
-**[Exporting](/docs/exporting)**: An experimental refactoring of our backends system with a modular system and
+**[Exporting](/docs/agent/exporting)**: An experimental refactoring of our backends system with a modular system and
 support for exporting metrics to multiple systems simultaneously.
 
 

@@ -385,8 +385,8 @@ In this guide, you learned the fundamentals of building a custom Netdata dashboa
 charts to your `custom-dashboard.html`, change the charts that are already there, and size them according to your needs.
 
 Of course, the custom dashboarding features covered here are just the beginning. Be sure to read up on our [custom
-dashboard documentation](/docs/web/gui/custom/) for details on how you can use other chart libraries, pull metrics from
-multiple Netdata agents, and choose which dimensions a given chart shows.
+dashboard documentation](/docs/agent/web/gui/custom) for details on how you can use other chart libraries, pull metrics
+from multiple Netdata agents, and choose which dimensions a given chart shows.
 
 Next, you'll learn how to store long-term historical metrics in Netdata!
 

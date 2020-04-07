@@ -58,9 +58,9 @@ modal](https://user-images.githubusercontent.com/12263278/64876743-be957a00-d647
 
 If an update is available, you'll see a modal similar to the one above.
 
-When you use the [automatic one-line installer script](/docs/packaging/installer) attempt to update every day.
-If you choose to update it manually, there are [several well-documented methods](/docs/packaging/installer/update) to
-achieve that. However, it is best practice for you to first go over the [changelog](/docs/changelog).
+When you use the [automatic one-line installer script](/docs/agent/packaging/installer) attempt to update every day. If
+you choose to update it manually, there are [several well-documented methods](/docs/agent/packaging/installer/update) to achieve
+that. However, it is best practice for you to first go over the [changelog](/docs/agent/changelog).
 
 ## Export and import a snapshot
 

@@ -44,7 +44,7 @@ The easiest way to install Netdata on a Linux system is our `kickstart.sh` one-l
 and let it take care of the rest. 
 
 This script will install Netdata from source, keep it up to date with nightly releases, connects to the Netdata
-[registry](/docs/registry), and sends [_anonymous statistics_](/docs/agent/anonymous-statistics) about how you use
+[registry](/docs/agent/registry), and sends [_anonymous statistics_](/docs/agent/anonymous-statistics) about how you use
 Netdata. We use this information to better understand how we can improve the Netdata experience for all our users.
 
 ```bash
@@ -55,7 +55,7 @@ Once finished, you'll have Netdata installed, and you'll be set up to get _night
 improvements, and bugfixes.
 
 If this method doesn't work for you, or you want to use a different process, visit our [installation
-documentation](/docs/packaging/installer) for details.
+documentation](/docs/agent/packaging/installer) for details.
 
 ## Netdata fundamentals
 
