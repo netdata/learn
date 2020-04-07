@@ -22,7 +22,7 @@ There are two primary ways to view Netdata's dashboards:
 
 2.  The [`dashboard.js` JavaScript library](#dashboardjs), which helps you
    [customize the standard dashboards](/docs/agent/web/gui#customizing-the-standard-dashboard)
-   using JavaScript, or create entirely new [custom dashboards](/docs/agent/web/gui#custom) or
+   using JavaScript, or create entirely new [custom dashboards](/docs/agent/web/gui/custom) or
    [Atlassian Confluence dashboards](/docs/agent/web/gui/confluence).
 
 You can also view all the data Netdata collects through the [REST API v1](/docs/agent/web/api/).

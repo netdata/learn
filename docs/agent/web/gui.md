@@ -44,8 +44,8 @@ dashboard](https://user-images.githubusercontent.com/1153921/62810777-ef681980-b
 
 Netdata is broken up into multiple **sections**, such as **System Overview**,
 **CPU**, **Disk**, and more. Inside each section you'll find a number of charts,
-broken down into [contexts](/docs/agent/web/server#contexts) and
-[families](/docs/agent/web/server#families).
+broken down into [contexts](/docs/agent/web#contexts) and
+[families](/docs/agent/web#families).
 
 An example of the **Memory** section on a Linux desktop system.
 
@@ -66,7 +66,7 @@ associated with.
 menu](https://user-images.githubusercontent.com/1153921/62811361-38b96880-bab6-11e9-8d41-4d9b29778e86.png)
 
 Most menu items will contain several **submenu** entries, which represent any
-[families](/docs/agent/web/server#families) from that section. Netdata automatically
+[families](/docs/agent/web#families) from that section. Netdata automatically
 generates these submenu entries.
 
 Here's a **Disks** menu with several submenu entries for each disk drive and
@@ -162,7 +162,7 @@ file](https://user-images.githubusercontent.com/1153921/62798924-570e6c80-ba94-1
 
 ## Custom dashboards
 
-For information on creating custom dashboards from scratch, see the [custom dashboards](/docs/agent/web/custom) or
-[Atlassian Confluence dashboards](/docs/agent/web/custom/confluence) guides.
+For information on creating custom dashboards from scratch, see the [custom dashboards](/docs/agent/web/gui/custom) or
+[Atlassian Confluence dashboards](/docs/agent/web/gui/confluence) guides.
 
 

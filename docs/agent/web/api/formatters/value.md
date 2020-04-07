@@ -18,7 +18,7 @@ The Value formatter respects the following API `&options=`:
 | `min2max` | yes       | to return the delta from the minimum value to the maximum value (across dimensions)|
 
 The Value formatter is not exposed by the API by itself.
-Instead it is used by the [`ssv`](/docs/agent/web/api/queries/ssv) formatter
+Instead it is used by the [`ssv`](/docs/agent/web/api/formatters/ssv) formatter
 and [health monitoring queries](/docs/agent/health).
 
 
