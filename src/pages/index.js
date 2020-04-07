@@ -13,7 +13,7 @@ import { FiBox, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGri
 const docs = [
   {
     title: <>Getting started guide</>,
-    href: 'docs/getting-started',
+    href: 'docs/agent/getting-started',
     description: (
       <>
         Configure metrics retention, build streaming connections, collect metrics 
@@ -23,7 +23,7 @@ const docs = [
   },
   {
     title: <>Configuration</>,
-    href: 'docs/configuration-guide',
+    href: 'docs/agent/configuration-guide',
     description: (
       <>
         Use Netdata’s expansive customization possibilities to suit any service, any system, and any infrastructure.
@@ -32,7 +32,7 @@ const docs = [
   },
   {
     title: <>Collect metrics</>,
-    href: 'docs/collectors',
+    href: 'docs/agent/collectors',
     description: (
       <>
         Add more charts to Netdata via its intelligent auto-detection of popular web servers, databases, mail servers, security apps, and dozens more.
@@ -41,7 +41,7 @@ const docs = [
   },
   {
     title: <>Health monitoring</>,
-    href: 'docs/health',
+    href: 'docs/agent/health',
     description: (
       <>
         Tune existing alarms or create new ones, and enable any number of notification systems based on roles and severity.
@@ -50,7 +50,7 @@ const docs = [
   },
   {
     title: <>Netdata Cloud</>,
-    href: 'docs/netdata-cloud',
+    href: 'docs/cloud',
     description: (
       <>
         Learn how to view real-time, distributed health monitoring and performance troubleshooting data for all your systems in one place.
@@ -59,7 +59,7 @@ const docs = [
   },
   {
     title: <>Custom dashboards</>,
-    href: 'docs/web/custom',
+    href: 'docs/agent/web/gui/custom',
     description: (
       <>
         Build bespoke dashboards with simple HTML and JavaScript to put all of your most important metrics in one easy-to-understand place.
@@ -157,7 +157,7 @@ function Home() {
                     'button button--secondary button--lg',
                     styles.getStarted,
                   )}
-                  to={useBaseUrl('docs/introduction')}>
+                  to={useBaseUrl('docs/agent')}>
                   Read the docs
                 </Link>
               </div>
@@ -205,19 +205,19 @@ function Home() {
               <div className={classnames('col col--4', styles.installMethods)}>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/packaging/installer/methods/packages')}>
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/packages')}>
                   <img src="img/methods/package.png" alt="Install Netdata with .deb/.rpm packages" />
                   .deb/.rpm packages
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/packaging/docker')}>
+                  to={useBaseUrl('docs/agent/packaging/docker')}>
                   <img src="img/methods/docker.png" alt="Install Netdata with Docker" />
                   Docker
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/packaging/installer/methods/macos')}>
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/macos')}>
                   <img src="img/methods/macos.png" alt="Install Netdata on macOS" />
                   macOS
                 </Link>
@@ -230,17 +230,17 @@ function Home() {
                 </a>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/packaging/installer/methods/cloud-providers')}>
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}>
                   <img src="img/methods/cloud.png" alt="Install Netdata on cloud providers" />
                   Cloud providers
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/packaging/installer/methods/freebsd')}>
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/freebsd')}>
                   <img src="img/methods/freebsd.png" alt="Install Netdata on FreeBSD" />
                   FreeBSD
                 </Link>
-                <p><Link to="docs/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>
+                <p><Link to="docs/agent/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>
               </div>
             </div>
           </div>
@@ -256,52 +256,52 @@ function Home() {
               </div>
               <div className={classnames('col col--4', styles.stepByStepLinks)}>
                 <StepByStepLink
-                  href="docs/step-by-step/step-01"
+                  href="docs/agent/step-by-step/step-01"
                   icon={<FiBox />}
                   title="Netdata's building blocks"
                 />
                 <StepByStepLink
-                  href="docs/step-by-step/step-02"
+                  href="docs/agent/step-by-step/step-02"
                   icon={<FiHome />}
                   title="Get to know Netdata's dashboard"
                 />
                 <StepByStepLink
-                  href="docs/step-by-step/step-03"
+                  href="docs/agent/step-by-step/step-03"
                   icon={<FiServer />}
                   title="Monitor more than one system with Netdata"
                 />
                 <StepByStepLink
-                  href="docs/step-by-step/step-04"
+                  href="docs/agent/step-by-step/step-04"
                   icon={<FiSliders />}
                   title="The basics of configuring Netdata"
                 />
                 <StepByStepLink
-                  href="docs/step-by-step/step-05"
+                  href="docs/agent/step-by-step/step-05"
                   icon={<FiActivity />}
                   title="Health monitoring alarms and notifications"
                 />
                 <StepByStepLink
-                  href="docs/step-by-step/step-06"
+                  href="docs/agent/step-by-step/step-06"
                   icon={<FiCpu />}
                   title="Collect metrics from more services and apps"
                 />
                 <StepByStepLink
-                  href="docs/step-by-step/step-07"
+                  href="docs/agent/step-by-step/step-07"
                   icon={<FiMonitor />}
                   title="Netdata’s dashboard in depth"
                 />
                 <StepByStepLink
-                  href="docs/step-by-step/step-08"
+                  href="docs/agent/step-by-step/step-08"
                   icon={<FiGrid />}
                   title="Building your first custom dashboard"
                 />
                 <StepByStepLink
-                  href="docs/step-by-step/step-09"
+                  href="docs/agent/step-by-step/step-09"
                   icon={<FiHardDrive />}
                   title="Long-term metrics storage"
                 />
                 <StepByStepLink
-                  href="docs/step-by-step/step-10"
+                  href="docs/agent/step-by-step/step-10"
                   icon={<FiLock />}
                   title="Set up a proxy"
                 />
@@ -311,7 +311,7 @@ function Home() {
                 <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with monitoring and troubleshooting.</p>
                 <p>
                   <Link
-                    to={useBaseUrl('docs/step-by-step/step-00')}
+                    to={useBaseUrl('docs/agent/step-by-step/step-00')}
                     className={classnames('button button--lg')}
                   >
                     Try the guide
