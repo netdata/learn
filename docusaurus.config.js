@@ -1,12 +1,25 @@
 module.exports = {
   title: 'Learn @ Netdata',
   tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Documentation, tutorials, blogs, and much more.',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://learn.netdat.cloud',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'netdata', // Usually your GitHub org/user name.
-  projectName: 'netdata', // Usually your repo name.
+  organizationName: 'netdata',
+  projectName: 'netdata',
+  plugins: [
+    '@docusaurus/plugin-content-docs', {
+      sidebarPath: require.resolve('./sidebars.js'),
+    },
+    '@docusaurus/plugin-content-pages',
+    '@docusaurus/plugin-google-analytics',
+    '@docusaurus/plugin-sitemap'
+  ],
+  themes: ['@docusaurus/theme-classic'],
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-64295674-3',
+      anonymizeIP: true,
+    },
     navbar: {
       title: '',
       logo: {
@@ -101,28 +114,4 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Netdata, Inc. Built with Docusaurus.`,
     },
   },
-  presets: [
-    [
-      '@docusaurus/preset-classic',
-      {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/netdata/netdata/edit/master/',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      },
-      '@docusaurus/plugin-content-docs',
-      {
-        path: 'cloud',
-        routeBasePath: 'cloud',
-        include: ['**/*.md', '**/*.mdx'], // Extensions to include.
-      }
-    ],
-  ],
-  plugins: [
-    '@docusaurus/plugin-sitemap'
-  ]
 };
