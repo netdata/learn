@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Learn @ Netdata',
   tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Documentation, tutorials, blogs, and much more.',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://learn.netdata.cloud',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'netdata', // Usually your GitHub org/user name.
@@ -114,12 +114,6 @@ module.exports = {
           customCss: require.resolve('./src/css/custom.css'),
         },
       },
-      '@docusaurus/plugin-content-docs',
-      {
-        path: 'cloud',
-        routeBasePath: 'cloud',
-        include: ['**/*.md', '**/*.mdx'], // Extensions to include.
-      }
     ],
   ],
   plugins: [

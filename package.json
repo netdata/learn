@@ -10,9 +10,9 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.50",
+    "@docusaurus/core": "^2.0.0-alpha.43",
     "@docusaurus/plugin-sitemap": "^2.0.0-alpha.37",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.50",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.43",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "front-matter": "^3.1.0",
