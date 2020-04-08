@@ -1,12 +1,48 @@
 module.exports = {
   title: 'Learn @ Netdata',
   tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Documentation, tutorials, blogs, and much more.',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://learn.netdata.cloud',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'netdata', // Usually your GitHub org/user name.
-  projectName: 'netdata', // Usually your repo name.
+  organizationName: 'netdata',
+  projectName: 'netdata',
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+        },
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+      }
+    ]
+  ],
+  // themes: [
+  //   '@docusaurus/theme-classic',
+  //    {
+  //      customCss: require.resolve('./src/css/custom.css'),
+  //    }
+  // ],
+  // plugins: [
+  //   '@docusaurus/plugin-sitemap',
+  //   '@docusaurus/plugin-google-analytics',
+  //   '@docusaurus/plugin-content-pages',
+  //   '@docusaurus/plugin-content-docs',
+  //     {
+  //       path: 'docs',
+  //       sidebarPath: require.resolve('./sidebars.js'),
+  //     },
+  // ],
+  // stylesheets: [
+  //   require.resolve('./src/css/custom.css'),
+  // ],
   themeConfig: {
+    googleAnalytics: {
+      trackingID: 'UA-64295674-3',
+      anonymizeIP: true,
+    },
     navbar: {
       title: '',
       logo: {
@@ -101,28 +137,4 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Netdata, Inc. Built with Docusaurus.`,
     },
   },
-  presets: [
-    [
-      '@docusaurus/preset-classic',
-      {
-        docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/netdata/netdata/edit/master/',
-        },
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
-      },
-      '@docusaurus/plugin-content-docs',
-      {
-        path: 'cloud',
-        routeBasePath: 'cloud',
-        include: ['**/*.md', '**/*.mdx'], // Extensions to include.
-      }
-    ],
-  ],
-  plugins: [
-    '@docusaurus/plugin-sitemap'
-  ]
 };
