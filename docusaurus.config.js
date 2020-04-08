@@ -25,8 +25,8 @@ module.exports = {
   //      customCss: require.resolve('./src/css/custom.css'),
   //    }
   // ],
-  // plugins: [
-  //   '@docusaurus/plugin-sitemap',
+  plugins: [
+    '@docusaurus/plugin-sitemap',
   //   '@docusaurus/plugin-google-analytics',
   //   '@docusaurus/plugin-content-pages',
   //   '@docusaurus/plugin-content-docs',
@@ -34,7 +34,7 @@ module.exports = {
   //       path: 'docs',
   //       sidebarPath: require.resolve('./sidebars.js'),
   //     },
-  // ],
+  ],
   // stylesheets: [
   //   require.resolve('./src/css/custom.css'),
   // ],
