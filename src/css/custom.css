@@ -46,6 +46,7 @@ html {
   --ifm-spacing-horizontal: 2rem;
 
   /* Base fonts */
+  --ifm-font-size-base: 16px;
   --ifm-font-base-color: #35414A;
   --ifm-font-family-base: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --ifm-font-family-monospace: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
@@ -75,7 +76,7 @@ html {
   --ifm-navbar-height: 68px;
 
   /* Sidebar */
-  --ifm-menu-color: white;
+  --ifm-menu-color-background-active: white;
 
   /* Footer */
   --ifm-footer-background-color: var(--ifm-background-color);
@@ -113,6 +114,10 @@ html[data-theme='dark'] {
   padding-top: 6rem !important;
 }
 
+main[class^="docMainContainer"] .container {
+  margin-left: 6rem;
+}
+
 /* Markdown-only */
 .markdown {
   /* Vertical rhythm */
@@ -140,10 +145,29 @@ html[data-theme='dark'] a:hover {
   color: var(--ifm-color-accent);
 }
 
-/* Header */
+/* 
+ * Navbar 
+ */
+
 .navbar,
 .navbar .navbar-sidebar {
   background-color: #35414a;
+}
+
+.navbar .navbar__brand {
+  margin-right: 16rem;
+}
+
+.navbar__brand strong {
+  margin-left: 0.4rem;
+  padding: 0rem 0.2rem;
+  
+  background: var(--ifm-color-primary);
+  border-radius: 2px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .navbar .navbar__logo {
@@ -161,17 +185,17 @@ html[data-theme='dark'] a:hover {
 }
 
 .navbar .navbar__link {
+  font-size: 1rem;
   font-weight: var(--ifm-font-weight-normal);
 }
 
-.navbar .navbar__link[href="/"],
-.navbar .navbar-sidebar .navbar__link[href="/"] {
-  color: white;
-} 
+.navbar .navbar__link:last-of-type {
+  margin-left: 1rem;
+}
 
-.navbar .navbar__link[href="/"]:hover {
-  color: var(--ifm-color-primary-lightest);
-} 
+.navbar .navbar__link.navbar__link--active {
+  border-bottom: 2px solid var(--ifm-color-primary);
+}
 
 .navbar .navbar__items--right .navbar__link:last-of-type {
   margin-right: 1rem;
@@ -197,8 +221,38 @@ html[data-theme='dark'] a:hover {
   background-image: url('/static/img/external-link-green.svg');
 }
 
-.navbar-sidebar .menu__link {
-  color: 
+.navbar .navbar__toggle {
+  margin-right: 1rem;
+}
+
+.react-toggle-track {
+  background-color: white;
+}
+
+/* 
+ * Sidebar
+ */
+
+div[class^="docSidebarContainer_node_modules"] {
+  width: 350px; 
+  background: linear-gradient(90deg, white 60%,#ededf3);
+}
+
+.menu .menu__link {
+  color: var(--ifm-font-base-color);
+  font-weight: var(--ifm-font-weight-normal);
+}
+
+@media (min-width: 997px) {
+  div[class^="sidebar_node_modules-"] {
+    padding-top: calc(6rem + var(--ifm-navbar-height));
+  }
+}
+
+@media (max-width: 996px) {
+  .menu .menu__link {
+    color: white;
+  }  
 }
 
 /* Footer */

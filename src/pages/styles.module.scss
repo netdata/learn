@@ -10,7 +10,7 @@
 .hero {
   position: relative;
   padding: 8rem 0 6rem;
-  background: linear-gradient(to bottom, white, #EEF2F9);
+  background: linear-gradient(to bottom, white, #f5f0f0);
 
   span {
     display: block;
@@ -26,7 +26,7 @@
     position: relative;
 
     .heroTagline {
-      font-size: 3.4rem;
+      font-size: 3rem;
     }
 
     .heroSubHead {
@@ -49,9 +49,9 @@
   .heroImage {
     z-index: 10;
     position: absolute;
-    top: -73px;
-    right: -217px;
-    max-width: 800px;
+    bottom: -162px;
+    right: -93px;
+    max-width: 650px;
   }
 
   @media (max-width: 1600px) {
@@ -73,11 +73,11 @@
       padding: 4rem 0 3rem;
     }
 
-    .heroTagline {
+    .heroText .heroTagline {
       font-size: 2.4rem;
     }
 
-    .heroSubHead {
+    .heroText .heroSubHead {
       font-size: 1.2rem;
     }
 
@@ -160,6 +160,14 @@
 .installCommand {
   margin-top: var(--ifm-paragraph-margin-bottom);
   margin-bottom: var(--ifm-paragraph-margin-bottom);
+
+  code {
+    padding: var(--ifm-pre-padding) 3rem var(--ifm-pre-padding) var(--ifm-pre-padding);
+
+    white-space: pre-line;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
 }
 
 .installMethods {
@@ -176,16 +184,19 @@
 
 .installMethod {
   grid-column: span 2;
+  padding: 0.6rem;
+
   border: 1px solid var(--ifm-color-gray-300);
   border-radius: 2px;
+  color: var(--ifm-font-base-color);
   font-size: 0.9rem;
   text-align: center;
-  padding: 0.6rem;
+  
 }
 
 .installMethod:hover {
   border: 1px solid var(--ifm-color-primary-lightest);
-  color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary);
 }
 
 .installMethod img {
@@ -295,7 +306,7 @@
 }
 
 .docBox h3 {
-  color: var(--ifm-color-secondary);
+  color: var(--ifm-color-primary);
 }
 
 .docBox p {
@@ -306,7 +317,7 @@
 }
 
 .docBox:hover h3 {
-  color: var(--ifm-color-primary);
+  color: var(--ifm-color-secondary);
 }
 
 @media (max-width: 996px) {
