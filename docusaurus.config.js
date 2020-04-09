@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Learn @ Netdata',
   tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Documentation, tutorials, blogs, and much more.',
-  url: 'https://learn.netdat.cloud',
+  url: 'https://learn.netdata.cloud',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
   organizationName: 'netdata',
@@ -14,17 +14,27 @@ module.exports = {
     '@docusaurus/plugin-google-analytics',
     '@docusaurus/plugin-sitemap'
   ],
-  themes: ['@docusaurus/theme-classic'],
+  themes: [
+    ['@docusaurus/theme-classic', {
+      customCss: require.resolve('./src/css/custom.css'),
+    }],
+  ],
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-64295674-3',
       anonymizeIP: true,
+    },
+    image: 'img/everyone.png',
+    prism: {
+      theme: require('prism-react-renderer/themes/duotoneDark'),
+      darkTheme: require('prism-react-renderer/themes/duotoneDark'),
     },
     navbar: {
       title: '',
       logo: {
         alt: 'Netdata Learn logo',
         src: 'img/logo.svg',
+        srcDark: 'img/logo.svg',
       },
       links: [
         {to: 'docs/agent', label: 'Agent', position: 'left'},
