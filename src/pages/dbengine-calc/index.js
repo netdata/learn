@@ -150,7 +150,7 @@ function Wizard() {
               <p>With the current settings, the Netdata Agent will use {finalDisk} MiB in disk space to store your metrics for {state.retention} days.</p>
               <p>You should edit your <code>netdata.conf</code> file to change the <code>dbengine disk space</code> setting:</p>
               <CodeBlock className={classnames('conf')} language='conf'>{conf}</CodeBlock>
-              <p>The Netdata Agent will also use {finalRAM} MiB of system memory.</p>
+              <p>The database engine will also use {finalRAM} MiB of system memory, on top of the memory needed to run the rest of the Agent's collection, visualization, and alerting features.</p>
 
             </div>
 

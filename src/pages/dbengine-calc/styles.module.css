@@ -13,6 +13,7 @@
 
 @media screen and (max-width: 966px) {
   .heroBanner {
+    margin-bottom: 0;
     padding: 2rem;
   }
 }
@@ -93,12 +94,12 @@
 }
 
 .calcResults {
-  font-size: 120%;
+  font-size: 116%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 996px) {
   .calcResults {
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 }
 
@@ -106,12 +107,25 @@
   font-size: 1rem;
 }
 
-.calcResults div[class^='codeBlockContent'] {
+pre[class*='codeBlock'] {
   margin-bottom: 2rem;
 
   font-size: 0.9rem;
 }
 
-.calcResults div[class^='codeBlockContent'] button {
+pre[class^='codeBlock'] button {
   display: none;
+}
+
+/* 
+ * Dark mode overrides
+ */
+
+html[data-theme='dark'] .calcInput input {
+  background: var(--ifm-background-dark);
+  color: white;
+}
+
+html[data-theme='dark'] blockquote {
+  color: var(--ifm-color-primary-lightest);
 }
