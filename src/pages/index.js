@@ -177,7 +177,7 @@ function Home() {
                 className={classnames(
                   styles.heroImage
                 )} 
-                src="img/index/hero.svg"
+                src="img/index/hero.png"
                 alt="Netdata Learn: All your monitoring education in one place" 
               />
             </div>
@@ -272,7 +272,7 @@ function Home() {
                   'col col--4',
                   styles.stepByStepImg
                 )}>
-                <img src="img/index/step-by-step.svg" alt="Learn Netdata step-by-step" />
+                <img src="img/index/step-by-step.png" alt="Learn Netdata step-by-step" />
               </div>
               <div className={classnames('col col--4', styles.stepByStepLinks)}>
                 <StepByStepLink
