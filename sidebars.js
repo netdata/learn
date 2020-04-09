@@ -184,6 +184,7 @@ module.exports = {
                     'agent/collectors/go.d.plugin/modules/phpfpm',
                     'agent/collectors/go.d.plugin/modules/pihole',
                     'agent/collectors/go.d.plugin/modules/portcheck',
+                    'agent/collectors/go.d.plugin/modules/pulsar',
                     'agent/collectors/go.d.plugin/modules/rabbitmq',
                     'agent/collectors/go.d.plugin/modules/scaleio',
                     'agent/collectors/go.d.plugin/modules/solr',
