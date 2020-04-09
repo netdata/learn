@@ -7,9 +7,11 @@ module.exports = {
   organizationName: 'netdata',
   projectName: 'netdata',
   plugins: [
-    '@docusaurus/plugin-content-docs', {
-      sidebarPath: require.resolve('./sidebars.js'),
-    },
+    [
+      '@docusaurus/plugin-content-docs', {
+        sidebarPath: require.resolve('./sidebars.js'),
+      }
+    ],
     '@docusaurus/plugin-content-pages',
     '@docusaurus/plugin-google-analytics',
     '@docusaurus/plugin-sitemap'
