@@ -14,7 +14,8 @@ module.exports = {
     ],
     '@docusaurus/plugin-content-pages',
     '@docusaurus/plugin-google-analytics',
-    '@docusaurus/plugin-sitemap'
+    '@docusaurus/plugin-sitemap',
+    'docusaurus-plugin-sass'
   ],
   themes: [
     ['@docusaurus/theme-classic', {
@@ -39,6 +40,7 @@ module.exports = {
         srcDark: 'img/logo.svg',
       },
       links: [
+        {to: '/', label: 'Learn', position: 'left'},
         {to: 'docs/agent', label: 'Agent', position: 'left'},
         {to: 'docs/cloud', label: 'Cloud', position: 'left'},
         {

@@ -100,7 +100,14 @@ html[data-theme='dark'] {
 
   /* Borders */
   --ifm-contents-border-color: 
+}
 
+/**
+ * Structure
+ */
+
+.padding-vert--lg {
+  padding-top: 6rem !important;
 }
 
 /* Markdown-only */
@@ -113,9 +120,7 @@ html[data-theme='dark'] {
  * Everything else
  */
 
-/* .main-wrapper {
-  overflow-x: hidden;
-} */
+
 
 /* Links */
 a {
@@ -247,7 +252,7 @@ html[data-theme='dark'] .button.button--secondary:hover {
 
 /* Code highlight */
 div[class^="mdxCodeBlock"] button,
-div[class^="codeBlockContent"] button {
+pre[class*="codeBlock"] button {
   visibility: visible;
   opacity: 1;
 
@@ -256,12 +261,14 @@ div[class^="codeBlockContent"] button {
 }
 
 div[class^="mdxCodeBlock"] button:hover,
-div[class^="codeBlockContent"] button:hover {
+pre[class*="codeBlock"] button:hover {
   color: white;
   border: 1px solid white;
 }
 
 .prism-code {
+  position: relative;
+
   border-radius: var(--ifm-global-radius);
 }
 
@@ -270,7 +277,7 @@ pre.prism-code code {
 }
 
 html[data-theme='dark'] code {
-  background: var(--ifm-color-gray-800);
+  background: rgb(42, 39, 52);
 }
 
 .docusaurus-highlight-code-line {
