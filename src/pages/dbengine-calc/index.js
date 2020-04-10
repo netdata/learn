@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import Layout from '@theme/Layout';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 import CodeBlock from '@theme/CodeBlock'
 
@@ -61,8 +61,8 @@ function Wizard() {
           <div className="row">
             <div className="col col--9">
               <h1 className="hero__title">RAM and disk usage calculator</h1>
-              <p>The Agent's database engine uses RAM to store your real-time metrics, then "spills" historical metrics to disk for efficient long-term storage.</p>
-              <p>This calculator helps you determine how much RAM and disk the Agent will use based on how long you want to retain your metrics and a few other settings.</p>
+              <p>The Agent's database engine uses your system's RAM to store real-time metrics, then "spills" historical metrics to disk for efficient long-term storage.</p>
+              <p>This calculator helps you determine how much RAM and disk the Agent's database engine will use based on how long you want to retain your metrics and a few other settings.</p>
               <p><blockquote>⚠️ This calculator provides an <em>estimate</em> of disk and RAM usage. Real-life usage may vary based on the accuracy of the values you enter below or due to changes in the compression ratio.</blockquote></p>
             </div>
           </div>

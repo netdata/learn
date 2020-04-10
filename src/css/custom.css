@@ -365,7 +365,7 @@ pre[class*='codeBlock'] button:hover {
 }
 
 pre.prism-code code {
-  padding: var(--ifm-pre-padding) 4rem var(--ifm-pre-padding) var(--ifm-pre-padding);
+  padding: var(--ifm-pre-padding);
 }
 
 html[data-theme='dark'] code {

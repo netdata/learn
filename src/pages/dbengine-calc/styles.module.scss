@@ -113,8 +113,8 @@ pre[class*='codeBlock'] {
   font-size: 0.9rem;
 }
 
-pre[class^='codeBlock'] button {
-  display: none;
+pre[class*='codeBlock'] button {
+  display: none !important;
 }
 
 /* 
