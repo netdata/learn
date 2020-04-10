@@ -114,6 +114,11 @@ html[data-theme='dark'] {
   --ifm-contents-border-color: 
 }
 
+html[data-theme='dark'] img:not(.navbar__logo) {
+  filter: grayscale(1);
+  opacity: 0.3;
+}
+
 /**
  * Structure
  */
@@ -345,9 +350,6 @@ html[data-theme='dark'] .button.button--secondary:hover {
 
 div[class^='mdxCodeBlock'] button,
 pre[class*='codeBlock'] button {
-  visibility: visible;
-  opacity: 1;
-
   color: var(--ifm-color-primary-lightest);
   border: 1px solid var(--ifm-color-primary-lightest);
 }
@@ -359,8 +361,6 @@ pre[class*='codeBlock'] button:hover {
 }
 
 .prism-code {
-  position: relative;
-
   border-radius: var(--ifm-global-radius);
 }
 

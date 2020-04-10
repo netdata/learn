@@ -177,7 +177,7 @@ function Home() {
                 className={classnames(
                   styles.heroImage
                 )} 
-                src="img/index/hero.png"
+                src="img/index/hero.svg"
                 alt="Netdata Learn: All your monitoring education in one place" 
               />
             </div>
@@ -267,12 +267,17 @@ function Home() {
               <div className={classnames('col col--12')}>
                 <h2>Learn Netdata step-by-step</h2>
               </div>
-              <div 
-                className={classnames(
-                  'col col--4',
-                  styles.stepByStepImg
-                )}>
-                <img src="img/index/step-by-step.png" alt="Learn Netdata step-by-step" />
+              <div className={classnames('col col--4')}>
+                <p>Take a guided tour through Netdata's core features, including its famous dashboard, creating new alarms, and collecting metrics from your favorite services and applications.</p>
+                <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with monitoring and troubleshooting.</p>
+                <p>
+                  <Link
+                    to={useBaseUrl('docs/agent/step-by-step/step-00')}
+                    className={classnames('button button--lg')}
+                  >
+                    Try the guide
+                  </Link>
+                </p>
               </div>
               <div className={classnames('col col--4', styles.stepByStepLinks)}>
                 <StepByStepLink
@@ -326,17 +331,12 @@ function Home() {
                   title="Set up a proxy"
                 />
               </div>
-              <div className={classnames('col col--4')}>
-                <p>Take a guided tour through Netdata's core features, including its famous dashboard, creating new alarms, and collecting metrics from your favorite services and applications.</p>
-                <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with monitoring and troubleshooting.</p>
-                <p>
-                  <Link
-                    to={useBaseUrl('docs/agent/step-by-step/step-00')}
-                    className={classnames('button button--lg')}
-                  >
-                    Try the guide
-                  </Link>
-                </p>
+              <div 
+                className={classnames(
+                  'col col--4',
+                  styles.stepByStepImg
+                )}>
+                <img src="img/index/step-by-step.svg" alt="Learn Netdata step-by-step" />
               </div>
             </div>
           </div>
