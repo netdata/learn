@@ -48,8 +48,8 @@ html {
   /* Base fonts */
   --ifm-font-size-base: 16px;
   --ifm-font-base-color: #1d1d40;
-  --ifm-font-family-base: "IBM Plex Sans", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  --ifm-font-family-monospace: "IBM Plex Mono", SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --ifm-font-family-base: 'IBM Plex Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ifm-font-family-monospace: 'IBM Plex Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   --ifm-font-size-base: 18px;
   --ifm-line-height-base: 1.6;
 
@@ -121,12 +121,12 @@ html[data-theme='dark'] {
   padding-top: 6rem !important;
 }
 
-main[class^="docMainContainer"] .container {
+main[class^='docMainContainer'] .container {
   margin-left: 6rem;
 }
 
 @media (max-width: 1655px) {
-  main[class^="docMainContainer"] .container {
+  main[class^='docMainContainer'] .container {
     margin-left: auto
   }
 }
@@ -200,21 +200,31 @@ main[class^="docMainContainer"] .container {
  * Sidebar
  */
 
-div[class^="docSidebarContainer"] {
+div[class^='docSidebarContainer'] {
   flex-shrink: 0;
   width: 350px;
   top: 0;
 
-  background: linear-gradient(90deg, #f9f7f7 60%,#ededf3);
+  background: linear-gradient(90deg, #f9f7f7 60%, #ededf3);
+}
+
+html[data-theme='dark'] div[class^='docSidebarContainer'] {
+  background: linear-gradient(90deg, #35414a 60%, #273142);
 }
 
 @media (max-width: 1300px) {
-  div[class^="docSidebarContainer"] {
+  div[class^='docSidebarContainer'] {
     width: 300px;
   }
 }
 
-div[class^="sidebarLogo"] {
+@media (min-width: 997px) {
+  div[class^='sidebar']:not([class^='sidebarLogo']) {
+    padding-top: 6rem;
+  }
+}
+
+div[class^='sidebarLogo'] {
   display: none !important;
 }
 
@@ -223,10 +233,8 @@ div[class^="sidebarLogo"] {
   font-weight: var(--ifm-font-weight-normal);
 }
 
-@media (min-width: 997px) {
-  div[class^="sidebar"]:not([class^="sidebarLogo"]) {
-    padding-top: 6rem;
-  }
+html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--sublist) {
+  background: #35414a;
 }
 
 @media (max-width: 996px) {
@@ -334,8 +342,8 @@ html[data-theme='dark'] .button.button--secondary:hover {
  * Code highlighting
  */
 
-div[class^="mdxCodeBlock"] button,
-pre[class*="codeBlock"] button {
+div[class^='mdxCodeBlock'] button,
+pre[class*='codeBlock'] button {
   visibility: visible;
   opacity: 1;
 
@@ -343,8 +351,8 @@ pre[class*="codeBlock"] button {
   border: 1px solid var(--ifm-color-primary-lightest);
 }
 
-div[class^="mdxCodeBlock"] button:hover,
-pre[class*="codeBlock"] button:hover {
+div[class^='mdxCodeBlock'] button:hover,
+pre[class*='codeBlock'] button:hover {
   color: white;
   border: 1px solid white;
 }
