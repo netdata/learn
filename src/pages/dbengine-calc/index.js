@@ -54,14 +54,14 @@ function Wizard() {
 
   return (
     <Layout
-      title={`Calculate `}
-      description="Description will go into a meta tag in <head />">
+      title={`Calculate the disk and RAM needed to store your metrics`}
+      description="This calculator helps you determine how much RAM and disk the Agent's database engine will use based on how long you want to retain your metrics.">
       <header className={classnames('hero', styles.heroBanner)}>
         <div className="container">
           <div className="row">
             <div className="col col--9">
-              <h1 className="hero__title">RAM and disk usage calculator</h1>
-              <p>The Agent's database engine uses your system's RAM to store real-time metrics, then "spills" historical metrics to disk for efficient long-term storage.</p>
+              <h1 className="hero__title">Calculate the disk and RAM needed to store your metrics</h1>
+              <p>The Agent's database engine uses your system's RAM to store real-time metrics, then "spills" historical metrics to disk for efficient long-term storage. Read the <a href="/docs/agent/database/engine">database engine docs</a> for more information.</p>
               <p>This calculator helps you determine how much RAM and disk the Agent's database engine will use based on how long you want to retain your metrics and a few other settings.</p>
               <p><blockquote>⚠️ This calculator provides an <em>estimate</em> of disk and RAM usage. Real-life usage may vary based on the accuracy of the values you enter below or due to changes in the compression ratio.</blockquote></p>
             </div>
