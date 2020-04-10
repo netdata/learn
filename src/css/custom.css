@@ -232,7 +232,7 @@ div[class^="docSidebarContainer"] {
 }
 
 @media (min-width: 997px) {
-  div[class^="sidebar_node_modules-"] {
+  div[class^="sidebar"] {
     padding-top: calc(6rem + var(--ifm-navbar-height));
   }
 }
