@@ -1,0 +1,131 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  position: relative;
+  overflow: hidden;
+
+  margin-bottom: 2rem;
+  padding: 4rem 0 0rem;
+}
+
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    margin-bottom: 0;
+    padding: 2rem;
+  }
+}
+
+.dbCalc {
+  align-items: center;
+
+  margin-bottom: 4rem;
+}
+
+.calcRow {
+  padding: 1rem 0;
+
+  border-top: 0;
+  border-left: 1px solid #AEB3B7;
+  border-bottom: 1px solid #AEB3B7;
+  border-right: 1px solid #AEB3B7;
+  font-size: 90%;
+}
+
+.calcRow:first-of-type {
+  border-top: 1px solid #AEB3B7;
+  border-radius: 2px 2px 0 0;
+}
+
+.calcInput {
+  display: flex !important;
+  align-items: center;
+}
+
+.calcInput input {
+  max-width: 100px;
+  margin: 0 2rem 0 0;
+  padding: 0.8rem 1rem;
+
+  border: 1px solid #AEB3B7;
+  border-radius: 2px;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .calcInput {
+    order: 2;
+    margin-top: 1rem;
+  }
+}
+
+.calcInstruction label {
+  font-size: 110%;
+  font-weight: 500;
+}
+
+.calcInstruction {
+  display: flex !important;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.calcInstruction p {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.calcInstruction p code {
+  font-size: 85%;
+}
+
+.calcInstruction img {
+  margin-left: 1rem;
+}
+
+.calcInstruction img.fullWidth {
+  flex: 0 0 100%;
+
+  margin-top: 2rem;
+  margin-left: 0;
+}
+
+.calcResults {
+  font-size: 116%;
+}
+
+@media screen and (max-width: 996px) {
+  .calcResults {
+    margin-top: 4rem;
+  }
+}
+
+.calcResults p code {
+  font-size: 1rem;
+}
+
+pre[class*='codeBlock'] {
+  margin-bottom: 2rem;
+
+  font-size: 0.9rem;
+}
+
+pre[class*='codeBlock'] button {
+  display: none !important;
+}
+
+/* 
+ * Dark mode overrides
+ */
+
+html[data-theme='dark'] .calcInput input {
+  background: var(--ifm-background-dark);
+  color: white;
+}
+
+html[data-theme='dark'] blockquote {
+  color: var(--ifm-color-primary-lightest);
+}
