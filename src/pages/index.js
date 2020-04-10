@@ -5,7 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 import CodeBlock from '@theme/CodeBlock'
 import { FiBox, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGrid, FiHardDrive, FiLock } from "react-icons/fi";
@@ -139,10 +139,20 @@ function Home() {
       <header className={classnames(styles.hero)}>
         <div className={classnames('container')}>
           <div className={classnames('row')}>
-            <div className={classnames('col col--6')}>
+            <div 
+              className={classnames(
+                'col col--6',
+                styles.heroText
+              )}>
               <span>Learn @ Netdata</span>
-              <h1 className="hero__title">All your monitoring education in one place.</h1>
-              <p className="hero__subtitle">Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.</p>
+              <h1 className={styles.heroTagline}>
+                All your monitoring education in one place.
+              </h1>
+              <p className={styles.heroSubHead}>
+                Learn alongside thousands of others who want to discover deeper insights about 
+                their systems and applications with Netdata's real-time health monitoring and 
+                performance troubleshooting toolkit.
+              </p>
               <div className={styles.buttons}>
                 <Link
                   className={classnames(
@@ -163,7 +173,13 @@ function Home() {
               </div>
             </div>
             <div className={classnames('col col--6', styles.heroImageContainer)}>
-              <img className={classnames(styles.heroImage)} src="img/everyone.png" alt="" />
+              <img 
+                className={classnames(
+                  styles.heroImage
+                )} 
+                src="img/index/hero.png"
+                alt="Netdata Learn: All your monitoring education in one place" 
+              />
             </div>
           </div>
         </div>
@@ -251,8 +267,12 @@ function Home() {
               <div className={classnames('col col--12')}>
                 <h2>Learn Netdata step-by-step</h2>
               </div>
-              <div className={classnames('col col--4')}>
-                <img src="img/index/step-by-step.png" />
+              <div 
+                className={classnames(
+                  'col col--4',
+                  styles.stepByStepImg
+                )}>
+                <img src="img/index/step-by-step.png" alt="Learn Netdata step-by-step" />
               </div>
               <div className={classnames('col col--4', styles.stepByStepLinks)}>
                 <StepByStepLink
