@@ -125,31 +125,10 @@ main[class^="docMainContainer"] .container {
   margin-left: 6rem;
 }
 
-/* Markdown-only */
-.markdown {
-  /* Vertical rhythm */
-  --ifm-heading-vertical-rhythm-bottom: 1;
-}
-
-/**
- * Everything else
- */
-
-/* Links */
-a {
-  font-weight: var(--ifm-font-weight-semibold);
-}
-
-a:hover {
-  color: var(--ifm-color-secondary);
-}
-
-html[data-theme='dark'] a {
-  color: var(--ifm-color-primary-lightest);
-}
-
-html[data-theme='dark'] a:hover {
-  color: var(--ifm-color-accent);
+@media (max-width: 1655px) {
+  main[class^="docMainContainer"] .container {
+    margin-left: auto
+  }
 }
 
 /**
@@ -222,8 +201,21 @@ html[data-theme='dark'] a:hover {
  */
 
 div[class^="docSidebarContainer"] {
-  width: 350px; 
-  background: linear-gradient(90deg, white 60%,#ededf3);
+  flex-shrink: 0;
+  width: 350px;
+  top: 0;
+
+  background: linear-gradient(90deg, #f9f7f7 60%,#ededf3);
+}
+
+@media (max-width: 1300px) {
+  div[class^="docSidebarContainer"] {
+    width: 300px;
+  }
+}
+
+div[class^="sidebarLogo"] {
+  display: none !important;
 }
 
 .menu .menu__link {
@@ -232,8 +224,8 @@ div[class^="docSidebarContainer"] {
 }
 
 @media (min-width: 997px) {
-  div[class^="sidebar"] {
-    padding-top: calc(6rem + var(--ifm-navbar-height));
+  div[class^="sidebar"]:not([class^="sidebarLogo"]) {
+    padding-top: 6rem;
   }
 }
 
@@ -241,14 +233,6 @@ div[class^="docSidebarContainer"] {
   .menu .menu__link {
     color: white;
   }  
-}
-
-/**
- * Pagination
- */
-
-.pagination-nav {
-  margin-top: 6rem;
 }
 
 /**
@@ -268,6 +252,34 @@ div[class^="docSidebarContainer"] {
 
 .footer .footer__links {
   margin-bottom: 3rem;
+}
+
+/**
+ * Links
+*/
+
+a {
+  font-weight: var(--ifm-font-weight-semibold);
+}
+
+a:hover {
+  color: var(--ifm-color-secondary);
+}
+
+html[data-theme='dark'] a {
+  color: var(--ifm-color-primary-lightest);
+}
+
+html[data-theme='dark'] a:hover {
+  color: var(--ifm-color-accent);
+}
+
+/**
+ * Pagination
+ */
+
+.pagination-nav {
+  margin-top: 6rem;
 }
 
 /* Buttons */
@@ -356,4 +368,13 @@ html[data-theme='dark'] code {
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+/**
+ * Markdown-only 
+*/
+
+.markdown {
+  /* Vertical rhythm */
+  --ifm-heading-vertical-rhythm-bottom: 1;
 }
