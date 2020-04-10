@@ -40,11 +40,29 @@ module.exports = {
         srcDark: 'img/logo.svg',
       },
       links: [
-        {to: 'docs/agent', label: 'Agent', position: 'left'},
-        {to: 'docs/cloud', label: 'Cloud', position: 'left'},
+        {
+          to: 'docs/agent', 
+          label: 'Agent', 
+          position: 'left'
+        },
+        {
+          to: 'docs/cloud', 
+          label: 'Cloud', 
+          position: 'left'
+        },
+        {
+          href: 'https://blog.netdata.cloud',
+          label: 'Blog',
+          position: 'right',
+        },
         {
           href: 'https://github.com/netdata/netdata',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://netdata.cloud',
+          label: 'Netdata',
           position: 'right',
         },
       ],

@@ -2,7 +2,18 @@
 title: Netdata Agent
 ---
 
-Welcome! You've arrived at the documentation for Netdata. Use the links below to find answers to the most common questions about Netdata, such as how to install it, getting started guides, basic configuration, and adding more charts. Or, explore all of Netdata's documentation using the table of contents to your left.
+Netdata is real-time health monitoring and performance troubleshooting for systems and applications. It helps you
+instantly diagnose slowdowns and anomalies in your infrastructure with thousands of metrics, interactive visualizations,
+and insightful health alarms. Plus, long-term storage comes ready out-of-the-box, so can collect, monitor, and maintain
+your metrics in one insightful place.
+
+## Navigating the Netdata documentation
+
+Welcome! You’ve arrived at the documentation for Netdata. Use the links below to find answers to the most common
+questions about Netdata, such as how to install it, getting started guides, basic configuration, and adding more charts.
+Or, explore all of Netdata’s documentation using the table of contents to your left.
+
+Start with the **[installation guide](/docs/agent/packaging/installation/)**, which 
 
 **Advanced users**: For those who already understand how to access a Netdata dashboard and perform basic configuration, feel free to see what's behind any of these other doors.
 

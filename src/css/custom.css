@@ -57,7 +57,8 @@ html {
   --ifm-heading-font-weight: 500;
 
   /* Code */
-  --ifm-code-font-size: 95%;
+  --ifm-code-font-size: 85%;
+  --ifm-pre-padding: 1.4rem;
   --ifm-code-background: rgb(235, 238, 241);
 
   /* Buttons */
@@ -86,7 +87,10 @@ html {
 
 }
 
-/* Dark theme */
+/* 
+ * Dark theme 
+ */
+
 html[data-theme='dark'] {
 
   /* Colors */
@@ -145,7 +149,7 @@ html[data-theme='dark'] a:hover {
   color: var(--ifm-color-accent);
 }
 
-/* 
+/**
  * Navbar 
  */
 
@@ -155,7 +159,9 @@ html[data-theme='dark'] a:hover {
 }
 
 .navbar .navbar__brand {
-  margin-right: 16rem;
+  margin-right: 2rem;
+  /* TODO: Explore how you can restore this and have the `Agent`/`Cloud` buttons aligned with the docs text. */
+  /* margin-right: 16rem; */
 }
 
 .navbar__brand strong {
@@ -189,10 +195,6 @@ html[data-theme='dark'] a:hover {
   font-weight: var(--ifm-font-weight-normal);
 }
 
-.navbar .navbar__link:last-of-type {
-  margin-left: 1rem;
-}
-
 .navbar .navbar__link.navbar__link--active {
   border-bottom: 2px solid var(--ifm-color-primary);
 }
@@ -202,23 +204,6 @@ html[data-theme='dark'] a:hover {
   padding-right: 1rem;
 
   border-right: 1px solid var(--ifm-color-emphasis-300);
-}
-
-.navbar .navbar__items--right .navbar__link[rel*="noopener"]:after {
-  display: inline-block;
-  position: relative;
-  top: 1px;
-  content: ' ';
-  height: 14px;
-  width: 14px;
-  margin-left: 0.2rem;
-
-  background-image: url('/static/img/external-link-white.svg');
-  background-size: 14px 14px;
-}
-
-.navbar .navbar__items--right .navbar__link[rel*="noopener"]:hover:after {
-  background-image: url('/static/img/external-link-green.svg');
 }
 
 .navbar .navbar__toggle {
@@ -233,7 +218,7 @@ html[data-theme='dark'] a:hover {
  * Sidebar
  */
 
-div[class^="docSidebarContainer_node_modules"] {
+div[class^="docSidebarContainer"] {
   width: 350px; 
   background: linear-gradient(90deg, white 60%,#ededf3);
 }
@@ -255,7 +240,18 @@ div[class^="docSidebarContainer_node_modules"] {
   }  
 }
 
-/* Footer */
+/**
+ * Pagination
+ */
+
+.pagination-nav {
+  margin-top: 6rem;
+}
+
+/**
+ * Footer 
+ */
+
 .footer {
   padding-top: 4rem;
   border-top: 1px solid var(--ifm-contents-border-color);
@@ -319,7 +315,10 @@ html[data-theme='dark'] .button.button--secondary:hover {
   color: var(--ifm-color-primary-lightest);
 }
 
-/* Code highlight */
+/**
+ * Code highlighting
+ */
+
 div[class^="mdxCodeBlock"] button,
 pre[class*="codeBlock"] button {
   visibility: visible;
@@ -342,7 +341,7 @@ pre[class*="codeBlock"] button:hover {
 }
 
 pre.prism-code code {
-  padding: var(--ifm-pre-padding) 2rem var(--ifm-pre-padding) var(--ifm-pre-padding);
+  padding: var(--ifm-pre-padding) 4rem var(--ifm-pre-padding) var(--ifm-pre-padding);
 }
 
 html[data-theme='dark'] code {
