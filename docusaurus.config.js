@@ -15,17 +15,24 @@ module.exports = {
     '@docusaurus/plugin-content-pages',
     '@docusaurus/plugin-google-analytics',
     '@docusaurus/plugin-sitemap',
-    'docusaurus-plugin-sass'
+    'docusaurus-plugin-sass',
+    '@docusaurus/theme-search-algolia'
   ],
   themes: [
     ['@docusaurus/theme-classic', {
       customCss: require.resolve('./src/css/custom.css'),
     }],
+    '@docusaurus/theme-search-algolia'
   ],
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-64295674-3',
       anonymizeIP: true,
+    },
+    algolia: {
+      apiKey: 'b162746a0dfcdf64126c16c29547ded5',
+      indexName: 'netdata_learn',
+      algoliaOptions: {}, // Optional, if provided by Algolia
     },
     image: 'img/everyone.png',
     prism: {
