@@ -113,6 +113,11 @@ html[data-theme='dark'] {
   --ifm-contents-border-color: 
 }
 
+html[data-theme='dark'] img:not(.navbar__logo) {
+  filter: grayscale(1);
+  opacity: 0.3;
+}
+
 /**
  * Structure
  */
