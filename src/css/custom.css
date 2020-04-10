@@ -344,9 +344,6 @@ html[data-theme='dark'] .button.button--secondary:hover {
 
 div[class^='mdxCodeBlock'] button,
 pre[class*='codeBlock'] button {
-  visibility: visible;
-  opacity: 1;
-
   color: var(--ifm-color-primary-lightest);
   border: 1px solid var(--ifm-color-primary-lightest);
 }
@@ -358,13 +355,11 @@ pre[class*='codeBlock'] button:hover {
 }
 
 .prism-code {
-  position: relative;
-
   border-radius: var(--ifm-global-radius);
 }
 
 pre.prism-code code {
-  padding: var(--ifm-pre-padding) 4rem var(--ifm-pre-padding) var(--ifm-pre-padding);
+  padding: var(--ifm-pre-padding);
 }
 
 html[data-theme='dark'] code {

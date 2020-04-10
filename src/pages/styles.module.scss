@@ -9,6 +9,7 @@
 
 .hero {
   position: relative;
+  overflow: hidden;
   padding: 8rem 0 6rem;
   background: linear-gradient(to bottom, white, #ededf3);
 
@@ -49,23 +50,23 @@
   .heroImage {
     z-index: 10;
     position: absolute;
-    bottom: -162px;
-    right: -93px;
-    max-width: 650px;
+    top: calc(-6rem - 68px);
+    right: -180px;
+    max-width: 1200px;
   }
 
   @media (max-width: 1600px) {
-    .heroImage {
-      right: -120px;
-    }
+    // .heroImage {
+    //   right: -120px;
+    // }
   }
 
   @media (max-width: 1400px) {
-    .heroImage {
-      bottom: -151px;
-      right: 0;
-      max-width: 550px;
-    }
+    // .heroImage {
+    //   bottom: -151px;
+    //   right: 0;
+    //   max-width: 550px;
+    // }
   }
 
   @media (max-width: 996px) {
@@ -97,8 +98,8 @@
 }
 
 .installContainer {
-  padding-top: 8rem;
-  padding-bottom: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 
   background: var(--ifm-color-gray-100);
 }
@@ -158,6 +159,8 @@
 }
 
 .installCommand {
+  position: relative;
+  
   margin-top: var(--ifm-paragraph-margin-bottom);
   margin-bottom: var(--ifm-paragraph-margin-bottom);
 
@@ -228,6 +231,8 @@
  */
 
 .stepByStep {
+  position: relative;
+  overflow: hidden;
   padding: 4rem 0;
 }
 
@@ -237,9 +242,19 @@
   text-align: center;
 }
 
-.stepByStepImg img {
-  width: 100%;
-  height: auto;
+.stepByStepImg {
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 2px;
+  
+  img {
+    position: absolute;
+    min-width: 600px;
+    height: 370px;
+    
+    border-radius: 2px;
+  }
 }
 
 .stepByStepLink {
