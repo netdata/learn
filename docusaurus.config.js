@@ -49,12 +49,12 @@ module.exports = {
       links: [
         {
           to: 'docs/agent', 
-          label: 'Agent', 
+          label: 'Agent Docs', 
           position: 'left'
         },
         {
           to: 'docs/cloud', 
-          label: 'Cloud', 
+          label: 'Cloud Docs', 
           position: 'left'
         },
         {
