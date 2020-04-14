@@ -196,6 +196,7 @@ module.exports = {
                     'agent/collectors/go.d.plugin/modules/vernemq',
                     'agent/collectors/go.d.plugin/modules/vsphere',
                     'agent/collectors/go.d.plugin/modules/weblog',
+                    'agent/collectors/go.d.plugin/modules/whoisquery',
                     'agent/collectors/go.d.plugin/modules/wmi',
                     'agent/collectors/go.d.plugin/modules/x509check',
                     'agent/collectors/go.d.plugin/modules/zookeeper',
