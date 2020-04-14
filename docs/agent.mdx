@@ -3,7 +3,7 @@ title: Netdata Agent
 ---
 
 import { Start, StartBox } from '../src/components/agent/StartBox/'
-import { BoxContainer, AgentBox } from '../src/components/AgentBox/'
+import { Discover, DiscoverBox } from '../src/components/agent/DiscoverBox/'
 
 Welcome! You’ve arrived at the documentation for the Netdata Agent.
 
@@ -16,30 +16,51 @@ place.
 ## Get started with the Agent
 
 <Start>
-  <StartBox href="/docs/agent/packaging/installer/" title="Install Netdata">
+  <StartBox href="/docs/agent/packaging/installer/" title="Install the Netdata Agent" button="Read now">
     Install the Agent on Linux systems with a single command, or more than a dozen others, such as Docker or Kubernetes.
   </StartBox>
-  <StartBox href="/docs/agent/getting-started/" title="Getting started guide">
-    Have some monitoring and Linux admin experience? Dive right in to setting up new collectors, adding new alarms,
-    visually analyzing anomalies in your systems.
+  <StartBox href="/docs/agent/step-by-step/step-00/" title="Step-by-step guide">
+    Take a guided tour through Netdata's core features.
   </StartBox>
-  <StartBox href="/docs/agent/step-by-step/" title="Step-by-step guide">
-    New to health monitoring and performance troubleshooting? Take a guided 10-step tour through Netdata's core
-    features.
+  <StartBox href="/docs/agent/getting-started/" title="Getting started guide">
+    Dive in to collect new metrics, visualize anomalies, and enable alerts.
   </StartBox>
 </Start>
 
 ## Discover the Agent
 
-<BoxContainer>
-
-<AgentBox title="Collect" color="#25c2a0" />
-<AgentBox title="Visualize" color="#25c2a0" />
-<AgentBox title="Stream" color="#25c2a0" />
-<AgentBox title="Collect" color="#25c2a0" />
-<AgentBox title="Export" color="#25c2a0" />
-
-</BoxContainer>
+<Discover>
+  <DiscoverBox 
+    href="/docs/agent/configuration-guide/" 
+    title="Configure">
+    Netdata is zero-configuration out of the box, but is wildly adaptable.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/collectors/" 
+    title="Collect">
+    Auto-detect and collect metrics from hundreds of popular services/apps.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/web/" 
+    title="Visualize">
+    Visually detect anomalies with hundreds of interative and dynamic charts.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/health/" 
+    title="Monitor">
+    Use Netdata's health watchdog to detect anomalies seconds after they happen.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/health/notifications/" 
+    title="Notify">
+    Connect to dozens of popular apps to notify your team of new or persistent alerts.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/backends"
+    title="Export">
+    Send Netdata's metrics to time-series databases for archiving or correlative analysis.
+  </DiscoverBox>
+</Discover>
 
 ## Contribute
 

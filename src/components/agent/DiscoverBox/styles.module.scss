@@ -1,15 +1,14 @@
-.Start {
+.Discover {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(4,minmax(100px,1fr))
+  grid-template-columns: repeat(6,minmax(100px,1fr))
 }
 
-.StartBox {
+.DiscoverBox {
   position: relative;
   grid-column-end: span 2;
   padding: var(--ifm-spacing-horizontal);
 
-  background: linear-gradient(90deg, #f9f7f7 60%, #ededf3);
   border: 1px solid var(--ifm-contents-border-color);
   border-radius: 2px;
   transition: ease-in-out all 0.15s;
@@ -30,34 +29,15 @@
     }
   }
 
-  &:first-of-type {
-    grid-column-start: 1;
-    grid-column-end: span 2;
-    grid-row-start: 1;
-    grid-row-end: span 2;
-
-    &:hover {
-      h3 {
-        color: var(--ifm-color-primary-lightest);
-      }
-    }
-
-    h3 {
-      color: var(--ifm-color-primary);
-      font-size: 2rem;
-    }
-  }
-
   h3 {
-    color: var(--ifm-font-base-color);
     font-size: 1.4rem;
-    transition: ease-in-out all 0.15s;
   }
   
   p {
     margin-bottom: 0;
 
     color: var(--ifm-font-base-color);
+    font-size: 1.1rem;
     font-weight: 400;
   }
 
@@ -66,8 +46,4 @@
     bottom: var(--ifm-spacing-horizontal);
     left: var(--ifm-spacing-horizontal);
   }
-}
-
-html[data-theme='dark'] .StartBox {
-  background: linear-gradient(90deg, #273142, #191927);
 }

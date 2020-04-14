@@ -53,6 +53,7 @@ html {
   --ifm-font-size-base: 18px;
   --ifm-line-height-base: 1.6;
   --ifm-font-weight-bold: 500;
+  --ifm-heading-line-height: 1.2;
 
   /* Headings */
   --ifm-heading-font-weight: 500;
@@ -98,8 +99,8 @@ html {
 html[data-theme='dark'] {
 
   /* Colors */
-  --ifm-background-color: #252d34;
-  --ifm-navbar-background-color: #252d34;
+  --ifm-background-color: #191927;
+  --ifm-navbar-background-color: #191927;
   --ifm-contents-border-color: var(--ifm-color-gray-600);
 
   --ifm-menu-color-active: var(--ifm-color-primary-lightest);
@@ -114,17 +115,12 @@ html[data-theme='dark'] {
   --ifm-contents-border-color: 
 }
 
-html[data-theme='dark'] img:not(.navbar__logo) {
-  filter: grayscale(1);
-  opacity: 0.3;
-}
-
 /**
  * Structure
  */
 
 .padding-vert--lg {
-  padding-top: 6rem !important;
+  padding-top: 3rem !important;
 }
 
 main[class^='docMainContainer'] .container {
@@ -147,19 +143,24 @@ main[class^='docMainContainer'] .container {
 }
 
 .navbar .navbar__brand {
+  position: relative;
+
   margin-right: 2rem;
   /* TODO: Explore how you can restore this and have the `Agent`/`Cloud` buttons aligned with the docs text. */
   /* margin-right: 16rem; */
 }
 
 .navbar__brand strong {
-  margin-left: 0.4rem;
-  padding: 0rem 0.2rem;
+  position: absolute;
+  top: 22px;
+  left: 31px;
+  /* margin-left: 0.4rem; */
+  /* padding: 0rem 0.2rem; */
   
-  background: var(--ifm-color-primary);
-  border-radius: 2px;
+  /* background: var(--ifm-color-primary);
+  border-radius: 2px; */
   color: white;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -211,11 +212,11 @@ div[class^='docSidebarContainer'] {
   width: 350px;
   top: 0;
 
-  background: linear-gradient(90deg, #f9f7f7 60%, #ededf3);
+  background: linear-gradient(90deg, #ededf3, #f9f7f7);
 }
 
 html[data-theme='dark'] div[class^='docSidebarContainer'] {
-  background: linear-gradient(90deg, #35414a 60%, #273142);
+  background: linear-gradient(90deg, #13172d, #191927);
 }
 
 @media (max-width: 1300px) {
@@ -226,7 +227,7 @@ html[data-theme='dark'] div[class^='docSidebarContainer'] {
 
 @media (min-width: 997px) {
   div[class^='sidebar']:not([class^='sidebarLogo']) {
-    padding-top: 6rem;
+    padding-top: 3rem;
   }
 }
 
@@ -236,11 +237,12 @@ div[class^='sidebarLogo'] {
 
 .menu .menu__link {
   color: var(--ifm-font-base-color);
+  font-size: 1rem;
   font-weight: var(--ifm-font-weight-normal);
 }
 
 html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--sublist) {
-  background: #35414a;
+  background: #191927;
 }
 
 @media (max-width: 996px) {
@@ -274,6 +276,7 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
 
 a {
   font-weight: var(--ifm-font-weight-semibold);
+  transition: ease-in-out all 0.15s;
 }
 
 a:hover {
@@ -299,6 +302,7 @@ html[data-theme='dark'] a:hover {
 /* Buttons */
 .button {
   border: 2px solid var(--ifm-color-primary);
+  font-weight: 500;
 }
 
 .button:hover {
