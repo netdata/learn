@@ -44,11 +44,6 @@ async function getRateLimit() {
   }
 }
 
-async function getForkSha(repo = 'netdata', branch = 'master') {
-  const { data: { commit: { sha } } } = await ax.get(`${repo}/branches/${branch}`)
-  return sha
-}
-
 async function getRootSha(repo = 'netdata', branch = 'master') {
   const { data: { commit: { sha } } } = await ax.get(`${repo}/branches/${branch}`)
   return sha
