@@ -1,0 +1,70 @@
+---
+title: Netdata Agent
+---
+
+import { Start, StartBox } from '../src/components/agent/StartBox/'
+import { Discover, DiscoverBox } from '../src/components/agent/DiscoverBox/'
+
+Welcome! You’ve arrived at the documentation for the Netdata Agent.
+
+Netdata's open-source Agent gives you real-time health monitoring and performance troubleshooting for systems and
+applications. This highly flexible and configurable monitoring Agent helps you instantly diagnose slowdowns and
+anomalies in your infrastructure with thousands of metrics, interactive visualizations, and insightful health alarms.
+Plus, long-term storage comes ready out-of-the-box, so can collect, monitor, and maintain your metrics in one insightful
+place.
+
+## Get started with the Agent
+
+<Start>
+  <StartBox href="/docs/agent/packaging/installer/" title="Install the Netdata Agent" button="Read now">
+    Install the Agent on Linux systems with a single command, or more than a dozen others, such as Docker or Kubernetes.
+  </StartBox>
+  <StartBox href="/docs/agent/step-by-step/step-00/" title="Step-by-step guide">
+    Take a guided tour through Netdata's core features.
+  </StartBox>
+  <StartBox href="/docs/agent/getting-started/" title="Getting started guide">
+    Dive in to collect new metrics, visualize anomalies, and enable alerts.
+  </StartBox>
+</Start>
+
+## Discover the Agent
+
+<Discover>
+  <DiscoverBox 
+    href="/docs/agent/configuration-guide/" 
+    title="Configure">
+    Netdata is zero-configuration out of the box, but is wildly adaptable.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/collectors/" 
+    title="Collect">
+    Auto-detect and collect metrics from hundreds of popular services/apps.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/web/" 
+    title="Visualize">
+    Visually detect anomalies with hundreds of interative and dynamic charts.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/health/" 
+    title="Monitor">
+    Use Netdata's health watchdog to detect anomalies seconds after they happen.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/health/notifications/" 
+    title="Notify">
+    Connect to dozens of popular apps to notify your team of new or persistent alerts.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/backends"
+    title="Export">
+    Send Netdata's metrics to time-series databases for archiving or correlative analysis.
+  </DiscoverBox>
+</Discover>
+
+## Contribute
+
+Visit the [contributing guide](/docs/agent/contributing/), [contributing to documentation
+guide](/docs/agent/contributing/contributing-documentation/), and [documentation style
+guide](/docs/agent/contributing/style-guide/) to learn more about our community and how you can get started contributing
+to Netdata.

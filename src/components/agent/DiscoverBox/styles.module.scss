@@ -1,0 +1,51 @@
+.Discover {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(6,minmax(100px,1fr))
+}
+
+.DiscoverBox {
+  position: relative;
+  grid-column-end: span 2;
+  padding: var(--ifm-spacing-horizontal);
+
+  border: 1px solid var(--ifm-contents-border-color);
+  border-radius: 2px;
+  transition: ease-in-out all 0.15s;
+  backface-visibility: hidden;
+
+  &:hover {
+    border-color: var(--ifm-color-primary-lightest);
+    text-decoration: none;
+    transform: scale(1.02);
+    transition: ease-in-out all 0.15s;
+
+    h3 {
+      color: var(--ifm-color-primary-lightest);
+    }
+
+    p {
+      color: var(--ifm-font-base-color);
+    }
+  }
+
+  h3 {
+    color: var(--ifm-font-base-color);
+    font-size: 1.4rem;
+    transition: ease-in-out all 0.15s;
+  }
+  
+  p {
+    margin-bottom: 0;
+
+    color: var(--ifm-font-base-color);
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+
+  button {
+    position: absolute;
+    bottom: var(--ifm-spacing-horizontal);
+    left: var(--ifm-spacing-horizontal);
+  }
+}

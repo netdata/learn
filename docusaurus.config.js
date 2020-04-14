@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Learn @ Netdata',
+  title: 'Learn',
   tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Documentation, tutorials, blogs, and much more.',
   url: 'https://learn.netdata.cloud',
   baseUrl: '/',

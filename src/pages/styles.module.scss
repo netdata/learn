@@ -346,6 +346,12 @@
 }
 
 html[data-theme='dark'] {
+  .hero img,
+  .stepByStepImg img {
+    filter: grayscale(1);
+    opacity: 0.3;
+  }
+
   .hero {
     background: linear-gradient(to bottom, var(--ifm-background-color), #22272E);
   }
