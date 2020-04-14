@@ -212,7 +212,7 @@ div[class^='docSidebarContainer'] {
   width: 350px;
   top: 0;
 
-  background: linear-gradient(90deg, #ededf3, #f9f7f7);
+  background: linear-gradient(90deg, #f2f0f0, white);
 }
 
 html[data-theme='dark'] div[class^='docSidebarContainer'] {

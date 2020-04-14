@@ -9,7 +9,7 @@
   grid-column-end: span 2;
   padding: var(--ifm-spacing-horizontal);
 
-  background: linear-gradient(90deg, #f9f7f7 60%, #ededf3);
+  background: linear-gradient(90deg, #f4f4f4, white);
   border: 1px solid var(--ifm-contents-border-color);
   border-radius: 2px;
   transition: ease-in-out all 0.15s;
@@ -69,5 +69,5 @@
 }
 
 html[data-theme='dark'] .StartBox {
-  background: linear-gradient(90deg, #273142, #191927);
+  background: linear-gradient(90deg, #13172d, #191927);
 }
