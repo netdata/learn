@@ -24,6 +24,12 @@ module.exports = {
     }],
     '@docusaurus/theme-search-algolia'
   ],
+  scripts: [
+    {
+      src: 'https://cdn.commento.io/js/commento.js',
+      defer: true,
+    },
+  ],
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-64295674-3',
@@ -39,12 +45,6 @@ module.exports = {
       theme: require('prism-react-renderer/themes/dracula'),
       darkTheme: require('prism-react-renderer/themes/duotoneDark'),
     },
-    scripts: [
-      {
-        src: 'https://cdn.commento.io/js/commento.js',
-        defer: true,
-      },
-    ],
     navbar: {
       title: 'Learn',
       logo: {
