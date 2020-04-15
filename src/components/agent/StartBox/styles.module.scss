@@ -42,6 +42,10 @@
       }
     }
 
+    p {
+      margin-bottom: var(--ifm-paragraph-margin-bottom);
+    }
+
     h3 {
       color: var(--ifm-color-primary);
       font-size: 2rem;

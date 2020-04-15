@@ -514,9 +514,8 @@ module.exports = {
     },
   ],
   cloud: [
-    {
-      type: 'doc',
-      id: 'cloud'
-    }
+    'cloud',
+    'cloud/get-started',
+    'cloud/faq'
   ]
 };
