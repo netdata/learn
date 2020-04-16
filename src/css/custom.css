@@ -227,7 +227,9 @@ html[data-theme='dark'] div[class^='docSidebarContainer'] {
 
 @media (min-width: 997px) {
   div[class^='sidebar']:not([class^='sidebarLogo']) {
-    padding-top: 3rem;
+    top: calc(var(--ifm-navbar-height) + 2rem);
+    
+    padding-top: 0;
   }
 }
 
