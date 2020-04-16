@@ -115,6 +115,8 @@ module.exports = {
         },
         'agent/database',
         'agent/database/engine',
+        'agent/claim',
+        'agent/aclk',
         'agent/registry',
         'agent/performance',
         'agent/netdata-for-iot',
@@ -516,6 +518,5 @@ module.exports = {
   cloud: [
     'cloud',
     'cloud/get-started',
-    'cloud/faq'
   ]
 };
