@@ -4,9 +4,6 @@
  * work well for content-centric websites.
  */
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,400i,500&display=swap');
-
 /* Border box */
 html {
   box-sizing: border-box;
