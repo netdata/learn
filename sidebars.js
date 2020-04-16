@@ -379,8 +379,8 @@ module.exports = {
             'agent/health/notifications/awssns',
             'agent/health/notifications/custom',
             'agent/health/notifications/discord',
+            'agent/health/notifications/dynatrace/'
             'agent/health/notifications/email',
-            'agent/health/notifications/web',
             'agent/health/notifications/flock',
             'agent/health/notifications/hangouts',
             'agent/health/notifications/irc',
@@ -396,6 +396,7 @@ module.exports = {
             'agent/health/notifications/syslog',
             'agent/health/notifications/telegram',
             'agent/health/notifications/twilio',
+            'agent/health/notifications/web',
           ]
         },
       ],
