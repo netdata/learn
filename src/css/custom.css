@@ -4,9 +4,6 @@
  * work well for content-centric websites.
  */
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,400i,500&display=swap');
-
 /* Border box */
 html {
   box-sizing: border-box;
@@ -55,6 +52,7 @@ html {
   --ifm-font-weight-bold: 500;
   --ifm-heading-line-height: 1.2;
 
+
   /* Headings */
   --ifm-heading-font-weight: 500;
 
@@ -77,6 +75,10 @@ html {
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: var(--ifm-color-primary-lightest);
   --ifm-navbar-height: 68px;
+
+  /* Search */
+  --ifm-navbar-search-input-color: var(--ifm-font-base-color);
+  --ifm-navbar-search-input-placeholder-color: var(--ifm-font-base-color);
 
   /* Sidebar */
   --ifm-menu-color-background-active: white;
@@ -154,11 +156,7 @@ main[class^='docMainContainer'] .container {
   position: absolute;
   top: 22px;
   left: 31px;
-  /* margin-left: 0.4rem; */
-  /* padding: 0rem 0.2rem; */
-  
-  /* background: var(--ifm-color-primary);
-  border-radius: 2px; */
+
   color: white;
   font-size: 0.75rem;
   font-weight: 500;
@@ -204,6 +202,19 @@ main[class^='docMainContainer'] .container {
 }
 
 /* 
+ * Search
+ */
+
+::placeholder {
+  color: var(--ifm-navbar-search-input-color);
+  opacity: 1;
+}
+
+.navbar .navbar__search .navbar__search-input {
+  border-radius: var(--ifm-global-radius);
+}
+
+/* 
  * Sidebar
  */
 
@@ -228,7 +239,7 @@ html[data-theme='dark'] div[class^='docSidebarContainer'] {
 @media (min-width: 997px) {
   div[class^='sidebar']:not([class^='sidebarLogo']) {
     top: calc(var(--ifm-navbar-height) + 2rem);
-    
+
     padding-top: 0;
   }
 }

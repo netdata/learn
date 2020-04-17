@@ -18,6 +18,9 @@ module.exports = {
     'docusaurus-plugin-sass',
     '@docusaurus/theme-search-algolia'
   ],
+  stylesheets: [
+    'https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,500&display=swap',
+  ],
   themes: [
     ['@docusaurus/theme-classic', {
       customCss: require.resolve('./src/css/custom.css'),
@@ -36,7 +39,7 @@ module.exports = {
     },
     image: 'img/everyone.png',
     prism: {
-      theme: require('prism-react-renderer/themes/dracula'),
+      theme: require('prism-react-renderer/themes/duotoneDark'),
       darkTheme: require('prism-react-renderer/themes/duotoneDark'),
     },
     navbar: {
