@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import SVG from 'react-inlinesvg';
+
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -168,12 +170,12 @@ function Home() {
                     styles.getStarted,
                   )}
                   to={useBaseUrl('docs/agent')}>
-                  Read the docs
+                  Read Agent docs
                 </Link>
               </div>
             </div>
             <div className={classnames('col col--6', styles.heroImageContainer)}>
-              <img 
+              <SVG 
                 className={classnames(
                   styles.heroImage
                 )} 
@@ -227,26 +229,37 @@ function Home() {
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/docker')}>
-                  <img src="img/methods/docker.png" alt="Install Netdata with Docker" />
+                  to={useBaseUrl('docs/agent/packaging/docker')}
+                >
+                  <SVG 
+                    src="img/index/docker.svg" 
+                    alt="Install Netdata with Docker"
+                  />
                   Docker
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/macos')}>
-                  <img src="img/methods/macos.png" alt="Install Netdata on macOS" />
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/macos')}
+                >
+                  <SVG 
+                    src="img/index/macos.svg" 
+                    alt="Install Netdata on macOS"
+                  />
                   macOS
                 </Link>
                 <a 
                   className={classnames(styles.installMethod)}
                   href="https://github.com/netdata/helmchart#netdata-helm-chart-for-kubernetes-deployments"
+                  target="_blank" 
+                  rel="noopener"
                 >
                   <img src="img/methods/kubernetes.png" alt="Install Netdata on Kubernetes" />
                   Kubernetes
                 </a>
                 <Link
                   className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}>
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}
+                >
                   <img src="img/methods/cloud.png" alt="Install Netdata on cloud providers" />
                   Cloud providers
                 </Link>

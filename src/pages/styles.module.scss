@@ -202,9 +202,12 @@
   color: var(--ifm-color-primary);
 }
 
-.installMethod img {
+.installMethod img,
+.installMethod svg {
   display: block;
-  margin: 0 auto 0rem;
+  max-width: 96px;
+  max-height: 64px;
+  margin: 0 auto 0.4rem;
 
   filter: grayscale(1);
 }
