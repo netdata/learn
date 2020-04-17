@@ -15,8 +15,8 @@
   transition: ease-in-out all 0.15s;
   backface-visibility: hidden;
 
-  @media (max-width: 700px) {
-    grid-column-end: span 6;
+  @media (max-width: 996px) {
+    grid-column-end: span 4;
   }
 
   &:hover {
@@ -48,6 +48,11 @@
       h3 {
         color: var(--ifm-color-primary-lightest);
       }
+    }
+
+    p {
+      margin-bottom: var(--ifm-paragraph-margin-bottom);
+      padding-bottom: calc(2 * var(--ifm-paragraph-margin-bottom));
     }
 
     h3 {

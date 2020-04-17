@@ -404,3 +404,8 @@ html[data-theme='dark'] code {
   /* Vertical rhythm */
   --ifm-heading-vertical-rhythm-bottom: 1;
 }
+
+.markdown img {
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-md);
+}
