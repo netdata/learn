@@ -1,7 +1,7 @@
 .Discover {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(6,minmax(100px,1fr))
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .DiscoverBox {
@@ -13,6 +13,14 @@
   border-radius: 2px;
   transition: ease-in-out all 0.15s;
   backface-visibility: hidden;
+
+  @media (max-width: 1420px) {
+    grid-column-end: span 3;
+  }
+
+  @media (max-width: 700px) {
+    grid-column-end: span 6;
+  }
 
   &:hover {
     border-color: var(--ifm-color-primary-lightest);

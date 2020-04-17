@@ -39,7 +39,7 @@ module.exports = {
     },
     image: 'img/everyone.png',
     prism: {
-      theme: require('prism-react-renderer/themes/dracula'),
+      theme: require('prism-react-renderer/themes/duotoneDark'),
       darkTheme: require('prism-react-renderer/themes/duotoneDark'),
     },
     navbar: {

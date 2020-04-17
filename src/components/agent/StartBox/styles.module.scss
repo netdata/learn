@@ -1,12 +1,12 @@
 .Start {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(4,minmax(100px,1fr))
+  grid-template-columns: repeat(6, 1fr);
 }
 
 .StartBox {
   position: relative;
-  grid-column-end: span 2;
+  grid-column-end: span 3;
   padding: var(--ifm-spacing-horizontal);
 
   background: linear-gradient(90deg, #f4f4f4, white);
@@ -14,6 +14,10 @@
   border-radius: 2px;
   transition: ease-in-out all 0.15s;
   backface-visibility: hidden;
+
+  @media (max-width: 700px) {
+    grid-column-end: span 6;
+  }
 
   &:hover {
     border-color: var(--ifm-color-primary-lightest);
@@ -32,9 +36,13 @@
 
   &:first-of-type {
     grid-column-start: 1;
-    grid-column-end: span 2;
+    grid-column-end: span 3;
     grid-row-start: 1;
     grid-row-end: span 2;
+
+    @media (max-width: 700px) {
+      grid-column-end: span 6;
+    }
 
     &:hover {
       h3 {
@@ -45,6 +53,10 @@
     h3 {
       color: var(--ifm-color-primary);
       font-size: 2rem;
+    }
+
+    p {
+      margin-bottom: 4rem;
     }
   }
 
