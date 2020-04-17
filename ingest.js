@@ -16,7 +16,7 @@ const outDir = path.join(__dirname, agentDir)
 // the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
 const retainPaths = [
-  path.join(baseDir, 'agent.md'),
+  path.join(baseDir, 'agent.mdx'),
   path.join(baseDir, 'cloud.md')
 ]
 
