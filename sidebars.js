@@ -48,6 +48,7 @@ module.exports = {
           items: [
             'agent/packaging/installer/methods/packages',
             'agent/packaging/installer/methods/kickstart',
+            'agent/packaging/installer/methods/kickstart-64',
             'agent/packaging/docker',
             'agent/packaging/installer/methods/cloud-providers',
             'agent/packaging/installer/methods/macos',
