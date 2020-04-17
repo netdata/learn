@@ -80,7 +80,15 @@ connect to Netdata Cloud after finishing the claiming process. Please be patient
 Now repeat this process with every node you want to add to Cloud during onboarding. You can also add more nodes once
 you've finished onboarding.
 
-### Claiming through a proxy
+### Claim an Agent running in Docker
+
+You can pass the claiming script to an Agent running as a Docker container. See the [command line
+parameters](/docs/agent/claim/#netdata-agent-command-line) in the claiming documentation, and then information about
+[passing command line options to an Agent
+container](/docs/agent/packaging/docker/#pass-command-line-options-to-netdata), in addition to the [daemon command line
+options](/docs/agent/daemon/#command-line-options).
+
+### Claim through a proxy
 
 If your node uses a proxy to connect to the internet, you need to configure the Agent's proxy settings. See our
 [claiming documentation](/docs/agent/claim/#claiming-through-a-proxy) for details.
