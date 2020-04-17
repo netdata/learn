@@ -145,6 +145,7 @@ module.exports = {
             'agent/collectors/checks.plugin',
             'agent/collectors/diskspace.plugin',
             'agent/collectors/freebsd.plugin',
+            'agent/collectors/macos.plugin',
           ]
         },
         {
