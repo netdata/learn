@@ -1,0 +1,14 @@
+[[redirects]]
+  from = "/docs/agent/zh/*"
+  to = "/docs/agent/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/docs/agent/pt/*"
+  to = "/docs/agent/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/docs/agent/kr/*"
+  to = "/docs/agent/:splat"
+  status = 301
