@@ -46,24 +46,13 @@ Not yet, but we're working on it.
 
 ## Glossary of Cloud terms
 
--   **Netdata Cloud (Cloud)**: The SaaS application hosted at [https://app.netdata.cloud](https://app.netdata.cloud)
-    that helps you monitor an entire infrastructure of distributed systems in real-time.
--   **Netdata Agent (Agent)**: The free and open source [monitoring agent](/docs/agent/) that you can install on all of
-    your distributed systems, whether they're physical, virtual, containerized, ephemeral, and more. The Agent monitors
-    systems running Linux, Docker, Kubernetes, macOS, FreeBSD, and more, and collects metrics from hundreds of popular
-    services and applications.
--   **node**: Used to refer to a system on which an Agent is installed. Depending on your infrastructure, you may have
-    one, dozens, or hundreds of nodes. Some nodes are _ephemeral_, in that they're created/destroyed automatically by a
-    service like Docker or Kubernetes.
--   **Space**: The highest level container within Netdata Cloud for a user to organize their team members and nodes
-    within their infrastructure. A Space likely represents an entire organization or a very large team.
--   **War Room**: A smaller grouping of nodes where users can view key metrics in real-time and monitor the health of
-    many nodes with their alarm status. War Rooms can be used to organize nodes by their service (`nginx`), purpose
-    (`webservers`), or physical location (`IAD`).
--   **claimed node**: A node that you've proved ownership of by completing the [claiming
-    process](/docs/cloud/get-started#claim-a-node). The claimed node will then appear in your Space and any War Rooms
-    you added it to.
--   **visited node**: A node which has had its Agent dashboard directly visited by a user. A list of these is maintained
-    on a per-user basis.
--   **offline node**: A claimed node with a disrupted [Agent-Cloud link](/docs/agent/aclk/). **Offline** could mean the
-    node no longer exists or is experiencing network connectivity issues with Cloud.
+| Term   | Definition        |
+| :----- | :------ |
+| **Netdata Cloud (Cloud)** | The SaaS application hosted at [https://app.netdata.cloud](https://app.netdata.cloud) that helps you monitor an entire infrastructure of distributed systems in real-time. |
+| **Netdata Agent (Agent)** | The free and open source [monitoring agent](/docs/agent/) that you can install on all of your distributed systems, whether they're physical, virtual, containerized, ephemeral, and more. The Agent monitors systems running Linux, Docker, Kubernetes, macOS, FreeBSD, and more, and collects metrics from hundreds of popular services and applications. |
+| **node** | Used to refer to a system on which an Agent is installed. Depending on your infrastructure, you may have one, dozens, or hundreds of nodes. Some nodes are _ephemeral_, in that they're created/destroyed automatically by a service like Docker or Kubernetes. |
+| **Space** | The highest level container within Netdata Cloud for a user to organize their team members and nodes within their infrastructure. A Space likely represents an entire organization or a very large team. |
+| **War Room** | A smaller grouping of nodes where users can view key metrics in real-time and monitor the health of many nodes with their alarm status. War Rooms can be used to organize nodes by their service (`nginx`), purpose (`webservers`), or physical location (`IAD`). |
+| **claimed node** | A node that you've proved ownership of by completing the [claiming process](/docs/cloud/get-started#claim-a-node). The claimed node will then appear in your Space and any War Rooms you added it to. |
+| **visited node** | A node which has had its Agent dashboard directly visited by a user. A list of these is maintained on a per-user basis. |
+| **offline node** | A claimed node with a disrupted [Agent-Cloud link](/docs/agent/aclk/). **Offline** could mean the node no longer exists or is experiencing network connectivity issues with Cloud. |
