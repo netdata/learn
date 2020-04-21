@@ -3,6 +3,9 @@ title: Netdata Cloud
 custom_edit_url: null
 ---
 
+import { Start, StartBox } from '../src/components/agent/StartBox/'
+import { Discover, DiscoverBox } from '../src/components/agent/DiscoverBox/'
+
 > The rearchitected Netdata Cloud goes live soon. We've delayed the launch from its original date of April 27. We'll
 > update this document with new information as soon as it becomes available.
 
@@ -14,13 +17,44 @@ leaving Cloud's centralized interface.
 **Netdata Cloud is free**! You can add an entire infrastructure of nodes, invite all your colleagues, and visualize any
 number of metrics, charts, and alarms entirely for free.
 
-While Netdata Cloud offers a centralized method of monitoring your Agents, your metrics data is not stored or centralized
-in any way. Metrics data remains with your nodes and is only streamed to your browser through Cloud. In addition, Cloud
-only expands on the functionality of the wildly popular [free and open source Agent](/docs/agent/). We will never make
-any of our open source Agent features cloud-exclusive, and we will actively continue to develop the Agent so that we can
-integrate new features seamlessly with Cloud.
+<p><a href="https://app.netdata.cloud" className="button button--lg">Sign in to Cloud</a></p>
 
-## Get started with Netdata Cloud
+While Netdata Cloud offers a centralized method of monitoring your Agents—your metrics data is not stored or centralized
+in any way. Metrics data remains with your nodes and is only streamed to your browser through Cloud. 
 
-If you already use Netdata Cloud, read the [get started with Cloud](/docs/cloud/get-started/) guide to understand how to
-get started with Cloud on launch day by completing onboarding and claiming nodes.
+In addition, Cloud only expands on the functionality of the wildly popular [free and open source Agent](/docs/agent/).
+We will never make any of our open source Agent features cloud-exclusive, and we will actively continue to develop the
+Agent so that we can integrate new features seamlessly with the cloud.
+
+## Get started on Cloud
+
+<Start>
+  <StartBox href="/docs/cloud/get-started/" title="Get started guide" button="Read now">
+    Update your Agents, claim your nodes, and dive into infrastructure-wide monitoring with Netdata Cloud.
+  </StartBox>
+</Start>
+
+## Discover more of Cloud
+
+<Discover>
+  <DiscoverBox 
+    href="/docs/cloud/organize/" 
+    title="Organize">
+    Create Spaces and War Rooms, then add as many nodes as you want, to get real-time visibility into your entire infrastructure.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/monitor/" 
+    title="Monitor">
+    View all your key metrics in real-time, monitor alarm statuses, and navigate between nodes for more granular data.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/collaborate/" 
+    title="Collaborate">
+    Invite your colleagues, manage teams, and create bookmarks to the resources your team needs during incident response.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/faq-glossary/" 
+    title="FAQ &amp; glossary">
+    Have questions about the Cloud experience that aren't answered elsewhere? Not sure about <strong>node</strong> vs. <strong>Agent</strong>? We'll try to help.
+  </DiscoverBox>
+</Discover>
