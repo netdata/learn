@@ -6,17 +6,8 @@ custom_edit_url: null
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<<<<<<< HEAD
-The following information exists as a reference for current Cloud users who are interested in using the rearchitected
-Cloud experience after its release, and need to plan their approach to adopting it. The previous version
-of Cloud, commonly referred to as **Nodes View**, will be deprecated when the new Cloud goes live.
-
-> ⚠️ We've delayed the launch of the new Cloud to iron out bugs and ensure stability. The launch date is no longer 
-> April 27. We'll update this document with new information as soon as it becomes available.
-=======
 Ready to get real-time visibility into your entire infrastructure with Netdata Cloud? This guide will walk you through
-the onboarding process, along with setting up your Space and War Room, and claiming your first nodes.
->>>>>>> Working on Cloud docs
+the onboarding process, such as setting up your Space and War Room and claiming your first nodes.
 
 ## Before you start
 
@@ -29,7 +20,8 @@ install that Agent.
 
 ## Begin the onboarding process
 
-Navigate to Netdata Cloud either by clicking the **Sign in** button in a dashboard's top navigation, or by clicking the button below.
+Navigate to Netdata Cloud either by clicking the **Sign in** button in a dashboard's top navigation, or by clicking the
+button below.
 
 <p><a href="https://app.netdata.cloud" className="button button--lg">Sign in to Cloud</a></p>
 
@@ -61,8 +53,8 @@ There are two important notes regarding claiming:
 
 To claim a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
 Cloud. **You must run this script as the user running the** `netdata` **service**, which is usually the `netdata` user.
-You have two options: Switch to the appropriate user yourself, or run the command using `sudo` to automatically manage
-permissions.
+You have two options: Switch to the appropriate user yourself, or run the command using `sudo` to manage permissions
+automatically.
 
 <Tabs
   defaultValue="netdata-user"
@@ -107,7 +99,7 @@ If your node uses a proxy to connect to the internet, you need to configure the 
 
 ### Troubleshooting
 
-If the claiming script returns with a failure, or the claimed node does not appear in the onboarding screen, see our
+If the claiming script returns a failure, or the claimed node does not appear in the onboarding screen, see our
 [troubleshooting tips](/docs/agent/claim/#troubleshooting).
 
 ## What's next?
