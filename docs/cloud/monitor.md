@@ -3,11 +3,11 @@ title: Monitor
 description: Add metrics to Cloud, search your infrastructure, view alarm status, and deep-dive to find more real-time metrics.
 ---
 
-Netdata Cloud's core experience is the ability to monitor the health and performance of an entire infrastructure in one
-real-time interface. You and your team can use two Cloud interfaces, the **List view** and **active alarms**, in
-parallel to track anomalies, outages, and alarms across any number of nodes.
+Netdata Cloud gives you the ability to monitor the health and performance of an entire infrastructure in real time, all
+in one place. Teams can use two Cloud interfaces, the **List view** and **active alarms**, in parallel to track
+anomalies, outages, and alarms across any number of nodes.
 
-## Monitor at-a-glance with List view
+## Monitor at a glance with List view
 
 List view lets you see and customize key metrics from any number of Agent-monitored nodes and seamlessly navigate to any
 node's dashboard for granular performance troubleshooting.
@@ -32,9 +32,9 @@ These customizations appear for anyone else with access to that War Room.
 
 ### Troubleshoot with node dashboards
 
-Click on the name of any node to seamlessly navigate to that node's dashboard. This is the same dashboard you get 
-the box with every installation of the Netdata Agent, so it features thousands of metrics and hundreds of interactive
-charts without any need to configure it on your end.
+Click on the name of any node to seamlessly navigate to that node's dashboard. This is the same dashboard that comes
+pre-configured with every installation of the Netdata Agent, so it features thousands of metrics and hundreds of
+interactive charts without needing to waste time setting it up.
 
 With all of the Agent's real-time data at your fingertips, you can first identify health or performance anomalies with
 Netdata Cloud, and then engage your team to perform root-cause analysis using the Agent's granular metrics.
@@ -45,21 +45,21 @@ Use the filter input next to the **Nodes** heading on List view to filter your n
 enter a text query that filters by hostname, or use the dropdown that appears as you begin typing to filter by operating
 system or the service(s) that node provides.
 
-Use the **Group by** dropdown to choose between no grouping, grouping by alarm status (`critical`, `warning`, and
-`clear`), and grouping by the service they provide.
+Use the **Group by** dropdown to choose between no grouping, grouping by the node's alarm status (`critical`, `warning`,
+and `clear`), and grouping by the service each node provides.
 
-See what services Netdata Cloud can filter by with [supported collectors list ](/docs/agent/collectors/collectors/).
+See what services Netdata Cloud can filter by with [supported collectors list](/docs/agent/collectors/collectors/).
 
 ## Monitor active alarms
 
-You can see active alarms in two ways: By clicking on the bell icon in the top navigation, or clicking on the first
+You can see active alarms in two ways: by clicking on the bell icon in the top navigation, or clicking on the first
 column of any node's row in the List view. This column's color changes based on the node's health status—gray is
 `clear`, yellow is `warning`, and red is `critical`.
 
 ![The active alarms panel in Netdata Cloud](/img/docs/cloud/active-alarms.png)
 
 The Alarms panel lists all active alarms for nodes within that War Room, and tells you which chart triggered the alarm,
-what that chart's current value, the alarm that triggered, and when the alarm status first began. 
+what that chart's current value is, the alarm that triggered it, and when the alarm status first began.
 
 ### Troubleshoot with active alarm information and context
 
@@ -76,11 +76,11 @@ begin the process of troubleshooting the root cause and determining the best fix
 
 ## Monitor more metrics and health alarms
 
-Like the open source Agent, Netdata Cloud tries to minimize the time you spend on configuring by auto-detecting your
-nodes' operating system, hardware, and important services, and begin showing real-time charts as soon as you finish
-claiming that node.
+Like the open source Agent, Netdata Cloud tries to minimize the time you spend on configuration by auto-detecting your
+nodes' operating system, hardware, and important services, and begins showing real-time charts as soon as you finish
+claiming that node
 
-If you want to see different metrics or health alarms, you should configure those Agents to collect metrics from more services or 
+If you want to see different metrics or health alarms, you should configure those Agents as needed. We have a wealth of [Agent documentation](/docs/agent/) for every configuration tweak and intricate infrastructure, but here are a few key areas to get you started:
 
 -   [Store more historical metrics](/docs/agent/tutorials/longer-metrics-storage) using the Agent's highly-efficient
     database. Also, see our [calculator](/dbengine-calc/) for finding the disk and RAM you need to store metrics for a

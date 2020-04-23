@@ -34,11 +34,13 @@ for your user-facing SaaS application and a second team for infrastructure tooli
 same nodes, you can create separate Spaces for each team.
 
 **War Rooms** are where users can view key metrics in real-time and monitor the health of many nodes with their alarm
-status. You can create as many War Rooms as you'd like and add your claimed nodes 
+status. You can create as many War Rooms as you need, and add claimed nodes to any number of War Rooms.
 
 We recommend that you establish some convention for how many War Rooms you create and which nodes they monitor, such as
 by service (`nginx`), purpose (`webservers`), or physical location (`IAD`). Your strategy for this depends on how many
 Spaces you created, the size of your team, and the number and types of nodes you need to monitor.
+
+You can also create new War Rooms as one of the first steps in your incident response process. For example, if you notice an anomaly that affects only systems running on a single cloud provider, you could create a new War Room called `2020-04-27-cloud-outage` and 
 
 ## Add Spaces
 
@@ -52,7 +54,7 @@ don't want any more.
 
 You can add new War Rooms to any Space by clicking on the green plus icon `+` after the **Rooms** heading. A new panel
 slides in and prompts you to name the new War Room, give it a description, and choose whether it's public or private.
-Anyone in your Space can join public War Rooms, can only join private War Rooms with an invitation.
+Anyone in your Space can join public War Rooms, but can only join private War Rooms with an invitation.
 
 ## Manage existing Spaces and War Rooms
 

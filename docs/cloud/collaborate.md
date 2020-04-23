@@ -3,7 +3,9 @@ title: Collaborate
 description: Invite your colleagues, manage teams, and create bookmarks to commonly-used resources that your team needs at a glance.
 ---
 
-Cloud centralizes the real-time metrics from your distributed nodes so that your team can easily view the same information during an anomaly or outage, leverage the collaboration tools your organization, and get to resolution faster.
+Cloud centralizes the real-time metrics from your distributed nodes so that your team can easily view the same
+information during an anomaly or outage. By congregating in shared War Rooms and working in parallel on the same issue,
+you can find the root cause and get to resolution faster.
 
 Collaboration happens only when you invite your team and give them the resources they need—aside from thousands of real-time metrics from all your systems and applications—to sort out the root cause and deploy the right fix.
 
