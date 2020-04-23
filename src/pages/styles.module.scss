@@ -36,11 +36,15 @@
   }
 
   .buttons {
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
     margin-top: 2rem;
   }
 
   .getStarted:first-of-type {
     margin-right: 2rem;
+    margin-bottom: var(--ifm-paragraph-margin-bottom);
   }
 
   .heroImageContainer {
@@ -70,9 +74,7 @@
   }
 
   @media (max-width: 996px) {
-    .hero {
-      padding: 4rem 0 3rem;
-    }
+    padding: 4rem 0 3rem;
 
     .heroText .heroTagline {
       font-size: 2.4rem;
