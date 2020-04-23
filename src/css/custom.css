@@ -146,21 +146,35 @@ main[class^='docMainContainer'] .container {
 
 .navbar .navbar__brand {
   position: relative;
+  flex-shrink: 0;
 
   margin-right: 2rem;
   /* TODO: Explore how you can restore this and have the `Agent`/`Cloud` buttons aligned with the docs text. */
   /* margin-right: 16rem; */
 }
 
+@media (max-width: 500px) {
+  .navbar .navbar__brand {
+    margin-right: 0;
+  }
+}
+
 .navbar__brand strong {
+  display: block !important;
   position: absolute;
   top: 22px;
   left: 31px;
 
-  color: white;
+  color: var(--ifm-color-primary-lightest);
   font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+@media (max-width: 360px) {
+  .hideLogoText {
+    display: block !important;
+  }
 }
 
 .navbar .navbar__logo {
@@ -208,6 +222,19 @@ main[class^='docMainContainer'] .container {
 ::placeholder {
   color: var(--ifm-navbar-search-input-color);
   opacity: 1;
+}
+
+@media (max-width: 500px) {
+  .navbar .navbar__search {
+    padding-left: 0;
+  }
+
+  .search-icon {
+    padding: 4px 16px !important;
+    
+    background: white;
+    border-radius: 2px;
+  }
 }
 
 .navbar .navbar__search .navbar__search-input {
