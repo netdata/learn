@@ -14,7 +14,9 @@ Let's talk through some strategies for creating the most intuitive Cloud experie
 
 ## How to organize your Netdata Cloud
 
-**Spaces** are high-level containers to help you organize your team members and the nodes they're able to view in each
+### Spaces
+
+Spaces are high-level containers to help you organize your team members and the nodes they're able to view in each
 War Room.
 
 You can use any number of Spaces you want, but as you organize your Cloud experience, keep in mind that _you can only
@@ -33,16 +35,35 @@ different responsibilities or parts of the overall infrastructure to monitor. Fo
 for your user-facing SaaS application and a second team for infrastructure tooling. If they don't need to monitor the
 same nodes, you can create separate Spaces for each team.
 
-**War Rooms** are where users can view key metrics in real-time and monitor the health of many nodes with their alarm
-status. You can create as many War Rooms as you need, and add claimed nodes to any number of War Rooms.
+### War Rooms
 
-We recommend that you establish some convention for how many War Rooms you create and which nodes they monitor, such as
-by service (`nginx`), purpose (`webservers`), or physical location (`IAD`). Your strategy for this depends on how many
-Spaces you created, the size of your team, and the number and types of nodes you need to monitor.
+War Rooms are where users can view key metrics in real-time and monitor the health of many nodes with their alarm
+status. We can recommend a few strategies for organizing your War Rooms.
 
-You can also create new War Rooms as one of the first steps in your incident response process. For example, if you notice an anomaly that affects only systems running on a single cloud provider, you could create a new War Room called `2020-04-27-cloud-outage` and 
+**Service, purpose, location, etc.**: You can group War Rooms by a service (think Nginx, MySQL, Pulsar, and so on),
+their purpose (webserver, database, application), their physical location, whether they're baremetal or a Docker
+container, the PaaS/cloud provider it runs on, and much more. This allows you to see entire slices of your
+infrastructure by moving from one War Room to another.
 
-## Add Spaces
+**End-to-end apps/services**: If you have a user-facing SaaS product, or an internal service that said product relies
+on, you may want to monitor that entire stack in a single War Room. This might include Kubernetes clusters, Docker
+containers, proxies, databases, web servers, brokers, and more. End-to-end War Rooms are valuable tools for ensuring the
+health and performance of your organization's essential services.
+
+**Incident response**: You can also create new War Rooms as one of the first steps in your incident response process.
+For example, you have a user-facing web app that relies on Apache Pulsar for a message queue, and one of your nodes
+using the [Pulsar collector](/docs/agent/collectors/go.d.plugin/modules/pulsar) begins reporting a suspiciously low
+messages rate. You can create a War Room called `$year-$month-$day-pulsar-rate`, add all your Pulsar nodes in addition
+to nodes they connect to, and begin diagnosing the root cause in a War Room optimized for getting to resolution as fast
+as possible.
+
+## Add and manage Spaces and War Rooms
+
+We encourage you to experiment with different configurations of Spaces and War Rooms until you find the organizational
+structure that works best for your team and the infrastructure you need to monitor. You can create as many Spaces and
+War Rooms you need, delete them, and manage access.
+
+### Add Spaces
 
 You can add new Spaces by clicking on the green plus icon `+` in the Spaces menu, which appears on the far left of the
 Cloud interface. A panel slides in and prompts you for the name of this new Space.
@@ -50,13 +71,13 @@ Cloud interface. A panel slides in and prompts you for the name of this new Spac
 While you can't change the name of an existing Space, you can always create additional Spaces and delete the ones you
 don't want any more.
 
-## Add War Rooms
+### Add War Rooms
 
 You can add new War Rooms to any Space by clicking on the green plus icon `+` after the **Rooms** heading. A new panel
 slides in and prompts you to name the new War Room, give it a description, and choose whether it's public or private.
 Anyone in your Space can join public War Rooms, but can only join private War Rooms with an invitation.
 
-## Manage existing Spaces and War Rooms
+### Manage Spaces and War Rooms
 
 If you're an administrator of a Space or War Room, you can change their settings. You can add new members, change who is
 allowed to join and what privileges they have, tweak War Rooms, add Nodes to specific War Rooms, delete Spaces or War
