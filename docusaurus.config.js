@@ -6,14 +6,32 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'netdata',
   projectName: 'netdata',
-  plugins: [
+  presets: [
     [
-      '@docusaurus/plugin-content-docs', {
-        sidebarPath: require.resolve('./sidebars.js'),
-      }
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl:
+            'https://github.com/netdata/netdata/edit/master/',
+        },
+        theme: {
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+      },
     ],
-    '@docusaurus/plugin-content-pages',
-    '@docusaurus/plugin-google-analytics',
+  ],
+  plugins: [
+    '@docusaurus/plugin-sitemap'
+  ],
+  plugins: [
+    // [
+    //   '@docusaurus/plugin-content-docs', {
+    //     sidebarPath: require.resolve('./sidebars.js'),
+    //   }
+    // ],
+    // '@docusaurus/plugin-content-pages',
+    // '@docusaurus/plugin-google-analytics',
     '@docusaurus/plugin-sitemap',
     'docusaurus-plugin-sass',
     '@docusaurus/theme-search-algolia'
@@ -22,9 +40,9 @@ module.exports = {
     'https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,500&display=swap',
   ],
   themes: [
-    ['@docusaurus/theme-classic', {
-      customCss: require.resolve('./src/css/custom.css'),
-    }],
+    // ['@docusaurus/theme-classic', {
+    //   customCss: require.resolve('./src/css/custom.css'),
+    // }],
     '@docusaurus/theme-search-algolia'
   ],
   themeConfig: {
@@ -39,8 +57,8 @@ module.exports = {
     },
     image: 'img/everyone.png',
     prism: {
-      theme: require('prism-react-renderer/themes/duotoneDark'),
-      darkTheme: require('prism-react-renderer/themes/duotoneDark'),
+      // theme: require('prism-react-renderer/themes/duotoneDark'),
+      // darkTheme: require('prism-react-renderer/themes/duotoneDark'),
     },
     navbar: {
       title: 'Learn',
