@@ -44,21 +44,20 @@ html {
 
   /* Base fonts */
   --ifm-font-size-base: 16px;
-  --ifm-font-base-color: #1d1d40;
+  --ifm-line-height-base: 1.6;
+  --ifm-font-color-base: #1d1d40;
   --ifm-font-family-base: 'IBM Plex Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --ifm-font-family-monospace: 'IBM Plex Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  --ifm-font-size-base: 18px;
-  --ifm-line-height-base: 1.6;
   --ifm-font-weight-bold: 500;
   --ifm-heading-line-height: 1.2;
-
+  --ifm-blockquote-font-size: 18px;
 
   /* Headings */
   --ifm-heading-font-weight: 500;
 
   /* Code */
-  --ifm-code-font-size: 85%;
-  --ifm-pre-padding: 1.4rem;
+  --ifm-code-font-size: 95%;
+  --ifm-pre-padding: 1.5rem;
   --ifm-code-background: rgb(235, 238, 241);
 
   /* Buttons */
@@ -77,14 +76,14 @@ html {
   --ifm-navbar-height: 68px;
 
   /* Search */
-  --ifm-navbar-search-input-color: var(--ifm-font-base-color);
-  --ifm-navbar-search-input-placeholder-color: var(--ifm-font-base-color);
+  --ifm-navbar-search-input-color: var(--ifm-font-color-base);
+  --ifm-navbar-search-input-placeholder-color: var(--ifm-font-color-base);
 
   /* Sidebar */
   --ifm-menu-color-background-active: white;
 
   /* Table of contents */
-  --ifm-contents-link-color: var(--ifm-font-base-color);
+  --ifm-contents-link-color: var(--ifm-font-color-base);
 
   /* Footer */
   --ifm-footer-background-color: var(--ifm-background-color);
@@ -111,10 +110,9 @@ html[data-theme='dark'] {
   --ifm-navbar-link-hover-color: var(--ifm-color-primary-lightest);
 
   /* Base fonts */
-  --ifm-font-base-color: #f5f6f7;
+  --ifm-font-color-base: #f5f6f7;
+  --ifm-blockquote-color: var(--ifm-color-gray-600);
 
-  /* Borders */
-  --ifm-contents-border-color: 
 }
 
 /**
@@ -142,6 +140,12 @@ main[class^='docMainContainer'] .container {
 .navbar,
 .navbar .navbar-sidebar {
   background-color: #35414a;
+}
+
+@media (max-width: 996px) {
+  .navbar .navbar__inner {
+    flex-wrap: nowrap;
+  }
 }
 
 .navbar .navbar__brand {
@@ -265,9 +269,7 @@ html[data-theme='dark'] div[class^='docSidebarContainer'] {
 
 @media (min-width: 997px) {
   div[class^='sidebar']:not([class^='sidebarLogo']) {
-    top: calc(var(--ifm-navbar-height) + 2rem);
-
-    padding-top: 0;
+    padding-top: calc(var(--ifm-navbar-height) + 3rem);
   }
 }
 
@@ -276,7 +278,7 @@ div[class^='sidebarLogo'] {
 }
 
 .menu .menu__link {
-  color: var(--ifm-font-base-color);
+  color: var(--ifm-font-color-base);
   font-size: 1rem;
   font-weight: var(--ifm-font-weight-normal);
 }
@@ -286,7 +288,7 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
 }
 
 @media (max-width: 996px) {
-  .menu .menu__link {
+  .navbar-sidebar__items .menu .menu__link {
     color: white;
   }  
 }
@@ -302,7 +304,7 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
 
 .footer.footer--dark {
   --ifm-footer-background-color: var(--ifm-background-color);
-  --ifm-footer-title-color: var(--ifm-font-base-color);
+  --ifm-footer-title-color: var(--ifm-font-color-base);
   /* --ifm-footer-link-color: var(--ifm-color-gray-300); */
 }
 
@@ -395,16 +397,21 @@ html[data-theme='dark'] .button.button--secondary:hover {
 div[class^='mdxCodeBlock'] button,
 pre[class*='codeBlock'] button {
   color: var(--ifm-color-primary-lightest);
+  font-size: 0.8rem;
+
   border: 1px solid var(--ifm-color-primary-lightest);
 }
 
 div[class^='mdxCodeBlock'] button:hover,
 pre[class*='codeBlock'] button:hover {
   color: white;
+
   border: 1px solid white;
 }
 
-.prism-code {
+pre.prism-code {
+  padding: 0;
+
   border-radius: var(--ifm-global-radius);
 }
 
@@ -428,11 +435,18 @@ html[data-theme='dark'] code {
 */
 
 .markdown {
-  /* Vertical rhythm */
+  font-size: 18px;
   --ifm-heading-vertical-rhythm-bottom: 1;
 }
 
 .markdown img {
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-md);
+}
+
+.hash-link {
+  margin-left: -1.75rem;
+  padding-right: 1.75rem;
+  font-size: 1.4rem;
+  margin-top: 0.35rem;
 }

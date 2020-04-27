@@ -193,7 +193,7 @@
 
   border: 1px solid var(--ifm-color-gray-300);
   border-radius: 2px;
-  color: var(--ifm-font-base-color);
+  color: var(--ifm-font-color-base);
   font-size: 0.9rem;
   text-align: center;
   
@@ -288,7 +288,7 @@
   width: 143px;
   height: 14px;
   
-  color: var(--ifm-font-base-color);
+  color: var(--ifm-font-color-base);
 }
 
 @media (max-width: 996px) {
@@ -332,7 +332,7 @@
 .docBox p {
   margin: 0;
 
-  color: var(--ifm-font-base-color);
+  color: var(--ifm-font-color-base);
   font-weight: 400;
 }
 
@@ -351,7 +351,7 @@
 }
 
 html[data-theme='dark'] {
-  .hero img,
+  .heroImage,
   .stepByStepImg img {
     filter: grayscale(1);
     opacity: 0.3;

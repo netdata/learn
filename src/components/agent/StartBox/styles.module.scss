@@ -30,7 +30,7 @@
     }
 
     p {
-      color: var(--ifm-font-base-color);
+      color: var(--ifm-font-color-base);
     }
   }
 
@@ -66,7 +66,7 @@
   }
 
   h3 {
-    color: var(--ifm-font-base-color);
+    color: var(--ifm-font-color-base);
     font-size: 1.4rem;
     transition: ease-in-out all 0.15s;
   }
@@ -74,7 +74,7 @@
   p {
     margin-bottom: 0;
 
-    color: var(--ifm-font-base-color);
+    color: var(--ifm-font-color-base);
     font-weight: 400;
   }
 
