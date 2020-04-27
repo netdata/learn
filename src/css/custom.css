@@ -57,7 +57,7 @@ html {
 
   /* Code */
   --ifm-code-font-size: 85%;
-  --ifm-pre-padding: 1.4rem;
+  --ifm-pre-padding: 1.5rem;
   --ifm-code-background: rgb(235, 238, 241);
 
   /* Buttons */
@@ -397,21 +397,28 @@ html[data-theme='dark'] .button.button--secondary:hover {
 div[class^='mdxCodeBlock'] button,
 pre[class*='codeBlock'] button {
   color: var(--ifm-color-primary-lightest);
+  font-size: 0.8rem;
+
   border: 1px solid var(--ifm-color-primary-lightest);
 }
 
 div[class^='mdxCodeBlock'] button:hover,
 pre[class*='codeBlock'] button:hover {
   color: white;
+
   border: 1px solid white;
 }
 
-.prism-code {
+pre.prism-code {
+  padding: 0;
+
   border-radius: var(--ifm-global-radius);
 }
 
 pre.prism-code code {
   padding: var(--ifm-pre-padding);
+
+  font-size: 105%;
 }
 
 html[data-theme='dark'] code {
