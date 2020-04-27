@@ -111,9 +111,8 @@ html[data-theme='dark'] {
 
   /* Base fonts */
   --ifm-font-color-base: #f5f6f7;
+  --ifm-blockquote-color: var(--ifm-color-gray-600);
 
-  /* Borders */
-  --ifm-contents-border-color: 
 }
 
 /**
@@ -438,4 +437,11 @@ html[data-theme='dark'] code {
 .markdown img {
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-md);
+}
+
+.hash-link {
+  margin-left: -1.75rem;
+  padding-right: 1.75rem;
+  font-size: 1.4rem;
+  margin-top: 0.35rem;
 }
