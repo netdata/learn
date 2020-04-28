@@ -254,11 +254,11 @@ div[class^='docSidebarContainer'] {
   width: 350px;
   top: 0;
 
-  background: linear-gradient(90deg, #f2f0f0, white);
+  background: #f5f5f9;
 }
 
 html[data-theme='dark'] div[class^='docSidebarContainer'] {
-  background: linear-gradient(90deg, #13172d, #191927);
+  background:#191927;
 }
 
 @media (max-width: 1300px) {
