@@ -52,29 +52,45 @@ There are two important notes regarding claiming:
 -   You must repeat the claiming process on every node you want to add to Netdata Cloud.
 
 To claim a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
-Cloud. **You must run this script as the user running the** `netdata` **service**, which is usually the `netdata` user.
-You have two options: Switch to the appropriate user yourself, or run the command using `sudo` to manage permissions
-automatically.
+Cloud. 
+
+**You must run the claiming script as the user running the Agent.** You have two options: 
+
+1.   Run the command with `sudo`, which will auto-detect the correct user and run the claiming script as that user. 
+2.   Discover which user is running the Agent, switch to that user yourself, and run the claiming script.
 
 <Tabs
-  defaultValue="netdata-user"
+  defaultValue="sudo"
   values={[
-    { label: 'netdata user', value: 'netdata-user', },
     { label: 'sudo', value: 'sudo', },
+    { label: 'as user', value: 'as-user', },
   ]
 }>
-<TabItem value="netdata-user">
-
-```bash
-sudo su -s /bin/bash netdata
-netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.cloud
-```
-
-</TabItem>
 <TabItem value="sudo">
+
+To run the claiming script as `sudo`, simply append that to the beginning of the script given to you by Cloud.
 
 ```bash
 sudo netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.cloud
+```
+
+</TabItem>
+<TabItem value="as-user">
+
+To discover the user running the Agent, use `grep` to search your `netdata.conf` file, which is typically located at
+`/etc/netdata/netdata.conf`, for the `run as user` setting. For example:
+
+```bash
+grep "run as user" /etc/netdata/netdata.conf 
+    # run as user = netdata
+```
+
+In this case, the user running the Agent is `netdata`. Yours may be different, so pay attention to the output from
+`grep`. Switch to your user, replacing `netdata` a different user if necessary, and run the claiming script.
+
+```bash
+sudo -u netdata bash
+netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.cloud
 ```
 
 </TabItem>
