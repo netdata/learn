@@ -4,26 +4,26 @@ description: Add metrics to Cloud, search your infrastructure, view alarm status
 ---
 
 Netdata Cloud gives you the ability to monitor the health and performance of an entire infrastructure in real time, all
-in one place. Teams can use two Cloud interfaces, the **List view** and **active alarms**, in parallel to track
-anomalies, outages, and alarms across any number of nodes.
+in one place. Teams can use two Cloud interfaces, **Nodes** and **active alarms**, in parallel to track anomalies,
+outages, and alarms across any number of nodes.
 
-## Monitor at a glance with List view
+## Monitor at a glance with Nodes
 
-List view lets you see and customize key metrics from any number of Agent-monitored nodes and seamlessly navigate to any
-node's dashboard for granular performance troubleshooting.
+The Nodes view lets you see and customize key metrics from any number of Agent-monitored nodes and seamlessly navigate
+to any node's dashboard for granular performance troubleshooting.
 
-![The List view interface in Netdata Cloud](/img/docs/cloud/list-view.png)
+![The Nodes interface in Netdata Cloud](/img/docs/cloud/list-view.png)
 
-Each War Room's List view is populated based on the nodes you added to that specific War Room. Each node occupies a
+Each War Room's Nodes view is populated based on the nodes you added to that specific War Room. Each node occupies a
 single row, first featuring that node's alarm status (yellow for warnings, red for critical alarms) and operating
 system, some essential information about the node, followed by columns of user-defined key metrics represented in
 real-time charts.
 
 ### Add and customize metrics columns
 
-Add more metrics columns by clicking the **+ Add metric** button in List view's final column. Choose the context you'd
-like to add, give it a relevant name, and select whether you want to see all dimensions (the default), or only the
-specific dimensions your team is interested in.
+Add more metrics columns by clicking the **+ Add metric** button in Node's final column. Choose the context you'd like
+to add, give it a relevant name, and select whether you want to see all dimensions (the default), or only the specific
+dimensions your team is interested in.
 
 You can also click the gear icon to customize the pre-configured metrics columns that come with every new War Room. You
 can change the context, its title, add or remove dimensions, or delete the column altogether.
@@ -41,9 +41,9 @@ Netdata Cloud, and then engage your team to perform root-cause analysis using th
 
 ### Filter and group your infrastructure
 
-Use the filter input next to the **Nodes** heading on List view to filter your nodes based on your queries. You can
-enter a text query that filters by hostname, or use the dropdown that appears as you begin typing to filter by operating
-system or the service(s) that node provides.
+Use the filter input next to the **Nodes** heading to filter your nodes based on your queries. You can enter a text
+query that filters by hostname, or use the dropdown that appears as you begin typing to filter by operating system or
+the service(s) that node provides.
 
 Use the **Group by** dropdown to choose between no grouping, grouping by the node's alarm status (`critical`, `warning`,
 and `clear`), and grouping by the service each node provides.
@@ -53,8 +53,8 @@ See what services Netdata Cloud can filter by with [supported collectors list](/
 ## Monitor active alarms
 
 You can see active alarms in two ways: by clicking on the bell icon in the top navigation, or clicking on the first
-column of any node's row in the List view. This column's color changes based on the node's health status—gray is
-`clear`, yellow is `warning`, and red is `critical`.
+column of any node's row in Nodes. This column's color changes based on the node's health status—gray is `clear`, yellow
+is `warning`, and red is `critical`.
 
 ![The active alarms panel in Netdata Cloud](/img/docs/cloud/active-alarms.png)
 
