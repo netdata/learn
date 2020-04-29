@@ -20,17 +20,14 @@ install that Agent.
 
 ## Begin the onboarding process
 
-Navigate to Netdata Cloud either by clicking the **Sign in** button in a dashboard's top navigation, or by clicking the
-button below.
+Get started by signing in to Netdata Cloud.
 
 <p><a href="https://app.netdata.cloud" className="button button--lg">Sign in to Cloud</a></p>
 
-![image](https://user-images.githubusercontent.com/1153921/79392551-62ba0900-7f28-11ea-9741-52037f848591.png)
-
-Once signed in, you begin onboarding by creating your first Space and War Room, both of which help you organize your
-team and the many systems that make up your infrastructure. For example, you can put product and infrastructure SRE
-teams in separate Spaces, and then use War Rooms to group Agent-monitored nodes by their service (`nginx`), purpose
-(`webservers`), or physical location (`IAD`).
+Once signed in with your preferred method, you begin onboarding by creating your first Space and War Room, both of which
+help you organize your team and the many systems that make up your infrastructure. For example, you can put product and
+infrastructure SRE teams in separate Spaces, and then use War Rooms to group Agent-monitored nodes by their service
+(`nginx`), purpose (`webservers`), or physical location (`IAD`).
 
 Don't worry—you can always add more Spaces and War Rooms later if you decide to reorganize how you use Netdata Cloud.
 
@@ -47,76 +44,37 @@ status of your Agents.
 
 There are two important notes regarding claiming:
 
--   You can only claim any given node in a single Space. You can, however, add that claimed node to multiple War Rooms
-    within its Space.
+-   _You can only claim any given node in a single Space_. You can, however, add that claimed node to multiple War Rooms
+    within that one Space.
 -   You must repeat the claiming process on every node you want to add to Netdata Cloud.
 
 To claim a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
 Cloud. 
 
-**You must run the claiming script as the user running the Agent.** You have two options: 
-
-1.   Run the command with `sudo`, which will auto-detect the correct user and run the claiming script as that user. 
-2.   Discover which user is running the Agent, switch to that user yourself, and run the claiming script.
-
-<Tabs
-  defaultValue="sudo"
-  values={[
-    { label: 'sudo', value: 'sudo', },
-    { label: 'as user', value: 'as-user', },
-  ]
-}>
-<TabItem value="sudo">
-
-To run the claiming script as `sudo`, simply append that to the beginning of the script given to you by Cloud.
+The easiest way to run this script is with `sudo`. The claiming script takes care of the rest.
 
 ```bash
 sudo netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.cloud
 ```
 
-</TabItem>
-<TabItem value="as-user">
+Hit **Enter**. The script should return `Agent was successfully claimed.`. If the claiming script returns errors, or if
+you don't see the node in your Space after 60 seconds, see the [troubleshooting
+information](/docs/agent/claim/#troubleshooting). 
 
-To discover the user running the Agent, use `grep` to search your `netdata.conf` file, which is typically located at
-`/etc/netdata/netdata.conf`, for the `run as user` setting. For example:
+Repeat this process with every node you want to add to Cloud during onboarding. You can also add more nodes once you've
+finished onboarding.
 
-```bash
-grep "run as user" /etc/netdata/netdata.conf 
-    # run as user = netdata
-```
+### Alternatives and other operating systems
 
-In this case, the user running the Agent is `netdata`. Yours may be different, so pay attention to the output from
-`grep`. Switch to your user, replacing `netdata` a different user if necessary, and run the claiming script.
+If you don't want to run the claiming script with `sudo`, see how to [claim an Agent
+manually](/docs/agent/claim/#claim-an-agent-manually).
 
-```bash
-sudo -u netdata bash
-netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.cloud
-```
+**Docker**: You can execute the claiming script to an Agent running as a Docker container, or attach the claiming script
+when creating an Agent container for the first time, such as when you're spinning up ephemeral containers. See the
+[claim an Agent running in Docker](/docs/agent/claim/#claiming-an-agent-running-in-docker) documentation for details.
 
-</TabItem>
-</Tabs>
-
-Hit **Enter**. The script should return `Agent was successfully claimed.`. Your node may need up to 60 seconds to
-connect to Netdata Cloud after finishing the claiming process. Please be patient!
-
-Now repeat this process with every node you want to add to Cloud during onboarding. You can also add more nodes once
-you've finished onboarding.
-
-### Claim an Agent running in Docker
-
-You can execute the claiming script to an Agent running as a Docker container, or attach the claiming script when
-creating an Agent container for the first time, such as when you're spinning up ephemeral containers. See the [claim an
-Agent running in Docker](/docs/agent/claim/#claiming-an-agent-running-in-docker) documentation for details.
-
-### Claim through a proxy
-
-If your node uses a proxy to connect to the internet, you need to configure the Agent's proxy settings. See our
-[claiming through a proxy](/docs/agent/claim/#claiming-through-a-proxy) documentation for details.
-
-### Troubleshooting
-
-If the claiming script returns a failure, or the claimed node does not appear in the onboarding screen, see our
-[troubleshooting tips](/docs/agent/claim/#troubleshooting).
+**With a proxy**: If your node uses a proxy to connect to the internet, you need to configure the Agent's proxy
+settings. See our [claiming through a proxy](/docs/agent/claim/#claiming-through-a-proxy) documentation for details.
 
 ## What's next?
 
