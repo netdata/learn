@@ -33,6 +33,9 @@ Don't worry—you can always add more Spaces and War Rooms later if you decide t
 
 ## Claim a node
 
+You can claim any node with a running Agent, whether it's a physical or virtual machine, a Docker container, IoT device,
+and more.
+
 The claiming process allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud. By
 going through the process of claiming a node, you prove you have write and administrative access to that node. Because
 no one can claim a node they don't have write and administrative access to, the claiming process ensures you remain in
@@ -51,7 +54,9 @@ There are two important notes regarding claiming:
 To claim a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
 Cloud. 
 
-The easiest way to run this script is with `sudo`. The claiming script takes care of the rest.
+The easiest way to run this script is with `sudo`. The claiming script takes care of the rest. If you want to claim an
+agent without using root privileges, see our [claiming
+documentation](/docs/agent/claim/#claim-an-agent-without-root-privileges).
 
 ```bash
 sudo netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.cloud
@@ -65,9 +70,6 @@ Repeat this process with every node you want to add to Cloud during onboarding. 
 finished onboarding.
 
 ### Alternatives and other operating systems
-
-If you don't want to run the claiming script with `sudo`, see how to [claim an Agent
-manually](/docs/agent/claim/#claim-an-agent-manually).
 
 **Docker**: You can execute the claiming script to an Agent running as a Docker container, or attach the claiming script
 when creating an Agent container for the first time, such as when you're spinning up ephemeral containers. See the
