@@ -52,11 +52,8 @@ There are two important notes regarding claiming:
 -   You must repeat the claiming process on every node you want to add to Netdata Cloud.
 
 To claim a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
-Cloud. 
-
-The easiest way to run this script is with `sudo`. The claiming script takes care of the rest. If you want to claim an
-agent without using root privileges, see our [claiming
-documentation](/docs/agent/claim/#claim-an-agent-without-root-privileges).
+Cloud into your node's terminal. The claiming script takes care of the rest. If you want to claim an agent without using
+root privileges, see our [claiming documentation](/docs/agent/claim/#claim-an-agent-without-root-privileges).
 
 ```bash
 sudo netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.cloud
