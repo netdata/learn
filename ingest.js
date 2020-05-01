@@ -12,6 +12,7 @@ const MIN_RATE_LIMIT = 50
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const baseDir = '/docs'
 const agentDir = '/docs/agent'
+const cloudDir = '/docs/cloud'
 const outDir = path.join(__dirname, agentDir)
 // the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
@@ -21,7 +22,7 @@ const retainPaths = [
 ]
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/netdata/',
+  baseURL: 'https://api.github.com/repos/joelhans/',
   headers: {
     'Authorization': `token ${GITHUB_TOKEN}`
   }
@@ -99,7 +100,14 @@ function normalizeLinks(pages) {
     const tokens = path.parse(page.meta.path)
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
-      // skip the whole process if a relative anchor
+
+      // Fix full URLs to the learn site
+      if (url.startsWith('https://learn.netdata.cloud')) {
+        const minusLearnUrl = url.split('https://learn.netdata.cloud/')[1]
+        return `](/docs/${minusLearnUrl})`
+      }
+
+      // skip the whole process if a relative anchor, external link, or a mailto link
       if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
 
       // if the link is already a absolute-relative
@@ -261,7 +269,7 @@ async function ingest() {
   }
 
   console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getRootSha('netdata')
+  const rootSha = await getRootSha('netdata', 'docs-go-live')
   console.log(`Fetching nodes from 'netdata' repo...`)
   const nodes = await getNodes(rootSha)
 
