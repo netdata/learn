@@ -39,8 +39,8 @@ You have two options if you prefer to disable the ACLK and not use Netdata Cloud
     connection via the ACLK, but does not prevent the installer from downloading and compiling the ACLK's dependencies.
 
 ```conf
-[global]
-    netdata cloud = disable
+[cloud]
+    enabled = no
 ```
 
 

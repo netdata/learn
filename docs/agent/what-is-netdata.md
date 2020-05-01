@@ -4,6 +4,14 @@ date: 2020-04-07
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/what-is-netdata.md
 ---
 
+<!--
+---
+title: "Netdata"
+date: 2020-04-06
+custom_edit_url: https://github.com/netdata/netdata/edit/master/README.md
+---
+-->
+
 
 
 [![Code
@@ -53,23 +61,24 @@ Netdata!](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&la
 2.  [Our userbase](#user-base) - Enterprises we help monitor and our userbase
 3.  [Quickstart](#quickstart) - How to try it now on your systems
 4.  [Why Netdata](#why-netdata) - Why people love Netdata and how it compares with other solutions
-5.  [How Netdata works](#how-it-works) - A high-level diagram of how Netdata works
-6.  [Infographic](#infographic) - Everything about Netdata in a single graphic
-7.  [Features](#features) - How you'll use Netdata on your systems
-8.  [Visualization](#visualization) - Learn about visual anomaly detection
-9. [What Netdata monitors](#what-netdata-monitors) - See which apps/services Netdata auto-detects
-10. [Documentation](#documentation) - Read the documentation
-11. [Community](#community) - Discuss Netdata with others and get support
-12. [License](#license) - Check Netdata's licencing
-13. [Is it any good?](#is-it-any-good) - Yes.
-14. [Is it awesome?](#is-it-awesome) - Yes.
+5.  [News](#news) - The latest news about Netdata
+6.  [How Netdata works](#how-it-works) - A high-level diagram of how Netdata works
+7.  [Infographic](#infographic) - Everything about Netdata in a single graphic
+8.  [Features](#features) - How you'll use Netdata on your systems
+9.  [Visualization](#visualization) - Learn about visual anomaly detection
+10. [What Netdata monitors](#what-netdata-monitors) - See which apps/services Netdata auto-detects
+11. [Documentation](#documentation) - Read the documentation
+12. [Community](#community) - Discuss Netdata with others and get support
+13. [License](#license) - Check Netdata's licencing
+14. [Is it any good?](#is-it-any-good) - Yes.
+15. [Is it awesome?](#is-it-awesome) - Yes.
 
 ## What does it look like?
 
 The following animated GIF shows the top part of a typical Netdata dashboard.
 
 ![The Netdata dashboard in
-action](https://user-images.githubusercontent.com/1153921/70638670-85dd5080-1bf6-11ea-893e-94400f445574.gif)
+action](https://user-images.githubusercontent.com/1153921/80827388-b9fee100-8b98-11ea-8f60-0d7824667cd3.gif)
 
 > A typical Netdata dashboard, in 1:1 timing. Charts can be panned by dragging them, zoomed in/out with `SHIFT` + `mouse
 > wheel`, an area can be selected for zoom-in with `SHIFT` + `mouse selection`. Netdata is highly interactive,
@@ -262,18 +271,17 @@ This is what you should expect from Netdata:
 
 -   **Sophisticated alerting** - Netdata comes with hundreds of alarms **out of the box**! It supports dynamic
     thresholds, hysteresis, alarm templates, multiple role-based notification methods, and more.
--   **Notifications**: [alerta.io](/docs/agent/health/notifications/alerta), [amazon
-    sns](/docs/agent/health/notifications/awssns), [discordapp.com](/docs/agent/health/notifications/discord),
-    [email](/docs/agent/health/notifications/email), [flock.com](/docs/agent/health/notifications/flock),
-    [hangouts](/docs/agent/health/notifications/hangouts), [irc](/docs/agent/health/notifications/irc),
-    [kavenegar.com](/docs/agent/health/notifications/kavenegar), [messagebird.com](/docs/agent/health/notifications/messagebird/),
-    [pagerduty.com](/docs/agent/health/notifications/pagerduty), [prowl](/docs/agent/health/notifications/prowl),
-    [pushbullet.com](/docs/agent/health/notifications/pushbullet),
-    [pushover.net](/docs/agent/health/notifications/pushover), [rocket.chat](/docs/agent/health/notifications/rocketchat),
-    [slack.com](/docs/agent/health/notifications/slack), [smstools3](/docs/agent/health/notifications/smstools3),
-    [syslog](/docs/agent/health/notifications/syslog), [telegram.org](/docs/agent/health/notifications/telegram),
-    [twilio.com](/docs/agent/health/notifications/twilio), [web](/docs/agent/health/notifications/web) and [custom
-    notifications](/docs/agent/health/notifications/custom).
+-   **Notifications**: [alerta.io](/docs/agent/health/notifications/alerta/), [amazon sns](/docs/agent/health/notifications/awssns/),
+    [discordapp.com](/docs/agent/health/notifications/discord/), [email](/docs/agent/health/notifications/email/),
+    [flock.com](/docs/agent/health/notifications/flock/), [hangouts](/docs/agent/health/notifications/hangouts/),
+    [irc](/docs/agent/health/notifications/irc/), [kavenegar.com](/docs/agent/health/notifications/kavenegar/),
+    [messagebird.com](/docs/agent/health/notifications/messagebird/), [pagerduty.com](/docs/agent/health/notifications/pagerduty/),
+    [prowl](/docs/agent/health/notifications/prowl/), [pushbullet.com](/docs/agent/health/notifications/pushbullet/),
+    [pushover.net](/docs/agent/health/notifications/pushover/), [rocket.chat](/docs/agent/health/notifications/rocketchat/),
+    [slack.com](/docs/agent/health/notifications/slack/), [smstools3](/docs/agent/health/notifications/smstools3/),
+    [syslog](/docs/agent/health/notifications/syslog/), [telegram.org](/docs/agent/health/notifications/telegram/),
+    [twilio.com](/docs/agent/health/notifications/twilio/), [web](/docs/agent/health/notifications/web/) and [custom
+    notifications](/docs/agent/health/notifications/custom/).
 
 ### Integrations
 
@@ -301,7 +309,8 @@ This is what you should expect from Netdata:
 To improve clarity on charts, Netdata dashboards present **positive** values for metrics representing `read`, `input`,
 `inbound`, `received` and **negative** values for metrics representing `write`, `output`, `outbound`, `sent`.
 
-![positive-and-negative-values](https://user-images.githubusercontent.com/2662304/48309090-7c5c6180-e57a-11e8-8e03-3a7538c14223.gif)
+![Screenshot showing positive and negative
+values](https://user-images.githubusercontent.com/1153921/80838078-03f1c200-8bad-11ea-834a-a0085b39adb6.png)
 
 _Netdata charts showing the bandwidth and packets of a network interface. `received` is positive and `sent` is
 negative._
@@ -310,7 +319,8 @@ negative._
 
 Netdata charts automatically zoom vertically, to visualize the variation of each metric within the visible time-frame.
 
-![non-zero-based](https://user-images.githubusercontent.com/2662304/48309139-3d2f1000-e57c-11e8-9a44-b91758134b00.gif)
+![Animated GIF showing the auso-scaling Y
+axis](https://user-images.githubusercontent.com/1153921/80838276-8084a080-8bad-11ea-8167-8d5ab2fb1be1.gif)
 
 _A zero-based `stacked` chart, automatically switches to an auto-scaled `area` chart when a single dimension is
 selected._
@@ -320,26 +330,22 @@ selected._
 Charts on Netdata dashboards are synchronized to each other. There is no master chart. Any chart can be panned or zoomed
 at any time, and all other charts will follow.
 
-![charts-are-synchronized](https://user-images.githubusercontent.com/2662304/48309003-b4fb3b80-e578-11e8-86f6-f505c7059c15.gif)
+![Animated GIF of the standard Netdata dashboard being manipulated and synchronizing
+charts](https://user-images.githubusercontent.com/1153921/80839230-b034a800-8baf-11ea-9cb2-99c1e10f0f85.gif)
 
 _Charts are panned by dragging them with the mouse. Charts can be zoomed in/out with`SHIFT` + `mouse wheel` while the
 mouse pointer is over a chart._
-
-> The visible time-frame (pan and zoom) is propagated from Netdata server to Netdata server when navigating via the
-> [My nodes menu](/docs/agent/registry).
 
 ### Highlighted time-frame
 
 To improve visual anomaly detection across charts, the user can highlight a time-frame (by pressing `Alt` + `mouse
 selection`) on all charts.
 
-![highlighted-timeframe](https://user-images.githubusercontent.com/2662304/48311876-f9093300-e5ae-11e8-9c74-e3e291741990.gif)
+![An animated GIF of highlighting a specific
+timeframe](https://user-images.githubusercontent.com/1153921/80839611-6ef0c800-8bb0-11ea-9e9c-f75ec9a2e54c.gif)
 
 _A highlighted time-frame can be given by pressing `Alt` + `mouse selection` on any chart. Netdata will highlight the
 same range on all charts._
-
-> Highlighted ranges are propagated from Netdata server to Netdata server, when navigating via the [My nodes
-> menu](/docs/agent/registry).
 
 ## What Netdata monitors
 
@@ -395,7 +401,7 @@ You can also find Netdata on:
 
 ## License
 
-Netdata is GPLv3+.
+Netdata is [GPLv3+](/docs/agent/license).
 
 Netdata re-distributes other open-source tools and libraries. Please check the [third party licenses](/docs/agent/redistributed).
 
