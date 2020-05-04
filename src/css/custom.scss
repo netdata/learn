@@ -446,6 +446,9 @@ html[data-theme='dark'] code {
 }
 
 .markdown img {
+  display: block;
+  margin: 0 auto;
+
   border-radius: var(--ifm-global-radius);
   box-shadow: var(--ifm-global-shadow-md);
 }
