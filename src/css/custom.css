@@ -394,25 +394,23 @@ html[data-theme='dark'] .button.button--secondary:hover {
  * Code highlighting
  */
 
-div[class^='mdxCodeBlock'] button,
-pre[class*='codeBlock'] button {
+pre.prism-code {
+  padding: 0;
+
+  border-radius: var(--ifm-global-radius);
+}
+
+pre.prism-code button {
   color: var(--ifm-color-primary-lightest);
   font-size: 0.8rem;
 
   border: 1px solid var(--ifm-color-primary-lightest);
 }
 
-div[class^='mdxCodeBlock'] button:hover,
-pre[class*='codeBlock'] button:hover {
+pre.prism-code button:hover {
   color: white;
 
   border: 1px solid white;
-}
-
-pre.prism-code {
-  padding: 0;
-
-  border-radius: var(--ifm-global-radius);
 }
 
 pre.prism-code code {
