@@ -1,6 +1,6 @@
 ---
 title: "Get started guide"
-date: 2020-05-01
+date: 2020-05-04
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/getting-started.md
 ---
 
@@ -204,7 +204,7 @@ and remote:
 ![Switching between dashboards with Visited
 nodes](https://user-images.githubusercontent.com/1153921/80831018-e158ac80-8b9e-11ea-882e-1d82cdc028cd.gif)
 
-You can use these features together or separatelyâthe decision is up to you and the needs of your infrastructure.
+You can use these features together or separately&mdash;the decision is up to you and the needs of your infrastructure.
 
 **What's next?**:
 
