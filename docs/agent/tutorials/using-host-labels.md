@@ -97,7 +97,7 @@ Now, if you'd like to remind yourself of how much RAM a certain slave system has
 `http://localhost:19999/host/SLAVE_NAME/api/v1/info` and reference the automatically-generated host labels from the
 slave system. It's a vastly simplified way of accessing critical information about your infrastructure.
 
-> â ï¸ Because automatic labels for slave nodes are accessible via API calls, and contain sensitive information like
+> ⚠️ Because automatic labels for slave nodes are accessible via API calls, and contain sensitive information like
 > kernel and operating system versions, you should secure streaming connections with SSL. See the [streaming
 > documentation](/docs/agent/streaming#securing-streaming-communications) for details. You may also want to use
 > [access lists](/docs/agent/web/server#access-lists) or [expose the API only to LAN/localhost

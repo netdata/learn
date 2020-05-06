@@ -41,7 +41,7 @@ via reinstallation.
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 ```
 
-> â ï¸ If you installed Netdata with any optional parameters, such as `--no-updates` to disable automatic updates, and
+> ⚠️ If you installed Netdata with any optional parameters, such as `--no-updates` to disable automatic updates, and
 > want to retain those settings, you need to set them again during this process. See the [`kickstart.sh`
 > documentation](/docs/agent/packaging/installer/methods/kickstart#optional-parameters-to-alter-your-installation) for more information on these
 > parameters and what they do.
@@ -76,7 +76,7 @@ via reinstallation.
 bash <(curl -Ss https://my-netdata.io/kickstart-static64.sh)
 ```
 
-> â ï¸ If you installed Netdata with any optional parameters, such as `--no-updates` to disable automatic updates, and
+> ⚠️ If you installed Netdata with any optional parameters, such as `--no-updates` to disable automatic updates, and
 > want to retain those settings, you need to set them again during this process. See the [`kickstart-static64.sh`
 > documentation](/docs/agent/packaging/installer/methods/kickstart-64#optional-parameters-to-alter-your-installation) for more information on these
 > parameters and what they do.
@@ -149,7 +149,7 @@ git pull origin master
 sudo ./netdata-installer.sh
 ```
 
-> â ï¸ If you installed Netdata with any optional parameters, such as `--no-updates` to disable automatic updates, and
+> ⚠️ If you installed Netdata with any optional parameters, such as `--no-updates` to disable automatic updates, and
 > want to retain those settings, you need to set them again during this process.
 
 

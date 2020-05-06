@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Fixed bundling of dashboard in binary packages. [\#8844](https://github.com/netdata/netdata/pull/8844) ([Ferroin](https://github.com/Ferroin))
 - Removed old function call in netdata-installer.sh [\#8824](https://github.com/netdata/netdata/pull/8824) ([Ferroin](https://github.com/Ferroin))
 - Fix build and add bundle-dashbaord.sh to dist\_noinst\_DATA [\#8823](https://github.com/netdata/netdata/pull/8823) ([prologic](https://github.com/prologic))
 - Fix typo in netdata-installer [\#8811](https://github.com/netdata/netdata/pull/8811) ([adamwolf](https://github.com/adamwolf))
@@ -92,7 +93,7 @@
 - Fix broken pipe ignoring in apps plugin [\#8554](https://github.com/netdata/netdata/pull/8554) ([vlvkobal](https://github.com/vlvkobal))
 - dashboard v0.4.10 [\#8553](https://github.com/netdata/netdata/pull/8553) ([jacekkolasa](https://github.com/jacekkolasa))
 - Update README.md [\#8552](https://github.com/netdata/netdata/pull/8552) ([bceylan](https://github.com/bceylan))
-- github/workflow: remove duplicate key \(`line-length`\) from the yamlliâ¦ [\#8551](https://github.com/netdata/netdata/pull/8551) ([ilyam8](https://github.com/ilyam8))
+- github/workflow: remove duplicate key \(`line-length`\) from the yamlli… [\#8551](https://github.com/netdata/netdata/pull/8551) ([ilyam8](https://github.com/ilyam8))
 - apache: fix `bytespersec` chart context [\#8550](https://github.com/netdata/netdata/pull/8550) ([ilyam8](https://github.com/ilyam8))
 - Add missing override for Ubuntu eoan [\#8547](https://github.com/netdata/netdata/pull/8547) ([prologic](https://github.com/prologic))
 - Switching over to soft feature flag [\#8545](https://github.com/netdata/netdata/pull/8545) ([amoss](https://github.com/amoss))
@@ -207,7 +208,6 @@
 - Small ebpf fixes [\#8133](https://github.com/netdata/netdata/pull/8133) ([thiagoftsm](https://github.com/thiagoftsm))
 - Update eBPF docs with better install/enable instructions [\#8125](https://github.com/netdata/netdata/pull/8125) ([joelhans](https://github.com/joelhans))
 - Fixes NetData installer on \*BSD systems post libmosquitto / eBPF [\#8121](https://github.com/netdata/netdata/pull/8121) ([prologic](https://github.com/prologic))
-- Fix nightly RPM builds. [\#8109](https://github.com/netdata/netdata/pull/8109) ([Ferroin](https://github.com/Ferroin))
 
 ## [v1.19.0](https://github.com/netdata/netdata/tree/v1.19.0) (2019-11-27)
 

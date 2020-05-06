@@ -11,7 +11,7 @@ the best set of alarms for your particular needs.
 In v1.18 of Netdata, we introduced **dimension templates** for alarms, which simplifies the process of writing [alarm
 entities](/docs/agent/health/reference#health-entity-reference) for charts with many dimensions.
 
-Dimension templates can condense many individual entities into oneâno more copy-pasting one entity and changing the
+Dimension templates can condense many individual entities into one—no more copy-pasting one entity and changing the
 `alarm`/`template` and `lookup` lines for each dimension you'd like to monitor.
 
 They are, however, an advanced health monitoring feature. For more basic instructions on creating your first alarm,
@@ -32,7 +32,7 @@ the same `lookup` line, Netdata will ignore the `of` parameter and use `foreach`
 
 Let's get into some examples so you can see how the new parameter works.
 
-> â ï¸ The following entities are examples to showcase the functionality and syntax of dimension templates. They are not
+> ⚠️ The following entities are examples to showcase the functionality and syntax of dimension templates. They are not
 > meant to be run as-is on production systems.
 
 ## Condensing entities with `foreach`
@@ -119,11 +119,11 @@ documentation](/docs/agent/libnetdata/simple_pattern).
 ## Using `foreach` with alarm templates
 
 Dimension templates also work with [alarm templates](/docs/agent/health/reference#alarm-line-alarm-or-template). Alarm
-templates help you create alarms for all the charts with a given contextâfor example, all the cores of your system's
+templates help you create alarms for all the charts with a given context—for example, all the cores of your system's
 CPU.
 
 By combining the two, you can create dozens of individual alarms with a single template entity. Here's how you would
-create alarms for the `system`, `user`, and `nice` dimensions for every chart in the `cpu.cpu` contextâor, in other
+create alarms for the `system`, `user`, and `nice` dimensions for every chart in the `cpu.cpu` context—or, in other
 words, every CPU core.
 
 ```yaml

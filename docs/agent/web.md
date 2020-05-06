@@ -56,11 +56,11 @@ which have a few methods:
 
 | Manipulation | Method #1 | Method #2 | Method #3 |
 |--- |--- |--- |--- |
-| **Reset** charts to default auto-refreshing stateÂ Â | `double click`Â | `double tap` (touchpad/touchscreen)Â Â | Â |
-| **Select** a certain timeframeÂ | `ALT` + `mouse selection`Â Â | `â` + `mouse selection` (macOS)Â Â |Â  |
-| **Pan** forward or back in timeÂ Â | `click and drag`Â | `touch and drag` (touchpad/touchscreen)Â Â | Â |
-| **Zoom** to a specific timeframeÂ | `SHIFT` + `mouse selection`Â Â |Â  | Â |
-| **Zoom** in/outÂ Â | `SHIFT`/`ALT` + `mouse scrollwheel`Â Â | `SHIFT`/`ALT` + `two-finger pinch` (touchpad/touchscreen)Â Â | `SHIFT`/`ALT` + `two-finger scroll` (touchpad/touchscreen)Â |
+| **Reset** charts to default auto-refreshing state  | `double click` | `double tap` (touchpad/touchscreen)  |  |
+| **Select** a certain timeframe | `ALT` + `mouse selection`  | `⌘` + `mouse selection` (macOS)  |  |
+| **Pan** forward or back in time  | `click and drag` | `touch and drag` (touchpad/touchscreen)  |  |
+| **Zoom** to a specific timeframe | `SHIFT` + `mouse selection`  |  |  |
+| **Zoom** in/out  | `SHIFT`/`ALT` + `mouse scrollwheel`  | `SHIFT`/`ALT` + `two-finger pinch` (touchpad/touchscreen)  | `SHIFT`/`ALT` + `two-finger scroll` (touchpad/touchscreen) |
 
 Here's how chart synchronization looks while zooming and panning:
 

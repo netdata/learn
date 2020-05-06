@@ -142,7 +142,7 @@ The Netdata team maintains two releases of the Netdata agent: **nightly** and **
 installation scripts will give you **automatic, nightly** updates, as that is our recommended configuration.
 
 **Nightly**: We create nightly builds every 24 hours. They contain fully-tested code that fixes bugs or security flaws,
-or introduces new features to Netdata. Every nightly release is a candidate for then becoming a stable releaseâwhen
+or introduces new features to Netdata. Every nightly release is a candidate for then becoming a stable release—when
 we're ready, we simply change the release tags on GitHub. That means nightly releases are stable and proven to function
 correctly in the vast majority of Netdata use cases. That's why nightly is the _best choice for most Netdata users_.
 

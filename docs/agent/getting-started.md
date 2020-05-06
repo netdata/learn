@@ -95,14 +95,14 @@ Some modules, like `chrony`, are disabled by default and must be enabled manuall
 
 Once Netdata detects a valid source of data, it will continue trying to collect data from it. For example, if
 Netdata is collecting data from an Nginx web server, and you shut Nginx down, Netdata will collect new data as soon as
-you start the web server back upâno restart necessary.
+you start the web server back up—no restart necessary.
 
 ### Configuring plugins
 
 Even if Netdata auto-detects your service/application, you might want to configure what, or how often, Netdata is
 collecting data.
 
-Netdata uses **internal** and **external** plugins to collect data. Internal plugins run within the Netdata dÃ¦mon, while
+Netdata uses **internal** and **external** plugins to collect data. Internal plugins run within the Netdata dæmon, while
 external plugins are independent processes that send metrics to Netdata over pipes. There are also plugin
 **orchestrators**, which are external plugins with one or more data collection **modules**.
 

@@ -8,7 +8,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-ste
 In previous steps of the tutorial, you have learned how several sections of the Netdata dashboard worked. 
 
 This step will show you how to set up a custom dashboard to fit your unique needs. If nothing else, Netdata is really,
-really flexible. ð¤¸
+really flexible. 🤸
 
 ## What you'll learn in this step
 

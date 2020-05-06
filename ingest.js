@@ -78,7 +78,7 @@ async function getPages(nodes) {
 
     return {
       meta: { ...node },
-      body: Buffer.from(content, 'base64').toString('binary')
+      body: Buffer.from(content, 'base64').toString('utf-8')
     }
   }))
 }

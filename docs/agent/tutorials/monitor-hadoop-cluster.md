@@ -168,7 +168,7 @@ sudo service restart netdata
 ```
 
 Upon restart, Netdata should recognize your HDFS/Zookeeper servers, enable the HDFS and Zookeeper modules, and begin
-showing real-time metrics for both in your Netdata dashboard. ð
+showing real-time metrics for both in your Netdata dashboard. 🎉
 
 ## Configuring HDFS and Zookeeper alarms
 

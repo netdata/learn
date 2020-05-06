@@ -48,16 +48,16 @@ header:
 <!DOCTYPE html>
 <html lang="en">
 <head>
-Â Â <title>Your dashboard</title>
+  <title>Your dashboard</title>
 
-Â Â <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-Â Â <meta charset="utf-8">
-Â Â <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-Â Â <meta name="viewport" content="width=device-width, initial-scale=1">
-Â Â <meta name="apple-mobile-web-app-capable" content="yes">
-Â Â <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-Â Â <!-- here we will add dashboard.js -->
+  <!-- here we will add dashboard.js -->
 
 </head>
 <body>
@@ -648,7 +648,7 @@ to 50.
  data-points="1200"
  data-after="-1200"
  data-dimensions="actual"
- data-units="Â°C"
+ data-units="°C"
  data-easypiechart-max-value="50"
  data-easypiechart-min-value="40"
  data-common-max="netdata-hotwater-max"

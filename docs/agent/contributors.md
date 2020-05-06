@@ -10,7 +10,7 @@ This agreement is part of the legal framework of the open-source ecosystem
 that adds some red tape, but protects both the contributor and the project.
 
 To understand why this is needed, please read [a well-written chapter from
-Karl Fogelâs Producing Open Source Software on CLAs](https://producingoss.com/en/contributor-agreements.html).
+Karl Fogel’s Producing Open Source Software on CLAs](https://producingoss.com/en/contributor-agreements.html).
 
 By signing this agreement, you do not change your rights to use your own
 contributions for any other purpose.
@@ -74,15 +74,15 @@ This is the list of contributors that have signed this agreement:
 
 |username|name|email (optional)|
 |:------:|:--:|:---------------|
-|@lets00|LuÃ­s Eduardo|leduardo@lsd.ufcg.edu.br|
+|@lets00|Luís Eduardo|leduardo@lsd.ufcg.edu.br|
 |@ktsaou|Costa Tsaousis|costa@tsaousis.gr|
 |@tycho|Steven Noonan|steven@uplinklabs.net|
 |@philwhineray|Phil Whineray||
-|@paulfantom|PaweÅ Krupa|pawel@krupa.net.pl|
+|@paulfantom|Paweł Krupa|pawel@krupa.net.pl|
 |@Ferroin|Austin S. Hemmelgarn|ahferroin7@gmail.com|
-|@glensc|Elan RuusamÃ¤e||
+|@glensc|Elan Ruusamäe||
 |@l2isbad|Ilya Mashchenko|ilyamaschenko@gmail.com|
-|@rlefevre|RÃ©mi LefÃ¨vre||
+|@rlefevre|Rémi Lefèvre||
 |@vlvkobal|Vladimir Kobal|vlad@prokk.net|
 |@simonnagl|Simon Nagl||
 |@manosf|Emmanouil Fokas|manosf@protonmail.com|
@@ -104,14 +104,14 @@ This is the list of contributors that have signed this agreement:
 |@cosmix|Dimosthenis Kaponis||
 |@shadycuz|Levi Blaney|shadycuz+spam@gmail.com|
 |@Flums|Philip Gabrielsen|philip@digno.no|
-|@domschl|Dominik SchlÃ¶sser|dominik.schloesser@gmail.com|
+|@domschl|Dominik Schlösser|dominik.schloesser@gmail.com|
 |@tioumen|Guillaume Hospital||
 |@arch273|Jacob Ayres||
 |@x4FF3|David Fuellgraf||
 |@jasonwbarnett|Jason Barnett||
 |@ecowed|Ed Wade||
 |@wungad|Rob Man||
-|@rda0|Sven MÃ¤der|maeder@phys.ethz.ch|
+|@rda0|Sven Mäder|maeder@phys.ethz.ch|
 |@alibo|Ali Borhani|aliborhani1@gmail.com|
 |@Nani-o|Sofiane Medjkoune|sofiane@medjkoune.fr|
 |@n0guest|Evgeniy K.|ask@osshelp.ru|
@@ -128,7 +128,7 @@ This is the list of contributors that have signed this agreement:
 |@adherzog|Adam Herzog|adam@adamherzog.com|
 |@skrzyp1|Jerzy S.||
 |@akwan|Alan Kwan||
-|@underhood|Timotej Å iÅ¡koviÄ||
+|@underhood|Timotej Šiškovič||
 |@stevenh|Steven Hartland|steven.hartland@multiplay.co.uk|
 
 

@@ -69,7 +69,7 @@ menus and submenus may look a little different for each one.
 To learn more about menus, see our documentation about [navigating the standard
 dashboard](/docs/agent/web/gui#menus).
 
-> â By default, Netdata only creates and displays charts if the metrics are _not zero_. So, you may be missing some
+> ❗ By default, Netdata only creates and displays charts if the metrics are _not zero_. So, you may be missing some
 > charts, menus, and submenus if those charts have zero metrics. You can change this by changing the **Which dimensions
 > to show?** setting to **All**. In addition, if you start Netdata and immediately load the dashboard, not all
 > charts/menus/submenus may be displayed, as some collectors can take a while to initialize.
@@ -139,7 +139,7 @@ You can change how charts show their metrics in a few different ways, each of wh
 | Change                                            | Method #1                           | Method #2                                                 | Method #3                                                  |
 | ------------------------------------------------- | ----------------------------------- | --------------------------------------------------------- | ---------------------------------------------------------- |
 | **Reset** charts to default auto-refreshing state | `double click`                      | `double tap` (touchpad/touchscreen)                       |                                                            |
-| **Select** a certain timeframe                    | `ALT` + `mouse selection`           | `â` + `mouse selection` (macOS)                           |                                                            |
+| **Select** a certain timeframe                    | `ALT` + `mouse selection`           | `⌘` + `mouse selection` (macOS)                           |                                                            |
 | **Pan** forward or back in time                   | `click and drag`                    | `touch and drag` (touchpad/touchscreen)                   |                                                            |
 | **Zoom** to a specific timeframe                  | `SHIFT` + `mouse selection`         |                                                           |                                                            |
 | **Zoom** in/out                                   | `SHIFT`/`ALT` + `mouse scrollwheel` | `SHIFT`/`ALT` + `two-finger pinch` (touchpad/touchscreen) | `SHIFT`/`ALT` + `two-finger scroll` (touchpad/touchscreen) |
@@ -218,4 +218,4 @@ In this step of the Netdata tutorial, you learned how to:
 
 Next, you'll learn how to monitor multiple nodes through the dashboard.
 
-[Next: Monitor more than one system with Netdata â](/docs/agent/step-by-step/step-03)
+[Next: Monitor more than one system with Netdata →](/docs/agent/step-by-step/step-03)

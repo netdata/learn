@@ -12,11 +12,11 @@ In this step of the tutorial, we're going to add a proxy in front of Netdata. We
 performance and security, so we highly recommend following these steps. Doubly so if you installed Netdata on a
 publicly-accessible remote server.
 
-> â If you installed Netdata on the machine you're currently using (e.g. on `localhost`), and have been accessing
+> ❗ If you installed Netdata on the machine you're currently using (e.g. on `localhost`), and have been accessing
 > Netdata at `http://localhost:19999`, you can skip this step of the tutorial. In most cases, there is no benefit to
 > setting up a proxy for a service running locally.
 
-> ââ This tutorial requires more advanced administration skills than previous parts. If you're still working on your
+> ❗❗ This tutorial requires more advanced administration skills than previous parts. If you're still working on your
 > Linux administration skills, and would rather get back to Netdata, you might want to [skip this
 > step](/docs/agent/step-by-step/step-99) for now and return to it later.
 

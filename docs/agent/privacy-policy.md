@@ -7,13 +7,13 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/privacy-pol
 
 ## 1. Preamble
 
-This Privacy Policy explains the collection, use, processing, transferring and disclosure of personal information by Netdata, Inc (âNDâ or âNetdataâ), a Delaware Corporation.
+This Privacy Policy explains the collection, use, processing, transferring and disclosure of personal information by Netdata, Inc (“ND” or “Netdata”), a Delaware Corporation.
 
-This Privacy Policy is incorporated into and made part of the Netdata Master Terms of Use (âMaster Termsâ) located [here](/docs/agent/terms-of-use).
+This Privacy Policy is incorporated into and made part of the Netdata Master Terms of Use (“Master Terms”) located [here](/docs/agent/terms-of-use).
 
-Unless otherwise noted on a particular website or service hosted by Netdata, this Privacy Policy applies to your use of all websites that Netdata operates. These include <https://my-netdata.io> and <https://netdata.cloud>, together with all other subdomains thereof, (collectively, the âWebsitesâ). This Privacy Policy also applies to all products, information, and services provided through the Websites, including without limitation the ND agent, the ND registry, the ND hub and the ND cloud website (together with the Websites, the âServicesâ).
+Unless otherwise noted on a particular website or service hosted by Netdata, this Privacy Policy applies to your use of all websites that Netdata operates. These include <https://my-netdata.io> and <https://netdata.cloud>, together with all other subdomains thereof, (collectively, the “Websites”). This Privacy Policy also applies to all products, information, and services provided through the Websites, including without limitation the ND agent, the ND registry, the ND hub and the ND cloud website (together with the Websites, the “Services”).
 
-In addition, supplemental Privacy Policy terms (âSupplemental Privacy Policy Termsâ) may apply to a particular Service. All such Supplemental Privacy Policy Terms will be accessible for you to read either within, or through your use of, that particular Service.
+In addition, supplemental Privacy Policy terms (“Supplemental Privacy Policy Terms”) may apply to a particular Service. All such Supplemental Privacy Policy Terms will be accessible for you to read either within, or through your use of, that particular Service.
 
 By accessing or using any of the Services, you are accepting and agreeing to the practices described in this Privacy Policy.
 
@@ -27,13 +27,13 @@ Data practices should always meet the reasonable expectations of users.
 
 ## 3. Personal Information ND Collects and How it is Used
 
-As used in this policy, âpersonal informationâ means information that would allow someone to identify you, including your name, email address, IP address, or other information from which someone could deduce your identity.
+As used in this policy, “personal information” means information that would allow someone to identify you, including your name, email address, IP address, or other information from which someone could deduce your identity.
 
 ND collects and uses personal information in the following ways:
 
-Website and Analytics: When you visit our Websites and use our Services, ND collects some information about your activities through tools such as Google Analytics. The type of information that we collect focuses on general information such as country or city where you are located, pages visited, time spent on pages, heat-map of visitorsâ activity on the site, information about the browser you are using, etc. ND collects and uses this information pursuant to our legitimate interest in enhancing the security and utility of our Services. The information we gather and process is used in the aggregate to spot trends without deliberately identifying individuals.
+Website and Analytics: When you visit our Websites and use our Services, ND collects some information about your activities through tools such as Google Analytics. The type of information that we collect focuses on general information such as country or city where you are located, pages visited, time spent on pages, heat-map of visitors’ activity on the site, information about the browser you are using, etc. ND collects and uses this information pursuant to our legitimate interest in enhancing the security and utility of our Services. The information we gather and process is used in the aggregate to spot trends without deliberately identifying individuals.
 
-Note that you can learn about Googleâs practices in connection with its analytics services and how to opt out of it by downloading the Google Analytics opt-out browser add-on, available at <https://tools.google.com/dlpage/gaoptout>. 
+Note that you can learn about Google’s practices in connection with its analytics services and how to opt out of it by downloading the Google Analytics opt-out browser add-on, available at <https://tools.google.com/dlpage/gaoptout>. 
 
 Information from Cookies: We and our service providers (for example, Google Analytics as described above) may collect information using cookies or similar technologies for the purposes described above and below. Cookies are pieces of information that are stored by your browser on the hard drive or memory of your computer or other Internet access device.  Cookies may enable us to personalize your experience on the Services, maintain a persistent session, passively collect demographic information about your computer, and monitor advertisements and other activities. The Websites may use different kinds of cookies and other types of local storage (such as browser-based or plugin-based local storage).
 
@@ -109,7 +109,7 @@ The ND Cloud Services have security risks in addition to those described above. 
 
 ## 8. Children
 
-The Services are not directed at children under the age of 13. Consistent with the U.S. federal Childrenâs Online Privacy Protection Act of 1998 (COPPA), we will never knowingly request personal information from anyone under the age of 13 without requiring parental consent. Our Master Terms specifically prohibit anyone using our Services from submitting any personally identifiable information about persons under 13 years of age. Any person who provides their personal information to ND through the Services represents that they are 13 years of age or older.
+The Services are not directed at children under the age of 13. Consistent with the U.S. federal Children’s Online Privacy Protection Act of 1998 (COPPA), we will never knowingly request personal information from anyone under the age of 13 without requiring parental consent. Our Master Terms specifically prohibit anyone using our Services from submitting any personally identifiable information about persons under 13 years of age. Any person who provides their personal information to ND through the Services represents that they are 13 years of age or older.
 
 ## 9. Third Party Service Providers
 

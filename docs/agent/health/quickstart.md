@@ -68,7 +68,7 @@ apache.conf fronius.conf mysql.conf swap.conf
 ...
 ```
 
-> â ï¸ If you edit configuration files in your stock health configuration directory, Netdata will overwrite them during
+> ⚠️ If you edit configuration files in your stock health configuration directory, Netdata will overwrite them during
 > any updates. Please use `edit-config` as described in the [section above](#edit-health-configuration-files).
 
 ## Write a new health entity
