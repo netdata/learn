@@ -23,7 +23,7 @@ products.
 Proper documentation is essential to the success of any open-source project. Netdata is no different. The health of our
 monitoring agent, and the community it's created, depends on this effort.
 
-Weâre here to make developers, sysadmins, and DevOps engineers better at their jobs, after all!
+We’re here to make developers, sysadmins, and DevOps engineers better at their jobs, after all!
 
 We welcome contributions to Netdata's documentation. Begin with the [contributing to documentation
 guide](/docs/agent/contributing/contributing-documentation), followed by this style guide.
@@ -66,7 +66,7 @@ Here's a few key points to start with. Where relevant, they link to more in-dept
 
 -   [Capitalize words](#capitalization) at the beginning of sentences, for proper nouns, and at the beginning of
     document titles and section headers.
--   Use [second person](#second-person)â"you" rather than "we"âwhen giving instructions.
+-   Use [second person](#second-person)—"you" rather than "we"—when giving instructions.
 -   Use [active voice](#active-voice) to make clear who or what is performing an action.
 -   Always employ an [Oxford comma](#oxford-comma) on lists.
 
@@ -142,7 +142,7 @@ and concisely as you can.
 
 > White-box monitoring: Monitoring of a system or application based on the metrics it directly exposes, such as logs.
 
-Avoid emojis whenever possible for the same reasonsâthey can be difficult to understand immediately and don't translate
+Avoid emojis whenever possible for the same reasons—they can be difficult to understand immediately and don't translate
 well.
 
 ### Mentioning future releases or features
@@ -286,7 +286,7 @@ shortened version at the same time. For example:
 You can use Netdata to monitor Extended Berkeley Packet Filter (eBPF) metrics in real-time.
 ```
 
-After you define an abbreviation, don't switch back and forthâuse only the abbreviation for the rest of the document.
+After you define an abbreviation, don't switch back and forth—use only the abbreviation for the rest of the document.
 
 You can also use abbreviations in a document's title to keep the title short and relevant. If you do this, you should
 still introduce the spelled-out name alongside the abbreviation as soon as possible.

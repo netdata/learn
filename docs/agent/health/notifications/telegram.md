@@ -5,9 +5,9 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notificat
 
 
 
-[Telegram](https://telegram.org/) is a messaging app with a focus on speed and security, itâs super-fast, simple and free. You can use Telegram on all your devices at the same time â your messages sync seamlessly across any number of your phones, tablets or computers.
+[Telegram](https://telegram.org/) is a messaging app with a focus on speed and security, it’s super-fast, simple and free. You can use Telegram on all your devices at the same time — your messages sync seamlessly across any number of your phones, tablets or computers.
 
-With Telegram, you can send messages, photos, videos and files of any type (doc, zip, mp3, etc), as well as create groups for up to 100,000 people or channels for broadcasting to unlimited audiences. You can write to your phone contacts and find people by their usernames. As a result, Telegram is like SMS and email combined â and can take care of all your personal or business messaging needs.
+With Telegram, you can send messages, photos, videos and files of any type (doc, zip, mp3, etc), as well as create groups for up to 100,000 people or channels for broadcasting to unlimited audiences. You can write to your phone contacts and find people by their usernames. As a result, Telegram is like SMS and email combined — and can take care of all your personal or business messaging needs.
 
 Netdata will send warning messages without vibration.
 

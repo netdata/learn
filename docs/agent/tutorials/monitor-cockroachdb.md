@@ -86,7 +86,7 @@ jobs:
     tls_skip_verify: yes # If your certificate is self-signed
 ```
 
-You can add as many jobs as you'd like based on how many CockroachDB databases you haveâNetdata will create separate
+You can add as many jobs as you'd like based on how many CockroachDB databases you have—Netdata will create separate
 charts for each job. Once you've edited `cockroachdb.conf` according to the needs of your infrastructure, restart
 Netdata to see your new charts.
 

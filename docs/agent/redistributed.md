@@ -53,7 +53,7 @@ connectivity is not available.
       Copyright 2013, Olly Smith
       [Simplified BSD License](http://morrisjs.github.io/morris.js/)
 
--   [RaphaÃ«l](http://dmitrybaranovskiy.github.io/raphael/)
+-   [Raphaël](http://dmitrybaranovskiy.github.io/raphael/)
 
       Copyright 2008, Dmitry Baranovskiy
       [MIT License](http://dmitrybaranovskiy.github.io/raphael/license.html)

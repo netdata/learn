@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notificat
 
 The [Alerta](https://alerta.io) monitoring system is a tool used to
 consolidate and de-duplicate alerts from multiple sources for quick
-âat-a-glanceâ visualisation. With just one system you can monitor
+‘at-a-glance’ visualisation. With just one system you can monitor
 alerts from many other monitoring tools on a single screen.
 
 ![](https://docs.alerta.io/en/latest/_images/alerta-screen-shot-3.png)

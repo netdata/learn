@@ -149,9 +149,9 @@ View of the files:
 ```sh
 # tree /etc/systemd/system/*service.d/etc/systemd/system/netdata.service.d
 /etc/systemd/system/netdata.service.d
-âââ limits.conf
+└── limits.conf
 /etc/systemd/system/nginx.service.d
-âââ limits.conf
+└── limits.conf
 
 0 directories, 2 files
 

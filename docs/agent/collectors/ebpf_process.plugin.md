@@ -61,7 +61,7 @@ filesystems using the commands below:
 sudo mount -t debugfs nodev /sys/kernel/debug
 sudo mount -t tracefs nodev /sys/kernel/tracing
 ```
-â
+​
 If they are already mounted, you will see an error. If they are not mounted, they should be after running those two
 commands. You can also configure your system's `/etc/fstab` configuration to mount these filesystems.
 
@@ -119,7 +119,7 @@ descriptors.
 
 This chart contains two dimensions that show the number of calls to the functions `do_sys_open` and `__close_fd`. These
 functions are not commonly called from software, but they are behind the system cals `open(2)`, `openat(2)`, and
-`close(2)`. â
+`close(2)`. ​
 
 #### File error
 
@@ -198,7 +198,7 @@ monitor, process, and display different kinds of information.
 
 By default, this plugin uses the `entry` mode. Changing this mode can create significant overhead on your operating
 system, but also offer important information if you are developing or debugging software. The `load` option accepts the
-following values: â
+following values: ​
 
 -   `entry`: This is the default mode. In this mode, Netdata monitors only calls for the functions described in the
     sections above. When this mode is selected, Netdata does not show charts related to errors.

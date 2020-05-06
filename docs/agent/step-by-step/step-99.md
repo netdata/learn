@@ -1,11 +1,11 @@
 ---
-title: "Step â. You're finished!"
+title: "Step ∞. You're finished!"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-99.md
 ---
 
 
 
-Congratulations. ð
+Congratulations. 🎉
 
 You've completed the step-by-step Netdata tutorial. That means you're well on your way to becoming an expert in using
 our toolkit for health monitoring and performance troubleshooting.
@@ -13,7 +13,7 @@ our toolkit for health monitoring and performance troubleshooting.
 But, perhaps more importantly, also that much closer to being an expert in the _fundamental skills behind health
 monitoring and performance troubleshooting_, which you can take with you to any job or project.
 
-And that is the entire point of this tutorial, and Netdata's [documentation](https://docs.netdata.cloud) as a wholeâgive
+And that is the entire point of this tutorial, and Netdata's [documentation](https://docs.netdata.cloud) as a whole—give
 you every resource possible to help you build faster, more resilient systems, services, and applications.
 
 Along the way, you learned how to:
@@ -46,4 +46,4 @@ If that feels like too much possibility to you, why not one of these options:
 -   Contribute to what we do. Browse our [open issues](https://github.com/netdata/netdata/issues) and check out out
     [contributions doc](/docs/agent/contributing) for ideas of how you can pitch in.
 
-We can't wait to see what you monitor next! Bon voyage! âµ
+We can't wait to see what you monitor next! Bon voyage! ⛵

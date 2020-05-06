@@ -8,7 +8,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-clo
 To use the features of [Netdata Cloud](/docs/agent/netdata-cloud), you must first register an account with Netdata
 Cloud and associate your first Netdata node with the Netdata Cloud [registry](/docs/agent/registry). **Netdata Cloud is
 entirely free for all Netdata users**, and does not store any metrics created by your machines. You keep your
-dataâNetdata Cloud just connects it all together.
+data—Netdata Cloud just connects it all together.
 
 > By [signing in](/docs/agent/netdata-cloud/signing-in) to Netdata Cloud, you opt-in to let Netdata Cloud receive and store
 > the information described [here](/docs/agent/registry#what-data-does-the-registry-store). We never store the metrics
@@ -19,7 +19,7 @@ dataâNetdata Cloud just connects it all together.
 There is only one prerequisite to using Netdata Cloud: A working Netdata agent. If you don't have a running Netdata
 agent yet, check out the [installation guides](/docs/agent/packaging/installer) for more information.
 
-To begin, visit the web dashboard of your Netdata agent by navigating your browser of choice to `http://SERVER-IP:19999`. Youâll see a dashboard much like this:
+To begin, visit the web dashboard of your Netdata agent by navigating your browser of choice to `http://SERVER-IP:19999`. You’ll see a dashboard much like this:
 
 ![A screenshot of Netdata's web interface](https://user-images.githubusercontent.com/1153921/59644657-b7330300-9122-11e9-9dda-ea784422f3f2.png)
 
@@ -41,7 +41,7 @@ One route can be found in the **Nodes Beta** button the left side of the navigat
 
 ![A screenshot of a link to the Nodes View in Netdata Cloud](https://user-images.githubusercontent.com/1153921/59644663-c1ed9800-9122-11e9-9ebc-d67e7db229a7.png)
 
-A second route can be found in the Nodes Listâthe drop-down menu in the top-left corner of the Netdata dashboard:
+A second route can be found in the Nodes List—the drop-down menu in the top-left corner of the Netdata dashboard:
 
  ![A screenshot of a second link to the Nodes View in Netdata Cloud](https://user-images.githubusercontent.com/1153921/59644973-3d9c1480-9124-11e9-9a1d-33c412578a9f.png)
 
@@ -84,7 +84,7 @@ Click the **Authorize Netdata** button to continue and then skip down to [Visiti
 
 Enter your preferred email into the field and click the **Authorize** button. 
 
-Open your email account and check for the verification emailâit should arrive in less than a minute. If it doesn't show up, check your spam folder or click the **Resend email** button in the Netdata Cloud interface.
+Open your email account and check for the verification email—it should arrive in less than a minute. If it doesn't show up, check your spam folder or click the **Resend email** button in the Netdata Cloud interface.
 
 When the email arrives, open it and click on the green **Sign in** button and then skip down to [Visiting Netdata Cloud for the first time](#visiting-the-nodes-view-for-the-first-time) for further instructions.
 

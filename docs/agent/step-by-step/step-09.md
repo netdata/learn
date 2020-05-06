@@ -122,7 +122,7 @@ db.createCollection("netdata_metrics")
 
 Next, Netdata needs to be reinstalled in order to detect that the required libraries to make this backend connection
 exist. Since you most likely installed Netdata using the one-line installer script, all you have to do is run that
-script again. Don't worryâany configuration changes you made along the way will be retained!
+script again. Don't worry—any configuration changes you made along the way will be retained!
 
 ```bash
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)

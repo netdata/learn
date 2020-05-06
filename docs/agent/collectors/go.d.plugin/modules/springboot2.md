@@ -31,7 +31,7 @@ The Spring Boot Actuator exposes these metrics over HTTP and is very easy to use
 -   set `management.endpoints.web.exposure.include=*` in your `application.properties`
 
 Please refer to the [Spring Boot Actuator: Production-ready features](https://docs.spring.io/spring-boot/current/reference/html/production-ready.html) 
-and [81. Actuator - Part IX. âHow-toâ guides](https://docs.spring.io/spring-boot/current/reference/html/howto-actuator.html) for more information.
+and [81. Actuator - Part IX. ‘How-to’ guides](https://docs.spring.io/spring-boot/current/reference/html/howto-actuator.html) for more information.
 
 Here is an example for 2 servers:
 

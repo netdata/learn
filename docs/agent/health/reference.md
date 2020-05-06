@@ -35,7 +35,7 @@ Entities are written into `.conf` files, inside of the `health.d/` directory, us
 
 ### Entity types
 
-There are two entity types: **alarms** and **templates**. They have the same format and feature setâthe only difference
+There are two entity types: **alarms** and **templates**. They have the same format and feature set—the only difference
 is their label.
 
 **Alarms** are attached to specific charts and use the `alarm` label.

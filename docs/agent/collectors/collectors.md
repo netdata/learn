@@ -16,7 +16,7 @@ with auto-detection and minimal configuration.
 
 If you don't see the app/service you'd like to monitor here, check out our [GitHub
 issues](https://github.com/netdata/netdata/issues). Use the search bar to look for previous discussions about that
-collectorâwe may be looking for contributions from users such as yourself!
+collector—we may be looking for contributions from users such as yourself!
 
 -   [Internal plugins](#internal-plugins)
 -   [External plugins](#external-plugins)
