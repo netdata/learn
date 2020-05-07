@@ -220,8 +220,12 @@ async function clearDir(dir) {
 
 
 function sanitize(doc) {
-  // strip comment tags around frontmatter
+  // Strip comment tags around frontmatter. Both strip commands exist as we have
+  // .md files that begin with both comments `<!--` and frontmatter `---`.
+  // Eventually, we'll just put the frontmatter in basic HTML comments and
+  // replace using the second command.
   doc = doc.replace(/^<!--\s+(---\s+.*?\s+---)\s+-->/gs, '$1')
+  doc = doc.replace(/^<!--\s+(.*?)-->/gs, '---\n$1---')
 
   // strip level 1 heading
   doc = doc.replace(/^#\s+.*/m, '')
@@ -274,7 +278,7 @@ async function ingest() {
   const nodes = await getNodes(rootSha)
 
   console.log(`Fetching root SHA for 'go.d.plugin' repo...`)
-  const goRootSha = await getRootSha('go.d.plugin')
+  const goRootSha = await getRootSha('go.d.plugin', 'fix-collectors-titles')
   console.log(`Fetching nodes from 'go.d.plugin' repo...`)
   const goNodes = await getNodes(goRootSha, 'go.d.plugin')
 

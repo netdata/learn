@@ -1,3 +1,9 @@
+---
+title: "OpenVPN monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/openvpn/README.md
+sidebar_label: "OpenVPN"
+---
+
 
 
 [`OpenVPN`](https://openvpn.net/) is an open-source commercial software that implements virtual private network techniques to create secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities.
@@ -25,7 +31,7 @@ Per user charts (disabled by default, see `per_user_stats` in the module config 
 This collector is disabled by default. Should be explicitly enabled in [go.d.conf](https://github.com/netdata/go.d.plugin/blob/master/config/go.d.conf).
 
 Reason:
- >  Currently,the OpenVPN daemon can at most support a single management client any one time.
+ >  Currently, the OpenVPN daemon can at most support a single management client any one time.
 
 We disabled it to not break other tools which uses `Management Interface`.
 

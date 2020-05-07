@@ -1,3 +1,9 @@
+---
+title: "Docker Hub repository monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/dockerhub/README.md
+sidebar_label: "Docker Hub repositories"
+---
+
 
 
 [`Docker Hub`](https://docs.docker.com/docker-hub/) is a service provided by Docker for finding and sharing container images with your team.

@@ -1,3 +1,9 @@
+---
+title: "FreeRADIUS monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/freeradius/README.md
+sidebar_label: "FreeRADIUS"
+---
+
 
 
 [`FreeRADIUS`](https://freeradius.org/) is a modular, high performance free RADIUS suite.
