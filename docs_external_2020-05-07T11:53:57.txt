@@ -1,0 +1,548 @@
+Getting links from: https://learn.netdata.cloud/
+Finished! 79 links found. 76 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent
+Finished! 416 links found. 416 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/cloud
+Finished! 62 links found. 62 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/packages
+Finished! 411 links found. 407 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/docker
+├─BROKEN─ https://caddyserver.com/basicauth (HTTP_404)
+Finished! 447 links found. 437 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/macos
+Finished! 415 links found. 413 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/cloud-providers
+├─BROKEN─ https://cloud.google.com/vpc/using-firewalls (HTTP_404)
+Finished! 425 links found. 421 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/freebsd
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/
+Finished! 448 links found. 434 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-00
+Finished! 426 links found. 426 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-01
+Finished! 433 links found. 431 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-02
+Finished! 446 links found. 434 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-03
+Finished! 431 links found. 422 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-04
+Finished! 423 links found. 419 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-05
+Finished! 434 links found. 429 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-06
+Finished! 420 links found. 419 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-07
+Finished! 422 links found. 417 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-08
+Finished! 433 links found. 430 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-09
+Finished! 421 links found. 418 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-10
+Finished! 435 links found. 427 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/getting-started
+Finished! 449 links found. 448 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/configuration-guide
+Finished! 470 links found. 470 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors
+Finished! 420 links found. 420 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health
+Finished! 413 links found. 413 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/web/gui/custom
+├─BROKEN─ http://netdata.firehol.org/demo.html (HTTP_400)
+├─BROKEN─ https://my-netdata.io/dashboard.html (HTTP_400)
+├─BROKEN─ http://netdata.firehol.org/api/v1/charts (HTTP_400)
+Finished! 485 links found. 477 excluded. 3 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer
+Finished! 448 links found. 448 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/what-is-netdata
+├─BROKEN─ https://registry.my-netdata.io/#menu_netdata_submenu_registry (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#menu_netdata_submenu_registry (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#menu_netdata_submenu_registry (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#menu_netdata_submenu_registry (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#menu_netdata_submenu_registry (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#menu_netdata_submenu_registry (HTTP_400)
+├─BROKEN─ https://my-netdata.io/infographic.html (HTTP_400)
+├─BROKEN─ https://prometheus.io/operating/integrations/#remote-endpoints-and-storage (HTTP_404)
+Finished! 570 links found. 522 excluded. 8 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/demo-sites
+├─BROKEN─ https://london.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://london.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://cdn77.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://cdn77.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://octopuscs.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://octopuscs.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://bangalore.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://bangalore.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://frankfurt.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://frankfurt.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://newyork.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://newyork.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://sanfrancisco.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://sanfrancisco.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://singapore.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://singapore.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://toronto.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://toronto.my-netdata.io/ (HTTP_400)
+Finished! 435 links found. 405 excluded. 18 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/netdata-security
+Finished! 440 links found. 440 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/anonymous-statistics
+Finished! 414 links found. 412 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/donations-netdata-has-received
+├─BROKEN─ http://cdn77.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://london.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://octopuscs.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://ventureer.my-netdata.io/ (HTTP_522)
+├─BROKEN─ https://ventureer.com/ (ERRNO_ENOTFOUND)
+├─BROKEN─ https://stackscale.my-netdata.io/ (HTTP_400)
+Finished! 416 links found. 403 excluded. 6 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/a-github-star-is-important
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/redistributed
+Finished! 467 links found. 435 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/changelog
+├─BROKEN─ https://app.netdata.cloud/ (ERRNO_ENOTFOUND)
+Finished! 865 links found. 864 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/security
+Finished! 414 links found. 413 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/why-netdata
+Finished! 402 links found. 402 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/why-netdata/1s-granularity
+Finished! 406 links found. 405 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/why-netdata/unlimited-metrics
+Finished! 407 links found. 405 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/why-netdata/meaningful-presentation
+Finished! 405 links found. 404 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/why-netdata/immediate-results
+Finished! 404 links found. 404 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/kickstart
+Finished! 417 links found. 417 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/kickstart-64
+Finished! 417 links found. 415 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/manual
+Finished! 422 links found. 417 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/offline
+Finished! 402 links found. 402 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/pfsense
+Finished! 402 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/synology
+Finished! 401 links found. 400 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/freenas
+Finished! 399 links found. 399 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/methods/alpine
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/distributions
+Finished! 428 links found. 427 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/update
+Finished! 423 links found. 422 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/packaging/installer/uninstall
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/step-by-step/step-99
+Finished! 404 links found. 404 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/daemon
+Finished! 458 links found. 455 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/daemon/config
+├─BROKEN─ http://netdata.firehol.org/netdata.conf (HTTP_400)
+Finished! 467 links found. 465 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/web/server
+Finished! 421 links found. 420 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/web/server/static
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/running-behind-nginx
+├─BROKEN─ http://nginx.org/en/http/configuring_https_servers.html (HTTP_404)
+Finished! 426 links found. 425 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/running-behind-apache
+Finished! 430 links found. 430 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/running-behind-lighttpd
+Finished! 402 links found. 400 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/running-behind-caddy
+├─BROKEN─ https://caddyserver.com/proxy (HTTP_404)
+Finished! 401 links found. 400 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/running-behind-haproxy
+├─BROKEN─ https://example.com/ (ERRNO_ENOTFOUND)
+├─BROKEN─ https://example.com/netdata/ (ERRNO_ENOTFOUND)
+├─BROKEN─ http://example.com:19999/ (ERRNO_ENOTFOUND)
+├─BROKEN─ http://example.com/ (ERRNO_ENOTFOUND)
+Finished! 427 links found. 423 excluded. 4 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/database
+Finished! 427 links found. 423 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/database/engine
+Finished! 412 links found. 412 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/claim
+Finished! 435 links found. 435 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/aclk
+Finished! 405 links found. 404 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/registry
+Finished! 427 links found. 425 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/performance
+Finished! 433 links found. 432 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/netdata-for-iot
+├─BROKEN─ https://registry.my-netdata.io/#netdata_registry (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#netdata_registry (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#netdata_registry (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#netdata_registry (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#netdata_registry (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#netdata_registry (HTTP_400)
+Finished! 418 links found. 401 excluded. 6 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/high-performance-netdata
+Finished! 406 links found. 405 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/quickstart
+Finished! 427 links found. 427 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/reference
+Finished! 434 links found. 434 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/collectors
+├─BROKEN─ https://hadoop.apache.org/r1.2.1/hdfs_design.html (HTTP_404)
+├─BROKEN─ https://kubernetes.io/concepts/overview/components/#kubelet (HTTP_404)
+├─BROKEN─ https://kubernetes.io/concepts/overview/components/#kube-proxy (HTTP_404)
+├─BROKEN─ https://redis.io/ (HTTP_404)
+Finished! 662 links found. 587 excluded. 4 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/ebpf_process.plugin
+Finished! 448 links found. 439 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/proc.plugin
+├─BROKEN─ https://registry.my-netdata.io/#menu_disk (HTTP_400)
+├─BROKEN─ https://registry.my-netdata.io/#menu_netfilter_submenu_synproxy (HTTP_400)
+Finished! 451 links found. 446 excluded. 2 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/statsd.plugin
+Finished! 440 links found. 430 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/cgroups.plugin
+Finished! 427 links found. 421 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/idlejitter.plugin
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/tc.plugin
+├─BROKEN─ https://registry.my-netdata.io/#menu_tc (HTTP_400)
+Finished! 429 links found. 419 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/checks.plugin
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/diskspace.plugin
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/freebsd.plugin
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/macos.plugin
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/plugins.d
+Finished! 443 links found. 443 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin
+├─BROKEN─ https://circleci.com/gh/netdata/go.d.plugin (HTTP_404)
+Finished! 470 links found. 467 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/activemq
+Finished! 407 links found. 407 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/apache
+├─BROKEN─ https://httpd.apache.org/2.4/mod/mod_status.html (HTTP_404)
+Finished! 410 links found. 409 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/bind
+Finished! 413 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/cockroachdb
+Finished! 424 links found. 424 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/consul
+Finished! 407 links found. 407 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/coredns
+Finished! 407 links found. 407 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/dnsmasq_dhcp
+Finished! 409 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/dnsquery
+Finished! 406 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/docker_engine
+Finished! 411 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/dockerhub
+Finished! 407 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/fluentd
+Finished! 411 links found. 410 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/freeradius
+Finished! 409 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/hdfs
+├─BROKEN─ https://hadoop.apache.org/r1.2.1/hdfs_design.html (HTTP_404)
+Finished! 409 links found. 408 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/httpcheck
+Finished! 408 links found. 408 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/k8s_kubelet
+├─BROKEN─ https://kubernetes.io/concepts/overview/components/#kubelet (HTTP_404)
+Finished! 407 links found. 406 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/k8s_kubeproxy
+├─BROKEN─ https://kubernetes.io/concepts/overview/components/#kube-proxy (HTTP_404)
+Finished! 407 links found. 406 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/lighttpd
+Finished! 410 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/lighttpd2
+Finished! 410 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/logstash
+Finished! 407 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/mysql
+Finished! 410 links found. 410 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/nginx
+├─BROKEN─ http://nginx.org/en/http/ngx_http_stub_status_module.html (HTTP_404)
+Finished! 410 links found. 409 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/openvpn
+Finished! 411 links found. 410 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/phpdaemon
+Finished! 413 links found. 413 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/phpfpm
+Finished! 409 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/pihole
+Finished! 408 links found. 408 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/portcheck
+Finished! 406 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/pulsar
+├─BROKEN─ https://pulsar.apache.org/en/deploy-monitoring/#broker-stats (HTTP_404)
+Finished! 422 links found. 421 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/rabbitmq
+Finished! 407 links found. 407 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/scaleio
+Finished! 410 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/solr
+Finished! 409 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/springboot2
+├─BROKEN─ https://docs.spring.io/spring-boot/current/reference/html/production-ready.html (HTTP_404)
+├─BROKEN─ https://docs.spring.io/spring-boot/current/reference/html/howto-actuator.html (HTTP_404)
+Finished! 409 links found. 407 excluded. 2 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/squidlog
+Finished! 422 links found. 419 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/tengine
+Finished! 411 links found. 410 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/unbound
+Finished! 410 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/vcsa
+Finished! 412 links found. 411 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/vernemq
+Finished! 422 links found. 422 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/vsphere
+Finished! 414 links found. 414 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/weblog
+├─BROKEN─ http://nginx.org/en/varindex.html (HTTP_404)
+├─BROKEN─ http://httpd.apache.org/current/mod/mod_log_config.html (HTTP_404)
+├─BROKEN─ https://httpd.apache.org/2.4/mod/core.html#hostnamelookups (HTTP_404)
+├─BROKEN─ https://httpd.apache.org/2.4/mod/mod_logio.html (HTTP_404)
+Finished! 429 links found. 423 excluded. 4 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/whoisquery
+Finished! 406 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/wmi
+Finished! 414 links found. 414 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/x509check
+Finished! 408 links found. 408 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/zookeeper
+Finished! 409 links found. 409 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin
+Finished! 429 links found. 428 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/adaptec_raid
+Finished! 404 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/am2320
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/apache
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/beanstalk
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/bind_rndc
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/boinc
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/ceph
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/chrony
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/couchdb
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/dnsdist
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/dns_query_time
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/dockerd
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/dovecot
+Finished! 403 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/elasticsearch
+Finished! 402 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/energid
+Finished! 402 links found. 402 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/example
+Finished! 399 links found. 399 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/exim
+Finished! 400 links found. 400 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/fail2ban
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/freeradius
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/gearman
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/go_expvar
+Finished! 415 links found. 411 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/haproxy
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/hddtemp
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/hpssa
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/httpcheck
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/icecast
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/ipfs
+Finished! 402 links found. 402 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/isc_dhcpd
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/litespeed
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/logind
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/megacli
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/memcached
+Finished! 402 links found. 402 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/mongodb
+Finished! 405 links found. 405 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/monit
+Finished! 402 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/mysql
+Finished! 406 links found. 405 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/nginx
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/nginx_plus
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/nsd
+Finished! 400 links found. 400 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/ntpd
+Finished! 404 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/nvidia_smi
+Finished! 404 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/openldap
+Finished! 404 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/oracledb
+├─BROKEN─ https://cx-oracle.readthedocs.io/en/latest/installation.html#install-cx-oracle (HTTP_404)
+├─BROKEN─ https://cx-oracle.readthedocs.io/en/latest/installation.html#install-oracle-client (HTTP_404)
+Finished! 407 links found. 405 excluded. 2 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/ovpn_status_log
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/phpfpm
+Finished! 406 links found. 405 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/portcheck
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/postfix
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/postgres
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/powerdns
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/proxysql
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/puppet
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/rabbitmq
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/redis
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/rethinkdbs
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/retroshare
+Finished! 403 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/riakkv
+Finished! 405 links found. 403 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/samba
+Finished! 405 links found. 405 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/sensors
+Finished! 404 links found. 404 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/smartd_log
+Finished! 406 links found. 405 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/spigotmc
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/springboot
+├─BROKEN─ https://docs.spring.io/spring-boot/current/reference/html/production-ready-features.html#production-ready (HTTP_404)
+├─BROKEN─ https://docs.spring.io/spring-boot/current/reference/html/howto.html#howto-actuator (HTTP_404)
+Finished! 409 links found. 406 excluded. 2 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/squid
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/tomcat
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/tor
+Finished! 405 links found. 405 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/traefik
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/uwsgi
+Finished! 402 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/varnish
+Finished! 405 links found. 405 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/w1sensor
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/web_log
+Finished! 461 links found. 449 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/node.d.plugin
+Finished! 417 links found. 415 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/node.d.plugin/fronius
+Finished! 401 links found. 400 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/node.d.plugin/named
+Finished! 416 links found. 413 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/node.d.plugin/sma_webbox
+Finished! 399 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/node.d.plugin/snmp
+Finished! 416 links found. 416 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/node.d.plugin/stiebeleltron
+Finished! 409 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin
+Finished! 421 links found. 421 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/ap
+Finished! 408 links found. 407 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/apcupsd
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/example
+Finished! 398 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/libreswan
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/nut
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/opensips
+Finished! 401 links found. 401 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/sensors
+Finished! 402 links found. 402 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/apps.plugin
+├─BROKEN─ https://london.my-netdata.io/default.html#menu_netdata_submenu_apps_plugin (HTTP_400)
+Finished! 447 links found. 429 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/cups.plugin
+Finished! 403 links found. 402 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/fping.plugin
+Finished! 407 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/ioping.plugin
+Finished! 403 links found. 402 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/freeipmi.plugin
+├─BROKEN─ http://www-01.ibm.com/support/docview.wss?uid=nas7d580df3d15874988862575fa0050f604 (HTTP_404)
+Finished! 414 links found. 410 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/nfacct.plugin
+Finished! 406 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/xenstat.plugin
+Finished! 406 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/perf.plugin
+Finished! 406 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/collectors/slabinfo.plugin
+Finished! 403 links found. 402 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/netdata-cloud
+Finished! 416 links found. 416 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/netdata-cloud/signing-in
+Finished! 451 links found. 440 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/netdata-cloud/nodes-view
+Finished! 445 links found. 434 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/web
+Finished! 446 links found. 440 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/web/gui
+Finished! 438 links found. 429 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/web/gui/confluence
+├─BROKEN─ https://london.my-netdata.io/ (HTTP_400)
+├─BROKEN─ https://frankfurt.my-netdata.io/ (HTTP_400)
+Finished! 428 links found. 412 excluded. 2 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health/quickstart
+Finished! 422 links found. 422 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health/reference
+├─BROKEN─ https://registry.my-netdata.io/api/v1/alarm_variables?chart=system.cpu (HTTP_400)
+Finished! 496 links found. 492 excluded. 1 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health/tutorials/dimension-templates
+Finished! 419 links found. 417 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health/tutorials/stop-notifications-alarms
+Finished! 411 links found. 411 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health/notifications
+Finished! 406 links found. 406 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health/notifications/alerta
+Finished! 410 links found. 404 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health/notifications/awssns
+├───OK─── https://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html
+Finished! 399 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health/notifications/custom
+Finished! 399 links found. 399 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health/notifications/discord
+Finished! 400 links found. 398 excluded. 0 broken.
+Getting links from: https://learn.netdata.cloud/docs/agent/health/notifications/dynatrace
