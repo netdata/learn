@@ -1,3 +1,9 @@
+---
+title: "DNS query monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/dnsquery/README.md
+sidebar_label: "DNS queries"
+---
+
 
 
 This module provides DNS query RTT in milliseconds.

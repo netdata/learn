@@ -1,3 +1,9 @@
+---
+title: "Java Spring Boot 2 application monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/springboot2/README.md
+sidebar_label: "Java Spring Boot 2 applications"
+---
+
 
 
 This module monitors one or more Java Spring-boot 2 applications depending on configuration.

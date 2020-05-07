@@ -1,3 +1,9 @@
+---
+title: "TCP endpoint monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/portcheck/README.md
+sidebar_label: "TCP endpoints"
+---
+
 
 
 This module will monitors one or more TCP services availability and response time.

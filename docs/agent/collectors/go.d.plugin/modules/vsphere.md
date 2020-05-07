@@ -1,3 +1,9 @@
+---
+title: "vCenter Server monitoring with Netdata"
+custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/vsphere/README.md
+sidebar_label: "vCenter Servers"
+---
+
 
 
 [`VMware vCenter Server`](https://www.vmware.com/products/vcenter-server.html) is advanced server management software that provides a centralized platform for controlling your VMware vSphere environments.
