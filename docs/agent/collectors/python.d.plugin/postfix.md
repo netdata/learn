@@ -8,7 +8,7 @@ sidebar_label: "Postfix"
 
 Monitors MTA email queue statistics using postqueue tool.  
 
-Execute `postfix -p` to grab postfix queue.
+Execute `postqueue -p` to grab postfix queue.
 
 It produces only two charts:
 
