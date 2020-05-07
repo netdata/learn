@@ -1,7 +1,7 @@
 name: Test external links
 on:
   schedule:
-    - cron:  '30 16 * * 4'
+    - cron:  '30 20 * * 4'
 env:
   WEBSITE_URL: "https://learn.netdata.cloud/"
   ISSUE_TEMPLATE: ".github/workflows/check-broken-links.md"
