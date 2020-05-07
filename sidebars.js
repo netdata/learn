@@ -322,7 +322,6 @@ module.exports = {
                     'agent/collectors/charts.d.plugin/libreswan',
                     'agent/collectors/charts.d.plugin/nut',
                     'agent/collectors/charts.d.plugin/opensips',
-                    'agent/collectors/charts.d.plugin/sensors',
                   ]
                 },
               ]
