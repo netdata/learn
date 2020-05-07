@@ -112,7 +112,7 @@ folder and either name it `README.md` for generic documentation, or with another
 
 #### The `docs` folder
 
-At the root of the Netdata repository is a `docs/` folder. Inside this folder we place documentation that does not have
+At the root of the Netdata repository is a `` folder. Inside this folder we place documentation that does not have
 a direct relationship to a specific component of Netdata.
 
 If the documentation you're working on doesn't have a direct relaionship to a component of Netdata, it can be placed in
@@ -124,7 +124,7 @@ Now that you're set up and understand where to find or create your `.md` file, y
 Just use your favorite editor and keep in mind our [style guide](/docs/agent/contributing/style-guide) as you work.
 
 If you add a new file to the documentation, you may need to modify the `buildyaml.sh` file to ensure it's added to the
-site's navigation. This is true for any file added to the `` folder.
+site's navigation. This is true for any file added to the `docs/` folder.
 
 Be sure to periodically add/commit your edits so that you don't lose your work! We use version control software for a
 reason.
