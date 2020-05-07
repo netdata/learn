@@ -1,6 +1,7 @@
 ---
 title: Collaborate
 description: Invite your colleagues, manage teams, and create bookmarks to commonly-used resources that your team needs at a glance.
+custom_edit_url: null
 ---
 
 Cloud centralizes the real-time metrics and alarms from your distributed nodes so that your team can easily view the

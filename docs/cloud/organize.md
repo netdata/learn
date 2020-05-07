@@ -1,6 +1,7 @@
 ---
 title: Organize
 description: Organize your infrastructure monitoring on Netdata Cloud by creating Spaces and War Rooms, then grouping your Agent-monitored nodes.
+custom_edit_url: null
 ---
 
 Netdata Cloud uses Spaces and War Rooms to help you organize your real-time infrastructure monitoring. They're both

@@ -1,6 +1,7 @@
 ---
 title: Monitor
 description: Add metrics to Cloud, search your infrastructure, view alarm status, and deep-dive to find more real-time metrics.
+custom_edit_url: null
 ---
 
 Netdata Cloud gives you the ability to monitor the health and performance of an entire infrastructure in real time, all
