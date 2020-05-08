@@ -14,11 +14,12 @@ Collaboration happens only when you invite your team and give them the resources
 
 You can invite your team during onboarding or after you've finished creating your Spaces and War Rooms.
 
-Invite new users by clicking on your Space's name in the top navigation and then **Invite users**. Enter their email
-address and their name (which they can change once they've signed in), choose which War Rooms they should be added to,
-and click the plus icon (`+`).
+Invite new users by clicking on your Space's name in the top navigation and then **Invite more users**. Enter their
+email address and their name (which they can change once they've signed in), choose which War Rooms they should be added
+to, and click the plus icon (`+`). You can track these invitations under the **New invitations to be sent** heading.
 
-To send any invitations you created, hit the **Save** button.
+When you're ready to send the new invitations you created, hit the **Send** button. Netdata Cloud sends these
+invitations as soon as it can and moves them to the **Invitations awaiting response** category.
 
 ## Add bookmarks to essential resources
 
