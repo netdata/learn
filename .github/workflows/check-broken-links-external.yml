@@ -1,7 +1,7 @@
 name: Test external links
 on:
   schedule:
-    - cron:  '30 20 * * 4'
+    - cron:  '30 20 * * 5'
 env:
   WEBSITE_URL: "https://learn.netdata.cloud/"
   ISSUE_TEMPLATE: ".github/workflows/check-broken-links.md"
@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Run BLC on external links
-      run: npx broken-link-checker $WEBSITE_URL --ordered --recursive --exclude-internal --exclude "https://netdata.cloud/" --exclude "https://www.linkedin.com/company/my-netdata.io/" --exclude "https://github.com/"
+      run: npx broken-link-checker $WEBSITE_URL -rof --exclude-internal --requests=2 --exclude "netdata.cloud/" --exclude "https://www.linkedin.com/company/my-netdata.io/" --exclude "https://github.com/" --exclude "my-netdata.io" --exclude "http://localhost" --exclude "firehol.org" --exclude "circleci.com" --exclude "redis.io" --exclude "telegram.org" --exclude "t.me"
 
     - uses: actions/checkout@v2
       if: failure()
