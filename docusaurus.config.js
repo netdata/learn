@@ -16,7 +16,7 @@ module.exports = {
             'https://github.com/netdata/netdata/edit/master/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       },
     ],

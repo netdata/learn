@@ -456,3 +456,27 @@ html[data-theme='dark'] code {
   font-size: 1.4rem;
   margin-top: 0.35rem;
 }
+
+// Installation page
+
+.installer-grid {
+  display: flex;
+  flex-flow: row wrap;
+
+  p {
+    flex: 0 1 calc(33% - 1rem);
+    margin: 0.5rem;
+    padding: 1rem;
+
+    font-size: 85%;
+    text-align: center;
+    border: 1px solid var(--ifm-color-primary);
+  }
+
+  img {
+    display: block;
+    margin: 0 auto 0.5rem;
+
+    box-shadow: none;
+  }
+}
