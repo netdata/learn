@@ -248,7 +248,7 @@ If you've enabled [certificate verification](#certificate-verification), you mig
 
 Given these known issues, you have two options. If you trust your certificate, you can set the options `CApath` and `CAfile` to inform Netdata where your certificates, and the certificate trusted file, are stored.
 
-For more details about these options, you can read about [verify locations](https://www.openssl.org/man1.1.1/man3/SSL_CTX_load_verify_locations.html).
+For more details about these options, you can read about [verify locations](https://www.openssl.org/docs/man1.1.1/man3/SSL_CTX_load_verify_locations.html).
 
 Before you changed your streaming configuration, you need to copy your trusted certificate to your slave system and add the certificate to OpenSSL's list.
 

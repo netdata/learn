@@ -112,7 +112,7 @@ folder and either name it `README.md` for generic documentation, or with another
 
 #### The `docs` folder
 
-At the root of the Netdata repository is a `` folder. Inside this folder we place documentation that does not have
+At the root of the Netdata repository is a `docs/` folder. Inside this folder we place documentation that does not have
 a direct relationship to a specific component of Netdata.
 
 If the documentation you're working on doesn't have a direct relaionship to a component of Netdata, it can be placed in

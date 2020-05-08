@@ -60,7 +60,7 @@ required, and everything else is optional.
 
 For a production cluster, you'll use either an IP address or the system's hostname. Be sure that your remote system
 allows TCP communication on port 8080, or whichever port you have configured CockroachDB's [Admin
-UI](https://www.cockroachlabs.com/stable/monitoring-and-alerting.html#prometheus-endpoint) to listen on.
+UI](https://www.cockroachlabs.com/docs/stable/monitoring-and-alerting.html#prometheus-endpoint) to listen on.
 
 ```yaml
 # [ JOBS ]
@@ -121,7 +121,7 @@ thoughts.
 Also, be sure to check out these useful resources:
 
 -   [Netdata's CockroachDB
-    documentation](/agent/collectors/go.d.plugin/modules/cockroachdb/)
+    documentation](/docs/agent/collectors/go.d.plugin/modules/cockroachdb/)
 -   [Netdata's CockroachDB
     configuration](https://github.com/netdata/go.d.plugin/blob/master/config/go.d/cockroachdb.conf)
 -   [Netdata's CockroachDB

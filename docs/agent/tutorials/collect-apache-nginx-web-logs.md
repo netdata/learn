@@ -129,7 +129,7 @@ The web log collector is capable of parsing custom Nginx and Apache log formats 
 leave that topic for a separate tutorial.
 
 We do have [extensive
-documentation](/agent/collectors/go.d.plugin/modules/weblog/#custom-log-format) on how
+documentation](/docs/agent/collectors/go.d.plugin/modules/weblog/#custom-log-format) on how
 to build custom parsing for Nginx and Apache logs.
 
 ## Tweak web log collector alarms

@@ -282,7 +282,7 @@ This is what you should expect from Netdata:
     these servers due to the amount of data collected). Netdata also supports **Prometheus remote write API**, which
     allows storing metrics to **Elasticsearch**, **Gnocchi**, **InfluxDB**, **Kafka**, **PostgreSQL/TimescaleDB**,
     **Splunk**, **VictoriaMetrics** and a lot of other [storage
-    providers](https://prometheus.io/operating/integrations/#remote-endpoints-and-storage).
+    providers](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage).
 
 ## Visualization
 

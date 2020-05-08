@@ -225,7 +225,7 @@ present that may match DNS FQDNs.
 |timeout for first request|`60`|How long to wait for a client to send a request before closing the socket. Prevents slow request attacks.|
 |accept a streaming request every seconds|`0`|Can be used to set a limit on how often a master Netdata server will accept streaming requests from the slaves in a [streaming and replication setup](/docs/agent/streaming)|
 |respect do not track policy|`no`|If set to `yes`, will respect the client's browser preferences on storing cookies.|
-|x-frame-options response header||[Avoid clickjacking attacks, by ensuring that the content is not embedded into other sites](https://developer.mozilla.org/en-US/Web/HTTP/Headers/X-Frame-Options).|
+|x-frame-options response header||[Avoid clickjacking attacks, by ensuring that the content is not embedded into other sites](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options).|
 |enable gzip compression|`yes`|When set to `yes`, Netdata web responses will be GZIP compressed, if the web client accepts such responses.|
 |gzip compression strategy|`default`|Valid strategies are `default`, `filtered`, `huffman only`, `rle` and `fixed`|
 |gzip compression level|`3`|Valid levels are 1 (fastest) to 9 (best ratio)|

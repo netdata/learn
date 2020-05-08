@@ -115,7 +115,7 @@ If it doesnt work you need [to set format manually](#custom-log-format).
 
 ## Known Fields
 
-These are [NGINX](http://nginx.org/en/varindex.html) and [Apache](http://httpd.apache.org/docs/current/mod/mod_log_config.html) log format variables.
+These are [NGINX](http://nginx.org/en/docs/varindex.html) and [Apache](http://httpd.apache.org/docs/current/mod/mod_log_config.html) log format variables.
 
 Weblog is aware how to parse and interpret the fields:
 
@@ -142,7 +142,7 @@ In addition to that weblog understands [user defined fields](#custom-fields-feat
 
 Notes:
 
--   Apache `%h` logs the IP address if [HostnameLookups](https://httpd.apache.org/2.4/mod/core.html#hostnamelookups) is Off.
+-   Apache `%h` logs the IP address if [HostnameLookups](https://httpd.apache.org/docs/2.4/mod/core.html#hostnamelookups) is Off.
     Weblog counts hostname as IPv4 address. We recommend either to disable HostnameLookups or use `%a` instead of `%h`. 
 -   Since httpd 2.0, unlike 1.3, the `%b` and `%B` format strings do not represent the number of bytes sent to the client,
     but simply the size in bytes of the HTTP response. It will will differ, for instance, if the connection is aborted,

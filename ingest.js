@@ -90,7 +90,7 @@ function moveDocs(pages) {
         ...page.meta,
         path: page.meta.path.startsWith('docs/') ? page.meta.path.slice(5) : page.meta.path
       },
-      body: page.body.replace(/\]\((?!http)(.*?)docs\/(.*?)\)/gs, ']($1$2)')
+      body: page.body
     }
   })
 }
@@ -101,38 +101,27 @@ function normalizeLinks(pages) {
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
 
-      // Fix full URLs to the Learn site.
-      if (url.startsWith('https://learn.netdata.cloud/')) {
-        const minusLearnUrl = url.split('https://learn.netdata.cloud')[1]
-        console.log('Found one! ' + url + ' becomes ' + minusLearnUrl);
-        return `](${minusLearnUrl})`
-      }
+      // For links started with `https://learn.netdata.cloud/`, cut that and
+      // leave the rest of the path in place. Return the normalized link.
+      if (url.startsWith('https://learn.netdata.cloud/')) return `](${url.split('https://learn.netdata.cloud')[1]})`
 
-      // Skip the whole process if a relative anchor, external link, a mailto link, or an exact link to `https://learn.netdata.cloud.
+      // Skip the whole process if a relative anchor, external link, or a mailto
+      // link. Return the normalized link.
       if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
 
-      // if the link is already a absolute-relative
+      // If the link is already absolute-relative. If it begins with `/docs`,
+      // cut that. Return the normalized link.
       if (url.startsWith('/')) {
-        const withAgentUrl = path.join(agentDir, url)
-        return `](${withAgentUrl})`
+        if (url.startsWith('/docs')) {
+          url = url.replace('/docs', '')
+        }
+        const absRelUrl = path.join(agentDir, url)
+        return `](${absRelUrl})`
       }
 
-      // // anchors should include the entire path
-      // const dir =
-      //   ? path.join(tokens.dir, tokens.name, tokens.ext)
-      //   : tokens.dir
-
-      // ignore absolute urls and external links
-      const normalizedUrl = url.startsWith('http')
-        ? url
-        : path.join('/', agentDir, '/', tokens.dir, url).toLowerCase()
-
-      // ensure relative URLs did not go back too far, excluding /docs
-      const withBaseUrl = normalizedUrl.startsWith(baseDir)
-        ? normalizedUrl
-        : path.join(baseDir, normalizedUrl)
-
-      return `](${withBaseUrl})`
+      // Catch for anything else. Return the normalized link.
+      const normalizedUrl = path.join('/', agentDir, '/', tokens.dir, url).toLowerCase()
+      return `](${normalizedUrl})`
     })
 
     return {

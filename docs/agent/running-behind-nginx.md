@@ -172,7 +172,7 @@ proxy_set_header X-Forwarded-Proto https;
 proxy_pass https://localhost:19999;
 ```
 
-Optionally it is also possible to [enable TLS/SSL on Nginx](http://nginx.org/en/http/configuring_https_servers.html), this way the user will encrypt not only the communication between Nginx and Netdata but also between the user and Nginx.
+Optionally it is also possible to [enable TLS/SSL on Nginx](http://nginx.org/en/docs/http/configuring_https_servers.html), this way the user will encrypt not only the communication between Nginx and Netdata but also between the user and Nginx.
 
 If Nginx is not configured as described here, you will probably receive the error `SSL_ERROR_RX_RECORD_TOO_LONG`.
 
