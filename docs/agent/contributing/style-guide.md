@@ -112,10 +112,10 @@ reader.
 
 ```
 # Not recommended
-To install Netdata, click [here](/docs/agent/packaging/installer/).
+To install Netdata, click [here](/docs/agent/example/path).
 
 # Recommended
-To install Netdata, read our [installation instructions](/docs/agent/packaging/installer/).
+To install Netdata, read our [installation instructions](/docs/agent/example/path).
 ```
 
 In general, guides should include fewer hyperlinks to keep the reader focused on the task at hand. Documentation should
@@ -319,8 +319,8 @@ reference the label text of the link/button with Markdown's (`**bold text**`) ta
 Click on the **Sign in** button.
 ```
 
-!!! note Whenever possible, avoid using directional language to orient readers, because not every reader can use
-    instructions like "look at the top-left corner" to find their way around an interface.
+> Whenever possible, avoid using directional language to orient readers, because not every reader can use instructions
+> like "look at the top-left corner" to find their way around an interface.
 
 If you feel that you must use directional language, perhaps use an [image](#images) (with proper alt text) instead.
 
@@ -369,7 +369,7 @@ number of your choice. Highlight lines by appending `hl_lines="2"`, replacing `2
 Or, multiple lines: `hl_lines="1 2 4 12`.
 
 > Line numbers and highlights are not compatible with GitHub's Markdown parser, and thus will only be viewable on our
-> [documentation site](/docs/). They should be used sparingly and only when necessary.
+> [documentation site](/). They should be used sparingly and only when necessary.
 
 ## Accessibility
 

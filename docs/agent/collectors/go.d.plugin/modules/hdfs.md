@@ -6,7 +6,7 @@ sidebar_label: "HDFS"
 
 
 
-The [`Hadoop Distributed File System (HDFS)`](https://hadoop.apache.org/r1.2.1/hdfs_design.html) is a distributed file system designed to run on commodity hardware.
+The [`Hadoop Distributed File System (HDFS)`](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) is a distributed file system designed to run on commodity hardware.
 
 This module monitors one or more `Hadoop Distributed File System` nodes, depending on your configuration.
 

@@ -115,7 +115,7 @@ If it doesnt work you need [to set format manually](#custom-log-format).
 
 ## Known Fields
 
-These are [NGINX](http://nginx.org/en/varindex.html) and [Apache](http://httpd.apache.org/current/mod/mod_log_config.html) log format variables.
+These are [NGINX](http://nginx.org/en/varindex.html) and [Apache](http://httpd.apache.org/docs/current/mod/mod_log_config.html) log format variables.
 
 Weblog is aware how to parse and interpret the fields:
 
@@ -146,7 +146,7 @@ Notes:
     Weblog counts hostname as IPv4 address. We recommend either to disable HostnameLookups or use `%a` instead of `%h`. 
 -   Since httpd 2.0, unlike 1.3, the `%b` and `%B` format strings do not represent the number of bytes sent to the client,
     but simply the size in bytes of the HTTP response. It will will differ, for instance, if the connection is aborted,
-    or if SSL is used. The `%O` format provided by [`mod_logio`](https://httpd.apache.org/2.4/mod/mod_logio.html)
+    or if SSL is used. The `%O` format provided by [`mod_logio`](https://httpd.apache.org/docs/2.4/mod/mod_logio.html)
     will log the actual number of bytes sent over the network.
 -   To get `%I` and `%O` working you need to enable `mod_logio` on Apache.
 -   NGINX logs URI with query parameters, Apache doesnt.

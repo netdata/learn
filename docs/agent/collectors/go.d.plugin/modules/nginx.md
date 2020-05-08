@@ -12,7 +12,7 @@ This module will monitor one or more `NGINX` servers, depending on your configur
 
 ## Requirements
 
- -   `NGINX` with configured [`ngx_http_stub_status_module`](http://nginx.org/en/http/ngx_http_stub_status_module.html).
+ -   `NGINX` with configured [`ngx_http_stub_status_module`](http://nginx.org/en/docs/http/ngx_http_stub_status_module.html).
 
 ## Charts
 

@@ -6,7 +6,7 @@ sidebar_label: "kube-proxy"
 
 
 
-[`Kube-proxy`](https://kubernetes.io/concepts/overview/components/#kube-proxy) is a network proxy that runs on each each node in your cluster, implementing part of the Kubernetes Service.
+[`Kube-proxy`](https://kubernetes.io/docs/concepts/overview/components/#kube-proxy) is a network proxy that runs on each each node in your cluster, implementing part of the Kubernetes Service.
 
 This module will monitor one or more `kube-proxy` instances, depending on your configuration.
 

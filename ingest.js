@@ -90,7 +90,7 @@ function moveDocs(pages) {
         ...page.meta,
         path: page.meta.path.startsWith('docs/') ? page.meta.path.slice(5) : page.meta.path
       },
-      body: page.body.replace(/\]\((.*?)docs\/(.*?)\)/gs, ']($1$2)')
+      body: page.body.replace(/\]\((?!http)(.*?)docs\/(.*?)\)/gs, ']($1$2)')
     }
   })
 }
@@ -101,13 +101,14 @@ function normalizeLinks(pages) {
 
     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
 
-      // Fix full URLs to the learn site
-      if (url.startsWith('https://learn.netdata.cloud')) {
-        const minusLearnUrl = url.split('https://learn.netdata.cloud/')[1]
-        return `](/docs/${minusLearnUrl})`
+      // Fix full URLs to the Learn site.
+      if (url.startsWith('https://learn.netdata.cloud/')) {
+        const minusLearnUrl = url.split('https://learn.netdata.cloud')[1]
+        console.log('Found one! ' + url + ' becomes ' + minusLearnUrl);
+        return `](${minusLearnUrl})`
       }
 
-      // skip the whole process if a relative anchor, external link, or a mailto link
+      // Skip the whole process if a relative anchor, external link, a mailto link, or an exact link to `https://learn.netdata.cloud.
       if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
 
       // if the link is already a absolute-relative

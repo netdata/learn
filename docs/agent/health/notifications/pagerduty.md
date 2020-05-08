@@ -13,7 +13,7 @@ Here is an example of a PagerDuty dashboard with Netdata notifications:
 
 To have Netdata send notifications to PagerDuty, you'll first need to set up a PagerDuty `Generic API` service and install the PagerDuty agent on the host running Netdata.  See the following guide for details:
 
-<https://www.pagerduty.com/guides/agent-install-guide/>
+<https://www.pagerduty.com/docs/guides/agent-install-guide/>
 
 During the setup of the `Generic API` PagerDuty service, you'll obtain a `pagerduty service key`.  Keep this **service key** handy.
 

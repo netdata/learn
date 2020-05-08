@@ -82,7 +82,7 @@ Action: allow
 Priority: 1000
 ```
 
-Read GCP's [firewall documentation](https://cloud.google.com/vpc/using-firewalls) for specific instructions on how
+Read GCP's [firewall documentation](https://cloud.google.com/vpc/docs/using-firewalls) for specific instructions on how
 to create a new firewall rule.
 
 #### Amazon Web Services (AWS) / EC2

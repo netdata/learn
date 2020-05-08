@@ -36,8 +36,8 @@ The Spring Boot Actuator exposes these metrics over HTTP and is very easy to use
 -   add `org.springframework.boot:spring-boot-starter-actuator` and `io.micrometer:micrometer-registry-prometheus` to your application dependencies
 -   set `management.endpoints.web.exposure.include=*` in your `application.properties`
 
-Please refer to the [Spring Boot Actuator: Production-ready features](https://docs.spring.io/spring-boot/current/reference/html/production-ready.html) 
-and [81. Actuator - Part IX. ‘How-to’ guides](https://docs.spring.io/spring-boot/current/reference/html/howto-actuator.html) for more information.
+Please refer to the [Spring Boot Actuator: Production-ready features](https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready.html) 
+and [81. Actuator - Part IX. ‘How-to’ guides](https://docs.spring.io/spring-boot/docs/current/reference/html/howto-actuator.html) for more information.
 
 Here is an example for 2 servers:
 
