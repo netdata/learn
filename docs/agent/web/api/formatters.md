@@ -63,7 +63,7 @@ This is such an object:
 
 ## Downloading data query result files
 
-Following the [Google Visualization Provider guidelines](https://developers.google.com/chart/interactive/dev/implementing_data_source),
+Following the [Google Visualization Provider guidelines](https://developers.google.com/chart/interactive/docs/dev/implementing_data_source),
 Netdata supports parsing `tqx` options.
 
 Using these options, any Netdata data query can instruct the web browser to download

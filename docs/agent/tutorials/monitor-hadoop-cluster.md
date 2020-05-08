@@ -10,14 +10,14 @@ distributed cluster of systems.
 
 And while Hadoop is designed to be a highly-available and fault-tolerant service, those who operate a Hadoop cluster
 will want to monitor the health and performance of their [Hadoop Distributed File System
-(HDFS)](https://hadoop.apache.org/r1.2.1/hdfs_design.html) and [Zookeeper](https://zookeeper.apache.org/)
+(HDFS)](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) and [Zookeeper](https://zookeeper.apache.org/)
 implementations.
 
 Netdata comes with built-in and pre-configured support for monitoring both HDFS and Zookeeper.
 
 This tutorial assumes you have a Hadoop cluster, with HDFS and Zookeeper, running already. If you don't, please follow
 the [official Hadoop
-instructions](http://hadoop.apache.org/stable/hadoop-project-dist/hadoop-common/SingleCluster.html) or an
+instructions](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html) or an
 alternative, like the guide available from
 [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-18-04).
 

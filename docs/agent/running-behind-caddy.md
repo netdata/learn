@@ -5,7 +5,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/Running-beh
 
 
 
-To run Netdata via [Caddy's proxying,](https://caddyserver.com/proxy) set your Caddyfile up like this:
+To run Netdata via [Caddy's proxying,](https://caddyserver.com/docs/proxy) set your Caddyfile up like this:
 
 ```caddyfile
 netdata.domain.tld {

@@ -67,9 +67,12 @@ The API requests are serviced as follows:
 
 Since v1.16.0, Netdata supports encrypted HTTP connections to the web server, plus encryption of streaming data between a slave and its master, via the TLS protocol.
 
-Inbound unix socket connections are unaffected, regardless of the TLS settings.\
-??? info "Differences in TLS and SSL terminology"
-    While Netdata uses Transport Layer Security (TLS) to encrypt communications rather than the obsolete SSL protocol, it's still common practice to refer to encrypted web connections as `SSL`. Many vendors, like Nginx and even Netdata itself, use `SSL` in configuration files, whereas documentation will always refer to encrypted communications as `TLS` or `TLS/SSL`.
+Inbound unix socket connections are unaffected, regardless of the TLS settings.
+
+> While Netdata uses Transport Layer Security (TLS) 1.2 to encrypt communications rather than the obsolete SSL protocol,
+> it's still common practice to refer to encrypted web connections as `SSL`. Many vendors, like Nginx and even Netdata
+> itself, use `SSL` in configuration files, whereas documentation will always refer to encrypted communications as `TLS`
+> or `TLS/SSL`.
 
 To enable TLS, provide the path to your certificate and private key in the `[web]` section of `netdata.conf`:
 
@@ -87,12 +90,13 @@ For test purposes, you can generate self-signed certificates with the following 
 openssl req -newkey rsa:2048 -nodes -sha512 -x509 -days 365 -keyout key.pem -out cert.pem
 ```
 
-!!! note
-    If you use 4096 bits for your key and the certificate, Netdata will need more CPU to process the communication. `rsa4096` can be up to 4 times slower than `rsa2048`, so we recommend using 2048 bits. You can verify the difference by running:
-
-```sh
-openssl speed rsa2048 rsa4096
-```
+> If you use 4096 bits for your key and the certificate, Netdata will need more CPU to process the communication.
+> `rsa4096` can be up to 4 times slower than `rsa2048`, so we recommend using 2048 bits. You can verify the difference
+> by running:
+>
+> ```sh
+> openssl speed rsa2048 rsa4096
+> ```
 
 ### Select TLS version
 
@@ -221,7 +225,7 @@ present that may match DNS FQDNs.
 |timeout for first request|`60`|How long to wait for a client to send a request before closing the socket. Prevents slow request attacks.|
 |accept a streaming request every seconds|`0`|Can be used to set a limit on how often a master Netdata server will accept streaming requests from the slaves in a [streaming and replication setup](/docs/agent/streaming)|
 |respect do not track policy|`no`|If set to `yes`, will respect the client's browser preferences on storing cookies.|
-|x-frame-options response header||[Avoid clickjacking attacks, by ensuring that the content is not embedded into other sites](https://developer.mozilla.org/en-US/Web/HTTP/Headers/X-Frame-Options).|
+|x-frame-options response header||[Avoid clickjacking attacks, by ensuring that the content is not embedded into other sites](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options).|
 |enable gzip compression|`yes`|When set to `yes`, Netdata web responses will be GZIP compressed, if the web client accepts such responses.|
 |gzip compression strategy|`default`|Valid strategies are `default`, `filtered`, `huffman only`, `rle` and `fixed`|
 |gzip compression level|`3`|Valid levels are 1 (fastest) to 9 (best ratio)|

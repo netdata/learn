@@ -131,7 +131,7 @@ interface.
 ```
 
 Now attempt to go to <http://localhost:9090/>. You should be presented with the prometheus homepage. This is a good
-point to talk about Prometheus’s data model which can be viewed here: <https://prometheus.io/concepts/data_model/>
+point to talk about Prometheus’s data model which can be viewed here: <https://prometheus.io/docs/concepts/data_model/>
 As explained we have two key elements in Prometheus metrics. We have the ‘metric’ and its ‘labels’. Labels allow for
 granularity between metrics. Let’s use our previous example to further explain.
 
@@ -217,7 +217,7 @@ This is the basics of using Prometheus to query NetData. I’d advise everyone a
 page](/docs/agent/backends/prometheus/#using-netdata-with-prometheus). The key point here is that NetData can export metrics from
 its internal DB or can send metrics “as-collected” by specifying the ‘source=as-collected’ url parameter like so.
 <http://localhost:19999/api/v1/allmetrics?format=prometheus&help=yes&types=yes&source=as-collected> If you choose to use
-this method you will need to use Prometheus's set of functions here: <https://prometheus.io/querying/functions/> to
+this method you will need to use Prometheus's set of functions here: <https://prometheus.io/docs/querying/functions/> to
 obtain useful metrics as you are now dealing with raw counters from the system. For example you will have to use the
 `irate()` function over a counter to get that metric's rate per second. If your graphing needs are met by using the
 metrics returned by NetData's internal database (not specifying any source= url parameter) then use that. If you find

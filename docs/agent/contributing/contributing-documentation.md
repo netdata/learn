@@ -68,9 +68,9 @@ button.
 After you've hit that button, jump down to our instructions on [pull requests and
 cleanup](#pull-requests-and-final-steps) for your next steps. 
 
-!!! note This process will create a branch directly on the `netdata/netdata` repository, which then requires manual
-    cleanup. If you're going to make significant documentation contributions, or contribute often, we recommend the
-    local editing process just below.
+> This process will create a branch directly on the `netdata/netdata` repository, which then requires manual cleanup. If
+> you're going to make significant documentation contributions, or contribute often, we recommend the local editing
+> process just below.
 
 ## Edit documentation locally
 
@@ -124,7 +124,7 @@ Now that you're set up and understand where to find or create your `.md` file, y
 Just use your favorite editor and keep in mind our [style guide](/docs/agent/contributing/style-guide) as you work.
 
 If you add a new file to the documentation, you may need to modify the `buildyaml.sh` file to ensure it's added to the
-site's navigation. This is true for any file added to the `` folder.
+site's navigation. This is true for any file added to the `docs/` folder.
 
 Be sure to periodically add/commit your edits so that you don't lose your work! We use version control software for a
 reason.
@@ -147,7 +147,7 @@ docker run -i -t -v $PWD:/netdata netdata/docs
 ----
 
 if you are using a GNU/Linux based system for developing / contribiting to our documentation, you may build the
-docs with the provided Shell scripts in `./generator/buildhtml.sh`. This requires GNU Bash and findutils
+docs with the provided Shell scripts in `./docs/generator/buildhtml.sh`. This requires GNU Bash and findutils
 as well as Python/pip and some Python packages `mkdocs` and `mkdocs-material` installed in your environment.
 
 Follow the [Python installation instructions](https://www.python.org/downloads/) for your machine.
@@ -166,7 +166,7 @@ When `pip` is finished installing, navigate to the root directory of the Netdata
 generator script.
 
 ```bash
-sh generator/buildhtml.sh
+sh docs/generator/buildhtml.sh
 ```
 
 This process will take some time. Once finished, the built documentation site will be located at

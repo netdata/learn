@@ -12,7 +12,7 @@ You need:
 1.  The **incoming webhook URL** as given by RocketChat. You can use the same on all your Netdata servers (or you can have multiple if you like - your decision).
 2.  One or more channels to post the messages to.
 
-Get them here: <https://rocket.chat/administrator-guides/integrations/index.html#how-to-create-a-new-incoming-webhook>
+Get them here: <https://rocket.chat/docs/administrator-guides/integrations/index.html#how-to-create-a-new-incoming-webhook>
 
 Set them in `/etc/netdata/health_alarm_notify.conf` (to edit it on your system run `/etc/netdata/edit-config health_alarm_notify.conf`), like this:
 
