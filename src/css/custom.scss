@@ -466,11 +466,35 @@ html[data-theme='dark'] code {
   p {
     flex: 0 1 calc(33% - 1rem);
     margin: 0.5rem;
-    padding: 1rem;
-
+    
     font-size: 85%;
     text-align: center;
+    word-wrap: normal;
     border: 1px solid var(--ifm-color-primary);
+
+    a {
+      overflow: auto;
+      display: block;
+      padding: 1rem;
+      
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    &:hover {
+      border: 1px solid var(--ifm-color-primary-lightest);
+    }
+
+    @media (max-width: 600px) {
+      flex: 0 1 calc(50% - 1rem);
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 400px) {
+      flex: 0 1 100%;
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+    }
   }
 
   img {
