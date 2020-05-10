@@ -443,11 +443,19 @@ html[data-theme='dark'] code {
 .markdown {
   font-size: 18px;
   --ifm-heading-vertical-rhythm-bottom: 1;
-}
 
-.markdown img {
-  border-radius: var(--ifm-global-radius);
-  box-shadow: var(--ifm-global-shadow-md);
+  h2 code, h3 code, h4 code, h5 code {
+    font-size: 75%;
+  }
+
+  code {
+    font-size: 80%;
+  }
+
+  img {
+    border-radius: var(--ifm-global-radius);
+    box-shadow: var(--ifm-global-shadow-md);
+  }
 }
 
 .hash-link {
