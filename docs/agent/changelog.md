@@ -1,20 +1,24 @@
 
 
-## [**Next release**](https://github.com/netdata/netdata/tree/HEAD)
+## [v1.22.0](https://github.com/netdata/netdata/tree/v1.22.0) (2020-05-11)
 
-[Full Changelog](https://github.com/netdata/netdata/compare/v1.21.1...HEAD)
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.21.1...v1.22.0)
 
 **Merged pull requests:**
 
+- Updates main copyright and links for the year 2020 [\#8937](https://github.com/netdata/netdata/pull/8937) ([zack-shoylev](https://github.com/zack-shoylev))
+- Docs: Add custom label to collectors frontmatter to fix sidebar titles [\#8936](https://github.com/netdata/netdata/pull/8936) ([joelhans](https://github.com/joelhans))
 - Fix missing NETDATA\_STOP\_CMD in netdata-installer.sh [\#8897](https://github.com/netdata/netdata/pull/8897) ([prologic](https://github.com/prologic))
 - Update Running-behind-nginx.md [\#8880](https://github.com/netdata/netdata/pull/8880) ([slavaGanzin](https://github.com/slavaGanzin))
 - Added docmentation about workaround for clang build errors. [\#8867](https://github.com/netdata/netdata/pull/8867) ([Ferroin](https://github.com/Ferroin))
 - correct typo [\#8861](https://github.com/netdata/netdata/pull/8861) ([carehart](https://github.com/carehart))
+- Fix command name for getting postfix queue [\#8857](https://github.com/netdata/netdata/pull/8857) ([ghasrfakhri](https://github.com/ghasrfakhri))
 - Fix kickstart error removing old cron symlink [\#8849](https://github.com/netdata/netdata/pull/8849) ([prologic](https://github.com/prologic))
 - Fixed bundling of dashboard in binary packages. [\#8844](https://github.com/netdata/netdata/pull/8844) ([Ferroin](https://github.com/Ferroin))
 - Add CI check for building against LibreSSL [\#8842](https://github.com/netdata/netdata/pull/8842) ([prologic](https://github.com/prologic))
 - Removed old function call in netdata-installer.sh [\#8824](https://github.com/netdata/netdata/pull/8824) ([Ferroin](https://github.com/Ferroin))
 - Fix build and add bundle-dashbaord.sh to dist\_noinst\_DATA [\#8823](https://github.com/netdata/netdata/pull/8823) ([prologic](https://github.com/prologic))
+- Docs: Add instructions to persist metrics and restart policy [\#8813](https://github.com/netdata/netdata/pull/8813) ([joelhans](https://github.com/joelhans))
 - Fix typo in netdata-installer [\#8811](https://github.com/netdata/netdata/pull/8811) ([adamwolf](https://github.com/adamwolf))
 - health: fix mdstat `failed devices` alarm [\#8794](https://github.com/netdata/netdata/pull/8794) ([ilyam8](https://github.com/ilyam8))
 - dashboard v0.4.18 [\#8786](https://github.com/netdata/netdata/pull/8786) ([jacekkolasa](https://github.com/jacekkolasa))
@@ -209,16 +213,6 @@
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.19.0...v1.20.0)
 
-<<<<<<< HEAD
-=======
-**Merged pull requests:**
-
-- Ebpf coverity [\#8135](https://github.com/netdata/netdata/pull/8135) ([thiagoftsm](https://github.com/thiagoftsm))
-- Small ebpf fixes [\#8133](https://github.com/netdata/netdata/pull/8133) ([thiagoftsm](https://github.com/thiagoftsm))
-- Update eBPF docs with better install/enable instructions [\#8125](https://github.com/netdata/netdata/pull/8125) ([joelhans](https://github.com/joelhans))
-- Fixes NetData installer on \*BSD systems post libmosquitto / eBPF [\#8121](https://github.com/netdata/netdata/pull/8121) ([prologic](https://github.com/prologic))
-
->>>>>>> Ingest to restore other docs
 ## [v1.19.0](https://github.com/netdata/netdata/tree/v1.19.0) (2019-11-27)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.18.1...v1.19.0)

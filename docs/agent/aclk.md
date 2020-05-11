@@ -97,7 +97,7 @@ reinstall Netdata with Cloud enabled or change the runtime setting in your `clou
 
 If you passed `--disable-cloud` to `netdata-installer.sh` during installation, you must reinstall your Agent. Use the
 same method as before, but pass `--require-cloud` to the installer. When installation finishes you can [claim your
-node](/docs/agent/claim#claim-a-node).
+node](/docs/agent/claim#how-to-claim-a-node).
 
 If you changed the runtime setting in your `var/lib/netdata/cloud.d/cloud.conf` file, edit the file again and change
 `enabled` to `yes`:
@@ -107,6 +107,6 @@ If you changed the runtime setting in your `var/lib/netdata/cloud.d/cloud.conf` 
     enabled = yes
 ```
 
-Restart your Agent and [claim your node](/docs/agent/claim#claim-a-node).
+Restart your Agent and [claim your node](/docs/agent/claim#how-to-claim-a-node).
 
 
