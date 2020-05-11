@@ -520,5 +520,9 @@ module.exports = {
   cloud: [
     'cloud',
     'cloud/get-started',
+    'cloud/organize',
+    'cloud/monitor',
+    'cloud/collaborate',
+    'cloud/faq-glossary'
   ]
 };

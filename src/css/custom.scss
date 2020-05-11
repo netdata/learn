@@ -66,6 +66,10 @@ html {
   --ifm-button-font-weight: 500;
   --ifm-button-size-multiplier: 2;
 
+  /* Tabs */
+  --ifm-tabs-padding-vertical: 0.5rem;
+  /* --ifm-tabs-color-active: var(--ifm-color-primary-lightest); */
+
   /* Etc */
   --ifm-global-radius: 2px;
 
@@ -511,4 +515,45 @@ html[data-theme='dark'] code {
 
     box-shadow: none;
   }
+}
+
+/**
+ * Tabs
+*/
+
+.tabs > .tab-item {
+  border-top: 1px solid var(--ifm-color-primary);
+  border-right: 1px solid var(--ifm-color-primary);
+  border-left: 1px solid var(--ifm-color-primary);
+  border-bottom: 0;
+  border-radius: 0;
+}
+
+.tabs > .tab-item:first-of-type {
+  border-top-left-radius: var(--ifm-global-radius);
+  border-top-right-radius: 0px;
+}
+
+.tabs > .tab-item:last-of-type {
+  border-top-left-radius: 0px;
+  border-top-right-radius: var(--ifm-global-radius);
+}
+
+.tabs > .tab-item.tab-item--active {
+  color: white;
+
+  background: var(--ifm-color-primary);
+}
+
+div[role="tabpanel"] {
+  margin-top: 0 !important;
+  padding: var(--ifm-pre-padding);
+
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 0 0 var(--ifm-global-radius) var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+div[role="tabpanel"] div:last-child {
+  margin-bottom: 0;
 }

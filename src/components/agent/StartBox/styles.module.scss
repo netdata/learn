@@ -1,15 +1,15 @@
 .Start {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  margin-top: calc(2 * var(--ifm-paragraph-margin-bottom));
 }
 
 .StartBox {
   position: relative;
-  grid-column-end: span 3;
+  grid-column-end: span 5;
   padding: var(--ifm-spacing-horizontal);
 
-  background: linear-gradient(90deg, #f4f4f4, white);
   border: 1px solid var(--ifm-contents-border-color);
   border-radius: 2px;
   transition: ease-in-out all 0.15s;
@@ -35,13 +35,13 @@
   }
 
   &:first-of-type {
-    grid-column-start: 1;
-    grid-column-end: span 3;
-    grid-row-start: 1;
+    grid-column-end: span 5;
     grid-row-end: span 2;
 
-    @media (max-width: 700px) {
-      grid-column-end: span 6;
+    background: linear-gradient(90deg, #f4f4f4, white);
+
+    @media (max-width: 996px) {
+      grid-column-end: span 4;
     }
 
     &:hover {
@@ -57,12 +57,12 @@
 
     h3 {
       color: var(--ifm-color-primary);
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
-    p {
-      margin-bottom: 4rem;
-    }
+    // p {
+    //   margin-bottom: 4rem;
+    // }
   }
 
   h3 {
