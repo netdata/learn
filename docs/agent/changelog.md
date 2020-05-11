@@ -209,6 +209,16 @@
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.19.0...v1.20.0)
 
+<<<<<<< HEAD
+=======
+**Merged pull requests:**
+
+- Ebpf coverity [\#8135](https://github.com/netdata/netdata/pull/8135) ([thiagoftsm](https://github.com/thiagoftsm))
+- Small ebpf fixes [\#8133](https://github.com/netdata/netdata/pull/8133) ([thiagoftsm](https://github.com/thiagoftsm))
+- Update eBPF docs with better install/enable instructions [\#8125](https://github.com/netdata/netdata/pull/8125) ([joelhans](https://github.com/joelhans))
+- Fixes NetData installer on \*BSD systems post libmosquitto / eBPF [\#8121](https://github.com/netdata/netdata/pull/8121) ([prologic](https://github.com/prologic))
+
+>>>>>>> Ingest to restore other docs
 ## [v1.19.0](https://github.com/netdata/netdata/tree/v1.19.0) (2019-11-27)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.18.1...v1.19.0)
