@@ -96,4 +96,4 @@ If you want to see different metrics or health alarms, you should configure thos
 ## What's next?
 
 With monitoring and troubleshooting fundamentals out of the way, it's time to set up your Spaces and War Rooms for
-[collaboration](/docs/cloud/collaboration/).
+[collaboration](/docs/cloud/collaborate/).
