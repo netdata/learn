@@ -110,12 +110,12 @@ Conciseness leads to more accurate and understandable writing.
 Hyperlinks should clearly state its destination. Don't use words like "here" to describe where a link will take your
 reader.
 
-```
+```markdown
 # Not recommended
-To install Netdata, click [here](/docs/agent/example/path).
+To install Netdata, click [here](/docs/agent/packaging/installer).
 
 # Recommended
-To install Netdata, read our [installation instructions](/docs/agent/example/path).
+To install Netdata, read our [installation instructions](/docs/agent/packaging/installer).
 ```
 
 In general, guides should include fewer hyperlinks to keep the reader focused on the task at hand. Documentation should
