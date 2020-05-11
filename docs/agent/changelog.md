@@ -47,11 +47,8 @@
 - added certificate revocation alert [\#8684](https://github.com/netdata/netdata/pull/8684) ([yasharne](https://github.com/yasharne))
 - \[ReOpen \#8626\] Improved offline installation instructions to point to correct installation scripts and clarify process [\#8680](https://github.com/netdata/netdata/pull/8680) ([IceCodeNew](https://github.com/IceCodeNew))
 - Docs: Standardize links between documentation [\#8638](https://github.com/netdata/netdata/pull/8638) ([joelhans](https://github.com/joelhans))
-<<<<<<< HEAD
 - github/workflow: disable `document-start` yamllint check [\#8522](https://github.com/netdata/netdata/pull/8522) ([ilyam8](https://github.com/ilyam8))
 - bind to should be in \[web\] section and update netdata.service.v235.in too [\#8454](https://github.com/netdata/netdata/pull/8454) ([amishmm](https://github.com/amishmm))
-=======
->>>>>>> Ingest 'remove old cloud' docs
 - Added support for building libmosquitto on FreeBSD/macOS. [\#8254](https://github.com/netdata/netdata/pull/8254) ([Ferroin](https://github.com/Ferroin))
 
 ## [v1.21.1](https://github.com/netdata/netdata/tree/v1.21.1) (2020-04-13)
@@ -212,8 +209,6 @@
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.19.0...v1.20.0)
 
-<<<<<<< HEAD
-=======
 **Merged pull requests:**
 
 - Ebpf coverity [\#8135](https://github.com/netdata/netdata/pull/8135) ([thiagoftsm](https://github.com/thiagoftsm))
@@ -223,9 +218,8 @@
 - Fix nightly RPM builds. [\#8109](https://github.com/netdata/netdata/pull/8109) ([Ferroin](https://github.com/Ferroin))
 - Add Patti to docs and .md codeowners [\#8092](https://github.com/netdata/netdata/pull/8092) ([joelhans](https://github.com/joelhans))
 - Docs: Fix Node and Bash collector module titles [\#8086](https://github.com/netdata/netdata/pull/8086) ([joelhans](https://github.com/joelhans))
-- Add handling of libmosquitto to binary packages. [\#8085](https://github.com/netdata/netdata/pull/8085) ([Ferroin](https://github.com/Ferroin))
+- Add handling of libmosquitto to binary packages. [\#8085](https://github.com/netdata/netdata/pull/8085) ([Ferroin](https://github.com/Ferroin
 
->>>>>>> Ingest 'remove old cloud' docs
 ## [v1.19.0](https://github.com/netdata/netdata/tree/v1.19.0) (2019-11-27)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.18.1...v1.19.0)

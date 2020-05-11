@@ -268,7 +268,7 @@ services:
 
 ### Restrict access with basic auth
 
-You can restrict access by following [official caddy guide](https://caddyserver.com/basicauth) and adding lines to
+You can restrict access by following [official caddy guide](https://caddyserver.com/docs/basicauth) and adding lines to
 Caddyfile.
 
 ## Publish a test image to your own repository

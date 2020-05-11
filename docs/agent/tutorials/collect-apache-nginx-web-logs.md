@@ -128,8 +128,9 @@ web server's access log and begin showing real-time charts!
 The web log collector is capable of parsing custom Nginx and Apache log formats and presenting them as charts, but we'll
 leave that topic for a separate tutorial.
 
-We do have [extensive documentation](/docs/agent/collectors/go.d.plugin/modules/weblog#custom-log-format) on how to build
-custom parsing for Nginx and Apache logs.
+We do have [extensive
+documentation](/docs/agent/collectors/go.d.plugin/modules/weblog/#custom-log-format) on how
+to build custom parsing for Nginx and Apache logs.
 
 ## Tweak web log collector alarms
 
@@ -151,8 +152,8 @@ documentation](/docs/agent/health).
 ## What's next?
 
 Now that you have web log collection up and running, we recommend you take a look at the documentation for our
-[python.d](/docs/agent/collectors/python.d.plugin/web_log) for some ideas of how you can turn these rather "boring"
-logs into powerful real-time tools for keeping your servers happy.
+[python.d](/docs/agent/collectors/python.d.plugin/web_log) for some ideas of how you can turn these rather "boring" logs
+into powerful real-time tools for keeping your servers happy.
 
 Don't forget to give GitHub user [Wing924](https://github.com/Wing924) a big 👍 for his hard work in starting up the Go
 refactoring effort.

@@ -12,7 +12,7 @@ This module will monitor one or more `Apache` servers, depending on your configu
 
 ## Requirements
 
--   `Apache` with enabled [`mod_status`](https://httpd.apache.org/2.4/mod/mod_status.html)
+-   `Apache` with enabled [`mod_status`](https://httpd.apache.org/docs/2.4/mod/mod_status.html)
 
 ## Charts
 

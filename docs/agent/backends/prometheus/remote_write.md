@@ -8,7 +8,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/backends/prometh
 ## Prerequisites
 
 To use the prometheus remote write API with [storage
-providers](https://prometheus.io/operating/integrations/#remote-endpoints-and-storage)
+providers](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage)
 [protobuf](https://developers.google.com/protocol-buffers/) and [snappy](https://github.com/google/snappy) libraries
 should be installed first. Next, Netdata should be re-installed from the source. The installer will detect that the
 required libraries and utilities are now available.

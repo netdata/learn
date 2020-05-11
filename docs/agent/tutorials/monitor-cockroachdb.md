@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/tutorials/m
 
 [CockroachDB](https://github.com/cockroachdb/cockroach) is an open-source project that brings SQL databases into
 scalable, disaster-resilient cloud deployments. Thanks to a [new CockroachDB
-collector](https://docs.netdata.cloud/collectors/go.d.plugin/modules/cockroachdb/) released in
+collector](/docs/agent/collectors/go.d.plugin/modules/cockroachdb/) released in
 [v1.20](https://blog.netdata.cloud/posts/release-1.20/), you can now monitor any number of CockroachDB databases with
 maximum granularity using Netdata. Collect more than 50 unique metrics and put them on interactive visualizations
 designed for better visual anomaly detection.
@@ -60,7 +60,7 @@ required, and everything else is optional.
 
 For a production cluster, you'll use either an IP address or the system's hostname. Be sure that your remote system
 allows TCP communication on port 8080, or whichever port you have configured CockroachDB's [Admin
-UI](https://www.cockroachlabs.com/stable/monitoring-and-alerting.html#prometheus-endpoint) to listen on.
+UI](https://www.cockroachlabs.com/docs/stable/monitoring-and-alerting.html#prometheus-endpoint) to listen on.
 
 ```yaml
 # [ JOBS ]
@@ -120,14 +120,15 @@ thoughts.
 
 Also, be sure to check out these useful resources:
 
--   [Netdata's CockroachDB documentation](https://docs.netdata.cloud/collectors/go.d.plugin/modules/cockroachdb/)
+-   [Netdata's CockroachDB
+    documentation](/docs/agent/collectors/go.d.plugin/modules/cockroachdb/)
 -   [Netdata's CockroachDB
     configuration](https://github.com/netdata/go.d.plugin/blob/master/config/go.d/cockroachdb.conf)
 -   [Netdata's CockroachDB
     alarms](https://github.com/netdata/netdata/blob/29d9b5e51603792ee27ef5a21f1de0ba8e130158/health/health.d/cockroachdb.conf)
 -   [CockroachDB homepage](https://www.cockroachlabs.com/product/)
--   [CockroachDB documentation](https://www.cockroachlabs.com/stable/)
+-   [CockroachDB documentation](https://www.cockroachlabs.com/docs/stable/)
 -   [`_status/vars` endpoint
-    docs](https://www.cockroachlabs.com/stable/monitoring-and-alerting.html#prometheus-endpoint)
+    docs](https://www.cockroachlabs.com/docs/stable/monitoring-and-alerting.html#prometheus-endpoint)
 -   [Monitor CockroachDB with
-    Prometheus](https://www.cockroachlabs.com/stable/monitor-cockroachdb-with-prometheus.html)
+    Prometheus](https://www.cockroachlabs.com/docs/stable/monitor-cockroachdb-with-prometheus.html)

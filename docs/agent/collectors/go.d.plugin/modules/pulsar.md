@@ -10,7 +10,7 @@ sidebar_label: "Pulsar"
 
 This module will monitor one or more `Apache Pulsar` instances, depending on your configuration.
 
-It collects broker statistics from the [prometheus endpoint](https://pulsar.apache.org/en/deploy-monitoring/#broker-stats).
+It collects broker statistics from the [prometheus endpoint](https://pulsar.apache.org/docs/en/deploy-monitoring/#broker-stats).
 
 `pulsar` module is tested on the following versions:
 
