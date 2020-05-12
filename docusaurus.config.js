@@ -45,7 +45,7 @@ module.exports = {
       indexName: 'netdata_learn',
       algoliaOptions: {}, // Optional, if provided by Algolia
     },
-    image: 'img/everyone.png',
+    image: 'img/netdata_meta-default.png',
     prism: {
       theme: require('prism-react-renderer/themes/duotoneDark'),
       darkTheme: require('prism-react-renderer/themes/duotoneDark'),
