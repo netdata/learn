@@ -228,6 +228,16 @@ main[class^='docMainContainer'] .container {
  * Search
  */
 
+ .st-default-search-input {
+   margin-left: 1rem !important;
+
+   border-radius: var(--ifm-global-radius) !important;
+
+   @media (max-width: 500px) {
+     width: 100px;
+   }
+ }
+
 ::placeholder {
   color: var(--ifm-navbar-search-input-color);
   opacity: 1;
