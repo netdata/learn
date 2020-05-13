@@ -21,10 +21,6 @@ to, and click the plus icon (`+`). You can track these invitations under the **N
 When you're ready to send the new invitations you created, hit the **Send** button. Netdata Cloud sends these
 invitations as soon as it can and moves them to the **Invitations awaiting response** category.
 
-[This is a broken link](/this/is/broken/README.md)
-[So is this](/docs/agent/README.md)
-[But this isn't](/docs/agent/packaging/installer)
-
 ## Add bookmarks to essential resources
 
 When an anomaly or outage strikes, your team needs to access other essential resources quickly. You can use Netdata
