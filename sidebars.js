@@ -136,7 +136,7 @@ module.exports = {
           type: 'category',
           label: 'Internal plugins',
           items: [
-            'agent/collectors/ebpf_process.plugin',
+            'agent/collectors/ebpf.plugin',
             'agent/collectors/proc.plugin',
             'agent/collectors/statsd.plugin',
             'agent/collectors/cgroups.plugin',
