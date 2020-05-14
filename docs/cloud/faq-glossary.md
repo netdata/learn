@@ -37,6 +37,67 @@ If you want to see both the master node and its slave nodes in Netdata Cloud, yo
 
 Not yet, but we're working on it.
 
+### My agent cannot connect to the cloud, how do I fix that?
+
+[The Agent-Cloud Link (ACLK)](/docs/agent/aclk) establishes an outbound connection from your node to app.netdata.cloud on port 443.
+If you believe this is not a firewall issue, consult the [troubleshooting guide](/docs/agent/claim/#troubleshooting).
+
+### How do I rename a node?
+
+A node's name cannot be changed from within the Cloud. You must [reclaim](#how-do-i-re-claim-a-node?) it with a different hostname. The hostname can be changed either by changing the machine's hostname or by editing a setting in [netdata.conf](/docs/agent/step-by-step/step-04/#edit-your-netdataconf-file)
+
+### How do I delete a node?
+
+You can delete a node from your war room by selecting "Manage War Room" in your War Room options.
+
+![Manage War Room](/img/docs/cloud/manage-war-room.png)
+
+Then you can select the node to remove from the war room.
+
+![Delete Node from War Room](/img/docs/cloud/remove-node-from-war-room.png)
+
+It is also possible to [remove and reclaim a node](/docs/agent/claim/#remove-and-reclaim-a-node).
+
+### How do I re-claim a node?
+
+Follow the [reclaiming guide](/docs/agent/claim/#remove-and-reclaim-a-node). Don't forget to restart the agent!
+
+### How do I move a node to another space?
+
+You can only claim any given node in a single space. To claim a node in a different space, you will have to [reclaim the node](#how-do-i-re-claim-a-node).
+
+### How do I move a node to another war room?
+
+A node can belong to multiple war rooms. To move the node, you would have to [remove it](#how-do-i-delete-a-node) from any war room you don't want it in and add it to any war rooms you want.
+
+### How do I rename a space?
+
+You can add a description to a space, but a space name is a unique identifier that cannot be modified.
+
+### How do I rename a war room?
+
+You cannot rename a war room at this time.
+
+### How do I delete a space?
+
+Select "Manage Space".
+
+![Manage Space](/img/docs/cloud/manage-space.png)
+
+Select "Delete".
+
+![Delete Space](/img/docs/cloud/delete-space.png)
+
+### How do I delete a war room?
+
+The "General" war room cannot be deleted. For other rooms, select "Manage War Room".
+
+![Manage War Room](/img/docs/cloud/manage-extra-war-room.png)
+
+Select "Delete Room".
+
+![Delete War Room](/img/docs/cloud/delete-war-room.png)
+
 ## Glossary of Cloud terms
 
 | Term                      | Definition                                                                                                                                                                                                                                                                                                                                                 |
