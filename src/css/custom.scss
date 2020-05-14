@@ -513,6 +513,7 @@ html[data-theme='dark'] code {
     display: block;
     margin: 0 auto 0.5rem;
 
+    border-radius: var(--ifm-global-radius);
     box-shadow: none;
   }
 }
