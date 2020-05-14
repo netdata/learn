@@ -417,9 +417,9 @@ module.exports = {
       items: [
         'agent/exporting',
         'agent/exporting/aws_kinesis',
+        'agent/exporting/pubsub',
         'agent/exporting/mongodb',
         'agent/exporting/prometheus/remote_write',
-        'agent/exporting/pubsub',
       ],
     },
     {
