@@ -13,7 +13,6 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/netdata/netdata/edit/master/',
-          showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
         theme: {
