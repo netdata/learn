@@ -340,13 +340,8 @@ module.exports = {
       ]
     },
     {
-      type: 'category',
-      label: 'Netdata Cloud',
-      items: [
-        'agent/netdata-cloud',
-        'agent/netdata-cloud/signing-in',
-        'agent/netdata-cloud/nodes-view',
-      ]
+      type: 'doc',
+      id: 'agent/agent-cloud',
     },
     {
       type: 'category',
