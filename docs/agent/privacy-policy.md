@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/privacy-pol
 
 This Privacy Policy explains the collection, use, processing, transferring and disclosure of personal information by Netdata, Inc (“ND” or “Netdata”), a Delaware Corporation.
 
-This Privacy Policy is incorporated into and made part of the Netdata Master Terms of Use (“Master Terms”) located [here](/docs/agent/terms-of-use).
+This Privacy Policy is incorporated into and made part of the Netdata Master Terms of Use (“Master Terms”) located [here](agent/terms-of-use.md).
 
 Unless otherwise noted on a particular website or service hosted by Netdata, this Privacy Policy applies to your use of all websites that Netdata operates. These include <https://my-netdata.io> and <https://netdata.cloud>, together with all other subdomains thereof, (collectively, the “Websites”). This Privacy Policy also applies to all products, information, and services provided through the Websites, including without limitation the ND agent, the ND registry, the ND hub and the ND cloud website (together with the Websites, the “Services”).
 
@@ -59,7 +59,7 @@ same view. The global registry keeps track of 4 entities:
 For _persons/accounts_ and _machines_, the registry keeps links to _URLs_, each link with 2 timestamps (first time seen, last time seen) and a counter (number of times it has been seen).
 _machines_, _persons_, and timestamps are stored in the Netdata registry regardless of whether you sign in or not.
 
-If sending this information is against your policies, you can [run your own registry](/docs/registry/#run-your-own-registry). 
+If sending this information is against your policies, you can [run your own registry](registry/#run-your-own-registry). 
 Note that ND versions with the 'Sign in' feature of the ND Cloud do not use the global registry. 
 
 ND Cloud: When you sign up to obtain a user account via the 'Sign in' link on the ND agent user interface, ND is granted access to personal information in the user profile of the authentication provider you choose (e.g. GitHub or Google). ND collects and uses this personal information pursuant to its legitimate interest in establishing and maintaining your account providing you with the features we provide Registered Users. We may use your email address to contact you regarding changes to this policy or other applicable policies. The login name or email address of your profile may be used to attribute you in connection with any content you submit to any Service. 

@@ -13,9 +13,9 @@ The Agent can collect thousands of metrics in real-time and use its database for
 configuration, but there are some valuable things to know to get the most out of Netdata based on your needs.
 
 We'll skip right into some technical details, so if you're brand-new to monitoring the health and performance of systems
-and applications, our [**step-by-step tutorial**](/docs/agent/step-by-step/step-00) might be a better fit.
+and applications, our [**step-by-step tutorial**](agent/step-by-step/step-00.md) might be a better fit.
 
-> If you haven't installed Netdata yet, visit the [installation instructions](/docs/agent/packaging/installer) for
+> If you haven't installed Netdata yet, visit the [installation instructions](agent/packaging/installer.md) for
 > details, including our one-liner script, which automatically installs Netdata on almost all Linux distributions.
 
 ## Access the dashboard
@@ -28,9 +28,9 @@ dashboard](https://user-images.githubusercontent.com/1153921/80825153-abaec600-8
 
 **What's next?**: 
 
--   Read more about the [standard Netdata dashboard](/docs/agent/web/gui/).
--   Learn all the specifics of [using charts](/docs/agent/web#using-charts) or the differences between [charts,
-    context, and families](/docs/agent/web#charts-contexts-families).
+-   Read more about the [standard Netdata dashboard](agent/web/gui/).
+-   Learn all the specifics of [using charts](agent/web.md#using-charts) or the differences between [charts,
+    context, and families](agent/web.md#charts-contexts-families).
 
 ## Configuration basics
 
@@ -51,10 +51,10 @@ Once you save your changes, [restart Netdata](#start-stop-and-restart-netdata) t
 
 -   [Change how long Netdata stores metrics](#change-how-long-netdata-stores-metrics) by changing the `page cache size`
     and `dbengine disk space` settings in `netdata.conf`.
--   Move Netdata's dashboard to a [different port](/docs/agent/web/server/) or enable TLS/HTTPS
+-   Move Netdata's dashboard to a [different port](agent/web/server/) or enable TLS/HTTPS
     encryption.
--   See all the `netdata.conf` options in our [daemon configuration documentation](/docs/agent/daemon/config/).
--   Run your own [registry](/docs/agent/registry#run-your-own-registry).
+-   See all the `netdata.conf` options in our [daemon configuration documentation](agent/daemon/config/).
+-   Run your own [registry](agent/registry.md#run-your-own-registry).
 
 ## Change how long Netdata stores metrics
 
@@ -65,13 +65,13 @@ configuration keeps RAM usage low while allowing for long-term, on-disk metrics 
 You can tweak this custom _database engine_ to store a much larger dataset than your system's available RAM,
 particularly if you allow Netdata to use slightly more RAM and disk space than the default configuration.
 
-Read our tutorial, [**Changing how long Netdata stores metrics**](/docs/agent/tutorials/longer-metrics-storage), to learn
+Read our tutorial, [**Changing how long Netdata stores metrics**](agent/tutorials/longer-metrics-storage.md), to learn
 more.
 
 **What's next?**:
 
 -   Learn more about the [memory requirements for the database
-    engine](/docs/agent/database/engine#memory-requirements) to understand how much RAM/disk space you should commit
+    engine](agent/database/engine.md#memory-requirements) to understand how much RAM/disk space you should commit
     to storing historical metrics.
 
 ## Collect data from more sources
@@ -85,7 +85,7 @@ Netdata](#start-stop-and-restart-netdata).
 
 However, auto-detection only works if you installed the source using its standard installation procedure. If Netdata
 isn't collecting metrics after a restart, your source probably isn't configured correctly. Look at the [external plugin
-documentation](/docs/agent/collectors/plugins.d/) to find the appropriate module for your source. Those pages will contain
+documentation](agent/collectors/plugins.d/) to find the appropriate module for your source. Those pages will contain
 more information about how to configure your source for auto-detection.
 
 Some modules, like `chrony`, are disabled by default and must be enabled manually for auto-detection to work.
@@ -152,12 +152,12 @@ changes based on your particular Nginx setup.
 
 **What's next?**:
 
--   Look at the [full list of data collection modules](/docs/agent/collectors/collectors)
+-   Look at the [full list of data collection modules](agent/collectors/collectors.md)
     to configure your sources for auto-detection and monitoring.
--   Improve the [performance](/docs/agent/performance) of Netdata on low-memory systems.
+-   Improve the [performance](agent/performance.md) of Netdata on low-memory systems.
 -   Configure `systemd` to expose [systemd services
-    utilization](/docs/agent/collectors/cgroups.plugin#monitoring-systemd-services) metrics automatically.
--   [Reconfigure individual charts](/docs/agent/daemon/config#per-chart-configuration) in `netdata.conf`.
+    utilization](agent/collectors/cgroups.plugin.md#monitoring-systemd-services) metrics automatically.
+-   [Reconfigure individual charts](agent/daemon/config.md#per-chart-configuration) in `netdata.conf`.
 
 ## Health monitoring and alarms
 
@@ -182,10 +182,10 @@ Find the `SEND_EMAIL="YES"` line and change it to `SEND_EMAIL="NO"`.
 
 **What's next?**:
 
--   Follow the [health quickstart](/docs/agent/health/quickstart) to locate and edit existing health entities, and then
+-   Follow the [health quickstart](agent/health/quickstart.md) to locate and edit existing health entities, and then
     create your own.
--   See all the alarm options via the [health configuration reference](/docs/agent/health/reference).
--   Add a new notification method, like [Slack](/docs/agent/health/notifications/slack/).
+-   See all the alarm options via the [health configuration reference](agent/health/reference.md).
+-   Add a new notification method, like [Slack](agent/health/notifications/slack/).
 
 ## Monitor multiple systems with Netdata Cloud
 
@@ -208,12 +208,12 @@ You can use these features together or separately&mdash;the decision is up to yo
 
 **What's next?**:
 
--   Read about the [Agent-Cloud integration](/docs/agent/).
+-   Read about the [Agent-Cloud integration](agent/).
 -   Get an overview of Cloud's features by reading [Cloud documentation](/docs/cloud/).
 -   Follow the 5-minute [get started with Cloud](/docs/cloud/get-started/) guide to finish
     onboarding and claim your first nodes.
--   Better understand how agents connect securely to the Cloud with [claiming](/docs/agent/claim) and [Agent-Cloud
-    link](/docs/agent/aclk) documentation.
+-   Better understand how agents connect securely to the Cloud with [claiming](agent/claim.md) and [Agent-Cloud
+    link](agent/aclk.md) documentation.
 
 ## Start, stop, and restart Netdata
 
@@ -239,11 +239,11 @@ Netdata.
 
 Take a look at some more advanced features and configurations:
 
--   Centralize Netdata metrics from many systems with [streaming](/docs/agent/streaming)
--   Enable long-term archiving of Netdata metrics via [backends](/docs/agent/backends) to time-series databases.
--   Improve security by putting Netdata behind an [Nginx proxy with SSL](/docs/agent/running-behind-nginx).
+-   Centralize Netdata metrics from many systems with [streaming](agent/streaming.md)
+-   Enable long-term archiving of Netdata metrics via [backends](agent/backends.md) to time-series databases.
+-   Improve security by putting Netdata behind an [Nginx proxy with SSL](agent/running-behind-nginx.md).
 
-Or, learn more about how you can contribute to [Netdata core](/docs/agent/contributing) or our
-[documentation](/docs/agent/contributing/contributing-documentation)!
+Or, learn more about how you can contribute to [Netdata core](agent/contributing.md) or our
+[documentation](agent/contributing/contributing-documentation.md)!
 
 

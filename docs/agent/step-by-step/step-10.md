@@ -18,7 +18,7 @@ publicly-accessible remote server.
 
 > ❗❗ This tutorial requires more advanced administration skills than previous parts. If you're still working on your
 > Linux administration skills, and would rather get back to Netdata, you might want to [skip this
-> step](/docs/agent/step-by-step/step-99) for now and return to it later.
+> step](agent/step-by-step/step-99.md) for now and return to it later.
 
 ## What you'll learn in this step
 
@@ -207,12 +207,12 @@ You're a real sysadmin now!
 
 If you want to configure your Nginx proxy further, check out the following:
 
--   [Running Netdata behind Nginx](/docs/agent/running-behind-nginx)
--   [High-performance Netdata](/docs/agent/high-performance-netdata)
--   [Enabling TLS on Netdata's dashboard](/docs/agent/web/server#enabling-tls-support)
+-   [Running Netdata behind Nginx](agent/running-behind-nginx.md)
+-   [High-performance Netdata](agent/high-performance-netdata.md)
+-   [Enabling TLS on Netdata's dashboard](agent/web/server.md#enabling-tls-support)
 
 And... you're _almost_ done with the Netdata tutorial.
 
 For some celebratory emoji and a clap on the back, head on over to our final step.
 
-[Next: The end. &rarr;](/docs/agent/step-by-step/step-99)
+[Next: The end. &rarr;](agent/step-by-step/step-99.md)

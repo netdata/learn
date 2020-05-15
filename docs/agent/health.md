@@ -19,9 +19,9 @@ and the needs of your infrastructure, are your only limits.
 
 <DocsSteps>
 
-[<FiPlay /> Quickstart](/docs/agent/health/quickstart)
+[<FiPlay /> Quickstart](agent/health/quickstart.md)
 
-[<FiCode /> Configuration reference](/docs/agent/health/reference)
+[<FiCode /> Configuration reference](agent/health/reference.md)
 
 [<FiBook /> Tutorials](#tutorials)
 
@@ -38,16 +38,16 @@ content.
 
 ### Health entities
 
-[Stopping notifications for individual alarms](/docs/agent/health/tutorials/stop-notifications-alarms)
+[Stopping notifications for individual alarms](agent/health/tutorials/stop-notifications-alarms.md)
 
-[Use dimension templates to create dynamic alarms](/docs/agent/health/tutorials/dimension-templates)
+[Use dimension templates to create dynamic alarms](agent/health/tutorials/dimension-templates.md)
 
 </div>
 </DocsTutorials>
 
 ## Related features
 
-**[Health notifications](/docs/agent/health/notifications)**: Get notified about Netdata's alarms via your favorite
+**[Health notifications](agent/health/notifications.md)**: Get notified about Netdata's alarms via your favorite
 platform(s).
 
 

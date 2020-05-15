@@ -5,6 +5,6 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/web/api/exporter
 
 
 
-The prometheus exporter for Netdata is located at the [backends section for prometheus](/docs/agent/backends/prometheus).
+The prometheus exporter for Netdata is located at the [backends section for prometheus](agent/backends/prometheus.md).
 
 

@@ -8,13 +8,13 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-ste
 When Netdata _starts_, it auto-detects dozens of **data sources**, such as database servers, web servers, and more.
 
 To auto-detect and collect metrics from a source you just installed, you need to [restart
-Netdata](/docs/agent/getting-started#start-stop-and-restart-netdata).
+Netdata](agent/getting-started.md#start-stop-and-restart-netdata).
 
 However, auto-detection only works if you installed the source using its standard installation
 procedure. If Netdata isn't collecting metrics after a restart, your source probably isn't configured
 correctly.
 
-Check out the [collectors that come pre-installed with Netdata](/docs/agent/collectors/collectors) to find the module for the
+Check out the [collectors that come pre-installed with Netdata](agent/collectors/collectors.md) to find the module for the
 source you want to monitor.
 
 ## What you'll learn in this step
@@ -37,9 +37,9 @@ are organized and manged by plugins. **Internal** plugins collect system metrics
 non-system metrics, and **orchestrator** plugins group individal collectors together based on the programming language
 they were built in.
 
-These modules are primarily written in [Go](/docs/agent/collectors/go.d.plugin) (`go.d`) and
-[Python](/docs/agent/collectors/python.d.plugin), although some use [Bash](/docs/agent/collectors/charts.d.plugin)
-(`charts.d`) or [Node.js](/docs/agent/collectors/node.d.plugin) (`node.d`).
+These modules are primarily written in [Go](agent/collectors/go.d.plugin.md) (`go.d`) and
+[Python](agent/collectors/python.d.plugin.md), although some use [Bash](agent/collectors/charts.d.plugin.md)
+(`charts.d`) or [Node.js](agent/collectors/node.d.plugin.md) (`node.d`).
 
 ## Enable and disable plugins
 
@@ -100,7 +100,7 @@ Next, edit your `/etc/nginx/sites-enabled/default` file to include a `location` 
 ```
 
 Restart Netdata using `service netdata restart` or the [correct
-alternative](/docs/agent/getting-started#start-stop-and-restart-netdata) for your system, and Netdata will auto-detect
+alternative](agent/getting-started.md#start-stop-and-restart-netdata) for your system, and Netdata will auto-detect
 metrics from your Nginx web server!
 
 While not necessary for most auto-detection and collection purposes, you can also configure the Nginx collector itself
@@ -117,4 +117,4 @@ After configuring any source, or changing the configuration files for their resp
 Now that you've learned the fundamentals behind configuring data sources for auto-detection, it's time to move back to
 the dashboard to learn more about some of its more advanced features.
 
-[Next: Netdata's dashboard in depth &rarr;](/docs/agent/step-by-step/step-07)
+[Next: Netdata's dashboard in depth &rarr;](agent/step-by-step/step-07.md)

@@ -221,7 +221,7 @@ Examples below for process group `sql`:
 -   Open Pipes ![image](https://registry.my-netdata.io/api/v1/badge.svg?chart=apps.pipes&dimensions=sql&value_color=green=0%7Cred)
 -   Open Sockets ![image](https://registry.my-netdata.io/api/v1/badge.svg?chart=apps.sockets&dimensions=sql&value_color=green%3E=3%7Cred)
 
-For more information about badges check [Generating Badges](/docs/agent/web/api/badges)
+For more information about badges check [Generating Badges](agent/web/api/badges.md)
 
 ## Comparison with console tools
 

@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/instal
 
 Netdata is fully compatible with popular cloud providers like Google Cloud Platform (GCP), Amazon Web Services (AWS),
 Azure, and others. You can install Netdata on cloud instances to monitor the apps/services running there, or use
-multiple instances in a [master/slave streaming](/docs/agent/streaming) configuration.
+multiple instances in a [master/slave streaming](agent/streaming.md) configuration.
 
 In some cases, using Netdata on these cloud providers requires unique installation or configuration steps. This page
 aims to document some of those steps for popular cloud providers.
@@ -24,11 +24,11 @@ aims to document some of those steps for popular cloud providers.
 ## Recommended installation methods for cloud providers
 
 The best installation method depends on the instance's operating system, distribution, and version. For Linux instances,
-we recommend either the [`kickstart.sh` automatic installation script](/docs/agent/packaging/installer/methods/kickstart) or [.deb/.rpm
-packages](/docs/agent/packaging/installer/methods/packages).
+we recommend either the [`kickstart.sh` automatic installation script](agent/packaging/installer/methods/kickstart.md) or [.deb/.rpm
+packages](agent/packaging/installer/methods/packages.md).
 
 To see the full list of approved methods for each operating system/version we support, see our [distribution
-matrix](/docs/agent/packaging/distributions). That table will guide you to the various supported methods for your cloud instance.
+matrix](agent/packaging/distributions.md). That table will guide you to the various supported methods for your cloud instance.
 
 If you have issues with Netdata after installation, look to the sections below to find the issue you're experiencing,
 followed by the solution for your provider.
@@ -56,11 +56,11 @@ command from a remote system, and it fails, it's likely that a firewall is block
 Another option is to put Netdata behind web server, which will proxy requests through standard HTTP/HTTPS ports
 (80/443), which are likely already open on your instance. We have a number of guides available:
 
--   [Apache](/docs/agent/running-behind-apache)
--   [Nginx](/docs/agent/running-behind-nginx)
--   [Caddy](/docs/agent/running-behind-caddy)
--   [HAProxy](/docs/agent/running-behind-haproxy)
--   [lighttpd](/docs/agent/running-behind-lighttpd)
+-   [Apache](agent/running-behind-apache.md)
+-   [Nginx](agent/running-behind-nginx.md)
+-   [Caddy](agent/running-behind-caddy.md)
+-   [HAProxy](agent/running-behind-haproxy.md)
+-   [lighttpd](agent/running-behind-lighttpd.md)
 
 The next few sections outline how to add firewall rules to GCP, AWS, and Azure instances.
 

@@ -26,7 +26,7 @@ monitoring agent, and the community it's created, depends on this effort.
 We’re here to make developers, sysadmins, and DevOps engineers better at their jobs, after all!
 
 We welcome contributions to Netdata's documentation. Begin with the [contributing to documentation
-guide](/docs/agent/contributing/contributing-documentation), followed by this style guide.
+guide](agent/contributing/contributing-documentation.md), followed by this style guide.
 
 ## Goals of the Netdata style guide
 
@@ -112,10 +112,10 @@ reader.
 
 ```markdown
 # Not recommended
-To install Netdata, click [here](/docs/agent/packaging/installer).
+To install Netdata, click [here](agent/packaging/installer.md).
 
 # Recommended
-To install Netdata, read our [installation instructions](/docs/agent/packaging/installer).
+To install Netdata, read our [installation instructions](agent/packaging/installer.md).
 ```
 
 In general, guides should include fewer hyperlinks to keep the reader focused on the task at hand. Documentation should
@@ -389,11 +389,11 @@ text-based instructions to ensure that every reader can access the information i
 Provide alt text for every image you include in Netdata's documentation. It should summarize the intent and content of
 the image.
 
-In Markdown, use the standard image syntax, `![](/docs/agent/contributing)`, and place the alt text between the brackets `[]`. Here's an example
+In Markdown, use the standard image syntax, `![](agent/contributing)`, and place the alt text between the brackets `[]`. Here's an example
 using our logo:
 
 ```
-![The Netdata logo](/docs/web/gui/images/netdata-logomark.svg)
+![The Netdata logo](web/gui/images/netdata-logomark.svg)
 ```
 
 #### Images of text

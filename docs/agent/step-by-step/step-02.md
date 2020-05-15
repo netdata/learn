@@ -10,8 +10,8 @@ Welcome to Netdata proper! Now that you understand how Netdata works, how it's b
 working with the dashboard directly.
 
 This step-by-step guide assumes you've already installed Netdata on a system of yours. If you haven't yet, hop back over
-to ["step 0"](/docs/agent/step-by-step/step-00#before-we-get-started) for information about our one-line installer script. Or, view the
-[installation docs](/docs/agent/packaging/installer) to learn more. Once you have Netdata installed, you can hop back
+to ["step 0"](agent/step-by-step/step-00.md#before-we-get-started) for information about our one-line installer script. Or, view the
+[installation docs](agent/packaging/installer.md) to learn more. Once you have Netdata installed, you can hop back
 over here and dig in.
 
 ## What you'll learn in this step
@@ -56,7 +56,7 @@ what it's collecting. If you run Netdata on many different systems using differe
 menus and submenus may look a little different for each one.
 
 To learn more about menus, see our documentation about [navigating the standard
-dashboard](/docs/agent/web/gui#metrics-menus).
+dashboard](agent/web/gui.md#metrics-menus).
 
 > ❗ By default, Netdata only creates and displays charts if the metrics are _not zero_. So, you may be missing some
 > charts, menus, and submenus if those charts have zero metrics. You can change this by changing the **Which dimensions
@@ -106,7 +106,7 @@ looking at its name or hovering over the chart's date.
 It's important to understand these differences, as Netdata uses charts, dimensions, families, and contexts to create
 health alarms and configure collectors. To read even more about the differences between all these elements of the
 dashboard, and how they affect other parts of Netdata, read our [dashboards
-documentation](/docs/agent/web#charts-contexts-families).
+documentation](agent/web.md#charts-contexts-families).
 
 ## Interact with charts
 
@@ -148,7 +148,7 @@ chart to its original height, double-click the same icon.
 ![Animated GIF of resizing a chart and resetting it to the default
 height](https://user-images.githubusercontent.com/1153921/80842459-7d41e280-8bb6-11ea-9488-1bc29f94d7f2.gif)
 
-To learn more about other options and chart interactivity, read our [dashboard documentation](/docs/agent/web).
+To learn more about other options and chart interactivity, read our [dashboard documentation](agent/web.md).
 
 ## See raised alarms and the alarm log
 
@@ -203,4 +203,4 @@ In this step of the Netdata tutorial, you learned how to:
 
 Next, you'll learn how to monitor multiple nodes through the dashboard.
 
-[Next: Monitor more than one system with Netdata →](/docs/agent/step-by-step/step-03)
+[Next: Monitor more than one system with Netdata →](agent/step-by-step/step-03.md)

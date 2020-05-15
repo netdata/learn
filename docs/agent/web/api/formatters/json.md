@@ -5,7 +5,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/web/api/formatte
 
 
 
-The CSV formatter presents [results of database queries](/docs/agent/web/api/queries) in the following formats:
+The CSV formatter presents [results of database queries](agent/web/api/queries.md) in the following formats:
 
 | format       | content type     | description|
 |:----:|:----------:|:----------|

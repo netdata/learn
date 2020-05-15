@@ -11,7 +11,7 @@ This guide contains detailed information about enabling/disabling plugins or mod
 the internal plugins API.
 
 To learn the basics of collecting metrics from other applications and services, see the [collector
-quickstart](/docs/agent/collectors/quickstart).
+quickstart](agent/collectors/quickstart.md).
 
 ## What's in this reference guide
 
@@ -33,8 +33,8 @@ independent processes in a variety of programming languages based on their purpo
 MySQL database, among many others.
 
 For most users, enabling individual collectors for the application/service you're interested in is far more important
-than knowing which plugin it uses. See our [collectors list](/docs/agent/collectors/collectors) to see whether your favorite app/service has
-a collector, and then read the [collectors quickstart](/docs/agent/collectors/quickstart) and the documentation for that specific collector
+than knowing which plugin it uses. See our [collectors list](agent/collectors/collectors.md) to see whether your favorite app/service has
+a collector, and then read the [collectors quickstart](agent/collectors/quickstart.md) and the documentation for that specific collector
 to figure out how to enable it.
 
 There are three types of plugins:
@@ -46,7 +46,7 @@ There are three types of plugins:
     independent processes. They communicate with the daemon via pipes.
 -   **Plugin orchestrators**, which are external plugins that instead support a number of **modules**. Modules are a
     type of collector. We have a few plugin orchestrators available for those who want to develop their own collectors,
-    but focus most of our efforts on the [Go plugin](/docs/agent/collectors/go.d.plugin).
+    but focus most of our efforts on the [Go plugin](agent/collectors/go.d.plugin.md).
 
 ## Enable, configure, and disable modules
 
@@ -57,7 +57,7 @@ However, there are cases that auto-detection fails. Usually, the reason is that 
 allow Netdata to connect. In most of the cases, allowing the user `netdata` from `localhost` to connect and collect
 metrics, will automatically enable data collection for the application in question (it will require a Netdata restart).
 
-View our [collectors quickstart](/docs/agent/collectors/quickstart) for explict details on enabling and configuring collector modules.
+View our [collectors quickstart](agent/collectors/quickstart.md) for explict details on enabling and configuring collector modules.
 
 ## Troubleshoot a collector
 
@@ -73,7 +73,7 @@ sudo su -s /bin/bash netdata
 The next step is based on the collector's orchestrator. You can figure out which orchestrator the collector uses by 
 
 uses either
-by viewing the [collectors list](/docs/agent/collectors/collectors) and referencing the _configuration file_ field. For example, if that
+by viewing the [collectors list](agent/collectors/collectors.md) and referencing the _configuration file_ field. For example, if that
 field contains `go.d`, that collector uses the Go orchestrator.
 
 ```bash
@@ -126,7 +126,7 @@ This section features a list of Netdata's plugins, with a boolean setting to ena
 By default, most plugins are enabled, so you don't need to enable them explicity to use their collectors. To enable or
 disable any specific plugin, remove the comment (`#`) and change the boolean setting to `yes` or `no`.
 
-All **external plugins** are managed by [plugins.d](/docs/agent/collectors/plugins.d/), which provides additional management options.
+All **external plugins** are managed by [plugins.d](agent/collectors/plugins.d/), which provides additional management options.
 
 ## Internal plugins
 
@@ -188,8 +188,8 @@ through this, is to examine what other similar plugins do.
 
 ## External Plugins
 
-**External plugins** use the API and are managed by [plugins.d](/docs/agent/collectors/plugins.d/).
+**External plugins** use the API and are managed by [plugins.d](agent/collectors/plugins.d/).
 
 ## Write a custom collector
 
-You can add custom collectors by following the [external plugins documentation](/docs/agent/collectors/plugins.d/).
+You can add custom collectors by following the [external plugins documentation](agent/collectors/plugins.d/).

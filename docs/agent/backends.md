@@ -34,7 +34,7 @@ So, although Netdata collects metrics every second, it can send to the backend s
 
         metrics are sent to a document db, `JSON` formatted.
 
-    -   **prometheus** is described at [prometheus page](/docs/agent/backends/prometheus) since it pulls data from
+    -   **prometheus** is described at [prometheus page](agent/backends/prometheus.md) since it pulls data from
         Netdata.
 
     -   **prometheus remote write** (a binary snappy-compressed protocol buffer encoding over HTTP used by
@@ -43,9 +43,9 @@ So, although Netdata collects metrics every second, it can send to the backend s
         providers](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage))
 
         metrics are labeled in the format, which is used by Netdata for the [plaintext prometheus
-        protocol](/docs/agent/backends/prometheus). Notes on using the remote write backend are [here](/docs/agent/backends/prometheus/remote_write).
+        protocol](agent/backends/prometheus.md). Notes on using the remote write backend are [here](agent/backends/prometheus/remote_write.md).
 
-    -   **TimescaleDB** via [community-built connector](/docs/agent/backends/timescale) that takes JSON streams from a Netdata
+    -   **TimescaleDB** via [community-built connector](agent/backends/timescale.md) that takes JSON streams from a Netdata
         client and writes them to a TimescaleDB table.
 
     -   **AWS Kinesis Data Streams**
@@ -149,7 +149,7 @@ from your Netdata):
    For kinesis backend `destination` should be set to an AWS region (for example, `us-east-1`).
 
    The MongoDB backend doesn't use the `destination` option for its configuration. It uses the `mongodb.conf`
-   [configuration file](/docs/agent/backends/mongodb) instead.
+   [configuration file](agent/backends/mongodb.md) instead.
 
 -   `data source = as collected`, or `data source = average`, or `data source = sum`, selects the kind of data that will
      be sent to the backend.

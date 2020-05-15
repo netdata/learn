@@ -13,7 +13,7 @@ are starting at a fresh ubuntu shell (whether you'd like to follow along in a VM
 
 ### Installing Netdata
 
-There are number of ways to install Netdata according to [Installation](/docs/packaging/installer/). The suggested way
+There are number of ways to install Netdata according to [Installation](packaging/installer/). The suggested way
 of installing the latest Netdata and keep it upgrade automatically. Using one line installation:
 
 ```sh
@@ -411,7 +411,7 @@ Netdata can filter the metrics it sends to Prometheus with this setting:
 	send charts matching = *
 ```
 
-This settings accepts a space separated list of [simple patterns](/docs/libnetdata/simple_pattern) to match
+This settings accepts a space separated list of [simple patterns](libnetdata/simple_pattern.md) to match
 the **charts** to be sent to Prometheus. Each pattern can use `*` as wildcard, any number of times (e.g `*a*b*c*` is
 valid). Patterns starting with `!` give a negative match (e.g `!*.bad users.* groups.*` will send all the users and
 groups except `bad` user and `bad` group). The order is important: the first match (positive or negative) left to right,

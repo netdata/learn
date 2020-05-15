@@ -12,18 +12,18 @@ The following formats are supported:
 
 | format|module|content type|description|
 |:----:|:----:|:----------:|:----------|
-| `array`|[ssv](/docs/agent/web/api/formatters/ssv)|application/json|a JSON array|
-| `csv`|[csv](/docs/agent/web/api/formatters/csv)|text/plain|a text table, comma separated, with a header line (dimension names) and `\r\n` at the end of the lines|
-| `csvjsonarray`|[csv](/docs/agent/web/api/formatters/csv)|application/json|a JSON array, with each row as another array (the first row has the dimension names)|
-| `datasource`|[json](/docs/agent/web/api/formatters/json)|application/json|a Google Visualization Provider `datasource` javascript callback|
-| `datatable`|[json](/docs/agent/web/api/formatters/json)|application/json|a Google `datatable`|
-| `html`|[csv](/docs/agent/web/api/formatters/csv)|text/html|an html table|
-| `json`|[json](/docs/agent/web/api/formatters/json)|application/json|a JSON object|
-| `jsonp`|[json](/docs/agent/web/api/formatters/json)|application/json|a JSONP javascript callback|
-| `markdown`|[csv](/docs/agent/web/api/formatters/csv)|text/plain|a markdown table|
-| `ssv`|[ssv](/docs/agent/web/api/formatters/ssv)|text/plain|a space separated list of values|
-| `ssvcomma`|[ssv](/docs/agent/web/api/formatters/ssv)|text/plain|a comma separated list of values|
-| `tsv`|[csv](/docs/agent/web/api/formatters/csv)|text/plain|a TAB delimited `csv` (MS Excel flavor)|
+| `array`|[ssv](agent/web/api/formatters/ssv.md)|application/json|a JSON array|
+| `csv`|[csv](agent/web/api/formatters/csv.md)|text/plain|a text table, comma separated, with a header line (dimension names) and `\r\n` at the end of the lines|
+| `csvjsonarray`|[csv](agent/web/api/formatters/csv.md)|application/json|a JSON array, with each row as another array (the first row has the dimension names)|
+| `datasource`|[json](agent/web/api/formatters/json.md)|application/json|a Google Visualization Provider `datasource` javascript callback|
+| `datatable`|[json](agent/web/api/formatters/json.md)|application/json|a Google `datatable`|
+| `html`|[csv](agent/web/api/formatters/csv.md)|text/html|an html table|
+| `json`|[json](agent/web/api/formatters/json.md)|application/json|a JSON object|
+| `jsonp`|[json](agent/web/api/formatters/json.md)|application/json|a JSONP javascript callback|
+| `markdown`|[csv](agent/web/api/formatters/csv.md)|text/plain|a markdown table|
+| `ssv`|[ssv](agent/web/api/formatters/ssv.md)|text/plain|a space separated list of values|
+| `ssvcomma`|[ssv](agent/web/api/formatters/ssv.md)|text/plain|a comma separated list of values|
+| `tsv`|[csv](agent/web/api/formatters/csv.md)|text/plain|a TAB delimited `csv` (MS Excel flavor)|
 
 For examples of each format, check the relative module documentation.
 

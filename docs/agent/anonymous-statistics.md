@@ -72,7 +72,7 @@ Starting with v1.21, we additionally collect information about:
 
 -   Failures to build the dependencies required to use Cloud features.
 -   Unavailability of Cloud features in an agent.
--   Failures to connect to the Cloud in case the agent has been [claimed](/docs/agent/claim). This includes error codes
+-   Failures to connect to the Cloud in case the agent has been [claimed](agent/claim.md). This includes error codes
     to inform the Netdata team about the reason why the connection failed.
 
 To see exactly what and how is collected, you can review the script template `daemon/anonymous-statistics.sh.in`. The
@@ -89,13 +89,13 @@ installation, including manual, offline, and macOS installations. Create the fil
 .opt-out-from-anonymous-statistics` from your Netdata configuration directory.
 
 **Pass the option `--disable-telemetry` to any of the installer scripts in the [installation
-docs](/docs/agent/packaging/installer).** You can append this option during the initial installation or a manual
+docs](agent/packaging/installer.md).** You can append this option during the initial installation or a manual
 update. You can also export the environment variable `DO_NOT_TRACK` with a non-zero or non-empty value
 (e.g: `export DO_NOT_TRACK=1`).
 
 When using Docker, **set your `DO_NOT_TRACK` environment variable to `1`.** You can set this variable with the following
 command: `export DO_NOT_TRACK=1`. When creating a container using Netdata's [Docker
-image](/docs/agent/packaging/docker#run-the-agent-with-the-docker-command) for the first time, this variable will disable
+image](agent/packaging/docker.md#run-the-agent-with-the-docker-command) for the first time, this variable will disable
 the anonymous statistics script inside of the container.
 
 Each of these opt-out processes does the following:

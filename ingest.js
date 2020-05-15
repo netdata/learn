@@ -11,9 +11,9 @@ const MIN_RATE_LIMIT = 50
 // see the README.md for instructions to set up a github access token
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const baseDir = '/docs'
-const agentDir = '/docs/agent'
-const cloudDir = '/docs/cloud'
-const outDir = path.join(__dirname, agentDir)
+const agentDir = 'agent'
+const cloudDir = 'cloud'
+const outDir = path.join(__dirname, baseDir, agentDir)
 // the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
 const retainPaths = [
@@ -120,7 +120,7 @@ function normalizeLinks(pages) {
       }
 
       // Catch for anything else. Return the normalized link.
-      const normalizedUrl = path.join('/', agentDir, '/', tokens.dir, url).toLowerCase()
+      const normalizedUrl = path.join(agentDir, '/', tokens.dir, url).toLowerCase()
       return `](${normalizedUrl})`
     })
 
@@ -168,22 +168,22 @@ function renameReadmes(pages) {
 }
 
 // remove .md extensions from links in pages so they are all slashes
-function beautifyLinks(pages) {
-  return pages.map(page => {
-    const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
-      // ignore absolute urls and external links alone
-      const prettyUrl = url.startsWith('http')
-        ? url
-        : url.replace(/\.md/gs, '')
-      return `](${prettyUrl})`
-    })
+// function beautifyLinks(pages) {
+//   return pages.map(page => {
+//     const body = page.body.replace(/\]\((.*?)\)/gs, (match, url) => {
+//       // ignore absolute urls and external links alone
+//       const prettyUrl = url.startsWith('http')
+//         ? url
+//         : url.replace(/\.md/gs, '')
+//       return `](${prettyUrl})`
+//     })
 
-    return {
-      meta: { ...page.meta },
-      body
-    }
-  })
-}
+//     return {
+//       meta: { ...page.meta },
+//       body
+//     }
+//   })
+// }
 
 // read files that we want to keep into memory
 async function retainFiles(retainPaths=[]) {
@@ -320,8 +320,8 @@ async function ingest() {
   const normalizedPages = normalizeLinks(renamedPages)
   // await debugMetas(normalizedPages, 'debug-normalized.txt')
 
-  console.log(`Beautifying URLs...`)
-  const beautifiedPages = beautifyLinks(normalizedPages)
+  // console.log(`Beautifying URLs...`)
+  // const beautifiedPages = beautifyLinks(normalizedPages)
   // await debugMetas(beautifiedPages, 'debug-beautified.txt')
 
   console.log('Retaining files...')
@@ -335,10 +335,10 @@ async function ingest() {
   retainedFiles.map(([p]) => console.log(`  ${p}`))
   await restoreFiles(retainedFiles)
 
-  console.log(`Writing ${beautifiedPages.length} to ${agentDir}`)
+  console.log(`Writing ${normalizedPages.length} to ${agentDir}`)
   const writeStartTime = new Date()
 
-  await writePages(beautifiedPages)
+  await writePages(normalizedPages)
 
   const writeEndTime = new Date()
   console.log(`Writing completed in ${writeEndTime - writeStartTime} ms`)

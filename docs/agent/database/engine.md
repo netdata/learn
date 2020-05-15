@@ -44,7 +44,7 @@ can select the memory mode for localhost by editing netdata.conf and setting:
 ```
 
 For setting the memory mode for the rest of the nodes you should look at
-[streaming](/docs/agent/streaming).
+[streaming](agent/streaming.md).
 
 The `history` configuration option is meaningless for `memory mode = dbengine` and is ignored for any metrics being
 stored in the DB engine.

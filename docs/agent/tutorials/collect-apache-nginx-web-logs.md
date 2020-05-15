@@ -13,7 +13,7 @@ you can better understand what's happening on your infrastructure. Too many bad 
 few small SVG icons. Too many requsests? Time to batten down the hatches—it's a DDoS.
 
 Netdata has been capable of monitoring web log files for quite some time, thanks for the [weblog python.d
-module](/docs/agent/collectors/python.d.plugin/web_log), but we recently refactored this module in Go, and that effort
+module](agent/collectors/python.d.plugin/web_log.md), but we recently refactored this module in Go, and that effort
 comes with a ton of improvements.
 
 You can now use the [LTSV log format](http://ltsv.org/), track TLS and cipher usage, and the whole parser is faster than
@@ -147,12 +147,12 @@ You can also edit this file directly with `edit-config`:
 ```
 
 For more information about editing the defaults or writing new alarm entities, see our [health monitoring
-documentation](/docs/agent/health).
+documentation](agent/health.md).
 
 ## What's next?
 
 Now that you have web log collection up and running, we recommend you take a look at the documentation for our
-[python.d](/docs/agent/collectors/python.d.plugin/web_log) for some ideas of how you can turn these rather "boring" logs
+[python.d](agent/collectors/python.d.plugin/web_log.md) for some ideas of how you can turn these rather "boring" logs
 into powerful real-time tools for keeping your servers happy.
 
 Don't forget to give GitHub user [Wing924](https://github.com/Wing924) a big 👍 for his hard work in starting up the Go

@@ -9,18 +9,18 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/daemon/config/RE
 <details markdown="1"><summary>The daemon configuration file is read from `/etc/netdata/netdata.conf`.</summary>
 Depending on your installation method, Netdata will have been installed either directly under `/`, or under `/opt/netdata`. The paths mentioned here and in the documentation in general assume that your installation is under `/`. If it is not, you will find the exact same paths under `/opt/netdata` as well. (i.e. `/etc/netdata` will be `/opt/netdata/etc/netdata`).</details>
 
-This config file **is not needed by default**. Netdata works fine out of the box without it. But it does allow you to adapt the general behavior of Netdata, in great detail. You can find all these settings, with their default values, by accessing the URL `https://netdata.server.hostname:19999/netdata.conf`. For example check the configuration file of [netdata.firehol.org](http://netdata.firehol.org/netdata.conf). HTTP access to this file is limited by default to private IPs, via the [web server access lists](/docs/agent/web/server#access-lists).
+This config file **is not needed by default**. Netdata works fine out of the box without it. But it does allow you to adapt the general behavior of Netdata, in great detail. You can find all these settings, with their default values, by accessing the URL `https://netdata.server.hostname:19999/netdata.conf`. For example check the configuration file of [netdata.firehol.org](http://netdata.firehol.org/netdata.conf). HTTP access to this file is limited by default to private IPs, via the [web server access lists](agent/web/server.md#access-lists).
 
 `netdata.conf` has sections stated with `[section]`. You will see the following sections:
 
-1.  `[global]` to [configure](#global-section-options) the [Netdata daemon](/docs/agent/daemon).
-2.  `[web]` to [configure the web server](/docs/agent/web/server).
-3.  `[plugins]` to [configure](#plugins-section-options) which [collectors](/docs/agent/collectors) to use and PATH
+1.  `[global]` to [configure](#global-section-options) the [Netdata daemon](agent/daemon.md).
+2.  `[web]` to [configure the web server](agent/web/server.md).
+3.  `[plugins]` to [configure](#plugins-section-options) which [collectors](agent/collectors.md) to use and PATH
     settings.
-4.  `[health]` to [configure](#health-section-options) general settings for [health monitoring](/docs/agent/health)
-5.  `[registry]` for the [Netdata registry](/docs/agent/registry).
-6.  `[backend]` to set up [streaming and replication](/docs/agent/streaming) options.
-7.  `[statsd]` for the general settings of the [stats.d.plugin](/docs/agent/collectors/statsd.plugin).
+4.  `[health]` to [configure](#health-section-options) general settings for [health monitoring](agent/health.md)
+5.  `[registry]` for the [Netdata registry](agent/registry.md).
+6.  `[backend]` to set up [streaming and replication](agent/streaming.md) options.
+7.  `[statsd]` for the general settings of the [stats.d.plugin](agent/collectors/statsd.plugin.md).
 8.  `[plugin:NAME]` sections for each collector plugin, under the comment [Per plugin configuration](#per-plugin-configuration).
 9.  `[CHART_NAME]` sections for each chart defined, under the comment [Per chart configuration](#per-chart-configuration).
 
@@ -48,16 +48,16 @@ Please note that your data history will be lost if you have modified `history` p
 
 | setting|default|info|||
 |:-----:|:-----:|:---|---|---|
-| process scheduling policy|`keep`|See [Netdata process scheduling policy](/docs/agent/daemon#netdata-process-scheduling-policy)|||
-| OOM score|`1000`|See [OOM score](/docs/agent/#oom-score)|||
-| glibc malloc arena max for plugins|`1`|See [Virtual memory](/docs/agent/daemon#virtual-memory).|||
-| glibc malloc arena max for Netdata|`1`|See [Virtual memory](/docs/agent/daemon#virtual-memory).|||
+| process scheduling policy|`keep`|See [Netdata process scheduling policy](agent/daemon.md#netdata-process-scheduling-policy)|||
+| OOM score|`1000`|See [OOM score](agent/#oom-score)|||
+| glibc malloc arena max for plugins|`1`|See [Virtual memory](agent/daemon.md#virtual-memory).|||
+| glibc malloc arena max for Netdata|`1`|See [Virtual memory](agent/daemon.md#virtual-memory).|||
 | hostname|auto-detected|The hostname of the computer running Netdata.|||
-| history|`3996`| Used with `memory mode = save/map/ram/alloc`, not the default `memory mode = dbengine`. This number reflects the number of entries the `netdata` daemon will by default keep in memory for each chart dimension. This setting can also be configured per chart. Check [Memory Requirements](/docs/agent/database) for more information. |||
-| update every|`1`|The frequency in seconds, for data collection. For more information see [Performance](/docs/agent/performance).|||
+| history|`3996`| Used with `memory mode = save/map/ram/alloc`, not the default `memory mode = dbengine`. This number reflects the number of entries the `netdata` daemon will by default keep in memory for each chart dimension. This setting can also be configured per chart. Check [Memory Requirements](agent/database.md) for more information. |||
+| update every|`1`|The frequency in seconds, for data collection. For more information see [Performance](agent/performance.md).|||
 | config directory|`/etc/netdata`|The directory configuration files are kept.|||
 | stock config directory|`/usr/lib/netdata/conf.d`||||
-| log directory|`/var/log/netdata`|The directory in which the [log files](/docs/agent/daemon#log-files) are kept.|||
+| log directory|`/var/log/netdata`|The directory in which the [log files](agent/daemon.md#log-files) are kept.|||
 | web files directory|`/usr/share/netdata/web`|The directory the web static files are kept.|||
 | cache directory|`/var/cache/netdata`|The directory the memory database will be stored if and when Netdata exits. Netdata will re-read the database when it will start again, to continue from the same point.|||
 | lib directory|`/var/lib/netdata`|Contains the alarm log and the Netdata instance guid.|||
@@ -67,27 +67,27 @@ Please note that your data history will be lost if you have modified `history` p
 | page cache size     | 32         | Determines the amount of RAM in MiB that is dedicated to caching Netdata metric values. |||
 | dbengine disk space | 256        | Determines the amount of disk space in MiB that is dedicated to storing Netdata metric values and all related metadata describing them |||
 | host access prefix||This is used in docker environments where /proc, /sys, etc have to be accessed via another path. You may also have to set SYS_PTRACE capability on the docker for this work. Check [issue 43](https://github.com/netdata/netdata/issues/43).|
-| memory deduplication (ksm)|`yes`|When set to `yes`, Netdata will offer its in-memory round robin database to kernel same page merging (KSM) for deduplication. For more information check [Memory Deduplication - Kernel Same Page Merging - KSM](/docs/agent/database#ksm)|||
+| memory deduplication (ksm)|`yes`|When set to `yes`, Netdata will offer its in-memory round robin database to kernel same page merging (KSM) for deduplication. For more information check [Memory Deduplication - Kernel Same Page Merging - KSM](agent/database.md#ksm)|||
 | TZ environment variable|`:/etc/localtime`|Where to find the timezone|||
 | timezone|auto-detected|The timezone retrieved from the environment variable|||
-| debug flags|`0x0000000000000000`|Bitmap of debug options to enable. For more information check [Tracing Options](/docs/agent/daemon#debugging).|||
-| debug log|`/var/log/netdata/debug.log`|The filename to save debug information. This file will not be created if debugging is not enabled. You can also set it to `syslog` to send the debug messages to syslog, or `none` to disable this log. For more information check [Tracing Options](/docs/agent/daemon#debugging).|||
+| debug flags|`0x0000000000000000`|Bitmap of debug options to enable. For more information check [Tracing Options](agent/daemon.md#debugging).|||
+| debug log|`/var/log/netdata/debug.log`|The filename to save debug information. This file will not be created if debugging is not enabled. You can also set it to `syslog` to send the debug messages to syslog, or `none` to disable this log. For more information check [Tracing Options](agent/daemon.md#debugging).|||
 | error log|`/var/log/netdata/error.log`|The filename to save error messages for Netdata daemon and all plugins (`stderr` is sent here for all Netdata programs, including the plugins). You can also set it to `syslog` to send the errors to syslog, or `none` to disable this log.|||
 | access log|`/var/log/netdata/access.log`|The filename to save the log of web clients accessing Netdata charts. You can also set it to `syslog` to send the access log to syslog, or `none` to disable this log.|||
 | errors flood protection period|`1200`|Length of period (in sec) during which the number of errors should not exceed the `errors to trigger flood protection`.|||
 | errors to trigger flood protection|`200`|Number of errors written to the log in `errors flood protection period` sec before flood protection is activated.|||
 | run as user|`netdata`|The user Netdata will run as.|||
 | pthread stack size|auto-detected||||
-| cleanup obsolete charts after seconds|`3600`|See [monitoring ephemeral containers](/docs/agent/collectors/cgroups.plugin#monitoring-ephemeral-containers), also sets the timeout for cleaning up obsolete dimensions|||
+| cleanup obsolete charts after seconds|`3600`|See [monitoring ephemeral containers](agent/collectors/cgroups.plugin.md#monitoring-ephemeral-containers), also sets the timeout for cleaning up obsolete dimensions|||
 | gap when lost iterations above|`1`||||
 | cleanup orphan hosts after seconds|`3600`|How long to wait until automatically removing from the DB a remote Netdata host (slave) that is no longer sending data.|||
-| delete obsolete charts files|`yes`|See [monitoring ephemeral containers](/docs/agent/collectors/cgroups.plugin#monitoring-ephemeral-containers), also affects the deletion of files for obsolete dimensions|||
+| delete obsolete charts files|`yes`|See [monitoring ephemeral containers](agent/collectors/cgroups.plugin.md#monitoring-ephemeral-containers), also affects the deletion of files for obsolete dimensions|||
 | delete orphan hosts files|`yes`|Set to `no` to disable non-responsive host removal.|||
 | enable zero metrics|`no`|Set to `yes` to show charts when all their metrics are zero.|||
 
 ### [web] section options
 
-Refer to the [web server documentation](/docs/agent/web/server)
+Refer to the [web server documentation](agent/web/server.md)
 
 ### [plugins] section options
 
@@ -108,9 +108,9 @@ Additionally, there will be the following options:
 This section controls the general behavior of the health monitoring capabilities of Netdata.
 
 Specific alarms are configured in per-collector config files under the `health.d` directory. For more info, see [health
-monitoring](/docs/agent/health).
+monitoring](agent/health.md).
 
-[Alarm notifications](/docs/agent/health/notifications) are configured in `health_alarm_notify.conf`.
+[Alarm notifications](agent/health/notifications.md) are configured in `health_alarm_notify.conf`.
 
 | setting|default|info|
 |:-----:|:-----:|:---|
@@ -125,11 +125,11 @@ monitoring](/docs/agent/health).
 
 ### [registry] section options
 
-To understand what this section is and how it should be configured, please refer to the [registry documentation](/docs/agent/registry).
+To understand what this section is and how it should be configured, please refer to the [registry documentation](agent/registry.md).
 
 ### [backend]
 
-Refer to the [streaming and replication](/docs/agent/streaming) documentation.
+Refer to the [streaming and replication](agent/streaming.md) documentation.
 
 ## Per-plugin configuration
 
@@ -137,7 +137,7 @@ The configuration options for plugins appear in sections following the pattern `
 
 ### Internal plugins
 
-Most internal plugins will provide additional options. Check [Internal Plugins](/docs/agent/collectors) for more
+Most internal plugins will provide additional options. Check [Internal Plugins](agent/collectors.md) for more
 information.
 
 Please note, that by default Netdata will enable monitoring metrics for disks, memory, and network only when they are not zero. If they are constantly zero they are ignored. Metrics that will start having values, after Netdata is started, will be detected and charts will be automatically added to the dashboard (a refresh of the dashboard is needed for them to appear though). Use `yes` instead of `auto` in plugin configuration sections to enable these charts permanently. You can also set the `enable zero metrics` option to `yes` in the `[global]` section which enables charts with zero metrics for all internal Netdata plugins.
@@ -148,7 +148,7 @@ External plugins will have only 2 options at `netdata.conf`:
 
 | setting | default | info |
 | :-----:|:-----:|:---|
-| update every | the value of `[global].update every` setting|The frequency in seconds the plugin should collect values. For more information check [Performance](/docs/agent/performance#performance).|
+| update every | the value of `[global].update every` setting|The frequency in seconds the plugin should collect values. For more information check [Performance](agent/performance.md#performance).|
 | command options | _empty_ | Additional command line options to pass to the plugin.|
 
 External plugins that need additional configuration may support a dedicated file in `/etc/netdata`. Check their documentation.
@@ -159,7 +159,7 @@ In this area of `netdata.conf` you can find configuration options for individual
 following the pattern `[NAME]`.
 
 Using the settings and values under these sections, you can control all aspects of a specific chart. You can change its
-title, make it appear higher in Netdata's [menu](/docs/agent/web/gui#metrics-menus), tweak its dimensions, and much more.
+title, make it appear higher in Netdata's [menu](agent/web/gui.md#metrics-menus), tweak its dimensions, and much more.
 
 To find the name of a given chart, and thus the name of its section in `netdata.conf`, look at the top-left corner of a
 chart:
@@ -176,12 +176,12 @@ that is information about lines that begin with `dim`, which affect a chart's di
 | `enabled`         | A boolean (`yes` or `no`) that explicitly enables or disables the chart in question.                                                                                                                                                                            |
 | `cache directory` | The directory where cache files for this plugin, if needed, are stored.                                                                                                                                                                                         |
 | `chart type`      | Defines what type of chart to display. It can be `line`, `area`, or `stacked`. If empty or missing, `line` will be used.                                                                                                                                        |
-| `type`            | Uniquely identify which [metrics menu](/docs/agent/web/gui#metrics-menus) on the Netdata dashboard this chart should appear under. Some examples include `system` (**System**), `disk` (**Disks**), `net` (**Network Interfaces**), and `netdata` (**Netdata Monitoring**). |
-| `family`          | Change the chart's [family](/docs/agent/web#families) from its default. For example, you could force a disk space chart to collect metrics for family `sdb` instead of family `sda`.                                                                        |
+| `type`            | Uniquely identify which [metrics menu](agent/web/gui.md#metrics-menus) on the Netdata dashboard this chart should appear under. Some examples include `system` (**System**), `disk` (**Disks**), `net` (**Network Interfaces**), and `netdata` (**Netdata Monitoring**). |
+| `family`          | Change the chart's [family](agent/web.md#families) from its default. For example, you could force a disk space chart to collect metrics for family `sdb` instead of family `sda`.                                                                        |
 | `units`           | Text for the label of the vertical axis of the chart. This means all dimensions should have the same unit of measurement.                                                                                                                                       |
-| `context`         | Change the default [context](/docs/agent/web#contexts) of the chart. Changing this setting will affect what metrics and metrics the chart displays, and which alarms are attached to it.                                                                    |
+| `context`         | Change the default [context](agent/web.md#contexts) of the chart. Changing this setting will affect what metrics and metrics the chart displays, and which alarms are attached to it.                                                                    |
 | `priority`        | Define where the chart should appear on the Netdata dashboard. Lower values equal higher priority, so a priority of `1` will place the chart highest, while a priority of `9999999` would place the chart at the bottom of the Netdata dashboard.               |
-| `name`            | The name of the chart that appears in the top-left corner, after the chart's title. You can also use this name when writing [health entities](/docs/agent/health/reference#health-entity-reference).                                                               |
+| `name`            | The name of the chart that appears in the top-left corner, after the chart's title. You can also use this name when writing [health entities](agent/health/reference.md#health-entity-reference).                                                               |
 | `title`           | The text that appears above the chart in the Netdata dashboard.                                                                                                                                                                                                 |
 
 ### Dimension settings

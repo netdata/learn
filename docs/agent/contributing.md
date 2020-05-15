@@ -46,7 +46,7 @@ Netdata is all about simplicity and meaningful presentation. A "sponsor" for a c
 
 #### Sponsor a backend
 
-We already support various [backends](/docs/agent/backends) and we intend to support more. A "sponsor" for a backend: 
+We already support various [backends](agent/backends) and we intend to support more. A "sponsor" for a backend: 
 
 -   Suggests ways in which the information in Netdata could best be exposed to the particular backend, to facilitate meaningful presentation.
 -   When the implementation passes QA, tests the implementation in production.
@@ -55,7 +55,7 @@ We already support various [backends](/docs/agent/backends) and we intend to sup
 
 #### Sponsor a notification method
 
-Netdata delivers alarms via various [notification methods](/docs/agent/health/notifications). A "sponsor" for a notification method:
+Netdata delivers alarms via various [notification methods](agent/health/notifications). A "sponsor" for a notification method:
 
 -   Points the devs to the documentation for the API and identifies any unusual features of interest (e.g. the ability in Slack to send a notification either to a channel or to a user). 
 -   Uses the notification method in production and provides feedback.
@@ -73,15 +73,15 @@ Our documentation is in need of constant improvement and expansion. As Netdata's
 
 We also need to produce beginner-level tutorials on using Netdata to monitor common applications, web servers, and more.
 
-Start with the [guide for contributing to documentation](/docs/agent/contributing/contributing-documentation), and then review the [documentation style guide](/docs/agent/contributing/style-guide) for specifics on how we write our documentation.
+Start with the [guide for contributing to documentation](agent/contributing/contributing-documentation.md), and then review the [documentation style guide](agent/contributing/style-guide.md) for specifics on how we write our documentation.
 
 Don't be afraid to submit a pull request with your corrections or additions! We need a lot of help and are willing to guide new contributors through the process.
 
 ## Developers
 
-We expect most contributions to be for new data collection plugins. You can read about how external plugins work [here](/docs/agent/collectors/plugins.d/). Additional instructions are available for [Node.js plugins](/docs/agent/collectors/node.d.plugin) and [Python plugins](/docs/agent/collectors/python.d.plugin).
+We expect most contributions to be for new data collection plugins. You can read about how external plugins work [here](agent/collectors/plugins.d/). Additional instructions are available for [Node.js plugins](agent/collectors/node.d.plugin) and [Python plugins](agent/collectors/python.d.plugin).
 
-Of course we appreciate contributions for any other part of the NetData agent, including the [daemon](/docs/agent/daemon), [backends for long term archiving](/docs/agent/backends/), innovative ways of using the [REST API](/docs/agent/web/api) to create cool [Custom Dashboards](/docs/agent/web/gui/custom/) or to include NetData charts in other applications, similarly to what can be done with [Confluence](/docs/agent/web/gui/confluence/).
+Of course we appreciate contributions for any other part of the NetData agent, including the [daemon](agent/daemon), [backends for long term archiving](agent/backends/), innovative ways of using the [REST API](agent/web/api) to create cool [Custom Dashboards](agent/web/gui/custom/) or to include NetData charts in other applications, similarly to what can be done with [Confluence](agent/web/gui/confluence/).
 
 If you are working on the C source code please be aware that we have a standard build configuration that we use. This
 is meant to keep the source tree clean and free of warnings. When you are preparing to work on the code:
@@ -117,7 +117,7 @@ across most of our code-base, but we prefer new contributions that match the lin
 
 #### Code of Conduct and CLA
 
-We expect all contributors to abide by the [Contributor Covenant Code of Conduct](/docs/agent/code_of_conduct). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/docs/agent/contributors), as part of the PR process.
+We expect all contributors to abide by the [Contributor Covenant Code of Conduct](agent/code_of_conduct.md). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](agent/contributors.md), as part of the PR process.
 
 #### Performance and efficiency
 

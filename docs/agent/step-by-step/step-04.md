@@ -43,7 +43,7 @@ In the system represented by the screenshot, the line reads: `config directory =
 `netdata.conf`, and all the other configuration files, can be found at `/etc/netdata`.
 
 > For more details on where your Netdata config directory is, take a look at our [installation
-> instructions](/docs/agent/packaging/installer).
+> instructions](agent/packaging/installer.md).
 
 For the rest of this tutorial, we'll assume you're editing files or running scripts from _within_ your **Netdata
 configuration directory**.
@@ -96,7 +96,7 @@ section and give it the value of `1`.
 ```
 
 Restart Netdata with `service restart netdata` or the [appropriate
-alternative](/docs/agent/getting-started#start-stop-and-restart-netdata) for your system.
+alternative](agent/getting-started.md#start-stop-and-restart-netdata) for your system.
 
 Now, open up your browser and navigate to `http://HOST:19999/netdata.conf`. You'll see that Netdata has recognized
 that our fake option isn't valid and added a notice that Netdata will ignore it.
@@ -124,8 +124,8 @@ Once you're done, restart Netdata and refresh the dashboard. Say hello to your r
 netdata.conf](https://user-images.githubusercontent.com/1153921/80994808-1c065300-8df2-11ea-81af-d28dc3ba27c8.gif)
 
 Netdata has dozens upon dozens of options you can change. To see them all, read our [daemon
-configuration](/docs/agent/daemon/config), or hop into our popular tutorial on [increasing long-term metrics
-storage](/docs/agent/tutorials/longer-metrics-storage).
+configuration](agent/daemon/config.md), or hop into our popular tutorial on [increasing long-term metrics
+storage](agent/tutorials/longer-metrics-storage.md).
 
 ## What's next?
 
@@ -139,4 +139,4 @@ In the next step, we're going to cover one of Netdata's core functions: monitori
 and notifications. You'll learn how to disable alarms, create new ones, and push notifications to the system of your
 choosing.
 
-[Next: Health monitoring alarms and notifications &rarr;](/docs/agent/step-by-step/step-05)
+[Next: Health monitoring alarms and notifications &rarr;](agent/step-by-step/step-05.md)

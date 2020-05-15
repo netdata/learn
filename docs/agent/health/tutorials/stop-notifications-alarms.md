@@ -13,7 +13,7 @@ relevant if you run Netdata on your laptop or a small virtual server. If they're
 to real issues with health and performance.
 
 Silencing individual alarms is an excellent solution for situations where you're not interested in seeing a specific
-alarm but don't want to disable a [notification system](/docs/agent/health/notifications) entirely. 
+alarm but don't want to disable a [notification system](agent/health/notifications.md) entirely. 
 
 ## Find the alarm configuration file
 
@@ -34,7 +34,7 @@ In the `source` row, you see that this chart is getting its configuration from
 the file you need to edit if you want to silence this alarm.
 
 For more information about editing or referencing health configuration files on your system, see the [health
-quickstart](/docs/agent/health/quickstart#edit-health-configuration-files).
+quickstart](agent/health/quickstart.md#edit-health-configuration-files).
 
 ## Edit the file to enable silencing
 
@@ -80,12 +80,12 @@ You can add `to: silence` to any alarm you'd rather not bother you with notifica
 You should now know the fundamentals behind silencing any individual alarm in Netdata.
 
 To learn about _all_ of Netdata's health configuration possibilities, visit the [health reference
-guide](/docs/agent/health/reference), or check out other [tutorials on health monitoring](/docs/agent/health/tutorials/..#tutorials).
+guide](agent/health/reference.md), or check out other [tutorials on health monitoring](agent/health/tutorials/...md#tutorials).
 
 Or, take better control over how you get notified about alarms via the [notification
-system](/docs/agent/health/notifications).
+system](agent/health/notifications.md).
 
-You can also use Netdata's [Health Management API](/docs/agent/web/api/health#health-management-api) to control
+You can also use Netdata's [Health Management API](agent/web/api/health.md#health-management-api) to control
 health checks and notifications while Netdata runs. With this API, you can disable health checks during a maintenance
 window or backup process, for example.
 

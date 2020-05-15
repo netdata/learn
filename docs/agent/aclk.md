@@ -13,7 +13,7 @@ through Netdata Cloud. The ACLK establishes an outgoing secure WebSocket (WSS) c
 
 For a guide to claiming a node using the ACLK, plus additional troubleshooting and reference information, read our [get
 started with Cloud](/docs/cloud/get-started) guide or the full [claiming
-documentation](/docs/agent/claim).
+documentation](agent/claim.md).
 
 ## Enable and configure the ACLK
 
@@ -28,7 +28,7 @@ configuration uses two settings:
 ```
 
 If your Agent needs to use a proxy to access the internet, you must [set up a proxy for
-claiming](/docs/agent/claim#claim-through-a-proxy).
+claiming](agent/claim.md#claim-through-a-proxy).
 
 ## Disable the ACLK
 
@@ -37,9 +37,9 @@ You have two options if you prefer to disable the ACLK and not use Netdata Cloud
 ### Disable at installation
 
 You can pass the `--disable-cloud` parameter to the Agent installation when using a kickstart script
-([kickstart.sh](/docs/agent/packaging/installer/methods/kickstart) or
-[kickstart-static64.sh](/docs/agent/packaging/installer/methods/kickstart-64)), or a [manual installation from
-Git](/docs/agent/packaging/installer/methods/manual).
+([kickstart.sh](agent/packaging/installer/methods/kickstart.md) or
+[kickstart-static64.sh](agent/packaging/installer/methods/kickstart-64.md)), or a [manual installation from
+Git](agent/packaging/installer/methods/manual.md).
 
 When you pass this parameter, the installer does not download or compile any extra libraries. Once running, the Agent
 kills the thread responsible for the ACLK and claiming behavior, and behaves as though the ACLK, and thus Netdata Cloud,
@@ -97,7 +97,7 @@ reinstall Netdata with Cloud enabled or change the runtime setting in your `clou
 
 If you passed `--disable-cloud` to `netdata-installer.sh` during installation, you must reinstall your Agent. Use the
 same method as before, but pass `--require-cloud` to the installer. When installation finishes you can [claim your
-node](/docs/agent/claim#how-to-claim-a-node).
+node](agent/claim.md#how-to-claim-a-node).
 
 If you changed the runtime setting in your `var/lib/netdata/cloud.d/cloud.conf` file, edit the file again and change
 `enabled` to `yes`:
@@ -107,6 +107,6 @@ If you changed the runtime setting in your `var/lib/netdata/cloud.d/cloud.conf` 
     enabled = yes
 ```
 
-Restart your Agent and [claim your node](/docs/agent/claim#how-to-claim-a-node).
+Restart your Agent and [claim your node](agent/claim.md#how-to-claim-a-node).
 
 

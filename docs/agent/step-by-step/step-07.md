@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-ste
 Welcome to the seventh step of the Netdata guide!
 
 This step of the guide aims to get you more familiar with the features of the dashboard not previously mentioned in
-[step 2](/docs/agent/step-by-step/step-02).
+[step 2](agent/step-by-step/step-02.md).
 
 ## What you'll learn in this step
 
@@ -53,9 +53,9 @@ You can always check if there is an update available from the **Update** area of
 
 If an update is available, you'll see a modal similar to the one above.
 
-When you use the [automatic one-line installer script](/docs/agent/packaging/installer) attempt to update every day. If
-you choose to update it manually, there are [several well-documented methods](/docs/agent/packaging/installer/update) to achieve
-that. However, it is best practice for you to first go over the [changelog](/docs/agent/changelog).
+When you use the [automatic one-line installer script](agent/packaging/installer.md) attempt to update every day. If
+you choose to update it manually, there are [several well-documented methods](agent/packaging/installer/update.md) to achieve
+that. However, it is best practice for you to first go over the [changelog](agent/changelog.md).
 
 ## Export and import a snapshot
 
@@ -109,4 +109,4 @@ In this step of the Netdata tutorial, you learned how to:
 
 Next, you'll learn how to build your first custom dashboard!
 
-[Next: Build your first custom dashboard &rarr;](/docs/agent/step-by-step/step-08)
+[Next: Build your first custom dashboard &rarr;](agent/step-by-step/step-08.md)

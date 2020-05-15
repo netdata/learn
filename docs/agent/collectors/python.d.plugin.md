@@ -101,7 +101,7 @@ CHART = {
         ]}
 ```
 
-All names are better explained in the [External Plugins](/docs/agent/) section.
+All names are better explained in the [External Plugins](agent/) section.
 Parameters like `priority` and `update_every` are handled by `python.d.plugin`.
 
 ### `Service` class
@@ -203,8 +203,8 @@ For additional security it uses python `subprocess.Popen` (without `shell=True` 
 
 _Examples: `apache`, `nginx`, `tomcat`_
 
-_Multiple Endpoints (urls) Examples: [`rabbitmq`](/docs/agent/collectors/python.d.plugin/rabbitmq) (simpler) ,
-[`elasticsearch`](/docs/agent/collectors/python.d.plugin/elasticsearch) (threaded)_
+_Multiple Endpoints (urls) Examples: [`rabbitmq`](agent/collectors/python.d.plugin/rabbitmq.md) (simpler) ,
+[`elasticsearch`](agent/collectors/python.d.plugin/elasticsearch.md) (threaded)_
 
 
 _Variables from config file_: `url`, `user`, `pass`.

@@ -22,7 +22,7 @@ installations run it as the `netdata` user, you might wish to do the same. This 
 2.  Create a user `netdata` via the Synology user interface. Give it no access to anything and a random password. Assign
     the user to the `netdata` group. Netdata will chuid to this user when running.
 3.  Change ownership of the following directories, as defined in [Netdata
-    Security](/docs/agent/netdata-security#security-design):
+    Security](agent/netdata-security.md#security-design):
 
 ```sh
 chown -R root:netdata /opt/netdata/usr/share/netdata

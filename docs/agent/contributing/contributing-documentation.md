@@ -10,10 +10,10 @@ We welcome contributions to Netdata's already extensive documentation, which we 
 repository](https://github.com/netdata/netdata) on GitHub.
 
 Like all contributing to all other aspects of Netdata, we ask that anyone who wants to help with documentation read and
-abide by the [Contributor Convenant Code of Conduct](/docs/agent/code_of_conduct) and follow the
-instructions outlined in our [Contributing document](/docs/agent/contributing).
+abide by the [Contributor Convenant Code of Conduct](agent/code_of_conduct.md) and follow the
+instructions outlined in our [Contributing document](agent/contributing.md).
 
-We also ask you to read our [documentation style guide](/docs/agent/contributing/style-guide), which, while not complete, will give you some
+We also ask you to read our [documentation style guide](agent/contributing/style-guide.md), which, while not complete, will give you some
 guidance on how we write and organize our documentation.
 
 All our documentation uses the Markdown syntax. If you're not familiar with how it works, please read the [Markdown
@@ -121,7 +121,7 @@ this `docs/` folder.
 ### Make your edits
 
 Now that you're set up and understand where to find or create your `.md` file, you can now begin to make your edits.
-Just use your favorite editor and keep in mind our [style guide](/docs/agent/contributing/style-guide) as you work.
+Just use your favorite editor and keep in mind our [style guide](agent/contributing/style-guide.md) as you work.
 
 If you add a new file to the documentation, you may need to modify the `buildyaml.sh` file to ensure it's added to the
 site's navigation. This is true for any file added to the `docs/` folder.
@@ -198,6 +198,6 @@ and overall quality. We may point to specific sections and ask for additional in
 
 ## What's next
 
--   Read up on the Netdata documentation [style guide](/docs/agent/contributing/style-guide).
+-   Read up on the Netdata documentation [style guide](agent/contributing/style-guide.md).
 
 

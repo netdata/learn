@@ -13,7 +13,7 @@ before:
 action](https://user-images.githubusercontent.com/1153921/80827388-b9fee100-8b98-11ea-8f60-0d7824667cd3.gif)
 
 Learn more about how dashboards work and how they're populated using the
-`dashboards.js` file in our [web dashboards overview](/docs/agent/web).
+`dashboards.js` file in our [web dashboards overview](agent/web.md).
 
 By default, Netdata starts a web server for its dashboard at port `19999`. Open up your web browser of choice and
 navigate to `http://NODE:19999`, replacing `NODE` with the IP address or hostname of your Agent. If you're unsure, try
@@ -21,13 +21,13 @@ navigate to `http://NODE:19999`, replacing `NODE` with the IP address or hostnam
 
 > In v1.21 of the Agent, we replaced the legacy dashboard with a refactored dashboard written in React. By using React,
 > we simplify our code and give our engineers better tools to add new features and fix bugs. The only UI change with
-> this dashboard is the top navigation and left-hand navigation for [Cloud integration](/docs/agent/agent-cloud). The old
+> this dashboard is the top navigation and left-hand navigation for [Cloud integration](agent/agent-cloud.md). The old
 > dashboard is still accessible at the `http://NODE:19999/old` subfolder.
 
-Netdata uses an [internal, static-threaded web server](/docs/agent/web/server) to host the
+Netdata uses an [internal, static-threaded web server](agent/web/server.md) to host the
 HTML, CSS, and JavaScript files that make up the standard dashboard. You don't
 have to configure anything to access it, although you can adjust [your
-settings](/docs/agent/web/server#other-netdataconf-web-section-options) in the
+settings](agent/web/server.md#other-netdataconf-web-section-options) in the
 `netdata.conf` file, or run Netdata behind an Nginx proxy, and so on.
 
 ## Navigating the standard dashboard
@@ -45,8 +45,8 @@ dashboard](https://user-images.githubusercontent.com/1153921/80834497-ac9c2380-8
 
 Netdata is broken up into multiple **sections**, such as **System Overview**,
 **CPU**, **Disk**, and more. Inside each section you'll find a number of charts,
-broken down into [contexts](/docs/agent/web#contexts) and
-[families](/docs/agent/web#families).
+broken down into [contexts](agent/web.md#contexts) and
+[families](agent/web.md#families).
 
 An example of the **Memory** section on a Linux desktop system.
 
@@ -65,7 +65,7 @@ and menus link to the section they're associated with.
 ![A screenshot of metrics menus](https://user-images.githubusercontent.com/1153921/80834638-f08f2880-8ba5-11ea-99ae-f610b2885fd6.png)
 
 Most metrics menu items will contain several **submenu** entries, which represent any
-[families](/docs/agent/web#families) from that section. Netdata automatically
+[families](agent/web.md#families) from that section. Netdata automatically
 generates these submenu entries.
 
 Here's a **Disks** menu with several submenu entries for each disk drive and
@@ -85,7 +85,7 @@ you to the Netdata Cloud web interface.
 menus](https://user-images.githubusercontent.com/1153921/80837210-3f8b8c80-8bab-11ea-9c75-128c2d823ef8.png)
 
 If you want to know more about how Cloud populates this menu, and the Agent-Cloud integration at a high level, see our
-document on [using the Agent with Netdata Cloud](/docs/agent/agent-cloud).
+document on [using the Agent with Netdata Cloud](agent/agent-cloud.md).
 
 ## Customizing the standard dashboard
 
@@ -148,7 +148,7 @@ file](https://user-images.githubusercontent.com/1153921/62798924-570e6c80-ba94-1
 
 ## Custom dashboards
 
-For information on creating custom dashboards from scratch, see the [custom dashboards](/docs/agent/web/gui/custom) or
-[Atlassian Confluence dashboards](/docs/agent/web/gui/confluence) guides.
+For information on creating custom dashboards from scratch, see the [custom dashboards](agent/web/gui/custom.md) or
+[Atlassian Confluence dashboards](agent/web/gui/confluence.md) guides.
 
 

@@ -6,9 +6,9 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/instal
 
 
 Netdata works on macOS, albeit with some limitations. The number of charts displaying system metrics is limited, but you
-can use any of Netdata's [external plugins](/docs/agent/collectors/plugins.d) to monitor any services you might
+can use any of Netdata's [external plugins](agent/collectors/plugins.d.md) to monitor any services you might
 have installed on your macOS system. You could also use a macOS system as the master node in a [streaming
-configuration](/docs/agent/streaming).
+configuration](agent/streaming.md).
 
 We recommend installing Netdata with the community-created and -maintained [**Homebrew
 package**](#install-netdata-with-the-homebrew-package). 
@@ -54,7 +54,7 @@ to install some of Netdata's prerequisites.
 brew install ossp-uuid autoconf automake pkg-config libuv lz4 json-c openssl@1.1
 ```
 
-If you want to use the [database engine](/docs/agent/database/engine) to store your metrics, you need to download
+If you want to use the [database engine](agent/database/engine.md) to store your metrics, you need to download
 and install the [Judy library](https://sourceforge.net/projects/judy/) before proceeding compiling Netdata.
 
 Next, download Netdata from our GitHub repository:
@@ -77,8 +77,8 @@ sudo ./netdata-installer.sh --install /usr/local
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/agent/step-by-step/step-00)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](agent/step-by-step/step-00.md)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs.
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](/docs/agent/getting-started) for a quick overview.
+guide](agent/getting-started.md) for a quick overview.

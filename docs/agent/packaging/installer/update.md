@@ -42,7 +42,7 @@ bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 
 > ⚠️ If you installed Netdata with any optional parameters, such as `--no-updates` to disable automatic updates, and
 > want to retain those settings, you need to set them again during this process. See the [`kickstart.sh`
-> documentation](/docs/agent/packaging/installer/methods/kickstart#optional-parameters-to-alter-your-installation) for more information on these
+> documentation](agent/packaging/installer/methods/kickstart.md#optional-parameters-to-alter-your-installation) for more information on these
 > parameters and what they do.
 
 ## `.deb` or `.rpm` packages
@@ -77,7 +77,7 @@ bash <(curl -Ss https://my-netdata.io/kickstart-static64.sh)
 
 > ⚠️ If you installed Netdata with any optional parameters, such as `--no-updates` to disable automatic updates, and
 > want to retain those settings, you need to set them again during this process. See the [`kickstart-static64.sh`
-> documentation](/docs/agent/packaging/installer/methods/kickstart-64#optional-parameters-to-alter-your-installation) for more information on these
+> documentation](agent/packaging/installer/methods/kickstart-64.md#optional-parameters-to-alter-your-installation) for more information on these
 > parameters and what they do.
 
 ## Docker
@@ -94,7 +94,7 @@ docker pull netdata/netdata:latest
 
 Next, to stop and remove any containers using the `netdata/netdata` image. Replace `netdata` if you changed it from the
 default in our [Docker installation
-instructions](/docs/agent/packaging/docker#run-the-agent-with-the-docker-command).
+instructions](agent/packaging/docker.md#run-the-agent-with-the-docker-command).
 
 ```bash
 docker stop netdata
@@ -102,7 +102,7 @@ docker rm netdata
 ```
 
 You can now re-create your Netdata container using the `docker` command or a `docker-compose.yml` file. See our [Docker
-installation instructions](/docs/agent/packaging/docker#run-the-agent-with-the-docker-command) for details. For
+installation instructions](agent/packaging/docker.md#run-the-agent-with-the-docker-command) for details. For
 example, using the `docker` command:
 
 ```bash

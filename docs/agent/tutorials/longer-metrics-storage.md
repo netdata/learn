@@ -10,8 +10,8 @@ long term?
 
 Many people think Netdata can only store about an hour's worth of real-time metrics, but that's simply not true any
 more. With the right settings, Netdata is quite capable of efficiently storing hours or days worth of historical,
-per-second metrics without having to rely on a [backend](/docs/agent/backends) or [exporting
-connector](/docs/agent/exporting).
+per-second metrics without having to rely on a [backend](agent/backends.md) or [exporting
+connector](agent/exporting.md).
 
 This tutorial gives two options for configuring Netdata to store more metrics. **We recommend the default [database
 engine](#using-the-database-engine)**, but you can stick with or switch to the round-robin database if you prefer.
@@ -63,7 +63,7 @@ Based on our testing, these default settings will retain about a day's worth of 
 more historical metrics.
 
 But before you change these options too dramatically, read up on the [database engine's memory
-footprint](/docs/agent/database/engine#memory-requirements).
+footprint](agent/database/engine.md#memory-requirements).
 
 With the database engine active, you can back up your `/var/cache/netdata/dbengine/` folder to another location for
 redundancy.
@@ -156,9 +156,9 @@ Now that you have either configured database engine or round-robin database engi
 probably want to see it in action!
 
 For more information about how to pan charts to view historical metrics, see our documentation on [using
-charts](/docs/agent/web#using-charts).
+charts](agent/web.md#using-charts).
 
-And if you'd now like to reduce Netdata's resource usage, view our [performance guide](/docs/agent/performance) for
+And if you'd now like to reduce Netdata's resource usage, view our [performance guide](agent/performance.md) for
 our best practices on optimization.
 
 

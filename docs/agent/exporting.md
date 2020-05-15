@@ -1,14 +1,15 @@
 ---
-title: "Exporting metrics to external databases (experimental)"
+title: "Export metrics to external databases (experimental)"
+description: "With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/exporting/README.md
 ---
 
 
 
-The exporting engine is an update for the former [backends](/docs/agent/backends). It's still work in progress. It has a
+The exporting engine is an update for the former [backends](agent/backends.md). It's still work in progress. It has a
 modular structure and supports metric exporting via multiple exporting connector instances at the same time. You can
 have different update intervals and filters configured for every exporting connector instance. The exporting engine has
-its own configuration file `exporting.conf`. Configuration is almost similar to [backends](/docs/agent/backends#configuration).
+its own configuration file `exporting.conf`. Configuration is almost similar to [backends](agent/backends.md#configuration).
 The only difference is that the type of a connector should be specified in a section name before a colon and a name after
 the colon. At the moment only four types of connectors are supported: `graphite`, `json`, `opentsdb`, `opentsdb:http`.
 

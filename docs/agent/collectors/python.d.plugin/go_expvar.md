@@ -209,8 +209,8 @@ See [this issue](https://github.com/netdata/netdata/pull/1902#issuecomment-28449
 
 Please see these two links to the official Netdata documentation for more information about the values:
 
--   [External plugins - charts](/docs/agent/collectors/plugins.d#chart)
--   [Chart variables](/docs/agent/collectors/python.d.plugin#global-variables-order-and-chart)
+-   [External plugins - charts](agent/collectors/plugins.d.md#chart)
+-   [Chart variables](agent/collectors/python.d.plugin.md#global-variables-order-and-chart)
 
 **Line definitions**
 
@@ -233,7 +233,7 @@ hidden: False
 ```
 
 Please see the following link for more information about the options and their default values:
-[External plugins - dimensions](/docs/agent/collectors/plugins.d#dimension)
+[External plugins - dimensions](agent/collectors/plugins.d.md#dimension)
 
 Apart from top-level expvars, this plugin can also parse expvars stored in a multi-level map;
 All dicts in the resulting JSON document are then flattened to one level.
@@ -255,7 +255,7 @@ the first defined key wins and all subsequent keys with the same name are ignore
 ## Configuration
 
 Edit the `python.d/go_expvar.conf` configuration file using `edit-config` from the your agent's [config
-directory](/docs/agent/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](agent/step-by-step/step-04.md#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different

@@ -17,7 +17,7 @@ are starting at a fresh ubuntu shell (whether you'd like to follow along in a VM
 
 ### Installing Netdata
 
-There are number of ways to install Netdata according to [Installation](/docs/agent/packaging/installer). The suggested way
+There are number of ways to install Netdata according to [Installation](agent/packaging/installer.md). The suggested way
 of installing the latest Netdata and keep it upgrade automatically. Using one line installation:
 
 ```sh

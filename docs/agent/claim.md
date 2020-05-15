@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/claim/README.md
 
 Agent claiming allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud. A Space's
 administrator creates a **claiming token**, which is used to add an Agent to their Space via the [Agent-Cloud link
-(ACLK)](/docs/agent/aclk).
+(ACLK)](agent/aclk.md).
 
 Are you just starting out with Netdata Cloud? See our [get started with
 Cloud](/docs/cloud/get-started) guide for a walkthrough of the process and simplified
@@ -26,7 +26,7 @@ Netdata Cloud.
 > The claiming process ensures no third party can add your node, and then view your node's metrics, in a Cloud account,
 > Space, or War Room that you did not authorize.
 
-By claiming a node, you opt-in to sending data from your Agent to Netdata Cloud via the [ACLK](/docs/agent/aclk). This
+By claiming a node, you opt-in to sending data from your Agent to Netdata Cloud via the [ACLK](agent/aclk.md). This
 data is encrypted by TLS while it is in transit. We use the RSA keypair created during claiming to authenticate the
 identity of the Agent when it connects to the Cloud. While the data does flow through Netdata Cloud servers on its way
 from Agents to the browser, we do not store or log it.
@@ -101,7 +101,7 @@ you don't see the node in your Space after 60 seconds, see the [troubleshooting 
 
 Claim a newly-created container with `docker run ...`.
 
-In the example below, the last line calls the [daemon binary](/docs/agent/daemon), sets essential variables, and then
+In the example below, the last line calls the [daemon binary](agent/daemon.md), sets essential variables, and then
 executes claiming using the information after `-W "claim... `. You should copy the relevant token, rooms, and URL from
 Cloud.
 
@@ -172,7 +172,7 @@ you don't see the node in your Space after 60 seconds, see the [troubleshooting 
 
 ### Troubleshooting
 
-If you're having trouble claiming a node, this may be because the [ACLK](/docs/agent/aclk) cannot connect to Cloud.
+If you're having trouble claiming a node, this may be because the [ACLK](agent/aclk.md) cannot connect to Cloud.
 
 With the Netdata Agent running, visit `http://NODE:19999/api/v1/info` in your browser, replacing `NODE` with the IP
 address or hostname of your Agent. The returned JSON contains four keys that will be helpful to diagnose any issues you
@@ -198,7 +198,7 @@ Additionally, check that the `enabled` setting in `var/lib/netdata/cloud.d/cloud
     enabled = true
 ```
 
-To fix this issue, reinstall Netdata using your [preferred method](/docs/agent/packaging/installer) and do not add the
+To fix this issue, reinstall Netdata using your [preferred method](agent/packaging/installer.md) and do not add the
 `--disable-cloud` option.
 
 #### cloud-available is false
@@ -291,12 +291,12 @@ tool, and details about the files found in `cloud.d`.
 ### The `cloud.conf` file
 
 This section defines how and whether your Agent connects to [Netdata Cloud](/docs/cloud/)
-using the [ACLK](/docs/agent/aclk).
+using the [ACLK](agent/aclk.md).
 
 | setting        | default                   | info                                                                                                                                   |
 |:-------------- |:------------------------- |:-------------------------------------------------------------------------------------------------------------------------------------- |
 | cloud base url | https://app.netdata.cloud | The URL for the Netdata Cloud web application. You should not change this. If you want to disable Cloud, change the `enabled` setting. |
-| enabled        | yes                       | The runtime option to disable the [Agent-Cloud link](/docs/agent/aclk) and prevent your Agent from connecting to Netdata Cloud.         |
+| enabled        | yes                       | The runtime option to disable the [Agent-Cloud link](agent/aclk.md) and prevent your Agent from connecting to Netdata Cloud.         |
 
 ### Claiming script
 

@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/streaming/README
 
 Each Netdata is able to replicate/mirror its database to another Netdata, by streaming collected
 metrics, in real-time to it. This is quite different to [data archiving to third party time-series
-databases](/docs/agent/backends).
+databases](agent/backends.md).
 
 When Netdata streams metrics to another Netdata, the receiving one is able to perform everything a Netdata instance is capable of:
 
@@ -28,7 +28,7 @@ Alarms for the `slave` are served by the `master`.
 
 In this mode the `slave` is just a plain data collector. It spawns all external plugins, but instead
 of maintaining a local database and accepting dashboard requests, it streams all metrics to the
-`master`. The memory footprint is reduced significantly, to between 6 MiB and 40 MiB, depending on the enabled plugins. To reduce the memory usage as much as possible, refer to [running Netdata in embedded devices](/docs/agent/performance#running-netdata-in-embedded-devices).
+`master`. The memory footprint is reduced significantly, to between 6 MiB and 40 MiB, depending on the enabled plugins. To reduce the memory usage as much as possible, refer to [running Netdata in embedded devices](agent/performance.md#running-netdata-in-embedded-devices).
 
 The same `master` can collect data for any number of `slaves`.
 
@@ -184,7 +184,7 @@ You can also use `default memory mode = dbengine` for an API key or `memory mode
 
 ##### allow from
 
-`allow from` settings are [Netdata simple patterns](/docs/agent/libnetdata/simple_pattern): string matches
+`allow from` settings are [Netdata simple patterns](agent/libnetdata/simple_pattern.md): string matches
 that use `*` as wildcard (any number of times) and a `!` prefix for a negative match.
 So: `allow from = !10.1.2.3 10.*` will allow all IPs in `10.*` except `10.1.2.3`. The order is
 important: left to right, the first positive or negative match is used.
@@ -219,7 +219,7 @@ For Netdata v1.9+, streaming can also be monitored via `access.log`.
 
 ### Securing streaming communications
 
-Netdata does not activate TLS encryption by default. To encrypt streaming connections, you first need to [enable TLS support](/docs/agent/web/server#enabling-tls-support) on the master. With encryption enabled on the receiving side, you need to instruct the slave to use TLS/SSL as well. On the slave's `stream.conf`, configure the destination as follows:
+Netdata does not activate TLS encryption by default. To encrypt streaming connections, you first need to [enable TLS support](agent/web/server.md#enabling-tls-support) on the master. With encryption enabled on the receiving side, you need to instruct the slave to use TLS/SSL as well. On the slave's `stream.conf`, configure the destination as follows:
 
 ```
 [stream]
@@ -484,7 +484,7 @@ The `master` Netdata node can also archive metrics, for all `slaves`, to a time-
 -   json document DBs
 -   all the compatibles to the above (e.g. kairosdb, influxdb, etc)
 
-Check the Netdata [backends documentation](/docs/agent/backends) for configuring this.
+Check the Netdata [backends documentation](agent/backends.md) for configuring this.
 
 This is how such a solution will work:
 
@@ -579,7 +579,7 @@ ERROR : STREAM_SENDER[SLAVE HOSTNAME] : STREAM SLAVE HOSTNAME [send to MASTER HO
 Chart data needs to be consistent between slave and master agents. If there are differences between chart data on a
 master and a slave, such as gaps in metrics collection, it most often means your slave's `memory mode` does not match
 the master's. To learn more about the different ways Netdata can store metrics, and thus keep chart data consistent,
-read our [memory mode documentation](/docs/agent/database).
+read our [memory mode documentation](agent/database.md).
 
 ### Forbidding access
 

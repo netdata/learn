@@ -9,7 +9,7 @@ In this getting started guide, you'll learn the basics of editing health configu
 will be able to customize how and when Netdata triggers alarms based on the health and performance of your system or
 infrastructure.
 
-To learn about more advanced health configurations, visit the [health reference guide](/docs/agent/health/reference).
+To learn about more advanced health configurations, visit the [health reference guide](agent/health/reference.md).
 
 ## What's in this getting started guide
 
@@ -35,7 +35,7 @@ cd /etc/netdata/ # Replace with your Netdata configuration directory, if not /et
 > You may need to use `sudo` or another method of elevating your privileges: `sudo ./edit-config health.d/cpu.conf`.
 >
 > You can also use the `$EDITOR` environment variable to use your preferred terminal editor with `edit-config`. See 
-> [this page](/docs/agent/step-by-step/step-04#use-edit-config-to-open-netdataconf) for details.
+> [this page](agent/step-by-step/step-04.md#use-edit-config-to-open-netdataconf) for details.
 
 Each health configuration file contains one or more health entities, which always begin with an `alarm:` or `template:`
 line. You can edit these entities based on your needs. To make any changes live, be sure to [reload your health
@@ -136,11 +136,11 @@ killall -USR2 netdata
 
 ## What's next?
 
-To learn about all of Netdata's health configuration options, view the [reference guide](/docs/agent/health/reference).
+To learn about all of Netdata's health configuration options, view the [reference guide](agent/health/reference.md).
 
-Or, get guided insights into specific health configurations with our [health tutorials](/docs/agent/health#tutorials).
+Or, get guided insights into specific health configurations with our [health tutorials](agent/health.md#tutorials).
 
-Finally, move on to Netdata's [notification system](/docs/agent/health/notifications) to learn more about how Netdata can
+Finally, move on to Netdata's [notification system](agent/health/notifications.md) to learn more about how Netdata can
 let you know when the health of your systems or apps goes awry.
 
 

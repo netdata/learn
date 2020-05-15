@@ -9,22 +9,22 @@ Your ability to monitor the health of your systems and applications relies on yo
 the best set of alarms for your particular needs.
 
 In v1.18 of Netdata, we introduced **dimension templates** for alarms, which simplifies the process of writing [alarm
-entities](/docs/agent/health/reference#health-entity-reference) for charts with many dimensions.
+entities](agent/health/reference.md#health-entity-reference) for charts with many dimensions.
 
 Dimension templates can condense many individual entities into one—no more copy-pasting one entity and changing the
 `alarm`/`template` and `lookup` lines for each dimension you'd like to monitor.
 
 They are, however, an advanced health monitoring feature. For more basic instructions on creating your first alarm,
-check out our [health monitoring documentation](/docs/agent/health/tutorials/..), which also includes
-[examples](/docs/agent/health/reference#example-alarms).
+check out our [health monitoring documentation](agent/health/tutorials/...md), which also includes
+[examples](agent/health/reference.md#example-alarms).
 
 ## The fundamentals of `foreach`
 
 Our dimension templates update creates a new `foreach` parameter to the existing [`lookup`
-line](/docs/agent/health/reference#alarm-line-lookup). This is where the magic happens.
+line](agent/health/reference.md#alarm-line-lookup). This is where the magic happens.
 
 You use the `foreach` parameter to specify which dimensions you want to monitor with this single alarm. You can separate
-them with a comma (`,`) or a pipe (`|`). You can also use a [Netdata simple pattern](/docs/agent/libnetdata/simple_pattern)
+them with a comma (`,`) or a pipe (`|`). You can also use a [Netdata simple pattern](agent/libnetdata/simple_pattern.md)
 to create many alarms with a regex-like syntax.
 
 The `foreach` parameter _has_ to be the last parameter in your `lookup` line, and if you have both `of` and `foreach` in
@@ -95,7 +95,7 @@ Let's look at some other examples of how `foreach` works so you can best apply i
 In the last example, we used `foreach system,user,nice` to create three distinct alarms using dimension templates. But
 what if you want to quickly create alarms for _all_ the dimensions of a given chart? 
 
-Use a [simple pattern](/docs/agent/libnetdata/simple_pattern)! One example of a simple pattern is a single wildcard
+Use a [simple pattern](agent/libnetdata/simple_pattern.md)! One example of a simple pattern is a single wildcard
 (`*`).
 
 Instead of monitoring system CPU usage, let's monitor per-application CPU usage using the `apps.cpu` chart. Passing a
@@ -114,11 +114,11 @@ This entity will now create alarms for every dimension in the `apps.cpu` chart. 
 10 or more dimensions, using the wildcard ensures you catch every CPU-hogging process.
 
 To learn more about how to use simple patterns with dimension templates, see our [simple patterns
-documentation](/docs/agent/libnetdata/simple_pattern).
+documentation](agent/libnetdata/simple_pattern.md).
 
 ## Using `foreach` with alarm templates
 
-Dimension templates also work with [alarm templates](/docs/agent/health/reference#alarm-line-alarm-or-template). Alarm
+Dimension templates also work with [alarm templates](agent/health/reference.md#alarm-line-alarm-or-template). Alarm
 templates help you create alarms for all the charts with a given context—for example, all the cores of your system's
 CPU.
 
@@ -171,6 +171,6 @@ alarms that will help you better monitor the health of your systems.
 Or, at the very least, simplify your configuration files.
 
 For information about other advanced features in Netdata's health monitoring toolkit, check out our [health
-documentation](/docs/agent/health/). And if you have some cool alarms you built using dimension templates, 
+documentation](agent/health/). And if you have some cool alarms you built using dimension templates, 
 
 

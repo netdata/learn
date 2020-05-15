@@ -214,8 +214,8 @@ In most cases, you can do this by running `CC=gcc ./netdata-installer.sh`.
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/agent/step-by-step/step-00)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](agent/step-by-step/step-00.md)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs.
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](/docs/agent/getting-started) for a quick overview.
+guide](agent/getting-started.md) for a quick overview.
