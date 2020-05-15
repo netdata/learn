@@ -35,3 +35,7 @@
 [[redirects]]
   from = "/docs/agent/netdata-cloud/*"
   to = "/docs/cloud/"
+
+[[redirects]]
+  from = "/docs/dbengine-calc"
+  to = "/docs/agent/database/calculator"
