@@ -37,5 +37,5 @@
   to = "/docs/cloud/"
 
 [[redirects]]
-  from = "/docs/dbengine-calc"
+  from = "dbengine-calc"
   to = "/docs/agent/database/calculator"
