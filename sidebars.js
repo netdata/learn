@@ -114,8 +114,6 @@ module.exports = {
             'agent/running-behind-haproxy'
           ]
         },
-        'agent/database',
-        'agent/database/engine',
         'agent/claim',
         'agent/aclk',
         'agent/registry',
@@ -337,6 +335,16 @@ module.exports = {
             'agent/collectors/slabinfo.plugin',
           ]
         },
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Storing metrics',
+      items: [
+        'agent/database',
+        'agent/database/engine',
+        'agent/tutorials/longer-metrics-storage',
+        'agent/database/calculator',
       ]
     },
     {

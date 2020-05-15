@@ -18,7 +18,8 @@ const outDir = path.join(__dirname, agentDir)
 // necessary to keep local docs that are not fetched from other repos
 const retainPaths = [
   path.join(baseDir, 'agent.mdx'),
-  path.join(baseDir, 'cloud.mdx')
+  path.join(baseDir, 'cloud.mdx'),
+  path.join(baseDir, 'agent/database/calculator.mdx'),
 ]
 
 const ax = axios.create({

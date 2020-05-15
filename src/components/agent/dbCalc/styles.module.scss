@@ -3,24 +3,13 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  position: relative;
-  overflow: hidden;
-
-  margin-bottom: 2rem;
-  padding: 4rem 0 0rem;
-}
-
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    margin-bottom: 0;
-    padding: 2rem;
-  }
+.container {
+  max-width: 1600px;
 }
 
 .dbCalc {
   align-items: center;
-
+  margin-top: 4rem;
   margin-bottom: 4rem;
 }
 
@@ -94,6 +83,8 @@
 }
 
 .calcResults {
+  margin-top: 2rem;
+  
   font-size: 116%;
 }
 
@@ -107,13 +98,11 @@
   font-size: 1rem;
 }
 
-pre[class*='codeBlock'] {
-  margin-bottom: 2rem;
-
-  font-size: 0.9rem;
+div[class^='codeBlockContent'] {
+  margin-bottom: var(--ifm-paragraph-margin-bottom);
 }
 
-pre[class*='codeBlock'] button {
+div[class^='codeBlockContent'] button {
   display: none !important;
 }
 
