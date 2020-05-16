@@ -16,7 +16,7 @@ export function Calculator() {
     pageSize: 32,
   })
 
-  const [finalDisk, setFinalDisk] = React.useState('')
+  const [diskSetting, setFinalDisk] = React.useState('')
   const [finalRAM, setFinalRAM] = React.useState('')
   const [conf, setConf] = React.useState('')
 
@@ -30,16 +30,17 @@ export function Calculator() {
     const pageSize = uncompressedPageSize / 1024 / 1024
     const uncompressedStorage = maxPages * pageSize
     const requiredDisk = uncompressedStorage * ( 1 - (state.compression / 100))
+    const diskSetting = requiredDisk / ( nodes )
     const cacheRAM = state.pageSize * nodes
     const dimPages = totalDims * uncompressedPageSize * 2 / 1024 / 1024
     const metadata = uncompressedStorage * 0.03
     const requiredRAM = cacheRAM + dimPages + metadata
 
-    setFinalDisk(Math.round(requiredDisk))
+    setFinalDisk(Math.round(diskSetting))
     setFinalRAM(Math.round(requiredRAM))
 
     const confString = String.raw`[global]
-    dbengine disk space = ${Math.round(requiredDisk)}`
+    dbengine disk space = ${Math.round(diskSetting)}`
     setConf(confString)
 
   });
@@ -129,7 +130,7 @@ export function Calculator() {
 
       <div className={classnames("col col--12", styles.calcResults)}>
 
-        <p>With the current settings, the Netdata Agent will use <code>{finalDisk} MiB</code> in disk space to store your metrics for <strong>{state.retention} days</strong>.</p>
+        <p>With the current settings, the Netdata Agent will use <code>{diskSetting} MiB</code> in disk space to store your metrics for <strong>{state.retention} days</strong>.</p>
         <p>You should edit your <code>netdata.conf</code> file to change the <code>dbengine disk space</code> setting:</p>
         <CodeBlock className={classnames('conf')} language='conf'>{conf}</CodeBlock>
         <p>The database engine will also use {finalRAM} MiB of system memory, on top of the memory needed to run the rest of the Agent's collection, visualization, and alerting features.</p>
