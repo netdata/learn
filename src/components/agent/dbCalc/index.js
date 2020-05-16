@@ -16,7 +16,8 @@ export function Calculator() {
     pageSize: 32,
   })
 
-  const [diskSetting, setFinalDisk] = React.useState('')
+  const [totalDisk, setTotalDisk ] = React.useState('')
+  const [diskSetting, setDiskSetting] = React.useState('')
   const [finalRAM, setFinalRAM] = React.useState('')
   const [conf, setConf] = React.useState('')
 
@@ -36,7 +37,8 @@ export function Calculator() {
     const metadata = uncompressedStorage * 0.03
     const requiredRAM = cacheRAM + dimPages + metadata
 
-    setFinalDisk(Math.round(diskSetting))
+    setTotalDisk(Math.round(requiredDisk))
+    setDiskSetting(Math.round(diskSetting))
     setFinalRAM(Math.round(requiredRAM))
 
     const confString = String.raw`[global]
@@ -130,7 +132,7 @@ export function Calculator() {
 
       <div className={classnames("col col--12", styles.calcResults)}>
 
-        <p>With the current settings, the Netdata Agent will use <code>{diskSetting} MiB</code> in disk space to store your metrics for <strong>{state.retention} days</strong>.</p>
+        <p>With the current settings, the Netdata Agent will use <code>{totalDisk} MiB</code> in disk space to store your metrics for <strong>{state.retention} days</strong>.</p>
         <p>You should edit your <code>netdata.conf</code> file to change the <code>dbengine disk space</code> setting:</p>
         <CodeBlock className={classnames('conf')} language='conf'>{conf}</CodeBlock>
         <p>The database engine will also use {finalRAM} MiB of system memory, on top of the memory needed to run the rest of the Agent's collection, visualization, and alerting features.</p>
