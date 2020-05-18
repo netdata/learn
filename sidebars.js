@@ -419,7 +419,10 @@ module.exports = {
         'agent/exporting/aws_kinesis',
         'agent/exporting/pubsub',
         'agent/exporting/mongodb',
+        'agent/exporting/opentsdb',
+        'agent/exporting/prometheus',
         'agent/exporting/prometheus/remote_write',
+        'agent/exporting/timescale'
       ],
     },
     {
