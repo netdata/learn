@@ -72,6 +72,7 @@ html {
 
   /* Etc */
   --ifm-global-radius: 2px;
+  --ifm-contents-border-color: var(--ifm-color-emphasis-300);
 
   /* Navbar */
   --ifm-navbar-padding-horizontal: 2rem;
@@ -463,10 +464,12 @@ html[data-theme='dark'] code {
 }
 
 .hash-link {
+  position: absolute;
+  margin-top: 0.35rem;
   margin-left: -1.75rem;
   padding-right: 1.75rem;
+
   font-size: 1.4rem;
-  margin-top: 0.35rem;
 }
 
 // Installation page
@@ -522,7 +525,7 @@ html[data-theme='dark'] code {
  * Tabs
 */
 
-.tabs > .tab-item {
+.tabs > .tabs__item {
   border-top: 1px solid var(--ifm-color-primary);
   border-right: 1px solid var(--ifm-color-primary);
   border-left: 1px solid var(--ifm-color-primary);
@@ -530,17 +533,17 @@ html[data-theme='dark'] code {
   border-radius: 0;
 }
 
-.tabs > .tab-item:first-of-type {
+.tabs > .tabs__item:first-of-type {
   border-top-left-radius: var(--ifm-global-radius);
   border-top-right-radius: 0px;
 }
 
-.tabs > .tab-item:last-of-type {
+.tabs > .tabs__item:last-of-type {
   border-top-left-radius: 0px;
   border-top-right-radius: var(--ifm-global-radius);
 }
 
-.tabs > .tab-item.tab-item--active {
+.tabs > .tabs__item.tabs__item--active {
   color: white;
 
   background: var(--ifm-color-primary);
