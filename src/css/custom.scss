@@ -463,10 +463,12 @@ html[data-theme='dark'] code {
 }
 
 .hash-link {
+  position: absolute;
+  margin-top: 0.35rem;
   margin-left: -1.75rem;
   padding-right: 1.75rem;
+
   font-size: 1.4rem;
-  margin-top: 0.35rem;
 }
 
 // Installation page
