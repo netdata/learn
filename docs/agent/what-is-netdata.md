@@ -355,7 +355,7 @@ write a collector for your custom application using our [plugin API](/docs/agent
 
 ## Documentation
 
-The Netdata documentation is at <https://docs.netdata.cloud>, but you can also find each page inside of Netdata's
+The Netdata documentation is at <https://learn.netdata.cloud>, but you can also find each page inside of Netdata's
 repository itself in Markdown (`.md`) files. You can find all our documentation by navigating the repository.
 
 Here is a quick list of notable documents:
@@ -392,7 +392,7 @@ You can also find Netdata on:
 
 ## License
 
-Netdata is [GPLv3+](/docs/agent/license).
+Netdata is [GPLv3+](https://github.com/netdata/netdata/blob/master/LICENSE).
 
 Netdata re-distributes other open-source tools and libraries. Please check the [third party licenses](/docs/agent/redistributed).
 
