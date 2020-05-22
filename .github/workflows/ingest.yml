@@ -1,0 +1,42 @@
+name: Ingest
+on:
+  schedule:
+    - cron:  '5 * * * *'
+
+jobs:
+  ingest:
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js 12
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+
+    - run: npm install
+
+    - run: node ingest.js
+     
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Ingest new documentation" -a
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ingest
+    
+    - name: Initialize pull request
+      uses: gha-utilities/init-pull-request@v0.1.7
+      with:
+        verbose: true
+        pull_request_token: ${{ secrets.GITHUB_TOKEN }}
+        head: ingest
+        base: master
+        title: 'Ingest new documentation from Agent repo'
+        body: >
+          This is an automated process to ingest new documentation from the Agent repo.
