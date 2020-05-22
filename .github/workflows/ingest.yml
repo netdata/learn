@@ -12,7 +12,6 @@ jobs:
       with:
         token: ${{ secrets.INGEST_TOKEN }}
         fetch-depth: 0
-        ref: ingest
 
     - name: Use Node.js 12
       uses: actions/setup-node@v1
