@@ -32,7 +32,7 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.INGEST_TOKEN }}
         branch: ingest
     
     - name: Create pull request
