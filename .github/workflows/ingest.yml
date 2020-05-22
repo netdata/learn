@@ -24,18 +24,14 @@ jobs:
     - run: node ingest.js
       env:
         GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN }}
-     
-    - name: Commit files
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add --all
-        git commit -m "Ingest new documentation" -a
     
     - name: Create pull request
       uses: peter-evans/create-pull-request@v2
       with:
         token: ${{ secrets.INGEST_TOKEN }}
+        commit-message: Ingest new documentation
+        committer: GitHub <noreply@github.com>
+        author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
         title: 'Ingest new documentation'
         body: |
           - Ingest new documentation
@@ -44,3 +40,6 @@ jobs:
 
           [1]: https://github.com/peter-evans/create-pull-request:  
         branch: ingest
+        labels: ingest, automation
+        assignees: joelhans
+        reviewers: joelhans
