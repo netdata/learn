@@ -16,12 +16,19 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 12
+        
+    - name: Create ingest branch
+      uses: peterjgrainger/action-create-branch@v1.0.0
+      env: 
+        GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN }}
+      with:
+        branch: ingest
 
     - run: npm install
 
     - run: node ingest.js
       env:
-        GITHUB_TOKEN: ${{secrets.INGEST_TOKEN}}
+        GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN }}
      
     - name: Commit files
       run: |
