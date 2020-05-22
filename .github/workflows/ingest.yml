@@ -31,7 +31,6 @@ jobs:
         git config --local user.name "GitHub Action"
         git add --all
         git commit -m "Ingest new documentation" -a
-        git push origin ingest
     
     - name: Create pull request
       uses: peter-evans/create-pull-request@v2
