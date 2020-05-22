@@ -21,7 +21,7 @@ jobs:
 
     - run: node ingest.js
       env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        GITHUB_TOKEN: ${{secrets.INGEST_TOKEN}}
      
     - name: Commit files
       run: |
@@ -38,7 +38,7 @@ jobs:
     - name: Create pull request
       uses: peter-evans/create-pull-request@v2
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.INGEST_TOKEN }}
         title: 'Ingest new documentation'
         body: |
           - Ingest new documentation
