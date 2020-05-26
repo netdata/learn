@@ -413,16 +413,16 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Archiving to backends',
+      label: 'Export metrics',
       items: [
-        'agent/backends',
-        'agent/backends/timescale',
-        'agent/backends/walkthrough',
-        'agent/backends/aws_kinesis',
-        'agent/backends/mongodb',
-        'agent/backends/opentsdb',
-        'agent/backends/prometheus',
-        'agent/backends/prometheus/remote_write',
+        'agent/exporting',
+        'agent/exporting/aws_kinesis',
+        'agent/exporting/pubsub',
+        'agent/exporting/mongodb',
+        'agent/exporting/opentsdb',
+        'agent/exporting/prometheus',
+        'agent/exporting/prometheus/remote_write',
+        'agent/exporting/timescale'
       ],
     },
     {
