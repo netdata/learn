@@ -29,8 +29,6 @@ jobs:
       with:
         token: ${{ secrets.INGEST_TOKEN }}
         commit-message: Ingest new documentation
-        committer: GitHub <noreply@github.com>
-        author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
         title: 'Ingest new documentation'
         body: |
           - Ingest new documentation
