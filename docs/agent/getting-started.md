@@ -65,8 +65,9 @@ configuration keeps RAM usage low while allowing for long-term, on-disk metrics 
 You can tweak this custom _database engine_ to store a much larger dataset than your system's available RAM,
 particularly if you allow Netdata to use slightly more RAM and disk space than the default configuration.
 
-Read our tutorial, [**Changing how long Netdata stores metrics**](agent/tutorials/longer-metrics-storage.md), to learn
-more.
+Read our guide on [changing how long Netdata stores metrics](agent/tutorials/longer-metrics-storage.md) to learn more
+and use our [database engine calculator](/docs/agent/database/calculator) to figure
+out the exact settings you'll need to store historical metrics right in the Agent's database.
 
 **What's next?**:
 
@@ -240,7 +241,7 @@ Netdata.
 Take a look at some more advanced features and configurations:
 
 -   Centralize Netdata metrics from many systems with [streaming](agent/streaming.md)
--   Enable long-term archiving of Netdata metrics via [backends](agent/backends.md) to time-series databases.
+-   Enable long-term archiving of Netdata metrics via [exporting engine](agent/exporting.md) to time-series databases.
 -   Improve security by putting Netdata behind an [Nginx proxy with SSL](agent/running-behind-nginx.md).
 
 Or, learn more about how you can contribute to [Netdata core](agent/contributing.md) or our

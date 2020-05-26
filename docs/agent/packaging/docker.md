@@ -34,9 +34,10 @@ documentation](https://docs.docker.com/engine/reference/builder/#understand-how-
 
 ### Package scrambling in runtime (x86_64 only)
 
-Our x86_64 Docker images use [Polymorphic Polyverse Linux package scrambling](https://polyverse.io/how-it-works/). For
-increased security, you can enable rescrambling of Netdata packages during runtime by setting the environment variable
-`RESCRAMBLE=true` while starting Netdata with a Docker container.
+Our x86_64 Docker images provide support for using [Polymorphic Polyverse
+Linux package scrambling](https://polyverse.io/how-it-works/) to protect
+against buffer overflow errors. To activate this, set the environemnt
+variable `RESCRAMBLE=true` while starting Netdata with a Docker container.
 
 ## Run the Agent with the Docker command
 
@@ -204,8 +205,9 @@ services:
 ### Pass command line options to Netdata
 
 Since we use an [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) directive, you can provide
-[Netdata daemon command line options](https://docs.netdata.cloud/daemon/#command-line-options) such as the IP address
-Netdata will be running on, using the [command instruction](https://docs.docker.com/engine/reference/builder/#cmd). 
+[Netdata daemon command line options](/docs/agent/daemon/#command-line-options) such as the
+IP address Netdata will be running on, using the [command
+instruction](https://docs.docker.com/engine/reference/builder/#cmd). 
 
 ## Install the Agent using Docker Compose with SSL/TLS enabled HTTP Proxy
 
