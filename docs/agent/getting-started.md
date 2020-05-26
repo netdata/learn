@@ -241,7 +241,7 @@ Netdata.
 Take a look at some more advanced features and configurations:
 
 -   Centralize Netdata metrics from many systems with [streaming](/docs/agent/streaming)
--   Enable long-term archiving of Netdata metrics via [backends](/docs/agent/backends) to time-series databases.
+-   Enable long-term archiving of Netdata metrics via [exporting engine](/docs/agent/exporting) to time-series databases.
 -   Improve security by putting Netdata behind an [Nginx proxy with SSL](/docs/agent/running-behind-nginx).
 
 Or, learn more about how you can contribute to [Netdata core](/docs/agent/contributing) or our
