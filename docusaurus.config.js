@@ -69,7 +69,7 @@ module.exports = {
           position: 'left'
         },
         {
-          href: 'https://blog.netdata.cloud',
+          href: 'https://netdata.cloud/blog',
           label: 'Blog',
           position: 'right',
         },
@@ -104,8 +104,12 @@ module.exports = {
               to: 'docs/cloud',
             },
             {
-              label: 'Netdata Blog',
-              to: 'https://blog.netdata.cloud',
+              label: 'Blog',
+              href: 'https://netdata.cloud/blog',
+            },
+            {
+              label: 'Status',
+              href: 'https://status.netdata.cloud',
             },
           ],
         },
