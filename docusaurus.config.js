@@ -22,9 +22,6 @@ module.exports = {
     ],
   ],
   plugins: [
-    '@docusaurus/plugin-sitemap'
-  ],
-  plugins: [
     '@docusaurus/plugin-sitemap',
     'docusaurus-plugin-sass',
     '@docusaurus/theme-search-algolia'
