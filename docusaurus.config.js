@@ -22,18 +22,11 @@ module.exports = {
     ],
   ],
   plugins: [
-    '@docusaurus/plugin-sitemap'
-  ],
-  plugins: [
-    '@docusaurus/plugin-sitemap',
-    'docusaurus-plugin-sass',
-    '@docusaurus/theme-search-algolia'
+    require.resolve('@docusaurus/plugin-sitemap'),
+    require.resolve('docusaurus-plugin-sass'),
   ],
   stylesheets: [
     'https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,500&display=swap',
-  ],
-  themes: [
-    '@docusaurus/theme-search-algolia'
   ],
   themeConfig: {
     googleAnalytics: {
