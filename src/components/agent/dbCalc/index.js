@@ -131,7 +131,7 @@ export function Calculator() {
         <CodeBlock className={classnames('conf')} language='conf'>{conf}</CodeBlock>
         <p>Restart your Agent for the setting to take effect.</p>
         {state.slaves > 0 ? (
-          <p>Your Agent now stores metrics for {state.master + state.slaves} nodes (one master and {state.slaves} slaves) for {state.retention} day{state.retention > 1 && <span>s</span>}. The Agent requires a total of <code>{totalDisk} MiB</code> in disk space on the master node after allocating <code>{diskSetting} MiB</code> to each node (<code>{diskSetting} MiB * 1 master * {state.slaves} slaves = {totalDisk} MiB</code>). See the <Link href="/docs/agent/database/engine">dbengine documentation</Link> for details on how the Agent allocates database engine instances.</p>
+          <p>Your Agent now stores metrics for {state.master + state.slaves} nodes (one master and {state.slaves} slave{state.slaves > 1 && <span>s</span>}) for {state.retention} day{state.retention > 1 && <span>s</span>}. The Agent needs a total disk space larger than the number you set with <code>dbengine disk space</code> because each node uses its own instance of the database engine&mdash;in this case, a total of <code>{totalDisk} MiB</code> in disk space on the master node after allocating <code>{diskSetting} MiB</code> to each node (<code>{diskSetting} MiB * 1 master * {state.slaves} slaves = {totalDisk} MiB</code>). See the <Link href="/docs/agent/database/engine">dbengine documentation</Link> for details on how the Agent allocates database engine instances.</p>
         ) : (
           <p>Your Agent now stores metrics for {state.retention} day{state.retention > 1 && <span>s</span>} using a total of <code>{totalDisk} MiB</code> in disk space.</p>
         )}
