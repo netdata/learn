@@ -467,6 +467,9 @@ html[data-theme='dark'] code {
   }
 
   img {
+    display: block;
+    margin: calc(var(--ifm-paragraph-margin-bottom) * 1.5) auto;
+
     border-radius: var(--ifm-global-radius);
     box-shadow: var(--ifm-global-shadow-md);
   }

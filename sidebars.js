@@ -526,6 +526,14 @@ module.exports = {
     'cloud/organize',
     'cloud/monitor',
     'cloud/collaborate',
+    {
+      type: 'category',
+      label: 'Manage',
+      items: [
+        'cloud/manage/sign-in',
+        'cloud/collaborate/invite-your-team',
+      ]
+    },
     'cloud/faq-glossary'
   ]
 };

@@ -1,6 +1,7 @@
 ---
-title: Organize
+title: Organize your Netdata Cloud
 description: Organize your infrastructure monitoring on Netdata Cloud by creating Spaces and War Rooms, then grouping your Agent-monitored nodes.
+sidebar_label: Organize
 custom_edit_url: null
 ---
 
@@ -90,4 +91,4 @@ to open the configuration panel.
 ## What's next?
 
 Once you've figured out an organizational structure that works for your team, learn more about how you can use Netdata
-Cloud to [monitor any number of distributed nodes](/docs/cloud/monitor/) in real time.
+Cloud to [monitor any number of distributed nodes](/docs/cloud/monitor) in real time.
