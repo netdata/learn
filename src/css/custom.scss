@@ -299,6 +299,14 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
 }
 
 /**
+ * Table of contents
+ */
+
+.table-of-contents__link code {
+  padding: 0rem 0.2rem;
+}
+
+/**
  * Footer 
  */
 
@@ -453,7 +461,8 @@ html[data-theme='dark'] code {
     font-size: 75%;
   }
 
-  p code {
+  p code,
+  li code {
     font-size: 80%;
   }
 
