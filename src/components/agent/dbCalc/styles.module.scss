@@ -83,9 +83,14 @@
 }
 
 .calcResults {
-  margin-top: 2rem;
+  margin-top: 3rem;
   
   font-size: 116%;
+
+  p code {
+    font-size: 1rem;
+  }
+
 }
 
 @media screen and (max-width: 996px) {
@@ -94,17 +99,49 @@
   }
 }
 
-.calcResults p code {
-  font-size: 1rem;
+.calcFinal {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+
+  p {
+    flex: 0 0 100%;
+
+    font-size: 120%;
+  }
+
+  span {
+    flex: 0 0 50%;
+  }
 }
 
-div[class^='codeBlockContent'] {
-  margin-bottom: var(--ifm-paragraph-margin-bottom);
+.calcConfig {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+
+  div[class^='codeBlockContent'] {
+    margin-bottom: var(--ifm-paragraph-margin-bottom);
+  }
+
+  div[class^='codeBlockContent'] button {
+    display: none !important;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
-div[class^='codeBlockContent'] button {
-  display: none !important;
+.calcNotes {
+  font-size: 80%;
 }
+
+
 
 /* 
  * Dark mode overrides
