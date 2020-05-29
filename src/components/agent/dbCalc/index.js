@@ -122,20 +122,43 @@ export function Calculator() {
 
       <div className={classnames("col col--12", styles.calcResults)}>
 
-        <p>Based on the current settings, you should edit the <code>netdata.conf</code> file&nbsp;
-          {state.slaves > 0 &&
-            <em>on your master node&nbsp;</em>
-          }
-          and change the <code>dbengine disk space</code> setting to the following:
-        </p>
-        <CodeBlock className={classnames('conf')} language='conf'>{conf}</CodeBlock>
-        <p>Restart your Agent for the setting to take effect.</p>
-        {state.slaves > 0 ? (
-          <p>Your Agent now stores metrics for {state.master + state.slaves} nodes (one master and {state.slaves} slave{state.slaves > 1 && <span>s</span>}) for {state.retention} day{state.retention > 1 && <span>s</span>}. The Agent needs a total disk space larger than the number you set with <code>dbengine disk space</code> because each node uses its own instance of the database engine&mdash;in this case, a total of <code>{totalDisk} MiB</code> in disk space on the master node after allocating <code>{diskSetting} MiB</code> to each node (<code>{diskSetting} MiB * 1 master * {state.slaves} slaves = {totalDisk} MiB</code>). See the <Link href="/docs/agent/database/engine">dbengine documentation</Link> for details on how the Agent allocates database engine instances.</p>
-        ) : (
-          <p>Your Agent now stores metrics for {state.retention} day{state.retention > 1 && <span>s</span>} using a total of <code>{totalDisk} MiB</code> in disk space.</p>
-        )}
-        <p>The database engine also uses roughly <code>{finalRAM} MiB</code> of system memory in addition to the memory required for collection, visualization, and alerting features.</p>
+        <div className={styles.calcFinal}>
+          <p>With the above configuration, you should allocate the following resources to metrics storage{state.slaves > 0 && <em>&nbsp;on your master node</em>}:</p>
+          <span>
+            <code>{totalDisk} MiB</code> in total disk space
+          </span>
+          <span>
+            <code>{finalRAM} MiB</code> in system memory
+          </span>
+        </div>
+
+        <div className={styles.calcConfig}>
+          <p>To enable this setup, edit the <code>netdata.conf</code> file&nbsp;
+            {state.slaves > 0 &&
+              <em>on your master node&nbsp;</em>
+            }
+            and change the <code>dbengine disk space</code> setting to the following:
+          </p>
+          <CodeBlock className={classnames('conf')} language='conf'>{conf}</CodeBlock>
+          <p>Restart your Agent for the setting to take effect.</p>
+          {state.slaves > 0 ? (
+            <p>Your Agent now stores metrics for {state.master + state.slaves} nodes (one master and {state.slaves} slave{state.slaves > 1 && <span>s</span>}) for {state.retention} day{state.retention !== 1 && <span>s</span>} using a total of <code>{totalDisk} MiB</code> in disk space.</p>
+          ) : (
+            <p>Your Agent now stores metrics for {state.retention} day{state.retention !== 1 && <span>s</span>} using a total of <code>{totalDisk} MiB</code> in disk space.</p>
+          )}
+        </div>
+
+        <div className={styles.calcNotes}>
+          <h3>Notes</h3>
+          {state.slaves > 0 && (
+            <>
+              <p>Your master node creates separate instances of the database engine for each of your slave nodes, and allocates <code>{diskSetting} MiB</code> to each of them. This is why you must allocate more total disk space than the <code>dbengine disk space</code> setting implies.</p>
+              <p><code>{diskSetting} MiB per instance * 1 master instance * {state.slaves} slave instance{state.slaves > 1 && <span>s</span>} = {totalDisk} MiB</code></p>
+              <p>See the <Link href="/docs/agent/database/engine">dbengine documentation</Link> for details on how the Agent allocates database engine instances.</p>
+            </>
+          )}
+          <p>The system memory figure above is <em>only for the database engine</em>, and it may be higher in real-world situations due to memory fragmentation. The Agent will require more memory for collection, visualization, and alerting features.</p>
+        </div>
 
       </div>
 
