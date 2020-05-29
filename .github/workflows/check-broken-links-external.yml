@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Run BLC on external links
-      run: npx broken-link-checker $WEBSITE_URL -rof --exclude-internal --requests=2 --exclude "netdata.cloud/" --exclude "https://www.linkedin.com/company/my-netdata.io/" --exclude "https://github.com/" --exclude "my-netdata.io" --exclude "http://localhost" --exclude "firehol.org" --exclude "circleci.com" --exclude "redis.io" --exclude "telegram.org" --exclude "t.me"
+      run: npx broken-link-checker $WEBSITE_URL -rof --exclude-internal --requests=2 --exclude "netdata.cloud/" --exclude "pi-hole.net" --exclude "https://www.linkedin.com/company/my-netdata.io/" --exclude "https://github.com/" --exclude "my-netdata.io" --exclude "http://localhost" --exclude "firehol.org" --exclude "circleci.com" --exclude "redis.io" --exclude "telegram.org" --exclude "t.me"
 
     - uses: actions/checkout@v2
       if: failure()
