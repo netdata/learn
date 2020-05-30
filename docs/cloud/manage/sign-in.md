@@ -8,7 +8,11 @@ You can sign in to Netdata Cloud through one of three methods&mdash;email, Googl
 passwordless. Sign in via email uses a time-sensitive link that authenticates your browser, and Google/GitHub both use
 OAuth to associate your email address with a Netdata Cloud account.
 
-We do not support username+password authentication.
+No matter the method, your Netdata Cloud account is based around your email address. Every time you sign in to Cloud
+with a different email address, you create a new account. Read more about [switching between
+methods](#switch-between-sign-in-methods).
+
+Netdata Cloud does not support username+password authentication.
 
 When you first sign in to a new account, you are directed through the Netdata Cloud onboarding process. See the [get
 started guide](/docs/cloud/get-started) for details.
@@ -85,6 +89,9 @@ you in to your original account.
 
 However, if you first sign in via your `user@example.com` email account and then sign in via a Google account associated
 with `user2@example.com`, Netdata Cloud creates a new account and begins the onboarding process.
+
+It is not currently possible to link an account created with `user@example.com` to a Google account associated with
+`user2@example.com`.
 
 ## What's next? 
 
