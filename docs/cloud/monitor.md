@@ -1,6 +1,7 @@
 ---
-title: Monitor
+title: Monitor with Cloud
 description: Add metrics to Cloud, search your infrastructure, view alarm status, and deep-dive to find more real-time metrics.
+sidebar_label: Monitor
 custom_edit_url: null
 ---
 
@@ -49,7 +50,7 @@ the service(s) that node provides.
 Use the **Group by** dropdown to choose between no grouping, grouping by the node's alarm status (`critical`, `warning`,
 and `clear`), and grouping by the service each node provides.
 
-See what services Netdata Cloud can filter by with [supported collectors list](/docs/agent/collectors/collectors/).
+See what services Netdata Cloud can filter by with [supported collectors list](/docs/agent/collectors/collectors).
 
 ## Monitor active alarms
 
@@ -84,16 +85,16 @@ claiming that node
 If you want to see different metrics or health alarms, you should configure those Agents as needed. We have a wealth of [Agent documentation](/docs/agent/) for every configuration tweak and intricate infrastructure, but here are a few key areas to get you started:
 
 -   [Store more historical metrics](/docs/agent/tutorials/longer-metrics-storage) using the Agent's highly-efficient
-    database. Also, see our [calculator](/dbengine-calc/) for finding the disk and RAM you need to store metrics for a
-    certain period of time.
--   [Gather more metrics](/docs/agent/collectors/quickstart/) using dozens of pre-installed collectors capable of
+    database. Also, see our [calculator](/docs/agent/database/calculator) for finding the disk and RAM you need to store
+    metrics for a certain period of time.
+-   [Gather more metrics](/docs/agent/collectors/quickstart) using dozens of pre-installed collectors capable of
     auto-detecting your services and applications.
--   [Tweak or create new alarms](/docs/agent/health/quickstart/) to ensure Cloud's health monitoring features deliver
+-   [Tweak or create new alarms](/docs/agent/health/quickstart) to ensure Cloud's health monitoring features deliver
     warnings and critical alerts most relevant to the needs of your infrastructure.
--   [Get notified](/docs/agent/health/notifications/) about new alarms through your favorite apps, like Discord, Slack,
+-   [Get notified](/docs/agent/health/notifications) about new alarms through your favorite apps, like Discord, Slack,
     PagerDuty, and more.
 
 ## What's next?
 
 With monitoring and troubleshooting fundamentals out of the way, it's time to set up your Spaces and War Rooms for
-[collaboration](/docs/cloud/collaborate/).
+[collaboration](/docs/cloud/collaborate).

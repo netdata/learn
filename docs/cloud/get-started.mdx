@@ -19,7 +19,7 @@ install that Agent.
 
 ## Begin the onboarding process
 
-Get started by signing in to Netdata Cloud.
+Get started by signing in to Netdata Cloud. Read the [sign in documentation](/docs/cloud/manage/sign-in) for details.
 
 <p><a href="https://app.netdata.cloud" className="button button--lg">Sign in to Cloud</a></p>
 
@@ -40,7 +40,7 @@ going through the process of claiming a node, you prove you have write and admin
 no one can claim a node they don't have write and administrative access to, the claiming process ensures you remain in
 full control of your nodes and their metrics.
 
-View our [node claiming documentation](/docs/agent/claim/) for details about why we implemented the claiming process and
+View our [node claiming documentation](/docs/agent/claim) for details about why we implemented the claiming process and
 the encryption methods we use to secure your data in transit. Netdata Cloud does not store or log the metrics or alarm
 status of your Agents.
 
@@ -52,7 +52,7 @@ There are two important notes regarding claiming:
 
 To claim a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
 Cloud into your node's terminal. The claiming script takes care of the rest. If you want to claim an agent without using
-root privileges, see our [claiming documentation](/docs/agent/claim/#claim-an-agent-without-root-privileges).
+root privileges, see our [claiming documentation](/docs/agent/claim#claim-an-agent-without-root-privileges).
 
 ```bash
 sudo netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.cloud
@@ -69,14 +69,14 @@ finished onboarding.
 
 **Docker**: You can execute the claiming script to an Agent running as a Docker container, or attach the claiming script
 when creating an Agent container for the first time, such as when you're spinning up ephemeral containers. See the
-[claim an Agent running in Docker](/docs/agent/claim/#claiming-an-agent-running-in-docker) documentation for details.
+[claim an Agent running in Docker](/docs/agent/claim#claiming-an-agent-running-in-docker) documentation for details.
 
 **With a proxy**: If your node uses a proxy to connect to the internet, you need to configure the Agent's proxy
-settings. See our [claiming through a proxy](/docs/agent/claim/#claiming-through-a-proxy) documentation for details.
+settings. See our [claiming through a proxy](/docs/agent/claim#claiming-through-a-proxy) documentation for details.
 
 ## What's next?
 
-You finish onboarding by inviting members of your team to your Space. You can also invite them later. At this point,
-you're ready to use Cloud.
+You finish onboarding by [inviting members of your team](/docs/cloud/collaborate/invite-your-team) to your Space. You
+can also invite them later. At this point, you're ready to use Cloud.
 
-Next, learn about how to [organize your Cloud experience](/docs/cloud/organize/) using Spaces and War Rooms.
+Next, learn about how to [organize your Cloud experience](/docs/cloud/organize) using Spaces and War Rooms.
