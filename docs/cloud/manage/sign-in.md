@@ -95,5 +95,6 @@ It is not currently possible to link an account created with `user@example.com` 
 
 ## What's next? 
 
-Have questions about signing in? Read up about [resetting a password](/docs/cloud/manage/recover-reset-password.md) or
-our [frequently asked questions](/docs/cloud/faq-glossary).
+If you haven't already onboarded to Netdata Cloud and claimed you first nodes, visit the [get started guide](/docs/cloud/get-started).
+
+For other questions, see the [frequently asked questions](/docs/cloud/faq-glossary).
