@@ -1,30 +1,29 @@
 import React, {useEffect} from 'react';
+import {createPortal} from 'react-dom';
+import clsx from 'clsx';
+
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+
+import SiteSearchAPIConnector from "@elastic/search-ui-site-search-connector";
+import { SearchProvider, WithSearch, Results, SearchBox, ResultsPerPage } from "@elastic/react-search-ui";
+
+// import styles from './styles.module.scss';
+
+const connector = new SiteSearchAPIConnector({
+  documentType: "page",
+  engineKey: "BZL_aEiLAebVKkcm3eFr"
+});
 
 const SearchBar = (props) => {
 
-  const swiftTypeSrc = 
-    `
-      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-      })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-      
-      _st('install','VBjGCvSQ38_nBFaozfxk','2.0.0');
-    `
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.text = swiftTypeSrc;
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    }
-  }, []);
-
   return (
-    <input type="text" className="st-default-search-input"></input>
+    <input
+      className={clsx()}
+      onClick={onOpen}
+    />
   )
 }
 
-export default SearchBar;
+export default SearchBar; 
