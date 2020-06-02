@@ -12,7 +12,7 @@ import Layout from '@theme/Layout';
 import qs from 'qs';
 import classnames from 'classnames';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 function CookbookListPage(props) {
   const {items} = props;
@@ -61,26 +61,23 @@ function CookbookListPage(props) {
   itemsFiltered = itemsFiltered.slice(0, searchLimit);
 
   return (
-    <Layout title="guides" description="Netdata Guides">
-      <header className={styles.cookbookListHeader}>
+    <Layout 
+    title="Netdata Guides" 
+    description="A collection of guides to walk you through the Netdata ecosystem of health monitoring and performance troubleshooting tools."
+    >
+      <header className={classnames(styles.guidesHeader)}>
         <div className="container">
           <div className="row">
-            <div className="col col--5 col--offset-1">
-              <img className={styles.headerImgMobile} src="/img/Blobchef.svg" />
-              <div>
-                <h1>Netdata Guides</h1>
-                <p>A collection of guides to walk you through the Netdata ecosystem of health monitoring and performance troubleshooting tools.</p>
-              </div>
+            <div className="col col--8 col--offset-2">
+              <h1>Netdata Guides</h1>
+              <p>A collection of guides to walk you through the Netdata ecosystem of health monitoring and performance troubleshooting tools.</p>
               <div className="search">
                 <input
-                  className={styles.cookbookSearch}
+                  className={styles.guidesSearch}
                   type="text"
                   onChange={(event) => setSearchTerm(event.currentTarget.value)}
                   placeholder="🔍 Search..." />
               </div>
-            </div>
-            <div className="col col--5">
-              <img className={styles.headerImg} src="/img/Blobchef.svg" />
             </div>
           </div>
         </div>
@@ -102,7 +99,7 @@ function CookbookListPage(props) {
             </div>}
           {itemsFiltered.length == 0 &&
             <div className="col">
-              <p>Whoops, looks like your search hasn't got any results. If the cookbook you want doesn't exist please <a href="https://github.com/Jeffail/benthos/issues/new">ask for it</a>.</p>
+              <p>Whoops! There is no guide matching matching your search. If you feel we're missing an essential guide, please <a href="">file an issue on GitHub</a> the information you're looking for.</p>
             </div>}
         </div>
       </div>

@@ -1,8 +1,16 @@
-.cookbookListHeader {
+.guidesHeader {
+  padding-top: 3rem;
+  
   text-align: center;
-  background-color: var(--ifm-background-surface-color);
-  padding-top: 60px;
-  padding-bottom: 40px;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: calc(var(--ifm-leading-desktop) * var(--ifm-leading));
+  }
+
+  p {
+    font-size: 120%;
+  }
 }
 
 .headerImg {
@@ -34,11 +42,13 @@
   --ifm-container-width: 800px;
 }
 
-.cookbookSearch {
-  font-size: 12pt;
+.guidesSearch {
+  // font-size: 20px;
   border-radius: var(--ifm-global-radius);
   border: none;
-  padding: 5px;
+  padding: 0.4rem;
   color: var(--ifm-primary-color);
   background-color: var(--ifm-background-color);
+
+  border: 1px solid black;
 }

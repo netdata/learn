@@ -57,7 +57,7 @@ function CookbookPage(props) {
         <div className="row">
           <div className="col">
             <article className={styles.cookbookContainer}>
-              <header className={classnames(styles.header, 'margin-top--xl')}>
+              <header className={classnames(styles.header)}>
                 <h1 className={styles.cookbookTitle}>{title}</h1>
                 <p className={styles.cookbookDescription}>{metadata.description}</p>
                 <p className={styles.cookbookTimeToRead}>{readingStats.text}</p>

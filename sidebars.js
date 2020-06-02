@@ -343,7 +343,6 @@ module.exports = {
       items: [
         'agent/database',
         'agent/database/engine',
-        'agent/tutorials/longer-metrics-storage',
         'agent/database/calculator',
       ]
     },
