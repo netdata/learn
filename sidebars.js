@@ -415,14 +415,28 @@ module.exports = {
       type: 'category',
       label: 'Export metrics',
       items: [
+        'agent/export',
         'agent/exporting',
-        'agent/exporting/aws_kinesis',
-        'agent/exporting/pubsub',
-        'agent/exporting/mongodb',
-        'agent/exporting/opentsdb',
-        'agent/exporting/prometheus',
-        'agent/exporting/prometheus/remote_write',
-        'agent/exporting/timescale'
+        {
+          type: 'category',
+          label: 'Connectors',
+          items: [
+          'agent/exporting/aws_kinesis',
+          'agent/exporting/pubsub',
+          'agent/exporting/mongodb',
+          'agent/exporting/opentsdb',
+          'agent/exporting/prometheus/remote_write',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Guides',
+          items: [
+            'agent/exporting/prometheus',
+            'agent/exporting/timescale'
+          ]
+        }
+       
       ],
     },
     {
