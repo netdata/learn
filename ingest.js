@@ -242,8 +242,13 @@ async function writePages(pages) {
 
     // because the page path may contain additional directories
     const fullDir = path.dirname(fullPath)
-    await fs.mkdir(fullDir, { recursive: true })
 
+    // Move anything from the `/docs/tutorials` folder into the new `guides` folder.
+    if ( fullPath.includes('agent/tutorials')) {
+      console.log(fullPath)
+    }
+
+    await fs.mkdir(fullDir, { recursive: true })
     await fs.writeFile(fullPath, page.body)
   }))
 }
