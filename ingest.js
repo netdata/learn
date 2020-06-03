@@ -24,7 +24,7 @@ const retainPaths = [
 ]
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/netdata/',
+  baseURL: 'https://api.github.com/repos/joelhans/',
   headers: {
     'Authorization': `token ${GITHUB_TOKEN}`
   }
@@ -111,9 +111,9 @@ function normalizeLinks(pages) {
       // link. Return the normalized link.
       if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
 
-      // If the link is to a guide page in the `/docs/tutorials` folder.
-      if (url.includes('tutorials/')) {
-        url = url.split('tutorials/')[1]
+      // If the link is to a guide page in the `/docs/guides` folder.
+      if (url.includes('guides/')) {
+        url = url.split('guides/')[1]
         const guideUrl =  path.join(guideDir, url)
         return `](${guideUrl})`
       }
@@ -258,15 +258,10 @@ async function writePages(pages) {
     let fullPath = path.join(outDir, page.meta.path).toLowerCase()
     let fullDir = path.dirname(fullPath)
 
-    // Move anything from the `/docs/tutorials` folder into the new `guides` folder.
-    if (fullPath.includes('agent/tutorials')) {
-      fullPath = fullPath.replace('docs/agent/tutorials/', 'guides/');
-    }
-
-    // Move the step-by-step guide over to the new `guides` folder.
-    if (fullPath.includes('step-by-step')) {
-      fullPath = fullPath.replace('docs/agent/', 'guides/');
-      fullDir = fullDir.replace('docs/agent/', 'guides/');
+    // Move anything from the `/docs/guides` folder into the new `guides` folder.
+    if (fullPath.includes('agent/guides')) {
+      fullPath = fullPath.replace('docs/agent/guides/', 'guides/');
+      fullDir = fullDir.replace('docs/agent/guides/', 'guides/');
     }
 
     await fs.mkdir(fullDir, { recursive: true })
@@ -290,7 +285,7 @@ async function ingest() {
   }
 
   console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getRootSha('netdata', 'master')
+  const rootSha = await getRootSha('netdata', 'guides-section')
   console.log(`Fetching nodes from 'netdata' repo...`)
   const nodes = await getNodes(rootSha)
 

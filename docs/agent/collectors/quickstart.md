@@ -33,8 +33,9 @@ and `python.d`.
 > If there is a collector written in both Go and Python, it's better to choose the Go-based version, as we will
 > eventually deprecate most Python-based collectors.
 
-From here on out, this quickstart guide will use the [Nginx collector](/docs/agent/collectors/go.d.plugin/modules/nginx) as an
-example to showcase the process of configuring and enabling one of Netdata's pre-installed collectors.
+From here on out, this quickstart guide will use the [Nginx
+collector](/docs/agent/collectors/go.d.plugin/modules/nginx) as an example to showcase the
+process of configuring and enabling one of Netdata's pre-installed collectors.
 
 ## Configure your application or service for monitoring
 
@@ -42,7 +43,8 @@ Every collector's documentation comes with instructions on how to configure your
 Netdata's collector. Our [collector support list](/docs/agent/collectors/collectors) contains links to each collector's documentation page
 so you can learn more.
 
-For example, the [Nginx collector documentation](/docs/agent/collectors/go.d.plugin/modules/nginx) states that your Nginx
+For example, the [Nginx collector
+documentation](/docs/agent/collectors/go.d.plugin/modules/nginx) states that your Nginx
 installation must have the `stub_status` module configured correctly, in addition to an active `stub_status/` page, for
 Netdata to monitor it. You can confirm whether you have the module enabled with the following command:
 
@@ -86,7 +88,8 @@ collector's configuration file.
 How do you find that path to the collector's configuration file? Look under the **Configuration** heading in the
 collector's documentation. Each file contains a short code block with the relevant command.
 
-For example, the [Nginx collector](/docs/agent/collectors/go.d.plugin/modules/nginx) has its configuration file at `go.d/nginx.conf`.
+For example, the [Nginx collector](/docs/agent/collectors/go.d.plugin/modules/nginx) has its
+configuration file at `go.d/nginx.conf`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory
@@ -113,7 +116,7 @@ entry in the menu and new interactive charts!
 Collector not working? Learn about collector troubleshooting in our [collector
 reference](/docs/agent/collectors/reference#troubleshoot-a-collector).
 
-View our [collectors tutorials](/docs/agent/collectors#tutorials) to get specific instructions on enabling new and
+View our [collectors guides](/docs/agent/collectors#guides) to get specific instructions on enabling new and
 popular collectors.
 
 Finally, learn more advanced collector features, such as disabling plugins or developing a custom collector, in our

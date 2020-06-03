@@ -1,6 +1,6 @@
 ---
 title: "Monitor CockroachDB metrics with Netdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/tutorials/monitor-cockroachdb.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor-cockroachdb.md
 ---
 
 
@@ -132,3 +132,5 @@ Also, be sure to check out these useful resources:
     docs](https://www.cockroachlabs.com/docs/stable/monitoring-and-alerting.html#prometheus-endpoint)
 -   [Monitor CockroachDB with
     Prometheus](https://www.cockroachlabs.com/docs/stable/monitor-cockroachdb-with-prometheus.html)
+
+

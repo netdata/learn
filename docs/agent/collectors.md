@@ -28,7 +28,7 @@ guide](/docs/agent/collectors/quickstart).
 
 [Collectors configuration reference](/docs/agent/collectors/reference)
 
-## Tutorials
+## Guides
 
 [Monitor Nginx or Apache web server log files with Netdata](/guides/collect-apache-nginx-web-logs)
 

@@ -15,35 +15,19 @@ operates like a health watchdog for your services and applications.
 You can even run statistical algorithms against the metrics you've collected to power complex lookups. Your imagination,
 and the needs of your infrastructure, are your only limits.
 
-**Take the next steps with health monitoring:**
+[Quickstart](/docs/agent/health/quickstart)
 
-<DocsSteps>
+[Configuration reference](/docs/agent/health/reference)
 
-[<FiPlay /> Quickstart](/docs/agent/health/quickstart)
-
-[<FiCode /> Configuration reference](/docs/agent/health/reference)
-
-[<FiBook /> Tutorials](#tutorials)
-
-</DocsSteps>
-
-## Tutorials
+## Guides
 
 Every infrastructure is different, so we're not interested in mandating how you should configure Netdata's health
-monitoring features. Instead, these tutorials should give you the details you need to tweak alarms to your heart's
+monitoring features. Instead, these guides should give you the details you need to tweak alarms to your heart's
 content.
 
-<DocsTutorials>
-<div>
+[Stopping notifications for individual alarms](/guides/monitor/stop-notifications-alarms)
 
-### Health entities
-
-[Stopping notifications for individual alarms](/guides/stop-notifications-alarms)
-
-[Use dimension templates to create dynamic alarms](/guides/dimension-templates)
-
-</div>
-</DocsTutorials>
+[Use dimension templates to create dynamic alarms](/guides/monitor/dimension-templates)
 
 ## Related features
 

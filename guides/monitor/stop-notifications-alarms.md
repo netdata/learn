@@ -1,6 +1,6 @@
 ---
 title: "Stop notifications for individual alarms"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/health/tutorials/stop-notifications-alarms.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor/stop-notifications-alarms.md
 ---
 
 
@@ -80,13 +80,13 @@ You can add `to: silence` to any alarm you'd rather not bother you with notifica
 You should now know the fundamentals behind silencing any individual alarm in Netdata.
 
 To learn about _all_ of Netdata's health configuration possibilities, visit the [health reference
-guide](/docs/agent/health/reference), or check out other [tutorials on health monitoring](/docs/agent/health/tutorials/..#tutorials).
+guide](/docs/agent/health/reference), or check out other [tutorials on health monitoring](/docs/agent/health#tutorials).
 
 Or, take better control over how you get notified about alarms via the [notification
 system](/docs/agent/health/notifications).
 
-You can also use Netdata's [Health Management API](/docs/agent/web/api/health#health-management-api) to control
-health checks and notifications while Netdata runs. With this API, you can disable health checks during a maintenance
-window or backup process, for example.
+You can also use Netdata's [Health Management API](/docs/agent/web/api/health#health-management-api) to control health
+checks and notifications while Netdata runs. With this API, you can disable health checks during a maintenance window or
+backup process, for example.
 
 

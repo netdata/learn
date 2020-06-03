@@ -78,4 +78,4 @@ Now that Netdata is installed, be sure to visit our [getting started guide](/doc
 quick overview of configuring Netdata, enabling plugins, and controlling Netdata's daemon. 
 
 Or, get the full guided tour of Netdata's capabilities with our [step-by-step
-tutorial](/guides/step-by-step/step-00)!
+guide](/guides/step-by-step/step-00)!
