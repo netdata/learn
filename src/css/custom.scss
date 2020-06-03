@@ -171,7 +171,7 @@ main[class^='docMainContainer'] .container {
 .navbar__brand strong {
   display: block !important;
   position: absolute;
-  top: 22px;
+  top: 24px;
   left: 31px;
 
   color: var(--ifm-color-primary-lightest);
@@ -201,8 +201,12 @@ main[class^='docMainContainer'] .container {
 }
 
 .navbar .navbar__link {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: var(--ifm-font-weight-normal);
+}
+
+.navbar__items--right .navbar__link {
+  font-size: 1rem;
 }
 
 .navbar .navbar__link.navbar__link--active {
