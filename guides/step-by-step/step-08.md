@@ -145,7 +145,7 @@ charts on a single page.
 ### The chart unique ID (required)
 
 You need to specify the unique ID of a chart to show it on your custom dashboard. If you forgot how to find the unique
-ID, head back over to [step 2](/docs/agent/step-by-step/step-02#understand-charts-dimensions-families-and-contexts) for a
+ID, head back over to [step 2](/guides/docs/step-by-step/step-02#understand-charts-dimensions-families-and-contexts) for a
 re-introduction.
 
 You can then put this unique ID into a `<div>` element with the `data-netdata` attribute. Put this in the `<body>` of
@@ -390,4 +390,4 @@ from multiple Netdata agents, and choose which dimensions a given chart shows.
 
 Next, you'll learn how to store long-term historical metrics in Netdata!
 
-[Next: Long-term metrics storage &rarr;](/docs/agent/step-by-step/step-09)
+[Next: Long-term metrics storage &rarr;](/guides/docs/step-by-step/step-09)

@@ -13,6 +13,7 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const baseDir = '/docs'
 const agentDir = '/docs/agent'
 const cloudDir = '/docs/cloud'
+const guideDir = '/guides/'
 const outDir = path.join(__dirname, agentDir)
 // the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
@@ -109,6 +110,21 @@ function normalizeLinks(pages) {
       // Skip the whole process if a relative anchor, external link, or a mailto
       // link. Return the normalized link.
       if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
+
+      // If the link is to a guide page in the `/docs/tutorials` folder.
+      if (url.includes('tutorials/')) {
+        url = url.split('tutorials/')[1]
+        const guideUrl =  path.join(guideDir, url)
+        return `](${guideUrl})`
+      }
+
+      // If the link is to a step-by-step guide page in the `/docs/step-by-step` folder.
+      if (url.includes('step-by-step/') || url.includes('step-')) {
+        // url = url.split('step-by-step/')[1]
+        console.log(tokens.name, url)
+        const guideUrl =  path.join(guideDir, url)
+        return `](${guideUrl})`
+      }
 
       // If the link is already absolute-relative. If it begins with `/docs`,
       // cut that. Return the normalized link.
@@ -246,7 +262,7 @@ async function writePages(pages) {
       fullPath = fullPath.replace('docs/agent/tutorials/', 'guides/');
     }
 
-    // Move the step-by-step guide over
+    // Move the step-by-step guide over to the new `guides` folder.
     if (fullPath.includes('step-by-step')) {
       fullPath = fullPath.replace('docs/agent/', 'guides/');
       fullDir = fullDir.replace('docs/agent/', 'guides/');

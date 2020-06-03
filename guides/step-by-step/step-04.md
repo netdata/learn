@@ -125,7 +125,7 @@ netdata.conf](https://user-images.githubusercontent.com/1153921/80994808-1c06530
 
 Netdata has dozens upon dozens of options you can change. To see them all, read our [daemon
 configuration](/docs/agent/daemon/config), or hop into our popular tutorial on [increasing long-term metrics
-storage](/docs/agent/tutorials/longer-metrics-storage).
+storage](/guides/longer-metrics-storage).
 
 ## What's next?
 
@@ -139,4 +139,4 @@ In the next step, we're going to cover one of Netdata's core functions: monitori
 and notifications. You'll learn how to disable alarms, create new ones, and push notifications to the system of your
 choosing.
 
-[Next: Health monitoring alarms and notifications &rarr;](/docs/agent/step-by-step/step-05)
+[Next: Health monitoring alarms and notifications &rarr;](/guides/step-05)

@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-ste
 Welcome to the seventh step of the Netdata guide!
 
 This step of the guide aims to get you more familiar with the features of the dashboard not previously mentioned in
-[step 2](/docs/agent/step-by-step/step-02).
+[step 2](/guides/docs/step-by-step/step-02).
 
 ## What you'll learn in this step
 
@@ -109,4 +109,4 @@ In this step of the Netdata tutorial, you learned how to:
 
 Next, you'll learn how to build your first custom dashboard!
 
-[Next: Build your first custom dashboard &rarr;](/docs/agent/step-by-step/step-08)
+[Next: Build your first custom dashboard &rarr;](/guides/step-08)

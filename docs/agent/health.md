@@ -38,9 +38,9 @@ content.
 
 ### Health entities
 
-[Stopping notifications for individual alarms](/docs/agent/health/tutorials/stop-notifications-alarms)
+[Stopping notifications for individual alarms](/guides/stop-notifications-alarms)
 
-[Use dimension templates to create dynamic alarms](/docs/agent/health/tutorials/dimension-templates)
+[Use dimension templates to create dynamic alarms](/guides/dimension-templates)
 
 </div>
 </DocsTutorials>

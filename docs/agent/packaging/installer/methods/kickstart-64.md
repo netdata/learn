@@ -81,7 +81,7 @@ If the script is valid, this command will return `OK, VALID`.
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/agent/step-by-step/step-00) for a
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/guides/docs/step-by-step/step-00) for a
 fully-guided tour into Netdata's capabilities and how to configure it according to your needs. 
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started

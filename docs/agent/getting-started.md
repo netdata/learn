@@ -13,7 +13,7 @@ The Agent can collect thousands of metrics in real-time and use its database for
 configuration, but there are some valuable things to know to get the most out of Netdata based on your needs.
 
 We'll skip right into some technical details, so if you're brand-new to monitoring the health and performance of systems
-and applications, our [**step-by-step tutorial**](/docs/agent/step-by-step/step-00) might be a better fit.
+and applications, our [**step-by-step tutorial**](/guides/docs/step-by-step/step-00) might be a better fit.
 
 > If you haven't installed Netdata yet, visit the [installation instructions](/docs/agent/packaging/installer) for
 > details, including our one-liner script, which automatically installs Netdata on almost all Linux distributions.
@@ -65,7 +65,7 @@ configuration keeps RAM usage low while allowing for long-term, on-disk metrics 
 You can tweak this custom _database engine_ to store a much larger dataset than your system's available RAM,
 particularly if you allow Netdata to use slightly more RAM and disk space than the default configuration.
 
-Read our guide on [changing how long Netdata stores metrics](/docs/agent/tutorials/longer-metrics-storage) to learn more
+Read our guide on [changing how long Netdata stores metrics](/guides/longer-metrics-storage) to learn more
 and use our [database engine calculator](/docs/agent/database/calculator) to figure
 out the exact settings you'll need to store historical metrics right in the Agent's database.
 

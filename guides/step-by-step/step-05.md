@@ -37,7 +37,7 @@ entity](https://user-images.githubusercontent.com/1153921/67034648-ebb4cc80-f0cc
 
 Look at the `source` row in the table. This means the `system.cpu` chart sources its health alarms from
 `4@/usr/lib/netdata/conf.d/health.d/cpu.conf`. To tune these alarms, you'll need to edit the alarm file at
-`health.d/cpu.conf`. Go to your [Netdata config directory](/docs/agent/step-by-step/step-04#find-your-netdataconf-file) and use the
+`health.d/cpu.conf`. Go to your [Netdata config directory](/guides/step-04#find-your-netdataconf-file) and use the
 `edit-config` script.
 
 ```bash
@@ -342,4 +342,4 @@ You're coming along quick!
 Next up, we're going to cover how Netdata collects its metrics, and how you can get Netdata to collect real-time metrics
 from hundreds of services with almost no configuration on your part. Onward!
 
-[Next: Collect metrics from more services and apps &rarr;](/docs/agent/step-by-step/step-06)
+[Next: Collect metrics from more services and apps &rarr;](/guides/step-06)

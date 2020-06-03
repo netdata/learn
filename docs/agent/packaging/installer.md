@@ -47,7 +47,7 @@ page](/docs/agent/packaging/installer/methods/kickstart).
 Scroll down for details about [automatic updates](#automatic-updates) or [nightly vs. stable
 releases](#nightly-vs-stable-releases).
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/docs/agent/step-by-step/step-00)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/guides/docs/step-by-step/step-00)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs. 
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
