@@ -31,7 +31,7 @@ It produces the following summary charts:
 ## Configuration
 
 Edit the `go.d/tengine.conf` configuration file using `edit-config` from the your agent's [config
-directory](/guides/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/guides/step-by-step/docs/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

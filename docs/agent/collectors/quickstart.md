@@ -80,7 +80,7 @@ Despite Netdata's auto-detection capabilities, it's important to know how to edi
 
 You should always edit configuration files with the `edit-config` script that comes with every installation of Netdata.
 To edit a collector configuration file, navigate to your [Netdata configuration
-directory](/guides/docs/step-by-step/step-04#find-your-netdataconf-file). Launch `edit-config` with the path to the
+directory](/guides/step-by-step/docs/step-by-step/step-04#find-your-netdataconf-file). Launch `edit-config` with the path to the
 collector's configuration file.
 
 How do you find that path to the collector's configuration file? Look under the **Configuration** heading in the

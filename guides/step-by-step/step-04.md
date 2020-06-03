@@ -139,4 +139,4 @@ In the next step, we're going to cover one of Netdata's core functions: monitori
 and notifications. You'll learn how to disable alarms, create new ones, and push notifications to the system of your
 choosing.
 
-[Next: Health monitoring alarms and notifications &rarr;](/guides/step-05)
+[Next: Health monitoring alarms and notifications &rarr;](/guides/step-by-step/step-05)

@@ -8,7 +8,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-ste
 
 The Netdata agent is _distributed_ by design. That means each agent operates independently from any other, collecting
 and creating charts only for the system you installed it on. We made this decision a long time ago to [improve security
-and performance](/guides/step-01).
+and performance](/guides/step-by-step/step-01).
 
 You might be thinking, "So, now I have to remember all these IP addresses, and type them into my browser
 manually, to move from one system to another? Maybe I should just make a bunch of bookmarks. What's a few more tabs
@@ -86,4 +86,4 @@ Now that you have a Netdata Cloud account with a claimed node (or a few!) and ca
 Visited nodes, it's time to learn more about how you can configure Netdata to your liking. From there, you'll be able to
 customize your Netdata experience to your exact infrastructure and the information you need.
 
-[Next: The basics of configuring Netdata &rarr;](/guides/step-04)
+[Next: The basics of configuring Netdata &rarr;](/guides/step-by-step/step-04)

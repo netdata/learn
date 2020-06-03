@@ -117,4 +117,4 @@ After configuring any source, or changing the configuration files for their resp
 Now that you've learned the fundamentals behind configuring data sources for auto-detection, it's time to move back to
 the dashboard to learn more about some of its more advanced features.
 
-[Next: Netdata's dashboard in depth &rarr;](/guides/step-07)
+[Next: Netdata's dashboard in depth &rarr;](/guides/step-by-step/step-07)

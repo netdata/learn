@@ -106,37 +106,37 @@ function CookbookListPage(props) {
             </div>
           </div>
           <div className={styles.guideBoxes}>
-            <Link to="/guides/step-00" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-00" className={classnames('col col--4', styles.guideBox)}>
               <h3>The step-by-step Netdata tutorial</h3>
             </Link>
-            <Link to="/guides/step-01" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-01" className={classnames('col col--4', styles.guideBox)}>
               <h3>Step 1. Netdata's building blocks</h3>
             </Link>
-            <Link to="/guides/step-02" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-02" className={classnames('col col--4', styles.guideBox)}>
               <h3>Step 2. Get to know Netdata's dashboard</h3>
             </Link>
-            <Link to="/guides/step-03" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-03" className={classnames('col col--4', styles.guideBox)}>
               <h3>Step 3. Monitor more than one system with Netdata</h3>
             </Link>
-            <Link to="/guides/step-04" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-04" className={classnames('col col--4', styles.guideBox)}>
               <h3>Step 4. The basics of configuring Netdata</h3>
             </Link>
-            <Link to="/guides/step-05" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-05" className={classnames('col col--4', styles.guideBox)}>
               <h3>Step 5. Health monitoring alarms and notifications</h3>
             </Link>
-            <Link to="/guides/step-06" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-06" className={classnames('col col--4', styles.guideBox)}>
               <h3>Step 6. Collect metrics from more services and apps</h3>
             </Link>
-            <Link to="/guides/step-07" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-07" className={classnames('col col--4', styles.guideBox)}>
               <h3>Step 7. Netdata's dashboard in depth</h3>
             </Link>
-            <Link to="/guides/step-08" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-08" className={classnames('col col--4', styles.guideBox)}>
               <h3>Step 8. Build your first custom dashboard</h3>
             </Link>
-            <Link to="/guides/step-09" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-09" className={classnames('col col--4', styles.guideBox)}>
               <h3>Step 9. Long-term metrics storage</h3>
             </Link>
-            <Link to="/guides/step-10" className={classnames('col col--4', styles.guideBox)}>
+            <Link to="/guides/step-by-step/step-10" className={classnames('col col--4', styles.guideBox)}>
               <h3>Step 10. Set up a proxy</h3>
             </Link>
           </div>

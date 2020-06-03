@@ -10,7 +10,7 @@ Welcome to Netdata proper! Now that you understand how Netdata works, how it's b
 working with the dashboard directly.
 
 This step-by-step guide assumes you've already installed Netdata on a system of yours. If you haven't yet, hop back over
-to ["step 0"](/guides/step-00#before-we-get-started) for information about our one-line installer script. Or, view the
+to ["step 0"](/guides/step-by-step/step-00#before-we-get-started) for information about our one-line installer script. Or, view the
 [installation docs](/docs/agent/packaging/installer) to learn more. Once you have Netdata installed, you can hop back
 over here and dig in.
 
@@ -203,4 +203,4 @@ In this step of the Netdata tutorial, you learned how to:
 
 Next, you'll learn how to monitor multiple nodes through the dashboard.
 
-[Next: Monitor more than one system with Netdata →](/guides/step-03)
+[Next: Monitor more than one system with Netdata →](/guides/step-by-step/step-03)

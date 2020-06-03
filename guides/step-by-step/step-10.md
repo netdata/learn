@@ -18,7 +18,7 @@ publicly-accessible remote server.
 
 > ❗❗ This tutorial requires more advanced administration skills than previous parts. If you're still working on your
 > Linux administration skills, and would rather get back to Netdata, you might want to [skip this
-> step](/guides/step-99) for now and return to it later.
+> step](/guides/step-by-step/step-99) for now and return to it later.
 
 ## What you'll learn in this step
 
@@ -225,4 +225,4 @@ And... you're _almost_ done with the Netdata tutorial.
 
 For some celebratory emoji and a clap on the back, head on over to our final step.
 
-[Next: The end. &rarr;](/guides/step-99)
+[Next: The end. &rarr;](/guides/step-by-step/step-99)

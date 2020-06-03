@@ -34,7 +34,7 @@
 
 [[redirects]]
   from = "/docs/agent/step-by-step/*"
-  to = "/guides/:splat
+  to = "/guides/step-by-step/:splat"
 
 [[redirects]]
   from = "/docs/agent/collectors/ebpf_process.plugin/"

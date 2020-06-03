@@ -46,6 +46,7 @@ async function generateCookbookPosts(
       const source = path.join(guideDir, relativeSource);
       const aliasedSource = aliasedSitePath(source, siteDir);
       const guideFileName = path.basename(relativeSource);
+      const guidePermalink = relativeSource.replace(/\.mdx?$/, '');
 
       const fileString = await fs.readFile(source, 'utf-8');
       const {frontMatter, excerpt} = parse(fileString);
@@ -73,7 +74,7 @@ async function generateCookbookPosts(
           permalink: normalizeUrl([
             baseUrl,
             routeBasePath,
-            frontMatter.id || linkName,
+            guidePermalink
           ]),
           source: aliasedSource,
           description: frontMatter.description || excerpt,
