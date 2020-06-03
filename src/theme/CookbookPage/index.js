@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -6,12 +7,10 @@ import MDXComponents from '@theme/MDXComponents';
 import {MDXProvider} from '@mdx-js/react';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
-import classnames from 'classnames';
-import readingTime from 'reading-time';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
-const LINK_CLASS_NAME = 'contents__link';
-const ACTIVE_LINK_CLASS_NAME = 'contents__link--active';
+const LINK_CLASS_NAME = 'table-of-contents__link';
+const ACTIVE_LINK_CLASS_NAME = 'table-of-contents__link--active';
 const TOP_OFFSET = 100;
 
 function DocTOC({headings}) {
@@ -29,7 +28,7 @@ function DocTOC({headings}) {
 function Headings({headings, isChild}) {
   if (!headings.length) return null;
   return (
-    <ul className={isChild ? '' : 'contents contents__left-border'}>
+    <ul className={isChild ? '' : 'table-of-contents table-of-contents__left-border'}>
       {headings.map(heading => (
         <li key={heading.id}>
           <a
@@ -49,25 +48,20 @@ function CookbookPage(props) {
   const {frontMatter, metadata} = CookbookContents;
   const {title} = frontMatter;
   const {keywords} = metadata;
-  const readingStats = readingTime(CookbookContents.toString());
 
   return (
     <Layout title={metadata.title} description={metadata.description} keywords={keywords}>
       <div className="container">
         <div className="row">
-          <div className="col">
-            <article className={styles.cookbookContainer}>
-              <header className={classnames(styles.header)}>
+          <div className={classnames('col', styles.cookbookContainer)}>
+            <article>
+              <header className={classnames(styles.cookbookHeader)}>
                 <h1 className={styles.cookbookTitle}>{title}</h1>
-                <p className={styles.cookbookDescription}>{metadata.description}</p>
-                <p className={styles.cookbookTimeToRead}>{readingStats.text}</p>
               </header>
-              <div className="container container--narrow container--bleed margin-vert--xl">
-                <section className="markdown">
-                  <MDXProvider components={MDXComponents}><CookbookContents /></MDXProvider>
-                </section>
-                <Link to="/guides" className="button button--outline button--primary margin-vert--lg">Find more guides</Link>
-              </div>
+              <section className="markdown">
+                <MDXProvider components={MDXComponents}><CookbookContents /></MDXProvider>
+                <Link to="/guides" className={classnames('button button--lg', styles.guidesMore)}>Find more guides</Link>
+              </section>
             </article>
           </div>
           {CookbookContents.rightToc && (

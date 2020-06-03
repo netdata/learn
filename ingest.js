@@ -239,13 +239,17 @@ function sanitizePages(pages) {
 async function writePages(pages) {
   return Promise.all(pages.map(async (page) => {
     let fullPath = path.join(outDir, page.meta.path).toLowerCase()
-
-    // because the page path may contain additional directories
-    const fullDir = path.dirname(fullPath)
+    let fullDir = path.dirname(fullPath)
 
     // Move anything from the `/docs/tutorials` folder into the new `guides` folder.
-    if ( fullPath.includes('agent/tutorials')) {
+    if (fullPath.includes('agent/tutorials')) {
       fullPath = fullPath.replace('docs/agent/tutorials/', 'guides/');
+    }
+
+    // Move the step-by-step guide over
+    if (fullPath.includes('step-by-step')) {
+      fullPath = fullPath.replace('docs/agent/', 'guides/');
+      fullDir = fullDir.replace('docs/agent/', 'guides/');
     }
 
     await fs.mkdir(fullDir, { recursive: true })

@@ -13,12 +13,11 @@ const {generateCookbookPosts} = require('./cookbookUtils');
 const DEFAULT_OPTIONS = {
   path: 'guides', // Path to data on filesystem, relative to site dir.
   routeBasePath: 'guides', // URL Route.
-  include: ['*.md', '*.mdx'], // Extensions to include.
+  include: ['**/*.md', '**/*.mdx'], // Extensions to include.
   guideListComponent: '@theme/CookbookListPage',
   guidePostComponent: '@theme/CookbookPage',
   remarkPlugins: [],
   rehypePlugins: [],
-  truncateMarker: /<!--\s*(truncate)\s*-->/, // string or regex
 };
 
 module.exports = pluginContentCookbook;

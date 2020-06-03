@@ -30,14 +30,21 @@
   }
 }
 
-.header {
+.cookbookContainer {
+  margin-bottom: 4rem;
+
+  @media (min-width: 997px) {
+    max-width: 75% !important;
+  }
+}
+
+.cookbookHeader {
   margin-top: 3rem;
-  
-  text-align: center;
 }
 
 .cookbookTitle {
-  font-size: 32pt;
+  font-size: 3rem;
+  margin-bottom: calc(var(--ifm-leading-desktop) * var(--ifm-leading));
 }
 
 .cookbookDescription {
@@ -48,6 +55,6 @@
   color: var(--ifm-blockquote-color);
 }
 
-.cookbookContainer {
-  --ifm-container-width: 800px;
+.guidesMore {
+  margin-top: 3rem;
 }

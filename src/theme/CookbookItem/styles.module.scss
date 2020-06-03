@@ -9,6 +9,10 @@
   padding: calc( var(--ifm-spacing-vertical) * 1.5 ) calc( var(--ifm-spacing-horizontal) * 2 );
 
   font-weight: 400;
+
+  h3 {
+    margin-bottom: 0;
+  }
 }
 
 .cookbookPostItem:hover {

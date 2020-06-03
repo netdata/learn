@@ -98,6 +98,10 @@ module.exports = {
               to: 'docs/cloud',
             },
             {
+              label: 'Guides',
+              to: 'guides',
+            },
+            {
               label: 'Blog',
               href: 'https://netdata.cloud/blog',
             },
