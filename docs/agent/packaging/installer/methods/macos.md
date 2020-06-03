@@ -77,7 +77,7 @@ sudo ./netdata-installer.sh --install /usr/local
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/guides/step-by-step/docs/step-by-step/step-00)
+When you finish installing Netdata, be sure to visit our [step-by-step tutorial](/guides/step-by-step/step-00)
 for a fully-guided tour into Netdata's capabilities and how to configure it according to your needs.
 
 Or, if you're a monitoring and system administration pro, skip ahead to our [getting started

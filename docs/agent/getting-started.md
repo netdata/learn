@@ -13,7 +13,7 @@ The Agent can collect thousands of metrics in real-time and use its database for
 configuration, but there are some valuable things to know to get the most out of Netdata based on your needs.
 
 We'll skip right into some technical details, so if you're brand-new to monitoring the health and performance of systems
-and applications, our [**step-by-step tutorial**](/guides/step-by-step/docs/step-by-step/step-00) might be a better fit.
+and applications, our [**step-by-step tutorial**](/guides/step-by-step/step-00) might be a better fit.
 
 > If you haven't installed Netdata yet, visit the [installation instructions](/docs/agent/packaging/installer) for
 > details, including our one-liner script, which automatically installs Netdata on almost all Linux distributions.

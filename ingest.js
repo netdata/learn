@@ -120,6 +120,9 @@ function normalizeLinks(pages) {
 
       // If the link is to a step-by-step guide page in the `/docs/step-by-step` folder.
       if (url.includes('step-by-step/') || url.includes('step-')) {
+        if (url.includes('step-by-step/')) {
+          url = url.split('step-by-step/')[1]
+        }
         const guideUrl =  path.join(guideDir, 'step-by-step', url)
         return `](${guideUrl})`
       }

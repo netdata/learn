@@ -76,7 +76,7 @@ You can archive all the metrics collected by Netdata to **external databases**. 
 include Graphite, OpenTSDB, Prometheus, AWS Kinesis Data Streams, Google Cloud Pub/Sub, MongoDB, and the list is always
 growing.
 
-As we said in [step 1](/guides/step-by-step/docs/step-by-step/step-01), we have only complimentary systems, not competitors! We're happy
+As we said in [step 1](/guides/step-by-step/step-01), we have only complimentary systems, not competitors! We're happy
 to support these archiving methods and are always working to improve them.
 
 A lot of Netdata users archive their metrics to one of these databases for long-term storage or further analysis. Since
