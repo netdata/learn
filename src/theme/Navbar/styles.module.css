@@ -34,6 +34,13 @@
   border-radius: var(--ifm-global-radius);
 }
 
+@media (max-width: 1220px) {
+  .navbarDocs {
+    margin-right: 1rem;
+    padding: 0 0.75rem 0 1rem;
+  }
+}
+
 @media (max-width: 996px) {
   .navbarDocs {
     display: none;

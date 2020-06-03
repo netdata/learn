@@ -160,10 +160,12 @@ main[class^='docMainContainer'] .container {
   margin-right: 2rem;
   /* TODO: Explore how you can restore this and have the `Agent`/`Cloud` buttons aligned with the docs text. */
   /* margin-right: 16rem; */
-}
 
-@media (max-width: 500px) {
-  .navbar .navbar__brand {
+  @media (max-width: 1220px) {
+    margin-right: 1rem;
+  }
+
+  @media (max-width: 500px) {
     margin-right: 0;
   }
 }
@@ -203,6 +205,10 @@ main[class^='docMainContainer'] .container {
 .navbar .navbar__link {
   font-size: 1.2rem;
   font-weight: var(--ifm-font-weight-normal);
+
+  @media (max-width: 1220px) {
+    padding: var(--ifm-navbar-item-padding-vertical) calc(var(--ifm-navbar-item-padding-horizontal) * 0.5);
+  }
 }
 
 .navbar__items--right .navbar__link {
@@ -237,8 +243,8 @@ main[class^='docMainContainer'] .container {
 
    border-radius: var(--ifm-global-radius) !important;
 
-   @media (max-width: 500px) {
-     width: 100px;
+   @media (min-width: 997px) and (max-width: 1100px) {
+     width: 100px !important;
    }
  }
 
