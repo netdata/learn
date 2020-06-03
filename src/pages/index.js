@@ -285,7 +285,7 @@ function Home() {
                 <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with monitoring and troubleshooting.</p>
                 <p>
                   <Link
-                    to={useBaseUrl('docs/agent/step-by-step/step-00')}
+                    to={useBaseUrl('guides/step-by-step/step-00')}
                     className={classnames('button button--lg')}
                   >
                     Try the guide
@@ -294,52 +294,52 @@ function Home() {
               </div>
               <div className={classnames('col col--4', styles.stepByStepLinks)}>
                 <StepByStepLink
-                  href="docs/agent/step-by-step/step-01"
+                  href="guides/step-by-step/step-01"
                   icon={<FiBox />}
                   title="Netdata's building blocks"
                 />
                 <StepByStepLink
-                  href="docs/agent/step-by-step/step-02"
+                  href="guides/step-by-step/step-02"
                   icon={<FiHome />}
                   title="Get to know Netdata's dashboard"
                 />
                 <StepByStepLink
-                  href="docs/agent/step-by-step/step-03"
+                  href="guides/step-by-step/step-03"
                   icon={<FiServer />}
                   title="Monitor more than one system with Netdata"
                 />
                 <StepByStepLink
-                  href="docs/agent/step-by-step/step-04"
+                  href="guides/step-by-step/step-04"
                   icon={<FiSliders />}
                   title="The basics of configuring Netdata"
                 />
                 <StepByStepLink
-                  href="docs/agent/step-by-step/step-05"
+                  href="guides/step-by-step/step-05"
                   icon={<FiActivity />}
                   title="Health monitoring alarms and notifications"
                 />
                 <StepByStepLink
-                  href="docs/agent/step-by-step/step-06"
+                  href="guides/step-by-step/step-06"
                   icon={<FiCpu />}
                   title="Collect metrics from more services and apps"
                 />
                 <StepByStepLink
-                  href="docs/agent/step-by-step/step-07"
+                  href="guides/step-by-step/step-07"
                   icon={<FiMonitor />}
                   title="Netdata’s dashboard in depth"
                 />
                 <StepByStepLink
-                  href="docs/agent/step-by-step/step-08"
+                  href="guides/step-by-step/step-08"
                   icon={<FiGrid />}
                   title="Building your first custom dashboard"
                 />
                 <StepByStepLink
-                  href="docs/agent/step-by-step/step-09"
+                  href="guides/step-by-step/step-09"
                   icon={<FiHardDrive />}
                   title="Long-term metrics storage"
                 />
                 <StepByStepLink
-                  href="docs/agent/step-by-step/step-10"
+                  href="guides/step-by-step/step-10"
                   icon={<FiLock />}
                   title="Set up a proxy"
                 />
