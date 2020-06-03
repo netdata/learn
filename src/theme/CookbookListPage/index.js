@@ -182,6 +182,23 @@ function CookbookListPage(props) {
           </div>
         </section>
 
+        <section className={classnames(styles.guideSection)}>
+          <div className={classnames('row')}>
+            <div className={classnames('col col-12 markdown')}>
+              <h2>Monitor</h2>
+              <p>Configure Netdata's sophisticated health monitoring watchdog to catch anomalies sooner.</p>
+            </div>
+          </div>
+          <div className={classnames(styles.guideBoxes, styles.guideBoxesTight)}>
+            <Link to="/guides/monitor/dimension-templates" className={classnames('col col--4', styles.guideBox)}>
+              <h3>Use dimension templates to create dynamic alarms</h3>
+            </Link>
+            <Link to="/guides/monitor/stop-notifications-alarms" className={classnames('col col--4', styles.guideBox)}>
+              <h3>Stop notifications for individual alarms</h3>
+            </Link>
+          </div>
+        </section>
+
           {/* If there is no search term, show the default view. */}
           {/* {!searchTerm ? (
             <>

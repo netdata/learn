@@ -349,14 +349,6 @@ module.exports = {
         'agent/health',
         'agent/health/quickstart',
         'agent/health/reference',
-        {
-          type: 'category',
-          label: 'Tutorials',
-          items: [
-            'agent/health/tutorials/dimension-templates',
-            'agent/health/tutorials/stop-notifications-alarms',
-          ]
-        },
         'agent/health/notifications',
         {
           type: 'category',

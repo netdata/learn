@@ -29,6 +29,10 @@
   status = 301
 
 [[redirects]]
+  from = "/docs/agent/guides/*"
+  to = "/guides/:splat"
+
+[[redirects]]
   from = "/docs/agent/tutorials/*"
   to = "/guides/:splat"
 
