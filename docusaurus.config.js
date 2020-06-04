@@ -50,12 +50,14 @@ module.exports = {
         {
           to: 'docs/agent', 
           label: 'Agent', 
-          position: 'left'
+          position: 'left',
+          group: 'docs'
         },
         {
           to: 'docs/cloud', 
           label: 'Cloud', 
-          position: 'left'
+          position: 'left',
+          group: 'docs'
         },
         {
           to: 'guides', 
@@ -74,7 +76,7 @@ module.exports = {
         },
         {
           href: 'https://netdata.cloud',
-          label: 'Netdata',
+          label: 'Netdata, Inc.',
           position: 'right',
         },
       ],
