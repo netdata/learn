@@ -29,6 +29,22 @@
   status = 301
 
 [[redirects]]
+  from = "/docs/agent/health/tutorials/*"
+  to = "/guides/monitor/:splat"
+
+[[redirects]]
+  from = "/docs/agent/guides/*"
+  to = "/guides/:splat"
+
+[[redirects]]
+  from = "/docs/agent/tutorials/*"
+  to = "/guides/:splat"
+
+[[redirects]]
+  from = "/docs/agent/step-by-step/*"
+  to = "/guides/step-by-step/:splat"
+
+[[redirects]]
   from = "/docs/agent/collectors/ebpf_process.plugin/"
   to = "/docs/agent/collectors/ebpf.plugin/"
 

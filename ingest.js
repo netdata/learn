@@ -13,6 +13,7 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const baseDir = '/docs'
 const agentDir = '/docs/agent'
 const cloudDir = '/docs/cloud'
+const guideDir = '/guides/'
 const outDir = path.join(__dirname, agentDir)
 // the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
@@ -109,6 +110,22 @@ function normalizeLinks(pages) {
       // Skip the whole process if a relative anchor, external link, or a mailto
       // link. Return the normalized link.
       if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
+
+      // If the link is to a guide page in the `/docs/guides` folder.
+      if (url.includes('guides/')) {
+        url = url.split('guides/')[1]
+        const guideUrl =  path.join(guideDir, url)
+        return `](${guideUrl})`
+      }
+
+      // If the link is to a step-by-step guide page in the `/docs/step-by-step` folder.
+      if (url.includes('step-by-step/') || url.includes('step-')) {
+        if (url.includes('step-by-step/')) {
+          url = url.split('step-by-step/')[1]
+        }
+        const guideUrl =  path.join(guideDir, 'step-by-step', url)
+        return `](${guideUrl})`
+      }
 
       // If the link is already absolute-relative. If it begins with `/docs`,
       // cut that. Return the normalized link.
@@ -238,12 +255,16 @@ function sanitizePages(pages) {
 
 async function writePages(pages) {
   return Promise.all(pages.map(async (page) => {
-    const fullPath = path.join(outDir, page.meta.path).toLowerCase()
+    let fullPath = path.join(outDir, page.meta.path).toLowerCase()
+    let fullDir = path.dirname(fullPath)
 
-    // because the page path may contain additional directories
-    const fullDir = path.dirname(fullPath)
+    // Move anything from the `/docs/guides` folder into the new `guides` folder.
+    if (fullPath.includes('agent/guides')) {
+      fullPath = fullPath.replace('docs/agent/guides/', 'guides/');
+      fullDir = fullDir.replace('docs/agent/guides/', 'guides/');
+    }
+
     await fs.mkdir(fullDir, { recursive: true })
-
     await fs.writeFile(fullPath, page.body)
   }))
 }

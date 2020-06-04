@@ -61,8 +61,8 @@ it there.
 #### Increase the long-term metrics retention period
 
 Increase the values for the `page cache size` and `dbengine disk space` settings in the [`[global]`
-section](/docs/agent/daemon/config#global-section-options) of `netdata.conf`. Read our tutorial on [increasing
-long-term metrics storage](/docs/agent/tutorials/longer-metrics-storage) and the [memory requirements for the database
+section](/docs/agent/daemon/config#global-section-options) of `netdata.conf`. Read our guide on [increasing
+long-term metrics storage](/guides/longer-metrics-storage) and the [memory requirements for the database
 engine](/docs/agent/database/engine#memory-requirements).
 
 #### Reduce the data collection frequency
@@ -196,7 +196,7 @@ Beginning with  1.20, Netdata accepts user-defined **host labels**. These labels
 labels]`.
 
 Read more about how these labels work and why they're an effective way to organize complex infrasturctures in our
-tutorial: [Use host labels to organize systems, metrics, and alarms](/docs/agent/tutorials/using-host-labels).
+guide: [Use host labels to organize systems, metrics, and alarms](/guides/using-host-labels).
 
 To define a label inside this section, some rules needs to be followed, or Netdata will reject the label. The following
 restrictions are applied for label names:

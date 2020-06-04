@@ -1,6 +1,6 @@
 ---
 title: "Monitor Nginx or Apache web server log files with Netdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/tutorials/collect-apache-nginx-web-logs.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/collect-apache-nginx-web-logs.md
 ---
 
 
@@ -20,10 +20,10 @@ You can now use the [LTSV log format](http://ltsv.org/), track TLS and cipher us
 ever. In one test on a system with SSD storage, the collector consistently parsed the logs for 200,000 requests in
 200ms, using ~30% of a single core. To learn more about these improvements, see our [v1.19 release post](https://blog.netdata.cloud/posts/release-1.19/).
 
-The [go.d plugin](/docs/agent/collectors/go.d.plugin/modules/weblog/) is currently compatible with
-[Nginx](https://nginx.org/en/) and [Apache](https://httpd.apache.org/).
+The [go.d plugin](/docs/agent/collectors/go.d.plugin/modules/weblog/) is currently compatible
+with [Nginx](https://nginx.org/en/) and [Apache](https://httpd.apache.org/).
 
-This tutorial will walk you through using the new Go-based web log collector to turn the logs these web servers
+This guide will walk you through using the new Go-based web log collector to turn the logs these web servers
 constantly write to into real-time insights into your infrastructure.
 
 ## Set up your web servers
@@ -126,7 +126,7 @@ web server's access log and begin showing real-time charts!
 ### Custom log formats and fields
 
 The web log collector is capable of parsing custom Nginx and Apache log formats and presenting them as charts, but we'll
-leave that topic for a separate tutorial.
+leave that topic for a separate guide.
 
 We do have [extensive
 documentation](/docs/agent/collectors/go.d.plugin/modules/weblog/#custom-log-format) on how

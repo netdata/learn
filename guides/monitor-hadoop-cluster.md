@@ -1,6 +1,6 @@
 ---
 title: "Monitor a Hadoop cluster with Netdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/tutorials/monitor-hadoop-cluster.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor-hadoop-cluster.md
 ---
 
 
@@ -15,13 +15,13 @@ implementations.
 
 Netdata comes with built-in and pre-configured support for monitoring both HDFS and Zookeeper.
 
-This tutorial assumes you have a Hadoop cluster, with HDFS and Zookeeper, running already. If you don't, please follow
+This guide assumes you have a Hadoop cluster, with HDFS and Zookeeper, running already. If you don't, please follow
 the [official Hadoop
 instructions](http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html) or an
 alternative, like the guide available from
 [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-18-04).
 
-For more specifics on the collection modules used in this tutorial, read the respective pages in our documentation:
+For more specifics on the collection modules used in this guide, read the respective pages in our documentation:
 
 -   [HDFS](/docs/agent/collectors/go.d.plugin/modules/hdfs)
 -   [Zookeeper](/docs/agent/collectors/go.d.plugin/modules/zookeeper)

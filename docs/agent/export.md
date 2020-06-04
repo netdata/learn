@@ -25,7 +25,7 @@ be applied to other connectors as well.
 > If you are migrating from the deprecated backends system, this quickstart will also help you update your configuration
 > to the new format. For the most part, the configurations are identical, but there are two exceptions. First,
 > `exporting.conf` uses a new `[<type>:<name>]` format for defining connector instances. Second, the `host tags` setting
-> is deprecated. Instead, use [host labels](/docs/agent/tutorials/using-host-labels) to tag exported metrics.
+> is deprecated. Instead, use [host labels](/guides/using-host-labels) to tag exported metrics.
 
 Open the `exporting.conf` file with `edit-config`.
 
@@ -94,8 +94,8 @@ collected, you should start seeing data in your external database after only a f
 
 -   [Exporting reference guide](/docs/agent/exporting)
 -   [Backends (deprecated)](/docs/agent/backends)
--   [Use host labels to organize systems, metrics, and alarms](/docs/agent/tutorials/using-host-labels)
+-   [Use host labels to organize systems, metrics, and alarms](/guides/using-host-labels)
 -   [Database engine](/docs/agent/database/engine)
--   [Change how long Netdata stores metrics (long-term storage)](/docs/agent/tutorials/longer-metrics-storage)
+-   [Change how long Netdata stores metrics (long-term storage)](/guides/longer-metrics-storage)
 
 

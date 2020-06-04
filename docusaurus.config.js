@@ -19,11 +19,12 @@ module.exports = {
           customCss: require.resolve('./src/css/custom.scss'),
         },
       },
-    ],
+    ]
   ],
   plugins: [
     require.resolve('@docusaurus/plugin-sitemap'),
     require.resolve('docusaurus-plugin-sass'),
+    require.resolve('./src/plugins/cookbooks'),
   ],
   stylesheets: [
     'https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,500&display=swap',
@@ -54,6 +55,11 @@ module.exports = {
         {
           to: 'docs/cloud', 
           label: 'Cloud', 
+          position: 'left'
+        },
+        {
+          to: 'guides', 
+          label: 'Guides', 
           position: 'left'
         },
         {
@@ -90,6 +96,10 @@ module.exports = {
             {
               label: 'Cloud Docs',
               to: 'docs/cloud',
+            },
+            {
+              label: 'Guides',
+              to: 'guides',
             },
             {
               label: 'Blog',

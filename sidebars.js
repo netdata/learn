@@ -72,24 +72,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Step-by-step guide',
-      items: [
-        'agent/step-by-step/step-00',
-        'agent/step-by-step/step-01',
-        'agent/step-by-step/step-02',
-        'agent/step-by-step/step-03',
-        'agent/step-by-step/step-04',
-        'agent/step-by-step/step-05',
-        'agent/step-by-step/step-06',
-        'agent/step-by-step/step-07',
-        'agent/step-by-step/step-08',
-        'agent/step-by-step/step-09',
-        'agent/step-by-step/step-10',
-        'agent/step-by-step/step-99',
-      ]
-    },
-    {
-      type: 'category',
       label: 'Running Netdata',
       items: [
         'agent/daemon',
@@ -343,7 +325,6 @@ module.exports = {
       items: [
         'agent/database',
         'agent/database/engine',
-        'agent/tutorials/longer-metrics-storage',
         'agent/database/calculator',
       ]
     },
@@ -368,14 +349,6 @@ module.exports = {
         'agent/health',
         'agent/health/quickstart',
         'agent/health/reference',
-        {
-          type: 'category',
-          label: 'Tutorials',
-          items: [
-            'agent/health/tutorials/dimension-templates',
-            'agent/health/tutorials/stop-notifications-alarms',
-          ]
-        },
         'agent/health/notifications',
         {
           type: 'category',

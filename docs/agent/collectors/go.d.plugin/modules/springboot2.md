@@ -24,7 +24,7 @@ Springboot2 module looks up `http://localhost:8080/actuator/prometheus` and `htt
 ## Configuration
 
 Edit the `go.d/springboot2.conf` configuration file using `edit-config` from the your agent's [config
-directory](/docs/agent/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+directory](/guides/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory

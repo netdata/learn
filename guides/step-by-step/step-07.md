@@ -1,7 +1,7 @@
 ---
 title: "Step 7. Netdata's dashboard in depth"
 date: 2020-05-04
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-07.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/step-by-step/step-07.md
 ---
 
 
@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-ste
 Welcome to the seventh step of the Netdata guide!
 
 This step of the guide aims to get you more familiar with the features of the dashboard not previously mentioned in
-[step 2](/docs/agent/step-by-step/step-02).
+[step 2](/guides/step-by-step/step-02).
 
 ## What you'll learn in this step
 
@@ -101,7 +101,7 @@ restore your real-time dashboard for your machine.
 
 ## What's next?
 
-In this step of the Netdata tutorial, you learned how to:
+In this step of the Netdata guide, you learned how to:
 
 -   Change the dashboard's settings
 -   Check if there's an update to Netdata
@@ -109,4 +109,6 @@ In this step of the Netdata tutorial, you learned how to:
 
 Next, you'll learn how to build your first custom dashboard!
 
-[Next: Build your first custom dashboard &rarr;](/docs/agent/step-by-step/step-08)
+[Next: Build your first custom dashboard &rarr;](/guides/step-by-step/step-08)
+
+

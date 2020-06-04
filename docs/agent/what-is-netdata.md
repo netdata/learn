@@ -35,7 +35,7 @@ Netdata is **fast** and **efficient**, designed to permanently run on all system
 Netdata is **free, open-source software** and it currently runs on **Linux**, **FreeBSD**, and **macOS**, along with
 other systems derived from them, such as **Kubernetes** and **Docker**.
 
-Netdata is not hosted by the CNCF but is the 3rd most starred open-source project in the [Cloud Native Computing
+Netdata is not hosted by the CNCF but is the fourth most starred open-source project in the [Cloud Native Computing
 Foundation (CNCF) landscape](https://landscape.cncf.io/format=card-mode&grouping=no&sort=stars).
 
 ---
@@ -75,7 +75,8 @@ action](https://user-images.githubusercontent.com/1153921/80827388-b9fee100-8b98
 > wheel`, an area can be selected for zoom-in with `SHIFT` + `mouse selection`. Netdata is highly interactive,
 > **real-time**, and optimized to get the work done!
 
-Want to see Netdata live? Check out any of our [live demos](https://www.netdata.cloud/#live-demo).
+Want to try Netdata before you install? See our [live
+demo](https://london.my-netdata.io/default.html#menu_system_submenu_cpu;theme=slate;help=true).
 
 ## User base
 
@@ -153,11 +154,14 @@ To try Netdata in a Docker container, run this:
 ```sh
 docker run -d --name=netdata \
   -p 19999:19999 \
+  -v netdatalib:/var/lib/netdata \
+  -v netdatacache:/var/cache/netdata \
   -v /etc/passwd:/host/etc/passwd:ro \
   -v /etc/group:/host/etc/group:ro \
   -v /proc:/host/proc:ro \
   -v /sys:/host/sys:ro \
-  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  -v /etc/os-release:/host/etc/os-release:ro \
+  --restart unless-stopped \
   --cap-add SYS_PTRACE \
   --security-opt apparmor=unconfined \
   netdata/netdata
@@ -217,12 +221,12 @@ This is how it works:
 
 | Function    | Description                                                                                                                                                                                                                                                    | Documentation                                       |
 | :---------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------- |
-| **Collect** | Multiple independent data collection workers are collecting metrics from their sources using the optimal protocol for each application and push the metrics to the database. Each data collection worker has lockless write access to the metrics it collects. | [`collectors`](/docs/agent/collectors)                |
-| **Store**   | Metrics are first stored in RAM in a custom database engine that then "spills" historical metrics to disk for efficient long-term metrics storage.                                                                                                             | [`database`](/docs/agent/database)                    |
-| **Check**   | A lockless independent watchdog is evaluating **health checks** on the collected metrics, triggers alarms, maintains a health transaction log and dispatches alarm notifications.                                                                              | [`health`](/docs/agent/health)                        |
-| **Stream**  | A lockless independent worker is streaming metrics, in full detail and in real-time, to remote Netdata servers, as soon as they are collected.                                                                                                                 | [`streaming`](/docs/agent/streaming)                  |
-| **Archive** | A lockless independent worker is down-sampling the metrics and pushes them to external time-series databases.                                                                                                                                               | [`exporting`](/docs/agent/exporting)                    |
-| **Query**   | Multiple independent workers are attached to the [internal web server](/docs/agent/web/server), servicing API requests, including [data queries](/docs/agent/web/api/queries).                                                                                     | [`web/api`](/docs/agent/web/api)                      |
+| **Collect** | Multiple independent data collection workers are collecting metrics from their sources using the optimal protocol for each application and push the metrics to the database. Each data collection worker has lockless write access to the metrics it collects. | [`collectors`](/docs/agent/collectors)               |
+| **Store**   | Metrics are first stored in RAM in a custom database engine that then "spills" historical metrics to disk for efficient long-term metrics storage.                                                                                                             | [`database`](/docs/agent/database)                   |
+| **Check**   | A lockless independent watchdog is evaluating **health checks** on the collected metrics, triggers alarms, maintains a health transaction log and dispatches alarm notifications.                                                                              | [`health`](/docs/agent/health)                       |
+| **Stream**  | A lockless independent worker is streaming metrics, in full detail and in real-time, to remote Netdata servers, as soon as they are collected.                                                                                                                 | [`streaming`](/docs/agent/streaming)                 |
+| **Archive** | A lockless independent worker is down-sampling the metrics and pushes them to **backend** time-series databases.                                                                                                                                               | [`exporting`](/docs/agent/export)               |
+| **Query**   | Multiple independent workers are attached to the [internal web server](/docs/agent/web/server), servicing API requests, including [data queries](/docs/agent/web/api/queries).                                                                                   | [`web/api`](/docs/agent/web/api)                     |
 
 The result is a highly efficient, low-latency system, supporting multiple readers and one writer on each metric.
 
@@ -277,10 +281,10 @@ This is what you should expect from Netdata:
 ### Integrations
 
 -   **Time-series databases** - Netdata can archive its metrics to **Graphite**, **OpenTSDB**, **Prometheus**, **AWS
-    Kinesis**, **Google Cloud Pub/Sub**, **MongoDB**, **JSON document DBs**, in the same or lower resolution (lower: to
-    prevent it from congesting these servers due to the amount of data collected). Netdata also supports **Prometheus
-    remote write API**, which allows storing metrics to **Elasticsearch**, **Gnocchi**, **InfluxDB**, **Kafka**,
-    **PostgreSQL/TimescaleDB**, **Splunk**, **VictoriaMetrics** and a lot of other [storage
+    Kinesis**, **MongoDB**, **JSON document DBs**, in the same or lower resolution (lower: to prevent it from congesting
+    these servers due to the amount of data collected). Netdata also supports **Prometheus remote write API**, which
+    allows storing metrics to **Elasticsearch**, **Gnocchi**, **InfluxDB**, **Kafka**, **PostgreSQL/TimescaleDB**,
+    **Splunk**, **VictoriaMetrics** and a lot of other [storage
     providers](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage).
 
 ## Visualization
@@ -301,7 +305,7 @@ To improve clarity on charts, Netdata dashboards present **positive** values for
 `inbound`, `received` and **negative** values for metrics representing `write`, `output`, `outbound`, `sent`.
 
 ![Screenshot showing positive and negative
-values](https://user-images.githubusercontent.com/1153921/80838078-03f1c200-8bad-11ea-834a-a0085b39adb6.png)
+values](https://user-images.githubusercontent.com/1153921/81870401-9d649080-952a-11ea-80e3-4a7b480252ee.gif)
 
 _Netdata charts showing the bandwidth and packets of a network interface. `received` is positive and `sent` is
 negative._
@@ -368,7 +372,7 @@ Here is a quick list of notable documents:
 | [`collectors`](/docs/agent/collectors)                 | Information about data collection plugins.                                                                            |
 | [`health`](/docs/agent/health)                         | How Netdata's health monitoring works, how to create your own alarms and how to configure alarm notification methods. |
 | [`streaming`](/docs/agent/streaming)                   | How to build hierarchies of Netdata servers, by streaming metrics between them.                                       |
-| [`exporting`](/docs/agent/exporting)                   | Long term archiving of metrics to industry-standard time-series databases, like `prometheus`, `graphite`, `opentsdb`. |
+| [`exporting`](/docs/agent/export)                 | Long term archiving of metrics to industry-standard time-series databases, like `prometheus`, `graphite`, `opentsdb`. |
 | [`web/api`](/docs/agent/web/api)                       | Learn how to query the Netdata API and the queries it supports.                                                       |
 | [`web/api/badges`](/docs/agent/web/api/badges)         | Learn how to generate badges (SVG images) from live data.                                                             |
 | [`web/gui/custom`](/docs/agent/web/gui/custom)         | Learn how to create custom Netdata dashboards.                                                                        |
