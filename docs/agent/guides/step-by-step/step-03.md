@@ -1,14 +1,14 @@
 ---
 title: "Step 3. Monitor more than one system with Netdata"
 date: 2020-05-01
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-03.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/step-by-step/step-03.md
 ---
 
 
 
 The Netdata agent is _distributed_ by design. That means each agent operates independently from any other, collecting
 and creating charts only for the system you installed it on. We made this decision a long time ago to [improve security
-and performance](/docs/agent/step-by-step/step-01).
+and performance](/docs/agent/guides/step-by-step/step-01).
 
 You might be thinking, "So, now I have to remember all these IP addresses, and type them into my browser
 manually, to move from one system to another? Maybe I should just make a bunch of bookmarks. What's a few more tabs
@@ -50,7 +50,7 @@ Or, if you're feeling confident, dive right in.
 
 <p><a href="https://app.netdata.cloud" className="button button--lg">Sign in to Cloud</a></p>
 
-When you finish that guide, circle back to this step in the tutorial to learn how to use the Visited Nodes feature on
+When you finish that guide, circle back to this step in the guide to learn how to use the Visited Nodes feature on
 top of Cloud's centralized web interface.
 
 ## Navigate between dashboards with Visited Nodes
@@ -86,4 +86,6 @@ Now that you have a Netdata Cloud account with a claimed node (or a few!) and ca
 Visited nodes, it's time to learn more about how you can configure Netdata to your liking. From there, you'll be able to
 customize your Netdata experience to your exact infrastructure and the information you need.
 
-[Next: The basics of configuring Netdata &rarr;](/docs/agent/step-by-step/step-04)
+[Next: The basics of configuring Netdata &rarr;](/docs/agent/guides/step-by-step/step-04)
+
+

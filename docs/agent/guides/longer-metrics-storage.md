@@ -1,7 +1,7 @@
 ---
 title: "Change how long Netdata stores metrics"
 description: "With a single configuration change, the Netdata Agent can store days, weeks, or months of metrics at its famous per-second granularity."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/tutorials/longer-metrics-storage.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/longer-metrics-storage.md
 ---
 
 
@@ -13,7 +13,7 @@ Many people think Netdata can only store about an hour's worth of real-time metr
 more. With the right settings, Netdata is quite capable of efficiently storing hours or days worth of historical,
 per-second metrics without having to rely on an [exporting engine](/docs/agent/exporting).
 
-This tutorial gives two options for configuring Netdata to store more metrics. **We recommend the default [database
+This guide gives two options for configuring Netdata to store more metrics. **We recommend the default [database
 engine](#using-the-database-engine)**, but you can stick with or switch to the round-robin database if you prefer.
 
 Let's get started.

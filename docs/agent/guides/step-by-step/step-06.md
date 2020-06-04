@@ -1,6 +1,6 @@
 ---
 title: "Step 6. Collect metrics from more services and apps"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-06.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/guides/docs/step-by-step/step-06.md
 ---
 
 
@@ -37,7 +37,7 @@ are organized and manged by plugins. **Internal** plugins collect system metrics
 non-system metrics, and **orchestrator** plugins group individal collectors together based on the programming language
 they were built in.
 
-These modules are primarily written in [Go](/docs/agent/collectors/go.d.plugin) (`go.d`) and
+These modules are primarily written in [Go](/docs/agent/collectors/go.d.plugin/) (`go.d`) and
 [Python](/docs/agent/collectors/python.d.plugin), although some use [Bash](/docs/agent/collectors/charts.d.plugin)
 (`charts.d`) or [Node.js](/docs/agent/collectors/node.d.plugin) (`node.d`).
 
@@ -117,4 +117,6 @@ After configuring any source, or changing the configuration files for their resp
 Now that you've learned the fundamentals behind configuring data sources for auto-detection, it's time to move back to
 the dashboard to learn more about some of its more advanced features.
 
-[Next: Netdata's dashboard in depth &rarr;](/docs/agent/step-by-step/step-07)
+[Next: Netdata's dashboard in depth &rarr;](/docs/agent/guides/step-by-step/step-07)
+
+

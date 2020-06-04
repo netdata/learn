@@ -1,6 +1,6 @@
 ---
 title: "Use dimension templates to create dynamic alarms"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/health/tutorials/dimension-templates.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/monitor/health/dimension-templates.md
 ---
 
 
@@ -15,7 +15,7 @@ Dimension templates can condense many individual entities into one—no more cop
 `alarm`/`template` and `lookup` lines for each dimension you'd like to monitor.
 
 They are, however, an advanced health monitoring feature. For more basic instructions on creating your first alarm,
-check out our [health monitoring documentation](/docs/agent/health/tutorials/..), which also includes
+check out our [health monitoring documentation](/docs/agent/health), which also includes
 [examples](/docs/agent/health/reference#example-alarms).
 
 ## The fundamentals of `foreach`
@@ -171,6 +171,6 @@ alarms that will help you better monitor the health of your systems.
 Or, at the very least, simplify your configuration files.
 
 For information about other advanced features in Netdata's health monitoring toolkit, check out our [health
-documentation](/docs/agent/health/). And if you have some cool alarms you built using dimension templates, 
+documentation](/docs/agent/health). And if you have some cool alarms you built using dimension templates, 
 
 

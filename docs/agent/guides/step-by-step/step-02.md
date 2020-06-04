@@ -1,7 +1,7 @@
 ---
 title: "Step 2. Get to know Netdata's dashboard"
 date: 2020-05-04
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-02.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/step-by-step/step-02.md
 ---
 
 
@@ -10,7 +10,7 @@ Welcome to Netdata proper! Now that you understand how Netdata works, how it's b
 working with the dashboard directly.
 
 This step-by-step guide assumes you've already installed Netdata on a system of yours. If you haven't yet, hop back over
-to ["step 0"](/docs/agent/step-by-step/step-00#before-we-get-started) for information about our one-line installer script. Or, view the
+to ["step 0"](/docs/agent/guides/step-by-step/step-00#before-we-get-started) for information about our one-line installer script. Or, view the
 [installation docs](/docs/agent/packaging/installer) to learn more. Once you have Netdata installed, you can hop back
 over here and dig in.
 
@@ -37,7 +37,7 @@ of your Agent. If you're unsure, try `http://localhost:19999` first. Hit **Enter
 ![Animated GIF of navigating to the
 dashboard](https://user-images.githubusercontent.com/1153921/80825153-abaec600-8b94-11ea-8b17-1b770a2abaa9.gif)
 
-> From here on out in this tutorial, we'll refer to the address you use to view your dashboard as `NODE`. Be sure to
+> From here on out in this guide, we'll refer to the address you use to view your dashboard as `NODE`. Be sure to
 > replace it with either `localhost`, the IP address, or the hostname of your system.
 
 ## Explore available charts using menus
@@ -187,13 +187,13 @@ often Netdata should be calculating these metrics to see if the alarm should rem
 The `execute` field tells Netdata how to notify you about this alarm, and the `source` field lets you know where you can
 find the configuration file, if you'd like to edit its configuration.
 
-We'll cover alarm configuration in more detail later in the tutorial, so don't worry about it too much for now! Right
+We'll cover alarm configuration in more detail later in the guide, so don't worry about it too much for now! Right
 now, it's most important that you understand how to see alarms, and parse their details, if and when they appear on your
 system.
 
 ## What's next?
 
-In this step of the Netdata tutorial, you learned how to:
+In this step of the Netdata guide, you learned how to:
 
 -   Visit the dashboard
 -   Explore available charts (using the right-side menu)
@@ -203,4 +203,6 @@ In this step of the Netdata tutorial, you learned how to:
 
 Next, you'll learn how to monitor multiple nodes through the dashboard.
 
-[Next: Monitor more than one system with Netdata →](/docs/agent/step-by-step/step-03)
+[Next: Monitor more than one system with Netdata →](/docs/agent/guides/step-by-step/step-03)
+
+

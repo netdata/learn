@@ -1,11 +1,11 @@
 ---
 title: "Step 5. Health monitoring alarms and notifications"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-05.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/step-by-step/step-05.md
 ---
 
 
 
-In the fifth step of the Netdata tutorial, we're introducing you to one of our core features: **health monitoring**.
+In the fifth step of the Netdata guide, we're introducing you to one of our core features: **health monitoring**.
 
 To accurately monitor the health of your systems and applications, you need to know _immediately_ when there's something
 strange going on. Netdata's alarm and notification systems are essential to keeping you informed. 
@@ -37,7 +37,7 @@ entity](https://user-images.githubusercontent.com/1153921/67034648-ebb4cc80-f0cc
 
 Look at the `source` row in the table. This means the `system.cpu` chart sources its health alarms from
 `4@/usr/lib/netdata/conf.d/health.d/cpu.conf`. To tune these alarms, you'll need to edit the alarm file at
-`health.d/cpu.conf`. Go to your [Netdata config directory](/docs/agent/step-by-step/step-04#find-your-netdataconf-file) and use the
+`health.d/cpu.conf`. Go to your [Netdata config directory](/docs/agent/guides/step-by-step/step-04#find-your-netdataconf-file) and use the
 `edit-config` script.
 
 ```bash
@@ -342,4 +342,6 @@ You're coming along quick!
 Next up, we're going to cover how Netdata collects its metrics, and how you can get Netdata to collect real-time metrics
 from hundreds of services with almost no configuration on your part. Onward!
 
-[Next: Collect metrics from more services and apps &rarr;](/docs/agent/step-by-step/step-06)
+[Next: Collect metrics from more services and apps &rarr;](/docs/agent/guides/step-by-step/step-06)
+
+

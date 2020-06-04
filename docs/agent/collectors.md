@@ -28,15 +28,15 @@ guide](/docs/agent/collectors/quickstart).
 
 [Collectors configuration reference](/docs/agent/collectors/reference)
 
-## Tutorials
+## Guides
 
-[Monitor Nginx or Apache web server log files with Netdata](/docs/agent/tutorials/collect-apache-nginx-web-logs)
+[Monitor Nginx or Apache web server log files with Netdata](/docs/agent/guides/collect-apache-nginx-web-logs)
 
-[Monitor CockroadchDB metrics with Netdata](/docs/agent/tutorials/monitor-cockroachdb)
+[Monitor CockroadchDB metrics with Netdata](/docs/agent/guides/monitor-cockroachdb)
 
-[Monitor Unbound DNS servers with Netdata](/docs/agent/tutorials/collect-unbound-metrics)
+[Monitor Unbound DNS servers with Netdata](/docs/agent/guides/collect-unbound-metrics)
 
-[Monitor a Hadoop cluster with Netdata](/docs/agent/tutorials/monitor-hadoop-cluster)
+[Monitor a Hadoop cluster with Netdata](/docs/agent/guides/monitor-hadoop-cluster)
 
 ## Related features
 

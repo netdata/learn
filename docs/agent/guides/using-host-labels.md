@@ -1,6 +1,6 @@
 ---
 title: "Use host labels to organize systems, metrics, and alarms"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/tutorials/using-host-labels.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/using-host-labels.md
 ---
 
 
@@ -206,3 +206,5 @@ queries _do_ showcase this information. As always, we recommend you secure Netda
 If you have issues or questions around using host labels, don't hesitate to [file an
 issue](https://github.com/netdata/netdata/issues/new?labels=bug%2C+needs+triage&template=bug_report.md) on GitHub. We're
 excited to make host labels even more valuable to our users, which we can only do with your input.
+
+

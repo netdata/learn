@@ -1,12 +1,12 @@
 ---
 title: "Step 4. The basics of configuring Netdata"
 date: 2020-03-31
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/step-by-step/step-04.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/step-by-step/step-04.md
 ---
 
 
 
-Welcome to the fourth step of the Netdata tutorial.
+Welcome to the fourth step of the Netdata guide.
 
 Since the beginning, we've covered the building blocks of Netdata, dashboard basics, and how you can monitor many
 individual systems using many distributed Netdata agents.
@@ -45,7 +45,7 @@ In the system represented by the screenshot, the line reads: `config directory =
 > For more details on where your Netdata config directory is, take a look at our [installation
 > instructions](/docs/agent/packaging/installer).
 
-For the rest of this tutorial, we'll assume you're editing files or running scripts from _within_ your **Netdata
+For the rest of this guide, we'll assume you're editing files or running scripts from _within_ your **Netdata
 configuration directory**.
 
 ## Use edit-config to open `netdata.conf`
@@ -124,8 +124,8 @@ Once you're done, restart Netdata and refresh the dashboard. Say hello to your r
 netdata.conf](https://user-images.githubusercontent.com/1153921/80994808-1c065300-8df2-11ea-81af-d28dc3ba27c8.gif)
 
 Netdata has dozens upon dozens of options you can change. To see them all, read our [daemon
-configuration](/docs/agent/daemon/config), or hop into our popular tutorial on [increasing long-term metrics
-storage](/docs/agent/tutorials/longer-metrics-storage).
+configuration](/docs/agent/daemon/config), or hop into our popular guide on [increasing long-term metrics
+storage](/docs/agent/guides/longer-metrics-storage).
 
 ## What's next?
 
@@ -133,10 +133,12 @@ At this point, you should be comfortable with getting to your Netdata directory,
 seeing your changes reflected in the dashboard.
 
 Netdata has many more configuration files that you might want to change, but we'll cover those in the following steps of
-this tutorial.
+this guide.
 
 In the next step, we're going to cover one of Netdata's core functions: monitoring the health of your systems via alarms
 and notifications. You'll learn how to disable alarms, create new ones, and push notifications to the system of your
 choosing.
 
-[Next: Health monitoring alarms and notifications &rarr;](/docs/agent/step-by-step/step-05)
+[Next: Health monitoring alarms and notifications &rarr;](/docs/agent/guides/step-by-step/step-05)
+
+
