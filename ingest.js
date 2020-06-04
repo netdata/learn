@@ -24,7 +24,7 @@ const retainPaths = [
 ]
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/joelhans/',
+  baseURL: 'https://api.github.com/repos/netdata/',
   headers: {
     'Authorization': `token ${GITHUB_TOKEN}`
   }
@@ -285,7 +285,7 @@ async function ingest() {
   }
 
   console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getRootSha('netdata', 'guides-section')
+  const rootSha = await getRootSha('netdata', 'master')
   console.log(`Fetching nodes from 'netdata' repo...`)
   const nodes = await getNodes(rootSha)
 
