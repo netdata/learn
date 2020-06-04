@@ -29,6 +29,10 @@
   status = 301
 
 [[redirects]]
+  from = "/docs/agent/health/tutorials/*"
+  to = "/guides/monitor/:splat"
+
+[[redirects]]
   from = "/docs/agent/guides/*"
   to = "/guides/:splat"
 
