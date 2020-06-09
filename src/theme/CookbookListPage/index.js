@@ -199,6 +199,20 @@ function CookbookListPage(props) {
           </div>
         </section>
 
+        <section className={classnames(styles.guideSection)}>
+          <div className={classnames('row')}>
+            <div className={classnames('col col-12 markdown')}>
+              <h2>Export</h2>
+              <p>Send Netdata's metrics to more than 20 different external databases for full interoperability with your monitoring stack.</p>
+            </div>
+          </div>
+          <div className={classnames(styles.guideBoxes, styles.guideBoxesTight)}>
+            <Link to="/guides/export/export-netdata-metrics-graphite" className={classnames('col col--4', styles.guideBox)}>
+              <h3>Export and visualize Netdata metrics in Graphite</h3>
+            </Link>
+          </div>
+        </section>
+
           {/* If there is no search term, show the default view. */}
           {/* {!searchTerm ? (
             <>

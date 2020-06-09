@@ -90,12 +90,12 @@ For details on all the configuration options, see the [exporting reference](/doc
 Restart your Agent to begin exporting to the destination of your choice. Because the Agent exports metrics as they're
 collected, you should start seeing data in your external database after only a few seconds.
 
-## Exporting reference and related features
+## Exporting reference, guides, and related features
 
 -   [Exporting reference guide](/docs/agent/exporting)
+-   [Guide: Export and visualize Netdata metrics in Graphite](/guides/export/export-netdata-metrics-graphite)
+-   [Guide: Use host labels to organize systems, metrics, and alarms](/guides/using-host-labels)
+-   [Guide: Change how long Netdata stores metrics (long-term storage)](/guides/longer-metrics-storage)
 -   [Backends (deprecated)](/docs/agent/backends)
--   [Use host labels to organize systems, metrics, and alarms](/guides/using-host-labels)
--   [Database engine](/docs/agent/database/engine)
--   [Change how long Netdata stores metrics (long-term storage)](/guides/longer-metrics-storage)
 
 
