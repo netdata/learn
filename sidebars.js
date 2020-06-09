@@ -364,6 +364,7 @@ module.exports = {
             'agent/health/notifications/hangouts',
             'agent/health/notifications/irc',
             'agent/health/notifications/kavenegar',
+            'agent/health/notifications/matrix',
             'agent/health/notifications/messagebird',
             'agent/health/notifications/pagerduty',
             'agent/health/notifications/prowl',
