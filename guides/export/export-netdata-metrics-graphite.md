@@ -1,7 +1,7 @@
 ---
 title: Export and visualize Netdata metrics in Graphite 
 description: Use Netdata to collect and export thousands of metrics to Graphite for long-term storage or further analysis.
-cover_image: /img/seo/guides/export/export-netdata-metrics-graphite.png
+image: /img/seo/guides/export/export-netdata-metrics-graphite.png
 ---
 
 
