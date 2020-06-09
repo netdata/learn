@@ -61,11 +61,9 @@ function CookbookPage(props) {
     },
   } = CookbookContents;
 
-  console.log(CookbookContents)
-
   return (
     <>
-      <Layout title={title} description={description} permalink={siteUrl + permalink} image={metaImage}>
+      <Layout title={title} description={description} permalink={permalink} metaImage={metaImage}>
         <div className="container">
           <div className="row">
             <div className={classnames('col', styles.cookbookContainer)}>
