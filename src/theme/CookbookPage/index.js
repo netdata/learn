@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -46,8 +45,6 @@ function Headings({headings, isChild}) {
 }
 
 function CookbookPage(props) {
-  const {siteConfig = {}} = useDocusaurusContext();
-  const {url: siteUrl, title: siteTitle} = siteConfig;
   const {content: CookbookContents} = props;
   const {metadata} = CookbookContents;
   const {
@@ -60,10 +57,11 @@ function CookbookPage(props) {
       image: metaImage,
     },
   } = CookbookContents;
+  const guideImage = useBaseUrl(metaImage, {absolute: true});
 
   return (
     <>
-      <Layout title={title} description={description} permalink={permalink} metaImage={metaImage}>
+      <Layout title={title} description={description} permalink={permalink} image={guideImage}>
         <div className="container">
           <div className="row">
             <div className={classnames('col', styles.cookbookContainer)}>
