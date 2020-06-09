@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import MDXComponents from '@theme/MDXComponents';
@@ -45,31 +46,42 @@ function Headings({headings, isChild}) {
 
 function CookbookPage(props) {
   const {content: CookbookContents} = props;
-  const {frontMatter, metadata} = CookbookContents;
-  const {title} = frontMatter;
-  const {keywords} = metadata;
+  const {metadata} = CookbookContents;
+  const {
+    description,
+    title,
+    permalink
+  } = metadata;
+  const {
+    frontMatter: {
+      image: metaImage,
+    },
+  } = CookbookContents;
+  const guideImage = useBaseUrl(metaImage, {absolute: true});
 
   return (
-    <Layout title={metadata.title} description={metadata.description} keywords={keywords}>
-      <div className="container">
-        <div className="row">
-          <div className={classnames('col', styles.cookbookContainer)}>
-            <article>
-              <header className={classnames(styles.cookbookHeader)}>
-                <h1 className={styles.cookbookTitle}>{title}</h1>
-              </header>
-              <section className="markdown">
-                <MDXProvider components={MDXComponents}><CookbookContents /></MDXProvider>
-                <Link to="/guides" className={classnames('button button--lg', styles.guidesMore)}>Find more guides</Link>
-              </section>
-            </article>
+    <>
+      <Layout title={title} description={description} permalink={permalink} image={guideImage}>
+        <div className="container">
+          <div className="row">
+            <div className={classnames('col', styles.cookbookContainer)}>
+              <article>
+                <header className={classnames(styles.cookbookHeader)}>
+                  <h1 className={styles.cookbookTitle}>{title}</h1>
+                </header>
+                <section className="markdown">
+                  <MDXProvider components={MDXComponents}><CookbookContents /></MDXProvider>
+                  <Link to="/guides" className={classnames('button button--lg', styles.guidesMore)}>Find more guides</Link>
+                </section>
+              </article>
+            </div>
+            {CookbookContents.rightToc && (
+              <DocTOC headings={CookbookContents.rightToc} />
+            )}
           </div>
-          {CookbookContents.rightToc && (
-            <DocTOC headings={CookbookContents.rightToc} />
-          )}
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 }
 
