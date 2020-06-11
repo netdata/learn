@@ -82,6 +82,21 @@
   margin-left: 0;
 }
 
+.calcWarn {
+  margin-bottom: 2rem;
+  padding: 1rem;
+
+  background: #F1F2F3;
+  border-radius: var(--ifm-global-radius);
+  color: #FF4136;
+
+  p {
+    margin-bottom: 0;
+    
+    font-size: 80%;
+  }
+}
+
 .calcResults {
   margin-top: 3rem;
   
