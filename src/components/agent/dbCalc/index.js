@@ -11,17 +11,18 @@ export function Calculator() {
     slaves: 0,
     dims: 2000,
     update: 1,
-    retention: 1,
+    retention: 0.1,
     compression: 50,
     pageSize: 32,
   })
 
   const [requiredDisk, setRequiredDisk ] = React.useState('')
   const [requiredRAM, setRequiredRAM] = React.useState('')
-  const [settingDiskSpace, setsettingDiskSpace] = React.useState('')
+  const [settingDiskSpace, setSettingDiskSpace] = React.useState('')
   const [conf, setConf] = React.useState('')
 
-  // Establish measurements per page (static)
+  // Establish measurements per page
+  // These values do not change
   const uncompressedPageSize = 4096
   const uncompressedBytesPerMeasurements = 4
   const measurementsPerPage = uncompressedPageSize / uncompressedBytesPerMeasurements
@@ -37,7 +38,7 @@ export function Calculator() {
     const maxUncompressedPages = totalMeasurements / measurementsPerPage
     const uncompressedPageSizeDiv = uncompressedPageSize / 1024 / 1024
     const uncompressedStorage = maxUncompressedPages * uncompressedPageSizeDiv
-    const requiredDiskSpace = Math.round(uncompressedStorage * ( 1 - (state.compression / 100)))
+    let diskSpace = Math.round(uncompressedStorage * ( 1 - (state.compression / 100)))
 
     // Calculate required RAM
     const ramPageCache = state.pageSize * nodes
@@ -45,19 +46,21 @@ export function Calculator() {
     const ramMetadata = uncompressedStorage * 0.03
     const requiredRam = Math.round(ramPageCache + ramPagesDims + ramMetadata)
 
-    // Calculate dbengine disk space setting
-    const settingDiskSpace = Math.round(requiredDiskSpace / nodes)
+    console.log(diskSpace / nodes)
 
-    // Enforce a minimum of 64 MiB for the dbengine disk space setting
-    // TODO
+    // Calculate dbengine disk space setting
+    // If diskSpace is less than 64 MiB per node, then either set diskSpace to 64 or the larger value.
+    // Then enforce the minimum of 64 for `settingDiskSpace`.
+    if (diskSpace / nodes < 64) diskSpace = Math.max((diskSpace / nodes), (64 * nodes))
+    const settingDiskSpace = Math.round(Math.max(diskSpace, 64) / nodes)
 
     // Set states
-    setRequiredDisk(requiredDiskSpace)
-    setsettingDiskSpace(settingDiskSpace)
+    setRequiredDisk(diskSpace)
+    setSettingDiskSpace(settingDiskSpace)
     setRequiredRAM(requiredRam)
 
     // Console output for debugging
-    console.log('Nodes: ' + nodes + '\nTotal dimensions: ' + totalDims + '\nTotal measurements collected per sec: ' + totalMeasurements + '\nMax uncompressed pages retained: ' + maxUncompressedPages + '\nUncompressed page size / 1024 / 1024: ' + uncompressedPageSizeDiv + '\nUncompressed storage required (MiB): ' + uncompressedStorage + '\nREQUIRED DISK SPACE: ' + requiredDiskSpace + '\nnetdata.conf [global] "dbengine disk space": ' + settingDiskSpace + '\nRAM for page cache: ' + ramPageCache + '\n2 pages for each dimension being collected: ' + ramPagesDims + '\n+ Metadata: ' + ramMetadata + '\nREQUIRED RAM: ' + requiredRam)
+    console.log('Nodes: ' + nodes + '\nTotal dimensions: ' + totalDims + '\nTotal measurements collected per sec: ' + totalMeasurements + '\nMax uncompressed pages retained: ' + maxUncompressedPages + '\nUncompressed page size / 1024 / 1024: ' + uncompressedPageSizeDiv + '\nUncompressed storage required (MiB): ' + uncompressedStorage + '\nREQUIRED DISK SPACE: ' + diskSpace + '\nnetdata.conf [global] "dbengine disk space": ' + settingDiskSpace + '\nRAM for page cache: ' + ramPageCache + '\n2 pages for each dimension being collected: ' + ramPagesDims + '\n+ Metadata: ' + ramMetadata + '\nREQUIRED RAM: ' + requiredRam)
 
     const confString = String.raw`[global]
     dbengine disk space = ${settingDiskSpace}`
