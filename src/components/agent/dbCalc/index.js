@@ -16,41 +16,51 @@ export function Calculator() {
     pageSize: 32,
   })
 
-  const [requiredDisk, setrequiredDisk ] = React.useState('')
-  const [totalDisk, setTotalDisk ] = React.useState('')
-  const [diskSetting, setDiskSetting] = React.useState('')
-  const [finalRAM, setFinalRAM] = React.useState('')
+  const [requiredDisk, setRequiredDisk ] = React.useState('')
+  const [requiredRAM, setRequiredRAM] = React.useState('')
+  const [settingDiskSpace, setsettingDiskSpace] = React.useState('')
   const [conf, setConf] = React.useState('')
 
+  // Establish measurements per page (static)
+  const uncompressedPageSize = 4096
+  const uncompressedBytesPerMeasurements = 4
+  const measurementsPerPage = uncompressedPageSize / uncompressedBytesPerMeasurements
+
   useEffect(() => {
+    // Calculate total nodes, dimensions, and measurements
     const nodes = state.master + state.slaves
-    const totalPoints = (state.dims / state.update) * state.retention * 24 * 3600
-    const uncompressedPageSize = 4096
-    const pointsPerPage = 1024
-    const maxPages = totalPoints / pointsPerPage
-    const pageSize = uncompressedPageSize / 1024 / 1024
-    const uncompressedStorage = maxPages * pageSize
+    const totalDims = nodes * state.dims
+    const totalDimsPerSecond = totalDims / state.update
+    const totalMeasurements = state.retention * totalDimsPerSecond * 24 * 3600
 
-    // Required disk space for a single DB instance, enforcing a minimum of 64 MiB
-    const nodeDiskSpace = uncompressedStorage * ( 1 - (state.compression / 100))
-    const nodeDiskSpaceMin = nodeDiskSpace < 64 ? 64 : nodeDiskSpace
+    // Calculate required disk space after compression
+    const maxUncompressedPages = totalMeasurements / measurementsPerPage
+    const uncompressedPageSizeDiv = uncompressedPageSize / 1024 / 1024
+    const uncompressedStorage = maxUncompressedPages * uncompressedPageSizeDiv
+    const requiredDiskSpace = Math.round(uncompressedStorage * ( 1 - (state.compression / 100)))
 
-    // Required disk space for all DB instances
-    const requiredDiskSpace = nodeDiskSpaceMin * nodes
-    setrequiredDisk(Math.round(requiredDiskSpace))
+    // Calculate required RAM
+    const ramPageCache = state.pageSize * nodes
+    const ramPagesDims = totalDims * uncompressedPageSize * 2 / 1024 / 1024
+    const ramMetadata = uncompressedStorage * 0.03
+    const requiredRam = Math.round(ramPageCache + ramPagesDims + ramMetadata)
 
-    // Recommended dbengine disk space setting, enforcing a minimum of 64
-    const diskSetting = (requiredDiskSpace / nodes) < 64 ? 64 : (requiredDiskSpace / nodes)
-    setDiskSetting(Math.round(diskSetting))
+    // Calculate dbengine disk space setting
+    const settingDiskSpace = Math.round(requiredDiskSpace / nodes)
 
-    const cacheRAM = state.pageSize * nodes
-    const dimPages = (nodes * state.dims) * uncompressedPageSize * 2 / 1024 / 1024
-    const metadata = uncompressedStorage * 0.03
-    const requiredRAM = cacheRAM + dimPages + metadata
-    setFinalRAM(Math.round(requiredRAM))
+    // Enforce a minimum of 64 MiB for the dbengine disk space setting
+    // TODO
+
+    // Set states
+    setRequiredDisk(requiredDiskSpace)
+    setsettingDiskSpace(settingDiskSpace)
+    setRequiredRAM(requiredRam)
+
+    // Console output for debugging
+    console.log('Nodes: ' + nodes + '\nTotal dimensions: ' + totalDims + '\nTotal measurements collected per sec: ' + totalMeasurements + '\nMax uncompressed pages retained: ' + maxUncompressedPages + '\nUncompressed page size / 1024 / 1024: ' + uncompressedPageSizeDiv + '\nUncompressed storage required (MiB): ' + uncompressedStorage + '\nREQUIRED DISK SPACE: ' + requiredDiskSpace + '\nnetdata.conf [global] "dbengine disk space": ' + settingDiskSpace + '\nRAM for page cache: ' + ramPageCache + '\n2 pages for each dimension being collected: ' + ramPagesDims + '\n+ Metadata: ' + ramMetadata + '\nREQUIRED RAM: ' + requiredRam)
 
     const confString = String.raw`[global]
-    dbengine disk space = ${Math.round(diskSetting)}`
+    dbengine disk space = ${settingDiskSpace}`
     setConf(confString)
 
   });
@@ -136,7 +146,7 @@ export function Calculator() {
             <code>{requiredDisk} MiB</code> in total disk space
           </span>
           <span>
-            <code>{finalRAM} MiB</code> in system memory
+            <code>{requiredRAM} MiB</code> in system memory
           </span>
         </div>
 
@@ -162,8 +172,8 @@ export function Calculator() {
             {state.slaves > 0 && (
               <>
                 <li>
-                  <p>Your master node creates separate instances of the database engine for each of your slave nodes, and allocates <code>{diskSetting} MiB</code> to each of them. This is why you must allocate more total disk space than the <code>dbengine disk space</code> setting implies.</p>
-                  <p><code>{diskSetting} MiB per instance * 1 master instance * {state.slaves} slave instance{state.slaves > 1 && <span>s</span>} = {requiredDisk} MiB</code></p>
+                  <p>Your master node creates separate instances of the database engine for each of your slave nodes, and allocates <code>{settingDiskSpace} MiB</code> to each of them. This is why you must allocate more total disk space than the <code>dbengine disk space</code> setting implies.</p>
+                  <p><code>{settingDiskSpace} MiB per instance * 1 master instance * {state.slaves} slave instance{state.slaves > 1 && <span>s</span>} = {requiredDisk} MiB</code></p>
                   <p>See the <Link href="/docs/agent/database/engine">dbengine documentation</Link> for details on how the Agent allocates database engine instances.</p>
                 </li>
               </>
