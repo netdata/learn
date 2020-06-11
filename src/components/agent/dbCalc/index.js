@@ -14,7 +14,6 @@ export function Calculator() {
     retention: 1,
     compression: 50,
     pageSize: 32,
-    minDisk: 64,
   })
 
   const [requiredDisk, setrequiredDisk ] = React.useState('')
