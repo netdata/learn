@@ -223,16 +223,32 @@ function Home() {
               <div className={classnames('col col--4', styles.installMethods)}>
                 <Link
                   className={classnames(styles.installMethod)}
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/kickstart-64')}>
+                  <img src="img/index/methods/static.png" alt="Install Netdata with a static binary" />
+                  Static 64-bit binary
+                </Link>
+                <Link
+                  className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/installer/methods/packages')}>
-                  <img src="img/methods/package.png" alt="Install Netdata with .deb/.rpm packages" />
+                  <img src="img/index/methods/package.png" alt="Install Netdata with .deb/.rpm packages" />
                   .deb/.rpm packages
+                </Link>
+                <Link
+                  className={classnames(styles.installMethod)}
+                  href="https://github.com/netdata/helmchart"
+                >
+                  <img 
+                    src="img/index/methods/kubernetes.png" 
+                    alt="Install Netdata with Docker"
+                  />
+                  Kubernetes
                 </Link>
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/docker')}
                 >
                   <SVG 
-                    src="img/index/docker.svg" 
+                    src="img/index/methods/docker.svg" 
                     alt="Install Netdata with Docker"
                   />
                   Docker
@@ -242,32 +258,17 @@ function Home() {
                   to={useBaseUrl('docs/agent/packaging/installer/methods/macos')}
                 >
                   <SVG 
-                    src="img/index/macos.svg" 
+                    src="img/index/methods/macos.svg" 
                     alt="Install Netdata on macOS"
                   />
                   macOS
                 </Link>
-                <a 
-                  className={classnames(styles.installMethod)}
-                  href="https://github.com/netdata/helmchart#netdata-helm-chart-for-kubernetes-deployments"
-                  target="_blank" 
-                  rel="noopener"
-                >
-                  <img src="img/methods/kubernetes.png" alt="Install Netdata on Kubernetes" />
-                  Kubernetes
-                </a>
                 <Link
                   className={classnames(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}
                 >
-                  <img src="img/methods/cloud.png" alt="Install Netdata on cloud providers" />
+                  <img src="img/index/methods/cloud.png" alt="Install Netdata on cloud providers" />
                   Cloud providers
-                </Link>
-                <Link
-                  className={classnames(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/freebsd')}>
-                  <img src="img/methods/freebsd.png" alt="Install Netdata on FreeBSD" />
-                  FreeBSD
                 </Link>
                 <p><Link to="docs/agent/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>
               </div>
