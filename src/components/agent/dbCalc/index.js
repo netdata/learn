@@ -11,7 +11,7 @@ export function Calculator() {
     slaves: 0,
     dims: 2000,
     update: 1,
-    retention: 0.1,
+    retention: 1,
     compression: 50,
     pageSize: 32,
   })
