@@ -51,7 +51,7 @@ export function Calculator() {
     // Calculate dbengine disk space setting
     // If diskSpace is less than 64 MiB per node, then either set diskSpace to 64 or the larger value.
     // Then enforce the minimum of 64 for `settingDiskSpace`.
-    if (diskSpace / nodes < 64) diskSpace = Math.max((diskSpace / nodes), (64 * nodes))
+    if (diskSpace / nodes < 64) diskSpace = 64 * nodes
     const settingDiskSpace = Math.round(Math.max(diskSpace, 64) / nodes)
 
     // Set states
