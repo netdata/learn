@@ -7,8 +7,8 @@ import CodeBlock from '@theme/CodeBlock'
 
 export function Calculator() {
   const [state, setState] = React.useState({
-    master: 1,
-    slaves: 0,
+    parent: 1,
+    child: 0,
     dims: 2000,
     update: 1,
     retention: 1,
@@ -28,8 +28,7 @@ export function Calculator() {
   const measurementsPerPage = uncompressedPageSize / uncompressedBytesPerMeasurements
 
   useEffect(() => {
-    // Calculate total nodes, dimensions, and measurements
-    const nodes = state.master + state.slaves
+    const nodes = state.parent + state.child
     const totalDims = nodes * state.dims
     const totalDimsPerSecond = totalDims / state.update
     const totalMeasurements = state.retention * totalDimsPerSecond * 24 * 3600
@@ -112,10 +111,10 @@ export function Calculator() {
 
         <div className={classnames('row', styles.calcRow)}>
           <div className={classnames('col col--2', styles.calcInput)}>
-            <input type="number" id="slaves" name="slaves" min="0" step="1" value={state.slaves} min="0" onChange={handleChange} />
+            <input type="number" id="child" name="child" min="0" value={state.child} onChange={handleChange} />
           </div>
           <div className={classnames('col col--10', styles.calcInstruction)}>
-            <label htmlFor="slaves">How many slave streaming nodes do you have?</label>
+            <label htmlFor="child">How many child streaming nodes do you have?</label>
           </div>
         </div>
 
@@ -144,7 +143,7 @@ export function Calculator() {
       <div className={classnames("col col--12", styles.calcResults)}>
 
         <div className={styles.calcFinal}>
-          <p>With the above configuration, you should allocate the following resources to metrics storage{state.slaves > 0 && <em>&nbsp;on your master node</em>}:</p>
+          <p>With the above configuration, you should allocate the following resources to metrics storage{state.child > 0 && <em>&nbsp;on your parent node</em>}:</p>
           <span>
             <code>{requiredDisk} MiB</code> in total disk space
           </span>
@@ -155,15 +154,15 @@ export function Calculator() {
 
         <div className={styles.calcConfig}>
           <p>To enable this setup, edit the <code>netdata.conf</code> file&nbsp;
-            {state.slaves > 0 &&
-              <em>on your master node&nbsp;</em>
+            {state.child > 0 &&
+              <em>on your parent node&nbsp;</em>
             }
             and change the <code>dbengine disk space</code> setting to the following:
           </p>
           <CodeBlock className={classnames('conf')} language='conf'>{conf}</CodeBlock>
           <p>Restart your Agent for the setting to take effect.</p>
-          {state.slaves > 0 ? (
-            <p>Your Agent now stores metrics for {state.master + state.slaves} nodes (one master and {state.slaves} slave{state.slaves > 1 && <span>s</span>}) for {state.retention} day{state.retention !== 1 && <span>s</span>} using a total of <code>{requiredDisk} MiB</code> in disk space.</p>
+          {state.child > 0 ? (
+            <p>Your Agent now stores metrics for {state.parent + state.child} nodes (1 parent and {state.child} child node{state.child > 1 && <span>s</span>}) for {state.retention} day{state.retention !== 1 && <span>s</span>} using a total of <code>{requiredDisk} MiB</code> in disk space.</p>
           ) : (
             <p>Your Agent now stores metrics for {state.retention} day{state.retention !== 1 && <span>s</span>} using a total of <code>{requiredDisk} MiB</code> in disk space.</p>
           )}
@@ -172,7 +171,7 @@ export function Calculator() {
         <div className={styles.calcNotes}>
           <h3>Notes</h3>
           <ul>
-            {state.slaves > 0 && (
+            {state.child > 0 && (
               <>
                 <li>
                   <p>Your master node creates separate instances of the database engine for each of your slave nodes, and allocates <code>{settingDiskSpace} MiB</code> to each of them. This is why you must allocate more total disk space than the <code>dbengine disk space</code> setting implies.</p>
