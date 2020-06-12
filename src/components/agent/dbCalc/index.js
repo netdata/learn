@@ -52,7 +52,7 @@ export function Calculator() {
     // If diskSpace is less than 64 MiB per node, then either set diskSpace to 64 or the larger value.
     // Then enforce the minimum of 64 for `settingDiskSpace`.
     if (diskSpace / nodes < 64) diskSpace = 64 * nodes
-    const settingDiskSpace = Math.round(Math.max(diskSpace, 64) / nodes)
+    const settingDiskSpace = Math.round(diskSpace / nodes)
 
     // Set states
     setRequiredDisk(diskSpace)
@@ -81,7 +81,7 @@ export function Calculator() {
       <div className={'col col--12'}>
         <div className={classnames('row', styles.calcRow)}>
           <div className={classnames('col col--2', styles.calcInput)}>
-            <input type="number" id="retention" name="retention" value={state.retention} min="0" onChange={handleChange} />
+            <input type="number" id="retention" name="retention" value={state.retention} min="0" step="any" onChange={handleChange} />
           </div>
           <div className={classnames('col col--10', styles.calcInstruction)}>
             <label htmlFor="retention">How many days do you want to store metrics?</label>
