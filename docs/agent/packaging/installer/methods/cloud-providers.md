@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/instal
 
 Netdata is fully compatible with popular cloud providers like Google Cloud Platform (GCP), Amazon Web Services (AWS),
 Azure, and others. You can install Netdata on cloud instances to monitor the apps/services running there, or use
-multiple instances in a [master/slave streaming](/docs/agent/streaming) configuration.
+multiple instances in a [parent-child streaming](/docs/agent/streaming) configuration.
 
 In some cases, using Netdata on these cloud providers requires unique installation or configuration steps. This page
 aims to document some of those steps for popular cloud providers.
