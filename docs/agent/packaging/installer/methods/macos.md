@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/instal
 
 Netdata works on macOS, albeit with some limitations. The number of charts displaying system metrics is limited, but you
 can use any of Netdata's [external plugins](/docs/agent/collectors/plugins.d) to monitor any services you might
-have installed on your macOS system. You could also use a macOS system as the master node in a [streaming
+have installed on your macOS system. You could also use a macOS system as the parent node in a [streaming
 configuration](/docs/agent/streaming).
 
 We recommend installing Netdata with the community-created and -maintained [**Homebrew
