@@ -104,6 +104,10 @@ Select **Delete Room**.
 
 ![Delete War Room](/img/docs/cloud/delete-war-room.png)
 
+### How do I change my email?
+
+It is not really possible to change your email at this time; but there is a workaround. Invite the email address you want to use and make that new account an administrator. After accepting the invitation on the second account and joining all your War Rooms from it, you can sign in again with the original account and leave the workspace.
+
 ## Glossary of Cloud terms
 
 | Term                      | Definition                                                                                                                                                                                                                                                                                                                                                 |
