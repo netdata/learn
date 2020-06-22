@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 
 import styles from './styles.module.scss';
@@ -16,7 +16,7 @@ export const StartBox = ({children, href, title, button}) => (
     <p>{children}</p>
     {button &&
       <button 
-        className={classnames('button button--lg')}>
+        className={clsx('button button--lg')}>
         {button}
       </button>
     }

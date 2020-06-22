@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 import Link from '@docusaurus/Link';
 
@@ -16,7 +16,7 @@ function CookbookItem(props) {
 
   return (
     <div>
-      <Link to={permalink + '/'} className={classnames(styles.cookbookPostItem)}>
+      <Link to={permalink + '/'} className={clsx(styles.cookbookPostItem)}>
         <article>
           <h2>{title}</h2>
           <p>{description}</p>
