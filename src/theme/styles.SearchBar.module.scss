@@ -1,6 +1,6 @@
 .searchButton {
   margin-left: 1rem;
-  width: 100px;
+  // width: 120px;
 
   &:hover {
     cursor: pointer;
@@ -8,13 +8,14 @@
 }
 
 .searchContainer {
-  background-color: rgba(101,108,133,0.8);
-  min-height: 100vh;
-  left: 0;
+  z-index: 300;
   position: fixed;
+  left: 0;
   top: 0;
   width: 100vw;
-  z-index: var(--ifm-z-index-fixed);
+  min-height: 100vh;
+  
+  background-color: rgba(101,108,133,0.8);
 
   p {
     color: white;
@@ -30,6 +31,11 @@
 
   background: white;
   border-radius: var(--ifm-global-radius);
+
+  @media (max-width: 996px) {
+    max-height: 100vh;
+    margin-top: 0;
+  }
 }
 
 html[data-theme='dark'] .searchModal {
@@ -41,6 +47,8 @@ html[data-theme='dark'] .searchModal {
   padding: 1.4rem;
 
   font-size: 120%;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: var(--ifm-global-radius);
 }
 
 .resultVolume {
@@ -57,7 +65,7 @@ html[data-theme='dark'] .searchModal {
 .resultPaged {
   display: flex;
   align-items: center;
-  margin-left: 2rem;
+  margin-left: 1.2rem;
 
   font-size: 85%;
 
@@ -86,14 +94,8 @@ html[data-theme='dark'] .searchModal {
     &:hover {
       cursor: pointer;
     }
-
-    input {
-      color: red;
-    }
   }
 }
-
-
 
 .searchResultItem {
   padding: 1rem;
@@ -131,6 +133,55 @@ html[data-theme='dark'] .searchModal {
   }
 }
 
+.searchFooter {
+  position: sticky;
+  bottom: 0;
+
+  padding: 1rem;
+  background: white;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.closeInst {
+  .closeButton {
+    display: none;
+  }
+
+  @media (max-width: 996px) {
+    .closeKey {
+      display: none;
+    }
+
+    .closeButton {
+      display: block;
+    }
+  }
+}
+
 html[data-theme='dark'] .searchResultItem .resultFlag {
   background: var(--ifm-color-primary);
+}
+
+// Dark mode
+
+html[data-theme='dark'] {
+  .searchInput {
+    background: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+  }
+
+  .resultPaged div[class*='sui-select__single-value'] {
+    color: var(--ifm-font-color-base);
+  }
+
+  .resultPaged div[class*='sui-select__menu'] {
+    background: var(--ifm-background-color);
+    border: 1px solid var(--ifm-color-emphasis-300);
+    color: var(--ifm-font-color-base);
+  }
+
+  .searchFooter {
+    background: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+  }
 }

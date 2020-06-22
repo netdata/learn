@@ -56,9 +56,9 @@ const SearchBar = (props) => {
   return (
     <>
       <button
-        className={clsx(styles.searchButton)}
+        className={clsx('button button--lg', styles.searchButton)}
         onClick={onOpen}>
-          Search
+          Search (?)
       </button>
 
       {isOpen &&
@@ -132,6 +132,20 @@ const SearchBar = (props) => {
                               })()}
                             </div>
                           ))}
+                        </div>
+                        <div className={styles.searchFooter}>
+                          <div className={styles.closeInst}>
+                            <div className={styles.closeKey}>
+                              Press <code>Esc</code> to close
+                            </div>
+                            <div className={styles.closeButton}>
+                              <button 
+                                className={clsx('button button--secondary button--lg')} 
+                                onClick={onClose}>
+                                Close
+                              </button>
+                            </div>
+                          </div>
                         </div>
                       </>
                     );
