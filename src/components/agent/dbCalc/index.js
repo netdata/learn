@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.scss';
 
@@ -76,32 +76,32 @@ export function Calculator() {
   }
 
   return (
-    <div className={classnames('row', styles.dbCalc)}>
+    <div className={clsx('row', styles.dbCalc)}>
       <div className={'col col--12'}>
-        <div className={classnames('row', styles.calcRow)}>
-          <div className={classnames('col col--2', styles.calcInput)}>
+        <div className={clsx('row', styles.calcRow)}>
+          <div className={clsx('col col--2', styles.calcInput)}>
             <input type="number" id="retention" name="retention" value={state.retention} min="0" step="any" onChange={handleChange} />
           </div>
-          <div className={classnames('col col--10', styles.calcInstruction)}>
+          <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="retention">How many days do you want to store metrics?</label>
           </div>
         </div>
 
-        <div className={classnames('row', styles.calcRow)}>
-          <div className={classnames('col col--2', styles.calcInput)}>
+        <div className={clsx('row', styles.calcRow)}>
+          <div className={clsx('col col--2', styles.calcInput)}>
             <input type="number" id="update" name="update" value={state.update} min="1" onChange={handleChange} />
           </div>
-          <div className={classnames('col col--10', styles.calcInstruction)}>
+          <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="update">How often, on average, do your Agents collect metrics?</label>
             <p>By default, the Agent collects metrics once per second (<code>1</code>). See the <code>update every</code> setting in your <code>netdata.conf</code> file if yours may be different. If you have streaming nodes, use the average of their settings.</p>
           </div>
         </div>
 
-        <div className={classnames('row', styles.calcRow)}>
-          <div className={classnames('col col--2', styles.calcInput)}>
+        <div className={clsx('row', styles.calcRow)}>
+          <div className={clsx('col col--2', styles.calcInput)}>
             <input type="number" id="dims" name="dims" min="0" value={state.dims} min="0" onChange={handleChange} />
           </div>
-          <div className={classnames('col col--10', styles.calcInstruction)}>
+          <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="dims">How many metrics, on average, do your Agents collect?</label>
             <p>
               To find this value for an Agent, scroll to the bottom of the dashboard to find the number of metrics your Agent collects. If you have streaming nodes, input the average of these values.
@@ -109,38 +109,38 @@ export function Calculator() {
           </div>
         </div>
 
-        <div className={classnames('row', styles.calcRow)}>
-          <div className={classnames('col col--2', styles.calcInput)}>
+        <div className={clsx('row', styles.calcRow)}>
+          <div className={clsx('col col--2', styles.calcInput)}>
             <input type="number" id="child" name="child" min="0" value={state.child} onChange={handleChange} />
           </div>
-          <div className={classnames('col col--10', styles.calcInstruction)}>
+          <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="child">How many child streaming nodes do you have?</label>
           </div>
         </div>
 
-        <div className={classnames('row', styles.calcRow)}>
-          <div className={classnames('col col--2', styles.calcInput)}>
+        <div className={clsx('row', styles.calcRow)}>
+          <div className={clsx('col col--2', styles.calcInput)}>
             <input type="number" id="compression" name="compression" value={state.compression} min="0" onChange={handleChange} />
           </div>
-          <div className={classnames('col col--10', styles.calcInstruction)}>
+          <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="compression">What is your compression savings ratio?</label>
             <p>To find this value, click on the <strong>Netdata Monitoring</strong> &rarr; <strong>dbengine</strong> items in the right-hand menu and look at the first chart under the <strong>dbengine</strong> section. You can also use your browser's search feature to look for <strong>compression savings ratio</strong>. Estimate an average value to input into the calculator.</p>
           </div>
         </div>
 
-        <div className={classnames('row', styles.calcRow)}>
-          <div className={classnames('col col--2', styles.calcInput)}>
+        <div className={clsx('row', styles.calcRow)}>
+          <div className={clsx('col col--2', styles.calcInput)}>
             <input type="number" id="pageSize" name="pageSize" value={state.pageSize} min="8" onChange={handleChange} />
             
           </div>
-          <div className={classnames('col col--10', styles.calcInstruction)}>
+          <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="pageSize">What is your page cache size?</label>
             <p>Open your <code>netdata.conf</code> file and find the <code>page cache size</code> setting in the <code>[global]</code> section.</p>
           </div>
         </div>
       </div>
 
-      <div className={classnames("col col--12", styles.calcResults)}>
+      <div className={clsx("col col--12", styles.calcResults)}>
 
         <div className={styles.calcFinal}>
           <p>With the above configuration, you should allocate the following resources to metrics storage{state.child > 0 && <em>&nbsp;on your parent node</em>}:</p>
@@ -159,7 +159,7 @@ export function Calculator() {
             }
             and change the <code>dbengine disk space</code> setting to the following:
           </p>
-          <CodeBlock className={classnames('conf')} language='conf'>{conf}</CodeBlock>
+          <CodeBlock className={clsx('conf')} language='conf'>{conf}</CodeBlock>
           <p>Restart your Agent for the setting to take effect.</p>
           {state.child > 0 ? (
             <p>Your Agent now stores metrics for {state.parent + state.child} nodes (1 parent and {state.child} child node{state.child > 1 && <span>s</span>}) for {state.retention} day{state.retention !== 1 && <span>s</span>} using a total of <code>{requiredDisk} MiB</code> in disk space.</p>

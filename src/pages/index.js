@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 import SVG from 'react-inlinesvg';
 
 import Layout from '@theme/Layout';
@@ -72,7 +72,7 @@ const docs = [
 
 function DocBox({title, href, description}) {
   return (
-    <Link to={useBaseUrl(href)} className={classnames('col col--4', styles.docBox)}>
+    <Link to={useBaseUrl(href)} className={clsx('col col--4', styles.docBox)}>
       <h3>{title}</h3>
       <p>{description}</p>
     </Link>
@@ -138,11 +138,11 @@ function Home() {
     <Layout
       title={`All your monitoring education in one place. ${siteConfig.title}`}
       description="Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.">
-      <header className={classnames(styles.hero)}>
-        <div className={classnames('container')}>
-          <div className={classnames('row')}>
+      <header className={clsx(styles.hero)}>
+        <div className={clsx('container')}>
+          <div className={clsx('row')}>
             <div 
-              className={classnames(
+              className={clsx(
                 'col col--6',
                 styles.heroText
               )}>
@@ -157,7 +157,7 @@ function Home() {
               </p>
               <div className={styles.buttons}>
                 <Link
-                  className={classnames(
+                  className={clsx(
                     'button button--lg',
                     styles.getStarted,
                   )}
@@ -165,7 +165,7 @@ function Home() {
                   Get Netdata
                 </Link>
                 <Link
-                  className={classnames(
+                  className={clsx(
                     'button button--secondary button--lg',
                     styles.getStarted,
                   )}
@@ -174,9 +174,9 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className={classnames('col col--6', styles.heroImageContainer)}>
+            <div className={clsx('col col--6', styles.heroImageContainer)}>
               <SVG 
-                className={classnames(
+                className={clsx(
                   styles.heroImage
                 )} 
                 src="img/index/hero.svg"
@@ -188,9 +188,9 @@ function Home() {
       </header>
       <main>
         <section id="installation" className={styles.install}>
-          <div className={classnames('container shadow--lw', styles.installContainer)}>
-            <div className={classnames('row')}>
-              <div className={classnames('col col--8')}>
+          <div className={clsx('container shadow--lw', styles.installContainer)}>
+            <div className={clsx('row')}>
+              <div className={clsx('col col--8')}>
                 <h2>Get Netdata on Linux with a one-liner</h2>
                 <p>Or choose the appropriate OS or alternative method for your system. 👉</p> 
                 <div className={styles.installSelection}>
@@ -215,26 +215,26 @@ function Home() {
                       type="checkbox" id="toggle__stats" />
                     <label htmlFor="toggle__stats">Do you want to contribute anonymous statistics? <code>default: enabled</code></label>
                   </div>
-                  <CodeBlock className={classnames('bash', styles.installCommand)} language={lang}>{currentCommand}</CodeBlock>
+                  <CodeBlock className={clsx('bash', styles.installCommand)} language={lang}>{currentCommand}</CodeBlock>
                   <p>Click <strong>Copy</strong>, paste into your system’s terminal, and hit <strong>Enter</strong>.</p>
                   <p>Open your favorite browser and navigate to <code>http://localhost:19999</code> to find Netdata’s real-time dashboard with hundreds of pre-configured charts and alarms.</p>
                 </div>
               </div>
-              <div className={classnames('col col--4', styles.installMethods)}>
+              <div className={clsx('col col--4', styles.installMethods)}>
                 <Link
-                  className={classnames(styles.installMethod)}
+                  className={clsx(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/installer/methods/kickstart-64')}>
                   <img src="img/index/methods/static.png" alt="Install Netdata with a static binary" />
                   Static 64-bit binary
                 </Link>
                 <Link
-                  className={classnames(styles.installMethod)}
+                  className={clsx(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/installer/methods/packages')}>
                   <img src="img/index/methods/package.png" alt="Install Netdata with .deb/.rpm packages" />
                   .deb/.rpm packages
                 </Link>
                 <Link
-                  className={classnames(styles.installMethod)}
+                  className={clsx(styles.installMethod)}
                   href="https://github.com/netdata/helmchart"
                 >
                   <img 
@@ -244,7 +244,7 @@ function Home() {
                   Kubernetes
                 </Link>
                 <Link
-                  className={classnames(styles.installMethod)}
+                  className={clsx(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/docker')}
                 >
                   <SVG 
@@ -254,7 +254,7 @@ function Home() {
                   Docker
                 </Link>
                 <Link
-                  className={classnames(styles.installMethod)}
+                  className={clsx(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/installer/methods/macos')}
                 >
                   <SVG 
@@ -264,7 +264,7 @@ function Home() {
                   macOS
                 </Link>
                 <Link
-                  className={classnames(styles.installMethod)}
+                  className={clsx(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}
                 >
                   <img src="img/index/methods/cloud.png" alt="Install Netdata on cloud providers" />
@@ -276,24 +276,24 @@ function Home() {
           </div>
         </section>
         <section className={styles.stepByStep}>
-          <div className={classnames('container')}>
-            <div className={classnames('row')}>
-              <div className={classnames('col col--12')}>
+          <div className={clsx('container')}>
+            <div className={clsx('row')}>
+              <div className={clsx('col col--12')}>
                 <h2>Learn Netdata step-by-step</h2>
               </div>
-              <div className={classnames('col col--4')}>
+              <div className={clsx('col col--4')}>
                 <p>Take a guided tour through Netdata's core features, including its famous dashboard, creating new alarms, and collecting metrics from your favorite services and applications.</p>
                 <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with monitoring and troubleshooting.</p>
                 <p>
                   <Link
                     to={useBaseUrl('guides/step-by-step/step-00')}
-                    className={classnames('button button--lg')}
+                    className={clsx('button button--lg')}
                   >
                     Try the guide
                   </Link>
                 </p>
               </div>
-              <div className={classnames('col col--4', styles.stepByStepLinks)}>
+              <div className={clsx('col col--4', styles.stepByStepLinks)}>
                 <StepByStepLink
                   href="guides/step-by-step/step-01"
                   icon={<FiBox />}
@@ -346,7 +346,7 @@ function Home() {
                 />
               </div>
               <div 
-                className={classnames(
+                className={clsx(
                   'col col--4',
                   styles.stepByStepImg
                 )}>
@@ -356,8 +356,8 @@ function Home() {
           </div>
         </section>
         <section className={styles.docs}>
-          <div className={classnames('container')}>
-            <div className={classnames('row')}>
+          <div className={clsx('container')}>
+            <div className={clsx('row')}>
               {docs.map((props, idx) => (
                 <DocBox key={idx} {...props} />
               ))}

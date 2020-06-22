@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import clsx from 'clsx';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
@@ -64,14 +64,14 @@ function CookbookPage(props) {
       <Layout title={title} description={description} permalink={permalink} image={guideImage}>
         <div className="container">
           <div className="row">
-            <div className={classnames('col', styles.cookbookContainer)}>
+            <div className={clsx('col', styles.cookbookContainer)}>
               <article>
-                <header className={classnames(styles.cookbookHeader)}>
+                <header className={clsx(styles.cookbookHeader)}>
                   <h1 className={styles.cookbookTitle}>{title}</h1>
                 </header>
                 <section className="markdown">
                   <MDXProvider components={MDXComponents}><CookbookContents /></MDXProvider>
-                  <Link to="/guides" className={classnames('button button--lg', styles.guidesMore)}>Find more guides</Link>
+                  <Link to="/guides" className={clsx('button button--lg', styles.guidesMore)}>Find more guides</Link>
                 </section>
               </article>
             </div>
