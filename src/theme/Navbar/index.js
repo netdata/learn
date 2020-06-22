@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useCallback, useState} from 'react';
-import classnames from 'classnames';
+import React, {useCallback, useState, useEffect} from 'react';
+import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,9 +16,13 @@ import Toggle from '@theme/Toggle';
 import useThemeContext from '@theme/hooks/useThemeContext';
 import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
+import useWindowSize, {windowSizes} from '@theme/hooks/useWindowSize';
 import useLogo from '@theme/hooks/useLogo';
 
 import styles from './styles.module.css';
+
+// retrocompatible with v1
+const DefaultNavItemPosition = 'right';
 
 function NavLink({
   activeBasePath,
@@ -32,7 +36,7 @@ function NavLink({
 }) {
   const toUrl = useBaseUrl(to);
   const activeBaseUrl = useBaseUrl(activeBasePath);
-  const normalizedHref = useBaseUrl(href, true);
+  const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});
 
   return (
     <Link
@@ -61,9 +65,14 @@ function NavLink({
   );
 }
 
-function NavItem({items, position, className, ...props}) {
+function NavItem({
+  items,
+  position = DefaultNavItemPosition,
+  className,
+  ...props
+}) {
   const navLinkClassNames = (extraClassName, isDropdownItem = false) =>
-    classnames(
+    clsx(
       {
         'navbar__item navbar__link': !isDropdownItem,
         dropdown__link: isDropdownItem,
@@ -77,7 +86,7 @@ function NavItem({items, position, className, ...props}) {
 
   return (
     <div
-      className={classnames('navbar__item', 'dropdown', 'dropdown--hoverable', {
+      className={clsx('navbar__item', 'dropdown', 'dropdown--hoverable', {
         'dropdown--left': position === 'left',
         'dropdown--right': position === 'right',
       })}>
@@ -107,10 +116,10 @@ function NavItem({items, position, className, ...props}) {
   );
 }
 
-function MobileNavItem({items, position, className, ...props}) {
+function MobileNavItem({items, position: _position, className, ...props}) {
   // Need to destructure position from props so that it doesn't get passed on.
   const navLinkClassNames = (extraClassName, isSubList = false) =>
-    classnames(
+    clsx(
       'menu__link',
       {
         'menu__link--sublist': isSubList,
@@ -147,6 +156,21 @@ function MobileNavItem({items, position, className, ...props}) {
   );
 }
 
+// If split links by left/right
+// if position is unspecified, fallback to right (as v1)
+function splitLinks(links) {
+  const leftLinks = links.filter(
+    (linkItem) => (linkItem.position ?? DefaultNavItemPosition) === 'left',
+  );
+  const rightLinks = links.filter(
+    (linkItem) => (linkItem.position ?? DefaultNavItemPosition) === 'right',
+  );
+  return {
+    leftLinks,
+    rightLinks,
+  };
+}
+
 function Navbar() {
   const {
     siteConfig: {
@@ -178,10 +202,20 @@ function Navbar() {
     [setLightTheme, setDarkTheme],
   );
 
+  const windowSize = useWindowSize();
+
+  useEffect(() => {
+    if (windowSize === windowSizes.desktop) {
+      setSidebarShown(false);
+    }
+  }, [windowSize]);
+
+  const {leftLinks, rightLinks} = splitLinks(links);
+
   return (
     <nav
       ref={navbarRef}
-      className={classnames('navbar', 'navbar--light', 'navbar--fixed-top', {
+      className={clsx('navbar', 'navbar--light', 'navbar--fixed-top', {
         'navbar-sidebar--show': sidebarShown,
         [styles.navbarHideable]: hideOnScroll,
         [styles.navbarHidden]: !isNavbarVisible,
@@ -225,7 +259,7 @@ function Navbar() {
             )}
             {title != null && (
               <strong
-                className={classnames('navbar__title', {
+                className={clsx('navbar__title', {
                   [styles.hideLogoText]: isSearchBarExpanded,
                 })}>
                 {title}
@@ -235,25 +269,23 @@ function Navbar() {
           {/* Add a new section for items in the `docs` group. */}
           <div className={styles.navbarDocs}>
             <span>Docs</span>
-            {links
+            {leftLinks
               .filter((linkItem) => linkItem.group === 'docs')
               .map((linkItem, i) => (
                 <NavItem {...linkItem} key={i} />
-              ))}
+            ))}
           </div>
-          {/* Original section here (with additional && ...) */}
-          {links
-            .filter((linkItem) => (linkItem.position === 'left' && linkItem.group !== 'docs'))
+          {/* Original section here for everything not in the `docs` group. */}
+          {leftLinks
+            .filter((linkItem) => linkItem.group !== 'docs')
             .map((linkItem, i) => (
               <NavItem {...linkItem} key={i} />
-            ))}
+          ))}
         </div>
         <div className="navbar__items navbar__items--right">
-          {links
-            .filter((linkItem) => linkItem.position === 'right')
-            .map((linkItem, i) => (
-              <NavItem {...linkItem} key={i} />
-            ))}
+          {rightLinks.map((linkItem, i) => (
+            <NavItem {...linkItem} key={i} />
+          ))}
           {!disableDarkMode && (
             <Toggle
               className={styles.displayOnlyInLargeViewport}
