@@ -1,6 +1,10 @@
 .searchButton {
   margin-left: 1rem;
   width: 100px;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .searchContainer {
@@ -19,7 +23,7 @@
 
 .searchModal {
   position: relative;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-width: 800px;
   max-height: 600px;
   margin: 60px auto auto;
@@ -34,8 +38,9 @@ html[data-theme='dark'] .searchModal {
 
 .searchInput {
   width: 100%;
+  padding: 1.4rem;
 
-  padding: 1rem;
+  font-size: 120%;
 }
 
 .resultVolume {
@@ -43,9 +48,52 @@ html[data-theme='dark'] .searchModal {
   padding: 1rem;
 
   p {
+    margin-bottom: 0;
+
     color: var(--ifm-font-color-base);
   }
 }
+
+.resultPaged {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+
+  font-size: 85%;
+
+  div[class*='sui-select__control'] {
+    display: flex;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  div[class*='sui-select__value-container'] {
+    padding: 0 0 0 0.4rem;
+  }
+
+  div[class*='sui-select__dropdown-indicator'] {
+    position: relative;
+    top: 3px;
+  }
+
+  div[class*='sui-select__menu'] {
+    width: auto;
+    max-width: 100px;
+    padding: 0.4rem 0.8rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    input {
+      color: red;
+    }
+  }
+}
+
+
 
 .searchResultItem {
   padding: 1rem;
