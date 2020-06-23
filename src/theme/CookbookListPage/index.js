@@ -199,15 +199,15 @@ function CookbookListPage(props) {
           </div>
         </section>
 
-        <section className={classnames(styles.guideSection)}>
-          <div className={classnames('row')}>
-            <div className={classnames('col col-12 markdown')}>
+        <section className={clsx(styles.guideSection)}>
+          <div className={clsx('row')}>
+            <div className={clsx('col col-12 markdown')}>
               <h2>Troubleshoot</h2>
               <p>Leverage Netdata's visualization tools and extensive metrics collection to root-cause any issue with your systems or applications.</p>
             </div>
           </div>
-          <div className={classnames(styles.guideBoxes, styles.guideBoxesTight)}>
-            <Link to="/guides/troubleshoot/monitor-debug-applications-ebpf/" className={classnames('col col--4', styles.guideBox)}>
+          <div className={clsx(styles.guideBoxes, styles.guideBoxesTight)}>
+            <Link to="/guides/troubleshoot/monitor-debug-applications-ebpf/" className={clsx('col col--4', styles.guideBox)}>
               <h3>Monitor, troubleshoot, and debug applications with eBPF metrics</h3>
             </Link>
           </div>
