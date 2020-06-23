@@ -202,6 +202,20 @@ function CookbookListPage(props) {
         <section className={clsx(styles.guideSection)}>
           <div className={clsx('row')}>
             <div className={clsx('col col-12 markdown')}>
+              <h2>Troubleshoot</h2>
+              <p>Leverage Netdata's visualization tools and extensive metrics collection to root-cause any issue with your systems or applications.</p>
+            </div>
+          </div>
+          <div className={clsx(styles.guideBoxes, styles.guideBoxesTight)}>
+            <Link to="/guides/troubleshoot/monitor-debug-applications-ebpf/" className={clsx('col col--4', styles.guideBox)}>
+              <h3>Monitor, troubleshoot, and debug applications with eBPF metrics</h3>
+            </Link>
+          </div>
+        </section>
+
+        <section className={clsx(styles.guideSection)}>
+          <div className={clsx('row')}>
+            <div className={clsx('col col-12 markdown')}>
               <h2>Export</h2>
               <p>Send Netdata's metrics to more than 20 different external databases for full interoperability with your monitoring stack.</p>
             </div>

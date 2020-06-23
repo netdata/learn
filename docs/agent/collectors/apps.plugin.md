@@ -158,7 +158,12 @@ There are a few command line options you can pass to `apps.plugin`. The list of 
 
 ### Integration with eBPF
 
-If you don't see charts under the **eBPF syscall** or **eBPF net** sections, you should edit your [`ebpf.conf`](/docs/agent/collectors/ebpf.plugin#ebpf-programs) file to ensure the eBPF program is enabled.
+If you don't see charts under the **eBPF syscall** or **eBPF net** sections, you should edit your
+[`ebpf.conf`](/docs/agent/collectors/ebpf.plugin#ebpf-programs) file to ensure the eBPF program is enabled.
+
+Also see our [guide on troubleshooting apps with eBPF
+metrics](/guides/troubleshoot/monitor-debug-applications-ebpf) for ideas on how to interpret these charts in a
+few scenarios.
 
 ## Permissions
 
