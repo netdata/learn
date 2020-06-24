@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import {createPortal} from 'react-dom';
 import clsx from 'clsx';
+import SVG from 'react-inlinesvg';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {useHistory} from '@docusaurus/router';
@@ -44,21 +45,23 @@ const SearchBar = (props) => {
 
   const onOpen = () => {
     setIsOpen(true);
+    document.body.classList.add('search-open');
   }
 
   const onClose = useCallback((evt) => {
-    evt.preventDefault();
-    if(evt.target === evt.currentTarget) {
+    if (evt.target === evt.currentTarget || evt.currentTarget.tagName === 'A') {
       setIsOpen(false);
+      document.body.classList.remove('search-open');
     }
   }, [setIsOpen]);
 
   return (
     <>
       <button
-        className={clsx('button button--lg', styles.searchButton)}
+        className={styles.searchButton}
         onClick={onOpen}>
-          Search (?)
+          Search Netdata...
+          <span className={styles.searchKey}>?</span>
       </button>
 
       {isOpen &&
@@ -83,7 +86,7 @@ const SearchBar = (props) => {
                   {({ searchTerm, setSearchTerm, results }) => {
                     return (
                       <>
-                        <div className={clsx('col col--4')}>
+                        <header className={styles.searchHeader}>
                           <input
                             className={clsx(styles.searchInput)}
                             value={searchTerm}
@@ -95,8 +98,8 @@ const SearchBar = (props) => {
                             <p>Your search returned {results.length} queries.</p>
                             <ResultsPerPage className={styles.resultPaged} />
                           </div>
-                        </div>
-                        <div className={clsx('col col--8')}>
+                        </header>
+                        <div className={styles.searchResults}>
                           {searchTerm !== '' && results.map(r => (
                             <div key={r.id.raw} className={clsx(styles.searchResultItem)}>
                               {(() => {
@@ -133,7 +136,7 @@ const SearchBar = (props) => {
                             </div>
                           ))}
                         </div>
-                        <div className={styles.searchFooter}>
+                        <footer className={styles.searchFooter}>
                           <div className={styles.closeInst}>
                             <div className={styles.closeKey}>
                               Press <code>Esc</code> to close
@@ -146,7 +149,7 @@ const SearchBar = (props) => {
                               </button>
                             </div>
                           </div>
-                        </div>
+                        </footer>
                       </>
                     );
                   }}

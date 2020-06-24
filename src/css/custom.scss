@@ -20,6 +20,8 @@ html {
 :root {
 
   /* Colors */
+  --ifm-background-color: #f8f7fd;
+
   --ifm-color-primary: #00AB44;
   --ifm-color-primary-dark: #009a3d;
   --ifm-color-primary-darker: #00913a;
@@ -231,12 +233,16 @@ main[class^='docMainContainer'] .container {
 }
 
 .react-toggle-track {
-  background-color: white;
+  background-color: var(--ifm-background-color);
 }
 
 /* 
  * Search
  */
+
+body.search-open {
+  overflow: hidden !important;
+}
 
 .st-default-search-input {
   margin-left: 1rem !important;
