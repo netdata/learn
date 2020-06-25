@@ -34,6 +34,7 @@ const SearchBar = (props) => {
       if (e.target.className.includes('searchInput') && e.key === 'Escape') {
         e.preventDefault()
         setIsOpen(false);
+        document.body.classList.remove('search-open');
       }
     };
 
