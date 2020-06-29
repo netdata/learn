@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import SVG from 'react-inlinesvg';
 
@@ -8,8 +8,6 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import styles from './styles.module.scss';
-
-import CodeBlock from '@theme/CodeBlock'
 import { FiBox, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGrid, FiHardDrive, FiLock } from "react-icons/fi";
 
 const docs = [
@@ -94,46 +92,6 @@ function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
 
-  const [currentCommandUpdates, setCurrentCommandUpdates] = useState('');
-  const [currentCommandRelease, setCurrentCommandRelease] = useState('');
-  const [currentCommandStatistics, setCurrentCommandStatistics] = useState('');
-  const [updatesChecked, setUpdatesChecked] = useState(true);
-  const [releaseChecked, setReleaseChecked] = useState(true);
-  const [statsChecked, setStatsChecked] = useState(true);
-
-  let currentCommand = `bash <(curl -Ss https://my-netdata.io/kickstart.sh)${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}`;
-  const lang = `bash`
-
-  function handleUpdatesChange() {
-    if (currentCommandUpdates === '' && updatesChecked == true) {
-      setCurrentCommandUpdates(' --no-updates');
-      setUpdatesChecked(false);
-    } else {
-      setCurrentCommandUpdates('');
-      setUpdatesChecked(true);
-    }
-  }
-
-  function handleReleaseChange() {
-    if (currentCommandRelease === '' && releaseChecked == true) {
-      setCurrentCommandRelease(' --stable-channel');
-      setReleaseChecked(false);
-    } else {
-      setCurrentCommandRelease('');
-      setReleaseChecked(true);
-    }
-  }
-
-  function handleStatisticsChange() {
-    if (currentCommandStatistics === '' && statsChecked == true) {
-      setCurrentCommandStatistics(' --disable-telemetry');
-      setStatsChecked(false);
-    } else {
-      setCurrentCommandStatistics('');
-      setStatsChecked(true);
-    }
-  }
-
   return (
     <Layout
       title={`All your monitoring education in one place. ${siteConfig.title}`}
@@ -187,105 +145,6 @@ function Home() {
         </div>
       </header>
       <main>
-        <section id="installation" className={styles.install}>
-          <div className={clsx('container shadow--lw', styles.installContainer)}>
-            <div className={clsx('row')}>
-              <div className={clsx('col col--8')}>
-                <h2>Get Netdata on Linux with a one-liner</h2>
-                <p>Or choose the appropriate OS or alternative method for your system. 👉</p> 
-                <div className={styles.installSelection}>
-                  <div className={styles.installCheckbox}>
-                    <input 
-                      onChange={handleUpdatesChange}
-                      checked={updatesChecked}
-                      type="checkbox" id="toggle__updates"/>
-                    <label htmlFor="toggle__updates">Do you want automatic updates? <code>default: enabled</code></label>
-                  </div>
-                  <div className={styles.installCheckbox}>
-                    <input 
-                      onChange={handleReleaseChange}
-                      checked={releaseChecked}
-                      type="checkbox" id="toggle__type" />
-                    <label htmlFor="toggle__type">Do you want nightly or stable releases? <code>default: nightly</code></label>
-                  </div>
-                  <div className={styles.installCheckbox}>
-                    <input 
-                      onChange={handleStatisticsChange}
-                      checked={statsChecked}
-                      type="checkbox" id="toggle__stats" />
-                    <label htmlFor="toggle__stats">Do you want to contribute anonymous statistics? <code>default: enabled</code></label>
-                  </div>
-                  <CodeBlock className={clsx('bash', styles.installCommand)} language={lang}>{currentCommand}</CodeBlock>
-                  <p>Click <strong>Copy</strong>, paste into your system’s terminal, and hit <strong>Enter</strong>.</p>
-                  <p>Open your favorite browser and navigate to <code>http://localhost:19999</code> to find Netdata’s real-time dashboard with hundreds of pre-configured charts and alarms.</p>
-                </div>
-              </div>
-              <div className={clsx('col col--4', styles.installMethods)}>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/kickstart-64')}>
-                  <SVG 
-                    src="img/index/methods/static.svg" 
-                    alt="Install Netdata with a static binary"
-                  />
-                  Static 64-bit binary
-                </Link>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/packages')}>
-                  <SVG 
-                    src="img/index/methods/package.svg" 
-                    alt="Install Netdata with .deb/.rpm packages"
-                  />
-                  .deb/.rpm packages
-                </Link>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/kubernetes')}>
-                  <SVG 
-                    width="50"
-                    height="64"
-                    viewport="50 64"
-                    src="img/index/methods/kubernetes.svg" 
-                    alt="Install Netdata on a Kubernetes cluster"
-                  />
-                  Kubernetes
-                </Link>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/docker')}
-                >
-                  <SVG 
-                    src="img/index/methods/docker.svg" 
-                    alt="Install Netdata with Docker"
-                  />
-                  Docker
-                </Link>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/macos')}
-                >
-                  <SVG 
-                    src="img/index/methods/macos.svg" 
-                    alt="Install Netdata on macOS"
-                  />
-                  macOS
-                </Link>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}
-                >
-                  <SVG 
-                    src="img/index/methods/cloud.svg" 
-                    alt="Install Netdata on cloud providers"
-                  />
-                  Cloud providers
-                </Link>
-                <p><Link to="docs/agent/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>
-              </div>
-            </div>
-          </div>
-        </section>
         <section className={styles.stepByStep}>
           <div className={clsx('container')}>
             <div className={clsx('row row--center')}>

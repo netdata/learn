@@ -1,0 +1,174 @@
+/**
+ * Installation
+ */
+
+.getHero {
+  padding: 6rem 0;
+  background: linear-gradient(to bottom, white, #ededf3);
+
+  h1 {
+    font-size: 3rem;
+
+    @media (max-width: 996px) {
+      font-size: 2.4rem;
+    }
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+.getHeroImage {
+  position: relative;
+
+  svg {
+    z-index: 10;
+    position: absolute;
+    top: -100px;
+    right: -400px;
+    max-width: 1200px;
+    width: 1000px;
+  }
+}
+
+.getOneLine {
+  background: var(--ifm-color-gray-200);
+}
+
+
+// .install {
+//   margin-bottom: 4rem;
+// }
+
+// .installContainer {
+//   padding-top: 4rem;
+//   padding-bottom: 4rem;
+
+  
+// }
+
+.install h2 {
+  font-size: 2rem;
+}
+
+.installCheckbox input[type="checkbox"] {
+  opacity: 0;
+}
+
+.installCheckbox label {
+  position: relative;
+}
+
+.installCheckbox label::before{
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: -20px;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  
+  background: white;
+  border: 1px solid var(--ifm-color-gray-300);
+  border-radius: 2px;
+}
+
+.installCheckbox label::after {
+  content: "";
+  position: absolute;
+  left: -17px;
+  top: 7px;
+  display: inline-block;
+  height: 6px;
+  width: 9px;
+
+  border-left: 2px solid var(--ifm-color-primary);
+  border-bottom: 2px solid var(--ifm-color-primary);
+  transform: rotate(-45deg);
+}
+
+.installCheckbox input[type="checkbox"] + label::after {
+  content: none;
+}
+
+.installCheckbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+.installSelection label code {
+  margin-left: 0.6rem;
+
+  font-size: var(--ifm-h6-font-size);
+}
+
+.installCommand {
+  position: relative;
+
+  margin-top: var(--ifm-paragraph-margin-bottom);
+  margin-bottom: var(--ifm-paragraph-margin-bottom);
+
+  code {
+    padding: var(--ifm-pre-padding) 3rem var(--ifm-pre-padding) var(--ifm-pre-padding);
+
+    white-space: pre-line;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
+}
+
+.installMethods {
+  display: grid !important;
+  grid-template-columns: repeat(4, [col-start] 1fr);
+  grid-gap: 1rem;
+}
+
+.installMethods h3 {
+  grid-column: span 4;
+  text-align: center;
+  margin: 0;
+}
+
+.installMethod {
+  grid-column: span 2;
+  padding: 0.6rem;
+
+  border: 1px solid var(--ifm-color-gray-300);
+  border-radius: 2px;
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+  text-align: center;
+  
+}
+
+.installMethod:hover {
+  border: 1px solid var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary);
+}
+
+.installMethod img,
+.installMethod svg {
+  display: block;
+  max-width: 96px;
+  max-height: 64px;
+  margin: 0 auto 0.4rem;
+
+  filter: grayscale(1);
+}
+
+.installMethods p {
+  grid-column: span 4;
+  font-size: var(--ifm-h5-font-size);
+  text-align: center;
+}
+
+@media (max-width: 996px) {
+  .install {
+    margin-bottom: 1rem;
+  }
+
+  .installContainer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
