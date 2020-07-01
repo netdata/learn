@@ -1,5 +1,20 @@
 
 
+## [v1.23.1](https://github.com/netdata/netdata/tree/v1.23.1) (2020-07-01)
+
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.23.0...v1.23.1)
+
+**Merged pull requests:**
+
+-  Fix the unittest execution [\#9445](https://github.com/netdata/netdata/pull/9445) ([thiagoftsm](https://github.com/thiagoftsm))
+- Fix children version on stream [\#9438](https://github.com/netdata/netdata/pull/9438) ([thiagoftsm](https://github.com/thiagoftsm))
+- Disallow dimensions and chart being obsolete and archived simultaneously. [\#9436](https://github.com/netdata/netdata/pull/9436) ([mfundul](https://github.com/mfundul))
+- Fix internal registry  [\#9434](https://github.com/netdata/netdata/pull/9434) ([thiagoftsm](https://github.com/thiagoftsm))
+- Fixed duplicate alarm ids in health-log.db [\#9428](https://github.com/netdata/netdata/pull/9428) ([stelfrag](https://github.com/stelfrag))
+- Correct virtualization detection in system-info.sh [\#9425](https://github.com/netdata/netdata/pull/9425) ([Ferroin](https://github.com/Ferroin))
+- Stop reading from /proc/sys/kernel/osrelease at trailing newline [\#9374](https://github.com/netdata/netdata/pull/9374) ([sjuxax](https://github.com/sjuxax))
+- Show cgroups/containers ran by Kubelet without access to Kubernetes cluster information [\#9321](https://github.com/netdata/netdata/pull/9321) ([cakrit](https://github.com/cakrit))
+
 ## [v1.23.0](https://github.com/netdata/netdata/tree/v1.23.0) (2020-06-25)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.22.1...v1.23.0)
@@ -89,7 +104,6 @@
 - Dynamic memory cleanup for Pub/Sub exporting connector [\#9112](https://github.com/netdata/netdata/pull/9112) ([vlvkobal](https://github.com/vlvkobal))
 - Package: obsoletes conflicting EPEL packages \(\#6879 \#8784\) [\#9108](https://github.com/netdata/netdata/pull/9108) ([Saruspete](https://github.com/Saruspete))
 - Add support for eBPF for Netdata static64 \(kickstart-static64.sh\) [\#9104](https://github.com/netdata/netdata/pull/9104) ([prologic](https://github.com/prologic))
-- Dynamic memory cleanup for MongoDB exporting connector [\#9103](https://github.com/netdata/netdata/pull/9103) ([vlvkobal](https://github.com/vlvkobal))
 - Exporting cleanup [\#9098](https://github.com/netdata/netdata/pull/9098) ([thiagoftsm](https://github.com/thiagoftsm))
 - Introduce a random sleep in the Netdata updater [\#9079](https://github.com/netdata/netdata/pull/9079) ([prologic](https://github.com/prologic))
 - New alarms \(exporting and Backend\) [\#9075](https://github.com/netdata/netdata/pull/9075) ([thiagoftsm](https://github.com/thiagoftsm))
@@ -166,17 +180,6 @@
 - Fix crash when shutdown with ACLK disabled [\#8725](https://github.com/netdata/netdata/pull/8725) ([lassebm](https://github.com/lassebm))
 - Docs: Combined claiming+ACLK documentation [\#8724](https://github.com/netdata/netdata/pull/8724) ([joelhans](https://github.com/joelhans))
 - Fix docs Docker-based builder image [\#8718](https://github.com/netdata/netdata/pull/8718) ([prologic](https://github.com/prologic))
-- Fixed the build matrix in the build & install checks. [\#8715](https://github.com/netdata/netdata/pull/8715) ([Ferroin](https://github.com/Ferroin))
-- capitalize title [\#8712](https://github.com/netdata/netdata/pull/8712) ([zack-shoylev](https://github.com/zack-shoylev))
-- Improved ACLK reconnection sequence  [\#8708](https://github.com/netdata/netdata/pull/8708) ([stelfrag](https://github.com/stelfrag))
-- added whoisquery health templates [\#8700](https://github.com/netdata/netdata/pull/8700) ([yasharne](https://github.com/yasharne))
-- Fixed Arch Linux Ci checks. [\#8699](https://github.com/netdata/netdata/pull/8699) ([Ferroin](https://github.com/Ferroin))
-- yamllint: enable truthy rule [\#8698](https://github.com/netdata/netdata/pull/8698) ([ilyam8](https://github.com/ilyam8))
-- Fixes compatibility with RH 7.x family [\#8694](https://github.com/netdata/netdata/pull/8694) ([thiagoftsm](https://github.com/thiagoftsm))
-- charts.d/apcupsd: fix ups status check [\#8688](https://github.com/netdata/netdata/pull/8688) ([ilyam8](https://github.com/ilyam8))
-- Update pfSense doc and add warning for apcupsd users [\#8686](https://github.com/netdata/netdata/pull/8686) ([cryptoluks](https://github.com/cryptoluks))
-- added certificate revocation alert [\#8684](https://github.com/netdata/netdata/pull/8684) ([yasharne](https://github.com/yasharne))
-- \[ReOpen \#8626\] Improved offline installation instructions to point to correct installation scripts and clarify process [\#8680](https://github.com/netdata/netdata/pull/8680) ([IceCodeNew](https://github.com/IceCodeNew))
 
 ## [v1.21.1](https://github.com/netdata/netdata/tree/v1.21.1) (2020-04-13)
 
