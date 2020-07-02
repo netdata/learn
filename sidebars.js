@@ -49,11 +49,7 @@ module.exports = {
             'agent/packaging/installer/methods/packages',
             'agent/packaging/installer/methods/kickstart',
             'agent/packaging/installer/methods/kickstart-64',
-            {
-              type: 'link',
-              label: 'Install on Kubernetes',
-              href: 'https://github.com/netdata/helmchart',
-            },
+            'agent/packaging/installer/methods/kubernetes',
             'agent/packaging/docker',
             'agent/packaging/installer/methods/cloud-providers',
             'agent/packaging/installer/methods/macos',
