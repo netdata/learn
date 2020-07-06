@@ -2,17 +2,25 @@
 title: "Monitor a Kubernetes (k8s) cluster with Netdata"
 description: "Use Netdata's helmchart, service discovery plugin, and Kubelet/kube-proxy collectors for real-time visibility into your Kubernetes cluster."
 image: /img/seo/guides/monitor/kubernetes-k8s-netdata.png
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor/kubernetes-k8s-netdata.md
 ---
 
 
 
-While Kubernetes (k8s) might simplify the way you deploy, scale, and load-balance your applications, no cluster comes
-with "batteries included" when it comes to monitoring. There are no pre-configured tools and no visibility when you
-first deploy. It's like building an entire house and _then_ smashing your way through the finished walls to add windows.
+While Kubernetes (k8s) might simplify the way you deploy, scale, and load-balance your applications, not all clusters
+come with "batteries included" when it comes to monitoring. Doubly so for a monitoring stack that helps you actively
+troubleshoot issues with your cluster.
 
-At Netdata, we're working to build a Kubernetes monitoring toolkit that lets you add visibility without adding
-complexity. Better yet, this toolkit includes a few complementary collectors that let you monitor the many layers of a
-Kubernetes cluster entirely for free.
+Some k8s providers, like GKE (Google Kubernetes Engine), do deploy clusters bundled with monitoring capabilities, such
+as Google Stackdriver Monitoring. However, these pre-configured solutions might not offer the depth of metrics,
+customization, or integration with your perferred alerting methods. 
+
+Without this visibility, it's like you built an entire house and _then_ smashed your way through the finished walls to
+add windows.
+
+At Netdata, we're working to build Kubernetes monitoring tools that add visibility without complexity while also helping
+you actively troubleshoot anomalies or outages. Better yet, this toolkit includes a few complementary collectors that
+let you monitor the many layers of a Kubernetes cluster entirely for free.
 
 We already have a few complementary tools and collectors for monitoring the many layers of a Kubernetes cluster,
 _entirely for free_. These methods work together to help you troubleshoot performance or availablility issues across
@@ -46,7 +54,7 @@ To follow this guide, you need:
     administrative system.
 -   The [Helm package manager](https://helm.sh/) v3.0.0 or newer on the same administrative system.
 
-**You all need to install the Netdata Helm chart on your cluster** before you proceed. See our [Kubernetes installation
+**You need to install the Netdata Helm chart on your cluster** before you proceed. See our [Kubernetes installation
 process](/docs/agent/packaging/installer/methods/kubernetes) for details.
 
 This guide uses a 3-node cluster, running on Digital Ocean, as an example. This cluster runs CockroachDB, Redis, and
@@ -211,9 +219,10 @@ zero configuration on most Kubernetes clusters with standard configurations.
 
 ### Containers
 
-We can finally talk about the final piece of Kubernetes monitoring: containers. Each Kubernetes pod is a container (a
-Docker container, in the example cluster), resourced and tracked by the cgroups feature of the Linux kernel. Netdata
-automatically detects and monitors each running container by interfacing with the cgroups feature itself.
+We can finally talk about the final piece of Kubernetes monitoring: containers. Each Kubernetes pod is a set of one or
+more cooperating containers, sharing the same namespace, all of which are resourced and tracked by the cgroups feature
+of the Linux kernel. Netdata automatically detects and monitors each running container by interfacing with the cgroups
+feature itself.
 
 You can find these sections beneath **Users**, **k8s kubelet**, and **k8s kubeproxy**. Below, a number of containers
 devoted to running services like CockroachDB, Apache, Redis, and more.

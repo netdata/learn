@@ -235,8 +235,7 @@ function Home() {
                 </Link>
                 <Link
                   className={clsx(styles.installMethod)}
-                  href="https://github.com/netdata/helmchart"
-                >
+                  to={useBaseUrl('docs/agent/packaging/installer/methods/kubernetes')}>
                   <img 
                     src="img/index/methods/kubernetes.png" 
                     alt="Install Netdata with Docker"
