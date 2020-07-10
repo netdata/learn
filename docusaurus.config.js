@@ -134,15 +134,15 @@ module.exports = {
           ],
         },
         {
-          title: 'Get started',
+          title: 'Documentation',
           items: [
             {
-              label: 'Installation',
-              to: 'docs/agent/packaging/installer',
+              label: 'Agent Docs',
+              to: 'docs/agent',
             },
             {
-              label: 'Getting started guide',
-              to: 'docs/agent/getting-started',
+              label: 'Cloud Docs',
+              to: 'docs/cloud',
             },
             {
               label: 'Step-by-step tutorial',
@@ -153,12 +153,29 @@ module.exports = {
               to: 'docs/agent/configuration-guide',
             },
             {
-              label: 'Collecting metrics',
+              label: 'Collect metrics',
               to: 'docs/agent/collectors',
             },
             {
               label: 'Health monitoring',
               to: 'docs/agent/health',
+            },
+          ],
+        },
+        {
+          title: 'Guides',
+          items: [
+            {
+              label: 'Get started with the Agent',
+              to: 'docs/agent/getting-started',
+            },
+            {
+              label: 'Get started with Cloud',
+              to: 'docs/cloud/get-started',
+            },
+            {
+              label: 'Step-by-step guide',
+              to: 'docs/agent/step-by-step/step-00',
             },
           ],
         },

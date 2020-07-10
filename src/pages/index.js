@@ -99,47 +99,42 @@ function Home() {
       <header className={clsx(styles.hero)}>
         <div className={clsx('container')}>
           <div className={clsx('row')}>
-            <div 
-              className={clsx(
-                'col col--6',
-                styles.heroText
-              )}>
-              <span>Learn @ Netdata</span>
+            <div className={clsx('col col--6', styles.heroText)}>
               <h1 className={styles.heroTagline}>
-                All your monitoring education in one place.
+                Learn @ Netdata
               </h1>
               <p className={styles.heroSubHead}>
-                Learn alongside thousands of others who want to discover deeper insights about 
-                their systems and applications with Netdata's real-time health monitoring and 
-                performance troubleshooting toolkit.
+                Learn how to monitor and troubleshoot the health and performance of your infrastructure.
+                Build, deploy, and resolve with real-time metrics, insightful dashboards, and every metric imaginable.
               </p>
-              <div className={styles.buttons}>
-                <Link
-                  className={clsx(
-                    'button button--lg',
-                    styles.getStarted,
-                  )}
-                  to={useBaseUrl('#installation')}>
-                  Get Netdata
-                </Link>
-                <Link
-                  className={clsx(
-                    'button button--secondary button--lg',
-                    styles.getStarted,
-                  )}
-                  to={useBaseUrl('docs/agent')}>
-                  Read Agent docs
-                </Link>
-              </div>
             </div>
-            <div className={clsx('col col--6', styles.heroImageContainer)}>
-              <SVG 
-                className={clsx(
-                  styles.heroImage
-                )} 
-                src="img/index/hero.svg"
-                alt="Netdata Learn: All your monitoring education in one place" 
-              />
+          </div>
+          <div className={styles.cta}>
+            <Link className={styles.ctaBox} to={useBaseUrl('get')}>
+              <h3>Get the Netdata toolkit</h3>
+              <p>One-line installation for most Linux systems, plus details for Docker, Kubernetes, macOS, and much more. Connect to Cloud for multi-node visibility.</p>
+              <button 
+                className={clsx('button button--lg')}>
+                Get started
+              </button>
+            </Link>
+            <div className={styles.ctaBox}>
+              <h3>Read documentation</h3>
+              <p>Extensive details on collecting, storing, visualizing, and exporting metrics, then viewing all your nodes on a single pane of glass with Cloud.</p>
+              <Link to={useBaseUrl('docs/agent')} className={clsx('button button--lg button--secondary')}>
+                Agent
+              </Link>
+              <Link to={useBaseUrl('docs/cloud')} className={clsx('button button--lg button--secondary')}>
+                Cloud
+              </Link>
+            </div>
+            <div 
+              className={styles.ctaBox}>
+              <h3>Read guides</h3>
+              <p>Focused, user-friendly content designed to help you better understand Netdata's metrics, integrate with more services, and troubleshoot smarter.</p>
+              <Link to={useBaseUrl('guides')} className={clsx('button button--lg button--secondary')}>
+                Start learning
+              </Link>
             </div>
           </div>
         </div>

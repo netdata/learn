@@ -13,15 +13,6 @@
   padding: 8rem 0 6rem;
   background: linear-gradient(to bottom, white, #ededf3);
 
-  span {
-    display: block;
-    margin-bottom: 1rem;
-
-    font-size: var(--ifm-h5-font-size);
-    font-weight: 500;
-    text-transform: uppercase;
-  }
-
   .heroText {
     z-index: 100;
     position: relative;
@@ -35,44 +26,6 @@
     }
   }
 
-  .buttons {
-    display: flex;
-    align-items: flex-start;
-    flex-flow: row wrap;
-    margin-top: 2rem;
-  }
-
-  .getStarted:first-of-type {
-    margin-right: 2rem;
-    margin-bottom: var(--ifm-paragraph-margin-bottom);
-  }
-
-  .heroImageContainer {
-    position: relative;
-  }
-
-  .heroImage {
-    z-index: 10;
-    position: absolute;
-    top: calc(-6rem - 68px);
-    right: -180px;
-    max-width: 1200px;
-  }
-
-  @media (max-width: 1600px) {
-    // .heroImage {
-    //   right: -120px;
-    // }
-  }
-
-  @media (max-width: 1400px) {
-    // .heroImage {
-    //   bottom: -151px;
-    //   right: 0;
-    //   max-width: 550px;
-    // }
-  }
-
   @media (max-width: 996px) {
     padding: 4rem 0 3rem;
 
@@ -83,9 +36,74 @@
     .heroText .heroSubHead {
       font-size: 1.2rem;
     }
+  }
+}
 
-    .heroImage {
-      display: none;
+.cta {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  margin-top: 3rem;
+
+  .ctaBox {
+    position: relative;
+    grid-column-end: span 2;
+    padding: var(--ifm-spacing-horizontal);
+
+    background: white;
+    border: 1px solid var(--ifm-contents-border-color);
+    border-radius: 2px;
+    transition: ease-in-out all 0.15s;
+    backface-visibility: hidden;
+
+    &:hover {
+      border-color: var(--ifm-color-primary-lightest);
+      text-decoration: none;
+      transform: scale(1.02);
+      transition: ease-in-out all 0.15s;
+
+      h3 {
+        color: var(--ifm-color-primary-lightest);
+      }
+
+      p {
+        color: var(--ifm-font-color-base);
+      }
+    }
+
+    h3 {
+      color: var(--ifm-font-color-base);
+      font-size: 1.4rem;
+      transition: ease-in-out all 0.15s;
+    }
+    
+    p {
+      color: var(--ifm-font-color-base);
+      font-weight: 400;
+    }
+
+    a + a {
+      margin-left: 1rem;
+    }
+
+    &:first-child {
+      background: linear-gradient(90deg, #f4f4f4, white);
+
+      @media (max-width: 996px) {
+        grid-column-end: span 8;
+      }
+
+      @media (max-width: 700px) {
+        grid-column-end: span 8;
+      }
+    }
+
+    @media (max-width: 996px) {
+      grid-column-end: span 4;
+    }
+
+    @media (max-width: 700px) {
+      grid-column-end: span 8;
     }
   }
 }
