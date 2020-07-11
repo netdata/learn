@@ -6,15 +6,28 @@
  */
 
 import React, {useState} from 'react';
-import qs from 'qs';
 import clsx from 'clsx';
+import SVG from 'react-inlinesvg';
 
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import CookbookItem from '@theme/CookbookItem';
 
 import styles from './styles.module.scss';
+import { FiBox, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGrid, FiHardDrive, FiLock } from "react-icons/fi";
+
+function StepByStepLink({icon, title, href}) {
+  return (
+    <Link 
+      className={styles.stepByStepLink}
+      to={useBaseUrl(href)}>
+      <div className={styles.stepByStepIcon}>{icon}</div>
+      <h3>{title}</h3>
+    </Link>
+  )
+}
 
 function CookbookListPage(props) {
   const {items} = props;
@@ -98,47 +111,75 @@ function CookbookListPage(props) {
           </div>
         </section>
 
-        <section className={clsx(styles.guideSection)}>
-          <div className={clsx('row')}>
-            <div className={clsx('col col--8 markdown')}>
-              <h2>Step-by-step guide</h2>
-              <p>Take a guided tour of configuring Netdata's Agent to your exact needs through metrics collection, health alarms, and seeing all your metrics in Netdata Cloud.</p>
-            </div>
+        <section className={clsx('row', styles.stepByStep)}>
+          <div className={clsx('col col--12')}>
+            <h2>Learn Netdata step-by-step</h2>
           </div>
-          <div className={styles.guideBoxes}>
-            <Link to="/guides/step-by-step/step-00" className={clsx('col col--4', styles.guideBox)}>
-              <h3>The step-by-step Netdata tutorial</h3>
-            </Link>
-            <Link to="/guides/step-by-step/step-01" className={clsx('col col--4', styles.guideBox)}>
-              <h3>Step 1. Netdata's building blocks</h3>
-            </Link>
-            <Link to="/guides/step-by-step/step-02" className={clsx('col col--4', styles.guideBox)}>
-              <h3>Step 2. Get to know Netdata's dashboard</h3>
-            </Link>
-            <Link to="/guides/step-by-step/step-03" className={clsx('col col--4', styles.guideBox)}>
-              <h3>Step 3. Monitor more than one system with Netdata</h3>
-            </Link>
-            <Link to="/guides/step-by-step/step-04" className={clsx('col col--4', styles.guideBox)}>
-              <h3>Step 4. The basics of configuring Netdata</h3>
-            </Link>
-            <Link to="/guides/step-by-step/step-05" className={clsx('col col--4', styles.guideBox)}>
-              <h3>Step 5. Health monitoring alarms and notifications</h3>
-            </Link>
-            <Link to="/guides/step-by-step/step-06" className={clsx('col col--4', styles.guideBox)}>
-              <h3>Step 6. Collect metrics from more services and apps</h3>
-            </Link>
-            <Link to="/guides/step-by-step/step-07" className={clsx('col col--4', styles.guideBox)}>
-              <h3>Step 7. Netdata's dashboard in depth</h3>
-            </Link>
-            <Link to="/guides/step-by-step/step-08" className={clsx('col col--4', styles.guideBox)}>
-              <h3>Step 8. Build your first custom dashboard</h3>
-            </Link>
-            <Link to="/guides/step-by-step/step-09" className={clsx('col col--4', styles.guideBox)}>
-              <h3>Step 9. Long-term metrics storage</h3>
-            </Link>
-            <Link to="/guides/step-by-step/step-10" className={clsx('col col--4', styles.guideBox)}>
-              <h3>Step 10. Set up a proxy</h3>
-            </Link>
+          <div className={clsx('col col--4')}>
+            <p>Take a guided tour through Netdata's core features, including its famous dashboard, creating new alarms, and collecting metrics from your favorite services and applications.</p>
+            <p>A perfect first experience for those who want to get started with monitoring and troubleshooting.</p>
+            <p>
+              <Link
+                to={useBaseUrl('guides/step-by-step/step-00')}
+                className={clsx('button button--lg')}
+              >
+                Try the guide
+              </Link>
+            </p>
+          </div>
+          <div className={clsx('col col--4', styles.stepByStepLinks)}>
+            <StepByStepLink
+              href="guides/step-by-step/step-01"
+              icon={<FiBox />}
+              title="Netdata's building blocks"
+            />
+            <StepByStepLink
+              href="guides/step-by-step/step-02"
+              icon={<FiHome />}
+              title="Get to know Netdata's dashboard"
+            />
+            <StepByStepLink
+              href="guides/step-by-step/step-03"
+              icon={<FiServer />}
+              title="Monitor more than one system with Netdata"
+            />
+            <StepByStepLink
+              href="guides/step-by-step/step-04"
+              icon={<FiSliders />}
+              title="The basics of configuring Netdata"
+            />
+            <StepByStepLink
+              href="guides/step-by-step/step-05"
+              icon={<FiActivity />}
+              title="Health monitoring alarms and notifications"
+            />
+          </div>
+          <div className={clsx('col col--4', styles.stepByStepLinks)}>
+            <StepByStepLink
+              href="guides/step-by-step/step-06"
+              icon={<FiCpu />}
+              title="Collect metrics from more services and apps"
+            />
+            <StepByStepLink
+              href="guides/step-by-step/step-07"
+              icon={<FiMonitor />}
+              title="Netdata’s dashboard in depth"
+            />
+            <StepByStepLink
+              href="guides/step-by-step/step-08"
+              icon={<FiGrid />}
+              title="Building your first custom dashboard"
+            />
+            <StepByStepLink
+              href="guides/step-by-step/step-09"
+              icon={<FiHardDrive />}
+              title="Long-term metrics storage"
+            />
+            <StepByStepLink
+              href="guides/step-by-step/step-10"
+              icon={<FiLock />}
+              title="Set up a proxy"
+            />
           </div>
         </section>
 

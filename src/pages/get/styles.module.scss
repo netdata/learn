@@ -172,3 +172,26 @@
     padding-bottom: 3rem;
   }
 }
+
+html[data-theme='dark'] {
+  .hero {
+    background: #191927;
+  }
+
+  .installContainer {
+    background: #22272E;
+  }
+
+  .installCheckbox label::before {
+    background: #22272E;
+    border: 1px solid #585858;
+  }
+
+  .docBox h3 {
+    color: var(--ifm-color-primary);
+
+    &:hover {
+      color: var(--ifm-color-accent);
+    }
+  }
+}

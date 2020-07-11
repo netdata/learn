@@ -108,150 +108,43 @@
   }
 }
 
-/**
- * Step-by-step guide
- */
+.changelog {
+  margin-top: 4rem;
+  padding-bottom: 4rem;
 
-.stepByStep {
-  position: relative;
-  overflow: hidden;
-  padding: 4rem 0;
-}
-
-.stepByStep h2 {
-  margin-bottom: 3rem;
-  font-size: 2rem;
-  text-align: center;
-}
-
-.stepByStepImg {
-  position: relative;
-  overflow: hidden;
-
-  border-radius: 2px;
-  
-  img {
-    position: absolute;
-    min-width: 600px;
-    height: 370px;
-    
-    border-radius: 2px;
+  h2 {
+    margin-bottom: calc(var(--ifm-paragraph-margin-bottom) * 2);
   }
 }
 
-.stepByStepLink {
-  display: block;
-  margin-bottom: 0.4rem;
+.updateBox {
+  header {
+    font-family: var(--ifm-font-family-monospace);
+    font-weight: 500;
+    font-size: 80%;
+    margin-bottom: 0.8rem;
 
-  font-size: 0.9rem;
-}
-
-.stepByStepIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 24px;
-  width: 24px;
-  padding: 4px;
-  margin-right: 1rem;
-
-  background: var(--ifm-background-color);
-  border: 1px solid #35414A;
-  border-radius: 2px;
-}
-
-.stepByStepIcon svg {
-  display: 18px;
-  width: 143px;
-  height: 14px;
-  
-  color: var(--ifm-font-color-base);
-}
-
-@media (max-width: 996px) {
-  .stepByStep {
-    padding: 3rem 0;
+    span {
+      background: var(--ifm-color-primary);
+      color: var(--ifm-background-color);
+      padding: 0.1rem 0.2rem;
+    }
   }
 
-  .stepByStep h2 {
-    margin-bottom: var(--ifm-paragraph-margin-bottom);
+  p {
+    color: var(--ifm-font-color-base);
+    font-weight: 400;
   }
 
-  .stepByStep img {
-    display: none;
-  }
-
-  .stepByStepLinks {
-    margin-bottom: var(--ifm-paragraph-margin-bottom);
-  }
-}
-
-/**
- * Doc boxes
- */
-
-.docs {
-  padding: 4rem 0;
-}
-
-.docBox {
-  padding: var(--ifm-spacing-horizontal);
-}
-
-.docBox:hover {
-  text-decoration: none;
-}
-
-.docBox h3 {
-  color: var(--ifm-color-primary);
-}
-
-.docBox p {
-  margin: 0;
-
-  color: var(--ifm-font-color-base);
-  font-weight: 400;
-}
-
-.docBox:hover h3 {
-  color: var(--ifm-color-secondary);
-}
-
-@media (max-width: 996px) {
-  .docs {
-    padding: 0 0 3rem;
-  }
-
-  .docBox {
-    padding: var(--ifm-spacing-vertical);
+  &:hover {
+    text-decoration: none;
   }
 }
 
 html[data-theme='dark'] {
-  .heroImage,
-  .stepByStepImg img {
-    filter: grayscale(1);
-    opacity: 0.3;
-  }
-
-  .hero {
+  .hero,
+  .ctaBox,
+  .ctaBox:first-of-type {
     background: #191927;
-  }
-
-  .installContainer {
-    background: #22272E;
-  }
-
-  .installCheckbox label::before {
-    background: #22272E;
-    border: 1px solid #585858;
-  }
-
-  .docBox h3 {
-    color: var(--ifm-color-primary);
-
-    &:hover {
-      color: var(--ifm-color-accent);
-    }
   }
 }

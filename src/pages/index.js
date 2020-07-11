@@ -8,84 +8,66 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import styles from './styles.module.scss';
-import { FiBox, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGrid, FiHardDrive, FiLock } from "react-icons/fi";
 
-const docs = [
+const updates = [
   {
-    title: <>Getting started guide</>,
-    href: 'docs/agent/getting-started',
+    title: <>YouTube video: Install Netdata on Linux in two minutes</>,
+    href: 'https://www.youtube.com/watch?v=tVIp7ycK60A',
+    date: 'July 8, 2020',
+    type: 'Video',
     description: (
       <>
-        Configure metrics retention, build streaming connections, collect metrics 
-        from custom apps, create custom dashboards, and much more.
+        Watch the entire process of using our one-line kickstart script, which
+        installs Netdata on most Linux systems in about two minutes.
       </>
     ),
   },
   {
-    title: <>Configuration</>,
-    href: 'docs/agent/configuration-guide',
+    title: <>Monitor a Kubernetes (k8s) cluster with Netdata</>,
+    href: 'guides/monitor/kubernetes-k8s-netdata',
+    date: 'July 6, 2020',
+    type: 'Guide',
     description: (
       <>
-        Use Netdata’s expansive customization possibilities to suit any service, any system, and any infrastructure.
+        Use Netdata&#x27;s Helm chart, service discovery plugin, and Kubelet/kube-proxy 
+        collectors for real-time visibility into your Kubernetes cluster.
       </>
     ),
   },
   {
-    title: <>Collect metrics</>,
-    href: 'docs/agent/collectors',
+    title: <>Install Netdata on a Kubernetes cluster</>,
+    href: 'docs/agent/packaging/installer/methods/kubernetes',
+    date: 'July 3, 2020',
+    type: 'Doc',
     description: (
       <>
-        Add more charts to Netdata via its intelligent auto-detection of popular web servers, databases, mail servers, security apps, and dozens more.
+        Use Netdata&#x27;s Helm chart to bootstrap a Netdata monitoring and 
+        troubleshooting toolkit on your Kubernetes (k8s) cluster.
       </>
     ),
   },
   {
-    title: <>Health monitoring</>,
-    href: 'docs/agent/health',
+    title: <>Monitor, troubleshoot, and debug applications with eBPF metrics</>,
+    href: 'guides/troubleshoot/monitor-debug-applications-ebpf',
+    date: 'July 1, 2020',
+    type: 'Guide',
     description: (
       <>
-        Tune existing alarms or create new ones, and enable any number of notification systems based on roles and severity.
+        Use Netdata's built-in eBPF metrics collector to monitor, troubleshoot, 
+        and debug your custom application using low-level kernel feedback.
       </>
     ),
   },
-  {
-    title: <>Netdata Cloud</>,
-    href: 'docs/cloud',
-    description: (
-      <>
-        Learn how to view real-time, distributed health monitoring and performance troubleshooting data for all your systems in one place.
-      </>
-    ),
-  },
-  {
-    title: <>Custom dashboards</>,
-    href: 'docs/agent/web/gui/custom',
-    description: (
-      <>
-        Build bespoke dashboards with simple HTML and JavaScript to put all of your most important metrics in one easy-to-understand place.
-      </>
-    ),
-  },
-];
+]
 
-function DocBox({title, href, description}) {
+function UpdateBox({title, href, date, type, description}) {
   return (
-    <Link to={useBaseUrl(href)} className={clsx('col col--4', styles.docBox)}>
+    <Link to={useBaseUrl(href)} className={clsx('col col--3', styles.updateBox)}>
+      <header>{date} <span>{type}</span></header>
       <h3>{title}</h3>
       <p>{description}</p>
     </Link>
   );
-}
-
-function StepByStepLink({icon, title, href}) {
-  return (
-    <Link 
-      className={styles.stepByStepLink}
-      to={useBaseUrl(href)}>
-      <div className={styles.stepByStepIcon}>{icon}</div>
-      {title}
-    </Link>
-  )
 }
 
 function Home() {
@@ -140,82 +122,18 @@ function Home() {
         </div>
       </header>
       <main>
-        <section className={styles.stepByStep}>
-          <div className={clsx('container')}>
-            <div className={clsx('row row--center')}>
-              <div className={clsx('col col--12')}>
-                <h2>Learn Netdata step-by-step</h2>
-              </div>
-              <div className={clsx('col col--4')}>
-                <p>Take a guided tour through Netdata's core features, including its famous dashboard, creating new alarms, and collecting metrics from your favorite services and applications.</p>
-                <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with monitoring and troubleshooting.</p>
-              </div>
-              <div className={clsx('col col--4', styles.stepByStepLinks)}>
-                <StepByStepLink
-                  href="guides/step-by-step/step-01"
-                  icon={<FiBox />}
-                  title="Netdata's building blocks"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-02"
-                  icon={<FiHome />}
-                  title="Get to know Netdata's dashboard"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-03"
-                  icon={<FiServer />}
-                  title="Monitor more than one system with Netdata"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-04"
-                  icon={<FiSliders />}
-                  title="The basics of configuring Netdata"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-05"
-                  icon={<FiActivity />}
-                  title="Health monitoring alarms and notifications"
-                />
-              </div>
-              <div className={clsx('col col--4', styles.stepByStepLinks)}>
-                <StepByStepLink
-                  href="guides/step-by-step/step-06"
-                  icon={<FiCpu />}
-                  title="Collect metrics from more services and apps"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-07"
-                  icon={<FiMonitor />}
-                  title="Netdata’s dashboard in depth"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-08"
-                  icon={<FiGrid />}
-                  title="Building your first custom dashboard"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-09"
-                  icon={<FiHardDrive />}
-                  title="Long-term metrics storage"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-10"
-                  icon={<FiLock />}
-                  title="Set up a proxy"
-                />
-              </div>
+        <div className={clsx('container', styles.changelog)}>
+          <div className={clsx('row')}>
+            <div className={clsx('col col--6')}>
+              <h2>Recent updates and new content</h2>
             </div>
           </div>
-        </section>
-        <section className={styles.docs}>
-          <div className={clsx('container')}>
-            <div className={clsx('row')}>
-              {docs.map((props, idx) => (
-                <DocBox key={idx} {...props} />
-              ))}
-            </div>
+          <div className={clsx('row')}>
+            {updates.map((props, idx) => (
+              <UpdateBox key={idx} {...props} />
+            ))}
           </div>
-        </section>
+        </div>
       </main>
     </Layout>
   );
