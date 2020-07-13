@@ -1,0 +1,31 @@
+---
+title: Monitor with Netdata Cloud
+description: Add metrics to Cloud, search your infrastructure, view alarm status, and deep-dive to find more real-time metrics.
+custom_edit_url: null
+---
+
+import { Discover, DiscoverBox } from '../../src/components/agent/DiscoverBox/'
+
+Netdata Cloud gives you the ability to monitor the health and performance of an entire infrastructure from a single
+interface. Using Cloud's connected features, you can view real-time metrics from all your nodes, troubleshoot anomalies
+using embedded dashboards, and track issues with alarms and notifications.
+
+View more about each of Netdata Cloud's monitoring features below.
+
+<Discover>
+  <DiscoverBox 
+    href="/docs/cloud/monitor/nodes" 
+    title="Monitor nodes at a glance">
+    See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/monitor/alarms" 
+    title="View active alarms">
+    Track the health of your infrastructure in one place by taking advantage of the powerful health monitoring watchdog running on every node.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/monitor/notifications" 
+    title="Enable alarm notifications">
+    Configure Cloud to send notifications to your team whenever any node on your infrastructure triggers an alarm.
+  </DiscoverBox>
+</Discover>
