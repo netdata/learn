@@ -515,6 +515,7 @@ module.exports = {
     'cloud/organize',
     {
       type: 'category',
+<<<<<<< HEAD
       label: 'Visualize',
       items: [
         'cloud/visualize',
@@ -526,6 +527,12 @@ module.exports = {
       label: 'Monitor',
       items: [
         'cloud/monitor',
+=======
+      label: 'Monitor',
+      items: [
+        'cloud/monitor',
+        'cloud/monitor/nodes',
+>>>>>>> d290ac1... Reorganize docs to get ready for notifications dispatch
         'cloud/monitor/alarms',
         'cloud/monitor/notifications',
       ]
