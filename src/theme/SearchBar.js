@@ -71,13 +71,45 @@ const SearchBar = (props) => {
             className={clsx('searchClose', styles.searchContainer)}
             onClick={onClose}>
             <div onClick={null} className={styles.searchModal}>
-              
+
+            <SearchProvider 
+              config={{apiConnector: connector}}
+              searchAsYouType={false}
+            >
+              <SearchBox
+                autocompleteResults={{
+                  sectionTitle: "Suggested results",
+                  titleField: "title",
+                  urlField: "url"
+                }}
+              />
+              <>
+                <Results className={styles.searchResults} titleField="title" urlField="url" />
+              </>
+            </SearchProvider>
+{/*               
               <SearchProvider
                 config={{
-                  apiConnector: connector
+                  apiConnector: connector,
                 }}
               >
-                <WithSearch
+                {({ results }) => {
+                  return (
+                    <div>
+                      {results.map(result => (
+                        <Result key={result.id.raw}
+                          result={result}
+                          titleField="title"
+                          urlField="url"
+                        />
+                      ))}
+                    </div>
+                  );
+                }} */}
+                
+
+
+                {/* <WithSearch
                   mapContextToProps={({ searchTerm, setSearchTerm, results }) => ({
                     searchTerm,
                     setSearchTerm,
@@ -154,8 +186,8 @@ const SearchBar = (props) => {
                       </>
                     );
                   }}
-                </WithSearch>
-              </SearchProvider>
+                </WithSearch> */}
+              {/* </SearchProvider> */}
               
             </div>  
           </div>,
