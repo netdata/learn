@@ -28,16 +28,16 @@ Netdata Cloud's frontend and backend code is all closed source.
 Not yet! Send us an email at [info@netdata.cloud](mailto:info@netdata.cloud) if you're interested. We'd love to learn
 more about your requirements and use case.
 
-### How do I see all the nodes in a master/slave streaming setup?
+### How do I see all the nodes in a parent-child streaming setup?
 
-If you want to see both the master node and its slave nodes in Netdata Cloud, you must claim all of them via the
+If you want to see both the parent node and its child nodes in Netdata Cloud, you must claim all of them via the
 [claiming process](/docs/cloud/get-started#claim-a-node).
 
 ### Can I create custom dashboards?
 
 Not yet, but we're working on it.
 
-### My agent cannot connect to the cloud, how do I fix that?
+### My agent cannot connect to Netdata Cloud. How do I fix that?
 
 [The Agent-Cloud Link (ACLK)](/docs/agent/aclk) establishes an outbound connection from your node to `app.netdata.cloud`
 on port 443. If you believe this is not a firewall issue, consult the [troubleshooting
