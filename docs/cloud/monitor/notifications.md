@@ -5,7 +5,7 @@ custom_edit_url: null
 ---
 
 Netdata Cloud can send notifications to your team whenever a node triggers one of its alarms. By enabling notifications,
-you ensure no change, on any node in your infrastructure, goes unnoticed by you or your team.
+you ensure no alarm, on any node in your infrastructure, goes unnoticed by you or your team.
 
 ## Enable alarm notifications for a Space
 
@@ -20,7 +20,7 @@ notification preferences at a user level.
 
 ## Manage alarm notifications per War Room
 
-Any administrator of a War Room can change which types of notifications are enabled for all nodes in that War Room.
+Users of a War Room can change which types of notifications are enabled for themselves in that specific War Room.
 
 -   **All alarms**: Receive notifications for all changes in alarm status: critical, warning, and cleared.
 -   **Critical alarms only**: Receive notifications only for critical alarms, represented by a red background in the
@@ -56,6 +56,11 @@ Email alarm notifications show the following information:
 
 Email notifications also feature a **Go to Node** button, which takes you directly to the offending chart for that node
 within Cloud's embedded dashboards.
+
+Here's an example email notification for the `ram_available` chart, which is in a critical state:
+
+![Screenshot of an alarm notification email from Netdata
+Cloud](https://user-images.githubusercontent.com/1153921/87461878-e933c480-c5c3-11ea-870b-affdb0801854.png)
 
 ## What's next?
 

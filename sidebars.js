@@ -515,10 +515,17 @@ module.exports = {
     'cloud/organize',
     {
       type: 'category',
+      label: 'Visualize',
+      items: [
+        'cloud/visualize',
+        'cloud/visualize/nodes',
+      ]
+    },
+    {
+      type: 'category',
       label: 'Monitor',
       items: [
         'cloud/monitor',
-        'cloud/monitor/nodes',
         'cloud/monitor/alarms',
         'cloud/monitor/notifications',
       ]
