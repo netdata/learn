@@ -515,11 +515,11 @@ module.exports = {
     'cloud/organize',
     {
       type: 'category',
-<<<<<<< HEAD
       label: 'Visualize',
       items: [
         'cloud/visualize',
         'cloud/visualize/nodes',
+        'cloud/visualize/dashboards',
       ]
     },
     {
@@ -527,25 +527,8 @@ module.exports = {
       label: 'Monitor',
       items: [
         'cloud/monitor',
-=======
-      label: 'Monitor',
-      items: [
-        'cloud/monitor',
-<<<<<<< HEAD
-        'cloud/monitor/nodes',
->>>>>>> d290ac1... Reorganize docs to get ready for notifications dispatch
-=======
->>>>>>> 91e8b15... Init file
         'cloud/monitor/alarms',
         'cloud/monitor/notifications',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Visualize',
-      items: [
-        'cloud/monitor/nodes',
-        'cloud/visualize/custom-dashboards',
       ]
     },
     'cloud/collaborate',

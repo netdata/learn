@@ -16,6 +16,7 @@ real-time charts.
 
 ## Add and customize metrics columns
 
+<<<<<<< HEAD
 Add more metrics columns by clicking the gear icon in the Nodes view. Choose the context you'd like to add, give it a
 relevant name, and select whether you want to see all dimensions (the default), or only the specific dimensions your
 team is interested in.
@@ -39,6 +40,25 @@ and so on.
 
 ![GIF showing how to change the timeframe in
 Nodes](https://user-images.githubusercontent.com/1153921/87457127-bf2ad400-c5bc-11ea-9f3b-9afa4e4f1855.gif)
+=======
+Add more metrics columns by clicking the **+ Add metric** button in Node's final column. Choose the context you'd like
+to add, give it a relevant name, and select whether you want to see all dimensions (the default), or only the specific
+dimensions your team is interested in.
+
+You can also click the gear icon to customize the pre-configured metrics columns that come with every new War Room. You
+can change the context, its title, add or remove dimensions, or delete the column altogether.
+
+These customizations appear for anyone else with access to that War Room.
+
+## Troubleshoot with node dashboards
+
+Click on the name of any node to seamlessly navigate to that node's dashboard. This is the same dashboard that comes
+pre-configured with every installation of the Netdata Agent, so it features thousands of metrics and hundreds of
+interactive charts without needing to waste time setting it up.
+
+With all of the Agent's real-time data at your fingertips, you can first identify health or performance anomalies with
+Netdata Cloud, and then engage your team to perform root-cause analysis using the Agent's granular metrics.
+>>>>>>> a1b3b90... Rebase, moving things around
 
 ## Filter and group your infrastructure
 
@@ -51,6 +71,7 @@ and `clear`), and grouping by the service each node provides.
 
 See what services Netdata Cloud can filter by with [supported collectors list](/docs/agent/collectors/collectors).
 
+<<<<<<< HEAD
 ## Troubleshoot with embedded node dashboards
 
 Click on the name of any node to seamlessly navigate to that node's dashboard. This is the same dashboard that comes
@@ -63,6 +84,8 @@ dashboard](https://user-images.githubusercontent.com/1153921/87457036-9b678e00-c
 With all of the Agent's real-time data at your fingertips, you can first identify health or performance anomalies with
 Netdata Cloud, and then engage your team to perform root-cause analysis using the Agent's granular metrics.
 
+=======
+>>>>>>> a1b3b90... Rebase, moving things around
 ## See more metrics in Netdata Cloud
 
 If you want to add more metrics to your War Rooms and they don't show up when you add new metrics to Nodes, you likely
