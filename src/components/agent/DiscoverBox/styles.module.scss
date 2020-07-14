@@ -1,7 +1,8 @@
 .Discover {
   display: grid;
   grid-gap: 1.5rem;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  // grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
   margin-top: calc(2 * var(--ifm-paragraph-margin-bottom));
 }
 
