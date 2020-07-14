@@ -19,6 +19,12 @@ that you can use to see an entire infrastructure's real-time metrics.
 No. You can configure your Agent to [disable Cloud functionality](/docs/agent/aclk#disable-the-aclk) either at
 installation or at runtime.
 
+### How much does Netdata cost? How and why is it free?
+
+The Netdata Agent will always remain free, open-source software. Netdata Cloud is closed source, with all basic features
+provided free of charge. Paid features are in Netdata Cloud's future, but there is no timeline for these features yet.
+Netdata does not and never will sell your personal data or data about your deployment.
+
 ### Is Netdata Cloud open source?
 
 Netdata Cloud's frontend and backend code is all closed source.
@@ -37,7 +43,7 @@ If you want to see both the parent node and its child nodes in Netdata Cloud, yo
 
 Not yet, but we're working on it.
 
-### My agent cannot connect to Netdata Cloud. How do I fix that?
+### My Agent cannot connect to Netdata Cloud. How do I fix that?
 
 [The Agent-Cloud Link (ACLK)](/docs/agent/aclk) establishes an outbound connection from your node to `app.netdata.cloud`
 on port 443. If you believe this is not a firewall issue, consult the [troubleshooting
