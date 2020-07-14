@@ -175,7 +175,7 @@ module.exports = {
             },
             {
               label: 'Step-by-step guide',
-              to: 'docs/agent/step-by-step/step-00',
+              to: 'guides/step-by-step/step-00',
             },
           ],
         },
