@@ -35,7 +35,32 @@ edit that chart. Edit the context, its title, add or remove dimensions, or delet
 
 These customizations appear for anyone else with access to that War Room.
 
-## Jump to single-node dashboards
+## Change the timeframe
+
+By default, the Nodes view shows the last 5 minutes of metrics data on every chart. The value displayed above the chart
+is the 5-minute average of those metrics.
+
+You can change the timeframe by clicking on any of the buttons next to the **Last** label. 
+
+![GIF showing how to change the timeframe in
+Nodes](https://user-images.githubusercontent.com/1153921/87457127-bf2ad400-c5bc-11ea-9f3b-9afa4e4f1855.gif)
+
+**15m** will display the last 15 minutes of metrics for each chart, **30m** for 30 minutes, and so on. When you change
+the timeframe, Netdata Cloud will update both the charts and the average value. If you want to see up to 30 days of
+metrics in Cloud, read up on [seeing more metrics](#see-more-charts-and-metrics-in-netdata-cloud).
+
+## Filter and group your infrastructure
+
+Use the filter input next to the **Nodes** heading to filter your nodes based on your queries. You can enter a text
+query that filters by hostname, or use the dropdown that appears as you begin typing to filter by operating system or
+the service(s) that node provides.
+
+Use the **Group by** dropdown to choose between no grouping, grouping by the node's alarm status (`critical`, `warning`,
+and `clear`), and grouping by the service each node provides.
+
+See what services Netdata Cloud can filter by with [supported collectors list](/docs/agent/collectors/collectors).
+
+## Troubleshoot with embedded node dashboards
 
 Click on the name of any node to seamlessly navigate to that node's dashboard. This is the same dashboard that comes
 pre-configured with every installation of the Netdata Agent, so it features thousands of metrics and hundreds of
@@ -47,7 +72,7 @@ dashboard](https://user-images.githubusercontent.com/1153921/87457036-9b678e00-c
 With all of the Agent's real-time data at your fingertips, you can first identify health or performance anomalies with
 Netdata Cloud, and then engage your team to perform root-cause analysis using the Agent's granular metrics.
 
-## See more metrics in Netdata Cloud
+## See more charts and metrics in Netdata Cloud
 
 If you want to add more metrics to your War Rooms and they don't show up when you add new metrics to Nodes, you likely
 need to configure those nodes to collect from additional data sources. See our [collectors doc](/docs/collect/enable-configure) 
