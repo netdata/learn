@@ -58,7 +58,7 @@ and `clear`), and grouping by the service each node provides.
 
 See what services Netdata Cloud can filter by with [supported collectors list](/docs/agent/collectors/collectors).
 
-### Troubleshoot with embeddednode dashboards
+### Troubleshoot with embedded node dashboards
 
 Click on the name of any node to seamlessly navigate to that node's dashboard. This is the same dashboard that comes
 pre-configured with every installation of the Netdata Agent, so it features thousands of metrics and hundreds of
