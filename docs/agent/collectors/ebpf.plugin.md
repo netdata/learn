@@ -338,4 +338,9 @@ shows how the lockdown module impacts `ebpf.plugin` based on the selected option
 If you or your distribution compiled the kernel with the last combination, your system cannot load shared libraries
 required to run `ebpf.plugin`.
 
+## Cleaning `kprobe_events`
+The eBPF collector adds entries to the file `/sys/kernel/debug/tracing/kprobe_events`, and cleans them on exit, unless
+another process prevents it. If you need to clean the eBPF entries safely, you can manually run the script
+`/usr/libexec/netdata/plugins.d/reset_netdata_trace.sh`.
+
 

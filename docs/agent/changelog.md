@@ -6,6 +6,8 @@
 
 **Merged pull requests:**
 
+- mysql: respect `my.cnf` parameter using PyMySQL library [\#9526](https://github.com/netdata/netdata/pull/9526) ([anirudhdggl](https://github.com/anirudhdggl))
+- Remove health from archived metrics [\#9520](https://github.com/netdata/netdata/pull/9520) ([mfundul](https://github.com/mfundul))
 - charts.d: loopsleepms: fix now\_ms [\#9510](https://github.com/netdata/netdata/pull/9510) ([ilyam8](https://github.com/ilyam8))
 - Fixed an issue with random crashes when updating a chart's metadata on the fly [\#9509](https://github.com/netdata/netdata/pull/9509) ([stelfrag](https://github.com/stelfrag))
 - python.d: thread safe safe\_print \(stdout write\) [\#9508](https://github.com/netdata/netdata/pull/9508) ([ilyam8](https://github.com/ilyam8))
@@ -19,9 +21,11 @@
 - Fix a coverity defect [\#9462](https://github.com/netdata/netdata/pull/9462) ([vlvkobal](https://github.com/vlvkobal))
 - Fix the exporting engine unit tests [\#9460](https://github.com/netdata/netdata/pull/9460) ([vlvkobal](https://github.com/vlvkobal))
 - Wrap header definitions in compilation conditions [\#9458](https://github.com/netdata/netdata/pull/9458) ([candrews](https://github.com/candrews))
+- Properly include eBPF collector in binary packages. [\#9450](https://github.com/netdata/netdata/pull/9450) ([Ferroin](https://github.com/Ferroin))
 - Fixes error in Swagger Documentation [\#9417](https://github.com/netdata/netdata/pull/9417) ([underhood](https://github.com/underhood))
 - Added missing caps letters [\#9379](https://github.com/netdata/netdata/pull/9379) ([Jiab77](https://github.com/Jiab77))
 - Fixed typo in the streaming readme [\#9378](https://github.com/netdata/netdata/pull/9378) ([Jiab77](https://github.com/Jiab77))
+- adds support for multiple ACLK query processing threads [\#9355](https://github.com/netdata/netdata/pull/9355) ([underhood](https://github.com/underhood))
 - ipfs-plugin: change HTTP method to make it compatible with ipfs 0.5.0+ [\#9248](https://github.com/netdata/netdata/pull/9248) ([RubenKelevra](https://github.com/RubenKelevra))
 - UrlService add support get headers [\#9236](https://github.com/netdata/netdata/pull/9236) ([vsc55](https://github.com/vsc55))
 - Add infiniband monitoring to collector proc.plugin [\#9091](https://github.com/netdata/netdata/pull/9091) ([Saruspete](https://github.com/Saruspete))
@@ -146,7 +150,6 @@
 - Fix suid bits on plugin for debian packaging [\#8996](https://github.com/netdata/netdata/pull/8996) ([MrFreezeex](https://github.com/MrFreezeex))
 - Fix incorrect issue link URL in install-required-packages.sh [\#8911](https://github.com/netdata/netdata/pull/8911) ([prologic](https://github.com/prologic))
 - Improve PR Guidelines for Developers and Contributors. [\#8809](https://github.com/netdata/netdata/pull/8809) ([prologic](https://github.com/prologic))
-- Remove old docs generation tooling [\#8783](https://github.com/netdata/netdata/pull/8783) ([prologic](https://github.com/prologic))
 
 ## [v1.22.1](https://github.com/netdata/netdata/tree/v1.22.1) (2020-05-12)
 
@@ -184,10 +187,6 @@
 - Fix build and add bundle-dashbaord.sh to dist\_noinst\_DATA [\#8823](https://github.com/netdata/netdata/pull/8823) ([prologic](https://github.com/prologic))
 - Docs: Add instructions to persist metrics and restart policy [\#8813](https://github.com/netdata/netdata/pull/8813) ([joelhans](https://github.com/joelhans))
 - Fix typo in netdata-installer [\#8811](https://github.com/netdata/netdata/pull/8811) ([adamwolf](https://github.com/adamwolf))
-- health: fix mdstat `failed devices` alarm [\#8794](https://github.com/netdata/netdata/pull/8794) ([ilyam8](https://github.com/ilyam8))
-- dashboard v0.4.18 [\#8786](https://github.com/netdata/netdata/pull/8786) ([jacekkolasa](https://github.com/jacekkolasa))
-- fix\_lock: Add the missing lock [\#8780](https://github.com/netdata/netdata/pull/8780) ([thiagoftsm](https://github.com/thiagoftsm))
-- Added JSON-C dependency handling to instlal and packaging. [\#8776](https://github.com/netdata/netdata/pull/8776) ([Ferroin](https://github.com/Ferroin))
 
 ## [v1.21.1](https://github.com/netdata/netdata/tree/v1.21.1) (2020-04-13)
 
