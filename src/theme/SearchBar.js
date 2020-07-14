@@ -8,7 +8,7 @@ import {useHistory} from '@docusaurus/router';
 import Link from '@docusaurus/Link';
 
 import SiteSearchAPIConnector from "@elastic/search-ui-site-search-connector";
-import { SearchProvider, WithSearch, Results, SearchBox, ResultsPerPage } from "@elastic/react-search-ui";
+import { SearchProvider, WithSearch, Results, SearchBox, ResultsPerPage, Paging, PagingInfo } from "@elastic/react-search-ui";
 
 // import "@elastic/react-search-ui-views/lib/styles/styles.css";
 import styles from './styles.SearchBar.module.scss';
@@ -19,11 +19,11 @@ const connector = new SiteSearchAPIConnector({
 });
 
 const SearchBar = (props) => {
-  const history = useHistory();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const keyPressHandler = (e) => {
+
       // Open on typing `s`
       if (e.target.tagName === 'BODY' && e.key === 's' || e.key === '?') {
         e.preventDefault()
@@ -31,7 +31,7 @@ const SearchBar = (props) => {
       }
 
       // Close on `Escape`
-      if (e.target.className.includes('searchInput') && e.key === 'Escape') {
+      if (e.key === 'Escape') {
         e.preventDefault()
         setIsOpen(false);
         document.body.classList.remove('search-open');
@@ -47,6 +47,7 @@ const SearchBar = (props) => {
   const onOpen = () => {
     setIsOpen(true);
     document.body.classList.add('search-open');
+    
   }
 
   const onClose = useCallback((evt) => {
@@ -71,69 +72,30 @@ const SearchBar = (props) => {
             className={clsx('searchClose', styles.searchContainer)}
             onClick={onClose}>
             <div onClick={null} className={styles.searchModal}>
-
-            <SearchProvider 
-              config={{apiConnector: connector}}
-              searchAsYouType={false}
-            >
-              <SearchBox
-                autocompleteResults={{
-                  sectionTitle: "Suggested results",
-                  titleField: "title",
-                  urlField: "url"
-                }}
-              />
-              <>
-                <Results className={styles.searchResults} titleField="title" urlField="url" />
-              </>
-            </SearchProvider>
-{/*               
+              
               <SearchProvider
                 config={{
                   apiConnector: connector,
+                  initialState: {
+                    resultsPerPage: 20
+                  }
                 }}
+                searchAsYouType={false}
               >
-                {({ results }) => {
-                  return (
-                    <div>
-                      {results.map(result => (
-                        <Result key={result.id.raw}
-                          result={result}
-                          titleField="title"
-                          urlField="url"
-                        />
-                      ))}
-                    </div>
-                  );
-                }} */}
-                
 
-
-                {/* <WithSearch
-                  mapContextToProps={({ searchTerm, setSearchTerm, results }) => ({
-                    searchTerm,
-                    setSearchTerm,
-                    results
-                  })}
-                >
-                  {({ searchTerm, setSearchTerm, results }) => {
+                <WithSearch mapContextToProps={({searchTerm, results}) => ({searchTerm, results})}>
+                  {({searchTerm, results}) => {
                     return (
                       <>
                         <header className={styles.searchHeader}>
-                          <input
-                            className={clsx(styles.searchInput)}
-                            value={searchTerm}
-                            onChange={e => setSearchTerm(e.target.value)}
-                            placeholder="Search Netdata Learn..."
-                            autoFocus
-                          />
+                          <SearchBox />
                           <div className={styles.resultVolume}>
-                            <p>Your search returned {results.length} queries.</p>
+                            <PagingInfo />
                             <ResultsPerPage className={styles.resultPaged} />
                           </div>
                         </header>
                         <div className={styles.searchResults}>
-                          {searchTerm !== '' && results.map(r => (
+                          {results.map(r => (
                             <div key={r.id.raw} className={clsx(styles.searchResultItem)}>
                               {(() => {
                                 if (r.url.raw.includes('learn.netdata.cloud') == true) {
@@ -168,6 +130,8 @@ const SearchBar = (props) => {
                               })()}
                             </div>
                           ))}
+
+                          {/* <Paging /> */}
                         </div>
                         <footer className={styles.searchFooter}>
                           <div className={styles.closeInst}>
@@ -186,8 +150,8 @@ const SearchBar = (props) => {
                       </>
                     );
                   }}
-                </WithSearch> */}
-              {/* </SearchProvider> */}
+                </WithSearch>
+              </SearchProvider>
               
             </div>  
           </div>,

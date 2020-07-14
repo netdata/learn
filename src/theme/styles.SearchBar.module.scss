@@ -57,10 +57,6 @@
   border-bottom: 1px solid var(--ifm-color-emphasis-300);
 }
 
-.searchInput {
-
-}
-
 .resultVolume {
   display: flex;
   margin-top: 1rem;
@@ -113,16 +109,16 @@
   overflow-y: overlay;
   padding: 0 1rem;
 
-  scrollbar-color: var(--ifm-color-emphasis-300) var(--ifm-font-color-base);
-  scrollbar-width: thin;
+  // scrollbar-color: var(--ifm-color-emphasis-300) var(--ifm-font-color-base);
+  // scrollbar-width: thin;
   
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
+  // &::-webkit-scrollbar {
+  //   width: 12px;
+  // }
 
-  &::-webkit-scrollbar-track {
-    background: var(--ifm-font-color-base);
-  }
+  // &::-webkit-scrollbar-track {
+  //   background: var(--ifm-font-color-base);
+  // }
 }
 
 .searchResultItem {
