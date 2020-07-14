@@ -30,8 +30,11 @@ team is interested in.
 ![GIF showing how to add new metrics to the Nodes
 view](https://user-images.githubusercontent.com/1153921/87456847-593e4c80-c5bc-11ea-8063-80c768d4cf6e.gif)
 
+If you can't find contexts you're interested in, you might need to [enable new data sources with
+collectors](#see-more-charts-and-metrics-in-netdata-cloud).
+
 You can also click the gear icon and hover over any existing charts, then click the pencil icon. This opens a panel to
-edit that chart. You can the context, its title, add or remove dimensions, or delete the chart altogether.
+edit that chart. You can edit the context, its title, add or remove dimensions, or delete the chart altogether.
 
 These customizations appear for anyone else with access to that War Room.
 
@@ -47,12 +50,11 @@ dashboard](https://user-images.githubusercontent.com/1153921/87457036-9b678e00-c
 With all of the Agent's real-time data at your fingertips, you can first identify health or performance anomalies with
 Netdata Cloud, and then engage your team to perform root-cause analysis using the Agent's granular metrics.
 
-## See more metrics in Netdata Cloud
+## See more charts and metrics in Netdata Cloud
 
-If you want to add more metrics to your War Rooms and they don't show up when you add new metrics to Nodes, you likely
-need to configure those nodes to collect from additional data sources. See our [collectors
-quickstart](/docs/agent/collectors/quickstart) to learn how to use dozens of pre-installed collectors that can instantly
-collect from your favorite services and applications.
+To add more charts and metrics to Netdata Cloud, you can configure your nodes to collect from additional data sources,
+like webservers, databases, and more. See our [collectors quickstart](/docs/agent/collectors/quickstart) to learn how to
+use dozens of pre-installed collectors that can instantly collect from your favorite services and applications.
 
 If you want to see up to 30 days of historical metrics in Cloud (and more on individual node dashboards), read our guide
 on [long-term storage of historical metrics](/guides/longer-metrics-storage). Also, see our
