@@ -543,6 +543,13 @@ html[data-theme='dark'] code {
       display: inline-block;
       margin: 0;
     }
+
+    &.image-inline {
+      position: relative;
+      top: 4px;
+      display: inline-block;
+      margin: 0;
+    }
   }
 }
 // Installation page
