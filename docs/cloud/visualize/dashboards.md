@@ -44,7 +44,8 @@ There are two ways to create a new dashboard.
    alt="Dashboard icon" class="image-inline" />. In the panel, under the **Create new dashboard and...** header, type in
    your new dashboard's name and click **New dashboard**.
 
-   **GIF: ADD NEW DASHBOARD FROM SINGLE NODE**
+   ![Animated GIF of adding a new dashboard from a
+   node](https://user-images.githubusercontent.com/1153921/87608714-799e0200-c6b5-11ea-9789-febf0aaf0508.gif)
 
 To see dashboards you've created, click on the dropdown menu for the current War Room. You'll see the names of all the
 dashboards you created within that War Room. Click on any of their names to jump to the dashboard.
@@ -74,13 +75,14 @@ new location. Once you release your mouse, other charts will re-sort accordingly
 
 You can't resize cards quite yet, but we're working on it.
 
-### Jump from a card to an embedded dashboard
+### Jump from a card to a single node dashboard
 
 If you want to investigate a single node further based on a chart in your dashboard, you can quickly jump to a single
 node dashboard to see all its metrics. Click the 6-dot icon in the corner of any card to open a menu. Click the **Go to
 Chart** item to navigate to that chart inside of that node's dashboard.
 
-**GIF: GO TO CHART FROM CART**
+![Animated GIF of moving to a chart from a
+dashboard](https://user-images.githubusercontent.com/1153921/87608819-ba961680-c6b5-11ea-99a0-f90d72953f7c.gif)
 
 ## Manage dashboards
 
