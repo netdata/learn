@@ -102,6 +102,8 @@ function DocItem(props) {
         )}
         {permalink && <meta property="og:url" content={siteUrl + permalink} />}
         {permalink && <link rel="canonical" href={siteUrl + permalink} />}
+        {/* Swiftype */}
+        {description && <meta class="swiftype" name="description" data-type="string" content={description} />}
       </Head>
       <div
         className={clsx('container padding-vert--lg', styles.docItemWrapper)}>
