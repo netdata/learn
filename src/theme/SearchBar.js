@@ -47,11 +47,10 @@ const SearchBar = (props) => {
   const onOpen = () => {
     setIsOpen(true);
     document.body.classList.add('search-open');
-    
   }
 
-  const onClose = useCallback((evt) => {
-    if (evt.target === evt.currentTarget || evt.currentTarget.tagName === 'A') {
+  const onClose = useCallback((e) => {
+    if (e.target === e.currentTarget || e.currentTarget.tagName === 'A') {
       setIsOpen(false);
       document.body.classList.remove('search-open');
     }
@@ -70,7 +69,7 @@ const SearchBar = (props) => {
         createPortal(
           <div 
             className={clsx('searchClose', styles.searchContainer)}
-            onClick={onClose}>
+            onMouseDown={onClose}>
             <div onClick={null} className={styles.searchModal}>
               
               <SearchProvider
@@ -88,7 +87,13 @@ const SearchBar = (props) => {
                     return (
                       <>
                         <header className={styles.searchHeader}>
-                          <SearchBox />
+                          <SearchBox 
+                            inputProps={{ placeholder: "Search all of Netdata", autoFocus: true }} 
+                            autocompleteResults={{
+                              titleField: "title",
+                              urlField: "url"
+                            }}
+                          />
                           <div className={styles.resultVolume}>
                             <PagingInfo />
                             <ResultsPerPage className={styles.resultPaged} />
@@ -131,7 +136,7 @@ const SearchBar = (props) => {
                             </div>
                           ))}
 
-                          {/* <Paging /> */}
+                          <Paging />
                         </div>
                         <footer className={styles.searchFooter}>
                           <div className={styles.closeInst}>
