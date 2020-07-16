@@ -69,8 +69,8 @@ function CookbookPage(props) {
                 <header className={clsx(styles.cookbookHeader)}>
                   <h1 className={styles.cookbookTitle}>{title}</h1>
                 </header>
-                <section className="markdown">
-                  <MDXProvider data-swiftype-name="body" data-swiftype-type="text" components={MDXComponents}><CookbookContents /></MDXProvider>
+                <section data-swiftype-name="body" data-swiftype-type="text" className="markdown">
+                  <MDXProvider components={MDXComponents}><CookbookContents /></MDXProvider>
                   <Link to="/guides" className={clsx('button button--lg', styles.guidesMore)}>Find more guides</Link>
                 </section>
               </article>
