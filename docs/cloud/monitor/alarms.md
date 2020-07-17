@@ -42,7 +42,7 @@ Netdata Cloud always delivers the most relevant alarms about the well-being of y
 ## Enable alarm notifications from Cloud
 
 Netdata Cloud also supports sending alarm notifications to users of a War Room when any claimed node triggers an alarm.
-See our [notifications documentation](/docs/cloud/monitor/notify) for setup and configuration details.
+See our [notifications documentation](/docs/cloud/monitor/notifications) for setup and configuration details.
 
 Cloud's notification feature currently supports email notifications. If you would prefer to get notifications from other
 apps, like Discord, Slack, PagerDuty, and more, see the Agent's [notifications docs](/docs/agent/health/notifications).
