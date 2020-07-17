@@ -217,7 +217,10 @@ function Navbar() {
       <header className={styles.globalNav}>
         <div className={styles.globalNavContainer}>
           <div className={clsx('navbar__items')}>
-            <Link className="navbar__brand" href='https://netdata.cloud' {...logoLinkProps}>
+            <Link 
+              className="navbar__brand" 
+              href='https://netdata.cloud'
+              {...logoLinkProps}>
               {logoImageUrl != null && (
                 <img
                   key={isClient}
@@ -229,8 +232,18 @@ function Navbar() {
             </Link>
           </div>
           <div className={clsx('navbar__items', styles.navbarCTA)}>
-            <Link className={clsx('button--global')} to='/docs/agent/packaging/installer'>Get the Agent</Link>
-            <Link className={clsx('button--global button--global--primary')} href='https://app.netdata.cloud'>Sign in to Cloud</Link>
+            <Link 
+              className={clsx('button--global')} 
+              to='/docs/agent/packaging/installer'>
+              Get the Agent
+              </Link>
+            <Link 
+              className={clsx('button--global button--global--primary')} 
+              href='https://app.netdata.cloud'
+              target="_blank"
+              rel="noopener noreferrer">
+              Sign in to Cloud
+            </Link>
           </div>
         </div>
       </header>

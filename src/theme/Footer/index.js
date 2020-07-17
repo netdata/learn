@@ -60,6 +60,11 @@ function Footer() {
       <div className="container">
         {links && links.length > 0 && (
           <div className="row footer__links">
+
+            <div className="col footer__col">
+              <img src="/img/logo_green.png" alt="Netdata logo" />
+            </div>
+
             {links.map((linkItem, i) => (
               <div key={i} className="col footer__col">
                 {linkItem.title != null ? (
@@ -88,31 +93,44 @@ function Footer() {
                 ) : null}
               </div>
             ))}
-          </div>
-        )}
-        {(logo || copyright) && (
-          <div className="text--center">
-            {logo && logo.src && (
-              <div className="margin-bottom--sm">
-                {logo.href ? (
-                  <a
-                    href={logo.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.footerLogoLink}>
-                    <FooterLogo alt={logo.alt} url={logoUrl} />
-                  </a>
-                ) : (
-                  <FooterLogo alt={logo.alt} url={logoUrl} />
-                )}
-              </div>
-            )}
 
-            <div
-              dangerouslySetInnerHTML={{
-                __html: copyright,
-              }}
-            />
+            <div className="col footer__col">
+              <p className="footer__item--copy">&copy; 2020 Netdata</p>
+              <ul className="footer__items">
+                <li className="footer__item">
+                  <Link
+                    className="footer__link-item"
+                    href="https://www.netdata.cloud/privacy/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li className="footer__item">
+                  <Link
+                    className="footer__link-item"
+                    href="https://www.netdata.cloud/terms/"
+                    target='_blank'
+                    rel='noopener noreferrer'>
+                    Terms of Use
+                  </Link>
+                </li>
+                <li className="footer__item footer__item--status">
+                  <Link
+                    className="footer__link-item"
+                    href="https://status.netdata.cloud/"
+                    target='_blank'
+                    rel='noopener noreferrer'>
+                    Status
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="col footer__col">
+              <p>Social logos</p>
+            </div>
+
           </div>
         )}
       </div>

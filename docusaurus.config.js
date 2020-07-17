@@ -82,84 +82,55 @@ module.exports = {
       ],
     },
     footer: {
-      style: 'dark',
       links: [
         {
-          title: 'About',
+          title: 'Products',
           items: [
             {
-              label: 'Netdata, Inc.',
-              href: 'https://netdata.cloud',
+              label: 'Agent',
+              href: 'https://www.netdata.cloud/agent/',
             },
             {
-              label: 'Agent Docs',
-              to: 'docs/agent',
+              label: 'Cloud',
+              to: 'https://www.netdata.cloud/cloud/',
             },
             {
-              label: 'Cloud Docs',
-              to: 'docs/cloud',
+              label: 'Integrations',
+              to: 'https://www.netdata.cloud/integrations/',
             },
+          ],
+        },
+        {
+          title: 'Resources',
+          items: [
             {
-              label: 'Guides',
-              to: 'guides',
+              label: 'Learn',
+              to: '/',
             },
             {
               label: 'Blog',
-              href: 'https://netdata.cloud/blog',
+              to: 'https://www.netdata.cloud/blog',
             },
-            {
-              label: 'Status',
-              href: 'https://status.netdata.cloud',
-            },
-          ],
-        },
-        {
-          title: 'Get started',
-          items: [
-            {
-              label: 'Installation',
-              to: 'docs/agent/packaging/installer',
-            },
-            {
-              label: 'Getting started guide',
-              to: 'docs/agent/getting-started',
-            },
-            {
-              label: 'Step-by-step tutorial',
-              to: 'docs/agent/step-by-step/step-00',
-            },
-            {
-              label: 'Configuration',
-              to: 'docs/agent/configuration-guide',
-            },
-            {
-              label: 'Collecting metrics',
-              to: 'docs/agent/collectors',
-            },
-            {
-              label: 'Health monitoring',
-              to: 'docs/agent/health',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
               label: 'GitHub',
+              to: 'https://github.com/netdata/netdata',
+            },
+          ],
+        },
+        {
+          title: 'Company',
+          items: [
+            {
+              label: 'About',
               href: 'https://github.com/netdata/netdata',
             },
             {
-              label: 'Twitter',
+              label: 'News',
               href: 'https://twitter.com/linuxnetdata',
             },
             {
-              label: 'Facebook',
+              label: 'Careers',
               href: 'https://www.facebook.com/linuxnetdata/',
-            },
-            {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/my-netdata.io/',
             },
           ],
         },
