@@ -47,8 +47,10 @@ icon" class="image-inline" />.
 In the panel, under the **Create new dashboard and...** header, type in your new dashboard's name and click **New
 dashboard**.
 
-![Animated GIF of adding a new dashboard from a
-node](https://user-images.githubusercontent.com/1153921/87608714-799e0200-c6b5-11ea-9789-febf0aaf0508.gif)
+<video controls="controls">
+  <source type="video/mp4" src="/video/cloud/visualize/dashboards/flow.mp4"></source>
+  <p>Your browser does not support the video element.</p>
+</video>
 
 Continue adding charts if you'd like. To see your new dashboard, go back to your War Room. Click on the dropdown menu
 for the current War Room to find your new dashboard under the **Dashboards** heading. Click your new dashboard's name,
@@ -65,6 +67,11 @@ dashboard in Cloud. Zoom in and out, highlight timeframes, and more. See our [Ag
 docs](https://learn.netdata.cloud/docs/agent/web#using-charts) for all the shortcuts.
 
 Charts also synchronize as you interact with them, even across contexts _or_ nodes.
+
+<video controls="controls">
+  <source type="video/mp4" src="/video/cloud/visualize/dashboards/interact-charts.mp4"></source>
+  <p>Your browser does not support the video element.</p>
+</video>
 
 The only thing you can't do yet is resize charts, but we're working on that.
 

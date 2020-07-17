@@ -551,6 +551,14 @@ html[data-theme='dark'] code {
       margin: 0;
     }
   }
+
+  video {
+    display: block;
+    max-width: 100%;
+    margin: calc(var(--ifm-paragraph-margin-bottom) * 1.5) auto;
+    border-radius: var(--ifm-global-radius);
+    box-shadow: var(--ifm-global-shadow-md);
+  }
 }
 // Installation page
 
