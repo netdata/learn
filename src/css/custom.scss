@@ -188,10 +188,7 @@ main[class^='docMainContainer'] .container {
 .navbar .navbar__brand {
   position: relative;
   flex-shrink: 0;
-
   margin-right: 2rem;
-  /* TODO: Explore how you can restore this and have the `Agent`/`Cloud` buttons aligned with the docs text. */
-  /* margin-right: 16rem; */
 
   &:hover {
     color: var(--ifm-navbar-link-hover-color);
@@ -200,10 +197,6 @@ main[class^='docMainContainer'] .container {
   @media (max-width: 1220px) {
     margin-right: 1rem;
   }
-
-  // @media (max-width: 500px) {
-  //   margin-right: 0;
-  // }
 }
 
 .navbar__brand strong {
@@ -481,12 +474,6 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
 .footer {
   padding-top: 4rem;
   border-top: 1px solid var(--ifm-contents-border-color);
-}
-
-.footer.footer--dark {
-  --ifm-footer-background-color: var(--ifm-background-color);
-  --ifm-footer-title-color: var(--ifm-font-color-base);
-  /* --ifm-footer-link-color: var(--ifm-color-gray-300); */
 }
 
 .footer .footer__links {
