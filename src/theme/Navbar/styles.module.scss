@@ -61,3 +61,31 @@
 .navbarDocs .navbar__link:last-of-type {
   margin-right: 0;
 }
+
+/*
+ * Customizations
+ */
+
+.globalNav {
+  width: 100%;
+  background: #35414a;
+  padding: 0.6rem 0;
+  
+}
+
+.globalNavContainer {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1080px;
+  margin: 0 auto;
+}
+
+.navbarCTA {
+  justify-content: flex-end;
+
+  .navbarCTA a {
+    width: 100px;
+  }
+}
