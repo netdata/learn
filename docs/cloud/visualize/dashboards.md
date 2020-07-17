@@ -107,9 +107,11 @@ dashboards you created within that War Room. Click on any of their names to jump
 ### Update/save a dashboard
 
 If you've made changes to a dashboard, such as adding or moving cards, the **Save** button is enabled. Click it to save
-your most recent changes.
+your most recent changes. Any other members of the War Room will be able to see these changes the next time they load
+this dashboard.
 
-Any other members of the War Room will be able to see these changes the next time they load this dashboard.
+If multiple users attempt to make concurrent changes to the same dashboard, the second user who hits Save will be
+prompted to either overwrite the dashboard or reload to see the most recent changes.
 
 ### Remove an individual card
 
@@ -119,6 +121,10 @@ Click on the 6-dot icon in the corner of any card to open a menu. Click the **Re
 
 Delete any dashboard by navigating to it and clicking the **Delete** button. This will remove this entry from the
 dropdown for every member of this War Room.
+
+### Minimum browser viewport
+
+Because of the visual complexity of individual charts, dashboards require a minimum browser viewport of 800px.
 
 ## What's next?
 
