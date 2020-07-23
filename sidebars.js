@@ -528,7 +528,6 @@ module.exports = {
       items: [
         'cloud/monitor',
         'cloud/monitor/alarms',
-        'cloud/monitor/notifications',
       ]
     },
     'cloud/collaborate',

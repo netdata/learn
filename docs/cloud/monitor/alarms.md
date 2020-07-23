@@ -39,17 +39,9 @@ Read our [health monitoring quickstart](/docs/agent/health/quickstart) to learn 
 new triggers based on the specific needs of your infrastructure. By taking charge of alarm configuration, you'll ensure
 Netdata Cloud always delivers the most relevant alarms about the well-being of your nodes.
 
-## Enable alarm notifications from Cloud
-
-Netdata Cloud also supports sending alarm notifications to users of a War Room when any claimed node triggers an alarm.
-See our [notifications documentation](/docs/cloud/monitor/notify) for setup and configuration details.
-
-Cloud's notification feature currently supports email notifications. If you would prefer to get notifications from other
-apps, like Discord, Slack, PagerDuty, and more, see the Agent's [notifications docs](/docs/agent/health/notifications).
-
 ## What's next?
 
-If you're through with setting up alarms and notifications, it might be time to [invite your
+If you're through with setting up alarms, it might be time to [invite your
 team](/docs/cloud/collaborate/invite-your-team).
 
 And if you haven't already put some thought into how you organize your Spaces and War Rooms, check out some of our
