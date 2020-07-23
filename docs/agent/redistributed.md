@@ -176,4 +176,8 @@ connectivity is not available.
       Copyright 2014, 2015, 2016 Ori Livneh [ori@wikimedia.org](mailto:ori@wikimedia.org)
       [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
+-   [filelock](https://github.com/benediktschmitt/py-filelock)
+
+    Copyright 2015, Benedikt Schmitt [Unlicense License](https://unlicense.org/)
+
 
