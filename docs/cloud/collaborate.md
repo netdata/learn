@@ -22,6 +22,12 @@ process.
 
 Read more about the details in our [invite your team](/docs/cloud/collaborate/invite-your-team) document.
 
+## Build and share dashboards with your team
+
+Use Netdata Cloud's [dashboard feature](/docs/cloud/visualize/dashboards) to design new dashboards specific to your
+needs and your infrastructure's unique topology. All new dashboards are immediately shared between members of a War Room
+to get collaboration started right away.
+
 ## Add bookmarks to essential resources
 
 When an anomaly or outage strikes, your team needs to access other essential resources quickly. You can use Netdata

@@ -513,7 +513,23 @@ module.exports = {
     'cloud',
     'cloud/get-started',
     'cloud/organize',
-    'cloud/monitor',
+    {
+      type: 'category',
+      label: 'Visualize',
+      items: [
+        'cloud/visualize',
+        'cloud/visualize/nodes',
+        'cloud/visualize/dashboards',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Monitor',
+      items: [
+        'cloud/monitor',
+        'cloud/monitor/alarms',
+      ]
+    },
     'cloud/collaborate',
     {
       type: 'category',
