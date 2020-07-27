@@ -38,6 +38,10 @@ Click on your profile icon at the top-right of the Cloud UI, then **Profile** in
 
 You can now choose to enable or disable any of the available and active notification methods.
 
+## Flood protection
+
+If a node has too many state changes like firing too many alarms or going from reachable to unreachable, Netdata Cloud enables flood protection. As long as a node is on flood protection mode, Netdata Cloud does not send notifications about this node in order to produce less noise. But please, go to the node and check what's going.
+
 ## Anatomy of an alarm notification
 
 Email alarm notifications show the following information:
