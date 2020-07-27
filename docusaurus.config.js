@@ -65,6 +65,11 @@ module.exports = {
           position: 'left'
         },
         {
+          href: 'https://community.netdata.cloud/',
+          label: 'Community',
+          position: 'right',
+        },
+        {
           href: 'https://netdata.cloud/blog',
           label: 'Blog',
           position: 'right',
@@ -102,6 +107,10 @@ module.exports = {
             {
               label: 'Guides',
               to: 'guides',
+            },
+            {
+              label: 'Community',
+              to: 'https://community.netdata.cloud/',
             },
             {
               label: 'Blog',
