@@ -6,9 +6,12 @@
 
 **Merged pull requests:**
 
+- Added sandboxing exception for `/run/netdata`. [\#9613](https://github.com/netdata/netdata/pull/9613) ([Ferroin](https://github.com/Ferroin))
+- python.d/gearmand: handle func prefixes in `status\n` response [\#9610](https://github.com/netdata/netdata/pull/9610) ([ilyam8](https://github.com/ilyam8))
 - Removed delay in updater script for non-interactive runs from install scripts. [\#9589](https://github.com/netdata/netdata/pull/9589) ([Ferroin](https://github.com/Ferroin))
 - Added proper handling for autogen on Ubuntu 18.04 [\#9586](https://github.com/netdata/netdata/pull/9586) ([Ferroin](https://github.com/Ferroin))
 - Added lock dir [\#9584](https://github.com/netdata/netdata/pull/9584) ([vlvkobal](https://github.com/vlvkobal))
+- Stop mdstat collector from looking up archived charts. [\#9583](https://github.com/netdata/netdata/pull/9583) ([mfundul](https://github.com/mfundul))
 - Fixes mempcpy-\>memcpy [\#9575](https://github.com/netdata/netdata/pull/9575) ([underhood](https://github.com/underhood))
 - Sends netdata.public.unique.id \(machine GUID\) with claim [\#9574](https://github.com/netdata/netdata/pull/9574) ([underhood](https://github.com/underhood))
 - Added libbpf patch to make dist. [\#9571](https://github.com/netdata/netdata/pull/9571) ([Ferroin](https://github.com/Ferroin))
@@ -17,8 +20,10 @@
 - Removed runtime support for Polymorphic Linux from our Docker containers. [\#9566](https://github.com/netdata/netdata/pull/9566) ([Ferroin](https://github.com/Ferroin))
 - python.d: add job file lock registry [\#9564](https://github.com/netdata/netdata/pull/9564) ([ilyam8](https://github.com/ilyam8))
 - Adding pihole to the dns app group [\#9557](https://github.com/netdata/netdata/pull/9557) ([bmatheny](https://github.com/bmatheny))
+- Implemented multihost database [\#9556](https://github.com/netdata/netdata/pull/9556) ([stelfrag](https://github.com/stelfrag))
 - health/megacli: change all instances of alarm to template [\#9553](https://github.com/netdata/netdata/pull/9553) ([tinyhammers](https://github.com/tinyhammers))
 - Revert the eBPF package bundling that breaks the release and DEB packages. [\#9552](https://github.com/netdata/netdata/pull/9552) ([prologic](https://github.com/prologic))
+- Read socket information from kernel ring [\#9549](https://github.com/netdata/netdata/pull/9549) ([thiagoftsm](https://github.com/thiagoftsm))
 - Suppress warning -Wformat-truncation in ACLK [\#9547](https://github.com/netdata/netdata/pull/9547) ([underhood](https://github.com/underhood))
 - Implemented default disk space size calculation for multihost db [\#9504](https://github.com/netdata/netdata/pull/9504) ([stelfrag](https://github.com/stelfrag))
 - Network Viewer options [\#9495](https://github.com/netdata/netdata/pull/9495) ([thiagoftsm](https://github.com/thiagoftsm))
@@ -184,7 +189,6 @@
 - Fixes enable/start of netdata service in debian package [\#9005](https://github.com/netdata/netdata/pull/9005) ([MrFreezeex](https://github.com/MrFreezeex))
 - Update step-10.md [\#9000](https://github.com/netdata/netdata/pull/9000) ([Jelmerrevers](https://github.com/Jelmerrevers))
 - Fix suid bits on plugin for debian packaging [\#8996](https://github.com/netdata/netdata/pull/8996) ([MrFreezeex](https://github.com/MrFreezeex))
-- Fix incorrect issue link URL in install-required-packages.sh [\#8911](https://github.com/netdata/netdata/pull/8911) ([prologic](https://github.com/prologic))
 
 ## [v1.22.1](https://github.com/netdata/netdata/tree/v1.22.1) (2020-05-12)
 
@@ -210,7 +214,6 @@
 
 - Updates main copyright and links for the year 2020 [\#8937](https://github.com/netdata/netdata/pull/8937) ([zack-shoylev](https://github.com/zack-shoylev))
 - Docs: Add custom label to collectors frontmatter to fix sidebar titles [\#8936](https://github.com/netdata/netdata/pull/8936) ([joelhans](https://github.com/joelhans))
-- Fix missing NETDATA\_STOP\_CMD in netdata-installer.sh [\#8897](https://github.com/netdata/netdata/pull/8897) ([prologic](https://github.com/prologic))
 
 ## [v1.21.1](https://github.com/netdata/netdata/tree/v1.21.1) (2020-04-13)
 
