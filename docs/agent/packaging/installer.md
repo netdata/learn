@@ -95,9 +95,9 @@ Netdata on macOS](/docs/agent/packaging/installer/methods/macos)
 FreeBSD](https://user-images.githubusercontent.com/1153921/76029787-5fc40580-5ef2-11ea-9461-23e9049aa8f8.png) Install
 Netdata on FreeBSD](/docs/agent/packaging/installer/methods/freebsd)
 
-[![Install manually from
-source](https://user-images.githubusercontent.com/1153921/73032280-f1246000-3dfb-11ea-870d-7fbddd9a6f76.png) Install
-manually from source](/docs/agent/packaging/installer/methods/manual)
+[![Install from a Git
+checkout](https://user-images.githubusercontent.com/1153921/73032280-f1246000-3dfb-11ea-870d-7fbddd9a6f76.png) Install
+from a Git checkout](/docs/agent/packaging/installer/methods/manual)
 
 [![Install on offline/air-gapped
 systems](https://user-images.githubusercontent.com/1153921/73032239-c89c6600-3dfb-11ea-8224-c8a9f7a50c53.png) Install on
@@ -118,6 +118,10 @@ installation on FreeNAS](/docs/agent/packaging/installer/methods/freenas)
 [![Manual installation on
 Alpine](https://user-images.githubusercontent.com/1153921/76029682-37d4a200-5ef2-11ea-9a2c-a8ffeb1d13c3.png) Manual
 installation on Alpine](/docs/agent/packaging/installer/methods/alpine)
+
+[![Build manually from
+source](https://user-images.githubusercontent.com/1153921/73032280-f1246000-3dfb-11ea-870d-7fbddd9a6f76.png)
+Build manually from source](/docs/agent/packaging/installer/methods/source)
 
 </div>
 
