@@ -1,5 +1,5 @@
 ---
-title: "Install Netdata on Linux manually"
+title: "Install Netdata on Linux from a Git checkout"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md
 ---
 
