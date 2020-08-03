@@ -41,13 +41,27 @@ If you want to see both the parent node and its child nodes in Netdata Cloud, yo
 
 ### Can I create custom dashboards?
 
-Not yet, but we're working on it.
+This is now possible! [Learn how](https://learn.netdata.cloud/docs/cloud/visualize/dashboards).
 
 ### My Agent cannot connect to Netdata Cloud. How do I fix that?
 
 [The Agent-Cloud Link (ACLK)](/docs/agent/aclk) establishes an outbound connection from your node to `app.netdata.cloud`
 on port 443. If you believe this is not a firewall issue, consult the [troubleshooting
 guide](/docs/agent/claim/#troubleshooting).
+
+### How do I add a node to an existing space?
+
+You must be the space owner to claim a new node to an existing space. Find the "Manage Space" option from the drop-down menu.
+
+Select **Manage Space**.
+
+![Manage Space](/img/docs/cloud/manage-space.png)
+
+Select ***Nodes*.
+
+![Nodes Tab](/img/docs/cloud/claim-node-script.png)
+
+Select any War Rooms relevant for the new node, then use the claim script command provided.
 
 ### How do I rename a node?
 
