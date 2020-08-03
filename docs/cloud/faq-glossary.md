@@ -49,9 +49,9 @@ This is now possible! [Learn how](https://learn.netdata.cloud/docs/cloud/visuali
 on port 443. If you believe this is not a firewall issue, consult the [troubleshooting
 guide](/docs/agent/claim/#troubleshooting).
 
-### How do I add a node to an existing space?
+### How do I add a node to an existing Space?
 
-You must be the space owner to claim a new node to an existing space. Find the "Manage Space" option from the drop-down menu.
+You must be the Space owner to claim a new node to an existing Space. Find the "Manage Space" option from the drop-down menu.
 
 Select **Manage Space**.
 
