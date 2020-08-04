@@ -77,11 +77,11 @@ The only thing you can't do yet is resize charts, but we're working on that.
 
 ### Add more cards (charts)
 
-Dashboards are made of **cards**. For now, you can add chart cards, but in the future you'll be able to add other types
+Dashboards are made of **cards**. For now, you can add chart and text cards, but in the future you'll be able to add other types
 of cards as well.
 
-The best way to add chart cards is through the same process as creating a new dashboard. Go to a single node, find the
-chart you're interested in, and add it to your existing dashboard. You can also click the **Add Chart** button. Select
+There are two ways to add chart cards 1) you can go to a single node, find the
+chart you're interested in, and add it to your existing dashboard. 2)you can click the **Add Chart** button. Select
 which node you want a chart from, then the context. Click the **Add chart** button.
 
 ### Move cards
@@ -89,12 +89,16 @@ which node you want a chart from, then the context. Click the **Add chart** butt
 To move any card, click and hold on the top of the card, then drag it to a new location. A red placeholder indicates the
 new location. Once you release your mouse, other charts will re-sort accordingly.
 
+### Text Cards
+
+While you create a new text card or editing an existing one you can select characters or words and make them Bold, Italic. You can also underline them and add a link.
+
 ## Investigate and troubleshoot by jumping to single node dashboards
 
 While dashboards help you associate essential charts from distributed nodes on a single pane of glass, you might need
 more detail when troubleshooting an issue.
 
-Quickly jump to any node's dashboard by clicking the 6-dot icon in the corner of any card to open a menu. Hit the **Go
+Quickly jump to any node's dashboard by clicking the 3-dot icon in the corner of any card to open a menu. Hit the **Go
 to Chart** item.
 
 ![Animated GIF of moving to a chart from a
@@ -122,7 +126,7 @@ prompted to either overwrite the dashboard or reload to see the most recent chan
 
 ### Remove an individual card
 
-Click on the 6-dot icon in the corner of any card to open a menu. Click the **Remove Card** item to remove the card.
+Click on the 3-dot icon in the corner of any card to open a menu. Click the **Remove Card** item to remove the card.
 
 ### Delete a dashboard
 
