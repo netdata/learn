@@ -91,7 +91,7 @@ new location. Once you release your mouse, other charts will re-sort accordingly
 
 ### Text Cards
 
-While you create a new text card or editing an existing one you can select characters or words and make them Bold, Italic. You can also underline them and add a link.
+While you are creating a new text card or editing an existing one, you can select characters or words and make them **bold** or *italic*. You can also underline them or add a link.
 
 ## Investigate and troubleshoot by jumping to single node dashboards
 
