@@ -51,13 +51,13 @@ guide](/docs/agent/claim/#troubleshooting).
 
 ### How do I add a node to an existing Space?
 
-You must be the Space owner to claim a new node to an existing Space. Find the "Manage Space" option from the drop-down menu.
+You must be the Space owner to claim a new node to an existing Space. Find the drop-down menu for your Space, by name, then select the "Manage Space" option.
 
 Select **Manage Space**.
 
 ![Manage Space](/img/docs/cloud/manage-space.png)
 
-Select ***Nodes*.
+Select **Nodes**.
 
 ![Nodes Tab](/img/docs/cloud/claim-node-script.png)
 
