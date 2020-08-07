@@ -6,7 +6,20 @@
 
 **Merged pull requests:**
 
+- Hide archived chart from mdstat collector. [\#9667](https://github.com/netdata/netdata/pull/9667) ([mfundul](https://github.com/mfundul))
+- Remove obsoleted libraries from install/uninstall scripts [\#9661](https://github.com/netdata/netdata/pull/9661) ([vlvkobal](https://github.com/vlvkobal))
+- Fix missing comma. [\#9656](https://github.com/netdata/netdata/pull/9656) ([mfundul](https://github.com/mfundul))
+- Fix Travis config [\#9655](https://github.com/netdata/netdata/pull/9655) ([prologic](https://github.com/prologic))
+- Fix warning when compiled with gcc-10.1 [\#9651](https://github.com/netdata/netdata/pull/9651) ([thiagoftsm](https://github.com/thiagoftsm))
+- Detect a buggy Ubuntu kernel [\#9648](https://github.com/netdata/netdata/pull/9648) ([vlvkobal](https://github.com/vlvkobal))
+- installer: fix `govercomp` [\#9646](https://github.com/netdata/netdata/pull/9646) ([ilyam8](https://github.com/ilyam8))
+- installer: update `go.d.plugin` version to v0.20.0 [\#9644](https://github.com/netdata/netdata/pull/9644) ([ilyam8](https://github.com/ilyam8))
+- python.d: fix `find\_binary` [\#9641](https://github.com/netdata/netdata/pull/9641) ([ilyam8](https://github.com/ilyam8))
+- dashboard v1.0.26 [\#9639](https://github.com/netdata/netdata/pull/9639) ([jacekkolasa](https://github.com/jacekkolasa))
+- Fetch libbpf from netdata fork [\#9637](https://github.com/netdata/netdata/pull/9637) ([vlvkobal](https://github.com/vlvkobal))
+- charts.d: fix `current\_time\_ms\_from\_date` on macOS [\#9636](https://github.com/netdata/netdata/pull/9636) ([ilyam8](https://github.com/ilyam8))
 - Adjust check-kernel-config.sh to run in bash [\#9633](https://github.com/netdata/netdata/pull/9633) ([Steve8291](https://github.com/Steve8291))
+- Fix Travis CI and remove deprecated/removed builds that have no upstream LXC image [\#9630](https://github.com/netdata/netdata/pull/9630) ([prologic](https://github.com/prologic))
 - Added eBPF collector support to DEB and RPM packages. [\#9628](https://github.com/netdata/netdata/pull/9628) ([Ferroin](https://github.com/Ferroin))
 - Fixed RPM default permissions for /usr/libexec/netdata [\#9621](https://github.com/netdata/netdata/pull/9621) ([Saruspete](https://github.com/Saruspete))
 - Added sandboxing exception for `/run/netdata`. [\#9613](https://github.com/netdata/netdata/pull/9613) ([Ferroin](https://github.com/Ferroin))
@@ -35,7 +48,10 @@
 - Implemented the HOST command in metadata log replay [\#9489](https://github.com/netdata/netdata/pull/9489) ([stelfrag](https://github.com/stelfrag))
 - Add documentation to provide a comprehensive guide for package maintainers [\#9467](https://github.com/netdata/netdata/pull/9467) ([Ferroin](https://github.com/Ferroin))
 - Add better checks for existing installs to the kickstart scripts. [\#9408](https://github.com/netdata/netdata/pull/9408) ([Ferroin](https://github.com/Ferroin))
+- Fix Static Netdata to correctly build with Netdata Cloud support. [\#9381](https://github.com/netdata/netdata/pull/9381) ([prologic](https://github.com/prologic))
+- nvidia\_smi: charts for memory used by each user and number of distinct users [\#9372](https://github.com/netdata/netdata/pull/9372) ([scatenag](https://github.com/scatenag))
 - enable simple sandboxing on systemd service [\#9234](https://github.com/netdata/netdata/pull/9234) ([Izorkin](https://github.com/Izorkin))
+- Require cloud build to succeed in make dist checks. [\#9218](https://github.com/netdata/netdata/pull/9218) ([Ferroin](https://github.com/Ferroin))
 
 ## [v1.23.2](https://github.com/netdata/netdata/tree/v1.23.2) (2020-07-16)
 
@@ -205,10 +221,6 @@
 - Fixed bundling of React dashboard in DEB and RPM packages. [\#8988](https://github.com/netdata/netdata/pull/8988) ([Ferroin](https://github.com/Ferroin))
 - Restore old semantics of "netdata -W set" command [\#8987](https://github.com/netdata/netdata/pull/8987) ([mfundul](https://github.com/mfundul))
 - Added JSON-C packaging fils to make dist. [\#8986](https://github.com/netdata/netdata/pull/8986) ([Ferroin](https://github.com/Ferroin))
-- Remove check for old alarm status \(CID 358436\) [\#8978](https://github.com/netdata/netdata/pull/8978) ([stelfrag](https://github.com/stelfrag))
-- Remove UNUSED word from flood protection documentation [\#8964](https://github.com/netdata/netdata/pull/8964) ([mfundul](https://github.com/mfundul))
-- Docs: Update with go-live claiming and ACLK information \(\#8859\) [\#8960](https://github.com/netdata/netdata/pull/8960) ([prologic](https://github.com/prologic))
-- Docs: Fix internal links and remove obsolete admonitions [\#8946](https://github.com/netdata/netdata/pull/8946) ([joelhans](https://github.com/joelhans))
 
 ## [v1.22.0](https://github.com/netdata/netdata/tree/v1.22.0) (2020-05-11)
 
