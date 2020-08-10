@@ -130,5 +130,6 @@ This is the list of contributors that have signed this agreement:
 |@akwan|Alan Kwan||
 |@underhood|Timotej Šiškovič||
 |@stevenh|Steven Hartland|steven.hartland@multiplay.co.uk|
+|@devinrsmith|Devin Smith||
 
 
