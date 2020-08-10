@@ -1,11 +1,12 @@
 
 
-## [**Next release**](https://github.com/netdata/netdata/tree/HEAD)
+## [v1.24.0](https://github.com/netdata/netdata/tree/v1.24.0) (2020-08-10)
 
-[Full Changelog](https://github.com/netdata/netdata/compare/v1.23.2...HEAD)
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.23.2...v1.24.0)
 
 **Merged pull requests:**
 
+- Stop multi-host DB statistics from being counted multiple times. [\#9685](https://github.com/netdata/netdata/pull/9685) ([mfundul](https://github.com/mfundul))
 - Hide archived chart from mdstat collector. [\#9667](https://github.com/netdata/netdata/pull/9667) ([mfundul](https://github.com/mfundul))
 - Remove obsoleted libraries from install/uninstall scripts [\#9661](https://github.com/netdata/netdata/pull/9661) ([vlvkobal](https://github.com/vlvkobal))
 - Fix missing comma. [\#9656](https://github.com/netdata/netdata/pull/9656) ([mfundul](https://github.com/mfundul))
@@ -24,6 +25,7 @@
 - Fixed RPM default permissions for /usr/libexec/netdata [\#9621](https://github.com/netdata/netdata/pull/9621) ([Saruspete](https://github.com/Saruspete))
 - Added sandboxing exception for `/run/netdata`. [\#9613](https://github.com/netdata/netdata/pull/9613) ([Ferroin](https://github.com/Ferroin))
 - python.d/gearmand: handle func prefixes in `status\n` response [\#9610](https://github.com/netdata/netdata/pull/9610) ([ilyam8](https://github.com/ilyam8))
+- Add support for DEB packages for Ubuntu 20.04 \(focal\) [\#9592](https://github.com/netdata/netdata/pull/9592) ([prologic](https://github.com/prologic))
 - Removed delay in updater script for non-interactive runs from install scripts. [\#9589](https://github.com/netdata/netdata/pull/9589) ([Ferroin](https://github.com/Ferroin))
 - Added proper handling for autogen on Ubuntu 18.04 [\#9586](https://github.com/netdata/netdata/pull/9586) ([Ferroin](https://github.com/Ferroin))
 - Added lock dir [\#9584](https://github.com/netdata/netdata/pull/9584) ([vlvkobal](https://github.com/vlvkobal))
@@ -207,20 +209,10 @@
 - Change backends to exporting engine in general documentation pages [\#9045](https://github.com/netdata/netdata/pull/9045) ([vlvkobal](https://github.com/vlvkobal))
 - Missing checks exporting [\#9034](https://github.com/netdata/netdata/pull/9034) ([thiagoftsm](https://github.com/thiagoftsm))
 - Move nc backend [\#9030](https://github.com/netdata/netdata/pull/9030) ([thiagoftsm](https://github.com/thiagoftsm))
-- Fixes enable/start of netdata service in debian package [\#9005](https://github.com/netdata/netdata/pull/9005) ([MrFreezeex](https://github.com/MrFreezeex))
-- Update step-10.md [\#9000](https://github.com/netdata/netdata/pull/9000) ([Jelmerrevers](https://github.com/Jelmerrevers))
-- Fix suid bits on plugin for debian packaging [\#8996](https://github.com/netdata/netdata/pull/8996) ([MrFreezeex](https://github.com/MrFreezeex))
 
 ## [v1.22.1](https://github.com/netdata/netdata/tree/v1.22.1) (2020-05-12)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.22.0...v1.22.1)
-
-**Merged pull requests:**
-
-- Fix the latency issue on the ACLK and suppress the diagnostics [\#8992](https://github.com/netdata/netdata/pull/8992) ([amoss](https://github.com/amoss))
-- Fixed bundling of React dashboard in DEB and RPM packages. [\#8988](https://github.com/netdata/netdata/pull/8988) ([Ferroin](https://github.com/Ferroin))
-- Restore old semantics of "netdata -W set" command [\#8987](https://github.com/netdata/netdata/pull/8987) ([mfundul](https://github.com/mfundul))
-- Added JSON-C packaging fils to make dist. [\#8986](https://github.com/netdata/netdata/pull/8986) ([Ferroin](https://github.com/Ferroin))
 
 ## [v1.22.0](https://github.com/netdata/netdata/tree/v1.22.0) (2020-05-11)
 
