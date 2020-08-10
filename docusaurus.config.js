@@ -6,6 +6,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'netdata',
   projectName: 'netdata',
+  onBrokenLinks: 'warn',
   presets: [
     [
       '@docusaurus/preset-classic',
