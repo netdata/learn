@@ -22,7 +22,6 @@ module.exports = {
     ]
   ],
   plugins: [
-    require.resolve('@docusaurus/plugin-sitemap'),
     require.resolve('docusaurus-plugin-sass'),
     require.resolve('./src/plugins/cookbooks'),
   ],
