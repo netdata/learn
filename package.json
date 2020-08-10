@@ -10,8 +10,8 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.58",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.58",
+    "@docusaurus/core": "2.0.0-alpha.61",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.61",
     "@elastic/react-search-ui": "^1.3.3",
     "@elastic/search-ui-site-search-connector": "^1.3.3",
     "axios": "^0.19.2",

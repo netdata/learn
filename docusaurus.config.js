@@ -6,6 +6,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'netdata',
   projectName: 'netdata',
+  onBrokenLinks: 'warn',
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -22,7 +23,6 @@ module.exports = {
     ]
   ],
   plugins: [
-    require.resolve('@docusaurus/plugin-sitemap'),
     require.resolve('docusaurus-plugin-sass'),
     require.resolve('./src/plugins/cookbooks'),
   ],
@@ -46,18 +46,16 @@ module.exports = {
         src: 'img/logo.svg',
         srcDark: 'img/logo.svg',
       },
-      links: [
+      items: [
         {
           to: 'docs/agent', 
           label: 'Agent', 
           position: 'left',
-          group: 'docs'
         },
         {
           to: 'docs/cloud', 
           label: 'Cloud', 
           position: 'left',
-          group: 'docs'
         },
         {
           to: 'guides', 
@@ -135,7 +133,7 @@ module.exports = {
             },
             {
               label: 'Step-by-step tutorial',
-              to: 'docs/agent/step-by-step/step-00',
+              to: 'guides/step-by-step/step-00',
             },
             {
               label: 'Configuration',

@@ -25,6 +25,10 @@
   top: calc(var(--ifm-navbar-height) * -1) !important;
 }
 
+/* 
+ * Custom docs/guides separator
+ */
+
 .navbarDocs {
   margin-right: 2rem;
   padding: 0 1rem 0 2rem;
