@@ -46,18 +46,16 @@ module.exports = {
         src: 'img/logo.svg',
         srcDark: 'img/logo.svg',
       },
-      links: [
+      items: [
         {
           to: 'docs/agent', 
           label: 'Agent', 
           position: 'left',
-          group: 'docs'
         },
         {
           to: 'docs/cloud', 
           label: 'Cloud', 
           position: 'left',
-          group: 'docs'
         },
         {
           to: 'guides', 
