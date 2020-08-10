@@ -132,7 +132,7 @@ module.exports = {
             },
             {
               label: 'Step-by-step tutorial',
-              to: 'docs/agent/step-by-step/step-00',
+              to: 'guides/step-by-step/step-00',
             },
             {
               label: 'Configuration',
