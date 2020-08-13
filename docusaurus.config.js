@@ -26,9 +26,7 @@ module.exports = {
     require.resolve('docusaurus-plugin-sass'),
     require.resolve('./src/plugins/cookbooks'),
   ],
-  stylesheets: [
-    'https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,500&display=swap',
-  ],
+  stylesheets: [],
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-64295674-3',
