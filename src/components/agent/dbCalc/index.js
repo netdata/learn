@@ -17,6 +17,7 @@ export function Calculator() {
   })
 
   const [requiredDisk, setRequiredDisk ] = React.useState('')
+  const [diskPerNode, setDiskPerNode] = React.useState('')
   const [requiredRAM, setRequiredRAM] = React.useState('')
   const [settingDiskSpace, setSettingDiskSpace] = React.useState('')
   const [conf, setConf] = React.useState('')
@@ -37,7 +38,8 @@ export function Calculator() {
     const maxUncompressedPages = totalMeasurements / measurementsPerPage
     const uncompressedPageSizeDiv = uncompressedPageSize / 1024 / 1024
     const uncompressedStorage = maxUncompressedPages * uncompressedPageSizeDiv
-    let diskSpace = Math.round(uncompressedStorage * ( 1 - (state.compression / 100)))
+    const settingDiskSpace = Math.round(uncompressedStorage * ( 1 - (state.compression / 100)))
+    const diskPerNode = Math.round(settingDiskSpace / nodes)
 
     // Calculate required RAM
     const ramPageCache = state.pageSize * nodes
@@ -45,24 +47,23 @@ export function Calculator() {
     const ramMetadata = uncompressedStorage * 0.03
     const requiredRam = Math.round(ramPageCache + ramPagesDims + ramMetadata)
 
-    console.log(diskSpace / nodes)
-
     // Calculate dbengine disk space setting
     // If diskSpace is less than 64 MiB per node, then either set diskSpace to 64 or the larger value.
     // Then enforce the minimum of 64 for `settingDiskSpace`.
-    if (diskSpace / nodes < 64) diskSpace = 64 * nodes
-    const settingDiskSpace = Math.round(diskSpace / nodes)
+    // if (diskSpace / nodes < 64) diskSpace = 64 * nodes
+    // const settingDiskSpace = diskSpace
 
     // Set states
-    setRequiredDisk(diskSpace)
+    setRequiredDisk(settingDiskSpace)
+    setDiskPerNode(diskPerNode)
     setSettingDiskSpace(settingDiskSpace)
     setRequiredRAM(requiredRam)
 
     // Console output for debugging
-    console.log('Nodes: ' + nodes + '\nTotal dimensions: ' + totalDims + '\nTotal measurements collected per sec: ' + totalMeasurements + '\nMax uncompressed pages retained: ' + maxUncompressedPages + '\nUncompressed page size / 1024 / 1024: ' + uncompressedPageSizeDiv + '\nUncompressed storage required (MiB): ' + uncompressedStorage + '\nREQUIRED DISK SPACE: ' + diskSpace + '\nnetdata.conf [global] "dbengine disk space": ' + settingDiskSpace + '\nRAM for page cache: ' + ramPageCache + '\n2 pages for each dimension being collected: ' + ramPagesDims + '\n+ Metadata: ' + ramMetadata + '\nREQUIRED RAM: ' + requiredRam)
+    // console.log('Nodes: ' + nodes + '\nTotal dimensions: ' + totalDims + '\nTotal measurements collected per sec: ' + totalMeasurements + '\nMax uncompressed pages retained: ' + maxUncompressedPages + '\nUncompressed page size / 1024 / 1024: ' + uncompressedPageSizeDiv + '\nUncompressed storage required (MiB): ' + uncompressedStorage + '\nREQUIRED DISK SPACE: ' + diskSpace + '\nnetdata.conf [global] "dbengine disk space": ' + settingDiskSpace + '\nRAM for page cache: ' + ramPageCache + '\n2 pages for each dimension being collected: ' + ramPagesDims + '\n+ Metadata: ' + ramMetadata + '\nREQUIRED RAM: ' + requiredRam)
 
     const confString = String.raw`[global]
-    dbengine disk space = ${settingDiskSpace}`
+    dbengine multihost disk space = ${settingDiskSpace}`
     setConf(confString)
 
   });
@@ -143,7 +144,7 @@ export function Calculator() {
       <div className={clsx("col col--12", styles.calcResults)}>
 
         <div className={styles.calcFinal}>
-          <p>With the above configuration, you should allocate the following resources to metrics storage{state.child > 0 && <em>&nbsp;on your parent node</em>}:</p>
+          <p>With the above configuration, Netdata will use the following resources{state.child > 0 && <em>&nbsp;on your parent node</em>} to store metrics{state.child > 0 && <span>&nbsp;for both parent and child nodes</span>}: </p>
           <span>
             <code>{requiredDisk} MiB</code> in total disk space
           </span>
@@ -157,7 +158,7 @@ export function Calculator() {
             {state.child > 0 &&
               <em>on your parent node&nbsp;</em>
             }
-            and change the <code>dbengine disk space</code> setting to the following:
+            and change the <code>dbengine multihost disk space</code> setting to the following:
           </p>
           <CodeBlock className={clsx('conf')} language='conf'>{conf}</CodeBlock>
           <p>Restart your Agent for the setting to take effect.</p>
@@ -174,13 +175,13 @@ export function Calculator() {
             {state.child > 0 && (
               <>
                 <li>
-                  <p>Your master node creates separate instances of the database engine for each of your slave nodes, and allocates <code>{settingDiskSpace} MiB</code> to each of them. This is why you must allocate more total disk space than the <code>dbengine disk space</code> setting implies.</p>
-                  <p><code>{settingDiskSpace} MiB per instance * 1 master instance * {state.slaves} slave instance{state.slaves > 1 && <span>s</span>} = {requiredDisk} MiB</code></p>
+                  <p>Your parent node uses one shared dbengine multi-host instance to store all metrics values and associated metadata from all parent and child nodes. To store the volume and granularity of metrics specified above, the instance must be large enough for all metrics/metadata from all nodes.</p>
+                  <p><code>{diskPerNode} MiB per node * 1 parent node * {state.child} child node{state.child > 1 && <span>s</span>} = {requiredDisk} MiB</code></p>
                   <p>See the <Link href="/docs/agent/database/engine">dbengine documentation</Link> for details on how the Agent allocates database engine instances.</p>
                 </li>
               </>
             )}
-            <li>The database engine requires a minimum of 64 MiB to function (<code>dbengine disk space</code>).</li>
+            <li>The database engine requires a minimum of 64 MiB to function (<code>dbengine multihost disk space</code>).</li>
             <li>The system memory figure above is <em>only for the database engine</em>, and it may be higher in real-world situations due to memory fragmentation. The Agent will require more memory for collection, visualization, and alerting features.</li>
           </ul>
         </div>
