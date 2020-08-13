@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import SVG from 'react-inlinesvg';
 
-import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import styles from './styles.module.scss';
-
+import Layout from '@theme/Layout';
 import CodeBlock from '@theme/CodeBlock'
-import { FiBox, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGrid, FiHardDrive, FiLock } from "react-icons/fi";
+
+import styles from './styles.module.scss';
 
 const docs = [
   {
@@ -295,53 +294,43 @@ function Home() {
               <div className={clsx('col col--4', styles.stepByStepLinks)}>
                 <StepByStepLink
                   href="guides/step-by-step/step-01"
-                  icon={<FiBox />}
-                  title="Netdata's building blocks"
+                  title="1. Netdata's building blocks"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-02"
-                  icon={<FiHome />}
-                  title="Get to know Netdata's dashboard"
+                  title="2. Get to know Netdata's dashboard"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-03"
-                  icon={<FiServer />}
-                  title="Monitor more than one system with Netdata"
+                  title="3. Monitor more than one system with Netdata"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-04"
-                  icon={<FiSliders />}
-                  title="The basics of configuring Netdata"
+                  title="4. The basics of configuring Netdata"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-05"
-                  icon={<FiActivity />}
-                  title="Health monitoring alarms and notifications"
+                  title="5. Health monitoring alarms and notifications"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-06"
-                  icon={<FiCpu />}
-                  title="Collect metrics from more services and apps"
+                  title="6. Collect metrics from more services and apps"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-07"
-                  icon={<FiMonitor />}
-                  title="Netdata’s dashboard in depth"
+                  title="7. Netdata’s dashboard in depth"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-08"
-                  icon={<FiGrid />}
-                  title="Building your first custom dashboard"
+                  title="8. Building your first custom dashboard"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-09"
-                  icon={<FiHardDrive />}
-                  title="Long-term metrics storage"
+                  title="9. Long-term metrics storage"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-10"
-                  icon={<FiLock />}
-                  title="Set up a proxy"
+                  title="10. Set up a proxy"
                 />
               </div>
               <div 
