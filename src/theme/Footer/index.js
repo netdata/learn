@@ -118,7 +118,8 @@ function Footer() {
         )}
       </div>
     </footer>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet"></link>
+    {/* <link rel="preload" as="font" type="font/woff2" href="/fonts/ibm-plex-sans-v7-latin-regular.woff2" crossorigin></link>
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/ibm-plex-sans-v7-latin-500.woff2" crossorigin></link> */}
     </>
   );
 }
