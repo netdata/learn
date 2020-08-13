@@ -31,13 +31,15 @@ module.exports = {
       href: '/fonts/ibm-plex-sans-v7-latin-regular.woff2',
       rel: 'preload',
       as: 'font',
-      type: 'font/woff2'
+      type: 'font/woff2',
+      crossorigin: '',
     },
     {
       href: '/fonts/ibm-plex-sans-v7-latin-500.woff2',
       rel: 'preload',
       as: 'font',
-      type: 'font/woff2'
+      type: 'font/woff2',
+      crossorigin: ''
     }
   ],
   themeConfig: {
