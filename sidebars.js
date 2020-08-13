@@ -117,7 +117,6 @@ module.exports = {
           type: 'category',
           label: 'Internal plugins',
           items: [
-            'agent/collectors/ebpf.plugin',
             'agent/collectors/proc.plugin',
             'agent/collectors/statsd.plugin',
             'agent/collectors/cgroups.plugin',
@@ -307,6 +306,7 @@ module.exports = {
                 },
               ]
             },
+            'agent/collectors/ebpf.plugin',
             'agent/collectors/apps.plugin',
             'agent/collectors/cups.plugin',
             'agent/collectors/fping.plugin',
