@@ -269,6 +269,28 @@
   font-size: 0.9rem;
 }
 
+.stepByStepIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  padding: 4px;
+  margin-right: 1rem;
+
+  background: var(--ifm-background-color);
+  border: 1px solid #35414A;
+  border-radius: 2px;
+}
+
+.stepByStepIcon svg {
+  display: 18px;
+  width: 143px;
+  height: 14px;
+  
+  color: var(--ifm-font-color-base);
+}
+
 @media (max-width: 996px) {
   .stepByStep {
     padding: 3rem 0;

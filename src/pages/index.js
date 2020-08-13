@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import clsx from 'clsx';
 import SVG from 'react-inlinesvg';
 
+import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import Layout from '@theme/Layout';
-import CodeBlock from '@theme/CodeBlock'
-
 import styles from './styles.module.scss';
+
+import CodeBlock from '@theme/CodeBlock'
+import { FiBox, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGrid, FiHardDrive, FiLock } from "react-icons/fi";
 
 const docs = [
   {
@@ -223,21 +224,30 @@ function Home() {
                 <Link
                   className={clsx(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/installer/methods/kickstart-64')}>
-                  <img src="img/index/methods/static.png" alt="Install Netdata with a static binary" />
+                  <SVG 
+                    src="img/index/methods/static.svg" 
+                    alt="Install Netdata with a static binary"
+                  />
                   Static 64-bit binary
                 </Link>
                 <Link
                   className={clsx(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/installer/methods/packages')}>
-                  <img src="img/index/methods/package.png" alt="Install Netdata with .deb/.rpm packages" />
+                  <SVG 
+                    src="img/index/methods/package.svg" 
+                    alt="Install Netdata with .deb/.rpm packages"
+                  />
                   .deb/.rpm packages
                 </Link>
                 <Link
                   className={clsx(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/installer/methods/kubernetes')}>
-                  <img 
-                    src="img/index/methods/kubernetes.png" 
-                    alt="Install Netdata with Docker"
+                  <SVG 
+                    width="50"
+                    height="64"
+                    viewport="50 64"
+                    src="img/index/methods/kubernetes.svg" 
+                    alt="Install Netdata on a Kubernetes cluster"
                   />
                   Kubernetes
                 </Link>
@@ -265,7 +275,10 @@ function Home() {
                   className={clsx(styles.installMethod)}
                   to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}
                 >
-                  <img src="img/index/methods/cloud.png" alt="Install Netdata on cloud providers" />
+                  <SVG 
+                    src="img/index/methods/cloud.svg" 
+                    alt="Install Netdata on cloud providers"
+                  />
                   Cloud providers
                 </Link>
                 <p><Link to="docs/agent/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>
@@ -275,70 +288,67 @@ function Home() {
         </section>
         <section className={styles.stepByStep}>
           <div className={clsx('container')}>
-            <div className={clsx('row')}>
+            <div className={clsx('row row--center')}>
               <div className={clsx('col col--12')}>
                 <h2>Learn Netdata step-by-step</h2>
               </div>
               <div className={clsx('col col--4')}>
                 <p>Take a guided tour through Netdata's core features, including its famous dashboard, creating new alarms, and collecting metrics from your favorite services and applications.</p>
                 <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with monitoring and troubleshooting.</p>
-                <p>
-                  <Link
-                    to={useBaseUrl('guides/step-by-step/step-00')}
-                    className={clsx('button button--lg')}
-                  >
-                    Try the guide
-                  </Link>
-                </p>
               </div>
               <div className={clsx('col col--4', styles.stepByStepLinks)}>
                 <StepByStepLink
                   href="guides/step-by-step/step-01"
-                  title="1. Netdata's building blocks"
+                  icon={<FiBox />}
+                  title="Netdata's building blocks"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-02"
-                  title="2. Get to know Netdata's dashboard"
+                  icon={<FiHome />}
+                  title="Get to know Netdata's dashboard"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-03"
-                  title="3. Monitor more than one system with Netdata"
+                  icon={<FiServer />}
+                  title="Monitor more than one system with Netdata"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-04"
-                  title="4. The basics of configuring Netdata"
+                  icon={<FiSliders />}
+                  title="The basics of configuring Netdata"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-05"
-                  title="5. Health monitoring alarms and notifications"
+                  icon={<FiActivity />}
+                  title="Health monitoring alarms and notifications"
                 />
+              </div>
+              <div className={clsx('col col--4', styles.stepByStepLinks)}>
                 <StepByStepLink
                   href="guides/step-by-step/step-06"
-                  title="6. Collect metrics from more services and apps"
+                  icon={<FiCpu />}
+                  title="Collect metrics from more services and apps"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-07"
-                  title="7. Netdata’s dashboard in depth"
+                  icon={<FiMonitor />}
+                  title="Netdata’s dashboard in depth"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-08"
-                  title="8. Building your first custom dashboard"
+                  icon={<FiGrid />}
+                  title="Building your first custom dashboard"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-09"
-                  title="9. Long-term metrics storage"
+                  icon={<FiHardDrive />}
+                  title="Long-term metrics storage"
                 />
                 <StepByStepLink
                   href="guides/step-by-step/step-10"
-                  title="10. Set up a proxy"
+                  icon={<FiLock />}
+                  title="Set up a proxy"
                 />
-              </div>
-              <div 
-                className={clsx(
-                  'col col--4',
-                  styles.stepByStepImg
-                )}>
-                <img src="img/index/step-by-step.svg" alt="Learn Netdata step-by-step" />
               </div>
             </div>
           </div>

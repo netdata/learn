@@ -126,6 +126,10 @@ html[data-theme='dark'] {
  * Structure
  */
 
+.row--center {
+  align-items: center;
+}
+
 .padding-vert--lg {
   padding-top: 3rem !important;
 }
