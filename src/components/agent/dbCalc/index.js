@@ -19,7 +19,6 @@ export function Calculator() {
   const [requiredDisk, setRequiredDisk ] = React.useState('')
   const [diskPerNode, setDiskPerNode] = React.useState('')
   const [requiredRAM, setRequiredRAM] = React.useState('')
-  const [settingDiskSpace, setSettingDiskSpace] = React.useState('')
   const [conf, setConf] = React.useState('')
 
   // Establish measurements per page
@@ -46,22 +45,26 @@ export function Calculator() {
     const requiredRam = Math.round(state.pageSize + ramPagesDims + ramMetadata)
 
     // Calculate dbengine disk space setting
+    // First, take the maximum value between `ramPagesDims` and 64MiB. Then multiply that by the number of nodes to calculate the 
     // If diskSpace is less than 64 MiB per node, then either set diskSpace to 64 or the larger value.
     // Then enforce the minimum of 64 for `settingDiskSpace`.
-    if (diskSpace / nodes < 64) diskSpace = 64 * nodes
-    const settingDiskSpace = Math.round(diskSpace)
+
+    console.log(totalDims * uncompressedPageSize * 2 / 1024 / 1024)
+    diskSpace = Math.max(ramPagesDims, 64) * nodes
+
+    // Calculate the disk space per node.
+    const diskPerNode = diskSpace / nodes
 
     // Set states
-    setRequiredDisk(settingDiskSpace)
+    setRequiredDisk(diskSpace)
     setDiskPerNode(diskPerNode)
-    setSettingDiskSpace(settingDiskSpace)
     setRequiredRAM(requiredRam)
 
     // Console output for debugging
     // console.log('Nodes: ' + nodes + '\nTotal dimensions: ' + totalDims + '\nTotal measurements collected per sec: ' + totalMeasurements + '\nMax uncompressed pages retained: ' + maxUncompressedPages + '\nUncompressed page size / 1024 / 1024: ' + uncompressedPageSizeDiv + '\nUncompressed storage required (MiB): ' + uncompressedStorage + '\nREQUIRED DISK SPACE: ' + diskSpace + '\nnetdata.conf [global] "dbengine disk space": ' + settingDiskSpace + '\nRAM for page cache: ' + ramPageCache + '\n2 pages for each dimension being collected: ' + ramPagesDims + '\n+ Metadata: ' + ramMetadata + '\nREQUIRED RAM: ' + requiredRam)
 
     const confString = String.raw`[global]
-    dbengine multihost disk space = ${settingDiskSpace}`
+    dbengine multihost disk space = ${diskSpace}`
     setConf(confString)
 
   });
