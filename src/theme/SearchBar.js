@@ -1,11 +1,12 @@
 import React, {useEffect, useState, useCallback} from 'react';
+import {createPortal} from 'react-dom';
+import clsx from 'clsx';
 
 import styles from './styles.SearchBar.module.scss';
 
-const loadJS = () => import('./SearchUI');
 let SearchModal = null;
 
-const SearchBar = (props) => {
+const SearchBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -43,13 +44,19 @@ const SearchBar = (props) => {
     );
   }, []);
 
-
   const onOpen = useCallback(() => {
     importDocSearchModalIfNeeded().then(() => {
       setIsOpen(true);
       document.body.classList.add('search-open');
     });
-   }, [importDocSearchModalIfNeeded, setIsOpen]);
+  }, [importDocSearchModalIfNeeded, setIsOpen]);
+
+  const onClose = useCallback((e) => {
+    if (e.target === e.currentTarget || e.currentTarget.tagName === 'A') {
+      setIsOpen(false);
+      document.body.classList.remove('search-open');
+    }
+  }, [setIsOpen]);
 
   return (
     <>
@@ -63,7 +70,17 @@ const SearchBar = (props) => {
           <span className={styles.searchKey}>?</span>
       </button>
 
-      {isOpen && <SearchModal />}
+      {isOpen && 
+        createPortal(
+          <div 
+            className={clsx('searchClose', styles.searchContainer)}
+            onMouseDown={onClose}>
+            <div onClick={null} className={styles.searchModal}>
+              <SearchModal />
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   )
 }
