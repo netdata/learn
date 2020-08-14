@@ -45,12 +45,11 @@ export function Calculator() {
     const requiredRam = Math.round(state.pageSize + ramPagesDims + ramMetadata)
 
     // Calculate dbengine disk space setting
-    // First, take the maximum value between `ramPagesDims` and 64MiB. Then multiply that by the number of nodes to calculate the 
-    // If diskSpace is less than 64 MiB per node, then either set diskSpace to 64 or the larger value.
-    // Then enforce the minimum of 64 for `settingDiskSpace`.
+    // First, take the maximum value between `ramPagesDims` and 64MiB. Then multiply that by the number of nodes to calculate the final disk space.
+    console.log(diskSpace, ramPagesDims)
 
-    console.log(totalDims * uncompressedPageSize * 2 / 1024 / 1024)
-    diskSpace = Math.max(ramPagesDims, 64) * nodes
+    if (diskSpace / nodes < 64) diskSpace = 64 * nodes
+    diskSpace = Math.round(diskSpace)
 
     // Calculate the disk space per node.
     const diskPerNode = diskSpace / nodes
@@ -182,7 +181,7 @@ export function Calculator() {
                 </li>
               </>
             )}
-            <li>The database engine requires a minimum of 64 MiB to function (<code>dbengine multihost disk space = 64</code>).</li>
+            <li>The database engine requires a minimum disk space, which is reflected in this calculator. This required space is the maximum between your <code>dbengine multihost disk space</code>/<code>dbengine disk space</code> setting and <code>dimensions-being-collected * 4096 * 2</code>.</li>
             <li>The system memory figure above is <em>only for the database engine</em>, and it may be higher in real-world situations due to memory fragmentation. The Agent will require additional memory for collection, visualization, and alerting features.</li>
           </ul>
         </div>
