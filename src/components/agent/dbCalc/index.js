@@ -38,11 +38,10 @@ export function Calculator() {
     const maxUncompressedPages = totalMeasurements / measurementsPerPage
     const uncompressedPageSizeDiv = uncompressedPageSize / 1024 / 1024
     const uncompressedStorage = maxUncompressedPages * uncompressedPageSizeDiv
-    const settingDiskSpace = Math.round(uncompressedStorage * ( 1 - (state.compression / 100)))
-    const diskPerNode = Math.round(settingDiskSpace / nodes)
+    let diskSpace = Math.round(uncompressedStorage * ( 1 - (state.compression / 100)))
 
     // Calculate required RAM
-    const ramPageCache = state.pageSize * nodes
+    const ramPageCache = state.pageSize
     const ramPagesDims = totalDims * uncompressedPageSize * 2 / 1024 / 1024
     const ramMetadata = uncompressedStorage * 0.03
     const requiredRam = Math.round(ramPageCache + ramPagesDims + ramMetadata)
@@ -50,8 +49,8 @@ export function Calculator() {
     // Calculate dbengine disk space setting
     // If diskSpace is less than 64 MiB per node, then either set diskSpace to 64 or the larger value.
     // Then enforce the minimum of 64 for `settingDiskSpace`.
-    // if (diskSpace / nodes < 64) diskSpace = 64 * nodes
-    // const settingDiskSpace = diskSpace
+    if (diskSpace / nodes < 64) diskSpace = 64 * nodes
+    const settingDiskSpace = Math.round(diskSpace)
 
     // Set states
     setRequiredDisk(settingDiskSpace)
@@ -81,7 +80,7 @@ export function Calculator() {
       <div className={'col col--12'}>
         <div className={clsx('row', styles.calcRow)}>
           <div className={clsx('col col--2', styles.calcInput)}>
-            <input type="number" id="retention" name="retention" value={state.retention} min="0" step="any" onChange={handleChange} />
+            <input type="number" id="retention" name="retention" min="0" step="any" value={state.retention} onChange={handleChange} />
           </div>
           <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="retention">How many days do you want to store metrics?</label>
@@ -90,7 +89,7 @@ export function Calculator() {
 
         <div className={clsx('row', styles.calcRow)}>
           <div className={clsx('col col--2', styles.calcInput)}>
-            <input type="number" id="update" name="update" value={state.update} min="1" onChange={handleChange} />
+            <input type="number" id="update" name="update" min="1" value={state.update} onChange={handleChange} />
           </div>
           <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="update">How often, on average, do your Agents collect metrics?</label>
@@ -100,7 +99,7 @@ export function Calculator() {
 
         <div className={clsx('row', styles.calcRow)}>
           <div className={clsx('col col--2', styles.calcInput)}>
-            <input type="number" id="dims" name="dims" min="0" value={state.dims} min="0" onChange={handleChange} />
+            <input type="number" id="dims" name="dims" min="0"  value={state.dims} onChange={handleChange} />
           </div>
           <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="dims">How many metrics, on average, do your Agents collect?</label>
@@ -121,7 +120,7 @@ export function Calculator() {
 
         <div className={clsx('row', styles.calcRow)}>
           <div className={clsx('col col--2', styles.calcInput)}>
-            <input type="number" id="compression" name="compression" value={state.compression} min="0" onChange={handleChange} />
+            <input type="number" id="compression" name="compression" min="0" value={state.compression} onChange={handleChange} />
           </div>
           <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="compression">What is your compression savings ratio?</label>
@@ -131,7 +130,7 @@ export function Calculator() {
 
         <div className={clsx('row', styles.calcRow)}>
           <div className={clsx('col col--2', styles.calcInput)}>
-            <input type="number" id="pageSize" name="pageSize" value={state.pageSize} min="8" onChange={handleChange} />
+            <input type="number" id="pageSize" name="pageSize" min="8" value={state.pageSize} onChange={handleChange} />
             
           </div>
           <div className={clsx('col col--10', styles.calcInstruction)}>
@@ -176,13 +175,13 @@ export function Calculator() {
               <>
                 <li>
                   <p>Your parent node uses one shared dbengine multi-host instance to store all metrics values and associated metadata from all parent and child nodes. To store the volume and granularity of metrics specified above, the instance must be large enough for all metrics/metadata from all nodes.</p>
-                  <p><code>{diskPerNode} MiB per node * 1 parent node * {state.child} child node{state.child > 1 && <span>s</span>} = {requiredDisk} MiB</code></p>
+                  <p><code>{diskPerNode} MiB per node * 1 parent node + {state.child} child node{state.child > 1 && <span>s</span>} = {requiredDisk} MiB</code></p>
                   <p>See the <Link href="/docs/agent/database/engine">dbengine documentation</Link> for details on how the Agent allocates database engine instances.</p>
                 </li>
               </>
             )}
-            <li>The database engine requires a minimum of 64 MiB to function (<code>dbengine multihost disk space</code>).</li>
-            <li>The system memory figure above is <em>only for the database engine</em>, and it may be higher in real-world situations due to memory fragmentation. The Agent will require more memory for collection, visualization, and alerting features.</li>
+            <li>The database engine requires a minimum of 64 MiB to function (<code>dbengine multihost disk space = 64</code>).</li>
+            <li>The system memory figure above is <em>only for the database engine</em>, and it may be higher in real-world situations due to memory fragmentation. The Agent will require additional memory for collection, visualization, and alerting features.</li>
           </ul>
         </div>
 
