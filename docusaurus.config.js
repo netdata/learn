@@ -27,7 +27,20 @@ module.exports = {
     require.resolve('./src/plugins/cookbooks'),
   ],
   stylesheets: [
-    'https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans:400,500&display=swap',
+    {
+      href: '/fonts/ibm-plex-sans-v7-latin-regular.woff2',
+      rel: 'preload',
+      as: 'font',
+      type: 'font/woff2',
+      crossorigin: '',
+    },
+    {
+      href: '/fonts/ibm-plex-sans-v7-latin-500.woff2',
+      rel: 'preload',
+      as: 'font',
+      type: 'font/woff2',
+      crossorigin: ''
+    }
   ],
   themeConfig: {
     googleAnalytics: {
