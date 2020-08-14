@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.scss';
@@ -41,10 +41,9 @@ export function Calculator() {
     let diskSpace = Math.round(uncompressedStorage * ( 1 - (state.compression / 100)))
 
     // Calculate required RAM
-    const ramPageCache = state.pageSize
     const ramPagesDims = totalDims * uncompressedPageSize * 2 / 1024 / 1024
     const ramMetadata = uncompressedStorage * 0.03
-    const requiredRam = Math.round(ramPageCache + ramPagesDims + ramMetadata)
+    const requiredRam = Math.round(state.pageSize + ramPagesDims + ramMetadata)
 
     // Calculate dbengine disk space setting
     // If diskSpace is less than 64 MiB per node, then either set diskSpace to 64 or the larger value.
