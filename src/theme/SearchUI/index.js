@@ -7,7 +7,7 @@ import Link from '@docusaurus/Link';
 import SiteSearchAPIConnector from "@elastic/search-ui-site-search-connector";
 import { SearchProvider, WithSearch, SearchBox, ResultsPerPage, Paging, PagingInfo } from "@elastic/react-search-ui";
 
-import styles from '../styles.SearchBar.module.scss';
+import styles from './styles.SearchUI.module.scss';
 
 const connector = new SiteSearchAPIConnector({
   documentType: "page",
@@ -129,4 +129,3 @@ function SearchUI({isOpen, setIsOpen}) {
 }
 
 export default SearchUI;
-

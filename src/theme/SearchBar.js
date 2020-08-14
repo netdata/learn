@@ -1,12 +1,9 @@
-import React, {useEffect, useState, useCallback, Suspense, lazy} from 'react';
-import {createPortal} from 'react-dom';
-import clsx from 'clsx';
-
-import Link from '@docusaurus/Link';
+import React, {useEffect, useState, useCallback} from 'react';
 
 import styles from './styles.SearchBar.module.scss';
 
-const SearchUI = lazy(() => import('./SearchUI/index.js'));
+const loadJS = () => import('./SearchUI');
+let SearchModal = null;
 
 const SearchBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,23 +31,39 @@ const SearchBar = (props) => {
     };
   }, []);
 
-  const onOpen = () => {
-    setIsOpen(true);
-    document.body.classList.add('search-open');
-  }
+  const importDocSearchModalIfNeeded = useCallback(() => {
+    if (SearchModal) {
+      return Promise.resolve();
+    }
+
+    return Promise.all([import('./SearchUI')]).then(
+      ([{default: SearchUI}]) => {
+        SearchModal = SearchUI;
+      },
+    );
+  }, []);
+
+
+  const onOpen = useCallback(() => {
+    importDocSearchModalIfNeeded().then(() => {
+      setIsOpen(true);
+      document.body.classList.add('search-open');
+    });
+   }, [importDocSearchModalIfNeeded, setIsOpen]);
 
   return (
     <>
       <button
         className={styles.searchButton}
-        onClick={onOpen}>
+        onClick={onOpen}
+        onTouchStart={importDocSearchModalIfNeeded}
+        onFocus={importDocSearchModalIfNeeded}
+        onMouseOver={importDocSearchModalIfNeeded}>
           Search Netdata...
           <span className={styles.searchKey}>?</span>
       </button>
 
-      <Suspense fallback={<div>Loading...</div>}>
-        {isOpen && <SearchUI />}
-      </Suspense>
+      {isOpen && <SearchModal />}
     </>
   )
 }
