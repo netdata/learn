@@ -67,7 +67,7 @@ Select any War Rooms relevant for the new node, then use the claim script comman
 
 A node's name cannot be changed from within Netdata Cloud. You must [reclaim](#how-do-i-re-claim-a-node?) it with a
 different hostname. The hostname can be changed either by changing the machine's hostname or by editing a setting in
-[`netdata.conf`](/docs/agent/step-by-step/step-04#edit-your-netdataconf-file).
+[`netdata.conf`](/guides/step-by-step/step-04#use-edit-config-to-open-netdataconf).
 
 ### How do I delete a node?
 
