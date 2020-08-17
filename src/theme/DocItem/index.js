@@ -87,7 +87,7 @@ function DocItem(props) {
       <Head>
         <title>{metaTitle}</title>
         <meta property="og:title" content={metaTitle} />
-        {description && <meta name="description" content={description} />}
+        {description && <meta name="description" class="swiftype" data-type="string" content={description} />}
         {description && (
           <meta property="og:description" content={description} />
         )}
@@ -101,8 +101,6 @@ function DocItem(props) {
         )}
         {permalink && <meta property="og:url" content={siteUrl + permalink} />}
         {permalink && <link rel="canonical" href={siteUrl + permalink} />}
-        {/* Swiftype */}
-        {description && <meta class="swiftype" name="description" data-type="string" content={description} />}
       </Head>
       <div
         className={clsx('container padding-vert--lg', styles.docItemWrapper)}>
