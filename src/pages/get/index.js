@@ -59,7 +59,6 @@ function Search() {
       <div className={styles.getOneLine}>
         <div className={styles.getOneLineContainer}>
           <CodeBlock className={clsx('bash', styles.getOneLineCommand)} language={lang}>{currentCommand}</CodeBlock>
-          
           <div className={styles.installCheckboxes}>
             <div className={styles.installCheckbox}>
               <input 
@@ -113,7 +112,7 @@ function Search() {
           <div className={clsx('row')}>
             <div className={clsx('col col--8 col--offset-2', styles.getNext)}>
               <h2>After downloading, follow these steps:</h2>
-              <p>These steps connect any number of distributed nodes to Netdata Cloud for full visibility across your entire infrastructure.</p>
+              <p>Connect any number of distributed nodes to Netdata Cloud for full visibility across your entire infrastructure.</p>
             </div>
           </div>
           <div className={clsx('row')}>
