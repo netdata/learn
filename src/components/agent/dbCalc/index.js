@@ -45,14 +45,14 @@ export function Calculator() {
     const requiredRam = Math.round(state.pageSize + ramPagesDims + ramMetadata)
 
     // Calculate dbengine disk space setting
-    // First, take the maximum value between `ramPagesDims` and 64MiB. Then multiply that by the number of nodes to calculate the final disk space.
-    console.log(diskSpace, ramPagesDims)
-
-    if (diskSpace / nodes < 64) diskSpace = 64 * nodes
-    diskSpace = Math.round(diskSpace)
+    // First, take the maximum between the calculated `diskSpace` and `ramPagesDims`.
+    // Then enforce a minimum of 64 MiB, but if the calculated `diskSpace` is larger, use that instead. With multihost,
+    // don't multiply the disk space by the number of nodes.
+    diskSpace = Math.max(diskSpace, ramPagesDims)
+    diskSpace = (diskSpace < 64) ? diskSpace = 64 : diskSpace
 
     // Calculate the disk space per node.
-    const diskPerNode = diskSpace / nodes
+    const diskPerNode = Math.round(diskSpace / nodes)
 
     // Set states
     setRequiredDisk(diskSpace)
