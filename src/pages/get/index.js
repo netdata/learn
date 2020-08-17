@@ -139,7 +139,7 @@ function Search() {
             </div>
           </div>
         </div>
-        <div id="methods" className={clsx('container')}>
+        <div id="methods" className={clsx('container', styles.getMain)}>
           <div className={clsx('row')}>
             <div className={clsx('col col--8 col--offset-2', styles.getMethods)}>
               <h2>Other OS and installation methods</h2>

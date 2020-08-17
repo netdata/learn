@@ -93,7 +93,6 @@
   width: 9px;
   height: 6px;
   border-bottom: 2px solid var(--ifm-color-primary);
-
   border-left: 2px solid var(--ifm-color-primary);
   content: "";
   transform: rotate(-45deg);
@@ -109,8 +108,11 @@
 
 .installSelection label code {
   margin-left: 0.6rem;
-
   font-size: var(--ifm-h6-font-size);
+}
+
+.getMain {
+  margin-bottom: 4rem;
 }
 
 .getNext {
@@ -128,6 +130,10 @@
 
 .getNextStep {
   margin-top: 1rem;
+
+  @media (max-width: 996px) {
+    margin-top: 3rem;
+  }
 }
 
 .getNextFaq {

@@ -11,7 +11,19 @@ import styles from './styles.module.scss';
 
 const updates = [
   {
-    title: <>YouTube video: Install Netdata on Linux in two minutes</>,
+    title: <>Collect metrics from any Prometheus endpoint</>,
+    href: 'docs/agent/collectors/go.d.plugin/modules/prometheus',
+    date: 'August 10, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Collect from more than 600 services that support the Prometheus/OpenMetrics 
+        format for exposing metrics, often with zero configuration.
+      </>
+    ),
+  },
+  {
+    title: <>Video: Install Netdata on Linux in two minutes</>,
     href: 'https://www.youtube.com/watch?v=tVIp7ycK60A',
     date: 'July 8, 2020',
     type: 'Video',
@@ -45,19 +57,7 @@ const updates = [
         troubleshooting toolkit on your Kubernetes (k8s) cluster.
       </>
     ),
-  },
-  {
-    title: <>Monitor, troubleshoot, and debug applications with eBPF metrics</>,
-    href: 'guides/troubleshoot/monitor-debug-applications-ebpf',
-    date: 'July 1, 2020',
-    type: 'Guide',
-    description: (
-      <>
-        Use Netdata's built-in eBPF metrics collector to monitor, troubleshoot, 
-        and debug your custom application using low-level kernel feedback.
-      </>
-    ),
-  },
+  }
 ]
 
 function UpdateBox({title, href, date, type, description}) {
@@ -81,13 +81,13 @@ function Home() {
       <header className={clsx(styles.hero)}>
         <div className={clsx('container')}>
           <div className={clsx('row')}>
-            <div className={clsx('col col--6', styles.heroText)}>
+            <div className={clsx('col col--8', styles.heroText)}>
               <h1 className={styles.heroTagline}>
                 Learn Netdata
               </h1>
               <p className={styles.heroSubHead}>
-                Learn how to monitor and troubleshoot the health and performance of your infrastructure.
-                Build, deploy, and resolve with real-time metrics, insightful dashboards, and every metric imaginable.
+                Discover how to best monitor and troubleshoot the health and performance of your infrastructure with the open-source
+                Netdata Agent and Netdata Cloud. Build, deploy, and resolve with real-time metrics, insightful dashboards, and every metric imaginable.
               </p>
             </div>
           </div>
