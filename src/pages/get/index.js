@@ -85,7 +85,7 @@ function Search() {
           </div>
         </div>
         <p>Click <strong>Copy</strong>, paste into your system’s terminal, and hit <strong>Enter</strong>.</p>
-        <p>Open your favorite browser and navigate to <code>http://localhost:19999</code> to find Netdata’s real-time dashboard with hundreds of pre-configured charts and alarms.</p>
+        <p>Open your favorite browser and navigate to <code>http://localhost:19999</code> or <code>http://REMOTE-HOST:19999</code> to begin monitoring and troubleshooting the health and performance of your system.</p>
       </div>
     )
   }
@@ -99,7 +99,7 @@ function Search() {
           <div className={clsx('row', styles.getHeroRow)}>
             <div className={clsx('col col--4')}>
               <h1>Get Netdata</h1>
-              <p>Use our one-line kickstart script to automatically install Netdata, plus all required dependencies, on most Linux systems. It take a single command, a few minutes of your time, and zero configuration to get a Netdata dashboard with thousands of metrics on an interactive dashboard.</p>
+              <p>Use our one-line kickstart script to automatically install Netdata, plus all required dependencies, on most Linux systems. A single command, a few minutes of your time, and zero configuration gives you an interactive, real-time dashboard with thousands of metrics.</p>
               <p><em>Not a Linux user?</em> Look <a href="#methods">below</a> for instructions for Docker, Kubernetes, macOS, and much more.</p>
             </div>
             <div className={clsx('col col--8')}>
@@ -109,12 +109,11 @@ function Search() {
         </div>
       </header>
       <main>
-
         <div className={clsx('container')}>
           <div className={clsx('row')}>
             <div className={clsx('col col--8 col--offset-2', styles.getNext)}>
               <h2>After downloading, follow these steps:</h2>
-              <p>These optional steps connect your nodes to Netdata Cloud for full visibility across your entire infrastructure.</p>
+              <p>These steps connect any number of distributed nodes to Netdata Cloud for full visibility across your entire infrastructure.</p>
             </div>
           </div>
           <div className={clsx('row')}>
@@ -140,7 +139,6 @@ function Search() {
             </div>
           </div>
         </div>
-
         <div id="methods" className={clsx('container')}>
           <div className={clsx('row')}>
             <div className={clsx('col col--8 col--offset-2', styles.getMethods)}>
@@ -148,54 +146,45 @@ function Search() {
             </div>
           </div>
           <div className={clsx('row')}>
-            <div className={clsx('col col--12', styles.installMethods)}>
-              <Link
-                className={clsx(styles.installMethod)}
+            <div className={clsx('col', styles.installMethods)}>
+              <Link className={clsx(styles.installMethod)}
                 to={useBaseUrl('docs/agent/packaging/installer/methods/kickstart-64')}>
-                <img src="img/index/methods/static.png" alt="Install Netdata with a static binary" />
+                <SVG src="img/index/methods/static.svg" 
+                  alt="Install Netdata with a static binary" />
                 Static 64-bit binary
               </Link>
               <Link
                 className={clsx(styles.installMethod)}
                 to={useBaseUrl('docs/agent/packaging/installer/methods/packages')}>
-                <img src="img/index/methods/package.png" alt="Install Netdata with .deb/.rpm packages" />
+                <SVG src="img/index/methods/package.svg" 
+                  alt="Install Netdata with .deb/.rpm packages" />
                 .deb/.rpm packages
               </Link>
-              <Link
-                className={clsx(styles.installMethod)}
-                href="https://github.com/netdata/helmchart"
-              >
-                <img 
-                  src="img/index/methods/kubernetes.png" 
-                  alt="Install Netdata with Docker"
-                />
+              <Link className={clsx(styles.installMethod)}
+                to={useBaseUrl('docs/agent/packaging/installer/methods/kubernetes')}>
+                <SVG width="50"
+                  height="64"
+                  viewport="50 64"
+                  src="img/index/methods/kubernetes.svg" 
+                  alt="Install Netdata on a Kubernetes cluster" />
                 Kubernetes
               </Link>
-              <Link
-                className={clsx(styles.installMethod)}
-                to={useBaseUrl('docs/agent/packaging/docker')}
-              >
-                <SVG 
-                  src="img/index/methods/docker.svg" 
-                  alt="Install Netdata with Docker"
-                />
+              <Link className={clsx(styles.installMethod)}
+                to={useBaseUrl('docs/agent/packaging/docker')}>
+                <SVG src="img/index/methods/docker.svg" 
+                  alt="Install Netdata with Docker" />
                 Docker
               </Link>
-              <Link
-                className={clsx(styles.installMethod)}
-                to={useBaseUrl('docs/agent/packaging/installer/methods/macos')}
-              >
-                <SVG 
-                  src="img/index/methods/macos.svg" 
-                  alt="Install Netdata on macOS"
-                />
+              <Link className={clsx(styles.installMethod)}
+                to={useBaseUrl('docs/agent/packaging/installer/methods/macos')}>
+                <SVG src="img/index/methods/macos.svg" 
+                  alt="Install Netdata on macOS" />
                 macOS
               </Link>
-              <Link
-                className={clsx(styles.installMethod)}
-                to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}
-              >
-                <img src="img/index/methods/cloud.png" alt="Install Netdata on cloud providers" />
+              <Link className={clsx(styles.installMethod)}
+                to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}>
+                <SVG src="img/index/methods/cloud.svg" 
+                  alt="Install Netdata on cloud providers" />
                 Cloud providers
               </Link>
               <p><Link to="docs/agent/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>

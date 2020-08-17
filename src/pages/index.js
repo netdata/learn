@@ -83,7 +83,7 @@ function Home() {
           <div className={clsx('row')}>
             <div className={clsx('col col--6', styles.heroText)}>
               <h1 className={styles.heroTagline}>
-                Learn @ Netdata
+                Learn Netdata
               </h1>
               <p className={styles.heroSubHead}>
                 Learn how to monitor and troubleshoot the health and performance of your infrastructure.

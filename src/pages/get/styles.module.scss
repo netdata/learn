@@ -42,14 +42,13 @@
 }
 
 .getOneLineCommand {
-  position: relative;
-  font-size: 1.3rem;  
+  position: relative;  
   margin-top: var(--ifm-paragraph-margin-bottom);
   margin-bottom: 0;
+  font-size: 1.3rem;
 
   code {
     padding: var(--ifm-pre-padding) 3rem var(--ifm-pre-padding) var(--ifm-pre-padding);
-    
     white-space: pre-line;
     word-break: break-word;
     word-wrap: break-word;
@@ -57,11 +56,11 @@
 }
 
 .installCheckboxes {
-  border-left: 1px solid var(--ifm-color-gray-300);
-  border-bottom: 1px solid var(--ifm-color-gray-300);
-  border-right: 1px solid var(--ifm-color-gray-300);
-  border-radius: 0 0 2px 2px;
   padding: 1rem;
+  border-right: 1px solid var(--ifm-color-gray-300);
+  border-bottom: 1px solid var(--ifm-color-gray-300);
+  border-left: 1px solid var(--ifm-color-gray-300);
+  border-radius: 0 0 2px 2px;
 }
 
 .installCheckbox input[type="checkbox"] {
@@ -73,30 +72,30 @@
 }
 
 .installCheckbox label::before{
-  content: "";
   position: absolute;
   top: 3px;
   left: -20px;
   display: inline-block;
-  height: 16px;
   width: 16px;
+  height: 16px;
   
   background: white;
   border: 1px solid var(--ifm-color-gray-300);
   border-radius: 2px;
+  content: "";
 }
 
 .installCheckbox label::after {
-  content: "";
   position: absolute;
-  left: -17px;
   top: 7px;
+  left: -17px;
   display: inline-block;
-  height: 6px;
   width: 9px;
+  height: 6px;
+  border-bottom: 2px solid var(--ifm-color-primary);
 
   border-left: 2px solid var(--ifm-color-primary);
-  border-bottom: 2px solid var(--ifm-color-primary);
+  content: "";
   transform: rotate(-45deg);
 }
 
@@ -115,8 +114,8 @@
 }
 
 .getNext {
-  text-align: center;
   margin-top: 4rem;
+  text-align: center;
 
   h2 {
     font-size: 2.2rem;
@@ -138,12 +137,19 @@
 }
 
 .getMethods {
-  text-align: center;
   margin-top: 4rem;
+  text-align: center;
 
   h2 {
     font-size: 2.2rem;
   }
+}
+
+.getMethods {
+  margin-top: 4rem;
+  margin-bottom: 1.4rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--ifm-color-gray-300);
 }
 
 .installMethods {
@@ -153,26 +159,24 @@
 }
 
 .installMethods h3 {
-  grid-column: span 4;
-  text-align: center;
   margin: 0;
+  text-align: center;
+  grid-column: span 4;
 }
 
 .installMethod {
-  grid-column: span 2;
   padding: 0.6rem;
-
-  border: 1px solid var(--ifm-color-gray-300);
-  border-radius: 2px;
   color: var(--ifm-font-color-base);
   font-size: 0.9rem;
   text-align: center;
-  
+  border: 1px solid var(--ifm-color-gray-300);
+  border-radius: 2px;
+  grid-column: span 2;
 }
 
 .installMethod:hover {
-  border: 1px solid var(--ifm-color-primary-lightest);
   color: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary-lightest);
 }
 
 .installMethod img,
@@ -181,14 +185,13 @@
   max-width: 96px;
   max-height: 64px;
   margin: 0 auto 0.4rem;
-
   filter: grayscale(1);
 }
 
 .installMethods p {
-  grid-column: span 4;
   font-size: var(--ifm-h5-font-size);
   text-align: center;
+  grid-column: span 4;
 }
 
 @media (max-width: 996px) {
