@@ -13,17 +13,6 @@ the internal plugins API.
 To learn the basics of collecting metrics from other applications and services, see the [collector
 quickstart](/docs/agent/collectors/quickstart).
 
-## What's in this reference guide
-
--   [Netdata's collector architecture](#netdatas-collector-architecture)
--   [Enable, configure, and disable modules](#enable-configure-and-disable-modules)
--   [Troubleshoot a collector](#troubleshoot-a-collector)
--   [Enable and disable plugins](#enable-and-disable-plugins)
--   [Internal plugins](#internal-plugins)
-    -   [Internal plugins API](#internal-plugins-api)
--   [External plugins](#external-plugins)
--   [Write a custom collector](#write-a-custom-collector)
-
 ## Netdata's collector architecture
 
 Netdata has an intricate system for organizing and managing its collectors. **Collectors** are the processes/programs
@@ -46,7 +35,7 @@ There are three types of plugins:
     independent processes. They communicate with the daemon via pipes.
 -   **Plugin orchestrators**, which are external plugins that instead support a number of **modules**. Modules are a
     type of collector. We have a few plugin orchestrators available for those who want to develop their own collectors,
-    but focus most of our efforts on the [Go plugin](/docs/agent/collectors/go.d.plugin).
+    but focus most of our efforts on the [Go plugin](/docs/agent/collectors/go.d.plugin/).
 
 ## Enable, configure, and disable modules
 

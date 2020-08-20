@@ -1,19 +1,21 @@
 ---
 title: "Health monitoring"
+date: 2020-04-24
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/README.md
 ---
 
 
 
-With Netdata, you can monitor the health and performance of your systems and applications. You start with hundreds of
-alarms that have been pre-configured by the Netdata community, but you can write new alarms, tune existing ones, or
-silence any that you're not interested in. 
+The Netdata Agent is a health watchdog for the health and performance of your systems, services, and applications. We've
+worked closely with our community of DevOps engineers, SREs, and developers to define hundreds of production-ready
+alarms that work without any configuration.
 
-Netdata creates charts dynamically, and runs an independent thread to constantly evaluate them, which means Netdata
-operates like a health watchdog for your services and applications.
+The Agent's health monitoring system is also dynamic and fully customizable. You can write entirely new alarms, tune the
+community-configured alarms for every app/service [the Agent collects metrics from](/docs/agent/collectors/collectors), or
+silence anything you're not interested in. You can even power complex lookups by running statistical algorithms against
+your metrics.
 
-You can even run statistical algorithms against the metrics you've collected to power complex lookups. Your imagination,
-and the needs of your infrastructure, are your only limits.
+Ready to take the next steps with health monitoring?
 
 [Quickstart](/docs/agent/health/quickstart)
 
@@ -31,7 +33,7 @@ content.
 
 ## Related features
 
-**[Health notifications](/docs/agent/health/notifications)**: Get notified about Netdata's alarms via your favorite
-platform(s).
+**[Notifications](/docs/agent/health/notifications)**: Get notified about ongoing alarms from your Agents via your
+favorite platform(s), such as Slack, Discord, PagerDuty, email, and much more.
 
 
