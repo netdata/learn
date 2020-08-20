@@ -294,9 +294,15 @@ async function ingest() {
   console.log(`Fetching nodes from 'go.d.plugin' repo...`)
   const goNodes = await getNodes(goRootSha, 'go.d.plugin')
 
-  const goPrefixedNodes = prefixNodes(goNodes, 'collectors/go.d.plugin/')
+  console.log(`Fetching root SHA for 'agent-service-discovery' repo...`)
+  const sdRootSha = await getRootSha('agent-service-discovery', 'master')
+  console.log(`Fetching nodes from 'agent-service-discovery' repo...`)
+  const sdNodes = await getNodes(sdRootSha, 'agent-service-discovery')
 
-  const combinedNodes = [...nodes, ...goPrefixedNodes]
+  const goPrefixedNodes = prefixNodes(goNodes, 'collectors/go.d.plugin/')
+  const sdPrefixedNodes = prefixNodes(sdNodes, 'collectors/go.d.plugin/modules/service-discovery/')
+
+  const combinedNodes = [...nodes, ...goPrefixedNodes, ...sdPrefixedNodes]
 
   const filteredNodes = filterNodes(
     combinedNodes,
