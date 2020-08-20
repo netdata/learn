@@ -1,9 +1,14 @@
+---
+title: "Service discovery"
+custom_edit_url: https://github.com/netdata/agent-service-discovery/edit/master/README.md
+---
+
 
 
 Service discovery extracts all the potentially useful information from different sources,
 converts it to the configurations and exports them to the different destinations.
 
-# Pipeline
+## Pipeline
 
 The service discovery pipeline has four jobs:
 
@@ -24,7 +29,7 @@ build: <build_config>
 export: <export_config>
 ```
 
-# Tags and selectors
+## Tags and selectors
 
 Tag, build and export jobs have `selector`, the pipeline routes a target/config to the job
 only if its tags matches job selectors.
@@ -42,7 +47,7 @@ Selectors special cases:
 -   `!word`: should not contain the word.
 -   `word|word|word`: should contain any word.
 
-# Discovery
+## Discovery
 
 Discovery job dynamically discovers targets using one of the supported service-discovery mechanisms.
 
@@ -57,7 +62,7 @@ k8s:
   - <kubernetes_discovery_config>
 ```
 
-## Kubernetes
+### Kubernetes
 
 Kubernetes discoverer retrieves targets from [Kubernetes'](https://kubernetes.io/)
 [REST API](https://kubernetes.io/docs/reference/).
@@ -86,7 +91,7 @@ One of the following role types can be configured to discover targets:
 -   `pod`
 -   `service`
 
-### Pod Role
+#### Pod Role
 
 The pod role discovers all pods and exposes their containers as targets.
 For each declared port of a container, it generates single target.
@@ -110,7 +115,7 @@ Available pod target fields:
 | `PortName`     | string            | _pod.spec.containers.ports.name_                          |
 | `PortProtocol` | string            | _pod.spec.containers.ports.protocol_                      |
 
-### Service Role
+#### Service Role
 
 The service role discovers a target for each service port for each service.
 
@@ -131,7 +136,7 @@ Available service target fields:
 | `ExternalName` | string            | _svc.spec.externalName_                                   |
 | `Type`         | string            | _svc.spec.ports.type_                                     |
 
-# Tag
+## Tag
 
 Tag job tags targets discovered by [discovery job](#discovery). Its purpose is service identification.
 
@@ -175,7 +180,7 @@ All these functions accepts two or more arguments, returning in effect:
 
 > func(arg1, arg2) || func(arg1, arg3) || func(arg1, arg4) ... 
 
-# Build
+## Build
 
 Build job creates configurations from targets.
 
@@ -208,7 +213,7 @@ apply:
 
 Template syntax is [go-template](https://golang.org/pkg/text/template/).
 
-# Export
+## Export
 
 Export job exports configurations built by [build job](#build).
 
@@ -223,7 +228,7 @@ file:
   - <file_exporter_config>
 ```
 
-## File
+### File
 
 File exporter writes configurations to a specific file.
 
@@ -235,7 +240,7 @@ selector: <selector>
 filename: <filename>
 ```
 
-# Troubleshooting
+## Troubleshooting
 
 Service-discovery has debug mode and special `stdout` exporter which is enabled only when it's running from the terminal.  
 
