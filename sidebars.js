@@ -172,6 +172,7 @@ module.exports = {
                     'agent/collectors/go.d.plugin/modules/pulsar',
                     'agent/collectors/go.d.plugin/modules/rabbitmq',
                     'agent/collectors/go.d.plugin/modules/scaleio',
+                    'agent/collectors/go.d.plugin/modules/service-discovery',
                     'agent/collectors/go.d.plugin/modules/solr',
                     'agent/collectors/go.d.plugin/modules/portcheck',
                     'agent/collectors/go.d.plugin/modules/tengine',
