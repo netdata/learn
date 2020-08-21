@@ -97,17 +97,15 @@ Plugin CLI:
 
 ```sh
 Usage:
-  orchestrator [OPTIONS] [update every]
+  go.d.plugin [OPTIONS] [update every]
 
 Application Options:
-  -m, --modules=    module name to run (default: all)
-  -c, --config-dir= config dir to read
-  -w, --watch-path= config path to watch
-  -d, --debug       debug mode
-  -v, --version     display the version and exit
+  -d, --debug    debug mode
+  -m, --modules= modules name (default: all)
+  -c, --config=  config dir
 
 Help Options:
-  -h, --help        Show this help message
+  -h, --help     Show this help message
 ```
 
 To debug specific module:

@@ -24,7 +24,7 @@ const retainPaths = [
 ]
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/netdata/',
+  baseURL: 'https://api.github.com/repos/joelhans/',
   headers: {
     'Authorization': `token ${GITHUB_TOKEN}`
   }
@@ -258,6 +258,11 @@ async function writePages(pages) {
     let fullPath = path.join(outDir, page.meta.path).toLowerCase()
     let fullDir = path.dirname(fullPath)
 
+    if (fullPath.includes('agent/overview')) {
+      fullPath = fullPath.replace('docs/agent/overview', 'docs/overview/');
+      fullDir = fullDir.replace('docs/agent/overview', 'docs/overview/');
+    }
+
     // Move anything from the `/docs/guides` folder into the new `guides` folder.
     if (fullPath.includes('agent/guides')) {
       fullPath = fullPath.replace('docs/agent/guides/', 'guides/');
@@ -285,7 +290,7 @@ async function ingest() {
   }
 
   console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getRootSha('netdata', 'master')
+  const rootSha = await getRootSha('netdata', 'docsv2')
   console.log(`Fetching nodes from 'netdata' repo...`)
   const nodes = await getNodes(rootSha)
 
