@@ -261,11 +261,6 @@ async function writePages(pages) {
   return Promise.all(pages.map(async (page) => {
     let fullPath = path.join(outDir, page.meta.path).toLowerCase()
     let fullDir = path.dirname(fullPath)
-    
-    if (fullPath.includes('agent/export')) {
-      console.log(fullPath)
-      console.log(fullDir)
-    }
 
     // This whole thing is really ugly.
     if (fullPath.includes('agent/overview')) {
@@ -283,7 +278,7 @@ async function writePages(pages) {
     } else if (fullPath.includes('agent/configure')) {
       fullPath = fullPath.replace('docs/agent/configure', 'docs/configure/');
       fullDir = fullDir.replace('docs/agent/configure', 'docs/configure/');
-    } else if (fullPath.includes('docs/agent/collect') && !fullPath.includes('collectors')) {
+    } else if (fullPath.includes('docs/agent/collect') && !fullPath.includes('agent/collectors')) {
       fullPath = fullPath.replace('docs/agent/collect', 'docs/collect/');
       fullDir = fullDir.replace('docs/agent/collect', 'docs/collect/');
     } else if (fullPath.includes('agent/visualize')) {
@@ -298,9 +293,9 @@ async function writePages(pages) {
     } else if (fullPath.includes('agent/store')) {
       fullPath = fullPath.replace('docs/agent/store', 'docs/store/');
       fullDir = fullDir.replace('docs/agent/store', 'docs/store/');
-    } else if (fullPath.includes('agent/export')) {
-      // fullPath = fullPath.replace('docs/agent/export', 'docs/export/');
-      // fullDir = fullDir.replace('docs/agent/export', 'docs/export/');
+    } else if (fullPath.includes('agent/export') && !fullPath.includes('agent/exporting')) {
+      fullPath = fullPath.replace('docs/agent/export', 'docs/export/');
+      fullDir = fullDir.replace('docs/agent/export', 'docs/export/');
     }
 
     // Move anything from the `/docs/guides` folder into the new `guides` folder.

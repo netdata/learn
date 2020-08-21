@@ -94,6 +94,14 @@ module.exports = {
             'store/calculate-metrics-storage',
           ]
         },
+        {
+          type: 'category',
+          label: 'Export',
+          items: [
+            'export/integrate-netdata-monitoring-stack',
+            'export/enable-exporting',
+          ]
+        },
       ]
     },
     {
