@@ -169,8 +169,8 @@ function Home() {
                     'button button--secondary button--lg',
                     styles.getStarted,
                   )}
-                  to={useBaseUrl('docs/agent')}>
-                  Read Agent docs
+                  to={useBaseUrl('docs')}>
+                  Read the docs
                 </Link>
               </div>
             </div>

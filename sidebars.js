@@ -43,6 +43,34 @@ module.exports = {
             'quickstart/infrastructure',
           ]
         },
+        {
+          type: 'category',
+          label: 'Configure',
+          items: [
+            'configure/space-war-rooms',
+            'configure/invite-collaborate',
+            'configure/agent',
+            'configure/secure-nodes-web-proxy',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Collect',
+          items: [
+            'collect/system-metrics',
+            'collect/container-metrics',
+            'collect/system-metrics',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Visualize',
+          items: [
+            'visualize/view-all-nodes',
+            'visualize/interact-dashboards-charts',
+            'visualize/create-dashboards',
+          ]
+        },
       ]
     },
     {

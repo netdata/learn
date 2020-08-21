@@ -261,6 +261,7 @@ async function writePages(pages) {
   return Promise.all(pages.map(async (page) => {
     let fullPath = path.join(outDir, page.meta.path).toLowerCase()
     let fullDir = path.dirname(fullPath)
+    
 
     // This whole thing is really ugly.
     if (fullPath.includes('agent/overview')) {
@@ -275,6 +276,15 @@ async function writePages(pages) {
     } else if (fullPath.includes('agent/quickstart')) {
       fullPath = fullPath.replace('docs/agent/quickstart', 'docs/quickstart/');
       fullDir = fullDir.replace('docs/agent/quickstart', 'docs/quickstart/');
+    } else if (fullPath.includes('agent/configure')) {
+      fullPath = fullPath.replace('docs/agent/configure', 'docs/configure/');
+      fullDir = fullDir.replace('docs/agent/configure', 'docs/configure/');
+    } else if (fullPath.includes('docs/agent/collect') && !fullPath.includes('collectors')) {
+      fullPath = fullPath.replace('docs/agent/collect', 'docs/collect/');
+      fullDir = fullDir.replace('docs/agent/collect', 'docs/collect/');
+    } else if (fullPath.includes('agent/visualize')) {
+      fullPath = fullPath.replace('docs/agent/visualize', 'docs/visualize/');
+      fullDir = fullDir.replace('docs/agent/visualize', 'docs/visualize/');
     }
 
     // Move anything from the `/docs/guides` folder into the new `guides` folder.
