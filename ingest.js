@@ -23,6 +23,10 @@ const retainPaths = [
   path.join(baseDir, 'agent/database/calculator.mdx'),
 ]
 
+const learnPaths = [
+  path.join(agentDir, 'overview'),
+]
+
 const ax = axios.create({
   baseURL: 'https://api.github.com/repos/joelhans/',
   headers: {
@@ -258,9 +262,19 @@ async function writePages(pages) {
     let fullPath = path.join(outDir, page.meta.path).toLowerCase()
     let fullDir = path.dirname(fullPath)
 
+    // This whole thing is really ugly.
     if (fullPath.includes('agent/overview')) {
       fullPath = fullPath.replace('docs/agent/overview', 'docs/overview/');
       fullDir = fullDir.replace('docs/agent/overview', 'docs/overview/');
+    } else if (fullPath.includes('docs/agent/get.md') && !fullPath.includes('getting-started')) {
+      fullPath = fullPath.replace('docs/agent/get.md', 'docs/get.md');
+      fullDir = fullDir.replace('docs/agent/get', 'docs/');
+    } else if (fullPath.includes('agent/deploy')) {
+      fullPath = fullPath.replace('docs/agent/deploy', 'docs/deploy/');
+      fullDir = fullDir.replace('docs/agent/deploy', 'docs/deploy/');
+    } else if (fullPath.includes('agent/quickstart')) {
+      fullPath = fullPath.replace('docs/agent/quickstart', 'docs/quickstart/');
+      fullDir = fullDir.replace('docs/agent/quickstart', 'docs/quickstart/');
     }
 
     // Move anything from the `/docs/guides` folder into the new `guides` folder.

@@ -25,6 +25,24 @@ module.exports = {
             'overview/how-to-use-netdata',
           ]
         },
+        'get',
+        {
+          type: 'category',
+          label: 'Deploy',
+          items: [
+            'deploy/public-cloud',
+            'deploy/automation',
+            'deploy/containers-microservices',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Quickstart',
+          items: [
+            'quickstart/single-node',
+            'quickstart/infrastructure',
+          ]
+        },
       ]
     },
     {
@@ -37,77 +55,13 @@ module.exports = {
           label: 'Agent',
           items: [
             'agent',
+            'agent/getting-started',
+            'agent/agent-cloud',
+            'agent/aclk',
+            'agent/claim',
             {
               type: 'category',
-              label: 'Installation',
-              items: [
-                'agent/packaging/installer',
-                {
-                  type: 'category',
-                  label: 'Other methods',
-                  items: [
-                    'agent/packaging/installer/methods/packages',
-                    'agent/packaging/installer/methods/kickstart',
-                    'agent/packaging/installer/methods/kickstart-64',
-                    'agent/packaging/installer/methods/kubernetes',
-                    'agent/packaging/docker',
-                    'agent/packaging/installer/methods/cloud-providers',
-                    'agent/packaging/installer/methods/macos',
-                    'agent/packaging/installer/methods/freebsd',
-                    'agent/packaging/installer/methods/manual',
-                    'agent/packaging/installer/methods/offline',
-                    'agent/packaging/installer/methods/pfsense',
-                    'agent/packaging/installer/methods/synology',
-                    'agent/packaging/installer/methods/freenas',
-                    'agent/packaging/installer/methods/alpine',
-                  ]
-                },
-                'agent/packaging/distributions',
-                'agent/packaging/installer/update',
-                'agent/packaging/installer/uninstall',
-              ]
-            },
-            {
-              type: 'doc',
-              id: 'agent/getting-started',
-            },
-            {
-              type: 'category',
-              label: 'Running Netdata',
-              items: [
-                'agent/daemon',
-                'agent/configuration-guide',
-                'agent/daemon/config',
-                {
-                  type: 'category',
-                  label: 'Web server',
-                  items: [
-                    'agent/web/server',
-                    'agent/web/server/static',
-                    {
-                      type: 'category',
-                      label: 'Running behind another web server',
-                      items: [
-                        'agent/running-behind-nginx',
-                        'agent/running-behind-apache',
-                        'agent/running-behind-lighttpd',
-                        'agent/running-behind-caddy',
-                      ]
-                    },
-                    'agent/running-behind-haproxy'
-                  ]
-                },
-                'agent/claim',
-                'agent/aclk',
-                'agent/registry',
-                'agent/performance',
-                'agent/netdata-for-iot',
-                'agent/high-performance-netdata',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Collecting metrics',
+              label: 'Collectors',
               items: [
                 'agent/collectors',
                 'agent/collectors/quickstart',
@@ -324,7 +278,19 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Storing metrics',
+              label: 'Daemon/configuration',
+              items: [
+                'agent/daemon',
+                'agent/configuration-guide',
+                'agent/daemon/config',
+                'agent/performance',
+                'agent/netdata-for-iot',
+                'agent/high-performance-netdata',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Database',
               items: [
                 'agent/database',
                 'agent/database/engine',
@@ -332,22 +298,35 @@ module.exports = {
               ]
             },
             {
-              type: 'doc',
-              id: 'agent/agent-cloud',
-            },
-            {
               type: 'category',
-              label: 'Dashboards',
+              label: 'Export',
               items: [
-                'agent/web',
-                'agent/web/gui',
-                'agent/web/gui/custom',
-                'agent/web/gui/confluence',
-              ]
+                'agent/export',
+                'agent/exporting',
+                {
+                  type: 'category',
+                  label: 'Connectors',
+                  items: [
+                  'agent/exporting/aws_kinesis',
+                  'agent/exporting/pubsub',
+                  'agent/exporting/mongodb',
+                  'agent/exporting/opentsdb',
+                  'agent/exporting/prometheus/remote_write',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Guides',
+                  items: [
+                    'agent/exporting/prometheus',
+                    'agent/exporting/timescale'
+                  ]
+                }
+              ],
             },
             {
               type: 'category',
-              label: 'Health monitoring',
+              label: 'Health',
               items: [
                 'agent/health',
                 'agent/health/quickstart',
@@ -382,38 +361,6 @@ module.exports = {
                     'agent/health/notifications/web',
                   ]
                 },
-              ],
-            },
-            {
-              type: 'doc',
-              id: 'agent/streaming',
-            },
-            {
-              type: 'category',
-              label: 'Export metrics',
-              items: [
-                'agent/export',
-                'agent/exporting',
-                {
-                  type: 'category',
-                  label: 'Connectors',
-                  items: [
-                  'agent/exporting/aws_kinesis',
-                  'agent/exporting/pubsub',
-                  'agent/exporting/mongodb',
-                  'agent/exporting/opentsdb',
-                  'agent/exporting/prometheus/remote_write',
-                  ],
-                },
-                {
-                  type: 'category',
-                  label: 'Guides',
-                  items: [
-                    'agent/exporting/prometheus',
-                    'agent/exporting/timescale'
-                  ]
-                }
-              
               ],
             },
             {
@@ -463,35 +410,96 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Additional information',
+              label: 'Packaging',
               items: [
-                'agent/packaging/makeself',
+                'agent/packaging/installer',
                 {
                   type: 'category',
-                  label: 'libnetdata',
+                  label: 'Other methods',
                   items: [
-                    'agent/libnetdata',
-                    'agent/libnetdata/adaptive_resortable_list',
-                    'agent/libnetdata/avl',
-                    'agent/libnetdata/buffer',
-                    'agent/libnetdata/clocks',
-                    'agent/libnetdata/config',
-                    'agent/libnetdata/dictionary',
-                    'agent/libnetdata/ebpf',
-                    'agent/libnetdata/eval',
-                    'agent/libnetdata/json',
-                    'agent/libnetdata/locks',
-                    'agent/libnetdata/log',
-                    'agent/libnetdata/popen',
-                    'agent/libnetdata/procfile',
-                    'agent/libnetdata/simple_pattern',
-                    'agent/libnetdata/socket',
-                    'agent/libnetdata/statistical',
-                    'agent/libnetdata/storage_number',
-                    'agent/libnetdata/threads',
-                    'agent/libnetdata/url',
+                    'agent/packaging/installer/methods/packages',
+                    'agent/packaging/installer/methods/kickstart',
+                    'agent/packaging/installer/methods/kickstart-64',
+                    'agent/packaging/installer/methods/kubernetes',
+                    'agent/packaging/docker',
+                    'agent/packaging/installer/methods/cloud-providers',
+                    'agent/packaging/installer/methods/macos',
+                    'agent/packaging/installer/methods/freebsd',
+                    'agent/packaging/installer/methods/manual',
+                    'agent/packaging/installer/methods/offline',
+                    'agent/packaging/installer/methods/pfsense',
+                    'agent/packaging/installer/methods/synology',
+                    'agent/packaging/installer/methods/freenas',
+                    'agent/packaging/installer/methods/alpine',
                   ]
                 },
+                'agent/packaging/distributions',
+                'agent/packaging/installer/update',
+                'agent/packaging/installer/uninstall',
+                'agent/packaging/makeself',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'libnetdata',
+              items: [
+                'agent/libnetdata',
+                'agent/libnetdata/adaptive_resortable_list',
+                'agent/libnetdata/avl',
+                'agent/libnetdata/buffer',
+                'agent/libnetdata/clocks',
+                'agent/libnetdata/config',
+                'agent/libnetdata/dictionary',
+                'agent/libnetdata/ebpf',
+                'agent/libnetdata/eval',
+                'agent/libnetdata/json',
+                'agent/libnetdata/locks',
+                'agent/libnetdata/log',
+                'agent/libnetdata/popen',
+                'agent/libnetdata/procfile',
+                'agent/libnetdata/simple_pattern',
+                'agent/libnetdata/socket',
+                'agent/libnetdata/statistical',
+                'agent/libnetdata/storage_number',
+                'agent/libnetdata/threads',
+                'agent/libnetdata/url',
+              ]
+            },
+            'agent/registry',
+            'agent/streaming',
+            {
+              type: 'category',
+              label: 'Web',
+              items: [
+                'agent/web',
+                'agent/web/gui',
+                'agent/web/gui/custom',
+                'agent/web/gui/confluence',
+                {
+                  type: 'category',
+                  label: 'Web server',
+                  items: [
+                    'agent/web/server',
+                    'agent/web/server/static',
+                    {
+                      type: 'category',
+                      label: 'Running behind another web server',
+                      items: [
+                        'agent/running-behind-nginx',
+                        'agent/running-behind-apache',
+                        'agent/running-behind-lighttpd',
+                        'agent/running-behind-caddy',
+                      ]
+                    },
+                    'agent/running-behind-haproxy'
+                  ]
+                },
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Additional information',
+              items: [
                 'agent/contrib',
                 'agent/tests',
                 'agent/tests/health_mgmtapi',
@@ -547,7 +555,6 @@ module.exports = {
         'agent/contributing/contributing-documentation',
         'agent/contributing/style-guide',
         'agent/code_of_conduct',
-        'agent/contributors',
         'agent/packaging/maintainers',
       ],
     }

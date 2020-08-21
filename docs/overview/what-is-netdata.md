@@ -1,5 +1,6 @@
 ---
 title: "What is Netdata?"
+description: ""
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/overview/what-is-netdata.md
 ---
 
