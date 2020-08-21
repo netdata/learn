@@ -71,6 +71,29 @@ module.exports = {
             'visualize/create-dashboards',
           ]
         },
+        {
+          type: 'category',
+          label: 'Monitor',
+          items: [
+            'monitor/configure-alarms',
+            'monitor/enable-notifications',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Troubleshoot',
+          items: [
+            'troubleshoot/visual-anomaly-detection',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Store',
+          items: [
+            'store/increase-metrics-retention',
+            'store/calculate-metrics-storage',
+          ]
+        },
       ]
     },
     {
@@ -329,7 +352,6 @@ module.exports = {
               type: 'category',
               label: 'Export',
               items: [
-                'agent/export',
                 'agent/exporting',
                 {
                   type: 'category',
