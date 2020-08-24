@@ -58,14 +58,7 @@ function DocSidebarItemCategory({
   const wasActive = usePrevious(isActive); // active categories are always initialized as expanded
   // the default (item.collapsed) is only used for non-active categories
 
-  if (level == 1) {
-    console.log(item['label'])
-  }
-
   const isHeading = (item['label'] == 'Learn' || item['label'] == 'Reference' || item['label'] == 'Developers' )
-
-  // console.log(isHeading)
-  console.log(level)
 
   const [collapsed, setCollapsed] = useState(() => {
     if (!collapsible) {
@@ -190,8 +183,6 @@ function DocSidebarItemLink({
 }
 
 function DocSidebarItem(props) {
-  // console.log(props)
-
   switch (props.item.type) {
     case 'category':
       return <DocSidebarItemCategory {...props} />;

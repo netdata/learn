@@ -1,0 +1,66 @@
+.LearnContainer {
+  margin-top: calc(2 * var(--ifm-paragraph-margin-bottom));
+}
+
+.LearnBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: var(--ifm-spacing-horizontal);
+  margin-top: calc(2 * var(--ifm-paragraph-margin-bottom));
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 2px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  header {
+    flex: 1 1 50%;
+    margin-right: 4rem;
+  }
+  
+  main {
+    flex: 1 1 50%;
+  }
+
+  h3 {
+    color: var(--ifm-font-color-base);
+    font-size: 130%;
+    transition: ease-in-out all 0.15s;
+  }
+  
+  p {
+    margin-bottom: 0;
+    color: var(--ifm-font-color-base);
+    font-size: 95%;
+    font-weight: 400;
+  }
+
+  button {
+    position: absolute;
+    bottom: var(--ifm-spacing-horizontal);
+    left: var(--ifm-spacing-horizontal);
+  }
+}
+
+.LearnLinks {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.LearnLink {
+  // margin-top: calc(3 * var(--ifm-list-item-margin));
+  font-size: 110%;
+  line-height: 1.3;
+
+  + li {
+    margin-top: calc(3 * var(--ifm-list-item-margin)) !important;
+  }
+}
+
+html[data-theme='dark'] .StartBox {
+  background: linear-gradient(90deg, #13172d, #191927);
+}

@@ -99,4 +99,5 @@
   text-transform: uppercase;
   color: var(--ifm-color-emphasis-600);
   font-size: 0.9rem;
+  margin-bottom: 0.6rem;
 }
