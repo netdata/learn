@@ -22,7 +22,7 @@ module.exports = {
           items: [
             'overview/what-is-netdata',
             'overview/why-use-netdata',
-            'overview/how-to-use-netdata',
+            'overview/netdata-monitoring-stack',
           ]
         },
         'get',
