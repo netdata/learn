@@ -54,4 +54,8 @@
 
 [[redirects]]
   from = "dbengine-calc"
-  to = "/docs/agent/database/calculator"
+  to = "/docs/store/calculator"
+
+[[redirects]]
+  from = "/docs/agent/database/calculator"
+  to = "/docs/store/calculator"

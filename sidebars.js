@@ -49,7 +49,7 @@ module.exports = {
           items: [
             'configure/space-war-rooms',
             'configure/invite-collaborate',
-            'configure/agent',
+            'configure/nodes',
             'configure/secure-nodes-web-proxy',
           ]
         },
@@ -90,15 +90,15 @@ module.exports = {
           type: 'category',
           label: 'Store',
           items: [
-            'store/increase-metrics-retention',
-            'store/calculate-metrics-storage',
+            'store/change-metrics-retention',
+            'store/calculator',
           ]
         },
         {
           type: 'category',
           label: 'Export',
           items: [
-            'export/integrate-netdata-monitoring-stack',
+            'export/integrate-monitoring-stack',
             'export/enable-exporting',
           ]
         },
@@ -353,7 +353,6 @@ module.exports = {
               items: [
                 'agent/database',
                 'agent/database/engine',
-                'agent/database/calculator',
               ]
             },
             {
@@ -613,7 +612,7 @@ module.exports = {
         'agent/contributing/contributing-documentation',
         'agent/contributing/style-guide',
         'agent/code_of_conduct',
-        'agent/packaging/maintainers',
+        'agent/packaging/installer/methods/source'
       ],
     }
   ]
