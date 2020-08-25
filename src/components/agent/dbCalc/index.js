@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.scss';
@@ -17,8 +17,8 @@ export function Calculator() {
   })
 
   const [requiredDisk, setRequiredDisk ] = React.useState('')
+  const [diskPerNode, setDiskPerNode] = React.useState('')
   const [requiredRAM, setRequiredRAM] = React.useState('')
-  const [settingDiskSpace, setSettingDiskSpace] = React.useState('')
   const [conf, setConf] = React.useState('')
 
   // Establish measurements per page
@@ -40,29 +40,30 @@ export function Calculator() {
     let diskSpace = Math.round(uncompressedStorage * ( 1 - (state.compression / 100)))
 
     // Calculate required RAM
-    const ramPageCache = state.pageSize * nodes
     const ramPagesDims = totalDims * uncompressedPageSize * 2 / 1024 / 1024
     const ramMetadata = uncompressedStorage * 0.03
-    const requiredRam = Math.round(ramPageCache + ramPagesDims + ramMetadata)
-
-    console.log(diskSpace / nodes)
+    const requiredRam = Math.round(state.pageSize + ramPagesDims + ramMetadata)
 
     // Calculate dbengine disk space setting
-    // If diskSpace is less than 64 MiB per node, then either set diskSpace to 64 or the larger value.
-    // Then enforce the minimum of 64 for `settingDiskSpace`.
-    if (diskSpace / nodes < 64) diskSpace = 64 * nodes
-    const settingDiskSpace = Math.round(diskSpace / nodes)
+    // First, take the maximum between the calculated `diskSpace` and `ramPagesDims`.
+    // Then enforce a minimum of 64 MiB, but if the calculated `diskSpace` is larger, use that instead. With multihost,
+    // don't multiply the disk space by the number of nodes.
+    diskSpace = Math.max(diskSpace, ramPagesDims)
+    diskSpace = (diskSpace < 64) ? diskSpace = 64 : diskSpace
+
+    // Calculate the disk space per node.
+    const diskPerNode = Math.round(diskSpace / nodes)
 
     // Set states
     setRequiredDisk(diskSpace)
-    setSettingDiskSpace(settingDiskSpace)
+    setDiskPerNode(diskPerNode)
     setRequiredRAM(requiredRam)
 
     // Console output for debugging
-    console.log('Nodes: ' + nodes + '\nTotal dimensions: ' + totalDims + '\nTotal measurements collected per sec: ' + totalMeasurements + '\nMax uncompressed pages retained: ' + maxUncompressedPages + '\nUncompressed page size / 1024 / 1024: ' + uncompressedPageSizeDiv + '\nUncompressed storage required (MiB): ' + uncompressedStorage + '\nREQUIRED DISK SPACE: ' + diskSpace + '\nnetdata.conf [global] "dbengine disk space": ' + settingDiskSpace + '\nRAM for page cache: ' + ramPageCache + '\n2 pages for each dimension being collected: ' + ramPagesDims + '\n+ Metadata: ' + ramMetadata + '\nREQUIRED RAM: ' + requiredRam)
+    // console.log('Nodes: ' + nodes + '\nTotal dimensions: ' + totalDims + '\nTotal measurements collected per sec: ' + totalMeasurements + '\nMax uncompressed pages retained: ' + maxUncompressedPages + '\nUncompressed page size / 1024 / 1024: ' + uncompressedPageSizeDiv + '\nUncompressed storage required (MiB): ' + uncompressedStorage + '\nREQUIRED DISK SPACE: ' + diskSpace + '\nnetdata.conf [global] "dbengine disk space": ' + settingDiskSpace + '\nRAM for page cache: ' + ramPageCache + '\n2 pages for each dimension being collected: ' + ramPagesDims + '\n+ Metadata: ' + ramMetadata + '\nREQUIRED RAM: ' + requiredRam)
 
     const confString = String.raw`[global]
-    dbengine disk space = ${settingDiskSpace}`
+    dbengine multihost disk space = ${diskSpace}`
     setConf(confString)
 
   });
@@ -80,7 +81,7 @@ export function Calculator() {
       <div className={'col col--12'}>
         <div className={clsx('row', styles.calcRow)}>
           <div className={clsx('col col--2', styles.calcInput)}>
-            <input type="number" id="retention" name="retention" value={state.retention} min="0" step="any" onChange={handleChange} />
+            <input type="number" id="retention" name="retention" min="0" step="any" value={state.retention} onChange={handleChange} />
           </div>
           <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="retention">How many days do you want to store metrics?</label>
@@ -89,7 +90,7 @@ export function Calculator() {
 
         <div className={clsx('row', styles.calcRow)}>
           <div className={clsx('col col--2', styles.calcInput)}>
-            <input type="number" id="update" name="update" value={state.update} min="1" onChange={handleChange} />
+            <input type="number" id="update" name="update" min="1" value={state.update} onChange={handleChange} />
           </div>
           <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="update">How often, on average, do your Agents collect metrics?</label>
@@ -99,7 +100,7 @@ export function Calculator() {
 
         <div className={clsx('row', styles.calcRow)}>
           <div className={clsx('col col--2', styles.calcInput)}>
-            <input type="number" id="dims" name="dims" min="0" value={state.dims} min="0" onChange={handleChange} />
+            <input type="number" id="dims" name="dims" min="0"  value={state.dims} onChange={handleChange} />
           </div>
           <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="dims">How many metrics, on average, do your Agents collect?</label>
@@ -120,7 +121,7 @@ export function Calculator() {
 
         <div className={clsx('row', styles.calcRow)}>
           <div className={clsx('col col--2', styles.calcInput)}>
-            <input type="number" id="compression" name="compression" value={state.compression} min="0" onChange={handleChange} />
+            <input type="number" id="compression" name="compression" min="0" value={state.compression} onChange={handleChange} />
           </div>
           <div className={clsx('col col--10', styles.calcInstruction)}>
             <label htmlFor="compression">What is your compression savings ratio?</label>
@@ -130,7 +131,7 @@ export function Calculator() {
 
         <div className={clsx('row', styles.calcRow)}>
           <div className={clsx('col col--2', styles.calcInput)}>
-            <input type="number" id="pageSize" name="pageSize" value={state.pageSize} min="8" onChange={handleChange} />
+            <input type="number" id="pageSize" name="pageSize" min="8" value={state.pageSize} onChange={handleChange} />
             
           </div>
           <div className={clsx('col col--10', styles.calcInstruction)}>
@@ -143,7 +144,7 @@ export function Calculator() {
       <div className={clsx("col col--12", styles.calcResults)}>
 
         <div className={styles.calcFinal}>
-          <p>With the above configuration, you should allocate the following resources to metrics storage{state.child > 0 && <em>&nbsp;on your parent node</em>}:</p>
+          <p>With the above configuration, Netdata will use the following resources{state.child > 0 && <em>&nbsp;on your parent node</em>} to store metrics{state.child > 0 && <span>&nbsp;for both parent and child nodes</span>}: </p>
           <span>
             <code>{requiredDisk} MiB</code> in total disk space
           </span>
@@ -157,7 +158,7 @@ export function Calculator() {
             {state.child > 0 &&
               <em>on your parent node&nbsp;</em>
             }
-            and change the <code>dbengine disk space</code> setting to the following:
+            and change the <code>dbengine multihost disk space</code> setting to the following:
           </p>
           <CodeBlock className={clsx('conf')} language='conf'>{conf}</CodeBlock>
           <p>Restart your Agent for the setting to take effect.</p>
@@ -174,14 +175,14 @@ export function Calculator() {
             {state.child > 0 && (
               <>
                 <li>
-                  <p>Your master node creates separate instances of the database engine for each of your slave nodes, and allocates <code>{settingDiskSpace} MiB</code> to each of them. This is why you must allocate more total disk space than the <code>dbengine disk space</code> setting implies.</p>
-                  <p><code>{settingDiskSpace} MiB per instance * 1 master instance * {state.slaves} slave instance{state.slaves > 1 && <span>s</span>} = {requiredDisk} MiB</code></p>
+                  <p>Your parent node uses one shared dbengine multi-host instance to store all metrics values and associated metadata from all parent and child nodes. To store the volume and granularity of metrics specified above, the instance must be large enough for all metrics/metadata from all nodes.</p>
+                  <p><code>{diskPerNode} MiB per node * 1 parent node + {state.child} child node{state.child > 1 && <span>s</span>} = {requiredDisk} MiB</code></p>
                   <p>See the <Link href="/docs/agent/database/engine">dbengine documentation</Link> for details on how the Agent allocates database engine instances.</p>
                 </li>
               </>
             )}
-            <li>The database engine requires a minimum of 64 MiB to function (<code>dbengine disk space</code>).</li>
-            <li>The system memory figure above is <em>only for the database engine</em>, and it may be higher in real-world situations due to memory fragmentation. The Agent will require more memory for collection, visualization, and alerting features.</li>
+            <li>The database engine requires a minimum disk space, which is reflected in this calculator. This required space is the maximum between your <code>dbengine multihost disk space</code>/<code>dbengine disk space</code> setting and <code>dimensions-being-collected * 4096 * 2</code>.</li>
+            <li>The system memory figure above is <em>only for the database engine</em>, and it may be higher in real-world situations due to memory fragmentation. The Agent will require additional memory for collection, visualization, and alerting features.</li>
           </ul>
         </div>
 
