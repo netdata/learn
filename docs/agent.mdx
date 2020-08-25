@@ -1,64 +1,74 @@
 ---
-title: Netdata Agent
+title: Agent reference docs
 description: Netdata's open-source Agent gives you real-time health monitoring and performance troubleshooting for systems and applications.
+sidebar_label: Agent reference docs
 custom_edit_url: null
 ---
 
-import { Start, StartBox } from '../src/components/agent/StartBox/'
+import { StartBox } from '../src/components/StartBox/'
 import { Discover, DiscoverBox } from '../src/components/agent/DiscoverBox/'
 
-Welcome! You’ve arrived at the documentation for the Netdata Agent.
+This is the reference documentation for the free, open-source Netdata Agent. Each major component of the Agent is listed
+below and in the navigation as individual sections. Many of these sections also contain sub-sections and multiple
+documents.
 
-Netdata's open-source Agent gives you real-time health monitoring and performance troubleshooting for systems and
-applications. This highly flexible and configurable monitoring Agent helps you instantly diagnose slowdowns and
-anomalies in your infrastructure with thousands of metrics, interactive visualizations, and insightful health alarms.
-Plus, long-term storage comes ready out-of-the-box, so can collect, monitor, and maintain your metrics in one insightful
-place.
+If you want to get started with the Netdata Agent, click the button below or read our [_Get Netdata_ guide](/docs/get).
 
-<Start>
-  <StartBox href="/docs/agent/packaging/installer" title="Install the Netdata Agent" button="Read now">
-    Install the Agent on Linux systems with a single command, or more than a dozen others, such as Docker or Kubernetes.
-  </StartBox>
-</Start>
+See our [core docs](/docs) for comprehensive docs and guides for using Netdata for monitoring, visualization, and
+troubleshooting. Read [_What is Netdata?_](/docs/overview/what-is-netdata) for details about how Netdata works and how
+it's different from other monitoring solutions.
 
-## Discover the Agent
+<StartBox 
+  to="/docs/agent/packaging/installer" 
+  title="Install the Netdata Agent" 
+  description="Install the Agent on most Linux distributions (Ubuntu, Debian, CentOS, and more), container platforms (Kubernetes clusters, Docker), and many other operating systems (FreeBSD, macOS)." 
+  image={false} />
+
+## Agent components
 
 <Discover>
   <DiscoverBox 
-    href="/docs/agent/configuration-guide" 
-    title="Configure">
-    Netdata is zero-configuration out of the box, but is wildly adaptable.
+    href="/docs/agent/aclk" 
+    title="Agent-Cloud link (ACLK)">
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/agent/claim" 
+    title="Agent claiming">
   </DiscoverBox>
   <DiscoverBox 
     href="/docs/agent/collectors" 
-    title="Collect">
-    Auto-detect and collect metrics from hundreds of popular services/apps.
+    title="Collectors">
   </DiscoverBox>
   <DiscoverBox 
-    href="/docs/agent/web" 
-    title="Visualize">
-    Visually detect anomalies with hundreds of interative and dynamic charts.
+    href="/docs/agent/daemon" 
+    title="Daemon/configuration">
   </DiscoverBox>
   <DiscoverBox 
-    href="/docs/agent/health" 
-    title="Monitor">
-    Use Netdata's health watchdog to detect anomalies seconds after they happen.
+    href="/docs/agent/database" 
+    title="Database">
   </DiscoverBox>
   <DiscoverBox 
-    href="/docs/agent/health/notifications" 
-    title="Notify">
-    Connect to dozens of popular apps to notify your team of new or persistent alerts.
-  </DiscoverBox>
+    href="/docs/agent/exporting"
+    title="Exporting" />
   <DiscoverBox 
-    href="/docs/agent/export"
-    title="Export">
-    Send Netdata's metrics to time-series databases for archiving or correlative analysis.
-  </DiscoverBox>
+    href="/docs/agent/health"
+    title="Health" />
+  <DiscoverBox 
+    href="/docs/agent/web/api"
+    title="HTTP API" />
+  <DiscoverBox 
+    href="/docs/agent/packaging"
+    title="Packaging" />
+  <DiscoverBox 
+    href="/docs/agent/libnetdata"
+    title="libnetdata" />
+  <DiscoverBox 
+    href="/docs/agent/registry"
+    title="Registry" />
+  <DiscoverBox 
+    href="/docs/agent/streaming"
+    title="Streaming" />
+  <DiscoverBox 
+    href="/docs/agent/web"
+    title="Web dashboards/charts" />
 </Discover>
-
-## Contribute
-
-Visit the [contributing guide](/docs/agent/contributing/), [contributing to documentation
-guide](/docs/agent/contributing/contributing-documentation/), and [documentation style
-guide](/docs/agent/contributing/style-guide/) to learn more about our community and how you can get started contributing
-to Netdata.
