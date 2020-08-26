@@ -1,6 +1,5 @@
 ---
 title: "Health quickstart"
-date: 2020-04-27
 custom_edit_url: https://github.com/netdata/netdata/edit/master/health/QUICKSTART.md
 ---
 
