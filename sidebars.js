@@ -59,7 +59,7 @@ module.exports = {
           items: [
             'collect/system-metrics',
             'collect/container-metrics',
-            'collect/system-metrics',
+            'collect/application-metrics',
           ]
         },
         {
