@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/get/README.
 import { OneLineInstall } from '../src/components/OneLineInstall/'
 import { Install, InstallBox } from '../src/components/InstallBox/'
 
-Netdata uses an open-source monitoring Agent and web application [together](/docs/agent/overview-what-is-netdata) to help you
+Netdata uses an open-source monitoring Agent and web application [together](/docs/overview-what-is-netdata) to help you
 collect every metric, visualize the health of your systems, and troubleshoot complex performance problems. Once you've
 signed in to Netdata Cloud and installed the Netdata Agent on all your nodes, you can claim these nodes and see their
 real-time metrics on a single interface.
@@ -27,11 +27,11 @@ devices. It runs on Linux distributions (**Ubuntu**, **Debian**, **CentOS**, and
 (**Kubernetes** clusters, **Docker**), and many other operating systems (**FreeBSD**, **macOS**), with no `sudo`
 required.
 
-> ⚠️ Don't install Netdata via your distribution's package manager! Many of these packages, which are maintained by
-> third parties, are out of date or completely broken.
+> ⚠️ Many distributions ship with third-party packages of Netdata, which we cannot maintain or keep up-to-date. For the
+> best experience, use one of the methods described or link to below.
 
 The **recommended** way to install the Netdata Agent on a Linux system is our one-line [kickstart
-script](/docs/agent/agent/packaging/installer/methods/kickstart). This script automatically installs dependencies and builds
+script](/docs/agent/packaging/installer/methods/kickstart). This script automatically installs dependencies and builds
 Netdata from its source code.
 
 <OneLineInstall />
@@ -80,12 +80,12 @@ platform to see specific instructions.
     os="MacOS" />
 </Install>
 
-Even more options available in our [packaging documentation](/docs/agent/agent/packaging/installer#alternative-methods).
+Even more options available in our [packaging documentation](/docs/agent/packaging/installer#alternative-methods).
 
 ## Claim your node on Netdata Cloud
 
 You need to claim your nodes to see them in Netdata Cloud. Claiming establishes a secure TLS connection to Netdata Cloud
-using the [Agent-Cloud link](/docs/agent/aclk), and proves you have write and administrative access to that node.
+using the [Agent-Cloud link](/aclk/README.md), and proves you have write and administrative access to that node.
 
 When you view a node in Netdata Cloud, the Agent running on that node streams metrics, metadata, and alarm status to
 Netdata Cloud, which in turn streams those metrics to your web browser. Netdata Cloud does not store or log metrics or
@@ -102,12 +102,10 @@ sudo netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.c
 The script should return `Agent was successfully claimed.` after creating a new RSA pair and establishing the link to
 Netdata Cloud.
 
-For more information on the claiming process, why we implemented it, and how it works, see the [claim](/docs/agent/claim)
-and [Agent-Cloud link](/docs/agent/aclk) reference docs.
+For more information on the claiming process, why we implemented it, and how it works, see the [claim](/claim/README.md)
+and [Agent-Cloud link](/aclk/README.md) reference docs.
 
 ## What's next?
 
 You've now set up your free Netdata Cloud account, installed the Agent, and claimed one or more nodes to your Space.
 You're ready to start monitoring, visualizing, and troubleshooting with Netdata.
-
-
