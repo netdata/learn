@@ -168,13 +168,19 @@ match:
 ```
 
 **Match expression evaluation result should be true or false**.
+
 Expression syntax is [go-template](https://golang.org/pkg/text/template/).
 
-Available custom functions:
+### Available functions
+
+-   go-template [built-in functions](https://golang.org/pkg/text/template/#hdr-Functions).
+-   [sprig functions](http://masterminds.github.io/sprig/).
+-   custom functions.
+
+Custom functions:
 
 -   `glob` reports whether arg1 matches the shell file name pattern.
 -   `re` reports whether arg1 contains any match of the regular expression pattern.  
--   `hasKey` reports whether arg1 contains a key (arg1 should be a `map` type)
 
 All these functions accepts two or more arguments, returning in effect:
 
@@ -212,6 +218,21 @@ apply:
 ```
 
 Template syntax is [go-template](https://golang.org/pkg/text/template/).
+
+### Available functions
+
+-   go-template [built-in functions](https://golang.org/pkg/text/template/#hdr-Functions).
+-   [sprig functions](http://masterminds.github.io/sprig/).
+-   custom functions.
+
+Custom functions:
+
+-   `glob` reports whether arg1 matches the shell file name pattern.
+-   `re` reports whether arg1 contains any match of the regular expression pattern.  
+
+All these functions accepts two or more arguments, returning in effect:
+
+> func(arg1, arg2) || func(arg1, arg3) || func(arg1, arg4) ... 
 
 ## Export
 
