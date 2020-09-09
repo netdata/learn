@@ -29,19 +29,19 @@ feature](https://user-images.githubusercontent.com/1153921/92631155-d10bb900-f28
 Hold the `Alt` key and click-and-drag a selection of metrics on a single chart. The selected timeframe needs to be
 between 15 and 180 seconds for Metric Correlation to work best.
 
-The Metric Correlation menu then displays information about the selected area and reference baseline, which are used in
-together to discover which additional metrics are most closely connected to the selected metrics.
+The menu then displays information about the selected area and reference baseline. Metric Correlations uses the
+reference baseline to discover which additional metrics are most closely connected to the selected metrics.
 
 Press the **Find Correlations** button to start up the correlations service, which scores all available metrics on your
 node and returns a filtered version of the Netdata dashboard. Now, you'll see only those metrics that have changed the
 most between a baseline window and the highlighted window you have selected.
 
-These charts are fully interactive, and whenever possible will only show the _dimensions_ related to the anomaly you
+These charts are fully interactive, and whenever possible, will only show the _dimensions_ related to the anomaly you
 selected.
 
-You can interact with all the scored metrics via the slider, which can be used to **show less** results (i.e. just the
-more significant metrics), or **show more** to show more charts and "loosen" the threshold to explore other charts that
-may have changed too, but in a less significant manner.
+You can interact with all the scored metrics via the slider. Slide toward **show less** for more nuanced and significant
+results, or toward **show more** to "loosen" the threshold to explore other charts that may have changed too, but in a
+less significant manner.
 
 If you find something else interesting in the results, you can select another window and press **Find Correlations**
 again to kick the process off again.
