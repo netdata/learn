@@ -538,7 +538,7 @@ module.exports = {
       label: 'Insights',
       items: [
         'cloud/insights',
-        'cloud/insights/metrics-correlation',
+        'cloud/insights/metric-correlations',
       ]
     },
     'cloud/collaborate',
