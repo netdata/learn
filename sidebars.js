@@ -536,10 +536,11 @@ module.exports = {
     'cloud/collaborate',
     {
       type: 'category',
-      label: 'Manage',
+      label: 'Manage/settings',
       items: [
         'cloud/manage/sign-in',
         'cloud/collaborate/invite-your-team',
+        'cloud/manage/themes'
       ]
     },
     'cloud/faq-glossary'
