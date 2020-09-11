@@ -104,6 +104,17 @@ You'll land directly on that chart of interest, but you can now scroll up and do
 charts. Of course, you can continue to zoom, highlight, and pan through time just as you're used to with Agent
 dashboards.
 
+## Pin dashboards
+
+Click on the **Pin** button in any dashboard to put those charts into a separate panel at the bottom of the screen. You
+can now navigate through Netdata Cloud freely, individual Cloud dashboards, the Nodes view, different War Rooms, or even
+different Spaces, and have those valuable metrics follow you.
+
+**ADD GIF HERE**
+
+Pinning dashboards helps you correlate potentially related charts across your infrastructure, no matter how you
+[organized it](/docs/cloud/organize) in Netdata Cloud, and helps you discover root causes faster.
+
 ## Manage your dashboards
 
 We've included a few ways to manage dashboards you've already created.
