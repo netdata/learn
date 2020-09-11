@@ -533,14 +533,7 @@ module.exports = {
         'cloud/monitor/alarms',
       ]
     },
-    {
-      type: 'category',
-      label: 'Insights',
-      items: [
-        'cloud/insights',
-        'cloud/insights/metric-correlations',
-      ]
-    },
+    'cloud/insights/metric-correlations',
     'cloud/collaborate',
     {
       type: 'category',
