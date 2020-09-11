@@ -110,8 +110,6 @@ Click on the **Pin** button in any dashboard to put those charts into a separate
 can now navigate through Netdata Cloud freely, individual Cloud dashboards, the Nodes view, different War Rooms, or even
 different Spaces, and have those valuable metrics follow you.
 
-**ADD GIF HERE**
-
 Pinning dashboards helps you correlate potentially related charts across your infrastructure, no matter how you
 [organized it](/docs/cloud/organize) in Netdata Cloud, and helps you discover root causes faster.
 
