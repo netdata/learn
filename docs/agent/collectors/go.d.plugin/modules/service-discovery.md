@@ -95,6 +95,7 @@ One of the following role types can be configured to discover targets:
 
 The pod role discovers all pods and exposes their containers as targets.
 For each declared port of a container, it generates single target.
+If there is no declared port it generates one target with empty `Port`, `PortName` and `PortProtocol` fields.
 
 Available pod target fields:
 
