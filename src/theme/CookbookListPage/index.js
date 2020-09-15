@@ -193,6 +193,9 @@ function CookbookListPage(props) {
             <Link to="/guides/monitor/kubernetes-k8s-netdata" className={clsx('col col--4', styles.guideBox)}>
               <h3>Monitor a Kubernetes cluster with Netdata</h3>
             </Link>
+            <Link to="/guides/monitor/pi-hole-raspberry-pi" className={clsx('col col--4', styles.guideBox)}>
+              <h3>Monitor Pi-hole (and a Raspberry Pi) with Netdata</h3>
+            </Link>
             <Link to="/guides/monitor/dimension-templates" className={clsx('col col--4', styles.guideBox)}>
               <h3>Use dimension templates to create dynamic alarms</h3>
             </Link>
