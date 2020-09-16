@@ -39,6 +39,11 @@ more about your requirements and use case.
 If you want to see both the parent node and its child nodes in Netdata Cloud, you must claim all of them via the
 [claiming process](/docs/cloud/get-started#claim-a-node).
 
+### Is there a dark mode in Netdata Cloud?
+
+Yes. If it's not enabled by default on your system, you can now enable the new Dark or Blue themes. Click on the
+**Settings** tab, then choose your preferred theme
+
 ### Can I create custom dashboards?
 
 This is now possible! [Learn how](https://learn.netdata.cloud/docs/cloud/visualize/dashboards).
