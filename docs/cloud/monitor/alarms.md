@@ -16,6 +16,10 @@ health status: gray is `clear`, yellow is `warning`, and red is `critical`.
 The Alarms panel lists all active alarms for nodes within that War Room, and tells you which chart triggered the alarm,
 what that chart's current value is, the alarm that triggered it, and when the alarm status first began.
 
+You can use the input field in the Alarms panel to filter active alarms. Sort by the node's name, alarm, status, chart
+that triggered the alarm, or the operating system. You can find more information about the syntax in our
+[visualization](/docs/cloud/visualize/nodes) doc.
+
 ## Troubleshoot with active alarm information and context
 
 Click on the 3-dot icon (`⋮`) to view active alarm information or navigate directly to the offending chart in that

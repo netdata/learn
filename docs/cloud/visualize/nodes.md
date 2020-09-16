@@ -42,14 +42,20 @@ Nodes](https://user-images.githubusercontent.com/1153921/87457127-bf2ad400-c5bc-
 
 ## Filter and group your infrastructure
 
-Use the filter input next to the **Nodes** heading to filter your nodes based on your queries. You can enter a text
-query that filters by hostname, or use the dropdown that appears as you begin typing to filter by operating system or
-the service(s) that node provides.
+Use the filter input next to the **Nodes** heading to filter the nodes in a given War Room.
 
-Use the **Group by** dropdown to choose between no grouping, grouping by the node's alarm status (`critical`, `warning`,
-and `clear`), and grouping by the service each node provides.
+Use relational operators (==, !=, contains, and !contains) and logical operators (AND, OR), plus the name, OS, or
+services running on your nodes to quickly turn any War Room into a focused troubleshooting interface. See what services
+Netdata Cloud can filter by in the [supported collectors list](/docs/agent/collectors/collectors).
 
-See what services Netdata Cloud can filter by with [supported collectors list](/docs/agent/collectors/collectors).
+For example, `name == centos OR os == debian` filters any nodes by the exact name `centos` or has Debian as its
+operating system.
+
+You can also use parentheses around operators to create more sophisticated filters. `(name contains aws AND os contains
+ubuntu) OR services == apache` shows only nodes that have `aws` in the hostname and are Ubuntu-based, or any nodes that
+have an Apache webserver running on them.
+
+If a filter is invalid or incomplete, Netdata Cloud shows a warning and will not run the filter until it's corrected.
 
 ## Troubleshoot with embedded node dashboards
 
