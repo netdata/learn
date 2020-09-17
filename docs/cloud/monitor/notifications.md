@@ -10,24 +10,13 @@ you ensure no alarm, on any node in your infrastructure, goes unnoticed by you o
 ## Enable alarm notifications for a Space
 
 To enable notifications for a Space, click on the Space's name in the top menu, then **Manage your Space**. In the panel
-that appears, click on the **Notifications** tab. 
+that appears, click on the **Notifications** tab. This menu option is visible only to admins.
 
 Click on the toggle for which notification methods you want to enable. Netdata Cloud currently supports email
 notifications, but we're working on others.
 
 Next, configure each War Room you'd like to receive notifications from, and instruct your users to set their
 notification preferences at a user level.
-
-## Manage alarm notifications per War Room
-
-Users of a War Room can change which types of notifications are enabled for themselves in that specific War Room.
-
--   **All alarms**: Receive notifications for all changes in alarm status: critical, warning, and cleared.
--   **Critical alarms only**: Receive notifications only for critical alarms, represented by a red background in the
-    Nodes view.
--   **No notifications**: Receive no notifications for nodes in this War Room.
-
-This configuration applies to all users in that War Room.
 
 ## Manage alarm notifications per user
 
@@ -37,6 +26,13 @@ Click on your profile icon at the top-right of the Cloud UI, then **Profile** in
 **Notifications** tab in the panel that appears.
 
 You can now choose to enable or disable any of the available and active notification methods.
+
+Also you can select which types of notifications are enabled for all the War Rooms you belong to.
+
+-   **All alarms**: Receive notifications for all changes in alarm status: critical, warning, and cleared.
+-   **Critical alarms only**: Receive notifications only for critical alarms, represented by a red background in the
+    Nodes view.
+-   **No notifications**: Receive no notifications for nodes in this War Room.
 
 ## Flood protection
 
