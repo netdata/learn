@@ -5,8 +5,8 @@ custom_edit_url: null
 
 ## FAQ
 
-Have questions for us that aren't answered here? Send us an email at [info@netdata.cloud](mailto:info@netdata.cloud) or
-create an issue on [GitHub](https://github.com/netdata/netdata/issues/new/choose).
+Have questions for us that aren't answered here? Hop over to our [community](https://community.netdata.cloud/) to ask
+your question or create an issue on [GitHub](https://github.com/netdata/netdata/issues/new/choose).
 
 ### How is Cloud different from the Netdata Agent?
 
@@ -42,11 +42,12 @@ If you want to see both the parent node and its child nodes in Netdata Cloud, yo
 ### Is there a dark mode in Netdata Cloud?
 
 Yes. If it's not enabled by default on your system, you can now enable the new Dark or Blue themes. Click on the
-**Settings** tab, then choose your preferred theme
+**Settings** tab, then choose your preferred theme.
 
 ### Can I create custom dashboards?
 
-This is now possible! [Learn how](https://learn.netdata.cloud/docs/cloud/visualize/dashboards).
+This is now possible! Use the [dashboards feature](https://learn.netdata.cloud/docs/cloud/visualize/dashboards) to build
+new dashboards tailored specifically to your infrastructure.
 
 ### My Agent cannot connect to Netdata Cloud. How do I fix that?
 
