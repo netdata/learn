@@ -1,20 +1,21 @@
 ---
 title: Choose your Netdata Cloud theme
-description: Switch between Dark, Blue, and Light modes easily in Netdata Cloud.
+description: Switch between Light, Blue, and Dark themes in Netdata Cloud to match your personal visualization preferences.
 custom_edit_url: null
 ---
 
 To change your theme across Netdata Cloud, click on your profile picture, then **Profile**. Click on the **Settings**
-tab, then choose your preferred theme: Dark, Blue, and Light.
+tab, then choose your preferred theme: Light, Blue, or Dark.
 
-**Dark (default)**:
+**Light (default)**:
 
-![Dark theme](https://user-images.githubusercontent.com/1153921/92954702-bf0e4f80-f418-11ea-9ca5-df051c05ce03.png)
+![Dark theme](https://user-images.githubusercontent.com/1153921/93349545-737aed80-f7ec-11ea-95c8-15745ac85a6e.png)
 
 **Blue**:
 
-![Blue theme](https://user-images.githubusercontent.com/1153921/92954699-be75b900-f418-11ea-84a7-ab228ffc431a.png)
+![Blue theme](https://user-images.githubusercontent.com/1153921/93349541-7249c080-f7ec-11ea-8b91-9896fb1ea3bd.png)
 
-**Light**:
+**Dark**:
 
-![Light theme](https://user-images.githubusercontent.com/1153921/92954705-bfa6e600-f418-11ea-9cbf-015034171d64.png)
+![Light theme](https://user-images.githubusercontent.com/1153921/93349542-72e25700-f7ec-11ea-97bb-1efa3af4b64d.png)
+
