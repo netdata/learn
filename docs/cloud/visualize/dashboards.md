@@ -32,35 +32,28 @@ You can use dashboards in many ways. A few examples:
 
 ## Create your first dashboard
 
-The best way to both create a new dashboard and add charts to an existing dashboard is through a single node's dashboard
-in Cloud.
+In the War Room you want to monitor with this dashboard, click on your War Room's dropdown, then click on the green **+
+Add** button next to **Dashboards**. In the panel, give your new dashboard a name, and click **+ Add**.
 
-First, navigate to the War Room you want to associate with this dashboard. Dashboards are specific to War Rooms, which
-means you can add charts from any node in that War Room. Any users you invite to that War Room can also see your new
-dashboard once you're finished.
+Click the **Add Chart** button to add your first chart card. From the dropdown, select the node you want to add the
+chart from, then the context. Netdata Cloud shows you a preview of the chart before you finish adding it. The **Add
+Text** button creates a new card with user-defined text, which you can use to describe or document a particular
+dashboard's meaning and purpose.
 
-Click on any node from the Nodes view to reveal that node's dashboard. Look for any chart you'd like to add to a new
-dashboard, and find the **add to dashboard** icon <img
-src="https://user-images.githubusercontent.com/1153921/87587846-827fdb00-c697-11ea-9f31-aed0b8c6afba.png" alt="Dashboard
-icon" class="image-inline" />. 
+Be sure to click the **Save** button any time you make changes to your dashboard.
 
-In the panel, under the **Create new dashboard and...** header, type in your new dashboard's name and click **New
-dashboard**.
-
-<video controls="controls">
-  <source type="video/mp4" src="/video/cloud/visualize/dashboards/flow.mp4"></source>
-  <p>Your browser does not support the video element.</p>
-</video>
-
-Continue adding charts if you'd like. To see your new dashboard, go back to your War Room. Click on the dropdown menu
-for the current War Room to find your new dashboard under the **Dashboards** heading. Click your new dashboard's name,
-and you'll see your new dashboard with the chart(s) you added.
-
-You're probably eager to add additional charts to this freshly-minted dashboard. Time to interact and design.
+![An example multi-node dashboard for system CPU
+metrics](https://user-images.githubusercontent.com/1153921/93399129-c1661480-f831-11ea-9570-a5bd401f54db.png)
 
 ## Using your dashboard
 
-Dashboards are designed to be interactive and flexible so you can design them to your exact needs.
+Dashboards are designed to be interactive and flexible so you can design them to your exact needs. Dashboards are made
+of any number of **cards**, which can contain charts or text.
+
+### Chart cards
+
+Click the **Add Chart** button to add your first chart card. From the dropdown, select the node you want to add the
+chart from, then the context. Netdata Cloud shows you a preview of the chart before you finish adding it.
 
 The charts you add to any dashboard are fully interactive, just like the charts in an Agent dashboard or a single node's
 dashboard in Cloud. Zoom in and out, highlight timeframes, and more. See our [Agent dashboard
@@ -73,28 +66,28 @@ Charts also synchronize as you interact with them, even across contexts _or_ nod
   <p>Your browser does not support the video element.</p>
 </video>
 
-The only thing you can't do yet is resize charts, but we're working on that.
+### Text cards
 
-### Add more cards (charts)
-
-Dashboards are made of **cards**. For now, you can add chart cards, but in the future you'll be able to add other types
-of cards as well.
-
-The best way to add chart cards is through the same process as creating a new dashboard. Go to a single node, find the
-chart you're interested in, and add it to your existing dashboard. You can also click the **Add Chart** button. Select
-which node you want a chart from, then the context. Click the **Add chart** button.
+The **Add Text** button creates a new card with user-defined text. When you create a new text card or edit an existing
+one, select/highlight characters or words to open a modal to make them **bold**, _italic_, or <ins>underlined</ins>. You
+can also create a link.
 
 ### Move cards
 
 To move any card, click and hold on the top of the card, then drag it to a new location. A red placeholder indicates the
-new location. Once you release your mouse, other charts will re-sort accordingly.
+new location. Once you release your mouse, other charts re-sort to the grid system automatically.
+
+### Resize cards
+
+To resize any card on a dashboard, click on the bottom-right corner and drag to the card's new size. Other cards re-sort
+to the grid system automatically.
 
 ## Investigate and troubleshoot by jumping to single node dashboards
 
 While dashboards help you associate essential charts from distributed nodes on a single pane of glass, you might need
 more detail when troubleshooting an issue.
 
-Quickly jump to any node's dashboard by clicking the 6-dot icon in the corner of any card to open a menu. Hit the **Go
+Quickly jump to any node's dashboard by clicking the 3-dot icon in the corner of any card to open a menu. Hit the **Go
 to Chart** item.
 
 ![Animated GIF of moving to a chart from a
@@ -131,7 +124,7 @@ prompted to either overwrite the dashboard or reload to see the most recent chan
 
 ### Remove an individual card
 
-Click on the 6-dot icon in the corner of any card to open a menu. Click the **Remove Card** item to remove the card.
+Click on the 3-dot icon in the corner of any card to open a menu. Click the **Remove Card** item to remove the card.
 
 ### Delete a dashboard
 
