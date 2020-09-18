@@ -47,10 +47,10 @@ module.exports = {
           type: 'category',
           label: 'Configure',
           items: [
-            'configure/space-war-rooms',
+            'configure/spaces-war-rooms',
             'configure/invite-collaborate',
             'configure/nodes',
-            'configure/secure-nodes-web-proxy',
+            'configure/secure-nodes',
           ]
         },
         {
@@ -75,6 +75,7 @@ module.exports = {
           type: 'category',
           label: 'Monitor',
           items: [
+            'monitor/view-active-alarms',
             'monitor/configure-alarms',
             'monitor/enable-notifications',
           ]

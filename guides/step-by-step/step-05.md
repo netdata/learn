@@ -70,7 +70,11 @@ the `warn` and `crit` lines to the values of your choosing. For example:
 ```
 
 You _can_ [restart Netdata](/docs/agent/getting-started#start-stop-and-restart-netdata) to enable your tune, but you can
-also reload _only_ the health monitoring component using one of the available [methods](/docs/agent/health/quickstart#reload-health-configuration).
+also send a signal to Netdata to reload _only_ the health monitoring component.
+
+```bash
+killall -USR2 netdata
+```
 
 You can also tune any other aspect of the default alarms. To better understand how each line in a health entity works,
 read our [health documentation](/docs/agent/health).
@@ -102,7 +106,7 @@ To silence this alarm, change `sysadmin` to `silent`.
       to: silent
 ```
 
-Use `netdatacli reload-health` to reload your health configuration. You can add `to: silent` to any alarm you'd rather not
+Use `killall -USR2 netdata` to reload your health configuration. You can add `to: silent` to any alarm you'd rather not
 bother you with notifications.
 
 ## Write your first health entity
