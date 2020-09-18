@@ -14,7 +14,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'learn'
+          id: 'netdata'
         },
         {
           type: 'category',
@@ -93,14 +93,6 @@ module.exports = {
           items: [
             'store/change-metrics-retention',
             'store/calculator',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Export',
-          items: [
-            'export/integrate-monitoring-stack',
-            'export/enable-exporting',
           ]
         },
       ]

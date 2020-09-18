@@ -12,7 +12,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          homePageId: 'learn', // Defaults to `_index`
+          homePageId: 'netdata', // Defaults to `_index`
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/netdata/netdata/edit/master/',
           showLastUpdateTime: true,

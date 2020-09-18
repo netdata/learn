@@ -43,6 +43,20 @@
     bottom: var(--ifm-spacing-horizontal);
     left: var(--ifm-spacing-horizontal);
   }
+
+  @media (max-width: 700px) {
+    flex-flow: row wrap;
+
+    header {
+      flex: 1 0 100%;
+      margin-right: 0;
+    }
+
+    main {
+      flex: 1 0 100%;
+      margin-top: 2rem;
+    }
+  }
 }
 
 .LearnLinks {
