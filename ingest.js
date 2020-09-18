@@ -28,7 +28,7 @@ const learnPaths = [
 ]
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/joelhans/',
+  baseURL: 'https://api.github.com/repos/netdata/',
   headers: {
     'Authorization': `token ${GITHUB_TOKEN}`
   }

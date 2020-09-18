@@ -49,7 +49,7 @@ for free.
       <LearnLink to="/docs/configure/spaces-war-rooms" title="Set up Spaces and War Rooms" />
       <LearnLink to="/docs/configure/invite-collaborate" title="Invite your team and collaborate" />
       <LearnLink to="/docs/configure/nodes" title="Configure your nodes" />
-      <LearnLink to="/docs/configure/secure-nodes-web-proxy" title="Secure your nodes behind a web proxy" />
+      <LearnLink to="/docs/configure/secure-nodes" title="Secure your nodes behind a web proxy" />
     </LearnLinks>
   </LearnBox>
   <LearnBox 
@@ -74,26 +74,35 @@ for free.
     title="Monitor"
     description="Leverage Netdata's health watchdog and hundreds of pre-configured alarms to receive notifications on your favorite platforms whenever an anomaly affects the health or performance of your infrastructure.">
     <LearnLinks>
+      <LearnLink to="/docs/monitor/view-active-alarms" title="View active health alarms" />
       <LearnLink to="/docs/monitor/configure-alarms" title="Configure health alarms" />
       <LearnLink to="/docs/monitor/enable-notifications" title="Enable notifications" />
+    </LearnLinks>
+  </LearnBox>
+  <LearnBox 
+    title="Troubleshoot"
+    description="Use visualizations, alarms, thousands of real-time metrics, and sophisticated tooling to help you identify, diagnose, and solve complex performance issues on your node or across your infrastructure.">
+    <LearnLinks>
+      <LearnLink to="/docs/troubleshoot/visual-anomaly-detection" title="Visually detect anomalies" />
+      <LearnLink to="/docs/troubleshoot/metric-correlations" title="Root cause analysis with Metric Correlations" />
     </LearnLinks>
   </LearnBox>
   <LearnBox 
     title="Store"
     description="Netdata's distributed data model simplifies how you store metrics and dramatically reduces the cost compared to centralizing per-second metrics in one place. Configure your nodes to store the metrics you need.">
     <LearnLinks>
-      <LearnLink to="/docs/store/chane-metrics-retention" title="Change how long Netdata retains metrics" />
+      <LearnLink to="/docs/store/change-metrics-retention" title="Change how long Netdata retains metrics" />
       <LearnLink to="/docs/store/calculator" title="Calculate the disk and RAM needed to store your metrics" />
     </LearnLinks>
   </LearnBox>
-  <LearnBox 
+  {/* <LearnBox 
     title="Export"
     description="Send Netdata's metrics to other time-series databases to extend and improve your monitoring stack with per-second metrics. Archive or correlate metrics using other platforms.">
     <LearnLinks>
       <LearnLink to="/docs/export/integrate-monitoring-stack" title="Integrate Netdata with your monitoring stack" />
       <LearnLink to="/docs/store/enable-exporting" title="Enable an exporting connector" />
     </LearnLinks>
-  </LearnBox>
+  </LearnBox> */}
 </Learn>
 
 ## Reference docs
