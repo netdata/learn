@@ -6,7 +6,7 @@
 
 **Merged pull requests:**
 
-- Unix socket docker [\#9927](https://github.com/netdata/netdata/pull/9927) ([thiagoftsm](https://github.com/thiagoftsm))
+- Add notice to Docker docs about systemd volumes [\#9927](https://github.com/netdata/netdata/pull/9927) ([thiagoftsm](https://github.com/thiagoftsm))
 - Add persistent configuration details to Docker docs [\#9926](https://github.com/netdata/netdata/pull/9926) ([joelhans](https://github.com/joelhans))
 - Add guide for monitoring Pi-hole and Raspberry Pi [\#9770](https://github.com/netdata/netdata/pull/9770) ([joelhans](https://github.com/joelhans))
 
@@ -208,7 +208,6 @@
 - Fixed duplicate alarm ids in health-log.db [\#9428](https://github.com/netdata/netdata/pull/9428) ([stelfrag](https://github.com/stelfrag))
 - Correct virtualization detection in system-info.sh [\#9425](https://github.com/netdata/netdata/pull/9425) ([Ferroin](https://github.com/Ferroin))
 - Stop reading from /proc/sys/kernel/osrelease at trailing newline [\#9374](https://github.com/netdata/netdata/pull/9374) ([sjuxax](https://github.com/sjuxax))
-- Show cgroups/containers ran by Kubelet without access to Kubernetes cluster information [\#9321](https://github.com/netdata/netdata/pull/9321) ([cakrit](https://github.com/cakrit))
 
 ## [v1.23.0](https://github.com/netdata/netdata/tree/v1.23.0) (2020-06-25)
 
@@ -230,16 +229,6 @@
 - installer: update go.d.plugin version to v0.19.2 [\#9340](https://github.com/netdata/netdata/pull/9340) ([ilyam8](https://github.com/ilyam8))
 - Get netdata execution path early to avoid user permission issues [\#9339](https://github.com/netdata/netdata/pull/9339) ([mfundul](https://github.com/mfundul))
 - Fix issues on ebpf.plugin [\#9333](https://github.com/netdata/netdata/pull/9333) ([thiagoftsm](https://github.com/thiagoftsm))
-- Remove Gentoo from CI [\#9327](https://github.com/netdata/netdata/pull/9327) ([prologic](https://github.com/prologic))
-- Fixed invalid memory access [\#9326](https://github.com/netdata/netdata/pull/9326) ([stelfrag](https://github.com/stelfrag))
-- Add support for persistent metadata [\#9324](https://github.com/netdata/netdata/pull/9324) ([stelfrag](https://github.com/stelfrag))
-- Change streaming terminology to parent-child in the code [\#9323](https://github.com/netdata/netdata/pull/9323) ([amoss](https://github.com/amoss))
-- Fix check for remote write header in unit tests [\#9318](https://github.com/netdata/netdata/pull/9318) ([vlvkobal](https://github.com/vlvkobal))
-- Adds missing files for streaming changes into cmake build [\#9316](https://github.com/netdata/netdata/pull/9316) ([underhood](https://github.com/underhood))
-- apps\_groups.conf: add agent-service-discovery [\#9315](https://github.com/netdata/netdata/pull/9315) ([ilyam8](https://github.com/ilyam8))
-- Change streaming terminology to parent/child in docs [\#9312](https://github.com/netdata/netdata/pull/9312) ([joelhans](https://github.com/joelhans))
-- Added dummy `--enable-ebpf` flag to avoid breaking updates. [\#9310](https://github.com/netdata/netdata/pull/9310) ([Ferroin](https://github.com/Ferroin))
-- installer: update go.d.plugin version to v0.19.1 [\#9309](https://github.com/netdata/netdata/pull/9309) ([ilyam8](https://github.com/ilyam8))
 
 ## [v1.22.1](https://github.com/netdata/netdata/tree/v1.22.1) (2020-05-12)
 
