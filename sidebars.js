@@ -91,8 +91,8 @@ module.exports = {
           type: 'category',
           label: 'Store',
           items: [
-            'store/change-metrics-retention',
-            'store/calculator',
+            'store/distributed-data-architecture',
+            'store/change-metrics-storage',
           ]
         },
       ]
