@@ -666,7 +666,40 @@ html[data-theme='dark'] code {
     border-radius: var(--ifm-global-radius);
     box-shadow: var(--ifm-global-shadow-md);
   }
+
+  details {
+    border: 1px solid var(--ifm-contents-border-color);
+    border-radius: 2px;
+    margin-bottom: var(--ifm-paragraph-margin-bottom);
+    padding: 1rem;
+
+    summary {
+      font-weight: 500;
+      color: var(--ifm-color-primary);
+
+      &:hover {
+        cursor: pointer;
+        color: var(--ifm-color-secondary);
+        text-decoration: underline;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    iframe {
+      max-width: 100%;
+    }
+
+    &[open] {
+      summary {
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
 }
+
 // Installation page
 
 .installer-grid {

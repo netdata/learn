@@ -57,7 +57,8 @@ guide](/docs/agent/claim/#troubleshooting).
 
 ### How do I add a node to an existing Space?
 
-You must be the Space owner to claim a new node to an existing Space. Find the drop-down menu for your Space, by name, then select the "Manage Space" option.
+You must be the Space owner to claim a new node to an existing Space. Find the drop-down menu for your Space, by name,
+then select the **Manage Space** option.
 
 Select **Manage Space**.
 
@@ -68,6 +69,11 @@ Select **Nodes**.
 ![Nodes Tab](/img/docs/cloud/claim-node-script.png)
 
 Select any War Rooms relevant for the new node, then use the claim script command provided.
+
+<details>
+<summary>Watch a video walkthrough of node claiming</summary>
+<iframe width="820" height="460" src="https://www.youtube.com/embed/UAzVvhMab8g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</details>
 
 ### How do I rename a node?
 
