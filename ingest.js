@@ -20,7 +20,6 @@ const outDir = path.join(__dirname, agentDir)
 const retainPaths = [
   path.join(baseDir, 'agent.mdx'),
   path.join(baseDir, 'cloud.mdx'),
-  path.join(baseDir, 'store/calculator.mdx'),
 ]
 
 const learnPaths = [
@@ -114,6 +113,12 @@ function normalizeLinks(pages) {
       // Skip the whole process if a relative anchor, external link, or a mailto
       // link. Return the normalized link.
       if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
+
+      if (url.includes('docs/collect/') || url.includes('docs/configure/') || url.includes('docs/export/') ||
+          url.includes('docs/configure/') || url.includes('docs/monitor/') || url.includes('docs/quickstart/') ||
+          url.includes('docs/store/') || url.includes('docs/visualize/') || url.includes('docs/get/')) {
+        return `](${url})`
+      }
 
       // If the link is to a guide page in the `/docs/guides` folder.
       if (url.includes('guides/')) {

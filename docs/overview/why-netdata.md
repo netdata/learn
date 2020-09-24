@@ -58,6 +58,6 @@ open-source tools.
 
 Whether you already have a monitoring stack you want to integrate Netdata into, or are building something from the
 ground-up, you should read more on how Netdata can work either [standalone or as an interoperable part of a monitoring
-stack](/docs/agent/overview/netdata-monitoring-stack).
+stack](/docs/overview/netdata-monitoring-stack).
 
 

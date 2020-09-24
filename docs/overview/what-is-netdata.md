@@ -67,7 +67,7 @@ case:
 
 ## What's next?
 
-Learn more about [why you should use Netdata](/docs/agent/overview/why-netdata), or [how Netdata works with your existing
-monitoring stack](/docs/agent/overview/netdata-monitoring-stack).
+Learn more about [why you should use Netdata](/docs/overview/why-netdata), or [how Netdata works with your existing
+monitoring stack](/docs/overview/netdata-monitoring-stack).
 
 
