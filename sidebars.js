@@ -28,15 +28,6 @@ module.exports = {
         'get',
         {
           type: 'category',
-          label: 'Deploy',
-          items: [
-            'deploy/public-cloud',
-            'deploy/automation',
-            'deploy/containers-microservices',
-          ]
-        },
-        {
-          type: 'category',
           label: 'Quickstart',
           items: [
             'quickstart/single-node',
@@ -82,17 +73,18 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Troubleshoot',
-          items: [
-            'troubleshoot/visual-anomaly-detection',
-          ]
-        },
-        {
-          type: 'category',
           label: 'Store',
           items: [
             'store/distributed-data-architecture',
             'store/change-metrics-storage',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Export',
+          items: [
+            'export/external-databases',
+            'export/enable-connector',
           ]
         },
       ]

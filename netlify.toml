@@ -62,4 +62,4 @@
 
 [[redirects]]
   from = "/docs/export"
-  to = "/docs/export/send-metrics-external-db"
+  to = "/docs/export/external-databases"

@@ -9,130 +9,85 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import styles from './styles.module.scss';
 
-import CodeBlock from '@theme/CodeBlock'
-import { FiBox, FiServer, FiSliders, FiActivity, FiCpu, FiHome, FiMonitor, FiGrid, FiHardDrive, FiLock } from "react-icons/fi";
+import { StartBox } from '../components/StartBox/'
+import { Discover, DiscoverBox } from '../components/agent/DiscoverBox/'
 
-const docs = [
-  {
-    title: <>Getting started guide</>,
-    href: 'docs/agent/getting-started',
-    description: (
-      <>
-        Configure metrics retention, build streaming connections, collect metrics 
-        from custom apps, create custom dashboards, and much more.
-      </>
-    ),
-  },
-  {
-    title: <>Configuration</>,
-    href: 'docs/agent/configuration-guide',
-    description: (
-      <>
-        Use Netdata’s expansive customization possibilities to suit any service, any system, and any infrastructure.
-      </>
-    ),
-  },
-  {
-    title: <>Collect metrics</>,
-    href: 'docs/agent/collectors',
-    description: (
-      <>
-        Add more charts to Netdata via its intelligent auto-detection of popular web servers, databases, mail servers, security apps, and dozens more.
-      </>
-    ),
-  },
-  {
-    title: <>Health monitoring</>,
-    href: 'docs/agent/health',
-    description: (
-      <>
-        Tune existing alarms or create new ones, and enable any number of notification systems based on roles and severity.
-      </>
-    ),
-  },
-  {
-    title: <>Netdata Cloud</>,
-    href: 'docs/cloud',
-    description: (
-      <>
-        Learn how to view real-time, distributed health monitoring and performance troubleshooting data for all your systems in one place.
-      </>
-    ),
-  },
-  {
-    title: <>Custom dashboards</>,
-    href: 'docs/agent/web/gui/custom',
-    description: (
-      <>
-        Build bespoke dashboards with simple HTML and JavaScript to put all of your most important metrics in one easy-to-understand place.
-      </>
-    ),
-  },
-];
+export const Index = ({children}) => (
+  <div className={styles.Index}>
+    {children}
+  </div>
+)
+export const IndexBox = ({children, href, title}) => (
+  <Link href={href} className={styles.IndexBox}>
+    <h3>{title}</h3>
+    <p>{children}</p>
+  </Link>
+);
 
-function DocBox({title, href, description}) {
+const updates = [
+  {
+    title: <>Collect metrics from any Prometheus endpoint</>,
+    href: 'docs/agent/collectors/go.d.plugin/modules/prometheus',
+    date: 'August 10, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Collect from more than 600 services that support the Prometheus/OpenMetrics 
+        format for exposing metrics, often with zero configuration.
+      </>
+    ),
+  },
+  {
+    title: <>Video: Install Netdata on Linux in two minutes</>,
+    href: 'https://www.youtube.com/watch?v=tVIp7ycK60A',
+    date: 'July 8, 2020',
+    type: 'Video',
+    description: (
+      <>
+        Watch the entire process of using our one-line kickstart script, which
+        installs Netdata on most Linux systems in about two minutes.
+      </>
+    ),
+  },
+  {
+    title: <>Monitor a Kubernetes (k8s) cluster with Netdata</>,
+    href: 'guides/monitor/kubernetes-k8s-netdata',
+    date: 'July 6, 2020',
+    type: 'Guide',
+    description: (
+      <>
+        Use Netdata&#x27;s Helm chart, service discovery plugin, and Kubelet/kube-proxy 
+        collectors for real-time visibility into your Kubernetes cluster.
+      </>
+    ),
+  },
+  {
+    title: <>Install Netdata on a Kubernetes cluster</>,
+    href: 'docs/agent/packaging/installer/methods/kubernetes',
+    date: 'July 3, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Use Netdata&#x27;s Helm chart to bootstrap a Netdata monitoring and 
+        troubleshooting toolkit on your Kubernetes (k8s) cluster.
+      </>
+    ),
+  }
+]
+
+function UpdateBox({title, href, date, type, description}) {
   return (
-    <Link to={useBaseUrl(href)} className={clsx('col col--4', styles.docBox)}>
+    <Link to={useBaseUrl(href)} className={clsx('col col--3', styles.updateBox)}>
+      <header>{date} <span>{type}</span></header>
       <h3>{title}</h3>
       <p>{description}</p>
     </Link>
   );
 }
 
-function StepByStepLink({icon, title, href}) {
-  return (
-    <Link 
-      className={styles.stepByStepLink}
-      to={useBaseUrl(href)}>
-      <div className={styles.stepByStepIcon}>{icon}</div>
-      {title}
-    </Link>
-  )
-}
-
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-
-  const [currentCommandUpdates, setCurrentCommandUpdates] = useState('');
-  const [currentCommandRelease, setCurrentCommandRelease] = useState('');
-  const [currentCommandStatistics, setCurrentCommandStatistics] = useState('');
-  const [updatesChecked, setUpdatesChecked] = useState(true);
-  const [releaseChecked, setReleaseChecked] = useState(true);
-  const [statsChecked, setStatsChecked] = useState(true);
-
-  let currentCommand = `bash <(curl -Ss https://my-netdata.io/kickstart.sh)${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}`;
-  const lang = `bash`
-
-  function handleUpdatesChange() {
-    if (currentCommandUpdates === '' && updatesChecked == true) {
-      setCurrentCommandUpdates(' --no-updates');
-      setUpdatesChecked(false);
-    } else {
-      setCurrentCommandUpdates('');
-      setUpdatesChecked(true);
-    }
-  }
-
-  function handleReleaseChange() {
-    if (currentCommandRelease === '' && releaseChecked == true) {
-      setCurrentCommandRelease(' --stable-channel');
-      setReleaseChecked(false);
-    } else {
-      setCurrentCommandRelease('');
-      setReleaseChecked(true);
-    }
-  }
-
-  function handleStatisticsChange() {
-    if (currentCommandStatistics === '' && statsChecked == true) {
-      setCurrentCommandStatistics(' --disable-telemetry');
-      setStatsChecked(false);
-    } else {
-      setCurrentCommandStatistics('');
-      setStatsChecked(true);
-    }
-  }
 
   return (
     <Layout
@@ -146,33 +101,14 @@ function Home() {
                 'col col--6',
                 styles.heroText
               )}>
-              <span>Learn @ Netdata</span>
               <h1 className={styles.heroTagline}>
-                All your monitoring education in one place.
+                Learn Netdata
               </h1>
               <p className={styles.heroSubHead}>
-                Learn alongside thousands of others who want to discover deeper insights about 
-                their systems and applications with Netdata's real-time health monitoring and 
-                performance troubleshooting toolkit.
+                View documentation, guides, and videos for single-node and infrastructure monitoring 
+                with Netdata. Discover new insights of your systems, containers, and applications 
+                using per-second metrics, insightful visualizations, and every metric imaginable.
               </p>
-              <div className={styles.buttons}>
-                <Link
-                  className={clsx(
-                    'button button--lg',
-                    styles.getStarted,
-                  )}
-                  to={useBaseUrl('#installation')}>
-                  Get Netdata
-                </Link>
-                <Link
-                  className={clsx(
-                    'button button--secondary button--lg',
-                    styles.getStarted,
-                  )}
-                  to={useBaseUrl('docs')}>
-                  Read the docs
-                </Link>
-              </div>
             </div>
             <div className={clsx('col col--6', styles.heroImageContainer)}>
               <SVG 
@@ -187,181 +123,68 @@ function Home() {
         </div>
       </header>
       <main>
-        <section id="installation" className={styles.install}>
-          <div className={clsx('container shadow--lw', styles.installContainer)}>
+        <section className={styles.CTAs}>
+          <div className={clsx('container')}>
             <div className={clsx('row')}>
               <div className={clsx('col col--8')}>
-                <h2>Get Netdata on Linux with a one-liner</h2>
-                <p>Or choose the appropriate OS or alternative method for your system. 👉</p> 
-                <div className={styles.installSelection}>
-                  <div className={styles.installCheckbox}>
-                    <input 
-                      onChange={handleUpdatesChange}
-                      checked={updatesChecked}
-                      type="checkbox" id="toggle__updates"/>
-                    <label htmlFor="toggle__updates">Do you want automatic updates? <code>default: enabled</code></label>
-                  </div>
-                  <div className={styles.installCheckbox}>
-                    <input 
-                      onChange={handleReleaseChange}
-                      checked={releaseChecked}
-                      type="checkbox" id="toggle__type" />
-                    <label htmlFor="toggle__type">Do you want nightly or stable releases? <code>default: nightly</code></label>
-                  </div>
-                  <div className={styles.installCheckbox}>
-                    <input 
-                      onChange={handleStatisticsChange}
-                      checked={statsChecked}
-                      type="checkbox" id="toggle__stats" />
-                    <label htmlFor="toggle__stats">Do you want to contribute anonymous statistics? <code>default: enabled</code></label>
-                  </div>
-                  <CodeBlock className={clsx('bash', styles.installCommand)} language={lang}>{currentCommand}</CodeBlock>
-                  <p>Click <strong>Copy</strong>, paste into your system’s terminal, and hit <strong>Enter</strong>.</p>
-                  <p>Open your favorite browser and navigate to <code>http://localhost:19999</code> to find Netdata’s real-time dashboard with hundreds of pre-configured charts and alarms.</p>
-                </div>
-              </div>
-              <div className={clsx('col col--4', styles.installMethods)}>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/kickstart-64')}>
-                  <SVG 
-                    src="img/index/methods/static.svg" 
-                    alt="Install Netdata with a static binary"
-                  />
-                  Static 64-bit binary
-                </Link>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/packages')}>
-                  <SVG 
-                    src="img/index/methods/package.svg" 
-                    alt="Install Netdata with .deb/.rpm packages"
-                  />
-                  .deb/.rpm packages
-                </Link>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/kubernetes')}>
-                  <SVG 
-                    width="50"
-                    height="64"
-                    viewport="50 64"
-                    src="img/index/methods/kubernetes.svg" 
-                    alt="Install Netdata on a Kubernetes cluster"
-                  />
-                  Kubernetes
-                </Link>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/docker')}
-                >
-                  <SVG 
-                    src="img/index/methods/docker.svg" 
-                    alt="Install Netdata with Docker"
-                  />
-                  Docker
-                </Link>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/macos')}
-                >
-                  <SVG 
-                    src="img/index/methods/macos.svg" 
-                    alt="Install Netdata on macOS"
-                  />
-                  macOS
-                </Link>
-                <Link
-                  className={clsx(styles.installMethod)}
-                  to={useBaseUrl('docs/agent/packaging/installer/methods/cloud-providers')}
-                >
-                  <SVG 
-                    src="img/index/methods/cloud.svg" 
-                    alt="Install Netdata on cloud providers"
-                  />
-                  Cloud providers
-                </Link>
-                <p><Link to="docs/agent/packaging/installer/">Additional operating systems &amp; methods &rarr;</Link></p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className={styles.stepByStep}>
-          <div className={clsx('container')}>
-            <div className={clsx('row row--center')}>
-              <div className={clsx('col col--12')}>
-                <h2>Learn Netdata step-by-step</h2>
+                <StartBox 
+                  to="/docs/get"
+                  title="Get Netdata"
+                  description="Sign up for Netdata Cloud and install the open-source Agent on one or more nodes. If you have an infrastructure to monitor, connect all your distributed nodes to Cloud for seamless infrastructure-wide monitoring."
+                  image={true} />
               </div>
               <div className={clsx('col col--4')}>
-                <p>Take a guided tour through Netdata's core features, including its famous dashboard, creating new alarms, and collecting metrics from your favorite services and applications.</p>
-                <p>Ten easy-to-parse parts designed for beginners&mdash;perfect first experience for those who want to get started with monitoring and troubleshooting.</p>
-              </div>
-              <div className={clsx('col col--4', styles.stepByStepLinks)}>
-                <StepByStepLink
-                  href="guides/step-by-step/step-01"
-                  icon={<FiBox />}
-                  title="Netdata's building blocks"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-02"
-                  icon={<FiHome />}
-                  title="Get to know Netdata's dashboard"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-03"
-                  icon={<FiServer />}
-                  title="Monitor more than one system with Netdata"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-04"
-                  icon={<FiSliders />}
-                  title="The basics of configuring Netdata"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-05"
-                  icon={<FiActivity />}
-                  title="Health monitoring alarms and notifications"
-                />
-              </div>
-              <div className={clsx('col col--4', styles.stepByStepLinks)}>
-                <StepByStepLink
-                  href="guides/step-by-step/step-06"
-                  icon={<FiCpu />}
-                  title="Collect metrics from more services and apps"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-07"
-                  icon={<FiMonitor />}
-                  title="Netdata’s dashboard in depth"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-08"
-                  icon={<FiGrid />}
-                  title="Building your first custom dashboard"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-09"
-                  icon={<FiHardDrive />}
-                  title="Long-term metrics storage"
-                />
-                <StepByStepLink
-                  href="guides/step-by-step/step-10"
-                  icon={<FiLock />}
-                  title="Set up a proxy"
-                />
+                <DiscoverBox 
+                  href="/docs" 
+                  title="Read documentation">
+                  TK
+                </DiscoverBox>
               </div>
             </div>
-          </div>
-        </section>
-        <section className={styles.docs}>
-          <div className={clsx('container')}>
             <div className={clsx('row')}>
-              {docs.map((props, idx) => (
-                <DocBox key={idx} {...props} />
-              ))}
+              <div className={clsx('col col--3')}>
+                <DiscoverBox 
+                  href="/docs" 
+                  title="Read documentation">
+                  TK
+                </DiscoverBox>
+              </div>
+              <div className={clsx('col col--3')}>
+                <DiscoverBox 
+                  href="/docs" 
+                  title="Read documentation">
+                  TK
+                </DiscoverBox>
+              </div>
+              <div className={clsx('col col--3')}>
+                <DiscoverBox 
+                  href="/docs" 
+                  title="Read documentation">
+                  TK
+                </DiscoverBox>
+              </div>
+              <div className={clsx('col col--3')}>
+                <DiscoverBox 
+                  href="/docs" 
+                  title="Read documentation">
+                  TK
+                </DiscoverBox>
+              </div>
             </div>
           </div>
         </section>
+        <div className={clsx('container', styles.changelog)}>
+          <div className={clsx('row')}>
+            <div className={clsx('col col--6')}>
+              <h2>Recent updates and new content</h2>
+            </div>
+          </div>
+          <div className={clsx('row')}>
+            {updates.map((props, idx) => (
+              <UpdateBox key={idx} {...props} />
+            ))}
+          </div>
+        </div>
       </main>
     </Layout>
   );
