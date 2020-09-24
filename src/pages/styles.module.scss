@@ -10,8 +10,8 @@
 .hero {
   position: relative;
   // overflow: hidden;
-  padding: 8rem 0 6rem;
-  background: linear-gradient(to bottom, white, #ededf3);
+  padding: 8rem 0 5rem;
+  background: linear-gradient(to bottom, white, #f1f2fb);
 
   span {
     display: block;
@@ -96,15 +96,23 @@
 
 .CTAs {
   padding: 6rem 0 0;
+  margin-bottom: 5rem;
 
   div[class*="row"] {
     margin-bottom: 3rem;
   }
 
-  a {
+  div > a {
     margin-top: 0;
     display: block;
     height: 100%;
+    box-shadow: 0 10px 15px -3px hsla(198,23%,3%,0.06),0 4px 6px -2px hsla(198,23%,3%,0.12);
+  }
+
+  @media (max-width: 996px) {
+    div[class*="col"] + div[class*="col"] {
+      margin-top: 4rem;
+    }
   }
 }
 
@@ -113,8 +121,9 @@
  */
 
 .changelog {
-  margin-top: 6rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
+  background: #f1f2fb;
 
   h2 {
     margin-bottom: calc(var(--ifm-paragraph-margin-bottom) * 2);
@@ -122,6 +131,10 @@
 }
 
 .updateBox {
+  &:first-of-type {
+    margin-bottom: 1rem;
+  }
+
   header {
     font-family: var(--ifm-font-family-monospace);
     font-weight: 500;
@@ -153,10 +166,10 @@ html[data-theme='dark'] {
   }
 
   .hero {
-    background: #191927;
+    background: linear-gradient(to bottom, #191927, #22272E);
   }
 
-  .installContainer {
+  .changelog {
     background: #22272E;
   }
 

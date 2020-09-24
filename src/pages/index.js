@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.scss';
 
 import { StartBox } from '../components/StartBox/'
-import { Discover, DiscoverBox } from '../components/agent/DiscoverBox/'
+import { DiscoverBox } from '../components/agent/DiscoverBox/'
 
 export const Index = ({children}) => (
   <div className={styles.Index}>
@@ -77,7 +77,7 @@ const updates = [
 
 function UpdateBox({title, href, date, type, description}) {
   return (
-    <Link to={useBaseUrl(href)} className={clsx('col col--3', styles.updateBox)}>
+    <Link to={useBaseUrl(href)} className={clsx('col col--6', styles.updateBox)}>
       <header>{date} <span>{type}</span></header>
       <h3>{title}</h3>
       <p>{description}</p>
@@ -130,61 +130,44 @@ function Home() {
                 <StartBox 
                   to="/docs/get"
                   title="Get Netdata"
-                  description="Sign up for Netdata Cloud and install the open-source Agent on one or more nodes. If you have an infrastructure to monitor, connect all your distributed nodes to Cloud for seamless infrastructure-wide monitoring."
+                  description="Sign up for Netdata Cloud and install the open-source Agent on your
+                  nodes. Claim and connect your nodes to Netdata Cloud for seamless, scalable, 
+                  and granular infrastructure monitoring."
+                  button="Download now &rarr;"
                   image={true} />
               </div>
               <div className={clsx('col col--4')}>
                 <DiscoverBox 
                   href="/docs" 
                   title="Read documentation">
-                  TK
+                  Follow quickstart guides for monitoring single nodes or infrastructure with Netdata. 
+                  Learn how to collect metrics, interact with dashboards, store long-term metrics, 
+                  set up health alarms &amp; notifications, and more.
                 </DiscoverBox>
               </div>
             </div>
             <div className={clsx('row')}>
-              <div className={clsx('col col--3')}>
-                <DiscoverBox 
-                  href="/docs" 
-                  title="Read documentation">
-                  TK
-                </DiscoverBox>
-              </div>
-              <div className={clsx('col col--3')}>
-                <DiscoverBox 
-                  href="/docs" 
-                  title="Read documentation">
-                  TK
-                </DiscoverBox>
-              </div>
-              <div className={clsx('col col--3')}>
-                <DiscoverBox 
-                  href="/docs" 
-                  title="Read documentation">
-                  TK
-                </DiscoverBox>
-              </div>
-              <div className={clsx('col col--3')}>
-                <DiscoverBox 
-                  href="/docs" 
-                  title="Read documentation">
-                  TK
-                </DiscoverBox>
+              <div className={clsx('col col--8')}>
+                <h3>Join our community and contribute</h3>
+                <p>Find us on our <Link href="https://community.netdata.cloud/">forums</Link> or <Link href="https://github.com/netdata/netdata">GitHub</Link>. If you're ready to contribute code, read our <Link to="/docs/agent/contributing/">contributing guidelines</Link> and the <Link to="/docs/agent/code_of_conduct">Contributor Covenant Code of Conduct</Link>. If documentation is more your style, read the <Link to="/docs/agent/contributing/contributing-documentation">docs guidelines</Link> and the <Link to="/docs/agent/contributing/style-guide">Netdata style guide</Link>.</p>
               </div>
             </div>
           </div>
         </section>
-        <div className={clsx('container', styles.changelog)}>
-          <div className={clsx('row')}>
-            <div className={clsx('col col--6')}>
-              <h2>Recent updates and new content</h2>
+        <section className={clsx(styles.changelog)}>
+          <div className={clsx('container')}>
+            <div className={clsx('row')}>
+              <div className={clsx('col col--6')}>
+                <h2>Recent updates and new content</h2>
+              </div>
+            </div>
+            <div className={clsx('row')}>
+              {updates.map((props, idx) => (
+                <UpdateBox key={idx} {...props} />
+              ))}
             </div>
           </div>
-          <div className={clsx('row')}>
-            {updates.map((props, idx) => (
-              <UpdateBox key={idx} {...props} />
-            ))}
-          </div>
-        </div>
+        </section>
       </main>
     </Layout>
   );

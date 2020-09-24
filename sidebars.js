@@ -48,6 +48,8 @@ module.exports = {
           type: 'category',
           label: 'Collect',
           items: [
+            'collect/how-collectors-work',
+            'collect/enable-configure',
             'collect/system-metrics',
             'collect/container-metrics',
             'collect/application-metrics',
@@ -590,7 +592,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Developers/contributing',
+      label: 'Contributing',
       collapsed: false,
       items: [
         'agent/contributing',

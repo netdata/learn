@@ -10,10 +10,11 @@ export const Start = ({children}) => (
   </div>
 )
 
-export const StartBox = ({to, title, description, image}) => (
+export const StartBox = ({to, title, description, button, image}) => (
   <Link to={to} className={clsx(styles.StartBox, image && styles.StartBoxImg)}>
     <h2>{title}</h2>
     <p>{description}</p>
+    {button && <button className={clsx(styles.StartButton, 'button')}>{button}</button>}
     {image &&
       <svg viewBox="0 0 134 21" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path opacity="0.1" d="M0 1.75L4 3L6 5L10 8L14 9L17 10L18 12L21 14H25L28 11H30L33 13H36L39 11L42 10L44 8H48L50 5H53L56 7L60 9L63 7H67L68 10C68 10 70 12 71 11C72 10 74 12 74 12L79 14L81 11L85 10L89 7L92 6H95L99 8H103L106 6L108 4L112 5L115 6L119 7H123L126 6L129 5L132 6L134 7.26V21H0V1.75Z" fill="#EB5341"/>

@@ -115,11 +115,11 @@ html {
   --ifm-contents-link-color: var(--ifm-font-color-base);
 
   /* Footer */
-  --ifm-footer-background-color: var(--ifm-background-color);
-  --ifm-footer-color: var(--ifm-color-accent);
-  --ifm-footer-link-color: var(--ifm-color-accent);
+  --ifm-footer-background-color: #35414a;
+  --ifm-footer-title-color: white;
+  --ifm-footer-color: white;
+  --ifm-footer-link-color: white;
   --ifm-footer-link-hover-color: var(--ifm-color-accent);
-
 }
 
 /* 
@@ -493,13 +493,22 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
 }
 
 .footer.footer--dark {
-  --ifm-footer-background-color: var(--ifm-background-color);
   --ifm-footer-title-color: var(--ifm-font-color-base);
-  /* --ifm-footer-link-color: var(--ifm-color-gray-300); */
+  color: white;
+}
+
+.footer .footer__title {
+  color: white;
 }
 
 .footer .footer__links {
   margin-bottom: 3rem;
+  color: white;
+}
+
+.footer .footer__link-item {
+  color: white;
+  font-weight: 400;
 }
 
 /**
@@ -534,6 +543,7 @@ html[data-theme='dark'] a:hover {
 /* Buttons */
 .button {
   border: 2px solid var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-base);
   font-weight: 500;
 }
 

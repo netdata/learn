@@ -8,9 +8,10 @@ export const Discover = ({children}) => (
     {children}
   </div>
 )
-export const DiscoverBox = ({children, href, title}) => (
+export const DiscoverBox = ({children, href, title, button}) => (
   <Link href={href} className={styles.DiscoverBox}>
     <h3>{title}</h3>
     <p>{children}</p>
+    {button && <button>{button}</button>}
   </Link>
 );
