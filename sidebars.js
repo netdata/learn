@@ -21,7 +21,7 @@ module.exports = {
           label: 'Overview',
           items: [
             'overview/what-is-netdata',
-            'overview/why-use-netdata',
+            'overview/why-netdata',
             'overview/netdata-monitoring-stack',
           ]
         },
