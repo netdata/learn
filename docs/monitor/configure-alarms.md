@@ -10,13 +10,13 @@ Netdata's health watchdog is highly configurable, with support for dynamic thres
 more. You can tweak any of the existing alarms based on your infrastructure's topology or specific monitoring needs, or
 create new entities.
 
-You can use health alarms in conjunction with any of Netdata's [collectors](/docs/agent/collect/how-collectors-work) (see
+You can use health alarms in conjunction with any of Netdata's [collectors](/docs/collect/how-collectors-work) (see
 the [supported collector list](/docs/agent/collectors/collectors)) to monitor the health of your systems, containers, and
 applications in real time.
 
 While you can see active alarms both on the local dashboard and Netdata Cloud, all health alarms are configured _per
 node_ via individual Netdata Agents. If you want to deploy a new alarm across your
-[infrastructure](/docs/agent/quickstart/infrastructure), you must configure each node with the same health configuration
+[infrastructure](/docs/quickstart/infrastructure), you must configure each node with the same health configuration
 files.
 
 ## Edit health configuration files
@@ -136,7 +136,7 @@ without restarting all of Netdata, run `netdatacli reload-health` or `killall -U
 ## What's next?
 
 With your health entities configured properly, it's time to [enable
-notifications](/docs/agent/monitor/enable-notifications) to get notified whenever a node reaches a warning or critical
+notifications](/docs/monitor/enable-notifications) to get notified whenever a node reaches a warning or critical
 state.
 
 To build complex, dynamic alarms, read our guide on [dimension templates](/guides/monitor/dimension-templates).

@@ -113,9 +113,9 @@ Space. You're ready to start monitoring, visualizing, and troubleshooting with N
 based on the scope of what you need to monitor:
 
 Interested in monitoring a single node? Check out our [single-node monitoring
-quickstart](/docs/agent/quickstart/single-node).
+quickstart](/docs/quickstart/single-node).
 
 If you're looking to monitor an entire infrastructure with Netdata, see the [infrastructure monitoring
-quickstart](/docs/agent/quickstart/infrastructure).
+quickstart](/docs/quickstart/infrastructure).
 
 

@@ -53,13 +53,13 @@ metrics](/docs/agent/collectors/go.d.plugin/modules/mysql#charts) as well.
 ### Collect metrics from applications running in Docker containers
 
 You could use this technique to monitor an entire infrastructure of Docker containers. The same [enable and
-configure](/docs/agent/collect/enable-configure) procedures apply whether an application runs on the host system or inside
+configure](/docs/collect/enable-configure) procedures apply whether an application runs on the host system or inside
 a container. You may need to configure the target endpoint if it's not the application's default.
 
 Netdata can even [run in a Docker container](/docs/agent/packaging/docker) itself, and then collect metrics about the
 host system, its own container with cgroups, and any applications you want to monitor.
 
-See our [application metrics doc](/docs/agent/collect/application-metrics) for details about Netdata's application metrics
+See our [application metrics doc](/docs/collect/application-metrics) for details about Netdata's application metrics
 collection capabilities.
 
 ## Collect Kubernetes metrics
@@ -89,9 +89,9 @@ with Netdata_](/guides/monitor/kubernetes-k8s-netdata).
 ## What's next?
 
 Netdata is capable of collecting metrics from hundreds of applications, such as web servers, databases, messaging
-brokers, and more. See more in the [application metrics doc](/docs/agent/collect/application-metrics).
+brokers, and more. See more in the [application metrics doc](/docs/collect/application-metrics).
 
 If you already have all the information you need about collecting metrics, move into Netdata's meaningful visualizations
-with [viewing all nodes at a glance](/docs/agent/visualize/view-all-nodes).
+with [viewing all nodes at a glance](/docs/visualize/view-all-nodes).
 
 

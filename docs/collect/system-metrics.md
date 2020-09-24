@@ -8,7 +8,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/collect/sys
 
 
 Netdata collects thousands of metrics directly from the operating systems of physical and virtual systems, IoT/edge
-devices, and [containers](/docs/agent/collect/container-metrics) with zero configuration.
+devices, and [containers](/docs/collect/container-metrics) with zero configuration.
 
 To gather system metrics, Netdata uses roughly a dozen plugins, each of which has one or more collectors for very
 specific metrics exposed by the host. The system metrics Netdata users interact with most for health monitoring and
@@ -22,7 +22,7 @@ It even allows Netdata to monitor its own resource utilization!
 [**cgroups.plugin**](/docs/agent/collectors/cgroups.plugin) collects rich metrics about containers and virtual machines
 using the virtual files under `/sys/fs/cgroup`. By reading cgroups, Netdata can instantly collect resource utilization
 metrics for systemd services, all containers (Docker, LXC, LXD, Libvirt, systemd-nspawn), and more. Learn more in the
-[collecting container metrics](/docs/agent/collect/container-metrics) doc.
+[collecting container metrics](/docs/collect/container-metrics) doc.
 
 [**ebpf.plugin**](/docs/agent/collectors/ebpf.plugin): Netdata's extended Berkeley Packet Filter (eBPF) collector
 monitors Linux kernel-level metrics for file descriptors, virtual filesystem IO, and process management. You can use our
@@ -49,14 +49,14 @@ and port of your exposed endpoint. Restart Netdata with `service netdata restart
 metrics, such as CPU utilization, memory, bandwidth per NIC, number of processes, and much more.
 
 For information about collecting metrics from applications _running on Windows systems_, see the [application metrics
-doc](/docs/agent/collect/application-metrics#collect-metrics-from-applications-running-on-windows).
+doc](/docs/collect/application-metrics#collect-metrics-from-applications-running-on-windows).
 
 ## What's next?
 
-Because there's some overlap between system metrics and [container metrics](/docs/agent/collect/container-metrics), you
+Because there's some overlap between system metrics and [container metrics](/docs/collect/container-metrics), you
 should investigate Netdata's container compatibility if you use them heavily in your infrastructure.
 
-If you don't use containers, skip ahead to collecting [application metrics](/docs/agent/collect/application-metrics) with
+If you don't use containers, skip ahead to collecting [application metrics](/docs/collect/application-metrics) with
 Netdata.
 
 

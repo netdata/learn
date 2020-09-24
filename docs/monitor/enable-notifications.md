@@ -21,7 +21,7 @@ To use email notifications, you need [`sendmail`](http://www.postfix.org/sendmai
 your system.
 
 Edit the `health_alarm_notify.conf` file, which resides in your Netdata [config
-directory](/docs/agent/configure/nodes#netdata-config-directory).
+directory](/docs/configure/nodes#netdata-config-directory).
 
 ```bash
 sudo ./edit-config health_alarm_notify.conf

@@ -51,7 +51,7 @@ caveat is that you must [install the Agent](/docs/agent/packaging/installer) on 
 because there is no native Windows version of the Netdata Agent.
 
 Once you have the Agent running on that separate system, you can follow the [enable and configure
-doc](/docs/agent/collect/enable-configure) to tell the collector to look for exposed metrics on the Windows system's IP
+doc](/docs/collect/enable-configure) to tell the collector to look for exposed metrics on the Windows system's IP
 address or hostname, plus the applicable port.
 
 For example, you have a MySQL database with a root password of `my-secret-pw` running on a Windows system with the IP
@@ -71,6 +71,6 @@ list](/docs/agent/collectors/collectors#service-and-application-collectors) that
 
 Collecting all the available metrics on your nodes, and across your entire infrastructure, is just one piece of the
 puzzle. Next, learn more about Netdata's famous real-time visualizations by [viewing all your nodes at a
-glance](/docs/agent/visualize/view-all-nodes).
+glance](/docs/visualize/view-all-nodes).
 
 

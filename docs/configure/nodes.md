@@ -109,15 +109,15 @@ The documentation for each of Netdata's components explains which file(s) to edi
 ## What's next?
 
 Take advantage of this newfound understanding of node configuration to [add security to your
-node](/docs/agent/configure/secure-nodes). We have a few best practices based on how you use the Netdata Agent and Netdata
+node](/docs/configure/secure-nodes). We have a few best practices based on how you use the Netdata Agent and Netdata
 Cloud.
 
 You can also take what you've learned about node configuration to tweak the Agent's behavior or enable new features:
 
--   [Enable new collectors](/docs/agent/collect/enable) or tweak their behavior.
--   [Configure existing health alarms](/docs/agent/monitor/configure-alarms) or create new ones.
--   [Enable notifications](/docs/agent/monitor/enable-notifications) to receive updates about the health of your
+-   [Enable new collectors](/docs/collect/enable) or tweak their behavior.
+-   [Configure existing health alarms](/docs/monitor/configure-alarms) or create new ones.
+-   [Enable notifications](/docs/monitor/enable-notifications) to receive updates about the health of your
     infrastructure.
--   Change [the long-term metrics retention period](/docs/agent/store/change-metrics-retention) using the database engine.
+-   Change [the long-term metrics retention period](/docs/store/change-metrics-retention) using the database engine.
 
 

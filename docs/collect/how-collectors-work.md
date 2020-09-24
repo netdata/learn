@@ -19,8 +19,8 @@ Every collector has two primary jobs:
 
 If the collector finds compatible metrics exposed on the configured endpoint, it begins a per-second collection job. The
 Netdata Agent gathers these metrics, sends them to the [database engine for
-storage](/docs/agent/store/change-metrics-retention), and immediately [visualizes them
-meaningfully](/docs/agent/visualize/interact-dashboards-charts) on dashboards.
+storage](/docs/store/change-metrics-retention), and immediately [visualizes them
+meaningfully](/docs/visualize/interact-dashboards-charts) on dashboards.
 
 Each collector comes with a pre-defined configuration that matches the default setup for that application. This endpoint
 can be a URL and port, a socket, a file, a web page, and more.
@@ -39,11 +39,11 @@ To quickly find your answer, see our [list of supported collectors](/docs/agent/
 
 Generally, Netdata's collectors can be grouped into three types:
 
--   [Systems](/docs/agent/collect/system-metrics): Monitor CPU, memory, disk, networking, systemd, eBPF, and much more.
+-   [Systems](/docs/collect/system-metrics): Monitor CPU, memory, disk, networking, systemd, eBPF, and much more.
     Every metric exposed by `/proc`, `/sys`, and other Linux kernel sources.
--   [Containers](/docs/agent/collect/container-metrics): Gather metrics from container agents, like `dockerd` or `kubectl`,
+-   [Containers](/docs/collect/container-metrics): Gather metrics from container agents, like `dockerd` or `kubectl`,
     along with the resource usage of containers and the applications they run.
--   [Applications](/docs/agent/collect/application-metrics): Collect per-second metrics from web servers, databases, logs,
+-   [Applications](/docs/collect/application-metrics): Collect per-second metrics from web servers, databases, logs,
     message brokers, APM tools, email servers, and much more.
 
 ## Collector architecture and terminology
@@ -71,7 +71,7 @@ terms related to collecting metrics.
 
 ## What's next?
 
-[Enable or configure a collector](/docs/agent/collect/enable-configure) if the default settings are not compatible with
+[Enable or configure a collector](/docs/collect/enable-configure) if the default settings are not compatible with
 your infrastructure.
 
 See our [collectors reference](/docs/agent/collectors/reference) for detailed information on Netdata's collector architecture,

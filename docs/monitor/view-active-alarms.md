@@ -26,7 +26,7 @@ what that chart's current value is, the alarm that triggered it, and when the al
 
 You can use the input field in the Alarms panel to filter active alarms. You can sort by the node's name, alarm, status,
 chart that triggered the alarm, or the operating system. Read more about the [filtering
-syntax](/docs/agent/visualize/view-all-nodes#filter-and-group-your-infrastructure) to build valuable filters for your
+syntax](/docs/visualize/view-all-nodes#filter-and-group-your-infrastructure) to build valuable filters for your
 infrastructure.
 
 Click on the 3-dot icon (`⋮`) to view active alarm information or navigate directly to the offending chart in that
@@ -62,15 +62,15 @@ With the three icons beneath that and the **role** designation, you can:
 3.  Copy the code to embed the badge onto another web page using an `<embed>` element.
 
 The table on the right-hand side displays information about the health entity that triggered the alarm, which you can
-use as a reference to [configure alarms](/docs/agent/monitor/configure-alarms).
+use as a reference to [configure alarms](/docs/monitor/configure-alarms).
 
 ## What's next?
 
 With the information that appears on Netdata Cloud and the local dashboard about active alarms, you can [configure
-alarms](/docs/agent/monitor/configure-alarms) to match your infrastructure's needs or your team's goals.
+alarms](/docs/monitor/configure-alarms) to match your infrastructure's needs or your team's goals.
 
 If you're happy with the pre-configured alarms, skip ahead to [enable
-notifications](/docs/agent/monitor/enable-notifications) to instantly see alarms in email, Slack, PagerDuty, Twilio, and
+notifications](/docs/monitor/enable-notifications) to instantly see alarms in email, Slack, PagerDuty, Twilio, and
 many other platforms.
 
 

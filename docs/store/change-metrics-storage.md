@@ -46,7 +46,7 @@ want to store more metrics _specifically in memory_, you can increase the cache 
 ## Edit `netdata.conf` with recommended database engine settings
 
 Now that you have a recommended setting for `dbengine multihost disk space`, open `netdata.conf` with
-[`edit-config`](/docs/agent/configure/nodes#use-edit-config-to-edit-netdataconf) and look for the `dbengine multihost disk
+[`edit-config`](/docs/configure/nodes#use-edit-config-to-edit-netdataconf) and look for the `dbengine multihost disk
 space` setting. Change it to the value recommended above. For example:
 
 ```conf
@@ -61,8 +61,8 @@ Save the file and restart the Agent with `service netdata restart` to change the
 For more information about the database engine, see our [database reference doc](/docs/agent/database/engine).
 
 Storing metrics with the database engine is completely interoperable with [exporting to other time-series
-databases](/docs/agent/export/integrate-exporting). With exporting, you can use the node's resources to surface metrics
-when [viewing dashboards](/docs/agent/visualize/interact-dashboards-charts), while also archiving metrics elsewhere for
+databases](/docs/export/integrate-exporting). With exporting, you can use the node's resources to surface metrics
+when [viewing dashboards](/docs/visualize/interact-dashboards-charts), while also archiving metrics elsewhere for
 further analysis, visualization, or correlation with other tools. 
 
 If you don't want to always store metrics on the node that collects them or run ephemeral nodes without dedicated

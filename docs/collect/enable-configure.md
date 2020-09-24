@@ -15,7 +15,7 @@ to gather all available metrics from your systems, containers, or applications.
 You can enable/disable collectors individually, or enable/disable entire orchestrators, using their configuration files.
 For example, you can change the behavior of the Go orchestator, or any of its collectors, by editing `go.d.conf`.
 
-Use `edit-config` from your [Netdata config directory](/docs/agent/configure/nodes#the-netdata-config-directory) to open
+Use `edit-config` from your [Netdata config directory](/docs/configure/nodes#the-netdata-config-directory) to open
 the orchestrator's primary configuration file:
 
 ```bash
@@ -34,7 +34,7 @@ After you make your changes, restart the Agent with `service netdata restart`.
 First, [find the collector](/docs/agent/collectors/collectors) you want to edit and open its documentation. Some software has
 collectors written in multiple languages. In these cases, you should always pick the collector written in Go.
 
-Use `edit-config` from your [Netdata config directory](/docs/agent/configure/nodes#the-netdata-config-directory) to open a
+Use `edit-config` from your [Netdata config directory](/docs/configure/nodes#the-netdata-config-directory) to open a
 collector's configuration file. For example, edit the Nginx collector with the following:
 
 ```bash
@@ -50,11 +50,11 @@ After you make your changes, restart the Agent with `service netdata restart`.
 
 ## What's next?
 
-Read high-level overviews on how Netdata collects [system metrics](/docs/agent/collect/system-metrics), [container
-metrics](/docs/agent/collect/container-metrics), and [application metrics](/docs/agent/collect/application-metrics).
+Read high-level overviews on how Netdata collects [system metrics](/docs/collect/system-metrics), [container
+metrics](/docs/collect/container-metrics), and [application metrics](/docs/collect/application-metrics).
 
 If you're already collecting all metrics from your systems, containers, and applications, it's time to move into
-Netdata's visualization features. [View all your nodes at a glance](/docs/agent/visualize/view-all-nodes) or learn how to
-[interact with dashboards and charts](/docs/agent/visualize/interact-dashboards-charts).
+Netdata's visualization features. [View all your nodes at a glance](/docs/visualize/view-all-nodes) or learn how to
+[interact with dashboards and charts](/docs/visualize/interact-dashboards-charts).
 
 

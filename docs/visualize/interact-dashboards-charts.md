@@ -10,8 +10,8 @@ You can find Netdata's dashboards in two places: locally served at `http://NODE:
 Netdata Cloud. While you access these dashboards differently, they have similar interfaces, identical charts and
 metrics, and you interact with both of them the same way.
 
-> If you're not sure which option is best for you, see our [single-node](/docs/agent/quickstart/single-node) and
-> [infrastructure](/docs/agent/quickstart/infrastructure) quickstart guides.
+> If you're not sure which option is best for you, see our [single-node](/docs/quickstart/single-node) and
+> [infrastructure](/docs/quickstart/infrastructure) quickstart guides.
 
 ![A single-node dashboard in Netdata
 Cloud](https://user-images.githubusercontent.com/1153921/93500082-b01c1700-f8c8-11ea-920a-c490f05b50f5.gif)
@@ -20,7 +20,7 @@ Netdata dashboards are single, scrollable pages with many charts stacked on top 
 down, charts appearing in your browser's viewport automatically load and update every second.
 
 The dashboard is broken up into multiple **sections**, such as **System Overview**, **CPU**, **Disk**, which are
-automatically generated based on which [collectors](/docs/agent/collect/how-collectors-work) begin collecting metrics when
+automatically generated based on which [collectors](/docs/collect/how-collectors-work) begin collecting metrics when
 Netdata starts up. Sections also appear in the right-hand **menu**, along with submenus based on the contexts and
 families Netdata creates for your node.
 
@@ -78,12 +78,12 @@ height](https://user-images.githubusercontent.com/1153921/93497272-1acb5380-f8c5
 
 ## What's next?
 
-Netdata Cloud users can [build new dashboards](/docs/agent/visualize/create-dashboards) in just a few clicks. By
+Netdata Cloud users can [build new dashboards](/docs/visualize/create-dashboards) in just a few clicks. By
 aggregating relevant metrics from any number of nodes onto a single interface, you can respond faster to anomalies,
 perform more targeted troubleshooting, or keep tabs on a bird's eye view of your infrastructure.
 
 If you're finished with dashboards for now, skip to Netdata's health watchdog for information on [creating or
-configuring](/docs/agent/monitor/configure-alarms) alarms, and [send notifications](/docs/agent/monitor/enable-notifications)
+configuring](/docs/monitor/configure-alarms) alarms, and [send notifications](/docs/monitor/enable-notifications)
 to get informed when something goes wrong in your infrastructure.
 
 

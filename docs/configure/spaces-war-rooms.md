@@ -15,7 +15,7 @@ infrastructure. Let's talk through some strategies for building the most intuiti
 
 > This guide assumes you've already [signed in](https://app.netdata.cloud) to Netdata Cloud and finished creating your
 > account. If you're not interested in Netdata Cloud's features, you can skip ahead to [node configuration
-> basics](/docs/agent/configure/nodes).
+> basics](/docs/configure/nodes).
 
 ## Spaces
 
@@ -48,8 +48,8 @@ versus your homelab.
 War Rooms are granular containers for organizing nodes, viewing key metrics in real-time, and monitoring the health and
 alarm status of many nodes. 
 
-War Rooms organize the [at-a-glance Node view](/docs/agent/visualize/view-all-nodes) and any new [new
-dashboards](/docs/agent/visualize/create-dashboards) you build.
+War Rooms organize the [at-a-glance Node view](/docs/visualize/view-all-nodes) and any new [new
+dashboards](/docs/visualize/create-dashboards) you build.
 
 We recommend a few strategies for organizing your War Rooms.
 
@@ -78,10 +78,10 @@ location](https://user-images.githubusercontent.com/1153921/92178714-ff0d7b00-ed
 ## What's next?
 
 Once you've figured out an organizational structure that works for your infrastructure, it's time to [invite your
-team](/docs/agent/configure/invite-collaborate). You can invite any number of colleagues to help you collectively
+team](/docs/configure/invite-collaborate). You can invite any number of colleagues to help you collectively
 troubleshoot the most complex of infrastructure-wide performance issues.
 
 If you don't have a team or aren't ready to invite them, you can skip ahead to learn the [basics of node
-configuration](/docs/agent/configure/nodes).
+configuration](/docs/configure/nodes).
 
 

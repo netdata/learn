@@ -22,7 +22,7 @@ dashboard's meaning and purpose.
 ![An example multi-node dashboard for system CPU
 metrics](https://user-images.githubusercontent.com/1153921/93399129-c1661480-f831-11ea-9570-a5bd401f54db.png)
 
-Charts in dashboards are [fully interactive](/docs/agent/visualize/interact-dashboards-charts) and synchronized. You can
+Charts in dashboards are [fully interactive](/docs/visualize/interact-dashboards-charts) and synchronized. You can
 pan through time, zoom, highlight specific timeframes, and more.
 
 Move any card by clicking on their top panel and dragging them to a new location. Other cards re-sort to the grid system
@@ -37,7 +37,7 @@ more detail when troubleshooting an issue. Quickly jump to any node's dashboard 
 of any card to open a menu. Hit the **Go to Chart** item.
 
 Netdata Cloud takes you to the same chart on that node's dashboard. You can now navigate all that node's metrics and
-[interact with charts](/docs/agent/visualize/interact-dashboards-charts) to further investigate anomalies or troubleshoot
+[interact with charts](/docs/visualize/interact-dashboards-charts) to further investigate anomalies or troubleshoot
 complex performance problems.
 
 When viewing a single-node Cloud dashboard, you can also click on the add to dashboard icon <img
@@ -58,7 +58,7 @@ faster.
 ## What's next?
 
 While it's useful to see real-time metrics on flexible dashboards, you need ways to know precisely when an anomaly
-strikes. Every Netdata Agent comes with a health watchdog that uses [alarms](/docs/agent/monitor/configure-alarms) and
-[notifications](/docs/agent/monitor/enable-notifications) to notify you of issues seconds after they strike.
+strikes. Every Netdata Agent comes with a health watchdog that uses [alarms](/docs/monitor/configure-alarms) and
+[notifications](/docs/monitor/enable-notifications) to notify you of issues seconds after they strike.
 
 

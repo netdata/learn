@@ -71,7 +71,7 @@ Cloud](https://user-images.githubusercontent.com/1153921/93499808-4dc31680-f8c8-
 ## What's next?
 
 To troubleshoot complex performance issues using Netdata, you need to understand how to interact with its meaningful
-visualizations. Learn more about [interaction](/docs/agent/visualize/interact-dashboards-charts) to see historical metrics,
+visualizations. Learn more about [interaction](/docs/visualize/interact-dashboards-charts) to see historical metrics,
 highlight timeframes for targeted analysis, and more.
 
 

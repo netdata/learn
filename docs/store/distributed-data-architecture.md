@@ -11,7 +11,7 @@ Every node in your infrastructure, whether it's one or a thousand, stores the me
 
 Netdata Cloud bridges the gap between many distributed databases by _centralizing the interface you use_ to query and
 visualize your nodes' metrics. When you [look at charts in Netdata
-Cloud](/docs/agent/visualize/interact-dashboards-charts), the metrics values are queried directly from that node's database
+Cloud](/docs/visualize/interact-dashboards-charts), the metrics values are queried directly from that node's database
 and securely streamed to Netdata Cloud, which proxies them to your browser.
 
 Netdata's distributed data architecture has a number of benefits:
@@ -33,8 +33,8 @@ Netdata's distributed data architecture has a number of benefits:
 
 Netdata Cloud does not store metric values. 
 
-To enable certain features, such as [viewing active alarms](/docs/agent/monitor/view-active-alarms) or [filtering by
-service](/docs/agent/visualize/view-all-nodes#filter-and-group-your-infrastructure), Netdata Cloud does store configured
+To enable certain features, such as [viewing active alarms](/docs/monitor/view-active-alarms) or [filtering by
+service](/docs/visualize/view-all-nodes#filter-and-group-your-infrastructure), Netdata Cloud does store configured
 alarms, their status, and a list of active collectors.
 
 Netdata does not and never will sell your personal data or data about your deployment.
@@ -44,7 +44,7 @@ Netdata does not and never will sell your personal data or data about your deplo
 Any node running the Netdata Agent can store long-term metrics for any retention period, given you allocate the
 appropriate amount of RAM and disk space.
 
-Read our document on changing [how long Netdata stores metrics](/docs/agent/store/change-metrics-storage) on your nodes for
+Read our document on changing [how long Netdata stores metrics](/docs/store/change-metrics-storage) on your nodes for
 details.
 
 ## Other options for your metrics data
@@ -53,7 +53,7 @@ While a distributed data architecture is the default when monitoring infrastruct
 its behavior based on your needs or the type of infrastructure you manage.
 
 To archive metrics to an external time-series database, such as InfluxDB, Graphite, OpenTSDB, Elasticsearch,
-TimescaleDB, and many others, see details on [integrating Netdata via exporting](/docs/agent/export/integrate-exporting).
+TimescaleDB, and many others, see details on [integrating Netdata via exporting](/docs/export/integrate-exporting).
 
 You can also stream between nodes using [streaming](/docs/agent/stream), allowing to replicate databases and create
 your own centralized data lake of metrics, if you choose to do so.
@@ -64,7 +64,7 @@ When you use the database engine to store your metrics, you can always perform a
 ## What's next?
 
 You can configure the Netdata Agent to store days, weeks, or months worth of distributed, per-second data by
-[configuring the database engine](/docs/agent/store/change-metrics-storage). Use our calculator to determine the system
+[configuring the database engine](/docs/store/change-metrics-storage). Use our calculator to determine the system
 resources required to retain your desired amount of metrics, and expand or contract the database by editing a single
 setting.
 

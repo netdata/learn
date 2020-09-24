@@ -40,7 +40,7 @@ dashboard](https://user-images.githubusercontent.com/1153921/87457036-9b678e00-c
 You can use single-node dashboards in Netdata Cloud to drill down on specific issues, scrub backward in time to
 investigate historical data, and see like metrics presented meaningfully to help you in [visual anomaly
 detection](/docs/agent/troubleshoot/visual-anomaly-detection). Learn about [interacting with dashboards and
-charts](/docs/agent/visualize/interact-dashboards-charts) to get the most from all of Netdata's real-time metrics.
+charts](/docs/visualize/interact-dashboards-charts) to get the most from all of Netdata's real-time metrics.
 
 > If you want to monitor a Kubernetes cluster with Netdata, see our [k8s installation
 > doc](/docs/agent/packaging/installer/methods/kubernetes) for setup details, and then read our guide, [_Monitor a Kubernetes
@@ -58,7 +58,7 @@ context, which is Netdata's way to organize charts, and then click **Add chart**
 Once you add a few charts, you can move them around, resize them, and add text. Make sure you click the **Save** button
 before you navigate away.
 
-Read more about [creating new dashboards](/docs/agent/visualize/create-dashboard) for more details about the process and
+Read more about [creating new dashboards](/docs/visualize/create-dashboard) for more details about the process and
 additional tips on best leveraging the feature to help you troubleshoot complex performance problems.
 
 ## Configure your nodes
@@ -75,10 +75,10 @@ cd /etc/netdata
 sudo ./edit-config netdata.conf
 ```
 
-Our [configuration basics doc](/docs/agent/configure/nodes) contains more information about `netdata.conf`, `edit-config`,
+Our [configuration basics doc](/docs/configure/nodes) contains more information about `netdata.conf`, `edit-config`,
 along with simple examples to get you familiar with editing your node's configuration.
 
-After you've learned the basics, you should [secure your infrastructure's nodes](/docs/agent/configure/secure-nodes) using
+After you've learned the basics, you should [secure your infrastructure's nodes](/docs/configure/secure-nodes) using
 one of our recommended methods. These security best practices ensure no untrusted parties gain access to the metrics
 collected on any of your nodes.
 
@@ -96,10 +96,10 @@ the individual node dashboards, and you can create new dashboards around very sp
 volume of 503 responses from each of your webserver nodes.
 
 Most collectors work without configuring them, but you should read up on how [collector
-configuration](/docs/agent/collect/configure) works.
+configuration](/docs/collect/configure) works.
 
-In addition, find detailed information about which [system](/docs/agent/collect/system-metrics),
-[container](/docs/agent/collect/container-metrics), and [application](/docs/agent/collect/application-metrics) metrics you can
+In addition, find detailed information about which [system](/docs/collect/system-metrics),
+[container](/docs/collect/container-metrics), and [application](/docs/collect/application-metrics) metrics you can
 collect from across your infrastructure with Netdata.
 
 ## What's next?
@@ -108,19 +108,19 @@ Netdata has many features that help you monitor the health of your nodes and tro
 Once you have a handle on configuration and are collecting all the right metrics, try out some of Netdata's other
 infrastructure-focused features:
 
--   [Organize your nodes](/docs/agent/configure/spaces-war-rooms) into **War Rooms** based on your preferred strategy.
--   [Invite your team](/docs/agent/configure/invite-collaborate) to collaborate on identifying anomalies or troubleshooting
+-   [Organize your nodes](/docs/configure/spaces-war-rooms) into **War Rooms** based on your preferred strategy.
+-   [Invite your team](/docs/configure/invite-collaborate) to collaborate on identifying anomalies or troubleshooting
     complex performance problems.
--   [Export metrics](/docs/agent/export/enable-exporting) to an external time-series database to use Netdata alongside
+-   [Export metrics](/docs/export/enable-exporting) to an external time-series database to use Netdata alongside
     other monitoring and troubleshooting tools.
 
 To change how the Netdata Agent runs on each node, dig in to configuration files:
 
--   [Change how long nodes in your infrastructure retain metrics](/docs/agent/store/change-metrics-retention) based on how
+-   [Change how long nodes in your infrastructure retain metrics](/docs/store/change-metrics-retention) based on how
     many metrics each node collects, your preferred retention period, and the resources you want to dedicate toward
     long-term metrics retention.
--   [Create new alarms](/docs/agent/monitor/configure-alarms), or tweak some of the pre-configured alarms, to stay on top
+-   [Create new alarms](/docs/monitor/configure-alarms), or tweak some of the pre-configured alarms, to stay on top
     of anomalies.
--   [Enable notifications](/docs/agent/monitor/enable-notifications) to Slack, PagerDuty, email, and 30+ other services.
+-   [Enable notifications](/docs/monitor/enable-notifications) to Slack, PagerDuty, email, and 30+ other services.
 
 

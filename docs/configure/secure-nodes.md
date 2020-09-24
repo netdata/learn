@@ -55,7 +55,7 @@ static-threaded` setting. To disable the local dashboard, change this setting to
 Save and close the editor, then restart your Agent using `service netdata restart`. If you try to visit the local
 dashboard to `http://NODE:19999` again, the connection will fail because that node no longer serves its local dashboard.
 
-> See the [configuration basics doc](/docs/agent/configure/nodes) for details on how to find `netdata.conf` and use
+> See the [configuration basics doc](/docs/configure/nodes) for details on how to find `netdata.conf` and use
 > `edit-config`.
 
 ## Restrict access to the local dashboard
@@ -115,7 +115,7 @@ We also have guides for [Apache](/docs/agent/running-behind-apache), [Lighttpd](
 
 If you haven't already, be sure to read about [Netdata's security design](/docs/agent/security-design).
 
-Next up, learn about [collectors](/docs/agent/collect/how-collectors-work) to ensure you're gathering every essential
+Next up, learn about [collectors](/docs/collect/how-collectors-work) to ensure you're gathering every essential
 metric about your node, its applications, and your infrastructure at large.
 
 
