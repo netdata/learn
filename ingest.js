@@ -22,10 +22,6 @@ const retainPaths = [
   path.join(baseDir, 'cloud.mdx'),
 ]
 
-const learnPaths = [
-  path.join(agentDir, 'overview'),
-]
-
 const ax = axios.create({
   baseURL: 'https://api.github.com/repos/netdata/',
   headers: {
@@ -116,9 +112,10 @@ function normalizeLinks(pages) {
 
       // Exceptions to accomodate the new documentation structure, with many
       // documents in various `/docs/X` folders.
-      if (url.includes('docs/get.md') || url.includes('docs/collect/') || url.includes('docs/configure/') || url.includes('docs/export/') ||
-          url.includes('docs/configure/') || url.includes('docs/monitor/') || url.includes('docs/quickstart/') ||
-          url.includes('docs/store/') || url.includes('docs/visualize/')) {
+      if (url.includes('docs/get.md') || url.includes('docs/overview') || url.includes('docs/collect/') || 
+          url.includes('docs/configure/') || url.includes('docs/export/') || url.includes('docs/configure/') || 
+          url.includes('docs/monitor/') || url.includes('docs/quickstart/') ||url.includes('docs/store/') || 
+          url.includes('docs/visualize/')) {
         return `](${url})`
       }
 

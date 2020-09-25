@@ -78,7 +78,7 @@ collect from your favorite services and applications.
 
 If you want to see up to 30 days of historical metrics in Cloud (and more on individual node dashboards), read our guide
 on [long-term storage of historical metrics](/guides/longer-metrics-storage). Also, see our
-[calculator](/docs/store/change-metrics-storage.md#calculate-the-system-resources-RAM-disk-space-needed-to-store-metrics)
+[calculator](/docs/store/change-metrics-storage#calculate-the-system-resources-RAM-disk-space-needed-to-store-metrics)
 for finding the disk and RAM you need to store metrics for a certain period of time.
 
 ## What's next?
