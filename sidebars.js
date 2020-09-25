@@ -153,6 +153,7 @@ module.exports = {
                     'agent/collectors/go.d.plugin/modules/docker_engine',
                     'agent/collectors/go.d.plugin/modules/dockerhub',
                     'agent/collectors/go.d.plugin/modules/elasticsearch',
+                    'agent/collectors/go.d.plugin/modules/filecheck',
                     'agent/collectors/go.d.plugin/modules/fluentd',
                     'agent/collectors/go.d.plugin/modules/freeradius',
                     'agent/collectors/go.d.plugin/modules/hdfs',
