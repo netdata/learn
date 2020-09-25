@@ -17,7 +17,7 @@ anomaly, or change in infrastructure affects how their Agents should peform.
 
 ## The Netdata config directory
 
-On most Linux systems, using our [recommended one-line installation](/docs/agent/get#install-the-netdata-agent), the
+On most Linux systems, using our [recommended one-line installation](/docs/get#install-the-netdata-agent), the
 **Netdata config directory** is `/etc/netdata/`. The config directory contains several configuration files with the
 `.conf` extension, a few directories, and a shell script named `edit-config`.
 
@@ -114,10 +114,10 @@ Cloud.
 
 You can also take what you've learned about node configuration to tweak the Agent's behavior or enable new features:
 
--   [Enable new collectors](/docs/collect/enable) or tweak their behavior.
+-   [Enable new collectors](/docs/collect/enable-configure) or tweak their behavior.
 -   [Configure existing health alarms](/docs/monitor/configure-alarms) or create new ones.
 -   [Enable notifications](/docs/monitor/enable-notifications) to receive updates about the health of your
     infrastructure.
--   Change [the long-term metrics retention period](/docs/store/change-metrics-retention) using the database engine.
+-   Change [the long-term metrics retention period](/docs/store/change-metrics-storage) using the database engine.
 
 

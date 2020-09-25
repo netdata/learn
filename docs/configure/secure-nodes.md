@@ -13,14 +13,14 @@ internet at large, anyone can access the dashboard and your node's metrics at `h
 so that the local dashboard was immediately accessible to users, and so that we don't dictate how professionals set up
 and secure their infrastructures. 
 
-Despite this design decisison, your [data](/docs/agent/security-design#your-data-are-safe-with-netdata) and your
-[systems](/docs/agent/security-design#your-systems-are-safe-with-netdata) are safe with Netdata. Netdata is read-only,
+Despite this design decisison, your [data](/docs/agent/netdata-security#your-data-are-safe-with-netdata) and your
+[systems](/docs/agent/netdata-security#your-systems-are-safe-with-netdata) are safe with Netdata. Netdata is read-only,
 cannot do anything other than present metrics, and runs without special/`sudo` privileges. Also, the local dashboard
 only exposes chart metadata and metric values, not raw data.
 
 While Netdata is secure by design, we believe you should [protect your
-nodes](/docs/agent/security-design#why-netdata-should-be-protected). If left accessible to the internet at large, the local
-dashboard could reveal sensitive information about your infrastructure. For example, an attacker can view which
+nodes](/docs/agent/netdata-security#why-netdata-should-be-protected). If left accessible to the internet at large, the
+local dashboard could reveal sensitive information about your infrastructure. For example, an attacker can view which
 applications you run (databases, webservers, and so on), or see every user account on a node. 
 
 Instead of dictating how to secure your infrastructure, we give you many options to establish security best practices
@@ -69,7 +69,7 @@ static IP, only `localhost`, or connections from behind a management LAN.
 
 By default, this setting is `localhost *`. This setting allows connections from `localhost` in addition to _all_
 connections, using the `*` wildcard. You can change this setting using Netdata's [simple
-patterns](/docs/agent/libnetdata/simple_patterns).
+patterns](/docs/agent/libnetdata/simple_pattern).
 
 ```conf
 [web]
@@ -113,7 +113,7 @@ We also have guides for [Apache](/docs/agent/running-behind-apache), [Lighttpd](
 
 ## What's next?
 
-If you haven't already, be sure to read about [Netdata's security design](/docs/agent/security-design).
+If you haven't already, be sure to read about [Netdata's security design](/docs/agent/netdata-security).
 
 Next up, learn about [collectors](/docs/collect/how-collectors-work) to ensure you're gathering every essential
 metric about your node, its applications, and your infrastructure at large.

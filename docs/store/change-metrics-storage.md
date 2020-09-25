@@ -61,12 +61,12 @@ Save the file and restart the Agent with `service netdata restart` to change the
 For more information about the database engine, see our [database reference doc](/docs/agent/database/engine).
 
 Storing metrics with the database engine is completely interoperable with [exporting to other time-series
-databases](/docs/export/integrate-exporting). With exporting, you can use the node's resources to surface metrics
+databases](/docs/export/external-databases). With exporting, you can use the node's resources to surface metrics
 when [viewing dashboards](/docs/visualize/interact-dashboards-charts), while also archiving metrics elsewhere for
 further analysis, visualization, or correlation with other tools. 
 
 If you don't want to always store metrics on the node that collects them or run ephemeral nodes without dedicated
-storage, you can use [streaming](/docs/agent/stream). Streaming allows you to centralize your data, run Agents as
+storage, you can use [streaming](/docs/agent/streaming). Streaming allows you to centralize your data, run Agents as
 headless collectors, replicate data, and more.
 
 

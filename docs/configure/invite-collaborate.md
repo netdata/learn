@@ -52,7 +52,7 @@ Cloud in our [FAQ](/docs/cloud/faq-glossary).
 
 Next, we recommend you learn the [basics of node configuration](/docs/configure/nodes). While the Netdata Agent is
 proudly zero-configuration in most cases, you should understand how to tweak its settings to give you the best Netdata,
-for example, to [increase metrics retention](/docs/store/change-metrics-retention) and [improve
+for example, to [increase metrics retention](/docs/store/change-metrics-storage) and [improve
 security](/docs/configure/secure-nodes).
 
 

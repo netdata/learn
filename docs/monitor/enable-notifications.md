@@ -119,8 +119,8 @@ See the [Slack notifications](/docs/agent/health/notifications/slack) doc for mo
 Learn more about Netdata's notifications system in the [notifications](/docs/agent/health/notifications) docs.
 
 Now that you have health entities configured to your infrastructure's needs, and notifications to inform you of
-anomalies, you have the tools you need to start troubleshooting with [visual anomaly
-detection](/docs/agent/troubleshoot/visual-anomaly-detection) and [Metric
-Correlations](/docs/agent/troubleshoot/metrics-correlation).
+anomalies, you have everything you need to monitor the health of your infrastructure. To make your dashboards most
+useful during root cause analysis, you can use Netdata's [distributed data
+architecture](/docs/store/distributed-data-architecture) for the best-in-class performance and scalability.
 
 

@@ -114,9 +114,11 @@ function normalizeLinks(pages) {
       // link. Return the normalized link.
       if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
 
-      if (url.includes('docs/collect/') || url.includes('docs/configure/') || url.includes('docs/export/') ||
+      // Exceptions to accomodate the new documentation structure, with many
+      // documents in various `/docs/X` folders.
+      if (url.includes('docs/get.md') || url.includes('docs/collect/') || url.includes('docs/configure/') || url.includes('docs/export/') ||
           url.includes('docs/configure/') || url.includes('docs/monitor/') || url.includes('docs/quickstart/') ||
-          url.includes('docs/store/') || url.includes('docs/visualize/') || url.includes('docs/get/')) {
+          url.includes('docs/store/') || url.includes('docs/visualize/')) {
         return `](${url})`
       }
 
@@ -127,7 +129,8 @@ function normalizeLinks(pages) {
         return `](${guideUrl})`
       }
 
-      // If the link is to a step-by-step guide page in the `/docs/step-by-step` folder.
+      // If the link is to a step-by-step guide page in the `/docs/step-by-step`
+      // folder.
       if (url.includes('step-by-step/') || url.includes('step-')) {
         if (url.includes('step-by-step/')) {
           url = url.split('step-by-step/')[1]
@@ -274,9 +277,6 @@ async function writePages(pages) {
     } else if (fullPath.includes('docs/agent/get.md') && !fullPath.includes('getting-started')) {
       fullPath = fullPath.replace('docs/agent/get.md', 'docs/get.md');
       fullDir = fullDir.replace('docs/agent/get', 'docs/');
-    } else if (fullPath.includes('agent/deploy')) {
-      fullPath = fullPath.replace('docs/agent/deploy', 'docs/deploy/');
-      fullDir = fullDir.replace('docs/agent/deploy', 'docs/deploy/');
     } else if (fullPath.includes('agent/quickstart')) {
       fullPath = fullPath.replace('docs/agent/quickstart', 'docs/quickstart/');
       fullDir = fullDir.replace('docs/agent/quickstart', 'docs/quickstart/');
@@ -292,9 +292,6 @@ async function writePages(pages) {
     } else if (fullPath.includes('agent/monitor')) {
       fullPath = fullPath.replace('docs/agent/monitor', 'docs/monitor/');
       fullDir = fullDir.replace('docs/agent/monitor', 'docs/monitor/');
-    } else if (fullPath.includes('agent/troubleshoot')) {
-      fullPath = fullPath.replace('docs/agent/troubleshoot', 'docs/troubleshoot/');
-      fullDir = fullDir.replace('docs/agent/troubleshoot', 'docs/troubleshoot/');
     } else if (fullPath.includes('agent/store')) {
       fullPath = fullPath.replace('docs/agent/store', 'docs/store/');
       fullDir = fullDir.replace('docs/agent/store', 'docs/store/');

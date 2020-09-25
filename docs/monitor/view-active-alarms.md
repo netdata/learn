@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/monitor/vie
 Every Netdata Agent comes with hundreds of pre-installed health alarms designed to notify you when an anomaly or
 performance issue affects your node or the applications it runs.
 
-As soon as you launch a Netdata Agent and [claim it](/docs/agent/get#claim-your-node-on-netdata-cloud), you can view
+As soon as you launch a Netdata Agent and [claim it](/docs/get#claim-your-node-on-netdata-cloud), you can view
 active alarms in both the local dashboard and Netdata Cloud.
 
 ## View active alarms in Netdata Cloud

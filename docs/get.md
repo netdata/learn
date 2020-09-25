@@ -9,10 +9,10 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/get/README.
 import { OneLineInstall } from '../src/components/OneLineInstall/'
 import { Install, InstallBox } from '../src/components/InstallBox/'
 
-Netdata uses an open-source monitoring Agent and web application [together](/docs/agent/overview-what-is-netdata) to help you
-collect every metric, visualize the health of your systems, and troubleshoot complex performance problems. Once you've
-signed in to Netdata Cloud and installed the Netdata Agent on all your nodes, you can claim these nodes and see their
-real-time metrics on a single interface.
+Netdata uses an open-source monitoring Agent and web application [together](/docs/agent/overview/what-is-netdata) to help
+you collect every metric, visualize the health of your systems, and troubleshoot complex performance problems. Once
+you've signed in to Netdata Cloud and installed the Netdata Agent on all your nodes, you can claim these nodes and see
+their real-time metrics on a single interface.
 
 ## Sign in to Netdata Cloud
 
@@ -31,14 +31,19 @@ required.
 > best experience, use one of the methods described or link to below.
 
 The **recommended** way to install the Netdata Agent on a Linux system is our one-line [kickstart
-script](/docs/agent/agent/packaging/installer/methods/kickstart). This script automatically installs dependencies and builds
-Netdata from its source code.
+script](/docs/agent/packaging/installer/methods/kickstart). This script automatically installs dependencies and builds Netdata
+from its source code.
 
 <OneLineInstall />
 
 Copy the script, paste it into your node's terminal, and hit `Enter`. 
 
 Open your favorite browser and navigate to `http://localhost:19999` or `http://REMOTE-HOST:19999` to open the dashboard.
+
+<details>
+<summary>Watch how the one-line installer works</summary>
+<iframe width="820" height="460" src="https://www.youtube.com/embed/tVIp7ycK60A" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</details>
 
 ### Other operating systems/methods
 
@@ -55,7 +60,7 @@ platform to see specific instructions.
     img="/img/index/methods/docker.svg"
     os="Docker" />
   <InstallBox
-    to="/docs/agent/packaging/installer/methods/cloud"
+    to="/docs/agent/packaging/installer/methods/cloud-providers"
     img="/img/index/methods/cloud.svg"
     os="Cloud providers (GCP, AWS, Azure)" />
   <InstallBox
@@ -72,7 +77,7 @@ platform to see specific instructions.
     os="Linux from Git" />
   <InstallBox
     to="/docs/agent/packaging/installer/methods/freebsd"
-    img="/img/index/methods/freebsd.png"
+    img="/img/index/methods/freebsd.svg"
     os="FreeBSD" />
   <InstallBox
     to="/docs/agent/packaging/installer/methods/macos"
@@ -80,7 +85,7 @@ platform to see specific instructions.
     os="MacOS" />
 </Install>
 
-Even more options available in our [packaging documentation](/docs/agent/agent/packaging/installer#alternative-methods).
+Even more options available in our [packaging documentation](/docs/agent/packaging/installer#alternative-methods).
 
 ## Claim your node on Netdata Cloud
 
@@ -106,11 +111,16 @@ Netdata Cloud.
 For more information on the claiming process, why we implemented it, and how it works, see the [claim](/docs/agent/claim)
 and [Agent-Cloud link](/docs/agent/aclk) reference docs.
 
+<details>
+<summary>Watch how claiming nodes works</summary>
+<iframe width="820" height="460" src="https://www.youtube.com/embed/UAzVvhMab8g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</details>
+
 ## What's next?
 
-At this point, you set up your free Netdata Cloud account, installed the Agent, and claimed one or more nodes to your
-Space. You're ready to start monitoring, visualizing, and troubleshooting with Netdata. We have two quickstart guides
-based on the scope of what you need to monitor:
+At this point, you have set up your free Netdata Cloud account, installed the Agent, and claimed one or more nodes to
+your Space. You're ready to start monitoring, visualizing, and troubleshooting with Netdata. We have two quickstart
+guides based on the scope of what you need to monitor:
 
 Interested in monitoring a single node? Check out our [single-node monitoring
 quickstart](/docs/quickstart/single-node).

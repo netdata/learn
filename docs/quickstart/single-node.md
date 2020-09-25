@@ -15,8 +15,8 @@ to your liking, and make sure the Netdata Agent is collecting metrics from the a
 on your node.
 
 > This quickstart assumes you have installed the Netdata Agent on your node. If you haven't yet, see the [_Get Netdata_
-> doc](/docs/agent/get) for details on installation. In addition, this quickstart mentions features available only
-> through Netdata Cloud, which requires you to [claim your node](/docs/agent/get#claim-your-node-on-netdata-cloud).
+> doc](/docs/get) for details on installation. In addition, this quickstart mentions features available only
+> through Netdata Cloud, which requires you to [claim your node](/docs/get#claim-your-node-on-netdata-cloud).
 
 ## See your node's metrics
 
@@ -69,8 +69,8 @@ many metrics as possible without you having to configure them individually.
 
 These metrics enrich both the local and Netdata Cloud dashboards.
 
-Most collectors work without configuring them, but you should read up on how [collector
-configuration](/docs/collect/configure) works.
+Most collectors work without configuration, but you should read up on [how collectors
+work](/docs/collect/how-collectors-work) and [how to enable/configure](/docs/collect/enable-configure) them.
 
 In addition, find detailed information about which [system](/docs/collect/system-metrics),
 [container](/docs/collect/container-metrics), and [application](/docs/collect/application-metrics) metrics you can
@@ -87,10 +87,10 @@ out some of Netdata's other visualization and health monitoring features:
 -   [Create new alarms](/docs/monitor/configure-alarms), or tweak some of the pre-configured alarms, to stay on top
     of anomalies.
 -   [Enable notifications](/docs/monitor/enable-notifications) to Slack, PagerDuty, email, and 30+ other services.
--   [Change how long your node stores metrics](/docs/store/change-metrics-retention) based on how many metrics it
+-   [Change how long your node stores metrics](/docs/store/change-metrics-storage) based on how many metrics it
     collects, your preferred retention period, and the resources you want to dedicate toward long-term metrics
     retention.
--   [Export metrics](/docs/export/enable-exporting) to an external time-series database to use Netdata alongside
+-   [Export metrics](/docs/export/external-databases) to an external time-series database to use Netdata alongside
     other monitoring and troubleshooting tools.
 
 
