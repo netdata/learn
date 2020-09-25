@@ -136,9 +136,10 @@ more than 256.
   dbengine multihost disk space = 512
 ```
 
-Use our [database sizing calculator](/docs/agent/database/calculator) and [guide on storing
-historical metrics](/guides/longer-metrics-storage) to help you determine the right setting for your Raspberry
-Pi.
+Use our [database sizing
+calculator](/docs/store/change-metrics-storage#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics)
+and [guide on storing historical metrics](/guides/longer-metrics-storage) to help you determine the right
+setting for your Raspberry Pi.
 
 ## What's next?
 

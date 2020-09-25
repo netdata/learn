@@ -9,7 +9,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/get/README.
 import { OneLineInstall } from '../src/components/OneLineInstall/'
 import { Install, InstallBox } from '../src/components/InstallBox/'
 
-Netdata uses an open-source monitoring Agent and web application [together](/docs/agent/overview/what-is-netdata) to help
+Netdata uses an open-source monitoring Agent and web application [together](/docs/overview/what-is-netdata) to help
 you collect every metric, visualize the health of your systems, and troubleshoot complex performance problems. Once
 you've signed in to Netdata Cloud and installed the Netdata Agent on all your nodes, you can claim these nodes and see
 their real-time metrics on a single interface.
