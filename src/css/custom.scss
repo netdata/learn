@@ -476,6 +476,7 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
 .toc__edit {
   font-size: 100%;
   margin-top: 1rem;
+  display: inherit;
 }
 
 /**
