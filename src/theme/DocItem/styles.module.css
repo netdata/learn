@@ -32,7 +32,7 @@
 .tableOfContents {
   display: inherit;
   max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
-  overflow-y: auto;
+  /* overflow-y: auto; */
   position: sticky;
   top: calc(var(--ifm-navbar-height) + 2rem);
 }
