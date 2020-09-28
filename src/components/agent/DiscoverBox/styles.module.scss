@@ -30,17 +30,27 @@
     transition: ease-in-out all 0.15s;
 
     h3 {
-      color: var(--ifm-color-primary-lightest);
+      color: var(--ifm-color-secondary);
     }
 
     p {
       color: var(--ifm-font-color-base);
     }
+
+    .DiscoverCTA {
+      color: var(--ifm-color-secondary);
+
+      &:after {
+        right: -24px;
+        opacity: 1;
+        color: var(--ifm-color-secondary);
+      }
+    }
   }
 
   h3 {
     color: var(--ifm-font-color-base);
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     transition: ease-in-out all 0.15s;
   }
   
@@ -48,7 +58,7 @@
     margin-bottom: 0;
 
     color: var(--ifm-font-color-base);
-    font-size: 1.1rem;
+    font-size: 90%;
     font-weight: 400;
   }
 
@@ -56,5 +66,26 @@
     position: absolute;
     bottom: var(--ifm-spacing-horizontal);
     left: var(--ifm-spacing-horizontal);
+  }
+}
+
+.DiscoverCTA {
+  font-size: 90%;
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: var(--ifm-heading-font-weight);
+  position: relative;
+
+  &:after {
+    display: block;
+    content: '\2192';
+    position: absolute;
+    right: -12px;
+    font-size: 170%;
+    font-weight: 500;
+    line-height: 1;
+    top: 0px;
+    opacity: 0;
+    transition: 0.3s all ease-in;
   }
 }

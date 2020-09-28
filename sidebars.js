@@ -53,6 +53,7 @@ module.exports = {
             'collect/system-metrics',
             'collect/container-metrics',
             'collect/application-metrics',
+            'agent/collectors/collectors',
           ]
         },
         {
@@ -112,7 +113,6 @@ module.exports = {
                 'agent/collectors',
                 'agent/collectors/quickstart',
                 'agent/collectors/reference',
-                'agent/collectors/collectors',
                 {
                   type: 'category',
                   label: 'Internal plugins',

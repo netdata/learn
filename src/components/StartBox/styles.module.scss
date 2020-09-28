@@ -21,7 +21,7 @@
     transition: ease-in-out all 0.15s;
 
     h2 {
-      color: var(--ifm-color-primary-lightest);
+      color: var(--ifm-color-secondary);
     }
 
     h3 {
@@ -30,6 +30,16 @@
 
     p {
       color: var(--ifm-font-color-base);
+    }
+
+    .StartCTA {
+      color: var(--ifm-color-secondary);
+
+      &:after {
+        right: -28px;
+        opacity: 1;
+        color: var(--ifm-color-secondary);
+      }
     }
   }
 
@@ -50,10 +60,25 @@
   }
 }
 
-.StartButton {
+.StartCTA {
   font-size: 100%;
+  display: inline-block;
   margin-top: 1rem;
   font-weight: var(--ifm-heading-font-weight);
+  position: relative;
+
+  &:after {
+    display: block;
+    content: '\2192';
+    position: absolute;
+    right: -15px;
+    font-size: 170%;
+    font-weight: 500;
+    line-height: 1;
+    top: -2px;
+    opacity: 0;
+    transition: 0.3s all ease-in;
+  }
 }
 
 .StartBoxImg {

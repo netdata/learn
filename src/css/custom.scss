@@ -444,6 +444,7 @@ html[data-theme='dark'] div[class^='docSidebarContainer'] {
 @media (min-width: 997px) {
   .menu {
     margin-top: 3rem;
+    padding-bottom: 3rem;
   }
 }
 
@@ -459,9 +460,20 @@ div[class^='sidebarLogo'] {
   color: var(--ifm-font-color-base);
   font-size: 1rem;
   font-weight: var(--ifm-font-weight-normal);
+  line-height: 22px;
 
   &:focus {
     outline: 0;
+  }
+}
+
+html[data-theme='dark'] {
+  .menu__link {
+    color: var(--ifm-font-color-base);
+  }
+
+  .menu__link--active {
+    color: var(--ifm-menu-color-active);
   }
 }
 
@@ -472,7 +484,11 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
 @media (max-width: 996px) {
   .navbar-sidebar__items .menu .menu__link {
     color: white;
-  }  
+  }
+
+  .menu > .menu__list > .menu__list-item:not(:first-child) {
+    padding-top: 0;
+  }
 }
 
 /**

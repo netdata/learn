@@ -10,7 +10,7 @@
 .hero {
   position: relative;
   // overflow: hidden;
-  padding: 8rem 0 5rem;
+  padding: 8rem 0 12rem;
   background: linear-gradient(to bottom, white, #f1f2fb);
 
   span {
@@ -32,6 +32,7 @@
 
     .heroSubHead {
       font-size: 1.3rem;
+      margin-bottom: 0;
     }
   }
 
@@ -55,26 +56,12 @@
     z-index: 10;
     position: absolute;
     top: calc(-6rem - 68px);
-    right: -180px;
+    right: -300px;
     max-width: 1200px;
   }
 
-  @media (max-width: 1600px) {
-    // .heroImage {
-    //   right: -120px;
-    // }
-  }
-
-  @media (max-width: 1400px) {
-    // .heroImage {
-    //   bottom: -151px;
-    //   right: 0;
-    //   max-width: 550px;
-    // }
-  }
-
   @media (max-width: 996px) {
-    padding: 4rem 0 3rem;
+    padding: 4rem 0 2rem;
 
     .heroText .heroTagline {
       font-size: 2.4rem;
@@ -91,6 +78,28 @@
 }
 
 /**
+ * Get
+ */
+
+.Get {
+  margin-top: -8rem;
+  z-index: 100;
+  position: relative;
+
+  div > a {
+    box-shadow: 0 10px 15px -3px hsla(198,23%,3%,0.06),0 4px 6px -2px hsla(198,23%,3%,0.12);
+  }
+
+  @media (max-width: 996px) {
+    margin-top: 0rem;
+  }
+
+  div > a {
+    margin-top: 0;
+  }
+}
+
+/**
  * CTAs
  */
 
@@ -98,15 +107,11 @@
   padding: 6rem 0 0;
   margin-bottom: 5rem;
 
-  div[class*="row"] {
-    margin-bottom: 3rem;
-  }
-
   div > a {
     margin-top: 0;
     display: block;
     height: 100%;
-    box-shadow: 0 10px 15px -3px hsla(198,23%,3%,0.06),0 4px 6px -2px hsla(198,23%,3%,0.12);
+    margin-top: 0;
   }
 
   @media (max-width: 996px) {
@@ -114,6 +119,10 @@
       margin-top: 4rem;
     }
   }
+}
+
+.ctaRow {
+  margin-top: 3rem;
 }
 
 /**
@@ -130,23 +139,27 @@
   }
 }
 
-.updateBox {
-  &:first-of-type {
-    margin-bottom: 1rem;
-  }
-
-  header {
+.updateMeta {
+  time {
+    display: block;
     font-family: var(--ifm-font-family-monospace);
-    font-weight: 500;
-    font-size: 80%;
-    margin-bottom: 0.8rem;
-
-    span {
-      background: var(--ifm-color-primary);
-      color: var(--ifm-background-color);
-      padding: 0.1rem 0.2rem;
-    }
+    font-size: 90%;
+    margin-bottom: 0rem;
   }
+
+  span {
+    // font-family: var(--ifm-font-family-monospace);
+    // font-weight: 500;
+    display: inline-block;
+    font-size: 80%;
+    background: var(--ifm-color-primary);
+    color: var(--ifm-background-color);
+    padding: 0.1rem 0.2rem;
+  }
+}
+
+.updateBox {
+  margin-bottom: var(--ifm-paragraph-margin-bottom);
 
   p {
     color: var(--ifm-font-color-base);

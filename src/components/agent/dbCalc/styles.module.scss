@@ -148,7 +148,7 @@
 }
 
 .calcNotes {
-  background: white;
+  background: --var(--ifm-background);
   padding: 1rem;
   font-size: 80%;
 
@@ -163,11 +163,9 @@
  * Dark mode overrides
  */
 
-html[data-theme='dark'] .calcInput input {
-  background: var(--ifm-background-dark);
-  color: white;
-}
-
-html[data-theme='dark'] blockquote {
-  color: var(--ifm-color-primary-lightest);
+html[data-theme='dark'] {
+  .calcInput input {
+    background: var(--ifm-background-dark);
+    color: white;
+  }
 }
