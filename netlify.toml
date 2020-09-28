@@ -63,3 +63,7 @@
 [[redirects]]
   from = "/docs/export"
   to = "/docs/export/external-databases"
+
+[[redirects]]
+  from = "/#get"
+  to = "/docs/get"
