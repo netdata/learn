@@ -42,7 +42,7 @@ html {
 :root {
 
   /* Colors */
-  --ifm-background-color: #f8f7fd;
+  --ifm-background-color: #fcfcff;
 
   --ifm-color-primary: #00AB44;
   --ifm-color-primary-dark: #009a3d;
@@ -428,7 +428,7 @@ div[class^='docSidebarContainer'] {
   width: 350px;
   top: 0;
 
-  background: #f5f5f9;
+  background:#f8f7fd;
 }
 
 html[data-theme='dark'] div[class^='docSidebarContainer'] {
