@@ -201,7 +201,7 @@ function Home() {
                 </div>
                 <div className={clsx('col col--4')}>
                   <DiscoverBox 
-                    href="/docs/quickstart/single-node" 
+                    href="/docs/agent" 
                     title="Agent reference"
                     cta="View docs">
                     Documentation for each component, feature, and API available in the open-source Netdata Agent.
@@ -209,7 +209,7 @@ function Home() {
                 </div>
                 <div className={clsx('col col--4')}>
                   <DiscoverBox 
-                    href="/docs/quickstart/infrastructure" 
+                    href="/docs/cloud" 
                     title="Cloud reference"
                     cta="View docs">
                     Documentation for the features, organization, and and management capabilities in Netdata Cloud.
