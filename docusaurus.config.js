@@ -105,7 +105,7 @@ module.exports = {
             },
             {
               label: 'Cloud',
-              href: 'https://netdata.cloud/agent',
+              href: 'https://netdata.cloud/cloud',
             },
             {
               label: 'Integrations',

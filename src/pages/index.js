@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import SVG from 'react-inlinesvg';
+import { Redirect } from 'react-router-dom'
 
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -90,6 +91,12 @@ function UpdateBox({title, href, date, type, description}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
+
+  // Redirect to `/docs/get` if someone arrives at `learn.netdata.cloud/#get`
+  // from www or another source.
+  if (location.hash === "#get") {
+    return <Redirect to='/docs/get' />
+  }
 
   return (
     <Layout
