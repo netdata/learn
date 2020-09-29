@@ -177,6 +177,7 @@ module.exports = {
                             'agent/collectors/go.d.plugin/modules/scaleio',
                             'agent/collectors/go.d.plugin/modules/service-discovery',
                             'agent/collectors/go.d.plugin/modules/solr',
+                            'agent/collectors/go.d.plugin/modules/systemdunits',
                             'agent/collectors/go.d.plugin/modules/portcheck',
                             'agent/collectors/go.d.plugin/modules/tengine',
                             'agent/collectors/go.d.plugin/modules/unbound',

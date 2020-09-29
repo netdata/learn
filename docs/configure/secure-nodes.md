@@ -13,7 +13,7 @@ internet at large, anyone can access the dashboard and your node's metrics at `h
 so that the local dashboard was immediately accessible to users, and so that we don't dictate how professionals set up
 and secure their infrastructures. 
 
-Despite this design decisison, your [data](/docs/agent/netdata-security#your-data-are-safe-with-netdata) and your
+Despite this design decision, your [data](/docs/agent/netdata-security#your-data-are-safe-with-netdata) and your
 [systems](/docs/agent/netdata-security#your-systems-are-safe-with-netdata) are safe with Netdata. Netdata is read-only,
 cannot do anything other than present metrics, and runs without special/`sudo` privileges. Also, the local dashboard
 only exposes chart metadata and metric values, not raw data.
@@ -83,7 +83,7 @@ patterns](/docs/agent/libnetdata/simple_pattern).
     allow connections from = example*
 ```
 
-The `allow connections from` setting is global and restricts acess to the dashboard, badges, streaming, API, and
+The `allow connections from` setting is global and restricts access to the dashboard, badges, streaming, API, and
 `netdata.conf`, but you can also set each of those access lists more granularly if you choose:
 
 ```conf
