@@ -95,10 +95,10 @@ function Home() {
   
   return ( 
     <>
-      {/* Redirect to `/docs/get` if someone arrives at `learn.netdata.cloud/#get` from www or another source. */}
+      {/* Redirect to `/docs/get` if someone arrives at `learn.netdata.cloud/#get`/`learn.netdata.cloud/#installation` from www or another source. */}
       <BrowserOnly>
         {() => {
-          if (window.location.hash === "#get") {
+          if (window.location.hash === "#get" || window.location.hash === "#installation") {
             return <Redirect to='/docs/get' />
           }
         }}
