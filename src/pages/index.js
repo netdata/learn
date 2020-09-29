@@ -94,7 +94,7 @@ function Home() {
 
   // Redirect to `/docs/get` if someone arrives at `learn.netdata.cloud/#get`
   // from www or another source.
-  if (location.hash === "#get") {
+  if (window.location.hash === "#get") {
     return <Redirect to='/docs/get' />
   }
 
