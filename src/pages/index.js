@@ -1,10 +1,11 @@
 import React from 'react';
 import clsx from 'clsx';
 import SVG from 'react-inlinesvg';
-import { Redirect } from 'react-router-dom'
 
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
+import { Redirect } from '@docusaurus/router';
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -91,149 +92,153 @@ function UpdateBox({title, href, date, type, description}) {
 function Home() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-
-  // Redirect to `/docs/get` if someone arrives at `learn.netdata.cloud/#get`
-  // from www or another source.
-  if (window.location.hash === "#get") {
-    return <Redirect to='/docs/get' />
-  }
-
-  return (
-    <Layout
-      title={`All your monitoring education in one place. ${siteConfig.title}`}
-      description="Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.">
-      <header className={clsx(styles.hero)}>
-        <div className={clsx('container')}>
-          <div className={clsx('row')}>
-            <div 
-              className={clsx(
-                'col col--6',
-                styles.heroText
-              )}>
-              <h1 className={styles.heroTagline}>
-                Learn Netdata
-              </h1>
-              <p className={styles.heroSubHead}>
-                View documentation, guides, and videos for single-node and infrastructure monitoring 
-                with Netdata. Discover new insights of your systems, containers, and applications 
-                using per-second metrics, insightful visualizations, and every metric imaginable.
-              </p>
-            </div>
-            <div className={clsx('col col--6', styles.heroImageContainer)}>
-              <SVG 
+  
+  return ( 
+    <>
+      {/* Redirect to `/docs/get` if someone arrives at `learn.netdata.cloud/#get` from www or another source. */}
+      <BrowserOnly>
+        {() => {
+          if (window.location.hash === "#get") {
+            return <Redirect to='/docs/get' />
+          }
+        }}
+      </BrowserOnly>
+      <Layout
+        title={`All your monitoring education in one place. ${siteConfig.title}`}
+        description="Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.">
+        <header className={clsx(styles.hero)}>
+          <div className={clsx('container')}>
+            <div className={clsx('row')}>
+              <div 
                 className={clsx(
-                  styles.heroImage
-                )} 
-                src="img/index/hero.svg"
-                alt="Netdata Learn: All your monitoring education in one place" 
-              />
-            </div>
-          </div>
-        </div>
-      </header>
-      <main>
-        <section className={styles.Get}>
-          <div className={clsx('container')}>
-            <div className={clsx('row')}>
-              <div className={clsx('col col--8')}>
-                <StartBox 
-                  to="/docs/get"
-                  title="Get Netdata"
-                  description="Sign up for Netdata Cloud and install the open-source Agent on your
-                  nodes. Claim and connect your nodes to Netdata Cloud for seamless, scalable, 
-                  and granular infrastructure monitoring."
-                  cta="Show me how"
-                  image={true} />
+                  'col col--6',
+                  styles.heroText
+                )}>
+                <h1 className={styles.heroTagline}>
+                  Learn Netdata
+                </h1>
+                <p className={styles.heroSubHead}>
+                  View documentation, guides, and videos for single-node and infrastructure monitoring 
+                  with Netdata. Discover new insights of your systems, containers, and applications 
+                  using per-second metrics, insightful visualizations, and every metric imaginable.
+                </p>
+              </div>
+              <div className={clsx('col col--6', styles.heroImageContainer)}>
+                <SVG 
+                  className={clsx(
+                    styles.heroImage
+                  )} 
+                  src="img/index/hero.svg"
+                  alt="Netdata Learn: All your monitoring education in one place" 
+                />
               </div>
             </div>
           </div>
-        </section>
-        <section className={styles.CTAs}>
-          <div className={clsx('container')}>
-            <div className={clsx('row')}>
-              <div className={clsx('col col--8')}>
-                <h2>New to Netdata?</h2>
+        </header>
+        <main>
+          <section className={styles.Get}>
+            <div className={clsx('container')}>
+              <div className={clsx('row')}>
+                <div className={clsx('col col--8')}>
+                  <StartBox 
+                    to="/docs/get"
+                    title="Get Netdata"
+                    description="Sign up for Netdata Cloud and install the open-source Agent on your
+                    nodes. Claim and connect your nodes to Netdata Cloud for seamless, scalable, 
+                    and granular infrastructure monitoring."
+                    cta="Show me how"
+                    image={true} />
+                </div>
               </div>
             </div>
-            <div className={clsx('row')}>
-              <div className={clsx('col col--4')}>
-                <DiscoverBox 
-                  href="/docs/overview/what-is-netdata" 
-                  title="What is Netdata?"
-                  cta="Learn the basics">
-                  Run through Netdata's components, capabilities, and features. Understand how and why it's different from other monitoring solutions.
-                </DiscoverBox>
+          </section>
+          <section className={styles.CTAs}>
+            <div className={clsx('container')}>
+              <div className={clsx('row')}>
+                <div className={clsx('col col--8')}>
+                  <h2>New to Netdata?</h2>
+                </div>
               </div>
-              <div className={clsx('col col--4')}>
-                <DiscoverBox 
-                  href="/docs/quickstart/single-node" 
-                  title="Quickstart: Single-node monitoring"
-                  cta="Get started">
-                  Quick installation and immediate results to quickly monitor physical systems or virtual servers.
-                </DiscoverBox>
+              <div className={clsx('row')}>
+                <div className={clsx('col col--4')}>
+                  <DiscoverBox 
+                    href="/docs/overview/what-is-netdata" 
+                    title="What is Netdata?"
+                    cta="Learn the basics">
+                    Run through Netdata's components, capabilities, and features. Understand how and why it's different from other monitoring solutions.
+                  </DiscoverBox>
+                </div>
+                <div className={clsx('col col--4')}>
+                  <DiscoverBox 
+                    href="/docs/quickstart/single-node" 
+                    title="Quickstart: Single-node monitoring"
+                    cta="Get started">
+                    Quick installation and immediate results to quickly monitor physical systems or virtual servers.
+                  </DiscoverBox>
+                </div>
+                <div className={clsx('col col--4')}>
+                  <DiscoverBox 
+                    href="/docs/quickstart/infrastructure" 
+                    title="Quickstart: Infrastructure monitoring"
+                    cta="Get started">
+                    Granular and zero-configuration monitoring for systems, containers, and applications at scale.
+                  </DiscoverBox>
+                </div>
               </div>
-              <div className={clsx('col col--4')}>
-                <DiscoverBox 
-                  href="/docs/quickstart/infrastructure" 
-                  title="Quickstart: Infrastructure monitoring"
-                  cta="Get started">
-                  Granular and zero-configuration monitoring for systems, containers, and applications at scale.
-                </DiscoverBox>
+              <div className={clsx('row', styles.ctaRow)}>
+                <div className={clsx('col col--8')}>
+                  <h2>Looking for guided content or reference documentation?</h2>
+                </div>
+              </div>
+              <div className={clsx('row')}>
+                <div className={clsx('col col--4')}>
+                  <DiscoverBox 
+                    href="/guides" 
+                    title="Guides"
+                    cta="Read guides">
+                    Follow along to monitor specific applications, deploy Netdata across infrastructure, and more.
+                  </DiscoverBox>
+                </div>
+                <div className={clsx('col col--4')}>
+                  <DiscoverBox 
+                    href="/docs/quickstart/single-node" 
+                    title="Agent reference"
+                    cta="View docs">
+                    Documentation for each component, feature, and API available in the open-source Netdata Agent.
+                  </DiscoverBox>
+                </div>
+                <div className={clsx('col col--4')}>
+                  <DiscoverBox 
+                    href="/docs/quickstart/infrastructure" 
+                    title="Cloud reference"
+                    cta="View docs">
+                    Documentation for the features, organization, and and management capabilities in Netdata Cloud.
+                  </DiscoverBox>
+                </div>
+              </div>
+              <div className={clsx('row', styles.ctaRow)}>
+                <div className={clsx('col col--8')}>
+                  <h2>Join our community and contribute</h2>
+                  <p>Find us on our <Link href="https://community.netdata.cloud/">forums</Link> or <Link href="https://github.com/netdata/netdata">GitHub</Link>. If you're ready to contribute code, read our <Link to="/docs/agent/contributing/">contributing guidelines</Link> and the <Link to="/docs/agent/code_of_conduct">Contributor Covenant Code of Conduct</Link>. If documentation is more your style, read the <Link to="/docs/agent/contributing/contributing-documentation">docs guidelines</Link> and the <Link to="/docs/agent/contributing/style-guide">Netdata style guide</Link>.</p>
+                </div>
               </div>
             </div>
-            <div className={clsx('row', styles.ctaRow)}>
-              <div className={clsx('col col--8')}>
-                <h2>Looking for guided content or reference documentation?</h2>
+          </section>
+          <section className={clsx(styles.changelog)}>
+            <div className={clsx('container')}>
+              <div className={clsx('row')}>
+                <div className={clsx('col col--6')}>
+                  <h2>Recent updates and new content</h2>
+                </div>
               </div>
+              {updates.map((props, idx) => (
+                <UpdateBox key={idx} {...props} />
+              ))}
             </div>
-            <div className={clsx('row')}>
-              <div className={clsx('col col--4')}>
-                <DiscoverBox 
-                  href="/guides" 
-                  title="Guides"
-                  cta="Read guides">
-                  Follow along to monitor specific applications, deploy Netdata across infrastructure, and more.
-                </DiscoverBox>
-              </div>
-              <div className={clsx('col col--4')}>
-                <DiscoverBox 
-                  href="/docs/quickstart/single-node" 
-                  title="Agent reference"
-                  cta="View docs">
-                  Documentation for each component, feature, and API available in the open-source Netdata Agent.
-                </DiscoverBox>
-              </div>
-              <div className={clsx('col col--4')}>
-                <DiscoverBox 
-                  href="/docs/quickstart/infrastructure" 
-                  title="Cloud reference"
-                  cta="View docs">
-                  Documentation for the features, organization, and and management capabilities in Netdata Cloud.
-                </DiscoverBox>
-              </div>
-            </div>
-            <div className={clsx('row', styles.ctaRow)}>
-              <div className={clsx('col col--8')}>
-                <h2>Join our community and contribute</h2>
-                <p>Find us on our <Link href="https://community.netdata.cloud/">forums</Link> or <Link href="https://github.com/netdata/netdata">GitHub</Link>. If you're ready to contribute code, read our <Link to="/docs/agent/contributing/">contributing guidelines</Link> and the <Link to="/docs/agent/code_of_conduct">Contributor Covenant Code of Conduct</Link>. If documentation is more your style, read the <Link to="/docs/agent/contributing/contributing-documentation">docs guidelines</Link> and the <Link to="/docs/agent/contributing/style-guide">Netdata style guide</Link>.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className={clsx(styles.changelog)}>
-          <div className={clsx('container')}>
-            <div className={clsx('row')}>
-              <div className={clsx('col col--6')}>
-                <h2>Recent updates and new content</h2>
-              </div>
-            </div>
-            {updates.map((props, idx) => (
-              <UpdateBox key={idx} {...props} />
-            ))}
-          </div>
-        </section>
-      </main>
-    </Layout>
+          </section>
+        </main>
+      </Layout>
+    </>
   );
 }
 
