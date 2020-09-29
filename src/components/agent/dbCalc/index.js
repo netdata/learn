@@ -154,14 +154,14 @@ export function Calculator() {
         </div>
 
         <div className={styles.calcConfig}>
-          <p>To enable this setup, edit the <code>netdata.conf</code> file&nbsp;
+          <p>To enable this setup, <Link to="/docs/configure/nodes#use-edit-config-to-edit-netdataconf">edit your <code>netdata.conf</code></Link> file&nbsp;
             {state.child > 0 &&
               <em>on your parent node&nbsp;</em>
             }
             and change the <code>dbengine multihost disk space</code> setting to the following:
           </p>
           <CodeBlock className={clsx('conf')} language='conf'>{conf}</CodeBlock>
-          <p>Restart your Agent for the setting to take effect.</p>
+          <p>Restart your Agent with <code>service netdata restart</code> for the setting to take effect.</p>
           {state.child > 0 ? (
             <p>Your Agent now stores metrics for {state.parent + state.child} nodes (1 parent and {state.child} child node{state.child > 1 && <span>s</span>}) for {state.retention} day{state.retention !== 1 && <span>s</span>} using a total of <code>{requiredDisk} MiB</code> in disk space.</p>
           ) : (
@@ -170,7 +170,7 @@ export function Calculator() {
         </div>
 
         <div className={styles.calcNotes}>
-          <h3>Notes</h3>
+          <h3>Notes on the database engine calculator</h3>
           <ul>
             {state.child > 0 && (
               <>

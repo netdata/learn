@@ -12,6 +12,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          homePageId: 'netdata', // Defaults to `_index`
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/netdata/netdata/edit/master/',
           showLastUpdateTime: true,
@@ -61,13 +62,8 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/agent', 
-          label: 'Agent', 
-          position: 'left',
-        },
-        {
-          to: 'docs/cloud', 
-          label: 'Cloud', 
+          to: 'docs', 
+          label: 'Docs', 
           position: 'left',
         },
         {
@@ -101,31 +97,19 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'About',
+          title: 'Products',
           items: [
             {
-              label: 'Netdata, Inc.',
-              href: 'https://netdata.cloud',
+              label: 'Agent',
+              href: 'https://netdata.cloud/agent',
             },
             {
-              label: 'Agent Docs',
-              to: 'docs/agent',
+              label: 'Cloud',
+              href: 'https://netdata.cloud/cloud',
             },
             {
-              label: 'Cloud Docs',
-              to: 'docs/cloud',
-            },
-            {
-              label: 'Guides',
-              to: 'guides',
-            },
-            {
-              label: 'Community',
-              to: 'https://community.netdata.cloud/',
-            },
-            {
-              label: 'Blog',
-              href: 'https://netdata.cloud/blog',
+              label: 'Integrations',
+              to: 'https://www.netdata.cloud/integrations/',
             },
             {
               label: 'Status',
@@ -134,52 +118,49 @@ module.exports = {
           ],
         },
         {
-          title: 'Get started',
+          title: 'Resources',
           items: [
             {
-              label: 'Installation',
-              to: 'docs/agent/packaging/installer',
+              label: 'Learn',
+              to: '/',
             },
             {
-              label: 'Getting started guide',
-              to: 'docs/agent/getting-started',
+              label: 'Blog',
+              to: 'https://netdata.cloud/blog',
             },
             {
-              label: 'Step-by-step tutorial',
-              to: 'guides/step-by-step/step-00',
-            },
-            {
-              label: 'Configuration',
-              to: 'docs/agent/configuration-guide',
-            },
-            {
-              label: 'Collecting metrics',
-              to: 'docs/agent/collectors',
-            },
-            {
-              label: 'Health monitoring',
-              to: 'docs/agent/health',
-            },
-          ],
+              label: 'GitHub',
+              to: 'https://github.com/netdata/netdata',
+            }
+          ]
         },
         {
           title: 'Community',
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/netdata/netdata',
+              label: 'Overview',
+              to: 'https://www.netdata.cloud/community-overview/',
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/linuxnetdata',
+              label: 'Forums',
+              to: 'https://community.netdata.cloud/',
+            }
+          ]
+        },
+        {
+          title: 'Company',
+          items: [
+            {
+              label: 'About',
+              href: 'https://netdata.cloud',
             },
             {
-              label: 'Facebook',
-              href: 'https://www.facebook.com/linuxnetdata/',
+              label: 'News',
+              href: 'https://www.netdata.cloud/news/',
             },
             {
-              label: 'LinkedIn',
-              href: 'https://www.linkedin.com/company/my-netdata.io/',
+              label: 'Careers',
+              href: 'https://careers.netdata.cloud/',
             },
           ],
         },

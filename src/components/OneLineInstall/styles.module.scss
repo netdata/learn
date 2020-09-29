@@ -1,0 +1,95 @@
+.getOneLineContainer {
+  position: relative;
+  overflow: hidden;
+  margin-top: calc(1.5 * var(--ifm-paragraph-margin-bottom));
+  margin-bottom: var(--ifm-paragraph-margin-bottom);
+  background: white;
+}
+
+html[data-theme='dark'] .getOneLineContainer {
+  background: linear-gradient(90deg, #13172d, #191927);
+}
+
+.getOneLineCommand {
+  position: relative;  
+  // margin-top: var(--ifm-paragraph-margin-bottom);
+  margin-bottom: 0;
+  font-size: 1.4rem;
+
+  code {
+    padding: var(--ifm-pre-padding) 3rem var(--ifm-pre-padding) var(--ifm-pre-padding);
+    white-space: pre-line;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
+}
+
+.installCheckboxes {
+  z-index: 10;
+  position: relative;
+  padding: 1rem;
+  border-right: 1px solid var(--ifm-color-gray-300);
+  border-bottom: 1px solid var(--ifm-color-gray-300);
+  border-left: 1px solid var(--ifm-color-gray-300);
+  border-radius: 0 0 2px 2px;
+}
+
+.installCheckbox {
+  padding: 0.2rem 0;
+}
+
+.installCheckbox input[type="checkbox"] {
+  opacity: 0;
+}
+
+.installCheckbox label {
+  position: relative;
+}
+
+.installCheckbox label::before{
+  position: absolute;
+  top: 3px;
+  left: -20px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 1px solid var(--ifm-color-gray-300);
+  border-radius: 2px;
+  content: "";
+}
+
+.installCheckbox label::after {
+  position: absolute;
+  top: 7px;
+  left: -17px;
+  display: inline-block;
+  width: 9px;
+  height: 6px;
+  border-bottom: 2px solid var(--ifm-color-primary);
+  border-left: 2px solid var(--ifm-color-primary);
+  content: "";
+  transform: rotate(-45deg);
+}
+
+.installCheckbox input[type="checkbox"] + label::after {
+  content: none;
+}
+
+.installCheckbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+.installCheckbox label code {
+  margin-left: 0.6rem;
+  font-size: 70%;
+}
+
+.svg {
+  z-index: 0;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 820px;
+  opacity: 0.1;
+}

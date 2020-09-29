@@ -9,9 +9,9 @@
 
 .hero {
   position: relative;
-  overflow: hidden;
-  padding: 8rem 0 6rem;
-  background: linear-gradient(to bottom, white, #ededf3);
+  // overflow: hidden;
+  padding: 8rem 0 12rem;
+  background: linear-gradient(to bottom, white, #f1f2fb);
 
   span {
     display: block;
@@ -32,6 +32,7 @@
 
     .heroSubHead {
       font-size: 1.3rem;
+      margin-bottom: 0;
     }
   }
 
@@ -55,26 +56,12 @@
     z-index: 10;
     position: absolute;
     top: calc(-6rem - 68px);
-    right: -180px;
+    right: -300px;
     max-width: 1200px;
   }
 
-  @media (max-width: 1600px) {
-    // .heroImage {
-    //   right: -120px;
-    // }
-  }
-
-  @media (max-width: 1400px) {
-    // .heroImage {
-    //   bottom: -151px;
-    //   right: 0;
-    //   max-width: 550px;
-    // }
-  }
-
   @media (max-width: 996px) {
-    padding: 4rem 0 3rem;
+    padding: 4rem 0 2rem;
 
     .heroText .heroTagline {
       font-size: 2.4rem;
@@ -90,263 +77,97 @@
   }
 }
 
-
 /**
- * Installation
+ * Get
  */
 
-.install {
-  margin-bottom: 4rem;
+.Get {
+  margin-top: -8rem;
+  z-index: 100;
+  position: relative;
+
+  div > a {
+    box-shadow: 0 10px 15px -3px hsla(198,23%,3%,0.06),0 4px 6px -2px hsla(198,23%,3%,0.12);
+  }
+
+  @media (max-width: 996px) {
+    margin-top: 0rem;
+  }
+
+  div > a {
+    margin-top: 0;
+  }
 }
 
-.installContainer {
+/**
+ * CTAs
+ */
+
+.CTAs {
+  padding: 6rem 0 0;
+  margin-bottom: 5rem;
+
+  div > a {
+    margin-top: 0;
+    display: block;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  @media (max-width: 996px) {
+    div[class*="col"] + div[class*="col"] {
+      margin-top: 4rem;
+    }
+  }
+}
+
+.ctaRow {
+  margin-top: 3rem;
+}
+
+/**
+ * Changelog
+ */
+
+.changelog {
   padding-top: 4rem;
   padding-bottom: 4rem;
+  background: #f1f2fb;
 
-  background: var(--ifm-color-gray-100);
+  h2 {
+    margin-bottom: calc(var(--ifm-paragraph-margin-bottom) * 2);
+  }
 }
 
-.install h2 {
-  font-size: 2rem;
+.updateMeta {
+  time {
+    display: block;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 90%;
+    margin-bottom: 0rem;
+  }
+
+  span {
+    // font-family: var(--ifm-font-family-monospace);
+    // font-weight: 500;
+    display: inline-block;
+    font-size: 80%;
+    background: var(--ifm-color-primary);
+    color: var(--ifm-background-color);
+    padding: 0.1rem 0.2rem;
+  }
 }
 
-.installCheckbox input[type="checkbox"] {
-  opacity: 0;
-}
-
-.installCheckbox label {
-  position: relative;
-}
-
-.installCheckbox label::before{
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: -20px;
-  display: inline-block;
-  height: 16px;
-  width: 16px;
-  
-  background: white;
-  border: 1px solid var(--ifm-color-gray-300);
-  border-radius: 2px;
-}
-
-.installCheckbox label::after {
-  content: "";
-  position: absolute;
-  left: -17px;
-  top: 7px;
-  display: inline-block;
-  height: 6px;
-  width: 9px;
-
-  border-left: 2px solid var(--ifm-color-primary);
-  border-bottom: 2px solid var(--ifm-color-primary);
-  transform: rotate(-45deg);
-}
-
-.installCheckbox input[type="checkbox"] + label::after {
-  content: none;
-}
-
-.installCheckbox input[type="checkbox"]:checked + label::after {
-  content: "";
-}
-
-.installSelection label code {
-  margin-left: 0.6rem;
-
-  font-size: var(--ifm-h6-font-size);
-}
-
-.installCommand {
-  position: relative;
-
-  margin-top: var(--ifm-paragraph-margin-bottom);
+.updateBox {
   margin-bottom: var(--ifm-paragraph-margin-bottom);
 
-  code {
-    padding: var(--ifm-pre-padding) 3rem var(--ifm-pre-padding) var(--ifm-pre-padding);
-
-    white-space: pre-line;
-    word-break: break-word;
-    word-wrap: break-word;
-  }
-}
-
-.installMethods {
-  display: grid !important;
-  grid-template-columns: repeat(4, [col-start] 1fr);
-  grid-gap: 1rem;
-}
-
-.installMethods h3 {
-  grid-column: span 4;
-  text-align: center;
-  margin: 0;
-}
-
-.installMethod {
-  grid-column: span 2;
-  padding: 0.6rem;
-
-  border: 1px solid var(--ifm-color-gray-300);
-  border-radius: 2px;
-  color: var(--ifm-font-color-base);
-  font-size: 0.9rem;
-  text-align: center;
-  
-}
-
-.installMethod:hover {
-  border: 1px solid var(--ifm-color-primary-lightest);
-  color: var(--ifm-color-primary);
-}
-
-.installMethod img,
-.installMethod svg {
-  display: block;
-  max-width: 96px;
-  max-height: 64px;
-  margin: 0 auto 0.4rem;
-
-  filter: grayscale(1);
-}
-
-.installMethods p {
-  grid-column: span 4;
-  font-size: var(--ifm-h5-font-size);
-  text-align: center;
-}
-
-@media (max-width: 996px) {
-  .install {
-    margin-bottom: 1rem;
+  p {
+    color: var(--ifm-font-color-base);
+    font-weight: 400;
   }
 
-  .installContainer {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-}
-
-/**
- * Step-by-step guide
- */
-
-.stepByStep {
-  position: relative;
-  overflow: hidden;
-  padding: 4rem 0;
-}
-
-.stepByStep h2 {
-  margin-bottom: 3rem;
-  font-size: 2rem;
-  text-align: center;
-}
-
-.stepByStepImg {
-  position: relative;
-  overflow: hidden;
-
-  border-radius: 2px;
-  
-  img {
-    position: absolute;
-    min-width: 600px;
-    height: 370px;
-    
-    border-radius: 2px;
-  }
-}
-
-.stepByStepLink {
-  display: block;
-  margin-bottom: 0.4rem;
-
-  font-size: 0.9rem;
-}
-
-.stepByStepIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 24px;
-  width: 24px;
-  padding: 4px;
-  margin-right: 1rem;
-
-  background: var(--ifm-background-color);
-  border: 1px solid #35414A;
-  border-radius: 2px;
-}
-
-.stepByStepIcon svg {
-  display: 18px;
-  width: 143px;
-  height: 14px;
-  
-  color: var(--ifm-font-color-base);
-}
-
-@media (max-width: 996px) {
-  .stepByStep {
-    padding: 3rem 0;
-  }
-
-  .stepByStep h2 {
-    margin-bottom: var(--ifm-paragraph-margin-bottom);
-  }
-
-  .stepByStep img {
-    display: none;
-  }
-
-  .stepByStepLinks {
-    margin-bottom: var(--ifm-paragraph-margin-bottom);
-  }
-}
-
-/**
- * Doc boxes
- */
-
-.docs {
-  padding: 4rem 0;
-}
-
-.docBox {
-  padding: var(--ifm-spacing-horizontal);
-}
-
-.docBox:hover {
-  text-decoration: none;
-}
-
-.docBox h3 {
-  color: var(--ifm-color-primary);
-}
-
-.docBox p {
-  margin: 0;
-
-  color: var(--ifm-font-color-base);
-  font-weight: 400;
-}
-
-.docBox:hover h3 {
-  color: var(--ifm-color-secondary);
-}
-
-@media (max-width: 996px) {
-  .docs {
-    padding: 0 0 3rem;
-  }
-
-  .docBox {
-    padding: var(--ifm-spacing-vertical);
+  &:hover {
+    text-decoration: none;
   }
 }
 
@@ -358,10 +179,10 @@ html[data-theme='dark'] {
   }
 
   .hero {
-    background: #191927;
+    background: linear-gradient(to bottom, #191927, #22272E);
   }
 
-  .installContainer {
+  .changelog {
     background: #22272E;
   }
 

@@ -54,4 +54,16 @@
 
 [[redirects]]
   from = "dbengine-calc"
-  to = "/docs/agent/database/calculator"
+  to = "/docs/store/change-metrics-storage#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics"
+
+[[redirects]]
+  from = "/docs/agent/database/calculator"
+  to = "/docs/store/change-metrics-storage#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics"
+
+[[redirects]]
+  from = "/docs/export"
+  to = "/docs/export/external-databases"
+
+[[redirects]]
+  from = "/#get"
+  to = "/docs/get"

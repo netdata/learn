@@ -9,8 +9,8 @@
 
 .dbCalc {
   align-items: center;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+  margin-top: calc(var(--ifm-spacing-vertical) * 2);
+  margin-bottom: calc(var(--ifm-spacing-vertical) * 2);
 }
 
 .calcRow {
@@ -98,13 +98,13 @@
 }
 
 .calcResults {
-  margin-top: 3rem;
+  margin-top: calc(var(--ifm-spacing-vertical) * 2);
   
-  font-size: 116%;
+  // font-size: 105%;
 
-  p code {
-    font-size: 1rem;
-  }
+  // p code {
+  //   font-size: 1rem;
+  // }
 
 }
 
@@ -117,27 +117,22 @@
 .calcFinal {
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
-
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  margin-bottom: calc(var(--ifm-spacing-vertical) * 2);
+  // padding-bottom: calc(var(--ifm-spacing-vertical) * 2);
 
   p {
     flex: 0 0 100%;
-
-    font-size: 120%;
   }
 
   span {
     flex: 0 0 50%;
+    font-size: 120%;
   }
 }
 
 .calcConfig {
-  margin-bottom: 3rem;
-  padding-bottom: 3rem;
-
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  margin-bottom: calc(var(--ifm-spacing-vertical) * 2);
+  // padding-bottom: calc(var(--ifm-spacing-vertical) * 2);
 
   div[class^='codeBlockContent'] {
     margin-bottom: var(--ifm-paragraph-margin-bottom);
@@ -153,7 +148,13 @@
 }
 
 .calcNotes {
+  background: --var(--ifm-background);
+  padding: 1rem;
   font-size: 80%;
+
+  ul {
+    margin-bottom: 0;
+  }
 }
 
 
@@ -162,11 +163,9 @@
  * Dark mode overrides
  */
 
-html[data-theme='dark'] .calcInput input {
-  background: var(--ifm-background-dark);
-  color: white;
-}
-
-html[data-theme='dark'] blockquote {
-  color: var(--ifm-color-primary-lightest);
+html[data-theme='dark'] {
+  .calcInput input {
+    background: var(--ifm-background-dark);
+    color: white;
+  }
 }

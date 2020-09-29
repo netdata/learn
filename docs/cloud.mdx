@@ -1,39 +1,29 @@
 ---
-title: Netdata Cloud
+title: Netdata Cloud reference docs
 description: Netdata Cloud is real-time visibility for entire infrastructures. View key metrics, insightful charts, and active alarms from all your nodes.
 custom_edit_url: null
 ---
 
-import { Start, StartBox } from '../src/components/agent/StartBox/'
+import { StartBox } from '../src/components/StartBox/'
 import { Discover, DiscoverBox } from '../src/components/agent/DiscoverBox/'
 
-Netdata Cloud gives you real-time visibility for your entire infrastructure. With Netdata Cloud, you can view key metrics, insightful charts, and active alarms from all your nodes in a single web interface. When an anomaly strikes, seamlessly navigate to any node to troubleshoot and discover the root cause with the familiar Netdata dashboard.
+This is the reference documentation for the Netdata Cloud web application.
 
-![Animated GIF of Netdata Cloud](https://user-images.githubusercontent.com/1153921/80828986-1ebb3b00-8b9b-11ea-957f-2c8d0d009e44.gif)
+If you want to get started with Netdata Cloud, click the button below or read our [_Get Netdata_ guide](/docs/get).
 
-**[Netdata Cloud is free](/docs/cloud/faq-glossary#how-much-does-netdata-cost-how-and-why-is-it-free)**! You can add an entire infrastructure of nodes, invite all your colleagues, and visualize any
-number of metrics, charts, and alarms entirely for free.
-
-<p><a href="https://app.netdata.cloud" className="button button--lg">Sign in to Cloud</a></p>
-
-While Netdata Cloud offers a centralized method of monitoring your Agents, your metrics data is not stored or
-centralized in any way. Metrics data remains with your nodes and is only streamed to your browser through Cloud. 
-
-In addition, Cloud only expands on the functionality of the wildly popular [free and open source Agent](/docs/agent/).
-We will never make any of our open source Agent features cloud-exclusive, and we will actively continue to develop the
-Agent so that we can integrate new features with Netdata Cloud.
+See our [core docs](/docs) for comprehensive docs and guides for using Netdata for monitoring, visualization, and
+troubleshooting. Read [_What is Netdata?_](/docs/overview/what-is-netdata) for details about how Netdata works and how
+it's different from other monitoring solutions.
 
 > 🆕 Dark mode is here! If you're still using the Light theme, click on your profile picture, then **Profile**. Click on
 the **Settings** tab, then choose your preferred theme: Light, Blue, and Dark. See the [theme
 doc](/docs/cloud/manage/themes) for screenshots of each theme.
 
-## Get started on Netdata Cloud
-
-<Start>
-  <StartBox href="/docs/cloud/get-started/" title="Get started guide" button="Read now">
-    Update your Agents, claim your nodes, and dive into infrastructure-wide monitoring with Netdata Cloud.
-  </StartBox>
-</Start>
+<StartBox 
+  to="/docs/get"
+  title="Get Netdata"
+  description="Sign up for Netdata Cloud and install the open-source Agent on one or more nodes. If you have an infrastructure to monitor, connect all your distributed nodes to Cloud for seamless infrastructure-wide monitoring."
+  image={true} />
 
 ## Discover more of Netdata Cloud
 

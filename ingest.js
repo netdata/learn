@@ -20,7 +20,6 @@ const outDir = path.join(__dirname, agentDir)
 const retainPaths = [
   path.join(baseDir, 'agent.mdx'),
   path.join(baseDir, 'cloud.mdx'),
-  path.join(baseDir, 'agent/database/calculator.mdx'),
 ]
 
 const ax = axios.create({
@@ -111,6 +110,15 @@ function normalizeLinks(pages) {
       // link. Return the normalized link.
       if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
 
+      // Exceptions to accomodate the new documentation structure, with many
+      // documents in various `/docs/X` folders.
+      if (url.includes('docs/get.md') || url.includes('docs/overview') || url.includes('docs/collect/') || 
+          url.includes('docs/configure/') || url.includes('docs/export/') || url.includes('docs/configure/') || 
+          url.includes('docs/monitor/') || url.includes('docs/quickstart/') ||url.includes('docs/store/') || 
+          url.includes('docs/visualize/')) {
+        return `](${url})`
+      }
+
       // If the link is to a guide page in the `/docs/guides` folder.
       if (url.includes('guides/')) {
         url = url.split('guides/')[1]
@@ -118,7 +126,8 @@ function normalizeLinks(pages) {
         return `](${guideUrl})`
       }
 
-      // If the link is to a step-by-step guide page in the `/docs/step-by-step` folder.
+      // If the link is to a step-by-step guide page in the `/docs/step-by-step`
+      // folder.
       if (url.includes('step-by-step/') || url.includes('step-')) {
         if (url.includes('step-by-step/')) {
           url = url.split('step-by-step/')[1]
@@ -257,6 +266,36 @@ async function writePages(pages) {
   return Promise.all(pages.map(async (page) => {
     let fullPath = path.join(outDir, page.meta.path).toLowerCase()
     let fullDir = path.dirname(fullPath)
+
+    // This whole thing is really ugly.
+    if (fullPath.includes('agent/overview')) {
+      fullPath = fullPath.replace('docs/agent/overview', 'docs/overview/');
+      fullDir = fullDir.replace('docs/agent/overview', 'docs/overview/');
+    } else if (fullPath.includes('docs/agent/get.md') && !fullPath.includes('getting-started')) {
+      fullPath = fullPath.replace('docs/agent/get.md', 'docs/get.md');
+      fullDir = fullDir.replace('docs/agent/get', 'docs/');
+    } else if (fullPath.includes('agent/quickstart')) {
+      fullPath = fullPath.replace('docs/agent/quickstart', 'docs/quickstart/');
+      fullDir = fullDir.replace('docs/agent/quickstart', 'docs/quickstart/');
+    } else if (fullPath.includes('agent/configure')) {
+      fullPath = fullPath.replace('docs/agent/configure', 'docs/configure/');
+      fullDir = fullDir.replace('docs/agent/configure', 'docs/configure/');
+    } else if (fullPath.includes('docs/agent/collect') && !fullPath.includes('agent/collectors')) {
+      fullPath = fullPath.replace('docs/agent/collect', 'docs/collect/');
+      fullDir = fullDir.replace('docs/agent/collect', 'docs/collect/');
+    } else if (fullPath.includes('agent/visualize')) {
+      fullPath = fullPath.replace('docs/agent/visualize', 'docs/visualize/');
+      fullDir = fullDir.replace('docs/agent/visualize', 'docs/visualize/');
+    } else if (fullPath.includes('agent/monitor')) {
+      fullPath = fullPath.replace('docs/agent/monitor', 'docs/monitor/');
+      fullDir = fullDir.replace('docs/agent/monitor', 'docs/monitor/');
+    } else if (fullPath.includes('agent/store')) {
+      fullPath = fullPath.replace('docs/agent/store', 'docs/store/');
+      fullDir = fullDir.replace('docs/agent/store', 'docs/store/');
+    } else if (fullPath.includes('agent/export') && !fullPath.includes('agent/exporting')) {
+      fullPath = fullPath.replace('docs/agent/export', 'docs/export/');
+      fullDir = fullDir.replace('docs/agent/export', 'docs/export/');
+    }
 
     // Move anything from the `/docs/guides` folder into the new `guides` folder.
     if (fullPath.includes('agent/guides')) {
