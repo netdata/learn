@@ -403,6 +403,7 @@ module.exports = {
                     'agent/health/notifications/rocketchat',
                     'agent/health/notifications/slack',
                     'agent/health/notifications/smstools3',
+                    'agent/health/notifications/stackpulse',
                     'agent/health/notifications/syslog',
                     'agent/health/notifications/telegram',
                     'agent/health/notifications/twilio',
