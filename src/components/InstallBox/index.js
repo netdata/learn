@@ -10,11 +10,20 @@ export const Install = ({children}) => (
   </div>
 )
 
-export const InstallBox = ({to, img, os}) => (
+export const InstallBox = ({to, img, imgDark, os}) => (
   <Link to={to} className={styles.InstallBox}>
-    <SVG 
-      src={img}
-      alt={os} />
+    <div className={imgDark && styles.InstallIconSwitch}>
+      <SVG 
+        className={styles.InstallIcon}
+        src={img}
+        alt={os} />
+      {imgDark && 
+        <SVG 
+          className={styles.InstallIconDark}
+          src={imgDark}
+          alt={os} />
+      }
+    </div>
     <h4>{os}</h4>
   </Link>
 );
