@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 
+import Link from '@docusaurus/Link';
+
 import styles from './styles.module.scss'; 
 
 const GuideItems = [
@@ -28,7 +30,15 @@ const GuideItems = [
     category: 'export',
     description: "In this guide, we'll show you how to export Netdata metrics to Graphite for long-term storage and further analysis."
   },
+  {
+    title: "Monitor Nginx or Apache web server log files with Netdata",
+    href: "guides/collect-apache-nginx-web-logs",
+    category: "collect-monitor",
+    description: "This guide will walk you through using the new Go-based web log collector to turn the logs these web servers constantly write to into real-time insights into your infrastructure."
+  },
 ]
+
+
 
 const GuideCategories = [
   {
@@ -47,17 +57,40 @@ const GuideCategories = [
 
 export function Guides() {
   let itemsFiltered = GuideItems;
+  let categoriesFiltered = GuideCategories
 
   const [searchTerm, setSearchTerm] = useState(null);
 
   if (searchTerm) {
+    let searchTerms = searchTerm.split(" ");
+    console.log(searchTerms)
     itemsFiltered = itemsFiltered.filter(item => {
-      let searchTerms = searchTerm.split(" ");
-      let content = `${item.title.toLowerCase()} ${item.description.toLowerCase()}`;
+      let content = `${item.title.toLowerCase()}`;
+      // console.log(content)
       return searchTerms.every(term => {
+        console.log(content.includes(term.toLowerCase()))
         return content.includes(term.toLowerCase())
       })
     });
+
+    console.log(itemsFiltered)
+
+    categoriesFiltered = categoriesFiltered.filter(category => {
+      // console.log(category.label)
+      // console.log(itemsFiltered)
+      if (itemsFiltered.length) {
+        return itemsFiltered.every(item => {
+          // console.log('CATEGORY: ' + category.label)
+          // console.log('ITEM TITLE: ' + item.title)
+          // console.log('ITEM CATEGORY: ' + item.category)
+          return category.label.toLowerCase().includes(item.category.toLowerCase())
+        })
+      } else {
+        return false
+      }
+    })
+
+    console.log(categoriesFiltered)
   }
 
   return (
@@ -71,14 +104,14 @@ export function Guides() {
         <p>Showing results for: {searchTerm}</p>
       </div>
       <div className={clsx('container')}>
-        {GuideCategories.map((props, idx) => (
+        {categoriesFiltered.map((props, idx) => (
           <>
             <div key={idx} className={clsx('row')}>
               <h3>{props.title}</h3>
             </div>
             <div className={clsx('row')}>
               {itemsFiltered.filter(item => item.category.includes(props.label)).map(categorizedItem => (
-                <p>{categorizedItem.title}</p>
+                <Link to={categorizedItem.href}>{categorizedItem.title}</Link>
               ))}
             </div>
           </>
