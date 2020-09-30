@@ -133,6 +133,11 @@ with the name of your container if different.
 docker logs netdata 2>&1 | grep -E --line-buffered 'ACLK|claim|cloud'
 ```
 
+### Claim a Kubernetes cluster's parent Netdata pod
+
+Read our [Kubernetes installation](/docs/agent/packaging/installer/methods/kubernetes#claim-a-kubernetes-clusters-parent-pod)
+for details on claiming a parent Netdata pod.
+
 ### Claim through a proxy
 
 A Space's administrator can claim a node through a SOCKS5 or HTTP(S) proxy.
