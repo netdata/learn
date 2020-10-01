@@ -33,13 +33,6 @@
     }
   }
 
-  svg {
-    display: block;
-    width: 64px;
-    height: 64px;
-    margin: 0 auto;
-  }
-
   h4 {
     margin: 0.4rem 0 0;
     color: var(--ifm-font-color-base);
@@ -50,6 +43,28 @@
   }
 }
 
-html[data-theme='dark'] .StartBox {
-  background: linear-gradient(90deg, #13172d, #191927);
+.InstallIcon {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+}
+
+.InstallIconDark {
+  display: none;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto;
+}
+
+html[data-theme='dark'] {
+  .InstallIconSwitch {
+    .InstallIcon {
+      display: none;
+    }
+
+    .InstallIconDark {
+      display: block;
+    }
+  }
 }
