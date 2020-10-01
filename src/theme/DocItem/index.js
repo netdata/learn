@@ -105,6 +105,10 @@ function DocItem(props) {
   const metaImageUrl = useBaseUrl(metaImage, {
     absolute: true,
   });
+
+  const isGuide = permalink.includes('/guides/');
+  console.log(isGuide);
+
   return (
     <>
       <Head>

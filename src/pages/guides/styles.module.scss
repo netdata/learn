@@ -1,0 +1,191 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/**
+ * Hero
+ */
+
+.GuidesHero {
+  position: relative;
+  padding: 8rem 0 3rem;
+  background: linear-gradient(to bottom, white, #f1f2fb);
+
+  .heroText {
+    z-index: 100;
+    position: relative;
+
+    .heroTagline {
+      font-size: 3rem;
+    }
+
+    .heroSubHead {
+      font-size: 1.3rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    margin-top: 2rem;
+  }
+
+  .getStarted:first-of-type {
+    margin-right: 2rem;
+    margin-bottom: var(--ifm-paragraph-margin-bottom);
+  }
+
+  .heroImageContainer {
+    position: relative;
+  }
+
+  .heroImage {
+    z-index: 10;
+    position: absolute;
+    top: calc(-6rem - 68px);
+    right: -300px;
+    max-width: 1200px;
+  }
+
+  @media (max-width: 996px) {
+    padding: 4rem 0 2rem;
+
+    .heroText .heroTagline {
+      font-size: 2.4rem;
+    }
+
+    .heroText .heroSubHead {
+      font-size: 1.2rem;
+    }
+
+    .heroImage {
+      display: none;
+    }
+  }
+}
+
+/**
+ * Get
+ */
+
+.Get {
+  margin-top: -8rem;
+  z-index: 100;
+  position: relative;
+
+  div > a {
+    box-shadow: 0 10px 15px -3px hsla(198,23%,3%,0.06),0 4px 6px -2px hsla(198,23%,3%,0.12);
+  }
+
+  @media (max-width: 996px) {
+    margin-top: 0rem;
+  }
+
+  div > a {
+    margin-top: 0;
+  }
+}
+
+/**
+ * CTAs
+ */
+
+.CTAs {
+  padding: 6rem 0 0;
+  margin-bottom: 5rem;
+
+  div > a {
+    margin-top: 0;
+    display: block;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  @media (max-width: 996px) {
+    div[class*="col"] + div[class*="col"] {
+      margin-top: 4rem;
+    }
+  }
+}
+
+.ctaRow {
+  margin-top: 3rem;
+}
+
+/**
+ * Changelog
+ */
+
+.changelog {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background: #f1f2fb;
+
+  h2 {
+    margin-bottom: calc(var(--ifm-paragraph-margin-bottom) * 2);
+  }
+}
+
+.updateMeta {
+  time {
+    display: block;
+    font-family: var(--ifm-font-family-monospace);
+    font-size: 90%;
+    margin-bottom: 0rem;
+  }
+
+  span {
+    // font-family: var(--ifm-font-family-monospace);
+    // font-weight: 500;
+    display: inline-block;
+    font-size: 80%;
+    background: var(--ifm-color-primary);
+    color: var(--ifm-background-color);
+    padding: 0.1rem 0.2rem;
+  }
+}
+
+.updateBox {
+  margin-bottom: var(--ifm-paragraph-margin-bottom);
+
+  p {
+    color: var(--ifm-font-color-base);
+    font-weight: 400;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+html[data-theme='dark'] {
+  .heroImage,
+  .stepByStepImg img {
+    filter: grayscale(1);
+    opacity: 0.3;
+  }
+
+  .hero {
+    background: linear-gradient(to bottom, #191927, #22272E);
+  }
+
+  .changelog {
+    background: #22272E;
+  }
+
+  .installCheckbox label::before {
+    background: #22272E;
+    border: 1px solid #585858;
+  }
+
+  .docBox h3 {
+    color: var(--ifm-color-primary);
+
+    &:hover {
+      color: var(--ifm-color-accent);
+    }
+  }
+}

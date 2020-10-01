@@ -5,7 +5,6 @@ module.exports = {
       label: 'Guides',
       collapsed: false,
       items: [
-        'guides',
         {
           type: 'category',
           label: 'Collect & monitor',

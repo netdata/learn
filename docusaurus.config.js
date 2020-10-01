@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Learn',
-  tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Documentation, tutorials, blogs, and much more.',
+  title: 'Learn Netdata',
+  tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Comprehensive documentation and thoughtful guides.',
   url: 'https://learn.netdata.cloud',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
