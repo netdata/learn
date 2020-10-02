@@ -1,5 +1,6 @@
 .Guides {
   margin-top: 3rem;
+  margin-bottom: 6rem;
   z-index: 100;
   position: relative;
 }
@@ -13,20 +14,24 @@
 
 .GuidesContainer {
   margin-top: 5rem;
-  margin-right: var(--ifm-spacing-horizontal);
-  margin-left: var(--ifm-spacing-horizontal);
+  
 }
 
 .GuidesRow {
   margin-top: 3rem;
+  margin-right: 0;
+  margin-left: 0;
+
+  h2 {
+    --ifm-h2-font-size: 2rem;
+    margin-bottom: calc( var(--ifm-heading-vertical-rhythm-bottom) * var(--ifm-leading) );
+    margin-top: calc(var(--ifm-h2-vertical-rhythm-top) * var(--ifm-leading));
+  }
 }
 
 .GuidesGrid {
-  display: grid;
   margin-right: calc(var(--ifm-spacing-horizontal) * -1);
   margin-left: calc(var(--ifm-spacing-horizontal) * -1);
-  grid-gap: 1.5rem;
-  grid-template-columns: repeat(6, 1fr);
 }
 
 .GuideBox {
@@ -38,10 +43,37 @@
   grid-column-end: span 2;
   transition: ease-in-out all 0.15s;
   backface-visibility: hidden;
+
+  &:hover {
+    border-color: var(--ifm-color-primary-lightest);
+    text-decoration: none;
+    transform: scale(1.02);
+    transition: ease-in-out all 0.15s;
+
+    h3 {
+      color: var(--ifm-color-secondary);
+    }
+
+    p {
+      color: var(--ifm-font-color-base);
+    }
+
+    .DiscoverCTA {
+      color: var(--ifm-color-secondary);
+
+      &:after {
+        right: -24px;
+        opacity: 1;
+        color: var(--ifm-color-secondary);
+      }
+    }
+  }
 }
 
 .GuideBoxInner {
-  // border: 1px solid black;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .hitBox {

@@ -17,15 +17,16 @@ const LINK_CLASS_NAME = 'table-of-contents__link';
 const ACTIVE_LINK_CLASS_NAME = 'table-of-contents__link--active';
 const TOP_OFFSET = 100;
 
-import SVG from 'react-inlinesvg';
-
-function DocTOC({isGuide, headings, editUrl}) {
+function DocTOC({headings, editUrl}) {
   useTOCHighlight(LINK_CLASS_NAME, ACTIVE_LINK_CLASS_NAME, TOP_OFFSET);
   return (
     <div className="col col--3">
       <div className={styles.tableOfContents}>
+        {/* Begin customization */}
         <p className={styles.tableofContentsHeading}>Contents</p>
+        {/* End customization */}
         <Headings headings={headings} />
+        {/* Begin customization */}
         {editUrl && (
           <a
             className={clsx('button button--secondary button--block button--lg toc__edit')}
@@ -49,6 +50,7 @@ function DocTOC({isGuide, headings, editUrl}) {
             Edit this page
           </a>
         )}
+        {/* End customization */}
       </div>
     </div>
   );
@@ -151,6 +153,7 @@ function DocItem(props) {
                 {!hideTitle && (
                   <header>
                     <h1 className={styles.docTitle}>{title}</h1>
+                    {/* Begin customization */}
                     {isGuide && 
                       <svg className={styles.svg} viewBox="0 0 134 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.1" d="M0 1.75L4 3L6 5L10 8L14 9L17 10L18 12L21 14H25L28 11H30L33 13H36L39 11L42 10L44 8H48L50 5H53L56 7L60 9L63 7H67L68 10C68 10 70 12 71 11C72 10 74 12 74 12L79 14L81 11L85 10L89 7L92 6H95L99 8H103L106 6L108 4L112 5L115 6L119 7H123L126 6L129 5L132 6L134 7.26V21H0V1.75Z" fill="#EB5341"/>
@@ -161,6 +164,7 @@ function DocItem(props) {
                         <path opacity="0.4" d="M129.49 15.11L126.62 16.07L124.76 17H121.16L118.44 16.09L115.5 14.13L113.33 13.05L107.9 11.96L102.93 13.95L98.69 12.89L96.46 15.13L94 15.95L91.38 15.07L89.24 14H84.76L82.76 15H80.12L71.69 12.89L69.59 15H67.16L64.24 14.03L59.69 12.89L57.73 14.86L55.16 14H52.7L49.7 16H45.12L41.32 15.05L38.54 14.13L37.41 13H33.41L31.27 10.86L27.56 12.09L24.59 14.07L20.65 15.06L16.76 17H11.16L8.44 16.09L5.72 14.28L3.6 11.09L0 10.42V11.44L3 12L5 15L8 17L11 18H17L21 16L25 15L28 13L31 12L33 14H37L38 15L41 16L45 17H50L53 15H55L58 16L60 14L64 15L67 16H70L72 14L80 16H83L85 15H89L91 16L94 17L97 16L99 14L103 15L108 13L113 14L115 15L118 17L121 18H125L127 17L130 16L134 12.52V11.2L129.49 15.11Z" fill="#00FF66"/>
                       </svg>
                     }
+                    {/* End customization */}
                   </header>
                 )}
                 <div className="markdown">
@@ -240,7 +244,9 @@ function DocItem(props) {
             </div>
           </div>
           {!hideTableOfContents && DocContent.rightToc && (
+            // Begin customiation
             <DocTOC isGuide={isGuide} headings={DocContent.rightToc} editUrl={editUrl} />
+            // End customization
           )}
         </div>
       </div>

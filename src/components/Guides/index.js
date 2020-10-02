@@ -3,7 +3,10 @@ import clsx from 'clsx';
 
 import Link from '@docusaurus/Link';
 
+import { BoxGrid, Box } from '../BoxGrid/';
+
 import styles from './styles.module.scss'; 
+import { StartBox } from '../StartBox';
 
 const GuideItems = [
    {
@@ -28,7 +31,11 @@ const GuideItems = [
     title: "Export and visualize Netdata metrics in Graphite",
     href: '/guides/export/export-netdata-metrics-graphite',
     category: 'export',
-    description: "In this guide, we'll show you how to export Netdata metrics to Graphite for long-term storage and further analysis."
+    description: "In this guide, we'll show you how to export Netdata metrics to Graphite for long-term storage and further analysis.",
+    tech: [
+      'graphite',
+      'docker'
+    ]
   },
   {
     title: "Monitor Nginx or Apache web server log files with Netdata",
@@ -100,21 +107,15 @@ export function Guides() {
             <div key={idx} className={clsx('row', styles.GuidesRow)}>
               <h2>{props.title}</h2>
             </div>
-            <div className={styles.GuidesGrid}>
+            <BoxGrid className="GuideBox">
               {itemsFiltered.filter(item => item.category.includes(props.label)).map(categorizedItem => (
-                <div className={clsx(styles.GuideBox)}>
-                  <div className={styles.GuideBoxInner}>
-                    <h3>{categorizedItem.title}</h3>
-                    {/* <p>{categorizedItem.description}</p> */}
-                    <p>Read now &rarr;</p>
-                  </div>
-                  <Link 
-                    className={styles.hitBox}
-                    to={categorizedItem.href}>
-                  </Link>
-                </div>
+                <Box
+                  title={categorizedItem.title}
+                  cta='Read now'
+                  href={categorizedItem.href}
+                  />
               ))}
-            </div>
+            </BoxGrid>
           </>
         ))}
 
