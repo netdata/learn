@@ -157,11 +157,11 @@ html[data-theme='dark'] {
   padding-top: 3rem !important;
 }
 
-// @media (max-width: 1655px) {
-//   main[class^='docMainContainer'] .container {
-//     margin-left: auto
-//   }
-// }
+@media (min-width: 967px) {
+  main[class^='docMainContainer'] > .container {
+    margin-left: 3rem;
+  }
+}
 
 /**
  * Navbar 

@@ -6,7 +6,7 @@
  */
 
 .docTitle {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   margin-bottom: calc(var(--ifm-leading-desktop) * var(--ifm-leading));
 }
 
@@ -53,6 +53,10 @@
   padding: 3rem 0;
   overflow: hidden;
 
+  .container {
+    margin-left: auto !important;
+  }
+
   h1 {
     text-align: center;
     margin-bottom: 0;
@@ -69,6 +73,8 @@
 }
 
 .guideItemWrapper {
+  margin-left: auto !important;
+
   div[class*="col--3"] {
     @media (max-width: 996px) {
       margin-top: 0;

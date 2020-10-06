@@ -128,10 +128,10 @@ function DocItem(props) {
               </article>
               {/* Begin custommization */}
               {isGuide &&
-                <nav class="pagination-nav" aria-label="Blog list page navigation">
-                  <div class="pagination-nav__item">
+                <nav className="pagination-nav" aria-label="Blog list page navigation">
+                  <div className="pagination-nav__item">
                     <Link className={clsx('pagination-nav__link')} to="/guides">
-                      <div class="pagination-nav__label">« Back to guides</div>
+                      <div className="pagination-nav__label">« Back to guides</div>
                     </Link>
                   </div>
                 </nav>
