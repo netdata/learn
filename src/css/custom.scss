@@ -109,6 +109,7 @@ html {
   --ifm-navbar-search-input-placeholder-color: var(--ifm-font-color-base);
 
   /* Sidebar */
+  --ifm-menu-link-padding-vertical: 0.275rem;
   --ifm-menu-color-background-active: white;
 
   /* Table of contents */
@@ -453,9 +454,10 @@ div[class^='sidebarLogo'] {
 
 .menu .menu__link {
   color: var(--ifm-font-color-base);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: var(--ifm-font-weight-normal);
-  line-height: 22px;
+  line-height: 20px;
+  // padding: 0
 
   &:focus {
     outline: 0;
@@ -663,7 +665,7 @@ html[data-theme='dark'] code {
 */
 
 .markdown {
-  font-size: 18px;
+  font-size: 17px;
   --ifm-heading-vertical-rhythm-bottom: 1;
 
   h2 code, h3 code, h4 code, h5 code {
