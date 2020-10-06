@@ -607,5 +607,5 @@ module.exports = {
         'agent/packaging/installer/methods/source'
       ],
     }
-  ]
+  ],
 };

@@ -1,0 +1,97 @@
+.Guides {
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+  z-index: 100;
+  position: relative;
+}
+
+.GuidesSearch {
+  font-size: 130%;
+  padding: 0.8rem;
+  width: 500px;
+  max-width: 100%;
+}
+
+.GuidesContainer {
+  margin-top: 5rem;
+  
+}
+
+.GuidesRow {
+  margin-top: 3rem;
+}
+
+.GuidesCategory {
+  margin-right: calc(var(--ifm-spacing-horizontal) * -1);
+  margin-left: calc(var(--ifm-spacing-horizontal) * -1);
+
+  h2 {
+    --ifm-h2-font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.GuidesGrid {
+  margin-right: calc(var(--ifm-spacing-horizontal) * -1);
+  margin-left: calc(var(--ifm-spacing-horizontal) * -1);
+}
+
+.GuideBox {
+  position: relative;
+  padding: var(--ifm-spacing-horizontal);
+
+  border: 1px solid var(--ifm-contents-border-color);
+  border-radius: 2px;
+  grid-column-end: span 2;
+  transition: ease-in-out all 0.15s;
+  backface-visibility: hidden;
+
+  &:hover {
+    border-color: var(--ifm-color-primary-lightest);
+    text-decoration: none;
+    transform: scale(1.02);
+    transition: ease-in-out all 0.15s;
+
+    h3 {
+      color: var(--ifm-color-secondary);
+    }
+
+    p {
+      color: var(--ifm-font-color-base);
+    }
+
+    .DiscoverCTA {
+      color: var(--ifm-color-secondary);
+
+      &:after {
+        right: -24px;
+        opacity: 1;
+        color: var(--ifm-color-secondary);
+      }
+    }
+  }
+}
+
+.GuideBoxInner {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.hitBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.GuidesNoMatch {
+  // margin-right: calc(2 * var(--ifm-spacing-horizontal) * -1);
+  // margin-left: calc(2 * var(--ifm-spacing-horizontal) * -1);
+  font-size: 120%;
+}

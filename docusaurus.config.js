@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'Learn',
-  tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Documentation, tutorials, blogs, and much more.',
+  title: 'Learn Netdata',
+  tagline: 'The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Comprehensive documentation and thoughtful guides.',
   url: 'https://learn.netdata.cloud',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
@@ -12,6 +12,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
+          id: "w1",
           homePageId: 'netdata', // Defaults to `_index`
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/netdata/netdata/edit/master/',
@@ -24,8 +25,20 @@ module.exports = {
     ]
   ],
   plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "w2", // for first plugin-content-docs with "resources/" path
+        homePageId: "guides",
+        path: "./guides", // Path to data on filesystem, relative to site dir.
+        routeBasePath: "guides", // URL Route.
+        include: ["**/*.md", "**/*.mdx"],
+        sidebarPath: require.resolve("./sidebars-guides.js"),
+        disableVersioning: true, // if not set with vesions, throw: Identifier 'React' has already been declared
+      },
+    ],
     require.resolve('docusaurus-plugin-sass'),
-    require.resolve('./src/plugins/cookbooks'),
+    // require.resolve('./src/plugins/cookbooks'),
   ],
   stylesheets: [
     {
