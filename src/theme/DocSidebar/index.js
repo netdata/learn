@@ -47,7 +47,9 @@ const isActiveSidebarItem = (item, activePath) => {
 
 function DocSidebarItemCategory({
   item,
+  // Begin customization
   level,
+  // End customization
   onItemClick,
   collapsible,
   activePath,
@@ -58,7 +60,9 @@ function DocSidebarItemCategory({
   const wasActive = usePrevious(isActive); // active categories are always initialized as expanded
   // the default (item.collapsed) is only used for non-active categories
 
+  // Begin customization
   const isHeading = (item['label'] == 'Learn' || item['label'] == 'Reference' || item['label'] == 'Developers' )
+  // End customization
 
   const [collapsed, setCollapsed] = useState(() => {
     if (!collapsible) {
@@ -146,7 +150,6 @@ function DocSidebarItemCategory({
       </li>
     );
   }
-
 }
 
 function DocSidebarItemLink({
@@ -218,7 +221,7 @@ function DocSidebar({path, sidebar, sidebarCollapsible = true}) {
       })}>
       {hideOnScroll && (
         <Link
-          tabIndex="-1"
+          tabIndex={-1}
           className={styles.sidebarLogo}
           to={logoLink}
           {...logoLinkProps}>
