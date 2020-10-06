@@ -78,11 +78,13 @@ const GuideCategories = [
   },
   {
     label: "configure",
-    title: "Configure"
+    title: "Configure",
+    description: "Advanced configuration options for those who want to elevate their Netdata Agent-monitored nodes."
   },
   {
     label: "export",
-    title: "Export"
+    title: "Export",
+    description: "Explore Netdata's interoperability with other monitoring and visualization platforms."
   }
 ]
 
