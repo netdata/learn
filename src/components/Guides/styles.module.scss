@@ -19,13 +19,18 @@
 
 .GuidesRow {
   margin-top: 3rem;
-  margin-right: 0;
-  margin-left: 0;
+}
+
+.GuidesCategory {
+  margin-right: calc(var(--ifm-spacing-horizontal) * -1);
+  margin-left: calc(var(--ifm-spacing-horizontal) * -1);
 
   h2 {
     --ifm-h2-font-size: 2rem;
-    margin-bottom: calc( var(--ifm-heading-vertical-rhythm-bottom) * var(--ifm-leading) );
-    margin-top: calc(var(--ifm-h2-vertical-rhythm-top) * var(--ifm-leading));
+  }
+
+  p {
+    font-size: 1.2rem;
   }
 }
 
@@ -86,7 +91,7 @@
 }
 
 .GuidesNoMatch {
-  margin-right: calc(2 * var(--ifm-spacing-horizontal) * -1);
-  margin-left: calc(2 * var(--ifm-spacing-horizontal) * -1);
+  // margin-right: calc(2 * var(--ifm-spacing-horizontal) * -1);
+  // margin-left: calc(2 * var(--ifm-spacing-horizontal) * -1);
   font-size: 120%;
 }

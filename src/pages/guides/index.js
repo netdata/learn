@@ -35,30 +35,21 @@ function Home() {
   return ( 
     <Layout
       title={`Netdata Guides`}
-      description="Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.">
+      description="Thoughtful guides to help you learn more about collecting metrics, monitoring your infrastructure, and troubleshooting with Netdata's powerful visualizations.">
       <header className={clsx(styles.hero, styles.GuidesHero)}>
         <div className={clsx('container')}>
           <div className={clsx('row')}>
             <div 
               className={clsx(
-                'col col--6',
+                'col',
                 styles.heroText
               )}>
               <h1 className={styles.heroTagline}>
                 Netdata Guides
               </h1>
               <p className={styles.heroSubHead}>
-                Thoughtful guides from the Netdata team.
+                Thoughtful guides to help you learn more about collecting metrics, monitoring your infrastructure, and troubleshooting with Netdata's powerful visualizations.
               </p>
-            </div>
-            <div className={clsx('col col--6', styles.heroImageContainer)}>
-              {/* <SVG 
-                className={clsx(
-                  styles.heroImage
-                )} 
-                src="img/index/hero.svg"
-                alt="Netdata Learn: All your monitoring education in one place" 
-              /> */}
             </div>
           </div>
         </div>

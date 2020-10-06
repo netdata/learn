@@ -100,7 +100,7 @@
     position: absolute;
     left: 0;
     top: 68px;
-    padding: 5rem 0;
+    padding: 6rem 0 4rem;
     overflow: hidden;
 
     h1 {
@@ -111,19 +111,19 @@
       z-index: 100;
       position: relative;
     }
+
+    svg {
+      z-index: 0;
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      width: 100%;
+      opacity: 0.2;
+    }
   }
 
   article > div,
   div[class*="col--3"] {
     margin-top: 16rem;
-  }
-
-  svg {
-    z-index: 0;
-    position: absolute;
-    bottom: -40px;
-    left: 0;
-    width: 100%;
-    opacity: 0.1;
   }
 }
