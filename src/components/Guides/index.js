@@ -46,7 +46,7 @@ const GuideItems = [
   },
   {
     title: "Use dimension templates to create dynamic alarms",
-    href: "/guides/health/dimension-templates",
+    href: "/guides/monitor/dimension-templates",
     category: "configure",
     description: "Dimension templates can condense many individual entities into one—no more copy-pasting one entity and changing the alarm/template and lookup lines for each dimension you'd like to monitor."
   },
