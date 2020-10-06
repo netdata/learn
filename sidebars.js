@@ -14,7 +14,7 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          id: 'netdata'
+          id: 'docs'
         },
         {
           type: 'category',

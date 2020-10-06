@@ -12,8 +12,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          id: "w1",
-          homePageId: 'netdata', // Defaults to `_index`
+          id: "netdata",
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/netdata/netdata/edit/master/',
           showLastUpdateTime: true,
@@ -28,13 +27,11 @@ module.exports = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "w2", // for first plugin-content-docs with "resources/" path
-        homePageId: "guides",
+        id: "guides",
         path: "./guides", // Path to data on filesystem, relative to site dir.
         routeBasePath: "guides", // URL Route.
         include: ["**/*.md", "**/*.mdx"],
         sidebarPath: require.resolve("./sidebars-guides.js"),
-        disableVersioning: true, // if not set with vesions, throw: Identifier 'React' has already been declared
       },
     ],
     require.resolve('docusaurus-plugin-sass'),

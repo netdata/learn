@@ -28,7 +28,7 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
    {
-    title: <>Collect metrics from any Prometheus endpoint</>,
+    title: <>How to claim a node to Netdata Cloud</>,
     href: 'https://www.youtube.com/watch?v=UAzVvhMab8g',
     date: 'September 22, 2020',
     type: 'Video',
