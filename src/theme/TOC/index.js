@@ -51,7 +51,7 @@ function TOC({headings, editUrl}) {
       {/* Begin customization */}
       {editUrl && (
         <a
-          className={clsx('button button--secondary button--block button--lg toc__edit')}
+          className={clsx('button button--secondary button--lg toc__edit')}
           href={editUrl}
           target="_blank"
           rel="noreferrer noopener">

@@ -159,7 +159,7 @@ html[data-theme='dark'] {
 
 @media (min-width: 967px) {
   main[class^='docMainContainer'] > .container {
-    margin-left: 3rem;
+    margin-left: 0;
   }
 }
 
@@ -499,11 +499,15 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
 .toc__edit {
   font-size: 100%;
   margin-top: 1rem;
-  display: inherit;
+  display: block;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1320px) {
     font-size: 90%;
-    padding: 0;
+    padding: calc(var(--ifm-button-padding-vertical) * var(--ifm-button-size-multiplier)) 0;
+
+    svg {
+      display: none;
+    }
   }
 }
 
