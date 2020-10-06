@@ -1,11 +1,8 @@
 import React from 'react';
 import clsx from 'clsx';
-import SVG from 'react-inlinesvg';
 
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
-import { Redirect } from '@docusaurus/router';
-import BrowserOnly from '@docusaurus/BrowserOnly';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -28,10 +25,7 @@ function UpdateBox({title, href, date, type, description}) {
   );
 }
 
-function Home() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
-  
+function Home() {  
   return ( 
     <Layout
       title={`Netdata Guides`}

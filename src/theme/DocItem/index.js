@@ -11,6 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import DocPaginator from '@theme/DocPaginator';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 import DocVersionSuggestions from '@theme/DocVersionSuggestions';
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 const LINK_CLASS_NAME = 'table-of-contents__link';
@@ -169,6 +170,17 @@ function DocItem(props) {
                 )}
                 <div className="markdown">
                   <DocContent />
+                  {/* Begin custommization */}
+                  {isGuide &&
+                    <nav class="pagination-nav" aria-label="Blog list page navigation">
+                      <div class="pagination-nav__item">
+                        <Link className={clsx('pagination-nav__link')} to="/guides">
+                          <div class="pagination-nav__label">« Back to guides</div>
+                        </Link>
+                      </div>
+                    </nav>
+                  }
+                  {/* End custommization */}
                 </div>
               </article>
               <div className="margin-vert--lg">
