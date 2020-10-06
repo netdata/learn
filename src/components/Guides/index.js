@@ -46,13 +46,13 @@ const GuideItems = [
   },
   {
     title: "Use dimension templates to create dynamic alarms",
-    href: "/guides/monitor/health/dimension-templates",
+    href: "/guides/monitor/dimension-templates",
     category: "configure",
     description: "Dimension templates can condense many individual entities into one—no more copy-pasting one entity and changing the alarm/template and lookup lines for each dimension you'd like to monitor."
   },
   {
     title: "Monitor Unbound DNS servers with Netdata",
-    href: "/guides/collect-uunbound-metrics",
+    href: "/guides/collect-unbound-metrics",
     category: "collect-monitor",
     description: "This guide will show you how to collect dozens of essential metrics from your Unbound servers with minimal configuration."
   },
@@ -64,7 +64,7 @@ const GuideItems = [
   },
   {
     title: "Monitor a Hadoop cluster with Netdata",
-    href: "/guides/monitor-hadoop-clusuter",
+    href: "/guides/monitor-hadoop-cluster",
     category: "collect-monitor",
     description: "Netdata comes with built-in and pre-configured support for monitoring both HDFS and Zookeeper."
   }
@@ -136,11 +136,12 @@ export function Guides() {
               </div>
             </div>
             <BoxGrid className="GuideBox">
-              {itemsFiltered.filter(item => item.category.includes(props.label)).map(categorizedItem => (
+              {itemsFiltered.filter(item => item.category.includes(props.label)).map((props, idx) => (
                 <Box
-                  title={categorizedItem.title}
+                  key={idx}
+                  title={props.title}
                   cta='Read now'
-                  href={categorizedItem.href}
+                  href={props.href}
                   />
               ))}
             </BoxGrid>

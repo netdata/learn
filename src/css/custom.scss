@@ -498,6 +498,11 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
   font-size: 100%;
   margin-top: 1rem;
   display: inherit;
+
+  @media (max-width: 1200px) {
+    font-size: 90%;
+      padding: 0;
+  }
 }
 
 /**
@@ -734,6 +739,15 @@ html[data-theme='dark'] code {
         margin-bottom: 0.8rem;
       }
     }
+  }
+}
+
+.markdown__edit {
+  margin-top: 2rem;
+  display: none;
+
+  @media (max-width: 996px) {
+    display: inline-block;
   }
 }
 
