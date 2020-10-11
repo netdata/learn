@@ -6,6 +6,15 @@
 
 **Merged pull requests:**
 
+- health/portcheck: add `failed` dim to the `connection\_fails` alarm [\#10048](https://github.com/netdata/netdata/pull/10048) ([ilyam8](https://github.com/ilyam8))
+- installer: update go.d.plugin version to v0.23.0 [\#10046](https://github.com/netdata/netdata/pull/10046) ([ilyam8](https://github.com/ilyam8))
+- Rename NETDATA\_PORT to NETDATA\_LISTENER\_PORT [\#10045](https://github.com/netdata/netdata/pull/10045) ([knatsakis](https://github.com/knatsakis))
+- small docs update - adding note about using `nolock` when debugging [\#10036](https://github.com/netdata/netdata/pull/10036) ([andrewm4894](https://github.com/andrewm4894))
+- Fixed the data endpoint to prioritize chart over context if both are present [\#10032](https://github.com/netdata/netdata/pull/10032) ([stelfrag](https://github.com/stelfrag))
+- python.d/rabbitmq: Add chart for churn rates [\#10031](https://github.com/netdata/netdata/pull/10031) ([chadknutson](https://github.com/chadknutson))
+- Fixed gauges for go web\_log module [\#10029](https://github.com/netdata/netdata/pull/10029) ([hamedbrd](https://github.com/hamedbrd))
+- Fixed incorrect condition in updater type detection. [\#10028](https://github.com/netdata/netdata/pull/10028) ([Ferroin](https://github.com/Ferroin))
+- Fix README exporting link [\#10020](https://github.com/netdata/netdata/pull/10020) ([Dim-P](https://github.com/Dim-P))
 - Clean up and better cross-link new docsv2 documents [\#10015](https://github.com/netdata/netdata/pull/10015) ([joelhans](https://github.com/joelhans))
 - collector infiniband: fix file descriptor leak [\#10013](https://github.com/netdata/netdata/pull/10013) ([Saruspete](https://github.com/Saruspete))
 - changes default query thread count [\#10009](https://github.com/netdata/netdata/pull/10009) ([underhood](https://github.com/underhood))
@@ -13,6 +22,7 @@
 - Update freebsd.md [\#10005](https://github.com/netdata/netdata/pull/10005) ([disko](https://github.com/disko))
 - Add documentation for claiming k8s parent pods and Prometheus service discovery [\#10001](https://github.com/netdata/netdata/pull/10001) ([joelhans](https://github.com/joelhans))
 - Add docsv2 project to master branch [\#10000](https://github.com/netdata/netdata/pull/10000) ([joelhans](https://github.com/joelhans))
+- Allow connecting to arbitrary MQTT WSS broker for devs [\#9999](https://github.com/netdata/netdata/pull/9999) ([underhood](https://github.com/underhood))
 - minor - removes leading whitespace before JSON in ACLK [\#9998](https://github.com/netdata/netdata/pull/9998) ([underhood](https://github.com/underhood))
 - Fixed typos in installer functions. [\#9992](https://github.com/netdata/netdata/pull/9992) ([Ferroin](https://github.com/Ferroin))
 - Fixed locking order to address CID\_362348 [\#9991](https://github.com/netdata/netdata/pull/9991) ([stelfrag](https://github.com/stelfrag))
@@ -28,6 +38,7 @@
 - Added improved auto-update support. [\#9966](https://github.com/netdata/netdata/pull/9966) ([Ferroin](https://github.com/Ferroin))
 - Stackpulse integration [\#9965](https://github.com/netdata/netdata/pull/9965) ([thiagoftsm](https://github.com/thiagoftsm))
 - Fix typo inside netdata-installer.sh [\#9962](https://github.com/netdata/netdata/pull/9962) ([thiagoftsm](https://github.com/thiagoftsm))
+- Add missing period in netdata dashboard [\#9960](https://github.com/netdata/netdata/pull/9960) ([hydrogen-mvm](https://github.com/hydrogen-mvm))
 - Fixed chart's last accessed time during context queries [\#9952](https://github.com/netdata/netdata/pull/9952) ([stelfrag](https://github.com/stelfrag))
 - adds missing file netdata.crontab to gitignore [\#9946](https://github.com/netdata/netdata/pull/9946) ([underhood](https://github.com/underhood))
 - Updated RPM spec file to use automatic dependency list generation. [\#9937](https://github.com/netdata/netdata/pull/9937) ([Ferroin](https://github.com/Ferroin))
@@ -36,6 +47,7 @@
 - Added context parameter to the data endpoint [\#9931](https://github.com/netdata/netdata/pull/9931) ([stelfrag](https://github.com/stelfrag))
 - Add notice to Docker docs about systemd volumes [\#9927](https://github.com/netdata/netdata/pull/9927) ([thiagoftsm](https://github.com/thiagoftsm))
 - Add persistent configuration details to Docker docs [\#9926](https://github.com/netdata/netdata/pull/9926) ([joelhans](https://github.com/joelhans))
+- Update README.md [\#9925](https://github.com/netdata/netdata/pull/9925) ([OdysLam](https://github.com/OdysLam))
 - Added a way to get build configuration info from the agent. [\#9913](https://github.com/netdata/netdata/pull/9913) ([Ferroin](https://github.com/Ferroin))
 - add mirrored\_hosts\_status into OpenAPI of api/info [\#9867](https://github.com/netdata/netdata/pull/9867) ([underhood](https://github.com/underhood))
 - Fix build for the AWS Kinesis exporting connector [\#9823](https://github.com/netdata/netdata/pull/9823) ([vlvkobal](https://github.com/vlvkobal))
@@ -187,7 +199,6 @@
 - Use the libbpf library for the eBPF plugin [\#9490](https://github.com/netdata/netdata/pull/9490) ([vlvkobal](https://github.com/vlvkobal))
 - Implemented the HOST command in metadata log replay [\#9489](https://github.com/netdata/netdata/pull/9489) ([stelfrag](https://github.com/stelfrag))
 - Add documentation to provide a comprehensive guide for package maintainers [\#9467](https://github.com/netdata/netdata/pull/9467) ([Ferroin](https://github.com/Ferroin))
-- Add better checks for existing installs to the kickstart scripts. [\#9408](https://github.com/netdata/netdata/pull/9408) ([Ferroin](https://github.com/Ferroin))
 
 ## [v1.23.2](https://github.com/netdata/netdata/tree/v1.23.2) (2020-07-16)
 
@@ -220,7 +231,6 @@
 - Fix the exporting engine unit tests [\#9460](https://github.com/netdata/netdata/pull/9460) ([vlvkobal](https://github.com/vlvkobal))
 - Wrap exporting engine header definitions in compilation conditions [\#9458](https://github.com/netdata/netdata/pull/9458) ([candrews](https://github.com/candrews))
 - Properly include eBPF collector in binary packages. [\#9450](https://github.com/netdata/netdata/pull/9450) ([Ferroin](https://github.com/Ferroin))
-- Fix display error in Swagger API documentation [\#9417](https://github.com/netdata/netdata/pull/9417) ([underhood](https://github.com/underhood))
 
 ## [v1.23.1](https://github.com/netdata/netdata/tree/v1.23.1) (2020-07-01)
 
@@ -233,16 +243,10 @@
 - Disallow dimensions and chart being obsolete and archived simultaneously. [\#9436](https://github.com/netdata/netdata/pull/9436) ([mfundul](https://github.com/mfundul))
 - Fix internal registry  [\#9434](https://github.com/netdata/netdata/pull/9434) ([thiagoftsm](https://github.com/thiagoftsm))
 - Fixed duplicate alarm ids in health-log.db [\#9428](https://github.com/netdata/netdata/pull/9428) ([stelfrag](https://github.com/stelfrag))
-- Correct virtualization detection in system-info.sh [\#9425](https://github.com/netdata/netdata/pull/9425) ([Ferroin](https://github.com/Ferroin))
 
 ## [v1.23.0](https://github.com/netdata/netdata/tree/v1.23.0) (2020-06-25)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.22.1...v1.23.0)
-
-**Merged pull requests:**
-
-- Fix Coverity Defect CID 304732 [\#9402](https://github.com/netdata/netdata/pull/9402) ([amoss](https://github.com/amoss))
-- update synology.md [\#9400](https://github.com/netdata/netdata/pull/9400) ([pkrasam](https://github.com/pkrasam))
 
 ## [v1.22.1](https://github.com/netdata/netdata/tree/v1.22.1) (2020-05-12)
 
