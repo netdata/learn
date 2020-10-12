@@ -15,7 +15,8 @@ single row, first featuring that node's alarm status (yellow for warnings, red f
 system, some essential information about the node, followed by columns of user-defined key metrics represented in
 real-time charts.
 
-You can also use the [Overview](/docs/cloud/visualize/overview) for monitoring an infrastructure in real time.
+You can also use the [Overview](/docs/cloud/visualize/overview) for monitoring an infrastructure in real time using
+composite charts and Netdata's familiar dashboard UI.
 
 Check the [War Room docs](/docs/cloud/war-rooms) for details on the utility bar, which contains the [node
 filter](/docs/cloud/war-rooms#node-filter) and the [time picker](/docs/cloud/war-rooms#time-picker).
