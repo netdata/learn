@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: TK
+description: The Overview uses composite charts to display real-time aggregated metrics from all the nodes in a given War Room.
 custom_edit_url: null
 ---
 
@@ -46,8 +46,8 @@ At the top of the Overview is the utility bar. This bar contains a dropdown for 
 Room views, an input field for filtering the nodes that contribute to a particular view, and a time-picker for
 visualizing specific timeframes of metrics.
 
-See the [War Room docs](/docs/cloud/war-rooms) for details about [filtering](/docs/cloud/war-rooms) and the
-[time-picker](/docs/cloud/war-rooms).
+See the [War Room docs](/docs/cloud/war-rooms) for details about [filtering](/docs/cloud/war-room#node-filter) and the
+[time picker](/docs/cloud/war-rooms#time-picker).
 
 ## Dashboard of composite charts
 

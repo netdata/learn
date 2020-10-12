@@ -562,7 +562,8 @@ module.exports = {
           label: 'Cloud',
           items: [
             'cloud',
-            'cloud/organize',
+            'cloud/spaces',
+            'cloud/war-rooms',
             {
               type: 'category',
               label: 'Visualizations',
@@ -570,17 +571,17 @@ module.exports = {
                 'cloud/visualize/overview',
                 'cloud/visualize/nodes',
                 'cloud/visualize/dashboards',
+                'cloud/insights/metric-correlations',
               ]
             },
             {
               type: 'category',
               label: 'Monitor',
               items: [
-                'cloud/monitor',
                 'cloud/monitor/alarms',
               ]
             },
-            'cloud/insights/metric-correlations',
+            
             'cloud/collaborate',
             {
               type: 'category',

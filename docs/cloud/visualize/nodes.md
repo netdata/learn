@@ -15,6 +15,11 @@ single row, first featuring that node's alarm status (yellow for warnings, red f
 system, some essential information about the node, followed by columns of user-defined key metrics represented in
 real-time charts.
 
+You can also use the [Overview](/docs/cloud/visualize/overview) for monitoring an infrastructure in real time.
+
+Check the [War Room docs](/docs/cloud/war-rooms) for details on the utility bar, which contains the [node
+filter](/docs/cloud/war-rooms#node-filter) and the [time picker](/docs/cloud/war-rooms#time-picker).
+
 ## Add and customize metrics columns
 
 Add more metrics columns by clicking the gear icon in the Nodes view. Choose the context you'd like to add, give it a
@@ -28,35 +33,6 @@ You can also click the gear icon and hover over any existing charts, then click 
 edit that chart. You can the context, its title, add or remove dimensions, or delete the chart altogether.
 
 These customizations appear for anyone else with access to that War Room.
-
-## Change the timeframe
-
-By default, the Nodes view shows the last 5 minutes of metrics data on every chart. The value displayed above the chart
-is the 5-minute average of those metrics.
-
-You can change the timeframe, and also change both the charts and the average value, by clicking on any of the buttons
-next to the **Last** label. **15m** will display the last 15 minutes of metrics for each chart, **30m** for 30 minutes,
-and so on.
-
-![GIF showing how to change the timeframe in
-Nodes](https://user-images.githubusercontent.com/1153921/87457127-bf2ad400-c5bc-11ea-9f3b-9afa4e4f1855.gif)
-
-## Filter and group your infrastructure
-
-Use the filter input next to the **Nodes** heading to filter the nodes in a given War Room.
-
-Use relational operators (==, !=, contains, and !contains) and logical operators (AND, OR), plus the name, OS, or
-services running on your nodes to quickly turn any War Room into a focused troubleshooting interface. See what services
-Netdata Cloud can filter by in the [supported collectors list](/docs/agent/collectors/collectors).
-
-For example, `name == centos OR os == debian` filters any nodes by the exact name `centos` or has Debian as its
-operating system.
-
-You can also use parentheses around operators to create more sophisticated filters. `(name contains aws AND os contains
-ubuntu) OR services == apache` shows only nodes that have `aws` in the hostname and are Ubuntu-based, or any nodes that
-have an Apache webserver running on them.
-
-If a filter is invalid or incomplete, Netdata Cloud shows a warning and will not run the filter until it's corrected.
 
 ## Troubleshoot with embedded node dashboards
 

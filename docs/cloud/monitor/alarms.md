@@ -1,5 +1,5 @@
 ---
-title: Audit active alarms
+title: View active alarms
 description: Track the health of your infrastructure in one place by taking advantage of the powerful health monitoring watchdog running on every node.
 custom_edit_url: null
 ---
