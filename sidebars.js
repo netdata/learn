@@ -562,13 +562,12 @@ module.exports = {
           label: 'Cloud',
           items: [
             'cloud',
-            'cloud/get-started',
             'cloud/organize',
             {
               type: 'category',
-              label: 'Visualize',
+              label: 'Visualizations',
               items: [
-                'cloud/visualize',
+                'cloud/visualize/overview',
                 'cloud/visualize/nodes',
                 'cloud/visualize/dashboards',
               ]

@@ -41,7 +41,7 @@ complex performance problems.
 
 When viewing a single-node Cloud dashboard, you can also click on the add to dashboard icon <img
 src="https://user-images.githubusercontent.com/1153921/87587846-827fdb00-c697-11ea-9f31-aed0b8c6afba.png" alt="Dashboard
-icon" class="image-inline" /> to quickly add that chart to a new or existing dashboard. You might find this useful when investigating an anomaly and want to quickly populate a dashboard with potentially correlated metrics.
+icon" class="img__inline" /> to quickly add that chart to a new or existing dashboard. You might find this useful when investigating an anomaly and want to quickly populate a dashboard with potentially correlated metrics.
 
 ## Pin dashboards and navigate through Netdata Cloud
 

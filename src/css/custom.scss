@@ -699,11 +699,16 @@ html[data-theme='dark'] code {
       margin: 0;
     }
 
-    &.image-inline {
+    &.img__inline {
       position: relative;
       top: 4px;
       display: inline-block;
       margin: 0;
+    }
+
+    &.img__inline--link {
+      max-height: 16px;
+      top: 2px;
     }
   }
 

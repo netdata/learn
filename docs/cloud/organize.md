@@ -1,7 +1,6 @@
 ---
-title: Organize your Netdata Cloud
+title: Spaces and War Rooms
 description: Organize your infrastructure monitoring on Netdata Cloud by creating Spaces and War Rooms, then grouping your Agent-monitored nodes.
-sidebar_label: Organize
 custom_edit_url: null
 ---
 

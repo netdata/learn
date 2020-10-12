@@ -1,5 +1,5 @@
 ---
-title: View all nodes at a glance
+title: Nodes view
 description: See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.
 custom_edit_url: null
 ---
@@ -7,7 +7,8 @@ custom_edit_url: null
 The Nodes view lets you see and customize key metrics from any number of Agent-monitored nodes and seamlessly navigate
 to any node's dashboard for troubleshooting performance issues or anomalies using Netdata's highly-granular metrics.
 
-![The Nodes interface in Netdata Cloud](/img/docs/cloud/list-view.png)
+![The Nodes view in Netdata
+Cloud](https://user-images.githubusercontent.com/1153921/95637682-313d7880-0a47-11eb-8d0b-4611a5dae431.png)
 
 Each War Room's Nodes view is populated based on the nodes you added to that specific War Room. Each node occupies a
 single row, first featuring that node's alarm status (yellow for warnings, red for critical alarms) and operating
