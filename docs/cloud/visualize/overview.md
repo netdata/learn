@@ -6,10 +6,11 @@ custom_edit_url: null
 
 The Overview is the default method of monitoring infrastructure using Netdata Cloud. While the interface might look
 similar to local dashboards served by an Agent, or even the single-node dashboards in Netdata Cloud, Overview uses
-**composite charts**. These charts display real-time aggregated metrics, grouped by dimension, from all the nodes (or a
-filtered selection) in a given War Room.
+**composite charts**. These charts display real-time aggregated metrics from all the nodes (or a filtered selection) in
+a given War Room.
 
-With Overview's composite charts, you can see your infrastructure from a single pane of glass, discover trends or anomalies, then drill down with filtering or single-node dashboards to see more. 
+With Overview's composite charts, you can see your infrastructure from a single pane of glass, discover trends or
+anomalies, then drill down with filtering or single-node dashboards to see more. 
 
 ![The War Room
 Overview](https://user-images.githubusercontent.com/1153921/95637683-31d60f00-0a47-11eb-9808-9f591ba8eb3a.png)
