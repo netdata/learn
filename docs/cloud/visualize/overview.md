@@ -95,7 +95,7 @@ Click on **X Charts** to display a dropdown of contexts and nodes contributing t
 dropdown displays a context and the associated node's hostname.
 
 ![The charts dropdown in a composite
-chart](https://user-images.githubusercontent.com/1153921/95778882-dcd00e00-0c7d-11eb-9863-ce1cc6eef4a5.png)
+chart](https://user-images.githubusercontent.com/1153921/96196353-05693980-0f04-11eb-83a8-3ed5f36d44a0.png)
 
 Click on the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
