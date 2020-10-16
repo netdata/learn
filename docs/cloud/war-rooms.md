@@ -49,7 +49,7 @@ have an Apache webserver running on them.
 
 If a filter is invalid or incomplete, Netdata Cloud shows a warning and will not run the filter until it's corrected.
 
-### Time picker
+### Time & date picker
 
 By default, all visualizations in Netdata Cloud show the last 15 minutes of metrics data.
 

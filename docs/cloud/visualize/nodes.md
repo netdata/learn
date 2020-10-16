@@ -19,7 +19,7 @@ You can also use the [Overview](/docs/cloud/visualize/overview) for monitoring a
 composite charts and Netdata's familiar dashboard UI.
 
 Check the [War Room docs](/docs/cloud/war-rooms) for details on the utility bar, which contains the [node
-filter](/docs/cloud/war-rooms#node-filter) and the [time picker](/docs/cloud/war-rooms#time-picker).
+filter](/docs/cloud/war-rooms#node-filter) and the [time &amp; date picker](/docs/cloud/war-rooms#time--date-picker).
 
 ## Add and customize metrics columns
 
