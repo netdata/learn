@@ -60,12 +60,12 @@ differences. We'll cover the differences in the sections below.
 Each chart has a definition bar to provide information about the aggregate function, dimension, and nodes related to
 that chart.
 
-Below is an example definition bar for the `system.io` chart, which displays I/O on all disks. This definition bar
-informs you that the chart is using the **sum** aggregate function on **all dimensions**, with **5 contributing charts**
-from **5 contributing nodes**, and **1 error**.
+Below is an example definition bar for the `system.load` chart, which displays I/O on all disks. This definition bar
+informs you that the chart is using the **sum** aggregate function on **all dimensions**, with **6 contributing
+charts** from **6 contributing nodes**, and **1 error**.
 
 ![The definition bar for the system.load
-chart](https://user-images.githubusercontent.com/1153921/95775760-d8085b80-0c77-11eb-84b7-38400fd932ac.png)
+chart](https://user-images.githubusercontent.com/1153921/96297386-9e9c5c80-0fa5-11eb-8c5a-b2e78e2c11b7.png)
 
 #### Aggregate functions
 
@@ -95,7 +95,7 @@ Click on **X Charts** to display a dropdown of contexts and nodes contributing t
 dropdown displays a context and the associated node's hostname.
 
 ![The charts dropdown in a composite
-chart](https://user-images.githubusercontent.com/1153921/96196353-05693980-0f04-11eb-83a8-3ed5f36d44a0.png)
+chart](https://user-images.githubusercontent.com/1153921/96297515-cf7c9180-0fa5-11eb-9880-43c0434ac386.png)
 
 Click on the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
@@ -107,7 +107,7 @@ Click on **X Nodes** to display a dropdown of nodes contributing to that composi
 to help you identify which nodes contribute to a chart.
 
 ![The nodes dropdown in a composite
-chart](https://user-images.githubusercontent.com/1153921/95779275-9c24c480-0c7e-11eb-8726-9add70365ab1.png)
+chart](https://user-images.githubusercontent.com/1153921/96297517-d0152800-0fa5-11eb-8a83-b6610fedc215.png)
 
 Click on the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
@@ -116,9 +116,6 @@ _jump to the top of that node's Cloud dashboard_.
 If one or more nodes can't contribute to a given chart, the definition bar shows a warning symbol plus the number of
 affected nodes, then lists them in the dropdown along with the associated error. Nodes might return errors because of
 networking issues, a stopped `netdata` service, or because that node does not have any metrics for that context.
-
-![Nodes marked as having
-issues](https://user-images.githubusercontent.com/1153921/95784026-e3fc1980-0c87-11eb-992f-9065fac15a82.png)
 
 ### Pan, zoom, and resize
 
@@ -131,7 +128,7 @@ interaction doc](/docs/visualize/interact-dashboards-charts#interact-with-charts
 Composite charts display dimensions below the chart rather than beside it.
 
 ![Dimensions beneath a composite
-chart](https://user-images.githubusercontent.com/1153921/95784893-941e5200-0c89-11eb-8048-74407a827eb0.png)
+chart](https://user-images.githubusercontent.com/1153921/96297655-09e62e80-0fa6-11eb-8066-b07d28e11981.png)
 
 You can still click on any one dimension to filter the chart and show only its values, or use `SHIFT + click` to hide or show dimensions one at a time.
 
