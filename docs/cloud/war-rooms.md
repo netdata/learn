@@ -9,8 +9,9 @@ nodes to a War Room, you can use different views and dashboards to view your inf
 Then, when an anomaly strikes, drill down into single-node dashboards for every granular detail you need for root cause
 analysis.
 
-The default view for any War Room is the [Overview](/docs/cloud/visualize/overview), but you can also use the [Nodes
-view](/docs/cloud/visualize/nodes), or [create new dashboards](/docs/cloud/visualize/dashboards) from within War Rooms.
+The default view for any War Room is the [Nodes view](/docs/cloud/visualize/nodes), but you can also use the
+[Overview](/docs/cloud/visualize/overview), or [create new dashboards](/docs/cloud/visualize/dashboards) from within War
+Rooms.
 
 ![The default War Room
 Overview](https://user-images.githubusercontent.com/1153921/95790534-6559a900-0c94-11eb-8002-3da831caee93.png)
@@ -23,7 +24,7 @@ the **time picker**.
 
 ### View dropdown
 
-The View dropdown lets you choose between various dashboards for monitoring your infrastructure. Currently, you can
+The View dropdown lets you choose between various dashboards for monitoring your infrastructure. You can currently
 choose between the [Overview](/docs/cloud/visualize/overview), [Nodes view](/docs/cloud/visualize/nodes), and creating
 [new dashboards](/docs/cloud/visualize/dashboards), along with any specific dashboards you might have created already.
 
@@ -66,9 +67,8 @@ minutes, hours, days, or months. Enter a number and choose the appropriate unit 
 
 Use the calendar to select multiple days. Click on a date to begin the timeframe selection, then an ending date.
 
-When you're finished with your timeframe selction, click **Apply** to re-render all visualizations with new metrics data
-streamed to your browser from each distributed node. Click **Clear** to remove any changes and apply the default
-15-minute timeframe.
+Click **Apply** to re-render all visualizations with new metrics data streamed to your browser from each distributed
+node. Click **Clear** to remove any changes and apply the default 15-minute timeframe.
 
 The fields beneath the calendar display the beginning and ending timestamps of the timeframe selected.
 

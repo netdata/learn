@@ -4,10 +4,10 @@ description: The Overview uses composite charts to display real-time aggregated 
 custom_edit_url: null
 ---
 
-The Overview is the default method of monitoring infrastructure using Netdata Cloud. While the interface might look
-similar to local dashboards served by an Agent, or even the single-node dashboards in Netdata Cloud, Overview uses
-**composite charts**. These charts display real-time aggregated metrics from all the nodes (or a filtered selection) in
-a given War Room.
+The Overview is one way to monitoring infrastructure using Netdata Cloud. While the interface might look similar to
+local dashboards served by an Agent, or even the single-node dashboards in Netdata Cloud, Overview uses **composite
+charts**. These charts display real-time aggregated metrics from all the nodes (or a filtered selection) in a given War
+Room.
 
 With Overview's composite charts, you can see your infrastructure from a single pane of glass, discover trends or
 anomalies, then drill down with filtering or single-node dashboards to see more. 
@@ -52,8 +52,8 @@ See the [War Room docs](/docs/cloud/war-rooms) for details about [filtering](/do
 
 ## Dashboard of composite charts
 
-The dashboard in the Overiew is similar to local dashboards or single-node dashboards in Netdata Cloud, with a few key
-differences in UI. We'll cover the differences in the sections below.
+The Overview's dashboard is similar to local dashboards or single-node dashboards in Netdata Cloud, with a few key UI
+differences. We'll cover the differences in the sections below.
 
 ### Definition bar
 
@@ -137,10 +137,9 @@ You can still click on any one dimension to filter the chart and show only its v
 
 ### Menu
 
-The Overview uses a similar menu to local Agent dashboards and single-node dashboards in Netdata Cloud. In the Overview,
-the sections and sub-menus are aggregated from every contributing node. For example, even if only two nodes actively
-collect from and monitor an Apache web server, the *Apache** section still appears and displays composite charts from
-those two nodes.
+The Overview uses a similar menu to local Agent dashboards and single-node dashboards in Netdata Cloud, with sections
+and sub-menus aggregated from every contributing node. For example, even if only two nodes actively collect from and
+monitor an Apache web server, the *Apache** section still appears and displays composite charts from those two nodes.
 
 ![A menu in the Overview
 screen](https://user-images.githubusercontent.com/1153921/95785094-fa0ad980-0c89-11eb-8328-2ff11ac630b4.png)
@@ -156,8 +155,7 @@ hardware or software. The Overview currently does not display metrics from files
 
 ## What's next?
 
-Now that you understand the ins and outs of the Overview, and how to navigate composite charts, read more about our
-infrastructure monitoring vision in our blog post: _TK_
+For another way to view an infrastructure from a high level, see the [Nodes view](/docs/cloud/visualize/nodes).
 
 If you need a refresher on how Netdata's charts work, see our doc on [interacting with
 charts](/docs/visualize/interact-dashboards-charts).
