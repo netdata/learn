@@ -67,7 +67,73 @@ const GuideItems = [
     href: "/guides/monitor-hadoop-cluster",
     category: "collect-monitor",
     description: "Netdata comes with built-in and pre-configured support for monitoring both HDFS and Zookeeper."
-  }
+  },
+  {
+    title: "The step-by-step Netdata guide",
+    href: "/guides/step-by-step/step-00",
+    category: "step-by-step",
+    description: "Learn about Netdata's many features and capabilities in a guided experienced designed for those new to monitoring and troubleshooting."
+  },
+  {
+    title: "Step 1. Netdata's building blocks",
+    href: "/guides/step-by-step/step-01",
+    category: "step-by-step",
+    description: ""
+  },
+  {
+    title: "Step 2. Get to know Netdata's dashboard",
+    href: "/guides/step-by-step/step-02",
+    category: "step-by-step",
+    description: "Visit Netdata's dashboard to explore, manipulate charts, and check out alarms. Get your first taste of visual anomaly detection."
+  },
+  {
+    title: "Step 3. Monitor more than one system with Netdata",
+    href: "/guides/step-by-step/step-03",
+    category: "step-by-step",
+    description: "While the dashboard lets you quickly move from one agent to another, Netdata Cloud is our SaaS solution for monitoring the health of many systems. We'll cover its features and the benefits of using Netdata Cloud on top of the dashboard."
+  },
+  {
+    title: "Step 4. The basics of configuring Netdata",
+    href: "/guides/step-by-step/step-04",
+    category: "step-by-step",
+    description: "While Netdata can monitor thousands of metrics in real-time without any configuration, you may want to tweak some settings based on your system's resources."
+  },
+  {
+    title: "Step 5. Health monitoring alarms and notifications",
+    href: "/guides/step-by-step/step-05",
+    category: "step-by-step",
+    description: "Learn how to tune, silence, and write custom alarms. Then enable notifications so you never miss a change in health status or performance anomaly."
+  },
+  {
+    title: "Step 6. Collect metrics from more services and apps",
+    href: "/guides/step-by-step/step-06",
+    category: "step-by-step",
+    description: "Learn how to enable/disable collection plugins and configure a collection plugin job to add more charts to your Netdata dashboard and begin monitoring more apps and services, like MySQL, Nginx, MongoDB, and hundreds more."
+  },
+  {
+    title: "Step 7. Netdata's dashboard in depth",
+    href: "/guides/step-by-step/step-07",
+    category: "step-by-step",
+    description: "Now that you configured your Netdata monitoring agent to your exact needs, you'll dive back into metrics snapshots, updates, and the dashboard's settings."
+  },
+  {
+    title: "Step 8. Building your first custom dashboard",
+    href: "/guides/step-by-step/step-08",
+    category: "step-by-step",
+    description: "Using simple HTML, CSS, and JavaScript, we'll build a custom dashboard that displays essential information in any format you choose. You can even monitor many systems from a single HTML file."
+  },
+  {
+    title: "Step 9. Long-term metrics storage",
+    href: "/guides/step-by-step/step-09",
+    category: "step-by-step",
+    description: "By default, Netdata can store lots of real-time metrics, but you can also tweak our custom database engine to your heart's content. Want to take your Netdata metrics elsewhere? We're happy to help you archive data to Prometheus, MongoDB, TimescaleDB, and others."
+  },
+  {
+    title: "Step 10. Set up a proxy",
+    href: "/guides/step-by-step/step-10",
+    category: "step-by-step",
+    description: "Run Netdata behind an Nginx proxy to improve performance, and enable TLS/HTTPS for better security."
+  },
 ]
 
 const GuideCategories = [
@@ -82,10 +148,15 @@ const GuideCategories = [
     description: "Advanced configuration options for those who want to elevate their Netdata Agent-monitored nodes."
   },
   {
+    label: "step-by-step",
+    title: "Step-by-step",
+    description: "Learn about Netdata's many features and capabilities in a guided experienced designed for those new to monitoring and troubleshooting."
+  },
+  {
     label: "export",
     title: "Export",
     description: "Explore Netdata's interoperability with other monitoring and visualization platforms."
-  }
+  },
 ]
 
 export function Guides() {
