@@ -20,9 +20,9 @@ use the dropdown in your War Room's utility bar.
 
 ## Before you get started
 
-Only nodes with v1.26.0 or later of the [Netdata Agent](https://github.com/netdata/netdata) can contribute to composite
-charts. If your node(s) use an earlier, incompatible version of the Netdata Agent, you will see them marked as **needs
-upgrade** in the tooltip that appears when hovering over **X Issues**. 
+Only nodes with v1.25.0-127 or later of the [Netdata Agent](https://github.com/netdata/netdata) can contribute to
+composite charts. If your node(s) use an earlier, incompatible version of the Netdata Agent, you will see them marked as
+**needs upgrade** in the tooltip that appears when hovering over **X Issues**. 
 
 ![Tooltip showing nodes that need to be
 upgraded](https://user-images.githubusercontent.com/1153921/95638372-3c91a380-0a49-11eb-946d-42bfc1f04da7.png)
@@ -70,7 +70,8 @@ chart](https://user-images.githubusercontent.com/1153921/96297386-9e9c5c80-0fa5-
 #### Aggregate functions
 
 Each chart uses an opinionated-but-valuable default aggregate function. For example, the `system.cpu` chart shows the
-average of all dimensions, while the `system.load` chart shows the sum of all dimensions.
+average for each dimension from every contributing chart, while the `net.net` chart shows the sum for each dimension
+from every contributing chart, which can also come from multiple networking interfaces.
 
 The following aggregate functions are available for each selected dimension:
 
@@ -91,8 +92,8 @@ number of dimensions available on that context.
 
 #### Charts
 
-Click on **X Charts** to display a dropdown of contexts and nodes contributing to that composite chart. Each line in the
-dropdown displays a context and the associated node's hostname.
+Click on **X Charts** to display a dropdown of charts and nodes contributing to that composite chart. Each line in the
+dropdown displays a chart name and the associated node's hostname.
 
 ![The charts dropdown in a composite
 chart](https://user-images.githubusercontent.com/1153921/96297515-cf7c9180-0fa5-11eb-9880-43c0434ac386.png)
@@ -141,10 +142,10 @@ monitor an Apache web server, the *Apache** section still appears and displays c
 ![A menu in the Overview
 screen](https://user-images.githubusercontent.com/1153921/95785094-fa0ad980-0c89-11eb-8328-2ff11ac630b4.png)
 
-One difference between the Overview's menu and those found elsewhere is that the Overview condenses multiple families
-into a single **all** sub-menu and associated charts. For example, if Node A has 5 disks, and Node B has 3, each disk
-contributes to a single `disk.io` composite chart. The utility bar should show that there are 8 charts from 2 nodes
-contributing to that chart.
+One difference between the Overview's menu and those found elsewhere is that the Overview condenses multiple families or
+multiple instances into a single **all** sub-menu and associated charts. For example, if Node A has 5 disks, and Node B
+has 3, each disk contributes to a single `disk.io` composite chart. The utility bar should show that there are 8 charts
+from 2 nodes contributing to that chart.
 
 This aggregation applies to disks, network devices, and other metric types that involve multiple instances of a piece of
 hardware or software. The Overview currently does not display metrics from filesystems. Read more about families in our
