@@ -49,6 +49,12 @@ have an Apache webserver running on them.
 
 If a filter is invalid or incomplete, Netdata Cloud shows a warning and will not run the filter until it's corrected.
 
+### Metric Correlations
+
+When viewing a single-node dashboard, the **Metric Correlations** button appears in the utility bar. Click this button
+to use Netdata Cloud's built-in [metrics correlation feature](/docs/cloud/insights/metric-corrlations), which is
+designed to help you find the root cause of anomalies faster.
+
 ### Time & date picker
 
 By default, all visualizations in Netdata Cloud show the last 15 minutes of metrics data.
