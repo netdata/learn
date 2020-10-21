@@ -155,7 +155,7 @@ chart. The utility bar should show that there are 8 charts from 2 nodes contribu
 
 This action applies to disks, network devices, and other metric types that involve multiple instances of a piece of
 hardware or software. The Overview currently does not display metrics from filesystems. Read more about families and
-instances in our [web server docs](/docs/agent/web.md).
+instances in our [web server docs](/docs/agent/web).
 
 ## What's next?
 

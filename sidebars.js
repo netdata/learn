@@ -60,7 +60,7 @@ module.exports = {
           type: 'category',
           label: 'Visualize',
           items: [
-            'visualize/view-all-nodes',
+            'visualize/overview-infrastructure',
             'visualize/interact-dashboards-charts',
             'visualize/create-dashboards',
           ]
