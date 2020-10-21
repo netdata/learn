@@ -149,6 +149,7 @@ module.exports = {
                             'agent/collectors/go.d.plugin/modules/cockroachdb',
                             'agent/collectors/go.d.plugin/modules/consul',
                             'agent/collectors/go.d.plugin/modules/coredns',
+                            'agent/collectors/go.d.plugin/modules/couchdb',
                             'agent/collectors/go.d.plugin/modules/dnsmasq_dhcp',
                             'agent/collectors/go.d.plugin/modules/dnsquery',
                             'agent/collectors/go.d.plugin/modules/docker_engine',
@@ -159,6 +160,7 @@ module.exports = {
                             'agent/collectors/go.d.plugin/modules/freeradius',
                             'agent/collectors/go.d.plugin/modules/hdfs',
                             'agent/collectors/go.d.plugin/modules/httpcheck',
+                            'agent/collectors/go.d.plugin/modules/isc_dhcpd',
                             'agent/collectors/go.d.plugin/modules/springboot2',
                             'agent/collectors/go.d.plugin/modules/k8s_kubelet',
                             'agent/collectors/go.d.plugin/modules/k8s_kubeproxy',
@@ -549,6 +551,7 @@ module.exports = {
               type: 'category',
               label: 'Additional information',
               items: [
+                'agent/anonymous-statistics',
                 'agent/contrib',
                 'agent/tests',
                 'agent/tests/health_mgmtapi',
