@@ -52,6 +52,7 @@ Sample:
 ```yaml
 loop_mode    : yes
 poll_seconds : 1
+exclude_zero_memory_users : yes
 ```
 
 

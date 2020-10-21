@@ -4,10 +4,9 @@ description: The Overview uses composite charts to display real-time aggregated 
 custom_edit_url: null
 ---
 
-The Overview is one way to monitoring infrastructure using Netdata Cloud. While the interface might look similar to
-local dashboards served by an Agent, or even the single-node dashboards in Netdata Cloud, Overview uses **composite
-charts**. These charts display real-time aggregated metrics from all the nodes (or a filtered selection) in a given War
-Room.
+The Overview is one way to monitor infrastructure using Netdata Cloud. While the interface might look similar to local
+dashboards served by an Agent, or even the single-node dashboards in Netdata Cloud, Overview uses **composite charts**.
+These charts display real-time aggregated metrics from all the nodes (or a filtered selection) in a given War Room.
 
 With Overview's composite charts, you can see your infrastructure from a single pane of glass, discover trends or
 anomalies, then drill down with filtering or single-node dashboards to see more. 
@@ -137,19 +136,26 @@ You can still click on any one dimension to filter the chart and show only its v
 
 The Overview uses a similar menu to local Agent dashboards and single-node dashboards in Netdata Cloud, with sections
 and sub-menus aggregated from every contributing node. For example, even if only two nodes actively collect from and
-monitor an Apache web server, the *Apache** section still appears and displays composite charts from those two nodes.
+monitor an Apache web server, the **Apache** section still appears and displays composite charts from those two nodes.
 
 ![A menu in the Overview
 screen](https://user-images.githubusercontent.com/1153921/95785094-fa0ad980-0c89-11eb-8328-2ff11ac630b4.png)
 
-One difference between the Overview's menu and those found elsewhere is that the Overview condenses multiple families or
-multiple instances into a single **all** sub-menu and associated charts. For example, if Node A has 5 disks, and Node B
-has 3, each disk contributes to a single `disk.io` composite chart. The utility bar should show that there are 8 charts
-from 2 nodes contributing to that chart.
+One difference between the Overview's menu and those found in single-node dashboards or local Agent dashboards is that
+the Overview condenses multiple services, families, or instances into single sectiosn, sub-menus, and associated charts.
 
-This aggregation applies to disks, network devices, and other metric types that involve multiple instances of a piece of
-hardware or software. The Overview currently does not display metrics from filesystems. Read more about families in our
-[web server docs](/docs/agent/web).
+For services, let's say you have two concurrent jobs with the [web_log
+collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/weblog), one for Apache and another for
+Nginx. A single-node or local dashboard shows two section, **web_log apache** and **web_log nginx**, whereas the
+Overview condenses these into a single **web_log** section containing composite charts from both jobs.
+
+The Overview also consdenses multiple families or multiple instances into a single **all** sub-menu and associated
+charts. For example, if Node A has 5 disks, and Node B has 3, each disk contributes to a single `disk.io` composite
+chart. The utility bar should show that there are 8 charts from 2 nodes contributing to that chart.
+
+This action applies to disks, network devices, and other metric types that involve multiple instances of a piece of
+hardware or software. The Overview currently does not display metrics from filesystems. Read more about families and
+instances in our [web server docs](/docs/agent/web.md).
 
 ## What's next?
 
