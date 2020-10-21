@@ -565,6 +565,7 @@ module.exports = {
           label: 'Cloud',
           items: [
             'cloud',
+            'cloud/get-started',
             'cloud/spaces',
             'cloud/war-rooms',
             {
