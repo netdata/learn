@@ -52,7 +52,7 @@ If a filter is invalid or incomplete, Netdata Cloud shows a warning and will not
 ### Metric Correlations
 
 When viewing a single-node dashboard, the **Metric Correlations** button appears in the utility bar. Click this button
-to use Netdata Cloud's built-in [metrics correlation feature](/docs/cloud/insights/metric-corrlations), which is
+to use Netdata Cloud's built-in [metrics correlation feature](/docs/cloud/insights/metric-correlations), which is
 designed to help you find the root cause of anomalies faster.
 
 ### Time & date picker
