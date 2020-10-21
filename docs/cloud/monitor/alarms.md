@@ -48,5 +48,5 @@ Netdata Cloud always delivers the most relevant alarms about the well-being of y
 If you're through with setting up alarms, it might be time to [invite your
 team](/docs/cloud/collaborate/invite-your-team).
 
-And if you haven't already put some thought into how you organize your Spaces and War Rooms, check out some of our
-[recommendations](/docs/cloud/organize#war-rooms).
+Check out our recommendations on organizing and using [Spaces](/docs/cloud/spaces) and [War
+Rooms](/docs/cloud/war-rooms) to streamline your processes once you find an alarm in Netdata Cloud.
