@@ -27,7 +27,40 @@ export const IndexBox = ({children, href, title}) => (
 );
 
 const updates = [
-   {
+  {
+    title: <>See an overview of your infrastructure</>,
+    href: '/docs/visualize/overview-infrastructure',
+    date: 'October 21, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        With Overview's composite charts, you can see your infrastructure from a single pane of glass, discover trends or anomalies, then drill down with filtering or single-node dashboards to see more.
+      </>
+    ),
+  },
+  {
+    title: <>Reference: Overview</>,
+    href: '/docs/cloud/visualize/overview',
+    date: 'October 21, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Reference documentation for the Overview feature in Netdata Cloud, which uses composite charts for infrastructure monitoring.
+      </>
+    ),
+  },
+  {
+    title: <>Reference: War Rooms</>,
+    href: '/docs/cloud/war-rooms',
+    date: 'October 21, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Reference documentation for War Rooms in Netdata Cloud. New information about the utility bar, node filtering, time &amp; date picker, and more.
+      </>
+    ),
+  },
+  {
     title: <>How to claim a node to Netdata Cloud</>,
     href: 'https://www.youtube.com/watch?v=UAzVvhMab8g',
     date: 'September 22, 2020',
@@ -35,40 +68,6 @@ const updates = [
     description: (
       <>
         See the process of claiming a node to Netdata Cloud in action. The video, and claiming itself, takes only 90 seconds of your time.
-      </>
-    ),
-  },
-  {
-    title: <>Send notifications to StackPulse</>,
-    href: '/docs/agent/health/notifications/stackpulse',
-    date: 'September 22, 2020',
-    type: 'Doc',
-    description: (
-      <>
-        Send Netdata notifications to StackPulse to create smart automated response workflows (StackPulse playbooks) that will help you drive down your MTTD and MTTR.
-      </>
-    ),
-  },
-  {
-    title: <>Monitor Pi-hole (and a Raspberry Pi) with Netdata</>,
-    href: '/guides/monitor/pi-hole-raspberry-pi',
-    date: 'September 15, 2020',
-    type: 'Guide',
-    description: (
-      <>
-        Collect 1,500 metrics every second from a working Pi-hole installation and a Raspberry Pi after just a few minutes of setup and zero configuration.
-      </>
-    ),
-  },
-  {
-    title: <>Collect metrics from any Prometheus endpoint</>,
-    href: 'docs/agent/collectors/go.d.plugin/modules/prometheus',
-    date: 'August 10, 2020',
-    type: 'Doc',
-    description: (
-      <>
-        Collect from more than 600 services that support the Prometheus/OpenMetrics 
-        format for exposing metrics, often with zero configuration.
       </>
     ),
   },
