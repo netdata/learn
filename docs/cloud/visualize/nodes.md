@@ -1,5 +1,5 @@
 ---
-title: View all nodes at a glance
+title: Nodes view
 description: See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.
 custom_edit_url: null
 ---
@@ -7,12 +7,19 @@ custom_edit_url: null
 The Nodes view lets you see and customize key metrics from any number of Agent-monitored nodes and seamlessly navigate
 to any node's dashboard for troubleshooting performance issues or anomalies using Netdata's highly-granular metrics.
 
-![The Nodes interface in Netdata Cloud](/img/docs/cloud/list-view.png)
+![The Nodes view in Netdata
+Cloud](https://user-images.githubusercontent.com/1153921/95637682-313d7880-0a47-11eb-8d0b-4611a5dae431.png)
 
 Each War Room's Nodes view is populated based on the nodes you added to that specific War Room. Each node occupies a
 single row, first featuring that node's alarm status (yellow for warnings, red for critical alarms) and operating
 system, some essential information about the node, followed by columns of user-defined key metrics represented in
 real-time charts.
+
+You can also use the [Overview](/docs/cloud/visualize/overview) for monitoring an infrastructure in real time using
+composite charts and Netdata's familiar dashboard UI.
+
+Check the [War Room docs](/docs/cloud/war-rooms) for details on the utility bar, which contains the [node
+filter](/docs/cloud/war-rooms#node-filter) and the [time &amp; date picker](/docs/cloud/war-rooms#time--date-picker).
 
 ## Add and customize metrics columns
 
@@ -28,36 +35,7 @@ edit that chart. You can the context, its title, add or remove dimensions, or de
 
 These customizations appear for anyone else with access to that War Room.
 
-## Change the timeframe
-
-By default, the Nodes view shows the last 5 minutes of metrics data on every chart. The value displayed above the chart
-is the 5-minute average of those metrics.
-
-You can change the timeframe, and also change both the charts and the average value, by clicking on any of the buttons
-next to the **Last** label. **15m** will display the last 15 minutes of metrics for each chart, **30m** for 30 minutes,
-and so on.
-
-![GIF showing how to change the timeframe in
-Nodes](https://user-images.githubusercontent.com/1153921/87457127-bf2ad400-c5bc-11ea-9f3b-9afa4e4f1855.gif)
-
-## Filter and group your infrastructure
-
-Use the filter input next to the **Nodes** heading to filter the nodes in a given War Room.
-
-Use relational operators (==, !=, contains, and !contains) and logical operators (AND, OR), plus the name, OS, or
-services running on your nodes to quickly turn any War Room into a focused troubleshooting interface. See what services
-Netdata Cloud can filter by in the [supported collectors list](/docs/agent/collectors/collectors).
-
-For example, `name == centos OR os == debian` filters any nodes by the exact name `centos` or has Debian as its
-operating system.
-
-You can also use parentheses around operators to create more sophisticated filters. `(name contains aws AND os contains
-ubuntu) OR services == apache` shows only nodes that have `aws` in the hostname and are Ubuntu-based, or any nodes that
-have an Apache webserver running on them.
-
-If a filter is invalid or incomplete, Netdata Cloud shows a warning and will not run the filter until it's corrected.
-
-## Troubleshoot with embedded node dashboards
+## Jump to single-node dashboards
 
 Click on the name of any node to seamlessly navigate to that node's dashboard. This is the same dashboard that comes
 pre-configured with every installation of the Netdata Agent, so it features thousands of metrics and hundreds of

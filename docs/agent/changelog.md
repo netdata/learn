@@ -6,8 +6,21 @@
 
 **Merged pull requests:**
 
+- Rewrite the repository's main README [\#10108](https://github.com/netdata/netdata/pull/10108) ([joelhans](https://github.com/joelhans))
+- Update supported collectors list with new collectors [\#10102](https://github.com/netdata/netdata/pull/10102) ([joelhans](https://github.com/joelhans))
+- Added more robust doucmentation around updates. [\#10100](https://github.com/netdata/netdata/pull/10100) ([Ferroin](https://github.com/Ferroin))
+- nvidia\_smi: Not count users with zero memory allocated [\#10098](https://github.com/netdata/netdata/pull/10098) ([scatenag](https://github.com/scatenag))
+- Replace memcpy\(\) with memmove\(\) for overlapping memory ranges. [\#10097](https://github.com/netdata/netdata/pull/10097) ([mfundul](https://github.com/mfundul))
+- collectors/cgroups: filter pod level cgroups [\#10095](https://github.com/netdata/netdata/pull/10095) ([ilyam8](https://github.com/ilyam8))
+- Add support for HBA drives in hpssa.chart.py [\#10093](https://github.com/netdata/netdata/pull/10093) ([martinpal](https://github.com/martinpal))
 - Removed redundant build dependencies from Debian control file. [\#10085](https://github.com/netdata/netdata/pull/10085) ([alexmyczko](https://github.com/alexmyczko))
+- collectors/cgroups: fix resolving container names in k8s [\#10072](https://github.com/netdata/netdata/pull/10072) ([ilyam8](https://github.com/ilyam8))
 - Update README.md [\#10067](https://github.com/netdata/netdata/pull/10067) ([andrewm4894](https://github.com/andrewm4894))
+- Add per queue charts in rabbitmq.chart.py [\#10064](https://github.com/netdata/netdata/pull/10064) ([fayak](https://github.com/fayak))
+- Wireless statistics [\#10052](https://github.com/netdata/netdata/pull/10052) ([thiagoftsm](https://github.com/thiagoftsm))
+- Fix formatting source code blocks in custom dashboard page [\#10050](https://github.com/netdata/netdata/pull/10050) ([atnartur](https://github.com/atnartur))
+- New alarm entities [\#10041](https://github.com/netdata/netdata/pull/10041) ([thiagoftsm](https://github.com/thiagoftsm))
+- Don't check for ebpf dependencies if ebpf is disabled. [\#10034](https://github.com/netdata/netdata/pull/10034) ([KickerTom](https://github.com/KickerTom))
 
 ## [v1.26.0](https://github.com/netdata/netdata/tree/v1.26.0) (2020-10-14)
 
@@ -63,6 +76,7 @@
 - Fix build for the AWS Kinesis exporting connector [\#9823](https://github.com/netdata/netdata/pull/9823) ([vlvkobal](https://github.com/vlvkobal))
 - Add guide for monitoring Pi-hole and Raspberry Pi [\#9770](https://github.com/netdata/netdata/pull/9770) ([joelhans](https://github.com/joelhans))
 - Added support for using `/etc/cron.d` for auto-updates. [\#9598](https://github.com/netdata/netdata/pull/9598) ([Ferroin](https://github.com/Ferroin))
+
 
 ## [v1.25.0](https://github.com/netdata/netdata/tree/v1.25.0) (2020-09-15)
 
@@ -245,10 +259,6 @@
 ## [v1.23.1](https://github.com/netdata/netdata/tree/v1.23.1) (2020-07-01)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.23.0...v1.23.1)
-
-**Merged pull requests:**
-
--  Fix the unittest execution [\#9445](https://github.com/netdata/netdata/pull/9445) ([thiagoftsm](https://github.com/thiagoftsm))
 
 ## [v1.23.0](https://github.com/netdata/netdata/tree/v1.23.0) (2020-06-25)
 

@@ -14,10 +14,13 @@ Read more about collectors and how to enable them in our [collectors documentati
 [collector quickstart](/docs/agent/collectors/quickstart) to figure out how to collect metrics from your favorite app/service
 with auto-detection and minimal configuration.
 
-Some collectors have both Go and Python versions. The Go versions are newer and more actively maintained, but are often
-disabled by default in favor of the Python version, as we're still in the process of migrating all collectors to Go. See
-the [Go plugin documentation](/docs/agent/collectors/go.d.plugin/#why-disabled-how-to-enable)
-for details on how to disable the Python collector and enable the Go equivalent.
+Some collectors have both Go and Python versions as we continue our effort to migrate all collectors to Go. In these
+cases, _Netdata always prioritizes the Go version_, and we highly recommend you use the Go versions for the best
+experience.
+
+If you want to use a Python version of a collector, you need to explicitly [disable the Go
+version](/docs/collect/enable-configure), and enable the Python version. Netdata then skips the Go version and
+attempts to load the Python version and its accompanying configuration file.
 
 If you don't see the app/service you'd like to monitor here, check out our [GitHub
 issues](https://github.com/netdata/netdata/issues). Use the search bar to look for previous discussions about that
@@ -205,8 +208,10 @@ configure any of these collectors according to your setup and infrastructure.
     interface (`statistics-channels` feature).
 -   [ISC Bind (RDNC)](/docs/agent/collectors/python.d.plugin/bind_rndc): Collect nameserver summary performance
     statistics using the `rndc` tool.
--   [ISC DHCP](/docs/agent/collectors/python.d.plugin/isc_dhcpd): Reads `dhcpd.leases` file and reports DHCP pools
-    utiliation and leases statistics (total number, leases per pool).
+-   [ISC DHCP (Go)](/docs/agent/collectors/go.d.plugin/modules/isc_dhcpd): Reads a
+    `dhcpd.leases` file and collects metrics on total active leases, pool active leases, and pool utilization.
+-   [ISC DHCP (Python)](/docs/agent/collectors/python.d.plugin/isc_dhcpd): Reads `dhcpd.leases` file and reports DHCP
+    pools utiliation and leases statistics (total number, leases per pool).
 -   [OpenLDAP](/docs/agent/collectors/python.d.plugin/openldap): Provides statistics information from the OpenLDAP
     (`slapd`) server.
 -   [NSD](/docs/agent/collectors/python.d.plugin/nsd): Monitor nameserver performance metrics using the `nsd-control`
@@ -250,8 +255,11 @@ configure any of these collectors according to your setup and infrastructure.
 
 ### Search
 
--   [ElasticSearch](/docs/agent/collectors/python.d.plugin/elasticsearch): Collect search engine performance and health
-    statistics. Optionally collects per-index metrics.
+-   [Elasticsearch (Go)](/docs/agent/collectors/go.d.plugin/modules/elasticsearch): Collect
+    dozens of metrics on search engine performance from local nodes and local indices. Includes cluster health and
+    statistics.
+-   [Elasticsearch (Python)](/docs/agent/collectors/python.d.plugin/elasticsearch): Collect search engine performance and
+    health statistics. Optionally collects per-index metrics.
 -   [Solr](/docs/agent/collectors/go.d.plugin/modules/solr/): Collect application search
     requests, search errors, update requests, and update errors statistics.
 
@@ -335,8 +343,10 @@ The Netdata Agent can collect these system- and hardware-level metrics using a v
 -   [Btrfs](/docs/agent/collectors/proc.plugin): Montiors Btrfs filesystems with the the `proc.plugin` collector.
 -   [Device mapper](/docs/agent/collectors/proc.plugin): Gather metrics about the Linux device mapper with the proc
     collector.
--   [ioping.plugin](/docs/agent/collectors/ioping.plugin): Measure disk read/write latency.
 -   [Disk space](/docs/agent/collectors/diskspace.plugin): Collect disk space usage metrics on Linux mount points.
+-   [Files and directories](/docs/agent/collectors/go.d.plugin/modules/filecheck): Gather
+    metrics about the existence, modification time, and size of files or directories.
+-   [ioping.plugin](/docs/agent/collectors/ioping.plugin): Measure disk read/write latency.
 -   [NFS file servers and clients](/docs/agent/collectors/proc.plugin): Gather operations, utilization, and space usage
     using the the `proc.plugin` collector.
 -   [RAID arrays](/docs/agent/collectors/proc.plugin): Collect health, disk status, operation status, and more with the
@@ -417,6 +427,8 @@ The Netdata Agent can collect these system- and hardware-level metrics using a v
     application using the `apps.plugin` collector.
 -   [systemd](/docs/agent/collectors/cgroups.plugin): Monitor the CPU and memory usage of systemd services using the
     `cgroups.plugin` collector.
+-   [systemd unit states](/docs/agent/collectors/go.d.plugin/modules/systemdunits): See the 
+    state (active, inactive, activating, deactiviating, failed) of various systemd unit types.
 -   [System processes](/docs/agent/collectors/proc.plugin): Collect metrics on system load and total processes running
     using `/proc/loadavg` and the `proc.plugin` collector.
 -   [Uptime](/docs/agent/collectors/proc.plugin): Monitor the uptime of a system using the `proc.plugin` collector.

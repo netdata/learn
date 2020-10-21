@@ -67,14 +67,22 @@ charts](https://user-images.githubusercontent.com/1153921/93497197-071fed00-f8c5
 These interactions can also be triggered using the icons on the bottom-right corner of every chart. They are,
 respectively, `Pan Left`, `Reset`, `Pan Right`, `Zoom In`, and `Zoom Out`.
 
-You can show and hide individual dimensions by clicking on their names. Hiding dimensions simplifies the chart and can
-help you better discover exactly which aspect of your system is behaving strangely.
+You can show and hide individual dimensions by clicking on their names. Use `SHIFT + click` to hide or show dimensions
+one at a time. Hiding dimensions simplifies the chart and can help you better discover exactly which aspect of your
+system is behaving strangely.
 
 You can resize any chart by clicking-and-dragging the icon on the bottom-right corner of any chart. To restore the chart
 to its original height, double-click the same icon.
 
 ![Resizing a chart and resetting it to the default
 height](https://user-images.githubusercontent.com/1153921/93497272-1acb5380-f8c5-11ea-851c-6cd5ac247e41.gif)
+
+### Composite charts in Netdata Cloud
+
+Netdata Cloud now supports composite charts in the Overview interface. Composite charts come with a few additional UI
+elements and varied interactions, such as the location of dimensions and a utility bar for configuring the state of
+individual composite charts. All of these de4tails are covered in the [Overview
+reference](/docs/cloud/visualize/overview) doc.
 
 ## What's next?
 
@@ -85,5 +93,11 @@ perform more targeted troubleshooting, or keep tabs on a bird's eye view of your
 If you're finished with dashboards for now, skip to Netdata's health watchdog for information on [creating or
 configuring](/docs/monitor/configure-alarms) alarms, and [send notifications](/docs/monitor/enable-notifications)
 to get informed when something goes wrong in your infrastructure.
+
+### Related reference documentation
+
+-   [Netdata Agent · Web dashboards overview](/docs/agent/web)
+-   [Netdata Cloud · War Rooms](/docs/cloud/war-rooms)
+-   [Netdata Cloud · Overview](/docs/cloud/visualize/overview)
 
 

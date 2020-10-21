@@ -60,7 +60,7 @@ module.exports = {
           type: 'category',
           label: 'Visualize',
           items: [
-            'visualize/view-all-nodes',
+            'visualize/overview-infrastructure',
             'visualize/interact-dashboards-charts',
             'visualize/create-dashboards',
           ]
@@ -565,26 +565,26 @@ module.exports = {
           label: 'Cloud',
           items: [
             'cloud',
-            'cloud/get-started',
-            'cloud/organize',
+            'cloud/spaces',
+            'cloud/war-rooms',
             {
               type: 'category',
-              label: 'Visualize',
+              label: 'Visualizations',
               items: [
-                'cloud/visualize',
+                'cloud/visualize/overview',
                 'cloud/visualize/nodes',
                 'cloud/visualize/dashboards',
+                'cloud/insights/metric-correlations',
               ]
             },
             {
               type: 'category',
               label: 'Monitor',
               items: [
-                'cloud/monitor',
                 'cloud/monitor/alarms',
               ]
             },
-            'cloud/insights/metric-correlations',
+            
             'cloud/collaborate',
             {
               type: 'category',
