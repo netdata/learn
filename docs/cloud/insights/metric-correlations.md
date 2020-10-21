@@ -16,7 +16,7 @@ the most accurate insights using every possible metric.
 
 To use Metric Correlations feature, you need to be viewing a **single-node dashboard** in Netdata Cloud. From the [Nodes
 view](/docs/cloud/visualize/nodes), click on the hostname of the node you're interested in. From the
-[Overview](/nodes/cloud/visualize/overview), click on **X Charts** or **X Nodes** to reveal a dropdown, then click on
+[Overview](/docs/cloud/visualize/overview), click on **X Charts** or **X Nodes** to reveal a dropdown, then click on
 the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to jump to
 that node's dashboard in Netdata Cloud.

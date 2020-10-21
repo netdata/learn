@@ -104,7 +104,7 @@ can now navigate through Netdata Cloud freely, individual Cloud dashboards, the 
 different Spaces, and have those valuable metrics follow you.
 
 Pinning dashboards helps you correlate potentially related charts across your infrastructure, no matter how you
-[organized it](/docs/cloud/organize) in Netdata Cloud, and helps you discover root causes faster.
+organized your Spaces and War Rooms, and helps you discover root causes faster.
 
 ## Manage your dashboards
 
