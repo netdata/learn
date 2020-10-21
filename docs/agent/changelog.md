@@ -77,6 +77,7 @@
 - Add guide for monitoring Pi-hole and Raspberry Pi [\#9770](https://github.com/netdata/netdata/pull/9770) ([joelhans](https://github.com/joelhans))
 - Added support for using `/etc/cron.d` for auto-updates. [\#9598](https://github.com/netdata/netdata/pull/9598) ([Ferroin](https://github.com/Ferroin))
 
+
 ## [v1.25.0](https://github.com/netdata/netdata/tree/v1.25.0) (2020-09-15)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.24.0...v1.25.0)
