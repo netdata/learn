@@ -122,7 +122,8 @@ Room. If they don't appear in that list, you need to [invite them](/docs/cloud/c
 
 In the **War Rom** tab, change the War Room's name, description, or public/private status.
 
-![](https://i.imgur.com/e9lwiEB.gif)
+![](https://i.imgur.com/T6bp6Kq.gif)
+
 ## What's next?
 
 Once you've figured out an organizational structure that works for your team, learn more about how you can use Netdata
