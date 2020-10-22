@@ -71,3 +71,7 @@
 [[redirects]]
   from = "/docs/visualize/view-all-nodes"
   to = "/docs/visualize/overview-infrastructure"
+  
+[[redirects]]
+  from = "/docs/cloud/organize"
+  to = "/docs/cloud/spaces"
