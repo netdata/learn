@@ -103,6 +103,7 @@ module.exports = {
           items: [
             'agent',
             'agent/getting-started',
+            'agent/netdata-security',
             'agent/agent-cloud',
             'agent/aclk',
             'agent/claim',
