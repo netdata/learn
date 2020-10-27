@@ -28,6 +28,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Install Netdata with Docker</>,
+    href: 'docs/agent/packaging/docker',
+    date: 'October 27, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Updates to the Docker installation documentation, including new recommendations on changing the container's default hostname at and after initial creation.
+      </>
+    ),
+  },
+  {
     title: <>See an overview of your infrastructure</>,
     href: '/docs/visualize/overview-infrastructure',
     date: 'October 21, 2020',
@@ -59,18 +70,7 @@ const updates = [
         Reference documentation for War Rooms in Netdata Cloud. New information about the utility bar, node filtering, time &amp; date picker, and more.
       </>
     ),
-  },
-  {
-    title: <>How to claim a node to Netdata Cloud</>,
-    href: 'https://www.youtube.com/watch?v=UAzVvhMab8g',
-    date: 'September 22, 2020',
-    type: 'Video',
-    description: (
-      <>
-        See the process of claiming a node to Netdata Cloud in action. The video, and claiming itself, takes only 90 seconds of your time.
-      </>
-    ),
-  },
+  }
 ]
 
 function UpdateBox({title, href, date, type, description}) {
