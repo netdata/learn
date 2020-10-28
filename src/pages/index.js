@@ -28,6 +28,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Send notifications to Opsgenie</>,
+    href: 'docs/agent/health/notifications/opsgenie',
+    date: 'October 28, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Learn how to send Netdata's alarm notifications to Opsgenie, an alerting and incident response tool designed to group and filter alarms, build custom routing rules for on-call teams, and correlate deployments and commits to incidents.
+      </>
+    ),
+  },
+  {
     title: <>Install Netdata with Docker</>,
     href: 'docs/agent/packaging/docker',
     date: 'October 27, 2020',
@@ -57,17 +68,6 @@ const updates = [
     description: (
       <>
         Reference documentation for the Overview feature in Netdata Cloud, which uses composite charts for infrastructure monitoring.
-      </>
-    ),
-  },
-  {
-    title: <>Reference: War Rooms</>,
-    href: '/docs/cloud/war-rooms',
-    date: 'October 21, 2020',
-    type: 'Doc',
-    description: (
-      <>
-        Reference documentation for War Rooms in Netdata Cloud. New information about the utility bar, node filtering, time &amp; date picker, and more.
       </>
     ),
   }
