@@ -77,23 +77,27 @@ Select any War Rooms relevant for the new node, then use the claim script comman
 
 ### How do I rename a node?
 
-A node's name cannot be changed from within Netdata Cloud. You must [reclaim](#how-do-i-re-claim-a-node?) it with a
-different hostname. The hostname can be changed either by changing the machine's hostname or by editing a setting in
-[`netdata.conf`](/guides/step-by-step/step-04#use-edit-config-to-open-netdataconf).
+A node's name cannot be changed from within Netdata Cloud. 
+
+To change the name that appears in Netdata Cloud, you can either [change the node's
+hostname](https://www.tecmint.com/set-hostname-permanently-in-linux/), or you can [edit that node's `netdata.conf`
+file]() and change the [`hostname` setting](/docs/agent/daemon/config#global-section-options).
+
+Once finished, restart the node with `sudo systemctl netdata restart`, or the appropriate method for your system, to see
+the changed name reflected in Netdata Cloud.
 
 ### How do I delete a node?
 
+The _General_ War Room cannot be deleted. For other rooms, click the name of the War Room from the top navigation, then
+**Manage War Room**. In the management panel, click on the **War Room** tab, then click the **Delete** button. Confirm that you want to delete your War Room.
+
 You can delete a node from your War Room by selecting **Manage War Room** in your War Room options.
 
-![Manage War Room](/img/docs/cloud/manage-war-room.png)
-
-Then you can select the node to remove from the War Room.
-
-![Delete Node from War Room](/img/docs/cloud/remove-node-from-war-room.png)
+![delete-node mp4](https://user-images.githubusercontent.com/1153921/97763604-56169000-1ac9-11eb-8323-a521dc93b261.gif)
 
 It is also possible to [remove and reclaim a node](/docs/agent/claim/#remove-and-reclaim-a-node).
 
-### How do I re-claim a node?
+### How do I reclaim a node?
 
 Follow the [reclaiming guide](/docs/agent/claim/#remove-and-reclaim-a-node). Don't forget to restart your Agent with
 `sudo service netdata restart` or the appropriate equivalent for your system!
@@ -116,31 +120,28 @@ You can add a description to a Space, but a Space's name is a unique identifier 
 
 You cannot rename a War Room at this time.
 
-### How do I delete a space?
+### How do I delete a Space?
 
-Select **Manage Space**.
+Click the name of your space from top navigation, then **Manage Space**. In the management panel, click on the **Space**
+tab, then click the **Delete** button. Confirm that you want to delete your Space.
 
-![Manage Space](/img/docs/cloud/manage-space.png)
+![Deleting a Space in Netdata
+Cloud](https://user-images.githubusercontent.com/1153921/97763437-d688c100-1ac8-11eb-8193-d105ffaa0c0f.gif)
 
-Select **Delete**.
+### How do I delete a War Room?
 
-![Delete Space](/img/docs/cloud/delete-space.png)
+The _General_ War Room cannot be deleted. For other rooms, click the name of the War Room from the top navigation, then
+**Manage War Room**. In the management panel, click on the **War Room** tab, then click the **Delete** button. Confirm that you want to delete your War Room.
 
-### How do I delete a war room?
-
-The _General_ War Room cannot be deleted. For other rooms, select **Manage War Room**.
-
-![Manage War Room](/img/docs/cloud/manage-extra-war-room.png)
-
-Select **Delete Room**.
-
-![Delete War Room](/img/docs/cloud/delete-war-room.png)
+![Deleting a War Room in Netdata Cloud](https://user-images.githubusercontent.com/1153921/97763531-1e0f4d00-1ac9-11eb-8159-1828bacf20e4.gif)
 
 ### How do I change my email?
 
-It is not really possible to change your email at this time, but there is a workaround. Invite the email address you want to use and make that new account an administrator. After accepting the invitation on the second account and joining all your War Rooms from it, you can sign in again with the original account and leave the Space.
+It is not really possible to change your email at this time, but there is a workaround. Invite the email address you
+want to use and make that new account an administrator. After accepting the invitation on the second account and joining
+all your War Rooms from it, you can sign in again with the original account and leave the Space.
 
-## Glossary of Cloud terms
+## Glossary of Netdata Cloud terms
 
 | Term                      | Definition                                                                                                                                                                                                                                                                                                                                                 |
 |:------------------------- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

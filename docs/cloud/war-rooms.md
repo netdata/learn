@@ -120,9 +120,8 @@ In the **Users** tab, see which users from your Space are allowed to view the Wa
 and look under the **Space users eligible to join this war room** heading to find existing users you can add to the War
 Room. If they don't appear in that list, you need to [invite them](/docs/cloud/collaborate/invite-your-team) first.
 
-In the **War Rom** tab, change the War Room's name, description, or public/private status.
-
-![](https://i.imgur.com/T6bp6Kq.gif)
+In the **War Rom** tab, change the War Room's name, description, or public/private status. You can also delete the War
+Room with the **Delete** button.
 
 ## What's next?
 
