@@ -81,7 +81,7 @@ A node's name cannot be changed from within Netdata Cloud.
 
 To change the name that appears in Netdata Cloud, you can either [change the node's
 hostname](https://www.tecmint.com/set-hostname-permanently-in-linux/), or you can [edit that node's `netdata.conf`
-file]() and change the [`hostname` setting](/docs/agent/daemon/config#global-section-options).
+file](/docs/configure/nodes) and change the [`hostname` setting](/docs/agent/daemon/config#global-section-options).
 
 Once finished, restart the node with `sudo systemctl netdata restart`, or the appropriate method for your system, to see
 the changed name reflected in Netdata Cloud.
