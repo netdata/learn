@@ -28,6 +28,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Enable notifications</>,
+    href: 'docs/monitor/enable-notifications',
+    date: 'November 4, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Learn about Netdata's alarm notification feature, including a new comprehensive list of all the notification applications/platforms that the Netdata Agent supports.
+      </>
+    ),
+  },
+  {
     title: <>Send notifications to Opsgenie</>,
     href: 'docs/agent/health/notifications/opsgenie',
     date: 'October 28, 2020',
@@ -57,17 +68,6 @@ const updates = [
     description: (
       <>
         With Overview's composite charts, you can see your infrastructure from a single pane of glass, discover trends or anomalies, then drill down with filtering or single-node dashboards to see more.
-      </>
-    ),
-  },
-  {
-    title: <>Reference: Overview</>,
-    href: '/docs/cloud/visualize/overview',
-    date: 'October 21, 2020',
-    type: 'Doc',
-    description: (
-      <>
-        Reference documentation for the Overview feature in Netdata Cloud, which uses composite charts for infrastructure monitoring.
       </>
     ),
   }
