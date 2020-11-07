@@ -37,6 +37,10 @@ SEND_PD="YES"
 # the "General API" pagerduty.com service that uses this service key.
 # (empty = do not send a notification for unconfigured roles):
 DEFAULT_RECIPIENT_PD="<service key>"
+
+# Which PD API are we going to use? For version 2 or newer, it is necessary to do a request for Pagerduty
+# before to set the version(https://developer.pagerduty.com/docs/events-api-v2/overview/).
+USE_PD_VERSION="1"
 ```
 
 
