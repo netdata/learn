@@ -28,6 +28,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Deploy Netdata with Ansible</>,
+    href: 'guides/deploy/ansible',
+    date: 'November 11, 2020',
+    type: 'Guide',
+    description: (
+      <>
+        Deploy an infrastructure monitoring solution in minutes with the Netdata Agent and Ansible. Use and customize a simple playbook for monitoring as code.
+      </>
+    ),
+  },
+  {
     title: <>Enable notifications</>,
     href: 'docs/monitor/enable-notifications',
     date: 'November 4, 2020',

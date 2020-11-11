@@ -134,18 +134,29 @@ const GuideItems = [
     category: "step-by-step",
     description: "Run Netdata behind an Nginx proxy to improve performance, and enable TLS/HTTPS for better security."
   },
+  {
+    title: "Deploy Netdata with Ansible",
+    href: "/guides/deploy/ansible",
+    category: "deploy",
+    description: "Deploy an infrastructure monitoring solution in minutes with the Netdata Agent and Ansible. Use and customize a simple playbook for monitoring as code."
+  },
 ]
 
 const GuideCategories = [
   {
-    label: "collect-monitor",
-    title: "Collect & monitor",
-    description: "Extract and visualize metrics from essential services or applications on your infrastructure."
-  },
-  {
     label: "configure",
     title: "Configure",
     description: "Advanced configuration options for those who want to elevate their Netdata Agent-monitored nodes."
+  },
+  {
+    label: "deploy",
+    title: "Deploy",
+    description: "Strategies and playbooks for bootstrapping an infrastructure monitoring solution with Netdata and infrastructure as code tools."
+  },
+  {
+    label: "collect-monitor",
+    title: "Collect & monitor",
+    description: "Extract and visualize metrics from essential services or applications on your infrastructure."
   },
   {
     label: "step-by-step",
