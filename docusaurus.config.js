@@ -90,6 +90,11 @@ module.exports = {
           position: 'left'
         },
         {
+          to: 'docs/contribute', 
+          label: 'Contribute', 
+          position: 'left'
+        },
+        {
           href: 'https://community.netdata.cloud/',
           label: 'Community',
           position: 'right',
