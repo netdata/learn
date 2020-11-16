@@ -31,7 +31,6 @@ module.exports = {
         path: "./guides", // Path to data on filesystem, relative to site dir.
         routeBasePath: "guides", // URL Route.
         include: ["**/*.md", "**/*.mdx"],
-        sidebarPath: require.resolve("./sidebars-guides.js"),
       },
     ],
     require.resolve('docusaurus-plugin-sass'),
@@ -87,6 +86,11 @@ module.exports = {
         {
           to: 'guides', 
           label: 'Guides', 
+          position: 'left'
+        },
+        {
+          to: 'docs/contribute', 
+          label: 'Contribute', 
           position: 'left'
         },
         {
