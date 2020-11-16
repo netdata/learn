@@ -99,8 +99,8 @@ dropdown displays a chart name and the associated node's hostname.
 chart](https://user-images.githubusercontent.com/1153921/99305050-7c9a3200-2810-11eb-957f-f3f800c3c9b1.png)
 
 Click on the link icon <img class="img__inline img__inline--link"
-src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
-_jump to the same chart in that node's Cloud dashboard_.
+src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to jump to
+that single-node dashboard in Netdata Cloud.
 
 #### Nodes
 
@@ -111,8 +111,8 @@ to help you identify which nodes contribute to a chart.
 chart](https://user-images.githubusercontent.com/1153921/99305049-7c019b80-2810-11eb-942a-8ebfcf236b7f.png)
 
 Click on the link icon <img class="img__inline img__inline--link"
-src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
-_jump to the top of that node's Cloud dashboard_.
+src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to jump to
+that single-node dashboard in Netdata Cloud.
 
 If one or more nodes can't contribute to a given chart, the definition bar shows a warning symbol plus the number of
 affected nodes, then lists them in the dropdown along with the associated error. Nodes might return errors because of
@@ -127,20 +127,12 @@ that each line/area in the visualization is the aggregation of a single dimensio
 dropdown](https://user-images.githubusercontent.com/1153921/99305054-7d32c880-2810-11eb-8e95-dee2ec2ce5ff.png)
 
 A composite chart grouped _by node_ visualizes a single metric across contributing nodes. If the composite chart has 5
-contributing nodes, there will be 5 lines/areas, one for the most relevant dimension from each node.
+contributing nodes, there will be 5 lines/areas, one for the most relevant dimension from each node. Grouping by nodes
+allows you to quickly understand which nodes in your infrastructure are experiencing anomalous behavior.
 
-Grouping by nodes allows you to quickly understand which nodes in your infrastructure are experiencing anomalous
-behavior. For example, the below GIF shows an infrastructure with a sudden drop in available RAM for applications. When
-grouped by dimension, you can see when the incident began, but not whether it affects all nodes equally or only a subset
-of nodes. After grouping by node, it's clear that the `Composite-Charts-01` node is experiencing anomalous behavior and
-should be investigated further.
-
-![Finding a problematic node with group by
-node](https://user-images.githubusercontent.com/1153921/99307321-8ffacc80-2813-11eb-9502-9cb37b0fddf9.gif)
-
-Click on the link icon <img class="img__inline img__inline--link"
+Click on **X Nodes**, then the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
-_jump to the top of that node's Cloud dashboard_ for further analysis using available charts or [Metric
+jump to the single-node dashboard for that node to continue root cause analysis or run [Metric
 Correlations](/docs/cloud/insights/metric-correlations.md).
 
 ### Pan, zoom, and resize
