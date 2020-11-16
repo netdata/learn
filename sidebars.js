@@ -607,8 +607,6 @@ module.exports = {
       label: 'Contributing',
       collapsed: false,
       items: [
-        'contribute',
-        'contribute/tools',
         'agent/contributing',
         'agent/contributing/contributing-documentation',
         'agent/contributing/style-guide',
