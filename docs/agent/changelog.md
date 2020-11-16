@@ -6,6 +6,9 @@
 
 **Merged pull requests:**
 
+- database: avoid endless loop when cleaning obsolete charts [\#10236](https://github.com/netdata/netdata/pull/10236) ([hexchain](https://github.com/hexchain))
+- Update ansible.md [\#10232](https://github.com/netdata/netdata/pull/10232) ([voriol](https://github.com/voriol))
+- Disable chart obsoletion code for archived chart creation. [\#10231](https://github.com/netdata/netdata/pull/10231) ([mfundul](https://github.com/mfundul))
 - add `nvidia\_smi` collector data to the dashboard\_info.js [\#10230](https://github.com/netdata/netdata/pull/10230) ([ilyam8](https://github.com/ilyam8))
 - health: convert `elasticsearch\_last\_collected` alarm to template [\#10226](https://github.com/netdata/netdata/pull/10226) ([ilyam8](https://github.com/ilyam8))
 - streaming: fix a typo in the README.md [\#10225](https://github.com/netdata/netdata/pull/10225) ([ilyam8](https://github.com/ilyam8))
@@ -17,6 +20,7 @@
 - installer: update go.d.plugin version to v0.25.0 [\#10215](https://github.com/netdata/netdata/pull/10215) ([ilyam8](https://github.com/ilyam8))
 - Fix repeated frontmatter in exporting docs [\#10211](https://github.com/netdata/netdata/pull/10211) ([joelhans](https://github.com/joelhans))
 - Fixed bug in auto-updater for FreeBSD \(\#10198\) [\#10204](https://github.com/netdata/netdata/pull/10204) ([abrbon](https://github.com/abrbon))
+- New ebpf release [\#10202](https://github.com/netdata/netdata/pull/10202) ([thiagoftsm](https://github.com/thiagoftsm))
 - Add guide: Deploy Netdata with Ansible [\#10199](https://github.com/netdata/netdata/pull/10199) ([joelhans](https://github.com/joelhans))
 - Add allocated space metrics to oracledb charts [\#10197](https://github.com/netdata/netdata/pull/10197) ([jurgenhaas](https://github.com/jurgenhaas))
 - Inform users about an issue with the newest gRPC versions [\#10194](https://github.com/netdata/netdata/pull/10194) ([vlvkobal](https://github.com/vlvkobal))
@@ -214,7 +218,6 @@
 - Add option for multiple storage backends in `python.d/varnish` [\#9668](https://github.com/netdata/netdata/pull/9668) ([florianmagnin](https://github.com/florianmagnin))
 - Fix for ignored LXC containers [\#9645](https://github.com/netdata/netdata/pull/9645) ([vlvkobal](https://github.com/vlvkobal))
 - Fix systemd journal logs to remove PrivateMounts [\#9619](https://github.com/netdata/netdata/pull/9619) ([Steve8291](https://github.com/Steve8291))
-- Add community link to readme [\#9602](https://github.com/netdata/netdata/pull/9602) ([zack-shoylev](https://github.com/zack-shoylev))
 
 ## [v1.24.0](https://github.com/netdata/netdata/tree/v1.24.0) (2020-08-10)
 
@@ -240,7 +243,6 @@
 - Added eBPF collector support to DEB and RPM packages. [\#9628](https://github.com/netdata/netdata/pull/9628) ([Ferroin](https://github.com/Ferroin))
 - Fixed RPM default permissions for /usr/libexec/netdata [\#9621](https://github.com/netdata/netdata/pull/9621) ([Saruspete](https://github.com/Saruspete))
 - Added sandboxing exception for `/run/netdata`. [\#9613](https://github.com/netdata/netdata/pull/9613) ([Ferroin](https://github.com/Ferroin))
-- python.d/gearmand: handle func prefixes in `status\n` response [\#9610](https://github.com/netdata/netdata/pull/9610) ([ilyam8](https://github.com/ilyam8))
 
 ## [v1.23.2](https://github.com/netdata/netdata/tree/v1.23.2) (2020-07-16)
 
