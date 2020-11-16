@@ -59,12 +59,13 @@ differences. We'll cover the differences in the sections below.
 Each chart has a definition bar to provide information about the aggregate function, dimension, and nodes related to
 that chart.
 
-Below is an example definition bar for the `system.load` chart, which displays I/O on all disks. This definition bar
-informs you that the chart is using the **sum** aggregate function on **all dimensions**, with **6 contributing
-charts** from **6 contributing nodes**, and **1 error**.
+Below is an example definition bar for the `system.cpu_pressure` chart, which visualizes situations where tasks are
+stalled on CPU. This definition bar informs you that the chart is using the **average** aggregate function on **all
+dimensions**, with **5 contributing charts** from **5 contributing nodes**, **0 errors**, and that the composite chart
+is visualizing metrics **per dimension**.
 
-![The definition bar for the system.load
-chart](https://user-images.githubusercontent.com/1153921/96297386-9e9c5c80-0fa5-11eb-8c5a-b2e78e2c11b7.png)
+![The definition bar for a composite
+chart](https://user-images.githubusercontent.com/1153921/99305048-7c019b80-2810-11eb-82fa-02fac08d27be.png)
 
 #### Aggregate functions
 
@@ -95,7 +96,7 @@ Click on **X Charts** to display a dropdown of charts and nodes contributing to 
 dropdown displays a chart name and the associated node's hostname.
 
 ![The charts dropdown in a composite
-chart](https://user-images.githubusercontent.com/1153921/96297515-cf7c9180-0fa5-11eb-9880-43c0434ac386.png)
+chart](https://user-images.githubusercontent.com/1153921/99305050-7c9a3200-2810-11eb-957f-f3f800c3c9b1.png)
 
 Click on the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
@@ -107,7 +108,7 @@ Click on **X Nodes** to display a dropdown of nodes contributing to that composi
 to help you identify which nodes contribute to a chart.
 
 ![The nodes dropdown in a composite
-chart](https://user-images.githubusercontent.com/1153921/96297517-d0152800-0fa5-11eb-8a83-b6610fedc215.png)
+chart](https://user-images.githubusercontent.com/1153921/99305049-7c019b80-2810-11eb-942a-8ebfcf236b7f.png)
 
 Click on the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
@@ -116,6 +117,31 @@ _jump to the top of that node's Cloud dashboard_.
 If one or more nodes can't contribute to a given chart, the definition bar shows a warning symbol plus the number of
 affected nodes, then lists them in the dropdown along with the associated error. Nodes might return errors because of
 networking issues, a stopped `netdata` service, or because that node does not have any metrics for that context.
+
+#### Group by dimension or node
+
+Click on the **By dimension** dropdown to change how a composite chart groups metrics. The default is _by dimension_, so
+that each line/area in the visualization is the aggregation of a single dimension.
+
+![The group by
+dropdown](https://user-images.githubusercontent.com/1153921/99305054-7d32c880-2810-11eb-8e95-dee2ec2ce5ff.png)
+
+A composite chart grouped _by node_ visualizes a single metric across contributing nodes. If the composite chart has 5
+contributing nodes, there will be 5 lines/areas, one for the most relevant dimension from each node.
+
+Grouping by nodes allows you to quickly understand which nodes in your infrastructure are experiencing anomalous
+behavior. For example, the below GIF shows an infrastructure with a sudden drop in available RAM for applications. When
+grouped by dimension, you can see when the incident began, but not whether it affects all nodes equally or only a subset
+of nodes. After grouping by node, it's clear that the `Composite-Charts-01` node is experiencing anomalous behavior and
+should be investigated further.
+
+![Finding a problematic node with group by
+node](https://user-images.githubusercontent.com/1153921/99307321-8ffacc80-2813-11eb-9502-9cb37b0fddf9.gif)
+
+Click on the link icon <img class="img__inline img__inline--link"
+src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
+_jump to the top of that node's Cloud dashboard_ for further analysis using available charts or [Metric
+Correlations](/docs/cloud/insights/metric-correlations.md).
 
 ### Pan, zoom, and resize
 
@@ -156,6 +182,12 @@ chart. The utility bar should show that there are 8 charts from 2 nodes contribu
 This action applies to disks, network devices, and other metric types that involve multiple instances of a piece of
 hardware or software. The Overview currently does not display metrics from filesystems. Read more about families and
 instances in our [web server docs](/docs/agent/web).
+
+## Persistence of composite chart settings
+
+When you change a composite chart via its definition bar, Netdata Cloud persists these settings in a query string
+attached to the URL in your browser. You can "save" these settings by bookmarking this particular URL, or share it with
+colleagues by having them copy-paste it into their browser.
 
 ## What's next?
 
