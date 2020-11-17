@@ -26,7 +26,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN }}
     
     - name: Create pull request
-      uses: peter-evans/create-pull-request@v2
+      uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.INGEST_TOKEN }}
         commit-message: Ingest new documentation
