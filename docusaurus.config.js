@@ -91,7 +91,7 @@ module.exports = {
         },
         {
           href: 'https://www.netdata.cloud/community/',
-          label: 'Get help',
+          label: 'Get help & community',
           position: 'right',
         },
         {
