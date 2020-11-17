@@ -90,18 +90,8 @@ module.exports = {
           position: 'left'
         },
         {
-          href: 'https://community.netdata.cloud/',
-          label: 'Community',
-          position: 'right',
-        },
-        {
-          href: 'https://netdata.cloud/blog',
-          label: 'Blog',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/netdata/netdata',
-          label: 'GitHub',
+          href: 'https://www.netdata.cloud/community/',
+          label: 'Get help & community',
           position: 'right',
         },
         {

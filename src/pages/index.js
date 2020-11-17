@@ -114,8 +114,8 @@ function Home() {
         }}
       </BrowserOnly>
       <Layout
-        title={`All your monitoring education in one place. ${siteConfig.title}`}
-        description="Learn alongside thousands of others who want to discover deeper insights about their systems and applications with Netdata's real-time health monitoring and performance troubleshooting toolkit.">
+        // title={`All your monitoring education in one place. ${siteConfig.title}`}
+        description="The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Comprehensive documentation and thoughtful guides.">
         <header className={clsx(styles.hero)}>
           <div className={clsx('container')}>
             <div className={clsx('row')}>
