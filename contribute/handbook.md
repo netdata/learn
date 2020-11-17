@@ -77,7 +77,7 @@ Our documentation is in need of constant improvement and expansion. As Netdata's
 
 We also need to produce beginner-level tutorials on using Netdata to monitor common applications, web servers, and more.
 
-Start with the [guide for contributing to documentation](/docs/agent/contributing/contributing-documentation), and then review the [documentation style guide](/docs/agent/contributing/style-guide) for specifics on how we write our documentation.
+Start with the [guide for contributing to documentation](/contribute/handbook), and then review the [documentation style guide](/contribute/style-guide) for specifics on how we write our documentation.
 
 Don't be afraid to submit a pull request with your corrections or additions! We need a lot of help and are willing to guide new contributors through the process.
 
@@ -121,7 +121,7 @@ across most of our code-base, but we prefer new contributions that match the lin
 
 #### Code of Conduct and CLA
 
-We expect all contributors to abide by the [Contributor Covenant Code of Conduct](/docs/agent/code_of_conduct). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/docs/agent/contributors), as part of the PR process.
+We expect all contributors to abide by the [Contributor Covenant Code of Conduct](/contribute/code-of-conduct). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/docs/agent/contributors), as part of the PR process.
 
 #### Performance and efficiency
 
