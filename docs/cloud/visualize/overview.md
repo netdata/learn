@@ -111,6 +111,16 @@ A composite chart grouped _by node_ visualizes a single metric across contributi
 contributing nodes, there will be 5 lines/areas, one for the most relevant dimension from each node. Grouping by nodes
 allows you to quickly understand which nodes in your infrastructure are experiencing anomalous behavior.
 
+The `mem.committed` chart when grouped by dimension:
+
+![The mem.committed chart when grouped by
+dimension](https://user-images.githubusercontent.com/1153921/99405862-75276700-28aa-11eb-8613-cb99784ea1c7.png)
+
+The same chart when grouped by node:
+
+![The mem.committed chart when grouped by
+node](https://user-images.githubusercontent.com/1153921/99405866-75bffd80-28aa-11eb-96dc-72bbc10c690b.png)
+
 Click on **X Nodes**, then the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
 jump to the single-node dashboard for that node to continue root cause analysis or run [Metric
