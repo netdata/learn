@@ -9,13 +9,10 @@ dashboards served by an Agent, or even the single-node dashboards in Netdata Clo
 These charts display real-time aggregated metrics from all the nodes (or a filtered selection) in a given War Room.
 
 With Overview's composite charts, you can see your infrastructure from a single pane of glass, discover trends or
-anomalies, then drill down with filtering or single-node dashboards to see more. 
+anomalies, then drill down by grouping metrics by node and jumping to single-node dashboards for root cause analysis.
 
 ![The War Room
 Overview](https://user-images.githubusercontent.com/1153921/95637683-31d60f00-0a47-11eb-9808-9f591ba8eb3a.png)
-
-You can also use the [Nodes view](/docs/cloud/visualize/nodes) to visualize a War Room's nodes. To switch between them,
-use the dropdown in your War Room's utility bar.
 
 ## Before you get started
 
@@ -29,17 +26,6 @@ upgraded](https://user-images.githubusercontent.com/1153921/95638372-3c91a380-0a
 See our [update docs](/docs/agent/packaging/installer/update) for the preferred update method based on how you installed
 the Agent.
 
-## Using the Overview
-
-The Overview shares much of the same UI as local dashboards or single-node dashboards in Netdata Cloud, but there are a
-few key differences and additional features to be aware of.
-
-The Overview consists of three key areas: 
-
--   A **utility bar** to help you navigate and customize your War Room.
--   The **dashboard of composite charts** for analyzing real-time metrics from across your infrastructure.
--   A **menu** of sections based on the metrics collected on your nodes to help you find relevant charts.
-
 ## Utility bar
 
 At the top of the Overview is the utility bar. This bar contains a dropdown for navigating between the different War
@@ -49,12 +35,7 @@ visualizing specific timeframes of metrics.
 See the [War Room docs](/docs/cloud/war-rooms) for details about [filtering](/docs/cloud/war-rooms#node-filter) and the
 [time picker](/docs/cloud/war-rooms#time-picker).
 
-## Dashboard of composite charts
-
-The Overview's dashboard is similar to local dashboards or single-node dashboards in Netdata Cloud, with a few key UI
-differences. We'll cover the differences in the sections below.
-
-### Definition bar
+## Definition bar
 
 Each chart has a definition bar to provide information about the aggregate function, dimension, and nodes related to
 that chart.
@@ -67,7 +48,7 @@ is visualizing metrics **per dimension**.
 ![The definition bar for a composite
 chart](https://user-images.githubusercontent.com/1153921/99305048-7c019b80-2810-11eb-82fa-02fac08d27be.png)
 
-#### Aggregate functions
+### Aggregate functions
 
 Each chart uses an opinionated-but-valuable default aggregate function. For example, the `system.cpu` chart shows the
 average for each dimension from every contributing chart, while the `net.net` chart shows the sum for each dimension
@@ -85,12 +66,12 @@ The following aggregate functions are available for each selected dimension:
 -   **Max**: Displays a maximum value. For dimensions with positive values, the max is the value with the largest
     magnitude. For charts with negative values, the max is the value closet to zero.
 
-#### Dimensions
+### Dimensions
 
 Select which dimensions to display on the composite chart. You can choose **All dimensions**, a single dimension, or any
 number of dimensions available on that context.
 
-#### Charts
+### Charts
 
 Click on **X Charts** to display a dropdown of charts and nodes contributing to that composite chart. Each line in the
 dropdown displays a chart name and the associated node's hostname.
@@ -102,7 +83,7 @@ Click on the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to jump to
 that single-node dashboard in Netdata Cloud.
 
-#### Nodes
+### Nodes
 
 Click on **X Nodes** to display a dropdown of nodes contributing to that composite chart. Each line displays a hostname
 to help you identify which nodes contribute to a chart.
@@ -118,7 +99,7 @@ If one or more nodes can't contribute to a given chart, the definition bar shows
 affected nodes, then lists them in the dropdown along with the associated error. Nodes might return errors because of
 networking issues, a stopped `netdata` service, or because that node does not have any metrics for that context.
 
-#### Group by dimension or node
+### Group by dimension or node
 
 Click on the **By dimension** dropdown to change how a composite chart groups metrics. The default is _by dimension_, so
 that each line/area in the visualization is the aggregation of a single dimension.
@@ -133,24 +114,15 @@ allows you to quickly understand which nodes in your infrastructure are experien
 Click on **X Nodes**, then the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
 jump to the single-node dashboard for that node to continue root cause analysis or run [Metric
-Correlations](/docs/cloud/insights/metric-correlations.md).
+Correlations](/docs/cloud/insights/metric-correlations).
 
-### Pan, zoom, and resize
+## Interacting with composite charts: pan, zoom, and resize
 
 You can interact with composite charts as you would with other Netdata charts. You can use the controls beneath each
 chart to pan, zoom, or resize the chart, or use various combinations of the keyboard and mouse. See the [chart
 interaction doc](/docs/visualize/interact-dashboards-charts#interact-with-charts) for details.
 
-### Dimensions
-
-Composite charts display dimensions below the chart rather than beside it.
-
-![Dimensions beneath a composite
-chart](https://user-images.githubusercontent.com/1153921/96297655-09e62e80-0fa6-11eb-8066-b07d28e11981.png)
-
-You can still click on any one dimension to filter the chart and show only its values, or use `SHIFT + click` to hide or show dimensions one at a time.
-
-### Menu
+## Menu
 
 The Overview uses a similar menu to local Agent dashboards and single-node dashboards in Netdata Cloud, with sections
 and sub-menus aggregated from every contributing node. For example, even if only two nodes actively collect from and
