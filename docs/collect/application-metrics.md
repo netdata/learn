@@ -74,7 +74,7 @@ additional applications you may want to monitor using Netdata's native collector
 collector](/docs/agent/collectors/go.d.plugin/modules/prometheus).
 
 Collecting all the available metrics on your nodes, and across your entire infrastructure, is just one piece of the
-puzzle. Next, learn more about Netdata's famous real-time visualizations by [viewing all your nodes at a
-glance](/docs/visualize/view-all-nodes).
+puzzle. Next, learn more about Netdata's famous real-time visualizations by [seeing an overview of your
+infrastructure](/docs/visualize/overview-infrastructure) using Netdata Cloud.
 
 

@@ -94,6 +94,6 @@ Netdata is capable of collecting metrics from hundreds of applications, such as 
 brokers, and more. See more in the [application metrics doc](/docs/collect/application-metrics).
 
 If you already have all the information you need about collecting metrics, move into Netdata's meaningful visualizations
-with [viewing all nodes at a glance](/docs/visualize/view-all-nodes).
+with [seeing an overview of your infrastructure](/docs/visualize/overview-infrastructure) using Netdata Cloud.
 
 
