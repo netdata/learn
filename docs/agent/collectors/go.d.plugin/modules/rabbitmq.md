@@ -36,8 +36,8 @@ Per vhost charts:
 
 ## Configuration
 
-Edit the `go.d/rabbitmq.conf` configuration file using `edit-config` from the your agent's [config
-directory](/guides/step-by-step/step-04#find-your-netdataconf-file), which is typically at `/etc/netdata`.
+Edit the `go.d/rabbitmq.conf` configuration file using `edit-config` from the Netdata [config
+directory](/docs/configure/nodes), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory
