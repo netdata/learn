@@ -139,7 +139,7 @@ function normalizeLinks(pages) {
 
       // If the link is to one of a few contributing-related documents.
       if (url.includes('contributing/contributing-documentation')) {
-        const contribUrl =  path.join(contribDir, 'handbook')
+        const contribUrl =  path.join(contribDir, 'documentation')
         return `](${contribUrl})`
       } else if (url.includes('contributing/style-guide')) {
         const contribUrl =  path.join(contribDir, 'style-guide')

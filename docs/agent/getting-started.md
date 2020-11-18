@@ -245,6 +245,6 @@ Take a look at some more advanced features and configurations:
 -   Improve security by putting Netdata behind an [Nginx proxy with SSL](/docs/agent/running-behind-nginx).
 
 Or, learn more about how you can contribute to [Netdata core](/contribute/handbook) or our
-[documentation](/contribute/handbook)!
+[documentation](/contribute/documentation)!
 
 

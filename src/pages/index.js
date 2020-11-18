@@ -229,7 +229,7 @@ function Home() {
               <div className={clsx('row', styles.ctaRow)}>
                 <div className={clsx('col col--8')}>
                   <h2>Join our community and contribute</h2>
-                  <p>Find us on our <Link href="https://community.netdata.cloud/">forums</Link> or <Link href="https://github.com/netdata/netdata">GitHub</Link>. If you're ready to contribute code, read our <Link to="/docs/agent/contributing/">contributing guidelines</Link> and the <Link to="/docs/agent/code_of_conduct">Contributor Covenant Code of Conduct</Link>. If documentation is more your style, read the <Link to="/docs/agent/contributing/contributing-documentation">docs guidelines</Link> and the <Link to="/docs/agent/contributing/style-guide">Netdata style guide</Link>.</p>
+                  <p>Find us on our <Link href="https://community.netdata.cloud/">forums</Link> or <Link href="https://github.com/netdata/netdata">GitHub</Link>. If you're ready to contribute code, read our <Link to="/contribute/">contributing guidelines</Link> and the <Link to="/contribute/code-of-conduct">Contributor Covenant Code of Conduct</Link>. If documentation is more your style, read the <Link to="/contribute/documentation">docs guidelines</Link> and the <Link to="/contribute/style-guide">Netdata style guide</Link>.</p>
                 </div>
               </div>
             </div>
