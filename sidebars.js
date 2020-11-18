@@ -360,6 +360,8 @@ module.exports = {
                   items: [
                   'agent/exporting/aws_kinesis',
                   'agent/exporting/pubsub',
+                  'agent/exporting/graphite',
+                  'agent/exporting/json',
                   'agent/exporting/mongodb',
                   'agent/exporting/opentsdb',
                   'agent/exporting/prometheus/remote_write',
