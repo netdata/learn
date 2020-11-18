@@ -1,7 +1,8 @@
 name: Ingest
 on:
+  workflow_dispatch:
   schedule:
-    - cron:  '0 * * * *'
+    - cron:  '14 * * * *'
 
 jobs:
   ingest:
@@ -14,7 +15,7 @@ jobs:
         fetch-depth: 0
 
     - name: Use Node.js 12
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v1.4.4
       with:
         node-version: 12
 
@@ -25,7 +26,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN }}
     
     - name: Create pull request
-      uses: peter-evans/create-pull-request@v2
+      uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.INGEST_TOKEN }}
         commit-message: Ingest new documentation
