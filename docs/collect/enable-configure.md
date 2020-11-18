@@ -59,7 +59,8 @@ Read high-level overviews on how Netdata collects [system metrics](/docs/collect
 metrics](/docs/collect/container-metrics), and [application metrics](/docs/collect/application-metrics).
 
 If you're already collecting all metrics from your systems, containers, and applications, it's time to move into
-Netdata's visualization features. [View all your nodes at a glance](/docs/visualize/view-all-nodes) or learn how to
-[interact with dashboards and charts](/docs/visualize/interact-dashboards-charts).
+Netdata's visualization features. [See an overview of your infrastructure](/docs/visualize/overview-infrastructure)
+using Netdata Cloud, or learn how to [interact with dashboards and
+charts](/docs/visualize/interact-dashboards-charts).
 
 
