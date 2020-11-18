@@ -138,10 +138,10 @@ function normalizeLinks(pages) {
       }
 
       // If the link is to one of a few contributing-related documents.
-      if (url.includes('contributing/contributing-documentation')) {
+      if (url.includes('contributing-documentation')) {
         const contribUrl =  path.join(contribDir, 'documentation')
         return `](${contribUrl})`
-      } else if (url.includes('contributing/style-guide')) {
+      } else if (url.includes('style-guide')) {
         const contribUrl =  path.join(contribDir, 'style-guide')
         return `](${contribUrl})`
       } else if (url.includes('code_of_conduct')) {

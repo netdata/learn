@@ -128,7 +128,7 @@ example, the file at `docs/getting-started.md` becomes `https://learn.netdata.cl
 ### Make your edits
 
 Now that you're set up and understand where to find or create your `.md` file, you can now begin to make your edits.
-Just use your favorite editor and keep in mind our [style guide](/docs/agent/contributing/style-guide) as you work.
+Just use your favorite editor and keep in mind our [style guide](/contribute/style-guide) as you work.
 
 Be sure to periodically add/commit your edits so that you don't lose your work! We use version control software for a
 reason.
@@ -146,6 +146,6 @@ After merging your PR, we then rebuild the [documentation site](https://learn.ne
 
 ## What's next
 
--   Read up on the Netdata documentation [style guide](/docs/agent/contributing/style-guide).
+-   Read up on the Netdata documentation [style guide](/contribute/style-guide).
 
 

@@ -27,7 +27,7 @@ monitoring agent and our community depends on this effort.
 We're here to make developers, sysadmins, and DevOps engineers better at their jobs, after all!
 
 We welcome contributions to Netdata's documentation. Begin with the [contributing to documentation
-guide](/docs/agent/contributing/contributing-documentation), followed by this style guide.
+guide](/contribute/documentation), followed by this style guide.
 
 ## Goals of the Netdata style guide
 
