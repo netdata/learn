@@ -75,3 +75,19 @@
 [[redirects]]
   from = "/docs/cloud/organize"
   to = "/docs/cloud/spaces"
+
+[[redirects]]
+  from = "/docs/agent/code-of-conduct"
+  to = "/contribute/code-of-conduct"
+
+[[redirects]]
+  from = "/docs/agent/contributing"
+  to = "/contribute/handbook"
+
+[[redirects]]
+  from = "/docs/agent/contributing/contributing-documentation"
+  to = "/contribute/documentation"
+
+[[redirects]]
+  from = "/docs/agent/contributing/style-guide"
+  to = "/contribute/style-guide"

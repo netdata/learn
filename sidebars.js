@@ -602,17 +602,5 @@ module.exports = {
         },
       ],
     },
-    {
-      type: 'category',
-      label: 'Contributing',
-      collapsed: false,
-      items: [
-        'agent/contributing',
-        'agent/contributing/contributing-documentation',
-        'agent/contributing/style-guide',
-        'agent/code_of_conduct',
-        'agent/packaging/installer/methods/source'
-      ],
-    }
   ],
 };

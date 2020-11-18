@@ -28,14 +28,23 @@ module.exports = {
       "@docusaurus/plugin-content-docs",
       {
         id: "guides",
-        path: "./guides", // Path to data on filesystem, relative to site dir.
-        routeBasePath: "guides", // URL Route.
+        sidebarPath: require.resolve('./sidebar-guides.js'),
+        path: "./guides",
+        routeBasePath: "guides",
         include: ["**/*.md", "**/*.mdx"],
-        sidebarPath: require.resolve("./sidebars-guides.js"),
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "contribute",
+        sidebarPath: require.resolve('./sidebar-contribute.js'),
+        path: "./contribute",
+        routeBasePath: "contribute",
+        include: ["**/*.md", "**/*.mdx"],
       },
     ],
     require.resolve('docusaurus-plugin-sass'),
-    // require.resolve('./src/plugins/cookbooks'),
   ],
   stylesheets: [
     {
@@ -87,6 +96,11 @@ module.exports = {
         {
           to: 'guides', 
           label: 'Guides', 
+          position: 'left'
+        },
+        {
+          to: 'contribute', 
+          label: 'Contribute', 
           position: 'left'
         },
         {

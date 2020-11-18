@@ -1,11 +1,10 @@
 module.exports = {
-  guides: [
+  learn: [
     {
       type: 'category',
       label: 'Guides',
-      collapsed: false,
-      items: [
-      ]
+      collapsed: true,
+      items: [],
     }
   ]
 }

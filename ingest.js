@@ -14,6 +14,7 @@ const baseDir = '/docs'
 const agentDir = '/docs/agent'
 const cloudDir = '/docs/cloud'
 const guideDir = '/guides/'
+const contribDir = '/contribute/'
 const outDir = path.join(__dirname, agentDir)
 // the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
@@ -134,6 +135,21 @@ function normalizeLinks(pages) {
         }
         const guideUrl =  path.join(guideDir, 'step-by-step', url)
         return `](${guideUrl})`
+      }
+
+      // If the link is to one of a few contributing-related documents.
+      if (url.includes('contributing-documentation')) {
+        const contribUrl =  path.join(contribDir, 'documentation')
+        return `](${contribUrl})`
+      } else if (url.includes('style-guide')) {
+        const contribUrl =  path.join(contribDir, 'style-guide')
+        return `](${contribUrl})`
+      } else if (url.includes('code_of_conduct')) {
+        const contribUrl =  path.join(contribDir, 'code-of-conduct')
+        return `](${contribUrl})`
+      } else if (url.includes('contributing.md')) {
+        const contribUrl =  path.join(contribDir, 'handbook')
+        return `](${contribUrl})`
       }
 
       // If the link is already absolute-relative. If it begins with `/docs`,
@@ -301,6 +317,21 @@ async function writePages(pages) {
     if (fullPath.includes('agent/guides')) {
       fullPath = fullPath.replace('docs/agent/guides/', 'guides/');
       fullDir = fullDir.replace('docs/agent/guides/', 'guides/');
+    }
+
+    // Move various contribution documents to alternative locations.
+    if (fullPath.includes('agent/contributing.md')) {
+      fullPath = fullPath.replace('docs/agent/contributing.md', 'contribute/handbook.md');
+      fullDir = fullDir.replace('docs/agent/contributing', 'contribute/');
+    } else if (fullPath.includes('agent/code_of_conduct.md')) {
+      fullPath = fullPath.replace('docs/agent/code_of_conduct.md', 'contribute/code-of-conduct.md');
+      fullDir = fullDir.replace('docs/agent/', 'contribute/');
+    } else if (fullPath.includes('docs/agent/contributing/contributing-documentation.md')) {
+      fullPath = fullPath.replace('docs/agent/contributing/contributing-documentation.md', 'contribute/documentation.md');
+      fullDir = fullDir.replace('docs/agent/contributing', 'contribute/');
+    } else if (fullPath.includes('docs/agent/contributing/style-guide.md')) {
+      fullPath = fullPath.replace('docs/agent/contributing/style-guide.md', 'contribute/style-guide.md');
+      fullDir = fullDir.replace('docs/agent/contributing', 'contribute/');
     }
 
     await fs.mkdir(fullDir, { recursive: true })
