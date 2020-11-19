@@ -42,10 +42,9 @@ don't want any more.
 
 ### Manage Spaces 
 
-If you're an administrator of a Space, you can change its settings. Use the top navigation to click on either the
-Space's or War Room's name, then **Manage Space** to open the configuration panel.
+If you're an administrator of a Space, you can change its settings. Click on the Space's name in the top navigation,
+then **Manage Space** to open the management panel.
 
 ## What's next?
 
-Once you've figured out an organizational structure that works for your team, learn more about how you can use Netdata
-Cloud to [monitor any number of distributed nodes](/docs/cloud/monitor) in real time.
+Once you configured your Spaces, it's time to set up your [War Rooms](/docs/cloud/war-rooms).

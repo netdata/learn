@@ -33,7 +33,7 @@ Click the **Sign in** button to sign in to Netdata Cloud.
 To sign in on additional devices, request another sign in email, open the email on that device, and click the **Sign
 in** button again.
 
-### No sign in email
+### Troubleshooting
 
 You should receive your sign in email in less than a minute. The subject is **Sign In to Netdata** and the sender is
 `no-reply@app.netdata.cloud` via `sendgrid.net`.
