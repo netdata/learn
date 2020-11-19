@@ -28,6 +28,28 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>New collector: PowerDNS Recursor</>,
+    href: '/docs/agent/collectors/go.d.plugin/modules/powerdns_recursor',
+    date: 'November 19, 2020',
+    type: 'Collector',
+    description: (
+      <>
+        Netdata now collects per-second <code>questions</code>, <code>queries</code>, <code>drops</code>, and more metrics from PowerDNS Recursor, a high-performance DNS recursor with built-in scripting capabilities.
+      </>
+    ),
+  },
+  {
+    title: <>Drill down with Netdata's composite charts and group by node</>,
+    href: 'https://youtu.be/DoKkFHTQciU',
+    date: 'November 18, 2020',
+    type: 'Video',
+    description: (
+      <>
+        Group by node is a new feature in Netdata Cloud's Overview dashboard that helps you drill down to find nodes that might be experiencing anomalous behavior or a full-blown incident.
+      </>
+    ),
+  },
+  {
     title: <>Deploy Netdata with Ansible</>,
     href: 'guides/deploy/ansible',
     date: 'November 11, 2020',
@@ -68,17 +90,6 @@ const updates = [
     description: (
       <>
         Updates to the Docker installation documentation, including new recommendations on changing the container's default hostname at and after initial creation.
-      </>
-    ),
-  },
-  {
-    title: <>See an overview of your infrastructure</>,
-    href: '/docs/visualize/overview-infrastructure',
-    date: 'October 21, 2020',
-    type: 'Doc',
-    description: (
-      <>
-        With Overview's composite charts, you can see your infrastructure from a single pane of glass, discover trends or anomalies, then drill down with filtering or single-node dashboards to see more.
       </>
     ),
   }
