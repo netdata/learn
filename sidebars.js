@@ -592,6 +592,7 @@ module.exports = {
               label: 'Monitoring',
               items: [
                 'cloud/monitoring/alarms',
+                'cloud/monitoring/notifications',
               ]
             },
             {
