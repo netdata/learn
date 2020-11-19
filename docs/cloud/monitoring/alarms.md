@@ -45,6 +45,9 @@ ensure Netdata Cloud always delivers the most relevant alarms about the well-bei
 
 ## What's next?
 
+To stay notified of active alarms, enable [centralized alarm notifications](/docs/cloud/monitor/notifications) from
+Netdata Cloud.
+
 If you're through with setting up alarms, it might be time to [invite your
 team](/docs/cloud/manage/invite-your-team).
 
