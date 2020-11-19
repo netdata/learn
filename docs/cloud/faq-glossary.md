@@ -58,17 +58,12 @@ guide](/docs/agent/claim/#troubleshooting).
 ### How do I add a node to an existing Space?
 
 You must be the Space owner to claim a new node to an existing Space. Find the drop-down menu for your Space, by name,
-then select the **Manage Space** option.
+then select the **Manage Space** option. Click on the **Nodes** tab.
 
-Select **Manage Space**.
+![Animated GIF of finding the claiming script and the token and room
+strings](https://user-images.githubusercontent.com/1153921/98740235-f4c3ac00-2367-11eb-8ffd-e9ab0f04c463.gif)
 
-![Manage Space](/img/docs/cloud/manage-space.png)
-
-Select **Nodes**.
-
-![Nodes Tab](/img/docs/cloud/claim-node-script.png)
-
-Select any War Rooms relevant for the new node, then use the claim script command provided.
+Select any War Rooms relevant for the new node, [claim your node](/docs/get#claim-your-node-on-netdata-cloud).
 
 <details>
 <summary>Watch a video walkthrough of node claiming</summary>
