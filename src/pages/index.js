@@ -28,6 +28,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>New collector: PowerDNS Authoritative Server</>,
+    href: '/docs/agent/collectors/go.d.plugin/modules/powerdns',
+    date: 'November 20, 2020',
+    type: 'Collector',
+    description: (
+      <>
+        Netdata now collects per-second <code>questions</code>, <code>events</code>, <code>entries</code>, and more metrics from one or more PowerDNS Authoritative Server instances.
+      </>
+    ),
+  },
+  {
     title: <>New collector: PowerDNS Recursor</>,
     href: '/docs/agent/collectors/go.d.plugin/modules/powerdns_recursor',
     date: 'November 19, 2020',
@@ -82,17 +93,6 @@ const updates = [
       </>
     ),
   },
-  {
-    title: <>Install Netdata with Docker</>,
-    href: 'docs/agent/packaging/docker',
-    date: 'October 27, 2020',
-    type: 'Doc',
-    description: (
-      <>
-        Updates to the Docker installation documentation, including new recommendations on changing the container's default hostname at and after initial creation.
-      </>
-    ),
-  }
 ]
 
 function UpdateBox({title, href, date, type, description}) {
