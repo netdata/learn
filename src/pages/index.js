@@ -28,6 +28,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Reinstall Netdata</>,
+    href: '/docs/agent/packaging/installer/reinstall',
+    date: 'November 20, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Learn how to reinstall the Netdata Agent on your node to enable a feature or troubleshoot an installation issue.
+      </>
+    ),
+  },
+  {
     title: <>New collector: PowerDNS Authoritative Server</>,
     href: '/docs/agent/collectors/go.d.plugin/modules/powerdns',
     date: 'November 20, 2020',
@@ -79,17 +90,6 @@ const updates = [
     description: (
       <>
         Learn about Netdata's alarm notification feature, including a new comprehensive list of all the notification applications/platforms that the Netdata Agent supports.
-      </>
-    ),
-  },
-  {
-    title: <>Send notifications to Opsgenie</>,
-    href: 'docs/agent/health/notifications/opsgenie',
-    date: 'October 28, 2020',
-    type: 'Doc',
-    description: (
-      <>
-        Learn how to send Netdata's alarm notifications to Opsgenie, an alerting and incident response tool designed to group and filter alarms, build custom routing rules for on-call teams, and correlate deployments and commits to incidents.
       </>
     ),
   },
