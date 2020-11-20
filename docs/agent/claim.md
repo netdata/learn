@@ -1,7 +1,6 @@
 ---
 title: "Agent claiming"
 description: "Agent claiming allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud. A Space's administrator creates a claiming token, which is used to add an Agent to their Space via the Agent-Cloud link."
-date: 2020-04-30
 custom_edit_url: https://github.com/netdata/netdata/edit/master/claim/README.md
 ---
 
@@ -200,7 +199,8 @@ option, you need to update your `$PATH` or run `netdata-claim.sh` using the full
 Netdata to `/opt/netdata`, use `/opt/netdata/bin/netdata-claim.sh` to run the claiming script.
 
 If you are using an unsupported package, such as a third-party `.deb`/`.rpm` package provided by your distribution,
-please remove that package and reinstall using our [recommended kickstart script](/docs/agent/get#install-the-netdata-agent).
+please remove that package and reinstall using our [recommended kickstart
+script](/docs/get#install-the-netdata-agent).
 
 #### Claiming on older distributions (Ubuntu 14.04, Debian 8, CentOS 6)
 

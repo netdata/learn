@@ -5,6 +5,10 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/instal
 
 
 
+> ⚠️ If you're having trouble updating Netdata, moving from one installation method to another, or generally having
+> issues with your Netdata Agent installation, consider our [**reinstall Netdata**
+> doc](/docs/agent/packaging/installer/reinstall) instead of removing the Netdata Agent entirely.
+
 Our self-contained uninstaller is able to remove Netdata installations created with shell installer. It doesn't need any
 other Netdata repository files to be run. All it needs is an `.environment` file, which is created during installation
 (with shell installer) and put in `${NETDATA_USER_CONFIG_DIR}/.environment` (by default `/etc/netdata/.environment`).

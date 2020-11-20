@@ -125,6 +125,14 @@ Cloud. If the script returns an error, try our [troubleshooting tips](/docs/agen
 For more information on the claiming process, why we implemented it, and how it works, see the [claim](/docs/agent/claim)
 and [Agent-Cloud link](/docs/agent/aclk) reference docs.
 
+## Troubleshooting
+
+If you experience issues with installing the Netdata Agent, see our
+[installation](/docs/agent/packaging/installer#troubleshooting-and-known-issues) reference. Our
+[reinstall](/docs/agent/packaging/installer/reinstall) doc can help clean up your installation and get you back to monitoring.
+
+For Netdata Cloud issues, see the [Netdata Cloud reference docs](/docs/cloud).
+
 ## What's next?
 
 At this point, you have set up your free Netdata Cloud account, installed the Netdata Agent on your node(s), and claimed
@@ -136,5 +144,13 @@ quickstart](/docs/quickstart/single-node).
 
 If you're looking to monitor an entire infrastructure with Netdata, see the [infrastructure monitoring
 quickstart](/docs/quickstart/infrastructure).
+
+### Related reference documentation
+
+-   [Packaging &amp; installer](/docs/agent/packaging/installer)
+-   [Reinstall Netdata](/docs/agent/packaging/installer/reinstall)
+-   [Update Netdata](/docs/agent/packaging/installer/update)
+-   [Agent-Cloud link](/docs/agent/aclk)
+-   [Agent claiming](/docs/agent/claim)
 
 
