@@ -53,13 +53,15 @@ If a Space's administrator has disabled notifications, you will see a mesage sim
 
 If a node has too many state changes like firing too many alarms or going from reachable to unreachable, Netdata Cloud
 enables flood protection. As long as a node is in flood protection mode, Netdata Cloud does not send notifications about
-this node. Even with flood protection active, it is possible to access the node directly to view any ongoing alarms.
+this node. Even with flood protection active, it is possible to access the node directly, either via Netdata Cloud or
+the local Agent dashboard at `http://NODE:19999`.
 
 ## Anatomy of an alarm notification
 
 Email alarm notifications show the following information:
 
--   The host's name
+-   The Space's name
+-   The node's name
 -   Alarm status: critical, warning, cleared
 -   Previous alarm status
 -   Time at which the alarm triggered
