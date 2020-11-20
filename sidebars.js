@@ -492,6 +492,7 @@ module.exports = {
                 },
                 'agent/packaging/distributions',
                 'agent/packaging/installer/update',
+                'agent/packaging/installer/reinstall',
                 'agent/packaging/installer/uninstall',
                 'agent/packaging/makeself',
               ]
