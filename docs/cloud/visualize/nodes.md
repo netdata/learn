@@ -15,7 +15,7 @@ single row, first featuring that node's alarm status (yellow for warnings, red f
 system, some essential information about the node, followed by columns of user-defined key metrics represented in
 real-time charts.
 
-You can also use the [Overview](/docs/cloud/visualize/overview) for monitoring an infrastructure in real time using
+Use the [Overview](/docs/cloud/visualize/overview) for monitoring an infrastructure in real time using
 composite charts and Netdata's familiar dashboard UI.
 
 Check the [War Room docs](/docs/cloud/war-rooms) for details on the utility bar, which contains the [node
@@ -30,8 +30,8 @@ team is interested in.
 ![GIF showing how to add new metrics to the Nodes
 view](https://user-images.githubusercontent.com/1153921/87456847-593e4c80-c5bc-11ea-8063-80c768d4cf6e.gif)
 
-You can also click the gear icon and hover over any existing charts, then click the pencil icon. This opens a panel to
-edit that chart. You can the context, its title, add or remove dimensions, or delete the chart altogether.
+Click the gear icon and hover over any existing charts, then click the pencil icon. This opens a panel to
+edit that chart. Edit the context, its title, add or remove dimensions, or delete the chart altogether.
 
 These customizations appear for anyone else with access to that War Room.
 
@@ -50,9 +50,8 @@ Netdata Cloud, and then engage your team to perform root-cause analysis using th
 ## See more metrics in Netdata Cloud
 
 If you want to add more metrics to your War Rooms and they don't show up when you add new metrics to Nodes, you likely
-need to configure those nodes to collect from additional data sources. See our [collectors
-quickstart](/docs/agent/collectors/quickstart) to learn how to use dozens of pre-installed collectors that can instantly
-collect from your favorite services and applications.
+need to configure those nodes to collect from additional data sources. See our [collectors doc](/docs/collect/enable-configure) 
+to learn how to use dozens of pre-installed collectors that can instantly collect from your favorite services and applications.
 
 If you want to see up to 30 days of historical metrics in Cloud (and more on individual node dashboards), read our guide
 on [long-term storage of historical metrics](/guides/longer-metrics-storage). Also, see our
