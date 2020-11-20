@@ -27,7 +27,51 @@ notifications](https://user-images.githubusercontent.com/1153921/99722010-3f7eab
 
 Click on the toggle to enable or disable a notification method.
 
-## Manage alarm notifications per user
+### Email
+
+Email alarm notifications show the following information:
+
+-   The Space's name
+-   The node's name
+-   Alarm status: critical, warning, cleared
+-   Previous alarm status
+-   Time at which the alarm triggered
+-   Chart context that triggered the alarm
+-   Name and information about the triggered alarm
+-   Alarm value
+-   Total number of warning and critical alarms on that node
+-   Threshold for triggering the given alarm state
+-   Calculation or database lookups that Netdata uses to compute the value
+-   Source of the alarm, including which file you can edit to configure this alarm on an individual node
+
+Email notifications also feature a **Go to Node** button, which takes you directly to the offending chart for that node
+within Cloud's embedded dashboards.
+
+Here's an example email notification for the `ram_available` chart, which is in a critical state:
+
+![Screenshot of an alarm notification email from Netdata
+Cloud](https://user-images.githubusercontent.com/1153921/87461878-e933c480-c5c3-11ea-870b-affdb0801854.png)
+
+### Integrations via webhooks
+
+You can send alarm notification details to any number of integration/automation services like Zapier and Integromat by
+setting up new integrations via [webhooks](/docs/cloud/monitor/notifications/webhooks). Once you supply Netdata Cloud
+with a webhook URL, it will send a JSON payload with alarm notification details to that service. You can then create
+automations or send notifications to other endpoints, based on the capabilities of that service.
+
+For example, you could use Zapier to create a new issue on Jira or send a Slack message, when your nodes trigger alerts
+and create alarms.
+
+To add a new integration, you should first set up your integration service with a new webhook-based action. You should
+have an incoming webhook URL available.
+
+Next, click the **Add integration** button. In the **URL** field, enter the incoming webhook URL from your integration
+service. Click the **Test** button to see whether the service receives the JSON payload from Netdata Cloud.
+
+Read about the JSON payload and see some examples in the [webhooks doc](/docs/cloud/monitor/notifications/webhooks). You
+can use this information to customize how your integration service procesesses the incoming alarm information.
+
+## Manage personal alarm notification settings
 
 You, and other individual users in your Space, can also enable and disable notification methods.
 
@@ -55,31 +99,6 @@ If a node has too many state changes like firing too many alarms or going from r
 enables flood protection. As long as a node is in flood protection mode, Netdata Cloud does not send notifications about
 this node. Even with flood protection active, it is possible to access the node directly, either via Netdata Cloud or
 the local Agent dashboard at `http://NODE:19999`.
-
-## Anatomy of an alarm notification
-
-Email alarm notifications show the following information:
-
--   The Space's name
--   The node's name
--   Alarm status: critical, warning, cleared
--   Previous alarm status
--   Time at which the alarm triggered
--   Chart context that triggered the alarm
--   Name and information about the triggered alarm
--   Alarm value
--   Total number of warning and critical alarms on that node
--   Threshold for triggering the given alarm state
--   Calculation or database lookups that Netdata uses to compute the value
--   Source of the alarm, including which file you can edit to configure this alarm on an individual node
-
-Email notifications also feature a **Go to Node** button, which takes you directly to the offending chart for that node
-within Cloud's embedded dashboards.
-
-Here's an example email notification for the `ram_available` chart, which is in a critical state:
-
-![Screenshot of an alarm notification email from Netdata
-Cloud](https://user-images.githubusercontent.com/1153921/87461878-e933c480-c5c3-11ea-870b-affdb0801854.png)
 
 ## What's next?
 

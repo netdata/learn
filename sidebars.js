@@ -587,11 +587,17 @@ module.exports = {
               type: 'category',
               label: 'Monitor',
               items: [
-                'cloud/monitor/notifications',
                 'cloud/monitor/alarms',
+                'cloud/monitor/notifications',
+                {
+                  type: 'category',
+                  label: 'Notifications',
+                  items: [
+                    'cloud/monitor/notifications/webhooks',
+                  ]
+                },
               ]
             },
-            
             'cloud/collaborate',
             {
               type: 'category',
@@ -607,47 +613,4 @@ module.exports = {
       ],
     },
   ],
-<<<<<<< HEAD
-=======
-  cloud: [
-    'cloud',
-    'cloud/get-started',
-    'cloud/organize',
-    {
-      type: 'category',
-      label: 'Visualize',
-      items: [
-        'cloud/visualize',
-        'cloud/visualize/nodes',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'Monitor',
-      items: [
-        'cloud/monitor',
-        'cloud/monitor/alarms',
-        'cloud/monitor/notifications',
-        {
-          type: 'category',
-          label: 'Notifications',
-          items: [
-            'cloud/monitor/notifications/webhooks',
-          ]
-        },
-        
-      ]
-    },
-    'cloud/collaborate',
-    {
-      type: 'category',
-      label: 'Manage',
-      items: [
-        'cloud/manage/sign-in',
-        'cloud/collaborate/invite-your-team',
-      ]
-    },
-    'cloud/faq-glossary'
-  ]
->>>>>>> 0e8945e... Initial draft of documents
 };
