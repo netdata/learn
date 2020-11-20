@@ -174,6 +174,7 @@ module.exports = {
                             'agent/collectors/go.d.plugin/modules/phpdaemon',
                             'agent/collectors/go.d.plugin/modules/phpfpm',
                             'agent/collectors/go.d.plugin/modules/pihole',
+                            'agent/collectors/go.d.plugin/modules/powerdns',
                             'agent/collectors/go.d.plugin/modules/powerdns_recursor',
                             'agent/collectors/go.d.plugin/modules/prometheus',
                             'agent/collectors/go.d.plugin/modules/pulsar',
