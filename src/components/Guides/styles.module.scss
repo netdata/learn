@@ -12,6 +12,12 @@
   max-width: 100%;
 }
 
+html[data-theme='dark'] .GuidesSearch {
+  background: #191927;
+  color: var(--ifm-font-color-base);
+  border: 1px solid var(--ifm-contents-border-color);
+}
+
 .GuidesContainer {
   margin-top: 5rem;
   
