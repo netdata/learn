@@ -48,10 +48,10 @@ xcode-select --install
 ```
 
 Click **Install** on the Software Update popup window that appears. Then, use the same terminal session to use Homebrew
-to install some of Netdata's prerequisites.
+to install some of Netdata's prerequisites. Note that cmake is necessary only if you need to claim the agent to Cloud.
 
 ```bash
-brew install ossp-uuid autoconf automake pkg-config libuv lz4 json-c openssl@1.1
+brew install ossp-uuid autoconf automake pkg-config libuv lz4 json-c openssl@1.1 cmake
 ```
 
 If you want to use the [database engine](/docs/agent/database/engine) to store your metrics, you need to download
