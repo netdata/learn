@@ -11,9 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import DocPaginator from '@theme/DocPaginator';
 import DocVersionSuggestions from '@theme/DocVersionSuggestions';
 import TOC from '@theme/TOC';
-import Link from '@docusaurus/Link';
 import clsx from 'clsx';
+// BEGIN CUSTOMIZATION
+import Link from '@docusaurus/Link';
 import styles from './styles.module.scss';
+// END CUSTOMIZATION
 import {
   useActivePlugin,
   useVersions,
@@ -21,7 +23,7 @@ import {
 } from '@theme/hooks/useDocs';
 
 function DocItem(props) {
-  const {siteConfig = {}} = useDocusaurusContext();
+  const {siteConfig} = useDocusaurusContext();
   const {url: siteUrl, title: siteTitle, titleDelimiter} = siteConfig;
   const {content: DocContent} = props;
   const {metadata} = DocContent;
@@ -57,7 +59,9 @@ function DocItem(props) {
     absolute: true,
   });
 
+  // BEGIN CUSTOMIZATION
   const isGuide = permalink.includes('/guides/');
+  // END CUSTOMIZATION
 
   return (
     <>
@@ -79,7 +83,7 @@ function DocItem(props) {
         {permalink && <meta property="og:url" content={siteUrl + permalink} />}
         {permalink && <link rel="canonical" href={siteUrl + permalink} />}
       </Head>
-      {/* Begin customization */}
+      {/* BEGIN CUSTOMIZATION */}
       {isGuide && (
         <header className={styles.GuideTitle}>
           <div className={clsx('container padding-vert--lg')}>
@@ -99,124 +103,123 @@ function DocItem(props) {
           </svg>
         </header>
       )}
-      {/* End customization */}
-      <div
-        className={clsx('container padding-vert--lg', styles.docItemWrapper, isGuide && styles.guideItemWrapper)}>
-        <div className="row">
-          <div
-            className={clsx('col', {
-              [styles.docItemCol]: !hideTableOfContents,
-            })}>
-            <DocVersionSuggestions />
-            <div className={styles.docItemContainer}>
-              <article>
-                {showVersionBadge && (
-                  <div>
-                    <span className="badge badge--secondary">
-                      Version: {version.label}
-                    </span>
-                  </div>
-                )}
-                {!hideTitle && !isGuide && (
-                  <header>
-                    <h1 className={styles.docTitle}>{title}</h1>
-                  </header>
-                )}
-                <div className="markdown">
-                  <DocContent />
-                </div>
-              </article>
-              {/* Begin custommization */}
-              {isGuide &&
-                <nav className="pagination-nav" aria-label="Blog list page navigation">
-                  <div className="pagination-nav__item">
-                    <Link className={clsx('pagination-nav__link')} to="/guides">
-                      <div className="pagination-nav__label">« Back to guides</div>
-                    </Link>
-                  </div>
-                </nav>
-              }
-
-              {(editUrl || lastUpdatedAt || lastUpdatedBy) && (
-                <div className="margin-vert--xl">
-                  <div className="row">
-                    <div className="col">
-                      {editUrl && (
-                        <a
-                          href={editUrl}
-                          target="_blank"
-                          rel="noreferrer noopener">
-                          <svg
-                            fill="currentColor"
-                            height="1.2em"
-                            width="1.2em"
-                            preserveAspectRatio="xMidYMid meet"
-                            viewBox="0 0 40 40"
-                            style={{
-                              marginRight: '0.3em',
-                              verticalAlign: 'sub',
-                            }}>
-                            <g>
-                              <path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z" />
-                            </g>
-                          </svg>
-                          Edit this page
-                        </a>
-                      )}
-                    </div>
-                    {(lastUpdatedAt || lastUpdatedBy) && (
-                      <div className="col text--right">
-                        <em>
-                          <small>
-                            Last updated{' '}
-                            {lastUpdatedAt && (
-                              <>
-                                on{' '}
-                                <time
-                                  dateTime={new Date(
-                                    lastUpdatedAt * 1000,
-                                  ).toISOString()}
-                                  className={styles.docLastUpdatedAt}>
-                                  {new Date(
-                                    lastUpdatedAt * 1000,
-                                  ).toLocaleDateString()}
-                                </time>
-                                {lastUpdatedBy && ' '}
-                              </>
-                            )}
-                            {lastUpdatedBy && (
-                              <>
-                                by <strong>{lastUpdatedBy}</strong>
-                              </>
-                            )}
-                            {process.env.NODE_ENV === 'development' && (
-                              <div>
-                                <small>
-                                  {' '}
-                                  (Simulated during dev for better perf)
-                                </small>
-                              </div>
-                            )}
-                          </small>
-                        </em>
-                      </div>
-                    )}
-                  </div>
+      {/* END CUSTOMIZATION */}
+      <div className="row">
+        <div
+          className={clsx('col', {
+            [styles.docItemCol]: !hideTableOfContents,
+          })}>
+          <DocVersionSuggestions />
+          <div className={styles.docItemContainer}>
+            <article>
+              {showVersionBadge && (
+                <div>
+                  <span className="badge badge--secondary">
+                    Version: {version.label}
+                  </span>
                 </div>
               )}
-              <div className="margin-vert--lg">
-                <DocPaginator metadata={metadata} />
+              {/* BEGIN CUSTOMIZATION */}
+              {!hideTitle && !isGuide && (
+                <header>
+                  <h1 className={styles.docTitle}>{title}</h1>
+                </header>
+              )}
+              {/* END CUSTOMIZATION */}
+              <div className="markdown">
+                <DocContent />
               </div>
+            </article>
+            {/* BEGIN CUSTOMIZATION */}
+            {isGuide &&
+              <nav className="pagination-nav" aria-label="Blog list page navigation">
+                <div className="pagination-nav__item">
+                  <Link className={clsx('pagination-nav__link')} to="/guides">
+                    <div className="pagination-nav__label">« Back to guides</div>
+                  </Link>
+                </div>
+              </nav>
+            }
+            {/* END CUSTOMIZATION */}
+            {(editUrl || lastUpdatedAt || lastUpdatedBy) && (
+              <div className="margin-vert--xl">
+                <div className="row">
+                  <div className="col">
+                    {editUrl && (
+                      <a
+                        href={editUrl}
+                        target="_blank"
+                        rel="noreferrer noopener">
+                        <svg
+                          fill="currentColor"
+                          height="1.2em"
+                          width="1.2em"
+                          preserveAspectRatio="xMidYMid meet"
+                          viewBox="0 0 40 40"
+                          style={{
+                            marginRight: '0.3em',
+                            verticalAlign: 'sub',
+                          }}>
+                          <g>
+                            <path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z" />
+                          </g>
+                        </svg>
+                        Edit this page
+                      </a>
+                    )}
+                  </div>
+                  {(lastUpdatedAt || lastUpdatedBy) && (
+                    <div className="col text--right">
+                      <em>
+                        <small>
+                          Last updated{' '}
+                          {lastUpdatedAt && (
+                            <>
+                              on{' '}
+                              <time
+                                dateTime={new Date(
+                                  lastUpdatedAt * 1000,
+                                ).toISOString()}
+                                className={styles.docLastUpdatedAt}>
+                                {new Date(
+                                  lastUpdatedAt * 1000,
+                                ).toLocaleDateString()}
+                              </time>
+                              {lastUpdatedBy && ' '}
+                            </>
+                          )}
+                          {lastUpdatedBy && (
+                            <>
+                              by <strong>{lastUpdatedBy}</strong>
+                            </>
+                          )}
+                          {process.env.NODE_ENV === 'development' && (
+                            <div>
+                              <small>
+                                {' '}
+                                (Simulated during dev for better perf)
+                              </small>
+                            </div>
+                          )}
+                        </small>
+                      </em>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+            <div className="margin-vert--lg">
+              <DocPaginator metadata={metadata} />
             </div>
           </div>
-          {!hideTableOfContents && DocContent.rightToc && (
-            <div className="col col--3">
-              {/* // Begin customiation */}
-              <TOC headings={DocContent.rightToc} editUrl={editUrl} />
-              {/* // End customization */}
-            </div>
-          )}
         </div>
+        {!hideTableOfContents && DocContent.rightToc && (
+          <div className="col col--3">
+            {/* BEGIN CUSTOMIZATION */}
+              <TOC headings={DocContent.rightToc} editUrl={editUrl} />
+            {/* END CUSTOMIZATION */}
+          </div>
+        )}
       </div>
     </>
   );
