@@ -6,26 +6,18 @@
  */
 
 .docTitle {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: calc(var(--ifm-leading-desktop) * var(--ifm-leading));
 }
 
 .docItemContainer {
-  margin: 1rem auto;
+  margin: 0 auto;
   padding: 0 0.5rem;
 }
 
 @media only screen and (min-width: 997px) {
   .docItemCol {
     max-width: 75% !important;
-  }
-}
-
-@media (min-width: 997px) and (max-width: 1320px) {
-  .docItemWrapper {
-    max-width: calc(
-      var(--ifm-container-width) - 300px - var(--ifm-spacing-horizontal) * 2
-    );
   }
 }
 
@@ -46,10 +38,10 @@
 .GuideTitle {
   width: 100%;
   background: linear-gradient(to bottom, white, #f1f2fb);
-  position: relative;
+  position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  top: 68px;
   padding: 3rem 0;
   overflow: hidden;
 
@@ -83,15 +75,5 @@ html[data-theme='dark'] .GuideTitle {
   svg {
     filter: grayscale(1);
     opacity: 0.3;
-  }
-}
-
-.guideItemWrapper {
-  margin-left: auto !important;
-
-  div[class*="col--3"] {
-    @media (max-width: 996px) {
-      margin-top: 0;
-    }
   }
 }
