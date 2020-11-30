@@ -8,6 +8,10 @@
 .docTitle {
   font-size: 3rem;
   margin-bottom: calc(var(--ifm-leading-desktop) * var(--ifm-leading));
+
+  @media (max-width: 475px) {
+    font-size: 2rem; 
+  }
 }
 
 .docItemContainer {
