@@ -61,7 +61,8 @@ const SearchBar = (props) => {
       <button
         className={styles.searchButton}
         onClick={onOpen}>
-          Search Netdata...
+          <span className={styles.searchButtonTextLarge}>Search Netdata...</span>
+          <span className={styles.searchButtonTextSmall}>🔍</span>
           <span className={styles.searchKey}>?</span>
       </button>
 

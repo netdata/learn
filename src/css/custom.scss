@@ -279,6 +279,10 @@ body.search-open {
   font-size: 120%;
   border: 1px solid var(--ifm-color-primary);
   border-radius: var(--ifm-global-radius);
+
+  @media (max-width: 500px) {
+    font-size: 95%;
+  }
 }
 
 .sui-search-box__submit {
@@ -287,6 +291,11 @@ body.search-open {
   top: 1px;
   height: 67px;
   font-size: 110%;
+
+  @media (max-width: 500px) {
+    height: 63px;
+    font-size: 90%;
+  }
 }
 
 .st-default-search-input {
@@ -750,6 +759,15 @@ html[data-theme='dark'] code {
         margin-bottom: 0.8rem;
       }
     }
+  }
+
+  // Mobile styles for Markdown content
+  @media (max-width: 475px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.4rem; }
+    h4 { font-size: 1.2rem; }
+    p { font-size: 16px; }
   }
 }
 

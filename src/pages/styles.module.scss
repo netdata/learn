@@ -64,11 +64,11 @@
     padding: 4rem 0 2rem;
 
     .heroText .heroTagline {
-      font-size: 2.4rem;
+      font-size: 2rem;
     }
 
     .heroText .heroSubHead {
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     .heroImage {
@@ -116,7 +116,15 @@
 
   @media (max-width: 996px) {
     div[class*="col"] + div[class*="col"] {
-      margin-top: 4rem;
+      margin-top: 2rem;
+    }
+  }
+
+  @media (max-width: 996px) {
+    margin-bottom: 2rem;
+    
+    h2 {
+      font-size: 1.4rem;
     }
   }
 }
@@ -145,11 +153,15 @@
     font-family: var(--ifm-font-family-monospace);
     font-size: 90%;
     margin-bottom: 0rem;
+
+    @media (max-width: 996px) {
+      display: inline-block;
+      margin-right: 1rem;
+      margin-bottom: 0.6rem;
+    }
   }
 
   span {
-    // font-family: var(--ifm-font-family-monospace);
-    // font-weight: 500;
     display: inline-block;
     font-size: 80%;
     background: var(--ifm-color-primary);
