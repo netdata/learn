@@ -155,7 +155,7 @@ changes based on your particular Nginx setup.
 
 -   Look at the [full list of data collection modules](/docs/agent/collectors/collectors)
     to configure your sources for auto-detection and monitoring.
--   Improve the [performance](/docs/agent/performance) of Netdata on low-memory systems.
+-   Improve the [performance](/guides/configure/performance) of Netdata on low-memory systems.
 -   Configure `systemd` to expose [systemd services
     utilization](/docs/agent/collectors/cgroups.plugin#monitoring-systemd-services) metrics automatically.
 -   [Reconfigure individual charts](/docs/agent/daemon/config#per-chart-configuration) in `netdata.conf`.

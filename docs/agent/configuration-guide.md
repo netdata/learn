@@ -149,8 +149,8 @@ documentation](/docs/agent/web/server#binding-netdata-to-multiple-ports) for mor
 
 #### Reduce the resources Netdata uses
 
-The page on [Netdata performance](/docs/agent/performance) has an excellent guide on how to reduce the Netdata cpu/disk/RAM
-utilization to levels suitable even for the weakest [IoT devices](/docs/agent/netdata-for-iot).
+The [Netdata performance guide](/guides/configure/performance) outlines many ways to reduce the Netdata
+CPU/disk/RAM utilization to levels suitable even for the weakest [IoT devices](/docs/agent/netdata-for-iot).
 
 #### Change when Netdata saves metrics to disk
 
