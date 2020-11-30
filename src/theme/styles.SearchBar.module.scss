@@ -65,14 +65,13 @@
 .searchModal {
   position: relative;
   max-width: 800px;
-  margin: 60px auto auto;
+  margin: 68px auto auto;
 
   background: var(--ifm-background-color);
   border-radius: var(--ifm-global-radius);
 
   @media (max-width: 996px) {
     max-height: 100vh;
-    margin-top: 0;
   }
 }
 
