@@ -27,6 +27,12 @@ const GuideItems = [
     description: "Netdata helps you monitor and troubleshoot all kinds of devices and the applications they run, including IoT devices like the Raspberry Pi and applications like Pi-hole."
   },
   {
+    title: "How to optimize the Netdata Agent's performance",
+    href: "/guides/configure/performance",
+    category: "configure",
+    description: "While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems."
+  },
+  {
     title: "Use host labels to organize systems, metrics, and alarms",
     href: "/guides/using-host-labels",
     category: "configure",

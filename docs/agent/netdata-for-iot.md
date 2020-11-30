@@ -43,8 +43,8 @@ provider so it can directly be used by google sheets, google charts, google widg
 ![sensors](https://cloud.githubusercontent.com/assets/2662304/15339745/8be84540-1c8e-11e6-9e9a-106dea7539b6.gif)
 
 Although Netdata has been significantly optimized to lower the CPU and RAM resources it consumes, the plethora of data
-collection plugins may be inappropriate for weak IoT devices. Please follow the guide on [running Netdata in embedded
-devices](/docs/agent/performance)
+collection plugins may be inappropriate for weak IoT devices. Please follow the [Netdata Agent performance
+guide](/guides/configure/performance)
 
 ## Monitoring RPi temperature
 

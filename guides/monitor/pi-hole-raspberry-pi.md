@@ -149,7 +149,7 @@ configure Netdata to more specific goals.
 Most importantly, you can always install additional services and instantly collect metrics from many of them with our
 [300+ integrations](/docs/agent/collectors/collectors).
 
--   [Optimize performance](/docs/agent/performance) using tweaks developed for IoT devices.
+-   [Optimize performance](/guides/configure/performance) using tweaks developed for IoT devices.
 -   [Stream Raspberry Pi metrics](/docs/agent/streaming) to a parent host for easy access or longer-term storage.
 -   [Tweak alarms](/docs/agent/health/quickstart) for either Pi-hole or the health of your Raspberry Pi.
 -   [Export metrics to external databases](/docs/agent/exporting) with the exporting engine.

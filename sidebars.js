@@ -338,9 +338,7 @@ module.exports = {
                 'agent/daemon',
                 'agent/configuration-guide',
                 'agent/daemon/config',
-                'agent/performance',
                 'agent/netdata-for-iot',
-                'agent/high-performance-netdata',
               ],
             },
             {
