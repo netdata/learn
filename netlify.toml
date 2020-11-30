@@ -91,3 +91,11 @@
 [[redirects]]
   from = "/docs/agent/contributing/style-guide"
   to = "/contribute/style-guide"
+
+[[redirects]]
+  from = "/docs/agent/performance"
+  to = "/guides/configure/performance"
+
+[[redirects]]
+  from = "/docs/agent/high-performance-netdata"
+  to = "/guides/configure/performance"
