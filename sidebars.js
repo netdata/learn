@@ -585,19 +585,17 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Monitor',
+              label: 'Monitoring',
               items: [
-                'cloud/monitor/alarms',
+                'cloud/monitoring/alarms',
               ]
             },
-            
-            'cloud/collaborate',
             {
               type: 'category',
-              label: 'Manage',
+              label: 'Administration',
               items: [
                 'cloud/manage/sign-in',
-                'cloud/collaborate/invite-your-team',
+                'cloud/manage/invite-your-team',
               ]
             },
             'cloud/faq-glossary'

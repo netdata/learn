@@ -62,5 +62,3 @@ for finding the disk and RAM you need to store metrics for a certain period of t
 
 Now that you know how to view your nodes at a glance, learn how to [track active alarms](/docs/cloud/monitor/alarms)
 with the Alarms panel.
-
-You can also set up your Spaces and War Rooms for [collaboration](/docs/cloud/collaborate).

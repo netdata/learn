@@ -29,7 +29,6 @@ time by clicking the trash can icon.
 
 If your team members have trouble signing in, direct them to the [sign in guide](/docs/cloud/manage/sign-in). Once your
 team is onboarded to Netdata Cloud, they can view shared assets, such as [new
-dashboards](https://learn.netdata.cloud/docs/cloud/visualize/dashboards) and
-[bookmarks](/docs/cloud/collaborate#add-bookmarks-to-essential-resources).
+dashboards](https://learn.netdata.cloud/docs/cloud/visualize/dashboards).
 
 Find answers to other common questions in our [FAQ](/docs/cloud/faq-glossary).
