@@ -116,7 +116,10 @@ node](https://user-images.githubusercontent.com/1153921/99405866-75bffd80-28aa-1
 ## Jump to single-node dashboards
 
 Click on **X Charts**/**X Nodes** to display one of the two dropdowns that list the charts and nodes contributing to a
-given composite chart.
+given composite chart. For example, the nodes dropdown.
+
+![The nodes dropdown in a composite
+chart](https://user-images.githubusercontent.com/1153921/99305049-7c019b80-2810-11eb-942a-8ebfcf236b7f.png)
 
 To jump to a single-node dashboard, click on the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> next to the
