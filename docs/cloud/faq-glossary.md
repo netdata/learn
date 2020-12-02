@@ -57,18 +57,12 @@ guide](/docs/agent/claim/#troubleshooting).
 
 ### How do I add a node to an existing Space?
 
-You must be the Space owner to claim a new node to an existing Space. Find the drop-down menu for your Space, by name,
-then select the **Manage Space** option. Click on the **Nodes** tab.
+Click on the **Claim Nodes** item beneath your Space's name in the left-hand navigation.
 
-![Animated GIF of finding the claiming script and the token and room
-strings](https://user-images.githubusercontent.com/1153921/98740235-f4c3ac00-2367-11eb-8ffd-e9ab0f04c463.gif)
+![The Spaces management
+area](https://user-images.githubusercontent.com/1153921/100896143-8d3ae100-347b-11eb-9657-745831afc140.png)
 
-Select any War Rooms relevant for the new node, [claim your node](/docs/get#claim-your-node-on-netdata-cloud).
-
-<details>
-<summary>Watch a video walkthrough of node claiming</summary>
-<iframe width="820" height="460" src="https://www.youtube.com/embed/UAzVvhMab8g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</details>
+Copy the claiming script to your node and run it. See the [claiming doc](/docs/agent/claim) for details.
 
 ### How do I rename a node?
 
@@ -81,16 +75,21 @@ file](/docs/configure/nodes) and change the [`hostname` setting](/docs/agent/dae
 Once finished, restart the node with `sudo systemctl netdata restart`, or the appropriate method for your system, to see
 the changed name reflected in Netdata Cloud.
 
-### How do I delete a node?
+### How do I remove a node from a War Room?
 
-The _General_ War Room cannot be deleted. For other rooms, click the name of the War Room from the top navigation, then
-**Manage War Room**. In the management panel, click on the **War Room** tab, then click the **Delete** button. Confirm that you want to delete your War Room.
+Click on the name of the War Room in the top navigation, then **List Nodes**. Click on the **🗑** icon next to the node
+you want to remove. Removing a node from a War Room does not remove it from your Space.
 
-You can delete a node from your War Room by selecting **Manage War Room** in your War Room options.
+### How do I move a node to another War Room?
 
-![delete-node mp4](https://user-images.githubusercontent.com/1153921/97763604-56169000-1ac9-11eb-8323-a521dc93b261.gif)
+A node can belong to multiple War Rooms.
 
-It is also possible to [remove and reclaim a node](/docs/agent/claim/#remove-and-reclaim-a-node).
+First, switch to the War Room you want to move the node to. Click on the name of the War Room in the top navigation,
+then **Add Nodes**. Click the checkbox next to the node in question, then click **+ Add** at the top of the panel.
+
+Next, switch back to the War Room original War Room and [remove the node](#how-do-i-remove-a-node-from-a-war-room).
+
+See the [War Room reference](/docs/cloud/war-rooms#manage-war-rooms) for additional details.
 
 ### How do I reclaim a node?
 
@@ -100,41 +99,38 @@ Follow the [reclaiming guide](/docs/agent/claim/#remove-and-reclaim-a-node). Don
 ### How do I move a node to another Space?
 
 You can only claim any given node in a single Space. To claim a node in a different Space, you will have to [reclaim the
-node](#how-do-i-re-claim-a-node).
-
-### How do I move a node to another War Room?
-
-A node can belong to multiple War Rooms. To move the node, you would have to [remove it](#how-do-i-delete-a-node) from
-any war room you don't want it in and add it to any War Rooms you want.
+node](/docs/agent/claim/#remove-and-reclaim-a-node).
 
 ### How do I rename a Space?
 
 You can add a description to a Space, but a Space's name is a unique identifier that cannot be modified.
 
+### How do I delete a Space?
+
+In the left-hand navigation, click the **Manage Space** link. Click the **Delete** button and confirm you want to delete
+your Space.
+
 ### How do I rename a War Room?
 
 You cannot rename a War Room at this time.
 
-### How do I delete a Space?
-
-Click the name of your space from top navigation, then **Manage Space**. In the management panel, click on the **Space**
-tab, then click the **Delete** button. Confirm that you want to delete your Space.
-
-![Deleting a Space in Netdata
-Cloud](https://user-images.githubusercontent.com/1153921/97763437-d688c100-1ac8-11eb-8193-d105ffaa0c0f.gif)
-
 ### How do I delete a War Room?
 
 The _General_ War Room cannot be deleted. For other rooms, click the name of the War Room from the top navigation, then
-**Manage War Room**. In the management panel, click on the **War Room** tab, then click the **Delete** button. Confirm that you want to delete your War Room.
-
-![Deleting a War Room in Netdata Cloud](https://user-images.githubusercontent.com/1153921/97763531-1e0f4d00-1ac9-11eb-8159-1828bacf20e4.gif)
+**Manage War Room**. In the management panel, click the **Delete** button. Confirm that you want to delete your War
+Room.
 
 ### How do I change my email?
 
-It is not really possible to change your email at this time, but there is a workaround. Invite the email address you
-want to use and make that new account an administrator. After accepting the invitation on the second account and joining
-all your War Rooms from it, you can sign in again with the original account and leave the Space.
+It is not possible to change the email address associated with your Netdata Cloud account.
+
+You can always create a new account with a different email and [reclaim](/docs/agent/claim/#remove-and-reclaim-a-node)
+nodes into the new Space.
+
+If you want to maintain your Space, send an [invitation](/docs/cloud/manage/invite-your-team) to the email address you
+want to use, and make that user an administrator for your Space. Accept the invitation on your new email and sign in.
+Confirm that you have full administrative access to the Space and associated War Rooms. Finally, you can sign in with
+your initial email and leave the Space.
 
 ## Glossary of Netdata Cloud terms
 

@@ -32,32 +32,36 @@ different responsibilities or parts of the overall infrastructure to monitor. Fo
 for your user-facing SaaS application and a second team for infrastructure tooling. If they don't need to monitor the
 same nodes, you can create separate Spaces for each team.
 
+## Switch between Spaces
+
+Use the vertical navigation on the left-hand side of the UI to switch between available Spaces.
+
+![The Space
+switcher](https://user-images.githubusercontent.com/1153921/100922586-4d83f180-349b-11eb-9064-f35696c8508e.png)
+
+Netdata Cloud abbreviates each Space to the first letter of the name, or the first two letters if the name is two words
+or more. Hover over each icon to see the full name in a tooltip.
+
+## Add Spaces
+
+Click on the green **+** button to add a new Space. Enter the name of the Space and click **Save**.
+
+While you can't change the name of a Space once it's created, you can always create additional Spaces and delete the any
+you no longer need.
+
 ## Manage Spaces
 
-You manage your spaces in the left-hand panel.
-
-The panel first shows the name of the Space, then some common actions
+Manage your spaces in the left-hand navigation, which shows the name of the current Space, followed by common management
+actions. Finally, the panel lists every [War Room](/docs/cloud/war-rooms) in the Space.
 
 ![The Spaces management
 area](https://user-images.githubusercontent.com/1153921/100896143-8d3ae100-347b-11eb-9657-745831afc140.png)
 
-### Add Spaces
+To _claim nodes to a Space_, click on **Claim Nodes**. Copy the claiming script to your node and run it. See the
+[claiming doc](/docs/agent/claim) for details.
 
-You can add new Spaces by clicking on the green plus icon `+` in the Spaces menu, which appears on the far left of the
-Cloud interface. A panel slides in and prompts you for the name of this new Space.
-
-While you can't change the name of an existing Space, you can always create additional Spaces and delete the ones you
-don't want any more.
-
-### Claim nodes to a Space
-
-Click on the **Claim Nodes** link to show the script that you use to [claim](/docs/agent/claim) a node running the
-Netdata Agent to Netdata Cloud.
-
-### Manage Spaces
-
-If you're an administrator of a Space, you can change its settings. Click on **Invite Users** or **Manage Space** for
-the most common settings.
+To _invite users to a Space_, click on **Invite Users**. The [invitation doc](/docs/cloud/manage/invite-your-team)
+details the invitation process.
 
 Click the **More** link to see additional options, such as managing the [War Rooms](/docs/cloud/war-rooms) within a
 Space, managing users, or managing bookmarks.
