@@ -11,14 +11,14 @@ You can see active alarms from any node in your infrastructure in two ways: Clic
 navigation, or click on the first column of any node's row in Nodes. This column's color changes based on the node's
 health status: gray is `clear`, yellow is `warning`, and red is `critical`.
 
-![The active alarms panel in Netdata Cloud](/img/docs/cloud/active-alarms.png)
+![The active alarms panel in Netdata
+Cloud](https://user-images.githubusercontent.com/1153921/100816025-786e3700-3402-11eb-97d2-5263e39763f5.png)
 
 The Alarms panel lists all active alarms for nodes within that War Room, and tells you which chart triggered the alarm,
 what that chart's current value is, the alarm that triggered it, and when the alarm status first began.
 
 You can use the input field in the Alarms panel to filter active alarms. Sort by the node's name, alarm, status, chart
-that triggered the alarm, or the operating system. You can find more information about the syntax in our
-[visualization](/docs/cloud/visualize/nodes) doc.
+that triggered the alarm, or the operating system. The syntax for filtering alarms is the same as [War Room filtering](/docs/cloud/war-rooms#node-filter).
 
 ## Troubleshoot with active alarm information and context
 
@@ -39,14 +39,14 @@ Netdata Cloud uses each node's health and alarm configuration to enrich the Alar
 comes with hundreds of pre-configured alarms that have been tested by Netdata's community of DevOps engineers and SREs,
 but you may want to customize existing alarms or create new ones entirely.
 
-Read our [health monitoring quickstart](/docs/agent/health/quickstart) to learn how to tweak existing alarms or create
-new triggers based on the specific needs of your infrastructure. By taking charge of alarm configuration, you'll ensure
-Netdata Cloud always delivers the most relevant alarms about the well-being of your nodes.
+Read our doc on [health alarms](/docs/monitor/configure-alarms) to learn how to tweak existing alarms or create new
+health entities based on the specific needs of your infrastructure. By taking charge of alarm configuration, you'll
+ensure Netdata Cloud always delivers the most relevant alarms about the well-being of your nodes.
 
 ## What's next?
 
 If you're through with setting up alarms, it might be time to [invite your
-team](/docs/cloud/collaborate/invite-your-team).
+team](/docs/cloud/manage/invite-your-team).
 
 Check out our recommendations on organizing and using [Spaces](/docs/cloud/spaces) and [War
 Rooms](/docs/cloud/war-rooms) to streamline your processes once you find an alarm in Netdata Cloud.

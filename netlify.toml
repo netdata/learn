@@ -99,3 +99,11 @@
 [[redirects]]
   from = "/docs/agent/high-performance-netdata"
   to = "/guides/configure/performance"
+
+[[redirects]]
+  from = "/docs/cloud/monitor/alarms"
+  to = "/docs/cloud/monitoring/alarms"
+
+[[redirects]]
+  from = "/docs/cloud/collaborate/invite-your-team"
+  to = "/docs/cloud/manage/invite-your-team"

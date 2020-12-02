@@ -137,6 +137,6 @@ Because of the visual complexity of individual charts, dashboards require a mini
 
 ## What's next?
 
-Once you've designed a dashboard or two, make sure to [invite your team](/docs/cloud/collaborate/invite-your-team) if
+Once you've designed a dashboard or two, make sure to [invite your team](/docs/cloud/manage/invite-your-team) if
 you haven't already. You can add these new users to the same War Room to let them see the same dashboards without any
 effort.
