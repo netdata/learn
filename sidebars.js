@@ -596,7 +596,7 @@ module.exports = {
               items: [
                 'cloud/manage/sign-in',
                 'cloud/manage/invite-your-team',
-                'cloud/manage/theme',
+                'cloud/manage/themes',
               ]
             },
             'cloud/faq-glossary'
