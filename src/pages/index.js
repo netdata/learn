@@ -28,13 +28,57 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
-    title: <>Reinstall Netdata</>,
-    href: '/docs/agent/packaging/installer/reinstall',
-    date: 'November 20, 2020',
-    type: 'Doc',
+    title: <>New collector: Anomalies</>,
+    href: '/docs/agent/collectors/python.d.plugin/anomalies',
+    date: 'December 2, 2020',
+    type: 'Collector',
     description: (
       <>
-        Learn how to reinstall the Netdata Agent on your node to enable a feature or troubleshoot an installation issue.
+        This collector uses the Python PyOD library to perform unsupervised anomaly detection on your Netdata charts and/or dimensions.
+      </>
+    ),
+  },
+  {
+    title: <>How to optimize the Netdata Agent's performance</>,
+    href: '/guides/configure/performance',
+    date: 'November 30, 2020',
+    type: 'Guide',
+    description: (
+      <>
+        While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
+      </>
+    ),
+  },
+  {
+    title: <>New collector: Alarms</>,
+    href: '/docs/agent/collectors/python.d.plugin/alarms',
+    date: 'November 30, 2020',
+    type: 'Collector',
+    description: (
+      <>
+        This collector creates an <strong>Alarms</strong> menu with one line plot showing the alarm states of a Netdata Agent over time. 
+      </>
+    ),
+  },
+  {
+    title: <>New collector: DNSdist</>,
+    href: '/docs/agent/collectors/go.d.plugin/modules/dnsdist',
+    date: 'November 27, 2020',
+    type: 'Collector',
+    description: (
+      <>
+        Collect per-second <code>queries</code>, <code>packets</code>, <code>responses</code>, and more metrics from DNSdist, a highly DNS-, DoS-, and abuse-aware loadbalancer.
+      </>
+    ),
+  },
+  {
+    title: <>New collector: Dnsmasq DNS Forwarder</>,
+    href: '/docs/agent/collectors/go.d.plugin/modules/dnsmasq',
+    date: 'November 27, 2020',
+    type: 'Collector',
+    description: (
+      <>
+        Gather metrics from instances of Dnsmasq, a lightweight, easy to configure DNS forwarder, including per-second data on <code>queries</code>, <code>entries</code>, <code>operations</code>, and <code>events</code>.
       </>
     ),
   },
@@ -46,50 +90,6 @@ const updates = [
     description: (
       <>
         Netdata now collects per-second <code>questions</code>, <code>events</code>, <code>entries</code>, and more metrics from one or more PowerDNS Authoritative Server instances.
-      </>
-    ),
-  },
-  {
-    title: <>New collector: PowerDNS Recursor</>,
-    href: '/docs/agent/collectors/go.d.plugin/modules/powerdns_recursor',
-    date: 'November 19, 2020',
-    type: 'Collector',
-    description: (
-      <>
-        Netdata now collects per-second <code>questions</code>, <code>queries</code>, <code>drops</code>, and more metrics from PowerDNS Recursor, a high-performance DNS recursor with built-in scripting capabilities.
-      </>
-    ),
-  },
-  {
-    title: <>Drill down with Netdata's composite charts and group by node</>,
-    href: 'https://youtu.be/DoKkFHTQciU',
-    date: 'November 18, 2020',
-    type: 'Video',
-    description: (
-      <>
-        Group by node is a new feature in Netdata Cloud's Overview dashboard that helps you drill down to find nodes that might be experiencing anomalous behavior or a full-blown incident.
-      </>
-    ),
-  },
-  {
-    title: <>Deploy Netdata with Ansible</>,
-    href: 'guides/deploy/ansible',
-    date: 'November 11, 2020',
-    type: 'Guide',
-    description: (
-      <>
-        Deploy an infrastructure monitoring solution in minutes with the Netdata Agent and Ansible. Use and customize a simple playbook for monitoring as code.
-      </>
-    ),
-  },
-  {
-    title: <>Enable notifications</>,
-    href: 'docs/monitor/enable-notifications',
-    date: 'November 4, 2020',
-    type: 'Doc',
-    description: (
-      <>
-        Learn about Netdata's alarm notification feature, including a new comprehensive list of all the notification applications/platforms that the Netdata Agent supports.
       </>
     ),
   },

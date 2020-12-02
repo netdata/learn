@@ -151,6 +151,8 @@ module.exports = {
                             'agent/collectors/go.d.plugin/modules/consul',
                             'agent/collectors/go.d.plugin/modules/coredns',
                             'agent/collectors/go.d.plugin/modules/couchdb',
+                            'agent/collectors/go.d.plugin/modules/dnsdist',
+                            'agent/collectors/go.d.plugin/modules/dnsmasq',
                             'agent/collectors/go.d.plugin/modules/dnsmasq_dhcp',
                             'agent/collectors/go.d.plugin/modules/dnsquery',
                             'agent/collectors/go.d.plugin/modules/docker_engine',
@@ -209,7 +211,9 @@ module.exports = {
                           label: 'Modules',
                           items: [
                             'agent/collectors/python.d.plugin/adaptec_raid',
+                            'agent/collectors/python.d.plugin/alarms',
                             'agent/collectors/python.d.plugin/am2320',
+                            'agent/collectors/python.d.plugin/anomalies',
                             'agent/collectors/python.d.plugin/apache',
                             'agent/collectors/python.d.plugin/beanstalk',
                             'agent/collectors/python.d.plugin/boinc',
