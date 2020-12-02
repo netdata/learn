@@ -11,8 +11,8 @@ with a Netdata Cloud account.
 No matter the method, your Netdata Cloud account is based around your email address. Netdata Cloud does not store
 passwords.
 
--   [Sign up to Netdata Cloud](https://app.netdata.cloud/sign-up?cloudRoute=/spaces)
 -   [Sign in to Netdata Cloud](https://app.netdata.cloud/sign-in?cloudRoute=/spaces)
+-   [Sign up to Netdata Cloud](https://app.netdata.cloud/sign-up?cloudRoute=/spaces)
 
 When you sign up for Netdata Cloud, you are first asked to agree to Netdata Cloud's [Privacy
 Policy](https://www.netdata.cloud/privacy/) and [Terms of Use](https://www.netdata.cloud/terms/). You are then directed
