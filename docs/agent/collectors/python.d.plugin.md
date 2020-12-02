@@ -263,5 +263,6 @@ At minimum, to be buildable and testable, the PR needs to include:
 -   A makefile for the plugin at `collectors/python.d.plugin/<module_dir>/Makefile.inc`.  Check an existing plugin for what this should look like.
 -   A line in `collectors/python.d.plugin/Makefile.am` including the above-mentioned makefile. Place it with the other plugin includes (please keep the includes sorted alphabetically).
 -   Optionally, chart information in `web/gui/dashboard_info.js`.  This generally involves specifying a name and icon for the section, and may include descriptions for the section or individual charts.
+-   Optionally, some default alarm configurations for your collector in `health/health.d/<module_name>.conf` and a line adding `<module_name>.conf` in `health/Makefile.am`.
 
 
