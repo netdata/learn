@@ -79,10 +79,6 @@ dropdown displays a chart name and the associated node's hostname.
 ![The charts dropdown in a composite
 chart](https://user-images.githubusercontent.com/1153921/99305050-7c9a3200-2810-11eb-957f-f3f800c3c9b1.png)
 
-Click on the link icon <img class="img__inline img__inline--link"
-src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to jump to
-that single-node dashboard in Netdata Cloud.
-
 ### Nodes
 
 Click on **X Nodes** to display a dropdown of nodes contributing to that composite chart. Each line displays a hostname
@@ -90,10 +86,6 @@ to help you identify which nodes contribute to a chart.
 
 ![The nodes dropdown in a composite
 chart](https://user-images.githubusercontent.com/1153921/99305049-7c019b80-2810-11eb-942a-8ebfcf236b7f.png)
-
-Click on the link icon <img class="img__inline img__inline--link"
-src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to jump to
-that single-node dashboard in Netdata Cloud.
 
 If one or more nodes can't contribute to a given chart, the definition bar shows a warning symbol plus the number of
 affected nodes, then lists them in the dropdown along with the associated error. Nodes might return errors because of
@@ -121,10 +113,20 @@ The same chart when grouped by node:
 ![The mem.committed chart when grouped by
 node](https://user-images.githubusercontent.com/1153921/99405866-75bffd80-28aa-11eb-96dc-72bbc10c690b.png)
 
-Click on **X Nodes**, then the link icon <img class="img__inline img__inline--link"
-src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to quickly
-jump to the single-node dashboard for that node to continue root cause analysis or run [Metric
-Correlations](/docs/cloud/insights/metric-correlations).
+## Jump to single-node dashboards
+
+Click on **X Charts**/**X Nodes** to display one of the two dropdowns that list the charts and nodes contributing to a
+given composite chart. For example, the nodes dropdown.
+
+![The nodes dropdown in a composite
+chart](https://user-images.githubusercontent.com/1153921/99305049-7c019b80-2810-11eb-942a-8ebfcf236b7f.png)
+
+To jump to a single-node dashboard, click on the link icon <img class="img__inline img__inline--link"
+src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> next to the
+node you're interested in.
+
+The single-node dashboard opens in a new tab. From there, you can continue to troubleshoot or run [Metric
+Correlations](/docs/cloud/insights/metric-correlations) for faster root cause analysis.
 
 ## Interacting with composite charts: pan, zoom, and resize
 

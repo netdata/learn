@@ -4,17 +4,28 @@ description: Netdata Cloud uses War Rooms to group related nodes and create insi
 custom_edit_url: null
 ---
 
-War Rooms are flexible containers for organizing nodes and viewing key metrics in real time. By adding many distributed
-nodes to a War Room, you can use different views and dashboards to view your infrastructure on a single pane of glass.
-Then, when an anomaly strikes, drill down into single-node dashboards for every granular detail you need for root cause
-analysis.
+War Rooms organize your claimed nodes and provide infrastructure-wide views using real-time metrics and visualizations.
 
-The default view for any War Room is the [Nodes view](/docs/cloud/visualize/nodes), but you can also use the
-[Overview](/docs/cloud/visualize/overview), or [create new dashboards](/docs/cloud/visualize/dashboards) from within War
-Rooms.
+Once you add nodes to a War Room, you can then use various views and dashboards to montitor the health and performance
+of your entire infrastructure from a single pane of glass. When an anomaly strikes, drill down into single-node
+dashboards for every granular detail you need for root cause analysis.
 
-![The default War Room
-Overview](https://user-images.githubusercontent.com/1153921/95790534-6559a900-0c94-11eb-8002-3da831caee93.png)
+## Available views in a War Room
+
+The default view for any War Room is the [Nodes view](/docs/cloud/visualize/nodes). The
+[Overview](/docs/cloud/visualize/overview) uses composite charts to display real-time metrics from every available node
+in a given War Room.
+
+You can create [new dashboards](/docs/cloud/visualize/dashboards) to create multi-node dashboards from any nodes you
+added to a War Room.
+
+To switch between views, use the [view dropdown](#view-dropdown).
+
+![Dropdown to navigate between War Room views](https://user-images.githubusercontent.com/1153921/100912860-3f7ba400-348e-11eb-8b31-27a596e27a7b.png)
+
+You can also jump to single-node dashboards from either the
+[Overview](/docs/cloud/visualize/overview#jump-to-single-node-dashboards) or the [Nodes
+view](/docs/cloud/visualize/nodes#jump-to-single-node-dashboards).
 
 ## The utility bar
 
@@ -103,25 +114,32 @@ as possible.
 
 You can add new War Rooms to any Space by clicking on the green plus icon **+** next the **War Rooms** heading.
 
-![Add new War Room](https://user-images.githubusercontent.com/1153921/95792870-2da13000-0c99-11eb-93cf-aab666204920.png)
+![Add new War
+Room](https://user-images.githubusercontent.com/1153921/100913229-b749ce80-348e-11eb-9ebe-5db40df550d6.png)
 
 A new panel slides in and prompts you to name the new War Room, give it a description, and choose whether it's public or
 private. Anyone in your Space can join public War Rooms, but can only join private War Rooms with an invitation.
 
 ### Manage War Rooms
 
-If you're an administrator of War Room, you can change its settings. Use the top navigation to click on the War Room's
-name, then **Manage War Room** to open the configuration panel.
+If you're an administrator of War Room, you can change its settings. Click on the War Room's name in the top navigation
+to open a dropdown of options.
 
-In the **Nodes** tab, click the green plus icon **+** to add a claimed node to the War Room. Click on the 3-dot icon
-**⋮** next to any claimed node to remove it from the War Room.
+![Managing a War
+Room](https://user-images.githubusercontent.com/1153921/100912857-3ee30d80-348e-11eb-8bb6-e54926ba3bc0.png)
 
-In the **Users** tab, see which users from your Space are allowed to view the War Room. Click the green plus icon **+**
-and look under the **Space users eligible to join this war room** heading to find existing users you can add to the War
-Room. If they don't appear in that list, you need to [invite them](/docs/cloud/manage/invite-your-team) first.
+To _change a War Room's name, description, or public/private status_, click on **Manage War Room**.
 
-In the **War Rom** tab, change the War Room's name, description, or public/private status. You can also delete the War
-Room with the **Delete** button.
+To _add a claimed node_ to a War Room, click on **Add Nodes**. Choose any claimed node you want to add to this War Room
+by clicking on the checkbox next to its hostname, then click **+ Add** at the top of the panel.
+
+To _view or remove nodes_ in a War Room, click on **List Nodes**. To remove a node from the curernt War Room, click on
+the **🗑** icon. Removing a node from a War Room does not remove it from your Space.
+
+To _add existing users to a War Room_, click on **Add Users**. See our [invite doc](/docs/cloud/manage/invite-your-team)
+for details on inviting new users to your Space in Netdata Cloud.
+
+To _list users in a War Room_, click on **List Users**. You can also add new users with the **+** button.
 
 ## What's next?
 

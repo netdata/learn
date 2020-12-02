@@ -7,6 +7,7 @@ module.exports = {
   organizationName: 'netdata',
   projectName: 'netdata',
   onBrokenLinks: 'error',
+  onBrokenMarkdownLinks: 'warn',
   presets: [
     [
       '@docusaurus/preset-classic',
