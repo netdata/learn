@@ -1,21 +1,24 @@
 ---
-title: Enable centralized alarm notifications
+title: Alarm notifications
 description: Configure Cloud to send notifications to your team whenever any node on your infrastructure triggers an alarm.
 custom_edit_url: null
 ---
 
-Netdata Cloud can send notifications to your team whenever a node triggers an alarm. By enabling notifications, you
-ensure no alarm, on any node in your infrastructure, goes unnoticed by you or your team.
+Netdata Cloud can send centralized alarm notifications to your team whenever a node enters a warning, critical, or
+unreachable state. By enabling notifications, you ensure no alarm, on any node in your infrastructure, goes unnoticed by
+you or your team.
 
 Netdata Cloud currently supports email notifications. We're working on additional endpoints and functionality.
 
-If you are a new Netdata Cloud user, alarm notifications are already enabled. If you are an existing Netdata Cloud user,
-you need to both enable notifications for your Space, and for your user account. See the
+You must enable alarm notifications on both your Space and your user account. See the
 [Space](#manage-alarm-notifications-for-a-space) and [user](#manage-alarm-notifications-per-user) sections below for
 details.
 
-> Centralized dispatch of alarm notifications from Netdata Cloud is a independent process from [Agent
+> ❕ Centralized alarm notifications from Netdata Cloud is a independent process from [Agent
 notifications](/docs/agent/monitor/enable-notifications). You can enable one or the other, or both, based on your needs.
+However, the alarms you see in Netdata Cloud are based on those received from the Netdata Agent running on your nodes.
+If you want to tweak or add new alarms that you see in Netdata Cloud, and receive via centralized alarm notifications,
+you must [configure](/docs/monitor/configure-alarms) each node's health watchdog.
 
 ## Manage alarm notifications for a Space
 
@@ -87,5 +90,5 @@ Netdata Cloud's alarm notifications feature leverages the alarms configuration o
 you'd like to tweak any of these alarms, or even add new ones based on your needs, read our [health
 quickstart](/docs/monitor/configure-alarms).
 
-You can also [view active alarms](/docs/cloud/monitor/alarms) in Netdata Cloud for an instant visualization of the
+You can also [view active alarms](/docs/cloud/monitoring/alarms) in Netdata Cloud for an instant visualization of the
 health of your infrastructure.
