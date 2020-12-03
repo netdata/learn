@@ -6,7 +6,7 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'netdata',
   projectName: 'netdata',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'error',
   onBrokenMarkdownLinks: 'warn',
   presets: [
     [
