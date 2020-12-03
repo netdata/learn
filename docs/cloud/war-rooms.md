@@ -12,12 +12,11 @@ dashboards for every granular detail you need for root cause analysis.
 
 ## Available views in a War Room
 
-The default view for any War Room is the [Nodes view](/docs/cloud/visualize/nodes). The
-[Overview](/docs/cloud/visualize/overview) uses composite charts to display real-time metrics from every available node
-in a given War Room.
-
-You can create [new dashboards](/docs/cloud/visualize/dashboards) to create multi-node dashboards from any nodes you
-added to a War Room.
+The default view for any War Room is the [Overview](/docs/cloud/visualize/overview), which uses composite charts to
+display real-time metrics from every available node in a given War Room. The [Nodes view](/docs/cloud/visualize/nodes)
+helps you view key metrics and alarm status from all your nodes at a glance. Finally, use
+[Dashboards](/docs/cloud/visualize/dashboards) to build rich, targeted interfaces for your infrastructure using any
+number of charts from any number of nodes.
 
 To switch between views, use the [view dropdown](#view-dropdown).
 
