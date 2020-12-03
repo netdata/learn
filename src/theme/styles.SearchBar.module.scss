@@ -49,7 +49,7 @@
 }
 
 .searchContainer {
-  z-index: 300;
+  z-index: 300 !important;
   position: fixed;
   top: 0;
   left: 0;
@@ -60,6 +60,10 @@
   p {
     color: white;
   }
+}
+
+.searchZ {
+  z-index: 300 !important;
 }
 
 .searchModal {
