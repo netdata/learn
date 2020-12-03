@@ -264,8 +264,12 @@ html[data-theme='dark'] {
  * Search
  */
 
+#__docusaurus {
+  z-index: 1;
+}
+
 .searchZ {
-  z-index: 300 !important;
+  z-index: 2 !important;
 }
 
 body.search-open {

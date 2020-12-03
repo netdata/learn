@@ -70,6 +70,7 @@ const SearchBar = (props) => {
         createPortal(
           <div 
             className={clsx('searchZ', styles.searchContainer)}
+            style={{ zIndex: '300' }}
             onMouseDown={onClose}>
             <div onClick={null} className={styles.searchModal}>
               
