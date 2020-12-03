@@ -264,6 +264,14 @@ html[data-theme='dark'] {
  * Search
  */
 
+#__docusaurus {
+  z-index: 1;
+}
+
+.searchZ {
+  z-index: 2 !important;
+}
+
 body.search-open {
   overflow: hidden !important;
 }
