@@ -264,6 +264,10 @@ html[data-theme='dark'] {
  * Search
  */
 
+.searchZ {
+  z-index: 300 !important;
+}
+
 body.search-open {
   overflow: hidden !important;
 }

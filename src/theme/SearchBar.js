@@ -69,7 +69,7 @@ const SearchBar = (props) => {
       {isOpen &&
         createPortal(
           <div 
-            className={clsx('searchClose', styles.searchContainer, styles.searchZ)}
+            className={clsx('searchZ', styles.searchContainer)}
             onMouseDown={onClose}>
             <div onClick={null} className={styles.searchModal}>
               
