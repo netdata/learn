@@ -67,6 +67,7 @@ html {
   --ifm-spacing-horizontal: 2rem;
 
   /* Base fonts */
+  font-family: 'IBM Plex Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   --ifm-font-size-base: 16px;
   --ifm-line-height-base: 1.6;
   --ifm-font-color-base: #1d1d40;
@@ -688,6 +689,10 @@ html[data-theme='dark'] code {
 .markdown {
   font-size: 17px;
   --ifm-heading-vertical-rhythm-bottom: 1;
+
+  strong {
+    font-weight: 500;
+  }
 
   h2 code, h3 code, h4 code, h5 code {
     font-size: 75%;
