@@ -4,11 +4,10 @@ description: Invite your entire SRE, DevOPs, or ITOps team to Netdata Cloud to g
 custom_edit_url: null
 ---
 
-Invite new users by clicking on your Space's name in the top navigation, and then **Invite more users**, to open the
-invitation panel.
+Invite new users to your Space by clicking on **Invite Users** in the left-hand navigation.
 
 ![Opening the invitation panel in Netdata
-Cloud](https://user-images.githubusercontent.com/1153921/97762958-531aa000-1ac7-11eb-88b9-2c943feb4897.png)
+Cloud](https://user-images.githubusercontent.com/1153921/101098760-b5f8ce80-3580-11eb-9c94-ceb58ec4bc4d.png)
 
 Enter the email addresses for the users you want to invite to your Space. You can enter any number of email addresses,
 separated by a comma, to send multiple invitations at once.
@@ -16,8 +15,8 @@ separated by a comma, to send multiple invitations at once.
 Next, choose the War Rooms you want to invite these users to. Once logged in, these users are not restricted only to
 these War Rooms. They can be invited to others, or join any that are public.
 
-Click the **Send** button to send an email invitation, which will prompt to [sign in](/docs/cloud/manage/sign-in) and
-join your Space.
+Click the **Send** button to send an email invitation, which will prompt them to [sign up](/docs/cloud/manage/sign-in)
+and join your Space.
 
 ![The inviation panel in Netdata
 Cloud](https://user-images.githubusercontent.com/1153921/97762959-53b33680-1ac7-11eb-8e9d-f3f4a14c0028.png)
