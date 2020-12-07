@@ -73,7 +73,7 @@ The time picker helps you select precise timeframes you want to investigate furt
 view, single-node dashboards, and new dashboards you might have created.
 
 ![The War Room time
-picker](https://user-images.githubusercontent.com/1153921/95792666-d8fdb500-0c98-11eb-9fe8-23838d67b666.png)
+picker](https://user-images.githubusercontent.com/1153921/101411575-7262d500-389e-11eb-916e-feed2b026a81.png)
 
 Use the Quick Selector to show metrics from the last 5 minutes, 15 minutes, 30 minutes, 6 hours, 12 hours, or 7
 days.
