@@ -107,3 +107,11 @@
 [[redirects]]
   from = "/docs/cloud/collaborate/invite-your-team"
   to = "/docs/cloud/manage/invite-your-team"
+
+[[redirects]]
+  from = "/docs/configure/spaces-war-rooms"
+  to = "/docs/quickstart/infrastructure"
+
+[[redircets]]
+  from = "/docs/configure/invite-your-team"
+  to = "/docs/quickstart/infrastructure"
