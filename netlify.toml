@@ -113,5 +113,5 @@
   to = "/docs/quickstart/infrastructure"
 
 [[redircets]]
-  from = "/docs/configure/invite-your-team"
+  from = "/docs/configure/invite-collaborate"
   to = "/docs/quickstart/infrastructure"
