@@ -9,6 +9,12 @@ import styles from './styles.module.scss';
 
 const GuideItems = [
   {
+    title: "Monitor any process in real-time with Netdata",
+    href: "/guides/monitor/process",
+    category: "monitor",
+    description: "Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions."
+  },
+  {
     title: "Monitor a Kubernetes (k8s) cluster with Netdata",
     href: "/guides/monitor/kubernetes-k8s-netdata",
     category: "collect-monitor",
@@ -25,12 +31,6 @@ const GuideItems = [
     href: "/guides/monitor/pi-hole-raspberry-pi",
     category: "collect-monitor",
     description: "Netdata helps you monitor and troubleshoot all kinds of devices and the applications they run, including IoT devices like the Raspberry Pi and applications like Pi-hole."
-  },
-  {
-    title: "Monitor any process in real-time with Netdata",
-    href: "/guides/monitor/process",
-    category: "monitor",
-    description: "Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions."
   },
   {
     title: "How to optimize the Netdata Agent's performance",
