@@ -28,6 +28,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Monitor any process in real-time with Netdata</>,
+    href: '/guides/monitor/process',
+    date: 'December 9, 2020',
+    type: 'Guide',
+    description: (
+      <>
+        Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions.
+      </>
+    ),
+  },
+  {
     title: <>New collector: Anomalies</>,
     href: '/docs/agent/collectors/python.d.plugin/anomalies',
     date: 'December 2, 2020',
@@ -79,17 +90,6 @@ const updates = [
     description: (
       <>
         Gather metrics from instances of Dnsmasq, a lightweight, easy to configure DNS forwarder, including per-second data on <code>queries</code>, <code>entries</code>, <code>operations</code>, and <code>events</code>.
-      </>
-    ),
-  },
-  {
-    title: <>New collector: PowerDNS Authoritative Server</>,
-    href: '/docs/agent/collectors/go.d.plugin/modules/powerdns',
-    date: 'November 20, 2020',
-    type: 'Collector',
-    description: (
-      <>
-        Netdata now collects per-second <code>questions</code>, <code>events</code>, <code>entries</code>, and more metrics from one or more PowerDNS Authoritative Server instances.
       </>
     ),
   },
