@@ -30,7 +30,7 @@ const updates = [
   {
     title: <>Monitor any process in real-time with Netdata</>,
     href: '/guides/monitor/process',
-    date: 'December 9, 2020',
+    date: 'December 8, 2020',
     type: 'Guide',
     description: (
       <>
