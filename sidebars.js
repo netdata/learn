@@ -38,8 +38,6 @@ module.exports = {
           type: 'category',
           label: 'Configure',
           items: [
-            'configure/spaces-war-rooms',
-            'configure/invite-collaborate',
             'configure/nodes',
             'configure/secure-nodes',
           ]
