@@ -11,7 +11,7 @@ const GuideItems = [
   {
     title: "Monitor any process in real-time with Netdata",
     href: "/guides/monitor/process",
-    category: "monitor",
+    category: "collect-monitor",
     description: "Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions."
   },
   {
