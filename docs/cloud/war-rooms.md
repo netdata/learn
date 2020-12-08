@@ -75,8 +75,7 @@ view, single-node dashboards, and new dashboards you might have created.
 ![The War Room time
 picker](https://user-images.githubusercontent.com/1153921/101411575-7262d500-389e-11eb-916e-feed2b026a81.png)
 
-Use the Quick Selector to show metrics from the last 5 minutes, 15 minutes, 30 minutes, 6 hours, 12 hours, or 7
-days.
+Use the Quick Selector to show metrics from the last 5 minutes, 15 minutes, 30 minutes, 2 hours, 6 hours, or 12 hours.
 
 Beneath the Quick Selector is an input field and dropdown you use in combination to select a specific timeframe of
 minutes, hours, days, or months. Enter a number and choose the appropriate unit of time.
