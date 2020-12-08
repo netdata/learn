@@ -51,7 +51,7 @@ Click **Install** on the Software Update popup window that appears. Then, use th
 to install some of Netdata's prerequisites.
 
 ```bash
-brew install ossp-uuid autoconf automake pkg-config libuv lz4 json-c openssl@1.1
+brew install ossp-uuid autoconf automake pkg-config libuv lz4 json-c openssl@1.1 libtool
 ```
 
 If you want to use the [database engine](/docs/agent/database/engine) to store your metrics, you need to download
