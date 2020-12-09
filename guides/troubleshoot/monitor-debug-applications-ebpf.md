@@ -243,8 +243,8 @@ find on the local Agent dashboard. Or, [create new dashboards](/docs/visualize/c
 from any number of distributed nodes to see how your application interacts with multiple Linux kernels on multiple Linux
 systems. 
 
-Now that you can see these metrics in Netdata Cloud, you can [invite your team](/docs/cloud/manage/invite-your-team) 
-and share your findings with others.
+Now that you can see eBPF metrics in Netdata Cloud, you can [invite your
+team](/docs/cloud/manage/invite-your-team) and share your findings with others.
 
 ## What's next?
 
