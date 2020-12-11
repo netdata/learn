@@ -138,6 +138,7 @@ module.exports = {
                       label: 'Go',
                       items: [
                         'agent/collectors/go.d.plugin',
+                        'agent/collectors/go.d.plugin/docs/how-to-write-a-module',
                         {
                           type: 'category',
                           label: 'Modules',
