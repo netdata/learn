@@ -28,6 +28,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Interact with dashboards and charts</>,
+    href: '/docs/visualize/interact-dashboards-charts#choose-timeframes-to-visualize',
+    date: 'December 15, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Both our local Agent and Netdata Cloud dashboards are now even easier to use thanks to parallel time &ampp; date pirkcers that help you drill down and discover root causes.
+      </>
+    ),
+  },
+  {
     title: <>Monitor any process in real-time with Netdata</>,
     href: '/guides/monitor/process',
     date: 'December 8, 2020',
@@ -81,18 +92,7 @@ const updates = [
         Collect per-second <code>queries</code>, <code>packets</code>, <code>responses</code>, and more metrics from DNSdist, a highly DNS-, DoS-, and abuse-aware loadbalancer.
       </>
     ),
-  },
-  {
-    title: <>New collector: Dnsmasq DNS Forwarder</>,
-    href: '/docs/agent/collectors/go.d.plugin/modules/dnsmasq',
-    date: 'November 27, 2020',
-    type: 'Collector',
-    description: (
-      <>
-        Gather metrics from instances of Dnsmasq, a lightweight, easy to configure DNS forwarder, including per-second data on <code>queries</code>, <code>entries</code>, <code>operations</code>, and <code>events</code>.
-      </>
-    ),
-  },
+  }
 ]
 
 function UpdateBox({title, href, date, type, description}) {
