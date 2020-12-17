@@ -590,6 +590,7 @@ module.exports = {
               type: 'category',
               label: 'Monitoring',
               items: [
+                'cloud/monitoring/notifications',
                 'cloud/monitoring/alarms',
               ]
             },

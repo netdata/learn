@@ -1,5 +1,5 @@
 ---
-title: View active alarms
+title: Alarms
 description: Track the health of your infrastructure in one place by taking advantage of the powerful health monitoring watchdog running on every node.
 custom_edit_url: null
 ---
@@ -44,6 +44,9 @@ health entities based on the specific needs of your infrastructure. By taking ch
 ensure Netdata Cloud always delivers the most relevant alarms about the well-being of your nodes.
 
 ## What's next?
+
+To stay notified of active alarms, enable [centralized alarm notifications](/docs/cloud/monitor/notifications) from
+Netdata Cloud.
 
 If you're through with setting up alarms, it might be time to [invite your
 team](/docs/cloud/manage/invite-your-team).
