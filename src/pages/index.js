@@ -28,13 +28,24 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Centralized alarm notifications</>,
+    href: '/docs/cloud/monitoring/notifications',
+    date: 'December 18, 2020',
+    type: 'Doc',
+    description: (
+      <>
+        Netdata Cloud can send centralized alarm notifications to your team whenever a node enters a warning, critical, or unreachable state.
+      </>
+    ),
+  },
+  {
     title: <>Interact with dashboards and charts</>,
     href: '/docs/visualize/interact-dashboards-charts#choose-timeframes-to-visualize',
     date: 'December 15, 2020',
     type: 'Doc',
     description: (
       <>
-        Both our local Agent and Netdata Cloud dashboards are now even easier to use thanks to parallel time &ampp; date pirkcers that help you drill down and discover root causes.
+        Both our local Agent and Netdata Cloud dashboards are now even easier to use thanks to parallel time &amp; date pickers that help you drill down and discover root causes.
       </>
     ),
   },
@@ -82,17 +93,6 @@ const updates = [
       </>
     ),
   },
-  {
-    title: <>New collector: DNSdist</>,
-    href: '/docs/agent/collectors/go.d.plugin/modules/dnsdist',
-    date: 'November 27, 2020',
-    type: 'Collector',
-    description: (
-      <>
-        Collect per-second <code>queries</code>, <code>packets</code>, <code>responses</code>, and more metrics from DNSdist, a highly DNS-, DoS-, and abuse-aware loadbalancer.
-      </>
-    ),
-  }
 ]
 
 function UpdateBox({title, href, date, type, description}) {
