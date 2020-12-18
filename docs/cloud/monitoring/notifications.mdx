@@ -8,11 +8,14 @@ Netdata Cloud can send centralized alarm notifications to your team whenever a n
 unreachable state. By enabling notifications, you ensure no alarm, on any node in your infrastructure, goes unnoticed by
 you or your team.
 
+If a node is getting disconnected often or has many alarms, we protect you and your team from alarm fatigue by 
+sending you a flood protection notification. Getting one of these notifications is a good signal of health or performance
+issues on that node.
+
 Netdata Cloud currently supports email notifications. We're working on additional endpoints and functionality.
 
-You must enable alarm notifications on both your Space and your user account. See the
-[Space](#manage-alarm-notifications-for-a-space) and [user](#manage-alarm-notifications-per-user) sections below for
-details.
+Admins must enable alarm notifications for their [Space(s)]((#manage-alarm-notifications-for-a-space). All users in a 
+Space can then personalize their notifications settings from within their [account menu](#manage-alarm-notifications-per-user).
 
 > ❕ Centralized alarm notifications from Netdata Cloud is a independent process from [Agent
 notifications](/docs/agent/monitor/enable-notifications). You can enable one or the other, or both, based on your needs.
@@ -34,8 +37,8 @@ Click on the toggle to enable or disable a notification method.
 
 You, and other individual users in your Space, can also enable and disable notification methods.
 
-Click on your profile icon at the top-right of the Cloud UI, then **Profile** in the dropdown. Click on the
-**Notifications** tab in the panel that appears.
+Click on your profile icon at the top-right of the Cloud UI to open your account menu, then **Profile** in the dropdown. 
+Click on the **Notifications** tab in the panel that appears.
 
 ![The user-level management panel for alarm
 notifications](https://user-images.githubusercontent.com/1153921/99722015-40174200-2a6d-11eb-837e-3de761127ca7.png)
