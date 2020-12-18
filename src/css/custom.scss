@@ -721,11 +721,13 @@ html[data-theme='dark'] code {
       margin: 0;
     }
 
-    &.img__inline {
+    &.img__inline,
+    &.img-inline {
       position: relative;
       top: 4px;
       display: inline-block;
       margin: 0;
+      box-shadow: none;
     }
 
     &.img__inline--link {
