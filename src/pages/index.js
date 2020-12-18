@@ -39,6 +39,17 @@ const updates = [
     ),
   },
   {
+    title: <>New collector: Couchbase</>,
+    href: '/docs/agent/collectors/go.d.plugin/modules/couchbase',
+    date: 'December 18, 2020',
+    type: 'Collector',
+    description: (
+      <>
+        Collect per-second metrics from any number of Couchbase instances, including operations, disk/data/memory used per bucket, and disk fetches.
+      </>
+    ),
+  },
+  {
     title: <>Interact with dashboards and charts</>,
     href: '/docs/visualize/interact-dashboards-charts#choose-timeframes-to-visualize',
     date: 'December 15, 2020',
@@ -79,17 +90,6 @@ const updates = [
     description: (
       <>
         While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
-      </>
-    ),
-  },
-  {
-    title: <>New collector: Alarms</>,
-    href: '/docs/agent/collectors/python.d.plugin/alarms',
-    date: 'November 30, 2020',
-    type: 'Collector',
-    description: (
-      <>
-        This collector creates an <strong>Alarms</strong> menu with one line plot showing the alarm states of a Netdata Agent over time. 
       </>
     ),
   },
