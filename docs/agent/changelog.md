@@ -1,5 +1,13 @@
 
 
+## [v1.28.0](https://github.com/netdata/netdata/tree/v1.28.0) (2020-12-18)
+
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.27.0...v1.28.0)
+
+**Merged pull requests:**
+
+- Fix locking after on\_connect failure [\#10401](https://github.com/netdata/netdata/pull/10401) ([stelfrag](https://github.com/stelfrag))
+
 ## [v1.27.0](https://github.com/netdata/netdata/tree/v1.27.0) (2020-12-17)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.26.0...v1.27.0)
@@ -84,7 +92,6 @@
 - Fix chart filtering [\#10218](https://github.com/netdata/netdata/pull/10218) ([vlvkobal](https://github.com/vlvkobal))
 - Don't stop Prometheus remote write collector when data is not available for dimension formatting [\#10217](https://github.com/netdata/netdata/pull/10217) ([vlvkobal](https://github.com/vlvkobal))
 - Fix coverity issues [\#10216](https://github.com/netdata/netdata/pull/10216) ([vlvkobal](https://github.com/vlvkobal))
-- installer: update go.d.plugin version to v0.25.0 [\#10215](https://github.com/netdata/netdata/pull/10215) ([ilyam8](https://github.com/ilyam8))
 - Fixed bug in auto-updater for FreeBSD \(\#10198\) [\#10204](https://github.com/netdata/netdata/pull/10204) ([abrbon](https://github.com/abrbon))
 - New ebpf release [\#10202](https://github.com/netdata/netdata/pull/10202) ([thiagoftsm](https://github.com/thiagoftsm))
 - Add guide: Deploy Netdata with Ansible [\#10199](https://github.com/netdata/netdata/pull/10199) ([joelhans](https://github.com/joelhans))
