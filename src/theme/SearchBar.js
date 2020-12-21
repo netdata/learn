@@ -111,7 +111,9 @@ const SearchBar = (props) => {
                                       <span className={clsx(styles.resultFlag)}>Learn / Docs</span>
                                       <h3>{r.title.raw}</h3>
                                       <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
-                                      <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
+                                      {r.description && 
+                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
+                                      }
                                     </Link>
                                   )
                                 } else if (r.url.raw.includes('netdata.cloud/blog') == true) {
@@ -120,6 +122,9 @@ const SearchBar = (props) => {
                                       <span className={clsx(styles.resultFlag)}>Blog</span>
                                       <h3>{r.title.raw}</h3>
                                       <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
+                                      {r.description && 
+                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
+                                      }
                                     </Link>
                                   )
                                 } else if (r.url.raw.includes('netdata.cloud') == true) {
@@ -128,7 +133,9 @@ const SearchBar = (props) => {
                                       <span className={clsx(styles.resultFlag)}>Netdata.Cloud</span>
                                       <h3>{r.title.raw}</h3>
                                       <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
-                                      <p>{r.description.raw}</p>
+                                      {r.description && 
+                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
+                                      }
                                     </Link>
                                   )
                                 } else if (r.url.raw.includes('github.com') == true) {
@@ -137,6 +144,9 @@ const SearchBar = (props) => {
                                       <span className={clsx(styles.resultFlag)}>GitHub</span>
                                       <h3>{r.title.raw}</h3>
                                       <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
+                                      {r.description && 
+                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
+                                      }
                                     </Link>
                                   )
                                 }
