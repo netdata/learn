@@ -722,7 +722,8 @@ html[data-theme='dark'] code {
     }
 
     &.img__inline,
-    &.img-inline {
+    &.img-inline,
+    &.image-inline {
       position: relative;
       top: 4px;
       display: inline-block;
