@@ -125,10 +125,10 @@ function DocItem(props) {
                   <h1 className={styles.docTitle}>{title}</h1>
                 </header>
               )}
-              {/* END CUSTOMIZATION */}
-              <div className="markdown">
+              <div className="markdown" data-swiftype-index="true">
                 <DocContent />
               </div>
+              {/* END CUSTOMIZATION */}
             </article>
             {/* BEGIN CUSTOMIZATION */}
             {isGuide &&

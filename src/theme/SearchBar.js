@@ -108,36 +108,51 @@ const SearchBar = (props) => {
                                 if (r.url.raw.includes('learn.netdata.cloud') == true) {
                                   return (
                                     <Link onClick={onClose} to={r.url.raw.split('https://learn.netdata.cloud')[1]}>
-                                      <h3>{r.title.raw} <span className={clsx(styles.resultFlag)}>Learn / Docs</span></h3>
+                                      <span className={clsx(styles.resultFlag)}>Learn / Docs</span>
+                                      <h3>{r.title.raw}</h3>
                                       <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
+                                      {r.description && 
+                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
+                                      }
                                     </Link>
                                   )
                                 } else if (r.url.raw.includes('netdata.cloud/blog') == true) {
                                   return (
                                     <Link href={r.url.raw}>
-                                      <h3>{r.title.raw} <span className={clsx(styles.resultFlag)}>Blog</span></h3>
+                                      <span className={clsx(styles.resultFlag)}>Blog</span>
+                                      <h3>{r.title.raw}</h3>
                                       <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
+                                      {r.description && 
+                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
+                                      }
                                     </Link>
                                   )
                                 } else if (r.url.raw.includes('netdata.cloud') == true) {
                                   return (
                                     <Link href={r.url.raw}>
-                                      <h3>{r.title.raw} <span className={clsx(styles.resultFlag)}>Netdata.Cloud</span></h3>
+                                      <span className={clsx(styles.resultFlag)}>Netdata.Cloud</span>
+                                      <h3>{r.title.raw}</h3>
                                       <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
+                                      {r.description && 
+                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
+                                      }
                                     </Link>
                                   )
                                 } else if (r.url.raw.includes('github.com') == true) {
                                   return (
                                     <Link href={r.url.raw}>
-                                      <h3>{r.title.raw} <span className={clsx(styles.resultFlag)}>GitHub</span></h3>
+                                      <span className={clsx(styles.resultFlag)}>GitHub</span>
+                                      <h3>{r.title.raw}</h3>
                                       <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
+                                      {r.description && 
+                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
+                                      }
                                     </Link>
                                   )
                                 }
                               })()}
                             </div>
                           ))}
-
                           <Paging />
                         </div>
                         <footer className={styles.searchFooter}>
