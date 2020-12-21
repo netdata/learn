@@ -87,6 +87,7 @@ html {
 
   /* Buttons */
   --ifm-button-background-color: var(--ifm-color-primary);
+  --ifm-button-border-width: 1px;
   --ifm-button-border-radius: 2px;
   --ifm-button-font-weight: 500;
   --ifm-button-size-multiplier: 2;
@@ -289,6 +290,11 @@ body.search-open {
   border: 1px solid var(--ifm-color-primary);
   border-radius: var(--ifm-global-radius);
 
+  &:focus {
+    border: 1px solid var(--ifm-font-color-base);
+    outline: none;
+  }
+
   @media (max-width: 500px) {
     font-size: 95%;
   }
@@ -296,10 +302,20 @@ body.search-open {
 
 .sui-search-box__submit {
   position: absolute;
-  right: 0;
+  right: 1px;
   top: 1px;
   height: 67px;
   font-size: 110%;
+  border-color: var(--ifm-color-primary);
+
+  &:hover {
+    background: var(--ifm-color-primary-lightest);
+    border-color: var(--ifm-color-primary-lightest);
+  }
+
+  &:focus {
+    outline: none;
+  }
 
   @media (max-width: 500px) {
     height: 63px;
@@ -332,7 +348,7 @@ body.search-open {
     padding: 1rem;
     margin-bottom: -1rem;
     font-family: var(--ifm-font-family-monospace);
-    font-size: 85%;
+    font-size: 95%;
     font-weight: 700;
   }
 
@@ -346,6 +362,10 @@ body.search-open {
         cursor: pointer;
         color: var(--ifm-color-primary);
       }
+    }
+
+    li + li {
+      margin-top: 0.4rem;
     }
   }
 }
@@ -588,14 +608,14 @@ html[data-theme='dark'] a:hover {
 
 /* Buttons */
 .button {
-  border: 2px solid var(--ifm-color-primary);
+  // border: 2px solid var(--ifm-color-primary);
   font-family: var(--ifm-font-family-base);
   font-weight: 500;
 }
 
-.button:hover {
-  border: 2px solid var(--ifm-color-primary-lightest);
-}
+// .button:hover {
+//   // border: 2px solid var(--ifm-color-primary-lightest);
+// }
 
 .button:active {
   background: var(--ifm-color-primary-lightest);
@@ -603,13 +623,13 @@ html[data-theme='dark'] a:hover {
 
 .button.button--secondary {
   border: 1px solid transparent;
-  box-shadow: 0 0 0 1px var(--ifm-color-primary);
+  // box-shadow: 0 0 0 1px var(--ifm-color-primary);
   background: white;
   color: var(--ifm-color-primary);
 }
 
 .button.button--secondary:hover {
-  box-shadow: 0 0 0 1px var(--ifm-color-primary-lightest);
+  // box-shadow: 0 0 0 1px var(--ifm-color-primary-lightest);
   color: var(--ifm-color-primary-lightest);
 }
 

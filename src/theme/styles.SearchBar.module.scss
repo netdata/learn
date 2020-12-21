@@ -152,35 +152,46 @@
     margin-bottom: 1rem;
   }
 
-  a:hover {
-    text-decoration: none;
-    background: var(--ifm-color-primary);
+  &:hover {
+    
+    border-color: var(--ifm-color-primary-lightest);
+    transform: scale(1.02);
+    transition: ease-in-out all 0.15s;
+
+    a { text-decoration: none;   }
   }
 
   .resultFlag {
     display: inline-block;
-    margin-bottom: 0.4rem;
-    margin-left: 0.4rem;
+    margin-bottom: 0.6rem;
+    // margin-left: 0.4rem;
     padding: 0.1rem 0.2rem;
 
     background: var(--ifm-color-emphasis-700);
     color: white;
 
-    font-size: 50%;
+    font-size: 60%;
     text-transform: uppercase;
     border-radius: 2px;
   }
 
   h3 {
-    margin-bottom: 0;
+    margin-bottom: 0.4rem;
   }
 
-  p {
-    margin-bottom: 0;
+  .resultUrl {
+    margin-bottom: 0.6rem;
 
     color: var(--ifm-font-color-base);
     font-family: var(--ifm-font-family-monospace);
     font-size: 75%;
+  }
+
+  .resultDescription {
+    color: var(--ifm-font-color-base);
+    font-weight: 400;
+    font-size: 95%;
+    margin-bottom: 0;
   }
 }
 
