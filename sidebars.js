@@ -9,7 +9,7 @@ module.exports = {
   learn: [
     {
       type: 'category',
-      label: 'Learn',
+      label: 'Netdata',
       collapsed: false,
       items: [
         {
@@ -97,7 +97,7 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Agent',
+          label: 'Netdata Agent',
           items: [
             'agent',
             'agent/getting-started',
@@ -573,7 +573,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Cloud',
+          label: 'Netdata Cloud',
           items: [
             'cloud',
             'cloud/get-started',
