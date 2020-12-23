@@ -52,14 +52,25 @@ function DocItem(props) {
   // See https://github.com/facebook/docusaurus/issues/3362
 
   const showVersionBadge = versions.length > 1;
+
+  // BEGIN CUSTOMIZATION 
+  // Figure out whether the document in question is a reference document for
+  // either the Netdata Agent or Netdata Cloud. If it is, add in a reference to
+  // that product in the page title.
+  let productRef = ``
+  if (permalink.includes('/docs/cloud')) {
+    productRef = `· Netdata Cloud`
+  } else if (permalink.includes('/docs/agent')) {
+    productRef = `· Netdata Agent`
+  }
+
   const metaTitle = title
-    ? `${title} ${titleDelimiter} ${siteTitle}`
+    ? `${title} ${productRef} ${titleDelimiter} ${siteTitle}`
     : siteTitle;
   const metaImageUrl = useBaseUrl(metaImage, {
     absolute: true,
   });
 
-  // BEGIN CUSTOMIZATION
   const isGuide = permalink.includes('/guides/');
   // END CUSTOMIZATION
 

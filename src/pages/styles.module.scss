@@ -23,7 +23,6 @@
   }
 
   .heroText {
-    z-index: 100;
     position: relative;
 
     .heroTagline {
@@ -53,7 +52,6 @@
   }
 
   .heroImage {
-    z-index: 10;
     position: absolute;
     top: calc(-6rem - 68px);
     right: -300px;
