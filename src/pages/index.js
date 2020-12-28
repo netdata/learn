@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import SVG from 'react-inlinesvg';
 
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import { Redirect } from '@docusaurus/router';
 import BrowserOnly from '@docusaurus/BrowserOnly';
@@ -116,6 +117,9 @@ function Home() {
   
   return ( 
     <>
+      <Head>
+        <meta property="og:type" content="website" />
+      </Head>
       {/* Redirect to `/docs/get` if someone arrives at `learn.netdata.cloud/#get`/`learn.netdata.cloud/#installation` from www or another source. */}
       <BrowserOnly>
         {() => {
@@ -125,8 +129,8 @@ function Home() {
         }}
       </BrowserOnly>
       <Layout
-        // title={`All your monitoring education in one place. ${siteConfig.title}`}
-        description="The home for learning about Netdata\'s health monitoring and performance troubleshooting toolkit. Comprehensive documentation and thoughtful guides.">
+        description="The home for learning about Netdata's health monitoring and performance troubleshooting toolkit. Comprehensive documentation and thoughtful guides."
+        >
         <header className={clsx(styles.hero)}>
           <div className={clsx('container')}>
             <div className={clsx('row')}>

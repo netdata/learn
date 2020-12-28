@@ -93,6 +93,7 @@ function DocItem(props) {
         )}
         {permalink && <meta property="og:url" content={siteUrl + permalink} />}
         {permalink && <link rel="canonical" href={siteUrl + permalink} />}
+        <meta property="og:type" content="article" />
       </Head>
       {/* BEGIN CUSTOMIZATION */}
       {isGuide && (
