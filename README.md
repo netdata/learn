@@ -59,6 +59,16 @@ To shell into a running container.
 docker-compose exec docusaurus /bin/sh
 ```
 
+### Swizzling components
+
+On occasion, you need to "swizzle" a default component from Docusaurus to add customization.
+
+For example, to swizzle the `DocItem` component:
+
+```
+npm run swizzle @docusaurus/theme-classic DocItem -- --danger 
+```
+
 ## Updating Dependencies
 
 Any time you change your package's dependencies, you must rebuild.
