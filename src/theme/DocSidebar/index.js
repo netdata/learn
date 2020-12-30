@@ -4,16 +4,18 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React, {useState, useCallback, useEffect, useRef} from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import clsx from 'clsx';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useThemeConfig, isSamePath } from '@docusaurus/theme-common';
 import useUserPreferencesContext from '@theme/hooks/useUserPreferencesContext';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
-import useWindowSize, {windowSizes} from '@theme/hooks/useWindowSize';
-import useLogo from '@theme/hooks/useLogo';
+import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize';
 import useScrollPosition from '@theme/hooks/useScrollPosition';
 import Link from '@docusaurus/Link';
 import isInternalUrl from '@docusaurus/isInternalUrl';
+import Logo from '@theme/Logo';
+import IconArrow from '@theme/IconArrow';
+import IconMenu from '@theme/IconMenu';
 import styles from './styles.module.css';
 const MOBILE_TOGGLE_SIZE = 24;
 
@@ -23,13 +25,7 @@ function usePrevious(value) {
     ref.current = value;
   }, [value]);
   return ref.current;
-} // Compare the 2 paths, ignoring trailing /
-
-const isSamePath = (path1, path2) => {
-  const normalize = (str) => (str.endsWith('/') ? str : `${str}/`);
-
-  return normalize(path1) === normalize(path2);
-};
+}
 
 const isActiveSidebarItem = (item, activePath) => {
   if (item.type === 'link') {
@@ -37,9 +33,7 @@ const isActiveSidebarItem = (item, activePath) => {
   }
 
   if (item.type === 'category') {
-    return item.items.some((subItem) =>
-      isActiveSidebarItem(subItem, activePath),
-    );
+    return item.items.some(subItem => isActiveSidebarItem(subItem, activePath));
   }
 
   return false;
@@ -47,22 +41,19 @@ const isActiveSidebarItem = (item, activePath) => {
 
 function DocSidebarItemCategory({
   item,
-  // Begin customization
-  level,
-  // End customization
+  level, // EDIT
   onItemClick,
   collapsible,
   activePath,
   ...props
 }) {
-  const {items, label} = item;
+  const {
+    items,
+    label
+  } = item;
   const isActive = isActiveSidebarItem(item, activePath);
   const wasActive = usePrevious(isActive); // active categories are always initialized as expanded
   // the default (item.collapsed) is only used for non-active categories
-
-  // Begin customization
-  const isHeading = (item['label'] == 'Learn' || item['label'] == 'Reference' || item['label'] == 'Developers' )
-  // End customization
 
   const [collapsed, setCollapsed] = useState(() => {
     if (!collapsible) {
@@ -70,7 +61,14 @@ function DocSidebarItemCategory({
     }
 
     return isActive ? false : item.collapsed;
-  }); // If we navigate to a category, it should automatically expand itself
+  });
+  const menuListRef = useRef(null);
+  const [menuListHeight, setMenuListHeight] = useState(undefined);
+
+  const handleMenuListHeight = (calc = true) => {
+    setMenuListHeight(calc ? `${menuListRef.current?.scrollHeight}px` : undefined);
+  }; // If we navigate to a category, it should automatically expand itself
+
 
   useEffect(() => {
     const justBecameActive = isActive && !wasActive;
@@ -79,76 +77,65 @@ function DocSidebarItemCategory({
       setCollapsed(false);
     }
   }, [isActive, wasActive, collapsed]);
-  const handleItemClick = useCallback(
-    (e) => {
-      e.preventDefault();
-      setCollapsed((state) => !state);
-    },
-    [setCollapsed],
-  );
+  const handleItemClick = useCallback(e => {
+    e.preventDefault();
+
+    if (!menuListHeight) {
+      handleMenuListHeight();
+    }
+
+    setTimeout(() => setCollapsed(state => !state), 100);
+  }, [menuListHeight]);
 
   if (items.length === 0) {
     return null;
   }
 
   if (level == 1) {
-    return (
-      <li
-        className={clsx('menu__list-item', {
-          'menu__list-item--collapsed': collapsed,
-        })}
-        key={label}>
+    return <li className={clsx('menu__list-item', {
+      'menu__list-item--collapsed': collapsed
+    })} key={label}>
         <div className={clsx(styles.sidebarMenuTitle)}>
           {label}
         </div>
-        <ul className="menu__list">
-          {items.map((childItem) => (
-            <DocSidebarItem
-              tabIndex={collapsed ? '-1' : '0'}
-              key={childItem.label}
-              item={childItem}
-              level={level + 1}
-              onItemClick={onItemClick}
-              collapsible={collapsible}
-              activePath={activePath}
-            />
-          ))}
+        {/* <a className={clsx('menu__link', {
+        'menu__link--sublist': collapsible,
+        'menu__link--active': collapsible && isActive,
+        [styles.menuLinkText]: !collapsible
+      })} onClick={collapsible ? handleItemClick : undefined} href={collapsible ? '#!' : undefined} {...props}>
+          {label}
+        </a> */}
+        <ul className="menu__list" ref={menuListRef} style={{
+        height: menuListHeight
+      }} onTransitionEnd={() => {
+        if (!collapsed) {
+          handleMenuListHeight(false);
+        }
+      }}>
+          {items.map(childItem => <DocSidebarItem tabIndex={collapsed ? '-1' : '0'} level={level + 1} key={childItem.label} item={childItem} onItemClick={onItemClick} collapsible={collapsible} activePath={activePath} />)}
         </ul>
-      </li>
-    );
+      </li>;
   } else {
-    return (
-      <li
-        className={clsx('menu__list-item', {
-          'menu__list-item--collapsed': collapsed,
-        })}
-        key={label}>
-        <a
-          className={clsx('menu__link', {
-            'menu__link--sublist': collapsible,
-            'menu__link--active': collapsible && isActive,
-            [styles.menuLinkText]: !collapsible,
-          })}
-          onClick={collapsible ? handleItemClick : undefined}
-          href={collapsible ? '#!' : undefined}
-          {...props}>
+    return <li className={clsx('menu__list-item', {
+      'menu__list-item--collapsed': collapsed
+    })} key={label}>
+        <a className={clsx('menu__link', {
+        'menu__link--sublist': collapsible,
+        'menu__link--active': collapsible && isActive,
+        [styles.menuLinkText]: !collapsible
+      })} onClick={collapsible ? handleItemClick : undefined} href={collapsible ? '#!' : undefined} {...props}>
           {label}
         </a>
-        <ul className="menu__list">
-          {items.map((childItem) => (
-            <DocSidebarItem
-              tabIndex={collapsed ? '-1' : '0'}
-              key={childItem.label}
-              item={childItem}
-              level={level + 1}
-              onItemClick={onItemClick}
-              collapsible={collapsible}
-              activePath={activePath}
-            />
-          ))}
+        <ul className="menu__list" ref={menuListRef} style={{
+        height: menuListHeight
+      }} onTransitionEnd={() => {
+        if (!collapsed) {
+          handleMenuListHeight(false);
+        }
+      }}>
+          {items.map(childItem => <DocSidebarItem tabIndex={collapsed ? '-1' : '0'} level={level + 1} key={childItem.label} item={childItem} onItemClick={onItemClick} collapsible={collapsible} activePath={activePath} />)}
         </ul>
-      </li>
-    );
+      </li>;
   }
 }
 
@@ -159,30 +146,25 @@ function DocSidebarItemLink({
   collapsible: _collapsible,
   ...props
 }) {
-  const {href, label} = item;
+  const {
+    href,
+    label
+  } = item;
   const isActive = isActiveSidebarItem(item, activePath);
-  return (
-    <li className="menu__list-item" key={label}>
-      <Link
-        className={clsx('menu__link', {
-          'menu__link--active': isActive,
-        })}
-        to={href}
-        {...(isInternalUrl(href)
-          ? {
-              isNavLink: true,
-              exact: true,
-              onClick: onItemClick,
-            }
-          : {
-              target: '_blank',
-              rel: 'noreferrer noopener',
-            })}
-        {...props}>
+  return <li className="menu__list-item" key={label}>
+      <Link className={clsx('menu__link', {
+      'menu__link--active': isActive
+    })} to={href} level={1} {...isInternalUrl(href) ? {
+      isNavLink: true,
+      exact: true,
+      onClick: onItemClick
+    } : {
+      target: '_blank',
+      rel: 'noreferrer noopener'
+    }} {...props}>
         {label}
       </Link>
-    </li>
-  );
+    </li>;
 }
 
 function DocSidebarItem(props) {
@@ -196,17 +178,26 @@ function DocSidebarItem(props) {
   }
 }
 
-function DocSidebar({path, sidebar, sidebarCollapsible = true}) {
+function DocSidebar({
+  path,
+  sidebar,
+  sidebarCollapsible = true,
+  onCollapse,
+  isHidden
+}) {
   const [showResponsiveSidebar, setShowResponsiveSidebar] = useState(false);
   const {
-    siteConfig: {
-      themeConfig: {navbar: {title = '', hideOnScroll = false} = {}} = {},
-    } = {},
-    isClient,
-  } = useDocusaurusContext();
-  const {logoLink, logoLinkProps, logoImageUrl, logoAlt} = useLogo();
-  const {isAnnouncementBarClosed} = useUserPreferencesContext();
-  const {scrollY} = useScrollPosition();
+    navbar: {
+      hideOnScroll
+    },
+    hideableSidebar
+  } = useThemeConfig();
+  const {
+    isAnnouncementBarClosed
+  } = useUserPreferencesContext();
+  const {
+    scrollY
+  } = useScrollPosition();
   useLockBodyScroll(showResponsiveSidebar);
   const windowSize = useWindowSize();
   useEffect(() => {
@@ -214,84 +205,33 @@ function DocSidebar({path, sidebar, sidebarCollapsible = true}) {
       setShowResponsiveSidebar(false);
     }
   }, [windowSize]);
-  return (
-    <div
-      className={clsx(styles.sidebar, {
-        [styles.sidebarWithHideableNavbar]: hideOnScroll,
-      })}>
-      {hideOnScroll && (
-        <Link
-          tabIndex={-1}
-          className={styles.sidebarLogo}
-          to={logoLink}
-          {...logoLinkProps}>
-          {logoImageUrl != null && (
-            <img key={isClient} src={logoImageUrl} alt={logoAlt} />
-          )}
-          {title != null && <strong>{title}</strong>}
-        </Link>
-      )}
-      <div
-        className={clsx('menu', 'menu--responsive', styles.menu, {
-          'menu--show': showResponsiveSidebar,
-          [styles.menuWithAnnouncementBar]:
-            !isAnnouncementBarClosed && scrollY === 0,
-        })}>
-        <button
-          aria-label={showResponsiveSidebar ? 'Close Menu' : 'Open Menu'}
-          aria-haspopup="true"
-          className="button button--secondary button--sm menu__button"
-          type="button"
-          onClick={() => {
-            setShowResponsiveSidebar(!showResponsiveSidebar);
-          }}>
-          {showResponsiveSidebar ? (
-            <span
-              className={clsx(
-                styles.sidebarMenuIcon,
-                styles.sidebarMenuCloseIcon,
-              )}>
+  return <div className={clsx(styles.sidebar, {
+    [styles.sidebarWithHideableNavbar]: hideOnScroll,
+    [styles.sidebarHidden]: isHidden
+  })}>
+      {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
+      <div className={clsx('menu', 'menu--responsive', 'thin-scrollbar', styles.menu, {
+      'menu--show': showResponsiveSidebar,
+      [styles.menuWithAnnouncementBar]: !isAnnouncementBarClosed && scrollY === 0
+    })}>
+        <button aria-label={showResponsiveSidebar ? 'Close Menu' : 'Open Menu'} aria-haspopup="true" className="button button--secondary button--sm menu__button" type="button" onClick={() => {
+        setShowResponsiveSidebar(!showResponsiveSidebar);
+      }}>
+          {showResponsiveSidebar ? <span className={clsx(styles.sidebarMenuIcon, styles.sidebarMenuCloseIcon)}>
               &times;
-            </span>
-          ) : (
-            <svg
-              aria-label="Menu"
-              className={styles.sidebarMenuIcon}
-              xmlns="http://www.w3.org/2000/svg"
-              height={MOBILE_TOGGLE_SIZE}
-              width={MOBILE_TOGGLE_SIZE}
-              viewBox="0 0 32 32"
-              role="img"
-              focusable="false">
-              <title>Menu</title>
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeMiterlimit="10"
-                strokeWidth="2"
-                d="M4 7h22M4 15h22M4 23h22"
-              />
-            </svg>
-          )}
+            </span> : <IconMenu className={styles.sidebarMenuIcon} height={MOBILE_TOGGLE_SIZE} width={MOBILE_TOGGLE_SIZE} />}
         </button>
         <ul className="menu__list">
-          {sidebar.map((item) => (
-            <DocSidebarItem
-              key={item.label}
-              item={item}
-              level={1}
-              onItemClick={(e) => {
-                e.target.blur();
-                setShowResponsiveSidebar(false);
-              }}
-              collapsible={sidebarCollapsible}
-              activePath={path}
-            />
-          ))}
+          {sidebar.map(item => <DocSidebarItem key={item.label} item={item} level={1} onItemClick={e => {
+          e.target.blur();
+          setShowResponsiveSidebar(false);
+        }} collapsible={sidebarCollapsible} activePath={path} />)}
         </ul>
       </div>
-    </div>
-  );
+      {hideableSidebar && <button type="button" title="Collapse sidebar" aria-label="Collapse sidebar" className={clsx('button button--secondary button--outline', styles.collapseSidebarButton)} onClick={onCollapse}>
+          <IconArrow className={styles.collapseSidebarButtonIcon} />
+        </button>}
+    </div>;
 }
 
 export default DocSidebar;

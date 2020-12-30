@@ -11,8 +11,8 @@
     "serve": "docusaurus serve --host 0.0.0.0"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.69",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.69",
+    "@docusaurus/core": "2.0.0-alpha.70",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.70",
     "@elastic/react-search-ui": "^1.3.3",
     "@elastic/search-ui-site-search-connector": "^1.3.3",
     "axios": "^0.19.2",

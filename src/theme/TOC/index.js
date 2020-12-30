@@ -5,50 +5,43 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
-import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 import clsx from 'clsx';
+import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 import styles from './styles.module.css';
 const LINK_CLASS_NAME = 'table-of-contents__link';
 const ACTIVE_LINK_CLASS_NAME = 'table-of-contents__link--active';
 const TOP_OFFSET = 100;
 /* eslint-disable jsx-a11y/control-has-associated-label */
 
-function Headings({headings, isChild}) {
-  if (!headings.length) {
+function Headings({
+  toc,
+  isChild
+}) {
+  if (!toc.length) {
     return null;
   }
 
-  return (
-    <ul
-      className={
-        isChild ? '' : 'table-of-contents table-of-contents__left-border'
-      }>
-      {headings.map((heading) => (
-        <li key={heading.id}>
-          <a
-            href={`#${heading.id}`}
-            className={LINK_CLASS_NAME} // Developer provided the HTML, so assume it's safe.
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{
-              __html: heading.value,
-            }}
-          />
-          <Headings isChild headings={heading.children} />
-        </li>
-      ))}
-    </ul>
-  );
+  return <ul className={isChild ? '' : 'table-of-contents table-of-contents__left-border'}>
+      {toc.map(heading => <li key={heading.id}>
+          <a href={`#${heading.id}`} className={LINK_CLASS_NAME} // Developer provided the HTML, so assume it's safe.
+      // eslint-disable-next-line react/no-danger
+      dangerouslySetInnerHTML={{
+        __html: heading.value
+      }} />
+          <Headings isChild toc={heading.children} />
+        </li>)}
+    </ul>;
 }
 
-function TOC({headings, editUrl}) {
+function TOC({
+  toc, 
+  editUrl
+}) {
   useTOCHighlight(LINK_CLASS_NAME, ACTIVE_LINK_CLASS_NAME, TOP_OFFSET);
-  return (
-    <div className={styles.tableOfContents}>
-      {/* Begin customization */}
-      <p className={styles.tableofContentsHeading}>Contents</p>
-      {/* End customization */}
-      <Headings headings={headings} />
-      {/* Begin customization */}
+  return <div className={clsx(styles.tableOfContents, 'thin-scrollbar')}>
+      <p className={styles.tableofContentsHeading}>Contents</p> {/* EDIT */}
+      <Headings toc={toc} />
+      {/* BEGIN EDIT */}
       {editUrl && (
         <a
           className={clsx('button button--outline button-secondary button--lg toc__edit')}
@@ -72,9 +65,8 @@ function TOC({headings, editUrl}) {
           Edit this page
         </a>
       )}
-      {/* End customization */}
-    </div>
-  );
+      {/* END EDIT */}
+    </div>;
 }
 
 export default TOC;
