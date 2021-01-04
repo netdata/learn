@@ -112,6 +112,10 @@
   from = "/docs/configure/spaces-war-rooms"
   to = "/docs/quickstart/infrastructure"
 
-[[redircets]]
+[[redirects]]
   from = "/docs/configure/invite-collaborate"
   to = "/docs/quickstart/infrastructure"
+
+[[redirects]]
+  from = "/docs/agent/configuration-guide"
+  to = "/docs/configure/common-changes"

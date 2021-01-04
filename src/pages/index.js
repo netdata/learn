@@ -29,6 +29,28 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Common configuration changes</>,
+    href: '/docs/configure/common-changes',
+    date: 'January 4, 2021',
+    type: 'Doc',
+    description: (
+      <>
+        See the most popular configuration changes to make to the Netdata Agent, including longer metrics retention, reduce sampling, and more.
+      </>
+    ),
+  },
+  {
+    title: <>Start, stop, or restart the Netdata Agent</>,
+    href: '/docs/configure/start-stop-restart',
+    date: 'January 4, 2021',
+    type: 'Doc',
+    description: (
+      <>
+        Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes.
+      </>
+    ),
+  },
+  {
     title: <>Centralized alarm notifications</>,
     href: '/docs/cloud/monitoring/notifications',
     date: 'December 18, 2020',
@@ -69,28 +91,6 @@ const updates = [
     description: (
       <>
         Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions.
-      </>
-    ),
-  },
-  {
-    title: <>New collector: Anomalies</>,
-    href: '/docs/agent/collectors/python.d.plugin/anomalies',
-    date: 'December 2, 2020',
-    type: 'Collector',
-    description: (
-      <>
-        This collector uses the Python PyOD library to perform unsupervised anomaly detection on your Netdata charts and/or dimensions.
-      </>
-    ),
-  },
-  {
-    title: <>How to optimize the Netdata Agent's performance</>,
-    href: '/guides/configure/performance',
-    date: 'November 30, 2020',
-    type: 'Guide',
-    description: (
-      <>
-        While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
       </>
     ),
   },
