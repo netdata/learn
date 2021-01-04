@@ -50,8 +50,9 @@ static-threaded` setting, and change it to `none`.
     mode = none
 ```
 
-Save and close the editor, then restart your Agent using `service netdata restart`. If you try to visit the local
-dashboard to `http://NODE:19999` again, the connection will fail because that node no longer serves its local dashboard.
+Save and close the editor, then [restart your Agent](/docs/configure/start-stop-restart) using `sudo systemctl
+restart netdata`. If you try to visit the local dashboard to `http://NODE:19999` again, the connection will fail because
+that node no longer serves its local dashboard.
 
 > See the [configuration basics doc](/docs/configure/nodes) for details on how to find `netdata.conf` and use
 > `edit-config`.
@@ -112,7 +113,9 @@ We also have guides for [Apache](/docs/agent/running-behind-apache), [Lighttpd](
 
 ## What's next?
 
-If you haven't already, be sure to read about [Netdata's security design](/docs/agent/netdata-security).
+Read about [Netdata's security design](/docs/agent/netdata-security) and our [blog
+post](https://www.netdata.cloud/blog/netdata-agent-dashboard/) about why the local Agent dashboard is both open and
+secure by design.
 
 Next up, learn about [collectors](/docs/collect/how-collectors-work) to ensure you're gathering every essential
 metric about your node, its applications, and your infrastructure at large.
