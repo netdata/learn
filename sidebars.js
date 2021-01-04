@@ -39,6 +39,8 @@ module.exports = {
           label: 'Configure',
           items: [
             'configure/nodes',
+            'configure/common-changes',
+            'configure/start-stop-restart',
             'configure/secure-nodes',
           ]
         },
@@ -339,10 +341,9 @@ module.exports = {
             },
             {
               type: 'category',
-              label: 'Daemon/configuration',
+              label: 'Daemon',
               items: [
                 'agent/daemon',
-                'agent/configuration-guide',
                 'agent/daemon/config',
                 'agent/netdata-for-iot',
               ],
