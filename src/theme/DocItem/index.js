@@ -80,7 +80,6 @@ function DocItem(props) {
         <title>{metaTitle}</title>
         <meta property="og:title" content={metaTitle} />
         {description && <meta name="description" class="swiftype" data-type="string" content={description} />} {/* EDIT */}
-        {description && <meta name="description" content={description} />}
         {description && <meta property="og:description" content={description} />}
         {keywords && keywords.length && <meta name="keywords" content={keywords.join(',')} />}
         {metaImage && <meta property="og:image" content={metaImageUrl} />}
