@@ -28,7 +28,7 @@ The Contributor (_you_) hereby assigns Netdata Inc. copyright in his
 contributions, to be licensed under the same terms as the rest of the code.
 
 > _Note: this means we may re-license Netdata (your contributions included)
-> any way we see fit, without asking your permission. 
+> any way we see fit, without asking your permission.
 > We intend to keep the Netdata agent forever FOSS.
 > But open-source licenses have significant differences and in our attempt to
 > help Netdata grow we may have to distribute it under a different license.
@@ -130,6 +130,7 @@ This is the list of contributors that have signed this agreement:
 |@akwan|Alan Kwan||
 |@underhood|Timotej Šiškovič||
 |@stevenh|Steven Hartland|steven.hartland@multiplay.co.uk|
+|@dpsy4|Dave Sitek||
 |@devinrsmith|Devin Smith||
 
 
