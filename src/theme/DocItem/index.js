@@ -56,10 +56,6 @@ function DocItem(props) {
   // See https://github.com/facebook/docusaurus/issues/3362
 
   const showVersionBadge = versions.length > 1;
-  const metaTitle = useTitleFormatter(title);
-  const metaImageUrl = useBaseUrl(metaImage, {
-    absolute: true
-  });
 
   // BEGIN EDIT 
   // Figure out whether the document in question is a reference document for
@@ -67,10 +63,15 @@ function DocItem(props) {
   // that product in the page title.
   let productRef = ``
   if (permalink.includes('/docs/cloud')) {
-    productRef = `· Netdata Cloud`
+    productRef = ` · Netdata Cloud`
   } else if (permalink.includes('/docs/agent')) {
-    productRef = `· Netdata Agent`
+    productRef = ` · Netdata Agent`
   }
+
+  const metaTitle = useTitleFormatter(title + productRef);
+  const metaImageUrl = useBaseUrl(metaImage, {
+    absolute: true
+  });
 
   const isGuide = permalink.includes('/guides/');
   // END EDIT
