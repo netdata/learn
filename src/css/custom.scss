@@ -461,25 +461,11 @@ div[class^='docSidebarContainer'] {
   background:#f8f7fd;
 }
 
-html[data-theme='dark'] div[class^='docSidebarContainer'] {
-  background:#191927;
-}
-
-@media (max-width: 1300px) {
-  div[class^='docSidebarContainer'] {
-    width: 300px;
-  }
-}
-
 @media (min-width: 997px) {
   .menu {
-    margin-top: 4rem;
-    padding-bottom: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
-}
-
-div[class^='sidebarLogo'] {
-  display: none !important;
 }
 
 .menu > .menu__list > .menu__list-item:not(:first-child) {
@@ -490,8 +476,6 @@ div[class^='sidebarLogo'] {
   color: var(--ifm-font-color-base);
   font-size: 0.95rem;
   font-weight: var(--ifm-font-weight-normal);
-  line-height: 20px;
-  // padding: 0
 
   &:focus {
     outline: 0;
