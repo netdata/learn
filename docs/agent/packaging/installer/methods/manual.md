@@ -1,5 +1,6 @@
 ---
 title: "Install Netdata on Linux from a Git checkout"
+description: "Use the Netdata Agent source code from GitHub, plus helper scripts to set up your system, to install Netdata without packages or binaries."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md
 ---
 
@@ -216,8 +217,13 @@ In most cases, you can do this by running `CC=gcc ./netdata-installer.sh`.
 
 ## What's next?
 
-When you finish installing Netdata, be sure to visit our [step-by-step guide](/guides/step-by-step/step-00) for
-a fully-guided tour into Netdata's capabilities and how to configure it according to your needs. 
+When you're finished with installation, check out our [single-node](/docs/quickstart/single-node) or
+[infrastructure](/docs/quickstart/infrastructure) monitoring quickstart guides based on your use case.
 
-Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](/docs/agent/getting-started) for a quick overview.
+Or, skip straight to [configuring the Netdata Agent](/docs/configure/nodes).
+
+Read through Netdata's [documentation](/docs), which is structured based on actions and
+solutions, to enable features like health monitoring, alarm notifications, long-term metrics storage, exporting to
+external databases, and more.
+
+

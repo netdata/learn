@@ -362,3 +362,4 @@ Some smaller miscellaeneous suggestions:
 * [header checks in CMake](https://stackoverflow.com/questions/647892/how-to-check-header-files-and-library-functions-in-cmake-like-it-is-done-in-auto)
 * [how to write platform checks](https://gitlab.kitware.com/cmake/community/wikis/doc/tutorials/How-To-Write-Platform-Checks)
 
+

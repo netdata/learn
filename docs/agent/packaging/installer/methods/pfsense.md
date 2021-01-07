@@ -80,3 +80,5 @@ If you experience an issue with `/usr/bin/install` being absent in pfSense 2.3 o
 workaround from <https://redmine.pfsense.org/issues/6643>  
 
 **Note:** In pfSense, the Netdata configuration files are located under `/usr/local/etc/netdata`.
+
+

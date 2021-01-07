@@ -51,3 +51,5 @@ If `ssacli` cannot be found in the `PATH`, configure it in `hpssa.conf`.
 ```yaml
 ssacli_path: /usr/sbin/ssacli
 ```
+
+

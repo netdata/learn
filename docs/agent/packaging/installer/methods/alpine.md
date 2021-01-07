@@ -32,3 +32,5 @@ chmod 755 /etc/local.d/netdata.stop
 # enable the local service to start automatically
 rc-update add local
 ```
+
+

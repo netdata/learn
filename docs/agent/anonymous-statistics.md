@@ -1,5 +1,6 @@
 ---
 title: "Anonymous statistics"
+description: "The Netdata Agent collects anonymous usage information by default and sends it to Google Analytics for quality assurance and product decisions."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/anonymous-statistics.md
 ---
 
@@ -104,3 +105,5 @@ Each of these opt-out processes does the following:
 -   Forces the anonymous statistics script to exit immediately.
 -   Stops the Google Tag Manager Javascript snippet, which remains on the dashboard, from firing and sending any data to
     Google Analytics.
+
+

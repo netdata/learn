@@ -48,11 +48,16 @@ page](/docs/agent/packaging/installer/methods/kickstart).
 Scroll down for details about [automatic updates](#automatic-updates) or [nightly vs. stable
 releases](#nightly-vs-stable-releases).
 
-When you finish installing Netdata, be sure to visit our [step-by-step guide](/guides/step-by-step/step-00) for
-a fully-guided tour into Netdata's capabilities and how to configure it according to your needs. 
+### Post-installation
 
-Or, if you're a monitoring and system administration pro, skip ahead to our [getting started
-guide](/docs/agent/getting-started) for a quick overview.
+When you're finished with installation, check out our [single-node](/docs/quickstart/single-node) or
+[infrastructure](/docs/quickstart/infrastructure) monitoring quickstart guides based on your use case.
+
+Or, skip straight to [configuring the Netdata Agent](/docs/configure/nodes).
+
+Read through Netdata's [documentation](/docs), which is structured based on actions and
+solutions, to enable features like health monitoring, alarm notifications, long-term metrics storage, exporting to
+external databases, and more.
 
 ## Have a different operating system, or want to try another method?
 
@@ -244,3 +249,5 @@ issue altogether. Or, you can manually remove one version of OpenSSL to remove t
 Our current build process has some issues when using certain configurations of the `clang` C compiler on Linux. See [the
 section on `nonrepresentable section on output`
 errors](/docs/agent/packaging/installer/methods/manual#nonrepresentable-section-on-output-errors) for a workaround.
+
+

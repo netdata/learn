@@ -182,3 +182,5 @@ through this, is to examine what other similar plugins do.
 ## Write a custom collector
 
 You can add custom collectors by following the [external plugins documentation](/docs/agent/collectors/plugins.d/).
+
+
