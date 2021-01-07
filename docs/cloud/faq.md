@@ -1,6 +1,7 @@
 ---
 title: Netdata Cloud FAQ
 custom_edit_url: null
+sidebar_label: FAQ
 ---
 
 Have questions for us that aren't answered here? Hop over to our [community](https://community.netdata.cloud/) to ask
