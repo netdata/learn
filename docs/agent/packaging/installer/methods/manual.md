@@ -1,5 +1,6 @@
 ---
 title: "Install Netdata on Linux from a Git checkout"
+description: "Use the Netdata Agent source code from GitHub, plus helper scripts to set up your system, to install Netdata without packages or binaries."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md
 ---
 

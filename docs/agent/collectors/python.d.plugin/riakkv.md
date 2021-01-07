@@ -124,3 +124,5 @@ With no explicit configuration given, the module will attempt to connect to
 The default update frequency for the plugin is set to 2 seconds as Riak
 internally updates the metrics every second. If we were to update the metrics
 every second, the resulting graph would contain odd jitter.
+
+

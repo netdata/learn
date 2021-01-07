@@ -1,5 +1,6 @@
 ---
 title: "Install Netdata with kickstart-static64.sh"
+description: "The kickstart-static64.sh script installs a pre-compiled static binary, including all dependencies required to connect to Netdata Cloud, with one command."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kickstart-64.md
 ---
 

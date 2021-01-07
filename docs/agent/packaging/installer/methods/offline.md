@@ -1,22 +1,24 @@
 ---
 title: "Install Netdata on offline systems"
+description: "Install the Netdata Agent on offline/air gapped systems to benefit from real-time, per-second monitoring without connecting to the internet."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md
 ---
 
 
 
-You can install Netdata on systems without internet access, but you need to take a few extra steps to make it work.
+The Netdata Agent installs on offline or air gapped systems with a few additional steps.
 
 By default, the `kickstart.sh` and `kickstart-static64.sh` download Netdata assets, like the precompiled binary and a
-few dependencies, using the system's internet connection, but you can also supply these files from the local filesystem.
+few dependencies, using the system's internet connection, but the Agent installer can also use equivalent files already
+present on the local filesystem.
 
 First, download the required files. If you're using `kickstart.sh`, you need the Netdata tarball, the checksums, the
 go.d plugin binary, and the go.d plugin configuration. If you're using `kickstart-static64.sh`, you need only the
 Netdata tarball and checksums.
 
-Download the files you need to a system of yours that's connected to the internet. You can use the commands below, or
-visit the [latest Netdata release page](https://github.com/netdata/netdata/releases/latest) and [latest go.d plugin
-release page](https://github.com/netdata/go.d.plugin/releases) to download the required files manually.
+Download the files you need to a system of yours that's connected to the internet. Use the commands below, or visit the
+[latest Netdata release page](https://github.com/netdata/netdata/releases/latest) and [latest go.d plugin release
+page](https://github.com/netdata/go.d.plugin/releases) to download the required files manually.
 
 **If you're using `kickstart.sh`**, use the following commands:
 

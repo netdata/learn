@@ -58,3 +58,5 @@ For each destination the plugin provides these charts:
     -   processing
 
 At the moment only job status pending, processing, and held are reported because we do not have a method to collect stopped, canceled, aborted and completed jobs which scales.
+
+
