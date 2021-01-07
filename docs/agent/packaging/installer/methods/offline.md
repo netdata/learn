@@ -74,8 +74,13 @@ bash kickstart.sh --local-files /tmp/netdata-(version-number-here).tar.gz /tmp/s
 bash kickstart-static64.sh --local-files /tmp/netdata-(version-number-here).gz.run /tmp/sha256sums.txt
 ```
 
-Now that Netdata is installed, be sure to visit our [getting started guide](/docs/agent/getting-started) for a
-quick overview of configuring Netdata, enabling plugins, and controlling Netdata's daemon. 
+## What's next?
 
-Or, get the full guided tour of Netdata's capabilities with our [step-by-step
-guide](/guides/step-by-step/step-00)!
+When you're finished with installation, check out our [single-node](/docs/quickstart/single-node) or
+[infrastructure](/docs/quickstart/infrastructure) monitoring quickstart guides based on your use case.
+
+Or, skip straight to [configuring the Netdata Agent](/docs/configure/nodes).
+
+Read through Netdata's [documentation](/docs), which is structured based on actions and
+solutions, to enable features like health monitoring, alarm notifications, long-term metrics storage, exporting to
+external databases, and more.

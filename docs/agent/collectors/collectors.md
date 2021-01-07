@@ -44,7 +44,7 @@ collector—we may be looking for contributions from users such as yourself! If 
 -   [System collectors](#system-collectors)
     -   [Applications](#applications)
     -   [Disks and filesystems](#disks-and-filesystems)
-    -   [eBPF (extended Berkely Backet Filter)](#ebpf)
+    -   [eBPF (extended Berkeley Packet Filter)](#ebpf)
     -   [Hardware](#hardware)
     -   [Memory](#memory)
     -   [Networks](#networks)
@@ -64,8 +64,7 @@ configure any of these collectors according to your setup and infrastructure.
 ### Generic
 
 -   [Prometheus endpoints](/docs/agent/collectors/go.d.plugin/modules/prometheus): Gathers
-    metrics from one or more Prometheus endpoints that use the OpenMetrics exposition format. Autodetects more than 600
-    endpoints.
+    metrics from any number of Prometheus endpoints, with support to autodetect more than 600 services and applications.
 
 ### APM (application performance monitoring)
 
@@ -111,6 +110,8 @@ configure any of these collectors according to your setup and infrastructure.
     database components using `_status/vars` endpoint.
 -   [Consul](/docs/agent/collectors/go.d.plugin/modules/consul/): Capture service and unbound
     checks status (passing, warning, critical, maintenance). 
+-   [Couchbase](/docs/agent/collectors/go.d.plugin/modules/couchbase/): Gather per-bucket
+    metrics from any number of instances of the distributed JSON document database.
 -   [CouchDB](/docs/agent/collectors/python.d.plugin/couchdb): Monitor database health and performance metrics
     (reads/writes, HTTP traffic, replication status, etc).
 -   [MongoDB](/docs/agent/collectors/python.d.plugin/mongodb): Collect memory-caching system performance metrics and
@@ -118,11 +119,15 @@ configure any of these collectors according to your setup and infrastructure.
 -   [MySQL](/docs/agent/collectors/go.d.plugin/modules/mysql/): Collect database global,
     replication and per user statistics.
 -   [OracleDB](/docs/agent/collectors/python.d.plugin/oracledb): Monitor database performance and health metrics.
+-   [Pika](/docs/agent/collectors/go.d.plugin/modules/pika/): Gather metric, such as clients,
+    memory usage, queries, and more from the Redis interface-compatible database.
 -   [Postgres](/docs/agent/collectors/python.d.plugin/postgres): Collect database health and performance metrics. 
 -   [ProxySQL](/docs/agent/collectors/python.d.plugin/proxysql): Monitor database backend and frontend performance
     metrics.
--   [Redis](/docs/agent/collectors/python.d.plugin/redis/): Monitor database status by reading the server's response to the `INFO`
-    command.
+-   [Redis (Go)](/docs/agent/collectors/go.d.plugin/modules/redis/): Monitor status from any
+    number of database instances by reading the server's response to the `INFO ALL` command.
+-   [Redis (Python)](/docs/agent/collectors/python.d.plugin/redis/): Monitor database status by reading the server's response to
+    the `INFO` command.
 -   [RethinkDB](/docs/agent/collectors/python.d.plugin/rethinkdbs): Collect database server and cluster statistics.
 -   [Riak KV](/docs/agent/collectors/python.d.plugin/riakkv): Collect database stats from the `/stats` endpoint.
 -   [Zookeeper](/docs/agent/collectors/go.d.plugin/modules/zookeeper/): Monitor application
