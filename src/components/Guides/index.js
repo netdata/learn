@@ -9,6 +9,12 @@ import styles from './styles.module.scss';
 
 const GuideItems = [
   {
+    title: "Detect anomalies in systems and applications",
+    href: "/guides/monitor/anomaly-detection",
+    category: "collect-monitor",
+    description: "Detect anomalies in any system, container, or application in your infrastructure with machine learning and the open-source Netdata Agent."
+  },
+  {
     title: "Monitor any process in real-time with Netdata",
     href: "/guides/monitor/process",
     category: "collect-monitor",

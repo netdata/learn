@@ -29,6 +29,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Detect anomalies in systems and applications</>,
+    href: '/guides/monitor/anomaly-detection',
+    date: 'January 7, 2021',
+    type: 'Guide',
+    description: (
+      <>
+        Detect anomalies in any system, container, or application in your infrastructure with machine learning and the open-source Netdata Agent.
+      </>
+    ),
+  },
+  {
     title: <>Common configuration changes</>,
     href: '/docs/configure/common-changes',
     date: 'January 4, 2021',
@@ -80,17 +91,6 @@ const updates = [
     description: (
       <>
         Both our local Agent and Netdata Cloud dashboards are now even easier to use thanks to parallel time &amp; date pickers that help you drill down and discover root causes.
-      </>
-    ),
-  },
-  {
-    title: <>Monitor any process in real-time with Netdata</>,
-    href: '/guides/monitor/process',
-    date: 'December 8, 2020',
-    type: 'Guide',
-    description: (
-      <>
-        Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions.
       </>
     ),
   },
