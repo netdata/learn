@@ -607,7 +607,7 @@ module.exports = {
                 'cloud/manage/themes',
               ]
             },
-            'cloud/faq-glossary'
+            'cloud/faq'
           ],
         },
       ],
