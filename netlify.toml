@@ -119,3 +119,11 @@
 [[redirects]]
   from = "/docs/agent/configuration-guide"
   to = "/docs/configure/common-changes"
+
+[[redirects]]
+  from = "/docs/agent/configuration-guide"
+  to = "/docs/configure/common-changes"
+
+[[redirects]]
+  from = "/docs/cloud/faq-glossary"
+  to = "/docs/cloud/faq"
