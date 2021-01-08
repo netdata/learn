@@ -90,11 +90,15 @@
   }
 }
 
+/*
+ * Guide overrides 
+ */
+
 .guideItemWrapper {
   margin-left: auto !important;
 
   > div[class*="row"] {
-    margin-top: 20rem;
+    margin-top: 18rem;
   }
 
   div[class*="col--3"] {
