@@ -78,8 +78,6 @@ function DocItem(props) {
     absolute: true
   });
 
-  console.log(author)
-
   const isGuide = permalink.includes('/guides/');
   // END EDIT
 
