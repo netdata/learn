@@ -5,8 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, {useState, useCallback} from 'react';
+import SVG from 'react-inlinesvg'; // EDIT
 import {MDXProvider} from '@mdx-js/react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Link from '@docusaurus/Link'; // EDIT
 import renderRoutes from '@docusaurus/renderRoutes';
 import Layout from '@theme/Layout';
 import DocSidebar from '@theme/DocSidebar';
@@ -103,6 +105,26 @@ function DocPageContent({currentDocRoute, versionMetadata, children}) {
             )}>
             <MDXProvider components={MDXComponents}>{children}</MDXProvider>
           </div>
+          {isGuide &&
+            <section className={clsx(styles.CTAguide)}>
+              <div className={clsx("container")}>
+                <div className={clsx("row")}>
+                  <div className={clsx("col", styles.CTAGuideText)}>
+                    <h2>Monitor everything in real time – for free</h2>
+                    <p>Troubleshoot slowdowns and anomalies in your infrastructure with thousands of metrics, interactive visualizations, and insightful health alarms.</p>
+                    <Link to="https://netdata.cloud/get-netdata" className="button button--primary">Get started</Link>
+                  </div>
+                </div>
+                <SVG 
+                    className={clsx(
+                      styles.CTAGuideImg
+                    )} 
+                    src="/img/cta.svg"
+                    alt="Get started" 
+                  />
+              </div>
+            </section>
+          }
         </main>
       </div>
     </Layout>

@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React from 'react';
+import SVG from 'react-inlinesvg'; // EDIT
 import Head from '@docusaurus/Head';
 import { useTitleFormatter } from '@docusaurus/theme-common';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -177,6 +178,22 @@ function DocItem(props) {
             <div className="margin-vert--lg">
               <DocPaginator metadata={metadata} />
             </div>
+            {!isGuide && 
+              <div className={clsx(styles.CTAdoc)}>
+                <div className={clsx(styles.CTAtext)}>
+                  <h2>Monitor everything in real time – for free</h2>
+                  <p>Troubleshoot slowdowns and anomalies in your infrastructure with thousands of metrics, interactive visualizations, and insightful health alarms.</p>
+                  <Link to="/docs/get" className="button button--primary">Download the Netdata Agent</Link>
+                </div>
+                <SVG 
+                    className={clsx(
+                      styles.CTAimg
+                    )} 
+                    src="/img/cta.svg"
+                    alt="Get Netdata" 
+                  />
+              </div>
+            }
           </div>
         </div>
         {!hideTableOfContents && DocContent.toc && <div className="col col--3">

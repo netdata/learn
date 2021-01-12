@@ -103,3 +103,60 @@
     }
   }
 }
+
+/*
+ * CTAs
+ */
+
+.CTAguide {
+  margin-left: auto !important;
+  background: linear-gradient(to right, #1B2F47, #486385);
+  // margin-left: -2.5rem;
+  // margin-right: -2.5rem;
+  // margin-bottom: -2rem;
+  // margin-top: 6rem;
+  // border-top: 1px solid var(--ifm-toc-border-color);
+  // border-right: 1px solid var(--ifm-toc-border-color);
+  padding: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.CTAGuideText {
+  z-index: 2;
+  // background: #fcfcff;
+  // box-shadow: 0 0 10px 20px #fcfcff;
+  max-width: 60% !important;
+  position: relative;
+
+  h2 {
+    font-size: 3rem;
+    color: #00CB51;
+  }
+
+  p {
+    font-size: 130%;
+    color: var(--ifm-background-color);
+  }
+
+  @media only screen and (max-width: 700px) {
+    max-width: 100% !important;
+  }
+}
+
+.CTAGuideImg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 50%;
+  height: auto;
+  z-index: 0;
+
+  @media only screen and (max-width: 1300px) {
+    max-width: 350px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    display: none;
+  }
+}

@@ -90,7 +90,7 @@ html {
   --ifm-button-border-width: 1px;
   --ifm-button-border-radius: 2px;
   --ifm-button-font-weight: 500;
-  --ifm-button-size-multiplier: 2;
+  --ifm-button-size-multiplier: 1.4;
 
   /* Tabs */
   --ifm-tabs-padding-vertical: 0.5rem;
@@ -531,7 +531,6 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
 
 .footer {
   padding-top: 4rem;
-  border-top: 1px solid var(--ifm-contents-border-color);
 }
 
 .footer.footer--dark {
