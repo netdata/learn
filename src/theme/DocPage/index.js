@@ -105,6 +105,7 @@ function DocPageContent({currentDocRoute, versionMetadata, children}) {
             )}>
             <MDXProvider components={MDXComponents}>{children}</MDXProvider>
           </div>
+          {/* BEGIN EDIT */}
           {isGuide &&
             <section className={clsx(styles.CTAguide)}>
               <div className={clsx("container")}>
@@ -114,17 +115,18 @@ function DocPageContent({currentDocRoute, versionMetadata, children}) {
                     <p>Troubleshoot slowdowns and anomalies in your infrastructure with thousands of metrics, interactive visualizations, and insightful health alarms.</p>
                     <Link to="https://netdata.cloud/get-netdata" className="button button--primary">Get started</Link>
                   </div>
+                  <div className={clsx("col", styles.CTAGuideImg)}>
+                    <SVG
+                      src="/img/cta.svg"
+                      alt="Get started with Netdata" 
+                    />
+                  </div>
                 </div>
-                <SVG 
-                    className={clsx(
-                      styles.CTAGuideImg
-                    )} 
-                    src="/img/cta.svg"
-                    alt="Get started" 
-                  />
+                
               </div>
             </section>
           }
+          {/* END EDIT */}
         </main>
       </div>
     </Layout>

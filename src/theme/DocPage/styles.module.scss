@@ -110,33 +110,37 @@
 
 .CTAguide {
   margin-left: auto !important;
-  background: linear-gradient(to right, #1B2F47, #486385);
-  // margin-left: -2.5rem;
-  // margin-right: -2.5rem;
-  // margin-bottom: -2rem;
-  // margin-top: 6rem;
-  // border-top: 1px solid var(--ifm-toc-border-color);
-  // border-right: 1px solid var(--ifm-toc-border-color);
+  background: linear-gradient(to right, #1B2F47, #14133e);
   padding: 4rem;
   position: relative;
   overflow: hidden;
+
+  @media screen and (max-width: 960px) {
+    padding: 3rem 0;
+  }
 }
 
 .CTAGuideText {
   z-index: 2;
-  // background: #fcfcff;
-  // box-shadow: 0 0 10px 20px #fcfcff;
-  max-width: 60% !important;
+  // max-width: 60% !important;
   position: relative;
 
   h2 {
     font-size: 3rem;
     color: #00CB51;
+
+    @media screen and (max-width: 960px) {
+      font-size: 2.2rem;
+    }
   }
 
   p {
     font-size: 130%;
     color: var(--ifm-background-color);
+
+    @media screen and (max-width: 960px) {
+      font-size: 115%;
+    }
   }
 
   @media only screen and (max-width: 700px) {
@@ -145,18 +149,23 @@
 }
 
 .CTAGuideImg {
-  position: absolute;
-  top: 0;
-  right: 0;
-  max-width: 50%;
-  height: auto;
-  z-index: 0;
+  position: relative;
 
-  @media only screen and (max-width: 1300px) {
-    max-width: 350px;
-  }
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-30%);
+    max-width: none;
+    height: 800px;
 
-  @media only screen and (max-width: 700px) {
-    display: none;
+    @media only screen and (max-width: 960px) {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      transform: translateY(0%);
+      margin-top: 2rem;
+
+    }
   }
 }

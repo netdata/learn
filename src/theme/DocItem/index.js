@@ -75,6 +75,7 @@ function DocItem(props) {
   });
 
   const isGuide = permalink.includes('/guides/');
+  const isGet = permalink.includes('/docs/get')
   // END EDIT
 
   return <>
@@ -178,7 +179,8 @@ function DocItem(props) {
             <div className="margin-vert--lg">
               <DocPaginator metadata={metadata} />
             </div>
-            {!isGuide && 
+            {/* BEGIN EDIT */}
+            {!isGuide && !isGet &&
               <div className={clsx(styles.CTAdoc)}>
                 <div className={clsx(styles.CTAtext)}>
                   <h2>Monitor everything in real time – for free</h2>
@@ -194,6 +196,7 @@ function DocItem(props) {
                   />
               </div>
             }
+            {/* END EDIT */}
           </div>
         </div>
         {!hideTableOfContents && DocContent.toc && <div className="col col--3">
