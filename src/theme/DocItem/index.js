@@ -185,7 +185,7 @@ function DocItem(props) {
                 <div className={clsx(styles.CTAtext)}>
                   <h2>Monitor everything in real time – for free</h2>
                   <p>Troubleshoot slowdowns and anomalies in your infrastructure with thousands of per-second metrics, meaningful visualizations, and insightful health alarms with zero configuration.</p>
-                  <Link to="https://netdata.cloud/get-netdata" className="button button--primary">Get Netdata</Link>
+                  <Link to="https://netdata.cloud/get-netdata" className="button button--primary" target="_blank">Get Netdata</Link>
                 </div>
                 <SVG 
                     className={clsx(
