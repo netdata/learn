@@ -112,8 +112,8 @@ function DocPageContent({currentDocRoute, versionMetadata, children}) {
                 <div className={clsx("row")}>
                   <div className={clsx("col", styles.CTAGuideText)}>
                     <h2>Monitor everything in real time – for free</h2>
-                    <p>Troubleshoot slowdowns and anomalies in your infrastructure with thousands of metrics, interactive visualizations, and insightful health alarms.</p>
-                    <Link to="https://netdata.cloud/get-netdata" className="button button--primary">Get started</Link>
+                    <p>Troubleshoot slowdowns and anomalies in your infrastructure with thousands of per-second metrics, meaningful visualizations, and insightful health alarms with zero configuration.</p>
+                    <Link to="https://netdata.cloud/get-netdata" className="button button--primary">Get Netdata</Link>
                   </div>
                   <div className={clsx("col", styles.CTAGuideImg)}>
                     <SVG

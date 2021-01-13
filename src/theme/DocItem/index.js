@@ -184,8 +184,8 @@ function DocItem(props) {
               <div className={clsx(styles.CTAdoc)}>
                 <div className={clsx(styles.CTAtext)}>
                   <h2>Monitor everything in real time – for free</h2>
-                  <p>Troubleshoot slowdowns and anomalies in your infrastructure with thousands of metrics, interactive visualizations, and insightful health alarms.</p>
-                  <Link to="/docs/get" className="button button--primary">Download the Netdata Agent</Link>
+                  <p>Troubleshoot slowdowns and anomalies in your infrastructure with thousands of per-second metrics, meaningful visualizations, and insightful health alarms with zero configuration.</p>
+                  <Link to="https://netdata.cloud/get-netdata" className="button button--primary">Get Netdata</Link>
                 </div>
                 <SVG 
                     className={clsx(
