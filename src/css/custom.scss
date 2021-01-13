@@ -86,7 +86,7 @@ html {
   --ifm-code-background: rgb(235, 238, 241);
 
   /* Buttons */
-  --ifm-button-background-color: var(--ifm-color-primary);
+  // --ifm-button-background-color: var(--ifm-color-primary);
   --ifm-button-border-width: 1px;
   --ifm-button-border-radius: 2px;
   --ifm-button-font-weight: 500;
@@ -104,7 +104,7 @@ html {
   --ifm-navbar-padding-horizontal: 2rem;
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: var(--ifm-color-primary-lightest);
-  --ifm-navbar-height: 68px;
+  --ifm-navbar-height: 97px;
 
   /* Search */
   --ifm-navbar-search-input-color: var(--ifm-font-color-base);
@@ -169,10 +169,21 @@ html[data-theme='dark'] {
  * Navbar 
  */
 
+.navbar {
+  flex-wrap: wrap;
+}
+
 .navbar,
 .navbar .navbar-sidebar {
   background-color: #35414a;
 }
+
+// .navbar__inner {
+//   max-width: var(--ifm-container-width);
+//   margin: 0 auto;
+//   padding: 0 var(--ifm-spacing-horizontal);
+//   width: 100%;
+// }
 
 @media (max-width: 996px) {
   .navbar .navbar__inner {
@@ -562,7 +573,7 @@ a {
   transition: ease-in-out all 0.15s;
 }
 
-a:hover {
+a:hover:not(.button) {
   color: var(--ifm-color-secondary);
 }
 
@@ -598,10 +609,7 @@ html[data-theme='dark'] a:hover {
 }
 
 .button.button--secondary {
-  border: 1px solid transparent;
-  // box-shadow: 0 0 0 1px var(--ifm-color-primary);
-  background: white;
-  color: var(--ifm-color-primary);
+  --ifm-button-border-color: var(--ifm-color-primary);
 }
 
 .button.button--secondary:hover {
