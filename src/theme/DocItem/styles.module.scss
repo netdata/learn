@@ -36,6 +36,49 @@
 }
 
 /*
+ * CTAs
+ */
+
+.CTAdoc {
+  margin-left: -2.5rem;
+  margin-right: -2.5rem;
+  margin-bottom: -2rem;
+  margin-top: 6rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+  border-right: 1px solid var(--ifm-toc-border-color);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.CTAtext {
+  z-index: 2;
+  max-width: 60% !important;
+  position: relative;
+
+  @media only screen and (max-width: 700px) {
+    max-width: 100% !important;
+  }
+}
+
+.CTAimg {
+  position: absolute;
+  top: 0;
+  right: -60px;
+  max-width: 440px;
+  height: auto;
+  z-index: 0;
+
+  @media only screen and (max-width: 1300px) {
+    max-width: 350px;
+  }
+
+  @media only screen and (max-width: 700px) {
+    display: none;
+  }
+}
+
+/*
  * Guide overrides 
  */
 

@@ -103,3 +103,69 @@
     }
   }
 }
+
+/*
+ * CTAs
+ */
+
+.CTAguide {
+  margin-left: auto !important;
+  background: linear-gradient(to right, #1B2F47, #14133e);
+  padding: 4rem;
+  position: relative;
+  overflow: hidden;
+
+  @media screen and (max-width: 960px) {
+    padding: 3rem 0;
+  }
+}
+
+.CTAGuideText {
+  z-index: 2;
+  // max-width: 60% !important;
+  position: relative;
+
+  h2 {
+    font-size: 3rem;
+    color: #00CB51;
+
+    @media screen and (max-width: 960px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  p {
+    font-size: 130%;
+    color: var(--ifm-background-color);
+
+    @media screen and (max-width: 960px) {
+      font-size: 115%;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    max-width: 100% !important;
+  }
+}
+
+.CTAGuideImg {
+  position: relative;
+
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-30%);
+    max-width: none;
+    height: 800px;
+
+    @media only screen and (max-width: 960px) {
+      position: relative;
+      max-width: 100%;
+      height: auto;
+      transform: translateY(0%);
+      margin-top: 2rem;
+
+    }
+  }
+}
