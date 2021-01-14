@@ -9,7 +9,7 @@ import styles from './styles.module.scss';
 
 const GuideItems = [
   {
-    title: "Detect anomalies in systems and applications",
+    title: "Monitor and visualize anomalies",
     href: "/guides/monitor/visualize-monitor-anomalies",
     category: "collect-monitor",
     description: "Using unsupervised anomaly detection, trigger alarms seconds after your mission-critical metrics behave strangely, then visualize everything in parallel to find the root cause."
