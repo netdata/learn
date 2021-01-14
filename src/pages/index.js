@@ -29,6 +29,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Monitor and visualize anomalies</>,
+    href: '/guides/monitor/visualize-monitor-anomalies',
+    date: 'January 13, 2021',
+    type: 'Guide',
+    description: (
+      <>
+        Using unsupervised anomaly detection, trigger alarms seconds after your mission-critical metrics behave strangely, then visualize everything in parallel to find the root cause.
+      </>
+    ),
+  },
+  {
     title: <>Detect anomalies in systems and applications</>,
     href: '/guides/monitor/anomaly-detection',
     date: 'January 7, 2021',
@@ -80,17 +91,6 @@ const updates = [
     description: (
       <>
         Collect per-second metrics from any number of Couchbase instances, including operations, disk/data/memory used per bucket, and disk fetches.
-      </>
-    ),
-  },
-  {
-    title: <>Interact with dashboards and charts</>,
-    href: '/docs/visualize/interact-dashboards-charts#choose-timeframes-to-visualize',
-    date: 'December 15, 2020',
-    type: 'Doc',
-    description: (
-      <>
-        Both our local Agent and Netdata Cloud dashboards are now even easier to use thanks to parallel time &amp; date pickers that help you drill down and discover root causes.
       </>
     ),
   },
