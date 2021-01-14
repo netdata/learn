@@ -1,7 +1,7 @@
 .BoxGrid {
   display: grid;
   margin-top: var(--ifm-paragraph-margin-bottom);
-  grid-gap: 1.5rem;
+  grid-gap: 2rem;
   grid-template-columns: repeat(6, 1fr);
 }
 
@@ -38,13 +38,7 @@
     }
 
     .BoxCTA {
-      color: var(--ifm-color-primary-lightest);
-
-      &:after {
-        right: -24px;
-        color: var(--ifm-color-primary-lightest);
-        opacity: 1;
-      }
+      border-color: var(--ifm-color-primary-lightest);
     }
   }
 
@@ -57,7 +51,7 @@
     margin-bottom: 0;
 
     color: var(--ifm-font-color-base);
-    font-size: 90%;
+    font-size: 95%;
     font-weight: 400;
   }
 
@@ -70,23 +64,24 @@
 
 .BoxCTA {
   position: relative;
-  display: inline-block;
+  // display: inline-block;
   margin-top: 1rem;
-  font-size: 100%;
-  font-weight: var(--ifm-heading-font-weight);
+  // font-size: 100%;
+  // font-weight: var(--ifm-heading-font-weight);
+  --ifm-button-size-multiplier: 1;
 
-  &:after {
-    position: absolute;
-    top: -2px;
-    right: -12px;
-    display: block;
-    font-size: 170%;
-    font-weight: 500;
-    line-height: 1;
-    content: '\2192';
-    opacity: 0;
-    transition: 0.15s all ease-in;
-  }
+  // &:after {
+  //   position: absolute;
+  //   top: -2px;
+  //   right: -12px;
+  //   display: block;
+  //   font-size: 170%;
+  //   font-weight: 500;
+  //   line-height: 1;
+  //   content: '\2192';
+  //   opacity: 0;
+  //   transition: 0.15s all ease-in;
+  // }
 }
 
 .BoxGuideTech {

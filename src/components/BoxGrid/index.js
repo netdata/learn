@@ -17,7 +17,7 @@ export const Box = ({children, href, title, cta, GuideTech}) => (
 
     {children && <p>{children}</p>}
 
-    {cta && <span className={clsx(styles.BoxCTA)}>{cta}</span>}
+    {cta && <span className={clsx('button button--primary', styles.BoxCTA)}>{cta}</span>}
 
     {GuideTech && 
       <ul className={styles.BoxGuideTech}>
