@@ -74,7 +74,6 @@ module.exports = {
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-64295674-3',
-      anonymizeIP: true,
     },
     image: 'img/netdata_meta-default.png',
     prism: {
