@@ -594,9 +594,15 @@ html[data-theme='dark'] a:hover {
 
 /* Buttons */
 .button {
-  // border: 2px solid var(--ifm-color-primary);
+  border: 2px solid var(--ifm-color-primary);
   font-family: var(--ifm-font-family-base);
   font-weight: 500;
+}
+
+.button.button--primary {
+  &:hover {
+    border-color: var(--ifm-color-primary-lightest);
+  }
 }
 
 // .button:hover {

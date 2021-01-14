@@ -246,9 +246,11 @@ export function Guides() {
                 <Box
                   key={idx}
                   title={props.title}
-                  cta='Read now'
+                  cta='Start now'
                   href={props.href}
-                  />
+                  >
+                  <p>{props.description}</p>
+                </Box>
               ))}
             </BoxGrid>
           </>
