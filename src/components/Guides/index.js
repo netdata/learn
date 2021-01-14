@@ -10,6 +10,12 @@ import styles from './styles.module.scss';
 const GuideItems = [
   {
     title: "Detect anomalies in systems and applications",
+    href: "/guides/monitor/visualize-monitor-anomalies",
+    category: "collect-monitor",
+    description: "Using unsupervised anomaly detection, trigger alarms seconds after your mission-critical metrics behave strangely, then visualize everything in parallel to find the root cause."
+  },
+  {
+    title: "Detect anomalies in systems and applications",
     href: "/guides/monitor/anomaly-detection",
     category: "collect-monitor",
     description: "Detect anomalies in any system, container, or application in your infrastructure with machine learning and the open-source Netdata Agent."
