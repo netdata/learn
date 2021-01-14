@@ -34,6 +34,11 @@ function DocItem(props) {
     frontMatter: {
       image: metaImage,
       keywords,
+      // BEGIN EDIT
+      author,
+      author_title,
+      author_img,
+      // END EDIT
       hide_title: hideTitle,
       hide_table_of_contents: hideTableOfContents
     }
@@ -128,6 +133,17 @@ function DocItem(props) {
               {!hideTitle && !isGuide && <header> {/* EDIT */}
                   <h1 className={styles.docTitle}>{title}</h1>
                 </header>}
+                {/* BEGIN EDIT */}
+                {isGuide && 
+                  <div className={styles.GuideAuthor}>
+                    <img className={styles.GuideAuthorImg} src={author_img} alt={author} />
+                    <div className={styles.GuideAuthorMeta}>
+                      <p className={styles.GuideAuthorName}>{author}</p>
+                      <p className={styles.GuideAuthorTitle}>{author_title}</p>
+                    </div>
+                  </div>
+                }
+                {/* END EDIT */}
               <div className="markdown" data-swiftype-index="true"> {/* EDIT */}
                 <DocContent />
               </div>

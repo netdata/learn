@@ -112,6 +112,33 @@
   }
 }
 
+.GuideAuthor {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.GuideAuthorImg {
+  max-width: 96px;
+  border-radius: 100%;
+}
+
+.GuideAuthorMeta {
+  margin-left: 1rem;
+}
+
+.GuideAuthorName {
+  font-size: 120%;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.GuideAuthorTitle {
+  font-size: 90%;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
 html[data-theme='dark'] .GuideTitle {
   background: linear-gradient(to bottom, #191927, #22272E);
 
