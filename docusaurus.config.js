@@ -72,7 +72,7 @@ module.exports = {
     },
   ],
   themeConfig: {
-    googleAnalytics: {
+    gtag: {
       trackingID: 'UA-64295674-3',
     },
     image: 'img/netdata_meta-default.png',
