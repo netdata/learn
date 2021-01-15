@@ -10,7 +10,7 @@
   position: relative;
   grid-column-end: span 3;
   padding: var(--ifm-spacing-horizontal);
-
+  background: var(--ifm-background-color);
   border: 1px solid var(--ifm-contents-border-color);
   border-radius: 2px;
   transition: ease-in-out all 0.15s;

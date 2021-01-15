@@ -12,13 +12,9 @@ export const BoxGrid = ({children}) => (
 
 export const Box = ({children, href, title, cta, GuideTech}) => (
   <div className={styles.Box}>
-
     <h3>{title}</h3>
-
     {children && <p>{children}</p>}
-
     {cta && <span className={clsx('button button--primary', styles.BoxCTA)}>{cta}</span>}
-
     {GuideTech && 
       <ul className={styles.BoxGuideTech}>
         {GuideTech.map(item => (
@@ -26,10 +22,8 @@ export const Box = ({children, href, title, cta, GuideTech}) => (
         ))}
       </ul>
     }
-
     <Link 
       className={styles.BoxHit}
       to={href} />
-
   </div>
 );

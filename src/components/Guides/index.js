@@ -9,13 +9,13 @@ import styles from './styles.module.scss';
 
 const GuideItems = [
   {
-    title: "Monitor and visualize anomalies",
+    title: "Monitor and visualize anomalies (part 2)",
     href: "/guides/monitor/visualize-monitor-anomalies",
     category: "collect-monitor",
     description: "Using unsupervised anomaly detection, trigger alarms seconds after your mission-critical metrics behave strangely, then visualize everything in parallel to find the root cause."
   },
   {
-    title: "Detect anomalies in systems and applications",
+    title: "Detect anomalies in systems and applications (part 1)",
     href: "/guides/monitor/anomaly-detection",
     category: "collect-monitor",
     description: "Detect anomalies in any system, container, or application in your infrastructure with machine learning and the open-source Netdata Agent."
@@ -168,6 +168,11 @@ const GuideItems = [
 
 const GuideCategories = [
   {
+    label: "collect-monitor",
+    title: "Collect & monitor",
+    description: "Extract and visualize metrics from essential services or applications on your infrastructure."
+  },
+  {
     label: "configure",
     title: "Configure",
     description: "Advanced configuration options for those who want to elevate their Netdata Agent-monitored nodes."
@@ -178,19 +183,14 @@ const GuideCategories = [
     description: "Strategies and playbooks for bootstrapping an infrastructure monitoring solution with Netdata and infrastructure as code tools."
   },
   {
-    label: "collect-monitor",
-    title: "Collect & monitor",
-    description: "Extract and visualize metrics from essential services or applications on your infrastructure."
+    label: "export",
+    title: "Export",
+    description: "Explore Netdata's interoperability with other monitoring and visualization platforms."
   },
   {
     label: "step-by-step",
     title: "Step-by-step",
     description: "Learn about Netdata's many features and capabilities in a guided experienced designed for those new to monitoring and troubleshooting."
-  },
-  {
-    label: "export",
-    title: "Export",
-    description: "Explore Netdata's interoperability with other monitoring and visualization platforms."
   },
 ]
 

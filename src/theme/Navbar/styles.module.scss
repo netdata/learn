@@ -41,6 +41,10 @@
 }
 
 .ButtonSignIn {
-  color: white !important;
+  color: white;
   margin-left: 1rem;
+
+  &:hover {
+    color: var(--ifm-color-primary-lightest);
+  }
 }

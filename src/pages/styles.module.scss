@@ -10,8 +10,9 @@
 .hero {
   position: relative;
   // overflow: hidden;
-  padding: 8rem 0 12rem;
+  padding: 3rem 0 8rem;
   background: linear-gradient(to bottom, white, #f1f2fb);
+  overflow: hidden;
 
   span {
     display: block;
@@ -26,11 +27,11 @@
     position: relative;
 
     .heroTagline {
-      font-size: 3rem;
+      font-size: 2.4rem;
     }
 
     .heroSubHead {
-      font-size: 1.3rem;
+      font-size: 110%;
       margin-bottom: 0;
     }
   }
@@ -80,20 +81,24 @@
  */
 
 .Get {
-  margin-top: -8rem;
+  margin-top: -6rem;
   z-index: 100;
   position: relative;
 
   div > a {
     box-shadow: 0 10px 15px -3px hsla(198,23%,3%,0.06),0 4px 6px -2px hsla(198,23%,3%,0.12);
+    margin-top: 0;
+    display: block;
+    height: 100%;
+    margin-top: 0;
   }
 
   @media (max-width: 996px) {
     margin-top: 0rem;
-  }
 
-  div > a {
-    margin-top: 0;
+    div[class*="col"] + div[class*="col"] {
+      margin-top: 2rem;
+    }
   }
 }
 
@@ -102,8 +107,8 @@
  */
 
 .CTAs {
-  padding: 6rem 0 0;
-  margin-bottom: 5rem;
+  padding: 4rem 0 0;
+  margin-bottom: 3rem;
 
   div > a {
     margin-top: 0;
