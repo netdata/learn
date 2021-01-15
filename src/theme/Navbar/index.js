@@ -81,7 +81,7 @@ function Navbar() {
   })}>
       <div className={styles.NavbarCTAs}>
         <Link to="https://netdata.cloud/get-netdata" className={clsx('button button--primary')}>Get Netdata</Link>
-        <Link to="https://app.netdata.cloud" className={clsx('button button--outline button--secondary', styles.ButtonSignIn)}>Sign in to Cloud</Link>
+        <Link to="https://app.netdata.cloud/sign-in?cloudRoute=/spaces" className={clsx('button button--outline button--secondary', styles.ButtonSignIn)}>Sign in to Cloud</Link>
       </div>
       <div className="navbar__inner">
         <div className="navbar__items">
