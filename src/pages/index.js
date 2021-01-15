@@ -168,23 +168,12 @@ function Home() {
                   <StartBox 
                     to="/docs/get"
                     title="Get Netdata"
-                    description="Sign up for Netdata Cloud and install the open-source Agent on your
+                    description="Sign up for Netdata Cloud and install the open-source monitoring Agent on your
                     nodes. Claim and connect your nodes to Netdata Cloud for seamless, scalable, 
                     and granular infrastructure monitoring."
-                    cta="Show me how"
+                    cta="Start"
                     image={true} />
                 </div>
-              </div>
-            </div>
-          </section>
-          <section className={styles.CTAs}>
-            <div className={clsx('container')}>
-              <div className={clsx('row')}>
-                <div className={clsx('col col--8')}>
-                  <h2>New to Netdata?</h2>
-                </div>
-              </div>
-              <div className={clsx('row')}>
                 <div className={clsx('col col--4')}>
                   <DiscoverBox 
                     href="/docs/overview/what-is-netdata" 
@@ -193,6 +182,17 @@ function Home() {
                     Run through Netdata's components, capabilities, and features. Understand how and why it's different from other monitoring solutions.
                   </DiscoverBox>
                 </div>
+              </div>
+            </div>
+          </section>
+          <section className={styles.CTAs}>
+            <div className={clsx('container')}>
+              <div className={clsx('row')}>
+                <div className={clsx('col col--12')}>
+                  <h2>Looking to jump in to monitoring, or follow step-by-step instructions?</h2>
+                </div>
+              </div>
+              <div className={clsx('row')}>
                 <div className={clsx('col col--4')}>
                   <DiscoverBox 
                     href="/docs/quickstart/single-node" 
@@ -209,13 +209,6 @@ function Home() {
                     Granular and zero-configuration monitoring for systems, containers, and applications at scale.
                   </DiscoverBox>
                 </div>
-              </div>
-              <div className={clsx('row', styles.ctaRow)}>
-                <div className={clsx('col col--8')}>
-                  <h2>Looking for guided content or reference documentation?</h2>
-                </div>
-              </div>
-              <div className={clsx('row')}>
                 <div className={clsx('col col--4')}>
                   <DiscoverBox 
                     href="/guides" 
@@ -224,6 +217,13 @@ function Home() {
                     Follow along to monitor specific applications, deploy Netdata across infrastructure, and more.
                   </DiscoverBox>
                 </div>
+              </div>
+              <div className={clsx('row', styles.ctaRow)}>
+                <div className={clsx('col col--8')}>
+                  <h2>Reference documentation</h2>
+                </div>
+              </div>
+              <div className={clsx('row')}>
                 <div className={clsx('col col--4')}>
                   <DiscoverBox 
                     href="/docs/agent" 
