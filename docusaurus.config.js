@@ -73,7 +73,7 @@ module.exports = {
   ],
   themeConfig: {
     gtag: {
-      trackingID: 'UA-64295674-3',
+      trackingID: 'GTM-N6CBMJD',
     },
     image: 'img/netdata_meta-default.png',
     prism: {
