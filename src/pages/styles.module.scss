@@ -10,8 +10,9 @@
 .hero {
   position: relative;
   // overflow: hidden;
-  padding: 8rem 0 12rem;
+  padding: 4rem 0 8rem;
   background: linear-gradient(to bottom, white, #f1f2fb);
+  overflow: hidden;
 
   span {
     display: block;
@@ -26,11 +27,11 @@
     position: relative;
 
     .heroTagline {
-      font-size: 3rem;
+      font-size: 2.4rem;
     }
 
     .heroSubHead {
-      font-size: 1.3rem;
+      font-size: 110%;
       margin-bottom: 0;
     }
   }
@@ -80,7 +81,7 @@
  */
 
 .Get {
-  margin-top: -8rem;
+  margin-top: -4rem;
   z-index: 100;
   position: relative;
 

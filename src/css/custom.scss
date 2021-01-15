@@ -101,6 +101,7 @@ html {
   --ifm-contents-border-color: var(--ifm-color-emphasis-300);
 
   /* Navbar */
+  --ifm-z-index-fixed: 100;
   --ifm-navbar-padding-horizontal: 2rem;
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: var(--ifm-color-primary-lightest);
@@ -151,6 +152,10 @@ html[data-theme='dark'] {
  * Structure
  */
 
+.main-wrapper {
+  z-index: 1;
+}
+
 .row--center {
   align-items: center;
 }
@@ -171,7 +176,6 @@ html[data-theme='dark'] {
 
 .navbar {
   flex-wrap: wrap;
-  z-index: 1;
 }
 
 .navbar,
