@@ -50,7 +50,7 @@ html {
   --ifm-color-primary-darkest: #007830;
   --ifm-color-primary-light: #00bc4b;
   --ifm-color-primary-lighter: #00c54e;
-  --ifm-color-primary-lightest: #00de58;
+  --ifm-color-primary-lightest: #00CB51;
 
   --ifm-color-secondary: #306BAC;
   --ifm-color-secondary-dark: #2b609b;
@@ -171,6 +171,7 @@ html[data-theme='dark'] {
 
 .navbar {
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .navbar,
@@ -282,7 +283,7 @@ html[data-theme='dark'] {
 }
 
 .searchZ {
-  z-index: 200 !important;
+  z-index: 300 !important;
 }
 
 body.search-open {
@@ -317,12 +318,12 @@ body.search-open {
   top: 1px;
   height: 67px;
   font-size: 110%;
-  border-color: var(--ifm-color-primary);
+  // border-color: var(--ifm-color-primary);
 
-  &:hover {
-    background: var(--ifm-color-primary-lightest);
-    border-color: var(--ifm-color-primary-lightest);
-  }
+  // &:hover {
+  //   background: var(--ifm-color-primary-lightest);
+  //   border-color: var(--ifm-color-primary-lightest);
+  // }
 
   &:focus {
     outline: none;
@@ -572,7 +573,7 @@ a {
   transition: ease-in-out all 0.15s;
 }
 
-a:hover:not(.button) {
+a:hover:not(.button):not(.navbar__link) {
   color: var(--ifm-color-secondary);
 }
 
@@ -597,6 +598,11 @@ html[data-theme='dark'] a:hover {
   border: 2px solid var(--ifm-color-primary);
   font-family: var(--ifm-font-family-base);
   font-weight: 500;
+  
+
+  &:active {
+    background: var(--ifm-color-primary-lightest);
+  }
 }
 
 .button.button--primary {
@@ -605,27 +611,26 @@ html[data-theme='dark'] a:hover {
   }
 }
 
-// .button:hover {
-//   // border: 2px solid var(--ifm-color-primary-lightest);
-// }
-
-.button:active {
-  background: var(--ifm-color-primary-lightest);
-}
-
 .button.button--secondary {
-  --ifm-button-border-color: var(--ifm-color-primary);
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-primary);
+
+  &:hover {
+    background: var(--ifm-color-primary-lightest);
+    border-color: var(--ifm-color-primary-lightest);
+    color: white;
+  }
 }
 
-.button.button--secondary:hover {
-  // box-shadow: 0 0 0 1px var(--ifm-color-primary-lightest);
-  color: var(--ifm-color-primary-lightest);
-}
+.button.button--outline {
+  background: transparent;
+  color: white !important;
 
-.button.button.button--secondary:active {
-  background: var(--ifm-color-primary-lightest);
-  color: white;
-  border-color: transparent;
+  &:hover {
+    background: var(--ifm-color-primary-lightest);
+    border-color: var(--ifm-color-primary-lightest);
+    color: white;
+  }
 }
 
 html[data-theme='dark'] .button {

@@ -90,6 +90,7 @@ const SearchBar = (props) => {
                       <>
                         <header className={styles.searchHeader}>
                           <SearchBox 
+                            className={clsx('button--primary')}
                             inputProps={{ placeholder: "Search all of Netdata", autoFocus: true }} 
                             autocompleteResults={{
                               titleField: "title",
