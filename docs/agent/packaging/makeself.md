@@ -49,6 +49,6 @@ If Netdata crashes, `valgrind` will print a stack trace of the issue. Open a git
 
 To stop Netdata while it runs under `valgrind`, press Control-C on the console.
 
-> If you omit the parameter `--undef-value-errors=no` to valgrind, you will get hundreds of errors about conditional jumps that depend on uninitialized values. This is normal. Valgrind has heuristics to prevent it from printing such errors for system libraries, but for the static Netdata binary, all the required libraries are built into Netdata. So, valgrind cannot appply its heuristics and prints them.
+> If you omit the parameter `--undef-value-errors=no` to valgrind, you will get hundreds of errors about conditional jumps that depend on uninitialized values. This is normal. Valgrind has heuristics to prevent it from printing such errors for system libraries, but for the static Netdata binary, all the required libraries are built into Netdata. So, valgrind cannot apply its heuristics and prints them.
 
 

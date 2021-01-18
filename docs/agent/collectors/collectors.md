@@ -222,7 +222,7 @@ configure any of these collectors according to your setup and infrastructure.
 -   [ISC DHCP (Go)](/docs/agent/collectors/go.d.plugin/modules/isc_dhcpd): Reads a
     `dhcpd.leases` file and collects metrics on total active leases, pool active leases, and pool utilization.
 -   [ISC DHCP (Python)](/docs/agent/collectors/python.d.plugin/isc_dhcpd): Reads `dhcpd.leases` file and reports DHCP
-    pools utiliation and leases statistics (total number, leases per pool).
+    pools utilization and leases statistics (total number, leases per pool).
 -   [OpenLDAP](/docs/agent/collectors/python.d.plugin/openldap): Provides statistics information from the OpenLDAP
     (`slapd`) server.
 -   [NSD](/docs/agent/collectors/python.d.plugin/nsd): Monitor nameserver performance metrics using the `nsd-control`
@@ -357,7 +357,7 @@ The Netdata Agent can collect these system- and hardware-level metrics using a v
 -   [BCACHE](/docs/agent/collectors/proc.plugin): Monitor BCACHE statistics with the the `proc.plugin` collector.
 -   [Block devices](/docs/agent/collectors/proc.plugin): Gather metrics about the health and performance of block
     devices using the the `proc.plugin` collector.
--   [Btrfs](/docs/agent/collectors/proc.plugin): Montiors Btrfs filesystems with the the `proc.plugin` collector.
+-   [Btrfs](/docs/agent/collectors/proc.plugin): Monitors Btrfs filesystems with the the `proc.plugin` collector.
 -   [Device mapper](/docs/agent/collectors/proc.plugin): Gather metrics about the Linux device mapper with the proc
     collector.
 -   [Disk space](/docs/agent/collectors/diskspace.plugin): Collect disk space usage metrics on Linux mount points.
@@ -445,7 +445,7 @@ The Netdata Agent can collect these system- and hardware-level metrics using a v
 -   [systemd](/docs/agent/collectors/cgroups.plugin): Monitor the CPU and memory usage of systemd services using the
     `cgroups.plugin` collector.
 -   [systemd unit states](/docs/agent/collectors/go.d.plugin/modules/systemdunits): See the 
-    state (active, inactive, activating, deactiviating, failed) of various systemd unit types.
+    state (active, inactive, activating, deactivating, failed) of various systemd unit types.
 -   [System processes](/docs/agent/collectors/proc.plugin): Collect metrics on system load and total processes running
     using `/proc/loadavg` and the `proc.plugin` collector.
 -   [Uptime](/docs/agent/collectors/proc.plugin): Monitor the uptime of a system using the `proc.plugin` collector.
@@ -511,10 +511,10 @@ the `go.d.plugin`.
 
 ## Third-party collectors
 
-These collectors are developed and maintined by third parties and, unlike the other collectors, are not installed by
+These collectors are developed and maintained by third parties and, unlike the other collectors, are not installed by
 default. To use a third-party collector, visit their GitHub/documentation page and follow their installation procedures.
 
--   [CyberPower UPS](https://github.com/HawtDogFlvrWtr/netdata_cyberpwrups_plugin): Polls Cyberpower UPS data using
+-   [CyberPower UPS](https://github.com/HawtDogFlvrWtr/netdata_cyberpwrups_plugin): Polls CyberPower UPS data using
     PowerPanel® Personal Linux.
 -   [Logged-in users](https://github.com/veksh/netdata-numsessions): Collect the number of currently logged-on users.
 -   [nim-netdata-plugin](https://github.com/FedericoCeratto/nim-netdata-plugin): A helper to create native Netdata
