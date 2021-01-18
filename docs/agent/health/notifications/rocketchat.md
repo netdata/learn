@@ -47,6 +47,6 @@ role_recipients_rocketchat[webmaster]="marketing development"
 ```
 
 The keywords `systems`, `databases`, `marketing`, `development` are RocketChat channels (they should already exist).
-Both public and private channels can be used, even if they differ from the channel configured in yout RocketChat incomming webhook.
+Both public and private channels can be used, even if they differ from the channel configured in your RocketChat incoming webhook.
 
 

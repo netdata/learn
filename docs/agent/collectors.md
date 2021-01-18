@@ -32,7 +32,7 @@ guide](/docs/agent/collectors/quickstart).
 
 [Monitor Nginx or Apache web server log files with Netdata](/guides/collect-apache-nginx-web-logs)
 
-[Monitor CockroadchDB metrics with Netdata](/guides/monitor-cockroachdb)
+[Monitor CockroachDB metrics with Netdata](/guides/monitor-cockroachdb)
 
 [Monitor Unbound DNS servers with Netdata](/guides/collect-unbound-metrics)
 
@@ -40,7 +40,7 @@ guide](/docs/agent/collectors/quickstart).
 
 ## Related features
 
-**[Dashboards](/docs/agent/web)**: Vizualize your newly-collect metrics in real-time using Netdata's [built-in
+**[Dashboards](/docs/agent/web)**: Visualize your newly-collect metrics in real-time using Netdata's [built-in
 dashboard](/docs/agent/web/gui). 
 
 **[Backends](/docs/agent/backends)**: Extend our built-in [database engine](/docs/agent/database/engine), which supports

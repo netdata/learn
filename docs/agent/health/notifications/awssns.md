@@ -37,7 +37,7 @@ Once that's done, you're ready to go and can specify the desired topic ARN as a 
 Notes:
 
 -   Netdata's native email notification support is far better in almost all respects than it's support through Amazon SNS.  If you want email notifications, use the native support, not SNS.
-    -   If you need to change the notification format for SNS notifications, you can do so by specifying the format in `AWSSNS_MESSAGE_FORMAT` in the configuration.  This variable supports all the same vairiables you can use in custom notifications.
+    -   If you need to change the notification format for SNS notifications, you can do so by specifying the format in `AWSSNS_MESSAGE_FORMAT` in the configuration.  This variable supports all the same variables you can use in custom notifications.
     -   While Amazon SNS supports sending differently formatted messages for different delivery methods, Netdata does not currently support this functionality.
 
 

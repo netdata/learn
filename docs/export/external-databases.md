@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/export/exte
 
 
 Netdata allows you to export metrics to external time-series databases with the [exporting
-engine](/docs/agent/exporting). This system uses a number of **connectors** to intiate connections to [more than
+engine](/docs/agent/exporting). This system uses a number of **connectors** to initiate connections to [more than
 thirty](#supported-databases) supported databases, including InfluxDB, Prometheus, Graphite, ElasticSearch, and much
 more. 
 

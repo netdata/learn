@@ -131,7 +131,7 @@ to IP addresses within the `160.1.x.x` range and that reverse DNS is setup for t
 
 #### Use an authenticating web server in proxy mode
 
-Use one web server to provide authentication in front of **all your Netdata servers**. So, you will be accessing all your Netdata with URLs like `http://{HOST}/netdata/{NETDATA_HOSTNAME}/` and authentication will be shared among all of them (you will sign-in once for all your servers). Instructions are provided on how to set the proxy configuration to have Netdata run behind [nginx](/docs/agent/running-behind-nginx), [Apache](/docs/agent/running-behind-apache), [lighthttpd](/docs/agent/running-behind-lighttpd) and [Caddy](/docs/agent/running-behind-caddy).
+Use one web server to provide authentication in front of **all your Netdata servers**. So, you will be accessing all your Netdata with URLs like `http://{HOST}/netdata/{NETDATA_HOSTNAME}/` and authentication will be shared among all of them (you will sign-in once for all your servers). Instructions are provided on how to set the proxy configuration to have Netdata run behind [nginx](/docs/agent/running-behind-nginx), [Apache](/docs/agent/running-behind-apache), [lighttpd](/docs/agent/running-behind-lighttpd) and [Caddy](/docs/agent/running-behind-caddy).
 
 To use this method, you should firewall protect all your Netdata servers, so that only the web server IP will allowed to directly access Netdata. To do this, run this on each of your servers (or use your firewall manager):
 
@@ -212,7 +212,7 @@ If sending this information to the central Netdata registry violates your securi
 Starting with v1.12, Netdata collects anonymous usage information by default and sends it to Google Analytics. Read
 about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/agent/anonymous-statistics) page.
 
-The usage statistics are _vital_ for us, as we use them to discover bugs and priortize new features. We thank you for
+The usage statistics are _vital_ for us, as we use them to discover bugs and prioritize new features. We thank you for
 _actively_ contributing to Netdata's future.
 
 ## Netdata directories
