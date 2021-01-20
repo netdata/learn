@@ -1,0 +1,119 @@
+---
+title: Netdata FAQ
+description: Have a question about Netdata's monitoring platform? We an
+custom_edit_url: null
+id: faq
+slug: /faq/
+---
+
+# FAQ
+
+Have questions for us that aren't answered here? Hop over to our [community](https://community.netdata.cloud/) to ask
+your question or create an issue on [GitHub](https://github.com/netdata/netdata/issues/new/choose).
+
+## How do I reinstall the Netdata Agent?
+
+To reinstall the Netdata Agent, please follow our
+[documentation](https://learn.netdata.cloud/docs/agent/packaging/installer/reinstall).
+
+Many Linux distributions ship with third-party packages of Netdata in their package managers, such as `apt` for Ubuntu
+and Debian. These packages omit certain parts of the Netdata experience, such as support for Netdata Cloud, and we can't
+maintain these packages or ensure they are up-to-date. We recommend using our one-line installation script or our
+official binary package repository.
+
+## How do I update the Netdata Agent?
+
+To update the Netdata Agent, please follow our
+[documentation](https://learn.netdata.cloud/docs/agent/packaging/installer/update).
+
+By default, Netdata Agents have nightly auto-updates enabled. If your Agent version is stuck, try
+[reinstalling](https://learn.netdata.cloud/docs/agent/packaging/installer/reinstall).
+
+## How to find the logs of my Netdata Agent
+
+To find the logs of your Netdata Agent, follow our [documentation](https://learn.netdata.cloud/docs/agent/daemon). To
+show them in the terminal for deugging purposes use: `less /var/log/netdata/error.log`.
+
+When searching for a specific keyword, you can use `grep` to only output the lines that have that `<KEYWORD>`, like
+`grep <KEYWORD> /var/log/netdata/error.log`.
+
+## How can Netdata be free?
+
+The Netdata Agent is free, open source software licensed under GPL v3.0. No registration is required; just install and
+go. It is ideal for single-node monitoring.
+
+Netdata Cloud is free, closed source, software-as-a-service that brings together metadata from all of your endpoints
+running the Netdata Agent, giving you a complete view of the health and performance of your infrastructure.
+
+Because you retain all of your data, Netdata Cloud is extremely lightweight and performant, with very low incremental
+cost and infinite scalability.
+
+In the future, we will offer a paid plan with advanced functionality for enterprise users.
+
+Netdata is a venture-funded company.
+
+## Do you store data?
+
+Any data collected by Netdata are collected and used for operational purposes and will not be sold or shared. Further,
+metrics data are only streamed to Cloud, only on demand (when a user is viewing a chart or dashboard), and never saved.
+Some operational Cloud metadata (such as dashboard configurations or chart configuration) are saved for operational
+purposes
+
+We have documented in great detail [what information we
+gather](https://learn.netdata.cloud/docs/agent/aclk#data-privacy) from Netdata Agents, either from telemetry for product
+development or for advanced functionality in Netdata Cloud.
+
+## Does Netdata supports Windows?
+
+There is no native Windows package available. However, any Netdata installation running on a Linux host can collect
+metrics from 
+
+However, WMI metrics and Prometheus metrics can be collected from Windows machines as long as Netdata runs on a Linux
+host and is properly configured.
+
+- [WMI](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/wmi)
+- [Prometheus](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/prometheus)
+
+## Does Netdata supports Kubernetes deployments?
+
+Netdata offers advanced monitoring for most LXC-based containerization technologies, such as Docker. You can read about
+it in our [solution page](https://www.netdata.cloud/container-monitoring/).
+
+At the moment, we don't offer advanced virtualizations to support a kubernetes deployment, but we are working on it!
+
+## Is there an on-premises version available?
+
+Not yet! Send us an email at [nfo@netdata.cloud](mailto:info@netdata.cloud) if you’re interested. We’d love to learn
+more about your requirements and use case.
+
+## What is `Main signal not enabling reaper`?
+
+Everything is alright! It's a simple informational message emitted by the Netdata Agent.
+
+## Can I automatically remove unreachable nodes from Netdata Cloud?
+
+Currently it's not possible to automatically remove nodes from a Space or War Room. You can remove them manually from a
+War Room, as we describe in our [documentation](https://learn.netdata.cloud/docs/cloud/war-rooms).
+
+## How can I moved a claimed node from one Space to another?
+
+You must [reclaim the node](https://learn.netdata.cloud/docs/agent/claim#remove-and-reclaim-a-node) to the new Space
+using the claiming script.
+
+## Why is my node `unreachable` in Netdata Cloud?
+
+Try to restart the Netdata Agent as we illustrate in our [documentation](https://learn.netdata.cloud/docs/agent/daemon).
+If the issue persists, please do raise an issue in our [Netdata Cloud Support
+category](https://community.netdata.cloud/c/support/cloud-support/15).
+
+If the issue is not resolved with the restart, please [raise a
+bug](https://github.com/netdata/netdata-cloud/issues/new/choose) in our bug tracker so that we can take a look into what
+happened.
+
+## Does Netdata support SNMP monitoring?
+
+Netdata does support SNMP with the [SNMP
+collector](https://learn.netdata.cloud/docs/agent/collectors/node.d.plugin/snmp). If you'd like to see more SNMP
+capabilities, send us a [feature request](https://community.netdata.cloud/c/feature-requests/agent-fr/21) and we'll be
+happy to discuss and learn about your use case!
+
