@@ -94,6 +94,11 @@ module.exports = {
           position: 'left',
         },
         {
+          to: 'docs/faq', 
+          label: 'FAQ', 
+          position: 'right'
+        },
+        {
           to: 'guides', 
           label: 'Guides', 
           position: 'left'
