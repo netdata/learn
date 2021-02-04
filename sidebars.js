@@ -90,7 +90,8 @@ module.exports = {
             'export/enable-connector',
           ]
         },
-      ]
+        'agent/cheatsheet',
+      ],
     },
     {
       type: 'category',
