@@ -588,6 +588,7 @@ module.exports = {
               items: [
                 'cloud/visualize/overview',
                 'cloud/visualize/nodes',
+                'cloud/visualize/kubernetes',
                 'cloud/visualize/dashboards',
                 'cloud/insights/metric-correlations',
               ]
