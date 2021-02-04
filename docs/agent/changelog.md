@@ -2,11 +2,27 @@
 
 ## [**Next release**](https://github.com/netdata/netdata/tree/HEAD)
 
-[Full Changelog](https://github.com/netdata/netdata/compare/v1.28.0...HEAD)
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.29.0...HEAD)
 
 **Merged pull requests:**
 
-- Fixed triggering of Docker image builds from Travis. [\#10541](https://github.com/netdata/netdata/pull/10541) ([Ferroin](https://github.com/Ferroin))
+- Update latest release on main README [\#10590](https://github.com/netdata/netdata/pull/10590) ([joelhans](https://github.com/joelhans))
+
+## [v1.29.0](https://github.com/netdata/netdata/tree/v1.29.0) (2021-02-03)
+
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.28.0...v1.29.0)
+
+**Merged pull requests:**
+
+- Fixed Netdata Cloud support in RPM packages. [\#10578](https://github.com/netdata/netdata/pull/10578) ([Ferroin](https://github.com/Ferroin))
+- Fix container detection from systemd-detect-virt [\#10569](https://github.com/netdata/netdata/pull/10569) ([cakrit](https://github.com/cakrit))
+- dashboard v2.13.0 [\#10565](https://github.com/netdata/netdata/pull/10565) ([jacekkolasa](https://github.com/jacekkolasa))
+- bytes after last '}' trip JSON parser [\#10563](https://github.com/netdata/netdata/pull/10563) ([underhood](https://github.com/underhood))
+- Fix prometheus remote write header [\#10560](https://github.com/netdata/netdata/pull/10560) ([vlvkobal](https://github.com/vlvkobal))
+- fix minor vulnerability alert, updating socket-io dependency [\#10557](https://github.com/netdata/netdata/pull/10557) ([jacekkolasa](https://github.com/jacekkolasa))
+- Fix values in Prometheus export for metrics, collected by the Prometheus collector [\#10551](https://github.com/netdata/netdata/pull/10551) ([vlvkobal](https://github.com/vlvkobal))
+- Properly handle saved temporary directory on updates. [\#10550](https://github.com/netdata/netdata/pull/10550) ([Ferroin](https://github.com/Ferroin))
+- installer: update go.d.plugin version to v0.27.0 [\#10544](https://github.com/netdata/netdata/pull/10544) ([ilyam8](https://github.com/ilyam8))
 - Update README.md on postgres collector [\#10532](https://github.com/netdata/netdata/pull/10532) ([OdysLam](https://github.com/OdysLam))
 - fix postgres password bug and change default config [\#10531](https://github.com/netdata/netdata/pull/10531) ([OdysLam](https://github.com/OdysLam))
 - Make some tweaks/improvements to conf docs [\#10528](https://github.com/netdata/netdata/pull/10528) ([joelhans](https://github.com/joelhans))
@@ -174,7 +190,6 @@
 - Anomalies collector [\#10060](https://github.com/netdata/netdata/pull/10060) ([andrewm4894](https://github.com/andrewm4894))
 - Alarms collector [\#10042](https://github.com/netdata/netdata/pull/10042) ([andrewm4894](https://github.com/andrewm4894))
 - ACLK allow child query [\#10030](https://github.com/netdata/netdata/pull/10030) ([underhood](https://github.com/underhood))
-- ACLK Child Availability Messages [\#9918](https://github.com/netdata/netdata/pull/9918) ([underhood](https://github.com/underhood))
 
 ## [v1.26.0](https://github.com/netdata/netdata/tree/v1.26.0) (2020-10-14)
 
@@ -218,33 +233,14 @@
 - Add missing period in netdata dashboard [\#9960](https://github.com/netdata/netdata/pull/9960) ([hydrogen-mvm](https://github.com/hydrogen-mvm))
 - Fixed chart's last accessed time during context queries [\#9952](https://github.com/netdata/netdata/pull/9952) ([stelfrag](https://github.com/stelfrag))
 - adds missing file netdata.crontab to gitignore [\#9946](https://github.com/netdata/netdata/pull/9946) ([underhood](https://github.com/underhood))
-- Updated RPM spec file to use automatic dependency list generation. [\#9937](https://github.com/netdata/netdata/pull/9937) ([Ferroin](https://github.com/Ferroin))
-- Add information about Cloud disabled status to `-W buildinfo`. [\#9936](https://github.com/netdata/netdata/pull/9936) ([underhood](https://github.com/underhood))
-- Fix resource leak in case of malformed cloud request [\#9934](https://github.com/netdata/netdata/pull/9934) ([underhood](https://github.com/underhood))
-- Added context parameter to the data endpoint [\#9931](https://github.com/netdata/netdata/pull/9931) ([stelfrag](https://github.com/stelfrag))
-- Add persistent configuration details to Docker docs [\#9926](https://github.com/netdata/netdata/pull/9926) ([joelhans](https://github.com/joelhans))
-- Update claiming document to instruct users to install `uuidgen`. [\#9925](https://github.com/netdata/netdata/pull/9925) ([OdysLam](https://github.com/OdysLam))
-- Added a way to get build configuration info from the agent. [\#9913](https://github.com/netdata/netdata/pull/9913) ([Ferroin](https://github.com/Ferroin))
 
 ## [before_rebase](https://github.com/netdata/netdata/tree/before_rebase) (2020-09-24)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.25.0...before_rebase)
 
-**Merged pull requests:**
-
-- Add notice to Docker docs about systemd volumes [\#9927](https://github.com/netdata/netdata/pull/9927) ([thiagoftsm](https://github.com/thiagoftsm))
-
 ## [v1.25.0](https://github.com/netdata/netdata/tree/v1.25.0) (2020-09-15)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/poc2...v1.25.0)
-
-**Merged pull requests:**
-
-- Fix memory mode none not dropping stale dimension data [\#9917](https://github.com/netdata/netdata/pull/9917) ([mfundul](https://github.com/mfundul))
-- Fix memory mode none not marking dimensions as obsolete. [\#9912](https://github.com/netdata/netdata/pull/9912) ([mfundul](https://github.com/mfundul))
-- Fix buffer overflow in rrdr structure [\#9903](https://github.com/netdata/netdata/pull/9903) ([mfundul](https://github.com/mfundul))
-- Fix missing newline concatentation slash causing rpm build to fail [\#9900](https://github.com/netdata/netdata/pull/9900) ([prologic](https://github.com/prologic))
-- installer: update go.d.plugin version to v0.22.0 [\#9898](https://github.com/netdata/netdata/pull/9898) ([ilyam8](https://github.com/ilyam8))
 
 ## [poc2](https://github.com/netdata/netdata/tree/poc2) (2020-08-25)
 
