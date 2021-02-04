@@ -15,7 +15,7 @@ function Home() {
         <meta property="og:type" content="website" />
       </Head>
       <Layout
-        title={`Netdata Guides`}
+        title={`Netdata management and configuration cheatsheet`}
         description="Thoughtful guides to help you learn more about collecting metrics, monitoring your infrastructure, and troubleshooting with Netdata's powerful visualizations.">
         <header className={clsx(styles.hero, styles.GuidesHero)}>
           <div className={clsx('container')}>
