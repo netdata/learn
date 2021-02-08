@@ -75,12 +75,12 @@ and `k8s_node_name`. The default is `k8s_controller_name`.
 
 ### Filtering
 
-Filtering behaves identically to the [node filter in War Rooms](/docs/cloud/war-rooms#node-filter), except with
-different autocomplete options for k8s-specific terms and labels.
+Filtering behaves identically to the [node filter in War Rooms](/docs/cloud/war-rooms#node-filter), with the ability to
+filter pods/containers by `container_id` and `namespace`.
 
 ### Detailed information
 
-Hover over any of the containers/pods in the map to display a modal window, which contains contextual information
+Hover over any of the pods/containers in the map to display a modal window, which contains contextual information
 and real-time metrics from that resource.
 
 ![The modal containing additional information about a k8s
