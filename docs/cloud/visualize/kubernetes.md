@@ -32,6 +32,8 @@ browser's developer console:
 localStorage.setItem('k8s', true)
 ```
 
+This command returns `undefined`, but that's normal. Refresh your browser to see the new Kubernetes visualizations.
+
 > ❗ This feature flag applies only to a single browser, and is not connected to your Netdata Cloud account, War Room(s),
 > or Spaces. If you use multiple browsers/devices, enable the feature flag on each one. If you invited a team to work
 > with you, and want them to see the same Kubernetes charts, they need to enable the feature flag on their own browsers.
