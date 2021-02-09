@@ -207,6 +207,10 @@ module.exports = {
             {
               label: 'Forums',
               href: 'https://community.netdata.cloud/'
+            },
+            {
+              label: 'Contribute',
+              to: '/contribute/'
             }
           ]
         },
