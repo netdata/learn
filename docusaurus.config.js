@@ -81,7 +81,7 @@ module.exports = {
       darkTheme: require('prism-react-renderer/themes/duotoneDark'),
     },
     navbar: {
-      title: 'Learn',
+      // title: 'Learn',
       logo: {
         alt: 'Netdata Learn logo',
         src: 'img/logo.svg',
@@ -89,30 +89,170 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs', 
-          label: 'Docs', 
-          position: 'left',
-        },
-        {
-          to: 'guides', 
-          label: 'Guides', 
-          position: 'left'
-        },
-        {
-          to: 'contribute', 
-          label: 'Contribute', 
-          position: 'left'
-        },
-        {
-          href: 'https://www.netdata.cloud/community/',
-          label: 'Get help & community',
+          label: 'Product',
           position: 'right',
+          items: [
+            {
+              label: 'Overview',
+              href: 'https://www.netdata.cloud/overview/'
+            },
+            {
+              label: 'Agent',
+              href: 'https://www.netdata.cloud/agent/'
+            },
+            {
+              label: 'Cloud',
+              href: 'https://www.netdata.cloud/cloud/'
+            },
+            {
+              label: 'Get Netdata',
+              href: 'https://www.netdata.cloud/get-netdata/'
+            }
+          ]
         },
         {
-          href: 'https://netdata.cloud',
-          label: 'Netdata, Inc.',
+          label: 'Integrations',
           position: 'right',
+          items: [
+            {
+              label: 'View all',
+              href: 'https://www.netdata.cloud/integrations/'
+            },
+            {
+              label: 'Featured',
+              href: 'https://www.netdata.cloud/integrations/#featured'
+            },
+            {
+              label: 'Services & applications',
+              href: 'https://www.netdata.cloud/integrations/#service_app_collectors'
+            },
+            {
+              label: 'Systems',
+              href: 'https://www.netdata.cloud/integrations/#system_collectors'
+            },
+            {
+              label: 'Notifications',
+              href: 'https://www.netdata.cloud/integrations/#notifications'
+            },
+            {
+              label: 'Backends & exporters',
+              href: 'https://www.netdata.cloud/integrations/#backends_exporters'
+            }
+          ]
         },
+        {
+          label: 'Solutions',
+          position: 'right',
+          items: [
+            {
+              label: 'Chaos engineering',
+              href: 'https://www.netdata.cloud/chaos-engineering/'
+            },
+            {
+              label: 'Containers',
+              href: 'https://www.netdata.cloud/container-monitoring/'
+            },
+            {
+              label: 'Databases',
+              href: 'https://www.netdata.cloud/database-monitoring/'
+            },
+            {
+              label: 'DevOps',
+              href: 'https://www.netdata.cloud/devops-with-netdata/'
+            },
+            {
+              label: 'Incident management',
+              href: 'https://www.netdata.cloud/incident-management/'
+            },
+            {
+              label: 'Web',
+              href: 'https://www.netdata.cloud/web-server-monitoring/'
+            }
+          ]
+        },
+        {
+          label: 'Resources',
+          position: 'right',
+          items: [
+            {
+              label: 'Learn',
+              to: '/'
+            },
+            {
+              label: 'Docs',
+              to: '/docs/'
+            },
+            {
+              label: 'Guides',
+              to: '/guides/'
+            },
+            {
+              label: 'Blog',
+              href: 'https://www.netdata.cloud/blog/'
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/netdata/netdata'
+            }
+          ]
+        },
+        {
+          label: 'Community',
+          position: 'right',
+          items: [
+            {
+              label: 'Overview',
+              href: 'https://www.netdata.cloud/community/'
+            },
+            {
+              label: 'Forums',
+              href: 'https://community.netdata.cloud/'
+            }
+          ]
+        },
+        {
+          label: 'Company',
+          position: 'right',
+          items: [
+            {
+              label: 'About',
+              href: 'https://www.netdata.cloud/about/'
+            },
+            {
+              label: 'News',
+              href: 'https://www.netdata.cloud/news/'
+            },
+            {
+              label: 'Careers',
+              href: 'https://careers.netdata.cloud/'
+            }
+          ]
+        },
+        // {
+        //   to: 'docs', 
+        //   label: 'Docs', 
+        //   position: 'left',
+        // },
+        // {
+        //   to: 'guides', 
+        //   label: 'Guides', 
+        //   position: 'left'
+        // },
+        // {
+        //   to: 'contribute', 
+        //   label: 'Contribute', 
+        //   position: 'left'
+        // },
+        // {
+        //   href: 'https://www.netdata.cloud/community/',
+        //   label: 'Get help & community',
+        //   position: 'right',
+        // },
+        // {
+        //   href: 'https://netdata.cloud',
+        //   label: 'Netdata, Inc.',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
