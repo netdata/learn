@@ -21,6 +21,7 @@ const outDir = path.join(__dirname, agentDir)
 const retainPaths = [
   path.join(baseDir, 'agent.mdx'),
   path.join(baseDir, 'cloud.mdx'),
+  path.join(baseDir, 'agent/cheatsheet.mdx')
 ]
 
 const ax = axios.create({

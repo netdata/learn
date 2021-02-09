@@ -29,6 +29,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Netdata management and configuration cheatsheet</>,
+    href: '/docs/agent/cheatsheet',
+    date: 'February 4, 2021',
+    type: 'Cheatsheet',
+    description: (
+      <>
+        Use our managenment &amp; configuration cheatsheet to simplify your interactions with Netdata, including configuration, using charts, managing the daemon, and more.
+      </>
+    ),
+  },
+  {
     title: <>Monitor and visualize anomalies</>,
     href: '/guides/monitor/visualize-monitor-anomalies',
     date: 'January 13, 2021',
