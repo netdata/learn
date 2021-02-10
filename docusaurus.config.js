@@ -173,6 +173,7 @@ module.exports = {
         {
           label: 'Learn',
           position: 'right',
+          to: '/',
           items: [
             {
               label: 'Overview',

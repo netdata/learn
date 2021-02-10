@@ -242,6 +242,10 @@ html[data-theme='dark'] {
     padding: 10px 0 20px 0;
   }
 
+  @media (max-width: 1050px) {
+    padding: 10px 22px 20px 0;
+  }
+
   .navbar__item {
     font-weight: 500;
     font-size: 0.875rem;
