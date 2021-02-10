@@ -171,11 +171,11 @@ module.exports = {
           ]
         },
         {
-          label: 'Resources',
+          label: 'Learn',
           position: 'right',
           items: [
             {
-              label: 'Learn',
+              label: 'Overview',
               to: '/'
             },
             {
@@ -187,12 +187,8 @@ module.exports = {
               to: '/guides/'
             },
             {
-              label: 'Blog',
-              href: 'https://www.netdata.cloud/blog/'
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/netdata/netdata'
+              label: 'Contribute',
+              to: '/contribute/'
             }
           ]
         },
@@ -207,10 +203,24 @@ module.exports = {
             {
               label: 'Forums',
               href: 'https://community.netdata.cloud/'
+            }
+          ]
+        },
+        {
+          label: 'Resources',
+          position: 'right',
+          items: [
+            {
+              label: 'Blog',
+              href: 'https://www.netdata.cloud/blog/'
             },
             {
-              label: 'Contribute',
-              to: '/contribute/'
+              label: 'Videos',
+              href: 'https://community.netdata.cloud/'
+            },
+            {
+              label: 'GitHub',
+              href: 'https://community.netdata.cloud/'
             }
           ]
         },

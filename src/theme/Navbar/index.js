@@ -82,6 +82,7 @@ function Navbar() {
       <div className={clsx('container')}>
 
         <div className={clsx('row', styles.NavbarCTAs)}>
+          <SearchBar handleSearchBarToggle={setIsSearchBarExpanded} isSearchBarExpanded={isSearchBarExpanded} />
           {!disableColorModeSwitch && <Toggle className={styles.displayOnlyInLargeViewport} aria-label="Dark mode toggle" checked={isDarkTheme} onChange={onToggleChange} />}
           <Link to="https://netdata.cloud/get-netdata" className={clsx('button button--primary')}>Get Netdata</Link>
           <Link to="https://app.netdata.cloud/sign-in?cloudRoute=/spaces" className={clsx('button button--outline button--secondary', styles.ButtonSignIn)}>Sign in to Cloud</Link>
@@ -99,8 +100,6 @@ function Navbar() {
           </div>
           <div className="navbar__items navbar__items--right">
             {rightItems.map((item, i) => <NavbarItem {...item} key={i} />)}
-            
-            <SearchBar handleSearchBarToggle={setIsSearchBarExpanded} isSearchBarExpanded={isSearchBarExpanded} />
           </div>
         </div>
         <div role="presentation" className="navbar-sidebar__backdrop" onClick={hideSidebar} />

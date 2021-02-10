@@ -63,7 +63,7 @@ html {
   --ifm-color-accent: #FFC300;
 
   /* Grid/spacing */
-  --ifm-container-width: 1280px;
+  --ifm-container-width: 1344px;
   --ifm-spacing-horizontal: 2rem;
 
   /* Base fonts */
@@ -178,19 +178,13 @@ html[data-theme='dark'] {
  * Navbar 
  */
 
-.navbar {
-  // flex-wrap: wrap;
-  flex-flow: row wrap;
+.navbar,
+.navbar .navbar-sidebar {
+  background-color: #35414a;
 }
 
 .navbar > .container {
   flex-flow: row wrap;
-  padding: 0;
-}
-
-.navbar,
-.navbar .navbar-sidebar {
-  background-color: #35414a;
 }
 
 .react-toggle {
@@ -201,19 +195,10 @@ html[data-theme='dark'] {
   margin: 0 auto;
 }
 
-// @media (max-width: 996px) {
-//   .navbar .navbar__inner {
-//     flex-wrap: nowrap;
-//   }
-// }
-
 .navbar .navbar__brand {
   position: relative;
   flex-shrink: 0;
-
   margin-right: 2rem;
-  /* TODO: Explore how you can restore this and have the `Agent`/`Cloud` buttons aligned with the docs text. */
-  /* margin-right: 16rem; */
 
   @media (max-width: 1220px) {
     margin-right: 1rem;
@@ -221,19 +206,6 @@ html[data-theme='dark'] {
 
   @media (max-width: 500px) {
     margin-right: 0;
-  }
-}
-
-.navbar__brand strong {
-  color: var(--ifm-color-primary-lightest);
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-
-@media (max-width: 360px) {
-  .hideLogoText {
-    display: block !important;
   }
 }
 
@@ -250,13 +222,7 @@ html[data-theme='dark'] {
   }
 }
 
-.navbar__toggle svg {
-  color: white;
-  fill: white;
-  stroke: white;
-}
-
-.navbar .navbar__link {
+.navbar__link {
   font-size: 1.2rem;
   font-weight: 500;
 
@@ -265,34 +231,41 @@ html[data-theme='dark'] {
   }
 }
 
-.navbar__items--right .navbar__link {
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-.navbar .navbar__link.navbar__link--active {
-  border-bottom: 2px solid var(--ifm-color-primary);
-}
-
-.navbar__item.dropdown .navbar__item {
-  font-weight: 500;
-  font-size: 0.875rem;
-  padding: 0;
-}
-
 .navbar__item.dropdown {
-  padding: 18px 26px 18px 0;
+  padding: 10px 32px 20px 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:last-of-type {
+    padding: 10px 0 20px 0;
+  }
+
+  .navbar__item {
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0;
+  }
+
+  > .navbar__link::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-size: 14px;
+    border-width: 0;
+    // display: block;
+    width: 14px;
+    height: 14px;
+  }
 }
 
 .dropdown__menu {
-  border-top: 3px solid var(--ifm-color-primary);
-  border-radius: 0;
-}
-
-.dropdown--right .dropdown__menu {
   left: 0;
   padding: 2rem;
   min-width: 240px;
+  border-top: 3px solid var(--ifm-color-primary);
+  border-radius: 0;
+  transition-property: opacity, visibility;
+  transform: scale(1);
 }
 
 .dropdown__link {
@@ -303,23 +276,25 @@ html[data-theme='dark'] {
     color: var(--ifm-color-primary-lightest) !important;
     background: transparent;
   }
-}
 
-.dropdown__link--active {
-  color: var(--ifm-color-primary-lightest) !important;
-  background: transparent;
-
-  &:hover {
+  .dropdown__link--active {
+    color: var(--ifm-color-primary-lightest) !important;
     background: transparent;
+
+    &:hover {
+      background: transparent;
+    }
   }
 }
 
-.navbar .navbar__toggle {
+.navbar__toggle {
   margin-right: 1rem;
-}
 
-.react-toggle-track {
-  background-color: var(--ifm-background-color);
+  svg {
+    color: white;
+    fill: white;
+    stroke: white;
+  }
 }
 
 /* 

@@ -1,6 +1,7 @@
 .searchButton {
   position: relative;
-  padding: 0.6rem;
+  padding: 0.3rem 0.6rem;
+  margin-right: 1rem;
   background: #35414a;
   color: var(--ifm-font-color-base);
 
@@ -8,42 +9,16 @@
   border: 1px solid var(--ifm-color-primary);
   border-radius: var(--ifm-global-radius);
 
+  svg {
+    // width: 18px;
+    position: relative;
+    top: 1px;
+    color: white;
+  }
+
   &:hover {
     color: var(--ifm-font-color-base);
     cursor: pointer;
-  }
-
-  @media (max-width: 500px) {
-    font-size: 95%;
-  }
-
-  @media (max-width: 475px) {
-    padding: .6rem;
-  }
-}
-
-.searchButtonTextLarge {
-  @media (max-width: 475px) {
-    display: none;
-  }
-}
-
-.searchButtonTextSmall {
-  display: none;
-  @media (max-width: 475px) {
-    display: block;
-  }
-}
-
-.searchKey {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  padding: 0.1rem 0.4rem 0.2rem 0.4rem;
-  border: 1px solid #cdcde6;
-  border-radius: 2px;
-  @media (max-width: 475px) {
-    display: none;
   }
 }
 
