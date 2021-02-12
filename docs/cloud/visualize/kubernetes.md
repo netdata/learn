@@ -1,13 +1,13 @@
 ---
-title: Kubernetes (open beta)
-description: Netdata Cloud now features a open beta of enhanced visualizations for the resource utilization of Kubernetes (k8s) clusters, embedded in the default Overview dashboard.
+title: Kubernetes monitoring (open beta)
+description: Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization of Kubernetes (k8s) clusters.
 custom_edit_url: null
 ---
 
 Netdata Cloud now features a _open beta_ of enhanced visualizations for the resource utilization of Kubernetes (k8s)
 clusters, embedded in the default [Overview](/docs/cloud/visualize/overview/) dashboard.
 
-These visualizations include a map for viewing the status of k8s pods/containers, in addition to composite charts
+These visualizations include a health map for viewing the status of k8s pods/containers, in addition to composite charts
 for viewing per-second CPU, memory, disk, and networking metrics from k8s nodes.
 
 ## Before you begin
@@ -20,7 +20,7 @@ In order to use the Kubernetes visualizations in Netdata Cloud, you need:
 - To claim your Kubernetes cluster to Netdata Cloud.
 - To enable the feature flag described below.
 
-See our [Kubernetes installation instructions](/docs/agent/packaging/installer/methods/kubernetes/) for details on
+See our [Kubernetes deployment instructions](/docs/agent/packaging/installer/methods/kubernetes/) for details on
 installation and claiming to Netdata Cloud.
 
 ### Enable the feature flag
@@ -38,41 +38,63 @@ This command returns `undefined`, but that's normal. Refresh your browser to see
 > or Spaces. If you use multiple browsers/devices, enable the feature flag on each one. If you invited a team to work
 > with you, and want them to see the same Kubernetes charts, they need to enable the feature flag on their own browsers.
 
-## Map
+## Available Kubernetes metrics
 
-The map places each container or pod as a single box, then varies the intensity of its color to visualize the resource
-utilization of specific k8s pods/containers.
+Netdata Cloud organizes and visualizes the following metrics from your Kubernetes cluster from every container:
 
-![The Kubernetes map in Netdata
+- `cpu_limit`: CPU utilization as a percentage of the limit defined by the [pod
+  specification
+  `spec.containers[].resources.limits.cpu`](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-requests-and-limits-of-pod-and-container)
+  or a [`LimitRange`
+  object](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/#create-a-limitrange-and-a-pod).
+- `cpu`: CPU utilization of the pod/container. 100% usage equals 1 fully-utilized core, 200% equals 2 fully-utilized
+  cores, and so on.
+- `cpu_per_core`: CPU utilization averaged across available cores.
+- mem_usage_limit: Memory utilization, without cache, as a percentage of the limit defined by the [pod specification
+  `spec.containers[].resources.limits.memory`](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-requests-and-limits-of-pod-and-container)
+  or a [`LimitRange`
+  object](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/#create-a-limitrange-and-a-pod).
+- `mem_usage`: Used memory, without cache.
+- `mem`: The sum of `cache` and `rss` (resident set size) memory usage.
+- `writeback`: The size of `dirty` and `writeback` cache.
+- `mem_activity`: Sum of `in` and `out` bandwidth.
+- `pgfaults`: Sum of page fault bandwidth, which are raised when the Kubernetes cluster tries accessing a memory page
+  that is mapped into the virtual address space, but not actually loaded into main memory.
+- `throttle_io`: Sum of `read` and `write` per second across all PVs/PVCs attached to the container.
+- `throttle_serviced_ops`: Sum of the `read` and `write` operations per second across all PVs/PVCs attached to the
+  container.
+- `net.net`: Sum of `received` and `sent` bandwidth per second.
+- `net.packets`: Sum of `multicast`, `received`, and `sent` packets.
+
+When viewing the [health map](#health-map), Netdata Cloud shows the above metrics per container, or aggregated based on
+their associated pods.
+
+When viewing the [composite charts](#composite-charts), Netdata Cloud aggregates metrics from multiple nodes, pods, or
+containers, depending on the grouping chosen. For example, if you group the `cpu_limit` composite chart by
+`k8s_namespace`, the metrics shown will be the average of `cpu_limit` metrics from all nodes/pods/containers that are
+part of that namespace.
+
+## Health map
+
+The health map places each container or pod as a single box, then varies the intensity of its color to visualize the
+resource utilization of specific k8s pods/containers.
+
+![The Kubernetes health map in Netdata
 Cloud](https://user-images.githubusercontent.com/1153921/106964367-39f54100-66ff-11eb-888c-5a04f8abb3d0.png)
 
-Change the map's coloring, grouping, and displayed nodes to customize your experience and learn more about the
+Change the health map's coloring, grouping, and displayed nodes to customize your experience and learn more about the
 status of your k8s cluster.
 
 ### Color by
 
-Color the map by choosing an aggregate function to apply to a specific metric, then whether you want to see
-container or pods. The default is the _average, of CPU within the established limit, organized by container_.
+Color the health map by choosing an aggregate function to apply to an [available Kubernetes
+metric](#available-kubernetes-metrics), then whether you to display boxes for individual pods or containers. 
 
-The following metrics are available for visualizing on the map:
-
-- cpu_limit
-- cpu
-- cpu_per_core
-- mem_usage_limit
-- mem_usage
-- mem
-- writeback
-- mem_activity
-- pgfaults
-- throttle_io
-- throttle_serviced_ops
-- net.net
-- net.packets
+The default is the _average, of CPU within the configured limit, organized by container_.
 
 ### Group by
 
-Group the map by the `k8s_cluster_id`, `k8s_controller_kind`, `k8s_controller_name`, `k8s_kind`, `k8s_namespace`,
+Group the health map by the `k8s_cluster_id`, `k8s_controller_kind`, `k8s_controller_name`, `k8s_kind`, `k8s_namespace`,
 and `k8s_node_name`. The default is `k8s_controller_name`.
 
 ### Filtering
@@ -107,32 +129,37 @@ problematic behavior to investigate further, troubleshoot, and remediate with `k
 
 ## Composite charts
 
-The Kubernetes composite charts show real-time and historical resource utilization metrics from _nodes_ within your
-cluster.
+The Kubernetes composite charts show real-time and historical resource utilization metrics from nodes, pods, or
+containers within your Kubernetes deployment.
 
-These composite charts behave identically to those on the rest of the [Overview](/docs/cloud/visualize/overview). One
-notably exception is that you can group Kubernetes composite charts by more than _by dimension_ and _by node_, including
-all of the grouping options available in the [map](#map).
+See the [Overview](/docs/cloud/visualize/overvie#definition-barw) doc for details on how composite charts work. These
+work similarly, but in addition to visualizing _by dimension_ and _by node_, Kubernetes composite charts can also be
+grouped by the following labels:
+
+- `k8s_cluster_id`
+- `k8s_container_id`
+- `k8s_container_name`
+- `k8s_controller_kind`
+- `k8s_kind`
+- `k8s_namespace`
+- `k8s_node_name`
+- `k8s_pod_name`
+- `k8s_pod_uid`
 
 ![Composite charts of Kubernetes metrics in Netdata
 Cloud](https://user-images.githubusercontent.com/1153921/106964370-3a8dd780-66ff-11eb-8858-05b2253b25c6.png)
+
+In addition, when you hover over a composite chart, the colors in the heat map changes as well, so you can see how
+certain pod/container-level metrics change over time.
 
 ## Caveats
 
 There are some caveats and known issues with the beta version of Kubernetes.
 
-- **No historical metrics for containers or pods**. Hovering over the map shows a modal with _live_ CPU, memory, disk,
-  and networking metrics, with no ability to see metrics from outside the available window. The composite charts beneath
-  the map can display historical metrics, they only aggregate data from nodes, not containers or pods.
-- **No application-specific metrics using Netdata's Kubernetes [service
-  discovery](/guides/monitor/kubernetes-k8s-netdata#service-discovery-services-running-inside-of-pods)**. To see these
-  metrics, you'll need to continue using the local Agent dashboard, which is accessible either with `kubectl
-  port-forward netdata-parent-0 19999:19999 ` or the external IP, if you set up the Netdata Helm chart with
-  `service.type=LoadBalancer`. See our [k8s installation
-  instructions](/packaging/installer/methods/kubernetes#access-the-netdata-dashboard) for more details.
 - **No way to remove any nodes** you might have
   [drained](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/) from your Kubernetes cluster. These
-  drained nodes will be marked "unreachable" and will show up in War Room management screens/dropdowns.
+  drained nodes will be marked "unreachable" and will show up in War Room management screens/dropdowns. The same applies
+  for any ephemeral nodes created and destroyed during horizontal scaling.
 
 ## What's next?
 
