@@ -27,12 +27,12 @@
 
 .NavbarCTAs {
   // max-width: var(--ifm-container-width);
-  margin: 0 auto;
+  margin: 6px auto 6px 0;
   // padding: 0 var(--ifm-spacing-horizontal);
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: center;
 
   a {
     --ifm-button-size-multiplier: 0.91;

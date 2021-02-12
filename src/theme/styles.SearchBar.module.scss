@@ -1,50 +1,24 @@
 .searchButton {
   position: relative;
-  margin-left: 1rem;
-  padding: .6rem 2.5rem 0.6rem 0.6rem;
-  background: var(--ifm-background-color);
+  padding: 0.3rem 0.6rem;
+  margin-right: 1rem;
+  background: #35414a;
   color: var(--ifm-font-color-base);
 
   font-size: 90%;
   border: 1px solid var(--ifm-color-primary);
   border-radius: var(--ifm-global-radius);
 
+  svg {
+    // width: 18px;
+    position: relative;
+    top: 1px;
+    color: white;
+  }
+
   &:hover {
     color: var(--ifm-font-color-base);
     cursor: pointer;
-  }
-
-  @media (max-width: 500px) {
-    font-size: 95%;
-  }
-
-  @media (max-width: 475px) {
-    padding: .6rem;
-  }
-}
-
-.searchButtonTextLarge {
-  @media (max-width: 475px) {
-    display: none;
-  }
-}
-
-.searchButtonTextSmall {
-  display: none;
-  @media (max-width: 475px) {
-    display: block;
-  }
-}
-
-.searchKey {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  padding: 0.1rem 0.4rem 0.2rem 0.4rem;
-  border: 1px solid #cdcde6;
-  border-radius: 2px;
-  @media (max-width: 475px) {
-    display: none;
   }
 }
 
@@ -64,7 +38,7 @@
 .searchModal {
   position: relative;
   max-width: 800px;
-  margin: 98px auto auto;
+  margin: 107px auto auto;
 
   background: var(--ifm-background-color);
   border-radius: var(--ifm-global-radius);

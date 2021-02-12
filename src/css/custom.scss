@@ -63,7 +63,7 @@ html {
   --ifm-color-accent: #FFC300;
 
   /* Grid/spacing */
-  --ifm-container-width: 1200px;
+  --ifm-container-width: 1344px;
   --ifm-spacing-horizontal: 2rem;
 
   /* Base fonts */
@@ -102,10 +102,14 @@ html {
 
   /* Navbar */
   --ifm-z-index-fixed: 100;
+  --ifm-navbar-padding-vertical: 0;
   --ifm-navbar-padding-horizontal: 2rem;
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: var(--ifm-color-primary-lightest);
-  --ifm-navbar-height: 97px;
+  --ifm-navbar-height: 107px;
+  --ifm-navbar-item-padding-vertical: 0px;
+  --ifm-navbar-item-padding-horizontal: 11px;
+  --ifm-dropdown-background-color:#35414a;
 
   /* Search */
   --ifm-navbar-search-input-color: var(--ifm-font-color-base);
@@ -174,35 +178,27 @@ html[data-theme='dark'] {
  * Navbar 
  */
 
-.navbar {
-  flex-wrap: wrap;
-}
-
 .navbar,
 .navbar .navbar-sidebar {
   background-color: #35414a;
 }
 
-// .navbar__inner {
-//   max-width: var(--ifm-container-width);
-//   margin: 0 auto;
-//   padding: 0 var(--ifm-spacing-horizontal);
-//   width: 100%;
-// }
+.navbar > .container {
+  flex-flow: row wrap;
+}
 
-@media (max-width: 996px) {
-  .navbar .navbar__inner {
-    flex-wrap: nowrap;
-  }
+.react-toggle {
+  margin-right: 1rem;
+}
+
+.navbar__inner {
+  margin: 0 auto;
 }
 
 .navbar .navbar__brand {
   position: relative;
   flex-shrink: 0;
-
   margin-right: 2rem;
-  /* TODO: Explore how you can restore this and have the `Agent`/`Cloud` buttons aligned with the docs text. */
-  /* margin-right: 16rem; */
 
   @media (max-width: 1220px) {
     margin-right: 1rem;
@@ -213,39 +209,20 @@ html[data-theme='dark'] {
   }
 }
 
-.navbar__brand strong {
-  display: block !important;
-  position: absolute;
-  top: 24px;
-  left: 31px;
+.navbar .navbar__logo {
+  position: relative;
+  top: -4px;
+  left: 3px;
+  height: 25.5px;
 
-  color: var(--ifm-color-primary-lightest);
-  font-size: 0.75rem;
-  font-weight: 500;
-  text-transform: uppercase;
-}
+  color: white;
 
-@media (max-width: 360px) {
-  .hideLogoText {
-    display: block !important;
+  @media (max-width: 996px) {
+    top: 0px;
   }
 }
 
-.navbar .navbar__logo {
-  position: relative;
-  top: -1px;
-  height: 24px;
-
-  color: white;
-}
-
-.navbar__toggle svg {
-  color: white;
-  fill: white;
-  stroke: white;
-}
-
-.navbar .navbar__link {
+.navbar__link {
   font-size: 1.2rem;
   font-weight: 500;
 
@@ -254,28 +231,74 @@ html[data-theme='dark'] {
   }
 }
 
-.navbar__items--right .navbar__link {
-  font-size: 1rem;
-  font-weight: 400;
+.navbar__item.dropdown {
+  padding: 10px 32px 20px 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:last-of-type {
+    padding: 10px 0 20px 0;
+  }
+
+  @media (max-width: 1050px) {
+    padding: 10px 22px 20px 0;
+  }
+
+  .navbar__item {
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 0;
+  }
+
+  > .navbar__link::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-size: 14px;
+    border-width: 0;
+    // display: block;
+    width: 14px;
+    height: 14px;
+  }
 }
 
-.navbar .navbar__link.navbar__link--active {
-  border-bottom: 2px solid var(--ifm-color-primary);
+.dropdown__menu {
+  left: 0;
+  padding: 2rem;
+  min-width: 240px;
+  border-top: 3px solid var(--ifm-color-primary);
+  border-radius: 0;
+  transition-property: opacity, visibility;
+  transform: scale(1);
 }
 
-.navbar .navbar__items--right .navbar__link:last-of-type {
+.dropdown__link {
+  color: white;
+  font-size: 0.925rem;
+
+  &:hover {
+    color: var(--ifm-color-primary-lightest) !important;
+    background: transparent;
+  }
+
+  .dropdown__link--active {
+    color: var(--ifm-color-primary-lightest) !important;
+    background: transparent;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+}
+
+.navbar__toggle {
   margin-right: 1rem;
-  padding-right: 1rem;
 
-  border-right: 1px solid var(--ifm-color-emphasis-300);
-}
-
-.navbar .navbar__toggle {
-  margin-right: 1rem;
-}
-
-.react-toggle-track {
-  background-color: var(--ifm-background-color);
+  svg {
+    color: white;
+    fill: white;
+    stroke: white;
+  }
 }
 
 /* 
@@ -516,6 +539,10 @@ html[data-theme='dark'] .menu .menu__link.menu__link--active:not(.menu__link--su
   .menu > .menu__list > .menu__list-item:not(:first-child) {
     padding-top: 0;
   }
+
+  .menu .menu__link:hover {
+    color: var(--ifm-color-primary-lightest) !important;
+  }
 }
 
 /**
@@ -581,7 +608,7 @@ a:hover:not(.button):not(.navbar__link) {
   color: var(--ifm-color-secondary);
 }
 
-html[data-theme='dark'] a {
+html[data-theme='dark'] .markdown a {
   color: var(--ifm-color-primary-lightest);
 }
 

@@ -12,6 +12,7 @@
 @media (min-width: 997px) {
   .docPage {
     display: flex;
+    justify-content: center;
   }
 
   .docSidebarContainer {
@@ -57,7 +58,7 @@
   } */
 
   .docMainContainer {
-    flex-grow: 1;
+    flex-grow: 0;
   }
 
   .docItemWrapperEnhanced {
