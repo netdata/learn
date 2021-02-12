@@ -1,6 +1,6 @@
 ---
-title: Kubernetes monitoring (open beta)
-description: Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization of Kubernetes (k8s) clusters.
+title: Kubernetes monitoring
+description: Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
 custom_edit_url: null
 ---
 
@@ -42,8 +42,7 @@ This command returns `undefined`, but that's normal. Refresh your browser to see
 
 Netdata Cloud organizes and visualizes the following metrics from your Kubernetes cluster from every container:
 
-- `cpu_limit`: CPU utilization as a percentage of the limit defined by the [pod
-  specification
+- `cpu_limit`: CPU utilization as a percentage of the limit defined by the [pod specification
   `spec.containers[].resources.limits.cpu`](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-requests-and-limits-of-pod-and-container)
   or a [`LimitRange`
   object](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/#create-a-limitrange-and-a-pod).
