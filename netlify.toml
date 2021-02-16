@@ -127,3 +127,11 @@
 [[redirects]]
   from = "/docs/cloud/faq-glossary"
   to = "/docs/cloud/faq"
+
+[[redirects]]
+  from = "/docs/agent/code_of_conduct"
+  to = "/contribute/code-of-conduct"
+
+[[redirects]]
+  from = "/docs/agent/export"
+  to = "/docs/export/external-databases"
