@@ -1,3 +1,9 @@
+---
+title: go.d.plugin
+description: "go.d.plugin is an external plugin for Netdata, responsible for running individual data collectors written in Go."
+custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/README.md
+---
+
 
 
 [![CircleCI](https://circleci.com/gh/netdata/go.d.plugin.svg?style=svg)](https://circleci.com/gh/netdata/go.d.plugin)
@@ -20,7 +26,6 @@ If you have time and willing to help, there are a lof of ways to contribute:
 
 -   Fix and [report bugs](https://github.com/netdata/go.d.plugin/issues/new)
 -   [Review code and feature proposals](https://github.com/netdata/go.d.plugin/pulls)
--   [Contribute modules](https://github.com/netdata/go.d.plugin/blob/master/CONTRIBUTING.md) (wip, module interface may be changed soon)
 
 ## Available modules
 
@@ -73,6 +78,7 @@ If you have time and willing to help, there are a lof of ways to contribute:
 | [solr](https://github.com/netdata/go.d.plugin/tree/master/modules/solr)                           | `Solr`                          |
 | [squidlog](https://github.com/netdata/go.d.plugin/tree/master/modules/squidlog)                   | `Squid`                         |
 | [springboot2](https://github.com/netdata/go.d.plugin/tree/master/modules/springboot2)             | `Spring Boot2`                  |
+| [supervisord](https://github.com/netdata/go.d.plugin/tree/master/modules/supervisord)             | `Supervisor`                    |
 | [systemdunits](https://github.com/netdata/go.d.plugin/tree/master/modules/systemdunits)           | `Systemd unit state`            |
 | [tengine](https://github.com/netdata/go.d.plugin/tree/master/modules/tengine)                     | `Tengine`                       |
 | [unbound](https://github.com/netdata/go.d.plugin/tree/master/modules/unbound)                     | `Unbound`                       |
