@@ -175,23 +175,31 @@ function Home() {
           <section className={styles.Get}>
             <div className={clsx('container')}>
               <div className={clsx('row')}>
-                <div className={clsx('col col--8')}>
+                <div className={clsx('col col--4')}>
                   <StartBox 
                     to="/docs/get"
                     title="Get Netdata"
                     description="Sign up for Netdata Cloud and install the open-source monitoring Agent on your
                     nodes. Claim and connect your nodes to Netdata Cloud for seamless, scalable, 
                     and granular infrastructure monitoring."
-                    cta="Start"
+                    cta="Install now"
                     image={true} />
                 </div>
                 <div className={clsx('col col--4')}>
-                  <DiscoverBox 
-                    href="/docs/overview/what-is-netdata" 
-                    title="What is Netdata?"
-                    cta="Learn the basics">
-                    Run through Netdata's components, capabilities, and features. Understand how and why it's different from other monitoring solutions.
-                  </DiscoverBox>
+                  <StartBox 
+                    to="/docs/"
+                    title="Docs"
+                    description="Solution- and action-based docs for Netdata's many features and capabilities. Your table of contents to becoming an expert in using Netdata to monitor and troubleshoot applications and their infrastructure."
+                    cta="Get started"
+                    image={false} />
+                </div>
+                <div className={clsx('col col--4')}>
+                  <StartBox 
+                    to="/guides/"
+                    title="Guides"
+                    description="Thoughtful guides to help you learn about collecting metrics, monitoring your infrastructure, and troubleshooting with Netdata's powerful visualizations."
+                    cta="Read more"
+                    image={false} />
                 </div>
               </div>
             </div>
@@ -206,6 +214,14 @@ function Home() {
               <div className={clsx('row')}>
                 <div className={clsx('col col--4')}>
                   <DiscoverBox 
+                    href="/docs/overview/what-is-netdata" 
+                    title="What is Netdata?"
+                    cta="Learn the basics">
+                    Run through Netdata's components, capabilities, and features. Understand how and why it's different from other monitoring solutions.
+                  </DiscoverBox>
+                </div>
+                <div className={clsx('col col--4')}>
+                  <DiscoverBox 
                     href="/docs/quickstart/single-node" 
                     title="Quickstart: Single-node monitoring"
                     cta="Get started">
@@ -218,14 +234,6 @@ function Home() {
                     title="Quickstart: Infrastructure monitoring"
                     cta="Get started">
                     Granular and zero-configuration monitoring for systems, containers, and applications at scale.
-                  </DiscoverBox>
-                </div>
-                <div className={clsx('col col--4')}>
-                  <DiscoverBox 
-                    href="/guides" 
-                    title="Guides"
-                    cta="Read guides">
-                    Follow along to monitor specific applications, deploy Netdata across infrastructure, and more.
                   </DiscoverBox>
                 </div>
               </div>
