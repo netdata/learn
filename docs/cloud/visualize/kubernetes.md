@@ -1,11 +1,11 @@
 ---
-title: Kubernetes monitoring
+title: Kubernetes visualizations
 description: Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
 custom_edit_url: null
 ---
 
-Netdata Cloud now features a _open beta_ of enhanced visualizations for the resource utilization of Kubernetes (k8s)
-clusters, embedded in the default [Overview](/docs/cloud/visualize/overview/) dashboard.
+Netdata Cloud features enhanced visualizations for the resource utilization of Kubernetes (k8s) clusters, embedded in
+the default [Overview](/docs/cloud/visualize/overview/) dashboard.
 
 These visualizations include a health map for viewing the status of k8s pods/containers, in addition to composite charts
 for viewing per-second CPU, memory, disk, and networking metrics from k8s nodes.
@@ -16,27 +16,12 @@ In order to use the Kubernetes visualizations in Netdata Cloud, you need:
 
 - A Kubernetes cluster running Kubernetes v1.9 or newer.
 - A Netdata deployment using the latest version of the [Helm chart](https://github.com/netdata/helmchart), which
-  installs [v1.29.0](https://github.com/netdata/netdata/releases) or newer of the Netdata Agent.
+  installs [v1.29.2](https://github.com/netdata/netdata/releases) or newer of the Netdata Agent.
 - To claim your Kubernetes cluster to Netdata Cloud.
 - To enable the feature flag described below.
 
 See our [Kubernetes deployment instructions](/docs/agent/packaging/installer/methods/kubernetes/) for details on
 installation and claiming to Netdata Cloud.
-
-### Enable the feature flag
-
-Once you have the prerequisites, you can enable the Kubernetes visualizations by enabling the feature flag in your
-browser's developer console:
-
-```js
-localStorage.setItem('k8s', true)
-```
-
-This command returns `undefined`, but that's normal. Refresh your browser to see the new Kubernetes visualizations.
-
-> ❗ This feature flag applies only to a single browser, and is not connected to your Netdata Cloud account, War Room(s),
-> or Spaces. If you use multiple browsers/devices, enable the feature flag on each one. If you invited a team to work
-> with you, and want them to see the same Kubernetes charts, they need to enable the feature flag on their own browsers.
 
 ## Available Kubernetes metrics
 
@@ -153,7 +138,7 @@ certain pod/container-level metrics change over time.
 
 ## Caveats
 
-There are some caveats and known issues with the beta version of Kubernetes.
+There are some caveats and known issues with Kubernetes monitoring with Netdata Cloud.
 
 - **No way to remove any nodes** you might have
   [drained](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/) from your Kubernetes cluster. These
@@ -164,6 +149,3 @@ There are some caveats and known issues with the beta version of Kubernetes.
 
 For more information about monitoring a k8s cluster with Netdata, see our guide: [_Monitor a Kubernetes (k8s) cluster
 with Netdata_](/guides/monitor/kubernetes-k8s-netdata/).
-
-Because these Kubernetes visualizations are in an open beta state, we'd appreciate your feedback on their usability and
-performance, in addition to any bugs you might encounter.
