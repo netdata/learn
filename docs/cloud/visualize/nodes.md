@@ -8,7 +8,7 @@ The Nodes view lets you see and customize key metrics from any number of Agent-m
 to any node's dashboard for troubleshooting performance issues or anomalies using Netdata's highly-granular metrics.
 
 ![The Nodes view in Netdata
-Cloud](https://user-images.githubusercontent.com/1153921/95637682-313d7880-0a47-11eb-8d0b-4611a5dae431.png)
+Cloud](https://user-images.githubusercontent.com/1153921/108524997-de918a00-728c-11eb-9060-da654076eac9.png)
 
 Each War Room's Nodes view is populated based on the nodes you added to that specific War Room. Each node occupies a
 single row, first featuring that node's alarm status (yellow for warnings, red for critical alarms) and operating
@@ -23,12 +23,8 @@ filter](/docs/cloud/war-rooms#node-filter) and the [time &amp; date picker](/doc
 
 ## Add and customize metrics columns
 
-Add more metrics columns by clicking the gear icon in the Nodes view. Choose the context you'd like to add, give it a
-relevant name, and select whether you want to see all dimensions (the default), or only the specific dimensions your
-team is interested in.
-
-![GIF showing how to add new metrics to the Nodes
-view](https://user-images.githubusercontent.com/1153921/87456847-593e4c80-c5bc-11ea-8063-80c768d4cf6e.gif)
+Add more metrics columns by clicking the gear icon. Choose the context you'd like to add, give it a relevant name, and
+select whether you want to see all dimensions (the default), or only the specific dimensions your team is interested in.
 
 Click the gear icon and hover over any existing charts, then click the pencil icon. This opens a panel to
 edit that chart. Edit the context, its title, add or remove dimensions, or delete the chart altogether.
@@ -41,8 +37,8 @@ Click on the name of any node to seamlessly navigate to that node's dashboard. T
 pre-configured with every installation of the Netdata Agent, so it features thousands of metrics and hundreds of
 interactive charts without needing to waste time setting it up.
 
-![Screenshot of an embedded node
-dashboard](https://user-images.githubusercontent.com/1153921/87457036-9b678e00-c5bc-11ea-977d-ad561a73beef.png)
+![Screenshot of an single-node
+dashboard](https://user-images.githubusercontent.com/1153921/108525133-02ed6680-728d-11eb-96e2-78b907110c8f.png)
 
 With all of the Agent's real-time data at your fingertips, you can first identify health or performance anomalies with
 Netdata Cloud, and then engage your team to perform root-cause analysis using the Agent's granular metrics.

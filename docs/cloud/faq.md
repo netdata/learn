@@ -40,8 +40,8 @@ If you want to see both the parent node and its child nodes in Netdata Cloud, yo
 
 ### Is there a dark mode in Netdata Cloud?
 
-Yes. If it's not enabled by default on your system, you can now enable the new Dark or Blue themes. Click on the
-**Settings** tab, then choose your preferred theme.
+Yes. If it's not enabled by default on your system, you can now enable the new Dark or Blue themes. Click on your
+profile icon in the bottom-right corner, then click the **Settings** tab, and choose your preferred theme.
 
 ### Can I create custom dashboards?
 
@@ -56,10 +56,10 @@ guide](/docs/agent/claim/#troubleshooting).
 
 ### How do I add a node to an existing Space?
 
-Click on the **Claim Nodes** item beneath your Space's name in the left-hand navigation.
+Click on the **Claim Nodes** button in the [Space](/docs/cloud/spaces) management area.
 
 ![The Spaces management
-area](https://user-images.githubusercontent.com/1153921/100896143-8d3ae100-347b-11eb-9657-745831afc140.png)
+area](https://user-images.githubusercontent.com/1153921/108531119-94f86d80-7293-11eb-8988-12894c55e462.png)
 
 Copy the claiming script to your node and run it. See the [claiming doc](/docs/agent/claim) for details.
 
@@ -83,8 +83,8 @@ you want to remove. Removing a node from a War Room does not remove it from your
 
 A node can belong to multiple War Rooms.
 
-First, switch to the War Room you want to move the node to. Click on the name of the War Room in the top navigation,
-then **Add Nodes**. Click the checkbox next to the node in question, then click **+ Add** at the top of the panel.
+First, switch to the War Room you want to move the node to. Click on the name of the War Room in the top bar, then **Add
+Nodes**. Click the checkbox next to the node in question, then click **+ Add** at the top of the modal.
 
 Next, switch back to the War Room original War Room and [remove the node](#how-do-i-remove-a-node-from-a-war-room).
 
@@ -106,8 +106,8 @@ You can add a description to a Space, but a Space's name is a unique identifier 
 
 ### How do I delete a Space?
 
-In the left-hand navigation, click the **Manage Space** link. Click the **Delete** button and confirm you want to delete
-your Space.
+In the Space management area, click the **Manage Space** link. Click the **Delete** button and confirm you want to
+delete your Space.
 
 ### How do I rename a War Room?
 
@@ -115,9 +115,8 @@ You cannot rename a War Room at this time.
 
 ### How do I delete a War Room?
 
-The _General_ War Room cannot be deleted. For other rooms, click the name of the War Room from the top navigation, then
-**Manage War Room**. In the management panel, click the **Delete** button. Confirm that you want to delete your War
-Room.
+The _General_ War Room cannot be deleted. For other rooms, click the name of the War Room in the top bar, then **Manage
+War Room**. In the modal, click the **Delete** button. Confirm that you want to delete your War Room.
 
 ### How do I change my email?
 

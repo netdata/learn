@@ -4,13 +4,18 @@ description: Netdata Cloud uses War Rooms to group related nodes and create insi
 custom_edit_url: null
 ---
 
-War Rooms organize your claimed nodes and provide infrastructure-wide views using real-time metrics and visualizations.
+War Rooms organize your claimed nodes and provide infrastructure-wide dashboards using real-time metrics and
+visualizations.
 
-Once you add nodes to a War Room, you can then use various views and dashboards to montitor the health and performance
-of your entire infrastructure from a single pane of glass. When an anomaly strikes, drill down into single-node
-dashboards for every granular detail you need for root cause analysis.
+Once you add nodes to a War Room, you can then use various dashboards to monitor the health and performance of your
+entire infrastructure from a single pane of glass. When an anomaly strikes, drill down into single-node dashboards for
+every granular detail you need for root cause analysis.
 
-## Available views in a War Room
+## Navigating a War Room
+
+Every War Room has the same dashboards, navigation, indicators, and management tools.
+
+### Switching between dashboards
 
 The default view for any War Room is the [Overview](/docs/cloud/visualize/overview), which uses composite charts to
 display real-time metrics from every available node in a given War Room. The [Nodes view](/docs/cloud/visualize/nodes)
@@ -18,33 +23,66 @@ helps you view key metrics and alarm status from all your nodes at a glance. Fin
 [Dashboards](/docs/cloud/visualize/dashboards) to build rich, targeted interfaces for your infrastructure using any
 number of charts from any number of nodes.
 
-To switch between views, use the [view dropdown](#view-dropdown).
-
-![Dropdown to navigate between War Room views](https://user-images.githubusercontent.com/1153921/100912860-3f7ba400-348e-11eb-8b31-27a596e27a7b.png)
-
-You can also jump to single-node dashboards from either the
-[Overview](/docs/cloud/visualize/overview#jump-to-single-node-dashboards) or the [Nodes
+To switch between dashboards, use the tabs beneath the War Room's name. You can also jump to single-node dashboards from
+either the [Overview](/docs/cloud/visualize/overview#jump-to-single-node-dashboards) or the [Nodes
 view](/docs/cloud/visualize/nodes#jump-to-single-node-dashboards).
 
-## The utility bar
+![Navigate between War Room dashboards with
+tabs](https://user-images.githubusercontent.com/1153921/108431813-a5133d00-7200-11eb-8e5c-78da40f16ec1.png)
 
-At the top of every War Room is its utility bar. This bar helps you navigate through the various views and dashboards
-available for a given War Room. Each utility bar contains three items: the **View dropdown**, the **node filter**, and
-the **time picker**.
+### War Room tabs
 
-### View dropdown
+If you open a [new dashboard](/docs/cloud/visualize/dashboards) or jump to a single-node dashboard, they will open in a
+new War Room tab.
 
-The View dropdown lets you choose between various dashboards for monitoring your infrastructure. You can currently
-choose between the [Overview](/docs/cloud/visualize/overview), [Nodes view](/docs/cloud/visualize/nodes), and creating
-[new dashboards](/docs/cloud/visualize/dashboards), along with any specific dashboards you might have created already.
+Tabs can be rearranged with drag-and-drop or closed with the **X** button. Open tabs persist between sessions, so you
+can always come right back to your preferred setup.
 
-![The view
-dropdown](https://user-images.githubusercontent.com/1153921/95790189-c6cd4800-0c93-11eb-9abb-8855bf3bc1bf.png)
+### Time & date picker
+
+By default, all visualizations in Netdata Cloud show the last 15 minutes of metrics data. The time & date picker helps
+you select a precise timeframe to visualize.
+
+![Opening the time & date picker from a War
+Room](https://user-images.githubusercontent.com/1153921/108432492-b27cf700-7201-11eb-8b2a-7368a2d7b00f.png)
+
+![Using the time & date
+picker](https://user-images.githubusercontent.com/1153921/108432854-418a0f00-7202-11eb-9af6-97c8f973b14c.png)
+
+Use the **Quick Selector** to visualize metrics from predefined timeframes, or use the input field below to enter a
+number and an appropriate unit of time. The calendar allows you to select multiple days of metrics data.
+
+Click **Apply** to re-render all visualizations with new metrics data streamed to your browser from each distributed
+node. Click **Clear** to remove any changes and apply the default 15-minute timeframe.
+
+The fields beneath the calendar display the beginning and ending timestamps your selected timeframe.
+
+### Indicators
+
+Every War Room features three indicators: **alerts**, a **nodes**, and **users**.
+
+![War Room status
+indicators](https://user-images.githubusercontent.com/1153921/108520332-ca975980-7287-11eb-8692-0f6545425e6a.png)
+
+The alerts indicator displays the number of active `critical` (red) and `warning` (yellow) alerts for the nodes in this
+War Room. Click on either the critical or warning badges to open a pre-filtered modal displaying only those types of
+[active alerts](/docs/cloud/monitoring/alarms).
+
+The nodes indicator displays the number of _active_ (transparent) and _unreachable_ (gray) nodes. Click on either of
+them to open a dropdown with their hostnames, status when relevant, and a link to open a single-node dashboard.
+
+![The nodes indicator
+dropdown](https://user-images.githubusercontent.com/1153921/108521419-f1a25b00-7288-11eb-815e-b9e6c75887d1.png)
+
+The users indicator shows the number of users in the War Room. Clicking on it opens a modal to manage the War Room's
+users.
 
 ### Node filter
 
 The node filter allows you to quickly filter the nodes visualized in a War Room's views. It appears on the Overview and
 Nodes view, but not on single-node dashboards or new dashboards you might have created.
+
+![The node filter](https://user-images.githubusercontent.com/1153921/108519236-b0a94700-7286-11eb-8ed1-339ce413d556.png)
 
 Use relational operators (==, !=, contains, and !contains) and logical operators (AND, OR), plus the name, OS, or
 services running on your nodes to quickly turn any War Room into a focused troubleshooting interface. See what services
@@ -58,34 +96,6 @@ ubuntu) OR services == apache` shows only nodes that have `aws` in the hostname 
 have an Apache webserver running on them.
 
 If a filter is invalid or incomplete, Netdata Cloud shows a warning and will not run the filter until it's corrected.
-
-### Metric Correlations
-
-When viewing a single-node dashboard, the **Metric Correlations** button appears in the utility bar. Click this button
-to use Netdata Cloud's built-in [metrics correlation feature](/docs/cloud/insights/metric-correlations), which is
-designed to help you find the root cause of anomalies faster.
-
-### Time & date picker
-
-By default, all visualizations in Netdata Cloud show the last 15 minutes of metrics data.
-
-The time picker helps you select precise timeframes you want to investigate further. It appears in the Overview, Nodes
-view, single-node dashboards, and new dashboards you might have created.
-
-![The War Room time
-picker](https://user-images.githubusercontent.com/1153921/101411575-7262d500-389e-11eb-916e-feed2b026a81.png)
-
-Use the Quick Selector to show metrics from the last 5 minutes, 15 minutes, 30 minutes, 2 hours, 6 hours, or 12 hours.
-
-Beneath the Quick Selector is an input field and dropdown you use in combination to select a specific timeframe of
-minutes, hours, days, or months. Enter a number and choose the appropriate unit of time.
-
-Use the calendar to select multiple days. Click on a date to begin the timeframe selection, then an ending date.
-
-Click **Apply** to re-render all visualizations with new metrics data streamed to your browser from each distributed
-node. Click **Clear** to remove any changes and apply the default 15-minute timeframe.
-
-The fields beneath the calendar display the beginning and ending timestamps of the timeframe selected.
 
 ## War Room organization
 
@@ -110,21 +120,22 @@ as possible.
 
 ## Add War Rooms
 
-You can add new War Rooms to any Space by clicking on the green plus icon **+** next the **War Rooms** heading.
+If you're the administrator of a Space, add new War Rooms to any Space by clicking on the green plus icon **+** next the
+**War Rooms** heading.
 
-![Add new War
-Room](https://user-images.githubusercontent.com/1153921/100913229-b749ce80-348e-11eb-9ebe-5db40df550d6.png)
+![Add a new War
+Room](https://user-images.githubusercontent.com/1153921/108433306-01775c00-7203-11eb-931e-46cd81891dd4.png)
 
-A new panel slides in and prompts you to name the new War Room, give it a description, and choose whether it's public or
-private. Anyone in your Space can join public War Rooms, but can only join private War Rooms with an invitation.
+In the panel, give the War Room a name and description, and choose whether it's public or private. Anyone in your Space
+can join public War Rooms, but can only join private War Rooms with an invitation.
 
-### Manage War Rooms
+## Manage War Rooms
 
 If you're an administrator of War Room, you can change its settings. Click on the War Room's name in the top navigation
 to open a dropdown of options.
 
 ![Managing a War
-Room](https://user-images.githubusercontent.com/1153921/100912857-3ee30d80-348e-11eb-8bb6-e54926ba3bc0.png)
+Room](https://user-images.githubusercontent.com/1153921/108433867-efe28400-7203-11eb-995d-1b1e92b956c6.png)
 
 To _change a War Room's name, description, or public/private status_, click on **Manage War Room**.
 

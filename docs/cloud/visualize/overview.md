@@ -12,28 +12,16 @@ With Overview's composite charts, you can see your infrastructure from a single 
 anomalies, then drill down by grouping metrics by node and jumping to single-node dashboards for root cause analysis.
 
 ![The War Room
-Overview](https://user-images.githubusercontent.com/1153921/95637683-31d60f00-0a47-11eb-9808-9f591ba8eb3a.png)
+Overview](https://user-images.githubusercontent.com/1153921/108522390-03383280-728a-11eb-8db4-fc9aa07764fd.png)
 
 ## Before you get started
 
 Only nodes with v1.25.0-127 or later of the [Netdata Agent](https://github.com/netdata/netdata) can contribute to
 composite charts. If your node(s) use an earlier, incompatible version of the Netdata Agent, you will see them marked as
-**needs upgrade** in the tooltip that appears when hovering over **X Issues**. 
-
-![Tooltip showing nodes that need to be
-upgraded](https://user-images.githubusercontent.com/1153921/95638372-3c91a380-0a49-11eb-946d-42bfc1f04da7.png)
+**needs upgrade** in various dropdowns
 
 See our [update docs](/docs/agent/packaging/installer/update) for the preferred update method based on how you installed
 the Agent.
-
-## Utility bar
-
-At the top of the Overview is the utility bar. This bar contains a dropdown for navigating between the different War
-Room views, an input field for filtering the nodes that contribute to a particular view, and a time-picker for
-visualizing specific timeframes of metrics.
-
-See the [War Room docs](/docs/cloud/war-rooms) for details about [filtering](/docs/cloud/war-rooms#node-filter) and the
-[time picker](/docs/cloud/war-rooms#time-picker).
 
 ## Definition bar
 
