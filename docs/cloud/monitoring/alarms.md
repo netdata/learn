@@ -12,7 +12,7 @@ A War Room's [alerts indicator](/docs/cloud/war-rooms#indicators) displays the n
 pre-filtered modal displaying only those types of [active alerts](/docs/cloud/monitoring/alarms).
 
 ![The active alarms panel in Netdata
-Cloud](https://user-images.githubusercontent.com/1153921/100816025-786e3700-3402-11eb-97d2-5263e39763f5.png)
+Cloud](https://user-images.githubusercontent.com/1153921/108564747-d2bfbb00-72c0-11eb-97b9-5863ad3324eb.png)
 
 The Alarms panel lists all active alarms for nodes within that War Room, and tells you which chart triggered the alarm,
 what that chart's current value is, the alarm that triggered it, and when the alarm status first began.
