@@ -11,12 +11,12 @@ tab, then choose your preferred theme: Light, Blue, or Dark.
 
 **Light**:
 
-![Dark theme](https://user-images.githubusercontent.com/1153921/93349545-737aed80-f7ec-11ea-95c8-15745ac85a6e.png)
+![Dark theme](https://user-images.githubusercontent.com/1153921/108530742-2ca98c00-7293-11eb-8c1e-1e0dd34eb87b.png)
 
 **Blue**:
 
-![Blue theme](https://user-images.githubusercontent.com/1153921/93349541-7249c080-f7ec-11ea-8b91-9896fb1ea3bd.png)
+![Blue theme](https://user-images.githubusercontent.com/1153921/108530739-2c10f580-7293-11eb-816c-ed20e3543ac5.png)
 
 **Dark (default)**:
 
-![Light theme](https://user-images.githubusercontent.com/1153921/93349542-72e25700-f7ec-11ea-97bb-1efa3af4b64d.png)
+![Light theme](https://user-images.githubusercontent.com/1153921/108530848-4519a680-7293-11eb-897d-1c470b67ceb0.png)

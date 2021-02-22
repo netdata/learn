@@ -1,6 +1,6 @@
 ---
 title: Alarm notifications
-description: Configure Cloud to send notifications to your team whenever any node on your infrastructure triggers an alarm.
+description: Configure Netdata Cloud to send notifications to your team whenever any node on your infrastructure triggers a pre-configured or custom alert threshold.
 custom_edit_url: null
 ---
 
@@ -8,9 +8,9 @@ Netdata Cloud can send centralized alarm notifications to your team whenever a n
 unreachable state. By enabling notifications, you ensure no alarm, on any node in your infrastructure, goes unnoticed by
 you or your team.
 
-If a node is getting disconnected often or has many alarms, we protect you and your team from alarm fatigue by 
-sending you a flood protection notification. Getting one of these notifications is a good signal of health or performance
-issues on that node.
+If a node is getting disconnected often or has many alarms, we protect you and your team from alarm fatigue by sending
+you a flood protection notification. Getting one of these notifications is a good signal of health or performance issues
+on that node.
 
 Netdata Cloud currently supports email notifications. We're working on additional endpoints and functionality.
 
@@ -25,8 +25,12 @@ you must [configure](/docs/monitor/configure-alarms) each node's health watchdog
 
 ## Manage alarm notifications for a Space
 
-To enable notifications for a Space, click on the Space's name in the top menu, then **Manage your Space**. In the panel
-that appears, click on the **Notifications** tab. This menu option is visible only to administrators.
+To enable notifications for a Space, click **Manage Space** in the [Space](/docs/cloud/spaces) management area.
+
+![The Manage Space
+button](https://user-images.githubusercontent.com/1153921/108530321-b6a52500-7292-11eb-9599-a5ba77a25094.png)
+
+In the modal, click on the **Notifications** tab. This menu option is visible only to administrators.
 
 ![The Space-level management panel for alarm
 notifications](https://user-images.githubusercontent.com/1153921/99722010-3f7eab80-2a6d-11eb-8836-547a6d243d51.png)

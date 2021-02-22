@@ -32,30 +32,30 @@ different responsibilities or parts of the overall infrastructure to monitor. Fo
 for your user-facing SaaS application and a second team for infrastructure tooling. If they don't need to monitor the
 same nodes, you can create separate Spaces for each team.
 
-## Switch between Spaces
-
-Use the vertical navigation on the left-hand side of the UI to switch between available Spaces.
-
-![The Space
-switcher](https://user-images.githubusercontent.com/1153921/100922586-4d83f180-349b-11eb-9064-f35696c8508e.png)
-
-Netdata Cloud abbreviates each Space to the first letter of the name, or the first two letters if the name is two words
-or more. Hover over each icon to see the full name in a tooltip.
-
 ## Add Spaces
 
 Click on the green **+** button to add a new Space. Enter the name of the Space and click **Save**.
 
+![Switch between
+Spaces](https://user-images.githubusercontent.com/1153921/108741861-60372100-74f4-11eb-9580-8ebd5ca97003.png)
+
 While you can't change the name of a Space once it's created, you can always create additional Spaces and delete the any
 you no longer need.
+
+## Switch between Spaces
+
+Click on any of the boxes to switch between available Spaces.
+
+Netdata Cloud abbreviates each Space to the first letter of the name, or the first two letters if the name is two words
+or more. Hover over each icon to see the full name in a tooltip.
 
 ## Manage Spaces
 
 Manage your spaces in the left-hand navigation, which shows the name of the current Space, followed by common management
 actions. Finally, the panel lists every [War Room](/docs/cloud/war-rooms) in the Space.
 
-![The Spaces management
-area](https://user-images.githubusercontent.com/1153921/100896143-8d3ae100-347b-11eb-9657-745831afc140.png)
+![The Space management
+area](https://user-images.githubusercontent.com/1153921/108742003-83fa6700-74f4-11eb-9d9b-8e74ce5ef540.png)
 
 To _claim nodes to a Space_, click on **Claim Nodes**. Copy the claiming script to your node and run it. See the
 [claiming doc](/docs/agent/claim) for details.

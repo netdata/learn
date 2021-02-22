@@ -7,12 +7,12 @@ custom_edit_url: null
 Netdata Cloud receives information about active alarms on individual nodes in your infrastructure and updates the Cloud
 UI based those status changes.
 
-You can see active alarms from any node in your infrastructure in two ways: Click on the bell icon in the top
-navigation, or click on the first column of any node's row in Nodes. This column's color changes based on the node's
-health status: gray is `clear`, yellow is `warning`, and red is `critical`.
+A War Room's [alerts indicator](/docs/cloud/war-rooms#indicators) displays the number of active `critical` (red) and
+`warning` (yellow) alerts for the nodes in this War Room. Click on either the critical or warning badges to open a
+pre-filtered modal displaying only those types of [active alerts](/docs/cloud/monitoring/alarms).
 
 ![The active alarms panel in Netdata
-Cloud](https://user-images.githubusercontent.com/1153921/100816025-786e3700-3402-11eb-97d2-5263e39763f5.png)
+Cloud](https://user-images.githubusercontent.com/1153921/108564747-d2bfbb00-72c0-11eb-97b9-5863ad3324eb.png)
 
 The Alarms panel lists all active alarms for nodes within that War Room, and tells you which chart triggered the alarm,
 what that chart's current value is, the alarm that triggered it, and when the alarm status first began.
