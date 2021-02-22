@@ -37,7 +37,7 @@ same nodes, you can create separate Spaces for each team.
 Click on the green **+** button to add a new Space. Enter the name of the Space and click **Save**.
 
 ![Switch between
-Spaces](https://user-images.githubusercontent.com/1153921/108430521-b8250d80-71fe-11eb-8330-4904e1a8420a.png)
+Spaces](https://user-images.githubusercontent.com/1153921/108741861-60372100-74f4-11eb-9580-8ebd5ca97003.png)
 
 While you can't change the name of a Space once it's created, you can always create additional Spaces and delete the any
 you no longer need.
@@ -55,7 +55,7 @@ Manage your spaces in the left-hand navigation, which shows the name of the curr
 actions. Finally, the panel lists every [War Room](/docs/cloud/war-rooms) in the Space.
 
 ![The Space management
-area](https://user-images.githubusercontent.com/1153921/108430740-14882d00-71ff-11eb-984b-62bb8a1489fc.png)
+area](https://user-images.githubusercontent.com/1153921/108742003-83fa6700-74f4-11eb-9d9b-8e74ce5ef540.png)
 
 To _claim nodes to a Space_, click on **Claim Nodes**. Copy the claiming script to your node and run it. See the
 [claiming doc](/docs/agent/claim) for details.
