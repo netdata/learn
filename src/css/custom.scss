@@ -171,6 +171,7 @@ html[data-theme='dark'] {
 @media (min-width: 967px) {
   main[class^='docMainContainer'] > .container {
     margin-left: 0;
+    max-width: calc(var(--ifm-container-width) - 300px);
   }
 }
 
@@ -181,6 +182,7 @@ html[data-theme='dark'] {
 .navbar,
 .navbar .navbar-sidebar {
   background-color: #35414a;
+  overflow: hidden;
 }
 
 .navbar > .container {

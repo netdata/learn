@@ -76,6 +76,7 @@ module.exports = {
       trackingID: 'GTM-N6CBMJD',
     },
     image: 'img/netdata_meta-default.png',
+    sidebarCollapsible: true,
     prism: {
       theme: require('prism-react-renderer/themes/duotoneDark'),
       darkTheme: require('prism-react-renderer/themes/duotoneDark'),
