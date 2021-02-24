@@ -34,7 +34,7 @@ Netdata Cloud organizes and visualizes the following metrics from your Kubernete
 - `cpu`: CPU utilization of the pod/container. 100% usage equals 1 fully-utilized core, 200% equals 2 fully-utilized
   cores, and so on.
 - `cpu_per_core`: CPU utilization averaged across available cores.
-- mem_usage_limit: Memory utilization, without cache, as a percentage of the limit defined by the [pod specification
+- `mem_usage_limit`: Memory utilization, without cache, as a percentage of the limit defined by the [pod specification
   `spec.containers[].resources.limits.memory`](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#resource-requests-and-limits-of-pod-and-container)
   or a [`LimitRange`
   object](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/#create-a-limitrange-and-a-pod).
