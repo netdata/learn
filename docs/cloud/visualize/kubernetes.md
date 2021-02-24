@@ -116,7 +116,7 @@ problematic behavior to investigate further, troubleshoot, and remediate with `k
 The Kubernetes composite charts show real-time and historical resource utilization metrics from nodes, pods, or
 containers within your Kubernetes deployment.
 
-See the [Overview](/docs/cloud/visualize/overvie#definition-barw) doc for details on how composite charts work. These
+See the [Overview](/docs/cloud/visualize/overview#definition-bar) doc for details on how composite charts work. These
 work similarly, but in addition to visualizing _by dimension_ and _by node_, Kubernetes composite charts can also be
 grouped by the following labels:
 
