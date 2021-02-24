@@ -241,6 +241,10 @@ html[data-theme='dark'] {
 
   &:last-of-type {
     padding: 10px 0 20px 0;
+
+    .dropdown__menu {
+      right: 0;
+    }
   }
 
   @media (max-width: 1050px) {
