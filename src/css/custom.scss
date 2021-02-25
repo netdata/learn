@@ -86,7 +86,7 @@ html {
   --ifm-code-background: rgb(235, 238, 241);
 
   /* Buttons */
-  // --ifm-button-background-color: var(--ifm-color-primary);
+  --ifm-button-background-color: var(--ifm-background-color);
   --ifm-button-border-width: 1px;
   --ifm-button-border-radius: 2px;
   --ifm-button-font-weight: 500;
@@ -110,6 +110,7 @@ html {
   --ifm-navbar-item-padding-vertical: 0px;
   --ifm-navbar-item-padding-horizontal: 11px;
   --ifm-dropdown-background-color:#35414a;
+  --collapse-button-bg-color-dark: #35414a;
 
   /* Search */
   --ifm-navbar-search-input-color: var(--ifm-font-color-base);
@@ -168,10 +169,10 @@ html[data-theme='dark'] {
   padding-top: 3rem !important;
 }
 
-@media (min-width: 967px) {
+@media (max-width: 1320px) and (min-width: 997px) {
   main[class^='docMainContainer'] > .container {
     margin-left: 0;
-    max-width: calc(var(--ifm-container-width) - 300px);
+    max-width: 724px;
   }
 }
 
@@ -522,6 +523,10 @@ html[data-theme='dark'] .sui-search-box__text-input  {
   }
 }
 
+svg[class^='collapseSidebarButtonIcon'] {
+  margin-top: 0;
+}
+
 html[data-theme='dark'] {
   .menu__link {
     color: var(--ifm-font-color-base);
@@ -613,7 +618,7 @@ a:hover:not(.button):not(.navbar__link) {
   color: var(--ifm-color-secondary);
 }
 
-html[data-theme='dark'] .markdown a {
+html[data-theme='dark'] .markdown a:not(.button) {
   color: var(--ifm-color-primary-lightest);
 }
 
@@ -630,12 +635,12 @@ html[data-theme='dark'] a:hover {
 }
 
 /* Buttons */
+
 .button {
   border: 2px solid var(--ifm-color-primary);
   font-family: var(--ifm-font-family-base);
   font-weight: 500;
   
-
   &:active {
     background: var(--ifm-color-primary-lightest);
   }
@@ -660,7 +665,7 @@ html[data-theme='dark'] a:hover {
 
 .button.button--outline {
   background: transparent;
-  color: white !important;
+  // color: white !important;
 
   &:hover {
     background: var(--ifm-color-primary-lightest);
@@ -844,94 +849,4 @@ html[data-theme='dark'] code {
   @media (max-width: 996px) {
     display: inline-block;
   }
-}
-
-// Installation page
-
-.installer-grid {
-  display: flex;
-  flex-flow: row wrap;
-
-  p {
-    flex: 0 1 calc(33% - 1rem);
-    margin: 0.5rem;
-    
-    font-size: 85%;
-    text-align: center;
-    word-wrap: normal;
-    border: 1px solid var(--ifm-color-primary);
-
-    a {
-      overflow: auto;
-      display: block;
-      padding: 1rem;
-      
-      word-wrap: break-word;
-      word-break: break-word;
-    }
-
-    &:hover {
-      border: 1px solid var(--ifm-color-primary-lightest);
-    }
-
-    @media (max-width: 600px) {
-      flex: 0 1 calc(50% - 1rem);
-      padding: 0.5rem;
-    }
-
-    @media (max-width: 400px) {
-      flex: 0 1 100%;
-      margin: 0.5rem 0;
-      padding: 0.5rem;
-    }
-  }
-
-  img {
-    display: block;
-    margin: 0 auto 0.5rem;
-
-    border-radius: var(--ifm-global-radius);
-    box-shadow: none;
-  }
-}
-
-/**
- * Tabs
-*/
-
-.tabs > .tabs__item {
-  border-top: 1px solid var(--ifm-color-primary);
-  border-right: 1px solid var(--ifm-color-primary);
-  border-left: 1px solid var(--ifm-color-primary);
-  border-bottom: 0;
-  border-radius: 0;
-}
-
-.tabs > .tabs__item:first-of-type {
-  border-top-left-radius: var(--ifm-global-radius);
-  border-top-right-radius: 0px;
-}
-
-.tabs > .tabs__item:last-of-type {
-  border-top-left-radius: 0px;
-  border-top-right-radius: var(--ifm-global-radius);
-}
-
-.tabs > .tabs__item.tabs__item--active {
-  color: white;
-
-  background: var(--ifm-color-primary);
-}
-
-div[role="tabpanel"] {
-  margin-top: 0 !important;
-  padding: var(--ifm-pre-padding);
-
-  border: 1px solid var(--ifm-color-primary);
-  border-radius: 0 0 var(--ifm-global-radius) var(--ifm-global-radius);
-  box-shadow: var(--ifm-global-shadow-lw);
-}
-
-div[role="tabpanel"] div:last-child {
-  margin-bottom: 0;
 }
