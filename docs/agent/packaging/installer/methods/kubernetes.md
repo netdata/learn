@@ -41,7 +41,7 @@ dashboards available in Netdata Cloud.
 
 ## Claim your Kubernetes cluster to Netdata Cloud
 
-To start [Kubernetes monitoring](/docs/cloud/visualizations/kubernetes/), you must first
+To start [Kubernetes monitoring](/docs/cloud/visualize/kubernetes/), you must first
 [claim](/docs/agent/claim) your Kubernetes cluster to [Netdata Cloud](https://app.netdata.cloud). Claiming securely
 connects your Kubernetes cluster to stream metrics data to Netdata Cloud, enabling Kubernetes-specific visualizations
 like the health map and time-series composite charts.
@@ -171,7 +171,7 @@ helm upgrade netdata netdata/netdata
 
 ## What's next?
 
-[Start Kubernetes monitoring](/docs/cloud/visualizations/kubernetes/) in Netdata Cloud, which
+[Start Kubernetes monitoring](/docs/cloud/visualize/kubernetes/) in Netdata Cloud, which
 comes with meaningful visualizations out of the box. 
 
 Read our guide, [_Kubernetes monitoring with Netdata_](/guides/monitor/kubernetes-k8s-netdata), for a complete
@@ -180,7 +180,7 @@ infrastructure, aggregated resource utilization metrics, and application metrics
 
 ### Related reference documentation
 
-- [Netdata Cloud · Kubernetes monitoring](/docs/cloud/visualizations/kubernetes/)
+- [Netdata Cloud · Kubernetes monitoring](/docs/cloud/visualize/kubernetes/)
 - [Netdata Helm chart](https://github.com/netdata/helmchart)
 - [Netdata service discovery](https://github.com/netdata/agent-service-discovery/)
 
