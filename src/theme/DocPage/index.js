@@ -49,7 +49,6 @@ function DocPageContent({
 
   // BEGIN CUSTOMIZATION
   const isGuide = children.props.children[0].props.path.includes('/guides/');
-  console.log(isGuide)
   // END CUSTOMIZATION
 
   return <Layout key={isClient} searchMetadatas={{
