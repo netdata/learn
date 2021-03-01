@@ -6,6 +6,7 @@
  */
 import React, { useState, useCallback } from 'react';
 import { MDXProvider } from '@mdx-js/react';
+import SVG from 'react-inlinesvg'; // EDIT
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import renderRoutes from '@docusaurus/renderRoutes';
 import Layout from '@theme/Layout';
