@@ -91,52 +91,33 @@ function DocSidebarItemCategory({
     return null;
   }
 
-  if (level == 1) {
-    return <li className={clsx('menu__list-item', {
-      'menu__list-item--collapsed': collapsed
-    })} key={label}>
-        <div className={clsx(styles.sidebarMenuTitle)}>
+  return <li className={clsx('menu__list-item', {
+    'menu__list-item--collapsed': collapsed
+  })} key={label}>
+      {level == 1 && 
+       <div className={clsx(styles.sidebarMenuTitle)}>
           {label}
         </div>
-        {/* <a className={clsx('menu__link', {
-        'menu__link--sublist': collapsible,
-        'menu__link--active': collapsible && isActive,
-        [styles.menuLinkText]: !collapsible
-      })} onClick={collapsible ? handleItemClick : undefined} href={collapsible ? '#!' : undefined} {...props}>
-          {label}
-        </a> */}
-        <ul className="menu__list" ref={menuListRef} style={{
-        height: menuListHeight
-      }} onTransitionEnd={() => {
-        if (!collapsed) {
-          handleMenuListHeight(false);
-        }
-      }}>
-          {items.map(childItem => <DocSidebarItem tabIndex={collapsed ? '-1' : '0'} level={level + 1} key={childItem.label} item={childItem} onItemClick={onItemClick} collapsible={collapsible} activePath={activePath} />)}
-        </ul>
-      </li>;
-  } else {
-    return <li className={clsx('menu__list-item', {
-      'menu__list-item--collapsed': collapsed
-    })} key={label}>
-        <a className={clsx('menu__link', {
-        'menu__link--sublist': collapsible,
-        'menu__link--active': collapsible && isActive,
-        [styles.menuLinkText]: !collapsible
-      })} onClick={collapsible ? handleItemClick : undefined} href={collapsible ? '#!' : undefined} {...props}>
-          {label}
-        </a>
-        <ul className="menu__list" ref={menuListRef} style={{
-        height: menuListHeight
-      }} onTransitionEnd={() => {
-        if (!collapsed) {
-          handleMenuListHeight(false);
-        }
-      }}>
-          {items.map(childItem => <DocSidebarItem tabIndex={collapsed ? '-1' : '0'} level={level + 1} key={childItem.label} item={childItem} onItemClick={onItemClick} collapsible={collapsible} activePath={activePath} />)}
-        </ul>
-      </li>;
-  }
+      }
+      {level > 1 &&
+      <a className={clsx('menu__link', {
+      'menu__link--sublist': collapsible,
+      'menu__link--active': collapsible && isActive,
+      [styles.menuLinkText]: !collapsible
+    })} onClick={collapsible ? handleItemClick : undefined} href={collapsible ? '#!' : undefined} {...props}>
+        {label}
+      </a>
+      }
+      <ul className="menu__list" ref={menuListRef} style={{
+      height: menuListHeight
+    }} onTransitionEnd={() => {
+      if (!collapsed) {
+        handleMenuListHeight(false);
+      }
+    }}>
+        {items.map(childItem => <DocSidebarItem tabIndex={collapsed ? '-1' : '0'} level={level + 1} key={childItem.label} item={childItem} onItemClick={onItemClick} collapsible={collapsible} activePath={activePath} />)}
+      </ul>
+    </li>;
 }
 
 function DocSidebarItemLink({
