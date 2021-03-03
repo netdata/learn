@@ -9,6 +9,8 @@ import Link from '@docusaurus/Link';
 
 import SiteSearchAPIConnector from "@elastic/search-ui-site-search-connector";
 import { SearchProvider, WithSearch, Results, SearchBox, ResultsPerPage, Paging, PagingInfo } from "@elastic/react-search-ui";
+import "@elastic/react-search-ui-views/lib/styles/styles.css";
+import { Layout } from "@elastic/react-search-ui-views";
 
 // import "@elastic/react-search-ui-views/lib/styles/styles.css";
 import styles from './styles.SearchBar.module.scss';
@@ -17,6 +19,30 @@ const connector = new SiteSearchAPIConnector({
   documentType: "page",
   engineKey: "BZL_aEiLAebVKkcm3eFr"
 });
+
+const configurationOptions = {
+  apiConnector: connector,
+  searchQuery: {
+    result_fields: {
+      title: {
+        snippet: {
+          size: 100,
+          fallback: true
+        }
+      },
+      url: {
+        raw: {}
+      },
+      description: {
+        snippet: {
+          size: 100,
+          fallback: true
+        }
+      }
+    },
+  },
+  alwaysSearchOnInitialLoad: false
+}
 
 const SearchBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,18 +97,33 @@ const SearchBar = (props) => {
             style={{ zIndex: '300' }}
             onMouseDown={onClose}>
             <div onClick={null} className={styles.searchModal}>
+
+              <SearchProvider config={configurationOptions}>
+                  <div className="App">
+                    <Layout
+                      header={<SearchBox />}
+                      bodyContent={<Results titleField="title" urlField="url" />}
+                    />
+                  </div>
+              </SearchProvider>
+
               
-              <SearchProvider
+              
+              {/* <SearchProvider
                 config={{
                   apiConnector: connector,
                   initialState: {
                     resultsPerPage: 20
-                  }
+                  },
+                  shouldTrackClickThrough: true,
+
                 }}
                 searchAsYouType={false}
-              >
+              > */}
 
-                <WithSearch mapContextToProps={({searchTerm, results}) => ({searchTerm, results})}>
+
+
+                {/* <WithSearch mapContextToProps={({searchTerm, results}) => ({searchTerm, results})}>
                   {({searchTerm, results}) => {
                     return (
                       <>
@@ -92,7 +133,8 @@ const SearchBar = (props) => {
                             inputProps={{ placeholder: "Search all of Netdata", autoFocus: true }} 
                             autocompleteResults={{
                               titleField: "title",
-                              urlField: "url"
+                              urlField: "url",
+                              shouldTrackClickThrough: true,
                             }}
                           />
                           <div className={styles.resultVolume}>
@@ -171,8 +213,9 @@ const SearchBar = (props) => {
                       </>
                     );
                   }}
-                </WithSearch>
-              </SearchProvider>
+                </WithSearch> */}
+
+              {/* </SearchProvider> */}
               
             </div>  
           </div>,
