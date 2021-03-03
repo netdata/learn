@@ -105,6 +105,8 @@ const SearchBar = (props) => {
   }
 
   const onClose = useCallback((e) => {
+    console.log(e.target)
+    console.log(e.currentTarget)
     if (e.target === e.currentTarget || e.currentTarget.tagName === 'A') {
       setIsOpen(false);
       document.body.classList.remove('search-open');
@@ -131,7 +133,7 @@ const SearchBar = (props) => {
                 <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
                   {({ wasSearched }) => {
                     return (
-                      <div className="App">
+                      <div>
                         <ErrorBoundary>
                           <Layout
                             header={
@@ -176,126 +178,7 @@ const SearchBar = (props) => {
                   }}
                 </WithSearch>
               </SearchProvider>
-
-              {/* <SearchProvider config={configurationOptions}>
-                  <div className="App">
-                    <Layout
-                      header={<SearchBox />}
-                      bodyContent={<Results titleField="title" shouldTrackClickThrough={true} />}
-                    />
-                  </div>
-              </SearchProvider> */}
-
-              
-              
-              {/* <SearchProvider
-                config={{
-                  apiConnector: connector,
-                  initialState: {
-                    resultsPerPage: 20
-                  },
-                  shouldTrackClickThrough: true,
-
-                }}
-                searchAsYouType={false}
-              > */}
-
-
-
-                {/* <WithSearch mapContextToProps={({searchTerm, results}) => ({searchTerm, results})}>
-                  {({searchTerm, results}) => {
-                    return (
-                      <>
-                        <header className={styles.searchHeader}>
-                          <SearchBox 
-                            className={clsx('button--primary')}
-                            inputProps={{ placeholder: "Search all of Netdata", autoFocus: true }} 
-                            autocompleteResults={{
-                              titleField: "title",
-                              urlField: "url",
-                              shouldTrackClickThrough: true,
-                            }}
-                          />
-                          <div className={styles.resultVolume}>
-                            <PagingInfo />
-                            <ResultsPerPage className={styles.resultPaged} />
-                          </div>
-                        </header>
-                        <div className={styles.searchResults}>
-                          {results.map(r => (
-                            <div key={r.id.raw} className={clsx(styles.searchResultItem)}>
-                              {(() => {
-                                if (r.url.raw.includes('learn.netdata.cloud') == true) {
-                                  return (
-                                    <Link onClick={onClose} to={r.url.raw.split('https://learn.netdata.cloud')[1]}>
-                                      <span className={clsx(styles.resultFlag)}>Learn / Docs</span>
-                                      <h3>{r.title.raw}</h3>
-                                      <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
-                                      {r.description && 
-                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
-                                      }
-                                    </Link>
-                                  )
-                                } else if (r.url.raw.includes('netdata.cloud/blog') == true) {
-                                  return (
-                                    <Link href={r.url.raw}>
-                                      <span className={clsx(styles.resultFlag)}>Blog</span>
-                                      <h3>{r.title.raw}</h3>
-                                      <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
-                                      {r.description && 
-                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
-                                      }
-                                    </Link>
-                                  )
-                                } else if (r.url.raw.includes('netdata.cloud') == true) {
-                                  return (
-                                    <Link href={r.url.raw}>
-                                      <span className={clsx(styles.resultFlag)}>Netdata.Cloud</span>
-                                      <h3>{r.title.raw}</h3>
-                                      <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
-                                      {r.description && 
-                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
-                                      }
-                                    </Link>
-                                  )
-                                } else if (r.url.raw.includes('github.com') == true) {
-                                  return (
-                                    <Link href={r.url.raw}>
-                                      <span className={clsx(styles.resultFlag)}>GitHub</span>
-                                      <h3>{r.title.raw}</h3>
-                                      <p className={clsx(styles.resultUrl)}>{r.url.raw}</p>
-                                      {r.description && 
-                                        <p className={clsx(styles.resultDescription)}>{r.description.raw}</p>
-                                      }
-                                    </Link>
-                                  )
-                                }
-                              })()}
-                            </div>
-                          ))}
-                          <Paging />
-                        </div>
-                        <footer className={styles.searchFooter}>
-                          <div className={styles.closeInst}>
-                            <div className={styles.closeKey}>
-                              Press <code>Esc</code> to close
-                            </div>
-                            <div className={styles.closeButton}>
-                              <button 
-                                className={clsx('button button--secondary button--lg')} 
-                                onClick={onClose}>
-                                Close
-                              </button>
-                            </div>
-                          </div>
-                        </footer>
-                      </>
-                    );
-                  }}
-                </WithSearch> */}
-
-              {/* </SearchProvider> */}
-              
+             
             </div>  
           </div>,
           document.body,
