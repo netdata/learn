@@ -8,9 +8,25 @@ import {useHistory} from '@docusaurus/router';
 import Link from '@docusaurus/Link';
 
 import SiteSearchAPIConnector from "@elastic/search-ui-site-search-connector";
-import { SearchProvider, WithSearch, Results, SearchBox, ResultsPerPage, Paging, PagingInfo } from "@elastic/react-search-ui";
+import {
+  ErrorBoundary,
+  Facet,
+  SearchProvider,
+  SearchBox,
+  Results,
+  PagingInfo,
+  ResultsPerPage,
+  Paging,
+  Sorting,
+  WithSearch
+} from "@elastic/react-search-ui";
+import {
+  Layout,
+  SingleSelectFacet,
+  SingleLinksFacet,
+  BooleanFacet
+} from "@elastic/react-search-ui-views";
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
-import { Layout } from "@elastic/react-search-ui-views";
 
 // import "@elastic/react-search-ui-views/lib/styles/styles.css";
 import styles from './styles.SearchBar.module.scss';
@@ -20,7 +36,7 @@ const connector = new SiteSearchAPIConnector({
   engineKey: "BZL_aEiLAebVKkcm3eFr"
 });
 
-const configurationOptions = {
+const config = {
   apiConnector: connector,
   searchQuery: {
     result_fields: {
@@ -43,6 +59,19 @@ const configurationOptions = {
   },
   alwaysSearchOnInitialLoad: false
 }
+
+const SORT_OPTIONS = [
+  {
+    name: "Relevance",
+    value: "",
+    direction: ""
+  },
+  {
+    name: "Title",
+    value: "title",
+    direction: "asc"
+  }
+];
 
 const SearchBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -98,14 +127,64 @@ const SearchBar = (props) => {
             onMouseDown={onClose}>
             <div onClick={null} className={styles.searchModal}>
 
-              <SearchProvider config={configurationOptions}>
+              <SearchProvider config={config}>
+                <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
+                  {({ wasSearched }) => {
+                    return (
+                      <div className="App">
+                        <ErrorBoundary>
+                          <Layout
+                            header={
+                              <SearchBox
+                                autocompleteMinimumCharacters={3}
+                                autocompleteResults={{
+                                  linkTarget: "_blank",
+                                  sectionTitle: "Results",
+                                  titleField: "title",
+                                  shouldTrackClickThrough: true,
+                                  clickThroughTags: ["test"]
+                                }}
+                                autocompleteSuggestions={true}
+                                debounceLength={0}
+                              />
+                            }
+                            sideContent={
+                              <div>
+                                {wasSearched && (
+                                  <Sorting label={"Sort by"} sortOptions={SORT_OPTIONS} />
+                                )}
+                              </div>
+                            }
+                            bodyContent={
+                              <Results
+                                titleField="title"
+                                urlField="url"
+                                shouldTrackClickThrough={true}
+                              />
+                            }
+                            bodyHeader={
+                              <React.Fragment>
+                                {wasSearched && <PagingInfo />}
+                                {wasSearched && <ResultsPerPage />}
+                              </React.Fragment>
+                            }
+                            bodyFooter={<Paging />}
+                          />
+                        </ErrorBoundary>
+                      </div>
+                    );
+                  }}
+                </WithSearch>
+              </SearchProvider>
+
+              {/* <SearchProvider config={configurationOptions}>
                   <div className="App">
                     <Layout
                       header={<SearchBox />}
-                      bodyContent={<Results titleField="title" urlField="url" />}
+                      bodyContent={<Results titleField="title" shouldTrackClickThrough={true} />}
                     />
                   </div>
-              </SearchProvider>
+              </SearchProvider> */}
 
               
               
