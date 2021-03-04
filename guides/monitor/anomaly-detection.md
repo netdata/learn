@@ -79,9 +79,10 @@ yourself if it doesn't already exist. Either way, the final result should look l
 anomalies: yes
 ```
 
-[Restart the Agent](/docs/configure/start-stop-restart) with `sudo systemctl restart netdata` to start up the
-anomalies collector. By default, the model training process runs every 30 minutes, and uses the previous 4 hours of
-metrics to establish a baseline for health and performance across the default included charts.
+[Restart the Agent](/docs/configure/start-stop-restart) with `sudo systemctl restart netdata`, or the [appropriate
+method](/docs/configure/start-stop-restart) for your system, to start up the anomalies collector. By default, the
+model training process runs every 30 minutes, and uses the previous 4 hours of metrics to establish a baseline for
+health and performance across the default included charts.
 
 > 💡 The anomaly collector may need 30-60 seconds to finish its initial training and have enough data to start
 > generating anomaly scores. You may need to refresh your browser tab for the **Anomalies** section to appear in menus
@@ -106,7 +107,7 @@ involve tweaking the behavior of the ML training itself.
   doesn't have historical metrics going back that far, consider [changing the metrics retention
   policy](/docs/store/change-metrics-storage) or reducing this window.
 - `custom_models`: A way to define custom models that you want anomaly probabilities for, including multi-node or
-  streaming setups. More on custom models in part 3 of this guide series.
+  streaming setups.
 
 > ⚠️ Setting `charts_regex` with many charts or `train_n_secs` to a very large number will have an impact on the
 > resources and time required to train a model for every chart. The actual performance implications depend on the
@@ -172,20 +173,19 @@ example, it's time to apply that knowledge to other mission-critical parts of yo
 what to monitor next, check out our list of [collectors](/docs/agent/collectors/collectors) to see what kind of metrics Netdata
 can collect from your systems, containers, and applications.
 
-For a more user-friendly anomaly detection experience, try out the [Metric
-Correlations](/docs/cloud/insights/metric-correlations) feature in Netdata Cloud. Metric
-Correlations runs only at your requests, removing unrelated charts from the dashboard to help you focus on root cause
-analysis.
+Keep on moving to [part 2](/guides/monitor/visualize-monitor-anomalies), which covers the charts and alarms
+Netdata creates for unsupervised anomaly detection.
 
-Stay tuned for the next two parts of this guide, which provide more real-world context for the anomalies collector.
-First, maximize the immediate value you get from anomaly detection by tracking preconfigured alarms, visualizing
-anomalies in charts, and building a new dashboard tailored to your applications. Then, learn about creating custom ML
-models, which help you holistically monitor an application or service by monitoring anomalies across a _cluster of
-charts_.
+For a different troubleshooting experience, try out the [Metric
+Correlations](/docs/cloud/insights/metric-correlations) feature in Netdata Cloud. Metric
+Correlations helps you perform faster root cause analysis by narrowing a dashboard to only the charts most likely to be
+related to an anomaly.
 
 ### Related reference documentation
 
 - [Netdata Agent · Anomalies collector](/docs/agent/collectors/python.d.plugin/anomalies)
+- [Netdata Agent · Nginx collector](/docs/agent/collectors/go.d.plugin/modules/nginx)
+- [Netdata Agent · web log collector](/docs/agent/collectors/go.d.plugin/modules/weblog)
 - [Netdata Cloud · Metric Correlations](/docs/cloud/insights/metric-correlations)
 
 

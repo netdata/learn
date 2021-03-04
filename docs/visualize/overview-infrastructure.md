@@ -14,6 +14,9 @@ With Overview's composite charts, you can see your infrastructure from a single 
 anomalies, then drill down with filtering or single-node dashboards to see more. In the screenshot below,
 each chart visualizes average or sum metrics values from across 5 distributed nodes.
 
+Netdata also supports robust Kubernetes monitoring using the Overview. Read our [deployment
+doc](/docs/agent/packaging/installer/methods/kubernetes) for details on visualizing Kubernetes metrics in Netdata Cloud.
+
 ![The War Room
 Overview](https://user-images.githubusercontent.com/1153921/108732681-09791980-74eb-11eb-9ba2-98cb1b6608de.png)
 
@@ -93,10 +96,16 @@ To troubleshoot complex performance issues using Netdata, you need to understand
 visualizations. Learn more about [interaction](/docs/visualize/interact-dashboards-charts) to see historical metrics,
 highlight timeframes for targeted analysis, and more.
 
+If you're a Kubernetes user, read about Netdata's [Kubernetes
+visualizations](/docs/cloud/visualize/kubernetes) for details about the health map and
+time-series k8s charts, and our tutorial, [_Kubernetes monitoring with Netdata: Overview and
+visualizations_](/guides/monitor/kubernetes-k8s-netdata), for a full walkthrough.
+
 ### Related reference documentation
 
--   [Netdata Cloud · War Rooms](/docs/cloud/war-rooms)
--   [Netdata Cloud · Overview](/docs/cloud/visualize/overview)
--   [Netdata Cloud · Nodes view](/docs/cloud/visualize/nodes)
+- [Netdata Cloud · War Rooms](/docs/cloud/war-rooms)
+- [Netdata Cloud · Overview](/docs/cloud/visualize/overview)
+- [Netdata Cloud · Nodes view](/docs/cloud/visualize/nodes)
+- [Netdata Cloud · Kubernetes visualizations](/docs/cloud/visualize/kubernetes)
 
 

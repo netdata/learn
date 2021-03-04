@@ -59,8 +59,8 @@ cd /etc/netdata   # Replace this path with your Netdata config directory, if dif
 sudo ./edit-config python.d.conf
 ```
 
-Change the value of the `hpssa` setting to `yes`. Save the file and restart the Netdata Agent
-with `sudo systemctl restart netdata`, or the appropriate method for your system.
+Change the value of the `hpssa` setting to `yes`. Save the file and restart the Netdata Agent with `sudo systemctl
+restart netdata`, or the [appropriate method](/docs/configure/start-stop-restart) for your system.
 
 ## Configuration
 
@@ -77,5 +77,8 @@ If `ssacli` cannot be found in the `PATH`, configure it in `hpssa.conf`.
 ```yaml
 ssacli_path: /usr/sbin/ssacli
 ```
+
+Save the file and restart the Netdata Agent with `sudo systemctl restart netdata`, or the [appropriate
+method](/docs/configure/start-stop-restart) for your system.
 
 

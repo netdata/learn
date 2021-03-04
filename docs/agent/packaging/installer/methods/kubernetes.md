@@ -107,7 +107,7 @@ Read up on the various configuration options in the [Helm chart
 documentation](https://github.com/netdata/helmchart#configuration) if you need to tweak your Kubernetes monitoring.
 
 Your first option is to create an `override.yml` file, if you haven't created one already for
-[claim](#claim-your-kubernetes-cluster-to-netdata-cloud), then apply the new configuration to your cluster with `helm
+[claiming](#claim-your-kubernetes-cluster-to-netdata-cloud), then apply the new configuration to your cluster with `helm
 upgrade`.
 
 ```bash
@@ -123,9 +123,9 @@ helm upgrade --set parent.database.volumesize=4Gi netdata netdata/netdata
 
 ### Configure service discovery
 
-Netdata's [service discovery](https://github.com/netdata/agent-service-discovery/#service-discovery), which is
-installed as part of the Helm chart installation, finds what services are running on a cluster's pods, converts that
-into configuration files, and exports them so they can be monitored.
+Netdata's [service discovery](https://github.com/netdata/agent-service-discovery/#service-discovery), installed as part
+of the Helm chart installation, finds what services are running in a cluster's containers and automatically collects
+service-level metrics from them.
 
 Service discovery supports [popular applications](https://github.com/netdata/helmchart#applications) and [Prometheus
 endpoints](https://github.com/netdata/helmchart#prometheus-endpoints).
@@ -174,9 +174,10 @@ helm upgrade netdata netdata/netdata
 [Start Kubernetes monitoring](/docs/cloud/visualize/kubernetes/) in Netdata Cloud, which
 comes with meaningful visualizations out of the box. 
 
-Read our guide, [_Kubernetes monitoring with Netdata_](/guides/monitor/kubernetes-k8s-netdata), for a complete
-walkthrough of Netdata's Kubernetes monitoring capabilities, including a health map of every container in your
-infrastructure, aggregated resource utilization metrics, and application metrics.
+Read our guide, [_Kubernetes monitoring with Netdata: Overview and
+visualizations_](/guides/monitor/kubernetes-k8s-netdata), for a complete walkthrough of Netdata's Kubernetes
+monitoring capabilities, including a health map of every container in your infrastructure, aggregated resource
+utilization metrics, and application metrics.
 
 ### Related reference documentation
 

@@ -80,6 +80,7 @@ Battery stats disabled by default. To enable them, modify `megacli.conf`.
 do_battery: yes
 ```
 
----
+Save the file and restart the Netdata Agent with `sudo systemctl restart netdata`, or the [appropriate
+method](/docs/configure/start-stop-restart) for your system.
 
 

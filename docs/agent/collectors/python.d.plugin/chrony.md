@@ -55,7 +55,7 @@ local:
   command: 'chronyc -n tracking'
 ```
 
-Save the file and restart the Netdata Agent with `sudo systemctl restart netdata`, or the appropriate method for your
-system, to finish configuring the `chrony` collector.
+Save the file and restart the Netdata Agent with `sudo systemctl restart netdata`, or the [appropriate
+method](/docs/configure/start-stop-restart) for your system, to finish configuring the `chrony` collector.
 
 
