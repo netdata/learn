@@ -1,11 +1,6 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import {createPortal} from 'react-dom';
 import clsx from 'clsx';
-import SVG from 'react-inlinesvg';
-
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {useHistory} from '@docusaurus/router';
-import Link from '@docusaurus/Link';
 
 import SiteSearchAPIConnector from "@elastic/search-ui-site-search-connector";
 import {
@@ -24,11 +19,12 @@ import {
   Layout,
   SingleSelectFacet,
   SingleLinksFacet,
-  BooleanFacet
+  BooleanFacet,
+  getUrlSanitizer,
+  isFieldValueWrapper
 } from "@elastic/react-search-ui-views";
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
 
-// import "@elastic/react-search-ui-views/lib/styles/styles.css";
 import styles from './styles.SearchBar.module.scss';
 
 const connector = new SiteSearchAPIConnector({
@@ -105,8 +101,6 @@ const SearchBar = (props) => {
   }
 
   const onClose = useCallback((e) => {
-    console.log(e.target)
-    console.log(e.currentTarget)
     if (e.target === e.currentTarget || e.currentTarget.tagName === 'A') {
       setIsOpen(false);
       document.body.classList.remove('search-open');
@@ -143,8 +137,7 @@ const SearchBar = (props) => {
                                   linkTarget: "_blank",
                                   sectionTitle: "Results",
                                   titleField: "title",
-                                  shouldTrackClickThrough: true,
-                                  clickThroughTags: ["test"]
+                                  shouldTrackClickThrough: true
                                 }}
                                 autocompleteSuggestions={true}
                                 debounceLength={0}
