@@ -29,6 +29,28 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Kubernetes monitoring with Netdata: Overview and visualizations</>,
+    href: '/guides/monitor/kubernetes-k8s-netdata',
+    date: 'March 4, 2021',
+    type: 'Guide',
+    description: (
+      <>
+        Learn how to navigate Netdata's Kubernetes monitoring features for visualizing the health and performance of a Kubernetes cluster with per-second granulrity.
+      </>
+    ),
+  },
+  {
+    title: <>Kubernetes visualizations</>,
+    href: '/docs/cloud/visualize/kubernetes',
+    date: 'February 24, 2021',
+    type: 'Doc',
+    description: (
+      <>
+        Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
+      </>
+    ),
+  },
+  {
     title: <>Netdata management and configuration cheatsheet</>,
     href: '/docs/agent/cheatsheet',
     date: 'February 4, 2021',
