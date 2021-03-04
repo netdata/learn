@@ -147,5 +147,4 @@ There are some caveats and known issues with Kubernetes monitoring with Netdata 
 
 ## What's next?
 
-For more information about monitoring a k8s cluster with Netdata, see our guide: [_Monitor a Kubernetes (k8s) cluster
-with Netdata_](/guides/monitor/kubernetes-k8s-netdata/).
+For more information about monitoring a k8s cluster with Netdata, see our guide: [_Kubernetes monitoring with Netdata: Overview and visualizations_](/guides/monitor/kubernetes-k8s-netdata/).
