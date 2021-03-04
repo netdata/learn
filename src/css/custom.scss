@@ -52,7 +52,7 @@ html {
   --ifm-color-primary-lighter: #00c54e;
   --ifm-color-primary-lightest: #00CB51;
 
-  --ifm-color-secondary: #306BAC;
+  --ifm-color-secondary: #0E9AFF;
   --ifm-color-secondary-dark: #2b609b;
   --ifm-color-secondary-darker: #295b92;
   --ifm-color-secondary-darkest: #224b78;
@@ -323,6 +323,15 @@ body.search-open {
   overflow: hidden !important;
 }
 
+// Fonts
+.sui-sorting,
+.sui-result,
+.sui-paging-info,
+.sui-results-per-page {
+  font-family: var(--ifm-font-family-base);
+}
+
+// Submit button
 .sui-search-box {
   position: relative;
 }
@@ -351,12 +360,15 @@ body.search-open {
   top: 1px;
   height: 67px;
   font-size: 110%;
-  // border-color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 2px;
 
-  // &:hover {
-  //   background: var(--ifm-color-primary-lightest);
-  //   border-color: var(--ifm-color-primary-lightest);
-  // }
+  &:hover {
+    background: var(--ifm-color-primary-dark);
+    border-color: var(--ifm-color-primary-lightest);
+    box-shadow: none;
+  }
 
   &:focus {
     outline: none;
@@ -377,105 +389,38 @@ body.search-open {
   }
 }
 
-.sui-search-box__autocomplete-container {
-  position: absolute;
-  width: 100%;
-  z-index: 500;
-  background: var(--ifm-background-color);
-  color: var(--ifm-font-color-base);
-  box-shadow: var(--ifm-global-shadow-md);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: var(--ifm-global-radius);
-  padding-top: 1rem;
+// Paging
+.sui-layout-main-header__inner {
+  margin-bottom: 1rem;
+}
 
-  &::before {
-    content: "Autocomplete suggestions—click Search or hit Enter for full results.";
-    padding: 1rem;
-    margin-bottom: -1rem;
-    font-family: var(--ifm-font-family-monospace);
-    font-size: 95%;
-    font-weight: 700;
-  }
+// Results
+.sui-layout-body {
+  overflow-y: auto;
 
-  .sui-search-box__results-list {
-    list-style-type: none;
-    padding: 1rem;
-    margin: 0;
-    
-    li {
-      &:hover {
-        cursor: pointer;
-        color: var(--ifm-color-primary);
-      }
-    }
-
-    li + li {
-      margin-top: 0.4rem;
-    }
+  &:after {
+    height: 0px;
   }
 }
 
-::placeholder {
-  color: var(--ifm-navbar-search-input-color);
-  opacity: 1;
+.sui-result__title {
+  font-size: 130%;
+  line-height: 1.3;
 }
 
-.sui-paging {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
+.sui-result__title-link {
+  color: var(--ifm-color-primary) !important;
 
-  li {
-    margin: 0 0.2rem;
-    padding: 0.2rem 0.6rem;
-    border-radius: 2px;
-
-    &.rc-pagination-item-active {
-      border: 1px solid var(--ifm-color-primary);
-    }
-
-    &:focus {
-      border: 1px solid var(--ifm-color-emphasis-500);
-      box-shadow: none;
-      outline: none;
-    }
-
-    &.rc-pagination-prev {
-      margin-left: 0;
-    
-      &::before {
-        content: 'Previous';
-        display: block;
-        color: var(--ifm-color-primary);
-      }
-
-      &[aria-disabled="true"]::before {
-        color: var(--ifm-color-emphasis-500);
-        cursor: not-allowed;
-      }
-    }
-
-    &.rc-pagination-next {
-      margin-right: 0;
-    
-      &::before {
-        content: 'Next';
-        display: block;
-        color: var(--ifm-color-primary);
-      }
-
-      &[aria-disabled="true"]::before {
-        color: var(--ifm-color-emphasis-500);
-        cursor: not-allowed;
-      }
-    }
-
-    &:hover {
-      cursor: pointer;
-    }
+  &:hover {
+    color: var(--ifm-color-accent);
   }
 }
 
+.sui-result em {
+  color: var(--ifm-color-secondary);
+}
+
+// Responsiveness
 @media (max-width: 500px) {
   .navbar .navbar__search {
     padding-left: 0;
@@ -489,13 +434,26 @@ body.search-open {
   }
 }
 
-.navbar .navbar__search .navbar__search-input {
-  border-radius: var(--ifm-global-radius);
-}
+// Dark mode
+html[data-theme='dark'] {
+  .sui-search-box__text-input,
+  .sui-layout-body,
+  .sui-select__menu,
+  .sui-select__control,
+  .sui-select__single-value,
+  .sui-paging-info,
+  .sui-results-per-page,
+  .sui-result {
+    background: var(--ifm-background-color);
+    color: var(--ifm-font-color-base);
+  }
 
-html[data-theme='dark'] .sui-search-box__text-input  {
-  background: var(--ifm-background-color);
-  color: var(--ifm-font-color-base);
+  .sui-result__title-link,
+  .sui-select__option--is-selected,
+  .sui-select__option:hover {
+    background: var(--ifm-background-color);
+    color: var(--ifm-color-primary-light) !important;
+  }
 }
 
 /* 
