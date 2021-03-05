@@ -29,6 +29,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>LAMP stack monitoring (Linux, Apache, MySQL, PHP) with Netdata</>,
+    href: '/guides/monitor/lamp-stack',
+    date: 'March 6, 2021',
+    type: 'Guide',
+    description: (
+      <>
+        Set up robust LAMP stack monitoring (Linux, Apache, MySQL, PHP) in just a few minutes using a free, open-source monitoring tool that collects metrics every second.
+      </>
+    ),
+  },
+  {
     title: <>Kubernetes monitoring with Netdata: Overview and visualizations</>,
     href: '/guides/monitor/kubernetes-k8s-netdata',
     date: 'March 4, 2021',
@@ -82,51 +93,7 @@ const updates = [
         Detect anomalies in any system, container, or application in your infrastructure with machine learning and the open-source Netdata Agent.
       </>
     ),
-  },
-  {
-    title: <>Common configuration changes</>,
-    href: '/docs/configure/common-changes',
-    date: 'January 4, 2021',
-    type: 'Doc',
-    description: (
-      <>
-        See the most popular configuration changes to make to the Netdata Agent, including longer metrics retention, reduce sampling, and more.
-      </>
-    ),
-  },
-  {
-    title: <>Start, stop, or restart the Netdata Agent</>,
-    href: '/docs/configure/start-stop-restart',
-    date: 'January 4, 2021',
-    type: 'Doc',
-    description: (
-      <>
-        Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes.
-      </>
-    ),
-  },
-  {
-    title: <>Centralized alarm notifications</>,
-    href: '/docs/cloud/monitoring/notifications',
-    date: 'December 18, 2020',
-    type: 'Doc',
-    description: (
-      <>
-        Netdata Cloud can send centralized alarm notifications to your team whenever a node enters a warning, critical, or unreachable state.
-      </>
-    ),
-  },
-  {
-    title: <>New collector: Couchbase</>,
-    href: '/docs/agent/collectors/go.d.plugin/modules/couchbase',
-    date: 'December 18, 2020',
-    type: 'Collector',
-    description: (
-      <>
-        Collect per-second metrics from any number of Couchbase instances, including operations, disk/data/memory used per bucket, and disk fetches.
-      </>
-    ),
-  },
+  }
 ]
 
 function UpdateBox({title, href, date, type, description}) {

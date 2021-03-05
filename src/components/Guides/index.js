@@ -9,16 +9,22 @@ import styles from './styles.module.scss';
 
 const GuideItems = [
   {
-    title: "Monitor and visualize anomalies (part 2)",
-    href: "/guides/monitor/visualize-monitor-anomalies",
+    title: "LAMP stack monitoring (Linux, Apache, MySQL, PHP) with Netdata",
+    href: "/guides/monitor/lamp-stack",
     category: "collect-monitor",
-    description: "Using unsupervised anomaly detection, trigger alarms seconds after your mission-critical metrics behave strangely, then visualize everything in parallel to find the root cause."
+    description: "Set up robust LAMP stack monitoring (Linux, Apache, MySQL, PHP) in just a few minutes using a free, open-source monitoring tool that collects metrics every second."
   },
   {
     title: "Detect anomalies in systems and applications (part 1)",
     href: "/guides/monitor/anomaly-detection",
     category: "collect-monitor",
     description: "Detect anomalies in any system, container, or application in your infrastructure with machine learning and the open-source Netdata Agent."
+  },
+  {
+    title: "Monitor and visualize anomalies (part 2)",
+    href: "/guides/monitor/visualize-monitor-anomalies",
+    category: "collect-monitor",
+    description: "Using unsupervised anomaly detection, trigger alarms seconds after your mission-critical metrics behave strangely, then visualize everything in parallel to find the root cause."
   },
   {
     title: "Monitor any process in real-time with Netdata",
