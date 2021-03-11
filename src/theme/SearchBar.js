@@ -23,6 +23,7 @@ import {
   getUrlSanitizer,
   isFieldValueWrapper
 } from "@elastic/react-search-ui-views";
+import Result from "./Result.js"
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
 
 import styles from './styles.SearchBar.module.scss';
@@ -107,6 +108,26 @@ const SearchBar = (props) => {
     }
   }, [setIsOpen]);
 
+  const ResultView = ({ result, titleField, urlField, onClickLink }) => {
+    const title = titleField;
+
+    console.log(titleField)
+    // const url = getUrlSanitizer(URL, location)(getRaw(result, urlField));
+
+    return (
+      <li className="sui-result">
+        <a
+          className="sui-result__title sui-result__title-link"
+          dangerouslySetInnerHTML={{ __html: title }}
+          href={urlField}
+          onClick={onClickLink}
+          target="_self"
+          rel="noopener noreferrer"
+        />
+      </li>
+    );
+  };
+
   return (
     <>
       <button
@@ -134,13 +155,15 @@ const SearchBar = (props) => {
                               <SearchBox
                                 autocompleteMinimumCharacters={3}
                                 autocompleteResults={{
-                                  linkTarget: "_blank",
-                                  sectionTitle: "Results",
+                                  linkTarget: "_self",
+                                  sectionTitle: "Autocomplete results",
                                   titleField: "title",
+                                  urlField: "url",
                                   shouldTrackClickThrough: true
                                 }}
                                 autocompleteSuggestions={true}
-                                debounceLength={0}
+                                debounceLength={100}
+                                inputProps={{ placeholder: "Search all of Netdata", autoFocus: true }}
                               />
                             }
                             sideContent={
@@ -155,6 +178,7 @@ const SearchBar = (props) => {
                                 titleField="title"
                                 urlField="url"
                                 shouldTrackClickThrough={true}
+                                resultView={Result}
                               />
                             }
                             bodyHeader={
