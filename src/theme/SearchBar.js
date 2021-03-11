@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useCallback} from 'react';
 import {createPortal} from 'react-dom';
 import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 
 import SiteSearchAPIConnector from "@elastic/search-ui-site-search-connector";
 import {
@@ -107,6 +108,43 @@ const SearchBar = (props) => {
     }
   }, [setIsOpen]);
 
+  const ResultView = ({ result, onClickLink }) => {
+    const isLearn = result.url.raw.includes('learn.netdata.cloud')
+
+    console.log(result)
+
+    return (
+      <li className="sui-result">
+        <div className="sui-result__header">
+          {isLearn
+            ?  <Link
+                className="sui-result__title sui-result__title-link"
+                dangerouslySetInnerHTML={{ __html: result.title.raw }}
+                to={result.url.raw.split('https://learn.netdata.cloud')[1]}
+                onClick={onClickLink}
+                target="_self"
+              />
+            : <a
+                className="sui-result__title sui-result__title-link"
+                dangerouslySetInnerHTML={{ __html: result.title.raw }}
+                href={result.url.raw}
+                onClick={onClickLink}
+                target="_self"
+                rel="noopener noreferrer"
+              />
+          }
+        </div>
+        <div className="sui-result__body">
+          {result.description && 
+            <p 
+              dangerouslySetInnerHTML={{ __html: result.description.snippet }}
+            />
+          }
+        </div>
+      </li>
+    );
+  };
+
   return (
     <>
       <button
@@ -134,13 +172,15 @@ const SearchBar = (props) => {
                               <SearchBox
                                 autocompleteMinimumCharacters={3}
                                 autocompleteResults={{
-                                  linkTarget: "_blank",
-                                  sectionTitle: "Results",
+                                  linkTarget: "_self",
+                                  sectionTitle: "Autocomplete results",
                                   titleField: "title",
+                                  urlField: "url",
                                   shouldTrackClickThrough: true
                                 }}
                                 autocompleteSuggestions={true}
-                                debounceLength={0}
+                                debounceLength={100}
+                                inputProps={{ placeholder: "Search all of Netdata", autoFocus: true }}
                               />
                             }
                             sideContent={
@@ -155,6 +195,7 @@ const SearchBar = (props) => {
                                 titleField="title"
                                 urlField="url"
                                 shouldTrackClickThrough={true}
+                                resultView={ResultView}
                               />
                             }
                             bodyHeader={
