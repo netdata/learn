@@ -24,7 +24,6 @@ import {
   getUrlSanitizer,
   isFieldValueWrapper
 } from "@elastic/react-search-ui-views";
-import Result from "./Result.js"
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
 
 import styles from './styles.SearchBar.module.scss';
@@ -137,7 +136,9 @@ const SearchBar = (props) => {
         </div>
         <div className="sui-result__body">
           {result.description && 
-            <p>{result.description.raw}</p>
+            <p 
+              dangerouslySetInnerHTML={{ __html: result.description.snippet }}
+            />
           }
         </div>
       </li>
