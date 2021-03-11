@@ -135,3 +135,7 @@
 [[redirects]]
   from = "/docs/agent/export"
   to = "/docs/export/external-databases"
+
+[[redirects]]
+  from = "/docs/cloud/faq"
+  to = "https://community.netdata.cloud/docs"

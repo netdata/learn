@@ -610,8 +610,7 @@ module.exports = {
                 'cloud/manage/invite-your-team',
                 'cloud/manage/themes',
               ]
-            },
-            'cloud/faq'
+            }
           ],
         },
       ],
