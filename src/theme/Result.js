@@ -11,6 +11,8 @@ import {
   isFieldValueWrapper
 } from "@elastic/react-search-ui-views";
 
+import "@elastic/react-search-ui-views/lib/styles/styles.css";
+
 function getFieldType(result, field, type) {
   if (result[field]) return result[field][type];
 }
@@ -60,7 +62,9 @@ function Result({
   // console.log(result)
   // console.log(titleField)
   // console.log(urlField)
-  console.log(result.url.raw)
+  console.log(result)
+
+  // const description = result.description
 
   return (
     <li clsx={"sui-result"}>
@@ -69,7 +73,11 @@ function Result({
           if (result.url.raw.includes('learn.netdata.cloud') == true) {
             return (
               <Link
+                className="sui-result__title sui-result__title-link"
+                dangerouslySetInnerHTML={{ __html: result.title.raw }}
                 to={result.url.raw}
+                onClick={onClickLink}
+                target="_self"
               />
             )
           } else {
@@ -87,36 +95,12 @@ function Result({
         })}
       </div>
       <div className="sui-result__body">
-        <p>{result.description.raw}</p>
+        {result.description && 
+          <p>{result.description.raw}</p>
+        }
       </div>
     </li>
   )
-  //   <li className={appendClassName("sui-result", className)} {...rest}>
-  //     <div className="sui-result__header">
-  //       {title && !url && (
-  //         <span
-  //           className="sui-result__title"
-  //           dangerouslySetInnerHTML={{ __html: title }}
-  //         />
-  //       )}
-  //       {title && url && (
-  //         <a
-  //           className="sui-result__title sui-result__title-link"
-  //           dangerouslySetInnerHTML={{ __html: title }}
-  //           href={url}
-  //           onClick={onClickLink}
-  //           target="_self"
-  //           rel="noopener noreferrer"
-  //         />
-  //       )}
-  //     </div>
-  //     <div className="sui-result__body">
-  //       <ul className="sui-result__details">
-
-  //       </ul>
-  //     </div>
-  //   </li>
-  // );
 }
 
 Result.propTypes = {
