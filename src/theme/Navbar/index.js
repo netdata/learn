@@ -112,6 +112,8 @@ function Navbar() {
             <div className="menu">
               <ul className="menu__list">
                 {items.map((item, i) => <NavbarItem mobile {...item} onClick={hideSidebar} key={i} />)}
+                <SearchBar handleSearchBarToggle={setIsSearchBarExpanded} isSearchBarExpanded={isSearchBarExpanded} />
+                
               </ul>
             </div>
           </div>

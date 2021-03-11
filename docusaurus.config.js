@@ -77,6 +77,11 @@ module.exports = {
     },
     image: 'img/netdata_meta-default.png',
     hideableSidebar: true,
+    algolia: {
+      apiKey: 'b162746a0dfcdf64126c16c29547ded5',
+      indexName: 'netdata_learn',
+      algoliaOptions: {}, // Optional, if provided by Algolia
+    },
     prism: {
       theme: require('prism-react-renderer/themes/duotoneDark'),
       darkTheme: require('prism-react-renderer/themes/duotoneDark'),
