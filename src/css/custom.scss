@@ -169,12 +169,12 @@ html[data-theme='dark'] {
   padding-top: 3rem !important;
 }
 
-@media (max-width: 1320px) and (min-width: 997px) {
-  main[class^='docMainContainer'] > .container {
-    margin-left: 0;
-    max-width: 724px;
-  }
-}
+// @media (max-width: 1320px) and (min-width: 997px) {
+//   main[class^='docMainContainer'] > .container {
+//     margin-left: 0;
+//     max-width: 724px;
+//   }
+// }
 
 /**
  * Navbar 
