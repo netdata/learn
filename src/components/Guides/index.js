@@ -9,6 +9,12 @@ import styles from './styles.module.scss';
 
 const GuideItems = [
   {
+    title: "Unsupervised anomaly detection for Raspberry Pi monitoring",
+    href: "/guides/monitor/raspberry-pi-anomaly-detection",
+    category: "collect-monitor",
+    description: "Use a low-overhead machine learning algorithm and an open-source monitoring tool to detect anomalous metrics on a Raspberry Pi."
+  },
+  {
     title: "LAMP stack monitoring (Linux, Apache, MySQL, PHP) with Netdata",
     href: "/guides/monitor/lamp-stack",
     category: "collect-monitor",
