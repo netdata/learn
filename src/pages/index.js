@@ -29,6 +29,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>How to use any StatsD data source with Netdata</>,
+    href: '/guides/monitor/statsd',
+    date: 'March 18, 2021',
+    type: 'Guide',
+    description: (
+      <>
+        Learn how to monitor any custom application instrumented with StatsD with per-second metrics and fully customizable, interactive charts.
+      </>
+    ),
+  },
+  {
     title: <>Unsupervised anomaly detection for Raspberry Pi monitoring</>,
     href: '/guides/monitor/raspberry-pi-anomaly-detection',
     date: 'March 16, 2021',

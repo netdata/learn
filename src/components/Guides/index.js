@@ -9,6 +9,12 @@ import styles from './styles.module.scss';
 
 const GuideItems = [
   {
+    title: "How to use any StatsD data source with Netdata",
+    href: "/guides/monitor/statsd",
+    category: "collect-monitor",
+    description: "Learn how to monitor any custom application instrumented with StatsD with per-second metrics and fully customizable, interactive charts."
+  },
+  {
     title: "Unsupervised anomaly detection for Raspberry Pi monitoring",
     href: "/guides/monitor/raspberry-pi-anomaly-detection",
     category: "collect-monitor",
