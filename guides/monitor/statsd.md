@@ -292,6 +292,6 @@ Netdata allows you easily visualize any StatsD metric without any configuration,
 
 ### Related reference documentation
 
-- [Netdata Agent · StatsD](/docs/agent/collectors/stats.plugin)
+- [Netdata Agent · StatsD](/docs/agent/collectors/statsd.plugin)
 
 
