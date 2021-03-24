@@ -29,6 +29,17 @@ export const IndexBox = ({children, href, title}) => (
 
 const updates = [
   {
+    title: <>Develop a custom data collector in Python</>,
+    href: '/guides/python-collector',
+    date: 'March 24, 2021',
+    type: 'Guide',
+    description: (
+      <>
+        Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box.
+      </>
+    ),
+  },
+  {
     title: <>How to use any StatsD data source with Netdata</>,
     href: '/guides/monitor/statsd',
     date: 'March 18, 2021',
@@ -91,17 +102,6 @@ const updates = [
     description: (
       <>
         Use our managenment &amp; configuration cheatsheet to simplify your interactions with Netdata, including configuration, using charts, managing the daemon, and more.
-      </>
-    ),
-  },
-  {
-    title: <>Monitor and visualize anomalies</>,
-    href: '/guides/monitor/visualize-monitor-anomalies',
-    date: 'January 13, 2021',
-    type: 'Guide',
-    description: (
-      <>
-        Using unsupervised anomaly detection, trigger alarms seconds after your mission-critical metrics behave strangely, then visualize everything in parallel to find the root cause.
       </>
     ),
   },

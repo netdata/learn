@@ -5,19 +5,19 @@ custom_edit_url: https://github.com/netdata/agent-service-discovery/edit/master/
 
 
 
-Service discovery extracts all the potentially useful information from different sources,
-converts it to the configurations and exports them to the different destinations.
+Service discovery extracts all the potentially useful information from different sources, converts it to the
+configurations and exports them to the different destinations.
 
 ## Pipeline
 
 The service discovery pipeline has four jobs:
 
--   [discovery](#discovery): dynamically discovers targets.
--   [tag](#tag): tags discovered targets.
--   [build](#build): creates configuration files from the targets.
--   [export](#export): exports configurations.
+- [discovery](#discovery): dynamically discovers targets.
+- [tag](#tag): tags discovered targets.
+- [build](#build): creates configuration files from the targets.
+- [export](#export): exports configurations.
 
-Routing in a job and between jobs based on `tags` and `selector`.  
+Routing in a job and between jobs based on `tags` and `selector`.
 
 Pipeline configuration:
 
@@ -31,8 +31,8 @@ export: <export_config>
 
 ## Tags and selectors
 
-Tag, build and export jobs have `selector`, the pipeline routes a target/config to the job
-only if its tags matches job selectors.
+Tag, build and export jobs have `selector`, the pipeline routes a target/config to the job only if its tags matches job
+selectors.
 
 Both tags and selector are just lists of words.
 
@@ -40,12 +40,12 @@ A word must match the regex `^[a-zA-Z][a-zA-Z0-9=_.]*$`.
 
 Tags special cases:
 
- - `-word`: the word will be removed on tags merging.
+- `-word`: the word will be removed on tags merging.
 
 Selectors special cases:
 
--   `!word`: should not contain the word.
--   `word|word|word`: should contain any word.
+- `!word`: should not contain the word.
+- `word|word|word`: should contain any word.
 
 ## Discovery
 
@@ -53,7 +53,7 @@ Discovery job dynamically discovers targets using one of the supported service-d
 
 Supported mechanisms:
 
--   [kubernetes](#kubernetes)
+- [kubernetes](#kubernetes)
 
 Discovery configuration:
 
@@ -65,8 +65,7 @@ k8s:
 ### Kubernetes
 
 Kubernetes discoverer retrieves targets from [Kubernetes'](https://kubernetes.io/)
-[REST API](https://kubernetes.io/docs/reference/).
-It always stays synchronized with the cluster state.
+[REST API](https://kubernetes.io/docs/reference/). It always stays synchronized with the cluster state.
 
 Kubernetes discovery configuration options:
 
@@ -88,14 +87,14 @@ namespaces:
 
 One of the following role types can be configured to discover targets:
 
--   `pod`
--   `service`
+- `pod`
+- `service`
 
 #### Pod Role
 
-The pod role discovers all pods and exposes their containers as targets.
-For each declared port of a container, it generates single target.
-If there is no declared port it generates one target with empty `Port`, `PortName` and `PortProtocol` fields.
+The pod role discovers all pods and exposes their containers as targets. For each declared port of a container, it
+generates single target. If there is no declared port it generates one target with empty `Port`, `PortName`
+and `PortProtocol` fields.
 
 Available pod target fields:
 
@@ -158,7 +157,7 @@ tags: <tags>
 
 # Mandatory. Match rules, at least one should be defined. 
 match:
-    # Optional. Routes targets to this match rule with tags matching this selector.
+  # Optional. Routes targets to this match rule with tags matching this selector.
   - selector: <selector>
 
     # Mandatory. Tags to merge with the target tags if this rule expression evaluates to true.
@@ -174,18 +173,18 @@ Expression syntax is [go-template](https://golang.org/pkg/text/template/).
 
 ### Available functions
 
--   go-template [built-in functions](https://golang.org/pkg/text/template/#hdr-Functions).
--   [sprig functions](http://masterminds.github.io/sprig/).
--   custom functions.
+- go-template [built-in functions](https://golang.org/pkg/text/template/#hdr-Functions).
+- [sprig functions](http://masterminds.github.io/sprig/).
+- custom functions.
 
 Custom functions:
 
--   `glob` reports whether arg1 matches the shell file name pattern.
--   `re` reports whether arg1 contains any match of the regular expression pattern.  
+- `glob` reports whether arg1 matches the shell file name pattern.
+- `re` reports whether arg1 contains any match of the regular expression pattern.
 
 All these functions accepts two or more arguments, returning in effect:
 
-> func(arg1, arg2) || func(arg1, arg3) || func(arg1, arg4) ... 
+> func(arg1, arg2) || func(arg1, arg3) || func(arg1, arg4) ...
 
 ## Build
 
@@ -208,7 +207,7 @@ tags: <tags>
 
 # Mandatory. Apply rules, at least one should be defined. 
 apply:
-    # Mandatory. Routes targets to this apply rule with tags matching this selector.
+  # Mandatory. Routes targets to this apply rule with tags matching this selector.
   - selector: <selector>
 
     # Optional. Tags to add to configurations built by this apply rule.
@@ -222,18 +221,18 @@ Template syntax is [go-template](https://golang.org/pkg/text/template/).
 
 ### Available functions
 
--   go-template [built-in functions](https://golang.org/pkg/text/template/#hdr-Functions).
--   [sprig functions](http://masterminds.github.io/sprig/).
--   custom functions.
+- go-template [built-in functions](https://golang.org/pkg/text/template/#hdr-Functions).
+- [sprig functions](http://masterminds.github.io/sprig/).
+- custom functions.
 
 Custom functions:
 
--   `glob` reports whether arg1 matches the shell file name pattern.
--   `re` reports whether arg1 contains any match of the regular expression pattern.  
+- `glob` reports whether arg1 matches the shell file name pattern.
+- `re` reports whether arg1 contains any match of the regular expression pattern.
 
 All these functions accepts two or more arguments, returning in effect:
 
-> func(arg1, arg2) || func(arg1, arg3) || func(arg1, arg4) ... 
+> func(arg1, arg2) || func(arg1, arg3) || func(arg1, arg4) ...
 
 ## Export
 
@@ -241,7 +240,7 @@ Export job exports configurations built by [build job](#build).
 
 Supported exporters:
 
--   `file`
+- `file`
 
 Export configuration:
 
@@ -264,7 +263,8 @@ filename: <filename>
 
 ## Troubleshooting
 
-Service-discovery has debug mode and special `stdout` exporter which is enabled only when it's running from the terminal.  
+Service-discovery has debug mode and special `stdout` exporter which is enabled only when it's running from the
+terminal.
 
 CLI:
 
