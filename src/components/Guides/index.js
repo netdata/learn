@@ -9,6 +9,12 @@ import styles from './styles.module.scss';
 
 const GuideItems = [
   {
+    title: "Develop a custom data collector in Python",
+    href: "/guides/python-collector",
+    category: "develop",
+    description: "Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box."
+  },
+  {
     title: "How to use any StatsD data source with Netdata",
     href: "/guides/monitor/statsd",
     category: "collect-monitor",
@@ -199,6 +205,11 @@ const GuideCategories = [
     label: "deploy",
     title: "Deploy",
     description: "Strategies and playbooks for bootstrapping an infrastructure monitoring solution with Netdata and infrastructure as code tools."
+  },
+  {
+    label: "develop",
+    title: "Develop",
+    description: "Improve Netdata's developer experience through code contributions, developing new data collectors, and more."
   },
   {
     label: "export",
