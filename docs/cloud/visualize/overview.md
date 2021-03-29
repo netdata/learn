@@ -23,10 +23,15 @@ composite charts. If your node(s) use an earlier, incompatible version of the Ne
 See our [update docs](/docs/agent/packaging/installer/update) for the preferred update method based on how you installed
 the Agent.
 
+## Composite charts
+
+The Overview uses composite charts, which aggregate metrics from all the nodes (or a filtered selection) in a given War
+Room.
+
 ## Definition bar
 
-Each chart has a definition bar to provide information about the aggregate function, dimension, and nodes related to
-that chart.
+Each composite chart has a definition bar to provide information about the aggregate function, dimension, and nodes
+related to that chart.
 
 Below is an example definition bar for the `system.cpu_pressure` chart, which visualizes situations where tasks are
 stalled on CPU. This definition bar informs you that the chart is using the **average** aggregate function on **all
@@ -101,6 +106,11 @@ The same chart when grouped by node:
 ![The mem.committed chart when grouped by
 node](https://user-images.githubusercontent.com/1153921/99405866-75bffd80-28aa-11eb-96dc-72bbc10c690b.png)
 
+### Reset to defaults
+
+Click on the 3-dot icon (**⋮**) on any chart, then **Reset to Defaults**, to reset the definition bar to its initial
+state.
+
 ## Jump to single-node dashboards
 
 Click on **X Charts**/**X Nodes** to display one of the two dropdowns that list the charts and nodes contributing to a
@@ -115,6 +125,12 @@ node you're interested in.
 
 The single-node dashboard opens in a new tab. From there, you can continue to troubleshoot or run [Metric
 Correlations](/docs/cloud/insights/metric-correlations) for faster root cause analysis.
+
+## Add composite charts to a dashboard
+
+Click on the 3-dot icon (**⋮**) on any chart, then click on **Add to Dashboard**. Click the **+** button for any
+dashboard you'd like to add this composite chart to, or create a new dashboard an initiate it with your chosen chart by
+entering the name and clicking **New Dashboard**.
 
 ## Interacting with composite charts: pan, zoom, and resize
 

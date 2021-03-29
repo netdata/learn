@@ -18,10 +18,12 @@ dashboards](https://user-images.githubusercontent.com/1153921/108529360-a2145d00
 
 In the modal, give your new dashboard a name, and click **+ Add**.
 
-Click the **Add Chart** button to add your first chart card. From the dropdown, select the node you want to add the
-chart from, then the context. Netdata Cloud shows you a preview of the chart before you finish adding it. The **Add
-Text** button creates a new card with user-defined text, which you can use to describe or document a particular
-dashboard's meaning and purpose.
+Click the **Add Chart** button to add your first chart card. From the dropdown, select either *All Nodes** or a specific
+node. If you select **All Nodes**, you will add a [composite chart](/docs/cloud/visualize/overview#composite-charts) to
+your new dashboard. Next, select the context. You'll see a preview of the chart before you finish adding it. 
+
+The **Add Text** button creates a new card with user-defined text, which you can use to describe or document a
+particular dashboard's meaning and purpose.
 
 Be sure to click the **Save** button any time you make changes to your dashboard.
 
@@ -35,8 +37,9 @@ of any number of **cards**, which can contain charts or text.
 
 ### Chart cards
 
-Click the **Add Chart** button to add your first chart card. From the dropdown, select the node you want to add the
-chart from, then the context. Netdata Cloud shows you a preview of the chart before you finish adding it.
+Click the **Add Chart** button to add your first chart card. From the dropdown, select either *All Nodes** or a specific
+node. If you select **All Nodes**, you will add a [composite chart](/docs/cloud/visualize/overview#composite-charts) to
+your new dashboard. Next, select the context. You'll see a preview of the chart before you finish adding it.
 
 The charts you add to any dashboard are fully interactive, just like the charts in an Agent dashboard or a single node's
 dashboard in Cloud. Zoom in and out, highlight timeframes, and more. See our [Agent dashboard
