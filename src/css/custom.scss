@@ -118,8 +118,8 @@ html {
 
   /* Sidebar */
   --ifm-menu-link-padding-vertical: 0.275rem;
-  --ifm-menu-color-background-active: white;
-
+  --ifm-menu-color-background-active: var(--ifm-menu-color-background-hover);
+  
   /* Table of contents */
   --ifm-contents-link-color: var(--ifm-font-color-base);
 
