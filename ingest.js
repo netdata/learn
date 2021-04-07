@@ -68,6 +68,9 @@ function prefixNodes(nodes, prefix) {
 }
 
 function filterNodes(nodes, includePatterns=[], excludePatterns=[]) {
+  nodes.forEach(node => (
+    console.log(node.path)
+  ))
   return nodes.filter(node => (
     node.type === 'blob' && // include only files (blobs)
     includePatterns.every(p => node.path.match(p)) &&
@@ -319,15 +322,24 @@ async function writePages(pages) {
       fullPath = fullPath.replace('docs/agent/guides/', 'guides/');
       fullDir = fullDir.replace('docs/agent/guides/', 'guides/');
     }
+    
+    // Move content from .github repo.
+    if (fullPath.includes('docs/agent/contribute/contributing.md')) {
+      fullPath = fullPath.replace('docs/agent/contribute/contributing.md', './contribute/handbook.md');
+      fullDir = fullDir.replace('docs/agent/contribute/', 'contribute/');
+    } else if (fullPath.includes('docs/agent/contribute/code_of_conduct.md')) {
+      fullPath = fullPath.replace('docs/agent/contribute/code_of_conduct.md', './contribute/code-of-conduct.md');
+      fullDir = fullDir.replace('docs/agent/contribute/', 'contribute/');
+    } else if (fullPath.includes('docs/agent/contribute/security.md')) {
+      fullPath = fullPath.replace('docs/agent/contribute/security.md', './contribute/security.md');
+      fullDir = fullDir.replace('docs/agent/contribute/', 'contribute/');
+    } else if (fullPath.includes('docs/agent/contribute/support.md')) {
+      fullPath = fullPath.replace('docs/agent/contribute/support.md', './contribute/support.md');
+      fullDir = fullDir.replace('docs/agent/contribute/', 'contribute/');
+    }
 
     // Move various contribution documents to alternative locations.
-    if (fullPath.includes('agent/contributing.md')) {
-      fullPath = fullPath.replace('docs/agent/contributing.md', 'contribute/handbook.md');
-      fullDir = fullDir.replace('docs/agent/contributing', 'contribute/');
-    } else if (fullPath.includes('agent/code_of_conduct.md')) {
-      fullPath = fullPath.replace('docs/agent/code_of_conduct.md', 'contribute/code-of-conduct.md');
-      fullDir = fullDir.replace('docs/agent/', 'contribute/');
-    } else if (fullPath.includes('docs/agent/contributing/contributing-documentation.md')) {
+    if (fullPath.includes('docs/agent/contributing/contributing-documentation.md')) {
       fullPath = fullPath.replace('docs/agent/contributing/contributing-documentation.md', 'contribute/documentation.md');
       fullDir = fullDir.replace('docs/agent/contributing', 'contribute/');
     } else if (fullPath.includes('docs/agent/contributing/style-guide.md')) {
@@ -360,6 +372,11 @@ async function ingest() {
   console.log(`Fetching nodes from 'netdata' repo...`)
   const nodes = await getNodes(rootSha)
 
+  console.log(`Fetching root SHA for '.github' repo...`)
+  const ghRootSha = await getRootSha('.github', 'main')
+  console.log(`Fetching nodes from '.github' repo...`)
+  const ghNodes = await getNodes(ghRootSha, '.github')
+
   console.log(`Fetching root SHA for 'go.d.plugin' repo...`)
   const goRootSha = await getRootSha('go.d.plugin', 'master')
   console.log(`Fetching nodes from 'go.d.plugin' repo...`)
@@ -370,10 +387,11 @@ async function ingest() {
   console.log(`Fetching nodes from 'agent-service-discovery' repo...`)
   const sdNodes = await getNodes(sdRootSha, 'agent-service-discovery')
 
+  const ghPrefixedNodes = prefixNodes(ghNodes, '/contribute/')
   const goPrefixedNodes = prefixNodes(goNodes, 'collectors/go.d.plugin/')
   const sdPrefixedNodes = prefixNodes(sdNodes, 'collectors/go.d.plugin/modules/service-discovery/')
 
-  const combinedNodes = [...nodes, ...goPrefixedNodes, ...sdPrefixedNodes]
+  const combinedNodes = [...nodes, ...ghPrefixedNodes, ...goPrefixedNodes, ...sdPrefixedNodes]
 
   const filteredNodes = filterNodes(
     combinedNodes,
@@ -387,6 +405,9 @@ async function ingest() {
       /DOCUMENTATION\.md/,
       /HISTORICAL_CHANGELOG\.md/,
       /contrib\/sles11\/README\.md/,
+      /^CODE_OF_CONDUCT\.md/, // exclude root Code of Conduct
+      /\/contribute\/README\.md/, // exclude root README.md from .github repo
+      /^CONTRIBUTING\.md/, // exclude root CONTRIBUTING.md
     ]
   )
   console.log(`Filtering ${combinedNodes.length} nodes to ${filteredNodes.length}`)

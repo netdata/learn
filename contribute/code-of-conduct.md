@@ -1,6 +1,6 @@
 ---
 title: "Netdata Community Code of Conduct"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/CODE_OF_CONDUCT.md
+custom_edit_url: https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md
 ---
 
 
@@ -76,5 +76,3 @@ This Code of Conduct is adapted from the [Contributor Covenant][homepage], versi
 available at <https://www.contributor-covenant.org/version/1/4/code-of-conduct.html>
 
 [homepage]: https://www.contributor-covenant.org
-
-
