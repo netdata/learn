@@ -68,6 +68,9 @@ function prefixNodes(nodes, prefix) {
 }
 
 function filterNodes(nodes, includePatterns=[], excludePatterns=[]) {
+  nodes.forEach(node => (
+    console.log(node.path)
+  ))
   return nodes.filter(node => (
     node.type === 'blob' && // include only files (blobs)
     includePatterns.every(p => node.path.match(p)) &&
@@ -402,9 +405,9 @@ async function ingest() {
       /DOCUMENTATION\.md/,
       /HISTORICAL_CHANGELOG\.md/,
       /contrib\/sles11\/README\.md/,
-      /^code_of_conduct\.md/, // exclude root Code of Conduct
-      /^contribute\.md/, // exclude root README.md from .github repo
-      /^contributing\.md/, // exclude root CONTRIBUTING.md
+      /^CODE_OF_CONDUCT\.md/, // exclude root Code of Conduct
+      /\/contribute\/README\.md/, // exclude root README.md from .github repo
+      /^CONTRIBUTING\.md/, // exclude root CONTRIBUTING.md
     ]
   )
   console.log(`Filtering ${combinedNodes.length} nodes to ${filteredNodes.length}`)
