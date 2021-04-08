@@ -216,7 +216,7 @@ function DocItem(props) {
           </div>
         </div>
         {!hideTableOfContents && DocContent.toc && <div className="col col--3">
-            <TOC toc={DocContent.toc} editUrl={editUrl} />
+            <TOC toc={DocContent.toc} editUrl={editUrl} permalink={permalink} />
           </div>}
       </div>
     </>;
