@@ -40,7 +40,7 @@ function TOC({
 }) {
   useTOCHighlight(LINK_CLASS_NAME, ACTIVE_LINK_CLASS_NAME, TOP_OFFSET);
   // BEGIN EDIT
-  const sourceURL = editUrl.replace('master/', 'tree/master/').replace('edit/', '').replace('README.md', '')
+  const sourceURL = editUrl && editUrl.replace('master/', 'tree/master/').replace('edit/', '').replace('README.md', '')
   // END EDIT
   return <div className={clsx(styles.tableOfContents, 'thin-scrollbar')}>
       <p className={styles.tableofContentsHeading}>Contents</p> {/* EDIT */}
