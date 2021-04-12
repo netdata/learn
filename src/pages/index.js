@@ -135,7 +135,7 @@ function Home() {
       <BrowserOnly>
         {() => {
           if (window.location.hash === "#get" || window.location.hash === "#installation") {
-            return <Redirect to='/docs/get' />
+            return <Redirect to='/docs/installation' />
           }
         }}
       </BrowserOnly>
@@ -177,11 +177,9 @@ function Home() {
               <div className={clsx('row')}>
                 <div className={clsx('col col--4')}>
                   <StartBox 
-                    to="/docs/get"
-                    title="Get Netdata"
-                    description="Sign up for Netdata Cloud and install the open-source monitoring Agent on your
-                    nodes. Claim and connect your nodes to Netdata Cloud for seamless, scalable, 
-                    and granular infrastructure monitoring."
+                    to="/docs/installation"
+                    title="Install Netdata"
+                    description="Download and install the open-source Netdata monitoring agent on physical/virtual servers, Linux (Ubuntu/Debian/CentOS/etc), Docker, Kubernetes, and many others, often with one command."
                     cta="Install now"
                     image={true} />
                 </div>

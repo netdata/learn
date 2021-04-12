@@ -16,6 +16,7 @@ module.exports = {
           type: 'doc',
           id: 'docs'
         },
+        'installation',
         {
           type: 'category',
           label: 'Overview',
@@ -25,18 +26,9 @@ module.exports = {
             'overview/netdata-monitoring-stack',
           ]
         },
-        'get',
         {
           type: 'category',
-          label: 'Quickstart',
-          items: [
-            'quickstart/single-node',
-            'quickstart/infrastructure',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Configure',
+          label: 'Configuration',
           items: [
             'configure/nodes',
             'configure/common-changes',
@@ -46,7 +38,21 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Collect',
+          label: 'Dashboards',
+          items: [
+            'dashboards/dashboards-charts',
+            'dashboards/interact-charts',
+            'dashboards/chart-dimensions-contexts-families',
+            'dashboards/pick-timeframes',
+            'dashboards/import-export-print-snapshots',
+            'dashboards/customize',
+            'dashboards/custom-dashboards',
+            'dashboards/reference-web-server'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Data collection',
           items: [
             'collect/how-collectors-work',
             'collect/enable-configure',
@@ -58,16 +64,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Visualize',
-          items: [
-            'visualize/overview-infrastructure',
-            'visualize/interact-dashboards-charts',
-            'visualize/create-dashboards',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Monitor',
+          label: 'Alarms & notifications',
           items: [
             'monitor/view-active-alarms',
             'monitor/configure-alarms',
@@ -76,16 +73,10 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Store',
+          label: 'Metrics storage & management',
           items: [
             'store/distributed-data-architecture',
             'store/change-metrics-storage',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Export',
-          items: [
             'export/external-databases',
             'export/enable-connector',
           ]
@@ -538,26 +529,16 @@ module.exports = {
               type: 'category',
               label: 'Web',
               items: [
-                'agent/web',
-                'agent/web/gui',
+                'agent/web/server',
                 'agent/web/gui/custom',
-                'agent/web/gui/confluence',
                 {
                   type: 'category',
-                  label: 'Web server',
+                  label: 'Running behind another web server',
                   items: [
-                    'agent/web/server',
-                    'agent/web/server/static',
-                    {
-                      type: 'category',
-                      label: 'Running behind another web server',
-                      items: [
-                        'agent/running-behind-nginx',
-                        'agent/running-behind-apache',
-                        'agent/running-behind-lighttpd',
-                        'agent/running-behind-caddy',
-                      ]
-                    },
+                    'agent/running-behind-nginx',
+                    'agent/running-behind-apache',
+                    'agent/running-behind-lighttpd',
+                    'agent/running-behind-caddy',
                     'agent/running-behind-haproxy'
                   ]
                 },

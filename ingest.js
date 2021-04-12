@@ -295,7 +295,10 @@ async function writePages(pages) {
     if (fullPath.includes('agent/overview')) {
       fullPath = fullPath.replace('docs/agent/overview', 'docs/overview/');
       fullDir = fullDir.replace('docs/agent/overview', 'docs/overview/');
-    } else if (fullPath.includes('docs/agent/get.md') && !fullPath.includes('getting-started')) {
+    } else if (fullPath.includes('docs/agent/installation.mdx')) {
+      fullPath = fullPath.replace('docs/agent/installation.md', 'docs/installation.md');
+      fullDir = fullDir.replace('docs/agent/', 'docs/');
+    } if (fullPath.includes('docs/agent/get.md') && !fullPath.includes('getting-started')) {
       fullPath = fullPath.replace('docs/agent/get.md', 'docs/get.md');
       fullDir = fullDir.replace('docs/agent/get', 'docs/');
     } else if (fullPath.includes('agent/quickstart')) {

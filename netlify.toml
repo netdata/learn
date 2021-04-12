@@ -143,3 +143,7 @@
 [[redirects]]
   from = "/docs/agent/contributors"
   to = "/contribute/license"
+
+[[redirects]]
+  from = "/docs/agent/web/server/static-threaded/"
+  to = "/docs/dashboards/reference-web-server"
