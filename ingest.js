@@ -25,7 +25,7 @@ const retainPaths = [
 ]
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/netdata/',
+  baseURL: 'https://api.github.com/repos/',
   headers: {
     'Authorization': `token ${GITHUB_TOKEN}`
   }
@@ -48,13 +48,13 @@ async function getRateLimit() {
   }
 }
 
-async function getRootSha(repo = 'netdata', branch = 'master') {
-  const { data: { commit: { sha } } } = await ax.get(`${repo}/branches/${branch}`)
+async function getRootSha(user = 'netdata', repo = 'netdata', branch = 'master') {
+  const { data: { commit: { sha } } } = await ax.get(`${user}/${repo}/branches/${branch}`)
   return sha
 }
 
-async function getNodes(rootSha, repo = 'netdata') {
-  const { data: { tree } } = await ax.get(`${repo}/git/trees/${rootSha}?recursive=true`)
+async function getNodes(rootSha, user = 'netdata', repo = 'netdata') {
+  const { data: { tree } } = await ax.get(`${user}/${repo}/git/trees/${rootSha}?recursive=true`)
   return tree
 }
 
@@ -307,6 +307,9 @@ async function writePages(pages) {
     } else if (fullPath.includes('docs/agent/collect') && !fullPath.includes('agent/collectors')) {
       fullPath = fullPath.replace('docs/agent/collect', 'docs/collect/');
       fullDir = fullDir.replace('docs/agent/collect', 'docs/collect/');
+    } else if (fullPath.includes('agent/dashboards')) {
+      fullPath = fullPath.replace('docs/agent/dashboards', 'docs/dashboards/');
+      fullDir = fullDir.replace('docs/agent/dashboards', 'docs/dashboards/');
     } else if (fullPath.includes('agent/visualize')) {
       fullPath = fullPath.replace('docs/agent/visualize', 'docs/visualize/');
       fullDir = fullDir.replace('docs/agent/visualize', 'docs/visualize/');
@@ -375,24 +378,24 @@ async function ingest() {
   }
 
   console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getRootSha('netdata', 'master')
+  const rootSha = await getRootSha('joelhans', 'netdata', 'docs-v3')
   console.log(`Fetching nodes from 'netdata' repo...`)
-  const nodes = await getNodes(rootSha)
+  const nodes = await getNodes(rootSha, 'joelhans', 'netdata')
 
   console.log(`Fetching root SHA for '.github' repo...`)
-  const ghRootSha = await getRootSha('.github', 'main')
+  const ghRootSha = await getRootSha('netdata', '.github', 'main')
   console.log(`Fetching nodes from '.github' repo...`)
-  const ghNodes = await getNodes(ghRootSha, '.github')
+  const ghNodes = await getNodes(ghRootSha, 'netdata', '.github')
 
   console.log(`Fetching root SHA for 'go.d.plugin' repo...`)
-  const goRootSha = await getRootSha('go.d.plugin', 'master')
+  const goRootSha = await getRootSha('netdata', 'go.d.plugin', 'master')
   console.log(`Fetching nodes from 'go.d.plugin' repo...`)
-  const goNodes = await getNodes(goRootSha, 'go.d.plugin')
+  const goNodes = await getNodes(goRootSha, 'netdata', 'go.d.plugin')
 
   console.log(`Fetching root SHA for 'agent-service-discovery' repo...`)
-  const sdRootSha = await getRootSha('agent-service-discovery', 'master')
+  const sdRootSha = await getRootSha('netdata', 'agent-service-discovery', 'master')
   console.log(`Fetching nodes from 'agent-service-discovery' repo...`)
-  const sdNodes = await getNodes(sdRootSha, 'agent-service-discovery')
+  const sdNodes = await getNodes(sdRootSha, 'netdata', 'agent-service-discovery')
 
   const ghPrefixedNodes = prefixNodes(ghNodes, '/contribute/')
   const goPrefixedNodes = prefixNodes(goNodes, 'collectors/go.d.plugin/')
@@ -403,7 +406,7 @@ async function ingest() {
   const filteredNodes = filterNodes(
     combinedNodes,
     includePatterns=[
-      /^[^\.].*?\.md$/ // only markdown files
+      /^[^\.].*?\.mdx?$/, // only .md/.mdx files files
     ],
     excludePatterns=[
       /^\./, // exclude dot files and directories
