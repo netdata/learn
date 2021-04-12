@@ -8,10 +8,10 @@ sidebar_label: "Contributing handbook"
 
 Thank you for considering contributing to Netdata.
 
-We love to receive contributions. Maintaining a platform for monitoring everything imaginable requires a broad understanding of a plethora of technologies, systems and applications. We rely on community contributions and user feedback to continue providing the best monitoring solution out there.
+Maintaining a platform for monitoring everything imaginable requires a broad understanding of a plethora of technologies, systems, and applications. We rely on community contributions and user feedback to continue providing the best monitoring solution out there.
 
 There are many ways to contribute, with varying requirements of skills, explained in detail in the following sections.
-Specific GitHub issues we need help with can be seen [here](https://github.com/netdata/netdata/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22help+wanted%22). Some of them are also labeled as "good first issue".
+One good way to start is searching through [specific GitHub issues](https://github.com/netdata/netdata/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22help+wanted%22) we need help with. Some of them are also labeled as "good first issue".
 
 # All Netdata Users
 
@@ -21,39 +21,38 @@ GitHub Stars are more important that you may think. It helps us gain visibility 
 
 ## Join the Netdata Community
 
-We have launched a [discussion board](https://community.netdata.cloud) where you can find many of us.
+We have launched a [discussion forum](https://community.netdata.cloud) where you can find many of us.
 
 ## Spread the word
 
-Community growth allows the project to attract new talent willing to contribute. This talent is then developing new features and improves the project. These new features and improvements attract more users and so on. It is a feedback loop. 
+Community growth allows the project to attract new talent willing to contribute. This talent is then developing new features and improves the project. These new features and improvements attract more users, and so on, in a feedback loop. 
 
- **The more people involved, the faster the project evolves**.
+**The more people involved, the faster the project evolves.**
 
- We have a growing community at our [forums](https://community.netdata.cloud) which can help you spread the word. If you want to talk about Netdata in a local meetup, just create a topic in the "Community" category and we will help you prepare!
+We have a growing community at our [forums](https://community.netdata.cloud) which can help you spread the word. If you want to talk about Netdata in a local meetup, just create a topic in the "Community" category and we'll help you prepare!
 
- We also have a vibrant [Twitter account](/docs/agent/contribute/[https:/](https:/twitter.com/linuxnetdata)) and a [reddit channel](https://www.reddit.com/r/netdata).
+We also have a vibrant [Twitter account](/docs/agent/contribute/[https:/](https:/twitter.com/linuxnetdata)) and a [subreddit](https://www.reddit.com/r/netdata).
 
 ## Provide feedback
 
-We love feedback. It's what makes us better as developers, professionals and open-source maintainers. It's what makes Netdata better as a product, for everyone, for free!
+We love feedback. It's what makes us better as developers, professionals ,and open-source maintainers. It's what makes Netdata better as a product, for everyone, for free!
 
-If you have any comment about the product, a positive or negative comment, a request, please let us know by making a post at [at Netdata Community](https://community.netdata.cloud/) to discuss it. 
+If you have any comment about the product, a positive or negative comment, a request, please let us know by making a post on [the community forums](https://community.netdata.cloud/) to discuss it.
 
-**We can't commit** that we will address the issue right away, but we will acknowledge your issue, and take notes of it! Although we use an internal Product Roadmap, we take your feedback and feature requests very seriously, so you can rest assured that if a particular feature requests gathers a lot of community votes, it will be prioritized accordingly.
+**We can't commit** that we will address the issue right away, but we will acknowledge your issue, and take notes of it! Although we use an internal product roadmap, we take your feedback and feature requests very seriously, so you can rest assured that if a particular feature requests gathers a lot of community votes, it will be prioritized accordingly.
 
 # Become a Netdata Supporter
 
-Netdata is a complex system, with many integrations for the various  collectors, export destinations and notification endpoints. As a result, we rely on help from "Supporters", users who are willing to **provide feedback** while we implement certain parts of the Netdata Agent. 
+Netdata is a complex system, with many integrations for the various collectors, export destinations, and notification endpoints. As a result, we rely on help from "Supporters," who are kind users willing to **discuss their uses cases** and **provide feedback** while we implement certain new features or capabilities.
 
-Netdata follows a highly opinionated approach to monitoring, offering a zero-configuration experience to users, as we take all the responsibility to organize the metrics into meaningful charts and create sane default alarms for them. This add an additional layer of complexity in the implementation of each integration, since we need 2 things:
+Netdata follows a highly opinionated approach to monitoring, offering a zero-configuration experience to users. We take all the responsibility to organize the metrics into meaningful charts and create useful preconfigured alarms. This add an additional layer of complexity in the implementation of each integration, since we need two things:
+
 1) Domain expertise to organize the metrics into meaningful charts and define sane alarms for them.
-2) Production systems to test the integration on real-life systems before releasing it for the rest of the users.
-
-To cover the **hundreds** of systems that we do, we have relied on kind users who were willing to discuss with us their use-cases while we develop the integrations and then test them on production systems to verify that they are valuable. 
+2) Production systems to test the integration on real-life systems before releasing to users.
 
 > To become a "supporter", simply create a topic in the [Netdata Agent Development & Integrations](https://community.netdata.cloud/c/agent-development/9) category of our community forums.
 
-Let's see the categories for which we are looking for supporters:
+We're looking for supporters in a few categories:
 
 ## Support a collector
 
@@ -178,13 +177,16 @@ To contribute a new or improved feature:
 
 ### Contribute a new collector
 
-The Netdata Agent has a modular approach to collecting data from data sources, meaning that we have a number of collector plugins that send data to the Netdata Agent. For each collector plugin, you can create a new module which collects data from a data source, currently you can create plugins in 4 frameworks:
+The Netdata Agent has a modular approach to collecting data from data sources, meaning that we have a number of collector plugins that send data to the Netdata Agent. For each collector plugin, you can create a new module which collects data from a data source, currently you can create plugins in 5 + 1 frameworks:
 
 1) Python
 2) Golang
 3) Node.d (deprecated)
 4) C (internal plugins)
 5) Shell
+6) StatsD
+
+Before you  continue, take a look at our [documentation](/docs/collect/how-collectors-work) about collectors and how they work. It will greatly help you if you have a good understanding of the general architecture, the different collectors that we have, how they are divided into different *plugins* and finally what it means that a collector is _internal_ or _external_.
 
 When deciding which framework to use, please consider our approach:
 1) Golang is used for all production-grade collectors and *most* of the python collectors will be migrated to Golang. We actively support, maintain and improve the Golang collectors. We are migrating to Golang for 2 reasons:
@@ -192,7 +194,8 @@ When deciding which framework to use, please consider our approach:
    2) Considerably easier to maintain and use, since they don't require any dependency on the machine which runs the Netdata Agent (e.g python collectors require python).
 2) Python is used for quick PoC, because it's a more widely-known language. Although there are vastly more python collectors that in golang, we can't ensure that each and every one works, since a large number of them was contributed by the community. 
 3) C is used for internal plugins and some external. It is the language we prefer for implementation of collectors, since it's efficient. If you are not familiar with C, no worries, we will be excited to receive contributions in either Golang (preferably) or Python.
-Although we understand that you will want to contribute with the framework that you feel more comfortable in, we would **prefer** if the new collector was in Golang.
+4) If the data source supports [StatsD](https://www.netdata.cloud/blog/introduction-to-statsd/), you can create a StatsD collector. You will need to create a configuration file that the Netdata StatsD server will use to organize the metrics from your application into meaningful charts. In the dashboard, you won't be able to tell the difference between the charts created by a dedicated collector. Since you don't have to write **any code**, but only create a configuration file, it's **much faster** than developing a collector in Python, Bash, Golang, and C.
+5) We understand that you will want to contribute with the framework that you feel more comfortable in, but we **prefer** Golang for our production-grade external collectors.
 
 To contribute a new collector (or improve an existing one):
 1) Fork the [netdata/netdata](https://github.com/netdata/netdata) repository
@@ -203,14 +206,18 @@ To contribute a new collector (or improve an existing one):
 4) Develop ⛏
    1) Authenticate with GitHub from inside the container
    2) Create a new branch and name it after the feature you are developing (e.g "apache-collector"). Switch to that branch.
-   3) For Python collectors:
+   3) **For Python collectors:**
       1) Follow the contribution guidelines on the [python.d](/docs/agent/collectors/python.d.plugin) documentation.
       2) Follow the Guide we have released: [How to contribute a Python collector](/guides/python-collector)
-   4) For Golang collectors:
+   4) **For Golang collectors:**
       1) Follow the contribution guidelines on the [go.d](/docs/agent/collectors/go.d.plugin) documentation.
       2) Follow the Guide we have released: [How to develop a go.d collector](/docs/agent/collectors/go.d.plugin/docs/how-to-write-a-module).
-   5) For Shell/Bash
-      1) Follow the guidelines on the [charts.d](/docs/agent/collectors/charts.d.plugin).
+   5) **For Shell/Bash**
+     1) Follow the guidelines on the [charts.d](/docs/agent/collectors/charts.d.plugin).
+   6) **For StatsD:**
+      1) If you are not familiar with StatD, we have written an [introduction](https://www.netdata.cloud/blog/introduction-to-statsd/) to the protocol.
+      2) Follow the Guide we have released: [[How to use any StatsD data source with Netdata](/guides/monitor/statsd)
+      3) Take a look at the [reference documentation](/docs/agent/collectors/statsd.plugin) for the StatsD plugin
 5) Follow the PR guidelines of the respected collector and make a PR to the respected repository:
    1) [netdata/netdata](https://github.com/netdata/netdata) for Python, Shell, and C
    2) [netdata/go.d.plugin](https://github.com/netdata/go.d.plugin) for Golang
