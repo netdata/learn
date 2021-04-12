@@ -7,23 +7,16 @@ import styles from './styles.module.scss';
 export const Install = ({children}) => (
   <div className={styles.Install}>
     {children}
+    <div className={styles.others}>
+      <Link to="/docs/agent/packaging/installer/#alternative-methods">
+        More installation options and OSs available in our packaging docs.
+      </Link>
+    </div>
   </div>
 )
 
 export const InstallBox = ({to, img, imgDark, os}) => (
   <Link to={to} className={styles.InstallBox}>
-    <div className={imgDark && styles.InstallIconSwitch}>
-      <SVG 
-        className={styles.InstallIcon}
-        src={img}
-        alt={os} />
-      {imgDark && 
-        <SVG 
-          className={styles.InstallIconDark}
-          src={imgDark}
-          alt={os} />
-      }
-    </div>
-    <h4>{os}</h4>
+    <h3>{os}</h3>
   </Link>
 );
