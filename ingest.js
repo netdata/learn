@@ -154,7 +154,11 @@ function normalizeLinks(pages) {
       } else if (url.includes('contributing.md')) {
         const contribUrl =  path.join(contribDir, 'handbook')
         return `](${contribUrl})`
+      } else if (url.includes('contributors.md')) {
+        const contribUrl =  path.join(contribDir, 'contributors')
+        return `](${contribUrl})`
       }
+
 
       // If the link is already absolute-relative. If it begins with `/docs`,
       // cut that. Return the normalized link.
@@ -336,6 +340,9 @@ async function writePages(pages) {
     } else if (fullPath.includes('docs/agent/contribute/support.md')) {
       fullPath = fullPath.replace('docs/agent/contribute/support.md', './contribute/support.md');
       fullDir = fullDir.replace('docs/agent/contribute/', 'contribute/');
+    } else if (fullPath.includes('docs/agent/contributors.md')) {
+      fullPath = fullPath.replace('docs/agent/contributors.md', './contribute/license.md');
+      fullDir = fullDir.replace('docs/agent/', 'contribute/');
     }
 
     // Move various contribution documents to alternative locations.

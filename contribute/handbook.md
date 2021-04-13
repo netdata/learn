@@ -31,7 +31,7 @@ Community growth allows the project to attract new talent willing to contribute.
 
 We have a growing community at our [forums](https://community.netdata.cloud) which can help you spread the word. If you want to talk about Netdata in a local meetup, just create a topic in the "Community" category and we'll help you prepare!
 
-We also have a vibrant [Twitter account](/docs/agent/contribute/[https:/](https:/twitter.com/linuxnetdata)) and a [subreddit](https://www.reddit.com/r/netdata).
+We also have a vibrant [Twitter account](https://twitter.com/linuxnetdata) and a [subreddit](https://www.reddit.com/r/netdata).
 
 ## Provide feedback
 
@@ -98,7 +98,7 @@ As Netdata's features grow, we need to clearly explain how each feature works an
 
 We also need to produce beginner-level tutorials on using Netdata to monitor production-level systems, from databases to web-servers and Kubernetes clusters. Whatever you use for production, it's a perfect case-study for Netdata!
 
-Start with the [Guide for contributing to documentation](/contribute/documentation), and then review the [documentation style guide]https://learn.netdata.cloud/contribute/style-guide) for specifics on how we write our documentation.
+Start with the [guide for contributing to documentation](/contribute/documentation), and then review the [documentation style guide](/contribute/style-guide) for specifics on how we write our documentation.
 
 You can also your guide on our [Community Guides](https://community.netdata.cloud/c/community-guides/17) category and get initial feedback from the community and the Netdata team. Afterwards, we can work together to incorporate the guide into the main corpus of the documentation. Again, we can't commit to do that, since every piece of documentation(such as a guide) increases the cost of maintenance.
 
@@ -113,22 +113,22 @@ Since the initial release of Netdata back in 2016, hundreds of contributors have
 
 You might be interested to join our growing community of contributors if:
 
-1) You find a bug and want to fix it
-2) You need a feature that is not yet implemented and you want to do it yourself
-3) You want to use Netdata to monitor a system or application that we don't currently support
-4) You want to export metrics from Netdata to a platform that we don't currently support
-5) You have created a new alarm for an existing data source
-6) You have created a new alarm notification method
-7) You want to contribute a useful custom dashboard that you have created
-8) You have created an awesome integration of Netdata with another system
+1. You find a bug and want to fix it
+2. You need a feature that is not yet implemented and you want to do it yourself
+3. You want to use Netdata to monitor a system or application that we don't currently support
+4. You want to export metrics from Netdata to a platform that we don't currently support
+5. You have created a new alarm for an existing data source
+6. You have created a new alarm notification method
+7. You want to contribute a useful custom dashboard that you have created
+8. You have created an awesome integration of Netdata with another system
 
 ## What you can expect of us
 
-1) We give our outmost attention to our contributors. We are committed to engage and evaluate every single contribution to our projects
-2) We will acknowledge the value that you are providing and we will clearly state the reasons behind accepting or not accepting a contribution. 
-3) We won't accept all contributions, as every contribution adds to the maintenance cost of the codebase. We have to carefully evaluate that cost over the benefit that the particular contribution will bring to users.
-4) We will invite you to the user group on our [Community Forums](https://community.netdata.cloud), reserved only for Netdata Contributors.
-5) If you are a first-time contributor, we will send you a thank you swag package!
+1. We give our outmost attention to our contributors. We are committed to engage and evaluate every single contribution to our projects
+2. We will acknowledge the value that you are providing and we will clearly state the reasons behind accepting or not accepting a contribution. 
+3. We won't accept all contributions, as every contribution adds to the maintenance cost of the codebase. We have to carefully evaluate that cost over the benefit that the particular contribution will bring to users.
+4. We will invite you to the user group on our [Community Forums](https://community.netdata.cloud), reserved only for Netdata Contributors.
+5. If you are a first-time contributor, we will send you a thank you swag package!
 
 ## Contribution Quickstart
 
@@ -141,16 +141,16 @@ To enable you, we have created a Docker container that has everything you need t
 
 ### Contribution Workflow 
 
-1) Fork the repository that you are interested in
-2) Make sure that Docker is installed and started
-3) Download Visual Studio Code
-4) Clone your forked repository on your local machine
-5) Open the directory using [Visual Studio Code](https://code.visualstudio.com/download)
-6) Click on the popup box that will appear and says "reopen directory inside developer container"
-7) A VS Code window will appear that will have opened the current directory from inside the container. The filesystem that it shows as also the terminal that you can open is from inside that container. 
-   1) You can start developing without installing any libraries or dependencies. 
-   2) You can use the pre-installed tools (e.g apt, pip, git) to download additional software that you may need. Everything will be installed inside that particular container.
-   3) We have installed a number of VS Code Extensions that we believe are useful to you. You can install any additional number of extensions. Note that these extensions will be installed inside the container and have nothing to do with those extensions that you may have installed locally if you are a VS Code user.
+1. Fork the repository that you are interested in
+2. Make sure that Docker is installed and started
+3. Download Visual Studio Code
+4. Clone your forked repository on your local machine
+5. Open the directory using [Visual Studio Code](https://code.visualstudio.com/download)
+6. Click on the popup box that will appear and says "reopen directory inside developer container"
+7. A VS Code window will appear that will have opened the current directory from inside the container. The filesystem that it shows as also the terminal that you can open is from inside that container. 
+   1. You can start developing without installing any libraries or dependencies. 
+   2. You can use the pre-installed tools (e.g apt, pip, git) to download additional software that you may need. Everything will be installed inside that particular container.
+   3. We have installed a number of VS Code Extensions that we believe are useful to you. You can install any additional number of extensions. Note that these extensions will be installed inside the container and have nothing to do with those extensions that you may have installed locally if you are a VS Code user.
 
 ![visual studio code example](https://github.com/netdata/community/raw/main/devenv/remote-containers-readme.gif)
 
@@ -161,66 +161,67 @@ To enable you, we have created a Docker container that has everything you need t
 If you want to develop or improve a feature for the Netdata Agent core functionality (e.g `dbengine`, `daemon`, `alarms`), you will need to be knowledgeable in C, since the Agent is almost completely developed in C. This is a matter for efficiency of course, since monitoring thousands of metrics with a per-second granularity is no easy task!
 
 To contribute a new or improved feature:
-1) Fork the [netdata/netdata](https://github.com/netdata/netdata) repository
-2) Download the forked repository locally: `git clone https://github.com/odyslam/netdata --recursive`. Pay attention to the `--recursive` flag which is required to download all the submodules as well.
-3) Open the directory using VS Code
-4) Develop ⛏
-   1) Authenticate with GitHub from inside the container
-   2) Create a new branch and name it after the feature you are developing (e.g "apache-collector"). Switch to that branch.
-   3) After you are done developing, you can easily build Netdata from source using the command: `netdata-install`. This alias loads the `netdata-installer.sh` script with a few additional debugging flags to facilitate you in the your work.
-   4) After running `netdata-install` once, you can instead build Netdata from source using `netdata-build`. The first command downloads some additional dependencies from the Internet. Once you have done it, you don't need to repeat it. `netdata-build` is much faster than `netdata-install`. 
-   5) In case your contribution is in the `netdata-installer.sh` script itself, you will need to use exclusively `netdata-install` to verify that it works as expected.
-5) **Optional:** Valgrind to verify that there are no memory leaks in Netdata after your changes. If you are not familiar with the software, no worries. It's optional!
-6) Build Netdata one last time using `netdata-build` to verify that everything works as expected.
-7) Commit your changes to the branch (e.g "apache-collector") and push to GitHub
-8) Make a **draft PR** from that branch to the master branch of the [netdata/netdata](https://github.com/netdata/netdata) repository.
+
+1. Fork the [netdata/netdata](https://github.com/netdata/netdata) repository
+2. Download the forked repository locally: `git clone https://github.com/odyslam/netdata --recursive`. Pay attention to the `--recursive` flag which is required to download all the submodules as well.
+3. Open the directory using VS Code
+4. Develop ⛏
+   1. Authenticate with GitHub from inside the container
+   2. Create a new branch and name it after the feature you are developing (e.g "apache-collector"). Switch to that branch.
+   3. After you are done developing, you can easily build Netdata from source using the command: `netdata-install`. This alias loads the `netdata-installer.sh` script with a few additional debugging flags to facilitate you in the your work.
+   4. After running `netdata-install` once, you can instead build Netdata from source using `netdata-build`. The first command downloads some additional dependencies from the Internet. Once you have done it, you don't need to repeat it. `netdata-build` is much faster than `netdata-install`. 
+   5. In case your contribution is in the `netdata-installer.sh` script itself, you will need to use exclusively `netdata-install` to verify that it works as expected.
+5. **Optional:** Valgrind to verify that there are no memory leaks in Netdata after your changes. If you are not familiar with the software, no worries. It's optional!
+6. Build Netdata one last time using `netdata-build` to verify that everything works as expected.
+7. Commit your changes to the branch (e.g "apache-collector") and push to GitHub
+8. Make a **draft PR** from that branch to the master branch of the [netdata/netdata](https://github.com/netdata/netdata) repository.
 
 ### Contribute a new collector
 
 The Netdata Agent has a modular approach to collecting data from data sources, meaning that we have a number of collector plugins that send data to the Netdata Agent. For each collector plugin, you can create a new module which collects data from a data source, currently you can create plugins in 5 + 1 frameworks:
 
-1) Python
-2) Golang
-3) Node.d (deprecated)
-4) C (internal plugins)
-5) Shell
-6) StatsD
+- Python
+- Golang
+- Node.d (deprecated)
+- C (internal plugins)
+- Shell
+- StatsD
 
 Before you  continue, take a look at our [documentation](/docs/collect/how-collectors-work) about collectors and how they work. It will greatly help you if you have a good understanding of the general architecture, the different collectors that we have, how they are divided into different *plugins* and finally what it means that a collector is _internal_ or _external_.
 
 When deciding which framework to use, please consider our approach:
-1) Golang is used for all production-grade collectors and *most* of the python collectors will be migrated to Golang. We actively support, maintain and improve the Golang collectors. We are migrating to Golang for 2 reasons:
-   1) Slightly more performing
-   2) Considerably easier to maintain and use, since they don't require any dependency on the machine which runs the Netdata Agent (e.g python collectors require python).
-2) Python is used for quick PoC, because it's a more widely-known language. Although there are vastly more python collectors that in golang, we can't ensure that each and every one works, since a large number of them was contributed by the community. 
-3) C is used for internal plugins and some external. It is the language we prefer for implementation of collectors, since it's efficient. If you are not familiar with C, no worries, we will be excited to receive contributions in either Golang (preferably) or Python.
-4) If the data source supports [StatsD](https://www.netdata.cloud/blog/introduction-to-statsd/), you can create a StatsD collector. You will need to create a configuration file that the Netdata StatsD server will use to organize the metrics from your application into meaningful charts. In the dashboard, you won't be able to tell the difference between the charts created by a dedicated collector. Since you don't have to write **any code**, but only create a configuration file, it's **much faster** than developing a collector in Python, Bash, Golang, and C.
-5) We understand that you will want to contribute with the framework that you feel more comfortable in, but we **prefer** Golang for our production-grade external collectors.
+1. Golang is used for all production-grade collectors and *most* of the python collectors will be migrated to Golang. We actively support, maintain and improve the Golang collectors. We are migrating to Golang for 2 reasons:
+   1. Slightly more performing
+   2. Considerably easier to maintain and use, since they don't require any dependency on the machine which runs the Netdata Agent (e.g python collectors require python).
+2. Python is used for quick PoC, because it's a more widely-known language. Although there are vastly more python collectors that in golang, we can't ensure that each and every one works, since a large number of them was contributed by the community. 
+3. C is used for internal plugins and some external. It is the language we prefer for implementation of collectors, since it's efficient. If you are not familiar with C, no worries, we will be excited to receive contributions in either Golang (preferably) or Python.
+4. If the data source supports [StatsD](https://www.netdata.cloud/blog/introduction-to-statsd/), you can create a StatsD collector. You will need to create a configuration file that the Netdata StatsD server will use to organize the metrics from your application into meaningful charts. In the dashboard, you won't be able to tell the difference between the charts created by a dedicated collector. Since you don't have to write **any code**, but only create a configuration file, it's **much faster** than developing a collector in Python, Bash, Golang, and C.
+5. We understand that you will want to contribute with the framework that you feel more comfortable in, but we **prefer** Golang for our production-grade external collectors.
 
 To contribute a new collector (or improve an existing one):
-1) Fork the [netdata/netdata](https://github.com/netdata/netdata) repository
+1. Fork the [netdata/netdata](https://github.com/netdata/netdata) repository
    1) If it's the Golang repository, fork the [netdata/go.d](https://github.com/netdata/go.d.plugin) repository
-2) Download the forked repository locally: `git clone https://github.com/odyslam/netdata --recursive`. Pay attention to the `--recursive` flag which is required to download all the submodules as well.
-   1) If it's about Go.d: `git clone https://github.com/odyslam/go.d`.
-3) Open the directory using VS Code
-4) Develop ⛏
-   1) Authenticate with GitHub from inside the container
-   2) Create a new branch and name it after the feature you are developing (e.g "apache-collector"). Switch to that branch.
-   3) **For Python collectors:**
-      1) Follow the contribution guidelines on the [python.d](/docs/agent/collectors/python.d.plugin) documentation.
-      2) Follow the Guide we have released: [How to contribute a Python collector](/guides/python-collector)
-   4) **For Golang collectors:**
-      1) Follow the contribution guidelines on the [go.d](/docs/agent/collectors/go.d.plugin) documentation.
-      2) Follow the Guide we have released: [How to develop a go.d collector](/docs/agent/collectors/go.d.plugin/docs/how-to-write-a-module).
-   5) **For Shell/Bash**
-     1) Follow the guidelines on the [charts.d](/docs/agent/collectors/charts.d.plugin).
-   6) **For StatsD:**
-      1) If you are not familiar with StatD, we have written an [introduction](https://www.netdata.cloud/blog/introduction-to-statsd/) to the protocol.
-      2) Follow the Guide we have released: [[How to use any StatsD data source with Netdata](/guides/monitor/statsd)
-      3) Take a look at the [reference documentation](/docs/agent/collectors/statsd.plugin) for the StatsD plugin
-5) Follow the PR guidelines of the respected collector and make a PR to the respected repository:
-   1) [netdata/netdata](https://github.com/netdata/netdata) for Python, Shell, and C
-   2) [netdata/go.d.plugin](https://github.com/netdata/go.d.plugin) for Golang
+2. Download the forked repository locally: `git clone https://github.com/odyslam/netdata --recursive`. Pay attention to the `--recursive` flag which is required to download all the submodules as well.
+   1. If it's about Go.d: `git clone https://github.com/odyslam/go.d`.
+3. Open the directory using VS Code
+4. Develop ⛏
+   1. Authenticate with GitHub from inside the container
+   2. Create a new branch and name it after the feature you are developing (e.g "apache-collector"). Switch to that branch.
+   3. **For Python collectors:**
+      1. Follow the contribution guidelines on the [python.d](/docs/agent/collectors/python.d.plugin) documentation.
+      2. Follow the Guide we have released: [How to contribute a Python collector](/guides/python-collector)
+   4. **For Golang collectors:**
+      1. Follow the contribution guidelines on the [go.d](/docs/agent/collectors/go.d.plugin) documentation.
+      2. Follow the Guide we have released: [How to develop a go.d collector](/docs/agent/collectors/go.d.plugin/docs/how-to-write-a-module).
+   5. **For Shell/Bash**
+     1. Follow the guidelines on the [charts.d](/docs/agent/collectors/charts.d.plugin).
+   6. **For StatsD:**
+      1. If you are not familiar with StatD, we have written an [introduction](https://www.netdata.cloud/blog/introduction-to-statsd/) to the protocol.
+      2. Follow the Guide we have released: [[How to use any StatsD data source with Netdata](/guides/monitor/statsd)
+      3. Take a look at the [reference documentation](/docs/agent/collectors/statsd.plugin) for the StatsD plugin
+5. Follow the PR guidelines of the respected collector and make a PR to the respected repository:
+   1. [netdata/netdata](https://github.com/netdata/netdata) for Python, Shell, and C
+   2. [netdata/go.d.plugin](https://github.com/netdata/go.d.plugin) for Golang
 
 ### Contribute a new exporting engine destination 
 
@@ -249,7 +250,7 @@ To create a new alarm, we can look to:
 
 #### Code of Conduct and CLA
 
-We expect all contributors to abide by the [Contributor Covenant Code of Conduct](https://netdata/.github/CODE_OF_CONDUCT.md). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/docs/agent/contribute/contributors), as part of the PR process.
+We expect all contributors to abide by the [Contributor Covenant Code of Conduct](/contribute/code-of-conduct). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/contribute/contributors), as part of the PR process.
 
 #### Performance and efficiency
 
