@@ -250,7 +250,7 @@ To create a new alarm, we can look to:
 
 #### Code of Conduct and CLA
 
-We expect all contributors to abide by the [Contributor Covenant Code of Conduct](/contribute/code-of-conduct). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/contribute/contributors), as part of the PR process.
+We expect all contributors to abide by the [Contributor Covenant Code of Conduct](/contribute/code-of-conduct). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/contribute/license), as part of the PR process.
 
 #### Performance and efficiency
 

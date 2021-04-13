@@ -155,7 +155,7 @@ function normalizeLinks(pages) {
         const contribUrl =  path.join(contribDir, 'handbook')
         return `](${contribUrl})`
       } else if (url.includes('contributors.md')) {
-        const contribUrl =  path.join(contribDir, 'contributors')
+        const contribUrl =  path.join(contribDir, 'license')
         return `](${contribUrl})`
       }
 
