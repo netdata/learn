@@ -123,6 +123,7 @@ module.exports = {
                     'agent/collectors/proc.plugin',
                     'agent/collectors/statsd.plugin',
                     'agent/collectors/cgroups.plugin',
+                    'agent/collectors/timex.plugin',
                     'agent/collectors/idlejitter.plugin',
                     'agent/collectors/tc.plugin',
                     'agent/collectors/checks.plugin',
