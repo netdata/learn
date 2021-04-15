@@ -84,27 +84,31 @@ If one or more nodes can't contribute to a given chart, the definition bar shows
 affected nodes, then lists them in the dropdown along with the associated error. Nodes might return errors because of
 networking issues, a stopped `netdata` service, or because that node does not have any metrics for that context.
 
-### Group by dimension or node
+### Group by dimension, node, or chart
 
-Click on the **By dimension** dropdown to change how a composite chart groups metrics. The default is _by dimension_, so
-that each line/area in the visualization is the aggregation of a single dimension.
+Click on the **By dimension** dropdown to change how a composite chart groups metrics.
 
 ![The group by
-dropdown](https://user-images.githubusercontent.com/1153921/99305054-7d32c880-2810-11eb-8e95-dee2ec2ce5ff.png)
+dropdown](https://user-images.githubusercontent.com/1153921/114920803-afa41a00-9dde-11eb-8eaa-b9f0017425ac.png)
+
+The default is _by dimension_, so that each line/area in the visualization is the aggregation of a single dimension.
+
+![A chart grouped by
+dimension](https://user-images.githubusercontent.com/1153921/114920565-6a7fe800-9dde-11eb-887d-02acfde837e1.png)
 
 A composite chart grouped _by node_ visualizes a single metric across contributing nodes. If the composite chart has 5
 contributing nodes, there will be 5 lines/areas, one for the most relevant dimension from each node. Grouping by nodes
 allows you to quickly understand which nodes in your infrastructure are experiencing anomalous behavior.
 
-The `mem.committed` chart when grouped by dimension:
+![A chart grouped by
+node](https://user-images.githubusercontent.com/1153921/114920568-6b187e80-9dde-11eb-9068-29831daba8e0.png)
 
-![The mem.committed chart when grouped by
-dimension](https://user-images.githubusercontent.com/1153921/99405862-75276700-28aa-11eb-8613-cb99784ea1c7.png)
+A composite chart group _by chart_ visualizes each instance of a chart as a separate dimension. By grouping the
+`disk.io` chart by chart, you can visualize the activity of each disk on each node that contributes to the composite
+chart.
 
-The same chart when grouped by node:
-
-![The mem.committed chart when grouped by
-node](https://user-images.githubusercontent.com/1153921/99405866-75bffd80-28aa-11eb-96dc-72bbc10c690b.png)
+![A chart grouped by
+chart](https://user-images.githubusercontent.com/1153921/114920564-69e75180-9dde-11eb-80b2-3ca5e5ac29de.png)
 
 ### Reset to defaults
 
