@@ -1,0 +1,178 @@
+---
+title: "Dashboard and charts"
+description: "Learn how to navigate Netdata's preconfigured dashboard and charts, along with essential interactions, to get started exploring, visualizing, and troubleshooting in real time."
+type: explanation
+custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards/dashboard-charts.mdx
+---
+
+
+
+As soon as you [install Netdata](/docs/agent/installationx), it autodetects hardware, OS, containers, services, and
+applications running on your node and builds a preconfigured dashboard on a single, scrollable webpage. This page
+features hundreds of charts, which are also preconfigured to save you time from learning a query language, all stacked
+on top of one another to encourage exploration and help you visually identify connections between the metrics visualized
+in different charts.
+
+To maximize your post-installation Netdata experience, it's important to understand the features and functionality of
+Netdata's dashboard and charts.
+
+## The dashboard
+
+Netdata's dashboard can be broken down into a key areas:
+
+1. [Charts and sections](#charts-and-sections)
+2. [Menu/submenus](#menu-and-submenus)
+3. [Time & date picker](#time-date-picker)
+4. [Replicated nodes panel](#replicated-nodes-panel)
+5. [Netdata Cloud functionality](#netdata-cloud-functionality)
+
+![Annotated screenshot of the Netdata
+dashboard](https://user-images.githubusercontent.com/1153921/101509403-f7e59400-3935-11eb-9abd-cbecfa3ee49a.png)
+
+### Charts and sections
+
+The dashboard is a single page with many charts, which are automatically organized into **sections**, such as **System
+Overview**, **CPU**, **Disk**, and more. Inside each section, you'll find a number of charts, broken down into
+[contexts](/docs/agent/dashboards/chart-dimensions-contexts-familiesx#contexts) and
+[families](/docs/agent/dashboards/chart-dimensions-contexts-familiesx#families).
+
+Learn more about the [anatomy of charts](#charts) below, or skip ahead to the basics of [interacting with
+charts](/docs/agent/dashboards/interact-chartsx), such as panning through time, zooming in, or highlighting timeframes to
+help you troubleshoot anomalies.
+
+### Menu and submenus
+
+The dashboard features a **menu** on the right-hand side, which is automatically populated with text and a link to every
+section. Most metrics menu items will contain several **submenu** items, which oftentimes link to "subsections" of
+charts. For example, the **network** submenu item links to a group of charts for system-wide network monitoring.
+
+![A screenshot of metrics
+menus](https://user-images.githubusercontent.com/1153921/80834638-f08f2880-8ba5-11ea-99ae-f610b2885fd6.png)
+
+Some submenu items link to the various [families](/docs/agent/dashboards/chart-dimensions-contexts-familiesx#families)
+Netdata automatically creates for multiple instances of a monitored resource. For example, a **Disks** menu with several
+submenu entries for each disk drive and partition.
+
+![Screenshot of some metrics
+submenus](https://user-images.githubusercontent.com/1153921/80834697-11577e00-8ba6-11ea-979c-92fd19cdb480.png)
+
+### Time & date picker
+
+The dashboard features a time & date picker to help you visualize specific timeframes of historical metrics. The picker
+chooses an appropriate default to always show per-second granularity based on the width of your browser's viewport.
+
+See the doc on [picking timeframes](/docs/agent/dashboards/pick-timeframesx) for more details.
+
+### Replicated Nodes panel
+
+If you're using [streaming](/docs/agent/streaming), both the parent and child nodes appear in the Replicated Nodes panel,
+which appears on the left-hand side of the dashboard. Click either link to switch between the various dashboards for
+your streaming-enabled nodes.
+
+![Switching between parent and child streaming
+nodes](https://user-images.githubusercontent.com/1153921/110043346-761ec000-7d04-11eb-8e58-77670ba39161.gif)
+
+Show or hide this panel using the **hamburger** icon (![Export
+icon](https://raw.githubusercontent.com/netdata/netdata-ui/master/src/components/icon/assets/hamburger.svg)) next to the
+Netdata logo.
+
+### Netdata Cloud functionality
+
+Any dashboard can connect to a Netdata Cloud account to enable additional functionality, such as quickly navigating to a
+[War Room](/docs/cloud/war-rooms) or moving between recently-visited dashboards.
+
+When enabled, click on any of the War Room or Spaces to open Netdata Cloud in a new tab and jump to that location.
+
+Jump over to the [Netdata Cloud docs](/docs/cloud/) for more details on how and why you would choose to sign up and monitor multiple nodes from a single interface.
+
+## Charts
+
+A **chart** is an individual, interactive, always-updating graphic displaying one or more
+[dimensions](/docs/agent/dashboards/chart-dimensions-contexts-familiesx#dimensions), which are raw data or calculated
+values, such as percentages, aggregates, and more.
+
+Here's the system CPU chart, the first chart displayed on the standard dashboard:
+
+![Screenshot of the system CPU chart in the Netdata
+dashboard](https://user-images.githubusercontent.com/1153921/114786663-5a5efe80-9d33-11eb-8316-4d9eec2e672f.png)
+
+Let's break the chart down into its many parts.
+
+### Description
+
+![A chart
+description](https://user-images.githubusercontent.com/1153921/114932658-9bffb000-9dec-11eb-8c0a-12add5911b79.png)
+
+Many charts come with a short description of what dimensions the chart is displaying and why they matter. If you're new
+to monitoring and troubleshooting, we recommend you spend some time reading these descriptions to learn more about why
+you might care about something strange happening on a given chart and what you should do next.
+
+### Name and context
+
+![The name and context of a
+chart](https://user-images.githubusercontent.com/1153921/114932664-9d30dd00-9dec-11eb-9cb5-d12f83037f92.png)
+
+Netdata displays a chart's name in parentheses above the chart. For example, if you navigate to the system CPU chart,
+you'll see the label: **Total CPU utilization (system.cpu)**. In this case, the chart's name is `system.cpu`. Netdata
+derives the name from the chart's [context](/docs/agent/chart-dimensions-contexts-familiesx#contexts).
+
+### Y-axis
+
+![A chart's axis](https://user-images.githubusercontent.com/1153921/114932655-9b671980-9dec-11eb-9e60-3e8b788e8461.png)
+
+A chart's y-axis visualizes how dimensions change over time (x-axis).
+
+Some charts have a y-axis that always begins at 0. Others scale the y-axis based on the displayed dimensions and metric
+values to help you see changes with the most possible granularity. For example, the **Available RAM for applications
+(mem.available)** chart scales its y-axis based on the maximum and minimum values displayed over the current timeframe.
+If the maximum is `4.85` and the minimum is `4.23`, then the y-axis is scaled between those two values.
+
+`read`, `input`, `inbound`, `received` dimensions are displayed as positive values, while `write`, `output`, `outbound`,
+`sent` are displayed as negative values.
+
+In addition, a zero-based `stacked` chart automatically switches to an auto-scaled `area` chart when you select a single
+dimension.
+
+### Timetamp
+
+![timestamp](https://user-images.githubusercontent.com/1153921/114932667-9dc97380-9dec-11eb-9434-5195bee5cc95.png)
+
+When charts are automatically updating, this timestamp shows the last data collection. You'll most often see the
+timestamps ticking up every second, which makes sense, given that most metrics are queries, collected, and visualized
+every second. When you hover over the chart, the timestamp shows that value's timestamp.
+
+### Legend
+
+![A chart's
+legend](https://user-images.githubusercontent.com/1153921/114932663-9c984680-9dec-11eb-8ab7-c6a56487c765.png)
+
+The legend displays every dimension visualized in the chart. 
+
+When charts are auto-updating, the legend shows the latest value for each dimension. When you hover over the chart,
+you'll instead see the value associated with that timestamp.
+
+Learn more about [interacting with dimensions](/docs/agent/dashboards/interact-chartsx#show-hide-dimensions).
+
+### Interactions
+
+![interactions](https://user-images.githubusercontent.com/1153921/114932661-9c984680-9dec-11eb-894e-1210077ab337.png)
+
+These interactions are, respectively, `Pan Left`, `Reset`, `Pan Right`, `Zoom In`, and `Zoom Out`.
+
+There's other, more intuitive ways to interact with charts, such as panning the mouse, or zooming with the
+scrollwheel/touchpad. See the [interact with charts](/docs/agent/dashboards/interact-chartsx) doc for a full listing of
+interactions and their associated keyboard shortcuts.
+
+## What's next?
+
+Now that you have the lay of the land in Netdata's dashboard, we recommend learning more about [chart
+interactions](/docs/agent/dashboards/interact-chartsx). From there, learn how to use the [time & date
+picker](/docs/agent/dashboards/pick-timeframesx), or jump ahead to [configuring your node](/docs/configure/nodes).
+
+### Further reading & related information
+
+- [Interact with charts](/docs/agent/dashboards/interact-chartsx)
+- [Chart dimensions, contexts, and families](/docs/agent/chart-dimensions-contexts-familiesx#contexts)
+- [Netdata Cloud](/docs/cloud/)
+
+

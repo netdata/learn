@@ -152,7 +152,7 @@ Now that you have either configured database engine or round-robin database engi
 probably want to see it in action!
 
 For more information about how to pan charts to view historical metrics, see our documentation on [using
-charts](/docs/agent/web#using-charts).
+charts](/docs/agent/dashboards/interact-chartsx).
 
 And if you'd now like to reduce Netdata's resource usage, view our [performance
 guide](/guides/configure/performance) for our best practices on optimization.

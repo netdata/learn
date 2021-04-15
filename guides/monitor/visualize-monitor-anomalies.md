@@ -79,8 +79,8 @@ alarms for any dimension on the `anomalies_local.probability` and `anomalies_loc
 ## Visualize anomalies in charts
 
 In either [Netdata Cloud](https://app.netdata.cloud) or the local Agent dashboard at `http://NODE:19999`, click on the
-**Anomalies** [section](/docs/agent/web/gui#sections) to see the pair of anomaly detection charts, which are
-preconfigured to visualize per-second anomaly metrics based on your [configuration in
+**Anomalies** section to see the pair of anomaly detection charts, which are preconfigured to visualize per-second
+anomaly metrics based on your [configuration in
 `anomalies.conf`](/guides/monitor/anomaly-detection#configure-the-anomalies-collector).
 
 These charts have the contexts `anomalies.probability` and `anomalies.anomaly`. Together, these charts

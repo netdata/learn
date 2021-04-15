@@ -509,17 +509,19 @@ You can find all the variables that can be used for a given chart, using
 Agent dashboard. For example, [variables for the `system.cpu` chart of the
 registry](https://registry.my-netdata.io/api/v1/alarm_variables?chart=system.cpu).
 
-> If you don't know how to find the CHART_NAME, you can read about it [here](/docs/agent/web#charts).
+> If you don't know how to find the CHART_NAME, you can read about it
+> [here](/docs/agent/dashboards/dashboard-chartsx#name-context).
 
 Netdata supports 3 internal indexes for variables that will be used in health monitoring.
 
 <details markdown="1"><summary>The variables below can be used in both chart alarms and context templates.</summary>
 
 Although the `alarm_variables` link shows you variables for a particular chart, the same variables can also be used in
-templates for charts belonging to a given [context](/docs/agent/web#contexts). The reason is that all charts of a given
-context are essentially identical, with the only difference being the [family](/docs/agent/web#families) that
-identifies a particular hardware or software instance. Charts and templates do not apply to specific families anyway,
-unless if you explicitly limit an alarm with the [alarm line `families`](#alarm-line-families).
+templates for charts belonging to a given [context](/docs/agent/dashboards/chart-dimensions-contexts-familiesx#contexts).
+The reason is that all charts of a given context are essentially identical, with the only difference being the
+[family](/docs/agent/dashboards/chart-dimensions-contexts-familiesx#families) that identifies a particular hardware or
+software instance. Charts and templates do not apply to specific families anyway, unless if you explicitly limit an
+alarm with the [alarm line `families`](#alarm-line-families).
 
 </details>
 

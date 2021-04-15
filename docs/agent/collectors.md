@@ -40,11 +40,8 @@ guide](/docs/agent/collectors/quickstart).
 
 ## Related features
 
-**[Dashboards](/docs/agent/web)**: Visualize your newly-collect metrics in real-time using Netdata's [built-in
-dashboard](/docs/agent/web/gui). 
-
-**[Backends](/docs/agent/backends)**: Extend our built-in [database engine](/docs/agent/database/engine), which supports
-long-term metrics storage, by archiving metrics to like Graphite, Prometheus, MongoDB, TimescaleDB, and more.
+**[Dashboards](/docs/agent/dashboards/dashboard-chartsx)**: Visualize your newly-collect metrics in real-time using
+Netdata's built-in dashboard.
 
 **[Exporting](/docs/agent/exporting)**: An experimental refactoring of our backends system with a modular system and
 support for exporting metrics to multiple systems simultaneously.

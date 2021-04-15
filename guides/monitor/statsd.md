@@ -103,7 +103,8 @@ Families and context are additional ways to group metrics. Families control the 
 
 Context is a second way to group metrics, when the metrics are of the same nature but different origin. In our case, if we ran several different load testing experiments side-by-side, we could define the same app, but different context (e.g `http_requests.experiment1`, `http_requests.experiment2`).
 
-Find more details about family and context in our [documentation](/docs/agent/web#families).
+Find more details about family and context in our
+[documentation](/docs/agent/dashboards/chart-dimensions-contexts-familiesx#families).
 
 ### Dimension 
 
@@ -114,7 +115,7 @@ Now, having decided on how we are going to group the charts, we need to define h
 
 The dimension option has this syntax: `dimension = [pattern] METRIC NAME TYPE MULTIPLIER DIVIDER OPTIONS`
 
-- **pattern**: A keyword that tells the StatsD server the `METRIC` string is actually a [simple pattern].(/libnetdata/simple_pattern/README.md). We don't simple patterns in the example, but if we wanted to visualize all the `http_req` metrics, we could have a single dimension: `dimension = pattern 'k6.http_req*' last 1 1`. Find detailed examples with patterns in our [documentation](/docs/agent/collectors/statsd.plugin#dimension-patterns).
+- **pattern**: A keyword that tells the StatsD server the `METRIC` string is actually a [simple pattern](/docs/agent/libnetdata/simple_pattern). We don't simple patterns in the example, but if we wanted to visualize all the `http_req` metrics, we could have a single dimension: `dimension = pattern 'k6.http_req*' last 1 1`. Find detailed examples with patterns in our [documentation](/docs/agent/collectors/statsd.plugin#dimension-patterns).
 - **METRIC** The id of the metric as it comes from the client. You can easily find this in the private charts above, for example: `k6.http_req_connecting`.
 - **NAME**: The name of the dimension. You can use the dictionary to expand this to something more human-readable. 
 - **TYPE**: 

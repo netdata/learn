@@ -101,8 +101,8 @@ child system. It's a vastly simplified way of accessing critical information abo
 
 > ⚠️ Because automatic labels for child nodes are accessible via API calls, and contain sensitive information like
 > kernel and operating system versions, you should secure streaming connections with SSL. See the [streaming
-> documentation](/docs/agent/streaming#securing-streaming-communications) for details. You may also want to use
-> [access lists](/docs/agent/web/server#access-lists) or [expose the API only to LAN/localhost
+> documentation](/docs/agent/streaming#securing-streaming-communications) for details. You may also want to use [access
+> lists](/docs/agent/dashboards/reference-web-serverx#access-lists) or [expose the API only to LAN/localhost
 > connections](/docs/agent/netdata-security#expose-netdata-only-in-a-private-lan).
 
 You can also use `_is_parent`, `_is_child`, and any other host labels in both health entities and metrics
@@ -196,7 +196,7 @@ It should be noted that while the Netdata dashboard does not expose either user-
 queries _do_ showcase this information. As always, we recommend you secure Netdata 
 
 -   [Expose Netdata only in a private LAN](/docs/agent/netdata-security#expose-netdata-only-in-a-private-lan)
--   [Enable TLS/SSL for web/API requests](/docs/agent/web/server#enabling-tls-support)
+-   [Enable TLS/SSL for web/API requests](/docs/agent/dashboards/reference-web-serverx#enable-tls-support)
 -   Put Netdata behind a proxy
     -   [Use an authenticating web server in proxy
         mode](/docs/agent/netdata-security#use-an-authenticating-web-server-in-proxy-mode)

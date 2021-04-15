@@ -42,7 +42,7 @@ Their behavior is identical. Use the Quick Selector to visualize generic timefra
 select days, hours, minutes or seconds. Click **Apply** to re-render all visualizations with new metrics data, or
 **Clear** to restore the default timeframe.
 
-See reference documentation for the [local Agent dashboard](/docs/agent/web/gui#time--date-picker) and [Netdata
+See reference documentation for the [local Agent dashboard](/docs/agent/dashboards/pick-timeframesx) and [Netdata
 Cloud](/docs/cloud/war-rooms#time--date-picker) for additional context about how the time &
 date picker behaves in each environment.
 
@@ -65,8 +65,8 @@ A **context** groups several charts based on the types of metrics being collecte
 this context to create individual charts and then groups them by family. You can always see the context of any chart by
 looking at its name or hovering over the chart's date.
 
-See our [dashboard docs](/docs/agent/web#charts-contexts-families) for more information about the above distinctions
-and how they're used across Netdata to meaningfully organize and present metrics.
+See our [dashboard docs](/docs/agent/dashboards/chart-dimensions-contexts-familiesx) for more information about the above
+distinctions and how they're used across Netdata to meaningfully organize and present metrics.
 
 ## Interact with charts
 
@@ -118,7 +118,7 @@ to get informed when something goes wrong in your infrastructure.
 
 ### Related reference documentation
 
--   [Netdata Agent · Web dashboards overview](/docs/agent/web)
+-   [Netdata Agent · Dashboards overview](/docs/agent/dashboards/dashboard-chartsx)
 -   [Netdata Cloud · War Rooms](/docs/cloud/war-rooms)
 -   [Netdata Cloud · Overview](/docs/cloud/visualize/overview)
 -   [Netdata Cloud · Nodes](/docs/cloud/visualize/nodes)

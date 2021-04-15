@@ -163,9 +163,10 @@ Using the above, you access Netdata on the backend servers, like this:
 
 ### Encrypt the communication between Nginx and Netdata
 
-In case Netdata's web server has been [configured to use TLS](/docs/agent/web/server#enabling-tls-support), it is
-necessary to specify inside the Nginx configuration that the final destination is using TLS. To do this, please, append
-the following parameters in your `nginx.conf`
+In case Netdata's web server has been [configured to use
+TLS](/docs/agent/dashboards/reference-web-serverx#enable-tls-support), it is necessary to specify inside the Nginx
+configuration that the final destination is using TLS. To do this, please, append the following parameters in your
+`nginx.conf`
 
 ```conf
 proxy_set_header X-Forwarded-Proto https;

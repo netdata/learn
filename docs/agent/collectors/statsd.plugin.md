@@ -242,7 +242,8 @@ Synthetic charts are organized in
 -   **charts for each application** aka family in Netdata Dashboard.
 -   **StatsD metrics for each chart** /aka charts and context Netdata Dashboard.
 
-> You can read more about how the Netdata Agent organizes information in the relevant [documentation](/docs/agent/web)
+> You can read more about how the Netdata Agent organizes information in the relevant
+> [documentation](/docs/agent/dashboards/dashboard-chartsx)
 
 For each application you need to create a `.conf` file in `/etc/netdata/statsd.d`.
 

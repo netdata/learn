@@ -28,9 +28,9 @@ dashboard](https://user-images.githubusercontent.com/1153921/80825153-abaec600-8
 
 **What's next?**: 
 
--   Read more about the [standard Netdata dashboard](/docs/agent/web/gui/).
--   Learn all the specifics of [using charts](/docs/agent/web#using-charts) or the differences between [charts,
-    context, and families](/docs/agent/web#charts-contexts-families).
+-   Read more about the [Netdata dashboard](/docs/agent/dashboards/dashboard-chartsx).
+-   Learn all the specifics of [using charts](/docs/agent/dashboards/interact-chartsx) or the differences between [charts,
+    contexts, and families](/docs/agent/dashboards/chart-dimensions-contexts-familiesx).
 
 ## Configuration basics
 

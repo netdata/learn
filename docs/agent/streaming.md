@@ -229,7 +229,10 @@ For Netdata v1.9+, streaming can also be monitored via `access.log`.
 
 ### Securing streaming communications
 
-Netdata does not activate TLS encryption by default. To encrypt streaming connections, you first need to [enable TLS support](/docs/agent/web/server#enabling-tls-support) on the parent. With encryption enabled on the receiving side, you need to instruct the child to use TLS/SSL as well. On the child's `stream.conf`, configure the destination as follows:
+Netdata does not activate TLS encryption by default. To encrypt streaming connections, you first need to [enable TLS
+support](/docs/agent/dashboards/reference-web-serverx#enable-tls-support) on the parent. With encryption enabled on the
+receiving side, you need to instruct the child to use TLS/SSL as well. On the child's `stream.conf`, configure the
+destination as follows:
 
 ```
 [stream]

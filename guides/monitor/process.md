@@ -138,7 +138,8 @@ others, and groups them into `sql`. That makes sense, since all these processes 
 sql: mysqld* mariad* postgres* postmaster* oracle_* ora_* sqlservr
 ```
 
-These groups are then reflected as [dimensions](/docs/agent/web#dimensions) within Netdata's charts.
+These groups are then reflected as [dimensions](/docs/agent/dashboards/chart-dimensions-contexts-familiesx#dimensions)
+within Netdata's charts.
 
 ![An example per-process CPU utilization chart in Netdata
 Cloud](https://user-images.githubusercontent.com/1153921/101369156-352e2100-3865-11eb-9f0d-b8fac162e034.png)
@@ -295,7 +296,7 @@ frameworks.
 
 -   [Netdata Agent · `apps.plugin`](/docs/agent/collectors/apps.plugin)
 -   [Netdata Agent · `ebpf.plugin`](/docs/agent/collectors/ebpf.plugin)
--   [Netdata Agent · Dashboards](/docs/agent/web#dimensions)
+-   [Netdata Agent · Dashboards](/docs/agent/dashboards/dashboard-chartsx)
 -   [Netdata Agent · MySQL collector](/docs/agent/collectors/go.d.plugin/modules/mysql)
 
 

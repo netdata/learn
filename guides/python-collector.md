@@ -90,7 +90,8 @@ context, charttype]`, where:
   that is `A.B`, with `A` being the name of the collector, and `B` being the name of the specific metric.
 - `charttype`: Either `line`, `area`, or `stacked`. If null line is the default value.
 
-You can read more about `family` and `context` in the [web dashboard](/docs/agent/web#families) doc.
+You can read more about `family` and `context` in the [chart dimensions, contexts, and
+families](/docs/agent/dashboards/chart-dimensions-contexts-familiesx) doc.
 
 Once the chart has been defined, you should define the dimensions of the chart. Dimensions are basically the metrics to
 be represented in this chart and each chart can have more than one dimension. In order to define the dimensions, the

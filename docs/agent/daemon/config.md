@@ -9,12 +9,12 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/daemon/config/RE
 <details markdown="1"><summary>The daemon configuration file is read from `/etc/netdata/netdata.conf`.</summary>
 Depending on your installation method, Netdata will have been installed either directly under `/`, or under `/opt/netdata`. The paths mentioned here and in the documentation in general assume that your installation is under `/`. If it is not, you will find the exact same paths under `/opt/netdata` as well. (i.e. `/etc/netdata` will be `/opt/netdata/etc/netdata`).</details>
 
-This config file **is not needed by default**. Netdata works fine out of the box without it. But it does allow you to adapt the general behavior of Netdata, in great detail. You can find all these settings, with their default values, by accessing the URL `https://netdata.server.hostname:19999/netdata.conf`. For example check the configuration file of [netdata.firehol.org](http://netdata.firehol.org/netdata.conf). HTTP access to this file is limited by default to private IPs, via the [web server access lists](/docs/agent/web/server#access-lists).
+This config file **is not needed by default**. Netdata works fine out of the box without it. But it does allow you to adapt the general behavior of Netdata, in great detail. You can find all these settings, with their default values, by accessing the URL `https://netdata.server.hostname:19999/netdata.conf`. For example check the configuration file of [netdata.firehol.org](http://netdata.firehol.org/netdata.conf). HTTP access to this file is limited by default to private IPs, via the [web server access lists](/docs/agent/dashboards/reference-web-serverx#access-lists).
 
 `netdata.conf` has sections stated with `[section]`. You will see the following sections:
 
 1.  `[global]` to [configure](#global-section-options) the [Netdata daemon](/docs/agent/daemon).
-2.  `[web]` to [configure the web server](/docs/agent/web/server).
+2.  `[web]` to [configure the web server](/docs/agent/dashboards/reference-web-serverx).
 3.  `[plugins]` to [configure](#plugins-section-options) which [collectors](/docs/agent/collectors) to use and PATH
     settings.
 4.  `[health]` to [configure](#health-section-options) general settings for [health monitoring](/docs/agent/health)
@@ -89,7 +89,7 @@ Please note that your data history will be lost if you have modified `history` p
 
 ### [web] section options
 
-Refer to the [web server documentation](/docs/agent/web/server)
+Refer to the [web server documentation](/docs/agent/dashboards/reference-web-serverx)
 
 ### [plugins] section options
 
@@ -161,7 +161,8 @@ In this area of `netdata.conf` you can find configuration options for individual
 following the pattern `[NAME]`.
 
 Using the settings and values under these sections, you can control all aspects of a specific chart. You can change its
-title, make it appear higher in Netdata's [menu](/docs/agent/web/gui#metrics-menus), tweak its dimensions, and much more.
+title, make it appear higher in Netdata's [menu](/docs/agent/dashboards/dashboard-chartsx#menu-and-submenus), tweak its
+dimensions, and much more.
 
 To find the name of a given chart, and thus the name of its section in `netdata.conf`, look at the top-left corner of a
 chart:
@@ -178,10 +179,10 @@ that is information about lines that begin with `dim`, which affect a chart's di
 | `enabled`         | A boolean (`yes` or `no`) that explicitly enables or disables the chart in question.                                                                                                                                                                            |
 | `cache directory` | The directory where cache files for this plugin, if needed, are stored.                                                                                                                                                                                         |
 | `chart type`      | Defines what type of chart to display. It can be `line`, `area`, or `stacked`. If empty or missing, `line` will be used.                                                                                                                                        |
-| `type`            | Uniquely identify which [metrics menu](/docs/agent/web/gui#metrics-menus) on the Netdata dashboard this chart should appear under. Some examples include `system` (**System**), `disk` (**Disks**), `net` (**Network Interfaces**), and `netdata` (**Netdata Monitoring**). |
-| `family`          | Change the chart's [family](/docs/agent/web#families) from its default. For example, you could force a disk space chart to collect metrics for family `sdb` instead of family `sda`.                                                                        |
+| `type`            | Uniquely identify which [metrics menu](/docs/agent/dashboards/dashboard-chartsx#menu-and-submenus) on the Netdata dashboard this chart should appear under. Some examples include `system` (**System**), `disk` (**Disks**), `net` (**Network Interfaces**), and `netdata` (**Netdata Monitoring**). |
+| `family`          | Change the chart's [family](/docs/agent/dashboards/chart-dimensions-contexts-familiesx#families) from its default. For example, you could force a disk space chart to collect metrics for family `sdb` instead of family `sda`.                                                                        |
 | `units`           | Text for the label of the vertical axis of the chart. This means all dimensions should have the same unit of measurement.                                                                                                                                       |
-| `context`         | Change the default [context](/docs/agent/web#contexts) of the chart. Changing this setting will affect what metrics and metrics the chart displays, and which alarms are attached to it.                                                                    |
+| `context`         | Change the default [context](/docs/agent/dashboards/chart-dimensions-contexts-familiesx#contexts) of the chart. Changing this setting will affect what metrics and metrics the chart displays, and which alarms are attached to it.                                                                    |
 | `priority`        | Define where the chart should appear on the Netdata dashboard. Lower values equal higher priority, so a priority of `1` will place the chart highest, while a priority of `9999999` would place the chart at the bottom of the Netdata dashboard.               |
 | `name`            | The name of the chart that appears in the top-left corner, after the chart's title. You can also use this name when writing [health entities](/docs/agent/health/reference#health-entity-reference).                                                               |
 | `title`           | The text that appears above the chart in the Netdata dashboard.                                                                                                                                                                                                 |

@@ -56,7 +56,7 @@ what it's collecting. If you run Netdata on many different systems using differe
 menus and submenus may look a little different for each one.
 
 To learn more about menus, see our documentation about [navigating the standard
-dashboard](/docs/agent/web/gui#metrics-menus).
+dashboard](/docs/agent/dashboards/dashboard-chartsx#menu-and-submenus).
 
 > ❗ By default, Netdata only creates and displays charts if the metrics are _not zero_. So, you may be missing some
 > charts, menus, and submenus if those charts have zero metrics. You can change this by changing the **Which dimensions
@@ -106,7 +106,7 @@ looking at its name or hovering over the chart's date.
 It's important to understand these differences, as Netdata uses charts, dimensions, families, and contexts to create
 health alarms and configure collectors. To read even more about the differences between all these elements of the
 dashboard, and how they affect other parts of Netdata, read our [dashboards
-documentation](/docs/agent/web#charts-contexts-families).
+documentation](/docs/agent/dashboards/dashboards-chartsx).
 
 ## Interact with charts
 
@@ -148,7 +148,8 @@ chart to its original height, double-click the same icon.
 ![Animated GIF of resizing a chart and resetting it to the default
 height](https://user-images.githubusercontent.com/1153921/80842459-7d41e280-8bb6-11ea-9488-1bc29f94d7f2.gif)
 
-To learn more about other options and chart interactivity, read our [dashboard documentation](/docs/agent/web).
+To learn more about other options and chart interactivity, read our [dashboard
+documentation](/docs/agent/dashboards/dashboards-chartsx).
 
 ## See raised alarms and the alarm log
 
