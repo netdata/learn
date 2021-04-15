@@ -40,13 +40,13 @@ module.exports = {
           type: 'category',
           label: 'Dashboards',
           items: [
-            'dashboards/dashboards-charts',
+            'dashboards/dashboard-charts',
             'dashboards/interact-charts',
             'dashboards/chart-dimensions-contexts-families',
             'dashboards/pick-timeframes',
             'dashboards/import-export-print-snapshots',
             'dashboards/customize',
-            'dashboards/custom-dashboards',
+            'agent/web/gui/custom',
             'dashboards/reference-web-server'
           ]
         },

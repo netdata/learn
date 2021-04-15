@@ -725,6 +725,11 @@ html[data-theme='dark'] code {
     font-size: 80%;
   }
 
+  p > img[src*="icon/assets/"] {
+    display: inline-block;
+    margin: 0 !important;
+  }
+
   img {
     display: block;
     margin: calc(var(--ifm-paragraph-margin-bottom) * 1.5) auto;
