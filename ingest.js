@@ -381,7 +381,7 @@ async function ingest() {
   }
 
   console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getRootSha('joelhans', 'netdata', 'docs-v3')
+  const rootSha = await getRootSha('joelhans', 'netdata', 'docsv3-dashboards')
   console.log(`Fetching nodes from 'netdata' repo...`)
   const nodes = await getNodes(rootSha, 'joelhans', 'netdata')
 

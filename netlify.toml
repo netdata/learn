@@ -147,3 +147,15 @@
 [[redirects]]
   from = "/docs/agent/web/server/static-threaded/"
   to = "/docs/dashboards/reference-web-server"
+
+[[redirects]]
+  from = "/docs/get"
+  to = "/docs/installation"
+
+[[redirects]]
+  from = "/docs/agent/web/server/gui/"
+  to = "/docs/dashboards/dashboard-charts"
+
+[[redirects]]
+  from = "/docs/agent/web/"
+  to = "/docs/dashboards/dashboard-charts"
