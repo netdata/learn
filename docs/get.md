@@ -7,7 +7,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/get/README.
 
 
 import { OneLineInstall } from '../src/components/OneLineInstall/'
-import { Install, InstallBox } from '../src/components/InstallBox/'
+import { Install, InstallBox } from '../src/components/Install/'
 
 Netdata uses the open-source Netdata Agent and Netdata Cloud web application
 [together](/docs/overview/what-is-netdata) to help you collect every metric, visualize the health of your nodes, and
