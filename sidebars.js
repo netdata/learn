@@ -25,7 +25,7 @@ module.exports = {
             'overview/netdata-monitoring-stack',
           ]
         },
-        'get',
+        'get-started',
         {
           type: 'category',
           label: 'Quickstart',
