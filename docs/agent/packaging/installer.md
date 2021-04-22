@@ -3,6 +3,8 @@ title: "Installation guide"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/README.md
 ---
 
+import { Install, InstallBox } from '../../../src/components/Install/'
+
 
 
 Netdata is a monitoring agent designed to run on all your systems: physical and virtual servers, containers, even
@@ -70,65 +72,44 @@ operating systems.
 
 ### Alternative methods
 
-<div class="installer-grid" markdown="1">
-
-[![Install with .deb or .rpm
-packages](https://user-images.githubusercontent.com/1153921/76029431-aebd6b00-5ef1-11ea-92b4-06704dabb93e.png) Install
-with .deb or .rpm packages](/docs/agent/packaging/installer/methods/packages)
-
-[![Install with a pre-built static binary for 64-bit
-systems](https://user-images.githubusercontent.com/1153921/73030303-94727680-3df6-11ea-963e-6f2cb0ce762c.png) Install
-with a pre-built static binary for 64-bit systems](/docs/agent/packaging/installer/methods/kickstart-64)
-
-[![Install Netdata on
-Docker](https://user-images.githubusercontent.com/1153921/76029355-85044400-5ef1-11ea-96f4-79edc58f9b5c.png) Install
-Netdata on Docker](/docs/agent/packaging/docker)
-
-[![Install Netdata on
-Kubernetes](https://user-images.githubusercontent.com/1153921/76029478-cc8ad000-5ef1-11ea-8981-dd04744b00da.png) Install
-Netdata on a Kubernetes cluster](/docs/agent/packaging/installer/methods/kubernetes)
-
-[![Install Netdata on cloud providers
-(GCP/AWS/Azure)](https://user-images.githubusercontent.com/1153921/76029431-aebd6b00-5ef1-11ea-92b4-06704dabb93e.png)
-Install Netdata on cloud providers (GCP/AWS/Azure)](/docs/agent/packaging/installer/methods/cloud-providers)
-
-[![Install Netdata on
-macOS](https://user-images.githubusercontent.com/1153921/76029616-1673b600-5ef2-11ea-888a-4a1375a42246.png) Install
-Netdata on macOS](/docs/agent/packaging/installer/methods/macos)
-
-[![Install Netdata on
-FreeBSD](https://user-images.githubusercontent.com/1153921/76029787-5fc40580-5ef2-11ea-9461-23e9049aa8f8.png) Install
-Netdata on FreeBSD](/docs/agent/packaging/installer/methods/freebsd)
-
-[![Install from a Git
-checkout](https://user-images.githubusercontent.com/1153921/73032280-f1246000-3dfb-11ea-870d-7fbddd9a6f76.png) Install
-from a Git checkout](/docs/agent/packaging/installer/methods/manual)
-
-[![Install on offline/air-gapped
-systems](https://user-images.githubusercontent.com/1153921/73032239-c89c6600-3dfb-11ea-8224-c8a9f7a50c53.png) Install on
-offline/air-gapped systems](/docs/agent/packaging/installer/methods/offline)
-
-[![Installation on
-PFSense](https://user-images.githubusercontent.com/1153921/76030071-cb0dd780-5ef2-11ea-87cd-607d943dc521.png)
-Installation on PFSense](/docs/agent/packaging/installer/methods/pfsense)
-
-[![Install Netdata on
-Synology](https://user-images.githubusercontent.com/1153921/76029789-5fc40580-5ef2-11ea-9d35-c022f682da77.png) Install
-Netdata on Synology](/docs/agent/packaging/installer/methods/synology)
-
-[![Manual installation on
-FreeNAS](https://user-images.githubusercontent.com/1153921/76030537-1c1dcb80-5ef3-11ea-9cf9-f130e7d41712.png) Manual
-installation on FreeNAS](/docs/agent/packaging/installer/methods/freenas)
-
-[![Manual installation on
-Alpine](https://user-images.githubusercontent.com/1153921/76029682-37d4a200-5ef2-11ea-9a2c-a8ffeb1d13c3.png) Manual
-installation on Alpine](/docs/agent/packaging/installer/methods/alpine)
-
-[![Build manually from
-source](https://user-images.githubusercontent.com/1153921/73032280-f1246000-3dfb-11ea-870d-7fbddd9a6f76.png)
-Build manually from source](/docs/agent/packaging/installer/methods/source)
-
-</div>
+<Install>
+  <InstallBox
+    to="#install-on-linux-with-one-line-installer-recommended"
+    os="General Linux with one-line installer (recommended)"
+    svg="linux" />
+  <InstallBox
+    to="#run-netdata-with-docker"
+    os="Run with Docker" 
+    svg="docker" />
+  <InstallBox
+    to="/docs/agent/packaging/installer/methods/kubernetes"
+    os="Deploy on Kubernetes" 
+    svg="kubernetes" />
+   <InstallBox
+    to="/docs/agent/packaging/installer/methods/macos"
+    os="Install on macOS" 
+    svg="macos" />
+  <InstallBox
+    to="/docs/agent/packaging/installer/methods/packages"
+    os="Linux with .deb/.rpm packages" 
+    svg="linux" />
+  <InstallBox
+    to="/docs/agent/packaging/installer/methods/kickstart-64"
+    os="Linux with static 64-bit binary" 
+    svg="linux" />
+  <InstallBox
+    to="/docs/agent/packaging/installer/methods/manual"
+    os="Linux from Git" 
+    svg="linux" />
+  <InstallBox
+    to="/docs/agent/packaging/installer/methods/source"
+    os="Linux from source"
+    svg="linux" />
+  <InstallBox
+    to="/docs/agent/packaging/installer/methods/offline" 
+    os="Linux for offline nodes"
+    svg="linux" />
+</Install>
 
 ## Automatic updates
 

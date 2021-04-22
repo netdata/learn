@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from '@docusaurus/Link'
 import clsx from 'clsx';
 
 import CodeBlock from '@theme/CodeBlock'
@@ -69,7 +70,7 @@ export function OneLineInstall() {
             onChange={handleStatisticsChange}
             checked={statsChecked}
             type="checkbox" id="toggle__stats" />
-          <label htmlFor="toggle__stats">Do you want to contribute anonymous statistics? <code>default: enabled</code></label>
+          <label htmlFor="toggle__stats">Do you want to contribute <Link to="/docs/agent/anonymous-statistics">anonymous statistics?</Link> <code>default: enabled</code></label>
         </div>
       </div>
       <svg className={styles.svg} viewBox="0 0 134 21" fill="none" xmlns="http://www.w3.org/2000/svg">

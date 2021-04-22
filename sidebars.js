@@ -16,6 +16,7 @@ module.exports = {
           type: 'doc',
           id: 'docs'
         },
+        'get-started',
         {
           type: 'category',
           label: 'Overview',
@@ -25,7 +26,6 @@ module.exports = {
             'overview/netdata-monitoring-stack',
           ]
         },
-        'get',
         {
           type: 'category',
           label: 'Quickstart',
