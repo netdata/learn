@@ -412,6 +412,7 @@ module.exports = {
                     'agent/health/notifications/kavenegar',
                     'agent/health/notifications/matrix',
                     'agent/health/notifications/messagebird',
+                    'agent/health/notifications/msteams',
                     'agent/health/notifications/opsgenie',
                     'agent/health/notifications/pagerduty',
                     'agent/health/notifications/prowl',
