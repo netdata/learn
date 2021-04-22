@@ -178,9 +178,9 @@ function Home() {
                 <div className={clsx('col col--4')}>
                   <StartBox 
                     to="/docs/get-started/"
-                    title="Install Netdata"
+                    title="Get started"
                     description="Download and install the open-source Netdata monitoring agent on physical/virtual servers, Linux (Ubuntu/Debian/CentOS/etc), Docker, Kubernetes, and many others, often with one command."
-                    cta="Get started"
+                    cta="Install now"
                     image={true} />
                 </div>
                 <div className={clsx('col col--4')}>
@@ -188,7 +188,7 @@ function Home() {
                     to="/docs/"
                     title="Docs"
                     description="Solution- and action-based docs for Netdata's many features and capabilities. Your table of contents to becoming an expert in using Netdata to monitor and troubleshoot applications and their infrastructure."
-                    cta="Get started"
+                    cta="Read the docs"
                     image={false} />
                 </div>
                 <div className={clsx('col col--4')}>
@@ -196,7 +196,7 @@ function Home() {
                     to="/guides/"
                     title="Guides"
                     description="Thoughtful guides to help you learn about collecting metrics, monitoring your infrastructure, and troubleshooting with Netdata's powerful visualizations."
-                    cta="Read more"
+                    cta="Start learning"
                     image={false} />
                 </div>
               </div>
