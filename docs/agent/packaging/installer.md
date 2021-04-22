@@ -5,6 +5,8 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/instal
 
 import { Install, InstallBox } from '../../../src/components/Install/'
 
+
+
 Netdata is a monitoring agent designed to run on all your systems: physical and virtual servers, containers, even
 IoT/edge devices. Netdata runs on Linux, FreeBSD, macOS, Kubernetes, Docker, and all their derivatives.
 
@@ -21,7 +23,7 @@ Some third parties, such as the packaging teams at various Linux distributions, 
 packages. We recommend you install Netdata using one of the methods listed below to guarantee you get the latest
 checksum-verified packages.
 
-Starting with v1.12, Netdata collects anonymous usage information by default and sends it to Google Analytics. Read
+Netdata collects anonymous usage information by default and sends it to our self hosted [PostHog](https://github.com/PostHog/posthog) installation. PostHog is an open source product analytics platform, you can read
 about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/agent/anonymous-statistics)
 page.
 
@@ -67,6 +69,8 @@ matrix](/docs/agent/packaging/distributions).
 
 Below, you can find a few additional installation methods, followed by separate instructions for a variety of unique
 operating systems.
+
+### Alternative methods
 
 <Install>
   <InstallBox

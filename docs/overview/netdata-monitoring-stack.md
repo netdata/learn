@@ -57,6 +57,6 @@ charts, or use Netdata's health watchdog to send notifications whenever an anoma
 ## What's next?
 
 Whether you're using Netdata standalone or as part of a larger monitoring stack, the next step is the same: [**Get
-Netdata**](/docs/get).
+Netdata**](/docs/agent/get).
 
 

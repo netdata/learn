@@ -68,9 +68,6 @@ function prefixNodes(nodes, prefix) {
 }
 
 function filterNodes(nodes, includePatterns=[], excludePatterns=[]) {
-  nodes.forEach(node => (
-    console.log(node.path)
-  ))
   return nodes.filter(node => (
     node.type === 'blob' && // include only files (blobs)
     includePatterns.every(p => node.path.match(p)) &&
@@ -117,7 +114,7 @@ function normalizeLinks(pages) {
 
       // Exceptions to accomodate the new documentation structure, with many
       // documents in various `/docs/X` folders.
-      if (url.includes('docs/get.md') || url.includes('docs/overview') || url.includes('docs/collect/') || 
+      if (url.includes('docs/get-started.mdx') || url.includes('docs/overview') || url.includes('docs/collect/') || 
           url.includes('docs/configure/') || url.includes('docs/export/') || url.includes('docs/configure/') || 
           url.includes('docs/monitor/') || url.includes('docs/quickstart/') ||url.includes('docs/store/') || 
           url.includes('docs/visualize/')) {
@@ -295,9 +292,9 @@ async function writePages(pages) {
     if (fullPath.includes('agent/overview')) {
       fullPath = fullPath.replace('docs/agent/overview', 'docs/overview/');
       fullDir = fullDir.replace('docs/agent/overview', 'docs/overview/');
-    } else if (fullPath.includes('docs/agent/get.md') && !fullPath.includes('getting-started')) {
-      fullPath = fullPath.replace('docs/agent/get.md', 'docs/get.md');
-      fullDir = fullDir.replace('docs/agent/get', 'docs/');
+    } else if (fullPath.includes('docs/agent/get-started.mdx') && !fullPath.includes('getting-started')) {
+      fullPath = fullPath.replace('docs/agent/get-started.mdx', 'docs/get-started.mdx');
+      fullDir = fullDir.replace('docs/agent/', 'docs/');
     } else if (fullPath.includes('agent/quickstart')) {
       fullPath = fullPath.replace('docs/agent/quickstart', 'docs/quickstart/');
       fullDir = fullDir.replace('docs/agent/quickstart', 'docs/quickstart/');
@@ -403,7 +400,7 @@ async function ingest() {
   const filteredNodes = filterNodes(
     combinedNodes,
     includePatterns=[
-      /^[^\.].*?\.md$/ // only markdown files
+      /^[^\.].*?\.mdx?$/, // only .md and .mdx files
     ],
     excludePatterns=[
       /^\./, // exclude dot files and directories

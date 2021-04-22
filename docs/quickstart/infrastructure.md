@@ -26,7 +26,7 @@ composite charts, and alarm viewing. You'll then learn about the most critical w
 your nodes to maximize the value you get from Netdata.
 
 This quickstart assumes you've installed the Netdata Agent on more than one node in your infrastructure, and claimed
-those nodes to your Space in Netdata Cloud. If you haven't yet, see the [_Get Netdata_ doc](/docs/get) for
+those nodes to your Space in Netdata Cloud. If you haven't yet, see the [_Get Netdata_ doc](/docs/agent/get) for
 details on signing up for Netdata Cloud, installation, and claiming.
 
 > If you want to monitor a Kubernetes cluster with Netdata, see our [k8s installation

@@ -25,7 +25,7 @@ Read on to learn all the steps and enable unsupervised anomaly detection on your
 
 - A Raspberry Pi running Raspbian, which we'll call a _node_.
 - The [open-source Netdata Agent](https://github.com/netdata/netdata). If you don't have it installed on your node yet,
-  [get it now](/docs/get).
+  [get it now](/docs/agent/get).
 
 ## Install dependencies
 
@@ -121,7 +121,7 @@ feedback on our [community forum](https://community.netdata.cloud/t/anomalies-co
 
 ### Related reference documentation
 
-- [Netdata Agent · Get Netdata](/docs/get)
+- [Netdata Agent · Get Netdata](/docs/agent/get)
 - [Netdata Agent · Anomalies collector](/docs/agent/collectors/python.d.plugin/anomalies)
 
 

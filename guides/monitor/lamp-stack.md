@@ -56,7 +56,7 @@ To follow this tutorial, you need:
 
 ## Install the Netdata Agent
 
-If you don't have the free, open-source [Netdata Agent](/docs/get) installed on your node yet, get started
+If you don't have the free, open-source [Netdata Agent](/docs/agent/get) installed on your node yet, get started
 with a [single kickstart command](/docs/agent/packaging/installer/methods/kickstart):
 
 ```bash
@@ -167,7 +167,7 @@ If the Netdata Agent isn't already open in your browser, open a new tab and navi
 
 > If you [signed up](https://app.netdata.cloud/sign-up?cloudRoute=/spaces) for Netdata Cloud earlier, you can also view
 > the exact same LAMP stack metrics there, plus additional features, like drag-and-drop custom dashboards. Be sure to
-> [claim your node](/docs/get#claim-your-node-to-netdata-cloud) to start streaming metrics to your browser
+> [claim your node](/docs/agent/get#claim-your-node-to-netdata-cloud) to start streaming metrics to your browser
 > through Netdata Cloud.
 
 Netdata automatically organizes all metrics and charts onto a single page for easy navigation. Peek at gauges to see
@@ -240,7 +240,7 @@ source of issues faster with [Metric Correlations](/docs/cloud/insights/metric-c
 
 ### Related reference documentation
 
-- [Netdata Agent · Get Netdata](/docs/get)
+- [Netdata Agent · Get Netdata](/docs/agent/get)
 - [Netdata Agent · Apache data collector](/docs/agent/collectors/go.d.plugin/modules/apache)
 - [Netdata Agent · Web log collector](/docs/agent/collectors/go.d.plugin/modules/weblog)
 - [Netdata Agent · MySQL data collector](/docs/agent/collectors/go.d.plugin/modules/mysql)
