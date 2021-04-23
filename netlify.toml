@@ -147,3 +147,7 @@
 [[redirects]]
   from = "/docs/get"
   to = "/docs/get-started"
+  
+[[redirects]]
+  from = "/docs/agent/get"
+  to = "/docs/get-started"
