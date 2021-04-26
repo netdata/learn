@@ -34,8 +34,8 @@ With Netdata's process monitoring, you can:
 
 ## Prerequisites
 
--   One or more Linux nodes running the [Netdata Agent](/docs/agent/get). If you need more time to understand
-    Netdata before following this guide, see the [infrastructure](/docs/quickstart/infrastructure) or
+-   One or more Linux nodes running [Netdata](/docs/get-startedx). If you need more time to understand Netdata before
+    following this guide, see the [infrastructure](/docs/quickstart/infrastructure) or
     [single-node](/docs/quickstart/single-node) monitoring quickstarts.
 -   A general understanding of how to [configure the Netdata Agent](/docs/configure/nodes) using `edit-config`.
 -   A Netdata Cloud account. [Sign up](https://app.netdata.cloud) if you don't have one already.
