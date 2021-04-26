@@ -288,6 +288,7 @@ module.exports = {
                             'agent/collectors/python.d.plugin/varnish',
                             'agent/collectors/python.d.plugin/w1sensor',
                             'agent/collectors/python.d.plugin/web_log',
+                            'agent/collectors/python.d.plugin/zscores',
                           ]
                         },
                       ]

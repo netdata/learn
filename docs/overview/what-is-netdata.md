@@ -18,7 +18,7 @@ Netdata's distributed monitoring Agent collects thousands of metrics from system
 configuration. It runs permanently on all your physical/virtual servers, containers, cloud deployments, and edge/IoT
 devices.
 
-You can [install](/docs/get-startedx) Netdata on most Linux distributions (Ubuntu, Debian, CentOS, and more),
+You can [install](/docs/get-started) Netdata on most Linux distributions (Ubuntu, Debian, CentOS, and more),
 container/microservice platforms (Kubernetes clusters, Docker), and many other operating systems (FreeBSD, macOS), with
 no `sudo` required.
 

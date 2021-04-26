@@ -222,7 +222,7 @@ function beautifyLinks(pages) {
       // ignore absolute urls and external links alone
       const prettyUrl = url.startsWith('http')
         ? url
-        : url.replace(/\.md/gs, '')
+        : url.replace(/\.mdx?/gs, '')
       return `](${prettyUrl})`
     })
 
