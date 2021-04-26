@@ -74,11 +74,11 @@ operating systems.
 
 <Install>
   <InstallBox
-    to="#install-on-linux-with-one-line-installer-recommended"
+    to="/docs/agent/packaging/installer/methods/kickstart"
     os="General Linux with one-line installer (recommended)"
     svg="linux" />
   <InstallBox
-    to="#run-netdata-with-docker"
+    to="/docs/agent/packaging/docker"
     os="Run with Docker" 
     svg="docker" />
   <InstallBox
