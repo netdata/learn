@@ -47,7 +47,7 @@ application metrics collectors, including those for containers/k8s clusters.
 ## Collect metrics from applications running on Windows
 
 Netdata is fully capable of collecting and visualizing metrics from applications running on Windows systems. The only
-caveat is that you must [install Netdata](/docs/get-startedx) on a separate system or a compatible VM because there
+caveat is that you must [install Netdata](/docs/get-started) on a separate system or a compatible VM because there
 is no native Windows version of the Netdata Agent.
 
 Once you have Netdata running on that separate system, you can follow the [enable and configure

@@ -57,7 +57,7 @@ To follow this tutorial, you need:
 ## Install the Netdata Agent
 
 If you don't have the free, open-source Netdata monitoring agent installed on your node yet, get started with a [single
-kickstart command](/docs/get-startedx):
+kickstart command](/docs/get-started):
 
 ```bash
 bash <(curl -Ss https://my-netdata.io/kickstart.sh)
@@ -239,7 +239,7 @@ source of issues faster with [Metric Correlations](/docs/cloud/insights/metric-c
 
 ### Related reference documentation
 
-- [Netdata Agent · Get started](/docs/get-startedx)
+- [Netdata Agent · Get started](/docs/get-started)
 - [Netdata Agent · Apache data collector](/docs/agent/collectors/go.d.plugin/modules/apache)
 - [Netdata Agent · Web log collector](/docs/agent/collectors/go.d.plugin/modules/weblog)
 - [Netdata Agent · MySQL data collector](/docs/agent/collectors/go.d.plugin/modules/mysql)
