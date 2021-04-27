@@ -1,15 +1,12 @@
 # Netdata Learn
 
-A public site to learn about Netdata built on
-[Docusaurus 2](https://v2.docusaurus.io/).
+A public site to learn about Netdata built on [Docusaurus 2](https://v2.docusaurus.io/).
 
 ## Contributing to Netdata's documentation
 
 To suggest edits to Netdata Cloud documentation, see the files in the `/docs/cloud/` folder.
 
-To suggest edits to the FAQ, see `/docs/cloud/faq.mdx`.
-
-The remainder of the files in the `/docs` folder are processessed "mirrors" of their original files in the `netdata/netdata` repository and should not be edited directly. To suggest edits to _any other document_, use the [`netdata/netadata` repository](https://github.com/netdata/netdata).
+The remainder of the files in the `/docs` folder are processessed "mirrors" of their original files in the `netdata/netdata` repository and should not be edited directly. To suggest edits to _any other document_, use the [`netdata/netdata` repository](https://github.com/netdata/netdata).
 
 ## Installation
 
