@@ -6,7 +6,13 @@
 
 **Merged pull requests:**
 
+- health/vernemq: use `average` instead of  `sum` [\#11037](https://github.com/netdata/netdata/pull/11037) ([ilyam8](https://github.com/ilyam8))
+- Fix storing an NULL claim id on a parent node [\#11036](https://github.com/netdata/netdata/pull/11036) ([stelfrag](https://github.com/stelfrag))
+- proc/mdstat: add raid level to the family [\#11024](https://github.com/netdata/netdata/pull/11024) ([ilyam8](https://github.com/ilyam8))
+- bump to netdata-pandas==0.0.38 [\#11022](https://github.com/netdata/netdata/pull/11022) ([andrewm4894](https://github.com/andrewm4894))
+- Provide more agent analytics to posthog [\#11020](https://github.com/netdata/netdata/pull/11020) ([MrZammler](https://github.com/MrZammler))
 - Rename struct fields from class to classification. [\#11019](https://github.com/netdata/netdata/pull/11019) ([vkalintiris](https://github.com/vkalintiris))
+- Remove links to old install doc [\#11014](https://github.com/netdata/netdata/pull/11014) ([joelhans](https://github.com/joelhans))
 - Revert "Provide more agent analytics to posthog" [\#11011](https://github.com/netdata/netdata/pull/11011) ([MrZammler](https://github.com/MrZammler))
 - anonymous-statistics: add a timeout when using `curl` [\#11010](https://github.com/netdata/netdata/pull/11010) ([ilyam8](https://github.com/ilyam8))
 - python.d: add plugin and module names to the runtime charts [\#11007](https://github.com/netdata/netdata/pull/11007) ([ilyam8](https://github.com/ilyam8))
@@ -20,6 +26,7 @@
 - ci: fix aws-kinesis builds [\#10992](https://github.com/netdata/netdata/pull/10992) ([ilyam8](https://github.com/ilyam8))
 - Move global stats to a separate thread [\#10991](https://github.com/netdata/netdata/pull/10991) ([vlvkobal](https://github.com/vlvkobal))
 - adds missing SPDX license info into ACLK-NG [\#10990](https://github.com/netdata/netdata/pull/10990) ([underhood](https://github.com/underhood))
+- K6 quality of life updates [\#10985](https://github.com/netdata/netdata/pull/10985) ([OdysLam](https://github.com/OdysLam))
 - Update eBPF documentation [\#10982](https://github.com/netdata/netdata/pull/10982) ([thiagoftsm](https://github.com/thiagoftsm))
 - remove vneg from ACLK-NG [\#10980](https://github.com/netdata/netdata/pull/10980) ([underhood](https://github.com/underhood))
 - Remove outdated privacy policy and terms of use [\#10979](https://github.com/netdata/netdata/pull/10979) ([joelhans](https://github.com/joelhans))
@@ -36,6 +43,7 @@
 - Contributing revamp, take 2 [\#10956](https://github.com/netdata/netdata/pull/10956) ([OdysLam](https://github.com/OdysLam))
 - health: add Inconsistent state to the mysql\_galera\_cluster\_state alarm [\#10945](https://github.com/netdata/netdata/pull/10945) ([ilyam8](https://github.com/ilyam8))
 - Update cloud-providers.md [\#10942](https://github.com/netdata/netdata/pull/10942) ([Avre](https://github.com/Avre))
+- ACLK new cloud architecture new TBEB [\#10941](https://github.com/netdata/netdata/pull/10941) ([underhood](https://github.com/underhood))
 - Add new charts for extended disk metrics [\#10939](https://github.com/netdata/netdata/pull/10939) ([vlvkobal](https://github.com/vlvkobal))
 - Adds --recursive to docu git clones [\#10932](https://github.com/netdata/netdata/pull/10932) ([underhood](https://github.com/underhood))
 - Add lists of monitored metrics to the cgroups plugin documentation [\#10924](https://github.com/netdata/netdata/pull/10924) ([vlvkobal](https://github.com/vlvkobal))
@@ -67,6 +75,7 @@
 - prevents mqtt connection attempt on OTP failure [\#10839](https://github.com/netdata/netdata/pull/10839) ([underhood](https://github.com/underhood))
 - implements ACLK env endpoint [\#10833](https://github.com/netdata/netdata/pull/10833) ([underhood](https://github.com/underhood))
 - implements new https client for ACLK [\#10805](https://github.com/netdata/netdata/pull/10805) ([underhood](https://github.com/underhood))
+- Zscores python collector [\#10673](https://github.com/netdata/netdata/pull/10673) ([andrewm4894](https://github.com/andrewm4894))
 - Report porcelain output [\#10494](https://github.com/netdata/netdata/pull/10494) ([jsoref](https://github.com/jsoref))
 - Add docs on Nginx with IPv6 listen for certbot to work [\#10473](https://github.com/netdata/netdata/pull/10473) ([jilleJr](https://github.com/jilleJr))
 
@@ -242,7 +251,6 @@
 - Update claiming docs for Docker containers. [\#10570](https://github.com/netdata/netdata/pull/10570) ([Ferroin](https://github.com/Ferroin))
 - health: make Opsgenie API URL configurable [\#10561](https://github.com/netdata/netdata/pull/10561) ([tinyhammers](https://github.com/tinyhammers))
 - Allow the REMOVED alarm status via ACLK if the previous status was WARN/CRIT [\#10533](https://github.com/netdata/netdata/pull/10533) ([stelfrag](https://github.com/stelfrag))
-- Change eBPF plugin internal [\#10442](https://github.com/netdata/netdata/pull/10442) ([thiagoftsm](https://github.com/thiagoftsm))
 
 ## [v1.29.1](https://github.com/netdata/netdata/tree/v1.29.1) (2021-02-09)
 
@@ -305,12 +313,6 @@
 - Fixed bundling of libwebsockets in binary packages. [\#10460](https://github.com/netdata/netdata/pull/10460) ([Ferroin](https://github.com/Ferroin))
 - Anomalies collector custom model bugfix for issue \#10456 [\#10459](https://github.com/netdata/netdata/pull/10459) ([andrewm4894](https://github.com/andrewm4894))
 - Add missing section to Netdata style guide [\#10453](https://github.com/netdata/netdata/pull/10453) ([joelhans](https://github.com/joelhans))
-- Add guide: Detect anomalies in nodes and applications with Netdata [\#10451](https://github.com/netdata/netdata/pull/10451) ([joelhans](https://github.com/joelhans))
-- Updated messages about checksum validation failures on install. [\#10448](https://github.com/netdata/netdata/pull/10448) ([Ferroin](https://github.com/Ferroin))
-- Fixed handling of environment file in updater script. [\#10447](https://github.com/netdata/netdata/pull/10447) ([Ferroin](https://github.com/Ferroin))
-- Exclude autofs by default in diskspace plugin [\#10441](https://github.com/netdata/netdata/pull/10441) ([nabijaczleweli](https://github.com/nabijaczleweli))
-- New eBPF kernel [\#10434](https://github.com/netdata/netdata/pull/10434) ([thiagoftsm](https://github.com/thiagoftsm))
-- Update and improve the Netdata style guide [\#10433](https://github.com/netdata/netdata/pull/10433) ([joelhans](https://github.com/joelhans))
 
 ## [v1.27.0_0104103941](https://github.com/netdata/netdata/tree/v1.27.0_0104103941) (2021-01-04)
 
