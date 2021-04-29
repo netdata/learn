@@ -117,7 +117,7 @@ function normalizeLinks(pages) {
       if (url.includes('docs/get-started.mdx') || url.includes('docs/overview') || url.includes('docs/collect/') || 
           url.includes('docs/configure/') || url.includes('docs/export/') || url.includes('docs/configure/') || 
           url.includes('docs/monitor/') || url.includes('docs/quickstart/') || url.includes('docs/store/') ||  
-          url.includes('docs/metrics-storage-management') || url.includes('docs/visualize/')) {
+          url.includes('docs/metrics-storage-management') || url.includes('docs/dashboard') || url.includes('docs/visualize/')) {
         return `](${url})`
       }
 
@@ -304,6 +304,9 @@ async function writePages(pages) {
     } else if (fullPath.includes('docs/agent/collect') && !fullPath.includes('agent/collectors')) {
       fullPath = fullPath.replace('docs/agent/collect', 'docs/collect/');
       fullDir = fullDir.replace('docs/agent/collect', 'docs/collect/');
+    } else if (fullPath.includes('agent/dashboard')) {
+      fullPath = fullPath.replace('docs/agent/dashboard', 'docs/dashboard/');
+      fullDir = fullDir.replace('docs/agent/dashboard', 'docs/dashboard/');
     } else if (fullPath.includes('agent/visualize')) {
       fullPath = fullPath.replace('docs/agent/visualize', 'docs/visualize/');
       fullDir = fullDir.replace('docs/agent/visualize', 'docs/visualize/');

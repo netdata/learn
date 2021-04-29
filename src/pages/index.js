@@ -140,12 +140,13 @@ function Home() {
                   styles.heroText
                 )}>
                 <h1 className={styles.heroTagline}>
-                  Learn Netdata
+                  Learning @ Netdata
                 </h1>
                 <p className={styles.heroSubHead}>
-                  View documentation, guides, and videos for single-node and infrastructure monitoring 
-                  with Netdata. Discover new insights of your systems, containers, and applications 
-                  using per-second metrics, insightful visualizations, and every metric imaginable.
+                  Here you'll find documentation, guides, and reference material for monitoring and 
+                  troubleshooting your systems with Netdata. Discover new insights of your systems, 
+                  containers, and applications using per-second metrics, insightful visualizations, 
+                  and every metric imaginable.
                 </p>
               </div>
               <div className={clsx('col col--6', styles.heroImageContainer)}>
@@ -168,7 +169,7 @@ function Home() {
                   <StartBox 
                     to="/docs/get-started/"
                     title="Get started"
-                    description="Download and install the open-source Netdata monitoring agent on physical/virtual servers, Linux (Ubuntu/Debian/CentOS/etc), Docker, Kubernetes, and many others, often with one command."
+                    description="Install the open-source monitoring agent on physical/virtual systems running most Linux distributions (Ubuntu, Debian, CentOS, and more), container platforms (Kubernetes clusters, Docker), and many other operating systems, with no <code>sudo</code> required."
                     cta="Install now"
                     image={true} />
                 </div>
@@ -184,7 +185,7 @@ function Home() {
                   <StartBox 
                     to="/guides/"
                     title="Guides"
-                    description="Thoughtful guides to help you learn about collecting metrics, monitoring your infrastructure, and troubleshooting with Netdata's powerful visualizations."
+                    description="Thoughtful guides to walk you through collecting the right metrics, monitoring your infrastructure, troubleshooting with Netdata's powerful visualizations, and much more."
                     cta="Start learning"
                     image={false} />
                 </div>

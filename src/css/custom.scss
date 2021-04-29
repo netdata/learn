@@ -739,7 +739,8 @@ html[data-theme='dark'] code {
     &[src*='https://registry.my-netdata.io/'], 
     &[src*='https://img.shields.io'], 
     &[src*='https://raw.githubusercontent.com/netdata/netdata/master/web/gui/images/'],
-    &[src*='/netdata/netdata-ui/master/src/components/icon/assets/'] {
+    &[src*='/netdata/netdata-ui/master/src/components/icon/assets/'],
+    &[src*='/src/components/icon/assets/'] {
       display: inline-block;
       margin: 0;
     }

@@ -36,7 +36,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Configure',
+          label: 'Configuration',
           items: [
             'configure/nodes',
             'configure/common-changes',
@@ -46,7 +46,17 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Collect',
+          label: 'Dashboard',
+          items: [
+            'dashboard/how-dashboard-works',
+            'dashboard/interact-charts',
+            'visualize/overview-infrastructure',
+            'visualize/create-dashboards',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Data collection',
           items: [
             'collect/how-collectors-work',
             'collect/enable-configure',
@@ -58,16 +68,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Visualize',
-          items: [
-            'visualize/overview-infrastructure',
-            'visualize/interact-dashboards-charts',
-            'visualize/create-dashboards',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Monitor',
+          label: 'Alarms and notifications',
           items: [
             'monitor/view-active-alarms',
             'monitor/configure-alarms',

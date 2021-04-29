@@ -13,18 +13,16 @@ import { Discover, DiscoverBox } from '../src/components/agent/DiscoverBox/'
 
 _Welcome!_ You’ve arrived at Netdata's documentation.
 
-Below, you'll find links to solution- and action-based docs for Netdata's many features and capabilities. Think of it as
-the table of contents to becoming an expert in using Netdata to monitor and troubleshoot applications and their
-infrastructure.
-
 Netdata is a monitoring, visualization, and troubleshooting solution for systems, containers, services, and
-applications. The free and open-source monitoring Agent works in collaboration with Netdata Cloud to deliver both
-single-node and infrastructure monitoring on a single pane of glass.
+applications. Below, find links to solution- and action-based docs for Netdata's many features and capabilities. Think
+of it as the table of contents to becoming an expert in monitoring and troubleshooting.
 
-Collect everything, visualize metrics, troubleshoot complex performance problems, and make Netdata's per-second metrics
-work with your existing monitoring stack, entirely for free.
-
-## Learn Netdata
+<StartBox 
+  to="/docs/get-started" 
+  title="Get started" 
+  description="Install the open-source monitoring agent on physical/virtual systems running most Linux distributions (Ubuntu, Debian, CentOS, and more), container platforms (Kubernetes clusters, Docker), and many other operating systems, with no <code>sudo</code> required." 
+  cta="Install now"
+  image={true} />
 
 <Learn>
   <LearnBox 
@@ -46,7 +44,7 @@ work with your existing monitoring stack, entirely for free.
     </LearnLinks>
   </LearnBox>
   <LearnBox 
-    title="Configure"
+    title="Configuration"
     description="Learn how to set up the Netdata Agent on one or more nodes to maximize the immediate value you get from monitoring your systems, containers, and applications.">
     <LearnLinks>
       <LearnLink to="/docs/configure/nodes" title="Configure the Netdata Agent" />
@@ -56,7 +54,17 @@ work with your existing monitoring stack, entirely for free.
     </LearnLinks>
   </LearnBox>
   <LearnBox 
-    title="Collect"
+    title="Dashboard"
+    description="Follow our guides on interacting with Netdata's dashboard and charts so you can quickly drill down on anomalies and discover their root cause.">
+    <LearnLinks>
+      <LearnLink to="/docs/dashboard/how-dashboard-works" title="How the dashboard works" />
+      <LearnLink to="/docs/dashboard/interact-charts" title="Interact with charts" />
+      <LearnLink to="/docs/visualize/overview-infrastructure" title="See an overview of your infrastructure" />
+      <LearnLink to="/docs/visualize/create-dashboards" title="Create new dashboards" />
+    </LearnLinks>
+  </LearnBox>
+  <LearnBox 
+    title="Data collection"
     description="Learn what per-second metrics Netdata can collect using its 300+ built-in collectors, full compatibility with Prometheus endpoints, and zero configuration.">
     <LearnLinks>
       <LearnLink to="/docs/collect/how-collectors-work" title="How Netdata's metrics collectors work" />
@@ -68,16 +76,7 @@ work with your existing monitoring stack, entirely for free.
     </LearnLinks>
   </LearnBox>
   <LearnBox 
-    title="Visualize"
-    description="Follow our guides on interacting with Netdata's visualizations and creating new dashboards so you can quickly drill down on anomalies and discover their root cause.">
-    <LearnLinks>
-      <LearnLink to="/docs/visualize/overview-infrastructure" title="See an overview of your infrastructure" />
-      <LearnLink to="/docs/visualize/interact-dashboards-charts" title="Interact with dashboards and charts" />
-      <LearnLink to="/docs/visualize/create-dashboards" title="Create new dashboards" />
-    </LearnLinks>
-  </LearnBox>
-  <LearnBox 
-    title="Monitor"
+    title="Alarms and notifications"
     description="Leverage Netdata's health watchdog and hundreds of pre-configured alarms to receive notifications on your favorite platforms whenever an anomaly affects the health or performance of your infrastructure.">
     <LearnLinks>
       <LearnLink to="/docs/monitor/view-active-alarms" title="View active health alarms" />
