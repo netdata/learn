@@ -117,7 +117,7 @@ function normalizeLinks(pages) {
       if (url.includes('docs/get-started.mdx') || url.includes('docs/overview') || url.includes('docs/collect/') || 
           url.includes('docs/configure/') || url.includes('docs/export/') || url.includes('docs/configure/') || 
           url.includes('docs/monitor/') || url.includes('docs/quickstart/') || url.includes('docs/store/') ||  
-          url.includes('docs/metrics-storage-management') || url.includes('docs/visualize/')) {
+          url.includes('docs/metrics-storage-management') || url.includes('docs/dashboard') || url.includes('docs/visualize/')) {
         return `](${url})`
       }
 
