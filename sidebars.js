@@ -76,16 +76,13 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Store',
+          label: 'Metrics storage and management',
           items: [
             'store/distributed-data-architecture',
             'store/change-metrics-storage',
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Export',
-          items: [
+            'metrics-storage-management/how-streaming-works',
+            'metrics-storage-management/enable-streaming',
+            'metrics-storage-management/reference-streaming',
             'export/external-databases',
             'export/enable-connector',
           ]
@@ -536,7 +533,6 @@ module.exports = {
               ]
             },
             'agent/registry',
-            'agent/streaming',
             {
               type: 'category',
               label: 'Web',

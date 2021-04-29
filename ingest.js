@@ -116,8 +116,8 @@ function normalizeLinks(pages) {
       // documents in various `/docs/X` folders.
       if (url.includes('docs/get-started.mdx') || url.includes('docs/overview') || url.includes('docs/collect/') || 
           url.includes('docs/configure/') || url.includes('docs/export/') || url.includes('docs/configure/') || 
-          url.includes('docs/monitor/') || url.includes('docs/quickstart/') ||url.includes('docs/store/') || 
-          url.includes('docs/visualize/')) {
+          url.includes('docs/monitor/') || url.includes('docs/quickstart/') || url.includes('docs/store/') ||  
+          url.includes('docs/metrics-storage-management') || url.includes('docs/visualize/')) {
         return `](${url})`
       }
 
@@ -313,6 +313,9 @@ async function writePages(pages) {
     } else if (fullPath.includes('agent/store')) {
       fullPath = fullPath.replace('docs/agent/store', 'docs/store/');
       fullDir = fullDir.replace('docs/agent/store', 'docs/store/');
+    } else if (fullPath.includes('agent/metrics-storage-management')) {
+      fullPath = fullPath.replace('docs/agent/metrics-storage-management', 'docs/metrics-storage-management/');
+      fullDir = fullDir.replace('docs/agent/metrics-storage-management', 'docs/metrics-storage-management/');
     } else if (fullPath.includes('agent/export') && !fullPath.includes('agent/exporting')) {
       fullPath = fullPath.replace('docs/agent/export', 'docs/export/');
       fullDir = fullDir.replace('docs/agent/export', 'docs/export/');

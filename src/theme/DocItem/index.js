@@ -195,24 +195,6 @@ function DocItem(props) {
             <div className="margin-vert--lg">
               <DocPaginator metadata={metadata} />
             </div>
-            {/* BEGIN EDIT */}
-            {!isGuide && !isGet &&
-              <div className={clsx(styles.CTAdoc)}>
-                <div className={clsx(styles.CTAtext)}>
-                  <h2>Monitor everything in real time – for free</h2>
-                  <p>Troubleshoot slowdowns and anomalies in your infrastructure with thousands of per-second metrics, meaningful visualizations, and insightful health alarms with zero configuration.</p>
-                  <Link to="https://netdata.cloud/get-netdata" className="button button--primary" target="_blank">Get Netdata</Link>
-                </div>
-                <SVG 
-                    className={clsx(
-                      styles.CTAimg
-                    )} 
-                    src="/img/cta.svg"
-                    alt="Get Netdata" 
-                  />
-              </div>
-            }
-            {/* END EDIT */}
           </div>
         </div>
         {!hideTableOfContents && DocContent.toc && <div className="col col--3">

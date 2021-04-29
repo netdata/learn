@@ -1,6 +1,7 @@
 ---
 title: Netdata Docs
-description: Use Netdata's documentation to start your journey to being an expert in monitoring and troubleshooting. Solve problems, read reference docs, and 
+description: Use Netdata's documentation to start your journey to being a monitoring expert. Learn about essential features, solve problems quickly, and start troubleshooting.
+sidebar_label: 'Home'
 custom_edit_url: null
 id: docs
 slug: /
@@ -84,26 +85,14 @@ work with your existing monitoring stack, entirely for free.
       <LearnLink to="/docs/monitor/enable-notifications" title="Enable notifications" />
     </LearnLinks>
   </LearnBox>
-  {/* <LearnBox 
-    title="Troubleshoot"
-    description="Use visualizations, alarms, thousands of real-time metrics, and sophisticated tooling to help you identify, diagnose, and solve complex performance issues on your node or across your infrastructure.">
-    <LearnLinks>
-      <LearnLink to="/docs/troubleshoot/visual-anomaly-detection" title="Visually detect anomalies" />
-      <LearnLink to="/docs/troubleshoot/metric-correlations" title="Root cause analysis with Metric Correlations" />
-    </LearnLinks>
-  </LearnBox> */}
   <LearnBox 
-    title="Store"
-    description="Netdata's distributed data architecture simplifies how you store metrics and dramatically reduces the cost compared to centralizing per-second metrics in one place. Configure your nodes to store the metrics you need.">
+    title="Metrics storage and management"
+    description="Netdata's distributed data architecture simplifies metrics storage and gives you the flexibility to stream or export metrics to create any long-term storage solution.">
     <LearnLinks>
       <LearnLink to="/docs/store/distributed-data-architecture" title="Distributed data architecture" />
       <LearnLink to="/docs/store/change-metrics-storage" title="Change how long Netdata stores metrics" />
-    </LearnLinks>
-  </LearnBox>
-  <LearnBox 
-    title="Export"
-    description="Send Netdata's metrics to other time-series databases to extend and improve your monitoring stack with per-second metrics. Archive or correlate metrics using other platforms.">
-    <LearnLinks>
+      <LearnLink to="/docs/metrics-storage-management/how-streaming-works" title="How metrics streaming works" />
+      <LearnLink to="/docs/metrics-storage-management/enable-streaming" title="Enable streaming between nodes" />
       <LearnLink to="/docs/export/external-databases" title="Export metrics to external time-series databases" />
       <LearnLink to="/docs/export/enable-connector" title="Enable an exporting connector" />
     </LearnLinks>

@@ -200,7 +200,7 @@ When deciding which framework to use, please consider our approach:
 
 To contribute a new collector (or improve an existing one):
 1. Fork the [netdata/netdata](https://github.com/netdata/netdata) repository
-   1) If it's the Golang repository, fork the [netdata/go.d](https://github.com/netdata/go.d.plugin) repository
+   1. If it's the Golang repository, fork the [netdata/go.d](https://github.com/netdata/go.d.plugin) repository
 2. Download the forked repository locally: `git clone https://github.com/odyslam/netdata --recursive`. Pay attention to the `--recursive` flag which is required to download all the submodules as well.
    1. If it's about Go.d: `git clone https://github.com/odyslam/go.d`.
 3. Open the directory using VS Code
@@ -248,11 +248,11 @@ To create a new alarm, we can look to:
 - Use the [custom endpoint](/docs/agent/health/notifications/custom) notification as boilerplate.
 
 
-#### Code of Conduct and CLA
+## Code of Conduct and CLA
 
 We expect all contributors to abide by the [Contributor Covenant Code of Conduct](/contribute/code-of-conduct). For a pull request to be accepted, you will also need to accept the [Netdata contributors license agreement](/contribute/license), as part of the PR process.
 
-#### Performance and efficiency
+## Performance and efficiency
 
 Everything on Netdata is about efficiency. We need Netdata to always be the most lightweight monitoring solution available. We may reject to merge PRs that are not optimal in resource utilization and efficiency.
 
@@ -260,7 +260,7 @@ Of course there are cases that such technical excellence is either not reasonabl
 
 Don't worry, our engineers will guide you through the process in measuring the performance of the contributed feature.
 
-#### Meaningful metrics
+## Meaningful metrics
 
 Unlike other monitoring solutions, Netdata requires all metrics collected to have some structure attached to them. So, Netdata metrics have a name, units, belong to a chart that has a title, a family, a context, belong to an application, etc.
 
@@ -268,21 +268,21 @@ This structure is what makes Netdata different. Most other monitoring solution c
 
 So, Netdata requires all metrics to have a meaning at the time they are collected.  We will reject to merge PRs that loosely collect just a "bunch of metrics", but we are very keen to help you fix this.
 
-#### Netdata is a distributed application
+## Netdata is a distributed application
 
 Netdata is a distributed monitoring application. A few basic features can become quite complicated for such applications. We may reject features that alter or influence the nature of Netdata, though we usually discuss the requirements with contributors and help them adapt their code to be better suited for Netdata.
 
-#### Documentation
+## Documentation
 
 Your contributions should be bundled with related documentation to help users understand how to use the features you introduce.
 
 Before you contribute any documentation for your feature, please take a look at [contributing documentation](#improve-documentation).
 
-#### Maintenance
+## Maintenance
 
 When you contribute code to Netdata, you are automatically accepting that you will be responsible for maintaining that code in the future. So, if users need help, or report bugs, we will invite you to the related github issues to help them or fix the issues or bugs of your contributions.
 
-#### Code Style
+## Code Style
 
 The single most important rule when writing code is this: *check the surrounding code and try to imitate it*. [Reference](https://developer.gnome.org/programming-guidelines/stable/c-coding-style.html.en)
 
@@ -296,7 +296,7 @@ For C contributions in particular, we try to respect the [Linux kernel style](ht
 -   Allow opening brace at the end of a function declaration: `function() {`.
 -   Allow trailing comments
 
-### Your first pull request
+## Your first pull request
 
 There are several guides for pull requests, such as the following:
 
@@ -307,7 +307,7 @@ However, it's not always that simple. Our [PR approval process](#pr-approval-pro
 
 One thing you will need to do only for your first pull request in Netdata is to accept the CLA. Until you do, the automated check for the CLA acceptance will be showing as failed.
 
-#### PR Guidelines
+### PR Guidelines
 
 PR Titles:
 
@@ -339,7 +339,7 @@ For good examples have a look at other projects like:
 - https://github.com/microsoft/vscode/commits/master
 - Also see the Linux Kernel and Git projects as well as good examples.
 
-#### Commit messages when PRs are merged
+### Commit messages when PRs are merged
 
 When a PR gets squashed and merged into master, the title of the commit message (first line) must be the PR title
 followed by the PR number.

@@ -131,6 +131,7 @@ function DocSidebarItemLink({
     href,
     label
   } = item;
+
   const isActive = isActiveSidebarItem(item, activePath);
   return <li className="menu__list-item" key={label}>
       <Link className={clsx('menu__link', {
