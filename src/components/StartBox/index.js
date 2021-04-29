@@ -13,7 +13,7 @@ export const Start = ({children}) => (
 export const StartBox = ({to, title, description, cta, image}) => (
   <Link to={to} className={clsx(styles.StartBox, image && styles.StartBoxImg)}>
     <h2>{title}</h2>
-    <p>{description}</p>
+    <p dangerouslySetInnerHTML={{ __html: description }} />
     {cta && <span className={clsx('button button--primary', styles.StartCTA)}>{cta}</span>}
     {image &&
       <svg viewBox="0 0 134 21" fill="none" xmlns="http://www.w3.org/2000/svg">

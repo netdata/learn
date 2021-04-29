@@ -168,7 +168,7 @@ function Home() {
                   <StartBox 
                     to="/docs/get-started/"
                     title="Get started"
-                    description="Download and install the open-source Netdata monitoring agent on physical/virtual servers, Linux (Ubuntu/Debian/CentOS/etc), Docker, Kubernetes, and many others, often with one command."
+                    description="Install the open-source monitoring agent on physical/virtual systems running most Linux distributions (Ubuntu, Debian, CentOS, and more), container platforms (Kubernetes clusters, Docker), and many other operating systems, with no <code>sudo</code> required."
                     cta="Install now"
                     image={true} />
                 </div>

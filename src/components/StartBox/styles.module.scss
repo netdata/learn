@@ -9,6 +9,7 @@
   transition: ease-in-out all 0.15s;
   backface-visibility: hidden;
   overflow: hidden;
+  box-shadow: 0 10px 15px -3px hsla(198,23%,3%,0.06),0 4px 6px -2px hsla(198,23%,3%,0.12);
 
   @media (max-width: 996px) {
     grid-column-end: span 4;
@@ -71,11 +72,11 @@
 
 .StartBoxImg {
   svg {
-    opacity: 0.2;
+    opacity: 0.1;
     position: absolute;
     left: 0;
     bottom: -40px;
-    width: 820px;
+    width: 940px;
     z-index: 0;
   }
 }
