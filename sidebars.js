@@ -226,6 +226,7 @@ module.exports = {
                             'agent/collectors/python.d.plugin/beanstalk',
                             'agent/collectors/python.d.plugin/boinc',
                             'agent/collectors/python.d.plugin/ceph',
+                            'agent/collectors/python.d.plugin/changefinder',
                             'agent/collectors/python.d.plugin/chrony',
                             'agent/collectors/python.d.plugin/couchdb',
                             'agent/collectors/python.d.plugin/dns_query_time',
