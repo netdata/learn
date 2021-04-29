@@ -304,6 +304,9 @@ async function writePages(pages) {
     } else if (fullPath.includes('docs/agent/collect') && !fullPath.includes('agent/collectors')) {
       fullPath = fullPath.replace('docs/agent/collect', 'docs/collect/');
       fullDir = fullDir.replace('docs/agent/collect', 'docs/collect/');
+    } else if (fullPath.includes('agent/dashboard')) {
+      fullPath = fullPath.replace('docs/agent/dashboard', 'docs/dashboard/');
+      fullDir = fullDir.replace('docs/agent/dashboard', 'docs/dashboard/');
     } else if (fullPath.includes('agent/visualize')) {
       fullPath = fullPath.replace('docs/agent/visualize', 'docs/visualize/');
       fullDir = fullDir.replace('docs/agent/visualize', 'docs/visualize/');
