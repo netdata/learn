@@ -10,7 +10,7 @@
 .hero {
   position: relative;
   // overflow: hidden;
-  padding: 6rem 0 10rem;
+  padding: 6rem 0 4rem;
   background: linear-gradient(to bottom, white, #f1f2fb);
   overflow: hidden;
 
@@ -31,7 +31,7 @@
     }
 
     .heroSubHead {
-      font-size: 110%;
+      font-size: 120%;
       margin-bottom: 0;
     }
   }
@@ -81,7 +81,7 @@
  */
 
 .Get {
-  margin-top: -6rem;
+  margin-top: 4rem;
   z-index: 100;
   position: relative;
 
