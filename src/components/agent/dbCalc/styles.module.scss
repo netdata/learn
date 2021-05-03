@@ -1,0 +1,171 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.container {
+  max-width: 1600px;
+}
+
+.dbCalc {
+  align-items: center;
+  margin-top: calc(var(--ifm-spacing-vertical) * 2);
+  margin-bottom: calc(var(--ifm-spacing-vertical) * 2);
+}
+
+.calcRow {
+  padding: 1rem 0;
+
+  border-top: 0;
+  border-left: 1px solid #AEB3B7;
+  border-bottom: 1px solid #AEB3B7;
+  border-right: 1px solid #AEB3B7;
+  font-size: 90%;
+}
+
+.calcRow:first-of-type {
+  border-top: 1px solid #AEB3B7;
+  border-radius: 2px 2px 0 0;
+}
+
+.calcInput {
+  display: flex !important;
+  align-items: center;
+}
+
+.calcInput input {
+  max-width: 100px;
+  margin: 0 2rem 0 0;
+  padding: 0.8rem 1rem;
+
+  border: 1px solid #AEB3B7;
+  border-radius: 2px;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .calcInput {
+    order: 2;
+    margin-top: 1rem;
+  }
+}
+
+.calcInstruction label {
+  font-size: 110%;
+  font-weight: 500;
+}
+
+.calcInstruction {
+  display: flex !important;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.calcInstruction p {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.calcInstruction p code {
+  font-size: 85%;
+}
+
+.calcInstruction img {
+  margin-left: 1rem;
+}
+
+.calcInstruction img.fullWidth {
+  flex: 0 0 100%;
+
+  margin-top: 2rem;
+  margin-left: 0;
+}
+
+.calcWarn {
+  margin-bottom: 2rem;
+  padding: 1rem;
+
+  background: #F1F2F3;
+  border-radius: var(--ifm-global-radius);
+  color: #FF4136;
+
+  p {
+    margin-bottom: 0;
+    
+    font-size: 80%;
+  }
+}
+
+.calcResults {
+  margin-top: calc(var(--ifm-spacing-vertical) * 2);
+  
+  // font-size: 105%;
+
+  // p code {
+  //   font-size: 1rem;
+  // }
+
+}
+
+@media screen and (max-width: 996px) {
+  .calcResults {
+    margin-top: 4rem;
+  }
+}
+
+.calcFinal {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: calc(var(--ifm-spacing-vertical) * 2);
+  // padding-bottom: calc(var(--ifm-spacing-vertical) * 2);
+
+  p {
+    flex: 0 0 100%;
+  }
+
+  span {
+    flex: 0 0 50%;
+    font-size: 120%;
+  }
+}
+
+.calcConfig {
+  margin-bottom: calc(var(--ifm-spacing-vertical) * 2);
+  // padding-bottom: calc(var(--ifm-spacing-vertical) * 2);
+
+  div[class^='codeBlockContent'] {
+    margin-bottom: var(--ifm-paragraph-margin-bottom);
+  }
+
+  div[class^='codeBlockContent'] button {
+    display: none !important;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.calcNotes {
+  background: --var(--ifm-background);
+  padding: 1rem;
+  font-size: 80%;
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+
+
+/* 
+ * Dark mode overrides
+ */
+
+html[data-theme='dark'] {
+  .calcInput input {
+    background: var(--ifm-background-dark);
+    color: white;
+  }
+}

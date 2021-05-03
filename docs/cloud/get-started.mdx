@@ -1,0 +1,88 @@
+---
+title: Get started with Cloud
+description: Ready to get real-time visibility into your entire infrastructure? This guide will help you get started on Netdata Cloud.
+image: /img/seo/cloud_get-started.png
+custom_edit_url: null
+---
+
+Ready to get real-time visibility into your entire infrastructure with Netdata Cloud? This guide will walk you through
+the onboarding process, such as setting up your Space and War Room and claiming your first nodes.
+
+## Before you start
+
+Before you get started with Cloud, you should have at least one Agent installed. See our [installation
+guide](/docs/agent/packaging/installer/) for details.
+
+If you already have an Agent, make sure to update it to v1.22 or higher. Read the [updating
+documentation](/docs/agent/packaging/installer/update/) for information on how to update based on the method you used to
+install that Agent.
+
+## Begin the onboarding process
+
+Get started by signing in to Netdata Cloud. Read the [sign in documentation](/docs/cloud/manage/sign-in) for details.
+
+<p><a href="https://app.netdata.cloud" className="button button--primary button--lg">Sign in to Cloud</a></p>
+
+Once signed in with your preferred method, you begin onboarding by creating your first [Space](/docs/cloud/spaces) and [War Room](/docs/cloud/war-rooms), both of which
+help you organize your team and the many systems that make up your infrastructure. For example, you can put product and
+infrastructure SRE teams in separate Spaces, and then use War Rooms to group Agent-monitored nodes by their service
+(`nginx`), purpose (`webservers`), or physical location (`IAD`).
+
+Don't worry—you can always add more Spaces and War Rooms later if you decide to reorganize how you use Netdata Cloud.
+
+## Claim a node
+
+You can claim any node with a running Agent, whether it's a physical or virtual machine, a Docker container, IoT device,
+and more.
+
+The claiming process allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud. By
+going through the process of claiming a node, you prove you have write and administrative access to that node. Because
+no one can claim a node they don't have write and administrative access to, the claiming process ensures you remain in
+full control of your nodes and their metrics.
+
+View our [node claiming documentation](/docs/agent/claim) for details about why we implemented the claiming process and
+the encryption methods we use to secure your data in transit. Netdata Cloud does not store or log the metrics or alarm
+status of your Agents.
+
+There are two important notes regarding claiming:
+
+-   _You can only claim any given node in a single Space_. You can, however, add that claimed node to multiple War Rooms
+    within that one Space.
+-   You must repeat the claiming process on every node you want to add to Netdata Cloud.
+
+To claim a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
+Cloud into your node's terminal. The claiming script takes care of the rest. If you want to claim an agent without using
+root privileges, see our [claiming documentation](/docs/agent/claim#claim-an-agent-without-root-privileges).
+
+```bash
+sudo netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.cloud
+```
+
+Hit **Enter**. The script should return `Agent was successfully claimed.`. If the claiming script returns errors, or if
+you don't see the node in your Space after 60 seconds, see the [troubleshooting
+information](/docs/agent/claim/#troubleshooting).
+
+Repeat this process with every node you want to add to Cloud during onboarding. You can also add more nodes once you've
+finished onboarding.
+
+<details>
+<summary>See how claiming nodes after onboarding works</summary>
+<iframe width="820" height="460" src="https://www.youtube.com/embed/UAzVvhMab8g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</details>
+
+### Alternatives and other operating systems
+
+**Docker**: You can execute the claiming script to an Agent running as a Docker container, or attach the claiming script
+when creating an Agent container for the first time, such as when you're spinning up ephemeral containers. See the
+[claim an Agent running in Docker](/docs/agent/claim#claiming-an-agent-running-in-docker) documentation for details.
+
+**With a proxy**: If your node uses a proxy to connect to the internet, you need to configure the Agent's proxy
+settings. See our [claiming through a proxy](/docs/agent/claim#claiming-through-a-proxy) documentation for details.
+
+## What's next?
+
+You finish onboarding by [inviting members of your team](/docs/cloud/manage/invite-your-team) to your Space. You
+can also invite them later. At this point, you're ready to use Cloud.
+
+Next, learn about the organization and interfaces behind [Spaces](/docs/cloud/spaces) and [War
+Rooms](/docs/cloud/war-rooms).

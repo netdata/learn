@@ -1,0 +1,148 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Import TailwindCSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ibm-plex-sans-regular - latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('/font/ibm-plex-sans-v8-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/font/ibm-plex-sans-v8-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* ibm-plex-sans-500 - latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('/font/ibm-plex-sans-v8-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/font/ibm-plex-sans-v8-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* ibm-plex-sans-700 - latin */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('/font/ibm-plex-sans-v8-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/font/ibm-plex-sans-v8-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* ibm-plex-mono-regular - latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('/font/ibm-plex-mono-v6-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/font/ibm-plex-mono-v6-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+.body {
+  @apply font-sans text-text;
+}
+
+.container {
+  @apply max-w-screen-lg lg:max-w-screen-xl;
+}
+
+.navbar__brand {
+  @apply pr-4;
+}
+
+.navbar__logo {
+  @apply h-6 mr-2;
+}
+
+.markdown h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold;
+}
+
+.markdown h1 {
+  font-size: var(--ifm-h1-font-size);
+}
+
+.markdown h2 {
+  font-size: var(--ifm-h2-font-size);
+}
+
+.markdown h3 {
+  font-size: var(--ifm-h3-font-size);
+}
+
+.markdown h4 {
+  font-size: var(--ifm-h4-font-size);
+}
+
+.markdown h5 {
+  font-size: var(--ifm-h5-font-size);
+}
+
+.markdown h6 {
+  font-size: var(--ifm-h6-font-size);
+}
+
+.markdown a:not[class*="anchor"] {
+  @apply font-medium border-b border-text;
+}
+
+.markdown code {
+  @apply text-pink-light font-bold border-0;
+}
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-background-color: #fdfdfd;
+
+  --ifm-color-primary: #00AB44;
+  --ifm-color-primary-dark: #009a3d;
+  --ifm-color-primary-darker: #00913a;
+  --ifm-color-primary-darkest: #007830;
+  --ifm-color-primary-light: #00bc4b;
+  --ifm-color-primary-lighter: #00c54e;
+  --ifm-color-primary-lightest: #00CB51;
+
+  --ifm-font-color-base: #1d1d40;
+
+  --ifm-link-hover-decoration: none;
+
+  /* --ifm-font-family-base: 'IBM Plex Sans', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ifm-font-family-monospace: 'IBM Plex Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; */
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.8;
+  
+  --ifm-heading-font-weight: 600;
+
+  --ifm-code-font-size: 105%;
+  --ifm-pre-padding: 2rem;
+}
+
+html[data-theme="dark"]:root {
+  --ifm-background-color: #191927;
+  --ifm-navbar-background-color: #191927;
+
+  --ifm-font-color-base: #f5f6f7;
+
+  --ifm-link-color: var(--ifm-color-primary-lightest);
+}
+
+
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}

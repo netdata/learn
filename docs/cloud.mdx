@@ -1,0 +1,100 @@
+---
+title: Netdata Cloud reference docs
+description: Netdata Cloud is real-time visibility for entire infrastructures. View key metrics, insightful charts, and active alarms from all your nodes.
+custom_edit_url: null
+---
+
+import { StartBox } from '../src/components/StartBox/'
+import { Discover, DiscoverBox } from '../src/components/agent/DiscoverBox/'
+
+This is the reference documentation for the Netdata Cloud web application.
+
+See our [core docs](/docs) for comprehensive docs and guides for using Netdata for monitoring, visualization, and
+troubleshooting. Read [_What is Netdata?_](/docs/overview/what-is-netdata) for details about how Netdata works and how
+it's different from other monitoring solutions.
+
+<StartBox 
+  to="/docs/cloud/get-started"
+  title="Get started with Netdata Cloud"
+  description="Ready to get real-time visibility into your entire infrastructure? This guide will help you get started on Netdata Cloud."
+  image={true} />
+
+## Spaces and War Rooms
+
+<Discover>
+  <DiscoverBox 
+    href="/docs/cloud/spaces" 
+    title="Spaces">
+    Create your first Space or further organize your infrastructure into logical groups.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/war-rooms" 
+    title="War Rooms">
+    War Rooms are flexible containers for organizing nodes and viewing key metrics in real time.
+  </DiscoverBox>
+</Discover>
+
+## Visualizations
+
+<Discover>
+  <DiscoverBox 
+    href="/docs/cloud/visualize/overview" 
+    title="Overview">
+    View aggregated metrics, in real time, from any number of nodes using composite charts and the familiar Netdata dashboard.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/visualize/nodes" 
+    title="Nodes view">
+    Choose and monitor key metrics from a War Room's node, along with at-a-glance health status.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/visualize/dashboards" 
+    title="Create new dashboards">
+    Build new dashboards using charts from any number of distributed nodes for targeted visual anomaly detection or incident response.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/visualize/kubernetes" 
+    title="Kubernetes visualizations">
+    Comprehensive Kubernetes cluster monitoring, including resource utilization service-level metrics from inside individual containers.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/insights/metric-correlations" 
+    title="Metric Correlations">
+    Quickly find metrics and charts related to an anomaly or particular window of interest that you want to explore further.
+  </DiscoverBox>
+</Discover>
+
+## Health monitoring
+
+<Discover>
+  <DiscoverBox 
+    href="/docs/cloud/monitoring/notifications" 
+    title="Alarm notifications">
+    Netdata Cloud can send notifications to your team whenever a node triggers one of its alarms.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/monitoring/alarms"
+    title="Alarms">
+    View the health and alarm status for your entire infrastructure so you and your team don't miss a single anomaly or alarm.
+  </DiscoverBox>
+</Discover>
+
+## Manage and discover more
+
+<Discover>
+  <DiscoverBox 
+    href="/docs/cloud/manage/sign-in" 
+    title="Sign in with email, Google, or GitHub">
+    Create a new account or access your existing account with secure passwordless authentication or OAuth.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/manage/invite-your-team" 
+    title="Invite your team">
+    Invite your entire SRE, DevOPs, or ITOps team to Netdata Cloud to give everyone insights into your infrastructure from a single pane of glass.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud/manage/themes" 
+    title="Choose your Netdata Cloud theme">
+    Switch between Light, Blue, and Dark themes in Netdata Cloud to match your personal visualization preferences.
+  </DiscoverBox>
+</Discover>

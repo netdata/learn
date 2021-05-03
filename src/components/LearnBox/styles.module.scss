@@ -1,0 +1,67 @@
+.LearnContainer {
+  margin-top: calc(2 * var(--ifm-paragraph-margin-bottom));
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr);
+  // grid-auto-rows: 1fr;
+}
+
+.LearnBox {
+  position: relative;
+  padding: 2rem;
+  border: 1px solid var(--ifm-contents-border-color);
+  border-radius: 5px;
+  grid-column-end: span 2;
+  transition: ease-in-out all 0.15s;
+  backface-visibility: hidden;
+  display: flex;
+  flex-flow: column;
+  box-shadow: 0 10px 15px -3px hsla(198,23%,3%,0.06),0 4px 6px -2px hsla(198,23%,3%,0.12);
+
+  header {
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: var(--ifm-font-color-base);
+    font-size: 130%;
+    transition: ease-in-out all 0.15s;
+  }
+  
+  p {
+    margin-bottom: 0;
+    color: var(--ifm-font-color-base);
+    font-size: 95%;
+    font-weight: 400;
+  }
+
+  button {
+    position: absolute;
+    bottom: var(--ifm-spacing-horizontal);
+    left: var(--ifm-spacing-horizontal);
+  }
+
+  @media (max-width: 700px) {
+    grid-column-end: span 4;
+  }
+}
+
+.LearnLinks {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.LearnLink {
+  // margin-top: calc(3 * var(--ifm-list-item-margin));
+  font-size: 110%;
+  line-height: 1.3;
+
+  + li {
+    margin-top: calc(3 * var(--ifm-list-item-margin)) !important;
+  }
+}
+
+html[data-theme='dark'] .LearnBox {
+  background: linear-gradient(90deg, #13172d, #191927);
+}

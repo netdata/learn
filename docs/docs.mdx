@@ -1,0 +1,118 @@
+---
+title: Netdata Docs
+description: Use Netdata's documentation to start your journey to being a monitoring expert. Learn about essential features, solve problems quickly, and start troubleshooting.
+sidebar_label: 'Home'
+custom_edit_url: null
+id: docs
+slug: /
+---
+
+import { StartBox } from '../src/components/StartBox/'
+import { Learn, LearnBox, LearnLinks, LearnLink } from '../src/components/LearnBox/'
+import { Discover, DiscoverBox } from '../src/components/agent/DiscoverBox/'
+
+_Welcome!_ You’ve arrived at Netdata's documentation.
+
+Netdata is a monitoring, visualization, and troubleshooting solution for systems, containers, services, and
+applications. Below, find links to solution- and action-based docs for Netdata's many features and capabilities. Think
+of it as the table of contents to becoming an expert in monitoring and troubleshooting.
+
+<StartBox 
+  to="/docs/get-started" 
+  title="Get started" 
+  description="Install the open-source monitoring agent on physical/virtual systems running most Linux distributions (Ubuntu, Debian, CentOS, and more), container platforms (Kubernetes clusters, Docker), and many other operating systems, with no <code>sudo</code> required." 
+  cta="Install now"
+  image={true} />
+
+<Learn>
+  <LearnBox 
+    title="Overview"
+    description="Learn about Netdata's core features, how it's different, and how it integrates with your existing monitoring stack.">
+    <LearnLinks>
+      <LearnLink to="/docs/overview/what-is-netdata" title="What is Netdata?" />
+      <LearnLink to="/docs/overview/why-netdata" title="Why use Netdata?" />
+      <LearnLink to="/docs/overview/netdata-monitoring-stack" title="How to use Netdata with your existing stack" />
+    </LearnLinks>
+  </LearnBox>
+  <LearnBox 
+    title="Quickstart"
+    description="Five-minute introductions into how you'll visualize metrics and troubleshoot issues using Netdata's tools based how many nodes you need to monitor.">
+    <LearnLinks>
+      <LearnLink to="/docs/get-started" title="Get started with Netdata" />
+      <LearnLink to="/docs/quickstart/single-node" title="Monitor a single node" />
+      <LearnLink to="/docs/quickstart/infrastructure" title="Monitor an infrastructure" />
+    </LearnLinks>
+  </LearnBox>
+  <LearnBox 
+    title="Configuration"
+    description="Learn how to set up the Netdata Agent on one or more nodes to maximize the immediate value you get from monitoring your systems, containers, and applications.">
+    <LearnLinks>
+      <LearnLink to="/docs/configure/nodes" title="Configure the Netdata Agent" />
+      <LearnLink to="/docs/configure/common-changes" title="Common configuration changes" />
+      <LearnLink to="/docs/configure/start-stop-restart" title="Start, stop, or restart the Netdata Agent" />
+      <LearnLink to="/docs/configure/secure-nodes" title="Secure your nodes" />
+    </LearnLinks>
+  </LearnBox>
+  <LearnBox 
+    title="Dashboard"
+    description="Follow our guides on interacting with Netdata's dashboard and charts so you can quickly drill down on anomalies and discover their root cause.">
+    <LearnLinks>
+      <LearnLink to="/docs/dashboard/how-dashboard-works" title="How the dashboard works" />
+      <LearnLink to="/docs/dashboard/interact-charts" title="Interact with charts" />
+      <LearnLink to="/docs/visualize/overview-infrastructure" title="See an overview of your infrastructure" />
+      <LearnLink to="/docs/visualize/create-dashboards" title="Create new dashboards" />
+    </LearnLinks>
+  </LearnBox>
+  <LearnBox 
+    title="Data collection"
+    description="Learn what per-second metrics Netdata can collect using its 300+ built-in collectors, full compatibility with Prometheus endpoints, and zero configuration.">
+    <LearnLinks>
+      <LearnLink to="/docs/collect/how-collectors-work" title="How Netdata's metrics collectors work" />
+      <LearnLink to="/docs/collect/enable-configure" title="Enable or configure a collector" />
+      <LearnLink to="/docs/collect/system-metrics" title="System metrics" />
+      <LearnLink to="/docs/collect/container-metrics" title="Container metrics" />
+      <LearnLink to="/docs/collect/application-metrics" title="Application metrics" />
+      <LearnLink to="/docs/agent/collectors/collectors" title="Supported collectors list" />
+    </LearnLinks>
+  </LearnBox>
+  <LearnBox 
+    title="Alarms and notifications"
+    description="Leverage Netdata's health watchdog and hundreds of pre-configured alarms to receive notifications on your favorite platforms whenever an anomaly affects the health or performance of your infrastructure.">
+    <LearnLinks>
+      <LearnLink to="/docs/monitor/view-active-alarms" title="View active health alarms" />
+      <LearnLink to="/docs/monitor/configure-alarms" title="Configure health alarms" />
+      <LearnLink to="/docs/monitor/enable-notifications" title="Enable notifications" />
+    </LearnLinks>
+  </LearnBox>
+  <LearnBox 
+    title="Metrics storage and management"
+    description="Netdata's distributed data architecture simplifies metrics storage and gives you the flexibility to stream or export metrics to create any long-term storage solution.">
+    <LearnLinks>
+      <LearnLink to="/docs/store/distributed-data-architecture" title="Distributed data architecture" />
+      <LearnLink to="/docs/store/change-metrics-storage" title="Change how long Netdata stores metrics" />
+      <LearnLink to="/docs/metrics-storage-management/how-streaming-works" title="How metrics streaming works" />
+      <LearnLink to="/docs/metrics-storage-management/enable-streaming" title="Enable streaming between nodes" />
+      <LearnLink to="/docs/export/external-databases" title="Export metrics to external time-series databases" />
+      <LearnLink to="/docs/export/enable-connector" title="Enable an exporting connector" />
+    </LearnLinks>
+  </LearnBox>
+</Learn>
+
+## Reference docs
+
+<Discover>
+  <DiscoverBox 
+    href="/docs/agent" 
+    title="Agent">
+    Comprehensive documentation for the free, open-source Netdata monitoring Agent.
+  </DiscoverBox>
+  <DiscoverBox 
+    href="/docs/cloud" 
+    title="Cloud">
+    Details on Netdata Cloud's features, administrative options, and customizing your Cloud experience.
+  </DiscoverBox>
+</Discover>
+
+## Contribute to Netdata
+
+To learn more about contributing to an open-source Netdata project, see our [contribute doc](/contribute).

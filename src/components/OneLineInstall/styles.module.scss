@@ -1,0 +1,57 @@
+.Container * {
+  margin: 0 !important;
+  border-radius: 5px 5px 0 0 !important;
+}
+
+.Container button {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.installCheckboxes {
+  z-index: 10;
+  position: relative;
+  padding: 1rem;
+  border-right: 1px solid var(--ifm-color-gray-300);
+  border-bottom: 1px solid var(--ifm-color-gray-300);
+  border-left: 1px solid var(--ifm-color-gray-300);
+  border-radius: 0 0 2px 2px;
+}
+
+.installCheckbox input[type="checkbox"] {
+  opacity: 0;
+}
+
+.installCheckbox label::before{
+  position: absolute;
+  top: 3px;
+  left: -20px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 1px solid var(--ifm-color-gray-300);
+  border-radius: 2px;
+  content: "";
+}
+
+.installCheckbox label::after {
+  position: absolute;
+  top: 7px;
+  left: -17px;
+  display: inline-block;
+  width: 9px;
+  height: 6px;
+  border-bottom: 2px solid var(--ifm-color-primary);
+  border-left: 2px solid var(--ifm-color-primary);
+  content: "";
+  transform: rotate(-45deg);
+}
+
+.installCheckbox input[type="checkbox"] + label::after {
+  content: none;
+}
+
+.installCheckbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
