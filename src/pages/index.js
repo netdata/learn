@@ -5,6 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { Grid, Box } from '@site/src/components/Grid'
 import { News } from '@site/src/data/News'
 import HeroImage from '/static/img/hero.svg'
+import { Release } from '../data/News'
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -55,9 +56,9 @@ export default function Home() {
             Thoughtful guides to walk you through collecting the right metrics, monitoring your infrastructure, troubleshooting with Netdata's powerful visualizations, and much more.
           </Box>
         </Grid>
-        <div id="updates" className="relative pb-8">
-          <h2 className="z-10 relative text-xl lg:text-3xl font-semibold mb-6">What's new at Netdata?</h2>
+        <div id="updates" className="relative flex flex-row flex-wrap pb-8">
           <div className="relative w-full lg:w-3/4">
+            <h2 className="z-10 relative text-xl lg:text-3xl font-semibold mb-6">What's new at Netdata?</h2>
             <div className="z-0 absolute -top-12 -bottom-8 left-1.5">
               <div className="z-10 relative w-4 h-16 top-0 bg-gradient-to-t from-transparent to-white dark:to-gray-900"></div>
               <div className="z-0 absolute top-0 w-1 h-full bg-green-lighter bg-opacity-20"></div>
@@ -79,6 +80,15 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="flex-1 markdown prose-lg mt-16">
+            <h2 className="z-10 relative text-lg lg:text-2xl font-semibold mb-6">Latest major release: <code>v1.30.0</code></h2>
+            <ul>
+              {Release.map((props, idx) => (
+                <li key={props} dangerouslySetInnerHTML={{ __html: props }}></li>
+              ))}
+            </ul>
+            <p>Read the <Link to="https://github.com/netdata/netdata/releases">release notes</Link> or <Link to="/docs/agent/packaging/installer/update"> update now</Link>.</p>
           </div>
         </div>
       </main>

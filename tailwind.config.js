@@ -91,14 +91,17 @@ module.exports = {
           css: {
             color: theme('colors.gray.200'),
             strong: { color: theme('colors.gray.100') },
-            h1: { color: theme('colors.gray.100') },
-            h2: { color: theme('colors.gray.100') },
-            h3: { color: theme('colors.gray.100') },
-            h4: { color: theme('colors.gray.100') },
-            h5: { color: theme('colors.gray.100') },
-            h6: { color: theme('colors.gray.100') },
+            code: {
+              backgroundColor: '#1e1e1e'
+            },
+            h1: { color: theme('colors.gray.200') },
+            h2: { color: theme('colors.gray.200') },
+            h3: { color: theme('colors.gray.200') },
+            h4: { color: theme('colors.gray.200') },
+            h5: { color: theme('colors.gray.200') },
+            h6: { color: theme('colors.gray.200') },
             blockquote: {
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.200'),
             },
           }
         }

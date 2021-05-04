@@ -1,5 +1,12 @@
 import React from 'react'
 
+export const Release = [
+  '4x faster time-to-Cloud',
+  '<strikethrough>Google Analytics</strikethrough> PostHog',
+  'Deeper Linux kernel monitoring (eBPF)',
+  'Docker developer environment',
+]
+
 export const News = [
   {
     title: <>Z-scores collector</>,
