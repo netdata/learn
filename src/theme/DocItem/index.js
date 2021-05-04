@@ -49,8 +49,6 @@ function DocItem(props) {
   const showVersionBadge = versions.length > 1; // For meta title, using frontMatter.title in priority over a potential # title found in markdown
   // See https://github.com/facebook/docusaurus/issues/4665#issuecomment-825831367
 
-  console.log(metadata.permalink.includes('/guides/'))
-
   const metaTitle = frontMatter.title || title;
   return (
     <>
