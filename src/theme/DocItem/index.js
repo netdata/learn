@@ -49,6 +49,8 @@ function DocItem(props) {
   const showVersionBadge = versions.length > 1; // For meta title, using frontMatter.title in priority over a potential # title found in markdown
   // See https://github.com/facebook/docusaurus/issues/4665#issuecomment-825831367
 
+  console.log(metadata.permalink.includes('/guides/'))
+
   const metaTitle = frontMatter.title || title;
   return (
     <>
@@ -88,9 +90,9 @@ function DocItem(props) {
 
             {/* BEGIN EDITS */}
             <div className="markdown prose-sm mt-12 mx-auto p-6 bg-gray-50 border border-gray-200 rounded shadow-lg">
-              <h2 className="!text-xl font-bold !mb-4">Reach out</h2>
+              <h2 className="!text-2xl font-bold !mb-4">Reach out</h2>
               <p className="text-sm">
-                If you need help after reading this doc, feel free to{` `}
+                If you need help after reading this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'}, feel free to{` `}
                 <Link to="#">create an issue</Link>{` `}
                 in the <Link to="https://github.com/netdata/netdata"><code>netdata/netdata</code></Link> repo{` `}
                 or join our <Link to="https://community.netdata.cloud">community forum</Link>.{` `}
@@ -100,8 +102,8 @@ function DocItem(props) {
                 <div className="flex-1">
                   <h3 className="!mt-0">Doc</h3>
                   <ul className="text-sm">
-                    <li><Link to={editUrl}>Edit</Link> this doc directly</li>
-                    <li><Link to={`https://github.com/netdata/netdata/issues/new?title=Docs%20feedback%20on:%20${title}&body=**Issue%20with:%20${title}**`}>Create an issue</Link> for this doc to suggest improvements</li>
+                    <li><Link to={editUrl}>Edit</Link> this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'} directly</li>
+                    <li><Link to={`https://github.com/netdata/netdata/issues/new?title=Docs%20feedback%20on:%20${title}&body=**Issue%20with:%20${title}**`}>Create an issue</Link> for this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'} to suggest improvements</li>
                   </ul>
                 </div>
                 <div className="flex-1">

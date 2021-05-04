@@ -1,6 +1,8 @@
 const axios = require('axios')
 const fs = require('fs').promises
 const path = require('path')
+const dotenv = require('dotenv')
+dotenv.config()
 
 // TODO: strip github badges, see /docs/what-is-netdata
 // TODO: http://localhost:3000/docs/step-by-step/step-99 http(s) is being prefixed
@@ -25,7 +27,6 @@ const outDir = path.join(__dirname, agentDir)
 // the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
 const retainPaths = [
-  path.join(baseDir, 'agent.mdx'),
   path.join(baseDir, 'cloud.mdx'),
   path.join(baseDir, 'agent/cheatsheet.mdx')
 ]
