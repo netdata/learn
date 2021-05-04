@@ -73,7 +73,7 @@ export function OneLineInstall() {
             checked={statsChecked}
             type="checkbox" 
             id="toggle__stats" />
-          <label htmlFor="toggle__stats" className="relative text-sm pl-2">Do you want to contribute <Link to="/docs/agent/anonymous-statistics" className="text-green hover:text-blue">anonymous statistics?</Link> <code>default: enabled</code></label>
+          <label htmlFor="toggle__stats" className="relative text-sm pl-2">Do you want to contribute <Link to="/docs/agent/anonymous-statistics" className="hover:text-blue">anonymous statistics?</Link> <code>default: enabled</code></label>
         </div>
       </div>
     </div>

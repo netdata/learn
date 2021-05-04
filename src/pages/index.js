@@ -13,7 +13,7 @@ function HomepageHeader() {
       <div className="container relative">
         <div className="z-10 relative w-full md:w-3/4 lg:w-1/2">
           <h1 className="text-2xl lg:text-5xl text-text font-semibold mb-6 dark:text-gray-50">{siteConfig.title}</h1>
-          <p className="text-lg lg:text-xl text-text dark:text-gray-50">{siteConfig.tagline}</p>
+          <p className="prose text-lg lg:text-xl text-text dark:text-gray-50">{siteConfig.tagline}</p>
         </div>
         <div className="z-0 absolute hidden lg:block -top-24 -right-24">
           <HeroImage />
@@ -32,25 +32,28 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main className="container">
-        <Grid className="mb-16">
+        <Grid className="mb-16" columns="3">
           <Box 
             to="/docs/get-started/"
             title="Get started"
-            description="Install the open-source monitoring agent on physical/virtual systems running most Linux distributions (Ubuntu, Debian, CentOS, and more), container platforms (Kubernetes clusters, Docker), and many other operating systems, with no <code>sudo</code> required."
             cta="Install now"
-            image={true} />
+            image={true}>
+            Install the open-source monitoring agent on physical/virtual systems running most Linux distributions (Ubuntu, Debian, CentOS, and more), container platforms (Kubernetes clusters, Docker), and many other operating systems, with no <code>sudo</code> required.
+          </Box>
           <Box 
             to="/docs/"
             title="Docs"
-            description="Solution- and action-based docs for Netdata's many features and capabilities. Your table of contents to becoming an expert in using Netdata to monitor and troubleshoot applications and their infrastructure."
             cta="Read the docs"
-            image={false} />
+            image={false}>
+            Solution- and action-based docs for Netdata's many features and capabilities. Your table of contents to becoming an expert in using Netdata to monitor and troubleshoot applications and their infrastructure.
+          </Box>
           <Box 
-            to="/tutorials/"
-            title="Tutorials"
-            description="Thoughtful tutorials to walk you through collecting the right metrics, monitoring your infrastructure, troubleshooting with Netdata's powerful visualizations, and much more."
+            to="/guides/"
+            title="Guides"
             cta="Start learning"
-            image={false} />
+            image={false}>
+            Thoughtful guides to walk you through collecting the right metrics, monitoring your infrastructure, troubleshooting with Netdata's powerful visualizations, and much more.
+          </Box>
         </Grid>
         <div id="updates" className="relative pb-8">
           <h2 className="z-10 relative text-xl lg:text-3xl font-semibold mb-6">What's new at Netdata?</h2>

@@ -3,7 +3,12 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   mode: 'jit',
-  purge: ['./src/**/*.html', './src/**/*.js', './src/**/*.tsx'],
+  purge: {
+    content: ['./src/**/*.html', './src/**/*.js', './src/**/*.tsx'],
+    options: {
+      safelist: [/^grid-cols/]
+    }
+  },
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     colors: {
@@ -41,10 +46,69 @@ module.exports = {
         sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
         mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono],
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.text'),
+            a: {
+              color: theme('colors.text'),
+              '&:hover': {
+                color: theme('colors.blue'),
+              },
+              code: { 
+                color: theme('colors.pink.light'),
+                border: 'none',
+              },
+            },
+            code: {
+              color: theme('colors.pink.light'),
+              backgroundColor: theme('colors.gray.100'),
+              paddingLeft: '4px',
+              paddingRight: '4px',
+              paddingTop: '2px',
+              paddingBottom: '2px',
+              borderRadius: theme('rounded'),
+              border: 'none'
+            },
+            'code:before': {
+              content: 'none',
+            },
+            'code:after': {
+              content: 'none',
+            },
+            '> ul > li > *:first-child': {
+              marginTop: '0',
+            },
+            blockquote: {
+              p: {
+                fontStyle: 'normal',
+                margin: '0',
+              }
+            }
+          },
+        },
+        dark: {
+          css: {
+            color: theme('colors.gray.50'),
+            strong: { color: theme('colors.gray.100') },
+            h1: { color: theme('colors.gray.100') },
+            h2: { color: theme('colors.gray.100') },
+            h3: { color: theme('colors.gray.100') },
+            h4: { color: theme('colors.gray.100') },
+            h5: { color: theme('colors.gray.100') },
+            h6: { color: theme('colors.gray.100') },
+            blockquote: {
+              color: theme('colors.gray.100'),
+            },
+          }
+        }
+      })
     },
   },
   variants: {
-    extend: {},
+    typography: ['dark'],
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

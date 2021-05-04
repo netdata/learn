@@ -11,15 +11,14 @@ export const Install = ({ className, children }) => (
 )
 
 export const InstallBox = ({ to, os, svg, community }) => (
-  <Link to={to} className="group relative p-8 border">
+  <Link to={to} className="group relative p-8 border !no-underline">
     {svg &&
-      <div className="flex items-center justify-center w-8 h-8 bg-blue rounded-full mb-1">
+      <div className="flex items-center justify-center w-8 h-8 bg-blue group-hover:bg-green-light rounded-full mb-1">
         <SVG 
           src={`/img/install/${svg}.svg`}
           alt={os} />
       </div>
     }
-    <h3 className="!text-base font-semibold mb-2">{os}</h3>
-    {community && <span>💡 community-supported</span>}
+    <h3 className="!text-base font-semibold group-hover:text-green-light mb-2">{os}</h3>
   </Link>
 )

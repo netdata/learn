@@ -15,8 +15,8 @@ module.exports = {
     },
     image: 'img/netdata_meta-default.png',
     prism: {
-      theme: require('prism-react-renderer/themes/duotoneDark'),
-      darkTheme: require('prism-react-renderer/themes/duotoneDark'),
+      theme: require('prism-react-renderer/themes/dracula'),
+      darkTheme: require('prism-react-renderer/themes/dracula'),
     },
     navbar: {
       title: 'Learn',
@@ -32,14 +32,12 @@ module.exports = {
           label: 'Docs',
         },
         {
-          type: 'doc',
-          docId: 'docs',
+          to: '/guides/',
           position: 'left',
-          label: 'Tutorials',
+          label: 'Guides',
         },
         {
-          type: 'doc',
-          docId: 'docs',
+          to: '/contribute/',
           position: 'left',
           label: 'Contribute',
         },
@@ -120,14 +118,36 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} Netdata, Inc.`,
     },
   },
-  plugins: ['docusaurus-plugin-sass', 'docusaurus-tailwindcss-loader'],
+  plugins: [
+    'docusaurus-plugin-sass', 
+    'docusaurus-tailwindcss-loader',
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "guides",
+        sidebarPath: require.resolve('./src/data/sidebar-guides.js'),
+        path: "./guides",
+        routeBasePath: "guides",
+        include: ["**/*.md", "**/*.mdx"],
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "contribute",
+        sidebarPath: require.resolve('./src/data/sidebar-contribute.js'),
+        path: "./contribute",
+        routeBasePath: "contribute",
+        include: ["**/*.md", "**/*.mdx"],
+      },
+    ],
+  ],
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
           editUrl:
             'https://github.com/netdata/netdata/edit/master/',
           showLastUpdateTime: true,
