@@ -15,7 +15,7 @@ module.exports = {
     },
     image: 'img/netdata_meta-default.png',
     prism: {
-      theme: require('prism-react-renderer/themes/vsDark')
+      theme: require('prism-react-renderer/themes/dracula')
     },
     navbar: {
       title: 'Learn',

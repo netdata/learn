@@ -1,15 +1,27 @@
 import React from 'react'
 import Link from '@docusaurus/Link'
 
-export const Grid = ({ className, columns, children }) => (
-  <div className={`grid grid-cols-1 md:grid-cols-${columns} gap-8 ${className && className}`}>
-    {children}
-  </div>
-)
+export const Grid = ({ className, columns, children }) => {
+  return ( 
+    // I really don't like hardcoding the `columns`, but I can't figure out how
+    // to have PurgeCSS not purse the classes because they're created with
+    // string concatenation.
+    // https://tailwindcss.com/docs/optimizing-for-production#writing-purgeable-html
+    <div 
+      className={`safe grid grid-cols-1 gap-8 
+        ${columns == 2 && columns && 'md:grid-cols-2' }
+        ${columns == 3 && columns && 'md:grid-cols-3' }
+        ${columns == 4 && columns && 'md:grid-cols-4' }
+        ${className && className}
+      `}>
+      {children}
+    </div>
+  )
+}
 
 export const Box = ({ className, to, title, cta, image, children }) => {
-  // If there's a `to` prop, then we make this Box into a link. Otherwise, it's
-  // a div to avoid nested `a` elements.
+  // If there's a `to` prop, then we make this Box into a `Link`. Otherwise,
+  // it's a `div` to avoid nested `a` elements.
   const Element = to ? Link : `div`
 
   return (

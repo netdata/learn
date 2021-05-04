@@ -19,6 +19,8 @@ import {
   useActiveVersion,
 } from '@theme/hooks/useDocs';
 
+import Link from '@docusaurus/Link'
+
 function DocItem(props) {
   const {content: DocContent} = props;
   const {metadata, frontMatter} = DocContent;
@@ -84,15 +86,35 @@ function DocItem(props) {
               </div>
             </article>
 
-            <div className="bg-gray-100 dark:bg-gray-700 p-8 border-gray-400">
-              <h2>Reach out</h2>
-              {/* <p>This is a {frontMatter.type} doc.</p>
-              <Link
-                href={`https://github.com/netdata/netdata/issues/new?title=Docs%20feedback%20on:%20${title}&body=**Issue%20with:%20${editUrl}**`}
-              >
-                {'Give feedback'} on this page
-              </Link> */}
+            {/* BEGIN EDITS */}
+            <div className="markdown prose-sm mt-12 mx-auto p-6 bg-gray-50 border border-gray-200 rounded shadow-lg">
+              <h2 className="!text-xl font-bold !mb-4">Reach out</h2>
+              <p className="text-sm">
+                If you need help after reading this doc, feel free to{` `}
+                <Link to="#">create an issue</Link>{` `}
+                in the <Link to="https://github.com/netdata/netdata"><code>netdata/netdata</code></Link> repo{` `}
+                or join our <Link to="https://community.netdata.cloud">community forum</Link>.{` `}
+                There's a good chance someone else has already found a solution to the same issue.
+              </p>
+              <div className="flex flex-wrap">
+                <div className="flex-1">
+                  <h3 className="!mt-0">Doc</h3>
+                  <ul className="text-sm">
+                    <li><Link to={editUrl}>Edit</Link> this doc directly</li>
+                    <li><Link to={`https://github.com/netdata/netdata/issues/new?title=Docs%20feedback%20on:%20${title}&body=**Issue%20with:%20${title}**`}>Create an issue</Link> for this doc to suggest improvements</li>
+                  </ul>
+                </div>
+                <div className="flex-1">
+                  <h3 className="!mt-0">Community</h3>
+                  <ul className="text-sm">
+                    <li>Join our <Link to="https://community.netdata.cloud">community forum</Link></li>
+                    <li>Learn how to <Link to="/contribute/">contribute</Link> to Netdata's open-source</li>
+                    <li>Submit a <Link to="https://community.netdata.cloud/c/feature-requests/7/">feature request</Link></li>
+                  </ul>
+                </div>
+              </div>
             </div>
+            {/* END EDITS */}
 
             {(editUrl || lastUpdatedAt || lastUpdatedBy) && (
               <div className="margin-vert--xl">

@@ -7571,6 +7571,11 @@ postcss-nesting@^7.0.0:
   dependencies:
     postcss "^7.0.2"
 
+postcss-nesting@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-8.0.1.tgz#4a8ab3c540a0f138fd3f5d2ee65e4a24d1888024"
+  integrity sha512-cHPNhW5VvRQjszFDxmy16mis9qFQqQLBNw6KVmueLqqE3M182ZAk9+QoxGqbGVryzLVhannw2B5Yhosqq522fA==
+
 postcss-normalize-charset@^5.0.0:
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/postcss-normalize-charset/-/postcss-normalize-charset-5.0.0.tgz#59e1fe2094fb2e3371cc5b054cbc39828a41a710"

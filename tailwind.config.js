@@ -6,7 +6,9 @@ module.exports = {
   purge: {
     content: ['./src/**/*.html', './src/**/*.js', './src/**/*.tsx'],
     options: {
-      safelist: [/^grid-cols/]
+      safelist: {
+        greedy: ["/safe$/", "/^md:grid-cols/"]
+      }
     }
   },
   darkMode: 'class', // or 'media' or 'class'

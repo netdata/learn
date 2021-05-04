@@ -6,6 +6,7 @@ module.exports = function (context, options) {
       postcssOptions.plugins.push(
         require('postcss-import'),
         require('tailwindcss'),
+        require('postcss-nesting'),
         require('postcss-preset-env')({
           autoprefixer: {
             flexbox: 'no-2009',
