@@ -3,9 +3,8 @@ import Layout from '@theme/Layout'
 import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { Grid, Box } from '@site/src/components/Grid'
-import { News } from '@site/src/data/News'
+import { News, Release } from '@site/src/data/News'
 import HeroImage from '/static/img/hero.svg'
-import { Release } from '../data/News'
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();

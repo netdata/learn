@@ -2,8 +2,6 @@ import React from 'react'
 import Link from '@docusaurus/Link'
 import SVG from 'react-inlinesvg'
 
-import styles from './styles.module.scss'
-
 export const Install = ({ className, children }) => (
   <div className={`grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-8 ${className}`}>
     {children}
