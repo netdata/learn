@@ -1,20 +1,86 @@
-# Website
+# Netdata Learn
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+A public site to learn about Netdata built on [Docusaurus](https://docusaurus.io/).
+
+## Contributing to Netdata's documentation
+
+Most of the files in the `/docs` folder are "mirrors" of their original files in either the
+[`netdata/netdata`](https://github.com/netdata/netdata) or
+[`netdata/go.d.plugin`](https://github.com/netdata/go.d.plugin) repositories.
+
+Generally speaking, the files in the `/docs` folder of repository should not be edited. The [documentation contribution
+guidelines](https://learn.netdata.cloud/contribute/documentation) explains this architecture a bit further and explains
+some of the methods for making or suggesting edits.
+
+There are a few exceptions to the _don't edit files in this repository_ rule. The following files can be edited here:
+
+- `/docs/docs.mdx` &rarr; `https://learn.netdata.cloud/docs`
+- `/docs/agent.mdx` &rarr; `https://learn.netdata.cloud/docs/agent`
+- `/docs/cloud.mdx` &rarr; `https://learn.netdata.cloud/docs/cloud`
+- Any file in the `/docs/cloud/` directory, which generate all the many `https://learn.netdata.cloud/docs/cloud` pages.
 
 ## Installation
+
+Clone this repository.
+
+```bash
+git clone git@github.com:netdata/netdata-learn-docusaurus.git
+cd netdata-learn-docusaurus
+```
+
+Install dependencies.
 
 ```console
 yarn install
 ```
 
-## Local Development
+Create a `.env` file in the project root. This file will be ignored by Git and should **NOT** be committed, as it will
+contain sensitive environment variables.
+
+```bash
+touch .env
+```
+
+Edit the `.env` file and add the following.
+
+```bash
+GITHUB_TOKEN=<token>
+```
+
+Generate a new GitHub personal access token [here](https://github.com/settings/tokens).
+
+- Set the token note as `netdata-learn`.
+- Check `repo`.
+- Click **Generate**.
+- Copy the token and replace `<token>` in the `.env` file with it.
+
+## Local development
 
 ```console
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This command starts a local development server and opens up a browser window. Most changes are reflected live without
+having to restart the server.
+
+## Ingest and process documentation files
+
+As explained in the [contributing to Netdata's documentation](#contributing-to-netdatas-documentation) section above,
+most of the files in the `/docs` folder are mirrors of their original versions in the `netdata/netdata` repository.
+
+Documentation arrives in this repository via the [`ingest.js`](/ingest.js) script. This script uses the GitHub API to
+gather and process all of Netdata's documentation, including changing file paths and overwriting links between
+documents, then places the final files in the `/docs` folder.
+
+Normally, this script runs via an automated [GitHub Action](.github/ingest.yml) once per day, but can also be run
+automatically by a member of the Netdata team. If there are changes to any documentation file, the GitHub Action creates
+a PR to be reviewed by a member of the docs team.
+
+You can also run the script manually to pull recent changes to your local development environment.
+
+```bash
+node ingest.js
+```
 
 ## Build
 
@@ -22,12 +88,10 @@ This command starts a local development server and opens up a browser window. Mo
 yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This command generates static content into the `build` directory and can be served using any static contents hosting
+service.
 
 ## Deployment
 
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Deployment is handled automatically through Netlify. Each new commit to the `master` branch deploys the latest version
+of Netdata Learn.
