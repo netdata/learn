@@ -264,7 +264,7 @@ export default function Guides() {
               <h1 className="text-2xl lg:text-5xl text-text font-semibold mb-6 dark:text-gray-50">Guides</h1>
               <p className="prose text-lg lg:text-xl text-text mb-6 dark:text-gray-50">Thoughtful guides to help you learn more about collecting metrics, monitoring your infrastructure, and troubleshooting with Netdata's powerful visualizations.</p>
               <input
-                className="text-xl lg:text-2xl p-4 w-full"
+                className="text-xl lg:text-2xl p-4 w-full dark:text-gray-200 dark:bg-gray-700"
                 type="text"
                 onChange={(event) => setSearchTerm(event.currentTarget.value)}
                 placeholder="🔍 Search Netdata's guides..." />

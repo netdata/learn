@@ -1,0 +1,153 @@
+[[redirects]]
+  from = "/docs/agent/zh/docs/*"
+  to = "/docs/agent/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/docs/agent/zh/*"
+  to = "/docs/agent/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/docs/agent/pt/docs/*"
+  to = "/docs/agent/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/docs/agent/pt/*"
+  to = "/docs/agent/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/docs/agent/kr/docs/*"
+  to = "/docs/agent/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/docs/agent/kr/*"
+  to = "/docs/agent/:splat"
+  status = 301
+
+[[redirects]]
+  from = "/docs/agent/health/tutorials/*"
+  to = "/guides/monitor/:splat"
+
+[[redirects]]
+  from = "/docs/agent/guides/*"
+  to = "/guides/:splat"
+
+[[redirects]]
+  from = "/docs/agent/tutorials/*"
+  to = "/guides/:splat"
+
+[[redirects]]
+  from = "/docs/agent/step-by-step/*"
+  to = "/guides/step-by-step/:splat"
+
+[[redirects]]
+  from = "/docs/agent/collectors/ebpf_process.plugin/"
+  to = "/docs/agent/collectors/ebpf.plugin/"
+
+[[redirects]]
+  from = "/docs/agent/netdata-cloud/*"
+  to = "/docs/cloud/"
+
+[[redirects]]
+  from = "dbengine-calc"
+  to = "/docs/store/change-metrics-storage#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics"
+
+[[redirects]]
+  from = "/docs/agent/database/calculator"
+  to = "/docs/store/change-metrics-storage#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics"
+
+[[redirects]]
+  from = "/docs/export"
+  to = "/docs/export/external-databases"
+
+[[redirects]]
+  from = "/#get"
+  to = "/docs/get"
+
+[[redirects]]
+  from = "/docs/visualize/view-all-nodes"
+  to = "/docs/visualize/overview-infrastructure"
+  
+[[redirects]]
+  from = "/docs/cloud/organize"
+  to = "/docs/cloud/spaces"
+
+[[redirects]]
+  from = "/docs/agent/code-of-conduct"
+  to = "/contribute/code-of-conduct"
+
+[[redirects]]
+  from = "/docs/agent/contributing"
+  to = "/contribute/handbook"
+
+[[redirects]]
+  from = "/docs/agent/contributing/contributing-documentation"
+  to = "/contribute/documentation"
+
+[[redirects]]
+  from = "/docs/agent/contributing/style-guide"
+  to = "/contribute/style-guide"
+
+[[redirects]]
+  from = "/docs/agent/performance"
+  to = "/guides/configure/performance"
+
+[[redirects]]
+  from = "/docs/agent/high-performance-netdata"
+  to = "/guides/configure/performance"
+
+[[redirects]]
+  from = "/docs/cloud/monitor/alarms"
+  to = "/docs/cloud/monitoring/alarms"
+
+[[redirects]]
+  from = "/docs/cloud/collaborate/invite-your-team"
+  to = "/docs/cloud/manage/invite-your-team"
+
+[[redirects]]
+  from = "/docs/configure/spaces-war-rooms"
+  to = "/docs/quickstart/infrastructure"
+
+[[redirects]]
+  from = "/docs/configure/invite-collaborate"
+  to = "/docs/quickstart/infrastructure"
+
+[[redirects]]
+  from = "/docs/agent/configuration-guide"
+  to = "/docs/configure/common-changes"
+
+[[redirects]]
+  from = "/docs/agent/configuration-guide"
+  to = "/docs/configure/common-changes"
+
+[[redirects]]
+  from = "/docs/cloud/faq-glossary"
+  to = "/docs/cloud/faq"
+
+[[redirects]]
+  from = "/docs/agent/code_of_conduct"
+  to = "/contribute/code-of-conduct"
+
+[[redirects]]
+  from = "/docs/agent/export"
+  to = "/docs/export/external-databases"
+
+[[redirects]]
+  from = "/docs/cloud/faq"
+  to = "https://community.netdata.cloud/docs"
+
+[[redirects]]
+  from = "/docs/agent/contributors"
+  to = "/contribute/license"
+
+[[redirects]]
+  from = "/docs/get"
+  to = "/docs/get-started"
+  
+[[redirects]]
+  from = "/docs/agent/get"
+  to = "/docs/get-started"

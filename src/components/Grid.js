@@ -7,20 +7,20 @@ export const Grid = ({ className, columns, children }) => (
   </div>
 )
 
-export const Box = ({ to, title, cta, image, children }) => {
+export const Box = ({ className, to, title, cta, image, children }) => {
   // If there's a `to` prop, then we make this Box into a link. Otherwise, it's
   // a div to avoid nested `a` elements.
   const Element = to ? Link : `div`
 
   return (
-    <Element to={to} className="group relative p-8 border !no-underline hover:text-text">
+    <Element to={to} className={`group relative p-8 border border-gray-200 dark:border-gray-500 rounded !no-underline shadow-sm hover:text-text dark:bg-gray-800 ${className && className}`}>
       <h2 className={`text-xl xl:text-2xl font-semibold !mt-0 !mb-2 ${to && 'group-hover:text-green-light dark:group-hover:text-green-light'}`}>{title}</h2>
-      <div className={`markdown font-normal leading-relaxed ${cta ? 'mb-4' : 'mb-0'} dark:text-gray-50`}>
+      <div className={`markdown font-normal leading-relaxed ${cta ? 'mb-4' : 'mb-0'} dark:text-gray-100`}>
         {children}
       </div>
       {cta && 
         <button className="relative text-text bg-gray-200 px-4 py-2 rounded">
-          <span className="z-10 relative font-semibold group-hover:text-gray-50">{cta}</span>
+          <span className="z-10 relative font-semibold group-hover:text-gray-100">{cta}</span>
           <div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded" />
         </button>
       }

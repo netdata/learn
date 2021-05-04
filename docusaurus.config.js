@@ -7,16 +7,15 @@ module.exports = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'netdata', // Usually your GitHub org/user name.
-  projectName: 'netdata-learn-docusaurus', // Usually your repo name.
+  organizationName: 'netdata',
+  projectName: 'netdata',
   themeConfig: {
     gtag: {
       trackingID: 'GTM-N6CBMJD',
     },
     image: 'img/netdata_meta-default.png',
     prism: {
-      theme: require('prism-react-renderer/themes/dracula'),
-      darkTheme: require('prism-react-renderer/themes/dracula'),
+      theme: require('prism-react-renderer/themes/vsDark')
     },
     navbar: {
       title: 'Learn',
@@ -40,6 +39,17 @@ module.exports = {
           to: '/contribute/',
           position: 'left',
           label: 'Contribute',
+        },
+        {
+          href: 'https://netdata.cloud',
+          label: 'Netdata.cloud',
+          position: 'right'
+        },
+        {
+          href: 'https://github.com/netdata/netdata',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },

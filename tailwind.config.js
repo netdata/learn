@@ -89,7 +89,7 @@ module.exports = {
         },
         dark: {
           css: {
-            color: theme('colors.gray.50'),
+            color: theme('colors.gray.200'),
             strong: { color: theme('colors.gray.100') },
             h1: { color: theme('colors.gray.100') },
             h2: { color: theme('colors.gray.100') },
