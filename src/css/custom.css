@@ -80,7 +80,7 @@
 */
 
 .body {
-  @apply font-sans text-text;
+  @apply font-sans text-text bg-white dark:bg-gray-900;
 }
 
 .container {

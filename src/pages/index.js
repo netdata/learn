@@ -55,7 +55,7 @@ export default function Home() {
             Thoughtful guides to walk you through collecting the right metrics, monitoring your infrastructure, troubleshooting with Netdata's powerful visualizations, and much more.
           </Box>
         </Grid>
-        <div id="updates" className="relative flex flex-row flex-wrap pb-8">
+        <div id="updates" className="relative flex flex-row flex-wrap pb-12">
           <div className="relative w-full lg:w-3/4">
             <h2 className="z-10 relative text-xl lg:text-3xl font-semibold mb-6">What's new at Netdata?</h2>
             <div className="z-0 absolute -top-12 -bottom-8 left-1.5">
@@ -65,7 +65,7 @@ export default function Home() {
             </div>
             <ul>
               {News.map((props, idx) => (
-                <li key={props.title} className="group">
+                <li key={`${props.title}-${idx}`} className="group">
                   <Link to={props.href} className="grid md:grid-cols-8 xl:grid-cols-9 items-start">
                     <div className="md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 p-8 rounded group-hover:bg-gray-50 dark:group-hover:bg-gray-800">
                       <h3 className="text-lg lg:text-xl font-semibold mb-2">{props.title}</h3>
@@ -73,7 +73,7 @@ export default function Home() {
                     </div>
                     <div className="flex items-center md:col-start-1 md:col-span-2 row-start-1 md:row-end-3 pt-8">
                       <div className="z-10 w-4 h-4 mr-8 bg-green rounded-full group-hover:bg-blue" />
-                      <time className="text-base text-gray-500 font-medium">{props.date}</time>
+                      <time className="text-base text-gray-500 font-medium uppercase dark:text-gray-400">{props.date}</time>
                     </div>
                   </Link>
                 </li>
@@ -81,7 +81,14 @@ export default function Home() {
             </ul>
           </div>
           <div className="flex-1 markdown prose-lg mt-16">
-            <h2 className="z-10 relative text-lg lg:text-2xl font-semibold mb-6">Latest major release: <code>v1.30.0</code></h2>
+            <h2 className="z-10 relative text-lg lg:text-2xl font-semibold mb-6">
+              Latest major release 
+              <span class="flex items-center font-semibold">
+                <code className="text-base">v1.30.0</code>
+                <span className="text-base mx-2">•</span>
+                <time className="text-base text-gray-500 font-medium uppercase dark:text-gray-400">March 31, 2021</time>
+              </span>
+            </h2>
             <ul>
               {Release.map((props, idx) => (
                 <li key={props} dangerouslySetInnerHTML={{ __html: props }}></li>
