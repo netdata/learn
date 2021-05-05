@@ -43,8 +43,8 @@ module.exports = {
           items: [
             'dashboard/how-dashboard-works',
             'dashboard/interact-charts',
-            'visualize/overview-infrastructure',
-            'visualize/create-dashboards',
+            'dashboard/dimensions-contexts-families',
+            'dashboard/select-timeframes',
           ]
         },
         {
