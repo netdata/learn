@@ -87,7 +87,7 @@ function DocItem(props) {
             </article>
 
             {/* BEGIN EDITS */}
-            <div className="markdown prose-sm mt-12 mx-auto p-6 bg-gray-50 border border-gray-200 rounded shadow-lg">
+            <div className="markdown prose-sm mt-12 mx-auto p-6 bg-gray-50 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500 ">
               <h2 className="!text-2xl font-bold !mb-4">Reach out</h2>
               <p className="text-sm">
                 If you need help after reading this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'}, feel free to{` `}
