@@ -81,6 +81,19 @@ function DocItem(props) {
                   <h1 className={styles.docTitle}>{title}</h1>
                 </header>
               )}
+
+              {/* BEGIN EDITS */}
+              {frontMatter.author && (
+                <aside className="flex items-center mb-12">
+                  <img src={frontMatter.author_img} className="w-24 h-24 rounded-full" alt={frontMatter.author} />
+                  <div className="ml-4">
+                    <span className="block text-lg lg:text-xl font-medium mb-1">{frontMatter.author}</span>
+                    <span className="text-sm font-bold uppercase text-gray-400">{frontMatter.author_title}</span>
+                  </div>
+                </aside>
+              )}
+              {/* END EDITS */}
+
               <div className="markdown">
                 <DocContent />
               </div>
