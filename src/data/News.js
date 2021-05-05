@@ -9,6 +9,17 @@ export const Release = [
 
 export const News = [
   {
+    title: <>Kubernetes monitoring with Netdata: Overview and visualizations</>,
+    href: '/guides/monitor/kubernetes-k8s-netdata',
+    date: 'May 5, 2021',
+    type: 'Guide',
+    description: (
+      <>
+        Learn how to navigate Netdata's Kubernetes monitoring features for visualizing the health and performance of a Kubernetes cluster with per-second granulrity.
+      </>
+    ),
+  },
+  {
     title: <>Z-scores collector</>,
     href: '/docs/agent/collectors/python.d.plugin/zscores',
     date: 'April 26, 2021',
@@ -60,17 +71,6 @@ export const News = [
     description: (
       <>
         Set up robust LAMP stack monitoring (Linux, Apache, MySQL, PHP) in just a few minutes using a free, open-source monitoring tool that collects metrics every second.
-      </>
-    ),
-  },
-  {
-    title: <>Kubernetes monitoring with Netdata: Overview and visualizations</>,
-    href: '/guides/monitor/kubernetes-k8s-netdata',
-    date: 'March 4, 2021',
-    type: 'Guide',
-    description: (
-      <>
-        Learn how to navigate Netdata's Kubernetes monitoring features for visualizing the health and performance of a Kubernetes cluster with per-second granulrity.
       </>
     ),
   }

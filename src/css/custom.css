@@ -198,6 +198,18 @@ h1 {
   @apply font-bold;
 }
 
+.markdown a {
+  @apply hover:text-blue dark:hover:text-blue;
+}
+
+.dark .markdown a {
+  @apply hover:text-blue;
+}
+
+.markdown a code {
+  @apply transition text-green hover:text-blue;
+}
+
 .markdown blockquote p:before,
 .markdown blockquote p:after {
   content: none !important;

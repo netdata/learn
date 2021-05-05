@@ -57,13 +57,9 @@ module.exports = {
               '&:hover': {
                 color: theme('colors.blue'),
               },
-              code: { 
-                color: theme('colors.pink.light'),
-                border: 'none',
-              },
             },
             code: {
-              color: theme('colors.pink.light'),
+              color: theme('colors.green.DEFAULT'),
               backgroundColor: theme('colors.gray.100'),
               paddingLeft: '4px',
               paddingRight: '4px',
@@ -92,9 +88,13 @@ module.exports = {
         dark: {
           css: {
             color: theme('colors.gray.200'),
+            a: {
+              color: theme('colors.gray.100'),
+            },
             strong: { color: theme('colors.gray.100') },
             code: {
-              backgroundColor: '#1e1e1e'
+              color: theme('colors.green.lighter'),
+              backgroundColor: theme('colors.gray.800')
             },
             h1: { color: theme('colors.gray.200') },
             h2: { color: theme('colors.gray.200') },
