@@ -99,12 +99,20 @@ a:hover {
   @apply pr-4;
 }
 
+.navbar__brand strong {
+  @apply font-medium;
+}
+
 .navbar__brand:hover {
   @apply text-blue-light;
 }
 
 .navbar__logo {
   @apply h-6 mr-2;
+}
+
+.navbar__link {
+  @apply font-normal;
 }
 
 .header-github-link::before {
@@ -136,7 +144,7 @@ a:hover {
 }
 
 .sui-layout .sui-layout-body {
-  @apply dark:bg-gray-800;
+  @apply bg-gray-50 dark:bg-gray-800;
 }
 
 .sui-layout .sui-layout-body::after {

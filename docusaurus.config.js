@@ -42,7 +42,7 @@ module.exports = {
         },
         {
           href: 'https://netdata.cloud',
-          label: 'Netdata.cloud',
+          label: 'netdata.cloud',
           position: 'right'
         },
         {

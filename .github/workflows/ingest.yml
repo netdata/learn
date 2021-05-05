@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: 12
 
-    - run: npm install
+    - run: yarn install
 
     - run: node ingest.js
       env:

@@ -82,6 +82,30 @@ module.exports = {
                 fontStyle: 'normal',
                 margin: '0',
               }
+            },
+            table: {
+              thead: {
+                'th:first-child': {
+                  paddingLeft: '0.5714286em'
+                },
+              },
+              tbody: {
+                'td:first-child': {
+                  paddingLeft: '0.5714286em'
+                },
+                tr: {
+                  border: 'none',
+                  '&:nth-child(2n)': {
+                    background: 'none',
+                  },
+                  td: {
+                    paddingLeft: '0.5714286em',
+                    code: {
+                      color: theme('colors.text')
+                    }
+                  }
+                },
+              }
             }
           },
         },
