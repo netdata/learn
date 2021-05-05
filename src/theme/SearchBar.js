@@ -143,7 +143,7 @@ const SearchBar = (props) => {
   return (
     <>
       <button
-        className="group relative text-lg text-gray-50 dark:text-gray-100 ml-2 p-2 border border-gray-200 rounded"
+        className="group relative text-lg text-gray-50 dark:text-gray-100 ml-4 p-2 border border-gray-200 rounded"
         onClick={onOpen}>
           <svg className="stroke-current group-hover:text-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
       </button>
@@ -154,7 +154,7 @@ const SearchBar = (props) => {
             className="fixed w-full h-full inset-0 bg-gray-800 bg-opacity-10"
             style={{ zIndex: '300' }}
             onMouseDown={onClose}>
-            <div onClick={null} className="SearchModal overflow-y-auto min-h-500 max-w-screen-lg mt-24 mb-24 mx-auto bg-white dark:bg-gray-800 border border-gray-400 rounded">
+            <div onClick={null} className="SearchModal overflow-y-auto min-h-500 max-w-screen-lg mt-24 mb-24 mx-auto bg-gray-50 dark:bg-gray-800 border border-gray-400 rounded">
 
               <SearchProvider config={config}>
                 <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
