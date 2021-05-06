@@ -80,7 +80,7 @@
 */
 
 .body {
-  @apply font-sans text-text bg-white dark:bg-gray-900;
+  @apply font-sans text-text bg-white;
 }
 
 .container {
@@ -263,7 +263,7 @@ h1 {
 }
 
 html[data-theme="dark"]:root {
-  --ifm-background-color: #191927;
+  --ifm-background-color: rgba(31, 41, 55);
   --ifm-navbar-background-color: #35414a;
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: #64ADFF;
