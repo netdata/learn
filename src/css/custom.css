@@ -85,6 +85,7 @@
 
 .container {
   @apply max-w-screen-lg lg:max-w-screen-xl;
+  max-width: 1280px !important;
 }
 
 a:hover {
