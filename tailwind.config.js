@@ -22,6 +22,9 @@ module.exports = {
       text: {
         DEFAULT: '#1d1d40'
       },
+      darkbg: {
+        DEFAULT: '#35414a'
+      },
       green: {
         lighter: '#75D54A',
         light: '#00CB51',
@@ -47,6 +50,11 @@ module.exports = {
       fontFamily: {
         sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
         mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono],
+      },
+      colors: {
+        gray: {
+          darkbg: '#35414a'
+        }
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -113,9 +121,9 @@ module.exports = {
           css: {
             color: theme('colors.gray.200'),
             a: {
-              color: theme('colors.gray.100'),
+              color: theme('colors.gray.200'),
             },
-            strong: { color: theme('colors.gray.100') },
+            strong: { color: theme('colors.gray.200') },
             code: {
               color: theme('colors.green.lighter'),
               backgroundColor: theme('colors.gray.800')
