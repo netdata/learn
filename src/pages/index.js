@@ -58,8 +58,8 @@ export default function Home() {
         <div id="updates" className="relative flex flex-row flex-wrap pb-12">
           <div className="relative w-full lg:w-3/4">
             <h2 className="z-10 relative text-xl lg:text-3xl font-semibold mb-6">What's new at Netdata?</h2>
-            <div className="z-0 absolute -top-12 -bottom-8 left-1.5">
-              <div className="z-10 relative w-4 h-16 top-0 bg-gradient-to-t from-transparent to-white dark:to-gray-900"></div>
+            <div className="z-0 absolute top-4 -bottom-8 left-1.5">
+              <div className="z-10 relative w-4 h-16 top-0 bg-gradient-to-t from-transparent to-white dark:to-gray-darkbg"></div>
               <div className="z-0 absolute top-0 w-1 h-full bg-green-lighter bg-opacity-20"></div>
               <div className="z-10 absolute w-4 h-16 bottom-0 bg-gradient-to-b from-transparent to-white dark:to-gray-darkbg"></div>
             </div>
