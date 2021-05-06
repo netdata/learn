@@ -263,8 +263,8 @@ h1 {
 }
 
 html[data-theme="dark"]:root {
-  --ifm-background-color: rgba(31, 41, 55);
-  --ifm-navbar-background-color: #35414a;
+  --ifm-background-color: #35414a;
+  --ifm-navbar-background-color: #2b3136;
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: #64ADFF;
   --ifm-font-color-base: #f5f6f7;
