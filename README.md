@@ -15,7 +15,6 @@ some of the methods for making or suggesting edits.
 There are a few exceptions to the _don't edit files in this repository_ rule. The following files can be edited here:
 
 - `/docs/docs.mdx` &rarr; `https://learn.netdata.cloud/docs`
-- `/docs/agent.mdx` &rarr; `https://learn.netdata.cloud/docs/agent`
 - `/docs/cloud.mdx` &rarr; `https://learn.netdata.cloud/docs/cloud`
 - Any file in the `/docs/cloud/` directory, which generate all the many `https://learn.netdata.cloud/docs/cloud` pages.
 
