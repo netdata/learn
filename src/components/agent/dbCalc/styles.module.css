@@ -89,23 +89,15 @@
   background: #F1F2F3;
   border-radius: var(--ifm-global-radius);
   color: #FF4136;
+}
 
-  p {
-    margin-bottom: 0;
-    
-    font-size: 80%;
-  }
+.calcWarn p {
+  margin-bottom: 0;
+  font-size: 80%;
 }
 
 .calcResults {
   margin-top: calc(var(--ifm-spacing-vertical) * 2);
-  
-  // font-size: 105%;
-
-  // p code {
-  //   font-size: 1rem;
-  // }
-
 }
 
 @media screen and (max-width: 996px) {
@@ -118,54 +110,49 @@
   display: flex;
   flex-flow: row wrap;
   margin-bottom: calc(var(--ifm-spacing-vertical) * 2);
-  // padding-bottom: calc(var(--ifm-spacing-vertical) * 2);
+}
 
-  p {
-    flex: 0 0 100%;
-  }
+.calcFinal p {
+  flex: 0 0 100%;
+}
 
-  span {
-    flex: 0 0 50%;
-    font-size: 120%;
-  }
+.calcFinal span {
+  flex: 0 0 50%;
+  font-size: 120%;
 }
 
 .calcConfig {
   margin-bottom: calc(var(--ifm-spacing-vertical) * 2);
-  // padding-bottom: calc(var(--ifm-spacing-vertical) * 2);
+}
 
-  div[class^='codeBlockContent'] {
-    margin-bottom: var(--ifm-paragraph-margin-bottom);
-  }
+.calcConfig div[class^='codeBlockContent'] {
+  margin-bottom: var(--ifm-paragraph-margin-bottom);
+}
 
-  div[class^='codeBlockContent'] button {
-    display: none !important;
-  }
+.calcConfig div[class^='codeBlockContent'] button {
+  display: none !important;
+}
 
-  p:last-of-type {
-    margin-bottom: 0;
-  }
+.calcConfig p:last-of-type {
+  margin-bottom: 0;
 }
 
 .calcNotes {
   background: --var(--ifm-background);
   padding: 1rem;
   font-size: 80%;
-
-  ul {
-    margin-bottom: 0;
-  }
 }
 
+.calcNotes ul {
+  margin-bottom: 0;
+}
 
 
 /* 
  * Dark mode overrides
  */
 
-html[data-theme='dark'] {
-  .calcInput input {
-    background: var(--ifm-background-dark);
-    color: white;
-  }
+html[data-theme='dark'] .calcInput input {
+  background: var(--ifm-background-dark);
+  color: white;
 }
