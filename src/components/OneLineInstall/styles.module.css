@@ -8,6 +8,10 @@
   line-height: 1.5;
 }
 
+.Container div[class*="codeBlock_"] {
+  @apply rounded-tl rounded-tr !rounded-br-none !rounded-bl-none;
+}
+
 .installCheckboxes {
   z-index: 10;
   position: relative;
