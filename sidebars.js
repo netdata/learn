@@ -29,6 +29,60 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Installation',
+          items: [
+            {
+              type: 'doc',
+              id: 'agent/packaging/installer/methods/kickstart',
+              label: 'Linux with one-line installer'
+            },
+            {
+              type: 'doc',
+              id: 'agent/packaging/installer/methods/kickstart-64',
+              label: 'Linux with pre-built static binary'
+            },
+            {
+              type: 'doc',
+              id: 'agent/packaging/installer/methods/packages',
+              label: 'Linux with .deb/.rpm package'
+            },
+            {
+              type: 'doc',
+              id: 'agent/packaging/docker',
+              label: 'Run with Docker'
+            },
+            {
+              type: 'doc',
+              id: 'agent/packaging/installer/methods/kubernetes',
+              label: 'Deploy on Kubernetes'
+            },
+            {
+              type: 'doc',
+              id: 'agent/packaging/installer/methods/macos',
+              label: 'macOS'
+            },
+            {
+              type: 'doc',
+              id: 'agent/packaging/installer/methods/manual',
+              label: 'Linux from Git'
+            },
+            {
+              type: 'doc',
+              id: 'agent/packaging/installer/methods/source',
+              label: 'Linux from source'
+            },
+            {
+              type: 'doc',
+              id: 'agent/packaging/installer/methods/offline',
+              label: 'Linux on offline nodes'
+            },
+            'agent/packaging/installer/update',
+            'agent/packaging/installer/reinstall',
+            'agent/packaging/installer/uninstall'
+          ]
+        },
+        {
+          type: 'category',
           label: 'Configuration',
           items: [
             'configure/nodes',
@@ -307,31 +361,12 @@ module.exports = {
           type: 'category',
           label: 'Packaging',
           items: [
-            'agent/packaging/installer',
             {
-              type: 'category',
-              label: 'Other methods',
-              items: [
-                'agent/packaging/installer/methods/packages',
-                'agent/packaging/installer/methods/kickstart',
-                'agent/packaging/installer/methods/kickstart-64',
-                'agent/packaging/installer/methods/kubernetes',
-                'agent/packaging/docker',
-                'agent/packaging/installer/methods/cloud-providers',
-                'agent/packaging/installer/methods/macos',
-                'agent/packaging/installer/methods/freebsd',
-                'agent/packaging/installer/methods/manual',
-                'agent/packaging/installer/methods/offline',
-                'agent/packaging/installer/methods/pfsense',
-                'agent/packaging/installer/methods/synology',
-                'agent/packaging/installer/methods/freenas',
-                'agent/packaging/installer/methods/alpine',
-              ]
+              type: 'doc',
+              id: 'agent/packaging/installer',
+              label: 'Installer reference'
             },
             'agent/packaging/distributions',
-            'agent/packaging/installer/update',
-            'agent/packaging/installer/reinstall',
-            'agent/packaging/installer/uninstall',
             'agent/packaging/makeself',
           ]
         },

@@ -48,9 +48,13 @@ export function OneLineInstall() {
   }
 
   return (
-    <div className={clsx('relative overflow-hidden mt-8 mb-8 bg-white rounded-tr rounded-tl !rounded-br-none dark:bg-gray-900', styles.Container)}>
-      <CodeBlock className={clsx('bash text-2xl !mb-0 rounded', styles.getOneLineCommand)} language={lang}>{currentCommand}</CodeBlock>
-      <div className="z-10 relative -t-2 p-6 border-l border-b border-r border-gray-200 rounded-br rounded-bl dark:bg-gray-800 dark:border-gray-500">
+    <div className={clsx('relative overflow-hidden mt-8 mb-8 rounded-tr rounded-tl', styles.Container)}>
+      <div className="text-2xl">
+        <CodeBlock className="bash">
+          {currentCommand}
+        </CodeBlock>
+      </div>
+      <div className="z-10 relative -t-2 p-6 border-l border-b border-r border-gray-200 rounded-br rounded-bl dark:bg-gray-darkbg dark:border-gray-500">
         <div className="py-1 flex items-center">
           <input 
             onChange={handleUpdatesChange}

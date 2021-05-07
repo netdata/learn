@@ -236,8 +236,9 @@ h1 {
   content: none !important;
 }
 
-.markdown p > img[src*='icon/assets/'] {
-  @apply inline-block m-0 dark:bg-gray-50;
+.markdown p > img[src*='icon/assets/'],
+.markdown p > img[src*='registry.my-netdata.io'] {
+  @apply inline-block m-0 rounded dark:bg-gray-50;
 }
 
 /*
