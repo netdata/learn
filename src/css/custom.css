@@ -129,6 +129,18 @@ a:hover {
 }
 
 /*
+ * Navbar / mobile
+*/
+
+.navbar__toggle {
+  @apply text-white;
+}
+
+.navbar-sidebar .menu .menu__link {
+  @apply text-xl text-white py-2;
+}
+
+/*
  * Search
 */
 
