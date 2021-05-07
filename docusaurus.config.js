@@ -130,7 +130,6 @@ module.exports = {
     },
   },
   plugins: [
-    'docusaurus-plugin-sass', 
     'docusaurus-tailwindcss-loader',
     [
       "@docusaurus/plugin-content-docs",
