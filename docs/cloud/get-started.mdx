@@ -65,12 +65,7 @@ we use to secure your data in transit.
 </Callout>
 
 To claim a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
-Cloud into your node's terminal. The claiming script takes care of the rest. If you want to claim an agent without using
-root privileges, see our [claiming documentation](/docs/agent/claim#claim-an-agent-without-root-privileges).
-
-```bash
-sudo netdata-claim.sh -token=TOKEN -rooms=ROOM1,ROOM2 -url=https://app.netdata.cloud
-```
+Netdata Cloud into your node's terminal.
 
 Hit **Enter**. The script should return `Agent was successfully claimed.`. If the claiming script returns errors, or if
 you don't see the node in your Space after 60 seconds, see the [troubleshooting
@@ -83,8 +78,11 @@ area](/docs/cloud/spaces/#manage-spaces).
 ### Alternatives and other operating systems
 
 **Docker**: You can execute the claiming script Netdata running as a Docker container, or attach the claiming script
-when creating the  container for the first time, such as when you're spinning up ephemeral containers. See the [claim
+when creating the container for the first time, such as when you're spinning up ephemeral containers. See the [claim
 Netdata running in Docker](/docs/agent/claim#claiming-an-agent-running-in-docker) documentation for details.
+
+**Without root privileges**: If you want to claim an agent without using root privileges, see our [claiming
+documentation](/docs/agent/claim#claim-an-agent-without-root-privileges).
 
 **With a proxy**: If your node uses a proxy to connect to the internet, you need to configure the node's proxy settings.
 See our [claiming through a proxy](/docs/agent/claim#claiming-through-a-proxy) doc for details.
