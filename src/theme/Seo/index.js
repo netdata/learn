@@ -21,6 +21,7 @@ export default function Seo({title, description, keywords, image}) {
 
       {/* BEGIN EDIT */}
       {description && <meta name="description" class="swiftype" data-type="string" content={description} />}
+      <meta property="og:type" content="website" />
       {/* END EDIT */}
       {description && <meta property="og:description" content={description} />}
 
