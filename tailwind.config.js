@@ -19,6 +19,8 @@ module.exports = {
       black: colors.black,
       white: colors.white,
       gray: colors.coolGray,
+      red: colors.red,
+      amber: colors.amber,
       text: {
         DEFAULT: '#1d1d40'
       },
@@ -30,20 +32,10 @@ module.exports = {
         light: '#00CB51',
         DEFAULT: '#00AB44',
       },
-      pink: {
-        lighter: '#CFB4EF',
-        light: '#EF37D6',
-        DEFAULT: '#D400B9',
-      },
       blue: {
         lighter: '#9ED0FF',
         light: '#64ADFF',
         DEFAULT: '#5790FF',
-      },
-      amber: {
-        lighter: '#FFE182',
-        light: '#FFD74F',
-        DEFAULT: '#FFC300',
       },
     },
     extend: {
