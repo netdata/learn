@@ -127,7 +127,7 @@ CHART = {
         ]}
 ```
 
-All names are better explained in the [External Plugins](/docs/agent/) section.
+All names are better explained in the [External Plugins](/docs/agent/collectors/plugins.d) section.
 Parameters like `priority` and `update_every` are handled by `python.d.plugin`.
 
 ### `Service` class
