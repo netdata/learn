@@ -39,6 +39,9 @@
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^2.1.2"
   },
+  "resolutions": {
+    "trim": "^0.0.3"
+  },
   "browserslist": {
     "production": [
       ">0.5%",
