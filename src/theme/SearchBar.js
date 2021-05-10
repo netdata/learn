@@ -1,6 +1,8 @@
-import React, {useEffect, useState, useCallback} from 'react'
-import {createPortal} from 'react-dom'
+import React, { useEffect, useState, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import Link from '@docusaurus/Link'
+
+import { RiSearchEyeLine } from 'react-icons/ri'
 
 import SiteSearchAPIConnector from "@elastic/search-ui-site-search-connector";
 import {
@@ -70,14 +72,22 @@ const SORT_OPTIONS = [
 const SearchBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const os = 
+
   useEffect(() => {
     const keyPressHandler = (e) => {
 
-      // Open on typing `s`
-      if (e.target.tagName === 'BODY' && e.key === 's' || e.key === '?') {
+      // Open on typing `Ctrl/Command+k` or `?`.
+      if ((e.ctrlKey || e.metaKey && e.keyCode === 75) || e.key === '?') {
         e.preventDefault()
         onOpen()
       }
+
+      // Open on typing `s`
+      // if (e.target.tagName === 'BODY' && e.key === 's' || e.key === '?') {
+      //   e.preventDefault()
+      //   onOpen()
+      // }
 
       // Close on `Escape`
       if (e.key === 'Escape') {
@@ -143,15 +153,17 @@ const SearchBar = (props) => {
   return (
     <>
       <button
-        className="group relative text-lg text-gray-50 dark:text-gray-100 ml-4 p-2 border border-gray-200 rounded"
+        className="group relative flex items-center text-sm text-gray-200 dark:text-gray-100 ml-4 p-2 border border-gray-400 rounded"
         onClick={onOpen}>
-          <svg className="stroke-current group-hover:text-blue" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <RiSearchEyeLine className="inline-block w-6 h-6 stroke-current group-hover:text-blue" />
+          <span className="ml-1">Search</span>
+          <span className="text-xs text-gray-300 font-medium ml-2 px-1 py-0.5 bg-gray-800 rounded shadow-sm">{window.navigator.platform.match(/^Mac/) ? '⌘' : 'Ctrl'} + k</span>
       </button>
 
       {isOpen &&
         createPortal(
           <div 
-            className="fixed w-full h-full inset-0 bg-gray-800 bg-opacity-10"
+            className="fixed w-full h-full inset-0 bg-gray-800 bg-opacity-50"
             style={{ zIndex: '300' }}
             onMouseDown={onClose}>
             <div onClick={null} className="SearchModal overflow-y-auto min-h-500 max-w-screen-lg mt-24 mb-24 mx-auto bg-gray-50 dark:bg-gray-800 border border-gray-400 rounded">

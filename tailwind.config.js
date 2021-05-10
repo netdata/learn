@@ -96,6 +96,9 @@ module.exports = {
                 'th:first-child': {
                   paddingLeft: '0.5714286em'
                 },
+                'th:last-child': {
+                  paddingRight: '0.5714286em'
+                },
               },
               tbody: {
                 'td:first-child': {
@@ -137,6 +140,13 @@ module.exports = {
             blockquote: {
               color: theme('colors.gray.200'),
             },
+            table: {
+              thead: {
+                th: {
+                  color: theme('colors.gray.200')
+                },
+              },
+            }
           }
         }
       })
