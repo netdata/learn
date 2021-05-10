@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import Link from '@docusaurus/Link'
+import BrowserOnly from '@docusaurus/BrowserOnly'
 
 import { RiSearchEyeLine } from 'react-icons/ri'
 
-import SiteSearchAPIConnector from "@elastic/search-ui-site-search-connector";
+import SiteSearchAPIConnector from "@elastic/search-ui-site-search-connector"
 import {
   ErrorBoundary,
   Facet,
@@ -16,7 +17,7 @@ import {
   Paging,
   Sorting,
   WithSearch
-} from "@elastic/react-search-ui";
+} from "@elastic/react-search-ui"
 import {
   Layout,
   SingleSelectFacet,
@@ -24,8 +25,8 @@ import {
   BooleanFacet,
   getUrlSanitizer,
   isFieldValueWrapper
-} from "@elastic/react-search-ui-views";
-import "@elastic/react-search-ui-views/lib/styles/styles.css";
+} from "@elastic/react-search-ui-views"
+import "@elastic/react-search-ui-views/lib/styles/styles.css"
 
 const connector = new SiteSearchAPIConnector({
   documentType: "page",
@@ -78,16 +79,10 @@ const SearchBar = (props) => {
     const keyPressHandler = (e) => {
 
       // Open on typing `Ctrl/Command+k` or `?`.
-      if ((e.ctrlKey || e.metaKey && e.keyCode === 75) || e.key === '?') {
+      if ((e.ctrlKey && e.keyCode === 75 || e.metaKey && e.keyCode === 75) || e.key === '?') {
         e.preventDefault()
         onOpen()
       }
-
-      // Open on typing `s`
-      // if (e.target.tagName === 'BODY' && e.key === 's' || e.key === '?') {
-      //   e.preventDefault()
-      //   onOpen()
-      // }
 
       // Close on `Escape`
       if (e.key === 'Escape') {
@@ -157,7 +152,12 @@ const SearchBar = (props) => {
         onClick={onOpen}>
           <RiSearchEyeLine className="inline-block w-6 h-6 stroke-current group-hover:text-blue" />
           <span className="ml-1">Search</span>
-          <span className="text-xs text-gray-300 font-medium ml-2 px-1 py-0.5 bg-gray-800 rounded shadow-sm">{window.navigator.platform.match(/^Mac/) ? '⌘' : 'Ctrl'} + k</span>
+          <BrowserOnly
+            fallback={<span className="text-xs text-gray-300 font-medium ml-2 px-1 py-0.5 bg-gray-800 rounded shadow-sm">Ctrl/⌘ + k</span>}>
+            {() => {
+              return( <span className="text-xs text-gray-300 font-medium ml-2 px-1 py-0.5 bg-gray-800 rounded shadow-sm">{window.navigator.platform.match(/^Mac/) ? '⌘' : 'Ctrl'} + k</span> )
+            }}
+          </BrowserOnly>
       </button>
 
       {isOpen &&

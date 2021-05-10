@@ -83,7 +83,7 @@ export default function Home() {
           <div className="flex-1 markdown prose-lg ml-0 lg:ml-8 mt-16">
             <h2 className="z-10 relative text-lg lg:text-2xl font-semibold mb-6">
               Latest major release 
-              <span class="flex items-center font-semibold">
+              <span className="flex items-center font-semibold">
                 <code className="text-base">v1.30.0</code>
                 <span className="text-base mx-2">•</span>
                 <time className="text-base text-gray-500 font-medium uppercase dark:text-gray-400">March 31, 2021</time>
