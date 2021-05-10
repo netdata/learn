@@ -231,14 +231,19 @@ h1 {
   @apply transition text-green hover:text-blue;
 }
 
-.markdown blockquote p:before,
-.markdown blockquote p:after {
-  content: none !important;
+.markdown p > img {
+  @apply block mx-auto rounded shadow-lg;
 }
 
 .markdown p > img[src*='icon/assets/'],
 .markdown p > img[src*='registry.my-netdata.io'] {
   @apply inline-block m-0 rounded dark:bg-gray-50;
+}
+
+
+.markdown blockquote p:before,
+.markdown blockquote p:after {
+  content: none !important;
 }
 
 /*

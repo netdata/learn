@@ -49,7 +49,7 @@ export function OneLineInstall() {
 
   return (
     <div className={clsx('relative overflow-hidden mt-8 mb-8 rounded-tr rounded-tl', styles.Container)}>
-      <div className="text-2xl">
+      <div className="text-lg lg:text-2xl">
         <CodeBlock className="bash">
           {currentCommand}
         </CodeBlock>
