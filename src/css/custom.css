@@ -236,10 +236,10 @@ h1 {
 }
 
 .markdown p > img[src*='icon/assets/'],
-.markdown p > img[src*='registry.my-netdata.io'] {
+.markdown p > img[src*='registry.my-netdata.io'],
+.markdown p > img.img__inline {
   @apply inline-block m-0 rounded dark:bg-gray-50;
 }
-
 
 .markdown blockquote p:before,
 .markdown blockquote p:after {
