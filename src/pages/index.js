@@ -28,8 +28,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Here you'll find documentation, guides, and reference material for monitoring and troubleshooting your systems with Netdata.">
       <HomepageHeader />
       <main className="container">
         <Grid className="mb-16" columns="3">
