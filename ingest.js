@@ -425,6 +425,7 @@ async function ingest() {
       /^CODE_OF_CONDUCT\.md/, // exclude root Code of Conduct
       /\/contribute\/README\.md/, // exclude root README.md from .github repo
       /^CONTRIBUTING\.md/, // exclude root CONTRIBUTING.md
+      /dev\.md/, // Exclude the `dev.md` docs from the go.d.plugin repo
     ]
   )
   console.log(`Filtering ${combinedNodes.length} nodes to ${filteredNodes.length}`)
