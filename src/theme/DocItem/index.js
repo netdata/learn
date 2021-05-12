@@ -122,12 +122,12 @@ function DocItem(props) {
             <div className="text-center mt-16 pt-12 border-t border-t-200 dark:border-t-500">
               <p className="block text-xl lg:text-2xl font-medium mb-4">Did you find this {metadata.permalink.includes('/guides/') ? 'guide' : 'document'} helpful?</p>
               {feedback && (
-                <p className="text-lg lg:text-xl text-green-lighter">Thanks for contributing feedback about our docs!</p>
+                <p className="text-lg lg:text-xl text-green mb-4">Thanks for contributing feedback about our docs!</p>
               )}
               <form 
-                name="doc-feedback"
+                name="doc-mood"
                 method="POST"
-                action={`${metadata.permalink}/?success=true`}
+                action={`${metadata.permalink}/?mood=true`}
                 data-netlify="true"
               >
                 <input type="hidden" name="form-name" value="doc-feedback" />
@@ -140,11 +140,25 @@ function DocItem(props) {
                 <button aria-label="happy" className="group px-2">
                   <CgSmile className="w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125" />
                 </button>
+              </form>
+              <form 
+                name="doc-feedback"
+                method="POST"
+                action={`${metadata.permalink}/?feedback=true`}
+                data-netlify="true"
+              >
                 {mood && (
-                  <>
-                    <textarea name="feedback"></textarea>
-                    <button>Submit</button>
-                  </>
+                  <div className="block mt-4">
+                    <textarea 
+                      name="feedback" 
+                      className="block w-full max-w-2xl mx-auto p-4 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500" 
+                      placeholder={`Have any feedback on this ${metadata.permalink.includes('/guides/') ? 'guide' : 'document'}?`}>
+                    </textarea>
+                    <button class="group relative text-text bg-gray-200 mt-4 px-4 py-2 rounded">
+                      <span class="z-10 relative text-xl font-semibold group-hover:text-gray-100">Submit</span>
+                      <div class="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded"></div>
+                    </button>
+                  </div>
                 )}
               </form>
             </div>
