@@ -2,7 +2,7 @@
 
 A public site to learn about Netdata built on [Docusaurus](https://docusaurus.io/).
 
-## Contributing to Netdata's documentation
+## Contributing to Netdata Learn
 
 Most of the files in the `/docs` folder are "mirrors" of their original files in either the
 [`netdata/netdata`](https://github.com/netdata/netdata) or
@@ -12,11 +12,15 @@ Generally speaking, the files in the `/docs` folder of repository should not be 
 guidelines](https://learn.netdata.cloud/contribute/documentation) explains this architecture a bit further and explains
 some of the methods for making or suggesting edits.
 
+Moreover, after taking a look at the [documentation contribution guidelines](https://learn.netdata.cloud/contribute/documentation), please take a look at the [style guide](https://learn.netdata.cloud/contribute/style-guide). We offer friendly advice on how to produce quality documentation, hoping that it will help you in your contribution.
+
 There are a few exceptions to the _don't edit files in this repository_ rule. The following files can be edited here:
 
 - `/docs/docs.mdx` &rarr; `https://learn.netdata.cloud/docs`
 - `/docs/cloud.mdx` &rarr; `https://learn.netdata.cloud/docs/cloud`
 - Any file in the `/docs/cloud/` directory, which generate all the many `https://learn.netdata.cloud/docs/cloud` pages.
+
+Finally, if you are curious about contributing to Netdata in other ways, take a look at the [contributing handbook](https://learn.netdata.cloud/contribute/handbook) that we have compiled.
 
 ## Installation
 
@@ -94,3 +98,9 @@ service.
 
 Deployment is handled automatically through Netlify. Each new commit to the `master` branch deploys the latest version
 of Netdata Learn.
+
+## Netdata Community
+This repository follows the Netdata Code of Conduct and is part of the Netdata Community.
+
+- [Community Forums](https://community.netdata.cloud/)
+- [Netdata Code of Conduct](https://learn.netdata.cloud/contribute/code-of-conduct)
