@@ -53,20 +53,53 @@ function DocItem(props) {
 
   const metaTitle = frontMatter.title || title;
 
-  // console.log(metadata)
-
   // BEGIN EDITS
-  // We're using state to figure out whether a user submitted a form yet.
-  const [mood, setMood] = useState(false)
-  const [feedback, setFeedback] = useState(false)
-  useEffect(() => {
-    if ( window.location.search.includes('mood=true') ) {
-      setMood(true);
-    }
-    if ( window.location.search.includes('feedback=true') ) {
-      setFeedback(true);
-    }
-  }, []);
+  const [form, setForm] = useState({})
+  const [done, setDone] = useState(false)
+
+  function encode(data) {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleMoodChange = (event) => {
+    setForm({ 'mood': event.target.name })
+  }
+
+  const handleFeedbackChange = (event) => {
+    setForm({
+      ...form,
+      'feedback': event.target.value 
+    })
+  }
+
+  const handleMoodSubmit = (event) => {
+    event.preventDefault()
+    setForm({ 'mood': event.target.name })
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": event.target.getAttribute("name"),
+        ...name
+      })
+    }).then().catch(error => alert(error))
+  }
+
+  const handleFeedbackSubmit = (event) => {
+    event.preventDefault()
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": event.target.getAttribute("name"),
+        ...name
+      })
+    }).then(() => setDone(true)).catch(error => alert(error))
+  }
+
+  console.log(form)
   // END EDITS
 
   return (
@@ -120,47 +153,58 @@ function DocItem(props) {
 
             {/* BEGIN EDITS */}
             <div className="text-center mt-16 pt-12 border-t border-t-200 dark:border-t-500">
-              <p className="block text-xl lg:text-2xl font-medium mb-4">Did you find this {metadata.permalink.includes('/guides/') ? 'guide' : 'document'} helpful?</p>
-              {feedback && (
+
+              {done && (
                 <p className="text-lg lg:text-xl text-green mb-4">Thanks for contributing feedback about our docs!</p>
               )}
-              <form 
-                name="doc-mood"
-                method="POST"
-                action={`${metadata.permalink}/?mood=true`}
-                data-netlify="true"
-              >
-                <input type="hidden" name="form-name" value="doc-feedback" />
-                <button aria-label="sad" className="group px-2">
-                  <CgSmileSad className="w-12 h-12 fill-current text-red-400 transform transition group-hover:scale-125" />
-                </button>
-                <button aria-label="neutral" className="group px-2">
-                  <CgSmileNone className="w-12 h-12 fill-current text-amber-300 transform transition group-hover:scale-125" />
-                </button>
-                <button aria-label="happy" className="group px-2">
-                  <CgSmile className="w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125" />
-                </button>
-              </form>
-              <form 
-                name="doc-feedback"
-                method="POST"
-                action={`${metadata.permalink}/?feedback=true`}
-                data-netlify="true"
-              >
-                {mood && (
+
+              {!form.mood &&
+                <>
+                  <p className="block text-xl lg:text-2xl font-medium mb-4">Did you find this {metadata.permalink.includes('/guides/') ? 'guide' : 'document'} helpful?</p>
+                  <form data-netlify="true" name="moodForm" method="post" onSubmit={handleMoodSubmit}>
+                    <input type="hidden" name="form-mood" value="moodForm" />
+                    <div className="flex">
+                      <div className="group px-2">
+                        <input className="" id="bad" name="bad" type="checkbox" onChange={handleMoodSubmit} />
+                        <label htmlFor="bad">
+                          <CgSmileSad className="w-12 h-12 fill-current text-red-400 transform transition group-hover:scale-125" />
+                        </label>
+                      </div>
+                      <div className="group px-2">
+                        <input id="neutral" name="neutral" type="checkbox" onChange={handleMoodSubmit} />
+                        <label htmlFor="neutral">
+                          <CgSmileNone className="w-12 h-12 fill-current text-amber-300 transform transition group-hover:scale-125" />
+                        </label>
+                      </div>
+                      <div className="group px-2">
+                        <input id="good" name="good" type="checkbox" onChange={handleMoodSubmit} />
+                        <label htmlFor="good">
+                          <CgSmile className="w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125" />
+                        </label>
+                      </div>
+                    </div>
+                  </form>
+                </>
+              }
+
+              {form.mood && !done &&
+                <form data-netlify="true" name="feedbackForm" method="post" onSubmit={handleFeedbackSubmit}>
+                  <input type="hidden" name="form-feedback" value="feedbackForm" />
                   <div className="block mt-4">
                     <textarea 
                       name="feedback" 
                       className="block w-full max-w-2xl mx-auto p-4 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500" 
-                      placeholder={`Have any feedback on this ${metadata.permalink.includes('/guides/') ? 'guide' : 'document'}?`}>
+                      placeholder={`Have any feedback on this ${metadata.permalink.includes('/guides/') ? 'guide' : 'document'}?`}
+                      onChange={handleFeedbackChange}>
                     </textarea>
                     <button class="group relative text-text bg-gray-200 mt-4 px-4 py-2 rounded">
                       <span class="z-10 relative text-xl font-semibold group-hover:text-gray-100">Submit</span>
                       <div class="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded"></div>
                     </button>
                   </div>
-                )}
-              </form>
+                </form>
+              }
+
             </div>
 
             <div className="markdown prose-sm mt-12 mx-auto p-6 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500">
