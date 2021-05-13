@@ -162,7 +162,7 @@ function DocItem(props) {
                 <>
                   <p className="block text-xl lg:text-2xl font-medium mb-4">Did you find this {metadata.permalink.includes('/guides/') ? 'guide' : 'document'} helpful?</p>
                   <form data-netlify="true" name="moodForm" method="post" onSubmit={handleMoodSubmit}>
-                    <input type="hidden" name="form-mood" value="moodForm" />
+                    <input type="hidden" name="form-name" value="moodForm" />
                     <div className="flex">
                       <div className="group px-2">
                         <input className="" id="bad" name="bad" type="checkbox" onChange={handleMoodSubmit} />
@@ -189,7 +189,7 @@ function DocItem(props) {
 
               {form.mood && !done &&
                 <form data-netlify="true" name="feedbackForm" method="post" onSubmit={handleFeedbackSubmit}>
-                  <input type="hidden" name="form-feedback" value="feedbackForm" />
+                  <input type="hidden" name="form-name" value="feedbackForm" />
                   <div className="block mt-4">
                     <textarea 
                       name="feedback" 
