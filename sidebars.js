@@ -99,7 +99,7 @@ module.exports = {
             {
               type: 'doc',
               id: 'agent/running-behind-apache',
-              label: 'Proxy with Nginx'
+              label: 'Proxy with Apache'
             },
             {
               type: 'doc',
