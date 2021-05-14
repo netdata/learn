@@ -251,11 +251,11 @@ h1 {
 */
 
 .menu .menu__link {
-  @apply text-text text-sm font-normal dark:text-gray-50;
+  @apply text-text text-sm font-normal dark:text-gray-200;
 }
 
 .menu .menu__link.active {
-  @apply text-blue;
+  @apply bg-gray-100 text-green dark:text-green-lighter;
 }
 
 /*
