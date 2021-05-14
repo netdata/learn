@@ -10,6 +10,10 @@
   to = "/docs/get-netdata"
 
 [[redirects]]
+  from = "/docs/agent/collectors/quickstart"
+  to = "/docs/collect/enable-configure"
+
+[[redirects]]
   from = "/docs/agent/zh/docs/*"
   to = "/docs/agent/:splat"
   status = 301
