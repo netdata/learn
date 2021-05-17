@@ -118,7 +118,7 @@ module.exports = {
               label: 'Daemon reference',
               customProps: { 
                 separator: true,
-                subCategory: 'Security'
+                subCategory: 'Reference'
               }
             },
             {
