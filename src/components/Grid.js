@@ -52,7 +52,7 @@ export const Box = ({ className, to, title, cta, image, children }) => {
 }
 
 export const BoxList = ({children}) => (
-  <div className="block !mt-4">
+  <div className="block first:!pt-2">
     {children}
   </div>
 )

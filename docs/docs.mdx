@@ -30,18 +30,31 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
 <Grid columns="2">
   <Box
     title="Overview">
-    Learn about Netdata's core features, how it's different, and how it integrates with your existing monitoring stack.
     <BoxList>
       <BoxListItem to="/docs/overview/what-is-netdata" title="What is Netdata?" />
       <BoxListItem to="/docs/overview/why-netdata" title="Why use Netdata?" />
       <BoxListItem to="/docs/overview/netdata-monitoring-stack" title="How to use Netdata with your existing stack" />
+      <BoxListItem separator />
       <BoxListItem to="/docs/agent/netdata-security" title="Security design" />
       <BoxListItem to="/docs/agent/anonymous-statistics" title="Anonymous statistics" />
     </BoxList>
   </Box>
   <Box
+    title="Installation">
+    <BoxList>
+      <BoxListItem to="/docs/agent/packaging/installer/methods/kickstart" title="Linux with one-line installer" />
+      <BoxListItem to="/docs/agent/packaging/installer/methods/kickstart-64" title="Linux with pre-built static binary" />
+      <BoxListItem to="/docs/agent/packaging/installer/methods/packages" title="Linux with .deb/.rpm package" />
+      <BoxListItem to="/docs/agent/packaging/docker" title="Run with Docker" />
+      <BoxListItem to="/docs/agent/packaging/installer/methods/kubernetes" title="Deploy on Kubernetes" />
+      <BoxListItem separator />
+      <BoxListItem to="/docs/agent/packaging/installer/update" title="Update" />
+      <BoxListItem to="/docs/agent/packaging/installer/reinstall" title="Reinstall" />
+      <BoxListItem to="/docs/agent/packaging/installer/uninstall" title="Uninstall" />
+    </BoxList>
+  </Box>
+  <Box
     title="Configuration">
-    Learn how to set up the Netdata Agent on one or more nodes to maximize the immediate value you get from monitoring your systems, containers, and applications.
     <BoxList>
       <BoxListItem to="/docs/configure/nodes" title="Configure the Netdata Agent" />
       <BoxListItem to="/docs/configure/common-changes" title="Common configuration changes" />
@@ -54,7 +67,6 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
   </Box>
   <Box
     title="Dashboard">
-    Follow how-tos on interacting with Netdata's dashboard and charts so you can quickly drill down on anomalies and discover their root cause.
     <BoxList>
       <BoxListItem to="/docs/dashboard/how-dashboard-works" title="How the dashboard works" />
       <BoxListItem to="/docs/dashboard/interact-charts" title="Interact with charts" />
@@ -68,7 +80,6 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
   </Box>
   <Box
     title="Data collection">
-    Learn what per-second metrics Netdata can collect using its 300+ built-in collectors, full compatibility with Prometheus endpoints, and zero configuration.
     <BoxList>
       <BoxListItem to="/docs/collect/how-collectors-work" title="How Netdata's metrics collectors work" />
       <BoxListItem to="/docs/collect/enable-configure" title="Enable or configure a collector" />
@@ -82,16 +93,15 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
   </Box>
   <Box
     title="Alerts and notifications">
-    Leverage Netdata's health watchdog and hundreds of pre-configured alerts to receive notifications on your favorite platforms whenever an anomaly affects the health or performance of your infrastructure.
     <BoxList>
       <BoxListItem to="/docs/monitor/view-active-alarms" title="View active health alarms" />
       <BoxListItem to="/docs/monitor/configure-alarms" title="Configure health alarms" />
+      <BoxListItem separator />
       <BoxListItem to="/docs/monitor/enable-notifications" title="Enable alert notifications" />
     </BoxList>
   </Box>
   <Box
     title="Metrics storage and management">
-    Netdata's distributed data architecture simplifies metrics storage and gives you the flexibility to stream or export metrics to create any long-term storage solution.
     <BoxList>
       <BoxListItem to="/docs/store/distributed-data-architecture" title="Distributed data architecture" />
       <BoxListItem to="/docs/store/change-metrics-storage" title="Change how long Netdata stores metrics" />
@@ -102,6 +112,10 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
       <BoxListItem to="/docs/export/external-databases" title="Export metrics to external time-series databases" />
       <BoxListItem to="/docs/export/enable-connector" title="Enable an exporting connector" />
     </BoxList>
+  </Box>
+  <Box
+    to="/docs/agent/cheatsheet">
+    <img src="/img/cheatsheet/netdata-cheatsheet.png" />
   </Box>
 </Grid>
 

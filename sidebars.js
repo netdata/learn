@@ -97,7 +97,10 @@ module.exports = {
             {
               type: 'doc',
               id: 'configure/secure-nodes',
-              customProps: { separator: true }
+              customProps: { 
+                separator: true,
+                subCategory: 'Security'
+              }
             },
             {
               type: 'doc',
@@ -113,7 +116,10 @@ module.exports = {
               type: 'doc',
               id: 'agent/daemon',
               label: 'Daemon reference',
-              customProps: { separator: true }
+              customProps: { 
+                separator: true,
+                subCategory: 'Security'
+              }
             },
             {
               type: 'doc',

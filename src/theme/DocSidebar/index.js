@@ -172,10 +172,10 @@ function DocSidebarItemLink({
   return (
     <li className="menu__list-item" key={label}>
       {isSeparator &&
-        <div className="block w-full h-0.5 mt-2 mb-2 px-4 bg-gray-200 bg-clip-content dark:bg-gray-700"></div>
+        <div className="block w-full h-0.5 mt-2 mb-2 px-4 bg-gray-200 bg-clip-content dark:bg-gray-300"></div>
       }
       {isSubcategory &&
-        <span className="block text-xs text-gray-700 font-bold uppercase pt-1 ml-4 pb-2">{item.customProps.subCategory}</span>
+        <span className="block text-xs text-gray-500 font-bold uppercase pt-1 ml-4 pb-2 dark:text-gray-200">{item.customProps.subCategory}</span>
       }
       <Link
         className={clsx('menu__link ', {
