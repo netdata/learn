@@ -6,6 +6,10 @@
 
 **Merged pull requests:**
 
+- Fix broken link in dimensions/contexts/families doc [\#11148](https://github.com/netdata/netdata/pull/11148) ([joelhans](https://github.com/joelhans))
+- Add info on other memory modes to performance.md [\#11144](https://github.com/netdata/netdata/pull/11144) ([cakrit](https://github.com/cakrit))
+- Use size\_t instead of int for vfs\_bufspace\_count in FreeBSD plugin [\#11142](https://github.com/netdata/netdata/pull/11142) ([diizzyy](https://github.com/diizzyy))
+- Bundle the react dashboard code into the agent repo directly. [\#11139](https://github.com/netdata/netdata/pull/11139) ([Ferroin](https://github.com/Ferroin))
 - Use size\_t instead of int for vfs\_bufspace\_count in FreeBSD plugin [\#11142](https://github.com/netdata/netdata/pull/11142) ([diizzyy](https://github.com/diizzyy))
 - Reduce the number of ACLK chart updates during chart obsoletion [\#11133](https://github.com/netdata/netdata/pull/11133) ([stelfrag](https://github.com/stelfrag))
 - Update k6.md [\#11127](https://github.com/netdata/netdata/pull/11127) ([OdysLam](https://github.com/OdysLam))
