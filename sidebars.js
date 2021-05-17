@@ -130,14 +130,16 @@ module.exports = {
             'dashboard/interact-charts',
             'dashboard/dimensions-contexts-families',
             'dashboard/select-timeframes',
+            'dashboard/import-export-print-snapshot',
             {
               type: 'doc',
-              id: 'agent/web/gui/custom',
+              id: 'dashboard/customize',
               customProps: { 
                 separator: true,
                 subCategory: 'Customization',
               }
             },
+            'agent/web/gui/custom',
             {
               type: 'doc',
               id: 'agent/web/server',
@@ -262,7 +264,7 @@ module.exports = {
             {
               type: 'doc',
               id: 'monitor/view-active-alarms',
-              label: 'Alert configuration reference',
+              label: 'View active alerts',
               customProps: {
                 subCategory: 'Alerts'
               }

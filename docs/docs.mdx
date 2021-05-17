@@ -35,6 +35,8 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
       <BoxListItem to="/docs/overview/what-is-netdata" title="What is Netdata?" />
       <BoxListItem to="/docs/overview/why-netdata" title="Why use Netdata?" />
       <BoxListItem to="/docs/overview/netdata-monitoring-stack" title="How to use Netdata with your existing stack" />
+      <BoxListItem to="/docs/agent/netdata-security" title="Security design" />
+      <BoxListItem to="/docs/agent/anonymous-statistics" title="Anonymous statistics" />
     </BoxList>
   </Box>
   <Box
@@ -44,7 +46,10 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
       <BoxListItem to="/docs/configure/nodes" title="Configure the Netdata Agent" />
       <BoxListItem to="/docs/configure/common-changes" title="Common configuration changes" />
       <BoxListItem to="/docs/configure/start-stop-restart" title="Start, stop, or restart the Netdata Agent" />
+      <BoxListItem separator />
       <BoxListItem to="/docs/configure/secure-nodes" title="Secure your nodes" />
+      <BoxListItem to="/docs/agent/running-behind-nginx" title="Reverse proxy with Nginx" />
+      <BoxListItem to="/docs/agent/running-behind-apache" title="Reverse proxy with Apache" />
     </BoxList>
   </Box>
   <Box
@@ -55,6 +60,10 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
       <BoxListItem to="/docs/dashboard/interact-charts" title="Interact with charts" />
       <BoxListItem to="/docs/dashboard/dimensions-contexts-families" title="Chart dimensions, contexts, and families" />
       <BoxListItem to="/docs/dashboard/select-timeframes" title="Select timeframes to visualize" />
+      <BoxListItem to="/docs/dashboard/import-export-print-snapshot" title="Import, export, and print a snapshot" />
+      <BoxListItem separator />
+      <BoxListItem to="/docs/dashboard/customize" title="Customize the standard dashboard" />
+      <BoxListItem to="/docs/agent/web/gui/custom" title="Custom dashboards" />
     </BoxList>
   </Box>
   <Box
@@ -63,19 +72,21 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
     <BoxList>
       <BoxListItem to="/docs/collect/how-collectors-work" title="How Netdata's metrics collectors work" />
       <BoxListItem to="/docs/collect/enable-configure" title="Enable or configure a collector" />
+      <BoxListItem separator />
       <BoxListItem to="/docs/collect/system-metrics" title="System metrics" />
       <BoxListItem to="/docs/collect/container-metrics" title="Container metrics" />
       <BoxListItem to="/docs/collect/application-metrics" title="Application metrics" />
+      <BoxListItem separator />
       <BoxListItem to="/docs/agent/collectors/collectors" title="Supported collectors list" />
     </BoxList>
   </Box>
   <Box
-    title="Alarms and notifications">
-    Leverage Netdata's health watchdog and hundreds of pre-configured alarms to receive notifications on your favorite platforms whenever an anomaly affects the health or performance of your infrastructure.
+    title="Alerts and notifications">
+    Leverage Netdata's health watchdog and hundreds of pre-configured alerts to receive notifications on your favorite platforms whenever an anomaly affects the health or performance of your infrastructure.
     <BoxList>
       <BoxListItem to="/docs/monitor/view-active-alarms" title="View active health alarms" />
       <BoxListItem to="/docs/monitor/configure-alarms" title="Configure health alarms" />
-      <BoxListItem to="/docs/monitor/enable-notifications" title="Enable notifications" />
+      <BoxListItem to="/docs/monitor/enable-notifications" title="Enable alert notifications" />
     </BoxList>
   </Box>
   <Box
@@ -84,8 +95,10 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
     <BoxList>
       <BoxListItem to="/docs/store/distributed-data-architecture" title="Distributed data architecture" />
       <BoxListItem to="/docs/store/change-metrics-storage" title="Change how long Netdata stores metrics" />
+      <BoxListItem separator />
       <BoxListItem to="/docs/metrics-storage-management/how-streaming-works" title="How metrics streaming works" />
       <BoxListItem to="/docs/metrics-storage-management/enable-streaming" title="Enable streaming between nodes" />
+      <BoxListItem separator />
       <BoxListItem to="/docs/export/external-databases" title="Export metrics to external time-series databases" />
       <BoxListItem to="/docs/export/enable-connector" title="Enable an exporting connector" />
     </BoxList>

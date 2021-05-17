@@ -52,15 +52,19 @@ export const Box = ({ className, to, title, cta, image, children }) => {
 }
 
 export const BoxList = ({children}) => (
-  <ul>
+  <div className="block !mt-4">
     {children}
-  </ul>
+  </div>
 )
 
-export const BoxListItem = ({to, title}) => (
-  <li>
-    <Link to={to}>
-      {title}
-    </Link>
-  </li>
+export const BoxListItem = ({to, title, separator}) => (
+  <div className={`block py-1 ${separator && 'list-none'}`}>
+    {!separator ? 
+      <Link to={to}>
+        {title}
+      </Link>
+    : 
+      <span className="block w-full h-0.5 mt-2 mb-2 bg-gray-200 bg-clip-content dark:bg-gray-700"></span>
+    }
+  </div>
 )
