@@ -65,14 +65,11 @@ async function getRateLimit() {
 }
 
 async function getRootSha(user = 'netdata', repo = 'netdata', branch = 'master') {
-  console.log('Fetching sha from ' + `${user}/${repo}/branches/${branch}`)
-
   const { data: { commit: { sha } } } = await ax.get(`${user}/${repo}/branches/${branch}`)
   return sha
 }
 
 async function getNodes(rootSha, user = 'netdata', repo = 'netdata') {
-  console.log('Fetching nodes from ' + `${user}/${repo}/git/trees/${rootSha}?recursive=true`)
   const { data: { tree } } = await ax.get(`${user}/${repo}/git/trees/${rootSha}?recursive=true`)
   return tree
 }
