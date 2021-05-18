@@ -16,6 +16,15 @@ dotenv.config()
 
 const MIN_RATE_LIMIT = 50
 
+// Set the GitHub user and branch to fetch with axios. The defaults are
+// `netdata` and `master`. Setting these are useful in GitHub Actions or
+// manually triggering an ingest to test some unmerged code in a fork or branch
+// that's not the default.
+const [ 
+  user = 'netdata', 
+  branch = 'master'
+] = process.argv.slice(2)
+
 // see the README.md for instructions to set up a github access token
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const baseDir = '/docs'
@@ -32,7 +41,7 @@ const retainPaths = [
 ]
 
 const ax = axios.create({
-  baseURL: 'https://api.github.com/repos/netdata/',
+  baseURL: `https://api.github.com/repos/`,
   headers: {
     'Authorization': `token ${GITHUB_TOKEN}`
   }
@@ -55,13 +64,16 @@ async function getRateLimit() {
   }
 }
 
-async function getRootSha(repo = 'netdata', branch = 'master') {
-  const { data: { commit: { sha } } } = await ax.get(`${repo}/branches/${branch}`)
+async function getRootSha(user = 'netdata', repo = 'netdata', branch = 'master') {
+  console.log('Fetching sha from ' + `${user}/${repo}/branches/${branch}`)
+
+  const { data: { commit: { sha } } } = await ax.get(`${user}/${repo}/branches/${branch}`)
   return sha
 }
 
-async function getNodes(rootSha, repo = 'netdata') {
-  const { data: { tree } } = await ax.get(`${repo}/git/trees/${rootSha}?recursive=true`)
+async function getNodes(rootSha, user = 'netdata', repo = 'netdata') {
+  console.log('Fetching nodes from ' + `${user}/${repo}/git/trees/${rootSha}?recursive=true`)
+  const { data: { tree } } = await ax.get(`${user}/${repo}/git/trees/${rootSha}?recursive=true`)
   return tree
 }
 
@@ -385,24 +397,24 @@ async function ingest() {
   }
 
   console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getRootSha('netdata', 'master')
-  console.log(`Fetching nodes from 'netdata' repo...`)
+  const rootSha = await getRootSha(user, 'netdata', branch)
+  console.log(`Fetching nodes from ${user} repo...`)
   const nodes = await getNodes(rootSha)
 
   console.log(`Fetching root SHA for '.github' repo...`)
-  const ghRootSha = await getRootSha('.github', 'main')
+  const ghRootSha = await getRootSha('netdata', '.github', 'main')
   console.log(`Fetching nodes from '.github' repo...`)
-  const ghNodes = await getNodes(ghRootSha, '.github')
+  const ghNodes = await getNodes(ghRootSha, 'netdata', '.github')
 
   console.log(`Fetching root SHA for 'go.d.plugin' repo...`)
-  const goRootSha = await getRootSha('go.d.plugin', 'master')
+  const goRootSha = await getRootSha('netdata', 'go.d.plugin', 'master')
   console.log(`Fetching nodes from 'go.d.plugin' repo...`)
-  const goNodes = await getNodes(goRootSha, 'go.d.plugin')
+  const goNodes = await getNodes(goRootSha, 'netdata', 'go.d.plugin')
 
   console.log(`Fetching root SHA for 'agent-service-discovery' repo...`)
-  const sdRootSha = await getRootSha('agent-service-discovery', 'master')
+  const sdRootSha = await getRootSha('netdata', 'agent-service-discovery', 'master')
   console.log(`Fetching nodes from 'agent-service-discovery' repo...`)
-  const sdNodes = await getNodes(sdRootSha, 'agent-service-discovery')
+  const sdNodes = await getNodes(sdRootSha, 'netdata', 'agent-service-discovery')
 
   const ghPrefixedNodes = prefixNodes(ghNodes, '/contribute/')
   const goPrefixedNodes = prefixNodes(goNodes, 'collectors/go.d.plugin/')
