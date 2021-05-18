@@ -103,18 +103,16 @@ function DocItem(props) {
             <div className="markdown prose-sm mt-12 mx-auto p-6 bg-gray-50 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500 ">
               <h2 className="!text-2xl font-bold !mb-4">Reach out</h2>
               <p className="text-sm">
-                If you need help after reading this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'}, feel free to{` `}
-                <Link to={`https://github.com/netdata/netdata/issues/new?title=Docs%20feedback%20on:%20${title}&body=**Issue%20with:%20${title}**`}>create an issue</Link>{` `}
-                in the <Link to="https://github.com/netdata/netdata"><code>netdata/netdata</code></Link> repo{` `}
-                or join our <Link to="https://community.netdata.cloud">community forum</Link> to search for an answer.{` `}
-                There's a good chance someone else has already found a solution to the same issue.
+                If you need help after reading this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'}, search our 
+                <Link to="https://community.netdata.cloud">community forum</Link> for an answer.{` `}
+                There's a good chance someone else has already found a solution to the same issue.{` `}
               </p>
               <div className="flex flex-wrap">
                 <div className="flex-1">
                   <h3 className="!mt-0">Documentation</h3>
                   <ul className="text-sm">
                     {editUrl && <li><Link to={editUrl}>Edit</Link> this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'} directly</li>}
-                    <li><Link to={`https://github.com/netdata/netdata/issues/new?title=Docs%20feedback%20on:%20${title}&body=**Issue%20with:%20${title}**`}>Create an issue</Link> for this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'} to suggest improvements</li>
+                    <li><Link to={`https://community.netdata.cloud/new-topic?category_id=6&tags=documentation&title=Feedback%20or%20suggestion%20on:%20${title.replace(/\s+/g, '%20')}`}>Suggest an improvement</Link> for this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'} in our forum</li>
                   </ul>
                 </div>
                 <div className="flex-1">
