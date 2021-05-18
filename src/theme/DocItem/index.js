@@ -103,7 +103,7 @@ function DocItem(props) {
             <div className="markdown prose-sm mt-12 mx-auto p-6 bg-gray-50 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500 ">
               <h2 className="!text-2xl font-bold !mb-4">Reach out</h2>
               <p className="text-sm">
-                If you need help after reading this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'}, search our 
+                If you need help after reading this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'}, search our{` `}
                 <Link to="https://community.netdata.cloud">community forum</Link> for an answer.{` `}
                 There's a good chance someone else has already found a solution to the same issue.{` `}
               </p>
