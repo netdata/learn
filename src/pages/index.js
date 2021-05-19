@@ -3,7 +3,7 @@ import Layout from '@theme/Layout'
 import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { Grid, Box } from '@site/src/components/Grid'
-import { News, Release } from '@site/src/data/News'
+import { News, ReleaseVersion, ReleaseDate, ReleaseNotes } from '@site/src/data/News'
 import HeroImage from '/static/img/hero.svg'
 
 function HomepageHeader() {
@@ -83,17 +83,17 @@ export default function Home() {
             <h2 className="z-10 relative text-lg lg:text-2xl font-semibold mb-6">
               Latest major release 
               <span className="flex items-center font-semibold">
-                <code className="text-base">v1.30.0</code>
+                <code className="text-base">{ReleaseVersion}</code>
                 <span className="text-base mx-2">•</span>
-                <time className="text-base text-gray-500 font-medium uppercase dark:text-gray-400">March 31, 2021</time>
+                <time className="text-base text-gray-500 font-medium uppercase dark:text-gray-400">{ReleaseDate}</time>
               </span>
             </h2>
             <ul>
-              {Release.map((props, idx) => (
+              {ReleaseNotes.map((props, idx) => (
                 <li key={props} dangerouslySetInnerHTML={{ __html: props }}></li>
               ))}
             </ul>
-            <p>Read the <Link to="https://github.com/netdata/netdata/releases">release notes</Link> or <Link to="/docs/agent/packaging/installer/update"> update now</Link>.</p>
+            <p>Read the <Link to={`https://github.com/netdata/netdata/releases/tag/v${ReleaseVersion}`}>release notes</Link> or <Link to="/docs/agent/packaging/installer/update"> update now</Link>.</p>
           </div>
         </div>
       </main>
