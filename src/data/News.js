@@ -1,10 +1,14 @@
 import React from 'react'
 
-export const Release = [
-  '4x faster time-to-Cloud',
-  '<strikethrough>Google Analytics</strikethrough> PostHog',
-  'Deeper Linux kernel monitoring (eBPF)',
-  'Docker developer environment',
+export const ReleaseVersion = '1.31.0'
+
+export const ReleaseDate = 'May 19, 2021'
+
+export const ReleaseNotes = [
+  'Re-packaged and redesigned dashboard',
+  'eBPF expands into the directory cache',
+  'Machine learning-powered collectors',
+  'An improved Netdata learning experience',
 ]
 
 export const News = [
