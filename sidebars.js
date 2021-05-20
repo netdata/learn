@@ -404,10 +404,11 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Monitoring',
+          label: 'Alerts and notifications',
           items: [
-            'cloud/monitoring/notifications',
-            'cloud/monitoring/alarms',
+            'cloud/alerts-notifications/view-active-alerts',
+            'cloud/alerts-notifications/smartboard',
+            'cloud/alerts-notifications/notifications',
           ]
         },
         {

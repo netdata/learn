@@ -8,7 +8,7 @@ The Nodes view lets you see and customize key metrics from any number of Agent-m
 to any node's dashboard for troubleshooting performance issues or anomalies using Netdata's highly-granular metrics.
 
 ![The Nodes view in Netdata
-Cloud](https://user-images.githubusercontent.com/1153921/108524997-de918a00-728c-11eb-9060-da654076eac9.png)
+Cloud](https://user-images.githubusercontent.com/1153921/119035218-2eebb700-b964-11eb-8b74-4ec2df0e457c.png)
 
 Each War Room's Nodes view is populated based on the nodes you added to that specific War Room. Each node occupies a
 single row, first featuring that node's alarm status (yellow for warnings, red for critical alarms) and operating
@@ -38,10 +38,11 @@ pre-configured with every installation of the Netdata Agent, so it features thou
 interactive charts without needing to waste time setting it up.
 
 ![Screenshot of an single-node
-dashboard](https://user-images.githubusercontent.com/1153921/108525133-02ed6680-728d-11eb-96e2-78b907110c8f.png)
+dashboard](https://user-images.githubusercontent.com/1153921/119035389-5e9abf00-b964-11eb-8e51-29af0c55b65d.png)
 
-With all of the Agent's real-time data at your fingertips, you can first identify health or performance anomalies with
-Netdata Cloud, and then engage your team to perform root-cause analysis using the Agent's granular metrics.
+With all of the an individual node's real-time data at your fingertips, you can first identify health or performance
+anomalies with Netdata Cloud, and then engage your team to perform root-cause analysis using the Agent's granular
+metrics.
 
 ## See more metrics in Netdata Cloud
 
