@@ -152,7 +152,7 @@ monitor an Apache web server, the **Apache** section still appears and displays 
 screen](https://user-images.githubusercontent.com/1153921/95785094-fa0ad980-0c89-11eb-8328-2ff11ac630b4.png)
 
 One difference between the Overview's menu and those found in single-node dashboards or local Agent dashboards is that
-the Overview condenses multiple services, families, or instances into single sectiosn, sub-menus, and associated charts.
+the Overview condenses multiple services, families, or instances into single sections, sub-menus, and associated charts.
 
 For services, let's say you have two concurrent jobs with the [web_log
 collector](/docs/agent/collectors/go.d.plugin/modules/weblog), one for Apache and another for Nginx. A single-node or

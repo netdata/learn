@@ -66,7 +66,7 @@ indicators](https://user-images.githubusercontent.com/1153921/108520332-ca975980
 
 The alerts indicator displays the number of active `critical` (red) and `warning` (yellow) alerts for the nodes in this
 War Room. Click on either the critical or warning badges to open a pre-filtered modal displaying only those types of
-[active alerts](/docs/cloud/monitoring/alarms).
+[active alerts](/docs/cloud/alerts-notifications/view-active-alerts).
 
 The nodes indicator displays the number of _active_ (transparent) and _unreachable_ (gray) nodes. Click on either of
 them to open a dropdown with their hostnames, status when relevant, and a link to open a single-node dashboard.

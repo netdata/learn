@@ -57,5 +57,5 @@ for finding the disk and RAM you need to store metrics for a certain period of t
 
 ## What's next?
 
-Now that you know how to view your nodes at a glance, learn how to [track active alarms](/docs/cloud/monitoring/alarms)
-with the Alarms panel.
+Now that you know how to view your nodes at a glance, learn how to [track active
+alarms](/docs/cloud/alerts-notifications/view-active-alerts) with the Alerts Smartboard.

@@ -67,7 +67,7 @@ enables flood protection. As long as a node is in flood protection mode, Netdata
 this node. Even with flood protection active, it is possible to access the node directly, either via Netdata Cloud or
 the local Agent dashboard at `http://NODE:19999`.
 
-## Anatomy of an alarm notification
+## Anatomy of an alert notification
 
 Email alarm notifications show the following information:
 
@@ -79,7 +79,7 @@ Email alarm notifications show the following information:
 -   Chart context that triggered the alarm
 -   Name and information about the triggered alarm
 -   Alarm value
--   Total number of warning and critical alarms on that node
+-   Total number of warning and critical alerts on that node
 -   Threshold for triggering the given alarm state
 -   Calculation or database lookups that Netdata uses to compute the value
 -   Source of the alarm, including which file you can edit to configure this alarm on an individual node
@@ -98,5 +98,5 @@ Netdata Cloud's alarm notifications feature leverages the alarms configuration o
 you'd like to tweak any of these alarms, or even add new ones based on your needs, read our [health
 quickstart](/docs/monitor/configure-alarms).
 
-You can also [view active alarms](/docs/cloud/monitoring/alarms) in Netdata Cloud for an instant visualization of the
-health of your infrastructure.
+You can also [view active alarms](/docs/cloud/alerts-notifications/view-active-alerts) in Netdata Cloud for an instant
+visualization of the health of your infrastructure.
