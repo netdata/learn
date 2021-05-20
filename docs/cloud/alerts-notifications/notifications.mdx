@@ -4,6 +4,8 @@ description: Configure Netdata Cloud to send notifications to your team whenever
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/alerts-notifications/notifications.mdx
 ---
 
+import Callout from '@site/src/components/Callout'
+
 Netdata Cloud can send centralized alert notifications to your team whenever a node enters a warning, critical, or
 unreachable state. By enabling notifications, you ensure no alert, on any node in your infrastructure, goes unnoticed by
 you or your team.
@@ -18,11 +20,15 @@ Admins must enable alert notifications for their [Space(s)](#manage-alert-notifi
 Space can then personalize their notifications settings from within their [account
 menu](#manage-alert-notifications-per-user).
 
-> ❕ Centralized alert notifications from Netdata Cloud is a independent process from [notifications notifications from
+<Callout type="notice">
+
+Centralized alert notifications from Netdata Cloud is a independent process from [notifications from
 Netdata](/docs/monitor/enable-notifications). You can enable one or the other, or both, based on your needs. However,
 the alerts you see in Netdata Cloud are based on those streamed from your Netdata-monitoring nodes. If you want to tweak
 or add new alert that you see in Netdata Cloud, and receive via centralized alert notifications, you must
 [configure](/docs/monitor/configure-alarms) each node's alert watchdog.
+
+</Callout>
 
 ## Manage alert notifications for a Space
 
