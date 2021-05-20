@@ -12,16 +12,16 @@ With Overview's composite charts, you can see your infrastructure from a single 
 anomalies, then drill down by grouping metrics by node and jumping to single-node dashboards for root cause analysis.
 
 ![The War Room
-Overview](https://user-images.githubusercontent.com/1153921/108522390-03383280-728a-11eb-8db4-fc9aa07764fd.png)
+Overview](https://user-images.githubusercontent.com/1153921/119035632-a0c40080-b964-11eb-8e69-d7fee04613a7.png)
 
 ## Before you get started
 
-Only nodes with v1.25.0-127 or later of the [Netdata Agent](https://github.com/netdata/netdata) can contribute to
-composite charts. If your node(s) use an earlier, incompatible version of the Netdata Agent, you will see them marked as
-**needs upgrade** in various dropdowns
+Only nodes with v1.25.0-127 or later of the the [open-source Netdata](https://github.com/netdata/netdata) monitoring
+agent can contribute to composite charts. If your node(s) use an earlier version of Netdata, you will see them marked as
+**needs upgrade** in various dropdowns.
 
 See our [update docs](/docs/agent/packaging/installer/update) for the preferred update method based on how you installed
-the Agent.
+Netdata.
 
 ## Composite charts
 
@@ -140,7 +140,7 @@ entering the name and clicking **New Dashboard**.
 
 You can interact with composite charts as you would with other Netdata charts. You can use the controls beneath each
 chart to pan, zoom, or resize the chart, or use various combinations of the keyboard and mouse. See the [chart
-interaction doc](/docs/visualize/interact-dashboards-charts#interact-with-charts) for details.
+interaction doc](/docs/dashboard/interact-charts) for details.
 
 ## Menu
 
@@ -152,20 +152,20 @@ monitor an Apache web server, the **Apache** section still appears and displays 
 screen](https://user-images.githubusercontent.com/1153921/95785094-fa0ad980-0c89-11eb-8328-2ff11ac630b4.png)
 
 One difference between the Overview's menu and those found in single-node dashboards or local Agent dashboards is that
-the Overview condenses multiple services, families, or instances into single sectiosn, sub-menus, and associated charts.
+the Overview condenses multiple services, families, or instances into single sections, sub-menus, and associated charts.
 
 For services, let's say you have two concurrent jobs with the [web_log
-collector](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/weblog), one for Apache and another for
-Nginx. A single-node or local dashboard shows two section, **web_log apache** and **web_log nginx**, whereas the
-Overview condenses these into a single **web_log** section containing composite charts from both jobs.
+collector](/docs/agent/collectors/go.d.plugin/modules/weblog), one for Apache and another for Nginx. A single-node or
+local dashboard shows two section, **web_log apache** and **web_log nginx**, whereas the Overview condenses these into a
+single **web_log** section containing composite charts from both jobs.
 
 The Overview also consdenses multiple families or multiple instances into a single **all** sub-menu and associated
 charts. For example, if Node A has 5 disks, and Node B has 3, each disk contributes to a single `disk.io` composite
 chart. The utility bar should show that there are 8 charts from 2 nodes contributing to that chart.
 
 This action applies to disks, network devices, and other metric types that involve multiple instances of a piece of
-hardware or software. The Overview currently does not display metrics from filesystems. Read more about families and
-instances in our [web server docs](/docs/agent/web).
+hardware or software. The Overview currently does not display metrics from filesystems. Read more about [families and
+instances](/docs/dashboard/dimensions-contexts-families)
 
 ## Persistence of composite chart settings
 
@@ -178,7 +178,7 @@ colleagues by having them copy-paste it into their browser.
 For another way to view an infrastructure from a high level, see the [Nodes view](/docs/cloud/visualize/nodes).
 
 If you need a refresher on how Netdata's charts work, see our doc on [interacting with
-charts](/docs/visualize/interact-dashboards-charts).
+charts](/docs/dashboard/interact-charts).
 
 Or, get more granular with configuring how you monitor your infrastructure by [building new
-dashboards](/docs/visualize/create-dashboards).
+dashboards](/docs/cloud/visualize/dashboards).

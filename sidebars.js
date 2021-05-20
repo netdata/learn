@@ -399,15 +399,23 @@ module.exports = {
             'cloud/visualize/nodes',
             'cloud/visualize/dashboards',
             'cloud/visualize/kubernetes',
-            'cloud/insights/metric-correlations',
+            
           ]
         },
         {
           type: 'category',
-          label: 'Monitoring',
+          label: 'Alerts and notifications',
           items: [
-            'cloud/monitoring/notifications',
-            'cloud/monitoring/alarms',
+            'cloud/alerts-notifications/view-active-alerts',
+            'cloud/alerts-notifications/smartboard',
+            'cloud/alerts-notifications/notifications',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Troubleshooting with Netdata Cloud',
+          items: [
+            'cloud/insights/metric-correlations',
           ]
         },
         {

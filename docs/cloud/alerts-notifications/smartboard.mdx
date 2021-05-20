@@ -1,0 +1,49 @@
+---
+title: Alert Smartboard
+description: ""
+type: reference
+custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/alerts-notifications/smartboard.mdx
+---
+
+The Alerts Smartboard gives you a high level of availability and performance information for every node you're
+monitoring with Netdata Cloud. We expect it to become the "home base" for many Netdata Cloud users who want to instantly
+understand what's going on with their infrastructure and exactly where issues might be.
+
+The Smartboard is available entirely for free to all users and for any number of nodes.
+
+![The Alerts
+Smartboard](https://user-images.githubusercontent.com/1153921/119025635-2fcb1b80-b959-11eb-9fdb-7f1a082f43c5.png)
+
+## Active alerts
+
+The two large boxes show you exactly how many **critical** and **warning** alerts are active across your nodes. Click on
+either column to filter the [nodes map](#nodes-map) and [alerts table](#alerts-table) for only that type of alert.
+
+## Nodes map
+
+The nodes map puts each node into a separate box and displays the number of critical and warning alerts.
+
+Hover over any box on the map to reveal a popup with the node's name and the name, value, and timestamp for each active
+alert. Click on any box to filter the [alerts table](#alerts-table) for that node only.
+
+Click on any of the alert names to see the alert [in
+context](/docs/cloud/alerts-notifications/view-active-alerts#view-alerts-in-context-with-alerts) with the chart and
+dimension that triggered it.
+
+![The popup displaying node-specific alert
+information](https://user-images.githubusercontent.com/1153921/119036911-2d22f300-b966-11eb-88cb-20474bc3afb4.png)
+
+The nodes map can also can also be filtered by severity and operating system type.
+
+## Alerts table
+
+The alerts table shows all active alerts in your War Room, including the alert's name, the most recent value, a
+timestamp of when it became active, and the relevant node.
+
+Click on any of the alert names to see the alert [in
+context](/docs/cloud/alerts-notifications/view-active-alerts#view-alerts-in-context-with-alerts) with the chart and
+dimension that triggered it.
+
+![The Alerts table in the
+Smartboard](https://user-images.githubusercontent.com/1153921/119036796-049af900-b966-11eb-9852-d86f498057c9.png)
+
