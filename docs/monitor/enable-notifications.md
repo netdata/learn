@@ -25,10 +25,11 @@ response process.
 
 ## Netdata Cloud
 
-Netdata Cloud's [centralized alarm notifications](/docs/cloud/monitoring/notifications/) is a
-zero-configuration way to get notified when an anomaly or incident strikes any node or application in your
-infrastructure. The advantage of using centralized alarm notifications from Netdata Cloud is that you don't have to
-worry about configuring each node in your infrastructure.
+Netdata Cloud's [centralized alarm
+notifications](/docs/cloud/alerts-notifications/notifications) is a zero-configuration way to
+get notified when an anomaly or incident strikes any node or application in your infrastructure. The advantage of using
+centralized alarm notifications from Netdata Cloud is that you don't have to worry about configuring each node in your
+infrastructure.
 
 To enable centralized alarm notifications for a Space, click on **Manage Space** in the left-hand menu, then click on
 the **Notifications** tab. Click the toggle switch next to **E-mail** to enable this notification method.
@@ -40,8 +41,9 @@ choose what types of notifications to receive from each War Room.
 ![Enabling and configuring alarm notifications in Netdata
 Cloud](https://user-images.githubusercontent.com/1153921/101936280-93c50900-3b9d-11eb-9ba0-d6927fa872b7.gif)
 
-See the [centralized alarm notifications](/docs/cloud/monitoring/notifications/) reference
-doc for further details about what information is conveyed in an email notification, flood protection, and more.
+See the [centralized alarm notifications](/docs/cloud/alerts-notifications/notifications)
+reference doc for further details about what information is conveyed in an email notification, flood protection, and
+more.
 
 ## Netdata Agent
 
@@ -138,7 +140,7 @@ architecture](/docs/store/distributed-data-architecture) for the best-in-class p
 
 ### Related reference documentation
 
-- [Netdata Cloud · Alarm notifications](/docs/cloud/monitoring/notifications/)
+- [Netdata Cloud · Alarm notifications](/docs/cloud/alerts-notifications/notifications)
 - [Netdata Agent · Notifications](/docs/agent/health/notifications)
 
 
