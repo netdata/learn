@@ -42,6 +42,11 @@ module.exports = {
           label: 'Contribute',
         },
         {
+          href: 'https://community.netdata.cloud/docs',
+          position: 'left',
+          label: 'FAQ',
+        },
+        {
           href: 'https://netdata.cloud',
           label: 'netdata.cloud',
           position: 'right'
