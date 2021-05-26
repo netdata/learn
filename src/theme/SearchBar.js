@@ -166,61 +166,61 @@ const SearchBar = (props) => {
             className="fixed w-full h-full inset-0 bg-gray-800 bg-opacity-50"
             style={{ zIndex: '300' }}
             onMouseDown={onClose}>
-            <div onClick={null} className="SearchModal overflow-y-auto min-h-500 max-w-screen-lg mt-24 mb-24 mx-auto bg-gray-50 dark:bg-gray-800 border border-gray-400 rounded">
-
-              <SearchProvider config={config}>
-                <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
-                  {({ wasSearched }) => {
-                    return (
-                      <div>
-                        <ErrorBoundary>
-                          <Layout
-                            header={
-                              <SearchBox
-                                autocompleteMinimumCharacters={3}
-                                autocompleteResults={{
-                                  linkTarget: "_self",
-                                  sectionTitle: "Autocomplete results",
-                                  titleField: "title",
-                                  urlField: "url",
-                                  shouldTrackClickThrough: true
-                                }}
-                                autocompleteSuggestions={true}
-                                debounceLength={100}
-                                inputProps={{ placeholder: "Search all of Netdata", autoFocus: true }}
-                              />
-                            }
-                            sideContent={
-                              <div>
-                                {wasSearched && (
-                                  <Sorting label={"Sort by"} sortOptions={SORT_OPTIONS} />
-                                )}
-                              </div>
-                            }
-                            bodyContent={
-                              <Results
-                                titleField="title"
-                                urlField="url"
-                                shouldTrackClickThrough={true}
-                                resultView={ResultView}
-                              />
-                            }
-                            bodyHeader={
-                              <React.Fragment>
-                                {wasSearched && <PagingInfo />}
-                                {wasSearched && <ResultsPerPage />}
-                              </React.Fragment>
-                            }
-                            bodyFooter={<Paging />}
-                          />
-                        </ErrorBoundary>
-                      </div>
-                    );
-                  }}
-                </WithSearch>
-              </SearchProvider>
-             
-            </div>  
+            <div onClick={null} className="SearchModal overflow-y-auto max-w-screen-lg mt-24 mb-24 mx-auto ">
+              <div className="mx-8 bg-gray-50 dark:bg-gray-800 border border-gray-400 rounded">
+                <SearchProvider config={config}>
+                  <WithSearch mapContextToProps={({ wasSearched }) => ({ wasSearched })}>
+                    {({ wasSearched }) => {
+                      return (
+                        <div>
+                          <ErrorBoundary>
+                            <Layout
+                              header={
+                                <SearchBox
+                                  autocompleteMinimumCharacters={3}
+                                  autocompleteResults={{
+                                    linkTarget: "_self",
+                                    sectionTitle: "Autocomplete results",
+                                    titleField: "title",
+                                    urlField: "url",
+                                    shouldTrackClickThrough: true
+                                  }}
+                                  autocompleteSuggestions={true}
+                                  debounceLength={100}
+                                  inputProps={{ placeholder: "Search all of Netdata", autoFocus: true }}
+                                />
+                              }
+                              sideContent={
+                                <div>
+                                  {wasSearched && (
+                                    <Sorting label={"Sort by"} sortOptions={SORT_OPTIONS} />
+                                  )}
+                                </div>
+                              }
+                              bodyContent={
+                                <Results
+                                  titleField="title"
+                                  urlField="url"
+                                  shouldTrackClickThrough={true}
+                                  resultView={ResultView}
+                                />
+                              }
+                              bodyHeader={
+                                <React.Fragment>
+                                  {wasSearched && <PagingInfo />}
+                                  {wasSearched && <ResultsPerPage />}
+                                </React.Fragment>
+                              }
+                              bodyFooter={<Paging />}
+                            />
+                          </ErrorBoundary>
+                        </div>
+                      );
+                    }}
+                  </WithSearch>
+                </SearchProvider>
+              </div>
+            </div>
           </div>,
           document.body,
         )

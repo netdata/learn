@@ -84,7 +84,7 @@
 }
 
 .container {
-  @apply max-w-screen-lg lg:max-w-screen-xl;
+  @apply max-w-screen-lg lg:max-w-screen-xl px-6;
   max-width: 1280px !important;
 }
 
@@ -145,7 +145,6 @@ a:hover {
 */
 
 .SearchModal {
-  min-height: 500px;
   max-height: calc(100vh - 12rem);
 }
 
@@ -276,6 +275,7 @@ h1 {
   --ifm-heading-font-weight: 600;
   --ifm-code-font-size: 105%;
   --ifm-pre-padding: 2rem;
+  --ifm-navbar-padding-horizontal: 1.5rem;
   --ifm-navbar-background-color: #35414a;
   --ifm-navbar-link-color: white;
   --ifm-navbar-link-hover-color: var(--ifm-color-primary-light);
