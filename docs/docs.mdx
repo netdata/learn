@@ -8,6 +8,7 @@ slug: /
 ---
 
 import { Grid, Box, BoxList, BoxListItem } from '@site/src/components/Grid/'
+import { RiExternalLinkLine } from 'react-icons/ri';
 
 _Welcome!_ You’ve arrived at Netdata's documentation.
 
@@ -33,8 +34,10 @@ of it as the table of contents to becoming an expert in monitoring and troublesh
     <BoxList>
       <BoxListItem to="/docs/overview/what-is-netdata" title="What is Netdata?" />
       <BoxListItem to="/docs/overview/why-netdata" title="Why use Netdata?" />
+      <BoxListItem to="https://netdata.cloud/pricing/" title={`Pricing`} />
       <BoxListItem to="/docs/overview/netdata-monitoring-stack" title="How to use Netdata with your existing stack" />
       <BoxListItem separator />
+      <BoxListItem to="https://netdata.cloud/data-privacy/" title="Data Privacy" />
       <BoxListItem to="/docs/agent/netdata-security" title="Security design" />
       <BoxListItem to="/docs/agent/anonymous-statistics" title="Anonymous statistics" />
     </BoxList>
