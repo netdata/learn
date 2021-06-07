@@ -5,16 +5,21 @@ custom_edit_url: null
 ---
 
 import { Grid, Box, BoxList, BoxListItem } from '@site/src/components/Grid/'
+import { RiExternalLinkLine } from 'react-icons/ri'
 
 This is the documentation for the Netdata Cloud web application, which works in parallel with the open-source Netdata
-monitoring agent to help you monitor your entire infrastructure [for free](https://netdata.cloud/pricing) in real time
-and troubleshoot problems that threaten the health of your nodes before they occur.
+monitoring agent to help you monitor your entire infrastructure [for free <RiExternalLinkLine className="inline-block"
+/>](https://netdata.cloud/pricing/) in real time and troubleshoot problems that threaten the health of your
+nodes before they occur.
 
-Netdata Cloud requires the open-source [Netdata](/docs/) monitoring agent, which is the basis for the metrics, visualizations, and alarms that you'll find in Netdata Cloud. Every time you view a node in Netdata Cloud, its metrics and metadata are streamed through 
+Netdata Cloud requires the open-source [Netdata](/docs/) monitoring agent, which is the basis for the metrics,
+visualizations, and alarms that you'll find in Netdata Cloud. Every time you view a node in Netdata Cloud, its metrics
+and metadata are streamed to Netdata Cloud, then proxied to your browser, with an infrastructure that ensures [data
+privacy <RiExternalLinkLine className="inline-block" />](https://netdata.cloud/data-privacy/).
 
 Read [_What is Netdata?_](/docs/overview/what-is-netdata) for details about how Netdata and Netdata Cloud work together
 and how they're different from other monitoring solutions, or the
-[FAQ](https://community.netdata.cloud/docs?category=26) for answers to common questions.
+[FAQ <RiExternalLinkLine className="inline-block" />](https://community.netdata.cloud/docs?category=26) for answers to common questions.
 
 <Grid columns="1" className="mb-16">
   <Box 
