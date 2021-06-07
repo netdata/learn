@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from '@docusaurus/Link'
 
+import { RiExternalLinkLine } from 'react-icons/ri'
+
 export const Grid = ({ className, columns, children }) => {
   return ( 
     // I really don't like hardcoding the `columns`, but I can't figure out how
@@ -62,6 +64,9 @@ export const BoxListItem = ({to, title, separator}) => (
     {!separator ? 
       <Link to={to}>
         {title}
+        {to.startsWith('http') &&
+          <RiExternalLinkLine className="inline-block ml-1" />
+        }
       </Link>
     : 
       <span className="block w-full h-0.5 mt-2 mb-2 bg-gray-200 bg-clip-content dark:bg-gray-700"></span>
