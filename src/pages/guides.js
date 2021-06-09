@@ -349,7 +349,7 @@ export default function Guides() {
   if (searchTerm) {
     let searchTerms = searchTerm.split(" ");
     itemsFiltered = itemsFiltered.filter(item => {
-      let content = `${item.title.toLowerCase()} ${item.category.toLowerCase()}`;
+      let content = `${item.title.props.children.toLowerCase()} ${item.category.toLowerCase()}`;
       return searchTerms.every(term => {
         return content.includes(term.toLowerCase())
       })
