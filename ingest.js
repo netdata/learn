@@ -36,8 +36,7 @@ const outDir = path.join(__dirname, agentDir)
 // the following files will not be cleared during the clearDir step
 // necessary to keep local docs that are not fetched from other repos
 const retainPaths = [
-  path.join(baseDir, 'cloud.mdx'),
-  path.join(baseDir, 'agent/cheatsheet.mdx')
+  path.join(baseDir, 'cloud.mdx')
 ]
 
 const ax = axios.create({

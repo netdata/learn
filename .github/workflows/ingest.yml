@@ -21,7 +21,7 @@ jobs:
 
     - run: yarn install
 
-    - run: node scripts/ingest.js
+    - run: node ingest.js
       env:
         GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN }}
     

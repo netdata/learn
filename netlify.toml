@@ -6,6 +6,10 @@
   to = "/docs"
 
 [[redirects]]
+  from = "/docs/agent/cheatsheet"
+  to = "/docs/cheatsheet"
+
+[[redirects]]
   from = "/docs/agent/packaging/installer"
   to = "/docs/get-netdata"
 

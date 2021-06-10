@@ -18,7 +18,7 @@
 ## Usage
 
 ```
-node scripts/ingest.js
+node ingest.js
 ```
 
 ### Options
@@ -33,7 +33,7 @@ or test the functionality of the script itself.
 **You must use these options together**.
 
 ```
-node scripts/ingest.js USER BRANCH
+node ingest.js USER BRANCH
 ```
 
 > Currently, these options only affect how `ingest.js` pulls files from the `netdata/netdata` repository. The other
@@ -45,7 +45,7 @@ If you want to pull from a `dashboard` branch that exists _on the `netdata/netda
 username.
 
 ```
-node scripts/ingest.js netdata dashboard
+node ingest.js netdata dashboard
 ```
 
 #### Example: Override both user and branch
@@ -54,7 +54,7 @@ For example, let's say you have a fork of the `netdata/netdata` repository under
 also have a `charts` branch on your fork that you want ingest on your local development environment. You would run:
 
 ```
-node scripts/ingest.js userXYZ charts
+node ingest.js userXYZ charts
 ```
 
 `ingest.js` now pulls files from the `charts` branch from the `userXYZ/netdata` repository instead of the default.

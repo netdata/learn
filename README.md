@@ -103,7 +103,7 @@ As with the automated ingest, the action creates a PR if there are any changes.
 You can also run the script manually in a local development environment.
 
 ```bash
-node scripts/ingest.js
+node ingest.js
 ```
 
 If there are changes, you will see them with `git status`. You can then add, commit, and push these changes to the
@@ -131,7 +131,18 @@ service.
 ## Deployment
 
 Deployment is handled automatically through Netlify. Each new commit to the `master` branch deploys the latest version
-of Netdata Learn. If there are questions about deployment, please create an issue or contact the 
+of Netdata Learn. If there are questions about deployment, please create an issue.
+
+### Redirects
+
+If a document is moved from one location to another, edit the `netlify.toml` file with the previous path (`from`) and
+the new path (`to`).
+
+```
+[[redirects]]
+  from = "/docs/agent/packaging/installer"
+  to = "/docs/get-netdata"
+```
 
 ## Netdata Community
 
