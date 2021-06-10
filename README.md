@@ -71,19 +71,53 @@ having to restart the server.
 As explained in the [contributing to Netdata's documentation](#contributing-to-netdatas-documentation) section above,
 most of the files in the `/docs` folder are mirrors of their original versions in the `netdata/netdata` repository.
 
-Documentation arrives in this repository via the [`ingest.js`](/ingest.js) script. This script uses the GitHub API to
-gather and process all of Netdata's documentation, including changing file paths and overwriting links between
-documents, then places the final files in the `/docs` folder.
+Documentation arrives in this repository via the [`ingest.js`](/scripts/ingest.js) script. This script uses the GitHub
+API to gather and process all of Netdata's documentation, including changing file paths and overwriting links between
+documents, then places the files in the `/docs`, `/guides`, and `/contribute` folders.
 
-Normally, this script runs via an automated [GitHub Action](.github/ingest.yml) once per day, but can also be run
-automatically by a member of the Netdata team. If there are changes to any documentation file, the GitHub Action creates
-a PR to be reviewed by a member of the docs team.
+Read more about [how the ingest script works](/scripts/ingest.md).
 
-You can also run the script manually to pull recent changes to your local development environment.
+### Automated ingest via GitHub Actions
+
+This repo uses a GitHub Action called [`ingest.yml`](.github/ingest.yml) to run the `ingest.js` process.
+
+This action runs at 14:00 UTC every day.
+
+If there are changes to any documentation file, the GitHub Action creates a PR for review by a member of the Netdata
+team.
+
+The action can be configured to automatically assign one or more reviewers. To enable automatic assignments, uncomment
+the `# reviewers:` line at the end of [`ingest.yml`](.github/ingest.yml) and add the appropriate GitHub username(s)
+either space- or comma-separated.
+
+### Manual ingest via GitHub Actions
+
+To run the action manually, click on the **Actions** tab at the top of the page. Click on the **Ingest** workflow. On
+the right-hand side of the screen, there's a small dropdown menu that reads **Run workflow**. Click on that, then **Run
+workflow**.
+
+As with the automated ingest, the action creates a PR if there are any changes.
+
+### Manual ingest via local environment
+
+You can also run the script manually in a local development environment.
 
 ```bash
-node ingest.js
+node scripts/ingest.js
 ```
+
+If there are changes, you will see them with `git status`. You can then add, commit, and push these changes to the
+repository and create a new PR.
+
+## Broken link checker
+
+This repo uses a GitHub Action called [`check-broken-links.yml`](.github/check-broken-links.yml) to test the _internal_
+links in each Markdown file.
+
+This action runs at 17:00 UTC every day.
+
+If the action finds broken links, it creates a new issue ([example](https://github.com/netdata/learn/issues/591)). Click
+**View the results.** to find which file(s) contain broken links.
 
 ## Build
 
@@ -97,9 +131,10 @@ service.
 ## Deployment
 
 Deployment is handled automatically through Netlify. Each new commit to the `master` branch deploys the latest version
-of Netdata Learn.
+of Netdata Learn. If there are questions about deployment, please create an issue or contact the 
 
 ## Netdata Community
+
 This repository follows the Netdata Code of Conduct and is part of the Netdata Community.
 
 - [Community Forums](https://community.netdata.cloud/)

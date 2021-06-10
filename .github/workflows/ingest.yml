@@ -21,7 +21,7 @@ jobs:
 
     - run: yarn install
 
-    - run: node ingest.js
+    - run: node scripts/ingest.js
       env:
         GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN }}
     
@@ -39,5 +39,4 @@ jobs:
           [1]: https://github.com/peter-evans/create-pull-request:  
         branch: ingest
         labels: ingest, automation
-        assignees: joelhans
-        reviewers: joelhans
+        # reviewers: 
