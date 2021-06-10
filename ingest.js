@@ -4,16 +4,8 @@ const path = require('path')
 const dotenv = require('dotenv')
 dotenv.config()
 
-// TODO: strip github badges, see /docs/what-is-netdata
-// TODO: http://localhost:3000/docs/step-by-step/step-99 http(s) is being prefixed
-// TODO: reset at undefined on rate limit
-
-// TODO: Add the following to the ignore list and delete from this repo.
-// 'agent/contrib',
-// 'agent/tests',
-// 'agent/tests/health_mgmtapi',
-// 'agent/diagrams/data_structures',
-
+// See the README.md for instructions to set up a GitHub access token.
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const MIN_RATE_LIMIT = 50
 
 // Set the GitHub user and branch to fetch with axios. The defaults are
@@ -25,19 +17,11 @@ const [
   branch = 'master'
 ] = process.argv.slice(2)
 
-// see the README.md for instructions to set up a github access token
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const baseDir = '/docs'
 const agentDir = '/docs/agent'
-const cloudDir = '/docs/cloud'
 const guideDir = '/guides/'
 const contribDir = '/contribute/'
 const outDir = path.join(__dirname, agentDir)
-// the following files will not be cleared during the clearDir step
-// necessary to keep local docs that are not fetched from other repos
-const retainPaths = [
-  path.join(baseDir, 'cloud.mdx')
-]
 
 const ax = axios.create({
   baseURL: `https://api.github.com/repos/`,
@@ -470,16 +454,8 @@ async function ingest() {
   const beautifiedPages = beautifyLinks(normalizedPages)
   // await debugMetas(beautifiedPages, 'debug-beautified.txt')
 
-  console.log('Retaining files...')
-  retainPaths.map(f => console.log(`  ${f}`))
-  const retainedFiles = await retainFiles(retainPaths)
-
   console.log('Clearing', agentDir)
   await clearDir(`.${agentDir}`)
-
-  console.log('Restoring files...')
-  retainedFiles.map(([p]) => console.log(`  ${p}`))
-  await restoreFiles(retainedFiles)
 
   console.log(`Writing ${beautifiedPages.length} to ${agentDir}`)
   const writeStartTime = new Date()
