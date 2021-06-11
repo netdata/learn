@@ -372,7 +372,7 @@ module.exports = {
             },
           ]
         },
-        'agent/cheatsheet',
+        'cheatsheet',
       ]
     },
     {
