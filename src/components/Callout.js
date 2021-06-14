@@ -1,11 +1,21 @@
 import React from 'react'
 import { RiLightbulbFlashLine, RiAlarmWarningLine } from 'react-icons/ri';
 
-// This component offers a few default types, which decide on the color and
-// emoji/symbol used.
+// Basic usage:
+// <Callout type="notice">
+// 
+// text goes here
+// 
+// </Callout>
+
+// This component offers a few options for `type`, which changes on the color
+// and emoji/symbol used.
 //
 // `notice`: Light green color, lightbulb symbol. Should be used when calling
 // attention to an important piece of information.
+//
+// `warning`: Light red color, warning symbol. Should be used to caution users
+// about a certain task.
 
 const Callout = ({ type, children }) => {
   const types = {

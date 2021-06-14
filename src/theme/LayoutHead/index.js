@@ -112,7 +112,9 @@ export default function LayoutHead(props) {
 
       <CanonicalUrlHeaders />
 
+      {/* START EDIT */}
       {/* <AlternateLangHeaders /> */}
+      {/* END EDIT */}
 
       <SearchMetadatas
         tag={DEFAULT_SEARCH_TAG}

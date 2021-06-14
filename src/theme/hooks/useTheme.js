@@ -45,11 +45,12 @@ const useTheme = () => {
   }, []);
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', coerceToTheme(theme));
-    // Begin edit. Here, we're adding a `light` or `dark` class to the `<html>`
+    // BEGIN EDIT
+    // Here, we're adding a `light` or `dark` class to the `<html>`
     // element to ensure that Tailwind can see that we've switched themes.
     document.documentElement.classList.length > 0 && document.documentElement.classList.remove(...document.documentElement.classList)
     document.documentElement.classList.add(theme)
-    // End edit.
+    // END EDIT
   }, [theme]);
   useEffect(() => {
     if (disableSwitch) {

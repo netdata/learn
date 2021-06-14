@@ -166,17 +166,21 @@ function DocSidebarItemLink({
   const {href, label} = item;
   const isActive = isActiveSidebarItem(item, activePath);
 
+  // BEGIN EDIT
   const isSeparator = item.customProps ? item.customProps.separator : undefined
   const isSubcategory = item.customProps ? item.customProps.subCategory : undefined
+  // END EDIT
 
   return (
     <li className="menu__list-item" key={label}>
+      {/* BEGIN EDIT */}
       {isSeparator &&
         <div className="block w-full h-0.5 mt-2 mb-2 px-4 bg-gray-200 bg-clip-content dark:bg-gray-300"></div>
       }
       {isSubcategory &&
         <span className="block text-xs text-gray-500 font-bold uppercase pt-1 ml-4 pb-2 dark:text-gray-200">{item.customProps.subCategory}</span>
       }
+      {/* END EDIT */}
       <Link
         className={clsx('menu__link ', {
           'menu__link--active': isActive,

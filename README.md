@@ -118,6 +118,47 @@ node ingest.js
 If there are changes, you will see them with `git status`. You can then add, commit, and push these changes to the
 repository and create a new PR.
 
+## Using JSX components in Markdown (`.mdx`) files
+
+We have a few custom JSX (React) components in use throughout the documentation. These components can be found in
+[`/src/components/`](/src/components), and can only be used to MDX (`.mdx`) files, which behave identically to
+traditional Markdown files (`.md`).
+
+To use a component, you first need to **import** it into the top of the `.mdx` file. For example, from the `/docs/cloud/get-started.mdx` file:
+
+```
+---
+title: Get started with Netdata Cloud
+description: >-
+  Ready to get real-time visibility into your entire infrastructure? 
+  This guide will help you get started on Netdata Cloud.
+image: /img/seo/cloud_get-started.png
+custom_edit_url: null
+---
+
+import Callout from '@site/src/components/Callout'
+
+...
+```
+
+The `import` path should begin with `@site` and then continue with the rest of the path to the component file. Here are
+the available components:
+
+```
+import Callout from '@site/src/components/Callout'
+import { Grid, Box, BoxList, BoxListItem } from '@site/src/components/Grid/'
+import { OneLineInstall } from '@site/src/components/OneLineInstall/'
+import { Install, InstallBox } from '@site/src/components/Install/'
+import { Calculator } from '@site/src/components/agent/dbCalc/'
+```
+
+See each file for usage information, or reference a file where the component is already being used.
+
+- [`/docs/docs.mdx`](/docs/docs.mdx)
+- [`/docs/get-started.mdx`](/docs/get-started.mdx)
+- [`/docs/cloud/get-started.mdx`](/docs/cloud/get-started.mdx)
+- [`/docs/store/change-metrics-storage.md`](/docs/store/change-metrics-storage.md)
+
 ## Add or update a guide
 
 The process for adding or updating guide content is similar to that of Agent documentation—the guides live inside the
@@ -250,6 +291,43 @@ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting
 service.
+
+## Update Docusaurus
+
+The current version is `v2.0.0-beta.0`, which, as of June 14, 2021, is the latest version of Docusaurus. Stay tuned to
+the [Docusaurus website](https://docusaurus.io/) and [GitHub project](https://github.com/facebook/docusaurus) for future
+updates.
+
+Generally, it's not recommended to update unless there's a new feature that's a must-have or a fix to a major bug.
+`v2.0.0-beta.0` is very stable and provides all the functionality we need at this point. Updates also could create
+issues with [custom components](#custom-swizzled-docusaurus-components).
+
+To update Docusaurus, open [`package.json`](package.json) and update the string next to `"@docusaurus/core"` and
+`"@docusaurus/preset-classic"`. Run `yarn install` to upgrade the dependencies locally, then run `yarn start` to test
+the new version. If everything works as expected, commit/push your changes to GitHub.
+
+### Custom (swizzled) Docusaurus components
+
+Every `.js` file in the `/src/theme` folder is a component that has been customized from the defaults supplied by
+Docusaurus. This process is called [swizzling](https://docusaurus.io/docs/using-themes#swizzling-theme-components).
+
+The customizations in each file are marked with `BEGIN EDIT`/`END EDIT` comments.
+
+If you update Docusaurus, these swizzled components aren't updated. This could create some breakage if there are major
+changes to the default versions of these components in the Docusaurus core. The only solution is to merge the existing
+customizations with the new version of the file or remove the customizations altogether.
+
+To merge:
+
+1. Make a copy of the component (`xyz.js`) in the `/src/theme` folder and save it outside the repo.
+2. Delete the file/folder for that component.
+3. Run `yarn run swizzle @docusaurus/theme-classic NAME`, replacing `NAME` with the name of the component, like
+   `DocItem` or `Seo`. You may also have to add a `-- --danger` to the end: `yarn run swizzle @docusaurus/theme-classic
+   NAME -- --danger`.
+4. Open the newly-created `.js` file in the `/src/theme` folder.
+5. Add the customization (the code between `BEGIN EDIT`/`END EDIT`) comments, back into the file in the appropriate
+   place.
+6. Start Docusaurus with `yarn start` and test.
 
 ## Deployment
 

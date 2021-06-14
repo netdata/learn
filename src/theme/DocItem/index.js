@@ -82,7 +82,7 @@ function DocItem(props) {
                 </header>
               )}
 
-              {/* BEGIN EDITS */}
+              {/* BEGIN EDIT */}
               {frontMatter.author && (
                 <aside className="flex items-center mb-12">
                   <img src={frontMatter.author_img} className="w-24 h-24 rounded-full" alt={frontMatter.author} />
@@ -92,14 +92,14 @@ function DocItem(props) {
                   </div>
                 </aside>
               )}
-              {/* END EDITS */}
+              {/* END EDIT */}
 
               <div className="markdown">
                 <DocContent />
               </div>
             </article>
 
-            {/* BEGIN EDITS */}
+            {/* BEGIN EDIT */}
             <div className="markdown prose-sm mt-12 mx-auto p-6 bg-gray-50 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500 ">
               <h2 className="!text-2xl font-bold !mb-4">Reach out</h2>
               <p className="text-sm">
@@ -125,7 +125,7 @@ function DocItem(props) {
                 </div>
               </div>
             </div>
-            {/* END EDITS */}
+            {/* END EDIT */}
 
             {(editUrl || lastUpdatedAt || lastUpdatedBy) && (
               <div className="margin-vert--xl">
