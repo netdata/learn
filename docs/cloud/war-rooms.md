@@ -11,6 +11,8 @@ Once you add nodes to a War Room, you can then use various dashboards to monitor
 entire infrastructure from a single pane of glass. When an anomaly strikes, drill down into single-node dashboards for
 every granular detail you need for root cause analysis.
 
+![An example War Room](https://user-images.githubusercontent.com/1153921/121967830-eb4b5980-cd25-11eb-8d30-00ccfc6e17f3.png)
+
 ## Navigating a War Room
 
 Every War Room has the same dashboards, navigation, indicators, and management tools.
@@ -27,9 +29,6 @@ To switch between dashboards, use the tabs beneath the War Room's name. You can 
 either the [Overview](/docs/cloud/visualize/overview#jump-to-single-node-dashboards) or the [Nodes
 view](/docs/cloud/visualize/nodes#jump-to-single-node-dashboards).
 
-![Navigate between War Room dashboards with
-tabs](https://user-images.githubusercontent.com/1153921/108431813-a5133d00-7200-11eb-8e5c-78da40f16ec1.png)
-
 ### War Room tabs
 
 If you open a [new dashboard](/docs/cloud/visualize/dashboards) or jump to a single-node dashboard, they will open in a
@@ -38,16 +37,17 @@ new War Room tab.
 Tabs can be rearranged with drag-and-drop or closed with the **X** button. Open tabs persist between sessions, so you
 can always come right back to your preferred setup.
 
-### Time & date picker
+### Play, pause, force play, and timeframe selector
 
-By default, all visualizations in Netdata Cloud show the last 15 minutes of metrics data. The time & date picker helps
-you select a precise timeframe to visualize.
+A War Room has three different states: playing, paused, and force playing. The default playing state refreshes charts
+every second as long as the browser tab is in focus. [Interacting with a chart](/docs/dashboard/interact-charts) pauses
+the War Room. Once the tab loses focus, charts pause automatically.
 
-![Opening the time & date picker from a War
-Room](https://user-images.githubusercontent.com/1153921/108432492-b27cf700-7201-11eb-8b2a-7368a2d7b00f.png)
+The top navigation bar features a play/pause button to quickly change the state, and a dropdown to select **Force
+Play**, which keeps charts refreshing, potentially at the expense of system performance.
 
-![Using the time & date
-picker](https://user-images.githubusercontent.com/1153921/108432854-418a0f00-7202-11eb-9af6-97c8f973b14c.png)
+Next to the play/pause button is the timeframe selector, which helps you select a precise window of metrics data to
+visualize. By default, all visualizations in Netdata Cloud show the last 15 minutes of metrics data.
 
 Use the **Quick Selector** to visualize metrics from predefined timeframes, or use the input field below to enter a
 number and an appropriate unit of time. The calendar allows you to select multiple days of metrics data.
@@ -59,20 +59,10 @@ The fields beneath the calendar display the beginning and ending timestamps your
 
 ### Indicators
 
-Every War Room features three indicators: **alerts**, a **nodes**, and **users**.
-
-![War Room status
-indicators](https://user-images.githubusercontent.com/1153921/108520332-ca975980-7287-11eb-8692-0f6545425e6a.png)
-
-The alerts indicator displays the number of active `critical` (red) and `warning` (yellow) alerts for the nodes in this
-War Room. Click on either the critical or warning badges to open a pre-filtered modal displaying only those types of
-[active alerts](/docs/cloud/alerts-notifications/view-active-alerts).
+Every War Room features two indicators: **nodes** and **users**.
 
 The nodes indicator displays the number of _active_ (transparent) and _unreachable_ (gray) nodes. Click on either of
 them to open a dropdown with their hostnames, status when relevant, and a link to open a single-node dashboard.
-
-![The nodes indicator
-dropdown](https://user-images.githubusercontent.com/1153921/108521419-f1a25b00-7288-11eb-815e-b9e6c75887d1.png)
 
 The users indicator shows the number of users in the War Room. Clicking on it opens a modal to manage the War Room's
 users.
