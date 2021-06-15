@@ -19,7 +19,8 @@ Use the [Overview](/docs/cloud/visualize/overview) for monitoring an infrastruct
 composite charts and Netdata's familiar dashboard UI.
 
 Check the [War Room docs](/docs/cloud/war-rooms) for details on the utility bar, which contains the [node
-filter](/docs/cloud/war-rooms#node-filter) and the [time &amp; date picker](/docs/cloud/war-rooms#time--date-picker).
+filter](/docs/cloud/war-rooms#node-filter) and the [timeframe
+selector](/docs/cloud/war-rooms#play-pause-force-play-and-timeframe-selector).
 
 ## Add and customize metrics columns
 
