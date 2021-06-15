@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        token: ${{ secrets.INGEST_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0
 
     - name: Use Node.js 12
@@ -23,12 +23,12 @@ jobs:
 
     - run: node ingest.js
       env:
-        GITHUB_TOKEN: ${{ secrets.INGEST_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Create pull request
       uses: peter-evans/create-pull-request@v3
       with:
-        token: ${{ secrets.INGEST_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Ingest new documentation
         title: 'Ingest new documentation'
         body: |
