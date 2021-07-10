@@ -135,6 +135,7 @@ configure any of these collectors according to your setup and infrastructure.
 -   [Riak KV](/docs/agent/collectors/python.d.plugin/riakkv): Collect database stats from the `/stats` endpoint.
 -   [Zookeeper](/docs/agent/collectors/go.d.plugin/modules/zookeeper/): Monitor application
     health metrics reading the server's response to the `mntr` command.
+-   [Memcached](/docs/agent/collectors/python.d.plugin/memcached): Collect memory-caching system performance metrics.
 
 ### Distributed computing
 
@@ -417,7 +418,6 @@ The Netdata Agent can collect these system- and hardware-level metrics using a v
     `proc.plugin` collector.
 -   [KSM](/docs/agent/collectors/proc.plugin): Measure the amount of merging, savings, and effectiveness using the
     `proc.plugin` collector.
--   [Memcached](/docs/agent/collectors/python.d.plugin/memcached): Collect memory-caching system performance metrics.
 -   [Numa](/docs/agent/collectors/proc.plugin): Gather metrics on the number of non-uniform memory access (NUMA) events
     every second using the `proc.plugin` collector.
 -   [Page faults](/docs/agent/collectors/proc.plugin): Collect the number of memory page faults per second using the
@@ -496,7 +496,7 @@ collectors are described only in code and associated charts in Netdata dashboard
 -   [ACLK (code only)](https://github.com/netdata/netdata/blob/master/aclk/legacy/aclk_stats.c): View whether a Netdata
     Agent is connected to Netdata Cloud via the [ACLK](/docs/agent/aclk), the volume of queries, process times, and more.
 -   [Alarms](/docs/agent/collectors/python.d.plugin/alarms): This collector creates an
-    <strong>Alarms</strong> menu with one line plot showing the alarm states of a Netdata Agent over time.
+    **Alarms** menu with one line plot showing the alarm states of a Netdata Agent over time.
 -   [Anomalies](/docs/agent/collectors/python.d.plugin/anomalies): This collector uses the
     Python PyOD library to perform unsupervised anomaly detection on your Netdata charts and/or dimensions.
 -   [Exporting (code only)](https://github.com/netdata/netdata/blob/master/exporting/send_internal_metrics.c): Gather

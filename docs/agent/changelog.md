@@ -6,15 +6,47 @@
 
 **Merged pull requests:**
 
+- v2.19.1 [\#11323](https://github.com/netdata/netdata/pull/11323) ([allelos](https://github.com/allelos))
+- Fixes coverity errors in ACLK [\#11322](https://github.com/netdata/netdata/pull/11322) ([underhood](https://github.com/underhood))
+- Fix tiny issues in docs [\#11320](https://github.com/netdata/netdata/pull/11320) ([UmanShahzad](https://github.com/UmanShahzad))
+- Add some more entries to gitignore [\#11319](https://github.com/netdata/netdata/pull/11319) ([UmanShahzad](https://github.com/UmanShahzad))
+- Add HTTP access log messages for ACLK-NG [\#11318](https://github.com/netdata/netdata/pull/11318) ([UmanShahzad](https://github.com/UmanShahzad))
+- Updated dashboard version. [\#11316](https://github.com/netdata/netdata/pull/11316) ([allelos](https://github.com/allelos))
+- eBPF NFS monitoring [\#11313](https://github.com/netdata/netdata/pull/11313) ([thiagoftsm](https://github.com/thiagoftsm))
+- Add hop count for children [\#11311](https://github.com/netdata/netdata/pull/11311) ([stelfrag](https://github.com/stelfrag))
+- fix various python modules charts contexts [\#11310](https://github.com/netdata/netdata/pull/11310) ([ilyam8](https://github.com/ilyam8))
+- \[docs\] fix prometheus node cpu alert rule [\#11309](https://github.com/netdata/netdata/pull/11309) ([ilyam8](https://github.com/ilyam8))
+- health: remove pythond modules specific last\_collected alarms [\#11307](https://github.com/netdata/netdata/pull/11307) ([ilyam8](https://github.com/ilyam8))
+- fix `mdstat` current operation charts context/title [\#11289](https://github.com/netdata/netdata/pull/11289) ([ilyam8](https://github.com/ilyam8))
+- Remove access check for install-type file [\#11288](https://github.com/netdata/netdata/pull/11288) ([MrZammler](https://github.com/MrZammler))
+- eBPF plugin remove parallel plugins [\#11287](https://github.com/netdata/netdata/pull/11287) ([thiagoftsm](https://github.com/thiagoftsm))
+- suport TLS SNI in ACLK-NG [\#11285](https://github.com/netdata/netdata/pull/11285) ([underhood](https://github.com/underhood))
+- fixes confusing error in ACLK Legacy [\#11278](https://github.com/netdata/netdata/pull/11278) ([underhood](https://github.com/underhood))
+- Ebpf disk latency [\#11276](https://github.com/netdata/netdata/pull/11276) ([thiagoftsm](https://github.com/thiagoftsm))
+- makes ACLK-NG the default if available [\#11272](https://github.com/netdata/netdata/pull/11272) ([underhood](https://github.com/underhood))
+- Added new postgres charts and updated standby charts to include slot\_… [\#11267](https://github.com/netdata/netdata/pull/11267) ([mjtice](https://github.com/mjtice))
+- Explicitly update libarchive on CentOS 8 when installing dependencies. [\#11264](https://github.com/netdata/netdata/pull/11264) ([Ferroin](https://github.com/Ferroin))
+- update old log to new one [\#11263](https://github.com/netdata/netdata/pull/11263) ([OdysLam](https://github.com/OdysLam))
+- fix kickstart-static64.sh install script fail when trying to access `.install-type` before it is created [\#11262](https://github.com/netdata/netdata/pull/11262) ([ilyam8](https://github.com/ilyam8))
+- Add openSUSE 15.3 package builds. [\#11259](https://github.com/netdata/netdata/pull/11259) ([Ferroin](https://github.com/Ferroin))
+- slabinfo: Handle slabs added after discovery [\#11257](https://github.com/netdata/netdata/pull/11257) ([Saruspete](https://github.com/Saruspete))
+- Ebpf apps memory usage [\#11256](https://github.com/netdata/netdata/pull/11256) ([thiagoftsm](https://github.com/thiagoftsm))
+- eBPF keep values from `ebpf.d.conf` [\#11253](https://github.com/netdata/netdata/pull/11253) ([thiagoftsm](https://github.com/thiagoftsm))
+- Add more nics to FreeBSD plugin [\#11251](https://github.com/netdata/netdata/pull/11251) ([diizzyy](https://github.com/diizzyy))
+- Fix libjudy installation on CentOS 8. [\#11248](https://github.com/netdata/netdata/pull/11248) ([Ferroin](https://github.com/Ferroin))
+- Send correct aclk implementation used by agent to posthog. [\#11247](https://github.com/netdata/netdata/pull/11247) ([MrZammler](https://github.com/MrZammler))
 - Fixes error on --disable-cloud [\#11244](https://github.com/netdata/netdata/pull/11244) ([underhood](https://github.com/underhood))
 - Swap class and type attributes in stock alarm configurations [\#11240](https://github.com/netdata/netdata/pull/11240) ([MrZammler](https://github.com/MrZammler))
 - packaging: update go.d.plugin version to v0.29.0 [\#11239](https://github.com/netdata/netdata/pull/11239) ([ilyam8](https://github.com/ilyam8))
 - Adds xfs filesystem monitoring to eBPF [\#11238](https://github.com/netdata/netdata/pull/11238) ([thiagoftsm](https://github.com/thiagoftsm))
+- Extra posthog attributes [\#11237](https://github.com/netdata/netdata/pull/11237) ([MrZammler](https://github.com/MrZammler))
 - health: update cockroachdb alarms [\#11235](https://github.com/netdata/netdata/pull/11235) ([ilyam8](https://github.com/ilyam8))
+- ACLK-NG New Cloud NodeInstance related msgs [\#11234](https://github.com/netdata/netdata/pull/11234) ([underhood](https://github.com/underhood))
 - Ebpf arrays [\#11230](https://github.com/netdata/netdata/pull/11230) ([thiagoftsm](https://github.com/thiagoftsm))
 - Add links to data privacy page [\#11226](https://github.com/netdata/netdata/pull/11226) ([joelhans](https://github.com/joelhans))
 - Allows ACLK NG and Legacy to coexist [\#11225](https://github.com/netdata/netdata/pull/11225) ([underhood](https://github.com/underhood))
 - eBPF ext4 \(new thread for collector\) [\#11224](https://github.com/netdata/netdata/pull/11224) ([thiagoftsm](https://github.com/thiagoftsm))
+- Add vkalintiris as a code owner for more components [\#11221](https://github.com/netdata/netdata/pull/11221) ([vkalintiris](https://github.com/vkalintiris))
 - Decentralized [\#11220](https://github.com/netdata/netdata/pull/11220) ([OdysLam](https://github.com/OdysLam))
 - New email notification template [\#11219](https://github.com/netdata/netdata/pull/11219) ([MrZammler](https://github.com/MrZammler))
 - python.d: merge user/stock plugin configuration files [\#11217](https://github.com/netdata/netdata/pull/11217) ([ilyam8](https://github.com/ilyam8))
@@ -173,8 +205,6 @@
 - implements new https client for ACLK [\#10805](https://github.com/netdata/netdata/pull/10805) ([underhood](https://github.com/underhood))
 - Support mulitple jobs in make\(1\) when building LWS. [\#10799](https://github.com/netdata/netdata/pull/10799) ([vkalintiris](https://github.com/vkalintiris))
 - Overhaul streaming documentation [\#10709](https://github.com/netdata/netdata/pull/10709) ([joelhans](https://github.com/joelhans))
-- Zscores python collector [\#10673](https://github.com/netdata/netdata/pull/10673) ([andrewm4894](https://github.com/andrewm4894))
-- add python changefinder collector [\#10672](https://github.com/netdata/netdata/pull/10672) ([andrewm4894](https://github.com/andrewm4894))
 
 ## [v1.30.1](https://github.com/netdata/netdata/tree/v1.30.1) (2021-04-12)
 
@@ -281,44 +311,14 @@
 - Fix disk utilization and backlog charts [\#10705](https://github.com/netdata/netdata/pull/10705) ([vlvkobal](https://github.com/vlvkobal))
 - update\_kernel\_version: Fix overflow on Centos and probably Ubuntu [\#10704](https://github.com/netdata/netdata/pull/10704) ([thiagoftsm](https://github.com/thiagoftsm))
 - Docs: Convert references to `service` to `systemctl` [\#10703](https://github.com/netdata/netdata/pull/10703) ([joelhans](https://github.com/joelhans))
-- Add noauthcodecheck workaround flag to the freeipmi plugin [\#10701](https://github.com/netdata/netdata/pull/10701) ([vlvkobal](https://github.com/vlvkobal))
-- Add guide: LAMP stack monitoring [\#10698](https://github.com/netdata/netdata/pull/10698) ([joelhans](https://github.com/joelhans))
-- Log ACLK cloud commands to access.log [\#10697](https://github.com/netdata/netdata/pull/10697) ([stelfrag](https://github.com/stelfrag))
-- Add Linux page cache metrics to eBPF [\#10693](https://github.com/netdata/netdata/pull/10693) ([thiagoftsm](https://github.com/thiagoftsm))
-- Update guide: Kubernetes monitoring with Netdata: Overview and visualizations [\#10691](https://github.com/netdata/netdata/pull/10691) ([joelhans](https://github.com/joelhans))
-- health: make alarms less sensitive [\#10688](https://github.com/netdata/netdata/pull/10688) ([ilyam8](https://github.com/ilyam8))
-- Ebpf support new collectors [\#10680](https://github.com/netdata/netdata/pull/10680) ([thiagoftsm](https://github.com/thiagoftsm))
-- Fix broken links in active alarms doc [\#10678](https://github.com/netdata/netdata/pull/10678) ([joelhans](https://github.com/joelhans))
-- Add new cookie to fix 8094 [\#10676](https://github.com/netdata/netdata/pull/10676) ([thiagoftsm](https://github.com/thiagoftsm))
-- Alarms collector add alarm values [\#10675](https://github.com/netdata/netdata/pull/10675) ([andrewm4894](https://github.com/andrewm4894))
-- Don't add duplicate \_total suffixes for the prometheus go.d module [\#10674](https://github.com/netdata/netdata/pull/10674) ([vlvkobal](https://github.com/vlvkobal))
-- fix a typo in the email notifications readme [\#10668](https://github.com/netdata/netdata/pull/10668) ([ossimantylahti](https://github.com/ossimantylahti))
-- Update screenshots and text for new Cloud nav [\#10664](https://github.com/netdata/netdata/pull/10664) ([joelhans](https://github.com/joelhans))
-- Improve the Kubernetes deployment documentation [\#10662](https://github.com/netdata/netdata/pull/10662) ([joelhans](https://github.com/joelhans))
-- installer: update go.d.plugin version to v0.28.0 [\#10660](https://github.com/netdata/netdata/pull/10660) ([ilyam8](https://github.com/ilyam8))
-- Changed Docker image tagging to use semver tags for releases. [\#10648](https://github.com/netdata/netdata/pull/10648) ([Ferroin](https://github.com/Ferroin))
 
 ## [v1.29.3](https://github.com/netdata/netdata/tree/v1.29.3) (2021-02-23)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.29.2...v1.29.3)
 
-**Merged pull requests:**
-
-- Invalidate RRDSETVAR pointers on obsoletion. [\#10667](https://github.com/netdata/netdata/pull/10667) ([mfundul](https://github.com/mfundul))
-- Fixed condition controlling use of static LWS in RPM builds. [\#10661](https://github.com/netdata/netdata/pull/10661) ([Ferroin](https://github.com/Ferroin))
-- fix wrong link on docs Netdata Agent Daemon [\#10659](https://github.com/netdata/netdata/pull/10659) ([OdysLam](https://github.com/OdysLam))
-- Fix broken links in docs and add collectors to list [\#10651](https://github.com/netdata/netdata/pull/10651) ([joelhans](https://github.com/joelhans))
-
 ## [v1.29.2](https://github.com/netdata/netdata/tree/v1.29.2) (2021-02-18)
 
 [Full Changelog](https://github.com/netdata/netdata/compare/v1.29.1...v1.29.2)
-
-**Merged pull requests:**
-
-- Fix the context filtering on the data query endpoint [\#10652](https://github.com/netdata/netdata/pull/10652) ([stelfrag](https://github.com/stelfrag))
-- fix container/host detection in system-info script [\#10647](https://github.com/netdata/netdata/pull/10647) ([ilyam8](https://github.com/ilyam8))
-- Enable apps.plugin aggregation debug messages [\#10645](https://github.com/netdata/netdata/pull/10645) ([vlvkobal](https://github.com/vlvkobal))
-- add small delay to the ipv4\_tcp\_resets alarms [\#10644](https://github.com/netdata/netdata/pull/10644) ([ilyam8](https://github.com/ilyam8))
 
 ## [v1.29.1](https://github.com/netdata/netdata/tree/v1.29.1) (2021-02-09)
 
