@@ -25,7 +25,7 @@ passwords.
 To sign in with email, visit [Netdata Cloud](https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign_in_button_email_section), enter your email address, and click
 the **Sign in by email** button.
 
-![Verify your email!](https://user-images.githubusercontent.com/82235632/125312167-f3e67e00-e32b-11eb-9dd7-be8d0ca21cbe.png)
+![Verify your email!](hhttps://user-images.githubusercontent.com/82235632/125475486-c667635a-067f-4866-9411-9f7f795a0d50.png)
 
 Click the **Verify** button in the email to begin using Netdata Cloud.
 
