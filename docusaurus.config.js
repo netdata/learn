@@ -16,7 +16,7 @@ module.exports = {
       posthog: {
           apiKey: "phc_Qs5GgU40e7BUx4LB1i8hYiW4e9Ogv0HpDNGZcJTWuCn",
           appUrl: "https://posthog.netdata.cloud",
-          enableInDevelopment: true
+          enableInDevelopment: false
       },
       image: 'img/netdata_meta-default.png',
       prism: {
