@@ -12,7 +12,7 @@ No matter the method, your Netdata Cloud account is based around your email addr
 passwords.
 
 
-<Link to="https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign_in_button_first_section" className="group">
+<Link to="https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign-in" className="group">
     <button className="relative text-text bg-gray-200 px-4 py-2 rounded">
         <span className="z-10 relative font-semibold group-hover:text-gray-100">Sign in to Netdata Cloud</span>
         <div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded"></div>
@@ -22,21 +22,19 @@ passwords.
 
 ## Email
 
-To sign in with email, visit [Netdata Cloud](https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign_in_button_email_section), enter your email address, and click
-the **Sign in by email** button.
+To sign in with email, visit [Netdata Cloud](https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign-in), enter your email address, and click
+the **Sign in with email** button.
 
 ![Verify your email!](https://user-images.githubusercontent.com/82235632/125312167-f3e67e00-e32b-11eb-9dd7-be8d0ca21cbe.png)
 
-Click the **Verify** button in the email to begin using Netdata Cloud.
+Click the **Verify email** button in the email to begin using Netdata Cloud.
 
 To use this same Netdata Cloud account on additional devices, request another sign in email, open the email on that
 device, and sign in.
 
-### Don't have a Netdata Cloud account yet?
+**Don't have a Netdata Cloud account yet?** Relax! Sign in and we will create one for you!
 
-Relax! Sign in and we will create one for you!
-
-After your account is created and you sign in to Netdata Cloud, you first are asked to agree to Netdata Cloud's [Privacy
+After your account is created and you sign in to Netdata Cloud you will be first asked to agree to Netdata Cloud's [Privacy
 Policy](https://www.netdata.cloud/privacy/) and [Terms of Use](https://www.netdata.cloud/terms/). Once you agree with these you are directed
 through the Netdata Cloud onboarding process, which is explained in the [Netdata Cloud
 quickstart](/docs/cloud/get-started).
@@ -48,7 +46,7 @@ You should receive your sign in email in less than a minute. The subject is **Ve
 If you don't see the email, try the following:
 
 -   Check [Netdata Cloud status](https://status.netdata.cloud) for ongoing issues with our infrastructure.
--   Request another sign in email via the [sign in page](https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign_in_button_troubleshooting_section).
+-   Request another sign in email via the [sign in page](https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign-in).
 -   Check your spam folder.
 -   In Gmail, check the **Updates** category.
 
@@ -61,7 +59,7 @@ a public email service, such as Gmail. You may also want to whitelist/allowlist 
 When you use Google/GitHub OAuth, your Netdata Cloud account is associated with the email address that Netdata Cloud
 receives via OAuth.
 
-To sign in with Google or GitHub OAuth, visit [Netdata Cloud](https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign_in_button_google_github_section) and click the
+To sign in with Google or GitHub OAuth, visit [Netdata Cloud](https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign-in) and click the
 **Continue with Google/GitHub** or button. Enter your Google/GitHub username and your password. Complete two-factor
 authentication if you or your organization has it enabled. 
 
