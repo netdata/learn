@@ -13,6 +13,11 @@ module.exports = {
     gtag: {
       trackingID: 'GTM-N6CBMJD',
     },
+    posthog: {
+        apiKey: "phc_Qs5GgU40e7BUx4LB1i8hYiW4e9Ogv0HpDNGZcJTWuCn",
+        appUrl: "https://posthog.netdata.cloud",
+        enableInDevelopment: false
+    },
     image: 'img/netdata_meta-default.png',
     prism: {
       theme: require('prism-react-renderer/themes/dracula')
@@ -135,6 +140,7 @@ module.exports = {
     },
   },
   plugins: [
+    'posthog-docusaurus',
     'docusaurus-tailwindcss-loader',
     [
       "@docusaurus/plugin-content-docs",
