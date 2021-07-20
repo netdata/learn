@@ -71,11 +71,11 @@ your installation. Here are a few important parameters:
     kickstart run the process using those files. This option conflicts with the `--stable-channel` option. If you set
     this _and_ `--stable-channel`, Netdata will use the local files.
 
-### Claim node to Netdata Cloud during installation
+### Connect node to Netdata Cloud during installation
 
-The `kickstart.sh` script accepts additional parameters to automatically [claim](/docs/agent/claim) your node to Netdata
+The `kickstart.sh` script accepts additional parameters to automatically [connect](/docs/agent/claim) your node to Netdata
 Cloud immediately after installation. Find the `token` and `rooms` strings by [signing in to Netdata
-Cloud](https://app.netdata.cloud/sign-in?cloudRoute=/spaces), then clicking on **Claim Nodes** in the [Spaces management
+Cloud](https://app.netdata.cloud/sign-in?cloudRoute=/spaces), then clicking on **Connect Nodes** in the [Spaces management
 area](/docs/cloud/spaces#manage-spaces).
 
 - `--claim-token`: The unique token associated with your Space in Netdata Cloud.

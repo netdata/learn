@@ -88,5 +88,5 @@ It is not currently possible to link an account created with `user@example.com` 
 
 ## What's next? 
 
-If you haven't already onboarded to Netdata Cloud and claimed your first nodes, visit the [get started
+If you haven't already onboarded to Netdata Cloud and connected your first nodes, visit the [get started
 guide](/docs/cloud/get-started).

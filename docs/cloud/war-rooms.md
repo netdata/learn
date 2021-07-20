@@ -4,7 +4,7 @@ description: Netdata Cloud uses War Rooms to group related nodes and create insi
 custom_edit_url: null
 ---
 
-War Rooms organize your claimed nodes and provide infrastructure-wide dashboards using real-time metrics and
+War Rooms organize your connected nodes and provide infrastructure-wide dashboards using real-time metrics and
 visualizations.
 
 Once you add nodes to a War Room, you can then use various dashboards to monitor the health and performance of your
@@ -139,7 +139,7 @@ Room](https://user-images.githubusercontent.com/1153921/108433867-efe28400-7203-
 
 To _change a War Room's name, description, or public/private status_, click on **Manage War Room**.
 
-To _add a claimed node_ to a War Room, click on **Add Nodes**. Choose any claimed node you want to add to this War Room
+To _add a connected node_ to a War Room, click on **Add Nodes**. Choose any connected node you want to add to this War Room
 by clicking on the checkbox next to its hostname, then click **+ Add** at the top of the panel.
 
 To _view or remove nodes_ in a War Room, click on **List Nodes**. To remove a node from the curernt War Room, click on
