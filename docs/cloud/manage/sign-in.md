@@ -4,7 +4,7 @@ description: Learn how signing in to Cloud works via one of our three authentica
 custom_edit_url: null
 ---
 
-You can sign in to Netdata Cloud through one of three methods: email, Google, or GitHub. Email uses a
+You can sign in to Netdata through one of three methods: email, Google, or GitHub. Email uses a
 time-sensitive link that authenticates your browser, and Google/GitHub both use OAuth to associate your email address
 with a Netdata Cloud account.
 
@@ -14,7 +14,7 @@ passwords.
 
 <Link to="https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign_in_button_first_section" className="group">
     <button className="relative text-text bg-gray-200 px-4 py-2 rounded">
-        <span className="z-10 relative font-semibold group-hover:text-gray-100">Sign in to Netdata Cloud</span>
+        <span className="z-10 relative font-semibold group-hover:text-gray-100">Sign in to Netdata</span>
         <div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded"></div>
     </button>
 </Link>
@@ -36,7 +36,7 @@ device, and sign in.
 
 Relax! Sign in and we will create one for you!
 
-After your account is created and you sign in to Netdata Cloud, you first are asked to agree to Netdata Cloud's [Privacy
+After your account is created and you sign in to Netdata, you first are asked to agree to Netdata Cloud's [Privacy
 Policy](https://www.netdata.cloud/privacy/) and [Terms of Use](https://www.netdata.cloud/terms/). Once you agree with these you are directed
 through the Netdata Cloud onboarding process, which is explained in the [Netdata Cloud
 quickstart](/docs/cloud/get-started).
