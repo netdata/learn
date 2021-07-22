@@ -73,7 +73,7 @@ your installation. Here are a few important parameters:
 
 ### Connect node to Netdata Cloud during installation
 
-The `kickstart.sh` script accepts additional parameters to automatically [connect](/docs/agent/claim) your node to Netdata
+The `kickstart.sh` script accepts additional parameters to automatically [connect](/docs/agent/connect-to-cloud) your node to Netdata
 Cloud immediately after installation. Find the `token` and `rooms` strings by [signing in to Netdata
 Cloud](https://app.netdata.cloud/sign-in?cloudRoute=/spaces), then clicking on **Connect Nodes** in the [Spaces management
 area](/docs/cloud/spaces#manage-spaces).
@@ -81,8 +81,8 @@ area](/docs/cloud/spaces#manage-spaces).
 - `--claim-token`: The unique token associated with your Space in Netdata Cloud.
 - `--claim-rooms`: A comma-separated list of tokens for each War Room this node should appear in.
 - `--claim-proxy`: Should take the form of `socks5[h]://[user:pass@]host:ip` for a SOCKS5 proxy, or
-  `http://[user:pass@]host:ip` for an HTTP(S) proxy.See [claiming through a
-  proxy](/docs/agent/claim#claim-through-a-proxy) for details.
+  `http://[user:pass@]host:ip` for an HTTP(S) proxy.See [connecting through a
+  proxy](/docs/agent/connect-to-cloud#connect-through-a-proxy) for details.
 - `--claim-url`: Defaults to `https://app.netdata.cloud`.
 
 For example:

@@ -42,7 +42,7 @@ dashboards available in Netdata Cloud.
 ## Connect your Kubernetes cluster to Netdata Cloud
 
 To start [Kubernetes monitoring](/docs/cloud/visualize/kubernetes/), you must first
-[connect](/docs/agent/claim) your Kubernetes cluster to [Netdata Cloud](https://app.netdata.cloud). The connection process securely
+[connect](/docs/agent/connect-to-cloud) your Kubernetes cluster to [Netdata Cloud](https://app.netdata.cloud). The connection process securely
 connects your Kubernetes cluster to stream metrics data to Netdata Cloud, enabling Kubernetes-specific visualizations
 like the health map and time-series composite charts.
 

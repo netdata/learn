@@ -58,7 +58,7 @@ actions. Finally, the panel lists every [War Room](/docs/cloud/war-rooms) in the
 area](https://user-images.githubusercontent.com/1153921/108742003-83fa6700-74f4-11eb-9d9b-8e74ce5ef540.png)
 
 To _connect nodes to a Space_, click on **Connect Nodes**. Copy the claiming script to your node and run it. See the
-[connect to Cloud doc](/docs/agent/claim) for details.
+[connect to Cloud doc](/docs/agent/connect-to-cloud) for details.
 
 To _invite users to a Space_, click on **Invite Users**. The [invitation doc](/docs/cloud/manage/invite-your-team)
 details the invitation process.

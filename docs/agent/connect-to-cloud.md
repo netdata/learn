@@ -1,7 +1,7 @@
 ---
 title: "Connect Agent to Cloud "
 description: "Connecting a Netdata Agent, running on a distributed node, to Netdata Cloud securely via the encrypted Agent-Cloud link (ACLK)."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/claim/README.md
+custom_edit_url: https://github.com/netdata/netdata/edit/master/connect-to-cloud/README.md
 ---
 
 
@@ -142,7 +142,7 @@ you don't see the node in your Space after 60 seconds, see the [troubleshooting 
 
 ### Connect a Kubernetes cluster's parent Netdata pod
 
-Read our [Kubernetes installation](/docs/agent/packaging/installer/methods/kubernetes#claim-a-kubernetes-clusters-parent-pod)
+Read our [Kubernetes installation](/docs/agent/packaging/installer/methods/kubernetes#connect-a-kubernetes-clusters-parent-pod)
 for details on connecting a parent Netdata pod.
 
 ### Connect through a proxy
@@ -292,7 +292,7 @@ If `aclk-available` is `false` and all other keys are `true`, your Agent is havi
 through the ACLK. Please check your system's firewall.
 
 If your Agent needs to use a proxy to access the internet, you must [set up a proxy for
-claiming](#claim-through-a-proxy).
+connecting to Cloud](#connect-through-a-proxy).
 
 If you are certain firewall and proxy settings are not the issue, you should consult the Agent's `error.log` at
 `/var/log/netdata/error.log` and contact us by [creating an issue on

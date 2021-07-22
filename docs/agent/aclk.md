@@ -16,7 +16,7 @@ IPs can change without notice. Watch this page for updates.
 
 For a guide to connect a node using the ACLK, plus additional troubleshooting and reference information, read our [get
 started with Cloud](/docs/cloud/get-started) guide or the full [connect to Cloud
-documentation](/docs/agent/claim).
+documentation](/docs/agent/connect-to-cloud).
 
 ## Data privacy
 
@@ -56,7 +56,7 @@ configuration uses two settings:
 ```
 
 If your Agent needs to use a proxy to access the internet, you must [set up a proxy for
-connecting to cloud](/docs/agent/claim#connect-through-a-proxy).
+connecting to cloud](/docs/agent/connect-to-cloud#connect-through-a-proxy).
 
 You can configure following keys in the `netdata.conf` section `[cloud]`:
 ```
@@ -160,7 +160,7 @@ If you first disable the ACLK and any Cloud functionality and then decide you wo
 
 If you passed `--disable-cloud` to `netdata-installer.sh` during installation, you must
 [reinstall](/docs/agent/packaging/installer/reinstall) your Agent. Use the same method as before, but pass `--require-cloud` to
-the installer. When installation finishes you can [connect your node](/docs/agent/claim#how-to-connect-a-node).
+the installer. When installation finishes you can [connect your node](/docs/agent/connect-to-cloud#how-to-connect-a-node).
 
 If you changed the runtime setting in your `var/lib/netdata/cloud.d/cloud.conf` file, edit the file again and change
 `enabled` to `yes`:
@@ -170,6 +170,6 @@ If you changed the runtime setting in your `var/lib/netdata/cloud.d/cloud.conf` 
     enabled = yes
 ```
 
-Restart your Agent and [connect your node](/docs/agent/claim#how-to-connect-a-node).
+Restart your Agent and [connect your node](/docs/agent/connect-to-cloud#how-to-connect-a-node).
 
 
