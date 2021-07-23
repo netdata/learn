@@ -21,23 +21,22 @@ the link icon <img class="img__inline img__inline--link"
 src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to jump to
 that node's dashboard in Netdata Cloud.
 
-When viewing the single-node dashboard, the **Metric Correlations** button appears in the War Room's [utility
-bar](/docs/cloud/war-rooms#the-utility-bar).
+When viewing the single-node dashboard, the **Metric Correlations** button appears in top right corner of the page.
 
 ![The Metric Correlations button in a single-node
-dashboard](https://user-images.githubusercontent.com/1153921/96469458-15be3480-11e2-11eb-8321-6937da8313ac.png)
+dashboard](https://user-images.githubusercontent.com/82235632/126153864-5dad7c59-09d3-4a9a-9b42-dc9e82598859.png)
 
 To start correlating metrics, click the **Metric Correlations** button, then hold the `Alt` key (or `⌘` on macOS) and
 click-and-drag a selection of metrics on a single chart. The selected timeframe needs to be between 15 and 180 seconds
-for Metric Correlation to work best.
+for Metric Correlation to work best. 
 
 ![An animated GIF of using the Metric Correlation
-feature](https://user-images.githubusercontent.com/1153921/96477286-2a52fa80-11eb-11eb-842f-998bf9a9ce09.gif)
+feature](https://user-images.githubusercontent.com/82235632/126774050-7154cc0f-22e6-4edc-b42c-1196bac28622.gif)
 
 The menu then displays information about the selected area and reference baseline. Metric Correlations uses the
 reference baseline to discover which additional metrics are most closely connected to the selected metrics.
 
-Press the **Find Correlations** button to start up the correlations service, which scores all available metrics on your
+Press the **Find Correlations** button to start up the correlations service, the button is only enabled when a valid timeframe is selected (between 15 and 180 seconds). Once pressed, the service will score all available metrics on your
 node and returns a filtered version of the Netdata dashboard. Now, you'll see only those metrics that have changed the
 most between a baseline window and the highlighted window you have selected.
 
