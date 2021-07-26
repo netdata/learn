@@ -75,6 +75,13 @@ yarn start
 This command starts a local development server and opens up a browser window. Most changes are reflected live without
 having to restart the server.
 
+If you get an error saying command not found when **docusaurus** is trying to start you need to install docusaurus (reference to [docusaurus on npm](https://www.npmjs.com/package/docusaurus)).
+
+```console
+yarn run v1.22.5
+$ docusaurus start
+```
+
 ## Ingest and process documentation files
 
 As explained in the [contributing to Netdata's documentation](#contributing-to-netdatas-documentation) section above,
