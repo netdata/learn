@@ -383,10 +383,10 @@ module.exports = {
         'cloud/get-started',
         {
           type: 'category',
-          label: 'Claiming',
+          label: 'Connecting to Cloud',
           items: [
             'agent/aclk',
-            'agent/claim',
+            'agent/connect-to-cloud',
           ]
         },
         'cloud/spaces',

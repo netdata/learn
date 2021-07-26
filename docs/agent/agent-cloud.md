@@ -28,8 +28,8 @@ Cloud](https://user-images.githubusercontent.com/1153921/80828986-1ebb3b00-8b9b-
 [Read more about Netdata Cloud](/docs/cloud/) to better understand how it gives you real-time
 visibility into your entire infrastructure, and why you might consider using it.
 
-Next, [get started in 5 minutes](/docs/cloud/get-started/), or read our [claiming
-reference](/docs/agent/claim) for a complete investigation of Cloud's security and encryption features, plus instructions
+Next, [get started in 5 minutes](/docs/cloud/get-started/), or read our [connection to Cloud
+reference](/docs/agent/connect-to-cloud) for a complete investigation of Cloud's security and encryption features, plus instructions
 for Docker containers.
 
 ## Navigate between dashboards with Visited nodes
@@ -72,8 +72,8 @@ about how you might want to use or configure Cloud, we recommend the following:
 
 -   Get an overview of Cloud's features by reading [Cloud documentation](/docs/cloud/).
 -   Follow the 5-minute [get started with Cloud](/docs/cloud/get-started/) guide to finish
-    onboarding and claim your first nodes.
--   Better understand how agents connect securely to the Cloud with [claiming](/docs/agent/claim) and [Agent-Cloud
+    onboarding and connect your first nodes.
+-   Better understand how agents connect securely to the Cloud with [connect agent to Cloud](/docs/agent/connect-to-cloud) and [Agent-Cloud
     link](/docs/agent/aclk) documentation.
 
 

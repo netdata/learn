@@ -11,7 +11,7 @@ import Link from '@docusaurus/Link'
 import Callout from '@site/src/components/Callout'
 
 Ready to get real-time visibility into your entire infrastructure with Netdata Cloud? This guide will walk you through
-the onboarding process, such as setting up your Space and War Room and claiming your first nodes.
+the onboarding process, such as setting up your Space and War Room and connecting your first nodes.
 
 ## Before you start
 
@@ -24,12 +24,12 @@ you used to install Netdata on that node.
 
 ## Begin the onboarding process
 
-Get started by signing up for Netdata Cloud. Read the [sign in/up](/docs/cloud/manage/sign-in) doc for details on the
+Get started by signing in to Netdata. Read the [sign in](/docs/cloud/manage/sign-in) doc for details on the
 authentication methods we use.
 
 <Link to="https://app.netdata.cloud" className="group">
     <button className="relative text-text bg-gray-200 px-4 py-2 rounded">
-        <span className="z-10 relative font-semibold group-hover:text-gray-100">Sign up for Netdata Cloud</span>
+        <span className="z-10 relative font-semibold group-hover:text-gray-100">Sign in to Netdata</span>
         <div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded"></div>
     </button>
 </Link>
@@ -41,51 +41,50 @@ to group nodes by their service (`nginx`), purpose (`webservers`), or physical l
 
 Don't worry! You can always add more Spaces and War Rooms later if you decide to reorganize how you use Netdata Cloud.
 
-## Claim your nodes
+## Connect your nodes
 
-After creating your War Rooms, Netdata Cloud prompts you to [claim](/docs/agent/claim) your nodes to Netdata Cloud. You
-can claim any node running Netdata, whether it's a physical or virtual machine, a Docker container, IoT device, and
+After creating your War Rooms, Netdata Cloud prompts you to [connect](/docs/agent/connect-to-cloud) your nodes to Netdata Cloud. You
+can connect any node running Netdata, whether it's a physical or virtual machine, a Docker container, IoT device, and
 more. 
 
-The claiming process securely connects any node to Netdata Cloud using the [Agent-Cloud link](/docs/agent/aclk). By
-claiming a node, you prove you have write and administrative access to that node. Claiming also prevents any third party
-from claiming a node that you control. Keep in mind:
+The connection process securely connects any node to Netdata Cloud using the [Agent-Cloud link](/docs/agent/aclk). By
+connecting a node, you prove you have write and administrative access to that node. Connecting to Cloud also prevents any third party
+from connecting a node that you control. Keep in mind:
 
-- _You can only claim any given node in a single Space_. You can, however, add that claimed node to multiple War Rooms
+- _You can only connect any given node in a single Space_. You can, however, add that connected node to multiple War Rooms
   within that one Space.
-- You must repeat the claiming process on every node you want to add to Netdata Cloud.
+- You must repeat the connection process on every node you want to add to Netdata Cloud.
 
 <Callout type="notice">
 
 **Netdata Cloud ensures your data privacy by not storing metrics data from your nodes**. See our statement on Netdata
 Cloud [data privacy](/docs/agent/aclk/#data-privacy) for details on the data that's streamed from your nodes and the
-[claiming](/docs/agent/claim) doc for details about why we implemented the claiming process and the encryption methods
+[connecting to cloud](/docs/agent/connect-to-cloud) doc for details about why we implemented the connection process and the encryption methods
 we use to secure your data in transit. 
 
 </Callout>
 
-To claim a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
+To connect a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
 Netdata Cloud into your node's terminal.
 
 Hit **Enter**. The script should return `Agent was successfully claimed.`. If the claiming script returns errors, or if
 you don't see the node in your Space after 60 seconds, see the [troubleshooting
-information](/docs/agent/claim/#troubleshooting).
+information](/docs/agent/connect-to-cloud/#troubleshooting).
 
 Repeat this process with every node you want to add to Netdata Cloud during onboarding. You can also add more nodes once
-you've finished onboarding by clicking the **Claim Nodes** button in the [Space management
+you've finished onboarding by clicking the **Connect Nodes** button in the [Space management
 area](/docs/cloud/spaces/#manage-spaces).
 
 ### Alternatives and other operating systems
 
 **Docker**: You can execute the claiming script Netdata running as a Docker container, or attach the claiming script
-when creating the container for the first time, such as when you're spinning up ephemeral containers. See the [claim
-Netdata running in Docker](/docs/agent/claim#claiming-an-agent-running-in-docker) documentation for details.
+when creating the container for the first time, such as when you're spinning up ephemeral containers. See the [connect an agent running in Docker](/docs/agent/connect-to-cloud#connect-an-agent-running-in-docker) documentation for details.
 
-**Without root privileges**: If you want to claim an agent without using root privileges, see our [claiming
-documentation](/docs/agent/claim#claim-an-agent-without-root-privileges).
+**Without root privileges**: If you want to connect an agent without using root privileges, see our [connect
+documentation](/docs/agent/connect-to-cloud#connect-an-agent-without-root-privileges).
 
 **With a proxy**: If your node uses a proxy to connect to the internet, you need to configure the node's proxy settings.
-See our [claiming through a proxy](/docs/agent/claim#claiming-through-a-proxy) doc for details.
+See our [connect through a proxy](/docs/agent/connect-to-cloud#connect-through-a-proxy) doc for details.
 
 ## What's next?
 

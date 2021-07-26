@@ -17,11 +17,11 @@ In order to use the Kubernetes visualizations in Netdata Cloud, you need:
 - A Kubernetes cluster running Kubernetes v1.9 or newer.
 - A Netdata deployment using the latest version of the [Helm chart](https://github.com/netdata/helmchart), which
   installs [v1.29.2](https://github.com/netdata/netdata/releases) or newer of the Netdata Agent.
-- To claim your Kubernetes cluster to Netdata Cloud.
+- To connect your Kubernetes cluster to Netdata Cloud.
 - To enable the feature flag described below.
 
 See our [Kubernetes deployment instructions](/docs/agent/packaging/installer/methods/kubernetes/) for details on
-installation and claiming to Netdata Cloud.
+installation and connecting to Netdata Cloud.
 
 ## Available Kubernetes metrics
 
