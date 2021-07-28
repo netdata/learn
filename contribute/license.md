@@ -132,5 +132,6 @@ This is the list of contributors that have signed this agreement:
 |@stevenh|Steven Hartland|steven.hartland@multiplay.co.uk|
 |@dpsy4|Dave Sitek||
 |@devinrsmith|Devin Smith||
+|@hugovalente-pm|Hugo valente|hugo@netdata.cloud|
 
 
