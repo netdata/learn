@@ -167,7 +167,7 @@ If the Netdata Agent isn't already open in your browser, open a new tab and navi
 
 > If you [signed up](https://app.netdata.cloud/sign-up?cloudRoute=/spaces) for Netdata Cloud earlier, you can also view
 > the exact same LAMP stack metrics there, plus additional features, like drag-and-drop custom dashboards. Be sure to
-> [connect your node](/docs/agent/connect-to-cloud) to start streaming metrics to your browser through Netdata Cloud.
+> [claim your node](/docs/agent/claim) to start streaming metrics to your browser through Netdata Cloud.
 
 Netdata automatically organizes all metrics and charts onto a single page for easy navigation. Peek at gauges to see
 overall system performance, then scroll down to see more. Click-and-drag with your mouse to pan _all_ charts back and
