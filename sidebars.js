@@ -386,7 +386,7 @@ module.exports = {
           label: 'Connecting to Cloud',
           items: [
             'agent/aclk',
-            'agent/connect-to-cloud',
+            'agent/claim',
           ]
         },
         'cloud/spaces',

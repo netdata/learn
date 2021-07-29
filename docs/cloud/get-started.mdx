@@ -43,7 +43,7 @@ Don't worry! You can always add more Spaces and War Rooms later if you decide to
 
 ## Connect your nodes
 
-After creating your War Rooms, Netdata Cloud prompts you to [connect](/docs/agent/connect-to-cloud) your nodes to Netdata Cloud. You
+After creating your War Rooms, Netdata Cloud prompts you to [connect](/docs/agent/claim) your nodes to Netdata Cloud. You
 can connect any node running Netdata, whether it's a physical or virtual machine, a Docker container, IoT device, and
 more. 
 
@@ -59,7 +59,7 @@ from connecting a node that you control. Keep in mind:
 
 **Netdata Cloud ensures your data privacy by not storing metrics data from your nodes**. See our statement on Netdata
 Cloud [data privacy](/docs/agent/aclk/#data-privacy) for details on the data that's streamed from your nodes and the
-[connecting to cloud](/docs/agent/connect-to-cloud) doc for details about why we implemented the connection process and the encryption methods
+[connecting to cloud](/docs/agent/claim) doc for details about why we implemented the connection process and the encryption methods
 we use to secure your data in transit. 
 
 </Callout>
@@ -69,7 +69,7 @@ Netdata Cloud into your node's terminal.
 
 Hit **Enter**. The script should return `Agent was successfully claimed.`. If the claiming script returns errors, or if
 you don't see the node in your Space after 60 seconds, see the [troubleshooting
-information](/docs/agent/connect-to-cloud/#troubleshooting).
+information](/docs/agent/claim#troubleshooting).
 
 Repeat this process with every node you want to add to Netdata Cloud during onboarding. You can also add more nodes once
 you've finished onboarding by clicking the **Connect Nodes** button in the [Space management
@@ -78,13 +78,13 @@ area](/docs/cloud/spaces/#manage-spaces).
 ### Alternatives and other operating systems
 
 **Docker**: You can execute the claiming script Netdata running as a Docker container, or attach the claiming script
-when creating the container for the first time, such as when you're spinning up ephemeral containers. See the [connect an agent running in Docker](/docs/agent/connect-to-cloud#connect-an-agent-running-in-docker) documentation for details.
+when creating the container for the first time, such as when you're spinning up ephemeral containers. See the [connect an agent running in Docker](/docs/agent/claim#connect-an-agent-running-in-docker) documentation for details.
 
 **Without root privileges**: If you want to connect an agent without using root privileges, see our [connect
-documentation](/docs/agent/connect-to-cloud#connect-an-agent-without-root-privileges).
+documentation](/docs/agent/claim#connect-an-agent-without-root-privileges).
 
 **With a proxy**: If your node uses a proxy to connect to the internet, you need to configure the node's proxy settings.
-See our [connect through a proxy](/docs/agent/connect-to-cloud#connect-through-a-proxy) doc for details.
+See our [connect through a proxy](/docs/agent/claim#connect-through-a-proxy) doc for details.
 
 ## What's next?
 
