@@ -69,7 +69,7 @@ You are then signed in to Netdata Cloud or directed to the new-user onboarding i
 
 ## Reset a password
 
-Netdata Cloud not store passwords and does not support password resets. All of our sign in methods do not
+Netdata Cloud does not store passwords and does not support password resets. All of our sign in methods do not
 require passwords, and use either links in emails or Google/GitHub OAuth for authentication.
 
 ## Switch between sign in methods
