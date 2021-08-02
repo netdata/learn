@@ -34,7 +34,7 @@ device, and sign in.
 
 ### Don't have a Netdata Cloud account yet?
 
-Relax! Sign in and we will create one for you!
+If you don't have a Netdata Cloud account yet you won't need to worry about it. During the sign in process we will create one for you and make the process seamless to you.
 
 After your account is created and you sign in to Netdata, you first are asked to agree to Netdata Cloud's [Privacy
 Policy](https://www.netdata.cloud/privacy/) and [Terms of Use](https://www.netdata.cloud/terms/). Once you agree with these you are directed
@@ -69,7 +69,7 @@ You are then signed in to Netdata Cloud or directed to the new-user onboarding i
 
 ## Reset a password
 
-Netdata Cloud not store passwords and does not support password resets. All of our sign in methods do not
+Netdata Cloud does not store passwords and does not support password resets. All of our sign in methods do not
 require passwords, and use either links in emails or Google/GitHub OAuth for authentication.
 
 ## Switch between sign in methods
