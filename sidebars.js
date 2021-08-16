@@ -135,7 +135,7 @@ module.exports = {
             'dashboard/how-dashboard-works',
             'dashboard/interact-charts',
             'dashboard/dimensions-contexts-families',
-            'dashboard/select-timeframes',
+            'dashboard/visualization-date-and-time-controls',
             'dashboard/import-export-print-snapshot',
             {
               type: 'doc',
