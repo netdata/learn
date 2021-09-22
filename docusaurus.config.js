@@ -14,7 +14,7 @@ module.exports = {
       trackingID: 'GTM-N6CBMJD',
     },
     posthog: {
-        apiKey: "phc_Qs5GgU40e7BUx4LB1i8hYiW4e9Ogv0HpDNGZcJTWuCn",
+        apiKey: "phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv",
         appUrl: "https://posthog.netdata.cloud",
         enableInDevelopment: false
     },
