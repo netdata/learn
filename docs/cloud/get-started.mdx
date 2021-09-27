@@ -34,18 +34,18 @@ authentication methods we use.
     </button>
 </Link>
 
-Once signed in with your preferred method, you begin onboarding by creating your first [Space](/docs/cloud/spaces) and
-[War Room](/docs/cloud/war-rooms), which help you organize your team and the many systems that make up your
-infrastructure. For example, you can put product and infrastructure SRE teams in separate Spaces, and then use War Rooms
-to group nodes by their service (`nginx`), purpose (`webservers`), or physical location (`IAD`).
+Once signed in with your preferred method, a General [War Room](/docs/cloud/war-rooms) and a [Space](/docs/cloud/spaces) 
+named for your login email are automatically created. You can configure more Spaces and War Rooms to help you you organize your team 
+and the many systems that make up your infrastructure. For example, you can put product and infrastructure SRE teams in separate 
+Spaces, and then use War Rooms to group nodes by their service (`nginx`), purpose (`webservers`), or physical location (`IAD`).
 
 Don't worry! You can always add more Spaces and War Rooms later if you decide to reorganize how you use Netdata Cloud.
 
 ## Connect your nodes
 
-After creating your War Rooms, Netdata Cloud prompts you to [connect](/docs/agent/claim) your nodes to Netdata Cloud. You
+From within the created War Rooms, Netdata Cloud prompts you to [connect](/docs/agent/claim) your nodes to Netdata Cloud. You
 can connect any node running Netdata, whether it's a physical or virtual machine, a Docker container, IoT device, and
-more. 
+more. Non-admin users can select from existing nodes or select an admin from a list of contacts provided in the War Room.
 
 The connection process securely connects any node to Netdata Cloud using the [Agent-Cloud link](/docs/agent/aclk). By
 connecting a node, you prove you have write and administrative access to that node. Connecting to Cloud also prevents any third party
