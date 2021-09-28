@@ -6,7 +6,7 @@ custom_edit_url: null
 ---
 
 > ⚠️ This new version of charts is currently **only** available on Netdata Cloud. We didn't want to keep this valuable
-> feature from you, so while we get this into your hands, collect feedback and iterate over it. We'll soon get this
+> feature from you, so while we get this into your hands, collect feedback and iterate over it, we'll soon get this
 > available also on Netdata Agent dashboard.
 
 Netdata excels in collecting, storing, and organizing metrics in out-of-the-box dashboards. To transform all this data into an effective visualization tool, that helps you make sense out of all the available metrics we introduce a new version of  Netdata charts. These
