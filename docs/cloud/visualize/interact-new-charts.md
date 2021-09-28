@@ -10,7 +10,7 @@ custom_edit_url: null
 > available also on the Netdata Agent dashboard.
 
 Netdata excels in collecting, storing, and organizing metrics in out-of-the-box dashboards. To transform all this data into an effective visualization tool, that helps you make sense out of all the available metrics we're introducing a new and improved version of Netdata charts. These
-will provide lots of useful information and invite you to further explore your data.
+will provide a lot of useful information and we invite you to further explore your data.
 
 Built on top of charts, that update every second with new metrics, we aimed to bring the following to you:
 * Enjoy the high resolution and granularity of metrics collected by Netdata
