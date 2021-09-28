@@ -6,19 +6,19 @@ custom_edit_url: null
 ---
 
 > ⚠️ This new version of charts is currently **only** available on Netdata Cloud. We didn't want to keep this valuable
-> feature from you, so while we get this into your hands, collect feedback and iterate over it, we'll soon get this
-> available on Netdata Agent dashboard.
+> feature from you, so while we get this into your hands, collect feedback and iterate over it. We'll soon get this
+> available also on Netdata Agent dashboard.
 
 Netdata excels in collecting, storing, and organizing metrics in out-of-the-box dashboards. To transform all this data into an effective visualization tool, that helps you make sense out of all the available metrics we introduce a new version of  Netdata charts. These
-will provide lots of useful information and invite you to further exploration your data.
+will provide lots of useful information and invite you to further explore your data.
 
-Built on top of charts that update every second with new metrics we aimed to bring the following to you:
+Built on top of charts, that update every second with new metrics, we aimed to bring the following to you:
 * Enjoy the high resolution and granularity of metrics collected by Netdata
-* Explore visualization with more options such as Line, Stacked and Area types (other types like Bar, pie, gauges are to be added shortly)
+* Explore visualization with more options such as Line, Stacked and Area types (other types like bar, pie, gauges are to be added shortly)
 * Examine all the metrics where your cursor is with a tooltip
 * Use intuitive tooling and shortcuts to pan, zoom or highlight your charts
 * On highlight, ease access to [Metric Correlations](/docs/cloud/insights/metric-correlations) so you can see which other metrics have similar patterns
-* Have the dimensions sorted based on name or value as you please
+* Have the dimensions sorted based on name or value
 * Full screen mode
 * Read useful information about the chart, it’s plugin, context and type
 * Get the chart status and possible errors. On top, reload functionality
@@ -27,44 +27,45 @@ These new charts will available on [Overview tab](/docs/cloud/visualize/overview
 
 ## Overall
 
-Below you can have a sense of the overall look and feel of the new charts for both a composite chart, from [Overview tab](/docs/cloud/visualize/overview), and simple chart, from the Single Node view:
+Here is the overall look and feel of the new charts for both: a composite chart, from [Overview tab](/docs/cloud/visualize/overview), and simple chart, from the Single Node view:
 
 #TODO add images
 
 With a quick glance you have immediate information available at your disposal:
 * Chart title and units
-* Action bar
-* Dimensions related with the chart
+* Action bars
+* Chart area
+* Legend with dimensions
 
-### Pause or stop and reset
+## Play, Pause and Reset
 
-Your charts controlled using the available [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls). Besides these when interacting with the chart you can also activate these controls by:
-* hovering over any chart you temporarily pause it, this momentarily switches time control to Pause, so that you can hover over a specific timeframe and see the exact values presented as dimensions. When moving out of the chart time control will go back to Play (if it was it's previous state)
-* clicking on the chart locks it, this enables the Pause option on the time controls, to this timeframe. This isif you want to jump to a different chart to look for possible correlations. 
-* double clicking will release a previously locked chart, move the time control back to Play
+Your charts are controlled using the available [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls). Besides these, when interacting with the chart you can also activate these controls by:
+* hovering over any chart to temporarily pause it - this momentarily switches time control to Pause, so that you can hover over a specific timeframe. When moving out of the chart time control will go back to Play (if it was it's previous state)
+* clicking on the chart to lock it - this enables the Pause option on the time controls, to the current timeframe. This is if you want to jump to a different chart to look for possible correlations. 
+* double clicking to release a previously locked chart - move the time control back to Play
 
-| Interaction          | Keyboard/mouse | Touchpad/touchscreen | Time control          |
-| :----------------    | :------------- | :------------------- | :-------------------- |
-| **Pause** a chart    | `hover`        | `n/a`                | Temporarily **Pause** |
-| **Stop** a chart     | `click`        | `tap`                | **Pause**             |
-| **Reset** a chart    | `double click` | `n/a`                | **Play**              |
+| Interaction          | Keyboard/mouse | Touchpad/touchscreen | Time control           |
+| :----------------    | :------------- | :------------------- | :----------------------|
+| **Pause** a chart    | `hover`        | `n/a`                | Temporarily **Pause**  |
+| **Stop** a chart     | `click`        | `tap`                | **Pause**              |
+| **Reset** a chart    | `double click` | `n/a`                | **Play**               |
 
 ## Title and chart action bar
 
-When you start interacting with a chart you'll notice valuable information on the top bar. You will see information from the chart title to a chart action bar, which is activated even with a simple hover on the bar.
+When you start interacting with a chart, you'll notice valuable information on the top bar. You will see information from the chart title to a chart action bar.
 
 The elements that you can find on this top bar are:
-* Netdata icon: this subtlely indicates that data is continuously being updated, this happens if chart is in Play or Force Play mode (check [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls) for more details)
+* Netdata icon: this subtlely indicates that data is continuously being updated, this happens if [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls) are in Play or Force Play mode
 * Chart status pill: indicates the status of the chart. Possible values are: Loading, Timeout, Error or No data
-* Chart title: on the chart title you can see the title, together with the metric being displayed as well as the unit of measurement
-* Chart action bar: here you'll have access chart info, change chart types, enable fullscreen mode and ability to add the chart to a custom dashboard
+* Chart title: on the chart title you can see the title together with the metric being displayed, as well as the unit of measurement
+* Chart action bar: here you'll have access to chart info, change chart types, enable fullscreen mode and the ability to add the chart to a custom dashboard
 
 #TODO add image
 
 ### Chart action bar
 
 On this bar you have access to immediate actions over the chart, the available actions are:
-* Chart info: you will be able to get more information relevant to the chart you are interacting
+* Chart info: you will be able to get more information relevant to the chart you are interacting with
 * Chart type: change the chart type from Line, Stacked or Area
 * Enter fullscreen mode: allows you expand the current chart to the fullsize of your screen
 * Add chart to dashboard: you can easily add the chart to an existing custom dashboard or directly create a new one with that chart on it
@@ -89,12 +90,13 @@ Drag your mouse/finger to the right to pan backward through time, or drag to the
 
 ### Highlight
 
-Selecting timeframes is useful when you see an interesting spike or change in a chart and want to investigate further, from looking at the same period of time on other charts/sections or, with an in-context action bar, trigger actions to help you troubleshoot. The available actions:
+Selecting timeframes is useful when you see an interesting spike or change in a chart and want to investigate further, from looking at the same period of time on other charts/sections or, with an in-context action bar, trigger actions to help you troubleshoot (currently only available on
+ Single Node view). The available actions:
 * run [Metric Correlations](/docs/cloud/insights/metric-correlations)
 * zoom in on the selected timeframe
 
 
-[Metric Correlations](/docs/cloud/insights/metric-correlations) will action will only be available if you respect the timeframe selection limitations, the selected duration pill will help you visualize together with the button state will help visualize this.
+[Metric Correlations](/docs/cloud/insights/metric-correlations) will action will only be available if you respect the timeframe selection limitations. The selected duration pill together with the button state will help visualize this.
 
 #TODO add image
 
