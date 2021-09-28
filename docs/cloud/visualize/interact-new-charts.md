@@ -96,7 +96,7 @@ Selecting timeframes is useful when you see an interesting spike or change in a 
 * zoom in on the selected timeframe
 
 
-[Metric Correlations](/docs/cloud/insights/metric-correlations) will action will only be available if you respect the timeframe selection limitations. The selected duration pill together with the button state will help visualize this.
+[Metric Correlations](/docs/cloud/insights/metric-correlations) will only be available if you respect the timeframe selection limitations. The selected duration pill together with the button state will help visualize this.
 
 #TODO add image
 
