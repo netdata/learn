@@ -6,15 +6,14 @@ custom_edit_url: null
 ---
 
 > ⚠️ This new version of charts is currently **only** available on Netdata Cloud. We didn't want to keep this valuable
-> feature from you, so while we get this into your hands, collect feedback and iterate over it, we'll soon get this
-> available also on the Netdata Agent dashboard.
+> feature from you, sso after we get this into your hands on the cloud, we will collect and implement your feedback to make sure we are providing the best possible version of the feature on the Netdata Agent dashboard as quickly as possible.
 
-Netdata excels in collecting, storing, and organizing metrics in out-of-the-box dashboards. To transform all this data into an effective visualization tool, that helps you make sense out of all the available metrics we're introducing a new and improved version of Netdata charts. These
+Netdata excels in collecting, storing, and organizing metrics in out-of-the-box dashboards. To transform all this data into a visualization tool effective in making sense out of all the available metrics, we introduce a new version of Netdata charts. These
 will provide a lot of useful information and we invite you to further explore your data.
 
 Built on top of charts, that update every second with new metrics, we aimed to bring the following to you:
 * Enjoy the high resolution and granularity of metrics collected by Netdata
-* Explore visualization with more options such as Line, Stacked and Area types (other types like bar, pie, gauges are to be added shortly)
+* Explore visualization with more options such as _line_, _stacked_ and _area_ types (other types like _bar_, _pie_ and _gauges_ are to be added shortly)
 * Examine all the metrics where your cursor is with a tooltip
 * Use intuitive tooling and shortcuts to pan, zoom or highlight your charts
 * On highlight, ease access to [Metric Correlations](/docs/cloud/insights/metric-correlations) so you can see which other metrics have similar patterns
@@ -44,6 +43,8 @@ Your charts are controlled using the available [Time controls](/docs/dashboard/v
 * clicking on the chart to lock it - this enables the Pause option on the time controls, to the current timeframe. This is if you want to jump to a different chart to look for possible correlations. 
 * double clicking to release a previously locked chart - move the time control back to Play
 
+ #TODO to put a GIF
+
 | Interaction          | Keyboard/mouse | Touchpad/touchscreen | Time control           |
 | :----------------    | :------------- | :------------------- | :----------------------|
 | **Pause** a chart    | `hover`        | `n/a`                | Temporarily **Pause**  |
@@ -55,8 +56,8 @@ Your charts are controlled using the available [Time controls](/docs/dashboard/v
 When you start interacting with a chart, you'll notice valuable information on the top bar. You will see information from the chart title to a chart action bar.
 
 The elements that you can find on this top bar are:
-* Netdata icon: this subtlely indicates that data is continuously being updated, this happens if [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls) are in Play or Force Play mode
-* Chart status pill: indicates the status of the chart. Possible values are: Loading, Timeout, Error or No data
+* Netdata icon: this indicates that data is continuously being updated, this happens if [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls) are in Play or Force Play mode
+* Chart status icon: indicates the status of the chart. Possible values are: Loading, Timeout, Error or No data
 * Chart title: on the chart title you can see the title together with the metric being displayed, as well as the unit of measurement
 * Chart action bar: here you'll have access to chart info, change chart types, enable fullscreen mode and the ability to add the chart to a custom dashboard
 
@@ -66,7 +67,7 @@ The elements that you can find on this top bar are:
 
 On this bar you have access to immediate actions over the chart, the available actions are:
 * Chart info: you will be able to get more information relevant to the chart you are interacting with
-* Chart type: change the chart type from Line, Stacked or Area
+* Chart type: change the chart type from _line_, _stacked_ or _area_
 * Enter fullscreen mode: allows you expand the current chart to the fullsize of your screen
 * Add chart to dashboard: you can easily add the chart to an existing custom dashboard or directly create a new one with that chart on it
 
@@ -90,13 +91,13 @@ Drag your mouse/finger to the right to pan backward through time, or drag to the
 
 ### Highlight
 
-Selecting timeframes is useful when you see an interesting spike or change in a chart and want to investigate further, from looking at the same period of time on other charts/sections or, with an in-context action bar, trigger actions to help you troubleshoot (currently only available on
+Selecting timeframes is useful when you see an interesting spike or change in a chart and want to investigate further, from looking at the same period of time on other charts/sections or triggering actions to help you troubleshoot with an in-context action bar to help you troubleshoot (currently only available on
  Single Node view). The available actions:
 * run [Metric Correlations](/docs/cloud/insights/metric-correlations)
 * zoom in on the selected timeframe
 
 
-[Metric Correlations](/docs/cloud/insights/metric-correlations) will only be available if you respect the timeframe selection limitations. The selected duration pill together with the button state will help visualize this.
+[Metric Correlations](/docs/cloud/insights/metric-correlations) will only be available if you respect the timeframe selection limitations. The selected duration pill together with the button state helps visualize this.
 
 #TODO add image
 
