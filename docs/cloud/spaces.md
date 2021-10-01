@@ -39,8 +39,6 @@ Click on the green **+** button to add a new Space. Enter the name of the Space 
 ![Switch between
 Spaces](https://user-images.githubusercontent.com/1153921/108741861-60372100-74f4-11eb-9580-8ebd5ca97003.png)
 
-While you can't change the name of a Space once it's created, you can always create additional Spaces and delete the any
-you no longer need.
 
 ## Switch between Spaces
 
