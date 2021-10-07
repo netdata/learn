@@ -13,7 +13,7 @@ export const ReleaseNotes = [
 
 export const News = [
    {
-    title: <>Date and timeframe controls for visualizations</>,
+    title: <>Timezone selector is now available on Netdata Cloud</>,
     href: 'docs/dashboard/visualization-date-and-time-controls#timezone-selector',
     date: 'September 22, 2021',
     type: 'Doc',
@@ -24,7 +24,7 @@ export const News = [
     ),
   },
   {
-    title: <>Date and timeframe controls for visualizations</>,
+    title: <>Date and timeframe controls for visualizations on Netdata Cloud</>,
     href: 'docs/dashboard/visualization-date-and-time-controls',
     date: 'August 18, 2021',
     type: 'Doc',
