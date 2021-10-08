@@ -116,7 +116,7 @@ of an anomaly or outage. Zooming out lets you see metrics within the larger cont
 week, which is useful in understanding what "normal" looks like, or to identify long-term trends, like a slow creep in
 memory usage.
 
-The above ones are _normal_ vertical zoom actions, we also provide an horizontal zoom action that helps you focus on a 
+The actions above are _normal_ vertical zoom actions. We also provide an horizontal zoom action that helps you focus on a 
 specific Y-axis area to further investigate a spike or dive on your charts.
 
 ![Y5IESOjD3s.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/f8722ee8-e69b-426c-8bcb-6cb79897c177)
