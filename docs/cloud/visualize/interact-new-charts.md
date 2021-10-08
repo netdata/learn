@@ -19,7 +19,7 @@ Built on top of charts, that update every second with new metrics, we aimed to b
 * On highlight, ease access to [Metric Correlations](/docs/cloud/insights/metric-correlations) so you can see which other metrics have similar patterns
 * Have the dimensions sorted based on name or value
 * Full screen mode
-* Read useful information about the chart, it’s plugin, context and type
+* Useful information about the chart, its plugin, context, and type
 * Get the chart status and possible errors. On top, reload functionality
 
 These new charts will available on [Overview tab](/docs/cloud/visualize/overview), Single Node view and on your [Custom Dashboards](/docs/cloud/visualize/dashboards). 
