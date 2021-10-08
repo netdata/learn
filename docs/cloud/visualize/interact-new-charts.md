@@ -160,7 +160,7 @@ double-click the same icon.
 ## What's next?
 
 We recommend you read up on the differences between [chart dimensions, contexts, and
-families](/docs/dashboard/dimensions-contexts-families) to complete your understanding of how Netdata organizes its
+families](/docs/dashboard/dimensions-contexts-families) to strengthen your understanding of how Netdata organizes its
 dashboards. Another valuable way to interact with charts is to use the [date and time controls](/docs/dashboard/visualization-date-and-time-controls), which helps you visualize specific moments of historical metrics.
 
 ### Further reading & related information
