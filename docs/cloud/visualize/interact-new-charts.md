@@ -69,7 +69,7 @@ On this bar you have access to immediate actions over the chart, the available a
 * Chart info: you will be able to get more information relevant to the chart you are interacting with
 * Chart type: change the chart type from _line_, _stacked_ or _area_
 * Enter fullscreen mode: allows you expand the current chart to the fullsize of your screen
-* Add chart to dashboard: you can easily add the chart to an existing custom dashboard or directly create a new one with that chart on it
+* Add chart to dashboard: This allows you to add the chart to an existing custom dashboard or directly create a new one that includes the chart.
 
 <img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/65ac4fc8-3d8d-4617-8234-dbb9b31b4264" width="40%" height="40%" />
 
