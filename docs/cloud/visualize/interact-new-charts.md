@@ -152,7 +152,7 @@ behaving strangely.
 
 ### Resize
 
-Click-and-drag the icon on the bottom-right corner of any chart. To restore the chart to its original height,
+To resize the chart, click-and-drag the icon on the bottom-right corner of any chart. To restore the chart to its original height,
 double-click the same icon.
 
 ![AjqnkIHB9H.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/1bcc6a0a-a58e-457b-8a0c-e5d361a3083c)
