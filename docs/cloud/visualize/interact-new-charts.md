@@ -1,6 +1,6 @@
 ---
 title: Interact with new charts
-description: "Learn how to get the most out of Netdata's new charts. These will help you make sense out of all the metrics at your disposal, helping you troubleshoot with real-time, per-second metric data"
+description: "Learn how to get the most out of Netdata's new charts. These charts will help you make sense of all the metrics at your disposal, helping you troubleshoot with real-time, per-second metric data"
 type: how-to
 custom_edit_url: null
 ---
