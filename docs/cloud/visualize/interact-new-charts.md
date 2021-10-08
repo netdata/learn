@@ -6,7 +6,7 @@ custom_edit_url: null
 ---
 
 > ⚠️ This new version of charts is currently **only** available on Netdata Cloud. We didn't want to keep this valuable
-> feature from you, sso after we get this into your hands on the cloud, we will collect and implement your feedback to make sure we are providing the best possible version of the feature on the Netdata Agent dashboard as quickly as possible.
+> feature from you, so after we get this into your hands on the cloud, we will collect and implement your feedback to make sure we are providing the best possible version of the feature on the Netdata Agent dashboard as quickly as possible.
 
 Netdata excels in collecting, storing, and organizing metrics in out-of-the-box dashboards. To transform all this data into a visualization tool effective in making sense out of all the available metrics, we introduce a new version of Netdata charts. These
 will provide a lot of useful information and we invite you to further explore your data.
@@ -171,3 +171,4 @@ dashboards. Another valuable way to interact with charts is to use the [date and
   - [Date and Time controls](/docs/dashboard/visualization-date-and-time-controls)
   - [Customize the standard dashboard](/docs/dashboard/customize)
   - [Metric Correlations](/docs/cloud/insights/metric-correlations)
+  - [Netdata Agent - Interact with charts](/docs/dashboard/interact-charts)
