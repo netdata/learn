@@ -28,7 +28,7 @@ These new charts will available on [Overview tab](/docs/cloud/visualize/overview
 
 Here is the overall look and feel of the new charts for both: a composite chart, from [Overview tab](/docs/cloud/visualize/overview), and simple chart, from the Single Node view:
 
-#TODO add images
+![NRve6zr325.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/5ecaf5ec-1229-480e-b122-62f63e9df227)
 
 With a quick glance you have immediate information available at your disposal:
 * Chart title and units
@@ -43,7 +43,7 @@ Your charts are controlled using the available [Time controls](/docs/dashboard/v
 * clicking on the chart to lock it - this enables the Pause option on the time controls, to the current timeframe. This is if you want to jump to a different chart to look for possible correlations. 
 * double clicking to release a previously locked chart - move the time control back to Play
 
- #TODO to put a GIF
+ ![23CHKCPnnJ.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/0b1e111e-df44-4d92-b2e3-be5cfd9db8df)
 
 | Interaction          | Keyboard/mouse | Touchpad/touchscreen | Time control           |
 | :----------------    | :------------- | :------------------- | :----------------------|
@@ -61,7 +61,7 @@ The elements that you can find on this top bar are:
 * Chart title: on the chart title you can see the title together with the metric being displayed, as well as the unit of measurement
 * Chart action bar: here you'll have access to chart info, change chart types, enable fullscreen mode and the ability to add the chart to a custom dashboard
 
-#TODO add image
+![image.png](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/c8f5f0bd-5f84-4812-970b-0e4340f4773b)
 
 ### Chart action bar
 
@@ -71,7 +71,7 @@ On this bar you have access to immediate actions over the chart, the available a
 * Enter fullscreen mode: allows you expand the current chart to the fullsize of your screen
 * Add chart to dashboard: you can easily add the chart to an existing custom dashboard or directly create a new one with that chart on it
 
-#TODO add image
+<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/65ac4fc8-3d8d-4617-8234-dbb9b31b4264" width="40%" height="40%" />
 
 ## Exploration action bar
 
@@ -80,6 +80,8 @@ When exploring the chart you will see a second action bar. This action bar is th
 * Highlight
 * Horizontal and Vertical zooms
 * In-context zoom in and out
+
+<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/0417ad66-fcf6-42d5-9a24-e9392ec51f87" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="40%" height="40%" />
 
 ### Pan
 
@@ -99,7 +101,9 @@ Selecting timeframes is useful when you see an interesting spike or change in a 
 
 [Metric Correlations](/docs/cloud/insights/metric-correlations) will only be available if you respect the timeframe selection limitations. The selected duration pill together with the button state helps visualize this.
 
-#TODO add image
+<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/2ffc157d-0f0f-402e-80bb-5ffa8a2091d5" width="50%" height="50%" />
+
+<p/>
 
 | Interaction                        | Keyboard/mouse                                            | Touchpad/touchscreen |
 | :------------------------------    | :-------------------------------------------------------- | :------------------- |
@@ -115,7 +119,7 @@ memory usage.
 The above ones are _normal_ vertical zoom actions, we also provide an horizontal zoom action that helps you focus on a 
 specific Y-axis area to further investigate a spike or dive on your charts.
 
-#TODO add image
+![Y5IESOjD3s.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/f8722ee8-e69b-426c-8bcb-6cb79897c177)
 
 | Interaction                                | Keyboard/mouse                       | Touchpad/touchscreen                                 |
 | :-------------------------------           | :--------------------------          | :--------------------------------------------------- |
@@ -133,7 +137,7 @@ The bottom legend of the chart where you can see the dimensions of the chart can
 * Dimension name (Ascending or Descending)
 * Dimension value (Ascending or Descending)
 
-#TODO add image
+<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/d3031c35-37bc-46c1-bcf9-be29dea0b476" width="50%" height="50%" />
 
 ### Show and hide dimensions
 
@@ -151,7 +155,7 @@ behaving strangely.
 Click-and-drag the icon on the bottom-right corner of any chart. To restore the chart to its original height,
 double-click the same icon.
 
-#TODO add GIF
+![AjqnkIHB9H.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/1bcc6a0a-a58e-457b-8a0c-e5d361a3083c)
 
 ## What's next?
 
