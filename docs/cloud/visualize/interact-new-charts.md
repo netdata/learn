@@ -81,7 +81,7 @@ When exploring the chart you will see a second action bar. This action bar is th
 * Horizontal and Vertical zooms
 * In-context zoom in and out
 
-<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/0417ad66-fcf6-42d5-9a24-e9392ec51f87" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="40%" height="40%" />
+<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/0417ad66-fcf6-42d5-9a24-e9392ec51f87" width="40%" height="40%" />
 
 ### Pan
 
