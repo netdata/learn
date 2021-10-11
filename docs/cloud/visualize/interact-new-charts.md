@@ -1,6 +1,6 @@
 ---
 title: Interact with new charts
-description: "Learn how to get the most out of Netdata's new charts. These will help you make sense out of all the metrics at your disposal, helping you troubleshoot with real-time, per-second metric data"
+description: "Learn how to get the most out of Netdata's new charts. These charts will help you make sense of all the metrics at your disposal, helping you troubleshoot with real-time, per-second metric data"
 type: how-to
 custom_edit_url: null
 ---
@@ -8,25 +8,25 @@ custom_edit_url: null
 > ⚠️ This new version of charts is currently **only** available on Netdata Cloud. We didn't want to keep this valuable
 > feature from you, so after we get this into your hands on the cloud, we will collect and implement your feedback to make sure we are providing the best possible version of the feature on the Netdata Agent dashboard as quickly as possible.
 
-Netdata excels in collecting, storing, and organizing metrics in out-of-the-box dashboards. To transform all this data into a visualization tool effective in making sense out of all the available metrics, we introduce a new version of Netdata charts. These
-will provide a lot of useful information and we invite you to further explore your data.
+Netdata excels in collecting, storing, and organizing metrics in out-of-the-box dashboards. To transform all this data into a visualization tool effective in making sense out of all the available metrics, we offer an enhanced version of Netdata charts. These charts
+provide a lot of useful information, and allow you to further explore your data.
 
 Built on top of charts, that update every second with new metrics, we aimed to bring the following to you:
-* Enjoy the high resolution and granularity of metrics collected by Netdata
+* Enjoy the high-resolution, granular metrics collected by Netdata
 * Explore visualization with more options such as _line_, _stacked_ and _area_ types (other types like _bar_, _pie_ and _gauges_ are to be added shortly)
 * Examine all the metrics where your cursor is with a tooltip
 * Use intuitive tooling and shortcuts to pan, zoom or highlight your charts
 * On highlight, ease access to [Metric Correlations](/docs/cloud/insights/metric-correlations) so you can see which other metrics have similar patterns
 * Have the dimensions sorted based on name or value
 * Full screen mode
-* Read useful information about the chart, it’s plugin, context and type
+* Useful information about the chart, its plugin, context, and type
 * Get the chart status and possible errors. On top, reload functionality
 
 These new charts will available on [Overview tab](/docs/cloud/visualize/overview), Single Node view and on your [Custom Dashboards](/docs/cloud/visualize/dashboards). 
 
 ## Overall
 
-Here is the overall look and feel of the new charts for both: a composite chart, from [Overview tab](/docs/cloud/visualize/overview), and simple chart, from the Single Node view:
+Here, you can see the overall look and feel of the new charts for both with a composite chart from the [Overview tab](/docs/cloud/visualize/overview) and a simple chart from the Single:
 
 ![NRve6zr325.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/5ecaf5ec-1229-480e-b122-62f63e9df227)
 
@@ -59,7 +59,7 @@ The elements that you can find on this top bar are:
 * Netdata icon: this indicates that data is continuously being updated, this happens if [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls) are in Play or Force Play mode
 * Chart status icon: indicates the status of the chart. Possible values are: Loading, Timeout, Error or No data
 * Chart title: on the chart title you can see the title together with the metric being displayed, as well as the unit of measurement
-* Chart action bar: here you'll have access to chart info, change chart types, enable fullscreen mode and the ability to add the chart to a custom dashboard
+* Chart action bar: here you'll have access to chart info, change chart types, enables fullscreen mode, and the ability to add the chart to a custom dashboard
 
 ![image.png](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/c8f5f0bd-5f84-4812-970b-0e4340f4773b)
 
@@ -69,7 +69,7 @@ On this bar you have access to immediate actions over the chart, the available a
 * Chart info: you will be able to get more information relevant to the chart you are interacting with
 * Chart type: change the chart type from _line_, _stacked_ or _area_
 * Enter fullscreen mode: allows you expand the current chart to the fullsize of your screen
-* Add chart to dashboard: you can easily add the chart to an existing custom dashboard or directly create a new one with that chart on it
+* Add chart to dashboard: This allows you to add the chart to an existing custom dashboard or directly create a new one that includes the chart.
 
 <img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/65ac4fc8-3d8d-4617-8234-dbb9b31b4264" width="40%" height="40%" />
 
@@ -116,7 +116,7 @@ of an anomaly or outage. Zooming out lets you see metrics within the larger cont
 week, which is useful in understanding what "normal" looks like, or to identify long-term trends, like a slow creep in
 memory usage.
 
-The above ones are _normal_ vertical zoom actions, we also provide an horizontal zoom action that helps you focus on a 
+The actions above are _normal_ vertical zoom actions. We also provide an horizontal zoom action that helps you focus on a 
 specific Y-axis area to further investigate a spike or dive on your charts.
 
 ![Y5IESOjD3s.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/f8722ee8-e69b-426c-8bcb-6cb79897c177)
@@ -152,7 +152,7 @@ behaving strangely.
 
 ### Resize
 
-Click-and-drag the icon on the bottom-right corner of any chart. To restore the chart to its original height,
+To resize the chart, click-and-drag the icon on the bottom-right corner of any chart. To restore the chart to its original height,
 double-click the same icon.
 
 ![AjqnkIHB9H.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/1bcc6a0a-a58e-457b-8a0c-e5d361a3083c)
@@ -160,7 +160,7 @@ double-click the same icon.
 ## What's next?
 
 We recommend you read up on the differences between [chart dimensions, contexts, and
-families](/docs/dashboard/dimensions-contexts-families) to complete your understanding of how Netdata organizes its
+families](/docs/dashboard/dimensions-contexts-families) to strengthen your understanding of how Netdata organizes its
 dashboards. Another valuable way to interact with charts is to use the [date and time controls](/docs/dashboard/visualization-date-and-time-controls), which helps you visualize specific moments of historical metrics.
 
 ### Further reading & related information
