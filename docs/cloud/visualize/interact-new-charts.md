@@ -59,7 +59,7 @@ The elements that you can find on this top bar are:
 * Netdata icon: this indicates that data is continuously being updated, this happens if [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls) are in Play or Force Play mode
 * Chart status icon: indicates the status of the chart. Possible values are: Loading, Timeout, Error or No data
 * Chart title: on the chart title you can see the title together with the metric being displayed, as well as the unit of measurement
-* Chart action bar: here you'll have access to chart info, change chart types, enable fullscreen mode and the ability to add the chart to a custom dashboard
+* Chart action bar: here you'll have access to chart info, change chart types, enables fullscreen mode, and the ability to add the chart to a custom dashboard
 
 ![image.png](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/c8f5f0bd-5f84-4812-970b-0e4340f4773b)
 
