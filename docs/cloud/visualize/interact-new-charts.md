@@ -12,7 +12,7 @@ Netdata excels in collecting, storing, and organizing metrics in out-of-the-box 
 provide a lot of useful information, and allow you to further explore your data.
 
 Built on top of charts, that update every second with new metrics, we aimed to bring the following to you:
-* Enjoy the high resolution and granularity of metrics collected by Netdata
+* Enjoy the high-resolution, granular metrics collected by Netdata
 * Explore visualization with more options such as _line_, _stacked_ and _area_ types (other types like _bar_, _pie_ and _gauges_ are to be added shortly)
 * Examine all the metrics where your cursor is with a tooltip
 * Use intuitive tooling and shortcuts to pan, zoom or highlight your charts
