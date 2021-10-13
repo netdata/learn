@@ -12,7 +12,28 @@ export const ReleaseNotes = [
 ]
 
 export const News = [
+   {
+    title: <>Timezone selector is now available on Netdata Cloud</>,
+    href: 'docs/dashboard/visualization-date-and-time-controls#timezone-selector',
+    date: 'September 22, 2021',
+    type: 'Doc',
+    description: (
+      <>
+        With the timezone selector, you have the ability to change the timezone on Netdata Cloud.
+      </>
+    ),
+  },
   {
+    title: <>Date and timeframe controls for visualizations on Netdata Cloud</>,
+    href: 'docs/dashboard/visualization-date-and-time-controls',
+    date: 'August 18, 2021',
+    type: 'Doc',
+    description: (
+      <>
+        Dashboards now have a timeframe selector that helps you visualize specific timeframes for any time interval.
+      </>
+    ),
+  } {
     title: <>Kubernetes monitoring with Netdata: Overview and visualizations</>,
     href: '/guides/monitor/kubernetes-k8s-netdata',
     date: 'May 5, 2021',
@@ -56,26 +77,5 @@ export const News = [
       </>
     ),
   },
-  {
-    title: <>Unsupervised anomaly detection for Raspberry Pi monitoring</>,
-    href: '/guides/monitor/raspberry-pi-anomaly-detection',
-    date: 'March 16, 2021',
-    type: 'Guide',
-    description: (
-      <>
-        Use a low-overhead machine learning algorithm and an open-source monitoring tool to detect anomalous metrics on a Raspberry Pi.
-      </>
-    ),
-  },
-  {
-    title: <>LAMP stack monitoring (Linux, Apache, MySQL, PHP) with Netdata</>,
-    href: '/guides/monitor/lamp-stack',
-    date: 'March 6, 2021',
-    type: 'Guide',
-    description: (
-      <>
-        Set up robust LAMP stack monitoring (Linux, Apache, MySQL, PHP) in just a few minutes using a free, open-source monitoring tool that collects metrics every second.
-      </>
-    ),
-  }
+
 ]
