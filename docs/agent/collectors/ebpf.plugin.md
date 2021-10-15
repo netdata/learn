@@ -306,13 +306,34 @@ When the integration is enabled, eBPF collector allocates memory for each proces
  it uses per-cpu maps to speed up the update of hash tables. This also implies storing data for the same PID 
  for each processor it runs.
 
+### Integration with `cgroups.plugin`
+
+The eBPF collector also creates charts for each cgroup through an integration with the
+[`cgroups.plugin`](/docs/agent/collectors/cgroups.plugin). This integration helps you understand how a specific cgroup
+interacts with the Linux kernel.
+
+The integration with `cgroups.plugin` is disabled by default to avoid creating overhead on your system.
+If you want to _enable_ the integration with `cgroups.plugin`, change the `cgroups`setting to
+`yes`.
+
+```conf
+[global]
+   cgroups = yes
+```
+
+If you do not need to monitor specific metrics for your `cgroups`, you can enable `cgroups` inside
+`ebpf.d.conf`, and then disable the plugin for a specific `thread` by following the steps in the 
+['Configuration` section](/docs/agent/collectors/docs/agent/collectors/ebpf.plugin#configuration)
+
 #### `[ebpf programs]`
 
 The eBPF collector enables and runs the following eBPF programs by default:
 
 -   `fd` :  This eBPF program creates charts that show information about calls to open files.
--   `mount`: This eBPF program creates charts that show calls for syscalls mount(2) and umount(2).
--   `sync`: Montitor calls for syscalls sync(2), fsync(2), fdatasync(2), syncfs(2), msync(2), and sync_file_range(2).
+-   `mount`: This eBPF program creates charts that show calls to syscalls mount(2) and umount(2).
+-   `shm`: This eBPF program creates charts that show calls to syscalls
+    shmget(2), shmat(2), shmdt(2) and shmctl(2).
+-   `sync`: Montitor calls to syscalls sync(2), fsync(2), fdatasync(2), syncfs(2), msync(2), and sync_file_range(2).
 -   `network viewer`: This eBPF program creates charts with information about `TCP` and `UDP` functions, including the
     bandwidth consumed by each.
 -   `vfs`: This eBPF program creates charts that show information about VFS (Virtual File System) functions.
