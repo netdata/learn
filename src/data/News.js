@@ -30,7 +30,7 @@ export const News = [
     type: 'Doc',
     description: (
       <>
-        Dashboards now have a timeframe selector that helps you visualize specific timeframes for any time interval.
+        Dashboards now allow you to visualize specific timeframes for any time interval either by using a set of quick time-ranges or selecting a custom time-range .
       </>
     ),
   },
