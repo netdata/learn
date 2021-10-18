@@ -33,7 +33,8 @@ export const News = [
         Dashboards now have a timeframe selector that helps you visualize specific timeframes for any time interval.
       </>
     ),
-  } {
+  },
+  {
     title: <>Kubernetes monitoring with Netdata: Overview and visualizations</>,
     href: '/guides/monitor/kubernetes-k8s-netdata',
     date: 'May 5, 2021',
