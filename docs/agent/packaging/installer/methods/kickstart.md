@@ -26,8 +26,8 @@ bash <(curl -Ss https://my-netdata.io/kickstart.sh)
 bash <(curl -Ss https://my-netdata.io/kickstart.sh) --install /usr/local/
 ```
 
-> See our [installation guide](/docs/agent/packaging/installer/methods/..) for details about [automatic updates](/docs/agent/packaging/installer/methods/..#automatic-updates) or
-> [nightly vs. stable releases](/docs/agent/packaging/installer/methods/..#nightly-vs-stable-releases).
+> See our [installation guide](/docs/agent/packaging/installer) for details about [automatic updates](/docs/agent/packaging/installer#automatic-updates) or
+> [nightly vs. stable releases](/docs/agent/packaging/installer#nightly-vs-stable-releases).
 
 ## What does `kickstart.sh` do?
 
