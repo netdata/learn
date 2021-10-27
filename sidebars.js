@@ -480,8 +480,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Exporters',
-              items: [
-                'agent/web/api/exporters',
+              items: 
                 'agent/web/api/exporters/prometheus',
                 'agent/web/api/exporters/shell',
               ]
