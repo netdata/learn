@@ -309,6 +309,11 @@ const GuideItems = [
 
 const GuideCategories = [
   {
+    label: 'step-by-step',
+    title: 'Step-by-step',
+    description: <>Learn about Netdata's many features and capabilities in a guided experienced designed for those new to monitoring and troubleshooting.</>
+  },
+  {
     label: 'collect-monitor',
     title: 'Collect & monitor',
     description: <>Extract and visualize metrics from essential services or applications on your infrastructure.</>
@@ -332,11 +337,6 @@ const GuideCategories = [
     label: 'export',
     title: 'Export',
     description: <>Explore Netdata's interoperability with other monitoring and visualization platforms.</>
-  },
-  {
-    label: 'step-by-step',
-    title: 'Step-by-step',
-    description: <>Learn about Netdata's many features and capabilities in a guided experienced designed for those new to monitoring and troubleshooting.</>
   },
 ]
 
