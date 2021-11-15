@@ -13,7 +13,7 @@ The backend architecture changes should offer notable improvements in reliabilit
 but more importantly, it allows us to develop new features and enhanced functionality, including features and enhancements
 that you have specifically requested. Features that will be developed on the new architecture include:
 
-- Parent/Child cloud relationships
+- Parent/Child Cloud relationships
 - Alert logs
 - Alert management
 - Much more
