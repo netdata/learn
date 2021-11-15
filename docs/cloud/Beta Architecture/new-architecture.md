@@ -23,12 +23,14 @@ To enable enable the new architecture, first ensure that you have installed the 
 requesting to be included in our beta testers, and include in the body of the email a list of Space IDs you would like to have whitelisted for
 the new architecture.
 
-An administrator can retrieve the Space IDs within Netdata Cloud by clicking `Manage Space` in the left pane, selecting the
-`Spaces` tab, and copying the value in the `Space Id` field. Feel free to send the Space IDs for multiple spaces to test 
+Your administrator can retrieve the Space IDs within Netdata Cloud by clicking `Manage Space` in the left pane, selecting the
+`Space` tab, and copying the value in the `Space Id` field. Feel free to send the Space IDs for multiple spaces to test 
 the new infrastructure on each of them.
 
 ## Reporting issues
 
-After you are set up with the new architecture, we ask that you report any issues you encounter on our 
-[designated Discord channel](https://discord.com/channels/847502280503590932/847812128428916746).
+After you are set up with the new architecture, we ask that you report any issues you encounter in our 
+[designated Discord channel](https://discord.com/channels/847502280503590932/847812128428916746). This feedback
+will help us ensure the highest performance of the new architecture and expedite the development and release
+of the aforementioned enhancements and features.
 
