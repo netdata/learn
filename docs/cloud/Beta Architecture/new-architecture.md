@@ -2,7 +2,7 @@
 title: Test the New Cloud Architecture
 description: >-
   Would you like to be the first to try our new architecture and provide feedback? 
-  This guide will help you sign up for our beta testing group.
+  If so, this guide will help you sign up for our beta testing group.
 custom_edit_url: null
 ---
 
