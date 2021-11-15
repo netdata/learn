@@ -7,7 +7,7 @@ custom_edit_url: null
 ---
 
 To enhance the stability and reliability of Netdata Cloud, we did extensive work on our backend, and we would like to give you the opportunity 
-to be among the first users to try this new Cloud architecture and provide feedback. 
+to be among the first users to try these changes to our Cloud architecture and provide feedback. 
 
 The backend architecture changes should offer notable improvements in reliability and stability in Netdata Cloud, 
 but more importantly, it allows us to develop new features and enhanced functionality, including features and enhancements
