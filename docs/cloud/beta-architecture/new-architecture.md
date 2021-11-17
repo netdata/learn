@@ -32,7 +32,7 @@ the new infrastructure on each of them.
 ## Reporting issues
 
 After you are set up with the new architecture changes, we ask that you report any issues you encounter in our 
-[designated Discord channel](https://discord.com/invite/kUk3nCmbtx). This feedback
+[designated Discord channel](https://discord.com/channels/847502280503590932/910627992567443516). This feedback
 will help us ensure the highest performance of the new architecture and expedite the development and release
 of the aforementioned enhancements and features.
 
