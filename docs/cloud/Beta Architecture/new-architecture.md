@@ -21,7 +21,7 @@ that you have specifically requested. Features that will be developed on the new
 ## Enabling the new architecture
 
 To enable the new architecture, first ensure that you have installed the latest Netdata version following 
-[our guide](https://learn.netdata.cloud/docs/get-started/). Then, send an email to [NewArchitecture@Netdata.cloud](NewArchitecture@netdata.cloud)
+[our guide](https://learn.netdata.cloud/docs/get-started/). Then, send an email to [beta@Netdata.cloud](beta@netdata.cloud)
 requesting to be included in our beta testers, and include in the body of the email a list of Space IDs for any space you would like to have
 whitelisted for the update.
 
