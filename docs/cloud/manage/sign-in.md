@@ -12,7 +12,7 @@ No matter the method, your Netdata Cloud account is based around your email addr
 passwords.
 
 
-<Link to="https://app.netdata.cloud/sign-in?cloudRoute=spaces?utm_source=docs&utm_content=sign_in_button_first_section" className="group">
+<Link to="https://app.netdata.cloud/sign-in" className="group">
     <button className="relative text-text bg-gray-200 px-4 py-2 rounded">
         <span className="z-10 relative font-semibold group-hover:text-gray-100">Sign in to Netdata</span>
         <div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded"></div>
