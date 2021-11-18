@@ -11,14 +11,12 @@ with a Netdata Cloud account.
 No matter the method, your Netdata Cloud account is based around your email address. Netdata Cloud does not store
 passwords.
 
-
-<Link to="https://app.netdata.cloud/sign-in" className="group">
+<Link to="https://app.netdata.cloud" className="group">
     <button className="relative text-text bg-gray-200 px-4 py-2 rounded">
         <span className="z-10 relative font-semibold group-hover:text-gray-100">Sign in to Netdata</span>
         <div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded"></div>
     </button>
 </Link>
-
 
 ## Email
 
