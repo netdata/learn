@@ -53,7 +53,7 @@ installation. Here are a few important parameters:
 - `--no-updates`: Disable automatic updates.
 - `--stable-channel`: Use a stable build instead of a nightly build.
 - `--reinstall`: If an existing install is found, reinstall instead of trying to update it in place.
-- `--dont-start-it`: Don’t auto-start the daemon after installing. This parameter is not gauranteed to work.
+- `--dont-start-it`: Don’t auto-start the daemon after installing. This parameter is not guaranteed to work.
 - `--install`: Specify an alternative install prefix. 
 - `--disable-cloud`: For local builds, don’t build any of the cloud code at all. For native packages and static builds, 
     use runtime configuration to disable cloud support.
@@ -96,7 +96,7 @@ To use `md5sum` to verify the integrity of the `kickstart.sh` script you will do
 run the following:
 
 ```bash
-[ "9e33680cf2d6d37233726729836fea9d" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "7e8b449ca44e49b7074b5b9d6022cbcc" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`.
