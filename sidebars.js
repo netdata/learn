@@ -398,7 +398,7 @@ module.exports = {
             'cloud/visualize/overview',
             'cloud/visualize/nodes',
             'cloud/visualize/dashboards',
-            'cloud/visualize/interact-charts-cloud',
+            'cloud/visualize/interact-new-charts',
             'cloud/visualize/kubernetes',
             
           ]
