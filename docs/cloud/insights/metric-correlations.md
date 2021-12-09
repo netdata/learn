@@ -30,9 +30,6 @@ To start correlating metrics, click the **Metric Correlations** button, then hol
 click-and-drag a selection of metrics on a single chart. The selected timeframe needs to be at least 15 seconds
 for Metric Correlation to work best. 
 
-![An animated GIF of using the Metric Correlation
-feature](https://user-images.githubusercontent.com/82235632/126774050-74cc0f-22e6-4edc-b42c-1196bac28622.gif)
-
 The menu then displays information about the selected area and reference baseline. Metric Correlations uses the
 reference baseline to discover which additional metrics are most closely connected to the selected metrics.
 
