@@ -47,7 +47,7 @@ const GuideItems = [
   },
   {
     title: <>Detect anomalies in systems and applications (part 1)</>,
-    href: '/guides/monitor/anomaly-detection',
+    href: '/guides/monitor/anomaly-detection-python',
     category: 'collect-monitor',
     description: (
       <>
