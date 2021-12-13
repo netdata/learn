@@ -381,6 +381,7 @@ module.exports = {
       items: [
         'cloud',
         'cloud/get-started',
+        'cloud/data-privacy',
         {
           type: 'category',
           label: 'Connecting to Cloud',
