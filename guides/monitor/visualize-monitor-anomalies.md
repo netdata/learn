@@ -8,11 +8,9 @@ author_img: "/img/authors/joel-hans.jpg"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor/visualize-monitor-anomalies.md
 ---
 
-
-
 Welcome to part 2 of our series of guides on using _unsupervised anomaly detection_ to detect issues with your systems,
 containers, and applications using the open-source Netdata Agent. For an introduction to detecting anomalies and
-monitoring associated metrics, see [part 1](/guides/monitor/anomaly-detection), which covers prerequisites and
+monitoring associated metrics, see [part 1](/guides/monitor/anomaly-detection-python), which covers prerequisites and
 configuration basics.
 
 With anomaly detection in the Netdata Agent set up, you will now want to visualize and monitor which charts have
@@ -50,8 +48,8 @@ analysis (RCA).
 
 The anomalies collector creates two "classes" of alarms for each chart captured by the `charts_regex` setting. All these
 alarms are preconfigured based on your [configuration in
-`anomalies.conf`](/guides/monitor/anomaly-detection#configure-the-anomalies-collector). With the `charts_regex`
-and `charts_to_exclude` settings from [part 1](/guides/monitor/anomaly-detection) of this guide series, the
+`anomalies.conf`](/guides/monitor/anomaly-detection-python#configure-the-anomalies-collector). With the `charts_regex`
+and `charts_to_exclude` settings from [part 1](/guides/monitor/anomaly-detection-python) of this guide series, the
 Netdata Agent creates 32 alarms driven by unsupervised anomaly detection.
 
 The first class triggers warning alarms when the average anomaly probability for a given chart has stayed above 50% for
@@ -81,7 +79,7 @@ alarms for any dimension on the `anomalies_local.probability` and `anomalies_loc
 In either [Netdata Cloud](https://app.netdata.cloud) or the local Agent dashboard at `http://NODE:19999`, click on the
 **Anomalies** [section](/docs/agent/web/gui#sections) to see the pair of anomaly detection charts, which are
 preconfigured to visualize per-second anomaly metrics based on your [configuration in
-`anomalies.conf`](/guides/monitor/anomaly-detection#configure-the-anomalies-collector).
+`anomalies.conf`](/guides/monitor/anomaly-detection-python#configure-the-anomalies-collector).
 
 These charts have the contexts `anomalies.probability` and `anomalies.anomaly`. Together, these charts
 create meaningful visualizations for immediately recognizing not only that something is going wrong on your node, but
@@ -90,7 +88,7 @@ give context as to where to look next.
 The `anomalies_local.probability` chart shows the probability that the latest observed data is anomalous, based on the
 trained model. The `anomalies_local.anomaly` chart visualizes 0&rarr;1 predictions based on whether the latest observed
 data is anomalous based on the trained model. Both charts share the same dimensions, which you configured via
-`charts_regex` and `charts_to_exclude` in [part 1](/guides/monitor/anomaly-detection).
+`charts_regex` and `charts_to_exclude` in [part 1](/guides/monitor/anomaly-detection-python).
 
 In other words, the `probability` chart shows the amplitude of the anomaly, whereas the `anomaly` chart provides quick
 yes/no context.
@@ -126,7 +124,7 @@ the dashboard into only the charts relevant to what you're seeing from the anoma
 
 ## What's next?
 
-Between this guide and [part 1](/guides/monitor/anomaly-detection), which covered setup and configuration, you
+Between this guide and [part 1](/guides/monitor/anomaly-detection-python), which covered setup and configuration, you
 now have a fundamental understanding of how unsupervised anomaly detection in Netdata works, from root cause to alarms
 to preconfigured or custom dashboards.
 

@@ -8,8 +8,6 @@ author_img: "/img/authors/andy-maguire.jpg"
 custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor/raspberry-pi-anomaly-detection.md
 ---
 
-
-
 We love IoT and edge at Netdata, we also love machine learning. Even better if we can combine the two to ease the pain
 of monitoring increasingly complex systems.
 
@@ -65,7 +63,7 @@ Now you're ready to enable the collector and [restart Netdata](/docs/configure/s
 
 ```bash
 sudo ./edit-config python.d.conf
-# set `anomalies: no` to `anomalies: yes`
+
 
 # restart netdata
 sudo systemctl restart netdata
@@ -110,7 +108,7 @@ looks like a potentially useful addition to enable unsupervised anomaly detectio
 See our two-part guide series for a more complete picture of configuring the anomalies collector, plus some best
 practices on using the charts it automatically generates:
 
-- [_Detect anomalies in systems and applications_](/guides/monitor/anomaly-detection)
+- [_Detect anomalies in systems and applications_](/guides/monitor/anomaly-detection-python)
 - [_Monitor and visualize anomalies with Netdata_](/guides/monitor/visualize-monitor-anomalies)
 
 If you're using your Raspberry Pi for other purposes, like blocking ads/trackers with Pi-hole, check out our companions
