@@ -6,6 +6,36 @@ import { Grid, Box } from '@site/src/components/Grid'
 
 const GuideItems = [
   {
+    title: <>Change how long Netdata stores metrics</>,
+    href: '/guides/longer-metrics-storage',
+    category: 'collect-monitor',
+    description: (
+      <>
+        Learn how to store metrics to your hard drive.
+      </>
+    )
+  },
+  {
+    title: <>Machine learning (ML) powered anomaly detection</>,
+    href: '/guides/monitor/anomaly-detection',
+    category: 'collect-monitor',
+    description: (
+      <>
+        Enable Netdata's machine learning algorithm to spot anomalies effortlessly. 
+      </>
+    )
+  },
+  {
+    title: <>Stop notifications for individual alarms</>,
+    href: '/guides/monitor/stop-notifications-alarms',
+    category: 'configure',
+    description: (
+      <>
+        Learn how to disable select alarms to minimize distractions.
+      </>
+    )
+  },
+  {
     title: <>Develop a custom data collector in Python</>,
     href: '/guides/python-collector',
     category: 'develop',
@@ -47,7 +77,7 @@ const GuideItems = [
   },
   {
     title: <>Detect anomalies in systems and applications (part 1)</>,
-    href: '/guides/monitor/anomaly-detection',
+    href: '/guides/monitor/anomaly-detection-python',
     category: 'collect-monitor',
     description: (
       <>
