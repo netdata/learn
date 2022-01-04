@@ -23,6 +23,7 @@
     "@tailwindcss/typography": "^0.4.0",
     "axios": "^0.21.2",
     "clsx": "^1.1.1",
+    "docusaurus": "^2.0.0",
     "docusaurus-tailwindcss-loader": "file:plugins/docusaurus-tailwindcss-loader",
     "dotenv": "^8.2.0",
     "postcss": "^8.2.8",
@@ -36,6 +37,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
+    "mdx-loader": "^3.0.2",
     "postcss-loader": "^5.2.0",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^2.1.2"
