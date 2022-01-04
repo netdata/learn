@@ -190,7 +190,6 @@ module.exports = {
                 'agent/collectors/timex.plugin',
                 'agent/collectors/idlejitter.plugin',
                 'agent/collectors/tc.plugin',
-                'agent/collectors/checks.plugin',
                 'agent/collectors/diskspace.plugin',
                 'agent/collectors/freebsd.plugin',
                 'agent/collectors/macos.plugin',
