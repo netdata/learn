@@ -10,7 +10,7 @@ can use any of Netdata's [external plugins](/docs/agent/collectors/plugins.d) to
 have installed on your macOS system. You could also use a macOS system as the parent node in a [streaming
 configuration](/docs/agent/streaming).
 
-We recommend you to **[install Netdata with the our automatic one-line installation script](#install-netdata-with-the-automatic-one-line-installation-script)**, 
+We recommend you to **[install Netdata with the our automatic one-line installation script](#install-netdata-with-our-automatic-one-line-installation-script)**, 
 
 
 As an alternative you also have community-created and -maintained [**Homebrew
@@ -23,7 +23,7 @@ Being community-created and -maintained we don't guarantee that the features mad
 
 ## Install Netdata with our automatic one-line installation script
 
-To install Netdata using our automatic [kickstart](/docs/agent/packaging/installer/#automatic-one-line-installation-script) script you will just need to run:
+To install Netdata using our automatic [kickstart](/docs/agent/packaging/installer#automatic-one-line-installation-script) script you will just need to run:
 
 ```bash
 bash <(curl -Ss https://my-netdata.io/kickstart.sh) --install /usr/local/

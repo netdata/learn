@@ -421,7 +421,7 @@ In Markdown, use the standard image syntax, `![](/docs/agent/contributing)`, and
 using our logo:
 
 ```markdown
-![The Netdata logo](/docs/web/gui/images/netdata-logomark.svg)
+![The Netdata logo](/docs/agent/web/gui/static/img/netdata-logomark.svg)
 ```
 
 Reference in-product text, code samples, and terminal output with actual text content, not screen captures or other

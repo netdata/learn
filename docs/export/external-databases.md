@@ -51,7 +51,7 @@ documentation and the [enabling a connector](/docs/export/enable-connector) doc 
 -   **KairosDB**: [Graphite](/docs/agent/exporting/graphite), [OpenTSDB](/docs/agent/exporting/opentsdb)
 -   **M3DB**: [Prometheus remote write](/docs/agent/exporting/prometheus/remote_write)
 -   **MetricFire**: [Prometheus remote write](/docs/agent/exporting/prometheus/remote_write)
--   **MongoDB**: [MongoDB](/docs/agent/exporting/mongodb/)
+-   **MongoDB**: [MongoDB](/docs/agent/exporting/mongodb)
 -   **New Relic**: [Prometheus remote write](/docs/agent/exporting/prometheus/remote_write)
 -   **OpenTSDB**: [OpenTSDB](/docs/agent/exporting/opentsdb), [Prometheus remote
     write](/docs/agent/exporting/prometheus/remote_write)

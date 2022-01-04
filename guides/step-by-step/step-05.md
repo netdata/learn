@@ -224,7 +224,7 @@ Health alarms, while great on their own, are pretty useless without some way of 
 That's why Netdata comes with a notification system that supports more than a dozen services, such as email, Slack,
 Discord, PagerDuty, Twilio, Amazon SNS, and much more.
 
-To see all the supported systems, visit our [notifications documentation](/docs/agent/health/notifications/).
+To see all the supported systems, visit our [notifications documentation](/docs/agent/health/notifications).
 
 We'll cover email and Slack notifications here, but with this knowledge you should be able to enable any other type of
 notifications instead of or in addition to these.

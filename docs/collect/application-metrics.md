@@ -29,7 +29,7 @@ Our most popular application collectors:
     rows in less than half a second.
 -   [MySQL](/docs/agent/collectors/go.d.plugin/modules/mysql/): Collect database global,
     replication, and per-user statistics.
--   [Redis](/docs/agent/collectors/python.d.plugin/redis/): Monitor database status by reading the server's response to the `INFO`
+-   [Redis](/docs/agent/collectors/go.d.plugin/modules/redis): Monitor database status by reading the server's response to the `INFO`
     command.
 -   [Apache](/docs/agent/collectors/go.d.plugin/modules/apache/): Collect Apache web
     server performance metrics via the `server-status?auto` endpoint.
