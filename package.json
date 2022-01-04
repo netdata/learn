@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
+    "mdx-loader": "^3.0.2",
     "postcss-loader": "^5.2.0",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^2.1.2"
