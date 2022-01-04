@@ -52,7 +52,7 @@ Netdata parses the following lines. Beneath the table is an in-depth explanation
 -   The `every` line is **required** if not using `lookup`.
 -   Each entity **must** have at least one of the following lines: `lookup`, `calc`, `warn`, or `crit`.
 -   A few lines use space-separated lists to define how the entity behaves. You can use `*` as a wildcard or prefix with
-    `!` for a negative match. Order is important, too! See our [simple patterns docs](/docs/agent/libnetdata/simple_pattern/) for
+    `!` for a negative match. Order is important, too! See our [simple patterns docs](/docs/agent/libnetdata/simple_pattern) for
     more examples.
 -   Lines terminated by a `\` are spliced together with the next line. The backslash is removed and the following line is
     joined with the current one. No space is inserted, so you may split a line anywhere, even in the middle of a word.
@@ -275,7 +275,7 @@ template: disk_svctm_alarm
 The `families` line, used only alongside templates, filters which families within the context this alarm should apply
 to. The value is a space-separated list.
 
-The value is a space-separate list of simple patterns. See our [simple patterns docs](/docs/agent/libnetdata/simple_pattern/) for
+The value is a space-separate list of simple patterns. See our [simple patterns docs](/docs/agent/libnetdata/simple_pattern) for
 some examples.
 
 For example, you can create a template on the `disk.io` context, but filter it to only the `sda` and `sdb` families:
@@ -294,7 +294,7 @@ The format is:
 lookup: METHOD AFTER [at BEFORE] [every DURATION] [OPTIONS] [of DIMENSIONS] [foreach DIMENSIONS]
 ```
 
-Everything is the same with [badges](/docs/agent/web/api/badges/). In short:
+Everything is the same with [badges](/docs/agent/web/api/badges). In short:
 
 -   `METHOD` is one of `average`, `min`, `max`, `sum`, `incremental-sum`.
      This is required.
@@ -531,14 +531,14 @@ that will be applied to all hosts installed in the last decade with the followin
 host labels: installed = 201*
 ```
 
-See our [simple patterns docs](/docs/agent/libnetdata/simple_pattern/) for more examples.
+See our [simple patterns docs](/docs/agent/libnetdata/simple_pattern) for more examples.
 
 ## Expressions
 
 Netdata has an internal [infix expression parser](/docs/agent/libnetdata/eval). This parses expressions and creates an internal
 structure that allows fast execution of them.
 
-These operators are supported `+`, `-`, `*`, `/`, `<`, `<=`, `<>`, `!=`, `>`, `>=`, `&&`, `||`, `!`, `AND`, `OR`, `NOT`.
+These operators are supported `+`, `-`, `*`, `/`, `<`, `==`, `<=`, `<>`, `!=`, `>`, `>=`, `&&`, `||`, `!`, `AND`, `OR`, `NOT`.
 Boolean operators result in either `1` (true) or `0` (false).
 
 The conditional evaluation operator `?` is supported too. Using this operator IF-THEN-ELSE conditional statements can be

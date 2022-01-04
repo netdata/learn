@@ -116,7 +116,7 @@ This section features a list of Netdata's plugins, with a boolean setting to ena
 By default, most plugins are enabled, so you don't need to enable them explicitly to use their collectors. To enable or
 disable any specific plugin, remove the comment (`#`) and change the boolean setting to `yes` or `no`.
 
-All **external plugins** are managed by [plugins.d](/docs/agent/collectors/plugins.d/), which provides additional management options.
+All **external plugins** are managed by [plugins.d](/docs/agent/collectors/plugins.d), which provides additional management options.
 
 ## Internal plugins
 
@@ -178,10 +178,10 @@ through this, is to examine what other similar plugins do.
 
 ## External Plugins
 
-**External plugins** use the API and are managed by [plugins.d](/docs/agent/collectors/plugins.d/).
+**External plugins** use the API and are managed by [plugins.d](/docs/agent/collectors/plugins.d).
 
 ## Write a custom collector
 
-You can add custom collectors by following the [external plugins documentation](/docs/agent/collectors/plugins.d/).
+You can add custom collectors by following the [external plugins documentation](/docs/agent/collectors/plugins.d).
 
 

@@ -28,7 +28,7 @@ dashboard](https://user-images.githubusercontent.com/1153921/80825153-abaec600-8
 
 **What's next?**: 
 
--   Read more about the [standard Netdata dashboard](/docs/agent/web/gui/).
+-   Read more about the [standard Netdata dashboard](/docs/agent/web/gui).
 -   Learn all the specifics of [using charts](/docs/agent/web#using-charts) or the differences between [charts,
     context, and families](/docs/agent/web#charts-contexts-families).
 
@@ -51,9 +51,9 @@ Once you save your changes, [restart Netdata](#start-stop-and-restart-netdata) t
 
 -   [Change how long Netdata stores metrics](#change-how-long-netdata-stores-metrics) by changing the `page cache size`
     and `dbengine disk space` settings in `netdata.conf`.
--   Move Netdata's dashboard to a [different port](/docs/agent/web/server/) or enable TLS/HTTPS
+-   Move Netdata's dashboard to a [different port](/docs/agent/web/server) or enable TLS/HTTPS
     encryption.
--   See all the `netdata.conf` options in our [daemon configuration documentation](/docs/agent/daemon/config/).
+-   See all the `netdata.conf` options in our [daemon configuration documentation](/docs/agent/daemon/config).
 -   Run your own [registry](/docs/agent/registry#run-your-own-registry).
 
 ## Change how long Netdata stores metrics
@@ -86,7 +86,7 @@ Netdata](#start-stop-and-restart-netdata).
 
 However, auto-detection only works if you installed the source using its standard installation procedure. If Netdata
 isn't collecting metrics after a restart, your source probably isn't configured correctly. Look at the [external plugin
-documentation](/docs/agent/collectors/plugins.d/) to find the appropriate module for your source. Those pages will contain
+documentation](/docs/agent/collectors/plugins.d) to find the appropriate module for your source. Those pages will contain
 more information about how to configure your source for auto-detection.
 
 Some modules, like `chrony`, are disabled by default and must be enabled manually for auto-detection to work.
@@ -186,7 +186,7 @@ Find the `SEND_EMAIL="YES"` line and change it to `SEND_EMAIL="NO"`.
 -   Follow the [health quickstart](/docs/agent/health/quickstart) to locate and edit existing health entities, and then
     create your own.
 -   See all the alarm options via the [health configuration reference](/docs/agent/health/reference).
--   Add a new notification method, like [Slack](/docs/agent/health/notifications/slack/).
+-   Add a new notification method, like [Slack](/docs/agent/health/notifications/slack).
 
 ## Monitor multiple systems with Netdata Cloud
 
@@ -230,7 +230,7 @@ Take a look at some more advanced features and configurations:
 -   Enable long-term archiving of Netdata metrics via [exporting engine](/docs/agent/exporting) to time-series databases.
 -   Improve security by putting Netdata behind an [Nginx proxy with SSL](/docs/agent/running-behind-nginx).
 
-Or, learn more about how you can contribute to [Netdata core](/contribute/handbook) or our
+Or, learn more about how you can contribute to [Netdata core](/docs/agent/#contribute) or our
 [documentation](/contribute/documentation)!
 
 

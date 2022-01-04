@@ -6,8 +6,22 @@
 
 **Merged pull requests:**
 
+- Update dashboard to version v2.20.15. [\#11934](https://github.com/netdata/netdata/pull/11934) ([netdatabot](https://github.com/netdatabot))
+- fix\(claim\): set URL\_BASE only if `-url` parameter value is not null [\#11919](https://github.com/netdata/netdata/pull/11919) ([ilyam8](https://github.com/ilyam8))
+- Include libatomic again to allow protobuf to resolve [\#11917](https://github.com/netdata/netdata/pull/11917) ([MrZammler](https://github.com/MrZammler))
+- Send ML feature information with UpdateNodeInfo. [\#11913](https://github.com/netdata/netdata/pull/11913) ([vkalintiris](https://github.com/vkalintiris))
 - Don’t verify optional dependencies in build test environments in CI. [\#11910](https://github.com/netdata/netdata/pull/11910) ([Ferroin](https://github.com/Ferroin))
 - fix getting latest release tag [\#11908](https://github.com/netdata/netdata/pull/11908) ([maneamarius](https://github.com/maneamarius))
+- Added "==" to the list of expression operators [\#11905](https://github.com/netdata/netdata/pull/11905) ([laned130](https://github.com/laned130))
+- fix\(docs\): unresolved file references [\#11903](https://github.com/netdata/netdata/pull/11903) ([ilyam8](https://github.com/ilyam8))
+- Fix slight errors [\#11902](https://github.com/netdata/netdata/pull/11902) ([ardabbour](https://github.com/ardabbour))
+- Fix handling of agent restart on update. [\#11887](https://github.com/netdata/netdata/pull/11887) ([Ferroin](https://github.com/Ferroin))
+- Provide runtime ml info from a new endpoint. [\#11886](https://github.com/netdata/netdata/pull/11886) ([vkalintiris](https://github.com/vkalintiris))
+- Fix the code that checks for available updates. [\#11870](https://github.com/netdata/netdata/pull/11870) ([Ferroin](https://github.com/Ferroin))
+- chore: update community link of alert notifications [\#11860](https://github.com/netdata/netdata/pull/11860) ([burbuli8ra](https://github.com/burbuli8ra))
+- nvidia\_smi\_chart.py : fixed username for not-local users [\#11858](https://github.com/netdata/netdata/pull/11858) ([scatenag](https://github.com/scatenag))
+- feat\(python.d/fail2ban\): add "Failed attempts" chart, cleanup [\#11825](https://github.com/netdata/netdata/pull/11825) ([ilyam8](https://github.com/ilyam8))
+- add note with link to guide for using on Pi [\#11605](https://github.com/netdata/netdata/pull/11605) ([andrewm4894](https://github.com/andrewm4894))
 
 ## [1.32.1](https://github.com/netdata/netdata/tree/1.32.1) (2021-12-14)
 

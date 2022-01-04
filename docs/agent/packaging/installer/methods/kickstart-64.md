@@ -88,7 +88,7 @@ area](/docs/cloud/spaces#manage-spaces).
 For example:
 
 ```bash
-bash <(curl -Ss https://my-netdata.io/kickstart-static64.sh) --claim-token=TOKEN --claim-rooms=ROOM1,ROOM2
+bash <(curl -Ss https://my-netdata.io/kickstart-static64.sh) --claim-token TOKEN --claim-rooms ROOM1,ROOM2 --claim-url https://app.netdata.cloud
 ```
 
 ## Verify script integrity

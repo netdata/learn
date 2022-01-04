@@ -92,7 +92,7 @@ request based on the changes you made in the new branch of your fork.
 
 ## Making a pull request
 
-Pull requests (PRs) should be concise and informative. See our [PR guidelines](/contribute/handbook) for
+Pull requests (PRs) should be concise and informative. See our [PR guidelines](/contribute/handbook#pr-guidelines) for
 specifics.
 
 - The title must follow the [imperative mood](https://en.wikipedia.org/wiki/Imperative_mood) and be no more than ~50
