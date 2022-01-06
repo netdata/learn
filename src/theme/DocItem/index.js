@@ -130,7 +130,7 @@ function DocItem(props) {
                 action={`${metadata.permalink}/?success=true`}
                 data-netlify="true"
               >
-                <input type="hidden" name="form-name" value="documentation-feedback" />
+                <input type="hidden" name="form-name" value="doc-feedback" />
                 <button aria-label="happy" className="group px-2">
                   <CgSmile className="w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125" />
                 </button>
