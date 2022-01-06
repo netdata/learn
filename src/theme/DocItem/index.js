@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import DocPaginator from '@theme/DocPaginator';
 import DocVersionSuggestions from '@theme/DocVersionSuggestions';
 import Seo from '@theme/Seo';
@@ -20,6 +20,8 @@ import {
 } from '@theme/hooks/useDocs';
 
 import Link from '@docusaurus/Link'
+
+import { CgSmile, CgSmileNone, CgSmileSad } from 'react-icons/cg'
 
 function DocItem(props) {
   const {content: DocContent} = props;
@@ -50,6 +52,23 @@ function DocItem(props) {
   // See https://github.com/facebook/docusaurus/issues/4665#issuecomment-825831367
 
   const metaTitle = frontMatter.title || title;
+
+  // console.log(metadata)
+
+  // BEGIN EDITS
+  // We're using state to figure out whether a user submitted a form yet.
+  const [mood, setMood] = useState(false)
+  const [feedback, setFeedback] = useState(false)
+  useEffect(() => {
+    if ( window.location.search.includes('mood=true') ) {
+      setMood(true);
+    }
+    if ( window.location.search.includes('feedback=true') ) {
+      setFeedback(true);
+    }
+  }, []);
+  // END EDITS
+
   return (
     <>
       <Seo
@@ -99,8 +118,38 @@ function DocItem(props) {
               </div>
             </article>
 
-            {/* BEGIN EDIT */}
-            <div className="markdown prose-sm mt-12 mx-auto p-6 bg-gray-50 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500 ">
+            {/* Netlify forms */}
+            <div className="text-center mt-16 pt-12 border-t border-t-200 dark:border-t-500">
+              <p className="block text-xl lg:text-2xl font-medium mb-4">Did you find this {metadata.permalink.includes('/guides/') ? 'guide' : 'document'} helpful?</p>
+              {feedback && (
+                <p className="text-lg lg:text-xl text-green-lighter">Thanks for contributing feedback about our docs!</p>
+              )}
+              <form 
+                name="doc-feedback"
+                method="POST"
+                action={`${metadata.permalink}/?success=true`}
+                data-netlify="true"
+              >
+                <input type="hidden" name="form-name" value="documentation-feedback" />
+                <button aria-label="happy" className="group px-2">
+                  <CgSmile className="w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125" />
+                </button>
+                <button aria-label="neutral" className="group px-2">
+                  <CgSmileNone className="w-12 h-12 fill-current text-amber transform transition group-hover:scale-125" />
+                </button>
+                <button aria-label="sad" className="group px-2">
+                  <CgSmileSad className="w-12 h-12 fill-current text-red transform transition group-hover:scale-125" />
+                </button>
+                {mood && (
+                  <>
+                    <textarea name="feedback"></textarea>
+                    <button>Submit</button>
+                  </>
+                )}
+              </form>
+            </div>
+
+            <div className="markdown prose-sm mt-12 mx-auto p-6 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500">
               <h2 className="!text-2xl font-bold !mb-4">Reach out</h2>
               <p className="text-sm">
                 If you need help after reading this {metadata.permalink.includes('/guides/') ? 'guide' : 'doc'}, search our{` `}

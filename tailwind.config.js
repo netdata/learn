@@ -18,7 +18,7 @@ module.exports = {
       current: 'currentColor',
       black: colors.black,
       white: colors.white,
-      gray: colors.coolGray,
+      gray: colors.gray,
       text: {
         DEFAULT: '#1d1d40'
       },
@@ -44,6 +44,9 @@ module.exports = {
         lighter: '#FFE182',
         light: '#FFD74F',
         DEFAULT: '#FFC300',
+      },
+      red: {
+        DEFAULT: '#c92222',
       },
     },
     extend: {
