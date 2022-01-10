@@ -63,6 +63,6 @@ best route is to [uninstall](/docs/agent/packaging/installer/uninstall) and then
 installer](/docs/agent/packaging/installer/methods/kickstart).
 
 You can also post to our [community forums](https://community.netdata.cloud/c/support/13) or create a new [bug
-report](https://github.com/netdata/netdata/issues/new?labels=bug%2C+needs+triage&template=bug_report.md).
+report](https://github.com/netdata/netdata/issues/new?assignees=&labels=bug%2Cneeds+triage&template=BUG_REPORT.yml).
 
 

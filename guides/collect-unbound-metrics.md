@@ -134,7 +134,7 @@ file](https://github.com/netdata/go.d.plugin/blob/master/config/go.d/unbound.con
 
 Now that you're collecting metrics from your Unbound servers, let us know how it's working for you! There's always room
 for improvement or refinement based on real-world use cases. Feel free to [file an
-issue](https://github.com/netdata/netdata/issues/new?labels=bug%2C+needs+triage&template=bug_report.md) with your
+issue](https://github.com/netdata/netdata/issues/new?assignees=&labels=bug%2Cneeds+triage&template=BUG_REPORT.yml) with your
 thoughts.
 
 
