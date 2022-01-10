@@ -206,7 +206,7 @@ queries _do_ showcase this information. As always, we recommend you secure Netda
     -   [Caddy](/docs/agent/running-behind-caddy)
 
 If you have issues or questions around using host labels, don't hesitate to [file an
-issue](https://github.com/netdata/netdata/issues/new?labels=bug%2C+needs+triage&template=bug_report.md) on GitHub. We're
+issue](https://github.com/netdata/netdata/issues/new?assignees=&labels=bug%2Cneeds+triage&template=BUG_REPORT.yml) on GitHub. We're
 excited to make host labels even more valuable to our users, which we can only do with your input.
 
 
