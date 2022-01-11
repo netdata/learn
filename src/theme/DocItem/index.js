@@ -145,13 +145,21 @@ function DocItem(props) {
 								// onsubmit=""
 							>
 								<input type="hidden" form-name="thumbs-voting" name="thumbs" />
-								<button aria-label="Happy" className="group px-4">
+								<button
+									aria-label="Happy"
+									className="group px-4"
+									name="thumbsup"
+								>
 									<GoThumbsup className="w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125" />
 								</button>
-								<button aria-label="Unhappy" className="group px-4">
+								<button
+									aria-label="Unhappy"
+									className="group px-4"
+									name="thumbsdown"
+								>
 									<GoThumbsdown className="w-12 h-12 fill-current text-red transform transition group-hover:scale-125" />
 								</button>
-
+								{/*Add CSS for feeback text.*/}
 								<label for="feedback-text">
 									Let us know how we can do better:
 								</label>
@@ -167,7 +175,7 @@ function DocItem(props) {
 								<button type="submit">Submit</button>
 							</form>
 						</div>
-
+						{/*Reach out box at the end of the content*/}
 						<div className="markdown prose-sm mt-12 mx-auto p-6 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500">
 							<h2 className="!text-2xl font-bold !mb-4">Reach out</h2>
 							<p className="text-sm">
