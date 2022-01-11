@@ -21,7 +21,7 @@ import {
 
 import Link from '@docusaurus/Link';
 
-import { CgSmile, CgSmileNone, CgSmileSad } from 'react-icons/cg';
+import { GoThumbsup, GoThumbsdown } from 'react-icons/go';
 
 function DocItem(props) {
 	const { content: DocContent } = props;
@@ -140,22 +140,40 @@ function DocItem(props) {
 								</p>
 							)}
 							<form
-								name="doc-feedback"
+								name="thumbs-voting"
 								method="POST"
 								action={`${metadata.permalink}/?success=true`}
 								data-netlify="true"
+								// onsubmit=""
 							>
-								<input type="hidden" name="form-name" value="doc-feedback" />
-								<button aria-label="happy" className="group px-2">
-									<CgSmile className="w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125" />
+								<input type="hidden" form-name="thumbs-voting" name="thumbs" />
+								<button aria-label="Happy" className="group px-4">
+									<GoThumbsup className="w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125" />
 								</button>
-								<button aria-label="sad" className="group px-2">
-									<CgSmileSad className="w-12 h-12 fill-current text-red transform transition group-hover:scale-125" />
+								<button aria-label="Unhappy" className="group px-4">
+									<GoThumbsdown className="w-12 h-12 fill-current text-red transform transition group-hover:scale-125" />
 								</button>
 								{mood && (
 									<>
-										<textarea name="feedback"></textarea>
-										<button>Submit</button>
+										<input
+											type="hidden"
+											form-name="thumbs-voting"
+											name="feedback-text"
+										/>
+										<label for="feedback-text">
+											Let us know how we can do better:
+										</label>
+
+										<textarea
+											id="feedback-text"
+											form="doc-feedback"
+											name="feedback"
+											rows="5"
+											cols="50"
+											maxlength="1000"
+											placeholder="What did you like? What can we improve?"
+										></textarea>
+										<button type="submit">Submit</button>
 									</>
 								)}
 							</form>
