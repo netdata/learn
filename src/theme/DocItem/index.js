@@ -57,7 +57,6 @@ function DocItem(props) {
 
 	// BEGIN EDITS
 	// Netlify Forms: We're using state to figure out whether a user submitted a form yet.
-	const [mood, setMood] = useState(false);
 	const [feedback, setFeedback] = useState(false);
 	useEffect(() => {
 		if (window.location.search.includes('mood=true')) {
@@ -126,7 +125,6 @@ function DocItem(props) {
 								<DocContent />
 							</div>
 						</article>
-
 						{/* Netlify forms */}
 						<div className="text-center mt-16 pt-12 border-t border-t-200 dark:border-t-500">
 							<p className="block text-xl lg:text-2xl font-medium mb-4">
@@ -153,29 +151,20 @@ function DocItem(props) {
 								<button aria-label="Unhappy" className="group px-4">
 									<GoThumbsdown className="w-12 h-12 fill-current text-red transform transition group-hover:scale-125" />
 								</button>
-								{mood && (
-									<>
-										<input
-											type="hidden"
-											form-name="thumbs-voting"
-											name="feedback-text"
-										/>
-										<label for="feedback-text">
-											Let us know how we can do better:
-										</label>
 
-										<textarea
-											id="feedback-text"
-											form="doc-feedback"
-											name="feedback"
-											rows="5"
-											cols="50"
-											maxlength="1000"
-											placeholder="What did you like? What can we improve?"
-										></textarea>
-										<button type="submit">Submit</button>
-									</>
-								)}
+								<label for="feedback-text">
+									Let us know how we can do better:
+								</label>
+
+								<textarea
+									id="feedback-text"
+									form="doc-feedback"
+									name="feedback"
+									rows="5"
+									cols="50"
+									placeholder="What did you like? What can we improve?"
+								></textarea>
+								<button type="submit">Submit</button>
 							</form>
 						</div>
 
@@ -246,7 +235,6 @@ function DocItem(props) {
 							</div>
 						</div>
 						{/* END EDIT */}
-
 						{(editUrl || lastUpdatedAt || lastUpdatedBy) && (
 							<div className="margin-vert--xl">
 								<div className="row">
