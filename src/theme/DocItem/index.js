@@ -59,9 +59,6 @@ function DocItem(props) {
 	// Netlify Forms: We're using state to figure out whether a user submitted a form yet.
 	const [feedback, setFeedback] = useState(false);
 	useEffect(() => {
-		if (window.location.search.includes('mood=true')) {
-			setMood(true);
-		}
 		if (window.location.search.includes('feedback=true')) {
 			setFeedback(true);
 		}
