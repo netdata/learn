@@ -10,10 +10,6 @@
   to = "/docs/cheatsheet"
 
 [[redirects]]
-  from = "/docs/agent/packaging/installer"
-  to = "/docs/get-netdata"
-
-[[redirects]]
   from = "/docs/agent/collectors/quickstart"
   to = "/docs/collect/enable-configure"
 
