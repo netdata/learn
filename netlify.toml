@@ -153,7 +153,11 @@
 
 [[redirects]]
   from = "/docs/cloud/faq-glossary"
-  to = "/docs/cloud/faq"
+  to = "https://community.netdata.cloud/docs"
+
+  [[redirects]]
+  from = "/docs/cloud/faq"
+  to = "https://community.netdata.cloud/docs"
 
 [[redirects]]
   from = "/docs/agent/code_of_conduct"
@@ -164,17 +168,25 @@
   to = "/docs/export/external-databases"
 
 [[redirects]]
-  from = "/docs/cloud/faq"
-  to = "https://community.netdata.cloud/docs"
-
-[[redirects]]
   from = "/docs/agent/contributors"
   to = "/contribute/license"
 
 [[redirects]]
   from = "/docs/get"
   to = "/docs/get-started"
-  
+
 [[redirects]]
   from = "/docs/agent/get"
   to = "/docs/get-started"
+
+[[redirects]]
+  from = "/docs/agent/packaging/DISTRIBUTIONS"
+  to = "/docs/agent/packaging/PLATFORM_SUPPORT"
+
+[[redirects]]
+  from = "/docs/agent/packaging/installer/methods/alpine"
+  to = "/docs/agent/packaging/installer/"
+
+[[redirects]]
+  from = "/docs/agent/packaging/installer/methods/kickstart-64"
+  to = "/docs/agent/packaging/installer/"
