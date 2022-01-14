@@ -176,6 +176,10 @@
   to = "/docs/get-started"
 
 [[redirects]]
+  from = "/docs/agent/getting-started"
+  to = "/docs/get-started"
+
+[[redirects]]
   from = "/docs/agent/packaging/DISTRIBUTIONS"
   to = "/docs/agent/packaging/PLATFORM_SUPPORT"
 
