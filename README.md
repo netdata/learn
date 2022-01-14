@@ -140,7 +140,7 @@ description: >-
   Ready to get real-time visibility into your entire infrastructure? 
   This guide will help you get started on Netdata Cloud.
 image: /img/seo/cloud_get-started.png
-custom_edit_url: null
+custom_edit_url: link to GitHub source file
 ---
 
 import Callout from '@site/src/components/Callout'

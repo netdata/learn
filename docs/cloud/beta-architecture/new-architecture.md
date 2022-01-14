@@ -3,7 +3,7 @@ title: Test the New Cloud Architecture
 description: >-
   Would you like to be the first to try our new architecture and provide feedback? 
   If so, this guide will help you sign up for our beta testing group.
-custom_edit_url: null
+custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/beta-architecture/new-architecture.md
 ---
 
 To enhance the stability and reliability of Netdata Cloud, we did extensive work on our backend, and we would like to give you the opportunity 

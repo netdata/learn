@@ -1,7 +1,7 @@
 ---
 title: Overview
 description: The Overview uses composite charts to display real-time aggregated metrics from all the nodes in a given War Room.
-custom_edit_url: null
+custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/visualize/overview.md
 ---
 
 The Overview is one way to monitor infrastructure using Netdata Cloud. While the interface might look similar to local

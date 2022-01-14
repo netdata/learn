@@ -1,7 +1,7 @@
 ---
 title: Spaces
 description: Organize your infrastructure monitoring on Netdata Cloud by creating Spaces, then grouping your Agent-monitored nodes.
-custom_edit_url: null
+custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/spaces.md
 ---
 
 Spaces are high-level containers to help you organize your team members and the nodes they're able to view in each

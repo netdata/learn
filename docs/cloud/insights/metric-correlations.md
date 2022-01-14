@@ -1,7 +1,7 @@
 ---
 title: Metric Correlations
 description: Quickly find metrics and charts closely related to an anomaly anywhere in your infrastructure to discover the root cause faster.
-custom_edit_url: null
+custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/insights/metric-correlations.md
 ---
 
 The Metric Correlations feature lets you quickly find metrics and charts related to an anomaly or particular window of
