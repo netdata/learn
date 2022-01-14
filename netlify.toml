@@ -181,8 +181,12 @@
 
 [[redirects]]
   from = "/docs/agent/packaging/installer/methods/alpine"
-  to = "/docs/agent/packaging/installer/"
+  to = "/docs/agent/packaging/installer/methods/kickstart"
 
 [[redirects]]
   from = "/docs/agent/packaging/installer/methods/kickstart-64"
-  to = "/docs/agent/packaging/installer/"
+  to = "/docs/agent/packaging/installer/methods/kickstart#static-builds"
+
+[[redirects]]
+from = "/docs/agent/packaging/installer/methods/packages"
+to = "/docs/agent/packaging/installer/methods/kickstart#native-packages"
