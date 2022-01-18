@@ -40,16 +40,6 @@ module.exports = {
             },
             {
               type: 'doc',
-              id: 'agent/packaging/installer/methods/kickstart-64',
-              label: 'Linux with pre-built static binary'
-            },
-            {
-              type: 'doc',
-              id: 'agent/packaging/installer/methods/packages',
-              label: 'Linux with .deb/.rpm package'
-            },
-            {
-              type: 'doc',
               id: 'agent/packaging/docker',
               label: 'Run with Docker'
             },
