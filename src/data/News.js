@@ -14,6 +14,20 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>New version of the kickstart script</>,
+		href: '/docs/agent/packaging/installer/methods/kickstart/',
+		date: 'January 18, 2022',
+		type: 'Doc',
+		description: (
+			<>
+				{' '}
+				Our new and improved one-line install process gets you started with Netdata even faster.
+				Now more portable than ever, it eliminates the need to manually handle dependencies on a majority of Linux systems.
+				Additionally, most users will see greatly reduced resource requirements for the install process compared to the old script.
+			</>
+		),
+	},
+	{
 		title: <>Cloud charts 2.0</>,
 		href: 'docs/cloud/visualize/interact-new-charts',
 		date: 'November 30, 2021',
@@ -74,19 +88,6 @@ export const News = [
 			<>
 				Create smoothed, rolling Z-Scores for selected metrics or charts to
 				visualize when they deviate from normal.
-			</>
-		),
-	},
-	{
-		title: <>Develop a custom data collector in Python</>,
-		href: '/guides/python-collector',
-		date: 'March 24, 2021',
-		type: 'Guide',
-		description: (
-			<>
-				Learn how write a custom data collector in Python, which you'll use to
-				collect metrics from and monitor any application that isn't supported
-				out of the box.
 			</>
 		),
 	},
