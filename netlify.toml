@@ -17,7 +17,7 @@
   from = "/docs/cloud/monitoring/alarms"
   to = "/docs/cloud/alerts-notifications/view-active-alerts"
 
-//[[redirects]]
+[[redirects]]
   from = "/docs/cloud/monitor/alarms"
   to = "/docs/cloud/alerts-notifications/view-active-alerts" 
 
