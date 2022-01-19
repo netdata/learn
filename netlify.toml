@@ -18,6 +18,10 @@
   to = "/docs/cloud/alerts-notifications/view-active-alerts"
 
 [[redirects]]
+  from = "/docs/cloud/monitor/alarms"
+  to = "/docs/cloud/alerts-notifications/view-active-alerts" 
+
+[[redirects]]
   from = "/docs/cloud/monitoring/*"
   to = "/docs/cloud/alerts-notifications/:splat"
 
@@ -88,10 +92,6 @@
   to = "/docs/export/external-databases"
 
 [[redirects]]
-  from = "/#get"
-  to = "/docs/get"
-
-[[redirects]]
   from = "/docs/visualize/view-all-nodes"
   to = "/docs/visualize/overview-infrastructure"
   
@@ -116,16 +116,20 @@
   to = "/contribute/style-guide"
 
 [[redirects]]
+  from = "/docs/agent/code_of_conduct"
+  to = "/contribute/code-of-conduct"
+
+[[redirects]]
+  from = "/docs/agent/contributors"
+  to = "/contribute/license"
+
+[[redirects]]
   from = "/docs/agent/performance"
   to = "/guides/configure/performance"
 
 [[redirects]]
   from = "/docs/agent/high-performance-netdata"
   to = "/guides/configure/performance"
-
-[[redirects]]
-  from = "/docs/cloud/monitor/alarms"
-  to = "/docs/cloud/monitoring/alarms"
 
 [[redirects]]
   from = "/docs/cloud/collaborate/invite-your-team"
@@ -144,10 +148,6 @@
   to = "/docs/configure/common-changes"
 
 [[redirects]]
-  from = "/docs/agent/configuration-guide"
-  to = "/docs/configure/common-changes"
-
-[[redirects]]
   from = "/docs/cloud/faq-glossary"
   to = "https://community.netdata.cloud/docs"
 
@@ -156,16 +156,8 @@
   to = "https://community.netdata.cloud/docs"
 
 [[redirects]]
-  from = "/docs/agent/code_of_conduct"
-  to = "/contribute/code-of-conduct"
-
-[[redirects]]
   from = "/docs/agent/export"
   to = "/docs/export/external-databases"
-
-[[redirects]]
-  from = "/docs/agent/contributors"
-  to = "/contribute/license"
 
 [[redirects]]
   from = "/docs/get"
