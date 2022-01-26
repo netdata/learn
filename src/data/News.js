@@ -1,15 +1,14 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.32.0';
+export const ReleaseVersion = '1.33.0';
 
-export const ReleaseDate = 'November 30, 2021';
+export const ReleaseDate = 'January 26, 2022';
 
 export const ReleaseNotes = [
-	'Architectural changes to improve responsiveness, reliability, and stability',
-	'eBPF latency monitoring for disks, IRQs, and more',
-	'ML powered anomaly detection',
-	'eBPF container monitoring using cgroups',
-	'New timezone selector and time control tools',
+	'Updated kickstart script to enable automatic installation via DEB or RPM packages wherever available.',
+	'Save up to 70% bandwidth with the stream compression (still in testing)',
+	'Improved eBPF monitoring compatibility by introducing eBPF CO-RE (Compile Once, Run Everywhere)',
+	'Legacy version of the Agent-Cloud link (ACLK) is now deprecated',
 ];
 
 export const News = [
