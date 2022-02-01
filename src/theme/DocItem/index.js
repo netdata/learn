@@ -156,9 +156,13 @@ function DocItem(props) {
 								</p>
 							) : (
                 <form
+                  data-netlify="true"
+                  name="thumbs-voting"
+                  method="post"
                   onSubmit={handleSubmit}
                 >
-                  <input type="hidden" name="thumb" />
+                  <input type="hidden" name="form-name" value="thumbs-voting" />
+                  <input type="hidden" name="thumb" aria-label="How do you like it?" value={formData.thumb} />
                   <button
                     aria-label="Happy"
                     className="group px-4"
