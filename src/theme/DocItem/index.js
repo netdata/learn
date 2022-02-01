@@ -78,7 +78,7 @@ function DocItem(props) {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "thumbs-voting", formData })
+      body: encode({ "form-name": "thumbs-voting", ...formData })
     })
       .then(() => setFeedback(true))
       .catch(() => setFeedback(true));
