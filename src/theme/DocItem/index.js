@@ -158,23 +158,24 @@ function DocItem(props) {
                 <form
                   onSubmit={handleSubmit}
                 >
+                  <input type="hidden" name="thumb" />
                   <button
                     aria-label="Happy"
                     className="group px-4"
                     name="thumbsup"
                     type="button"
-                    onClick={e => setFormData(prevFormData => ({ ...prevFormData, thumb: "up" }))}
+                    onClick={e => setFormData(prevFormData => ({ ...prevFormData, thumb: "Happy" }))}
                   >
-                    <GoThumbsup className={`w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125 group-active:scale-125 ${formData.thumb === "up" && "scale-125"}`} />
+                    <GoThumbsup className={`w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125 group-active:scale-125 ${formData.thumb === "Happy" && "scale-125"}`} />
                   </button>
                   <button
                     aria-label="Unhappy"
                     className="group px-4"
                     name="thumbsdown"
                     type="button"
-                    onClick={e => setFormData(prevFormData => ({ ...prevFormData, thumb: "down" }))}
+                    onClick={e => setFormData(prevFormData => ({ ...prevFormData, thumb: "Unhappy" }))}
                   >
-                    <GoThumbsdown className={`w-12 h-12 fill-current text-red transform transition group-hover:scale-125 group-active:scale-125 ${formData.thumb === "down" && "scale-125"}`} />
+                    <GoThumbsdown className={`w-12 h-12 fill-current text-red transform transition group-hover:scale-125 group-active:scale-125 ${formData.thumb === "Unhappy" && "scale-125"}`} />
                   </button>
 
                   <div className="mt-4 text-center block">
@@ -186,7 +187,6 @@ function DocItem(props) {
                     <textarea
                       className="prose-sm mx-auto p-6 border border-gray-200 rounded dark:bg-gray-800 dark:border-gray-500 w-full"
                       id="feedback-text"
-                      form="doc-feedback"
                       name="feedback"
                       rows="5"
                       placeholder="What did you like? What can we improve?"
