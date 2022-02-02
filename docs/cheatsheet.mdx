@@ -13,15 +13,8 @@ using charts, managing the daemon, and more.
 
 ## [**Download the PDF**](/img/cheatsheet/netdata-cheatsheet.pdf)
 
-![Netdata management and configuration cheatsheet](/img/cheatsheet/netdata-cheatsheet.png)
+### Install Netdata
 
-## **Not already a Netdata user?**
-
-Netdata is the only monitoring and troubleshooting tool that installs in minutes and immediately detects, collects, and
-visualizes per-second metrics to help you identify root causes and get back to business faster.
-
-<Link class="button button--primary" style={{marginBottom: '1.25rem'}} to="https://netdata.cloud/get-netdata">Get Netdata</Link>
-
-Once you've signed up for Netdata Cloud and installed the Agent, see our
-[infrastructure](/docs/quickstart/infrastructure) or [single-node](/docs/quickstart/single-node) quickstarts for tips on
-getting the most from your first few minutes with Netdata.
+```
+wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh
+```
