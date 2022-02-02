@@ -1,12 +1,15 @@
 ---
-title: "Netdata management and configuration cheatsheet"
-description: "Connecting an Agent to the Cloud allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud via the encrypted Agent-Cloud link (ACLK)."
+title: 'Netdata management and configuration cheatsheet'
+description: 'Connecting an Agent to the Cloud allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud via the encrypted Agent-Cloud link (ACLK).'
 image: /cheatsheet/cheatsheet-meta.png
 sidebar_label: Cheatsheet
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cheatsheet.mdx
 ---
 
-import { OneLineInstallWget, OneLineInstallCurl } from '@site/src/components/OneLineInstall/'
+import {
+	OneLineInstallWget,
+	OneLineInstallCurl,
+} from '@site/src/components/OneLineInstall/';
 
 Use our management &amp; configuration cheatsheet to simplify your interactions with Netdata, including configuration,
 using charts, managing the daemon, and more.
@@ -15,11 +18,11 @@ using charts, managing the daemon, and more.
 
 #### Install Netdata
 
-<OneLineInstallWget/>
+<OneLineInstallWget />
 
 Or, if you have cURL but not wget (such as on macOS):
 
-<OneLineInstallCurl/>
+<OneLineInstallCurl />
 
 #### Claim a node to Netdata Cloud
 
@@ -81,7 +84,7 @@ modules:
  activemq: no # disabled
  bind: no # disabled
  cockroachdb: yes # enabled
- ```
+```
 
 #### Edit a collector's config (example)
 
@@ -90,7 +93,6 @@ $ sudo ./edit-config go.d/mysql.conf
 $ sudo ./edit-config ebpf.conf
 $ sudo ./edit-config python.d/anomalies.conf
 ```
-
 
 ## Configuration
 
@@ -112,7 +114,6 @@ $ sudo ./edit-config python.d/anomalies.conf
 #### View the running Netdata configuration: `http://NODE:19999/netdata.conf`
 
 > Replace `NODE` with the IP address or hostname of your node. Often `localhost`.
-
 
 ## Alarms & notifications
 
@@ -158,7 +159,7 @@ killall -USR2 netdata
 ## Manage the daemon
 
 | Intent                      |                                                                Action |
-|:----------------------------|----------------------------------------------------------------------:|
+| :-------------------------- | --------------------------------------------------------------------: |
 | Start Netdata               |                                      `$ sudo systemctl start netdata` |
 | Stop Netdata                |                                       `$ sudo systemctl stop netdata` |
 | Restart Netdata             |                                    `$ sudo systemctl restart netdata` |
@@ -177,14 +178,14 @@ killall -USR2 netdata
 
 ## Interact with charts
 
-| Intent                                 |                                                                                                                                                                                                                                                                            Action |
-|----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Stop a chart from updating             |                                                                                                                                                                                                                                                                           `click` |
-| Zoom                                   | **Cloud** <br/> use the `zoom in` and `zoom out` buttons on any chart (upper right corner)  <br/><br/> **Agent**<br/>`SHIFT` or `ALT` + `mouse scrollwheel` <br/> `SHIFT` or `ALT` + `two-finger pinch` (touchscreen)  <br/> `SHIFT` or `ALT` + `two-finger scroll` (touchscreen) |
-| Zoom to a specific timeframe           |                                                                                                                                **Cloud**<br/>use the `select and zoom` button on any chart and then do a `mouse selection`  <br/><br/>  **Agent**<br/>`SHIFT` + `mouse selection` |
-| Pan forward or back in time            |                                                                                                                                                                                                                    `click` & `drag` <br/> `touch` & `drag` (touchpad/touchscreen) |
-| Select a certain timeframe             |                                                                                                                                                                                 `ALT` + `mouse selection` <br/> WIP need to evaluate this `command?`  + `mouse selection` (macOS) |
-| Reset to default auto refreshing state |                                                                                                                                                                                                                                                                    `double click` |
+| Intent                                 |                                                                                                                                                                                                                                                                          Action |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Stop a chart from updating             |                                                                                                                                                                                                                                                                         `click` |
+| Zoom                                   | **Cloud** <br/> use the `zoom in` and `zoom out` buttons on any chart (upper right corner) <br/><br/> **Agent**<br/>`SHIFT` or `ALT` + `mouse scrollwheel` <br/> `SHIFT` or `ALT` + `two-finger pinch` (touchscreen) <br/> `SHIFT` or `ALT` + `two-finger scroll` (touchscreen) |
+| Zoom to a specific timeframe           |                                                                                                                                **Cloud**<br/>use the `select and zoom` button on any chart and then do a `mouse selection` <br/><br/> **Agent**<br/>`SHIFT` + `mouse selection` |
+| Pan forward or back in time            |                                                                                                                                                                                                                  `click` & `drag` <br/> `touch` & `drag` (touchpad/touchscreen) |
+| Select a certain timeframe             |                                                                                                                                                                                `ALT` + `mouse selection` <br/> WIP need to evaluate this `command?` + `mouse selection` (macOS) |
+| Reset to default auto refreshing state |                                                                                                                                                                                                                                                                  `double click` |
 
 ## Dashboards
 
