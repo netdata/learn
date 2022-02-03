@@ -154,7 +154,7 @@ the available components:
 ```
 import Callout from '@site/src/components/Callout'
 import { Grid, Box, BoxList, BoxListItem } from '@site/src/components/Grid/'
-import { OneLineInstall } from '@site/src/components/OneLineInstall/'
+import { OneLineInstallWget, OneLineInstallCurl, } from '@site/src/components/OneLineInstall/'
 import { Install, InstallBox } from '@site/src/components/Install/'
 import { Calculator } from '@site/src/components/agent/dbCalc/'
 ```
