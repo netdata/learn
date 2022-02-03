@@ -14,7 +14,7 @@ export function OneLineInstall() {
   const [releaseChecked, setReleaseChecked] = useState(true);
   const [statsChecked, setStatsChecked] = useState(true);
 
-  let currentCommand = `wget -O ./kickstart.sh https://my-netdata.io/kickstart.sh && sh ./kickstart.sh${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}`;
+  let currentCommand = `wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}`;
   const lang = `bash`
 
   function handleUpdatesChange() {
