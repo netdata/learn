@@ -36,8 +36,7 @@ module.exports = {
             {
               type: 'doc',
               id: 'agent/packaging/platform_support',
-              label: 'Netdata platform support policy',
-              separator: true
+              label: 'Netdata platform support policy'
             },
             {
               type: 'doc',
