@@ -11,11 +11,13 @@ import Link from '@docusaurus/Link';
 Use our management &amp; configuration cheatsheet to simplify your interactions with Netdata, including configuration,
 using charts, managing the daemon, and more.
 
-## [**Download the PDF**](/img/cheatsheet/netdata-cheatsheet.pdf)
 
-### Install Netdata
+<div style={{ padding: '2px', float: 'left', width: '48%'}}>
+
+## Install Netdata
 
 #### Install Netdata
+
 ```
 wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh
 ```
@@ -32,9 +34,7 @@ the `War Rooms` to add nodes to, then click `Copy` to copy the full
 script to your clipboard. Paste that into your node’s terminal
 and run it.
 
-<br>
-
-### Configuration
+## Configuration
 
 #### The Netdata config directory: `/etc/netdata`
 
@@ -45,6 +45,7 @@ config directory!
 #### Edit Netdata s main config file `$ sudo ./edit-config netdata.conf`
 
 #### Edit Netdata s other config files (examples):
+
 - `$ sudo ./edit-config apps_groups.conf`
 - `$ sudo ./edit-config ebpf.conf`
 - `$ sudo ./edit-config health.d/load.conf`
@@ -54,22 +55,18 @@ config directory!
 
 > Replace `NODE` with the IP address or hostname of your node. Often `localhost`.
 
-<br>
+## Interact with charts
 
-### Interact with charts
+| Intent                                 |                                                                                                                                                       Action |
+|:---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Stop a chart from updating             |                                                                                                                                                      `click` |
+| Zoom                                   | `SHIFT` or `ALT` + `mouse scrollwheel` <br/> `SHIFT` or `ALT` + `two-finger pinch` (touchscreen)  <br/> `SHIFT` or `ALT` + `two-finger scroll` (touchscreen) |
+| Zoom to a specific timeframe           |                                                                                                                                  `SHIFT` + `mouse selection` |
+| Pan forward or back in time            |                                                                                               `click` & `drag` <br/> `touch` & `drag` (touchpad/touchscreen) |
+| Select a certain timeframe             |                                                      `ALT` + `mouse selection` <br/> ***WIP need to evaluate this*** `command?`  + `mouse selection` (macOS) |
+| Reset to default auto refreshing state |                                                                                                                                               `double click` |
 
-|                             Intent                             |                                                                                   Action                                                                                   |
-|:--------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-|                   Stop a chart from updating                   |                                                                                  `click`                                                                                   |
-|                              Zoom                              | `SHIFT` or `ALT` + `mouse scrollwheel`   <br/></br> `SHIFT` or `ALT` + `two-finger pinch` (touchsecreen)  <br/></br> `SHIFT` or `ALT` + `two-finger scroll` (touchsecreen) |
-|                  Zoom to a specific timeframe                  |                                                                        `SHIFT` + `mouse selection`                                                                         |
-|                  Pan forward or back in time                   |                                                    `click` & `drag` </br></br> `touch` & `drag` (touchpad/touchscreen)                                                     |
-|                   Select a certain timeframe                   |                              `ALT` + `mouse selection`</br></br>***WIP need to evaluate this***       `command?`  + `mouse selection` (macOS)                              |
-|             Reset to default auto refreshing state             |                                                                               `double click`                                                                               |
-
-<br>
-
-### Dashboards
+## Dashboards
 
 #### Disable the local dashboard
 
@@ -91,38 +88,38 @@ sudo touch .opt-out-from-anonymous-statistics
 default port = 39999
 ```
 
-<br>
+## Understanding the dashboard
 
-### Understanding the dashboard
+**Charts**: A visualization displaying one or more collected/calculated metrics in a time series. Charts are generated
+by collectors.
 
-**Charts**: A visualization displaying one or more collected/calculated metrics in a time
-series. Charts are generated by collectors.
+**Dimensions**: Any value shown on a chart, which can be raw or calculated values, such as percentages, averages,
+minimums, maximums, and more.
 
-**Dimensions**: Any value shown on a chart, which can be raw or calculated values, such
-as percentages, averages, minimums, maximums, and more.
-
-**Families**: One instance of a monitored hardware or software resource that needs to be
-monitored and displayed separately from similar instances. Example, disks named
+**Families**: One instance of a monitored hardware or software resource that needs to be monitored and displayed
+separately from similar instances. Example, disks named
 **sda**, **sdb**, **sdc**, and so on.
 
 **Contexts**: A grouping of charts based on the types of metrics collected and visualized.
 **disk.io**, **disk.ops**, and **disk.backlog** are all contexts.
 
-<br>
 
-### Manage the daemon
+</div>
 
-| Intent                      |                                                                     Action |
-|:----------------------------|---------------------------------------------------------------------------:|
-| Start Netdata               |                                           `$ sudo systemctl start netdata` |
-| Stop Netdata                |                                            `$ sudo systemctl stop netdata` |
-| Restart Netdata             |                                         `$ sudo systemctl restart netdata` |
-| Reload health configuration | `$ sudo netdatacli reload-health` <br/> or </br> `$ killall -USR2 netdata` |
-| View error logs             |                                          `less /var/log/netdata/error.log` |
+<div style={{ padding: '2px', float: 'right', width: '48%'}}>
 
-<br>
 
-### See metrics and dashboards
+## Manage the daemon
+
+| Intent                      |                                                                Action |
+|:----------------------------|----------------------------------------------------------------------:|
+| Start Netdata               |                                      `$ sudo systemctl start netdata` |
+| Stop Netdata                |                                       `$ sudo systemctl stop netdata` |
+| Restart Netdata             |                                    `$ sudo systemctl restart netdata` |
+| Reload health configuration | `$ sudo netdatacli reload-health` <br></br> `$ killall -USR2 netdata` |
+| View error logs             |                                     `less /var/log/netdata/error.log` |
+
+## See metrics and dashboards
 
 #### Netdata Cloud `https://app.netdata.cloud`
 
@@ -133,9 +130,7 @@ hostname of your node. Often `localhost`.
 
 #### Access the Netdata API `http://NODE:19999/api/v1/info`
 
-<br>
-
-### Metrics collection & retention
+## Metrics collection & retention
 
 #### Increase metrics retention (4GiB)
 
@@ -193,9 +188,7 @@ $ sudo ./edit-config ebpf.conf
 $ sudo ./edit-config python.d/anomalies.conf
 ```
 
-<br>
-
-### Alarms & notifications
+## Alarms & notifications
 
 #### Add a new alarm
 
@@ -223,3 +216,5 @@ sudo ./edit-config health.d/example-alarm.conf
 [health]
  enabled = no
 ```
+
+</div>
