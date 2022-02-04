@@ -35,6 +35,12 @@ module.exports = {
           items: [
             {
               type: 'doc',
+              id: 'agent/packaging/platform_support',
+              label: 'Netdata platform support policy',
+              separator: true
+            },
+            {
+              type: 'doc',
               id: 'agent/packaging/installer/methods/kickstart',
               label: 'Linux with one-line installer'
             },
