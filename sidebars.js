@@ -436,8 +436,8 @@ module.exports = {
             'agent/collectors/charts.d.plugin',
           ]
         },
-        {
-          type: 'category',
+      /*{ //removed libnetdata because it doesn't concern the user//
+        type: 'category',
           label: 'libnetdata',
           items: [
             'agent/libnetdata',
@@ -461,7 +461,7 @@ module.exports = {
             //'agent/libnetdata/threads',
             //'agent/libnetdata/url',
           ]
-        },
+        }, */
         {
           type: 'category',
           label: 'HTTP API',
