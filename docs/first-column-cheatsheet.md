@@ -54,15 +54,11 @@ wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/
 
 #### Disable the local dashboard
 
+Use the `edit-config` script to edit the `netdata.conf` file.
+
 ```
 [web]
 mode = none
-```
-
-#### Opt out from anonymous statistics
-
-```
-sudo touch .opt-out-from-anonymous-statistics
 ```
 
 #### Change the port Netdata listens to (port 39999)
@@ -70,6 +66,12 @@ sudo touch .opt-out-from-anonymous-statistics
 ```
 [web]
 default port = 39999
+```
+
+#### Opt out from anonymous statistics
+
+```
+sudo touch .opt-out-from-anonymous-statistics
 ```
 
 ## Understanding the dashboard
@@ -86,4 +88,3 @@ separately from similar instances. Example, disks named
 
 **Contexts**: A grouping of charts based on the types of metrics collected and visualized.
 **disk.io**, **disk.ops**, and **disk.backlog** are all contexts.
-
