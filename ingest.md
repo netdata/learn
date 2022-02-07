@@ -29,23 +29,25 @@ node ingest.js <options>
 
   - `netdata/netdata`
   
-    - netdata_user: netdata
-    - netdata_branch: master
+    - netdata_user:_USER_ (_Default: netdata_)
+    - netdata_branch:_BRANCH_ (_Default: master_)
 
   - `netdata/.github`
 
-    - github_user: netdata
-    - github_branch: main
+    - github_user:_USER_ (_Default: netdata_)
+    - github_branch:_BRANCH_ (_Default: main_)
     
   - `netdata/go.d.plugin`
 
-    - go_d_plugin_user: netdata
-    - go_d_plugin_branch: master
+    - go_d_plugin_user:_USER_ (_Default: netdata_)
+    - go_d_plugin_branch:_BRANCH_ (_Default: master_)
 
   - `netdata/agent-service-discovery`
 
-    - agent_service_discovery_user: netdata
-    - agent_service_discovery_branch: master
+    - agent_service_discovery_user:_USER_ (_Default: netdata_)
+    - agent_service_discovery_branch:_BRANCH_ (_Default:master_)
+
+> Always keep in mind, not to leave spaces between the <key>:<value> pairs.
 
 
 #### Example 1: Override branch only
@@ -58,7 +60,7 @@ node ingest.js netdata_branch:mybranch
 
 #### Example 2: Multiple ingest from multiple sources.
 
-For example, let's say you have a fork of the `netdata/netdata` and the `netdata/go.d.plugin` repository under a GitHub 
+For example, let's say you have a fork of the `netdata/netdata` and the `netdata/go.d.plugin` repositories under a GitHub 
 account named `userXYZ`. You also have a `charts` branch on each forked repository. You would run:
 
 ```
@@ -69,4 +71,5 @@ node ingest.js netdata_user:userXYZ netdata_branch:charts go_d_plugin_user:userX
 instead of the default. For the other repositories (`netdata/.github`, `netdata/agent-service-discovery`), it will 
 ingest from the default settings. 
 
-> In case you misspelled your branch name, ingest script will run with the default parameters
+> In case you misspell the keys (netdata_user, go_d_plugin_user, etc), ingest script will run with the default parameters.
+> If you misspell the branch name, or the user, your ingest will fail with response 404 and message "Branch not found".
