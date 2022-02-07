@@ -18,43 +18,55 @@
 ## Usage
 
 ```
-node ingest.js
+node ingest.js <options>
 ```
+
 
 ### Options
 
-The script takes two additional options: a GitHub username and a branch name. These options override the default
-username and branch to ingest documentation files from the `netdata/netdata` repository, which are `netdata` and
-`master`.
+- For each repository you can change the user and the branch from which the ingest script will pull, with the following 
+  keys (defaults are applied)  
 
-By overriding the defaults, you can test how a documentation file will look and operate when published on Netdata Learn,
-or test the functionality of the script itself.
+  - `netdata/netdata`
+  
+    - netdata_user: netdata
+    - netdata_branch: master
 
-**You must use these options together**.
+  - `netdata/.github`
 
-```
-node ingest.js USER BRANCH
-```
+    - github_user: netdata
+    - github_branch: main
+    
+  - `netdata/go.d.plugin`
 
-> Currently, these options only affect how `ingest.js` pulls files from the `netdata/netdata` repository. The other
-> repositories still ingest from the `netdata` user and `master` branches.
+    - go_d_plugin_user: netdata
+    - go_d_plugin_branch: master
 
-#### Example: Override branch only
+  - `netdata/agent-service-discovery`
 
-If you want to pull from a `dashboard` branch that exists _on the `netdata/netdata` repository, pass `netdata` for the
-username.
+    - agent_service_discovery_user: netdata
+    - agent_service_discovery_branch: master
 
-```
-node ingest.js netdata dashboard
-```
 
-#### Example: Override both user and branch
+#### Example 1: Override branch only
 
-For example, let's say you have a fork of the `netdata/netdata` repository under a GitHub account named `userXYZ`. You
-also have a `charts` branch on your fork that you want ingest on your local development environment. You would run:
+If you want to pull from a `mybranch` branch that exists on the `netdata/netdata` repository.
 
 ```
-node ingest.js userXYZ charts
+node ingest.js netdata_branch:mybranch
 ```
 
-`ingest.js` now pulls files from the `charts` branch from the `userXYZ/netdata` repository instead of the default.
+#### Example 2: Multiple ingest from multiple sources.
+
+For example, let's say you have a fork of the `netdata/netdata` and the `netdata/go.d.plugin` repository under a GitHub 
+account named `userXYZ`. You also have a `charts` branch on each forked repository. You would run:
+
+```
+node ingest.js netdata_user:userXYZ netdata_branch:charts go_d_plugin_user:userXYZ go_d_plugin_branch:charts
+```
+
+`ingest.js` now pulls files from the `charts` branch from each repository (`userXYZ/netdata` and `userXYZ/go.d.plugin`) 
+instead of the default. For the other repositories (`netdata/.github`, `netdata/agent-service-discovery`), it will 
+ingest from the default settings. 
+
+> In case you misspelled your branch name, ingest script will run with the default parameters

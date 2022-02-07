@@ -87,11 +87,11 @@ $ docusaurus start
 As explained in the [contributing to Netdata's documentation](#contributing-to-netdatas-documentation) section above,
 most of the files in the `/docs` folder are mirrors of their original versions in the `netdata/netdata` repository.
 
-Documentation arrives in this repository via the [`ingest.js`](/scripts/ingest.js) script. This script uses the GitHub
+Documentation arrives in this repository via the [`ingest.js`](ingest.js) script. This script uses the GitHub
 API to gather and process all of Netdata's documentation, including changing file paths and overwriting links between
 documents, then places the files in the `/docs`, `/guides`, and `/contribute` folders.
 
-Read more about [how the ingest script works](/scripts/ingest.md).
+Read more about [how the ingest script works](ingest.md).
 
 ### Automated ingest via GitHub Actions
 
