@@ -105,3 +105,15 @@ sudo ./edit-config health.d/example-alarm.conf
 [health]
  enabled = no
 ```
+
+> After any change, reload the Netdata health configuration
+
+```
+netdatacli reload-health
+```
+
+or if that command doesn't work on your installation, use:
+
+```
+killall -USR2 netdata
+```
