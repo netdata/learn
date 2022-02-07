@@ -8,10 +8,9 @@ dotenv.config()
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN
 const MIN_RATE_LIMIT = 50
 
-// Set the GitHub user and branch to fetch with axios. The defaults are
-// `netdata` and `master`. Setting these are useful in GitHub Actions or
-// manually triggering an ingest to test some unmerged code in a fork or branch
-// that's not the default.
+// Set the GitHub user and branch for every repo that this script
+// ingests.
+
 const repo_config = {
   //default values
   netdata_user: 'netdata',
@@ -395,7 +394,7 @@ async function ingest() {
 
   console.log(`Fetching root SHA for '${repo_config.netdata_user}/netdata' repo`)
   const rootSha = await getRootSha(repo_config.netdata_user, 'netdata', repo_config.netdata_branch)
-  console.log(`Fetching nodes from ${repo_config.netdata_branch} branch of ${repo_config.netdata_user} repo...`)
+  console.log(`Fetching nodes from ${repo_config.netdata_branch} branch of ${repo_config.netdata_user}/netdata repo...`)
   const nodes = await getNodes(rootSha)
 
   console.log(`Fetching root SHA for '${repo_config.github_user}/.github' repo...`)
