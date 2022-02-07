@@ -12,10 +12,17 @@ const MIN_RATE_LIMIT = 50
 // `netdata` and `master`. Setting these are useful in GitHub Actions or
 // manually triggering an ingest to test some unmerged code in a fork or branch
 // that's not the default.
-const [ 
-  user = 'netdata', 
-  branch = 'master'
-] = process.argv.slice(2)
+const repo_config = {
+  //default values
+  netdata_user: 'netdata',
+  netdata_branch: 'master',
+  github_user: 'netdata',
+  github_branch: 'main',
+  go_d_plugin_user: 'netdata',
+  go_d_plugin_branch: 'master',
+  agent_service_discovery_user: 'netdata',
+  agent_service_discovery_branch: 'master'
+}
 
 const baseDir = '/docs'
 const agentDir = '/docs/agent'
@@ -376,25 +383,36 @@ async function ingest() {
     return
   }
 
-  console.log(`Fetching root SHA for 'netdata' repo...`)
-  const rootSha = await getRootSha(user, 'netdata', branch)
-  console.log(`Fetching nodes from ${user} repo...`)
+  // change defaults from argv
+  for (let i = 2; i < process.argv.length; i++) {
+    [arg_key, arg_value] = process.argv[i].split(":")
+    try {
+      repo_config[arg_key] = arg_value
+    } catch (error) {
+      console.error("Wrong argument parse in the ingest script, check the usage in the README.md")
+    }
+  }
+
+  console.log(`Fetching root SHA for '${repo_config.netdata_user}/netdata' repo`)
+  const rootSha = await getRootSha(repo_config.netdata_user, 'netdata', repo_config.netdata_branch)
+  console.log(`Fetching nodes from ${repo_config.netdata_branch} branch of ${repo_config.netdata_user} repo...`)
   const nodes = await getNodes(rootSha)
 
-  console.log(`Fetching root SHA for '.github' repo...`)
-  const ghRootSha = await getRootSha('netdata', '.github', 'main')
-  console.log(`Fetching nodes from '.github' repo...`)
-  const ghNodes = await getNodes(ghRootSha, 'netdata', '.github')
+  console.log(`Fetching root SHA for '${repo_config.github_user}/.github' repo...`)
+  const ghRootSha = await getRootSha(repo_config.github_user, '.github', repo_config.github_branch)
+  console.log(`Fetching nodes from ${repo_config.github_branch} branch of  '${repo_config.github_user}/.github' repo...`)
+  const ghNodes = await getNodes(ghRootSha, repo_config.github_user, '.github')
 
   console.log(`Fetching root SHA for 'go.d.plugin' repo...`)
-  const goRootSha = await getRootSha('netdata', 'go.d.plugin', 'master')
-  console.log(`Fetching nodes from 'go.d.plugin' repo...`)
-  const goNodes = await getNodes(goRootSha, 'netdata', 'go.d.plugin')
+  const goRootSha = await getRootSha(repo_config.go_d_plugin_user, 'go.d.plugin', repo_config.go_d_plugin_branch)
+  console.log(`Fetching nodes from ${repo_config.go_d_plugin_branch} branch of '${repo_config.go_d_plugin_user}/go.d.plugin' repo...`)
+  const goNodes = await getNodes(goRootSha, repo_config.go_d_plugin_user, 'go.d.plugin')
 
-  console.log(`Fetching root SHA for 'agent-service-discovery' repo...`)
-  const sdRootSha = await getRootSha('netdata', 'agent-service-discovery', 'master')
-  console.log(`Fetching nodes from 'agent-service-discovery' repo...`)
-  const sdNodes = await getNodes(sdRootSha, 'netdata', 'agent-service-discovery')
+  console.log(`Fetching root SHA for '${repo_config.agent_service_discovery_user}/agent-service-discovery' repo...`)
+  const sdRootSha = await getRootSha(repo_config.agent_service_discovery_user, 'agent-service-discovery',
+      repo_config.agent_service_discovery_branch)
+  console.log(`Fetching nodes from ${repo_config.agent_service_discovery_branch} branch of '${repo_config.agent_service_discovery_user}/agent-service-discovery' repo...`)
+  const sdNodes = await getNodes(sdRootSha, repo_config.agent_service_discovery_user, 'agent-service-discovery')
 
   const ghPrefixedNodes = prefixNodes(ghNodes, '/contribute/')
   const goPrefixedNodes = prefixNodes(goNodes, 'collectors/go.d.plugin/')
