@@ -95,7 +95,7 @@ Read more about [how the ingest script works](ingest.md).
 
 ### Automated ingest via GitHub Actions
 
-This repo uses a GitHub Action called [`ingest.yml`](.github/ingest.yml) to run the `ingest.js` process.
+This repo uses a GitHub Action called [`ingest.yml`](.github/workflows/ingest.yml) to run the `ingest.js` process.
 
 This action runs at 14:00 UTC every day.
 
@@ -103,7 +103,7 @@ If there are changes to any documentation file, the GitHub Action creates a PR f
 team.
 
 The action can be configured to automatically assign one or more reviewers. To enable automatic assignments, uncomment
-the `# reviewers:` line at the end of [`ingest.yml`](.github/ingest.yml) and add the appropriate GitHub username(s)
+the `# reviewers:` line at the end of [`ingest.yml`](.github/workflows/ingest.yml) and add the appropriate GitHub username(s)
 either space- or comma-separated.
 
 ### Manual ingest via GitHub Actions
