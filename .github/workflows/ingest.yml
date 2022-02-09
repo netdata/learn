@@ -29,7 +29,7 @@ jobs:
       uses: peter-evans/create-pull-request@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Ingest new documentation
+        commit-message: Ingest New Documentation
         title: 'Ingest new documentation'
         body: |
           - Ingest new documentation
