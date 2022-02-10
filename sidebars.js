@@ -25,6 +25,7 @@ module.exports = {
             'overview/what-is-netdata',
             'overview/why-netdata',
             'overview/netdata-monitoring-stack',
+            'agent/libnetdata/simple_pattern',
             'agent/anonymous-statistics',
             'agent/netdata-security',
           ]
@@ -33,6 +34,11 @@ module.exports = {
           type: 'category',
           label: 'Installation',
           items: [
+            {
+              type: 'doc',
+              id: 'agent/packaging/platform_support',
+              label: 'Netdata platform support policy'
+            },
             {
               type: 'doc',
               id: 'agent/packaging/installer/methods/kickstart',
@@ -436,8 +442,8 @@ module.exports = {
             'agent/collectors/charts.d.plugin',
           ]
         },
-        {
-          type: 'category',
+      /*{ //removed libnetdata because it doesn't concern the user//
+        type: 'category',
           label: 'libnetdata',
           items: [
             'agent/libnetdata',
@@ -461,7 +467,7 @@ module.exports = {
             //'agent/libnetdata/threads',
             //'agent/libnetdata/url',
           ]
-        },
+        }, */
         {
           type: 'category',
           label: 'HTTP API',
