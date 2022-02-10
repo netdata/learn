@@ -3,6 +3,7 @@ title: "Install Netdata with kickstart.sh"
 description: "The kickstart.sh script installs Netdata from source, including all dependencies required to connect to Netdata Cloud, with a single command."
 custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kickstart.md
 ---
+import { OneLineInstallWget, OneLineInstallCurl } from '../../../../../src/components/OneLineInstall/'
 
 
 
@@ -18,15 +19,11 @@ The kickstart script works on all Linux distributions and macOS environments. By
 
 To install Netdata, run the following as your normal user:
 
-```bash
-wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh
-```
+<OneLineInstallWget/>
 
 Or, if you have cURL but not wget (such as on macOS):
 
-```bash
-curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh
-```
+<OneLineInstallCurl/>
 
 
 ## What does `kickstart.sh` do?
@@ -139,7 +136,7 @@ To use `md5sum` to verify the integrity of the `kickstart.sh` script you will do
 run the following:
 
 ```bash
-[ "42b5969be5d38ac696e21e444df72f86" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "22039cdffef3eef21238c26605085ede" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`.
