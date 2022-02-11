@@ -1,0 +1,14 @@
+export const pluginFile = "Default Value";
+
+To edit the <>{props.pluginFile}</> configuration file:
+
+1. Navigate to the [Netdata config directory](/docs/configure/nodes#the-netdata-config-directory).
+  ```bash
+  cd /etc/netdata 
+  ```  
+2. Use the [`edit-config`](/docs/configure/nodes#use-edit-config-to-edit-configuration-files) script to edit <>{props.pluginFile}</>.
+  ```bash
+  sudo ./edit-config <>{props.pluginFile}</>
+  ```
+3. Enable changes to the collector by setting `enabled: yes`.
+4. Save the changes and restart the Agent with sudo `systemctl restart netdata` or the [appropriate method](/docs/configure/start-stop-restart) for your system.
