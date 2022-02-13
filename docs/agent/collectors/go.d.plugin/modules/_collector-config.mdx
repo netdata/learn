@@ -1,0 +1,17 @@
+To edit the <span>{props.module} </span> configuration file:
+
+1. Navigate to the [Netdata config directory](/docs/configure/nodes#the-netdata-config-directory).
+
+  ```bash
+  cd /etc/netdata
+  ```
+
+2. Use the [`edit-config`](/docs/configure/nodes#use-edit-config-to-edit-configuration-files) script to edit {props.module}.
+
+  ```bash
+  sudo ./edit-config {props.module}
+  ```
+
+3. Enable changes to the collector by setting `enabled: yes`.
+
+4. Save the changes and restart the Agent with sudo `systemctl restart netdata` or the [appropriate method](/docs/configure/start-stop-restart) for your system.

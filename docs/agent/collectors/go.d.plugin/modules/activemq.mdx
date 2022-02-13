@@ -4,10 +4,7 @@ description: "Monitor the health and performance of ActiveMQ message brokers wit
 custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/activemq/README.md
 sidebar_label: "ActiveMQ"
 ---
-import Config from "../../../../../src/components/collectors/_config.mdx";
-
-export const pluginFile = "go.d/activemq.conf";
-
+import ConfigModule from './_collector-config.mdx';
 
 [`ActiveMQ`](https://activemq.apache.org/) is an open source message broker written in Java together with a full Java
 Message Service client.
@@ -24,10 +21,12 @@ It produces following charts per queue and per topic:
 - Consumers in `consumers`
 
 ## Configuration
-_______ MDX TEST _______
 
-<Config/>
-________________________
+Test start
+
+<ConfigModule module="go.d/activemq.conf" />;
+
+Test end
 
 Edit the `go.d/activemq.conf` configuration file using `edit-config` from the
 Netdata [config directory](/docs/configure/nodes), which is typically at `/etc/netdata`.
