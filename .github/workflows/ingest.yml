@@ -30,7 +30,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Ingest new documentation
-        title: 'Ingest new documentation'
+        title: 'Ingest New Documentation'
         body: |
           - Ingest new documentation
 
