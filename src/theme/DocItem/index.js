@@ -205,6 +205,22 @@ function DocItem(props) {
                       <div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded" />
                     }
                   </button>
+				  {/*Honeypot to catch spambots*/}
+				  <p class="invisible">
+                    <label>
+                      Don't fill this out if you're human:{' '}
+                      <input
+                        name="botfield"
+                        onChange={e =>
+                          setFormData(prevFormData => ({
+                            ...prevFormData,
+                            [e.target.name]: e.target.value,
+                          }))
+                        }
+                      />
+                    </label>
+                  </p>
+
                 </form>
               )}
 						</div>
