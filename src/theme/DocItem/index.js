@@ -71,7 +71,7 @@ function DocItem(props) {
 		}
 	}, []);
 
-  const [formData, setFormData] = useState({ thumb: null, feedback: "" })
+  const [formData, setFormData] = useState({ thumb: null, feedback: "", url: metadata.permalink})
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -161,6 +161,7 @@ function DocItem(props) {
                   method="post"
                   onSubmit={handleSubmit}
                 >
+				  <input type="hidden" name="url" aria-label="current url" value={formData.url} />
                   <input type="hidden" name="form-name" value="thumbs-voting" />
                   <input type="hidden" name="thumb" aria-label="How do you like it?" value={formData.thumb} />
                   <button
