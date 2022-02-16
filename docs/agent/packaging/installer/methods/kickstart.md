@@ -12,7 +12,7 @@ import { OneLineInstallWget, OneLineInstallCurl } from '../../../../../src/compo
 This page covers detailed instructions on using and configuring the automatic one-line installation script named
 `kickstart.sh`.
 
-The kickstart script works on all Linux distributions and macOS environments. By default, automatic nightly updates are enabled. If you are installing on macOS, make sure to check the [install documentation for macOS](/docs/agent/packaging/installer/methods/packaging/installer/methods/macos) before continuing.
+The kickstart script works on all Linux distributions and macOS environments. By default, automatic nightly updates are enabled. If you are installing on macOS, make sure to check the [install documentation for macOS](/docs/agent/packaging/installer/methods/macos) before continuing.
 
 > If you are unsure whether you want nightly or stable releases, read the [installation guide](/docs/agent/packaging/installer#nightly-vs-stable-releases). 
 > If you want to turn off [automatic updates](/docs/agent/packaging/installer#automatic-updates), use the `--no-updates` option. You can find more installation options below.
@@ -73,7 +73,7 @@ should not need to use special values for any of these):
 - `ROOTCMD`: Used to specify a command to use to run another command with root privileges if needed. By default
   we try to use sudo, doas, or pkexec (in that order of preference), but if you need special options for one of
   those to work, or have a different tool to do the same thing on your system, you can specify it here.
-- `DO_NOT_TRACK`: If set to a value other than 0, behave as if `--disable-telemetry` was specified.
+- `DISABLE_TELEMETRY`: If set to a value other than 0, behave as if `--disable-telemetry` was specified.
 - `NETDATA_INSTALLER_OPTIONS`: Specifies extra options to pass to the static installer or local build script.
 
 ### Connect node to Netdata Cloud during installation
@@ -136,7 +136,7 @@ To use `md5sum` to verify the integrity of the `kickstart.sh` script you will do
 run the following:
 
 ```bash
-[ "2ea326514c5166eabf02622e75d10a53" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "f01086a471f030c294d31e49df84850f" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`.
