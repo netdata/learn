@@ -75,10 +75,17 @@ function DocItem(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
+    const { botfield, ...rest } = formData;
+    
+    if (botfield) {
+       setFeedback(true)
+       return;
+    }
+    
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "thumbs-voting", ...formData })
+      body: encode({ "form-name": "thumbs-voting", ...rest })
     })
       .then(() => setFeedback(true))
       .catch(() => setFeedback(true));
