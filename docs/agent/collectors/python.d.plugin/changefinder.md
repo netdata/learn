@@ -215,4 +215,3 @@ sudo su -s /bin/bash netdata
 - Novelty and outlier detection in
   the [scikit-learn documentation](https://scikit-learn.org/stable/modules/outlier_detection.html).
 
-

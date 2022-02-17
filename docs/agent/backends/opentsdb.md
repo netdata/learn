@@ -35,4 +35,3 @@ After your proxy is configured, make the following changes to `netdata.conf`:
 In this example, we used the port `8082` for our reverse proxy. If your reverse proxy listens on a different port,
 change the `destination = localhost:8082` line accordingly.
 
-
