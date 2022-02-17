@@ -75,5 +75,3 @@ about how you might want to use or configure Cloud, we recommend the following:
     onboarding and connect your first nodes.
 -   Better understand how agents connect securely to the Cloud with [connect agent to Cloud](/docs/agent/claim) and [Agent-Cloud
     link](/docs/agent/aclk) documentation.
-
-

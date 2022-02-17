@@ -179,4 +179,3 @@ through this, is to examine what other similar plugins do.
 
 You can add custom collectors by following the [external plugins documentation](/docs/agent/collectors/plugins.d).
 
-

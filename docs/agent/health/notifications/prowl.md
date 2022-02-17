@@ -25,5 +25,3 @@ the Prowl website after registering.
 
 Once you have an API key, simply specify that as a recipient for Prowl
 notifications.
-
-

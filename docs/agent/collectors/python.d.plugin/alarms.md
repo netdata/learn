@@ -56,5 +56,3 @@ local:
 ```
 
 It will default to pulling all alarms at each time step from the Netdata rest api at `http://127.0.0.1:19999/api/v1/alarms?all`
-
-

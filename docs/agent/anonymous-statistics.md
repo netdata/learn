@@ -104,4 +104,3 @@ Prior to v1.29.4 we used Google Analytics to capture this information. This led 
 
 While we migrate fully away from Google Analytics to PostHog there maybe be a small period of time where we run both in parallel before we remove all Google Analytics related code. This is to ensure we can fully test and validate the Netdata PostHog implementation before fully defaulting to it.
 
-

@@ -232,5 +232,3 @@ make
 If you make any changes to the `src` directory when developing Netdata, you
 should regenerate the `dashboard.js` file before you commit to the Netdata
 repository.
-
-
