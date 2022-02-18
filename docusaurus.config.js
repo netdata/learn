@@ -10,9 +10,6 @@ module.exports = {
   organizationName: 'netdata',
   projectName: 'netdata',
   themeConfig: {
-    gtag: {
-      trackingID: 'GTM-N6CBMJD',
-    },
     posthog: {
         apiKey: "phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv",
         appUrl: "https://posthog.netdata.cloud",
@@ -172,6 +169,9 @@ module.exports = {
           editUrl:
             'https://github.com/netdata/netdata/edit/master/',
           showLastUpdateTime: true,
+        },
+        gtag: {
+          trackingID: 'GTM-N6CBMJD',
         },
         theme: {
           customCss: [require.resolve('./src/css/custom.css')],
