@@ -6,23 +6,22 @@
  */
 import React from 'react';
 import Head from '@docusaurus/Head';
-import {useThemeConfig, useTitleFormatter} from '@docusaurus/theme-common';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-export default function Seo({title, description, keywords, image}) {
-  const {image: defaultImage} = useThemeConfig();
+import {useTitleFormatter} from '@docusaurus/theme-common';
+import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
+export default function Seo({title, description, keywords, image, children}) {
   const pageTitle = useTitleFormatter(title);
-  const pageImage = useBaseUrl(image || defaultImage, {
-    absolute: true,
-  });
+  const {withBaseUrl} = useBaseUrlUtils();
+  const pageImage = image
+    ? withBaseUrl(image, {
+        absolute: true,
+      })
+    : undefined;
   return (
     <Head>
       {title && <title>{pageTitle}</title>}
       {title && <meta property="og:title" content={pageTitle} />}
 
-      {/* BEGIN EDIT */}
-      {description && <meta name="description" class="swiftype" data-type="string" content={description} />}
-      <meta property="og:type" content="website" />
-      {/* END EDIT */}
+      {description && <meta name="description" content={description} />}
       {description && <meta property="og:description" content={description} />}
 
       {keywords && (
@@ -34,7 +33,8 @@ export default function Seo({title, description, keywords, image}) {
 
       {pageImage && <meta property="og:image" content={pageImage} />}
       {pageImage && <meta name="twitter:image" content={pageImage} />}
-      {pageImage && <meta name="twitter:card" content="summary_large_image" />}
+
+      {children}
     </Head>
   );
 }

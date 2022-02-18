@@ -8,29 +8,28 @@ import React from 'react';
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import SearchMetadatas from '@theme/SearchMetadatas';
+import SearchMetadata from '@theme/SearchMetadata';
 import Seo from '@theme/Seo';
 import {
   DEFAULT_SEARCH_TAG,
   useTitleFormatter,
   useAlternatePageUtils,
+  useThemeConfig,
 } from '@docusaurus/theme-common';
 import {useLocation} from '@docusaurus/router'; // Useful for SEO
 // See https://developers.google.com/search/docs/advanced/crawling/localized-versions
 // See https://github.com/facebook/docusaurus/issues/3317
 
 function AlternateLangHeaders() {
-  console.log(useDocusaurusContext())
-
   const {
-    i18n: {defaultLocale, locales},
+    i18n: {defaultLocale, localeConfigs},
   } = useDocusaurusContext();
   const alternatePageUtils = useAlternatePageUtils(); // Note: it is fine to use both "x-default" and "en" to target the same url
   // See https://www.searchviu.com/en/multiple-hreflang-tags-one-url/
 
   return (
     <Head>
-      {locales.map((locale) => (
+      {Object.entries(localeConfigs).map(([locale, {htmlLang}]) => (
         <link
           key={locale}
           rel="alternate"
@@ -38,7 +37,7 @@ function AlternateLangHeaders() {
             locale,
             fullyQualified: true,
           })}
-          hrefLang={locale}
+          hrefLang={htmlLang}
         />
       ))}
       <link
@@ -79,57 +78,49 @@ function CanonicalUrlHeaders({permalink}) {
 
 export default function LayoutHead(props) {
   const {
-    siteConfig: {
-      favicon,
-      themeConfig: {metadatas},
-    },
+    siteConfig: {favicon},
     i18n: {currentLocale, localeConfigs},
   } = useDocusaurusContext();
-  const {title, description, image, keywords, searchMetadatas} = props;
+  const {metadata, image: defaultImage} = useThemeConfig();
+  const {title, description, image, keywords, searchMetadata} = props;
   const faviconUrl = useBaseUrl(favicon);
-  const pageTitle = useTitleFormatter(title); // See https://github.com/facebook/docusaurus/issues/3317#issuecomment-754661855
-  // const htmlLang = currentLocale.split('-')[0];
-
-  const htmlLang = currentLocale; // should we allow the user to override htmlLang with localeConfig?
-
-  const htmlDir = localeConfigs[currentLocale].direction;
+  const pageTitle = useTitleFormatter(title);
+  const {htmlLang, direction: htmlDir} = localeConfigs[currentLocale];
   return (
     <>
       <Head>
         <html lang={htmlLang} dir={htmlDir} />
-        {favicon && <link rel="shortcut icon" href={faviconUrl} />}
+        {favicon && <link rel="icon" href={faviconUrl} />}
         <title>{pageTitle}</title>
         <meta property="og:title" content={pageTitle} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
-      <Seo
-        {...{
-          description,
-          keywords,
-          image,
-        }}
-      />
+      {/* image can override the default image */}
+      {defaultImage && <Seo image={defaultImage} />}
+      {image && <Seo image={image} />}
+
+      <Seo description={description} keywords={keywords} />
 
       <CanonicalUrlHeaders />
 
-      {/* START EDIT */}
-      {/* <AlternateLangHeaders /> */}
-      {/* END EDIT */}
+      <AlternateLangHeaders />
 
-      <SearchMetadatas
+      <SearchMetadata
         tag={DEFAULT_SEARCH_TAG}
         locale={currentLocale}
-        {...searchMetadatas}
+        {...searchMetadata}
       />
 
       <Head // it's important to have an additional <Head> element here,
       // as it allows react-helmet to override values set in previous <Head>
-      // ie we can override default metadatas such as "twitter:card"
+      // ie we can override default metadata such as "twitter:card"
       // In same Head, the same meta would appear twice instead of overriding
       // See react-helmet doc
       >
-        {metadatas.map((metadata, i) => (
-          <meta key={`metadata_${i}`} {...metadata} />
+        {/* Yes, "metadatum" is the grammatically correct term */}
+        {metadata.map((metadatum, i) => (
+          <meta key={`metadata_${i}`} {...metadatum} />
         ))}
       </Head>
     </>
