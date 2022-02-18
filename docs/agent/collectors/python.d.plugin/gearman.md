@@ -48,4 +48,3 @@ localhost:
 
 When no configuration file is found, module tries to connect to TCP/IP socket: `localhost:4730`.
 
-

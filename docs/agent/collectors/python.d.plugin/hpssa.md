@@ -81,4 +81,3 @@ ssacli_path: /usr/sbin/ssacli
 Save the file and restart the Netdata Agent with `sudo systemctl restart netdata`, or the [appropriate
 method](/docs/configure/start-stop-restart) for your system.
 
-

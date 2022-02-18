@@ -602,4 +602,3 @@ to 50.
 ![hot water
 chart](https://user-images.githubusercontent.com/12159026/28666665-a7d68ad2-72c8-11e7-9a96-f6bf9691b471.png)
 
-

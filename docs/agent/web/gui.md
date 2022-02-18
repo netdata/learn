@@ -165,5 +165,3 @@ file](https://user-images.githubusercontent.com/1153921/62798924-570e6c80-ba94-1
 
 For information on creating custom dashboards from scratch, see the [custom dashboards](/docs/agent/web/gui/custom) or
 [Atlassian Confluence dashboards](/docs/agent/web/gui/confluence) guides.
-
-

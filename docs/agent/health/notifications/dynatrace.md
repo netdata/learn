@@ -32,5 +32,3 @@ The default value is `CUSTOM_INFO`.
 This is a required parameter.
 6. Specify the annotation type. This is the source of the Dynatrace event. Put whatever it fits you, for example, 
 _Netdata Alarm_, which is also the default value.
-
-
