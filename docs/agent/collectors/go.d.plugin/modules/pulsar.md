@@ -121,7 +121,7 @@ module [configuration file](https://github.com/netdata/go.d.plugin/blob/master/c
 
 ## Topic filtering
 
-By default module collects data for all topics but it supports topic filtering. Filtering doesnt exclude a topic stats
+By default module collects data for all topics but it supports topic filtering. Filtering doesn't exclude a topic stats
 from the [summary](#summary)/[namespace](#namespace) stats, it only removes the topic from the [topic](#topic) charts.
 
 To check matcher syntax
@@ -143,7 +143,7 @@ see [matcher documentation](https://github.com/netdata/go.d.plugin/blob/master/p
 
 Module default `update_every` is 60.
 
-`Apache Pulsar` doesnt expose raw counters, it exposes rate. It counts rates every `statsUpdateFrequencyInSecs`. Default
+`Apache Pulsar` doesn't expose raw counters, it exposes rate. It counts rates every `statsUpdateFrequencyInSecs`. Default
 value is 60 seconds.
 
 Module `update_every` should be equal to `statsUpdateFrequencyInSecs`.

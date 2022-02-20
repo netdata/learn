@@ -113,10 +113,10 @@ the sentence is action. In passive voice, the subject is acted upon. A famous ex
 
 ### Second person
 
-Use the second person ("you") to give instructions or "talk" directly to users. 
+Use the second person ("you") to give instructions or "talk" directly to users.
 
 In these situations, avoid "we," "I," "let's," and "us," particularly in documentation. The "you" pronoun can also be
-implied, depending on your sentence structure. 
+implied, depending on your sentence structure.
 
 One valid exception is when a member of the Netdata team or community wants to write about said team or community.
 
@@ -130,7 +130,7 @@ One valid exception is when a member of the Netdata team or community wants to w
 
 Using words that imply the complexity of a task or feature goes against our policy of [universal
 communication](#universal-communication). If you claim that a task is easy and the reader struggles to complete it, you
-may inadvertently discourage them. 
+may inadvertently discourage them.
 
 However, if you give users two options and want to relay that one option is genuinely less complex than another, be
 specific about how and why.

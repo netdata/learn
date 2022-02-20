@@ -80,7 +80,7 @@ Custom log format is easy. Use [known fields](#known-fields) to construct your l
 - If using CSV parser
 
 **Note**: can be used only if all known squid format codes are separated by csv delimiter. For example, if you
-have `%Ss:%Sh`, csv parser cant extract `%Ss` and `%Sh` from it and you need to use RegExp parser.
+have `%Ss:%Sh`, csv parser can't extract `%Ss` and `%Sh` from it and you need to use RegExp parser.
 
 Copy your current log format. Replace all known squid format codes with corresponding [known](#known-fields) fields.
 Replaces others with "-".
@@ -116,7 +116,7 @@ use https://regex101.com/ to test your regular expression.
 
 ```yaml
 jobs:
-  - name: squid_log_custom_regexp_exampla
+  - name: squid_log_custom_regexp_example
     path: /var/log/squid/access.log
     log_type: regexp
     regexp_config:

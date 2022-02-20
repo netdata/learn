@@ -132,7 +132,7 @@ To _change a War Room's name, description, or public/private status_, click on *
 To _add a connected node_ to a War Room, click on **Add Nodes**. Choose any connected node you want to add to this War Room
 by clicking on the checkbox next to its hostname, then click **+ Add** at the top of the panel.
 
-To _view or remove nodes_ in a War Room, click on **List Nodes**. To remove a node from the curernt War Room, click on
+To _view or remove nodes_ in a War Room, click on **List Nodes**. To remove a node from the current War Room, click on
 the **🗑** icon. Removing a node from a War Room does not remove it from your Space.
 
 To _add existing users to a War Room_, click on **Add Users**. See our [invite doc](/docs/cloud/manage/invite-your-team)

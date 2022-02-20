@@ -106,7 +106,7 @@ format using the last line of the log file.
 
 - checks if format is `CSV` (using regexp).
 - checks if format is `JSON` (using regexp).
-- assumes format is `CSV` and tries to find appropriate `CSV` log format using predefind list of formats. It tries to
+- assumes format is `CSV` and tries to find appropriate `CSV` log format using predefined list of formats. It tries to
   parse the line using each of them in the following order:
 
 ```sh
@@ -163,7 +163,7 @@ Notes:
   if SSL is used. The `%O` format provided by [`mod_logio`](https://httpd.apache.org/docs/2.4/mod/mod_logio.html)
   will log the actual number of bytes sent over the network.
 - To get `%I` and `%O` working you need to enable `mod_logio` on Apache.
-- NGINX logs URI with query parameters, Apache doesnt.
+- NGINX logs URI with query parameters, Apache doesn't.
 - `$request` is parsed into `$request_method`, `$request_uri` and `$server_protocol`. If you have `$request` in your log
   format, there is no sense to have others.
 - Don't use both `$bytes_sent` and `$body_bytes_sent` (`%O` and `%B` or `%b`). The module does not distinguish between
@@ -183,10 +183,10 @@ Let's take as an example some non default format.
 
 ```bash
 # apache
-LogFormat "\"%{Referer}i\" \"%{User-agent}i\" %h %l %u %t \"%r\" %>s %b" custom
+LogFormat "\"%{Referrer}i\" \"%{User-agent}i\" %h %l %u %t \"%r\" %>s %b" custom
 
 # nginx
-log_format custom '"$http_referer" "$http_user_agent" '
+log_format custom '"$http_referrer" "$http_user_agent" '
                   '$remote_addr - $remote_user [$time_local] '
                   '"$request" $status $body_bytes_sent'
 ```
@@ -241,7 +241,7 @@ This feature needs:
 
 Pattern syntax: [matcher](https://github.com/netdata/go.d.plugin/tree/master/pkg/matcher#supported-format).
 
-There is an example with 2 custom fields - `$http_referer` and `$http_user_agent`. Weblog is unaware of these fields,
+There is an example with 2 custom fields - `$http_referrer` and `$http_user_agent`. Weblog is unaware of these fields,
 but we still can get some info from them.
 
 ```yaml
@@ -249,9 +249,9 @@ but we still can get some info from them.
     path: /path/to/file.log
     log_type: csv
     csv_config:
-      format: '- - $remote_addr - - [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent"'
+      format: '- - $remote_addr - - [$time_local] "$request" $status $body_bytes_sent "$http_referrer" "$http_user_agent"'
     custom_fields:
-      - name: http_referer     # same name as in 'format' without $
+      - name: http_referrer     # same name as in 'format' without $
         patterns:
           - name: cacti
             match: '~ cacti'
@@ -289,7 +289,7 @@ info from them.
     path: /path/to/file.log
     log_type: csv
     csv_config:
-      format: '%v %a %p %m %H \"%U\" %t %>s %O %I %D %^FB \"%{Referer}i\" \"%{User-Agent}i\" \"%r\"'
+      format: '%v %a %p %m %H \"%U\" %t %>s %O %I %D %^FB \"%{Referrer}i\" \"%{User-Agent}i\" \"%r\"'
     custom_time_fields:
       - name: '^FB'
         histogram: [ .005, .01, .025, .05, .1, .25, .5, 1, 2.5, 5, 10 ] # optional field

@@ -102,7 +102,7 @@ volumes:
 The official `netdata/netdata` Docker image provides the following named tags:
 
 * `stable`: The `stable` tag will always point to the most recently published stable build.
-* `edge`: The `edge` tag will always point ot the most recently published nightly build. In most cases, this is
+* `edge`: The `edge` tag will always point to the most recently published nightly build. In most cases, this is
   updated daily at around 01:00 UTC.
 * `latest`: The `latest` tag will always point to the most recently published build, whether it’s a stable build
   or a nightly build. This is what Docker will use by default if you do not specify a tag.
@@ -275,7 +275,7 @@ VIRTUALIZATION=$(systemd-detect-virt -v) docker-compose up
 
 #### Files inside systemd volumes
 
-If a volume is used by systemd service, some files can be removed during 
+If a volume is used by systemd service, some files can be removed during
 [reinitialization](https://github.com/netdata/netdata/issues/9916). To avoid this, you need to add
 `RuntimeDirectoryPreserve=yes` to the service file.
 
@@ -371,7 +371,7 @@ services:
 
 Since we use an [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) directive, you can provide
 [Netdata daemon command line options](/docs/agent/daemon#command-line-options) such as the IP address Netdata will be
-running on, using the [command instruction](https://docs.docker.com/engine/reference/builder/#cmd). 
+running on, using the [command instruction](https://docs.docker.com/engine/reference/builder/#cmd).
 
 ## Install the Agent using Docker Compose with SSL/TLS enabled HTTP Proxy
 
@@ -479,7 +479,7 @@ Once you have contacted the Netdata owners to setup you up on Github and Travis,
 -   While in Travis settings, under Netdata repository settings in the Environment Variables section, you need to add
     the following:
     -   `DOCKER_USERNAME` and `DOCKER_PWD` variables so that Travis can login to your Docker Hub account and publish
-        Docker images there. 
+        Docker images there.
     -   `REPOSITORY` variable to `NETDATA_DEVELOPER/netdata`, where `NETDATA_DEVELOPER` is your GitHub handle again.
     -   `GITHUB_TOKEN` variable with the token generated on the preparation step, for Travis workflows to function
         properly.

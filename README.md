@@ -215,7 +215,7 @@ existing doc/guide receives a major overhaul/improvement.
 
 1. Open the `/src/data/News.js` file.
   1. Find the `News` array near the top of the page.
-  2. Duplicate an existing item and replace the `title`, `href`, `date`, `type`, and `description` fields. 
+  2. Duplicate an existing item and replace the `title`, `href`, `date`, `type`, and `description` fields.
      1. `title` can be pulled directly from .md file. 
      2. `href` field is the full path, including the root /, to that document.
      3. `date` is the date that doc was published/updated.
@@ -276,7 +276,7 @@ See the [Docusaurus docs](https://v2.docusaurus.io/docs/docs-introduction/#sideb
 
 ## Edit CSS
 
-Global CSS rules are stored in `/src/css/custom.css` file. 
+Global CSS rules are stored in `/src/css/custom.css` file.
 
 The various pages and components that make up Learn also come with extra CSS using [Tailwind](https://tailwindcss.com/),
 which uses utility classes to create styling. You can find these utility classes throughout the components and pages.

@@ -35,7 +35,7 @@ view the full dashboard of the child node. The URL has the form
 
 
 In a headless setup, the child acts as a plain data collector. It spawns all external plugins, but instead of maintaining a
-local database and accepting dashboard requests, it streams all metrics to the parent. 
+local database and accepting dashboard requests, it streams all metrics to the parent.
 
 This setup works great to reduce the memory footprint. Depending on the enabled plugins, memory usage is between 6 MiB and 40 MiB. To reduce the memory usage as much as
 possible, refer to the [performance optimization guide](/guides/configure/performance).
@@ -51,7 +51,7 @@ The user can use all the functions **at both** `http://child-ip:child-port/` and
 
 The child and the parent may have different data retention policies for the same metrics.
 
-Alerts for the child are triggered by **both** the child and the parent. 
+Alerts for the child are triggered by **both** the child and the parent.
 It is possible to enable different alert configurations on the parent and the child.
 
 In order for custom chart names on the child to work correctly, follow the form `type.name`. The parent will truncate the `type` part and substitute the original chart `type` to store the name in the database.
@@ -74,7 +74,7 @@ This allows quite complex setups.
 
 Example:
 
-1.  Netdata nodes `A` and `B` do not maintain a database and stream metrics to Netdata node `C`(live streaming functionality). 
+1.  Netdata nodes `A` and `B` do not maintain a database and stream metrics to Netdata node `C`(live streaming functionality).
 2.  Netdata node `C` maintains a database for `A`, `B`, `C` and archives all metrics to `graphite` with 10 second detail (backends functionality).
 3.  Netdata node `C` also streams data for `A`, `B`, `C` to Netdata `D`, which also collects data from `E`, `F` and `G` from another DMZ (live streaming functionality).
 4.  Netdata node `D` is just a proxy, without a database, that streams all data to a remote site at Netdata `H`.
@@ -120,7 +120,7 @@ this host).
 
 ### Streaming configuration
 
-The new file `stream.conf` contains streaming configuration for a sending and a receiving Netdata node. 
+The new file `stream.conf` contains streaming configuration for a sending and a receiving Netdata node.
 
 To configure streaming on your system:
 1. Generate an API key using `uuidgen`. Note: API keys are just random GUIDs. You can use the same API key on all your Netdata, or use a different API key for any pair of sending-receiving Netdata nodes.
@@ -128,7 +128,7 @@ To configure streaming on your system:
 2. Authorize the communication between a pair of sending-receiving Netdata nodes using the generated API key.
 Once the communication is authorized, the sending Netdata node can push metrics for any number of hosts.
 
-3. To edit `stream.conf`, run `/etc/netdata/edit-config stream.conf` 
+3. To edit `stream.conf`, run `/etc/netdata/edit-config stream.conf`
 
 The following sections describe how you can configure sending and receiving Netdata nodes.
 
@@ -242,7 +242,7 @@ For Netdata v1.9+, streaming can also be monitored via `access.log`.
 ### Securing streaming communications
 
 Netdata does not activate TLS encryption by default. To encrypt streaming connections:
-1. On the parent node (receiving node), [enable TLS support](/docs/agent/web/server#enabling-tls-support). 
+1. On the parent node (receiving node), [enable TLS support](/docs/agent/web/server#enabling-tls-support).
 2. On the child node (sending node), [enable TLS support](/docs/agent/web/server#enabling-tls-support).  
 3. On the child's `stream.conf`, configure the destination as follows:
 
@@ -352,7 +352,7 @@ curl -X GET http://localhost:19999/api/v1/info | grep 'Stream Compression'
 ```
 > Note: If your OS doesn't support Netdata compression the `buildinfo` will not contain the `Stream Compression` statement.
 
-To check if your Netdata Agent has stream compression enabled, run the following GET request in your browser or terminal: 
+To check if your Netdata Agent has stream compression enabled, run the following GET request in your browser or terminal:
 
 ```
  curl -X GET http://localhost:19999/api/v1/info | grep 'stream-compression'
@@ -368,7 +368,7 @@ A compressed data packet is determined and decompressed on the fly.
 #### Limitations
  This limitation will be withdrawn asap and is work-in-progress.
 
-The current implementation of streaming data compression can support only a few number of dimensions in a chart with names that cannot exceed the size of 16384 bytes. In case you experience stream connection problems or gaps in the charts please disable stream compression in the `stream.conf` file. This limitation can be seen in the error.log file with the sequence of the following messages: 
+The current implementation of streaming data compression can support only a few number of dimensions in a chart with names that cannot exceed the size of 16384 bytes. In case you experience stream connection problems or gaps in the charts please disable stream compression in the `stream.conf` file. This limitation can be seen in the error.log file with the sequence of the following messages:
 ```
 Compression error - data discarded
 Message size above limit:
@@ -379,10 +379,10 @@ Netdata Agents are shipped with data compression disabled by default. You can al
 
 With enabled stream compression, a Netdata Agent can negotiate streaming compression with other Netdata Agents. During the negotiation of streaming compression both Netdata Agents should support and enable compression in order to communicate over a compressed stream. The negotiation will result into an uncompressed stream, if one of the Netdata Agents doesn't support **or** has compression disabled.
 
-To enable stream compression: 
+To enable stream compression:
 
-1. Edit `stream.conf` by using the `edit-config` script: 
-`/etc/netdata/edit-config stream.conf`. 
+1. Edit `stream.conf` by using the `edit-config` script:
+`/etc/netdata/edit-config stream.conf`.
 
 2. In the `[stream]` section, set `enable compression` to `yes`.
 ```
@@ -400,7 +400,7 @@ To enable stream compression:
 | Supported & Enabled | uncompressed         | (Supported & Disabled)/Not supported |
 | (Supported & Disabled)/Not supported | uncompressed         | (Supported & Disabled)/Not supported |
 
-In case of parents with multiple children you can select which streams will be compressed by using the same configuration under the `[API_KEY]`, `[MACHINE_GUID]` section. 
+In case of parents with multiple children you can select which streams will be compressed by using the same configuration under the `[API_KEY]`, `[MACHINE_GUID]` section.
 
 This configuration uses AND logic with the default stream compression configuration under the `[stream]` section. This means the stream compression from child to parent will be enabled only if the outcome of the AND logic operation is true (`default compression enabled` && `api key compression enabled`). So both should be enabled to get stream compression otherwise  stream compression is disabled.
 ```  
@@ -713,7 +713,7 @@ STREAM [receive from [child HOSTNAME]:child IP]: `MESSAGE`. Forbidding access."
 -   `API key 'VALUE' is not allowed`: This stream has a wrong API key.
 -   `API key 'VALUE' is not permitted from this IP`: The IP is not allowed to use STREAM with this parent.
 -   `machine GUID 'VALUE' is not allowed.`: The GUID that is trying to send stream is not allowed.
--   `Machine GUID 'VALUE' is not permitted from this IP. `: The IP does not match the pattern or IP allowed to connect 
+-   `Machine GUID 'VALUE' is not permitted from this IP. `: The IP does not match the pattern or IP allowed to connect
     to use stream.
 
 ### Netdata could not create a stream

@@ -73,7 +73,7 @@ Editing documentation locally is the preferred method for complex changes that s
 documentation's style or structure.
 
 Create a fork of the Netdata Agent repository by visit the [Netdata repository](https://github.com/netdata/netdata) and
-clicking on the **Fork** button. 
+clicking on the **Fork** button.
 
 ![Screenshot of forking the Netdata
 repository](https://user-images.githubusercontent.com/1153921/59873572-25f5a380-9351-11e9-92a4-a681fe4a2ed9.png)

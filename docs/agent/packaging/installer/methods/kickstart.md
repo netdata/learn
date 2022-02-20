@@ -14,7 +14,7 @@ This page covers detailed instructions on using and configuring the automatic on
 
 The kickstart script works on all Linux distributions and macOS environments. By default, automatic nightly updates are enabled. If you are installing on macOS, make sure to check the [install documentation for macOS](/docs/agent/packaging/installer/methods/macos) before continuing.
 
-> If you are unsure whether you want nightly or stable releases, read the [installation guide](/docs/agent/packaging/installer#nightly-vs-stable-releases). 
+> If you are unsure whether you want nightly or stable releases, read the [installation guide](/docs/agent/packaging/installer#nightly-vs-stable-releases).
 > If you want to turn off [automatic updates](/docs/agent/packaging/installer#automatic-updates), use the `--no-updates` option. You can find more installation options below.
 
 To install Netdata, run the following as your normal user:
@@ -35,7 +35,7 @@ The `kickstart.sh` script does the following after being downloaded and run usin
 - Attempts to install Netdata using our [official native binary packages](#native-packages).
 - If there are no official native binary packages for your system (or installing that way failed), tries to install
   using a [static build of Netdata](#static-builds) if one is available.
-- If no static build is available, installs required dependencies and then attempts to install by 
+- If no static build is available, installs required dependencies and then attempts to install by
   [building Netdata locally](#local-builds) (by downloading the sources and building them directly).
 - Installs `netdata-updater.sh` to `cron.daily`, so your Netdata installation will be updated with new nightly
   versions, unless you override that with an [optional parameter](#optional-parameters-to-alter-your-installation).

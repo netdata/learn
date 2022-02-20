@@ -25,7 +25,7 @@ We have launched a [discussion forum](https://community.netdata.cloud) where you
 
 ## Spread the word
 
-Community growth allows the project to attract new talent willing to contribute. This talent is then developing new features and improves the project. These new features and improvements attract more users, and so on, in a feedback loop. 
+Community growth allows the project to attract new talent willing to contribute. This talent is then developing new features and improves the project. These new features and improvements attract more users, and so on, in a feedback loop.
 
 **The more people involved, the faster the project evolves.**
 
@@ -125,7 +125,7 @@ You might be interested to join our growing community of contributors if:
 ## What you can expect of us
 
 1. We give our outmost attention to our contributors. We are committed to engage and evaluate every single contribution to our projects
-2. We will acknowledge the value that you are providing and we will clearly state the reasons behind accepting or not accepting a contribution. 
+2. We will acknowledge the value that you are providing and we will clearly state the reasons behind accepting or not accepting a contribution.
 3. We won't accept all contributions, as every contribution adds to the maintenance cost of the codebase. We have to carefully evaluate that cost over the benefit that the particular contribution will bring to users.
 4. We will invite you to the user group on our [Community Forums](https://community.netdata.cloud), reserved only for Netdata Contributors.
 5. If you are a first-time contributor, we will send you a thank you swag package!
@@ -139,7 +139,7 @@ To enable you, we have created a Docker container that has everything you need t
 - You don't need to install any dependencies
 - You isolate your developer environment from your work/personal machine
 
-### Contribution Workflow 
+### Contribution Workflow
 
 1. Fork the repository that you are interested in
 2. Make sure that Docker is installed and started
@@ -147,8 +147,8 @@ To enable you, we have created a Docker container that has everything you need t
 4. Clone your forked repository on your local machine
 5. Open the directory using [Visual Studio Code](https://code.visualstudio.com/download)
 6. Click on the popup box that will appear and says "reopen directory inside developer container"
-7. A VS Code window will appear that will have opened the current directory from inside the container. The filesystem that it shows as also the terminal that you can open is from inside that container. 
-   1. You can start developing without installing any libraries or dependencies. 
+7. A VS Code window will appear that will have opened the current directory from inside the container. The filesystem that it shows as also the terminal that you can open is from inside that container.
+   1. You can start developing without installing any libraries or dependencies.
    2. You can use the pre-installed tools (e.g apt, pip, git) to download additional software that you may need. Everything will be installed inside that particular container.
    3. We have installed a number of VS Code Extensions that we believe are useful to you. You can install any additional number of extensions. Note that these extensions will be installed inside the container and have nothing to do with those extensions that you may have installed locally if you are a VS Code user.
 
@@ -169,7 +169,7 @@ To contribute a new or improved feature:
    1. Authenticate with GitHub from inside the container
    2. Create a new branch and name it after the feature you are developing (e.g "apache-collector"). Switch to that branch.
    3. After you are done developing, you can easily build Netdata from source using the command: `netdata-install`. This alias loads the `netdata-installer.sh` script with a few additional debugging flags to facilitate you in the your work.
-   4. After running `netdata-install` once, you can instead build Netdata from source using `netdata-build`. The first command downloads some additional dependencies from the Internet. Once you have done it, you don't need to repeat it. `netdata-build` is much faster than `netdata-install`. 
+   4. After running `netdata-install` once, you can instead build Netdata from source using `netdata-build`. The first command downloads some additional dependencies from the Internet. Once you have done it, you don't need to repeat it. `netdata-build` is much faster than `netdata-install`.
    5. In case your contribution is in the `netdata-installer.sh` script itself, you will need to use exclusively `netdata-install` to verify that it works as expected.
 5. **Optional:** Valgrind to verify that there are no memory leaks in Netdata after your changes. If you are not familiar with the software, no worries. It's optional!
 6. Build Netdata one last time using `netdata-build` to verify that everything works as expected.
@@ -223,13 +223,13 @@ To contribute a new collector (or improve an existing one):
    1. [netdata/netdata](https://github.com/netdata/netdata) for Python, Shell, and C
    2. [netdata/go.d.plugin](https://github.com/netdata/go.d.plugin) for Golang
 
-### Contribute a new exporting engine destination 
+### Contribute a new exporting engine destination
 
 The exporting engine is written in C and such the contribution process is the same in [Contributing a new feature](#contribute-a-new-feature-or-improve-an-existing-one-for-the-netdata-agent).
 
 ### Contribute a new alarm definition
 
-Netdata has an opinionated approach to monitoring, enabling the user to quickly get up to speed and running, without having to spend any time in creating charts and alarms. As such, it comes with sane defaults that have been curated by both industry experts, our team, and everyday users. 
+Netdata has an opinionated approach to monitoring, enabling the user to quickly get up to speed and running, without having to spend any time in creating charts and alarms. As such, it comes with sane defaults that have been curated by both industry experts, our team, and everyday users.
 
 There are 2 reasons why you may want to contribute to our alarms:
 1. You want to improve the sane defaults by modifying an existing alarm or adding a new one

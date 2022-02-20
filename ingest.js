@@ -111,7 +111,7 @@ function normalizeLinks(pages) {
       // link. Return the normalized link.
       if (url.startsWith('#') || url.startsWith('http') || url.startsWith('mailto')) return `](${url})`
 
-      // Exceptions to accomodate the new documentation structure, with many
+      // Exceptions to accommodate the new documentation structure, with many
       // documents in various `/docs/X` folders.
       if (url.includes('docs/get-started.mdx') || url.includes('docs/overview') || url.includes('docs/collect/') || 
           url.includes('docs/configure/') || url.includes('docs/export/') || url.includes('docs/configure/') || 

@@ -42,7 +42,7 @@ This stack will offer you visibility into your application and systems performan
 To begin let’s create our container which we will install Netdata on. We need to run a container, forward the necessary
 port that Netdata listens on, and attach a tty so we can interact with the bash shell on the container. But before we do
 this we want name resolution between the two containers to work. In order to accomplish this we will create a
-user-defined network and attach both containers to this network. The first command we should run is: 
+user-defined network and attach both containers to this network. The first command we should run is:
 
 ```sh
 docker network create --driver bridge netdata-tutorial
@@ -94,7 +94,7 @@ We will be installing prometheus in a container for purpose of demonstration. Wh
 container I would like to walk through the install process and setup on a fresh container. This will allow anyone
 reading to migrate this tutorial to a VM or Server of any sort.
 
-Let’s start another container in the same fashion as we did the Netdata container. 
+Let’s start another container in the same fashion as we did the Netdata container.
 
 ```sh
 docker run -it --name prometheus --hostname prometheus
@@ -102,7 +102,7 @@ docker run -it --name prometheus --hostname prometheus
 ``` 
 
 This should drop you into a shell once again. Once there quickly install your favorite editor as we will be editing
-files later in this tutorial. 
+files later in this tutorial.
 
 ```sh
 yum install vim -y
