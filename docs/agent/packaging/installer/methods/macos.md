@@ -12,7 +12,7 @@ You could also use a macOS system as the parent node in a [streaming configurati
 You can install Netdata in one of the three following ways: 
 
 - **[Install Netdata with the our automatic one-line installation script (recommended)](#install-netdata-with-our-automatic-one-line-installation-script)**, 
-- [Install Netdata via Homebrew](#install-netdata-with-the-homebrew-package)
+- [Install Netdata via Homebrew](#install-netdata-via-homebrew)
 - [Install Netdata from source](#install-netdata-from-source)
 
 Each of these installation option requires [Homebrew](https://brew.sh/) for handling dependencies. 
