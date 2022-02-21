@@ -1,22 +1,25 @@
-## Manage the daemon
+## Install Netdata
 
-| Intent                      |                                                                Action |
-|:----------------------------|----------------------------------------------------------------------:|
-| Start Netdata               |                                      `$ sudo systemctl start netdata` |
-| Stop Netdata                |                                       `$ sudo systemctl stop netdata` |
-| Restart Netdata             |                                    `$ sudo systemctl restart netdata` |
-| Reload health configuration | `$ sudo netdatacli reload-health` <br></br> `$ killall -USR2 netdata` |
-| View error logs             |                                     `less /var/log/netdata/error.log` |
+#### Install Netdata
 
-## See metrics and dashboards
+```
+wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh
+```
 
-#### Netdata Cloud `https://app.netdata.cloud`
+Or, if you have cURL but not wget (such as on macOS):
 
-#### Local dashboard `https://NODE:19999`
+```
+curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh
+```
 
-> Replace `NODE` with the IP address or hostname of your node. Often `localhost`.
+#### Claim a node to Netdata Cloud
 
-#### Access the Netdata API `http://NODE:19999/api/v1/info`
+```
+wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token TOKEN --claim-rooms ROOM1,ROOM2 --claim-url https://app.netdata.cloud
+```
+
+> Sign in to Netdata Cloud, click the `Claim Nodes` button, choose the `War Rooms` to add nodes to, then click `Copy` to copy the full script to your clipboard. Paste that into your node’s terminal and run it.
+
 
 ## Metrics collection & retention
 
