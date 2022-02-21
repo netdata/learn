@@ -6,13 +6,14 @@
  */
 import React from 'react';
 import Head from '@docusaurus/Head';
-import {useTitleFormatter} from '@docusaurus/theme-common';
+import {useTitleFormatter, useThemeConfig} from '@docusaurus/theme-common';
 import {useBaseUrlUtils} from '@docusaurus/useBaseUrl';
 export default function Seo({title, description, keywords, image, children}) {
+  const {image: defaultImage} = useThemeConfig();
   const pageTitle = useTitleFormatter(title);
   const {withBaseUrl} = useBaseUrlUtils();
   const pageImage = image
-    ? withBaseUrl(image, {
+    ? withBaseUrl(image || defaultImage, {
         absolute: true,
       })
     : undefined;
@@ -21,7 +22,11 @@ export default function Seo({title, description, keywords, image, children}) {
       {title && <title>{pageTitle}</title>}
       {title && <meta property="og:title" content={pageTitle} />}
 
-      {description && <meta name="description" content={description} />}
+      {/* BEGIN EDIT */}
+      {description && <meta name="description" class="swiftype" data-type="string" content={description} />}
+      <meta property="og:type" content="website" />
+      {/* END EDIT */}
+
       {description && <meta property="og:description" content={description} />}
 
       {keywords && (
@@ -33,7 +38,8 @@ export default function Seo({title, description, keywords, image, children}) {
 
       {pageImage && <meta property="og:image" content={pageImage} />}
       {pageImage && <meta name="twitter:image" content={pageImage} />}
-
+      {pageImage && <meta name="twitter:card" content="summary_large_image" />}
+      
       {children}
     </Head>
   );
