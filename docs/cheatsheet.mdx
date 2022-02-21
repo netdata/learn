@@ -11,15 +11,13 @@ using charts, managing the daemon, and more.
 
 import FistColumn from "./_first-column-cheatsheet.md"
 import SecondColumn from "./_second-column-cheatsheet.md"
+import {Grid, Box} from '@site/src/components/Grid/'
 
-<div style={{padding: '1px', float: 'left', width: '48%'}}>
-
-<FistColumn/>
-
-</div>
-
-<div style={{padding: '1px', float: 'right', width: '48%'}}>
-
-<SecondColumn/>
-
-</div>
+<Grid columns="2">
+    <Box>
+        <FistColumn/>
+    </Box>
+    <Box>
+        <SecondColumn/>
+    </Box>
+</Grid>
