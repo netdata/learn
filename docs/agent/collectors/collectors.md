@@ -219,8 +219,6 @@ configure any of these collectors according to your setup and infrastructure.
     accounting statistics from the `status server` using the `radclient` tool.
 -   [Libreswan](/docs/agent/collectors/charts.d.plugin/libreswan): Collect bytes-in, bytes-out, and uptime metrics.
 -   [Icecast](/docs/agent/collectors/python.d.plugin/icecast): Monitor the number of listeners for active sources.
--   [ISC BIND](/docs/agent/collectors/node.d.plugin/named): Collect nameserver summary performance statistics via a web
-    interface (`statistics-channels` feature).
 -   [ISC Bind (RDNC)](/docs/agent/collectors/python.d.plugin/bind_rndc): Collect nameserver summary performance
     statistics using the `rndc` tool.
 -   [ISC DHCP (Go)](/docs/agent/collectors/go.d.plugin/modules/isc_dhcpd): Reads a
@@ -267,13 +265,8 @@ configure any of these collectors according to your setup and infrastructure.
     blockchain indexes, memory usage, network usage, and transactions of wallet instances.
 -   [Energi Core (Python)](/docs/agent/collectors/python.d.plugin/energid): Monitor blockchain, memory, network, and
     unspent transactions statistics.
--   [Fronius Symo](/docs/agent/collectors/node.d.plugin/fronius): Collect power, consumption, autonomy, energy, and inverter
-    statistics.
 -   [UPS/PDU](/docs/agent/collectors/charts.d.plugin/nut): Read the status of UPS/PDU devices using the `upsc` tool.
--   [SMA Sunny WebBox](/docs/agent/collectors/node.d.plugin/sma_webbox): Collect power statistics.
 -   [SNMP devices](/docs/agent/collectors/node.d.plugin/snmp): Gather data using the SNMP protocol.
--   [Stiebel Eltron ISG](/docs/agent/collectors/node.d.plugin/stiebeleltron): Collect metrics from heat pump and hot
-    water installations.
 -   [1-Wire sensors](/docs/agent/collectors/python.d.plugin/w1sensor): Monitor sensor temperature.
 
 ### Search
