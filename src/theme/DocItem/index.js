@@ -52,7 +52,7 @@ const handleSubmit = (e) => {
 	fetch('/', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-		body: encode({ 'form-name': 'thumbs-voting', ...rest }),
+		body: encode({ 'form-name': 'docs-feedback', ...rest }),
 	})
 		.then(() => setFeedback(true))
 		.catch(() => setFeedback(true));
@@ -166,13 +166,13 @@ export default function DocItem(props) {
 								</p>
 								{
 									feedback ? (
-										<p className="text-lg lg:text-xl text-green-lighter">
+										<p className="text-lg lg:text-l text-green-lighter">
 											Thanks for contributing feedback about our docs!
 										</p>
 									) : (
 										<form
 											data-netlify="true"
-											name="thumbs-voting"
+											name="docs-feedback"
 											method="post"
 											onSubmit={handleSubmit}
 										>
@@ -185,7 +185,7 @@ export default function DocItem(props) {
 											<input
 												type="hidden"
 												name="form-name"
-												value="thumbs-voting"
+												value="docs-feedback"
 											/>
 											<input
 												type="hidden"
