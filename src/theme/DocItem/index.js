@@ -231,7 +231,7 @@ export default function DocItem(props) {
 
                 </form>
 
-              ) {/* END EDITS: Netlify feedback form*/}
+              {/* END EDITS: Netlify feedback form*/}
 
               {/* BEGIN EDITS: Edit page button */}
 
