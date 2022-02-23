@@ -23,48 +23,6 @@ import EditThisPage from '@theme/EditThisPage';
 import Link from '@docusaurus/Link';
 import { GoThumbsup, GoThumbsdown } from 'react-icons/go';
 
-// Custom constants that we will use in the export function:
-
-// BEGIN EDITS
-// Netlify Forms: We're using state to figure out whether a user submitted a form yet.
-const [feedback, setFeedback] = useState(false);
-useEffect(() => {
-	if (window.location.search.includes('feedback=true')) {
-		setFeedback(true);
-	}
-}, []);
-
-const encode = (data) => {
-	return Object.keys(data)
-		.map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-		.join('&');
-};
-const [formData, setFormData] = useState({
-	thumb: null,
-	feedback: '',
-	url: metadata.permalink,
-});
-
-const handleSubmit = (e) => {
-	e.preventDefault();
-	const { botfield, ...rest } = formData;
-
-	if (botfield) {
-		setFeedback(true);
-		return;
-	}
-
-	fetch('/', {
-		method: 'POST',
-		headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-		body: encode({ 'form-name': 'docs-feedback', ...rest }),
-	})
-		.then(() => setFeedback(true))
-		.catch(() => setFeedback(true));
-};
-
-// END EDITS
-
 // This function is the source code that renders each documentation page
 export default function DocItem(props) {
 	const { content: DocContent } = props;
@@ -88,6 +46,50 @@ export default function DocItem(props) {
 		!hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
 	const renderTocDesktop =
 		canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
+	// Custom constants that we will use in the export function:
+
+	// BEGIN EDITS
+	// Netlify Forms: We're using state to figure out whether a user submitted a form yet.
+	const [feedback, setFeedback] = useState(false);
+	useEffect(() => {
+		if (window.location.search.includes('feedback=true')) {
+			setFeedback(true);
+		}
+	}, []);
+
+	const encode = (data) => {
+		return Object.keys(data)
+			.map(
+				(key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+			)
+			.join('&');
+	};
+	const [formData, setFormData] = useState({
+		thumb: null,
+		feedback: '',
+		url: metadata.permalink,
+	});
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const { botfield, ...rest } = formData;
+
+		if (botfield) {
+			setFeedback(true);
+			return;
+		}
+
+		fetch('/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: encode({ 'form-name': 'docs-feedback', ...rest }),
+		})
+			.then(() => setFeedback(true))
+			.catch(() => setFeedback(true));
+	};
+
+	// END EDITS
+
 	return (
 		<>
 			<Seo
