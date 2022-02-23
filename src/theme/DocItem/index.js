@@ -4,7 +4,7 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import DocPaginator from '@theme/DocPaginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
@@ -22,7 +22,7 @@ import { ThemeClassNames, useWindowSize } from '@docusaurus/theme-common';
 import LastUpdated from '@theme/LastUpdated';
 import EditThisPage from '@theme/EditThisPage';
 import Link from '@docusaurus/Link';
-import NetlifyForm from './forms.js';
+import { GoThumbsup, GoThumbsdown } from 'react-icons/go';
 
 // This function is the source code that renders each documentation page
 export default function DocItem(props) {
@@ -47,6 +47,161 @@ export default function DocItem(props) {
 		!hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
 	const renderTocDesktop =
 		canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
+
+	// Variables for the Netlify Feedback forms
+
+	const [feedback, setFeedback] = useState(false);
+	useEffect(() => {
+		if (window.location.search.includes('feedback=true')) {
+			setFeedback(true);
+		}
+	}, []);
+
+	const encode = (data) => {
+		return Object.keys(data)
+			.map(
+				(key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+			)
+			.join('&');
+	};
+	const [formData, setFormData] = useState({
+		thumb: null,
+		feedback: '',
+		url: metadata.permalink,
+	});
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const { botfield, ...rest } = formData;
+
+		if (botfield) {
+			setFeedback(true);
+			return;
+		}
+
+		fetch('/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: encode({ 'form-name': 'docs-feedback', ...rest }),
+		})
+			.then(() => setFeedback(true))
+			.catch(() => setFeedback(true));
+	};
+
+	//Checks if feedback has been submitted. If not, the form will be rendered:
+	const feedbackForm = (feedback) => {
+		return feedback ? (
+			<p className="text-lg lg:text-l text-green-lighter">
+				Thanks for contributing feedback about our docs!
+			</p>
+		) : (
+			<form
+				data-netlify="true"
+				name="docs-feedback"
+				method="post"
+				onSubmit={handleSubmit}
+			>
+				<input
+					type="hidden"
+					name="url"
+					aria-label="current url"
+					value={formData.url}
+				/>
+				<input type="hidden" name="form-name" value="docs-feedback" />
+				<input
+					type="hidden"
+					name="thumb"
+					aria-label="How do you like it?"
+					value={formData.thumb}
+				/>
+
+				<div className="text-center block">
+					<button
+						aria-label="Happy"
+						className="group px-4"
+						name="thumbsup"
+						type="button"
+						onClick={(e) =>
+							setFormData((prevFormData) => ({
+								...prevFormData,
+								thumb: 'Happy',
+							}))
+						}
+					>
+						<GoThumbsup
+							className={`w-6 h-6 fill-current text-green-lighter transform transition group-hover:scale-125 group-active:scale-125 ${
+								formData.thumb === 'Happy' && 'scale-125'
+							}`}
+						/>
+					</button>
+					<button
+						aria-label="Unhappy"
+						className="group px-4"
+						name="thumbsdown"
+						type="button"
+						onClick={(e) =>
+							setFormData((prevFormData) => ({
+								...prevFormData,
+								thumb: 'Unhappy',
+							}))
+						}
+					>
+						<GoThumbsdown
+							className={`w-6 h-6 fill-current text-red transform transition group-hover:scale-125 group-active:scale-125 ${
+								formData.thumb === 'Unhappy' && 'scale-125'
+							}`}
+						/>
+					</button>
+				</div>
+
+				<div className="text-sm mt-4 mb-4 block">
+					<label for="feedback-text">Let us know how we can do better:</label>
+					<textarea
+						className="prose-sm mx-auto p-2 border border-gray-200 rounded dark:bg-gray-800 dark:border-gray-500 w-full"
+						id="feedback-text"
+						name="feedback"
+						rows="2"
+						placeholder="What did you like? What can we improve?"
+						onChange={(e) =>
+							setFormData((prevFormData) => ({
+								...prevFormData,
+								[e.target.name]: e.target.value,
+							}))
+						}
+					/>
+				</div>
+
+				<button
+					type="submit"
+					disabled={!formData.thumb && !formData.feedback}
+					className="group relative text-text bg-gray-200 px-4 py-2 rounded disabled:bg-gray-100"
+				>
+					<span className="z-10 relative font-semibold group-hover:text-gray-100 group-disabled:text-text">
+						Submit
+					</span>
+					{(!!formData.thumb || !!formData.feedback) && (
+						<div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded" />
+					)}
+				</button>
+
+				{/* Honeypot to catch spambots */}
+				<p class="invisible">
+					<label>
+						Don't fill this out if you're human:{' '}
+						<input
+							name="botfield"
+							onChange={(e) =>
+								setFormData((prevFormData) => ({
+									...prevFormData,
+									[e.target.name]: e.target.value,
+								}))
+							}
+						/>
+					</label>
+				</p>
+			</form>
+		);
+	};
 
 	return (
 		<>
@@ -121,36 +276,28 @@ export default function DocItem(props) {
 
 							{/* BEGIN EDITS: Feedback/ Community boxes */}
 
-							<div className="markdown prose-sm mt-12 mx-auto p-6 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500">
-								<h2 className="!text-2xl font-bold !mb-4"> Reach out </h2>
-
+							<div className="markdown prose-sm mt-12 mx-auto p-4 divider gray-200  dark:bg-gray-800 dark:border-gray-500">
 								{/* Forms column*/}
 								<div className="flex flex-wrap">
-									<div className="flex-1">
-										<h3 className="!mt-0">Need help?</h3>
-										<NetlifyForm />
+									<div className="flex-1 p-2">
+										<h3 className="!mt-0">Was this page helpful?</h3>
+										{feedbackForm(feedback)}
 									</div>
 
 									{/* Community column*/}
-									<div className="flex-1">
-										<h3 className="!mt-0">Need help?</h3>
+									<div className="flex-1 p-2">
+										<h3 className="!mt-0">Need further help?</h3>
 										<p className="text-sm">
-											If you need help after reading this{' '}
-											{metadata.permalink.includes('/guides/')
-												? 'guide'
-												: 'doc'}
-											, search our{` `}
+											Search for an answer in our{` `}
 											<Link to="https://community.netdata.cloud">
 												community forum
-											</Link>{' '}
-											for an answer.{` `}
-											There's a good chance someone else has already found a
-											solution to the same issue.{` `}
+											</Link>
+											.
 										</p>
 									</div>
 
 									{/* Contribute column*/}
-									<div className="flex-1">
+									<div className="flex-1 p-2">
 										<h3 className="!mt-0">Contribute</h3>
 										<ul className="text-sm">
 											<li>
