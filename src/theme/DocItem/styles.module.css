@@ -7,16 +7,34 @@
 
 .docItemContainer header + *,
 .docItemContainer article > *:first-child {
-  margin-top: 0;
+	margin-top: 0;
 }
 
 @media (min-width: 997px) {
-  .docItemCol {
-    max-width: 75% !important;
-  }
+	.docItemCol {
+		max-width: 75% !important;
+	}
 
-  /* Prevent hydration FOUC, as the mobile TOC needs to be server-rendered */
-  .tocMobile {
-    display: none;
-  }
+	/* Prevent hydration FOUC, as the mobile TOC needs to be server-rendered */
+	.tocMobile {
+		display: none;
+	}
+}
+
+/* Custom CSS */
+
+.docTitle {
+	font-size: 3rem;
+	margin-bottom: calc(var(--ifm-leading-desktop) * var(--ifm-leading));
+}
+
+.docItemContainer {
+	margin: 0 auto;
+	padding: 0 0.5rem;
+}
+
+@media only screen and (max-width: 996px) {
+	.docItemContainer {
+		padding: 0 0.3rem;
+	}
 }
