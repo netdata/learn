@@ -361,4 +361,3 @@ export default function DocItem(props) {
 		</>
 	);
 }
-ya;
