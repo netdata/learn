@@ -293,48 +293,26 @@ export default function DocItem(props) {
 
 								{/* BEGIN EDITS: Community help */}
 								<div className="markdown prose-sm mt-12 mx-auto p-6 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500">
-									<h2 className="!text-2xl font-bold !mb-4">Reach out</h2>
-									<p className="text-sm">
-										If you need help after reading this{' '}
-										{metadata.permalink.includes('/guides/') ? 'guide' : 'doc'},
-										search our{` `}
-										<Link to="https://community.netdata.cloud">
-											community forum
-										</Link>{' '}
-										for an answer.{` `}
-										There's a good chance someone else has already found a
-										solution to the same issue.{` `}
-									</p>
+									<h2 className="!text-2xl font-bold !mb-4"> Reach out </h2>
 									<div className="flex flex-wrap">
 										<div className="flex-1">
-											<h3 className="!mt-0">Documentation</h3>
-											<ul className="text-sm">
-												{editUrl && (
-													<li>
-														<Link to={editUrl}>Edit</Link> this{' '}
-														{metadata.permalink.includes('/guides/')
-															? 'guide'
-															: 'doc'}{' '}
-														directly
-													</li>
-												)}
-												<li>
-													<Link
-														to={`https://community.netdata.cloud/new-topic?category_id=6&tags=documentation&title=Feedback%20or%20suggestion%20on:%20${title.replace(
-															/\s+/g,
-															'%20'
-														)}`}
-													>
-														Suggest an improvement
-													</Link>{' '}
-													for this{' '}
-													{metadata.permalink.includes('/guides/')
-														? 'guide'
-														: 'doc'}{' '}
-													in our forum
-												</li>
-											</ul>
+											<h3 className="!mt-0">Need help?</h3>
+											<p className="text-sm">
+												If you need help after reading this{' '}
+												{metadata.permalink.includes('/guides/')
+													? 'guide'
+													: 'doc'}
+												, search our{` `}
+												<Link to="https://community.netdata.cloud">
+													community forum
+												</Link>{' '}
+												for an answer.{` `}
+												There's a good chance someone else has already found a
+												solution to the same issue.{` `}
+											</p>
 										</div>
+									</div>
+									<div className="flex flex-wrap">
 										<div className="flex-1">
 											<h3 className="!mt-0">Community</h3>
 											<ul className="text-sm">
@@ -346,11 +324,11 @@ export default function DocItem(props) {
 												</li>
 												<li>
 													Learn how to <Link to="/contribute/">contribute</Link>{' '}
-													to Netdata's open-source
+													to Netdata's open-source project
 												</li>
 												<li>
 													Submit a{' '}
-													<Link to="https://community.netdata.cloud/c/feature-requests/7/">
+													<Link to="https://github.com/netdata/netdata/issues/new?assignees=&labels=feature+request%2Cneeds+triage&template=FEAT_REQUEST.yml&title=%5BFeat%5D%3A+">
 														feature request
 													</Link>
 												</li>
