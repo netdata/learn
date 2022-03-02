@@ -280,13 +280,13 @@ export default function DocItem(props) {
 								{/* Forms column*/}
 								<div className="flex flex-wrap">
 									<div className="flex-1 p-2">
-										<h3 className="!mt-0">Was this page helpful?</h3>
+										<h4 className="!mt-0">Was this page helpful?</h4>
 										{feedbackForm(feedback)}
 									</div>
 
 									{/* Community column*/}
 									<div className="flex-1 p-2">
-										<h3 className="!mt-0">Need further help?</h3>
+										<h4 className="!mt-0">Need further help?</h4>
 										<p className="text-sm">
 											Search for an answer in our{` `}
 											<Link to="https://community.netdata.cloud">
@@ -298,7 +298,7 @@ export default function DocItem(props) {
 
 									{/* Contribute column*/}
 									<div className="flex-1 p-2">
-										<h3 className="!mt-0">Contribute</h3>
+										<h4 className="!mt-0">Contribute</h4>
 										<ul className="text-sm">
 											<li>
 												Join our{' '}
