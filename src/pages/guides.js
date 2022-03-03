@@ -231,7 +231,7 @@ const GuideItems = [
     category: 'step-by-step',
     description: (
       <>
-        
+        In this introductory step, we'll talk about the fundamental ideas, philosophies, and UX decisions behind Netdata.
       </>
     )
   },
