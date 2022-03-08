@@ -6,11 +6,18 @@
 
 **Merged pull requests:**
 
+- Add latency dimension [\#12329](https://github.com/netdata/netdata/pull/12329) ([Steve8291](https://github.com/Steve8291))
+- Remove check for config file in stock conf dir [\#12327](https://github.com/netdata/netdata/pull/12327) ([Steve8291](https://github.com/Steve8291))
+- fix underscore in libnetfilter-acct-dev package [\#12326](https://github.com/netdata/netdata/pull/12326) ([Steve8291](https://github.com/Steve8291))
+- fix: returning 0 for CPU frequency when unknown [\#12323](https://github.com/netdata/netdata/pull/12323) ([ilyam8](https://github.com/ilyam8))
+- fix\(health\): adjust 10s\_ipv4\_tcp\_resets\_sent warn trigger [\#12320](https://github.com/netdata/netdata/pull/12320) ([ilyam8](https://github.com/ilyam8))
+- Fix 'connect' typo anomaly-detection-python.md [\#12317](https://github.com/netdata/netdata/pull/12317) ([DanTheMediocre](https://github.com/DanTheMediocre))
 - adds node\_id into mirrored\_hosts list [\#12307](https://github.com/netdata/netdata/pull/12307) ([underhood](https://github.com/underhood))
 - fix: CPU frequency detection for some containers [\#12306](https://github.com/netdata/netdata/pull/12306) ([ilyam8](https://github.com/ilyam8))
 - fix uninstall using kickstart flag [\#12304](https://github.com/netdata/netdata/pull/12304) ([maneamarius](https://github.com/maneamarius))
 - Fixing stderr output when testing tmpdir [\#12298](https://github.com/netdata/netdata/pull/12298) ([godismyjudge95](https://github.com/godismyjudge95))
 - chore: remove unused variable in the system-info script [\#12297](https://github.com/netdata/netdata/pull/12297) ([ilyam8](https://github.com/ilyam8))
+- Pull in build dependencies when updating a locally built install. [\#12294](https://github.com/netdata/netdata/pull/12294) ([Ferroin](https://github.com/Ferroin))
 - fix: cpu system info detection on macOS [\#12293](https://github.com/netdata/netdata/pull/12293) ([ilyam8](https://github.com/ilyam8))
 - fix\(kickstart\): use correct syntax for claiming extra parameters [\#12289](https://github.com/netdata/netdata/pull/12289) ([ilyam8](https://github.com/ilyam8))
 - feat\(health\): add charts.d/nut alarms [\#12285](https://github.com/netdata/netdata/pull/12285) ([ilyam8](https://github.com/ilyam8))
@@ -347,10 +354,6 @@
 - Update pfsense.md [\#11674](https://github.com/netdata/netdata/pull/11674) ([78Star](https://github.com/78Star))
 - fix swap\_used alarm calc [\#11672](https://github.com/netdata/netdata/pull/11672) ([ilyam8](https://github.com/ilyam8))
 - Fix line arguments \(eBPF\) [\#11670](https://github.com/netdata/netdata/pull/11670) ([thiagoftsm](https://github.com/thiagoftsm))
-- Add snapshot message for cloud new architecture [\#11664](https://github.com/netdata/netdata/pull/11664) ([MrZammler](https://github.com/MrZammler))
-- Fix interval usage and reduce I/O [\#11662](https://github.com/netdata/netdata/pull/11662) ([thiagoftsm](https://github.com/thiagoftsm))
-- Update dashboard to version v2.20.9. [\#11661](https://github.com/netdata/netdata/pull/11661) ([netdatabot](https://github.com/netdatabot))
-- Optimize static build and update various dependencies. [\#11660](https://github.com/netdata/netdata/pull/11660) ([Ferroin](https://github.com/Ferroin))
 
 ## [v1.31.0](https://github.com/netdata/netdata/tree/v1.31.0) (2021-05-19)
 
