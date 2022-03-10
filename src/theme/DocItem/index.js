@@ -175,6 +175,7 @@ function DocItem(props) {
                     aria-label="Happy"
                     className="group px-4"
                     name="thumbsup"
+                    data-track="thumbsup"
                     type="button"
                     onClick={e => setFormData(prevFormData => ({ ...prevFormData, thumb: "Happy" }))}
                   >
@@ -184,6 +185,7 @@ function DocItem(props) {
                     aria-label="Unhappy"
                     className="group px-4"
                     name="thumbsdown"
+		    data-track="thumbsdown"
                     type="button"
                     onClick={e => setFormData(prevFormData => ({ ...prevFormData, thumb: "Unhappy" }))}
                   >
