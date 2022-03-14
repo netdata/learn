@@ -15,15 +15,11 @@ using charts, managing the daemon, and more.
 
 #### Install Netdata
 
-```
-wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh
-```
+<OneLineInstallWget/>
 
 Or, if you have cURL but not wget (such as on macOS):
 
-```
-curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh
-```
+<OneLineInstallCurl/>
 
 #### Claim a node to Netdata Cloud
 
@@ -85,7 +81,7 @@ modules:
  cockroachdb: yes # enabled
  ```
 
-#### Edit a collector s config (example)
+#### Edit a collector's config (example)
 
 ```
 $ sudo ./edit-config go.d/mysql.conf
@@ -162,7 +158,9 @@ killall -USR2 netdata
 
 #### The Netdata config directory: `/etc/netdata`
 
-> View the running Netdata configuration if your config directory is not here. The cheatsheet assumes you’re running all commands from within the Netdata config directory!
+> If you don't have such a directory:
+> 📄 [Find your netdata.conf file](https://learn.netdata.cloud/guides/step-by-step/step-04#find-your-netdataconf-file)
+> The cheatsheet assumes you’re running all commands from within the Netdata config directory!
 
 #### Edit Netdata's main config file `$ sudo ./edit-config netdata.conf`
 
