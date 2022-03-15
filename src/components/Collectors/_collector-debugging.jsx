@@ -2,7 +2,9 @@
 	/* This piece of code generates the configuration section of a collector
 Usage: This file needs to be imported in an MDX file like this: 
 
-<CollectorConfiguration
+import CollectorDebug from '@site/src/components/Collectors/_collector-debugging.jsx';
+
+<CollectorDebug
 	pluginName=""
 	collectorName=""
 />

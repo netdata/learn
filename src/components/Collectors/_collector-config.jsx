@@ -1,5 +1,8 @@
-{/* This piece of code generates the configuration section of a collector
+{
+	/* This piece of code generates the configuration section of a collector
 Usage: This file needs to be imported in an MDX file like this: 
+
+import CollectorConfiguration from '@site/src/components/Collectors/_collector-config.jsx';
 
 <CollectorConfiguration
 	configURL=""
@@ -7,7 +10,8 @@ Usage: This file needs to be imported in an MDX file like this:
 />
 
 configURL: Assign the Github URL of the collector's configuration file
-moduleName: Assign the name of the collector in the following schema: PLUGIN/COLLECTOR.conf */}
+moduleName: Assign the name of the collector in the following schema: PLUGIN/COLLECTOR.conf */
+}
 
 import React from 'react';
 import CodeBlock from '@theme/CodeBlock';
