@@ -1,10 +1,21 @@
+{/* This piece of code generates the configuration section of a collector
+Usage: This file needs to be imported in an MDX file like this: 
+
+<CollectorConfiguration
+	configURL=""
+	moduleName=""
+/>
+
+configURL: Assign the Github URL of the collector's configuration file
+moduleName: Assign the name of the collector in the following schema: PLUGIN/COLLECTOR.conf */}
+
 import React from 'react';
 import CodeBlock from '@theme/CodeBlock';
 
-export default function CollectorConfiguration({ moduleName }) {
+export default function CollectorConfiguration({ configURL, moduleName }) {
 	return (
 		<>
-			<p className="markdown">
+			<p>
 				To edit the <code>{moduleName} </code> configuration file:
 			</p>
 
@@ -36,6 +47,11 @@ export default function CollectorConfiguration({ moduleName }) {
 					for your system.
 				</li>
 			</ol>
+
+			<p>
+				For all available options, please see the module{' '}
+				<a href={configURL}>configuration file</a>.
+			</p>
 		</>
 	);
 }
