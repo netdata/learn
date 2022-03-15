@@ -19,10 +19,9 @@ This config file **is not needed by default**. Netdata works fine out of the box
     settings.
 4.  `[health]` to [configure](#health-section-options) general settings for [health monitoring](/docs/agent/health)
 5.  `[registry]` for the [Netdata registry](/docs/agent/registry).
-6.  `[backend]` to set up [streaming and replication](/docs/agent/streaming) options.
-7.  `[statsd]` for the general settings of the [stats.d.plugin](/docs/agent/collectors/statsd.plugin).
-8.  `[plugin:NAME]` sections for each collector plugin, under the comment [Per plugin configuration](#per-plugin-configuration).
-9.  `[CHART_NAME]` sections for each chart defined, under the comment [Per chart configuration](#per-chart-configuration).
+6.  `[statsd]` for the general settings of the [stats.d.plugin](/docs/agent/collectors/statsd.plugin).
+7.  `[plugin:NAME]` sections for each collector plugin, under the comment [Per plugin configuration](#per-plugin-configuration).
+8.  `[CHART_NAME]` sections for each chart defined, under the comment [Per chart configuration](#per-chart-configuration).
 
 The configuration file is a `name = value` dictionary. Netdata will not complain if you set options unknown to it. When you check the running configuration by accessing the URL `/netdata.conf` on your Netdata server, Netdata will add a comment on settings it does not currently use.
 
@@ -128,10 +127,6 @@ monitoring](/docs/agent/health).
 ### [registry] section options
 
 To understand what this section is and how it should be configured, please refer to the [registry documentation](/docs/agent/registry).
-
-### [backend]
-
-Refer to the [streaming and replication](/docs/agent/streaming) documentation.
 
 ## Per-plugin configuration
 

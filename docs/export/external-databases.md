@@ -85,6 +85,5 @@ Graphite_](/guides/export/export-netdata-metrics-graphite).
 ### Related reference documentation
 
 -   [Exporting engine reference](/docs/agent/exporting)
--   [Backends reference (deprecated)](/docs/agent/backends)
 
 
