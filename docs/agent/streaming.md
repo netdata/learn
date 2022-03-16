@@ -203,7 +203,6 @@ that use `*` as wildcard (any number of times) and a `!` prefix for a negative m
 So: `allow from = !10.1.2.3 10.*` will allow all IPs in `10.*` except `10.1.2.3`. The order is
 important: left to right, the first positive or negative match is used.
 
-`allow from` is available in Netdata v1.9+
 
 ##### Tracing
 
