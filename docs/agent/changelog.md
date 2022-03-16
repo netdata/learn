@@ -6,6 +6,13 @@
 
 **Merged pull requests:**
 
+- fix\(charts.d.plugin\): fix recursion in apcupsd\_check and enable it again [\#12418](https://github.com/netdata/netdata/pull/12418) ([ilyam8](https://github.com/ilyam8))
+- fix: temporarily disable charts.d apcupsd collectors [\#12415](https://github.com/netdata/netdata/pull/12415) ([ilyam8](https://github.com/ilyam8))
+- Add additional link to badges doc [\#12412](https://github.com/netdata/netdata/pull/12412) ([Steve8291](https://github.com/Steve8291))
+- chore: remove contrib/sles11 [\#12410](https://github.com/netdata/netdata/pull/12410) ([ilyam8](https://github.com/ilyam8))
+- Update dashboard to version v2.21.3. [\#12407](https://github.com/netdata/netdata/pull/12407) ([netdatabot](https://github.com/netdatabot))
+- chore: remove "web files" options leftovers [\#12403](https://github.com/netdata/netdata/pull/12403) ([ilyam8](https://github.com/ilyam8))
+- Reorder functions properly in updater script. [\#12399](https://github.com/netdata/netdata/pull/12399) ([Ferroin](https://github.com/Ferroin))
 - Fix crash when netdatacli command output too long [\#12393](https://github.com/netdata/netdata/pull/12393) ([underhood](https://github.com/underhood))
 - Dont check host health enabled if host is null [\#12392](https://github.com/netdata/netdata/pull/12392) ([MrZammler](https://github.com/MrZammler))
 - Delay removed event for 60 seconds after the chart's last collected time [\#12388](https://github.com/netdata/netdata/pull/12388) ([MrZammler](https://github.com/MrZammler))
@@ -14,6 +21,7 @@
 - fix\(ebpf.plugin\): remove pid file on exit [\#12379](https://github.com/netdata/netdata/pull/12379) ([thiagoftsm](https://github.com/thiagoftsm))
 - fix: shellcheck warnings in docker run.sh [\#12377](https://github.com/netdata/netdata/pull/12377) ([ilyam8](https://github.com/ilyam8))
 - Fix version handling issues in release workflow. [\#12375](https://github.com/netdata/netdata/pull/12375) ([Ferroin](https://github.com/Ferroin))
+- Fix handling of checks for newer updater script on update. [\#12367](https://github.com/netdata/netdata/pull/12367) ([Ferroin](https://github.com/Ferroin))
 - Fix handling of pushing commits for release process. [\#12359](https://github.com/netdata/netdata/pull/12359) ([Ferroin](https://github.com/Ferroin))
 - Fix chart synchronization with the cloud [\#12356](https://github.com/netdata/netdata/pull/12356) ([stelfrag](https://github.com/stelfrag))
 - minor - fix analytics\_build\_info [\#12354](https://github.com/netdata/netdata/pull/12354) ([underhood](https://github.com/underhood))
@@ -97,6 +105,7 @@
 - Docs fix: Claim nodes in the kickstart script [\#12161](https://github.com/netdata/netdata/pull/12161) ([kickoke](https://github.com/kickoke))
 - Update packaging CI to only run a limited set of jobs on PRs. [\#12156](https://github.com/netdata/netdata/pull/12156) ([Ferroin](https://github.com/Ferroin))
 - kickstart.sh: fix quoting for globbing [\#12148](https://github.com/netdata/netdata/pull/12148) ([fayak](https://github.com/fayak))
+- Remove backends subsystem [\#12146](https://github.com/netdata/netdata/pull/12146) ([vlvkobal](https://github.com/vlvkobal))
 - Removed Google Analytics from the docs [\#12145](https://github.com/netdata/netdata/pull/12145) ([kickoke](https://github.com/kickoke))
 - Docs: Improved kickstart's cloud installation docs [\#12143](https://github.com/netdata/netdata/pull/12143) ([kickoke](https://github.com/kickoke))
 - Documentation: Fixed broken links [\#12142](https://github.com/netdata/netdata/pull/12142) ([kickoke](https://github.com/kickoke))
@@ -262,7 +271,6 @@
 - fix tps decode, add memory usage chart [\#11797](https://github.com/netdata/netdata/pull/11797) ([neotf](https://github.com/neotf))
 - Add localhost hostname to the edit\_command [\#11793](https://github.com/netdata/netdata/pull/11793) ([MrZammler](https://github.com/MrZammler))
 - Initial release of new kickstart script. [\#11764](https://github.com/netdata/netdata/pull/11764) ([Ferroin](https://github.com/Ferroin))
-- Add support to updater for updating native DEB/RPM installs with our official packages. [\#11753](https://github.com/netdata/netdata/pull/11753) ([Ferroin](https://github.com/Ferroin))
 
 ## [1.32.1](https://github.com/netdata/netdata/tree/1.32.1) (2021-12-14)
 
@@ -343,16 +351,6 @@
 - fix log if D\_ACLK is used [\#11763](https://github.com/netdata/netdata/pull/11763) ([underhood](https://github.com/underhood))
 - Don't interrupt popcorn timer for children [\#11758](https://github.com/netdata/netdata/pull/11758) ([underhood](https://github.com/underhood))
 - fix \(cgroups.plugin\): containers name resolution for crio/containerd cri [\#11756](https://github.com/netdata/netdata/pull/11756) ([ilyam8](https://github.com/ilyam8))
-- Add SSL\_MODE\_ENABLE\_PARTIAL\_WRITE to netdata\_srv\_ctx [\#11754](https://github.com/netdata/netdata/pull/11754) ([MrZammler](https://github.com/MrZammler))
-- Update eBPF documenation \(Filesystem and HardIRQ\) [\#11752](https://github.com/netdata/netdata/pull/11752) ([UmanShahzad](https://github.com/UmanShahzad))
-- Adds exit points between env and OTP [\#11751](https://github.com/netdata/netdata/pull/11751) ([underhood](https://github.com/underhood))
-- Teach GH about ML label and its code owners. [\#11750](https://github.com/netdata/netdata/pull/11750) ([vkalintiris](https://github.com/vkalintiris))
-- Update enable-streaming.mdx [\#11747](https://github.com/netdata/netdata/pull/11747) ([caleno](https://github.com/caleno))
-- Minor improvement to CPU number function regarding macOS. [\#11746](https://github.com/netdata/netdata/pull/11746) ([iigorkarpov](https://github.com/iigorkarpov))
-- minor - popocorn no more [\#11745](https://github.com/netdata/netdata/pull/11745) ([underhood](https://github.com/underhood))
-- Update dashboard to version v2.20.11. [\#11743](https://github.com/netdata/netdata/pull/11743) ([netdatabot](https://github.com/netdatabot))
-- Update eBPF documentation [\#11741](https://github.com/netdata/netdata/pull/11741) ([thiagoftsm](https://github.com/thiagoftsm))
-- Change comma possition in v1/info if ml-info is missing [\#11739](https://github.com/netdata/netdata/pull/11739) ([MrZammler](https://github.com/MrZammler))
 
 ## [v1.31.0](https://github.com/netdata/netdata/tree/v1.31.0) (2021-05-19)
 
