@@ -48,6 +48,7 @@ The `kickstart.sh` script accepts a number of optional parameters to control how
 - `--non-interactive`: Don’t prompt for anything and assume yes whenever possible, overriding any automatic detection of an interactive run.
 - `--interactive`: Act as if running interactively, even if automatic detection indicates a run is non-interactive.
 - `--dont-wait`: Synonym for `--non-interactive`
+- `--dry-run`: Show what the installer would do, but don’t actually do any of it.
 - `--dont-start-it`: Don’t auto-start the daemon after installing. This parameter is not guaranteed to work.
 - `--nightly-channel`: Use a nightly build instead of a stable release (this is the default).
 - `--stable-channel`: Use a stable release instead of a nightly build.
@@ -140,7 +141,7 @@ To use `md5sum` to verify the integrity of the `kickstart.sh` script you will do
 run the following:
 
 ```bash
-[ "8ce9f7ab7250dd7c52a3ee4fe6ae0a5a" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "78dc96482a9e6f30d534a1290fe16ab4" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`.
