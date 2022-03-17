@@ -5,11 +5,11 @@ image: /cheatsheet/cheatsheet-meta.png
 sidebar_label: Cheatsheet
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cheatsheet.mdx
 ---
-import { OneLineInstallWget, OneLineInstallCurl } from '../src/components/OneLineInstall/'
+
+import { OneLineInstallWget, OneLineInstallCurl } from '@site/src/components/OneLineInstall/'
+
 Use our management &amp; configuration cheatsheet to simplify your interactions with Netdata, including configuration,
 using charts, managing the daemon, and more.
-
-<div style={{ padding: '2px', float: 'left', width: '48%'}}>
 
 ## Install Netdata
 
@@ -23,14 +23,16 @@ Or, if you have cURL but not wget (such as on macOS):
 
 #### Claim a node to Netdata Cloud
 
-```
-wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token TOKEN --claim-rooms ROOM1,ROOM2 --claim-url https://app.netdata.cloud
-```
-
-> Sign in to Netdata Cloud, click the `Claim Nodes` button, choose the `War Rooms` to add nodes to, then click `Copy` to copy the full script to your clipboard. Paste that into your node’s terminal and run it.
-
+To do so, sign in to Netdata Cloud, click the `Claim Nodes` button, choose the `War Rooms` to add nodes to, then click `Copy` to copy the full script to your clipboard. Paste that into your node’s terminal and run it.
 
 ## Metrics collection & retention
+
+You can tweak your settings in the netdata.conf file.
+📄 [Find your netdata.conf file](https://learn.netdata.cloud/guides/step-by-step/step-04#find-your-netdataconf-file)
+
+Open a new terminal and navigate to the netdata.conf file. Use the edit-config script to make changes: `sudo ./edit-config netdata.conf`
+
+The most popular settings to change are:
 
 #### Increase metrics retention (4GiB)
 
@@ -89,6 +91,29 @@ $ sudo ./edit-config ebpf.conf
 $ sudo ./edit-config python.d/anomalies.conf
 ```
 
+
+## Configuration
+
+#### The Netdata config directory: `/etc/netdata`
+
+> If you don't have such a directory:
+> 📄 [Find your netdata.conf file](https://learn.netdata.cloud/guides/step-by-step/step-04#find-your-netdataconf-file)
+> The cheatsheet assumes you’re running all commands from within the Netdata config directory!
+
+#### Edit Netdata's main config file: `$ sudo ./edit-config netdata.conf`
+
+#### Edit Netdata's other config files (examples):
+
+- `$ sudo ./edit-config apps_groups.conf`
+- `$ sudo ./edit-config ebpf.conf`
+- `$ sudo ./edit-config health.d/load.conf`
+- `$ sudo ./edit-config go.d/prometheus.conf`
+
+#### View the running Netdata configuration: `http://NODE:19999/netdata.conf`
+
+> Replace `NODE` with the IP address or hostname of your node. Often `localhost`.
+
+
 ## Alarms & notifications
 
 #### Add a new alarm
@@ -129,9 +154,6 @@ or if that command doesn't work on your installation, use:
 ```
 killall -USR2 netdata
 ```
-</div>
-
-<div style={{ padding: '2px', float: 'right', width: '48%'}}>
 
 ## Manage the daemon
 
@@ -145,35 +167,13 @@ killall -USR2 netdata
 
 ## See metrics and dashboards
 
-#### Netdata Cloud `https://app.netdata.cloud`
+#### Netdata Cloud: `https://app.netdata.cloud`
 
-#### Local dashboard `https://NODE:19999`
-
-> Replace `NODE` with the IP address or hostname of your node. Often `localhost`.
-
-#### Access the Netdata API `http://NODE:19999/api/v1/info`
-
-
-## Configuration
-
-#### The Netdata config directory: `/etc/netdata`
-
-> If you don't have such a directory:
-> 📄 [Find your netdata.conf file](https://learn.netdata.cloud/guides/step-by-step/step-04#find-your-netdataconf-file)
-> The cheatsheet assumes you’re running all commands from within the Netdata config directory!
-
-#### Edit Netdata's main config file `$ sudo ./edit-config netdata.conf`
-
-#### Edit Netdata's other config files (examples):
-
-- `$ sudo ./edit-config apps_groups.conf`
-- `$ sudo ./edit-config ebpf.conf`
-- `$ sudo ./edit-config health.d/load.conf`
-- `$ sudo ./edit-config go.d/prometheus.conf`
-
-#### View the running Netdata configuration `http://NODE:19999/netdata.conf`
+#### Local dashboard: `https://NODE:19999`
 
 > Replace `NODE` with the IP address or hostname of your node. Often `localhost`.
+
+#### Access the Netdata API: `http://NODE:19999/api/v1/info`
 
 ## Interact with charts
 
@@ -224,4 +224,3 @@ separately from similar instances. Example, disks named
 
 **Contexts**: A grouping of charts based on the types of metrics collected and visualized.
 **disk.io**, **disk.ops**, and **disk.backlog** are all contexts.
-</div>
