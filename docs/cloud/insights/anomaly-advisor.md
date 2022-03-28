@@ -32,3 +32,5 @@ Once you have highlighted a window of interest you should see a ordered list of 
 You can expand any sparkline chart to see the underlying raw data to see how it relates to the corresponding anomaly rate.
 
 ![image](https://user-images.githubusercontent.com/2178292/160403496-868f06fc-0551-4a97-810e-873bdb655e9b.png)
+
+You can read more detail on how anomaly detection in the netdata agent works in our [agent docs](https://github.com/netdata/netdata/blob/master/ml/README.md).
