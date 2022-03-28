@@ -3714,6 +3714,11 @@ dns-txt@^2.0.2:
   dependencies:
     buffer-indexof "^1.0.0"
 
+docusaurus-plugin-smartlook@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-smartlook/-/docusaurus-plugin-smartlook-1.0.1.tgz#6633857ea5fc6f620b885f49c51797d770ed660a"
+  integrity sha512-dXxF08TeeGNivMjdNbR2zPcqjVb6UfrUIPtVhJRiktNBNLLbzxlseo7itBpzZfviJuS7wWcctL1Z2mnp618n2g==
+
 "docusaurus-tailwindcss-loader@file:plugins/docusaurus-tailwindcss-loader":
   version "0.0.0"
 
