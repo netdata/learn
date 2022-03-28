@@ -1,7 +1,8 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Learn Netdata',
-  tagline: 'Here you\'ll find documentation, guides, and reference material for monitoring and troubleshooting your systems with Netdata. Discover new insights of your systems, containers, and applications using per-second metrics, insightful visualizations, and every metric imaginable.',
+  tagline:
+    "Here you'll find documentation, guides, and reference material for monitoring and troubleshooting your systems with Netdata. Discover new insights of your systems, containers, and applications using per-second metrics, insightful visualizations, and every metric imaginable.",
   url: 'https://learn.netdata.cloud',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -14,13 +15,13 @@ module.exports = {
       trackingID: 'GTM-N6CBMJD',
     },
     posthog: {
-        apiKey: "phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv",
-        appUrl: "https://posthog.netdata.cloud",
-        enableInDevelopment: false
+      apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
+      appUrl: 'https://posthog.netdata.cloud',
+      enableInDevelopment: false,
     },
     image: 'img/netdata_meta-default.png',
     prism: {
-      theme: require('prism-react-renderer/themes/dracula')
+      theme: require('prism-react-renderer/themes/dracula'),
     },
     hideableSidebar: true,
     navbar: {
@@ -54,7 +55,7 @@ module.exports = {
         {
           href: 'https://netdata.cloud',
           label: 'netdata.cloud',
-          position: 'right'
+          position: 'right',
         },
         {
           href: 'https://github.com/netdata/netdata',
@@ -102,8 +103,8 @@ module.exports = {
             {
               label: 'GitHub',
               to: 'https://github.com/netdata/netdata',
-            }
-          ]
+            },
+          ],
         },
         {
           title: 'Community',
@@ -115,8 +116,8 @@ module.exports = {
             {
               label: 'Forums',
               to: 'https://community.netdata.cloud/',
-            }
-          ]
+            },
+          ],
         },
         {
           title: 'Company',
@@ -143,23 +144,23 @@ module.exports = {
     'posthog-docusaurus',
     'docusaurus-tailwindcss-loader',
     [
-      "@docusaurus/plugin-content-docs",
+      '@docusaurus/plugin-content-docs',
       {
-        id: "guides",
+        id: 'guides',
         sidebarPath: require.resolve('./src/data/sidebar-guides.js'),
-        path: "./guides",
-        routeBasePath: "guides",
-        include: ["**/*.md", "**/*.mdx"],
+        path: './guides',
+        routeBasePath: 'guides',
+        include: ['**/*.md', '**/*.mdx'],
       },
     ],
     [
-      "@docusaurus/plugin-content-docs",
+      '@docusaurus/plugin-content-docs',
       {
-        id: "contribute",
+        id: 'contribute',
         sidebarPath: require.resolve('./src/data/sidebar-contribute.js'),
-        path: "./contribute",
-        routeBasePath: "contribute",
-        include: ["**/*.md", "**/*.mdx"],
+        path: './contribute',
+        routeBasePath: 'contribute',
+        include: ['**/*.md', '**/*.mdx'],
       },
     ],
   ],
@@ -169,8 +170,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl:
-            'https://github.com/netdata/netdata/edit/master/',
+          editUrl: 'https://github.com/netdata/netdata/edit/master/',
           showLastUpdateTime: true,
         },
         theme: {
@@ -192,7 +192,7 @@ module.exports = {
       rel: 'preload',
       as: 'font',
       type: 'font/woff2',
-      crossorigin: ''
+      crossorigin: '',
     },
     {
       href: '/font/ibm-plex-sans-v8-latin-700.woff2',
@@ -211,10 +211,21 @@ module.exports = {
   ],
   scripts: [
     {
-      src:
-        'https://js.hs-scripts.com/4567453.js',
+      src: 'https://js.hs-scripts.com/4567453.js',
       async: true,
       defer: true,
     },
-  ],
+    {
+      src: {
+        window.smartlook || (function (d) {
+          var o = smartlook = function () { o.api.push(arguments) }, h = d.getElementsByTagName('head')[0];
+          var c = d.createElement('script'); o.api = new Array(); c.async = true; c.type = 'text/javascript';
+          c.charset = 'utf-8'; c.src = 'https://web-sdk.smartlook.com/recorder.js'; h.appendChild(c);
+        })(document);
+        smartlook('init', '377800799eb8bf93639cbef950f4e7581f2e68ae', { region: 'eu' });
+  },
+			async: true,
+			defer: true,
+		},
+	],
 };
