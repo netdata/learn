@@ -5,31 +5,50 @@
  * LICENSE file in the root directory of this source tree.
  */
 import React, { useState, useEffect } from 'react';
-import DocPaginator from '@theme/DocPaginator';
-import DocVersionSuggestions from '@theme/DocVersionSuggestions';
-import Seo from '@theme/Seo';
-import LastUpdated from '@theme/LastUpdated';
-import TOC from '@theme/TOC';
-import EditThisPage from '@theme/EditThisPage';
 import clsx from 'clsx';
+import DocPaginator from '@theme/DocPaginator';
+import DocVersionBanner from '@theme/DocVersionBanner';
+import DocVersionBadge from '@theme/DocVersionBadge';
+import DocItemFooter from '@theme/DocItemFooter';
+import TOC from '@theme/TOC';
+import TOCCollapsible from '@theme/TOCCollapsible';
+import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import {
-	useActivePlugin,
-	useVersions,
-	useActiveVersion,
-} from '@theme/hooks/useDocs';
+	PageMetadata,
+	HtmlClassNameProvider,
+	ThemeClassNames,
+	useWindowSize,
+} from '@docusaurus/theme-common';
+import DocBreadcrumbs from '@theme/DocBreadcrumbs';
+import MDXContent from '@theme/MDXContent';
 
+// Imports that we need for custom code:
+import Seo from '@theme/Seo';
 import Link from '@docusaurus/Link';
-
 import { GoThumbsup, GoThumbsdown } from 'react-icons/go';
 
-const encode = (data) => {
-  return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
+// This function is the source code that renders the metadata for each documentation page
+function DocItemMetadata(props) {
+	const { content: DocContent } = props;
+	const { metadata, frontMatter, assets } = DocContent;
+	const { keywords } = frontMatter;
+	const { description, title } = metadata;
+	const image = assets.image ?? frontMatter.image;
+	return (
+		<PageMetadata
+			{...{
+				title,
+				description,
+				keywords,
+				image,
+			}}
+		/>
+	);
 }
 
-function DocItem(props) {
+// This function is the source code that renders each documentation page
+function DocItemContent(props) {
 	const { content: DocContent } = props;
 	const { metadata, frontMatter } = DocContent;
 	const {
@@ -37,33 +56,22 @@ function DocItem(props) {
 		keywords,
 		hide_title: hideTitle,
 		hide_table_of_contents: hideTableOfContents,
+		toc_min_heading_level: tocMinHeadingLevel,
+		toc_max_heading_level: tocMaxHeadingLevel,
 	} = frontMatter;
-	const {
-		description,
-		title,
-		editUrl,
-		lastUpdatedAt,
-		formattedLastUpdatedAt,
-		lastUpdatedBy,
-	} = metadata;
+	const { description, title } = metadata; // We only add a title if:
+	// - user asks to hide it with front matter
+	// - the markdown content does not already contain a top-level h1 heading
 
-	const { pluginId } = useActivePlugin({
-		failfast: true,
-	});
-	const versions = useVersions(pluginId);
-	const version = useActiveVersion(pluginId); // If site is not versioned or only one version is included
-	// we don't show the version badge
-	// See https://github.com/facebook/docusaurus/issues/3362
+	const shouldAddTitle =
+		!hideTitle && typeof DocContent.contentTitle === 'undefined';
+	const windowSize = useWindowSize();
+	const canRenderTOC =
+		!hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
+	const renderTocDesktop =
+		canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
+	// Variables for the Netlify Feedback forms
 
-	const showVersionBadge = versions.length > 1; // For meta title, using frontMatter.title in priority over a potential # title found in markdown
-	// See https://github.com/facebook/docusaurus/issues/4665#issuecomment-825831367
-
-	const metaTitle = frontMatter.title || title;
-
-	// console.log(metadata)
-
-	// BEGIN EDITS
-	// Netlify Forms: We're using state to figure out whether a user submitted a form yet.
 	const [feedback, setFeedback] = useState(false);
 	useEffect(() => {
 		if (window.location.search.includes('feedback=true')) {
@@ -71,261 +79,281 @@ function DocItem(props) {
 		}
 	}, []);
 
-  const [formData, setFormData] = useState({ thumb: null, feedback: "", url: metadata.permalink })
+	const encode = (data) => {
+		return Object.keys(data)
+			.map(
+				(key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+			)
+			.join('&');
+	};
+	const [formData, setFormData] = useState({
+		thumb: null,
+		feedback: '',
+		url: metadata.permalink,
+	});
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const { botfield, ...rest } = formData;
-    
-    if (botfield) {
-       setFeedback(true)
-       return;
-    }
-    
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "thumbs-voting", ...rest })
-    })
-      .then(() => setFeedback(true))
-      .catch(() => setFeedback(true));
-  };
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const { botfield, ...rest } = formData;
 
-	// END EDITS
+		if (botfield) {
+			setFeedback(true);
+			return;
+		}
 
+		fetch('/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+			body: encode({ 'form-name': 'docs-feedback', ...rest }),
+		})
+			.then(() => setFeedback(true))
+			.catch(() => setFeedback(true));
+	};
+	//Checks if feedback has been submitted. If not, the form will be rendered:
+	const feedbackForm = (feedback) => {
+		return feedback ? (
+			<p className="text-lg lg:text-l text-green-lighter">
+				Thanks for contributing feedback about our docs!
+			</p>
+		) : (
+			<form
+				data-netlify="true"
+				name="docs-feedback"
+				method="post"
+				onSubmit={handleSubmit}
+			>
+				<input
+					type="hidden"
+					name="url"
+					aria-label="current url"
+					value={formData.url}
+				/>
+				<input type="hidden" name="form-name" value="docs-feedback" />
+				<input
+					type="hidden"
+					name="thumb"
+					aria-label="How do you like it?"
+					value={formData.thumb}
+				/>
+
+				<div className="text-center block">
+					<button
+						aria-label="Happy"
+						className="group px-4"
+						name="thumbsup"
+						type="button"
+						onClick={(e) =>
+							setFormData((prevFormData) => ({
+								...prevFormData,
+								thumb: 'Happy',
+							}))
+						}
+					>
+						<GoThumbsup
+							className={`w-6 h-6 fill-current text-green-lighter transform transition group-hover:scale-125 group-active:scale-125 ${
+								formData.thumb === 'Happy' && 'scale-125'
+							}`}
+						/>
+					</button>
+					<button
+						aria-label="Unhappy"
+						className="group px-4"
+						name="thumbsdown"
+						type="button"
+						onClick={(e) =>
+							setFormData((prevFormData) => ({
+								...prevFormData,
+								thumb: 'Unhappy',
+							}))
+						}
+					>
+						<GoThumbsdown
+							className={`w-6 h-6 fill-current text-red transform transition group-hover:scale-125 group-active:scale-125 ${
+								formData.thumb === 'Unhappy' && 'scale-125'
+							}`}
+						/>
+					</button>
+				</div>
+
+				<div className="text-sm mt-4 mb-4 block">
+					<label for="feedback-text">Let us know how we can do better:</label>
+					<textarea
+						className="prose-sm mx-auto p-2 border border-gray-200 rounded dark:bg-gray-800 dark:border-gray-500 w-full"
+						id="feedback-text"
+						name="feedback"
+						rows="2"
+						placeholder="What did you like? What can we improve?"
+						onChange={(e) =>
+							setFormData((prevFormData) => ({
+								...prevFormData,
+								[e.target.name]: e.target.value,
+							}))
+						}
+					/>
+				</div>
+
+				<button
+					type="submit"
+					disabled={!formData.thumb && !formData.feedback}
+					className="group relative text-text bg-gray-200 px-4 py-2 rounded disabled:bg-gray-100"
+				>
+					<span className="z-10 relative font-semibold group-hover:text-gray-100 group-disabled:text-text">
+						Submit
+					</span>
+					{(!!formData.thumb || !!formData.feedback) && (
+						<div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded" />
+					)}
+				</button>
+
+				{/* Honeypot to catch spambots */}
+				<p class="invisible">
+					<label>
+						Don't fill this out if you're human:{' '}
+						<input
+							name="botfield"
+							onChange={(e) =>
+								setFormData((prevFormData) => ({
+									...prevFormData,
+									[e.target.name]: e.target.value,
+								}))
+							}
+						/>
+					</label>
+				</p>
+			</form>
+		);
+	};
 	return (
 		<>
 			<Seo
 				{...{
-					title: metaTitle,
+					title,
 					description,
 					keywords,
 					image,
 				}}
 			/>
-
 			<div className="row">
-				<div
-					className={clsx('col', {
-						[styles.docItemCol]: !hideTableOfContents,
-					})}
-				>
-					<DocVersionSuggestions />
+				<div className={clsx('col', !hideTableOfContents && styles.docItemCol)}>
+					<DocVersionBanner />
 					<div className={styles.docItemContainer}>
 						<article>
-							{showVersionBadge && (
-								<div>
-									<span className="badge badge--secondary">
-										Version: {version.label}
-									</span>
-								</div>
-							)}
-							{!hideTitle && (
-								<header>
-									<h1 className={styles.docTitle}>{title}</h1>
-								</header>
+							<DocBreadcrumbs />
+							<DocVersionBadge />
+
+							{canRenderTOC && (
+								<TOCCollapsible
+									toc={DocContent.toc}
+									minHeadingLevel={tocMinHeadingLevel}
+									maxHeadingLevel={tocMaxHeadingLevel}
+									className={clsx(
+										ThemeClassNames.docs.docTocMobile,
+										styles.tocMobile
+									)}
+								/>
 							)}
 
-							{/* BEGIN EDIT */}
-							{frontMatter.author && (
-								<aside className="flex items-center mb-12">
-									<img
-										src={frontMatter.author_img}
-										className="w-24 h-24 rounded-full"
-										alt={frontMatter.author}
-									/>
-									<div className="ml-4">
-										<span className="block text-lg lg:text-xl font-medium mb-1">
-											{frontMatter.author}
-										</span>
-										<span className="text-sm font-bold uppercase text-gray-400">
-											{frontMatter.author_title}
-										</span>
-									</div>
-								</aside>
-							)}
-							{/* END EDIT */}
+							<div
+								className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}
+							>
+								{/*
+               Title can be declared inside md content or declared through
+               front matter and added manually. To make both cases consistent,
+               the added title is added under the same div.markdown block
+               See https://github.com/facebook/docusaurus/pull/4882#issuecomment-853021120
+               */}
+								{shouldAddTitle && (
+									<header>
+										<Heading as="h1">{title}</Heading>
+									</header>
+								)}
+								{/* BEGIN EDIT: Add author documentation if the metadata is supplied */}
+								{frontMatter.author && (
+									<aside className="flex items-center mb-12">
+										<img
+											src={frontMatter.author_img}
+											className="w-24 h-24 rounded-full"
+											alt={frontMatter.author}
+										/>
+										<div className="ml-4">
+											<span className="block text-lg lg:text-xl font-medium mb-1">
+												{frontMatter.author}
+											</span>
+											<span className="text-sm font-bold uppercase text-gray-400">
+												{frontMatter.author_title}
+											</span>
+										</div>
+									</aside>
+								)}
+								{/* END EDIT */}
 
-							<div className="markdown">
-								<DocContent />
+								<MDXContent>
+									<DocContent />
+								</MDXContent>
 							</div>
-						</article>
-						{/* Netlify forms */}
-						<div className="text-center mt-16 pt-12 border-t border-t-200 dark:border-t-500">
-							<p className="block text-xl lg:text-2xl font-medium mb-4">
-								Did you find this{' '}
-								{metadata.permalink.includes('/guides/') ? 'guide' : 'document'}{' '}
-								helpful?
-							</p>
-							{feedback ? (
-								<p className="text-lg lg:text-xl text-green-lighter">
-									Thanks for contributing feedback about our docs!
-								</p>
-							) : (
-                <form
-                  data-netlify="true"
-                  name="thumbs-voting"
-                  method="post"
-                  onSubmit={handleSubmit}
-                >
-                  <input type="hidden" name="url" aria-label="current url" value={formData.url} />
-                  <input type="hidden" name="form-name" value="thumbs-voting" />
-                  <input type="hidden" name="thumb" aria-label="How do you like it?" value={formData.thumb} />
-                  <button
-                    aria-label="Happy"
-                    className="group px-4"
-                    name="thumbsup"
-                    data-track="thumbsup"
-                    type="button"
-                    onClick={e => setFormData(prevFormData => ({ ...prevFormData, thumb: "Happy" }))}
-                  >
-                    <GoThumbsup className={`w-12 h-12 fill-current text-green-lighter transform transition group-hover:scale-125 group-active:scale-125 ${formData.thumb === "Happy" && "scale-125"}`} />
-                  </button>
-                  <button
-                    aria-label="Unhappy"
-                    className="group px-4"
-                    name="thumbsdown"
-		    data-track="thumbsdown"
-                    type="button"
-                    onClick={e => setFormData(prevFormData => ({ ...prevFormData, thumb: "Unhappy" }))}
-                  >
-                    <GoThumbsdown className={`w-12 h-12 fill-current text-red transform transition group-hover:scale-125 group-active:scale-125 ${formData.thumb === "Unhappy" && "scale-125"}`} />
-                  </button>
+							{/* BEGIN EDITS: Feedback/ Community boxes */}
 
-                  <div className="mt-4 text-center block">
-                    <label for="feedback-text">
-                      Let us know how we can do better:
-                    </label>
-                  </div>
-                  <div className="mt-4 mb-4 block">
-                    <textarea
-                      className="prose-sm mx-auto p-6 border border-gray-200 rounded dark:bg-gray-800 dark:border-gray-500 w-full"
-                      id="feedback-text"
-                      name="feedback"
-                      rows="5"
-                      placeholder="What did you like? What can we improve?"
-                      onChange={e => setFormData(prevFormData => ({ ...prevFormData, [e.target.name]: e.target.value }))}
-                    />
-                  </div>
+							<div className="markdown prose-sm mt-12 mx-auto p-4 divider gray-200  dark:bg-gray-800 dark:border-gray-500">
+								{/* Forms column*/}
+								<div className="flex flex-wrap">
+									<div className="flex-1 p-2">
+										<h4 className="!mt-0">Was this page helpful?</h4>
+										{feedbackForm(feedback)}
+									</div>
 
-
-                  <button type="submit" disabled={!formData.thumb && !formData.feedback} className="group relative text-text bg-gray-200 px-4 py-2 rounded disabled:bg-gray-100">
-                    <span className="z-10 relative font-semibold group-hover:text-gray-100 group-disabled:text-text">Submit</span>
-                    {(!!formData.thumb || !!formData.feedback) &&
-                      <div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded" />
-                    }
-                  </button>
-				  {/*Honeypot to catch spambots*/}
-				  <p class="invisible">
-                    <label>
-                      Don't fill this out if you're human:{' '}
-                      <input
-                        name="botfield"
-                        onChange={e =>
-                          setFormData(prevFormData => ({
-                            ...prevFormData,
-                            [e.target.name]: e.target.value,
-                          }))
-                        }
-                      />
-                    </label>
-                  </p>
-
-                </form>
-              )}
-						</div>
-						{/*Reach out box at the end of the content*/}
-						<div className="markdown prose-sm mt-12 mx-auto p-6 border border-gray-200 rounded shadow-lg dark:bg-gray-800 dark:border-gray-500">
-							<h2 className="!text-2xl font-bold !mb-4">Reach out</h2>
-							<p className="text-sm">
-								If you need help after reading this{' '}
-								{metadata.permalink.includes('/guides/') ? 'guide' : 'doc'},
-								search our{` `}
-								<Link to="https://community.netdata.cloud">
-									community forum
-								</Link>{' '}
-								for an answer.{` `}
-								There's a good chance someone else has already found a solution
-								to the same issue.{` `}
-							</p>
-							<div className="flex flex-wrap">
-								<div className="flex-1">
-									<h3 className="!mt-0">Documentation</h3>
-									<ul className="text-sm">
-										{editUrl && (
-											<li>
-												<Link to={editUrl}>Edit</Link> this{' '}
-												{metadata.permalink.includes('/guides/')
-													? 'guide'
-													: 'doc'}{' '}
-												directly
-											</li>
-										)}
-										<li>
-											<Link
-												to={`https://community.netdata.cloud/new-topic?category_id=6&tags=documentation&title=Feedback%20or%20suggestion%20on:%20${title.replace(
-													/\s+/g,
-													'%20'
-												)}`}
-											>
-												Suggest an improvement
-											</Link>{' '}
-											for this{' '}
-											{metadata.permalink.includes('/guides/')
-												? 'guide'
-												: 'doc'}{' '}
-											in our forum
-										</li>
-									</ul>
-								</div>
-								<div className="flex-1">
-									<h3 className="!mt-0">Community</h3>
-									<ul className="text-sm">
-										<li>
-											Join our{' '}
+									{/* Community column*/}
+									<div className="flex-1 p-2">
+										<h4 className="!mt-0">Need further help?</h4>
+										<p className="text-sm">
+											Search for an answer in our{` `}
 											<Link to="https://community.netdata.cloud">
 												community forum
 											</Link>
-										</li>
-										<li>
-											Learn how to <Link to="/contribute/">contribute</Link> to
-											Netdata's open-source
-										</li>
-										<li>
-											Submit a{' '}
-											<Link to="https://community.netdata.cloud/c/feature-requests/7/">
-												feature request
-											</Link>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						{/* END EDIT */}
-						{(editUrl || lastUpdatedAt || lastUpdatedBy) && (
-							<div className="margin-vert--xl">
-								<div className="row">
-									<div className="col">
-										{editUrl && <EditThisPage editUrl={editUrl} />}
+											.
+										</p>
 									</div>
-									{(lastUpdatedAt || lastUpdatedBy) && (
-										<LastUpdated
-											lastUpdatedAt={lastUpdatedAt}
-											formattedLastUpdatedAt={formattedLastUpdatedAt}
-											lastUpdatedBy={lastUpdatedBy}
-										/>
-									)}
+
+									{/* Contribute column*/}
+									<div className="flex-1 p-2">
+										<h4 className="!mt-0">Contribute</h4>
+										<ul className="text-sm">
+											<li>
+												Join our{' '}
+												<Link to="https://community.netdata.cloud">
+													community forum
+												</Link>
+											</li>
+											<li>
+												Learn how to <Link to="/contribute/">contribute</Link>{' '}
+												to Netdata's open-source project
+											</li>
+											<li>
+												Submit a{' '}
+												<Link to="https://github.com/netdata/netdata/issues/new?assignees=&labels=feature+request%2Cneeds+triage&template=FEAT_REQUEST.yml&title=%5BFeat%5D%3A+">
+													feature request
+												</Link>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
-						)}
-						<div className="margin-vert--lg">
-							<DocPaginator metadata={metadata} />
-						</div>
+
+							{/* END EDITS: Feedback/ Community boxes */}
+
+							<DocItemFooter {...props} />
+						</article>
+
+						<DocPaginator previous={metadata.previous} next={metadata.next} />
 					</div>
 				</div>
-				{!hideTableOfContents && DocContent.toc && (
+				{renderTocDesktop && (
 					<div className="col col--3">
-						<TOC toc={DocContent.toc} />
+						<TOC
+							toc={DocContent.toc}
+							minHeadingLevel={tocMinHeadingLevel}
+							maxHeadingLevel={tocMaxHeadingLevel}
+							className={ThemeClassNames.docs.docTocDesktop}
+						/>
 					</div>
 				)}
 			</div>
@@ -333,4 +361,12 @@ function DocItem(props) {
 	);
 }
 
-export default DocItem;
+export default function DocItem(props) {
+	const docHtmlClassName = `docs-doc-id-${props.content.metadata.unversionedId}`;
+	return (
+		<HtmlClassNameProvider className={docHtmlClassName}>
+			<DocItemMetadata {...props} />
+			<DocItemContent {...props} />
+		</HtmlClassNameProvider>
+	);
+}
