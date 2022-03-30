@@ -14,9 +14,6 @@ module.exports = {
 		smartlook: {
 			projectKey: '377800799eb8bf93639cbef950f4e7581f2e68ae',
 		},
-		gtag: {
-			trackingID: 'GTM-N6CBMJD',
-		},
 		posthog: {
 			apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
 			appUrl: 'https://posthog.netdata.cloud',
@@ -179,6 +176,9 @@ module.exports = {
 				},
 				theme: {
 					customCss: [require.resolve('./src/css/custom.css')],
+				},
+				gtag: {
+					trackingID: 'GTM-N6CBMJD',
 				},
 			},
 		],
