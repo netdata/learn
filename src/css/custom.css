@@ -254,7 +254,7 @@ h1 {
 */
 
 .menu .menu__link {
-	@apply text-text text-sm font-normal dark:text-gray-200;
+	@apply text-sm font-normal;
 }
 
 .menu .menu__link.active {
