@@ -12,10 +12,24 @@ configurations and exports them to the different destinations.
 
 The service discovery pipeline has four jobs:
 
-- [discovery](#discovery): dynamically discovers targets.
-- [tag](#tag): tags discovered targets.
-- [build](#build): creates configuration files from the targets.
-- [export](#export): exports configurations.
+1. [discovery](#discovery) 
+   
+   Dynamically discovers monitoring targets by collecting events from kubernetes API server.
+   Currently it collects POD and SERVICE events.
+   
+2. [tag](#tag) 
+   
+   Dynamically add tags to discovered monitoring targets.
+   Based on the POD and SERVICE fields and using patterns on them, one or more tags are attached to the monitoring targets.
+
+3. [build](#build) 
+   
+   Dynamically creates data collection configurations for the monitored targets, using templates.
+   
+4. [export](#export) 
+   
+   Dynamically exports data collection configurations to allow netdata data collection plugins to use them.
+   Data collection jobs in netdata are created and destroyed as needed.
 
 Routing in a job and between jobs based on `tags` and `selector`.
 
