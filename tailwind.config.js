@@ -96,6 +96,7 @@ module.exports = {
 							marginTop: '0',
 						},
 						blockquote: {
+							color: theme('colors.text'),
 							p: {
 								fontStyle: 'normal',
 								margin: '0',
