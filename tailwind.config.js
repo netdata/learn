@@ -76,6 +76,7 @@ module.exports = {
 						h4: { color: theme('colors.text') },
 						h5: { color: theme('colors.text') },
 						h6: { color: theme('colors.text') },
+						strong: { color: theme('colors.text') },
 						code: {
 							color: theme('colors.green.DEFAULT'),
 							backgroundColor: theme('colors.gray.100'),
