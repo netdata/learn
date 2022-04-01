@@ -136,7 +136,7 @@ function DocItemContent(props) {
 					value={formData.thumb}
 				/>
 
-				<div className="text-center block">
+				<div className="flex mt-6">
 					<button
 						aria-label="Happy"
 						className="group px-4"
@@ -150,7 +150,7 @@ function DocItemContent(props) {
 						}
 					>
 						<GoThumbsup
-							className={`w-6 h-6 fill-current text-green-lighter transform transition group-hover:scale-125 group-active:scale-125 ${
+							className={`w-6 h-6 flex-1 justify-items-auto fill-current text-green-lighter transform transition group-hover:scale-125 group-active:scale-125 ${
 								formData.thumb === 'Happy' && 'scale-125'
 							}`}
 						/>
@@ -168,7 +168,7 @@ function DocItemContent(props) {
 						}
 					>
 						<GoThumbsdown
-							className={`w-6 h-6 fill-current text-red transform transition group-hover:scale-125 group-active:scale-125 ${
+							className={`w-6 h-6 flex-1 justify-items-auto fill-current text-red transform transition group-hover:scale-125 group-active:scale-125 ${
 								formData.thumb === 'Unhappy' && 'scale-125'
 							}`}
 						/>
@@ -178,7 +178,7 @@ function DocItemContent(props) {
 				<div className="text-sm mt-4 mb-4 block">
 					<label for="feedback-text">Let us know how we can do better:</label>
 					<textarea
-						className="prose-sm mx-auto p-2 border border-gray-200 rounded dark:bg-gray-800 dark:border-gray-500 w-full"
+						className="prose-sm p-2 border border-gray-200 rounded w-9/12"
 						id="feedback-text"
 						name="feedback"
 						rows="2"
@@ -293,10 +293,10 @@ function DocItemContent(props) {
 							</div>
 							{/* BEGIN EDITS: Feedback/ Community boxes */}
 
-							<div className="markdown prose-sm mt-12 mx-auto p-4 divider gray-200  dark:bg-gray-800 dark:border-gray-500">
+							<div className="markdown prose-sm mt-12 divider gray-200">
 								{/* Forms column*/}
 								<div className="flex flex-wrap">
-									<div className="flex-1 p-2">
+									<div className="flex-1 pr-2 pt-2">
 										<h4 className="!mt-0">Was this page helpful?</h4>
 										{feedbackForm(feedback)}
 									</div>
@@ -314,7 +314,7 @@ function DocItemContent(props) {
 									</div>
 
 									{/* Contribute column*/}
-									<div className="flex-1 p-2">
+									<div className="flex-1 pl-2 pt-2">
 										<h4 className="!mt-0">Contribute</h4>
 										<ul className="text-sm">
 											<li>
