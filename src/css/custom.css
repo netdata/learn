@@ -14,21 +14,21 @@
 @tailwind utilities;
 
 @responsive {
-  .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
+	.text-shadow {
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
 
-  .text-shadow-md {
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
-  }
+	.text-shadow-md {
+		text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+	}
 
-  .text-shadow-lg {
-    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
-  }
+	.text-shadow-lg {
+		text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+	}
 
-  .text-shadow-none {
-    text-shadow: none;
-  }
+	.text-shadow-none {
+		text-shadow: none;
+	}
 }
 
 /*
@@ -37,42 +37,44 @@
 
 /* ibm-plex-sans-regular - latin */
 @font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('/font/ibm-plex-sans-v8-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/font/ibm-plex-sans-v8-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+		url('/font/ibm-plex-sans-v8-latin-regular.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('/font/ibm-plex-sans-v8-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* ibm-plex-sans-500 - latin */
 @font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 500;
-  src: local(''),
-       url('/font/ibm-plex-sans-v8-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/font/ibm-plex-sans-v8-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 500;
+	src: local(''), url('/font/ibm-plex-sans-v8-latin-500.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('/font/ibm-plex-sans-v8-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* ibm-plex-sans-700 - latin */
 @font-face {
-  font-family: 'IBM Plex Sans';
-  font-style: normal;
-  font-weight: 700;
-  src: local(''),
-       url('/font/ibm-plex-sans-v8-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/font/ibm-plex-sans-v8-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	font-family: 'IBM Plex Sans';
+	font-style: normal;
+	font-weight: 700;
+	src: local(''), url('/font/ibm-plex-sans-v8-latin-700.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('/font/ibm-plex-sans-v8-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /* ibm-plex-mono-regular - latin */
 @font-face {
-  font-family: 'IBM Plex Mono';
-  font-style: normal;
-  font-weight: 400;
-  src: local(''),
-       url('/font/ibm-plex-mono-v6-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/font/ibm-plex-mono-v6-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+	font-family: 'IBM Plex Mono';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+		url('/font/ibm-plex-mono-v6-latin-regular.woff2') format('woff2'),
+		/* Chrome 26+, Opera 23+, Firefox 39+ */
+			url('/font/ibm-plex-mono-v6-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 /*
@@ -80,16 +82,16 @@
 */
 
 .body {
-  @apply font-sans text-text bg-white;
+	@apply font-sans text-text bg-white;
 }
 
 .container {
-  @apply max-w-screen-lg lg:max-w-screen-xl px-6;
-  max-width: 1280px !important;
+	@apply max-w-screen-lg lg:max-w-screen-xl px-6;
+	max-width: 1280px !important;
 }
 
 a:hover {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 /*
@@ -97,35 +99,36 @@ a:hover {
 */
 
 .navbar__brand {
-  @apply pr-4;
+	@apply pr-4;
 }
 
 .navbar__brand strong {
-  @apply font-medium;
+	@apply font-medium;
 }
 
 .navbar__brand:hover {
-  @apply text-blue-light;
+	@apply text-blue-light;
 }
 
 .navbar__logo {
-  @apply h-6 mr-2;
+	@apply h-6 mr-2;
 }
 
 .navbar__link {
-  @apply font-normal;
+	@apply font-normal;
 }
 
 .header-github-link::before {
-  background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
-  content: "";
-  display: flex;
-  height: 24px;
-  width: 24px;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+		no-repeat;
+	content: '';
+	display: flex;
+	height: 24px;
+	width: 24px;
 }
 
 .react-toggle .react-toggle-track {
-  @apply bg-gray-50;
+	@apply bg-gray-50;
 }
 
 /*
@@ -133,11 +136,11 @@ a:hover {
 */
 
 .navbar__toggle {
-  @apply text-white;
+	@apply text-white;
 }
 
 .navbar-sidebar .menu .menu__link {
-  @apply text-xl text-white py-2;
+	@apply text-xl text-white py-2;
 }
 
 /*
@@ -145,104 +148,105 @@ a:hover {
 */
 
 .SearchModal {
-  max-height: calc(100vh - 12rem);
+	max-height: calc(100vh - 12rem);
 }
 
 .sui-layout .sui-sorting,
 .sui-layout .sui-result,
 .sui-layout .sui-paging-info,
 .sui-layout .sui-results-per-page {
-  @apply font-sans;
+	@apply font-sans;
 }
 
 .sui-layout .sui-layout-body {
-  @apply bg-gray-50 dark:bg-gray-800;
+	@apply bg-gray-50 dark:bg-gray-800;
 }
 
 .sui-layout .sui-layout-body::after {
-  background: none;
-  @apply dark:bg-gray-800;
+	background: none;
+	@apply dark:bg-gray-800;
 }
 
 .sui-layout .sui-search-box__text-input {
-  @apply text-lg text-text dark:text-gray-100 border-gray-200 bg-white dark:bg-gray-900 rounded focus:border-green-light;
+	@apply text-lg text-text dark:text-gray-100 border-gray-200 bg-white dark:bg-gray-900 rounded focus:border-green-light;
 }
 
 .sui-layout .sui-search-box__submit {
-  @apply relative text-base text-text dark:text-gray-100 border-gray-200 rounded;
-  background: none;
+	@apply relative text-base text-text dark:text-gray-100 border-gray-200 rounded;
+	background: none;
 }
 
 .sui-layout .sui-search-box__submit:hover {
-  background: none;
+	background: none;
 }
 
 .sui-layout .sui-layout-main-header {
-  @apply mb-6;
+	@apply mb-6;
 }
 
 .sui-layout .sui-paging-info,
 .sui-layout .sui-results-per-page__label {
-  @apply dark:text-gray-100;
+	@apply dark:text-gray-100;
 }
 
 .sui-layout .sui-result {
-  @apply dark:bg-gray-800;
+	@apply dark:bg-gray-800;
 }
 
 .sui-layout .sui-result__header {
-  @apply px-6 mb-4;
+	@apply px-6 mb-4;
 }
 
 .sui-layout .sui-result__title {
-  @apply text-xl text-green-light hover:text-blue;
+	@apply text-xl text-green-light hover:text-blue;
 }
 
 .sui-layout .sui-result__body {
-  @apply text-sm px-6 dark:text-gray-100;
+	@apply text-sm px-6 dark:text-gray-100;
 }
 
 .sui-layout .sui-result em {
-  @apply dark:text-blue-lighter;
+	@apply dark:text-blue-lighter;
 }
 
 /*
  * Markdown/prose
 */
 
+/*Tailwind prose styles the text;  dark:prose-dark is needed to correctly render dark mode. */
 .markdown {
-  @apply prose dark:prose-dark max-w-none;
+	@apply prose max-w-none;
 }
 
 h1 {
-  @apply font-bold;
+	@apply font-bold;
 }
 
 .markdown a {
-  @apply hover:text-green dark:hover:text-green-lighter;
+	@apply hover:text-green;
 }
 
 .dark .markdown a {
-  @apply hover:text-blue;
+	@apply hover:text-blue;
 }
 
 .markdown a code {
-  @apply transition text-green hover:text-blue;
+	@apply transition text-green hover:text-blue;
 }
 
 .markdown p > img {
-  @apply block mx-auto rounded shadow-lg;
+	@apply block mx-auto rounded shadow-lg;
 }
 
 .markdown p > img[src*='icon/assets/'],
 .markdown p > img[src*='registry.my-netdata.io'],
 .markdown p > img.img__inline {
-  @apply inline-block m-0 rounded dark:bg-gray-50;
+	@apply inline-block m-0 rounded dark:bg-gray-50;
 }
 
 .markdown blockquote p:before,
 .markdown blockquote p:after {
-  content: none !important;
+	content: none !important;
 }
 
 /*
@@ -250,11 +254,11 @@ h1 {
 */
 
 .menu .menu__link {
-  @apply text-text text-sm font-normal dark:text-gray-200;
+	@apply text-sm font-normal;
 }
 
 .menu .menu__link.active {
-  @apply bg-gray-100 text-green dark:bg-gray-800 dark:text-green-lighter;
+	@apply bg-gray-100 text-green dark:bg-gray-800 dark:text-green-lighter;
 }
 
 /*
@@ -262,32 +266,34 @@ h1 {
 */
 
 :root {
-  --ifm-background-color: #fdfdfd;
-  --ifm-color-primary: #00AB44;
-  --ifm-color-primary-dark: #009a3d;
-  --ifm-color-primary-darker: #00913a;
-  --ifm-color-primary-darkest: #007830;
-  --ifm-color-primary-light: #00CB51;
-  --ifm-color-primary-lighter: #75D54A;
-  --ifm-color-primary-lightest: #00CB51;
-  --ifm-font-size-base: 16px;
-  --ifm-line-height-base: 1.8;
-  --ifm-heading-font-weight: 600;
-  --ifm-code-font-size: 105%;
-  --ifm-pre-padding: 2rem;
-  --ifm-navbar-padding-horizontal: 1.5rem;
-  --ifm-navbar-background-color: #35414a;
-  --ifm-navbar-link-color: white;
-  --ifm-navbar-link-hover-color: var(--ifm-color-primary-light);
+	--ifm-background-color: #fdfdfd;
+	--ifm-color-primary: #00ab44;
+	--ifm-color-primary-dark: #009a3d;
+	--ifm-color-primary-darker: #00913a;
+	--ifm-color-primary-darkest: #007830;
+	--ifm-color-primary-light: #00cb51;
+	--ifm-color-primary-lighter: #75d54a;
+	--ifm-color-primary-lightest: #00cb51;
+	--ifm-heading-font-family: 'IBM Plex Sans';
+	--ifm-font-size-base: 16px;
+	--ifm-line-height-base: 1.8;
+	--ifm-heading-font-weight: 600;
+	--ifm-code-font-size: 105%;
+	--ifm-pre-padding: 2rem;
+	--ifm-navbar-padding-horizontal: 1.5rem;
+	--ifm-navbar-background-color: #35414a;
+	--ifm-navbar-link-color: white;
+	--ifm-navbar-link-hover-color: var(--ifm-color-primary-light);
 }
 
-html[data-theme="dark"]:root {
-  --ifm-background-color: #35414a;
-  --ifm-navbar-background-color: #2b3136;
-  --ifm-navbar-link-color: white;
-  --ifm-navbar-link-hover-color: var(--ifm-color-primary-light);
-  --ifm-font-color-base: #f5f6f7;
-  --ifm-link-color: var(--ifm-color-primary-light);
+html[data-theme='dark']:root {
+	--ifm-background-color: #35414a;
+	--ifm-navbar-background-color: #2b3136;
+	--ifm-navbar-link-color: #f5f6f7;
+	--ifm-navbar-link-hover-color: var(--ifm-color-primary-light);
+	--ifm-font-color-base: #f5f6f7;
+	--ifm-link-color: var(--ifm-color-primary-light);
+	--ifm-table-head-color: #f5f6f7;
 }
 
 /*
@@ -295,8 +301,20 @@ html[data-theme="dark"]:root {
 */
 
 .docusaurus-highlight-code-line {
-  background-color: rgb(72, 77, 91);
-  display: block;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
+	background-color: rgb(72, 77, 91);
+	display: block;
+	margin: 0 calc(-1 * var(--ifm-pre-padding));
+	padding: 0 var(--ifm-pre-padding);
+}
+
+/* Styles the timeline on the netdata.learn homepage*/
+#timeline {
+	background: rgb(0, 203, 81);
+	background: linear-gradient(
+		180deg,
+		rgba(0, 203, 81, 0) 0%,
+		rgba(0, 203, 81, 0.65) 10%,
+		rgba(0, 203, 81, 0.6516806551722252) 90%,
+		rgba(0, 203, 81, 0) 100%
+	);
 }

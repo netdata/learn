@@ -14,9 +14,6 @@ module.exports = {
 		smartlook: {
 			projectKey: '377800799eb8bf93639cbef950f4e7581f2e68ae',
 		},
-		gtag: {
-			trackingID: 'GTM-N6CBMJD',
-		},
 		posthog: {
 			apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
 			appUrl: 'https://posthog.netdata.cloud',
@@ -51,12 +48,12 @@ module.exports = {
 					label: 'Contribute',
 				},
 				{
-					href: 'https://community.netdata.cloud/docs',
+					to: 'https://community.netdata.cloud/',
 					position: 'left',
-					label: 'FAQ',
+					label: 'Community',
 				},
 				{
-					href: 'https://netdata.cloud',
+					to: 'https://netdata.cloud',
 					label: 'netdata.cloud',
 					position: 'right',
 				},
@@ -76,11 +73,11 @@ module.exports = {
 					items: [
 						{
 							label: 'Agent',
-							href: 'https://netdata.cloud/agent',
+							to: 'https://netdata.cloud/agent',
 						},
 						{
 							label: 'Cloud',
-							href: 'https://netdata.cloud/cloud',
+							to: 'https://netdata.cloud/cloud',
 						},
 						{
 							label: 'Integrations',
@@ -88,7 +85,7 @@ module.exports = {
 						},
 						{
 							label: 'Status',
-							href: 'https://status.netdata.cloud',
+							to: 'https://status.netdata.cloud',
 						},
 					],
 				},
@@ -127,15 +124,15 @@ module.exports = {
 					items: [
 						{
 							label: 'About',
-							href: 'https://netdata.cloud',
+							to: 'https://netdata.cloud',
 						},
 						{
 							label: 'News',
-							href: 'https://www.netdata.cloud/news/',
+							to: 'https://www.netdata.cloud/news/',
 						},
 						{
 							label: 'Careers',
-							href: 'https://careers.netdata.cloud/',
+							to: 'https://careers.netdata.cloud/',
 						},
 					],
 				},
@@ -179,6 +176,9 @@ module.exports = {
 				},
 				theme: {
 					customCss: [require.resolve('./src/css/custom.css')],
+				},
+				gtag: {
+					trackingID: 'GTM-N6CBMJD',
 				},
 			},
 		],
