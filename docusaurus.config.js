@@ -48,12 +48,12 @@ module.exports = {
 					label: 'Contribute',
 				},
 				{
-					href: 'https://community.netdata.cloud/',
+					to: 'https://community.netdata.cloud/',
 					position: 'left',
 					label: 'Community',
 				},
 				{
-					href: 'https://netdata.cloud',
+					to: 'https://netdata.cloud',
 					label: 'netdata.cloud',
 					position: 'right',
 				},
@@ -73,11 +73,11 @@ module.exports = {
 					items: [
 						{
 							label: 'Agent',
-							href: 'https://netdata.cloud/agent',
+							to: 'https://netdata.cloud/agent',
 						},
 						{
 							label: 'Cloud',
-							href: 'https://netdata.cloud/cloud',
+							to: 'https://netdata.cloud/cloud',
 						},
 						{
 							label: 'Integrations',
@@ -85,7 +85,7 @@ module.exports = {
 						},
 						{
 							label: 'Status',
-							href: 'https://status.netdata.cloud',
+							to: 'https://status.netdata.cloud',
 						},
 					],
 				},
@@ -124,15 +124,15 @@ module.exports = {
 					items: [
 						{
 							label: 'About',
-							href: 'https://netdata.cloud',
+							to: 'https://netdata.cloud',
 						},
 						{
 							label: 'News',
-							href: 'https://www.netdata.cloud/news/',
+							to: 'https://www.netdata.cloud/news/',
 						},
 						{
 							label: 'Careers',
-							href: 'https://careers.netdata.cloud/',
+							to: 'https://careers.netdata.cloud/',
 						},
 					],
 				},
