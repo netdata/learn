@@ -175,8 +175,10 @@ function DocItemContent(props) {
 					</button>
 				</div>
 
-				<div className="text-sm mt-4 mb-4 block">
-					<label for="feedback-text">Let us know how we can do better:</label>
+				<div className="text-sm mt-4 mb-4 ">
+					<label for="feedback-text" className="inline-block w-9/12">
+						Let us know how we can do better:
+					</label>
 					<textarea
 						className="prose-sm p-2 border border-gray-200 rounded w-9/12"
 						id="feedback-text"
