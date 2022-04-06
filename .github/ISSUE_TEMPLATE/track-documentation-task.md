@@ -27,7 +27,7 @@ Supply further description as needed.
 - [ ] Get technical review
 - [ ] Get peer review
 
-## Production
+## Publication
 <!-- Amend/ add tasks as needed -->
 - [ ] Merge PR
 - [ ] Approve ingest PR on netdata/learn
