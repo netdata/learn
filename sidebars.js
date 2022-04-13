@@ -403,7 +403,6 @@ module.exports = {
           type: 'category',
           label: 'Alerts and notifications',
           items: [
-            'cloud/alerts-notifications/view-active-alerts',
             'cloud/alerts-notifications/smartboard',
             'cloud/alerts-notifications/notifications',
           ]
