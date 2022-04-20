@@ -67,6 +67,7 @@ notification platform.
 -   [**Email**](/docs/agent/health/notifications/email)
 -   [**Flock**](/docs/agent/health/notifications/flock)
 -   [**Google Hangouts**](/docs/agent/health/notifications/hangouts)
+-   [**Gotify**](/docs/agent/health/notifications/gotify)
 -   [**IRC**](/docs/agent/health/notifications/irc)
 -   [**Kavenegar**](/docs/agent/health/notifications/kavenegar)
 -   [**Matrix**](/docs/agent/health/notifications/matrix)
@@ -143,5 +144,4 @@ architecture](/docs/store/distributed-data-architecture) for the best-in-class p
 
 - [Netdata Cloud · Alarm notifications](/docs/cloud/alerts-notifications/notifications)
 - [Netdata Agent · Notifications](/docs/agent/health/notifications)
-
 
