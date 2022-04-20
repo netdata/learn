@@ -1,17 +1,30 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.33.1';
+export const ReleaseVersion = '1.34.1';
 
-export const ReleaseDate = 'February 14, 2022';
+export const ReleaseDate = 'April 15, 2022';
 
 export const ReleaseNotes = [
-	'Updated kickstart script to enable automatic installation via DEB or RPM packages wherever available.',
-	'Save up to 70% bandwidth with the stream compression (still in testing)',
-	'Improved eBPF monitoring compatibility by introducing eBPF CO-RE (Compile Once, Run Everywhere)',
-	'Legacy version of the Agent-Cloud link (ACLK) is now deprecated',
+	'Kubernetes Monitoring: New charts for CPU throttling',
+	'Machine learning (ML) powered anomaly detection has been optimized to run on the edge',
+	'Streaming compression is now enabled by default - allowing you to save up to 70% of bandwidth',
+	'SNMP collector now runs on Go',
 ];
 
+
+
 export const News = [
+	{
+		title: <>SNMP collector now runs on Go</>,
+		href: '/docs/agent/collectors/go.d.plugin/modules/snmp',
+		date: 'March 28, 2022',
+		type: 'Doc',
+		description: (
+			<>
+				Go is known for its reliability and blazing speed - precisely what you need when monitoring networks. We've rewritten our SNMP collector from Node.js to Go. Apart from improved configuration options, the new collector eliminates the need for Node.js, slimming down our dependency tree.
+			</>
+		),
+	},
 	{
 		title: <>Play pretend: The kickstart script now has a dry-run mode</>,
 		href: '/docs/agent/packaging/installer/update#determine-which-installation-method-you-used',
@@ -79,17 +92,5 @@ export const News = [
 			</>
 		),
 	},
-	{
-		title: <>Kubernetes monitoring with Netdata: Overview and visualizations</>,
-		href: '/guides/monitor/kubernetes-k8s-netdata',
-		date: 'May 5, 2021',
-		type: 'Guide',
-		description: (
-			<>
-				Learn how to navigate Netdata's Kubernetes monitoring features for
-				visualizing the health and performance of a Kubernetes cluster with
-				per-second granulrity.
-			</>
-		),
-	},
+	
 ];
