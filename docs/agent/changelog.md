@@ -2,17 +2,45 @@
 
 ## [**Next release**](https://github.com/netdata/netdata/tree/HEAD)
 
-[Full Changelog](https://github.com/netdata/netdata/compare/v1.33.1...HEAD)
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.34.1...HEAD)
 
 **Merged pull requests:**
 
+- Disable automake dependency tracking in our various one-time builds. [\#12701](https://github.com/netdata/netdata/pull/12701) ([Ferroin](https://github.com/Ferroin))
+- Add missing values to algorithm vector \(eBPF\) [\#12698](https://github.com/netdata/netdata/pull/12698) ([thiagoftsm](https://github.com/thiagoftsm))
+
+## [v1.34.1](https://github.com/netdata/netdata/tree/v1.34.1) (2022-04-15)
+
+[Full Changelog](https://github.com/netdata/netdata/compare/1.34.0...v1.34.1)
+
+## [1.34.0](https://github.com/netdata/netdata/tree/1.34.0) (2022-04-14)
+
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.34.0...1.34.0)
+
+## [v1.34.0](https://github.com/netdata/netdata/tree/v1.34.0) (2022-04-14)
+
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.33.1...v1.34.0)
+
+**Merged pull requests:**
+
+- Cancel anomaly detection threads before joining. [\#12681](https://github.com/netdata/netdata/pull/12681) ([vkalintiris](https://github.com/vkalintiris))
+- Update dashboard to version v2.25.0. [\#12680](https://github.com/netdata/netdata/pull/12680) ([netdatabot](https://github.com/netdatabot))
+- Delete ML-related data of a host in the proper order. [\#12672](https://github.com/netdata/netdata/pull/12672) ([vkalintiris](https://github.com/vkalintiris))
+- fix\(ebpf.plugin\): add missing chart context for cgroups charts [\#12671](https://github.com/netdata/netdata/pull/12671) ([ilyam8](https://github.com/ilyam8))
+- Remove on pull\_request trigger [\#12670](https://github.com/netdata/netdata/pull/12670) ([dimko](https://github.com/dimko))
+- \[Stream compression Docs\] - Enabled by default [\#12669](https://github.com/netdata/netdata/pull/12669) ([odynik](https://github.com/odynik))
+- Update dashboard to version v2.24.0. [\#12668](https://github.com/netdata/netdata/pull/12668) ([netdatabot](https://github.com/netdatabot))
+- Show error when clock synchronization state is unavailable [\#12667](https://github.com/netdata/netdata/pull/12667) ([vlvkobal](https://github.com/vlvkobal))
+- Dashboard network title [\#12665](https://github.com/netdata/netdata/pull/12665) ([thiagoftsm](https://github.com/thiagoftsm))
 - bump go.d.plugin version to v0.32.2 [\#12663](https://github.com/netdata/netdata/pull/12663) ([ilyam8](https://github.com/ilyam8))
 - Properly limit repository configuration dependencies. [\#12661](https://github.com/netdata/netdata/pull/12661) ([Ferroin](https://github.com/Ferroin))
 - Show --build-only instead of --only-build [\#12657](https://github.com/netdata/netdata/pull/12657) ([MrZammler](https://github.com/MrZammler))
 - Update dashboard to version v2.22.6. [\#12653](https://github.com/netdata/netdata/pull/12653) ([netdatabot](https://github.com/netdatabot))
+- Add a chart label filter parameter in context data queries [\#12652](https://github.com/netdata/netdata/pull/12652) ([stelfrag](https://github.com/stelfrag))
 - Add a timeout parameter to data queries [\#12649](https://github.com/netdata/netdata/pull/12649) ([stelfrag](https://github.com/stelfrag))
 - fix: remove instance-specific information from chart titles [\#12644](https://github.com/netdata/netdata/pull/12644) ([ilyam8](https://github.com/ilyam8))
 - feat: add k8s\_cluster\_name host tag \(GKE only\) [\#12638](https://github.com/netdata/netdata/pull/12638) ([ilyam8](https://github.com/ilyam8))
+- Summarize encountered errors and warnings at end of kickstart script run. [\#12636](https://github.com/netdata/netdata/pull/12636) ([Ferroin](https://github.com/Ferroin))
 - Add eBPF CO-RE version and checksum files to distfile list. [\#12627](https://github.com/netdata/netdata/pull/12627) ([Ferroin](https://github.com/Ferroin))
 - Fix ACLK shutdown [\#12625](https://github.com/netdata/netdata/pull/12625) ([underhood](https://github.com/underhood))
 - Don't do fatal on error writing the health api management key. [\#12623](https://github.com/netdata/netdata/pull/12623) ([MrZammler](https://github.com/MrZammler))
@@ -240,7 +268,6 @@
 - Stream compression - Deactivate compression at runtime in case of a compressor buffer overflow [\#12037](https://github.com/netdata/netdata/pull/12037) ([odynik](https://github.com/odynik))
 - Adds all query types to aclk\_processed\_query\_type [\#12036](https://github.com/netdata/netdata/pull/12036) ([underhood](https://github.com/underhood))
 - Create a removed alert event if chart goes obsolete [\#12021](https://github.com/netdata/netdata/pull/12021) ([MrZammler](https://github.com/MrZammler))
-- minor - remove ACLK\_NEWARCH\_DEVMODE [\#12018](https://github.com/netdata/netdata/pull/12018) ([underhood](https://github.com/underhood))
 
 ## [v1.33.1](https://github.com/netdata/netdata/tree/v1.33.1) (2022-02-14)
 
@@ -287,27 +314,6 @@
 - Docs Bugfix: Fixed Markdown formatting [\#12026](https://github.com/netdata/netdata/pull/12026) ([kickoke](https://github.com/kickoke))
 - update README [\#12024](https://github.com/netdata/netdata/pull/12024) ([cboydstun](https://github.com/cboydstun))
 - \[Stream Compression\] - Compressor buffer overflow causes stream corruption. [\#12019](https://github.com/netdata/netdata/pull/12019) ([odynik](https://github.com/odynik))
-- mqtt\_websockets submodule to latest master \(fix \#12011\) [\#12015](https://github.com/netdata/netdata/pull/12015) ([underhood](https://github.com/underhood))
-- Remove uncessary call [\#12014](https://github.com/netdata/netdata/pull/12014) ([thiagoftsm](https://github.com/thiagoftsm))
-- Updated idlejitter-plugin docs [\#12012](https://github.com/netdata/netdata/pull/12012) ([kickoke](https://github.com/kickoke))
-- Add install type info to `-W buildinfo` output. [\#12010](https://github.com/netdata/netdata/pull/12010) ([Ferroin](https://github.com/Ferroin))
-- Remove internal dbengine header from spawn/spawn\_client.c [\#12009](https://github.com/netdata/netdata/pull/12009) ([vkalintiris](https://github.com/vkalintiris))
-- Fix typo in the dashboard\_info.js spigot part [\#12008](https://github.com/netdata/netdata/pull/12008) ([lokerhp](https://github.com/lokerhp))
-- Add support for NVME disks with blkext driver [\#12007](https://github.com/netdata/netdata/pull/12007) ([ralphm](https://github.com/ralphm))
-- Fix cleanup from a failed DEB install. [\#12006](https://github.com/netdata/netdata/pull/12006) ([Ferroin](https://github.com/Ferroin))
-- update go.d.plugin version to v0.31.2 [\#12005](https://github.com/netdata/netdata/pull/12005) ([ilyam8](https://github.com/ilyam8))
-- Fix handling of static archive selection for installs. [\#12004](https://github.com/netdata/netdata/pull/12004) ([Ferroin](https://github.com/Ferroin))
-- fix\(python.d.plugin\): prefer python3 if available [\#12001](https://github.com/netdata/netdata/pull/12001) ([ilyam8](https://github.com/ilyam8))
-- Fixing redirects [\#12000](https://github.com/netdata/netdata/pull/12000) ([kickoke](https://github.com/kickoke))
-- Fix install prefix handling for claiming code in new kickstart script. [\#11999](https://github.com/netdata/netdata/pull/11999) ([Ferroin](https://github.com/Ferroin))
-- Add alternative install command for macOS. [\#11997](https://github.com/netdata/netdata/pull/11997) ([Ferroin](https://github.com/Ferroin))
-- Fix queue removed alerts [\#11996](https://github.com/netdata/netdata/pull/11996) ([MrZammler](https://github.com/MrZammler))
-- update go.d.plugin version to v0.31.1 [\#11995](https://github.com/netdata/netdata/pull/11995) ([ilyam8](https://github.com/ilyam8))
-- Fix ib counters [\#11994](https://github.com/netdata/netdata/pull/11994) ([Saruspete](https://github.com/Saruspete))
-- eBPF plugin CO-RE and monitoring [\#11992](https://github.com/netdata/netdata/pull/11992) ([thiagoftsm](https://github.com/thiagoftsm))
-- Included link to charts.d example [\#11990](https://github.com/netdata/netdata/pull/11990) ([kickoke](https://github.com/kickoke))
-- Refined the python example for clarity [\#11989](https://github.com/netdata/netdata/pull/11989) ([kickoke](https://github.com/kickoke))
-- fix\(updater\): checksum validation for static build [\#11986](https://github.com/netdata/netdata/pull/11986) ([ilyam8](https://github.com/ilyam8))
 
 ## [1.32.1](https://github.com/netdata/netdata/tree/1.32.1) (2021-12-14)
 
