@@ -24,7 +24,18 @@ node ingest.js <options>
 
 ### Options
 
-- For each repository you can change the user and the branch from which the ingest script will pull, with the following 
+The ingest script supports ingesting content from a number of repositories defined in line XX of `ingest.js`.
+You can specify a user and a branch for each of these allowed repositories. 
+
+Allowed repositories and their parameters
+
+<insert the docs you've already written here>
+
+### Example
+
+Let's assume you have a fork of the netdata/netdata repository on which you work. That repository is called yourname/netdata. Now, you want to ingest your branch called `staging` to test the feature in the learn repository. In order to do this, you need to run: 
+```bash
+node ???
   keys (defaults are applied)  
 
   - `netdata/netdata`
