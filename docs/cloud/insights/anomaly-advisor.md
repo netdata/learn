@@ -60,4 +60,8 @@ You can expand any sparkline chart to see the underlying raw data to see how it 
 
 ![image](https://user-images.githubusercontent.com/2178292/164430105-f747d1e0-f3cb-4495-a5f7-b7bbb71039ae.png)
 
+On the upper right hand side of the page you can select which nodes to filter on if you wish to do so. The ML training status of each node is also displayed. 
+
+On the lower right hand side of the page an index of anomaly rates is displayed for the highlighted timeline of interest. The index is sorted from most anomalous metric (highest anomaly rate) to least (lowest anomaly rate). Clicking on an entry in the index will scroll the rest of the page to the corresponding anomaly rate sparkline for that metric.
+
 You can read more detail on how anomaly detection in the netdata agent works in our [agent docs](https://github.com/netdata/netdata/blob/master/ml/README.md).
