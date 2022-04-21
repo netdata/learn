@@ -1,6 +1,6 @@
 ---
 title: Anomaly Advisor
-description: Quickly find anomalous metrics and charts anywhere in your infrastructure.
+description: Quickly find anomalous metrics anywhere in your infrastructure.
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/insights/anomaly-advisor.md
 ---
 
