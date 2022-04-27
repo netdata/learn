@@ -88,6 +88,7 @@ module.exports = {
           label: 'Configuration',
           items: [
             'configure/nodes',
+            'configure/machine-learning',
             'configure/common-changes',
             'configure/start-stop-restart',
             {
