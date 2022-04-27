@@ -412,6 +412,7 @@ module.exports = {
           label: 'Troubleshooting with Netdata Cloud',
           items: [
             'cloud/insights/metric-correlations',
+            'cloud/insights/anomaly-advisor',
           ]
         },
         {
