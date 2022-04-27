@@ -52,7 +52,7 @@ The "Count of Anomalous Metrics" chart (collapsed by default) shows raw counts o
 
 The "Anomaly Events Detected" chart (collapsed by default) shows if the anomaly rate per node was sufficiently elevated to trigger a node level anomaly. Anomaly events will appear slightly after the anomaly rate starts to increase in the timeline, this is because a significant number of metrics in the node need to be anomalous before an anomaly event is triggered.
 
-Once you have highlighted a window of interest you should see an ordered list of anomaly rate sparklines in the "Anomalous metrics" section like below.
+Once you have highlighted a window of interest, you should see an ordered list of anomaly rate sparklines in the "Anomalous metrics" section like below.
 
 ![image](https://user-images.githubusercontent.com/2178292/164427592-ab1d0eb1-57e2-4a05-aaeb-da4437a019b1.png)
 
