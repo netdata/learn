@@ -26,7 +26,7 @@ At a minimum you just need to set `enabled = yes` to enable ML with default para
 
 **Note**: follow [this guide](https://learn.netdata.cloud/guides/step-by-step/step-04) if you are unfamiliar with making configuration changes in Netdata.
 
-Once done, restart Netdata with a command like `sudo systemctl restart netdata` for the config changes to take effect. You can find more info on restarting Netdata [here](https://learn.netdata.cloud/docs/configure/start-stop-restart).
+When you have finished your configuration, restart Netdata with a command like `sudo systemctl restart netdata` for the config changes to take effect. You can find more info on restarting Netdata [here](https://learn.netdata.cloud/docs/configure/start-stop-restart).
 
 After a while you should see the number of `trained` dimensions start to increase on the "dimensions" chart of the "Anomaly Detection" menu on the Overview page. By default the `minimum num samples to train = 3600` parameter means at least 1 hour of data is required to train initial models, but you could set this to be `900` if you want to train initial models quicker but on less data, over time then they will retrain on up to `maximum num samples to train = 14400` (4 hours by default) but you could increase this is you wanted to train on more data.
 
