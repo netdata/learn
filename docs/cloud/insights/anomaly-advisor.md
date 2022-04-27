@@ -36,7 +36,7 @@ Once this line flattens out all configured metrics should have models trained an
 
 ## Using Anomaly Advisor
 
-To use the Anomaly Advisor go to the "anomalies" tab, once you highlight a particular time frame of interest a selection of the most anomalous dimensions will appear below. 
+To use the Anomaly Advisor, go to the "anomalies" tab. Once you highlight a particular timeframe of interest, a selection of the most anomalous dimensions will appear below. 
 
 The aim here is to surface the most anomalous metrics in the space or room for the highlighted window to try and cut down on the amount of manual searching required to get to the root cause of your issues.
 
