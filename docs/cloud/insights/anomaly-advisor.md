@@ -22,7 +22,7 @@ To enable ML on your Netdata Agent you just need to edit the `[ml]` section in y
     enabled = yes
 ```
 
-At a minimum you just need to set `enabled = yes` to enable ML with default params. More details can be found in the [Netdata Agent ML docs](https://learn.netdata.cloud/docs/agent/ml#configuration).
+At a minimum you just need to set `enabled = yes` to enable ML with default params. More details about configuration can be found in the [Netdata Agent ML docs](https://learn.netdata.cloud/docs/agent/ml#configuration).
 
 **Note**: Follow [this guide](https://learn.netdata.cloud/guides/step-by-step/step-04) if you are unfamiliar with making configuration changes in Netdata.
 
