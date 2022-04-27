@@ -15,7 +15,7 @@ To enable the Anomaly Advisor you must first enable ML on your nodes via a small
 
 ### Enable ML on Netdata Agent
 
-To enable ML on your Netdata Agent you just need to edit the `[ml]` section in your `netdata.conf` to look something like below.
+To enable ML on your Netdata Agent, you need to edit the `[ml]` section in your `netdata.conf` to look something like the following example.
 
 ```bash
 [ml]
