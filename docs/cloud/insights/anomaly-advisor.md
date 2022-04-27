@@ -42,7 +42,7 @@ The aim here is to surface the most anomalous metrics in the space or room for t
 
 ![image](https://user-images.githubusercontent.com/2178292/164427337-a40820d2-8d36-4a94-8dfb-cfd3194941e0.png)
 
-The "Anomaly Rate" chart shows the percentage of anomalous metrics over time per node. For example in the image below 3.21% of the metrics on the "ml-demo-ml-disabled" node were considered anomalous. This elevated anomaly rate could be a sign of something worth investigating.
+The "Anomaly Rate" chart shows the percentage of anomalous metrics over time per node. For example, in the following image, 3.21% of the metrics on the "ml-demo-ml-disabled" node were considered anomalous. This elevated anomaly rate could be a sign of something worth investigating.
 
 **Note**: in this example the anomaly rates for this node are actually being calculated on the parent it streams to, you can run ml on the agent itselt or on a parent the agent stream to. Read more about the various configuration options in the [agent docs](https://github.com/netdata/netdata/blob/master/ml/README.md).
 
