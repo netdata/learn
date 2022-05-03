@@ -4,10 +4,12 @@ description: Quickly find anomalous metrics anywhere in your infrastructure.
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/insights/anomaly-advisor.md
 ---
 
+import ReactPlayer from 'react-player'
+
 The Anomaly Advisor feature lets you quickly surface potentially anomalous metrics and charts related to a particular highlight window of
 interest.
 
-🚧 **Note**: This functionality is still under active development and considered experimental. Changes might cause the feature to break. We dogfood it internally and among early adopters within the Netdata community to build the feature. If you would like to get involved and help us with some feedback, email us at analytics-ml-team@netdata.cloud, comment on the [beta launch post](https://community.netdata.cloud/t/anomaly-advisor-beta-launch/2717) in the Netdata community, or come join us in the [🤖-ml-powered-monitoring](https://discord.gg/4eRSEUpJnc) channel of the Netdata discord.
+<ReactPlayer playing true controls true url='https://user-images.githubusercontent.com/24860547/165943403-1acb9759-7446-4704-8955-c566d04ad7ab.mp4' />
 
 ## Getting Started
 
@@ -65,3 +67,9 @@ On the upper right hand side of the page you can select which nodes to filter on
 On the lower right hand side of the page an index of anomaly rates is displayed for the highlighted timeline of interest. The index is sorted from most anomalous metric (highest anomaly rate) to least (lowest anomaly rate). Clicking on an entry in the index will scroll the rest of the page to the corresponding anomaly rate sparkline for that metric.
 
 You can read more detail on how anomaly detection in the netdata agent works in our [agent docs](https://github.com/netdata/netdata/blob/master/ml/README.md).
+
+🚧 **Note**: This functionality is still **under active development** and considered experimental. We dogfood it internally and among early adopters within the Netdata community to build the feature. If you would like to get involved and help us with feedback, you can reach us through any of the following channels:
+- Email us at analytics-ml-team@netdata.cloud
+- Comment on the [beta launch post](https://community.netdata.cloud/t/anomaly-advisor-beta-launch/2717) in the Netdata community
+- Join us in the [🤖-ml-powered-monitoring](https://discord.gg/4eRSEUpJnc) channel of the Netdata discord.
+- Or open a discussion in GitHub if that's more your thing
