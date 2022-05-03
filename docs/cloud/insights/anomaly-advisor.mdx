@@ -32,7 +32,7 @@ When you have finished your configuration, restart Netdata with a command like `
 
 After a brief delay, you should see the number of `trained` dimensions start to increase on the "dimensions" chart of the "Anomaly Detection" menu on the Overview page. By default the `minimum num samples to train = 3600` parameter means at least 1 hour of data is required to train initial models, but you could set this to `900` if you want to train initial models quicker but on less data. Over time, they will retrain on up to `maximum num samples to train = 14400` (4 hours by default), but you could increase this is you wanted to train on more data.
 
-![image](https://user-images.githubusercontent.com/2178292/164433258-ee7252be-c9b0-48be-9d68-a5addd4ba84d.png)
+![image](https://user-images.githubusercontent.com/2178292/166472746-e5c7424e-1402-40c0-9dba-4dfd3d749a15.png)
 
 Once this line flattens out all configured metrics should have models trained and predicting anomaly scores each second, ready to be used by the new "anomalies" tab of the Anomaly Advisor.
 
