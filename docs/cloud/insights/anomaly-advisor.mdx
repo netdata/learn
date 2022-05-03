@@ -66,6 +66,11 @@ On the upper right hand side of the page you can select which nodes to filter on
 
 On the lower right hand side of the page an index of anomaly rates is displayed for the highlighted timeline of interest. The index is sorted from most anomalous metric (highest anomaly rate) to least (lowest anomaly rate). Clicking on an entry in the index will scroll the rest of the page to the corresponding anomaly rate sparkline for that metric.
 
+### Usage Tips
+
+- If you are interested in a subset of specific nodes then filtering to just those nodes before highlighting tends to give better results. This is because when you highlight a region, Netdata Cloud will ask the agents for a ranking over all metrics so if you can filter this early to just the subset of nodes you are interested in, less 'averaging' will occur and so you might be a less noisy ranking.
+- Ideally try and highlight close to a spike or window of interest so that the resulting ranking can narrow in more easily on the timeline you are interested in.
+
 You can read more detail on how anomaly detection in the netdata agent works in our [agent docs](https://github.com/netdata/netdata/blob/master/ml/README.md).
 
 🚧 **Note**: This functionality is still **under active development** and considered experimental. We dogfood it internally and among early adopters within the Netdata community to build the feature. If you would like to get involved and help us with feedback, you can reach us through any of the following channels:
