@@ -50,8 +50,12 @@ The `kickstart.sh` script accepts a number of optional parameters to control how
 - `--dont-wait`: Synonym for `--non-interactive`
 - `--dry-run`: Show what the installer would do, but don’t actually do any of it.
 - `--dont-start-it`: Don’t auto-start the daemon after installing. This parameter is not guaranteed to work.
-- `--nightly-channel`: Use a nightly build instead of a stable release (this is the default).
-- `--stable-channel`: Use a stable release instead of a nightly build.
+- `--release-channel`: Specify a particular release channel to install from. Currently supported release channels are:
+    - `nightly`: Installs a nightly build (this is currently the default).
+    - `stable`: Installs a stable release.
+    - `default`: Explicitly request whatever the current default is.
+- `--nightly-channel`: Synonym for `--release-channel nightly`.
+- `--stable-channel`: Synonym for `--release-channel stable`.
 - `--auto-update`: Enable automatic updates (this is the default).
 - `--no-updates`: Disable automatic updates.
 - `--disable-telemetry`: Disable anonymous statistics.
@@ -63,7 +67,8 @@ The `kickstart.sh` script accepts a number of optional parameters to control how
 - `--disable-cloud`: For local builds, don’t build any of the cloud code at all. For native packages and static builds,
     use runtime configuration to disable cloud support.
 - `--require-cloud`: Only install if Netdata Cloud can be enabled. Overrides `--disable-cloud`.
-- `--install`: Specify an installation prefix for local builds (by default, we use a sane prefix based on the type of system).
+- `--install`: Specify an installation prefix for local builds (by default, we use a sane prefix based on the type of system), this option is deprecated and will be removed in a future version, please use `--install-prefix` instead.
+- `--install-prefix`: Specify an installation prefix for local builds (by default, we use a sane prefix based on the type of system).
 - `--old-install-prefix`: Specify the custom local build's installation prefix that should be removed.
 - `--uninstall`: Uninstall an existing installation of Netdata.
 - `--reinstall-clean`: Performs an uninstall of Netdata and clean installation.
@@ -145,7 +150,7 @@ To use `md5sum` to verify the integrity of the `kickstart.sh` script you will do
 run the following:
 
 ```bash
-[ "e0e5bed2221fd20186fcbfd7860b3dc0" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "aa06bea0c3eddd4c962c0c45aa222485" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`.

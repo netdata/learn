@@ -36,7 +36,7 @@ Our most popular application collectors:
 -   [Nginx](/docs/agent/collectors/go.d.plugin/modules/nginx/): Monitor web server
     status information by gathering metrics via `ngx_http_stub_status_module`.
 -   [Postgres](/docs/agent/collectors/python.d.plugin/postgres): Collect database health and performance metrics. 
--   [ElasticSearch](/docs/agent/collectors/python.d.plugin/elasticsearch): Collect search engine performance and health
+-   [ElasticSearch](/docs/agent/collectors/go.d.plugin/modules/elasticsearch): Collect search engine performance and health
     statistics. Optionally collects per-index metrics.
 -   [PHP-FPM](/docs/agent/collectors/go.d.plugin/modules/phpfpm/): Collect application
     summary and processes health metrics by scraping the status page (`/status?full`).
