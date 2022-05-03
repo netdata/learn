@@ -62,8 +62,6 @@ terms related to collecting metrics.
         `python` v2/v3.
     -   [charts.d.plugin](/docs/agent/collectors/charts.d.plugin): An orchestrator for data collection modules written in
         `bash` v4+.
-    -   [node.d.plugin](/docs/agent/collectors/node.d.plugin): An orchestrator for data collection modules written in
-        `node.js`.
 -   **External plugins** gather metrics from external processes, such as a webserver or database, and run as independent
     processes that communicate with the Netdata daemon via pipes.
 -   **Internal plugins** gather metrics from `/proc`, `/sys`, and other Linux kernel sources. They are written in `C`,
