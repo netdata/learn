@@ -59,6 +59,7 @@ The `kickstart.sh` script accepts a number of optional parameters to control how
 - `--auto-update`: Enable automatic updates (this is the default).
 - `--no-updates`: Disable automatic updates.
 - `--disable-telemetry`: Disable anonymous statistics.
+- `--repositories-only`: Only install appropriate repository configuration packages (only for native install).
 - `--native-only`: Only install if native binary packages are available.
 - `--static-only`: Only install if a static build is available.
 - `--build-only`: Only install using a local build.
@@ -150,7 +151,7 @@ To use `md5sum` to verify the integrity of the `kickstart.sh` script you will do
 run the following:
 
 ```bash
-[ "aa06bea0c3eddd4c962c0c45aa222485" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "bff21c662e2ef69e5cc1c0f936fd4b96" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`.
