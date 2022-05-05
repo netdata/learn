@@ -70,6 +70,7 @@ The `kickstart.sh` script accepts a number of optional parameters to control how
 - `--require-cloud`: Only install if Netdata Cloud can be enabled. Overrides `--disable-cloud`.
 - `--install`: Specify an installation prefix for local builds (by default, we use a sane prefix based on the type of system), this option is deprecated and will be removed in a future version, please use `--install-prefix` instead.
 - `--install-prefix`: Specify an installation prefix for local builds (by default, we use a sane prefix based on the type of system).
+- `--install-version`: Specify the version of Netdata to install.
 - `--old-install-prefix`: Specify the custom local build's installation prefix that should be removed.
 - `--uninstall`: Uninstall an existing installation of Netdata.
 - `--reinstall-clean`: Performs an uninstall of Netdata and clean installation.
@@ -151,7 +152,7 @@ To use `md5sum` to verify the integrity of the `kickstart.sh` script you will do
 run the following:
 
 ```bash
-[ "bff21c662e2ef69e5cc1c0f936fd4b96" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "b48b0d28a98de34ccc66cb9636267663" = "$(curl -Ss https://my-netdata.io/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`.
