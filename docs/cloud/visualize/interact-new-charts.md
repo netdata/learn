@@ -53,6 +53,8 @@ Your charts are controlled using the available [Time controls](/docs/dashboard/v
 | **Stop** a chart  | `click`        | `tap`                | **Pause**             |
 | **Reset** a chart | `double click` | `n/a`                | **Play**              |
 
+Note: These interactions are available when the default "Pan" action is used. Other actions are accessible via the [Exploration action bar](#exploration-action-bar).
+
 ## Title and chart action bar
 
 When you start interacting with a chart, you'll notice valuable information on the top bar. You will see information from the chart title to a chart action bar.
