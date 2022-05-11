@@ -6,6 +6,10 @@
   to = "/docs"
 
 [[redirects]]
+  from = "/docs/agent/collectors/collectors"
+  to = "/docs/agent/collectors"
+  
+[[redirects]]
   from = "/docs/agent/cheatsheet"
   to = "/docs/cheatsheet"
 
