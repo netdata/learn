@@ -252,10 +252,8 @@ configure any of these collectors according to your setup and infrastructure.
 - [Access point](/docs/agent/collectors/charts.d.plugin/ap): Monitor client, traffic and signal metrics using the `aw`
     tool.
 - [APC UPS](/docs/agent/collectors/charts.d.plugin/apcupsd): Capture status information using the `apcaccess` tool.
-- [Energi Core (Go)](/docs/agent/collectors/go.d.plugin/modules/energid): Monitor
+- [Energi Core](/docs/agent/collectors/go.d.plugin/modules/energid): Monitor
     blockchain indexes, memory usage, network usage, and transactions of wallet instances.
-- [Energi Core (Python)](/docs/agent/collectors/python.d.plugin/energid): Monitor blockchain, memory, network, and
-    unspent transactions statistics.
 - [UPS/PDU](/docs/agent/collectors/charts.d.plugin/nut): Read the status of UPS/PDU devices using the `upsc` tool.
 - [SNMP devices](/docs/agent/collectors/go.d.plugin/modules/snmp): Gather data using the SNMP protocol.
 -   [1-Wire sensors](/docs/agent/collectors/python.d.plugin/w1sensor): Monitor sensor temperature.
