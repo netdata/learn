@@ -54,7 +54,7 @@ export function CollectorConfiguration({ configURL, moduleName }) {
 
 			<p>
 				For all available options, please see the module{' '}
-				<a href={configURL}>configuration file</a>.
+				<a href="{configURL}">configuration file</a>.
 			</p>
 		</>
 	);
