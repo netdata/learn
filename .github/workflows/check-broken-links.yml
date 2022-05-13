@@ -1,8 +1,8 @@
 name: Test internal links
 on:
   workflow_dispatch:
-#  schedule:
-#    - cron: '0 17 * * *'
+  schedule:
+    - cron: '0 17 * * *'
 env:
   WEBSITE_URL: "https://learn.netdata.cloud/"
   ISSUE_TEMPLATE: ".github/workflows/check-broken-links.md"
