@@ -1,7 +1,6 @@
 ---
 title: Overview and Home
-description: The Home tab automatically presents relevant information and the Overview the uses composite charts to display 
-real-time aggregated metrics from all the nodes in a given War Room.
+description: The Home tab automatically presents relevant information and the Overview the uses composite charts from all the nodes in a given War Room.
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/visualize/overview.md
 ---
 
