@@ -15,6 +15,17 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Netdata's new Home tab</>,
+		href: 'docs/cloud/visualize/overview',
+		date: 'May 18, 2022',
+		type: 'Doc',
+		description: (
+			<>
+				Our new Home tab provides a predefined dashboard of relevant information about entities in a War Room. This tab will automatically present summarized information in an easily digestible display.
+			</>
+		),
+	}
+	{
 		title: <>SNMP collector now runs on Go</>,
 		href: '/docs/agent/collectors/go.d.plugin/modules/snmp',
 		date: 'March 28, 2022',
@@ -79,18 +90,6 @@ export const News = [
 			</>
 		),
 	},
-	{
-		title: <>Date and timeframe controls for visualizations on Netdata Cloud</>,
-		href: 'docs/dashboard/visualization-date-and-time-controls',
-		date: 'August 18, 2021',
-		type: 'Doc',
-		description: (
-			<>
-				Dashboards now allow you to visualize specific timeframes for any time
-				interval either by using a set of quick time-ranges or selecting a
-				custom time-range .
-			</>
-		),
-	},
+	
 	
 ];
