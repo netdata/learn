@@ -24,7 +24,7 @@ export const News = [
 				Our new Home tab provides a predefined dashboard of relevant information about entities in a War Room. This tab will automatically present summarized information in an easily digestible display.
 			</>
 		),
-	}
+	},
 	{
 		title: <>SNMP collector now runs on Go</>,
 		href: '/docs/agent/collectors/go.d.plugin/modules/snmp',
@@ -90,6 +90,5 @@ export const News = [
 			</>
 		),
 	},
-	
 	
 ];
