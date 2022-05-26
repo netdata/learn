@@ -6,6 +6,8 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/ml/README.md
 
 # Machine learning (ML) powered anomaly detection
 
+_🚧 **Note**: For a quick introduction to our anomaly detection capabilities, visit the [release announcement on our blog](https://www.netdata.cloud/blog/introducing-anomaly-advisor-unsupervised-anomaly-detection-in-netdata), where we explain highlights of the feature and provide video walkthroughs of configuration and functionality._
+
 ## Overview
 
 As of [`v1.32.0`](https://github.com/netdata/netdata/releases/tag/v1.32.0), Netdata comes with some ML powered [anomaly detection](https://en.wikipedia.org/wiki/Anomaly_detection) capabilities built into it and available to use out of the box, with minimal configuration required.
