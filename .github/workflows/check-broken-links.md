@@ -4,9 +4,9 @@ labels: housekeeping
 assignees: ''
 ---
 
-## Netdata Learn contains broken links!
+## Netdata Learn contains internal broken links!
 
-Broken Link Checker found :coffin: links on https://learn.netdata.cloud/
+Broken Link Checker found :coffin: {{env.LINK_TYPE }} links on https://learn.netdata.cloud/
 
 [View the results](https://github.com/netdata/netdata-learn-docusaurus/commit/{{sha}}/checks).
 
