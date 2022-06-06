@@ -1,8 +1,8 @@
-name: Test internal links
+name: Test external links
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 17 * * *'
+    - cron: '0 18 * * *'
 env:
   WEBSITE_URL: "https://learn.netdata.cloud/"
   ISSUE_TEMPLATE: ".github/workflows/check-broken-links.md"
@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Run BLC on internal links
-      run: npx broken-link-checker $WEBSITE_URL --ordered --recursive --exclude-external --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36'
+      run: npx broken-link-checker $WEBSITE_URL --ordered --recursive --exclude-internal --user-agent 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36'
 
     - uses: actions/checkout@v2
       if: failure()
@@ -21,7 +21,7 @@ jobs:
     - uses: JasonEtco/create-an-issue@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        LINK_TYPE: internal
+        LINK_TYPE: external
       with:
         filename: ${{ env.ISSUE_TEMPLATE }}
       if: failure()
