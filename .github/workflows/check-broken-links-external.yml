@@ -2,7 +2,7 @@ name: Test external links
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 17 * * *'
+    - cron: '0 18 * * *'
 env:
   WEBSITE_URL: "https://learn.netdata.cloud/"
   ISSUE_TEMPLATE: ".github/workflows/check-broken-links.md"
