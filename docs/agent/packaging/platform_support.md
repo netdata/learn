@@ -51,6 +51,7 @@ to work on these platforms with minimal user effort.
 | Platform | Version | Official Native Packages | Notes |
 | -------- | ------- | ------------------------ | ----- |
 | Alpine Linux | 3.16 | No | The latest release of Alpine Linux is guaranteed to remain at **Core** tier due to usage for our Docker images |
+| Alma Linux | 9.x | x86\_64, AArch64 | Also includes support for Rocky Linux and other ABI compatible RHEL derivatives |
 | Alma Linux | 8.x | x86\_64, AArch64 | Also includes support for Rocky Linux and other ABI compatible RHEL derivatives |
 | CentOS | 7.x | x86\_64 | |
 | Docker | 19.03 or newer | x86\_64, i386, ARMv7, AArch64, POWER8+ | See our [Docker documentation](/docs/agent/packaging/docker) for more info on using Netdata on Docker |
@@ -59,11 +60,11 @@ to work on these platforms with minimal user effort.
 | Debian | 9.x | x86\_64, i386, ARMv7, AArch64 | |
 | Fedora | 36 | x86\_64, ARMv7, AArch64 | |
 | Fedora | 35 | x86\_64, ARMv7, AArch64 | |
-| Fedora | 34 | x86\_64, ARMv7, AArch64 | |
 | openSUSE | Leap 15.3 | x86\_64, AArch64 | |
 | Oracle Linux | 8.x | x86\_64, AArch64 | |
-| Red Hat Enterprise Linux | 7.x | x86\_64 | |
+| Red Hat Enterprise Linux | 9.x | x86\_64, AArch64 | |
 | Red Hat Enterprise Linux | 8.x | x86\_64, AArch64 | |
+| Red Hat Enterprise Linux | 7.x | x86\_64 | |
 | Ubuntu | 22.04 | x86\_64, ARMv7, AArch64 | |
 | Ubuntu | 21.10 | x86\_64, i386, ARMv7, AArch64 | |
 | Ubuntu | 20.04 | x86\_64, i386, ARMv7, AArch64 | |
@@ -145,12 +146,11 @@ This is a list of platforms that we have supported in the recent past but no lon
 | -------- | ------- | ----- |
 | Alpine Linux | 3.12 | EOL as of 2022-05-01 |
 | Alpine Linux | 3.11 | EOL as of 2021-11-01 |
-| Alpine Linux | 3.10 | EOL as of 2021-05-01 |
+| Fedora 34 | EOL as of 2022-06-07 |
 | Fedora | 33 | EOL as of 2021-11-30 |
 | Fedora | 32 | EOL as of 2021-05-25 |
 | FreeBSD | 11-STABLE | EOL as of 2021-10-30 |
 | openSUSE | Leap 15.2 | EOL as of 2021-12-01 |
-| openSUSE | Leap 15.1 | EOL as of 2021-01-31 |
 | Ubuntu | 21.04 | EOL as of 2022-01-01 |
 | Ubuntu | 20.10 | EOL as of 2021-07-22 |
 | Ubuntu | 16.04 | EOL as of 2021-04-02 |
