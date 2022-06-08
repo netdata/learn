@@ -4,7 +4,7 @@ description: Quickly find metrics and charts closely related to an anomaly anywh
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/insights/metric-correlations.md
 ---
 
-The Metric Correlations feature lets you quickly find metrics and charts related to an anomaly or particular window of
+The Metric Correlations (MC) feature lets you quickly find metrics and charts related to an anomaly or particular window of
 interest that you want to explore further. By displaying the standard Netdata dashboard, having filtered out charts that
 are not relevant to an anomaly or performance issue, you can more quickly traverse your node's metrics and discover the
 root cause.
@@ -13,13 +13,6 @@ Because Metric Correlations uses every available metric from that node, with as 
 the most accurate insights using every possible metric.
 
 ## Using Metric Correlations
-
-To use Metric Correlations feature, you need to be viewing a **single-node dashboard** in Netdata Cloud. From the [Nodes
-view](/docs/cloud/visualize/nodes), click on the hostname of the node you're interested in. From the
-[Overview](/docs/cloud/visualize/overview), click on **X Charts** or **X Nodes** to reveal a dropdown, then click on
-the link icon <img class="img__inline img__inline--link"
-src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11eb-8daa-9ba509a8e71c.png" /> to jump to
-that node's dashboard in Netdata Cloud.
 
 When viewing the single-node dashboard, the **Metric Correlations** button appears in top right corner of the page.
 
@@ -46,6 +39,29 @@ less significant manner.
 
 If you find something else interesting in the results, you can select another window and press **Find Correlations**
 again to kick the process off again.
+
+## Metric Correlations on the agent
+
+As of `v1.35.0` Netdata is able to run the Metric Correlations algoritihim ([Two Sample Kolmogorov-Smirnov test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test#Two-sample_Kolmogorov%E2%80%93Smirnov_test)) on the agent itself. This avoids sending the underlying raw data to the original Netdata Cloud based microservice and so typically will be much much faster as no data moves around and the computation happens instead on the agent.
+
+When a Metric Correlations request is made to Netdata Cloud, if any node instances have MC enabled then the request will be routed to the node instance with the highest hops (e.g. a parent node if one is found or the node itself if not). If no node instances have MC enabled then the request will be routed to the original Netdata Cloud based service which will request input data from the nodes and run the computation within the Netdata Cloud backend.
+
+#### Enabling Metric Correlations on the agent
+
+Enabling nodes for Metric Corrleation on the agent is a simple one line config change. Just set `enable metric correlations = yes` in the `[global]` section of `netdata.conf`
+
+```
+[global]
+    enable metric correlations = yes
+```
+
+Once the `netdata.conf` file has been updated just [restart the netdata agent](https://learn.netdata.cloud/docs/configure/start-stop-restart) and then the next time you run a MC against that node, Netdata Cloud will route the request to the new `/api/v1/metric_correlation` endpoint on the agent (or the best placed parent if that node has [streaming](https://learn.netdata.cloud/docs/agent/streaming) enabled).
+
+#### Impact of Metric Correlations on the agent
+
+It is important to note that if enabled on the agent, the Metric Correlations computation will incur some cpu cost (typically 20%-50% of 1 cpu core) for 1-2 seconds on the agent where the computation occurs. You can easily see this against the `netdata` user in the `users.cpu` chart.
+
+If you would rather run MC via Netdata Cloud then remember to ensure `enable metric correlations = no` in `netdata.conf` on any nodes you do not want MC to ever have any extra CPU impact on.
 
 ## What's next?
 
