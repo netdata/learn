@@ -1,13 +1,13 @@
 ---
 title: Metric Correlations
-description: Quickly find metrics and charts closely related to an anomaly anywhere in your infrastructure to discover the root cause faster.
+description: Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/insights/metric-correlations.md
 ---
 
-The Metric Correlations (MC) feature lets you quickly find metrics and charts related to an anomaly or particular window of
-interest that you want to explore further. By displaying the standard Netdata dashboard, having filtered out charts that
-are not relevant to an anomaly or performance issue, you can more quickly traverse your node's metrics and discover the
-root cause.
+The Metric Correlations (MC) feature lets you quickly find metrics and charts related to a particular window of
+interest that you want to explore further. By displaying the standard Netdata dashboard, filtered to show only charts that
+are relevant to the window of interest, you can get to the root cause sooner.
+
 
 Because Metric Correlations uses every available metric from that node, with as high as 1-second granularity, you get
 the most accurate insights using every possible metric.
@@ -30,7 +30,7 @@ Press the **Find Correlations** button to start up the correlations service, the
 node and returns a filtered version of the Netdata dashboard. Now, you'll see only those metrics that have changed the
 most between a baseline window and the highlighted window you have selected.
 
-These charts are fully interactive, and whenever possible, will only show the _dimensions_ related to the anomaly you
+These charts are fully interactive, and whenever possible, will only show the _dimensions_ related to the timeline you
 selected.
 
 You can interact with all the scored metrics via the slider. Slide toward **show less** for more nuanced and significant
