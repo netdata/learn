@@ -5,7 +5,7 @@ export const ReleaseVersion = '1.35.0';
 export const ReleaseDate = 'June 8, 2022';
 
 export const ReleaseNotes = [
-	'Anomaly Advisor * on-device Machine Learning',
+	'Anomaly Advisor & on-device Machine Learning',
 	'Metric Correlations on Agent',
 	'Kubernetes monitoring improvements',
 	'Visualization improvements',
