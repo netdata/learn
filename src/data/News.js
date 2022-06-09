@@ -1,14 +1,14 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.34.1';
+export const ReleaseVersion = '1.35.0';
 
-export const ReleaseDate = 'April 15, 2022';
+export const ReleaseDate = 'June 8, 2022';
 
 export const ReleaseNotes = [
-	'Kubernetes Monitoring: New charts for CPU throttling',
-	'Machine learning (ML) powered anomaly detection has been optimized to run on the edge',
-	'Streaming compression is now enabled by default - allowing you to save up to 70% of bandwidth',
-	'SNMP collector now runs on Go',
+	'Anomaly Advisor * on-device Machine Learning',
+	'Metric Correlations on Agent',
+	'Kubernetes monitoring improvements',
+	'Visualization improvements',
 ];
 
 
