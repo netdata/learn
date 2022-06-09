@@ -1,11 +1,16 @@
 
 
-## [**Next release**](https://github.com/netdata/netdata/tree/HEAD)
+## [v1.35.0](https://github.com/netdata/netdata/tree/v1.35.0) (2022-06-08)
 
-[Full Changelog](https://github.com/netdata/netdata/compare/v1.34.1...HEAD)
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.34.1...v1.35.0)
 
 **Merged pull requests:**
 
+- Update README.md [\#13089](https://github.com/netdata/netdata/pull/13089) ([ktsaou](https://github.com/ktsaou))
+- Update README.md [\#13088](https://github.com/netdata/netdata/pull/13088) ([ktsaou](https://github.com/ktsaou))
+- fix\(updater\): return 0 on successful update for native packages when running interactively [\#13083](https://github.com/netdata/netdata/pull/13083) ([ilyam8](https://github.com/ilyam8))
+- Fix Coverity errors in mqtt\_websockets submodule [\#13082](https://github.com/netdata/netdata/pull/13082) ([underhood](https://github.com/underhood))
+- fix\(updater\): don't produce any output if binpkg update completed successfully [\#13081](https://github.com/netdata/netdata/pull/13081) ([ilyam8](https://github.com/ilyam8))
 - Fix handling of DEB package naming in CI. [\#13076](https://github.com/netdata/netdata/pull/13076) ([Ferroin](https://github.com/Ferroin))
 - Update default value for "host anomaly rate threshold" [\#13075](https://github.com/netdata/netdata/pull/13075) ([shyamvalsan](https://github.com/shyamvalsan))
 - Fix locking access to chart labels [\#13064](https://github.com/netdata/netdata/pull/13064) ([stelfrag](https://github.com/stelfrag))
@@ -102,6 +107,7 @@
 - Take into account the in queue wait time when executing a data query [\#12885](https://github.com/netdata/netdata/pull/12885) ([stelfrag](https://github.com/stelfrag))
 - Update dashboard to version v2.25.2. [\#12884](https://github.com/netdata/netdata/pull/12884) ([netdatabot](https://github.com/netdatabot))
 - Consider ZFS ARC shrinkable as cache on FreeBSD [\#12879](https://github.com/netdata/netdata/pull/12879) ([vlvkobal](https://github.com/vlvkobal))
+- Remove Fedora 34 from CI and package builds. [\#12875](https://github.com/netdata/netdata/pull/12875) ([Ferroin](https://github.com/Ferroin))
 - fix\(health\): change duplicate health template message logging level to 'info' [\#12873](https://github.com/netdata/netdata/pull/12873) ([ilyam8](https://github.com/ilyam8))
 - docs: fix unresolved file references [\#12872](https://github.com/netdata/netdata/pull/12872) ([ilyam8](https://github.com/ilyam8))
 - Set trust durations to have data from children properly aligned [\#12870](https://github.com/netdata/netdata/pull/12870) ([stelfrag](https://github.com/stelfrag))
@@ -330,10 +336,6 @@
 - Add delay on missing priv\_key [\#12450](https://github.com/netdata/netdata/pull/12450) ([underhood](https://github.com/underhood))
 - fix unclaimed agents [\#12449](https://github.com/netdata/netdata/pull/12449) ([underhood](https://github.com/underhood))
 - apps.plugin: fix for plugin sending unnecessary data in freebsd [\#12446](https://github.com/netdata/netdata/pull/12446) ([surajnpn](https://github.com/surajnpn))
-- fix\(cups.plugin\): add `cups` prefix to chart context [\#12444](https://github.com/netdata/netdata/pull/12444) ([ilyam8](https://github.com/ilyam8))
-- Skip `foreach` alarms for dimensions of anomaly rate chart. [\#12441](https://github.com/netdata/netdata/pull/12441) ([vkalintiris](https://github.com/vkalintiris))
-- fix: CPU frequency detection of FreeBSD [\#12440](https://github.com/netdata/netdata/pull/12440) ([ilyam8](https://github.com/ilyam8))
-- fix install type in netdata-uninstaller.sh [\#12438](https://github.com/netdata/netdata/pull/12438) ([maneamarius](https://github.com/maneamarius))
 
 ## [v1.33.1](https://github.com/netdata/netdata/tree/v1.33.1) (2022-02-14)
 
