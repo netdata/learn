@@ -64,6 +64,16 @@ details the invitation process.
 Click the **More** link to see additional options, such as managing the [War Rooms](/docs/cloud/war-rooms) within a
 Space, managing users, or managing bookmarks.
 
+## Obsoleting offline nodes from a Space
+Netdata admin users now have the ability to remove obsolete nodes from a space.
+
+- Only admin users have the ability to obsolete nodes
+- Only offline nodes can be marked obsolete (Live nodes and stale nodes cannot be obsoleted)
+- Node obsoletion works across the entire space, so the obsoleted node will be removed from all rooms belonging to the space
+- If the obsoleted nodes eventually become live or online once more they will be automatically re-added to the space
+
+![Obsoleting an offline node](https://user-images.githubusercontent.com/24860547/173087202-70abfd2d-f0eb-4959-bd0f-74aeee2a2a5a.gif)
+
 ## What's next?
 
 Once you configured your Spaces, it's time to set up your [War Rooms](/docs/cloud/war-rooms).
