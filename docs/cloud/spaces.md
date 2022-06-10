@@ -72,7 +72,7 @@ Netdata admin users now have the ability to remove obsolete nodes from a space.
 - Node obsoletion works across the entire space, so the obsoleted node will be removed from all rooms belonging to the space
 - If the obsoleted nodes eventually become live or online once more they will be automatically re-added to the space
 
-![Obsoleting an offline node](https://user-images.githubusercontent.com/24860547/173019181-3d055cfd-8790-4110-9439-58aea69a1231.gif)
+![Obsoleting an offline node](https://user-images.githubusercontent.com/24860547/173087202-70abfd2d-f0eb-4959-bd0f-74aeee2a2a5a.gif)
 
 ## What's next?
 
