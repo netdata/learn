@@ -119,7 +119,9 @@ function DocItemContent(props) {
 			<form
 				data-netlify="true"
 				name="docs-feedback"
-				method="post"
+				method="POST"
+				netlify-honeypot="bot-field"
+				data-netlify-recaptcha="true"
 				onSubmit={handleSubmit}
 			>
 				<input
@@ -193,7 +195,7 @@ function DocItemContent(props) {
 						}
 					/>
 				</div>
-
+                <div data-netlify-recaptcha="true"></div>
 				<button
 					type="submit"
 					disabled={!formData.thumb && !formData.feedback}
