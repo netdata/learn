@@ -21,12 +21,12 @@ export const News = [
 		type: 'Doc',
 		description: (
 			<>
-				For users who installed Netdata with a Static build since 2022-03-22,the v1.35.1 patch release fixes an issue in the static build installation code that causes automatic updates to be unintentionally disabled when updating static installs.
+				For users who installed Netdata with a Static build since March 22, 2022, the v1.35.1 patch release fixes an issue in the static build installation code that causes automatic updates to be unintentionally disabled when updating static installs.
 			</>
 		),
 	},
 	{
-		title: <>Anomaly Advisor, on-device machine learning, and Metric Correlations on the agent</>,
+		title: <>Anomaly Advisor, on-device machine learning, and Metric Correlations on the Agent</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.35.0',
 		date: 'June 8, 2022',
 		type: 'Doc',
