@@ -32,7 +32,7 @@ export const News = [
 		type: 'Doc',
 		description: (
 			<>
-				Check out our Netdata v1.35.0 release notes to learn about our newest feature offerings, including Anomaly Advisor, on-device machine learning, and our introduction of Metric Correlations on our open-source agent dashbaord.
+				Check out our Netdata v1.35.0 release notes to learn about our newest feature offerings, including Anomaly Advisor, on-device machine learning, and our introduction of Metric Correlations on our open-source agent dashboard.
 			</>
 		),
 	},
