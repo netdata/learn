@@ -8,7 +8,6 @@ The Metric Correlations (MC) feature lets you quickly find metrics and charts re
 interest that you want to explore further. By displaying the standard Netdata dashboard, filtered to show only charts that
 are relevant to the window of interest, you can get to the root cause sooner.
 
-
 Because Metric Correlations uses every available metric from that node, with as high as 1-second granularity, you get
 the most accurate insights using every possible metric.
 
@@ -46,22 +45,11 @@ As of `v1.35.0` Netdata is able to run the Metric Correlations algoritihim ([Two
 
 When a Metric Correlations request is made to Netdata Cloud, if any node instances have MC enabled then the request will be routed to the node instance with the highest hops (e.g. a parent node if one is found or the node itself if not). If no node instances have MC enabled then the request will be routed to the original Netdata Cloud based service which will request input data from the nodes and run the computation within the Netdata Cloud backend.
 
-#### Enabling Metric Correlations on the agent
+#### Enabling/Disabling Metric Correlations on the agent
 
-Enabling nodes for Metric Corrleation on the agent is a simple one line config change. Just set `enable metric correlations = yes` in the `[global]` section of `netdata.conf`
+As of `v1.35.0-22-nightly` Metric Correlations has been enabled by default on all Agents. Due to the latest optimizations to the metric correlation algorithm of the Agent, now the impact of an Agent having this feature enabled by default and just send the results is less than fetch and send all the raw data to do the actual Metric Correlation in the Cloud side. As such running MC on the agent is less impactful on local resources than running via cloud.
 
-```
-[global]
-    enable metric correlations = yes
-```
-
-Once the `netdata.conf` file has been updated just [restart the netdata agent](https://learn.netdata.cloud/docs/configure/start-stop-restart) and then the next time you run a MC against that node, Netdata Cloud will route the request to the new `/api/v1/metric_correlation` endpoint on the agent (or the best placed parent if that node has [streaming](https://learn.netdata.cloud/docs/agent/streaming) enabled).
-
-#### Impact of Metric Correlations on the agent
-
-It is important to note that if enabled on the agent, the Metric Correlations computation will incur some cpu cost (typically 20%-50% of 1 cpu core) for 1-2 seconds on the agent where the computation occurs. You can easily see this against the `netdata` user in the `users.cpu` chart.
-
-If you would rather run MC via Netdata Cloud then remember to ensure `enable metric correlations = no` in `netdata.conf` on any nodes you do not want MC to ever have any extra CPU impact on.
+Should you still want to, disabling nodes for Metric Corrleation on the agent is a simple one line config change. Just set `enable metric correlations = no` in the `[global]` section of `netdata.conf`
 
 ## What's next?
 
