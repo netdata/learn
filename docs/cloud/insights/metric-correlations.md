@@ -47,7 +47,7 @@ When a Metric Correlations request is made to Netdata Cloud, if any node instanc
 
 #### Enabling/Disabling Metric Correlations on the agent
 
-As of `v1.35.0-22-nightly` metric correlations has been enabled by default on all agents. After further optimizations to the implementation, the impact of running the metric correlations algorithim on the agent was less than the impact of preparing all the data to send to cloud for MC to run in the cloud, as such running MC on the agent is less impactful on local resources than running via cloud.
+As of `v1.35.0-22-nightly` Metric Correlations has been enabled by default on all Agents. Due to the latest optimizations to the metric correlation algorithm of the Agent, now the impact of an Agent having this feature enabled by default and just send the results is less than fetch and send all the raw data to do the actual Metric Correlation in the Cloud side. As such running MC on the agent is less impactful on local resources than running via cloud.
 
 Should you still want to, disabling nodes for Metric Corrleation on the agent is a simple one line config change. Just set `enable metric correlations = no` in the `[global]` section of `netdata.conf`
 
