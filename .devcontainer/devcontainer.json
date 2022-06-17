@@ -1,9 +1,7 @@
 {
     "image": "node:14", 
     "extensions":[
-		"timonwong.shellcheck",
-		"dbaeumer.vscode-eslint",
-		"jasonnutter.search-node-modules"
+		"DavidAnson.vscode-markdownlint"
 	],
     "forwardPorts": [3000]
 }
