@@ -87,7 +87,7 @@ number of dimensions available on that context.
 ### Instances
 
 Click on **X Instances** to display a dropdown of instances and nodes contributing to that composite chart. Each line in the
-dropdown displays a instance name and the associated node's hostname.
+dropdown displays an instance name and the associated node's hostname.
 
 ### Nodes
 
