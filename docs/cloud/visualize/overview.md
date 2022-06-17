@@ -57,7 +57,7 @@ contributing nodes, there will be 5 lines/areas. This is typically an absolute v
 are some opinionated-but-valuable exceptions where a specific dimension is selected.
 Grouping by nodes allows you to quickly understand which nodes in your infrastructure are experiencing anomalous behavior.
 
-A composite chart group by _instance_ visualizes each instance of one software or hardware on a node and displays these as a separate dimension. By grouping the
+A composite chart grouped by _instance_ visualizes each instance of one software or hardware on a node and displays these as a separate dimension. By grouping the
 `disk.io` chart by chart, you can visualize the activity of each disk on each node that contributes to the composite
 chart.
 
