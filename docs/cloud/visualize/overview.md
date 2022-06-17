@@ -49,7 +49,7 @@ Each composite chart has a definition bar to provide information about the follo
 
 Click on the **dimension** dropdown to change how a composite chart groups metrics.
 
-The default is by _dimension_, so that each line/area in the visualization is the aggregation of a single dimension.
+The default option is by _dimension_, so that each line/area in the visualization is the aggregation of a single dimension.
 This provides a per dimension view of the data from all the nodes in the War Room, taking into account filtering criteria if defined. 
 
 A composite chart grouped by _node_ visualizes a single metric across contributing nodes. If the composite chart has 5
