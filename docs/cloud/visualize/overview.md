@@ -37,7 +37,7 @@ Room.
 
 ## Definition bar
 
-Each composite chart has a definition bar to provide information about the:
+Each composite chart has a definition bar to provide information about the following:
 * grouping option
 * aggregate function to be applied in case multiple data sources exist
 * instances
