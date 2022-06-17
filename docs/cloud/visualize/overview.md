@@ -101,7 +101,7 @@ networking issues, a stopped `netdata` service, or because that node does not ha
 ### Aggregate functions over time
 
 When the granularity of the data collected is higher than the plotted points on the chart an aggregation function over time
-is applied. By default the aggregation applied is _average_ but user can choose different options from:
+is applied. By default the aggregation applied is _average_ but the user can choose different options from the following:
 * Min
 * Max
 * Average
