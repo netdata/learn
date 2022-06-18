@@ -38,12 +38,12 @@ Room.
 ## Definition bar
 
 Each composite chart has a definition bar to provide information about the following:
-* grouping option
-* aggregate function to be applied in case multiple data sources exist
-* instances
-* nodes
-* dimensions, and 
-* aggregate function over time to be applied if one point in the chart consists of multiple data points aggregated
+* Grouping option
+* Aggregate function to be applied in case multiple data sources exist
+* Instances
+* Nodes
+* Dimensions, and 
+* Aggregate function over time to be applied if one point in the chart consists of multiple data points aggregated
 
 ### Group by dimension, node, or chart
 
