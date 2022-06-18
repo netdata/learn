@@ -52,7 +52,7 @@ Click on the **dimension** dropdown to change how a composite chart groups metri
 The default option is by _dimension_, so that each line/area in the visualization is the aggregation of a single dimension.
 This provides a per dimension view of the data from all the nodes in the War Room, taking into account filtering criteria if defined. 
 
-A composite chart grouped by _node_ visualizes a single metric across contributing nodes. If the composite chart has 5
+A composite chart grouped by _node_ visualizes a single metric across contributing nodes. If the composite chart has five
 contributing nodes, there will be five lines/areas. This is typically an absolute value of the sum of the dimensions over each node but there
 are some opinionated-but-valuable exceptions where a specific dimension is selected.
 Grouping by nodes allows you to quickly understand which nodes in your infrastructure are experiencing anomalous behavior.
