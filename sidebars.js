@@ -88,7 +88,14 @@ module.exports = {
           label: 'Configuration',
           items: [
             'configure/nodes',
-            'configure/machine-learning',
+            {
+              type: 'doc',
+              id: 'agent/ml',
+              customProps: {
+                separator: true,
+                subCategory: 'Machine Learning'
+              }
+            },
             'configure/common-changes',
             'configure/start-stop-restart',
             {
