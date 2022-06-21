@@ -37,20 +37,33 @@ Room.
 
 ## Definition bar
 
-Each composite chart has a definition bar to provide information about the aggregate function, dimension, and nodes
-related to that chart.
+Each composite chart has a definition bar to provide information about the following:
+* Grouping option
+* Aggregate function to be applied in case multiple data sources exist
+* Instances
+* Nodes
+* Dimensions, and 
+* Aggregate function over time to be applied if one point in the chart consists of multiple data points aggregated
 
-Below is an example definition bar for the `system.cpu_pressure` chart, which visualizes situations where tasks are
-stalled on CPU. This definition bar informs you that the chart is using the **average** aggregate function on **all
-dimensions**, with **5 contributing charts** from **5 contributing nodes**, **0 errors**, and that the composite chart
-is visualizing metrics **per dimension**.
+### Group by dimension, node, or chart
 
-![The definition bar for a composite
-chart](https://user-images.githubusercontent.com/1153921/99305048-7c019b80-2810-11eb-82fa-02fac08d27be.png)
+Click on the **dimension** dropdown to change how a composite chart groups metrics.
 
-### Aggregate functions
+The default option is by _dimension_, so that each line/area in the visualization is the aggregation of a single dimension.
+This provides a per dimension view of the data from all the nodes in the War Room, taking into account filtering criteria if defined. 
 
-Each chart uses an opinionated-but-valuable default aggregate function. For example, the `system.cpu` chart shows the
+A composite chart grouped by _node_ visualizes a single metric across contributing nodes. If the composite chart has five
+contributing nodes, there will be five lines/areas. This is typically an absolute value of the sum of the dimensions over each node but there
+are some opinionated-but-valuable exceptions where a specific dimension is selected.
+Grouping by nodes allows you to quickly understand which nodes in your infrastructure are experiencing anomalous behavior.
+
+A composite chart grouped by _instance_ visualizes each instance of one software or hardware on a node and displays these as a separate dimension. By grouping the
+`disk.io` chart by chart, you can visualize the activity of each disk on each node that contributes to the composite
+chart.
+
+### Aggregate functions over data sources
+
+Each chart uses an opinionated-but-valuable default aggregate function over the data sources. For example, the `system.cpu` chart shows the
 average for each dimension from every contributing chart, while the `net.net` chart shows the sum for each dimension
 from every contributing chart, which can also come from multiple networking interfaces.
 
@@ -71,51 +84,36 @@ The following aggregate functions are available for each selected dimension:
 Select which dimensions to display on the composite chart. You can choose **All dimensions**, a single dimension, or any
 number of dimensions available on that context.
 
-### Charts
+### Instances
 
-Click on **X Charts** to display a dropdown of charts and nodes contributing to that composite chart. Each line in the
-dropdown displays a chart name and the associated node's hostname.
-
-![The charts dropdown in a composite
-chart](https://user-images.githubusercontent.com/1153921/99305050-7c9a3200-2810-11eb-957f-f3f800c3c9b1.png)
+Click on **X Instances** to display a dropdown of instances and nodes contributing to that composite chart. Each line in the
+dropdown displays an instance name and the associated node's hostname.
 
 ### Nodes
 
 Click on **X Nodes** to display a dropdown of nodes contributing to that composite chart. Each line displays a hostname
 to help you identify which nodes contribute to a chart.
 
-![The nodes dropdown in a composite
-chart](https://user-images.githubusercontent.com/1153921/99305049-7c019b80-2810-11eb-942a-8ebfcf236b7f.png)
-
 If one or more nodes can't contribute to a given chart, the definition bar shows a warning symbol plus the number of
 affected nodes, then lists them in the dropdown along with the associated error. Nodes might return errors because of
 networking issues, a stopped `netdata` service, or because that node does not have any metrics for that context.
 
-### Group by dimension, node, or chart
+### Aggregate functions over time
 
-Click on the **By dimension** dropdown to change how a composite chart groups metrics.
+When the granularity of the data collected is higher than the plotted points on the chart an aggregation function over time
+is applied. By default the aggregation applied is _average_ but the user can choose different options from the following:
+* Min
+* Max
+* Average
+* Sum
+* Incremental sum (Delta)
+* Standard deviation
+* Median
+* Single exponential smoothing
+* Double exponential smoothing
+* Coefficient variation
 
-![The group by
-dropdown](https://user-images.githubusercontent.com/1153921/114920803-afa41a00-9dde-11eb-8eaa-b9f0017425ac.png)
-
-The default is _by dimension_, so that each line/area in the visualization is the aggregation of a single dimension.
-
-![A chart grouped by
-dimension](https://user-images.githubusercontent.com/1153921/114920565-6a7fe800-9dde-11eb-887d-02acfde837e1.png)
-
-A composite chart grouped _by node_ visualizes a single metric across contributing nodes. If the composite chart has 5
-contributing nodes, there will be 5 lines/areas, one for the most relevant dimension from each node. Grouping by nodes
-allows you to quickly understand which nodes in your infrastructure are experiencing anomalous behavior.
-
-![A chart grouped by
-node](https://user-images.githubusercontent.com/1153921/114920568-6b187e80-9dde-11eb-9068-29831daba8e0.png)
-
-A composite chart group _by chart_ visualizes each instance of a chart as a separate dimension. By grouping the
-`disk.io` chart by chart, you can visualize the activity of each disk on each node that contributes to the composite
-chart.
-
-![A chart grouped by
-chart](https://user-images.githubusercontent.com/1153921/114920564-69e75180-9dde-11eb-80b2-3ca5e5ac29de.png)
+For more details on each, you can refer to our Agent's HTTP API details on [Data Queries - Data Grouping](/docs/agent/web/api/queries#data-grouping).
 
 ### Reset to defaults
 
