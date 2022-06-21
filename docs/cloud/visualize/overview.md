@@ -113,7 +113,7 @@ is applied. By default the aggregation applied is _average_ but the user can cho
 * Double exponential smoothing
 * Coefficient variation
 
-For more details on each you can refer to our Agent's HTTP API details on [Data Queries - Data Grouping](/docs/agent/web/api/queries#data-grouping).
+For more details on each, you can refer to our Agent's HTTP API details on [Data Queries - Data Grouping](/docs/agent/web/api/queries#data-grouping).
 
 ### Reset to defaults
 
