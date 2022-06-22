@@ -501,6 +501,7 @@ module.exports = {
                 'agent/web/api/queries/max',
                 'agent/web/api/queries/median',
                 'agent/web/api/queries/min',
+                'agent/web/api/queries/countif',
                 'agent/web/api/queries/ses',
                 'agent/web/api/queries/stddev',
                 'agent/web/api/queries/sum',
