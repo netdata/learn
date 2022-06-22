@@ -506,9 +506,9 @@ module.exports = {
                 'agent/web/api/queries/sum',
               ]
             },
-            'agent/libnetdata/simple_pattern',
           ],
         },
+        'agent/libnetdata/simple_pattern',
       ]
     }
   ]
