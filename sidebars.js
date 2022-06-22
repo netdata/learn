@@ -25,7 +25,6 @@ module.exports = {
             'overview/what-is-netdata',
             'overview/why-netdata',
             'overview/netdata-monitoring-stack',
-            'agent/libnetdata/simple_pattern',
             'agent/anonymous-statistics',
             'agent/netdata-security',
           ]
@@ -507,6 +506,7 @@ module.exports = {
                 'agent/web/api/queries/sum',
               ]
             },
+            'agent/libnetdata/simple_pattern',
           ],
         },
       ]
