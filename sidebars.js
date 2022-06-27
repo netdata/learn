@@ -25,7 +25,6 @@ module.exports = {
             'overview/what-is-netdata',
             'overview/why-netdata',
             'overview/netdata-monitoring-stack',
-            'agent/libnetdata/simple_pattern',
             'agent/anonymous-statistics',
             'agent/netdata-security',
           ]
@@ -88,7 +87,14 @@ module.exports = {
           label: 'Configuration',
           items: [
             'configure/nodes',
-            'configure/machine-learning',
+            {
+              type: 'doc',
+              id: 'agent/ml',
+              customProps: {
+                separator: true,
+                subCategory: 'Machine Learning'
+              }
+            },
             'configure/common-changes',
             'configure/start-stop-restart',
             {
@@ -494,6 +500,7 @@ module.exports = {
                 'agent/web/api/queries/max',
                 'agent/web/api/queries/median',
                 'agent/web/api/queries/min',
+                'agent/web/api/queries/countif',
                 'agent/web/api/queries/ses',
                 'agent/web/api/queries/stddev',
                 'agent/web/api/queries/sum',
@@ -501,6 +508,7 @@ module.exports = {
             },
           ],
         },
+        'agent/libnetdata/simple_pattern',
       ]
     }
   ]
