@@ -124,14 +124,20 @@ at the top of the panel.
 3. To _add existing users to a War Room_, click on **Add Users**. See our [invite doc](/docs/cloud/manage/invite-your-team)
 for details on inviting new users to your Space in Netdata Cloud.
 
-:::caution
+:::note
  \* This action requires admin rights for this space
 :::
 
 ### More actions
 
 To _view or remove nodes_ in a War Room, click on **Nodes view**. To remove a node from the current War Room, click on
-the **🗑** icon. Removing a node from a War Room does not remove it from your Space.
+the **🗑** icon. 
+
+:::info
+ Removing a node from a War Room does not remove it from your Space.
+:::
+
+
 
 ## What's next?
 

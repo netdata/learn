@@ -66,7 +66,7 @@ details the invitation process.
 6. _Manage your bookmarks*_, click on the **Bookmarks** tab to add or remove bookmarks that you need.
 
 
-:::caution
+:::note
  \* This action requires admin rights for this space
 :::
 
