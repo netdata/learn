@@ -44,7 +44,7 @@ this War Rooms. Let's explore what view you have available:
 
 ### Non static tabs
 
-If you open a [new dashboard](/docs/cloud/visualize/dashboards) or jump to a single-node dashboard, or to a dedicate
+If you open a [new dashboard](/docs/cloud/visualize/dashboards), jump to a single-node dashboard, or navigate to a dedicated
 alert page they will open in a new War Room tab.
 
 Tabs can be rearranged with drag-and-drop or closed with the **X** button. Open tabs persist between sessions, so you
