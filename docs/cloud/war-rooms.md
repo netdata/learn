@@ -112,9 +112,8 @@ can join public War Rooms, but can only join private War Rooms with an invitatio
 
 All the users and nodes involved in a particular space can potential be part of a War Room.
 
-Any user can change simple settings of a War room, like the name or the users participating in it. To add new nodes  
-though you need to be admin. Click on the gear icon of the War Room's name in the top of the page to do that. A sidebar
-will open with options for this War Room:
+Any user can change simple settings of a War room, like the name or the users participating in it. Click on the gear 
+icon of the War Room's name in the top of the page to do that. A sidebar will open with options for this War Room:
 
 1. To _change a War Room's name, description, or public/private status_, click on **War Room** tab of the sidebar.
 
