@@ -1,33 +1,34 @@
 ---
-title: War Rooms
-description: Netdata Cloud uses War Rooms to group related nodes and create insightful composite dashboards based on their aggregate health and performance.
+title: War Rooms 
+description: >- 
+   Netdata Cloud uses War Rooms to group related nodes and create insightful composite
+   dashboards based on their aggregate health and performance.
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/war-rooms.md
 ---
 
 War Rooms organize your connected nodes and provide infrastructure-wide dashboards using real-time metrics and
 visualizations.
 
-Once you add nodes to a War Room, you can then use various dashboards to monitor the health and performance of your
-entire infrastructure from a single pane of glass. When an anomaly strikes, drill down into single-node dashboards for
-every granular detail you need for root cause analysis.
+Once you add nodes to a Space, all of your nodes will be visible in the _All nodes_ war room. This is a special war room
+which gives you an overview of all of your nodes in this particular space. Then you can create logical separations of
+your nodes into more war rooms. Every War Room has its own dashboards, navigation, indicators, and management tools.
 
 ![An example War Room](https://user-images.githubusercontent.com/1153921/121967830-eb4b5980-cd25-11eb-8d30-00ccfc6e17f3.png)
 
-## Navigating a War Room
+## Navigation
 
-Every War Room has the same dashboards, navigation, indicators, and management tools.
+### Switching between views
 
-### Switching between dashboards
-
-The default view for any War Room is the [Overview](/docs/cloud/visualize/overview), which uses composite charts to
-display real-time metrics from every available node in a given War Room. The [Nodes view](/docs/cloud/visualize/nodes)
-helps you view key metrics and alarm status from all your nodes at a glance. Finally, use
-[Dashboards](/docs/cloud/visualize/dashboards) to build rich, targeted interfaces for your infrastructure using any
-number of charts from any number of nodes.
+The default view for any War Room is the [Home tab](/docs/cloud/visualize/overview#home), which give us an overview of
+this space, Nodes claimed, data retained in each node and more. The second and most important view is
+the [Overview](/docs/cloud/visualize/overview#overview) which uses composite charts to display real-time metrics from
+every available node in a given War Room. The [Nodes view](/docs/cloud/visualize/nodes) helps you view key metrics and
+alarm status from all your nodes at a glance. Finally, you can use use [Dashboards](/docs/cloud/visualize/dashboards) to
+build rich, targeted interfaces for your infrastructure using any number of charts from any number of nodes.
 
 To switch between dashboards, use the tabs beneath the War Room's name. You can also jump to single-node dashboards from
-either the [Overview](/docs/cloud/visualize/overview#jump-to-single-node-dashboards) or the [Nodes
-view](/docs/cloud/visualize/nodes#jump-to-single-node-dashboards).
+either the [Overview](/docs/cloud/visualize/overview#jump-to-single-node-dashboards) or
+the [Nodes view](/docs/cloud/visualize/nodes#jump-to-single-node-dashboards).
 
 ### War Room tabs
 
@@ -43,8 +44,8 @@ A War Room has three different states: playing, paused, and force playing. The d
 every second as long as the browser tab is in focus. [Interacting with a chart](/docs/dashboard/interact-charts) pauses
 the War Room. Once the tab loses focus, charts pause automatically.
 
-The top navigation bar features a play/pause button to quickly change the state, and a dropdown to select **Force
-Play**, which keeps charts refreshing, potentially at the expense of system performance.
+The top navigation bar features a play/pause button to quickly change the state, and a dropdown to select **Force Play**
+, which keeps charts refreshing, potentially at the expense of system performance.
 
 Next to the play/pause button is the timeframe selector, which helps you select a precise window of metrics data to
 visualize. By default, all visualizations in Netdata Cloud show the last 15 minutes of metrics data.
@@ -81,9 +82,9 @@ Netdata Cloud can filter by in the [supported collectors list](/docs/agent/colle
 For example, `name == centos OR os == debian` filters any nodes by the exact name `centos` or has Debian as its
 operating system.
 
-You can also use parentheses around operators to create more sophisticated filters. `(name contains aws AND os contains
-ubuntu) OR services == apache` shows only nodes that have `aws` in the hostname and are Ubuntu-based, or any nodes that
-have an Apache webserver running on them.
+You can also use parentheses around operators to create more sophisticated
+filters. `(name contains aws AND os contains ubuntu) OR services == apache` shows only nodes that have `aws` in the
+hostname and are Ubuntu-based, or any nodes that have an Apache webserver running on them.
 
 If a filter is invalid or incomplete, Netdata Cloud shows a warning and will not run the filter until it's corrected.
 
@@ -113,8 +114,7 @@ as possible.
 If you're the administrator of a Space, add new War Rooms to any Space by clicking on the green plus icon **+** next the
 **War Rooms** heading.
 
-![Add a new War
-Room](https://user-images.githubusercontent.com/1153921/108433306-01775c00-7203-11eb-931e-46cd81891dd4.png)
+![Add a new War Room](https://user-images.githubusercontent.com/1153921/108433306-01775c00-7203-11eb-931e-46cd81891dd4.png)
 
 In the panel, give the War Room a name and description, and choose whether it's public or private. Anyone in your Space
 can join public War Rooms, but can only join private War Rooms with an invitation.
@@ -124,13 +124,12 @@ can join public War Rooms, but can only join private War Rooms with an invitatio
 If you're an administrator of War Room, you can change its settings. Click on the War Room's name in the top navigation
 to open a dropdown of options.
 
-![Managing a War
-Room](https://user-images.githubusercontent.com/1153921/108433867-efe28400-7203-11eb-995d-1b1e92b956c6.png)
+![Managing a War Room](https://user-images.githubusercontent.com/1153921/108433867-efe28400-7203-11eb-995d-1b1e92b956c6.png)
 
 To _change a War Room's name, description, or public/private status_, click on **Manage War Room**.
 
-To _add a connected node_ to a War Room, click on **Add Nodes**. Choose any connected node you want to add to this War Room
-by clicking on the checkbox next to its hostname, then click **+ Add** at the top of the panel.
+To _add a connected node_ to a War Room, click on **Add Nodes**. Choose any connected node you want to add to this War
+Room by clicking on the checkbox next to its hostname, then click **+ Add** at the top of the panel.
 
 To _view or remove nodes_ in a War Room, click on **List Nodes**. To remove a node from the curernt War Room, click on
 the **🗑** icon. Removing a node from a War Room does not remove it from your Space.
