@@ -4,7 +4,7 @@ description: The Home tab automatically presents relevant information and the Ov
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/visualize/overview.md
 ---
 
-# Home
+## Home
 
 The Home tab provides a predefined dashboard of relevant information about entities in the War Room.
 
@@ -12,7 +12,7 @@ This tab will
 automatically present summarized information in an easily digestible display. You can see information about your 
 nodes, data collection and retention stats, alerts, users and dashboards.
 
-# Overview
+## Overview
 
 The Overview tab is another great way to monitor infrastructure using Netdata Cloud. While the interface might look similar to local
 dashboards served by an Agent, or even the single-node dashboards in Netdata Cloud, Overview uses **composite charts**.
