@@ -31,7 +31,7 @@ this War Rooms. Let's explore what view you have available:
 - The [Nodes tab](/docs/cloud/visualize/nodes) gives you the ability to see the status (offline or online), host details
   , alarm status and also a short overview of some key metrics from all your nodes at a glance.
 
-- [Kubernetes tab](docs/cloud/visualize/kubernetes) is a logical grouping of charts regards to your Kubernetes clusters.
+- [Kubernetes tab](/docs/cloud/visualize/kubernetes) is a logical grouping of charts regards to your Kubernetes clusters.
   It contains a subset of the charts available in the _Overview tab_
 
 - The [Dashboards tab](/docs/cloud/visualize/dashboards) gives you the ability to have tailored made views of
@@ -40,7 +40,7 @@ this War Rooms. Let's explore what view you have available:
 - The **Alerts tab** provides you with an overview for all the active alerts you receive for the nodes in this War Room,
   you can also see alla the alerts that are configured to be triggered in any given moment.
 
-- The **Anomalies tab** is dedicated to the [Anomaly Advisor](/docs/cloud/insights/anomaly-advisor.mdx) tool
+- The **Anomalies tab** is dedicated to the [Anomaly Advisor](/docs/cloud/insights/anomaly-advisor) tool
 
 ### Non static tabs
 
