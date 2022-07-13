@@ -9,7 +9,7 @@
  Create as many sidebars as you want.
  */
 
-module.exports = {
+ module.exports = {
   sidebar: [
     {
       type: 'category',
@@ -106,14 +106,36 @@ module.exports = {
               }
             },
             {
-              type: 'doc',
-              id: 'agent/running-behind-nginx',
-              label: 'Reverse proxy with Nginx'
-            },
-            {
-              type: 'doc',
-              id: 'agent/running-behind-apache',
-              label: 'Reverse proxy with Apache'
+              type: 'category',
+              label: 'Expose local dashboard through a Web server',
+              items: [
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-nginx',
+                  label: 'Reverse proxy with NGINX'
+                },
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-apache',
+                  label: 'Reverse proxy with Apache'
+                },
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-haproxy',
+                  label: 'Reverse proxy with Lighttpd'
+                },
+                'agent/running-behind-h2o',
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-haproxy',
+                  label: 'Running Netdata behind HAProxy'
+                },
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-caddy',
+                  label: 'Running Netdata behind Caddy'
+                }
+              ]
             },
             {
               type: 'doc',
