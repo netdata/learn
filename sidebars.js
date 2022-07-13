@@ -121,7 +121,7 @@
                 },
                 {
                   type: 'doc',
-                  id: 'agent/running-behind-haproxy',
+                  id: 'agent/running-behind-lighttpd',
                   label: 'Reverse proxy with Lighttpd'
                 },
                 {
