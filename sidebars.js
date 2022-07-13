@@ -124,16 +124,20 @@
                   id: 'agent/running-behind-haproxy',
                   label: 'Reverse proxy with Lighttpd'
                 },
-                'agent/running-behind-h2o',
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-h2o',
+                  label: 'Reverse proxy with H2O'
+                },
                 {
                   type: 'doc',
                   id: 'agent/running-behind-haproxy',
-                  label: 'Running Netdata behind HAProxy'
+                  label: 'Reverse proxy with HAProxy'
                 },
                 {
                   type: 'doc',
                   id: 'agent/running-behind-caddy',
-                  label: 'Running Netdata behind Caddy'
+                  label: 'Reverse proxy with Caddy'
                 }
               ]
             },
