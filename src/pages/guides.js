@@ -361,7 +361,7 @@ const GuideCategories = [
   {
     label: 'FAQ',
     title: 'FAQ',
-    description: <>Frequent questions and answers</>
+    description: <>Frequent Asked Questions</>
   
   },
   {
