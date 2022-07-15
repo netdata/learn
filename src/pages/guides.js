@@ -335,6 +335,16 @@ const GuideItems = [
       </>
     )
   },
+  {
+    title: <>Troubleshoot Agent not Connecting to Cloud</>,
+    href: '/guides/troubleshoot/troubleshooting-agent-with-cloud-connection',
+    category: 'FAQ',
+    description: (
+      <>
+        A simple guide to troubleshoot occurrences where the Agent is showing as offline after claiming.
+      </>
+    )
+  }
 ]
 
 const GuideCategories = [
@@ -347,6 +357,12 @@ const GuideCategories = [
     label: 'collect-monitor',
     title: 'Collect & monitor',
     description: <>Extract and visualize metrics from essential services or applications on your infrastructure.</>
+  },
+  {
+    label: 'FAQ',
+    title: 'FAQ',
+    description: <>Frequent questions and answers</>
+  
   },
   {
     label: 'configure',
