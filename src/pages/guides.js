@@ -336,7 +336,7 @@ const GuideItems = [
     )
   },
   {
-    title: <>Troubleshoot Agent not Connecting to Cloud</>,
+    title: <>Troubleshoot Agent-Cloud connectivity issues</>,
     href: '/guides/troubleshoot/troubleshooting-agent-with-cloud-connection',
     category: 'FAQ',
     description: (
