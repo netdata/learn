@@ -1,9 +1,14 @@
-import re
+#Imports
 import shutil
 import os
 import sys
+import argparse
+import git
+import glob
+import re
 
 dry_run = False
+allMarkdownFiles = []
 
 # Will come back to this once we have a concrete picture of the script
 if sys.argv[1] == "dry-run":
@@ -24,6 +29,41 @@ def changePath(oldFilePath, newFilePath):
     # Return the tuple
     return (oldFilePath, newFilePath)
 
+def cloneRepoD1(owner, repo, branch):
+    try:
+        git.Git().clone("https://github.com/{}/{}.git".format(owner, repo), repo, depth=1, branch=branch)
+        return("Cloned the {} branch from {} repo".format(branch, repo))
+    except:
+        return ("Couldn't clone t the {} branch from {} repo".format(branch, repo))
+
+def fetchMarkdownFromRepo(outputFolder):
+    return(glob.glob(outputFolder+'/**/*.md*', recursive=True))
+
+def readMetadataFromDocs(pathToPath):
+    """
+    Identify the area with pattern " <!-- ...multiline string -->" and  converts them
+    to a dictionary of key:value pairs
+    """
+    metdataDictionary = {}
+    with open(pathToPath, "r+") as fd:
+        rawText = "".join(fd.readlines())
+        pattern = r"(<!--\n)((.|\n)*)(\n-->)"
+        matchGroup = re.search(pattern, rawText)
+        if (matchGroup):
+            rawMetadata = matchGroup[2]
+            listMetadata = rawMetadata.split("\n")
+            while listMetadata:
+                line = listMetadata.pop(0)
+                splitedInKeywords = line.split(": ")
+                key = splitedInKeywords[0]
+                value = splitedInKeywords[1]
+                # If it's a multiline string
+                while(listMetadata and len(listMetadata[0].split(": "))<=1):
+                    line = listMetadata.pop(0)
+                    value = value+line.lstrip(' ')
+
+                metdataDictionary[key] = value.lstrip('>-')
+    return(metdataDictionary)
 
 def sanitizePage(path):
     # Open the file for reading
@@ -184,6 +224,17 @@ def fixMovedLinks(path, dict):
     file.writelines(output)
     file.close()
 
+
+
+if __name__ == '__main__':
+    "Dummy run, cloning 3 repos and check all the markdowns they have"
+    print(cloneRepoD1("netdata", "go.d.plugin", "master"))
+    print(cloneRepoD1("netdata", "netdata", "master"))
+    print(cloneRepoD1("netdata", ".github", "main"))
+    fetchMarkdownFromRepo("netdata")
+    allMarkdownFiles = list(itertools.chain(fetchMarkdownFromRepo("netdata"),
+                                            fetchMarkdownFromRepo("go.d.plugin"),
+                                            fetchMarkdownFromRepo(".github")))
 
 # TODO see the .../.md links, what we should do with them.
 
