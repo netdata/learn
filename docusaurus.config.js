@@ -11,9 +11,6 @@ module.exports = {
 	organizationName: 'netdata',
 	projectName: 'netdata',
 	themeConfig: {
-		smartlook: {
-			projectKey: '377800799eb8bf93639cbef950f4e7581f2e68ae',
-		},
 		posthog: {
 			apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
 			appUrl: 'https://posthog.netdata.cloud',
@@ -141,7 +138,6 @@ module.exports = {
 		},
 	},
 	plugins: [
-		'docusaurus-plugin-smartlook',
 		'posthog-docusaurus',
 		'docusaurus-tailwindcss-loader',
 		[
