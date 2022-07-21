@@ -23,7 +23,6 @@
 		"@tailwindcss/typography": "^0.4.0",
 		"axios": "^0.21.2",
 		"clsx": "^1.1.1",
-		"docusaurus-plugin-smartlook": "^1.0.1",
 		"docusaurus-tailwindcss-loader": "file:plugins/docusaurus-tailwindcss-loader",
 		"dotenv": "^8.2.0",
 		"postcss": "^8.2.8",
