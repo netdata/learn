@@ -1,4 +1,6 @@
-#Imports
+# Imports
+import itertools
+import pathlib
 import shutil
 import os
 import sys
@@ -8,36 +10,72 @@ import glob
 import re
 
 dry_run = False
-allMarkdownFiles = []
+
+filesDictionary = {}
+markdownFiles = []
+docsPrefix = "../docs/"
+
 
 # Will come back to this once we have a concrete picture of the script
-if sys.argv[1] == "dry-run":
-    print("--- DRY RUN ---\n")
-    dry_run = True
+# if sys.argv[1] == "dry-run":
+#     print("--- DRY RUN ---\n")
+#     dry_run = True
+
+
+def renameReadmes(markdownFiles):
+    """
+    In this function we will get the whole list of files,
+    search for README named files, and rename them in accordance to their parent dir name.
+    After we rename, we need to update the list entry.
+    """
+
+    counter = 0
+    for filename in markdownFiles:
+        if filename.__contains__("README"):
+            # Get the path without the filename
+            filename = pathlib.Path(filename)
+            # And then from that take the last dir, which is the name we want to rename to, add a needed "/" and the
+            # ".md"
+            newPath = os.path.dirname(filename) + "/" + os.path.basename(filename.parent.__str__()[1:]) + ".md"
+
+            os.rename(filename, newPath)
+            markdownFiles[counter] = newPath
+        counter += 1
 
 
 def changePath(oldFilePath, newFilePath):
+    """REQUIRES:
+    In the oldFilePath the metadata:
+    nature: e.g Concepts
+    path: e.g /agent/ <- the folder inside the Concepts directory
+    """
+
     # Get the path
     newDir = os.path.dirname(newFilePath)
 
     # If the new dir doesn't exist, create it
     if not os.path.exists(newDir):
-        os.mkdir(newDir)
+        os.makedirs(newDir)
     # Then remove the file
     shutil.move(oldFilePath, newFilePath)
 
-    # Return the tuple
-    return (oldFilePath, newFilePath)
+    # Update the dict of the file's metadata
+    filesDictionary.get(oldFilePath).update({"newLearnPath": newFilePath})
+
 
 def cloneRepoD1(owner, repo, branch):
     try:
-        git.Git().clone("https://github.com/{}/{}.git".format(owner, repo), repo, depth=1, branch=branch)
-        return("Cloned the {} branch from {} repo".format(branch, repo))
-    except:
+        outputFolder = repo.lstrip(".")
+        # print("DEBUG", outputFolder)
+        git.Git().clone("https://github.com/{}/{}.git".format(owner, repo), "." + outputFolder, depth=1, branch=branch)
+        return ("Cloned the {} branch from {} repo".format(branch, repo))
+    except Exception as e:
         return ("Couldn't clone t the {} branch from {} repo".format(branch, repo))
 
+
 def fetchMarkdownFromRepo(outputFolder):
-    return(glob.glob(outputFolder+'/**/*.md*', recursive=True))
+    return (glob.glob(outputFolder + '/**/*.md*', recursive=True))
+
 
 def readMetadataFromDocs(pathToPath):
     """
@@ -58,12 +96,13 @@ def readMetadataFromDocs(pathToPath):
                 key = splitedInKeywords[0]
                 value = splitedInKeywords[1]
                 # If it's a multiline string
-                while(listMetadata and len(listMetadata[0].split(": "))<=1):
+                while (listMetadata and len(listMetadata[0].split(": ")) <= 1):
                     line = listMetadata.pop(0)
-                    value = value+line.lstrip(' ')
+                    value = value + line.lstrip(' ')
 
                 metdataDictionary[key] = value.lstrip('>-')
-    return(metdataDictionary)
+    return ({'{0}'.format(pathToPath): metdataDictionary})
+
 
 def sanitizePage(path):
     # Open the file for reading
@@ -86,144 +125,52 @@ def sanitizePage(path):
 
     # TODO remove github badges
 
-    # print(output)
-
     # Open the file for overwriting, we are going to write the output list in the file
     file = open(path, "w")
     file.seek(0)
     file.writelines(output)
 
 
-def normalizeLinks(path):
+def fixMovedLinks(path, dict):
     # Open the file for reading
     file = open(path, "r")
     body = file.read()
     file.close()
-
-    # The list with the lines that will be written in the file
     output = []
 
-    # For each line of the file I read
+    # For every line in the file we are going to search for urls,
+    # and check the dictionary for the relative path of Learn.
     for line in body.splitlines():
-        # Use a regex to see if the line has in it a link
         if re.search("\]\((.*?)\)", line):
             # Find all the links inside that line
             urls = re.findall("\]\((.*?)\)", line)
 
-            # The string that will replace the URL
-            replaceString = ""
-
-            # For every URL we find, check if it has a certain pattern
             for url in urls:
-                # If it is a learn URL, strip the first portion of it
-                if url.startswith("https://learn.netdata.cloud/"):
-                    replaceString = url.split("https://learn.netdata.cloud/")[1]
-                # If it is an anchor link, an external link or a mailto, leave it as is
-                elif url.startswith("#") or url.startswith("http") or url.startswith("mailto"):
-                    replaceString = url
+                replaceString = url
+                # If the URL is a GitHub one
+                if not (url.startswith("#") or url.startswith("http") or url.startswith("https://learn.netdata.cloud")):
+                    # The URLs we care about are the ones that are relative to their repo, so we add a dot to make
+                    # them match the keys inside the dictionary
+                    key = "." + url
 
-                # TODO Joel had some static locations that he wasn't touching, this needs some more work for those links
-                # and mainly we need to figure out what we are going to do with our structure
-
-                # elif url.startswith("/docs/"):
-                #     replaceString = url
-
-                # Not sure about these, Joel's concept
-                # // If the link is to a guide page in the `/docs/guides` folder.
-                #       if (url.includes('guides/')) {
-                #         url = url.split('guides/')[1]
-                #         const guideUrl =  path.join(guideDir, url)
-                #         return `](${guideUrl})`
-                #       }
-                #
-                #       // If the link is to a step-by-step guide page in the `/docs/step-by-step`
-                #       // folder.
-                #       if (url.includes('step-by-step/') || url.includes('step-')) {
-                #         if (url.includes('step-by-step/')) {
-                #           url = url.split('step-by-step/')[1]
-                #         }
-                #         const guideUrl =  path.join(guideDir, 'step-by-step', url)
-                #         return `](${guideUrl})`
-                #       }
-                #
-                #       // If the link is to one of a few contributing-related documents.
-                #       if (url.includes('contributing-documentation')) {
-                #         const contribUrl =  path.join(contribDir, 'documentation')
-                #         return `](${contribUrl})`
-                #       } else if (url.includes('style-guide')) {
-                #         const contribUrl =  path.join(contribDir, 'style-guide')
-                #         return `](${contribUrl})`
-                #       } else if (url.includes('code_of_conduct')) {
-                #         const contribUrl =  path.join(contribDir, 'code-of-conduct')
-                #         return `](${contribUrl})`
-                #       } else if (url.includes('contributing.md')) {
-                #         const contribUrl =  path.join(contribDir, 'handbook')
-                #         return `](${contribUrl})`
-                #       } else if (url.includes('contributors.md')) {
-                #         const contribUrl =  path.join(contribDir, 'license')
-                #         return `](${contribUrl})`
-                #       }
-                #
-                #
-                #       // If the link is already absolute-relative. If it begins with `/docs`,
-                #       // cut that. Return the normalized link.
-                #       if (url.startsWith('/')) {
-                #         if (url.startsWith('/docs')) {
-                #           url = url.replace('/docs', '')
-                #         }
-                #         const absRelUrl = path.join(agentDir, url)
-                #         return `](${absRelUrl})`
-                #       }
-                #
-                #       // Catch for anything else. Return the normalized link.
-                #       const normalizedUrl = path.join('/', agentDir, '/', tokens.dir, url).toLowerCase()
-                #       return `](${normalizedUrl})`
-                #     })
-
-                # Re-build the line with the correct links
-                line = line.replace(url, replaceString)
-                # print(line)
-
+                    # If it is indeed a key inside the dictionary
+                    if key in dict.keys():
+                        metadata = dict.get(key)
+                        replaceString = metadata.get("newLearnPath").split("..")[1]
+                # Remove the .md
+                line = line.replace(url, replaceString.split('.md')[0])
         output.append(line + "\n")
 
-    # print(output)
-
-    # Open the file for overwriting, we are going to write the output list in the file
     file = open(path, "w")
     file.seek(0)
     file.writelines(output)
     file.close()
 
 
-def fixMovedLinks(path, dict):
-    # the path is the page I am going to check
-    # dict -> (oldPath, newPath)
-
-    # Open the file for reading
-    file = open(path, "r")
-    body = file.read()
-    file.close()
-    output = []
-
-    # For every key in the dictionary
-    for tuple in dict:
-
-        # print(tuple[0], tuple[1])
-        # Check every line of the file
-        for line in body.splitlines():
-            # If the line contains the `key` in a link, replace it with it's `value` (replace the old path with the
-            # new one)
-            if line.__contains__(tuple[0].split(".md")[0]):
-                line = line.replace(tuple[0].split(".md")[0], tuple[1].split(".md")[0])
-            output.append(line + "\n")
-            # print(line)
-
-    # Open the file for overwriting, we are going to write the output list in the file
-    file = open(path, "w")
-    file.seek(0)
-    file.writelines(output)
-    file.close()
-
+def cleanupRepos():
+    shutil.rmtree(".github")
+    shutil.rmtree(".netdata")
+    shutil.rmtree(".go.d.plugin")
 
 
 if __name__ == '__main__':
@@ -231,37 +178,82 @@ if __name__ == '__main__':
     print(cloneRepoD1("netdata", "go.d.plugin", "master"))
     print(cloneRepoD1("netdata", "netdata", "master"))
     print(cloneRepoD1("netdata", ".github", "main"))
-    fetchMarkdownFromRepo("netdata")
-    allMarkdownFiles = list(itertools.chain(fetchMarkdownFromRepo("netdata"),
-                                            fetchMarkdownFromRepo("go.d.plugin"),
-                                            fetchMarkdownFromRepo(".github")))
 
-# TODO see the .../.md links, what we should do with them.
+    # We fetch the markdown files from the repositories
+    markdownFiles = list(itertools.chain(fetchMarkdownFromRepo(".netdata"),
+                                         fetchMarkdownFromRepo(".go.d.plugin"),
+                                         fetchMarkdownFromRepo(".github")))
 
-# CHANGE PATH TEST
-# diction = []
-# diction.append(changePath("./new/samplename.md", "./testfolder/samplename.md"))
+    print("Files detected: ", len(markdownFiles))
 
-# SANITIZE TEST
-# sanitizePage("./new/samplename.md")
+    # # Test case for some dummy files
+    markdownFiles.append("./new/a.md")
+    markdownFiles.append("./new/b.md")
 
-# NORMALIZE LINKS TEST
-# normalizeLinks("./new/samplename.md")
+    # PRIOR TO MOVING
 
-# FIX MOVED LINKS TEST
-# dict = [("/docs/new/sample.md","/docs/new/samplename.md")]
-# fixMovedLinks("./new/samplename.md", dict)
+    print("Gathering Learn files...")
+    # After this we need to keep only the files that have metadata, so we will fetch metadata for everything and keep
+    # the entries that have populated dictionaries
+    learnMarkdownFiles = []
+    for md in markdownFiles:
+        response = readMetadataFromDocs(md)
+        # Check to see if the dictionary returned is empty
+        if response.get(md):
+            learnMarkdownFiles.append(md)
 
-# Prior to running the tests, copy the original md, so you can keep the old format of
-# it so you can run the tests again and again.
+    # TODO hidden osa den exoun metadata me tin domi tou repo pou irthan
 
-""" TODO
-are the tuples going to be the full filepath? Like .../../sample.md
-or
-are they going to be without the extension?
+    # we update the list only with the files that are destined for Learn
+    markdownFiles = learnMarkdownFiles
+    print("  Found Learn files: ", len(markdownFiles))
+    print("  Renaming README.md files...")
+    renameReadmes(markdownFiles)
 
-The above assumes the paths have the .md in them
+    print("Done.")
 
-Also, note that when we piece this together the signatures of these functions might need to change, or a function 
-might be needed to loop for all the files in the dict, instead of taking only one file as an argument.
-"""
+    # METADATA
+
+    print("Reading the metadata for each file...")
+
+    # Read the Metadata
+    for md in markdownFiles:
+        filesDictionary.update(readMetadataFromDocs(md))
+
+    print("Done.")
+
+    # FILE MOVING
+
+    print("Moving files...")
+
+    # TODO the dict needs to be filename -> oldpath newpath metadata
+
+    # Then we need to sanitize the page and move it to the correct path, if it doesn't have a path for now we continue
+    # on, so it doesn't get moved anywhere
+    for md in filesDictionary:
+        sanitizePage(md)
+        # If I have the metadata needed ot build a path, move the file to the correct destination
+        if "path" in filesDictionary.get(md).keys() and "nature" in filesDictionary.get(md).keys():
+            changePath(md,
+                       docsPrefix +
+                       filesDictionary.get(md).get("nature") +
+                       filesDictionary.get(md).get("path") +
+                       os.path.basename(md))
+
+    print("Done")
+
+    # FIX LINKS
+
+    print("Fixing github links...")
+
+    # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
+    # pointing to GitHub relative paths
+    for md in filesDictionary:
+        if "newLearnPath" in filesDictionary.get(md).keys():
+            fixMovedLinks(filesDictionary.get(md)["newLearnPath"], filesDictionary)
+
+    print("Done.")
+
+    print("Cleaning up the repos...")
+    cleanupRepos()
+    print("Done.")
