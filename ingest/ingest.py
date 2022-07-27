@@ -47,8 +47,14 @@ defaultRepos = {
 #     dry_run = True
 
 def unSafecleanUpFolders(folderToDelete):
-    print("Cleaning up folder: ", folderToDelete)
-    shutil.rmtree(folderToDelete)
+    print("Try to clean up the folder: ", folderToDelete)
+    try:
+        shutil.rmtree(folderToDelete)
+        print("Done")
+    except Exception as e:
+        print("Couldn't delete the folder due to the exception: \n", e)
+
+
 
 def safecleanUpFolders():
     pass
@@ -231,7 +237,7 @@ if __name__ == '__main__':
                 defaultRepos[repo]["owner"] = owner
                 defaultRepos[repo]["branch"] = branch
             except(TypeError,ValueError):
-                print("Wrong format of the repo you specified")
+                print("You specified a wrong format in at least one of the repos you want to ingest")
                 parser.print_usage()
                 exit(-1)
             except(KeyError):
