@@ -6,9 +6,12 @@
 
 **Merged pull requests:**
 
+- Dont duplicate buffered bytes [\#13435](https://github.com/netdata/netdata/pull/13435) ([vlvkobal](https://github.com/vlvkobal))
 - Remove octopus from demo-sites [\#13423](https://github.com/netdata/netdata/pull/13423) ([cakrit](https://github.com/cakrit))
+- Tiering statistics API endpoint [\#13420](https://github.com/netdata/netdata/pull/13420) ([ktsaou](https://github.com/ktsaou))
 - add discord, youtube, linkedin links to README [\#13419](https://github.com/netdata/netdata/pull/13419) ([andrewm4894](https://github.com/andrewm4894))
 - add ML bullet point to features section on README [\#13418](https://github.com/netdata/netdata/pull/13418) ([andrewm4894](https://github.com/andrewm4894))
+- Set value to SN\_EMPTY\_SLOT if flags is SN\_EMPTY\_SLOT [\#13417](https://github.com/netdata/netdata/pull/13417) ([MrZammler](https://github.com/MrZammler))
 - Add missing comma \(handle coverity warning CID 379360\) [\#13413](https://github.com/netdata/netdata/pull/13413) ([stelfrag](https://github.com/stelfrag))
 - codacy/lgtm ignore judy sources [\#13411](https://github.com/netdata/netdata/pull/13411) ([underhood](https://github.com/underhood))
 - minor fixes on metadata fields  [\#13406](https://github.com/netdata/netdata/pull/13406) ([tkatsoulas](https://github.com/tkatsoulas))
@@ -166,6 +169,7 @@
 - Use a separate thread for slow mountpoints in the diskspace plugin [\#13067](https://github.com/netdata/netdata/pull/13067) ([vlvkobal](https://github.com/vlvkobal))
 - Remove official support for Debian 9. [\#13065](https://github.com/netdata/netdata/pull/13065) ([Ferroin](https://github.com/Ferroin))
 - Fix coverity 378587 [\#13024](https://github.com/netdata/netdata/pull/13024) ([MrZammler](https://github.com/MrZammler))
+- Remove Ubuntu 21.10 from CI and package builds. [\#12918](https://github.com/netdata/netdata/pull/12918) ([Ferroin](https://github.com/Ferroin))
 - Configurable storage engine for Netdata agents: step 3 [\#12892](https://github.com/netdata/netdata/pull/12892) ([aberaud](https://github.com/aberaud))
 
 ## [v1.35.1](https://github.com/netdata/netdata/tree/v1.35.1) (2022-06-10)
@@ -337,11 +341,6 @@
 - Trace rwlocks of netdata [\#12785](https://github.com/netdata/netdata/pull/12785) ([ktsaou](https://github.com/ktsaou))
 - update ml defaults in docs [\#12782](https://github.com/netdata/netdata/pull/12782) ([andrewm4894](https://github.com/andrewm4894))
 - fix: printing a warning msg in installer [\#12781](https://github.com/netdata/netdata/pull/12781) ([ilyam8](https://github.com/ilyam8))
-- feat\(cgroups.plugin\): add filtering by cgroups names and improve renaming in k8s [\#12778](https://github.com/netdata/netdata/pull/12778) ([ilyam8](https://github.com/ilyam8))
-- Skip ACLK dimension update when dimension is freed [\#12777](https://github.com/netdata/netdata/pull/12777) ([stelfrag](https://github.com/stelfrag))
-- Configurable storage engine for Netdata agents: step 1 [\#12776](https://github.com/netdata/netdata/pull/12776) ([aberaud](https://github.com/aberaud))
-- Fix coverity on receiver setsockopt [\#12772](https://github.com/netdata/netdata/pull/12772) ([MrZammler](https://github.com/MrZammler))
-- some config updates for ml [\#12771](https://github.com/netdata/netdata/pull/12771) ([andrewm4894](https://github.com/andrewm4894))
 
 ## [v1.34.1](https://github.com/netdata/netdata/tree/v1.34.1) (2022-04-15)
 
