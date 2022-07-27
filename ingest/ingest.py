@@ -9,18 +9,49 @@ import git
 import glob
 import re
 
-dry_run = False
+dryRun = False
 
 filesDictionary = {}
 markdownFiles = []
 docsPrefix = "../docs/"
+TEMP_FOLDER = "ingest-temp-folder"
+defaultRepos = {
+    "netdata":
+        {
+            "owner": "netdata",
+            "branch": "master",
+        },
+    "go.d.plugin":
+        {
+            "owner": "netdata",
+            "branch": "master",
+        },
+    ".github":
+        {
+            "owner": "netdata",
+            "branch": "main",
+        },
+    "agent-service-discovery":
+        {
+            "owner": "netdata",
+            "branch": "master",
+        }
+     }
 
+#defaultRepoInaStr = " ".join(defaultRepo)
+#print(defaultRepoInaStr)
 
 # Will come back to this once we have a concrete picture of the script
 # if sys.argv[1] == "dry-run":
 #     print("--- DRY RUN ---\n")
 #     dry_run = True
 
+def unSafecleanUpFolders(folderToDelete):
+    print("Cleaning up folder: ", folderToDelete)
+    shutil.rmtree(folderToDelete)
+
+def safecleanUpFolders():
+    pass
 
 def renameReadmes(markdownFiles):
     """
@@ -63,14 +94,14 @@ def changePath(oldFilePath, newFilePath):
     filesDictionary.get(oldFilePath).update({"newLearnPath": newFilePath})
 
 
-def cloneRepoD1(owner, repo, branch):
+def cloneRepo(owner, repo, branch, depth, prefixFolder):
     try:
-        outputFolder = repo.lstrip(".")
+        outputFolder = prefixFolder + repo
         # print("DEBUG", outputFolder)
-        git.Git().clone("https://github.com/{}/{}.git".format(owner, repo), "." + outputFolder, depth=1, branch=branch)
-        return ("Cloned the {} branch from {} repo".format(branch, repo))
+        git.Git().clone("https://github.com/{}/{}.git".format(owner, repo), outputFolder, depth=depth, branch=branch)
+        return ("Cloned the {} branch from {} repo (owner: {})".format(branch, repo, owner))
     except Exception as e:
-        return ("Couldn't clone t the {} branch from {} repo".format(branch, repo))
+        return ("Couldn't clone the {} branch from {} repo (owner: {}) \n Exception {} raised".format(branch, repo, owner, e))
 
 
 def fetchMarkdownFromRepo(outputFolder):
@@ -167,25 +198,71 @@ def fixMovedLinks(path, dict):
     file.close()
 
 
-def cleanupRepos():
-    shutil.rmtree(".github")
-    shutil.rmtree(".netdata")
-    shutil.rmtree(".go.d.plugin")
-
 
 if __name__ == '__main__':
-    "Dummy run, cloning 3 repos and check all the markdowns they have"
-    print(cloneRepoD1("netdata", "go.d.plugin", "master"))
-    print(cloneRepoD1("netdata", "netdata", "master"))
-    print(cloneRepoD1("netdata", ".github", "main"))
+    parser = argparse.ArgumentParser(description='Ingest docs from multiple repositories')
 
+    parser.add_argument(
+        '--repos',
+        default=[],
+        nargs='+',
+        help='Choose specific repo you want ingest, if not set, defaults ingested'
+    )
+
+    parser.add_argument(
+        "-d", "--dry-run",
+        help="Don't save a file with the output.",
+        action="store_true",
+    )
+    # netdata/netdata:branch tkatsoulas/go.d.plugin:mybranch
+    kArgs = parser.parse_args()._get_kwargs()
+    for x in kArgs:
+        if x[0] == "repos":
+            listOfReposInStr = x[1]
+        if x[0] == "dryRun":
+            print(x[1])
+            dryRun = x[1]
+
+    if len(listOfReposInStr)>0:
+        for repoStr in listOfReposInStr:
+            try:
+                _temp = repoStr.split("/")
+                owner, repo, branch = [_temp[0]] + (_temp[1].split(":"))
+                defaultRepos[repo]["owner"] = owner
+                defaultRepos[repo]["branch"] = branch
+            except(TypeError,ValueError):
+                print("Wrong format of the repo you specified")
+                parser.print_usage()
+                exit(-1)
+            except(KeyError):
+                print("The repo you specified in not in predefined repos")
+                print(defaultRepos.keys())
+                parser.print_usage()
+                exit(-1)
+            except:
+                print("Unknown error in parsing")
+
+
+    '''End of CLI parsing'''
+    '''Clean up old clones into a temp dir'''
+    unSafecleanUpFolders(TEMP_FOLDER)
+
+    print("Creating a temp directory \"temp_clones\"")
+    try:
+        os.mkdir(TEMP_FOLDER)
+    except(FileExistsError):
+        print("Folder already exists")
+
+    '''Clone all the predefined repos'''
+    for key in defaultRepos.keys():
+        print(cloneRepo(defaultRepos[key]["owner"], key, defaultRepos[key]["branch"], 1, TEMP_FOLDER+"/"))
     # We fetch the markdown files from the repositories
-    markdownFiles = list(itertools.chain(fetchMarkdownFromRepo(".netdata"),
-                                         fetchMarkdownFromRepo(".go.d.plugin"),
-                                         fetchMarkdownFromRepo(".github")))
+    markdownFiles = list(itertools.chain(fetchMarkdownFromRepo(TEMP_FOLDER+"/netdata"),
+                                         fetchMarkdownFromRepo(TEMP_FOLDER+"/go.d.plugin"),
+                                         fetchMarkdownFromRepo(TEMP_FOLDER+"/github")))
 
     print("Files detected: ", len(markdownFiles))
-
+    '''
     # # Test case for some dummy files
     markdownFiles.append("./new/a.md")
     markdownFiles.append("./new/b.md")
@@ -257,3 +334,4 @@ if __name__ == '__main__':
     print("Cleaning up the repos...")
     cleanupRepos()
     print("Done.")
+    '''
