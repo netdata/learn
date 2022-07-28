@@ -249,8 +249,9 @@ if __name__ == '__main__':
                 print("Unknown error in parsing")
 
 
-    '''End of CLI parsing'''
-    '''Clean up old clones into a temp dir'''
+    '''
+    Clean up old clones into a temp dir
+    '''
     unSafecleanUpFolders(TEMP_FOLDER)
 
     print("Creating a temp directory \"temp_clones\"")
