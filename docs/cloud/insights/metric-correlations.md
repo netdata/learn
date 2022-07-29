@@ -43,7 +43,7 @@ There are two algorithms available that aim to score metrics based on how much t
 
 ### Aggregation
 
-Behind the scenes Netdata will aggregate the raw data as needed such that arbitrary window lengths can be selected for MC. By default Netdata will just `Average` raw data when needed as part of pre-processing. However other aggregations like `Median`, `Min`, `Max`, `Stddev` are also possible.
+Behind the scenes, Netdata will aggregate the raw data as needed such that arbitrary window lengths can be selected for MC. By default, Netdata will just `Average` raw data when needed as part of pre-processing. However other aggregations like `Median`, `Min`, `Max`, `Stddev` are also possible.
 
 ### Data
 
