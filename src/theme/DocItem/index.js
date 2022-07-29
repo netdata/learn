@@ -120,6 +120,7 @@ function DocItemContent(props) {
 				data-netlify="true"
 				name="docs-feedback"
 				method="post"
+				netlify-honeypot="bot-field"
 				onSubmit={handleSubmit}
 			>
 				<input
@@ -301,18 +302,6 @@ function DocItemContent(props) {
 									<div className="flex-1 pr-2 pt-2">
 										<h4 className="!mt-0">Was this page helpful?</h4>
 										{feedbackForm(feedback)}
-									</div>
-
-									{/* Community column*/}
-									<div className="flex-1 p-2">
-										<h4 className="!mt-0">Need further help?</h4>
-										<p className="text-sm">
-											Search for an answer in our{` `}
-											<Link to="https://community.netdata.cloud">
-												community forum
-											</Link>
-											.
-										</p>
 									</div>
 
 									{/* Contribute column*/}

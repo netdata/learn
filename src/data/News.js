@@ -15,6 +15,28 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Netdata Agent patch release</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.35.1',
+		date: 'June 9, 2022',
+		type: 'Doc',
+		description: (
+			<>
+				For users who installed Netdata with a Static build since March 22, 2022, the v1.35.1 patch release fixes an issue in the static build installation code that causes automatic updates to be unintentionally disabled when updating static installs.
+			</>
+		),
+	},
+	{
+		title: <>Anomaly Advisor, on-device machine learning, and Metric Correlations on the Agent</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.35.0',
+		date: 'June 8, 2022',
+		type: 'Doc',
+		description: (
+			<>
+				Check out our Netdata v1.35.0 release notes to learn about our newest feature offerings, including Anomaly Advisor, on-device machine learning, and our introduction of Metric Correlations on our open-source agent dashboard.
+			</>
+		),
+	},
+	{
 		title: <>Netdata's new Home tab</>,
 		href: 'docs/cloud/visualize/overview',
 		date: 'May 18, 2022',
@@ -65,30 +87,6 @@ export const News = [
 			</>
 		),
 	},
-	{
-		title: <>Cloud charts 2.0</>,
-		href: 'docs/cloud/visualize/interact-new-charts',
-		date: 'November 30, 2021',
-		type: 'Doc',
-		description: (
-			<>
-				The improved charts in Netdata Cloud allow you to build the
-				visualizations that meet your needs. You can customize the chart type
-				and move around the chart to catch every metric.
-			</>
-		),
-	},
-	{
-		title: <>Timezone selector is now available on Netdata Cloud</>,
-		href: 'docs/dashboard/visualization-date-and-time-controls#timezone-selector',
-		date: 'September 22, 2021',
-		type: 'Doc',
-		description: (
-			<>
-				With the timezone selector, you have the ability to change the timezone
-				on Netdata Cloud.
-			</>
-		),
-	},
+	
 	
 ];

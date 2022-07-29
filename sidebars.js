@@ -9,7 +9,7 @@
  Create as many sidebars as you want.
  */
 
-module.exports = {
+ module.exports = {
   sidebar: [
     {
       type: 'category',
@@ -25,7 +25,6 @@ module.exports = {
             'overview/what-is-netdata',
             'overview/why-netdata',
             'overview/netdata-monitoring-stack',
-            'agent/libnetdata/simple_pattern',
             'agent/anonymous-statistics',
             'agent/netdata-security',
           ]
@@ -88,7 +87,14 @@ module.exports = {
           label: 'Configuration',
           items: [
             'configure/nodes',
-            'configure/machine-learning',
+            {
+              type: 'doc',
+              id: 'agent/ml',
+              customProps: {
+                separator: true,
+                subCategory: 'Machine Learning'
+              }
+            },
             'configure/common-changes',
             'configure/start-stop-restart',
             {
@@ -100,14 +106,40 @@ module.exports = {
               }
             },
             {
-              type: 'doc',
-              id: 'agent/running-behind-nginx',
-              label: 'Reverse proxy with Nginx'
-            },
-            {
-              type: 'doc',
-              id: 'agent/running-behind-apache',
-              label: 'Reverse proxy with Apache'
+              type: 'category',
+              label: 'Expose local dashboard through a Web server',
+              items: [
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-nginx',
+                  label: 'Reverse proxy with NGINX'
+                },
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-apache',
+                  label: 'Reverse proxy with Apache'
+                },
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-lighttpd',
+                  label: 'Reverse proxy with Lighttpd'
+                },
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-h2o',
+                  label: 'Reverse proxy with H2O'
+                },
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-haproxy',
+                  label: 'Reverse proxy with HAProxy'
+                },
+                {
+                  type: 'doc',
+                  id: 'agent/running-behind-caddy',
+                  label: 'Reverse proxy with Caddy'
+                }
+              ]
             },
             {
               type: 'doc',
@@ -494,6 +526,7 @@ module.exports = {
                 'agent/web/api/queries/max',
                 'agent/web/api/queries/median',
                 'agent/web/api/queries/min',
+                'agent/web/api/queries/countif',
                 'agent/web/api/queries/ses',
                 'agent/web/api/queries/stddev',
                 'agent/web/api/queries/sum',
@@ -501,6 +534,7 @@ module.exports = {
             },
           ],
         },
+        'agent/libnetdata/simple_pattern',
       ]
     }
   ]

@@ -11,15 +11,25 @@ The Agent-Cloud link (ACLK) is the mechanism responsible for securely connecting
 through Netdata Cloud. The ACLK establishes an outgoing secure WebSocket (WSS) connection to Netdata Cloud on port
 `443`. The ACLK is encrypted, safe, and _is only established if you connect your node_.
 
-The Cloud App lives at app.netdata.cloud which currently resolves to 35.196.244.138. However, this IP or range of 
-IPs can change without notice. Watch this page for updates.
+The Cloud App lives at app.netdata.cloud which currently resolves to the following list of IPs: 
+
+- 54.198.178.11
+- 44.207.131.212
+- 44.196.50.41 
+ 
+:::caution
+
+This list of IPs can change without notice, we strongly advise you to whitelist the domain `app.netdata.cloud`, if
+this is not an option in your case always verify the current domain resolution (e.g via the `host` command).
+
+:::
 
 For a guide to connecting a node using the ACLK, plus additional troubleshooting and reference information, read our [get
 started with Cloud](/docs/cloud/get-started) guide or the full [connect to Cloud
 documentation](/docs/agent/claim).
 
 ## Data privacy
-[Data privacy](https://netdata.cloud/data-privacy/) is very important to us. We firmly believe that your data belongs to
+[Data privacy](https://netdata.cloud/privacy/) is very important to us. We firmly believe that your data belongs to
 you. This is why **we don't store any metric data in Netdata Cloud**.
 
 All the data that you see in the web browser when using Netdata Cloud, is actually streamed directly from the Netdata Agent to the Netdata Cloud dashboard. 
@@ -50,12 +60,12 @@ You can configure following keys in the `netdata.conf` section `[cloud]`:
 [cloud]
   statistics = yes
   query thread count = 2
-  mqtt5 = no
+  mqtt5 = yes
 ```
 
 - `statistics` enables/disables ACLK related statistics and their charts. You can disable this to save some space in the database and slightly reduce memory usage of Netdata Agent.
 - `query thread count` specifies the number of threads to process cloud queries. Increasing this setting is useful for nodes with many children (streaming), which can expect to handle more queries (and/or more complicated queries).
-- `mqtt5` enables the new MQTT5 protocol implementation in the Agent. Currently a technical preview.
+- `mqtt5` allows disabling the new MQTT5 implementation which is used now by default in case of issues. This option will be removed in future stable release.
 
 ## Disable the ACLK
 

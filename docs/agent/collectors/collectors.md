@@ -21,13 +21,19 @@ If you want to use a Python version of a collector, you need to explicitly [disa
 version](/docs/collect/enable-configure), and enable the Python version. Netdata then skips the Go version and
 attempts to load the Python version and its accompanying configuration file.
 
-If you don't see the app/service you'd like to monitor in this list, check out our [GitHub
-issues](https://github.com/netdata/netdata/issues). Use the search bar to look for previous discussions about that
-collector—we may be looking for contributions from users such as yourself! If you don't see the collector there, make a
-[feature request](https://community.netdata.cloud/c/feature-requests/7/none) on our community forums.
+If you don't see the app/service you'd like to monitor in this list:
 
-- [Supported collectors list](#supported-collectors-list)
-  - [Service and application collectors](#service-and-application-collectors)
+- Check out our [GitHub issues](https://github.com/netdata/netdata/issues). Use the search bar to look for previous
+  discussions about that collector—we may be looking for assistance from users such as yourself!
+- If you don't see the collector there, you can make
+  a [feature request](https://github.com/netdata/netdata/issues/new/choose) on GitHub.
+- If you have basic software development skills, you can add your own plugin
+  in [Go](/docs/agent/collectors/go.d.plugin#how-to-develop-a-collector)
+  or [Python](/guides/python-collector)
+
+Supported Collectors List:
+
+- [Service and application collectors](#service-and-application-collectors)
     - [Generic](#generic)
     - [APM (application performance monitoring)](#apm-application-performance-monitoring)
     - [Containers and VMs](#containers-and-vms)
@@ -43,7 +49,7 @@ collector—we may be looking for contributions from users such as yourself! If 
     - [Search](#search)
     - [Storage](#storage)
     - [Web](#web)
-  - [System collectors](#system-collectors)
+- [System collectors](#system-collectors)
     - [Applications](#applications)
     - [Disks and filesystems](#disks-and-filesystems)
     - [eBPF](#ebpf)
@@ -54,10 +60,10 @@ collector—we may be looking for contributions from users such as yourself! If 
     - [Processes](#processes)
     - [Resources](#resources)
     - [Users](#users)
-  - [Netdata collectors](#netdata-collectors)
-  - [Orchestrators](#orchestrators)
-  - [Third-party collectors](#third-party-collectors)
-  - [Etc](#etc)
+- [Netdata collectors](#netdata-collectors)
+- [Orchestrators](#orchestrators)
+- [Third-party collectors](#third-party-collectors)
+- [Etc](#etc)
 
 ## Service and application collectors
 
@@ -168,9 +174,8 @@ configure any of these collectors according to your setup and infrastructure.
   plugins metrics from an endpoint provided by `in_monitor plugin`.
 - [Logstash](/docs/agent/collectors/go.d.plugin/modules/logstash/): Monitor JVM threads,
   memory usage, garbage collection statistics, and more.
-- [OpenVPN status logs](/docs/agent/collectors/python.d.plugin/ovpn_status_log): Parse server log files and provide
-  summary
-  (client, traffic) metrics.
+- [OpenVPN status logs](/docs/agent/collectors/go.d.plugin/modules/openvpn_status_log): Parse
+  server log files and provide summary (client, traffic) metrics.
 - [Squid web server logs](/docs/agent/collectors/go.d.plugin/modules/squidlog/): Tail Squid
   access logs to return the volume of requests, types of requests, bandwidth, and much more.
 - [Web server logs (Go version for Apache,
@@ -199,8 +204,8 @@ configure any of these collectors according to your setup and infrastructure.
 
 - [Bind 9](/docs/agent/collectors/go.d.plugin/modules/bind/): Collect nameserver summary
   performance statistics via a web interface (`statistics-channels` feature).
-- [Chrony](/docs/agent/collectors/python.d.plugin/chrony): Monitor the precision and statistics of a local `chronyd`
-  server.
+- [Chrony](/docs/agent/collectors/go.d.plugin/modules/chrony): Monitor the precision and
+  statistics of a local `chronyd` server.
 - [CoreDNS](/docs/agent/collectors/go.d.plugin/modules/coredns/): Measure DNS query round
   trip time.
 - [Dnsmasq](/docs/agent/collectors/go.d.plugin/modules/dnsmasq_dhcp/): Automatically
@@ -250,13 +255,14 @@ configure any of these collectors according to your setup and infrastructure.
 
 - [AM2320](/docs/agent/collectors/python.d.plugin/am2320): Monitor sensor temperature and humidity.
 - [Access point](/docs/agent/collectors/charts.d.plugin/ap): Monitor client, traffic and signal metrics using the `aw`
-    tool.
+  tool.
 - [APC UPS](/docs/agent/collectors/charts.d.plugin/apcupsd): Capture status information using the `apcaccess` tool.
 - [Energi Core](/docs/agent/collectors/go.d.plugin/modules/energid): Monitor
-    blockchain indexes, memory usage, network usage, and transactions of wallet instances.
+  blockchain indexes, memory usage, network usage, and transactions of wallet instances.
 - [UPS/PDU](/docs/agent/collectors/charts.d.plugin/nut): Read the status of UPS/PDU devices using the `upsc` tool.
-- [SNMP devices](/docs/agent/collectors/go.d.plugin/modules/snmp): Gather data using the SNMP protocol.
--   [1-Wire sensors](/docs/agent/collectors/python.d.plugin/w1sensor): Monitor sensor temperature.
+- [SNMP devices](/docs/agent/collectors/go.d.plugin/modules/snmp): Gather data using the SNMP
+  protocol.
+- [1-Wire sensors](/docs/agent/collectors/python.d.plugin/w1sensor): Monitor sensor temperature.
 
 ### Search
 
@@ -481,9 +487,9 @@ Plugin orchestrators organize and run many of the above collectors.
 If you're interested in developing a new collector that you'd like to contribute to Netdata, we highly recommend using
 the `go.d.plugin`.
 
--   [go.d.plugin](https://github.com/netdata/go.d.plugin): An orchestrator for data collection modules written in `go`.
--   [python.d.plugin](/docs/agent/collectors/python.d.plugin): An orchestrator for data collection modules written in `python` v2/v3.
--   [charts.d.plugin](/docs/agent/collectors/charts.d.plugin): An orchestrator for data collection modules written in `bash` v4+.
+- [go.d.plugin](https://github.com/netdata/go.d.plugin): An orchestrator for data collection modules written in `go`.
+- [python.d.plugin](/docs/agent/collectors/python.d.plugin): An orchestrator for data collection modules written in `python` v2/v3.
+- [charts.d.plugin](/docs/agent/collectors/charts.d.plugin): An orchestrator for data collection modules written in `bash` v4+.
 
 ## Third-party collectors
 
