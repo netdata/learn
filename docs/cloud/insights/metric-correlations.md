@@ -4,40 +4,29 @@ description: Quickly find metrics and charts closely related to a particular tim
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/insights/metric-correlations.md
 ---
 
-The Metric Correlations (MC) feature lets you quickly find metrics and charts related to a particular window of
-interest that you want to explore further. By displaying the standard Netdata dashboard, filtered to show only charts that
-are relevant to the window of interest, you can get to the root cause sooner.
+The Metric Correlations (MC) feature lets you quickly find metrics and charts related to a particular window of interest that you want to explore further. By displaying the standard Netdata dashboard, filtered to show only charts that are relevant to the window of interest, you can get to the root cause sooner.
 
-Because Metric Correlations uses every available metric from that node, with as high as 1-second granularity, you get
-the most accurate insights using every possible metric.
+Because Metric Correlations uses every available metric from that node, with as high as 1-second granularity, you get the most accurate insights using every possible metric.
 
 ## Using Metric Correlations
 
 When viewing the single-node dashboard, the **Metric Correlations** button appears in top right corner of the page.
 
-![The Metric Correlations button in a single-node
-dashboard](https://user-images.githubusercontent.com/82235632/126153864-5dad7c59-09d3-4a9a-9b42-dc9e82598859.png)
+![The Metric Correlations button in a single-node dashboard](https://user-images.githubusercontent.com/2178292/181750606-4dd5f216-ec83-46c9-92f8-b307264bfd9a.png)
 
-To start correlating metrics, click the **Metric Correlations** button, then hold the `Alt` key (or `⌘` on macOS) and
-click-and-drag a selection of metrics on a single chart. The selected timeframe needs to be at least 15 seconds
-for Metric Correlation to work best. 
+To start correlating metrics, click the **Metric Correlations** button, then hold the `Alt` key (or `⌘` on macOS) and click-and-drag a selection of metrics on a single chart. The selected timeframe needs to be at least 15 seconds for Metric Correlation to work best. 
 
-The menu then displays information about the selected area and reference baseline. Metric Correlations uses the
-reference baseline to discover which additional metrics are most closely connected to the selected metrics.
+The menu then displays information about the selected area and reference baseline. Metric Correlations uses the reference baseline to discover which additional metrics are most closely connected to the selected metrics.
 
-Press the **Find Correlations** button to start up the correlations service, the button is only enabled when a valid timeframe is selected (at least 15 seconds). Once pressed, the service will score all available metrics on your
-node and returns a filtered version of the Netdata dashboard. Now, you'll see only those metrics that have changed the
-most between a baseline window and the highlighted window you have selected.
+Press the **Find Correlations** button to start up the correlations service, the button is only enabled when a valid timeframe is selected (at least 15 seconds). Once pressed, the service will score all available metrics on your node and returns a filtered version of the Netdata dashboard. Now, you'll see only those metrics that have changed the most between a baseline window and the highlighted window you have selected.
 
-These charts are fully interactive, and whenever possible, will only show the _dimensions_ related to the timeline you
-selected.
+![Metric Correlations results](https://user-images.githubusercontent.com/2178292/181751182-25e0890d-a5f4-4799-9936-1523603cf97d.png)
 
-You can interact with all the scored metrics via the slider. Slide toward **show less** for more nuanced and significant
-results, or toward **show more** to "loosen" the threshold to explore other charts that may have changed too, but in a
-less significant manner.
+These charts are fully interactive, and whenever possible, will only show the _dimensions_ related to the timeline you selected.
 
-If you find something else interesting in the results, you can select another window and press **Find Correlations**
-again to kick the process off again.
+You can interact with all the scored metrics via the slider. Slide toward **show less** for more nuanced and significant results, or toward **show more** to "loosen" the threshold to explore other charts that may have changed too, but in a less significant manner.
+
+If you find something else interesting in the results, you can select another window and press **Find Correlations** again to kick the process off again.
 
 ## Metric Correlations options
 
@@ -87,5 +76,4 @@ Should you still want to, disabling nodes for Metric Corrleation on the agent is
 
 ## What's next?
 
-You can read more about all the ML powered capabilities of Netdata [here](https://learn.netdata.cloud/guides/monitor/anomaly-detection). If you aren't yet familiar with the power of Netdata Cloud's visualization features, check out the [Nodes
-view](/docs/cloud/visualize/nodes) and learn how to [build new dashboards](/docs/cloud/visualize/dashboards).
+You can read more about all the ML powered capabilities of Netdata [here](https://learn.netdata.cloud/guides/monitor/anomaly-detection). If you aren't yet familiar with the power of Netdata Cloud's visualization features, check out the [Nodes view](/docs/cloud/visualize/nodes) and learn how to [build new dashboards](/docs/cloud/visualize/dashboards).
