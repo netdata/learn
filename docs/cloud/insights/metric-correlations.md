@@ -36,7 +36,7 @@ So by when you first run MC it will use the most sensible and general defaults. 
 
 ### Method
 
-Their are two algorithms available that aim to score metrics based on how much they have changed between the baseline and highlight windows.
+There are two algorithms available that aim to score metrics based on how much they have changed between the baseline and highlight windows.
 
 - `KS2` - A statistical test ([Two-sample Kolmogorov Smirnov](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test#Two-sample_Kolmogorov%E2%80%93Smirnov_test)) comparing the distribution of the highlighted window to the baseline to try and quantify which metrics have most evidence of a significant change. You can explore our implementation [here](https://github.com/netdata/netdata/blob/d917f9831c0a1638ef4a56580f321eb6c9a88037/database/metric_correlations.c#L212).
 - `Volume` -  A heuristic measure based on the percentage change in averages between highlighted window and baseline, with various edges cases sensibly controlled for. You can explore our implementation [here](https://github.com/netdata/netdata/blob/d917f9831c0a1638ef4a56580f321eb6c9a88037/database/metric_correlations.c#L516).
