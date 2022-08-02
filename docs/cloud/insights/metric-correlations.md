@@ -14,7 +14,7 @@ When viewing the single-node dashboard, the **Metric Correlations** button appea
 
 ![The Metric Correlations button in a single-node dashboard](https://user-images.githubusercontent.com/2178292/181750606-4dd5f216-ec83-46c9-92f8-b307264bfd9a.png)
 
-To start correlating metrics, click the **Metric Correlations** button, then hold the `Alt` key (or `⌘` on macOS) and click-and-drag a selection of metrics on a single chart. The selected timeframe needs to be at least 15 seconds for Metric Correlation to work best. 
+To start correlating metrics, click the **Metric Correlations** button, then hold the `Alt` key (or `⌘` on macOS) and click-and-drag a selection of metrics on a single chart. The selected timeframe needs to be at least 15 seconds for Metric Correlation to work. 
 
 The menu then displays information about the selected area and reference baseline. Metric Correlations uses the reference baseline to discover which additional metrics are most closely connected to the selected metrics.
 
