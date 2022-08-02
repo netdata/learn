@@ -18,7 +18,7 @@ To start correlating metrics, click the **Metric Correlations** button, then hol
 
 The menu then displays information about the selected area and reference baseline. Metric Correlations uses the reference baseline to discover which additional metrics are most closely connected to the selected metrics.
 
-Press the **Find Correlations** button to start up the correlations service, the button is only enabled when a valid timeframe is selected (at least 15 seconds). Once pressed, the service will score all available metrics on your node and returns a filtered version of the Netdata dashboard. Now, you'll see only those metrics that have changed the most between a baseline window and the highlighted window you have selected.
+Press the **Find Correlations** button to start up the correlations process, the button is only enabled when a valid timeframe is selected (at least 15 seconds). Once pressed, the process will score all available metrics on your node and returns a filtered version of the Netdata dashboard. Now, you'll see only those metrics that have changed the most between a baseline window and the highlighted window you have selected.
 
 ![Metric Correlations results](https://user-images.githubusercontent.com/2178292/181751182-25e0890d-a5f4-4799-9936-1523603cf97d.png)
 
@@ -36,18 +36,18 @@ So by when you first run MC it will use the most sensible and general defaults. 
 
 ### Method
 
-Their are two algorithms available that aim to score metrics based on how much they have changed between the baseline and highlight windows.
+There are two algorithms available that aim to score metrics based on how much they have changed between the baseline and highlight windows.
 
 - `KS2` - A statistical test ([Two-sample Kolmogorov Smirnov](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test#Two-sample_Kolmogorov%E2%80%93Smirnov_test)) comparing the distribution of the highlighted window to the baseline to try and quantify which metrics have most evidence of a significant change. You can explore our implementation [here](https://github.com/netdata/netdata/blob/d917f9831c0a1638ef4a56580f321eb6c9a88037/database/metric_correlations.c#L212).
 - `Volume` -  A heuristic measure based on the percentage change in averages between highlighted window and baseline, with various edges cases sensibly controlled for. You can explore our implementation [here](https://github.com/netdata/netdata/blob/d917f9831c0a1638ef4a56580f321eb6c9a88037/database/metric_correlations.c#L516).
 
 ### Aggregation
 
-Behind the scenes Netdata will aggregate the raw data as needed such that arbitrary window lengths can be selected for MC. By default Netdata will just `Average` raw data when needed as part of pre-processing. However other aggregations like `Median`, `Min`, `Max`, `Stddev` are also possible.
+Behind the scenes, Netdata will aggregate the raw data as needed such that arbitrary window lengths can be selected for MC. By default, Netdata will just `Average` raw data when needed as part of pre-processing. However other aggregations like `Median`, `Min`, `Max`, `Stddev` are also possible.
 
 ### Data
 
-Netdata is different than typical observability agents in that in addition to just collecting raw metric values, it will by default also assign an "[Anomaly Bit](/docs/agent/ml#anomaly-bit)" related to each collected metric each second that is a 0 for "normal" and 1 for "anomalous". This means that each metric also natively has an "[Anomaly Rate](/docs/agent/ml#anomaly-rate)" associated with it and as such MC can be ran against the raw metric values or their corresponding anomaly rates.
+Netdata is different than typical observability agents since, in addition to just collecting raw metric values, it will by default also assign an "[Anomaly Bit](/docs/agent/ml#anomaly-bit)" related to each collected metric each second. This bit will be 0 for "normal" and 1 for "anomalous". This means that each metric also natively has an "[Anomaly Rate](/docs/agent/ml#anomaly-rate)" associated with it and, as such, MC can be run against the raw metric values or their corresponding anomaly rates.
 
 **Note**: Read more [here](https://learn.netdata.cloud/guides/monitor/anomaly-detection) to learn more about the native anomaly detection features within netdata.
 
