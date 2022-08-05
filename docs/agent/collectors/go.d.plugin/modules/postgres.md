@@ -1,6 +1,6 @@
 ---
 title: "PostgreSQL monitoring with Netdata"
-description: "Monitor connections, slow queries, InnoDB memory and disk utilization, locks, and more with zero configuration and per-second metric granularity."
+description: "Monitor connections, replication, databases, locks, and more with zero configuration and per-second metric granularity."
 custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/postgres/README.md
 sidebar_label: "PostgresSQL"
 ---
@@ -11,6 +11,12 @@ sidebar_label: "PostgresSQL"
 management system emphasizing extensibility and SQL compliance.
 
 This module monitors one or more Postgres servers, depending on your configuration.
+
+## Requirements
+
+- PostgreSQL v9.4+
+- User with granted `pg_monitor`
+  or `pg_read_all_stat` [built-in role](https://www.postgresql.org/docs/current/predefined-roles.html).
 
 ## Metrics
 
@@ -39,12 +45,15 @@ All metrics have "postgres." prefix.
 | replication_standby_app_wal_delta    | standby application |                                             sent_delta, write_delta, flush_delta, replay_delta                                             |       B        |
 | replication_standby_app_wal_lag      | standby application |                                                      write_lag, flush_lag, replay_lag                                                      |    seconds     |
 | replication_standby_app_wal_lag      |  replication slot   |                                                        wal_keep, pg_replslot_files                                                         |     files      |
+| db_transactions_ratio                |      database       |                                                            committed, rollback                                                             |   percentage   |
 | db_transactions                      |      database       |                                                            committed, rollback                                                             | transactions/s |
 | db_connections_utilization           |      database       |                                                                    used                                                                    |   percentage   |
 | db_connections                       |      database       |                                                                connections                                                                 |  connections   |
-| db_buffer_cache                      |      database       |                                                                 hit, miss                                                                  |    blocks/s    |
-| db_read_operations                   |      database       |                                                             returned, fetched                                                              |     rows/s     |
-| db_write_operations                  |      database       |                                                         inserted, deleted, updated                                                         |     rows/s     |
+| db_buffer_cache_hit_ratio            |      database       |                                                                 hit, miss                                                                  |   percentage   |
+| db_blocks_read                       |      database       |                                                                memory, disk                                                                |    blocks/s    |
+| db_rows_read_ratio                   |      database       |                                                             returned, fetched                                                              |   percentage   |
+| db_rows_read                         |      database       |                                                             returned, fetched                                                              |     rows/s     |
+| db_rows_written                      |      database       |                                                         inserted, deleted, updated                                                         |     rows/s     |
 | db_conflicts                         |      database       |                                                                 conflicts                                                                  |   queries/s    |
 | db_conflicts_stat                    |      database       |                                              tablespace, lock, snapshot, bufferpin, deadlock                                               |   queries/s    |
 | db_deadlocks                         |      database       |                                                                 deadlocks                                                                  |  deadlocks/s   |
@@ -64,12 +73,16 @@ cd /etc/netdata # Replace this path with your Netdata config directory
 sudo ./edit-config go.d/postgres.conf
 ```
 
-[DSN syntax in details](https://github.com/go-sql-driver/mysql#dsn-data-source-name).
+DSN (Data Source Name) may either be in URL format or key=word format.
+See [Connection Strings](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING) for details.
 
 ```yaml
 jobs:
   - name: local
     dsn: 'postgres://postgres:postgres@127.0.0.1:5432/postgres'
+
+  - name: local
+    dsn: 'host=/var/run/postgresql dbname=postgres user=postgres'
 
   - name: remote
     dsn: 'postgres://postgres:postgres@203.0.113.10:5432/postgres'
