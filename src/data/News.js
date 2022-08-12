@@ -1,14 +1,14 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.35.0';
+export const ReleaseVersion = '1.36.0';
 
-export const ReleaseDate = 'June 8, 2022';
+export const ReleaseDate = 'August 11, 2022';
 
 export const ReleaseNotes = [
-	'Anomaly Advisor & on-device Machine Learning',
-	'Metric Correlations on Agent',
-	'Kubernetes monitoring improvements',
-	'Visualization improvements',
+	'New Tiering mechamism to allow for almost unlimited metrics for nodes',
+	'A centralized admin interface',
+	'Metric Correlation improvements',
+	'Anomaly rates on every chart',
 ];
 
 
