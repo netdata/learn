@@ -131,7 +131,8 @@ configure any of these collectors according to your setup and infrastructure.
 - [OracleDB](/docs/agent/collectors/python.d.plugin/oracledb): Monitor database performance and health metrics.
 - [Pika](/docs/agent/collectors/go.d.plugin/modules/pika/): Gather metric, such as clients,
   memory usage, queries, and more from the Redis interface-compatible database.
-- [Postgres](/docs/agent/collectors/python.d.plugin/postgres): Collect database health and performance metrics.
+- [Postgres](/docs/agent/collectors/go.d.plugin/modules/postgres): Collect database health
+  and performance metrics.
 - [ProxySQL](/docs/agent/collectors/python.d.plugin/proxysql): Monitor database backend and frontend performance
   metrics.
 - [Redis](/docs/agent/collectors/go.d.plugin/modules/redis/): Monitor status from any
