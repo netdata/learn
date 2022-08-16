@@ -6,14 +6,15 @@ custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/README.md
 
 
 
-`go.d.plugin` is a `Netdata` external plugin. It is an **orchestrator** for data collection modules written in `go`.
+`go.d.plugin` is a [Netdata](https://github.com/netdata/netdata) external plugin. It is an **orchestrator** for data
+collection modules written in `go`.
 
-1. It runs as an independent process `ps fax` shows it.
-2. It is started and stopped automatically by `Netdata`.
-3. It communicates with `Netdata` via a unidirectional pipe (sending data to the `Netdata` daemon).
+1. It runs as an independent process (`ps fax` shows it).
+2. It is started and stopped automatically by Netdata.
+3. It communicates with Netdata via a unidirectional pipe (sending data to the Netdata daemon).
 4. Supports any number of data collection [modules](https://github.com/netdata/go.d.plugin/tree/master/modules).
 5. Allows each [module](https://github.com/netdata/go.d.plugin/tree/master/modules) to have any number of data
-   collection **jobs**.
+   collection jobs.
 
 ## Bug reports, feature requests, and questions
 
@@ -25,7 +26,7 @@ and questions.
 
 ## Install
 
-Go.d.plugin is shipped with [`Netdata`](https://github.com/netdata/netdata).
+Go.d.plugin is shipped with Netdata.
 
 ## Available modules
 
@@ -44,6 +45,7 @@ Go.d.plugin is shipped with [`Netdata`](https://github.com/netdata/netdata).
 | [dnsmasq](https://github.com/netdata/go.d.plugin/tree/master/modules/dnsmasq)                       |     Dnsmasq DNS Forwarder     |
 | [dnsmasq_dhcp](https://github.com/netdata/go.d.plugin/tree/master/modules/dnsmasq_dhcp)             |         Dnsmasq DHCP          |
 | [dns_query](https://github.com/netdata/go.d.plugin/tree/master/modules/dnsquery)                    |         DNS Query RTT         |
+| [docker](https://github.com/netdata/go.d.plugin/tree/master/modules/docker)                         |         Docker Engine         |
 | [docker_engine](https://github.com/netdata/go.d.plugin/tree/master/modules/docker_engine)           |         Docker Engine         |
 | [dockerhub](https://github.com/netdata/go.d.plugin/tree/master/modules/dockerhub)                   |          Docker Hub           |
 | [elasticsearch](https://github.com/netdata/go.d.plugin/tree/master/modules/elasticsearch)           |         Elasticsearch         |
@@ -68,6 +70,7 @@ Go.d.plugin is shipped with [`Netdata`](https://github.com/netdata/netdata).
 | [nginxvts](https://github.com/netdata/go.d.plugin/tree/master/modules/nginxvts)                     |           NGINX VTS           |
 | [openvpn](https://github.com/netdata/go.d.plugin/tree/master/modules/openvpn)                       |            OpenVPN            |
 | [openvpn_status_log](https://github.com/netdata/go.d.plugin/tree/master/modules/openvpn_status_log) |            OpenVPN            |
+| [pgbouncer](https://github.com/netdata/go.d.plugin/tree/master/modules/pgbouncer)                   |           PgBouncer           |
 | [phpdaemon](https://github.com/netdata/go.d.plugin/tree/master/modules/phpdaemon)                   |           phpDaemon           |
 | [phpfpm](https://github.com/netdata/go.d.plugin/tree/master/modules/phpfpm)                         |            PHP-FPM            |
 | [pihole](https://github.com/netdata/go.d.plugin/tree/master/modules/pihole)                         |            Pi-hole            |
