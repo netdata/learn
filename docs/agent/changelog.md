@@ -6,9 +6,14 @@
 
 **Merged pull requests:**
 
+- Fix coverity 380387 [\#13551](https://github.com/netdata/netdata/pull/13551) ([MrZammler](https://github.com/MrZammler))
+- add docker dashboard info [\#13547](https://github.com/netdata/netdata/pull/13547) ([ilyam8](https://github.com/ilyam8))
+- bump go.d.plugin to v0.37.0 [\#13546](https://github.com/netdata/netdata/pull/13546) ([ilyam8](https://github.com/ilyam8))
+- Cleanup of APIs [\#13539](https://github.com/netdata/netdata/pull/13539) ([underhood](https://github.com/underhood))
 - bump go.d version to v0.36.0 [\#13538](https://github.com/netdata/netdata/pull/13538) ([ilyam8](https://github.com/ilyam8))
 - chore\(python.d\): rename dockerd job on lock registration [\#13537](https://github.com/netdata/netdata/pull/13537) ([ilyam8](https://github.com/ilyam8))
 - Update MacOS community support details [\#13536](https://github.com/netdata/netdata/pull/13536) ([DShreve2](https://github.com/DShreve2))
+- Fix a crash when xen libraries are misconfigured [\#13535](https://github.com/netdata/netdata/pull/13535) ([vlvkobal](https://github.com/vlvkobal))
 - Add summary dashboard for PostgreSQL [\#13534](https://github.com/netdata/netdata/pull/13534) ([shyamvalsan](https://github.com/shyamvalsan))
 - add `jupyter` to `apps_groups.conf` [\#13533](https://github.com/netdata/netdata/pull/13533) ([andrewm4894](https://github.com/andrewm4894))
 - Schedule next rotation based on absolute time [\#13531](https://github.com/netdata/netdata/pull/13531) ([MrZammler](https://github.com/MrZammler))
@@ -28,6 +33,7 @@
 - reduce memcpy and memory usage on mqtt5 [\#13450](https://github.com/netdata/netdata/pull/13450) ([underhood](https://github.com/underhood))
 - Modify PID monitoring \(ebpf.plugin\) [\#13397](https://github.com/netdata/netdata/pull/13397) ([thiagoftsm](https://github.com/thiagoftsm))
 - Support chart labels in alerts [\#13290](https://github.com/netdata/netdata/pull/13290) ([MrZammler](https://github.com/MrZammler))
+- Fix telegram-bot rate limit [\#13119](https://github.com/netdata/netdata/pull/13119) ([MAH69IK](https://github.com/MAH69IK))
 
 ## [v1.36.1](https://github.com/netdata/netdata/tree/v1.36.1) (2022-08-15)
 
@@ -241,7 +247,6 @@
 - Remove official support for Debian 9. [\#13065](https://github.com/netdata/netdata/pull/13065) ([Ferroin](https://github.com/Ferroin))
 - Fix coverity 378587 [\#13024](https://github.com/netdata/netdata/pull/13024) ([MrZammler](https://github.com/MrZammler))
 - Remove Ubuntu 21.10 from CI and package builds. [\#12918](https://github.com/netdata/netdata/pull/12918) ([Ferroin](https://github.com/Ferroin))
-- Configurable storage engine for Netdata agents: step 3 [\#12892](https://github.com/netdata/netdata/pull/12892) ([aberaud](https://github.com/aberaud))
 
 ## [v1.35.1](https://github.com/netdata/netdata/tree/v1.35.1) (2022-06-10)
 
@@ -342,13 +347,6 @@
 - added worker jobs for cgroup-rename, cgroup-network and cgroup-first-time [\#12910](https://github.com/netdata/netdata/pull/12910) ([ktsaou](https://github.com/ktsaou))
 - Fix the log entry for incoming cloud start streaming commands [\#12908](https://github.com/netdata/netdata/pull/12908) ([stelfrag](https://github.com/stelfrag))
 - chore\(cgroups.plugin\): remove "enable new cgroups detected at run time" config option [\#12906](https://github.com/netdata/netdata/pull/12906) ([ilyam8](https://github.com/ilyam8))
-- Fix release channel in the node info message [\#12905](https://github.com/netdata/netdata/pull/12905) ([stelfrag](https://github.com/stelfrag))
-- chore\(worker\_utilization\): log an error when re-registering an already registered job [\#12903](https://github.com/netdata/netdata/pull/12903) ([ilyam8](https://github.com/ilyam8))
-- fix\(cgroups.plugin\): use correct identifier when registering the main thread "chart" worker job [\#12902](https://github.com/netdata/netdata/pull/12902) ([ilyam8](https://github.com/ilyam8))
-- Remove CPU-specific info from cpuidle dimensions [\#12898](https://github.com/netdata/netdata/pull/12898) ([vlvkobal](https://github.com/vlvkobal))
-- Adjust alarms count [\#12896](https://github.com/netdata/netdata/pull/12896) ([MrZammler](https://github.com/MrZammler))
-- Return stable or nightly based on version if the file check fails [\#12894](https://github.com/netdata/netdata/pull/12894) ([stelfrag](https://github.com/stelfrag))
-- Update reconnect node with kickstart info [\#12891](https://github.com/netdata/netdata/pull/12891) ([cakrit](https://github.com/cakrit))
 
 ## [v1.34.1](https://github.com/netdata/netdata/tree/v1.34.1) (2022-04-15)
 
