@@ -20,7 +20,11 @@ module.exports = {
 		prism: {
 			theme: require('prism-react-renderer/themes/dracula'),
 		},
-		hideableSidebar: true,
+		docs:{
+			sidebar: {
+				hideable: true,
+			},
+		},
 		navbar: {
 			title: 'Learn',
 			logo: {
