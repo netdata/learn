@@ -1,5 +1,5 @@
 [build]
-  environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "14.15.3", NETLIFY_USE_YARN = "true" }
+  environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
 
 [[redirects]]
   from = "/docs/agent"
