@@ -10,6 +10,20 @@ module.exports = {
 	favicon: 'img/favicon.ico',
 	organizationName: 'netdata',
 	projectName: 'netdata',
+	themes: [
+		// this is from https://github.com/easyops-cn/docusaurus-search-local
+		[
+			require.resolve("@easyops-cn/docusaurus-search-local"),
+			{
+				removeDefaultStopWordFilter: true,
+				indexDocs: true,
+				indexBlog: false,
+				hashed: true,
+				highlightSearchTermsOnTargetPage: false,
+				explicitSearchResultPath: true,
+			},
+		],
+	],
 	themeConfig: {
 		posthog: {
 			apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
