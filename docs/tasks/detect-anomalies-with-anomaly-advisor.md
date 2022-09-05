@@ -1,14 +1,12 @@
-
 <!--
 Title: "Detect anomalies with Anomaly Advisor"
-custom_edit_url: https://github.com/netdata/learn/blob/master/docs/tasks/detect-anomalies-with-anomaly-advisor.md
-learn_status: Published
-learn_topic_type: Tasks
-learn_rel_path: docs/tasks/detect-anomalies-with-anomaly-advisor.md
-learn_repo_doc: True
-learn_docs_purpose: Instructions on how to use the Anomaly Advisor to find anomalies
+custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/tasks/detect-anomalies-with-anomaly-advisor.md"
+learn_status: "Published"
+learn_topic_type: "Tasks"
+learn_rel_path: ""
+learn_docs_purpose: "Instructions on how to use the Anomaly Advisor to find anomalies"
+learn_repo_doc: "True"
 -->
-
 
 
 **********************************************************************
@@ -36,7 +34,8 @@ Example configuration/actions of the task
 
 List of reference docs user needs to be aware of.
 
-*****************Suggested document to be transformed**************************From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d<!-- 
+*****************Suggested document to be transformed**************************
+From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d<!-- 
 title: Configure machine learning (ML) powered anomaly detection
 custom_edit_url: https://github.com/netdata/netdata/edit/master/ml/README.md
 description: This is an in-depth look at how Netdata uses ML to detect anomalies.

@@ -1,14 +1,12 @@
-
 <!--
 Title: "Room management"
-custom_edit_url: https://github.com/netdata/learn/blob/master/docs/tasks/room-management.md
-learn_status: Published
-learn_topic_type: Tasks
-learn_rel_path: docs/tasks/room-management.md
-learn_repo_doc: True
-learn_docs_purpose: Instructions on how an admin/user can manage a room
+custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/tasks/room-management.md"
+learn_status: "Published"
+learn_topic_type: "Tasks"
+learn_rel_path: ""
+learn_docs_purpose: "Instructions on how an admin/user can manage a room"
+learn_repo_doc: "True"
 -->
-
 
 
 **********************************************************************
@@ -36,7 +34,8 @@ Example configuration/actions of the task
 
 List of reference docs user needs to be aware of.
 
-*****************Suggested document to be transformed**************************From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d---
+*****************Suggested document to be transformed**************************
+From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d---
 title: War Rooms 
 description: >- 
    Netdata Cloud uses War Rooms to group related nodes and create insightful composite

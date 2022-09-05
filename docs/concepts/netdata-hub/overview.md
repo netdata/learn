@@ -1,15 +1,12 @@
-
 <!--
 Title: "Overview"
-custom_edit_url: https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/overview.md
-learn_status: Published
-learn_topic_type: Concepts
-learn_rel_path: docs/concepts/netdata-hub/overview.md
-learn_repo_doc: True
-learn_docs_purpose: Explain the Netdata Hub, operation, principals, purpose, and how Netdata runs it's SAAS Netdata Hub 
-
+custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/overview.md"
+learn_status: "Published"
+learn_topic_type: "Concepts"
+learn_rel_path: "netdata-hub"
+learn_docs_purpose: "Explain the Netdata Hub, operation, principals, purpose, and how Netdata runs it's SAAS Netdata Hub"
+learn_repo_doc: "True"
 -->
-
 
 
 **********************************************************************
@@ -36,7 +33,8 @@ In the end of the document:
 
 list of related topics
 
-*****************Suggested document to be transformed**************************From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d---
+*****************Suggested document to be transformed**************************
+From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d---
 title: Get started with Netdata Cloud
 description: >-
   Ready to get real-time visibility into your entire infrastructure? 

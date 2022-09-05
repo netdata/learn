@@ -1,10 +1,10 @@
 <!--
-Title: "Spaces"
-custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/spaces.md"
+Title: "Space administration"
+custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/tasks/space-administration.md"
 learn_status: "Published"
-learn_topic_type: "Concepts"
-learn_rel_path: "netdata-hub"
-learn_docs_purpose: "Present the purpose of Spaces"
+learn_topic_type: "Tasks"
+learn_rel_path: ""
+learn_docs_purpose: "Instructions on how an admin can configure a space"
 learn_repo_doc: "True"
 -->
 
@@ -12,26 +12,27 @@ learn_repo_doc: "True"
 **********************************************************************
 Template:
 
-Small intro, what we are about to cover
+Small intro, give some context to the user
 
-// every concept we will explain to this document (grouped) should be a different heading (h2) and followed by an example
-// we need at any given moment to provide a reference (a anchored link to this concept)
-## concept title
+## Prerequisite
 
-A concept introduces a single feature or concept. A concept should answer the questions:
+Unordered list of what you will need. 
 
-1. What is this?
-2. Why would I use it?
+## Steps
 
-For instance, for example etc etc
+Exact list of steps the user must follow
 
-Give a small taste for this concept, not trying to cover it's reference page. 
+## Expected result
 
-In the end of the document:
+What you expect to see when you complete the steps above
+
+## Example
+
+Example configuration/actions of the task
 
 ## Related topics
 
-list of related topics
+List of reference docs user needs to be aware of.
 
 *****************Suggested document to be transformed**************************
 From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d---
