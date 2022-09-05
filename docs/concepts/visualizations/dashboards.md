@@ -1,14 +1,12 @@
-
 <!--
 Title: "Dashboards"
-custom_edit_url: https://github.com/netdata/learn/blob/master/docs/concepts/visualizations/dashboards.md
-learn_status: Published
-learn_topic_type: Concepts
-learn_rel_path: docs/concepts/visualizations/dashboards.md
-learn_repo_doc: True
-learn_docs_purpose: what we define as a Dashboard, explain the overview dashboard, Kubernetes dashboard, custom dashboards, legacy dashboard of the Agent
+custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/visualizations/dashboards.md"
+learn_status: "Published"
+learn_topic_type: "Concepts"
+learn_rel_path: "visualizations"
+learn_docs_purpose: "what we define as a Dashboard, explain the overview dashboard, Kubernetes dashboard, custom dashboards, legacy dashboard of the Agent"
+learn_repo_doc: "True"
 -->
-
 
 
 **********************************************************************

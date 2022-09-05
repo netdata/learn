@@ -1,14 +1,12 @@
-
 <!--
 Title: "Find the root cause of an issue with Metric correlations"
-custom_edit_url: https://github.com/netdata/learn/blob/master/docs/tasks/find-the-root-cause-of-an-issue-with-metric-correlations.md
-learn_status: Published
-learn_topic_type: Tasks
-learn_rel_path: docs/tasks/find-the-root-cause-of-an-issue-with-metric-correlations.md
-learn_repo_doc: True
-learn_docs_purpose: Instructions on how to use metric correlations to find correlated charts 
+custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/tasks/find-the-root-cause-of-an-issue-with-metric-correlations.md"
+learn_status: "Published"
+learn_topic_type: "Tasks"
+learn_rel_path: ""
+learn_docs_purpose: "Instructions on how to use metric correlations to find correlated charts "
+learn_repo_doc: "True"
 -->
-
 
 
 **********************************************************************
@@ -36,7 +34,8 @@ Example configuration/actions of the task
 
 List of reference docs user needs to be aware of.
 
-*****************Suggested document to be transformed**************************From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d---
+*****************Suggested document to be transformed**************************
+From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d---
 title: Metric Correlations
 description: Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/insights/metric-correlations.md
