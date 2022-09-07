@@ -27,6 +27,7 @@ All metrics have "postgres." prefix.
 | connections_utilization              |       global        |                                                                    used                                                                    |   percentage   |
 | connections_usage                    |       global        |                                                              available, used                                                               |  connections   |
 | connections_state                    |       global        |                                  active, idle, idle_in_transaction, idle_in_transaction_aborted, disabled                                  |  connections   |
+| queries_running_time_histogram       |       global        |                                                          _a dimension per bucket_                                                          |   queries/s    |
 | checkpoints                          |       global        |                                                            scheduled, requested                                                            | checkpoints/s  |
 | checkpoint_time                      |       global        |                                                                write, sync                                                                 |  milliseconds  |
 | bgwriter_buffers_alloc               |       global        |                                                                 allocated                                                                  |      B/s       |
@@ -43,6 +44,7 @@ All metrics have "postgres." prefix.
 | catalog_relation_count               |       global        | ordinary_table, index, sequence, toast_table, view, materialized_view, composite_type, foreign_table, partitioned_table, partitioned_index |   relations    |
 | catalog_relation_size                |       global        | ordinary_table, index, sequence, toast_table, view, materialized_view, composite_type, foreign_table, partitioned_table, partitioned_index |       B        |
 | uptime                               |       global        |                                                                   uptime                                                                   |    seconds     |
+| databases_count                      |       global        |                                                                 databases                                                                  |   databases    |
 | replication_standby_app_wal_delta    | standby application |                                             sent_delta, write_delta, flush_delta, replay_delta                                             |       B        |
 | replication_standby_app_wal_lag      | standby application |                                                      write_lag, flush_lag, replay_lag                                                      |    seconds     |
 | replication_standby_app_wal_lag      |  replication slot   |                                                        wal_keep, pg_replslot_files                                                         |     files      |
@@ -52,7 +54,7 @@ All metrics have "postgres." prefix.
 | db_connections                       |      database       |                                                                connections                                                                 |  connections   |
 | db_buffer_cache_hit_ratio            |      database       |                                                                 hit, miss                                                                  |   percentage   |
 | db_blocks_read                       |      database       |                                                                memory, disk                                                                |    blocks/s    |
-| db_rows_read_ratio                   |      database       |                                                             returned, fetched                                                              |   percentage   |
+| db_rows_fetched_perc                 |      database       |                                                                  fetched                                                                   |   percentage   |
 | db_rows_read                         |      database       |                                                             returned, fetched                                                              |     rows/s     |
 | db_rows_written                      |      database       |                                                         inserted, deleted, updated                                                         |     rows/s     |
 | db_conflicts                         |      database       |                                                                 conflicts                                                                  |   queries/s    |
@@ -63,6 +65,18 @@ All metrics have "postgres." prefix.
 | db_temp_files                        |      database       |                                                                  written                                                                   |    files/s     |
 | db_temp_files_data                   |      database       |                                                                  written                                                                   |      B/s       |
 | db_size                              |      database       |                                                                    size                                                                    |       B        |
+| table_dead_rows_perc                 |        table        |                                                                    dead                                                                    |   percentage   |
+| table_rows                           |        table        |                                                                 live, dead                                                                 |      rows      |
+| table_rows_operations                |        table        |                                                         inserted, deleted, updated                                                         |     rows/s     |
+| table_hot_perc                       |        table        |                                                                    hot                                                                     |   percentage   |
+| table_hot_updates                    |        table        |                                                                    hot                                                                     |   updates/s    |
+| table_scans                          |        table        |                                                             index, sequential                                                              |    scans/s     |
+| table_scans_rows                     |        table        |                                                             index, sequential                                                              |     rows/s     |
+| table_last_autovacuum_ago            |        table        |                                                                    time                                                                    |    seconds     |
+| table_last_vacuum_ago                |        table        |                                                                    time                                                                    |    seconds     |
+| table_last_autoanalyze_ago           |        table        |                                                                    time                                                                    |    seconds     |
+| table_last_analyze_ago               |        table        |                                                                    time                                                                    |    seconds     |
+| table_total_size                     |        table        |                                                                    size                                                                    |       B        |
 
 ## Configuration
 
