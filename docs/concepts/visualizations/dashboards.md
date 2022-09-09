@@ -1,5 +1,5 @@
 <!--
-Title: "Dashboards"
+title: "Dashboards"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/visualizations/dashboards.md"
 learn_status: "Published"
 learn_topic_type: "Concepts"

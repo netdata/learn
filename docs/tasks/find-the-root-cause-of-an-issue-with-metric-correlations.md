@@ -1,5 +1,5 @@
 <!--
-Title: "Find the root cause of an issue with Metric correlations"
+title: "Find the root cause of an issue with Metric correlations"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/tasks/find-the-root-cause-of-an-issue-with-metric-correlations.md"
 learn_status: "Published"
 learn_topic_type: "Tasks"
