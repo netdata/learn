@@ -1,5 +1,6 @@
 <!--
 title: "Rooms"
+sidebar_label: "Rooms"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/rooms.md"
 learn_status: "Published"
 learn_topic_type: "Concepts"
