@@ -1,5 +1,5 @@
 <!--
-Title: "Space administration"
+title: "Space administration"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/tasks/space-administration.md"
 learn_status: "Published"
 learn_topic_type: "Tasks"

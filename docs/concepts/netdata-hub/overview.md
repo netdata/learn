@@ -1,5 +1,5 @@
 <!--
-Title: "Overview"
+title: "Overview"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/overview.md"
 learn_status: "Published"
 learn_topic_type: "Concepts"
