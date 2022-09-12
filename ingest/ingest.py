@@ -7,14 +7,15 @@ import os
 import pathlib
 import re
 import shutil
-
+import errno
 import git
 
 dryRun = False
 
-filesDictionary = {}
+restFilesDictionary = {}
+toPublish = {}
 markdownFiles = []
-docsPrefix = "../docs/"
+docsPrefix = "docs"
 TEMP_FOLDER = "ingest-temp-folder"
 defaultRepos = {
     "netdata":
@@ -82,24 +83,22 @@ def renameReadmes(fileArray):
         counter += 1
 
 
-def changePath(oldFilePath, newFilePath):
+def moveDoc(src, dest):
     """REQUIRES:
     In the oldFilePath the metadata:
     learn_topic_type: e.g. Concepts
     learn_rel_path: e.g /agent/ <- the folder inside the Concepts directory
     """
-
     # Get the path
-    newDir = os.path.dirname(newFilePath)
-
-    # If the new dir doesn't exist, create it
-    if not os.path.exists(newDir):
-        os.makedirs(newDir)
-    # Then remove the file
-    shutil.move(oldFilePath, newFilePath)
-
-    # Update the dict of the file's metadata
-    filesDictionary.get(oldFilePath).update({"newLearnPath": newFilePath})
+    try:
+        shutil.copy(src, dest)
+    except IOError as e:
+        # ENOENT(2): file does not exist, raised also on missing dest parent dir
+        if e.errno != errno.ENOENT:
+            raise
+        # try creating parent directories
+        os.makedirs(os.path.dirname(dest))
+        shutil.copy(src, dest)
 
 
 def cloneRepo(owner, repo, branch, depth, prefixFolder):
@@ -113,13 +112,17 @@ def cloneRepo(owner, repo, branch, depth, prefixFolder):
             "Couldn't clone the {} branch from {} repo (owner: {}) \n Exception {} raised".format(branch, repo, owner,
                                                                                                   e))
 
+def createMDXPathFromMetdata(metadata):
+    return("{}/{}/{}/{}.mdx".format(docsPrefix, metadata["learn_topic_type"], metadata["learn_rel_path"], metadata["sidebar_label"]).replace(" ", "-").lower().replace("//","/"))
+
 
 def fetchMarkdownFromRepo(outputFolder):
     return glob.glob(outputFolder + '/**/*.md*', recursive=True)
 
 
-def readMetadataFromDocs(pathToPath):
+def readMetadataFromDoc(pathToPath):
     """
+    Taking a path of a file as input
     Identify the area with pattern " <!-- ...multiline string -->" and  converts them
     to a dictionary of key:value pairs
     """
@@ -140,11 +143,9 @@ def readMetadataFromDocs(pathToPath):
                 while listMetadata and len(listMetadata[0].split(": ")) <= 1:
                     line = listMetadata.pop(0)
                     value = value + line.lstrip(' ')
-
                 value = value.strip("\"")
                 metadataDictionary[key] = value.lstrip('>-')
-
-    return {'{0}'.format(pathToPath): metadataDictionary}
+    return(metadataDictionary)
 
 
 def sanitizePage(path):
@@ -248,6 +249,7 @@ if __name__ == '__main__':
                 parser.print_usage()
                 exit(-1)
             except KeyError:
+                print(repo)
                 print("The repo you specified in not in predefined repos")
                 print(defaultRepos.keys())
                 parser.print_usage()
@@ -281,28 +283,46 @@ if __name__ == '__main__':
                                          fetchMarkdownFromRepo(TEMP_FOLDER + "/github")))
 
     print("Files detected: ", len(markdownFiles))
-
-    # # Test case for some dummy files
-    # markdownFiles.append("./new/a.md")
-    # markdownFiles.append("./new/b.md")
-
-    # PRIOR TO MOVING
-
     print("Gathering Learn files...")
     # After this we need to keep only the files that have metadata, so we will fetch metadata for everything and keep
     # the entries that have populated dictionaries
-    learnMarkdownFiles = []
+    reducedMarkdownFiles = []
     for md in markdownFiles:
-        response = readMetadataFromDocs(md)
+        metadata = readMetadataFromDoc(md)
         # Check to see if the dictionary returned is empty
-        if response.get(md):
-            learnMarkdownFiles.append(md)
+        if len(metadata)>0:
+            reducedMarkdownFiles.append(md)
+            if "learn_status" in metadata.keys():
+                if metadata["learn_status"] == "Published":
+                    try:
+                        toPublish[md] = {
+                            "metadata": str(metadata),
+                            "learnPath": str(createMDXPathFromMetdata(metadata)),
+                            "ingestedRepo": str(md.split("/",2)[1])
+                        }
+                    except:
+                        print("File {} doesnt container key-value {}".format(md, KeyError))
+            else:
+                restFilesDictionary[md] = {
+                    "metadata": str(metadata),
+                    "learnPath": str("docs/_archive/_{}".format(md)),
+                    "ingestedRepo": str(md.split("/", 2)[1])
+                }
 
+        del metadata
     # we update the list only with the files that are destined for Learn
-    markdownFiles = learnMarkdownFiles
-    print("  Found Learn files: ", len(markdownFiles))
-    print(markdownFiles)
 
+
+
+    #identify published documents:q
+    print("  Found Learn files: ", len(markdownFiles))
+    for file in toPublish:
+        moveDoc(file, toPublish[file]["learnPath"])
+        sanitizePage(toPublish[file]["learnPath"])
+    for file in restFilesDictionary:
+        #moveDoc(file, restFilesDictionary[file]["learnPath"])
+
+    """
     print("  Renaming README.md files...")
     renameReadmes(markdownFiles)
 
@@ -312,21 +332,21 @@ if __name__ == '__main__':
 
     print("Reading the metadata for each file...")
 
-    # Read the Metadata
-    for md in markdownFiles:
-        filesDictionary.update(readMetadataFromDocs(md))
-
     print("Done.")
-    print(filesDictionary)
+    for k,v in filesDictionary.items():
+        print("File ", k )
+        print("Has metadata", v)
+        print("")
 
     # FILE MOVING
-
+    '''
     print("Moving files...")
 
     # TODO the dict needs to be filename -> oldPath newPath metadata
 
     # Then we need to sanitize the page and move it to the correct path, if it doesn't have a path for now we continue
     # on, so it doesn't get moved anywhere
+
     learnFilesDict = copy.copy(filesDictionary)
     for md in filesDictionary:
         sanitizePage(md)
@@ -367,5 +387,5 @@ if __name__ == '__main__':
             fixMovedLinks(learnFilesDict.get(md)["newLearnPath"], learnFilesDict)
 
     print("Done.")
-
+    """
 print("OPERATION FINISHED")
