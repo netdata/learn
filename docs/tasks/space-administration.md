@@ -9,115 +9,119 @@ learn_docs_purpose: "Instructions on how an admin can configure a space"
 learn_repo_doc: "True"
 -->
 
-
-**********************************************************************
-Template:
-
-Small intro, give some context to the user
-
-## Prerequisite
-
-Unordered list of what you will need. 
-
-## Steps
-
-Exact list of steps the user must follow
-
-## Expected result
-
-What you expect to see when you complete the steps above
-
-## Example
-
-Example configuration/actions of the task
-
-## Related topics
-
-List of reference docs user needs to be aware of.
-
-*****************Suggested document to be transformed**************************
-From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d---
-title: Spaces 
-description: >- 
-  Organize your infrastructure monitoring on Netdata Cloud by creating Spaces, then grouping
-  your Agent-monitored nodes. 
-custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/spaces.md
----
-
 A Space is a high-level container. It's a collaboration space where you can organize team members, access levels and the
 nodes you want to monitor.
 
-Let's talk through some strategies for creating the most intuitive Cloud experience for your team.
+As an admin you can configure a Space to your liking, through the Centralized Admin Interface accessible from the bottom
+left cogwheel on the interface, with tooltip "Space Settings".
 
-## How to organize your Netdata Cloud
+In this Task you will learn how to:
 
-You can use any number of Spaces you want, but as you organize your Cloud experience, keep in mind that _you can only
-add any given node to a single Space_. This 1:1 relationship between node and Space may dictate whether you use one
-encompassing Space for your entire team and separate them by War Rooms, or use different Spaces for teams monitoring
-discrete parts of your infrastructure.
+- [Add a description](#add-a-description)
+- [Manage Permissions](#manage-permissions)
+- [Create a new War Room](#create-a-new-war-room)
+- [Delete a War Room](#delete-a-war-room)
+- [Check the State of the Space's Nodes](#check-the-state-of-the-spaces-nodes)
+- [Claim a node to the Space](#claim-a-node-to-the-space)
+- [Remove a node from the Space](#remove-a-node-from-the-space)
+- [Add a user to the Space](#add-a-user-to-the-space)
+- [Remove a user from the Space](#remove-a-user-from-the-space)
+- [Change a user's role within the Space](#change-a-users-role-within-the-space)
+- [Enable/Disable Space-wide notifications](#enabledisable-space-wide-notifications)
+- [Create/Delete Space-wide Bookmarks](#createdelete-space-wide-bookmarks)
+- [Delete or Leave the Space](#delete-or-leave-the-space)
 
-If you have been invited to Netdata Cloud by another user by default you will able to see this space. If you are a new
-user the first space is already created.
+## Prerequisites
 
-The other consideration for the number of Spaces you use to organize your Netdata Cloud experience is the size and
-complexity of your organization.
+- A Netdata Cloud account with at least one space where it has admin access
+- (optional) A node claimed to that space
 
-For small team and infrastructures we recommend sticking to a single Space so that you can keep all your nodes and their
-respective metrics in one place. You can then use multiple [War Rooms](/docs/cloud/war-rooms) to further organize your
-infrastructure monitoring.
+## Add a description
 
-Enterprises may want to create multiple Spaces for each of their larger teams, particularly if those teams have
-different responsibilities or parts of the overall infrastructure to monitor. For example, you might have one SRE team
-for your user-facing SaaS application and a second team for infrastructure tooling. If they don't need to monitor the
-same nodes, you can create separate Spaces for each team.
+You can add a description of your Space's purpose in the `Info` tab.
 
-## Navigate between spaces
+## Manage permissions
 
-Click on any of the boxes to switch between available Spaces.
+Within the `Info` tab, you can limit the invitation of new members and of War Room creation to either
+all the users or only the admin.
 
-Netdata Cloud abbreviates each Space to the first letter of the name, or the first two letters if the name is two words
-or more. Hover over each icon to see the full name in a tooltip.
+## Create a new War Room
 
-To add a new Space click on the green **+** button . Enter the name of the Space and click **Save**.
+From the `War Rooms` tab, you can create a new War Room.  
+To do so:
 
-![Switch between Spaces](/img/cloud/main-page-add-space.png)
+1. Click the green "+" icon "Create War Room"
+2. Proceed into giving a name to the War Room
+3. (Optional) Give a description to the War Room
+4. Click "Add" to create the new War Room
 
-## Manage Spaces
+## Delete a War Room
 
-Manage your spaces by selecting in a particular space and clicking in the small gear icon in the lower left corner. This
-will open a side tab in which you can:
+While in the `War Rooms` tab, you can see all the War Rooms of the Space you are in, and their number of nodes and
+users. To delete a War Room:
 
-1. _Configure this Space*_, in the first tab (**Space**) you can change the name, description or/and some privilege
-   options of this space
+- Click the trash can icon
+- In the confirmation message click "Yes"
 
-2. _Edit the War Rooms*_, click on the **War rooms** tab to add or remove War Rooms.
+Now the War Room is successfully deleted from your Space.
 
-3. _Connect nodes*_, click on **Nodes** tab. Copy the claiming script to your node and run it. See the
-   [connect to Cloud doc](/docs/agent/claim) for details.
+## Check the state of the Space's nodes
 
-4. _Manage the users*_, click on **Users**. The [invitation doc](/docs/cloud/manage/invite-your-team)
-   details the invitation process.
+From the `Nodes` tab, you have access to all the Nodes claimed on this Space, for each of them you can see:
 
-5. _Manage notification setting*_, click on **Notifications** tab to turn off/on notification methods.
+- The Node's Name
+- The Node's Version
+- The node's Status
+- The Connection to Cloud
 
-6. _Manage your bookmarks*_, click on the **Bookmarks** tab to add or remove bookmarks that you need.
+So, you can see if a node is outdated, if it is offline, or if it needs further steps to connect to the cloud.
 
-:::note \* This action requires admin rights for this space
-:::
+## Claim a node to the Space
 
-## Obsoleting offline nodes from a Space
+From the `Nodes` tab you can click the green "+" icon to begin the claiming process.  
+For a detailed guide in claiming Agent nodes, refer to
+our [Claim an Agent to the Cloud Task](https://github.com/netdata/netdata/blob/master/docs/tasks/general-configuration/claim-an-agent-to-the-hub.md).
 
-Netdata admin users now have the ability to remove obsolete nodes from a space.
+## Remove a node from the Space
 
-- Only admin users have the ability to obsolete nodes
-- Only offline nodes can be marked obsolete (Live nodes and stale nodes cannot be obsoleted)
-- Node obsoletion works across the entire space, so the obsoleted node will be removed from all rooms belonging to the
-  space
-- If the obsoleted nodes eventually become live or online once more they will be automatically re-added to the space
+While in the `Nodes` tab, you can remove any given offline node from a Space, by clicking the trash can icon in the
+actions column.
 
-![Obsoleting an offline node](https://user-images.githubusercontent.com/24860547/173087202-70abfd2d-f0eb-4959-bd0f-74aeee2a2a5a.gif)
+## Add a user to the Space
 
-## What's next?
+From the `Users` tab you can add more users to your Space.  
+To do so:
 
-Once you configured your Spaces, it's time to set up your [War Rooms](/docs/cloud/war-rooms).
-*******************************************************************************
+1. Click the green "+" icon
+2. Enter the email(s) of the user(s) you want to add (seperated with a comma for multiple emails)
+3. Select in which War Rooms the user will have access
+4. Click "Send"
+
+## Remove a user from the Space
+
+You can remove a User by going to the `Users` tab and clicking the trash can icon in the actions column, next to their
+name.
+
+## Change a user's role within the Space
+
+While in the `Users` tab, you can change a user's role by clicking the user icon in the actions column, and then
+selecting the role for that user.
+
+## Enable/Disable Space-wide notifications
+
+From the `Notifications` tab, you can enable or disable Space-wide E-mail notifications, by clicking the respective
+toggle button.
+
+## Create/Delete Space-wide Bookmarks
+
+In the `Bookmarks` tab, you can create and delete Bookmarks, that will appear in the left bar of the Space at any given
+time.
+
+## Delete or Leave the Space
+
+In the event that you want to delete or leave your space, you can do so by clicking either "Leave Space" or "Delete
+Space" in the bottom of the `Info` tab.
+
+## Related topics
+
+1. [Spaces Concept Documentation](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/spaces.md)
