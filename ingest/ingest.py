@@ -113,7 +113,12 @@ def cloneRepo(owner, repo, branch, depth, prefixFolder):
                                                                                                   e))
 
 def createMDXPathFromMetdata(metadata):
-    return("{}/{}/{}/{}.mdx".format(docsPrefix, metadata["learn_topic_type"], metadata["learn_rel_path"], metadata["sidebar_label"]).replace(" ", "-").lower().replace("//","/"))
+    finalFile = ' '.join((metadata["sidebar_label"].replace("/", " ").replace(")", " ").replace(",", " ").replace("(", " ")).split())
+    return("{}/{}/{}/{}.mdx".format(docsPrefix, \
+                    metadata["learn_topic_type"], \
+                    metadata["learn_rel_path"], \
+                    finalFile.replace(" ", "-")).lower().replace(" ", "-").replace("//","/"))
+ 
 
 
 def fetchMarkdownFromRepo(outputFolder):
@@ -268,19 +273,17 @@ if __name__ == '__main__':
     except FileExistsError:
         print("Folder already exists")
 
-    unSafeCleanUpFolders(docsPrefix)
-    try:
-        os.mkdir(docsPrefix)
-    except FileExistsError:
-        print("Folder already exists")
-
     '''Clone all the predefined repos'''
     for key in defaultRepos.keys():
         print(cloneRepo(defaultRepos[key]["owner"], key, defaultRepos[key]["branch"], 1, TEMP_FOLDER + "/"))
+    # This line is useful only during the rework
+    print(cloneRepo("netdata", "learn", "rework-learn", 1, TEMP_FOLDER + "/"))
     # We fetch the markdown files from the repositories
     markdownFiles = list(itertools.chain(fetchMarkdownFromRepo(TEMP_FOLDER + "/netdata"),
                                          fetchMarkdownFromRepo(TEMP_FOLDER + "/go.d.plugin"),
-                                         fetchMarkdownFromRepo(TEMP_FOLDER + "/github")))
+                                         fetchMarkdownFromRepo(TEMP_FOLDER + "/github"),
+                                         # This line is useful only during the rework
+                                         fetchMarkdownFromRepo(TEMP_FOLDER + "/learn")))
 
     print("Files detected: ", len(markdownFiles))
     print("Gathering Learn files...")
@@ -320,6 +323,7 @@ if __name__ == '__main__':
         moveDoc(file, toPublish[file]["learnPath"])
         sanitizePage(toPublish[file]["learnPath"])
     for file in restFilesDictionary:
+        pass
         #moveDoc(file, restFilesDictionary[file]["learnPath"])
 
     """
