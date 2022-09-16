@@ -38,36 +38,36 @@ In this Task you will learn how to:
 
 ## Add a description
 
-You can add a description of your Space's purpose in the `Info` tab.
+You can add a description of your Space's purpose in the **Info** tab.
 
 ## Manage permissions
 
-Within the `Info` tab, you can limit the invitation of new members and of War Room creation to either
+Within the **Info** tab, you can limit the invitation of new members and of War Room creation to either
 all the users or only the admin.
 
 ## Create a new War Room
 
-From the `War Rooms` tab, you can create a new War Room.  
+From the **War Rooms** tab, you can create a new War Room.  
 To do so:
 
-1. Click the green "+" icon "Create War Room"
+1. Click the green **+** icon **Create War Room**
 2. Proceed into giving a name to the War Room
 3. (Optional) Give a description to the War Room
-4. Click "Add" to create the new War Room
+4. Click **Add** to create the new War Room
 
 ## Delete a War Room
 
-While in the `War Rooms` tab, you can see all the War Rooms of the Space you are in, and their number of nodes and
+While in the **War Rooms** tab, you can see all the War Rooms of the Space you are in, and their number of nodes and
 users. To delete a War Room:
 
-- Click the trash can icon
-- In the confirmation message click "Yes"
+- Click the **trashcan** icon
+- In the confirmation message click **Yes**
 
 Now the War Room is successfully deleted from your Space.
 
 ## Check the state of the Space's nodes
 
-From the `Nodes` tab, you have access to all the Nodes claimed on this Space, for each of them you can see:
+From the **Nodes** tab, you have access to all the Nodes claimed on this Space, for each of them you can see:
 
 - The Node's Name
 - The Node's Version
@@ -78,49 +78,50 @@ So, you can see if a node is outdated, if it is offline, or if it needs further 
 
 ## Claim a node to the Space
 
-From the `Nodes` tab you can click the green "+" icon to begin the claiming process.  
+From the **Nodes** tab you can click the green **+** icon to begin the claiming process.  
 For a detailed guide in claiming Agent nodes, refer to
-our [Claim an Agent to the Cloud Task](https://github.com/netdata/netdata/blob/master/docs/tasks/general-configuration/claim-an-agent-to-the-hub.md).
+our [Claim an Agent to the Cloud Task](https://github.com/netdata/netdata/blob/master/docs/tasks/general-configuration/claim-an-agent-to-the-hub.md)
+.
 
 ## Remove a node from the Space
 
-While in the `Nodes` tab, you can remove any given offline node from a Space, by clicking the trash can icon in the
-actions column.
+While in the **Nodes** tab, you can remove any given offline node from a Space, by clicking the trash can icon in the
+**Actions** column.
 
 ## Add a user to the Space
 
-From the `Users` tab you can add more users to your Space.  
+From the **Users** tab you can add more users to your Space.  
 To do so:
 
-1. Click the green "+" icon
-2. Enter the email(s) of the user(s) you want to add (seperated with a comma for multiple emails)
+1. Click the green **+** icon
+2. Enter the email(s) of the user(s) you want to add (separated with a comma for multiple emails)
 3. Select in which War Rooms the user will have access
-4. Click "Send"
+4. Click **Send**
 
 ## Remove a user from the Space
 
-You can remove a User by going to the `Users` tab and clicking the trash can icon in the actions column, next to their
-name.
+You can remove a User by going to the **Users** tab and clicking the trash can icon in the **Actions** column, next to
+their name.
 
 ## Change a user's role within the Space
 
-While in the `Users` tab, you can change a user's role by clicking the user icon in the actions column, and then
+While in the **Users** tab, you can change a user's role by clicking the user icon in the **Actions** column, and then
 selecting the role for that user.
 
 ## Enable/Disable Space-wide notifications
 
-From the `Notifications` tab, you can enable or disable Space-wide E-mail notifications, by clicking the respective
+From the **Notifications** tab, you can enable or disable Space-wide E-mail notifications, by clicking the respective
 toggle button.
 
 ## Create/Delete Space-wide Bookmarks
 
-In the `Bookmarks` tab, you can create and delete Bookmarks, that will appear in the left bar of the Space at any given
-time.
+In the **Bookmarks** tab, you can create and delete Bookmarks, that will appear in the left bar of the Space at any
+given time.
 
 ## Delete or Leave the Space
 
-In the event that you want to delete or leave your space, you can do so by clicking either "Leave Space" or "Delete
-Space" in the bottom of the `Info` tab.
+In the event that you want to delete or leave your space, you can do so by clicking either **Leave Space** or **Delete
+Space** in the bottom of the **Info** tab.
 
 ## Related topics
 
