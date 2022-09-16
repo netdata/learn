@@ -16,16 +16,16 @@ import Admonition from '@theme/Admonition';
 War Rooms organize your connected nodes and provide infrastructure-wide dashboards using real-time metrics and
 visualizations.
 
-Once you add nodes to a Space, all of your nodes will be visible in the **All nodes War** Room. This is a special War
-Room
-which gives you an overview of all of your nodes in this particular space. Then you can create functional separations of
-your nodes into more War Rooms. Every War Room has its own dashboards, navigation, indicators, and management tools.
+Once you add nodes to a Space, all of your nodes will be visible in the **All nodes War Room**. This is a special War
+Room which gives you an overview of all of your nodes in this particular space. Then you can create functional
+separations of your nodes into more War Rooms. Every War Room has its own dashboards, navigation, indicators, and
+management tools.
 
 :::note
 Some of these actions can be configured to be accessible to normal users too instead of being admin-only, you can read
 more in
-the [Space administration Task](https://github.com/netdata/learn/blob/master/docs/tasks/space-administration.md#manage-permissions)
-.
+the [Space administration](https://github.com/netdata/learn/blob/master/docs/tasks/space-administration.md#manage-permissions)
+Task.
 :::
 
 ## Prerequisites
@@ -52,7 +52,7 @@ You can perform the actions below from either of:
     - Either proceed on claiming a new Agent to this Space, and adding it to the War Room that you are in, see details
       at
       our [claim an Agent to the Cloud](https://github.com/netdata/netdata/blob/master/docs/tasks/general-configuration/claim-an-agent-to-the-hub.md)
-      task
+      Task
     - Or, from the bottom tab, you can select to add nodes that are already claimed on your Space
 
 </TabItem>
@@ -64,7 +64,7 @@ You can perform the actions below from either of:
     - Either proceed on claiming a new Agent to this Space, and adding it to the War Room that you are in, see details
       at
       our [claim an Agent to the Cloud](https://github.com/netdata/netdata/blob/master/docs/tasks/general-configuration/claim-an-agent-to-the-hub.md)
-      task
+      Task
     - Or, from the bottom tab, you can select to add nodes that are already claimed on your Space
 
 </TabItem>
@@ -103,7 +103,7 @@ From the **War Room settings** interface:
 
 If you want to add a new User to the War Room that isn't on the Space, check
 the [Space administration](https://github.com/netdata/learn/blob/master/docs/tasks/space-administration.md#add-a-user-to-the-space)
-task.
+Task.
 
 ### Remove users from a War Room
 
@@ -121,8 +121,8 @@ Then you can add charts by following the prompt.
 :::tip
 You can quickly add a chart to a Custom Dashboard, by clicking the **Add to dashboard** button of the top bar on any
 chart. To read more, check
-the [interact with the Charts Task](https://github.com/netdata/learn/blob/master/docs/tasks/interact-with-the-charts.md)
-.
+the [interact with the Charts](https://github.com/netdata/learn/blob/master/docs/tasks/interact-with-the-charts.md)
+Task.
 :::
 
 To delete a Custom Dashboard, select it from the tick box column, and then click the **Delete** button.
