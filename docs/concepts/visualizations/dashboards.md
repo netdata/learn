@@ -10,35 +10,6 @@ learn_repo_doc: "True"
 -->
 
 
-**********************************************************************
-Template:
-
-Small intro, what we are about to cover
-
-// every concept we will explain to this document (grouped) should be a different heading (h2) and followed by an example
-// we need at any given moment to provide a reference (a anchored link to this concept)
-## concept title
-
-A concept introduces a single feature or concept. A concept should answer the questions:
-
-1. What is this?
-2. Why would I use it?
-
-For instance, for example etc etc
-
-Give a small taste for this concept, not trying to cover it's reference page. 
-
-In the end of the document:
-
-## Related topics
-
-list of related topics
-
->*NOTE to be removed*: This page will be adapted from multiple pages/scratch, but the foundation will be here: https://learn.netdata.cloud/docs/cloud/visualize/interact-new-charts
-
-> ⚠️ This new version of charts is currently **only** available on Netdata Cloud. We didn't want to keep this valuable
-> feature from you, so after we get this into your hands on the Cloud, we will collect and implement your feedback. Together, we will be able to provide the best possible version of charts on the Netdata Agent dashboard, as quickly as possible.
-
 Netdata excels in collecting, storing, and organizing metrics in out-of-the-box dashboards. 
 To make sense of all the metrics, Netdata offers an enhanced version of charts that update every second. 
 
@@ -108,8 +79,6 @@ On this bar you have access to immediate actions over the chart, the available a
 -   Enter fullscreen mode: allows you expand the current chart to the full size of your screen
 -   Add chart to dashboard: This allows you to add the chart to an existing custom dashboard or directly create a new one that includes the chart.
 
-<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/65ac4fc8-3d8d-4617-8234-dbb9b31b4264" width="40%" height="40%" />
-
 ## Exploration action bar
 
 When exploring the chart you will see a second action bar. This action bar is there to support you on this task. The available actions that you can see are:
@@ -118,8 +87,6 @@ When exploring the chart you will see a second action bar. This action bar is th
 -   Highlight
 -   Horizontal and Vertical zooms
 -   In-context zoom in and out
-
-<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/0417ad66-fcf6-42d5-9a24-e9392ec51f87" width="40%" height="40%" />
 
 ### Pan
 
@@ -137,9 +104,7 @@ Selecting timeframes is useful when you see an interesting spike or change in a 
 -   run [Metric Correlations](/docs/cloud/insights/metric-correlations)
 -   zoom in on the selected timeframe
 
-[Metric Correlations](/docs/cloud/insights/metric-correlations) will only be available if you respect the timeframe selection limitations. The selected duration pill together with the button state helps visualize this.
-
-<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/2ffc157d-0f0f-402e-80bb-5ffa8a2091d5" width="50%" height="50%" />
+[Metric Correlations](/docs/cloud/insights/metric-correlations) will only be available if you respect the timeframe selection limitations.
 
 <p/>
 
@@ -193,15 +158,9 @@ behaving strangely.
 To resize the chart, click-and-drag the icon on the bottom-right corner of any chart. To restore the chart to its original height,
 double-click the same icon.
 
-![AjqnkIHB9H.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/1bcc6a0a-a58e-457b-8a0c-e5d361a3083c)
 
-## What's next?
 
-We recommend you read up on the differences between [chart dimensions, contexts, and
-families](/docs/dashboard/dimensions-contexts-families) to strengthen your understanding of how Netdata organizes its
-dashboards. Another valuable way to interact with charts is to use the [date and time controls](/docs/dashboard/visualization-date-and-time-controls), which helps you visualize specific moments of historical metrics.
-
-### Further reading & related information
+## Related Topics
 
 -   Dashboard
     -   [How the dashboard works](/docs/dashboard/how-dashboard-works)
