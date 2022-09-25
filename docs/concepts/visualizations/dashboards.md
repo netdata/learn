@@ -28,9 +28,7 @@ These charts will available on [Overview tab](/docs/cloud/visualize/overview), S
 
 ## Overview
 
-Have a look at the can see the overall look and feel of the charts for both with a composite chart from the [Overview tab](/docs/cloud/visualize/overview) and a simple chart from the single node view:
-
-![NRve6zr325.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/5ecaf5ec-1229-480e-b122-62f63e9df227)
+You can see the overall look and feel of the charts for both with a composite chart from the [Overview tab](/docs/cloud/visualize/overview) and a simple chart from the single node view.
 
 With a quick glance you have immediate information available at your disposal:
 
