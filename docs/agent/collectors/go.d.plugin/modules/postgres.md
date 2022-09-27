@@ -12,6 +12,8 @@ management system emphasizing extensibility and SQL compliance.
 
 This module monitors one or more Postgres servers, depending on your configuration.
 
+To find out more about these metrics and why they are important to monitor, read our blog post on [PostgreSQL monitoring with Netdata](https://www.netdata.cloud/blog/postgresql-monitoring)
+
 ## Requirements
 
 - PostgreSQL v9.4+
@@ -21,7 +23,9 @@ This module monitors one or more Postgres servers, depending on your configurati
 ## Metrics
 
 - all metrics have "postgres." prefix.
+- db_size need CONNECT privilege to the database.
 - table_* and index_* metrics need [additional configuration](#database-detailed-metrics).
+- table_bloat* and index_bloat* metrics need read (SELECT) permission to the table.
 - wal_files_count, wal_archiving_files_count and replication_slot_files_count
   need [superuser](https://www.postgresql.org/docs/current/role-attributes.html) status.
 

@@ -25,10 +25,17 @@ It collects information and statistics about the server executing the following 
 - Accepted and rejected (maxclients limit) connections in `connections/s`
 - Clients in `clients`
 
+### Performance
+
+- Ping latency in `seconds`
+- Processed commands in `commands/s`
+- Keys lookup hit rate in `percentage`
+
 ### Memory
 
 - Memory usage in `bytes`
 - Ratio between used_memory_rss and used_memory in `ratio`
+- Evicted keys due to maxmemory limit in `keys/s`
 
 ### Network bandwidth
 
@@ -37,28 +44,26 @@ It collects information and statistics about the server executing the following 
 ### Replication
 
 - Connected replicas in `replicas`
+- Master link status in `status`
+- Time elapsed since the last interaction with master in `seconds`
+- Time elapsed since the link between master and slave is down in `seconds`
 
-### Persistence RDB
+### Persistence
 
 - Operations that produced changes since the last SAVE or BGSAVE in `operations`
 - Duration of the ongoing RDB save operation if any in `seconds`
 - Status of the last RDB save operation in `status`
-
-### Persistence AOF
-
+- Time elapsed since the last successful RDB save in `seconds`
 - AOF file size in `bytes`
 
 ### Commands
 
-- Processed commands in `queries/s`
 - Calls per command in `calls/s`
 - Total CPU time consumed by the commands in `usec`
 - Average CPU consumed per command execution in `usec/s`
 
 ### Keyspace
 
-- Keys lookup hit rate in `percentage`
-- Evicted keys due to maxmemory limit in `keys/s`
 - Expired keys in `keys/s`
 - Keys per database in `keys`
 - Keys with an expiration per database in `keys`
