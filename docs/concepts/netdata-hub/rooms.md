@@ -145,8 +145,7 @@ the **🗑** icon.
 
 
 
-## What's next?
+## Related Documentation
 
-Once you've figured out an organizational structure that works for your team, learn more about how you can use Netdata
-Cloud to monitor distributed nodes using [real-time composite charts](/docs/cloud/visualize/overview).
+
 *******************************************************************************
