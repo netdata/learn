@@ -21,7 +21,7 @@ your nodes into more War Rooms.
 
 Every War Room has its own dashboards, navigation, indicators, and management tools.
 
-## War Room Navigation
+## War Room navigation
 
 ### Switching between views - static tabs
 
@@ -85,7 +85,7 @@ not on single-node dashboards.
 ![The node filter](https://user-images.githubusercontent.com/12612986/172674440-df224058-2b2c-41da-bb45-f4eb82e342e5.png)
 
 
-## War Room organization
+## Tips for organizing your War Room
 
 You are free to organize your War Rooms to your liking. We do, however, offer a few recommended trategies for organizing your War Rooms.
 
@@ -106,7 +106,7 @@ messages rate. You can create a War Room called `$year-$month-$day-pulsar-rate`,
 to nodes they connect to, and begin diagnosing the root cause in a War Room optimized for getting to resolution as fast
 as possible.
 
-## Add War Rooms
+## Adding All the War Rooms you want
 
 To add new War Rooms to any Space, click on the green plus icon **+** next the **War Rooms** heading. on the left (
 space's) sidebar.
