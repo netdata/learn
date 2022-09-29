@@ -13,14 +13,19 @@ This module monitors one or more `Energi Core Wallet` instances, depending on yo
 
 Works only with [Generation 2 wallets](https://docs.energi.software/en/downloads/gen2-core-wallet).
 
-## Charts
+## Metrics
 
-- Blockchain index in `count`
-- Blockchain difficulty in `difficulty`
-- Memory pool in `bytes`
-- Network in `connections`
-- Network time offset in `seconds`
-- Transactions in `transactions`
+All metrics have "energid." prefix.
+
+| Metric            | Scope  |            Dimensions             |    Units     |
+|-------------------|:------:|:---------------------------------:|:------------:|
+| blockindex        | global |          blocks, headers          |    count     |
+| difficulty        | global |            difficulty             |  difficulty  |
+| mempool           | global |        max, usage, tx_size        |    bytes     |
+| secmem            | global |     total, used, free, locked     |    bytes     |
+| network           | global |            connections            | connections  |
+| timeoffset        | global |            timeoffset             |   seconds    |
+| utxo_transactions | global | transactions, output_transactions | transactions |
 
 ## Configuration
 
