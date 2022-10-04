@@ -50,8 +50,8 @@ module.exports = {
 					label: 'Community',
 				},
 				{
-					to: 'https://netdata.cloud',
-					label: 'netdata.cloud',
+					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
+					label: 'Sign in',
 					position: 'right',
 				},
 				{
