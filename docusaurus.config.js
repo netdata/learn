@@ -156,6 +156,19 @@ module.exports = {
 		},
 	},
 	plugins: [
+	    [
+	    'docusaurus-plugin-openapi-docs',
+               {
+                 id: "apiDocs",
+                 docsPluginId: "classic",
+                 config: {
+                   api: {
+                     specPath: "openapi.yaml",
+                     outputDir: "docs/api",
+                   }
+                 }
+               }
+        ],
 		'posthog-docusaurus',
 		'docusaurus-tailwindcss-loader',
 		[
@@ -179,6 +192,7 @@ module.exports = {
 			},
 		],
 	],
+	themes: ["docusaurus-theme-openapi-docs"], // Allows use of @theme/ApiItem and other components,
 	presets: [
 		[
 			'@docusaurus/preset-classic',
@@ -186,6 +200,8 @@ module.exports = {
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
+					/*docLayoutComponent: "@theme/DocPage",*/
+                    docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi-docs
 					showLastUpdateTime: true,
 				},
 				theme: {
