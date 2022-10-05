@@ -6,6 +6,12 @@
 
 **Merged pull requests:**
 
+- add 1m delay for tcp reset alarms [\#13761](https://github.com/netdata/netdata/pull/13761) ([ilyam8](https://github.com/ilyam8))
+- Use /bin/sh instead of ls to detect glibc [\#13758](https://github.com/netdata/netdata/pull/13758) ([MrZammler](https://github.com/MrZammler))
+- Add ZFS rate charts [\#13757](https://github.com/netdata/netdata/pull/13757) ([vlvkobal](https://github.com/vlvkobal))
+- Fix streaming crash when child reconnects and is archived on the parent [\#13754](https://github.com/netdata/netdata/pull/13754) ([stelfrag](https://github.com/stelfrag))
+- Add CloudLinux OS detection to the updater script [\#13752](https://github.com/netdata/netdata/pull/13752) ([Pulseeey](https://github.com/Pulseeey))
+- Add CloudLinux OS detection to kickstart [\#13750](https://github.com/netdata/netdata/pull/13750) ([Pulseeey](https://github.com/Pulseeey))
 - bump go.d v0.40.2 [\#13747](https://github.com/netdata/netdata/pull/13747) ([ilyam8](https://github.com/ilyam8))
 - fix\(python.d\): set correct label source for \_collect\_job label [\#13746](https://github.com/netdata/netdata/pull/13746) ([ilyam8](https://github.com/ilyam8))
 - Provide Details on Label Filtering/Custom Labels [\#13745](https://github.com/netdata/netdata/pull/13745) ([DShreve2](https://github.com/DShreve2))
@@ -27,6 +33,7 @@
 - docs: nvidia-smi in a container limitation note [\#13695](https://github.com/netdata/netdata/pull/13695) ([ilyam8](https://github.com/ilyam8))
 - Use CMake generated config.h also in out of tree CMake build [\#13692](https://github.com/netdata/netdata/pull/13692) ([underhood](https://github.com/underhood))
 - Add info for Docker containers about using hostname from host. [\#13685](https://github.com/netdata/netdata/pull/13685) ([Ferroin](https://github.com/Ferroin))
+- add node level AR based example [\#13684](https://github.com/netdata/netdata/pull/13684) ([andrewm4894](https://github.com/andrewm4894))
 - Store nulls instead of empty strings in health tables [\#13683](https://github.com/netdata/netdata/pull/13683) ([MrZammler](https://github.com/MrZammler))
 - Fix warnings during compilation time on ARM \(32 bits\) [\#13681](https://github.com/netdata/netdata/pull/13681) ([thiagoftsm](https://github.com/thiagoftsm))
 - dictionary updated documentation and cosmetics [\#13679](https://github.com/netdata/netdata/pull/13679) ([ktsaou](https://github.com/ktsaou))
@@ -331,9 +338,6 @@
 - docs\(statsd.plugin\): fix indentation [\#13096](https://github.com/netdata/netdata/pull/13096) ([ilyam8](https://github.com/ilyam8))
 - Statistics on bytes recvd and sent [\#13091](https://github.com/netdata/netdata/pull/13091) ([underhood](https://github.com/underhood))
 - fix virtualization detection on FreeBSD [\#13087](https://github.com/netdata/netdata/pull/13087) ([ilyam8](https://github.com/ilyam8))
-- Update netdata commands [\#13080](https://github.com/netdata/netdata/pull/13080) ([tkatsoulas](https://github.com/tkatsoulas))
-- fix: fix a base64\_encode bug [\#13074](https://github.com/netdata/netdata/pull/13074) ([kklionz](https://github.com/kklionz))
-- Labels with dictionary [\#13070](https://github.com/netdata/netdata/pull/13070) ([ktsaou](https://github.com/ktsaou))
 
 ## [v1.35.1](https://github.com/netdata/netdata/tree/v1.35.1) (2022-06-10)
 
@@ -347,11 +351,6 @@
 
 - Update README.md [\#13089](https://github.com/netdata/netdata/pull/13089) ([ktsaou](https://github.com/ktsaou))
 - Update README.md [\#13088](https://github.com/netdata/netdata/pull/13088) ([ktsaou](https://github.com/ktsaou))
-- fix\(updater\): return 0 on successful update for native packages when running interactively [\#13083](https://github.com/netdata/netdata/pull/13083) ([ilyam8](https://github.com/ilyam8))
-- Fix Coverity errors in mqtt\_websockets submodule [\#13082](https://github.com/netdata/netdata/pull/13082) ([underhood](https://github.com/underhood))
-- fix\(updater\): don't produce any output if binpkg update completed successfully [\#13081](https://github.com/netdata/netdata/pull/13081) ([ilyam8](https://github.com/ilyam8))
-- Fix handling of DEB package naming in CI. [\#13076](https://github.com/netdata/netdata/pull/13076) ([Ferroin](https://github.com/Ferroin))
-- Update default value for "host anomaly rate threshold" [\#13075](https://github.com/netdata/netdata/pull/13075) ([shyamvalsan](https://github.com/shyamvalsan))
 
 ## [v1.34.1](https://github.com/netdata/netdata/tree/v1.34.1) (2022-04-15)
 
