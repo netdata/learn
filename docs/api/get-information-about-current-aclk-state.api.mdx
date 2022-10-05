@@ -1,0 +1,33 @@
+---
+id: get-information-about-current-aclk-state
+title: "Get information about current ACLK state"
+description: "ACLK endpoint returns detailed information about current state of ACLK (Agent to Cloud communication)."
+sidebar_label: Get information about current ACLK state
+hide_title: true
+hide_table_of_contents: true
+api: {"description":"ACLK endpoint returns detailed information about current state of ACLK (Agent to Cloud communication).","responses":{"200":{"description":"JSON object with ACLK information.","content":{"application/json":{"schema":{"type":"object","properties":{"aclk-available":{"type":"string","description":"Describes whether this agent is capable of connection to the Cloud. False means agent has been built without ACLK component either on purpose (user choice) or due to missing dependency."},"aclk-version":{"type":"integer","description":"Describes which ACLK version is currently used."},"protocols-supported":{"type":"array","description":"List of supported protocols for communication with Cloud.","items":{"type":"string"}},"agent-claimed":{"type":"boolean","description":"Informs whether this agent has been added to a space in the cloud (User has to perform claiming). If false (user didn't perform claiming) agent will never attempt any cloud connection."},"claimed_id":{"type":"string","format":"uuid","description":"Unique ID this agent uses to identify when connecting to cloud"},"online":{"type":"boolean","description":"Informs if this agent was connected to the cloud at the time this request has been processed."},"used-cloud-protocol":{"type":"string","description":"Informs which protocol is used to communicate with cloud","enum":["Old","New"]}}}}}}},"method":"get","path":"/aclk","servers":[{"url":"https://registry.my-netdata.io/api/v1"},{"url":"http://registry.my-netdata.io/api/v1"}],"info":{"title":"Netdata API","description":"Real-time performance and health monitoring.","version":"1.33.1"},"postman":{"name":"Get information about current ACLK state","description":{"content":"ACLK endpoint returns detailed information about current state of ACLK (Agent to Cloud communication).","type":"text/plain"},"url":{"path":["aclk"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: docs/api/netdata-api
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Get information about current ACLK state
+
+
+
+ACLK endpoint returns detailed information about current state of ACLK (Agent to Cloud communication).
+
+<div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+JSON object with ACLK information.
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"aclk-available"} required={false} schemaDescription={"Describes whether this agent is capable of connection to the Cloud. False means agent has been built without ACLK component either on purpose (user choice) or due to missing dependency."} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"aclk-version"} required={false} schemaDescription={"Describes which ACLK version is currently used."} schemaName={"integer"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"protocols-supported"} required={false} schemaDescription={"List of supported protocols for communication with Cloud."} schemaName={"string[]"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"agent-claimed"} required={false} schemaDescription={"Informs whether this agent has been added to a space in the cloud (User has to perform claiming). If false (user didn't perform claiming) agent will never attempt any cloud connection."} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"claimed_id"} required={false} schemaDescription={"Unique ID this agent uses to identify when connecting to cloud"} schemaName={"uuid"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"online"} required={false} schemaDescription={"Informs if this agent was connected to the cloud at the time this request has been processed."} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"used-cloud-protocol"} required={false} schemaDescription={"Informs which protocol is used to communicate with cloud"} schemaName={"string"} qualifierMessage={"**Possible values:** [`Old`, `New`]"} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"aclk-available\": \"string\",\n  \"aclk-version\": 0,\n  \"protocols-supported\": [\n    \"string\"\n  ],\n  \"agent-claimed\": true,\n  \"claimed_id\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"online\": true,\n  \"used-cloud-protocol\": \"Old\"\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      
