@@ -1,0 +1,37 @@
+---
+id: get-an-overall-status-of-the-chart
+title: "Get an overall status of the chart"
+description: "Checks multiple charts with the same context and counts number of alarms with given status."
+sidebar_label: Get an overall status of the chart
+hide_title: true
+hide_table_of_contents: true
+api: {"description":"Checks multiple charts with the same context and counts number of alarms with given status.","parameters":[{"in":"query","name":"context","description":"Specify context which should be checked.","required":false,"allowEmptyValue":true,"schema":{"type":"array","items":{"type":"string"},"default":["system.cpu"]}},{"in":"query","name":"status","description":"Specify alarm status to count.","required":false,"allowEmptyValue":true,"schema":{"type":"string","enum":["REMOVED","UNDEFINED","UNINITIALIZED","CLEAR","RAISED","WARNING","CRITICAL"],"default":"RAISED"}}],"responses":{"200":{"description":"An object containing a count of alarms with given status for given contexts.","content":{"application/json":{"schema":{"type":"array","items":{"type":"number"}}}}},"500":{"description":"Internal server error. This usually means the server is out of memory."}},"method":"get","path":"/alarm_count","servers":[{"url":"https://registry.my-netdata.io/api/v1"},{"url":"http://registry.my-netdata.io/api/v1"}],"info":{"title":"Netdata API","description":"Real-time performance and health monitoring.","version":"1.33.1"},"postman":{"name":"Get an overall status of the chart","description":{"content":"Checks multiple charts with the same context and counts number of alarms with given status.","type":"text/plain"},"url":{"path":["alarm_count"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"Specify context which should be checked.","type":"text/plain"},"key":"context","value":""},{"disabled":false,"description":{"content":"Specify alarm status to count.","type":"text/plain"},"key":"status","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: docs/api/netdata-api
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Get an overall status of the chart
+
+
+
+Checks multiple charts with the same context and counts number of alarms with given status.
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"in":"query","name":"context","description":"Specify context which should be checked.","required":false,"allowEmptyValue":true,"schema":{"type":"array","items":{"type":"string"},"default":["system.cpu"]}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"in":"query","name":"status","description":"Specify alarm status to count.","required":false,"allowEmptyValue":true,"schema":{"type":"string","enum":["REMOVED","UNDEFINED","UNINITIALIZED","CLEAR","RAISED","WARNING","CRITICAL"],"default":"RAISED"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+An object containing a count of alarms with given status for given contexts.
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong><span style={{"opacity":"0.6"}}> array</span></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div><strong>number</strong></div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"[\n  0\n]"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"500"} value={"500"}><div>
+
+Internal server error. This usually means the server is out of memory.
+
+</div><div></div></TabItem></ApiTabs></div>
+      
