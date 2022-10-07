@@ -11,11 +11,11 @@ module.exports = {
 	organizationName: 'netdata',
 	projectName: 'netdata',
 	themes: [
+        "docusaurus-theme-openapi-docs", // Allows use of @theme/ApiItem and other components,
 		// this is from https://github.com/easyops-cn/docusaurus-search-local
 		[
 			require.resolve("@easyops-cn/docusaurus-search-local"),
 			{
-				removeDefaultStopWordFilter: true,
 				indexDocs: true,
 				indexBlog: false,
 				hashed: true,
@@ -192,7 +192,6 @@ module.exports = {
 			},
 		],
 	],
-	themes: ["docusaurus-theme-openapi-docs"], // Allows use of @theme/ApiItem and other components,
 	presets: [
 		[
 			'@docusaurus/preset-classic',
