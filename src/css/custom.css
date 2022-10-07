@@ -218,6 +218,12 @@ a:hover {
 	@apply prose max-w-none;
 }
 
+.markdown pre {
+    @apply text-green;
+    background:none;
+    margin:5px;
+}
+
 h1 {
 	@apply font-bold;
 }
