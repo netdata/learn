@@ -13,7 +13,7 @@ module.exports = {
 	themeConfig: {
 		posthog: {
 			apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
-			appUrl: 'https://posthog.netdata.cloud',
+			appUrl: 'https://app.posthog.com',
 			enableInDevelopment: false,
 		},
 		image: 'img/netdata_meta-default.png',
