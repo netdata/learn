@@ -1,11 +1,12 @@
 <!--
 title: "Netdata Views"
 sidebar_label: "Netdata Views"
-custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/netdata-views.md"
+custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/netdata-views.md"
+sidebar_position: 10
 learn_status: "Published"
 learn_topic_type: "Concepts"
-learn_rel_path: "netdata-hub"
-learn_docs_purpose: "Present the Netdata Hub's views/tabs, not focusing on dashboards which we explain them in depth in visualizations"
+learn_rel_path: "netdata-cloud"
+learn_docs_purpose: "Present the Netdata cloud's views/tabs, not focusing on dashboards which we explain them in depth in visualizations"
 learn_repo_doc: "True"
 -->
 

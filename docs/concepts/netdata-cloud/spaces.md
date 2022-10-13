@@ -1,10 +1,11 @@
 <!--
 title: "Spaces"
 sidebar_label: "Spaces"
-custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/spaces.md"
+custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/spaces.md"
+sidebar_position: 4
 learn_status: "Published"
 learn_topic_type: "Concepts"
-learn_rel_path: "netdata-hub"
+learn_rel_path: "netdata-cloud"
 learn_docs_purpose: "Present the purpose of Spaces"
 learn_repo_doc: "True"
 -->
