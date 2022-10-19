@@ -12,6 +12,12 @@ learn_repo_doc: "True"
 
 
 **********************************************************************
+Netdata Cloud is a web application that gives you real-time visibility for your entire infrastructure. With Netdata Cloud, you can view key metrics, insightful charts, and active alarms from all your nodes in a single web interface. When an anomaly strikes, seamlessly navigate to any node to troubleshoot and discover the root cause with the familiar Netdata dashboard.
+
+Netdata Cloud is free! You can add an entire infrastructure of nodes, invite all your colleagues, and visualize any number of metrics, charts, and alarms entirely for free.
+
+While Netdata Cloud offers a centralized method of monitoring your Agents, your metrics data is not stored or centralized in any way. Metrics data remains with your nodes and is only streamed to your browser, through Cloud, when you're viewing the Netdata Cloud interface.
+
 Netdata Cloud works in parallel with the open-source Netdata
 monitoring agent to help you monitor your entire infrastructure [for free <RiExternalLinkLine className="inline-block"
 />](https://netdata.cloud/pricing/) in real time and troubleshoot problems that threaten the health of your
