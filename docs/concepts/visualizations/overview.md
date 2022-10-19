@@ -124,11 +124,7 @@ These charts provide a lot of useful information, so that you can:
 
 These charts will available on [Overview tab](/docs/cloud/visualize/overview), Single Node view, and on your [Custom Dashboards](/docs/cloud/visualize/dashboards). 
 
-Have a look at the can see the overall look and feel of the charts for both with a composite chart from the [Overview tab](/docs/cloud/visualize/overview) and a simple chart from the single node view:
-
-![NRve6zr325.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/5ecaf5ec-1229-480e-b122-62f63e9df227)
-
-With a quick glance you have immediate information available at your disposal:
+With a quick glance at any composite chart, you have immediate information available at your disposal:
 
 -   Chart title and units
 -   Action bars
@@ -145,8 +141,7 @@ Your charts are controlled using the available [Time controls](/docs/dashboard/v
 -   clicking on the chart to lock it - this enables the Pause option on the time controls, to the current timeframe. This is if you want to jump to a different chart to look for possible correlations. 
 -   double clicking to release a previously locked chart - move the time control back to Play
 
-    ![23CHKCPnnJ.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/0b1e111e-df44-4d92-b2e3-be5cfd9db8df)
-
+ 
 | Interaction       | Keyboard/mouse | Touchpad/touchscreen | Time control          |
 | :---------------- | :------------- | :------------------- | :-------------------- |
 | **Pause** a chart | `hover`        | `n/a`                | Temporarily **Pause** |
