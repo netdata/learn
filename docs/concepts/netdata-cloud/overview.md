@@ -12,134 +12,49 @@ learn_repo_doc: "True"
 
 
 **********************************************************************
-Template:
+Netdata Cloud works in parallel with the open-source Netdata
+monitoring agent to help you monitor your entire infrastructure [for free <RiExternalLinkLine className="inline-block"
+/>](https://netdata.cloud/pricing/) in real time and troubleshoot problems that threaten the health of your
+nodes before they occur.
 
-Small intro, what we are about to cover
-
-// every concept we will explain to this document (grouped) should be a different heading (h2) and followed by an example
-// we need at any given moment to provide a reference (a anchored link to this concept)
-## concept title
-
-A concept introduces a single feature or concept. A concept should answer the questions:
-
-1. What is this?
-2. Why would I use it?
-
-For instance, for example etc etc
-
-Give a small taste for this concept, not trying to cover it's reference page. 
-
-In the end of the document:
-
-## Related topics
-
-list of related topics
-
-*****************Suggested document to be transformed**************************
-From netdata repo's commit : 3a672f5b4ba23d455b507c8276b36403e10f953d---
-title: Get started with Netdata Cloud
+Netdata Cloud requires the open-source [Netdata](/docs/) monitoring agent, which is the basis for the metrics,
+visualizations, and alarms that you'll find in Netdata Cloud. Every time you view a node in Netdata Cloud, its metrics
+and metadata are streamed to Netdata Cloud, then proxied to your browser, with an infrastructure that ensures [data
+privacy <RiExternalLinkLine className="inline-block" />](https://netdata.cloud/privacy/).
 
 
-import Link from '@docusaurus/Link'
-import Callout from '@site/src/components/Callout'
+Read [_What is Netdata?_](/docs/overview/what-is-netdata) for details about how Netdata and Netdata Cloud work together
+and how they're different from other monitoring solutions, or the
+[FAQ <RiExternalLinkLine className="inline-block" />](https://community.netdata.cloud/tags/c/general/29/faq) for answers to common questions.
 
-Ready to get real-time visibility into your entire infrastructure with Netdata Cloud? This guide will walk you through
-the onboarding process, such as setting up your Space and War Room and connecting your first nodes.
+<Grid columns="1" className="mb-16">
+  <Box 
+    to="/docs/cloud/get-started" 
+    title="Get started with Netdata Cloud"
+    cta="Go"
+    image={true}>
+    Ready to get real-time visibility into your entire infrastructure? This guide will help you get started on Netdata Cloud, from signing in for a free account to connecting your nodes.
+  </Box>
+</Grid>
 
-## Before you start
+## Learn about Netdata Cloud's basic features
 
-Before you get started with Netdata Cloud, you should have the open-source Netdata monitoring agent installed. See our
-[installation guide](/docs/get-started) for details.
+<Grid columns="2">
+  <Box
+    title="Netdata Cloud Basics">
+    <BoxList>
+      <BoxListItem to="/docs/cloud/spaces" title="Spaces" />
+      <BoxListItem to="/docs/cloud/war-rooms" title="War Rooms" />
+    </BoxList>
+  </Box>
+  <Box
+    title="Dashboards">
+    <BoxList>
+      <BoxListItem to="/docs/cloud/visualize/overview" title="Rooms" />
+      <BoxListItem to="/docs/cloud/visualize/nodes" title="Views" />
+      <BoxListItem to="/docs/cloud/visualize/kubernetes" title="spaces" />
+    </BoxList>
+  </Box>
+</Grid>
 
-If you already have the Netdata agent running on your node(s), make sure to update it to v1.32 or higher. Read the
-[updating documentation](/docs/agent/packaging/installer/update/) for information on how to update based on the method
-you used to install Netdata on that node.
-
-## Begin the onboarding process
-
-Get started by signing in to Netdata. Read the [sign in](/docs/cloud/manage/sign-in) doc for details on the
-authentication methods we use.
-
-<Link to="https://app.netdata.cloud" className="group">
-    <button className="relative text-text bg-gray-200 px-4 py-2 rounded">
-        <span className="z-10 relative font-semibold group-hover:text-gray-100">Sign in to Netdata</span>
-        <div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded"></div>
-    </button>
-</Link>
-
-Once signed in with your preferred method, a General [War Room](/docs/cloud/war-rooms) and a [Space](/docs/cloud/spaces) 
-named for your login email are automatically created. You can configure more Spaces and War Rooms to help you you organize your team 
-and the many systems that make up your infrastructure. For example, you can put product and infrastructure SRE teams in separate 
-Spaces, and then use War Rooms to group nodes by their service (`nginx`), purpose (`webservers`), or physical location (`IAD`).
-
-Don't worry! You can always add more Spaces and War Rooms later if you decide to reorganize how you use Netdata Cloud.
-
-## Connect your nodes
-
-From within the created War Rooms, Netdata Cloud prompts you to [connect](/docs/agent/claim) your nodes to Netdata Cloud. Non-admin 
-users can users can select from existing nodes already connected to the space or select an admin from a provided list to connect node. 
-You can connect any node running Netdata, whether it's a physical or virtual machine, a Docker container, IoT device, and more. 
-
-The connection process securely connects any node to Netdata Cloud using the [Agent-Cloud link](/docs/agent/aclk). By
-connecting a node, you prove you have write and administrative access to that node. Connecting to Cloud also prevents any third party
-from connecting a node that you control. Keep in mind:
-
-- _You can only connect any given node in a single Space_. You can, however, add that connected node to multiple War Rooms
-  within that one Space.
-- You must repeat the connection process on every node you want to add to Netdata Cloud.
-
-<Callout type="notice">
-
-**Netdata Cloud ensures your data privacy by not storing metrics data from your nodes**. See our statement on Netdata
-Cloud [data privacy](/docs/agent/aclk/#data-privacy) for details on the data that's streamed from your nodes and the
-[connecting to cloud](/docs/agent/claim) doc for details about why we implemented the connection process and the encryption methods
-we use to secure your data in transit. 
-
-</Callout>
-
-To connect a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
-Netdata Cloud into your node's terminal.
-
-Hit **Enter**. The script should return `Agent was successfully claimed.`. If the claiming script returns errors, or if
-you don't see the node in your Space after 60 seconds, see the [troubleshooting
-information](/docs/agent/claim#troubleshooting).
-
-Repeat this process with every node you want to add to Netdata Cloud during onboarding. You can also add more nodes once
-you've finished onboarding by clicking the **Connect Nodes** button in the [Space management
-area](/docs/cloud/spaces/#manage-spaces).
-
-### Alternatives and other operating systems
-
-**Docker**: You can execute the claiming script Netdata running as a Docker container, or attach the claiming script
-when creating the container for the first time, such as when you're spinning up ephemeral containers. See the [connect an agent running in Docker](/docs/agent/claim#connect-an-agent-running-in-docker) documentation for details.
-
-**Without root privileges**: If you want to connect an agent without using root privileges, see our [connect
-documentation](/docs/agent/claim#connect-an-agent-without-root-privileges).
-
-**With a proxy**: If your node uses a proxy to connect to the internet, you need to configure the node's proxy settings.
-See our [connect through a proxy](/docs/agent/claim#connect-through-a-proxy) doc for details.
-
-## Add bookmarks to essential resources
-
-When an anomaly or outage strikes, your team needs to access other essential resources quickly. You can use Netdata
-Cloud's bookmarks to put these tools in one accessible place. Bookmarks are shared between all War Rooms in a Space, so
-any users in your Space will be able to see and use them.
-
-Bookmarks can link to both internal and external resources. You can bookmark your app's status page for quick updates
-during an outage, a messaging system on your organization's intranet, or other tools your team uses to respond to
-changes in your infrastructure.
-
-To add a new bookmark, click on the **Add bookmark** link. In the panel, name the bookmark, include its URL, and write a
-short description for your team's reference.
-
-## What's next?
-
-You finish onboarding by [inviting members of your team](/docs/cloud/manage/invite-your-team) to your Space. You
-can also invite them later. At this point, you're ready to use Cloud.
-
-Next, learn about the organization and interfaces behind [Spaces](/docs/cloud/spaces) and [War
-Rooms](/docs/cloud/war-rooms).
-
-If you're ready to explore, check out how to use the [Overview dashboard](/docs/cloud/visualize/overview), which is the
-default view for each new War Room you create.
 *******************************************************************************
