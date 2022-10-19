@@ -43,13 +43,6 @@ and how they're different from other monitoring solutions, or the
   <Box
     title="Netdata Cloud Basics">
     <BoxList>
-      <BoxListItem to="/docs/cloud/spaces" title="Spaces" />
-      <BoxListItem to="/docs/cloud/war-rooms" title="War Rooms" />
-    </BoxList>
-  </Box>
-  <Box
-    title="Dashboards">
-    <BoxList>
       <BoxListItem to="/docs/cloud/visualize/overview" title="Rooms" />
       <BoxListItem to="/docs/cloud/visualize/nodes" title="Views" />
       <BoxListItem to="/docs/cloud/visualize/kubernetes" title="spaces" />
