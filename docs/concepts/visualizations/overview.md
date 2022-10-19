@@ -90,7 +90,7 @@ documentation](/docs/agent/claim#connect-an-agent-without-root-privileges).
 **With a proxy**: If your node uses a proxy to connect to the internet, you need to configure the node's proxy settings.
 See our [connect through a proxy](/docs/agent/claim#connect-through-a-proxy) doc for details.
 
-## Add bookmarks to essential resources
+## Bookmarks for  essential resources
 
 When an anomaly or outage strikes, your team needs to access other essential resources quickly. You can use Netdata
 Cloud's bookmarks to put these tools in one accessible place. Bookmarks are shared between all War Rooms in a Space, so
