@@ -135,6 +135,19 @@ for details on inviting new users to your Space in Netdata Cloud.
  \* This action requires admin rights for this space
 :::
 
+### Bookmarks for  essential resources
+
+When an anomaly or outage strikes, your team needs to access other essential resources quickly. You can use Netdata
+Cloud's bookmarks to put these tools in one accessible place. Bookmarks are shared between all War Rooms in a Space, so
+any users in your Space will be able to see and use them.
+
+Bookmarks can link to both internal and external resources. You can bookmark your app's status page for quick updates
+during an outage, a messaging system on your organization's intranet, or other tools your team uses to respond to
+changes in your infrastructure.
+
+To add a new bookmark, click on the **Add bookmark** link. In the panel, name the bookmark, include its URL, and write a
+short description for your team's reference.
+
 ### More actions
 
 To _view or remove nodes_ in a War Room, click on **Nodes view**. To remove a node from the current War Room, click on
