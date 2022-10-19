@@ -25,7 +25,7 @@ If you already have the Netdata agent running on your node(s), make sure to upda
 [updating documentation](/docs/agent/packaging/installer/update/) for information on how to update based on the method
 you used to install Netdata on that node.
 
-## Onboarding with a War Room and Space
+### Onboarding with a War Room and Space
 
 As you have likely heard us repeat hundreds of times, getting started with Netdata is as easy as signing in. 
 Read the [sign in](/docs/cloud/manage/sign-in) doc for details on the authentication methods we use.
@@ -44,7 +44,7 @@ Spaces, and then use War Rooms to group nodes by their service (`nginx`), purpos
 
 Don't worry! You can always add more Spaces and War Rooms later if you decide to reorganize how you use Netdata Cloud.
 
-## Connect your nodes
+### Connect your nodes
 
 From within the created War Rooms, Netdata Cloud prompts you to [connect](/docs/agent/claim) your nodes to Netdata Cloud. Non-admin 
 users can users can select from existing nodes already connected to the space or select an admin from a provided list to connect node. 
@@ -79,7 +79,7 @@ you've finished onboarding by clicking the **Connect Nodes** button in the [Spac
 area](/docs/cloud/spaces/#manage-spaces).
 
 
-### Alternatives and other operating systems
+#### Alternatives and other operating systems
 
 **Docker**: You can execute the claiming script Netdata running as a Docker container, or attach the claiming script
 when creating the container for the first time, such as when you're spinning up ephemeral containers. See the [connect an agent running in Docker](/docs/agent/claim#connect-an-agent-running-in-docker) documentation for details.
@@ -90,20 +90,12 @@ documentation](/docs/agent/claim#connect-an-agent-without-root-privileges).
 **With a proxy**: If your node uses a proxy to connect to the internet, you need to configure the node's proxy settings.
 See our [connect through a proxy](/docs/agent/claim#connect-through-a-proxy) doc for details.
 
-## Bookmarks for  essential resources
 
-When an anomaly or outage strikes, your team needs to access other essential resources quickly. You can use Netdata
-Cloud's bookmarks to put these tools in one accessible place. Bookmarks are shared between all War Rooms in a Space, so
-any users in your Space will be able to see and use them.
+## Visualization Basics 
 
-Bookmarks can link to both internal and external resources. You can bookmark your app's status page for quick updates
-during an outage, a messaging system on your organization's intranet, or other tools your team uses to respond to
-changes in your infrastructure.
+Now that you're fully connected within your Cloud and Agent, we can break down the basics of how you can employ Netdata's industry-leading visualizations to your monitoring and troubleshooting plan. 
 
-To add a new bookmark, click on the **Add bookmark** link. In the panel, name the bookmark, include its URL, and write a
-short description for your team's reference.
-
-## Interactive composite charts
+### Interactive composite charts
 
 :::note ⚠️ This version of charts is currently **only** available on Netdata Cloud. We didn't want to keep this valuable
 > feature from you, so after we get this into your hands on the Cloud, we will collect and implement your feedback. Together, we will be able to provide the best possible version of charts on the Netdata Agent dashboard, as quickly as possible.:::
@@ -133,7 +125,7 @@ With a quick glance at any composite chart, you have immediate information avail
 
 The following sections explain how you can interact with these composite charts in greater detail.
 
-## Play, Pause and Reset
+### Play, Pause and Reset
 
 Your charts are controlled using the available [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls). Besides these, when interacting with the chart you can also activate these controls by:
 
@@ -150,7 +142,7 @@ Your charts are controlled using the available [Time controls](/docs/dashboard/v
 
 Note: These interactions are available when the default "Pan" action is used. Other actions are accessible via the [Exploration action bar](#exploration-action-bar).
 
-## Title and chart action bar
+### Title and chart action bar
 
 When you start interacting with a chart, you'll notice valuable information on the top bar. You will see information from the chart title to a chart action bar.
 
@@ -163,7 +155,7 @@ The elements that you can find on this top bar are:
 
 ![image.png](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/c8f5f0bd-5f84-4812-970b-0e4340f4773b)
 
-### Chart action bar
+#### Chart action bar
 
 On this bar you have access to immediate actions over the chart, the available actions are:
 
@@ -174,7 +166,7 @@ On this bar you have access to immediate actions over the chart, the available a
 
 <img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/65ac4fc8-3d8d-4617-8234-dbb9b31b4264" width="40%" height="40%" />
 
-## Exploration action bar
+### Exploration action bar
 
 When exploring the chart you will see a second action bar. This action bar is there to support you on this task. The available actions that you can see are:
 
@@ -185,7 +177,7 @@ When exploring the chart you will see a second action bar. This action bar is th
 
 <img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/0417ad66-fcf6-42d5-9a24-e9392ec51f87" width="40%" height="40%" />
 
-### Pan
+#### Pan
 
 Drag your mouse/finger to the right to pan backward through time, or drag to the left to pan forward in time. Think of it like pushing the current timeframe off the screen to see what came before or after.
 
@@ -193,7 +185,7 @@ Drag your mouse/finger to the right to pan backward through time, or drag to the
 | :---------- | :------- | :------------- | :------------------- |
 | **Pan**     | `n/a`    | `click + drag` | `touch drag`         |
 
-### Highlight
+#### Highlight
 
 Selecting timeframes is useful when you see an interesting spike or change in a chart and want to investigate further, from looking at the same period of time on other charts/sections or triggering actions to help you troubleshoot with an in-context action bar to help you troubleshoot (currently only available on
  Single Node view). The available actions:
@@ -231,9 +223,9 @@ specific Y-axis area to further investigate a spike or dive on your charts.
 
 You also have two direct action buttons on the exploration action bar for in-context `Zoom in` and `Zoom out`.
 
-## Other interactions
+### Other interactions
 
-### Order dimensions legend
+#### Order dimensions legend
 
 The bottom legend of the chart where you can see the dimensions of the chart can now be ordered by:
 
@@ -242,7 +234,7 @@ The bottom legend of the chart where you can see the dimensions of the chart can
 
 <img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/d3031c35-37bc-46c1-bcf9-be29dea0b476" width="50%" height="50%" />
 
-### Show and hide dimensions
+#### Show and hide dimensions
 
 Hiding dimensions simplifies the chart and can help you better discover exactly which aspect of your system might be
 behaving strangely.
@@ -252,7 +244,7 @@ behaving strangely.
 | **Show one** dimension and hide others | `click`         | `tap`                |
 | **Toggle (show/hide)** one dimension   | `Shift + click` | `n/a`                |
 
-### Resize
+#### Resize
 
 To resize the chart, click-and-drag the icon on the bottom-right corner of any chart. To restore the chart to its original height,
 double-click the same icon.
