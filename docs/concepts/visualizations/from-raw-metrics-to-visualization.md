@@ -13,295 +13,78 @@ learn_repo_doc: "True"
 
 **********************************************************************
 
-We know you're here for the visualizations; really, we do. But before we can dive in fully, there's a few things we have to make sure you've covered first. If you've already completed the actions in the [**Before you start**](#Before-you-start) section, feel free to jump to [**Visualization Basics**](#Visualization Basics) section. 
+We know you're here for the visualizations; really, we do. But before we can dive in fully, there's a few things we have to make sure you undersand before 
+you get started. 
 
-## Before you start
+While Netdata's charts require no configuration and are [easy to interact with](/docs/dashboard/interact-charts.mdx),
+they have a lot of underlying complexity. To meaningfully organize charts out of the box based on what's happening in
+your nodes, Netdata uses the concepts of **dimensions**, **contexts**, and **families**. 
 
-Before you get started with Netdata Cloud, you should have the open-source Netdata monitoring agent installed. See our
-[installation guide](/docs/get-started) for details.
+Understanding how these work will help you more easily navigate the dashboard, [write new
+alarms](/docs/monitor/configure-alarms.md), or play around with the [API](/web/api/README.md).
 
-If you already have the Netdata agent running on your node(s), make sure to update it to v1.32 or higher. Read the
-[updating documentation](/docs/agent/packaging/installer/update/) for information on how to update based on the method
-you used to install Netdata on that node.
+For a refresher on the anatomy of a chart, see [dashboards and charts](/docs/dashboard/how-dashboard-works.mdx).
 
-### Onboarding with a War Room and Space
+## Dimension
 
-As you have likely heard us repeat hundreds of times, getting started with Netdata is as easy as signing in. 
-Read the [sign in](/docs/cloud/manage/sign-in) doc for details on the authentication methods we use.
+A **dimension** is a value that gets shown on a chart. The value can be raw data or calculated values, such as the
+average (the default), minimum, or maximum. These values can then be given any type of unit. For example, CPU
+utilization is represented as a percentage, disk I/O as `MiB/s`, and available RAM as an absolute value in `MiB` or
+`GiB`.
 
-<Link to="https://app.netdata.cloud" className="group">
-    <button className="relative text-text bg-gray-200 px-4 py-2 rounded">
-        <span className="z-10 relative font-semibold group-hover:text-gray-100">Sign in to Netdata</span>
-        <div className="opacity-0 group-hover:opacity-100 transition absolute z-0 inset-0 bg-gradient-to-r from-green to-green-lighter rounded"></div>
-    </button>
-</Link>
+Beneath every chart (or on the right-side if you configure the dashboard) is a legend of dimensions. When there are
+multiple dimensions, you'll see a different entry in the legend for each dimension.
 
-Once signed in with your preferred method, a General [War Room](/docs/cloud/war-rooms) and a [Space](/docs/cloud/spaces) 
-named for your login email are automatically created. You can configure more Spaces and War Rooms to help you you organize your team 
-and the many systems that make up your infrastructure. For example, you can put product and infrastructure SRE teams in separate 
-Spaces, and then use War Rooms to group nodes by their service (`nginx`), purpose (`webservers`), or physical location (`IAD`).
+The **Apps CPU Time** chart (with the [context](#context) `apps.cpu`), which visualizes CPU utilization of
+different types of processes/services/applications on your node, always provides a vibrant example of a chart with
+multiple dimensions.
 
-Don't worry! You can always add more Spaces and War Rooms later if you decide to reorganize how you use Netdata Cloud.
+![An example apps.cpu chart with many
+dimensions](https://user-images.githubusercontent.com/1153921/114207816-a5cb7400-9911-11eb-8800-06f60b745f9c.png)
 
-### Connect your nodes
+The chart shows 13 unique dimensions, such as `httpd` for the CPU utilization for web servers, `kernel` for anything
+related to the Linux kernel, and so on. In your dashboard, these specific dimensions will almost certainly be different.
 
-From within the created War Rooms, Netdata Cloud prompts you to [connect](/docs/agent/claim) your nodes to Netdata Cloud. Non-admin 
-users can users can select from existing nodes already connected to the space or select an admin from a provided list to connect node. 
-You can connect any node running Netdata, whether it's a physical or virtual machine, a Docker container, IoT device, and more. 
+Dimensions can be [hidden](/docs/dashboard/interact-charts.mdx#show-and-hide-dimensions) to help you focus your
+attention.
 
-The connection process securely connects any node to Netdata Cloud using the [Agent-Cloud link](/docs/agent/aclk). By
-connecting a node, you prove you have write and administrative access to that node. Connecting to Cloud also prevents any third party
-from connecting a node that you control. Keep in mind:
+## Context
 
-- _You can only connect any given node in a single Space_. You can, however, add that connected node to multiple War Rooms
-  within that one Space.
-- You must repeat the connection process on every node you want to add to Netdata Cloud.
+A **context** is a way of grouping charts by the types of metrics collected and dimensions displayed. It's kind of like
+a machine-readable naming and organization scheme.
 
-<Callout type="notice">
+For example, the **Apps CPU Time** has the context `apps.cpu`. A little further down on the dashboard is a similar
+chart, **Apps Real Memory (w/o shared)** with the context `apps.mem`. The `apps` portion of the context is the **type**,
+whereas anything after the `.` is specified either by the chart's developer or by the [**family**](#family). 
 
-**Netdata Cloud ensures your data privacy by not storing metrics data from your nodes**. See our statement on Netdata
-Cloud [data privacy](/docs/agent/aclk/#data-privacy) for details on the data that's streamed from your nodes and the
-[connecting to cloud](/docs/agent/claim) doc for details about why we implemented the connection process and the encryption methods
-we use to secure your data in transit. 
+By default, a chart's type affects where it fits in the menu, while its family creates submenus.
 
-</Callout>
+Netdata also relies on contexts for [alarm configuration](/docs/monitor/configure-alarms.md) (the [`on`
+line](/health/REFERENCE.md#alarm-line-on)).
 
-To connect a node, select which War Rooms you want to add this node to with the dropdown, then copy the script given by
-Netdata Cloud into your node's terminal.
+## Family
 
-Hit **Enter**. The script should return `Agent was successfully claimed.`. If the claiming script returns errors, or if
-you don't see the node in your Space after 60 seconds, see the [troubleshooting
-information](/docs/agent/claim#troubleshooting).
+**Families** are a _single instance_ of a hardware or software resource that needs to be displayed separately from
+similar instances.
 
-Repeat this process with every node you want to add to Netdata Cloud during onboarding. You can also add more nodes once
-you've finished onboarding by clicking the **Connect Nodes** button in the [Space management
-area](/docs/cloud/spaces/#manage-spaces).
+For example, let's look at the **Disks** section, which contains a number of charts with contexts like `disk.io`,
+`disk.ops`, `disk.backlog`, and `disk.util`.  If your node has multiple disk drives at `sda` and `sdb`, Netdata creates
+a separate family for each.
 
+Netdata now merges the contexts and families to create charts that are grouped by family, following a
+`[context].[family]` naming scheme, so that you can see the `disk.io` and `disk.ops` charts for `sda` right next to each
+other.
 
-#### Alternatives and other operating systems
+Given the four example contexts, and two families of `sda` and `sdb`, Netdata will create the following charts and their
+names:
 
-**Docker**: You can execute the claiming script Netdata running as a Docker container, or attach the claiming script
-when creating the container for the first time, such as when you're spinning up ephemeral containers. See the [connect an agent running in Docker](/docs/agent/claim#connect-an-agent-running-in-docker) documentation for details.
+| Context        | `sda` family       | `sdb` family       |
+| :------------- | ------------------ | ------------------ |
+| `disk.io`      | `disk_io.sda`      | `disk_io.sdb`      |
+| `disk.ops`     | `disk_ops.sda`     | `disk_ops.sdb`     |
+| `disk.backlog` | `disk_backlog.sda` | `disk_backlog.sdb` |
+| `disk.util`    | `disk_util.sda`    | `disk_util.sdb`    |
 
-**Without root privileges**: If you want to connect an agent without using root privileges, see our [connect
-documentation](/docs/agent/claim#connect-an-agent-without-root-privileges).
-
-**With a proxy**: If your node uses a proxy to connect to the internet, you need to configure the node's proxy settings.
-See our [connect through a proxy](/docs/agent/claim#connect-through-a-proxy) doc for details.
-
-## Visualization Basics 
-
-Now that you're fully connected within your Cloud and Agent, we can break down the basics of how you can employ Netdata's industry-leading visualizations to your monitoring and troubleshooting plan. 
-## Open the dashboard
-
-Access Netdata's dashboard by navigating to `http://NODE:19999` in your browser, replacing `NODE` with either
-`localhost` or the hostname/IP address of a remote node.
-
-![Animated GIF of navigating to the
-dashboard](https://user-images.githubusercontent.com/1153921/80825153-abaec600-8b94-11ea-8b17-1b770a2abaa9.gif)
-
-Many features of the internal web server that serves the dashboard are [configurable](/web/server/README.md), including
-the listen port, enforced TLS, and even disabling the dashboard altogether.
-
-## Sections and menus
-
-As mentioned in the introduction, Netdata automatically organizes all the metrics it collects from your node, and places
-them into **sections** of closely related charts.
-
-The first section on any dashboard is the **System Overview**, followed by **CPUs**, **Memory**, and so on.
-
-These sections populate the **menu**, which is on the right-hand side of the dashboard. Instead of manually scrolling up
-and down to explore the dashboard, it's generally faster to click on the relevant menu item to jump to that position on
-the dashboard.
-
-Many menu items also contain a **submenu**, with links to additional categories. For example, the **Disks** section is often separated into multiple groups based on the number of disk drives/partitions on your node, which are also known as a family.
-
-![Animated GIF of using Netdata's menus and
-submenus](https://user-images.githubusercontent.com/1153921/80832425-7c528600-8ba1-11ea-8140-d0a17a62009b.gif)
-
-## Charts
-
-Every **chart** in the Netdata dashboard is [fully interactive](/docs/dashboard/interact-charts.mdx). Netdata
-synchronizes your interactions to help you understand exactly how a node behaved in any timeframe, whether that's
-seconds or days.
-
-A chart is an individual, interactive, always-updating graphic displaying one or more collected/calculated metrics,
-which are generated by [collectors](/docs/collect/how-collectors-work.md). 
-
-![Animated GIF of the standard Netdata dashboard being manipulated and synchronizing
-charts](https://user-images.githubusercontent.com/1153921/80839230-b034a800-8baf-11ea-9cb2-99c1e10f0f85.gif)
-
-Hover over any chart to temporarily pause it and see the exact metrics values presented as different dimensions. Click
-or tap to stop the chart from automatically updating with new metrics, thereby locking it to a single timeframe.
-Double-click it to resume auto-updating.
-
-Let's cover two of the most important ways to interact with charts: panning through time and zooming.
-
-To pan through time, **click and hold** (or touch and hold) on any chart, then **drag your mouse** (or finger) to the
-left or right. Drag to the right to pan backward through time, or drag to the left to pan forward in time. Think of it
-like pushing the current timeframe off the screen to see what came before or after.
-
-To zoom, press and hold `Shift`, then use your mouse's scroll wheel, or a two-finger pinch if you're using a touchpad.
-
-See [interact with charts](/docs/dashboard/interact-charts.mdx) for all the possible ways to interact with the charts on
-your dashboard.
-
-
-### Interactive composite charts
-
-:::note ⚠️ This version of charts is currently **only** available on Netdata Cloud. We didn't want to keep this valuable
-> feature from you, so after we get this into your hands on the Cloud, we will collect and implement your feedback. Together, we will be able to provide the best possible version of charts on the Netdata Agent dashboard, as quickly as possible.:::
-
-Netdata excels in collecting, storing, and organizing metrics in out-of-the-box dashboards. 
-To make sense of all the metrics, Netdata offers an enhanced version of charts that update every second. 
-
-These charts provide a lot of useful information, so that you can:
-
--   Enjoy the high-resolution, granular metrics collected by Netdata
--   Explore visualization with more options such as _line_, _stacked_ and _area_ types (other types like _bar_, _pie_ and _gauges_ are to be added shortly)
--   Examine all the metrics by hovering over them with your cursor
--   Use intuitive tooling and shortcuts to pan, zoom or highlight your charts
--   On highlight, ease access to [Metric Correlations](/docs/cloud/insights/metric-correlations) to see other metrics with similar patterns
--   Have the dimensions sorted based on name or value
--   View information about the chart, its plugin, context, and type
--   Get the chart status and possible errors. On top, reload functionality
-
-These charts will available on [Overview tab](/docs/cloud/visualize/overview), Single Node view, and on your [Custom Dashboards](/docs/cloud/visualize/dashboards). 
-
-With a quick glance at any composite chart, you have immediate information available at your disposal:
-
--   Chart title and units
--   Action bars
--   Chart area
--   Legend with dimensions
-
-The following sections explain how you can interact with these composite charts in greater detail.
-
-### Play, Pause and Reset
-
-Your charts are controlled using the available [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls). Besides these, when interacting with the chart you can also activate these controls by:
-
--   hovering over any chart to temporarily pause it - this momentarily switches time control to Pause, so that you can hover over a specific timeframe. When moving out of the chart time control will go back to Play (if it was it's previous state)
--   clicking on the chart to lock it - this enables the Pause option on the time controls, to the current timeframe. This is if you want to jump to a different chart to look for possible correlations. 
--   double clicking to release a previously locked chart - move the time control back to Play
-
- 
-| Interaction       | Keyboard/mouse | Touchpad/touchscreen | Time control          |
-| :---------------- | :------------- | :------------------- | :-------------------- |
-| **Pause** a chart | `hover`        | `n/a`                | Temporarily **Pause** |
-| **Stop** a chart  | `click`        | `tap`                | **Pause**             |
-| **Reset** a chart | `double click` | `n/a`                | **Play**              |
-
-Note: These interactions are available when the default "Pan" action is used. Other actions are accessible via the [Exploration action bar](#exploration-action-bar).
-
-### Title and chart action bar
-
-When you start interacting with a chart, you'll notice valuable information on the top bar. You will see information from the chart title to a chart action bar.
-
-The elements that you can find on this top bar are:
-
--   Netdata icon: this indicates that data is continuously being updated, this happens if [Time controls](/docs/dashboard/visualization-date-and-time-controls#time-controls) are in Play or Force Play mode
--   Chart status icon: indicates the status of the chart. Possible values are: Loading, Timeout, Error or No data
--   Chart title: on the chart title you can see the title together with the metric being displayed, as well as the unit of measurement
--   Chart action bar: here you'll have access to chart info, change chart types, enables fullscreen mode, and the ability to add the chart to a custom dashboard
-
-![image.png](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/c8f5f0bd-5f84-4812-970b-0e4340f4773b)
-
-#### Chart action bar
-
-On this bar you have access to immediate actions over the chart, the available actions are:
-
--   Chart info: you will be able to get more information relevant to the chart you are interacting with
--   Chart type: change the chart type from _line_, _stacked_ or _area_
--   Enter fullscreen mode: allows you expand the current chart to the full size of your screen
--   Add chart to dashboard: This allows you to add the chart to an existing custom dashboard or directly create a new one that includes the chart.
-
-<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/65ac4fc8-3d8d-4617-8234-dbb9b31b4264" width="40%" height="40%" />
-
-### Exploration action bar
-
-When exploring the chart you will see a second action bar. This action bar is there to support you on this task. The available actions that you can see are:
-
--   Pan
--   Highlight
--   Horizontal and Vertical zooms
--   In-context zoom in and out
-
-<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/0417ad66-fcf6-42d5-9a24-e9392ec51f87" width="40%" height="40%" />
-
-#### Pan
-
-Drag your mouse/finger to the right to pan backward through time, or drag to the left to pan forward in time. Think of it like pushing the current timeframe off the screen to see what came before or after.
-
-| Interaction | Keyboard | Mouse          | Touchpad/touchscreen |
-| :---------- | :------- | :------------- | :------------------- |
-| **Pan**     | `n/a`    | `click + drag` | `touch drag`         |
-
-#### Highlight
-
-Selecting timeframes is useful when you see an interesting spike or change in a chart and want to investigate further, from looking at the same period of time on other charts/sections or triggering actions to help you troubleshoot with an in-context action bar to help you troubleshoot (currently only available on
- Single Node view). The available actions:
-
--   run [Metric Correlations](/docs/cloud/insights/metric-correlations)
--   zoom in on the selected timeframe
-
-[Metric Correlations](/docs/cloud/insights/metric-correlations) will only be available if you respect the timeframe selection limitations. The selected duration pill together with the button state helps visualize this.
-
-<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/2ffc157d-0f0f-402e-80bb-5ffa8a2091d5" width="50%" height="50%" />
-
-<p/>
-
-| Interaction                        | Keyboard/mouse                                           | Touchpad/touchscreen |
-| :--------------------------------- | :------------------------------------------------------- | :------------------- |
-| **Highlight** a specific timeframe | `Alt + mouse selection` or `⌘ + mouse selection` (macOS) | `n/a`                |
-
-### Zoom
-
-Zooming in helps you see metrics with maximum granularity, which is useful when you're trying to diagnose the root cause
-of an anomaly or outage. Zooming out lets you see metrics within the larger context, such as the last hour, day, or
-week, which is useful in understanding what "normal" looks like, or to identify long-term trends, like a slow creep in
-memory usage.
-
-The actions above are _normal_ vertical zoom actions. We also provide an horizontal zoom action that helps you focus on a 
-specific Y-axis area to further investigate a spike or dive on your charts.
-
-![Y5IESOjD3s.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/f8722ee8-e69b-426c-8bcb-6cb79897c177)
-
-| Interaction                                | Keyboard/mouse                       | Touchpad/touchscreen                                 |
-| :----------------------------------------- | :----------------------------------- | :--------------------------------------------------- |
-| **Zoom** in or out                         | `Shift + mouse scrollwheel`          | `two-finger pinch` <br />`Shift + two-finger scroll` |
-| **Zoom** to a specific timeframe           | `Shift + mouse vertical selection`   | `n/a`                                                |
-| **Horizontal Zoom** a specific Y-axis area | `Shift + mouse horizontal selection` | `n/a`                                                |
-
-You also have two direct action buttons on the exploration action bar for in-context `Zoom in` and `Zoom out`.
-
-### Other interactions
-
-#### Order dimensions legend
-
-The bottom legend of the chart where you can see the dimensions of the chart can now be ordered by:
-
--   Dimension name (Ascending or Descending)
--   Dimension value (Ascending or Descending)
-
-<img src="https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/d3031c35-37bc-46c1-bcf9-be29dea0b476" width="50%" height="50%" />
-
-#### Show and hide dimensions
-
-Hiding dimensions simplifies the chart and can help you better discover exactly which aspect of your system might be
-behaving strangely.
-
-| Interaction                            | Keyboard/mouse  | Touchpad/touchscreen |
-| :------------------------------------- | :-------------- | :------------------- |
-| **Show one** dimension and hide others | `click`         | `tap`                |
-| **Toggle (show/hide)** one dimension   | `Shift + click` | `n/a`                |
-
-#### Resize
-
-To resize the chart, click-and-drag the icon on the bottom-right corner of any chart. To restore the chart to its original height,
-double-click the same icon.
-
-![AjqnkIHB9H.gif](https://images.zenhubusercontent.com/60b4ebb03f4163193ec31819/1bcc6a0a-a58e-457b-8a0c-e5d361a3083c)
 
 ## Related topics
 
