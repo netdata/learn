@@ -11,7 +11,7 @@ module.exports = {
 	organizationName: 'netdata',
 	projectName: 'netdata',
 	themes: [
-        "docusaurus-theme-openapi-docs", // Allows use of @theme/ApiItem and other components,
+		"docusaurus-theme-openapi-docs", // Allows use of @theme/ApiItem and other components,
 		// this is from https://github.com/easyops-cn/docusaurus-search-local
 		[
 			require.resolve("@easyops-cn/docusaurus-search-local"),
@@ -29,7 +29,7 @@ module.exports = {
 		prism: {
 			theme: require('prism-react-renderer/themes/dracula'),
 		},
-		docs:{
+		docs: {
 			sidebar: {
 				hideable: true,
 			},
@@ -151,27 +151,14 @@ module.exports = {
 		},
 	},
 	plugins: [
-	    [
-	    'docusaurus-plugin-openapi-docs',
-               {
-                 id: "apiDocs",
-                 docsPluginId: "classic",
-                 config: {
-                   api: {
-                     specPath: "openapi.yaml",
-                     outputDir: "docs/api",
-                   }
-                 }
-               }
-        ],
-        [
-          "posthog-docusaurus",
-          {
-            apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
-            appUrl: 'https://app.posthog.com',
-            enableInDevelopment: false,
-          }
-        ],
+		[
+			"posthog-docusaurus",
+			{
+				apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
+				appUrl: 'https://app.posthog.com',
+				enableInDevelopment: false,
+			}
+		],
 		'docusaurus-tailwindcss-loader',
 		[
 			'@docusaurus/plugin-content-docs',
@@ -202,7 +189,7 @@ module.exports = {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
 					docLayoutComponent: "@theme/DocPage",
-                    docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi-docs
+					docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi-docs
 					showLastUpdateTime: true,
 				},
 				theme: {
