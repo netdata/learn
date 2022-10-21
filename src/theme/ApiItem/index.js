@@ -32,35 +32,35 @@ import { GoThumbsup, GoThumbsdown } from 'react-icons/go';
 
 // This function is the source code that renders the metadata for each documentation page
 function DocItemMetadata(props) {
-  const { content: DocContent } = props;
-  const { metadata, frontMatter, assets } = DocContent;
-  const { keywords } = frontMatter;
-  const { description, title } = metadata;
-  const image = assets.image ?? frontMatter.image;
-  return (
-    <PageMetadata
-      {...{
-        title,
-        description,
-        keywords,
-        image,
-      }}
-    />
-  );
+	const { content: DocContent } = props;
+	const { metadata, frontMatter, assets } = DocContent;
+	const { keywords } = frontMatter;
+	const { description, title } = metadata;
+	const image = assets.image ?? frontMatter.image;
+	return (
+		<PageMetadata
+			{...{
+				title,
+				description,
+				keywords,
+				image,
+			}}
+		/>
+	);
 }
 
 const { DocProvider } = require("@docusaurus/theme-common/internal");
 
 let ApiDemoPanel = (_) => (
-  <div
-    style={{
-      marginTop: "3.5em",
-    }}
-  />
+	<div
+		style={{
+			marginTop: "3.5em",
+		}}
+	/>
 );
 
 if (ExecutionEnvironment.canUseDOM) {
-  ApiDemoPanel = require("@theme/ApiDemoPanel").default;
+	ApiDemoPanel = require("@theme/ApiDemoPanel").default;
 }
 
 
@@ -168,9 +168,8 @@ function DocItemContent(props) {
 						}
 					>
 						<GoThumbsup
-							className={`w-6 h-6 flex-1 justify-items-auto fill-current text-green-lighter transform transition group-hover:scale-125 group-active:scale-125 ${
-								formData.thumb === 'Happy' && 'scale-125'
-							}`}
+							className={`w-6 h-6 flex-1 justify-items-auto fill-current text-green-lighter transform transition group-hover:scale-125 group-active:scale-125 ${formData.thumb === 'Happy' && 'scale-125'
+								}`}
 						/>
 					</button>
 					<button
@@ -186,9 +185,8 @@ function DocItemContent(props) {
 						}
 					>
 						<GoThumbsdown
-							className={`w-6 h-6 flex-1 justify-items-auto fill-current text-red transform transition group-hover:scale-125 group-active:scale-125 ${
-								formData.thumb === 'Unhappy' && 'scale-125'
-							}`}
+							className={`w-6 h-6 flex-1 justify-items-auto fill-current text-red transform transition group-hover:scale-125 group-active:scale-125 ${formData.thumb === 'Unhappy' && 'scale-125'
+								}`}
 						/>
 					</button>
 				</div>
@@ -363,33 +361,33 @@ function DocItemContent(props) {
 
 
 export default function DocItem(props) {
-  const docHtmlClassName = `docs-doc-id-${props.content.metadata.unversionedId}`;
+	const docHtmlClassName = `docs-doc-id-${props.content.metadata.unversionedId}`;
 
-  const DocContent = () => {
-    const MDXComponent = props.content;
-    const { frontMatter } = MDXComponent;
-    const { info_path: infoPath } = frontMatter;
-    const { api } = frontMatter;
-    return (
-      <div className="row">
-        <div className={clsx("col", api ? "col--7" : "col--12")}>
-          <MDXComponent />
-        </div>
-        {api && (
-          <div className="col col--5">
-            <ApiDemoPanel item={api} infoPath={infoPath} />
-          </div>
-        )}
-      </div>
-    );
-  };
+	const DocContent = () => {
+		const MDXComponent = props.content;
+		const { frontMatter } = MDXComponent;
+		const { info_path: infoPath } = frontMatter;
+		const { api } = frontMatter;
+		return (
+			<div className="row">
+				<div className={clsx("col", api ? "col--7" : "col--12")}>
+					<MDXComponent />
+				</div>
+				{api && (
+					<div className="col col--5">
+						<ApiDemoPanel item={api} infoPath={infoPath} />
+					</div>
+				)}
+			</div>
+		);
+	};
 
-  return (
-    <DocProvider content={props.content}>
-      <HtmlClassNameProvider className={docHtmlClassName}>
-        <DocItemMetadata {...props} />
-        <DocItemContent {...props} />
-      </HtmlClassNameProvider>
-    </DocProvider>
-  );
+	return (
+		<DocProvider content={props.content}>
+			<HtmlClassNameProvider className={docHtmlClassName}>
+				<DocItemMetadata {...props} />
+				<DocItemContent {...props} />
+			</HtmlClassNameProvider>
+		</DocProvider>
+	);
 }
