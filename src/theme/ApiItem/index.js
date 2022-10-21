@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import DocPaginator from '@theme/DocPaginator';
 import DocVersionBanner from '@theme/DocVersionBanner';
 import DocVersionBadge from '@theme/DocVersionBadge';
-import DocItemFooter from "@theme/ApiItem/Footer";
+import DocItemFooter from '@theme/ApiItem/Footer';
 import TOC from '@theme/TOC';
 import TOCCollapsible from '@theme/TOCCollapsible';
 import Heading from '@theme/Heading';
@@ -18,17 +18,10 @@ import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 import MDXContent from '@theme/MDXContent';
 import ExecutionEnvironment from "@docusaurus/ExecutionEnvironment";
 import DocItemLayout from "@theme/ApiItem/Layout";
-/*import DocItemMetadata from "@theme/ApiItem/Metadata";*/
-
-
 
 // Imports that we need for custom code:
-
 import Link from '@docusaurus/Link';
 import { GoThumbsup, GoThumbsdown } from 'react-icons/go';
-
-
-
 
 // This function is the source code that renders the metadata for each documentation page
 function DocItemMetadata(props) {
