@@ -25,11 +25,6 @@ module.exports = {
 		],
 	],
 	themeConfig: {
-		posthog: {
-			apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
-			appUrl: 'https://app.posthog.com',
-			enableInDevelopment: false,
-		},
 		image: 'img/netdata_meta-default.png',
 		prism: {
 			theme: require('prism-react-renderer/themes/dracula'),
@@ -169,7 +164,14 @@ module.exports = {
                  }
                }
         ],
-		'posthog-docusaurus',
+        [
+          "posthog-docusaurus",
+          {
+            apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
+            appUrl: 'https://app.posthog.com',
+            enableInDevelopment: false,
+          }
+        ],
 		'docusaurus-tailwindcss-loader',
 		[
 			'@docusaurus/plugin-content-docs',
