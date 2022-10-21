@@ -199,7 +199,7 @@ module.exports = {
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
-					/*docLayoutComponent: "@theme/DocPage",*/
+					docLayoutComponent: "@theme/DocPage",
                     docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi-docs
 					showLastUpdateTime: true,
 				},
