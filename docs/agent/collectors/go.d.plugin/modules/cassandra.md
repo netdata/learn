@@ -22,7 +22,7 @@ To configure Cassandra with the JMX Exporter:
 - Download latest [jmx_exporter](https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/) jar file
   and install it in a directory where Cassandra can access it.
 - Add
-  the [jmx_exporter.yaml](https://raw.githubusercontent.com/netdata/go.d.plugin/master/modules/cassandra/testdata/jmx_exporter.yaml)
+  the [jmx_exporter.yaml](https://raw.githubusercontent.com/netdata/go.d.plugin/master/modules/cassandra/jmx_exporter.yaml)
   file to `/etc/cassandra`.
 - Add the following line to `/etc/cassandra/cassandra-env.sh`
   ```
@@ -34,28 +34,35 @@ To configure Cassandra with the JMX Exporter:
 
 All metrics have "cassandra." prefix.
 
-| Metric                            | Scope  |  Dimensions  |    Units     |
-|-----------------------------------|:------:|:------------:|:------------:|
-| client_requests_rate              | global | read, write  |  requests/s  |
-| client_requests_latency           | global | read, write  | microseconds |
-| cache_hit_ratio                   | global |  hit_ratio   |  percentage  |
-| cache_hit_rate                    | global | hits, misses |   events/s   |
-| cache_size                        | global |     size     |    bytes     |
-| storage_live_disk_space_used      | global |     used     |    bytes     |
-| compaction_completed_tasks_rate   | global |  completed   |   tasks/s    |
-| compaction_pending_tasks_count    | global |   pending    |    tasks     |
-| compaction_compacted_rate         | global |  compacted   |   bytes/s    |
-| thread_pools_active_tasks_count   | global |    active    |    tasks     |
-| thread_pools_pending_tasks_count  | global |   pending    |    tasks     |
-| thread_pools_blocked_tasks_rate   | global |   blocked    |   tasks/s    |
-| thread_pools_blocked_tasks_count  | global |   blocked    |    tasks     |
-| jvm_gc_rate                       | global | parnew, cms  |     gc/s     |
-| jvm_gc_time                       | global | parnew, cms  | microseconds |
-| dropped_messages_one_minute_rate  | global |   dropped    |  messages/s  |
-| client_requests_timeouts_rate     | global | read, write  |  timeout/s   |
-| client_requests_unavailables_rate | global | read, write  | exceptions/s |
-| client_requests_failures_rate     | global | read, write  |  failures/s  |
-| storage_exceptions_rate           | global |   storage    | exceptions/s |
+Labels per scope:
+
+- global: no labels.
+- thread pool: thread_pool.
+
+| Metric                            |    Scope    |  Dimensions   |    Units     |
+|-----------------------------------|:-----------:|:-------------:|:------------:|
+| client_requests_rate              |   global    |  read, write  |  requests/s  |
+| client_requests_latency           |   global    |  read, write  |   seconds    |
+| key_cache_hit_ratio               |   global    |   hit_ratio   |  percentage  |
+| key_cache_hit_rate                |   global    | hits, misses  |   events/s   |
+| key_cache_utilization             |   global    |     used      |  percentage  |
+| key_cache_size                    |   global    |     size      |    bytes     |
+| storage_live_disk_space_used      |   global    |     used      |    bytes     |
+| compaction_completed_tasks_rate   |   global    |   completed   |   tasks/s    |
+| compaction_pending_tasks_count    |   global    |    pending    |    tasks     |
+| compaction_compacted_rate         |   global    |   compacted   |   bytes/s    |
+| thread_pool_active_tasks_count    | thread pool |    active     |    tasks     |
+| thread_pool_pending_tasks_count   | thread pool |    pending    |    tasks     |
+| thread_pool_blocked_tasks_count   | thread pool |    blocked    |    tasks     |
+| thread_pool_blocked_tasks_rate    | thread pool |    blocked    |   tasks/s    |
+| jvm_memory_used                   |   global    | heap, nonheap |    bytes     |
+| jvm_gc_rate                       |   global    |  parnew, cms  |     gc/s     |
+| jvm_gc_time                       |   global    |  parnew, cms  |   seconds    |
+| dropped_messages_one_minute_rate  |   global    |    dropped    |  messages/s  |
+| client_requests_timeouts_rate     |   global    |  read, write  |  timeout/s   |
+| client_requests_unavailables_rate |   global    |  read, write  | exceptions/s |
+| client_requests_failures_rate     |   global    |  read, write  |  failures/s  |
+| storage_exceptions_rate           |   global    |    storage    | exceptions/s |
 
 ## Configuration
 
