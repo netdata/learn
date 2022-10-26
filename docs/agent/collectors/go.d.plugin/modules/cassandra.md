@@ -43,6 +43,10 @@ Labels per scope:
 |-----------------------------------|:-----------:|:-------------:|:------------:|
 | client_requests_rate              |   global    |  read, write  |  requests/s  |
 | client_requests_latency           |   global    |  read, write  |   seconds    |
+| row_cache_hit_ratio               |   global    |   hit_ratio   |  percentage  |
+| row_cache_hit_rate                |   global    | hits, misses  |   events/s   |
+| row_cache_utilization             |   global    |     used      |  percentage  |
+| row_cache_size                    |   global    |     size      |    bytes     |
 | key_cache_hit_ratio               |   global    |   hit_ratio   |  percentage  |
 | key_cache_hit_rate                |   global    | hits, misses  |   events/s   |
 | key_cache_utilization             |   global    |     used      |  percentage  |
@@ -58,7 +62,7 @@ Labels per scope:
 | jvm_memory_used                   |   global    | heap, nonheap |    bytes     |
 | jvm_gc_rate                       |   global    |  parnew, cms  |     gc/s     |
 | jvm_gc_time                       |   global    |  parnew, cms  |   seconds    |
-| dropped_messages_one_minute_rate  |   global    |    dropped    |  messages/s  |
+| dropped_messages_rate             |   global    |    dropped    |  messages/s  |
 | client_requests_timeouts_rate     |   global    |  read, write  |  timeout/s   |
 | client_requests_unavailables_rate |   global    |  read, write  | exceptions/s |
 | client_requests_failures_rate     |   global    |  read, write  |  failures/s  |
