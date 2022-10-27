@@ -34,7 +34,7 @@ Installation: please follow the [official guide](https://github.com/prometheus-c
 - Install the `windows_exporter` with `msiexec` and the parameters shown below:
 
   ```bash 
-  msiexec -i <path-to-msi-file> ENABLED_COLLECTORS=cpu,memory,net,logical_disk,os,system,logon,thermalzone
+  msiexec -i <path-to-msi-file> ENABLED_COLLECTORS=cpu,memory,net,logical_disk,os,system,logon,thermalzone,tcp
   ```
 
   The msi installer automatically adds and starts a service called `windows_exporter`, which listens to port 9182 by
@@ -68,7 +68,7 @@ All metrics have "wmi." prefix.
 | net_errors                 | network device |                                                                                 inbound, outbound                                                                                  |   errors/s    |
 | net_discarded              | network device |                                                                                 inbound, outbound                                                                                  |  discards/s   |
 | logical_disk_utilization   |  logical disk  |                                                                                     free, used                                                                                     |      KiB      |
-| logical_disk_utilization   |  logical disk  |                                                                                    read, write                                                                                     |     KiB/s     |
+| logical_disk_bandwidth    |  logical disk  |                                                                                    read, write                                                                                     |     KiB/s     |
 | logical_disk_operations    |  logical disk  |                                                                                   reads, writes                                                                                    | operations/s  |
 | logical_disk_latency       |  logical disk  |                                                                                    read, write                                                                                     | milliseconds  |
 | os_processes               |     global     |                                                                                     processes                                                                                      |    number     |
