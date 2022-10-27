@@ -10,17 +10,30 @@ module.exports = {
 	favicon: 'img/favicon.ico',
 	organizationName: 'netdata',
 	projectName: 'netdata',
+	themes: [
+		"docusaurus-theme-openapi-docs", // Allows use of @theme/ApiItem and other components,
+		// this is from https://github.com/easyops-cn/docusaurus-search-local
+		[
+			require.resolve("@easyops-cn/docusaurus-search-local"),
+			{
+				indexDocs: true,
+				indexBlog: false,
+				hashed: true,
+				highlightSearchTermsOnTargetPage: false,
+				explicitSearchResultPath: true,
+			},
+		],
+	],
 	themeConfig: {
-		posthog: {
-			apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
-			appUrl: 'https://app.posthog.com',
-			enableInDevelopment: false,
-		},
 		image: 'img/netdata_meta-default.png',
 		prism: {
 			theme: require('prism-react-renderer/themes/dracula'),
 		},
-		hideableSidebar: true,
+		docs: {
+			sidebar: {
+				hideable: true,
+			},
+		},
 		navbar: {
 			title: 'Learn',
 			logo: {
@@ -138,7 +151,14 @@ module.exports = {
 		},
 	},
 	plugins: [
-		'posthog-docusaurus',
+		[
+			"posthog-docusaurus",
+			{
+				apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
+				appUrl: 'https://app.posthog.com',
+				enableInDevelopment: false,
+			}
+		],
 		'docusaurus-tailwindcss-loader',
 		[
 			'@docusaurus/plugin-content-docs',
@@ -168,6 +188,8 @@ module.exports = {
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
+					docLayoutComponent: "@theme/DocPage",
+					docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi-docs
 					showLastUpdateTime: true,
 				},
 				theme: {
