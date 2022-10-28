@@ -88,5 +88,13 @@ names:
 
 ## Related topics
 
-list of related topics
+### **Related Concepts**
+- [Spaces](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/spaces.md)
+- [Charts](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/spaces.md)
+- [Rooms](https://github.com/netdata/learn/blob/rework-learn/docs/concepts/netdata-cloud/rooms.md)
+- [Dashboards](https://github.com/netdata/learn/blob/master/docs/concepts/visualizations/dashboards.md)
+- [From raw metrics to visualizations](https://github.com/netdata/learn/blob/rework-learn/docs/concepts/visualizations/from-raw-metrics-to-visualization.md)
 
+### Related Tasks
+- [Claiming an existing agent to Cloud](https://github.com/netdata/netdata/blob/rework-learn/docs/tasks/setup/claim-existing-agent-to-cloud.md)
+- [Interact with charts](https://github.com/netdata/learn/blob/rework-learn/docs/tasks/interact-with-the-charts.md)
