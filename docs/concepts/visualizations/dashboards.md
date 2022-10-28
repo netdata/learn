@@ -986,10 +986,13 @@ chart](https://user-images.githubusercontent.com/12159026/28666665-a7d68ad2-72c8
 
 ## Related Topics
 
--   Dashboard
-    -   [How the dashboard works](/docs/dashboard/how-dashboard-works)
-    -   [Chart dimensions, contexts, and families](/docs/dashboard/dimensions-contexts-families)
-    -   [Date and Time controls](/docs/dashboard/visualization-date-and-time-controls)
-    -   [Customize the standard dashboard](/docs/dashboard/customize)
-    -   [Metric Correlations](/docs/cloud/insights/metric-correlations)
-    -   [Netdata Agent - Interact with charts](/docs/dashboard/interact-charts)
+### **Related Concepts**
+- [Spaces](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/spaces.md)
+- [Charts](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/spaces.md)
+- [Netdata Views](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/netdata-views.md)
+- [Rooms](https://github.com/netdata/learn/blob/rework-learn/docs/concepts/netdata-cloud/rooms.md)
+- [From raw metrics to visualizations](https://github.com/netdata/learn/blob/rework-learn/docs/concepts/visualizations/from-raw-metrics-to-visualization.md)
+
+### Related Tasks
+- [Claiming an existing agent to Cloud](https://github.com/netdata/netdata/blob/rework-learn/docs/tasks/setup/claim-existing-agent-to-cloud.md)
+- [Interact with charts](https://github.com/netdata/learn/blob/rework-learn/docs/tasks/interact-with-the-charts.md)
