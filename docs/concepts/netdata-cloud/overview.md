@@ -23,7 +23,7 @@ monitoring agent to help you monitor your entire infrastructure [for free <RiExt
 />](https://netdata.cloud/pricing/) in real time and troubleshoot problems that threaten the health of your
 nodes before they occur.
 
-Netdata Cloud requires the open-source [Netdata](/docs/) monitoring agent, which is the basis for the metrics,
+Netdata Cloud requires the open-source Netdata monitoring agent, which is the basis for the metrics,
 visualizations, and alarms that you'll find in Netdata Cloud. Every time you view a node in Netdata Cloud, its metrics
 and metadata are streamed to Netdata Cloud, then proxied to your browser, with an infrastructure that ensures [data
 privacy <RiExternalLinkLine className="inline-block" />](https://netdata.cloud/privacy/).
