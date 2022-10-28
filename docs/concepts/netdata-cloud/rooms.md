@@ -167,6 +167,7 @@ the **🗑** icon.
 - [From raw metrics to visualizations](https://github.com/netdata/learn/blob/rework-learn/docs/concepts/visualizations/from-raw-metrics-to-visualization.md)
 
 ### Related Tasks
+- [Room Management](https://github.com/netdata/learn/blob/rework-learn/docs/tasks/setup/space-administration/room-management.md)
 - [Setting up spaces and rooms](https://github.com/netdata/learn/blob/master/docs/tasks/setup/setup-spaces-and-rooms.md#how-to-organize-your-netdata-cloud)
 - [Claiming an existing agent to Cloud](https://github.com/netdata/netdata/blob/rework-learn/docs/tasks/setup/claim-existing-agent-to-cloud.md)
 - [Interact with charts](https://github.com/netdata/learn/blob/rework-learn/docs/tasks/interact-with-the-charts.md)
