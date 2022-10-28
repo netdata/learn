@@ -96,6 +96,7 @@ Netdata admin users now have the ability to remove obsolete nodes from a space, 
 - [From raw metrics to visualizations](https://github.com/netdata/learn/blob/rework-learn/docs/concepts/visualizations/from-raw-metrics-to-visualization.md)
 
 ### Related Tasks
+- [Space Administration](https://github.com/netdata/learn/blob/rework-learn/docs/tasks/setup/space-administration/space-administration.md)
 - [Claiming an existing agent to Cloud](https://github.com/netdata/netdata/blob/rework-learn/docs/tasks/setup/claim-existing-agent-to-cloud.md)
 - [Interact with charts](https://github.com/netdata/learn/blob/rework-learn/docs/tasks/interact-with-the-charts.md)
 *******************************************************************************
