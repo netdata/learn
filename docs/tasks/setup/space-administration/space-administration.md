@@ -10,9 +10,6 @@ learn_docs_purpose: "Instructions on how an admin can configure a space"
 learn_repo_doc: "True"
 -->
 
-A Space is a high-level container. It's a collaboration space where you can organize team members, access levels and the
-nodes you want to monitor.
-
 As an admin you can configure a Space to your liking, through the Centralized Admin Interface accessible from the bottom
 left cogwheel on the interface, with tooltip "Space Settings".
 
