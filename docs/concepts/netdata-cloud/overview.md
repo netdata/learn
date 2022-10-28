@@ -28,10 +28,7 @@ visualizations, and alarms that you'll find in Netdata Cloud. Every time you vie
 and metadata are streamed to Netdata Cloud, then proxied to your browser, with an infrastructure that ensures [data
 privacy <RiExternalLinkLine className="inline-block" />](https://netdata.cloud/privacy/).
 
-
-Read [_What is Netdata?_](/docs/overview/what-is-netdata) for details about how Netdata and Netdata Cloud work together
-and how they're different from other monitoring solutions, or the
-[FAQ <RiExternalLinkLine className="inline-block" />](https://community.netdata.cloud/tags/c/general/29/faq) for answers to common questions.
+To learn more abou the basics of Netdata Cloud's basic features, feel free to peruse the links below.
 
 <Grid columns="1" className="mb-16">
   <Box 
