@@ -2,7 +2,7 @@
 title: "Spaces"
 sidebar_label: "Spaces"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/spaces.md"
-sidebar_position: 4
+sidebar_position: 1600
 learn_status: "Published"
 learn_topic_type: "Concepts"
 learn_rel_path: "netdata-cloud"
