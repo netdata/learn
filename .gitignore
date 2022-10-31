@@ -26,4 +26,4 @@ yarn-error.log*
 /.idea/
 
 # Ingest python environment
-.learn_environment/py-ingest-env
+.learn_environment/ingest-env
