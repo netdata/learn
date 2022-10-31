@@ -24,3 +24,6 @@ yarn-error.log*
 .netlify
 .vscode/settings.json
 /.idea/
+
+# Ingest python environment
+.learn_environment/py-ingest-env
