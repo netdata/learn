@@ -21,8 +21,7 @@ The module collects metrics from the following collectors:
 - [logon](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.logon.md)
 - [tcp](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.tcp.md)
 - [thermalzone](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.thermalzone.md)
-
-Installation: please follow the [official guide](https://github.com/prometheus-community/windows_exporter#installation).
+- [process](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.process.md)
 
 ## Requirements
 
@@ -36,13 +35,25 @@ Installation: please follow the [official guide](https://github.com/prometheus-c
   ```bash 
   msiexec -i <path-to-msi-file> ENABLED_COLLECTORS=cpu,memory,net,logical_disk,os,system,logon,thermalzone,tcp
   ```
-
-  The msi installer automatically adds and starts a service called `windows_exporter`, which listens to port 9182 by
-  default.
-  Full installation instructions options can be
-  found  [here](https://github.com/prometheus-community/windows_exporter/releases).
-
 - Verify that the exporter works properly by accessing http://localhost:9182/
+
+Netdata also supports
+the [process](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.process.md) and
+[service](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.service.md) collectors,
+which by defaults expose metrics about all processes and services in the system. This can result in thousands of time
+series and can significantly increase CPU usage. It is recommended to use filtering
+flags ([process](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.process.md#flags),
+[service](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.service.md#flags))
+to keep down the number of returned metrics.
+
+For example:
+
+  ```bash 
+  msiexec -i <path-to-msi-file> ENABLED_COLLECTORS=cpu,memory,net,logical_disk,os,system,logon,thermalzone,tcp,process EXTRA_FLAGS="--collector.process.whitelist=""(firefox|FIREFOX|chrome).*"" --collector.service.services-where ""Name LIKE 'sql%'"""
+  ```
+
+More installation options can be found in the
+windows_exporter [official installation guide](https://github.com/prometheus-community/windows_exporter#installation).
 
 ## Metrics
 
@@ -68,7 +79,7 @@ All metrics have "wmi." prefix.
 | net_errors                 | network device |                                                                                 inbound, outbound                                                                                  |   errors/s    |
 | net_discarded              | network device |                                                                                 inbound, outbound                                                                                  |  discards/s   |
 | logical_disk_utilization   |  logical disk  |                                                                                     free, used                                                                                     |      KiB      |
-| logical_disk_bandwidth    |  logical disk  |                                                                                    read, write                                                                                     |     KiB/s     |
+| logical_disk_bandwidth     |  logical disk  |                                                                                    read, write                                                                                     |     KiB/s     |
 | logical_disk_operations    |  logical disk  |                                                                                   reads, writes                                                                                    | operations/s  |
 | logical_disk_latency       |  logical disk  |                                                                                    read, write                                                                                     | milliseconds  |
 | os_processes               |     global     |                                                                                     processes                                                                                      |    number     |
@@ -87,6 +98,16 @@ All metrics have "wmi." prefix.
 | tcp_segments_received      |     global     |                                                                                     ipv4, ipv6                                                                                     |  segments/s   |
 | tcp_segments_sent          |     global     |                                                                                     ipv4, ipv6                                                                                     |  segments/s   |
 | tcp_segments_retransmitted |     global     |                                                                                     ipv4, ipv6                                                                                     |  segments/s   |
+| processes_cpu_time         |     global     |                                                                           <i>a dimension per process</i>                                                                           |  percentage   |
+| processes_handles          |     global     |                                                                           <i>a dimension per process</i>                                                                           |    handles    |
+| processes_io_bytes         |     global     |                                                                           <i>a dimension per process</i>                                                                           |    bytes/s    |
+| processes_io_operations    |     global     |                                                                           <i>a dimension per process</i>                                                                           | operations/s  |
+| processes_page_faults      |     global     |                                                                           <i>a dimension per process</i>                                                                           |  pgfaults/s   |
+| processes_page_file_bytes  |     global     |                                                                           <i>a dimension per process</i>                                                                           |     bytes     |
+| processes_pool_bytes       |     global     |                                                                           <i>a dimension per process</i>                                                                           |     bytes     |
+| processes_threads          |     global     |                                                                           <i>a dimension per process</i>                                                                           |    threads    |
+| service_state              |    service     |                                          running, stopped, start_pending, stop_pending, continue_pending, pause_pending, paused, unknown                                           |     state     |
+| service_status             |    service     |                                      ok, error, unknown, pred_fail, starting, stopping, service, stressed, nonrecover, no_contact, lost_comm                                       |    status     |
 
 ## Configuration
 
