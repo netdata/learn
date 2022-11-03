@@ -1,5 +1,5 @@
 ---
-title: "Pi-hole monitoring with Netdata"
+title: "Ping monitoring with Netdata"
 description: "Monitor round-trip time and packet loss to network hosts with zero configuration, per-second metric granularity, and interactive visualizations."
 custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/ping/README.md
 sidebar_label: "Ping"
@@ -39,6 +39,7 @@ All metrics have "ping." prefix.
 | Metric           | Scope |   Dimensions   |    Units     |
 |------------------|:-----:|:--------------:|:------------:|
 | host_rtt         | host  | min, max, avg  | milliseconds |
+| host_std_dev_rtt | host  |    std_dev     | milliseconds |
 | host_packet_loss | host  |      loss      |  percentage  |
 | host_packets     | host  | received, sent |   packets    |
 
