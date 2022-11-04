@@ -7,7 +7,7 @@ module.exports = {
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
 	onBrokenMarkdownLinks: 'warn',
-	favicon: 'img/favicon.ico',
+	favicon: 'img/favicon-32x32.png',
 	organizationName: 'netdata',
 	projectName: 'netdata',
 	themes: [
@@ -38,7 +38,6 @@ module.exports = {
 			logo: {
 				alt: 'Netdata Learn logo',
 				src: 'img/logo.svg',
-                href: 'https://netdata.cloud/', // Default to `siteConfig.baseUrl`.
 			},
 			items: [
 				{
@@ -59,6 +58,11 @@ module.exports = {
                 {
                     to: 'https://app.netdata.cloud/',
                     label: 'App',
+                    position: 'left',
+                },
+                {
+                    to: 'https://www.netdata.cloud/',
+                    label: 'Website',
                     position: 'left',
                 },
 				{
@@ -159,6 +163,26 @@ module.exports = {
 			}
 		],
 		'docusaurus-tailwindcss-loader',
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'guides',
+                sidebarPath: require.resolve('./src/data/sidebar-guides.js'),
+                path: './guides',
+                routeBasePath: 'guides',
+                include: ['**/*.md', '**/*.mdx'],
+            },
+        ],
+        [
+            '@docusaurus/plugin-content-docs',
+            {
+                id: 'contribute',
+                sidebarPath: require.resolve('./src/data/sidebar-contribute.js'),
+                path: './contribute',
+                routeBasePath: 'contribute',
+                include: ['**/*.md', '**/*.mdx'],
+            },
+        ],
 	],
 	presets: [
 		[
