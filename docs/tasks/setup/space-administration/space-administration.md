@@ -78,7 +78,7 @@ So, you can see if a node is outdated, if it is offline, or if it needs further 
 
 From the **Nodes** tab you can click the green **+** icon to begin the claiming process.  
 For a detailed guide in claiming Agent nodes, refer to
-our [Claim an Agent to the Cloud Task](https://github.com/netdata/netdata/blob/master/docs/tasks/general-configuration/claim-an-agent-to-the-hub.md)
+our [Claim an Agent to the Cloud Task](https://github.com/netdata/netdata/blob/master/docs/tasks/setup/claim-existing-agent-to-cloud.md)
 .
 
 ## Remove a node from the Space
@@ -123,4 +123,4 @@ Space** in the bottom of the **Info** tab.
 
 ## Related topics
 
-1. [Spaces Concept Documentation](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/spaces.md)
+1. [Spaces Concept Documentation](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/spaces.md)
