@@ -25,7 +25,7 @@ management tools.
 :::note
 Some of these actions can be configured to be accessible to normal users too instead of being admin-only, you can read
 more in
-the [Space administration](https://github.com/netdata/learn/blob/master/docs/tasks/space-administration.md#manage-permissions)
+the [Space administration](https://github.com/netdata/learn/blob/master/docs/tasks/setup/space-administration/space-administration.md#manage-permissions)
 Task.
 :::
 
@@ -52,7 +52,7 @@ You can perform the actions below from either of:
 3. Then you can:
     - Either proceed on claiming a new Agent to this Space, and adding it to the War Room that you are in, see details
       at
-      our [claim an Agent to the Cloud](https://github.com/netdata/netdata/blob/master/docs/tasks/general-configuration/claim-an-agent-to-the-hub.md)
+      our [claim an Agent to the Cloud](https://github.com/netdata/netdata/blob/master/docs/tasks/setup/claim-existing-agent-to-cloud.md)
       Task
     - Or, from the bottom tab, you can select to add nodes that are already claimed on your Space
 
@@ -64,7 +64,7 @@ You can perform the actions below from either of:
 2. Then you can:
     - Either proceed on claiming a new Agent to this Space, and adding it to the War Room that you are in, see details
       at
-      our [claim an Agent to the Cloud](https://github.com/netdata/netdata/blob/master/docs/tasks/general-configuration/claim-an-agent-to-the-hub.md)
+      our [claim an Agent to the Cloud](https://github.com/netdata/netdata/blob/master/docs/tasks/setup/claim-existing-agent-to-cloud.md)
       Task
     - Or, from the bottom tab, you can select to add nodes that are already claimed on your Space
 
@@ -103,7 +103,7 @@ From the **War Room settings** interface:
 3. Select from the list of the Space's users, that are eligible to be added to this War Room.
 
 If you want to add a new User to the War Room that isn't on the Space, check
-the [Space administration](https://github.com/netdata/learn/blob/master/docs/tasks/space-administration.md#add-a-user-to-the-space)
+the [Space administration](https://github.com/netdata/learn/blob/master/docs/tasks/setup/space-administration/space-administration.md#manage-permissions)
 Task.
 
 ### Remove users from a War Room
@@ -130,5 +130,5 @@ To delete a Custom Dashboard, select it from the tick box column, and then click
 
 ## Related topics
 
-1. [War Rooms Concept Documentation](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/rooms.md)
-2. [Views Concept Documentation](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-hub/netdata-views.md)
+1. [War Rooms Concept Documentation](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/rooms.md)
+2. [Views Concept Documentation](https://github.com/netdata/learn/blob/master/docs/concepts/netdata-cloud/netdata-views.md)
