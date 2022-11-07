@@ -42,4 +42,4 @@ able to change the **correlation method**, the **aggregation method** and the **
 ## Related topics
 
 1. [Guided Troubleshooting Concept](https://github.com/netdata/netdata/blob/master/docs/concepts/netdata-architecture/guided-troubleshooting.md)
-2. [Metric Correlation Concept](https://github.com/netdata/netdata/blob/master/docs/concepts/metric-corellations.md)
+2. [Metric Correlation Concept](https://github.com/netdata/netdata/blob/master/docs/concepts/guided-troubleshooting/metric-correlations.md)
