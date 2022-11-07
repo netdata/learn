@@ -22,38 +22,29 @@ The module collects metrics from the following collectors:
 - [tcp](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.tcp.md)
 - [thermalzone](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.thermalzone.md)
 - [process](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.process.md)
+- [service](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.service.md)
 
 ## Requirements
 
-`windows_exporter` version v0.13.0+
+There are two ways to monitor Windows with Netdata. Install Netdata over WSL on each host, or remotely collect
+data from one or more centralized agents, running on dedicated Linux machines. 
 
-- On your Windows
-  machine [download the latest version of the windows_exporter msi](https://github.com/prometheus-community/windows_exporter/releases)
+### Netdata on each Windows machine
 
-- Install the `windows_exporter` with `msiexec` and the parameters shown below:
+- Download the latest [netdata.msi](https://github.com/netdata/msi-installer/releases)
+- Before running netdata.msi, be aware that it will need to restart your Windows machine. 
+- Run netdata.msi directly, or with the options provided by Netdata Cloud. The msi will:
+    - Install the latest [Prometheus exporter for Windows](https://github.com/prometheus-community/windows_exporter/releases)
+    - Install a WSL2 or WSL1 preconfigured "Netdata" distribution on your machine
+    - Restart the machine to finish the installation.
+  
+### Remote data collection
 
-  ```bash 
-  msiexec -i <path-to-msi-file> ENABLED_COLLECTORS=cpu,memory,net,logical_disk,os,system,logon,thermalzone,tcp
-  ```
-- Verify that the exporter works properly by accessing http://localhost:9182/
-
-Netdata also supports
-the [process](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.process.md) and
-[service](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.service.md) collectors,
-which by defaults expose metrics about all processes and services in the system. This can result in thousands of time
-series and can significantly increase CPU usage. It is recommended to use filtering
-flags ([process](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.process.md#flags),
-[service](https://github.com/prometheus-community/windows_exporter/blob/master/docs/collector.service.md#flags))
-to keep down the number of returned metrics.
-
-For example:
-
-  ```bash 
-  msiexec -i <path-to-msi-file> ENABLED_COLLECTORS=cpu,memory,net,logical_disk,os,system,logon,thermalzone,tcp,process EXTRA_FLAGS="--collector.process.whitelist=""(firefox|FIREFOX|chrome).*"" --collector.service.services-where ""Name LIKE 'sql%'"""
-  ```
-
-More installation options can be found in the
-windows_exporter [official installation guide](https://github.com/prometheus-community/windows_exporter#installation).
+- Install the latest [Prometheus exporter for Windows](https://github.com/prometheus-community/windows_exporter/releases)
+  on every Windows host you want to monitor.
+- Install Netdata on one or more Linux servers.
+- Configure each Netdata instance to collect data remotely, from several Windows hosts. Just add one job 
+  for each host to  `wmi.conf`, as shown in the [configuration section](#configuration).
 
 ## Metrics
 
@@ -62,34 +53,26 @@ All metrics have "wmi." prefix.
 | Metric                     |     Scope      |                                                                                     Dimensions                                                                                     |     Units     |
 |----------------------------|:--------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------:|
 | cpu_utilization_total      |     global     |                                                                          dpc, user, privileged, interrupt                                                                          |  percentage   |
-| cpu_dpcs                   |     global     |                                                                            <i>a dimension per core</i>                                                                             |    dpcs/s     |
-| cpu_interrupts             |     global     |                                                                            <i>a dimension per core</i>                                                                             | interrupts/s  |
-| cpu_utilization            |    cpu core    |                                                                          dpc, user, privileged, interrupt                                                                          |  percentage   |
-| cpu_cstate                 |    cpu core    |                                                                                     c1, c2, c3                                                                                     |  percentage   |
-| memory_utilization         |     global     |                                                                                  available, used                                                                                   |      KiB      |
+| cpu_core_utilization       |    cpu core    |                                                                          dpc, user, privileged, interrupt                                                                          |  percentage   |
+| cpu_core_interrupts        |    cpu core    |                                                                                     interrupts                                                                                     | interrupts/s  |
+| cpu_core_dpcs              |    cpu core    |                                                                                        dpcs                                                                                        |    dpcs/s     |
+| cpu_core_cstate            |    cpu core    |                                                                                     c1, c2, c3                                                                                     |  percentage   |
+| memory_utilization         |     global     |                                                                                  available, used                                                                                   |     bytes     |
 | memory_page_faults         |     global     |                                                                                    page_faults                                                                                     |   events/s    |
-| memory_swap_utilization    |     global     |                                                                                  available, used                                                                                   |      KiB      |
+| memory_swap_utilization    |     global     |                                                                                  available, used                                                                                   |     bytes     |
 | memory_swap_operations     |     global     |                                                                                    read, write                                                                                     | operations/s  |
 | memory_swap_pages          |     global     |                                                                                   read, written                                                                                    |    pages/s    |
 | memory_cached              |     global     |                                                                                       cached                                                                                       |      KiB      |
 | memory_cache_faults        |     global     |                                                                                    cache_faults                                                                                    |   events/s    |
-| memory_system_pool         |     global     |                                                                                  paged, non-paged                                                                                  |      KiB      |
-| net_bandwidth              | network device |                                                                                   received, sent                                                                                   |  kilobits/s   |
-| net_packets                | network device |                                                                                   received, sent                                                                                   |   packets/s   |
-| net_errors                 | network device |                                                                                 inbound, outbound                                                                                  |   errors/s    |
-| net_discarded              | network device |                                                                                 inbound, outbound                                                                                  |  discards/s   |
-| logical_disk_utilization   |  logical disk  |                                                                                     free, used                                                                                     |      KiB      |
-| logical_disk_bandwidth     |  logical disk  |                                                                                    read, write                                                                                     |     KiB/s     |
+| memory_system_pool         |     global     |                                                                                  paged, non-paged                                                                                  |     bytes     |
+| logical_disk_utilization   |  logical disk  |                                                                                     free, used                                                                                     |     bytes     |
+| logical_disk_bandwidth     |  logical disk  |                                                                                    read, write                                                                                     |    bytes/s    |
 | logical_disk_operations    |  logical disk  |                                                                                   reads, writes                                                                                    | operations/s  |
-| logical_disk_latency       |  logical disk  |                                                                                    read, write                                                                                     | milliseconds  |
-| os_processes               |     global     |                                                                                     processes                                                                                      |    number     |
-| os_users                   |     global     |                                                                                       users                                                                                        |     users     |
-| os_visible_memory_usage    |     global     |                                                                                     free, used                                                                                     |     bytes     |
-| os_paging_files_usage      |     global     |                                                                                     free, used                                                                                     |     bytes     |
-| system_threads             |     global     |                                                                                      threads                                                                                       |    number     |
-| system_uptime              |     global     |                                                                                        time                                                                                        |    seconds    |
-| logon_type_sessions        |     global     | system, interactive, network, batch, service, proxy, unlock, network_clear_text, new_credentials, remote_interactive, cached_interactive, cached_remote_interactive, cached_unlock |    seconds    |
-| thermalzone_temperature    |     global     |                                                                         <i>a dimension per thermalzone</i>                                                                         |    celsius    |
+| logical_disk_latency       |  logical disk  |                                                                                    read, write                                                                                     |    seconds    |
+| net_nic_bandwidth          | network device |                                                                                   received, sent                                                                                   |  kilobits/s   |
+| net_nic_packets            | network device |                                                                                   received, sent                                                                                   |   packets/s   |
+| net_nic_errors             | network device |                                                                                 inbound, outbound                                                                                  |   errors/s    |
+| net_nic_discarded          | network device |                                                                                 inbound, outbound                                                                                  |  discards/s   |
 | tcp_conns_established      |     global     |                                                                                     ipv4, ipv6                                                                                     |  connections  |
 | tcp_conns_active           |     global     |                                                                                     ipv4, ipv6                                                                                     | connections/s |
 | tcp_conns_passive          |     global     |                                                                                     ipv4, ipv6                                                                                     | connections/s |
@@ -98,6 +81,14 @@ All metrics have "wmi." prefix.
 | tcp_segments_received      |     global     |                                                                                     ipv4, ipv6                                                                                     |  segments/s   |
 | tcp_segments_sent          |     global     |                                                                                     ipv4, ipv6                                                                                     |  segments/s   |
 | tcp_segments_retransmitted |     global     |                                                                                     ipv4, ipv6                                                                                     |  segments/s   |
+| os_processes               |     global     |                                                                                     processes                                                                                      |    number     |
+| os_users                   |     global     |                                                                                       users                                                                                        |     users     |
+| os_visible_memory_usage    |     global     |                                                                                     free, used                                                                                     |     bytes     |
+| os_paging_files_usage      |     global     |                                                                                     free, used                                                                                     |     bytes     |
+| system_threads             |     global     |                                                                                      threads                                                                                       |    number     |
+| system_uptime              |     global     |                                                                                        time                                                                                        |    seconds    |
+| logon_type_sessions        |     global     | system, interactive, network, batch, service, proxy, unlock, network_clear_text, new_credentials, remote_interactive, cached_interactive, cached_remote_interactive, cached_unlock |    seconds    |
+| thermalzone_temperature    |     global     |                                                                         <i>a dimension per thermalzone</i>                                                                         |    celsius    |
 | processes_cpu_utilization  |     global     |                                                                           <i>a dimension per process</i>                                                                           |  percentage   |
 | processes_handles          |     global     |                                                                           <i>a dimension per process</i>                                                                           |    handles    |
 | processes_io_bytes         |     global     |                                                                           <i>a dimension per process</i>                                                                           |    bytes/s    |
