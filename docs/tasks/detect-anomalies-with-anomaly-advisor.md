@@ -27,5 +27,5 @@ To use the Anomaly Advisor:
 
 ## Related topics
 
-1. [Anomaly Advisor Concept](https://github.com/netdata/netdata/blob/master/docs/concepts/machine-learning-powered-anomaly-advisor.md)
-2. [Netdata Configuration Reference](https://github.com/netdata/netdata/blob/master/daemon/README.md).
+1. [Anomaly Advisor Concept](https://github.com/netdata/netdata/blob/master/docs/concepts/guided-troubleshooting/machine-learning-powered-anomaly-advisor.md)
+2. [Netdata Configuration Reference](https://github.com/netdata/netdata/blob/master/daemon/config/README.md).
