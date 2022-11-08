@@ -5,7 +5,7 @@ custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/tasks/intera
 learn_status: "Published"
 learn_topic_type: "Tasks"
 sidebar_position: 1
-learn_rel_path: "operations"
+learn_rel_path: "Operations"
 learn_docs_purpose: "Instructions on how to interact with the charts (buttons, etc)"
 learn_repo_doc: "True"
 -->
