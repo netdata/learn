@@ -114,7 +114,7 @@ def cloneRepo(owner, repo, branch, depth, prefixFolder):
 
 def createMDXPathFromMetdata(metadata):
     finalFile = ' '.join((metadata["sidebar_label"].replace("/", " ").replace(")", " ").replace(",", " ").replace("(", " ")).split())
-    return("{}/{}/{}/{}.mdx".format(docsPrefix, \
+    return("{}/{}/{}.mdx".format(docsPrefix, \
                     metadata["learn_rel_path"], \
                     finalFile.replace(" ", "-")).lower().replace(" ", "-").replace("//","/"))
  
