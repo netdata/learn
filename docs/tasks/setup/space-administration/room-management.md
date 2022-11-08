@@ -4,8 +4,8 @@ sidebar_label: "Room management"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/tasks/room-management.md"
 learn_status: "Published"
 learn_topic_type: "Tasks"
-sidebar_position: 16
-learn_rel_path: "administration"
+sidebar_position: "16"
+learn_rel_path: "Administration"
 learn_docs_purpose: "Instructions on how an admin/user can manage a room"
 learn_repo_doc: "True"
 -->

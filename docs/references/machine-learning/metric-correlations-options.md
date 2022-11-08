@@ -4,7 +4,7 @@ sidebar_label: "Metric Correlation Options"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/references/machine-learning/metric-correlation-options.md"
 learn_status: "Published"
 learn_topic_type: "Concepts"
-learn_rel_path: "netdata-hub"
+learn_rel_path: "Concepts/Netdata hub"
 learn_docs_purpose: "Present the options that help users apply metric correlations to their troubleshooting scenario."
 learn_repo_doc: "True"
 -->

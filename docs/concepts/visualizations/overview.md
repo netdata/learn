@@ -2,10 +2,10 @@
 title: "Overview"
 sidebar_label: "Overview"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/visualizations/overview.md"
-sidebar_position: 1
+sidebar_position: "1"
 learn_status: "Published"
 learn_topic_type: "Concepts"
-learn_rel_path: "visualizations"
+learn_rel_path: "Concepts/Visualizations"
 learn_docs_purpose: "Introductions to visualizations and what we will cover to this sections"
 learn_repo_doc: "True"
 -->

@@ -4,8 +4,8 @@ sidebar_label: "Space administration"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/tasks/space-administration.md"
 learn_status: "Published"
 learn_topic_type: "Tasks"
-sidebar_position: 19
-learn_rel_path: "administration"
+sidebar_position: "19"
+learn_rel_path: "Administration"
 learn_docs_purpose: "Instructions on how an admin can configure a space"
 learn_repo_doc: "True"
 -->

@@ -2,10 +2,10 @@
 title: "From raw Metrics to visualization"
 sidebar_label: "From raw Metrics to visualization"
 custom_edit_url: "https://github.com/netdata/learn/blob/master/docs/concepts/visualizations/from-raw-metrics-to-visualization.md"
-sidebar_position: 2300
+sidebar_position: "2300"
 learn_status: "Published"
 learn_topic_type: "Concepts"
-learn_rel_path: "visualizations"
+learn_rel_path: "Concepts/Visualizations"
 learn_docs_purpose: "Beginners corner, explain the terminology of Netdata's metrics, dimensions, labels, charts, context-instances, composites charts and how all these knitted into dashboards "
 learn_repo_doc: "True"
 -->
