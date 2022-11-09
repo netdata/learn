@@ -183,8 +183,9 @@ module.exports = {
 	],
 	presets: [
 		[
-			'@docusaurus/preset-classic',
-			{
+			"classic",
+			/** @type {import('@docusaurus/preset-classic').Options} */
+			({
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
@@ -198,7 +199,7 @@ module.exports = {
 				gtag: {
 					trackingID: 'GTM-N6CBMJD',
 				},
-			},
+			})
 		],
 	],
 	stylesheets: [

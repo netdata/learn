@@ -301,12 +301,12 @@ service.
 
 ## Update Docusaurus
 
-The current version is `v2.0.0-beta.0`, which, as of June 14, 2021, is the latest version of Docusaurus. Stay tuned to
+The current version is `v2.0.1`, which, as of June 14, 2021, is the latest version of Docusaurus. Stay tuned to
 the [Docusaurus website](https://docusaurus.io/) and [GitHub project](https://github.com/facebook/docusaurus) for future
 updates.
 
 Generally, it's not recommended to update unless there's a new feature that's a must-have or a fix to a major bug.
-`v2.0.0-beta.0` is very stable and provides all the functionality we need at this point. Updates also could create
+`v2.0.1` is very stable and provides all the functionality we need at this point. Updates also could create
 issues with [custom components](#custom-swizzled-docusaurus-components).
 
 To update Docusaurus, open [`package.json`](package.json) and update the string next to `"@docusaurus/core"` and
@@ -335,6 +335,14 @@ To merge:
 5. Add the customization (the code between `BEGIN EDIT`/`END EDIT`) comments, back into the file in the appropriate
    place.
 6. Start Docusaurus with `yarn start` and test.
+
+### Swizzled items in the current version:
+
+| theme                          | component name |
+|--------------------------------|----------------|
+| @docusaurus-theme-openapi-docs | ApiItem        |
+| @docusaurus/theme-classic      | NotFound       |
+
 
 ## Deployment
 
