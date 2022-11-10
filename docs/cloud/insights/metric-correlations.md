@@ -6,19 +6,19 @@ custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/insight
 
 The Metric Correlations (MC) feature lets you quickly find metrics and charts related to a particular window of interest that you want to explore further. By displaying the standard Netdata dashboard, filtered to show only charts that are relevant to the window of interest, you can get to the root cause sooner.
 
-Because Metric Correlations uses every available metric from that node, with as high as 1-second granularity, you get the most accurate insights using every possible metric.
+Because Metric Correlations uses every available metric from your infrastructure, with as high as 1-second granularity, you get the most accurate insights using every possible metric.
 
 ## Using Metric Correlations
 
 When viewing the overview or a single-node dashboard, the **Metric Correlations** button appears in top right corner of the page.
 
-![The Metric Correlations button in a single-node dashboard](https://user-images.githubusercontent.com/2178292/181750606-4dd5f216-ec83-46c9-92f8-b307264bfd9a.png)
+![The Metric Correlations button](https://user-images.githubusercontent.com/2178292/201082551-d805b20d-0472-455d-9f11-b2329adf3098.png)
 
 To start correlating metrics, click the **Metric Correlations** button, then hold the `Alt` key (or `⌘` on macOS) and click-and-drag a selection of metrics on a single chart. The selected timeframe needs to be at least 15 seconds for Metric Correlation to work. 
 
 The menu then displays information about the selected area and reference baseline. Metric Correlations uses the reference baseline to discover which additional metrics are most closely connected to the selected metrics. The reference baseline is based upon the period immediately preceding the highlighted window and is the length of 4 times the highlighted window. This is to ensure that the reference baseline is always immediately before the highlighted window of interest and a bit longer so as to ensure its a more representative short term baseline.
 
-Press the **Find Correlations** button to start up the correlations process, the button is only enabled when a valid timeframe is selected (at least 15 seconds). Once pressed, the process will score all available metrics on your node and returns a filtered version of the Netdata dashboard. Now, you'll see only those metrics that have changed the most between a baseline window and the highlighted window you have selected.
+Press the **Find Correlations** button to start up the correlations process, the button is only enabled when a valid timeframe is selected (at least 15 seconds). Once pressed, the process will score all available metrics on your nodes and returns a filtered version of the Netdata dashboard. Now, you'll see only those metrics that have changed the most between a baseline window and the highlighted window you have selected.
 
 ![Metric Correlations results](https://user-images.githubusercontent.com/2178292/181751182-25e0890d-a5f4-4799-9936-1523603cf97d.png)
 
@@ -68,6 +68,10 @@ Should you still want to, disabling nodes for Metric Corrleation on the agent is
 
 ## Usage tips!
 
+- When running Metric Correlations from the [Overview tab](https://learn.netdata.cloud/docs/cloud/visualize/overview#overview) across multiple nodes, you might find better results if you iterate on the initial results by grouping by node to then filter to nodes of interest and run the Metric Correlations again. So a typical workflow in this case would be to:
+ - If unsure what Node's you are interested in then run MC on all nodes. 
+ - Within the initial results returned group the most interesting chart by node to see if the changes are acorss all nodes or a subset of nodes.
+ - If you see a subset of nodes clearly jump out when you group by node, then filter for just those nodes of interest and run the MC again. This will result in less aggregation needing to be done by Netdata and so should help give clearer results as you interact with the slider.
 - Use the `Volume` algorithm for metrics with a lot of gaps (e.g. request latency when there are few requests), otherwise stick with `KS2`
   - By default, Netdata uses the `KS2` algorithm which is a tried and tested method for change detection in a lot of domains. The [Wikipedia](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test) article gives a good overview of how this works. Basically, it is comparing, for each metric, its cumulative distribution in the highlight window with its cumulative distribution in the baseline window. The statistical test then seeks to quantify the extent to which we can say these two distributions look similar enough to be considered the same or not. The `Volume` algorithm is a bit more simple than `KS2` in that it basically compares (with some edge cases sensibly handled) the average value of the metric across baseline and highlight and looks at the percentage change. Often both `KS2` and `Volume` will have significant agreement and return similar metrics.
   - `Volume` might favour picking up more sparse metrics that were relatively flat and then came to life with some spikes (or vice versa). This is because for such metrics that just don't have that many different values in them, it is impossible to construct cumulative distribution's that can then be compared. So `Volume` might be useful in spotting examples of metrics turning on or off. ![example where volume captured network traffic turning on](https://user-images.githubusercontent.com/2178292/182336924-d02fd3d3-7f09-41da-9cfc-809d01396d9d.png)
