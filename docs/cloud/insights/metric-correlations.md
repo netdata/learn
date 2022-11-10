@@ -10,7 +10,7 @@ Because Metric Correlations uses every available metric from that node, with as 
 
 ## Using Metric Correlations
 
-When viewing the single-node dashboard, the **Metric Correlations** button appears in top right corner of the page.
+When viewing the overview or a single-node dashboard, the **Metric Correlations** button appears in top right corner of the page.
 
 ![The Metric Correlations button in a single-node dashboard](https://user-images.githubusercontent.com/2178292/181750606-4dd5f216-ec83-46c9-92f8-b307264bfd9a.png)
 
