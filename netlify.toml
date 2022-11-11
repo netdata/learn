@@ -190,3 +190,93 @@
 [[redirects]]
 from = "/docs/agent/packaging/installer/methods/packages"
 to = "/docs/agent/packaging/installer/methods/kickstart#native-packages"
+
+# redirects for collectors migrated from Python to Go
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/apache"
+to = "/docs/agent/collectors/go.d.plugin/modules/apache"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/chrony"
+to = "/docs/agent/collectors/go.d.plugin/modules/chrony"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/couchdb"
+to = "/docs/agent/collectors/go.d.plugin/modules/couchdb"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/dns_query_time"
+to = "/docs/agent/collectors/go.d.plugin/modules/dnsquery"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/dnsdist"
+to = "/docs/agent/collectors/go.d.plugin/modules/dnsdist"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/elasticsearch"
+to = "/docs/agent/collectors/go.d.plugin/modules/elasticsearch"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/energid"
+to = "/docs/agent/collectors/go.d.plugin/modules/energid"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/freeradius"
+to = "/docs/agent/collectors/go.d.plugin/modules/freeradius"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/httpcheck"
+to = "/docs/agent/collectors/go.d.plugin/modules/httpcheck"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/isc_dhcpd"
+to = "/docs/agent/collectors/go.d.plugin/modules/isc_dhcpd"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/mysql"
+to = "/docs/agent/collectors/go.d.plugin/modules/mysql"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/nginx"
+to = "/docs/agent/collectors/go.d.plugin/modules/nginx"
+
+#[[redirects]]
+#from = "/docs/agent/collectors/python.d.plugin/ovpn_status_log"
+#to = "/docs/agent/collectors/go.d.plugin/modules/ovpn_status_log"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/phpfpm"
+to = "/docs/agent/collectors/go.d.plugin/modules/phpfpm"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/portcheck"
+to = "/docs/agent/collectors/go.d.plugin/modules/portcheck"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/postgres"
+to = "/docs/agent/collectors/go.d.plugin/modules/postgres"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/powerdns"
+to = "/docs/agent/collectors/go.d.plugin/modules/powerdns"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/redis"
+to = "/docs/agent/collectors/go.d.plugin/modules/redis"
+
+[[redirects]]
+from = "/docs/agent/collectors/python.d.plugin/web_log"
+to = "/docs/agent/collectors/go.d.plugin/modules/weblog"
+
+# redirects for collectors migrated from Node to Go
+
+[[redirects]]
+from = "/docs/agent/collectors/node.d.plugin/snmp"
+to = "/docs/agent/collectors/go.d.plugin/modules/snmp"
+
+# Deprecated backends
+
+[[redirects]]
+from = "/docs/agent/backends/prometheus"
+to = "/docs/agent/exporting/prometheus"
