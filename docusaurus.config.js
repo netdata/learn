@@ -160,6 +160,17 @@ module.exports = {
 				include: ['**/*.md', '**/*.mdx'],
 			},
 		],
+		[
+			'@docusaurus/plugin-client-redirects',
+			{
+			  redirects: [
+				{
+				  to: '/docs/agent/collectors/go.d.plugin/modules/redis',
+				  from: '/docs/agent/collectors/python.d.plugin/redis',
+				},
+			]
+			},
+		],
 	],
 	presets: [
 		[
