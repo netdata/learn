@@ -1,6 +1,6 @@
 ---
-title: Home and Overview
-description: The Home tab automatically presents relevant information and the Overview the uses composite charts from all the nodes in a given War Room.
+title: Home, Overview and Single Node view
+description: The Home tab automatically presents relevant information of your War Room, the Overview  uses composite charts from all the nodes in a given War Room and Single Node view provides a look at a specific Node
 custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/visualize/overview.md
 ---
 
@@ -15,11 +15,20 @@ nodes, data collection and retention stats, alerts, users and dashboards.
 ## Overview
 
 The Overview tab is another great way to monitor infrastructure using Netdata Cloud. While the interface might look similar to local
-dashboards served by an Agent, or even the single-node dashboards in Netdata Cloud, Overview uses **composite charts**.
+dashboards served by an Agent Overview uses **composite charts**.
 These charts display real-time aggregated metrics from all the nodes (or a filtered selection) in a given War Room.
 
 With Overview's composite charts, you can see your infrastructure from a single pane of glass, discover trends or
 anomalies, then drill down by grouping metrics by node and jumping to single-node dashboards for root cause analysis.
+
+## Single Node view
+
+The Single Node view dashboard engine is the same as the Overview, meaning that it also uses **composite charts**, and displays real-time aggregated metrics from a specific node.
+
+As mentioned above, the interface is similar to local dashboards served by an Agent but this dashboard also uses **composite charts** which, in the case of a single node, will aggregate
+multiple chart _instances_ belonging to a context into a single chart. For example, on `disk.io` context it will get into a single chart an aggregated view of each disk the node has.
+
+Further tools provided in composite chart [definiton bar](/docs/cloud/visualize/overview#definition-bar) will allow you to explore in more detail what is happening on each _instance_.
 
 ## Before you get started
 
@@ -58,8 +67,14 @@ are some opinionated-but-valuable exceptions where a specific dimension is selec
 Grouping by nodes allows you to quickly understand which nodes in your infrastructure are experiencing anomalous behavior.
 
 A composite chart grouped by _instance_ visualizes each instance of one software or hardware on a node and displays these as a separate dimension. By grouping the
-`disk.io` chart by chart, you can visualize the activity of each disk on each node that contributes to the composite
+`disk.io` chart by _instance_, you can visualize the activity of each disk on each node that contributes to the composite
 chart.
+
+Another very pertinent example is composite charts over contexts related to cgroups (VMs and containers). You have the means to change the default group by or apply filtering to 
+get a better view into what data your are trying to analyze. For example, if you change the group by to _instance_ you get a view with the data of all the instances (cgroups) that
+contribute to that chart. Then you can use further filtering tools to focus the data that is important to you and even save the result to your own dashboards.
+
+![image](https://user-images.githubusercontent.com/82235632/201902017-04b76701-0ff9-4498-aa9b-6d507b567bea.png)
 
 ### Aggregate functions over data sources
 
@@ -92,7 +107,7 @@ dropdown displays an instance name and the associated node's hostname.
 ### Nodes
 
 Click on **X Nodes** to display a dropdown of nodes contributing to that composite chart. Each line displays a hostname
-to help you identify which nodes contribute to a chart.
+to help you identify which nodes contribute to a chart. You can also use this component to filter nodes directly on the chart.
 
 If one or more nodes can't contribute to a given chart, the definition bar shows a warning symbol plus the number of
 affected nodes, then lists them in the dropdown along with the associated error. Nodes might return errors because of
@@ -112,6 +127,12 @@ is applied. By default the aggregation applied is _average_ but the user can cho
 * Single exponential smoothing
 * Double exponential smoothing
 * Coefficient variation
+* Trimmed Median*
+* Trimmed Mean*
+* Percentile**
+
+* For **Trimmed Median and Mean** you can choose the percentage of data tha you want to focus on: 1%, 2%, 3%, 5%, 10%, 15%, 20% and 25%.
+** For **Percentile** you can specify the percentile you want to focus on: 25th, 50th, 75th, 80th, 90th, 95th, 97th, 98th and 99th.
 
 For more details on each, you can refer to our Agent's HTTP API details on [Data Queries - Data Grouping](/docs/agent/web/api/queries#data-grouping).
 
