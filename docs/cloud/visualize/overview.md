@@ -117,6 +117,7 @@ networking issues, a stopped `netdata` service, or because that node does not ha
 
 When the granularity of the data collected is higher than the plotted points on the chart an aggregation function over time
 is applied. By default the aggregation applied is _average_ but the user can choose different options from the following:
+
 * Min
 * Max
 * Average
@@ -131,8 +132,13 @@ is applied. By default the aggregation applied is _average_ but the user can cho
 * Trimmed Mean*
 * Percentile**
 
-*For **Trimmed Median and Mean** you can choose the percentage of data tha you want to focus on: 1%, 2%, 3%, 5%, 10%, 15%, 20% and 25%.
-**For **Percentile** you can specify the percentile you want to focus on: 25th, 50th, 75th, 80th, 90th, 95th, 97th, 98th and 99th.
+:::info
+
+- * For **Trimmed Median and Mean** you can choose the percentage of data tha you want to focus on: 1%, 2%, 3%, 5%, 10%, 15%, 20% and 25%.
+- ** For **Percentile** you can specify the percentile you want to focus on: 25th, 50th, 75th, 80th, 90th, 95th, 97th, 98th and 99th.
+
+:::
+
 
 For more details on each, you can refer to our Agent's HTTP API details on [Data Queries - Data Grouping](/docs/agent/web/api/queries#data-grouping).
 
