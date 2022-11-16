@@ -32,19 +32,6 @@ edit that chart. Edit the context, its title, add or remove dimensions, or delet
 
 These customizations appear for anyone else with access to that War Room.
 
-## Jump to single-node dashboards
-
-Click on the name of any node to seamlessly navigate to that node's dashboard. This is the same dashboard that comes
-pre-configured with every installation of the Netdata Agent, so it features thousands of metrics and hundreds of
-interactive charts without needing to waste time setting it up.
-
-![Screenshot of an single-node
-dashboard](https://user-images.githubusercontent.com/1153921/119035389-5e9abf00-b964-11eb-8e51-29af0c55b65d.png)
-
-With all of the an individual node's real-time data at your fingertips, you can first identify health or performance
-anomalies with Netdata Cloud, and then engage your team to perform root-cause analysis using the Agent's granular
-metrics.
-
 ## See more metrics in Netdata Cloud
 
 If you want to add more metrics to your War Rooms and they don't show up when you add new metrics to Nodes, you likely
