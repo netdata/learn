@@ -32,7 +32,7 @@ If you find something else interesting in the results, you can select another wi
 
 MC enables a few input parameters that users can define to iteratively explore their data in different ways. As is usually the case in Machine Learning (ML), there is no "one size fits all" algorithm, what approach works best will typically depend on the type of data (which can be very different from one metric to the next) and even the nature of the event or incident you might be exploring in Netdata.
 
-So by when you first run MC it will use the most sensible and general defaults. But you can also then vary any of the below options to explore further.
+So when you first run MC it will use the most sensible and general defaults. But you can also then vary any of the below options to explore further.
 
 ### Method
 
