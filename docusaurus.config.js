@@ -2,12 +2,12 @@
 module.exports = {
 	title: 'Learn Netdata',
 	tagline:
-		"Here you'll find documentation, guides, and reference material for monitoring and troubleshooting your systems with Netdata. Discover new insights of your systems, containers, and applications using per-second metrics, insightful visualizations, and every metric imaginable.",
+		"Here you'll find documentation and reference material for monitoring and troubleshooting your systems with Netdata. Discover new insights of your systems, containers, and applications using per-second metrics, insightful visualizations, and every metric imaginable.",
 	url: 'https://learn.netdata.cloud',
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
 	onBrokenMarkdownLinks: 'warn',
-	favicon: 'img/favicon.ico',
+	favicon: 'img/favicon-32x32.png',
 	organizationName: 'netdata',
 	projectName: 'netdata',
 	themes: [
@@ -34,33 +34,37 @@ module.exports = {
 			},
 		},
 		navbar: {
-			title: 'Learn',
+			title: '',
 			logo: {
 				alt: 'Netdata Learn logo',
 				src: 'img/logo.svg',
 			},
 			items: [
 				{
-					type: 'doc',
-					docId: 'docs',
+					to: 'https://blog.netdata.cloud/',
 					position: 'left',
-					label: 'Docs',
+					label: 'Blog',
 				},
 				{
-					to: '/guides/',
+					to: 'https://blog.netdata.cloud/tags/how-to',
 					position: 'left',
-					label: 'Guides',
-				},
-				{
-					to: '/contribute/',
-					position: 'left',
-					label: 'Contribute',
+					label: 'Use cases',
 				},
 				{
 					to: 'https://community.netdata.cloud/',
 					position: 'left',
 					label: 'Community',
 				},
+                {
+                    to: 'https://app.netdata.cloud/',
+                    label: 'App',
+                    position: 'left',
+                },
+                {
+                    to: 'https://www.netdata.cloud/',
+                    label: 'Website',
+                    position: 'left',
+                },
 				{
 					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
 					label: 'Sign in',
