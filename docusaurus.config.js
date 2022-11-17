@@ -163,26 +163,26 @@ module.exports = {
 			}
 		],
 		'docusaurus-tailwindcss-loader',
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'guides',
-                sidebarPath: require.resolve('./src/data/sidebar-guides.js'),
-                path: './guides',
-                routeBasePath: 'guides',
-                include: ['**/*.md', '**/*.mdx'],
-            },
-        ],
-        [
-            '@docusaurus/plugin-content-docs',
-            {
-                id: 'contribute',
-                sidebarPath: require.resolve('./src/data/sidebar-contribute.js'),
-                path: './contribute',
-                routeBasePath: 'contribute',
-                include: ['**/*.md', '**/*.mdx'],
-            },
-        ],
+		[
+			'@docusaurus/plugin-content-docs',
+			{
+				id: 'guides',
+				sidebarPath: require.resolve('./src/data/sidebar-guides.js'),
+				path: './guides',
+				routeBasePath: 'guides',
+				include: ['**/*.md', '**/*.mdx'],
+			},
+		],
+		[
+			'@docusaurus/plugin-content-docs',
+			{
+				id: 'contribute',
+				sidebarPath: require.resolve('./src/data/sidebar-contribute.js'),
+				path: './contribute',
+				routeBasePath: 'contribute',
+				include: ['**/*.md', '**/*.mdx'],
+			},
+		],
 	],
 	presets: [
 		[
