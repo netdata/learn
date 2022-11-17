@@ -11,7 +11,6 @@ module.exports = {
 	organizationName: 'netdata',
 	projectName: 'netdata',
 	themes: [
-		"docusaurus-theme-openapi-docs", // Allows use of @theme/ApiItem and other components,
 		// this is from https://github.com/easyops-cn/docusaurus-search-local
 		[
 			require.resolve("@easyops-cn/docusaurus-search-local"),
@@ -190,7 +189,6 @@ module.exports = {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
 					docLayoutComponent: "@theme/DocPage",
-					docItemComponent: "@theme/ApiItem", // Derived from docusaurus-theme-openapi-docs
 					showLastUpdateTime: true,
 				},
 				theme: {
