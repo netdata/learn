@@ -47,6 +47,11 @@ module.exports = {
 					label: 'Docs',
 				},
 				{
+					to: 'https://blog.netdata.cloud',
+					position: 'left',
+					label: 'Blog',
+				},
+				{
 					to: 'https://blog.netdata.cloud/tags/how-to',
 					position: 'left',
 					label: 'Use cases',
