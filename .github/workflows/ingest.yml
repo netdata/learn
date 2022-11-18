@@ -14,10 +14,10 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0
 
-    - name: Use Node.js 14
+    - name: Use Node.js 16
       uses: actions/setup-node@v1.4.4
       with:
-        node-version: 14
+        node-version: 16
 
     - run: yarn install
 
