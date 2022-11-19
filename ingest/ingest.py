@@ -112,12 +112,13 @@ def cloneRepo(owner, repo, branch, depth, prefixFolder):
             "Couldn't clone the {} branch from {} repo (owner: {}) \n Exception {} raised".format(branch, repo, owner,
                                                                                                   e))
 
+
 def createMDXPathFromMetdata(metadata):
-    finalFile = ' '.join((metadata["sidebar_label"].replace("/", " ").replace(")", " ").replace(",", " ").replace("(", " ")).split())
-    return("{}/{}/{}.mdx".format(docsPrefix, \
-                    metadata["learn_rel_path"], \
-                    finalFile.replace(" ", "-")).lower().replace(" ", "-").replace("//","/"))
- 
+    finalFile = ' '.join(
+        (metadata["sidebar_label"].replace("/", " ").replace(")", " ").replace(",", " ").replace("(", " ")).split())
+    return ("{}/{}/{}.mdx".format(docsPrefix, \
+                                  metadata["learn_rel_path"], \
+                                  finalFile.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/"))
 
 
 def fetchMarkdownFromRepo(outputFolder):
@@ -149,7 +150,7 @@ def readMetadataFromDoc(pathToPath):
                     value = value + line.lstrip(' ')
                 value = value.strip("\"")
                 metadataDictionary[key] = value.lstrip('>-')
-    return(metadataDictionary)
+    return (metadataDictionary)
 
 
 def sanitizePage(path):
@@ -292,15 +293,15 @@ if __name__ == '__main__':
     for md in markdownFiles:
         metadata = readMetadataFromDoc(md)
         # Check to see if the dictionary returned is empty
-        if len(metadata)>0:
+        if len(metadata) > 0:
             reducedMarkdownFiles.append(md)
             if "learn_status" in metadata.keys():
                 if metadata["learn_status"] == "Published":
                     try:
                         toPublish[md] = {
-                            "metadata": str(metadata),
+                            "metadata": metadata,
                             "learnPath": str(createMDXPathFromMetdata(metadata)),
-                            "ingestedRepo": str(md.split("/",2)[1])
+                            "ingestedRepo": str(md.split("/", 2)[1])
                         }
                     except:
                         print("File {} doesnt container key-value {}".format(md, KeyError))
@@ -314,35 +315,20 @@ if __name__ == '__main__':
         del metadata
     # we update the list only with the files that are destined for Learn
 
-
-
-    #identify published documents:q
-    print("  Found Learn files: ", len(markdownFiles))
+    # identify published documents:q
+    print("  Found Learn files: ", len(toPublish))
     for file in toPublish:
         moveDoc(file, toPublish[file]["learnPath"])
         sanitizePage(toPublish[file]["learnPath"])
     for file in restFilesDictionary:
         pass
-        #moveDoc(file, restFilesDictionary[file]["learnPath"])
+        # moveDoc(file, restFilesDictionary[file]["learnPath"])
 
-    """
-    print("  Renaming README.md files...")
-    renameReadmes(markdownFiles)
-
-    print("Done.")
-
-    # METADATA
-
-    print("Reading the metadata for each file...")
-
-    print("Done.")
-    for k,v in filesDictionary.items():
-        print("File ", k )
-        print("Has metadata", v)
-        print("")
+    markdownFiles = reducedMarkdownFiles
+    filesDictionary = toPublish
 
     # FILE MOVING
-    '''
+
     print("Moving files...")
 
     # TODO the dict needs to be filename -> oldPath newPath metadata
@@ -352,31 +338,34 @@ if __name__ == '__main__':
 
     learnFilesDict = copy.copy(filesDictionary)
     for md in filesDictionary:
-        sanitizePage(md)
         # If I have the metadata needed ot build a path, move the file to the correct destination
-        if "learn_rel_path" in filesDictionary.get(md).keys() and "learn_topic_type" in filesDictionary.get(
-                md).keys() and "learn_status" in \
-                filesDictionary.get(md).keys():
-            if filesDictionary.get(md).get("learn_status") == "published":
-                changePath(md,
-                           docsPrefix +
-                           filesDictionary.get(md).get("learn_topic_type").strip("\n") +
-                           filesDictionary.get(md).get("learn_rel_path").strip("\n") +
-                           os.path.basename(md))
+        if 'learn_rel_path' in filesDictionary.get(md)['metadata'] \
+                and 'learn_topic_type' in filesDictionary.get(md)['metadata'] \
+                and 'learn_status' in filesDictionary.get(md)['metadata']:
 
-            elif filesDictionary.get(md).get("learn_status") == "unpublished":
-                changePath(md, docsPrefix + "/_unpublished/unpublished/" + md)
-                learnFilesDict.pop(md)
-            elif filesDictionary.get(md).get("learn_status") == "deprecated":
-                changePath(md, docsPrefix + "/_unpublished/deprecated/" + md)
-                learnFilesDict.pop(md)
-            else:
-                changePath(md, docsPrefix + "/_unpublished/wrong_status/" + md)
-                learnFilesDict.pop(md)
+            if filesDictionary.get(md)['metadata'].get('learn_status') == "Published" \
+                    and filesDictionary.get(md)['metadata'].get('title') == "Claim existing Agent to the Cloud":
 
-        else:
-            changePath(md, docsPrefix + "/_unpublished/no_status/" + md)
-            learnFilesDict.pop(md)
+                print(filesDictionary.get(md)['metadata'])
+                path = docsPrefix
+                # precaution for someone adding a slash to the topic by accident
+                if not filesDictionary.get(md)['metadata'].get("learn_topic_type").startswith("/"):
+                    path += "/"
+                path += filesDictionary.get(md)['metadata'].get("learn_topic_type")
+
+                if not filesDictionary.get(md)['metadata'].get("learn_rel_path").startswith("/"):
+                    path += "/"
+                path += filesDictionary.get(md)['metadata'].get("learn_rel_path")
+
+                if not filesDictionary.get(md)['metadata'].get("learn_rel_path").endswith("/"):
+                    path += "/"
+                path += os.path.basename(md)
+
+                print(path)
+
+                moveDoc(os.path.relpath(md), path)
+
+                exit(0)
     print("Done")
 
     # FIX LINKS
@@ -390,5 +379,5 @@ if __name__ == '__main__':
             fixMovedLinks(learnFilesDict.get(md)["newLearnPath"], learnFilesDict)
 
     print("Done.")
-    """
+
 print("OPERATION FINISHED")
