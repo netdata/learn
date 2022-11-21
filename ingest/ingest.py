@@ -15,7 +15,8 @@ dryRun = False
 restFilesDictionary = {}
 toPublish = {}
 markdownFiles = []
-docsPrefix = "docs"
+docsPrefix = "versioned_docs/version-nightly"
+version_prefix = "nightly"
 TEMP_FOLDER = "ingest-temp-folder"
 defaultRepos = {
     "netdata":
@@ -212,10 +213,14 @@ def convertGithubLinks(path, dict):
                             checkBrokenURL = toPublish[filename]['learnPath'].split(".mdx")[0].split("/")
                             checkURL = checkBrokenURL[len(checkBrokenURL) - 1]
                             # print(checkURL)
-                            if checkURL == brokenUrl[len(brokenUrl) - 1]:
+                            # Check that the title is the same, and that it comes from the same place (this is to
+                            # take care of duplicate names)
+                            if checkURL == brokenUrl[len(brokenUrl) - 1] and checkBrokenURL[len(checkBrokenURL) - 2]\
+                            == brokenUrl[len(brokenUrl) - 2]:
                                 replaceString = toPublish[filename]['learnPath'].split(".mdx")[0]
-                    # print(replaceString+"\n")
 
+                                replaceString = "/docs/" + version_prefix + replaceString.split("docs")[1]
+                                # print(replaceString+"\n")
                 line = line.replace(url, replaceString)
 
         output.append(line + "\n")
@@ -287,7 +292,7 @@ if __name__ == '__main__':
     '''
     Clean up old docs
     '''
-    unSafeCleanUpFolders("docs")
+    unSafeCleanUpFolders(docsPrefix)
 
     '''Clone all the predefined repos'''
     for key in defaultRepos.keys():
@@ -389,5 +394,8 @@ if __name__ == '__main__':
         convertGithubLinks(toPublish[file]["learnPath"], toPublish)
 
     print("Done.")
+
+    unSafeCleanUpFolders(TEMP_FOLDER)
+
 
 print("OPERATION FINISHED")
