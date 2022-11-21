@@ -180,12 +180,14 @@ def sanitizePage(path):
     file.writelines(output)
 
 
-def fixMovedLinks(path, dict):
+def convertGithubLinks(path, dict):
     # Open the file for reading
     file = open(path, "r")
     body = file.read()
     file.close()
     output = []
+
+    # TODO this would be cleaner with some try-catches
 
     # For every line in the file we are going to search for urls,
     # and check the dictionary for the relative path of Learn.
@@ -197,17 +199,25 @@ def fixMovedLinks(path, dict):
             for url in urls:
                 replaceString = url
                 # If the URL is a GitHub one
-                if not (url.startswith("#") or url.startswith("http") or url.startswith("https://learn.netdata.cloud")):
-                    # The URLs we care about are the ones that are relative to their repo, so we add a dot to make
-                    # them match the keys inside the dictionary
-                    key = "." + url
+                if url.startswith("https://github.com/netdata/netdata/blob/master") and url.endswith(".md"):
+                    # print(url)
+                    dummy = url.split("https://github.com/netdata/netdata/blob/master")[1]
 
-                    # If it is indeed a key inside the dictionary
-                    if key in dict.keys():
-                        metadata = dict.get(key)
-                        replaceString = metadata.get("newLearnPath").split("..")[1]
-                # Remove the .md
-                line = line.replace(url, replaceString.split('.md')[0])
+                    dummy = dummy.split(".md")[0]
+
+                    brokenUrl = dummy.split("/")
+                    # print(brokenUrl[len(brokenUrl) - 1])
+                    for filename in dict:
+                        if dict[filename]["metadata"]["learn_status"] == "Published":
+                            checkBrokenURL = toPublish[filename]['learnPath'].split(".mdx")[0].split("/")
+                            checkURL = checkBrokenURL[len(checkBrokenURL) - 1]
+                            # print(checkURL)
+                            if checkURL == brokenUrl[len(brokenUrl) - 1]:
+                                replaceString = toPublish[filename]['learnPath'].split(".mdx")[0]
+                    # print(replaceString+"\n")
+
+                line = line.replace(url, replaceString)
+
         output.append(line + "\n")
 
     file = open(path, "w")
@@ -273,6 +283,12 @@ if __name__ == '__main__':
     except FileExistsError:
         print("Folder already exists")
 
+
+    '''
+    Clean up old docs
+    '''
+    unSafeCleanUpFolders("docs")
+
     '''Clone all the predefined repos'''
     for key in defaultRepos.keys():
         print(cloneRepo(defaultRepos[key]["owner"], key, defaultRepos[key]["branch"], 1, TEMP_FOLDER + "/"))
@@ -293,7 +309,7 @@ if __name__ == '__main__':
     for md in markdownFiles:
         metadata = readMetadataFromDoc(md)
         # Check to see if the dictionary returned is empty
-        if len(metadata) > 0:
+        if len(metadata)>0:
             reducedMarkdownFiles.append(md)
             if "learn_status" in metadata.keys():
                 if metadata["learn_status"] == "Published":
@@ -301,7 +317,7 @@ if __name__ == '__main__':
                         toPublish[md] = {
                             "metadata": metadata,
                             "learnPath": str(createMDXPathFromMetdata(metadata)),
-                            "ingestedRepo": str(md.split("/", 2)[1])
+                            "ingestedRepo": str(md.split("/",2)[1])
                         }
                     except:
                         print("File {} doesnt container key-value {}".format(md, KeyError))
@@ -315,6 +331,9 @@ if __name__ == '__main__':
         del metadata
     # we update the list only with the files that are destined for Learn
 
+    # FILE MOVING
+    print("Moving files...")
+
     # identify published documents:q
     print("  Found Learn files: ", len(toPublish))
     for file in toPublish:
@@ -322,51 +341,43 @@ if __name__ == '__main__':
         sanitizePage(toPublish[file]["learnPath"])
     for file in restFilesDictionary:
         pass
-        # moveDoc(file, restFilesDictionary[file]["learnPath"])
+        #moveDoc(file, restFilesDictionary[file]["learnPath"])
 
-    markdownFiles = reducedMarkdownFiles
-    filesDictionary = toPublish
-
-    # FILE MOVING
-
-    print("Moving files...")
+    print("Done")
 
     # TODO the dict needs to be filename -> oldPath newPath metadata
 
     # Then we need to sanitize the page and move it to the correct path, if it doesn't have a path for now we continue
     # on, so it doesn't get moved anywhere
 
-    learnFilesDict = copy.copy(filesDictionary)
-    for md in filesDictionary:
-        # If I have the metadata needed ot build a path, move the file to the correct destination
-        if 'learn_rel_path' in filesDictionary.get(md)['metadata'] \
-                and 'learn_topic_type' in filesDictionary.get(md)['metadata'] \
-                and 'learn_status' in filesDictionary.get(md)['metadata']:
-
-            if filesDictionary.get(md)['metadata'].get('learn_status') == "Published" \
-                    and filesDictionary.get(md)['metadata'].get('title') == "Claim existing Agent to the Cloud":
-
-                print(filesDictionary.get(md)['metadata'])
-                path = docsPrefix
-                # precaution for someone adding a slash to the topic by accident
-                if not filesDictionary.get(md)['metadata'].get("learn_topic_type").startswith("/"):
-                    path += "/"
-                path += filesDictionary.get(md)['metadata'].get("learn_topic_type")
-
-                if not filesDictionary.get(md)['metadata'].get("learn_rel_path").startswith("/"):
-                    path += "/"
-                path += filesDictionary.get(md)['metadata'].get("learn_rel_path")
-
-                if not filesDictionary.get(md)['metadata'].get("learn_rel_path").endswith("/"):
-                    path += "/"
-                path += os.path.basename(md)
-
-                print(path)
-
-                moveDoc(os.path.relpath(md), path)
-
-                exit(0)
-    print("Done")
+    # learnFilesDict = copy.copy(filesDictionary)
+    # for md in filesDictionary:
+    #     # If I have the metadata needed ot build a path, move the file to the correct destination
+    #     if 'learn_rel_path' in filesDictionary.get(md)['metadata'] \
+    #             and 'learn_topic_type' in filesDictionary.get(md)['metadata'] \
+    #             and 'learn_status' in filesDictionary.get(md)['metadata']:
+    #
+    #         if filesDictionary.get(md)['metadata'].get('learn_status') == "Published" \
+    #                 and filesDictionary.get(md)['metadata'].get('title') == "Claim existing Agent to the Cloud":
+    #
+    #             print(filesDictionary.get(md)['metadata'])
+    #             path = docsPrefix
+    #             # precaution for someone adding a slash to the topic by accident
+    #             if not filesDictionary.get(md)['metadata'].get("learn_topic_type").startswith("/"):
+    #                 path += "/"
+    #             path += filesDictionary.get(md)['metadata'].get("learn_topic_type")
+    #
+    #             if not filesDictionary.get(md)['metadata'].get("learn_rel_path").startswith("/"):
+    #                 path += "/"
+    #             path += filesDictionary.get(md)['metadata'].get("learn_rel_path")
+    #
+    #             if not filesDictionary.get(md)['metadata'].get("learn_rel_path").endswith("/"):
+    #                 path += "/"
+    #             path += os.path.basename(md)
+    #
+    #             print(path)
+    #
+    #             moveDoc(os.path.relpath(md), path)
 
     # FIX LINKS
 
@@ -374,9 +385,8 @@ if __name__ == '__main__':
 
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
     # pointing to GitHub relative paths
-    for md in learnFilesDict:
-        if "newLearnPath" in learnFilesDict.get(md).keys():
-            fixMovedLinks(learnFilesDict.get(md)["newLearnPath"], learnFilesDict)
+    for file in toPublish:
+        convertGithubLinks(toPublish[file]["learnPath"], toPublish)
 
     print("Done.")
 
