@@ -514,6 +514,5 @@ default. To use a third-party collector, visit their GitHub/documentation page a
 
 ## Etc
 
-- [checks.plugin](/docs/agent/collectors/checks.plugin): A debugging collector, disabled by default.
 - [charts.d example](/docs/agent/collectors/charts.d.plugin/example): An example `charts.d` collector.
 - [python.d example](/docs/agent/collectors/python.d.plugin/example): An example `python.d` collector.
