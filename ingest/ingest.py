@@ -218,8 +218,7 @@ def convertGithubLinks(path, dict):
                             if checkURL == brokenUrl[len(brokenUrl) - 1] and checkBrokenURL[len(checkBrokenURL) - 2]\
                             == brokenUrl[len(brokenUrl) - 2]:
                                 replaceString = toPublish[filename]['learnPath'].split(".mdx")[0]
-
-                                replaceString = "/docs/" + version_prefix + replaceString.split("docs")[1]
+                                replaceString = "/docs/" + version_prefix + replaceString.split("versioned_docs/version-nightly")[1]
                                 # print(replaceString+"\n")
                 line = line.replace(url, replaceString)
 
