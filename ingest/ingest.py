@@ -200,9 +200,19 @@ def convertGithubLinks(path, dict):
             for url in urls:
                 replaceString = url
                 # If the URL is a GitHub one
-                if url.startswith("https://github.com/netdata/netdata/blob/master") and url.endswith(".md"):
+                if url.startswith("https://github.com/netdata/netdata/blob/master") :#and url.endswith("\.md(.*)\)"):
                     # print(url)
+                    # if re.search("\.md(.*)\)", url):
+                    #     print(url)
+                    #     exit(0)
                     dummy = url.split("https://github.com/netdata/netdata/blob/master")[1]
+
+                    try:
+                        linkToHeader = dummy.split("#")[1]
+                        linkToHeader =  "#" + linkToHeader
+                        print(linkToHeader)
+                    except:
+                        linkToHeader = ""
 
                     dummy = dummy.split(".md")[0]
 
@@ -218,7 +228,7 @@ def convertGithubLinks(path, dict):
                             if checkURL == brokenUrl[len(brokenUrl) - 1] and checkBrokenURL[len(checkBrokenURL) - 2]\
                             == brokenUrl[len(brokenUrl) - 2]:
                                 replaceString = toPublish[filename]['learnPath'].split(".mdx")[0]
-                                replaceString = "/docs/" + version_prefix + replaceString.split("versioned_docs/version-nightly")[1]
+                                replaceString = "/docs/" + version_prefix + replaceString.split("versioned_docs/version-nightly")[1] + linkToHeader
                                 # print(replaceString+"\n")
                 line = line.replace(url, replaceString)
 
