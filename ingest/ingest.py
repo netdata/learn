@@ -210,7 +210,7 @@ def convertGithubLinks(path, dict):
                     try:
                         linkToHeader = dummy.split("#")[1]
                         linkToHeader =  "#" + linkToHeader
-                        print(linkToHeader)
+                        # print(linkToHeader)
                     except:
                         linkToHeader = ""
 
