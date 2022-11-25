@@ -15,8 +15,8 @@ dryRun = False
 restFilesDictionary = {}
 toPublish = {}
 markdownFiles = []
-docsPrefix = "versioned_docs/version-nightly"
-version_prefix = "nightly"
+docsPrefix = "versioned_docs/version-nightly"  # This is the path the docs will be ingested into
+version_prefix = "nightly"  # We use this as the version prefix in the link strategy
 TEMP_FOLDER = "ingest-temp-folder"
 defaultRepos = {
     "netdata":
@@ -151,7 +151,7 @@ def readMetadataFromDoc(pathToPath):
                     value = value + line.lstrip(' ')
                 value = value.strip("\"")
                 metadataDictionary[key] = value.lstrip('>-')
-    return (metadataDictionary)
+    return metadataDictionary
 
 
 def sanitizePage(path):
@@ -181,63 +181,84 @@ def sanitizePage(path):
     file.writelines(output)
 
 
-def convertGithubLinks(path, dict):
+def convertGithubLinks(path, fileDict):
     # Open the file for reading
-    file = open(path, "r")
-    body = file.read()
-    file.close()
+    dummyFile = open(path, "r")
+    body = dummyFile.read()
+    dummyFile.close()
     output = []
-
-    # TODO this would be cleaner with some try-catches
 
     # For every line in the file we are going to search for urls,
     # and check the dictionary for the relative path of Learn.
     for line in body.splitlines():
+        # If in the line there is a link beginning with "]("  then
         if re.search("\]\((.*?)\)", line):
             # Find all the links inside that line
             urls = re.findall("\]\((.*?)\)", line)
 
             for url in urls:
+                # This is replaceString's default value
                 replaceString = url
                 # If the URL is a GitHub one
-                if url.startswith("https://github.com/netdata/netdata/blob/master") :#and url.endswith("\.md(.*)\)"):
-                    # print(url)
-                    # if re.search("\.md(.*)\)", url):
-                    #     print(url)
-                    #     exit(0)
+                # (at the moment we support this logic only for netdata/netdata links,
+                # to keep things simple and test the strategy)
+                if url.startswith("https://github.com/netdata/netdata/blob/master"):
+                    # temporary link, before we start the slicing and dicing
                     dummy = url.split("https://github.com/netdata/netdata/blob/master")[1]
 
+                    # Try to split the dummy link to the URL and the #link_to_header if any at the end of the URL,
+                    # for example split https://github.com/netdata/netdata/blob/rework-learn/docs/glossary.md#c
+                    # into "https://github.com/netdata/netdata/blob/master/docs/glossary.md" and "c"
                     try:
                         linkToHeader = dummy.split("#")[1]
-                        linkToHeader =  "#" + linkToHeader
-                        # print(linkToHeader)
+                        linkToHeader = "#" + linkToHeader
                     except:
                         linkToHeader = ""
 
+                    # Remove the .md, Docusaurus doesn't work with file extensions in the links
                     dummy = dummy.split(".md")[0]
+                    # Break the URL in every "/"
+                    dicedURL = dummy.split("/")
+                    # THe title of the file
+                    urlTitle = dicedURL[len(dicedURL) - 1]
+                    # This is the actual link-replacement logic, we check in the file dictionary, if a file is
+                    # published, then we know that we can find it (and hence link to it) from within Learn
+                    for filename in fileDict:
+                        if fileDict[filename]["metadata"]["learn_status"] == "Published":
+                            # Again, break the candidate file's learnPath in the "/"s, and remove the file extension
+                            dicedCandidateURL = toPublish[filename]['learnPath'].split(".mdx")[0].split("/")
 
-                    brokenUrl = dummy.split("/")
-                    # print(brokenUrl[len(brokenUrl) - 1])
-                    for filename in dict:
-                        if dict[filename]["metadata"]["learn_status"] == "Published":
-                            checkBrokenURL = toPublish[filename]['learnPath'].split(".mdx")[0].split("/")
-                            checkURL = checkBrokenURL[len(checkBrokenURL) - 1]
-                            # print(checkURL)
-                            # Check that the title is the same, and that it comes from the same place (this is to
-                            # take care of duplicate names)
-                            if checkURL == brokenUrl[len(brokenUrl) - 1] and checkBrokenURL[len(checkBrokenURL) - 2]\
-                            == brokenUrl[len(brokenUrl) - 2]:
+                            # The title of the candidate filepath
+                            candidateTitle = dicedCandidateURL[len(dicedCandidateURL) - 1]
+
+                            # Check that the title between the URL and the candidate path is the same, and that it
+                            # comes from the same place (this is to take care of duplicate names, for example,
+                            # multiple README files)
+                            if candidateTitle == urlTitle and \
+                                    dicedCandidateURL[len(dicedCandidateURL) - 2] == dicedURL[len(dicedURL) - 2]:
+                                # Assign to the replace string the learnPath ("concepts/sampleFolder/sample") without
+                                # the file extension
                                 replaceString = toPublish[filename]['learnPath'].split(".mdx")[0]
-                                replaceString = "/docs/" + version_prefix + replaceString.split("versioned_docs/version-nightly")[1] + linkToHeader
-                                # print(replaceString+"\n")
+                                # Add "/docs/" IMPORTANT, we need that "/" at the start, Docusaurus handles
+                                # "docs/.../..." links differently than "/docs/.../..."
+                                # Then add the version prefix
+                                # Keep the entire path without the "versioned_docs/version-nightly"
+                                # Add the linkToHeader string, if there ain't one it is going to be empty
+                                replaceString = "/docs/" + \
+                                                version_prefix + \
+                                                replaceString.split("versioned_docs/version-nightly")[1] + \
+                                                linkToHeader
+                # In the line we are examining, replace the URL string with the new replaceString value
                 line = line.replace(url, replaceString)
-
+        # In each iteration we append the new line string, so we essentially re-build the file line-by-line,
+        # and in the process some line URLS will be fixed to relative "/docs/" links
         output.append(line + "\n")
 
-    file = open(path, "w")
-    file.seek(0)
-    file.writelines(output)
-    file.close()
+    # Write everything onto the file again
+    dummyFile = open(path, "w")
+    dummyFile.seek(0)
+    dummyFile.writelines(output)
+    dummyFile.close()
 
 
 if __name__ == '__main__':
@@ -297,7 +318,6 @@ if __name__ == '__main__':
     except FileExistsError:
         print("Folder already exists")
 
-
     '''
     Clean up old docs
     '''
@@ -323,7 +343,7 @@ if __name__ == '__main__':
     for md in markdownFiles:
         metadata = readMetadataFromDoc(md)
         # Check to see if the dictionary returned is empty
-        if len(metadata)>0:
+        if len(metadata) > 0:
             reducedMarkdownFiles.append(md)
             if "learn_status" in metadata.keys():
                 if metadata["learn_status"] == "Published":
@@ -331,7 +351,7 @@ if __name__ == '__main__':
                         toPublish[md] = {
                             "metadata": metadata,
                             "learnPath": str(createMDXPathFromMetdata(metadata)),
-                            "ingestedRepo": str(md.split("/",2)[1])
+                            "ingestedRepo": str(md.split("/", 2)[1])
                         }
                     except:
                         print("File {} doesnt container key-value {}".format(md, KeyError))
@@ -355,7 +375,7 @@ if __name__ == '__main__':
         sanitizePage(toPublish[file]["learnPath"])
     for file in restFilesDictionary:
         pass
-        #moveDoc(file, restFilesDictionary[file]["learnPath"])
+        # moveDoc(file, restFilesDictionary[file]["learnPath"])
 
     print("Done")
 
@@ -405,6 +425,5 @@ if __name__ == '__main__':
     print("Done.")
 
     unSafeCleanUpFolders(TEMP_FOLDER)
-
 
 print("OPERATION FINISHED")
