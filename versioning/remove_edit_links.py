@@ -2,7 +2,12 @@
 import re
 
 
-def removeEditLinks(file_path):
+def santizeEditLinks(file_path):
+    '''
+    Takes as argument a md(x) file of learn
+    and changes it's custom_edit_url to null
+    WA: sed -i 's/^custom_edit_url:.*$/custom_edit_url: null/' <FILE_NAME>
+    '''
     # Open the file for reading
     dummyFile = open(file_path, "r")
     body = dummyFile.read()
