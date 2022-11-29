@@ -135,7 +135,7 @@ def readMetadataFromDoc(pathToPath):
     metadataDictionary = {}
     with open(pathToPath, "r+") as fd:
         rawText = "".join(fd.readlines())
-        pattern = r"(<!--\n)((.|\n)*)(\n-->)"
+        pattern = r"(<!--\n)((.|\n)*?)(\n-->)"
         matchGroup = re.search(pattern, rawText)
         if matchGroup:
             rawMetadata = matchGroup[2]
@@ -376,7 +376,6 @@ if __name__ == '__main__':
     for file in restFilesDictionary:
         pass
         # moveDoc(file, restFilesDictionary[file]["learnPath"])
-
     print("Done")
 
     # TODO the dict needs to be filename -> oldPath newPath metadata
