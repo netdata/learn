@@ -1,11 +1,20 @@
 
 
-## [**Next release**](https://github.com/netdata/netdata/tree/HEAD)
+## [v1.37.0](https://github.com/netdata/netdata/tree/v1.37.0) (2022-11-30)
 
-[Full Changelog](https://github.com/netdata/netdata/compare/v1.36.1...HEAD)
+[Full Changelog](https://github.com/netdata/netdata/compare/v1.36.1...v1.37.0)
 
 **Merged pull requests:**
 
+- fix spinlock [\#14068](https://github.com/netdata/netdata/pull/14068) ([ktsaou](https://github.com/ktsaou))
+- Sanitize command arguments. [\#14064](https://github.com/netdata/netdata/pull/14064) ([vkalintiris](https://github.com/vkalintiris))
+- Strict control of streaming API keys and MACHINE GUIDs in stream.conf [\#14063](https://github.com/netdata/netdata/pull/14063) ([ktsaou](https://github.com/ktsaou))
+- replication fixes No 8 [\#14061](https://github.com/netdata/netdata/pull/14061) ([ktsaou](https://github.com/ktsaou))
+- fix\(updater\): don't produce any output if static update completed successfully [\#14058](https://github.com/netdata/netdata/pull/14058) ([ilyam8](https://github.com/ilyam8))
+- Add Alpine 3.17 to supported distros. [\#14056](https://github.com/netdata/netdata/pull/14056) ([Ferroin](https://github.com/Ferroin))
+- replication fixes No 7 [\#14053](https://github.com/netdata/netdata/pull/14053) ([ktsaou](https://github.com/ktsaou))
+- bump go.d.plugin to v0.45.0 [\#14052](https://github.com/netdata/netdata/pull/14052) ([ilyam8](https://github.com/ilyam8))
+- Remove eBPF plugin warning [\#14047](https://github.com/netdata/netdata/pull/14047) ([thiagoftsm](https://github.com/thiagoftsm))
 - replication fixes \#6 [\#14046](https://github.com/netdata/netdata/pull/14046) ([ktsaou](https://github.com/ktsaou))
 - fix build on old openssl versions on centos [\#14045](https://github.com/netdata/netdata/pull/14045) ([underhood](https://github.com/underhood))
 - Don't let slow disk plugin thread delay shutdown [\#14044](https://github.com/netdata/netdata/pull/14044) ([MrZammler](https://github.com/MrZammler))
@@ -290,7 +299,6 @@
 - Overhaul handling of installation of Netdata as a system service. [\#13451](https://github.com/netdata/netdata/pull/13451) ([Ferroin](https://github.com/Ferroin))
 - reduce memcpy and memory usage on mqtt5 [\#13450](https://github.com/netdata/netdata/pull/13450) ([underhood](https://github.com/underhood))
 - Remove Alpine 3.13 from CI and official support. [\#13415](https://github.com/netdata/netdata/pull/13415) ([Ferroin](https://github.com/Ferroin))
-- Modify PID monitoring \(ebpf.plugin\) [\#13397](https://github.com/netdata/netdata/pull/13397) ([thiagoftsm](https://github.com/thiagoftsm))
 
 ## [v1.36.1](https://github.com/netdata/netdata/tree/v1.36.1) (2022-08-15)
 
@@ -346,13 +354,6 @@
 - Set value to SN\_EMPTY\_SLOT if flags is SN\_EMPTY\_SLOT [\#13417](https://github.com/netdata/netdata/pull/13417) ([MrZammler](https://github.com/MrZammler))
 - Add missing comma \(handle coverity warning CID 379360\) [\#13413](https://github.com/netdata/netdata/pull/13413) ([stelfrag](https://github.com/stelfrag))
 - codacy/lgtm ignore judy sources [\#13411](https://github.com/netdata/netdata/pull/13411) ([underhood](https://github.com/underhood))
-- Send chart context with alert events to the cloud [\#13409](https://github.com/netdata/netdata/pull/13409) ([MrZammler](https://github.com/MrZammler))
-- Remove SIGSEGV and SIGABRT \(ebpf.plugin\) [\#13407](https://github.com/netdata/netdata/pull/13407) ([thiagoftsm](https://github.com/thiagoftsm))
-- minor fixes on metadata fields  [\#13406](https://github.com/netdata/netdata/pull/13406) ([tkatsoulas](https://github.com/tkatsoulas))
-- chore\(health\): remove py web\_log alarms [\#13404](https://github.com/netdata/netdata/pull/13404) ([ilyam8](https://github.com/ilyam8))
-- Store host system information in the database [\#13402](https://github.com/netdata/netdata/pull/13402) ([stelfrag](https://github.com/stelfrag))
-- Fix coverity issue 379240 \(Unchecked return value\) [\#13401](https://github.com/netdata/netdata/pull/13401) ([stelfrag](https://github.com/stelfrag))
-- Fix netdata-updater.sh sha256sum on BSDs [\#13391](https://github.com/netdata/netdata/pull/13391) ([tnyeanderson](https://github.com/tnyeanderson))
 
 ## [v1.35.1](https://github.com/netdata/netdata/tree/v1.35.1) (2022-06-10)
 
