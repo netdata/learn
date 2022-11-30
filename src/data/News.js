@@ -14,7 +14,7 @@ export const News = [
 	{
 		title: <>Netdata data source plugin for Grafana</>,
 		href: 'https://www.netdata.cloud/blog/introducing-netdata-source-plugin-for-grafana',
-		date: 'Nov 22, 2022',
+		date: 'Nov 09, 2022',
 		type: 'Link',
 		description: (
 			<>
