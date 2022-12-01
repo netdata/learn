@@ -84,10 +84,8 @@ configure any of these collectors according to your setup and infrastructure.
 - [Go applications](/docs/agent/collectors/python.d.plugin/go_expvar): Monitor any Go application that exposes its
   metrics with the  `expvar` package from the Go standard library.
 - [Java Spring Boot 2
-  applications](/docs/agent/collectors/go.d.plugin/modules/springboot2/) (Go version):
+  applications](/docs/agent/collectors/go.d.plugin/modules/springboot2/):
   Monitor running Java Spring Boot 2 applications that expose their metrics with the use of the Spring Boot Actuator.
-- [Java Spring Boot 2 applications](/docs/agent/collectors/python.d.plugin/springboot) (Python version): Monitor
-  running Java Spring Boot applications that expose their metrics with the use of the Spring Boot Actuator.
 - [statsd](/docs/agent/collectors/statsd.plugin): Implement a high performance `statsd` server for Netdata.
 - [phpDaemon](/docs/agent/collectors/go.d.plugin/modules/phpdaemon/): Collect worker
   statistics (total, active, idle), and uptime for web and network applications.
