@@ -110,7 +110,7 @@ capabilities.
 				collectorsOutputText += ("#### "+ temp[1]+"\n")
 		collectorsOutputText += ("\n")
 		for key1 in orderedCollectorsBucket[key]:
-			collectorsOutputText += "\t- [{}]({})\n".format(orderedCollectorsBucket[key][key1]["metadata"]["sidebar_label"], orderedCollectorsBucket[key][key1]["metadata"]["custom_edit_url"] )
+			collectorsOutputText += "- [{}]({})\n".format(orderedCollectorsBucket[key][key1]["metadata"]["sidebar_label"], orderedCollectorsBucket[key][key1]["metadata"]["custom_edit_url"] )
 		collectorsOutputText += ("\n")
 
 	collectorsOutputText += ("\n")
@@ -118,9 +118,9 @@ capabilities.
 	for key in orderedNotifactionsBucket:
 		partOfCloud = unpackDictionaryStringToDictionary(orderedNotifactionsBucket[key]["metadata"]["learn_autogeneration_metadata"])["part_of_cloud"]
 		if partOfCloud == False:
-			notificationsOutputText += ("\t- [{}]({}) *\n".format(key,orderedNotifactionsBucket[key]["metadata"]["custom_edit_url"]))
+			notificationsOutputText += ("- [{}]({}) *\n".format(key,orderedNotifactionsBucket[key]["metadata"]["custom_edit_url"]))
 		else:
-			notificationsOutputText += ("\t- [{}]({}) \n".format(key,orderedNotifactionsBucket[key]["metadata"]["custom_edit_url"]))
+			notificationsOutputText += ("- [{}]({}) \n".format(key,orderedNotifactionsBucket[key]["metadata"]["custom_edit_url"]))
 
 	notificationsOutputText += "\n"
 
@@ -137,9 +137,9 @@ capabilities.
 	for key in orderedeExportersBucket:
 		partOfCloud = unpackDictionaryStringToDictionary(orderedeExportersBucket[key]["metadata"]["learn_autogeneration_metadata"])["part_of_cloud"]
 		if partOfCloud == False:
-			exportersOutputText += ("\t- [{}]({}) *\n".format(key,orderedeExportersBucket[key]["metadata"]["custom_edit_url"]))
+			exportersOutputText += ("- [{}]({}) *\n".format(key,orderedeExportersBucket[key]["metadata"]["custom_edit_url"]))
 		else:
-			exportersOutputText += ("\t- [{}]({})\n".format(key,orderedeExportersBucket[key]["metadata"]["custom_edit_url"]))
+			exportersOutputText += ("- [{}]({})\n".format(key,orderedeExportersBucket[key]["metadata"]["custom_edit_url"]))
 
 	exportersOutputText += "\n"
 	exportersOutputText += """
