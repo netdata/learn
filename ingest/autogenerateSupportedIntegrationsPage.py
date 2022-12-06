@@ -117,7 +117,6 @@ capabilities.
 
 	for key in orderedNotifactionsBucket:
 		partOfCloud = unpackDictionaryStringToDictionary(orderedNotifactionsBucket[key]["metadata"]["learn_autogeneration_metadata"])["part_of_cloud"]
-		print(type(partOfCloud))
 		if partOfCloud == False:
 			notificationsOutputText += ("\t- [{}]({}) *\n".format(key,orderedNotifactionsBucket[key]["metadata"]["custom_edit_url"]))
 		else:
