@@ -15,11 +15,12 @@ jobs:
         fetch-depth: 0
 
     - name: Ingest with python
-      uses: actions/setup-python@v4
+      steps:
+      - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-        - run: pip install -r .learn_environment/ingest-requirements.txt
-        - run: python ingest/ingest.py
+      - run: pip install -r .learn_environment/ingest-requirements.txt
+      - run: python ingest/ingest.py
 
     - name: Update kickstart checksum
       run: |
