@@ -25,8 +25,7 @@ def unpackDictionaryStringToDictionary(stringInput):
     return(ast.literal_eval(stringInput))
 
 def generate(index, outputFile):
-	introOutputText = f'''
----
+	introOutputText = f'''---
 title: "Integrations"
 sidebar_label: "Integrations"
 custom_edit_url: "null"
@@ -124,7 +123,7 @@ capabilities.
 
 	notificationsOutputText += "\n"
 
-	exportersOutputText += """
+	notificationsOutputText += """
 
 :::info
 
