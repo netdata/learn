@@ -15,11 +15,9 @@ jobs:
         fetch-depth: 0
 
     - name: Ingest with python
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-python@v4
-          with:
-            python-version: '3.9'
+      uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
         - run: pip install -r .learn_environment/ingest-requirements.txt
         - run: python ingest/ingest.py
 
