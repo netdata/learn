@@ -467,43 +467,6 @@ if __name__ == '__main__':
         # moveDoc(file, restFilesDictionary[file]["learnPath"])
     genIntPage.generate(toPublish,DOCS_PREFIX+"/getting-started/integrations.mdx")
     print("Done")
-
-    # TODO the dict needs to be filename -> oldPath newPath metadata
-
-    # Then we need to sanitize the page and move it to the correct path, if it doesn't have a path for now we continue
-    # on, so it doesn't get moved anywhere
-
-    # learnFilesDict = copy.copy(filesDictionary)
-    # for md in filesDictionary:
-    #     # If I have the metadata needed ot build a path, move the file to the correct destination
-    #     if 'learn_rel_path' in filesDictionary.get(md)['metadata'] \
-    #             and 'learn_topic_type' in filesDictionary.get(md)['metadata'] \
-    #             and 'learn_status' in filesDictionary.get(md)['metadata']:
-    #
-    #         if filesDictionary.get(md)['metadata'].get('learn_status') == "Published" \
-    #                 and filesDictionary.get(md)['metadata'].get('title') == "Claim existing Agent to the Cloud":
-    #
-    #             print(filesDictionary.get(md)['metadata'])
-    #             path = docsPrefix
-    #             # precaution for someone adding a slash to the topic by accident
-    #             if not filesDictionary.get(md)['metadata'].get("learn_topic_type").startswith("/"):
-    #                 path += "/"
-    #             path += filesDictionary.get(md)['metadata'].get("learn_topic_type")
-    #
-    #             if not filesDictionary.get(md)['metadata'].get("learn_rel_path").startswith("/"):
-    #                 path += "/"
-    #             path += filesDictionary.get(md)['metadata'].get("learn_rel_path")
-    #
-    #             if not filesDictionary.get(md)['metadata'].get("learn_rel_path").endswith("/"):
-    #                 path += "/"
-    #             path += os.path.basename(md)
-    #
-    #             print(path)
-    #
-    #             moveDoc(os.path.relpath(md), path)
-
-    # FIX LINKS
-
     print("Fixing github links...")
 
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
