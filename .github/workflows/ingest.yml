@@ -7,20 +7,23 @@ on:
 jobs:
   ingest:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
+    - name: Access Token
+      uses: actions/checkout@v3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0
 
-    - name: Ingest with python
-      steps:
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.9'
-      - run: pip install -r .learn_environment/ingest-requirements.txt
-      - run: python ingest/ingest.py
+    - name: Setup python env
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+      run: |
+        pip install -r .learn_environment/ingest-requirements.txt
+      
+    - name: Ingest process
+      run: |
+        python ingest/ingest.py
 
     - name: Update kickstart checksum
       run: |
