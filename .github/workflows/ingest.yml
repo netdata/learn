@@ -25,10 +25,7 @@ jobs:
       
     - name: Ingest process
       run: |
-        python ingest/ingest.py --repos \
-        netdata/netdata:rework-learn \
-        netdata/go.d.plugin:rework-learn \
-        tkatsoulas/agent-service-discovery:rework-learn
+        python ingest/ingest.py --repos netdata/netdata:rework-learn netdata/go.d.plugin:rework-learn tkatsoulas/agent-service-discovery:rework-learn
 
     - name: Update kickstart checksum
       run: |
