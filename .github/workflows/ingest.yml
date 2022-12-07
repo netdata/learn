@@ -14,10 +14,12 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0
 
-    - name: Setup python env
+    - name: Init python env
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
+    
+    - name: Setup python env
       run: |
         pip install -r .learn_environment/ingest-requirements.txt
       
