@@ -18,14 +18,14 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.9'
-    
+
     - name: Setup python env
       run: |
         pip install -r .learn_environment/ingest-requirements.txt
-      
+
     - name: Ingest process
       run: |
-        python ingest/ingest.py --repos netdata/netdata:rework-learn netdata/go.d.plugin:rework-learn tkatsoulas/agent-service-discovery:rework-learn
+        python ingest/ingest.py --repos netdata/netdata:rework-learn
 
     #- name: Update kickstart checksum
     #  run: |
@@ -37,7 +37,7 @@ jobs:
 
     - name: Verify
       run: git status
-      
+
 #    - name: Create pull request
 #      uses: peter-evans/create-pull-request@v3
 #      with:
