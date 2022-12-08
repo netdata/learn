@@ -397,7 +397,7 @@ if __name__ == '__main__':
     '''
     unSafeCleanUpFolders(TEMP_FOLDER)
 
-    print("Creating a temp directory \"temp_clones\"")
+    print("Creating a temp directory: ",TEMP_FOLDER)
     try:
         os.mkdir(TEMP_FOLDER)
     except FileExistsError:

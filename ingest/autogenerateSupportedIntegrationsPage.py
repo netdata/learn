@@ -71,9 +71,10 @@ capabilities.
 	for key in index.keys():
 		refPrefix = ''
 		if len(index[key]["metadata"]["learn_rel_path"].split("References/"))>1:
-			refPrefix = index[key]["metadata"]["learn_rel_path"].split("References/")[1]
+			refPrefix = index[key]["metadata"]["learn_rel_path"].lower().split("references/")[1]
 			if refPrefix.__contains__("Collectors"):
-				collectorCategory = index[key]["metadata"]["learn_rel_path"].split("References/Collectors references/")[1]
+				print(key)
+				collectorCategory = index[key]["metadata"]["learn_rel_path"].lower().split("references/collectors references/")[1]
 				if collectorCategory in collectorsBucket.keys():
 					collectorsBucket[collectorCategory] = merge(collectorsBucket[collectorCategory], {key: index[key]})
 				else:
