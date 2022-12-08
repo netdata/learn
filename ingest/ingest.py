@@ -354,7 +354,6 @@ if __name__ == '__main__':
     parser.add_argument(
         "--docs-prefix",
         help="Don't save a file with the output.",
-        action="store_true",
         dest="DOCS_PREFIX",
         default="versioned_docs/version-nightly"
     )
