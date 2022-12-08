@@ -72,8 +72,7 @@ module.exports = {
                     position: 'left',
                 },
 				{
-					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
-					label: 'Sign in',
+					type: 'docsVersionDropdown',
 					position: 'right',
 				},
 				{
