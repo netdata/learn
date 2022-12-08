@@ -72,7 +72,7 @@ module.exports = {
                     position: 'left',
                 },
 				{
-					type: 'docsVersionDropdown'
+					type: 'docsVersionDropdown',
 					position: 'right',
 				},
 				{
