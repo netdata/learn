@@ -36,8 +36,8 @@ jobs:
     #    mv tmp "${docfile}" || exit 1
 
     - name: Verify
-      run: ls -la versioned_docs/version-nightly
-
+      run: git status
+      
 #    - name: Create pull request
 #      uses: peter-evans/create-pull-request@v3
 #      with:
