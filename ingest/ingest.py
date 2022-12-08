@@ -396,7 +396,10 @@ if __name__ == '__main__':
     Clean up old clones into a temp dir
     '''
     unSafeCleanUpFolders(TEMP_FOLDER)
-
+    '''
+    Clean up old ingested docs
+    '''
+    unSafeCleanUpFolders(DOCS_PREFIX)
     print("Creating a temp directory: ",TEMP_FOLDER)
     try:
         os.mkdir(TEMP_FOLDER)
@@ -464,10 +467,10 @@ if __name__ == '__main__':
     for file in restFilesDictionary:
         pass
         # moveDoc(file, restFilesDictionary[file]["learnPath"])
-    genIntPage.generate(toPublish,DOCS_PREFIX+"/getting-started/integrations.mdx")
+    print("Generating integrations page")
+    genIntPage.generate(toPublish, DOCS_PREFIX+"/getting-started/integrations.mdx")
     print("Done")
     print("Fixing github links...")
-
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
     # pointing to GitHub relative paths
     for file in toPublish:

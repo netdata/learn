@@ -72,16 +72,15 @@ capabilities.
 		refPrefix = ''
 		if len(index[key]["metadata"]["learn_rel_path"].split("References/"))>1:
 			refPrefix = index[key]["metadata"]["learn_rel_path"].lower().split("references/")[1]
-			if refPrefix.__contains__("Collectors"):
-				print(key)
+			if refPrefix.__contains__("collectors"):
 				collectorCategory = index[key]["metadata"]["learn_rel_path"].lower().split("references/collectors references/")[1]
 				if collectorCategory in collectorsBucket.keys():
 					collectorsBucket[collectorCategory] = merge(collectorsBucket[collectorCategory], {key: index[key]})
 				else:
 					collectorsBucket[collectorCategory] = {key: index[key]}
-			elif refPrefix.__contains__("Exporting"):
+			elif refPrefix.__contains__("exporting"):
 				exportersBucket[index[key]["metadata"]["sidebar_label"]] = index[key]
-			elif refPrefix.__contains__("Notification"):
+			elif refPrefix.__contains__("notification"):
 				notificationsBucket[index[key]["metadata"]["sidebar_label"]] = index[key]
 			else:
 				pass
