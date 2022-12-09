@@ -419,9 +419,7 @@ if __name__ == '__main__':
     # We fetch the markdown files from the repositories
     markdownFiles = list(itertools.chain(fetchMarkdownFromRepo(TEMP_FOLDER + "/netdata"),
                                          fetchMarkdownFromRepo(TEMP_FOLDER + "/go.d.plugin"),
-                                         fetchMarkdownFromRepo(TEMP_FOLDER + "/github"),
-                                         # This line is useful only during the rework
-                                         fetchMarkdownFromRepo(TEMP_FOLDER + "/learn")))
+                                         fetchMarkdownFromRepo(TEMP_FOLDER + "/github")))
 
     print("Files detected: ", len(markdownFiles))
     print("Gathering Learn files...")
