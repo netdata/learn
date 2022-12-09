@@ -1,7 +1,7 @@
 ---
 title: Starts with an active verb, like "Create a widget" or "Delete a widget"
 description: Short summary (will be displayed in search engines)
-custom_edit_url: Edit URL of the source file
+custom_edit_url: null
 keywords: [keywords, describing, the main topics]
 ---
 

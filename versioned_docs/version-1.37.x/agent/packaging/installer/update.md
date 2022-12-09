@@ -1,7 +1,7 @@
 ---
 title: "Update the Netdata Agent"
 description: "If you opted out of automatic updates, you need to update your Netdata Agent to the latest nightly or stable version."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md
+custom_edit_url: null
 ---
 
 

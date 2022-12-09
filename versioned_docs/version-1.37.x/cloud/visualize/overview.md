@@ -1,7 +1,7 @@
 ---
 title: Home, Overview and Single Node view
 description: The Home tab automatically presents relevant information of your War Room, the Overview  uses composite charts from all the nodes in a given War Room and Single Node view provides a look at a specific Node
-custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/visualize/overview.md
+custom_edit_url: null
 ---
 
 ## Home

@@ -1,7 +1,7 @@
 ---
 title: "Use Netdata standalone or as part of your monitoring stack"
 description: "Netdata can run independently or as part of a larger monitoring stack thanks to its flexibility, interoperable core, and exporting features."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/overview/netdata-monitoring-stack.md
+custom_edit_url: null
 ---
 
 

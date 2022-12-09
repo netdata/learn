@@ -2,7 +2,7 @@
 title: "Exporting reference"
 description: "With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis."
 sidebar_label: Exporting reference
-custom_edit_url: https://github.com/netdata/netdata/edit/master/exporting/README.md
+custom_edit_url: null
 ---
 
 

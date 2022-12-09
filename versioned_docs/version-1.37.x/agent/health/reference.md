@@ -1,6 +1,6 @@
 ---
 title: "Health configuration reference"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/health/REFERENCE.md
+custom_edit_url: null
 ---
 
 

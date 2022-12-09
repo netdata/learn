@@ -1,7 +1,7 @@
 ---
 title: "Install Netdata on Synology"
 description: "The Netdata Agent can be installed on AMD64-compatible NAS systems using the 64-bit pre-compiled static binary."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/synology.md
+custom_edit_url: null
 ---
 
 

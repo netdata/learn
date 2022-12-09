@@ -1,6 +1,6 @@
 ---
 title: "Netdata via HAProxy"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/Running-behind-haproxy.md
+custom_edit_url: null
 ---
 
 

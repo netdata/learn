@@ -1,6 +1,6 @@
 ---
 title: "RethinkDB monitoring with Netdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/rethinkdbs/README.md
+custom_edit_url: null
 sidebar_label: "RethinkDB"
 ---
 

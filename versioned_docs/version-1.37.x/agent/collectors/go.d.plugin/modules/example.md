@@ -1,7 +1,7 @@
 ---
 title: "Example module"
 description: "Use this example data collection module, which produces example charts with random values, to better understand how to build your own collector in Go."
-custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/example/README.md
+custom_edit_url: null
 sidebar_label: "Example module"
 ---
 

@@ -2,7 +2,7 @@
 title: "Send alert notifications to PagerDuty"
 description: "Send alerts to your PagerDuty dashboard any time an anomaly or performance issue strikes a node in your infrastructure."
 sidebar_label: "PagerDuty"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/pagerduty/README.md
+custom_edit_url: null
 ---
 
 

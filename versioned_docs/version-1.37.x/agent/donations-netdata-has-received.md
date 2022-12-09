@@ -1,6 +1,6 @@
 ---
 title: "Donations"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/Donations-netdata-has-received.md
+custom_edit_url: null
 ---
 
 

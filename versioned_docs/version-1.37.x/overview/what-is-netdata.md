@@ -1,7 +1,7 @@
 ---
 title: "What is Netdata?"
 description: "Netdata is distributed, real-time performance and health monitoring for systems and applications on a single node or an entire infrastructure."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/overview/what-is-netdata.md
+custom_edit_url: null
 ---
 
 

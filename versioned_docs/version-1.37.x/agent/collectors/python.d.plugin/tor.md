@@ -1,6 +1,6 @@
 ---
 title: "Tor monitoring with Netdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/tor/README.md
+custom_edit_url: null
 sidebar_label: "Tor"
 ---
 

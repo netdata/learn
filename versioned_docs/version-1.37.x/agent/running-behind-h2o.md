@@ -1,6 +1,6 @@
 ---
 title: "Running Netdata behind H2O"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/Running-behind-h2o.md
+custom_edit_url: null
 ---
 
 

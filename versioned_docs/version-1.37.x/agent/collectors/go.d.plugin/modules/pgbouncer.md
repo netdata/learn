@@ -1,7 +1,7 @@
 ---
 title: "PgBouncer monitoring with Netdata"
 description: "Monitor client and server connections and databases statistics."
-custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/pgbouncer/README.md
+custom_edit_url: null
 sidebar_label: "PgBouncer"
 ---
 

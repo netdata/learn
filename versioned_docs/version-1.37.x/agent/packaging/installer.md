@@ -1,6 +1,6 @@
 ---
 title: "Installation guide"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/README.md
+custom_edit_url: null
 ---
 
 import { Install, InstallBox } from '@site/src/components/Install/'

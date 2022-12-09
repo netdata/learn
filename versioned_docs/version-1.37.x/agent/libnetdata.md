@@ -1,6 +1,6 @@
 ---
 title: "libnetdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/libnetdata/README.md
+custom_edit_url: null
 ---
 
 

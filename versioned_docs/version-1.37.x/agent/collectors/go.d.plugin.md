@@ -1,7 +1,7 @@
 ---
 title: go.d.plugin
 description: "go.d.plugin is an external plugin for Netdata, responsible for running individual data collectors written in Go."
-custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/README.md
+custom_edit_url: null
 ---
 
 

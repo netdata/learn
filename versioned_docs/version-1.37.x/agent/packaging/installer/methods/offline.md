@@ -1,7 +1,7 @@
 ---
 title: "Install Netdata on offline systems"
 description: "Install the Netdata Agent on offline/air gapped systems to benefit from real-time, per-second monitoring without connecting to the internet."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md
+custom_edit_url: null
 ---
 
 

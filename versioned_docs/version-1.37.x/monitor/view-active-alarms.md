@@ -1,7 +1,7 @@
 ---
 title: "View active health alarms"
 description: "View active alarms and their rich data to discover and resolve anomalies and performance issues across your infrastructure."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alarms.md
+custom_edit_url: null
 ---
 
 

@@ -2,7 +2,7 @@
 title: "Send notifications to StackPulse"
 description: "Send alerts to your StackPulse Netdata integration any time an anomaly or performance issue strikes a node in your infrastructure."
 sidebar_label: "StackPulse"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/stackpulse/README.md
+custom_edit_url: null
 ---
 
 

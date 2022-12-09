@@ -2,7 +2,7 @@
 title: "Send notifications to Opsgenie"
 description: "Send alerts to your Opsgenie incident response account any time an anomaly or performance issue strikes a node in your infrastructure."
 sidebar_label: "Opsgenie"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/opsgenie/README.md
+custom_edit_url: null
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: Build new dashboards
 description: Design new dashboards that target your infrastructure's unique needs and share them with your team for targeted visual anomaly detection or incident response.
-custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/visualize/dashboards.md
+custom_edit_url: null
 ---
 
 With Netdata Cloud, you can build new dashboards that target your infrastructure's unique needs. Put key metrics from
