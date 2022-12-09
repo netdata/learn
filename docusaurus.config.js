@@ -199,6 +199,18 @@ module.exports = {
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
 					docLayoutComponent: "@theme/DocPage",
 					showLastUpdateTime: true,
+					includeCurrentVersion: false,
+					lastVersion: '1.37.x',
+					versions: {
+						'1.37.x': {
+							label: '1.37.x',
+							path: '',
+						},
+						nightly: {
+							label: 'nightly',
+							path: 'nightly',
+						}
+					},
 				},
 				theme: {
 					customCss: [require.resolve('./src/css/custom.css')],
