@@ -1,7 +1,7 @@
 ---
 title: "HDFS monitoring with Netdata"
 description: "Monitor the health and performance of HDFS nodes with zero configuration, per-second metric granularity, and interactive visualizations."
-custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/hdfs/README.md
+custom_edit_url: null
 sidebar_label: "HDFS"
 ---
 

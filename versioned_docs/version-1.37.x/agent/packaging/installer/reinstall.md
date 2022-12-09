@@ -1,7 +1,7 @@
 ---
 title: "Reinstall the Netdata Agent"
 description: "Troubleshooting installation issues or force an update of the Netdata Agent by reinstalling it using the same method you used during installation."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md
+custom_edit_url: null
 ---
 
 

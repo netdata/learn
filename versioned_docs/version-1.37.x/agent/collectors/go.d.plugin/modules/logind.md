@@ -1,7 +1,7 @@
 ---
 title: "systemd-logind monitoring with Netdata"
 description: "Monitors number of sessions and users with zero configuration, per-second metric granularity, and interactive visualizations."
-custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/logind/README.md
+custom_edit_url: null
 sidebar_label: "systemd-logind"
 ---
 

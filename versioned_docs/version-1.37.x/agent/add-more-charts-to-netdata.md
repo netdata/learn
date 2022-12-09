@@ -1,6 +1,6 @@
 ---
 title: "Add more charts to Netdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/Add-more-charts-to-netdata.md
+custom_edit_url: null
 ---
 
 

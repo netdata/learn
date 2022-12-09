@@ -1,7 +1,7 @@
 ---
 title: "apps.plugin"
 sidebar_label: "Application monitoring (apps.plugin)"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/apps.plugin/README.md
+custom_edit_url: null
 ---
 
 

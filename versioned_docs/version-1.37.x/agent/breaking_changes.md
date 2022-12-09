@@ -1,7 +1,7 @@
 ---
 title: "Breaking changes"
 description: "On occasion, the Netdata team must make significant changes to the open-source Netdata Agent. We publish those breaking changes here for reference."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/BREAKING_CHANGES.md
+custom_edit_url: null
 ---
 
 

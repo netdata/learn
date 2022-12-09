@@ -1,7 +1,7 @@
 ---
 title: "See an overview of your infrastructure"
 description: "With Netdata Cloud's War Rooms, you can see real-time metrics, from any number of nodes in your infrastructure, in composite charts."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/visualize/overview-infrastructure.md
+custom_edit_url: null
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: "timex.plugin"
 description: "Monitor the system clock synchronization state."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/timex.plugin/README.md
+custom_edit_url: null
 ---
 
 

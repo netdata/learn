@@ -1,7 +1,7 @@
 ---
 title: "Enable or configure a collector"
 description: "Every collector is highly configurable, allowing them to collect metrics from any node and any infrastructure."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/collect/enable-configure.md
+custom_edit_url: null
 ---
 
 

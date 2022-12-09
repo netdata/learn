@@ -2,7 +2,7 @@
 title: "Send notifications to Gotify"
 description: "Send alerts to your Gotify instance when an alert gets triggered in Netdata."
 sidebar_label: "Gotify"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/health/notifications/gotify/README.md
+custom_edit_url: null
 ---
 
 

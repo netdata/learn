@@ -1,7 +1,7 @@
 ---
 title: "statsd.plugin"
 description: "The Netdata Agent is a fully-featured StatsD server that collects metrics from any custom application and visualizes them in real-time."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/statsd.plugin/README.md
+custom_edit_url: null
 ---
 
 StatsD is a system to collect data from any application. Applications send metrics to it, usually via non-blocking UDP communication, and StatsD servers collect these metrics, perform a few simple calculations on them and push them to backend time-series databases.

@@ -1,7 +1,7 @@
 ---
 title: "Exporting to Netdata, Prometheus, Grafana stack"
 description: "Using Netdata in conjunction with Prometheus and Grafana."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/exporting/WALKTHROUGH.md
+custom_edit_url: null
 sidebar_label: Netdata, Prometheus, Grafana stack
 ---
 

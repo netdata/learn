@@ -1,6 +1,6 @@
 ---
 title: "Sum"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/web/api/queries/sum/README.md
+custom_edit_url: null
 ---
 
 

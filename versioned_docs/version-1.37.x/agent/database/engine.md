@@ -1,7 +1,7 @@
 ---
 title: "Database engine"
 description: "Netdata's highly-efficient database engine use both RAM and disk for distributed, long-term storage of per-second metrics."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/database/engine/README.md
+custom_edit_url: null
 ---
 
 

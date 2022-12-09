@@ -1,7 +1,7 @@
 ---
 title: "Deploy Kubernetes monitoring with Netdata"
 description: "Deploy Netdata to monitor a Kubernetes cluster to monitor the health, performance, resource utilization, and application metrics of a Kubernetes cluster in real time."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kubernetes.md
+custom_edit_url: null
 ---
 
 

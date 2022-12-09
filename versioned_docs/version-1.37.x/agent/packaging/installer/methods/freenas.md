@@ -1,6 +1,6 @@
 ---
 title: "Install Netdata on FreeNAS"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freenas.md
+custom_edit_url: null
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: "cups.plugin"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/cups.plugin/README.md
+custom_edit_url: null
 ---
 
 

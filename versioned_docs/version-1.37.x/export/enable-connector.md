@@ -1,7 +1,7 @@
 ---
 title: "Enable an exporting connector"
 description: "Learn how to enable and configure any connector using examples to start exporting metrics to external time-series databases in minutes."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md
+custom_edit_url: null
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Unlimited metrics"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/why-netdata/unlimited-metrics.md
+custom_edit_url: null
 ---
 
 

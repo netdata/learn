@@ -1,7 +1,7 @@
 ---
 title: "Install Netdata with Docker"
 date: 2020-04-23
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/docker/README.md
+custom_edit_url: null
 ---
 
 

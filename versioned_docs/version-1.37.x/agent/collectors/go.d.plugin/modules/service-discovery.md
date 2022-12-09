@@ -1,6 +1,6 @@
 ---
 title: "Service discovery"
-custom_edit_url: "https://github.com/netdata/agent-service-discovery/edit/master/README.md"
+custom_edit_url: null
 sidebar_label: "Service discovery"
 learn_status: "Published"
 learn_topic_type: "References"

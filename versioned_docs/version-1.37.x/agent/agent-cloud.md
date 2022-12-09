@@ -1,7 +1,7 @@
 ---
 title: "Use the Agent with Netdata Cloud"
 date: 2020-05-04
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/agent-cloud.md
+custom_edit_url: null
 ---
 
 

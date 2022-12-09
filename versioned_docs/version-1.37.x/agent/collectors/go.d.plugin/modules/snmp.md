@@ -1,6 +1,6 @@
 ---
 title: "SNMP device monitoring with Netdata"
-custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/snmp/README.md
+custom_edit_url: null
 sidebar_label: "SNMP"
 ---
 

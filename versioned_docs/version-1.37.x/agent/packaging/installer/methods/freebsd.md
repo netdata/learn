@@ -1,7 +1,7 @@
 ---
 title: "Install Netdata on FreeBSD"
 description: "Install Netdata on FreeBSD to monitor the health and performance of bare metal or VMs with thousands of real-time, per-second metrics."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freebsd.md
+custom_edit_url: null
 ---
 
 

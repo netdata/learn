@@ -1,6 +1,6 @@
 ---
 title: "Netdata platform support policy"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/PLATFORM_SUPPORT.md
+custom_edit_url: null
 ---
 
 

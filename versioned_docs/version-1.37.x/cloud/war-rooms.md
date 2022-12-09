@@ -3,7 +3,7 @@ title: War Rooms
 description: >- 
    Netdata Cloud uses War Rooms to group related nodes and create insightful composite
    dashboards based on their aggregate health and performance.
-custom_edit_url: https://github.com/netdata/learn/blob/master/docs/cloud/war-rooms.md
+custom_edit_url: null
 ---
 
 War Rooms organize your connected nodes and provide infrastructure-wide dashboards using real-time metrics and

@@ -1,6 +1,6 @@
 ---
 title: "Incremental Sum (`incremental_sum`)"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/web/api/queries/incremental_sum/README.md
+custom_edit_url: null
 ---
 
 

@@ -1,6 +1,6 @@
 ---
 title: "Atlassian Confluence dashboards"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/web/gui/confluence/README.md
+custom_edit_url: null
 ---
 
 

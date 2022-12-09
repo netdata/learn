@@ -1,6 +1,6 @@
 ---
 title: "NVMe devices monitoring with Netdata"
-custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/nvme/README.md
+custom_edit_url: null
 description: "Monitors NVMe devices health metrics using the nvme CLI tool."
 sidebar_label: "NVMe devices"
 ---

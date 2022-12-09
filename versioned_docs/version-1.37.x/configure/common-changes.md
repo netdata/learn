@@ -1,7 +1,7 @@
 ---
 title: "Common configuration changes"
 description: "See the most popular configuration changes to make to the Netdata Agent, including longer metrics retention, reduce sampling, and more."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/configure/common-changes.md
+custom_edit_url: null
 ---
 
 

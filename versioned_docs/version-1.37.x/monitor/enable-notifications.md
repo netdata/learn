@@ -1,7 +1,7 @@
 ---
 title: "Enable alarm notifications"
 description: "Send Netdata alarms from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md
+custom_edit_url: null
 ---
 
 

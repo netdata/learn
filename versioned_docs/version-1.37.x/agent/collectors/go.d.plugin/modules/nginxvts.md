@@ -1,6 +1,6 @@
 ---
 title: "NGINX VTS monitoring"
-custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/nginxvts/README.md
+custom_edit_url: null
 sidebar_label: "NGINX VTS"
 ---
 

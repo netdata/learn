@@ -1,7 +1,7 @@
 ---
 title: "Interact with dashboards and charts"
 description: "Zoom, highlight, and pan through time on hundreds of real-time, interactive charts to quickly discover the root cause of any anomaly."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/visualize/interact-dashboards-charts.md
+custom_edit_url: null
 ---
 
 

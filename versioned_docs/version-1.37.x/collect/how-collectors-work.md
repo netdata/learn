@@ -1,7 +1,7 @@
 ---
 title: "How Netdata's metrics collectors work"
 description: "When Netdata starts, and with zero configuration, it auto-detects thousands of data sources and immediately collects per-second metrics."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/collect/how-collectors-work.md
+custom_edit_url: null
 ---
 
 

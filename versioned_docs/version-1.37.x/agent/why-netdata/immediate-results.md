@@ -1,6 +1,6 @@
 ---
 title: "Immediate results"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/why-netdata/immediate-results.md
+custom_edit_url: null
 ---
 
 

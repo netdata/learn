@@ -1,7 +1,7 @@
 ---
 title: "Uninstall Netdata"
 description: "If you are no longer interested in using the Netdata Agent, use the self-contained uninstaller to remove all traces of binaries and configuration files."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md
+custom_edit_url: null
 ---
 
 

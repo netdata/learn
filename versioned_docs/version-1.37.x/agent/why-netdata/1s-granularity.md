@@ -1,6 +1,6 @@
 ---
 title: "1s granularity"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/why-netdata/1s-granularity.md
+custom_edit_url: null
 ---
 
 

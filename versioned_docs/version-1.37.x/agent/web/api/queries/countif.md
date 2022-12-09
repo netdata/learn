@@ -1,6 +1,6 @@
 ---
 title: "CountIf"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/web/api/queries/countif/README.md
+custom_edit_url: null
 ---
 
 

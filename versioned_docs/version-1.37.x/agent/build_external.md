@@ -1,7 +1,7 @@
 ---
 title: "External build-system"
 date: 2020-03-31
-custom_edit_url: https://github.com/netdata/netdata/edit/master/build_external/README.md
+custom_edit_url: null
 ---
 
 

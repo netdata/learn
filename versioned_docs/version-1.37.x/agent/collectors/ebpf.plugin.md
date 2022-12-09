@@ -2,7 +2,7 @@
 title: "eBPF monitoring with Netdata"
 description: "Use Netdata's extended Berkeley Packet Filter (eBPF) collector to monitor kernel-level metrics about your
 complex applications with per-second granularity."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/ebpf.plugin/README.md
+custom_edit_url: null
 sidebar_label: "eBPF"
 ---
 

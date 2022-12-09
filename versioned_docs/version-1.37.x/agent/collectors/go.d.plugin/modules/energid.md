@@ -1,7 +1,7 @@
 ---
 title: "Energi Core Wallet monitoring with Netdata"
 description: "Monitor the health and performance of Energi Core Wallets with zero configuration, per-second metric granularity, and interactive visualizations."
-custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/energid/README.md
+custom_edit_url: null
 sidebar_label: "Energi Core Wallet"
 ---
 

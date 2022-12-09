@@ -1,6 +1,6 @@
 ---
 title: "UPS/PDU monitoring with Netdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/nut/README.md
+custom_edit_url: null
 sidebar_label: "UPS/PDU"
 ---
 

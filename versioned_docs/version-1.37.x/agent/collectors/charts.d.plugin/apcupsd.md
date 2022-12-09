@@ -1,6 +1,6 @@
 ---
 title: "APC UPS monitoring with Netdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/apcupsd/README.md
+custom_edit_url: null
 sidebar_label: "APC UPS"
 ---
 

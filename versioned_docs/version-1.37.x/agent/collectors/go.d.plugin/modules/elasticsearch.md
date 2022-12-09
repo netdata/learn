@@ -1,7 +1,7 @@
 ---
 title: "Elasticsearch monitoring with Netdata"
 description: "Monitor the health and performance of Elasticsearch engines with zero configuration, per-second metric granularity, and interactive visualizations."
-custom_edit_url: https://github.com/netdata/go.d.plugin/edit/master/modules/elasticsearch/README.md
+custom_edit_url: null
 sidebar_label: "Elasticsearch"
 ---
 

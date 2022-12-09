@@ -1,7 +1,7 @@
 ---
 title: "Configure the Netdata Agent"
 description: "Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/configure/nodes.md
+custom_edit_url: null
 ---
 
 
