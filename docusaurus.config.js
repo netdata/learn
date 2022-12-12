@@ -76,6 +76,11 @@ module.exports = {
 					position: 'right',
 				},
 				{
+					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
+					label: 'Sign in',
+					position: 'right',
+				},
+				{
 					href: 'https://github.com/netdata/netdata',
 					position: 'right',
 					className: 'header-github-link',
