@@ -280,3 +280,8 @@ to = "/docs/agent/collectors/go.d.plugin/modules/snmp"
 [[redirects]]
 from = "/docs/agent/backends/prometheus"
 to = "/docs/agent/exporting/prometheus"
+
+# misc redirects
+[[redirects]]
+from = "/docs/next/agent/collectors/go.d.plugin/modules/ping"
+to = "/docs/agent/collectors/go.d.plugin/modules/ping"
