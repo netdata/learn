@@ -28,7 +28,7 @@ def generate(index, outputFile):
 	introOutputText = f'''---
 title: "Integrations"
 sidebar_label: "Integrations"
-custom_edit_url: "null"
+custom_edit_url: null
 learn_status: "Published"
 learn_topic_type: "Getting started"
 learn_rel_path: "Getting started"
