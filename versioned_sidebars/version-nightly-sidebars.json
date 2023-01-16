@@ -6,7 +6,8 @@
       "items": [
         "getting-started/introduction",
         "getting-started/integrations",
-        "getting-started/supported-platforms"
+        "getting-started/supported-platforms",
+        "getting-started/1-minute-deployment"
       ]
     },
     {
