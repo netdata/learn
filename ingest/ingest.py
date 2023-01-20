@@ -483,7 +483,12 @@ if __name__ == '__main__':
     # pointing to GitHub relative paths
     for file in toPublish:
         convertGithubLinks(toPublish[file]["learnPath"], toPublish, DOCS_PREFIX)
-
+    print("These files are in repos and dont have valid metadata to publish them in learn")
+    for file in restFilesDictionary:
+        if "custom_edit_url" in restFilesDictionary[file]["metadata"]:
+            print(restFilesDictionary[file]["metadata"]["custom_edit_url"])
+        else:
+            print(restFilesDictionary[file]["ingestedRepo"])
     print("Done.")
 
     unSafeCleanUpFolders(TEMP_FOLDER)
