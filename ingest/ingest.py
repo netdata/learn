@@ -88,13 +88,25 @@ def unSafeCleanUpFolders(folderToDelete):
         print("Couldn't delete the folder due to the exception: \n", e)
 
 
-def safeCleanUpFolders(folderToDelete):
+def safeCleanUpLearnFolders(folderToDelete):
     """
     Cleanup every file in the specified folderToDelete, that doesn't have the `part_of_learn: True`
-    metadata in it's metadata
+    metadata in its metadata. It also prints a list of the files that don't have this kind of
     """
-    pass
-
+    markdownFiles = fetchMarkdownFromRepo(folderToDelete)
+    print("Files in the {} folder #{} which are about to be deleted".format(folderToDelete, len(markdownFiles)))
+    unmanagedFiles = []
+    for md in markdownFiles:
+        metadata = readMetadataFromDoc(md)
+        try:
+            if metadata["part_of_learn"] == "True":
+                pass
+            else:
+                os.remove(md)
+        except KeyError:
+            pass
+        except Exception as e:
+            print("Couldnt delete the {} file reason: {}".format(md, e))
 def verifyStringIsDictionary(stringInput):
     try:
         if type(ast.literal_eval(stringInput)) is dict:
@@ -399,7 +411,7 @@ if __name__ == '__main__':
     '''
     Clean up old ingested docs
     '''
-    unSafeCleanUpFolders(DOCS_PREFIX)
+    safeCleanUpLearnFolders(DOCS_PREFIX)
     print("Creating a temp directory: ",TEMP_FOLDER)
     try:
         os.mkdir(TEMP_FOLDER)
@@ -417,9 +429,7 @@ if __name__ == '__main__':
     # This line is useful only during the rework
     print(cloneRepo("netdata", "learn", "rework-learn", 1, TEMP_FOLDER + "/"))
     # We fetch the markdown files from the repositories
-    markdownFiles = list(itertools.chain(fetchMarkdownFromRepo(TEMP_FOLDER + "/netdata"),
-                                         fetchMarkdownFromRepo(TEMP_FOLDER + "/go.d.plugin"),
-                                         fetchMarkdownFromRepo(TEMP_FOLDER + "/github")))
+    markdownFiles = fetchMarkdownFromRepo(TEMP_FOLDER)
 
     print("Files detected: ", len(markdownFiles))
     print("Gathering Learn files...")
