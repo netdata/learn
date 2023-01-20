@@ -330,7 +330,7 @@ def convertGithubLinks(path, fileDict, DOCS_PREFIX):
                     urls.append(i.split('#')[0])
                 except:
                     urls.append(i)
-            print("************************\n",urls,"************************\n")
+            #print("************************\n",urls,"************************\n")
             for url in urls:
                 # This is replaceString's default value
                 # If the URL is a GitHub one
@@ -339,9 +339,9 @@ def convertGithubLinks(path, fileDict, DOCS_PREFIX):
                 # In the line we are examining, replace the URL string with the new replaceString value
                 try:
                     line = line.replace(url, fileDict[url])
-                    print("Parsed:", url,"  ->  ", fileDict[url])
+                    #print("Parsed:", url,"  ->  ", fileDict[url])
                 except:
-                    print("URL COULD BE PARSED:", url)
+                    #print("URL COULD BE PARSED:", url)
                     pass
         # In each iteration we append the new line string, so we essentially re-build the file line-by-line,
         # and in the process some line URLS will be fixed to relative "/docs/" links
