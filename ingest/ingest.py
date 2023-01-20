@@ -88,13 +88,28 @@ def unSafeCleanUpFolders(folderToDelete):
         print("Couldn't delete the folder due to the exception: \n", e)
 
 
-def safeCleanUpFolders(folderToDelete):
+def safeCleanUpLearnFolders(folderToDelete):
     """
     Cleanup every file in the specified folderToDelete, that doesn't have the `part_of_learn: True`
-    metadata in it's metadata
+    metadata in its metadata. It also prints a list of the files that don't have this kind of
     """
-    pass
-
+    deletedFiles = []
+    markdownFiles = fetchMarkdownFromRepo(folderToDelete)
+    print("Files in the {} folder #{} which are about to be deleted".format(folderToDelete, len(markdownFiles)))
+    unmanagedFiles = []
+    for md in markdownFiles:
+        metadata = readDocusaurusMetadataFromDoc(md)
+        try:
+            if "part_of_learn" in metadata.keys():
+                # Reductant condition to emphasize what we are looking for when we clean up learn files
+                if metadata["part_of_learn"] == "True":
+                    pass
+            else:
+                deletedFiles.append(md)
+                os.remove(md)
+        except Exception as e:
+            print("Couldnt delete the {} file reason: {}".format(md, e))
+    print("Cleaned up #{} files under {} folder".format(len(deletedFiles), folderToDelete))
 def verifyStringIsDictionary(stringInput):
     try:
         if type(ast.literal_eval(stringInput)) is dict:
@@ -181,7 +196,7 @@ def fetchMarkdownFromRepo(outputFolder):
     return glob.glob(outputFolder + '/**/*.md*', recursive=True)
 
 
-def readMetadataFromDoc(pathToPath):
+def readHiddenMetadataFromDoc(pathToPath):
     """
     Taking a path of a file as input
     Identify the area with pattern " <!-- ...multiline string -->" and  converts them
@@ -191,6 +206,35 @@ def readMetadataFromDoc(pathToPath):
     with open(pathToPath, "r+") as fd:
         rawText = "".join(fd.readlines())
         pattern = r"(<!--\n)((.|\n)*?)(\n-->)"
+        matchGroup = re.search(pattern, rawText)
+        if matchGroup:
+            rawMetadata = matchGroup[2]
+            listMetadata = rawMetadata.split("\n")
+            while listMetadata:
+                line = listMetadata.pop(0)
+                splitInKeywords = line.split(": ",1)
+                key = splitInKeywords[0]
+                value = splitInKeywords[1]
+                if verifyStringIsDictionary(value):
+                    value = unpackDictionaryStringToDictionary(value)
+                # If it's a multiline string
+                while listMetadata and len(listMetadata[0].split(": ",1)) <= 1:
+                    line = listMetadata.pop(0)
+                    value = value + line.lstrip(' ')
+                value = value.strip("\"")
+                metadataDictionary[key] = value.lstrip('>-')
+    return metadataDictionary
+
+def readDocusaurusMetadataFromDoc(pathToPath):
+    """
+    Taking a path of a file as input
+    Identify the area with pattern " <!-- ...multiline string -->" and  converts them
+    to a dictionary of key:value pairs
+    """
+    metadataDictionary = {}
+    with open(pathToPath, "r+") as fd:
+        rawText = "".join(fd.readlines())
+        pattern = r"(---\n)((.|\n)*?)(\n---)"
         matchGroup = re.search(pattern, rawText)
         if matchGroup:
             rawMetadata = matchGroup[2]
@@ -399,7 +443,7 @@ if __name__ == '__main__':
     '''
     Clean up old ingested docs
     '''
-    unSafeCleanUpFolders(DOCS_PREFIX)
+    safeCleanUpLearnFolders(DOCS_PREFIX)
     print("Creating a temp directory: ",TEMP_FOLDER)
     try:
         os.mkdir(TEMP_FOLDER)
@@ -417,9 +461,7 @@ if __name__ == '__main__':
     # This line is useful only during the rework
     print(cloneRepo("netdata", "learn", "rework-learn", 1, TEMP_FOLDER + "/"))
     # We fetch the markdown files from the repositories
-    markdownFiles = list(itertools.chain(fetchMarkdownFromRepo(TEMP_FOLDER + "/netdata"),
-                                         fetchMarkdownFromRepo(TEMP_FOLDER + "/go.d.plugin"),
-                                         fetchMarkdownFromRepo(TEMP_FOLDER + "/github")))
+    markdownFiles = fetchMarkdownFromRepo(TEMP_FOLDER)
 
     print("Files detected: ", len(markdownFiles))
     print("Gathering Learn files...")
@@ -428,7 +470,7 @@ if __name__ == '__main__':
     reducedMarkdownFiles = []
     for md in markdownFiles:
         #print("File: ", md)
-        metadata = readMetadataFromDoc(md)
+        metadata = readHiddenMetadataFromDoc(md)
         # Check to see if the dictionary returned is empty
         if len(metadata) > 0:
             #print(metadata)
@@ -473,7 +515,14 @@ if __name__ == '__main__':
     # pointing to GitHub relative paths
     for file in toPublish:
         convertGithubLinks(toPublish[file]["learnPath"], toPublish, DOCS_PREFIX)
-
+    print("These files are in repos and dont have valid metadata to publish them in learn")
+    for file in restFilesDictionary:
+        if "custom_edit_url" in restFilesDictionary[file]["metadata"]:
+            print(restFilesDictionary[file]["metadata"]["custom_edit_url"])
+        else:
+            print("Custom edit url not found, printing any metadata and its position when we ingest it" )
+            print(json.dumps(restFilesDictionary[file]["metadata"], indent=4))
+            print("&Position: ", file)
     print("Done.")
 
     unSafeCleanUpFolders(TEMP_FOLDER)
