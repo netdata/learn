@@ -1,0 +1,35 @@
+---
+title: "Flock"
+sidebar_label: "Flock"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/health/notifications/flock/README.md"
+learn_status: "Published"
+learn_topic_type: "Tasks"
+learn_rel_path: "Setup/Notification/Agent"
+learn_autogeneration_metadata: "{'part_of_cloud': False, 'part_of_agent': True}"
+---
+
+
+This is what you will get:
+
+![Flock](https://i.imgur.com/ok9bRzw.png)
+
+You need:
+
+The **incoming webhook URL** as given by flock.com. 
+You can use the same on all your Netdata servers (or you can have multiple if you like - your decision).
+
+Get them here: <https://admin.flock.com/webhooks>
+
+Set them in `/etc/netdata/health_alarm_notify.conf` (to edit it on your system run `/etc/netdata/edit-config health_alarm_notify.conf`), like this:
+
+```
+###############################################################################
+
+SEND_FLOCK="YES"
+
+FLOCK_WEBHOOK_URL="https://api.flock.com/hooks/sendMessage/XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+DEFAULT_RECIPIENT_FLOCK="alarms"
+```
+
+
