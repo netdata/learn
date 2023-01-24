@@ -196,14 +196,14 @@ def fetchMarkdownFromRepo(outputFolder):
     return glob.glob(outputFolder + '/**/*.md*', recursive=True)
 
 
-def readHiddenMetadataFromDoc(pathToPath):
+def readHiddenMetadataFromDoc(pathToFile):
     """
     Taking a path of a file as input
     Identify the area with pattern " <!-- ...multiline string -->" and  converts them
     to a dictionary of key:value pairs
     """
     metadataDictionary = {}
-    with open(pathToPath, "r+") as fd:
+    with open(pathToFile, "r+") as fd:
         rawText = "".join(fd.readlines())
         pattern = r"((<!--|---)\n)((.|\n)*?)(\n(-->|---))"
         matchGroup = re.search(pattern, rawText)
@@ -225,14 +225,14 @@ def readHiddenMetadataFromDoc(pathToPath):
                 metadataDictionary[key] = value.lstrip('>-')
     return metadataDictionary
 
-def readDocusaurusMetadataFromDoc(pathToPath):
+def readDocusaurusMetadataFromDoc(pathToFile):
     """
     Taking a path of a file as input
     Identify the area with pattern " <!-- ...multiline string -->" and  converts them
     to a dictionary of key:value pairs
     """
     metadataDictionary = {}
-    with open(pathToPath, "r+") as fd:
+    with open(pathToFile, "r+") as fd:
         rawText = "".join(fd.readlines())
         pattern = r"((<!--|---)\n)((.|\n)*?)(\n(-->|---))"
         matchGroup = re.search(pattern, rawText)
@@ -459,7 +459,7 @@ if __name__ == '__main__':
     for key in defaultRepos.keys():
         print(cloneRepo(defaultRepos[key]["owner"], key, defaultRepos[key]["branch"], 1, TEMP_FOLDER + "/"))
     # This line is useful only during the rework
-    print(cloneRepo("netdata", "learn", "rework-learn", 1, TEMP_FOLDER + "/"))
+    #print(cloneRepo("netdata", "learn", "rework-learn", 1, TEMP_FOLDER + "/"))
     # We fetch the markdown files from the repositories
     markdownFiles = fetchMarkdownFromRepo(TEMP_FOLDER)
 
