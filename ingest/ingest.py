@@ -205,7 +205,7 @@ def readHiddenMetadataFromDoc(pathToPath):
     metadataDictionary = {}
     with open(pathToPath, "r+") as fd:
         rawText = "".join(fd.readlines())
-        pattern = r"((<!--|---)\n)((.|\n)*?)(\n(-->|---))""
+        pattern = r"((<!--|---)\n)((.|\n)*?)(\n(-->|---))"
         matchGroup = re.search(pattern, rawText)
         if matchGroup:
             rawMetadata = matchGroup[3]
@@ -234,7 +234,7 @@ def readDocusaurusMetadataFromDoc(pathToPath):
     metadataDictionary = {}
     with open(pathToPath, "r+") as fd:
         rawText = "".join(fd.readlines())
-        pattern = r"((<!--|---)\n)((.|\n)*?)(\n(-->|---))""
+        pattern = r"((<!--|---)\n)((.|\n)*?)(\n(-->|---))"
         matchGroup = re.search(pattern, rawText)
         if matchGroup:
             rawMetadata = matchGroup[3]
