@@ -1,5 +1,6 @@
 .Container * {
   margin: 0 !important;
+  white-space: break-spaces;
   /* // border-radius: 5px 5px 0 0 !important; */
 }
 
