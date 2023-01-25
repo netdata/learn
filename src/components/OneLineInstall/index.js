@@ -150,7 +150,7 @@ export function OneLineInstallCurl() {
 
   function handleCloudChange() {
     if (currentCloudOption === '' && cloudChecked == false) {
-      setCurrentCloudOption(' --claim-token YOUR_CLAIM_TOKEN --claim-rooms YOUR_ROOM_ID');
+      setCurrentCloudOption(' --claim-token YOUR_CLAIM_TOKEN --claim-rooms YOUR_ROOM_ID_A,YOUR_ROOM_ID_B');
       setCloudChecked(true);
     } else {
       setCurrentCloudOption('');
