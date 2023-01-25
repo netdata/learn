@@ -25,7 +25,7 @@ jobs:
 
     - name: Ingest process
       run: |
-        python ingest/ingest.py --repos netdata/netdata:rework-learn
+        python ingest/ingest.py
 
     - name: Update kickstart checksum
       run: |
