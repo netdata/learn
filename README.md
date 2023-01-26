@@ -85,17 +85,24 @@ $ docusaurus start
 ## Ingest and process documentation files
 
 As explained in the [contributing to Netdata's documentation](#contributing-to-netdatas-documentation) section above,
-most of the files in the `/docs` folder are mirrors of their original versions in the `netdata/netdata` repository.
+most of the files in the `/docs` folder are mirrors of their original versions of the netdata's codebase document files.
 
-Documentation arrives in this repository via the [`ingest.js`](/scripts/ingest.js) script. This script uses the GitHub
-API to gather and process all of Netdata's documentation, including changing file paths and overwriting links between
-documents, then places the files in the `/docs`, `/guides`, and `/contribute` folders.
+### Repos ingested 
 
-Read more about [how the ingest script works](/scripts/ingest.md).
+At the moment we ingest documention from the following repos:
+
+- netdata/netdata
+- netdata/go.d.plugin
+- netdata/.github
+- netdata/agent-service-discovery
+
+Documentation arrives in this repository via the [`ingest`](/ingest/ingest.py) script. This script clonesthe repos
+and process all of Netdata's documentation, including changing file paths and overwriting links between
+documents, then places the files in the `/docs` (or the latest version, `current: versioned_docs/version-nightly`.
 
 ### Automated ingest via GitHub Actions
 
-This repo uses a GitHub Action called [`ingest.yml`](.github/ingest.yml) to run the `ingest.js` process.
+This repo uses a GitHub Action called [`ingest.yml`](.github/ingest.yml) to run the `ingest/oingest.py` process.
 
 This action runs at 14:00 UTC every day.
 
@@ -116,14 +123,63 @@ As with the automated ingest, the action creates a PR if there are any changes.
 
 ### Manual ingest via local environment
 
-You can also run the script manually in a local development environment.
+You can also run the script manually in a local development environment. Most of the times you will make changes in 
+any repo of the [repos](#repos-ingested) (or your forks) we mentioned above. To do that you need to setup your local 
+environmentfor the ingest process to work. This script is a python script and has it's own dependencies (seperate 
+from the docusaurus framework).
 
-```bash
-node ingest.js
-```
+To run the ingest process and spin up a local developement environment of your work you need: 
 
-If there are changes, you will see them with `git status`. You can then add, commit, and push these changes to the
-repository and create a new PR.
+#### Linux environments or WSL
+
+##### Prerequisites
+
+- Python v3.9+
+
+##### Steps
+
+1. Navigate on you netdata/learn repo
+
+2. [Optional] Create a local test branch otherwise work on the `master` branch
+
+3. Create a python virtual environment
+
+  ```bash
+  python -m venv myenv
+  ```
+  
+  The name `myenv` is included in the `.gitignore` file of this repo
+
+4. Activate your environment
+
+  ```bash
+  source myenv/bin/activate
+  ```
+
+5. Run the ingest process to fetch the documents you are working on from one or multiple repos.
+
+  ```bash
+  python ingest/ingest.py --repos <owner>/<repo>:<branch>
+  ```
+  
+  for example, let's assume that you made some changes in the markdown files of `netdata/netdata` repo (branch: patch1)
+  and in your own fork `user1/go.d.plugin` repo (branch: user1-patch).
+
+  ```bash
+  python ingest/ingest.py --repos netdata/netdata:patch1 user1/go.d.plugin:user1-patch
+  ```
+
+6. Build a local website, 
+
+
+  ```bash
+  yarn start
+  ```
+
+7. [Optional] If you dont see your document as expected on your left sidebar you need to hardcoded in the version of the 
+   docs (version nightly) and after the merging of your work also to open a PR in then netadata/learn repo only with 
+   the changes in the sidebar. [WIP automated sidebar]
+
 
 ## Using JSX components in Markdown (`.mdx`) files
 
