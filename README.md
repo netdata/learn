@@ -125,7 +125,7 @@ As with the automated ingest, the action creates a PR if there are any changes.
 
 You can also run the script manually in a local development environment. Most of the times you will make changes in 
 any repo of the [repos](#repos-ingested) (or your forks) we mentioned above. To do that you need to setup your local 
-environmentfor the ingest process to work. This script is a python script and has it's own dependencies (seperate 
+environment for the ingest process to work. This script is a python script and has it's own dependencies (seperate 
 from the docusaurus framework).
 
 To run the ingest process and spin up a local developement environment of your work you need: 
@@ -138,19 +138,19 @@ To run the ingest process and spin up a local developement environment of your w
 
 ##### Steps
 
-1. Navigate on you netdata/learn repo
+1. Navigate under your `netdata/learn` local clone.
 
-2. [Optional] Create a local test branch otherwise work on the `master` branch
+2. [Optional] Create a local test branch otherwise work on the `master` branch.
 
-3. Create a python virtual environment
+3. Create a python virtual environment.
 
   ```bash
   python -m venv myenv
   ```
   
-  The name `myenv` is included in the `.gitignore` file of this repo
+  The name `myenv` is included in the `.gitignore` file of this repo.
 
-4. Activate your environment
+4. Activate your environment.
 
   ```bash
   source myenv/bin/activate
@@ -163,7 +163,7 @@ To run the ingest process and spin up a local developement environment of your w
   ```
   
   for example, let's assume that you made some changes in the markdown files of `netdata/netdata` repo (branch: patch1)
-  and in your own fork `user1/go.d.plugin` repo (branch: user1-patch).
+  and on your own fork `user1/go.d.plugin` repo (branch: user1-patch).
 
   ```bash
   python ingest/ingest.py --repos netdata/netdata:patch1 user1/go.d.plugin:user1-patch
@@ -176,8 +176,8 @@ To run the ingest process and spin up a local developement environment of your w
   yarn start
   ```
 
-7. [Optional] If you dont see your document as expected on your left sidebar you need to hardcoded in the version of the 
-   docs (version nightly) and after the merging of your work also to open a PR in then netadata/learn repo only with 
+7. [Optional] If you dont see your document as expected on your left sidebar you need to hard code it in the sidebar of the 
+   docs (default: version nightly) and after the merging of your work also to open a PR in then netadata/learn repo only with 
    the changes in the sidebar. [WIP automated sidebar]
 
 
