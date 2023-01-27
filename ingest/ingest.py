@@ -193,7 +193,7 @@ def createMDXPathFromMetdata(metadata):
 
 
 def fetchMarkdownFromRepo(outputFolder):
-    return glob.glob(outputFolder + '/**/*.md*', recursive=True)
+    return (glob.glob(outputFolder + '/**/*.md*', recursive=True) + glob.glob(outputFolder + '/.**/*.md*', recursive=True))
 
 
 def readHiddenMetadataFromDoc(pathToFile):
@@ -437,7 +437,6 @@ if __name__ == '__main__':
     #print(cloneRepo("netdata", "learn", "rework-learn", 1, TEMP_FOLDER + "/"))
     # We fetch the markdown files from the repositories
     markdownFiles = fetchMarkdownFromRepo(TEMP_FOLDER)
-
     print("Files detected: ", len(markdownFiles))
     print("Gathering Learn files...")
     # After this we need to keep only the files that have metadata, so we will fetch metadata for everything and keep
