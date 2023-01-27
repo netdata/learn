@@ -36,8 +36,8 @@ handbook](https://learn.netdata.cloud/contribute/handbook) that we have compiled
 Clone this repository.
 
 ```bash
-git clone git@github.com:netdata/netdata-learn-docusaurus.git
-cd netdata-learn-docusaurus
+git clone https://github.com/netdata/learn.git
+cd learn
 ```
 
 Install dependencies.
