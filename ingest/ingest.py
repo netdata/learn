@@ -521,7 +521,7 @@ if __name__ == '__main__':
     print("Fixing github links...")
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
     # pointing to GitHub relative paths
-    print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), indent=4))
+    #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), indent=4))
     for file in toPublish:
         convertGithubLinks(toPublish[file]["learnPath"], reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), DOCS_PREFIX)
     print("These files are in repos and dont have valid metadata to publish them in learn")
