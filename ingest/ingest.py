@@ -51,21 +51,25 @@ defaultRepos = {
         {
             "owner": "netdata",
             "branch": "master",
+            "HEAD" : "master",
         },
     "go.d.plugin":
         {
             "owner": "netdata",
             "branch": "master",
+            "HEAD" : "master",
         },
     ".github":
         {
             "owner": "netdata",
             "branch": "main",
+            "HEAD" : "main",
         },
     "agent-service-discovery":
         {
             "owner": "netdata",
             "branch": "master",
+            "HEAD" : "master",
         }
 }
 
@@ -86,6 +90,27 @@ def unSafeCleanUpFolders(folderToDelete):
         print("Done")
     except Exception as e:
         print("Couldn't delete the folder due to the exception: \n", e)
+
+
+def produceGHViewLinkForRepo(repo, filePath):
+    """
+    This function return the GitHub link (view link) of a repo e.g <owner>/<repo>
+    Limitation it produces only  the master, main links only for the netdata org
+    """
+    if repo == ".github":
+        return("https://github.com/netdata/{}/blob/main/{}".format(repo, filePath))
+    else:
+        return("https://github.com/netdata/{}/blob/master/{}".format(repo, filePath))
+
+def produceGHEditLinkForRepo(repo, filePath):
+    """
+    This function return the GitHub link (view link) of a repo e.g <owner>/<repo>
+    Limitation it produces only  the master, main links only for the netdata org
+    """
+    if repo == ".github":
+        return("https://github.com/netdata/{}/edit/main/{}".format(repo, filePath))
+    else:
+        return("https://github.com/netdata/{}/edit/master/{}".format(repo, filePath))
 
 
 def safeCleanUpLearnFolders(folderToDelete):
@@ -110,6 +135,7 @@ def safeCleanUpLearnFolders(folderToDelete):
         except Exception as e:
             print("Couldnt delete the {} file reason: {}".format(md, e))
     print("Cleaned up #{} files under {} folder".format(len(deletedFiles), folderToDelete))
+
 def verifyStringIsDictionary(stringInput):
     try:
         if type(ast.literal_eval(stringInput)) is dict:
@@ -292,14 +318,21 @@ def sanitizePage(path):
     file.writelines(output)
 
 
-def reductToPublishInGHLinksCorrelation(inputMatrix, DOCS_PREFIX, DOCS_PATH_LEARN):
+def reductToPublishInGHLinksCorrelation(inputMatrix, DOCS_PREFIX, DOCS_PATH_LEARN, TEMP_FOLDER):
     """
     This function takes as an argument our Matrix of the Ingest process and creates a new dictionary with key value
     pairs the Source file (keys) to the Target file (value: learn_absolute path)
     """
     outputDictionary = dict()
     for x in inputMatrix:
-        outputDictionary[(inputMatrix[x]["metadata"]["custom_edit_url"]).lstrip('"').rstrip('"')] = inputMatrix[x]["learnPath"].split(".mdx")[0].lstrip('"').rstrip('"').replace(DOCS_PREFIX, DOCS_PATH_LEARN)
+        repo = inputMatrix[x]["ingestedRepo"]
+        filePath = x.replace(TEMP_FOLDER+"/"+repo+"/", "")
+        sourceLink = produceGHViewLinkForRepo(repo, filePath)
+        outputDictionary[sourceLink] = inputMatrix[x]["learnPath"].split(".mdx")[0].lstrip('"').rstrip('"').replace(
+            DOCS_PREFIX, DOCS_PATH_LEARN)
+        sourceLink = produceGHEditLinkForRepo(repo, filePath)
+        outputDictionary[sourceLink] = inputMatrix[x]["learnPath"].split(".mdx")[0].lstrip('"').rstrip('"').replace(
+            DOCS_PREFIX, DOCS_PATH_LEARN)
     return (outputDictionary)
 
 def convertGithubLinks(path, fileDict, DOCS_PREFIX):
@@ -475,6 +508,7 @@ if __name__ == '__main__':
     # identify published documents:q
     print("Found Learn files: ", len(toPublish))
     #print(json.dumps(toPublish, indent=4))
+    #print(json.dumps(toPublish, indent=4))
     for file in toPublish:
         copyDoc(file, toPublish[file]["learnPath"])
         sanitizePage(toPublish[file]["learnPath"])
@@ -487,9 +521,9 @@ if __name__ == '__main__':
     print("Fixing github links...")
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
     # pointing to GitHub relative paths
-    #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix), indent=4))
+    print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), indent=4))
     for file in toPublish:
-        convertGithubLinks(toPublish[file]["learnPath"], reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix), DOCS_PREFIX)
+        convertGithubLinks(toPublish[file]["learnPath"], reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), DOCS_PREFIX)
     print("These files are in repos and dont have valid metadata to publish them in learn")
     for file in restFilesDictionary:
         if "custom_edit_url" in restFilesDictionary[file]["metadata"]:
