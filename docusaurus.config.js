@@ -150,10 +150,6 @@ module.exports = {
 							to: 'https://netdata.cloud',
 						},
 						{
-							label: 'News',
-							to: 'https://www.netdata.cloud/news/',
-						},
-						{
 							label: 'Careers',
 							to: 'https://careers.netdata.cloud/',
 						},
