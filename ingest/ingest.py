@@ -51,21 +51,25 @@ defaultRepos = {
         {
             "owner": "netdata",
             "branch": "master",
+            "HEAD" : "master",
         },
     "go.d.plugin":
         {
             "owner": "netdata",
             "branch": "master",
+            "HEAD" : "master",
         },
     ".github":
         {
             "owner": "netdata",
             "branch": "main",
+            "HEAD" : "main",
         },
     "agent-service-discovery":
         {
             "owner": "netdata",
             "branch": "master",
+            "HEAD" : "master",
         }
 }
 
@@ -86,6 +90,27 @@ def unSafeCleanUpFolders(folderToDelete):
         print("Done")
     except Exception as e:
         print("Couldn't delete the folder due to the exception: \n", e)
+
+
+def produceGHViewLinkForRepo(repo, filePath):
+    """
+    This function return the GitHub link (view link) of a repo e.g <owner>/<repo>
+    Limitation it produces only  the master, main links only for the netdata org
+    """
+    if repo == ".github":
+        return("https://github.com/netdata/{}/blob/main/{}".format(repo, filePath))
+    else:
+        return("https://github.com/netdata/{}/blob/master/{}".format(repo, filePath))
+
+def produceGHEditLinkForRepo(repo, filePath):
+    """
+    This function return the GitHub link (view link) of a repo e.g <owner>/<repo>
+    Limitation it produces only  the master, main links only for the netdata org
+    """
+    if repo == ".github":
+        return("https://github.com/netdata/{}/edit/main/{}".format(repo, filePath))
+    else:
+        return("https://github.com/netdata/{}/edit/master/{}".format(repo, filePath))
 
 
 def safeCleanUpLearnFolders(folderToDelete):
@@ -110,6 +135,7 @@ def safeCleanUpLearnFolders(folderToDelete):
         except Exception as e:
             print("Couldnt delete the {} file reason: {}".format(md, e))
     print("Cleaned up #{} files under {} folder".format(len(deletedFiles), folderToDelete))
+
 def verifyStringIsDictionary(stringInput):
     try:
         if type(ast.literal_eval(stringInput)) is dict:
@@ -193,7 +219,7 @@ def createMDXPathFromMetdata(metadata):
 
 
 def fetchMarkdownFromRepo(outputFolder):
-    return glob.glob(outputFolder + '/**/*.md*', recursive=True)
+    return (glob.glob(outputFolder + '/**/*.md*', recursive=True) + glob.glob(outputFolder + '/.**/*.md*', recursive=True))
 
 
 def readHiddenMetadataFromDoc(pathToFile):
@@ -292,6 +318,23 @@ def sanitizePage(path):
     file.writelines(output)
 
 
+def reductToPublishInGHLinksCorrelation(inputMatrix, DOCS_PREFIX, DOCS_PATH_LEARN, TEMP_FOLDER):
+    """
+    This function takes as an argument our Matrix of the Ingest process and creates a new dictionary with key value
+    pairs the Source file (keys) to the Target file (value: learn_absolute path)
+    """
+    outputDictionary = dict()
+    for x in inputMatrix:
+        repo = inputMatrix[x]["ingestedRepo"]
+        filePath = x.replace(TEMP_FOLDER+"/"+repo+"/", "")
+        sourceLink = produceGHViewLinkForRepo(repo, filePath)
+        outputDictionary[sourceLink] = inputMatrix[x]["learnPath"].split(".mdx")[0].lstrip('"').rstrip('"').replace(
+            DOCS_PREFIX, DOCS_PATH_LEARN)
+        sourceLink = produceGHEditLinkForRepo(repo, filePath)
+        outputDictionary[sourceLink] = inputMatrix[x]["learnPath"].split(".mdx")[0].lstrip('"').rstrip('"').replace(
+            DOCS_PREFIX, DOCS_PATH_LEARN)
+    return (outputDictionary)
+
 def convertGithubLinks(path, fileDict, DOCS_PREFIX):
     '''
     Input:
@@ -313,61 +356,26 @@ def convertGithubLinks(path, fileDict, DOCS_PREFIX):
         # If in the line there is a link beginning with "]("  then
         if re.search("\]\((.*?)\)", line):
             # Find all the links inside that line
-            urls = re.findall("\]\((.*?)\)", line)
+            urls = []
+            temp = re.findall(r'\[.*?]\((.*?)\)', line)
+            for i in temp:
+                try:
+                    urls.append(i.split('#')[0])
+                except:
+                    urls.append(i)
+            #print("************************\n",urls,"************************\n")
             for url in urls:
                 # This is replaceString's default value
-                replaceString = url
                 # If the URL is a GitHub one
                 # (at the moment we support this logic only for netdata/netdata links,
                 # to keep things simple and test the strategy)
-                if url.startswith("https://github.com/netdata/netdata/blob/master"):
-                    # temporary link, before we start the slicing and dicing
-                    dummy = url.split("https://github.com/netdata/netdata/blob/master")[1]
-
-                    # Try to split the dummy link to the URL and the #link_to_header if any at the end of the URL,
-                    # for example split https://github.com/netdata/netdata/blob/rework-learn/docs/glossary.md#c
-                    # into "https://github.com/netdata/netdata/blob/master/docs/glossary.md" and "c"
-                    try:
-                        linkToHeader = dummy.split("#")[1]
-                        linkToHeader = "#" + linkToHeader
-                    except:
-                        linkToHeader = ""
-
-                    # Remove the .md, Docusaurus doesn't work with file extensions in the links
-                    dummy = dummy.split(".md")[0]
-                    # Break the URL in every "/"
-                    dicedURL = dummy.split("/")
-                    # THe title of the file
-                    urlTitle = dicedURL[len(dicedURL) - 1]
-                    # This is the actual link-replacement logic, we check in the file dictionary, if a file is
-                    # published, then we know that we can find it (and hence link to it) from within Learn
-                    for filename in fileDict:
-                        if fileDict[filename]["metadata"]["learn_status"] == "Published":
-                            # Again, break the candidate file's learnPath in the "/"s, and remove the file extension
-                            dicedCandidateURL = toPublish[filename]['learnPath'].split(".mdx")[0].split("/")
-
-                            # The title of the candidate filepath
-                            candidateTitle = dicedCandidateURL[len(dicedCandidateURL) - 1]
-
-                            # Check that the title between the URL and the candidate path is the same, and that it
-                            # comes from the same place (this is to take care of duplicate names, for example,
-                            # multiple README files)
-                            if candidateTitle == urlTitle and \
-                                    dicedCandidateURL[len(dicedCandidateURL) - 2] == dicedURL[len(dicedURL) - 2]:
-                                # Assign to the replace string the learnPath ("concepts/sampleFolder/sample") without
-                                # the file extension
-                                replaceString = toPublish[filename]['learnPath'].split(".mdx")[0]
-                                # Add "/docs/" IMPORTANT, we need that "/" at the start, Docusaurus handles
-                                # "docs/.../..." links differently than "/docs/.../..."
-                                # Then add the version prefix
-                                # Keep the entire path without the "versioned_docs/version-nightly"
-                                # Add the linkToHeader string, if there ain't one it is going to be empty
-                                replaceString = "/docs/" + \
-                                                version_prefix + \
-                                                replaceString.split(DOCS_PREFIX)[1] + \
-                                                linkToHeader
                 # In the line we are examining, replace the URL string with the new replaceString value
-                line = line.replace(url, replaceString)
+                try:
+                    line = line.replace(url, fileDict[url])
+                    #print("Parsed:", url,"  ->  ", fileDict[url])
+                except:
+                    #print("URL COULD BE PARSED:", url)
+                    pass
         # In each iteration we append the new line string, so we essentially re-build the file line-by-line,
         # and in the process some line URLS will be fixed to relative "/docs/" links
         output.append(line + "\n")
@@ -462,7 +470,6 @@ if __name__ == '__main__':
     #print(cloneRepo("netdata", "learn", "rework-learn", 1, TEMP_FOLDER + "/"))
     # We fetch the markdown files from the repositories
     markdownFiles = fetchMarkdownFromRepo(TEMP_FOLDER)
-
     print("Files detected: ", len(markdownFiles))
     print("Gathering Learn files...")
     # After this we need to keep only the files that have metadata, so we will fetch metadata for everything and keep
@@ -501,6 +508,7 @@ if __name__ == '__main__':
     # identify published documents:q
     print("Found Learn files: ", len(toPublish))
     #print(json.dumps(toPublish, indent=4))
+    #print(json.dumps(toPublish, indent=4))
     for file in toPublish:
         copyDoc(file, toPublish[file]["learnPath"])
         sanitizePage(toPublish[file]["learnPath"])
@@ -513,8 +521,9 @@ if __name__ == '__main__':
     print("Fixing github links...")
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
     # pointing to GitHub relative paths
+    #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), indent=4))
     for file in toPublish:
-        convertGithubLinks(toPublish[file]["learnPath"], toPublish, DOCS_PREFIX)
+        convertGithubLinks(toPublish[file]["learnPath"], reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), DOCS_PREFIX)
     print("These files are in repos and dont have valid metadata to publish them in learn")
     for file in restFilesDictionary:
         if "custom_edit_url" in restFilesDictionary[file]["metadata"]:
