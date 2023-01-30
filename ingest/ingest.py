@@ -515,9 +515,10 @@ if __name__ == '__main__':
     for file in restFilesDictionary:
         pass
         # moveDoc(file, restFilesDictionary[file]["learnPath"])
-    print("Generating integrations page")
-    genIntPage.generate(toPublish, DOCS_PREFIX+"/getting-started/integrations.mdx")
-    print("Done")
+    #print("Generating integrations page")
+    #genIntPage.generate(toPublish, DOCS_PREFIX+"/getting-started/integrations.mdx")
+    #print("Done")
+
     print("Fixing github links...")
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
     # pointing to GitHub relative paths
