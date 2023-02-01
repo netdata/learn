@@ -51,7 +51,7 @@ export function OneLineInstallWget() {
 
   function handleCloudChange() {
     if (currentCloudOption === '' && cloudChecked == false) {
-      setCurrentCloudOption(' --claim-token YOUR_CLAIM_TOKEN --claim-rooms YOUR_ROOM_ID_A,YOUR_ROOM_ID_B');
+      setCurrentCloudOption(' --claim-token YOUR_CLAIM_TOKEN');
       setCloudChecked(true);
     } else {
       setCurrentCloudOption('');
@@ -150,7 +150,7 @@ export function OneLineInstallCurl() {
 
   function handleCloudChange() {
     if (currentCloudOption === '' && cloudChecked == false) {
-      setCurrentCloudOption(' --claim-token YOUR_CLAIM_TOKEN --claim-rooms YOUR_ROOM_ID_A,YOUR_ROOM_ID_B');
+      setCurrentCloudOption(' --claim-token YOUR_CLAIM_TOKEN');
       setCloudChecked(true);
     } else {
       setCurrentCloudOption('');
