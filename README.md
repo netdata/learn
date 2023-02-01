@@ -73,7 +73,7 @@ yarn start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without
-having to restart the server.
+having to restart the server. If you want to suppress warnings you can run `yarn -s start`.
 
 If you get an error saying command not found when **docusaurus** is trying to start you need to install docusaurus (reference to [docusaurus on npm](https://www.npmjs.com/package/docusaurus)).
 
