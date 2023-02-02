@@ -14,13 +14,13 @@ internet at large, anyone can access the dashboard and your node's metrics at `h
 so that the local dashboard was immediately accessible to users, and so that we don't dictate how professionals set up
 and secure their infrastructures. 
 
-Despite this design decision, your [data](/docs/netdata-security.md#your-data-is-safe-with-netdata) and your
-[systems](/docs/netdata-security.md#your-systems-are-safe-with-netdata) are safe with Netdata. Netdata is read-only,
+Despite this design decision, your [data](https://github.com/netdata/netdata/blob/master/docs/netdata-security.md#your-data-is-safe-with-netdata) and your
+[systems](https://github.com/netdata/netdata/blob/master/docs/netdata-security.md#your-systems-are-safe-with-netdata) are safe with Netdata. Netdata is read-only,
 cannot do anything other than present metrics, and runs without special/`sudo` privileges. Also, the local dashboard
 only exposes chart metadata and metric values, not raw data.
 
 While Netdata is secure by design, we believe you should [protect your
-nodes](/docs/netdata-security.md#why-netdata-should-be-protected). If left accessible to the internet at large, the
+nodes](https://github.com/netdata/netdata/blob/master/docs/netdata-security.md#why-netdata-should-be-protected). If left accessible to the internet at large, the
 local dashboard could reveal sensitive information about your infrastructure. For example, an attacker can view which
 applications you run (databases, webservers, and so on), or see every user account on a node. 
 
@@ -40,7 +40,7 @@ that align with your goals and your organization's standards.
 This is the _recommended method for those who have connected their nodes to Netdata Cloud_ and prefer viewing real-time
 metrics using the War Room Overview, Nodes view, and Cloud dashboards.
 
-You can disable the local dashboard (and API) but retain the encrypted Agent-Cloud link ([ACLK](/aclk/README.md)) that
+You can disable the local dashboard (and API) but retain the encrypted Agent-Cloud link ([ACLK](/docs/nightly/setup/agent-cloud-link-aclk)) that
 allows you to stream metrics on demand from your nodes via the Netdata Cloud interface. This change mitigates all
 concerns about revealing metrics and system design to the internet at large, while keeping all the functionality you
 need to view metrics and troubleshoot issues with Netdata Cloud.
@@ -53,17 +53,17 @@ static-threaded` setting, and change it to `none`.
     mode = none
 ```
 
-Save and close the editor, then [restart your Agent](/docs/configure/start-stop-restart.md) using `sudo systemctl
+Save and close the editor, then [restart your Agent](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) using `sudo systemctl
 restart netdata`. If you try to visit the local dashboard to `http://NODE:19999` again, the connection will fail because
 that node no longer serves its local dashboard.
 
-> See the [configuration basics doc](/docs/configure/nodes.md) for details on how to find `netdata.conf` and use
+> See the [configuration basics doc](/docs/nightly/concepts/configure-the-netdata-agent) for details on how to find `netdata.conf` and use
 > `edit-config`.
 
 ## Restrict access to the local dashboard
 
 If you want to keep using the local dashboard, but don't want it exposed to the internet, you can restrict access with
-[access lists](/web/server/README.md#access-lists). This method also fully retains the ability to stream metrics
+[access lists](/docs/nightly/references/configuration/web-server#access-lists). This method also fully retains the ability to stream metrics
 on-demand through Netdata Cloud.
 
 The `allow connections from` setting helps you allow only certain IP addresses or FQDN/hostnames, such as a trusted
@@ -71,7 +71,7 @@ static IP, only `localhost`, or connections from behind a management LAN.
 
 By default, this setting is `localhost *`. This setting allows connections from `localhost` in addition to _all_
 connections, using the `*` wildcard. You can change this setting using Netdata's [simple
-patterns](/libnetdata/simple_pattern/README.md).
+patterns](https://github.com/netdata/netdata/blob/master/libnetdata/simple_pattern/README.md).
 
 ```conf
 [web]
@@ -98,8 +98,8 @@ The `allow connections from` setting is global and restricts access to the dashb
     allow management from = localhost
 ```
 
-See the [web server](/web/server/README.md#access-lists) docs for additional details about access lists. You can take
-access lists one step further by [enabling SSL](/web/server/README.md#enabling-tls-support) to encrypt data from local
+See the [web server](/docs/nightly/references/configuration/web-server#access-lists) docs for additional details about access lists. You can take
+access lists one step further by [enabling SSL](/docs/nightly/references/configuration/web-server#enabling-tls-support) to encrypt data from local
 dashboard in transit. The connection to Netdata Cloud is always secured with TLS.
 
 ## Use a reverse proxy
@@ -109,17 +109,17 @@ local dashboard and Netdata Cloud dashboards. You can use a reverse proxy to pas
 enable HTTPS to encrypt metadata and metric values in transit.
 
 We recommend Nginx, as it's what we use for our [demo server](https://london.my-netdata.io/), and we have a guide
-dedicated to [running Netdata behind Nginx](/docs/Running-behind-nginx.md).
+dedicated to [running Netdata behind Nginx](/docs/nightly/setup/expose-local-dashboard-through-proxy/running-netdata-behind-nginx).
 
-We also have guides for [Apache](/docs/Running-behind-apache.md), [Lighttpd](/docs/Running-behind-lighttpd.md),
-[HAProxy](/docs/Running-behind-haproxy.md), and [Caddy](/docs/Running-behind-caddy.md).
+We also have guides for [Apache](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-apache-s-mod_proxy), [Lighttpd](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-lighttpd-v1.4.x),
+[HAProxy](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-haproxy), and [Caddy](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-caddy).
 
 ## What's next?
 
-Read about [Netdata's security design](/docs/netdata-security.md) and our [blog
+Read about [Netdata's security design](https://github.com/netdata/netdata/blob/master/docs/netdata-security.md) and our [blog
 post](https://www.netdata.cloud/blog/netdata-agent-dashboard/) about why the local Agent dashboard is both open and
 secure by design.
 
-Next up, learn about [collectors](/docs/collect/how-collectors-work.md) to ensure you're gathering every essential
+Next up, learn about [collectors](/docs/nightly/concepts/how-netdata-s-metrics-collectors-work) to ensure you're gathering every essential
 metric about your node, its applications, and your infrastructure at large.
 
