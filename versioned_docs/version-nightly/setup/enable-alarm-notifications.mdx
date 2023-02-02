@@ -13,7 +13,7 @@ Netdata offers two ways to receive alarm notifications on external platforms. Th
 parallel, which means you can enable both at the same time to send alarm notifications to any number of endpoints.
 
 Both methods use a node's health alarms to generate the content of alarm notifications. Read the doc on [configuring
-alarms](/docs/monitor/configure-alarms.md) to change the preconfigured thresholds or to create tailored alarms for your
+alarms](https://github.com/netdata/netdata/blob/master/docs/monitor/configure-alarms.md) to change the preconfigured thresholds or to create tailored alarms for your
 infrastructure.
 
 Netdata Cloud offers [centralized alarm notifications](#netdata-cloud) via email, which leverages the health status
@@ -29,7 +29,7 @@ response process.
 ## Netdata Cloud
 
 Netdata Cloud's [centralized alarm
-notifications](https://learn.netdata.cloud/docs/cloud/alerts-notifications/notifications) is a zero-configuration way to
+notifications](https://github.com/netdata/netdata/blob/master/docs/cloud/alerts-notifications/notifications.mdx) is a zero-configuration way to
 get notified when an anomaly or incident strikes any node or application in your infrastructure. The advantage of using
 centralized alarm notifications from Netdata Cloud is that you don't have to worry about configuring each node in your
 infrastructure.
@@ -44,13 +44,13 @@ choose what types of notifications to receive from each War Room.
 ![Enabling and configuring alarm notifications in Netdata
 Cloud](https://user-images.githubusercontent.com/1153921/101936280-93c50900-3b9d-11eb-9ba0-d6927fa872b7.gif)
 
-See the [centralized alarm notifications](https://learn.netdata.cloud/docs/cloud/alerts-notifications/notifications)
+See the [centralized alarm notifications](/docs/nightly/operations/alerts/alert-notifications)
 reference doc for further details about what information is conveyed in an email notification, flood protection, and
 more.
 
 ## Netdata Agent
 
-The Netdata Agent's [notification system](/health/notifications/README.md) runs on every node and dispatches
+The Netdata Agent's [notification system](/docs/nightly/operations/alerts/notifications-reference) runs on every node and dispatches
 notifications based on configured endpoints and roles. You can enable multiple endpoints on any one node _and_ use Agent
 notifications in parallel with centralized alarm notifications in Netdata Cloud.
 
@@ -62,33 +62,33 @@ notification platform.
 
 ### Supported notification endpoints
 
--   [**alerta.io**](/health/notifications/alerta/README.md)
--   [**Amazon SNS**](/health/notifications/awssns/README.md)
--   [**Custom endpoint**](/health/notifications/custom/README.md)
--   [**Discord**](/health/notifications/discord/README.md)
--   [**Dynatrace**](/health/notifications/dynatrace/README.md)
--   [**Email**](/health/notifications/email/README.md)
--   [**Flock**](/health/notifications/flock/README.md)
--   [**Google Hangouts**](/health/notifications/hangouts/README.md)
--   [**Gotify**](/health/notifications/gotify/README.md)
--   [**IRC**](/health/notifications/irc/README.md)
--   [**Kavenegar**](/health/notifications/kavenegar/README.md)
--   [**Matrix**](/health/notifications/matrix/README.md)
--   [**Messagebird**](/health/notifications/messagebird/README.md)
--   [**Microsoft Teams**](/health/notifications/msteams/README.md)
--   [**Netdata Agent dashboard**](/health/notifications/web/README.md)
--   [**Opsgenie**](/health/notifications/opsgenie/README.md)
--   [**PagerDuty**](/health/notifications/pagerduty/README.md)
--   [**Prowl**](/health/notifications/prowl/README.md)
--   [**PushBullet**](/health/notifications/pushbullet/README.md)
--   [**PushOver**](/health/notifications/pushover/README.md)
--   [**Rocket.Chat**](/health/notifications/rocketchat/README.md)
--   [**Slack**](/health/notifications/slack/README.md)
--   [**SMS Server Tools 3**](/health/notifications/smstools3/README.md)
--   [**StackPulse**](/health/notifications/stackpulse/README.md)
--   [**Syslog**](/health/notifications/syslog/README.md)
--   [**Telegram**](/health/notifications/telegram/README.md)
--   [**Twilio**](/health/notifications/twilio/README.md)
+-   [**alerta.io**](/docs/nightly/setup/notification/agent/alerta)
+-   [**Amazon SNS**](/docs/nightly/setup/notification/agent/amazon-sns)
+-   [**Custom endpoint**](/docs/nightly/setup/notification/agent/custom-endpoint)
+-   [**Discord**](/docs/nightly/setup/notification/agent/discord)
+-   [**Dynatrace**](/docs/nightly/setup/notification/agent/dynatrace-events)
+-   [**Email**](/docs/nightly/setup/notification/agent/email)
+-   [**Flock**](/docs/nightly/setup/notification/agent/flock)
+-   [**Google Hangouts**](/docs/nightly/setup/notification/agent/google-hangouts)
+-   [**Gotify**](/docs/nightly/setup/notification/agent/gotify)
+-   [**IRC**](/docs/nightly/setup/notification/agent/irc)
+-   [**Kavenegar**](/docs/nightly/setup/notification/agent/kavenegar)
+-   [**Matrix**](/docs/nightly/setup/notification/agent/matrix)
+-   [**Messagebird**](/docs/nightly/setup/notification/agent/messagebird)
+-   [**Microsoft Teams**](/docs/nightly/setup/notification/agent/microsoft-teams)
+-   [**Netdata Agent dashboard**](/docs/nightly/setup/notification/agent/pop-up-notifications)
+-   [**Opsgenie**](/docs/nightly/setup/notification/agent/opsgenie)
+-   [**PagerDuty**](/docs/nightly/setup/notification/agent/pagerduty)
+-   [**Prowl**](/docs/nightly/setup/notification/agent/prowl)
+-   [**PushBullet**](/docs/nightly/setup/notification/agent/pushbullet)
+-   [**PushOver**](/docs/nightly/setup/notification/agent/pushover)
+-   [**Rocket.Chat**](/docs/nightly/setup/notification/agent/rocket-chat)
+-   [**Slack**](/docs/nightly/setup/notification/agent/slack)
+-   [**SMS Server Tools 3**](/docs/nightly/setup/notification/agent/sms-server)
+-   [**StackPulse**](/docs/nightly/setup/notification/agent/stackpulse)
+-   [**Syslog**](/docs/nightly/setup/notification/agent/syslog)
+-   [**Telegram**](/docs/nightly/setup/notification/agent/telegram)
+-   [**Twilio**](/docs/nightly/setup/notification/agent/twilio)
 
 ### Enable Slack notifications
 
@@ -98,7 +98,7 @@ want to see alarm notifications from Netdata. Click the green **Add to Slack** b
 
 On the following page, you'll receive a **Webhook URL**. That's what you'll need to configure Netdata, so keep it handy.
 
-Navigate to your [Netdata config directory](/docs/configure/nodes.md#the-netdata-config-directory) and use `edit-config` to
+Navigate to your [Netdata config directory](/docs/nightly/concepts/configure-the-netdata-agent#the-netdata-config-directory) and use `edit-config` to
 open the `health_alarm_notify.conf` file:
 
 ```bash
@@ -133,7 +133,7 @@ Next, run the `alarm-notify` script using the `test` option.
 You should receive three notifications in your Slack channel for each health status change: `WARNING`, `CRITICAL`, and
 `CLEAR`.
 
-See the [Agent Slack notifications](/health/notifications/slack/README.md) doc for more options and information.
+See the [Agent Slack notifications](/docs/nightly/setup/notification/agent/slack) doc for more options and information.
 
 ## What's next?
 
@@ -141,10 +141,10 @@ Now that you have health entities configured to your infrastructure's needs and 
 or incidents, your health monitoring setup is complete.
 
 To make your dashboards most useful during root cause analysis, use Netdata's [distributed data
-architecture](/docs/store/distributed-data-architecture.md) for the best-in-class performance and scalability.
+architecture](https://github.com/netdata/netdata/blob/master/docs/store/distributed-data-architecture.md) for the best-in-class performance and scalability.
 
 ### Related reference documentation
 
-- [Netdata Cloud · Alarm notifications](https://learn.netdata.cloud/docs/cloud/alerts-notifications/notifications)
-- [Netdata Agent · Notifications](/health/notifications/README.md)
+- [Netdata Cloud · Alarm notifications](/docs/nightly/operations/alerts/alert-notifications)
+- [Netdata Agent · Notifications](/docs/nightly/operations/alerts/notifications-reference)
 

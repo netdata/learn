@@ -1,8 +1,10 @@
 ---
 title: "Chart dimensions, contexts, and families"
-description: "Netdata organizes charts into dimensions, contexts, and families to automatically and meaningfully organize thousands of metrics into interactive charts."
+description: >- 
+    "Netdata organizes charts into dimensions, contexts, and families to automatically
+     and meaningfully organize thousands of metrics into interactive charts."
 type: "explanation"
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.mdx"
+custom_edit_url: "https://github.com/netdata/netdata/blob/master/docs/dashboard/dimensions-contexts-families.mdx"
 sidebar_label: "Chart dimensions, contexts, and families"
 learn_status: "Published"
 learn_topic_type: "Concepts"
@@ -10,14 +12,14 @@ learn_rel_path: "Concepts"
 ---
 
 
-While Netdata's charts require no configuration and are [easy to interact with](/docs/dashboard/interact-charts.mdx),
+While Netdata's charts require no configuration and are [easy to interact with](/docs/nightly/operations/interact-with-charts),
 they have a lot of underlying complexity. To meaningfully organize charts out of the box based on what's happening in
 your nodes, Netdata uses the concepts of **dimensions**, **contexts**, and **families**. 
 
 Understanding how these work will help you more easily navigate the dashboard, [write new
-alarms](/docs/monitor/configure-alarms.md), or play around with the [API](/web/api/README.md).
+alarms](https://github.com/netdata/netdata/blob/master/docs/monitor/configure-alarms.md), or play around with the [API](/docs/nightly/operations/api).
 
-For a refresher on the anatomy of a chart, see [dashboards and charts](/docs/dashboard/how-dashboard-works.mdx).
+For a refresher on the anatomy of a chart, see [dashboards and charts](/docs/nightly/concepts/how-the-dashboard-works).
 
 ## Dimension
 
@@ -39,7 +41,7 @@ dimensions](https://user-images.githubusercontent.com/1153921/114207816-a5cb7400
 The chart shows 13 unique dimensions, such as `httpd` for the CPU utilization for web servers, `kernel` for anything
 related to the Linux kernel, and so on. In your dashboard, these specific dimensions will almost certainly be different.
 
-Dimensions can be [hidden](/docs/dashboard/interact-charts.mdx#show-and-hide-dimensions) to help you focus your
+Dimensions can be [hidden](/docs/nightly/operations/interact-with-charts#show-and-hide-dimensions) to help you focus your
 attention.
 
 ## Context
@@ -53,8 +55,8 @@ whereas anything after the `.` is specified either by the chart's developer or b
 
 By default, a chart's type affects where it fits in the menu, while its family creates submenus.
 
-Netdata also relies on contexts for [alarm configuration](/docs/monitor/configure-alarms.md) (the [`on`
-line](/health/REFERENCE.md#alarm-line-on)).
+Netdata also relies on contexts for [alarm configuration](/docs/nightly/setup/configure-health-alarms) (the [`on`
+line](https://github.com/netdata/netdata/blob/master/health/REFERENCE.md#alarm-line-on)).
 
 ## Family
 
@@ -82,18 +84,18 @@ names:
 ## What's next?
 
 With an understanding of a chart's dimensions, context, and family, you're now ready to dig even deeper into Netdata's
-dashboard. We recommend looking into [using the timeframe selector](/docs/dashboard/visualization-date-and-time-controls.mdx).
+dashboard. We recommend looking into [using the timeframe selector](/docs/nightly/concepts/visualization-date-and-time-controls).
 
-If you feel comfortable with the [dashboard](/docs/dashboard/how-dashboard-works.mdx) and interacting with charts, we
-recommend learning about [configuration](/docs/configure/nodes.md). While Netdata doesn't _require_ a complicated setup
+If you feel comfortable with the [dashboard](/docs/nightly/concepts/how-the-dashboard-works) and interacting with charts, we
+recommend learning about [configuration](/docs/nightly/concepts/configure-the-netdata-agent). While Netdata doesn't _require_ a complicated setup
 process or a query language to create charts, there are a lot of ways to tweak the experience to match your needs.
 
 ### Further reading & related information
 
 - Dashboard
-  - [How the dashboard works](/docs/dashboard/how-dashboard-works.mdx)
-  - [Interact with charts](/docs/dashboard/interact-charts.mdx)
-  - **[Chart dimensions, contexts, and families](/docs/dashboard/dimensions-contexts-families.mdx)**
-  - [Select timeframes to visualize](/docs/dashboard/visualization-date-and-time-controls.mdx)
-  - [Import, export, and print a snapshot](/docs/dashboard/import-export-print-snapshot.mdx)
-  - [Customize the standard dashboard](/docs/dashboard/customize.mdx)
+  - [How the dashboard works](/docs/nightly/concepts/how-the-dashboard-works)
+  - [Interact with charts](/docs/nightly/operations/interact-with-charts)
+  - **[Chart dimensions, contexts, and families](/docs/nightly/concepts/chart-dimensions-contexts-and-families)**
+  - [Select timeframes to visualize](/docs/nightly/concepts/visualization-date-and-time-controls)
+  - [Import, export, and print a snapshot](/docs/nightly/operations/import-export-and-print-a-snapshot)
+  - [Customize the standard dashboard](/docs/nightly/operations/customize-the-standard-dashboard)

@@ -9,7 +9,7 @@ learn_rel_path: "Operations"
 ---
 
 
-When you install the Netdata Agent, the [daemon](/daemon/README.md) is configured to start at boot and stop and
+When you install the Netdata Agent, the [daemon](/docs/nightly/references/configuration/netdata-daemon) is configured to start at boot and stop and
 restart/shutdown.
 
 You will most often need to _restart_ the Agent to load new or editing configuration files. [Health
@@ -43,7 +43,7 @@ If you start the daemon this way, close it with `sudo killall netdata`.
 
 ## Using `netdatacli`
 
-The Netdata Agent also comes with a [CLI tool](/cli/README.md) capable of performing shutdowns. Start the Agent back up
+The Netdata Agent also comes with a [CLI tool](/docs/nightly/references/agent-cli) capable of performing shutdowns. Start the Agent back up
 using your preferred method listed above.
 
 ```bash
@@ -83,18 +83,18 @@ again with `service netdata start`, or the appropriate method for your system.
 
 ## What's next?
 
-Learn more about [securing the Netdata Agent](/docs/configure/secure-nodes.md).
+Learn more about [securing the Netdata Agent](/docs/nightly/setup/secure-your-nodes).
 
 You can also use the restart/reload methods described above to enable new features:
 
-- [Enable new collectors](/docs/collect/enable-configure.md) or tweak their behavior.
-- [Configure existing health alarms](/docs/monitor/configure-alarms.md) or create new ones.
-- [Enable notifications](/docs/monitor/enable-notifications.md) to receive updates about the health of your
+- [Enable new collectors](/docs/nightly/setup/enable-or-configure-a-collector) or tweak their behavior.
+- [Configure existing health alarms](/docs/nightly/setup/configure-health-alarms) or create new ones.
+- [Enable notifications](/docs/nightly/setup/enable-alarm-notifications) to receive updates about the health of your
   infrastructure.
-- Change [the long-term metrics retention period](/docs/store/change-metrics-storage.md) using the database engine.
+- Change [the long-term metrics retention period](/docs/nightly/setup/change-how-long-netdata-stores-metrics) using the database engine.
 
 ### Related reference documentation
 
-- [Netdata Agent · Daemon](/daemon/README.md)
-- [Netdata Agent · Netdata CLI](/cli/README.md)
+- [Netdata Agent · Daemon](/docs/nightly/references/configuration/netdata-daemon)
+- [Netdata Agent · Netdata CLI](/docs/nightly/references/agent-cli)
 
