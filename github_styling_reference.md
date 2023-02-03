@@ -51,6 +51,7 @@ text for tab2, both visible in GitHub and Docusaurus
 </TabItem>
 </Tabs>
 
+(If the heading is not an h4 (h4 isn't rendered in the right navigation bar, hence it doesn't produce any problems), use HTML headings instead.)
 (due to the nature of the way github reads HTML elements, we can't use the HTML codeblock element for tab labels, we will only use text, and it will be hidden from the preview)
 
 ## Sample_Heading
