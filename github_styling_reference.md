@@ -13,28 +13,19 @@ import TabItem from '@theme/TabItem';
 
 Text regarding the document
 
-(we will use the below notes instead of github admonitions. To use the emojis, type a : and then start typing the emoji name. The ones we are going to use are: info -> "bookmark_tabs", tip -> "lightbulb", note -> "pencil2", warning -> "warning", caution -> "fire" )
+(we will use the below notes instead of github admonitions. To use the emojis, type a : and then start typing the emoji name. The ones we are going to use are: info and note -> "bookmark_tabs", best practice and tip-> "bulb", warning and caution -> "warning" )
 
-> 📑 Info
+> 📑 Info, Note
 >
-> This is an info block.
+> This is an info or a note block.
 
-> 💡 Tip
+> 💡 Tip, Best Practice
 > 
-> This is a tip block.
+> This is a tip or a best practice block.
 
-> ✏️ Note
+> ⚠️ Warning, Caution
 > 
-> This is a note block.
-
-> ⚠️ Warning
-> 
-> This is a warning block.
-
-> 🔥 Caution
-> 
-> This is a caution block.
-
+> This is a warning or a caution block.
 
 ## Header_Text
 
