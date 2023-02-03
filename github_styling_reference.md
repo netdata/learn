@@ -11,6 +11,9 @@ import { Install, InstallBox } from '@site/src/components/Install/'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+# Title 
+(We should keep it the same as the one mentioned in the "title" metadata, so it renders the same on both Docusaurus and GitHub)
+
 Text regarding the document
 
 (we will use the below notes instead of github admonitions. To use the emojis, type a : and then start typing the emoji name. The ones we are going to use are: info and note -> "bookmark_tabs", best practice and tip-> "bulb", warning and caution -> "warning" )
