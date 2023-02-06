@@ -1,16 +1,31 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.37.0';
+export const ReleaseVersion = '1.38.0';
 
-export const ReleaseDate = 'November 30, 2022';
+export const ReleaseDate = 'February 6, 2023';
 
 export const ReleaseNotes = [
-	'Explore the latest changes into your beloved observability tool',
+	'DBENGINE v2',
+	'Runtime functions',
+	'Events feed',
+	'Cloud alert notificcations',
+	'Improved RBAC',
 ];
 
 
 
 export const News = [
+	{
+		title: <>Netdata release 1.38.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.38.0',
+		date: 'Feb 06, 2023',
+		type: 'Link',
+		description: (
+			<>
+			Huge performance, scalability and stability improvements, runtime functions, events feed, more alert notifications on Netdata Cloud and more! 	
+			</>
+		),
+	},
 	{
 		title: <>Netdata data source plugin for Grafana</>,
 		href: 'https://www.netdata.cloud/blog/introducing-netdata-source-plugin-for-grafana',
