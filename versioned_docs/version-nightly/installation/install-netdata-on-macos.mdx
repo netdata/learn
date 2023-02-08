@@ -10,7 +10,7 @@ learn_rel_path: "Installation"
 
 Netdata works on macOS, albeit with some limitations. 
 The number of charts displaying system metrics is limited, but you can use any of Netdata's [external plugins](/docs/nightly/developers/external-plugins-overview) to monitor any services you might have installed on your macOS system. 
-You could also use a macOS system as the parent node in a [streaming configuration](https://github.com/netdata/netdata/blob/master/streaming/README.md).
+You could also use a macOS system as the parent node in a [streaming configuration](/docs/nightly/references/streaming-and-replication).
 
 You can install Netdata in one of the three following ways: 
 
@@ -26,7 +26,7 @@ Each of these installation option requires [Homebrew](https://brew.sh/) for hand
 ## Install Netdata with our automatic one-line installation script
 
 **Local Netdata Agent installation**
-To install Netdata using our automatic [kickstart](https://github.com/netdata/netdata/blob/master/packaging/installer/README.md#automatic-one-line-installation-script) open a new terminal and run:
+To install Netdata using our automatic [kickstart](/docs/nightly/getting-started/install-netdata#automatic-one-line-installation-script) open a new terminal and run:
 
 ```bash
 curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh
@@ -80,7 +80,7 @@ We don't recommend installing Netdata from source on macOS, as it can be difficu
    ```
 
 2. Click **Install** on the Software Update popup window that appears. 
-3. Use the same terminal session to install some of Netdata's prerequisites using Homebrew. If you don't want to use [Netdata Cloud](https://github.com/netdata/netdata/blob/master/docs/cloud/cloud.mdx), you can omit `cmake`.
+3. Use the same terminal session to install some of Netdata's prerequisites using Homebrew. If you don't want to use [Netdata Cloud](/docs/nightly/getting-started/netdata-cloud), you can omit `cmake`.
 
    ```bash
    brew install ossp-uuid autoconf automake pkg-config libuv lz4 json-c openssl libtool cmake
@@ -105,8 +105,8 @@ We don't recommend installing Netdata from source on macOS, as it can be difficu
 
 ## What's next?
 
-When you're finished with installation, check out our [single-node](https://github.com/netdata/netdata/blob/master/docs/quickstart/single-node.md) or
-[infrastructure](https://github.com/netdata/netdata/blob/master/docs/quickstart/infrastructure.md) monitoring quickstart guides based on your use case.
+When you're finished with installation, check out our [single-node](/docs/nightly/possible-old,-not-wanted-documents/infrastructure-monitoring-with-netdata) or
+[infrastructure](/docs/nightly/possible-old,-not-wanted-documents/infrastructure-monitoring-with-netdata) monitoring quickstart guides based on your use case.
 
 Or, skip straight to [configuring the Netdata Agent](/docs/nightly/concepts/configure-the-netdata-agent).
 

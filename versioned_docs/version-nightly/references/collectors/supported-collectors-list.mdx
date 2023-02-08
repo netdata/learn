@@ -35,7 +35,7 @@ If you don't see the app/service you'd like to monitor in this list:
   a [feature request](https://github.com/netdata/netdata/issues/new/choose) on GitHub.
 - If you have basic software development skills, you can add your own plugin
   in [Go](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin#how-to-develop-a-collector)
-  or [Python](https://github.com/netdata/netdata/blob/master/docs/guides/python-collector.md)
+  or [Python](/docs/nightly/guides/develop-a-custom-data-collector-in-python)
 
 Supported Collectors List:
 
@@ -80,7 +80,7 @@ configure any of these collectors according to your setup and infrastructure.
 
 - [Prometheus endpoints](/docs/nightly/references/collectors-references/extended-metric-collection/prometheus-endpoints): Gathers
   metrics from any number of Prometheus endpoints, with support to autodetect more than 600 services and applications.
-- [Pandas](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/pandas/README.md): A Python
+- [Pandas](/docs/nightly/references/collectors-references/pandas-netdata-collector): A Python
   collector that gathers
   metrics from a [pandas](https://pandas.pydata.org/) dataframe. Pandas is a high level data processing library in
   Python that can read various formats of data from local files or web endpoints. Custom processing and transformation
@@ -221,11 +221,8 @@ configure any of these collectors according to your setup and infrastructure.
   usage, jobs rates, commands, and more.
 - [Pulsar](/docs/nightly/references/collectors-references/message-brokers/pulsar): Collect summary,
   namespaces, and topics performance statistics.
-- [RabbitMQ (Go)](/docs/nightly/references/collectors-references/message-brokers/rabbitmq-go.d.plugin-recommended): Collect message
+- [RabbitMQ](/docs/nightly/references/collectors-references/message-brokers/rabbitmq-go.d.plugin-recommended): Collect message
   broker overview, system and per virtual host metrics.
-- [RabbitMQ (Python)](/docs/nightly/references/collectors-references/message-brokers/rabbitmq-python.d.plugin):
-  Collect message broker global and per virtual
-  host metrics.
 - [VerneMQ](/docs/nightly/references/collectors-references/message-brokers/vernemq): Monitor MQTT broker
   health and performance metrics. It collects all available info for both MQTTv3 and v5 communication
 

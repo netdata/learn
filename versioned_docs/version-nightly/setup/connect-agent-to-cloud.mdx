@@ -31,7 +31,7 @@ identity of the Netdata Agent when it connects to the Cloud. While the data does
 from Agents to the browser, we do not store or log it.
 
 You can connect a node during the Netdata Cloud onboarding process, or after you created a Space by clicking on **Connect
-Nodes** in the [Spaces management area](https://github.com/netdata/netdata/blob/master/docs/cloud/cloud.mdx#manage-spaces).
+Nodes** in the [Spaces management area](/docs/nightly/getting-started/netdata-cloud#manage-spaces).
 
 There are two important notes regarding connecting nodes:
 
@@ -73,7 +73,7 @@ When coming from  [Nodes view page](/docs/nightly/operations/visualizations/node
 
 ### Connect an agent running in Linux
 
-If you want to connect a node that is running on a Linux environment, the script that will be provided to you by Netdata Cloud is the [kickstart](https://github.com/netdata/netdata/blob/master/packaging/installer/README.md#automatic-one-line-installation-script) which will install the Netdata Agent on your node, if it isn't already installed, and connect the node to Netdata Cloud. It should be similar to:
+If you want to connect a node that is running on a Linux environment, the script that will be provided to you by Netdata Cloud is the [kickstart](/docs/nightly/getting-started/install-netdata#automatic-one-line-installation-script) which will install the Netdata Agent on your node, if it isn't already installed, and connect the node to Netdata Cloud. It should be similar to:
 
 ```
 wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh --claim-token TOKEN --claim-rooms ROOM1,ROOM2 --claim-url https://api.netdata.cloud
@@ -326,7 +326,7 @@ For example, a HTTP proxy setting may look like the following:
     proxy = http://proxy.example.com:1080 # With a URL
 ```
 
-You can now move on to connecting. When you connect with the [kickstart](https://github.com/netdata/netdata/blob/master/packaging/installer/README.md#automatic-one-line-installation-script) script, add the `--claim-proxy=` parameter and
+You can now move on to connecting. When you connect with the [kickstart](/docs/nightly/getting-started/install-netdata#automatic-one-line-installation-script) script, add the `--claim-proxy=` parameter and
 append the same proxy setting you added to `netdata.conf`.
 
 ```bash
@@ -418,7 +418,7 @@ Additionally, check that the `enabled` setting in `var/lib/netdata/cloud.d/cloud
     enabled = true
 ```
 
-To fix this issue, reinstall Netdata using your [preferred method](https://github.com/netdata/netdata/blob/master/packaging/installer/README.md) and do not add the
+To fix this issue, reinstall Netdata using your [preferred method](/docs/nightly/getting-started/install-netdata) and do not add the
 `--disable-cloud` option.
 
 #### cloud-available is false / ACLK Available: No
@@ -508,7 +508,7 @@ tool, and details about the files found in `cloud.d`.
 
 ### The `cloud.conf` file
 
-This section defines how and whether your Agent connects to [Netdata Cloud](https://github.com/netdata/netdata/blob/master/docs/cloud/cloud.mdx)
+This section defines how and whether your Agent connects to [Netdata Cloud](/docs/nightly/getting-started/netdata-cloud)
 using the [ACLK](/docs/nightly/setup/agent-cloud-link-aclk).
 
 | setting        | default                   | info                                                                                                                                   |
@@ -518,7 +518,7 @@ using the [ACLK](/docs/nightly/setup/agent-cloud-link-aclk).
 
 ### kickstart script
 
-The best way to install Netdata and connect your nodes to Netdata Cloud is with our automatic one-line installation script, [kickstart](https://github.com/netdata/netdata/blob/master/packaging/installer/README.md#automatic-one-line-installation-script). This script will install the Netdata Agent, in case it isn't already installed, and connect your node to Netdata Cloud. 
+The best way to install Netdata and connect your nodes to Netdata Cloud is with our automatic one-line installation script, [kickstart](/docs/nightly/getting-started/install-netdata#automatic-one-line-installation-script). This script will install the Netdata Agent, in case it isn't already installed, and connect your node to Netdata Cloud. 
 
 This works with:
 * most Linux distributions, see [Netdata's platform support policy](/docs/nightly/getting-started/supported-platforms)
@@ -576,7 +576,7 @@ netdatacli reload-claiming-state
 
 This reloads the Agent connection state from disk.
 
-Our recommendation is to trigger the connection process using the [kickstart](https://github.com/netdata/netdata/blob/master/packaging/installer/README.md#automatic-one-line-installation-script) whenever possible.
+Our recommendation is to trigger the connection process using the [kickstart](/docs/nightly/getting-started/install-netdata#automatic-one-line-installation-script) whenever possible.
 
 ### Netdata Agent command line
 
