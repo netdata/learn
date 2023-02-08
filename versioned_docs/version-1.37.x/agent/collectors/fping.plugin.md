@@ -3,7 +3,7 @@ title: "fping.plugin"
 custom_edit_url: null
 ---
 
-
+> **Note**: This collector has been deprecated, pleace use the [ping](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/ping) collector instead.
 
 The fping plugin supports monitoring latency, packet loss and uptime of any number of network end points,
 by pinging them with `fping`.
