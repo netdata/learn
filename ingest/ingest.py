@@ -528,7 +528,7 @@ if __name__ == '__main__':
     print("These files are in repos and dont have valid metadata to publish them in learn")
     for file in restFilesDictionary:
         if "custom_edit_url" in restFilesDictionary[file]["metadata"]:
-            print(restFilesDictionary[file]["metadata"]["custom_edit_url"])
+            print(restFilesDictionary[file]["metadata"]["custom_edit_url"], file)
         else:
             print("Custom edit url not found, printing any metadata and its position when we ingest it" )
             print(json.dumps(restFilesDictionary[file]["metadata"], indent=4))
