@@ -14,7 +14,7 @@ systems, containers, and applications, but there are hundreds of settings to twe
 over your monitoring platform.
 
 This document assumes familiarity with
-using [`edit-config`](/docs/nightly/concepts/configure-the-netdata-agent) from the Netdata config
+using [`edit-config`](/docs/nightly/setup/setup) from the Netdata config
 directory.
 
 ## Change dashboards and visualizations
@@ -22,7 +22,7 @@ directory.
 The Netdata Agent's [local dashboard](/docs/nightly/references/local-agent-dashboard), accessible
 at `http://NODE:19999` is highly configurable. If
 you use Netdata Cloud
-for [infrastructure monitoring](/docs/nightly/possible-old,-not-wanted-documents/infrastructure-monitoring-with-netdata), you
+for [infrastructure monitoring](/docs/nightly/getting-started/monitor-your-infrastructure), you
 will see many of these
 changes reflected in those visualizations due to the way Netdata Cloud proxies metric data and metadata to your browser.
 
@@ -189,7 +189,7 @@ Change the `default port` setting in the `[web]` section to a port other than `1
 ```
 
 Use the `bind to` setting to the ports other assets, such as
-the [running `netdata.conf` configuration](/docs/nightly/concepts/configure-the-netdata-agent#see-an-agents-running-configuration),
+the [running `netdata.conf` configuration](/docs/nightly/setup/setup#see-an-agents-running-configuration),
 API, or streaming requests listen to.
 
 ## Reduce resource usage

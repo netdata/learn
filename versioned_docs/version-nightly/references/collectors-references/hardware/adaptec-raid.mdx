@@ -54,7 +54,7 @@ systemctl restart netdata.service
 ## Enable the collector
 
 The `adaptec_raid` collector is disabled by default. To enable it, use `edit-config` from the
-Netdata [config directory](/docs/nightly/concepts/configure-the-netdata-agent), which is typically at `/etc/netdata`, to edit the `python.d.conf`
+Netdata [config directory](/docs/nightly/setup/setup), which is typically at `/etc/netdata`, to edit the `python.d.conf`
 file.
 
 ```bash
@@ -68,7 +68,7 @@ systemctl restart netdata`, or the [appropriate method](/docs/nightly/operations
 ## Configuration
 
 Edit the `python.d/adaptec_raid.conf` configuration file using `edit-config` from the
-Netdata [config directory](/docs/nightly/concepts/configure-the-netdata-agent), which is typically at `/etc/netdata`.
+Netdata [config directory](/docs/nightly/setup/setup), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different
