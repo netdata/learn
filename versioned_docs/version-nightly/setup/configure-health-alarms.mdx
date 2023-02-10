@@ -19,13 +19,13 @@ applications in real time.
 
 While you can see active alarms both on the local dashboard and Netdata Cloud, all health alarms are configured _per
 node_ via individual Netdata Agents. If you want to deploy a new alarm across your
-[infrastructure](/docs/nightly/possible-old,-not-wanted-documents/infrastructure-monitoring-with-netdata), you must configure each node with the same health configuration
+[infrastructure](/docs/nightly/getting-started/monitor-your-infrastructure), you must configure each node with the same health configuration
 files.
 
 ## Edit health configuration files
 
 All of Netdata's [health configuration files](/docs/nightly/operations/alerts/health#health-configuration-files) are in Netdata's config
-directory, inside the `health.d/` directory. Navigate to your [Netdata config directory](/docs/nightly/concepts/configure-the-netdata-agent) and
+directory, inside the `health.d/` directory. Navigate to your [Netdata config directory](/docs/nightly/setup/setup) and
 use `edit-config` to make changes to any of these files.
 
 For example, to edit the `cpu.conf` health configuration file, run:
@@ -79,7 +79,7 @@ your systems, containers, and applications work.
 Read Netdata's [health reference](/docs/nightly/operations/alerts/health#health-entity-reference) for a full listing of the format,
 syntax, and functionality of health entities.
 
-To write a new health entity into a new file, navigate to your [Netdata config directory](/docs/nightly/concepts/configure-the-netdata-agent),
+To write a new health entity into a new file, navigate to your [Netdata config directory](/docs/nightly/setup/setup),
 then use `touch` to create a new file in the `health.d/` directory. Use `edit-config` to start editing the file.
 
 As an example, let's create a `ram-usage.conf` file.

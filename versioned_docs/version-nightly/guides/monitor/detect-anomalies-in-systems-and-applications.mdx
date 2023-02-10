@@ -40,7 +40,7 @@ server](https://user-images.githubusercontent.com/1153921/103586700-da5b0a00-4ea
 
 - A node running the Netdata Agent. If you don't yet have that, [get Netdata](https://github.com/netdata/netdata/blob/master/docs/get-started.mdx).
 - A Netdata Cloud account. [Sign up](https://app.netdata.cloud) if you don't have one already.
-- Familiarity with configuring the Netdata Agent with [`edit-config`](/docs/nightly/concepts/configure-the-netdata-agent).
+- Familiarity with configuring the Netdata Agent with [`edit-config`](/docs/nightly/setup/setup).
 - _Optional_: An Nginx web server running on the same node to follow the example configuration steps.
 
 ## Install required Python packages
@@ -66,7 +66,7 @@ Use `exit` to become your normal user again.
 
 ## Enable the anomalies collector
 
-Navigate to your [Netdata config directory](/docs/nightly/concepts/configure-the-netdata-agent#the-netdata-config-directory) and use `edit-config`
+Navigate to your [Netdata config directory](/docs/nightly/setup/setup#the-netdata-config-directory) and use `edit-config`
 to open the `python.d.conf` file.
 
 ```bash

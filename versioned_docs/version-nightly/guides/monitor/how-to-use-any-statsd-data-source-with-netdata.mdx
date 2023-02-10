@@ -25,7 +25,7 @@ In general, the process for creating a StatsD collector can be summarized in 2 s
 
 - Run an experiment by sending StatsD metrics to Netdata, without any prior configuration. This will create a chart per metric (called private charts) and will help you verify that everything works as expected from the application side of things.
     - Make sure to reload the dashboard tab **after** you start sending data to Netdata.
-- Create a configuration file for your app using [edit-config](/docs/nightly/concepts/configure-the-netdata-agent): `sudo ./edit-config
+- Create a configuration file for your app using [edit-config](/docs/nightly/setup/setup): `sudo ./edit-config
   statsd.d/myapp.conf`
     - Each app will have it's own section in the right-hand menu.
 
@@ -66,7 +66,7 @@ Here are some examples of default private charts. You can see that the histogram
 
 ## Create a new StatsD configuration file
 
-Start by creating a new configuration file under the `statsd.d/` folder in the [Netdata config directory](/docs/nightly/concepts/configure-the-netdata-agent#the-netdata-config-directory). Use [`edit-config`](/docs/nightly/concepts/configure-the-netdata-agent#use-edit-config-to-edit-configuration-files) to create a new file called `k6.conf`.
+Start by creating a new configuration file under the `statsd.d/` folder in the [Netdata config directory](/docs/nightly/setup/setup#the-netdata-config-directory). Use [`edit-config`](/docs/nightly/setup/setup#use-edit-config-to-edit-configuration-files) to create a new file called `k6.conf`.
 
 ```bash=
 sudo ./edit-config statsd.d/k6.conf
