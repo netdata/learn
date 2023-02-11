@@ -4,7 +4,7 @@ custom_edit_url: https://github.com/netdata/netdata/edit/master/libnetdata/procf
 sidebar_label: "Procfile"
 learn_status: "Published"
 learn_topic_type: "Tasks"
-learn_rel_path: "Developers/libnetdata libraries"
+learn_rel_path: "Developers/libnetdata"
 ---
 
 
@@ -31,7 +31,7 @@ For each iteration, the caller:
 -   calls `procfile_readall()` to read updated contents.
      This call also rewinds (`lseek()` to 0) before reading it.
 
-     For every file, a [BUFFER](/docs/nightly/developers/libnetdata-libraries/buffer-library) is used that is automatically adjusted to fit the entire
+     For every file, a [BUFFER](/docs/nightly/developers/libnetdata/buffer-library) is used that is automatically adjusted to fit the entire
      file contents of the file. So the file is read with a single `read()` call (providing atomicity / consistency when
      the data are read from the kernel).
 
