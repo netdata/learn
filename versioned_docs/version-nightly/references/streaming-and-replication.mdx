@@ -200,7 +200,7 @@ You can also use `default memory mode = dbengine` for an API key or `memory mode
 
 ##### Allow from
 
-`allow from` settings are [Netdata simple patterns](/docs/nightly/developers/libnetdata-libraries/simple-patterns): string matches
+`allow from` settings are [Netdata simple patterns](/docs/nightly/developers/libnetdata/simple-patterns): string matches
 that use `*` as wildcard (any number of times) and a `!` prefix for a negative match.
 So: `allow from = !10.1.2.3 10.*` will allow all IPs in `10.*` except `10.1.2.3`. The order is
 important: left to right, the first positive or negative match is used.

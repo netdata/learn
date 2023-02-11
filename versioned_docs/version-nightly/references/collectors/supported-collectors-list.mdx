@@ -23,7 +23,7 @@ cases, _Netdata always prioritizes the Go version_, and we highly recommend you 
 experience.
 
 If you want to use a Python version of a collector, you need to
-explicitly [disable the Go version](https://github.com/netdata/netdata/blob/masterhttps://github.com/netdata/netdata/blob/master/docs/collect/enable-configure.md),
+explicitly [disable the Go version](/docs/nightly/setup/enable-or-configure-a-collector),
 and enable the Python version. Netdata then skips the Go version and attempts to load the Python version and its
 accompanying configuration file.
 
@@ -192,7 +192,7 @@ configure any of these collectors according to your setup and infrastructure.
   operations, and more.
 - [kube-proxy](/docs/nightly/references/collectors-references/container-orchestrators/kubernetes/kube-proxy): Collect
   metrics, such as syncing proxy rules and REST client requests, from one or more instances of `kube-proxy`.
-- [Service discovery](https://github.com/netdata/agent-service-discovery/README.md): Find what services are running on a
+- [Service discovery](/docs/nightly/references/collectors-references/container-orchestrators/kubernetes/service-discovery): Find what services are running on a
   cluster's pods, converts that into configuration files, and exports them so they can be monitored by Netdata.
 
 ### Logs
@@ -272,7 +272,7 @@ configure any of these collectors according to your setup and infrastructure.
   API.
 - [PowerDNS Authoritative Server](/docs/nightly/references/collectors-references/devices/powerdns-authoritative-server):
   Monitor one or more instances of the nameserver software to collect questions, events, and latency metrics.
-- [PowerDNS Recursor](https://github.com/netdata/go.d.plugin/blob/master/modules/powerdns/README.md_recursor):
+- [PowerDNS Recursor](/docs/nightly/references/collectors-references/devices/powerdns-authoritative-server#recursor):
   Gather incoming/outgoing questions, drops, timeouts, and cache usage from any number of DNS recursor instances.
 - [RetroShare](/docs/nightly/references/collectors-references/apm/retroshare): Monitor
   application bandwidth, peers, and DHT
@@ -580,10 +580,10 @@ collectors are described only in code and associated charts in Netdata dashboard
 - [ACLK (code only)](https://github.com/netdata/netdata/blob/master/aclk/legacy/aclk_stats.c): View whether a Netdata
   Agent is connected to Netdata Cloud via the [ACLK](/docs/nightly/setup/agent-cloud-link-aclk), the
   volume of queries, process times, and more.
-- [Alarms](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/alarms/README.md): This collector
+- [Alarms](/docs/nightly/references/collectors-references/alarms): This collector
   creates an
   **Alarms** menu with one line plot showing the alarm states of a Netdata Agent over time.
-- [Anomalies](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/anomalies/README.md): This
+- [Anomalies](/docs/nightly/references/collectors-references/misc/anomalies): This
   collector uses the
   Python PyOD library to perform unsupervised anomaly detection on your Netdata charts and/or dimensions.
 - [Exporting (code only)](https://github.com/netdata/netdata/blob/master/exporting/send_internal_metrics.c): Gather
