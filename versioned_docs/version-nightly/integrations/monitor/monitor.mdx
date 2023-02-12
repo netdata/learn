@@ -26,17 +26,30 @@ explicitly [disable the Go version](https://github.com/netdata/netdata/blob/mast
 and enable the Python version. Netdata then skips the Go version and attempts to load the Python version and its
 accompanying configuration file.
 
+## Add your application to Netdata
+
 If you don't see the app/service you'd like to monitor in this list:
+
+- If your application has a Prometheus endpoint, Netdata can monitor it! Look at our 
+  [generic Prometheus collector](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints).
+
+- If your application is instrumented to expose [StatsD](https://blog.netdata.cloud/introduction-to-statsd/) metrics, 
+  see our [generic StatsD collector](/docs/nightly/integrations/monitor/anything/statsd).
+
+- If you have data in CSV, JSON, XML or other popular formats, you may be able to use our 
+  [generic structured data (Pandas) collector](/docs/nightly/integrations/monitor/anything/ingest-structured-data-pandas),
 
 - Check out our [GitHub issues](https://github.com/netdata/netdata/issues). Use the search bar to look for previous
   discussions about that collector—we may be looking for assistance from users such as yourself!
+
 - If you don't see the collector there, you can make
   a [feature request](https://github.com/netdata/netdata/issues/new/choose) on GitHub.
+
 - If you have basic software development skills, you can add your own plugin
   in [Go](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin#how-to-develop-a-collector)
   or [Python](/docs/nightly/guides/develop-a-custom-data-collector-in-python)
 
-Supported Collectors List:
+## Available Collectors
 
 - [Service and application collectors](#service-and-application-collectors)
     - [Generic](#generic)
@@ -79,7 +92,7 @@ configure any of these collectors according to your setup and infrastructure.
 
 - [Prometheus endpoints](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints): Gathers
   metrics from any number of Prometheus endpoints, with support to autodetect more than 600 services and applications.
-- [Pandas](/docs/nightly/integrations/monitoring/pandas-netdata-collector): A Python
+- [Pandas](/docs/nightly/integrations/monitor/anything/ingest-structured-data-pandas): A Python
   collector that gathers
   metrics from a [pandas](https://pandas.pydata.org/) dataframe. Pandas is a high level data processing library in
   Python that can read various formats of data from local files or web endpoints. Custom processing and transformation
@@ -92,7 +105,7 @@ configure any of these collectors according to your setup and infrastructure.
   metrics with the  `expvar` package from the Go standard library.
 - [Java Spring Boot 2 applications](/docs/nightly/integrations/monitor/apm/java-spring-boot-2-applications):
   Monitor running Java Spring Boot 2 applications that expose their metrics with the use of the Spring Boot Actuator.
-- [statsd](/docs/nightly/integrations/monitor/apm/statsd.plugin): Implement a high
+- [statsd](/docs/nightly/integrations/monitor/anything/statsd): Implement a high
   performance `statsd` server for Netdata.
 - [phpDaemon](/docs/nightly/integrations/monitor/apm/phpdaemon): Collect worker
   statistics (total, active, idle), and uptime for web and network applications.
@@ -579,10 +592,10 @@ collectors are described only in code and associated charts in Netdata dashboard
 - [ACLK (code only)](https://github.com/netdata/netdata/blob/master/aclk/legacy/aclk_stats.c): View whether a Netdata
   Agent is connected to Netdata Cloud via the [ACLK](/docs/nightly/setup/agent-cloud-link-aclk), the
   volume of queries, process times, and more.
-- [Alarms](/docs/nightly/integrations/monitoring/alarms): This collector
+- [Alarms](/docs/nightly/integrations/monitor/netdata/alarms): This collector
   creates an
   **Alarms** menu with one line plot showing the alarm states of a Netdata Agent over time.
-- [Anomalies](/docs/nightly/integrations/monitor/misc/anomalies): This
+- [Anomalies](/docs/nightly/integrations/monitor/anything/anomalies): This
   collector uses the
   Python PyOD library to perform unsupervised anomaly detection on your Netdata charts and/or dimensions.
 - [Exporting (code only)](https://github.com/netdata/netdata/blob/master/exporting/send_internal_metrics.c): Gather
