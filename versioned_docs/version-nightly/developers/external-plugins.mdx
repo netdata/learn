@@ -15,18 +15,18 @@ from external processes, thus allowing Netdata to use **external plugins**.
 
 |plugin|language|O/S|description|
 |:----:|:------:|:-:|:----------|
-|[apps.plugin](/docs/nightly/references/collectors-references/system-metrics/application-monitoring)|`C`|linux, freebsd|monitors the whole process tree on Linux and FreeBSD and breaks down system resource usage by **process**, **user** and **user group**.|
+|[apps.plugin](/docs/nightly/integrations/monitor/system-metrics/application-monitoring)|`C`|linux, freebsd|monitors the whole process tree on Linux and FreeBSD and breaks down system resource usage by **process**, **user** and **user group**.|
 |[charts.d.plugin](/docs/nightly/developers/external-plugins/charts.d.plugin)|`BASH`|all|a **plugin orchestrator** for data collection modules written in `BASH` v4+.|
-|[cups.plugin](/docs/nightly/references/collectors-references/remotes/devices/cups.plugin)|`C`|all|monitors **CUPS**|
-|[ebpf.plugin](/docs/nightly/references/collectors-references/system-metrics/kernel-traces-metrics-ebpf)|`C`|linux|monitors different metrics on environments using kernel internal functions.|
-|[go.d.plugin](/docs/nightly/developers/external-plugis/go.d.plugin)|`GO`|all|collects metrics from the system, applications, or third-party APIs.|
-|[ioping.plugin](/docs/nightly/references/collectors-references/qos/latency-monitoring-ioping.plugin)|`C`|all|measures disk latency.|
-|[freeipmi.plugin](/docs/nightly/references/collectors-references/devices/freeipmi.plugin)|`C`|linux|collects metrics from enterprise hardware sensors, on Linux servers.|
-|[nfacct.plugin](/docs/nightly/references/collectors-references/networking/netfilter-statistics-nfacct.plugin)|`C`|linux|collects netfilter firewall, connection tracker and accounting metrics using `libmnl` and `libnetfilter_acct`.|
-|[xenstat.plugin](/docs/nightly/references/collectors-references/virtualized-environments/virtualize-hosts/xenstat.plugin)|`C`|linux|collects XenServer and XCP-ng metrics using `lxenstat`.|
-|[perf.plugin](/docs/nightly/references/collectors-references/system-metrics/cpu-performance-statistics-perf.plugin)|`C`|linux|collects CPU performance metrics using performance monitoring units (PMU).|
+|[cups.plugin](/docs/nightly/integrations/monitor/remotes/devices/cups.plugin)|`C`|all|monitors **CUPS**|
+|[ebpf.plugin](/docs/nightly/integrations/monitor/system-metrics/kernel-traces-metrics-ebpf)|`C`|linux|monitors different metrics on environments using kernel internal functions.|
+|[go.d.plugin](/docs/nightly/developers/external-plugins/go.d.plugin)|`GO`|all|collects metrics from the system, applications, or third-party APIs.|
+|[ioping.plugin](/docs/nightly/integrations/monitor/qos/latency-monitoring-ioping.plugin)|`C`|all|measures disk latency.|
+|[freeipmi.plugin](/docs/nightly/integrations/monitor/devices/freeipmi.plugin)|`C`|linux|collects metrics from enterprise hardware sensors, on Linux servers.|
+|[nfacct.plugin](/docs/nightly/integrations/monitor/networking/netfilter-statistics-nfacct.plugin)|`C`|linux|collects netfilter firewall, connection tracker and accounting metrics using `libmnl` and `libnetfilter_acct`.|
+|[xenstat.plugin](/docs/nightly/integrations/monitor/virtualized-environments/virtualize-hosts/xenstat.plugin)|`C`|linux|collects XenServer and XCP-ng metrics using `lxenstat`.|
+|[perf.plugin](/docs/nightly/integrations/monitor/system-metrics/cpu-performance-statistics-perf.plugin)|`C`|linux|collects CPU performance metrics using performance monitoring units (PMU).|
 |[python.d.plugin](/docs/nightly/developers/external-plugins/python.d.plugin)|`python`|all|a **plugin orchestrator** for data collection modules written in `python` v2 or v3 (both are supported).|
-|[slabinfo.plugin](/docs/nightly/references/collectors-references/system-metrics/slabinfo.plugin)|`C`|linux|collects kernel internal cache objects (SLAB) metrics.|
+|[slabinfo.plugin](/docs/nightly/integrations/monitor/system-metrics/slabinfo.plugin)|`C`|linux|collects kernel internal cache objects (SLAB) metrics.|
 
 Plugin orchestrators may also be described as **modular plugins**. They are modular since they accept custom made modules to be included. Writing modules for these plugins is easier than accessing the native Netdata API directly. You will find modules already available for each orchestrator under the directory of the particular modular plugin (e.g. under python.d.plugin for the python orchestrator).
 Each of these modular plugins has each own methods for defining modules. Please check the examples and their documentation.

@@ -120,7 +120,7 @@ involve tweaking the behavior of the ML training itself.
 
 As mentioned above, this guide uses an Nginx web server to demonstrate how the anomalies collector works. You must
 configure the collector to monitor charts from the
-[Nginx](/docs/nightly/references/collectors-references/webapps/nginx) and [web
+[Nginx](/docs/nightly/integrations/monitor/webapps/nginx) and [web
 log](https://github.com/netdata/go.d.plugin/blob/master/modules/weblog/README.md) collectors.
 
 `charts_regex` allows for some basic regex, such as wildcards (`*`) to match all contexts with a certain pattern. For
@@ -171,7 +171,7 @@ Apply the ideas behind the collector's regex and exclude settings to any other
 
 Now that you know how to set up unsupervised anomaly detection in the Netdata Agent, using an Nginx web server as an
 example, it's time to apply that knowledge to other mission-critical parts of your infrastructure. If you're not sure
-what to monitor next, check out our list of [collectors](/docs/nightly/references/collectors/supported-collectors-list) to see what kind of metrics Netdata
+what to monitor next, check out our list of [collectors](/docs/nightly/integrations/monitor/monitor) to see what kind of metrics Netdata
 can collect from your systems, containers, and applications.
 
 Keep on moving to [part 2](/docs/nightly/guides/monitor/monitor-and-visualize-anomalies-with-netdata-part-2), which covers the charts and alarms
@@ -184,7 +184,7 @@ related to an anomaly.
 
 ### Related reference documentation
 
-- [Netdata Agent · Anomalies collector](/docs/nightly/references/collectors-references/misc/anomalies)
-- [Netdata Agent · Nginx collector](/docs/nightly/references/collectors-references/webapps/nginx)
-- [Netdata Agent · web log collector](/docs/nightly/references/collectors-references/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis)
+- [Netdata Agent · Anomalies collector](/docs/nightly/integrations/monitor/misc/anomalies)
+- [Netdata Agent · Nginx collector](/docs/nightly/integrations/monitor/webapps/nginx)
+- [Netdata Agent · web log collector](/docs/nightly/integrations/monitor/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis)
 - [Netdata Cloud · Metric Correlations](/docs/nightly/operations/metric-correlations)
