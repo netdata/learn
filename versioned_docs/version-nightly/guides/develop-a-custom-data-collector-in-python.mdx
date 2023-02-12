@@ -13,7 +13,7 @@ learn_rel_path: "Guides"
 ---
 
 
-The Netdata Agent uses [data collectors](/docs/nightly/concepts/how-netdata-s-metrics-collectors-work) to fetch metrics from hundreds of system,
+The Netdata Agent uses [data collectors](https://github.com/netdata/netdata/blob/master/docs/collect/how-collectors-work.md) to fetch metrics from hundreds of system,
 container, and service endpoints. While the Netdata team and community has built [powerful
 collectors](https://github.com/netdata/netdata/blob/master/collectors/COLLECTORS.md) for most system, container, and service/application endpoints, there are plenty
 of custom applications that can't be monitored by default.
@@ -169,7 +169,7 @@ class Service(UrlService):
 
 In our use-case, we use the `SimpleService` framework, since there is no framework class that suits our needs.
 
-You can read more about the [framework classes](/docs/nightly/developers/collectors/python.d.plugin#how-to-write-a-new-module) from
+You can read more about the [framework classes](/docs/nightly/developers/external-plugins/python.d.plugin#how-to-write-a-new-module) from
 the Netdata documentation.
 
 ## An example collector using weather station data
@@ -469,7 +469,7 @@ Now you are ready to start developing our Netdata python Collector and share it 
 - If you need help while developing your collector, join our [Netdata
   Community](https://community.netdata.cloud/c/agent-development/9) to chat about it.
 - Follow the
-  [checklist](/docs/nightly/developers/collectors/python.d.plugin#pull-request-checklist-for-python-plugins)
+  [checklist](/docs/nightly/developers/external-plugins/python.d.plugin#pull-request-checklist-for-python-plugins)
   to contribute the collector to the Netdata Agent [repository](https://github.com/netdata/netdata).
 - Check out the [example](https://github.com/netdata/netdata/tree/master/collectors/python.d.plugin/example) Python
   collector, which is a minimal example collector you could also use as a starting point. Once comfortable with that,
