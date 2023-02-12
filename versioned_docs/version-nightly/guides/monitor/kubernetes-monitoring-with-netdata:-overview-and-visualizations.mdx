@@ -157,7 +157,7 @@ Let's explore the most colorful box by hovering over it.
 container](https://user-images.githubusercontent.com/1153921/109049544-a8417980-7695-11eb-80a7-109b4a645a27.png)
 
 The **Context** tab shows `rabbitmq-5bb66bb6c9-6xr5b` as the container's image name, which means this container is
-running a [RabbitMQ](/docs/nightly/references/collectors-references/message-brokers/rabbitmq-go.d.plugin-recommended) workload.
+running a [RabbitMQ](/docs/nightly/integrations/monitor/message-brokers/rabbitmq-go.d.plugin-recommended) workload.
 
 Click the **Metrics** tab to see real-time metrics from that container. Unsurprisingly, it shows a spike in CPU
 utilization at regular intervals.
@@ -186,7 +186,7 @@ for complete customization. For example, grouping the top chart by `k8s_containe
 Netdata has a [service discovery plugin](https://github.com/netdata/agent-service-discovery), which discovers and
 creates configuration files for [compatible
 services](https://github.com/netdata/helmchart#service-discovery-and-supported-services) and any endpoints covered by
-our [generic Prometheus collector](/docs/nightly/references/collectors-references/extended-metric-collection/prometheus-endpoints).
+our [generic Prometheus collector](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints).
 Netdata uses these files to collect metrics from any compatible application as they run _inside_ of a pod. Service
 discovery happens without manual intervention as pods are created, destroyed, or moved between nodes.
 
@@ -252,6 +252,6 @@ clusters of all sizes.
   collector](https://github.com/netdata/go.d.plugin/blob/master/modules/k8s_kubelet/README.md)
 - [Netdata Agent · `kube-proxy`
   collector](https://github.com/netdata/go.d.plugin/blob/master/modules/k8s_kubeproxy/README.md)
-- [Netdata Agent · `cgroups.plugin`](/docs/nightly/references/collectors-references/virtualized-environments/containers/monitor-cgroups)
+- [Netdata Agent · `cgroups.plugin`](/docs/nightly/integrations/monitor/virtualized-environments/containers/monitor-cgroups)
 
 

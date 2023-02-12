@@ -14,7 +14,7 @@ web servers, databases, message brokers, email servers, search platforms, and mu
 pre-installed with every Netdata Agent and usually require zero configuration. Netdata also collects and visualizes
 resource utilization per application on Linux systems using `apps.plugin`.
 
-[**apps.plugin**](/docs/nightly/references/collectors-references/system-metrics/application-monitoring) looks at the Linux process tree every second, much like `top` or
+[**apps.plugin**](/docs/nightly/integrations/monitor/system-metrics/application-monitoring) looks at the Linux process tree every second, much like `top` or
 `ps fax`, and collects resource utilization information on every running process. By reading the process tree, Netdata
 shows CPU, disk, networking, processes, and eBPF for every application or Linux user. Unlike `top` or `ps fax`, Netdata
 adds a layer of meaningful visualization on top of the process tree metrics, such as grouping applications into useful
@@ -23,28 +23,28 @@ charts under **Users**, and per-user group charts under **User Groups**.
 
 Our most popular application collectors:
 
-- [Prometheus endpoints](/docs/nightly/references/collectors-references/extended-metric-collection/prometheus-endpoints): Gathers
+- [Prometheus endpoints](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints): Gathers
   metrics from one or more Prometheus endpoints that use the OpenMetrics exposition format. Auto-detects more than 600
   endpoints.
-- [Web server logs (Apache, NGINX)](/docs/nightly/references/collectors-references/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis):
+- [Web server logs (Apache, NGINX)](/docs/nightly/integrations/monitor/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis):
   Tail access logs and provide very detailed web server performance statistics. This module is able to parse 200k+
   rows in less than half a second.
-- [MySQL](/docs/nightly/references/collectors-references/databases/mysql): Collect database global,
+- [MySQL](/docs/nightly/integrations/monitor/databases/mysql): Collect database global,
   replication, and per-user statistics.
-- [Redis](/docs/nightly/references/collectors-references/databases/redis): Monitor database status by
+- [Redis](/docs/nightly/integrations/monitor/databases/redis): Monitor database status by
   reading the server's response to the `INFO` command.
-- [Apache](/docs/nightly/references/collectors-references/webapps/apache): Collect Apache web server
+- [Apache](/docs/nightly/integrations/monitor/webapps/apache): Collect Apache web server
   performance metrics via the `server-status?auto` endpoint.
-- [Nginx](/docs/nightly/references/collectors-references/webapps/nginx): Monitor web server status
+- [Nginx](/docs/nightly/integrations/monitor/webapps/nginx): Monitor web server status
   information by gathering metrics via `ngx_http_stub_status_module`.
-- [Postgres](/docs/nightly/references/collectors-references/databases/postgressql): Collect database health
+- [Postgres](/docs/nightly/integrations/monitor/databases/postgressql): Collect database health
   and performance metrics.
-- [ElasticSearch](/docs/nightly/references/collectors-references/apps/elasticsearch): Collect search
+- [ElasticSearch](/docs/nightly/integrations/monitor/apps/elasticsearch): Collect search
   engine performance and health statistics. Optionally collects per-index metrics.
-- [PHP-FPM](/docs/nightly/references/collectors-references/webapps/php-fpm): Collect application summary
+- [PHP-FPM](/docs/nightly/integrations/monitor/webapps/php-fpm): Collect application summary
   and processes health metrics by scraping the status page (`/status?full`).
 
-Our [supported collectors list](/docs/nightly/references/collectors/supported-collectors-list#service-and-application-collectors) shows all Netdata's
+Our [supported collectors list](/docs/nightly/integrations/monitor/monitor#service-and-application-collectors) shows all Netdata's
 application metrics collectors, including those for containers/k8s clusters.
 
 ## Collect metrics from applications running on Windows
@@ -72,7 +72,7 @@ list](https://github.com/netdata/netdata/blob/master/collectors/COLLECTORS.md#se
 
 ## What's next?
 
-If you haven't yet seen the [supported collectors list](/docs/nightly/references/collectors/supported-collectors-list) give it a once-over for any
+If you haven't yet seen the [supported collectors list](/docs/nightly/integrations/monitor/monitor) give it a once-over for any
 additional applications you may want to monitor using Netdata's native collectors, or the [generic Prometheus
 collector](https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/README.md).
 

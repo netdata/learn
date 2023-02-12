@@ -74,7 +74,7 @@ replacing `NODE` with the hostname or IP address of your system.
 There's nothing you need to do to enable [system monitoring](/docs/nightly/concepts/system-metrics) and Linux monitoring with
 the Netdata Agent, which autodetects metrics from CPUs, memory, disks, networking devices, and Linux processes like
 systemd without any configuration. If you're using containers, Netdata automatically collects resource utilization
-metrics from each using the [cgroups data collector](/docs/nightly/references/collectors-references/virtualized-environments/containers/monitor-cgroups).
+metrics from each using the [cgroups data collector](/docs/nightly/integrations/monitor/virtualized-environments/containers/monitor-cgroups).
 
 ## Enable Apache monitoring
 
@@ -120,7 +120,7 @@ system](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop
 ## Enable PHP monitoring
 
 Unlike Apache or MySQL, PHP isn't a service that you can monitor directly, unless you instrument a PHP-based application
-with [StatsD](/docs/nightly/references/collectors-references/apm/statsd.plugin).
+with [StatsD](/docs/nightly/integrations/monitor/apm/statsd.plugin).
 
 However, if you use [PHP-FPM](https://php-fpm.org/) in your LAMP stack, you can monitor that process with our [PHP-FPM
 data collector](https://github.com/netdata/go.d.plugin/blob/master/modules/phpfpm/README.md).
@@ -242,8 +242,8 @@ source of issues faster with [Metric Correlations](/docs/nightly/operations/metr
 ### Related reference documentation
 
 - [Netdata Agent · Get started](https://github.com/netdata/netdata/blob/master/docs/get-started.mdx)
-- [Netdata Agent · Apache data collector](/docs/nightly/references/collectors-references/webapps/apache)
-- [Netdata Agent · Web log collector](/docs/nightly/references/collectors-references/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis)
-- [Netdata Agent · MySQL data collector](/docs/nightly/references/collectors-references/databases/mysql)
-- [Netdata Agent · PHP-FPM data collector](/docs/nightly/references/collectors-references/webapps/php-fpm)
+- [Netdata Agent · Apache data collector](/docs/nightly/integrations/monitor/webapps/apache)
+- [Netdata Agent · Web log collector](/docs/nightly/integrations/monitor/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis)
+- [Netdata Agent · MySQL data collector](/docs/nightly/integrations/monitor/databases/mysql)
+- [Netdata Agent · PHP-FPM data collector](/docs/nightly/integrations/monitor/webapps/php-fpm)
 
