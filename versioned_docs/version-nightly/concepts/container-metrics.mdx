@@ -12,7 +12,7 @@ learn_rel_path: "Concepts"
 Thanks to close integration with Linux cgroups and the virtual files it maintains under `/sys/fs/cgroup`, Netdata can
 monitor the health, status, and resource utilization of many different types of Linux containers.
 
-Netdata uses [cgroups.plugin](/docs/nightly/references/collectors-references/virtualized-environments/containers/monitor-cgroups) to poll `/sys/fs/cgroup` and convert the raw data
+Netdata uses [cgroups.plugin](/docs/nightly/integrations/monitor/virtualized-environments/containers/monitor-cgroups) to poll `/sys/fs/cgroup` and convert the raw data
 into human-readable metrics and meaningful visualizations. Through cgroups, Netdata is compatible with **all Linux
 containers**, such as Docker, LXC, LXD, Libvirt, systemd-nspawn, and more. Read more about [Docker-specific
 monitoring](#collect-docker-metrics) below.
@@ -24,16 +24,16 @@ services running inside of pods in your k8s cluster. Read more about [Kubernetes
 monitoring](#collect-kubernetes-metrics) below.
 
 A handful of additional collectors gather metrics from container-related services, such as
-[dockerd](/docs/nightly/references/collectors-references/virtualized-environments/containers/docker) or [Docker
+[dockerd](/docs/nightly/integrations/monitor/virtualized-environments/containers/docker) or [Docker
 Engine](https://github.com/netdata/go.d.plugin/blob/master/modules/docker_engine/README.md). You can find all
 container collectors in our supported collectors list under the
-[containers/VMs](/docs/nightly/references/collectors/supported-collectors-list#containers-and-vms) and
-[Kubernetes](/docs/nightly/references/collectors/supported-collectors-list#containers-and-vms) headings.
+[containers/VMs](/docs/nightly/integrations/monitor/monitor#containers-and-vms) and
+[Kubernetes](/docs/nightly/integrations/monitor/monitor#containers-and-vms) headings.
 
 ## Collect Docker metrics
 
 Netdata has robust Docker monitoring thanks to the aforementioned
-[cgroups.plugin](/docs/nightly/references/collectors-references/virtualized-environments/containers/monitor-cgroups). By polling cgroups every second, Netdata can produce meaningful
+[cgroups.plugin](/docs/nightly/integrations/monitor/virtualized-environments/containers/monitor-cgroups). By polling cgroups every second, Netdata can produce meaningful
 visualizations about the CPU, memory, disk, and network utilization of all running containers on the host system with
 zero configuration.
 
@@ -79,12 +79,12 @@ your k8s infrastructure.
     collector](https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/README.md). With these
     configuration files, Netdata collects metrics from any compatible applications as they run _inside_ of a pod.
     Service discovery happens without manual intervention as pods are created, destroyed, or moved between nodes. 
--   A [Kubelet collector](/docs/nightly/references/collectors-references/container-orchestrators/kubernetes/kubelet), which runs
+-   A [Kubelet collector](/docs/nightly/integrations/monitor/container-orchestrators/kubernetes/kubelet), which runs
     on each node in a k8s cluster to monitor the number of pods/containers, the volume of operations on each container,
     and more.
--   A [kube-proxy collector](/docs/nightly/references/collectors-references/container-orchestrators/kubernetes/kube-proxy), which
+-   A [kube-proxy collector](/docs/nightly/integrations/monitor/container-orchestrators/kubernetes/kube-proxy), which
     also runs on each node and monitors latency and the volume of HTTP requests to the proxy.
--   A [cgroups collector](/docs/nightly/references/collectors-references/virtualized-environments/containers/monitor-cgroups), which collects CPU, memory, and bandwidth metrics for
+-   A [cgroups collector](/docs/nightly/integrations/monitor/virtualized-environments/containers/monitor-cgroups), which collects CPU, memory, and bandwidth metrics for
     each container running on your k8s cluster.
 
 For a holistic view of Netdata's Kubernetes monitoring capabilities, see our guide: [_Monitor a Kubernetes (k8s) cluster

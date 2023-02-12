@@ -8,13 +8,13 @@ learn_rel_path: "Setup"
 ---
 
 
-The list of supported collectors can be found in [the documentation](/docs/nightly/references/collectors/supported-collectors-list), 
+The list of supported collectors can be found in [the documentation](/docs/nightly/integrations/monitor/monitor), 
 and on [our website](https://www.netdata.cloud/integrations). The documentation of each collector provides all the 
 necessary configuration options and prerequisites for that collector. In most cases, either the charts are automatically generated 
 without any configuration, or you just fulfil those prerequisites and [configure the collector](#configure-a-collector).
 
 If the application you are interested in monitoring is not listed in our integrations, 
-look at our [generic Prometheus collector](/docs/nightly/references/collectors-references/extended-metric-collection/prometheus-endpoints) 
+look at our [generic Prometheus collector](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints) 
 or [write a custom collector in Go](/docs/nightly/developers/how-to-write-a-netdata-collector-in-go).
 
 If we do support your collector but the charts described in the documentation don't appear on your dashboard, the reason will 
@@ -92,14 +92,14 @@ metrics, will automatically enable data collection for the application in questi
 
 When Netdata starts up, each collector searches for exposed metrics on the default endpoint established by that service
 or application's standard installation procedure. For example, 
-the [Nginx collector](/docs/nightly/references/collectors-references/webapps/nginx) searches at
+the [Nginx collector](/docs/nightly/integrations/monitor/webapps/nginx) searches at
 `http://127.0.0.1/stub_status` for exposed metrics in the correct format. If an Nginx web server is running and exposes
 metrics on that endpoint, the collector begins gathering them.
 
 However, not every node or infrastructure uses standard ports, paths, files, or naming conventions. You may need to
 enable or configure a collector to gather all available metrics from your systems, containers, or applications.
 
-First, [find the collector](/docs/nightly/references/collectors/supported-collectors-list) you want to edit 
+First, [find the collector](/docs/nightly/integrations/monitor/monitor) you want to edit 
 and open its documentation. Some software has collectors written in multiple languages. In these cases, you should always 
 pick the collector written in Go.
 
