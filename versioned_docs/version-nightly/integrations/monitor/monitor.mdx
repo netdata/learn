@@ -204,7 +204,7 @@ configure any of these collectors according to your setup and infrastructure.
   operations, and more.
 - [kube-proxy](/docs/nightly/integrations/monitor/container-orchestrators/kubernetes/kube-proxy): Collect
   metrics, such as syncing proxy rules and REST client requests, from one or more instances of `kube-proxy`.
-- [Service discovery](/docs/nightly/references/collectors-references/container-orchestrators/kubernetes/service-discovery): Find what services are running on a
+- [Service discovery](/docs/nightly/references/service-discovery): Find what services are running on a
   cluster's pods, converts that into configuration files, and exports them so they can be monitored by Netdata.
 
 ### Logs
@@ -631,9 +631,9 @@ default. To use a third-party collector, visit their GitHub/documentation page a
 In general the below steps should be sufficient to use a third party collector.
 
 1. Download collector code file
-   into [folder expected by Netdata](/docs/nightly/developers/external-plugins#environment-variables).
+   into [folder expected by Netdata](/docs/nightly/developers/external-plugins/external-plugins#environment-variables).
 2. Download default collector configuration file
-   into [folder expected by Netdata](/docs/nightly/developers/external-plugins#environment-variables).
+   into [folder expected by Netdata](/docs/nightly/developers/external-plugins/external-plugins#environment-variables).
 3. [Edit configuration file](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#configure-a-collector)
    from step 2 if required.
 4. [Enable collector](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#enable-a-collector-or-its-orchestrator).
