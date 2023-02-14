@@ -65,6 +65,10 @@ For production use, you need to install Netdata on one or more nodes running Lin
 Automated charts and alerts for your entire Windows infrastructure will be automatically generated.
 Each Windows host (data collection job) will be identifiable as an "instance" in the Netdata Cloud charts.
 
+### Windows Exporter Options
+
+Some `windows_exporter` collectors are [disabled by default](https://github.com/prometheus-community/windows_exporter#collectors). To enable a specific collector, pass its name as an argument to the `--collectors.enabled` option. See [examples](https://github.com/prometheus-community/windows_exporter#examples).
+
 ## Metrics
 
 All metrics have prefix.
@@ -236,7 +240,7 @@ Labels per scope:
 | netframework.clrexception_throw_to_catch_depth                       |       process        |                                                                                     traversed                                                                                      |  stack_frames/s   |
 | netframework.clrinterop_com_callable_wrappers                        |       process        |                                                                               com_callable_wrappers                                                                                |       ccw/s       |
 | netframework.clrinterop_interop_marshallings                         |       process        |                                                                                    marshallings                                                                                    |  marshallings/s   |
-| netframework.clrinterop_stubs_created                                |       process        |                                                                                      created                                                                                       |      stubs/s      |
+| netframework.clrinterop_interop_stubs_created                        |       process        |                                                                                      created                                                                                       |      stubs/s      |
 | netframework.clrjit_methods                                          |       process        |                                                                                    jit-compiled                                                                                    |     methods/s     |
 | netframework.clrjit_time                                             |       process        |                                                                                        time                                                                                        |    percentage     |
 | netframework.clrjit_standard_failures                                |       process        |                                                                                      failures                                                                                      |    failures/s     |
@@ -247,11 +251,11 @@ Labels per scope:
 | netframework.clrloading_assemblies_loaded                            |       process        |                                                                                       loaded                                                                                       |   assemblies/s    |
 | netframework.clrloading_classes_loaded                               |       process        |                                                                                       loaded                                                                                       |     classes/s     |
 | netframework.clrloading_class_load_failures                          |       process        |                                                                                     class_load                                                                                     |    failures/s     |
-| netframework.clrlockandthreads_queue_length                          |       process        |                                                                                      threads                                                                                       |     threads/s     |
-| netframework.clrlockandthreads_current_logical_threads               |       process        |                                                                                      logical                                                                                       |      threads      |
-| netframework.clrlockandthreads_current_physical_threads              |       process        |                                                                                      physical                                                                                      |      threads      |
-| netframework.clrlockandthreads_recognized_threads                    |       process        |                                                                                      threads                                                                                       |     threads/s     |
-| netframework.clrlockandthreads_contentions                           |       process        |                                                                                    contentions                                                                                     |   contentions/s   |
+| netframework.clrlocksandthreads_queue_length                         |       process        |                                                                                      threads                                                                                       |     threads/s     |
+| netframework.clrlocksandthreads_current_logical_threads              |       process        |                                                                                      logical                                                                                       |      threads      |
+| netframework.clrlocksandthreads_current_physical_threads             |       process        |                                                                                      physical                                                                                      |      threads      |
+| netframework.clrlocksandthreads_recognized_threads                   |       process        |                                                                                      threads                                                                                       |     threads/s     |
+| netframework.clrlocksandthreads_contentions                          |       process        |                                                                                    contentions                                                                                     |   contentions/s   |
 | netframework.clrmemory_allocated_bytes                               |       process        |                                                                                     allocated                                                                                      |      bytes/s      |
 | netframework.clrmemory_finalization_survivors                        |       process        |                                                                                      survived                                                                                      |      objects      |
 | netframework.clrmemory_heap_size                                     |       process        |                                                                                        heap                                                                                        |       bytes       |
@@ -325,3 +329,4 @@ give you clues as to why the collector isn't working.
   ```bash
   ./go.d.plugin -d -m windows
   ```
+
