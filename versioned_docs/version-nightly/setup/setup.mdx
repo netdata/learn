@@ -23,7 +23,7 @@ anomaly, or change in infrastructure affects how their Agents should perform.
 ## The Netdata config directory
 
 On most Linux systems, using our [recommended one-line
-installation](https://github.com/netdata/netdata/blob/master/docs/get-started.mdx#install-on-linux-with-one-line-installer), the **Netdata config
+installation](https://github.com/netdata/netdata/blob/master/docs/get-started.md#install-on-linux-with-one-line-installer), the **Netdata config
 directory** is `/etc/netdata/`. The config directory contains several configuration files with the `.conf` extension, a
 few directories, and a shell script named `edit-config`.
 
@@ -52,7 +52,7 @@ exist.
   **Application** charts from [`apps.plugin`](/docs/nightly/integrations/monitor/system-metrics/application-monitoring) or
   [`ebpf.plugin`](/docs/nightly/integrations/monitor/system-metrics/kernel-traces-metrics-ebpf).
 - `health.d/` is a directory that contains [health configuration files](/docs/nightly/setup/configure-health-alarms).
-- `health_alarm_notify.conf` enables and configures [alarm notifications](/docs/nightly/setup/enable-alarm-notifications).
+- `health_alarm_notify.conf` enables and configures [alarm notifications](/docs/nightly/integrations/notify/notify).
 - `statsd.d/` is a directory for configuring Netdata's [statsd collector](/docs/nightly/integrations/monitor/anything/statsd).
 - `stream.conf` configures [parent-child streaming](/docs/nightly/references/streaming-and-replication) between separate nodes running the Agent.
 - `.environment` is a hidden file that describes the environment in which the Netdata Agent is installed, including the
@@ -160,7 +160,7 @@ You can also take what you've learned about node configuration to enable or enha
 
 -   [Enable new collectors](/docs/nightly/setup/collectors-configuration) or tweak their behavior.
 -   [Configure existing health alarms](/docs/nightly/setup/configure-health-alarms) or create new ones.
--   [Enable notifications](/docs/nightly/setup/enable-alarm-notifications) to receive updates about the health of your
+-   [Enable notifications](/docs/nightly/integrations/notify/notify) to receive updates about the health of your
     infrastructure.
 -   Change [the long-term metrics retention period](/docs/nightly/setup/change-how-long-netdata-stores-metrics) using the database engine.
 
@@ -168,5 +168,5 @@ You can also take what you've learned about node configuration to enable or enha
 
 - [Netdata Agent · Daemon](/docs/nightly/references/configuration/netdata-daemon)
 - [Netdata Agent · Health monitoring](/docs/nightly/concepts/health-monitoring)
-- [Netdata Agent · Notifications](/docs/nightly/operations/alerts/notifications-reference)
+- [Netdata Agent · Notifications](/docs/nightly/integrations/notify/agent-alert-notifications/agent-alert-notifications)
 
