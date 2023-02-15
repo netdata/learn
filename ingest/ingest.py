@@ -78,6 +78,18 @@ defaultRepos = {
             "branch": "master",
             "HEAD" : "master",
         },
+    "helmchart":
+        {
+            "owner": "netdata",
+            "branch": "master",
+            "HEAD" : "master",
+        },
+    "agent-service-discovery":
+        {
+            "owner": "netdata",
+            "branch": "master",
+            "HEAD" : "master",
+        },
 }
 
 
