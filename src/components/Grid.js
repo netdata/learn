@@ -117,3 +117,18 @@ export const BoxListItem = ({ to, title, separator }) => (
 		)}
 	</div>
 );
+
+export const BoxListItemRegexLink = ({ to, title, separator }) => (
+	<div className={`block py-1 ${separator && 'list-none'}`}>
+		{!separator ? (
+			<Link to={to.match(/\]\((.*?)\)/)[1]}>
+				{title}
+				{to.startsWith('http') && (
+					<RiExternalLinkLine className="inline-block ml-1" />
+				)}
+			</Link>
+		) : (
+			<span className="block w-full h-0.5 mt-2 mb-2 bg-gray-200 bg-clip-content dark:bg-gray-700"></span>
+		)}
+	</div>
+);
