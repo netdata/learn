@@ -70,7 +70,13 @@ defaultRepos = {
             "owner": "netdata",
             "branch": "master",
             "HEAD" : "master",
-        }
+        },
+    "netdata-grafana-datasource-plugin":
+        {
+            "owner": "netdata",
+            "branch": "master",
+            "HEAD" : "master",
+        },
 }
 
 
