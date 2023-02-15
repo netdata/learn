@@ -1,0 +1,39 @@
+---
+title: "Kavenegar"
+sidebar_label: "Kavenegar"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/health/notifications/kavenegar/README.md"
+learn_status: "Published"
+learn_topic_type: "Tasks"
+learn_rel_path: "Integrations/Notify/Agent alert notifications"
+learn_autogeneration_metadata: "{'part_of_cloud': False, 'part_of_agent': True}"
+---
+
+
+[Kavenegar](https://kavenegar.com/) as service for software developers, based in Iran, provides send and receive SMS, calling voice by using its APIs.
+
+Will look like this on your Android device:
+
+![image](https://cloud.githubusercontent.com/assets/17090999/20034652/620b6100-a39b-11e6-96af-4f83b8e830e2.png)
+
+You will need:
+
+1.  Signup and Login to kavenegar.com
+2.  Get your APIKEY and Sender from `http://panel.kavenegar.com/client/setting/account`
+3.  Fill in KAVENEGAR_API_KEY="" KAVENEGAR_SENDER=""
+4.  Add the recipient phone numbers to DEFAULT_RECIPIENT_KAVENEGAR=""
+
+Set them in `/etc/netdata/health_alarm_notify.conf` (to edit it on your system run `/etc/netdata/edit-config health_alarm_notify.conf`), like this:
+
+```
+###############################################################################
+
+
+SEND_KAVENEGAR="YES"
+
+
+KAVENEGAR_API_KEY=""
+KAVENEGAR_SENDER=""
+DEFAULT_RECIPIENT_KAVENEGAR=""
+```
+
+
