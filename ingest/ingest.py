@@ -41,6 +41,7 @@ Stages of this ignest sript:
 dryRun = False
 
 restFilesDictionary = {}
+restFilesWithMetadataDictionary = {}
 toPublish = {}
 markdownFiles = []
  #Temporarily until we release (change it (the default) to /docs
@@ -499,12 +500,13 @@ if __name__ == '__main__':
                     except:
                         print("File {} doesnt container key-value {}".format(md, KeyError))
             else:
-                restFilesDictionary[md] = {
+                restFilesWithMetadataDictionary[md] = {
                     "metadata": metadata,
                     "learnPath": str("docs/_archive/_{}".format(md)),
                     "ingestedRepo": str(md.split("/", 2)[1])
                 }
-
+        else:
+            restFilesDictionary[md] = {"tmpPath": md}
         del metadata
     # we update the list only with the files that are destined for Learn
 
@@ -518,7 +520,7 @@ if __name__ == '__main__':
     for file in toPublish:
         copyDoc(file, toPublish[file]["learnPath"])
         sanitizePage(toPublish[file]["learnPath"])
-    for file in restFilesDictionary:
+    for file in restFilesWithMetadataDictionary:
         pass
         # moveDoc(file, restFilesDictionary[file]["learnPath"])
     #print("Generating integrations page")
@@ -531,15 +533,19 @@ if __name__ == '__main__':
     #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), indent=4))
     for file in toPublish:
         convertGithubLinks(toPublish[file]["learnPath"], reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), DOCS_PREFIX)
-    print("These files are in repos and dont have valid metadata to publish them in learn")
-    for file in restFilesDictionary:
-        if "custom_edit_url" in restFilesDictionary[file]["metadata"]:
-            print(restFilesDictionary[file]["metadata"]["custom_edit_url"], file)
+    if len(restFilesWithMetadataDictionary)>0:
+        print("These files are in repos and dont have valid metadata to publish them in learn")
+    for file in restFilesWithMetadataDictionary:
+        if "custom_edit_url" in restFilesWithMetadataDictionary[file]["metadata"]:
+            print(restFilesWithMetadataDictionary[file]["metadata"]["custom_edit_url"], file)
         else:
             print("Custom edit url not found, printing any metadata and its position when we ingest it" )
-            print(json.dumps(restFilesDictionary[file]["metadata"], indent=4))
+            print(json.dumps(restFilesWithMetadataDictionary[file]["metadata"], indent=4))
             print("&Position: ", file)
-    print("Done.")
+    if len(restFilesDictionary):
+        print("These markdown files are in our repos and dont have any metadata at all")
+    for file in restFilesDictionary:
+        print(restFilesDictionary[file]["tmpPath"])
 
     unSafeCleanUpFolders(TEMP_FOLDER)
 
