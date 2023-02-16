@@ -352,57 +352,91 @@ def reductToPublishInGHLinksCorrelation(inputMatrix, DOCS_PREFIX, DOCS_PATH_LEAR
         sourceLink = produceGHEditLinkForRepo(repo, filePath)
         outputDictionary[sourceLink] = inputMatrix[x]["learnPath"].split(".mdx")[0].lstrip('"').rstrip('"').replace(
             DOCS_PREFIX, DOCS_PATH_LEARN)
-    return (outputDictionary)
+        
+        # For now don't remove learnPath, as we need it for the link replacement logic
+        inputMatrix[x].update({"newLearnPath": outputDictionary[sourceLink]})
+
+    return (inputMatrix)
+
 
 def convertGithubLinks(path, fileDict, DOCS_PREFIX):
     '''
     Input:
-        path: a folder with markdown files
-        fileDic: indexes of the ingested documents with their metadata
-    Expected format of links in files
-        [*](https://github.com/netdata/netdata/blob/master/*)
+        path: The path to the markdown file
+        fileDic: the fileDictionary with every info about a file
 
+    Expected format of links in files:
+        [*](https://github.com/netdata/netdata/blob/master/*)
     '''
+
     # Open the file for reading
     dummyFile = open(path, "r")
-    body = dummyFile.read()
+    wholeFile = dummyFile.read()
     dummyFile.close()
-    output = []
 
-    # For every line in the file we are going to search for urls,
-    # and check the dictionary for the relative path of Learn.
-    for line in body.splitlines():
-        # If in the line there is a link beginning with "]("  then
-        if re.search("\]\((.*?)\)", line):
-            # Find all the links inside that line
-            urls = []
-            temp = re.findall(r'\[.*?]\((.*?)\)', line)
-            for i in temp:
+    # Split the file into metadata that this function won't touch and the file's body
+    metadata = "---" + wholeFile.split("---", 2)[1] + "---"
+    body = wholeFile.split("---", 2)[2]
+
+    # If there are links inside the body
+    if re.search("\]\((.*?)\)", body):
+        # Find all the links and add them in an array
+        urls = []
+        temp = re.findall(r'\[\n|.*?]\((\n|.*?)\)', body)
+        # For every link, try to not touch the heading that link points to, as it stays the same
+        for i in temp:
+            try:
+                urls.append(i.split('#')[0])
+            except:
+                urls.append(i)
+
+        for url in urls:
+            # The URL will get replaced by the value of the replaceString
+            try:
+                # The keys inside fileDict are like "ingest-temp-folder/netdata/collectors/charts.d.plugin/ap/README.md", so from the link, we need:
+                # replace the https link prefix until our organization identifier with the prefix of the temp folder
+                # try and catch any mishaps in links that instead of "blob" have "edit"
+                # remove "blob/master/"
+                # Then we have the correct key for the dictionary
+                dict = fileDict[url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
+                    "edit", "blob").replace("blob/master/", "")]
+                replaceString = dict["newLearnPath"]
+
+                # In some cases, a "id: someId" will be in a file, this is to change a file's link in Docusaurus, so we need to be careful to honor that
                 try:
-                    urls.append(i.split('#')[0])
+                    id = dict["metadata"]["id"]
+
+                    replaceString = replaceString.replace(
+                        replaceString.split(
+                            "/")[len(replaceString.split("/"))-1],
+                        id
+                    )
                 except:
-                    urls.append(i)
-            #print("************************\n",urls,"************************\n")
-            for url in urls:
-                # This is replaceString's default value
-                # If the URL is a GitHub one
-                # (at the moment we support this logic only for netdata/netdata links,
-                # to keep things simple and test the strategy)
-                # In the line we are examining, replace the URL string with the new replaceString value
-                try:
-                    line = line.replace(url, fileDict[url])
-                    #print("Parsed:", url,"  ->  ", fileDict[url])
-                except:
-                    #print("URL COULD BE PARSED:", url)
+                    # There is no "id" metadata in the file, do nothing
                     pass
-        # In each iteration we append the new line string, so we essentially re-build the file line-by-line,
-        # and in the process some line URLS will be fixed to relative "/docs/" links
-        output.append(line + "\n")
+
+                # Check for pages that are category overview pages, and have filepath like ".../monitor/monitor".
+                # This way we remove the double dirname in the end, because docusaurus routes the file to ../monitor
+                if replaceString.split("/")[len(replaceString.split("/"))-1] == replaceString.split("/")[len(replaceString.split("/"))-2]:
+                    sameParentDir = replaceString.split(
+                        "/")[len(replaceString.split("/"))-2]
+
+                    properLink = replaceString.split(sameParentDir, 1)
+                    replaceString = properLink[0] + properLink[1].strip("/")
+
+                # In the end replace the URL with the replaceString
+                body = body.replace(url, replaceString)
+            except:
+                # This is probably a link that can't be translated to a Learn link (e.g. An external file)
+                pass
+
+    # Construct again the whole file
+    wholeFile = metadata + body
 
     # Write everything onto the file again
     dummyFile = open(path, "w")
     dummyFile.seek(0)
-    dummyFile.writelines(output)
+    dummyFile.write(wholeFile)
     dummyFile.close()
 
 
@@ -544,7 +578,8 @@ if __name__ == '__main__':
     # pointing to GitHub relative paths
     #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), indent=4))
     for file in toPublish:
-        convertGithubLinks(toPublish[file]["learnPath"], reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), DOCS_PREFIX)
+        fileDict = reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER)
+        convertGithubLinks(fileDict[file]["learnPath"],fileDict , DOCS_PREFIX)
     if len(restFilesWithMetadataDictionary)>0:
         print("These files are in repos and dont have valid metadata to publish them in learn")
     for file in restFilesWithMetadataDictionary:
