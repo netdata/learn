@@ -344,7 +344,7 @@ your machine from within the container. Please read the following carefully.
 #### Docker socket proxy (safest option)
 
 Deploy a Docker socket proxy that accepts and filters out requests using something like
-[HAProxy](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-haproxy) so that it restricts connections to read-only access to the CONTAINERS
+[HAProxy](/docs/nightly/configuration/secure-your-nodes/netdata-via-haproxy) so that it restricts connections to read-only access to the CONTAINERS
 endpoint.
 
 The reason it's safer to expose the socket to the proxy is because Netdata has a TCP port exposed outside the Docker
