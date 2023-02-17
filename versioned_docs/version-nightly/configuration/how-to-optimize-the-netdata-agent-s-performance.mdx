@@ -192,7 +192,7 @@ A dedicated web server like Nginx provides far more robustness than the Agent's 
 Nginx can handle more concurrent connections, reuse idle connections, and use fast gzip compression to reduce payloads.
 
 For details on installing Nginx as a proxy for the local Agent dashboard, see our [Nginx
-doc](/docs/nightly/setup/expose-local-dashboard-through-proxy/running-netdata-behind-nginx).
+doc](/docs/nightly/configuration/secure-your-nodes/running-netdata-behind-nginx).
 
 After you complete Nginx setup according to the doc linked above, we recommend setting `keepalive` to `1024`, and using
 gzip compression with the following options in the `location /` block:
