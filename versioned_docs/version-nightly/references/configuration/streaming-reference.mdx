@@ -14,14 +14,14 @@ Each node running Netdata can stream the metrics it collects, in real time, to a
 [how streaming works](/docs/nightly/concepts/how-metrics-streaming-works).
 
 For a quickstart guide for enabling a simple `parent-child` streaming relationship, see our [stream metrics between
-nodes](https://github.com/netdata/netdata/blob/master/docs/metrics-storage-management/enable-streaming.md) doc. All other configuration options and scenarios are
+nodes](/docs/nightly/setup/enable-streaming-between-nodes) doc. All other configuration options and scenarios are
 covered in the sections below.
 
 ## Configuration
 
 There are two files responsible for configuring Netdata's streaming capabilities: `stream.conf` and `netdata.conf`.
 
-From within your Netdata config directory (typically `/etc/netdata`), [use `edit-config`](/docs/nightly/setup/setup) to
+From within your Netdata config directory (typically `/etc/netdata`), [use `edit-config`](/docs/nightly/setup) to
 open either `stream.conf` or `netdata.conf`.
 
 ```
@@ -194,7 +194,7 @@ default `dbengine` as specified by the `API_KEY`, and alarms are disabled.
 ### Securing streaming with TLS/SSL
 
 Netdata does not activate TLS encryption by default. To encrypt streaming connections, you first need to [enable TLS
-support](https://github.com/netdata/netdata/blob/master/web/server/README.md#enabling-tls-support) on the parent. With encryption enabled on the receiving side, you
+support](/docs/nightly/references/configuration/web-server#enabling-tls-support) on the parent. With encryption enabled on the receiving side, you
 need to instruct the child to use TLS/SSL as well. On the child's `stream.conf`, configure the destination as follows:
 
 ```

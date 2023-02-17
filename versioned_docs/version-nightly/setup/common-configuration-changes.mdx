@@ -14,7 +14,7 @@ systems, containers, and applications, but there are hundreds of settings to twe
 over your monitoring platform.
 
 This document assumes familiarity with
-using [`edit-config`](/docs/nightly/setup/setup) from the Netdata config
+using [`edit-config`](/docs/nightly/setup) from the Netdata config
 directory.
 
 ## Change dashboards and visualizations
@@ -132,7 +132,7 @@ section of
 ### Enable alarm notifications
 
 Open `health_alarm_notify.conf` for editing. First, read the [enabling
-notifications](https://github.com/netdata/netdata/blob/master/docs/monitor/enable-notifications.md#netdata-agent) doc
+notifications](/docs/nightly/integrations/notify#netdata-agent) doc
 for an example of the process using Slack, then
 click on the link to your preferred notification method to find documentation for that specific endpoint.
 
@@ -165,7 +165,7 @@ using [access lists](/docs/nightly/references/configuration/web-server#access-li
 and [simple patterns](/docs/nightly/developers/libnetdata/simple-patterns).
 
 See a quickstart to access lists in the [node security
-doc](https://github.com/netdata/netdata/blob/master/docs/configure/secure-nodes.md#restrict-access-to-the-local-dashboard).
+doc](/docs/nightly/setup/secure-your-nodes#restrict-access-to-the-local-dashboard).
 
 ### Stop sending anonymous statistics to Google Analytics
 
@@ -189,7 +189,7 @@ Change the `default port` setting in the `[web]` section to a port other than `1
 ```
 
 Use the `bind to` setting to the ports other assets, such as
-the [running `netdata.conf` configuration](/docs/nightly/setup/setup#see-an-agents-running-configuration),
+the [running `netdata.conf` configuration](/docs/nightly/setup#see-an-agents-running-configuration),
 API, or streaming requests listen to.
 
 ## Reduce resource usage
@@ -230,7 +230,7 @@ You can also take what you've learned about node configuration to tweak the Agen
   their behavior.
 - [Configure existing health alarms](/docs/nightly/setup/configure-health-alarms) or
   create new ones.
-- [Enable notifications](/docs/nightly/integrations/notify/notify) to receive
+- [Enable notifications](/docs/nightly/integrations/notify) to receive
   updates about the health of your
   infrastructure.
 -
@@ -245,6 +245,6 @@ using the database engine.
 - [Netdata Agent · Web server](/docs/nightly/references/configuration/web-server)
 - [Netdata Agent · Local Agent dashboard](/docs/nightly/references/local-agent-dashboard)
 - [Netdata Agent · Health monitoring](/docs/nightly/operations/alerts/health)
-- [Netdata Agent · Notifications](/docs/nightly/integrations/notify/agent-alert-notifications/agent-alert-notifications)
+- [Netdata Agent · Notifications](/docs/nightly/integrations/notify/agent-alert-notifications)
 - [Netdata Agent · Simple patterns](/docs/nightly/developers/libnetdata/simple-patterns)
 

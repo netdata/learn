@@ -29,7 +29,7 @@ this is not an option in your case always verify the current domain resolution (
 
 For a guide to connecting a node using the ACLK, plus additional troubleshooting and reference information, read our [get
 started with Cloud](https://github.com/netdata/netdata/blob/master/docs/cloud/get-started.md) guide or the full [connect to Cloud
-documentation](https://github.com/netdata/netdata/blob/master/claim/README.md).
+documentation](/docs/nightly/setup/connect-agent-to-cloud).
 
 ## Data privacy
 [Data privacy](https://netdata.cloud/privacy/) is very important to us. We firmly believe that your data belongs to
@@ -56,7 +56,7 @@ configuration uses two settings:
 ```
 
 If your Agent needs to use a proxy to access the internet, you must [set up a proxy for
-connecting to cloud](https://github.com/netdata/netdata/blob/master/claim/README.md#connect-through-a-proxy).
+connecting to cloud](/docs/nightly/setup/connect-agent-to-cloud#connect-through-a-proxy).
 
 You can configure following keys in the `netdata.conf` section `[cloud]`:
 ```
@@ -76,7 +76,7 @@ You have two options if you prefer to disable the ACLK and not use Netdata Cloud
 
 You can pass the `--disable-cloud` parameter to the Agent installation when using a kickstart script
 ([kickstart.sh](/docs/nightly/installation/install-netdata-with-kickstart.sh), or a [manual installation from
-Git](https://github.com/netdata/netdata/blob/master/packaging/installer/methods/manual.md).
+Git](/docs/nightly/installation/install-netdata-on-linux-from-a-git-checkout).
 
 When you pass this parameter, the installer does not download or compile any extra libraries. Once running, the Agent
 kills the thread responsible for the ACLK and connecting behavior, and behaves as though the ACLK, and thus Netdata Cloud,

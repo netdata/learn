@@ -19,7 +19,7 @@ from external processes, thus allowing Netdata to use **external plugins**.
 |[charts.d.plugin](/docs/nightly/developers/external-plugins/charts.d.plugin)|`BASH`|all|a **plugin orchestrator** for data collection modules written in `BASH` v4+.|
 |[cups.plugin](/docs/nightly/integrations/monitor/remotes/devices/cups.plugin)|`C`|all|monitors **CUPS**|
 |[ebpf.plugin](/docs/nightly/integrations/monitor/system-metrics/kernel-traces-metrics-ebpf)|`C`|linux|monitors different metrics on environments using kernel internal functions.|
-|[go.d.plugin](/docs/nightly/developers/external-plugins/go.d.plugin/go.d.plugin)|`GO`|all|collects metrics from the system, applications, or third-party APIs.|
+|[go.d.plugin](/docs/nightly/developers/external-plugins/go.d.plugin)|`GO`|all|collects metrics from the system, applications, or third-party APIs.|
 |[ioping.plugin](/docs/nightly/integrations/monitor/qos/latency-monitoring-ioping.plugin)|`C`|all|measures disk latency.|
 |[freeipmi.plugin](/docs/nightly/integrations/monitor/devices/freeipmi.plugin)|`C`|linux|collects metrics from enterprise hardware sensors, on Linux servers.|
 |[nfacct.plugin](/docs/nightly/integrations/monitor/networking/netfilter-statistics-nfacct.plugin)|`C`|linux|collects netfilter firewall, connection tracker and accounting metrics using `libmnl` and `libnetfilter_acct`.|
@@ -584,12 +584,12 @@ or do not output the line at all.
 ## Modular Plugins
 
 1.  **python**, use `python.d.plugin`, there are many examples in the [python.d
-    directory](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/README.md)
+    directory](/docs/nightly/developers/external-plugins/python.d.plugin)
 
     python is ideal for Netdata plugins. It is a simple, yet powerful way to collect data, it has a very small memory footprint, although it is not the most CPU efficient way to do it.
 
 2.  **BASH**, use `charts.d.plugin`, there are many examples in the [charts.d
-    directory](https://github.com/netdata/netdata/blob/master/collectors/charts.d.plugin/README.md)
+    directory](/docs/nightly/developers/external-plugins/charts.d.plugin)
 
     BASH is the simplest scripting language for collecting values. It is the less efficient though in terms of CPU resources. You can use it to collect data quickly, but extensive use of it might use a lot of system resources.
 

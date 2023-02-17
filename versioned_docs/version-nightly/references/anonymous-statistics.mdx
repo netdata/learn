@@ -85,13 +85,13 @@ installation, including manual, offline, and macOS installations. Create the fil
 .opt-out-from-anonymous-statistics` from your Netdata configuration directory.
 
 **Pass the option `--disable-telemetry` to any of the installer scripts in the [installation
-docs](https://github.com/netdata/netdata/blob/master/packaging/installer/README.md).** You can append this option during the initial installation or a manual
+docs](/docs/nightly/getting-started/install-netdata).** You can append this option during the initial installation or a manual
 update. You can also export the environment variable `DISABLE_TELEMETRY` with a non-zero or non-empty value
 (e.g: `export DISABLE_TELEMETRY=1`).
 
 When using Docker, **set your `DISABLE_TELEMETRY` environment variable to `1`.** You can set this variable with the following
 command: `export DISABLE_TELEMETRY=1`. When creating a container using Netdata's [Docker
-image](https://github.com/netdata/netdata/blob/master/packaging/docker/README.md#create-a-new-netdata-agent-container) for the first time, this variable will disable
+image](/docs/nightly/installation/install-netdata-with-docker#create-a-new-netdata-agent-container) for the first time, this variable will disable
 the anonymous statistics script inside of the container.
 
 Each of these opt-out processes does the following:

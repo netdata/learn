@@ -12,7 +12,7 @@ Netdata offers two ways to receive alert notifications on external platforms. Th
 parallel, which means you can enable both at the same time to send alert notifications to any number of endpoints.
 
 Both methods use a node's health alerts to generate the content of alert notifications. Read the doc on [configuring
-alerts](https://github.com/netdata/netdata/blob/master/docs/monitor/configure-alarms.md) to change the preconfigured thresholds or to create tailored alerts for your
+alerts](/docs/nightly/setup/configure-health-alarms) to change the preconfigured thresholds or to create tailored alerts for your
 infrastructure.
 
 Netdata Cloud offers [centralized alert notifications](#netdata-cloud) via email, which leverages the health status
@@ -28,7 +28,7 @@ response process.
 ## Netdata Cloud
 
 Netdata Cloud's [centralized alert
-notifications](https://github.com/netdata/netdata/blob/master/docs/cloud/alerts-notifications/notifications.md) is a zero-configuration way to
+notifications](/docs/nightly/integrations/notify/cloud-alert-notifications) is a zero-configuration way to
 get notified when an anomaly or incident strikes any node or application in your infrastructure. The advantage of using
 centralized alert notifications from Netdata Cloud is that you don't have to worry about configuring each node in your
 infrastructure.
@@ -43,13 +43,13 @@ choose what types of notifications to receive from each War Room.
 ![Enabling and configuring alert notifications in Netdata
 Cloud](https://user-images.githubusercontent.com/1153921/101936280-93c50900-3b9d-11eb-9ba0-d6927fa872b7.gif)
 
-See the [centralized alert notifications](/docs/nightly/integrations/notify/cloud-alert-notifications/cloud-alert-notifications)
+See the [centralized alert notifications](/docs/nightly/integrations/notify/cloud-alert-notifications)
 reference doc for further details about what information is conveyed in an email notification, flood protection, and
 more.
 
 ## Netdata Agent
 
-The Netdata Agent's [notification system](/docs/nightly/integrations/notify/agent-alert-notifications/agent-alert-notifications) runs on every node and dispatches
+The Netdata Agent's [notification system](/docs/nightly/integrations/notify/agent-alert-notifications) runs on every node and dispatches
 notifications based on configured endpoints and roles. You can enable multiple endpoints on any one node _and_ use Agent
 notifications in parallel with centralized alert notifications in Netdata Cloud.
 
@@ -97,7 +97,7 @@ want to see alert notifications from Netdata. Click the green **Add to Slack** b
 
 On the following page, you'll receive a **Webhook URL**. That's what you'll need to configure Netdata, so keep it handy.
 
-Navigate to your [Netdata config directory](/docs/nightly/setup/setup#the-netdata-config-directory) and use `edit-config` to
+Navigate to your [Netdata config directory](/docs/nightly/setup#the-netdata-config-directory) and use `edit-config` to
 open the `health_alarm_notify.conf` file:
 
 ```bash

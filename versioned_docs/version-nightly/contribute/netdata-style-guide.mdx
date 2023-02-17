@@ -306,7 +306,7 @@ Netdata Agent installation will have commands under the same paths. When applica
 path, providing a recommendation or instructions on how to view the running configuration, which includes the correct
 paths.
 
-For example, the [configuration](/docs/nightly/setup/setup) doc first
+For example, the [configuration](/docs/nightly/setup) doc first
 teaches users how to find the Netdata config
 directory and navigate to it, then runs commands from the `/etc/netdata` path so that the instructions are more
 universal.
@@ -316,7 +316,7 @@ Don't include full paths, beginning from the system's root (`/`), as these might
 |                 |                                                                                                                                                                                                                                                                                                    |
 |-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Not recommended | Use `edit-config` to edit Netdata's configuration: `sudo /etc/netdata/edit-config netdata.conf`.                                                                                                                                                                                                   |
-| **Recommended** | Use `edit-config` to edit Netdata's configuration by first navigating to your [Netdata config directory](/docs/nightly/setup/setup#the-netdata-config-directory), which is typically at `/etc/netdata`, then running `sudo edit-config netdata.conf`. |
+| **Recommended** | Use `edit-config` to edit Netdata's configuration by first navigating to your [Netdata config directory](/docs/nightly/setup#the-netdata-config-directory), which is typically at `/etc/netdata`, then running `sudo edit-config netdata.conf`. |
 
 ### `sudo`
 
@@ -392,7 +392,7 @@ Links should always reference the full path to the document, beginning at the ro
 (`/`), and ending with the `.md` file extension. Avoid relative links or traversing up directories using `../`.
 
 For example, if you want to link to our node configuration document, link
-to `https://github.com/netdata/netdata/blob/master/docs/configure/nodes.md`. To reference
+to `/docs/nightly/setup`. To reference
 the guide for deploying the Netdata Agent with Ansible, link to `/packaging/installer/methods/ansible.md`.
 
 ### References to UI elements

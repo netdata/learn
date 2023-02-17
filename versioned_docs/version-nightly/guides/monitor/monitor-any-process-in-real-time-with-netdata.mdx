@@ -39,14 +39,14 @@ With Netdata's process monitoring, you can:
 
 - One or more Linux nodes running [Netdata](/docs/nightly/getting-started/install-netdata)
 - A general understanding of how
-  to [configure the Netdata Agent](/docs/nightly/setup/setup)
+  to [configure the Netdata Agent](/docs/nightly/setup)
   using `edit-config`.
 - A Netdata Cloud account. [Sign up](https://app.netdata.cloud) if you don't have one already.
 
 ## How does Netdata do process monitoring?
 
 The Netdata Agent already knows to look for hundreds
-of [standard applications that we support via collectors](/docs/nightly/integrations/monitor/monitor),
+of [standard applications that we support via collectors](/docs/nightly/integrations/monitor),
 and groups them based on their
 purpose. Let's say you want to monitor a MySQL
 database using its process. The Netdata Agent already knows to look for processes with the string `mysqld` in their
@@ -130,7 +130,7 @@ aware of hundreds of processes, and collects metrics from them automatically.
 But, if you want to change the grouping behavior, add an application that isn't yet supported in the Netdata Agent, or
 monitor a custom application, you need to edit the `apps_groups.conf` configuration file.
 
-Navigate to your [Netdata config directory](/docs/nightly/setup/setup) and
+Navigate to your [Netdata config directory](/docs/nightly/setup) and
 use `edit-config` to edit the file.
 
 ```bash
@@ -271,7 +271,7 @@ For even more in-depth troubleshooting, see our guide
 on [monitoring and debugging applications with eBPF](/docs/nightly/guides/troubleshoot/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics).
 
 If the process you're monitoring also has
-a [supported collector](/docs/nightly/integrations/monitor/monitor), now is a great time to
+a [supported collector](/docs/nightly/integrations/monitor), now is a great time to
 set
 that up if it wasn't autodetected. With both process utilization and application-specific metrics, you should have every
 piece of data needed to discover the root cause of an incident. See

@@ -44,7 +44,7 @@ Our most popular application collectors:
 - [PHP-FPM](/docs/nightly/integrations/monitor/webapps/php-fpm): Collect application summary
   and processes health metrics by scraping the status page (`/status?full`).
 
-Our [supported collectors list](/docs/nightly/integrations/monitor/monitor#service-and-application-collectors) shows all Netdata's
+Our [supported collectors list](/docs/nightly/integrations/monitor#service-and-application-collectors) shows all Netdata's
 application metrics collectors, including those for containers/k8s clusters.
 
 ## Collect metrics from applications running on Windows
@@ -58,7 +58,7 @@ address or hostname, plus the applicable port.
 
 For example, you have a MySQL database with a root password of `my-secret-pw` running on a Windows system with the IP
 address 203.0.113.0. you can configure the [MySQL
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/mysql/README.md) to look at `203.0.113.0:3306`:
+collector](/docs/nightly/integrations/monitor/databases/mysql) to look at `203.0.113.0:3306`:
 
 ```yml
 jobs:
@@ -67,16 +67,16 @@ jobs:
 ```
 
 This same logic applies to any application in our [supported collectors
-list](https://github.com/netdata/netdata/blob/master/collectors/COLLECTORS.md#service-and-application-collectors) that can run on Windows.
+list](/docs/nightly/integrations/monitor#service-and-application-collectors) that can run on Windows.
 
 ## What's next?
 
-If you haven't yet seen the [supported collectors list](/docs/nightly/integrations/monitor/monitor) give it a once-over for any
+If you haven't yet seen the [supported collectors list](/docs/nightly/integrations/monitor) give it a once-over for any
 additional applications you may want to monitor using Netdata's native collectors, or the [generic Prometheus
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/README.md).
+collector](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints).
 
 Collecting all the available metrics on your nodes, and across your entire infrastructure, is just one piece of the
 puzzle. Next, learn more about Netdata's famous real-time visualizations by [seeing an overview of your
-infrastructure](https://github.com/netdata/netdata/blob/master/docs/visualize/overview-infrastructure.md) using Netdata Cloud.
+infrastructure](/docs/nightly/operations/netdata-cloud-visualizations/see-an-overview-of-your-infrastructure) using Netdata Cloud.
 
 

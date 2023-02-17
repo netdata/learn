@@ -52,7 +52,7 @@ analysis (RCA).
 
 The anomalies collector creates two "classes" of alarms for each chart captured by the `charts_regex` setting. All these
 alarms are preconfigured based on your [configuration in
-`anomalies.conf`](https://github.com/netdata/netdata/blob/master/docs/guides/monitor/anomaly-detection-python.md#configure-the-anomalies-collector). With the `charts_regex`
+`anomalies.conf`](/docs/nightly/guides/monitor/detect-anomalies-in-systems-and-applications#configure-the-anomalies-collector). With the `charts_regex`
 and `charts_to_exclude` settings from [part 1](/docs/nightly/guides/monitor/detect-anomalies-in-systems-and-applications) of this guide series, the
 Netdata Agent creates 32 alarms driven by unsupervised anomaly detection.
 
@@ -75,7 +75,7 @@ further investigation.
 As you use the anomalies collector, you may find that the default settings provide too many or too few genuine alarms.
 In this case, [configure the alarm](/docs/nightly/setup/configure-health-alarms) with `sudo ./edit-config
 health.d/anomalies.conf`. Take a look at the `lookup` line syntax in the [health
-reference](https://github.com/netdata/netdata/blob/master/health/REFERENCE.md#alarm-line-lookup) to understand how the anomalies collector automatically creates
+reference](/docs/nightly/operations/alerts/health#alarm-line-lookup) to understand how the anomalies collector automatically creates
 alarms for any dimension on the `anomalies_local.probability` and `anomalies_local.anomaly` charts.
 
 ## Visualize anomalies in charts
@@ -83,7 +83,7 @@ alarms for any dimension on the `anomalies_local.probability` and `anomalies_loc
 In either [Netdata Cloud](https://app.netdata.cloud) or the local Agent dashboard at `http://NODE:19999`, click on the
 **Anomalies** [section](/docs/nightly/references/local-agent-dashboard#sections) to see the pair of anomaly detection charts, which are
 preconfigured to visualize per-second anomaly metrics based on your [configuration in
-`anomalies.conf`](https://github.com/netdata/netdata/blob/master/docs/guides/monitor/anomaly-detection-python.md#configure-the-anomalies-collector).
+`anomalies.conf`](/docs/nightly/guides/monitor/detect-anomalies-in-systems-and-applications#configure-the-anomalies-collector).
 
 These charts have the contexts `anomalies.probability` and `anomalies.anomaly`. Together, these charts
 create meaningful visualizations for immediately recognizing not only that something is going wrong on your node, but
@@ -112,7 +112,7 @@ dimensions that immediately shot to 100% anomaly probability, and remained there
 ## Build an anomaly detection dashboard
 
 [Netdata Cloud](https://app.netdata.cloud) features a drag-and-drop [dashboard
-editor](https://github.com/netdata/netdata/blob/master/docs/visualize/create-dashboards.md) that helps you create entirely new dashboards with charts targeted for
+editor](/docs/nightly/operations/netdata-cloud-visualizations/create-new-dashboards) that helps you create entirely new dashboards with charts targeted for
 your specific applications.
 
 For example, here's a dashboard designed for visualizing anomalies present in an Nginx web server, including
@@ -136,7 +136,7 @@ We'd love to hear your feedback on the anomalies collector. Hop over to the [com
 forum](https://community.netdata.cloud/t/anomalies-collector-feedback-megathread/767), and let us know if you're already getting value from
 unsupervised anomaly detection, or would like to see something added to it. You might even post a custom configuration
 that works well for monitoring some other popular application, like MySQL, PostgreSQL, Redis, or anything else we
-[support through collectors](/docs/nightly/integrations/monitor/monitor).
+[support through collectors](/docs/nightly/integrations/monitor).
 
 ### Related reference documentation
 

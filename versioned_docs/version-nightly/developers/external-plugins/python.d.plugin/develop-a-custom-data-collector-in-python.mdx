@@ -12,9 +12,9 @@ learn_rel_path: "Developers/External plugins/python.d.plugin"
 ---
 
 
-The Netdata Agent uses [data collectors](/docs/nightly/concepts/collectors) to 
+The Netdata Agent uses [data collectors](/docs/nightly/concepts/collectors-ref) to 
 fetch metrics from hundreds of system, container, and service endpoints. While the Netdata team and community has built 
-[powerful collectors](/docs/nightly/integrations/monitor/monitor) for most system, container, 
+[powerful collectors](/docs/nightly/integrations/monitor) for most system, container, 
 and service/application endpoints, some custom applications can't be monitored by default.
 
 In this tutorial, you'll learn how to leverage the [Python programming language](https://www.python.org/) to build a
@@ -73,7 +73,7 @@ The basic elements of a Netdata collector are:
 - `get_data()`: The basic function of the plugin which will return to Netdata the correct values.
 
 **Note**: All names are better explained in the 
-[External Plugins Documentation](/docs/nightly/developers/external-plugins/external-plugins).
+[External Plugins Documentation](/docs/nightly/developers/external-plugins).
 Parameters like `priority` and `update_every` mentioned in that documentation are handled by the `python.d.plugin`,
 not by each collection module. 
 
@@ -517,7 +517,7 @@ variables and inform the user about the defaults. For example, take a look at th
 [GitHub](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/example/example.conf).
 
 You can read more about the configuration file on the [`python.d.plugin`
-documentation](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/README.md). 
+documentation](/docs/nightly/developers/external-plugins/python.d.plugin). 
 
 You can find the source code for the above examples on [GitHub](https://github.com/papajohn-uop/netdata). 
 

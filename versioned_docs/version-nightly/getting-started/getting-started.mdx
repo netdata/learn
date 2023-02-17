@@ -71,12 +71,12 @@ Netdata works with tons of applications, notifications platforms, and other time
 
 -   **300+ system, container, and application endpoints**: Collectors autodetect metrics from default endpoints and
     immediately visualize them into meaningful charts designed for troubleshooting. See [everything we
-    support](https://github.com/netdata/netdata/blob/master/collectors/COLLECTORS.md).
+    support](/docs/nightly/integrations/monitor).
 -   **20+ notification platforms**: Netdata's health watchdog sends warning and critical alarms to your [favorite
-    platform](https://github.com/netdata/netdata/blob/master/docs/monitor/enable-notifications.md) to inform you of anomalies just seconds
+    platform](/docs/nightly/integrations/notify) to inform you of anomalies just seconds
     after they affect your node.
 -   **30+ external time-series databases**: Export resampled metrics as they're collected to other [local- and
-    Cloud-based databases](https://github.com/netdata/netdata/blob/master/docs/export/external-databases.md) for best-in-class
+    Cloud-based databases](/docs/nightly/concepts/export-metrics-to-external-time-series-databases) for best-in-class
     interoperability.
 
 
@@ -128,7 +128,7 @@ Here are a few ways to enrich your existing monitoring and troubleshooting stack
 ### Collect metrics from Prometheus endpoints
 
 Netdata automatically detects 600 popular endpoints and collects per-second metrics from them via the [generic
-Prometheus collector](https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/README.md). This even
+Prometheus collector](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints). This even
 includes support for Windows 10 via [`windows_exporter`](https://github.com/prometheus-community/windows_exporter).
 
 This collector is installed and enabled on all Agent installations by default, so you don't need to waste time
@@ -156,7 +156,7 @@ charts, or use Netdata's health watchdog to send notifications whenever an anoma
 
 ## Community
 
-Netdata is an inclusive open-source project and community. Please read our [Code of Conduct](/docs/nightly/misc/netdata-community-code-of-conduct).
+Netdata is an inclusive open-source project and community. Please read our [Code of Conduct](https://github.com/netdata/.github/blob/main/CODE_OF_CONDUCT.md).
 
 Find most of the Netdata team in our [community forums](https://community.netdata.cloud). It's the best place to
 ask questions, find resources, and engage with passionate professionals. The team is also available and active in our [Discord](https://discord.com/invite/mPZ6WZKKG2) too.
@@ -176,7 +176,7 @@ You can also find Netdata on:
 
 Contributions are the lifeblood of open-source projects. While we continue to invest in and improve Netdata, we need help to democratize monitoring!
 
-- Read our [Contributing Guide](/docs/nightly/contribute/contribute), which contains all the information you need to contribute to Netdata, such as improving our documentation, engaging in the community, and developing new features. We've made it as frictionless as possible, but if you need help, just ping us on our community forums!
+- Read our [Contributing Guide](https://github.com/netdata/.github/blob/main/CONTRIBUTING.md), which contains all the information you need to contribute to Netdata, such as improving our documentation, engaging in the community, and developing new features. We've made it as frictionless as possible, but if you need help, just ping us on our community forums!
 - We have a whole category dedicated to contributing and extending Netdata on our [community forums](https://community.netdata.cloud/c/agent-development/9)
 - Found a bug? Open a [GitHub issue](https://github.com/netdata/netdata/issues/new?assignees=&labels=bug%2Cneeds+triage&template=BUG_REPORT.yml&title=%5BBug%5D%3A+).
 - View our [Security Policy](https://github.com/netdata/netdata/security/policy).

@@ -24,7 +24,7 @@ Netdata dashboards are single, scrollable pages with many charts stacked on top 
 down, charts appearing in your browser's viewport automatically load and update every second.
 
 The dashboard is broken up into multiple **sections**, such as **System Overview**, **CPU**, **Disk**, which are
-automatically generated based on which [collectors](/docs/nightly/concepts/collectors) begin collecting metrics when
+automatically generated based on which [collectors](/docs/nightly/concepts/collectors-ref) begin collecting metrics when
 Netdata starts up. Sections also appear in the right-hand **menu**, along with submenus based on the contexts and
 families Netdata creates for your node.
 
@@ -32,8 +32,8 @@ families Netdata creates for your node.
 
 Both the local Agent dashboard and Netdata Cloud feature time & date pickers to help you visualize specific points in
 time. In Netdata Cloud, the picker appears in the [Overview](/docs/nightly/operations/netdata-cloud-visualizations/see-an-overview-of-your-infrastructure), [Nodes
-view](https://github.com/netdata/netdata/blob/master/docs/cloud/visualize/nodes.md), [new
-dashboards](https://github.com/netdata/netdata/blob/master/docs/cloud/visualize/dashboards.md), and any single-node dashboards you visit.
+view](/docs/nightly/operations/visualizations/nodes-view), [new
+dashboards](/docs/nightly/operations/visualizations/build-new-dashboards), and any single-node dashboards you visit.
 
 Local Agent dashboard:
 
@@ -50,7 +50,7 @@ select days, hours, minutes or seconds. Click **Apply** to re-render all visuali
 **Clear** to restore the default timeframe.
 
 See reference documentation for the [local Agent dashboard](/docs/nightly/references/local-agent-dashboard#time--date-picker) and [Netdata
-Cloud](https://github.com/netdata/netdata/blob/master/docs/cloud/war-rooms.md#time--date-picker) for additional context about how the time &
+Cloud](/docs/nightly/operations/war-rooms#time--date-picker) for additional context about how the time &
 date picker behaves in each environment.
 
 ## Charts, dimensions, families, and contexts
@@ -111,7 +111,7 @@ height](https://user-images.githubusercontent.com/1153921/102652691-24b25c00-412
 Netdata Cloud now supports composite charts in the Overview interface. Composite charts come with a few additional UI
 elements and varied interactions, such as the location of dimensions and a utility bar for configuring the state of
 individual composite charts. All of these details are covered in the [Overview
-reference](https://github.com/netdata/netdata/blob/master/docs/cloud/visualize/overview.md) doc.
+reference](/docs/nightly/operations/visualizations/home-overview-and-single-node-view) doc.
 
 ## What's next?
 
@@ -120,7 +120,7 @@ aggregating relevant metrics from any number of nodes onto a single interface, y
 perform more targeted troubleshooting, or keep tabs on a bird's eye view of your infrastructure.
 
 If you're finished with dashboards for now, skip to Netdata's health watchdog for information on [creating or
-configuring](https://github.com/netdata/netdata/blob/master/docs/monitor/configure-alarms.md) alarms, and [send notifications](/docs/nightly/integrations/notify/notify)
+configuring](/docs/nightly/setup/configure-health-alarms) alarms, and [send notifications](/docs/nightly/integrations/notify)
 to get informed when something goes wrong in your infrastructure.
 
 ### Related reference documentation

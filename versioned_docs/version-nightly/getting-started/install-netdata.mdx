@@ -49,22 +49,22 @@ to [interact with charts](/docs/nightly/operations/interact-with-charts).
 
 #### Configuration
 
-Discover the recommended way to [configure Netdata's settings or behavior](/docs/nightly/setup/setup) using our built-in
+Discover the recommended way to [configure Netdata's settings or behavior](/docs/nightly/setup) using our built-in
 `edit-config` script, then apply that knowledge to mission-critical tweaks, such as [changing how long Netdata stores
-metrics](https://github.com/netdata/netdata/blob/master/docs/store/change-metrics-storage.md).
+metrics](/docs/nightly/setup/change-how-long-netdata-stores-metrics).
 
 #### Data collection
 
 If Netdata didn't autodetect all the hardware, containers, services, or applications running on your node, you should
-learn more about [how data collectors work](/docs/nightly/concepts/collectors). If there's a [supported
-collector](https://github.com/netdata/netdata/blob/master/collectors/COLLECTORS.md) for metrics you need, [configure the collector](/docs/nightly/setup/collectors-configuration)
+learn more about [how data collectors work](/docs/nightly/concepts/collectors-ref). If there's a [supported
+collector](/docs/nightly/integrations/monitor) for metrics you need, [configure the collector](/docs/nightly/setup/collectors-configuration)
 or read about its requirements to configure your endpoint to publish metrics in the correct format and endpoint.
 
 #### Alarms & notifications
 
 Netdata comes with hundreds of preconfigured alarms, designed by our monitoring gurus in parallel with our open-source
 community, but you may want to [edit alarms](/docs/nightly/setup/configure-health-alarms) or 
-[enable notifications](/docs/nightly/integrations/notify/notify) to customize your Netdata experience.
+[enable notifications](/docs/nightly/integrations/notify) to customize your Netdata experience.
 
 #### Make your deployment production ready
 
@@ -153,7 +153,7 @@ wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/
 ```
 
 With automatic updates disabled, you can choose exactly when and how you [update
-Netdata](https://github.com/netdata/netdata/blob/master/packaging/installer/UPDATE.md).
+Netdata](/docs/nightly/installation/update-the-netdata-agent).
 
 #### Network usage of Netdata’s automatic updater
 
@@ -253,6 +253,6 @@ both.
 
 Our current build process has some issues when using certain configurations of the `clang` C compiler on Linux. See [the
 section on `nonrepresentable section on output`
-errors](https://github.com/netdata/netdata/blob/master/packaging/installer/methods/manual.md#nonrepresentable-section-on-output-errors) for a workaround.
+errors](/docs/nightly/installation/install-netdata-on-linux-from-a-git-checkout#nonrepresentable-section-on-output-errors) for a workaround.
 
 
