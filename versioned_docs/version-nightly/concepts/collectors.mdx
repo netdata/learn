@@ -16,7 +16,7 @@ when you [install Netdata](/docs/nightly/getting-started/install-netdata).
 
 All collectors are **installed by default** with every installation of Netdata. You do not need to install
 collectors manually to collect metrics from new sources. See our 
-[list of supported collectors](/docs/nightly/integrations/monitor/monitor).
+[list of supported collectors](/docs/nightly/integrations/monitor).
 
 Upon startup, Netdata will **auto-detect** any application or service that has a collector, as long as both the collector
 and the app/service are configured correctly. If you don't see charts for your application, see
@@ -53,12 +53,12 @@ specifics of what a given collector does.
     -   **External** plugins organize collectors that gather metrics from external processes, such as a MySQL database or
         Nginx web server. They can be written in any language, and the `netdata` daemon spawns them as long-running
         independent processes. They communicate with the daemon via pipes. All external plugins are managed by
-        [plugins.d](/docs/nightly/developers/external-plugins/external-plugins), which provides additional management options.
+        [plugins.d](/docs/nightly/developers/external-plugins), which provides additional management options.
 
 -   **Orchestrators** are external plugins that run and manage one or more modules. They run as independent processes.
     The Go orchestrator is in active development.
 
-    -   [go.d.plugin](/docs/nightly/developers/external-plugins/go.d.plugin/go.d.plugin): An orchestrator for data
+    -   [go.d.plugin](/docs/nightly/developers/external-plugins/go.d.plugin): An orchestrator for data
         collection modules written in `go`.
 
     -   [python.d.plugin](/docs/nightly/developers/external-plugins/python.d.plugin): 

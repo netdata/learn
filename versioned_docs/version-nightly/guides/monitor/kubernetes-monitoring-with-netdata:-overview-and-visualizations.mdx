@@ -130,7 +130,7 @@ For example, the chart above shows a spike in the CPU utilization from `rabbitmq
 baseline CPU utilization of 10-15% across the cluster.
 
 Read about the [Overview](/docs/nightly/operations/visualizations/home-overview-and-single-node-view) and some best practices on [viewing
-an overview of your infrastructure](https://github.com/netdata/netdata/blob/master/docs/visualize/overview-infrastructure.md) for details on using composite charts to
+an overview of your infrastructure](/docs/nightly/operations/netdata-cloud-visualizations/see-an-overview-of-your-infrastructure) for details on using composite charts to
 drill down into per-node performance metrics.
 
 ## Pod and container metrics
@@ -192,7 +192,7 @@ discovery happens without manual intervention as pods are created, destroyed, or
 
 Service metrics show up on the Overview as well, beneath the **Kubernetes** section, and are labeled according to the
 service in question. For example, the **RabbitMQ** section has numerous charts from the [`rabbitmq`
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/rabbitmq/README.md):
+collector](/docs/nightly/integrations/monitor/message-brokers/rabbitmq-go.d.plugin-recommended):
 
 ![Finding service discovery
 metrics](https://user-images.githubusercontent.com/1153921/109054511-2eac8a00-769b-11eb-97f1-da93acb4b5fe.png)
@@ -213,7 +213,7 @@ Netdata also automatically collects metrics from two essential Kubernetes proces
 
 The **k8s kubelet** section visualizes metrics from the Kubernetes agent responsible for managing every pod on a given
 node. This also happens without any configuration thanks to the [kubelet
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/k8s_kubelet/README.md).
+collector](/docs/nightly/integrations/monitor/container-orchestrators/kubernetes/kubelet).
 
 Monitoring each node's kubelet can be invaluable when diagnosing issues with your Kubernetes cluster. For example, you
 can see if the number of running containers/pods has dropped, which could signal a fault or crash in a particular
@@ -229,7 +229,7 @@ configuration-related errors, and the actual vs. desired numbers of volumes, plu
 The **k8s kube-proxy** section displays metrics about the network proxy that runs on each node in your Kubernetes
 cluster. kube-proxy lets pods communicate with each other and accept sessions from outside your cluster. Its metrics are
 collected by the [kube-proxy
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/k8s_kubeproxy/README.md).
+collector](/docs/nightly/integrations/monitor/container-orchestrators/kubernetes/kube-proxy).
 
 With Netdata, you can monitor how often your k8s proxies are syncing proxy rules between nodes. Dramatic changes in
 these figures could indicate an anomaly in your cluster that's worthy of further investigation.
@@ -249,9 +249,9 @@ clusters of all sizes.
 - [Netdata Helm chart](https://github.com/netdata/helmchart)
 - [Netdata service discovery](https://github.com/netdata/agent-service-discovery)
 - [Netdata Agent · `kubelet`
-  collector](https://github.com/netdata/go.d.plugin/blob/master/modules/k8s_kubelet/README.md)
+  collector](/docs/nightly/integrations/monitor/container-orchestrators/kubernetes/kubelet)
 - [Netdata Agent · `kube-proxy`
-  collector](https://github.com/netdata/go.d.plugin/blob/master/modules/k8s_kubeproxy/README.md)
+  collector](/docs/nightly/integrations/monitor/container-orchestrators/kubernetes/kube-proxy)
 - [Netdata Agent · `cgroups.plugin`](/docs/nightly/integrations/monitor/virtualized-environments/containers/monitor-cgroups)
 
 

@@ -13,8 +13,8 @@ Netdata's health watchdog is highly configurable, with support for dynamic thres
 more. You can tweak any of the existing alarms based on your infrastructure's topology or specific monitoring needs, or
 create new entities.
 
-You can use health alarms in conjunction with any of Netdata's [collectors](/docs/nightly/concepts/collectors) (see
-the [supported collector list](/docs/nightly/integrations/monitor/monitor)) to monitor the health of your systems, containers, and
+You can use health alarms in conjunction with any of Netdata's [collectors](/docs/nightly/concepts/collectors-ref) (see
+the [supported collector list](/docs/nightly/integrations/monitor)) to monitor the health of your systems, containers, and
 applications in real time.
 
 While you can see active alarms both on the local dashboard and Netdata Cloud, all health alarms are configured _per
@@ -25,7 +25,7 @@ files.
 ## Edit health configuration files
 
 All of Netdata's [health configuration files](/docs/nightly/operations/alerts/health#health-configuration-files) are in Netdata's config
-directory, inside the `health.d/` directory. Navigate to your [Netdata config directory](/docs/nightly/setup/setup) and
+directory, inside the `health.d/` directory. Navigate to your [Netdata config directory](/docs/nightly/setup) and
 use `edit-config` to make changes to any of these files.
 
 For example, to edit the `cpu.conf` health configuration file, run:
@@ -79,7 +79,7 @@ your systems, containers, and applications work.
 Read Netdata's [health reference](/docs/nightly/operations/alerts/health#health-entity-reference) for a full listing of the format,
 syntax, and functionality of health entities.
 
-To write a new health entity into a new file, navigate to your [Netdata config directory](/docs/nightly/setup/setup),
+To write a new health entity into a new file, navigate to your [Netdata config directory](/docs/nightly/setup),
 then use `touch` to create a new file in the `health.d/` directory. Use `edit-config` to start editing the file.
 
 As an example, let's create a `ram-usage.conf` file.
@@ -143,7 +143,7 @@ without restarting all of Netdata, run `netdatacli reload-health` or `killall -U
 ## What's next?
 
 With your health entities configured properly, it's time to [enable
-notifications](https://github.com/netdata/netdata/blob/master/docs/monitor/enable-notifications.md) to get notified whenever a node reaches a warning or critical
+notifications](/docs/nightly/integrations/notify) to get notified whenever a node reaches a warning or critical
 state.
 
 To build complex, dynamic alarms, read our guide on [dimension templates](/docs/nightly/guides/monitor/use-dimension-templates-to-create-dynamic-alarms).

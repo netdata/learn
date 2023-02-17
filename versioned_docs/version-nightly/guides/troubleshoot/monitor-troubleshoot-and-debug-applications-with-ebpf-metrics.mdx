@@ -12,7 +12,7 @@ learn_rel_path: "Guides/Troubleshoot"
 
 When trying to troubleshoot or debug a finicky application, there's no such thing as too much information. At Netdata,
 we developed programs that connect to the [_extended Berkeley Packet Filter_ (eBPF) virtual
-machine](https://github.com/netdata/netdata/blob/master/collectors/ebpf.plugin/README.md) to help you see exactly how specific applications are interacting with the
+machine](/docs/nightly/integrations/monitor/system-metrics/kernel-traces-metrics-ebpf) to help you see exactly how specific applications are interacting with the
 Linux kernel. With these charts, you can root out bugs, discover optimizations, diagnose memory leaks, and much more.
 
 This means you can see exactly how often, and in what volume, the application creates processes, opens files, writes to
@@ -57,12 +57,12 @@ dev: custom-app
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for your system, to begin seeing metrics for this particular
+method](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) for your system, to begin seeing metrics for this particular
 group+process. You can also add additional processes to the same group.
 
 You can set up `apps_groups.conf` to more show more precise eBPF metrics for any application or service running on your
 system, even if it's a standard package like Redis, Apache, or any other [application/service Netdata collects
-from](https://github.com/netdata/netdata/blob/master/collectors/COLLECTORS.md).
+from](/docs/nightly/integrations/monitor).
 
 ```conf
 
@@ -102,7 +102,7 @@ Replace `entry` with `return`:
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for your system.
+method](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) for your system.
 
 ## Get familiar with per-application eBPF metrics and charts
 
@@ -234,13 +234,13 @@ If you don't already have a Netdata Cloud account, go [sign in](https://app.netd
 You can also read how to [monitor your infrastructure with Netdata Cloud](/docs/nightly/getting-started/monitor-your-infrastructure) to understand the key features that it has to offer.
 
 Once you've added one or more nodes to a Space in Netdata Cloud, you can see aggregated eBPF metrics in the [Overview
-dashboard](https://github.com/netdata/netdata/blob/master/docs/visualize/overview-infrastructure.md) under the same **Applications** or **eBPF** sections that you
+dashboard](/docs/nightly/operations/netdata-cloud-visualizations/see-an-overview-of-your-infrastructure) under the same **Applications** or **eBPF** sections that you
 find on the local Agent dashboard. Or, [create new dashboards](/docs/nightly/operations/netdata-cloud-visualizations/create-new-dashboards) using eBPF metrics
 from any number of distributed nodes to see how your application interacts with multiple Linux kernels on multiple Linux
 systems. 
 
 Now that you can see eBPF metrics in Netdata Cloud, you can [invite your
-team](https://github.com/netdata/netdata/blob/master/docs/cloud/manage/invite-your-team.md) and share your findings with others.
+team](/docs/nightly/operations/invite-your-team) and share your findings with others.
 
 ## What's next?
 

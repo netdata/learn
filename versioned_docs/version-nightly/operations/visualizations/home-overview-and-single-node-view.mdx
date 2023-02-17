@@ -190,7 +190,7 @@ src="https://user-images.githubusercontent.com/1153921/95762109-1d219300-0c62-11
 node you're interested in.
 
 The single-node dashboard opens in a new tab. From there, you can continue to troubleshoot or run [Metric
-Correlations](https://github.com/netdata/netdata/blob/master/docs/cloud/insights/metric-correlations.md) for faster root
+Correlations](/docs/nightly/operations/metric-correlations) for faster root
 cause analysis.
 
 ## Add composite charts to a dashboard
@@ -219,7 +219,7 @@ One difference between the Overview's menu and those found in single-node dashbo
 the Overview condenses multiple services, families, or instances into single sections, sub-menus, and associated charts.
 
 For services, let's say you have two concurrent jobs with the [web_log
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/weblog/README.md), one for Apache and another for
+collector](/docs/nightly/integrations/monitor/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis), one for Apache and another for
 Nginx. A single-node or
 local dashboard shows two section, **web_log apache** and **web_log nginx**, whereas the Overview condenses these into a
 single **web_log** section containing composite charts from both jobs.
@@ -230,7 +230,7 @@ chart. The utility bar should show that there are 8 charts from 2 nodes contribu
 
 This action applies to disks, network devices, and other metric types that involve multiple instances of a piece of
 hardware or software. The Overview currently does not display metrics from filesystems. Read more about [families and
-instances](https://github.com/netdata/netdata/blob/master/docs/dashboard/dimensions-contexts-families.md)
+instances](/docs/nightly/concepts/chart-dimensions-contexts-and-families)
 
 ## Persistence of composite chart settings
 

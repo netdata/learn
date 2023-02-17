@@ -19,7 +19,7 @@ replicate metrics data across multiple nodes, or centralize all your metrics dat
 
 When one node streams metrics to another, the node receiving metrics can visualize them on the
 [dashboard](/docs/nightly/operations/netdata-cloud-visualizations/interact-with-dashboards-and-charts), run health checks to [trigger
-alarms](https://github.com/netdata/netdata/blob/master/docs/monitor/view-active-alarms.md) and [send notifications](/docs/nightly/integrations/notify/notify), and
+alarms](/docs/nightly/operations/alerts/view-active-health-alarms) and [send notifications](/docs/nightly/integrations/notify), and
 [export](/docs/nightly/concepts/export-metrics-to-external-time-series-databases) all metrics to an external TSDB. When Netdata streams metrics to another
 Netdata, the receiving one is able to perform everything a Netdata instance is capable of.
 
@@ -85,7 +85,7 @@ Each child dashboard is also available directly at the following URL pattern:
 ## What's next?
 
 Now that you understand the fundamentals of streaming metrics between nodes, go ahead and [enable
-streaming](https://github.com/netdata/netdata/blob/master/docs/metrics-storage-management/enable-streaming.md) using a simple `parent-child` relationship. For all
+streaming](/docs/nightly/setup/enable-streaming-between-nodes) using a simple `parent-child` relationship. For all
 the details, see the [streaming reference](/docs/nightly/references/configuration/streaming-reference) doc.
 
 Take your streaming setup even further by [exporting metrics](/docs/nightly/concepts/export-metrics-to-external-time-series-databases) to an external TSDB.

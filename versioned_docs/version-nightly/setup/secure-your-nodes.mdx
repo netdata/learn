@@ -20,7 +20,7 @@ cannot do anything other than present metrics, and runs without special/`sudo` p
 only exposes chart metadata and metric values, not raw data.
 
 While Netdata is secure by design, we believe you should [protect your
-nodes](https://github.com/netdata/netdata/blob/master/docs/netdata-security.md#why-netdata-should-be-protected). If left accessible to the internet at large, the
+nodes](/docs/nightly/setup/security-design#why-netdata-should-be-protected). If left accessible to the internet at large, the
 local dashboard could reveal sensitive information about your infrastructure. For example, an attacker can view which
 applications you run (databases, webservers, and so on), or see every user account on a node. 
 
@@ -57,7 +57,7 @@ Save and close the editor, then [restart your Agent](/docs/nightly/operations/st
 restart netdata`. If you try to visit the local dashboard to `http://NODE:19999` again, the connection will fail because
 that node no longer serves its local dashboard.
 
-> See the [configuration basics doc](/docs/nightly/setup/setup) for details on how to find `netdata.conf` and use
+> See the [configuration basics doc](/docs/nightly/setup) for details on how to find `netdata.conf` and use
 > `edit-config`.
 
 ## Restrict access to the local dashboard
@@ -71,7 +71,7 @@ static IP, only `localhost`, or connections from behind a management LAN.
 
 By default, this setting is `localhost *`. This setting allows connections from `localhost` in addition to _all_
 connections, using the `*` wildcard. You can change this setting using Netdata's [simple
-patterns](https://github.com/netdata/netdata/blob/master/libnetdata/simple_pattern/README.md).
+patterns](/docs/nightly/developers/libnetdata/simple-patterns).
 
 ```conf
 [web]
@@ -120,6 +120,6 @@ Read about [Netdata's security design](/docs/nightly/setup/security-design) and 
 post](https://www.netdata.cloud/blog/netdata-agent-dashboard/) about why the local Agent dashboard is both open and
 secure by design.
 
-Next up, learn about [collectors](/docs/nightly/concepts/collectors) to ensure you're gathering every essential
+Next up, learn about [collectors](/docs/nightly/concepts/collectors-ref) to ensure you're gathering every essential
 metric about your node, its applications, and your infrastructure at large.
 

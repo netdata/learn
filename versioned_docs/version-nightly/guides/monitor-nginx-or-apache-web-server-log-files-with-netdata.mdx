@@ -83,7 +83,7 @@ jobs:
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for your system. Netdata should pick up your web server's access log and
+method](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) for your system. Netdata should pick up your web server's access log and
 begin showing real-time charts!
 
 ### Custom log formats and fields
@@ -92,7 +92,7 @@ The web log collector is capable of parsing custom Nginx and Apache log formats 
 leave that topic for a separate guide.
 
 We do have [extensive
-documentation](https://github.com/netdata/go.d.plugin/blob/master/modules/weblog/README.md#custom-log-format) on how
+documentation](/docs/nightly/integrations/monitor/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis#custom-log-format) on how
 to build custom parsing for Nginx and Apache logs.
 
 ## Tweak web log collector alarms
@@ -110,7 +110,7 @@ You can also edit this file directly with `edit-config`:
 ```
 
 For more information about editing the defaults or writing new alarm entities, see our [health monitoring
-documentation](https://github.com/netdata/netdata/blob/master/health/README.md).
+documentation](/docs/nightly/concepts/health-monitoring).
 
 ## What's next?
 

@@ -13,9 +13,9 @@ real-time, interactive charts. The following list includes collectors for both e
 internal system metrics.
 
 Learn more
-about [how collectors work](/docs/nightly/concepts/collectors), and
+about [how collectors work](/docs/nightly/concepts/collectors-ref), and
 then learn how to [enable or
-configure](https://github.com/netdata/netdata/blob/master/collectors/REFERENCE.md#enable-and-disable-a-specific-collection-module) any of the below collectors using the same process.
+configure](/docs/nightly/setup/collectors-configuration#enable-and-disable-a-specific-collection-module) any of the below collectors using the same process.
 
 Some collectors have both Go and Python versions as we continue our effort to migrate all collectors to Go. In these
 cases, _Netdata always prioritizes the Go version_, and we highly recommend you use the Go versions for the best
@@ -218,7 +218,7 @@ configure any of these collectors according to your setup and infrastructure.
 - [Squid web server logs](/docs/nightly/integrations/monitor/quantify-logs-to-metrics/web-server-logs-squid): Tail Squid
   access logs to return the volume of requests, types of requests, bandwidth, and much more.
 - [Web server logs (Go version for Apache,
-  NGINX)](https://github.com/netdata/go.d.plugin/blob/master/modules/weblog/README.md/): Tail access logs and provide
+  NGINX)](/docs/nightly/integrations/monitor/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis/): Tail access logs and provide
   very detailed web server performance statistics. This module is able to parse 200k+ rows in less than half a second.
 - [Web server logs (Apache, NGINX)](/docs/nightly/integrations/monitor/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis): Tail
   access log
@@ -600,7 +600,7 @@ collectors are described only in code and associated charts in Netdata dashboard
   Python PyOD library to perform unsupervised anomaly detection on your Netdata charts and/or dimensions.
 - [Exporting (code only)](https://github.com/netdata/netdata/blob/master/exporting/send_internal_metrics.c): Gather
   metrics on CPU utilization for
-  the [exporting engine](/docs/nightly/integrations/export/export), and specific metrics for
+  the [exporting engine](/docs/nightly/integrations/export), and specific metrics for
   each enabled
   exporting connector.
 - [Global statistics (code only)](https://github.com/netdata/netdata/blob/master/daemon/global_statistics.c): See
@@ -631,9 +631,9 @@ default. To use a third-party collector, visit their GitHub/documentation page a
 In general the below steps should be sufficient to use a third party collector.
 
 1. Download collector code file
-   into [folder expected by Netdata](/docs/nightly/developers/external-plugins/external-plugins#environment-variables).
+   into [folder expected by Netdata](/docs/nightly/developers/external-plugins#environment-variables).
 2. Download default collector configuration file
-   into [folder expected by Netdata](/docs/nightly/developers/external-plugins/external-plugins#environment-variables).
+   into [folder expected by Netdata](/docs/nightly/developers/external-plugins#environment-variables).
 3. [Edit configuration file](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#configure-a-collector)
    from step 2 if required.
 4. [Enable collector](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#enable-a-collector-or-its-orchestrator).

@@ -25,10 +25,10 @@ monitoring](#collect-kubernetes-metrics) below.
 
 A handful of additional collectors gather metrics from container-related services, such as
 [dockerd](/docs/nightly/integrations/monitor/virtualized-environments/containers/docker) or [Docker
-Engine](https://github.com/netdata/go.d.plugin/blob/master/modules/docker_engine/README.md). You can find all
+Engine](/docs/nightly/integrations/monitor/virtualized-environments/containers/docker-engine). You can find all
 container collectors in our supported collectors list under the
-[containers/VMs](/docs/nightly/integrations/monitor/monitor#containers-and-vms) and
-[Kubernetes](/docs/nightly/integrations/monitor/monitor#containers-and-vms) headings.
+[containers/VMs](/docs/nightly/integrations/monitor#containers-and-vms) and
+[Kubernetes](/docs/nightly/integrations/monitor#containers-and-vms) headings.
 
 ## Collect Docker metrics
 
@@ -40,7 +40,7 @@ zero configuration.
 Netdata also collects metrics from applications running inside of Docker containers. For example, if you create a MySQL
 database container using `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag`, it exposes
 metrics on port 3306. You can configure the [MySQL
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/mysql/README.md) to look at `127.0.0.0:3306` for
+collector](/docs/nightly/integrations/monitor/databases/mysql) to look at `127.0.0.0:3306` for
 MySQL metrics:
 
 ```yml
@@ -50,7 +50,7 @@ jobs:
 ```
 
 Netdata then collects metrics from the container itself, but also dozens [MySQL-specific
-metrics](https://github.com/netdata/go.d.plugin/blob/master/modules/mysql/README.md#charts) as well.
+metrics](/docs/nightly/integrations/monitor/databases/mysql#charts) as well.
 
 ### Collect metrics from applications running in Docker containers
 
@@ -75,7 +75,7 @@ your k8s infrastructure.
     configuration files for [compatible
     applications](https://github.com/netdata/helmchart#service-discovery-and-supported-services) and any endpoints
     covered by our [generic Prometheus
-    collector](https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/README.md). With these
+    collector](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints). With these
     configuration files, Netdata collects metrics from any compatible applications as they run _inside_ of a pod.
     Service discovery happens without manual intervention as pods are created, destroyed, or moved between nodes. 
 -   A [Kubelet collector](/docs/nightly/integrations/monitor/container-orchestrators/kubernetes/kubelet), which runs
@@ -87,7 +87,7 @@ your k8s infrastructure.
     each container running on your k8s cluster.
 
 For a holistic view of Netdata's Kubernetes monitoring capabilities, see our guide: [_Monitor a Kubernetes (k8s) cluster
-with Netdata_](https://github.com/netdata/netdata/blob/master/docs/guides/monitor/kubernetes-k8s-netdata.md).
+with Netdata_](/docs/nightly/guides/monitor/kubernetes-monitoring-with-netdata:-overview-and-visualizations).
 
 ## What's next?
 

@@ -42,7 +42,7 @@ the [web server access lists](/docs/nightly/references/configuration/web-server#
 10. `[registry]` for the [Netdata registry](/docs/nightly/references/configuration/registry).
 11. `[global statistics]` for the [Netdata registry](/docs/nightly/references/configuration/registry).
 12. `[statsd]` for the general settings of the [stats.d.plugin](/docs/nightly/integrations/monitor/anything/statsd).
-13. `[plugins]` to [configure](#plugins-section-options) which [collectors](/docs/nightly/concepts/collectors) to use and PATH
+13. `[plugins]` to [configure](#plugins-section-options) which [collectors](/docs/nightly/concepts/collectors-ref) to use and PATH
     settings.
 14. `[plugin:NAME]` sections for each collector plugin, under the
     comment [Per plugin configuration](#per-plugin-configuration).
@@ -167,9 +167,9 @@ The multiplication of all the **enabled** tiers  `dbengine tier N update every i
 This section controls the general behavior of the health monitoring capabilities of Netdata.
 
 Specific alarms are configured in per-collector config files under the `health.d` directory. For more info, see [health
-monitoring](https://github.com/netdata/netdata/blob/master/health/README.md).
+monitoring](/docs/nightly/concepts/health-monitoring).
 
-[Alarm notifications](/docs/nightly/integrations/notify/agent-alert-notifications/agent-alert-notifications) are configured in `health_alarm_notify.conf`.
+[Alarm notifications](/docs/nightly/integrations/notify/agent-alert-notifications) are configured in `health_alarm_notify.conf`.
 
 |                    setting                     |                     default                      | info                                                                                                                                                                                           |
 |:----------------------------------------------:|:------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -211,7 +211,7 @@ The configuration options for plugins appear in sections following the pattern `
 
 ### Internal plugins
 
-Most internal plugins will provide additional options. Check [Internal Plugins](/docs/nightly/concepts/collectors) for more
+Most internal plugins will provide additional options. Check [Internal Plugins](/docs/nightly/concepts/collectors-ref) for more
 information.
 
 Please note, that by default Netdata will enable monitoring metrics for disks, memory, and network only when they are

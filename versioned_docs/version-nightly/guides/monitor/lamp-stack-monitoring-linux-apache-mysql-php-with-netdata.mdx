@@ -61,7 +61,7 @@ To follow this tutorial, you need:
 ## Install the Netdata Agent
 
 If you don't have the free, open-source Netdata monitoring agent installed on your node yet, get started with a [single
-kickstart command](https://github.com/netdata/netdata/blob/master/packaging/installer/README.md):
+kickstart command](/docs/nightly/getting-started/install-netdata):
 
 <OneLineInstallWget/>
 
@@ -79,7 +79,7 @@ metrics from each using the [cgroups data collector](/docs/nightly/integrations/
 ## Enable Apache monitoring
 
 Let's begin by configuring Apache to work with Netdata's [Apache data
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/apache/README.md).
+collector](/docs/nightly/integrations/monitor/webapps/apache).
 
 Actually, there's nothing for you to do to enable Apache monitoring with Netdata.
 
@@ -90,7 +90,7 @@ metrics](https://httpd.apache.org/docs/2.4/mod/mod_status.html), which is just _
 ## Enable web log monitoring
 
 The Netdata Agent also comes with a [web log
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/weblog/README.md), which reads Apache's access
+collector](/docs/nightly/integrations/monitor/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis), which reads Apache's access
 log file, processes each line, and converts them into per-second metrics. On Debian systems, it reads the file at
 `/var/log/apache2/access.log`.
 
@@ -103,7 +103,7 @@ monitoring.
 
 Because your MySQL database is password-protected, you do need to tell MySQL to allow the `netdata` user to connect to
 without a password. Netdata's [MySQL data
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/mysql/README.md) collects metrics in _read-only_
+collector](/docs/nightly/integrations/monitor/databases/mysql) collects metrics in _read-only_
 mode, without being able to alter or affect operations in any way.
 
 First, log into the MySQL shell. Then, run the following three commands, one at a time:
@@ -115,7 +115,7 @@ FLUSH PRIVILEGES;
 ```
 
 Run `sudo systemctl restart netdata`, or the [appropriate alternative for your
-system](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md), to collect dozens of metrics every second for robust MySQL monitoring.
+system](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent), to collect dozens of metrics every second for robust MySQL monitoring.
 
 ## Enable PHP monitoring
 
@@ -123,7 +123,7 @@ Unlike Apache or MySQL, PHP isn't a service that you can monitor directly, unles
 with [StatsD](/docs/nightly/integrations/monitor/anything/statsd).
 
 However, if you use [PHP-FPM](https://php-fpm.org/) in your LAMP stack, you can monitor that process with our [PHP-FPM
-data collector](https://github.com/netdata/go.d.plugin/blob/master/modules/phpfpm/README.md).
+data collector](/docs/nightly/integrations/monitor/webapps/php-fpm).
 
 Open your PHP-FPM configuration for editing, replacing `7.4` with your version of PHP:
 
@@ -216,7 +216,7 @@ alarms](https://user-images.githubusercontent.com/1153921/109524120-5883f900-7a6
 
 [Tweak alarms](/docs/nightly/setup/configure-health-alarms) based on your infrastructure monitoring needs, and to see these alarms
 in other places, like your inbox or a Slack channel, [enable a notification
-method](https://github.com/netdata/netdata/blob/master/docs/monitor/enable-notifications.md).
+method](/docs/nightly/integrations/notify).
 
 ## What's next?
 
@@ -226,7 +226,7 @@ services. The per-second metrics granularity means you have the most accurate in
 any LAMP-related issues.
 
 Another powerful way to monitor the availability of a LAMP stack is the [`httpcheck`
-collector](https://github.com/netdata/go.d.plugin/blob/master/modules/httpcheck/README.md), which pings a web server at
+collector](/docs/nightly/integrations/monitor/remotes/http-endpoints), which pings a web server at
 a regular interval and tells you whether if and how quickly it's responding. The `response_match` option also lets you
 monitor when the web server's response isn't what you expect it to be, which might happen if PHP-FPM crashes, for
 example.

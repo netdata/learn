@@ -40,7 +40,7 @@ server](https://user-images.githubusercontent.com/1153921/103586700-da5b0a00-4ea
 
 - A node running the Netdata Agent. If you don't yet have that, [install Netdata](/docs/nightly/getting-started/install-netdata).
 - A Netdata Cloud account. [Sign up](https://app.netdata.cloud) if you don't have one already.
-- Familiarity with configuring the Netdata Agent with [`edit-config`](/docs/nightly/setup/setup).
+- Familiarity with configuring the Netdata Agent with [`edit-config`](/docs/nightly/setup).
 - _Optional_: An Nginx web server running on the same node to follow the example configuration steps.
 
 ## Install required Python packages
@@ -66,7 +66,7 @@ Use `exit` to become your normal user again.
 
 ## Enable the anomalies collector
 
-Navigate to your [Netdata config directory](/docs/nightly/setup/setup#the-netdata-config-directory) and use `edit-config`
+Navigate to your [Netdata config directory](/docs/nightly/setup#the-netdata-config-directory) and use `edit-config`
 to open the `python.d.conf` file.
 
 ```bash
@@ -81,7 +81,7 @@ anomalies: yes
 ```
 
 [Restart the Agent](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) with `sudo systemctl restart netdata`, or the [appropriate
-method](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for your system, to start up the anomalies collector. By default, the
+method](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) for your system, to start up the anomalies collector. By default, the
 model training process runs every 30 minutes, and uses the previous 4 hours of metrics to establish a baseline for
 health and performance across the default included charts.
 
@@ -106,7 +106,7 @@ involve tweaking the behavior of the ML training itself.
 - `train_every_n`: How often to train the ML models.
 - `train_n_secs`: The number of historical observations to train each model on. The default is 4 hours, but if your node
   doesn't have historical metrics going back that far, consider [changing the metrics retention
-  policy](https://github.com/netdata/netdata/blob/master/docs/store/change-metrics-storage.md) or reducing this window.
+  policy](/docs/nightly/setup/change-how-long-netdata-stores-metrics) or reducing this window.
 - `custom_models`: A way to define custom models that you want anomaly probabilities for, including multi-node or
   streaming setups.
 
@@ -121,7 +121,7 @@ involve tweaking the behavior of the ML training itself.
 As mentioned above, this guide uses an Nginx web server to demonstrate how the anomalies collector works. You must
 configure the collector to monitor charts from the
 [Nginx](/docs/nightly/integrations/monitor/webapps/nginx) and [web
-log](https://github.com/netdata/go.d.plugin/blob/master/modules/weblog/README.md) collectors.
+log](/docs/nightly/integrations/monitor/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis) collectors.
 
 `charts_regex` allows for some basic regex, such as wildcards (`*`) to match all contexts with a certain pattern. For
 example, `system\..*` matches with any chart with a context that begins with `system.`, and ends in any number of other
@@ -171,14 +171,14 @@ Apply the ideas behind the collector's regex and exclude settings to any other
 
 Now that you know how to set up unsupervised anomaly detection in the Netdata Agent, using an Nginx web server as an
 example, it's time to apply that knowledge to other mission-critical parts of your infrastructure. If you're not sure
-what to monitor next, check out our list of [collectors](/docs/nightly/integrations/monitor/monitor) to see what kind of metrics Netdata
+what to monitor next, check out our list of [collectors](/docs/nightly/integrations/monitor) to see what kind of metrics Netdata
 can collect from your systems, containers, and applications.
 
 Keep on moving to [part 2](/docs/nightly/guides/monitor/monitor-and-visualize-anomalies-with-netdata-part-2), which covers the charts and alarms
 Netdata creates for unsupervised anomaly detection.
 
 For a different troubleshooting experience, try out the [Metric
-Correlations](https://github.com/netdata/netdata/blob/master/docs/cloud/insights/metric-correlations.md) feature in Netdata Cloud. Metric
+Correlations](/docs/nightly/operations/metric-correlations) feature in Netdata Cloud. Metric
 Correlations helps you perform faster root cause analysis by narrowing a dashboard to only the charts most likely to be
 related to an anomaly.
 

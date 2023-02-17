@@ -9,7 +9,7 @@ learn_rel_path: "Integrations/Export"
 
 
 You can use the Graphite connector for
-the [exporting engine](/docs/nightly/integrations/export/export) to archive your agent's
+the [exporting engine](/docs/nightly/integrations/export) to archive your agent's
 metrics to Graphite providers for long-term storage, further analysis, or correlation with data from other sources.
 
 ## Prerequisites
@@ -72,7 +72,7 @@ The final result for a remote, secured host should be the following:
     # send hosts matching = localhost *
 ```
 
-We'll not worry about the [rest of the settings](/docs/nightly/integrations/export/export#options)
+We'll not worry about the [rest of the settings](/docs/nightly/integrations/export#options)
  for now. Restart the Agent using `sudo systemctl restart netdata`, or the
 [appropriate method](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) for your
 system, to spin up the exporting engine.
@@ -133,4 +133,4 @@ configuration block, there are many other ways to tweak and customize which metr
 often.
 
 For full details about each configuration option and what it does, see 
-the [exporting reference guide](/docs/nightly/integrations/export/export).
+the [exporting reference guide](/docs/nightly/integrations/export).

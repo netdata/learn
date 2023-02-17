@@ -11,7 +11,7 @@ learn_rel_path: "References"
 
 Each Netdata node is able to replicate/mirror its database to another Netdata node, by streaming the collected
 metrics in real-time. This is quite different to [data archiving to third party time-series
-databases](https://github.com/netdata/netdata/blob/master/exporting/README.md).
+databases](/docs/nightly/integrations/export).
 The nodes that send metrics are called **child** nodes, and the nodes that receive metrics are called **parent** nodes.
 
 There are also **proxy** nodes, which collect metrics from a child and sends it to a parent.
@@ -111,7 +111,7 @@ This also disables the registry (there cannot be a registry without an API).
 requests from its child nodes. 0 sets no limit, 1 means maximum once every second. If this is set, you may see error log
 entries "... too busy to accept new streaming request. Will be allowed in X secs".
 
-You can [use](/docs/nightly/integrations/export/export#configuration) the exporting engine to configure data archiving to an external database (it archives all databases maintained on
+You can [use](/docs/nightly/integrations/export#configuration) the exporting engine to configure data archiving to an external database (it archives all databases maintained on
 this host).
 
 ### Streaming configuration

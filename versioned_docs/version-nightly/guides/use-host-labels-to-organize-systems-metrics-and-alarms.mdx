@@ -104,9 +104,9 @@ child system. It's a vastly simplified way of accessing critical information abo
 
 > ⚠️ Because automatic labels for child nodes are accessible via API calls, and contain sensitive information like
 > kernel and operating system versions, you should secure streaming connections with SSL. See the [streaming
-> documentation](https://github.com/netdata/netdata/blob/master/streaming/README.md#securing-streaming-communications) for details. You may also want to use
+> documentation](/docs/nightly/references/streaming-and-replication#securing-streaming-communications) for details. You may also want to use
 > [access lists](/docs/nightly/references/configuration/web-server#access-lists) or [expose the API only to LAN/localhost
-> connections](https://github.com/netdata/netdata/blob/master/docs/netdata-security.md#expose-netdata-only-in-a-private-lan).
+> connections](/docs/nightly/setup/security-design#expose-netdata-only-in-a-private-lan).
 
 You can also use `_is_parent`, `_is_child`, and any other host labels in both health entities and metrics
 exporting. Speaking of which...
@@ -157,11 +157,11 @@ Or when ephemeral Docker nodes are involved:
 ```
 
 Of course, there are many more possibilities for intuitively organizing your systems with host labels. See the [health
-documentation](https://github.com/netdata/netdata/blob/master/health/REFERENCE.md#alarm-line-host-labels) for more details, and then get creative!
+documentation](/docs/nightly/operations/alerts/health#alarm-line-host-labels) for more details, and then get creative!
 
 ## Host labels in metrics exporting
 
-If you have enabled any metrics exporting via our experimental [exporters](/docs/nightly/integrations/export/export), any new host
+If you have enabled any metrics exporting via our experimental [exporters](/docs/nightly/integrations/export), any new host
 labels you created manually are sent to the destination database alongside metrics. You can change this behavior by
 editing `exporting.conf`, and you can even send automatically-generated labels on with exported metrics.
 
@@ -186,7 +186,7 @@ send automatic labels = yes
 ```
 
 By applying labels to exported metrics, you can more easily parse historical metrics with the labels applied. To learn
-more about exporting, read the [documentation](/docs/nightly/integrations/export/export).
+more about exporting, read the [documentation](/docs/nightly/integrations/export).
 
 ## What's next?
 
@@ -202,7 +202,7 @@ queries _do_ showcase this information. As always, we recommend you secure Netda
 -   [Enable TLS/SSL for web/API requests](/docs/nightly/references/configuration/web-server#enabling-tls-support)
 -   Put Netdata behind a proxy
     -   [Use an authenticating web server in proxy
-        mode](https://github.com/netdata/netdata/blob/master/docs/netdata-security.md#use-an-authenticating-web-server-in-proxy-mode)
+        mode](/docs/nightly/setup/security-design#use-an-authenticating-web-server-in-proxy-mode)
     -   [Nginx proxy](/docs/nightly/setup/expose-local-dashboard-through-proxy/running-netdata-behind-nginx)
     -   [Apache proxy](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-apache-s-mod_proxy)
     -   [Lighttpd](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-lighttpd-v1.4.x)

@@ -36,7 +36,7 @@ enabled, since we want you to experience the full thing.
 -   Familiarity with configuring the Netdata Agent with `edit-config`.
 
 If you're not familiar with how to configure the Netdata Agent, read our [node configuration
-doc](https://github.com/netdata/netdata/blob/master/docs/configure/nodes.md) before continuing with this guide. This guide assumes familiarity with the Netdata config
+doc](/docs/nightly/setup) before continuing with this guide. This guide assumes familiarity with the Netdata config
 directory, using `edit-config`, and the process of uncommenting/editing various settings in `netdata.conf` and other
 configuration files.
 
@@ -46,11 +46,11 @@ Netdata's performance is primarily affected by **data collection/retention** and
 
 You can configure almost all aspects of data collection/retention, and certain aspects of clients accessing data. For
 example, you can't control how many users might be viewing a local Agent dashboard, [viewing an
-infrastructure](https://github.com/netdata/netdata/blob/master/docs/visualize/overview-infrastructure.md) in real-time with Netdata Cloud, or running [Metric
-Correlations](https://github.com/netdata/netdata/blob/master/docs/cloud/insights/metric-correlations.md).
+infrastructure](/docs/nightly/operations/netdata-cloud-visualizations/see-an-overview-of-your-infrastructure) in real-time with Netdata Cloud, or running [Metric
+Correlations](/docs/nightly/operations/metric-correlations).
 
 The Netdata Agent runs with the lowest possible [process scheduling
-policy](https://github.com/netdata/netdata/blob/master/daemon/README.md#netdata-process-scheduling-policy), which is `nice 19`, and uses the `idle` process scheduler.
+policy](/docs/nightly/references/configuration/netdata-daemon#netdata-process-scheduling-policy), which is `nice 19`, and uses the `idle` process scheduler.
 Together, these settings ensure that the Agent only gets CPU resources when the node has CPU resources to space. If the
 node reaches 100% CPU utilization, the Agent is stopped first to ensure your applications get any available resources.
 In addition, under heavy load, collectors that require disk I/O may stop and show gaps in charts.
@@ -85,7 +85,7 @@ Every collector and plugin has its own `update every` setting, which you can als
 every` for an individual collector is less than the global, the Netdata Agent uses the global setting. See the [collectors configuration reference](/docs/nightly/setup/collectors-configuration) for details.
 
 To reduce the frequency of an [internal
-plugin/collector](https://github.com/netdata/netdata/blob/master/collectors/README.md#collector-architecture-and-terminology), open `netdata.conf` and
+plugin/collector](/docs/nightly/concepts/collectors-ref#collector-architecture-and-terminology), open `netdata.conf` and
 find the appropriate section. For example, to reduce the frequency of the `apps` plugin, which collects and visualizes
 metrics on application resource utilization:
 
@@ -148,7 +148,7 @@ The `page cache size` option also directly impacts Netdata's memory usage, but h
 
 Reducing the value of `dbengine multihost disk space` does slim down Netdata's resource usage, but it also reduces how
 long Netdata retains metrics. Find the right balance of performance and metrics retention by using the [dbengine
-calculator](https://github.com/netdata/netdata/blob/master/docs/store/change-metrics-storage.md#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics).
+calculator](/docs/nightly/setup/change-how-long-netdata-stores-metrics#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics).
 
 All the settings are found in the `[global]` section of `netdata.conf`:
 
@@ -192,7 +192,7 @@ A dedicated web server like Nginx provides far more robustness than the Agent's 
 Nginx can handle more concurrent connections, reuse idle connections, and use fast gzip compression to reduce payloads.
 
 For details on installing Nginx as a proxy for the local Agent dashboard, see our [Nginx
-doc](https://github.com/netdata/netdata/blob/master/docs/Running-behind-nginx.md).
+doc](/docs/nightly/setup/expose-local-dashboard-through-proxy/running-netdata-behind-nginx).
 
 After you complete Nginx setup according to the doc linked above, we recommend setting `keepalive` to `1024`, and using
 gzip compression with the following options in the `location /` block:
@@ -265,7 +265,7 @@ On the child nodes you should add to `netdata.conf` the following:
 
 We hope this guide helped you better understand how to optimize the performance of the Netdata Agent.
 
-Now that your Agent is running smoothly, we recommend you [secure your nodes](/docs/nightly/setup/setup) if you haven't
+Now that your Agent is running smoothly, we recommend you [secure your nodes](/docs/nightly/setup) if you haven't
 already.
 
 Next, dive into some of Netdata's more complex features, such as configuring its health watchdog or exporting metrics to
