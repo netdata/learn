@@ -12,7 +12,7 @@ Netdata offers two ways to receive alert notifications on external platforms. Th
 parallel, which means you can enable both at the same time to send alert notifications to any number of endpoints.
 
 Both methods use a node's health alerts to generate the content of alert notifications. Read the doc on [configuring
-alerts](/docs/nightly/setup/configure-health-alarms) to change the preconfigured thresholds or to create tailored alerts for your
+alerts](https://github.com/netdata/netdata/blob/master/docs/monitor/configure-alarms.md) to change the preconfigured thresholds or to create tailored alerts for your
 infrastructure.
 
 Netdata Cloud offers [centralized alert notifications](#netdata-cloud) via email, which leverages the health status
@@ -75,7 +75,7 @@ notification platform.
 -   [**Matrix**](/docs/nightly/integrations/notify/agent-alert-notifications/matrix)
 -   [**Messagebird**](/docs/nightly/integrations/notify/agent-alert-notifications/messagebird)
 -   [**Microsoft Teams**](/docs/nightly/integrations/notify/agent-alert-notifications/microsoft-teams)
--   [**Netdata Agent dashboard**](/docs/nightly/integrations/notify/agent-alert-notifications/pop-up-notifications)
+-   [**Netdata Agent dashboard**](/docs/nightly/integrations/notify/agent-alert-notifications/browser-pop-ups)
 -   [**Opsgenie**](/docs/nightly/integrations/notify/agent-alert-notifications/opsgenie)
 -   [**PagerDuty**](/docs/nightly/integrations/notify/agent-alert-notifications/pagerduty)
 -   [**Prowl**](/docs/nightly/integrations/notify/agent-alert-notifications/prowl)
@@ -97,7 +97,7 @@ want to see alert notifications from Netdata. Click the green **Add to Slack** b
 
 On the following page, you'll receive a **Webhook URL**. That's what you'll need to configure Netdata, so keep it handy.
 
-Navigate to your [Netdata config directory](/docs/nightly/setup#the-netdata-config-directory) and use `edit-config` to
+Navigate to your [Netdata config directory](/docs/nightly/configuration#the-netdata-config-directory) and use `edit-config` to
 open the `health_alarm_notify.conf` file:
 
 ```bash

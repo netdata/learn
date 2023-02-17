@@ -17,7 +17,7 @@ they have a lot of underlying complexity. To meaningfully organize charts out of
 your nodes, Netdata uses the concepts of **dimensions**, **contexts**, and **families**. 
 
 Understanding how these work will help you more easily navigate the dashboard, [write new
-alarms](/docs/nightly/setup/configure-health-alarms), or play around with the [API](/docs/nightly/operations/api).
+alarms](https://github.com/netdata/netdata/blob/master/docs/monitor/configure-alarms.md), or play around with the [API](/docs/nightly/operations/api).
 
 For a refresher on the anatomy of a chart, see [dashboards and charts](/docs/nightly/concepts/how-the-dashboard-works).
 
@@ -55,8 +55,8 @@ whereas anything after the `.` is specified either by the chart's developer or b
 
 By default, a chart's type affects where it fits in the menu, while its family creates submenus.
 
-Netdata also relies on contexts for [alarm configuration](/docs/nightly/setup/configure-health-alarms) (the [`on`
-line](/docs/nightly/operations/alerts/health#alarm-line-on)).
+Netdata also relies on contexts for [alarm configuration](https://github.com/netdata/netdata/blob/master/docs/monitor/configure-alarms.md) (the [`on`
+line](/docs/nightly/configuration/health#alarm-line-on)).
 
 ## Family
 
@@ -87,7 +87,7 @@ With an understanding of a chart's dimensions, context, and family, you're now r
 dashboard. We recommend looking into [using the timeframe selector](/docs/nightly/concepts/visualization-date-and-time-controls).
 
 If you feel comfortable with the [dashboard](/docs/nightly/concepts/how-the-dashboard-works) and interacting with charts, we
-recommend learning about [configuration](/docs/nightly/setup). While Netdata doesn't _require_ a complicated setup
+recommend learning about [configuration](/docs/nightly/configuration). While Netdata doesn't _require_ a complicated setup
 process or a query language to create charts, there are a lot of ways to tweak the experience to match your needs.
 
 ### Further reading & related information

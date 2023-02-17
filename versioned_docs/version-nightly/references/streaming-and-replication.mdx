@@ -42,7 +42,7 @@ In a headless setup, the child acts as a plain data collector. It spawns all ext
 local database and accepting dashboard requests, it streams all metrics to the parent. 
 
 This setup works great to reduce the memory footprint. Depending on the enabled plugins, memory usage is between 6 MiB and 40 MiB. To reduce the memory usage as much as
-possible, refer to the [performance optimization guide](/docs/nightly/guides/how-to-optimize-the-netdata-agent-s-performance).
+possible, refer to the [performance optimization guide](/docs/nightly/configuration/how-to-optimize-the-netdata-agent-s-performance).
 
 
 ### Database Replication
@@ -693,7 +693,7 @@ ERROR : STREAM_SENDER[CHILD HOSTNAME] : STREAM child HOSTNAME [send to PARENT HO
 Chart data needs to be consistent between child and parent nodes. If there are differences between chart data on
 a parent and a child, such as gaps in metrics collection, it most often means your child's `memory mode`
 does not match the parent's. To learn more about the different ways Netdata can store metrics, and thus keep chart
-data consistent, read our [memory mode documentation](/docs/nightly/setup/database).
+data consistent, read our [memory mode documentation](/docs/nightly/configuration/database).
 
 ### Forbidding access
 
