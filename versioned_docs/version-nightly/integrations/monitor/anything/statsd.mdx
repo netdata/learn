@@ -226,7 +226,7 @@ For example, to render charts for all `myapp.*` metrics, except `myapp.*.badmetr
 create private charts for metrics matching = !myapp.*.badmetric myapp.*
 ```
 
-You can specify Netdata StatsD to have a different `memory mode` than the rest of the Netdata Agent. You can read more about `memory mode` in the [documentation](/docs/nightly/setup/database).
+You can specify Netdata StatsD to have a different `memory mode` than the rest of the Netdata Agent. You can read more about `memory mode` in the [documentation](/docs/nightly/configuration/database).
 
 The default behavior is to use the same settings as the rest of the Netdata Agent. If you wish to change them, edit the following settings:
 - `private charts memory mode`
@@ -721,7 +721,7 @@ In general, the process for creating a StatsD collector can be summarized in 2 s
 
     - Make sure to reload the dashboard tab **after** you start sending data to Netdata.
 
-- Create a configuration file for your app using [edit-config](/docs/nightly/setup): `sudo ./edit-config
+- Create a configuration file for your app using [edit-config](/docs/nightly/configuration): `sudo ./edit-config
   statsd.d/myapp.conf`
 
     - Each app will have it's own section in the right-hand menu.
@@ -777,8 +777,8 @@ visualize all the available operations.
 ### Create a new StatsD configuration file
 
 Start by creating a new configuration file under the `statsd.d/` folder in the 
-[Netdata config directory](/docs/nightly/setup#the-netdata-config-directory). 
-Use [`edit-config`](/docs/nightly/setup#use-edit-config-to-edit-configuration-files) 
+[Netdata config directory](/docs/nightly/configuration#the-netdata-config-directory). 
+Use [`edit-config`](/docs/nightly/configuration#use-edit-config-to-edit-configuration-files) 
 to create a new file called `k6.conf`.
 
 ```bash=

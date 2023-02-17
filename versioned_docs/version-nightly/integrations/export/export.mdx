@@ -14,13 +14,13 @@ configuring, and monitoring Netdata's exporting engine, which allows you to send
 databases.
 
 For a quick introduction to the exporting engine's features, read our doc on [exporting metrics to time-series
-databases](/docs/nightly/concepts/export-metrics-to-external-time-series-databases), or jump in to [enabling a connector](/docs/nightly/setup/enable-an-exporting-connector).
+databases](/docs/nightly/concepts/export-metrics-to-external-time-series-databases), or jump in to [enabling a connector](/docs/nightly/configuration/enable-an-exporting-connector).
 
 The exporting engine has a modular structure and supports metric exporting via multiple exporting connector instances at
 the same time. You can have different update intervals and filters configured for every exporting connector instance. 
 
 When you enable the exporting engine and a connector, the Netdata Agent exports metrics _beginning from the time you
-restart its process_, not the entire [database of long-term metrics](/docs/nightly/setup/change-how-long-netdata-stores-metrics).
+restart its process_, not the entire [database of long-term metrics](/docs/nightly/configuration/change-how-long-netdata-stores-metrics).
 
 Since Netdata collects thousands of metrics per server per second, which would easily congest any database server when
 several Netdata servers are sending data to it, Netdata allows sending metrics at a lower frequency, by resampling them.

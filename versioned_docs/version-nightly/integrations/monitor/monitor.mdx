@@ -15,14 +15,14 @@ internal system metrics.
 Learn more
 about [how collectors work](/docs/nightly/concepts/collectors-ref), and
 then learn how to [enable or
-configure](/docs/nightly/setup/collectors-configuration#enable-and-disable-a-specific-collection-module) any of the below collectors using the same process.
+configure](/docs/nightly/configuration/collectors-configuration#enable-and-disable-a-specific-collection-module) any of the below collectors using the same process.
 
 Some collectors have both Go and Python versions as we continue our effort to migrate all collectors to Go. In these
 cases, _Netdata always prioritizes the Go version_, and we highly recommend you use the Go versions for the best
 experience.
 
 If you want to use a Python version of a collector, you need to
-explicitly [disable the Go version](/docs/nightly/setup/collectors-configuration#enable-and-disable-a-specific-collection-module),
+explicitly [disable the Go version](/docs/nightly/configuration/collectors-configuration#enable-and-disable-a-specific-collection-module),
 and enable the Python version. Netdata then skips the Go version and attempts to load the Python version and its
 accompanying configuration file.
 
@@ -590,7 +590,7 @@ These collectors are recursive in nature, in that they monitor some function of 
 collectors are described only in code and associated charts in Netdata dashboards.
 
 - [ACLK (code only)](https://github.com/netdata/netdata/blob/master/aclk/legacy/aclk_stats.c): View whether a Netdata
-  Agent is connected to Netdata Cloud via the [ACLK](/docs/nightly/setup/agent-cloud-link-aclk), the
+  Agent is connected to Netdata Cloud via the [ACLK](/docs/nightly/configuration/agent-cloud-link-aclk), the
   volume of queries, process times, and more.
 - [Alarms](/docs/nightly/integrations/monitor/netdata/alarms): This collector
   creates an

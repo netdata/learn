@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
 This document details how to install Netdata on an existing Kubernetes (k8s) cluster, and connect it to Netdata Cloud. Read our [Kubernetes visualizations](/docs/nightly/operations/visualizations/kubernetes-visualizations) documentation, to see what you will get.
 
-The [Netdata Helm chart](https://github.com/netdata/helmchart/blob/master/charts/netdata/README.md) installs one `parent` pod for storing metrics and managing alarm notifications, plus an additional
+The [Netdata Helm chart](/docs/nightly/configuration/helm-chart-for-kubernetes) installs one `parent` pod for storing metrics and managing alarm notifications, plus an additional
 `child` pod for every node in the cluster, responsible for collecting metrics from the node, Kubernetes control planes,
 pods/containers, and [supported application-specific
 metrics](https://github.com/netdata/helmchart#service-discovery-and-supported-services).
@@ -59,7 +59,7 @@ The installation process securely connects your Kubernetes cluster to stream met
   >  
   > If you plan to connect the node to Netdata Cloud, you can find the command with the right parameters by clicking the "Add Nodes" button in your Space's "Nodes" view.
 
-  For more installation options, please read our [Netdata Helm chart for Kubernetes](https://github.com/netdata/helmchart/blob/master/charts/netdata/README.md) reference.
+  For more installation options, please read our [Netdata Helm chart for Kubernetes](/docs/nightly/configuration/helm-chart-for-kubernetes) reference.
 
 #### Expected Result
 

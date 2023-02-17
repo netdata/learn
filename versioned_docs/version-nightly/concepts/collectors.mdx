@@ -20,7 +20,7 @@ collectors manually to collect metrics from new sources. See our
 
 Upon startup, Netdata will **auto-detect** any application or service that has a collector, as long as both the collector
 and the app/service are configured correctly. If you don't see charts for your application, see
-our [collectors' configuration reference](/docs/nightly/setup/collectors-configuration).
+our [collectors' configuration reference](/docs/nightly/configuration/collectors-configuration).
 
 ## How Netdata's metrics collectors work
 
@@ -31,7 +31,7 @@ Every collector has two primary jobs:
 
 If the collector finds compatible metrics exposed on the configured endpoint, it begins a per-second collection job. The
 Netdata Agent gathers these metrics, sends them to the 
-[database engine for storage](/docs/nightly/setup/change-how-long-netdata-stores-metrics)
+[database engine for storage](/docs/nightly/configuration/change-how-long-netdata-stores-metrics)
 , and immediately 
 [visualizes them meaningfully](/docs/nightly/operations/netdata-cloud-visualizations/interact-with-dashboards-and-charts) 
 on dashboards.
