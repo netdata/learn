@@ -113,16 +113,6 @@ module.exports = {
 				include: ['**/*.md', '**/*.mdx'],
 			},
 		],
-		[
-			'@docusaurus/plugin-content-docs',
-			{
-				id: 'contribute',
-				sidebarPath: require.resolve('./src/data/sidebar-contribute.js'),
-				path: './contribute',
-				routeBasePath: 'contribute',
-				include: ['**/*.md', '**/*.mdx'],
-			},
-		],
 	],
 	presets: [
 		[
