@@ -32,7 +32,7 @@ aims to document some of those steps for popular cloud providers.
 ## Recommended installation methods for cloud providers
 
 The best installation method depends on the instance's operating system, distribution, and version. For Linux instances,
-we recommend the [`kickstart.sh` automatic installation script](kickstart.md).
+we recommend the [`kickstart.sh` automatic installation script](/docs/nightly/installation/install-netdata-with-kickstart.sh).
 
 If you have issues with Netdata after installation, look to the sections below to find the issue you're experiencing,
 followed by the solution for your provider.
@@ -60,11 +60,11 @@ command from a remote system, and it fails, it's likely that a firewall is block
 Another option is to put Netdata behind web server, which will proxy requests through standard HTTP/HTTPS ports
 (80/443), which are likely already open on your instance. We have a number of guides available:
 
--   [Apache](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-apache-s-mod_proxy)
--   [Nginx](/docs/nightly/setup/expose-local-dashboard-through-proxy/running-netdata-behind-nginx)
--   [Caddy](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-caddy)
--   [HAProxy](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-haproxy)
--   [lighttpd](/docs/nightly/setup/expose-local-dashboard-through-proxy/netdata-via-lighttpd-v1.4.x)
+-   [Apache](/docs/nightly/configuration/secure-your-nodes/netdata-via-apache-s-mod_proxy)
+-   [Nginx](/docs/nightly/configuration/secure-your-nodes/running-netdata-behind-nginx)
+-   [Caddy](/docs/nightly/configuration/secure-your-nodes/netdata-via-caddy)
+-   [HAProxy](/docs/nightly/configuration/secure-your-nodes/netdata-via-haproxy)
+-   [lighttpd](/docs/nightly/configuration/secure-your-nodes/netdata-via-lighttpd-v1.4.x)
 
 The next few sections outline how to add firewall rules to GCP, AWS, and Azure instances.
 
