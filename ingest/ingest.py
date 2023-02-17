@@ -425,7 +425,7 @@ def convertGithubLinks(path, fileDict, DOCS_PREFIX):
                     replaceString = properLink[0] + properLink[1].strip("/")
 
                 # In the end replace the URL with the replaceString
-                body = body.replace(url, replaceString)
+                body = body.replace("]("+url, "]("+replaceString)
             except:
                 # This is probably a link that can't be translated to a Learn link (e.g. An external file)
                 pass
