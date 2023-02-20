@@ -44,7 +44,8 @@ restFilesDictionary = {}
 restFilesWithMetadataDictionary = {}
 toPublish = {}
 markdownFiles = []
-brokenLinkCounter= 0 
+BROKEN_LINK_COUNTER= 0
+FAIL_ON_NETDATA_BROKEN_LINKS = False 
  #Temporarily until we release (change it (the default) to /docs
 version_prefix = "nightly"  # We use this as the version prefix in the link strategy
 TEMP_FOLDER = "ingest-temp-folder"
@@ -360,7 +361,7 @@ def reductToPublishInGHLinksCorrelation(inputMatrix, DOCS_PREFIX, DOCS_PATH_LEAR
     return (inputMatrix)
 
 
-def convertGithubLinks(pathDict, fileDict, DOCS_PREFIX):
+def convertGithubLinks(path, fileDict, DOCS_PREFIX):
     '''
     Input:
         path: The path to the markdown file
@@ -370,17 +371,20 @@ def convertGithubLinks(pathDict, fileDict, DOCS_PREFIX):
         [*](https://github.com/netdata/netdata/blob/master/*)
     '''
 
-    path = pathDict["learnPath"]
-
-    global brokenLinkCounter
     # Open the file for reading
     dummyFile = open(path, "r")
     wholeFile = dummyFile.read()
     dummyFile.close()
 
+    global BROKEN_LINK_COUNTER
+
+    custom_edit_url = ""
+
     # Split the file into metadata that this function won't touch and the file's body
     metadata = "---" + wholeFile.split("---", 2)[1] + "---"
     body = wholeFile.split("---", 2)[2]
+
+    custom_edit_url_arr = re.findall(r'custom_edit_url(.*)', metadata)
 
     # If there are links inside the body
     if re.search("\]\((.*?)\)", body):
@@ -395,15 +399,17 @@ def convertGithubLinks(pathDict, fileDict, DOCS_PREFIX):
                 urls.append(i)
 
         for url in urls:
+
             # The URL will get replaced by the value of the replaceString
             try:
                 # The keys inside fileDict are like "ingest-temp-folder/netdata/collectors/charts.d.plugin/ap/README.md", so from the link, we need:
                 # replace the https link prefix until our organization identifier with the prefix of the temp folder
                 # try and catch any mishaps in links that instead of "blob" have "edit"
-                # remove "blob/master/"
+                # remove "blob/master/" or "blob/main/"
                 # Then we have the correct key for the dictionary
+
                 dict = fileDict[url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
-                    "edit", "blob").replace("blob/master/", "")]
+                    "edit", "blob").replace("blob/master/", "").replace("blob/main/", "")]
                 replaceString = dict["newLearnPath"]
 
                 # In some cases, a "id: someId" will be in a file, this is to change a file's link in Docusaurus, so we need to be careful to honor that
@@ -416,30 +422,7 @@ def convertGithubLinks(pathDict, fileDict, DOCS_PREFIX):
                         id
                     )
                 except:
-                    urls.append(i)
-            #print("************************\n",urls,"************************\n")
-            for url in urls:
-                # This is replaceString's default value
-                # If the URL is a GitHub one
-                # (at the moment we support this logic only for netdata/netdata links,
-                # to keep things simple and test the strategy)
-                # In the line we are examining, replace the URL string with the new replaceString value
-                try:
-                    line = line.replace(url, fileDict[url])
-                    # print("FILE",file)
-                    # print("Parsed:", url,"  ->  ", fileDict[url])
-                except:
-                    #print("URL COULD BE PARSED:", url)
-
-                    try:
-                        custom_edit_url = pathDict["metadata"]["custom_edit_url"]
-                    except:
-                        custom_edit_url = "NO custom_edit_url FOUND, YOU SHOULD ADD ONE"
-                    if url.startswith("https://github.com/netdata") and re.search("\.md.*$", url):
-                        brokenLinkCounter +=1
-                        print(brokenLinkCounter, "W: In File:", file,"\n",
-                              "custom_edit_url: ", custom_edit_url, "\n",
-                              "URL:", url,"\n")
+                    # There is no "id" metadata in the file, do nothing
                     pass
 
                 # Check for pages that are category overview pages, and have filepath like ".../monitor/monitor".
@@ -455,7 +438,19 @@ def convertGithubLinks(pathDict, fileDict, DOCS_PREFIX):
                 body = body.replace("]("+url, "]("+replaceString)
             except:
                 # This is probably a link that can't be translated to a Learn link (e.g. An external file)
-                pass
+                if url.startswith("https://github.com/netdata") and re.search("\.md", url):
+                    # Increase the counter of the broken links, fetch the custom_edit_url variable for printing and print a message
+                    BROKEN_LINK_COUNTER += 1
+
+                    if len(custom_edit_url_arr[0]) > 1:
+                        custom_edit_url = custom_edit_url_arr[0].replace(
+                            "\"", "").strip(":")
+                    else:
+                        custom_edit_url = "NO custom_edit_url found, please add one"
+
+                    print(BROKEN_LINK_COUNTER, "W: In File:", file, "\n",
+                          "custom_edit_url: ", custom_edit_url, "\n",
+                          "URL:", url, "\n")
 
     # Construct again the whole file
     wholeFile = metadata + body
@@ -489,6 +484,12 @@ if __name__ == '__main__':
         dest="DOCS_PREFIX",
         default="versioned_docs/version-nightly"
     )
+    
+    parser.add_argument(
+        "-f", "--fail-on-internal-broken-links",
+        help="Don't proceed with the process if internal broken links are found.",
+        action="store_true",
+    )
 
 
     listOfReposInStr = []
@@ -498,11 +499,14 @@ if __name__ == '__main__':
     '''Create local copies from the argpase input'''
     DOCS_PREFIX = args.DOCS_PREFIX
     for x in kArgs:
+        print(x)
         if x[0] == "repos":
             listOfReposInStr = x[1]
         if x[0] == "dryRun":
             print(x[1])
             dryRun = x[1]
+        if x[0] == "fail_on_internal_broken_links":
+            FAIL_ON_NETDATA_BROKEN_LINKS = x[1]
 
     if len(listOfReposInStr) > 0:
         for repoStr in listOfReposInStr:
@@ -605,12 +609,14 @@ if __name__ == '__main__':
     # pointing to GitHub relative paths
     #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), indent=4))
     for file in toPublish:
-<<<<<<< HEAD
         fileDict = reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER)
         convertGithubLinks(fileDict[file]["learnPath"],fileDict , DOCS_PREFIX)
-=======
-        convertGithubLinks(toPublish[file], reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), DOCS_PREFIX)
->>>>>>> 453d6c60 (change to the ingest logic, so it prints broken links)
+    print("Done.", "Broken Links:", BROKEN_LINK_COUNTER)
+    print(FAIL_ON_NETDATA_BROKEN_LINKS, BROKEN_LINK_COUNTER)
+    if FAIL_ON_NETDATA_BROKEN_LINKS and BROKEN_LINK_COUNTER>0:
+        print("\nFOUND BROKEN LINKS, ABORTING...")
+        exit(-1)
+
     if len(restFilesWithMetadataDictionary)>0:
         print("These files are in repos and dont have valid metadata to publish them in learn")
     for file in restFilesWithMetadataDictionary:
@@ -624,7 +630,6 @@ if __name__ == '__main__':
         print("These markdown files are in our repos and dont have any metadata at all")
     for file in restFilesDictionary:
         print(restFilesDictionary[file]["tmpPath"])
-    print("Done.", "Broken Links:", brokenLinkCounter)
 
     unSafeCleanUpFolders(TEMP_FOLDER)
 
