@@ -499,7 +499,7 @@ if __name__ == '__main__':
     '''Create local copies from the argpase input'''
     DOCS_PREFIX = args.DOCS_PREFIX
     for x in kArgs:
-        print(x)
+        # print(x)
         if x[0] == "repos":
             listOfReposInStr = x[1]
         if x[0] == "dryRun":
