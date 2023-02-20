@@ -7,7 +7,7 @@ export default function NotFound() {
   useEffect(() => {
     window.posthog.capture('page-not-found');
   }, [])
-  var url = location.href
+  var url = window.location.href
   var [first, second, three, ...query] = url.split('/')
 
   var target = query
