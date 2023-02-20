@@ -41,7 +41,7 @@ these files in your own Netdata config directory, as the next section describes 
 exist.
 
 - `netdata.conf` is the main configuration file. This is where you'll find most configuration options. Read descriptions
-  for each in the [daemon config](/docs/nightly/references/configuration/daemon) doc.
+  for each in the [daemon config](/docs/nightly/configuration/daemon) doc.
 - `edit-config` is a shell script used for [editing configuration files](#use-edit-config-to-edit-configuration-files).
 - Various configuration files ending in `.conf` for [configuring plugins or
   collectors](/docs/nightly/configuration/collectors-configuration) behave. Examples: `go.d.conf`,
@@ -54,7 +54,7 @@ exist.
 - `health.d/` is a directory that contains [health configuration files](/docs/nightly/configuration/health).
 - `health_alarm_notify.conf` enables and configures [alarm notifications](/docs/nightly/integrations/notify).
 - `statsd.d/` is a directory for configuring Netdata's [statsd collector](/docs/nightly/integrations/monitor/anything/statsd).
-- `stream.conf` configures [parent-child streaming](/docs/nightly/references/streaming-and-replication) between separate nodes running the Agent.
+- `stream.conf` configures [parent-child streaming](/docs/nightly/configuration/streaming-and-replication) between separate nodes running the Agent.
 - `.environment` is a hidden file that describes the environment in which the Netdata Agent is installed, including the
   `PATH` and any installation options. Useful for [reinstalling](/docs/nightly/installation/reinstall-the-netdata-agent) or
   [uninstalling](/docs/nightly/installation/uninstall-netdata) the Agent.
@@ -166,7 +166,7 @@ You can also take what you've learned about node configuration to enable or enha
 
 ### Related reference documentation
 
-- [Netdata Agent · Daemon](/docs/nightly/references/configuration/netdata-daemon)
+- [Netdata Agent · Daemon](/docs/nightly/operations/netdata-daemon)
 - [Netdata Agent · Health monitoring](/docs/nightly/concepts/health-monitoring)
 - [Netdata Agent · Notifications](/docs/nightly/integrations/notify/agent-alert-notifications)
 

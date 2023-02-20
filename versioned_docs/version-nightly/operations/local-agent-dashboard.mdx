@@ -4,8 +4,7 @@ description: "The local Netdata Agent dashboard is the heart of health monitorin
 custom_edit_url: https://github.com/netdata/netdata/edit/master/web/gui/README.md
 sidebar_label: "Local Agent dashboard"
 learn_status: "Published"
-learn_topic_type: "References"
-learn_rel_path: "References"
+learn_rel_path: "Operations"
 ---
 
 
@@ -22,9 +21,9 @@ By default, Netdata starts a web server for its dashboard at port `19999`. Open 
 navigate to `http://NODE:19999`, replacing `NODE` with the IP address or hostname of your Agent. If you're unsure, try
 `http://localhost:19999` first.
 
-Netdata uses an [internal, static-threaded web server](/docs/nightly/references/configuration/web-server) to host the HTML, CSS, and JavaScript
+Netdata uses an [internal, static-threaded web server](/docs/nightly/configuration/web-server) to host the HTML, CSS, and JavaScript
 files that make up the local Agent dashboard. You don't have to configure anything to access it, although you can adjust
-[your settings](/docs/nightly/references/configuration/web-server#other-netdataconf-web-section-options) in the `netdata.conf` file, or run Netdata
+[your settings](/docs/nightly/configuration/web-server#other-netdataconf-web-section-options) in the `netdata.conf` file, or run Netdata
 behind an [Nginx proxy](/docs/nightly/configuration/secure-your-nodes/running-netdata-behind-nginx), and so on.
 
 ## Navigating the local dashboard

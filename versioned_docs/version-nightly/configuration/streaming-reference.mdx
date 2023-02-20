@@ -5,8 +5,7 @@ type: "reference"
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/reference-streaming.md"
 sidebar_label: "Streaming reference"
 learn_status: "Published"
-learn_topic_type: "References"
-learn_rel_path: "References/Configuration"
+learn_rel_path: "Configuration"
 ---
 
 
@@ -165,7 +164,7 @@ cache size` and `dbengine multihost disk space` settings in the `[global]` secti
 | **`[global]` section**                     |                   |                                                                                                                                                                                                                                                                              |
 | `memory mode`                              | `dbengine`        | Determines the [database type](/docs/nightly/configuration/database) to be used on that node. Other options settings include `none`, `ram`, `save`, and `map`. `none` disables the database at this host. This also disables alarms and notifications, as those can't run without a database. |
 | **`[web]` section**                        |                   |                                                                                                                                                                                                                                                                              |
-| `mode`                                     | `static-threaded` | Determines the [web server](/docs/nightly/references/configuration/web-server) type. The other option is `none`, which disables the dashboard, API, and registry.                                                                                                                                        |
+| `mode`                                     | `static-threaded` | Determines the [web server](/docs/nightly/configuration/web-server) type. The other option is `none`, which disables the dashboard, API, and registry.                                                                                                                                        |
 | `accept a streaming request every seconds` | `0`               | Set a limit on how often a parent node accepts streaming requests from child nodes. `0` equals no limit. If this is set, you may see `... too busy to accept new streaming request. Will be allowed in X secs` in Netdata's `error.log`.                                     |
 
 ## Examples
@@ -194,7 +193,7 @@ default `dbengine` as specified by the `API_KEY`, and alarms are disabled.
 ### Securing streaming with TLS/SSL
 
 Netdata does not activate TLS encryption by default. To encrypt streaming connections, you first need to [enable TLS
-support](/docs/nightly/references/configuration/web-server#enabling-tls-support) on the parent. With encryption enabled on the receiving side, you
+support](/docs/nightly/configuration/web-server#enabling-tls-support) on the parent. With encryption enabled on the receiving side, you
 need to instruct the child to use TLS/SSL as well. On the child's `stream.conf`, configure the destination as follows:
 
 ```
