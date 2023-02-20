@@ -105,7 +105,7 @@ update_every: 10
 ## Disable unneeded plugins or collectors
 
 If you know that you don't need an [entire plugin or a specific
-collector](https://github.com/netdata/netdata/blob/master/docs/collect/how-collectors-work.md#collector-architecture-and-terminology), you can disable any of them.
+collector](/docs/nightly/concepts/collectors-ref#collector-architecture-and-terminology), you can disable any of them.
 Keep in mind that if a plugin/collector has nothing to do, it simply shuts down and does not consume system resources.
 You will only improve the Agent's performance by disabling plugins/collectors that are actively collecting metrics.
 
@@ -227,18 +227,3 @@ On the child nodes you should add to `netdata.conf` the following:
 [health]
    enabled = no
 ```
-
-## What's next?
-
-We hope this guide helped you better understand how to optimize the performance of the Netdata Agent.
-
-Now that your Agent is running smoothly, we recommend you [secure your nodes](/docs/nightly/configuration) if you haven't
-already.
-
-Next, dive into some of Netdata's more complex features, such as configuring its health watchdog or exporting metrics to
-an external time-series database.
-
--   [Interact with dashboards and charts](/docs/nightly/operations/netdata-cloud-visualizations/interact-with-dashboards-and-charts)
--   [Configure health alarms](https://github.com/netdata/netdata/blob/master/docs/monitor/configure-alarms.md)
--   [Export metrics to external time-series databases](/docs/nightly/concepts/export-metrics-to-external-time-series-databases)
-
