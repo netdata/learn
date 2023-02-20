@@ -19,7 +19,7 @@ directory.
 
 ## Change dashboards and visualizations
 
-The Netdata Agent's [local dashboard](/docs/nightly/references/local-agent-dashboard), accessible
+The Netdata Agent's [local dashboard](/docs/nightly/operations/local-agent-dashboard), accessible
 at `http://NODE:19999` is highly configurable. If
 you use Netdata Cloud
 for [infrastructure monitoring](/docs/nightly/getting-started/monitor-your-infrastructure), you
@@ -29,7 +29,7 @@ changes reflected in those visualizations due to the way Netdata Cloud proxies m
 ### Increase the long-term metrics retention period
 
 Increase the values for the `page cache size` and `dbengine multihost disk space` settings in
-the [`[global]`section](/docs/nightly/references/configuration/daemon#global-section-options)
+the [`[global]`section](/docs/nightly/configuration/daemon#global-section-options)
 of `netdata.conf`.
 
 ```conf
@@ -47,7 +47,7 @@ to help you determine the exact settings for your desired retention period.
 ### Reduce the data collection frequency
 
 Change `update every` in
-the [`[global]` section](/docs/nightly/references/configuration/daemon#global-section-options)
+the [`[global]` section](/docs/nightly/configuration/daemon#global-section-options)
 of `netdata.conf` so
 that it is greater than `1`. An `update every` of `5` means the Netdata Agent enforces a _minimum_ collection frequency
 of 5 seconds.
@@ -66,7 +66,7 @@ doc for details.
 ### Disable a collector or plugin
 
 Turn off entire plugins in
-the [`[plugins]` section](/docs/nightly/references/configuration/daemon#plugins-section-options)
+the [`[plugins]` section](/docs/nightly/configuration/daemon#plugins-section-options)
 of
 `netdata.conf`.
 
@@ -125,7 +125,7 @@ template: disk_fill_rate
 ### Turn of all alarms and notifications
 
 Set `enabled` to `no` in
-the [`[health]` section](/docs/nightly/references/configuration/daemon#health-section-options)
+the [`[health]` section](/docs/nightly/configuration/daemon#health-section-options)
 section of
 `netdata.conf`.
 
@@ -150,7 +150,7 @@ If you use Netdata Cloud to visualize metrics, stream metrics to a parent node, 
 dashboard, disabling it reduces the Agent's resource utilization and improves security.
 
 Change the `mode` setting to `none` in
-the [`[web]` section](/docs/nightly/references/configuration/web-server#configuration)
+the [`[web]` section](/docs/nightly/configuration/web-server#configuration)
 of `netdata.conf`.
 
 ```conf
@@ -161,7 +161,7 @@ of `netdata.conf`.
 ### Use access lists to restrict access to specific assets
 
 Allow access from only specific IP addresses, ranges of IP addresses, or hostnames
-using [access lists](/docs/nightly/references/configuration/web-server#access-lists)
+using [access lists](/docs/nightly/configuration/web-server#access-lists)
 and [simple patterns](/docs/nightly/developers/libnetdata/simple-patterns).
 
 See a quickstart to access lists in the [node security
@@ -177,7 +177,7 @@ sudo touch .opt-out-from-anonymous-statistics
 ```
 
 Learn more
-about [why we collect anonymous statistics](/docs/nightly/references/anonymous-statistics).
+about [why we collect anonymous statistics](/docs/nightly/configuration/anonymous-telemetry-events).
 
 ### Change the IP address/port Netdata listens to
 
@@ -241,9 +241,9 @@ using the database engine.
 ### Related reference documentation
 
 - [Netdata Agent · Daemon](/docs/nightly/concepts/health-monitoring)
-- [Netdata Agent · Daemon configuration](/docs/nightly/references/configuration/daemon)
-- [Netdata Agent · Web server](/docs/nightly/references/configuration/web-server)
-- [Netdata Agent · Local Agent dashboard](/docs/nightly/references/local-agent-dashboard)
+- [Netdata Agent · Daemon configuration](/docs/nightly/configuration/daemon)
+- [Netdata Agent · Web server](/docs/nightly/configuration/web-server)
+- [Netdata Agent · Local Agent dashboard](/docs/nightly/operations/local-agent-dashboard)
 - [Netdata Agent · Health monitoring](/docs/nightly/configuration/health)
 - [Netdata Agent · Notifications](/docs/nightly/integrations/notify/agent-alert-notifications)
 - [Netdata Agent · Simple patterns](/docs/nightly/developers/libnetdata/simple-patterns)

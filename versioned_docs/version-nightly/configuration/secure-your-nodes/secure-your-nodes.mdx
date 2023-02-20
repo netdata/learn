@@ -63,7 +63,7 @@ that node no longer serves its local dashboard.
 ## Restrict access to the local dashboard
 
 If you want to keep using the local dashboard, but don't want it exposed to the internet, you can restrict access with
-[access lists](/docs/nightly/references/configuration/web-server#access-lists). This method also fully retains the ability to stream metrics
+[access lists](/docs/nightly/configuration/web-server#access-lists). This method also fully retains the ability to stream metrics
 on-demand through Netdata Cloud.
 
 The `allow connections from` setting helps you allow only certain IP addresses or FQDN/hostnames, such as a trusted
@@ -98,8 +98,8 @@ The `allow connections from` setting is global and restricts access to the dashb
     allow management from = localhost
 ```
 
-See the [web server](/docs/nightly/references/configuration/web-server#access-lists) docs for additional details about access lists. You can take
-access lists one step further by [enabling SSL](/docs/nightly/references/configuration/web-server#enabling-tls-support) to encrypt data from local
+See the [web server](/docs/nightly/configuration/web-server#access-lists) docs for additional details about access lists. You can take
+access lists one step further by [enabling SSL](/docs/nightly/configuration/web-server#enabling-tls-support) to encrypt data from local
 dashboard in transit. The connection to Netdata Cloud is always secured with TLS.
 
 ## Use a reverse proxy
