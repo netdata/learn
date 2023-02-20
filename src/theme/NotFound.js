@@ -6,13 +6,12 @@ import {PageMetadata} from '@docusaurus/theme-common';
 export default function NotFound() {
   useEffect(() => {
     window.posthog.capture('page-not-found');
-    var url = window.location.href
+    var url = location.href
     var [first, second, three, ...query] = url.split('/')
-  
-    var target = query
+    query = query.toString().replace(",", " ")
+    var target = query.replaceAll("\/", " ").replace(".", " ")
     var base = url.split(query)[0]
-    window.location.replace(base + 'search?q=' + 'dummy');
+    window.location.replace("https://learn.netdata.cloud/" + 'search?q=' + target);
   }, [])
-  
   return null
 }
