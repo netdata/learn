@@ -80,21 +80,3 @@ ps aux| grep netdata
 
 The output of `ps aux` should show no `netdata` or associated processes running. You can now start the Netdata Agent
 again with `service netdata start`, or the appropriate method for your system.
-
-## What's next?
-
-Learn more about [securing the Netdata Agent](/docs/nightly/configuration/secure-your-nodes).
-
-You can also use the restart/reload methods described above to enable new features:
-
-- [Enable new collectors](/docs/nightly/configuration/collectors-configuration) or tweak their behavior.
-- [Configure existing health alarms](https://github.com/netdata/netdata/blob/master/docs/monitor/configure-alarms.md) or create new ones.
-- [Enable notifications](/docs/nightly/integrations/notify) to receive updates about the health of your
-  infrastructure.
-- Change [the long-term metrics retention period](/docs/nightly/configuration/change-how-long-netdata-stores-metrics) using the database engine.
-
-### Related reference documentation
-
-- [Netdata Agent · Daemon](/docs/nightly/references/configuration/netdata-daemon)
-- [Netdata Agent · Netdata CLI](/docs/nightly/references/agent-cli)
-
