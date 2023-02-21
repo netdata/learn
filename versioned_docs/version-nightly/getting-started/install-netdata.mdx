@@ -74,7 +74,7 @@ Both [securing Netdata](/docs/nightly/configuration/secure-your-nodes) and [sett
 ## Install on Linux with one-line installer 
 
 The **recommended** way to install Netdata on a Linux node (physical, virtual, container, IoT) is our one-line
-[kickstart script](/docs/nightly/installation/install-netdata-with-kickstart.sh).  
+[kickstart script](/docs/nightly/installation/installation-methods/one-line-installer-kickstart.sh).  
 This script automatically installs dependencies and builds Netdata from its source code.
 
 To install, copy the script, paste it into your node's terminal, and hit `Enter` to begin the installation process.
@@ -106,15 +106,15 @@ troubleshooting with Netdata.
 
 <InstallRegexLink>
   <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/install-netdata-with-docker)"
+    to="[](/docs/nightly/installation/installation-methods/docker)"
     os="Run with Docker" 
     svg="docker" />
   <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/install-netdata-on-kubernetes)"
+    to="[](/docs/nightly/installation/install-on-specific-environments/kubernetes)"
     os="Deploy on Kubernetes" 
     svg="kubernetes" />
    <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/install-netdata-on-macos)"
+    to="[](/docs/nightly/installation/install-on-specific-environments/macos)"
     os="Install on macOS" 
     svg="macos" />
   <InstallBoxRegexLink
@@ -122,21 +122,24 @@ troubleshooting with Netdata.
     os="Linux from Git" 
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/manually-build-netdata-from-source)"
+    to="[](/docs/nightly/installation/installation-methods/manually-build-netdata-from-source)"
     os="Linux from source"
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/install-netdata-on-offline-systems)" 
+    to="[](/docs/nightly/installation/installation-methods/offline-systems)" 
     os="Linux for offline nodes"
     svg="linux" />
 </InstallRegexLink>
 
-- [Run with Docker](/docs/nightly/installation/install-netdata-with-docker)
-- [Deploy on Kubernetes](/docs/nightly/installation/install-netdata-on-kubernetes)
-- [Install on macOS](/docs/nightly/installation/install-netdata-on-macos)
+- [Run with Docker](/docs/nightly/installation/installation-methods/docker)
+- [Deploy on Kubernetes](/docs/nightly/installation/install-on-specific-environments/kubernetes)
+- [Install on macOS](/docs/nightly/installation/install-on-specific-environments/macos)
 - [Linux from Git](/docs/nightly/installation/install-netdata-on-linux-from-a-git-checkout)
-- [Linux from source](/docs/nightly/installation/manually-build-netdata-from-source)
-- [Linux for offline nodes](/docs/nightly/installation/install-netdata-on-offline-systems)
+- [Linux from source](/docs/nightly/installation/installation-methods/manually-build-netdata-from-source)
+- [Linux for offline nodes](/docs/nightly/installation/installation-methods/offline-systems)
+
+The full list of all installation methods for various systems is available in [Netdata Learn](https://learn.netdata.cloud), 
+under [Installation](/docs/nightly/installation).
 
 ## Advanced installation options and troubleshooting
 

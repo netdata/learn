@@ -31,7 +31,7 @@ accompanying configuration file.
 If you don't see the app/service you'd like to monitor in this list:
 
 - If your application has a Prometheus endpoint, Netdata can monitor it! Look at our 
-  [generic Prometheus collector](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints).
+  [generic Prometheus collector](/docs/nightly/integrations/monitor/anything/prometheus-endpoints).
 
 - If your application is instrumented to expose [StatsD](https://blog.netdata.cloud/introduction-to-statsd/) metrics, 
   see our [generic StatsD collector](/docs/nightly/integrations/monitor/anything/statsd).
@@ -93,7 +93,7 @@ configure any of these collectors according to your setup and infrastructure.
 
 ### Generic
 
-- [Prometheus endpoints](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints): Gathers
+- [Prometheus endpoints](/docs/nightly/integrations/monitor/anything/prometheus-endpoints): Gathers
   metrics from any number of Prometheus endpoints, with support to autodetect more than 600 services and applications.
 - [Pandas](/docs/nightly/integrations/monitor/anything/ingest-structured-data-pandas): A Python
   collector that gathers
@@ -398,19 +398,18 @@ The Netdata Agent can collect these system- and hardware-level metrics using a v
 - [Monit](/docs/nightly/integrations/monitor/storage/monit): Monitor statuses
   of targets (service-checks) using the XML
   stats interface.
-- [WMI (Windows Management Instrumentation)
-  exporter](/docs/nightly/integrations/monitor/system-metrics/windows-machines): Collect CPU, memory,
-  network, disk, OS, system, and log-in metrics scraping `wmi_exporter`.
+- [Windows](/docs/nightly/integrations/monitor/system-metrics/windows-machines): Collect CPU, memory,
+  network, disk, OS, system, and log-in metrics scraping [windows_exporter](https://github.com/prometheus-community/windows_exporter).
 
 ### Disks and filesystems
 
 - [BCACHE](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin): Monitor BCACHE statistics
-  with the the `proc.plugin` collector.
+  with the `proc.plugin` collector.
 - [Block devices](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin): Gather metrics about
   the health and performance of block
-  devices using the the `proc.plugin` collector.
+  devices using the `proc.plugin` collector.
 - [Btrfs](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin): Monitors Btrfs filesystems
-  with the the `proc.plugin` collector.
+  with the `proc.plugin` collector.
 - [Device mapper](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin): Gather metrics about
   the Linux device mapper with the proc
   collector.
@@ -424,10 +423,9 @@ The Netdata Agent can collect these system- and hardware-level metrics using a v
   read/write latency.
 - [NFS file servers and clients](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin):
   Gather operations, utilization, and space usage
-  using the the `proc.plugin` collector.
+  using the `proc.plugin` collector.
 - [RAID arrays](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin): Collect health, disk
-  status, operation status, and more with the
-  the `proc.plugin` collector.
+  status, operation status, and more with the `proc.plugin` collector.
 - [Veritas Volume Manager](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin): Gather
   metrics about the Veritas Volume Manager (VVM).
 - [ZFS](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin): Monitor bandwidth and
@@ -475,8 +473,7 @@ The Netdata Agent can collect these system- and hardware-level metrics using a v
 ### Memory
 
 - [Available memory](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin): Tracks changes in
-  available RAM using the the `proc.plugin`
-  collector.
+  available RAM using the `proc.plugin` collector.
 - [Committed memory](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin): Monitor committed
   memory using the `proc.plugin` collector.
 - [Huge pages](/docs/nightly/integrations/monitor/system-metrics/os-provided-metrics-proc.plugin): Gather metrics about

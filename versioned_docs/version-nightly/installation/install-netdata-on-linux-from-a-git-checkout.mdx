@@ -195,14 +195,14 @@ cd netdata
 -   `--no-updates`: Prevent automatic updates of any kind.
 -   `--reinstall`: If an existing install is detected, reinstall instead of trying to update it. Note that this
     cannot be used to change installation types.
--   `--local-files`: Used for [offline installations](/docs/nightly/installation/install-netdata-on-offline-systems). Pass four file paths: the Netdata
+-   `--local-files`: Used for [offline installations](/docs/nightly/installation/installation-methods/offline-systems). Pass four file paths: the Netdata
     tarball, the checksum file, the go.d plugin tarball, and the go.d plugin config tarball, to force kickstart run the
     process using those files. This option conflicts with the `--stable-channel` option. If you set this _and_
     `--stable-channel`, Netdata will use the local files.
 
 ### Connect node to Netdata Cloud during installation
 
-Unlike the [`kickstart.sh`](/docs/nightly/installation/install-netdata-with-kickstart.sh), the `netdata-installer.sh` script does
+Unlike the [`kickstart.sh`](/docs/nightly/installation/installation-methods/one-line-installer-kickstart.sh), the `netdata-installer.sh` script does
 not allow you to automatically [connect](/docs/nightly/configuration/connect-agent-to-cloud) your node to Netdata Cloud immediately after installation.
 
 See the [connect to cloud](/docs/nightly/configuration/connect-agent-to-cloud) doc for details on connecting a node with a manual installation of Netdata.
