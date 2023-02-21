@@ -18,7 +18,7 @@ containers**, such as Docker, LXC, LXD, Libvirt, systemd-nspawn, and more. Read 
 monitoring](#collect-docker-metrics) below.
 
 Netdata also has robust **Kubernetes monitoring** support thanks to a
-[Helmchart](/docs/nightly/installation/install-netdata-on-kubernetes) to automate deployment, collectors for k8s agent services, and
+[Helmchart](/docs/nightly/installation/install-on-specific-environments/kubernetes) to automate deployment, collectors for k8s agent services, and
 robust [service discovery](https://github.com/netdata/agent-service-discovery/#service-discovery) to monitor the
 services running inside of pods in your k8s cluster. Read more about [Kubernetes
 monitoring](#collect-kubernetes-metrics) below.
@@ -57,7 +57,7 @@ metrics](/docs/nightly/integrations/monitor/databases/mysql#charts) as well.
 You could use this technique to monitor an entire infrastructure of Docker containers. The same [enable and configure](/docs/nightly/configuration/collectors-configuration) procedures apply whether an application runs on the host system or inside
 a container. You may need to configure the target endpoint if it's not the application's default.
 
-Netdata can even [run in a Docker container](/docs/nightly/installation/install-netdata-with-docker) itself, and then collect metrics about the
+Netdata can even [run in a Docker container](/docs/nightly/installation/installation-methods/docker) itself, and then collect metrics about the
 host system, its own container with cgroups, and any applications you want to monitor.
 
 See our [application metrics doc](/docs/nightly/concepts/application-metrics) for details about Netdata's application metrics
@@ -75,7 +75,7 @@ your k8s infrastructure.
     configuration files for [compatible
     applications](https://github.com/netdata/helmchart#service-discovery-and-supported-services) and any endpoints
     covered by our [generic Prometheus
-    collector](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints). With these
+    collector](/docs/nightly/integrations/monitor/anything/prometheus-endpoints). With these
     configuration files, Netdata collects metrics from any compatible applications as they run _inside_ of a pod.
     Service discovery happens without manual intervention as pods are created, destroyed, or moved between nodes. 
 -   A [Kubelet collector](/docs/nightly/integrations/monitor/container-orchestrators/kubernetes/kubelet), which runs

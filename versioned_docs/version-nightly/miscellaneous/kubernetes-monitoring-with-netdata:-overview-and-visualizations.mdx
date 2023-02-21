@@ -45,7 +45,7 @@ To follow this tutorial, you need:
 -   A free Netdata Cloud account. [Sign up](https://app.netdata.cloud/sign-up?cloudRoute=/spaces) if you don't have one
     already.
 -   A working cluster running Kubernetes v1.9 or newer, with a Netdata deployment and connected parent/child nodes. See
-    our [Kubernetes deployment process](/docs/nightly/installation/install-netdata-on-kubernetes) for details on deployment and
+    our [Kubernetes deployment process](/docs/nightly/installation/install-on-specific-environments/kubernetes) for details on deployment and
     conneting to Cloud.
 -   The [`kubectl`](https://kubernetes.io/docs/reference/kubectl/overview/) command line tool, within [one minor version
     difference](https://kubernetes.io/docs/tasks/tools/install-kubectl/#before-you-begin) of your cluster, on an
@@ -182,7 +182,7 @@ for complete customization. For example, grouping the top chart by `k8s_containe
 Netdata has a [service discovery plugin](https://github.com/netdata/agent-service-discovery), which discovers and
 creates configuration files for [compatible
 services](https://github.com/netdata/helmchart#service-discovery-and-supported-services) and any endpoints covered by
-our [generic Prometheus collector](/docs/nightly/integrations/monitor/extended-metric-collection/prometheus-endpoints).
+our [generic Prometheus collector](/docs/nightly/integrations/monitor/anything/prometheus-endpoints).
 Netdata uses these files to collect metrics from any compatible application as they run _inside_ of a pod. Service
 discovery happens without manual intervention as pods are created, destroyed, or moved between nodes.
 
@@ -195,7 +195,7 @@ metrics](https://user-images.githubusercontent.com/1153921/109054511-2eac8a00-76
 
 > The robot-shop cluster has more supported services, such as MySQL, which are not visible with zero configuration. This
 > is usually because of services running on non-default ports, using non-default names, or required passwords. Read up
-> on [configuring service discovery](/docs/nightly/installation/install-netdata-on-kubernetes#configure-service-discovery) to collect
+> on [configuring service discovery](/docs/nightly/installation/install-on-specific-environments/kubernetes#configure-service-discovery) to collect
 > more service metrics.
 
 Service metrics are essential to infrastructure monitoring, as they're the best indicator of the end-user experience,
