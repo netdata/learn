@@ -12,6 +12,8 @@ import git
 import json
 import ast
 import autogenerateSupportedIntegrationsPage as genIntPage
+import pandas as pd
+import numpy as np
 
 
 """
@@ -243,12 +245,47 @@ def fetchMarkdownFromRepo(outputFolder):
     return (glob.glob(outputFolder + '/**/*.md*', recursive=True) + glob.glob(outputFolder + '/.**/*.md*', recursive=True))
 
 
-def readHiddenMetadataFromDoc(pathToFile):
+def insertAndReadHiddenMetadataFromDoc(pathToFile, mapDict):
     """
     Taking a path of a file as input
     Identify the area with pattern " <!-- ...multiline string -->" and  converts them
     to a dictionary of key:value pairs
     """
+
+    repo, path = pathToFile.replace("ingest-temp-folder/", "").split('/', 1)
+
+    key = "https://github.com/netdata/" + repo + "/edit/master" + "/" + path
+
+    output = ""
+    for field in mapDict.loc[mapDict['custom_edit_url'] == key]:
+        try:
+            val = mapDict.loc[mapDict['custom_edit_url'] == key][field].values[0]
+        
+            # print((not val == np.nan),  val != val, val)
+            val = str(val)
+
+            if (not val == np.nan) and val != "nan":
+                output+= "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
+        except:
+            print("CANT PARSE", mapDict.loc[mapDict['custom_edit_url'] == key][field].values)
+    if len(output)>0:
+        output = "<!--\n" + output + "-->\n"
+        # print(output)
+
+    dummyFile = open(pathToFile, "r")
+    wholeFile = dummyFile.read()
+    dummyFile.close()
+
+    if wholeFile.startswith("<!--"):
+        body = wholeFile.split("-->", 1)[1]
+    else:
+        body = wholeFile
+
+    dummyFile = open(pathToFile, "w")
+    dummyFile.seek(0)
+    dummyFile.write(output + body)
+    dummyFile.close()
+
     metadataDictionary = {}
     with open(pathToFile, "r+") as fd:
         rawText = "".join(fd.readlines())
@@ -558,10 +595,15 @@ if __name__ == '__main__':
     print("Gathering Learn files...")
     # After this we need to keep only the files that have metadata, so we will fetch metadata for everything and keep
     # the entries that have populated dictionaries
+
+    mapDict = pd.read_csv("map.csv")
+    
+    mapDict.set_index('custom_edit_url').T.to_dict('dict')
+
     reducedMarkdownFiles = []
     for md in markdownFiles:
         #print("File: ", md)
-        metadata = readHiddenMetadataFromDoc(md)
+        metadata = insertAndReadHiddenMetadataFromDoc(md, mapDict)
         # Check to see if the dictionary returned is empty
         if len(metadata) > 0:
             #print(metadata)
