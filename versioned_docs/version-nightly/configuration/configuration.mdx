@@ -145,28 +145,3 @@ file to the Netdata config directory. Use `sudo` to elevate privileges.
 wget -O /etc/netdata/netdata.conf http://localhost:19999/netdata.conf
 curl -o /etc/netdata/netdata.conf http://NODE:19999/netdata.conf
 ```
-
-## What's next?
-
-Learn more about [starting, stopping, or restarting](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) the Netdata daemon to apply
-configuration changes.
-
-Apply some [common configuration changes](/docs/nightly/configuration/common-configuration-changes) to quickly tweak the Agent's behavior.
-
-[Add security to your node](/docs/nightly/configuration/secure-your-nodes) with what you've learned about the Netdata config directory
-and `edit-config`. We put together a few security best practices based on how you use the Netdata.
-
-You can also take what you've learned about node configuration to enable or enhance features:
-
--   [Enable new collectors](/docs/nightly/configuration/collectors-configuration) or tweak their behavior.
--   [Configure existing health alarms](/docs/nightly/configuration/health) or create new ones.
--   [Enable notifications](/docs/nightly/integrations/notify) to receive updates about the health of your
-    infrastructure.
--   Change [the long-term metrics retention period](/docs/nightly/configuration/change-how-long-netdata-stores-metrics) using the database engine.
-
-### Related reference documentation
-
-- [Netdata Agent · Daemon](/docs/nightly/operations/netdata-daemon)
-- [Netdata Agent · Health monitoring](/docs/nightly/concepts/health-monitoring)
-- [Netdata Agent · Notifications](/docs/nightly/integrations/notify/agent-alert-notifications)
-

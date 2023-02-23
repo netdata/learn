@@ -28,16 +28,6 @@ changes reflected in those visualizations due to the way Netdata Cloud proxies m
 
 ### Increase the long-term metrics retention period
 
-Increase the values for the `page cache size` and `dbengine multihost disk space` settings in
-the [`[global]`section](/docs/nightly/configuration/daemon#global-section-options)
-of `netdata.conf`.
-
-```conf
-[global]
-    page cache size = 128   # 128 MiB of memory for metrics storage
-    dbengine multihost disk space = 4096   # 4GiB of disk space for metrics storage
-```
-
 Read our doc
 on [increasing long-term metrics storage](/docs/nightly/configuration/change-how-long-netdata-stores-metrics)
 for details, including a
@@ -141,56 +131,7 @@ click on the link to your preferred notification method to find documentation fo
 While the Netdata Agent is both [open and secure by design](https://www.netdata.cloud/blog/netdata-agent-dashboard/), we
 recommend every user take some action to administer and secure their nodes.
 
-Learn more about a few of the following changes in
-the [node security doc](/docs/nightly/configuration/secure-your-nodes).
-
-### Disable the local Agent dashboard (`http://NODE:19999`)
-
-If you use Netdata Cloud to visualize metrics, stream metrics to a parent node, or otherwise don't need the local Agent
-dashboard, disabling it reduces the Agent's resource utilization and improves security.
-
-Change the `mode` setting to `none` in
-the [`[web]` section](/docs/nightly/configuration/web-server#configuration)
-of `netdata.conf`.
-
-```conf
-[web]
-    mode = none
-```
-
-### Use access lists to restrict access to specific assets
-
-Allow access from only specific IP addresses, ranges of IP addresses, or hostnames
-using [access lists](/docs/nightly/configuration/web-server#access-lists)
-and [simple patterns](/docs/nightly/developers/libnetdata/simple-patterns).
-
-See a quickstart to access lists in the [node security
-doc](/docs/nightly/configuration/secure-your-nodes#restrict-access-to-the-local-dashboard).
-
-### Stop sending anonymous statistics to Google Analytics
-
-Create a file called `.opt-out-from-anonymous-statistics` inside of your Netdata config directory to immediately stop
-the statistics script.
-
-```bash
-sudo touch .opt-out-from-anonymous-statistics
-```
-
-Learn more
-about [why we collect anonymous statistics](/docs/nightly/configuration/anonymous-telemetry-events).
-
-### Change the IP address/port Netdata listens to
-
-Change the `default port` setting in the `[web]` section to a port other than `19999`.
-
-```conf
-[web]
-   default port = 39999
-```
-
-Use the `bind to` setting to the ports other assets, such as
-the [running `netdata.conf` configuration](/docs/nightly/configuration#see-an-agents-running-configuration),
-API, or streaming requests listen to.
+Learn more about the available options in the [security design documentation](/docs/nightly/configuration/security-design).
 
 ## Reduce resource usage
 
@@ -216,35 +157,3 @@ The following restrictions apply to host label names:
 The policy for values is more flexible, but you can not use exclamation marks (`!`), whitespaces (` `), single quotes
 (`'`), double quotes (`"`), or asterisks (`*`), because they are used to compare label values in health alarms and
 templates.
-
-## What's next?
-
-If you haven't already, learn how
-to [secure your nodes](/docs/nightly/configuration/secure-your-nodes).
-
-As mentioned at the top, there are plenty of other
-
-You can also take what you've learned about node configuration to tweak the Agent's behavior or enable new features:
-
-- [Enable new collectors](/docs/nightly/configuration/collectors-configuration#enable-and-disable-a-specific-collection-module) or tweak
-  their behavior.
-- [Configure existing health alarms](/docs/nightly/configuration/health) or
-  create new ones.
-- [Enable notifications](/docs/nightly/integrations/notify) to receive
-  updates about the health of your
-  infrastructure.
--
-
-Change [the long-term metrics retention period](/docs/nightly/configuration/change-how-long-netdata-stores-metrics)
-using the database engine.
-
-### Related reference documentation
-
-- [Netdata Agent · Daemon](/docs/nightly/concepts/health-monitoring)
-- [Netdata Agent · Daemon configuration](/docs/nightly/configuration/daemon)
-- [Netdata Agent · Web server](/docs/nightly/configuration/web-server)
-- [Netdata Agent · Local Agent dashboard](/docs/nightly/operations/local-agent-dashboard)
-- [Netdata Agent · Health monitoring](/docs/nightly/configuration/health)
-- [Netdata Agent · Notifications](/docs/nightly/integrations/notify/agent-alert-notifications)
-- [Netdata Agent · Simple patterns](/docs/nightly/developers/libnetdata/simple-patterns)
-
