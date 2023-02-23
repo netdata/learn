@@ -254,7 +254,10 @@ def insertAndReadHiddenMetadataFromDoc(pathToFile, mapDict):
 
     repo, path = pathToFile.replace("ingest-temp-folder/", "").split('/', 1)
 
-    key = "https://github.com/netdata/" + repo + "/edit/master" + "/" + path
+    if repo == ".github":
+        key = "https://github.com/netdata/" + repo + "/edit/main" + "/" + path
+    else:    
+        key = "https://github.com/netdata/" + repo + "/edit/master" + "/" + path
 
     output = ""
     for field in mapDict.loc[mapDict['custom_edit_url'] == key]:
@@ -267,7 +270,8 @@ def insertAndReadHiddenMetadataFromDoc(pathToFile, mapDict):
             if (not val == np.nan) and val != "nan":
                 output+= "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
         except:
-            print("CANT PARSE", mapDict.loc[mapDict['custom_edit_url'] == key][field].values)
+            pass
+            # print("CANT PARSE", mapDict.loc[mapDict['custom_edit_url'] == key][field].values)
     if len(output)>0:
         output = "<!--\n" + output + "-->\n"
         # print(output)
