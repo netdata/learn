@@ -600,7 +600,7 @@ if __name__ == '__main__':
     # After this we need to keep only the files that have metadata, so we will fetch metadata for everything and keep
     # the entries that have populated dictionaries
 
-    mapDict = pd.read_csv("map.csv")
+    mapDict = pd.read_csv("map.tsv",sep='\t')
     
     mapDict.set_index('custom_edit_url').T.to_dict('dict')
 
