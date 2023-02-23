@@ -369,7 +369,7 @@ def sanitizePage(path):
     # For each line of the file I read
     for line in body.splitlines():
         # If the line isn't an H1 title, and it isn't an analytics pixel, append it to the output list
-        if not line.startswith("# ") and not line.startswith("[![analytics]"):
+        if not line.startswith("[![analytics]"):
             output.append(line + "\n")
 
     # TODO remove github badges
