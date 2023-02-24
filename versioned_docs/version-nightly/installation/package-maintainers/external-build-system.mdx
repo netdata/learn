@@ -1,12 +1,13 @@
 ---
-title: "External build-system"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/build_external/README.md
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/build_external/README.md"
 sidebar_label: "External build-system"
 learn_status: "Published"
-learn_topic_type: "References"
 learn_rel_path: "Installation/Package maintainers"
+sidebar_position: "67"
 ---
 
+
+# External build-system
 
 This wraps the build-system in Docker so that the host system and the target system are
 decoupled. This allows:
@@ -101,6 +102,7 @@ Distro=debian Version=10 docker-compose -f projects/only-agent/docker-compose.ym
 3. A simple parent-child scenario
 
 ```bash
+# Need to call clean-install on the configs used in the parent-child containers
 docker-compose -f parent-child/docker-compose.yml up --scale agent_child1=2
 ```
 

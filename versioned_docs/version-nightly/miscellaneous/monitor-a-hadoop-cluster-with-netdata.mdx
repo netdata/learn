@@ -1,12 +1,13 @@
 ---
-title: "Monitor a Hadoop cluster with Netdata"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/monitor-hadoop-cluster.md"
 sidebar_label: "Monitor a Hadoop cluster with Netdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor-hadoop-cluster.md
 learn_status: "Published"
-learn_topic_type: "Tasks"
 learn_rel_path: "Miscellaneous"
+sidebar_position: "393"
 ---
 
+
+# Monitor a Hadoop cluster with Netdata
 
 Hadoop is an [Apache project](https://hadoop.apache.org/) is a framework for processing large sets of data across a
 distributed cluster of systems.
@@ -26,8 +27,8 @@ alternative, like the guide available from
 
 For more specifics on the collection modules used in this guide, read the respective pages in our documentation:
 
--   [HDFS](/docs/nightly/integrations/monitor/storage/hdfs)
--   [Zookeeper](/docs/nightly/integrations/monitor/databases/zookeeper)
+-   [HDFS](/docs/nightly/data-collection---importing-data/monitor-anything/storage/hdfs)
+-   [Zookeeper](/docs/nightly/data-collection---importing-data/monitor-anything/databases/zookeeper)
 
 ## Set up your HDFS and Zookeeper installations
 
@@ -116,8 +117,13 @@ sudo ./edit-config go.d/hdfs.conf
 At the bottom of the file, you will see two example jobs, both of which are commented out:
 
 ```yaml
+# [ JOBS ]
 #jobs:
+#  - name: namenode
+#    url: http://127.0.0.1:9870/jmx
 #
+#  - name: datanode
+#    url: http://127.0.0.1:9864/jmx
 ```
 
 Uncomment these lines and edit the `url` value(s) according to your setup. Now's the time to add any other configuration
@@ -128,6 +134,7 @@ The result for a simple HDFS setup, running entirely on `localhost` and without 
 like this:
 
 ```yaml
+# [ JOBS ]
 jobs:
   - name: namenode
     url: http://127.0.0.1:9870/jmx
@@ -157,7 +164,7 @@ jobs:
     address : 203.0.113.10:2182
 ```
 
-Finally, [restart Netdata](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent).
+Finally, [restart Netdata](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent).
 
 ```sh
 sudo systemctl restart netdata
@@ -182,4 +189,4 @@ sudo /etc/netdata/edit-config health.d/zookeeper.conf
 ```
 
 For more information about editing the defaults or writing new alarm entities, see our 
-[health monitoring documentation](/docs/nightly/concepts/health-monitoring).
+[health monitoring documentation](/docs/nightly/getting-started/concepts/health-monitoring).

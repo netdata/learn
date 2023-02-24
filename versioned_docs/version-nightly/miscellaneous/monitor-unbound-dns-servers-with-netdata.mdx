@@ -1,13 +1,13 @@
 ---
-title: "Monitor Unbound DNS servers with Netdata"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/collect-unbound-metrics.md"
 sidebar_label: "Monitor Unbound DNS servers with Netdata"
-date: 2020-03-31
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/collect-unbound-metrics.md
 learn_status: "Published"
-learn_topic_type: "Tasks"
 learn_rel_path: "Miscellaneous"
+sidebar_position: "391"
 ---
 
+
+# Monitor Unbound DNS servers with Netdata
 
 [Unbound](https://nlnetlabs.nl/projects/unbound/about/) is a "validating, recursive, caching DNS resolver" from NLNet
 Labs. In v1.19 of Netdata, we release a completely refactored collector for collecting real-time metrics from Unbound
@@ -35,6 +35,7 @@ documentation](https://nlnetlabs.nl/documentation/unbound/howto-setup/#setup-rem
 `unbound-control`, such as how to handle situations when Unbound is run under a unique user.
 
 ```conf
+# enable remote-control
 remote-control:
     control-enable: yes
 ```
@@ -57,7 +58,7 @@ You may not need to do any more configuration to have Netdata collect your Unbou
 
 If you followed the steps above to enable `remote-control` and make your Unbound files readable by Netdata, that should
 be enough. Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) for your system. You should see Unbound metrics in your Netdata
+method](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent) for your system. You should see Unbound metrics in your Netdata
 dashboard!
 
 ![Some charts showing Unbound metrics in real-time](https://user-images.githubusercontent.com/1153921/69659974-93160f00-103c-11ea-88e6-27e9efcf8c0d.png)
@@ -102,7 +103,7 @@ Netdata will attempt to read `unbound.conf` to get the appropriate `address`, `c
 `tls_key` parameters. 
 
 Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) for your system.
+method](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent) for your system.
 
 ### Manual setup for a remote Unbound server
 

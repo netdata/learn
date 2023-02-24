@@ -1,13 +1,12 @@
 ---
-title: "Monitor your infrastructure"
-description: "Real-time infrastructure monitoring with Netdata Cloud. View key metrics, insightful charts, and active alarms from all your nodes."
-custom_edit_url: "https://github.com/netdata/netdata/blob/master/docs/quickstart/infrastructure.md"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md"
 sidebar_label: "Monitor your infrastructure"
 learn_status: "Published"
-learn_topic_type: "Concepts"
-learn_rel_path: "Getting Started"
-sidebar_position: "50"
+learn_rel_path: "Getting started"
+sidebar_position: "3"
+description: "Real-time infrastructure monitoring with Netdata Cloud. View key metrics, insightful charts, and active alarms from all your nodes."
 ---
+
 
 import { Grid, Box, BoxList, BoxListItemRegexLink } from '@site/src/components/Grid/'
 import { RiExternalLinkLine } from 'react-icons/ri'
@@ -17,7 +16,7 @@ nodes running the Netdata Agent. A node is any system in your infrastructure tha
 physical or virtual machine (VM), container, cloud deployment, or edge/IoT device.
 
 The Netdata Agent uses zero-configuration collectors to gather metrics from every application and container instantly,
-and uses Netdata's [distributed data architecture](/docs/nightly/concepts/distributed-data-architecture) to store metrics
+and uses Netdata's [distributed data architecture](/docs/nightly/getting-started/concepts/distributed-data-architecture) to store metrics
 locally. Without a slow and troublesome centralized data lake for your infrastructure's metrics, you reduce the
 resources you need to invest in, and the complexity of, monitoring your infrastructure. 
 
@@ -48,11 +47,11 @@ SRE team for the user-facing SaaS application, and a second IT team for managing
 don't monitor the same nodes, they can work in separate Spaces and then further organize their nodes into War Rooms.
 
 Next, set up War Rooms. Netdata Cloud creates dashboards and visualizations based on the nodes added to a given War
-Room. You can [organize War Rooms](/docs/nightly/operations/war-rooms#war-room-organization) in any way
+Room. You can [organize War Rooms](/docs/nightly/getting-started/war-rooms#war-room-organization) in any way
 you want, such as by the application type, for end-to-end application monitoring, or as an incident response tool.
 
-Learn more about [Spaces](/docs/nightly/operations/spaces) and [War
-Rooms](/docs/nightly/operations/war-rooms), including how to manage each, in their respective reference
+Learn more about [Spaces](/docs/nightly/getting-started/spaces) and [War
+Rooms](/docs/nightly/getting-started/war-rooms), including how to manage each, in their respective reference
 documentation.
 
 ### Invite your team
@@ -62,25 +61,25 @@ inviting others, you can better synchronize with your team or colleagues to unde
 When something goes wrong, you'll be ready to collaboratively troubleshoot complex performance problems from a single
 pane of glass.
 
-To [invite new users](/docs/nightly/operations/invite-your-team), click on **Invite Users** in the
+To [invite new users](/docs/nightly/getting-started/invite-your-team), click on **Invite Users** in the
 Space management Area. Choose which War Rooms to add this user to, then click **Send**.
 
 If your team members have trouble signing in, direct them to the [Netdata Cloud sign
-in](/docs/nightly/operations/sign-in-with-email-google-or-github) doc.
+in](/docs/nightly/getting-started/sign-in-with-email-google-or-github) doc.
 
 ### See an overview of your infrastructure
 
 The default way to visualize the health and performance of an infrastructure with Netdata Cloud is the
-[**Overview**](/docs/nightly/operations/netdata-cloud-visualizations/see-an-overview-of-your-infrastructure), which is the default interface of every War Room. The
+[**Overview**](/docs/nightly/visualization,-charts-and-dashboards/see-an-overview-of-your-infrastructure), which is the default interface of every War Room. The
 Overview features composite charts, which display aggregated metrics from every node in a given War Room. These metrics
 are streamed on-demand from individual nodes and composited onto a single, familiar dashboard.
 
 ![The War Room
 Overview](https://user-images.githubusercontent.com/1153921/108732681-09791980-74eb-11eb-9ba2-98cb1b6608de.png)
 
-Read more about the Overview in the [infrastructure overview](/docs/nightly/operations/netdata-cloud-visualizations/see-an-overview-of-your-infrastructure) doc.
+Read more about the Overview in the [infrastructure overview](/docs/nightly/visualization,-charts-and-dashboards/see-an-overview-of-your-infrastructure) doc.
 
-Netdata Cloud also features the [**Nodes view**](/docs/nightly/operations/visualizations/nodes-view), which you can
+Netdata Cloud also features the [**Nodes view**](/docs/nightly/visualization,-charts-and-dashboards/nodes-view), which you can
 use to configure and see a few key metrics from every node in the War Room, view health status, and more.
 
 ### Drill down to specific nodes
@@ -90,8 +89,8 @@ single-node dashboards in Netdata Cloud to drill down on specific issues, scrub 
 historical data, and see like metrics presented meaningfully to help you troubleshoot performance problems.
 
 Read about the process in the [infrastructure
-overview](/docs/nightly/operations/netdata-cloud-visualizations/see-an-overview-of-your-infrastructure#drill-down-with-single-node-dashboards) doc, then learn about [interacting with
-dashboards and charts](/docs/nightly/operations/netdata-cloud-visualizations/interact-with-dashboards-and-charts) to get the most from all of Netdata's real-time
+overview](/docs/nightly/visualization,-charts-and-dashboards/see-an-overview-of-your-infrastructure#drill-down-with-single-node-dashboards) doc, then learn about [interacting with
+dashboards and charts](https://github.com/netdata/netdata/blob/master/docs/visualize/interact-dashboards-charts.md) to get the most from all of Netdata's real-time
 metrics.
 
 ### Create new dashboards
@@ -103,7 +102,7 @@ from every node in your infrastructure on a single dashboard.
 ![An example system CPU
 dashboard](https://user-images.githubusercontent.com/1153921/108732974-4b09c480-74eb-11eb-87a2-c67e569c08b6.png)
 
-Read more about [creating new dashboards](/docs/nightly/operations/netdata-cloud-visualizations/create-new-dashboards) for more details about the process and
+Read more about [creating new dashboards](/docs/nightly/visualization,-charts-and-dashboards/create-new-dashboards) for more details about the process and
 additional tips on best leveraging the feature to help you troubleshoot complex performance problems.
 
 ## Set up your nodes
@@ -130,23 +129,23 @@ cd /etc/netdata
 sudo ./edit-config netdata.conf
 ```
 
-Our [configuration basics doc](/docs/nightly/configuration) contains more information about `netdata.conf`, `edit-config`,
+Our [configuration basics doc](/docs/nightly/getting-started/configuration) contains more information about `netdata.conf`, `edit-config`,
 along with simple examples to get you familiar with editing your node's configuration.
 
-After you've learned the basics, you should [secure your infrastructure's nodes](/docs/nightly/configuration/secure-your-nodes) using
+After you've learned the basics, you should [secure your infrastructure's nodes](/docs/nightly/deployment-in-production/security/secure-your-nodes) using
 one of our recommended methods. These security best practices ensure no untrusted parties gain access to the metrics
 collected on any of your nodes.
 
 ### Collect metrics from systems and applications
 
-Netdata has [300+ pre-installed collectors](/docs/nightly/integrations/monitor) that gather thousands of metrics with zero
+Netdata has [300+ pre-installed collectors](/docs/nightly/data-collection---importing-data/monitor-anything) that gather thousands of metrics with zero
 configuration. Collectors search each of your nodes in default locations and ports to find running applications and
 gather as many metrics as they can without you having to configure them individually.
 
-Most collectors work without configuration, should you want more info, you can read more on [how Netdata's metrics collectors work](/docs/nightly/concepts/collectors-ref) and the [Collectors configuration reference](/docs/nightly/configuration/collectors-configuration) documentation.
+Most collectors work without configuration, should you want more info, you can read more on [how Netdata's metrics collectors work](/docs/nightly/data-collection---importing-data) and the [Collectors configuration reference](/docs/nightly/data-collection---importing-data/collectors-configuration) documentation.
 
-In addition, find detailed information about which [system](/docs/nightly/concepts/system-metrics),
-[container](/docs/nightly/concepts/container-metrics), and [application](/docs/nightly/concepts/application-metrics) metrics you can
+In addition, find detailed information about which [system](/docs/nightly/data-collection---importing-data/system-metrics),
+[container](/docs/nightly/data-collection---importing-data/container-metrics), and [application](/docs/nightly/data-collection---importing-data/application-metrics) metrics you can
 collect from across your infrastructure with Netdata.
 
 ## Netdata Cloud features
@@ -155,64 +154,64 @@ collect from across your infrastructure with Netdata.
   <Box
     title="Spaces and War Rooms">
     <BoxList>
-      <BoxListItemRegexLink to="[](/docs/nightly/operations/spaces)" title="Spaces" />
-      <BoxListItemRegexLink to="[](/docs/nightly/operations/war-rooms)" title="War Rooms" />
+      <BoxListItemRegexLink to="[](/docs/nightly/getting-started/spaces)" title="Spaces" />
+      <BoxListItemRegexLink to="[](/docs/nightly/getting-started/war-rooms)" title="War Rooms" />
     </BoxList>
   </Box>
   <Box
     title="Dashboards">
     <BoxList>
-      <BoxListItemRegexLink to="[](/docs/nightly/operations/visualizations/home-overview-and-single-node-view)" title="Overview" />
-      <BoxListItemRegexLink to="[](/docs/nightly/operations/visualizations/nodes-view)" title="Nodes view" />
-      <BoxListItemRegexLink to="[](/docs/nightly/operations/visualizations/kubernetes-visualizations)" title="Kubernetes" />
-      <BoxListItemRegexLink to="[](/docs/nightly/operations/visualizations/build-new-dashboards)" title="Create new dashboards" />
+      <BoxListItemRegexLink to="[](/docs/nightly/visualization,-charts-and-dashboards/home-overview-and-single-node-view)" title="Overview" />
+      <BoxListItemRegexLink to="[](/docs/nightly/visualization,-charts-and-dashboards/nodes-view)" title="Nodes view" />
+      <BoxListItemRegexLink to="[](/docs/nightly/visualization,-charts-and-dashboards/kubernetes-visualizations)" title="Kubernetes" />
+      <BoxListItemRegexLink to="[](/docs/nightly/visualization,-charts-and-dashboards/build-new-dashboards)" title="Create new dashboards" />
     </BoxList>
   </Box>
   <Box
     title="Alerts and notifications">
     <BoxList>
-      <BoxListItemRegexLink to="[](/docs/nightly/integrations/notify/cloud-alert-notifications/view-active-alerts)" title="View active alerts" />
-      <BoxListItemRegexLink to="[](/docs/nightly/integrations/notify/cloud-alert-notifications/alerts-smartboard)" title="Alerts Smartboard" />
-      <BoxListItemRegexLink to="[](/docs/nightly/integrations/notify/cloud-alert-notifications)" title="Alert notifications" />
+      <BoxListItemRegexLink to="[](/docs/nightly/alerts-and-notifications/cloud-alert-notifications/view-active-alerts)" title="View active alerts" />
+      <BoxListItemRegexLink to="[](/docs/nightly/alerts-and-notifications/cloud-alert-notifications/alerts-smartboard)" title="Alerts Smartboard" />
+      <BoxListItemRegexLink to="[](/docs/nightly/alerts-and-notifications/cloud-alert-notifications)" title="Alert notifications" />
     </BoxList>
   </Box>
   <Box
     title="Troubleshooting with Netdata Cloud">
-    <BoxListItemRegexLink to="[](/docs/nightly/operations/metric-correlations)" title="Metric Correlations" />
-    <BoxListItemRegexLink to="[](/docs/nightly/operations/anomaly-advisor)" title="Anomaly Advisor" />
-    <BoxListItemRegexLink to="[](/docs/nightly/concepts/events-feed)" title="Events Feed" />
+    <BoxListItemRegexLink to="[](/docs/nightly/troubleshooting-and-machine-learning/metric-correlations)" title="Metric Correlations" />
+    <BoxListItemRegexLink to="[](/docs/nightly/troubleshooting-and-machine-learning/anomaly-advisor)" title="Anomaly Advisor" />
+    <BoxListItemRegexLink to="[](/docs/nightly/troubleshooting-and-machine-learning/events-feed)" title="Events Feed" />
   </Box>
   <Box
     title="Management and settings">
     <BoxList>
-      <BoxListItemRegexLink to="[](/docs/nightly/operations/sign-in-with-email-google-or-github)" title="Sign in with email, Google, or GitHub" />
-      <BoxListItemRegexLink to="[](/docs/nightly/operations/invite-your-team)" title="Invite your team" />
-      <BoxListItemRegexLink to="[](/docs/nightly/operations/choose-your-netdata-cloud-theme)" title="Choose your Netdata Cloud theme" />
-      <BoxListItemRegexLink to="[](/docs/nightly/concepts/role-based-access-model)" title="Role-Based Access" />
-      <BoxListItemRegexLink to="[](/docs/nightly/concepts/netdata-plans)" title="Paid Plans" />
+      <BoxListItemRegexLink to="[](/docs/nightly/getting-started/sign-in-with-email-google-or-github)" title="Sign in with email, Google, or GitHub" />
+      <BoxListItemRegexLink to="[](/docs/nightly/getting-started/invite-your-team)" title="Invite your team" />
+      <BoxListItemRegexLink to="[](/docs/nightly/getting-started/choose-your-netdata-cloud-theme)" title="Choose your Netdata Cloud theme" />
+      <BoxListItemRegexLink to="[](/docs/nightly/deployment-in-production/security/role-based-access-model)" title="Role-Based Access" />
+      <BoxListItemRegexLink to="[](/docs/nightly/getting-started/concepts/netdata-plans)" title="Paid Plans" />
     </BoxList>
   </Box>
 </Grid>
 
 - Spaces and War Rooms
-  - [Spaces](/docs/nightly/operations/spaces)
-  - [War Rooms](/docs/nightly/operations/war-rooms)
+  - [Spaces](/docs/nightly/getting-started/spaces)
+  - [War Rooms](/docs/nightly/getting-started/war-rooms)
 - Dashboards
-  - [Overview](/docs/nightly/operations/visualizations/home-overview-and-single-node-view)
-  - [Nodes view](/docs/nightly/operations/visualizations/nodes-view)
-  - [Kubernetes](/docs/nightly/operations/visualizations/kubernetes-visualizations)
-  - [Create new dashboards](/docs/nightly/operations/visualizations/build-new-dashboards)
+  - [Overview](/docs/nightly/visualization,-charts-and-dashboards/home-overview-and-single-node-view)
+  - [Nodes view](/docs/nightly/visualization,-charts-and-dashboards/nodes-view)
+  - [Kubernetes](/docs/nightly/visualization,-charts-and-dashboards/kubernetes-visualizations)
+  - [Create new dashboards](/docs/nightly/visualization,-charts-and-dashboards/build-new-dashboards)
 - Alerts and notifications
-  - [View active alerts](/docs/nightly/integrations/notify/cloud-alert-notifications/view-active-alerts)
-  - [Alerts Smartboard](/docs/nightly/integrations/notify/cloud-alert-notifications/alerts-smartboard)
-  - [Alert notifications](/docs/nightly/integrations/notify/cloud-alert-notifications)
+  - [View active alerts](/docs/nightly/alerts-and-notifications/cloud-alert-notifications/view-active-alerts)
+  - [Alerts Smartboard](/docs/nightly/alerts-and-notifications/cloud-alert-notifications/alerts-smartboard)
+  - [Alert notifications](/docs/nightly/alerts-and-notifications/cloud-alert-notifications)
 - Troubleshooting with Netdata Cloud
-  - [Metric Correlations](/docs/nightly/operations/metric-correlations)
-  - [Anomaly Advisor](/docs/nightly/operations/anomaly-advisor)
-  - [Events Feed](/docs/nightly/concepts/events-feed)
+  - [Metric Correlations](/docs/nightly/troubleshooting-and-machine-learning/metric-correlations)
+  - [Anomaly Advisor](/docs/nightly/troubleshooting-and-machine-learning/anomaly-advisor)
+  - [Events Feed](/docs/nightly/troubleshooting-and-machine-learning/events-feed)
 - Management and settings
-  - [Sign in with email, Google, or GitHub](/docs/nightly/operations/sign-in-with-email-google-or-github)
-  - [Invite your team](/docs/nightly/operations/invite-your-team)
-  - [Choose your Netdata Cloud theme](/docs/nightly/operations/choose-your-netdata-cloud-theme)
-  - [Role-Based Access](/docs/nightly/concepts/role-based-access-model)
-  - [Paid Plans](/docs/nightly/concepts/netdata-plans)
+  - [Sign in with email, Google, or GitHub](/docs/nightly/getting-started/sign-in-with-email-google-or-github)
+  - [Invite your team](/docs/nightly/getting-started/invite-your-team)
+  - [Choose your Netdata Cloud theme](/docs/nightly/getting-started/choose-your-netdata-cloud-theme)
+  - [Role-Based Access](/docs/nightly/deployment-in-production/security/role-based-access-model)
+  - [Paid Plans](/docs/nightly/getting-started/concepts/netdata-plans)
