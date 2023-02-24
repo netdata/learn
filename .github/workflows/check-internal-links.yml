@@ -1,0 +1,28 @@
+name: Check internal links
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 17 * * *'
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Access Token
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+
+    - name: Init python env
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Setup python env
+      run: |
+        pip install -r .learn_environment/ingest-requirements.txt
+
+    - name: Ingest process
+      run: |
+        python ingest/ingest.py -f
