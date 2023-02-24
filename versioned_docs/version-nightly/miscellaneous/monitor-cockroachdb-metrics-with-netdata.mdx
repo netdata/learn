@@ -1,16 +1,17 @@
 ---
-title: "Monitor CockroachDB metrics with Netdata"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/monitor-cockroachdb.md"
 sidebar_label: "Monitor CockroachDB metrics with Netdata"
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor-cockroachdb.md
 learn_status: "Published"
-learn_topic_type: "Tasks"
 learn_rel_path: "Miscellaneous"
+sidebar_position: "392"
 ---
 
 
+# Monitor CockroachDB metrics with Netdata
+
 [CockroachDB](https://github.com/cockroachdb/cockroach) is an open-source project that brings SQL databases into
 scalable, disaster-resilient cloud deployments. Thanks to
-a [new CockroachDB collector](/docs/nightly/integrations/monitor/databases/cockroachdb)
+a [new CockroachDB collector](/docs/nightly/data-collection---importing-data/monitor-anything/databases/cockroachdb)
 released in
 [v1.20](https://blog.netdata.cloud/posts/release-1.20/), you can now monitor any number of CockroachDB databases with
 maximum granularity using Netdata. Collect more than 50 unique metrics and put them on interactive visualizations
@@ -37,7 +38,7 @@ display them on the dashboard.
 
 If your CockroachDB instance is accessible through `http://localhost:8080/` or `http://127.0.0.1:8080`, your setup is
 complete. Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent) for your system, and refresh your browser. You should see CockroachDB
+method](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent) for your system, and refresh your browser. You should see CockroachDB
 metrics in your Netdata dashboard!
 
 <figure>
@@ -69,6 +70,7 @@ allows TCP communication on port 8080, or whichever port you have configured Coc
 [Admin UI](https://www.cockroachlabs.com/docs/stable/monitoring-and-alerting.html#prometheus-endpoint) to listen on.
 
 ```yaml
+# [ JOBS ]
 jobs:
   - name: remote
     url: http://203.0.113.0:8080/_status/vars
@@ -80,6 +82,7 @@ jobs:
 For a secure cluster, use `https` in the `url` field instead.
 
 ```yaml
+# [ JOBS ]
 jobs:
   - name: remote
     url: https://203.0.113.0:8080/_status/vars
@@ -112,4 +115,4 @@ cd /etc/netdata/ # Replace with your Netdata configuration directory, if not /et
 ./edit-config health.d/cockroachdb.conf # You may need to use `sudo` for write privileges
 ```
 
-For more information about editing the defaults or writing new alarm entities, see our documentation on [configuring health alarms](/docs/nightly/configuration/health).
+For more information about editing the defaults or writing new alarm entities, see our documentation on [configuring health alarms](/docs/nightly/alerts-and-notifications).

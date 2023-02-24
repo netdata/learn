@@ -1,13 +1,12 @@
 ---
-title: "Install Netdata"
-description: "Download and install the open-source Netdata monitoring agent on physical/virtual servers, Linux (Ubuntu/Debian/CentOS/etc), Docker, Kubernetes, and many others, often with one command."
-sidebar_label: "Install Netdata"
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/packaging/installer/README.md"
+sidebar_label: "Install Netdata"
 learn_status: "Published"
-learn_topic_type: "Tasks"
 learn_rel_path: "Getting started"
-sidebar_position: "1"
+sidebar_position: "2"
+description: "Download and install the open-source Netdata monitoring agent on physical/virtual servers, Linux (Ubuntu/Debian/CentOS/etc), Docker, Kubernetes, and many others, often with one command."
 ---
+
 
 import { OneLineInstallWget, OneLineInstallCurl } from '@site/src/components/OneLineInstall/'
 import { InstallRegexLink, InstallBoxRegexLink } from '@site/src/components/InstallRegexLink/'
@@ -44,31 +43,31 @@ Explore our [general advanced installation options and troubleshooting](#advance
 #### Agent user interface
 
 To access the UI provided by the locally installed agent, open a browser and navigate to `http://NODE:19999`, replacing `NODE` with either `localhost` or
-the hostname/IP address of the remote node. You can also read more about [how the agent dashboard works](/docs/nightly/concepts/how-the-dashboard-works), or dive directly into the many ways
-to [interact with charts](/docs/nightly/operations/interact-with-charts).
+the hostname/IP address of the remote node. You can also read more about [how the agent dashboard works](/docs/nightly/getting-started/concepts/how-the-dashboard-works), or dive directly into the many ways
+to [interact with charts](/docs/nightly/visualization,-charts-and-dashboards/interact-with-charts).
 
 #### Configuration
 
-Discover the recommended way to [configure Netdata's settings or behavior](/docs/nightly/configuration) using our built-in
+Discover the recommended way to [configure Netdata's settings or behavior](/docs/nightly/getting-started/configuration) using our built-in
 `edit-config` script, then apply that knowledge to mission-critical tweaks, such as [changing how long Netdata stores
-metrics](/docs/nightly/configuration/change-how-long-netdata-stores-metrics).
+metrics](/docs/nightly/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics).
 
 #### Data collection
 
 If Netdata didn't autodetect all the hardware, containers, services, or applications running on your node, you should
-learn more about [how data collectors work](/docs/nightly/concepts/collectors-ref). If there's a [supported
-collector](/docs/nightly/integrations/monitor) for metrics you need, [configure the collector](/docs/nightly/configuration/collectors-configuration)
+learn more about [how data collectors work](/docs/nightly/data-collection---importing-data). If there's a [supported
+collector](/docs/nightly/data-collection---importing-data/monitor-anything) for metrics you need, [configure the collector](/docs/nightly/data-collection---importing-data/collectors-configuration)
 or read about its requirements to configure your endpoint to publish metrics in the correct format and endpoint.
 
 #### Alarms & notifications
 
 Netdata comes with hundreds of preconfigured alarms, designed by our monitoring gurus in parallel with our open-source
-community, but you may want to [edit alarms](/docs/nightly/configuration/health) or 
-[enable notifications](/docs/nightly/integrations/notify) to customize your Netdata experience.
+community, but you may want to [edit alarms](/docs/nightly/alerts-and-notifications) or 
+[enable notifications](/docs/nightly/alerts-and-notifications/notify) to customize your Netdata experience.
 
 #### Make your deployment production ready
 
-Both [securing Netdata](https://github.com/netdata/netdata/blob/master/docs/configure/secure-nodes.md) and [setting up replication](/docs/nightly/configuration/streaming-and-replication) are strongly recommended.
+Both [securing Netdata](https://github.com/netdata/netdata/blob/master/docs/configure/secure-nodes.md) and [setting up replication](/docs/nightly/deployment-in-production/streaming-and-replication) are strongly recommended.
 
 
 ## Install on Linux with one-line installer 
@@ -199,7 +198,7 @@ the community helps fix any bugs that might have been introduced in previous rel
 
 ### Anonymous statistics
 
-Starting with v1.30, Netdata collects anonymous usage information by default and sends it to a self-hosted PostHog instance within the Netdata infrastructure. Read about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/nightly/configuration/anonymous-telemetry-events) page.
+Starting with v1.30, Netdata collects anonymous usage information by default and sends it to a self-hosted PostHog instance within the Netdata infrastructure. Read about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/nightly/deployment-in-production/security/anonymous-telemetry-events) page.
 
 The usage statistics are _vital_ for us, as we use them to discover bugs and prioritize new features. We thank you for
 _actively_ contributing to Netdata's future.
@@ -244,6 +243,7 @@ These files need to have the same user and group used to install your netdata. S
 `netdata` and group `netdata`, in this scenario you will need to run the following command to fix the error:
 
 ```bash
+# chown -R netdata.netdata /usr/share/netdata/web
 ```
 
 #### Multiple versions of OpenSSL
