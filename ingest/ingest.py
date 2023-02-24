@@ -673,9 +673,11 @@ if __name__ == '__main__':
             print(json.dumps(restFilesWithMetadataDictionary[file]["metadata"], indent=4))
             print("&Position: ", file)
     if len(restFilesDictionary):
-        print("These markdown files are in our repos and dont have any metadata at all")
-    for file in restFilesDictionary:
-        print(restFilesDictionary[file]["tmpPath"])
+        print("ABORT: Files found that are not in the map, exiting...")
+        for file in restFilesDictionary:
+            print(restFilesDictionary[file]["tmpPath"])
+        exit(-1)
+        
 
     unSafeCleanUpFolders(TEMP_FOLDER)
 
