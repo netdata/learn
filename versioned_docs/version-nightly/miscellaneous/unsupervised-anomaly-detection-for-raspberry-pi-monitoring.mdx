@@ -1,18 +1,18 @@
 ---
-title: "Unsupervised anomaly detection for Raspberry Pi monitoring"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/monitor/raspberry-pi-anomaly-detection.md"
 sidebar_label: "Unsupervised anomaly detection for Raspberry Pi monitoring"
-description: "Use a low-overhead machine learning algorithm and an open-source monitoring tool to detect anomalous metrics on a Raspberry Pi."
-image: /img/seo/guides/monitor/raspberry-pi-anomaly-detection.png
-custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/monitor/raspberry-pi-anomaly-detection.md
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
+sidebar_position: "397"
+description: "Use a low-overhead machine learning algorithm and an open-source monitoring tool to detect anomalous metrics on a Raspberry Pi."
 ---
+
 
 We love IoT and edge at Netdata, we also love machine learning. Even better if we can combine the two to ease the pain
 of monitoring increasingly complex systems.
 
 We recently explored what might be involved in enabling our Python-based [anomalies
-collector](/docs/nightly/integrations/monitor/anything/anomalies) on a Raspberry Pi. To our delight, it's actually quite
+collector](/docs/nightly/data-collection---importing-data/monitor-anything/generic-collectors/anomalies) on a Raspberry Pi. To our delight, it's actually quite
 straightforward! 
 
 Read on to learn all the steps and enable unsupervised anomaly detection on your on Raspberry Pi(s).
@@ -29,8 +29,8 @@ Read on to learn all the steps and enable unsupervised anomaly detection on your
 
 First make sure Netdata is using Python 3 when it runs Python-based data collectors. 
 
-Next, open `netdata.conf` using [`edit-config`](/docs/nightly/configuration#use-edit-config-to-edit-configuration-files)
-from within the [Netdata config directory](/docs/nightly/configuration#the-netdata-config-directory). Scroll down to the
+Next, open `netdata.conf` using [`edit-config`](/docs/nightly/getting-started/configuration#use-edit-config-to-edit-configuration-files)
+from within the [Netdata config directory](/docs/nightly/getting-started/configuration#the-netdata-config-directory). Scroll down to the
 `[plugin:python.d]` section to pass in the `-ppython3` command option. 
 
 ```conf
@@ -59,11 +59,13 @@ LLVM_CONFIG=llvm-config-9 pip3 install --user llvmlite numpy==1.20.1 netdata-pan
 
 ## Enable the anomalies collector
 
-Now you're ready to enable the collector and [restart Netdata](/docs/nightly/operations/start-stop-or-restart-the-netdata-agent).
+Now you're ready to enable the collector and [restart Netdata](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent).
 
 ```bash
 sudo ./edit-config python.d.conf
+# set `anomalies: no` to `anomalies: yes`
 
+# restart netdata
 sudo systemctl restart netdata
 ```
 
@@ -80,7 +82,7 @@ centralized cloud somewhere) is the resource utilization impact of running a mon
 
 With the default configuration, the anomalies collector uses about 6.5% of CPU at each run. During the retraining step,
 CPU utilization jumps to between 20-30% for a few seconds, but you can [configure
-retraining](/docs/nightly/integrations/monitor/anything/anomalies#configuration) to happen less often if you wish.
+retraining](/docs/nightly/data-collection---importing-data/monitor-anything/generic-collectors/anomalies#configuration) to happen less often if you wish.
 
 ![CPU utilization of anomaly detection on the Raspberry
 Pi](https://user-images.githubusercontent.com/1153921/110149718-9d749c00-7d9b-11eb-9af8-46e2032cd1d0.png)

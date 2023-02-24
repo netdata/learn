@@ -1,13 +1,14 @@
 ---
-title: "Deploy Netdata with Ansible"
-description: "Deploy an infrastructure monitoring solution in minutes with the Netdata Agent and Ansible. Use and customize a simple playbook for monitoring as code."
-image: /img/seo/guides/deploy/ansible.png
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/ansible.md
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/packaging/installer/methods/ansible.md"
 sidebar_label: "Ansible"
 learn_status: "Published"
 learn_rel_path: "Installation/Install on specific environments"
+sidebar_position: "54"
+description: "Deploy an infrastructure monitoring solution in minutes with the Netdata Agent and Ansible. Use and customize a simple playbook for monitoring as code."
 ---
 
+
+# Deploy Netdata with Ansible
 
 Netdata's [one-line kickstart](/docs/nightly/getting-started/install-netdata#install-on-linux-with-one-line-installer) is zero-configuration, highly adaptable, and compatible with tons
 of different operating systems and Linux distributions. You can use it on bare metal, VMs, containers, and everything
@@ -103,8 +104,8 @@ two different SSH keys supplied by AWS.
 ### Edit the `vars/main.yml` file
 
 In order to connect your node(s) to your Space in Netdata Cloud, and see all their metrics in real-time in [composite
-charts](/docs/nightly/operations/netdata-cloud-visualizations/see-an-overview-of-your-infrastructure) or perform [Metric
-Correlations](/docs/nightly/operations/metric-correlations), you need to set the `claim_token`
+charts](/docs/nightly/visualization,-charts-and-dashboards/see-an-overview-of-your-infrastructure) or perform [Metric
+Correlations](/docs/nightly/troubleshooting-and-machine-learning/metric-correlations), you need to set the `claim_token`
 and `claim_room` variables.
 
 To find your `claim_token` and `claim_room`, go to Netdata Cloud, then click on your Space's name in the top navigation,
@@ -164,11 +165,11 @@ want to do with Netdata, so use those categories to dive in.
 
 Some of the best places to start:
 
--   [Collectors configuration reference](/docs/nightly/concepts/collectors-ref)
--   [Supported collectors list](/docs/nightly/integrations/monitor)
--   [See an overview of your infrastructure](/docs/nightly/operations/netdata-cloud-visualizations/see-an-overview-of-your-infrastructure)
--   [Interact with dashboards and charts](/docs/nightly/operations/netdata-cloud-visualizations/interact-with-dashboards-and-charts)
--   [Change how long Netdata stores metrics](/docs/nightly/configuration/change-how-long-netdata-stores-metrics)
+-   [Collectors configuration reference](/docs/nightly/data-collection---importing-data)
+-   [Supported collectors list](/docs/nightly/data-collection---importing-data/monitor-anything)
+-   [See an overview of your infrastructure](/docs/nightly/visualization,-charts-and-dashboards/see-an-overview-of-your-infrastructure)
+-   [Interact with dashboards and charts](https://github.com/netdata/netdata/blob/master/docs/visualize/interact-dashboards-charts.md)
+-   [Change how long Netdata stores metrics](/docs/nightly/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics)
 
 We're looking for more deployment and configuration management strategies, whether via Ansible or other
 provisioning/infrastructure as code software, such as Chef or Puppet, in our [community

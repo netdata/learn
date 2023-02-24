@@ -1,12 +1,14 @@
 ---
-title: "Install Netdata on Synology"
-description: "The Netdata Agent can be installed on AMD64-compatible NAS systems using the 64-bit pre-compiled static binary."
-custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/synology.md
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/packaging/installer/methods/synology.md"
 sidebar_label: "Synology"
 learn_status: "Published"
 learn_rel_path: "Installation/Install on specific environments"
+sidebar_position: "64"
+description: "The Netdata Agent can be installed on AMD64-compatible NAS systems using the 64-bit pre-compiled static binary."
 ---
 
+
+# Install Netdata on Synology
 
 > 💡 This document is maintained by Netdata's community, and may not be completely up-to-date. Please double-check the
 > details of the installation process, before proceeding.
@@ -30,7 +32,7 @@ installations run it as the `netdata` user, you might wish to do the same. This 
 2.  Create a user `netdata` via the Synology user interface. Give it no access to anything and a random password. Assign
     the user to the `netdata` group. Netdata will chuid to this user when running.
 3.  Change ownership of the following directories, as defined in 
-    [Netdata Security](/docs/nightly/configuration/security-design#security-design):
+    [Netdata Security](/docs/nightly/deployment-in-production/security/secure-your-nodes#security-design):
 
 ```sh
 chown -R root:netdata /opt/netdata/usr/share/netdata
@@ -54,6 +56,7 @@ installed. You'll have to do this manually:
 2.  Add or edit `/etc/rc.local` and add a line calling `/etc/rc.netdata` to have it start on boot:
 
 ```conf
+# Netdata startup
 [ -x /etc/rc.netdata ] && /etc/rc.netdata start
 ```
 

@@ -1,15 +1,16 @@
 ---
-title: "Install Netdata with Docker"
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/packaging/docker/README.md"
 sidebar_label: "Docker"
 learn_status: "Published"
 learn_rel_path: "Installation/Installation methods"
-sidebar_position: 40
+sidebar_position: "52"
 ---
+
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+# Install Netdata with Docker
 
 ## Limitations running the Agent in Docker
 
@@ -210,7 +211,7 @@ to restart the container: `docker restart netdata`.
 
 > :warning: Warning
 >  
-> The [edit-config](/docs/nightly/configuration#the-netdata-config-directory) script doesn't work when executed on
+> The [edit-config](/docs/nightly/getting-started/configuration#the-netdata-config-directory) script doesn't work when executed on
 > the host system.
 
 If you want to make your container's configuration directory accessible from the host system, you need to use a
@@ -356,7 +357,7 @@ your machine from within the container. Please read the following carefully.
 #### Docker socket proxy (safest option)
 
 Deploy a Docker socket proxy that accepts and filters out requests using something like
-[HAProxy](/docs/nightly/configuration/secure-your-nodes/netdata-via-haproxy) so that it restricts connections to read-only access to the CONTAINERS
+[HAProxy](/docs/nightly/deployment-in-production/security/reverse-proxies/running-netdata-behind-haproxy) so that it restricts connections to read-only access to the CONTAINERS
 endpoint.
 
 The reason it's safer to expose the socket to the proxy is because Netdata has a TCP port exposed outside the Docker
@@ -479,13 +480,13 @@ services:
 ### Pass command line options to Netdata
 
 Since we use an [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) directive, you can provide
-[Netdata daemon command line options](/docs/nightly/operations/netdata-daemon#command-line-options) such as the IP address Netdata will be
+[Netdata daemon command line options](/docs/nightly/deployment-in-production/netdata-daemon#command-line-options) such as the IP address Netdata will be
 running on, using the [command instruction](https://docs.docker.com/engine/reference/builder/#cmd). 
 
 ## Install the Agent using Docker Compose with SSL/TLS enabled HTTP Proxy
 
 For a permanent installation on a public server, you should [secure the Netdata
-instance](/docs/nightly/configuration/security-design). This section contains an example of how to install Netdata with an SSL
+instance](/docs/nightly/deployment-in-production/security/secure-your-nodes). This section contains an example of how to install Netdata with an SSL
 reverse proxy and basic authentication.
 
 You can use the following `docker-compose.yml` and Caddyfile files to run Netdata with Docker. Replace the domains and

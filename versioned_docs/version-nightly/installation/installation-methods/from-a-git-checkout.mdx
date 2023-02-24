@@ -1,13 +1,14 @@
 ---
-title: "Install Netdata on Linux from a Git checkout"
-description: "Use the Netdata Agent source code from GitHub, plus helper scripts to set up your system, to install Netdata without packages or binaries."
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md"
 sidebar_label: "From a Git checkout"
 learn_status: "Published"
 learn_rel_path: "Installation/Installation methods"
-sidebar_position: 30
+sidebar_position: "49"
+description: "Use the Netdata Agent source code from GitHub, plus helper scripts to set up your system, to install Netdata without packages or binaries."
 ---
 
+
+# Install Netdata on Linux from a Git checkout
 
 To install the latest git version of Netdata, please follow these 2 steps:
 
@@ -66,12 +67,16 @@ with a copy of the message you get on screen. We are trying to make it work ever
 This is how to do it by hand:
 
 ```sh
+# Debian / Ubuntu
 apt-get install zlib1g-dev uuid-dev libuv1-dev liblz4-dev libssl-dev libelf-dev libmnl-dev libprotobuf-dev protobuf-compiler gcc g++ make git autoconf autoconf-archive autogen automake pkg-config curl python cmake
 
+# Fedora
 dnf install zlib-devel libuuid-devel libuv-devel lz4-devel openssl-devel elfutils-libelf-devel libmnl-devel protobuf-devel protobuf-compiler gcc gcc-c++ make git autoconf autoconf-archive autogen automake pkgconfig curl findutils python cmake
 
+# CentOS / Red Hat Enterprise Linux
 yum install autoconf automake curl gcc gcc-c++ git libmnl-devel libuuid-devel openssl-devel libuv-devel lz4-devel elfutils-libelf-devel protobuf protobuf-devel protobuf-compiler make nc pkgconfig python zlib-devel cmake
 
+# openSUSE
 zypper install zlib-devel libuuid-devel libuv-devel liblz4-devel libopenssl-devel libelf-devel libmnl-devel protobuf-devel gcc gcc-c++ make git autoconf autoconf-archive autogen automake pkgconfig curl findutils python cmake
 ```
 
@@ -151,14 +156,19 @@ CentOS 8.x:
 And install the minimum required dependencies:
 
 ```sh
+# Enable config-manager
 yum install -y 'dnf-command(config-manager)'
 
+# Enable PowerTools
 yum config-manager --set-enabled powertools
 
+# Enable EPEL
 yum install -y epel-release
 
+# Install Repo for libuv-devl (NEW)
 yum install -y http://repo.okay.com.mx/centos/8/x86_64/release/okay-release-1-3.el8.noarch.rpm
 
+# Install Devel Packages
 yum install autoconf automake curl gcc git cmake libuuid-devel openssl-devel libuv-devel lz4-devel make nc pkgconfig python3 zlib-devel
 
 ```
@@ -168,9 +178,11 @@ yum install autoconf automake curl gcc git cmake libuuid-devel openssl-devel lib
 Do this to install and run Netdata:
 
 ```sh
+# download it - the directory 'netdata' will be created
 git clone https://github.com/netdata/netdata.git --depth=100 --recursive
 cd netdata
 
+# run script with root privileges to build, install, start Netdata
 ./netdata-installer.sh
 ```
 
@@ -190,7 +202,7 @@ cd netdata
 -   `--dont-start-it`: Prevent the installer from starting Netdata automatically.
 -   `--stable-channel`: Automatically update only on the release of new major versions.
 -   `--nightly-channel`: Automatically update on every new nightly build.
--   `--disable-telemetry`: Opt-out of [anonymous statistics](/docs/nightly/configuration/anonymous-telemetry-events) we use to make
+-   `--disable-telemetry`: Opt-out of [anonymous statistics](/docs/nightly/deployment-in-production/security/anonymous-telemetry-events) we use to make
     Netdata better.
 -   `--no-updates`: Prevent automatic updates of any kind.
 -   `--reinstall`: If an existing install is detected, reinstall instead of trying to update it. Note that this
@@ -203,9 +215,9 @@ cd netdata
 ### Connect node to Netdata Cloud during installation
 
 Unlike the [`kickstart.sh`](/docs/nightly/installation/installation-methods/one-line-installer-kickstart.sh), the `netdata-installer.sh` script does
-not allow you to automatically [connect](/docs/nightly/configuration/connect-agent-to-cloud) your node to Netdata Cloud immediately after installation.
+not allow you to automatically [connect](/docs/nightly/deployment-in-production/connect-agent-to-cloud) your node to Netdata Cloud immediately after installation.
 
-See the [connect to cloud](/docs/nightly/configuration/connect-agent-to-cloud) doc for details on connecting a node with a manual installation of Netdata.
+See the [connect to cloud](/docs/nightly/deployment-in-production/connect-agent-to-cloud) doc for details on connecting a node with a manual installation of Netdata.
 
 ### 'nonrepresentable section on output' errors
 
@@ -217,7 +229,7 @@ In most cases, you can do this by running `CC=gcc ./netdata-installer.sh`.
 
 ## What's next?
 
-When you're finished with installation, check out [how to monitor your infrastructure](/docs/nightly/getting-started/monitor-your-infrastructure), or skip straight to [configuring the Netdata Agent](/docs/nightly/configuration).
+When you're finished with installation, check out [how to monitor your infrastructure](/docs/nightly/getting-started/monitor-your-infrastructure), or skip straight to [configuring the Netdata Agent](/docs/nightly/getting-started/configuration).
 
 Read through Netdata's [documentation](https://learn.netdata.cloud/docs), which is structured based on actions and
 solutions, to enable features like health monitoring, alarm notifications, long-term metrics storage, exporting to
