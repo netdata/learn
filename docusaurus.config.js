@@ -55,7 +55,7 @@ module.exports = {
 				{
 					to: 'https://blog.netdata.cloud/tags/how-to',
 					position: 'left',
-					label: 'Use cases',
+					label: 'Use Cases',
 				},
 				{
 					to: 'https://community.netdata.cloud/',
@@ -78,7 +78,7 @@ module.exports = {
 				},
 				{
 					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
-					label: 'Sign in',
+					label: 'Sign In',
 					position: 'right',
 				},
 				{
