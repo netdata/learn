@@ -235,7 +235,7 @@ def createMDXPathFromMetdata(metadata):
     In the returned (final) path we sanitize "/", "//" , "-", "," with one dash
     """
     finalFile = ' '.join(
-        (metadata["sidebar_label"].replace("'", " ").replace("/", " ").replace(")", " ").replace(",", " ").replace("(", " ")).split())
+        (metadata["sidebar_label"].replace("'", " ").replace(":", " ").replace("/", " ").replace(")", " ").replace(",", " ").replace("(", " ")).split())
     return ("{}/{}/{}.mdx".format(DOCS_PREFIX, \
                                   metadata["learn_rel_path"], \
                                   finalFile.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/"))
