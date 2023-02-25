@@ -292,3 +292,35 @@ to = "/docs/agent/collectors/go.d.plugin/modules/snmp"
 [[redirects]]
 from = "/docs/agent/backends/prometheus"
 to = "/docs/agent/exporting/prometheus"
+
+# Reorganizing new docs 02/25/2023
+
+[[redirects]]
+from = "/docs/nightly/concepts/events-feed"
+to = "/docs/nightly/troubleshooting-and-machine-learning/events-feed"
+
+[[redirects]]
+from = "/docs/nightly/concepts/netdata-functions"
+to = "/docs/nightly/troubleshooting-and-machine-learning/functions"
+
+[[redirects]]
+from = "/docs/nightly/concepts/role-based-access-model"
+to = "/docs/nightly/getting-started/concepts/role-based-access-model"
+
+[[redirects]]
+from = "/docs/nightly/operations/alerts/add-discord-notification-configuration"
+to = "/docs/nightly/alerts-and-notifications/cloud-alert-notifications/add-discord-notification-configuration"
+
+[[redirects]]
+from = "/docs/nightly/operations/alerts/add-webhook-notification-configuration"
+to = "/docs/nightly/alerts-and-notifications/cloud-alert-notifications/add-webhook-notification-configuration"
+
+[[redirects]]
+from = "/docs/nightly/operations/alerts/add-pagerduty-notification-configuration"
+to = "/docs/nightly/alerts-and-notifications/cloud-alert-notifications/add-pagerduty-notification-configuration"
+
+[[redirects]]
+from = "/docs/nightly/operations/alerts/add-slack-notification-configuration"
+to = "/docs/nightly/alerts-and-notifications/cloud-alert-notifications/add-slack-notification-configuration"
+
+
