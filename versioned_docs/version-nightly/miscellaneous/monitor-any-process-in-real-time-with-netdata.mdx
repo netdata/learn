@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/mon
 sidebar_label: "Monitor any process in real-time with Netdata"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
-sidebar_position: "400"
+sidebar_position: "394"
 description: "Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions."
 ---
 
@@ -46,7 +46,7 @@ With Netdata's process monitoring, you can:
 ## How does Netdata do process monitoring?
 
 The Netdata Agent already knows to look for hundreds
-of [standard applications that we support via collectors](/docs/nightly/data-collection---importing-data/monitor-anything),
+of [standard applications that we support via collectors](/docs/nightly/data-collection/monitor-anything),
 and groups them based on their
 purpose. Let's say you want to monitor a MySQL
 database using its process. The Netdata Agent already knows to look for processes with the string `mysqld` in their
@@ -55,12 +55,12 @@ process-specific charts.
 
 The process and groups settings are used by two unique and powerful collectors.
 
-[**`apps.plugin`**](/docs/nightly/data-collection---importing-data/monitor-anything/system-metrics/application-monitoring) looks at the Linux
+[**`apps.plugin`**](/docs/nightly/data-collection/monitor-anything/system-metrics/application-monitoring) looks at the Linux
 process tree every second, much like `top` or
 `ps fax`, and collects resource utilization information on every running process. It then automatically adds a layer of
 meaningful visualization on top of these metrics, and creates per-process/application charts.
 
-[**`ebpf.plugin`**](/docs/nightly/data-collection---importing-data/monitor-anything/system-metrics/kernel-traces-metrics-ebpf): Netdata's extended
+[**`ebpf.plugin`**](/docs/nightly/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf): Netdata's extended
 Berkeley Packet Filter (eBPF) collector
 monitors Linux kernel-level metrics for file descriptors, virtual filesystem IO, and process management, and then hands
 process-specific metrics over to `apps.plugin` for visualization. The eBPF collector also collects and visualizes

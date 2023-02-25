@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/mon
 sidebar_label: "Monitor Pi-hole (and a Raspberry Pi) with Netdata"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
-sidebar_position: "396"
+sidebar_position: "390"
 description: "Monitor Pi-hole metrics, plus Raspberry Pi system metrics, in minutes and completely for free with Netdata's open-source monitoring agent."
 ---
 
@@ -82,7 +82,7 @@ service](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi
 finished setting up Pi-hole at this point.
 
 As far as configuring Netdata to monitor Pi-hole metrics, there's nothing you actually need to do. Netdata's [Pi-hole
-collector](/docs/nightly/data-collection---importing-data/monitor-anything/apps/pi-hole) will autodetect the new service
+collector](/docs/nightly/data-collection/monitor-anything/apps/pi-hole) will autodetect the new service
 running on your Raspberry Pi and immediately start collecting metrics every second.
 
 Restart Netdata with `sudo systemctl restart netdata`, which will then recognize that Pi-hole is running and start a
@@ -106,9 +106,9 @@ If you're completely new to Netdata, look at the [Introduction](/docs/nightly/ge
 ### Enable temperature sensor monitoring
 
 You need to manually enable Netdata's built-in [temperature sensor
-collector](/docs/nightly/data-collection---importing-data/monitor-anything/devices/lm-sensors) to start collecting metrics.
+collector](/docs/nightly/data-collection/monitor-anything/devices/lm-sensors) to start collecting metrics.
 
-> Netdata uses a few plugins to manage its [collectors](/docs/nightly/data-collection---importing-data/collectors-configuration), each using a different language: Go,
+> Netdata uses a few plugins to manage its [collectors](/docs/nightly/data-collection/collectors-configuration), each using a different language: Go,
 > Python, Node.js, and Bash. While our Go collectors are undergoing the most active development, we still support the
 > other languages. In this case, you need to enable a temperature sensor collector that's written in Bash.
 
@@ -148,11 +148,11 @@ Now that you're monitoring Pi-hole and your Raspberry Pi with Netdata, you can e
 configure Netdata to more specific goals.
 
 Most importantly, you can always install additional services and instantly collect metrics from many of them with our
-[300+ integrations](/docs/nightly/data-collection---importing-data/monitor-anything).
+[300+ integrations](/docs/nightly/data-collection/monitor-anything).
 
 -   [Optimize performance](/docs/nightly/deployment-in-production/how-to-optimize-the-netdata-agent-s-performance) using tweaks developed for IoT devices.
 -   [Stream Raspberry Pi metrics](/docs/nightly/deployment-in-production/streaming-and-replication) to a parent host for easy access or longer-term storage.
--   [Tweak alarms](/docs/nightly/alerts-and-notifications) for either Pi-hole or the health of your Raspberry Pi.
+-   [Tweak alarms](/docs/nightly/alerts-and-notifications/configure-alerts) for either Pi-hole or the health of your Raspberry Pi.
 -   [Export metrics to external databases](/docs/nightly/exporting-data/exporting-reference) with the exporting engine.
 
 Or, head over to [our guides](https://learn.netdata.cloud/guides/) for even more experiments and insights into

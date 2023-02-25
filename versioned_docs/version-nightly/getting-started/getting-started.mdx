@@ -6,7 +6,7 @@ learn_rel_path: "Getting started"
 sidebar_position: "1"
 description: "Present netdata in a nutshell. The section includes everything needed to have a basic Netdata setup running, including overview of configuration, installing an agent, and cloud basics."
 ---
-
+# Getting started
 
 ## What is Netdata ?
 
@@ -70,9 +70,9 @@ Netdata works with tons of applications, notifications platforms, and other time
 
 -   **300+ system, container, and application endpoints**: Collectors autodetect metrics from default endpoints and
     immediately visualize them into meaningful charts designed for troubleshooting. See [everything we
-    support](/docs/nightly/data-collection---importing-data/monitor-anything).
+    support](/docs/nightly/data-collection/monitor-anything).
 -   **20+ notification platforms**: Netdata's health watchdog sends warning and critical alarms to your [favorite
-    platform](/docs/nightly/alerts-and-notifications/notify) to inform you of anomalies just seconds
+    platform](/docs/nightly/alerts-and-notifications/notifications) to inform you of anomalies just seconds
     after they affect your node.
 -   **30+ external time-series databases**: Export resampled metrics as they're collected to other [local- and
     Cloud-based databases](/docs/nightly/exporting-data) for best-in-class
@@ -127,7 +127,7 @@ Here are a few ways to enrich your existing monitoring and troubleshooting stack
 ### Collect metrics from Prometheus endpoints
 
 Netdata automatically detects 600 popular endpoints and collects per-second metrics from them via the [generic
-Prometheus collector](/docs/nightly/data-collection---importing-data/monitor-anything/generic-collectors/prometheus-endpoints). This even
+Prometheus collector](/docs/nightly/data-collection/monitor-anything/generic-collectors/prometheus-endpoints). This even
 includes support for Windows 10 via [`windows_exporter`](https://github.com/prometheus-community/windows_exporter).
 
 This collector is installed and enabled on all Agent installations by default, so you don't need to waste time

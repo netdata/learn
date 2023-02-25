@@ -3,10 +3,10 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/quickstart
 sidebar_label: "Monitor your infrastructure"
 learn_status: "Published"
 learn_rel_path: "Getting started"
-sidebar_position: "3"
+sidebar_position: "4"
 description: "Real-time infrastructure monitoring with Netdata Cloud. View key metrics, insightful charts, and active alarms from all your nodes."
 ---
-
+# Monitor your infrastructure
 
 import { Grid, Box, BoxList, BoxListItemRegexLink } from '@site/src/components/Grid/'
 import { RiExternalLinkLine } from 'react-icons/ri'
@@ -16,7 +16,7 @@ nodes running the Netdata Agent. A node is any system in your infrastructure tha
 physical or virtual machine (VM), container, cloud deployment, or edge/IoT device.
 
 The Netdata Agent uses zero-configuration collectors to gather metrics from every application and container instantly,
-and uses Netdata's [distributed data architecture](/docs/nightly/getting-started/concepts/distributed-data-architecture) to store metrics
+and uses Netdata's [distributed data architecture](/docs/nightly/getting-started/distributed-data-architecture) to store metrics
 locally. Without a slow and troublesome centralized data lake for your infrastructure's metrics, you reduce the
 resources you need to invest in, and the complexity of, monitoring your infrastructure. 
 
@@ -90,7 +90,7 @@ historical data, and see like metrics presented meaningfully to help you trouble
 
 Read about the process in the [infrastructure
 overview](/docs/nightly/visualization,-charts-and-dashboards/see-an-overview-of-your-infrastructure#drill-down-with-single-node-dashboards) doc, then learn about [interacting with
-dashboards and charts](https://github.com/netdata/netdata/blob/master/docs/visualize/interact-dashboards-charts.md) to get the most from all of Netdata's real-time
+dashboards and charts](/docs/nightly/getting-started/interact-with-charts) to get the most from all of Netdata's real-time
 metrics.
 
 ### Create new dashboards
@@ -138,14 +138,14 @@ collected on any of your nodes.
 
 ### Collect metrics from systems and applications
 
-Netdata has [300+ pre-installed collectors](/docs/nightly/data-collection---importing-data/monitor-anything) that gather thousands of metrics with zero
+Netdata has [300+ pre-installed collectors](/docs/nightly/data-collection/monitor-anything) that gather thousands of metrics with zero
 configuration. Collectors search each of your nodes in default locations and ports to find running applications and
 gather as many metrics as they can without you having to configure them individually.
 
-Most collectors work without configuration, should you want more info, you can read more on [how Netdata's metrics collectors work](/docs/nightly/data-collection---importing-data) and the [Collectors configuration reference](/docs/nightly/data-collection---importing-data/collectors-configuration) documentation.
+Most collectors work without configuration, should you want more info, you can read more on [how Netdata's metrics collectors work](/docs/nightly/data-collection) and the [Collectors configuration reference](/docs/nightly/data-collection/collectors-configuration) documentation.
 
-In addition, find detailed information about which [system](/docs/nightly/data-collection---importing-data/system-metrics),
-[container](/docs/nightly/data-collection---importing-data/container-metrics), and [application](/docs/nightly/data-collection---importing-data/application-metrics) metrics you can
+In addition, find detailed information about which [system](/docs/nightly/data-collection/system-metrics),
+[container](/docs/nightly/data-collection/container-metrics), and [application](/docs/nightly/data-collection/application-metrics) metrics you can
 collect from across your infrastructure with Netdata.
 
 ## Netdata Cloud features
@@ -161,7 +161,7 @@ collect from across your infrastructure with Netdata.
   <Box
     title="Dashboards">
     <BoxList>
-      <BoxListItemRegexLink to="[](/docs/nightly/visualization,-charts-and-dashboards/home-overview-and-single-node-view)" title="Overview" />
+      <BoxListItemRegexLink to="[](/docs/nightly/getting-started/home-overview-and-single-node-view)" title="Overview" />
       <BoxListItemRegexLink to="[](/docs/nightly/visualization,-charts-and-dashboards/nodes-view)" title="Nodes view" />
       <BoxListItemRegexLink to="[](/docs/nightly/visualization,-charts-and-dashboards/kubernetes-visualizations)" title="Kubernetes" />
       <BoxListItemRegexLink to="[](/docs/nightly/visualization,-charts-and-dashboards/build-new-dashboards)" title="Create new dashboards" />
@@ -170,9 +170,9 @@ collect from across your infrastructure with Netdata.
   <Box
     title="Alerts and notifications">
     <BoxList>
-      <BoxListItemRegexLink to="[](/docs/nightly/alerts-and-notifications/cloud-alert-notifications/view-active-alerts)" title="View active alerts" />
-      <BoxListItemRegexLink to="[](/docs/nightly/alerts-and-notifications/cloud-alert-notifications/alerts-smartboard)" title="Alerts Smartboard" />
-      <BoxListItemRegexLink to="[](/docs/nightly/alerts-and-notifications/cloud-alert-notifications)" title="Alert notifications" />
+      <BoxListItemRegexLink to="[](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/view-active-alerts)" title="View active alerts" />
+      <BoxListItemRegexLink to="[](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/alerts-smartboard)" title="Alerts Smartboard" />
+      <BoxListItemRegexLink to="[](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications)" title="Alert notifications" />
     </BoxList>
   </Box>
   <Box
@@ -188,7 +188,7 @@ collect from across your infrastructure with Netdata.
       <BoxListItemRegexLink to="[](/docs/nightly/getting-started/invite-your-team)" title="Invite your team" />
       <BoxListItemRegexLink to="[](/docs/nightly/getting-started/choose-your-netdata-cloud-theme)" title="Choose your Netdata Cloud theme" />
       <BoxListItemRegexLink to="[](/docs/nightly/deployment-in-production/security/role-based-access-model)" title="Role-Based Access" />
-      <BoxListItemRegexLink to="[](/docs/nightly/getting-started/concepts/netdata-plans)" title="Paid Plans" />
+      <BoxListItemRegexLink to="[](/docs/nightly/getting-started/netdata-plans)" title="Paid Plans" />
     </BoxList>
   </Box>
 </Grid>
@@ -197,14 +197,14 @@ collect from across your infrastructure with Netdata.
   - [Spaces](/docs/nightly/getting-started/spaces)
   - [War Rooms](/docs/nightly/getting-started/war-rooms)
 - Dashboards
-  - [Overview](/docs/nightly/visualization,-charts-and-dashboards/home-overview-and-single-node-view)
+  - [Overview](/docs/nightly/getting-started/home-overview-and-single-node-view)
   - [Nodes view](/docs/nightly/visualization,-charts-and-dashboards/nodes-view)
   - [Kubernetes](/docs/nightly/visualization,-charts-and-dashboards/kubernetes-visualizations)
   - [Create new dashboards](/docs/nightly/visualization,-charts-and-dashboards/build-new-dashboards)
 - Alerts and notifications
-  - [View active alerts](/docs/nightly/alerts-and-notifications/cloud-alert-notifications/view-active-alerts)
-  - [Alerts Smartboard](/docs/nightly/alerts-and-notifications/cloud-alert-notifications/alerts-smartboard)
-  - [Alert notifications](/docs/nightly/alerts-and-notifications/cloud-alert-notifications)
+  - [View active alerts](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/view-active-alerts)
+  - [Alerts Smartboard](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/alerts-smartboard)
+  - [Alert notifications](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications)
 - Troubleshooting with Netdata Cloud
   - [Metric Correlations](/docs/nightly/troubleshooting-and-machine-learning/metric-correlations)
   - [Anomaly Advisor](/docs/nightly/troubleshooting-and-machine-learning/anomaly-advisor)
@@ -214,4 +214,4 @@ collect from across your infrastructure with Netdata.
   - [Invite your team](/docs/nightly/getting-started/invite-your-team)
   - [Choose your Netdata Cloud theme](/docs/nightly/getting-started/choose-your-netdata-cloud-theme)
   - [Role-Based Access](/docs/nightly/deployment-in-production/security/role-based-access-model)
-  - [Paid Plans](/docs/nightly/getting-started/concepts/netdata-plans)
+  - [Paid Plans](/docs/nightly/getting-started/netdata-plans)

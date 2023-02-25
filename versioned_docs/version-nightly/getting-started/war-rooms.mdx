@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/cloud/war-
 sidebar_label: "War Rooms"
 learn_status: "Published"
 learn_rel_path: "Getting started"
-sidebar_position: "16"
+sidebar_position: "6"
 description: "Netdata Cloud uses War Rooms to group related nodes and create insightful compositedashboards based ontheir aggregate health and performance."
 ---
 
@@ -25,12 +25,12 @@ Every War Rooms provides multiple views. Each view focus on a particular area/su
 this War Rooms. Let's explore what view you have available:
 
 - The default view for any War Room is
-  the [Home tab](/docs/nightly/visualization,-charts-and-dashboards/home-overview-and-single-node-view#home), which give you
+  the [Home tab](/docs/nightly/getting-started/home-overview-and-single-node-view#home), which give you
   an overview
   of this space. Here you can see the number of Nodes claimed, data retention statics, user particate, alerts and more
 
 - The second and most important view is
-  the [Overview tab](/docs/nightly/visualization,-charts-and-dashboards/home-overview-and-single-node-view#overview) which
+  the [Overview tab](/docs/nightly/getting-started/home-overview-and-single-node-view#overview) which
   uses composite
   charts to display real-time metrics from every available node in a given War Room.
 
@@ -67,7 +67,7 @@ can always come right back to your preferred setup.
 
 A War Room has three different states: playing, paused, and force playing. The default playing state refreshes charts
 every second as long as the browser tab is in
-focus. [Interacting with a chart](/docs/nightly/visualization,-charts-and-dashboards/interact-with-charts)
+focus. [Interacting with a chart](/docs/nightly/getting-started/interact-with-charts)
 pauses
 the War Room. Once the tab loses focus, charts pause automatically.
 
@@ -108,7 +108,7 @@ health and performance of your organization's essential services.
 
 **Incident response**: You can also create new War Rooms as one of the first steps in your incident response process.
 For example, you have a user-facing web app that relies on Apache Pulsar for a message queue, and one of your nodes
-using the [Pulsar collector](/docs/nightly/data-collection---importing-data/monitor-anything/message-brokers/pulsar) begins
+using the [Pulsar collector](/docs/nightly/data-collection/monitor-anything/message-brokers/pulsar) begins
 reporting a suspiciously low messages rate. You can create a War Room called `$year-$month-$day-pulsar-rate`, add all
 your Pulsar nodes in addition to nodes they connect to, and begin diagnosing the root cause in a War Room optimized for
 getting to resolution as fast as possible.
@@ -157,4 +157,4 @@ Removing a node from a War Room does not remove it from your Space.
 
 Once you've figured out an organizational structure that works for your team, learn more about how you can use Netdata
 Cloud to monitor distributed nodes
-using [real-time composite charts](/docs/nightly/visualization,-charts-and-dashboards/home-overview-and-single-node-view).
+using [real-time composite charts](/docs/nightly/getting-started/home-overview-and-single-node-view).
