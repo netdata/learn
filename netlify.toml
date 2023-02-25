@@ -305,7 +305,7 @@ to = "/docs/nightly/troubleshooting-and-machine-learning/functions"
 
 [[redirects]]
 from = "/docs/nightly/concepts/role-based-access-model"
-to = "/docs/nightly/getting-started/concepts/role-based-access-model"
+to = "/docs/nightly/deployment-in-production/security/role-based-access-model"
 
 [[redirects]]
 from = "/docs/nightly/operations/alerts/add-discord-notification-configuration"
