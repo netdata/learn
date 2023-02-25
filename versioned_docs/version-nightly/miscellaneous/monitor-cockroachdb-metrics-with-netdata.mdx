@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/mon
 sidebar_label: "Monitor CockroachDB metrics with Netdata"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
-sidebar_position: "392"
+sidebar_position: "386"
 ---
 
 
@@ -11,7 +11,7 @@ sidebar_position: "392"
 
 [CockroachDB](https://github.com/cockroachdb/cockroach) is an open-source project that brings SQL databases into
 scalable, disaster-resilient cloud deployments. Thanks to
-a [new CockroachDB collector](/docs/nightly/data-collection---importing-data/monitor-anything/databases/cockroachdb)
+a [new CockroachDB collector](/docs/nightly/data-collection/monitor-anything/databases/cockroachdb)
 released in
 [v1.20](https://blog.netdata.cloud/posts/release-1.20/), you can now monitor any number of CockroachDB databases with
 maximum granularity using Netdata. Collect more than 50 unique metrics and put them on interactive visualizations
@@ -115,4 +115,4 @@ cd /etc/netdata/ # Replace with your Netdata configuration directory, if not /et
 ./edit-config health.d/cockroachdb.conf # You may need to use `sudo` for write privileges
 ```
 
-For more information about editing the defaults or writing new alarm entities, see our documentation on [configuring health alarms](/docs/nightly/alerts-and-notifications).
+For more information about editing the defaults or writing new alarm entities, see our documentation on [configuring health alarms](/docs/nightly/alerts-and-notifications/configure-alerts).
