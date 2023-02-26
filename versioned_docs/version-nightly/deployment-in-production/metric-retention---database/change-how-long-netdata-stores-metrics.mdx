@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/store/chan
 sidebar_label: "Change how long Netdata stores metrics"
 learn_status: "Published"
 learn_rel_path: "Deployment in production/Metric retention - Database"
-sidebar_position: "37"
+sidebar_position: "45"
 description: "With a single configuration change, the Netdata Agent can store days, weeks, or months of metrics at its famous per-second granularity."
 ---
 
@@ -95,11 +95,11 @@ memory for 2k metrics = 2000 x (3 - 1) x 4 KiB x 2 + 32768 KiB = 64 MiB
 ## Configure metric retention
 
 Once you have decided how to size each tier, open `netdata.conf` with
-[`edit-config`](/docs/nightly/getting-started/configuration#use-edit-config-to-edit-configuration-files) 
+[`edit-config`](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#use-edit-config-to-edit-configuration-files) 
 and make your changes in the `[db]` subsection. 
 
 Save the file and restart the Agent with `sudo systemctl restart netdata`, or
-the [appropriate method](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent) 
+the [appropriate method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) 
 for your system, to change the database engine's size.
 
 

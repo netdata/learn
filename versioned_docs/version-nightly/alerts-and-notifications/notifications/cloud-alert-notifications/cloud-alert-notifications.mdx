@@ -3,10 +3,10 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/cloud/aler
 sidebar_label: "Cloud alert notifications"
 learn_status: "Published"
 learn_rel_path: "Alerts and notifications/Notifications/Cloud alert notifications"
-sidebar_position: "249"
+sidebar_position: "252"
 description: "Configure Netdata Cloud to send notifications to your team whenever any node on your infrastructure triggers an alert threshold."
 ---
-
+# Cloud alert notifications
 
 import Callout from '@site/src/components/Callout'
 
@@ -15,7 +15,7 @@ unreachable state. By enabling notifications, you ensure no alert, on any node i
 you or your team.
 
 Having this information centralized helps you:
-* Have a clear view of the health across your infrastructure, [seeing all a alerts in one place](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/view-active-alerts)
+* Have a clear view of the health across your infrastructure, seeing all alerts in one place.
 * Easily [setup your alert notification process](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/manage-notification-methods): 
 methods to use and where to use them, filtering rules, etc.
 * Quickly troubleshoot using [Metric Correlations](/docs/nightly/troubleshooting-and-machine-learning/metric-correlations)
@@ -127,27 +127,3 @@ within Cloud's embedded dashboards.
 Here's an example email notification for the `ram_available` chart, which is in a critical state:
 
 ![Screenshot of an alarm notification email from Netdata Cloud](https://user-images.githubusercontent.com/1153921/87461878-e933c480-c5c3-11ea-870b-affdb0801854.png)
-
-## What's next?
-
-Netdata Cloud's alarm notifications feature leverages the alarms configuration on each node in your infrastructure. If
-you'd like to tweak any of these alarms, or even add new ones based on your needs, read our [Health
-configuration documentation](/docs/nightly/alerts-and-notifications/configure-alerts).
-
-You can also [view active alarms](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/view-active-alerts) in Netdata Cloud for an instant
-visualization of the health of your infrastructure.
-
-### Related Topics
-
-#### **Related Concepts**
-- [Rooms](/docs/nightly/getting-started/war-rooms)
-- [Metric Correlations](/docs/nightly/troubleshooting-and-machine-learning/metric-correlations)
-- [Anomaly Advisor](/docs/nightly/troubleshooting-and-machine-learning/anomaly-advisor)
-
-#### Related Tasks
-- [View Active alarms](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/view-active-alerts)
-- [Manage notification methods](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/manage-notification-methods)
-- [Add webhook notification configuration](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-webhook-notification-configuration)
-- [Add Discord notification configuration](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-discord-notification-configuration)
-- [Add Slack notification configuration](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-slack-notification-configuration)
-- [Add PagerDuty notification configuration](/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-pagerduty-notification-configuration)

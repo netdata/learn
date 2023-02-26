@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/tro
 sidebar_label: "Monitor, troubleshoot, and debug applications with eBPF metrics"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
-sidebar_position: "393"
+sidebar_position: "390"
 description: "Use Netdata's built-in eBPF metrics collector to monitor, troubleshoot, and debug your custom application using low-level kernel feedback."
 ---
 
@@ -61,7 +61,7 @@ dev: custom-app
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent) for your system, to begin seeing metrics for this particular
+method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system, to begin seeing metrics for this particular
 group+process. You can also add additional processes to the same group.
 
 You can set up `apps_groups.conf` to more show more precise eBPF metrics for any application or service running on your
@@ -110,7 +110,7 @@ Replace `entry` with `return`:
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent) for your system.
+method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system.
 
 ## Get familiar with per-application eBPF metrics and charts
 
@@ -248,7 +248,7 @@ from any number of distributed nodes to see how your application interacts with 
 systems. 
 
 Now that you can see eBPF metrics in Netdata Cloud, you can [invite your
-team](/docs/nightly/getting-started/invite-your-team) and share your findings with others.
+team](/docs/nightly/getting-started/monitor-your-infrastructure/invite-your-team) and share your findings with others.
 
 
 

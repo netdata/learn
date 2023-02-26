@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/collectors/REFE
 sidebar_label: "Collectors configuration"
 learn_status: "Published"
 learn_rel_path: "Data collection"
-sidebar_position: "76"
+sidebar_position: "80"
 ---
 
 
@@ -67,7 +67,7 @@ You can enable/disable of the collection modules supported by `go.d`, `python.d`
 configuration file of that orchestrator. For example, you can change the behavior of the Go orchestrator, or any of its 
 collectors, by editing `go.d.conf`.
 
-Use `edit-config` from your [Netdata config directory](/docs/nightly/getting-started/configuration#the-netdata-config-directory) 
+Use `edit-config` from your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory) 
 to open the orchestrator primary configuration file:
 
 ```bash
@@ -80,7 +80,7 @@ enable/disable it with `yes` and `no` settings. Uncomment any line you change to
 start.
 
 After you make your changes, restart the Agent with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent) for your system.
+method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system.
 
 ## Configure a collector
 
@@ -105,7 +105,7 @@ and open its documentation. Some software has collectors written in multiple lan
 pick the collector written in Go.
 
 Use `edit-config` from your 
-[Netdata config directory](/docs/nightly/getting-started/configuration#the-netdata-config-directory) 
+[Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory) 
 to open a collector's configuration file. For example, edit the Nginx collector with the following:
 
 ```bash
@@ -118,7 +118,7 @@ configure that collector. Uncomment any line you change to ensure the collector'
 read it on start.
 
 After you make your changes, restart the Agent with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent) for your system.
+method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system.
 
 ## Troubleshoot a collector
 

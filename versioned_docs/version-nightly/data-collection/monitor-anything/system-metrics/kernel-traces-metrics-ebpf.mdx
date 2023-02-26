@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/collectors/ebpf
 sidebar_label: "Kernel traces/metrics (eBPF)"
 learn_status: "Published"
 learn_rel_path: "Data collection/Monitor Anything/System metrics"
-sidebar_position: "186"
+sidebar_position: "190"
 description: "Use Netdata's extended Berkeley Packet Filter (eBPF) collector to monitor kernel-level metrics about yourcomplex applications with per-second granularity."
 ---
 
@@ -44,12 +44,12 @@ If your Agent is v1.22 or older, you may to enable the collector yourself.
 
 To enable or disable the entire eBPF collector: 
 
-1.  Navigate to the [Netdata config directory](/docs/nightly/getting-started/configuration#the-netdata-config-directory).
+1.  Navigate to the [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory).
     ```bash
     cd /etc/netdata
     ```
 
-2.  Use the [`edit-config`](/docs/nightly/getting-started/configuration#use-edit-config-to-edit-configuration-files) script to edit `netdata.conf`.
+2.  Use the [`edit-config`](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#use-edit-config-to-edit-configuration-files) script to edit `netdata.conf`.
 
     ```bash
     ./edit-config netdata.conf
@@ -69,11 +69,11 @@ You can configure the eBPF collector's behavior to fine-tune which metrics you r
 
 To edit the `ebpf.d.conf`:
 
-1.  Navigate to the [Netdata config directory](/docs/nightly/getting-started/configuration#the-netdata-config-directory).
+1.  Navigate to the [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory).
     ```bash
     cd /etc/netdata
     ```
-2.  Use the [`edit-config`](/docs/nightly/getting-started/configuration#use-edit-config-to-edit-configuration-files) script to edit [`ebpf.d.conf`](https://github.com/netdata/netdata/blob/master/collectors/ebpf.plugin/ebpf.d.conf).
+2.  Use the [`edit-config`](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#use-edit-config-to-edit-configuration-files) script to edit [`ebpf.d.conf`](https://github.com/netdata/netdata/blob/master/collectors/ebpf.plugin/ebpf.d.conf).
 
     ```bash
     ./edit-config ebpf.d.conf
@@ -262,11 +262,11 @@ You can configure each thread of the eBPF data collector. This allows you to ove
 
 To configure an eBPF thread:
 
-1.  Navigate to the [Netdata config directory](/docs/nightly/getting-started/configuration#the-netdata-config-directory).
+1.  Navigate to the [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory).
     ```bash
     cd /etc/netdata
     ```
-2.  Use the [`edit-config`](/docs/nightly/getting-started/configuration#use-edit-config-to-edit-configuration-files) script to edit a thread configuration file. The following configuration files are available:
+2.  Use the [`edit-config`](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#use-edit-config-to-edit-configuration-files) script to edit a thread configuration file. The following configuration files are available:
 
     -   `network.conf`: Configuration for the [`network` thread](#network-configuration). This config file overwrites the global options and also
         lets you specify which network the eBPF collector monitors.
@@ -882,7 +882,7 @@ significantly increases kernel memory usage by several hundred MB.
 
 If your node is experiencing high memory usage and there is no obvious culprit to be found in the `apps.mem` chart,
 consider testing for high kernel memory usage by [disabling eBPF monitoring](#configuring-ebpfplugin). Next,
-[restart Netdata](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent) with `sudo systemctl restart netdata` to see if system memory
+[restart Netdata](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) with `sudo systemctl restart netdata` to see if system memory
 usage (see the `system.ram` chart) has dropped significantly.
 
 Beginning with `v1.31`, kernel memory usage is configurable via the [`pid table size` setting](#ebpf-load-mode)

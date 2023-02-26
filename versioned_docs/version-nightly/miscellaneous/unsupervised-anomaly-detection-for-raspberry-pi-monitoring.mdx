@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/mon
 sidebar_label: "Unsupervised anomaly detection for Raspberry Pi monitoring"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
-sidebar_position: "391"
+sidebar_position: "388"
 description: "Use a low-overhead machine learning algorithm and an open-source monitoring tool to detect anomalous metrics on a Raspberry Pi."
 ---
 
@@ -29,8 +29,8 @@ Read on to learn all the steps and enable unsupervised anomaly detection on your
 
 First make sure Netdata is using Python 3 when it runs Python-based data collectors. 
 
-Next, open `netdata.conf` using [`edit-config`](/docs/nightly/getting-started/configuration#use-edit-config-to-edit-configuration-files)
-from within the [Netdata config directory](/docs/nightly/getting-started/configuration#the-netdata-config-directory). Scroll down to the
+Next, open `netdata.conf` using [`edit-config`](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#use-edit-config-to-edit-configuration-files)
+from within the [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory). Scroll down to the
 `[plugin:python.d]` section to pass in the `-ppython3` command option. 
 
 ```conf
@@ -59,7 +59,7 @@ LLVM_CONFIG=llvm-config-9 pip3 install --user llvmlite numpy==1.20.1 netdata-pan
 
 ## Enable the anomalies collector
 
-Now you're ready to enable the collector and [restart Netdata](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent).
+Now you're ready to enable the collector and [restart Netdata](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent).
 
 ```bash
 sudo ./edit-config python.d.conf
