@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/collectors/pyth
 sidebar_label: "Go applications"
 learn_status: "Published"
 learn_rel_path: "Data collection/Monitor Anything/Application Performance Monitoring"
-sidebar_position: "87"
+sidebar_position: "91"
 ---
 
 
@@ -258,7 +258,7 @@ the first defined key wins and all subsequent keys with the same name are ignore
 ## Enable the collector
 
 The `go_expvar` collector is disabled by default. To enable it, use `edit-config` from the Netdata [config
-directory](/docs/nightly/getting-started/configuration), which is typically at `/etc/netdata`, to edit the `python.d.conf` file.
+directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration), which is typically at `/etc/netdata`, to edit the `python.d.conf` file.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different
@@ -271,7 +271,7 @@ restart netdata`, or the appropriate method for your system, to finish enabling 
 ## Configuration
 
 Edit the `python.d/go_expvar.conf` configuration file using `edit-config` from the Netdata [config
-directory](/docs/nightly/getting-started/configuration), which is typically at `/etc/netdata`.
+directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different

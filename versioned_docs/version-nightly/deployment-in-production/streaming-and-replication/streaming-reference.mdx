@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/metrics-st
 sidebar_label: "Streaming reference"
 learn_status: "Published"
 learn_rel_path: "Deployment in production/Streaming and Replication"
-sidebar_position: "35"
+sidebar_position: "43"
 description: "Each node running Netdata can stream the metrics it collects, in real time, to another node. See all of the available settings in this reference document."
 ---
 
@@ -11,17 +11,17 @@ description: "Each node running Netdata can stream the metrics it collects, in r
 # Streaming reference
 
 Each node running Netdata can stream the metrics it collects, in real time, to another node. To learn more, read about
-[how streaming works](/docs/nightly/getting-started/how-metrics-streaming-works).
+[how streaming works](/docs/nightly/deployment-in-production/streaming-and-replication).
 
 For a quickstart guide for enabling a simple `parent-child` streaming relationship, see our [stream metrics between
-nodes](/docs/nightly/deployment-in-production/streaming-and-replication/enable-streaming-between-nodes) doc. All other configuration options and scenarios are
+nodes](/docs/nightly/deployment-in-production/streaming-and-replication) doc. All other configuration options and scenarios are
 covered in the sections below.
 
 ## Configuration
 
 There are two files responsible for configuring Netdata's streaming capabilities: `stream.conf` and `netdata.conf`.
 
-From within your Netdata config directory (typically `/etc/netdata`), [use `edit-config`](/docs/nightly/getting-started/configuration) to
+From within your Netdata config directory (typically `/etc/netdata`), [use `edit-config`](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration) to
 open either `stream.conf` or `netdata.conf`.
 
 ```
@@ -165,7 +165,7 @@ cache size` and `dbengine multihost disk space` settings in the `[global]` secti
 | **`[global]` section**                     |                   |                                                                                                                                                                                                                                                                              |
 | `memory mode`                              | `dbengine`        | Determines the [database type](/docs/nightly/deployment-in-production/metric-retention---database) to be used on that node. Other options settings include `none`, `ram`, `save`, and `map`. `none` disables the database at this host. This also disables alarms and notifications, as those can't run without a database. |
 | **`[web]` section**                        |                   |                                                                                                                                                                                                                                                                              |
-| `mode`                                     | `static-threaded` | Determines the [web server](/docs/nightly/deployment-in-production/security/web-server) type. The other option is `none`, which disables the dashboard, API, and registry.                                                                                                                                        |
+| `mode`                                     | `static-threaded` | Determines the [web server](/docs/nightly/deployment-in-production/secure-your-nodes/web-server) type. The other option is `none`, which disables the dashboard, API, and registry.                                                                                                                                        |
 | `accept a streaming request every seconds` | `0`               | Set a limit on how often a parent node accepts streaming requests from child nodes. `0` equals no limit. If this is set, you may see `... too busy to accept new streaming request. Will be allowed in X secs` in Netdata's `error.log`.                                     |
 
 ## Examples
@@ -194,7 +194,7 @@ default `dbengine` as specified by the `API_KEY`, and alarms are disabled.
 ### Securing streaming with TLS/SSL
 
 Netdata does not activate TLS encryption by default. To encrypt streaming connections, you first need to [enable TLS
-support](/docs/nightly/deployment-in-production/security/web-server#enabling-tls-support) on the parent. With encryption enabled on the receiving side, you
+support](/docs/nightly/deployment-in-production/secure-your-nodes/web-server#enabling-tls-support) on the parent. With encryption enabled on the receiving side, you
 need to instruct the child to use TLS/SSL as well. On the child's `stream.conf`, configure the destination as follows:
 
 ```

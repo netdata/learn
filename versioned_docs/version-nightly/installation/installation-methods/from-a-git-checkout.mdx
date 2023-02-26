@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/packaging/insta
 sidebar_label: "From a Git checkout"
 learn_status: "Published"
 learn_rel_path: "Installation/Installation methods"
-sidebar_position: "48"
+sidebar_position: "52"
 description: "Use the Netdata Agent source code from GitHub, plus helper scripts to set up your system, to install Netdata without packages or binaries."
 ---
 
@@ -202,7 +202,7 @@ cd netdata
 -   `--dont-start-it`: Prevent the installer from starting Netdata automatically.
 -   `--stable-channel`: Automatically update only on the release of new major versions.
 -   `--nightly-channel`: Automatically update on every new nightly build.
--   `--disable-telemetry`: Opt-out of [anonymous statistics](/docs/nightly/deployment-in-production/security/anonymous-telemetry-events) we use to make
+-   `--disable-telemetry`: Opt-out of [anonymous statistics](/docs/nightly/deployment-in-production/secure-your-nodes/anonymous-telemetry-events) we use to make
     Netdata better.
 -   `--no-updates`: Prevent automatic updates of any kind.
 -   `--reinstall`: If an existing install is detected, reinstall instead of trying to update it. Note that this
@@ -215,9 +215,9 @@ cd netdata
 ### Connect node to Netdata Cloud during installation
 
 Unlike the [`kickstart.sh`](/docs/nightly/installation/installation-methods/one-line-installer-kickstart.sh), the `netdata-installer.sh` script does
-not allow you to automatically [connect](/docs/nightly/deployment-in-production/connect-agent-to-cloud) your node to Netdata Cloud immediately after installation.
+not allow you to automatically [connect](/docs/nightly/getting-started/monitor-your-infrastructure/connect-agent-to-cloud) your node to Netdata Cloud immediately after installation.
 
-See the [connect to cloud](/docs/nightly/deployment-in-production/connect-agent-to-cloud) doc for details on connecting a node with a manual installation of Netdata.
+See the [connect to cloud](/docs/nightly/getting-started/monitor-your-infrastructure/connect-agent-to-cloud) doc for details on connecting a node with a manual installation of Netdata.
 
 ### 'nonrepresentable section on output' errors
 
@@ -229,7 +229,7 @@ In most cases, you can do this by running `CC=gcc ./netdata-installer.sh`.
 
 ## What's next?
 
-When you're finished with installation, check out [how to monitor your infrastructure](/docs/nightly/getting-started/monitor-your-infrastructure), or skip straight to [configuring the Netdata Agent](/docs/nightly/getting-started/configuration).
+When you're finished with installation, check out [how to monitor your infrastructure](/docs/nightly/getting-started/monitor-your-infrastructure), or skip straight to [configuring the Netdata Agent](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration).
 
 Read through Netdata's [documentation](https://learn.netdata.cloud/docs), which is structured based on actions and
 solutions, to enable features like health monitoring, alarm notifications, long-term metrics storage, exporting to

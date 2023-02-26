@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/database/README
 sidebar_label: "Metric retention - Database"
 learn_status: "Published"
 learn_rel_path: "Deployment in production/Metric retention - Database"
-sidebar_position: "36"
+sidebar_position: "44"
 description: "The Netdata Agent leverages multiple, user-configurable time-series databases that use RAM and/or disk to store metrics on any type of node."
 ---
 
@@ -42,13 +42,13 @@ The default mode `[db].mode = dbengine` has been designed to scale for longer re
 for parent Agents in the _Parent - Child_ setups
 
 The other available database modes are designed to minimize resource utilization and should only be considered on
-[Parent - Child](/docs/nightly/getting-started/how-metrics-streaming-works) setups at the children side and only when the
+[Parent - Child](/docs/nightly/deployment-in-production/streaming-and-replication) setups at the children side and only when the
 resource constraints are very strict.
 
 So,
 
 - On a single node setup, use `[db].mode = dbengine`.
-- On a [Parent - Child](/docs/nightly/getting-started/how-metrics-streaming-works) setup, use `[db].mode = dbengine` on the
+- On a [Parent - Child](/docs/nightly/deployment-in-production/streaming-and-replication) setup, use `[db].mode = dbengine` on the
   parent to increase retention, a more resource efficient mode like, `dbengine` with light retention settings, and
   `save`, `ram` or `none` modes for the children to minimize resource utilization.
 
@@ -68,7 +68,7 @@ Metrics retention is controlled only by the disk space allocated to storing metr
 CPU required by the agent to query longer timeframes.
 
 Since Netdata Agents usually run on the edge, on production systems, Netdata Agent **parents** should be considered.
-When having a [**parent - child**](/docs/nightly/getting-started/how-metrics-streaming-works) setup, the child (the
+When having a [**parent - child**](/docs/nightly/deployment-in-production/streaming-and-replication) setup, the child (the
 Netdata Agent running on a production system) delegates all of its functions, including longer metrics retention and
 querying, to the parent node that can dedicate more resources to this task. A single Netdata Agent parent can centralize
 multiple children Netdata Agents (dozens, hundreds, or even thousands depending on its available resources).

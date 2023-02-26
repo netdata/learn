@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/mon
 sidebar_label: "Machine learning (ML) powered anomaly detection"
 learn_status: "Published"
 learn_rel_path: "Troubleshooting and machine learning"
-sidebar_position: "305"
+sidebar_position: "306"
 description: "Detect anomalies in any system, container, or application in your infrastructure with machine learning and the open-source Netdata Agent."
 ---
 
@@ -44,7 +44,7 @@ Once an area on the Anomaly Rate chart is highlighted netdata will append a "hea
 
 ## Embedded Anomaly Rate Charts
 
-Charts in both the [Overview](/docs/nightly/getting-started/home-overview-and-single-node-view) and [single node dashboard](/docs/nightly/getting-started/home-overview-and-single-node-view#jump-to-single-node-dashboards) tabs also expose the underlying anomaly rates for each dimension so users can easily see if the raw metrics are considered anomalous or not by Netdata.
+Charts in both the [Overview](/docs/nightly/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view) and [single node dashboard](/docs/nightly/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view#jump-to-single-node-dashboards) tabs also expose the underlying anomaly rates for each dimension so users can easily see if the raw metrics are considered anomalous or not by Netdata.
 
 Pressing the anomalies icon (next to the information icon in the chart header) will expand the anomaly rate chart to make it easy to see how the anomaly rate for any individual dimension corresponds to the raw underlying data. In the example below we can see that the spike in `system.pgpgio|in` corresponded in the anomaly rate for that dimension jumping to 100% for a small period of time until the spike passed.
 

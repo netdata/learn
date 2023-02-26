@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/web/gui/README.
 sidebar_label: "Agent dashboard"
 learn_status: "Published"
 learn_rel_path: "Visualization, charts and dashboards"
-sidebar_position: "290"
+sidebar_position: "291"
 description: "The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts."
 ---
 
@@ -23,10 +23,10 @@ By default, Netdata starts a web server for its dashboard at port `19999`. Open 
 navigate to `http://NODE:19999`, replacing `NODE` with the IP address or hostname of your Agent. If you're unsure, try
 `http://localhost:19999` first.
 
-Netdata uses an [internal, static-threaded web server](/docs/nightly/deployment-in-production/security/web-server) to host the HTML, CSS, and JavaScript
+Netdata uses an [internal, static-threaded web server](/docs/nightly/deployment-in-production/secure-your-nodes/web-server) to host the HTML, CSS, and JavaScript
 files that make up the local Agent dashboard. You don't have to configure anything to access it, although you can adjust
-[your settings](/docs/nightly/deployment-in-production/security/web-server#other-netdataconf-web-section-options) in the `netdata.conf` file, or run Netdata
-behind an [Nginx proxy](/docs/nightly/deployment-in-production/security/reverse-proxies/running-netdata-behind-nginx), and so on.
+[your settings](/docs/nightly/deployment-in-production/secure-your-nodes/web-server#other-netdataconf-web-section-options) in the `netdata.conf` file, or run Netdata
+behind an [Nginx proxy](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/nginx), and so on.
 
 ## Navigating the local dashboard
 
@@ -169,4 +169,4 @@ file](https://user-images.githubusercontent.com/1153921/62798924-570e6c80-ba94-1
 ## Custom dashboards
 
 For information on creating custom dashboards from scratch, see the [custom dashboards](/docs/nightly/visualization,-charts-and-dashboards/custom-dashboards) or
-[Atlassian Confluence dashboards](/docs/nightly/improving-netdata---developers/web/atlassian-confluence-dashboards) guides.
+[Atlassian Confluence dashboards](/docs/nightly/exporting-data/atlassian-confluence-dashboards) guides.

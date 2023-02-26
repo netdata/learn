@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/con
 sidebar_label: "How to optimize the Netdata Agent's performance"
 learn_status: "Published"
 learn_rel_path: "Deployment in production"
-sidebar_position: "21"
+sidebar_position: "28"
 description: "While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems."
 ---
 
@@ -36,7 +36,7 @@ enabled, since we want you to experience the full thing.
 -   Familiarity with configuring the Netdata Agent with `edit-config`.
 
 If you're not familiar with how to configure the Netdata Agent, read our [node configuration
-doc](/docs/nightly/getting-started/configuration) before continuing with this guide. This guide assumes familiarity with the Netdata config
+doc](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration) before continuing with this guide. This guide assumes familiarity with the Netdata config
 directory, using `edit-config`, and the process of uncommenting/editing various settings in `netdata.conf` and other
 configuration files.
 
@@ -50,7 +50,7 @@ infrastructure](/docs/nightly/visualization,-charts-and-dashboards/see-an-overvi
 Correlations](/docs/nightly/troubleshooting-and-machine-learning/metric-correlations).
 
 The Netdata Agent runs with the lowest possible [process scheduling
-policy](/docs/nightly/deployment-in-production/netdata-daemon#netdata-process-scheduling-policy), which is `nice 19`, and uses the `idle` process scheduler.
+policy](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/netdata-daemon#netdata-process-scheduling-policy), which is `nice 19`, and uses the `idle` process scheduler.
 Together, these settings ensure that the Agent only gets CPU resources when the node has CPU resources to space. If the
 node reaches 100% CPU utilization, the Agent is stopped first to ensure your applications get any available resources.
 In addition, under heavy load, collectors that require disk I/O may stop and show gaps in charts.
@@ -160,7 +160,7 @@ A dedicated web server like Nginx provides far more robustness than the Agent's 
 Nginx can handle more concurrent connections, reuse idle connections, and use fast gzip compression to reduce payloads.
 
 For details on installing Nginx as a proxy for the local Agent dashboard, see our [Nginx
-doc](/docs/nightly/deployment-in-production/security/reverse-proxies/running-netdata-behind-nginx).
+doc](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/nginx).
 
 After you complete Nginx setup according to the doc linked above, we recommend setting `keepalive` to `1024`, and using
 gzip compression with the following options in the `location /` block:

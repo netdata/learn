@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/collectors/stat
 sidebar_label: "StatsD"
 learn_status: "Published"
 learn_rel_path: "Data collection/Monitor Anything/Generic Collectors"
-sidebar_position: "79"
+sidebar_position: "83"
 description: "The Netdata Agent is a fully-featured StatsD server that collects metrics from any custom application and visualizes them in real-time."
 ---
 
@@ -730,7 +730,7 @@ In general, the process for creating a StatsD collector can be summarized in 2 s
 
     - Make sure to reload the dashboard tab **after** you start sending data to Netdata.
 
-- Create a configuration file for your app using [edit-config](/docs/nightly/getting-started/configuration): `sudo ./edit-config
+- Create a configuration file for your app using [edit-config](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration): `sudo ./edit-config
   statsd.d/myapp.conf`
 
     - Each app will have it's own section in the right-hand menu.
@@ -786,8 +786,8 @@ visualize all the available operations.
 ### Create a new StatsD configuration file
 
 Start by creating a new configuration file under the `statsd.d/` folder in the 
-[Netdata config directory](/docs/nightly/getting-started/configuration#the-netdata-config-directory). 
-Use [`edit-config`](/docs/nightly/getting-started/configuration#use-edit-config-to-edit-configuration-files) 
+[Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory). 
+Use [`edit-config`](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#use-edit-config-to-edit-configuration-files) 
 to create a new file called `k6.conf`.
 
 ```bash=
@@ -975,7 +975,7 @@ Note that Netdata will report the rate for metrics and counters, even if k6 or a
 sends an _absolute_ number. For example, k6 sends absolute HTTP requests with `http_reqs`, 
 but Netdata visualizes that in `requests/second`.
 
-To enable this StatsD configuration, [restart Netdata](/docs/nightly/getting-started/start-stop-or-restart-the-netdata-agent).
+To enable this StatsD configuration, [restart Netdata](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent).
 
 ### Final touches
 
