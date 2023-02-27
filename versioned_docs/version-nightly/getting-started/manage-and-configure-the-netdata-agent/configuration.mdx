@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/configure/
 sidebar_label: "Configuration"
 learn_status: "Published"
 learn_rel_path: "Getting started/Manage and configure the Netdata Agent"
-sidebar_position: "21"
+sidebar_position: "20.0"
 description: "Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings."
 ---
 
@@ -54,7 +54,7 @@ exist.
 - `health.d/` is a directory that contains [health configuration files](/docs/nightly/alerts-and-notifications/configure-alerts).
 - `health_alarm_notify.conf` enables and configures [alarm notifications](/docs/nightly/alerts-and-notifications/notifications).
 - `statsd.d/` is a directory for configuring Netdata's [statsd collector](/docs/nightly/data-collection/monitor-anything/generic-collectors/statsd).
-- `stream.conf` configures [parent-child streaming](/docs/nightly/deployment-in-production/streaming-and-replication) between separate nodes running the Agent.
+- `stream.conf` configures [parent-child streaming](/docs/nightly/deployment-in-production/streaming-and-replication/streaming-configuration-reference) between separate nodes running the Agent.
 - `.environment` is a hidden file that describes the environment in which the Netdata Agent is installed, including the
   `PATH` and any installation options. Useful for [reinstalling](/docs/nightly/installation/reinstall-netdata) or
   [uninstalling](/docs/nightly/installation/uninstall-netdata) the Agent.

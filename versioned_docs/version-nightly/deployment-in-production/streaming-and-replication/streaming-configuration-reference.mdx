@@ -1,21 +1,17 @@
 ---
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/reference-streaming.md"
-sidebar_label: "Streaming reference"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/streaming/README.md"
+sidebar_label: "Streaming configuration reference"
 learn_status: "Published"
-learn_rel_path: "Deployment in production/Streaming and Replication"
-sidebar_position: "43"
-description: "Each node running Netdata can stream the metrics it collects, in real time, to another node. See all of the available settings in this reference document."
+learn_rel_path: "Deployment in production/Streaming and replication"
+sidebar_position: "42.0"
+description: "Replicate and mirror Netdata's metrics through real-time streaming from child to parent nodes. Then combine, correlate, and export."
 ---
+# Streaming and replication reference
 
-
-# Streaming reference
-
-Each node running Netdata can stream the metrics it collects, in real time, to another node. To learn more, read about
-[how streaming works](/docs/nightly/deployment-in-production/streaming-and-replication).
-
-For a quickstart guide for enabling a simple `parent-child` streaming relationship, see our [stream metrics between
-nodes](/docs/nightly/deployment-in-production/streaming-and-replication) doc. All other configuration options and scenarios are
-covered in the sections below.
+This document contains advanced streaming options and suggested deployment options for production. 
+If you haven't already done so, we suggest you first go through the 
+[quick introduction to streaming](/docs/nightly/deployment-in-production/streaming-and-replication)
+, for your first, basic parent child setup.
 
 ## Configuration
 
@@ -28,10 +24,6 @@ open either `stream.conf` or `netdata.conf`.
 sudo ./edit-config stream.conf
 sudo ./edit-config netdata.conf
 ```
-
-## Settings
-
-As mentioned above, both `stream.conf` and `netdata.conf` contain settings relevant to streaming.
 
 ### `stream.conf`
 
@@ -168,7 +160,16 @@ cache size` and `dbengine multihost disk space` settings in the `[global]` secti
 | `mode`                                     | `static-threaded` | Determines the [web server](/docs/nightly/deployment-in-production/secure-your-nodes/web-server) type. The other option is `none`, which disables the dashboard, API, and registry.                                                                                                                                        |
 | `accept a streaming request every seconds` | `0`               | Set a limit on how often a parent node accepts streaming requests from child nodes. `0` equals no limit. If this is set, you may see `... too busy to accept new streaming request. Will be allowed in X secs` in Netdata's `error.log`.                                     |
 
-## Examples
+### Basic use cases
+
+This is an overview of how the main options can be combined:
+
+| target|memory<br/>mode|web<br/>mode|stream<br/>enabled|exporting|alarms|dashboard|
+|------|:-------------:|:----------:|:----------------:|:-----:|:----:|:-------:|
+| headless collector|`none`|`none`|`yes`|only for `data source = as collected`|not possible|no|
+| headless proxy|`none`|not `none`|`yes`|only for `data source = as collected`|not possible|no|
+| proxy with db|not `none`|not `none`|`yes`|possible|possible|yes|
+| central netdata|not `none`|not `none`|`no`|possible|possible|yes|
 
 ### Per-child settings
 
@@ -189,6 +190,102 @@ default `dbengine` as specified by the `API_KEY`, and alarms are disabled.
     enabled = yes
     memory mode = save
     health enabled = no
+```
+
+### Streaming compression
+
+[![Supported version Netdata Agent release](https://img.shields.io/badge/Supported%20Netdata%20Agent-v1.33%2B-brightgreen)](https://github.com/netdata/netdata/releases/latest)
+
+[![Supported version Netdata Agent release](https://img.shields.io/badge/Supported%20Netdata%20stream%20version-v5%2B-blue)](https://github.com/netdata/netdata/releases/latest)
+
+#### OS dependencies
+* Streaming compression is based on [lz4 v1.9.0+](https://github.com/lz4/lz4). The [lz4 v1.9.0+](https://github.com/lz4/lz4) library must be installed in your OS in order to enable streaming compression. Any lower version will disable Netdata streaming compression for compatibility purposes between the older versions of Netdata agents.
+
+To check if your Netdata Agent supports stream compression run the following GET request in your browser or terminal:
+
+```
+curl -X GET http://localhost:19999/api/v1/info | grep 'Stream Compression'
+```
+
+**Output**
+```
+"buildinfo": "dbengine|Native HTTPS|Netdata Cloud|ACLK Next Generation|New Cloud Protocol Support|ACLK Legacy|TLS Host Verification|Machine Learning|Stream Compression|protobuf|JSON-C|libcrypto|libm|LWS v3.2.2|mosquitto|zlib|apps|cgroup Network Tracking|EBPF|perf|slabinfo",
+```
+> Note: If your OS doesn't support Netdata compression the `buildinfo` will not contain the `Stream Compression` statement.
+
+To check if your Netdata Agent has stream compression enabled, run the following GET request in your browser or terminal: 
+
+```
+ curl -X GET http://localhost:19999/api/v1/info | grep 'stream-compression'
+```
+**Output**
+```
+"stream-compression": "enabled"
+```
+Note: The `stream-compression` status can be `"enabled" | "disabled" | "N/A"`.
+
+A compressed data packet is determined and decompressed on the fly.
+
+#### Limitations
+This limitation will be withdrawn asap and is work-in-progress.
+
+The current implementation of streaming data compression can support only a few number of dimensions in a chart with names that cannot exceed the size of 16384 bytes. In case your instance hit this limitation, the agent will deactivate compression during runtime to avoid stream corruption. This limitation can be seen in the error.log file with the sequence of the following messages: 
+```
+netdata INFO  : STREAM_SENDER[child01] : STREAM child01 [send to my.parent.IP]: connecting...
+netdata INFO  : STREAM_SENDER[child01] : STREAM child01 [send to my.parent.IP]: initializing communication...
+netdata INFO  : STREAM_SENDER[child01] : STREAM child01 [send to my.parent.IP]: waiting response from remote netdata...
+netdata INFO  : STREAM_SENDER[child01] : STREAM_COMPRESSION: Compressor Reset
+netdata INFO  : STREAM_SENDER[child01] : STREAM child01 [send to my.parent.IP]: established communication with a parent using protocol version 5 - ready to send metrics...
+...
+netdata ERROR : PLUGINSD[go.d] : STREAM_COMPRESSION: Compression Failed - Message size 27847 above compression buffer limit: 16384 (errno 9, Bad file descriptor)
+netdata ERROR : PLUGINSD[go.d] : STREAM_COMPRESSION: Deactivating compression to avoid stream corruption
+netdata ERROR : PLUGINSD[go.d] : STREAM_COMPRESSION child01 [send to my.parent.IP]: Restarting connection without compression
+...
+netdata INFO  : STREAM_SENDER[child01] : STREAM child01 [send to my.parent.IP]: connecting...
+netdata INFO  : STREAM_SENDER[child01] : STREAM child01 [send to my.parent.IP]: initializing communication...
+netdata INFO  : STREAM_SENDER[child01] : STREAM child01 [send to my.parent.IP]: waiting response from remote netdata...
+netdata INFO  : STREAM_SENDER[child01] : Stream is uncompressed! One of the agents (my.parent.IP <-> child01) does not support compression OR compression is disabled.
+netdata INFO  : STREAM_SENDER[child01] : STREAM child01 [send to my.parent.IP]: established communication with a parent using protocol version 4 - ready to send metrics...
+netdata INFO  : WEB_SERVER[static4] : STREAM child01 [send]: sending metrics...
+```
+
+#### How to enable stream compression
+Netdata Agents are shipped with data compression enabled by default. You can also configure which streams will use compression.
+
+With enabled stream compression, a Netdata Agent can negotiate streaming compression with other Netdata Agents. During the negotiation of streaming compression both Netdata Agents should support and enable compression in order to communicate over a compressed stream. The negotiation will result into an uncompressed stream, if one of the Netdata Agents doesn't support **or** has compression disabled.
+
+To enable stream compression: 
+
+1. Edit `stream.conf` by using the `edit-config` script: 
+`/etc/netdata/edit-config stream.conf`. 
+
+2. In the `[stream]` section, set `enable compression` to `yes`.
+```
+# This is the default stream compression flag for an agent.
+
+[stream]
+    enable compression = yes | no
+```
+
+
+| Parent               | Stream compression | Child                |
+|----------------------|--------------------|----------------------|
+| Supported & Enabled  | compressed         | Supported & Enabled  |
+| (Supported & Disabled)/Not supported | uncompressed         | Supported & Enabled |
+| Supported & Enabled | uncompressed         | (Supported & Disabled)/Not supported |
+| (Supported & Disabled)/Not supported | uncompressed         | (Supported & Disabled)/Not supported |
+
+In case of parents with multiple children you can select which streams will be compressed by using the same configuration under the `[API_KEY]`, `[MACHINE_GUID]` section. 
+
+This configuration uses AND logic with the default stream compression configuration under the `[stream]` section. This means the stream compression from child to parent will be enabled only if the outcome of the AND logic operation is true (`default compression enabled` && `api key compression enabled`). So both should be enabled to get stream compression otherwise  stream compression is disabled.
+```  
+[API_KEY]
+    enable compression = yes | no
+```
+Same thing applies with the `[MACHINE_GUID]` configuration.
+```
+[MACHINE_GUID]
+    enable compression = yes | no
 ```
 
 ### Securing streaming with TLS/SSL

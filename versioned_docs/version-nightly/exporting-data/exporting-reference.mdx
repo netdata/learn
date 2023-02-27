@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/exporting/READM
 sidebar_label: "Exporting reference"
 learn_status: "Published"
 learn_rel_path: "Exporting data"
-sidebar_position: "236"
+sidebar_position: "238.0"
 description: "With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis."
 ---
 
@@ -49,12 +49,12 @@ connector to enable and configure for your database of choice.
 -   [**OpenTSDB**](/docs/nightly/exporting-data/opentsdb): Use a plaintext or HTTP interfaces. Metrics are sent to
     OpenTSDB as `prefix.chart.dimension` with tag `host=hostname`.
 -   [**MongoDB**](/docs/nightly/exporting-data/mongodb): Metrics are sent to the database in `JSON` format.
--   [**Prometheus**](/docs/nightly/exporting-data/using-netdata-with-prometheus): Use an existing Prometheus installation to scrape metrics
+-   [**Prometheus**](/docs/nightly/exporting-data/prometheus): Use an existing Prometheus installation to scrape metrics
     from node using the Netdata API.
--   [**Prometheus remote write**](/docs/nightly/exporting-data/prometheus-remote-write). A binary snappy-compressed protocol
+-   [**Prometheus remote write**](/docs/nightly/exporting-data/prometheus/prometheus-remote-write). A binary snappy-compressed protocol
     buffer encoding over HTTP. Supports many [storage
     providers](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage).
--   [**TimescaleDB**](/docs/nightly/exporting-data/writing-metrics-to-timescaledb): Use a community-built connector that takes JSON streams from a
+-   [**TimescaleDB**](/docs/nightly/exporting-data/timescaledb): Use a community-built connector that takes JSON streams from a
     Netdata client and writes them to a TimescaleDB table.
 
 ### Chart filtering
