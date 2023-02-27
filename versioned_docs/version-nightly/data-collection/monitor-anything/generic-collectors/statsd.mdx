@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/collectors/stat
 sidebar_label: "StatsD"
 learn_status: "Published"
 learn_rel_path: "Data collection/Monitor Anything/Generic Collectors"
-sidebar_position: "83"
+sidebar_position: "84.0"
 description: "The Netdata Agent is a fully-featured StatsD server that collects metrics from any custom application and visualizes them in real-time."
 ---
 
@@ -1040,7 +1040,7 @@ source and dashboard section for Netdata. Netdata loads all the configuration fi
 **not** create dashboard sections or charts, unless it starts receiving data for that particular data source. 
 This means that we can now share our collector with the rest of the Netdata community. 
 
-- Make sure you follow the [contributing guide](/docs/nightly/improving-netdata---developers/contribute) 
+- Make sure you follow the [contributing guide](/docs/nightly/improving-netdata---developers) 
 - Fork the netdata/netdata repository
 - Place the configuration file inside `netdata/collectors/statsd.plugin`
 - Add a reference in `netdata/collectors/statsd.plugin/Makefile.am`. For example, if we contribute the `k6.conf` file:
