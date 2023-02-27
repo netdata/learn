@@ -304,23 +304,33 @@ from = "/docs/nightly/concepts/netdata-functions"
 to = "/docs/nightly/troubleshooting-and-machine-learning/functions"
 
 [[redirects]]
+from = "/docs/nightly/concepts/netdata-plans"
+to = "/docs/nightly/getting-started/monitor-your-infrastructure/netdata-plans"
+
+[[redirects]]
 from = "/docs/nightly/concepts/role-based-access-model"
 to = "/docs/nightly/deployment-in-production/security/role-based-access-model"
 
+#/docs/nightly/getting-started/install-netdata no redirect now
+
 [[redirects]]
 from = "/docs/nightly/operations/alerts/add-discord-notification-configuration"
-to = "/docs/nightly/alerts-and-notifications/cloud-alert-notifications/add-discord-notification-configuration"
+to = "/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-discord-notification-configuration"
 
 [[redirects]]
 from = "/docs/nightly/operations/alerts/add-webhook-notification-configuration"
-to = "/docs/nightly/alerts-and-notifications/cloud-alert-notifications/add-webhook-notification-configuration"
+to = "/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-webhook-notification-configuration"
 
 [[redirects]]
 from = "/docs/nightly/operations/alerts/add-pagerduty-notification-configuration"
-to = "/docs/nightly/alerts-and-notifications/cloud-alert-notifications/add-pagerduty-notification-configuration"
+to = "/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-pagerduty-notification-configuration"
 
 [[redirects]]
 from = "/docs/nightly/operations/alerts/add-slack-notification-configuration"
-to = "/docs/nightly/alerts-and-notifications/cloud-alert-notifications/add-slack-notification-configuration"
+to = "/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-slack-notification-configuration"
+
+[[redirects]]
+from = "/docs/nightly/operations/run-time-troubleshooting-with-functions"
+to = "/docs/nightly/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
 
 
