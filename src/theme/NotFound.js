@@ -9,7 +9,7 @@ export default function NotFound() {
     var [first, second, three, ...query] = url.split('/')
 
     query = query.toString().replaceAll(",", " ")
-    var target = query.replaceAll("\/", " ")
+    var target = query.replaceAll("\/", " ").replaceAll("#", " ").replaceAll("-", " ")
     var base = window.location.origin
     var redirectLocation = base + '#gsc.tab=0&gsc.q=' + target
 
