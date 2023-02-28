@@ -306,7 +306,6 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correl
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	Run-time troubleshooting with Functions	Published	Troubleshooting and machine learning	305	Instructions on how to use Functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Functions	Published	Troubleshooting and machine learning	306	Present the Netdata Functions what these are and why they should be used.
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Troubleshooting and machine learning	307	Present the Netdata Events feed.
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor/anomaly-detection.md	Machine learning (ML) powered anomaly detection	Published	Troubleshooting and machine learning	308	Detect anomalies in any system, container, or application in your infrastructure with machine learning and the open-source Netdata Agent.
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	Improving Netdata - developers	Published	Improving Netdata - developers	309	
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	Contribute to the documentation	Published	Improving Netdata - developers/Contribute to the documentation	310	
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	Netdata style guide	Published	Improving Netdata - developers/Contribute to the documentation	311	The Netdata style guide establishes editorial guidelines for all of Netdata's writing, including documentation, blog posts, in-product UX copy, and more.
@@ -428,3 +427,4 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/deve
 https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/reference-streaming.md		Unpublished		427	File deleted
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/integrations-overview.md		Unpublished		428	
 https://github.com/netdata/netdata/edit/master/database/contexts/README.md		Unpublished		429	
+https://github.com/netdata/netdata/edit/master/docs/guides/monitor/anomaly-detection.md		Unpublished			
