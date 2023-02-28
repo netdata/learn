@@ -240,7 +240,7 @@ def createMDXPathFromMetdata(metadata):
     if "Monitor Anything" in metadata['learn_rel_path'] and metadata['learn_rel_path'].split("/")[-1] != "Monitor Anything":
         lastFolder = metadata['learn_rel_path'].split("Monitor Anything")[1]
         lastFolder = "monitor-anything" + lastFolder.title()
-        print(lastFolder)
+        # print(lastFolder)
         return ("{}/{}/{}.mdx".format(DOCS_PREFIX,
                                       metadata["learn_rel_path"].split("Monitor Anything")[0].lower().replace(" ", "-") + lastFolder,
                                       finalFile.replace(" ", "-")).replace("//", "/"))
