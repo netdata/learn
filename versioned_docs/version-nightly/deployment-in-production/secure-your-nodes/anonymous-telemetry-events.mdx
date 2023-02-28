@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/anonymous-
 sidebar_label: "Anonymous telemetry events"
 learn_status: "Published"
 learn_rel_path: "Deployment in production/Secure your nodes"
-sidebar_position: "31.0"
+sidebar_position: "31"
 ---
 
 
@@ -24,7 +24,7 @@ We use the statistics gathered from this information for two purposes:
 
 Netdata collects usage information via two different channels:
 
--   **Agent dashboard**: We use the [PostHog JavaScript integration](https://posthog.com/docs/integrations/js-integration) (with sensitive event attributes overwritten to be anonymized) to send product usage events when you access an [Agent's dashboard](/docs/nightly/visualization,-charts-and-dashboards/agent-dashboard).
+-   **Agent dashboard**: We use the [PostHog JavaScript integration](https://posthog.com/docs/integrations/js-integration) (with sensitive event attributes overwritten to be anonymized) to send product usage events when you access an [Agent's dashboard](/docs/nightly/visualizations/agent-dashboard).
 -   **Agent backend**: The `netdata` daemon executes the [`anonymous-statistics.sh`](https://github.com/netdata/netdata/blob/6469cf92724644f5facf343e4bdd76ac0551a418/daemon/anonymous-statistics.sh.in) script when Netdata starts, stops cleanly, or fails.
 
 You can opt-out from sending anonymous statistics to Netdata through three different [opt-out mechanisms](#opt-out).
