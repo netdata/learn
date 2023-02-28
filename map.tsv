@@ -16,13 +16,13 @@ https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alarms.m
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/invite-your-team.md	Invite your team	Published	Getting started/Monitor your infrastructure	15	Invite your entire SRE, DevOPs, or ITOps team to Netdata Cloud to give everyone insights into yourinfrastructure from a single pane of glass.
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	Netdata plans	Published	Getting started/Monitor your infrastructure	16	Explain what are Netdata Plans
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	View Plan & Billing	Published	Getting started/Monitor your infrastructure	17	How to check details on your space plan and billing
-https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	Manage and configure the Netdata Agent	Published	Getting started/Manage and configure the Netdata Agent	18	Connecting an Agent to the Cloud allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud via the encrypted Agent-Cloud link (ACLK).'
-https://github.com/netdata/netdata/edit/master/docs/configure/common-changes.md	Common configuration changes	Published	Getting started/Manage and configure the Netdata Agent	19	See the most popular configuration changes to make to the Netdata Agent, including longer metrics retention, reduce sampling, and more.
-https://github.com/netdata/netdata/edit/master/docs/configure/nodes.md	Configuration	Published	Getting started/Manage and configure the Netdata Agent	20	Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings.
-https://github.com/netdata/netdata/edit/master/docs/configure/start-stop-restart.md	Start, stop, or restart the Netdata Agent	Published	Getting started/Manage and configure the Netdata Agent	21	Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes.
-https://github.com/netdata/netdata/edit/master/daemon/README.md	Netdata daemon	Published	Getting started/Manage and configure the Netdata Agent	22	
-https://github.com/netdata/netdata/edit/master/daemon/config/README.md	Daemon configuration	Published	Getting started/Manage and configure the Netdata Agent	23	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
-https://github.com/netdata/netdata/edit/master/cli/README.md	Agent CLI	Published	Getting started/Manage and configure the Netdata Agent	24	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
+https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	Manage and configure	Published	Getting started/Manage and configure	18	Connecting an Agent to the Cloud allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud via the encrypted Agent-Cloud link (ACLK).'
+https://github.com/netdata/netdata/edit/master/docs/configure/common-changes.md	Common configuration changes	Published	Getting started/Manage and configure	19	See the most popular configuration changes to make to the Netdata Agent, including longer metrics retention, reduce sampling, and more.
+https://github.com/netdata/netdata/edit/master/docs/configure/nodes.md	Configuration	Published	Getting started/Manage and configure	20	Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings.
+https://github.com/netdata/netdata/edit/master/docs/configure/start-stop-restart.md	Start, stop, or restart the Netdata Agent	Published	Getting started/Manage and configure	21	Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes.
+https://github.com/netdata/netdata/edit/master/daemon/README.md	Netdata daemon	Published	Getting started/Manage and configure	22	
+https://github.com/netdata/netdata/edit/master/daemon/config/README.md	Daemon configuration	Published	Getting started/Manage and configure	23	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
+https://github.com/netdata/netdata/edit/master/cli/README.md	Agent CLI	Published	Getting started/Manage and configure	24	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
 https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	Live demos	Published	Getting started	25	
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	Glossary	Unpublished	Getting started	26	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/deployment-strategies.md	Deployment in production	Published	Deployment in production	27	
@@ -80,7 +80,7 @@ https://github.com/netdata/netdata/edit/master/docs/collect/application-metrics.
 https://github.com/netdata/netdata/edit/master/docs/collect/container-metrics.md	Container metrics	Published	Data collection	79	Use Netdata to collect per-second utilization and application-level metrics from Linux/Docker containers and Kubernetes clusters.
 https://github.com/netdata/netdata/edit/master/collectors/REFERENCE.md	Collectors configuration	Published	Data collection	80	
 https://github.com/netdata/agent-service-discovery/edit/master/README.md	Service discovery	Published	Data collection	81	
-https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	Chart dimensions, contexts, and families	Published	Alerts and notifications	82	 Netdata organizes charts into dimensions, contexts, and families to automaticallyand meaningfully organize thousands of metrics into interactive charts.
+https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	Chart dimensions, contexts, and families	Published	Data collection	82	 Netdata organizes charts into dimensions, contexts, and families to automaticallyand meaningfully organize thousands of metrics into interactive charts.
 https://github.com/netdata/netdata/edit/master/collectors/COLLECTORS.md	Monitor Anything	Published	Data collection/Monitor Anything	83	Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box.
 https://github.com/netdata/netdata/edit/master/collectors/statsd.plugin/README.md	StatsD	Published	Data collection/Monitor Anything/Generic Collectors	84	The Netdata Agent is a fully-featured StatsD server that collects metrics from any custom application and visualizes them in real-time.
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/README.md	Prometheus endpoints	Published	Data collection/Monitor Anything/Generic Collectors	85	Monitor the health and performance of 600+ services that support the Prometheus metrics with Netdata's per-second frequency and zero configuration.
@@ -306,7 +306,6 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correl
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	Run-time troubleshooting with Functions	Published	Troubleshooting and machine learning	305	Instructions on how to use Functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Functions	Published	Troubleshooting and machine learning	306	Present the Netdata Functions what these are and why they should be used.
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Troubleshooting and machine learning	307	Present the Netdata Events feed.
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor/anomaly-detection.md	Machine learning (ML) powered anomaly detection	Published	Troubleshooting and machine learning	308	Detect anomalies in any system, container, or application in your infrastructure with machine learning and the open-source Netdata Agent.
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	Improving Netdata - developers	Published	Improving Netdata - developers	309	
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	Contribute to the documentation	Published	Improving Netdata - developers/Contribute to the documentation	310	
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	Netdata style guide	Published	Improving Netdata - developers/Contribute to the documentation	311	The Netdata style guide establishes editorial guidelines for all of Netdata's writing, including documentation, blog posts, in-product UX copy, and more.
@@ -413,17 +412,19 @@ https://github.com/netdata/netdata/edit/master/spawn/README.md		Unpublished		411
 https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/CHANGELOG.md		Unpublished		412	
 https://github.com/netdata/.github/edit/main/SUPPORT.md		Unpublished		413	
 https://github.com/netdata/.github/edit/main/README.md		Unpublished		414	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/concepts-overview.md	Concepts	Unpublished		415	File deleted
-https://github.com/netdata/helmchart/edit/master/README.md	Helm chart for Kubernetes	Unpublished		416	
-https://github.com/netdata/netdata/edit/master/docs/visualize/interact-dashboards-charts.md	Interact with dashboards and charts	Unpublished		417	Zoom, highlight, and pan through time on hundreds of real-time, interactive charts to quickly discover the root cause of any anomaly.
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/operations-overview.md	Operations	Unpublished		418	File deleted
-https://github.com/netdata/netdata/edit/master/collectors/checks.plugin/README.md	checks.plugin	Unpublished		419	
-https://github.com/netdata/netdata/edit/master/web/api/exporters/README.md	Exporters	Unpublished		420	
-https://github.com/netdata/netdata/edit/master/database/ram/README.md	RAM database modes	Unpublished		421	Netdata's RAM database modes.
-https://github.com/netdata/netdata/edit/master/web/api/exporters/prometheus/README.md	Prometheus exporter	Unpublished		422	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/concepts-overview.md		Unpublished		415	File deleted
+https://github.com/netdata/helmchart/edit/master/README.md		Unpublished		416	
+https://github.com/netdata/netdata/edit/master/docs/visualize/interact-dashboards-charts.md		Unpublished		417	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/operations-overview.md		Unpublished		418	File deleted
+https://github.com/netdata/netdata/edit/master/collectors/checks.plugin/README.md		Unpublished		419	
+https://github.com/netdata/netdata/edit/master/web/api/exporters/README.md		Unpublished		420	
+https://github.com/netdata/netdata/edit/master/database/ram/README.md		Unpublished		421	
+https://github.com/netdata/netdata/edit/master/web/api/exporters/prometheus/README.md		Unpublished		422	
 https://github.com/netdata/go.d.plugin/edit/master/agent/README.md		Unpublished		423	
-https://github.com/netdata/netdata/edit/master/docs/visualize/create-dashboards.md	Create new dashboards	Unpublished		424	File deleted
-https://github.com/netdata/netdata/edit/master/docs/dashboard/how-dashboard-works.md	How the dashboard works	Unpublished		425	File deleted
+https://github.com/netdata/netdata/edit/master/docs/visualize/create-dashboards.md		Unpublished		424	File deleted
+https://github.com/netdata/netdata/edit/master/docs/dashboard/how-dashboard-works.md		Unpublished		425	File deleted
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/developers-overview.md		Unpublished		426	
-https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/reference-streaming.md	Streaming reference	Unpublished		427	File deleted
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/integrations-overview.md	Integrations	Unpublished		428	Available integrations in Netdata
+https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/reference-streaming.md		Unpublished		427	File deleted
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/integrations-overview.md		Unpublished		428	
+https://github.com/netdata/netdata/edit/master/database/contexts/README.md		Unpublished		429	
+https://github.com/netdata/netdata/edit/master/docs/guides/monitor/anomaly-detection.md		Unpublished			
