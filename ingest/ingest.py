@@ -236,10 +236,19 @@ def createMDXPathFromMetdata(metadata):
     """
     finalFile = ' '.join(
         (metadata["sidebar_label"].replace("'", " ").replace(":", " ").replace("/", " ").replace(")", " ").replace(",", " ").replace("(", " ")).split())
-    return ("{}/{}/{}.mdx".format(DOCS_PREFIX, \
-                                  metadata["learn_rel_path"], \
-                                  finalFile.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/"))
 
+    if "Monitor Anything" in metadata['learn_rel_path'] and metadata['learn_rel_path'].split("/")[-1] != "Monitor Anything":
+        lastFolder = metadata['learn_rel_path'].split("Monitor Anything")[1]
+        lastFolder = "monitor-anything" + lastFolder.title()
+        print(lastFolder)
+        return ("{}/{}/{}.mdx".format(DOCS_PREFIX,
+                                      metadata["learn_rel_path"].split("Monitor Anything")[0].lower().replace(" ", "-") + lastFolder,
+                                      finalFile.replace(" ", "-")).replace("//", "/"))
+
+    else:
+        return ("{}/{}/{}.mdx".format(DOCS_PREFIX,
+                                      metadata["learn_rel_path"],
+                                      finalFile.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/"))
 
 def fetchMarkdownFromRepo(outputFolder):
     return (glob.glob(outputFolder + '/**/*.md*', recursive=True) + glob.glob(outputFolder + '/.**/*.md*', recursive=True))

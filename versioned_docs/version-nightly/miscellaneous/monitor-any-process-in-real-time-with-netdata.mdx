@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/mon
 sidebar_label: "Monitor any process in real-time with Netdata"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
-sidebar_position: "387"
+sidebar_position: "386.0"
 description: "Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions."
 ---
 
@@ -39,7 +39,7 @@ With Netdata's process monitoring, you can:
 
 - One or more Linux nodes running [Netdata](/docs/nightly/getting-started/install-netdata)
 - A general understanding of how
-  to [configure the Netdata Agent](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration)
+  to [configure the Netdata Agent](/docs/nightly/getting-started/manage-and-configure/configuration)
   using `edit-config`.
 - A Netdata Cloud account. [Sign up](https://app.netdata.cloud) if you don't have one already.
 
@@ -55,12 +55,12 @@ process-specific charts.
 
 The process and groups settings are used by two unique and powerful collectors.
 
-[**`apps.plugin`**](/docs/nightly/data-collection/monitor-anything/system-metrics/application-monitoring) looks at the Linux
+[**`apps.plugin`**](/docs/nightly/data-collection/monitor-anything/System Metrics/Application-monitoring) looks at the Linux
 process tree every second, much like `top` or
 `ps fax`, and collects resource utilization information on every running process. It then automatically adds a layer of
 meaningful visualization on top of these metrics, and creates per-process/application charts.
 
-[**`ebpf.plugin`**](/docs/nightly/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf): Netdata's extended
+[**`ebpf.plugin`**](/docs/nightly/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF): Netdata's extended
 Berkeley Packet Filter (eBPF) collector
 monitors Linux kernel-level metrics for file descriptors, virtual filesystem IO, and process management, and then hands
 process-specific metrics over to `apps.plugin` for visualization. The eBPF collector also collects and visualizes
@@ -130,7 +130,7 @@ aware of hundreds of processes, and collects metrics from them automatically.
 But, if you want to change the grouping behavior, add an application that isn't yet supported in the Netdata Agent, or
 monitor a custom application, you need to edit the `apps_groups.conf` configuration file.
 
-Navigate to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration) and
+Navigate to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure/configuration) and
 use `edit-config` to edit the file.
 
 ```bash
@@ -180,7 +180,7 @@ sql: mariad* postmaster* oracle_* ora_* sqlservr
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or
-the [appropriate method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system, to start collecting utilization metrics
+the [appropriate method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system, to start collecting utilization metrics
 from your application. Time to [visualize your process metrics](#visualize-process-metrics).
 
 ### Custom applications
@@ -207,7 +207,7 @@ custom-app: custom-app
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or
-the [appropriate method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system, to start collecting utilization metrics
+the [appropriate method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system, to start collecting utilization metrics
 from your application.
 
 ## Visualize process metrics

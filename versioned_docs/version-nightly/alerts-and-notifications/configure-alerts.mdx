@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/health/REFERENC
 sidebar_label: "Configure alerts"
 learn_status: "Published"
 learn_rel_path: "Alerts and notifications"
-sidebar_position: "290"
+sidebar_position: "290.0"
 ---
 # Configure alerts
 
@@ -26,14 +26,14 @@ You can configure the Agent's health watchdog service by editing files in two lo
 
 -   The `[health]` section in `netdata.conf`. By editing the daemon's behavior, you can disable health monitoring
     altogether, run health checks more or less often, and more. See 
-    [daemon configuration](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/daemon-configuration#health-section-options) for a table of 
+    [daemon configuration](/docs/nightly/getting-started/manage-and-configure/daemon-configuration#health-section-options) for a table of 
     all the available settings, their default values, and what they control.
 
 -   The individual `.conf` files in `health.d/`. These health entity files are organized by the type of metric they are
     performing calculations on or their associated collector. You should edit these files using the `edit-config`
     script. For example: `sudo ./edit-config health.d/cpu.conf`.
 
-Navigate to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration) and
+Navigate to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure/configuration) and
 use `edit-config` to make changes to any of these files.
 
 ### Edit individual alerts
@@ -125,7 +125,7 @@ your systems, containers, and applications work.
 Read the [health entity reference](#health-entity-reference) for a full listing of the format,
 syntax, and functionality of health entities.
 
-To write a new health entity into a new file, navigate to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration),
+To write a new health entity into a new file, navigate to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure/configuration),
 then use `touch` to create a new file in the `health.d/` directory. Use `edit-config` to start editing the file.
 
 As an example, let's create a `ram-usage.conf` file.
@@ -1324,7 +1324,7 @@ health configuration files!
 
 ## Troubleshooting
 
-You can compile Netdata with [debugging](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/netdata-daemon#debugging) and then set in `netdata.conf`:
+You can compile Netdata with [debugging](/docs/nightly/getting-started/manage-and-configure/netdata-daemon#debugging) and then set in `netdata.conf`:
 
 ```yaml
 [global]

@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/con
 sidebar_label: "How to optimize the Netdata Agent's performance"
 learn_status: "Published"
 learn_rel_path: "Deployment in production"
-sidebar_position: "28"
+sidebar_position: "28.0"
 description: "While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems."
 ---
 
@@ -36,7 +36,7 @@ enabled, since we want you to experience the full thing.
 -   Familiarity with configuring the Netdata Agent with `edit-config`.
 
 If you're not familiar with how to configure the Netdata Agent, read our [node configuration
-doc](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration) before continuing with this guide. This guide assumes familiarity with the Netdata config
+doc](/docs/nightly/getting-started/manage-and-configure/configuration) before continuing with this guide. This guide assumes familiarity with the Netdata config
 directory, using `edit-config`, and the process of uncommenting/editing various settings in `netdata.conf` and other
 configuration files.
 
@@ -46,11 +46,11 @@ Netdata's performance is primarily affected by **data collection/retention** and
 
 You can configure almost all aspects of data collection/retention, and certain aspects of clients accessing data. For
 example, you can't control how many users might be viewing a local Agent dashboard, [viewing an
-infrastructure](/docs/nightly/visualizations/cloud-visualizations/infrastructure-overview) in real-time with Netdata Cloud, or running [Metric
+infrastructure](/docs/nightly/visualizations/infrastructure-overview) in real-time with Netdata Cloud, or running [Metric
 Correlations](/docs/nightly/troubleshooting-and-machine-learning/metric-correlations).
 
 The Netdata Agent runs with the lowest possible [process scheduling
-policy](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/netdata-daemon#netdata-process-scheduling-policy), which is `nice 19`, and uses the `idle` process scheduler.
+policy](/docs/nightly/getting-started/manage-and-configure/netdata-daemon#netdata-process-scheduling-policy), which is `nice 19`, and uses the `idle` process scheduler.
 Together, these settings ensure that the Agent only gets CPU resources when the node has CPU resources to space. If the
 node reaches 100% CPU utilization, the Agent is stopped first to ensure your applications get any available resources.
 In addition, under heavy load, collectors that require disk I/O may stop and show gaps in charts.

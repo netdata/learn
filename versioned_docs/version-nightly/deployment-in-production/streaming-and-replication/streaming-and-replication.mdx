@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/metrics-st
 sidebar_label: "Streaming and replication"
 learn_status: "Published"
 learn_rel_path: "Deployment in production/Streaming and replication"
-sidebar_position: "41"
+sidebar_position: "41.0"
 description: "With metrics streaming enabled, you can not only replicate metrics data into a second database, but also view dashboards and trigger alarm notifications for multiple nodes in parallel."
 ---
 # How metrics streaming works
@@ -114,8 +114,8 @@ itself while initiating a streaming connection. Copy that into a separate text f
 
 > Find out how to [install `uuidgen`](https://command-not-found.com/uuidgen) on your node if you don't already have it.
 
-Next, open `stream.conf` using [`edit-config`](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#use-edit-config-to-edit-configuration-files)
-from within the [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory).
+Next, open `stream.conf` using [`edit-config`](/docs/nightly/getting-started/manage-and-configure/configuration#use-edit-config-to-edit-configuration-files)
+from within the [Netdata config directory](/docs/nightly/getting-started/manage-and-configure/configuration#the-netdata-config-directory).
 
 ```bash
 cd /etc/netdata
@@ -139,7 +139,7 @@ simplified version of the configuration, minus the commented lines, looks like t
 ```
 
 Save the file and close it, then restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system.
+method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system.
 
 ### Enable streaming on the child node
 
@@ -160,7 +160,7 @@ looks like the following:
 ```
 
 Save the file and close it, then restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system.
+method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system.
 
 ### Enable TLS/SSL on streaming (optional)
 
@@ -200,7 +200,7 @@ self-signed certificates.
 ```
 
 Restart both the parent and child nodes with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system, to stream encrypted metrics using TLS/SSL.
+method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system, to stream encrypted metrics using TLS/SSL.
 
 ### View streamed metrics in Netdata Cloud
 

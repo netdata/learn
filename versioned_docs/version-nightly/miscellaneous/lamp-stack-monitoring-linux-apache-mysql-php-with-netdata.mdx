@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/mon
 sidebar_label: "LAMP stack monitoring (Linux, Apache, MySQL, PHP) with Netdata"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
-sidebar_position: "382"
+sidebar_position: "381.0"
 description: "Set up robust LAMP stack monitoring (Linux, Apache, MySQL, PHP) in just a few minutes using a free, open-source monitoring tool that collects metrics every second."
 ---
 
@@ -71,12 +71,12 @@ replacing `NODE` with the hostname or IP address of your system.
 There's nothing you need to do to enable [system monitoring](/docs/nightly/data-collection/system-metrics) and Linux monitoring with
 the Netdata Agent, which autodetects metrics from CPUs, memory, disks, networking devices, and Linux processes like
 systemd without any configuration. If you're using containers, Netdata automatically collects resource utilization
-metrics from each using the [cgroups data collector](/docs/nightly/data-collection/monitor-anything/virtualized-environments/containers/monitor-cgroups).
+metrics from each using the [cgroups data collector](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Containers/Monitor-Cgroups).
 
 ## Enable Apache monitoring
 
 Let's begin by configuring Apache to work with Netdata's [Apache data
-collector](/docs/nightly/data-collection/monitor-anything/webapps/apache).
+collector](/docs/nightly/data-collection/monitor-anything/Webapps/Apache).
 
 Actually, there's nothing for you to do to enable Apache monitoring with Netdata.
 
@@ -87,7 +87,7 @@ metrics](https://httpd.apache.org/docs/2.4/mod/mod_status.html), which is just _
 ## Enable web log monitoring
 
 The Netdata Agent also comes with a [web log
-collector](/docs/nightly/data-collection/monitor-anything/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis), which reads Apache's access
+collector](/docs/nightly/data-collection/monitor-anything/Quantify Logs To Metrics/Web-server-logs-Apache-NGINX-Microsoft-IIS), which reads Apache's access
 log file, processes each line, and converts them into per-second metrics. On Debian systems, it reads the file at
 `/var/log/apache2/access.log`.
 
@@ -100,7 +100,7 @@ monitoring.
 
 Because your MySQL database is password-protected, you do need to tell MySQL to allow the `netdata` user to connect to
 without a password. Netdata's [MySQL data
-collector](/docs/nightly/data-collection/monitor-anything/databases/mysql) collects metrics in _read-only_
+collector](/docs/nightly/data-collection/monitor-anything/Databases/MySQL) collects metrics in _read-only_
 mode, without being able to alter or affect operations in any way.
 
 First, log into the MySQL shell. Then, run the following three commands, one at a time:
@@ -112,15 +112,15 @@ FLUSH PRIVILEGES;
 ```
 
 Run `sudo systemctl restart netdata`, or the [appropriate alternative for your
-system](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent), to collect dozens of metrics every second for robust MySQL monitoring.
+system](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent), to collect dozens of metrics every second for robust MySQL monitoring.
 
 ## Enable PHP monitoring
 
 Unlike Apache or MySQL, PHP isn't a service that you can monitor directly, unless you instrument a PHP-based application
-with [StatsD](/docs/nightly/data-collection/monitor-anything/generic-collectors/statsd).
+with [StatsD](/docs/nightly/data-collection/monitor-anything/Generic Collectors/StatsD).
 
 However, if you use [PHP-FPM](https://php-fpm.org/) in your LAMP stack, you can monitor that process with our [PHP-FPM
-data collector](/docs/nightly/data-collection/monitor-anything/webapps/php-fpm).
+data collector](/docs/nightly/data-collection/monitor-anything/Webapps/PHP-FPM).
 
 Open your PHP-FPM configuration for editing, replacing `7.4` with your version of PHP:
 
@@ -222,7 +222,7 @@ services. The per-second metrics granularity means you have the most accurate in
 any LAMP-related issues.
 
 Another powerful way to monitor the availability of a LAMP stack is the [`httpcheck`
-collector](/docs/nightly/data-collection/monitor-anything/remotes/http-endpoints), which pings a web server at
+collector](/docs/nightly/data-collection/monitor-anything/Remotes/HTTP-endpoints), which pings a web server at
 a regular interval and tells you whether if and how quickly it's responding. The `response_match` option also lets you
 monitor when the web server's response isn't what you expect it to be, which might happen if PHP-FPM crashes, for
 example.
@@ -238,8 +238,8 @@ source of issues faster with [Metric Correlations](/docs/nightly/troubleshooting
 ### Related reference documentation
 
 - [Netdata Agent · Get started](/docs/nightly/getting-started/install-netdata)
-- [Netdata Agent · Apache data collector](/docs/nightly/data-collection/monitor-anything/webapps/apache)
-- [Netdata Agent · Web log collector](/docs/nightly/data-collection/monitor-anything/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis)
-- [Netdata Agent · MySQL data collector](/docs/nightly/data-collection/monitor-anything/databases/mysql)
-- [Netdata Agent · PHP-FPM data collector](/docs/nightly/data-collection/monitor-anything/webapps/php-fpm)
+- [Netdata Agent · Apache data collector](/docs/nightly/data-collection/monitor-anything/Webapps/Apache)
+- [Netdata Agent · Web log collector](/docs/nightly/data-collection/monitor-anything/Quantify Logs To Metrics/Web-server-logs-Apache-NGINX-Microsoft-IIS)
+- [Netdata Agent · MySQL data collector](/docs/nightly/data-collection/monitor-anything/Databases/MySQL)
+- [Netdata Agent · PHP-FPM data collector](/docs/nightly/data-collection/monitor-anything/Webapps/PHP-FPM)
 

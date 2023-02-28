@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/registry/README
 sidebar_label: "Registry"
 learn_status: "Published"
 learn_rel_path: "Deployment in production/Secure your nodes"
-sidebar_position: "32"
+sidebar_position: "32.0"
 description: "Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards."
 ---
 
@@ -184,7 +184,7 @@ Both files are machine readable text files.
 
 Beginning with `v1.30.0`, when the Netdata Agent's web server processes a request, it delivers the `SameSite=none`
 and `Secure` cookies. If you have problems accessing the local Agent dashboard or Netdata Cloud, disable these
-cookies by [editing `netdata.conf`](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#use-edit-config-to-edit-configuration-files):
+cookies by [editing `netdata.conf`](/docs/nightly/getting-started/manage-and-configure/configuration#use-edit-config-to-edit-configuration-files):
 
 ```conf
 [registry]

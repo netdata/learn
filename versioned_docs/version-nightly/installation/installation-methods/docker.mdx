@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/packaging/docke
 sidebar_label: "Docker"
 learn_status: "Published"
 learn_rel_path: "Installation/Installation methods"
-sidebar_position: "54"
+sidebar_position: "54.0"
 ---
 
 
@@ -211,7 +211,7 @@ to restart the container: `docker restart netdata`.
 
 > :warning: Warning
 >  
-> The [edit-config](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory) script doesn't work when executed on
+> The [edit-config](/docs/nightly/getting-started/manage-and-configure/configuration#the-netdata-config-directory) script doesn't work when executed on
 > the host system.
 
 If you want to make your container's configuration directory accessible from the host system, you need to use a
@@ -480,7 +480,7 @@ services:
 ### Pass command line options to Netdata
 
 Since we use an [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) directive, you can provide
-[Netdata daemon command line options](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/netdata-daemon#command-line-options) such as the IP address Netdata will be
+[Netdata daemon command line options](/docs/nightly/getting-started/manage-and-configure/netdata-daemon#command-line-options) such as the IP address Netdata will be
 running on, using the [command instruction](https://docs.docker.com/engine/reference/builder/#cmd). 
 
 ## Install the Agent using Docker Compose with SSL/TLS enabled HTTP Proxy

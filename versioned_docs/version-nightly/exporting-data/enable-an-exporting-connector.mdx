@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/export/ena
 sidebar_label: "Enable an exporting connector"
 learn_status: "Published"
 learn_rel_path: "Exporting data"
-sidebar_position: "239"
+sidebar_position: "239.0"
 description: "Learn how to enable and configure any connector using examples to start exporting metrics to external time-series databases in minutes."
 ---
 
@@ -24,7 +24,7 @@ Once you understand the process of enabling a connector, you can translate that 
 ## Enable the exporting engine
 
 Use `edit-config` from your
-[Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory)
+[Netdata config directory](/docs/nightly/getting-started/manage-and-configure/configuration#the-netdata-config-directory)
 to open `exporting.conf`:
 
 ```bash
@@ -54,7 +54,7 @@ Replace `my_opentsdb_http_instance` with an instance name of your choice, and ch
 address or hostname of your OpenTSDB database.
 
 Restart your Agent with `sudo systemctl restart netdata`, or
-the [appropriate method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system, to begin exporting to your OpenTSDB
+the [appropriate method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system, to begin exporting to your OpenTSDB
 database. The
 Netdata Agent exports metrics _beginning from the time the process starts_, and because it exports as metrics are
 collected, you should start seeing data in your external database after only a few seconds.
@@ -78,7 +78,7 @@ Replace `my_graphite_instance` with an instance name of your choice, and change 
 address or hostname of your Graphite-supported database.
 
 Restart your Agent with `sudo systemctl restart netdata`, or
-the [appropriate method](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent) for your system, to begin exporting to your
+the [appropriate method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system, to begin exporting to your
 Graphite-supported database.
 Because the Agent exports metrics as they're collected, you should start seeing data in your external database after
 only a few seconds.

@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/dashboard/
 sidebar_label: "Customize the standard dashboard"
 learn_status: "Published"
 learn_rel_path: "Visualizations/Agent dashboard"
-sidebar_position: "298"
+sidebar_position: "298.0"
 description: "Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more."
 ---
 # Customize the standard dashboard
@@ -26,7 +26,7 @@ Here are a few popular settings:
 ### Change chart legend position
 
 Find this setting under the **Visual** tab. By default, Netdata places the 
-[legend of dimensions](/docs/nightly/alerts-and-notifications/chart-dimensions-contexts-and-families#dimension) _below_ charts. 
+[legend of dimensions](/docs/nightly/data-collection/chart-dimensions-contexts-and-families#dimension) _below_ charts. 
 Click this toggle to move the legend to the _right_ of charts.
 
 
@@ -69,7 +69,7 @@ Edit the file with customizations to the `title`, `icon`, and `info` fields. Rep
 icon from [Font Awesome](https://fontawesome.com/cheatsheet) to customize the icons that appear throughout the
 dashboard.
 
-Save the file, then navigate to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration) to edit `netdata.conf`. Add
+Save the file, then navigate to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure/configuration) to edit `netdata.conf`. Add
 the following line to the `[web]` section to tell Netdata where to find your custom configuration.
 
 ```conf

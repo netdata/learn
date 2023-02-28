@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/collectors/COLL
 sidebar_label: "Monitor Anything"
 learn_status: "Published"
 learn_rel_path: "Data collection/Monitor Anything"
-sidebar_position: "83"
+sidebar_position: "83.0"
 description: "Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box."
 ---
 
@@ -33,13 +33,13 @@ accompanying configuration file.
 If you don't see the app/service you'd like to monitor in this list:
 
 - If your application has a Prometheus endpoint, Netdata can monitor it! Look at our 
-  [generic Prometheus collector](/docs/nightly/data-collection/monitor-anything/generic-collectors/prometheus-endpoints).
+  [generic Prometheus collector](/docs/nightly/data-collection/monitor-anything/Generic Collectors/Prometheus-endpoints).
 
 - If your application is instrumented to expose [StatsD](https://blog.netdata.cloud/introduction-to-statsd/) metrics, 
-  see our [generic StatsD collector](/docs/nightly/data-collection/monitor-anything/generic-collectors/statsd).
+  see our [generic StatsD collector](/docs/nightly/data-collection/monitor-anything/Generic Collectors/StatsD).
 
 - If you have data in CSV, JSON, XML or other popular formats, you may be able to use our 
-  [generic structured data (Pandas) collector](/docs/nightly/data-collection/monitor-anything/generic-collectors/ingest-structured-data-pandas),
+  [generic structured data (Pandas) collector](/docs/nightly/data-collection/monitor-anything/Generic Collectors/Ingest-structured-data-Pandas),
 
 - Check out our [GitHub issues](https://github.com/netdata/netdata/issues). Use the search bar to look for previous
   discussions about that collector—we may be looking for assistance from users such as yourself!
@@ -95,9 +95,9 @@ configure any of these collectors according to your setup and infrastructure.
 
 ### Generic
 
-- [Prometheus endpoints](/docs/nightly/data-collection/monitor-anything/generic-collectors/prometheus-endpoints): Gathers
+- [Prometheus endpoints](/docs/nightly/data-collection/monitor-anything/Generic Collectors/Prometheus-endpoints): Gathers
   metrics from any number of Prometheus endpoints, with support to autodetect more than 600 services and applications.
-- [Pandas](/docs/nightly/data-collection/monitor-anything/generic-collectors/ingest-structured-data-pandas): A Python
+- [Pandas](/docs/nightly/data-collection/monitor-anything/Generic Collectors/Ingest-structured-data-Pandas): A Python
   collector that gathers
   metrics from a [pandas](https://pandas.pydata.org/) dataframe. Pandas is a high level data processing library in
   Python that can read various formats of data from local files or web endpoints. Custom processing and transformation
@@ -105,286 +105,286 @@ configure any of these collectors according to your setup and infrastructure.
 
 ### APM (application performance monitoring)
 
-- [Go applications](/docs/nightly/data-collection/monitor-anything/application-performance-monitoring/go-applications):
+- [Go applications](/docs/nightly/data-collection/monitor-anything/Application Performance Monitoring/Go-applications):
   Monitor any Go application that exposes its
   metrics with the  `expvar` package from the Go standard library.
-- [Java Spring Boot 2 applications](/docs/nightly/data-collection/monitor-anything/application-performance-monitoring/java-spring-boot-2-applications):
+- [Java Spring Boot 2 applications](/docs/nightly/data-collection/monitor-anything/Application Performance Monitoring/Java-Spring-Boot-2-applications):
   Monitor running Java Spring Boot 2 applications that expose their metrics with the use of the Spring Boot Actuator.
-- [statsd](/docs/nightly/data-collection/monitor-anything/generic-collectors/statsd): Implement a high
+- [statsd](/docs/nightly/data-collection/monitor-anything/Generic Collectors/StatsD): Implement a high
   performance `statsd` server for Netdata.
-- [phpDaemon](/docs/nightly/data-collection/monitor-anything/application-performance-monitoring/phpdaemon): Collect worker
+- [phpDaemon](/docs/nightly/data-collection/monitor-anything/Application Performance Monitoring/phpDaemon): Collect worker
   statistics (total, active, idle), and uptime for web and network applications.
-- [uWSGI](/docs/nightly/data-collection/monitor-anything/webapps/uwsgi): Monitor
+- [uWSGI](/docs/nightly/data-collection/monitor-anything/Webapps/uWSGI): Monitor
   performance metrics exposed by the uWSGI Stats
   Server.
 
 ### Containers and VMs
 
-- [Docker containers](/docs/nightly/data-collection/monitor-anything/virtualized-environments/containers/monitor-cgroups): Monitor the
+- [Docker containers](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Containers/Monitor-Cgroups): Monitor the
   health and performance of individual Docker containers using the cgroups collector plugin.
-- [DockerD](/docs/nightly/data-collection/monitor-anything/virtualized-environments/containers/docker): Collect container health
+- [DockerD](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Containers/Docker): Collect container health
   statistics.
-- [Docker Engine](/docs/nightly/data-collection/monitor-anything/virtualized-environments/containers/docker-engine): Collect
+- [Docker Engine](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Containers/Docker-Engine): Collect
   runtime statistics from the `docker` daemon using the `metrics-address` feature.
-- [Docker Hub](/docs/nightly/data-collection/monitor-anything/webapps/docker-hub-repositories): Collect statistics
+- [Docker Hub](/docs/nightly/data-collection/monitor-anything/Webapps/Docker-Hub-repositories): Collect statistics
   about Docker repositories, such as pulls, starts, status, time since last update, and more.
-- [Libvirt](/docs/nightly/data-collection/monitor-anything/virtualized-environments/containers/monitor-cgroups): Monitor the health and
+- [Libvirt](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Containers/Monitor-Cgroups): Monitor the health and
   performance of individual Libvirt containers
   using the cgroups collector plugin.
-- [LXC](/docs/nightly/data-collection/monitor-anything/virtualized-environments/containers/monitor-cgroups): Monitor the health and
+- [LXC](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Containers/Monitor-Cgroups): Monitor the health and
   performance of individual LXC containers using
   the cgroups collector plugin.
-- [LXD](/docs/nightly/data-collection/monitor-anything/virtualized-environments/containers/monitor-cgroups): Monitor the health and
+- [LXD](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Containers/Monitor-Cgroups): Monitor the health and
   performance of individual LXD containers using
   the cgroups collector plugin.
-- [systemd-nspawn](/docs/nightly/data-collection/monitor-anything/virtualized-environments/containers/monitor-cgroups): Monitor the
+- [systemd-nspawn](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Containers/Monitor-Cgroups): Monitor the
   health and performance of individual
   systemd-nspawn containers using the cgroups collector plugin.
-- [vCenter Server Appliance](/docs/nightly/data-collection/monitor-anything/virtualized-environments/virtualize-hosts/vcenter-server-appliance): Monitor
+- [vCenter Server Appliance](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Virtualize Hosts/vCenter-Server-Appliance): Monitor
   appliance system, components, and software update health statuses via the Health API.
-- [vSphere](/docs/nightly/data-collection/monitor-anything/virtualized-environments/virtualize-hosts/vcenter-servers): Collect host and virtual
+- [vSphere](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Virtualize Hosts/vCenter-Servers): Collect host and virtual
   machine performance metrics.
-- [Xen/XCP-ng](/docs/nightly/data-collection/monitor-anything/virtualized-environments/virtualize-hosts/xenstat.plugin): Collect XenServer
+- [Xen/XCP-ng](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Virtualize Hosts/xenstat.plugin): Collect XenServer
   and XCP-ng metrics using `libxenstat`.
 
 ### Data stores
 
-- [CockroachDB](/docs/nightly/data-collection/monitor-anything/databases/cockroachdb): Monitor various
+- [CockroachDB](/docs/nightly/data-collection/monitor-anything/Databases/CockroachDB): Monitor various
   database components using `_status/vars` endpoint.
-- [Consul](/docs/nightly/data-collection/monitor-anything/webapps/consul): Capture service and unbound
+- [Consul](/docs/nightly/data-collection/monitor-anything/Webapps/Consul): Capture service and unbound
   checks status (passing, warning, critical, maintenance).
-- [Couchbase](/docs/nightly/data-collection/monitor-anything/databases/couchbase): Gather per-bucket
+- [Couchbase](/docs/nightly/data-collection/monitor-anything/Databases/Couchbase): Gather per-bucket
   metrics from any number of instances of the distributed JSON document database.
-- [CouchDB](/docs/nightly/data-collection/monitor-anything/databases/couchdb): Monitor database health and
+- [CouchDB](/docs/nightly/data-collection/monitor-anything/Databases/CouchDB): Monitor database health and
   performance metrics
   (reads/writes, HTTP traffic, replication status, etc).
-- [MongoDB](/docs/nightly/data-collection/monitor-anything/databases/mongodb-go.d.plugin-recommended): Collect server, database,
+- [MongoDB](/docs/nightly/data-collection/monitor-anything/Databases/mongodb-go.d.plugin-Recommended): Collect server, database,
   replication and sharding performance and health metrics.
-- [MySQL](/docs/nightly/data-collection/monitor-anything/databases/mysql): Collect database global,
+- [MySQL](/docs/nightly/data-collection/monitor-anything/Databases/MySQL): Collect database global,
   replication and per user statistics.
-- [OracleDB](/docs/nightly/data-collection/monitor-anything/databases/oracledb): Monitor
+- [OracleDB](/docs/nightly/data-collection/monitor-anything/Databases/OracleDB): Monitor
   database performance and health metrics.
-- [Pika](/docs/nightly/data-collection/monitor-anything/storage/pika): Gather metric, such as clients,
+- [Pika](/docs/nightly/data-collection/monitor-anything/Storage/Pika): Gather metric, such as clients,
   memory usage, queries, and more from the Redis interface-compatible database.
-- [Postgres](/docs/nightly/data-collection/monitor-anything/databases/postgressql): Collect database health
+- [Postgres](/docs/nightly/data-collection/monitor-anything/Databases/PostgresSQL): Collect database health
   and performance metrics.
-- [ProxySQL](/docs/nightly/data-collection/monitor-anything/databases/proxysql-go.d.plugin-recommended): Monitor database backend
+- [ProxySQL](/docs/nightly/data-collection/monitor-anything/Databases/proxysql-go.d.plugin-Recommended): Monitor database backend
   and frontend performance metrics.
-- [Redis](/docs/nightly/data-collection/monitor-anything/databases/redis): Monitor status from any
+- [Redis](/docs/nightly/data-collection/monitor-anything/Databases/Redis): Monitor status from any
   number of database instances by reading the server's response to the `INFO ALL` command.
-- [RethinkDB](/docs/nightly/data-collection/monitor-anything/databases/rethinkdb): Collect
+- [RethinkDB](/docs/nightly/data-collection/monitor-anything/Databases/RethinkDB): Collect
   database server and cluster statistics.
-- [Riak KV](/docs/nightly/data-collection/monitor-anything/databases/riak-kv): Collect
+- [Riak KV](/docs/nightly/data-collection/monitor-anything/Databases/Riak-KV): Collect
   database stats from the `/stats` endpoint.
-- [Zookeeper](/docs/nightly/data-collection/monitor-anything/databases/zookeeper): Monitor application
+- [Zookeeper](/docs/nightly/data-collection/monitor-anything/Databases/ZooKeeper): Monitor application
   health metrics reading the server's response to the `mntr` command.
-- [Memcached](/docs/nightly/data-collection/monitor-anything/databases/memcached): Collect
+- [Memcached](/docs/nightly/data-collection/monitor-anything/Databases/Memcached): Collect
   memory-caching system performance metrics.
 
 ### Distributed computing
 
-- [BOINC](/docs/nightly/data-collection/monitor-anything/distributed-computing/boinc): Monitor the total
+- [BOINC](/docs/nightly/data-collection/monitor-anything/Distributed Computing/BOINC): Monitor the total
   number of tasks, open tasks, and task
   states for the distributed computing client.
-- [Gearman](/docs/nightly/data-collection/monitor-anything/distributed-computing/gearman): Collect
+- [Gearman](/docs/nightly/data-collection/monitor-anything/Distributed Computing/Gearman): Collect
   application summary (queued, running) and per-job
   worker statistics (queued, idle, running).
 
 ### Email
 
-- [Dovecot](/docs/nightly/data-collection/monitor-anything/webapps/dovecot): Collect email
+- [Dovecot](/docs/nightly/data-collection/monitor-anything/Webapps/Dovecot): Collect email
   server performance metrics by reading the
   server's response to the `EXPORT global` command.
-- [EXIM](/docs/nightly/data-collection/monitor-anything/webapps/exim): Uses the `exim` tool
+- [EXIM](/docs/nightly/data-collection/monitor-anything/Webapps/Exim): Uses the `exim` tool
   to monitor the queue length of a
   mail/message transfer agent (MTA).
-- [Postfix](/docs/nightly/data-collection/monitor-anything/webapps/postfix): Uses
+- [Postfix](/docs/nightly/data-collection/monitor-anything/Webapps/Postfix): Uses
   the `postqueue` tool to monitor the queue length of a
   mail/message transfer agent (MTA).
 
 ### Kubernetes
 
-- [Kubelet](/docs/nightly/data-collection/monitor-anything/container-orchestrators/kubernetes/kubelet): Monitor one or more
+- [Kubelet](/docs/nightly/data-collection/monitor-anything/Container Orchestrators/Kubernetes/Kubelet): Monitor one or more
   instances of the Kubelet agent and collects metrics on number of pods/containers running, volume of Docker
   operations, and more.
-- [kube-proxy](/docs/nightly/data-collection/monitor-anything/container-orchestrators/kubernetes/kube-proxy): Collect
+- [kube-proxy](/docs/nightly/data-collection/monitor-anything/Container Orchestrators/Kubernetes/Kube-proxy): Collect
   metrics, such as syncing proxy rules and REST client requests, from one or more instances of `kube-proxy`.
 - [Service discovery](/docs/nightly/data-collection/service-discovery): Find what services are running on a
   cluster's pods, converts that into configuration files, and exports them so they can be monitored by Netdata.
 
 ### Logs
 
-- [Fluentd](/docs/nightly/data-collection/monitor-anything/logs/fluentd): Gather application
+- [Fluentd](/docs/nightly/data-collection/monitor-anything/Logs/Fluentd): Gather application
   plugins metrics from an endpoint provided by `in_monitor plugin`.
-- [Logstash](/docs/nightly/data-collection/monitor-anything/application-performance-monitoring/logstash): Monitor JVM threads,
+- [Logstash](/docs/nightly/data-collection/monitor-anything/Application Performance Monitoring/Logstash): Monitor JVM threads,
   memory usage, garbage collection statistics, and more.
-- [OpenVPN status logs](/docs/nightly/data-collection/monitor-anything/networking/openvpn-statuslog): Parse
+- [OpenVPN status logs](/docs/nightly/data-collection/monitor-anything/Networking/OpenVPN-StatusLog): Parse
   server log files and provide summary (client, traffic) metrics.
-- [Squid web server logs](/docs/nightly/data-collection/monitor-anything/quantify-logs-to-metrics/web-server-logs-squid): Tail Squid
+- [Squid web server logs](/docs/nightly/data-collection/monitor-anything/Quantify Logs To Metrics/Web-server-logs-Squid): Tail Squid
   access logs to return the volume of requests, types of requests, bandwidth, and much more.
-- [Web server logs (Go version for Apache, NGINX)](/docs/nightly/data-collection/monitor-anything/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis): Tail access logs and provide
+- [Web server logs (Go version for Apache, NGINX)](/docs/nightly/data-collection/monitor-anything/Quantify Logs To Metrics/Web-server-logs-Apache-NGINX-Microsoft-IIS): Tail access logs and provide
   very detailed web server performance statistics. This module is able to parse 200k+ rows in less than half a second.
-- [Web server logs (Apache, NGINX)](/docs/nightly/data-collection/monitor-anything/quantify-logs-to-metrics/web-server-logs-apache-nginx-microsoft-iis): Tail
+- [Web server logs (Apache, NGINX)](/docs/nightly/data-collection/monitor-anything/Quantify Logs To Metrics/Web-server-logs-Apache-NGINX-Microsoft-IIS): Tail
   access log
   file and collect web server/caching proxy metrics.
 
 ### Messaging
 
-- [ActiveMQ](/docs/nightly/data-collection/monitor-anything/message-brokers/activemq): Collect message broker
+- [ActiveMQ](/docs/nightly/data-collection/monitor-anything/Message Brokers/ActiveMQ): Collect message broker
   queues and topics statistics using the ActiveMQ Console API.
-- [Beanstalk](/docs/nightly/data-collection/monitor-anything/message-brokers/beanstalk): Collect
+- [Beanstalk](/docs/nightly/data-collection/monitor-anything/Message Brokers/Beanstalk): Collect
   server and tube-level statistics, such as CPU
   usage, jobs rates, commands, and more.
-- [Pulsar](/docs/nightly/data-collection/monitor-anything/message-brokers/pulsar): Collect summary,
+- [Pulsar](/docs/nightly/data-collection/monitor-anything/Message Brokers/Pulsar): Collect summary,
   namespaces, and topics performance statistics.
-- [RabbitMQ](/docs/nightly/data-collection/monitor-anything/message-brokers/rabbitmq-go.d.plugin-recommended): Collect message
+- [RabbitMQ](/docs/nightly/data-collection/monitor-anything/Message Brokers/rabbitmq-go.d.plugin-Recommended): Collect message
   broker overview, system and per virtual host metrics.
-- [VerneMQ](/docs/nightly/data-collection/monitor-anything/message-brokers/vernemq): Monitor MQTT broker
+- [VerneMQ](/docs/nightly/data-collection/monitor-anything/Message Brokers/VerneMQ): Monitor MQTT broker
   health and performance metrics. It collects all available info for both MQTTv3 and v5 communication
 
 ### Network
 
-- [Bind 9](/docs/nightly/data-collection/monitor-anything/webapps/bind9): Collect nameserver summary
+- [Bind 9](/docs/nightly/data-collection/monitor-anything/Webapps/Bind9): Collect nameserver summary
   performance statistics via a web interface (`statistics-channels` feature).
-- [Chrony](/docs/nightly/data-collection/monitor-anything/apps/chrony): Monitor the precision and
+- [Chrony](/docs/nightly/data-collection/monitor-anything/Apps/Chrony): Monitor the precision and
   statistics of a local `chronyd` server.
-- [CoreDNS](/docs/nightly/data-collection/monitor-anything/networking/coredns): Measure DNS query round
+- [CoreDNS](/docs/nightly/data-collection/monitor-anything/Networking/CoreDNS): Measure DNS query round
   trip time.
-- [Dnsmasq](/docs/nightly/data-collection/monitor-anything/networking/dnsmasq-dhcp): Automatically
+- [Dnsmasq](/docs/nightly/data-collection/monitor-anything/Networking/Dnsmasq-DHCP): Automatically
   detects all configured `Dnsmasq` DHCP ranges and Monitor their utilization.
-- [DNSdist](/docs/nightly/data-collection/monitor-anything/networking/dnsdist): Collect
+- [DNSdist](/docs/nightly/data-collection/monitor-anything/Networking/DNSdist): Collect
   load-balancer performance and health metrics.
-- [Dnsmasq DNS Forwarder](/docs/nightly/data-collection/monitor-anything/networking/dnsmasq-dns-forwarder): Gather
+- [Dnsmasq DNS Forwarder](/docs/nightly/data-collection/monitor-anything/Networking/Dnsmasq-DNS-Forwarder): Gather
   queries, entries, operations, and events for the lightweight DNS forwarder.
-- [DNS Query Time](/docs/nightly/data-collection/monitor-anything/networking/dns-queries): Monitor the round
+- [DNS Query Time](/docs/nightly/data-collection/monitor-anything/Networking/DNS-queries): Monitor the round
   trip time for DNS queries in milliseconds.
-- [Freeradius](/docs/nightly/data-collection/monitor-anything/networking/freeradius): Collect
+- [Freeradius](/docs/nightly/data-collection/monitor-anything/Networking/FreeRADIUS): Collect
   server authentication and accounting statistics from the `status server`.
-- [Libreswan](/docs/nightly/data-collection/monitor-anything/networking/libreswan-ipsec-tunnels): Collect
+- [Libreswan](/docs/nightly/data-collection/monitor-anything/Networking/Libreswan-IPSec-tunnels): Collect
   bytes-in, bytes-out, and uptime metrics.
-- [Icecast](/docs/nightly/data-collection/monitor-anything/networking/icecast): Monitor the
+- [Icecast](/docs/nightly/data-collection/monitor-anything/Networking/Icecast): Monitor the
   number of listeners for active sources.
-- [ISC Bind (RDNC)](/docs/nightly/data-collection/monitor-anything/webapps/isc-bind):
+- [ISC Bind (RDNC)](/docs/nightly/data-collection/monitor-anything/Webapps/ISC-Bind):
   Collect nameserver summary performance
   statistics using the `rndc` tool.
-- [ISC DHCP](/docs/nightly/data-collection/monitor-anything/networking/isc-dhcpd): Reads a
+- [ISC DHCP](/docs/nightly/data-collection/monitor-anything/Networking/ISC-DHCPd): Reads a
   `dhcpd.leases` file and collects metrics on total active leases, pool active leases, and pool utilization.
-- [OpenLDAP](/docs/nightly/data-collection/monitor-anything/networking/openldap): Provides
+- [OpenLDAP](/docs/nightly/data-collection/monitor-anything/Networking/OpenLDAP): Provides
   statistics information from the OpenLDAP
   (`slapd`) server.
-- [NSD](/docs/nightly/data-collection/monitor-anything/networking/nsd): Monitor nameserver
+- [NSD](/docs/nightly/data-collection/monitor-anything/Networking/NSD): Monitor nameserver
   performance metrics using the `nsd-control`
   tool.
 - [NTP daemon](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/ntpd): Monitor the system variables
   of the local `ntpd` daemon (optionally including variables of the polled peers) using the NTP Control Message Protocol
   via a UDP socket.
-- [OpenSIPS](/docs/nightly/data-collection/monitor-anything/networking/opensips): Collect
+- [OpenSIPS](/docs/nightly/data-collection/monitor-anything/Networking/OpenSIPS): Collect
   server health and performance metrics using the
   `opensipsctl` tool.
-- [OpenVPN](/docs/nightly/data-collection/monitor-anything/networking/openvpn): Gather server summary
+- [OpenVPN](/docs/nightly/data-collection/monitor-anything/Networking/OpenVPN): Gather server summary
   (client, traffic) and per user metrics (traffic, connection time) stats using `management-interface`.
-- [Pi-hole](/docs/nightly/data-collection/monitor-anything/apps/pi-hole): Monitor basic (DNS
+- [Pi-hole](/docs/nightly/data-collection/monitor-anything/Apps/Pi-hole): Monitor basic (DNS
   queries, clients, blocklist) and extended (top clients, top permitted, and blocked domains) statistics using the PHP
   API.
-- [PowerDNS Authoritative Server](/docs/nightly/data-collection/monitor-anything/devices/powerdns-authoritative-server):
+- [PowerDNS Authoritative Server](/docs/nightly/data-collection/monitor-anything/Devices/PowerDNS-Authoritative-Server):
   Monitor one or more instances of the nameserver software to collect questions, events, and latency metrics.
-- [PowerDNS Recursor](/docs/nightly/data-collection/monitor-anything/devices/powerdns-authoritative-server#recursor):
+- [PowerDNS Recursor](/docs/nightly/data-collection/monitor-anything/Devices/PowerDNS-Authoritative-Server#recursor):
   Gather incoming/outgoing questions, drops, timeouts, and cache usage from any number of DNS recursor instances.
-- [RetroShare](/docs/nightly/data-collection/monitor-anything/application-performance-monitoring/retroshare): Monitor
+- [RetroShare](/docs/nightly/data-collection/monitor-anything/Application Performance Monitoring/RetroShare): Monitor
   application bandwidth, peers, and DHT
   metrics.
-- [Tor](/docs/nightly/data-collection/monitor-anything/apps/tor): Capture traffic usage
+- [Tor](/docs/nightly/data-collection/monitor-anything/Apps/Tor): Capture traffic usage
   statistics using the Tor control port.
-- [Unbound](/docs/nightly/data-collection/monitor-anything/networking/unbound): Collect DNS resolver
+- [Unbound](/docs/nightly/data-collection/monitor-anything/Networking/Unbound): Collect DNS resolver
   summary and extended system and per thread metrics via the `remote-control` interface.
 
 ### Provisioning
 
-- [Puppet](/docs/nightly/data-collection/monitor-anything/provisioning-tools/puppet): Monitor the
+- [Puppet](/docs/nightly/data-collection/monitor-anything/Provisioning Tools/Puppet): Monitor the
   status of Puppet Server and Puppet DB.
 
 ### Remote devices
 
-- [AM2320](/docs/nightly/data-collection/monitor-anything/remotes/devices/am2320): Monitor sensor
+- [AM2320](/docs/nightly/data-collection/monitor-anything/Remotes/Devices/AM2320): Monitor sensor
   temperature and humidity.
-- [Access point](/docs/nightly/data-collection/monitor-anything/remotes/devices/access-points): Monitor
+- [Access point](/docs/nightly/data-collection/monitor-anything/Remotes/Devices/Access-points): Monitor
   client, traffic and signal metrics using the `aw`
   tool.
-- [APC UPS](/docs/nightly/data-collection/monitor-anything/remotes/devices/apc-ups): Capture status
+- [APC UPS](/docs/nightly/data-collection/monitor-anything/Remotes/Devices/APC-UPS): Capture status
   information using the `apcaccess` tool.
-- [Energi Core](/docs/nightly/data-collection/monitor-anything/remotes/devices/energi-core-wallet): Monitor
+- [Energi Core](/docs/nightly/data-collection/monitor-anything/Remotes/Devices/Energi-Core-Wallet): Monitor
   blockchain indexes, memory usage, network usage, and transactions of wallet instances.
-- [UPS/PDU](/docs/nightly/data-collection/monitor-anything/remotes/devices/ups-pdu): Read the status of
+- [UPS/PDU](/docs/nightly/data-collection/monitor-anything/Remotes/Devices/UPS-PDU): Read the status of
   UPS/PDU devices using the `upsc` tool.
-- [SNMP devices](/docs/nightly/data-collection/monitor-anything/remotes/snmp): Gather data using the SNMP
+- [SNMP devices](/docs/nightly/data-collection/monitor-anything/Remotes/SNMP): Gather data using the SNMP
   protocol.
-- [1-Wire sensors](/docs/nightly/data-collection/monitor-anything/remotes/devices/1-wire-sensors):
+- [1-Wire sensors](/docs/nightly/data-collection/monitor-anything/Remotes/Devices/1-Wire-sensors):
   Monitor sensor temperature.
 
 ### Search
 
-- [Elasticsearch](/docs/nightly/data-collection/monitor-anything/apps/elasticsearch): Collect
+- [Elasticsearch](/docs/nightly/data-collection/monitor-anything/Apps/Elasticsearch): Collect
   dozens of metrics on search engine performance from local nodes and local indices. Includes cluster health and
   statistics.
-- [Solr](/docs/nightly/data-collection/monitor-anything/apps/solr): Collect application search
+- [Solr](/docs/nightly/data-collection/monitor-anything/Apps/Solr): Collect application search
   requests, search errors, update requests, and update errors statistics.
 
 ### Storage
 
-- [Ceph](/docs/nightly/data-collection/monitor-anything/storage/ceph): Monitor the Ceph
+- [Ceph](/docs/nightly/data-collection/monitor-anything/Storage/CEPH): Monitor the Ceph
   cluster usage and server data consumption.
-- [HDFS](/docs/nightly/data-collection/monitor-anything/storage/hdfs): Monitor health and performance
+- [HDFS](/docs/nightly/data-collection/monitor-anything/Storage/HDFS): Monitor health and performance
   metrics for filesystem datanodes and namenodes.
-- [IPFS](/docs/nightly/data-collection/monitor-anything/storage/ipfs): Collect file system
+- [IPFS](/docs/nightly/data-collection/monitor-anything/Storage/IPFS): Collect file system
   bandwidth, peers, and repo metrics.
-- [Scaleio](/docs/nightly/data-collection/monitor-anything/storage/scaleio): Monitor storage system,
+- [Scaleio](/docs/nightly/data-collection/monitor-anything/Storage/ScaleIO): Monitor storage system,
   storage pools, and SDCS health and performance metrics via VxFlex OS Gateway API.
-- [Samba](/docs/nightly/data-collection/monitor-anything/apps/samba): Collect file
+- [Samba](/docs/nightly/data-collection/monitor-anything/Apps/Samba): Collect file
   sharing metrics using the `smbstatus` tool.
 
 ### Web
 
-- [Apache](/docs/nightly/data-collection/monitor-anything/webapps/apache): Collect Apache web
+- [Apache](/docs/nightly/data-collection/monitor-anything/Webapps/Apache): Collect Apache web
   server performance metrics via the `server-status?auto` endpoint.
-- [HAProxy](/docs/nightly/data-collection/monitor-anything/webapps/haproxy-python.d.plugin): Collect
+- [HAProxy](/docs/nightly/data-collection/monitor-anything/Webapps/haproxy-python.d.plugin): Collect
   frontend, backend, and health metrics.
-- [HTTP endpoints](/docs/nightly/data-collection/monitor-anything/remotes/http-endpoints): Monitor
+- [HTTP endpoints](/docs/nightly/data-collection/monitor-anything/Remotes/HTTP-endpoints): Monitor
   any HTTP endpoint's availability and response time.
-- [Lighttpd](/docs/nightly/data-collection/monitor-anything/webapps/lighttpd): Collect web server
+- [Lighttpd](/docs/nightly/data-collection/monitor-anything/Webapps/Lighttpd): Collect web server
   performance metrics using the `server-status?auto` endpoint.
-- [Lighttpd2](/docs/nightly/data-collection/monitor-anything/webapps/lighttpd2): Collect web server
+- [Lighttpd2](/docs/nightly/data-collection/monitor-anything/Webapps/Lighttpd2): Collect web server
   performance metrics using the `server-status?format=plain` endpoint.
-- [Litespeed](/docs/nightly/data-collection/monitor-anything/application-performance-monitoring/litespeed): Collect
+- [Litespeed](/docs/nightly/data-collection/monitor-anything/Application Performance Monitoring/LiteSpeed): Collect
   web server data (network, connection,
   requests, cache) by reading `.rtreport*` files.
-- [Nginx](/docs/nightly/data-collection/monitor-anything/webapps/nginx): Monitor web server
+- [Nginx](/docs/nightly/data-collection/monitor-anything/Webapps/NGINX): Monitor web server
   status information by gathering metrics via `ngx_http_stub_status_module`.
-- [Nginx VTS](/docs/nightly/data-collection/monitor-anything/webapps/nginx-vts): Gathers metrics from
+- [Nginx VTS](/docs/nightly/data-collection/monitor-anything/Webapps/NGINX-VTS): Gathers metrics from
   any Nginx deployment with the _virtual host traffic status module_ enabled, including metrics on uptime, memory
   usage, and cache, and more.
-- [PHP-FPM](/docs/nightly/data-collection/monitor-anything/webapps/php-fpm): Collect application
+- [PHP-FPM](/docs/nightly/data-collection/monitor-anything/Webapps/PHP-FPM): Collect application
   summary and processes health metrics by scraping the status page (`/status?full`).
-- [TCP endpoints](/docs/nightly/data-collection/monitor-anything/remotes/tcp-endpoints): Monitor any
+- [TCP endpoints](/docs/nightly/data-collection/monitor-anything/Remotes/TCP-endpoints): Monitor any
   TCP endpoint's availability and response time.
-- [Spigot Minecraft servers](/docs/nightly/data-collection/monitor-anything/webapps/spigotmc):
+- [Spigot Minecraft servers](/docs/nightly/data-collection/monitor-anything/Webapps/SpigotMC):
   Monitor average ticket rate and number
   of users.
-- [Squid](/docs/nightly/data-collection/monitor-anything/webapps/squid): Monitor client and
+- [Squid](/docs/nightly/data-collection/monitor-anything/Webapps/Squid): Monitor client and
   server bandwidth/requests by gathering
   data from the Cache Manager component.
-- [Tengine](/docs/nightly/data-collection/monitor-anything/webapps/tengine): Monitor web server
+- [Tengine](/docs/nightly/data-collection/monitor-anything/Webapps/Tengine): Monitor web server
   statistics using information provided by `ngx_http_reqstat_module`.
-- [Tomcat](/docs/nightly/data-collection/monitor-anything/webapps/tomcat): Collect web
+- [Tomcat](/docs/nightly/data-collection/monitor-anything/Webapps/Tomcat): Collect web
   server performance metrics from the Manager App
   (`/manager/status?XML=true`).
-- [Traefik](/docs/nightly/data-collection/monitor-anything/webapps/traefik-python.d.plugin): Uses Traefik's
+- [Traefik](/docs/nightly/data-collection/monitor-anything/Webapps/traefik-python.d.plugin): Uses Traefik's
   Health API to provide statistics.
-- [Varnish](/docs/nightly/data-collection/monitor-anything/webapps/varnish-cache): Provides HTTP
+- [Varnish](/docs/nightly/data-collection/monitor-anything/Webapps/Varnish-Cache): Provides HTTP
   accelerator global, backends (VBE), and
   disks (SMF) statistics using the `varnishstat` tool.
-- [x509 check](/docs/nightly/data-collection/monitor-anything/webapps/x509-certificates): Monitor certificate
+- [x509 check](/docs/nightly/data-collection/monitor-anything/Webapps/x509-certificates): Monitor certificate
   expiration time.
-- [Whois domain expiry](/docs/nightly/data-collection/monitor-anything/webapps/whois-domain-expiry): Checks the
+- [Whois domain expiry](/docs/nightly/data-collection/monitor-anything/Webapps/Whois-domain-expiry): Checks the
   remaining time until a given domain is expired.
 
 ## System collectors
@@ -394,194 +394,194 @@ The Netdata Agent can collect these system- and hardware-level metrics using a v
 
 ### Applications
 
-- [Fail2ban](/docs/nightly/data-collection/monitor-anything/apps/fail2ban): Parses
+- [Fail2ban](/docs/nightly/data-collection/monitor-anything/Apps/Fail2ban): Parses
   configuration files to detect all jails, then
   uses log files to report ban rates and volume of banned IPs.
-- [Monit](/docs/nightly/data-collection/monitor-anything/storage/monit): Monitor statuses
+- [Monit](/docs/nightly/data-collection/monitor-anything/Storage/Monit): Monitor statuses
   of targets (service-checks) using the XML
   stats interface.
-- [Windows](/docs/nightly/data-collection/monitor-anything/system-metrics/windows-machines): Collect CPU, memory,
+- [Windows](/docs/nightly/data-collection/monitor-anything/System Metrics/Windows-machines): Collect CPU, memory,
   network, disk, OS, system, and log-in metrics scraping [windows_exporter](https://github.com/prometheus-community/windows_exporter).
 
 ### Disks and filesystems
 
-- [BCACHE](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitor BCACHE statistics
+- [BCACHE](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitor BCACHE statistics
   with the `proc.plugin` collector.
-- [Block devices](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Gather metrics about
+- [Block devices](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Gather metrics about
   the health and performance of block
   devices using the `proc.plugin` collector.
-- [Btrfs](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitors Btrfs filesystems
+- [Btrfs](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitors Btrfs filesystems
   with the `proc.plugin` collector.
-- [Device mapper](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Gather metrics about
+- [Device mapper](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Gather metrics about
   the Linux device mapper with the proc
   collector.
-- [Disk space](/docs/nightly/data-collection/monitor-anything/system-metrics/disks): Collect disk space
+- [Disk space](/docs/nightly/data-collection/monitor-anything/System Metrics/Disks): Collect disk space
   usage metrics on Linux mount points.
-- [Clock synchronization](/docs/nightly/data-collection/monitor-anything/system-metrics/timex.plugin): Collect the
+- [Clock synchronization](/docs/nightly/data-collection/monitor-anything/System Metrics/timex.plugin): Collect the
   system clock synchronization status on Linux.
-- [Files and directories](/docs/nightly/data-collection/monitor-anything/system-metrics/files-and-dirs): Gather
+- [Files and directories](/docs/nightly/data-collection/monitor-anything/System Metrics/Files-and-Dirs): Gather
   metrics about the existence, modification time, and size of files or directories.
-- [ioping.plugin](/docs/nightly/data-collection/monitor-anything/qos/latency-monitoring-ioping.plugin): Measure disk
+- [ioping.plugin](/docs/nightly/data-collection/monitor-anything/Qos/Latency-monitoring-ioping.plugin): Measure disk
   read/write latency.
-- [NFS file servers and clients](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin):
+- [NFS file servers and clients](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin):
   Gather operations, utilization, and space usage
   using the `proc.plugin` collector.
-- [RAID arrays](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Collect health, disk
+- [RAID arrays](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Collect health, disk
   status, operation status, and more with the `proc.plugin` collector.
-- [Veritas Volume Manager](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Gather
+- [Veritas Volume Manager](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Gather
   metrics about the Veritas Volume Manager (VVM).
-- [ZFS](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitor bandwidth and
+- [ZFS](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitor bandwidth and
   utilization of ZFS disks/partitions using the proc
   collector.
 
 ### eBPF
 
-- [Files](/docs/nightly/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf): Provides information about
+- [Files](/docs/nightly/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF): Provides information about
   how often a system calls kernel
   functions related to file descriptors using the eBPF collector.
-- [Virtual file system (VFS)](/docs/nightly/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf): Monitor
+- [Virtual file system (VFS)](/docs/nightly/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF): Monitor
   IO, errors, deleted objects, and
   more for kernel virtual file systems (VFS) using the eBPF collector.
-- [Processes](/docs/nightly/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf): Monitor threads, task
+- [Processes](/docs/nightly/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF): Monitor threads, task
   exits, and errors using the eBPF collector.
 
 ### Hardware
 
-- [Adaptec RAID](/docs/nightly/data-collection/monitor-anything/hardware/adaptec-raid):
+- [Adaptec RAID](/docs/nightly/data-collection/monitor-anything/Hardware/Adaptec-RAID):
   Monitor logical and physical devices health
   metrics using the `arcconf` tool.
-- [CUPS](/docs/nightly/data-collection/monitor-anything/remotes/devices/cups.plugin): Monitor CUPS.
-- [FreeIPMI](/docs/nightly/data-collection/monitor-anything/devices/freeipmi.plugin):
+- [CUPS](/docs/nightly/data-collection/monitor-anything/Remotes/Devices/cups.plugin): Monitor CUPS.
+- [FreeIPMI](/docs/nightly/data-collection/monitor-anything/Devices/freeipmi.plugin):
   Uses `libipmimonitoring-dev` or `libipmimonitoring-devel` to
   monitor the number of sensors, temperatures, voltages, currents, and more.
-- [Hard drive temperature](/docs/nightly/data-collection/monitor-anything/hardware/hard-drive-temperature):
+- [Hard drive temperature](/docs/nightly/data-collection/monitor-anything/Hardware/Hard-drive-temperature):
   Monitor the temperature of storage
   devices.
-- [HP Smart Storage Arrays](/docs/nightly/data-collection/monitor-anything/storage/hp-smart-storage-arrays):
+- [HP Smart Storage Arrays](/docs/nightly/data-collection/monitor-anything/Storage/HP-Smart-Storage-Arrays):
   Monitor controller, cache module, logical
   and physical drive state, and temperature using the `ssacli` tool.
-- [MegaRAID controllers](/docs/nightly/data-collection/monitor-anything/devices/megaraid-controllers):
+- [MegaRAID controllers](/docs/nightly/data-collection/monitor-anything/Devices/MegaRAID-controllers):
   Collect adapter, physical drives, and
   battery stats using the `megacli` tool.
-- [NVIDIA GPU](/docs/nightly/data-collection/monitor-anything/devices/nvidia_smi-python.d.plugin): Monitor
+- [NVIDIA GPU](/docs/nightly/data-collection/monitor-anything/Devices/nvidia_smi-python.d.plugin): Monitor
   performance metrics (memory usage, fan
   speed, pcie bandwidth utilization, temperature, and more) using the `nvidia-smi` tool.
-- [Sensors](/docs/nightly/data-collection/monitor-anything/devices/sensors-python.d.plugin): Reads system
+- [Sensors](/docs/nightly/data-collection/monitor-anything/Devices/sensors-python.d.plugin): Reads system
   sensors information (temperature, voltage,
   electric current, power, and more) from `/sys/devices/`.
-- [S.M.A.R.T](/docs/nightly/data-collection/monitor-anything/devices/s.m.a.r.t.-attributes): Reads
+- [S.M.A.R.T](/docs/nightly/data-collection/monitor-anything/Devices/S.M.A.R.T.-attributes): Reads
   SMART Disk Monitoring daemon logs.
 
 ### Memory
 
-- [Available memory](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Tracks changes in
+- [Available memory](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Tracks changes in
   available RAM using the `proc.plugin` collector.
-- [Committed memory](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitor committed
+- [Committed memory](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitor committed
   memory using the `proc.plugin` collector.
-- [Huge pages](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Gather metrics about
+- [Huge pages](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Gather metrics about
   huge pages in Linux and FreeBSD with the
   `proc.plugin` collector.
-- [KSM](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Measure the amount of merging,
+- [KSM](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Measure the amount of merging,
   savings, and effectiveness using the
   `proc.plugin` collector.
-- [Numa](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Gather metrics on the number
+- [Numa](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Gather metrics on the number
   of non-uniform memory access (NUMA) events
   every second using the `proc.plugin` collector.
-- [Page faults](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Collect the number of
+- [Page faults](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Collect the number of
   memory page faults per second using the
   `proc.plugin` collector.
-- [RAM](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Collect metrics on system RAM,
+- [RAM](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Collect metrics on system RAM,
   available RAM, and more using the
   `proc.plugin` collector.
-- [SLAB](/docs/nightly/data-collection/monitor-anything/system-metrics/slabinfo.plugin): Collect kernel SLAB
+- [SLAB](/docs/nightly/data-collection/monitor-anything/System Metrics/slabinfo.plugin): Collect kernel SLAB
   details on Linux systems.
-- [swap](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitor the amount of free
+- [swap](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitor the amount of free
   and used swap at every second using the
   `proc.plugin` collector.
-- [Writeback memory](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Collect how much
+- [Writeback memory](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Collect how much
   memory is actively being written to disk at
   every second using the `proc.plugin` collector.
 
 ### Networks
 
-- [Access points](/docs/nightly/data-collection/monitor-anything/remotes/devices/access-points): Visualizes
+- [Access points](/docs/nightly/data-collection/monitor-anything/Remotes/Devices/Access-points): Visualizes
   data related to access points.
-- [Ping](/docs/nightly/data-collection/monitor-anything/qos/ping): Measure network latency, jitter and
+- [Ping](/docs/nightly/data-collection/monitor-anything/Qos/Ping): Measure network latency, jitter and
   packet loss between the monitored node
   and any number of remote network end points.
-- [Netfilter](/docs/nightly/data-collection/monitor-anything/networking/netfilter-statistics-nfacct.plugin): Collect netfilter
+- [Netfilter](/docs/nightly/data-collection/monitor-anything/Networking/Netfilter-statistics-nfacct.plugin): Collect netfilter
   firewall, connection tracker, and accounting
   metrics using `libmnl` and `libnetfilter_acct`.
-- [Network stack](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitor the
+- [Network stack](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitor the
   networking stack for errors, TCP connection aborts,
   bandwidth, and more.
-- [Network QoS](/docs/nightly/data-collection/monitor-anything/networking/tc.plugin): Collect traffic QoS
+- [Network QoS](/docs/nightly/data-collection/monitor-anything/Networking/tc.plugin): Collect traffic QoS
   metrics (`tc`) of Linux network interfaces.
-- [SYNPROXY](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitor entries uses, SYN
+- [SYNPROXY](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitor entries uses, SYN
   packets received, TCP cookies, and more.
 
 ### Operating systems
 
-- [freebsd.plugin](/docs/nightly/data-collection/monitor-anything/system-metrics/freebsd-system-metrics-freebsd.plugin): Collect resource
+- [freebsd.plugin](/docs/nightly/data-collection/monitor-anything/System Metrics/FreeBSD-system-metrics-freebsd.plugin): Collect resource
   usage and performance data on FreeBSD systems.
-- [macOS](/docs/nightly/data-collection/monitor-anything/system-metrics/macos.plugin): Collect resource usage and
+- [macOS](/docs/nightly/data-collection/monitor-anything/System Metrics/macos.plugin): Collect resource usage and
   performance data on macOS systems.
 
 ### Processes
 
-- [Applications](/docs/nightly/data-collection/monitor-anything/system-metrics/application-monitoring): Gather CPU, disk,
+- [Applications](/docs/nightly/data-collection/monitor-anything/System Metrics/Application-monitoring): Gather CPU, disk,
   memory, network, eBPF, and other metrics per
   application using the `apps.plugin` collector.
-- [systemd](/docs/nightly/data-collection/monitor-anything/virtualized-environments/containers/monitor-cgroups): Monitor the CPU and
+- [systemd](/docs/nightly/data-collection/monitor-anything/Virtualized Environments/Containers/Monitor-Cgroups): Monitor the CPU and
   memory usage of systemd services using the
   `cgroups.plugin` collector.
-- [systemd unit states](/docs/nightly/data-collection/monitor-anything/system-metrics/systemd-units): See the
+- [systemd unit states](/docs/nightly/data-collection/monitor-anything/System Metrics/Systemd-units): See the
   state (active, inactive, activating, deactivating, failed) of various systemd unit types.
-- [System processes](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Collect metrics
+- [System processes](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Collect metrics
   on system load and total processes running
   using `/proc/loadavg` and the `proc.plugin` collector.
-- [Uptime](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitor the uptime of a
+- [Uptime](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitor the uptime of a
   system using the `proc.plugin` collector.
 
 ### Resources
 
-- [CPU frequency](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitor CPU
+- [CPU frequency](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitor CPU
   frequency, as set by the `cpufreq` kernel module,
   using the `proc.plugin` collector.
-- [CPU idle](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Measure CPU idle every
+- [CPU idle](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Measure CPU idle every
   second using the `proc.plugin` collector.
-- [CPU performance](/docs/nightly/data-collection/monitor-anything/system-metrics/cpu-performance-statistics-perf.plugin): Collect CPU
+- [CPU performance](/docs/nightly/data-collection/monitor-anything/System Metrics/CPU-performance-statistics-perf.plugin): Collect CPU
   performance metrics using performance monitoring
   units (PMU).
-- [CPU throttling](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Gather metrics
+- [CPU throttling](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Gather metrics
   about thermal throttling using the `/proc/stat`
   module and the `proc.plugin` collector.
-- [CPU utilization](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Capture CPU
+- [CPU utilization](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Capture CPU
   utilization, both system-wide and per-core, using
   the `/proc/stat` module and the `proc.plugin` collector.
-- [Entropy](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitor the available
+- [Entropy](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitor the available
   entropy on a system using the `proc.plugin`
   collector.
-- [Interprocess Communication (IPC)](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin):
+- [Interprocess Communication (IPC)](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin):
   Monitor IPC semaphores and shared memory
   using the `proc.plugin` collector.
-- [Interrupts](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Monitor interrupts per
+- [Interrupts](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Monitor interrupts per
   second using the `proc.plugin` collector.
-- [IdleJitter](/docs/nightly/data-collection/monitor-anything/qos/idlejitter.plugin): Measure CPU
+- [IdleJitter](/docs/nightly/data-collection/monitor-anything/Qos/idlejitter.plugin): Measure CPU
   latency and jitter on all operating systems.
-- [SoftIRQs](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Collect metrics on
+- [SoftIRQs](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Collect metrics on
   SoftIRQs, both system-wide and per-core, using the
   `proc.plugin` collector.
-- [SoftNet](/docs/nightly/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin): Capture SoftNet events per
+- [SoftNet](/docs/nightly/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin): Capture SoftNet events per
   second, both system-wide and per-core,
   using the `proc.plugin` collector.
 
 ### Users
 
-- [systemd-logind](/docs/nightly/data-collection/monitor-anything/system-metrics/logind-go.d.plugin-recommended): Monitor active
+- [systemd-logind](/docs/nightly/data-collection/monitor-anything/System Metrics/logind-go.d.plugin-Recommended): Monitor active
   sessions, users, and seats tracked
   by `systemd-logind` or `elogind`.
-- [User/group usage](/docs/nightly/data-collection/monitor-anything/system-metrics/application-monitoring): Gather CPU, disk,
+- [User/group usage](/docs/nightly/data-collection/monitor-anything/System Metrics/Application-monitoring): Gather CPU, disk,
   memory, network, and other metrics per user
   and user group using the `apps.plugin` collector.
 
@@ -593,10 +593,10 @@ collectors are described only in code and associated charts in Netdata dashboard
 - [ACLK (code only)](https://github.com/netdata/netdata/blob/master/aclk/legacy/aclk_stats.c): View whether a Netdata
   Agent is connected to Netdata Cloud via the [ACLK](/docs/nightly/deployment-in-production/agent-cloud-link-aclk), the
   volume of queries, process times, and more.
-- [Alarms](/docs/nightly/data-collection/monitor-anything/netdata/alarms): This collector
+- [Alarms](/docs/nightly/data-collection/monitor-anything/Netdata/Alarms): This collector
   creates an
   **Alarms** menu with one line plot showing the alarm states of a Netdata Agent over time.
-- [Anomalies](/docs/nightly/data-collection/monitor-anything/generic-collectors/anomalies): This
+- [Anomalies](/docs/nightly/data-collection/monitor-anything/Generic Collectors/anomalies): This
   collector uses the
   Python PyOD library to perform unsupervised anomaly detection on your Netdata charts and/or dimensions.
 - [Exporting (code only)](https://github.com/netdata/netdata/blob/master/exporting/send_internal_metrics.c): Gather
@@ -638,7 +638,7 @@ In general the below steps should be sufficient to use a third party collector.
 3. [Edit configuration file](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#configure-a-collector)
    from step 2 if required.
 4. [Enable collector](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#enable-a-collector-or-its-orchestrator).
-5. [Restart Netdata](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/start-stop-or-restart-the-netdata-agent)
+5. [Restart Netdata](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent)
 
 For example below are the steps to enable
 the [Python ClickHouse collector](https://github.com/netdata/community/tree/main/collectors/python.d.plugin/clickhouse).
@@ -679,7 +679,7 @@ $ sudo systemctl restart netdata
 
 ## Etc
 
-- [charts.d example](/docs/nightly/data-collection/monitor-anything/mock-collectors/example-charts.d.plugin): An
+- [charts.d example](/docs/nightly/data-collection/monitor-anything/Mock Collectors/example-charts.d.plugin): An
   example `charts.d` collector.
-- [python.d example](/docs/nightly/data-collection/monitor-anything/mock-collectors/example-module-in-python): An
+- [python.d example](/docs/nightly/data-collection/monitor-anything/Mock Collectors/Example-module-in-Python): An
   example `python.d` collector.

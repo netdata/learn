@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/contributi
 sidebar_label: "Netdata style guide"
 learn_status: "Published"
 learn_rel_path: "Improving Netdata - developers/Contribute to the documentation"
-sidebar_position: "311"
+sidebar_position: "310.0"
 description: "The Netdata style guide establishes editorial guidelines for all of Netdata's writing, including documentation, blog posts, in-product UX copy, and more."
 ---
 # Netdata style guide
@@ -305,7 +305,7 @@ Netdata Agent installation will have commands under the same paths. When applica
 path, providing a recommendation or instructions on how to view the running configuration, which includes the correct
 paths.
 
-For example, the [configuration](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration) doc first
+For example, the [configuration](/docs/nightly/getting-started/manage-and-configure/configuration) doc first
 teaches users how to find the Netdata config
 directory and navigate to it, then runs commands from the `/etc/netdata` path so that the instructions are more
 universal.
@@ -315,7 +315,7 @@ Don't include full paths, beginning from the system's root (`/`), as these might
 |                 |                                                                                                                                                                                                                                                                                                    |
 |-----------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Not recommended | Use `edit-config` to edit Netdata's configuration: `sudo /etc/netdata/edit-config netdata.conf`.                                                                                                                                                                                                   |
-| **Recommended** | Use `edit-config` to edit Netdata's configuration by first navigating to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory), which is typically at `/etc/netdata`, then running `sudo edit-config netdata.conf`. |
+| **Recommended** | Use `edit-config` to edit Netdata's configuration by first navigating to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure/configuration#the-netdata-config-directory), which is typically at `/etc/netdata`, then running `sudo edit-config netdata.conf`. |
 
 ### `sudo`
 
