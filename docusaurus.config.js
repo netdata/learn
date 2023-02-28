@@ -10,19 +10,6 @@ module.exports = {
 	favicon: 'img/favicon-32x32.png',
 	organizationName: 'netdata',
 	projectName: 'netdata',
-	themes: [
-		// this is from https://github.com/easyops-cn/docusaurus-search-local
-		[
-			require.resolve("@easyops-cn/docusaurus-search-local"),
-			{
-				indexDocs: true,
-				indexBlog: false,
-				hashed: true,
-				highlightSearchTermsOnTargetPage: false,
-				explicitSearchResultPath: true,
-			},
-		],
-	],
 	themeConfig: {
 		image: 'img/netdata_meta-default.png',
 		prism: {

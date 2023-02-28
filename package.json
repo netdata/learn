@@ -20,7 +20,6 @@
 		"@docusaurus/mdx-loader": "^2.3.1",
 		"@docusaurus/preset-classic": "^2.3.1",
 		"@docusaurus/theme-common": "^2.3.1",
-		"@easyops-cn/docusaurus-search-local": "^0.33.6",
 		"@mdx-js/react": "^1.6.21",
 		"@tailwindcss/typography": "^0.4.0",
 		"@types/react": "^18.0.21",
