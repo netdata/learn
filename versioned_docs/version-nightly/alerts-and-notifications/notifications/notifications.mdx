@@ -3,12 +3,12 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/monitor/en
 sidebar_label: "Notifications"
 learn_status: "Published"
 learn_rel_path: "Alerts and notifications/Notifications"
-sidebar_position: "255"
+sidebar_position: "255.0"
 description: "Send Netdata alarms from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution."
 ---
 
 
-# Enable alert notifications
+# Alert notifications
 
 Netdata offers two ways to receive alert notifications on external platforms. These methods work independently _or_ in
 parallel, which means you can enable both at the same time to send alert notifications to any number of endpoints.
@@ -98,7 +98,7 @@ want to see alert notifications from Netdata. Click the green **Add to Slack** b
 
 On the following page, you'll receive a **Webhook URL**. That's what you'll need to configure Netdata, so keep it handy.
 
-Navigate to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration#the-netdata-config-directory) and use `edit-config` to
+Navigate to your [Netdata config directory](/docs/nightly/getting-started/manage-and-configure/configuration#the-netdata-config-directory) and use `edit-config` to
 open the `health_alarm_notify.conf` file:
 
 ```bash

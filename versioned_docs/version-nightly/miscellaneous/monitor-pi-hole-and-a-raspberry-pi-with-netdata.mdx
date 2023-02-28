@@ -3,13 +3,13 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/mon
 sidebar_label: "Monitor Pi-hole (and a Raspberry Pi) with Netdata"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
-sidebar_position: "383"
+sidebar_position: "382.0"
 description: "Monitor Pi-hole metrics, plus Raspberry Pi system metrics, in minutes and completely for free with Netdata's open-source monitoring agent."
 ---
 
-import { OneLineInstallWget } from '@site/src/components/OneLineInstall/'
 
-# Monitor Pi-hole (and a Raspberry Pi) with Netdata
+# Monitor Pi-hole (and a Raspberry Pi) with Netdataimport { OneLineInstallWget } from '@site/src/components/OneLineInstall/'
+
 
 Between intrusive ads, invasive trackers, and vicious malware, many techies and homelab enthusiasts are advancing their
 networks' security and speed with a tiny computer and a powerful piece of software: [Pi-hole](https://pi-hole.net/).
@@ -82,7 +82,7 @@ service](https://discourse.pi-hole.net/t/how-do-i-configure-my-devices-to-use-pi
 finished setting up Pi-hole at this point.
 
 As far as configuring Netdata to monitor Pi-hole metrics, there's nothing you actually need to do. Netdata's [Pi-hole
-collector](/docs/nightly/data-collection/monitor-anything/apps/pi-hole) will autodetect the new service
+collector](/docs/nightly/data-collection/monitor-anything/Apps/Pi-hole) will autodetect the new service
 running on your Raspberry Pi and immediately start collecting metrics every second.
 
 Restart Netdata with `sudo systemctl restart netdata`, which will then recognize that Pi-hole is running and start a
@@ -106,7 +106,7 @@ If you're completely new to Netdata, look at the [Introduction](/docs/nightly/ge
 ### Enable temperature sensor monitoring
 
 You need to manually enable Netdata's built-in [temperature sensor
-collector](/docs/nightly/data-collection/monitor-anything/devices/lm-sensors) to start collecting metrics.
+collector](/docs/nightly/data-collection/monitor-anything/Devices/lm-sensors) to start collecting metrics.
 
 > Netdata uses a few plugins to manage its [collectors](/docs/nightly/data-collection/collectors-configuration), each using a different language: Go,
 > Python, Node.js, and Bash. While our Go collectors are undergoing the most active development, we still support the

@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/packaging/insta
 sidebar_label: "One line installer (kickstart.sh)"
 learn_status: "Published"
 learn_rel_path: "Installation/Installation methods"
-sidebar_position: "49"
+sidebar_position: "49.0"
 description: "The kickstart.sh script installs Netdata from source, including all dependencies required to connect to Netdata Cloud, with a single command."
 ---
 
@@ -105,6 +105,7 @@ The `kickstart.sh` script accepts a number of optional parameters to control how
 - `--claim-proxy`: Specify a proxy to use when connecting to the cloud in the form of `http://[user:pass@]host:ip` for an HTTP(S) proxy.
   See [connecting through a proxy](/docs/nightly/getting-started/monitor-your-infrastructure/connect-agent-to-cloud#connect-through-a-proxy) for details.
 - `--claim-url`: Specify a URL to use when connecting to the cloud. Defaults to `https://api.netdata.cloud`.
+- `--override-distro`: Override the distro detection logic and assume the system is using a specific Linux distribution and release. Takes a single argument consisting of the values of the `ID`, `VERSION_ID`, and `VERSION_CODENAME` fields from `/etc/os-release` for the desired distribution.
 
 
 Additionally, the following environment variables may be used to further customize how the script runs (most users
@@ -163,7 +164,7 @@ If the script is valid, this command will return `OK, VALID`.
 
 ## What's next?
 
-When you're finished with installation, check out [how to monitor your infrastructure](/docs/nightly/getting-started/monitor-your-infrastructure), or skip straight to [configuring the Netdata Agent](/docs/nightly/getting-started/manage-and-configure-the-netdata-agent/configuration).
+When you're finished with installation, check out [how to monitor your infrastructure](/docs/nightly/getting-started/monitor-your-infrastructure), or skip straight to [configuring the Netdata Agent](/docs/nightly/getting-started/manage-and-configure/configuration).
 
 Read through Netdata's [documentation](https://learn.netdata.cloud/docs), which is structured based on actions and
 solutions, to enable features like health monitoring, alarm notifications, long-term metrics storage, exporting to
