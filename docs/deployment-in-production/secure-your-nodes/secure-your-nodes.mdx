@@ -87,7 +87,7 @@ that align with your goals and your organization's standards.
 This is the _recommended method for those who have connected their nodes to Netdata Cloud_ and prefer viewing real-time
 metrics using the War Room Overview, Nodes view, and Cloud dashboards.
 
-You can disable the local dashboard (and API) but retain the encrypted Agent-Cloud link ([ACLK](/docs/nightly/deployment-in-production/agent-cloud-link-aclk)) that
+You can disable the local dashboard (and API) but retain the encrypted Agent-Cloud link ([ACLK](/docs/deployment-in-production/agent-cloud-link-aclk)) that
 allows you to stream metrics on demand from your nodes via the Netdata Cloud interface. This change mitigates all
 concerns about revealing metrics and system design to the internet at large, while keeping all the functionality you
 need to view metrics and troubleshoot issues with Netdata Cloud.
@@ -100,11 +100,11 @@ static-threaded` setting, and change it to `none`.
     mode = none
 ```
 
-Save and close the editor, then [restart your Agent](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) using `sudo systemctl
+Save and close the editor, then [restart your Agent](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) using `sudo systemctl
 restart netdata`. If you try to visit the local dashboard to `http://NODE:19999` again, the connection will fail because
 that node no longer serves its local dashboard.
 
-> See the [configuration basics doc](/docs/nightly/getting-started/manage-and-configure/configuration) for details on how to find `netdata.conf` and use
+> See the [configuration basics doc](/docs/getting-started/manage-and-configure/configuration) for details on how to find `netdata.conf` and use
 > `edit-config`.
 
 ### Expose Netdata only in a private LAN
@@ -127,7 +127,7 @@ For `gvpe` we have developed a [simple provisioning tool](https://github.com/net
 ### Fine-grained access control
 
 If you want to keep using the local dashboard, but don't want it exposed to the internet, you can restrict access with
-[access lists](/docs/nightly/deployment-in-production/secure-your-nodes/web-server#access-lists). This method also fully retains the ability to stream metrics
+[access lists](/docs/deployment-in-production/secure-your-nodes/web-server#access-lists). This method also fully retains the ability to stream metrics
 on-demand through Netdata Cloud.
 
 The `allow connections from` setting helps you allow only certain IP addresses or FQDN/hostnames, such as a trusted
@@ -135,7 +135,7 @@ static IP, only `localhost`, or connections from behind a management LAN.
 
 By default, this setting is `localhost *`. This setting allows connections from `localhost` in addition to _all_
 connections, using the `*` wildcard. You can change this setting using Netdata's [simple
-patterns](/docs/nightly/improving-netdata---developers/libnetdata/simple-patterns).
+patterns](/docs/improving-netdata---developers/libnetdata/simple-patterns).
 
 ```conf
 [web]
@@ -162,19 +162,19 @@ The `allow connections from` setting is global and restricts access to the dashb
     allow management from = localhost
 ```
 
-See the [web server](/docs/nightly/deployment-in-production/secure-your-nodes/web-server#access-lists) docs for additional details about access lists. You can take
-access lists one step further by [enabling SSL](/docs/nightly/deployment-in-production/secure-your-nodes/web-server#enabling-tls-support) to encrypt data from local
+See the [web server](/docs/deployment-in-production/secure-your-nodes/web-server#access-lists) docs for additional details about access lists. You can take
+access lists one step further by [enabling SSL](/docs/deployment-in-production/secure-your-nodes/web-server#enabling-tls-support) to encrypt data from local
 dashboard in transit. The connection to Netdata Cloud is always secured with TLS.
 
 ### Use an authenticating web server in proxy mode
 
 Use one web server to provide authentication in front of **all your Netdata servers**. So, you will be accessing all your Netdata with URLs like `http://{HOST}/netdata/{NETDATA_HOSTNAME}/` and authentication will be shared among all of them (you will sign-in once for all your servers). Instructions are provided on how to set the proxy configuration to have Netdata run behind 
-[nginx](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/nginx), 
-[HAproxy](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/haproxy), 
-[Apache](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/apache), 
-[lighthttpd](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/lighttpd-v1.4.x), 
-[caddy](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/caddy), and
-[H2O](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/h2o).
+[nginx](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/nginx), 
+[HAproxy](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/haproxy), 
+[Apache](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/apache), 
+[lighthttpd](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/lighttpd-v1.4.x), 
+[caddy](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/caddy), and
+[H2O](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/h2o).
 
 To use this method, you should firewall protect all your Netdata servers, so that only the web server IP will be allowed to directly access Netdata. To do this, run this on each of your servers (or use your firewall manager):
 
@@ -243,17 +243,17 @@ Of course, there are many more methods you could use to protect Netdata:
 
 ### Registry or how to not send any information to a third party server
 
-The default configuration uses a public registry under registry.my-netdata.io (more information about the registry here: [mynetdata-menu-item](/docs/nightly/deployment-in-production/secure-your-nodes/registry) ). Please be aware that if you use that public registry, you submit the following information to a third party server: 
+The default configuration uses a public registry under registry.my-netdata.io (more information about the registry here: [mynetdata-menu-item](/docs/deployment-in-production/secure-your-nodes/registry) ). Please be aware that if you use that public registry, you submit the following information to a third party server: 
 
 -   The url where you open the web-ui in the browser (via http request referrer)
 -   The hostnames of the Netdata servers
 
-If sending this information to the central Netdata registry violates your security policies, you can configure Netdata to [run your own registry](/docs/nightly/deployment-in-production/secure-your-nodes/registry#run-your-own-registry).
+If sending this information to the central Netdata registry violates your security policies, you can configure Netdata to [run your own registry](/docs/deployment-in-production/secure-your-nodes/registry#run-your-own-registry).
 
 ### Opt-out of anonymous statistics
 
 Starting with v1.30, Netdata collects anonymous usage information by default and sends it to a self hosted PostHog instance within the Netdata infrastructure. Read
-about the information collected, and learn how to-opt, on our [anonymous telemetry events](/docs/nightly/deployment-in-production/secure-your-nodes/anonymous-telemetry-events) page.
+about the information collected, and learn how to-opt, on our [anonymous telemetry events](/docs/deployment-in-production/secure-your-nodes/anonymous-telemetry-events) page.
 
 The usage statistics are _vital_ for us, as we use them to discover bugs and prioritize new features. We thank you for
 _actively_ contributing to Netdata's future.

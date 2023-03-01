@@ -13,17 +13,17 @@ replicate metrics data across multiple nodes, or centralize all your metrics dat
 (TSDB).
 
 When one node streams metrics to another, the node receiving metrics can visualize them on the dashboard, run health checks to 
-[trigger alarms](/docs/nightly/getting-started/monitor-your-infrastructure/view-active-alerts) and 
-[send notifications](/docs/nightly/alerts-and-notifications/notifications), and
-[export](/docs/nightly/exporting-data) all metrics to an external TSDB. When Netdata streams metrics to another
+[trigger alarms](/docs/getting-started/monitor-your-infrastructure/view-active-alerts) and 
+[send notifications](/docs/alerts-and-notifications/notifications), and
+[export](/docs/exporting-data) all metrics to an external TSDB. When Netdata streams metrics to another
 Netdata, the receiving one is able to perform everything a Netdata instance is capable of.
 
 Streaming lets you decide exactly how you want to store and maintain metrics data. While we believe Netdata's
-[distributed architecture](/docs/nightly/getting-started/distributed-data-architecture) is 
+[distributed architecture](/docs/getting-started/distributed-data-architecture) is 
 ideal for speed and scale, streaming provides centralization options and high data availability.
 
 This document will get you started quickly with streaming. More advanced concepts and suggested production deployments
-can be found in the [streaming and replication reference](/docs/nightly/deployment-in-production/streaming-and-replication/streaming-configuration-reference).
+can be found in the [streaming and replication reference](/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference).
 
 ## Streaming basics
 
@@ -78,7 +78,7 @@ store all the metrics from the Netdata children running on the ephemeral nodes.
 
 The parent Netdata node can also archive metrics, for all its child nodes, to an external time-series database.
 
-Check the Netdata [exporting documentation](/docs/nightly/exporting-data) for configuring this.
+Check the Netdata [exporting documentation](/docs/exporting-data) for configuring this.
 
 This is how such a solution will work:
 
@@ -103,7 +103,7 @@ parent node, and both nodes retain metrics in their own databases.
 To configure replication, you need two nodes, each running Netdata. First you'll first enable streaming on your parent
 node, then enable streaming on your child node. When you're finished, you'll be able to see the child node's metrics in
 the parent node's dashboard, quickly switch between the two dashboards, and be able to serve 
-[alarm notifications](/docs/nightly/alerts-and-notifications/notifications) from either or both nodes.
+[alarm notifications](/docs/alerts-and-notifications/notifications) from either or both nodes.
 
 ### Enable streaming on the parent node
 
@@ -114,8 +114,8 @@ itself while initiating a streaming connection. Copy that into a separate text f
 
 > Find out how to [install `uuidgen`](https://command-not-found.com/uuidgen) on your node if you don't already have it.
 
-Next, open `stream.conf` using [`edit-config`](/docs/nightly/getting-started/manage-and-configure/configuration#use-edit-config-to-edit-configuration-files)
-from within the [Netdata config directory](/docs/nightly/getting-started/manage-and-configure/configuration#the-netdata-config-directory).
+Next, open `stream.conf` using [`edit-config`](/docs/getting-started/manage-and-configure/configuration#use-edit-config-to-edit-configuration-files)
+from within the [Netdata config directory](/docs/getting-started/manage-and-configure/configuration#the-netdata-config-directory).
 
 ```bash
 cd /etc/netdata
@@ -139,7 +139,7 @@ simplified version of the configuration, minus the commented lines, looks like t
 ```
 
 Save the file and close it, then restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system.
+method](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system.
 
 ### Enable streaming on the child node
 
@@ -160,7 +160,7 @@ looks like the following:
 ```
 
 Save the file and close it, then restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system.
+method](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system.
 
 ### Enable TLS/SSL on streaming (optional)
 
@@ -180,7 +180,7 @@ sudo chown netdata:netdata /etc/netdata/ssl/cert.pem /etc/netdata/ssl/key.pem
 
 Next, enforce TLS/SSL on the web server. Open `netdata.conf`, scroll down to the `[web]` section, and look for the `bind
 to` setting. Add `^SSL=force` to turn on TLS/SSL. See the [web server
-reference](/docs/nightly/deployment-in-production/secure-your-nodes/web-server#enabling-tls-support) for other TLS/SSL options.
+reference](/docs/deployment-in-production/secure-your-nodes/web-server#enabling-tls-support) for other TLS/SSL options.
 
 ```conf
 [web]
@@ -200,7 +200,7 @@ self-signed certificates.
 ```
 
 Restart both the parent and child nodes with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system, to stream encrypted metrics using TLS/SSL.
+method](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system, to stream encrypted metrics using TLS/SSL.
 
 ### View streamed metrics in Netdata Cloud
 

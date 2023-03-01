@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 Netdata is a free and open-source (FOSS) monitoring agent that collects thousands of hardware and software metrics from
 any physical or virtual system (we call them _nodes_). These metrics are organized in an easy-to-use and -navigate interface.
 
-Together with [Netdata Cloud](/docs/nightly/getting-started/monitor-your-infrastructure), you can monitor your entire infrastructure in
+Together with [Netdata Cloud](/docs/getting-started/monitor-your-infrastructure), you can monitor your entire infrastructure in
 real time and troubleshoot problems that threaten the health of your nodes.
 
 Netdata runs permanently on all your physical/virtual servers, containers, cloud deployments, and edge/IoT devices. It
@@ -32,7 +32,7 @@ To install Netdata in minutes on your platform:
 3. Select the platform you want to install Netdata to, copy and paste the script into your node's terminal, and run it
 
 Upon installation completing successfully, you should be able to see the node live in your Netdata Space and live charts
-in the Overview tab. [Read more about the cloud features](/docs/nightly/getting-started/monitor-your-infrastructure).
+in the Overview tab. [Read more about the cloud features](/docs/getting-started/monitor-your-infrastructure).
 
 Where you go from here is based on your use case, immediate needs, and experience with monitoring and troubleshooting,
 but we have some hints on what you might want to do next.
@@ -46,36 +46,36 @@ for the [single line installer](#install-on-linux-with-one-line-installer), or [
 
 To access the UI provided by the locally installed agent, open a browser and navigate to `http://NODE:19999`, replacing `NODE` with either `localhost` or
 the hostname/IP address of the remote node. You can also read more about
-[the agent dashboard](/docs/nightly/visualizations/agent-dashboard).
+[the agent dashboard](/docs/visualizations/agent-dashboard).
 
 #### Configuration
 
-Discover the recommended way to [configure Netdata's settings or behavior](/docs/nightly/getting-started/manage-and-configure/configuration) using our built-in
+Discover the recommended way to [configure Netdata's settings or behavior](/docs/getting-started/manage-and-configure/configuration) using our built-in
 `edit-config` script, then apply that knowledge to mission-critical tweaks, such as [changing how long Netdata stores
-metrics](/docs/nightly/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics).
+metrics](/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics).
 
 #### Data collection
 
 If Netdata didn't autodetect all the hardware, containers, services, or applications running on your node, you should
-learn more about [how data collectors work](/docs/nightly/data-collection). If there's a [supported
-collector](/docs/nightly/data-collection/monitor-anything) for metrics you need, [configure the collector](/docs/nightly/data-collection/collectors-configuration)
+learn more about [how data collectors work](/docs/data-collection). If there's a [supported
+collector](/docs/data-collection/monitor-anything) for metrics you need, [configure the collector](/docs/data-collection/collectors-configuration)
 or read about its requirements to configure your endpoint to publish metrics in the correct format and endpoint.
 
 #### Alarms & notifications
 
 Netdata comes with hundreds of preconfigured alarms, designed by our monitoring gurus in parallel with our open-source
-community, but you may want to [edit alarms](/docs/nightly/alerts-and-notifications/configure-alerts) or
-[enable notifications](/docs/nightly/alerts-and-notifications/notifications) to customize your Netdata experience.
+community, but you may want to [edit alarms](/docs/alerts-and-notifications/configure-alerts) or
+[enable notifications](/docs/alerts-and-notifications/notifications) to customize your Netdata experience.
 
 #### Make your deployment production ready
 
-Go through our [deployment strategies](/docs/nightly/deployment-in-production),
+Go through our [deployment strategies](/docs/deployment-in-production),
 for suggested configuration changes for production deployments.
 
 ## Install on Linux with one-line installer
 
 The **recommended** way to install Netdata on a Linux node (physical, virtual, container, IoT) is our one-line
-[kickstart script](/docs/nightly/installation/installation-methods/one-line-installer-kickstart.sh).
+[kickstart script](/docs/installation/installation-methods/one-line-installer-kickstart.sh).
 This script automatically installs dependencies and builds Netdata from its source code.
 
 To install, copy the script, paste it into your node's terminal, and hit `Enter` to begin the installation process.
@@ -107,45 +107,45 @@ troubleshooting with Netdata.
 
 <InstallRegexLink>
   <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/installation-methods/docker)"
+    to="[](/docs/installation/installation-methods/docker)"
     os="Run with Docker"
     svg="docker" />
   <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/install-on-specific-environments/kubernetes)"
+    to="[](/docs/installation/install-on-specific-environments/kubernetes)"
     os="Deploy on Kubernetes"
     svg="kubernetes" />
    <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/install-on-specific-environments/macos)"
+    to="[](/docs/installation/install-on-specific-environments/macos)"
     os="Install on macOS"
     svg="macos" />
   <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/installation-methods/native-deb-rpm-packages)"
+    to="[](/docs/installation/installation-methods/native-deb-rpm-packages)"
     os="Native DEB/RPM packages"
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/installation-methods/from-a-git-checkout)"
+    to="[](/docs/installation/installation-methods/from-a-git-checkout)"
     os="Linux from Git"
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/package-maintainers/manually-build-netdata-from-source)"
+    to="[](/docs/installation/package-maintainers/manually-build-netdata-from-source)"
     os="Linux from source"
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/nightly/installation/installation-methods/offline-systems)"
+    to="[](/docs/installation/installation-methods/offline-systems)"
     os="Linux for offline nodes"
     svg="linux" />
 </InstallRegexLink>
 
-- [Native DEB/RPM packages](/docs/nightly/installation/installation-methods/native-deb-rpm-packages)
-- [Run with Docker](/docs/nightly/installation/installation-methods/docker)
-- [Deploy on Kubernetes](/docs/nightly/installation/install-on-specific-environments/kubernetes)
-- [Install on macOS](/docs/nightly/installation/install-on-specific-environments/macos)
-- [Linux from Git](/docs/nightly/installation/installation-methods/from-a-git-checkout)
-- [Linux from source](/docs/nightly/installation/package-maintainers/manually-build-netdata-from-source)
-- [Linux for offline nodes](/docs/nightly/installation/installation-methods/offline-systems)
+- [Native DEB/RPM packages](/docs/installation/installation-methods/native-deb-rpm-packages)
+- [Run with Docker](/docs/installation/installation-methods/docker)
+- [Deploy on Kubernetes](/docs/installation/install-on-specific-environments/kubernetes)
+- [Install on macOS](/docs/installation/install-on-specific-environments/macos)
+- [Linux from Git](/docs/installation/installation-methods/from-a-git-checkout)
+- [Linux from source](/docs/installation/package-maintainers/manually-build-netdata-from-source)
+- [Linux for offline nodes](/docs/installation/installation-methods/offline-systems)
 
 The full list of all installation methods for various systems is available in [Netdata Learn](https://learn.netdata.cloud),
-under [Installation](/docs/nightly/installation).
+under [Installation](/docs/installation).
 
 ## Advanced installation options and troubleshooting
 
@@ -162,7 +162,7 @@ wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/
 ```
 
 With automatic updates disabled, you can choose exactly when and how you [update
-Netdata](/docs/nightly/installation/update-netdata).
+Netdata](/docs/installation/update-netdata).
 
 #### Network usage of Netdata’s automatic updater
 
@@ -205,7 +205,7 @@ the community helps fix any bugs that might have been introduced in previous rel
 
 ### Anonymous statistics
 
-Starting with v1.30, Netdata collects anonymous usage information by default and sends it to a self-hosted PostHog instance within the Netdata infrastructure. Read about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/nightly/deployment-in-production/secure-your-nodes/anonymous-telemetry-events) page.
+Starting with v1.30, Netdata collects anonymous usage information by default and sends it to a self-hosted PostHog instance within the Netdata infrastructure. Read about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/deployment-in-production/secure-your-nodes/anonymous-telemetry-events) page.
 
 The usage statistics are _vital_ for us, as we use them to discover bugs and prioritize new features. We thank you for
 _actively_ contributing to Netdata's future.
@@ -228,8 +228,8 @@ man-in-the-middle attacks.
 #### CentOS 6 and CentOS 8
 
 To install the Agent on certain CentOS and RHEL systems, you must enable non-default repositories, such as EPEL or
-PowerTools, to gather hard dependencies. See the [CentOS 6](/docs/nightly/installation/installation-methods/from-a-git-checkout#centos--rhel-6x) and
-[CentOS 8](/docs/nightly/installation/installation-methods/from-a-git-checkout#centos--rhel-8x) sections for more information.
+PowerTools, to gather hard dependencies. See the [CentOS 6](/docs/installation/installation-methods/from-a-git-checkout#centos--rhel-6x) and
+[CentOS 8](/docs/installation/installation-methods/from-a-git-checkout#centos--rhel-8x) sections for more information.
 
 #### Access to file is not permitted
 
@@ -263,6 +263,6 @@ both.
 
 Our current build process has some issues when using certain configurations of the `clang` C compiler on Linux. See [the
 section on `nonrepresentable section on output`
-errors](/docs/nightly/installation/installation-methods/from-a-git-checkout#nonrepresentable-section-on-output-errors) for a workaround.
+errors](/docs/installation/installation-methods/from-a-git-checkout#nonrepresentable-section-on-output-errors) for a workaround.
 
 

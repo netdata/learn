@@ -9,7 +9,7 @@ sidebar_position: "22.0"
 
 The Netdata daemon is practically a synonym for the Netdata Agent, as it controls its 
 entire operation. We support various methods to 
-[start, stop, or restart the daemon](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent).
+[start, stop, or restart the daemon](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent).
 
 This document provides some basic information on the command line options, log files, and how to debug and troubleshoot
 
@@ -121,7 +121,7 @@ The command line options of the Netdata 1.10.0 version are the following:
   - USR2                   Reload health configuration.
 ```
 
-You can send commands during runtime via [netdatacli](/docs/nightly/getting-started/manage-and-configure/agent-cli).
+You can send commands during runtime via [netdatacli](/docs/getting-started/manage-and-configure/agent-cli).
 
 ## Log files
 
@@ -157,7 +157,7 @@ When a Netdata program cannot run at all, a `FATAL` line is logged.
 
 ### collector.log
 
-The `collector.log` is the `stderr` of all [collectors](/docs/nightly/data-collection/monitor-anything)
+The `collector.log` is the `stderr` of all [collectors](/docs/data-collection/monitor-anything)
  run by `netdata`.
 
 So if any process, in the Netdata process tree, writes anything to its standard error,
@@ -287,7 +287,7 @@ all programs), edit `netdata.conf` and set:
   process nice level = -1
 ```
 
-then execute this to [restart Netdata](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent):
+then execute this to [restart Netdata](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent):
 
 ```sh
 sudo systemctl restart netdata

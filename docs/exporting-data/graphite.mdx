@@ -11,12 +11,12 @@ description: "Archive your Agent's metrics to a any Graphite database provider f
 # Export metrics to Graphite providers
 
 You can use the Graphite connector for
-the [exporting engine](/docs/nightly/exporting-data/exporting-reference) to archive your agent's
+the [exporting engine](/docs/exporting-data/exporting-reference) to archive your agent's
 metrics to Graphite providers for long-term storage, further analysis, or correlation with data from other sources.
 
 ## Prerequisites
 
-You have already [installed Netdata](/docs/nightly/getting-started/install-netdata) and 
+You have already [installed Netdata](/docs/getting-started/install-netdata) and 
 Graphite.
 
 ## Configuration
@@ -74,9 +74,9 @@ The final result for a remote, secured host should be the following:
     # send hosts matching = localhost *
 ```
 
-We'll not worry about the [rest of the settings](/docs/nightly/exporting-data/exporting-reference#options)
+We'll not worry about the [rest of the settings](/docs/exporting-data/exporting-reference#options)
  for now. Restart the Agent using `sudo systemctl restart netdata`, or the
-[appropriate method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your
+[appropriate method](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your
 system, to spin up the exporting engine.
 
 ## See and organize Netdata metrics in Graphite
@@ -135,4 +135,4 @@ configuration block, there are many other ways to tweak and customize which metr
 often.
 
 For full details about each configuration option and what it does, see 
-the [exporting reference guide](/docs/nightly/exporting-data/exporting-reference).
+the [exporting reference guide](/docs/exporting-data/exporting-reference).

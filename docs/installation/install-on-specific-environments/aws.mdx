@@ -12,12 +12,12 @@ description: "The Netdata Agent runs on all popular cloud providers, but often r
 
 Netdata is fully compatible with Amazon Web Services (AWS).
 You can install Netdata on cloud instances to monitor the apps/services running there, or use
-multiple instances in a [parent-child streaming](/docs/nightly/deployment-in-production/streaming-and-replication/streaming-configuration-reference) configuration.
+multiple instances in a [parent-child streaming](/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference) configuration.
 
 ## Recommended installation method
 
 The best installation method depends on the instance's operating system, distribution, and version. For Linux instances,
-we recommend the [`kickstart.sh` automatic installation script](/docs/nightly/installation/installation-methods/one-line-installer-kickstart.sh).
+we recommend the [`kickstart.sh` automatic installation script](/docs/installation/installation-methods/one-line-installer-kickstart.sh).
 
 If you have issues with Netdata after installation, look to the sections below to find the issue you're experiencing,
 followed by the solution for your provider.
@@ -42,11 +42,11 @@ command from a remote system, and it fails, it's likely that a firewall is block
 Another option is to put Netdata behind web server, which will proxy requests through standard HTTP/HTTPS ports
 (80/443), which are likely already open on your instance. We have a number of guides available:
 
--   [Apache](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/apache)
--   [Nginx](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/nginx)
--   [Caddy](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/caddy)
--   [HAProxy](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/haproxy)
--   [lighttpd](/docs/nightly/deployment-in-production/secure-your-nodes/reverse-proxies/lighttpd-v1.4.x)
+-   [Apache](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/apache)
+-   [Nginx](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/nginx)
+-   [Caddy](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/caddy)
+-   [HAProxy](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/haproxy)
+-   [lighttpd](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/lighttpd-v1.4.x)
 
 Sign in to the [AWS console](https://console.aws.amazon.com/) and navigate to the EC2 dashboard. Click on the **Security
 Groups** link in the navigation, beneath the **Network & Security** heading. Find the Security Group your instance

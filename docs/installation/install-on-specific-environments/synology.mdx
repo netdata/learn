@@ -14,12 +14,12 @@ description: "The Netdata Agent can be installed on AMD64-compatible NAS systems
 > details of the installation process, before proceeding.
 >
 > You can help improve this document by 
-> [submitting a PR](/docs/nightly/installation/install-on-specific-environments/synology) 
+> [submitting a PR](/docs/installation/install-on-specific-environments/synology) 
 > with your recommended improvements or changes. Thank you!
 
 
 The good news is that our 
-[one-line installation script](/docs/nightly/installation/installation-methods/one-line-installer-kickstart.sh) 
+[one-line installation script](/docs/installation/installation-methods/one-line-installer-kickstart.sh) 
 works fine if your NAS is one that uses the amd64 architecture. It
 will install the content into `/opt/netdata`, making future removal safe and simple.
 
@@ -32,7 +32,7 @@ installations run it as the `netdata` user, you might wish to do the same. This 
 2.  Create a user `netdata` via the Synology user interface. Give it no access to anything and a random password. Assign
     the user to the `netdata` group. Netdata will chuid to this user when running.
 3.  Change ownership of the following directories, as defined in 
-    [Netdata Security](/docs/nightly/deployment-in-production/secure-your-nodes#security-design):
+    [Netdata Security](/docs/deployment-in-production/secure-your-nodes#security-design):
 
 ```sh
 chown -R root:netdata /opt/netdata/usr/share/netdata

@@ -122,7 +122,7 @@ When the Netdata Agent starts, during the first data collection of each metric, 
 data from lower tiers, so that the aggregation they provide will be accurate.
 
 Configuring how the number of tiers and the disk space allocated to each tier is how you can 
-[change how long netdata stores metrics](/docs/nightly/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics).
+[change how long netdata stores metrics](/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics).
 
 ### Data Loss
 
@@ -265,7 +265,7 @@ Agent.
 ##### Information
 
 For more information about setting `[db].mode` on your nodes, in addition to other streaming configurations, see
-[streaming](/docs/nightly/deployment-in-production/streaming-and-replication/streaming-configuration-reference).
+[streaming](/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference).
 
 ## Requirements & limitations
 
@@ -291,7 +291,7 @@ An important observation is that RAM usage depends on both the `page cache size`
 options.
 
 You can use
-our [database engine calculator](/docs/nightly/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics)
+our [database engine calculator](/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics)
 to validate the memory requirements for your particular system(s) and configuration (**out-of-date**).
 
 ### Disk space
@@ -363,7 +363,7 @@ location is `/var/cache/netdata/dbengine/*`). The higher numbered filenames cont
 can safely delete some pairs of files when Netdata is stopped to manually free up some space.
 
 _Users should_ **back up** _their `./dbengine` folders if they consider this data to be important._ You can also set up
-one or more [exporting connectors](/docs/nightly/exporting-data/exporting-reference) to send your Netdata metrics to other databases for long-term
+one or more [exporting connectors](/docs/exporting-data/exporting-reference) to send your Netdata metrics to other databases for long-term
 storage at lower granularity.
 
 ## Operation

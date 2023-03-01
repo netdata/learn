@@ -11,7 +11,7 @@ sidebar_position: "378.0"
 
 [CockroachDB](https://github.com/cockroachdb/cockroach) is an open-source project that brings SQL databases into
 scalable, disaster-resilient cloud deployments. Thanks to
-a [new CockroachDB collector](/docs/nightly/data-collection/monitor-anything/Databases/CockroachDB)
+a [new CockroachDB collector](/docs/data-collection/monitor-anything/Databases/CockroachDB)
 released in
 [v1.20](https://blog.netdata.cloud/posts/release-1.20/), you can now monitor any number of CockroachDB databases with
 maximum granularity using Netdata. Collect more than 50 unique metrics and put them on interactive visualizations
@@ -38,7 +38,7 @@ display them on the dashboard.
 
 If your CockroachDB instance is accessible through `http://localhost:8080/` or `http://127.0.0.1:8080`, your setup is
 complete. Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system, and refresh your browser. You should see CockroachDB
+method](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system, and refresh your browser. You should see CockroachDB
 metrics in your Netdata dashboard!
 
 <figure>
@@ -115,4 +115,4 @@ cd /etc/netdata/ # Replace with your Netdata configuration directory, if not /et
 ./edit-config health.d/cockroachdb.conf # You may need to use `sudo` for write privileges
 ```
 
-For more information about editing the defaults or writing new alarm entities, see our documentation on [configuring health alarms](/docs/nightly/alerts-and-notifications/configure-alerts).
+For more information about editing the defaults or writing new alarm entities, see our documentation on [configuring health alarms](/docs/alerts-and-notifications/configure-alerts).

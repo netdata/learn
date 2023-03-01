@@ -15,30 +15,30 @@ systems, containers, and applications, but there are hundreds of settings to twe
 over your monitoring platform.
 
 This document assumes familiarity with
-using [`edit-config`](/docs/nightly/getting-started/manage-and-configure/configuration) from the Netdata config
+using [`edit-config`](/docs/getting-started/manage-and-configure/configuration) from the Netdata config
 directory.
 
 ## Change dashboards and visualizations
 
-The Netdata Agent's [local dashboard](/docs/nightly/visualizations/agent-dashboard), accessible
+The Netdata Agent's [local dashboard](/docs/visualizations/agent-dashboard), accessible
 at `http://NODE:19999` is highly configurable. If
 you use Netdata Cloud
-for [infrastructure monitoring](/docs/nightly/getting-started/monitor-your-infrastructure), you
+for [infrastructure monitoring](/docs/getting-started/monitor-your-infrastructure), you
 will see many of these
 changes reflected in those visualizations due to the way Netdata Cloud proxies metric data and metadata to your browser.
 
 ### Increase the long-term metrics retention period
 
 Read our doc
-on [increasing long-term metrics storage](/docs/nightly/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics)
+on [increasing long-term metrics storage](/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics)
 for details, including a
-[calculator](/docs/nightly/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics)
+[calculator](/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics#calculate-the-system-resources-ram-disk-space-needed-to-store-metrics)
 to help you determine the exact settings for your desired retention period.
 
 ### Reduce the data collection frequency
 
 Change `update every` in
-the [`[global]` section](/docs/nightly/getting-started/manage-and-configure/daemon-configuration#global-section-options)
+the [`[global]` section](/docs/getting-started/manage-and-configure/daemon-configuration#global-section-options)
 of `netdata.conf` so
 that it is greater than `1`. An `update every` of `5` means the Netdata Agent enforces a _minimum_ collection frequency
 of 5 seconds.
@@ -51,13 +51,13 @@ of 5 seconds.
 Every collector and plugin has its own `update every` setting, which you can also change in the `go.d.conf`,
 `python.d.conf` or `charts.d.conf` files, or in individual collector configuration files. If the `update
 every` for an individual collector is less than the global, the Netdata Agent uses the global setting. See
-the [enable or configure a collector](/docs/nightly/data-collection/collectors-configuration#enable-and-disable-a-specific-collection-module)
+the [enable or configure a collector](/docs/data-collection/collectors-configuration#enable-and-disable-a-specific-collection-module)
 doc for details.
 
 ### Disable a collector or plugin
 
 Turn off entire plugins in
-the [`[plugins]` section](/docs/nightly/getting-started/manage-and-configure/daemon-configuration#plugins-section-options)
+the [`[plugins]` section](/docs/getting-started/manage-and-configure/daemon-configuration#plugins-section-options)
 of
 `netdata.conf`.
 
@@ -83,9 +83,9 @@ sudo ./edit-config health.d/example-alarm.conf
 
 Or, append your new alarm to an existing file by editing a relevant existing file in the `health.d/` directory.
 
-Read more about [configuring alarms](/docs/nightly/alerts-and-notifications/configure-alerts) to
+Read more about [configuring alarms](/docs/alerts-and-notifications/configure-alerts) to
 get started, and see
-the [health monitoring reference](/docs/nightly/alerts-and-notifications/configure-alerts) for a full listing
+the [health monitoring reference](/docs/alerts-and-notifications/configure-alerts) for a full listing
 of options available in health entities.
 
 ### Configure a specific alarm
@@ -94,7 +94,7 @@ Tweak existing alarms by editing files in the `health.d/` directory. For example
 the Agent responds to anomalies related to CPU utilization.
 
 To see which configuration file you need to edit to configure a specific
-alarm, [view your active alarms](/docs/nightly/getting-started/monitor-your-infrastructure/view-active-alerts) in
+alarm, [view your active alarms](/docs/getting-started/monitor-your-infrastructure/view-active-alerts) in
 Netdata Cloud or the local Agent dashboard and look for the **source** line. For example, it might
 read `source  4@/usr/lib/netdata/conf.d/health.d/cpu.conf`.
 
@@ -116,14 +116,14 @@ template: disk_fill_rate
 ### Turn of all alarms and notifications
 
 Set `enabled` to `no` in
-the [`[health]` section](/docs/nightly/getting-started/manage-and-configure/daemon-configuration#health-section-options)
+the [`[health]` section](/docs/getting-started/manage-and-configure/daemon-configuration#health-section-options)
 section of
 `netdata.conf`.
 
 ### Enable alarm notifications
 
 Open `health_alarm_notify.conf` for editing. First, read the [enabling
-notifications](/docs/nightly/alerts-and-notifications/notifications#netdata-agent) doc
+notifications](/docs/alerts-and-notifications/notifications#netdata-agent) doc
 for an example of the process using Slack, then
 click on the link to your preferred notification method to find documentation for that specific endpoint.
 
@@ -132,12 +132,12 @@ click on the link to your preferred notification method to find documentation fo
 While the Netdata Agent is both [open and secure by design](https://www.netdata.cloud/blog/netdata-agent-dashboard/), we
 recommend every user take some action to administer and secure their nodes.
 
-Learn more about the available options in the [security design documentation](/docs/nightly/deployment-in-production/secure-your-nodes).
+Learn more about the available options in the [security design documentation](/docs/deployment-in-production/secure-your-nodes).
 
 ## Reduce resource usage
 
 Read
-our [performance optimization guide](/docs/nightly/deployment-in-production/how-to-optimize-the-netdata-agent-s-performance)
+our [performance optimization guide](/docs/deployment-in-production/how-to-optimize-the-netdata-agent-s-performance)
 for a long list of specific changes
 that can reduce the Netdata Agent's CPU/memory footprint and IO requirements.
 
@@ -148,7 +148,7 @@ and as metadata to Netdata Cloud, and help you organize the metrics coming from 
 defined in the section `[host labels]`.
 
 For a quick introduction, read
-the [host label guide](/docs/nightly/deployment-in-production/use-host-labels-to-organize-systems-metrics-and-alarms).
+the [host label guide](/docs/deployment-in-production/use-host-labels-to-organize-systems-metrics-and-alarms).
 
 The following restrictions apply to host label names:
 

@@ -66,8 +66,8 @@ Each of these sections provides the same number of charts:
 -   Network
     -   Sockets open (`apps.sockets`)
     
-In addition, if the [eBPF collector](/docs/nightly/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF) is running, your dashboard will also show an
-additional [list of charts](/docs/nightly/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF#integration-with-appsplugin) using low-level Linux
+In addition, if the [eBPF collector](/docs/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF) is running, your dashboard will also show an
+additional [list of charts](/docs/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF#integration-with-appsplugin) using low-level Linux
 metrics.
 
 The above are reported:
@@ -163,10 +163,10 @@ There are a few command line options you can pass to `apps.plugin`. The list of 
 ### Integration with eBPF
 
 If you don't see charts under the **eBPF syscall** or **eBPF net** sections, you should edit your
-[`ebpf.d.conf`](/docs/nightly/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF#configure-the-ebpf-collector) file to ensure the eBPF program is enabled.
+[`ebpf.d.conf`](/docs/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF#configure-the-ebpf-collector) file to ensure the eBPF program is enabled.
 
 Also see our [guide on troubleshooting apps with eBPF
-metrics](/docs/nightly/miscellaneous/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics) for ideas on how to interpret these charts in a
+metrics](/docs/miscellaneous/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics) for ideas on how to interpret these charts in a
 few scenarios.
 
 ## Permissions
@@ -237,7 +237,7 @@ Examples below for process group `sql`:
 -   Open Pipes ![image](https://registry.my-netdata.io/api/v1/badge.svg?chart=apps.pipes&dimensions=sql&value_color=green=0%7Cred)
 -   Open Sockets ![image](https://registry.my-netdata.io/api/v1/badge.svg?chart=apps.sockets&dimensions=sql&value_color=green%3E=3%7Cred)
 
-For more information about badges check [Generating Badges](/docs/nightly/improving-netdata---developers/web/api/netdata-badges)
+For more information about badges check [Generating Badges](/docs/improving-netdata---developers/web/api/netdata-badges)
 
 ## Comparison with console tools
 

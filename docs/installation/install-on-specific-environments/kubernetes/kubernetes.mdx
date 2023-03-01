@@ -13,9 +13,9 @@ import TabItem from '@theme/TabItem';
 
 # Install Netdata on Kubernetes
 
-This document details how to install Netdata on an existing Kubernetes (k8s) cluster, and connect it to Netdata Cloud. Read our [Kubernetes visualizations](/docs/nightly/visualizations/kubernetes-visualizations) documentation, to see what you will get.
+This document details how to install Netdata on an existing Kubernetes (k8s) cluster, and connect it to Netdata Cloud. Read our [Kubernetes visualizations](/docs/visualizations/kubernetes-visualizations) documentation, to see what you will get.
 
-The [Netdata Helm chart](/docs/nightly/installation/install-on-specific-environments/kubernetes/kubernetes-helm-chart-reference) installs one `parent` pod for storing metrics and managing alarm notifications, plus an additional
+The [Netdata Helm chart](/docs/installation/install-on-specific-environments/kubernetes/kubernetes-helm-chart-reference) installs one `parent` pod for storing metrics and managing alarm notifications, plus an additional
 `child` pod for every node in the cluster, responsible for collecting metrics from the node, Kubernetes control planes,
 pods/containers, and [supported application-specific
 metrics](https://github.com/netdata/helmchart#service-discovery-and-supported-services).
@@ -59,7 +59,7 @@ The installation process securely connects your Kubernetes cluster to stream met
   >  
   > If you plan to connect the node to Netdata Cloud, you can find the command with the right parameters by clicking the "Add Nodes" button in your Space's "Nodes" view.
 
-  For more installation options, please read our [Netdata Helm chart for Kubernetes](/docs/nightly/installation/install-on-specific-environments/kubernetes/kubernetes-helm-chart-reference) reference.
+  For more installation options, please read our [Netdata Helm chart for Kubernetes](/docs/installation/install-on-specific-environments/kubernetes/kubernetes-helm-chart-reference) reference.
 
 #### Expected Result
 
@@ -201,10 +201,10 @@ helm upgrade netdata netdata/netdata
 
 ## What's next?
 
-[Start Kubernetes monitoring](/docs/nightly/visualizations/kubernetes-visualizations) in Netdata Cloud, which comes with meaningful visualizations out of the box.
+[Start Kubernetes monitoring](/docs/visualizations/kubernetes-visualizations) in Netdata Cloud, which comes with meaningful visualizations out of the box.
 
 ### Related reference documentation
 
-- [Netdata Cloud · Kubernetes monitoring](/docs/nightly/visualizations/kubernetes-visualizations)
+- [Netdata Cloud · Kubernetes monitoring](/docs/visualizations/kubernetes-visualizations)
 - [Netdata Helm chart](https://github.com/netdata/helmchart)
 - [Netdata service discovery](https://github.com/netdata/agent-service-discovery/)

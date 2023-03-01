@@ -49,7 +49,7 @@ markdownFiles = []
 BROKEN_LINK_COUNTER= 0
 FAIL_ON_NETDATA_BROKEN_LINKS = False 
  #Temporarily until we release (change it (the default) to /docs
-version_prefix = "nightly"  # We use this as the version prefix in the link strategy
+# version_prefix = "nightly"  # We use this as the version prefix in the link strategy
 TEMP_FOLDER = "ingest-temp-folder"
 defaultRepos = {
     "netdata":
@@ -532,7 +532,7 @@ if __name__ == '__main__':
         "--docs-prefix",
         help="Don't save a file with the output.",
         dest="DOCS_PREFIX",
-        default="versioned_docs/version-nightly"
+        default="docs"
     )
     
     parser.add_argument(
@@ -662,9 +662,9 @@ if __name__ == '__main__':
     print("Fixing github links...")
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
     # pointing to GitHub relative paths
-    #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), indent=4))
+    #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER), indent=4))
     for file in toPublish:
-        fileDict = reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER)
+        fileDict = reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER)
         convertGithubLinks(fileDict[file]["learnPath"],fileDict , DOCS_PREFIX)
     print("Done.", "Broken Links:", BROKEN_LINK_COUNTER)
     print(FAIL_ON_NETDATA_BROKEN_LINKS, BROKEN_LINK_COUNTER)

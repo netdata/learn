@@ -41,7 +41,7 @@ export default function Home() {
 			<main className="container">
 				<Grid className="mb-16" columns="3">
 					<Box
-						to="/docs/get-started/"
+						to="/docs/getting-started/install-netdata"
 						title="Get started"
 						cta="Install now"
 						image={true}
@@ -51,7 +51,7 @@ export default function Home() {
 						container platforms (Kubernetes clusters, Docker), and many other
 						operating systems, with no <code>sudo</code> required.
 					</Box>
-					<Box to="/docs/" title="Docs" cta="Read the docs" image={false}>
+					<Box to="/docs/getting-started" title="Docs" cta="Read the docs" image={false}>
 						Solution- and action-based docs for Netdata's many features and
 						capabilities. Your table of contents to becoming an expert in using
 						Netdata to monitor and troubleshoot applications and their

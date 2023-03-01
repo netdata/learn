@@ -11,12 +11,12 @@ description: "Netdata Cloud features rich, zero-configuration Kubernetes monitor
 # Kubernetes visualizations
 
 Netdata Cloud features enhanced visualizations for the resource utilization of Kubernetes (k8s) clusters, embedded in
-the default [Overview](/docs/nightly/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view) dashboard.
+the default [Overview](/docs/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view) dashboard.
 
 These visualizations include a health map for viewing the status of k8s pods/containers, in addition to composite charts
 for viewing per-second CPU, memory, disk, and networking metrics from k8s nodes.
 
-See our [Kubernetes deployment instructions](/docs/nightly/installation/install-on-specific-environments/kubernetes) for details on
+See our [Kubernetes deployment instructions](/docs/installation/install-on-specific-environments/kubernetes) for details on
 installation and connecting to Netdata Cloud.
 
 ## Available Kubernetes metrics
@@ -79,7 +79,7 @@ and `k8s_node_name`. The default is `k8s_controller_name`.
 
 ### Filtering
 
-Filtering behaves identically to the [node filter in War Rooms](/docs/nightly/getting-started/monitor-your-infrastructure/war-rooms#node-filter), with the ability to
+Filtering behaves identically to the [node filter in War Rooms](/docs/getting-started/monitor-your-infrastructure/war-rooms#node-filter), with the ability to
 filter pods/containers by `container_id` and `namespace`.
 
 ### Detailed information
@@ -112,7 +112,7 @@ problematic behavior to investigate further, troubleshoot, and remediate with `k
 The Kubernetes composite charts show real-time and historical resource utilization metrics from nodes, pods, or
 containers within your Kubernetes deployment.
 
-See the [Overview](/docs/nightly/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view#definition-bar) doc for details on how composite charts work. These
+See the [Overview](/docs/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view#definition-bar) doc for details on how composite charts work. These
 work similarly, but in addition to visualizing _by dimension_ and _by node_, Kubernetes composite charts can also be
 grouped by the following labels:
 

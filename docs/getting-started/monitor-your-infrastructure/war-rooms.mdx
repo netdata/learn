@@ -25,26 +25,26 @@ Every War Rooms provides multiple views. Each view focus on a particular area/su
 this War Rooms. Let's explore what view you have available:
 
 - The default view for any War Room is
-  the [Home tab](/docs/nightly/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view#home), which give you
+  the [Home tab](/docs/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view#home), which give you
   an overview
   of this space. Here you can see the number of Nodes claimed, data retention statics, user particate, alerts and more
 
 - The second and most important view is
-  the [Overview tab](/docs/nightly/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view#overview) which
+  the [Overview tab](/docs/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view#overview) which
   uses composite
   charts to display real-time metrics from every available node in a given War Room.
 
-- The [Nodes tab](/docs/nightly/visualizations/nodes-view) gives you the ability to
+- The [Nodes tab](/docs/visualizations/nodes-view) gives you the ability to
   see the status (offline or online), host details
   , alarm status and also a short overview of some key metrics from all your nodes at a glance.
 
-- [Kubernetes tab](/docs/nightly/visualizations/kubernetes-visualizations) is a logical
+- [Kubernetes tab](/docs/visualizations/kubernetes-visualizations) is a logical
   grouping of charts regards to your Kubernetes clusters.
   It contains a subset of the charts available in the _Overview tab_
 
 -
 
-The [Dashboards tab](/docs/nightly/visualizations/build-new-dashboards)
+The [Dashboards tab](/docs/visualizations/build-new-dashboards)
 gives you the ability to have tailored made views of
 specific/targeted interfaces for your infrastructure using any number of charts from any number of nodes.
 
@@ -52,12 +52,12 @@ specific/targeted interfaces for your infrastructure using any number of charts 
   you can also see alla the alerts that are configured to be triggered in any given moment.
 
 - The **Anomalies tab** is dedicated to
-  the [Anomaly Advisor](/docs/nightly/troubleshooting-and-machine-learning/anomaly-advisor) tool
+  the [Anomaly Advisor](/docs/troubleshooting-and-machine-learning/anomaly-advisor) tool
 
 ### Non static tabs
 
 If you open
-a [new dashboard](/docs/nightly/visualizations/build-new-dashboards),
+a [new dashboard](/docs/visualizations/build-new-dashboards),
 jump to a single-node dashboard, or navigate to a dedicated alert page they will open in a new War Room tab.
 
 Tabs can be rearranged with drag-and-drop or closed with the **X** button. Open tabs persist between sessions, so you
@@ -67,7 +67,7 @@ can always come right back to your preferred setup.
 
 A War Room has three different states: playing, paused, and force playing. The default playing state refreshes charts
 every second as long as the browser tab is in
-focus. [Interacting with a chart](/docs/nightly/getting-started/monitor-your-infrastructure/interact-with-charts)
+focus. [Interacting with a chart](/docs/getting-started/monitor-your-infrastructure/interact-with-charts)
 pauses
 the War Room. Once the tab loses focus, charts pause automatically.
 
@@ -108,7 +108,7 @@ health and performance of your organization's essential services.
 
 **Incident response**: You can also create new War Rooms as one of the first steps in your incident response process.
 For example, you have a user-facing web app that relies on Apache Pulsar for a message queue, and one of your nodes
-using the [Pulsar collector](/docs/nightly/data-collection/monitor-anything/Message Brokers/Pulsar) begins
+using the [Pulsar collector](/docs/data-collection/monitor-anything/Message Brokers/Pulsar) begins
 reporting a suspiciously low messages rate. You can create a War Room called `$year-$month-$day-pulsar-rate`, add all
 your Pulsar nodes in addition to nodes they connect to, and begin diagnosing the root cause in a War Room optimized for
 getting to resolution as fast as possible.
@@ -137,7 +137,7 @@ icon of the War Room's name in the top of the page to do that. A sidebar will op
    at the top of the panel.
 
 3. To _add existing users to a War Room_, click on **Add Users**. See
-   our [invite doc](/docs/nightly/getting-started/monitor-your-infrastructure/invite-your-team)
+   our [invite doc](/docs/getting-started/monitor-your-infrastructure/invite-your-team)
    for details on inviting new users to your Space in Netdata Cloud.
 
 :::note
@@ -157,4 +157,4 @@ Removing a node from a War Room does not remove it from your Space.
 
 Once you've figured out an organizational structure that works for your team, learn more about how you can use Netdata
 Cloud to monitor distributed nodes
-using [real-time composite charts](/docs/nightly/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view).
+using [real-time composite charts](/docs/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view).

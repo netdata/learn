@@ -11,7 +11,7 @@ description: "With a single configuration change, the Netdata Agent can store da
 # Change how long Netdata stores metrics
 
 The Netdata Agent uses a custom made time-series database (TSDB), named the 
-[`dbengine`](/docs/nightly/deployment-in-production/metric-retention---database/database-engine), to store metrics.
+[`dbengine`](/docs/deployment-in-production/metric-retention---database/database-engine), to store metrics.
 
 To increase or decrease the metric retention time, you just [configure](#configure-metric-retention) 
 the number of storage tiers and the space allocated to each one. The effect of these two parameters 
@@ -78,7 +78,7 @@ DBENGINE memory is related to the number of metrics concurrently being collected
 on disk in relation with the queries running, and the number of metrics for which retention is maintained.
 
 The precise analysis of how much memory will be used is described in 
-[dbengine memory requirements](/docs/nightly/deployment-in-production/metric-retention---database/database-engine#memory-requirements).
+[dbengine memory requirements](/docs/deployment-in-production/metric-retention---database/database-engine#memory-requirements).
 
 The quick rule of thumb for a high level estimation is
 
@@ -95,11 +95,11 @@ memory for 2k metrics = 2000 x (3 - 1) x 4 KiB x 2 + 32768 KiB = 64 MiB
 ## Configure metric retention
 
 Once you have decided how to size each tier, open `netdata.conf` with
-[`edit-config`](/docs/nightly/getting-started/manage-and-configure/configuration#use-edit-config-to-edit-configuration-files) 
+[`edit-config`](/docs/getting-started/manage-and-configure/configuration#use-edit-config-to-edit-configuration-files) 
 and make your changes in the `[db]` subsection. 
 
 Save the file and restart the Agent with `sudo systemctl restart netdata`, or
-the [appropriate method](/docs/nightly/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) 
+the [appropriate method](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) 
 for your system, to change the database engine's size.
 
 
