@@ -1,6 +1,10 @@
+# section: static << START
 [build]
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
 
+# section: static << END
+
+# section: dynamic << START
 [[redirects]]
   from = "/docs/agent"
   to = "/docs"
@@ -333,4 +337,4 @@ to = "/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notificat
 from = "/docs/nightly/operations/run-time-troubleshooting-with-functions"
 to = "/docs/nightly/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
 
-
+# section: dynamic << END
