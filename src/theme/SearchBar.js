@@ -22,6 +22,7 @@ const SearchBar = () => {
           tag: "search",
           gname: "gsearch",
         });
+        document.getElementById('gsc-i-id1').placeholder = 'SEARCH ⌘ + K';
       } else {
         window.google.setOnLoadCallback(function () {
           window.google.search.cse.element.render({
@@ -29,6 +30,7 @@ const SearchBar = () => {
             tag: "search",
             gname: "gsearch",
           });
+          document.getElementById('gsc-i-id1').placeholder = 'SEARCH ⌘ + K';
         }, true);
       }
     };
@@ -36,10 +38,6 @@ const SearchBar = () => {
     window.__gcse = {
       parsetags: "explicit",
       callback: renderSearchForms,
-    };
-
-    window.onload = function () {
-      document.getElementById('gsc-i-id1').placeholder = 'SEARCH ⌘ + K';
     };
   }, []);
 
