@@ -48,7 +48,9 @@
 	},
 	"resolutions": {
 		"trim": "^0.0.3",
-		"got": "^12.5.3"
+		"got": "^12.5.3",
+		"@sideway/formula": "^3.0.1",
+		"minimatch": "^3.0.5"
 	},
 	"browserslist": {
 		"production": [
