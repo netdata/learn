@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 
 export default function NotFound() {
   useEffect(() => {
-    // window.posthog.capture('page-not-found');
+    window.posthog.capture('page-not-found');
     var url = location.href
 
     var [first, second, three, ...query] = url.split('/')
