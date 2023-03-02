@@ -185,6 +185,7 @@
     "https://learn.netdata.cloud/docs/agent/donations-netdata-has-received": "https://github.com/netdata/netdata/blob/master/docs/getting-started/introduction.md",
     "https://learn.netdata.cloud/docs/agent/exporting": "https://github.com/netdata/netdata/blob/master/exporting/README.md",
     "https://learn.netdata.cloud/docs/agent/exporting/aws_kinesis": "https://github.com/netdata/netdata/blob/master/exporting/aws_kinesis/README.md",
+    "https://learn.netdata.cloud/guides/export/export-netdata-metrics-graphite": "https://github.com/netdata/netdata/blob/master/exporting/graphite/README.md",
     "https://learn.netdata.cloud/docs/agent/exporting/graphite": "https://github.com/netdata/netdata/blob/master/exporting/graphite/README.md",
     "https://learn.netdata.cloud/docs/agent/exporting/json": "https://github.com/netdata/netdata/blob/master/exporting/json/README.md",
     "https://learn.netdata.cloud/docs/agent/exporting/mongodb": "https://github.com/netdata/netdata/blob/master/exporting/mongodb/README.md",
