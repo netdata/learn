@@ -407,6 +407,17 @@ def reductToPublishInGHLinksCorrelation(inputMatrix, DOCS_PREFIX, DOCS_PATH_LEAR
             DOCS_PREFIX, DOCS_PATH_LEARN)
         
         # For now don't remove learnPath, as we need it for the link replacement logic
+
+        # Check for pages that are category overview pages, and have filepath like ".../monitor/monitor".
+        # This way we remove the double dirname in the end, because docusaurus routes the file to ../monitor
+        if outputDictionary[sourceLink].split("/")[len(outputDictionary[sourceLink].split("/"))-1] == outputDictionary[sourceLink].split("/")[len(outputDictionary[sourceLink].split("/"))-2]:
+            sameParentDir = outputDictionary[sourceLink].split(
+                "/")[len(outputDictionary[sourceLink].split("/"))-2]
+
+            properLink = outputDictionary[sourceLink].split(sameParentDir, 1)
+            outputDictionary[sourceLink] = properLink[0] + properLink[1].strip("/")
+
+
         inputMatrix[x].update({"newLearnPath": outputDictionary[sourceLink]})
 
     return (inputMatrix)
@@ -476,15 +487,7 @@ def convertGithubLinks(path, fileDict, DOCS_PREFIX):
                     # There is no "id" metadata in the file, do nothing
                     pass
 
-                # Check for pages that are category overview pages, and have filepath like ".../monitor/monitor".
-                # This way we remove the double dirname in the end, because docusaurus routes the file to ../monitor
-                if replaceString.split("/")[len(replaceString.split("/"))-1] == replaceString.split("/")[len(replaceString.split("/"))-2]:
-                    sameParentDir = replaceString.split(
-                        "/")[len(replaceString.split("/"))-2]
-
-                    properLink = replaceString.split(sameParentDir, 1)
-                    replaceString = properLink[0] + properLink[1].strip("/")
-
+                
                 # In the end replace the URL with the replaceString
                 body = body.replace("]("+url, "]("+replaceString)
             except:
