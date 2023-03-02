@@ -1670,3 +1670,7 @@
   to="/docs/data-collection/monitor-anything"
 
 # section: dynamic << END
+
+[[redirects]]
+  from="/guides/monitor/anomaly-detection"
+  to="/docs/troubleshooting-and-machine-learning"
