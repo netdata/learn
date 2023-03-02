@@ -81,6 +81,9 @@
   from="/docs/nightly/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
   to="/docs/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
 
+[[redirects]]
+  from="/guides"
+  to="/docs"
 
 # section: static << END
 
