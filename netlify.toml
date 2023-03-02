@@ -4,6 +4,7 @@
 
 
 
+
 [build]
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
 
@@ -79,6 +80,7 @@
 [[redirects]]
   from="/docs/nightly/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
   to="/docs/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
+
 
 # section: static << END
 
@@ -343,7 +345,7 @@
 [[redirects]]
   from="/docs/agent/backends/prometheus"
   to="/docs/agent/exporting/prometheus"
- 
+
 [[redirects]]
   from="/contribute/code-of-conduct"
   to="/docs/improving-netdata---developers/community-code-of-conduct"
