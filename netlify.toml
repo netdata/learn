@@ -6,6 +6,7 @@
 
 
 
+
 [build]
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
 
@@ -85,6 +86,7 @@
 [[redirects]]
   from="/guides"
   to="/docs"
+
 
 
 # section: static << END
@@ -977,7 +979,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/w1sensor"
-  to="/docs/data-collection/monitor-anything/Remotes/Devices/1-Wire-sensors"
+  to="/docs/data-collection/monitor-anything/Remotes/Devices/Wire-sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/zscores"
@@ -1960,4 +1962,3 @@
   to="/docs/alerts-and-notifications/configure-alerts"
 
 # section: dynamic << END
-
