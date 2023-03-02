@@ -135,15 +135,13 @@ def main(GHLinksCorrelation):
 		if value.startswith("https://"):
 			print(key, value)
 	unPackedStaticPart= readRawStaticRedirectsFromFile("netlify.toml")
-	outputRedirectsFile = f"""
-# section: static << START
+	outputRedirectsFile = f"""# section: static << START
 {unPackedStaticPart}
 # section: static << END
 
 # section: dynamic << START
 {unPackedDynamicPart}
-# section: dynamic << END
-"""
+# section: dynamic << END"""
 	f = open("netlify.toml", "w")
 	f.write(outputRedirectsFile)
 	f.close()
