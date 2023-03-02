@@ -4,6 +4,9 @@
 [build]
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
 
+[[redirects]]
+  from="/guides/monitor/anomaly-detection"
+  to="/docs/troubleshooting-and-machine-learning"
 
 # section: static << END
 
@@ -1671,6 +1674,3 @@
 
 # section: dynamic << END
 
-[[redirects]]
-  from="/guides/monitor/anomaly-detection"
-  to="/docs/troubleshooting-and-machine-learning"
