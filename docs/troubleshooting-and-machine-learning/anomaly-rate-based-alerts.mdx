@@ -1,0 +1,19 @@
+---
+custom_edit_url: "https://github.com/netdata/learn/edit/master/docs/troubleshooting-and-machine-learning/anomaly-rate-based-alerts.mdx"
+sidebar_label: "Anomaly Rate Based Alerts"
+learn_status: "Published"
+learn_rel_path: "Troubleshooting and machine learning"
+sidebar_position: "303.0"
+description: "Create alerts based on anomaly rates."
+---
+
+## Anomaly Rate Based Alerts
+
+It is possible to use the `anomaly-bit` when defining traditional Alerts within netdata. The `anomaly-bit` is just another `options` parameter that can be passed as part of an [alarm line lookup](/docs/agent/health/reference#alarm-line-lookup). 
+
+You can see some example ML based alert configurations below:
+
+- [Anomaly rate based CPU dimensions alarm](/docs/agent/health/reference#example-8---anomaly-rate-based-cpu-dimensions-alarm)
+- [Anomaly rate based CPU chart alarm](/docs/agent/health/reference#example-9---anomaly-rate-based-cpu-chart-alarm)
+- [Anomaly rate based node level alarm](/docs/agent/health/reference#example-10---anomaly-rate-based-node-level-alarm)
+- More examples in the [`/health/health.d/ml.conf`](https://github.com/netdata/netdata/blob/master/health/health.d/ml.conf) file that ships with the agent.
