@@ -36,10 +36,10 @@ export default function Home() {
 	const { siteConfig } = useDocusaurusContext();
 
 	return (
-		<Layout description="Here you'll find documentation, guides, and reference material for monitoring and troubleshooting your systems with Netdata.">
+		<Layout description="Here you'll find documentation and reference material for monitoring and troubleshooting your systems with Netdata.">
 			<HomepageHeader />
 			<main className="container">
-				<Grid className="mb-16" columns="3">
+				<Grid className="mb-16" columns="2">
 					<Box
 						to="/docs/getting-started/install-netdata"
 						title="Get started"
@@ -56,11 +56,6 @@ export default function Home() {
 						capabilities. Your table of contents to becoming an expert in using
 						Netdata to monitor and troubleshoot applications and their
 						infrastructure.
-					</Box>
-					<Box to="/guides/" title="Guides" cta="Start learning" image={false}>
-						Thoughtful guides to walk you through collecting the right metrics,
-						monitoring your infrastructure, troubleshooting with Netdata's
-						powerful visualizations, and much more.
 					</Box>
 				</Grid>
 				<div id="updates" className="relative flex flex-row flex-wrap pb-12">
