@@ -40,7 +40,7 @@ export const News = [
 	{
 		title: <>Netdata Functions</>,
 		href: 'https://blog.netdata.cloud/netdata-functions/',
-		date: 'Feb 01, 2023',
+		date: 'Feb 09, 2023',
 		type: 'Link',
 		description: (
 			<>
