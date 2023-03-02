@@ -121,7 +121,7 @@ def main(GHLinksCorrelation):
 	oldLearn_redirects = UpdateGHLinksBasedOnMap(maping, oldLearn)
 	#print(oldLearn)
 	try:
-		finalDict = combineDictsJU(readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
+		finalDict = combineDictsOverwrite(readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
 	except Exception as e:
 		print(f"An exception occurred: {e}")
 	unPackedDynamicPart = ''
