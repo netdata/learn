@@ -181,7 +181,7 @@ The Netdata Agent has a modular approach to collecting data from data sources, m
 - Shell
 - StatsD
 
-Before you  continue, take a look at our [documentation](https://learn.netdata.cloud/docs/collect/how-collectors-work) about collectors and how they work. It will greatly help you if you have a good understanding of the general architecture, the different collectors that we have, how they are divided into different *plugins* and finally what it means that a collector is _internal_ or _external_.
+Before you  continue, take a look at our [documentation  about collectors](/docs/data-collection) and how they work. It will greatly help you if you have a good understanding of the general architecture, the different collectors that we have, how they are divided into different *plugins* and finally what it means that a collector is _internal_ or _external_.
 
 When deciding which framework to use, please consider our approach:
 1. **Golang** is used for all production-grade collectors and *most* of the python collectors will be migrated to Golang. We actively support, maintain and improve the Golang collectors. We are migrating to Golang for 2 reasons:
@@ -211,8 +211,7 @@ To contribute a new collector (or improve an existing one):
      1. Follow the guidelines on the [charts.d](https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin).
    6. **For StatsD:**
       1. If you are not familiar with StatD, we have written an [introduction](https://www.netdata.cloud/blog/introduction-to-statsd/) to the protocol.
-      2. Follow the Guide we have released: [[How to use any StatsD data source with Netdata](https://learn.netdata.cloud/guides/monitor/statsd)
-      3. Take a look at the [reference documentation](https://learn.netdata.cloud/docs/agent/collectors/statsd.plugin) for the StatsD plugin
+      2. Take a look at the [reference documentation](https://learn.netdata.cloud/docs/agent/collectors/statsd.plugin) for the StatsD plugin
 5. Follow the PR guidelines of the respected collector and make a PR to the respected repository:
    1. [netdata/netdata](https://github.com/netdata/netdata) for Python, Shell, and C
    2. [netdata/go.d.plugin](https://github.com/netdata/go.d.plugin) for Golang
@@ -229,7 +228,7 @@ There are 2 reasons why you may want to contribute to our alarms:
 1. You want to improve the sane defaults by modifying an existing alarm or adding a new one
 2. You want to contribute a new collector. Every new collector should come with some basic alarms out-of-the-box
 
-To do both, you will need to create (or modify) alarm configuration files. Our [documentation](https://learn.netdata.cloud/docs/monitor/configure-alarms) details the process. To develop and test the alarm, you will only need an active installation of the Netdata Agent, so the developer container described above is not required.
+To do both, you will need to create (or modify) alarm configuration files. Our [documentation](/docs/alerts-and-notifications/configure-alerts) details the process. To develop and test the alarm, you will only need an active installation of the Netdata Agent, so the developer container described above is not required.
 
 ### Contribute a new alarm notification
 
@@ -239,7 +238,7 @@ In order to modify existing ones or create new notification alarms you will need
 
 To create a new alarm, we can look to:
 - Already implemented alarms inside `alarm-notify.sh` and copy their structure
-- Use the [custom endpoint](https://learn.netdata.cloud/docs/agent/health/notifications/custom) notification as boilerplate.
+- Use the [custom endpoint](/docs/alerts-and-notifications/notifications/agent-alert-notifications/custom-endpoint) notification as boilerplate.
 
 
 ## Code of Conduct and CLA
