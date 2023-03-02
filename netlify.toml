@@ -5,6 +5,7 @@
 
 
 
+
 [build]
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
 
@@ -80,6 +81,7 @@
 [[redirects]]
   from="/docs/nightly/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
   to="/docs/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
+
 
 
 # section: static << END
@@ -1945,5 +1947,13 @@
 [[redirects]]
   from="/docs/cloud/get-started"
   to="/docs/getting-started/install-netdata"
+
+[[redirects]]
+  from="/docs/agent/a-github-star-is-important"
+  to="/docs/improving-netdata---developers"
+
+[[redirects]]
+  from="/guides/monitor/stop-notifications-alarms"
+  to="/docs/alerts-and-notifications/configure-alerts"
 
 # section: dynamic << END
