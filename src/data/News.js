@@ -16,13 +16,46 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Netdata Paid Subscriptions Released</>,
+		href: 'https://blog.netdata.cloud/introducing-netdata-paid-subscriptions/',
+		date: 'Feb 22, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Additional features and capabilities for users and businesses that need tighter and customizable integration of the monitoring solution to their processes.
+			</>
+		),
+	},
+	{
+		title: <>Netdata Feed</>,
+		href: 'https://learn.netdata.cloud/docs/troubleshooting-and-machine-learning/events-feed',
+		date: 'Feb 21, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Receive Live feed of events from your infrastructure! 
+			</>
+		),
+	},
+	{
+		title: <>Netdata Functions</>,
+		href: 'https://blog.netdata.cloud/netdata-functions/',
+		date: 'Feb 14, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Execute anything from the Netdata Agent Collector in run-time and on-demand using Functions.
+			</>
+		),
+	},	
+	{
 		title: <>Netdata release 1.38.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.38.0',
 		date: 'Feb 06, 2023',
 		type: 'Link',
 		description: (
 			<>
-			Huge performance, scalability and stability improvements, runtime functions, events feed, more alert notifications on Netdata Cloud and more! 	
+				Huge performance, scalability and stability improvements, runtime functions, events feed, more alert notifications on Netdata Cloud and more! 	
 			</>
 		),
 	},
