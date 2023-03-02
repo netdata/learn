@@ -87,16 +87,6 @@ module.exports = {
 			}
 		],
 		'docusaurus-tailwindcss-loader',
-		[
-			'@docusaurus/plugin-content-docs',
-			{
-				id: 'guides',
-				sidebarPath: require.resolve('./src/data/sidebar-guides.js'),
-				path: './guides',
-				routeBasePath: 'guides',
-				include: ['**/*.md', '**/*.mdx'],
-			},
-		],
 	],
 	presets: [
 		[
