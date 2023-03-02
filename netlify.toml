@@ -2,8 +2,10 @@
 
 
 
+
 [build]
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
+
 
 
 
@@ -154,10 +156,10 @@
 [[redirects]]
   from="/docs/agent/getting-started"
   to="/docs/get-started"
-  
+
 [[redirects]]
   from="/docs/get-started"
-  to="/docs/getting-started"
+  to="/docs/getting-started/install-netdata"
 
 [[redirects]]
   from="/docs/agent/packaging/DISTRIBUTIONS"
@@ -1670,5 +1672,37 @@
 [[redirects]]
   from="/docs/agent/collectors/collectors"
   to="/docs/data-collection/monitor-anything"
+
+[[redirects]]
+  from="/contribute/documentation"
+  to="/docs/improving-netdata---developers/contribute-to-the-documentation"
+
+[[redirects]]
+  from="/contribute/projects"
+  to="/docs/improving-netdata---developers"
+
+[[redirects]]
+  from="/docs/agent/add-more-charts-to-netdata"
+  to="/docs/data-collection/monitor-anything"
+
+[[redirects]]
+  from="/docs/agent/agent-cloud"
+  to="/docs/getting-started/monitor-your-infrastructure/connect-agent-to-cloud"
+
+[[redirects]]
+  from="/docs/agent/breaking_changes"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/overview/what-is-netdata"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/monitor/anomaly-detection"
+  to="/docs/troubleshooting-and-machine-learning/machine-learning-ml-powered-anomaly-detection"
+
+[[redirects]]
+  from="/guides/monitor/anomaly-detection-python"
+  to="/docs/troubleshooting-and-machine-learning/machine-learning-ml-powered-anomaly-detection"
 
 # section: dynamic << END
