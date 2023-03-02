@@ -12,6 +12,7 @@ import git
 import json
 import ast
 import autogenerateSupportedIntegrationsPage as genIntPage
+import autogenerateRedirects as genRedirects
 import pandas as pd
 import numpy as np
 
@@ -49,7 +50,7 @@ markdownFiles = []
 BROKEN_LINK_COUNTER= 0
 FAIL_ON_NETDATA_BROKEN_LINKS = False 
  #Temporarily until we release (change it (the default) to /docs
-version_prefix = "nightly"  # We use this as the version prefix in the link strategy
+# version_prefix = "nightly"  # We use this as the version prefix in the link strategy
 TEMP_FOLDER = "ingest-temp-folder"
 defaultRepos = {
     "netdata":
@@ -406,6 +407,17 @@ def reductToPublishInGHLinksCorrelation(inputMatrix, DOCS_PREFIX, DOCS_PATH_LEAR
             DOCS_PREFIX, DOCS_PATH_LEARN)
         
         # For now don't remove learnPath, as we need it for the link replacement logic
+
+        # Check for pages that are category overview pages, and have filepath like ".../monitor/monitor".
+        # This way we remove the double dirname in the end, because docusaurus routes the file to ../monitor
+        if outputDictionary[sourceLink].split("/")[len(outputDictionary[sourceLink].split("/"))-1] == outputDictionary[sourceLink].split("/")[len(outputDictionary[sourceLink].split("/"))-2]:
+            sameParentDir = outputDictionary[sourceLink].split(
+                "/")[len(outputDictionary[sourceLink].split("/"))-2]
+
+            properLink = outputDictionary[sourceLink].split(sameParentDir, 1)
+            outputDictionary[sourceLink] = properLink[0] + properLink[1].strip("/")
+
+
         inputMatrix[x].update({"newLearnPath": outputDictionary[sourceLink]})
 
     return (inputMatrix)
@@ -475,15 +487,7 @@ def convertGithubLinks(path, fileDict, DOCS_PREFIX):
                     # There is no "id" metadata in the file, do nothing
                     pass
 
-                # Check for pages that are category overview pages, and have filepath like ".../monitor/monitor".
-                # This way we remove the double dirname in the end, because docusaurus routes the file to ../monitor
-                if replaceString.split("/")[len(replaceString.split("/"))-1] == replaceString.split("/")[len(replaceString.split("/"))-2]:
-                    sameParentDir = replaceString.split(
-                        "/")[len(replaceString.split("/"))-2]
-
-                    properLink = replaceString.split(sameParentDir, 1)
-                    replaceString = properLink[0] + properLink[1].strip("/")
-
+                
                 # In the end replace the URL with the replaceString
                 body = body.replace("]("+url, "]("+replaceString)
             except:
@@ -532,7 +536,7 @@ if __name__ == '__main__':
         "--docs-prefix",
         help="Don't save a file with the output.",
         dest="DOCS_PREFIX",
-        default="versioned_docs/version-nightly"
+        default="docs"
     )
     
     parser.add_argument(
@@ -612,7 +616,6 @@ if __name__ == '__main__':
     mapDict = pd.read_csv("map.tsv",sep='\t')
     
     mapDict.set_index('custom_edit_url').T.to_dict('dict')
-
     reducedMarkdownFiles = []
     for md in markdownFiles:
         #print("File: ", md)
@@ -662,10 +665,11 @@ if __name__ == '__main__':
     print("Fixing github links...")
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
     # pointing to GitHub relative paths
-    #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER), indent=4))
+    #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER), indent=4))
     for file in toPublish:
-        fileDict = reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs/"+version_prefix, TEMP_FOLDER)
+        fileDict = reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER)
         convertGithubLinks(fileDict[file]["learnPath"],fileDict , DOCS_PREFIX)
+    genRedirects.main(fileDict)
     print("Done.", "Broken Links:", BROKEN_LINK_COUNTER)
     print(FAIL_ON_NETDATA_BROKEN_LINKS, BROKEN_LINK_COUNTER)
     if FAIL_ON_NETDATA_BROKEN_LINKS and BROKEN_LINK_COUNTER>0:

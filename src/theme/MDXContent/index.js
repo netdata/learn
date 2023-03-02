@@ -186,10 +186,6 @@ function FeedbackForm(){
                 </Link>
               </li>
               <li>
-                Learn how to <Link to="/contribute/">contribute</Link>{' '}
-                to Netdata's open-source project
-              </li>
-              <li>
                 Submit a{' '}
                 <Link to="https://github.com/netdata/netdata/issues/new?assignees=&labels=feature+request%2Cneeds+triage&template=FEAT_REQUEST.yml&title=%5BFeat%5D%3A+">
                   feature request
