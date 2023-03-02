@@ -152,6 +152,10 @@
 [[redirects]]
   from="/docs/agent/getting-started"
   to="/docs/get-started"
+  
+[[redirects]]
+  from="/docs/get-started"
+  to="/docs/getting-started"
 
 [[redirects]]
   from="/docs/agent/packaging/DISTRIBUTIONS"
