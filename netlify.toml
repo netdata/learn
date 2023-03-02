@@ -3,8 +3,10 @@
 
 
 
+
 [build]
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
+
 
 
 
@@ -16,7 +18,7 @@
 [[redirects]]
   from="/docs/agent"
   to="/docs"
-  
+
 [[redirects]]
   from="/docs"
   to="/docs/getting-started"
@@ -1708,5 +1710,205 @@
 [[redirects]]
   from="/guides/monitor/anomaly-detection-python"
   to="/docs/troubleshooting-and-machine-learning/machine-learning-ml-powered-anomaly-detection"
+
+[[redirects]]
+  from="/docs/agent/build"
+  to="/docs/installation/package-maintainers/manually-build-netdata-from-source"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/modules/wmi"
+  to="/docs/data-collection/monitor-anything/System Metrics/Windows-machines"
+
+[[redirects]]
+  from="/docs/agent/database/ram"
+  to="/docs/deployment-in-production/metric-retention---database"
+
+[[redirects]]
+  from="/docs/agent/diagrams/data_structures"
+  to="/docs/improving-netdata---developers"
+
+[[redirects]]
+  from="/docs/agent/donations-netdata-has-received"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/agent/health/quickstart"
+  to="/docs/alerts-and-notifications"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/arrayalloc"
+  to="/docs/improving-netdata---developers/libnetdata/array-allocator"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/methods/cloud-providers"
+  to="/docs/installation/install-on-specific-environments"
+
+[[redirects]]
+  from="/docs/agent/web/api/exporters"
+  to="/docs/exporting-data"
+
+[[redirects]]
+  from="/docs/agent/web/api/exporters/prometheus"
+  to="/docs/exporting-data/prometheus"
+
+[[redirects]]
+  from="/docs/agent/why-netdata"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/agent/why-netdata/1s-granularity"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/agent/why-netdata/immediate-results"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/agent/why-netdata/meaningful-presentation"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/agent/why-netdata/unlimited-metrics"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/collect/enable-configure"
+  to="/docs/data-collection/collectors-configuration"
+
+[[redirects]]
+  from="/docs/collect/how-collectors-work"
+  to="/docs/data-collection"
+
+[[redirects]]
+  from="/docs/configure/secure-nodes"
+  to="/docs/deployment-in-production/secure-your-nodes"
+
+[[redirects]]
+  from="/docs/dashboard/how-dashboard-works"
+  to="/docs/getting-started/monitor-your-infrastructure"
+
+[[redirects]]
+  from="/docs/dashboard/interact-charts"
+  to="/docs/getting-started/monitor-your-infrastructure/interact-with-charts"
+
+[[redirects]]
+  from="/docs/dashboard/reference-web-server"
+  to="/docs/deployment-in-production/secure-your-nodes/web-server"
+
+[[redirects]]
+  from="/docs/metrics-storage-management/how-streaming-works"
+  to="/docs/deployment-in-production/streaming-and-replication"
+
+[[redirects]]
+  from="/docs/metrics-storage-management/reference-streaming"
+  to="/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference"
+
+[[redirects]]
+  from="/docs/monitor/configure-alarms"
+  to="/docs/alerts-and-notifications/configure-alerts"
+
+[[redirects]]
+  from="/docs/overview/netdata-monitoring-stack"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/overview/why-netdata"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/quickstart/single-node"
+  to="/docs/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view"
+
+[[redirects]]
+  from="/docs/visualize/create-dashboards"
+  to="/docs/visualizations/build-new-dashboards"
+
+[[redirects]]
+  from="/docs/visualize/interact-dashboards-charts"
+  to="/docs/getting-started/monitor-your-infrastructure/interact-with-charts"
+
+[[redirects]]
+  from="/guides/deploy/ansible"
+  to="/docs/installation/install-on-specific-environments/ansible"
+
+[[redirects]]
+  from="/guides/longer-metrics-storage"
+  to="/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics"
+
+[[redirects]]
+  from="/guides/monitor/dimension-templates"
+  to="/docs/alerts-and-notifications"
+
+[[redirects]]
+  from="/guides/monitor/statsd"
+  to="/docs/data-collection/monitor-anything/Generic Collectors/StatsD"
+
+[[redirects]]
+  from="/guides/monitor/visualize-monitor-anomalies"
+  to="/docs/troubleshooting-and-machine-learning/anomaly-advisor"
+
+[[redirects]]
+  from="/guides/step-by-step/step-00"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-01"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-02"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-03"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-04"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-05"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-06"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-07"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-08"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-09"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-10"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/guides/step-by-step/step-99"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/cloud"
+  to="/docs/getting-started/monitor-your-infrastructure"
+
+[[redirects]]
+  from="/docs/cloud/alerts-notifications/smartboard"
+  to="/docs/getting-started/monitor-your-infrastructure/view-active-alerts"
+
+[[redirects]]
+  from="/docs/cloud/alerts-notifications/view-active-alerts"
+  to="/docs/getting-started/monitor-your-infrastructure/view-active-alerts"
+
+[[redirects]]
+  from="/docs/cloud/get-started"
+  to="/docs/getting-started/install-netdata"
 
 # section: dynamic << END
