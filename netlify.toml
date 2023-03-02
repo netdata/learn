@@ -16,6 +16,10 @@
 [[redirects]]
   from="/docs/agent"
   to="/docs"
+  
+[[redirects]]
+  from="/docs"
+  to="/docs/getting-started"
 
 [[redirects]]
   from="/docs/agent/collectors"
