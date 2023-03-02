@@ -14,6 +14,13 @@ import autogenerateSupportedIntegrationsPage as genIntPage
 import pandas as pd
 import numpy as np
 
+def redirectUnit(FROM, TO):
+	unit = f"""
+[[redirects]]
+  from={FROM}
+  to={TO}
+"""
+	return (unit)
 def combineDicts(dict1, dict2):
     new_dict = {}
     for key in dict1:
@@ -29,6 +36,16 @@ def combineDicts(dict1, dict2):
 
     return (new_dict)
 
+def reductTonewLearnPathFromGHLinksCorrelation(inputMatrix):
+    """
+    This function takes as an argument our Matrix of the Ingest process and creates a new dictionary with key value
+    pairs the Source file (keys) to the Target file (value: learn_absolute path)
+    """
+    outputDictionary = dict()
+    for x in inputMatrix:
+        outputDictionary[inputMatrix[x]["metadata"]["custom_edit_url"]] = inputMatrix[x]["newLearnPath"]
+        outputDictionary[inputMatrix[x]["metadata"]["custom_edit_url"].replace("/edit/","/blob/")] = inputMatrix[x]["newLearnPath"]
+    return (outputDictionary)
 
 def readRedirectsFromFile(pathToFile):
 	"""
@@ -42,14 +59,11 @@ def readRedirectsFromFile(pathToFile):
 	with open(pathToFile, "r+") as fd:
 		document_text = "".join(fd.readlines())
 		sections = section_pattern.findall(document_text)
-		print(sections)
 		for section in sections:
-			print(section)
 			redirectsList = redirects_pattern.findall(section)
 		
 		for k,v in redirectsList.__iter__():
 			redirects[k] = v
-		
 	return (redirects)
 
 def readLegacyLearnDocMap(pathToFile):
@@ -63,13 +77,32 @@ def readLegacyLearnDocMap(pathToFile):
 		return({key.replace("https://learn.netdata.cloud",""): value for key, value in json.load(json_file).items()})
 	
 
-def UpdateGHLinksBasedOnMap(mapDF, input_dictionary):
-	pass
-#def main():
-try:
-	new_dict = combineDicts(readRedirectsFromFile("../netlify.toml"), readLegacyLearnDocMap("../LegacyLearnCorrelateLinksWithGHURLs.json"))
-	print(new_dict)
-except Exception as e:
-	print(f"An exception occurred: {e}")
-
-			
+def UpdateGHLinksBasedOnMap(mapMatrix, inputDictionary):
+	for k,v in inputDictionary.items():
+		if v in mapMatrix.keys():
+			inputDictionary[k] = mapMatrix[v]
+		else:
+			pass
+	return (inputDictionary)
+def main(GHLinksCorrelation):
+	maping = reductTonewLearnPathFromGHLinksCorrelation(GHLinksCorrelation)
+	#print(GHLinksCorrelation)
+	oldLearn = readLegacyLearnDocMap("LegacyLearnCorrelateLinksWithGHURLs.json")
+	#print(oldLearn)
+	oldLearn_redirects = UpdateGHLinksBasedOnMap(maping, oldLearn)
+	#print(oldLearn)
+	try:
+		finalDict = combineDicts(readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
+	except Exception as e:
+		print(f"An exception occurred: {e}")
+	unPackedDocument = ''
+	for key, value in finalDict.items():
+		if not value.startswith("https://"):
+			unPackedDocument+=redirectUnit(key, value)
+	
+	print("Links from the legacy learn that are not matched:")
+	for key, value in finalDict.items():
+		if value.startswith("https://"):
+			print(key, value)
+	#print(unPackedDocument)
+	

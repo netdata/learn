@@ -12,6 +12,7 @@ import git
 import json
 import ast
 import autogenerateSupportedIntegrationsPage as genIntPage
+import autogenerateRedirects as genRedirects
 import pandas as pd
 import numpy as np
 
@@ -612,7 +613,6 @@ if __name__ == '__main__':
     mapDict = pd.read_csv("map.tsv",sep='\t')
     
     mapDict.set_index('custom_edit_url').T.to_dict('dict')
-
     reducedMarkdownFiles = []
     for md in markdownFiles:
         #print("File: ", md)
@@ -666,6 +666,7 @@ if __name__ == '__main__':
     for file in toPublish:
         fileDict = reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER)
         convertGithubLinks(fileDict[file]["learnPath"],fileDict , DOCS_PREFIX)
+    genRedirects.main(fileDict)
     print("Done.", "Broken Links:", BROKEN_LINK_COUNTER)
     print(FAIL_ON_NETDATA_BROKEN_LINKS, BROKEN_LINK_COUNTER)
     if FAIL_ON_NETDATA_BROKEN_LINKS and BROKEN_LINK_COUNTER>0:
