@@ -5,11 +5,11 @@
 # section: static << END
 
 # section: dynamic << START
+
 [[redirects]]
   from = "/docs/agent"
   to = "/docs"
 
-  
 [[redirects]]
   from = "/docs/agent/cheatsheet"
   to = "/docs/cheatsheet"
