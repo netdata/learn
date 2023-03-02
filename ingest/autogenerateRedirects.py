@@ -17,8 +17,8 @@ import numpy as np
 def redirectUnit(FROM, TO):
 	unit = f"""
 [[redirects]]
-  from={FROM}
-  to={TO}
+  from="{FROM}"
+  to="{TO}"
 """
 	return (unit)
 def combineDictsJU(dict1, dict2):
