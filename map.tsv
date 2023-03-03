@@ -24,7 +24,7 @@ https://github.com/netdata/netdata/edit/master/daemon/README.md	Netdata daemon	P
 https://github.com/netdata/netdata/edit/master/daemon/config/README.md	Daemon configuration	Published	Getting started/Manage and configure	23	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
 https://github.com/netdata/netdata/edit/master/cli/README.md	Agent CLI	Published	Getting started/Manage and configure	24	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
 https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	Live demos	Published	Getting started	25	
-https://github.com/netdata/netdata/edit/master/docs/glossary.md	Glossary	Unpublished	Getting started	26	
+https://github.com/netdata/netdata/edit/master/docs/glossary.md	Glossary	Published	Getting started	26	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/deployment-strategies.md	Deployment in production	Published	Deployment in production	27	
 https://github.com/netdata/netdata/edit/master/docs/guides/configure/performance.md	How to optimize the Netdata Agent's performance	Published	Deployment in production	28	While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
 https://github.com/netdata/netdata/edit/master/docs/netdata-security.md	Secure your nodes	Published	Deployment in production/Secure your nodes	29	Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
