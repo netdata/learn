@@ -71,12 +71,12 @@ replacing `NODE` with the hostname or IP address of your system.
 There's nothing you need to do to enable [system monitoring](/docs/data-collection/system-metrics) and Linux monitoring with
 the Netdata Agent, which autodetects metrics from CPUs, memory, disks, networking devices, and Linux processes like
 systemd without any configuration. If you're using containers, Netdata automatically collects resource utilization
-metrics from each using the [cgroups data collector](/docs/data-collection/monitor-anything/Virtualized-Environments/Containers-and-VMs-cgroups).
+metrics from each using the [cgroups data collector](/docs/data-collection/monitor-anything/Virtualized%20Environments/Containers-and-VMs-cgroups).
 
 ## Enable Apache monitoring
 
 Let's begin by configuring Apache to work with Netdata's [Apache data
-collector](/docs/data-collection/monitor-anything/Web-Servers/Apache).
+collector](/docs/data-collection/monitor-anything/Web%20Servers/Apache).
 
 Actually, there's nothing for you to do to enable Apache monitoring with Netdata.
 
@@ -87,7 +87,7 @@ metrics](https://httpd.apache.org/docs/2.4/mod/mod_status.html), which is just _
 ## Enable web log monitoring
 
 The Netdata Agent also comes with a [web log
-collector](/docs/data-collection/monitor-anything/Web-Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS), which reads Apache's access
+collector](/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS), which reads Apache's access
 log file, processes each line, and converts them into per-second metrics. On Debian systems, it reads the file at
 `/var/log/apache2/access.log`.
 
@@ -117,10 +117,10 @@ system](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-net
 ## Enable PHP monitoring
 
 Unlike Apache or MySQL, PHP isn't a service that you can monitor directly, unless you instrument a PHP-based application
-with [StatsD](/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/StatsD).
+with [StatsD](/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/StatsD).
 
 However, if you use [PHP-FPM](https://php-fpm.org/) in your LAMP stack, you can monitor that process with our [PHP-FPM
-data collector](/docs/data-collection/monitor-anything/Web-Servers/PHP-FPM).
+data collector](/docs/data-collection/monitor-anything/Web%20Servers/PHP-FPM).
 
 Open your PHP-FPM configuration for editing, replacing `7.4` with your version of PHP:
 
@@ -238,8 +238,8 @@ source of issues faster with [Metric Correlations](/docs/troubleshooting-and-mac
 ### Related reference documentation
 
 - [Netdata Agent · Get started](/docs/getting-started/install-netdata)
-- [Netdata Agent · Apache data collector](/docs/data-collection/monitor-anything/Web-Servers/Apache)
-- [Netdata Agent · Web log collector](/docs/data-collection/monitor-anything/Web-Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS)
+- [Netdata Agent · Apache data collector](/docs/data-collection/monitor-anything/Web%20Servers/Apache)
+- [Netdata Agent · Web log collector](/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS)
 - [Netdata Agent · MySQL data collector](/docs/data-collection/monitor-anything/Databases/MySQL)
-- [Netdata Agent · PHP-FPM data collector](/docs/data-collection/monitor-anything/Web-Servers/PHP-FPM)
+- [Netdata Agent · PHP-FPM data collector](/docs/data-collection/monitor-anything/Web%20Servers/PHP-FPM)
 

@@ -10,6 +10,7 @@
 
 
 
+
 [build]
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
 
@@ -89,6 +90,7 @@
 [[redirects]]
   from="/guides"
   to="/docs"
+
 
 
 
@@ -397,11 +399,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/apps.plugin"
-  to="/docs/data-collection/monitor-anything/System-Metrics/Application-monitoring"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring"
 
 [[redirects]]
   from="/docs/agent/collectors/cgroups.plugin"
-  to="/docs/data-collection/monitor-anything/Virtualized-Environments/Containers-and-VMs-cgroups"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Containers-and-VMs-cgroups"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin"
@@ -417,7 +419,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/example"
-  to="/docs/data-collection/monitor-anything/Mock-Collectors/Example-module-in-Bash"
+  to="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Bash"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/libreswan"
@@ -441,15 +443,15 @@
 
 [[redirects]]
   from="/docs/agent/collectors/diskspace.plugin"
-  to="/docs/data-collection/monitor-anything/System-Metrics/Disks"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/Disks"
 
 [[redirects]]
   from="/docs/agent/collectors/ebpf.plugin"
-  to="/docs/data-collection/monitor-anything/System-Metrics/Kernel-traces-metrics-eBPF"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/Kernel-traces-metrics-eBPF"
 
 [[redirects]]
   from="/docs/agent/collectors/freebsd.plugin"
-  to="/docs/data-collection/monitor-anything/System-Metrics/FreeBSD-system-metrics-freebsd.plugin"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/FreeBSD-system-metrics-freebsd.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/freeipmi.plugin"
@@ -465,11 +467,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/activemq"
-  to="/docs/data-collection/monitor-anything/Message-Brokers/ActiveMQ"
+  to="/docs/data-collection/monitor-anything/Message%20Brokers/ActiveMQ"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/apache"
-  to="/docs/data-collection/monitor-anything/Web-Servers/Apache"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/Apache"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/bind"
@@ -489,7 +491,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/consul"
-  to="/docs/data-collection/monitor-anything/Provisioning-Tools/Consul"
+  to="/docs/data-collection/monitor-anything/Provisioning%20Tools/Consul"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/coredns"
@@ -521,11 +523,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/docker"
-  to="/docs/data-collection/monitor-anything/Virtualized-Environments/Docker"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/docker_engine"
-  to="/docs/data-collection/monitor-anything/Virtualized-Environments/Docker-Engine"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker-Engine"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dockerhub"
@@ -541,11 +543,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/example"
-  to="/docs/data-collection/monitor-anything/Mock-Collectors/Example-module-in-Go"
+  to="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Go"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/filecheck"
-  to="/docs/data-collection/monitor-anything/System-Metrics/Files-and-Dirs"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/Files-and-Dirs"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/fluentd"
@@ -561,7 +563,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/haproxy"
-  to="/docs/data-collection/monitor-anything/Web-Servers/haproxy-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/haproxy-go.d.plugin-Recommended"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/hdfs"
@@ -577,27 +579,27 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_kubelet"
-  to="/docs/data-collection/monitor-anything/Virtualized-Environments/Kubelet"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kubelet"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_kubeproxy"
-  to="/docs/data-collection/monitor-anything/Virtualized-Environments/Kube-proxy"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kube-proxy"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_state"
-  to="/docs/data-collection/monitor-anything/Virtualized-Environments/Kubernetes-cluster-state"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kubernetes-cluster-state"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/lighttpd"
-  to="/docs/data-collection/monitor-anything/Web-Servers/Lighttpd"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/lighttpd2"
-  to="/docs/data-collection/monitor-anything/Web-Servers/Lighttpd2"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd2"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/logind"
-  to="/docs/data-collection/monitor-anything/System-Metrics/logind-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/logind-go.d.plugin-Recommended"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/logstash"
@@ -613,15 +615,15 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nginx"
-  to="/docs/data-collection/monitor-anything/Web-Servers/NGINX"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/NGINX"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nginxplus"
-  to="/docs/data-collection/monitor-anything/Web-Servers/NGINX-Plus"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/NGINX-Plus"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nginxvts"
-  to="/docs/data-collection/monitor-anything/Web-Servers/NGINX-VTS"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/NGINX-VTS"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvidia_smi"
@@ -645,11 +647,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/phpdaemon"
-  to="/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/PHP-Applications"
+  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/PHP-Applications"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/phpfpm"
-  to="/docs/data-collection/monitor-anything/Web-Servers/PHP-FPM"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/PHP-FPM"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/pihole"
@@ -681,7 +683,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/prometheus"
-  to="/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/Prometheus-endpoints"
+  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Prometheus-endpoints"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/proxysql"
@@ -689,11 +691,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/pulsar"
-  to="/docs/data-collection/monitor-anything/Message-Brokers/Pulsar"
+  to="/docs/data-collection/monitor-anything/Message%20Brokers/Pulsar"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/rabbitmq"
-  to="/docs/data-collection/monitor-anything/Message-Brokers/RabbitMQ"
+  to="/docs/data-collection/monitor-anything/Message%20Brokers/RabbitMQ"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/redis"
@@ -717,27 +719,27 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/springboot2"
-  to="/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/Java-Spring-Boot-2-applications"
+  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Java-Spring-Boot-2-applications"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/squidlog"
-  to="/docs/data-collection/monitor-anything/Web-Servers/Web-server-logs-Squid"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Squid"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/supervisord"
-  to="/docs/data-collection/monitor-anything/Virtualized-Environments/Supervisord"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Supervisord"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/systemdunits"
-  to="/docs/data-collection/monitor-anything/System-Metrics/Systemd-units"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/Systemd-units"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/tengine"
-  to="/docs/data-collection/monitor-anything/Web-Servers/Tengine"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/Tengine"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/traefik"
-  to="/docs/data-collection/monitor-anything/Web-Servers/traefik-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/traefik-go.d.plugin-Recommended"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/unbound"
@@ -745,19 +747,19 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vcsa"
-  to="/docs/data-collection/monitor-anything/Virtualized-Environments/vCenter-Server-Appliance"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/vCenter-Server-Appliance"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vernemq"
-  to="/docs/data-collection/monitor-anything/Message-Brokers/VerneMQ"
+  to="/docs/data-collection/monitor-anything/Message%20Brokers/VerneMQ"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vsphere"
-  to="/docs/data-collection/monitor-anything/Virtualized-Environments/vCenter-Servers"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/vCenter-Servers"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/weblog"
-  to="/docs/data-collection/monitor-anything/Web-Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/whoisquery"
@@ -773,7 +775,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/zookeeper"
-  to="/docs/data-collection/monitor-anything/Provisioning-Tools/ZooKeeper"
+  to="/docs/data-collection/monitor-anything/Provisioning%20Tools/ZooKeeper"
 
 [[redirects]]
   from="/docs/agent/collectors/idlejitter.plugin"
@@ -785,7 +787,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/macos.plugin"
-  to="/docs/data-collection/monitor-anything/System-Metrics/macOS"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/macOS"
 
 [[redirects]]
   from="/docs/agent/collectors/nfacct.plugin"
@@ -793,7 +795,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/perf.plugin"
-  to="/docs/data-collection/monitor-anything/System-Metrics/CPU-performance-statistics-perf.plugin"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/CPU-performance-statistics-perf.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/plugins.d"
@@ -801,7 +803,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/proc.plugin"
-  to="/docs/data-collection/monitor-anything/System-Metrics/OS-provided-metrics-proc.plugin"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/OS-provided-metrics-proc.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin"
@@ -821,11 +823,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/anomalies"
-  to="/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/Anomalies"
+  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Anomalies"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/beanstalk"
-  to="/docs/data-collection/monitor-anything/Message-Brokers/Beanstalk"
+  to="/docs/data-collection/monitor-anything/Message%20Brokers/Beanstalk"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/bind_rndc"
@@ -833,7 +835,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/boinc"
-  to="/docs/data-collection/monitor-anything/Distributed-Computing/BOINC"
+  to="/docs/data-collection/monitor-anything/Distributed%20Computing/BOINC"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/ceph"
@@ -849,7 +851,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/example"
-  to="/docs/data-collection/monitor-anything/Mock-Collectors/Example-module-in-Python"
+  to="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Python"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/exim"
@@ -861,15 +863,15 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/gearman"
-  to="/docs/data-collection/monitor-anything/Distributed-Computing/Gearman"
+  to="/docs/data-collection/monitor-anything/Distributed%20Computing/Gearman"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/go_expvar"
-  to="/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/Go-applications"
+  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Go-applications"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/haproxy"
-  to="/docs/data-collection/monitor-anything/Web-Servers/haproxy-python.d.plugin"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/haproxy-python.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/hddtemp"
@@ -889,7 +891,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/litespeed"
-  to="/docs/data-collection/monitor-anything/Web-Servers/LiteSpeed"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/LiteSpeed"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/megacli"
@@ -921,7 +923,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/pandas"
-  to="/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/Structured-data-Pandas"
+  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Structured-data-Pandas"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/postfix"
@@ -929,7 +931,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/puppet"
-  to="/docs/data-collection/monitor-anything/Provisioning-Tools/Puppet"
+  to="/docs/data-collection/monitor-anything/Provisioning%20Tools/Puppet"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/rethinkdbs"
@@ -961,11 +963,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/squid"
-  to="/docs/data-collection/monitor-anything/Web-Servers/Squid"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/Squid"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/tomcat"
-  to="/docs/data-collection/monitor-anything/Web-Servers/Tomcat"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/Tomcat"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/tor"
@@ -973,15 +975,15 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/traefik"
-  to="/docs/data-collection/monitor-anything/Web-Servers/traefik-python.d.plugin"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/traefik-python.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/uwsgi"
-  to="/docs/data-collection/monitor-anything/Web-Servers/uWSGI"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/uWSGI"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/varnish"
-  to="/docs/data-collection/monitor-anything/Web-Servers/Varnish-Cache"
+  to="/docs/data-collection/monitor-anything/Web%20Servers/Varnish-Cache"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/w1sensor"
@@ -997,11 +999,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/slabinfo.plugin"
-  to="/docs/data-collection/monitor-anything/System-Metrics/slabinfo.plugin"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/slabinfo.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/statsd.plugin"
-  to="/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/StatsD"
+  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/StatsD"
 
 [[redirects]]
   from="/docs/agent/collectors/statsd.plugin/asterisk"
@@ -1017,11 +1019,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/timex.plugin"
-  to="/docs/data-collection/monitor-anything/System-Metrics/timex.plugin"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/timex.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/xenstat.plugin"
-  to="/docs/data-collection/monitor-anything/Virtualized-Environments/xenstat.plugin"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/xenstat.plugin"
 
 [[redirects]]
   from="/docs/agent/contrib"
@@ -1765,7 +1767,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/wmi"
-  to="/docs/data-collection/monitor-anything/System-Metrics/Windows-machines"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/Windows-machines"
 
 [[redirects]]
   from="/docs/agent/database/ram"
@@ -1889,7 +1891,7 @@
 
 [[redirects]]
   from="/guides/monitor/statsd"
-  to="/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/StatsD"
+  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/StatsD"
 
 [[redirects]]
   from="/guides/monitor/visualize-monitor-anomalies"

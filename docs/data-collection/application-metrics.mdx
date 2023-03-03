@@ -15,7 +15,7 @@ web servers, databases, message brokers, email servers, search platforms, and mu
 pre-installed with every Netdata Agent and usually require zero configuration. Netdata also collects and visualizes
 resource utilization per application on Linux systems using `apps.plugin`.
 
-[**apps.plugin**](/docs/data-collection/monitor-anything/System-Metrics/Application-monitoring) looks at the Linux process tree every second, much like `top` or
+[**apps.plugin**](/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring) looks at the Linux process tree every second, much like `top` or
 `ps fax`, and collects resource utilization information on every running process. By reading the process tree, Netdata
 shows CPU, disk, networking, processes, and eBPF for every application or Linux user. Unlike `top` or `ps fax`, Netdata
 adds a layer of meaningful visualization on top of the process tree metrics, such as grouping applications into useful
@@ -24,25 +24,25 @@ charts under **Users**, and per-user group charts under **User Groups**.
 
 Our most popular application collectors:
 
-- [Prometheus endpoints](/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/Prometheus-endpoints): Gathers
+- [Prometheus endpoints](/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Prometheus-endpoints): Gathers
   metrics from one or more Prometheus endpoints that use the OpenMetrics exposition format. Auto-detects more than 600
   endpoints.
-- [Web server logs (Apache, NGINX)](/docs/data-collection/monitor-anything/Web-Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS):
+- [Web server logs (Apache, NGINX)](/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS):
   Tail access logs and provide very detailed web server performance statistics. This module is able to parse 200k+
   rows in less than half a second.
 - [MySQL](/docs/data-collection/monitor-anything/Databases/MySQL): Collect database global,
   replication, and per-user statistics.
 - [Redis](/docs/data-collection/monitor-anything/Databases/Redis): Monitor database status by
   reading the server's response to the `INFO` command.
-- [Apache](/docs/data-collection/monitor-anything/Web-Servers/Apache): Collect Apache web server
+- [Apache](/docs/data-collection/monitor-anything/Web%20Servers/Apache): Collect Apache web server
   performance metrics via the `server-status?auto` endpoint.
-- [Nginx](/docs/data-collection/monitor-anything/Web-Servers/NGINX): Monitor web server status
+- [Nginx](/docs/data-collection/monitor-anything/Web%20Servers/NGINX): Monitor web server status
   information by gathering metrics via `ngx_http_stub_status_module`.
 - [Postgres](/docs/data-collection/monitor-anything/Databases/PostgresSQL): Collect database health
   and performance metrics.
 - [ElasticSearch](/docs/data-collection/monitor-anything/Search/Elasticsearch): Collect search
   engine performance and health statistics. Optionally collects per-index metrics.
-- [PHP-FPM](/docs/data-collection/monitor-anything/Web-Servers/PHP-FPM): Collect application summary
+- [PHP-FPM](/docs/data-collection/monitor-anything/Web%20Servers/PHP-FPM): Collect application summary
   and processes health metrics by scraping the status page (`/status?full`).
 
 Our [supported collectors list](/docs/data-collection/monitor-anything#service-and-application-collectors) shows all Netdata's
@@ -74,7 +74,7 @@ list](/docs/data-collection/monitor-anything#service-and-application-collectors)
 
 If you haven't yet seen the [supported collectors list](/docs/data-collection/monitor-anything) give it a once-over for any
 additional applications you may want to monitor using Netdata's native collectors, or the [generic Prometheus
-collector](/docs/data-collection/monitor-anything/Any-Application---Generic-Collectors/Prometheus-endpoints).
+collector](/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Prometheus-endpoints).
 
 Collecting all the available metrics on your nodes, and across your entire infrastructure, is just one piece of the
 puzzle. Next, learn more about Netdata's famous real-time visualizations by [seeing an overview of your
