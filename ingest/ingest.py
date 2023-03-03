@@ -668,7 +668,7 @@ if __name__ == '__main__':
     # pointing to GitHub relative paths
     #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER), indent=4))
     fileDict = reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER)
-    print(json.dumps(fileDict, indent=4))
+    #print(json.dumps(fileDict, indent=4))
     for file in toPublish:
         convertGithubLinks(fileDict[file]["learnPath"],fileDict , DOCS_PREFIX)
     genRedirects.main(fileDict)
