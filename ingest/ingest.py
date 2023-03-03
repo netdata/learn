@@ -417,7 +417,7 @@ def reductToPublishInGHLinksCorrelation(inputMatrix, DOCS_PREFIX, DOCS_PATH_LEAR
             properLink = outputDictionary[sourceLink].split(sameParentDir, 1)
             outputDictionary[sourceLink] = properLink[0] + properLink[1].strip("/")
 
-        _temp = outputDictionary[sourceLink].replace("'", " ").replace(":", " ").replace(")", " ").replace(",", " ").replace("(", " ").replace("/  +/g", ' ').replace(" ", "-").replace('/-+/', '-')
+        _temp = outputDictionary[sourceLink].replace("'", " ").replace(":", " ").replace(")", " ").replace(",", " ").replace("(", " ").replace("/  +/g", ' ').replace(" ", "%20").replace('/-+/', '-')
 
         inputMatrix[x].update({"newLearnPath": _temp })
 
