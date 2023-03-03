@@ -55,12 +55,12 @@ process-specific charts.
 
 The process and groups settings are used by two unique and powerful collectors.
 
-[**`apps.plugin`**](/docs/data-collection/monitor-anything/System Metrics/Application-monitoring) looks at the Linux
+[**`apps.plugin`**](/docs/data-collection/monitor-anything/system-metrics/application-monitoring) looks at the Linux
 process tree every second, much like `top` or
 `ps fax`, and collects resource utilization information on every running process. It then automatically adds a layer of
 meaningful visualization on top of these metrics, and creates per-process/application charts.
 
-[**`ebpf.plugin`**](/docs/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF): Netdata's extended
+[**`ebpf.plugin`**](/docs/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf): Netdata's extended
 Berkeley Packet Filter (eBPF) collector
 monitors Linux kernel-level metrics for file descriptors, virtual filesystem IO, and process management, and then hands
 process-specific metrics over to `apps.plugin` for visualization. The eBPF collector also collects and visualizes
