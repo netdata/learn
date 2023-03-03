@@ -17,17 +17,17 @@ To gather system metrics, Netdata uses roughly a dozen plugins, each of which ha
 specific metrics exposed by the host. The system metrics Netdata users interact with most for health monitoring and
 performance troubleshooting are collected and visualized by `proc.plugin`, `cgroups.plugin`, and `ebpf.plugin`.
 
-[**proc.plugin**](/docs/data-collection/monitor-anything/System Metrics/OS-provided-metrics-proc.plugin) gathers metrics from the `/proc` and `/sys` folders in Linux
+[**proc.plugin**](/docs/data-collection/monitor-anything/System-Metrics/OS-provided-metrics-proc.plugin) gathers metrics from the `/proc` and `/sys` folders in Linux
 systems, along with a few other endpoints, and is responsible for the bulk of the system metrics collected and
 visualized by Netdata. It collects CPU, memory, disks, load, networking, mount points, and more with zero configuration.
 It even allows Netdata to monitor its own resource utilization!
 
-[**cgroups.plugin**](/docs/data-collection/monitor-anything/Virtualized Environments/Containers/Monitor-Cgroups) collects rich metrics about containers and virtual machines
+[**cgroups.plugin**](/docs/data-collection/monitor-anything/Virtualized-Environments/Containers-and-VMs-cgroups) collects rich metrics about containers and virtual machines
 using the virtual files under `/sys/fs/cgroup`. By reading cgroups, Netdata can instantly collect resource utilization
 metrics for systemd services, all containers (Docker, LXC, LXD, Libvirt, systemd-nspawn), and more. Learn more in the
 [collecting container metrics](/docs/data-collection/container-metrics) doc.
 
-[**ebpf.plugin**](/docs/data-collection/monitor-anything/System Metrics/Kernel-traces-metrics-eBPF): Netdata's extended Berkeley Packet Filter (eBPF) collector
+[**ebpf.plugin**](/docs/data-collection/monitor-anything/System-Metrics/Kernel-traces-metrics-eBPF): Netdata's extended Berkeley Packet Filter (eBPF) collector
 monitors Linux kernel-level metrics for file descriptors, virtual filesystem IO, and process management. You can use our
 eBPF collector to analyze how and when a process accesses files, when it makes system calls, whether it leaks memory or
 creating zombie processes, and more.
@@ -38,12 +38,12 @@ can find all system collectors in our [supported collectors list](/docs/data-col
 ## Collect Windows system metrics
 
 Netdata is also capable of monitoring Windows systems. The [Windows
-collector](/docs/data-collection/monitor-anything/System Metrics/Windows-machines) integrates with
+collector](/docs/data-collection/monitor-anything/System-Metrics/Windows-machines) integrates with
 [windows_exporter](https://github.com/prometheus-community/windows_exporter), a small Go-based binary that you can run
 on Windows systems. The Windows collector then gathers metrics from an endpoint created by windows_exporter, for more
-details see [the requirements](/docs/data-collection/monitor-anything/System Metrics/Windows-machines#requirements).
+details see [the requirements](/docs/data-collection/monitor-anything/System-Metrics/Windows-machines#requirements).
 
-Next, [configure](/docs/data-collection/monitor-anything/System Metrics/Windows-machines#configuration) the Windows
+Next, [configure](/docs/data-collection/monitor-anything/System-Metrics/Windows-machines#configuration) the Windows
 collector to point to the URL and port of your exposed endpoint. Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
 method](/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent) for your system. You'll start seeing Windows system metrics, such as CPU
 utilization, memory, bandwidth per NIC, number of processes, and much more.
