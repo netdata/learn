@@ -416,8 +416,8 @@ def reductToPublishInGHLinksCorrelation(inputMatrix, DOCS_PREFIX, DOCS_PATH_LEAR
 
             properLink = outputDictionary[sourceLink].split(sameParentDir, 1)
             outputDictionary[sourceLink] = properLink[0] + properLink[1].strip("/")
-        #final sanitazation
-        outputDictionary[sourceLink] = outputDictionary[sourceLink].lower().replace(" ", "-").replace("//", "/")
+
+
         inputMatrix[x].update({"newLearnPath": outputDictionary[sourceLink]})
 
     return (inputMatrix)
@@ -666,8 +666,8 @@ if __name__ == '__main__':
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
     # pointing to GitHub relative paths
     #print(json.dumps(reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER), indent=4))
-    fileDict = reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER)
     for file in toPublish:
+        fileDict = reductToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER)
         convertGithubLinks(fileDict[file]["learnPath"],fileDict , DOCS_PREFIX)
     genRedirects.main(fileDict)
     print("Done.", "Broken Links:", BROKEN_LINK_COUNTER)
