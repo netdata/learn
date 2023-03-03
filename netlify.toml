@@ -8,6 +8,7 @@
 
 
 
+
 [build]
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
 
@@ -87,6 +88,7 @@
 [[redirects]]
   from="/guides"
   to="/docs"
+
 
 
 
@@ -413,7 +415,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/example"
-  to="/docs/data-collection/monitor-anything/Mock Collectors/example-charts.d.plugin"
+  to="/docs/data-collection/monitor-anything/Mock Collectors/Example-module-in-Bash"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/libreswan"
@@ -449,7 +451,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/freeipmi.plugin"
-  to="/docs/data-collection/monitor-anything/Devices/freeipmi.plugin"
+  to="/docs/data-collection/monitor-anything/Devices/FreeIPMI"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin"
@@ -601,7 +603,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/mongodb"
-  to="/docs/data-collection/monitor-anything/Databases/mongodb-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/Databases/MongoDB"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/mysql"
@@ -621,7 +623,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvidia_smi"
-  to="/docs/data-collection/monitor-anything/Devices/nvidia_smi-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/Devices/NVIDIA"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvme"
@@ -681,7 +683,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/proxysql"
-  to="/docs/data-collection/monitor-anything/Databases/proxysql-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/Databases/ProxySQL"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/pulsar"
@@ -689,7 +691,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/rabbitmq"
-  to="/docs/data-collection/monitor-anything/Message Brokers/rabbitmq-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/Message Brokers/RabbitMQ"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/redis"
@@ -945,7 +947,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/sensors"
-  to="/docs/data-collection/monitor-anything/Devices/sensors-python.d.plugin"
+  to="/docs/data-collection/monitor-anything/Devices/Sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/smartd_log"
@@ -1962,5 +1964,13 @@
 [[redirects]]
   from="/guides/monitor/stop-notifications-alarms"
   to="/docs/alerts-and-notifications/configure-alerts"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/mongodb"
+  to="/docs/data-collection/monitor-anything/Databases/MongoDB"
+
+[[redirects]]
+  from="/guides/export/export-netdata-metrics-graphite"
+  to="/docs/exporting-data/graphite"
 
 # section: dynamic << END
