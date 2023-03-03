@@ -129,7 +129,7 @@ def main(GHLinksCorrelation):
 		if not value.startswith("https://"):
 			unPackedDynamicPart+= redirectUnit(key, value)
 	#print(unPackedDocument)
-	print(readRawStaticRedirectsFromFile("netlify.toml"))
+	#print(readRawStaticRedirectsFromFile("netlify.toml"))
 	print("Links from the legacy learn that are not matched:")
 	for key, value in finalDict.items():
 		if value.startswith("https://"):
