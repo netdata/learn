@@ -26,7 +26,7 @@
 
 [[redirects]]
   from="/docs/nightly/concepts/role-based-access-model"
-  to="/docs/deployment-in-production/security/role-based-access-model"
+  to="/docs/deployment-in-production/secure-your-nodes/role-based-access-model"
 
 [[redirects]]
   from="/docs/nightly/operations/alerts/add-discord-notification-configuration"
