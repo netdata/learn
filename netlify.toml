@@ -5,6 +5,10 @@
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
 
 [[redirects]]
+  from="/docs/agent/changelog"
+  to="https://github.com/netdata/netdata/blob/master/CHANGELOG.md"
+
+[[redirects]]
   from="/docs/nightly/concepts/events-feed"
   to="/docs/troubleshooting-and-machine-learning/events-feed"
 
