@@ -29,6 +29,7 @@
     "https://learn.netdata.cloud/docs/agent/collectors/cups.plugin": "https://github.com/netdata/netdata/blob/master/collectors/cups.plugin/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/diskspace.plugin": "https://github.com/netdata/netdata/blob/master/collectors/diskspace.plugin/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin": "https://github.com/netdata/netdata/blob/master/collectors/ebpf.plugin/README.md",
+    "https://learn.netdata.cloud/docs/agent/collectors/fping.plugin": "https://github.com/netdata/go.d.plugin/blob/master/modules/ping/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/freebsd.plugin": "https://github.com/netdata/netdata/blob/master/collectors/freebsd.plugin/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/freeipmi.plugin": "https://github.com/netdata/netdata/blob/master/collectors/freeipmi.plugin/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin": "https://github.com/netdata/go.d.plugin/blob/master/README.md",
