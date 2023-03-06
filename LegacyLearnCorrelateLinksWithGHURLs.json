@@ -27,7 +27,6 @@
     "https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/nut": "https://github.com/netdata/netdata/blob/master/collectors/charts.d.plugin/nut/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/opensips": "https://github.com/netdata/netdata/blob/master/collectors/charts.d.plugin/opensips/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/sensors": "https://github.com/netdata/netdata/blob/master/collectors/charts.d.plugin/sensors/README.md",
-    "https://learn.netdata.cloud/docs/agent/collectors/charts.d.plugin/sensors": "https://github.com/netdata/netdata/blob/master/collectors/charts.d.plugin/sensors/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/cups.plugin": "https://github.com/netdata/netdata/blob/master/collectors/cups.plugin/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/diskspace.plugin": "https://github.com/netdata/netdata/blob/master/collectors/diskspace.plugin/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/ebpf.plugin": "https://github.com/netdata/netdata/blob/master/collectors/ebpf.plugin/README.md",
