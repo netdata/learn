@@ -1964,4 +1964,28 @@
   from="/guides/export/export-netdata-metrics-graphite"
   to="/docs/exporting-data/graphite"
 
+[[redirects]]
+  from="/docs/agent/backends"
+  to="/docs/exporting-data"
+
+[[redirects]]
+  from="/docs/agent/collectors/fping.plugin"
+  to="/docs/data-collection/monitor-anything/Qos/Ping"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/dockerd"
+  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker"
+
+[[redirects]]
+  from="/docs/agent/packaging"
+  to="/docs/installation/package-maintainers"
+
+[[redirects]]
+  from="/docs/cloud/faq-glossary"
+  to="/docs/getting-started/glossary"
+
+[[redirects]]
+  from="/docs/next/agent/collectors/fping.plugin"
+  to="/docs/data-collection/monitor-anything/Qos/Ping"
+
 # section: dynamic << END
