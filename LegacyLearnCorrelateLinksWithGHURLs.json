@@ -1,4 +1,5 @@
 {
+    "https://learn.netdata.cloud/docs/nightly/concepts/events-feed": "https://github.com/netdata/netdata/blob/master/docs/cloud/insights/events-feed.md",
     "https://learn.netdata.cloud/contribute/code-of-conduct": "https://github.com/netdata/.github/blob/main/CODE_OF_CONDUCT.md",
     "https://learn.netdata.cloud/contribute/documentation": "https://github.com/netdata/netdata/blob/master/docs/guidelines.md",
     "https://learn.netdata.cloud/contribute/handbook": "https://github.com/netdata/.github/blob/main/CONTRIBUTING.md",
@@ -257,7 +258,7 @@
     "https://learn.netdata.cloud/docs/agent/netdata-for-iot": "https://github.com/netdata/netdata/blob/master/docs/netdata-for-IoT.md",
     "https://learn.netdata.cloud/docs/agent/anonymous-statistics": "https://github.com/netdata/netdata/blob/master/docs/netdata-security.md",
     "https://learn.netdata.cloud/docs/agent/netdata-security": "https://github.com/netdata/netdata/blob/master/docs/netdata-security.md",
-    "https://learn.netdata.cloud/docs/agent/packaging": "https://github.com/netdata/netdata/edit/master/packaging/maintainers/README.md",
+    "https://learn.netdata.cloud/docs/agent/packaging": "https://github.com/netdata/netdata/blob/master/packaging/maintainers/README.md",
     "https://learn.netdata.cloud/docs/agent/packaging/building-native-packages-locally": "https://github.com/netdata/netdata/blob/master/packaging/building-native-packages-locally.md",
     "https://learn.netdata.cloud/docs/agent/packaging/docker": "https://github.com/netdata/netdata/blob/master/packaging/docker/README.md",
     "https://learn.netdata.cloud/docs/agent/packaging/installer": "https://github.com/netdata/netdata/blob/master/packaging/installer/README.md",
