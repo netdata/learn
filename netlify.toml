@@ -370,7 +370,7 @@
 
 [[redirects]]
   from="/docs/agent/anonymous-statistics"
-  to="/docs/deployment-in-production/secure-your-nodes/anonymous-telemetry-events"
+  to="/docs/deployment-in-production/secure-your-nodes"
 
 [[redirects]]
   from="/docs/agent/build_external"
@@ -1414,11 +1414,11 @@
 
 [[redirects]]
   from="/docs/agent/web"
-  to="/docs/improving-netdata---developers/web/dashboards"
+  to="/docs/improving-netdata---developers/web"
 
 [[redirects]]
   from="/docs/agent/web/api"
-  to="/docs/improving-netdata---developers/agent-api"
+  to="/docs/improving-netdata---developers/web/api"
 
 [[redirects]]
   from="/docs/agent/web/api/badges"
@@ -1987,5 +1987,61 @@
 [[redirects]]
   from="/docs/next/agent/collectors/fping.plugin"
   to="/docs/data-collection/monitor-anything/Qos/Ping"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/any-application---generic-collectors/prometheus-endpoints"
+  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Prometheus-endpoints"
+
+[[redirects]]
+  from="/docs/cloud/beta-architecture/new-architecture"
+  to="/docs/getting-started/distributed-data-architecture"
+
+[[redirects]]
+  from="/agent/step-by-step/step-00"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-01"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-02"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-03"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-04"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-05"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-06"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-07"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-08"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-09"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-10"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/agent/step-by-step/step-99"
+  to="/docs/getting-started"
 
 # section: dynamic << END
