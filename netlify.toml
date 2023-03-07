@@ -9,10 +9,6 @@
   to="https://github.com/netdata/netdata/blob/master/CHANGELOG.md"
 
 [[redirects]]
-  from="/docs/nightly/concepts/events-feed"
-  to="/docs/troubleshooting-and-machine-learning/events-feed"
-
-[[redirects]]
   from="/docs/nightly/concepts/netdata-functions"
   to="/docs/troubleshooting-and-machine-learning/functions"
 
