@@ -2040,4 +2040,8 @@
   from="/agent/step-by-step/step-99"
   to="/docs/getting-started"
 
+[[redirects]]
+  from="/docs/nightly/concepts/events-feed"
+  to="/docs/troubleshooting-and-machine-learning/events-feed"
+
 # section: dynamic << END
