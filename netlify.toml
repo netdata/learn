@@ -2044,4 +2044,8 @@
   from="/docs/nightly/concepts/events-feed"
   to="/docs/troubleshooting-and-machine-learning/events-feed"
 
+[[redirects]]
+  from="/docs/improving-netdata---developers/agent-api"
+  to="/docs/improving-netdata---developers/web/api"
+
 # section: dynamic << END
