@@ -693,7 +693,8 @@ if __name__ == '__main__':
             print(restFilesDictionary[file]["tmpPath"])
         exit(-1)
         
-
+    mapDict = pd.read_csv("map.tsv",sep='\t')
+    mapDict.to_csv("./ingest/one_commit_back.tsv", index=False, sep='\t')
     unSafeCleanUpFolders(TEMP_FOLDER)
 
 print("OPERATION FINISHED")

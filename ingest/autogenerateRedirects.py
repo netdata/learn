@@ -113,15 +113,148 @@ def UpdateGHLinksBasedOnMap(mapMatrix, inputDictionary):
 		else:
 			pass
 	return (inputDictionary)
+
+
+def addDirRedirects(mapping, finalDict):
+	print()
+	mapDict = pd.read_csv("map.tsv", sep='\t').set_index(
+		'custom_edit_url').T.to_dict('dict')
+	one_commit_back = pd.read_csv(
+		"./ingest/one_commit_back.tsv", sep='\t').set_index('custom_edit_url').T.to_dict('dict')
+	redirects = {}
+	key = ""
+	value = ""
+
+	for custom_edit_url in mapDict.keys():
+		SAME_SIDEBARS = mapDict[custom_edit_url]["sidebar_label"] == one_commit_back[custom_edit_url]["sidebar_label"]
+		SAME_LEARN_REL_PATHS = mapDict[custom_edit_url]["learn_rel_path"] == one_commit_back[custom_edit_url]["learn_rel_path"]
+		NOT_NAN_SIDEBARS = str(mapDict[custom_edit_url]["sidebar_label"]) != "nan" and str(
+			one_commit_back[custom_edit_url]["sidebar_label"]) != "nan"
+		NOT_NAN_LEARN_REL_PATHS = str(mapDict[custom_edit_url]["learn_rel_path"]) != "nan" and str(
+			one_commit_back[custom_edit_url]["learn_rel_path"]) != "nan"
+		OLD_LEARN_PATH_NOT_IN_NEW = str(one_commit_back[custom_edit_url]["learn_rel_path"]).split("/") not in  str(mapDict[custom_edit_url]["learn_rel_path"]).split("/") 
+
+		# if not SAME_SIDEBARS and NOT_NAN_SIDEBARS:
+		# 	# print(mapDict[custom_edit_url]["sidebar_label"],"|",one_commit_back[custom_edit_url]["sidebar_label"])
+		# 	old = one_commit_back[custom_edit_url]["sidebar_label"].lower().replace(" ", "-").replace("//", "/")
+		# 	new = mapDict[custom_edit_url]["sidebar_label"].lower().replace(" ", "-").replace("//", "/")
+		old = str(one_commit_back[custom_edit_url]["learn_rel_path"]).lower().replace(
+			" ", "-").replace("//", "/")
+		new = str(mapDict[custom_edit_url]["learn_rel_path"]).lower().replace(
+			" ", "-").replace("//", "/")
+
+		
+		if not SAME_LEARN_REL_PATHS and NOT_NAN_LEARN_REL_PATHS and OLD_LEARN_PATH_NOT_IN_NEW and (old != new):
+			print("The to", mapDict[custom_edit_url]["learn_rel_path"] , "the old from" , one_commit_back[custom_edit_url]["learn_rel_path"])
+
+			print(old, " -> ", new)
+
+			fromURL = mapping[custom_edit_url]
+			toURL = mapping[custom_edit_url]
+
+			# print("FROMURL" , fromURL, "TOURL", toURL)
+			print(len(old.split("/")))
+			print(len(new.split("/")))
+			
+			old_key_array = old.split("/")[::-1]
+			new_key_array =new.split("/")[::-1]
+
+			new_key_array
+
+			for i in range(min(len(old_key_array), len(new_key_array))):
+				oldKey = old_key_array.pop(0)
+				newKey = new_key_array.pop(0)
+
+				if len(old_key_array) == 0:
+					new_key_array[::-1]
+					output=""
+					for string in new_key_array:
+						# newKey += "/" + string
+						output+= string + "/"
+					newKey = output + newKey
+
+					print("OLD KEY ARRAY IS EMPTY, probably files got moved from B/C to A")
+					print("Replacing", newKey, " with ", oldKey, "on", fromURL)
+					fromURL = fromURL.replace(newKey, oldKey)
+					break
+				elif len(new_key_array) == 0:
+					old_key_array[::-1]
+					output =""
+					for string in old_key_array:
+						# oldKey += "/" + string
+						output +=  string + "/" 
+					oldKey = output + oldKey
+
+					print("NEW KEY ARRAY IS EMPTY, probably files got moved from A to B/C")
+					print("Replacing", newKey, " with ", oldKey, "on", fromURL)
+					fromURL = fromURL.replace(newKey, oldKey)
+					break
+				
+				# print("comparing", oldKey, "with", newKey, "\n", oldKey != newKey)
+				elif oldKey != newKey:
+					# POSSIBLE BUG IF I ONLY WANT TO RE-ROUTE ONLY THE PARENT FOLDER
+					print("Replacing", newKey, " with ", oldKey, "on", fromURL)
+					fromURL = fromURL.replace(newKey+"/", oldKey+"/")
+					# need to check for tail entries being the same
+			reverseFromPath = fromURL.split("/")[::-1]
+			reverseToPath = toURL.split("/")[::-1]
+
+			print("Before fromurl", fromURL, "before tourl", toURL)
+
+			for fromPath, toPath in zip(reverseFromPath, reverseToPath):
+				print("Comparison:", fromPath, toPath, fromPath == toPath)
+				if fromPath == toPath:
+					fromURL = fromURL.replace(fromPath, "", 1)
+					toURL = toURL.replace(toPath, "", 1)
+					print("after comparison", fromURL, "aftercomparison", toURL)
+				else:
+					break
+
+		# TODO HERE IS THE SPOT FOR THE UPDATE IN THE DICT
+			fromURL = fromURL.replace("//", "/")
+			toURL = toURL.replace("//", "/")
+
+			if not fromURL.endswith("/"):
+				fromURL += "/"
+
+			if not toURL.endswith("/"):
+				toURL += "/"
+
+			print("FROM", fromURL, "TO", toURL, "\n")
+			if fromURL not in finalDict and not all(ch in "/" for ch in fromURL) and not all(ch in "/" for ch in toURL):
+				redirects.update({fromURL: toURL})
+
+	print(redirects)
+
+	return redirects
+	
+
+def redirect_string_from_dict(dictionary):
+	output_string = ""
+
+	for key in dictionary:
+		output_string += f"\n[[redirects]]\n  from=\"{key}\"\n  to=\"{dictionary[key]}\"\n"
+
+
+	print(output_string)
+
+	return output_string
+
+
 def main(GHLinksCorrelation):
-	maping = reductTonewLearnPathFromGHLinksCorrelation(GHLinksCorrelation)
+	
+
+	mapping = reductTonewLearnPathFromGHLinksCorrelation(GHLinksCorrelation)
 	#print(GHLinksCorrelation)
 	oldLearn = readLegacyLearnDocMap("LegacyLearnCorrelateLinksWithGHURLs.json")
 	#print(oldLearn)
-	oldLearn_redirects = UpdateGHLinksBasedOnMap(maping, oldLearn)
+	oldLearn_redirects = UpdateGHLinksBasedOnMap(mapping, oldLearn)
+	# print(mapping)
+
 	#print(oldLearn)
 	try:
 		finalDict = combineDictsOverwrite(readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
+		# print(finalDict)
 	except Exception as e:
 		print(f"An exception occurred: {e}")
 	unPackedDynamicPart = ''
@@ -139,8 +272,13 @@ def main(GHLinksCorrelation):
 # section: static << START{unPackedStaticPart}# section: static << END
 
 # section: dynamic << START
+{redirect_string_from_dict(addDirRedirects(mapping, finalDict))}
 {unPackedDynamicPart}
 # section: dynamic << END"""
+
+	
+	
+
 	f = open("netlify.toml", "w")
 	f.write(outputRedirectsFile)
 	f.close()
