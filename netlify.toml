@@ -1117,10 +1117,6 @@
   to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/gotify"
 
 [[redirects]]
-  from="/docs/agent/health/notifications/hangouts"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/google-hangouts"
-
-[[redirects]]
   from="/docs/agent/health/notifications/irc"
   to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/irc"
 
