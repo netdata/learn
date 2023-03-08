@@ -74,8 +74,8 @@ You have two options if you prefer to disable the ACLK and not use Netdata Cloud
 ### Disable at installation
 
 You can pass the `--disable-cloud` parameter to the Agent installation when using a kickstart script
-([kickstart.sh](/docs/installation/installation-methods/one-line-installer-kickstart.sh), or a [manual installation from
-Git](/docs/installation/installation-methods/from-a-git-checkout).
+([kickstart.sh](/docs/moved-installation/moved-installation-methods/one-line-installer-kickstart.sh), or a [manual installation from
+Git](/docs/moved-installation/moved-installation-methods/from-a-git-checkout).
 
 When you pass this parameter, the installer does not download or compile any extra libraries. Once running, the Agent
 kills the thread responsible for the ACLK and connecting behavior, and behaves as though the ACLK, and thus Netdata Cloud,
@@ -129,11 +129,11 @@ Restart your Agent to disable the ACLK.
 ### Re-enable the ACLK
 
 If you first disable the ACLK and any Cloud functionality and then decide you would like to use Cloud, you must either
-[reinstall Netdata](/docs/installation/reinstall-netdata) with Cloud enabled or change the runtime setting in your
+[reinstall Netdata](/docs/moved-installation/reinstall-netdata) with Cloud enabled or change the runtime setting in your
 `cloud.conf` file.
 
 If you passed `--disable-cloud` to `netdata-installer.sh` during installation, you must
-[reinstall](/docs/installation/reinstall-netdata) your Agent. Use the same method as before, but pass `--require-cloud` to
+[reinstall](/docs/moved-installation/reinstall-netdata) your Agent. Use the same method as before, but pass `--require-cloud` to
 the installer. When installation finishes you can [connect your node](/docs/getting-started/monitor-your-infrastructure/connect-agent-to-cloud#how-to-connect-a-node).
 
 If you changed the runtime setting in your `var/lib/netdata/cloud.d/cloud.conf` file, edit the file again and change

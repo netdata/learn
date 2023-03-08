@@ -15,7 +15,7 @@ replicate metrics data across multiple nodes, or centralize all your metrics dat
 When one node streams metrics to another, the node receiving metrics can visualize them on the dashboard, run health checks to 
 [trigger alarms](/docs/getting-started/monitor-your-infrastructure/view-active-alerts) and 
 [send notifications](/docs/alerts-and-notifications/notifications), and
-[export](/docs/exporting-data) all metrics to an external TSDB. When Netdata streams metrics to another
+[export](/docs/moved-exporting-data) all metrics to an external TSDB. When Netdata streams metrics to another
 Netdata, the receiving one is able to perform everything a Netdata instance is capable of.
 
 Streaming lets you decide exactly how you want to store and maintain metrics data. While we believe Netdata's
@@ -78,7 +78,7 @@ store all the metrics from the Netdata children running on the ephemeral nodes.
 
 The parent Netdata node can also archive metrics, for all its child nodes, to an external time-series database.
 
-Check the Netdata [exporting documentation](/docs/exporting-data) for configuring this.
+Check the Netdata [exporting documentation](/docs/moved-exporting-data) for configuring this.
 
 This is how such a solution will work:
 

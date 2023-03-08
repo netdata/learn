@@ -209,16 +209,32 @@ def addDirRedirects(mapping, finalDict):
 					print("after comparison", fromURL, "aftercomparison", toURL)
 				else:
 					break
+			
+			#sanitize
+			final_from_URL=""
+			for string in fromURL.split("/"):
+				if len(string):
+					final_from_URL += "/" + string
+			fromURL = final_from_URL
 
-		# TODO HERE IS THE SPOT FOR THE UPDATE IN THE DICT
-			fromURL = fromURL.replace("//", "/")
-			toURL = toURL.replace("//", "/")
+			final_to_URL=""
+			for string in toURL.split("/"):
+				if len(string):
+					final_to_URL += "/" + string
+			toURL = final_to_URL
 
+			# TODO HERE IS THE SPOT FOR THE UPDATE IN THE DICT
+			
 			if not fromURL.endswith("/"):
 				fromURL += "/"
 
 			if not toURL.endswith("/"):
 				toURL += "/"
+
+			#precaution really, not gonna happen
+			fromURL = fromURL.replace("//", "/")
+			toURL = toURL.replace("//", "/")
+
 
 			print("FROM", fromURL, "TO", toURL, "\n")
 			if fromURL not in finalDict and not all(ch in "/" for ch in fromURL) and not all(ch in "/" for ch in toURL):
