@@ -2,7 +2,7 @@
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/exporting/README.md"
 sidebar_label: "Exporting reference"
 learn_status: "Published"
-learn_rel_path: "Moved Exporting data"
+learn_rel_path: "second move Exporting data"
 sidebar_position: "238.0"
 description: "With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis."
 ---
@@ -15,7 +15,7 @@ configuring, and monitoring Netdata's exporting engine, which allows you to send
 databases.
 
 For a quick introduction to the exporting engine's features, read our doc on [exporting metrics to time-series
-databases](/docs/moved-exporting-data), or jump in to [enabling a connector](/docs/moved-exporting-data/enable-an-exporting-connector).
+databases](/docs/second-move-exporting-data), or jump in to [enabling a connector](/docs/second-move-exporting-data/enable-an-exporting-connector).
 
 The exporting engine has a modular structure and supports metric exporting via multiple exporting connector instances at
 the same time. You can have different update intervals and filters configured for every exporting connector instance. 
@@ -34,27 +34,27 @@ X seconds (though, it can send them per second if you need it to).
 ### Integration
 
 The exporting engine uses a number of connectors to send Netdata metrics to external time-series databases. See our
-[list of supported databases](/docs/moved-exporting-data#supported-databases) for information on which
+[list of supported databases](/docs/second-move-exporting-data#supported-databases) for information on which
 connector to enable and configure for your database of choice.
 
--   [**AWS Kinesis Data Streams**](/docs/moved-exporting-data/aws-kinesis-data-streams): Metrics are sent to the service in `JSON`
+-   [**AWS Kinesis Data Streams**](/docs/second-move-exporting-data/aws-kinesis-data-streams): Metrics are sent to the service in `JSON`
     format.
--   [**Google Cloud Pub/Sub Service**](/docs/moved-exporting-data/google-cloud-pub-sub-service): Metrics are sent to the service in `JSON`
+-   [**Google Cloud Pub/Sub Service**](/docs/second-move-exporting-data/google-cloud-pub-sub-service): Metrics are sent to the service in `JSON`
     format.
--   [**Graphite**](/docs/moved-exporting-data/graphite): A plaintext interface. Metrics are sent to the database server as
+-   [**Graphite**](/docs/second-move-exporting-data/graphite): A plaintext interface. Metrics are sent to the database server as
     `prefix.hostname.chart.dimension`. `prefix` is configured below, `hostname` is the hostname of the machine (can
     also be configured). Learn more in our guide to [export and visualize Netdata metrics in
-    Graphite](/docs/moved-exporting-data/graphite).
--   [**JSON** document databases](/docs/moved-exporting-data/json-document-databases)
--   [**OpenTSDB**](/docs/moved-exporting-data/opentsdb): Use a plaintext or HTTP interfaces. Metrics are sent to
+    Graphite](/docs/second-move-exporting-data/graphite).
+-   [**JSON** document databases](/docs/second-move-exporting-data/json-document-databases)
+-   [**OpenTSDB**](/docs/second-move-exporting-data/opentsdb): Use a plaintext or HTTP interfaces. Metrics are sent to
     OpenTSDB as `prefix.chart.dimension` with tag `host=hostname`.
--   [**MongoDB**](/docs/moved-exporting-data/mongodb): Metrics are sent to the database in `JSON` format.
+-   [**MongoDB**](/docs/second-move-exporting-data/mongodb): Metrics are sent to the database in `JSON` format.
 -   [**Prometheus**](/docs/root-prometheus/prometheus): Use an existing Prometheus installation to scrape metrics
     from node using the Netdata API.
 -   [**Prometheus remote write**](/docs/root-prometheus/prometheus-remote-write). A binary snappy-compressed protocol
     buffer encoding over HTTP. Supports many [storage
     providers](https://prometheus.io/docs/operating/integrations/#remote-endpoints-and-storage).
--   [**TimescaleDB**](/docs/moved-exporting-data/timescaledb): Use a community-built connector that takes JSON streams from a
+-   [**TimescaleDB**](/docs/second-move-exporting-data/timescaledb): Use a community-built connector that takes JSON streams from a
     Netdata client and writes them to a TimescaleDB table.
 
 ### Chart filtering

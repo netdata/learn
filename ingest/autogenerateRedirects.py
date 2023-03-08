@@ -14,6 +14,7 @@ import autogenerateSupportedIntegrationsPage as genIntPage
 import pandas as pd
 import numpy as np
 
+
 def redirectUnit(FROM, TO):
 	unit = f"""
 [[redirects]]
@@ -21,6 +22,8 @@ def redirectUnit(FROM, TO):
   to="{TO}"
 """
 	return (unit)
+
+
 def combineDictsJU(dict1, dict2):
     """
     Combine two Irreconcilable dictionaries, if they are not Irreconcilable, raising error.
@@ -28,13 +31,15 @@ def combineDictsJU(dict1, dict2):
     new_dict = {}
     for key in dict1:
         if key in new_dict:
-            raise Exception(f"Key '{key}' already exists in the new dictionary and will be overwritten.")
+            raise Exception(
+            	f"Key '{key}' already exists in the new dictionary and will be overwritten.")
         new_dict[key] = dict1[key]
 
     # Iterate through the keys in dict2 and add them to the new_dict
     for key in dict2:
         if key in new_dict:
-            raise Exception(f"Key '{key}' already exists in the new dictionary and will be overwritten.")
+            raise Exception(
+            	f"Key '{key}' already exists in the new dictionary and will be overwritten.")
         new_dict[key] = dict2[key]
 
     return (new_dict)
@@ -57,8 +62,10 @@ def reductTonewLearnPathFromGHLinksCorrelation(inputMatrix):
     """
     outputDictionary = dict()
     for x in inputMatrix:
-        outputDictionary[inputMatrix[x]["metadata"]["custom_edit_url"]] = inputMatrix[x]["newLearnPath"]
-        outputDictionary[inputMatrix[x]["metadata"]["custom_edit_url"].replace("/edit/","/blob/")] = inputMatrix[x]["newLearnPath"]
+        outputDictionary[inputMatrix[x]["metadata"]
+                         ["custom_edit_url"]] = inputMatrix[x]["newLearnPath"]
+        outputDictionary[inputMatrix[x]["metadata"]["custom_edit_url"].replace(
+            "/edit/", "/blob/")] = inputMatrix[x]["newLearnPath"]
     return (outputDictionary)
 
 
@@ -69,12 +76,15 @@ def readRawStaticRedirectsFromFile(pathToFile):
 	and saves them into a multiline string.
 	"""
 	redirects = ""
-	section_pattern = re.compile(r'#\s*section:\s*static\s*<<\s*START(.+?)#\s*section:\s*static\s*<<\s*END', re.DOTALL)
+	section_pattern = re.compile(
+		r'#\s*section:\s*static\s*<<\s*START(.+?)#\s*section:\s*static\s*<<\s*END', re.DOTALL)
 	with open(pathToFile, "r+") as fd:
 		document_text = "".join(fd.readlines())
 		sections = section_pattern.findall(document_text)
 		redirects += "".join(sections)
 	return (redirects)
+
+
 def readRedirectsFromFile(pathToFile):
 	"""
 	This function reads the netlify.toml file, identifies
@@ -82,15 +92,17 @@ def readRedirectsFromFile(pathToFile):
 	and parse all the [[redirect]] rules in a dictionary.
 	"""
 	redirects = dict()
-	section_pattern = re.compile(r'#\s*section:\s*dynamic\s*<<\s*START(.+?)#\s*section:\s*dynamic\s*<<\s*END', re.DOTALL)
-	redirects_pattern = re.compile(r'\[\[redirects\]\]\s+from\s*=\s*"(.+?)"\s+to\s*=\s*"(.+?)"')
+	section_pattern = re.compile(
+		r'#\s*section:\s*dynamic\s*<<\s*START(.+?)#\s*section:\s*dynamic\s*<<\s*END', re.DOTALL)
+	redirects_pattern = re.compile(
+		r'\[\[redirects\]\]\s+from\s*=\s*"(.+?)"\s+to\s*=\s*"(.+?)"')
 	with open(pathToFile, "r+") as fd:
 		document_text = "".join(fd.readlines())
 		sections = section_pattern.findall(document_text)
 		for section in sections:
 			redirectsList = redirects_pattern.findall(section)
-		
-		for k,v in redirectsList.__iter__():
+
+		for k, v in redirectsList.__iter__():
 			redirects[k] = v
 	return (redirects)
 
@@ -103,11 +115,11 @@ def readLegacyLearnDocMap(pathToFile):
 	"""
 	finalDict = dict()
 	with open(pathToFile) as json_file:
-		return({key.replace("https://learn.netdata.cloud",""): value for key, value in json.load(json_file).items()})
-	
+		return ({key.replace("https://learn.netdata.cloud", ""): value for key, value in json.load(json_file).items()})
+
 
 def UpdateGHLinksBasedOnMap(mapMatrix, inputDictionary):
-	for k,v in inputDictionary.items():
+	for k, v in inputDictionary.items():
 		if v in mapMatrix.keys():
 			inputDictionary[k] = mapMatrix[v]
 		else:
@@ -116,134 +128,149 @@ def UpdateGHLinksBasedOnMap(mapMatrix, inputDictionary):
 
 
 def addDirRedirects(mapping, finalDict):
-	print()
-	mapDict = pd.read_csv("map.tsv", sep='\t').set_index(
-		'custom_edit_url').T.to_dict('dict')
+	# A function that covers adding redirects for (most) moved directories
+
+	# Read the two maps, map_dict is the new one with the moved elements,
+	# and the one_commit_back, is how the map was before these changes.
+	map_dict = pd.read_csv(
+		"map.tsv", sep='\t').set_index('custom_edit_url').T.to_dict('dict')
+
 	one_commit_back = pd.read_csv(
 		"./ingest/one_commit_back.tsv", sep='\t').set_index('custom_edit_url').T.to_dict('dict')
+
 	redirects = {}
-	key = ""
-	value = ""
 
-	for custom_edit_url in mapDict.keys():
-		SAME_SIDEBARS = mapDict[custom_edit_url]["sidebar_label"] == one_commit_back[custom_edit_url]["sidebar_label"]
-		SAME_LEARN_REL_PATHS = mapDict[custom_edit_url]["learn_rel_path"] == one_commit_back[custom_edit_url]["learn_rel_path"]
-		NOT_NAN_SIDEBARS = str(mapDict[custom_edit_url]["sidebar_label"]) != "nan" and str(
-			one_commit_back[custom_edit_url]["sidebar_label"]) != "nan"
-		NOT_NAN_LEARN_REL_PATHS = str(mapDict[custom_edit_url]["learn_rel_path"]) != "nan" and str(
-			one_commit_back[custom_edit_url]["learn_rel_path"]) != "nan"
-		OLD_LEARN_PATH_NOT_IN_NEW = str(one_commit_back[custom_edit_url]["learn_rel_path"]).split("/") not in  str(mapDict[custom_edit_url]["learn_rel_path"]).split("/") 
+	# Check every custom_edit_url that is inside the new map
+	for custom_edit_url in map_dict.keys():
+		# boolean flags
+		NOT_NAN_LEARN_REL_PATHS = str(map_dict[custom_edit_url]["learn_rel_path"]) != "nan" \
+                    and str(one_commit_back[custom_edit_url]["learn_rel_path"]) != "nan"
 
-		# if not SAME_SIDEBARS and NOT_NAN_SIDEBARS:
-		# 	# print(mapDict[custom_edit_url]["sidebar_label"],"|",one_commit_back[custom_edit_url]["sidebar_label"])
-		# 	old = one_commit_back[custom_edit_url]["sidebar_label"].lower().replace(" ", "-").replace("//", "/")
-		# 	new = mapDict[custom_edit_url]["sidebar_label"].lower().replace(" ", "-").replace("//", "/")
+		OLD_LEARN_PATH_NOT_IN_NEW = str(one_commit_back[custom_edit_url]["learn_rel_path"]).split("/") \
+			not in str(map_dict[custom_edit_url]["learn_rel_path"]).split("/")
+
+		# Get the new and old learn_rel_path of the custom_edit_url
 		old = str(one_commit_back[custom_edit_url]["learn_rel_path"]).lower().replace(
 			" ", "-").replace("//", "/")
-		new = str(mapDict[custom_edit_url]["learn_rel_path"]).lower().replace(
+		new = str(map_dict[custom_edit_url]["learn_rel_path"]).lower().replace(
 			" ", "-").replace("//", "/")
 
-		
-		if not SAME_LEARN_REL_PATHS and NOT_NAN_LEARN_REL_PATHS and OLD_LEARN_PATH_NOT_IN_NEW and (old != new):
-			print("The to", mapDict[custom_edit_url]["learn_rel_path"] , "the old from" , one_commit_back[custom_edit_url]["learn_rel_path"])
+		# If old and new is different, both are not nan, and this is not a renaming scheme like: A -> A/B (can't make a dir redirect, as there might be other files inside A)
+		if NOT_NAN_LEARN_REL_PATHS and OLD_LEARN_PATH_NOT_IN_NEW and (old != new):
+			# print("The to", map_dict[custom_edit_url]["learn_rel_path"],
+			#       "the old from", one_commit_back[custom_edit_url]["learn_rel_path"])
+			# print(old, " -> ", new)
 
-			print(old, " -> ", new)
+			# Get the proper URL for "from" and "to"
+			from_url = mapping[custom_edit_url]
+			dest_url = mapping[custom_edit_url]
 
-			fromURL = mapping[custom_edit_url]
-			toURL = mapping[custom_edit_url]
+			# print("FROMURL" , from_url, "TOURL", dest_url)
+			# print(len(old.split("/")))
+			# print(len(new.split("/")))
 
-			# print("FROMURL" , fromURL, "TOURL", toURL)
-			print(len(old.split("/")))
-			print(len(new.split("/")))
-			
+			# Make two reverse arrays, that contain the paths splitted by "/", in reverse so we can inspect what changed in a backwards fashion
 			old_key_array = old.split("/")[::-1]
-			new_key_array =new.split("/")[::-1]
+			new_key_array = new.split("/")[::-1]
 
-			new_key_array
-
-			for i in range(min(len(old_key_array), len(new_key_array))):
+			# Loop for n times where n  is the smallest length between the two arrays
+			for _ in range(min(len(old_key_array), len(new_key_array))):
+				# Pop a pair of elements
 				oldKey = old_key_array.pop(0)
 				newKey = new_key_array.pop(0)
 
+				# If we have reached the end of the old_key_array, it means that a move has
+				# occurred in the fashion of A -> B/C.
+				# In this case we want to replace (in from_url) the whole path after the newKey we are in with A
 				if len(old_key_array) == 0:
 					new_key_array[::-1]
-					output=""
+					output = ""
 					for string in new_key_array:
-						# newKey += "/" + string
-						output+= string + "/"
+						output += string + "/"
+
+					# build the full newKey after our current newKey
 					newKey = output + newKey
 
-					print("OLD KEY ARRAY IS EMPTY, probably files got moved from B/C to A")
-					print("Replacing", newKey, " with ", oldKey, "on", fromURL)
-					fromURL = fromURL.replace(newKey, oldKey)
+					# print("OLD KEY ARRAY IS EMPTY, probably files got moved from A to B/C")
+					# print("Replacing", newKey, " with ", oldKey, "on", from_url)
+					from_url = from_url.replace(newKey, oldKey)
 					break
+
+				# Else, if we have reached the end of the new_key_array, it means that a move has
+				# occurred in the fashion of B/C -> A.
+				# In this case we want to replace (in from_url) the whole path after the newKey we are in with B/C
 				elif len(new_key_array) == 0:
 					old_key_array[::-1]
-					output =""
+					output = ""
 					for string in old_key_array:
-						# oldKey += "/" + string
-						output +=  string + "/" 
+						output += string + "/"
+
+					# build the full oldKey after our current oldKey
 					oldKey = output + oldKey
 
-					print("NEW KEY ARRAY IS EMPTY, probably files got moved from A to B/C")
-					print("Replacing", newKey, " with ", oldKey, "on", fromURL)
-					fromURL = fromURL.replace(newKey, oldKey)
+					# print("NEW KEY ARRAY IS EMPTY, probably files got moved from B/C to A")
+					# print("Replacing", newKey, " with ", oldKey, "on", from_url)
+					from_url = from_url.replace(newKey, oldKey)
 					break
-				
-				# print("comparing", oldKey, "with", newKey, "\n", oldKey != newKey)
+
+				# Else, if the two keys are different, just replace the newKey with the oldKey
 				elif oldKey != newKey:
-					# POSSIBLE BUG IF I ONLY WANT TO RE-ROUTE ONLY THE PARENT FOLDER
-					print("Replacing", newKey, " with ", oldKey, "on", fromURL)
-					fromURL = fromURL.replace(newKey+"/", oldKey+"/")
-					# need to check for tail entries being the same
-			reverseFromPath = fromURL.split("/")[::-1]
-			reverseToPath = toURL.split("/")[::-1]
+					# print("Replacing", newKey, " with ", oldKey, "on", from_url)
+					from_url = from_url.replace(newKey+"/", oldKey+"/")
 
-			print("Before fromurl", fromURL, "before tourl", toURL)
+			# Now that we have the from_url, we need to check for tail entries being the same,
+			# like both from_url and dest_url ending in "/monitor" in this case,
+			# we should redirect only the parent folder, not the untouched "monitor" folder.
+			# We should only go so far as to the first difference in the URLs, so we reverse the arrays to start from the end
+			reverseFromPath = from_url.split("/")[::-1]
+			reverseToPath = dest_url.split("/")[::-1]
 
-			for fromPath, toPath in zip(reverseFromPath, reverseToPath):
-				print("Comparison:", fromPath, toPath, fromPath == toPath)
-				if fromPath == toPath:
-					fromURL = fromURL.replace(fromPath, "", 1)
-					toURL = toURL.replace(toPath, "", 1)
-					print("after comparison", fromURL, "aftercomparison", toURL)
+			# print("Before fromurl", from_url, "before tourl", dest_url)
+
+			# For every piece of the path, check if they are the same, and if they are, replace only the first occurrence (precaution for /monitor/monitor cases)
+			# Don't worry about extra "/"s as we will deal at the end with that.
+			for from_path_piece, toPath in zip(reverseFromPath, reverseToPath):
+				# print("Comparison:", from_path_piece, toPath, from_path_piece == toPath)
+				if from_path_piece == toPath:
+					from_url = from_url.replace("/"+ from_path_piece, "", 1)
+					dest_url = dest_url.replace("/"+ toPath, "", 1)
+					# print("after comparison", from_url, "after comparison", dest_url)
 				else:
 					break
-			
-			#sanitize
-			final_from_URL=""
-			for string in fromURL.split("/"):
+
+			# Sanitize from_url and dest_url, remove extra "/"s and just leave one in between dirs, and after add one at the end
+			final_from_URL = ""
+			for string in from_url.split("/"):
 				if len(string):
 					final_from_URL += "/" + string
-			fromURL = final_from_URL
+			from_url = final_from_URL
 
-			final_to_URL=""
-			for string in toURL.split("/"):
+			final_to_URL = ""
+			for string in dest_url.split("/"):
 				if len(string):
 					final_to_URL += "/" + string
-			toURL = final_to_URL
+			dest_url = final_to_URL
 
-			# TODO HERE IS THE SPOT FOR THE UPDATE IN THE DICT
-			
-			if not fromURL.endswith("/"):
-				fromURL += "/"
+			if not from_url.endswith("/"):
+				from_url += "/"
 
-			if not toURL.endswith("/"):
-				toURL += "/"
+			if not dest_url.endswith("/"):
+				dest_url += "/"
 
-			#precaution really, not gonna happen
-			fromURL = fromURL.replace("//", "/")
-			toURL = toURL.replace("//", "/")
+			# precaution really, not gonna happen after sanitization
+			from_url = from_url.replace("//", "/")
+			dest_url = dest_url.replace("//", "/")
 
+			# If from_url is not in the finalDict, so there is not a redirect for it already, and the URL is an actual URL,
+			# update the dict, so we don't introduce duplicates
+			if from_url not in finalDict and not all(ch in "/" for ch in from_url) and not all(ch in "/" for ch in dest_url):
+				# print("FROM", from_url, "TO", dest_url, "\n")
+				redirects.update({from_url: dest_url})
 
-			print("FROM", fromURL, "TO", toURL, "\n")
-			if fromURL not in finalDict and not all(ch in "/" for ch in fromURL) and not all(ch in "/" for ch in toURL):
-				redirects.update({fromURL: toURL})
-
-	print(redirects)
+	# print(redirects)
 
 	return redirects
-	
+
 
 def redirect_string_from_dict(dictionary):
 	output_string = ""
@@ -251,39 +278,38 @@ def redirect_string_from_dict(dictionary):
 	for key in dictionary:
 		output_string += f"\n[[redirects]]\n  from=\"{key}\"\n  to=\"{dictionary[key]}\"\n"
 
-
-	print(output_string)
+	# print(output_string)
 
 	return output_string
 
 
 def main(GHLinksCorrelation):
-	
 
 	mapping = reductTonewLearnPathFromGHLinksCorrelation(GHLinksCorrelation)
-	#print(GHLinksCorrelation)
+	# print(GHLinksCorrelation)
 	oldLearn = readLegacyLearnDocMap("LegacyLearnCorrelateLinksWithGHURLs.json")
-	#print(oldLearn)
+	# print(oldLearn)
 	oldLearn_redirects = UpdateGHLinksBasedOnMap(mapping, oldLearn)
 	# print(mapping)
 
-	#print(oldLearn)
+	# print(oldLearn)
 	try:
-		finalDict = combineDictsOverwrite(readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
+		finalDict = combineDictsOverwrite(
+			readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
 		# print(finalDict)
 	except Exception as e:
 		print(f"An exception occurred: {e}")
 	unPackedDynamicPart = ''
 	for key, value in finalDict.items():
 		if not value.startswith("https://"):
-			unPackedDynamicPart+= redirectUnit(key, value)
-	#print(unPackedDocument)
-	#print(readRawStaticRedirectsFromFile("netlify.toml"))
+			unPackedDynamicPart += redirectUnit(key, value)
+	# print(unPackedDocument)
+	# print(readRawStaticRedirectsFromFile("netlify.toml"))
 	print("Links from the legacy learn that are not matched:")
 	for key, value in finalDict.items():
 		if value.startswith("https://"):
 			print(key, value)
-	unPackedStaticPart= readRawStaticRedirectsFromFile("netlify.toml")
+	unPackedStaticPart = readRawStaticRedirectsFromFile("netlify.toml")
 	outputRedirectsFile = f"""# This document is autogenerated, to make your change permanently, include it in the static section.
 # section: static << START{unPackedStaticPart}# section: static << END
 
@@ -292,11 +318,7 @@ def main(GHLinksCorrelation):
 {unPackedDynamicPart}
 # section: dynamic << END"""
 
-	
-	
-
 	f = open("netlify.toml", "w")
 	f.write(outputRedirectsFile)
 	f.close()
-	#print(unPackedDocument)
-	
+	# print(unPackedDocument)
