@@ -290,6 +290,7 @@
     "https://learn.netdata.cloud/docs/agent/streaming": "https://github.com/netdata/netdata/blob/master/streaming/README.md",
     "https://learn.netdata.cloud/docs/agent/tests/health_mgmtapi": "https://github.com/netdata/netdata/blob/master/tests/health_mgmtapi/README.md",
     "https://learn.netdata.cloud/docs/agent/web": "https://github.com/netdata/netdata/blob/master/web/README.md",
+    "https://learn.netdata.cloud/docs/improving-netdata---developers/agent-api": "https://github.com/netdata/netdata/blob/master/web/api/README.md",
     "https://learn.netdata.cloud/docs/agent/web/api": "https://github.com/netdata/netdata/blob/master/web/api/README.md",
     "https://learn.netdata.cloud/docs/agent/web/api/badges": "https://github.com/netdata/netdata/blob/master/web/api/badges/README.md",
     "https://learn.netdata.cloud/docs/agent/web/api/exporters": "https://github.com/netdata/netdata/blob/master/docs/export/external-databases.md",
