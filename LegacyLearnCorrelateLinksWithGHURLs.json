@@ -73,7 +73,7 @@
     "https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/logind": "https://github.com/netdata/go.d.plugin/blob/master/modules/logind/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/logstash": "https://github.com/netdata/go.d.plugin/blob/master/modules/logstash/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/mongodb": "https://github.com/netdata/go.d.plugin/blob/master/modules/mongodb/README.md",
-    "https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/mongodb" : "https://github.com/netdata/go.d.plugin/blob/master/modules/mongodb/README.md",
+    "https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/mongodb": "https://github.com/netdata/go.d.plugin/blob/master/modules/mongodb/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/mysql": "https://github.com/netdata/go.d.plugin/blob/master/modules/mysql/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/nginx": "https://github.com/netdata/go.d.plugin/blob/master/modules/nginx/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/nginxplus": "https://github.com/netdata/go.d.plugin/blob/master/modules/nginxplus/README.md",

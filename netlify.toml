@@ -366,7 +366,7 @@
 
 [[redirects]]
   from="/docs/agent/anonymous-statistics"
-  to="/docs/deployment-in-production/secure-your-nodes"
+  to="/docs/deployment-in-production/secure-your-nodes/anonymous-telemetry-events"
 
 [[redirects]]
   from="/docs/agent/build_external"
