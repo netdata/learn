@@ -115,7 +115,7 @@
 
 [[redirects]]
   from="/docs/visualizations/*"
-  to="/docs/miscellaneous/*"
+  to="/docs/miscellaneous/:splat"
 
 [[redirects]]
   from="/docs/agent"
