@@ -159,113 +159,185 @@ def addDirRedirects(mapping, finalDict):
 		if NOT_NAN_LEARN_REL_PATHS and OLD_LEARN_PATH_NOT_IN_NEW and (old != new):
 			# print("The to", map_dict[custom_edit_url]["learn_rel_path"],
 			#       "the old from", one_commit_back[custom_edit_url]["learn_rel_path"])
-			# print(old, " -> ", new)
+			print(old, " -> ", new)
 
-			# Get the proper URL for "from" and "to"
-			from_url = mapping[custom_edit_url]
-			dest_url = mapping[custom_edit_url]
-
-			# print("FROMURL" , from_url, "TOURL", dest_url)
-			# print(len(old.split("/")))
-			# print(len(new.split("/")))
-
-			# Make two reverse arrays, that contain the paths splitted by "/", in reverse so we can inspect what changed in a backwards fashion
 			old_key_array = old.split("/")[::-1]
 			new_key_array = new.split("/")[::-1]
 
-			# Loop for n times where n  is the smallest length between the two arrays
-			for _ in range(min(len(old_key_array), len(new_key_array))):
-				# Pop a pair of elements
-				oldKey = old_key_array.pop(0)
-				newKey = new_key_array.pop(0)
+			CHILDSAME = False
+			ignore_last = 0
 
-				# If we have reached the end of the old_key_array, it means that a move has
-				# occurred in the fashion of A -> B/C.
-				# In this case we want to replace (in from_url) the whole path after the newKey we are in with A
-				if len(old_key_array) == 0:
-					new_key_array[::-1]
-					output = ""
-					for string in new_key_array:
-						output += string + "/"
-
-					# build the full newKey after our current newKey
-					newKey = output + newKey
-
-					# print("OLD KEY ARRAY IS EMPTY, probably files got moved from A to B/C")
-					# print("Replacing", newKey, " with ", oldKey, "on", from_url)
-					from_url = from_url.replace(newKey, oldKey)
-					break
-
-				# Else, if we have reached the end of the new_key_array, it means that a move has
-				# occurred in the fashion of B/C -> A.
-				# In this case we want to replace (in from_url) the whole path after the newKey we are in with B/C
-				elif len(new_key_array) == 0:
-					old_key_array[::-1]
-					output = ""
-					for string in old_key_array:
-						output += string + "/"
-
-					# build the full oldKey after our current oldKey
-					oldKey = output + oldKey
-
-					# print("NEW KEY ARRAY IS EMPTY, probably files got moved from B/C to A")
-					# print("Replacing", newKey, " with ", oldKey, "on", from_url)
-					from_url = from_url.replace(newKey, oldKey)
-					break
-
-				# Else, if the two keys are different, just replace the newKey with the oldKey
+			for i in range(min(len(old_key_array), len(new_key_array))):
+				oldKey = old_key_array[i]
+				newKey = new_key_array[i]
+				if oldKey == newKey and not CHILDSAME:
+					CHILDSAME = True
+				elif oldKey == newKey and CHILDSAME:
+					ignore_last += 1
+					CHILDSAME = True
 				elif oldKey != newKey:
-					# print("Replacing", newKey, " with ", oldKey, "on", from_url)
-					from_url = from_url.replace(newKey+"/", oldKey+"/")
-
-			# Now that we have the from_url, we need to check for tail entries being the same,
-			# like both from_url and dest_url ending in "/monitor" in this case,
-			# we should redirect only the parent folder, not the untouched "monitor" folder.
-			# We should only go so far as to the first difference in the URLs, so we reverse the arrays to start from the end
-			reverseFromPath = from_url.split("/")[::-1]
-			reverseToPath = dest_url.split("/")[::-1]
-
-			# print("Before fromurl", from_url, "before tourl", dest_url)
-
-			# For every piece of the path, check if they are the same, and if they are, replace only the first occurrence (precaution for /monitor/monitor cases)
-			# Don't worry about extra "/"s as we will deal at the end with that.
-			for from_path_piece, toPath in zip(reverseFromPath, reverseToPath):
-				# print("Comparison:", from_path_piece, toPath, from_path_piece == toPath)
-				if from_path_piece == toPath:
-					from_url = from_url.replace("/"+ from_path_piece, "", 1)
-					dest_url = dest_url.replace("/"+ toPath, "", 1)
-					# print("after comparison", from_url, "after comparison", dest_url)
-				else:
 					break
+			print("After first loop\n",old, " -> ", new, ignore_last)
 
-			# Sanitize from_url and dest_url, remove extra "/"s and just leave one in between dirs, and after add one at the end
-			final_from_URL = ""
-			for string in from_url.split("/"):
-				if len(string):
-					final_from_URL += "/" + string
-			from_url = final_from_URL
+			print("RANGE", range(0,len(old_key_array)-ignore_last))
+			old_key_array = old_key_array[::-1]
+			output = ""
+			for i in range(0,len(old_key_array)-ignore_last):
+				output += old_key_array[i] + "/"
+			old = "/docs/" + output
 
-			final_to_URL = ""
-			for string in dest_url.split("/"):
-				if len(string):
-					final_to_URL += "/" + string
-			dest_url = final_to_URL
+			new_key_array = new_key_array[::-1]
+			output = ""
+			for i in range(0,len(new_key_array)-ignore_last):
+				output += new_key_array[i] + "/"
+			
+			new = "/docs/" + output
 
-			if not from_url.endswith("/"):
-				from_url += "/"
+			print("After ignore\n",old, " -> ", new, "\n\n")
 
-			if not dest_url.endswith("/"):
-				dest_url += "/"
+			# # Get the proper URL for "from" and "to"
+			
+			# # from_url = mapping[custom_edit_url]
+			# built_destination_check_string = ""
+
+			# test_from_url=""
+			# dest_url = mapping[custom_edit_url]
+
+			# print("TESTFROMURL" , test_from_url, "DESTURL", dest_url)
+			# # print(len(old.split("/")))
+			# # print(len(new.split("/")))
+
+			# # Make two reverse arrays, that contain the paths splitted by "/", in reverse so we can inspect what changed in a backwards fashion
+			# old_key_array = old.split("/")[::-1]
+			# new_key_array = new.split("/")[::-1]
+
+			# # Loop for n times where n  is the smallest length between the two arrays
+			# for _ in range(min(len(old_key_array), len(new_key_array))):
+			# 	# Pop a pair of elements
+			# 	oldKey = old_key_array.pop(0)
+			# 	newKey = new_key_array.pop(0)
+
+			# 	# If we have reached the end of the old_key_array, it means that a move has
+			# 	# occurred in the fashion of A -> B/C.
+			# 	# In this case we want to replace (in from_url) the whole path after the newKey we are in with A
+			# 	if len(old_key_array) == 0:
+			# 		new_key_array[::-1]
+			# 		output = ""
+			# 		for string in new_key_array:
+			# 			output += string + "/"
+
+			# 		# build the full newKey after our current newKey
+			# 		newKey = output + newKey
+			# 		built_destination_check_string = newKey + "/" + built_destination_check_string
+			# 		print("OLD KEY ARRAY IS EMPTY, probably files got moved from A to B/C")
+			# 		print(f"tst is now: {oldKey} + {test_from_url}")
+			# 		# print("Replacing", newKey, " with ", oldKey, "on", from_url)
+					
+			# 		# from_url = from_url.replace(newKey, oldKey)
+			# 		test_from_url = oldKey + "/" + test_from_url
+
+			# 		break
+
+			# 	# Else, if we have reached the end of the new_key_array, it means that a move has
+			# 	# occurred in the fashion of B/C -> A.
+			# 	# In this case we want to replace (in from_url) the whole path after the newKey we are in with B/C
+			# 	elif len(new_key_array) == 0:
+			# 		old_key_array[::-1]
+			# 		output = ""
+			# 		for string in old_key_array:
+			# 			output += string + "/"
+
+			# 		# build the full oldKey after our current oldKey
+			# 		oldKey = output + oldKey
+			# 		built_destination_check_string = newKey + "/" + built_destination_check_string
+			# 		print("NEW KEY ARRAY IS EMPTY, probably files got moved from B/C to A")
+			# 		print(f"tst is now: {oldKey} + {test_from_url}")
+			# 		# print("Replacing", newKey, " with ", oldKey, "on", from_url)
+					
+			# 		# from_url = from_url.replace(newKey, oldKey)
+			# 		test_from_url = oldKey +"/"+ test_from_url
+			# 		break
+
+			# 	# Else, if the two keys are different, just replace the newKey with the oldKey
+			# 	elif oldKey != newKey:
+			# 		built_destination_check_string = newKey + "/" + built_destination_check_string
+			# 		# print("Replacing", newKey, " with ", oldKey, "on", from_url)
+			# 		print(f"tst is now: {oldKey} + {test_from_url}")
+			# 		test_from_url = oldKey + "/" + test_from_url
+					
+			# 		# from_url = from_url.replace(newKey+"/", oldKey+"/")
+
+
+			# # test_from_url = "/docs/" + test_from_url
+			# # print(test_from_url, from_url, dest_url)
+			
+			# # Now that we have the from_url, we need to check for tail entries being the same,
+			# # like both from_url and dest_url ending in "/monitor" in this case,
+			# # we should redirect only the parent folder, not the untouched "monitor" folder.
+			# # We should only go so far as to the first difference in the URLs, so we reverse the arrays to start from the end
+			# # reverseFromPath = from_url.split("/")[::-1]
+			# # reverseToPath = dest_url.split("/")[::-1]
+			# # reverse_test_from_path = test_from_url.split("/")[::-1]
+			# # print(f"Before tstfromurl {test_from_url} before dest {dest_url}")
+
+			# # For every piece of the path, check if they are the same, and if they are, replace only the first occurrence (precaution for /monitor/monitor cases)
+			# # Don't worry about extra "/"s as we will deal at the end with that.
+			# # for from_path_piece, toPath, test_path in zip(reverseFromPath, reverseToPath, reverse_test_from_path):
+			# # 	print("Comparison block")#, from_path_piece, toPath, from_path_piece == toPath)
+			# # 	if from_path_piece == toPath:
+			# # 		pass
+			# # 		# from_url = from_url.replace("/"+ from_path_piece, "", 1)
+			# # 		# dest_url = dest_url.replace("/"+ toPath, "", 1)
+			# # 		# print("after comparison", from_url, "after comparison", dest_url)
+			# # 	else:
+			# # 		break
+			# dest_url = dest_url.split(new)[0] + new
+			
+			# test_from_url = "/docs/" + test_from_url
+
+			# # Sanitize from_url and dest_url, remove extra "/"s and just leave one in between dirs, and after add one at the end
+			# # final_from_URL = ""
+			# # for string in from_url.split("/"):
+			# # 	if len(string):
+			# # 		final_from_URL += "/" + string
+			# # from_url = final_from_URL
+
+			# test = ""
+			# for string in test_from_url.split("/"):
+			# 	if len(string):
+			# 		test += "/" + string
+			# test_from_url = test
+
+			# final_to_URL = ""
+			# for string in dest_url.split("/"):
+			# 	if len(string):
+			# 		final_to_URL += "/" + string
+			# dest_url = final_to_URL
+
+			# if not from_url.endswith("/"):
+			# 	from_url += "/"
+
+
+			# if not test_from_url.endswith("/"):
+			# 	test_from_url += "/"
+
+			# if not dest_url.endswith("/"):
+			# 	dest_url += "/"
 
 			# precaution really, not gonna happen after sanitization
-			from_url = from_url.replace("//", "/")
-			dest_url = dest_url.replace("//", "/")
+			# from_url = from_url.replace("//", "/")
+			# test_from_url = test_from_url.replace("//", "/")
+			# dest_url = dest_url.replace("//", "/")
+
+
+			# print(test_from_url, dest_url, built_destination_check_string, "\n")
+
 
 			# If from_url is not in the finalDict, so there is not a redirect for it already, and the URL is an actual URL,
 			# update the dict, so we don't introduce duplicates
-			if from_url not in finalDict and not all(ch in "/" for ch in from_url) and not all(ch in "/" for ch in dest_url):
+			if old not in finalDict and not all(ch in "/" for ch in old) and not all(ch in "/" for ch in new):
 				# print("FROM", from_url, "TO", dest_url, "\n")
-				redirects.update({from_url: dest_url})
+				redirects.update({old: new})
 
 	# print(redirects)
 

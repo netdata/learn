@@ -46,7 +46,7 @@ for the [single line installer](#install-on-linux-with-one-line-installer), or [
 
 To access the UI provided by the locally installed agent, open a browser and navigate to `http://NODE:19999`, replacing `NODE` with either `localhost` or
 the hostname/IP address of the remote node. You can also read more about
-[the agent dashboard](/docs/miscellaneous/agent-dashboard).
+[the agent dashboard](/docs/visualizations/agent-dashboard).
 
 #### Configuration
 
@@ -65,7 +65,7 @@ or read about its requirements to configure your endpoint to publish metrics in 
 
 Netdata comes with hundreds of preconfigured alarms, designed by our monitoring gurus in parallel with our open-source
 community, but you may want to [edit alarms](/docs/alerts-and-notifications/configure-alerts) or
-[enable notifications](/docs/alerts-and-notifications/notifications) to customize your Netdata experience.
+[enable notifications](/docs/alerts-and-notifications/changed-notifications/notifications) to customize your Netdata experience.
 
 #### Make your deployment production ready
 
@@ -75,7 +75,7 @@ for suggested configuration changes for production deployments.
 ## Install on Linux with one-line installer
 
 The **recommended** way to install Netdata on a Linux node (physical, virtual, container, IoT) is our one-line
-[kickstart script](/docs/moved-installation/moved-installation-methods/one-line-installer-kickstart.sh).
+[kickstart script](/docs/installation/installation-methods/one-line-installer-kickstart.sh).
 This script automatically installs dependencies and builds Netdata from its source code.
 
 To install, copy the script, paste it into your node's terminal, and hit `Enter` to begin the installation process.
@@ -107,45 +107,45 @@ troubleshooting with Netdata.
 
 <InstallRegexLink>
   <InstallBoxRegexLink
-    to="[](/docs/moved-installation/moved-installation-methods/docker)"
+    to="[](/docs/installation/installation-methods/docker)"
     os="Run with Docker"
     svg="docker" />
   <InstallBoxRegexLink
-    to="[](/docs/moved-installation/install-on-specific-environments/kubernetes)"
+    to="[](/docs/installation/install-on-specific-environments/kubernetes)"
     os="Deploy on Kubernetes"
     svg="kubernetes" />
    <InstallBoxRegexLink
-    to="[](/docs/moved-installation/install-on-specific-environments/macos)"
+    to="[](/docs/installation/install-on-specific-environments/macos)"
     os="Install on macOS"
     svg="macos" />
   <InstallBoxRegexLink
-    to="[](/docs/moved-installation/moved-installation-methods/native-deb-rpm-packages)"
+    to="[](/docs/installation/installation-methods/native-deb-rpm-packages)"
     os="Native DEB/RPM packages"
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/moved-installation/moved-installation-methods/from-a-git-checkout)"
+    to="[](/docs/installation/installation-methods/from-a-git-checkout)"
     os="Linux from Git"
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/moved-installation/package-maintainers/manually-build-netdata-from-source)"
+    to="[](/docs/installation/package-maintainers/manually-build-netdata-from-source)"
     os="Linux from source"
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/moved-installation/moved-installation-methods/offline-systems)"
+    to="[](/docs/installation/installation-methods/offline-systems)"
     os="Linux for offline nodes"
     svg="linux" />
 </InstallRegexLink>
 
-- [Native DEB/RPM packages](/docs/moved-installation/moved-installation-methods/native-deb-rpm-packages)
-- [Run with Docker](/docs/moved-installation/moved-installation-methods/docker)
-- [Deploy on Kubernetes](/docs/moved-installation/install-on-specific-environments/kubernetes)
-- [Install on macOS](/docs/moved-installation/install-on-specific-environments/macos)
-- [Linux from Git](/docs/moved-installation/moved-installation-methods/from-a-git-checkout)
-- [Linux from source](/docs/moved-installation/package-maintainers/manually-build-netdata-from-source)
-- [Linux for offline nodes](/docs/moved-installation/moved-installation-methods/offline-systems)
+- [Native DEB/RPM packages](/docs/installation/installation-methods/native-deb-rpm-packages)
+- [Run with Docker](/docs/installation/installation-methods/docker)
+- [Deploy on Kubernetes](/docs/installation/install-on-specific-environments/kubernetes)
+- [Install on macOS](/docs/installation/install-on-specific-environments/macos)
+- [Linux from Git](/docs/installation/installation-methods/from-a-git-checkout)
+- [Linux from source](/docs/installation/package-maintainers/manually-build-netdata-from-source)
+- [Linux for offline nodes](/docs/installation/installation-methods/offline-systems)
 
 The full list of all installation methods for various systems is available in [Netdata Learn](https://learn.netdata.cloud),
-under [Installation](/docs/moved-installation).
+under [Installation](/docs/installation).
 
 ## Advanced installation options and troubleshooting
 
@@ -162,7 +162,7 @@ wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/
 ```
 
 With automatic updates disabled, you can choose exactly when and how you [update
-Netdata](/docs/moved-installation/update-netdata).
+Netdata](/docs/installation/update-netdata).
 
 #### Network usage of Netdata’s automatic updater
 
@@ -228,8 +228,8 @@ man-in-the-middle attacks.
 #### CentOS 6 and CentOS 8
 
 To install the Agent on certain CentOS and RHEL systems, you must enable non-default repositories, such as EPEL or
-PowerTools, to gather hard dependencies. See the [CentOS 6](/docs/moved-installation/moved-installation-methods/from-a-git-checkout#centos--rhel-6x) and
-[CentOS 8](/docs/moved-installation/moved-installation-methods/from-a-git-checkout#centos--rhel-8x) sections for more information.
+PowerTools, to gather hard dependencies. See the [CentOS 6](/docs/installation/installation-methods/from-a-git-checkout#centos--rhel-6x) and
+[CentOS 8](/docs/installation/installation-methods/from-a-git-checkout#centos--rhel-8x) sections for more information.
 
 #### Access to file is not permitted
 
@@ -263,6 +263,6 @@ both.
 
 Our current build process has some issues when using certain configurations of the `clang` C compiler on Linux. See [the
 section on `nonrepresentable section on output`
-errors](/docs/moved-installation/moved-installation-methods/from-a-git-checkout#nonrepresentable-section-on-output-errors) for a workaround.
+errors](/docs/installation/installation-methods/from-a-git-checkout#nonrepresentable-section-on-output-errors) for a workaround.
 
 

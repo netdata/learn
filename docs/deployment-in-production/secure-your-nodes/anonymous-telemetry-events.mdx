@@ -24,7 +24,7 @@ We use the statistics gathered from this information for two purposes:
 
 Netdata collects usage information via two different channels:
 
--   **Agent dashboard**: We use the [PostHog JavaScript integration](https://posthog.com/docs/integrations/js-integration) (with sensitive event attributes overwritten to be anonymized) to send product usage events when you access an [Agent's dashboard](/docs/miscellaneous/agent-dashboard).
+-   **Agent dashboard**: We use the [PostHog JavaScript integration](https://posthog.com/docs/integrations/js-integration) (with sensitive event attributes overwritten to be anonymized) to send product usage events when you access an [Agent's dashboard](/docs/visualizations/agent-dashboard).
 -   **Agent backend**: The `netdata` daemon executes the [`anonymous-statistics.sh`](https://github.com/netdata/netdata/blob/6469cf92724644f5facf343e4bdd76ac0551a418/daemon/anonymous-statistics.sh.in) script when Netdata starts, stops cleanly, or fails.
 
 You can opt-out from sending anonymous statistics to Netdata through three different [opt-out mechanisms](#opt-out).
@@ -92,7 +92,7 @@ update. You can also export the environment variable `DISABLE_TELEMETRY` with a 
 
 When using Docker, **set your `DISABLE_TELEMETRY` environment variable to `1`.** You can set this variable with the following
 command: `export DISABLE_TELEMETRY=1`. When creating a container using Netdata's [Docker
-image](/docs/moved-installation/moved-installation-methods/docker#create-a-new-netdata-agent-container) for the first time, this variable will disable
+image](/docs/installation/installation-methods/docker#create-a-new-netdata-agent-container) for the first time, this variable will disable
 the anonymous statistics script inside of the container.
 
 Each of these opt-out processes does the following:

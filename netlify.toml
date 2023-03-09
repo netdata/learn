@@ -85,8 +85,16 @@
 # section: dynamic << START
 
 [[redirects]]
-  from="/docs/moved-exporting-data/"
-  to="/docs/second-move-exporting-data/"
+  from="/docs/alerts-and-notifications/notifications/"
+  to="/docs/alerts-and-notifications/changed-notifications/"
+
+[[redirects]]
+  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/"
+  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/"
+
+[[redirects]]
+  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/"
 
 
 [[redirects]]
@@ -395,7 +403,7 @@
 
 [[redirects]]
   from="/docs/agent/build_external"
-  to="/docs/moved-installation/package-maintainers/external-build-system"
+  to="/docs/installation/package-maintainers/external-build-system"
 
 [[redirects]]
   from="/docs/agent/claim"
@@ -1035,7 +1043,7 @@
 
 [[redirects]]
   from="/docs/agent/contrib"
-  to="/docs/moved-installation/package-maintainers/netdata-contrib"
+  to="/docs/installation/package-maintainers/netdata-contrib"
 
 [[redirects]]
   from="/docs/agent/daemon"
@@ -1107,111 +1115,111 @@
 
 [[redirects]]
   from="/docs/agent/health/notifications"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications"
 
 [[redirects]]
   from="/docs/agent/health/notifications/alerta"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/alerta"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/alerta"
 
 [[redirects]]
   from="/docs/agent/health/notifications/awssns"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/amazon-sns"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/amazon-sns"
 
 [[redirects]]
   from="/docs/agent/health/notifications/custom"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/custom-endpoint"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/custom-endpoint"
 
 [[redirects]]
   from="/docs/agent/health/notifications/discord"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/discord"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/discord"
 
 [[redirects]]
   from="/docs/agent/health/notifications/dynatrace"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/dynatrace-events"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/dynatrace-events"
 
 [[redirects]]
   from="/docs/agent/health/notifications/email"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/email"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/email"
 
 [[redirects]]
   from="/docs/agent/health/notifications/flock"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/flock"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/flock"
 
 [[redirects]]
   from="/docs/agent/health/notifications/gotify"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/gotify"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/gotify"
 
 [[redirects]]
   from="/docs/agent/health/notifications/irc"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/irc"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/irc"
 
 [[redirects]]
   from="/docs/agent/health/notifications/kavenegar"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/kavenegar"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/kavenegar"
 
 [[redirects]]
   from="/docs/agent/health/notifications/matrix"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/matrix"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/matrix"
 
 [[redirects]]
   from="/docs/agent/health/notifications/messagebird"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/messagebird"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/messagebird"
 
 [[redirects]]
   from="/docs/agent/health/notifications/msteams"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/microsoft-teams"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/agent/health/notifications/opsgenie"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/opsgenie"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pagerduty"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pagerduty"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/agent/health/notifications/prowl"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/prowl"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/prowl"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pushbullet"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushbullet"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/pushbullet"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pushover"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushover"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/pushover"
 
 [[redirects]]
   from="/docs/agent/health/notifications/rocketchat"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/rocket-chat"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/rocket-chat"
 
 [[redirects]]
   from="/docs/agent/health/notifications/slack"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/slack"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/slack"
 
 [[redirects]]
   from="/docs/agent/health/notifications/smstools3"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/sms-server"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/sms-server"
 
 [[redirects]]
   from="/docs/agent/health/notifications/stackpulse"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/stackpulse"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/stackpulse"
 
 [[redirects]]
   from="/docs/agent/health/notifications/syslog"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/syslog"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/syslog"
 
 [[redirects]]
   from="/docs/agent/health/notifications/telegram"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/telegram"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/telegram"
 
 [[redirects]]
   from="/docs/agent/health/notifications/twilio"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/twilio"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/twilio"
 
 [[redirects]]
   from="/docs/agent/health/notifications/web"
-  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/browser-pop-ups"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/browser-pop-ups"
 
 [[redirects]]
   from="/docs/agent/health/reference"
@@ -1315,11 +1323,11 @@
 
 [[redirects]]
   from="/docs/agent/packaging/building-native-packages-locally"
-  to="/docs/moved-installation/package-maintainers/how-to-build-native-deb-rpm-packages-locally-for-testing"
+  to="/docs/installation/package-maintainers/how-to-build-native-deb-rpm-packages-locally-for-testing"
 
 [[redirects]]
   from="/docs/agent/packaging/docker"
-  to="/docs/moved-installation/moved-installation-methods/docker"
+  to="/docs/installation/installation-methods/docker"
 
 [[redirects]]
   from="/docs/agent/packaging/installer"
@@ -1327,67 +1335,67 @@
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/freebsd"
-  to="/docs/moved-installation/install-on-specific-environments/freebsd"
+  to="/docs/installation/install-on-specific-environments/freebsd"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/freenas"
-  to="/docs/moved-installation/install-on-specific-environments/freenas"
+  to="/docs/installation/install-on-specific-environments/freenas"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/kickstart"
-  to="/docs/moved-installation/moved-installation-methods/one-line-installer-kickstart.sh"
+  to="/docs/installation/installation-methods/one-line-installer-kickstart.sh"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/kubernetes"
-  to="/docs/moved-installation/install-on-specific-environments/kubernetes"
+  to="/docs/installation/install-on-specific-environments/kubernetes"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/macos"
-  to="/docs/moved-installation/install-on-specific-environments/macos"
+  to="/docs/installation/install-on-specific-environments/macos"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/manual"
-  to="/docs/moved-installation/moved-installation-methods/from-a-git-checkout"
+  to="/docs/installation/installation-methods/from-a-git-checkout"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/offline"
-  to="/docs/moved-installation/moved-installation-methods/offline-systems"
+  to="/docs/installation/installation-methods/offline-systems"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/pfsense"
-  to="/docs/moved-installation/install-on-specific-environments/pfsense"
+  to="/docs/installation/install-on-specific-environments/pfsense"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/source"
-  to="/docs/moved-installation/package-maintainers/manually-build-netdata-from-source"
+  to="/docs/installation/package-maintainers/manually-build-netdata-from-source"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/synology"
-  to="/docs/moved-installation/install-on-specific-environments/synology"
+  to="/docs/installation/install-on-specific-environments/synology"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/reinstall"
-  to="/docs/moved-installation/reinstall-netdata"
+  to="/docs/installation/reinstall-netdata"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/uninstall"
-  to="/docs/moved-installation/uninstall-netdata"
+  to="/docs/installation/uninstall-netdata"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/update"
-  to="/docs/moved-installation/update-netdata"
+  to="/docs/installation/update-netdata"
 
 [[redirects]]
   from="/docs/agent/packaging/maintainers"
-  to="/docs/moved-installation/package-maintainers"
+  to="/docs/installation/package-maintainers"
 
 [[redirects]]
   from="/docs/agent/packaging/makeself"
-  to="/docs/moved-installation/moved-installation-methods/static-binary-packages"
+  to="/docs/installation/installation-methods/static-binary-packages"
 
 [[redirects]]
   from="/docs/agent/packaging/platform_support"
-  to="/docs/moved-installation/platform-support-policy"
+  to="/docs/installation/platform-support-policy"
 
 [[redirects]]
   from="/docs/agent/redistributed"
@@ -1523,7 +1531,7 @@
 
 [[redirects]]
   from="/docs/agent/web/gui"
-  to="/docs/miscellaneous/agent-dashboard"
+  to="/docs/visualizations/agent-dashboard"
 
 [[redirects]]
   from="/docs/agent/web/gui/confluence"
@@ -1531,7 +1539,7 @@
 
 [[redirects]]
   from="/docs/agent/web/gui/custom"
-  to="/docs/miscellaneous/agent-dashboard/custom-dashboards"
+  to="/docs/visualizations/agent-dashboard/custom-dashboards"
 
 [[redirects]]
   from="/docs/agent/web/server"
@@ -1567,7 +1575,7 @@
 
 [[redirects]]
   from="/docs/dashboard/customize"
-  to="/docs/miscellaneous/agent-dashboard/customize-the-standard-dashboard"
+  to="/docs/visualizations/agent-dashboard/customize-the-standard-dashboard"
 
 [[redirects]]
   from="/docs/dashboard/dimensions-contexts-families"
@@ -1575,7 +1583,7 @@
 
 [[redirects]]
   from="/docs/dashboard/import-export-print-snapshot"
-  to="/docs/miscellaneous/agent-dashboard/import-export-and-print-a-snapshot"
+  to="/docs/visualizations/agent-dashboard/import-export-and-print-a-snapshot"
 
 [[redirects]]
   from="/docs/dashboard/visualization-date-and-time-controls"
@@ -1595,7 +1603,7 @@
 
 [[redirects]]
   from="/docs/monitor/enable-notifications"
-  to="/docs/alerts-and-notifications/notifications"
+  to="/docs/alerts-and-notifications/changed-notifications/notifications"
 
 [[redirects]]
   from="/docs/monitor/view-active-alarms"
@@ -1675,7 +1683,7 @@
 
 [[redirects]]
   from="/docs/cloud/alerts-notifications/notifications"
-  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications"
+  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications"
 
 [[redirects]]
   from="/docs/cloud/data-privacy"
@@ -1715,7 +1723,7 @@
 
 [[redirects]]
   from="/docs/cloud/visualize/kubernetes"
-  to="/docs/miscellaneous/kubernetes-visualizations"
+  to="/docs/miscellaneous/kubernetes-miscellaneous"
 
 [[redirects]]
   from="/docs/cloud/visualize/nodes"
@@ -1767,7 +1775,7 @@
 
 [[redirects]]
   from="/docs/agent/build"
-  to="/docs/moved-installation/package-maintainers/manually-build-netdata-from-source"
+  to="/docs/installation/package-maintainers/manually-build-netdata-from-source"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/wmi"
@@ -1795,7 +1803,7 @@
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/cloud-providers"
-  to="/docs/moved-installation/install-on-specific-environments"
+  to="/docs/installation/install-on-specific-environments"
 
 [[redirects]]
   from="/docs/agent/web/api/exporters"
@@ -1883,7 +1891,7 @@
 
 [[redirects]]
   from="/guides/deploy/ansible"
-  to="/docs/moved-installation/install-on-specific-environments/ansible"
+  to="/docs/installation/install-on-specific-environments/ansible"
 
 [[redirects]]
   from="/guides/longer-metrics-storage"
@@ -1995,7 +2003,7 @@
 
 [[redirects]]
   from="/docs/agent/packaging"
-  to="/docs/moved-installation/package-maintainers"
+  to="/docs/installation/package-maintainers"
 
 [[redirects]]
   from="/docs/cloud/faq-glossary"

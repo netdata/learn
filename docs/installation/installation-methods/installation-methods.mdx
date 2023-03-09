@@ -1,0 +1,26 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/packaging/installer/methods/methods.md"
+sidebar_label: "Installation methods"
+learn_status: "Published"
+learn_rel_path: "Installation/Installation methods"
+sidebar_position: "52.0"
+description: "Netdata can be installed as a DEB/RPM package, a static binary, a docker container or from source"
+---
+
+
+# Installation methods
+
+Netdata can be installed:
+
+- [As a DEB/RPM package](/docs/installation/installation-methods/native-deb-rpm-packages)
+- [As a static binary](/docs/installation/installation-methods/static-binary-packages)
+- [From a git checkout](/docs/installation/installation-methods/from-a-git-checkout)
+- [As a docker container](/docs/installation/installation-methods/docker)
+
+The [one line installer kickstart.sh](/docs/installation/installation-methods/one-line-installer-kickstart.sh)
+picks the most appropriate method out of the first three for any system
+and is the recommended installation method, if you don't use containers.
+
+`kickstart.sh` can also be used for 
+[offline installation](/docs/installation/installation-methods/offline-systems),
+suitable for air-gapped systems.
