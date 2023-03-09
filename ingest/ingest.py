@@ -15,6 +15,7 @@ import autogenerateSupportedIntegrationsPage as genIntPage
 import autogenerateRedirects as genRedirects
 import pandas as pd
 import numpy as np
+import csv
 
 
 """
@@ -693,8 +694,25 @@ if __name__ == '__main__':
             print(restFilesDictionary[file]["tmpPath"])
         exit(-1)
         
-    mapDict = pd.read_csv("map.tsv",sep='\t')
-    mapDict.to_csv("./ingest/one_commit_back.tsv", index=False, sep='\t')
+    # mapDict = pd.read_csv("map.tsv",sep='\t')
+ 
+    temp_dict = {}
+    ceurl = []
+    lpath = []
+    for key in fileDict:
+        # print(fileDict[key]["metadata"]["custom_edit_url"], fileDict[key]["newLearnPath"])
+        ceurl.append(fileDict[key]["metadata"]["custom_edit_url"])
+        lpath.append(fileDict[key]["newLearnPath"])
+        
+    temp_dict['custom_edit_url'] = ceurl
+    temp_dict['learn_path'] = lpath
+
+
+
+    df = pd.DataFrame.from_dict(temp_dict)
+    df.set_index('custom_edit_url')
+    # df.to_csv("./ingest/one_commit_back_file-dict.tsv", sep='\t', index=False)
+
     unSafeCleanUpFolders(TEMP_FOLDER)
 
 print("OPERATION FINISHED")

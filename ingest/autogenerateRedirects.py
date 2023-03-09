@@ -15,6 +15,7 @@ import pandas as pd
 import numpy as np
 
 
+
 def redirectUnit(FROM, TO):
 	unit = f"""
 [[redirects]]
@@ -126,74 +127,87 @@ def UpdateGHLinksBasedOnMap(mapMatrix, inputDictionary):
 			pass
 	return (inputDictionary)
 
-
-def addDirRedirects(mapping, finalDict):
+def addMovedRedirects(mapping, finalDict):
 	# A function that covers adding redirects for (most) moved directories
 
 	# Read the two maps, map_dict is the new one with the moved elements,
 	# and the one_commit_back, is how the map was before these changes.
-	map_dict = pd.read_csv(
-		"map.tsv", sep='\t').set_index('custom_edit_url').T.to_dict('dict')
 
 	one_commit_back = pd.read_csv(
-		"./ingest/one_commit_back.tsv", sep='\t').set_index('custom_edit_url').T.to_dict('dict')
+		"./ingest/one_commit_back_file-dict.tsv",sep='\t').set_index('custom_edit_url').T.to_dict('dict')
 
 	redirects = {}
 
+
 	# Check every custom_edit_url that is inside the new map
-	for custom_edit_url in map_dict.keys():
-		# boolean flags
-		NOT_NAN_LEARN_REL_PATHS = str(map_dict[custom_edit_url]["learn_rel_path"]) != "nan" \
-                    and str(one_commit_back[custom_edit_url]["learn_rel_path"]) != "nan"
-
-		OLD_LEARN_PATH_NOT_IN_NEW = str(one_commit_back[custom_edit_url]["learn_rel_path"]).split("/") \
-			not in str(map_dict[custom_edit_url]["learn_rel_path"]).split("/")
-
-		# Get the new and old learn_rel_path of the custom_edit_url
-		old = str(one_commit_back[custom_edit_url]["learn_rel_path"]).lower().replace(
-			" ", "-").replace("//", "/")
-		new = str(map_dict[custom_edit_url]["learn_rel_path"]).lower().replace(
-			" ", "-").replace("//", "/")
-
-		# If old and new is different, both are not nan, and this is not a renaming scheme like: A -> A/B (can't make a dir redirect, as there might be other files inside A)
-		if NOT_NAN_LEARN_REL_PATHS and OLD_LEARN_PATH_NOT_IN_NEW and (old != new):
-			# print("The to", map_dict[custom_edit_url]["learn_rel_path"],
-			#       "the old from", one_commit_back[custom_edit_url]["learn_rel_path"])
-			print(old, " -> ", new)
-
-			old_key_array = old.split("/")[::-1]
-			new_key_array = new.split("/")[::-1]
-
-			CHILDSAME = False
-			ignore_last = 0
-
-			for i in range(min(len(old_key_array), len(new_key_array))):
-				oldKey = old_key_array[i]
-				newKey = new_key_array[i]
-				if oldKey == newKey and not CHILDSAME:
-					CHILDSAME = True
-				elif oldKey == newKey and CHILDSAME:
-					ignore_last += 1
-					CHILDSAME = True
-				elif oldKey != newKey:
-					break
-			print("After first loop\n",old, " -> ", new, ignore_last)
-
-			print("RANGE", range(0,len(old_key_array)-ignore_last))
-			old_key_array = old_key_array[::-1]
-			output = ""
-			for i in range(0,len(old_key_array)-ignore_last):
-				output += old_key_array[i] + "/"
-			old = "/docs/" + output + "*"
-
-			new_key_array = new_key_array[::-1]
-			output = ""
-			for i in range(0,len(new_key_array)-ignore_last):
-				output += new_key_array[i] + "/"
+	for custom_edit_url in mapping.keys():
+		custom_edit_url = custom_edit_url.replace("blob", "edit")
+		# print(one_commit_back.keys())
+		# exit()
+		# print(mapping[custom_edit_url] , one_commit_back[custom_edit_url])
+		if custom_edit_url in one_commit_back.keys():
+			old = one_commit_back[custom_edit_url]['learn_path']
+			new = mapping[custom_edit_url]
+			# print(old , mapping[custom_edit_url], mapping[custom_edit_url] != old)
+			if new != old:
+				# print(new , old)
+				redirects.update({old: new})
 			
-			new = "/docs/" + output + ":splat"
 
-			print("After ignore\n",old, " -> ", new, "\n\n")
+
+		# print(old_mapping[custom_edit_url])
+		# # boolean flags
+		# NOT_NAN_LEARN_REL_PATHS = str(map_dict[custom_edit_url]["learn_rel_path"]) != "nan" \
+        #             and str(one_commit_back[custom_edit_url]["learn_rel_path"]) != "nan"
+
+		# OLD_LEARN_PATH_NOT_IN_NEW = str(one_commit_back[custom_edit_url]["learn_rel_path"]).split("/") \
+		# 	not in str(map_dict[custom_edit_url]["learn_rel_path"]).split("/")
+
+		# # Get the new and old learn_rel_path of the custom_edit_url
+		# old = str(one_commit_back[custom_edit_url]["learn_rel_path"]).lower().replace(
+		# 	" ", "-").replace("//", "/")
+		# new = str(map_dict[custom_edit_url]["learn_rel_path"]).lower().replace(
+		# 	" ", "-").replace("//", "/")
+
+		# # If old and new is different, both are not nan, and this is not a renaming scheme like: A -> A/B (can't make a dir redirect, as there might be other files inside A)
+		# if NOT_NAN_LEARN_REL_PATHS and OLD_LEARN_PATH_NOT_IN_NEW and (old != new):
+		# 	# print("The to", map_dict[custom_edit_url]["learn_rel_path"],
+		# 	#       "the old from", one_commit_back[custom_edit_url]["learn_rel_path"])
+		# 	print(old, " -> ", new)
+
+		# 	old_key_array = old.split("/")[::-1]
+		# 	new_key_array = new.split("/")[::-1]
+
+		# 	CHILDSAME = False
+		# 	ignore_last = 0
+
+		# 	for i in range(min(len(old_key_array), len(new_key_array))):
+		# 		oldKey = old_key_array[i]
+		# 		newKey = new_key_array[i]
+		# 		if oldKey == newKey and not CHILDSAME:
+		# 			CHILDSAME = True
+		# 		elif oldKey == newKey and CHILDSAME:
+		# 			ignore_last += 1
+		# 			CHILDSAME = True
+		# 		elif oldKey != newKey:
+		# 			break
+		# 	print("After first loop\n",old, " -> ", new, ignore_last)
+
+		# 	print("RANGE", range(0,len(old_key_array)-ignore_last))
+		# 	old_key_array = old_key_array[::-1]
+		# 	output = ""
+		# 	for i in range(0,len(old_key_array)-ignore_last):
+		# 		output += old_key_array[i] + "/"
+		# 	old = "/docs/" + output + "*"
+
+		# 	new_key_array = new_key_array[::-1]
+		# 	output = ""
+		# 	for i in range(0,len(new_key_array)-ignore_last):
+		# 		output += new_key_array[i] + "/"
+			
+		# 	new = "/docs/" + output + ":splat"
+
+		# 	print("After ignore\n",old, " -> ", new, "\n\n")
 
 			# # Get the proper URL for "from" and "to"
 			
@@ -335,9 +349,9 @@ def addDirRedirects(mapping, finalDict):
 
 			# If from_url is not in the finalDict, so there is not a redirect for it already, and the URL is an actual URL,
 			# update the dict, so we don't introduce duplicates
-			if old not in finalDict and not all(ch in "/" for ch in old) and not all(ch in "/" for ch in new):
-				# print("FROM", from_url, "TO", dest_url, "\n")
-				redirects.update({old: new})
+			# if old not in finalDict and not all(ch in "/" for ch in old) and not all(ch in "/" for ch in new):
+			# 	# print("FROM", from_url, "TO", dest_url, "\n")
+			# 	redirects.update({old: new})
 
 	# print(redirects)
 
@@ -386,7 +400,7 @@ def main(GHLinksCorrelation):
 # section: static << START{unPackedStaticPart}# section: static << END
 
 # section: dynamic << START
-{redirect_string_from_dict(addDirRedirects(mapping, finalDict))}
+{redirect_string_from_dict(addMovedRedirects(mapping, finalDict))}
 {unPackedDynamicPart}
 # section: dynamic << END"""
 
