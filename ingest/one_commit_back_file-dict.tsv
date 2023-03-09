@@ -203,8 +203,8 @@ https://github.com/netdata/netdata/edit/master/docs/guides/configure/performance
 https://github.com/netdata/netdata/edit/master/database/README.md	/docs/deployment-in-production/metric-retention---database
 https://github.com/netdata/netdata/edit/master/database/engine/README.md	/docs/deployment-in-production/metric-retention---database/database-engine
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	/docs/improving-netdata---developers/health-command-api-tester
-https://github.com/netdata/netdata/edit/master/web/README.md	/docs/improving-netdata---developers/web/dashboards
-https://github.com/netdata/netdata/edit/master/web/api/README.md	/docs/improving-netdata---developers/agent-api
+https://github.com/netdata/netdata/edit/master/web/README.md	/docs/improving-netdata---developers/web
+https://github.com/netdata/netdata/edit/master/web/api/README.md	/docs/improving-netdata---developers/web/api
 https://github.com/netdata/netdata/edit/master/web/api/queries/README.md	/docs/exporting-data/rest-api-for-database-queries
 https://github.com/netdata/netdata/edit/master/web/api/queries/min/README.md	/docs/improving-netdata---developers/web/api/queries/min
 https://github.com/netdata/netdata/edit/master/web/api/queries/countif/README.md	/docs/improving-netdata---developers/web/api/queries/countif
@@ -267,7 +267,6 @@ https://github.com/netdata/netdata/edit/master/health/notifications/dynatrace/RE
 https://github.com/netdata/netdata/edit/master/health/notifications/awssns/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/amazon-sns
 https://github.com/netdata/netdata/edit/master/health/notifications/discord/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/discord
 https://github.com/netdata/netdata/edit/master/health/notifications/email/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/email
-https://github.com/netdata/netdata/edit/master/health/notifications/hangouts/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/google-hangouts
 https://github.com/netdata/netdata/edit/master/health/notifications/rocketchat/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/rocket-chat
 https://github.com/netdata/netdata/edit/master/health/notifications/syslog/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/syslog
 https://github.com/netdata/netdata/edit/master/health/notifications/gotify/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/gotify

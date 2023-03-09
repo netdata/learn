@@ -127,7 +127,7 @@ def UpdateGHLinksBasedOnMap(mapMatrix, inputDictionary):
 			pass
 	return (inputDictionary)
 
-def addMovedRedirects(mapping, finalDict):
+def addMovedRedirects(mapping):
 	# A function that covers adding redirects for (most) moved directories
 
 	# Read the two maps, map_dict is the new one with the moved elements,
@@ -151,7 +151,7 @@ def addMovedRedirects(mapping, finalDict):
 			# print(old , mapping[custom_edit_url], mapping[custom_edit_url] != old)
 			if new != old:
 				# print(new , old)
-				redirects.update({old: new})
+				redirects.update({"https://learn.netdata.cloud"+old: custom_edit_url})
 			
 
 	# print(redirects)
@@ -163,20 +163,22 @@ def addMovedRedirects(mapping, finalDict):
 	return redirects
 
 
-def redirect_string_from_dict(dictionary):
-	output_string = ""
-
-	for key in dictionary:
-		output_string += f"\n[[redirects]]\n  from=\"{key}\"\n  to=\"{dictionary[key]}\"\n"
-
-	# print(output_string)
-
-	return output_string
+def append_entries_to_json(dictionary):
+	with open("LegacyLearnCorrelateLinksWithGHURLs.json", "r") as json_file:
+		json_dictionary = json.load(json_file)
+	with open("LegacyLearnCorrelateLinksWithGHURLs.json", "w+") as json_file:
+		for key in dictionary:
+			json_dictionary.update({key:dictionary[key]})
+		
+		print(len(json_dictionary))
+		json.dump(json_dictionary, json_file, indent=4)
+		
 
 
 def main(GHLinksCorrelation):
 
 	mapping = reductTonewLearnPathFromGHLinksCorrelation(GHLinksCorrelation)
+	append_entries_to_json(addMovedRedirects(mapping))
 	# print(GHLinksCorrelation)
 	oldLearn = readLegacyLearnDocMap("LegacyLearnCorrelateLinksWithGHURLs.json")
 	# print(oldLearn)
@@ -190,6 +192,7 @@ def main(GHLinksCorrelation):
 		# print(finalDict)
 	except Exception as e:
 		print(f"An exception occurred: {e}")
+	
 	unPackedDynamicPart = ''
 	for key, value in finalDict.items():
 		if not value.startswith("https://"):
@@ -205,7 +208,6 @@ def main(GHLinksCorrelation):
 # section: static << START{unPackedStaticPart}# section: static << END
 
 # section: dynamic << START
-{redirect_string_from_dict(addMovedRedirects(mapping, finalDict))}
 {unPackedDynamicPart}
 # section: dynamic << END"""
 

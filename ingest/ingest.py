@@ -711,7 +711,7 @@ if __name__ == '__main__':
 
     df = pd.DataFrame.from_dict(temp_dict)
     df.set_index('custom_edit_url')
-    # df.to_csv("./ingest/one_commit_back_file-dict.tsv", sep='\t', index=False)
+    df.to_csv("./ingest/one_commit_back_file-dict.tsv", sep='\t', index=False)
 
     unSafeCleanUpFolders(TEMP_FOLDER)
 
