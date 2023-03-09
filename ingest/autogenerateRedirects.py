@@ -127,6 +127,7 @@ def UpdateGHLinksBasedOnMap(mapMatrix, inputDictionary):
 			pass
 	return (inputDictionary)
 
+
 def addMovedRedirects(mapping):
 	# A function that covers adding redirects for (most) moved directories
 
@@ -134,25 +135,23 @@ def addMovedRedirects(mapping):
 	# and the one_commit_back, is how the map was before these changes.
 
 	one_commit_back = pd.read_csv(
-		"./ingest/one_commit_back_file-dict.tsv",sep='\t').set_index('custom_edit_url').T.to_dict('dict')
+		"./ingest/one_commit_back_file-dict.tsv", sep='\t').set_index('custom_edit_url').T.to_dict('dict')
 
 	redirects = {}
-
 
 	# Check every custom_edit_url that is inside the new map
 	for custom_edit_url in mapping.keys():
 		custom_edit_url = custom_edit_url.replace("blob", "edit")
-		# print(one_commit_back.keys())
-		# exit()
-		# print(mapping[custom_edit_url] , one_commit_back[custom_edit_url])
+		# if it exists also inside the old map, check if we need a redirect
 		if custom_edit_url in one_commit_back.keys():
-			old = one_commit_back[custom_edit_url]['learn_path']
-			new = mapping[custom_edit_url]
-			# print(old , mapping[custom_edit_url], mapping[custom_edit_url] != old)
+			old = one_commit_back[custom_edit_url]['learn_path']  # /docs/oldpath...
+			new = mapping[custom_edit_url]  # /docs/newpath...
+			# if the two paths are different, add a redirect entry to the dictionary, in the format:
+			# https://learn.netdata.cloud/docs/oldpath... : https://github.com/absolute path...
 			if new != old:
 				# print(new , old)
-				redirects.update({"https://learn.netdata.cloud"+old: custom_edit_url})
-			
+				redirects.update({"https://learn.netdata.cloud"+old: custom_edit_url.replace("edit", "blob")})
+
 
 	# print(redirects)
 
