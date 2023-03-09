@@ -86,27 +86,27 @@
 
 [[redirects]]
   from="/docs/exporting-data/*"
-  to="/docs/second-move-exporting-data/splat:"
+  to="/docs/second-move-exporting-data/:splat"
 
 [[redirects]]
   from="/docs/exporting-data/prometheus/*"
-  to="/docs/root-prometheus/splat:"
+  to="/docs/root-prometheus/:splat"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/*"
-  to="/docs/alerts-and-notifications/changed-notifications/splat:"
+  to="/docs/alerts-and-notifications/changed-notifications/:splat"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/*"
-  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/splat:"
+  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/:splat"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/*"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/splat:"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/:splat"
 
 [[redirects]]
   from="/docs/visualizations/*"
-  to="/docs/miscellaneous/splat:"
+  to="/docs/miscellaneous/:splat"
 
 
 [[redirects]]
