@@ -85,37 +85,37 @@
 # section: dynamic << START
 
 [[redirects]]
-  from="/docs/alerts-and-notifications/notifications/"
-  to="/docs/alerts-and-notifications/changed-notifications/"
+  from="/docs/alerts-and-notifications/notifications/*"
+  to="/docs/alerts-and-notifications/changed-notifications/*"
 
 [[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/"
-  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/"
+  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/*"
+  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/*"
 
 [[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/"
+  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/*"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/*"
 
 
 [[redirects]]
-  from="/docs/installation/"
-  to="/docs/moved-installation/"
+  from="/docs/installation/*"
+  to="/docs/moved-installation/*"
 
 [[redirects]]
-  from="/docs/installation/installation-methods/"
-  to="/docs/moved-installation/moved-installation-methods/"
+  from="/docs/installation/installation-methods/*"
+  to="/docs/moved-installation/moved-installation-methods/*"
 
 [[redirects]]
-  from="/docs/exporting-data/"
-  to="/docs/moved-exporting-data/"
+  from="/docs/exporting-data/*"
+  to="/docs/moved-exporting-data/*"
 
 [[redirects]]
-  from="/docs/exporting-data/prometheus/"
-  to="/docs/root-prometheus/"
+  from="/docs/exporting-data/prometheus/*"
+  to="/docs/root-prometheus/*"
 
 [[redirects]]
-  from="/docs/visualizations/"
-  to="/docs/miscellaneous/"
+  from="/docs/visualizations/*"
+  to="/docs/miscellaneous/*"
 
 [[redirects]]
   from="/docs/agent"
