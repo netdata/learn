@@ -85,235 +85,6 @@
 # section: dynamic << START
 
 [[redirects]]
-  from="/docs/visualizations/nodes-view"
-  to="/docs/miscellaneous/nodes-view"
-
-[[redirects]]
-  from="/docs/visualizations/kubernetes-visualizations"
-  to="/docs/miscellaneous/kubernetes-miscellaneous"
-
-[[redirects]]
-  from="/docs/visualizations/infrastructure-overview"
-  to="/docs/miscellaneous/infrastructure-overview"
-
-[[redirects]]
-  from="/docs/visualizations/build-new-dashboards"
-  to="/docs/miscellaneous/build-new-dashboards"
-
-[[redirects]]
-  from="/docs/visualizations"
-  to="/docs/miscellaneous"
-
-[[redirects]]
-  from="/docs/exporting-data/timescaledb"
-  to="/docs/second-move-exporting-data/timescaledb"
-
-[[redirects]]
-  from="/docs/exporting-data/shell-exporter"
-  to="/docs/second-move-exporting-data/shell-exporter"
-
-[[redirects]]
-  from="/docs/exporting-data/rest-api-for-database-queries"
-  to="/docs/second-move-exporting-data/rest-api-for-database-queries"
-
-[[redirects]]
-  from="/docs/exporting-data/prometheus/user-guide-netdata-prometheus-grafana-stack"
-  to="/docs/root-prometheus/user-guide-netdata-prometheus-grafana-stack"
-
-[[redirects]]
-  from="/docs/exporting-data/prometheus/prometheus-remote-write"
-  to="/docs/root-prometheus/prometheus-remote-write"
-
-[[redirects]]
-  from="/docs/exporting-data/prometheus"
-  to="/docs/root-prometheus/prometheus"
-
-[[redirects]]
-  from="/docs/exporting-data/opentsdb"
-  to="/docs/second-move-exporting-data/opentsdb"
-
-[[redirects]]
-  from="/docs/exporting-data/mongodb"
-  to="/docs/second-move-exporting-data/mongodb"
-
-[[redirects]]
-  from="/docs/exporting-data/json-document-databases"
-  to="/docs/second-move-exporting-data/json-document-databases"
-
-[[redirects]]
-  from="/docs/exporting-data/graphite"
-  to="/docs/second-move-exporting-data/graphite"
-
-[[redirects]]
-  from="/docs/exporting-data/grafana-data-source-plugin"
-  to="/docs/second-move-exporting-data/grafana-data-source-plugin"
-
-[[redirects]]
-  from="/docs/exporting-data/google-cloud-pub-sub-service"
-  to="/docs/second-move-exporting-data/google-cloud-pub-sub-service"
-
-[[redirects]]
-  from="/docs/exporting-data/exporting-reference"
-  to="/docs/second-move-exporting-data/exporting-reference"
-
-[[redirects]]
-  from="/docs/exporting-data/enable-an-exporting-connector"
-  to="/docs/second-move-exporting-data/enable-an-exporting-connector"
-
-[[redirects]]
-  from="/docs/exporting-data/aws-kinesis-data-streams"
-  to="/docs/second-move-exporting-data/aws-kinesis-data-streams"
-
-[[redirects]]
-  from="/docs/exporting-data/atlassian-confluence-dashboards"
-  to="/docs/second-move-exporting-data/atlassian-confluence-dashboards"
-
-[[redirects]]
-  from="/docs/exporting-data"
-  to="/docs/second-move-exporting-data"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/manage-notification-methods"
-  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/manage-notification-methods"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-webhook-notification-configuration"
-  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/add-webhook-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-slack-notification-configuration"
-  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/add-slack-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-pagerduty-notification-configuration"
-  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/add-pagerduty-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-discord-notification-configuration"
-  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/add-discord-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications"
-  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/twilio"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/twilio"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/telegram"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/telegram"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/syslog"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/syslog"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/stackpulse"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/stackpulse"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/sms-server"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/sms-server"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/slack"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/slack"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/rocket-chat"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/rocket-chat"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushover"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/pushover"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushbullet"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/pushbullet"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/prowl"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/prowl"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pagerduty"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/pagerduty"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/opsgenie"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/opsgenie"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/microsoft-teams"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/microsoft-teams"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/messagebird"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/messagebird"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/matrix"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/matrix"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/kavenegar"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/kavenegar"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/irc"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/irc"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/gotify"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/gotify"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/google-hangouts"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/google-hangouts"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/flock"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/flock"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/email"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/email"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/dynatrace-events"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/dynatrace-events"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/discord"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/discord"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/custom-endpoint"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/custom-endpoint"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/browser-pop-ups"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/browser-pop-ups"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/amazon-sns"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/amazon-sns"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/alerta"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/alerta"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications"
-  to="/docs/alerts-and-notifications/changed-notifications/notifications"
-
-
-[[redirects]]
   from="/docs/agent"
   to="/docs"
 
@@ -1263,47 +1034,47 @@
 
 [[redirects]]
   from="/docs/agent/exporting"
-  to="/docs/second-move-exporting-data/exporting-reference"
+  to="/docs/exporting-data/exporting-reference"
 
 [[redirects]]
   from="/docs/agent/exporting/aws_kinesis"
-  to="/docs/second-move-exporting-data/aws-kinesis-data-streams"
+  to="/docs/exporting-data/aws-kinesis-data-streams"
 
 [[redirects]]
   from="/docs/agent/exporting/graphite"
-  to="/docs/second-move-exporting-data/graphite"
+  to="/docs/exporting-data/graphite"
 
 [[redirects]]
   from="/docs/agent/exporting/json"
-  to="/docs/second-move-exporting-data/json-document-databases"
+  to="/docs/exporting-data/json-document-databases"
 
 [[redirects]]
   from="/docs/agent/exporting/mongodb"
-  to="/docs/second-move-exporting-data/mongodb"
+  to="/docs/exporting-data/mongodb"
 
 [[redirects]]
   from="/docs/agent/exporting/opentsdb"
-  to="/docs/second-move-exporting-data/opentsdb"
+  to="/docs/exporting-data/opentsdb"
 
 [[redirects]]
   from="/docs/agent/exporting/prometheus"
-  to="/docs/root-prometheus/prometheus"
+  to="/docs/exporting-data/prometheus"
 
 [[redirects]]
   from="/docs/agent/exporting/prometheus/remote_write"
-  to="/docs/root-prometheus/prometheus-remote-write"
+  to="/docs/exporting-data/prometheus/prometheus-remote-write"
 
 [[redirects]]
   from="/docs/agent/exporting/pubsub"
-  to="/docs/second-move-exporting-data/google-cloud-pub-sub-service"
+  to="/docs/exporting-data/google-cloud-pub-sub-service"
 
 [[redirects]]
   from="/docs/agent/exporting/timescale"
-  to="/docs/second-move-exporting-data/timescaledb"
+  to="/docs/exporting-data/timescaledb"
 
 [[redirects]]
   from="/docs/agent/exporting/walkthrough"
-  to="/docs/root-prometheus/user-guide-netdata-prometheus-grafana-stack"
+  to="/docs/exporting-data/prometheus/user-guide-netdata-prometheus-grafana-stack"
 
 [[redirects]]
   from="/docs/agent/health"
@@ -1311,111 +1082,111 @@
 
 [[redirects]]
   from="/docs/agent/health/notifications"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications"
 
 [[redirects]]
   from="/docs/agent/health/notifications/alerta"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/alerta"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/alerta"
 
 [[redirects]]
   from="/docs/agent/health/notifications/awssns"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/amazon-sns"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/amazon-sns"
 
 [[redirects]]
   from="/docs/agent/health/notifications/custom"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/custom-endpoint"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/custom-endpoint"
 
 [[redirects]]
   from="/docs/agent/health/notifications/discord"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/discord"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/discord"
 
 [[redirects]]
   from="/docs/agent/health/notifications/dynatrace"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/dynatrace-events"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/dynatrace-events"
 
 [[redirects]]
   from="/docs/agent/health/notifications/email"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/email"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/email"
 
 [[redirects]]
   from="/docs/agent/health/notifications/flock"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/flock"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/flock"
 
 [[redirects]]
   from="/docs/agent/health/notifications/gotify"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/gotify"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/gotify"
 
 [[redirects]]
   from="/docs/agent/health/notifications/irc"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/irc"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/irc"
 
 [[redirects]]
   from="/docs/agent/health/notifications/kavenegar"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/kavenegar"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/kavenegar"
 
 [[redirects]]
   from="/docs/agent/health/notifications/matrix"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/matrix"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/matrix"
 
 [[redirects]]
   from="/docs/agent/health/notifications/messagebird"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/messagebird"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/messagebird"
 
 [[redirects]]
   from="/docs/agent/health/notifications/msteams"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/microsoft-teams"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/agent/health/notifications/opsgenie"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/opsgenie"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pagerduty"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/pagerduty"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/agent/health/notifications/prowl"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/prowl"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/prowl"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pushbullet"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/pushbullet"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushbullet"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pushover"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/pushover"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushover"
 
 [[redirects]]
   from="/docs/agent/health/notifications/rocketchat"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/rocket-chat"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/rocket-chat"
 
 [[redirects]]
   from="/docs/agent/health/notifications/slack"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/slack"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/slack"
 
 [[redirects]]
   from="/docs/agent/health/notifications/smstools3"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/sms-server"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/sms-server"
 
 [[redirects]]
   from="/docs/agent/health/notifications/stackpulse"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/stackpulse"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/stackpulse"
 
 [[redirects]]
   from="/docs/agent/health/notifications/syslog"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/syslog"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/syslog"
 
 [[redirects]]
   from="/docs/agent/health/notifications/telegram"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/telegram"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/telegram"
 
 [[redirects]]
   from="/docs/agent/health/notifications/twilio"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/twilio"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/twilio"
 
 [[redirects]]
   from="/docs/agent/health/notifications/web"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/browser-pop-ups"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/browser-pop-ups"
 
 [[redirects]]
   from="/docs/agent/health/reference"
@@ -1647,7 +1418,7 @@
 
 [[redirects]]
   from="/docs/agent/web/api/exporters/shell"
-  to="/docs/second-move-exporting-data/shell-exporter"
+  to="/docs/exporting-data/shell-exporter"
 
 [[redirects]]
   from="/docs/agent/web/api/formatters"
@@ -1675,7 +1446,7 @@
 
 [[redirects]]
   from="/docs/agent/web/api/queries"
-  to="/docs/second-move-exporting-data/rest-api-for-database-queries"
+  to="/docs/exporting-data/rest-api-for-database-queries"
 
 [[redirects]]
   from="/docs/agent/web/api/queries/average"
@@ -1731,7 +1502,7 @@
 
 [[redirects]]
   from="/docs/agent/web/gui/confluence"
-  to="/docs/second-move-exporting-data/atlassian-confluence-dashboards"
+  to="/docs/exporting-data/atlassian-confluence-dashboards"
 
 [[redirects]]
   from="/docs/agent/web/gui/custom"
@@ -1787,11 +1558,11 @@
 
 [[redirects]]
   from="/docs/export/enable-connector"
-  to="/docs/second-move-exporting-data/enable-an-exporting-connector"
+  to="/docs/exporting-data/enable-an-exporting-connector"
 
 [[redirects]]
   from="/docs/export/external-databases"
-  to="/docs/second-move-exporting-data"
+  to="/docs/exporting-data"
 
 [[redirects]]
   from="/docs/metrics-storage-management/enable-streaming"
@@ -1799,7 +1570,7 @@
 
 [[redirects]]
   from="/docs/monitor/enable-notifications"
-  to="/docs/alerts-and-notifications/changed-notifications/notifications"
+  to="/docs/alerts-and-notifications/notifications"
 
 [[redirects]]
   from="/docs/monitor/view-active-alarms"
@@ -1819,7 +1590,7 @@
 
 [[redirects]]
   from="/docs/visualize/overview-infrastructure"
-  to="/docs/miscellaneous/infrastructure-overview"
+  to="/docs/visualizations/infrastructure-overview"
 
 [[redirects]]
   from="/guides/collect-apache-nginx-web-logs"
@@ -1879,7 +1650,7 @@
 
 [[redirects]]
   from="/docs/cloud/alerts-notifications/notifications"
-  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications"
+  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications"
 
 [[redirects]]
   from="/docs/cloud/data-privacy"
@@ -1911,7 +1682,7 @@
 
 [[redirects]]
   from="/docs/cloud/visualize/dashboards"
-  to="/docs/miscellaneous/build-new-dashboards"
+  to="/docs/visualizations/build-new-dashboards"
 
 [[redirects]]
   from="/docs/cloud/visualize/interact-new-charts"
@@ -1919,11 +1690,11 @@
 
 [[redirects]]
   from="/docs/cloud/visualize/kubernetes"
-  to="/docs/miscellaneous/kubernetes-miscellaneous"
+  to="/docs/visualizations/kubernetes-visualizations"
 
 [[redirects]]
   from="/docs/cloud/visualize/nodes"
-  to="/docs/miscellaneous/nodes-view"
+  to="/docs/visualizations/nodes-view"
 
 [[redirects]]
   from="/docs/cloud/visualize/overview"
@@ -2003,11 +1774,11 @@
 
 [[redirects]]
   from="/docs/agent/web/api/exporters"
-  to="/docs/second-move-exporting-data"
+  to="/docs/exporting-data"
 
 [[redirects]]
   from="/docs/agent/web/api/exporters/prometheus"
-  to="/docs/root-prometheus/prometheus"
+  to="/docs/exporting-data/prometheus"
 
 [[redirects]]
   from="/docs/agent/why-netdata"
@@ -2079,7 +1850,7 @@
 
 [[redirects]]
   from="/docs/visualize/create-dashboards"
-  to="/docs/miscellaneous/build-new-dashboards"
+  to="/docs/visualizations/build-new-dashboards"
 
 [[redirects]]
   from="/docs/visualize/interact-dashboards-charts"
@@ -2183,11 +1954,11 @@
 
 [[redirects]]
   from="/guides/export/export-netdata-metrics-graphite"
-  to="/docs/second-move-exporting-data/graphite"
+  to="/docs/exporting-data/graphite"
 
 [[redirects]]
   from="/docs/agent/backends"
-  to="/docs/second-move-exporting-data"
+  to="/docs/exporting-data"
 
 [[redirects]]
   from="/docs/agent/collectors/fping.plugin"
