@@ -2044,4 +2044,12 @@
   from="/docs/improving-netdata---developers/agent-api"
   to="/docs/improving-netdata---developers/web/api"
 
+[[redirects]]
+  from="/docs/agent/backends/walkthrough"
+  to="/docs/exporting-data/exporting-reference"
+
+[[redirects]]
+  from="/docs/next/agent/exporting/graphite"
+  to="/docs/exporting-data/graphite"
+
 # section: dynamic << END
