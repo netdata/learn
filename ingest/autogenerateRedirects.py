@@ -355,6 +355,10 @@ def addMovedRedirects(mapping, finalDict):
 
 	# print(redirects)
 
+	keys = list(redirects.keys())
+	keys.sort(reverse= True)
+	redirects = {i: redirects[i] for i in keys}
+
 	return redirects
 
 
