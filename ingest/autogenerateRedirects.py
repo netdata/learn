@@ -184,14 +184,14 @@ def addDirRedirects(mapping, finalDict):
 			output = ""
 			for i in range(0,len(old_key_array)-ignore_last):
 				output += old_key_array[i] + "/"
-			old = "/docs/" + output
+			old = "/docs/" + output + "*"
 
 			new_key_array = new_key_array[::-1]
 			output = ""
 			for i in range(0,len(new_key_array)-ignore_last):
 				output += new_key_array[i] + "/"
 			
-			new = "/docs/" + output
+			new = "/docs/" + output + "splat:"
 
 			print("After ignore\n",old, " -> ", new, "\n\n")
 

@@ -85,37 +85,29 @@
 # section: dynamic << START
 
 [[redirects]]
-  from="/docs/alerts-and-notifications/notifications/*"
-  to="/docs/alerts-and-notifications/changed-notifications/*"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/*"
-  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/*"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/*"
-  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/*"
-
-
-[[redirects]]
-  from="/docs/installation/*"
-  to="/docs/moved-installation/*"
-
-[[redirects]]
-  from="/docs/installation/installation-methods/*"
-  to="/docs/moved-installation/moved-installation-methods/*"
-
-[[redirects]]
   from="/docs/exporting-data/*"
-  to="/docs/moved-exporting-data/*"
+  to="/docs/second-move-exporting-data/splat:"
 
 [[redirects]]
   from="/docs/exporting-data/prometheus/*"
-  to="/docs/root-prometheus/*"
+  to="/docs/root-prometheus/splat:"
+
+[[redirects]]
+  from="/docs/alerts-and-notifications/notifications/*"
+  to="/docs/alerts-and-notifications/changed-notifications/splat:"
+
+[[redirects]]
+  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/*"
+  to="/docs/alerts-and-notifications/changed-notifications/cloud-alert-notifications/splat:"
+
+[[redirects]]
+  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/*"
+  to="/docs/alerts-and-notifications/changed-notifications/agent-alert-notifications/splat:"
 
 [[redirects]]
   from="/docs/visualizations/*"
-  to="/docs/miscellaneous/:splat"
+  to="/docs/miscellaneous/splat:"
+
 
 [[redirects]]
   from="/docs/agent"
