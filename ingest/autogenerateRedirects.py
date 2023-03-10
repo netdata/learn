@@ -31,15 +31,13 @@ def combineDictsJU(dict1, dict2):
     new_dict = {}
     for key in dict1:
         if key in new_dict:
-            raise Exception(
-            	f"Key '{key}' already exists in the new dictionary and will be overwritten.")
+            raise Exception(f"Key '{key}' already exists in the new dictionary and will be overwritten.")
         new_dict[key] = dict1[key]
 
     # Iterate through the keys in dict2 and add them to the new_dict
     for key in dict2:
         if key in new_dict:
-            raise Exception(
-            	f"Key '{key}' already exists in the new dictionary and will be overwritten.")
+            raise Exception(f"Key '{key}' already exists in the new dictionary and will be overwritten.")
         new_dict[key] = dict2[key]
 
     return (new_dict)
@@ -89,10 +87,8 @@ def readRedirectsFromFile(pathToFile):
 	and parse all the [[redirect]] rules in a dictionary.
 	"""
 	redirects = dict()
-	section_pattern = re.compile(
-		r'#\s*section:\s*dynamic\s*<<\s*START(.+?)#\s*section:\s*dynamic\s*<<\s*END', re.DOTALL)
-	redirects_pattern = re.compile(
-		r'\[\[redirects\]\]\s+from\s*=\s*"(.+?)"\s+to\s*=\s*"(.+?)"')
+	section_pattern = re.compile(r'#\s*section:\s*dynamic\s*<<\s*START(.+?)#\s*section:\s*dynamic\s*<<\s*END', re.DOTALL)
+	redirects_pattern = re.compile(r'\[\[redirects\]\]\s+from\s*=\s*"(.+?)"\s+to\s*=\s*"(.+?)"')
 	with open(pathToFile, "r+") as fd:
 		document_text = "".join(fd.readlines())
 		sections = section_pattern.findall(document_text)
@@ -182,8 +178,7 @@ def main(GHLinksCorrelation):
 
 	# print(oldLearn)
 	try:
-		finalDict = combineDictsOverwrite(
-			readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
+		finalDict = combineDictsOverwrite(readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
 		# print(finalDict)
 	except Exception as e:
 		print(f"An exception occurred: {e}")
