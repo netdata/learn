@@ -694,20 +694,17 @@ if __name__ == '__main__':
             print(restFilesDictionary[file]["tmpPath"])
         exit(-1)
         
-    # mapDict = pd.read_csv("map.tsv",sep='\t')
- 
+    # Write the current dict into a file, so we can check for redirects in the next commit
     temp_dict = {}
-    ceurl = []
-    lpath = []
+    custom_edit_urls_array = []
+    new_learn_paths_array = []
+    
     for key in fileDict:
-        # print(fileDict[key]["metadata"]["custom_edit_url"], fileDict[key]["newLearnPath"])
-        ceurl.append(fileDict[key]["metadata"]["custom_edit_url"])
-        lpath.append(fileDict[key]["newLearnPath"])
+        custom_edit_urls_array.append(fileDict[key]["metadata"]["custom_edit_url"])
+        new_learn_paths_array.append(fileDict[key]["newLearnPath"])
         
-    temp_dict['custom_edit_url'] = ceurl
-    temp_dict['learn_path'] = lpath
-
-
+    temp_dict['custom_edit_url'] = custom_edit_urls_array
+    temp_dict['learn_path'] = new_learn_paths_array
 
     df = pd.DataFrame.from_dict(temp_dict)
     df.set_index('custom_edit_url')
