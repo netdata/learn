@@ -11,7 +11,7 @@ export default function NotFound() {
     query = query.toString().replaceAll(",", " ")
     var target = query.replaceAll("\/", " ").replaceAll("#", " ").replaceAll("-", " ")
     var base = window.location.origin
-    var redirectLocation = base + '#gsc.tab=0&gsc.q=' + target
+    var redirectLocation = base + '?q=' + target
 
     // Page location and redirectLocation should not be the same
     if (location.href !== redirectLocation) {
