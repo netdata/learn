@@ -15,6 +15,7 @@ import autogenerateSupportedIntegrationsPage as genIntPage
 import autogenerateRedirects as genRedirects
 import pandas as pd
 import numpy as np
+import csv
 
 
 """
@@ -693,6 +694,21 @@ if __name__ == '__main__':
             print(restFilesDictionary[file]["tmpPath"])
         exit(-1)
         
+    # Write the current dict into a file, so we can check for redirects in the next commit
+    temp_dict = {}
+    custom_edit_urls_array = []
+    new_learn_paths_array = []
+    
+    for key in fileDict:
+        custom_edit_urls_array.append(fileDict[key]["metadata"]["custom_edit_url"])
+        new_learn_paths_array.append(fileDict[key]["newLearnPath"])
+        
+    temp_dict['custom_edit_url'] = custom_edit_urls_array
+    temp_dict['learn_path'] = new_learn_paths_array
+
+    df = pd.DataFrame.from_dict(temp_dict)
+    df.set_index('custom_edit_url')
+    df.to_csv("./ingest/one_commit_back_file-dict.tsv", sep='\t', index=False)
 
     unSafeCleanUpFolders(TEMP_FOLDER)
 
