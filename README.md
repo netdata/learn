@@ -19,8 +19,8 @@ We offer friendly advice on how to produce quality documentation, hoping that it
 
 ### Prerequisites
 
-- `yarn` should be installed on the system, if you don't have it check the different package types listed in the [yarn releases](https://github.com/yarnpkg/yarn/releases) page
-- `node.js`, version "12 - 16" should also be installed on the system, [install node.js v16.19.1 from here](https://nodejs.org/download/release/v16.19.1)
+- `yarn` version `1.22.19` or higher should be installed on the system, if you don't have it check the different package types listed in the [yarn releases](https://github.com/yarnpkg/yarn/releases) page
+- `node.js`, version `12 - 16` should also be installed on the system, [install node.js v16.19.1 from here](https://nodejs.org/download/release/v16.19.1)
 - Git installed on the system
 
 ### Steps
