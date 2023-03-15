@@ -402,7 +402,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/cassandra/dev.md		Unp
 https://github.com/netdata/netdata/edit/master/HISTORICAL_CHANGELOG.md		Unpublished		401	
 https://github.com/netdata/netdata/edit/master/README.md		Unpublished		402	
 https://github.com/netdata/netdata/edit/master/CHANGELOG.md		Unpublished		403	
-https://github.com/netdata/netdata/edit/master/contribution-guidelines.md		Unpublished		404	
+https://github.com/netdata/netdata/edit/master/contribution-guidelines.md		Unpublished		404	File deleted
 https://github.com/netdata/netdata/edit/master/libnetdata/eval/README.md		Unpublished		405	
 https://github.com/netdata/netdata/edit/master/ml/notebooks/README.md		Unpublished		406	
 https://github.com/netdata/netdata/edit/master/database/engine/metadata_log/README.md		Unpublished		407	
@@ -427,4 +427,5 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/deve
 https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/reference-streaming.md		Unpublished		426	File deleted
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/integrations-overview.md		Unpublished		427	
 https://github.com/netdata/netdata/edit/master/database/contexts/README.md		Unpublished		428	
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor/anomaly-detection.md		Unpublished			
+https://github.com/netdata/netdata/edit/master/docs/guides/monitor/anomaly-detection.md		Unpublished		429	
+https://github.com/netdata/netdata/edit/master/build_external/scenarios/children-to-localhost/README.md		Unpublished		430	New file, was causing the ingest to fail
