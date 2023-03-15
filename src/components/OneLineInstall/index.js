@@ -97,7 +97,7 @@ export function OneLineInstallWget() {
             checked={cloudChecked}
             type="checkbox"
             id="toggle__cloud" />
-          <label htmlFor="toggle__cloud" className="relative text-sm pl-2">Do you want to <Link to="/docs/agent/claim" className="hover:text-blue">claim</Link> the node to Netdata Cloud?<code>default: disabled</code></label>
+          <label htmlFor="toggle__cloud" className="relative text-sm pl-2">Do you want to <Link to="/docs/getting-started/monitor-your-infrastructure/connect-agent-to-cloud" className="hover:text-blue">connect</Link> the node to Netdata Cloud?<code>default: disabled</code></label>
         </div>
       </div>
     </div>
@@ -197,7 +197,7 @@ export function OneLineInstallCurl() {
             checked={cloudChecked}
             type="checkbox"
             id="toggle__cloud_curl" />
-          <label htmlFor="toggle__cloud_curl" className="relative text-sm pl-2">Do you want to <Link to="/docs/agent/claim" className="hover:text-blue">claim</Link> the node to Netdata Cloud?<code>default: disabled</code></label>
+          <label htmlFor="toggle__cloud_curl" className="relative text-sm pl-2">Do you want to <Link to="/docs/getting-started/monitor-your-infrastructure/connect-agent-to-cloud" className="hover:text-blue">connect</Link> the node to Netdata Cloud?<code>default: disabled</code></label>
         </div>
       </div>
     </div>
