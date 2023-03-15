@@ -36,7 +36,7 @@ jobs:
         mv tmp "${docfile}" || exit 1
 
     - name: Create pull request
-      uses: peter-evans/create-pull-request@v3
+      uses: peter-evans/create-pull-request@v4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         commit-message: Ingest new documentation
