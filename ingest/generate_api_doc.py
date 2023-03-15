@@ -1,9 +1,8 @@
-import yaml
 import json
 
 def generate_api_doc(TEMP_FOLDER):
-    with open(f'{TEMP_FOLDER}/netdata/web/api/netdata-swagger.yaml', 'r') as file:
-        configuration = yaml.safe_load(file)
+    with open(f'{TEMP_FOLDER}/netdata/web/api/netdata-swagger.json', 'r') as file:
+        configuration = json.load(file)
 
     with open('api.json', 'w') as json_file:
         json.dump(configuration, json_file)
