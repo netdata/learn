@@ -16,6 +16,7 @@ import autogenerateRedirects as genRedirects
 import pandas as pd
 import numpy as np
 import csv
+import generate_api_doc as api
 
 
 """
@@ -712,6 +713,8 @@ if __name__ == '__main__':
     df = pd.DataFrame.from_dict(temp_dict)
     df.set_index('custom_edit_url')
     df.to_csv("./ingest/one_commit_back_file-dict.tsv", sep='\t', index=False)
+
+    api.generate_api_doc(TEMP_FOLDER)
 
     unSafeCleanUpFolders(TEMP_FOLDER)
 

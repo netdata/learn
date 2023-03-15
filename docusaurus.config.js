@@ -59,6 +59,9 @@ module.exports = {
 					label: 'Website',
 					position: 'left',
 				},
+				{ 	to: "/api", 
+					label: "API", 
+					position: "left" },
 				{
 					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
 					label: 'Sign In',
@@ -90,9 +93,13 @@ module.exports = {
 	],
 	presets: [
 		[
-			"classic",
+			"docusaurus-preset-openapi",
 			/** @type {import('@docusaurus/preset-classic').Options} */
 			({
+				api: {
+					path: "api.json",
+					routeBasePath: "/api",
+					sidebarCollapsed: false},
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
