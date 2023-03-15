@@ -279,7 +279,10 @@ def insertAndReadHiddenMetadataFromDoc(pathToFile, mapDict):
             val = str(val)
 
             if (not val == np.nan) and val != "nan":
-                output+= "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
+                if field == "sidebar_position":
+                    output+= "{0}: \"{1}\"\n".format(field, float(val.replace("\"", "")))    
+                else:
+                    output+= "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
         except:
             pass
             # print("CANT PARSE", mapDict.loc[mapDict['custom_edit_url'] == key][field].values)
