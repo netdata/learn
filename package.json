@@ -38,7 +38,7 @@
 		"react-loadable": "^5.5.0",
 		"react-player": "^2.10.0",
 		"typescript": "^4.8.2",
-		"webpack": "^5.0.0"
+		"webpack": "^5.76.0"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.2.5",
