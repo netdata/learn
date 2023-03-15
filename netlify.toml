@@ -2052,4 +2052,16 @@
   from="/docs/next/agent/exporting/graphite"
   to="/docs/exporting-data/graphite"
 
+[[redirects]]
+  from="/contribute/support"
+  to="/docs/improving-netdata---developers"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system%20metrics/windows-machine"
+  to="/docs/data-collection/monitor-anything/System%20Metrics/Windows-machines"
+
+[[redirects]]
+  from="/docs/next/agent/health/notifications/awssns"
+  to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/amazon-sns"
+
 # section: dynamic << END
