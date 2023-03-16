@@ -1,0 +1,61 @@
+---
+id: execute-a-collector-function
+title: "Execute a collector function."
+description: "Execute a collector function."
+sidebar_label: "Execute a collector function."
+hide_title: true
+hide_table_of_contents: true
+api: {"parameters":[{"name":"function","in":"query","description":"The name of the function, as returned by the collector.","required":true,"allowEmptyValue":false,"schema":{"type":"string"}},{"name":"timeout","in":"query","description":"The timeout in seconds to wait for the function to complete.","required":false,"schema":{"type":"number","format":"integer","default":10}}],"responses":{"200":{"description":"The collector function has been executed successfully. Each collector may return a different type of content."},"400":{"description":"The request was rejected by the collector."},"404":{"description":"The requested function is not found."},"500":{"description":"Other internal error, getting this error means there is a bug in Netdata."},"503":{"description":"The collector to execute the function is not currently available."},"504":{"description":"Timeout while waiting for the collector to execute the function."},"591":{"description":"The collector sent a response, but it was invalid or corrupted."}},"description":"Execute a collector function.","method":"get","path":"/api/v1/function","servers":[{"url":"https://registry.my-netdata.io"},{"url":"http://registry.my-netdata.io"},{"url":"http://localhost:19999"}],"info":{"title":"Netdata API","description":"Real-time performance and health monitoring.","version":"1.38"},"postman":{"name":"Execute a collector function.","description":{"type":"text/plain"},"url":{"path":["api","v1","function"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"(Required) The name of the function, as returned by the collector.","type":"text/plain"},"key":"function","value":""},{"disabled":false,"description":{"content":"The timeout in seconds to wait for the function to complete.","type":"text/plain"},"key":"timeout","value":""}],"variable":[]},"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: docs/api/netdata-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>Execute a collector function.</h1>
+
+<MethodEndpoint method={"get"} path={"/api/v1/function"}></MethodEndpoint>
+
+
+
+Execute a collector function.
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"function","in":"query","description":"The name of the function, as returned by the collector.","required":true,"allowEmptyValue":false,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"timeout","in":"query","description":"The timeout in seconds to wait for the function to complete.","required":false,"schema":{"type":"number","format":"integer","default":10}}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+The collector function has been executed successfully. Each collector may return a different type of content.
+
+</div><div></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+The request was rejected by the collector.
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+The requested function is not found.
+
+</div><div></div></TabItem><TabItem label={"500"} value={"500"}><div>
+
+Other internal error, getting this error means there is a bug in Netdata.
+
+</div><div></div></TabItem><TabItem label={"503"} value={"503"}><div>
+
+The collector to execute the function is not currently available.
+
+</div><div></div></TabItem><TabItem label={"504"} value={"504"}><div>
+
+Timeout while waiting for the collector to execute the function.
+
+</div><div></div></TabItem><TabItem label={"591"} value={"591"}><div>
+
+The collector sent a response, but it was invalid or corrupted.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      

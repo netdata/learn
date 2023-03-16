@@ -87,7 +87,25 @@ module.exports = {
 			}
 		],
 		'docusaurus-tailwindcss-loader',
-	],
+		[
+			'docusaurus-plugin-openapi-docs',
+			{
+			  id: "apiDocs",
+			  docsPluginId: "classic",
+			  config: {
+				netdata_api: { // Note: petstore key is treated as the <id> and can be used to specify an API doc instance when using CLI commands
+				  specPath: "api.json", // Path to designated spec file
+				  outputDir: "docs/api", // Output directory for generated .mdx docs
+				//   sidebarOptions: {
+				// 	groupPathsBy: "tag",
+				// 	categoryLinkSource: "tag",
+				//   },
+				},
+			  }
+			},
+		  ]
+		],
+	themes: ["docusaurus-theme-openapi-docs"], // Allows use of @theme/ApiItem and other components
 	presets: [
 		[
 			"classic",
@@ -97,6 +115,7 @@ module.exports = {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
 					docLayoutComponent: "@theme/DocPage",
+					docItemComponent: "@theme/ApiItem",
 					showLastUpdateTime: true,
 				},
 				theme: {

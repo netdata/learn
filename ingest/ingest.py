@@ -16,6 +16,7 @@ import autogenerateRedirects as genRedirects
 import pandas as pd
 import numpy as np
 import csv
+import generate_api_doc as api
 
 
 """
@@ -520,6 +521,28 @@ def convertGithubLinks(path, fileDict, DOCS_PREFIX):
     dummyFile.write(wholeFile)
     dummyFile.close()
 
+def set_api_category_link():
+    file = open("docs/api/netdata-api.info.mdx", "r")
+    body = file.read()
+    file.close()
+
+    content = body.split("---")[2]
+    output = """---
+title: "Netdata API"
+description: "Real-time performance and health monitoring."
+sidebar_label: API
+hide_title: true
+custom_edit_url: null
+---""" + "\n" + content
+    print(output)
+
+    file = open("docs/api/api.mdx", "w+")
+    file.seek(0)
+    file.writelines(output)
+    file.close()
+
+    os.system("rm docs/api/netdata-api.info.mdx")
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Ingest docs from multiple repositories')
@@ -594,7 +617,7 @@ if __name__ == '__main__':
     '''
     Clean up old ingested docs
     '''
-    safeCleanUpLearnFolders(DOCS_PREFIX)
+    # safeCleanUpLearnFolders(DOCS_PREFIX)
     print("Creating a temp directory: ",TEMP_FOLDER)
     try:
         os.mkdir(TEMP_FOLDER)
@@ -604,7 +627,7 @@ if __name__ == '__main__':
     '''
     Clean up old docs
     '''
-    #unSafeCleanUpFolders(DOCS_PREFIX)
+    unSafeCleanUpFolders(DOCS_PREFIX)
 
     '''Clone all the predefined repos'''
     for key in defaultRepos.keys():
@@ -712,6 +735,12 @@ if __name__ == '__main__':
     df = pd.DataFrame.from_dict(temp_dict)
     df.set_index('custom_edit_url')
     df.to_csv("./ingest/one_commit_back_file-dict.tsv", sep='\t', index=False)
+
+    api.generate_api_doc(TEMP_FOLDER)
+
+    os.system("yarn docusaurus gen-api-docs all")
+
+    set_api_category_link()
 
     unSafeCleanUpFolders(TEMP_FOLDER)
 

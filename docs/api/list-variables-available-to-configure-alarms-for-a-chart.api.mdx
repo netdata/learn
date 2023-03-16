@@ -1,0 +1,49 @@
+---
+id: list-variables-available-to-configure-alarms-for-a-chart
+title: "List variables available to configure alarms for a chart"
+description: "Returns the basic information of a chart and all the variables that can be used in alarm and template health configurations for the particular chart or family."
+sidebar_label: "List variables available to configure alarms for a chart"
+hide_title: true
+hide_table_of_contents: true
+api: {"description":"Returns the basic information of a chart and all the variables that can be used in alarm and template health configurations for the particular chart or family.","parameters":[{"name":"chart","in":"query","description":"The id of the chart as returned by the /charts call.","required":true,"schema":{"type":"string","format":"as returned by /charts","default":"system.cpu"}}],"responses":{"200":{"description":"A javascript object with information about the chart and the available variables.","content":{"application/json":{"schema":{"type":"object","properties":{"chart":{"type":"string","description":"The unique id of the chart."},"chart_name":{"type":"string","description":"The name of the chart."},"cnart_context":{"type":"string","description":"The context of the chart. It is shared across multiple monitored software or hardware instances and used in alarm templates."},"family":{"type":"string","description":"The family of the chart."},"host":{"type":"string","description":"The host containing the chart."},"chart_variables":{"type":"object","additionalProperties":{"type":"object","properties":{"varname1":{"type":"number","format":"float"},"varname2":{"type":"number","format":"float"}},"title":"chart_variables"}},"family_variables":{"type":"object","properties":{"varname1":{"type":"number","format":"float"},"varname2":{"type":"number","format":"float"}}},"host_variables":{"type":"object","properties":{"varname1":{"type":"number","format":"float"},"varname2":{"type":"number","format":"float"}}}},"title":"alarm_variables"}}}},"400":{"description":"Bad request - the body will include a message stating what is wrong."},"404":{"description":"No chart with the given id is found."},"500":{"description":"Internal server error. This usually means the server is out of memory."}},"method":"get","path":"/api/v1/alarm_variables","servers":[{"url":"https://registry.my-netdata.io"},{"url":"http://registry.my-netdata.io"},{"url":"http://localhost:19999"}],"info":{"title":"Netdata API","description":"Real-time performance and health monitoring.","version":"1.38"},"postman":{"name":"List variables available to configure alarms for a chart","description":{"content":"Returns the basic information of a chart and all the variables that can be used in alarm and template health configurations for the particular chart or family.","type":"text/plain"},"url":{"path":["api","v1","alarm_variables"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"(Required) The id of the chart as returned by the /charts call.","type":"text/plain"},"key":"chart","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: docs/api/netdata-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiDemoPanel/MethodEndpoint";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import TabItem from "@theme/TabItem";
+
+<h1 className={"openapi__heading"}>List variables available to configure alarms for a chart</h1>
+
+<MethodEndpoint method={"get"} path={"/api/v1/alarm_variables"}></MethodEndpoint>
+
+
+
+Returns the basic information of a chart and all the variables that can be used in alarm and template health configurations for the particular chart or family.
+
+<details style={{"marginBottom":"1rem"}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"chart","in":"query","description":"The id of the chart as returned by the /charts call.","required":true,"schema":{"type":"string","format":"as returned by /charts","default":"system.cpu"}}}></ParamsItem></ul></div></details><div><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+A javascript object with information about the chart and the available variables.
+
+</div><div><MimeTabs className={"openapi-tabs__mime"} schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs className={"openapi-tabs__schema"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} className={"openapi-markdown__details"} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"chart"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"The unique id of the chart."}}></SchemaItem><SchemaItem collapsible={false} name={"chart_name"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"The name of the chart."}}></SchemaItem><SchemaItem collapsible={false} name={"cnart_context"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"The context of the chart. It is shared across multiple monitored software or hardware instances and used in alarm templates."}}></SchemaItem><SchemaItem collapsible={false} name={"family"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"The family of the chart."}}></SchemaItem><SchemaItem collapsible={false} name={"host"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"The host containing the chart."}}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><strong>chart_variables</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><strong>property name*</strong><span style={{"opacity":"0.6"}}> object (chart_variables)</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"varname1"} required={false} schemaName={"float"} qualifierMessage={undefined} schema={{"type":"number","format":"float"}}></SchemaItem><SchemaItem collapsible={false} name={"varname2"} required={false} schemaName={"float"} qualifierMessage={undefined} schema={{"type":"number","format":"float"}}></SchemaItem></div></details></SchemaItem></div></details></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><strong>family_variables</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"varname1"} required={false} schemaName={"float"} qualifierMessage={undefined} schema={{"type":"number","format":"float"}}></SchemaItem><SchemaItem collapsible={false} name={"varname2"} required={false} schemaName={"float"} qualifierMessage={undefined} schema={{"type":"number","format":"float"}}></SchemaItem></div></details></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}} className={"openapi-markdown__details"}><summary style={{}}><strong>host_variables</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"varname1"} required={false} schemaName={"float"} qualifierMessage={undefined} schema={{"type":"number","format":"float"}}></SchemaItem><SchemaItem collapsible={false} name={"varname2"} required={false} schemaName={"float"} qualifierMessage={undefined} schema={{"type":"number","format":"float"}}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"chart\": \"string\",\n  \"chart_name\": \"string\",\n  \"cnart_context\": \"string\",\n  \"family\": \"string\",\n  \"host\": \"string\",\n  \"chart_variables\": {},\n  \"family_variables\": {\n    \"varname1\": 0,\n    \"varname2\": 0\n  },\n  \"host_variables\": {\n    \"varname1\": 0,\n    \"varname2\": 0\n  }\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Bad request - the body will include a message stating what is wrong.
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+No chart with the given id is found.
+
+</div><div></div></TabItem><TabItem label={"500"} value={"500"}><div>
+
+Internal server error. This usually means the server is out of memory.
+
+</div><div></div></TabItem></ApiTabs></div></div>
+      
