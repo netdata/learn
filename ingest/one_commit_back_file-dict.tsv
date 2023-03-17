@@ -223,6 +223,7 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	/docs/visualizations/build-new-dashboards
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/nodes.md	/docs/visualizations/nodes-view
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	/docs/visualizations/kubernetes-visualizations
+https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	/docs/getting-started/monitor-your-infrastructure/node-filter
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/overview.md	/docs/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	/docs/getting-started/monitor-your-infrastructure/netdata-plans
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/invite-your-team.md	/docs/getting-started/monitor-your-infrastructure/invite-your-team

@@ -3,11 +3,9 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/guides/pyt
 sidebar_label: "Develop a custom data collector in Python"
 learn_status: "Published"
 learn_rel_path: "Improving Netdata - developers/External plugins/python.d.plugin"
-sidebar_position: "324.0"
+sidebar_position: "325.0"
 description: "Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box."
 ---
-
-
 # Develop a custom data collector in Python
 
 The Netdata Agent uses [data collectors](/docs/data-collection) to 
@@ -19,10 +17,15 @@ In this tutorial, you'll learn how to leverage the [Python programming language]
 custom data collector for the Netdata Agent. Follow along with your own dataset, using the techniques and best practices
 covered here, or use the included examples for collecting and organizing either random or weather data.
 
+## Disclaimer
+
 If you're comfortable with Golang, consider instead writing a module for the [go.d.plugin](https://github.com/netdata/go.d.plugin).
 Golang is more performant, easier to maintain, and simpler for users since it doesn't require a particular runtime on the node to
 execute. Python plugins require Python on the machine to be executed. Netdata uses Go as the platform of choice for
 production-grade collectors.
+
+We generally do not accept contributions of Python modules to the Github project netdata/netdata. If you write a Python collector and
+want to make it available for other users, you should create the pull request in https://github.com/netdata/community.
 
 ## What you need to get started
 
@@ -531,6 +534,8 @@ documentation](/docs/improving-netdata---developers/external-plugins/python.d.pl
 You can find the source code for the above examples on [GitHub](https://github.com/papajohn-uop/netdata). 
 
 ## Pull Request Checklist for Python Plugins
+
+Pull requests should be created in https://github.com/netdata/community.
 
 This is a generic checklist for submitting a new Python plugin for Netdata.  It is by no means comprehensive.
 
