@@ -33,7 +33,7 @@ https://github.com/netdata/netdata/edit/master/web/server/README.md	Web server	P
 https://github.com/netdata/netdata/edit/master/docs/anonymous-statistics.md	Anonymous telemetry events	Published	Deployment in production/Secure your nodes	32	
 https://github.com/netdata/netdata/edit/master/registry/README.md	Registry	Published	Deployment in production/Secure your nodes	33	Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards.
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	Role-based access model	Published	Deployment in production/Secure your nodes	34	Explanation of Netdata roles and permissions linked to them
-https://github.com/netdata/netdata/edit/master/docs/reverse-proxies.md	Reverse proxies	Published	Deployment in production/Secure your nodes/Reverse proxies	35	
+https://github.com/netdata/netdata/edit/master/category-overview-pages/reverse-proxies.md	Reverse proxies	Published	Deployment in production/Secure your nodes/Reverse proxies	35	
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-nginx.md	Nginx	Published	Deployment in production/Secure your nodes/Reverse proxies	36	
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-haproxy.md	HAProxy	Published	Deployment in production/Secure your nodes/Reverse proxies	37	
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-apache.md	Apache	Published	Deployment in production/Secure your nodes/Reverse proxies	38	
