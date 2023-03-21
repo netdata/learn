@@ -2064,4 +2064,16 @@
   from="/docs/next/agent/health/notifications/awssns"
   to="/docs/alerts-and-notifications/notifications/agent-alert-notifications/amazon-sns"
 
+[[redirects]]
+  from="/docs/why-netdata"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/api/"
+  to="/docs/improving-netdata---developers/web/api"
+
+[[redirects]]
+  from="/streaming"
+  to="/docs/deployment-in-production/streaming-and-replication"
+
 # section: dynamic << END
