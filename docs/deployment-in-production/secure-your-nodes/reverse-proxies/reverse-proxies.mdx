@@ -1,0 +1,23 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/reverse-proxies.md"
+sidebar_label: "Reverse proxies"
+learn_status: "Published"
+learn_rel_path: "Deployment in production/Secure your nodes/Reverse proxies"
+sidebar_position: "35.0"
+---
+# Running netdata behind a reverse proxy
+
+If you need to access a Netdata agent's user interface or API in a production environment we recommend you put Netdata behind
+another web server and secure access to the dashboard via SSL and user authentication. A dedicated web server also provides more robustness 
+and capabilities than the Agent's internal [web server](/docs/improving-netdata---developers/web).
+
+We have documented running behind
+[nginx](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/nginx),
+[Apache](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/apache),
+[HAProxy](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/haproxy),
+[Lighttpd](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/lighttpd-v1.4.x),
+[Caddy](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/caddy),
+and [H2O](/docs/deployment-in-production/secure-your-nodes/reverse-proxies/h2o).
+If you prefer a different web server, we suggest you follow the documentation for nginx and tell us how you did it 
+ by adding your own "Running behind webserverX" document.
+ 

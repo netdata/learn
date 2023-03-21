@@ -195,6 +195,7 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/visu
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/installation-overview.md	/docs/installation
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/troubleshooting-overview.md	/docs/troubleshooting-and-machine-learning
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/misc-overview.md	/docs/miscellaneous
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/reverse-proxies.md	/docs/deployment-in-production/secure-your-nodes/reverse-proxies
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/deployment-strategies.md	/docs/deployment-in-production
 https://github.com/netdata/netdata/edit/master/docs/visualize/overview-infrastructure.md	/docs/visualizations/infrastructure-overview
 https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alarms.md	/docs/getting-started/monitor-your-infrastructure/view-active-alerts
