@@ -624,8 +624,6 @@ if __name__ == '__main__':
 
 
     mapDict['sidebar_position'] = np.arange(1, len(mapDict)+1)
-    print(mapDict['sidebar_position'])
-    # quit()
 
     reducedMarkdownFiles = []
     for md in markdownFiles:
