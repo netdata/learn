@@ -177,18 +177,24 @@ function FeedbackForm(){
 
           {/* Contribute column*/}
           <div className="flex-1 pl-2 pt-2">
-            <h4 className="!mt-0">Contribute</h4>
+            <h4 className="!mt-0">Need more help?</h4>
             <ul className="text-sm">
               <li>
                 Join our{' '}
-                <Link to="https://community.netdata.cloud">
-                  community forum
+                <Link to="https://www.netdata.cloud/community">
+                  community
                 </Link>
               </li>
               <li>
-                Submit a{' '}
-                <Link to="https://github.com/netdata/netdata/issues/new?assignees=&labels=feature+request%2Cneeds+triage&template=FEAT_REQUEST.yml&title=%5BFeat%5D%3A+">
-                  feature request
+                Submit a bug or feature request for the{' '}
+                <Link to="https://github.com/netdata/netdata/issues/new/choose">
+                  FOSS agent
+                </Link>
+              </li>
+	      <li>
+                Submit a bug or feature request for the{' '}
+                <Link to="https://github.com/netdata/netdata-cloud/issues/new/choose">
+                  Netdata cloud
                 </Link>
               </li>
             </ul>
