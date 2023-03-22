@@ -35,28 +35,28 @@ module.exports = {
 					label: 'Docs',
 				},
 				{
-					to: 'https://blog.netdata.cloud',
+					to: 'https://blog.netdata.cloud/?utm_source=learn&utm_content=top_navigation_blog',
 					position: 'left',
 					label: 'Blog',
 				},
 				{
-					to: 'https://blog.netdata.cloud/tags/how-to',
+					to: 'https://blog.netdata.cloud/tags/how-to/?utm_source=learn&utm_content=top_navigation_usecases',
 					position: 'left',
 					label: 'Use Cases',
 				},
 				{
-					to: 'https://community.netdata.cloud/',
+					to: 'https://www.netdata.cloud/community/?utm_source=learn&utm_content=top_navigation_community',
 					position: 'left',
 					label: 'Community',
 				},
 				{
-					to: 'https://app.netdata.cloud/',
-					label: 'App',
+					to: 'https://www.netdata.cloud/?utm_source=learn&utm_content=top_navigation_website',
+					label: 'Website',
 					position: 'left',
 				},
 				{
-					to: 'https://www.netdata.cloud/',
-					label: 'Website',
+					to: 'https://app.netdata.cloud/spaces/netdata-demo?utm_source=learn&utm_content=top_navigation_demo',
+					label: 'Live Demo',
 					position: 'left',
 				},
 				{
