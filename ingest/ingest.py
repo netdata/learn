@@ -621,6 +621,12 @@ if __name__ == '__main__':
     mapDict = pd.read_csv("map.tsv",sep='\t')
     
     mapDict.set_index('custom_edit_url').T.to_dict('dict')
+
+
+    mapDict['sidebar_position'] = np.arange(1, len(mapDict)+1)
+    print(mapDict['sidebar_position'])
+    # quit()
+
     reducedMarkdownFiles = []
     for md in markdownFiles:
         #print("File: ", md)
