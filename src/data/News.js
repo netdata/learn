@@ -28,7 +28,7 @@ export const News = [
 	},
 	{
 		title: <>Netdata Feed</>,
-		href: 'https://learn.netdata.cloud/docs/troubleshooting-and-machine-learning/events-feed',
+		href: '/docs/troubleshooting-and-machine-learning/events-feed',
 		date: 'Feb 21, 2023',
 		type: 'Link',
 		description: (
@@ -116,7 +116,7 @@ export const News = [
 	},
 	{
 		title: <>Netdata's new Home tab</>,
-		href: 'docs/cloud/visualize/overview',
+		href: '/docs/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view',
 		date: 'May 18, 2022',
 		type: 'Doc',
 		description: (
@@ -127,7 +127,7 @@ export const News = [
 	},
 	{
 		title: <>SNMP collector now runs on Go</>,
-		href: '/docs/agent/collectors/go.d.plugin/modules/snmp',
+		href: '/docs/data-collection/monitor-anything/Networking/SNMP',
 		date: 'March 28, 2022',
 		type: 'Doc',
 		description: (
@@ -138,7 +138,7 @@ export const News = [
 	},
 	{
 		title: <>Play pretend: The kickstart script now has a dry-run mode</>,
-		href: '/docs/agent/packaging/installer/update#determine-which-installation-method-you-used',
+		href: '/docs/installation/update-netdata#determine-which-installation-method-you-used',
 		date: 'Mar 16, 2022',
 		type: 'Doc',
 		description: (
