@@ -4,7 +4,7 @@ import {ThemeClassNames} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/theme-common/internal';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
-import EditThisPage from '@theme/EditThisPage';
+import EditThisPage from '../../CustomEditThisPage';
 import TagsListInline from '@theme/TagsListInline';
 import styles from './styles.module.css';
 import LastUpdated from '@theme/LastUpdated';
@@ -36,19 +36,21 @@ function EditMetaRow({
   formattedLastUpdatedAt,
 }) {
   return (
-    <div className={clsx(ThemeClassNames.docs.docFooterEditMetaRow, 'row')}>
-      <div className="col">{editUrl && <EditThisPage editUrl={editUrl} />}</div>
+    <div className={clsx(ThemeClassNames.docs.docFooterEditMetaRow, 'row')}style={{'float': 'right'}}>
+      {/* <div className="col">{editUrl && }</div> */}
 
-      <div className={clsx('col', styles.lastUpdated)}>
-        {(lastUpdatedAt || lastUpdatedBy) && (
-          <LastUpdated
-            lastUpdatedAt={lastUpdatedAt}
-            formattedLastUpdatedAt={formattedLastUpdatedAt}
-            lastUpdatedBy={lastUpdatedBy}
-          />
-        )}
+      {/* <div className={clsx('col', styles.lastUpdated)}> */}
+        <EditThisPage editUrl={editUrl} />
+      {/* {(lastUpdatedAt || lastUpdatedBy) && (
+        
+        <LastUpdated
+          lastUpdatedAt={lastUpdatedAt}
+          formattedLastUpdatedAt={formattedLastUpdatedAt}
+          lastUpdatedBy={lastUpdatedBy}
+        />
+      )} */}
       </div>
-    </div>
+    // </div>
   );
 }
 
