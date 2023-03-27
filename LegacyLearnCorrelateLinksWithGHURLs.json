@@ -420,7 +420,7 @@
     "https://learn.netdata.cloud/docs/cloud/alerts-notifications/notifications": "https://github.com/netdata/netdata/blob/master/docs/cloud/alerts-notifications/notifications.md",
     "https://learn.netdata.cloud/docs/cloud/alerts-notifications/smartboard": "https://github.com/netdata/netdata/blob/master/docs/monitor/view-active-alarms.md",
     "https://learn.netdata.cloud/docs/cloud/alerts-notifications/view-active-alerts": "https://github.com/netdata/netdata/blob/master/docs/monitor/view-active-alarms.md",
-    "https://learn.netdata.cloud/docs/cloud/data-privacy": "https://github.com/netdata/netdata/blob/master/docs/cloud/netdata-security.md",
+    "https://learn.netdata.cloud/docs/cloud/data-privacy": "https://github.com/netdata/netdata/blob/master/docs/netdata-security.md",
     "https://learn.netdata.cloud/docs/data-privacy": "https://github.com/netdata/netdata/blob/master/docs/netdata-security.md",
     "https://learn.netdata.cloud/docs/deployment-in-production/data-privacy": "https://github.com/netdata/netdata/blob/master/docs/netdata-security.md",
     "https://learn.netdata.cloud/docs/deployment-in-production/pci-dss-soc-2-hipaa-environments": "https://github.com/netdata/netdata/blob/master/docs/netdata-security.md",
