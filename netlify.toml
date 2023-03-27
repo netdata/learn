@@ -354,7 +354,7 @@
 
 [[redirects]]
   from="/contribute/security"
-  to="/docs/miscellaneous/security-policy"
+  to="/docs/improving-netdata---developers/security-policy"
 
 [[redirects]]
   from="/contribute/style-guide"
@@ -366,7 +366,7 @@
 
 [[redirects]]
   from="/docs/agent/anonymous-statistics"
-  to="/docs/deployment-in-production/secure-your-nodes"
+  to="/docs/deployment-in-production/security-and-privacy-design"
 
 [[redirects]]
   from="/docs/agent/build_external"
@@ -1286,7 +1286,7 @@
 
 [[redirects]]
   from="/docs/agent/netdata-security"
-  to="/docs/deployment-in-production/secure-your-nodes"
+  to="/docs/deployment-in-production/security-and-privacy-design"
 
 [[redirects]]
   from="/docs/agent/packaging/building-native-packages-locally"
@@ -1654,7 +1654,7 @@
 
 [[redirects]]
   from="/docs/cloud/data-privacy"
-  to="/docs/deployment-in-production/data-privacy"
+  to="/docs/deployment-in-production/security-and-privacy-design"
 
 [[redirects]]
   from="/docs/cloud/insights/anomaly-advisor"
@@ -2075,5 +2075,25 @@
 [[redirects]]
   from="/streaming"
   to="/docs/deployment-in-production/streaming-and-replication"
+
+[[redirects]]
+  from="/docs/data-privacy"
+  to="/docs/deployment-in-production/security-and-privacy-design"
+
+[[redirects]]
+  from="/docs/deployment-in-production/data-privacy"
+  to="/docs/deployment-in-production/security-and-privacy-design"
+
+[[redirects]]
+  from="/docs/deployment-in-production/pci-dss-soc-2-hipaa-environments"
+  to="/docs/deployment-in-production/security-and-privacy-design"
+
+[[redirects]]
+  from="/docs/miscellaneous/security-policy"
+  to="/docs/improving-netdata---developers/security-policy"
+
+[[redirects]]
+  from="/docs/deployment-in-production/secure-your-nodes"
+  to="/docs/deployment-in-production/security-and-privacy-design"
 
 # section: dynamic << END

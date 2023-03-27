@@ -183,7 +183,7 @@ https://github.com/netdata/netdata/edit/master/docs/Running-behind-lighttpd.md	/
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-haproxy.md	/docs/deployment-in-production/secure-your-nodes/reverse-proxies/haproxy
 https://github.com/netdata/netdata/edit/master/docs/netdata-for-IoT.md	/docs/miscellaneous/netdata-for-iot
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-h2o.md	/docs/deployment-in-production/secure-your-nodes/reverse-proxies/h2o
-https://github.com/netdata/netdata/edit/master/docs/netdata-security.md	/docs/deployment-in-production/secure-your-nodes
+https://github.com/netdata/netdata/edit/master/docs/netdata-security.md	/docs/deployment-in-production/security-and-privacy-design
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	/docs/getting-started/glossary
 https://github.com/netdata/netdata/edit/master/docs/anonymous-statistics.md	/docs/deployment-in-production/secure-your-nodes/anonymous-telemetry-events
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-caddy.md	/docs/deployment-in-production/secure-your-nodes/reverse-proxies/caddy
@@ -192,6 +192,7 @@ https://github.com/netdata/netdata/edit/master/docs/getting-started/introduction
 https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	/docs/getting-started/monitor-your-infrastructure
 https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/enable-streaming.md	/docs/deployment-in-production/streaming-and-replication
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/visualizations-overview.md	/docs/visualizations
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/secure-nodes.md	/docs/deployment-in-production/secure-your-nodes
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/installation-overview.md	/docs/installation
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/troubleshooting-overview.md	/docs/troubleshooting-and-machine-learning
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/misc-overview.md	/docs/miscellaneous
@@ -214,11 +215,9 @@ https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-prin
 https://github.com/netdata/netdata/edit/master/docs/store/change-metrics-storage.md	/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics
 https://github.com/netdata/netdata/edit/master/docs/store/distributed-data-architecture.md	/docs/getting-started/distributed-data-architecture
 https://github.com/netdata/netdata/edit/master/docs/cloud/spaces.md	/docs/getting-started/monitor-your-infrastructure/spaces
-https://github.com/netdata/netdata/edit/master/docs/cloud/data-privacy.md	/docs/deployment-in-production/data-privacy
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs/troubleshooting-and-machine-learning/functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	/docs/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/war-rooms.md	/docs/getting-started/monitor-your-infrastructure/war-rooms
-https://github.com/netdata/netdata/edit/master/docs/cloud/pci-soc-hipaa.md	/docs/deployment-in-production/pci-dss-soc-2-hipaa-environments
 https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	/docs/getting-started/manage-and-configure
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	/docs/getting-started/monitor-your-infrastructure/interact-with-charts
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	/docs/visualizations/build-new-dashboards
@@ -384,6 +383,6 @@ https://github.com/netdata/netdata/edit/master/claim/README.md	/docs/getting-sta
 https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	/docs/exporting-data/grafana-data-source-plugin
 https://github.com/netdata/agent-service-discovery/edit/master/README.md	/docs/data-collection/service-discovery
 https://github.com/netdata/helmchart/edit/master/charts/netdata/README.md	/docs/installation/install-on-specific-environments/kubernetes/kubernetes-helm-chart-reference
-https://github.com/netdata/.github/edit/main/SECURITY.md	/docs/miscellaneous/security-policy
+https://github.com/netdata/.github/edit/main/SECURITY.md	/docs/improving-netdata---developers/security-policy
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	/docs/improving-netdata---developers
 https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	/docs/improving-netdata---developers/community-code-of-conduct
