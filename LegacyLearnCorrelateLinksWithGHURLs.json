@@ -338,7 +338,7 @@
     "https://learn.netdata.cloud/docs/collect/system-metrics": "https://github.com/netdata/netdata/blob/master/docs/collect/system-metrics.md",
     "https://learn.netdata.cloud/docs/configure/common-changes": "https://github.com/netdata/netdata/blob/master/docs/configure/common-changes.md",
     "https://learn.netdata.cloud/docs/configure/nodes": "https://github.com/netdata/netdata/blob/master/docs/configure/nodes.md",
-    "https://learn.netdata.cloud/docs/configure/secure-nodes": "https://github.com/netdata/netdata/blob/master/docs/secure-nodes.md",
+    "https://learn.netdata.cloud/docs/configure/secure-nodes": "https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/secure-nodes.md",
     "https://learn.netdata.cloud/docs/configure/start-stop-restart": "https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md",
     "https://learn.netdata.cloud/docs/cloud/faq-glossary": "https://github.com/netdata/netdata/blob/master/docs/glossary.md",
     "https://learn.netdata.cloud/docs/dashboard/customize": "https://github.com/netdata/netdata/blob/master/docs/dashboard/customize.md",
