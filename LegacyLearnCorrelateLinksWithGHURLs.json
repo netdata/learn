@@ -437,5 +437,7 @@
     "https://learn.netdata.cloud/docs/cloud/visualize/nodes": "https://github.com/netdata/netdata/blob/master/docs/cloud/visualize/nodes.md",
     "https://learn.netdata.cloud/docs/cloud/visualize/overview": "https://github.com/netdata/netdata/blob/master/docs/cloud/visualize/overview.md",
     "https://learn.netdata.cloud/docs/cloud/war-rooms": "https://github.com/netdata/netdata/blob/master/docs/cloud/war-rooms.md",
-    "https://learn.netdata.cloud/docs/agent/collectors/collectors": "https://github.com/netdata/netdata/blob/master/collectors/COLLECTORS.md"
+    "https://learn.netdata.cloud/docs/agent/collectors/collectors": "https://github.com/netdata/netdata/blob/master/collectors/COLLECTORS.md",
+    "https://learn.netdata.cloud/docs/miscellaneous/security-policy": "https://github.com/netdata/.github/blob/main/SECURITY.md",
+    "https://learn.netdata.cloud/docs/deployment-in-production/secure-your-nodes": "https://github.com/netdata/netdata/blob/master/docs/netdata-security.md"
 }
