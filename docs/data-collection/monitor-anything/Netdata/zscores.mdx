@@ -4,13 +4,11 @@ sidebar_label: "zscores"
 learn_status: "Published"
 learn_rel_path: "Data collection/Monitor Anything/Netdata"
 description: "Use statistical anomaly detection to narrow your focus and shorten root cause analysis."
-sidebar_position: "161.0"
+sidebar_position: "162.0"
 ---
+# Basic anomaly detection using Z-scores
 
-
-# Z-Scores - basic anomaly detection for your key metrics and charts
-
-Smoothed, rolling [Z-Scores](https://en.wikipedia.org/wiki/Standard_score) for selected metrics or charts.
+By using smoothed, rolling [Z-Scores](https://en.wikipedia.org/wiki/Standard_score) for selected metrics or charts you can narrow down your focus and shorten root cause analysis.
 
 This collector uses the [Netdata rest api](/docs/improving-netdata---developers/web/api) to get the `mean` and `stddev`
 for each dimension on specified charts over a time range (defined by `train_secs` and `offset_secs`). For each dimension
