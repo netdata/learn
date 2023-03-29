@@ -256,7 +256,7 @@ https://github.com/netdata/netdata/edit/master/docs/guides/troubleshoot/troubles
 https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md	/docs/exporting-data
 https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	/docs/exporting-data/enable-an-exporting-connector
 https://github.com/netdata/netdata/edit/master/build_external/README.md	/docs/installation/package-maintainers/external-build-system
-https://github.com/netdata/netdata/edit/master/aclk/README.md	/docs/deployment-in-production/agent-cloud-link-aclk
+https://github.com/netdata/netdata/edit/master/aclk/README.md	/docs/deployment-in-production/secure-your-nodes/agent-cloud-link-aclk
 https://github.com/netdata/netdata/edit/master/health/README.md	/docs/alerts-and-notifications
 https://github.com/netdata/netdata/edit/master/health/REFERENCE.md	/docs/alerts-and-notifications/configure-alerts
 https://github.com/netdata/netdata/edit/master/health/notifications/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications

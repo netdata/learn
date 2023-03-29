@@ -362,7 +362,7 @@
 
 [[redirects]]
   from="/docs/agent/aclk"
-  to="/docs/deployment-in-production/agent-cloud-link-aclk"
+  to="/docs/deployment-in-production/secure-your-nodes/agent-cloud-link-aclk"
 
 [[redirects]]
   from="/docs/agent/anonymous-statistics"
@@ -2103,5 +2103,9 @@
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database"
   to="/docs/deployment-in-production/streaming-and-replication/database-modes-for-parent-child-setups"
+
+[[redirects]]
+  from="/docs/deployment-in-production/agent-cloud-link-aclk"
+  to="/docs/deployment-in-production/secure-your-nodes/agent-cloud-link-aclk"
 
 # section: dynamic << END
