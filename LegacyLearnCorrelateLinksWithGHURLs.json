@@ -439,5 +439,8 @@
     "https://learn.netdata.cloud/docs/cloud/war-rooms": "https://github.com/netdata/netdata/blob/master/docs/cloud/war-rooms.md",
     "https://learn.netdata.cloud/docs/agent/collectors/collectors": "https://github.com/netdata/netdata/blob/master/collectors/COLLECTORS.md",
     "https://learn.netdata.cloud/docs/miscellaneous/security-policy": "https://github.com/netdata/.github/blob/main/SECURITY.md",
-    "https://learn.netdata.cloud/docs/deployment-in-production/secure-your-nodes": "https://github.com/netdata/netdata/blob/master/docs/netdata-security.md"
+    "https://learn.netdata.cloud/docs/deployment-in-production/secure-your-nodes": "https://github.com/netdata/netdata/blob/master/docs/netdata-security.md",
+    "https://learn.netdata.cloud/docs/deployment-in-production/metric-retention---database/database-engine": "https://github.com/netdata/netdata/blob/master/database/engine/README.md",
+    "https://learn.netdata.cloud/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics": "https://github.com/netdata/netdata/blob/master/docs/store/change-metrics-storage.md",
+    "https://learn.netdata.cloud/docs/deployment-in-production/metric-retention---database": "https://github.com/netdata/netdata/blob/master/database/README.md"
 }

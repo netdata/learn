@@ -117,8 +117,8 @@ https://github.com/netdata/netdata/edit/master/libnetdata/ebpf/README.md	/docs/i
 https://github.com/netdata/netdata/edit/master/libnetdata/clocks/README.md	/docs/improving-netdata---developers/libnetdata/clocks
 https://github.com/netdata/netdata/edit/master/ml/README.md	/docs/troubleshooting-and-machine-learning/machine-learning-ml-powered-anomaly-detection
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	/docs/improving-netdata---developers/health-command-api-tester
-https://github.com/netdata/netdata/edit/master/database/README.md	/docs/deployment-in-production/metric-retention---database
-https://github.com/netdata/netdata/edit/master/database/engine/README.md	/docs/deployment-in-production/metric-retention---database/database-engine
+https://github.com/netdata/netdata/edit/master/database/README.md	/docs/deployment-in-production/streaming-and-replication/database-modes-for-parent-child-setups
+https://github.com/netdata/netdata/edit/master/database/engine/README.md	/docs/improving-netdata---developers/metric-retention---database/database-engine
 https://github.com/netdata/netdata/edit/master/contrib/README.md	/docs/installation/package-maintainers/netdata-contrib
 https://github.com/netdata/netdata/edit/master/streaming/README.md	/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference
 https://github.com/netdata/netdata/edit/master/registry/README.md	/docs/deployment-in-production/secure-your-nodes/registry
@@ -211,7 +211,7 @@ https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	/docs
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	/docs/getting-started/monitor-your-infrastructure/visualization-date-and-time-controls
 https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	/docs/data-collection/chart-dimensions-contexts-and-families
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	/docs/visualizations/agent-dashboard/import-export-and-print-a-snapshot
-https://github.com/netdata/netdata/edit/master/docs/store/change-metrics-storage.md	/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics
+https://github.com/netdata/netdata/edit/master/docs/store/change-metrics-storage.md	/docs/deployment-in-production/change-how-long-netdata-stores-metrics
 https://github.com/netdata/netdata/edit/master/docs/store/distributed-data-architecture.md	/docs/getting-started/distributed-data-architecture
 https://github.com/netdata/netdata/edit/master/docs/cloud/spaces.md	/docs/getting-started/monitor-your-infrastructure/spaces
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs/troubleshooting-and-machine-learning/functions
