@@ -134,7 +134,6 @@ https://github.com/netdata/netdata/edit/master/packaging/installer/methods/macos
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/gcp.md	/docs/installation/install-on-specific-environments/gcp
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/packages.md	/docs/installation/installation-methods/native-deb-rpm-packages
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/systems.md	/docs/installation/install-on-specific-environments
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freenas.md	/docs/installation/install-on-specific-environments/freenas
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md	/docs/installation/installation-methods/from-a-git-checkout
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md	/docs/installation/installation-methods/offline-systems
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/pfsense.md	/docs/installation/install-on-specific-environments/pfsense
