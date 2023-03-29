@@ -1,8 +1,8 @@
 ---
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/database/README.md"
-sidebar_label: "Metric retention - Database"
+sidebar_label: "Database modes for parent child setups"
 learn_status: "Published"
-learn_rel_path: "Deployment in production/Metric retention - Database"
+learn_rel_path: "Deployment in production/Streaming and replication"
 description: "The Netdata Agent leverages multiple, user-configurable time-series databases that use RAM and/or disk to store metrics on any type of node."
 sidebar_position: "47.0"
 ---
@@ -13,12 +13,12 @@ sidebar_position: "47.0"
 Netdata is fully capable of long-term metrics storage, at per-second granularity, via its default database engine
 (`dbengine`). But to remain as flexible as possible, Netdata supports several storage options:
 
-1. `dbengine`, (the default) data are in database files. The [Database Engine](/docs/deployment-in-production/metric-retention---database/database-engine) works like a
+1. `dbengine`, (the default) data are in database files. The [Database Engine](/docs/improving-netdata---developers/metric-retention---database/database-engine) works like a
    traditional database. There is some amount of RAM dedicated to data caching and indexing and the rest of the data
    reside compressed on disk. The number of history entries is not fixed in this case, but depends on the configured
    disk space and the effective compression ratio of the data stored. This is the **only mode** that supports changing
    the data collection update frequency (`update every`) **without losing** the previously stored metrics. For more
-   details see [here](/docs/deployment-in-production/metric-retention---database/database-engine).
+   details see [here](/docs/improving-netdata---developers/metric-retention---database/database-engine).
 
 2. `ram`, data are purely in memory. Data are never saved on disk. This mode uses `mmap()` and supports [KSM](#ksm).
 

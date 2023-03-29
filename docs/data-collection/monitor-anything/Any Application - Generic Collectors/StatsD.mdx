@@ -4,7 +4,7 @@ sidebar_label: "StatsD"
 learn_status: "Published"
 learn_rel_path: "Data collection/Monitor Anything/Any application - Generic Collectors"
 description: "The Netdata Agent is a fully-featured StatsD server that collects metrics from any custom application and visualizes them in real-time."
-sidebar_position: "89.0"
+sidebar_position: "88.0"
 ---
 
 
@@ -229,7 +229,7 @@ For example, to render charts for all `myapp.*` metrics, except `myapp.*.badmetr
 create private charts for metrics matching = !myapp.*.badmetric myapp.*
 ```
 
-You can specify Netdata StatsD to have a different `memory mode` than the rest of the Netdata Agent. You can read more about `memory mode` in the [documentation](/docs/deployment-in-production/metric-retention---database).
+You can specify Netdata StatsD to have a different `memory mode` than the rest of the Netdata Agent. You can read more about `memory mode` in the [documentation](/docs/deployment-in-production/streaming-and-replication/database-modes-for-parent-child-setups).
 
 The default behavior is to use the same settings as the rest of the Netdata Agent. If you wish to change them, edit the following settings:
 - `private charts memory mode`
