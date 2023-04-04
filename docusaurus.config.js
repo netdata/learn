@@ -87,6 +87,12 @@ module.exports = {
 			}
 		],
 		'docusaurus-tailwindcss-loader',
+		[
+			'@docusaurus/plugin-google-tag-manager',
+			{
+			  containerId: 'GTM-N6CBMJD',
+			},
+		],
 	],
 	presets: [
 		[
