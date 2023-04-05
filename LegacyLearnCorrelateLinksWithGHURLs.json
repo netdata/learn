@@ -443,5 +443,9 @@
     "https://learn.netdata.cloud/docs/deployment-in-production/metric-retention---database/database-engine": "https://github.com/netdata/netdata/blob/master/database/engine/README.md",
     "https://learn.netdata.cloud/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics": "https://github.com/netdata/netdata/blob/master/docs/store/change-metrics-storage.md",
     "https://learn.netdata.cloud/docs/deployment-in-production/metric-retention---database": "https://github.com/netdata/netdata/blob/master/database/README.md",
-    "https://learn.netdata.cloud/docs/deployment-in-production/agent-cloud-link-aclk": "https://github.com/netdata/netdata/blob/master/aclk/README.md"
+    "https://learn.netdata.cloud/docs/deployment-in-production/agent-cloud-link-aclk": "https://github.com/netdata/netdata/blob/master/aclk/README.md",
+    "https://learn.netdata.cloud/docs/improving-netdata---developers/web/api/queries/standard-deviation-`stddev`": "https://github.com/netdata/netdata/blob/master/web/api/queries/stddev/README.md",
+    "https://learn.netdata.cloud/docs/improving-netdata---developers/web/api/queries/single-or-simple-exponential-smoothing-`ses`": "https://github.com/netdata/netdata/blob/master/web/api/queries/ses/README.md",
+    "https://learn.netdata.cloud/docs/improving-netdata---developers/web/api/queries/incremental-sum-`incremental_sum`": "https://github.com/netdata/netdata/blob/master/web/api/queries/incremental_sum/README.md",
+    "https://learn.netdata.cloud/docs/improving-netdata---developers/web/`static-threaded`-web-server": "https://github.com/netdata/netdata/blob/master/web/server/static/README.md"
 }

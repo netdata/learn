@@ -1458,7 +1458,7 @@
 
 [[redirects]]
   from="/docs/agent/web/api/queries/incremental_sum"
-  to="/docs/improving-netdata---developers/web/api/queries/incremental-sum-`incremental_sum`"
+  to="/docs/improving-netdata---developers/web/api/queries/incremental-sum-incremental_sum"
 
 [[redirects]]
   from="/docs/agent/web/api/queries/max"
@@ -1478,11 +1478,11 @@
 
 [[redirects]]
   from="/docs/agent/web/api/queries/ses"
-  to="/docs/improving-netdata---developers/web/api/queries/single-or-simple-exponential-smoothing-`ses`"
+  to="/docs/improving-netdata---developers/web/api/queries/single-or-simple-exponential-smoothing-ses"
 
 [[redirects]]
   from="/docs/agent/web/api/queries/stddev"
-  to="/docs/improving-netdata---developers/web/api/queries/standard-deviation-`stddev`"
+  to="/docs/improving-netdata---developers/web/api/queries/standard-deviation-stddev"
 
 [[redirects]]
   from="/docs/agent/web/api/queries/sum"
@@ -1510,7 +1510,7 @@
 
 [[redirects]]
   from="/docs/agent/web/server/static"
-  to="/docs/improving-netdata---developers/web/`static-threaded`-web-server"
+  to="/docs/improving-netdata---developers/web/static-threaded-web-server"
 
 [[redirects]]
   from="/docs/collect/application-metrics"
@@ -2107,5 +2107,21 @@
 [[redirects]]
   from="/docs/deployment-in-production/agent-cloud-link-aclk"
   to="/docs/deployment-in-production/secure-your-nodes/agent-cloud-link-aclk"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/web/api/queries/standard-deviation-`stddev`"
+  to="/docs/improving-netdata---developers/web/api/queries/standard-deviation-stddev"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/web/api/queries/single-or-simple-exponential-smoothing-`ses`"
+  to="/docs/improving-netdata---developers/web/api/queries/single-or-simple-exponential-smoothing-ses"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/web/api/queries/incremental-sum-`incremental_sum`"
+  to="/docs/improving-netdata---developers/web/api/queries/incremental-sum-incremental_sum"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/web/`static-threaded`-web-server"
+  to="/docs/improving-netdata---developers/web/static-threaded-web-server"
 
 # section: dynamic << END
