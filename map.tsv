@@ -286,7 +286,7 @@ https://github.com/netdata/netdata/edit/master/health/notifications/pushover/REA
 https://github.com/netdata/netdata/edit/master/health/notifications/rocketchat/README.md	Rocket Chat	Published	Alerts and notifications/Notifications/Agent alert notifications	
 https://github.com/netdata/netdata/edit/master/health/notifications/slack/README.md	Slack	Published	Alerts and notifications/Notifications/Agent alert notifications	
 https://github.com/netdata/netdata/edit/master/health/notifications/smstools3/README.md	SMS server	Published	Alerts and notifications/Notifications/Agent alert notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/stackpulse/README.md	StackPulse	Unpublished	Alerts and notifications/Notifications/Agent alert notifications	
+https://github.com/netdata/netdata/edit/master/health/notifications/stackpulse/README.md	StackPulse	Published	Alerts and notifications/Notifications/Agent alert notifications	
 https://github.com/netdata/netdata/edit/master/health/notifications/syslog/README.md	Syslog	Published	Alerts and notifications/Notifications/Agent alert notifications	
 https://github.com/netdata/netdata/edit/master/health/notifications/telegram/README.md	Telegram	Published	Alerts and notifications/Notifications/Agent alert notifications	
 https://github.com/netdata/netdata/edit/master/health/notifications/twilio/README.md	Twilio	Published	Alerts and notifications/Notifications/Agent alert notifications	
