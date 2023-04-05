@@ -237,7 +237,7 @@ def createMDXPathFromMetdata(metadata):
     In the returned (final) path we sanitize "/", "//" , "-", "," with one dash
     """
     finalFile = ' '.join(
-        (metadata["sidebar_label"].replace("'", " ").replace(":", " ").replace("/", " ").replace(")", " ").replace(",", " ").replace("(", " ")).split())
+        (metadata["sidebar_label"].replace("'", " ").replace(":", " ").replace("/", " ").replace(")", " ").replace(",", " ").replace("(", " ").replace("`", " ")).split())
 
     if "Monitor Anything" in metadata['learn_rel_path'] and metadata['learn_rel_path'].split("/")[-1] != "Monitor Anything":
         lastFolder = metadata['learn_rel_path'].split("Monitor Anything")[1]
