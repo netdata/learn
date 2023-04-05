@@ -1,6 +1,25 @@
 <!-- HTML for static distribution bundle build -->
 <!DOCTYPE html>
 <html lang="en">
+  <style>
+    .customButton {
+      width: 100%;
+      color: #ffffff;
+      background-color: #2b3136;
+      font-family : "IBM Plex Sans";
+      font-weight: 600;
+      font-size: 19px;
+      border: 0px solid #252829;
+      padding: 15px 50px;
+      cursor: pointer
+    }
+    button:hover {
+      color: #ffffff;
+      background-color: #00ab44;
+    }
+  </style>
+    
+
   <head>
     <meta charset="UTF-8">
     <title>Swagger UI</title>
@@ -12,6 +31,11 @@
 
   <body>
     <div id="swagger-ui"></div>
+    
+    <form action="https://learn.netdata.cloud/">
+      <button class="customButton" type="submit" name="backToLearnAPIButton">Back to Learn</button>
+   </form>
+
     <script src="./swagger-ui-bundle.js" charset="UTF-8"> </script>
     <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
     <script src="./swagger-initializer.js" charset="UTF-8"> </script>
