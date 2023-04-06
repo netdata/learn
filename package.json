@@ -15,10 +15,10 @@
 	},
 	"dependencies": {
 		"@babel/core": "^7.0.0",
-		"@docusaurus/core": "^2.3.1",
+		"@docusaurus/core": "^2.4.0",
 		"@docusaurus/mdx-loader": "^2.3.1",
 		"@docusaurus/plugin-google-tag-manager": "^2.4.0",
-		"@docusaurus/preset-classic": "^2.3.1",
+		"@docusaurus/preset-classic": "^2.4.0",
 		"@docusaurus/theme-common": "^2.3.1",
 		"@mdx-js/react": "^1.6.21",
 		"@tailwindcss/typography": "^0.4.0",
