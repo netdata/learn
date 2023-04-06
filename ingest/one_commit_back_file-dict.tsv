@@ -253,6 +253,7 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/manage/invite-your-tea
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	/docs/getting-started/monitor-your-infrastructure/view-plan-&-billing
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-pagerduty-notification-configuration.md	/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-pagerduty-notification-configuration
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/notifications.md	/docs/alerts-and-notifications/notifications/cloud-alert-notifications
+https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-opsgenie-notification-configuration.md	/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-opsgenie-notification-configuration
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-slack-notification-configuration.md	/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-slack-notification-configuration
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-webhook-notification-configuration.md	/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-webhook-notification-configuration
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-discord-notification.md	/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-discord-notification-configuration
