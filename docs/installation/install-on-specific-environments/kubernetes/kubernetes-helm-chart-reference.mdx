@@ -6,11 +6,13 @@ learn_rel_path: "Installation/Install on specific environments/Kubernetes"
 sidebar_position: "67.0"
 ---
 
-
-
 # Netdata Helm chart for Kubernetes deployments
 
-[![Artifact HUB](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/netdata)](https://artifacthub.io/packages/search?repo=netdata) ![Version: 3.7.48](https://img.shields.io/badge/Version-3.7.48-informational) ![AppVersion: v1.38.1](https://img.shields.io/badge/AppVersion-v1.38.1-informational)
+<a href="https://artifacthub.io/packages/search?repo=netdata" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/netdata" alt="Artifact HUB" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img></a>
+
+<img src="https://img.shields.io/badge/Version-3.7.49-informational" alt="Version: 3.7.49"></img>
+
+<img loading="lazy" src="https://img.shields.io/badge/AppVersion-v1.38.1-informational" alt="AppVersion: v1.38.1" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img>
 
 _Based on the work of varyumin (https://github.com/varyumin/netdata)_.
 
@@ -54,7 +56,7 @@ helm repo add netdata https://netdata.github.io/helmchart/
 helm install netdata netdata/netdata
 ```
 
-**See our [install Netdata on Kubernetes](https://learn.netdata.cloud/docs/agent/packaging/installer/methods/kubernetes)
+**See our [install Netdata on Kubernetes](/docs/installation/install-on-specific-environments/kubernetes)
 documentation for detailed installation and configuration instructions.** The remainder of this document assumes you
 installed the Helm chart by cloning this repository, and thus uses slightly different `helm install`/`helm upgrade`
 commands.
@@ -79,7 +81,7 @@ section lists the parameters that can be configured during installation.
 > **Tip**: List all releases using `helm list`.
 
 Once the Netdata deployment is up and running, read our guide, [_Monitor a Kubernetes (k8s) cluster with
-Netdata_](https://learn.netdata.cloud/guides/monitor/kubernetes-k8s-netdata), for a breakdown of all the collectors,
+Netdata_](/docs/miscellaneous/kubernetes-monitoring-with-netdata-overview-and-visualizations), for a breakdown of all the collectors,
 metrics, and charts available for health monitoring and performance troubleshooting.
 
 ## Uninstalling the Chart
@@ -346,34 +348,34 @@ and exports them, so they can be monitored.
 
 Service discovery currently supports the following applications via their associated collector:
 
-- [ActiveMQ](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/activemq)
-- [Apache](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/apache)
-- [Bind](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/bind)
-- [CockroachDB](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/cockroachdb)
-- [Consul](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/consul)
-- [CoreDNS](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/coredns)
-- [Elasticsearch](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/elasticsearch)
-- [Fluentd](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/fluentd)
-- [FreeRADIUS](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/freeradius)
-- [HDFS](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/hdfs)
-- [Lighttpd](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/lighttpd)
-- [Lighttpd2](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/lighttpd2)
-- [Logstash](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/logstash)
-- [MySQL](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/mysql)
-- [NGINX](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/nginx)
-- [OpenVPN](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/openvpn)
-- [PHP-FPM](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/phpfpm)
-- [RabbitMQ](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/rabbitmq)
-- [Solr](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/solr)
-- [Tengine](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/tengine)
-- [Unbound](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/unbound)
-- [VerneMQ](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/vernemq)
-- [ZooKeeper](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/zookeeper)
+- [ActiveMQ](/docs/data-collection/monitor-anything/Message%20Brokers/ActiveMQ)
+- [Apache](/docs/data-collection/monitor-anything/Web%20Servers/Apache)
+- [Bind](/docs/data-collection/monitor-anything/Dns/Bind9)
+- [CockroachDB](/docs/data-collection/monitor-anything/Databases/CockroachDB)
+- [Consul](/docs/data-collection/monitor-anything/Provisioning%20Tools/Consul)
+- [CoreDNS](/docs/data-collection/monitor-anything/Dns/CoreDNS)
+- [Elasticsearch](/docs/data-collection/monitor-anything/Search/Elasticsearch)
+- [Fluentd](/docs/data-collection/monitor-anything/Logs/Fluentd)
+- [FreeRADIUS](/docs/data-collection/monitor-anything/Applications/FreeRADIUS)
+- [HDFS](/docs/data-collection/monitor-anything/Storage/HDFS)
+- [Lighttpd](/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd)
+- [Lighttpd2](/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd2)
+- [Logstash](/docs/data-collection/monitor-anything/Logs/Logstash)
+- [MySQL](/docs/data-collection/monitor-anything/Databases/MySQL)
+- [NGINX](/docs/data-collection/monitor-anything/Web%20Servers/NGINX)
+- [OpenVPN](/docs/data-collection/monitor-anything/Networking/OpenVPN)
+- [PHP-FPM](/docs/data-collection/monitor-anything/Web%20Servers/PHP-FPM)
+- [RabbitMQ](/docs/data-collection/monitor-anything/Message%20Brokers/RabbitMQ)
+- [Solr](/docs/data-collection/monitor-anything/Search/Solr)
+- [Tengine](/docs/data-collection/monitor-anything/Web%20Servers/Tengine)
+- [Unbound](/docs/data-collection/monitor-anything/Dns/Unbound)
+- [VerneMQ](/docs/data-collection/monitor-anything/Message%20Brokers/VerneMQ)
+- [ZooKeeper](/docs/data-collection/monitor-anything/Provisioning%20Tools/ZooKeeper)
 
 #### Prometheus endpoints
 
 Service discovery supports Prometheus endpoints via
-the [Prometheus](https://learn.netdata.cloud/docs/agent/collectors/go.d.plugin/modules/prometheus) collector.
+the [Prometheus](/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Prometheus-endpoints) collector.
 
 Annotations on pods allow a fine control of the scraping process:
 
@@ -441,7 +443,7 @@ $ helm install \
 
 If you want to contribute, we are humbled!
 
-- Take a look at our [Contributing Guidelines](https://learn.netdata.cloud/contribute/handbook).
-- This repository is under the [Netdata Code Of Conduct](https://learn.netdata.cloud/contribute/code-of-conduct).
+- Take a look at our [Contributing Guidelines](/docs/improving-netdata---developers).
+- This repository is under the [Netdata Code Of Conduct](/docs/improving-netdata---developers/community-code-of-conduct).
 - Chat about your contribution and let us help you in
   our [forum](https://community.netdata.cloud/c/agent-development/9)!
