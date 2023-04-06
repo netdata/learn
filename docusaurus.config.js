@@ -93,6 +93,12 @@ module.exports = {
 			  containerId: 'GTM-N6CBMJD',
 			},
 		],
+		[
+			'@docusaurus/plugin-google-gtag',
+			{
+			  trackingID: 'G-J69Z2JCTFB',
+			},
+		],
 	],
 	presets: [
 		[
@@ -107,9 +113,6 @@ module.exports = {
 				},
 				theme: {
 					customCss: [require.resolve('./src/css/custom.css')],
-				},
-				gtag: {
-					trackingID: 'GTM-N6CBMJD',
 				},
 			})
 		],
