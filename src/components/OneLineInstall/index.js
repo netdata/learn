@@ -89,7 +89,7 @@ export function OneLineInstallWget() {
             checked={statsChecked}
             type="checkbox" 
             id="toggle__stats" />
-          <label htmlFor="toggle__stats" className="relative text-sm pl-2">Do you want to contribute <Link to="/docs/agent/anonymous-statistics" className="hover:text-blue">anonymous statistics?</Link> <code>default: enabled</code></label>
+          <label htmlFor="toggle__stats" className="relative text-sm pl-2">Do you want to contribute <Link to="/docs/deployment-in-production/security-and-privacy-design" className="hover:text-blue">anonymous statistics?</Link> <code>default: enabled</code></label>
         </div>
         <div className="py-1 flex items-center">
           <input
@@ -189,7 +189,7 @@ export function OneLineInstallCurl() {
             checked={statsChecked}
             type="checkbox" 
             id="toggle__stats_curl" />
-          <label htmlFor="toggle__stats_curl" className="relative text-sm pl-2">Do you want to contribute <Link to="/docs/agent/anonymous-statistics" className="hover:text-blue">anonymous statistics?</Link> <code>default: enabled</code></label>
+          <label htmlFor="toggle__stats_curl" className="relative text-sm pl-2">Do you want to contribute <Link to="/docs/deployment-in-production/security-and-privacy-design" className="hover:text-blue">anonymous statistics?</Link> <code>default: enabled</code></label>
         </div>
         <div className="py-1 flex items-center">
           <input
