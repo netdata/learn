@@ -52,6 +52,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/phpfpm/README.md	/doc
 https://github.com/netdata/go.d.plugin/edit/master/modules/logind/README.md	/docs/data-collection/monitor-anything/System%20Metrics/logind-go.d.plugin-Recommended
 https://github.com/netdata/go.d.plugin/edit/master/modules/whoisquery/README.md	/docs/data-collection/monitor-anything/Dns/Whois-domain-expiry
 https://github.com/netdata/go.d.plugin/edit/master/modules/portcheck/README.md	/docs/data-collection/monitor-anything/Networking/TCP-endpoints
+https://github.com/netdata/go.d.plugin/edit/master/modules/envoy/README.md	/docs/data-collection/monitor-anything/Proxies/Envoy
 https://github.com/netdata/go.d.plugin/edit/master/modules/haproxy/README.md	/docs/data-collection/monitor-anything/Web%20Servers/haproxy-go.d.plugin-Recommended
 https://github.com/netdata/go.d.plugin/edit/master/modules/freeradius/README.md	/docs/data-collection/monitor-anything/Applications/FreeRADIUS
 https://github.com/netdata/go.d.plugin/edit/master/modules/openvpn_status_log/README.md	/docs/data-collection/monitor-anything/Networking/OpenVPN-StatusLog
