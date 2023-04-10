@@ -4,6 +4,11 @@
 [build]
   environment = { NPM_VERSION = "7.10.0", NODE_VERSION = "16.14.2", NETLIFY_USE_YARN = "true" }
 
+
+[[redirects]]
+  from="/docs/nightly/operations/alerts/add-opsgenie-notification-configuration"
+  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-opsgenie-notification-configuration"
+
 [[redirects]]
   from="/docs/agent/changelog"
   to="https://github.com/netdata/netdata/blob/master/CHANGELOG.md"
