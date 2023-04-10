@@ -6,7 +6,7 @@
 
 [[redirects]]
   from="/docs/nightly/operations/alerts/add-opsgenie-notification-configuration"
-  to="https://learn.netdata.cloud/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-opsgenie-notification-configuration"
+  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-opsgenie-notification-configuration"
 
 [[redirects]]
   from="/docs/agent/changelog"
