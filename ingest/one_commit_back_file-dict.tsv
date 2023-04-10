@@ -133,6 +133,7 @@ https://github.com/netdata/netdata/edit/master/health/notifications/kavenegar/RE
 https://github.com/netdata/netdata/edit/master/health/notifications/msteams/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/microsoft-teams
 https://github.com/netdata/netdata/edit/master/health/notifications/gotify/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/gotify
 https://github.com/netdata/netdata/edit/master/health/notifications/telegram/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/telegram
+https://github.com/netdata/netdata/edit/master/health/notifications/ntfy/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/ntfy
 https://github.com/netdata/netdata/edit/master/health/notifications/irc/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/irc
 https://github.com/netdata/netdata/edit/master/health/notifications/custom/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/custom-endpoint
 https://github.com/netdata/netdata/edit/master/health/notifications/alerta/README.md	/docs/alerts-and-notifications/notifications/agent-alert-notifications/alerta
