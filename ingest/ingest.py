@@ -280,7 +280,7 @@ def insertAndReadHiddenMetadataFromDoc(pathToFile, mapDict):
 
             if (not val == np.nan) and val != "nan":
                 if field == "sidebar_position":
-                    output+= "{0}: \"{1}\"\n".format(field, float(val.replace("\"", "")))    
+                    output+= "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
                 else:
                     output+= "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
         except:
@@ -520,6 +520,70 @@ def convertGithubLinks(path, fileDict, DOCS_PREFIX):
     dummyFile.write(wholeFile)
     dummyFile.close()
 
+def automate_sidebar_position(dict):
+    # The array that will be returned and placed as a column in the dataframe
+    position = []
+
+    # counters
+    counter_one = 0
+    counter_two = 0
+    counter_three = 0
+    counter_four = 0
+
+    # Start from the first entry adn keep it as the previous
+    split = dict['learn_rel_path'][0].split("/")
+    try:
+        previous_first_level = split[0]
+        previous_second_level = split[1]
+        previous_third_level = split[2]
+    except:
+        pass
+    
+    # For every entry, check for every level of the path if it is different,
+    # if it is, increment that level's counter by the specified amount.
+    for path,i in zip(dict['learn_rel_path'], range(0, len(dict))):
+        if str(path) != "nan":
+            split = str(path+f"/{i}").split("/")
+            
+            try:
+                current_first_level = split[0]
+                current_second_level = split[1]
+                current_third_level = split[2]
+            except:
+                pass
+            
+            # This works more or less like a Greek abacus
+            try:
+                if current_first_level != previous_first_level:
+                    counter_one+=100000
+                    counter_two=0
+                    counter_three=0
+                    counter_four=0
+                elif current_second_level != previous_second_level:
+                    counter_two+=2000
+                    counter_three= 0
+                    counter_four=0
+                elif current_third_level != previous_third_level:
+                    counter_three+=40
+                    counter_four=0
+                else:
+                    counter_four+=1
+                   
+            except:
+                pass
+            
+            try:
+                previous_first_level = current_first_level
+                previous_second_level = current_second_level
+                previous_third_level = current_third_level
+            except:
+                pass
+
+            position.append(counter_one+counter_two+counter_three+counter_four)
+        else:
+            position.append(-1)
+
+    return position
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Ingest docs from multiple repositories')
@@ -623,7 +687,10 @@ if __name__ == '__main__':
     mapDict.set_index('custom_edit_url').T.to_dict('dict')
 
 
-    mapDict['sidebar_position'] = np.arange(1, len(mapDict)+1)
+
+    mapDict['sidebar_position'] = automate_sidebar_position(mapDict)
+    mapDict['sidebar_position'] = mapDict['sidebar_position'].astype(int)
+
 
     reducedMarkdownFiles = []
     for md in markdownFiles:
