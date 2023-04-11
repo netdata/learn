@@ -551,7 +551,8 @@ def automate_sidebar_position(dict):
                 current_third_level = split[2]
             except:
                 pass
-
+            
+            # This works more or less like a Greek abacus
             try:
                 if current_first_level != previous_first_level:
                     counter_one+=100000
