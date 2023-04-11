@@ -280,7 +280,7 @@ def insertAndReadHiddenMetadataFromDoc(pathToFile, mapDict):
 
             if (not val == np.nan) and val != "nan":
                 if field == "sidebar_position":
-                    output+= "{0}: \"{1}\"\n".format(field, float(val.replace("\"", "")))    
+                    output+= "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
                 else:
                     output+= "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
         except:
@@ -520,6 +520,73 @@ def convertGithubLinks(path, fileDict, DOCS_PREFIX):
     dummyFile.write(wholeFile)
     dummyFile.close()
 
+def automate_sidebar_position(dict):
+    # print(dict.keys)
+
+    first_position = np.zeros(len(mapDict))
+    second_position = np.zeros(len(mapDict))
+    third_position = np.zeros(len(mapDict))
+    fourth_position = np.zeros(len(mapDict))
+
+    position = []
+
+    counter_one = 0
+    counter_two = 0
+    counter_three = 0
+    counter_four = 0
+    counter_five = 0
+
+    split = dict['learn_rel_path'][0].split("/")
+    try:
+        previous_first_level = split[0]
+        previous_second_level = split[1]
+        previous_third_level = split[2]
+        previous_fourth_level = split[3]
+        previous_fifth_level = split[4]
+    except:
+        pass
+
+    for path in dict['learn_rel_path']:
+        if str(path) != "nan":
+            split = str(path).split("/")
+            
+            try:
+                current_first_level = split[0]
+                current_second_level = split[1]
+                current_third_level = split[2]
+                current_fourth_level = split[3]
+                current_fifth_level = split[4]
+            except:
+                pass
+
+            try:
+                if current_first_level != previous_first_level:
+                    counter_one+=100000
+                if current_second_level != previous_second_level:
+                    counter_two+=2000
+                if current_third_level != previous_third_level:
+                    counter_three+=40
+                if current_fourth_level != previous_fourth_level:
+                    counter_four+=1
+            except:
+                pass
+
+            counter_five+=1
+
+            try:
+                previous_first_level = split[0]
+                previous_second_level = split[1]
+                previous_third_level = split[2]
+                previous_fourth_level = split[3]
+                previous_fifth_level = split[4]
+            except:
+                pass
+
+            position.append(counter_one+counter_two+counter_three+counter_four+counter_five)
+        else:
+            position.append(-1)
+
+    return position
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Ingest docs from multiple repositories')
@@ -623,7 +690,10 @@ if __name__ == '__main__':
     mapDict.set_index('custom_edit_url').T.to_dict('dict')
 
 
-    mapDict['sidebar_position'] = np.arange(1, len(mapDict)+1)
+
+    mapDict['sidebar_position'] = automate_sidebar_position(mapDict)
+    mapDict['sidebar_position'] = mapDict['sidebar_position'].astype(int)
+
 
     reducedMarkdownFiles = []
     for md in markdownFiles:
