@@ -521,68 +521,64 @@ def convertGithubLinks(path, fileDict, DOCS_PREFIX):
     dummyFile.close()
 
 def automate_sidebar_position(dict):
-    # print(dict.keys)
-
-    first_position = np.zeros(len(mapDict))
-    second_position = np.zeros(len(mapDict))
-    third_position = np.zeros(len(mapDict))
-    fourth_position = np.zeros(len(mapDict))
-
+    # The array that will be returned and placed as a column in the dataframe
     position = []
 
+    # counters
     counter_one = 0
     counter_two = 0
     counter_three = 0
     counter_four = 0
-    counter_five = 0
 
+    # Start from the first entry adn keep it as the previous
     split = dict['learn_rel_path'][0].split("/")
     try:
         previous_first_level = split[0]
         previous_second_level = split[1]
         previous_third_level = split[2]
-        previous_fourth_level = split[3]
-        previous_fifth_level = split[4]
     except:
         pass
-
-    for path in dict['learn_rel_path']:
+    
+    # For every entry, check for every level of the path if it is different,
+    # if it is, increment that level's counter by the specified amount.
+    for path,i in zip(dict['learn_rel_path'], range(0, len(dict))):
         if str(path) != "nan":
-            split = str(path).split("/")
+            split = str(path+f"/{i}").split("/")
             
             try:
                 current_first_level = split[0]
                 current_second_level = split[1]
                 current_third_level = split[2]
-                current_fourth_level = split[3]
-                current_fifth_level = split[4]
             except:
                 pass
 
             try:
                 if current_first_level != previous_first_level:
                     counter_one+=100000
-                if current_second_level != previous_second_level:
+                    counter_two=0
+                    counter_three=0
+                    counter_four=0
+                elif current_second_level != previous_second_level:
                     counter_two+=2000
-                if current_third_level != previous_third_level:
+                    counter_three= 0
+                    counter_four=0
+                elif current_third_level != previous_third_level:
                     counter_three+=40
-                if current_fourth_level != previous_fourth_level:
+                    counter_four=0
+                else:
                     counter_four+=1
+                   
             except:
                 pass
-
-            counter_five+=1
-
+            
             try:
-                previous_first_level = split[0]
-                previous_second_level = split[1]
-                previous_third_level = split[2]
-                previous_fourth_level = split[3]
-                previous_fifth_level = split[4]
+                previous_first_level = current_first_level
+                previous_second_level = current_second_level
+                previous_third_level = current_third_level
             except:
                 pass
 
-            position.append(counter_one+counter_two+counter_three+counter_four+counter_five)
+            position.append(counter_one+counter_two+counter_three+counter_four)
         else:
             position.append(-1)
 
