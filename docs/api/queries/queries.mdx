@@ -1,15 +1,17 @@
 ---
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/web/api/queries/README.md"
-sidebar_label: "REST API for database queries"
+sidebar_label: "Queries"
 learn_status: "Published"
-learn_rel_path: "Exporting data"
-sidebar_position: "424000"
+learn_rel_path: "API/Queries"
+sidebar_position: "802000"
 ---
+# Database queries/lookup
 
+This document explains in detail the options available to retrieve data from the Netdata timeseries database in order to configure alerts, create badges or 
+create custom charts.
 
-# REST API for Database Queries
-
-The Netdata database can be queried with the `/api/v1/data` and `/api/v1/badge.svg` REST API methods.
+The Netdata database can be queried with the `/api/v1/data` and `/api/v1/badge.svg` REST API methods. The database is also queried from the `lookup` line 
+in an [alert configuration](/docs/alerts-and-notifications/configure-alerts).
 
 Every data query accepts the following parameters:
 

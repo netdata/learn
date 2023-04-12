@@ -463,9 +463,9 @@ The format is:
 lookup: METHOD AFTER [at BEFORE] [every DURATION] [OPTIONS] [of DIMENSIONS] [foreach DIMENSIONS]
 ```
 
-Everything is the same with [badges](/docs/improving-netdata---developers/web/api/netdata-badges). In short:
+The full [database query API](/docs/api/queries) is supported. In short:
 
-- `METHOD` is one of `average`, `min`, `max`, `sum`, `incremental-sum`.
+- `METHOD` is one of  the available [grouping methods](/docs/api/queries#grouping-methods) such as `average`, `min`, `max` etc.
      This is required.
 
 - `AFTER` is a relative number of seconds, but it also accepts a single letter for changing
@@ -480,7 +480,7 @@ Everything is the same with [badges](/docs/improving-netdata---developers/web/ap
      above too).
 
 - `OPTIONS` is a space separated list of `percentage`, `absolute`, `min2max`, `unaligned`,
-     `match-ids`, `match-names`. Check the [badges](/docs/improving-netdata---developers/web/api/netdata-badges) documentation for more info.
+     `match-ids`, `match-names`. Check the [badges](/docs/visualizations/netdata-badges) documentation for more info.
 
 - `of DIMENSIONS` is optional and has to be the last parameter. Dimensions have to be separated
      by `,` or `|`. The space characters found in dimensions will be kept as-is (a few dimensions
