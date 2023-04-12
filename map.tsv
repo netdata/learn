@@ -313,11 +313,6 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshootin
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Functions	Published	Troubleshooting and machine learning	Present the Netdata Functions what these are and why they should be used.
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Troubleshooting and machine learning	Present the Netdata Events feed.
 https://github.com/netdata/netdata/edit/master/web/api/README.md	API	Published	API	
-https://github.com/netdata/netdata/edit/master/web/api/formatters/README.md	Formatters	Published	API/Formatters	
-https://github.com/netdata/netdata/edit/master/web/api/formatters/csv/README.md	CSV formatter	Published	API/Formatters	
-https://github.com/netdata/netdata/edit/master/web/api/formatters/json/README.md	JSON formatter	Published	API/Formatters	
-https://github.com/netdata/netdata/edit/master/web/api/formatters/ssv/README.md	SSV formatter	Published	API/Formatters	
-https://github.com/netdata/netdata/edit/master/web/api/formatters/value/README.md	Value formatter	Published	API/Formatters	
 https://github.com/netdata/netdata/edit/master/web/api/queries/README.md	Queries	Published	API/Queries	
 https://github.com/netdata/netdata/edit/master/web/api/queries/average/README.md	Average or Mean	Published	API/Queries	
 https://github.com/netdata/netdata/edit/master/web/api/queries/countif/README.md	CountIf	Published	API/Queries	
@@ -331,6 +326,11 @@ https://github.com/netdata/netdata/edit/master/web/api/queries/ses/README.md	Sin
 https://github.com/netdata/netdata/edit/master/web/api/queries/stddev/README.md	Standard deviation (`stddev`)	Published	API/Queries	
 https://github.com/netdata/netdata/edit/master/web/api/queries/sum/README.md	Sum	Published	API/Queries	
 https://github.com/netdata/netdata/edit/master/web/api/queries/trimmed_mean/README.md	Trimmed Mean	Published	API/Queries	Use trimmed-mean in API queries and health entities to find the average value from a sample, eliminating any unwanted spikes in the returned metrics.
+https://github.com/netdata/netdata/edit/master/web/api/formatters/README.md	Formatters	Published	API/Formatters	
+https://github.com/netdata/netdata/edit/master/web/api/formatters/csv/README.md	CSV formatter	Published	API/Formatters	
+https://github.com/netdata/netdata/edit/master/web/api/formatters/json/README.md	JSON formatter	Published	API/Formatters	
+https://github.com/netdata/netdata/edit/master/web/api/formatters/ssv/README.md	SSV formatter	Published	API/Formatters	
+https://github.com/netdata/netdata/edit/master/web/api/formatters/value/README.md	Value formatter	Published	API/Formatters	
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	Improving Netdata - developers	Published	Improving Netdata - developers	
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	Contribute to the documentation	Published	Improving Netdata - developers/Contribute to the documentation	
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	Netdata style guide	Published	Improving Netdata - developers/Contribute to the documentation	The Netdata style guide establishes editorial guidelines for all of Netdata's writing, including documentation, blog posts, in-product UX copy, and more.
