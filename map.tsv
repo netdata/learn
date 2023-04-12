@@ -313,7 +313,7 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshootin
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Functions	Published	Troubleshooting and machine learning	Present the Netdata Functions what these are and why they should be used.
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Troubleshooting and machine learning	Present the Netdata Events feed.
 https://github.com/netdata/netdata/edit/master/web/api/README.md	API	Published	API	
-https://github.com/netdata/netdata/edit/master/web/api/formatters/README.md	Query formatting	Published	API/Formatters	
+https://github.com/netdata/netdata/edit/master/web/api/formatters/README.md	Formatters	Published	API/Formatters	
 https://github.com/netdata/netdata/edit/master/web/api/formatters/csv/README.md	CSV formatter	Published	API/Formatters	
 https://github.com/netdata/netdata/edit/master/web/api/formatters/json/README.md	JSON formatter	Published	API/Formatters	
 https://github.com/netdata/netdata/edit/master/web/api/formatters/ssv/README.md	SSV formatter	Published	API/Formatters	
