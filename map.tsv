@@ -351,7 +351,7 @@ https://github.com/netdata/netdata/edit/master/docs/guides/python-collector.md	D
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/README.md	charts.d.plugin	Published	Improving Netdata - developers/External plugins	
 https://github.com/netdata/netdata/edit/master/web/README.md	Web	Published	Improving Netdata - developers	Every Netdata Agent comes bundled with hundreds of interactive, customizable charts designed by monitoring and troubleshooting experts.
 https://github.com/netdata/netdata/edit/master/web/server/static/README.md	`static-threaded` web server	Unpublished	Improving Netdata - developers	The Netdata Agent's static-threaded web server spawns a fixed number of threads that listen to web requests and uses non-blocking I/O.
-https://github.com/netdata/netdata/edit/master/database/engine/README.md	Database engine	Published	Improving Netdata - developers/Metric retention - Database	Netdata's highly-efficient database engine use both RAM and disk for distributed, long-term storage of per-second metrics.
+https://github.com/netdata/netdata/edit/master/database/engine/README.md	Database engine	Published	Improving Netdata - developers	Netdata's highly-efficient database engine use both RAM and disk for distributed, long-term storage of per-second metrics.
 https://github.com/netdata/netdata/edit/master/libnetdata/README.md	libnetdata	Published	Improving Netdata - developers/libnetdata	
 https://github.com/netdata/netdata/edit/master/libnetdata/adaptive_resortable_list/README.md	Adaptive re-sortable list (ARL)	Published	Improving Netdata - developers/libnetdata	
 https://github.com/netdata/netdata/edit/master/libnetdata/aral/README.md	Array allocator	Published	Improving Netdata - developers/libnetdata	
