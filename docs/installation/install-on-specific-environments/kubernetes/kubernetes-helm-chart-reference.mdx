@@ -10,7 +10,7 @@ sidebar_position: "206241"
 
 <a href="https://artifacthub.io/packages/search?repo=netdata" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/netdata" alt="Artifact HUB" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img></a>
 
-<img src="https://img.shields.io/badge/Version-3.7.50-informational" alt="Version: 3.7.50"></img>
+<img src="https://img.shields.io/badge/Version-3.7.51-informational" alt="Version: 3.7.51"></img>
 
 <img loading="lazy" src="https://img.shields.io/badge/AppVersion-v1.38.1-informational" alt="AppVersion: v1.38.1" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img>
 
@@ -22,9 +22,9 @@ This chart bootstraps a [Netdata](https://github.com/netdata/netdata) deployment
 cluster using the [Helm](https://helm.sh) package manager.
 
 By default, the chart installs:
- - A Netdata child pod on each node of a cluster, using a `Daemonset`
- - A Netdata k8s state monitoring pod on one node, using a `Deployment`. This virtual node is called `netdata-k8s-state`.
- - A Netdata parent pod on one node, using a `Deployment`. This virtual node is called `netdata-parent`.
+- A Netdata child pod on each node of a cluster, using a `Daemonset`
+- A Netdata k8s state monitoring pod on one node, using a `Deployment`. This virtual node is called `netdata-k8s-state`.
+- A Netdata parent pod on one node, using a `Deployment`. This virtual node is called `netdata-parent`.
 
 Disabled by default:
 - A Netdata restarter `CronJob`. Its main purpose is to automatically update Netdata when using nightly releases.
@@ -230,6 +230,8 @@ The following table lists the configurable parameters of the netdata chart and t
 | `child.podAnnotationAppArmor.enabled`      | Whether or not to include the AppArmor security annotation                                                                                             | `true`                                                                                  |
 | `child.persistence.hostPath`               | Host node directory for storing child instance data                                                                                                    | `/var/lib/netdata-k8s-child`                                                            |
 | `child.persistence.enabled`                | Whether or not to persist `/var/lib/netdata` in the `child.persistence.hostPath`.                                                                      | `true`                                                                                  |
+| `child.podsMetadata.useKubelet`            | Send requests to the Kubelet /pods endpoint instead of Kubernetes API server to get pod metadata                                                       | `false`                                                                                 |
+| `child.podsMetadata.kubeletUrl`            | Kubelet URL                                                                                                                                            | `https://localhost:10250`                                                               |
 | `child.configs`                            | Manage custom child's configs                                                                                                                          | See [Configuration files](#configuration-files).                                        |
 | `child.claiming.enabled`                   | Enable child claiming for netdata cloud                                                                                                                | `false`                                                                                 |
 | `child.claiming.token`                     | Claim token                                                                                                                                            | `""`                                                                                    |
