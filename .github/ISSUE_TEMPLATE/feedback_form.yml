@@ -1,0 +1,22 @@
+name: "Docs feedback form"
+description: "Provide feedback, suggest an edit, or a new page"
+title: "[Feedback]: "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: "### Thank you for contributing to our project!"
+  - type: textarea
+    id: page-link
+    attributes:
+      label: Doc Page link
+      description: Provide the link(s) of the documents in question
+    validations:
+      required: true
+  - type: textarea
+    id: Description
+    attributes:
+      label: Description
+      description: Share your thoughts, what would you like to see/change on those documents. 
+    validations:
+      required: true
