@@ -219,7 +219,7 @@ https://github.com/netdata/netdata/edit/master/docs/collect/container-metrics.md
 https://github.com/netdata/netdata/edit/master/docs/collect/system-metrics.md	/docs/data-collection/system-metrics
 https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	/docs/getting-started/monitor-your-infrastructure
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	/docs/improving-netdata---developers/contribute-to-the-documentation/netdata-style-guide
-https://github.com/netdata/netdata/edit/master/docs/guides/using-host-labels.md	/docs/deployment-in-production/use-host-labels-to-organize-systems-metrics-and-alarms
+https://github.com/netdata/netdata/edit/master/docs/guides/using-host-labels.md	/docs/deployment-in-production/organize-systems-metrics-and-alerts
 https://github.com/netdata/netdata/edit/master/docs/guides/collect-unbound-metrics.md	/docs/miscellaneous/monitor-unbound-dns-servers-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/guides/collect-apache-nginx-web-logs.md	/docs/miscellaneous/monitor-nginx-or-apache-web-server-log-files-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/guides/monitor-cockroachdb.md	/docs/miscellaneous/monitor-cockroachdb-metrics-with-netdata
