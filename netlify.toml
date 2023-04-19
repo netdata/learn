@@ -1639,7 +1639,7 @@
 
 [[redirects]]
   from="/guides/using-host-labels"
-  to="/docs/deployment-in-production/use-host-labels-to-organize-systems-metrics-and-alarms"
+  to="/docs/deployment-in-production/organize-systems-metrics-and-alerts"
 
 [[redirects]]
   from="/docs/cheatsheet"
@@ -2204,5 +2204,9 @@
 [[redirects]]
   from="/docs/exporting-data/rest-api-for-database-queries"
   to="/docs/api/queries"
+
+[[redirects]]
+  from="/docs/deployment-in-production/use-host-labels-to-organize-systems-metrics-and-alarms"
+  to="/docs/deployment-in-production/organize-systems-metrics-and-alerts"
 
 # section: dynamic << END
