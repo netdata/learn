@@ -5,6 +5,7 @@ learn_status: "Published"
 learn_rel_path: "Data collection/Monitor Anything/System metrics"
 description: "Use Netdata's extended Berkeley Packet Filter (eBPF) collector to monitor kernel-level metrics about yourcomplex applications with per-second granularity."
 sidebar_position: "314725"
+slug: "/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf"
 ---
 
 
@@ -105,7 +106,7 @@ accepts the following values:
 #### Integration with `apps.plugin`
 
 The eBPF collector also creates charts for each running application through an integration with the
-[`apps.plugin`](/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring). This integration helps you understand how specific applications
+[`apps.plugin`](/docs/data-collection/monitor-anything/system-metrics/application-monitoring). This integration helps you understand how specific applications
 interact with the Linux kernel.
 
 If you want to enable `apps.plugin` integration, change the "apps" setting to "yes".
@@ -123,7 +124,7 @@ it runs.
 #### Integration with `cgroups.plugin`
 
 The eBPF collector also creates charts for each cgroup through an integration with the
-[`cgroups.plugin`](/docs/data-collection/monitor-anything/Virtualized%20Environments/Containers-and-VMs-cgroups). This integration helps you understand how a specific cgroup
+[`cgroups.plugin`](/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups). This integration helps you understand how a specific cgroup
 interacts with the Linux kernel.
 
 The integration with `cgroups.plugin` is disabled by default to avoid creating overhead on your system. If you want to
@@ -245,7 +246,7 @@ The eBPF collector enables and runs the following eBPF programs by default:
 You can also enable the following eBPF programs:
 
 -   `cachestat`: Netdata's eBPF data collector creates charts about the memory page cache. When the integration with
-    [`apps.plugin`](/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring) is enabled, this collector creates charts for the whole host _and_
+    [`apps.plugin`](/docs/data-collection/monitor-anything/system-metrics/application-monitoring) is enabled, this collector creates charts for the whole host _and_
     for each application.
 -   `dcstat` : This eBPF program creates charts that show information about file access using directory cache. It appends
     `kprobes` for `lookup_fast()` and `d_lookup()` to identify if files are inside directory cache, outside and files are

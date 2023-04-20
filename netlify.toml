@@ -387,11 +387,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/apps.plugin"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring"
+  to="/docs/data-collection/monitor-anything/system-metrics/application-monitoring"
 
 [[redirects]]
   from="/docs/agent/collectors/cgroups.plugin"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Containers-and-VMs-cgroups"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin"
@@ -399,51 +399,51 @@
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/ap"
-  to="/docs/data-collection/monitor-anything/Networking/Access-points"
+  to="/docs/data-collection/monitor-anything/networking/access-points"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/apcupsd"
-  to="/docs/data-collection/monitor-anything/Hardware/APC-UPS"
+  to="/docs/data-collection/monitor-anything/hardware/apc-ups"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/example"
-  to="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Bash"
+  to="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-bash"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/libreswan"
-  to="/docs/data-collection/monitor-anything/Networking/Libreswan-IPSec-tunnels"
+  to="/docs/data-collection/monitor-anything/networking/libreswan-ipsec-tunnels"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/nut"
-  to="/docs/data-collection/monitor-anything/Hardware/UPS-PDU"
+  to="/docs/data-collection/monitor-anything/hardware/ups-pdu"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/opensips"
-  to="/docs/data-collection/monitor-anything/Networking/OpenSIPS"
+  to="/docs/data-collection/monitor-anything/networking/opensips"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/sensors"
-  to="/docs/data-collection/monitor-anything/Hardware/lm-sensors"
+  to="/docs/data-collection/monitor-anything/hardware/lm-sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/cups.plugin"
-  to="/docs/data-collection/monitor-anything/Hardware/cups.plugin"
+  to="/docs/data-collection/monitor-anything/hardware/cups.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/diskspace.plugin"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/Disks"
+  to="/docs/data-collection/monitor-anything/system-metrics/disks"
 
 [[redirects]]
   from="/docs/agent/collectors/ebpf.plugin"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/Kernel-traces-metrics-eBPF"
+  to="/docs/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf"
 
 [[redirects]]
   from="/docs/agent/collectors/freebsd.plugin"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/FreeBSD-system-metrics-freebsd.plugin"
+  to="/docs/data-collection/monitor-anything/system-metrics/freebsd-system-metrics-freebsd.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/freeipmi.plugin"
-  to="/docs/data-collection/monitor-anything/Hardware/FreeIPMI"
+  to="/docs/data-collection/monitor-anything/hardware/freeipmi"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin"
@@ -455,243 +455,243 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/activemq"
-  to="/docs/data-collection/monitor-anything/Message%20Brokers/ActiveMQ"
+  to="/docs/data-collection/monitor-anything/message-brokers/activemq"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/apache"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/Apache"
+  to="/docs/data-collection/monitor-anything/web-servers/apache"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/bind"
-  to="/docs/data-collection/monitor-anything/Dns/Bind9"
+  to="/docs/data-collection/monitor-anything/dns/bind9"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/cassandra"
-  to="/docs/data-collection/monitor-anything/Databases/Cassandra"
+  to="/docs/data-collection/monitor-anything/databases/cassandra"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/chrony"
-  to="/docs/data-collection/monitor-anything/Applications/Chrony"
+  to="/docs/data-collection/monitor-anything/applications/chrony"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/cockroachdb"
-  to="/docs/data-collection/monitor-anything/Databases/CockroachDB"
+  to="/docs/data-collection/monitor-anything/databases/cockroachdb"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/consul"
-  to="/docs/data-collection/monitor-anything/Provisioning%20Tools/Consul"
+  to="/docs/data-collection/monitor-anything/provisioning-tools/consul"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/coredns"
-  to="/docs/data-collection/monitor-anything/Dns/CoreDNS"
+  to="/docs/data-collection/monitor-anything/dns/coredns"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/couchbase"
-  to="/docs/data-collection/monitor-anything/Databases/Couchbase"
+  to="/docs/data-collection/monitor-anything/databases/couchbase"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/couchdb"
-  to="/docs/data-collection/monitor-anything/Databases/CouchDB"
+  to="/docs/data-collection/monitor-anything/databases/couchdb"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dnsdist"
-  to="/docs/data-collection/monitor-anything/Dns/DNSdist"
+  to="/docs/data-collection/monitor-anything/dns/dnsdist"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dnsmasq"
-  to="/docs/data-collection/monitor-anything/Dns/Dnsmasq-DNS-Forwarder"
+  to="/docs/data-collection/monitor-anything/dns/dnsmasq-dns-forwarder"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dnsmasq_dhcp"
-  to="/docs/data-collection/monitor-anything/Dns/Dnsmasq-DHCP"
+  to="/docs/data-collection/monitor-anything/dns/dnsmasq-dhcp"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dnsquery"
-  to="/docs/data-collection/monitor-anything/Dns/DNS-queries"
+  to="/docs/data-collection/monitor-anything/dns/dns-queries"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/docker"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/docker"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/docker_engine"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker-Engine"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/docker-engine"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dockerhub"
-  to="/docs/data-collection/monitor-anything/Applications/Docker-Hub-repositories"
+  to="/docs/data-collection/monitor-anything/applications/docker-hub-repositories"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/elasticsearch"
-  to="/docs/data-collection/monitor-anything/Search/Elasticsearch"
+  to="/docs/data-collection/monitor-anything/search/elasticsearch"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/energid"
-  to="/docs/data-collection/monitor-anything/Blockchain/Energi-Core-Wallet"
+  to="/docs/data-collection/monitor-anything/blockchain/energi-core-wallet"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/example"
-  to="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Go"
+  to="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-go"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/filecheck"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/Files-and-Dirs"
+  to="/docs/data-collection/monitor-anything/system-metrics/files-and-dirs"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/fluentd"
-  to="/docs/data-collection/monitor-anything/Logs/Fluentd"
+  to="/docs/data-collection/monitor-anything/logs/fluentd"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/freeradius"
-  to="/docs/data-collection/monitor-anything/Applications/FreeRADIUS"
+  to="/docs/data-collection/monitor-anything/applications/freeradius"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/geth"
-  to="/docs/data-collection/monitor-anything/Blockchain/Go-ethereum"
+  to="/docs/data-collection/monitor-anything/blockchain/go-ethereum"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/haproxy"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/haproxy-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/web-servers/haproxy-go.d.plugin-recommended"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/hdfs"
-  to="/docs/data-collection/monitor-anything/Storage/HDFS"
+  to="/docs/data-collection/monitor-anything/storage/hdfs"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/httpcheck"
-  to="/docs/data-collection/monitor-anything/Networking/HTTP-endpoints"
+  to="/docs/data-collection/monitor-anything/networking/http-endpoints"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/isc_dhcpd"
-  to="/docs/data-collection/monitor-anything/Networking/ISC-DHCPd"
+  to="/docs/data-collection/monitor-anything/networking/isc-dhcpd"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_kubelet"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kubelet"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/kubelet"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_kubeproxy"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kube-proxy"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/kube-proxy"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_state"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kubernetes-cluster-state"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/kubernetes-cluster-state"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/lighttpd"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd"
+  to="/docs/data-collection/monitor-anything/web-servers/lighttpd"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/lighttpd2"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd2"
+  to="/docs/data-collection/monitor-anything/web-servers/lighttpd2"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/logind"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/logind-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/system-metrics/logind-go.d.plugin-recommended"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/logstash"
-  to="/docs/data-collection/monitor-anything/Logs/Logstash"
+  to="/docs/data-collection/monitor-anything/logs/logstash"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/mongodb"
-  to="/docs/data-collection/monitor-anything/Databases/MongoDB"
+  to="/docs/data-collection/monitor-anything/databases/mongodb"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/mysql"
-  to="/docs/data-collection/monitor-anything/Databases/MySQL"
+  to="/docs/data-collection/monitor-anything/databases/mysql"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nginx"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/NGINX"
+  to="/docs/data-collection/monitor-anything/web-servers/nginx"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nginxplus"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/NGINX-Plus"
+  to="/docs/data-collection/monitor-anything/web-servers/nginx-plus"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nginxvts"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/NGINX-VTS"
+  to="/docs/data-collection/monitor-anything/web-servers/nginx-vts"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvidia_smi"
-  to="/docs/data-collection/monitor-anything/Hardware/NVIDIA"
+  to="/docs/data-collection/monitor-anything/hardware/nvidia"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvme"
-  to="/docs/data-collection/monitor-anything/Storage/NVMe-devices"
+  to="/docs/data-collection/monitor-anything/storage/nvme-devices"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/openvpn"
-  to="/docs/data-collection/monitor-anything/Networking/OpenVPN"
+  to="/docs/data-collection/monitor-anything/networking/openvpn"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/openvpn_status_log"
-  to="/docs/data-collection/monitor-anything/Networking/OpenVPN-StatusLog"
+  to="/docs/data-collection/monitor-anything/networking/openvpn-statuslog"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/pgbouncer"
-  to="/docs/data-collection/monitor-anything/Databases/PgBouncer"
+  to="/docs/data-collection/monitor-anything/databases/pgbouncer"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/phpdaemon"
-  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/PHP-Applications"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/php-applications"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/phpfpm"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/PHP-FPM"
+  to="/docs/data-collection/monitor-anything/web-servers/php-fpm"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/pihole"
-  to="/docs/data-collection/monitor-anything/Applications/Pi-hole"
+  to="/docs/data-collection/monitor-anything/applications/pi-hole"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/pika"
-  to="/docs/data-collection/monitor-anything/Storage/Pika"
+  to="/docs/data-collection/monitor-anything/storage/pika"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/ping"
-  to="/docs/data-collection/monitor-anything/Qos/Ping"
+  to="/docs/data-collection/monitor-anything/qos/ping"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/portcheck"
-  to="/docs/data-collection/monitor-anything/Networking/TCP-endpoints"
+  to="/docs/data-collection/monitor-anything/networking/tcp-endpoints"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/postgres"
-  to="/docs/data-collection/monitor-anything/Databases/PostgresSQL"
+  to="/docs/data-collection/monitor-anything/databases/postgressql"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/powerdns"
-  to="/docs/data-collection/monitor-anything/Dns/PowerDNS-Authoritative-Server"
+  to="/docs/data-collection/monitor-anything/dns/powerdns-authoritative-server"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/powerdns_recursor"
-  to="/docs/data-collection/monitor-anything/Dns/PowerDNS-Recursor"
+  to="/docs/data-collection/monitor-anything/dns/powerdns-recursor"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/prometheus"
-  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Prometheus-endpoints"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/prometheus-endpoints"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/proxysql"
-  to="/docs/data-collection/monitor-anything/Databases/ProxySQL"
+  to="/docs/data-collection/monitor-anything/databases/proxysql"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/pulsar"
-  to="/docs/data-collection/monitor-anything/Message%20Brokers/Pulsar"
+  to="/docs/data-collection/monitor-anything/message-brokers/pulsar"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/rabbitmq"
-  to="/docs/data-collection/monitor-anything/Message%20Brokers/RabbitMQ"
+  to="/docs/data-collection/monitor-anything/message-brokers/rabbitmq"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/redis"
-  to="/docs/data-collection/monitor-anything/Databases/Redis"
+  to="/docs/data-collection/monitor-anything/databases/redis"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/scaleio"
-  to="/docs/data-collection/monitor-anything/Storage/ScaleIO"
+  to="/docs/data-collection/monitor-anything/storage/scaleio"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/service-discovery"
@@ -699,91 +699,91 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/snmp"
-  to="/docs/data-collection/monitor-anything/Networking/SNMP"
+  to="/docs/data-collection/monitor-anything/networking/snmp"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/solr"
-  to="/docs/data-collection/monitor-anything/Search/Solr"
+  to="/docs/data-collection/monitor-anything/search/solr"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/springboot2"
-  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Java-Spring-Boot-2-applications"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/java-spring-boot-2-applications"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/squidlog"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Squid"
+  to="/docs/data-collection/monitor-anything/web-servers/web-server-logs-squid"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/supervisord"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Supervisord"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/supervisord"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/systemdunits"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/Systemd-units"
+  to="/docs/data-collection/monitor-anything/system-metrics/systemd-units"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/tengine"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/Tengine"
+  to="/docs/data-collection/monitor-anything/web-servers/tengine"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/traefik"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/traefik-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/web-servers/traefik-go.d.plugin-recommended"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/unbound"
-  to="/docs/data-collection/monitor-anything/Dns/Unbound"
+  to="/docs/data-collection/monitor-anything/dns/unbound"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vcsa"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/vCenter-Server-Appliance"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/vcenter-server-appliance"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vernemq"
-  to="/docs/data-collection/monitor-anything/Message%20Brokers/VerneMQ"
+  to="/docs/data-collection/monitor-anything/message-brokers/vernemq"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vsphere"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/vCenter-Servers"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/vcenter-servers"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/weblog"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS"
+  to="/docs/data-collection/monitor-anything/web-servers/web-server-logs-apache-nginx-microsoft-iis"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/whoisquery"
-  to="/docs/data-collection/monitor-anything/Dns/Whois-domain-expiry"
+  to="/docs/data-collection/monitor-anything/dns/whois-domain-expiry"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/wireguard"
-  to="/docs/data-collection/monitor-anything/Networking/WireGuard"
+  to="/docs/data-collection/monitor-anything/networking/wireguard"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/x509check"
-  to="/docs/data-collection/monitor-anything/Networking/x509-certificates"
+  to="/docs/data-collection/monitor-anything/networking/x509-certificates"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/zookeeper"
-  to="/docs/data-collection/monitor-anything/Provisioning%20Tools/ZooKeeper"
+  to="/docs/data-collection/monitor-anything/provisioning-tools/zookeeper"
 
 [[redirects]]
   from="/docs/agent/collectors/idlejitter.plugin"
-  to="/docs/data-collection/monitor-anything/Qos/idlejitter.plugin"
+  to="/docs/data-collection/monitor-anything/qos/idlejitter.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/ioping.plugin"
-  to="/docs/data-collection/monitor-anything/Qos/Latency-monitoring-ioping.plugin"
+  to="/docs/data-collection/monitor-anything/qos/latency-monitoring-ioping.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/macos.plugin"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/macOS"
+  to="/docs/data-collection/monitor-anything/system-metrics/macos"
 
 [[redirects]]
   from="/docs/agent/collectors/nfacct.plugin"
-  to="/docs/data-collection/monitor-anything/Networking/Netfilter-statistics-nfacct.plugin"
+  to="/docs/data-collection/monitor-anything/networking/netfilter-statistics-nfacct.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/perf.plugin"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/CPU-performance-statistics-perf.plugin"
+  to="/docs/data-collection/monitor-anything/system-metrics/cpu-performance-statistics-perf.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/plugins.d"
@@ -791,7 +791,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/proc.plugin"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/OS-provided-metrics-proc.plugin"
+  to="/docs/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin"
@@ -799,187 +799,187 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/adaptec_raid"
-  to="/docs/data-collection/monitor-anything/Storage/Adaptec-RAID"
+  to="/docs/data-collection/monitor-anything/storage/adaptec-raid"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/alarms"
-  to="/docs/data-collection/monitor-anything/Netdata/Alarms"
+  to="/docs/data-collection/monitor-anything/netdata/alarms"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/am2320"
-  to="/docs/data-collection/monitor-anything/Hardware/AM2320"
+  to="/docs/data-collection/monitor-anything/hardware/am2320"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/anomalies"
-  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Anomalies"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/anomalies"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/beanstalk"
-  to="/docs/data-collection/monitor-anything/Message%20Brokers/Beanstalk"
+  to="/docs/data-collection/monitor-anything/message-brokers/beanstalk"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/bind_rndc"
-  to="/docs/data-collection/monitor-anything/Dns/ISC-Bind"
+  to="/docs/data-collection/monitor-anything/dns/isc-bind"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/boinc"
-  to="/docs/data-collection/monitor-anything/Distributed%20Computing/BOINC"
+  to="/docs/data-collection/monitor-anything/distributed-computing/boinc"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/ceph"
-  to="/docs/data-collection/monitor-anything/Storage/CEPH"
+  to="/docs/data-collection/monitor-anything/storage/ceph"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/changefinder"
-  to="/docs/data-collection/monitor-anything/Qos/changefinder"
+  to="/docs/data-collection/monitor-anything/qos/changefinder"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/dovecot"
-  to="/docs/data-collection/monitor-anything/Applications/Dovecot"
+  to="/docs/data-collection/monitor-anything/applications/dovecot"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/example"
-  to="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Python"
+  to="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-python"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/exim"
-  to="/docs/data-collection/monitor-anything/Applications/Exim"
+  to="/docs/data-collection/monitor-anything/applications/exim"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/fail2ban"
-  to="/docs/data-collection/monitor-anything/Applications/Fail2ban"
+  to="/docs/data-collection/monitor-anything/applications/fail2ban"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/gearman"
-  to="/docs/data-collection/monitor-anything/Distributed%20Computing/Gearman"
+  to="/docs/data-collection/monitor-anything/distributed-computing/gearman"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/go_expvar"
-  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Go-applications"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/go-applications"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/haproxy"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/haproxy-python.d.plugin"
+  to="/docs/data-collection/monitor-anything/web-servers/haproxy-python.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/hddtemp"
-  to="/docs/data-collection/monitor-anything/Hardware/Hard-drive-temperature"
+  to="/docs/data-collection/monitor-anything/hardware/hard-drive-temperature"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/hpssa"
-  to="/docs/data-collection/monitor-anything/Storage/HP-Smart-Storage-Arrays"
+  to="/docs/data-collection/monitor-anything/storage/hp-smart-storage-arrays"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/icecast"
-  to="/docs/data-collection/monitor-anything/Networking/Icecast"
+  to="/docs/data-collection/monitor-anything/networking/icecast"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/ipfs"
-  to="/docs/data-collection/monitor-anything/Storage/IPFS"
+  to="/docs/data-collection/monitor-anything/storage/ipfs"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/litespeed"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/LiteSpeed"
+  to="/docs/data-collection/monitor-anything/web-servers/litespeed"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/megacli"
-  to="/docs/data-collection/monitor-anything/Storage/MegaRAID-controllers"
+  to="/docs/data-collection/monitor-anything/storage/megaraid-controllers"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/memcached"
-  to="/docs/data-collection/monitor-anything/Databases/Memcached"
+  to="/docs/data-collection/monitor-anything/databases/memcached"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/monit"
-  to="/docs/data-collection/monitor-anything/Storage/Monit"
+  to="/docs/data-collection/monitor-anything/storage/monit"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/nsd"
-  to="/docs/data-collection/monitor-anything/Dns/NSD"
+  to="/docs/data-collection/monitor-anything/dns/nsd"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/nvidia_smi"
-  to="/docs/data-collection/monitor-anything/Hardware/nvidia_smi-python.d.plugin"
+  to="/docs/data-collection/monitor-anything/hardware/nvidia_smi-python.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/openldap"
-  to="/docs/data-collection/monitor-anything/Applications/OpenLDAP"
+  to="/docs/data-collection/monitor-anything/applications/openldap"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/oracledb"
-  to="/docs/data-collection/monitor-anything/Databases/OracleDB"
+  to="/docs/data-collection/monitor-anything/databases/oracledb"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/pandas"
-  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Structured-data-Pandas"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/structured-data-pandas"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/postfix"
-  to="/docs/data-collection/monitor-anything/Applications/Postfix"
+  to="/docs/data-collection/monitor-anything/applications/postfix"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/puppet"
-  to="/docs/data-collection/monitor-anything/Provisioning%20Tools/Puppet"
+  to="/docs/data-collection/monitor-anything/provisioning-tools/puppet"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/rethinkdbs"
-  to="/docs/data-collection/monitor-anything/Databases/RethinkDB"
+  to="/docs/data-collection/monitor-anything/databases/rethinkdb"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/retroshare"
-  to="/docs/data-collection/monitor-anything/Applications/RetroShare"
+  to="/docs/data-collection/monitor-anything/applications/retroshare"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/riakkv"
-  to="/docs/data-collection/monitor-anything/Databases/Riak-KV"
+  to="/docs/data-collection/monitor-anything/databases/riak-kv"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/samba"
-  to="/docs/data-collection/monitor-anything/Networking/Samba"
+  to="/docs/data-collection/monitor-anything/networking/samba"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/sensors"
-  to="/docs/data-collection/monitor-anything/Hardware/Sensors"
+  to="/docs/data-collection/monitor-anything/hardware/sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/smartd_log"
-  to="/docs/data-collection/monitor-anything/Hardware/S.M.A.R.T.-attributes"
+  to="/docs/data-collection/monitor-anything/hardware/s.m.a.r.t.-attributes"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/spigotmc"
-  to="/docs/data-collection/monitor-anything/Applications/SpigotMC"
+  to="/docs/data-collection/monitor-anything/applications/spigotmc"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/squid"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/Squid"
+  to="/docs/data-collection/monitor-anything/web-servers/squid"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/tomcat"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/Tomcat"
+  to="/docs/data-collection/monitor-anything/web-servers/tomcat"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/tor"
-  to="/docs/data-collection/monitor-anything/Networking/Tor"
+  to="/docs/data-collection/monitor-anything/networking/tor"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/traefik"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/traefik-python.d.plugin"
+  to="/docs/data-collection/monitor-anything/web-servers/traefik-python.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/uwsgi"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/uWSGI"
+  to="/docs/data-collection/monitor-anything/web-servers/uwsgi"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/varnish"
-  to="/docs/data-collection/monitor-anything/Web%20Servers/Varnish-Cache"
+  to="/docs/data-collection/monitor-anything/web-servers/varnish-cache"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/w1sensor"
-  to="/docs/data-collection/monitor-anything/Hardware/Wire-sensors"
+  to="/docs/data-collection/monitor-anything/hardware/wire-sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/zscores"
-  to="/docs/data-collection/monitor-anything/Netdata/zscores"
+  to="/docs/data-collection/monitor-anything/netdata/zscores"
 
 [[redirects]]
   from="/docs/agent/collectors/reference"
@@ -987,31 +987,31 @@
 
 [[redirects]]
   from="/docs/agent/collectors/slabinfo.plugin"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/slabinfo.plugin"
+  to="/docs/data-collection/monitor-anything/system-metrics/slabinfo.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/statsd.plugin"
-  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/StatsD"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/statsd"
 
 [[redirects]]
   from="/docs/agent/collectors/statsd.plugin/asterisk"
-  to="/docs/data-collection/monitor-anything/Applications/Asterisk"
+  to="/docs/data-collection/monitor-anything/applications/asterisk"
 
 [[redirects]]
   from="/docs/agent/collectors/statsd.plugin/k6"
-  to="/docs/data-collection/monitor-anything/Applications/K6-Load-Testing"
+  to="/docs/data-collection/monitor-anything/applications/k6-load-testing"
 
 [[redirects]]
   from="/docs/agent/collectors/tc.plugin"
-  to="/docs/data-collection/monitor-anything/Networking/tc.plugin"
+  to="/docs/data-collection/monitor-anything/networking/tc.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/timex.plugin"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/timex.plugin"
+  to="/docs/data-collection/monitor-anything/system-metrics/timex.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/xenstat.plugin"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/xenstat.plugin"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/xenstat.plugin"
 
 [[redirects]]
   from="/docs/agent/contrib"
@@ -1743,7 +1743,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/wmi"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/Windows-machines"
+  to="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
 
 [[redirects]]
   from="/docs/agent/database/ram"
@@ -1867,7 +1867,7 @@
 
 [[redirects]]
   from="/guides/monitor/statsd"
-  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/StatsD"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/statsd"
 
 [[redirects]]
   from="/guides/monitor/visualize-monitor-anomalies"
@@ -1947,7 +1947,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/mongodb"
-  to="/docs/data-collection/monitor-anything/Databases/MongoDB"
+  to="/docs/data-collection/monitor-anything/databases/mongodb"
 
 [[redirects]]
   from="/guides/export/export-netdata-metrics-graphite"
@@ -1959,11 +1959,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/fping.plugin"
-  to="/docs/data-collection/monitor-anything/Qos/Ping"
+  to="/docs/data-collection/monitor-anything/qos/ping"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/dockerd"
-  to="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/docker"
 
 [[redirects]]
   from="/docs/agent/packaging"
@@ -1975,11 +1975,11 @@
 
 [[redirects]]
   from="/docs/next/agent/collectors/fping.plugin"
-  to="/docs/data-collection/monitor-anything/Qos/Ping"
+  to="/docs/data-collection/monitor-anything/qos/ping"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/prometheus-endpoints"
-  to="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Prometheus-endpoints"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/prometheus-endpoints"
 
 [[redirects]]
   from="/docs/cloud/beta-architecture/new-architecture"
@@ -2055,7 +2055,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system%20metrics/windows-machine"
-  to="/docs/data-collection/monitor-anything/System%20Metrics/Windows-machines"
+  to="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
 
 [[redirects]]
   from="/docs/next/agent/health/notifications/awssns"
@@ -2208,5 +2208,617 @@
 [[redirects]]
   from="/docs/deployment-in-production/use-host-labels-to-organize-systems-metrics-and-alarms"
   to="/docs/deployment-in-production/organize-systems-metrics-and-alerts"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/uWSGI"
+  to="/docs/data-collection/monitor-anything/web-servers/uwsgi"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/traefik-python.d.plugin"
+  to="/docs/data-collection/monitor-anything/web-servers/traefik-python.d.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/traefik-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/web-servers/traefik-go.d.plugin-recommended"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/haproxy-python.d.plugin"
+  to="/docs/data-collection/monitor-anything/web-servers/haproxy-python.d.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/haproxy-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/web-servers/haproxy-go.d.plugin-recommended"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Squid"
+  to="/docs/data-collection/monitor-anything/web-servers/web-server-logs-squid"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS"
+  to="/docs/data-collection/monitor-anything/web-servers/web-server-logs-apache-nginx-microsoft-iis"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/Varnish-Cache"
+  to="/docs/data-collection/monitor-anything/web-servers/varnish-cache"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/Tomcat"
+  to="/docs/data-collection/monitor-anything/web-servers/tomcat"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/Tengine"
+  to="/docs/data-collection/monitor-anything/web-servers/tengine"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/Squid"
+  to="/docs/data-collection/monitor-anything/web-servers/squid"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/PHP-FPM"
+  to="/docs/data-collection/monitor-anything/web-servers/php-fpm"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/NGINX-VTS"
+  to="/docs/data-collection/monitor-anything/web-servers/nginx-vts"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/NGINX-Plus"
+  to="/docs/data-collection/monitor-anything/web-servers/nginx-plus"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/NGINX"
+  to="/docs/data-collection/monitor-anything/web-servers/nginx"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/LiteSpeed"
+  to="/docs/data-collection/monitor-anything/web-servers/litespeed"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd2"
+  to="/docs/data-collection/monitor-anything/web-servers/lighttpd2"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd"
+  to="/docs/data-collection/monitor-anything/web-servers/lighttpd"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/Apache"
+  to="/docs/data-collection/monitor-anything/web-servers/apache"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/xenstat.plugin"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/xenstat.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/vCenter-Servers"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/vcenter-servers"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/vCenter-Server-Appliance"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/vcenter-server-appliance"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Supervisord"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/supervisord"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kubernetes-cluster-state"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/kubernetes-cluster-state"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kubelet"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/kubelet"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kube-proxy"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/kube-proxy"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker-Engine"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/docker-engine"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/docker"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Containers-and-VMs-cgroups"
+  to="/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/timex.plugin"
+  to="/docs/data-collection/monitor-anything/system-metrics/timex.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/slabinfo.plugin"
+  to="/docs/data-collection/monitor-anything/system-metrics/slabinfo.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/macOS"
+  to="/docs/data-collection/monitor-anything/system-metrics/macos"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/logind-go.d.plugin-Recommended"
+  to="/docs/data-collection/monitor-anything/system-metrics/logind-go.d.plugin-recommended"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Windows-machines"
+  to="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Systemd-units"
+  to="/docs/data-collection/monitor-anything/system-metrics/systemd-units"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/OS-provided-metrics-proc.plugin"
+  to="/docs/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Kernel-traces-metrics-eBPF"
+  to="/docs/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/FreeBSD-system-metrics-freebsd.plugin"
+  to="/docs/data-collection/monitor-anything/system-metrics/freebsd-system-metrics-freebsd.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Files-and-Dirs"
+  to="/docs/data-collection/monitor-anything/system-metrics/files-and-dirs"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Disks"
+  to="/docs/data-collection/monitor-anything/system-metrics/disks"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/CPU-performance-statistics-perf.plugin"
+  to="/docs/data-collection/monitor-anything/system-metrics/cpu-performance-statistics-perf.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring"
+  to="/docs/data-collection/monitor-anything/system-metrics/application-monitoring"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/ScaleIO"
+  to="/docs/data-collection/monitor-anything/storage/scaleio"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/Pika"
+  to="/docs/data-collection/monitor-anything/storage/pika"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/NVMe-devices"
+  to="/docs/data-collection/monitor-anything/storage/nvme-devices"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/Monit"
+  to="/docs/data-collection/monitor-anything/storage/monit"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/MegaRAID-controllers"
+  to="/docs/data-collection/monitor-anything/storage/megaraid-controllers"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/IPFS"
+  to="/docs/data-collection/monitor-anything/storage/ipfs"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/HP-Smart-Storage-Arrays"
+  to="/docs/data-collection/monitor-anything/storage/hp-smart-storage-arrays"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/HDFS"
+  to="/docs/data-collection/monitor-anything/storage/hdfs"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/CEPH"
+  to="/docs/data-collection/monitor-anything/storage/ceph"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/Adaptec-RAID"
+  to="/docs/data-collection/monitor-anything/storage/adaptec-raid"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Search/Solr"
+  to="/docs/data-collection/monitor-anything/search/solr"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Search/Elasticsearch"
+  to="/docs/data-collection/monitor-anything/search/elasticsearch"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Qos/idlejitter.plugin"
+  to="/docs/data-collection/monitor-anything/qos/idlejitter.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Qos/changefinder"
+  to="/docs/data-collection/monitor-anything/qos/changefinder"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Qos/Ping"
+  to="/docs/data-collection/monitor-anything/qos/ping"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Qos/Latency-monitoring-ioping.plugin"
+  to="/docs/data-collection/monitor-anything/qos/latency-monitoring-ioping.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Proxies/Envoy"
+  to="/docs/data-collection/monitor-anything/proxies/envoy"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Provisioning%20Tools/ZooKeeper"
+  to="/docs/data-collection/monitor-anything/provisioning-tools/zookeeper"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Provisioning%20Tools/Puppet"
+  to="/docs/data-collection/monitor-anything/provisioning-tools/puppet"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Provisioning%20Tools/Consul"
+  to="/docs/data-collection/monitor-anything/provisioning-tools/consul"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/x509-certificates"
+  to="/docs/data-collection/monitor-anything/networking/x509-certificates"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/tc.plugin"
+  to="/docs/data-collection/monitor-anything/networking/tc.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/WireGuard"
+  to="/docs/data-collection/monitor-anything/networking/wireguard"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/Tor"
+  to="/docs/data-collection/monitor-anything/networking/tor"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/TCP-endpoints"
+  to="/docs/data-collection/monitor-anything/networking/tcp-endpoints"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/Samba"
+  to="/docs/data-collection/monitor-anything/networking/samba"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/SNMP"
+  to="/docs/data-collection/monitor-anything/networking/snmp"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/OpenVPN-StatusLog"
+  to="/docs/data-collection/monitor-anything/networking/openvpn-statuslog"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/OpenVPN"
+  to="/docs/data-collection/monitor-anything/networking/openvpn"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/OpenSIPS"
+  to="/docs/data-collection/monitor-anything/networking/opensips"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/Netfilter-statistics-nfacct.plugin"
+  to="/docs/data-collection/monitor-anything/networking/netfilter-statistics-nfacct.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/Libreswan-IPSec-tunnels"
+  to="/docs/data-collection/monitor-anything/networking/libreswan-ipsec-tunnels"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/Icecast"
+  to="/docs/data-collection/monitor-anything/networking/icecast"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/ISC-DHCPd"
+  to="/docs/data-collection/monitor-anything/networking/isc-dhcpd"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/HTTP-endpoints"
+  to="/docs/data-collection/monitor-anything/networking/http-endpoints"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/Access-points"
+  to="/docs/data-collection/monitor-anything/networking/access-points"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Netdata/zscores"
+  to="/docs/data-collection/monitor-anything/netdata/zscores"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Netdata/Alarms"
+  to="/docs/data-collection/monitor-anything/netdata/alarms"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Python"
+  to="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-python"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Go"
+  to="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-go"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Bash"
+  to="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-bash"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Message%20Brokers/VerneMQ"
+  to="/docs/data-collection/monitor-anything/message-brokers/vernemq"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Message%20Brokers/RabbitMQ"
+  to="/docs/data-collection/monitor-anything/message-brokers/rabbitmq"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Message%20Brokers/Pulsar"
+  to="/docs/data-collection/monitor-anything/message-brokers/pulsar"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Message%20Brokers/Beanstalk"
+  to="/docs/data-collection/monitor-anything/message-brokers/beanstalk"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Message%20Brokers/ActiveMQ"
+  to="/docs/data-collection/monitor-anything/message-brokers/activemq"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Logs/Logstash"
+  to="/docs/data-collection/monitor-anything/logs/logstash"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Logs/Fluentd"
+  to="/docs/data-collection/monitor-anything/logs/fluentd"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/nvidia_smi-python.d.plugin"
+  to="/docs/data-collection/monitor-anything/hardware/nvidia_smi-python.d.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/lm-sensors"
+  to="/docs/data-collection/monitor-anything/hardware/lm-sensors"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/cups.plugin"
+  to="/docs/data-collection/monitor-anything/hardware/cups.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/Wire-sensors"
+  to="/docs/data-collection/monitor-anything/hardware/wire-sensors"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/UPS-PDU"
+  to="/docs/data-collection/monitor-anything/hardware/ups-pdu"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/Sensors"
+  to="/docs/data-collection/monitor-anything/hardware/sensors"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/S.M.A.R.T.-attributes"
+  to="/docs/data-collection/monitor-anything/hardware/s.m.a.r.t.-attributes"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/NVIDIA"
+  to="/docs/data-collection/monitor-anything/hardware/nvidia"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/Hard-drive-temperature"
+  to="/docs/data-collection/monitor-anything/hardware/hard-drive-temperature"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/FreeIPMI"
+  to="/docs/data-collection/monitor-anything/hardware/freeipmi"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/APC-UPS"
+  to="/docs/data-collection/monitor-anything/hardware/apc-ups"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/AM2320"
+  to="/docs/data-collection/monitor-anything/hardware/am2320"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/Whois-domain-expiry"
+  to="/docs/data-collection/monitor-anything/dns/whois-domain-expiry"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/Unbound"
+  to="/docs/data-collection/monitor-anything/dns/unbound"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/PowerDNS-Recursor"
+  to="/docs/data-collection/monitor-anything/dns/powerdns-recursor"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/PowerDNS-Authoritative-Server"
+  to="/docs/data-collection/monitor-anything/dns/powerdns-authoritative-server"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/NSD"
+  to="/docs/data-collection/monitor-anything/dns/nsd"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/ISC-Bind"
+  to="/docs/data-collection/monitor-anything/dns/isc-bind"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/Dnsmasq-DNS-Forwarder"
+  to="/docs/data-collection/monitor-anything/dns/dnsmasq-dns-forwarder"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/Dnsmasq-DHCP"
+  to="/docs/data-collection/monitor-anything/dns/dnsmasq-dhcp"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/DNSdist"
+  to="/docs/data-collection/monitor-anything/dns/dnsdist"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/DNS-queries"
+  to="/docs/data-collection/monitor-anything/dns/dns-queries"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/CoreDNS"
+  to="/docs/data-collection/monitor-anything/dns/coredns"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Dns/Bind9"
+  to="/docs/data-collection/monitor-anything/dns/bind9"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Distributed%20Computing/Gearman"
+  to="/docs/data-collection/monitor-anything/distributed-computing/gearman"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Distributed%20Computing/BOINC"
+  to="/docs/data-collection/monitor-anything/distributed-computing/boinc"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/Riak-KV"
+  to="/docs/data-collection/monitor-anything/databases/riak-kv"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/RethinkDB"
+  to="/docs/data-collection/monitor-anything/databases/rethinkdb"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/Redis"
+  to="/docs/data-collection/monitor-anything/databases/redis"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/ProxySQL"
+  to="/docs/data-collection/monitor-anything/databases/proxysql"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/PostgresSQL"
+  to="/docs/data-collection/monitor-anything/databases/postgressql"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/PgBouncer"
+  to="/docs/data-collection/monitor-anything/databases/pgbouncer"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/OracleDB"
+  to="/docs/data-collection/monitor-anything/databases/oracledb"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/MySQL"
+  to="/docs/data-collection/monitor-anything/databases/mysql"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/MongoDB"
+  to="/docs/data-collection/monitor-anything/databases/mongodb"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/Memcached"
+  to="/docs/data-collection/monitor-anything/databases/memcached"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/Couchbase"
+  to="/docs/data-collection/monitor-anything/databases/couchbase"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/CouchDB"
+  to="/docs/data-collection/monitor-anything/databases/couchdb"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/CockroachDB"
+  to="/docs/data-collection/monitor-anything/databases/cockroachdb"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/Cassandra"
+  to="/docs/data-collection/monitor-anything/databases/cassandra"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Blockchain/Go-ethereum"
+  to="/docs/data-collection/monitor-anything/blockchain/go-ethereum"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Blockchain/Energi-Core-Wallet"
+  to="/docs/data-collection/monitor-anything/blockchain/energi-core-wallet"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/SpigotMC"
+  to="/docs/data-collection/monitor-anything/applications/spigotmc"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/RetroShare"
+  to="/docs/data-collection/monitor-anything/applications/retroshare"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/Postfix"
+  to="/docs/data-collection/monitor-anything/applications/postfix"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/Pi-hole"
+  to="/docs/data-collection/monitor-anything/applications/pi-hole"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/OpenLDAP"
+  to="/docs/data-collection/monitor-anything/applications/openldap"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/NTP-daemon"
+  to="/docs/data-collection/monitor-anything/applications/ntp-daemon"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/K6-Load-Testing"
+  to="/docs/data-collection/monitor-anything/applications/k6-load-testing"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/FreeRADIUS"
+  to="/docs/data-collection/monitor-anything/applications/freeradius"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/Fail2ban"
+  to="/docs/data-collection/monitor-anything/applications/fail2ban"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/Exim"
+  to="/docs/data-collection/monitor-anything/applications/exim"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/Dovecot"
+  to="/docs/data-collection/monitor-anything/applications/dovecot"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/Docker-Hub-repositories"
+  to="/docs/data-collection/monitor-anything/applications/docker-hub-repositories"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/Chrony"
+  to="/docs/data-collection/monitor-anything/applications/chrony"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/Asterisk"
+  to="/docs/data-collection/monitor-anything/applications/asterisk"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Structured-data-Pandas"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/structured-data-pandas"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/StatsD"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/statsd"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Prometheus-endpoints"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/prometheus-endpoints"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/PHP-Applications"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/php-applications"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Java-Spring-Boot-2-applications"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/java-spring-boot-2-applications"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Go-applications"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/go-applications"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Anomalies"
+  to="/docs/data-collection/monitor-anything/any-application---generic-collectors/anomalies"
 
 # section: dynamic << END
