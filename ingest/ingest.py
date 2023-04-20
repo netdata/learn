@@ -243,14 +243,9 @@ def createMDXPathFromMetdata(metadata):
         lastFolder = metadata['learn_rel_path'].split("Monitor Anything")[1]
         lastFolder = "monitor-anything" + lastFolder.title()
         # print(lastFolder)
-        # If the file is inside the monitor-anything category, meaning that it will try to render the sidebar category label to whatever the folder has,
-        # return an array of two things; [the final path, the proper slug]. We use the slug to avoid having %20 (replacing spaces) in the link of the file.
-        return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
+        return ("{}/{}/{}.mdx".format(DOCS_PREFIX,
                                       metadata["learn_rel_path"].split("Monitor Anything")[0].lower().replace(" ", "-") + lastFolder,
-                                      finalFile.replace(" ", "-")).replace("//", "/"),
-                                      "/{}/{}".format(
-                                      metadata["learn_rel_path"],
-                                      finalFile.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
+                                      finalFile.replace(" ", "-")).replace("//", "/"))
 
     else:
         return ("{}/{}/{}.mdx".format(DOCS_PREFIX,
@@ -331,43 +326,6 @@ def insertAndReadHiddenMetadataFromDoc(pathToFile, mapDict):
                 value = value.strip("\"")
                 metadataDictionary[key] = value.lstrip('>-')
     return metadataDictionary
-
-def update_metadata_of_file(pathToFile, dictionary):
-    """
-    Taking a path of a file as input
-    Identify the area with pattern " <!-- ...multiline string -->" and  converts them
-    to a dictionary of key:value pairs
-    """
-
-    output = ""
-    for field in dictionary:
-        try:
-            val = dictionary[field]
-        
-            # print((not val == np.nan),  val != val, val)
-            val = str(val)
-            output+= "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
-        except:
-            pass
-            # print("CANT PARSE", mapDict.loc[mapDict['custom_edit_url'] == key][field].values)
-    if len(output)>0:
-        output = "<!--\n" + output + "-->"
-        # print(output)
-
-    dummyFile = open(pathToFile, "r")
-    wholeFile = dummyFile.read()
-    dummyFile.close()
-
-    if wholeFile.startswith("<!--"):
-        body = wholeFile.split("-->", 1)[1]
-    else:
-        body = wholeFile
-
-    dummyFile = open(pathToFile, "w")
-    dummyFile.seek(0)
-    dummyFile.write(output + body)
-    dummyFile.close()
-
 
 def readDocusaurusMetadataFromDoc(pathToFile):
     """
@@ -464,11 +422,8 @@ def reductToPublishInGHLinksCorrelation(inputMatrix, DOCS_PREFIX, DOCS_PATH_LEAR
             outputDictionary[sourceLink] = properLink[0] + properLink[1].strip("/")
 
         _temp = outputDictionary[sourceLink].replace("'", " ").replace(":", " ").replace(")", " ").replace(",", " ").replace("(", " ").replace("/  +/g", ' ').replace(" ", "%20").replace('/-+/', '-')
-        # If there is a slug present in the file, then that is the newLearnPath, with a "/docs" added in the front.
-        try:
-            inputMatrix[x].update({"newLearnPath": "/docs"+inputMatrix[x]["metadata"]["slug"] })
-        except:
-            inputMatrix[x].update({"newLearnPath": _temp })
+
+        inputMatrix[x].update({"newLearnPath": _temp })
 
     return (inputMatrix)
 
@@ -748,26 +703,13 @@ if __name__ == '__main__':
             if "learn_status" in metadata.keys():
                 if metadata["learn_status"] == "Published":
                     try:
-                        # check the type of the response (for more info of what the response can be check 
-                        # the return statements of the function itself)
-                        response = createMDXPathFromMetdata(metadata)
-                        if type(response) != str:
-                            metadata.update({"slug": str(response[1])})
-                            toPublish[md] = {
+                        toPublish[md] = {
                             "metadata": metadata,
-                            "learnPath": str(response[0]),
+                            "learnPath": str(createMDXPathFromMetdata(metadata)),
                             "ingestedRepo": str(md.split("/", 2)[1])
-                            }    
-                            update_metadata_of_file(md, metadata)
-                        else:
-                            toPublish[md] = {
-                                "metadata": metadata,
-                                "learnPath": str(response),
-                                "ingestedRepo": str(md.split("/", 2)[1])
-                            }
-                    except Exception as e:
-                        print("File {} doesn't contain key-value {}".format(md, KeyError), e)
-
+                        }
+                    except:
+                        print("File {} doesnt container key-value {}".format(md, KeyError))
             else:
                 restFilesWithMetadataDictionary[md] = {
                     "metadata": metadata,
