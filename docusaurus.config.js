@@ -49,7 +49,7 @@ module.exports = {
 				{
 					to: 'https://www.netdata.cloud/integrations/',
 					position: 'left',
-					label: 'integrations',
+					label: 'Integrations',
 					style: {'font-weight': '500'}
 				},
 				{
