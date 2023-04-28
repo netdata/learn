@@ -5,6 +5,64 @@
  * work well for content-centric websites.
  */
 
+/* custom Netdata overrides */
+
+ :root {
+	--ifm-navbar-height: auto;
+}
+
+.navbar {
+	background-color: #181c20;
+
+}
+
+.dropdown__menu {
+	background-color: #181c20;
+}
+
+.custom_button {
+	background-color: #00ab44;
+	border: none;
+	color: white;
+	padding: 8px;
+	width: 90px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+}
+
+.custom_button:hover {
+	background-color: #029d40;
+	color: white;
+}
+
+.custom_button_grey {
+	border: none;
+	color: white;
+	padding: 8px;
+	width: 90px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+}
+
+.custom_button_grey:hover {
+	background-color: #374151;
+	color: white;
+}
+
+.custom_text {
+	color: #029d40;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
 /*
  * Tailwind
 */

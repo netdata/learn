@@ -24,45 +24,132 @@ module.exports = {
 			title: '',
 			logo: {
 				alt: 'Netdata Learn logo',
-				src: 'img/logo600x600.png',
-				height: 40
+				src: 'img/logo-letter-green-white.svg',
+				height: 145
 			},
 			items: [
 				{
-					type: 'doc',
-					docId: 'getting-started/getting-started',
+					to: 'https://www.netdata.cloud/features/',
 					position: 'left',
-					label: 'Docs',
+					label: 'Features',
+					style: {'font-weight': '500'}
 				},
 				{
-					to: 'https://blog.netdata.cloud/?utm_source=learn&utm_content=top_navigation_blog',
+					to: 'https://www.netdata.cloud/open-source/',
 					position: 'left',
-					label: 'Blog',
+					label: 'Open Source',
+					style: {'font-weight': '500'}
 				},
 				{
-					to: 'https://blog.netdata.cloud/tags/how-to/?utm_source=learn&utm_content=top_navigation_usecases',
+					to: 'https://www.netdata.cloud/pricing/',
 					position: 'left',
-					label: 'Use Cases',
+					label: 'Pricing',
+					style: {'font-weight': '500'}
 				},
 				{
-					to: 'https://www.netdata.cloud/community/?utm_source=learn&utm_content=top_navigation_community',
+					to: 'https://www.netdata.cloud/integrations/',
 					position: 'left',
-					label: 'Community',
+					label: 'integrations',
+					style: {'font-weight': '500'}
 				},
 				{
-					to: 'https://www.netdata.cloud/?utm_source=learn&utm_content=top_navigation_website',
-					label: 'Website',
 					position: 'left',
+					label: 'Use cases',
+					style: {'font-weight': '500'},
+					items: [
+						{
+							label: 'Response Time',
+							style: {'color': 'white'},
+							to: 'https://www.netdata.cloud/response-time-monitoring/'
+						},
+						{
+							label: 'Cloud',
+							style: {'color': 'white'},
+							to: 'https://www.netdata.cloud/cloud-monitoring/',
+						},
+						{
+							label: 'Web Servers',
+							style: {'color': 'white'},
+							to: 'https://www.netdata.cloud/webserver-monitoring/',
+						},
+						{
+							label: 'Containers',
+							style: {'color': 'white'},
+							to: 'https://www.netdata.cloud/container-monitoring/',
+						}
+					]
 				},
+				{
+					position: 'left',
+					label: 'Resources',
+					style: {'font-weight': '500'},
+					items: [
+						{
+							to: '/',
+							style: {'color': 'white'},
+							label: 'Documentation'
+						},
+						{
+							type: 'doc',
+							style: {'color': 'white'},
+							docId: 'getting-started/getting-started',
+							label: 'Getting Started'
+						},
+						{
+							label: 'Community',
+							style: {'color': 'white'},
+							to: 'https://www.netdata.cloud/community/',
+						},
+						{
+							label: 'About',
+							style: {'color': 'white'},
+							to: 'https://www.netdata.cloud/about/',
+						},
+						{
+							label: 'Forums',
+							style: {'color': 'white'},
+							to: 'https://community.netdata.cloud/',
+						},
+						{
+							label: 'Blog',
+							style: {'color': 'white'},
+							to: 'https://blog.netdata.cloud/',
+						},
+						{
+							label: 'Roadmap',
+							style: {'color': 'white'},
+							to: 'https://www.netdata.cloud/roadmap/'
+						},
+						{
+							label: 'Videos',
+							style: {'color': 'white'},
+							to: 'https://www.youtube.com/c/Netdata/'
+						},
+					]
+				},
+				
 				{
 					to: 'https://app.netdata.cloud/spaces/netdata-demo?utm_source=learn&utm_content=top_navigation_demo',
 					label: 'Live Demo',
 					position: 'left',
+					// style: {color : '#00ab44'},
+					className: 'custom_text',
+					style: {'font-weight': '500'}
+				},
+				{
+					to: 'https://app.netdata.cloud/',
+					label: 'Login',
+					position: 'right',
+					className: 'button custom_button_grey',
+					style: {'font-weight': '500'}
 				},
 				{
 					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
-					label: 'Sign In',
+					label: 'Sign Up',
 					position: 'right',
+					className: 'button custom_button',
+					style: {'font-weight': '500'}
+
 				},
 				{
 					href: 'https://github.com/netdata/netdata',
@@ -73,7 +160,7 @@ module.exports = {
 			],
 		},
 		footer: {
-			style: 'dark',
+			
 			copyright: `Copyright © ${new Date().getFullYear()} Netdata, Inc.`,
 		},
 	},
