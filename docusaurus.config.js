@@ -151,12 +151,6 @@ module.exports = {
 					style: {'font-weight': '500'}
 
 				},
-				{
-					href: 'https://github.com/netdata/netdata',
-					position: 'right',
-					className: 'header-github-link',
-					'aria-label': 'GitHub repository',
-				},
 			],
 		},
 		footer: {
