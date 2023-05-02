@@ -6,8 +6,6 @@ learn_rel_path: "Getting started/Manage and configure"
 description: "The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more."
 sidebar_position: "8240"
 ---
-
-
 # Netdata Agent CLI
 
 The `netdatacli` executable provides a simple way to control the Netdata agent's operation. 
@@ -39,6 +37,8 @@ ping
     Return with 'pong' if agent is alive.
 aclk-state [json]
     Returns current state of ACLK and Cloud connection. (optionally in json)
+dumpconfig
+    Returns the current netdata.conf on stdout.
 ```
 
 See also the Netdata daemon [command line options](/docs/getting-started/manage-and-configure/netdata-daemon#command-line-options).
