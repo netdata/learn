@@ -141,14 +141,14 @@ module.exports = {
 					label: 'Login',
 					position: 'right',
 					className: 'button custom_button_grey',
-					style: {'font-weight': '500'}
+					style: {'font-weight': '500', 'margin-bottom': 'auto'}
 				},
 				{
 					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
 					label: 'Sign Up',
 					position: 'right',
 					className: 'button custom_button',
-					style: {'font-weight': '500'}
+					style: {'font-weight': '500', 'margin-bottom': 'auto'}
 
 				},
 			],

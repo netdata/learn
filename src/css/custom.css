@@ -11,6 +11,39 @@
 	background-color: #181c20;
 }
 
+@media screen and (max-width: 996px) {
+	.navbar-sidebar{
+		visibility: visible;
+	}
+
+	.navbar__logo{
+		width: 100px;
+	}
+	.navbar-item{
+		visibility: hidden;
+	};
+	.navbar__logo{
+		width: 10px;
+	}
+	.navbar__item {
+		visibility: hidden
+	}
+
+	.navbar__link{
+		visibility: hidden
+	}
+	/* @searchBox_node_modules-@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module{
+		visibility: visible;
+	} */
+
+	/* .navbar__items--right {
+		visibility: hidden;
+	} */
+
+
+
+}
+
 .dropdown__menu {
 	background-color: #181c20;
 }
