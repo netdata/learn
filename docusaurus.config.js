@@ -23,7 +23,7 @@ module.exports = {
 		navbar: {
 			title: '',
 			logo: {
-				alt: 'Netdata Learn logo',
+				alt: 'Netdata Logo',
 				src: 'img/logo-letter-green-white.svg',
 				height: 145
 			},
