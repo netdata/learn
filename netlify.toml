@@ -582,10 +582,6 @@
   to="/docs/data-collection/monitor-anything/web-servers/lighttpd"
 
 [[redirects]]
-  from="/docs/agent/collectors/go.d.plugin/modules/lighttpd2"
-  to="/docs/data-collection/monitor-anything/web-servers/lighttpd2"
-
-[[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/logind"
   to="/docs/data-collection/monitor-anything/system-metrics/logind-go.d.plugin-recommended"
 
@@ -2272,10 +2268,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/LiteSpeed"
   to="/docs/data-collection/monitor-anything/web-servers/litespeed"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd2"
-  to="/docs/data-collection/monitor-anything/web-servers/lighttpd2"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd"
