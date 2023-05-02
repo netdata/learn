@@ -75,16 +75,12 @@
 		visibility: visible;
 	}
 
-	.navbar__logo {
-		width: 100px;
-	}
-
 	.navbar-item {
 		visibility: hidden;
 	}
 
 	.navbar__logo {
-		width: 10px;
+		width: 100px;
 	}
 
 	.navbar__item {
