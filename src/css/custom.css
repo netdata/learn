@@ -7,13 +7,8 @@
 
 /* custom Netdata overrides */
 
- :root {
-	--ifm-navbar-height: auto;
-}
-
 .navbar {
 	background-color: #181c20;
-
 }
 
 .dropdown__menu {
