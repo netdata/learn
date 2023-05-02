@@ -11,39 +11,6 @@
 	background-color: #181c20;
 }
 
-@media screen and (max-width: 996px) {
-	.navbar-sidebar{
-		visibility: visible;
-	}
-
-	.navbar__logo{
-		width: 100px;
-	}
-	.navbar-item{
-		visibility: hidden;
-	};
-	.navbar__logo{
-		width: 10px;
-	}
-	.navbar__item {
-		visibility: hidden
-	}
-
-	.navbar__link{
-		visibility: hidden
-	}
-	/* @searchBox_node_modules-@docusaurus-theme-classic-lib-theme-Navbar-Search-styles-module{
-		visibility: visible;
-	} */
-
-	/* .navbar__items--right {
-		visibility: hidden;
-	} */
-
-
-
-}
-
 .dropdown__menu {
 	background-color: #181c20;
 }
@@ -59,6 +26,7 @@
 	display: inline-block;
 	font-size: 16px;
 	margin: 4px 2px;
+	margin-bottom: auto
 }
 
 .custom_button:hover {
@@ -76,6 +44,7 @@
 	display: inline-block;
 	font-size: 16px;
 	margin: 4px 2px;
+	margin-bottom: auto
 }
 
 .custom_button_grey:hover {
@@ -88,9 +57,49 @@
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 16px;
+	/* font-size: 16px; */
 }
 
+@media screen and (max-width: 1440px) {
+	.navbar__inner {
+		display: block;
+	}
+
+	:root {
+		--ifm-navbar-height: 100px
+	}
+}
+
+@media screen and (max-width: 996px) {
+	.navbar-sidebar {
+		visibility: visible;
+	}
+
+	.navbar-item {
+		visibility: hidden;
+	}
+
+	.navbar__logo {
+		width: 100px;
+	}
+
+	.navbar__item {
+		visibility: hidden
+	}
+
+	.navbar__link {
+		visibility: hidden
+	}
+
+	.navbar__inner {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.navbar--fixed-top {
+		height: unset
+	}
+}
 /*
  * Tailwind
 */
