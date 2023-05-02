@@ -13,6 +13,7 @@
   height: 100%;
   border-radius: 50%;
   transition: background var(--ifm-transition-fast);
+  margin-left: 5px;
 }
 
 .toggleButton:hover {
