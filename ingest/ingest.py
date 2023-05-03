@@ -765,7 +765,8 @@ if __name__ == '__main__':
                     "learnPath": str(f"docs/_archive/_{markdown}"),
                     "ingestedRepo": str(markdown.split("/", 2)[1])
                 }
-        else:
+        # Don't fail on empty markdown
+        elif not os.stat(markdown).st_size == 0:
             rest_files_dictionary[markdown] = {"tmpPath": markdown}
         del md_metadata
     # we update the list only with the files that are destined for Learn
