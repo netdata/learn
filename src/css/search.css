@@ -44,6 +44,15 @@ table.gsc-search-box .gsib_a {
   height: 100%;
   padding-right: 25px;
 }
+
+@media screen and (max-width: 450px) {
+  table.gsc-search-box .gsib_a {
+    width: 150px;
+    height: 100%;
+    padding-right: 25px;
+  }
+}
+
 table.gsc-search-box .gsib_b {
   padding: 0;
 }
