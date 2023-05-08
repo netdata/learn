@@ -16,7 +16,7 @@ export const News = [
 	{
 		title: <>Netdata release 1.39.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.39.0',
-		date: 'Feb 22, 2023',
+		date: 'May 8, 2023',
 		type: 'Link',
 		description: (
 			<>
