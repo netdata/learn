@@ -1,8 +1,8 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.38.0';
+export const ReleaseVersion = '1.39.0';
 
-export const ReleaseDate = 'February 6, 2023';
+export const ReleaseDate = 'May 8, 2023';
 
 export const ReleaseNotes = [
 	'DBENGINE v2',
@@ -14,15 +14,15 @@ export const ReleaseNotes = [
 
 
 
-export const News = [
+export const News = [	
 	{
-		title: <>Netdata Paid Subscriptions Released</>,
-		href: 'https://blog.netdata.cloud/introducing-netdata-paid-subscriptions/',
+		title: <>Netdata release 1.39.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.39.0',
 		date: 'Feb 22, 2023',
 		type: 'Link',
 		description: (
 			<>
-				Additional features and capabilities for users and businesses that need tighter and customizable integration of the monitoring solution to their processes.
+				Explore the new capabitilies of your powerful Agent! 
 			</>
 		),
 	},
