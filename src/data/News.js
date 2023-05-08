@@ -5,11 +5,9 @@ export const ReleaseVersion = '1.39.0';
 export const ReleaseDate = 'May 8, 2023';
 
 export const ReleaseNotes = [
-	'DBENGINE v2',
-	'Runtime functions',
-	'Events feed',
-	'Cloud alert notificcations',
-	'Improved RBAC',
+	'Netdata Charts v3.0',
+	'Windows support',
+	'Virtual nodes and custom labels',
 ];
 
 
