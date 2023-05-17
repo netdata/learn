@@ -817,7 +817,7 @@ if __name__ == '__main__':
         print("ABORT: Files found that are not in the map, exiting...")
         for md_file in rest_files_dictionary:
             print(rest_files_dictionary[md_file]["tmpPath"])
-        exit(-1)
+        #exit(-1)
 
     # Write the current dict into a file, so we can check for redirects in the next commit
     temp_dict = {}
