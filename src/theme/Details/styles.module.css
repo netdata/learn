@@ -4,7 +4,7 @@ summary {
 
 :root {
   --custom-background: #E8E8E8;
-  --custom-border: #D1D1D1;  
+  --custom-border: #D1D1D1;
 }
 
 html[data-theme='dark']:root {
