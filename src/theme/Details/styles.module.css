@@ -2,60 +2,64 @@ summary {
   font-weight: 600;
 }
 
+:root {
+  --custom-background: #E8E8E8;
+  --custom-border: #D1D1D1;  
+}
+
+html[data-theme='dark']:root {
+  --custom-background: #49545f;
+  --custom-border: #2b303b;
+}
+
+/* 
 html[data-theme=dark] {
   .details_lb9f:not([open]) {
     --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
-    /* margin: 0 0 var(--ifm-spacing-vertical); */
-    border: 1px solid #2b303b;
-    background-color: #49545f;
+    border: 1px solid ;
+    background-color: ;
   }
   .details_lb9f[open] {
     --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
-    /* margin: 0 0 var(--ifm-spacing-vertical); */
     border: 1px solid #2b303b;
     background-color: var(--ifm-background-color);
   }
 
   .details:not([open]) {
     --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
-    /* margin: 0 0 var(--ifm-spacing-vertical); */
     border: 1px solid #2b303b;
     background-color: #49545f;
   }
   .details[open] {
     --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
-    /* margin: 0 0 var(--ifm-spacing-vertical); */
     border: 1px solid #2b303b;
     background-color: var(--ifm-background-color);
   }
 
 }
-
+*/
 
 .details_lb9f:not([open]) {
   --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
-  /* margin: 0 0 var(--ifm-spacing-vertical); */
-  border: 1px solid #D1D1D1;
-  background-color: #E8E8E8;
+  border: 1px solid var(--custom-border);
+  background-color: var(--custom-background);
 }
 
 .details_lb9f[open] {
   --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
-  /* margin: 0 0 var(--ifm-spacing-vertical); */
-  border: 1px solid #D1D1D1;
+  border: 1px solid var(--custom-border);
   background-color: var(--ifm-background-color);
 }
 
+
 .details:not([open]) {
   --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
-  /* margin: 0 0 var(--ifm-spacing-vertical); */
-  border: 1px solid #D1D1D1;
-  background-color: #E8E8E8;
+  border: 1px solid var(--custom-border);
+  background-color: var(--custom-background);
 }
 
 .details[open] {
   --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
-  /* margin: 0 0 var(--ifm-spacing-vertical); */
-  border: 1px solid #D1D1D1;
+  border: 1px solid var(--custom-border);
   background-color: var(--ifm-background-color);
 }
