@@ -43,12 +43,14 @@ html[data-theme=dark] {
   --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
   border: 1px solid var(--custom-border);
   background-color: var(--custom-background);
+  margin-bottom: .5rem;
 }
 
 .details_lb9f[open] {
   --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
   border: 1px solid var(--custom-border);
   background-color: var(--ifm-background-color);
+  margin-bottom: .5rem;
 }
 
 
@@ -56,10 +58,12 @@ html[data-theme=dark] {
   --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
   border: 1px solid var(--custom-border);
   background-color: var(--custom-background);
+  margin-bottom: .5rem;
 }
 
 .details[open] {
   --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
   border: 1px solid var(--custom-border);
   background-color: var(--ifm-background-color);
+  margin-bottom: .5rem;
 }
