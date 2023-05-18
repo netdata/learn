@@ -2,7 +2,7 @@ summary {
   font-weight: 600;
 }
 
-html[data-theme='dark'] {
+html[data-theme=dark] {
   .details_lb9f:not([open]) {
     --docusaurus-details-transition: transform var(--ifm-transition-fast) ease;
     /* margin: 0 0 var(--ifm-spacing-vertical); */
