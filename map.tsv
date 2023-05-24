@@ -1,5 +1,5 @@
 custom_edit_url	sidebar_label	learn_status	learn_rel_path	description
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-architecture.md	Netdata Architecture	Published	Netdata Architecture	
+https://github.com/netdata/netdata/edit/master/docs/getting-started/introduction.md	Netdata Architecture	Published	Netdata Architecture	
 https://github.com/netdata/netdata/edit/master/docs/store/distributed-data-architecture.md	Distributed data architecture	Published	Netdata Architecture	
 https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	The Role of Netdata Cloud	Published	Netdata Architecture	
 https://github.com/netdata/netdata/edit/master/docs/netdata-security.md	Security and privacy design	Published	Netdata Architecture	Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
@@ -400,9 +400,9 @@ https://github.com/netdata/netdata/edit/master/packaging/installer/methods/metho
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freenas.md	FreeNAS	Unpublished	Install the Netdata Agent	
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/systems.md	Install on specific environments	Unpublished	Install the Netdata Agent	Netdata can be installed as a DEB/RPM package, a static binary, a docker container or from source
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/installation-overview.md	Installation	Unpublished	Install the Netdata Agent	
-https://github.com/netdata/netdata/edit/master/docs/getting-started/introduction.md	Getting started	Unpublished	Getting started	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/deployment-strategies.md	Deployment in production	Unpublished	Deployment in production	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/visualizations-overview.md	Visualizations	Unpublished	Miscellaneous	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-architecture.md	Netdata Architecture overview	Unpublished	Netdata Architecture	
 https://github.com/netdata/go.d.plugin/edit/master/modules/dnsmasq/dev.md		Unpublished		
 https://github.com/netdata/go.d.plugin/edit/master/modules/powerdns/dev.md		Unpublished		
 https://github.com/netdata/go.d.plugin/edit/master/modules/nginxvts/dev.md		Unpublished		
