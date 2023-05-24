@@ -211,10 +211,10 @@ def create_mdx_path_from_metadata(metadata):
                           .replace("(", " ")
                           .replace("`", " ")).split())
 
-    if "Monitor Anything" in metadata['learn_rel_path']\
-            and metadata['learn_rel_path'].split("/")[-1] != "Monitor Anything":
-        last_folder = metadata['learn_rel_path'].split("Monitor Anything")[1]
-        last_folder = "monitor-anything" + last_folder.title()
+    if "Data collection" in metadata['learn_rel_path']\
+            and metadata['learn_rel_path'].split("/")[-1] != "Data collection":
+        last_folder = metadata['learn_rel_path'].split("Data collection")[1]
+        last_folder = "data-collection" + last_folder.title()
         # print(lastFolder)
         # If the file is inside the monitor-anything category,
         # meaning that it will try to render the sidebar category label to whatever the folder has,
@@ -222,7 +222,7 @@ def create_mdx_path_from_metadata(metadata):
         # We use the slug to avoid having %20 (replacing spaces) in the link of the file.
         return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
                                       metadata["learn_rel_path"]
-                                      .split("Monitor Anything")[0].lower().replace(" ", "-") + last_folder,
+                                      .split("Data collection")[0].lower().replace(" ", "-") + last_folder,
                                       final_file.replace(" ", "-")).replace("//", "/"),
                 "/{}/{}".format(metadata["learn_rel_path"],
                                 final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
@@ -724,6 +724,7 @@ if __name__ == '__main__':
 
     mapDict.set_index('custom_edit_url').T.to_dict('dict')
 
+  
     mapDict['sidebar_position'] = automate_sidebar_position(mapDict)
     mapDict['sidebar_position'] = mapDict['sidebar_position'].astype(int)
 
