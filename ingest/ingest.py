@@ -214,8 +214,9 @@ def create_mdx_path_from_metadata(metadata):
     if "Data collection" in metadata['learn_rel_path']\
             and metadata['learn_rel_path'].split("/")[-1] != "Data collection":
         last_folder = metadata['learn_rel_path'].split("Data collection")[1]
-        last_folder = "data-collection" + last_folder.title()
-        # print(lastFolder)
+        last_folder = "data-collection" + last_folder
+        # print(last_folder)
+        # exit()
         # If the file is inside the monitor-anything category,
         # meaning that it will try to render the sidebar category label to whatever the folder has,
         # return an array of two things; [the final path, the proper slug].

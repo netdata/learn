@@ -78,8 +78,7 @@ https://github.com/netdata/netdata/edit/master/collectors/apps.plugin/README.md	
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/go_expvar/README.md	Go applications	Published	Data collection/APM	
 https://github.com/netdata/go.d.plugin/edit/master/modules/springboot2/README.md	Java Spring Boot 2 applications	Published	Data collection/APM	Monitor the health and performance of Spring Boot 2-compatible apps with zero configuration, per-second metric granularity, and interactive visualizations.
 https://github.com/netdata/go.d.plugin/edit/master/modules/phpdaemon/README.md	PHP Applications	Published	Data collection/APM	Monitor the health and performance of phpDaemon workers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/proc.plugin/README.md	OS provided metrics	Published	Data collection/APM	
-https://github.com/netdata/netdata/edit/master/collectors/cups.plugin/README.md	cups.plugin	Published	Data collection/APM	
+https://github.com/netdata/netdata/edit/master/collectors/proc.plugin/README.md	OS provided metrics	Published	Data collection/Linux Systems	
 https://github.com/netdata/netdata/edit/master/collectors/slabinfo.plugin/README.md	Slabinfo	Published	Data collection/Linux Systems/Other	
 https://github.com/netdata/netdata/edit/master/collectors/perf.plugin/README.md	Perf	Published	Data collection/Linux Systems/Other	
 https://github.com/netdata/netdata/edit/master/collectors/ebpf.plugin/README.md	eBPF for Systems Monitoring	Published	Data collection/Linux Systems	Use Netdata's extended Berkeley Packet Filter (eBPF) collector to monitor kernel-level metrics about yourcomplex applications with per-second granularity.
@@ -212,6 +211,7 @@ https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/sensor
 https://github.com/netdata/go.d.plugin/edit/master/modules/nvidia_smi/README.md	NVIDIA SMI (go version)	Unpublished	Data collection/Hardware Devices and Sensors	Monitors performance metrics using the nvidia-smi CLI tool.
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/nvidia_smi/README.md	NVIDIA SMI	Published	Data collection/Hardware Devices and Sensors	
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/w1sensor/README.md	Wire sensors	Published	Data collection/Hardware Devices and Sensors	
+https://github.com/netdata/netdata/edit/master/collectors/cups.plugin/README.md	cups.plugin	Published	Data collection/Hardware Devices and Sensors	
 https://github.com/netdata/go.d.plugin/edit/master/modules/dockerhub/README.md	Docker Hub	Published	Data collection/Online Services	Monitor the health and performance of Docker Hub repositories with zero configuration, per-second metric granularity, and interactive visualizations.
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/changefinder/README.md	Change Finder	Published	Data collection/Netdata Specific	Use ML-driven change point detection to narrow your focus and shorten root cause analysis.
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/zscores/README.md	ZScores	Published	Data collection/Netdata Specific	Use statistical anomaly detection to narrow your focus and shorten root cause analysis.
