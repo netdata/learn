@@ -1,0 +1,688 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/collectors/COLLECTORS.md"
+sidebar_label: "Monitor Anything"
+learn_status: "Published"
+learn_rel_path: "Data collection"
+description: "Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box."
+sidebar_position: "514000"
+---
+# Monitor anything with Netdata
+
+Netdata uses collectors to help you gather metrics from your favorite applications and services and view them in
+real-time, interactive charts. The following list includes collectors for both external services/applications and
+internal system metrics.
+
+Learn more
+about [how collectors work](/docs/data-collection), and
+then learn how to [enable or
+configure](/docs/data-collection/collectors-configuration#enable-and-disable-a-specific-collection-module) any of the below collectors using the same process.
+
+Some collectors have both Go and Python versions as we continue our effort to migrate all collectors to Go. In these
+cases, _Netdata always prioritizes the Go version_, and we highly recommend you use the Go versions for the best
+experience.
+
+If you want to use a Python version of a collector, you need to
+explicitly [disable the Go version](/docs/data-collection/collectors-configuration#enable-and-disable-a-specific-collection-module),
+and enable the Python version. Netdata then skips the Go version and attempts to load the Python version and its
+accompanying configuration file.
+
+## Add your application to Netdata
+
+If you don't see the app/service you'd like to monitor in this list:
+
+- If your application has a Prometheus endpoint, Netdata can monitor it! Look at our
+  [generic Prometheus collector](/docs/data-collection/apm/openmetrics-endpoints).
+
+- If your application is instrumented to expose [StatsD](https://blog.netdata.cloud/introduction-to-statsd/) metrics,
+  see our [generic StatsD collector](/docs/data-collection/apm/statsd).
+
+- If you have data in CSV, JSON, XML or other popular formats, you may be able to use our
+  [generic structured data (Pandas) collector](/docs/data-collection/generic-data-collection/structured-data-pandas),
+
+- Check out our [GitHub issues](https://github.com/netdata/netdata/issues). Use the search bar to look for previous
+  discussions about that collector—we may be looking for assistance from users such as yourself!
+
+- If you don't see the collector there, you can make
+  a [feature request](https://github.com/netdata/netdata/issues/new/choose) on GitHub.
+
+- If you have basic software development skills, you can add your own plugin
+  in [Go](/docs/contributing-to-netdata/external-plugins/go.d.plugin#how-to-develop-a-collector)
+  or [Python](/docs/contributing-to-netdata/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python)
+
+## Available Collectors
+
+- [Monitor anything with Netdata](#monitor-anything-with-netdata)
+  - [Add your application to Netdata](#add-your-application-to-netdata)
+  - [Available Collectors](#available-collectors)
+  - [Service and application collectors](#service-and-application-collectors)
+    - [Generic](#generic)
+    - [APM (application performance monitoring)](#apm-application-performance-monitoring)
+    - [Containers and VMs](#containers-and-vms)
+    - [Data stores](#data-stores)
+    - [Distributed computing](#distributed-computing)
+    - [Email](#email)
+    - [Kubernetes](#kubernetes)
+    - [Logs](#logs)
+    - [Messaging](#messaging)
+    - [Network](#network)
+    - [Provisioning](#provisioning)
+    - [Remote devices](#remote-devices)
+    - [Search](#search)
+    - [Storage](#storage)
+    - [Web](#web)
+  - [System collectors](#system-collectors)
+    - [Applications](#applications)
+    - [Disks and filesystems](#disks-and-filesystems)
+    - [eBPF](#ebpf)
+    - [Hardware](#hardware)
+    - [Memory](#memory)
+    - [Networks](#networks)
+    - [Operating systems](#operating-systems)
+    - [Processes](#processes)
+    - [Resources](#resources)
+    - [Users](#users)
+  - [Netdata collectors](#netdata-collectors)
+  - [Orchestrators](#orchestrators)
+  - [Third-party collectors](#third-party-collectors)
+  - [Etc](#etc)
+
+## Service and application collectors
+
+The Netdata Agent auto-detects and collects metrics from all of the services and applications below. You can also
+configure any of these collectors according to your setup and infrastructure.
+
+### Generic
+
+- [Prometheus endpoints](/docs/data-collection/apm/openmetrics-endpoints): Gathers
+  metrics from any number of Prometheus endpoints, with support to autodetect more than 600 services and applications.
+- [Pandas](/docs/data-collection/generic-data-collection/structured-data-pandas): A Python
+  collector that gathers
+  metrics from a [pandas](https://pandas.pydata.org/) dataframe. Pandas is a high level data processing library in
+  Python that can read various formats of data from local files or web endpoints. Custom processing and transformation
+  logic can also be expressed as part of the collector configuration.
+
+### APM (application performance monitoring)
+
+- [Go applications](/docs/data-collection/apm/go-applications):
+  Monitor any Go application that exposes its
+  metrics with the  `expvar` package from the Go standard library.
+- [Java Spring Boot 2 applications](/docs/data-collection/apm/java-spring-boot-2-applications):
+  Monitor running Java Spring Boot 2 applications that expose their metrics with the use of the Spring Boot Actuator.
+- [statsd](/docs/data-collection/apm/statsd): Implement a high
+  performance `statsd` server for Netdata.
+- [phpDaemon](/docs/data-collection/apm/php-applications): Collect worker
+  statistics (total, active, idle), and uptime for web and network applications.
+- [uWSGI](/docs/data-collection/web-servers-and-web-proxies/uwsgi): Monitor
+  performance metrics exposed by the uWSGI Stats
+  Server.
+
+### Containers and VMs
+
+- [Docker containers](/docs/data-collection/containers-and-vms/cgroups): Monitor the
+  health and performance of individual Docker containers using the cgroups collector plugin.
+- [DockerD](/docs/data-collection/containers-and-vms/docker): Collect container health
+  statistics.
+- [Docker Engine](/docs/data-collection/containers-and-vms/docker-engine): Collect
+  runtime statistics from the `docker` daemon using the `metrics-address` feature.
+- [Docker Hub](/docs/data-collection/online-services/docker-hub): Collect statistics
+  about Docker repositories, such as pulls, starts, status, time since last update, and more.
+- [Libvirt](/docs/data-collection/containers-and-vms/cgroups): Monitor the health and
+  performance of individual Libvirt containers
+  using the cgroups collector plugin.
+- [LXC](/docs/data-collection/containers-and-vms/cgroups): Monitor the health and
+  performance of individual LXC containers using
+  the cgroups collector plugin.
+- [LXD](/docs/data-collection/containers-and-vms/cgroups): Monitor the health and
+  performance of individual LXD containers using
+  the cgroups collector plugin.
+- [systemd-nspawn](/docs/data-collection/containers-and-vms/cgroups): Monitor the
+  health and performance of individual
+  systemd-nspawn containers using the cgroups collector plugin.
+- [vCenter Server Appliance](/docs/data-collection/containers-and-vms/vmware-center-server-appliance): Monitor
+  appliance system, components, and software update health statuses via the Health API.
+- [vSphere](/docs/data-collection/containers-and-vms/vmware-center-servers): Collect host and virtual
+  machine performance metrics.
+- [Xen/XCP-ng](/docs/data-collection/containers-and-vms/xen): Collect XenServer
+  and XCP-ng metrics using `libxenstat`.
+
+### Data stores
+
+- [CockroachDB](/docs/data-collection/database-servers/cockroachdb): Monitor various
+  database components using `_status/vars` endpoint.
+- [Consul](/docs/data-collection/service-discovery-/-registry/consul): Capture service and unbound
+  checks status (passing, warning, critical, maintenance).
+- [Couchbase](/docs/data-collection/database-servers/couchbase): Gather per-bucket
+  metrics from any number of instances of the distributed JSON document database.
+- [CouchDB](/docs/data-collection/database-servers/couchdb): Monitor database health and
+  performance metrics
+  (reads/writes, HTTP traffic, replication status, etc).
+- [MongoDB](/docs/data-collection/database-servers/mongodb): Collect server, database,
+  replication and sharding performance and health metrics.
+- [MySQL](/docs/data-collection/database-servers/mysql-and-mariadb): Collect database global,
+  replication and per user statistics.
+- [OracleDB](/docs/data-collection/database-servers/oracledb): Monitor
+  database performance and health metrics.
+- [Pika](/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/pika): Gather metric, such as clients,
+  memory usage, queries, and more from the Redis interface-compatible database.
+- [Postgres](/docs/data-collection/database-servers/postgressql): Collect database health
+  and performance metrics.
+- [ProxySQL](/docs/data-collection/database-servers/proxysql): Monitor database backend
+  and frontend performance metrics.
+- [Redis](/docs/data-collection/database-servers/redis): Monitor status from any
+  number of database instances by reading the server's response to the `INFO ALL` command.
+- [RethinkDB](/docs/data-collection/database-servers/rethinkdb): Collect
+  database server and cluster statistics.
+- [Riak KV](/docs/data-collection/database-servers/riak-kv): Collect
+  database stats from the `/stats` endpoint.
+- [Zookeeper](/docs/data-collection/service-discovery-/-registry/zookeeper): Monitor application
+  health metrics reading the server's response to the `mntr` command.
+- [Memcached](/docs/data-collection/database-servers/memcached): Collect
+  memory-caching system performance metrics.
+
+### Distributed computing
+
+- [BOINC](/docs/data-collection/distributed-computing-systems/boinc): Monitor the total
+  number of tasks, open tasks, and task
+  states for the distributed computing client.
+- [Gearman](/docs/data-collection/distributed-computing-systems/gearman): Collect
+  application summary (queued, running) and per-job
+  worker statistics (queued, idle, running).
+
+### Email
+
+- [Dovecot](/docs/data-collection/mail-servers/dovecot): Collect email
+  server performance metrics by reading the
+  server's response to the `EXPORT global` command.
+- [EXIM](/docs/data-collection/mail-servers/exim): Uses the `exim` tool
+  to monitor the queue length of a
+  mail/message transfer agent (MTA).
+- [Postfix](/docs/data-collection/mail-servers/postfix): Uses
+  the `postqueue` tool to monitor the queue length of a
+  mail/message transfer agent (MTA).
+
+### Kubernetes
+
+- [Kubelet](/docs/data-collection/kubernetes/kubelet): Monitor one or more
+  instances of the Kubelet agent and collects metrics on number of pods/containers running, volume of Docker
+  operations, and more.
+- [kube-proxy](/docs/data-collection/kubernetes/kube-proxy): Collect
+  metrics, such as syncing proxy rules and REST client requests, from one or more instances of `kube-proxy`.
+- [Service discovery](/docs/data-collection/service-discovery): Find what services are running on a
+  cluster's pods, converts that into configuration files, and exports them so they can be monitored by Netdata.
+
+### Logs
+
+- [Fluentd](/docs/data-collection/logs-servers/fluentd): Gather application
+  plugins metrics from an endpoint provided by `in_monitor plugin`.
+- [Logstash](/docs/data-collection/logs-servers/logstash): Monitor JVM threads,
+  memory usage, garbage collection statistics, and more.
+- [OpenVPN status logs](/docs/data-collection/vpns/openvpn-status-log): Parse
+  server log files and provide summary (client, traffic) metrics.
+- [Squid web server logs](/docs/data-collection/web-servers-and-web-proxies/web-logs/squid): Tail Squid
+  access logs to return the volume of requests, types of requests, bandwidth, and much more.
+- [Web server logs (Go version for Apache, NGINX)](/docs/data-collection/web-servers-and-web-proxies/web-logs/apache-nginx-microsoft-iis): Tail access logs and provide
+  very detailed web server performance statistics. This module is able to parse 200k+ rows in less than half a second.
+- [Web server logs (Apache, NGINX)](/docs/data-collection/web-servers-and-web-proxies/web-logs/apache-nginx-microsoft-iis): Tail
+  access log
+  file and collect web server/caching proxy metrics.
+
+### Messaging
+
+- [ActiveMQ](/docs/data-collection/message-brokers/activemq): Collect message broker
+  queues and topics statistics using the ActiveMQ Console API.
+- [Beanstalk](/docs/data-collection/message-brokers/beanstalk): Collect
+  server and tube-level statistics, such as CPU
+  usage, jobs rates, commands, and more.
+- [Pulsar](/docs/data-collection/message-brokers/pulsar): Collect summary,
+  namespaces, and topics performance statistics.
+- [RabbitMQ](/docs/data-collection/message-brokers/rabbitmq): Collect message
+  broker overview, system and per virtual host metrics.
+- [VerneMQ](/docs/data-collection/message-brokers/vernemq): Monitor MQTT broker
+  health and performance metrics. It collects all available info for both MQTTv3 and v5 communication
+
+### Network
+
+- [Bind 9](/docs/data-collection/dns-and-dhcp-servers/bind9): Collect nameserver summary
+  performance statistics via a web interface (`statistics-channels` feature).
+- [Chrony](/docs/data-collection/system-clock-and-ntp/chrony): Monitor the precision and
+  statistics of a local `chronyd` server.
+- [CoreDNS](/docs/data-collection/dns-and-dhcp-servers/coredns): Measure DNS query round
+  trip time.
+- [Dnsmasq](/docs/data-collection/dns-and-dhcp-servers/dnsmasq-dhcp): Automatically
+  detects all configured `Dnsmasq` DHCP ranges and Monitor their utilization.
+- [DNSdist](/docs/data-collection/dns-and-dhcp-servers/dnsdist): Collect
+  load-balancer performance and health metrics.
+- [Dnsmasq DNS Forwarder](/docs/data-collection/dns-and-dhcp-servers/dnsmasq-dns-forwarder): Gather
+  queries, entries, operations, and events for the lightweight DNS forwarder.
+- [DNS Query Time](/docs/data-collection/synthetic-checks/dns-queries-check): Monitor the round
+  trip time for DNS queries in milliseconds.
+- [Freeradius](/docs/data-collection/access-control,-authentication-and-authorization/freeradius): Collect
+  server authentication and accounting statistics from the `status server`.
+- [Libreswan](/docs/data-collection/vpns/libreswan-ipsec): Collect
+  bytes-in, bytes-out, and uptime metrics.
+- [Icecast](/docs/data-collection/media-streaming-servers/icecast): Monitor the
+  number of listeners for active sources.
+- [ISC Bind (RDNC)](/docs/data-collection/dns-and-dhcp-servers/isc-bind):
+  Collect nameserver summary performance
+  statistics using the `rndc` tool.
+- [ISC DHCP](/docs/data-collection/dns-and-dhcp-servers/isc-dhcpd): Reads a
+  `dhcpd.leases` file and collects metrics on total active leases, pool active leases, and pool utilization.
+- [OpenLDAP](/docs/data-collection/access-control,-authentication-and-authorization/openldap): Provides
+  statistics information from the OpenLDAP
+  (`slapd`) server.
+- [NSD](/docs/data-collection/dns-and-dhcp-servers/nsd): Monitor nameserver
+  performance metrics using the `nsd-control`
+  tool.
+- [NTP daemon](/docs/data-collection/system-clock-and-ntp/ntp-daemon): Monitor the system variables
+  of the local `ntpd` daemon (optionally including variables of the polled peers) using the NTP Control Message Protocol
+  via a UDP socket.
+- [OpenSIPS](/docs/data-collection/telephony-servers/opensips): Collect
+  server health and performance metrics using the
+  `opensipsctl` tool.
+- [OpenVPN](/docs/data-collection/vpns/openvpn): Gather server summary
+  (client, traffic) and per user metrics (traffic, connection time) stats using `management-interface`.
+- [Pi-hole](/docs/data-collection/dns-and-dhcp-servers/pi-hole): Monitor basic (DNS
+  queries, clients, blocklist) and extended (top clients, top permitted, and blocked domains) statistics using the PHP
+  API.
+- [PowerDNS Authoritative Server](/docs/data-collection/dns-and-dhcp-servers/powerdns-authoritative-server):
+  Monitor one or more instances of the nameserver software to collect questions, events, and latency metrics.
+- [PowerDNS Recursor](/docs/data-collection/dns-and-dhcp-servers/powerdns-authoritative-server#recursor):
+  Gather incoming/outgoing questions, drops, timeouts, and cache usage from any number of DNS recursor instances.
+- [RetroShare](/docs/data-collection/p2p/retroshare): Monitor
+  application bandwidth, peers, and DHT
+  metrics.
+- [Tor](/docs/data-collection/vpns/tor): Capture traffic usage
+  statistics using the Tor control port.
+- [Unbound](/docs/data-collection/dns-and-dhcp-servers/unbound): Collect DNS resolver
+  summary and extended system and per thread metrics via the `remote-control` interface.
+
+### Provisioning
+
+- [Puppet](/docs/data-collection/provisioning-systems/puppet): Monitor the
+  status of Puppet Server and Puppet DB.
+
+### Remote devices
+
+- [AM2320](/docs/data-collection/hardware-devices-and-sensors/am2320): Monitor sensor
+  temperature and humidity.
+- [Access point](/docs/data-collection/networking-stack-and-network-interfaces/linux-access-points): Monitor
+  client, traffic and signal metrics using the `aw`
+  tool.
+- [APC UPS](/docs/data-collection/ups/apc-ups): Capture status
+  information using the `apcaccess` tool.
+- [Energi Core](/docs/data-collection/blockchain-servers/energi-core-wallet): Monitor
+  blockchain indexes, memory usage, network usage, and transactions of wallet instances.
+- [UPS/PDU](/docs/data-collection/ups/nut): Read the status of
+  UPS/PDU devices using the `upsc` tool.
+- [SNMP devices](/docs/data-collection/snmp-and-networked-devices/snmp): Gather data using the SNMP
+  protocol.
+- [1-Wire sensors](/docs/data-collection/hardware-devices-and-sensors/wire-sensors):
+  Monitor sensor temperature.
+
+### Search
+
+- [Elasticsearch](/docs/data-collection/search-engines/elasticsearch): Collect
+  dozens of metrics on search engine performance from local nodes and local indices. Includes cluster health and
+  statistics.
+- [Solr](/docs/data-collection/search-engines/solr): Collect application search
+  requests, search errors, update requests, and update errors statistics.
+
+### Storage
+
+- [Ceph](/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/ceph): Monitor the Ceph
+  cluster usage and server data consumption.
+- [HDFS](/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/hdfs): Monitor health and performance
+  metrics for filesystem datanodes and namenodes.
+- [IPFS](/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/ipfs): Collect file system
+  bandwidth, peers, and repo metrics.
+- [Scaleio](/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/scaleio): Monitor storage system,
+  storage pools, and SDCS health and performance metrics via VxFlex OS Gateway API.
+- [Samba](/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/smbfs): Collect file
+  sharing metrics using the `smbstatus` tool.
+
+### Web
+
+- [Apache](/docs/data-collection/web-servers-and-web-proxies/apache): Collect Apache web
+  server performance metrics via the `server-status?auto` endpoint.
+- [HAProxy](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/haproxy/README.md): Collect
+  frontend, backend, and health metrics.
+- [HTTP endpoints](/docs/data-collection/synthetic-checks/http-endpoints-check): Monitor
+  any HTTP endpoint's availability and response time.
+- [Lighttpd](/docs/data-collection/web-servers-and-web-proxies/lighttpd): Collect web server
+  performance metrics using the `server-status?auto` endpoint.
+- [Litespeed](/docs/data-collection/web-servers-and-web-proxies/litespeed): Collect
+  web server data (network, connection,
+  requests, cache) by reading `.rtreport*` files.
+- [Nginx](/docs/data-collection/web-servers-and-web-proxies/nginx): Monitor web server
+  status information by gathering metrics via `ngx_http_stub_status_module`.
+- [Nginx VTS](/docs/data-collection/web-servers-and-web-proxies/nginx-vts): Gathers metrics from
+  any Nginx deployment with the _virtual host traffic status module_ enabled, including metrics on uptime, memory
+  usage, and cache, and more.
+- [PHP-FPM](/docs/data-collection/web-servers-and-web-proxies/php-fpm): Collect application
+  summary and processes health metrics by scraping the status page (`/status?full`).
+- [TCP endpoints](/docs/data-collection/synthetic-checks/tcp-endpoints-check): Monitor any
+  TCP endpoint's availability and response time.
+- [Spigot Minecraft servers](/docs/data-collection/gaming/spigotmc):
+  Monitor average ticket rate and number
+  of users.
+- [Squid](/docs/data-collection/web-servers-and-web-proxies/squid): Monitor client and
+  server bandwidth/requests by gathering
+  data from the Cache Manager component.
+- [Tengine](/docs/data-collection/web-servers-and-web-proxies/tengine): Monitor web server
+  statistics using information provided by `ngx_http_reqstat_module`.
+- [Tomcat](/docs/data-collection/web-servers-and-web-proxies/apache-tomcat): Collect web
+  server performance metrics from the Manager App
+  (`/manager/status?XML=true`).
+- [Traefik](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/traefik/README.md): Uses Traefik's
+  Health API to provide statistics.
+- [Varnish](/docs/data-collection/web-servers-and-web-proxies/varnish-cache): Provides HTTP
+  accelerator global, backends (VBE), and
+  disks (SMF) statistics using the `varnishstat` tool.
+- [x509 check](/docs/data-collection/synthetic-checks/x509-certificate-check): Monitor certificate
+  expiration time.
+- [Whois domain expiry](/docs/data-collection/synthetic-checks/whois-domain-expiry-check): Checks the
+  remaining time until a given domain is expired.
+
+## System collectors
+
+The Netdata Agent can collect these system- and hardware-level metrics using a variety of collectors, some of which
+(such as `proc.plugin`) collect multiple types of metrics simultaneously.
+
+### Applications
+
+- [Fail2ban](/docs/data-collection/access-control,-authentication-and-authorization/fail2ban): Parses
+  configuration files to detect all jails, then
+  uses log files to report ban rates and volume of banned IPs.
+- [Monit](/docs/data-collection/synthetic-checks/monit): Monitor statuses
+  of targets (service-checks) using the XML
+  stats interface.
+- [Windows](/docs/data-collection/windows-systems): Collect CPU, memory,
+  network, disk, OS, system, and log-in metrics scraping [windows_exporter](https://github.com/prometheus-community/windows_exporter).
+
+### Disks and filesystems
+
+- [BCACHE](/docs/data-collection/linux-systems/os-provided-metrics): Monitor BCACHE statistics
+  with the `proc.plugin` collector.
+- [Block devices](/docs/data-collection/linux-systems/os-provided-metrics): Gather metrics about
+  the health and performance of block
+  devices using the `proc.plugin` collector.
+- [Btrfs](/docs/data-collection/linux-systems/os-provided-metrics): Monitors Btrfs filesystems
+  with the `proc.plugin` collector.
+- [Device mapper](/docs/data-collection/linux-systems/os-provided-metrics): Gather metrics about
+  the Linux device mapper with the proc
+  collector.
+- [Disk space](/docs/data-collection/storage,-mount-points-and-filesystems/disks): Collect disk space
+  usage metrics on Linux mount points.
+- [Clock synchronization](/docs/data-collection/system-clock-and-ntp/linux-kernel): Collect the
+  system clock synchronization status on Linux.
+- [Files and directories](/docs/data-collection/storage,-mount-points-and-filesystems/files-and-directories): Gather
+  metrics about the existence, modification time, and size of files or directories.
+- [ioping.plugin](/docs/data-collection/synthetic-checks/disk-latency-with-check): Measure disk
+  read/write latency.
+- [NFS file servers and clients](/docs/data-collection/linux-systems/os-provided-metrics):
+  Gather operations, utilization, and space usage
+  using the `proc.plugin` collector.
+- [RAID arrays](/docs/data-collection/linux-systems/os-provided-metrics): Collect health, disk
+  status, operation status, and more with the `proc.plugin` collector.
+- [Veritas Volume Manager](/docs/data-collection/linux-systems/os-provided-metrics): Gather
+  metrics about the Veritas Volume Manager (VVM).
+- [ZFS](/docs/data-collection/linux-systems/os-provided-metrics): Monitor bandwidth and
+  utilization of ZFS disks/partitions using the proc
+  collector.
+
+### eBPF
+
+- [Files](/docs/data-collection/linux-systems/ebpf-for-systems-monitoring): Provides information about
+  how often a system calls kernel
+  functions related to file descriptors using the eBPF collector.
+- [Virtual file system (VFS)](/docs/data-collection/linux-systems/ebpf-for-systems-monitoring): Monitor
+  IO, errors, deleted objects, and
+  more for kernel virtual file systems (VFS) using the eBPF collector.
+- [Processes](/docs/data-collection/linux-systems/ebpf-for-systems-monitoring): Monitor threads, task
+  exits, and errors using the eBPF collector.
+
+### Hardware
+
+- [Adaptec RAID](/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/adaptec-raid):
+  Monitor logical and physical devices health
+  metrics using the `arcconf` tool.
+- [CUPS](/docs/data-collection/hardware-devices-and-sensors/cups.plugin): Monitor CUPS.
+- [FreeIPMI](/docs/data-collection/hardware-devices-and-sensors/server-hardware):
+  Uses `libipmimonitoring-dev` or `libipmimonitoring-devel` to
+  monitor the number of sensors, temperatures, voltages, currents, and more.
+- [Hard drive temperature](/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hard-drive-temperature):
+  Monitor the temperature of storage
+  devices.
+- [HP Smart Storage Arrays](/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hp-smart-storage-arrays):
+  Monitor controller, cache module, logical
+  and physical drive state, and temperature using the `ssacli` tool.
+- [MegaRAID controllers](/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/megaraid-controllers):
+  Collect adapter, physical drives, and
+  battery stats using the `megacli` tool.
+- [NVIDIA GPU](/docs/data-collection/hardware-devices-and-sensors/nvidia-smi): Monitor
+  performance metrics (memory usage, fan
+  speed, pcie bandwidth utilization, temperature, and more) using the `nvidia-smi` tool.
+- [Sensors](/docs/data-collection/hardware-devices-and-sensors/linux-machine-sensors): Reads system
+  sensors information (temperature, voltage,
+  electric current, power, and more) from `/sys/devices/`.
+- [S.M.A.R.T](/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes): Reads
+  SMART Disk Monitoring daemon logs.
+
+### Memory
+
+- [Available memory](/docs/data-collection/linux-systems/os-provided-metrics): Tracks changes in
+  available RAM using the `proc.plugin` collector.
+- [Committed memory](/docs/data-collection/linux-systems/os-provided-metrics): Monitor committed
+  memory using the `proc.plugin` collector.
+- [Huge pages](/docs/data-collection/linux-systems/os-provided-metrics): Gather metrics about
+  huge pages in Linux and FreeBSD with the
+  `proc.plugin` collector.
+- [KSM](/docs/data-collection/linux-systems/os-provided-metrics): Measure the amount of merging,
+  savings, and effectiveness using the
+  `proc.plugin` collector.
+- [Numa](/docs/data-collection/linux-systems/os-provided-metrics): Gather metrics on the number
+  of non-uniform memory access (NUMA) events
+  every second using the `proc.plugin` collector.
+- [Page faults](/docs/data-collection/linux-systems/os-provided-metrics): Collect the number of
+  memory page faults per second using the
+  `proc.plugin` collector.
+- [RAM](/docs/data-collection/linux-systems/os-provided-metrics): Collect metrics on system RAM,
+  available RAM, and more using the
+  `proc.plugin` collector.
+- [SLAB](/docs/data-collection/linux-systems/other/slabinfo): Collect kernel SLAB
+  details on Linux systems.
+- [swap](/docs/data-collection/linux-systems/os-provided-metrics): Monitor the amount of free
+  and used swap at every second using the
+  `proc.plugin` collector.
+- [Writeback memory](/docs/data-collection/linux-systems/os-provided-metrics): Collect how much
+  memory is actively being written to disk at
+  every second using the `proc.plugin` collector.
+
+### Networks
+
+- [Access points](/docs/data-collection/networking-stack-and-network-interfaces/linux-access-points): Visualizes
+  data related to access points.
+- [Ping](/docs/data-collection/synthetic-checks/network-latency-check): Measure network latency, jitter and
+  packet loss between the monitored node
+  and any number of remote network end points.
+- [Netfilter](/docs/data-collection/networking-stack-and-network-interfaces/netfilter-accounting): Collect netfilter
+  firewall, connection tracker, and accounting
+  metrics using `libmnl` and `libnetfilter_acct`.
+- [Network stack](/docs/data-collection/linux-systems/os-provided-metrics): Monitor the
+  networking stack for errors, TCP connection aborts,
+  bandwidth, and more.
+- [Network QoS](/docs/data-collection/networking-stack-and-network-interfaces/network-interface-qos): Collect traffic QoS
+  metrics (`tc`) of Linux network interfaces.
+- [SYNPROXY](/docs/data-collection/linux-systems/os-provided-metrics): Monitor entries uses, SYN
+  packets received, TCP cookies, and more.
+
+### Operating systems
+
+- [freebsd.plugin](/docs/data-collection/freebsd-systems): Collect resource
+  usage and performance data on FreeBSD systems.
+- [macOS](/docs/data-collection/macos-systems): Collect resource usage and
+  performance data on macOS systems.
+
+### Processes
+
+- [Applications](/docs/data-collection/apm/application-monitoring): Gather CPU, disk,
+  memory, network, eBPF, and other metrics per
+  application using the `apps.plugin` collector.
+- [systemd](/docs/data-collection/containers-and-vms/cgroups): Monitor the CPU and
+  memory usage of systemd services using the
+  `cgroups.plugin` collector.
+- [systemd unit states](/docs/data-collection/systemd/systemd-units): See the
+  state (active, inactive, activating, deactivating, failed) of various systemd unit types.
+- [System processes](/docs/data-collection/linux-systems/os-provided-metrics): Collect metrics
+  on system load and total processes running
+  using `/proc/loadavg` and the `proc.plugin` collector.
+- [Uptime](/docs/data-collection/linux-systems/os-provided-metrics): Monitor the uptime of a
+  system using the `proc.plugin` collector.
+
+### Resources
+
+- [CPU frequency](/docs/data-collection/linux-systems/os-provided-metrics): Monitor CPU
+  frequency, as set by the `cpufreq` kernel module,
+  using the `proc.plugin` collector.
+- [CPU idle](/docs/data-collection/linux-systems/os-provided-metrics): Measure CPU idle every
+  second using the `proc.plugin` collector.
+- [CPU performance](/docs/data-collection/linux-systems/other/perf): Collect CPU
+  performance metrics using performance monitoring
+  units (PMU).
+- [CPU throttling](/docs/data-collection/linux-systems/os-provided-metrics): Gather metrics
+  about thermal throttling using the `/proc/stat`
+  module and the `proc.plugin` collector.
+- [CPU utilization](/docs/data-collection/linux-systems/os-provided-metrics): Capture CPU
+  utilization, both system-wide and per-core, using
+  the `/proc/stat` module and the `proc.plugin` collector.
+- [Entropy](/docs/data-collection/linux-systems/os-provided-metrics): Monitor the available
+  entropy on a system using the `proc.plugin`
+  collector.
+- [Interprocess Communication (IPC)](/docs/data-collection/linux-systems/os-provided-metrics):
+  Monitor IPC semaphores and shared memory
+  using the `proc.plugin` collector.
+- [Interrupts](/docs/data-collection/linux-systems/os-provided-metrics): Monitor interrupts per
+  second using the `proc.plugin` collector.
+- [IdleJitter](/docs/data-collection/synthetic-checks/cpu-idle-jitter-check): Measure CPU
+  latency and jitter on all operating systems.
+- [SoftIRQs](/docs/data-collection/linux-systems/os-provided-metrics): Collect metrics on
+  SoftIRQs, both system-wide and per-core, using the
+  `proc.plugin` collector.
+- [SoftNet](/docs/data-collection/linux-systems/os-provided-metrics): Capture SoftNet events per
+  second, both system-wide and per-core,
+  using the `proc.plugin` collector.
+
+### Users
+
+- [systemd-logind](/docs/data-collection/systemd/logind): Monitor active
+  sessions, users, and seats tracked
+  by `systemd-logind` or `elogind`.
+- [User/group usage](/docs/data-collection/apm/application-monitoring): Gather CPU, disk,
+  memory, network, and other metrics per user
+  and user group using the `apps.plugin` collector.
+
+## Netdata collectors
+
+These collectors are recursive in nature, in that they monitor some function of the Netdata Agent itself. Some
+collectors are described only in code and associated charts in Netdata dashboards.
+
+- [ACLK (code only)](https://github.com/netdata/netdata/blob/master/aclk/legacy/aclk_stats.c): View whether a Netdata
+  Agent is connected to Netdata Cloud via the [ACLK](/docs/typical-netdata-agent-configurations/securing-netdata-agents/agent-cloud-link-aclk), the
+  volume of queries, process times, and more.
+- [Alarms](/docs/data-collection/netdata-specific/alarms): This collector
+  creates an
+  **Alarms** menu with one line plot showing the alarm states of a Netdata Agent over time.
+- [Anomalies](/docs/data-collection/netdata-specific/anomalies): This
+  collector uses the
+  Python PyOD library to perform unsupervised anomaly detection on your Netdata charts and/or dimensions.
+- [Exporting (code only)](https://github.com/netdata/netdata/blob/master/exporting/send_internal_metrics.c): Gather
+  metrics on CPU utilization for
+  the [exporting engine](/docs/exporting-data-to-other-systems/exporting-reference), and specific metrics for
+  each enabled
+  exporting connector.
+- [Global statistics (code only)](https://github.com/netdata/netdata/blob/master/daemon/global_statistics.c): See
+  metrics on the CPU utilization, network traffic, volume of web clients, API responses, database engine usage, and
+  more.
+
+## Orchestrators
+
+Plugin orchestrators organize and run many of the above collectors.
+
+If you're interested in developing a new collector that you'd like to contribute to Netdata, we highly recommend using
+the `go.d.plugin`.
+
+- [go.d.plugin](https://github.com/netdata/go.d.plugin): An orchestrator for data collection modules written in `go`.
+- [python.d.plugin](/docs/contributing-to-netdata/external-plugins/python.d.plugin): An
+  orchestrator for data collection modules written in `python` v2/v3.
+- [charts.d.plugin](/docs/contributing-to-netdata/external-plugins/charts.d.plugin): An
+  orchestrator for data collection modules written in `bash` v4+.
+
+## Third-party collectors
+
+These collectors are developed and maintained by third parties and, unlike the other collectors, are not installed by
+default. To use a third-party collector, visit their GitHub/documentation page and follow their installation procedures.
+
+<details>
+<summary>Typical third party Python collector installation instructions</summary>
+
+In general the below steps should be sufficient to use a third party collector.
+
+1. Download collector code file
+   into [folder expected by Netdata](/docs/contributing-to-netdata/external-plugins#environment-variables).
+2. Download default collector configuration file
+   into [folder expected by Netdata](/docs/contributing-to-netdata/external-plugins#environment-variables).
+3. [Edit configuration file](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#configure-a-collector)
+   from step 2 if required.
+4. [Enable collector](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#enable-a-collector-or-its-orchestrator).
+5. [Restart Netdata](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents)
+
+For example below are the steps to enable
+the [Python ClickHouse collector](https://github.com/netdata/community/tree/main/collectors/python.d.plugin/clickhouse).
+
+```bash
+# download python collector script to /usr/libexec/netdata/python.d/
+$ sudo wget https://raw.githubusercontent.com/netdata/community/main/collectors/python.d.plugin/clickhouse/clickhouse.chart.py -O /usr/libexec/netdata/python.d/clickhouse.chart.py
+
+# (optional) download default .conf to /etc/netdata/python.d/
+$ sudo wget https://raw.githubusercontent.com/netdata/community/main/collectors/python.d.plugin/clickhouse/clickhouse.conf -O /etc/netdata/python.d/clickhouse.conf
+
+# enable collector by adding line a new line with "clickhouse: yes" to /etc/netdata/python.d.conf file
+# this will append to the file if it already exists or create it if not
+$ sudo echo "clickhouse: yes" >> /etc/netdata/python.d.conf
+
+# (optional) edit clickhouse.conf if needed
+$ sudo vi /etc/netdata/python.d/clickhouse.conf
+
+# restart netdata 
+# see docs for more information: https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md
+$ sudo systemctl restart netdata
+```
+
+</details>
+
+- [CyberPower UPS](https://github.com/HawtDogFlvrWtr/netdata_cyberpwrups_plugin): Polls CyberPower UPS data using
+  PowerPanel® Personal Linux.
+- [Logged-in users](https://github.com/veksh/netdata-numsessions): Collect the number of currently logged-on users.
+- [nextcloud](https://github.com/arnowelzel/netdata-nextcloud): Monitor Nextcloud servers.
+- [nim-netdata-plugin](https://github.com/FedericoCeratto/nim-netdata-plugin): A helper to create native Netdata
+  plugins using Nim.
+- [Nvidia GPUs](https://github.com/coraxx/netdata_nv_plugin): Monitor Nvidia GPUs.
+- [Teamspeak 3](https://github.com/coraxx/netdata_ts3_plugin): Pulls active users and bandwidth from TeamSpeak 3
+  servers.
+- [SSH](https://github.com/Yaser-Amiri/netdata-ssh-module): Monitor failed authentication requests of an SSH server.
+- [ClickHouse](https://github.com/netdata/community/tree/main/collectors/python.d.plugin/clickhouse):
+  Monitor [ClickHouse](https://clickhouse.com/) database.
+- [Ethtool](https://github.com/ghanapunq/netdata_ethtool_plugin): Monitor network interfaces with ethtool.
+- [netdata-needrestart](https://github.com/nodiscc/netdata-needrestart) - Check/graph the number of processes/services/kernels that should be restarted after upgrading packages.
+- [netdata-debsecan](https://github.com/nodiscc/netdata-debsecan) - Check/graph the number of CVEs in currently installed packages.
+- [netdata-logcount](https://github.com/nodiscc/netdata-logcount) - Check/graph the number of syslog messages, by level over time.
+- [netdata-apt](https://github.com/nodiscc/netdata-apt) - Check/graph and alert on the number of upgradeable packages, and available distribution upgrades.
+
+## Etc
+
+- [charts.d example](/docs/data-collection/examples/example-module-in-bash): An
+  example `charts.d` collector.
+- [python.d example](/docs/data-collection/examples/example-module-in-python): An
+  example `python.d` collector.
+- [go.d example](/docs/data-collection/examples/example-module-in-go): An
+  example `go.d` collector.

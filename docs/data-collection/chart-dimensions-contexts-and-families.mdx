@@ -4,17 +4,17 @@ sidebar_label: "Chart dimensions, contexts, and families"
 learn_status: "Published"
 learn_rel_path: "Data collection"
 description: " Netdata organizes charts into dimensions, contexts, and families to automaticallyand meaningfully organize thousands of metrics into interactive charts."
-sidebar_position: "312000"
+sidebar_position: "512000"
 ---
 # Chart dimensions, contexts, and families
 
-While Netdata's charts require no configuration and are [easy to interact with](/docs/getting-started/monitor-your-infrastructure/interact-with-charts),
+While Netdata's charts require no configuration and are [easy to interact with](/docs/netdata-dashboards-and-visualizations/netdata-charts),
 they have a lot of underlying complexity. To meaningfully organize charts out of the box based on what's happening in
 your nodes, Netdata uses the concepts of **dimensions**, **contexts**, and **families**. 
 
 Understanding how these work will help you more easily navigate the dashboard, 
-[write new alarms](/docs/alerts-and-notifications/configure-alerts), or play around 
-with the [API](/docs/api).
+[write new alarms](/docs/alerts-and-notifications/health-configuration-reference), or play around 
+with the [API](/docs/netdata-apis/api).
 
 ## Dimension
 
@@ -36,7 +36,7 @@ dimensions](https://user-images.githubusercontent.com/1153921/114207816-a5cb7400
 The chart shows 13 unique dimensions, such as `httpd` for the CPU utilization for web servers, `kernel` for anything
 related to the Linux kernel, and so on. In your dashboard, these specific dimensions will almost certainly be different.
 
-Dimensions can be [hidden](/docs/getting-started/monitor-your-infrastructure/interact-with-charts#show-and-hide-dimensions) to help you focus your
+Dimensions can be [hidden](/docs/netdata-dashboards-and-visualizations/netdata-charts#show-and-hide-dimensions) to help you focus your
 attention.
 
 ## Context
@@ -50,8 +50,8 @@ whereas anything after the `.` is specified either by the chart's developer or b
 
 By default, a chart's type affects where it fits in the menu, while its family creates submenus.
 
-Netdata also relies on contexts for [alarm configuration](/docs/alerts-and-notifications/configure-alerts) (the [`on`
-line](/docs/alerts-and-notifications/configure-alerts#alarm-line-on)).
+Netdata also relies on contexts for [alarm configuration](/docs/alerts-and-notifications/health-configuration-reference) (the [`on`
+line](/docs/alerts-and-notifications/health-configuration-reference#alarm-line-on)).
 
 ## Family
 
