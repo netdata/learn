@@ -4,7 +4,7 @@ sidebar_label: "Container metrics"
 learn_status: "Published"
 learn_rel_path: "Data collection"
 description: "Use Netdata to collect per-second utilization and application-level metrics from Linux/Docker containers and Kubernetes clusters."
-sidebar_position: "306000"
+sidebar_position: "506000"
 ---
 
 
@@ -13,20 +13,20 @@ sidebar_position: "306000"
 Thanks to close integration with Linux cgroups and the virtual files it maintains under `/sys/fs/cgroup`, Netdata can
 monitor the health, status, and resource utilization of many different types of Linux containers.
 
-Netdata uses [cgroups.plugin](/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups) to poll `/sys/fs/cgroup` and convert the raw data
+Netdata uses [cgroups.plugin](/docs/data-collection/containers-and-vms/cgroups) to poll `/sys/fs/cgroup` and convert the raw data
 into human-readable metrics and meaningful visualizations. Through cgroups, Netdata is compatible with **all Linux
 containers**, such as Docker, LXC, LXD, Libvirt, systemd-nspawn, and more. Read more about [Docker-specific
 monitoring](#collect-docker-metrics) below.
 
 Netdata also has robust **Kubernetes monitoring** support thanks to a
-[Helmchart](/docs/installation/install-on-specific-environments/kubernetes) to automate deployment, collectors for k8s agent services, and
+[Helmchart](/docs/install-the-netdata-agent/kubernetes) to automate deployment, collectors for k8s agent services, and
 robust [service discovery](https://github.com/netdata/agent-service-discovery/#service-discovery) to monitor the
 services running inside of pods in your k8s cluster. Read more about [Kubernetes
 monitoring](#collect-kubernetes-metrics) below.
 
 A handful of additional collectors gather metrics from container-related services, such as
-[dockerd](/docs/data-collection/monitor-anything/virtualized-environments/docker) or [Docker
-Engine](/docs/data-collection/monitor-anything/virtualized-environments/docker-engine). You can find all
+[dockerd](/docs/data-collection/containers-and-vms/docker) or [Docker
+Engine](/docs/data-collection/containers-and-vms/docker-engine). You can find all
 container collectors in our supported collectors list under the
 [containers/VMs](/docs/data-collection/monitor-anything#containers-and-vms) and
 [Kubernetes](/docs/data-collection/monitor-anything#containers-and-vms) headings.
@@ -34,14 +34,14 @@ container collectors in our supported collectors list under the
 ## Collect Docker metrics
 
 Netdata has robust Docker monitoring thanks to the aforementioned
-[cgroups.plugin](/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups). By polling cgroups every second, Netdata can produce meaningful
+[cgroups.plugin](/docs/data-collection/containers-and-vms/cgroups). By polling cgroups every second, Netdata can produce meaningful
 visualizations about the CPU, memory, disk, and network utilization of all running containers on the host system with
 zero configuration.
 
 Netdata also collects metrics from applications running inside of Docker containers. For example, if you create a MySQL
 database container using `docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag`, it exposes
 metrics on port 3306. You can configure the [MySQL
-collector](/docs/data-collection/monitor-anything/databases/mysql) to look at `127.0.0.0:3306` for
+collector](/docs/data-collection/database-servers/mysql-and-mariadb) to look at `127.0.0.0:3306` for
 MySQL metrics:
 
 ```yml
@@ -51,14 +51,14 @@ jobs:
 ```
 
 Netdata then collects metrics from the container itself, but also dozens [MySQL-specific
-metrics](/docs/data-collection/monitor-anything/databases/mysql#charts) as well.
+metrics](/docs/data-collection/database-servers/mysql-and-mariadb#charts) as well.
 
 ### Collect metrics from applications running in Docker containers
 
 You could use this technique to monitor an entire infrastructure of Docker containers. The same [enable and configure](/docs/data-collection/collectors-configuration) procedures apply whether an application runs on the host system or inside
 a container. You may need to configure the target endpoint if it's not the application's default.
 
-Netdata can even [run in a Docker container](/docs/installation/installation-methods/docker) itself, and then collect metrics about the
+Netdata can even [run in a Docker container](/docs/install-the-netdata-agent/docker) itself, and then collect metrics about the
 host system, its own container with cgroups, and any applications you want to monitor.
 
 See our [application metrics doc](/docs/data-collection/application-metrics) for details about Netdata's application metrics
@@ -76,15 +76,15 @@ your k8s infrastructure.
     configuration files for [compatible
     applications](https://github.com/netdata/helmchart#service-discovery-and-supported-services) and any endpoints
     covered by our [generic Prometheus
-    collector](/docs/data-collection/monitor-anything/any-application---generic-collectors/prometheus-endpoints). With these
+    collector](/docs/data-collection/apm/openmetrics-endpoints). With these
     configuration files, Netdata collects metrics from any compatible applications as they run _inside_ of a pod.
     Service discovery happens without manual intervention as pods are created, destroyed, or moved between nodes. 
--   A [Kubelet collector](/docs/data-collection/monitor-anything/virtualized-environments/kubelet), which runs
+-   A [Kubelet collector](/docs/data-collection/kubernetes/kubelet), which runs
     on each node in a k8s cluster to monitor the number of pods/containers, the volume of operations on each container,
     and more.
--   A [kube-proxy collector](/docs/data-collection/monitor-anything/virtualized-environments/kube-proxy), which
+-   A [kube-proxy collector](/docs/data-collection/kubernetes/kube-proxy), which
     also runs on each node and monitors latency and the volume of HTTP requests to the proxy.
--   A [cgroups collector](/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups), which collects CPU, memory, and bandwidth metrics for
+-   A [cgroups collector](/docs/data-collection/containers-and-vms/cgroups), which collects CPU, memory, and bandwidth metrics for
     each container running on your k8s cluster.
 
 For a holistic view of Netdata's Kubernetes monitoring capabilities, see our guide: [_Monitor a Kubernetes (k8s) cluster
@@ -96,6 +96,6 @@ Netdata is capable of collecting metrics from hundreds of applications, such as 
 brokers, and more. See more in the [application metrics doc](/docs/data-collection/application-metrics).
 
 If you already have all the information you need about collecting metrics, move into Netdata's meaningful visualizations
-with [seeing an overview of your infrastructure](/docs/visualizations/infrastructure-overview) using Netdata Cloud.
+with [seeing an overview of your infrastructure](/docs/netdata-dashboards-and-visualizations/infrastructure-overview) using Netdata Cloud.
 
 

@@ -1,0 +1,77 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md"
+sidebar_label: "Exporting data to other Systems"
+learn_status: "Published"
+learn_rel_path: "Exporting data to other Systems"
+description: "Use the exporting engine to send Netdata metrics to popular external time series databases for long-term storage or further analysis."
+sidebar_position: "700000"
+---
+
+
+# Export metrics to external time-series databases
+
+Netdata allows you to export metrics to external time-series databases with the [exporting
+engine](/docs/exporting-data-to-other-systems/exporting-reference). This system uses a number of **connectors** to initiate connections to [more than
+thirty](#supported-databases) supported databases, including InfluxDB, Prometheus, Graphite, ElasticSearch, and much
+more. 
+
+The exporting engine resamples Netdata's thousands of per-second metrics at a user-configurable interval, and can export
+metrics to multiple time-series databases simultaneously.
+
+Based on your needs and resources you allocated to your external time-series database, you can configure the interval
+that metrics are exported or export only certain charts with filtering. You can also choose whether metrics are exported
+as-collected, a normalized average, or the sum/volume of metrics values over the configured interval.
+
+Exporting is an important part of Netdata's effort to be interoperable
+with other monitoring software. You can use an external time-series database for long-term metrics retention, further
+analysis, or correlation with other tools, such as application tracing.
+
+## Supported databases
+
+Netdata supports exporting metrics to the following databases through several
+[connectors](/docs/exporting-data-to-other-systems/exporting-reference#features). Once you find the connector that works for your database, open its
+documentation and the [enabling a connector](/docs/exporting-data-to-other-systems/enable-an-exporting-connector) doc for details on enabling it.
+
+-   **AppOptics**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **AWS Kinesis**: [AWS Kinesis Data Streams](/docs/exporting-data-to-other-systems/aws-kinesis-data-streams)
+-   **Azure Data Explorer**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **Azure Event Hubs**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **Blueflood**: [Graphite](/docs/exporting-data-to-other-systems/graphite)
+-   **Chronix**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **Cortex**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **CrateDB**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **ElasticSearch**: [Graphite](/docs/exporting-data-to-other-systems/graphite), [Prometheus remote
+    write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **Gnocchi**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **Google BigQuery**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **Google Cloud Pub/Sub**: [Google Cloud Pub/Sub Service](/docs/exporting-data-to-other-systems/google-cloud-pub-sub-service)
+-   **Graphite**: [Graphite](/docs/exporting-data-to-other-systems/graphite), [Prometheus remote
+    write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **InfluxDB**: [Graphite](/docs/exporting-data-to-other-systems/graphite), [Prometheus remote
+    write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **IRONdb**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **JSON**: [JSON document databases](/docs/exporting-data-to-other-systems/json-document-databases)
+-   **Kafka**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **KairosDB**: [Graphite](/docs/exporting-data-to-other-systems/graphite), [OpenTSDB](/docs/exporting-data-to-other-systems/opentsdb)
+-   **M3DB**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **MetricFire**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **MongoDB**: [MongoDB](/docs/exporting-data-to-other-systems/mongodb)
+-   **New Relic**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **OpenTSDB**: [OpenTSDB](/docs/exporting-data-to-other-systems/opentsdb), [Prometheus remote
+    write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **PostgreSQL**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+    via [PostgreSQL Prometheus Adapter](https://github.com/CrunchyData/postgresql-prometheus-adapter)
+-   **Prometheus**: [Prometheus scraper](/docs/exporting-data-to-other-systems/prometheus)
+-   **TimescaleDB**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write),
+    [netdata-timescale-relay](/docs/exporting-data-to-other-systems/timescaledb)
+-   **QuasarDB**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **SignalFx**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **Splunk**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **TiKV**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **Thanos**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **VictoriaMetrics**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+-   **Wavefront**: [Prometheus remote write](/docs/exporting-data-to-other-systems/prometheus/remote-write)
+
+Can't find your preferred external time-series database? Ask our [community](https://community.netdata.cloud/) for
+solutions, or file an [issue on
+GitHub](https://github.com/netdata/netdata/issues/new?assignees=&labels=bug%2Cneeds+triage&template=BUG_REPORT.yml).
