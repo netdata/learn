@@ -92,7 +92,7 @@ module.exports = {
 						{
 							type: 'doc',
 							style: {'color': 'white'},
-							docId: 'getting-started/getting-started',
+							docId: 'install-the-netdata-agent/install-the-netdata-agent',
 							label: 'Getting Started'
 						},
 						{
