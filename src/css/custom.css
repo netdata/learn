@@ -33,9 +33,8 @@ h5 {
 	font-weight: 600!important;
   }
 
-.markdown code {
-	color: white!important;
-	background-color: #282A36 !important;
+  html[data-theme='dark'] .markdown code {
+    background-color: #282A36 !important;
 }
 .navbar {
 	background-color: #181c20;
