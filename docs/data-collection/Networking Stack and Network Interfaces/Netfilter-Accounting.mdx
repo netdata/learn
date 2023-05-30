@@ -14,6 +14,11 @@ slug: "/data-collection/networking-stack-and-network-interfaces/netfilter-accoun
 
 ## Prerequisites
 
+If you are using [our official native DEB/RPM packages](/docs/install-the-netdata-agent/native-linux-distribution-packages), install the
+`netdata-plugin-nfacct` package using your system package manager.
+
+If you built Netdata locally:
+
 1.  install `libmnl-dev` and `libnetfilter-acct-dev` using the package manager of your system.
 
 2.  re-install Netdata from source. The installer will detect that the required libraries are now available and will also build `netdata.plugin`.
