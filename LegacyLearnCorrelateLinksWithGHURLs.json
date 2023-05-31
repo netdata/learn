@@ -975,5 +975,8 @@
     "https://learn.netdata.cloud/docs/alerts-and-notifications/notifications/agent-alert-notifications/amazon-sns": "https://github.com/netdata/netdata/blob/master/health/notifications/awssns/README.md",
     "https://learn.netdata.cloud/docs/alerts-and-notifications/notifications/agent-alert-notifications/alerta": "https://github.com/netdata/netdata/blob/master/health/notifications/alerta/README.md",
     "https://learn.netdata.cloud/docs/alerts-and-notifications/notifications/agent-alert-notifications": "https://github.com/netdata/netdata/blob/master/health/notifications/README.md",
-    "https://learn.netdata.cloud/docs/alerts-and-notifications/configure-alerts": "https://github.com/netdata/netdata/blob/master/health/REFERENCE.md"
+    "https://learn.netdata.cloud/docs/alerts-and-notifications/configure-alerts": "https://github.com/netdata/netdata/blob/master/health/REFERENCE.md",
+    "https://learn.netdata.cloud/docs/data-collection/service-discovery-/-registry/zookeeper": "https://github.com/netdata/go.d.plugin/blob/master/modules/zookeeper/README.md",
+    "https://learn.netdata.cloud/docs/data-collection/service-discovery-/-registry/consul": "https://github.com/netdata/go.d.plugin/blob/master/modules/consul/README.md",
+    "https://learn.netdata.cloud/docs/data-collection/hardware-devices-and-sensors/lm-sensors": "https://github.com/netdata/netdata/blob/master/collectors/charts.d.plugin/sensors/README.md"
 }

@@ -423,7 +423,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/lm-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/cups.plugin"
@@ -479,7 +479,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/consul"
-  to="/docs/data-collection/service-discovery-/-registry/consul"
+  to="/docs/data-collection/service-discovery-&-registry/consul"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/coredns"
@@ -755,7 +755,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/zookeeper"
-  to="/docs/data-collection/service-discovery-/-registry/zookeeper"
+  to="/docs/data-collection/service-discovery-&-registry/zookeeper"
 
 [[redirects]]
   from="/docs/agent/collectors/idlejitter.plugin"
@@ -2415,7 +2415,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Provisioning%20Tools/ZooKeeper"
-  to="/docs/data-collection/service-discovery-/-registry/zookeeper"
+  to="/docs/data-collection/service-discovery-&-registry/zookeeper"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Provisioning%20Tools/Puppet"
@@ -2423,7 +2423,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Provisioning%20Tools/Consul"
-  to="/docs/data-collection/service-discovery-/-registry/consul"
+  to="/docs/data-collection/service-discovery-&-registry/consul"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/x509-certificates"
@@ -2543,7 +2543,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/lm-sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/lm-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/cups.plugin"
@@ -3611,7 +3611,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/provisioning-tools/zookeeper"
-  to="/docs/data-collection/service-discovery-/-registry/zookeeper"
+  to="/docs/data-collection/service-discovery-&-registry/zookeeper"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/provisioning-tools/puppet"
@@ -3619,7 +3619,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/provisioning-tools/consul"
-  to="/docs/data-collection/service-discovery-/-registry/consul"
+  to="/docs/data-collection/service-discovery-&-registry/consul"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/x509-certificates"
@@ -3755,7 +3755,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/lm-sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/lm-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/hard-drive-temperature"
@@ -4196,5 +4196,17 @@
 [[redirects]]
   from="/docs/alerts-and-notifications/configure-alerts"
   to="/docs/alerts-and-notifications/health-configuration-reference"
+
+[[redirects]]
+  from="/docs/data-collection/service-discovery-/-registry/zookeeper"
+  to="/docs/data-collection/service-discovery-&-registry/zookeeper"
+
+[[redirects]]
+  from="/docs/data-collection/service-discovery-/-registry/consul"
+  to="/docs/data-collection/service-discovery-&-registry/consul"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/lm-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/sensors"
 
 # section: dynamic << END
