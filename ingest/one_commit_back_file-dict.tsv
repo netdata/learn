@@ -31,7 +31,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/couchbase/README.md	/
 https://github.com/netdata/go.d.plugin/edit/master/modules/nvme/README.md	/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/nvme-devices
 https://github.com/netdata/go.d.plugin/edit/master/modules/k8s_kubeproxy/README.md	/docs/data-collection/kubernetes/kube-proxy
 https://github.com/netdata/go.d.plugin/edit/master/modules/dockerhub/README.md	/docs/data-collection/online-services/docker-hub
-https://github.com/netdata/go.d.plugin/edit/master/modules/zookeeper/README.md	/docs/data-collection/service-discovery-/-registry/zookeeper
+https://github.com/netdata/go.d.plugin/edit/master/modules/zookeeper/README.md	/docs/data-collection/service-discovery-&-registry/zookeeper
 https://github.com/netdata/go.d.plugin/edit/master/modules/snmp/README.md	/docs/data-collection/snmp-and-networked-devices/snmp
 https://github.com/netdata/go.d.plugin/edit/master/modules/hdfs/README.md	/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/hdfs
 https://github.com/netdata/go.d.plugin/edit/master/modules/openvpn/README.md	/docs/data-collection/vpns/openvpn
@@ -76,7 +76,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/apache/README.md	/doc
 https://github.com/netdata/go.d.plugin/edit/master/modules/nginx/README.md	/docs/data-collection/web-servers-and-web-proxies/nginx
 https://github.com/netdata/go.d.plugin/edit/master/modules/docker/README.md	/docs/data-collection/containers-and-vms/docker
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/README.md	/docs/data-collection/apm/openmetrics-endpoints
-https://github.com/netdata/go.d.plugin/edit/master/modules/consul/README.md	/docs/data-collection/service-discovery-/-registry/consul
+https://github.com/netdata/go.d.plugin/edit/master/modules/consul/README.md	/docs/data-collection/service-discovery-&-registry/consul
 https://github.com/netdata/go.d.plugin/edit/master/modules/proxysql/README.md	/docs/data-collection/database-servers/proxysql
 https://github.com/netdata/go.d.plugin/edit/master/modules/pihole/README.md	/docs/data-collection/dns-and-dhcp-servers/pi-hole
 https://github.com/netdata/go.d.plugin/edit/master/docs/how-to-write-a-module.md	/docs/contributing-to-netdata/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go
@@ -188,7 +188,7 @@ https://github.com/netdata/netdata/edit/master/collectors/cups.plugin/README.md	
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/README.md	/docs/contributing-to-netdata/external-plugins/charts.d.plugin
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/opensips/README.md	/docs/data-collection/telephony-servers/opensips
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/ap/README.md	/docs/data-collection/networking-stack-and-network-interfaces/linux-access-points
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/sensors/README.md	/docs/data-collection/hardware-devices-and-sensors/lm-sensors
+https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/sensors/README.md	/docs/data-collection/hardware-devices-and-sensors/sensors
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/nut/README.md	/docs/data-collection/ups/nut
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/example/README.md	/docs/data-collection/examples/example-module-in-bash
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/libreswan/README.md	/docs/data-collection/vpns/libreswan-ipsec
