@@ -263,10 +263,18 @@ def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
             val = str(val)
 
             if (not val == np.nan) and val != "nan":
+
+
+                if field == "learn_rel_path":
+                    if val == "root":
+                        # print("ROOT")
+                        val = "/"
+
                 if field == "sidebar_position":
                     output += "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
                 else:
                     output += "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
+
         except:
             pass
             # print("CANT PARSE", mapDict.loc[mapDict['custom_edit_url'] == key][field].values)
