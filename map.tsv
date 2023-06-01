@@ -3,6 +3,7 @@ https://github.com/netdata/netdata/edit/master/docs/getting-started/introduction
 https://github.com/netdata/netdata/edit/master/docs/store/distributed-data-architecture.md	Distributed data architecture	Published	Netdata Architecture	
 https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	The Role of Netdata Cloud	Published	Netdata Architecture	
 https://github.com/netdata/netdata/edit/master/docs/netdata-security.md	Security and privacy design	Published	Netdata Architecture	Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
+https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	Live demos	Published	root	
 https://github.com/netdata/netdata/edit/master/packaging/installer/README.md	Install the Netdata Agent	Published	Install the Netdata Agent	
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kickstart.md	One-Line Installer for All Linux Systems	Published	Install the Netdata Agent	The kickstart.sh script installs Netdata from source, including all dependencies required to connect to Netdata Cloud, with a single command.
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/packages.md	Native Linux Distribution packages	Published	Install the Netdata Agent	Instructions for how to install Netdata using native DEB or RPM packages.
@@ -375,7 +376,6 @@ https://github.com/netdata/netdata/edit/master/libnetdata/socket/README.md	Socke
 https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed Software	Published	Contributing to Netdata	
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	Health command API tester	Published	Contributing to Netdata	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/misc-overview.md	Miscellaneous	Published	Miscellaneous	Available integrations in Netdata
-https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	Live demos	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	Glossary	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	Customize the standard dashboard	Published	Miscellaneous	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	Import, export, and print a snapshot	Published	Miscellaneous	Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
