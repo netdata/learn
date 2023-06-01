@@ -1019,7 +1019,7 @@
 
 [[redirects]]
   from="/docs/agent/demo-sites"
-  to="/docs/miscellaneous/live-demos"
+  to="/docs//live-demos"
 
 [[redirects]]
   from="/docs/agent/exporting"
@@ -3227,7 +3227,7 @@
 
 [[redirects]]
   from="/docs/getting-started/live-demos"
-  to="/docs/miscellaneous/live-demos"
+  to="/docs//live-demos"
 
 [[redirects]]
   from="/docs/getting-started/install-netdata"
@@ -4208,5 +4208,9 @@
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/lm-sensors"
   to="/docs/data-collection/hardware-devices-and-sensors/sensors"
+
+[[redirects]]
+  from="/docs/miscellaneous/live-demos"
+  to="/docs//live-demos"
 
 # section: dynamic << END
