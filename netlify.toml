@@ -4213,4 +4213,8 @@
   from="/docs/miscellaneous/live-demos"
   to="/docs//live-demos"
 
+[[redirects]]
+  from="/docs/nightly/operations/alerts/add-mattermost-notification-configuration"
+  to="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/add-mattermost-notification-configuration"
+
 # section: dynamic << END
