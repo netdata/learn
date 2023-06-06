@@ -979,6 +979,6 @@
     "https://learn.netdata.cloud/docs/data-collection/service-discovery-/-registry/zookeeper": "https://github.com/netdata/go.d.plugin/blob/master/modules/zookeeper/README.md",
     "https://learn.netdata.cloud/docs/data-collection/service-discovery-/-registry/consul": "https://github.com/netdata/go.d.plugin/blob/master/modules/consul/README.md",
     "https://learn.netdata.cloud/docs/data-collection/hardware-devices-and-sensors/lm-sensors": "https://github.com/netdata/netdata/blob/master/collectors/charts.d.plugin/sensors/README.md",
-    "https://learn.netdata.cloud/docs/miscellaneous/live-demos": "https://github.com/netdata/netdata/blob/master/docs/Demo-Sites.md"
+    "https://learn.netdata.cloud/docs/miscellaneous/live-demos": "https://github.com/netdata/netdata/blob/master/docs/Demo-Sites.md",
     "https://learn.netdata.cloud/docs/nightly/operations/alerts/add-mattermost-notification-configuration": "https://github.com/netdata/netdata/blob/master/docs/cloud/alerts-notifications/add-mattermost-notification-configuration.md"
 }
