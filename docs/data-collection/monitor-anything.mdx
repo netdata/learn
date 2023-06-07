@@ -47,8 +47,8 @@ If you don't see the app/service you'd like to monitor in this list:
   a [feature request](https://github.com/netdata/netdata/issues/new/choose) on GitHub.
 
 - If you have basic software development skills, you can add your own plugin
-  in [Go](/docs/contributing-to-netdata/external-plugins/go.d.plugin#how-to-develop-a-collector)
-  or [Python](/docs/contributing-to-netdata/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python)
+  in [Go](/docs/contributing/external-plugins/go.d.plugin#how-to-develop-a-collector)
+  or [Python](/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python)
 
 ## Available Collectors
 
@@ -588,7 +588,7 @@ These collectors are recursive in nature, in that they monitor some function of 
 collectors are described only in code and associated charts in Netdata dashboards.
 
 - [ACLK (code only)](https://github.com/netdata/netdata/blob/master/aclk/legacy/aclk_stats.c): View whether a Netdata
-  Agent is connected to Netdata Cloud via the [ACLK](/docs/typical-netdata-agent-configurations/securing-netdata-agents/agent-cloud-link-aclk), the
+  Agent is connected to Netdata Cloud via the [ACLK](/docs/configuring/securing-netdata-agents/agent-cloud-link-aclk), the
   volume of queries, process times, and more.
 - [Alarms](/docs/data-collection/netdata-specific/alarms): This collector
   creates an
@@ -598,7 +598,7 @@ collectors are described only in code and associated charts in Netdata dashboard
   Python PyOD library to perform unsupervised anomaly detection on your Netdata charts and/or dimensions.
 - [Exporting (code only)](https://github.com/netdata/netdata/blob/master/exporting/send_internal_metrics.c): Gather
   metrics on CPU utilization for
-  the [exporting engine](/docs/exporting-data-to-other-systems/exporting-reference), and specific metrics for
+  the [exporting engine](/docs/exporting/exporting-reference), and specific metrics for
   each enabled
   exporting connector.
 - [Global statistics (code only)](https://github.com/netdata/netdata/blob/master/daemon/global_statistics.c): See
@@ -613,9 +613,9 @@ If you're interested in developing a new collector that you'd like to contribute
 the `go.d.plugin`.
 
 - [go.d.plugin](https://github.com/netdata/go.d.plugin): An orchestrator for data collection modules written in `go`.
-- [python.d.plugin](/docs/contributing-to-netdata/external-plugins/python.d.plugin): An
+- [python.d.plugin](/docs/contributing/external-plugins/python.d.plugin): An
   orchestrator for data collection modules written in `python` v2/v3.
-- [charts.d.plugin](/docs/contributing-to-netdata/external-plugins/charts.d.plugin): An
+- [charts.d.plugin](/docs/contributing/external-plugins/charts.d.plugin): An
   orchestrator for data collection modules written in `bash` v4+.
 
 ## Third-party collectors
@@ -629,13 +629,13 @@ default. To use a third-party collector, visit their GitHub/documentation page a
 In general the below steps should be sufficient to use a third party collector.
 
 1. Download collector code file
-   into [folder expected by Netdata](/docs/contributing-to-netdata/external-plugins#environment-variables).
+   into [folder expected by Netdata](/docs/contributing/external-plugins#environment-variables).
 2. Download default collector configuration file
-   into [folder expected by Netdata](/docs/contributing-to-netdata/external-plugins#environment-variables).
+   into [folder expected by Netdata](/docs/contributing/external-plugins#environment-variables).
 3. [Edit configuration file](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#configure-a-collector)
    from step 2 if required.
 4. [Enable collector](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#enable-a-collector-or-its-orchestrator).
-5. [Restart Netdata](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents)
+5. [Restart Netdata](/docs/maintenance/starting-and-stopping-netdata-agents)
 
 For example below are the steps to enable
 the [Python ClickHouse collector](https://github.com/netdata/community/tree/main/collectors/python.d.plugin/clickhouse).

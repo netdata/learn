@@ -1,0 +1,23 @@
+---
+custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/pkg/README.md"
+sidebar_label: "Helper packages"
+learn_status: "Published"
+learn_rel_path: "Contributing/External plugins/go.d.plugin/Helper Packages"
+sidebar_position: "1308042"
+---
+
+
+# Helper Packages
+
+- if you need IP ranges consider to
+  use [`iprange`](/docs/contributing/external-plugins/go.d.plugin/helper-packages/iprange).
+- if you parse an application log files, then [`log`](https://github.com/netdata/go.d.plugin/tree/master/pkg/logs) is
+  handy.
+- if you need filtering
+  check [`matcher`](/docs/contributing/external-plugins/go.d.plugin/helper-packages/matcher).
+- if you collect metrics from an HTTP endpoint use [`web`](https://github.com/netdata/go.d.plugin/tree/master/pkg/web).
+- if you collect metrics from a prometheus endpoint,
+  then [`prometheus`](https://github.com/netdata/go.d.plugin/tree/master/pkg/prometheus)
+  and [`web`](/docs/contributing/external-plugins/go.d.plugin/helper-packages/web) is what you need.
+- [`tlscfg`](/docs/contributing/external-plugins/go.d.plugin/helper-packages/tlscfg) provides TLS support.
+- [`stm`](/docs/contributing/external-plugins/go.d.plugin/helper-packages/stm) helps you to convert any struct to a `map[string]int64`.

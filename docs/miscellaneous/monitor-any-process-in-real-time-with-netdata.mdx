@@ -37,9 +37,9 @@ With Netdata's process monitoring, you can:
 
 ## Prerequisites
 
-- One or more Linux nodes running [Netdata](/docs/install-the-netdata-agent)
+- One or more Linux nodes running [Netdata](/docs/installation)
 - A general understanding of how
-  to [configure the Netdata Agent](/docs/typical-netdata-agent-configurations/configuration)
+  to [configure the Netdata Agent](/docs/configuring/configuration)
   using `edit-config`.
 - A Netdata Cloud account. [Sign up](https://app.netdata.cloud) if you don't have one already.
 
@@ -130,7 +130,7 @@ aware of hundreds of processes, and collects metrics from them automatically.
 But, if you want to change the grouping behavior, add an application that isn't yet supported in the Netdata Agent, or
 monitor a custom application, you need to edit the `apps_groups.conf` configuration file.
 
-Navigate to your [Netdata config directory](/docs/typical-netdata-agent-configurations/configuration) and
+Navigate to your [Netdata config directory](/docs/configuring/configuration) and
 use `edit-config` to edit the file.
 
 ```bash
@@ -146,7 +146,7 @@ others, and groups them into `sql`. That makes sense, since all these processes 
 sql: mysqld* mariad* postgres* postmaster* oracle_* ora_* sqlservr
 ```
 
-These groups are then reflected as [dimensions](/docs/contributing-to-netdata/web#dimensions)
+These groups are then reflected as [dimensions](/docs/contributing/web#dimensions)
 within Netdata's charts.
 
 ![An example per-process CPU utilization chart in Netdata
@@ -180,7 +180,7 @@ sql: mariad* postmaster* oracle_* ora_* sqlservr
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or
-the [appropriate method](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents) for your system, to start collecting utilization metrics
+the [appropriate method](/docs/maintenance/starting-and-stopping-netdata-agents) for your system, to start collecting utilization metrics
 from your application. Time to [visualize your process metrics](#visualize-process-metrics).
 
 ### Custom applications
@@ -207,7 +207,7 @@ custom-app: custom-app
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or
-the [appropriate method](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents) for your system, to start collecting utilization metrics
+the [appropriate method](/docs/maintenance/starting-and-stopping-netdata-agents) for your system, to start collecting utilization metrics
 from your application.
 
 ## Visualize process metrics

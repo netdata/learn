@@ -86,7 +86,7 @@ All metrics have "pulsar." prefix.
 ## Configuration
 
 Edit the `go.d/pulsar.conf` configuration file using `edit-config` from the
-Netdata [config directory](/docs/typical-netdata-agent-configurations/configuration), which is typically
+Netdata [config directory](/docs/configuring/configuration), which is typically
 at `/etc/netdata`.
 
 ```bash
@@ -114,7 +114,7 @@ By default, module collects data for all topics, but it supports topic filtering
 stats from the summary/namespace stats, it only removes the topic from the topic charts.
 
 To check matcher syntax
-see [matcher documentation](/docs/contributing-to-netdata/external-plugins/go.d.plugin/helper-packages/matcher).
+see [matcher documentation](/docs/contributing/external-plugins/go.d.plugin/helper-packages/matcher).
 
 ```yaml
   - name: local

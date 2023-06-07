@@ -61,7 +61,7 @@ dev: custom-app
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents) for your system, to begin seeing metrics for this particular
+method](/docs/maintenance/starting-and-stopping-netdata-agents) for your system, to begin seeing metrics for this particular
 group+process. You can also add additional processes to the same group.
 
 You can set up `apps_groups.conf` to more show more precise eBPF metrics for any application or service running on your
@@ -110,7 +110,7 @@ Replace `entry` with `return`:
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents) for your system.
+method](/docs/maintenance/starting-and-stopping-netdata-agents) for your system.
 
 ## Get familiar with per-application eBPF metrics and charts
 
@@ -239,11 +239,11 @@ same application on multiple systems and want to correlate how it performs on ea
 findings with someone else on your team.
 
 If you don't already have a Netdata Cloud account, go [sign in](https://app.netdata.cloud) and get started for free.
-You can also read how to [monitor your infrastructure with Netdata Cloud](/docs/netdata-architecture/the-role-of-netdata-cloud) to understand the key features that it has to offer.
+You can also read how to [monitor your infrastructure with Netdata Cloud](/docs/architecture/the-role-of-netdata-cloud) to understand the key features that it has to offer.
 
 Once you've added one or more nodes to a Space in Netdata Cloud, you can see aggregated eBPF metrics in the [Overview
-dashboard](/docs/netdata-dashboards-and-visualizations/infrastructure-overview) under the same **Applications** or **eBPF** sections that you
-find on the local Agent dashboard. Or, [create new dashboards](/docs/netdata-dashboards-and-visualizations/custom-dashboards) using eBPF metrics
+dashboard](/docs/visualizations/infrastructure-overview) under the same **Applications** or **eBPF** sections that you
+find on the local Agent dashboard. Or, [create new dashboards](/docs/visualizations/custom-dashboards) using eBPF metrics
 from any number of distributed nodes to see how your application interacts with multiple Linux kernels on multiple Linux
 systems. 
 

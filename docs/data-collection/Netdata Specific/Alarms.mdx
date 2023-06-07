@@ -11,7 +11,7 @@ slug: "/data-collection/netdata-specific/alarms"
 
 # Alarms
 
-This collector creates an 'Alarms' menu with one line plot showing alarm states over time. Alarm states are mapped to integer values according to the below default mapping. Any alarm status types not in this mapping will be ignored (Note: This mapping can be changed by editing the `status_map` in the `alarms.conf` file). If you would like to learn more about the different alarm statuses check out the docs [here](/docs/alerts-and-notifications/health-configuration-reference#alarm-statuses).
+This collector creates an 'Alarms' menu with one line plot showing alarm states over time. Alarm states are mapped to integer values according to the below default mapping. Any alarm status types not in this mapping will be ignored (Note: This mapping can be changed by editing the `status_map` in the `alarms.conf` file). If you would like to learn more about the different alarm statuses check out the docs [here](/docs/alerting/health-configuration-reference#alarm-statuses).
 
 ```
 {
@@ -29,7 +29,7 @@ Below is an example of the chart produced when running `stress-ng --all 2` for a
 
 ## Configuration
 
-Enable the collector and [restart Netdata](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents).
+Enable the collector and [restart Netdata](/docs/maintenance/starting-and-stopping-netdata-agents).
 
 ```bash
 cd /etc/netdata/
@@ -39,7 +39,7 @@ sudo systemctl restart netdata
 ```
 
 If needed, edit the `python.d/alarms.conf` configuration file using `edit-config` from the your agent's [config
-directory](/docs/typical-netdata-agent-configurations/configuration), which is usually at `/etc/netdata`.
+directory](/docs/configuring/configuration), which is usually at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different

@@ -20,7 +20,7 @@ containers**, such as Docker, LXC, LXD, Libvirt, systemd-nspawn, and more. Read 
 monitoring](#collect-docker-metrics) below.
 
 Netdata also has robust **Kubernetes monitoring** support thanks to a
-[Helmchart](/docs/install-the-netdata-agent/kubernetes) to automate deployment, collectors for k8s agent services, and
+[Helmchart](/docs/installation/kubernetes) to automate deployment, collectors for k8s agent services, and
 robust [service discovery](https://github.com/netdata/agent-service-discovery/#service-discovery) to monitor the
 services running inside of pods in your k8s cluster. Read more about [Kubernetes
 monitoring](#collect-kubernetes-metrics) below.
@@ -59,7 +59,7 @@ metrics](/docs/data-collection/database-servers/mysql-and-mariadb#charts) as wel
 You could use this technique to monitor an entire infrastructure of Docker containers. The same [enable and configure](/docs/data-collection/collectors-configuration) procedures apply whether an application runs on the host system or inside
 a container. You may need to configure the target endpoint if it's not the application's default.
 
-Netdata can even [run in a Docker container](/docs/install-the-netdata-agent/docker) itself, and then collect metrics about the
+Netdata can even [run in a Docker container](/docs/installation/docker) itself, and then collect metrics about the
 host system, its own container with cgroups, and any applications you want to monitor.
 
 See our [application metrics doc](/docs/data-collection/application-metrics) for details about Netdata's application metrics
@@ -97,6 +97,6 @@ Netdata is capable of collecting metrics from hundreds of applications, such as 
 brokers, and more. See more in the [application metrics doc](/docs/data-collection/application-metrics).
 
 If you already have all the information you need about collecting metrics, move into Netdata's meaningful visualizations
-with [seeing an overview of your infrastructure](/docs/netdata-dashboards-and-visualizations/infrastructure-overview) using Netdata Cloud.
+with [seeing an overview of your infrastructure](/docs/visualizations/infrastructure-overview) using Netdata Cloud.
 
 
