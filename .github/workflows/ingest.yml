@@ -29,7 +29,7 @@ jobs:
 
     - name: Update kickstart checksum
       run: |
-        docfile="docs/install-the-netdata-agent/one-line-installer-for-all-linux-systems.mdx"
+        docfile="docs/installation/one-line-installer-for-all-linux-systems.mdx"
         wget -O /tmp/kickstart.sh https://raw.githubusercontent.com/netdata/netdata/master/packaging/installer/kickstart.sh || exit 1
         checksum="$(md5sum /tmp/kickstart.sh | cut -d ' ' -f 1)"
         sed -e "s/^\[ \".*\" = \"\(.*\)$/[ \"${checksum}\" = \"\1/" "${docfile}" > tmp || exit 1
