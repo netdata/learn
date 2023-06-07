@@ -7,6 +7,22 @@
 
 /* custom Netdata overrides */
 
+/* .theme-doc-sidebar-item-link{
+	font-weight: 600;
+} */
+
+.table-of-contents, .table-of-contents ul {
+	padding-left: unset;
+	/* font-weight: 600; */
+}
+
+/* .menu .menu__link{
+	font-weight: 600 !important;
+} */
+
+.markdown tbody td:last-child {
+	padding-right: .5714286em !important;
+}
 
 h1 {
 	font-size: 3.052rem !important;  /* adjust size as needed */
