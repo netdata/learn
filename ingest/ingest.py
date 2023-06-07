@@ -269,6 +269,9 @@ def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
                     if val == "root":
                         # print("ROOT")
                         val = "/"
+                    
+                    if "Data collection" in  val:
+                        output += "toc_max_heading_level: 4\n"
 
                 if field == "sidebar_position":
                     output += "{0}: \"{1}\"\n".format(field, val.replace("\"", ""))
