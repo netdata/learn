@@ -1,18 +1,30 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.39.0';
+export const ReleaseVersion = '1.40.0';
 
-export const ReleaseDate = 'May 8, 2023';
+export const ReleaseDate = 'June 14, 2023';
 
 export const ReleaseNotes = [
-	'Netdata Charts v3.0',
-	'Windows support',
-	'Virtual nodes and custom labels',
+	'Dashboard Sections Summary Tiles',
+	'Silencing of Cloud Alert Notifications',
+	'Machine Learning - Extended Training to 24 Hours',
+	'Rewritten SSL Support for the Agent'
 ];
 
 
 
-export const News = [	
+export const News = [
+	{
+		title: <>Netdata release 1.40.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.40.0',
+		date: 'June 14, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Check out our Netdata v1.40.0 release notes to learn about our newest features and improvements.
+			</>
+		),
+	},	
 	{
 		title: <>Netdata release 1.39.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.39.0',
