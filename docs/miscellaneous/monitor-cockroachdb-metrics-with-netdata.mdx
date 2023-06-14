@@ -38,7 +38,7 @@ display them on the dashboard.
 
 If your CockroachDB instance is accessible through `http://localhost:8080/` or `http://127.0.0.1:8080`, your setup is
 complete. Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents) for your system, and refresh your browser. You should see CockroachDB
+method](/docs/maintaining/starting-and-stopping-netdata-agents) for your system, and refresh your browser. You should see CockroachDB
 metrics in your Netdata dashboard!
 
 <figure>
@@ -115,4 +115,4 @@ cd /etc/netdata/ # Replace with your Netdata configuration directory, if not /et
 ./edit-config health.d/cockroachdb.conf # You may need to use `sudo` for write privileges
 ```
 
-For more information about editing the defaults or writing new alarm entities, see our documentation on [configuring health alarms](/docs/alerts-and-notifications/health-configuration-reference).
+For more information about editing the defaults or writing new alarm entities, see our documentation on [configuring health alarms](/docs/alerting/health-configuration-reference).

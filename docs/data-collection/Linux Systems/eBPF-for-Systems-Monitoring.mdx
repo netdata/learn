@@ -46,12 +46,12 @@ If your Agent is v1.22 or older, you may to enable the collector yourself.
 
 To enable or disable the entire eBPF collector: 
 
-1.  Navigate to the [Netdata config directory](/docs/typical-netdata-agent-configurations/configuration#the-netdata-config-directory).
+1.  Navigate to the [Netdata config directory](/docs/configuring/configuration#the-netdata-config-directory).
     ```bash
     cd /etc/netdata
     ```
 
-2.  Use the [`edit-config`](/docs/typical-netdata-agent-configurations/configuration#use-edit-config-to-edit-configuration-files) script to edit `netdata.conf`.
+2.  Use the [`edit-config`](/docs/configuring/configuration#use-edit-config-to-edit-configuration-files) script to edit `netdata.conf`.
 
     ```bash
     ./edit-config netdata.conf
@@ -71,11 +71,11 @@ You can configure the eBPF collector's behavior to fine-tune which metrics you r
 
 To edit the `ebpf.d.conf`:
 
-1.  Navigate to the [Netdata config directory](/docs/typical-netdata-agent-configurations/configuration#the-netdata-config-directory).
+1.  Navigate to the [Netdata config directory](/docs/configuring/configuration#the-netdata-config-directory).
     ```bash
     cd /etc/netdata
     ```
-2.  Use the [`edit-config`](/docs/typical-netdata-agent-configurations/configuration#use-edit-config-to-edit-configuration-files) script to edit [`ebpf.d.conf`](https://github.com/netdata/netdata/blob/master/collectors/ebpf.plugin/ebpf.d.conf).
+2.  Use the [`edit-config`](/docs/configuring/configuration#use-edit-config-to-edit-configuration-files) script to edit [`ebpf.d.conf`](https://github.com/netdata/netdata/blob/master/collectors/ebpf.plugin/ebpf.d.conf).
 
     ```bash
     ./edit-config ebpf.d.conf
@@ -274,11 +274,11 @@ You can configure each thread of the eBPF data collector. This allows you to ove
 
 To configure an eBPF thread:
 
-1.  Navigate to the [Netdata config directory](/docs/typical-netdata-agent-configurations/configuration#the-netdata-config-directory).
+1.  Navigate to the [Netdata config directory](/docs/configuring/configuration#the-netdata-config-directory).
     ```bash
     cd /etc/netdata
     ```
-2.  Use the [`edit-config`](/docs/typical-netdata-agent-configurations/configuration#use-edit-config-to-edit-configuration-files) script to edit a thread configuration file. The following configuration files are available:
+2.  Use the [`edit-config`](/docs/configuring/configuration#use-edit-config-to-edit-configuration-files) script to edit a thread configuration file. The following configuration files are available:
 
     -   `network.conf`: Configuration for the [`network` thread](#network-configuration). This config file overwrites the global options and also
         lets you specify which network the eBPF collector monitors.
@@ -317,7 +317,7 @@ You can configure the information shown on `outbound` and `inbound` charts with 
 
 When you define a `ports` setting, Netdata will collect network metrics for that specific port. For example, if you
 write `ports = 19999`, Netdata will collect only connections for itself. The `hostnames` setting accepts
-[simple patterns](/docs/contributing-to-netdata/libnetdata/simple-patterns). The `ports`, and `ips` settings accept negation (`!`) to deny
+[simple patterns](/docs/contributing/libnetdata/simple-patterns). The `ports`, and `ips` settings accept negation (`!`) to deny
 specific values or asterisk alone to define all values.
 
 In the above example, Netdata will collect metrics for all ports between 1 and 443, with the exception of 53 (domain)
@@ -901,7 +901,7 @@ node is experiencing high memory usage and there is no obvious culprit to be fou
 
 If with these changes you still suspect eBPF using too much memory, and there is no obvious culprit to be found 
 in the `apps.mem` chart, consider testing for high kernel memory usage by [disabling eBPF monitoring](#configuring-ebpfplugin).
-Next, [restart Netdata](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents) with
+Next, [restart Netdata](/docs/maintaining/starting-and-stopping-netdata-agents) with
 `sudo systemctl restart netdata` to see if system memory usage (see the `system.ram` chart) has dropped significantly.
 
 Beginning with `v1.31`, kernel memory usage is configurable via the [`pid table size` setting](#pid-table-size)

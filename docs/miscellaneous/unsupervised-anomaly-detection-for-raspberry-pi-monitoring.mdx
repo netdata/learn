@@ -25,14 +25,14 @@ Read on to learn all the steps and enable unsupervised anomaly detection on your
 
 - A Raspberry Pi running Raspbian, which we'll call a _node_.
 - The [open-source Netdata](https://github.com/netdata/netdata) monitoring agent. If you don't have it installed on your
-  node yet, [get started now](/docs/install-the-netdata-agent).
+  node yet, [get started now](/docs/installing).
 
 ## Install dependencies
 
 First make sure Netdata is using Python 3 when it runs Python-based data collectors. 
 
-Next, open `netdata.conf` using [`edit-config`](/docs/typical-netdata-agent-configurations/configuration#use-edit-config-to-edit-configuration-files)
-from within the [Netdata config directory](/docs/typical-netdata-agent-configurations/configuration#the-netdata-config-directory). Scroll down to the
+Next, open `netdata.conf` using [`edit-config`](/docs/configuring/configuration#use-edit-config-to-edit-configuration-files)
+from within the [Netdata config directory](/docs/configuring/configuration#the-netdata-config-directory). Scroll down to the
 `[plugin:python.d]` section to pass in the `-ppython3` command option. 
 
 ```conf
@@ -61,7 +61,7 @@ LLVM_CONFIG=llvm-config-9 pip3 install --user llvmlite numpy==1.20.1 netdata-pan
 
 ## Enable the anomalies collector
 
-Now you're ready to enable the collector and [restart Netdata](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents).
+Now you're ready to enable the collector and [restart Netdata](/docs/maintaining/starting-and-stopping-netdata-agents).
 
 ```bash
 sudo ./edit-config python.d.conf
