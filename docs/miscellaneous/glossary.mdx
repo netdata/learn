@@ -20,17 +20,17 @@ Use the alphabatized list below to find the answer to your single-term questions
 
 ## A
 
-- [**Agent** or **Netdata Agent**](/docs/install-the-netdata-agent): Netdata's distributed monitoring Agent collects thousands of metrics from systems, hardware, and applications with zero configuration. It runs permanently on all your physical/virtual servers, containers, cloud deployments, and edge/IoT devices.
+- [**Agent** or **Netdata Agent**](/docs/installing): Netdata's distributed monitoring Agent collects thousands of metrics from systems, hardware, and applications with zero configuration. It runs permanently on all your physical/virtual servers, containers, cloud deployments, and edge/IoT devices.
 
-- [**Agent-cloud link** or **ACLK**](/docs/typical-netdata-agent-configurations/securing-netdata-agents/agent-cloud-link-aclk): The Agent-Cloud link (ACLK) is the mechanism responsible for securely connecting a Netdata Agent to your web browser through Netdata Cloud.
+- [**Agent-cloud link** or **ACLK**](/docs/configuring/securing-netdata-agents/agent-cloud-link-aclk): The Agent-Cloud link (ACLK) is the mechanism responsible for securely connecting a Netdata Agent to your web browser through Netdata Cloud.
 
-- [**Aggregate Function**](/docs/netdata-dashboards-and-visualizations/netdata-charts#aggregate-functions-over-time): A function applied When the granularity of the data collected is higher than the plotted points on the chart.
+- [**Aggregate Function**](/docs/visualizations/netdata-charts#aggregate-functions-over-time): A function applied When the granularity of the data collected is higher than the plotted points on the chart.
 
-- [**Alerts** (formerly **Alarms**)](/docs/alerts-and-notifications/notifications/netdata-cloud-notifications): With the information that appears on Netdata Cloud and the local dashboard about active alerts, you can configure alerts to match your infrastructure's needs or your team's goals.
+- [**Alerts** (formerly **Alarms**)](/docs/alerting/notifications/netdata-cloud-notifications): With the information that appears on Netdata Cloud and the local dashboard about active alerts, you can configure alerts to match your infrastructure's needs or your team's goals.
 
-- [**Alarm Entity Type**](/docs/alerts-and-notifications/health-configuration-reference#health-entity-reference): Entity types that are attached to specific charts and use the `alarm` label.
+- [**Alarm Entity Type**](/docs/alerting/health-configuration-reference#health-entity-reference): Entity types that are attached to specific charts and use the `alarm` label.
 
-- [**Anomaly Advisor**](/docs/machine-learning-and-assisted-troubleshooting/anomaly-advisor): A Netdata feature that lets you quickly surface potentially anomalous metrics and charts related to a particular highlight window of interest.
+- [**Anomaly Advisor**](/docs/ml-and-troubleshooting/anomaly-advisor): A Netdata feature that lets you quickly surface potentially anomalous metrics and charts related to a particular highlight window of interest.
 
 ## B
 
@@ -38,9 +38,9 @@ Use the alphabatized list below to find the answer to your single-term questions
 
 ## C
 
-- [**Child**](/docs/metrics-streaming-and-replication/understanding-how-streaming-works#streaming-basics): A node, running Netdata, that streams metric data to one or more parent.
+- [**Child**](/docs/streaming/understanding-how-streaming-works#streaming-basics): A node, running Netdata, that streams metric data to one or more parent.
 
-- [**Cloud** or **Netdata Cloud**](/docs/netdata-architecture/the-role-of-netdata-cloud): Netdata Cloud is a web application that gives you real-time visibility for your entire infrastructure. With Netdata Cloud, you can view key metrics, insightful charts, and active alarms from all your nodes in a single web interface.
+- [**Cloud** or **Netdata Cloud**](/docs/architecture/the-role-of-netdata-cloud): Netdata Cloud is a web application that gives you real-time visibility for your entire infrastructure. With Netdata Cloud, you can view key metrics, insightful charts, and active alarms from all your nodes in a single web interface.
 
 - [**Collector**](/docs/data-collection#collector-architecture-and-terminology): A catch-all term for any Netdata process that gathers metrics from an endpoint.
 
@@ -54,39 +54,39 @@ Use the alphabatized list below to find the answer to your single-term questions
 
 ## D
 
-- [**Dashboards**](/docs/netdata-dashboards-and-visualizations/custom-dashboards): Out-of-the box visual presentation of metrics that allows you to make sense of your infrastructure and its health and performance.
+- [**Dashboards**](/docs/visualizations/custom-dashboards): Out-of-the box visual presentation of metrics that allows you to make sense of your infrastructure and its health and performance.
 
-- [**Definition Bar**](/docs/netdata-dashboards-and-visualizations/netdata-charts): Bar within a composite chart that provides important information and options about the metrics within the chart.
+- [**Definition Bar**](/docs/visualizations/netdata-charts): Bar within a composite chart that provides important information and options about the metrics within the chart.
 
 - [**Dimension**](/docs/data-collection/chart-dimensions-contexts-and-families#dimension): A dimension is a value that gets shown on a chart.
 
-- [**Distributed Architecture**](/docs/netdata-architecture/distributed-data-architecture): The data architecture mindset with which Netdata was built, where all data are collected and stored on the edge, whenever it's possible, creating countless benefits.
+- [**Distributed Architecture**](/docs/architecture/distributed-data-architecture): The data architecture mindset with which Netdata was built, where all data are collected and stored on the edge, whenever it's possible, creating countless benefits.
 
 ## E
 
-- [**External Plugins**](/docs/contributing-to-netdata/external-plugins): These gather metrics from external processes, such as a webserver or database, and run as independent processes that communicate with the Netdata daemon via pipes.
+- [**External Plugins**](/docs/contributing/external-plugins): These gather metrics from external processes, such as a webserver or database, and run as independent processes that communicate with the Netdata daemon via pipes.
 
 ## F
 
 - [**Family**](/docs/data-collection/chart-dimensions-contexts-and-families#family): 1. What we consider our Netdata community of users and engineers. 2. A single instance of a hardware or software resource that needs to be displayed separately from similar instances.
 
-- [**Flood Protection**](/docs/alerts-and-notifications/notifications/netdata-cloud-notifications#flood-protection): If a node has too many state changes like firing too many alerts or going from reachable to unreachable, Netdata Cloud enables flood protection. As long as a node is in flood protection mode, Netdata Cloud does not send notifications about this node
+- [**Flood Protection**](/docs/alerting/notifications/netdata-cloud-notifications#flood-protection): If a node has too many state changes like firing too many alerts or going from reachable to unreachable, Netdata Cloud enables flood protection. As long as a node is in flood protection mode, Netdata Cloud does not send notifications about this node
 
-- [**Functions** or **Netdata Functions**](/docs/netdata-dashboards-and-visualizations/functions): Routines exposed by a collector on the Netdata Agent that can  bring additional information to support troubleshooting or trigger some action to happen on the node itself.
+- [**Functions** or **Netdata Functions**](/docs/visualizations/functions): Routines exposed by a collector on the Netdata Agent that can  bring additional information to support troubleshooting or trigger some action to happen on the node itself.
 
 ## G
 
 - [**Guided Troubleshooting**](https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/troubleshooting-overview.md): Troubleshooting with our Machine-Learning-powered tools designed to give you a cutting edge advantage in your troubleshooting battles.
 
-- [**Group by**](/docs/netdata-dashboards-and-visualizations/netdata-charts#group-by-dimension-node-or-chart): The drop-down on the dimension bar of a composite chart that allows you to group metrics by dimension, node, or chart.
+- [**Group by**](/docs/visualizations/netdata-charts#group-by-dimension-node-or-chart): The drop-down on the dimension bar of a composite chart that allows you to group metrics by dimension, node, or chart.
 
 ## H
 
-- [**Headless Collector Streaming**](/docs/metrics-streaming-and-replication/understanding-how-streaming-works#supported-streaming-configurations): Streaming configuration where child `A`, _without_ a database or web dashboard, streams metrics to parent `B`.
+- [**Headless Collector Streaming**](/docs/streaming/understanding-how-streaming-works#supported-streaming-configurations): Streaming configuration where child `A`, _without_ a database or web dashboard, streams metrics to parent `B`.
 
-- [**Health Configuration Files**](/docs/alerts-and-notifications/health-configuration-reference#edit-health-configuration-files): Files that you can edit to configure your Agent's health watchdog service.
+- [**Health Configuration Files**](/docs/alerting/health-configuration-reference#edit-health-configuration-files): Files that you can edit to configure your Agent's health watchdog service.
 
-- [**Health Entity Reference**](/docs/alerts-and-notifications/health-configuration-reference#health-entity-reference):
+- [**Health Entity Reference**](/docs/alerting/health-configuration-reference#health-entity-reference):
 
 - [**Home** tab](/docs/monitor-your-infrastructure/home-overview-and-single-node-view#home): Tab in Netdata Cloud that provides a predefined dashboard of relevant information about entities in the War Room.
 
@@ -96,34 +96,34 @@ Use the alphabatized list below to find the answer to your single-term questions
 
 ## K
 
-- [**Kickstart** or **Kickstart Script**](/docs/install-the-netdata-agent/one-line-installer-for-all-linux-systems): An automatic one-line installation script named 'kickstart.sh' that works on all Linux distributions and macOS.
+- [**Kickstart** or **Kickstart Script**](/docs/installing/one-line-installer-for-all-linux-systems): An automatic one-line installation script named 'kickstart.sh' that works on all Linux distributions and macOS.
 
-- [**Kubernetes Dashboard** or **Kubernetes Tab**](/docs/netdata-dashboards-and-visualizations/kubernetes-visualizations): Netdata Cloud features enhanced visualizations for the resource utilization of Kubernetes (k8s) clusters, embedded in the default Overview dashboard.
+- [**Kubernetes Dashboard** or **Kubernetes Tab**](/docs/visualizations/kubernetes-visualizations): Netdata Cloud features enhanced visualizations for the resource utilization of Kubernetes (k8s) clusters, embedded in the default Overview dashboard.
 
 ## M
 
 - [**Metrics Collection**](/docs/data-collection):  With zero configuration, Netdata auto-detects thousands of data sources upon starting and immediately collects per-second metrics. Netdata can immediately collect metrics from these endpoints thanks to 300+ collectors, which all come pre-installed when you install Netdata.
 
-- [**Metric Correlations**](/docs/machine-learning-and-assisted-troubleshooting/metric-correlations): A Netdata feature that lets you quickly find metrics and charts related to a particular window of interest that you want to explore further.
+- [**Metric Correlations**](/docs/ml-and-troubleshooting/metric-correlations): A Netdata feature that lets you quickly find metrics and charts related to a particular window of interest that you want to explore further.
 
-- [**Metrics Exporting**](/docs/exporting-data-to-other-systems): Netdata allows you to export metrics to external time-series databases with the exporting engine. This system uses a number of connectors to initiate connections to more than thirty supported databases, including InfluxDB, Prometheus, Graphite, ElasticSearch, and much more.
+- [**Metrics Exporting**](/docs/exporting): Netdata allows you to export metrics to external time-series databases with the exporting engine. This system uses a number of connectors to initiate connections to more than thirty supported databases, including InfluxDB, Prometheus, Graphite, ElasticSearch, and much more.
 
-- [**Metrics Storage**](/docs/typical-netdata-agent-configurations/optimizing-metrics-database/change-how-long-netdata-stores-metrics): Upon collection the collected metrics need to be either forwarded, exported or just stored for further treatment. The Agent is capable to store metrics both short and long-term, with or without the usage of non-volatile storage.
+- [**Metrics Storage**](/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics): Upon collection the collected metrics need to be either forwarded, exported or just stored for further treatment. The Agent is capable to store metrics both short and long-term, with or without the usage of non-volatile storage.
 
-- [**Metrics Streaming Replication**](/docs/metrics-streaming-and-replication/understanding-how-streaming-works): Each node running Netdata can stream the metrics it collects, in real time, to another node. Metric streaming allows you to replicate metrics data across multiple nodes, or centralize all your metrics data into a single time-series database (TSDB).
+- [**Metrics Streaming Replication**](/docs/streaming/understanding-how-streaming-works): Each node running Netdata can stream the metrics it collects, in real time, to another node. Metric streaming allows you to replicate metrics data across multiple nodes, or centralize all your metrics data into a single time-series database (TSDB).
 
 - [**Module**](/docs/data-collection/collectors-configuration#enable-and-disable-a-specific-collection-module): A type of collector.
 
 ## N
 
-- [**Netdata**](/docs/netdata-architecture): Netdata is a monitoring tool designed by system administrators, DevOps engineers, and developers to collect everything, help you visualize
+- [**Netdata**](/docs/architecture): Netdata is a monitoring tool designed by system administrators, DevOps engineers, and developers to collect everything, help you visualize
 metrics, troubleshoot complex performance problems, and make data interoperable with the rest of your monitoring stack.
 
-- [**Netdata Agent** or **Agent**](/docs/install-the-netdata-agent): Netdata's distributed monitoring Agent collects thousands of metrics from systems, hardware, and applications with zero configuration. It runs permanently on all your physical/virtual servers, containers, cloud deployments, and edge/IoT devices.
+- [**Netdata Agent** or **Agent**](/docs/installing): Netdata's distributed monitoring Agent collects thousands of metrics from systems, hardware, and applications with zero configuration. It runs permanently on all your physical/virtual servers, containers, cloud deployments, and edge/IoT devices.
 
-- [**Netdata Cloud** or **Cloud**](/docs/netdata-architecture/the-role-of-netdata-cloud): Netdata Cloud is a web application that gives you real-time visibility for your entire infrastructure. With Netdata Cloud, you can view key metrics, insightful charts, and active alarms from all your nodes in a single web interface.
+- [**Netdata Cloud** or **Cloud**](/docs/architecture/the-role-of-netdata-cloud): Netdata Cloud is a web application that gives you real-time visibility for your entire infrastructure. With Netdata Cloud, you can view key metrics, insightful charts, and active alarms from all your nodes in a single web interface.
 
-- [**Netdata Functions** or **Functions**](/docs/netdata-dashboards-and-visualizations/functions): Routines exposed by a collector on the Netdata Agent that can  bring additional information to support troubleshooting or trigger some action to happen on the node itself.
+- [**Netdata Functions** or **Functions**](/docs/visualizations/functions): Routines exposed by a collector on the Netdata Agent that can  bring additional information to support troubleshooting or trigger some action to happen on the node itself.
 
 <!-- No link for this keyword - **Netdata Logs** https://github.com/netdata/netdata/blob/master/docs/tasks/miscellaneous/check-netdata-logs.md: The three log files - `error.log`, `access.log` and `debug.log` - used by Netdata -->
 
@@ -141,17 +141,17 @@ metrics, troubleshoot complex performance problems, and make data interoperable 
 
 ## P
 
-- [**Parent**](/docs/metrics-streaming-and-replication/understanding-how-streaming-works#streaming-basics): A node, running Netdata, that receives streamed metric data.
+- [**Parent**](/docs/streaming/understanding-how-streaming-works#streaming-basics): A node, running Netdata, that receives streamed metric data.
 
-- [**Proxy**](/docs/metrics-streaming-and-replication/understanding-how-streaming-works#streaming-basics): A node, running Netdata, that receives metric data from a child and "forwards" them on to a separate parent node.
+- [**Proxy**](/docs/streaming/understanding-how-streaming-works#streaming-basics): A node, running Netdata, that receives metric data from a child and "forwards" them on to a separate parent node.
 
-- [**Proxy Streaming**](/docs/metrics-streaming-and-replication/understanding-how-streaming-works#supported-streaming-configurations): Streaming configuration where child `A`, _with or without_ a database, sends metrics to proxy `C`, also _with or without_ a database. `C` sends metrics to parent `B`
+- [**Proxy Streaming**](/docs/streaming/understanding-how-streaming-works#supported-streaming-configurations): Streaming configuration where child `A`, _with or without_ a database, sends metrics to proxy `C`, also _with or without_ a database. `C` sends metrics to parent `B`
 
 ## R
 
-- [**Registry**](/docs/typical-netdata-agent-configurations/securing-netdata-agents/registry): Registry that allows Netdata to provide unified cross-server dashboards.
+- [**Registry**](/docs/configuring/securing-netdata-agents/registry): Registry that allows Netdata to provide unified cross-server dashboards.
 
-- [**Replication Streaming**](/docs/metrics-streaming-and-replication/streaming-configuration-reference): Streaming configuration where child `A`, _with_ a database and web dashboard, streams metrics to parent `B`.
+- [**Replication Streaming**](/docs/streaming/streaming-configuration-reference): Streaming configuration where child `A`, _with_ a database and web dashboard, streams metrics to parent `B`.
 
 - [**Room** or **War Room**](/docs/monitor-your-infrastructure/war-rooms): War Rooms organize your connected nodes and provide infrastructure-wide dashboards using real-time metrics and visualizations.
 
@@ -165,9 +165,9 @@ metrics, troubleshoot complex performance problems, and make data interoperable 
 
 ## T
 
-- [**Template Entity Type**](/docs/alerts-and-notifications/health-configuration-reference#entity-types): Entity type that defines rules that apply to all charts of a specific context, and use the template label. Templates help you apply one entity to all disks, all network interfaces, all MySQL databases, and so on.
+- [**Template Entity Type**](/docs/alerting/health-configuration-reference#entity-types): Entity type that defines rules that apply to all charts of a specific context, and use the template label. Templates help you apply one entity to all disks, all network interfaces, all MySQL databases, and so on.
 
-- [**Tiers**](/docs/contributing-to-netdata/database-engine#tiers): Tiering is a mechanism of providing multiple tiers of data with different granularity of metrics (the frequency they are collected and stored, i.e. their resolution).
+- [**Tiers**](/docs/contributing/database-engine#tiers): Tiering is a mechanism of providing multiple tiers of data with different granularity of metrics (the frequency they are collected and stored, i.e. their resolution).
 
 ## U
 
@@ -184,4 +184,4 @@ even thousands of nodes. There are no actual bottlenecks especially if you retai
 
 ## Z
 
-- [**Zero Configuration**](/docs/netdata-architecture#simple-to-deploy): Netdata is preconfigured and capable to autodetect and monitor any well known application that runs on your system. You just deploy and claim Netdata Agents in your Netdata space, and monitor them in seconds.
+- [**Zero Configuration**](/docs/architecture#simple-to-deploy): Netdata is preconfigured and capable to autodetect and monitor any well known application that runs on your system. You just deploy and claim Netdata Agents in your Netdata space, and monitor them in seconds.

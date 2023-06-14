@@ -68,7 +68,7 @@ You can enable/disable of the collection modules supported by `go.d`, `python.d`
 configuration file of that orchestrator. For example, you can change the behavior of the Go orchestrator, or any of its 
 collectors, by editing `go.d.conf`.
 
-Use `edit-config` from your [Netdata config directory](/docs/typical-netdata-agent-configurations/configuration#the-netdata-config-directory) 
+Use `edit-config` from your [Netdata config directory](/docs/configuring/configuration#the-netdata-config-directory) 
 to open the orchestrator primary configuration file:
 
 ```bash
@@ -81,7 +81,7 @@ enable/disable it with `yes` and `no` settings. Uncomment any line you change to
 start.
 
 After you make your changes, restart the Agent with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents) for your system.
+method](/docs/maintaining/starting-and-stopping-netdata-agents) for your system.
 
 ## Configure a collector
 
@@ -106,7 +106,7 @@ and open its documentation. Some software has collectors written in multiple lan
 pick the collector written in Go.
 
 Use `edit-config` from your 
-[Netdata config directory](/docs/typical-netdata-agent-configurations/configuration#the-netdata-config-directory) 
+[Netdata config directory](/docs/configuring/configuration#the-netdata-config-directory) 
 to open a collector's configuration file. For example, edit the Nginx collector with the following:
 
 ```bash
@@ -119,7 +119,7 @@ configure that collector. Uncomment any line you change to ensure the collector'
 read it on start.
 
 After you make your changes, restart the Agent with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents) for your system.
+method](/docs/maintaining/starting-and-stopping-netdata-agents) for your system.
 
 ## Troubleshoot a collector
 

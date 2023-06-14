@@ -12,7 +12,7 @@ When Netdata starts, and with zero configuration, it auto-detects thousands of d
 per-second metrics.
 
 Netdata can immediately collect metrics from these endpoints thanks to 300+ **collectors**, which all come pre-installed
-when you [install Netdata](/docs/install-the-netdata-agent).
+when you [install Netdata](/docs/installing).
 
 All collectors are **installed by default** with every installation of Netdata. You do not need to install
 collectors manually to collect metrics from new sources. 
@@ -31,9 +31,9 @@ Every collector has two primary jobs:
 
 If the collector finds compatible metrics exposed on the configured endpoint, it begins a per-second collection job. The
 Netdata Agent gathers these metrics, sends them to the 
-[database engine for storage](/docs/typical-netdata-agent-configurations/optimizing-metrics-database/change-how-long-netdata-stores-metrics)
+[database engine for storage](/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics)
 , and immediately 
-[visualizes them meaningfully](/docs/netdata-dashboards-and-visualizations/netdata-charts) 
+[visualizes them meaningfully](/docs/visualizations/netdata-charts) 
 on dashboards.
 
 Each collector comes with a pre-defined configuration that matches the default setup for that application. This endpoint
@@ -53,18 +53,18 @@ specifics of what a given collector does.
     -   **External** plugins organize collectors that gather metrics from external processes, such as a MySQL database or
         Nginx web server. They can be written in any language, and the `netdata` daemon spawns them as long-running
         independent processes. They communicate with the daemon via pipes. All external plugins are managed by
-        [plugins.d](/docs/contributing-to-netdata/external-plugins), which provides additional management options.
+        [plugins.d](/docs/contributing/external-plugins), which provides additional management options.
 
 -   **Orchestrators** are external plugins that run and manage one or more modules. They run as independent processes.
     The Go orchestrator is in active development.
 
-    -   [go.d.plugin](/docs/contributing-to-netdata/external-plugins/go.d.plugin): An orchestrator for data
+    -   [go.d.plugin](/docs/contributing/external-plugins/go.d.plugin): An orchestrator for data
         collection modules written in `go`.
 
-    -   [python.d.plugin](/docs/contributing-to-netdata/external-plugins/python.d.plugin): 
+    -   [python.d.plugin](/docs/contributing/external-plugins/python.d.plugin): 
         An orchestrator for data collection modules written in `python` v2/v3.
 
-    -   [charts.d.plugin](/docs/contributing-to-netdata/external-plugins/charts.d.plugin): 
+    -   [charts.d.plugin](/docs/contributing/external-plugins/charts.d.plugin): 
         An orchestrator for data collection modules written in`bash` v4+.
 
 -   **Modules** are the individual programs controlled by an orchestrator to collect data from a specific application, or type of endpoint.

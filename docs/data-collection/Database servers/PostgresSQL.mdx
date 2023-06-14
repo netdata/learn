@@ -34,7 +34,7 @@ CREATE USER netdata;
 GRANT pg_monitor TO netdata;
 ```
 
-After creating the new user, restart the Netdata agent with `sudo systemctl restart netdata`, or the [appropriate method](/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents) for your system
+After creating the new user, restart the Netdata agent with `sudo systemctl restart netdata`, or the [appropriate method](/docs/maintaining/starting-and-stopping-netdata-agents) for your system
 
 ## Metrics
 
@@ -130,7 +130,7 @@ Labels per scope:
 ## Configuration
 
 Edit the `go.d/postgres.conf` configuration file using `edit-config` from the
-Netdata [config directory](/docs/typical-netdata-agent-configurations/configuration), which is typically at `/etc/netdata`.
+Netdata [config directory](/docs/configuring/configuration), which is typically at `/etc/netdata`.
 
 ```bash
 cd /etc/netdata # Replace this path with your Netdata config directory
@@ -161,7 +161,7 @@ databases on a database server is disabled because each database requires an add
 
 Use the `collect_databases_matching` configuration option to select the databases from which you want to collect
 detailed metrics. The value
-supports [Netdata simple patterns](/docs/contributing-to-netdata/libnetdata/simple-patterns).
+supports [Netdata simple patterns](/docs/contributing/libnetdata/simple-patterns).
 
 ```yaml
 jobs:
