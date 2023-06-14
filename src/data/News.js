@@ -21,7 +21,7 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				Check out our Netdata v1.40.0 release notes to learn about our newest features and improvements. 
+				Check out our Netdata v1.40.0 release notes to learn about our newest features and improvements.
 			</>
 		),
 	},	
