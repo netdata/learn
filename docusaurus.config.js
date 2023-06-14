@@ -228,11 +228,5 @@ module.exports = {
 			crossorigin: '',
 		},
 	],
-	scripts: [
-		{
-			src: 'https://js.hs-scripts.com/4567453.js',
-			async: true,
-			defer: true,
-		},
-	],
+	scripts: [],
 };
