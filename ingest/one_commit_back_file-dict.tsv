@@ -138,6 +138,7 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/a
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-mattermost-notification-configuration.md	/docs/alerting/notifications/netdata-cloud-notifications/add-mattermost-notification-configuration
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-notification-methods.md	/docs/alerting/notifications/netdata-cloud-notifications/manage-notification-methods
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-opsgenie-notification-configuration.md	/docs/alerting/notifications/netdata-cloud-notifications/add-opsgenie-notification-configuration
+https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-rocketchat-notification-configuration.md	/docs/alerting/notifications/netdata-cloud-notifications/add-rocketchat-notification-configuration
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/notifications.md	/docs/alerting/notifications/netdata-cloud-notifications
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-slack-notification-configuration.md	/docs/alerting/notifications/netdata-cloud-notifications/add-slack-notification-configuration
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	/docs/contributing/contribute-to-the-documentation/netdata-style-guide
