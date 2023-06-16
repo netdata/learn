@@ -1,6 +1,7 @@
 custom_edit_url	sidebar_label	learn_status	learn_rel_path	description
 https://github.com/netdata/netdata/edit/master/docs/getting-started/introduction.md	Architecture	Published	Architecture	
 https://github.com/netdata/netdata/edit/master/docs/store/distributed-data-architecture.md	Distributed data architecture	Published	Architecture	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/deployment-strategies.md	Deployment Strategies	Published	Architecture	
 https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	The Role of Netdata Cloud	Published	Architecture	
 https://github.com/netdata/netdata/edit/master/docs/netdata-security.md	Security and privacy design	Published	Architecture	Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
 https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	Live demo	Published	root	
