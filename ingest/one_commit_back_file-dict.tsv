@@ -160,6 +160,7 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/main
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/ml-and-troubleshooting
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/build-the-netdata-agent-yourself.md	/docs/installing/build-the-netdata-agent-yourself
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-dashboards-and-visualizations.md	/docs/visualizations
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/deployment-strategies.md	/docs/architecture/deployment-strategies
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/metrics-streaming-and-replication.md	/docs/streaming
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	/docs/visualizations/accessing-netdata-dashboards
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-apis.md	/docs/rest-api
