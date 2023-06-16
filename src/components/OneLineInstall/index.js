@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 export function OneLineInstallWget() {
   const [currentCommandUpdates, setCurrentCommandUpdates] = useState('');
-  const [currentCommandRelease, setCurrentCommandRelease] = useState('');
+  const [currentCommandRelease, setCurrentCommandRelease] = useState(' --stable-channel');
   const [currentCommandStatistics, setCurrentCommandStatistics] = useState('');
   const [currentCloudOption, setCurrentCloudOption] = useState('');
   const [updatesChecked, setUpdatesChecked] = useState(true);
