@@ -12,7 +12,7 @@ export function OneLineInstallWget() {
   const [currentCommandStatistics, setCurrentCommandStatistics] = useState('');
   const [currentCloudOption, setCurrentCloudOption] = useState('');
   const [updatesChecked, setUpdatesChecked] = useState(true);
-  const [releaseChecked, setReleaseChecked] = useState(true);
+  const [releaseChecked, setReleaseChecked] = useState(false);
   const [statsChecked, setStatsChecked] = useState(true);
   const [cloudChecked, setCloudChecked] = useState(false);
 
