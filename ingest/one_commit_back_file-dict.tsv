@@ -373,7 +373,7 @@ https://github.com/netdata/netdata/edit/master/libnetdata/worker_utilization/REA
 https://github.com/netdata/netdata/edit/master/cli/README.md	/docs/configuring/agent-cli
 https://github.com/netdata/netdata/edit/master/aclk/README.md	/docs/configuring/securing-netdata-agents/agent-cloud-link-aclk
 https://github.com/netdata/netdata/edit/master/database/README.md	/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups
-https://github.com/netdata/netdata/edit/master/database/engine/README.md	/docs/contributing/database-engine
+https://github.com/netdata/netdata/edit/master/database/engine/README.md	/docs/architecture/database-engine
 https://github.com/netdata/netdata/edit/master/ml/README.md	/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection
 https://github.com/netdata/netdata/edit/master/exporting/README.md	/docs/exporting/exporting-reference
 https://github.com/netdata/netdata/edit/master/exporting/WALKTHROUGH.md	/docs/exporting/prometheus/user-guide-netdata-prometheus-grafana-stack
