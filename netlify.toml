@@ -1015,7 +1015,7 @@
 
 [[redirects]]
   from="/docs/agent/database/engine"
-  to="/docs/contributing/database-engine"
+  to="/docs/architecture/database-engine"
 
 [[redirects]]
   from="/docs/agent/demo-sites"
@@ -2075,7 +2075,7 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database/database-engine"
-  to="/docs/contributing/database-engine"
+  to="/docs/architecture/database-engine"
 
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics"
@@ -2179,7 +2179,7 @@
 
 [[redirects]]
   from="/docs/improving-netdata---developers/metric-retention---database/database-engine"
-  to="/docs/contributing/database-engine"
+  to="/docs/architecture/database-engine"
 
 [[redirects]]
   from="/docs/exporting-data/rest-api-for-database-queries"
@@ -3119,7 +3119,7 @@
 
 [[redirects]]
   from="/docs/improving-netdata---developers/database-engine"
-  to="/docs/contributing/database-engine"
+  to="/docs/architecture/database-engine"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/contribute-to-the-documentation/netdata-style-guide"
@@ -4855,7 +4855,7 @@
 
 [[redirects]]
   from="/docs/contributing-to-netdata/database-engine"
-  to="/docs/contributing/database-engine"
+  to="/docs/architecture/database-engine"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/contribute-to-the-documentation/netdata-style-guide"
@@ -5040,5 +5040,9 @@
 [[redirects]]
   from="/docs//live-demos"
   to="/docs//live-demo"
+
+[[redirects]]
+  from="/docs/contributing/database-engine"
+  to="/docs/architecture/database-engine"
 
 # section: dynamic << END
