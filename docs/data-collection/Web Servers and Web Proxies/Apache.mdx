@@ -8,12 +8,12 @@ description: "Monitor the health and performance of Apache web servers with zero
 sidebar_position: "648000"
 slug: "/data-collection/web-servers-and-web-proxies/apache"
 ---
-# Apache collector
+# Apache
 
 ## Overview
 
-[Apache](https://httpd.apache.org/) is an open-source HTTP server for modern operating systems including UNIX and
-Windows.
+The [Apache HTTP Server](https://httpd.apache.org/) one of the most popular open source web servers available.
+Monitoring Apache web servers is a crucial part of maintaining their health, optimizing their performance, ensuring their security, and achieving operational efficiency. It allows you to respond swiftly to any emerging issues and to take a more proactive approach in managing your IT resources.
 
 This collector monitors metrics from one or more Apache servers, depending on your configuration.
 
@@ -33,18 +33,21 @@ This scope has no labels.
 
 Metrics:
 
-| Metric             |                                                 Dimensions                                                  |    Unit     | Basic/Extended |
-|--------------------|:-----------------------------------------------------------------------------------------------------------:|:-----------:|:--------------:|
-| apache.connections |                                                 connections                                                 | connections |      + +       |
-| apache.conns_async |                                         keepalive, closing, writing                                         | connections |      + +       |
-| apache.workers     |                                                 idle, busy                                                  |   workers   |      + +       |
-| apache.scoreboard  | waiting, starting, reading, sending, keepalive, dns_lookup, closing, logging, finishing, idle_cleanup, open | connections |      + +       |
-| apache.requests    |                                                  requests                                                   | requests/s  |      - +       |
-| apache.net         |                                                    sent                                                     |  kilobit/s  |      - +       |
-| apache.reqpersec   |                                                  requests                                                   | requests/s  |      - +       |
-| apache.bytespersec |                                                   served                                                    |    KiB/s    |      - +       |
-| apache.bytesperreq |                                                    size                                                     |     KiB     |      - +       |
-| apache.uptime      |                                                   uptime                                                    |   seconds   |      - +       |
+
+| Metric             | Dimensions                                                                                                  | Unit        | Basic/Extended | Description                                        |
+|--------------------|-:-:---------------------------------------------------------------------------------------------------------|-:-:---------|-:-:------------|-:-:------------------------------------------------|
+| apache.connections | connections                                                                                                 | connections | + +            | Connections                                        |
+| apache.conns_async | keepalive, closing, writing                                                                                 | connections | + +            | Active Connections                                 |
+| apache.workers     | idle, busy                                                                                                  | workers     | + +            | Workers Threads                                    |
+| apache.scoreboard  | waiting, starting, reading, sending, keepalive, dns_lookup, closing, logging, finishing, idle_cleanup, open | connections | + +            | Scoreboard                                         |
+| apache.requests    | requests                                                                                                    | requests/s  | - +            | Requests                                           |
+| apache.net         | sent                                                                                                        | kilobit/s   | - +            | Bandwidth                                          |
+| apache.reqpersec   | requests                                                                                                    | requests/s  | - +            | Lifetime Average Number Of Requests Per Second     |
+| apache.bytespersec | served                                                                                                      | KiB/s       | - +            | Lifetime Average Number Of Bytes Served Per Second |
+| apache.bytesperreq | size                                                                                                        | KiB         | - +            | Lifetime Average Response Size                     |
+| apache.uptime      | uptime                                                                                                      | seconds     | - +            | Uptime                                             |
+
+
 
 ## Setup
 
@@ -114,8 +117,7 @@ The following options can be defined globally: update_every, autodetection_retry
 ##### Basic
 
 A basic example configuration.
-<details>
-<summary>Config</summary>
+
 
 ```yaml
 jobs:
@@ -123,7 +125,6 @@ jobs:
     url: http://127.0.0.1/server-status?auto
 ```
 
-</details>
 
 ##### HTTP authentication
 
@@ -201,3 +202,17 @@ should give you clues as to why the collector isn't working.
   ```bash
   ./go.d.plugin -d -m apache
   ```
+
+## Related integrations
+
+You can also monitor aspects of Apache through the following integrations:
+
+- [Web server log](/docs/data-collection/web-servers-and-web-proxies/web-logs/apache-nginx-microsoft-iis)
+- [HTTP endpoint](/docs/data-collection/synthetic-checks/http-endpoints-check)
+- [Cgroups](/docs/data-collection/containers-and-vms/cgroups)
+- [Apps](/docs/data-collection/apm/application-monitoring)
+- [Systemd units state](/docs/data-collection/systemd/systemd-units)
+
+## Additional Blog Posts / Use-cases
+
+- [How to monitor and troubleshoot Apache web servers](https://blog.netdata.cloud/apache-monitoring/)
