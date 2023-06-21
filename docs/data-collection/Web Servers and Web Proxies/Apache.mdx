@@ -33,18 +33,22 @@ This scope has no labels.
 
 Metrics:
 
-| Metric             |                                                 Dimensions                                                  |    Unit     | Basic/Extended |
-|--------------------|:-----------------------------------------------------------------------------------------------------------:|:-----------:|:--------------:|
-| apache.connections |                                                 connections                                                 | connections |      + +       |
-| apache.conns_async |                                         keepalive, closing, writing                                         | connections |      + +       |
-| apache.workers     |                                                 idle, busy                                                  |   workers   |      + +       |
-| apache.scoreboard  | waiting, starting, reading, sending, keepalive, dns_lookup, closing, logging, finishing, idle_cleanup, open | connections |      + +       |
-| apache.requests    |                                                  requests                                                   | requests/s  |      - +       |
-| apache.net         |                                                    sent                                                     |  kilobit/s  |      - +       |
-| apache.reqpersec   |                                                  requests                                                   | requests/s  |      - +       |
-| apache.bytespersec |                                                   served                                                    |    KiB/s    |      - +       |
-| apache.bytesperreq |                                                    size                                                     |     KiB     |      - +       |
-| apache.uptime      |                                                   uptime                                                    |   seconds   |      - +       |
+Metrics:
+
+| Metric             | Dimensions                                                                                                  | Unit        | Basic/Extended | Description                                        |
+|--------------------|-:-:---------------------------------------------------------------------------------------------------------|-:-:---------|-:-:------------|-:-:------------------------------------------------|
+| apache.connections | connections                                                                                                 | connections | + +            | Connections                                        |
+| apache.conns_async | keepalive, closing, writing                                                                                 | connections | + +            | Active Connections                                 |
+| apache.workers     | idle, busy                                                                                                  | workers     | + +            | Workers Threads                                    |
+| apache.scoreboard  | waiting, starting, reading, sending, keepalive, dns_lookup, closing, logging, finishing, idle_cleanup, open | connections | + +            | Scoreboard                                         |
+| apache.requests    | requests                                                                                                    | requests/s  | - +            | Requests                                           |
+| apache.net         | sent                                                                                                        | kilobit/s   | - +            | Bandwidth                                          |
+| apache.reqpersec   | requests                                                                                                    | requests/s  | - +            | Lifetime Average Number Of Requests Per Second     |
+| apache.bytespersec | served                                                                                                      | KiB/s       | - +            | Lifetime Average Number Of Bytes Served Per Second |
+| apache.bytesperreq | size                                                                                                        | KiB         | - +            | Lifetime Average Response Size                     |
+| apache.uptime      | uptime                                                                                                      | seconds     | - +            | Uptime                                             |
+
+
 
 ## Setup
 
@@ -114,8 +118,7 @@ The following options can be defined globally: update_every, autodetection_retry
 ##### Basic
 
 A basic example configuration.
-<details>
-<summary>Config</summary>
+
 
 ```yaml
 jobs:
@@ -123,7 +126,6 @@ jobs:
     url: http://127.0.0.1/server-status?auto
 ```
 
-</details>
 
 ##### HTTP authentication
 
@@ -206,11 +208,11 @@ should give you clues as to why the collector isn't working.
 
 You can also monitor aspects of Apache through the following integrations:
 
-- [Web server log Collector](/docs/data-collection/web-servers-and-web-proxies/web-logs/apache-nginx-microsoft-iis)
-- [HTTP endpoint Collector](/docs/data-collection/synthetic-checks/http-endpoints-check)
-- [Cgroups Plugin](/docs/data-collection/containers-and-vms/cgroups)
-- [Apps Plugin](/docs/data-collection/apm/application-monitoring)
-- [Systemd units state Collector](/docs/data-collection/systemd/systemd-units)
+- [Web server log](/docs/data-collection/web-servers-and-web-proxies/web-logs/apache-nginx-microsoft-iis)
+- [HTTP endpoint](/docs/data-collection/synthetic-checks/http-endpoints-check)
+- [Cgroups](/docs/data-collection/containers-and-vms/cgroups)
+- [Apps](/docs/data-collection/apm/application-monitoring)
+- [Systemd units state](/docs/data-collection/systemd/systemd-units)
 
 ## Additional Blog Posts / Use-cases
 
