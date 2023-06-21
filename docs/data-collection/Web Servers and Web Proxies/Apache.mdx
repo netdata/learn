@@ -12,10 +12,10 @@ slug: "/data-collection/web-servers-and-web-proxies/apache"
 
 ## Overview
 
-[Apache](https://httpd.apache.org/) is an open-source HTTP server for modern operating systems including UNIX and
-Windows.
+The [Apache HTTP Server](https://httpd.apache.org/) one of the most popular open source web servers available.
+Monitoring Apache web servers is a crucial part of maintaining their health, optimizing their performance, ensuring their security, and achieving operational efficiency. It allows you to respond swiftly to any emerging issues and to take a more proactive approach in managing your IT resources.
 
-This collector monitors metrics from one or more Apache servers, depending on your configuration.
+This collector gathers metrics from one or more Apache servers, depending on your configuration.
 
 ## Collected metrics
 
@@ -201,3 +201,17 @@ should give you clues as to why the collector isn't working.
   ```bash
   ./go.d.plugin -d -m apache
   ```
+
+## Related integrations
+
+You can also monitor aspects of Apache through the following integrations:
+
+- [Web server log Collector](https://github.com/netdata/go.d.plugin/blob/master/modules/weblog/README.md)
+- [HTTP endpoint Collector](https://github.com/netdata/go.d.plugin/blob/master/modules/httpcheck/README.md)
+- [Cgroups Plugin](https://github.com/netdata/netdata/blob/master/collectors/cgroups.plugin/README.md)
+- [Apps Plugin](https://github.com/netdata/netdata/blob/master/collectors/apps.plugin/README.md)
+- [Systemd units state Collector](https://github.com/netdata/go.d.plugin/blob/master/modules/systemdunits/README.md)
+
+## Additional Blog Posts / Use-cases
+
+- [How to monitor and troubleshoot Apache web servers](https://blog.netdata.cloud/apache-monitoring/)
