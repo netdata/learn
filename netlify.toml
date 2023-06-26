@@ -2998,10 +2998,6 @@
   to="/docs/contributing/libnetdata/popen"
 
 [[redirects]]
-  from="/docs/improving-netdata---developers/libnetdata/parser"
-  to="/docs/contributing/libnetdata/parser"
-
-[[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/one-way-allocator"
   to="/docs/contributing/libnetdata/one-way-allocator"
 
@@ -4732,10 +4728,6 @@
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/popen"
   to="/docs/contributing/libnetdata/popen"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/libnetdata/parser"
-  to="/docs/contributing/libnetdata/parser"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/one-way-allocator"
