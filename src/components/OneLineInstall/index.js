@@ -107,11 +107,11 @@ export function OneLineInstallWget() {
 
 export function OneLineInstallCurl() {
   const [currentCommandUpdates, setCurrentCommandUpdates] = useState('');
-  const [currentCommandRelease, setCurrentCommandRelease] = useState(' --stable-channel');
+  const [currentCommandRelease, setCurrentCommandRelease] = useState('');
   const [currentCommandStatistics, setCurrentCommandStatistics] = useState('');
   const [currentCloudOption, setCurrentCloudOption] = useState('');
   const [updatesChecked, setUpdatesChecked] = useState(true);
-  const [releaseChecked, setReleaseChecked] = useState(false);
+  const [releaseChecked, setReleaseChecked] = useState(true);
   const [statsChecked, setStatsChecked] = useState(true);
   const [cloudChecked, setCloudChecked] = useState(false);
 
