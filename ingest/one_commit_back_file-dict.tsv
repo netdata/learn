@@ -232,14 +232,12 @@ https://github.com/netdata/netdata/edit/master/docs/guides/monitor/raspberry-pi-
 https://github.com/netdata/netdata/edit/master/docs/guides/monitor/kubernetes-k8s-netdata.md	/docs/miscellaneous/kubernetes-monitoring-with-netdata-overview-and-visualizations
 https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	/docs/configuring
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs/visualizations/functions
-https://github.com/netdata/netdata/edit/master/docs/cloud/war-rooms.md	/docs/monitor-your-infrastructure/war-rooms
-https://github.com/netdata/netdata/edit/master/docs/cloud/spaces.md	/docs/monitor-your-infrastructure/spaces
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	/docs/ml-and-troubleshooting/run-time-troubleshooting-with-functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/anomaly-advisor.md	/docs/ml-and-troubleshooting/anomaly-advisor
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	/docs/visualizations/events-feed
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correlations.md	/docs/ml-and-troubleshooting/metric-correlations
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	/docs/monitor-your-infrastructure/choose-your-netdata-cloud-theme
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/invite-your-team.md	/docs/monitor-your-infrastructure/invite-your-team
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	/docs/monitor-your-infrastructure/view-plan-&-billing
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	/docs/monitor-your-infrastructure/netdata-plans
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	/docs/monitor-your-infrastructure/sign-in-with-email-google-or-github
