@@ -1187,5 +1187,8 @@
     "https://learn.netdata.cloud/docs/alerts-and-notifications/health-api-calls": "https://github.com/netdata/netdata/blob/master/web/api/health/README.md",
     "https://learn.netdata.cloud/docs/alerts-and-notifications": "https://github.com/netdata/netdata/blob/master/health/README.md",
     "https://learn.netdata.cloud/docs//live-demos": "https://github.com/netdata/netdata/blob/master/docs/Demo-Sites.md",
-    "https://learn.netdata.cloud/docs/contributing/database-engine": "https://github.com/netdata/netdata/blob/master/database/engine/README.md"
+    "https://learn.netdata.cloud/docs/contributing/database-engine": "https://github.com/netdata/netdata/blob/master/database/engine/README.md",
+    "https://learn.netdata.cloud/docs/monitor-your-infrastructure/spaces": "https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md",
+    "https://learn.netdata.cloud/docs/monitor-your-infrastructure/war-rooms": "https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md",
+    "https://learn.netdata.cloud/docs/monitor-your-infrastructure/invite-your-team": "https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md"
 }
