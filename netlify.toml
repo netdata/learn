@@ -5025,4 +5025,24 @@
   from="/docs/monitor-your-infrastructure/invite-your-team"
   to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
 
+[[redirects]]
+  from="/docs/cloud/manage/invite-your-team"
+  to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
+
+[[redirects]]
+  from="/docs/cloud/war-rooms"
+  to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
+
+[[redirects]]
+  from="/docs/getting-started/monitor-your-infrastructure/war-rooms"
+  to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
+
+[[redirects]]
+  from="/docs/getting-started/monitor-your-infrastructure/spaces"
+  to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
+
+[[redirects]]
+  from="/docs/getting-started/monitor-your-infrastructure/invite-your-team"
+  to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
+
 # section: dynamic << END
