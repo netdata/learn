@@ -1646,20 +1646,12 @@
   to="/docs/ml-and-troubleshooting/metric-correlations"
 
 [[redirects]]
-  from="/docs/cloud/manage/invite-your-team"
-  to="/docs/monitor-your-infrastructure/invite-your-team"
-
-[[redirects]]
   from="/docs/cloud/manage/sign-in"
   to="/docs/monitor-your-infrastructure/sign-in-with-email-google-or-github"
 
 [[redirects]]
   from="/docs/cloud/manage/themes"
   to="/docs/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
-
-[[redirects]]
-  from="/docs/cloud/spaces"
-  to="/docs/monitor-your-infrastructure/spaces"
 
 [[redirects]]
   from="/docs/cloud/visualize/dashboards"
@@ -1680,10 +1672,6 @@
 [[redirects]]
   from="/docs/cloud/visualize/overview"
   to="/docs/monitor-your-infrastructure/home-overview-and-single-node-view"
-
-[[redirects]]
-  from="/docs/cloud/war-rooms"
-  to="/docs/monitor-your-infrastructure/war-rooms"
 
 [[redirects]]
   from="/docs/agent/collectors/collectors"
@@ -3134,10 +3122,6 @@
   to="/docs/contributing"
 
 [[redirects]]
-  from="/docs/getting-started/monitor-your-infrastructure/war-rooms"
-  to="/docs/monitor-your-infrastructure/war-rooms"
-
-[[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/visualization-date-and-time-controls"
   to="/docs/monitor-your-infrastructure/visualization-date-and-time-controls"
 
@@ -3154,10 +3138,6 @@
   to="/docs/configuring/troubleshoot-agent-cloud-connectivity-issues"
 
 [[redirects]]
-  from="/docs/getting-started/monitor-your-infrastructure/spaces"
-  to="/docs/monitor-your-infrastructure/spaces"
-
-[[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/sign-in-with-email-google-or-github"
   to="/docs/monitor-your-infrastructure/sign-in-with-email-google-or-github"
 
@@ -3168,10 +3148,6 @@
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/netdata-plans"
   to="/docs/monitor-your-infrastructure/netdata-plans"
-
-[[redirects]]
-  from="/docs/getting-started/monitor-your-infrastructure/invite-your-team"
-  to="/docs/monitor-your-infrastructure/invite-your-team"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/interact-with-charts"
@@ -5036,5 +5012,17 @@
 [[redirects]]
   from="/docs/contributing/database-engine"
   to="/docs/architecture/database-engine"
+
+[[redirects]]
+  from="/docs/monitor-your-infrastructure/spaces"
+  to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
+
+[[redirects]]
+  from="/docs/monitor-your-infrastructure/war-rooms"
+  to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
+
+[[redirects]]
+  from="/docs/monitor-your-infrastructure/invite-your-team"
+  to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
 
 # section: dynamic << END
