@@ -186,7 +186,7 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/overview.md	/docs/monitor-your-infrastructure/home-overview-and-single-node-view
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	/docs/monitor-your-infrastructure/node-filter
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	/docs/visualizations/custom-dashboards
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/nodes.md	/docs/visualizations/nodes-view
+https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/nodes.md	/docs/visualizations/nodes-tab
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-pagerduty-notification-configuration.md	/docs/alerting/notifications/netdata-cloud-notifications/add-pagerduty-notification-configuration
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/notifications.md	/docs/alerting/notifications/netdata-cloud-notifications
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-webhook-notification-configuration.md	/docs/alerting/notifications/netdata-cloud-notifications/add-webhook-notification-configuration
