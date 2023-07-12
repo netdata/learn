@@ -1667,7 +1667,7 @@
 
 [[redirects]]
   from="/docs/cloud/visualize/nodes"
-  to="/docs/visualizations/nodes-view"
+  to="/docs/visualizations/nodes-tab"
 
 [[redirects]]
   from="/docs/cloud/visualize/overview"
@@ -2775,7 +2775,7 @@
 
 [[redirects]]
   from="/docs/visualizations/nodes-view"
-  to="/docs/visualizations/nodes-view"
+  to="/docs/visualizations/nodes-tab"
 
 [[redirects]]
   from="/docs/visualizations/netdata-badges"
@@ -4295,7 +4295,7 @@
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/nodes-view"
-  to="/docs/visualizations/nodes-view"
+  to="/docs/visualizations/nodes-tab"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/netdata-charts"
