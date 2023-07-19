@@ -305,6 +305,7 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	F
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Visualizations	Present the Netdata Events feed.
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	ML and Troubleshooting	Published	ML and Troubleshooting	
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correlations.md	Metric Correlations	Published	ML and Troubleshooting	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
+https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-assistant.md	AI powered troubleshooting assistant	Published	ML and Troubleshooting	
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/anomaly-advisor.md	Anomaly Advisor	Published	ML and Troubleshooting	Quickly find anomalous metrics anywhere in your infrastructure.
 https://github.com/netdata/netdata/edit/master/ml/README.md	Machine learning (ML) powered anomaly detection	Published	ML and Troubleshooting	This is an in-depth look at how Netdata uses ML to detect anomalies.
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	Run-time troubleshooting with Functions	Published	ML and Troubleshooting	Instructions on how to use Functions
