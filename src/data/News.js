@@ -1,19 +1,40 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.40.0';
+export const ReleaseVersion = '1.41.0';
 
-export const ReleaseDate = 'June 14, 2023';
+export const ReleaseDate = 'July 20, 2023';
 
 export const ReleaseNotes = [
-	'Dashboard Sections Summary Tiles',
-	'Silencing of Cloud Alert Notifications',
-	'Machine Learning - Extended Training to 24 Hours',
-	'Rewritten SSL Support for the Agent'
+	'New Agent Dashboard!',
+	'Netdata Assistant',
+	'New FreeIPMI collector for monitoring enterprise hardware',
+	'Netdata Detects FDs Leaking'
 ];
 
 
 
 export const News = [
+	{
+		title: <>Netdata release 1.41.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.41.0',
+		date: 'July 20, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Check out our Netdata v1.41.0 release notes to learn about our newest features and improvements.
+			</>
+		),
+	},	{
+		title: <>Netdata Assistant</>,
+		href: 'https://blog.netdata.cloud/netdata-assistant/',
+		date: 'July 18, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Your AI-Powered Troubleshooting Sidekick.
+			</>
+		),
+	},
 	{
 		title: <>Netdata release 1.40.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.40.0',
