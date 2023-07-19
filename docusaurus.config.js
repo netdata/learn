@@ -85,8 +85,9 @@ module.exports = {
 					style: {'font-weight': '500'},
 					items: [
 						{
-							to: '/',
+							type: 'doc',
 							style: {'color': 'white'},
+							docId: 'architecture/architecture',
 							label: 'Documentation'
 						},
 						{
