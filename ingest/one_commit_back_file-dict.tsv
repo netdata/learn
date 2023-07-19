@@ -175,6 +175,7 @@ https://github.com/netdata/netdata/edit/master/docs/getting-started/introduction
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs/visualizations/functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	/docs/configuring
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	/docs/ml-and-troubleshooting/run-time-troubleshooting-with-functions
+https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-assistant.md	/docs/ml-and-troubleshooting/ai-powered-troubleshooting-assistant
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	/docs/configuring/securing-netdata-agents/role-based-access-model
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	/docs/monitor-your-infrastructure/choose-your-netdata-cloud-theme
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	/docs/monitor-your-infrastructure/netdata-plans
