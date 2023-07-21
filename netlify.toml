@@ -1390,10 +1390,6 @@
   to="/docs/contributing/health-command-api-tester"
 
 [[redirects]]
-  from="/docs/agent/web"
-  to="/docs/contributing/web"
-
-[[redirects]]
   from="/docs/agent/web/api"
   to="/docs/rest-api/api"
 
@@ -1483,7 +1479,7 @@
 
 [[redirects]]
   from="/docs/agent/web/gui"
-  to="/docs/visualizations/accessing-netdata-dashboards/netdata-agent-dashboards"
+  to="/docs/visualizations/legacy-agent-dashboard"
 
 [[redirects]]
   from="/docs/agent/web/gui/confluence"
@@ -1520,10 +1516,6 @@
 [[redirects]]
   from="/docs/configure/start-stop-restart"
   to="/docs/maintaining/starting-and-stopping-netdata-agents"
-
-[[redirects]]
-  from="/docs/dashboard/customize"
-  to="/docs/miscellaneous/customize-the-standard-dashboard"
 
 [[redirects]]
   from="/docs/dashboard/dimensions-contexts-families"
@@ -2798,16 +2790,12 @@
   to="/docs/miscellaneous/import-export-and-print-a-snapshot"
 
 [[redirects]]
-  from="/docs/visualizations/agent-dashboard/customize-the-standard-dashboard"
-  to="/docs/miscellaneous/customize-the-standard-dashboard"
-
-[[redirects]]
   from="/docs/visualizations/agent-dashboard/custom-dashboards"
   to="/docs/miscellaneous/build-a-custom-dashboard-html-page"
 
 [[redirects]]
   from="/docs/visualizations/agent-dashboard"
-  to="/docs/visualizations/accessing-netdata-dashboards/netdata-agent-dashboards"
+  to="/docs/visualizations/legacy-agent-dashboard"
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
@@ -2932,10 +2920,6 @@
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/ansible"
   to="/docs/installing/install-with-a-cicd-provisioning-system/ansible"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/web"
-  to="/docs/contributing/web"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/security-policy"
@@ -4323,7 +4307,7 @@
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/accessing-netdata-dashboards/netdata-agent-dashboards"
-  to="/docs/visualizations/accessing-netdata-dashboards/netdata-agent-dashboards"
+  to="/docs/visualizations/legacy-agent-dashboard"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/accessing-netdata-dashboards"
@@ -4652,10 +4636,6 @@
 [[redirects]]
   from="/docs/exporting-data-to-other-systems"
   to="/docs/exporting"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/web"
-  to="/docs/contributing/web"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/security-policy"
@@ -5044,5 +5024,9 @@
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/invite-your-team"
   to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
+
+[[redirects]]
+  from="/docs/visualizations/accessing-netdata-dashboards/netdata-agent-dashboards"
+  to="/docs/visualizations/legacy-agent-dashboard"
 
 # section: dynamic << END

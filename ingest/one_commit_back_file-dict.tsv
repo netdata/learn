@@ -214,13 +214,11 @@ https://github.com/netdata/netdata/edit/master/docs/store/change-metrics-storage
 https://github.com/netdata/netdata/edit/master/docs/store/distributed-data-architecture.md	/docs/architecture/distributed-data-architecture
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	/docs/monitor-your-infrastructure/visualization-date-and-time-controls
 https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	/docs/data-collection/chart-dimensions-contexts-and-families
-https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	/docs/miscellaneous/customize-the-standard-dashboard
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	/docs/miscellaneous/import-export-and-print-a-snapshot
 https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	/docs/alerting/notifications
 https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alarms.md	/docs/monitor-your-infrastructure/view-active-alerts
-https://github.com/netdata/netdata/edit/master/web/README.md	/docs/contributing/web
 https://github.com/netdata/netdata/edit/master/web/server/README.md	/docs/configuring/securing-netdata-agents/web-server
-https://github.com/netdata/netdata/edit/master/web/gui/README.md	/docs/visualizations/accessing-netdata-dashboards/netdata-agent-dashboards
+https://github.com/netdata/netdata/edit/master/web/gui/README.md	/docs/visualizations/legacy-agent-dashboard
 https://github.com/netdata/netdata/edit/master/web/gui/confluence/README.md	/docs/exporting/atlassian-confluence-dashboards
 https://github.com/netdata/netdata/edit/master/web/gui/custom/README.md	/docs/miscellaneous/build-a-custom-dashboard-html-page
 https://github.com/netdata/netdata/edit/master/web/api/README.md	/docs/rest-api/api
