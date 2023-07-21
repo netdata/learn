@@ -294,8 +294,7 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	Netdat
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	View Plan & Billing	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	Choose your Netdata Cloud theme	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-dashboards-and-visualizations.md	Visualizations	Published	Visualizations	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	Accessing Netdata Dashboards	Published	Visualizations/Accessing Netdata Dashboards	
-https://github.com/netdata/netdata/edit/master/web/gui/README.md	Netdata Agent Dashboards	Published	Visualizations/Accessing Netdata Dashboards	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	Accessing Netdata Dashboards	Published	Visualizations	
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	Netdata Charts	Published	Visualizations	
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	Custom Dashboards	Published	Visualizations	Design new dashboards that target your infrastructure's unique needs and share them with your team fortargeted visual anomaly detection or incident response.
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/nodes.md	Nodes Tab	Published	Visualizations	See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.
@@ -303,6 +302,7 @@ https://github.com/netdata/netdata/edit/master/docs/visualize/overview-infrastru
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	Kubernetes visualizations	Published	Visualizations	Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Functions	Published	Visualizations	Present the Netdata Functions what these are and why they should be used.
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Visualizations	Present the Netdata Events feed.
+https://github.com/netdata/netdata/edit/master/web/gui/README.md	Legacy Agent Dashboard	Published	Visualizations	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	ML and Troubleshooting	Published	ML and Troubleshooting	
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correlations.md	Metric Correlations	Published	ML and Troubleshooting	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-assistant.md	AI powered troubleshooting assistant	Published	ML and Troubleshooting	
