@@ -348,7 +348,7 @@ https://github.com/netdata/go.d.plugin/edit/master/pkg/web/README.md	web	Publish
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/README.md	python.d.plugin	Published	Contributing/External plugins/python.d.plugin	
 https://github.com/netdata/netdata/edit/master/docs/guides/python-collector.md	Develop a custom data collector in Python	Published	Contributing/External plugins/python.d.plugin	Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box.
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/README.md	charts.d.plugin	Published	Contributing/External plugins	
-https://github.com/netdata/netdata/edit/master/web/README.md	Web	Published	Contributing	Every Netdata Agent comes bundled with hundreds of interactive, customizable charts designed by monitoring and troubleshooting experts.
+https://github.com/netdata/netdata/edit/master/web/README.md	Web	Unpublished	Contributing	Every Netdata Agent comes bundled with hundreds of interactive, customizable charts designed by monitoring and troubleshooting experts.
 https://github.com/netdata/netdata/edit/master/libnetdata/README.md	libnetdata	Published	Contributing/libnetdata	
 https://github.com/netdata/netdata/edit/master/libnetdata/adaptive_resortable_list/README.md	Adaptive re-sortable list (ARL)	Published	Contributing/libnetdata	
 https://github.com/netdata/netdata/edit/master/libnetdata/aral/README.md	Array allocator	Published	Contributing/libnetdata	
@@ -379,7 +379,7 @@ https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed So
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	Health command API tester	Published	Contributing	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/misc-overview.md	Miscellaneous	Published	Miscellaneous	Available integrations in Netdata
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	Glossary	Published	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	Customize the standard dashboard	Published	Miscellaneous	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
+https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	Customize the standard dashboard	Unpublished	Miscellaneous	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	Import, export, and print a snapshot	Published	Miscellaneous	Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
 https://github.com/netdata/netdata/edit/master/web/gui/custom/README.md	Build a custom Dashboard HTML page	Published	Miscellaneous	Build custom dashboards with key metrics from one or more nodes running the Netdata Agent and host them anywhere.
 https://github.com/netdata/netdata/edit/master/docs/netdata-for-IoT.md	Netdata for IoT	Published	Miscellaneous	
