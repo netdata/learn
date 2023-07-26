@@ -211,8 +211,8 @@ https://github.com/netdata/netdata/edit/master/collectors/freeipmi.plugin/README
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/sensors/README.md	Linux Machine Sensors	Published	Data collection/Hardware Devices and Sensors	
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/am2320/README.md	AM2320	Published	Data collection/Hardware Devices and Sensors	
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/sensors/README.md	sensors	Published	Data collection/Hardware Devices and Sensors	
-https://github.com/netdata/go.d.plugin/edit/master/modules/nvidia_smi/README.md	NVIDIA SMI (go version)	Unpublished	Data collection/Hardware Devices and Sensors	Monitors performance metrics using the nvidia-smi CLI tool.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/nvidia_smi/README.md	NVIDIA SMI	Published	Data collection/Hardware Devices and Sensors	
+https://github.com/netdata/go.d.plugin/edit/master/modules/nvidia_smi/README.md	NVIDIA SMI	Published	Data collection/Hardware Devices and Sensors	Monitors performance metrics using the nvidia-smi CLI tool.
+https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/nvidia_smi/README.md	NVIDIA SMI (python)	Unpublished	Data collection/Hardware Devices and Sensors	
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/w1sensor/README.md	Wire sensors	Published	Data collection/Hardware Devices and Sensors	
 https://github.com/netdata/netdata/edit/master/collectors/cups.plugin/README.md	cups.plugin	Published	Data collection/Hardware Devices and Sensors	
 https://github.com/netdata/go.d.plugin/edit/master/modules/dockerhub/README.md	Docker Hub	Published	Data collection/Online Services	Monitor the health and performance of Docker Hub repositories with zero configuration, per-second metric granularity, and interactive visualizations.
@@ -382,7 +382,7 @@ https://github.com/netdata/netdata/edit/master/docs/glossary.md	Glossary	Publish
 https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	Customize the standard dashboard	Unpublished	Miscellaneous	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	Import, export, and print a snapshot	Published	Miscellaneous	Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
 https://github.com/netdata/netdata/edit/master/web/gui/custom/README.md	Build a custom Dashboard HTML page	Published	Miscellaneous	Build custom dashboards with key metrics from one or more nodes running the Netdata Agent and host them anywhere.
-https://github.com/netdata/netdata/edit/master/docs/netdata-for-IoT.md	Netdata for IoT	Published	Miscellaneous	
+https://github.com/netdata/netdata/edit/master/docs/netdata-for-IoT.md	Netdata for IoT	Unpublished	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/guides/collect-apache-nginx-web-logs.md	Monitor Nginx or Apache web server log files with Netdata	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/guides/collect-unbound-metrics.md	Monitor Unbound DNS servers with Netdata	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/guides/monitor-cockroachdb.md	Monitor CockroachDB metrics with Netdata	Published	Miscellaneous	
