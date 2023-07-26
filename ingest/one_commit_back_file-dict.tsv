@@ -103,7 +103,6 @@ https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/doveco
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/bind_rndc/README.md	/docs/data-collection/dns-and-dhcp-servers/isc-bind
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/hddtemp/README.md	/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hard-drive-temperature
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/retroshare/README.md	/docs/data-collection/p2p/retroshare
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/nvidia_smi/README.md	/docs/data-collection/hardware-devices-and-sensors/nvidia-smi
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/zscores/README.md	/docs/data-collection/netdata-specific/zscores
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/smartd_log/README.md	/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/w1sensor/README.md	/docs/data-collection/hardware-devices-and-sensors/wire-sensors
@@ -138,7 +137,6 @@ https://github.com/netdata/netdata/edit/master/docs/Running-behind-apache.md	/do
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-h2o.md	/docs/configuring/securing-netdata-agents/reverse-proxies/h2o
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-caddy.md	/docs/configuring/securing-netdata-agents/reverse-proxies/caddy
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-lighttpd.md	/docs/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x
-https://github.com/netdata/netdata/edit/master/docs/netdata-for-IoT.md	/docs/miscellaneous/netdata-for-iot
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-apis.md	/docs/rest-api
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/install-with-a-cicd-provisioning-system.md	/docs/installing/install-with-a-cicd-provisioning-system
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	/docs/visualizations/accessing-netdata-dashboards
@@ -361,6 +359,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/README.md	
 https://github.com/netdata/go.d.plugin/edit/master/modules/nginxplus/README.md	/docs/data-collection/web-servers-and-web-proxies/nginx-plus
 https://github.com/netdata/go.d.plugin/edit/master/modules/hdfs/README.md	/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/hdfs
 https://github.com/netdata/go.d.plugin/edit/master/modules/postgres/README.md	/docs/data-collection/database-servers/postgressql
+https://github.com/netdata/go.d.plugin/edit/master/modules/nvidia_smi/README.md	/docs/data-collection/hardware-devices-and-sensors/nvidia-smi
 https://github.com/netdata/go.d.plugin/edit/master/modules/pulsar/README.md	/docs/data-collection/message-brokers/pulsar
 https://github.com/netdata/go.d.plugin/edit/master/modules/phpdaemon/README.md	/docs/data-collection/apm/php-applications
 https://github.com/netdata/go.d.plugin/edit/master/modules/dnsmasq/README.md	/docs/data-collection/dns-and-dhcp-servers/dnsmasq-dns-forwarder

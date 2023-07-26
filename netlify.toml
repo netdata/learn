@@ -886,10 +886,6 @@
   to="/docs/data-collection/dns-and-dhcp-servers/nsd"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/nvidia_smi"
-  to="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/openldap"
   to="/docs/data-collection/access-control,-authentication-and-authorization/openldap"
 
@@ -1268,10 +1264,6 @@
 [[redirects]]
   from="/docs/agent/ml"
   to="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
-
-[[redirects]]
-  from="/docs/agent/netdata-for-iot"
-  to="/docs/miscellaneous/netdata-for-iot"
 
 [[redirects]]
   from="/docs/agent/netdata-security"
@@ -2518,10 +2510,6 @@
   to="/docs/data-collection/logs-servers/fluentd"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Hardware/nvidia_smi-python.d.plugin"
-  to="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/lm-sensors"
   to="/docs/data-collection/hardware-devices-and-sensors/sensors"
 
@@ -3704,10 +3692,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/s.m.a.r.t.-attributes"
   to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/hardware/nvidia_smi-python.d.plugin"
-  to="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/lm-sensors"
@@ -5028,5 +5012,13 @@
 [[redirects]]
   from="/docs/visualizations/accessing-netdata-dashboards/netdata-agent-dashboards"
   to="/docs/visualizations/legacy-agent-dashboard"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/modules/nvidia_smi"
+  to="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/NVIDIA"
+  to="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
 
 # section: dynamic << END
