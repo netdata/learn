@@ -15,6 +15,16 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Netdata Integrations Marketplace</>,
+		href: 'https://app.netdata.cloud/spaces/netdata-demo/rooms/all-nodes/overview#integrationsModalOpen=true',
+		date: 'August 3, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Check out our Netdata Integrations Marketplace to find all the integrations Netdata supports across Deploy, Data Collection, Alert Notifications, and Exporters..
+			</>
+		),
+	},	{
 		title: <>Netdata release 1.41.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.41.0',
 		date: 'July 20, 2023',
