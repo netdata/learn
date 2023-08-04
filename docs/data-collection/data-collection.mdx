@@ -53,18 +53,18 @@ specifics of what a given collector does.
     -   **External** plugins organize collectors that gather metrics from external processes, such as a MySQL database or
         Nginx web server. They can be written in any language, and the `netdata` daemon spawns them as long-running
         independent processes. They communicate with the daemon via pipes. All external plugins are managed by
-        [plugins.d](/docs/contributing/external-plugins), which provides additional management options.
+        [plugins.d](/docs/data-collection/external-plugins), which provides additional management options.
 
 -   **Orchestrators** are external plugins that run and manage one or more modules. They run as independent processes.
     The Go orchestrator is in active development.
 
-    -   [go.d.plugin](/docs/contributing/external-plugins/go.d.plugin): An orchestrator for data
+    -   [go.d.plugin](/docs/data-collection/external-plugins/go.d.plugin): An orchestrator for data
         collection modules written in `go`.
 
-    -   [python.d.plugin](/docs/contributing/external-plugins/python.d.plugin): 
+    -   [python.d.plugin](/docs/data-collection/external-plugins/python.d.plugin): 
         An orchestrator for data collection modules written in `python` v2/v3.
 
-    -   [charts.d.plugin](/docs/contributing/external-plugins/charts.d.plugin): 
+    -   [charts.d.plugin](/docs/data-collection/external-plugins/charts.d.plugin): 
         An orchestrator for data collection modules written in`bash` v4+.
 
 -   **Modules** are the individual programs controlled by an orchestrator to collect data from a specific application, or type of endpoint.

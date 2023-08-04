@@ -176,7 +176,7 @@ monitoring](/docs/alerting).
 |           run at least every seconds           |                       `10`                       | Controls how often all alarm conditions should be evaluated.                                                                                                                                   |
 | postpone alarms during hibernation for seconds |                       `60`                       | Prevents false alarms. May need to be increased if you get alarms during hibernation.                                                                                                          |
 |             health log history                 |                       `432000`                   | Specifies the history of alarm events (in seconds) kept in the agent's sqlite database.      |
-|                enabled alarms                  |                       *                          | Defines which alarms to load from both user and stock directories. This is a [simple pattern](/docs/contributing/libnetdata/simple-patterns) list of alarm or template names. Can be used to disable specific alarms. For example, `enabled alarms =  !oom_kill *` will load all alarms except `oom_kill`. |
+|                enabled alarms                  |                       *                          | Defines which alarms to load from both user and stock directories. This is a [simple pattern](/docs/miscellaneous/libnetdata/simple-patterns) list of alarm or template names. Can be used to disable specific alarms. For example, `enabled alarms =  !oom_kill *` will load all alarms except `oom_kill`. |
 
 ### [web] section options
 

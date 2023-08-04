@@ -5,7 +5,7 @@ learn_status: "Published"
 toc_max_heading_level: 4
 learn_rel_path: "Data collection"
 description: "Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box."
-sidebar_position: "614000"
+sidebar_position: "616000"
 ---
 # Monitor anything with Netdata
 
@@ -47,8 +47,8 @@ If you don't see the app/service you'd like to monitor in this list:
   a [feature request](https://github.com/netdata/netdata/issues/new/choose) on GitHub.
 
 - If you have basic software development skills, you can add your own plugin
-  in [Go](/docs/contributing/external-plugins/go.d.plugin#how-to-develop-a-collector)
-  or [Python](/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python)
+  in [Go](/docs/data-collection/external-plugins/go.d.plugin#how-to-develop-a-collector)
+  or [Python](/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python)
 
 ## Available Collectors
 
@@ -613,9 +613,9 @@ If you're interested in developing a new collector that you'd like to contribute
 the `go.d.plugin`.
 
 - [go.d.plugin](https://github.com/netdata/go.d.plugin): An orchestrator for data collection modules written in `go`.
-- [python.d.plugin](/docs/contributing/external-plugins/python.d.plugin): An
+- [python.d.plugin](/docs/data-collection/external-plugins/python.d.plugin): An
   orchestrator for data collection modules written in `python` v2/v3.
-- [charts.d.plugin](/docs/contributing/external-plugins/charts.d.plugin): An
+- [charts.d.plugin](/docs/data-collection/external-plugins/charts.d.plugin): An
   orchestrator for data collection modules written in `bash` v4+.
 
 ## Third-party collectors
@@ -629,9 +629,9 @@ default. To use a third-party collector, visit their GitHub/documentation page a
 In general the below steps should be sufficient to use a third party collector.
 
 1. Download collector code file
-   into [folder expected by Netdata](/docs/contributing/external-plugins#environment-variables).
+   into [folder expected by Netdata](/docs/data-collection/external-plugins#environment-variables).
 2. Download default collector configuration file
-   into [folder expected by Netdata](/docs/contributing/external-plugins#environment-variables).
+   into [folder expected by Netdata](/docs/data-collection/external-plugins#environment-variables).
 3. [Edit configuration file](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#configure-a-collector)
    from step 2 if required.
 4. [Enable collector](https://github.com/netdata/netdata/blob/master/docs/collect/enable-configure#enable-a-collector-or-its-orchestrator).
