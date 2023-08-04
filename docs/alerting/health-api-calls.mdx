@@ -129,7 +129,7 @@ curl "http://NODE:19999/api/v1/manage/health?cmd=SILENCE&context=load" -H "X-Aut
 
 #### Selection criteria
 
-The `selection criteria` are key/value pairs, in the format `key : value`, where value is a Netdata [simple pattern](/docs/contributing/libnetdata/simple-patterns). This means that you can create very powerful selectors (you will rarely need more than one or two).
+The `selection criteria` are key/value pairs, in the format `key : value`, where value is a Netdata [simple pattern](/docs/miscellaneous/libnetdata/simple-patterns). This means that you can create very powerful selectors (you will rarely need more than one or two).
 
 The accepted keys for the `selection criteria` are the following:
 
@@ -223,6 +223,6 @@ The file's location is configurable in `netdata.conf`. The default is shown belo
 
 ### Further reading
 
-The test script under [tests/health_mgmtapi](/docs/contributing/health-command-api-tester) contains a series of tests that you can either run or read through to understand the various calls and responses better.
+The test script under [tests/health_mgmtapi](/docs/miscellaneous/health-command-api-tester) contains a series of tests that you can either run or read through to understand the various calls and responses better.
 
 

@@ -395,7 +395,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin"
-  to="/docs/contributing/external-plugins/charts.d.plugin"
+  to="/docs/data-collection/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/ap"
@@ -447,11 +447,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin"
-  to="/docs/contributing/external-plugins/go.d.plugin"
+  to="/docs/data-collection/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/docs/how-to-write-a-module"
-  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/activemq"
@@ -779,7 +779,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/plugins.d"
-  to="/docs/contributing/external-plugins"
+  to="/docs/data-collection/external-plugins"
 
 [[redirects]]
   from="/docs/agent/collectors/proc.plugin"
@@ -787,7 +787,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin"
-  to="/docs/contributing/external-plugins/python.d.plugin"
+  to="/docs/data-collection/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/adaptec_raid"
@@ -1179,87 +1179,87 @@
 
 [[redirects]]
   from="/docs/agent/libnetdata"
-  to="/docs/contributing/libnetdata"
+  to="/docs/miscellaneous/libnetdata"
 
 [[redirects]]
   from="/docs/agent/libnetdata/adaptive_resortable_list"
-  to="/docs/contributing/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
 
 [[redirects]]
   from="/docs/agent/libnetdata/avl"
-  to="/docs/contributing/libnetdata/avl"
+  to="/docs/miscellaneous/libnetdata/avl"
 
 [[redirects]]
   from="/docs/agent/libnetdata/buffer"
-  to="/docs/contributing/libnetdata/buffer-library"
+  to="/docs/miscellaneous/libnetdata/buffer-library"
 
 [[redirects]]
   from="/docs/agent/libnetdata/circular_buffer"
-  to="/docs/contributing/libnetdata/circular-buffer"
+  to="/docs/miscellaneous/libnetdata/circular-buffer"
 
 [[redirects]]
   from="/docs/agent/libnetdata/clocks"
-  to="/docs/contributing/libnetdata/clocks"
+  to="/docs/miscellaneous/libnetdata/clocks"
 
 [[redirects]]
   from="/docs/agent/libnetdata/config"
-  to="/docs/contributing/libnetdata/netdata-ini-config-files"
+  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
 
 [[redirects]]
   from="/docs/agent/libnetdata/dictionary"
-  to="/docs/contributing/libnetdata/dictionaries"
+  to="/docs/miscellaneous/libnetdata/dictionaries"
 
 [[redirects]]
   from="/docs/agent/libnetdata/ebpf"
-  to="/docs/contributing/libnetdata/ebpf"
+  to="/docs/miscellaneous/libnetdata/ebpf"
 
 [[redirects]]
   from="/docs/agent/libnetdata/json"
-  to="/docs/contributing/libnetdata/json"
+  to="/docs/miscellaneous/libnetdata/json"
 
 [[redirects]]
   from="/docs/agent/libnetdata/locks"
-  to="/docs/contributing/libnetdata/locks"
+  to="/docs/miscellaneous/libnetdata/locks"
 
 [[redirects]]
   from="/docs/agent/libnetdata/log"
-  to="/docs/contributing/libnetdata/log"
+  to="/docs/miscellaneous/libnetdata/log"
 
 [[redirects]]
   from="/docs/agent/libnetdata/popen"
-  to="/docs/contributing/libnetdata/popen"
+  to="/docs/miscellaneous/libnetdata/popen"
 
 [[redirects]]
   from="/docs/agent/libnetdata/procfile"
-  to="/docs/contributing/libnetdata/procfile"
+  to="/docs/miscellaneous/libnetdata/procfile"
 
 [[redirects]]
   from="/docs/agent/libnetdata/simple_pattern"
-  to="/docs/contributing/libnetdata/simple-patterns"
+  to="/docs/miscellaneous/libnetdata/simple-patterns"
 
 [[redirects]]
   from="/docs/agent/libnetdata/socket"
-  to="/docs/contributing/libnetdata/socket"
+  to="/docs/miscellaneous/libnetdata/socket"
 
 [[redirects]]
   from="/docs/agent/libnetdata/statistical"
-  to="/docs/contributing/libnetdata/statistical-functions"
+  to="/docs/miscellaneous/libnetdata/statistical-functions"
 
 [[redirects]]
   from="/docs/agent/libnetdata/storage_number"
-  to="/docs/contributing/libnetdata/storage-number"
+  to="/docs/miscellaneous/libnetdata/storage-number"
 
 [[redirects]]
   from="/docs/agent/libnetdata/string"
-  to="/docs/contributing/libnetdata/string"
+  to="/docs/miscellaneous/libnetdata/string"
 
 [[redirects]]
   from="/docs/agent/libnetdata/threads"
-  to="/docs/contributing/libnetdata/threads"
+  to="/docs/miscellaneous/libnetdata/threads"
 
 [[redirects]]
   from="/docs/agent/libnetdata/url"
-  to="/docs/contributing/libnetdata/url"
+  to="/docs/miscellaneous/libnetdata/url"
 
 [[redirects]]
   from="/docs/agent/ml"
@@ -1343,7 +1343,7 @@
 
 [[redirects]]
   from="/docs/agent/redistributed"
-  to="/docs/contributing/redistributed-software"
+  to="/docs/miscellaneous/redistributed-software"
 
 [[redirects]]
   from="/docs/agent/registry"
@@ -1379,7 +1379,7 @@
 
 [[redirects]]
   from="/docs/agent/tests/health_mgmtapi"
-  to="/docs/contributing/health-command-api-tester"
+  to="/docs/miscellaneous/health-command-api-tester"
 
 [[redirects]]
   from="/docs/agent/web/api"
@@ -1599,7 +1599,7 @@
 
 [[redirects]]
   from="/guides/python-collector"
-  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/guides/troubleshoot/monitor-debug-applications-ebpf"
@@ -1719,7 +1719,7 @@
 
 [[redirects]]
   from="/docs/agent/libnetdata/arrayalloc"
-  to="/docs/contributing/libnetdata/array-allocator"
+  to="/docs/miscellaneous/libnetdata/array-allocator"
 
 [[redirects]]
   from="/docs/agent/web/api/exporters"
@@ -2915,163 +2915,135 @@
 
 [[redirects]]
   from="/docs/improving-netdata---developers/redistributed-software"
-  to="/docs/contributing/redistributed-software"
+  to="/docs/miscellaneous/redistributed-software"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/worker-utilization"
-  to="/docs/contributing/libnetdata/worker-utilization"
+  to="/docs/miscellaneous/libnetdata/worker-utilization"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/url"
-  to="/docs/contributing/libnetdata/url"
+  to="/docs/miscellaneous/libnetdata/url"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/threads"
-  to="/docs/contributing/libnetdata/threads"
+  to="/docs/miscellaneous/libnetdata/threads"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/string"
-  to="/docs/contributing/libnetdata/string"
+  to="/docs/miscellaneous/libnetdata/string"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/storage-number"
-  to="/docs/contributing/libnetdata/storage-number"
+  to="/docs/miscellaneous/libnetdata/storage-number"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/statistical-functions"
-  to="/docs/contributing/libnetdata/statistical-functions"
+  to="/docs/miscellaneous/libnetdata/statistical-functions"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/socket"
-  to="/docs/contributing/libnetdata/socket"
+  to="/docs/miscellaneous/libnetdata/socket"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/simple-patterns"
-  to="/docs/contributing/libnetdata/simple-patterns"
+  to="/docs/miscellaneous/libnetdata/simple-patterns"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/procfile"
-  to="/docs/contributing/libnetdata/procfile"
+  to="/docs/miscellaneous/libnetdata/procfile"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/popen"
-  to="/docs/contributing/libnetdata/popen"
+  to="/docs/miscellaneous/libnetdata/popen"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/one-way-allocator"
-  to="/docs/contributing/libnetdata/one-way-allocator"
+  to="/docs/miscellaneous/libnetdata/one-way-allocator"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/netdata-ini-config-files"
-  to="/docs/contributing/libnetdata/netdata-ini-config-files"
+  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/log"
-  to="/docs/contributing/libnetdata/log"
+  to="/docs/miscellaneous/libnetdata/log"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/locks"
-  to="/docs/contributing/libnetdata/locks"
+  to="/docs/miscellaneous/libnetdata/locks"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/july-interface"
-  to="/docs/contributing/libnetdata/july-interface"
+  to="/docs/miscellaneous/libnetdata/july-interface"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/json"
-  to="/docs/contributing/libnetdata/json"
+  to="/docs/miscellaneous/libnetdata/json"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/ebpf"
-  to="/docs/contributing/libnetdata/ebpf"
+  to="/docs/miscellaneous/libnetdata/ebpf"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/dictionaries"
-  to="/docs/contributing/libnetdata/dictionaries"
+  to="/docs/miscellaneous/libnetdata/dictionaries"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/clocks"
-  to="/docs/contributing/libnetdata/clocks"
+  to="/docs/miscellaneous/libnetdata/clocks"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/circular-buffer"
-  to="/docs/contributing/libnetdata/circular-buffer"
+  to="/docs/miscellaneous/libnetdata/circular-buffer"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/buffer-library"
-  to="/docs/contributing/libnetdata/buffer-library"
+  to="/docs/miscellaneous/libnetdata/buffer-library"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/avl"
-  to="/docs/contributing/libnetdata/avl"
+  to="/docs/miscellaneous/libnetdata/avl"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/array-allocator"
-  to="/docs/contributing/libnetdata/array-allocator"
+  to="/docs/miscellaneous/libnetdata/array-allocator"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/adaptive-re-sortable-list-arl"
-  to="/docs/contributing/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata"
-  to="/docs/contributing/libnetdata"
+  to="/docs/miscellaneous/libnetdata"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/health-command-api-tester"
-  to="/docs/contributing/health-command-api-tester"
+  to="/docs/miscellaneous/health-command-api-tester"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/python.d.plugin"
-  to="/docs/contributing/external-plugins/python.d.plugin"
+  to="/docs/data-collection/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/helper-packages/web"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/web"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/helper-packages/tlscfg"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/tlscfg"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/helper-packages/time-series-selector"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/time-series-selector"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/helper-packages/stm"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/stm"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/helper-packages/matcher"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/matcher"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/helper-packages/iprange"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/iprange"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/helper-packages"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages"
+  to="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/go.d.plugin"
-  to="/docs/contributing/external-plugins/go.d.plugin"
+  to="/docs/data-collection/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/charts.d.plugin"
-  to="/docs/contributing/external-plugins/charts.d.plugin"
+  to="/docs/data-collection/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins"
-  to="/docs/contributing/external-plugins"
+  to="/docs/data-collection/external-plugins"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/database-engine"
@@ -4627,163 +4599,135 @@
 
 [[redirects]]
   from="/docs/contributing-to-netdata/redistributed-software"
-  to="/docs/contributing/redistributed-software"
+  to="/docs/miscellaneous/redistributed-software"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/worker-utilization"
-  to="/docs/contributing/libnetdata/worker-utilization"
+  to="/docs/miscellaneous/libnetdata/worker-utilization"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/url"
-  to="/docs/contributing/libnetdata/url"
+  to="/docs/miscellaneous/libnetdata/url"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/threads"
-  to="/docs/contributing/libnetdata/threads"
+  to="/docs/miscellaneous/libnetdata/threads"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/string"
-  to="/docs/contributing/libnetdata/string"
+  to="/docs/miscellaneous/libnetdata/string"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/storage-number"
-  to="/docs/contributing/libnetdata/storage-number"
+  to="/docs/miscellaneous/libnetdata/storage-number"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/statistical-functions"
-  to="/docs/contributing/libnetdata/statistical-functions"
+  to="/docs/miscellaneous/libnetdata/statistical-functions"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/socket"
-  to="/docs/contributing/libnetdata/socket"
+  to="/docs/miscellaneous/libnetdata/socket"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/simple-patterns"
-  to="/docs/contributing/libnetdata/simple-patterns"
+  to="/docs/miscellaneous/libnetdata/simple-patterns"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/procfile"
-  to="/docs/contributing/libnetdata/procfile"
+  to="/docs/miscellaneous/libnetdata/procfile"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/popen"
-  to="/docs/contributing/libnetdata/popen"
+  to="/docs/miscellaneous/libnetdata/popen"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/one-way-allocator"
-  to="/docs/contributing/libnetdata/one-way-allocator"
+  to="/docs/miscellaneous/libnetdata/one-way-allocator"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/netdata-ini-config-files"
-  to="/docs/contributing/libnetdata/netdata-ini-config-files"
+  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/log"
-  to="/docs/contributing/libnetdata/log"
+  to="/docs/miscellaneous/libnetdata/log"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/locks"
-  to="/docs/contributing/libnetdata/locks"
+  to="/docs/miscellaneous/libnetdata/locks"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/july-interface"
-  to="/docs/contributing/libnetdata/july-interface"
+  to="/docs/miscellaneous/libnetdata/july-interface"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/json"
-  to="/docs/contributing/libnetdata/json"
+  to="/docs/miscellaneous/libnetdata/json"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/ebpf"
-  to="/docs/contributing/libnetdata/ebpf"
+  to="/docs/miscellaneous/libnetdata/ebpf"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/dictionaries"
-  to="/docs/contributing/libnetdata/dictionaries"
+  to="/docs/miscellaneous/libnetdata/dictionaries"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/clocks"
-  to="/docs/contributing/libnetdata/clocks"
+  to="/docs/miscellaneous/libnetdata/clocks"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/circular-buffer"
-  to="/docs/contributing/libnetdata/circular-buffer"
+  to="/docs/miscellaneous/libnetdata/circular-buffer"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/buffer-library"
-  to="/docs/contributing/libnetdata/buffer-library"
+  to="/docs/miscellaneous/libnetdata/buffer-library"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/avl"
-  to="/docs/contributing/libnetdata/avl"
+  to="/docs/miscellaneous/libnetdata/avl"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/array-allocator"
-  to="/docs/contributing/libnetdata/array-allocator"
+  to="/docs/miscellaneous/libnetdata/array-allocator"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/adaptive-re-sortable-list-arl"
-  to="/docs/contributing/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata"
-  to="/docs/contributing/libnetdata"
+  to="/docs/miscellaneous/libnetdata"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/health-command-api-tester"
-  to="/docs/contributing/health-command-api-tester"
+  to="/docs/miscellaneous/health-command-api-tester"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/python.d.plugin"
-  to="/docs/contributing/external-plugins/python.d.plugin"
+  to="/docs/data-collection/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/helper-packages/web"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/web"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/helper-packages/tlscfg"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/tlscfg"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/helper-packages/time-series-selector"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/time-series-selector"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/helper-packages/stm"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/stm"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/helper-packages/matcher"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/matcher"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/helper-packages/iprange"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages/iprange"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/helper-packages"
-  to="/docs/contributing/external-plugins/go.d.plugin/helper-packages"
+  to="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/go.d.plugin"
-  to="/docs/contributing/external-plugins/go.d.plugin"
+  to="/docs/data-collection/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/charts.d.plugin"
-  to="/docs/contributing/external-plugins/charts.d.plugin"
+  to="/docs/data-collection/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins"
-  to="/docs/contributing/external-plugins"
+  to="/docs/data-collection/external-plugins"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/database-engine"
@@ -5020,5 +4964,137 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/NVIDIA"
   to="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
+
+[[redirects]]
+  from="/docs/contributing/redistributed-software"
+  to="/docs/miscellaneous/redistributed-software"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/worker-utilization"
+  to="/docs/miscellaneous/libnetdata/worker-utilization"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/url"
+  to="/docs/miscellaneous/libnetdata/url"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/threads"
+  to="/docs/miscellaneous/libnetdata/threads"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/string"
+  to="/docs/miscellaneous/libnetdata/string"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/storage-number"
+  to="/docs/miscellaneous/libnetdata/storage-number"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/statistical-functions"
+  to="/docs/miscellaneous/libnetdata/statistical-functions"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/socket"
+  to="/docs/miscellaneous/libnetdata/socket"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/simple-patterns"
+  to="/docs/miscellaneous/libnetdata/simple-patterns"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/procfile"
+  to="/docs/miscellaneous/libnetdata/procfile"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/popen"
+  to="/docs/miscellaneous/libnetdata/popen"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/one-way-allocator"
+  to="/docs/miscellaneous/libnetdata/one-way-allocator"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/netdata-ini-config-files"
+  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/log"
+  to="/docs/miscellaneous/libnetdata/log"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/locks"
+  to="/docs/miscellaneous/libnetdata/locks"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/july-interface"
+  to="/docs/miscellaneous/libnetdata/july-interface"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/json"
+  to="/docs/miscellaneous/libnetdata/json"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/ebpf"
+  to="/docs/miscellaneous/libnetdata/ebpf"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/dictionaries"
+  to="/docs/miscellaneous/libnetdata/dictionaries"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/clocks"
+  to="/docs/miscellaneous/libnetdata/clocks"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/circular-buffer"
+  to="/docs/miscellaneous/libnetdata/circular-buffer"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/buffer-library"
+  to="/docs/miscellaneous/libnetdata/buffer-library"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/avl"
+  to="/docs/miscellaneous/libnetdata/avl"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/array-allocator"
+  to="/docs/miscellaneous/libnetdata/array-allocator"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata"
+  to="/docs/miscellaneous/libnetdata"
+
+[[redirects]]
+  from="/docs/contributing/health-command-api-tester"
+  to="/docs/miscellaneous/health-command-api-tester"
+
+[[redirects]]
+  from="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+
+[[redirects]]
+  from="/docs/contributing/external-plugins/python.d.plugin"
+  to="/docs/data-collection/external-plugins/python.d.plugin"
+
+[[redirects]]
+  from="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+
+[[redirects]]
+  from="/docs/contributing/external-plugins/go.d.plugin"
+  to="/docs/data-collection/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/contributing/external-plugins/charts.d.plugin"
+  to="/docs/data-collection/external-plugins/charts.d.plugin"
+
+[[redirects]]
+  from="/docs/contributing/external-plugins"
+  to="/docs/data-collection/external-plugins"
 
 # section: dynamic << END
