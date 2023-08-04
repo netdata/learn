@@ -74,6 +74,21 @@ https://github.com/netdata/netdata/edit/master/docs/collect/container-metrics.md
 https://github.com/netdata/netdata/edit/master/collectors/REFERENCE.md	Collectors configuration	Published	Data collection	
 https://github.com/netdata/agent-service-discovery/edit/master/README.md	Service discovery	Published	Data collection	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	Chart dimensions, contexts, and families	Published	Data collection	 Netdata organizes charts into dimensions, contexts, and families to automaticallyand meaningfully organize thousands of metrics into interactive charts.
+https://github.com/netdata/netdata/edit/master/collectors/plugins.d/README.md	External plugins	Published	Data collection/External-plugins	
+https://github.com/netdata/go.d.plugin/edit/master/README.md	go.d.plugin	Published	Data collection/External-plugins/go.d.plugin	go.d.plugin is an external plugin for Netdata, responsible for running individual data collectors written in Go.
+https://github.com/netdata/go.d.plugin/edit/master/docs/how-to-write-a-module.md	How to write a Netdata collector in Go	Published	Data collection/External-plugins/go.d.plugin	This guide will walk you through the technical implementation of writing a new Netdata collector in Golang, with tips on interfaces, structure, configuration files, and more.
+https://github.com/netdata/go.d.plugin/edit/master/pkg/README.md	Helper packages	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
+https://github.com/netdata/go.d.plugin/edit/master/pkg/iprange/README.md	iprange	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
+https://github.com/netdata/go.d.plugin/edit/master/pkg/matcher/README.md	matcher	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
+https://github.com/netdata/go.d.plugin/edit/master/pkg/prometheus/selector/README.md	Time series selector	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
+https://github.com/netdata/go.d.plugin/edit/master/pkg/stm/README.md	stm	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
+https://github.com/netdata/go.d.plugin/edit/master/pkg/tlscfg/README.md	tlscfg	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
+https://github.com/netdata/go.d.plugin/edit/master/pkg/web/README.md	web	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
+https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/README.md	python.d.plugin	Published	Data collection/External-plugins/python.d.plugin	
+https://github.com/netdata/netdata/edit/master/docs/guides/python-collector.md	Develop a custom data collector in Python	Published	Data collection/External-plugins/python.d.plugin	Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box.
+https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/README.md	charts.d.plugin	Published	Data collection/External-plugins	
+https://github.com/netdata/netdata/edit/master/collectors/debugfs.plugin/README.md	debugfs.plugin	Published	Data collection/External-plugins	
+https://github.com/netdata/netdata/edit/master/collectors/profile.plugin/README.md	profile.plugin	Published	Data collection/External-plugins	
 https://github.com/netdata/netdata/edit/master/collectors/COLLECTORS.md	Monitor Anything	Published	Data collection	Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box.
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/README.md	OpenMetrics Endpoints	Published	Data collection/APM	Monitor the health and performance of 600+ services that support the Prometheus metrics with Netdata's per-second frequency and zero configuration.
 https://github.com/netdata/netdata/edit/master/collectors/statsd.plugin/README.md	StatsD	Published	Data collection/APM	The Netdata Agent is a fully-featured StatsD server that collects metrics from any custom application and visualizes them in real-time.
@@ -335,50 +350,37 @@ https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	Community code o
 https://github.com/netdata/.github/edit/main/SECURITY.md	Security Policy	Published	Contributing	The Netdata team maintains and adheres to a formal process any time a member of the community reports a security vulnerability.
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	Contribute to the documentation	Published	Contributing/Contribute to the documentation	
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	Netdata style guide	Published	Contributing/Contribute to the documentation	The Netdata style guide establishes editorial guidelines for all of Netdata's writing, including documentation, blog posts, in-product UX copy, and more.
-https://github.com/netdata/netdata/edit/master/collectors/plugins.d/README.md	External plugins	Published	Contributing/External plugins	
-https://github.com/netdata/go.d.plugin/edit/master/README.md	go.d.plugin	Published	Contributing/External plugins/go.d.plugin	go.d.plugin is an external plugin for Netdata, responsible for running individual data collectors written in Go.
-https://github.com/netdata/go.d.plugin/edit/master/docs/how-to-write-a-module.md	How to write a Netdata collector in Go	Published	Contributing/External plugins/go.d.plugin	This guide will walk you through the technical implementation of writing a new Netdata collector in Golang, with tips on interfaces, structure, configuration files, and more.
-https://github.com/netdata/go.d.plugin/edit/master/pkg/README.md	Helper packages	Published	Contributing/External plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/iprange/README.md	iprange	Published	Contributing/External plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/matcher/README.md	matcher	Published	Contributing/External plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/prometheus/selector/README.md	Time series selector	Published	Contributing/External plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/stm/README.md	stm	Published	Contributing/External plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/tlscfg/README.md	tlscfg	Published	Contributing/External plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/web/README.md	web	Published	Contributing/External plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/README.md	python.d.plugin	Published	Contributing/External plugins/python.d.plugin	
-https://github.com/netdata/netdata/edit/master/docs/guides/python-collector.md	Develop a custom data collector in Python	Published	Contributing/External plugins/python.d.plugin	Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box.
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/README.md	charts.d.plugin	Published	Contributing/External plugins	
 https://github.com/netdata/netdata/edit/master/web/README.md	Web	Unpublished	Contributing	Every Netdata Agent comes bundled with hundreds of interactive, customizable charts designed by monitoring and troubleshooting experts.
-https://github.com/netdata/netdata/edit/master/libnetdata/README.md	libnetdata	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/adaptive_resortable_list/README.md	Adaptive re-sortable list (ARL)	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/aral/README.md	Array allocator	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/avl/README.md	AVL	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/buffer/README.md	BUFFER library	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/circular_buffer/README.md	Circular Buffer	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/clocks/README.md	Clocks	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/config/README.md	Netdata ini config files	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/ebpf/README.md	eBPF	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/json/README.md	JSON	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/locks/README.md	Locks	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/log/README.md	Log	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/onewayalloc/README.md	One way allocator	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/popen/README.md	popen	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/parser/README.md	parser	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/procfile/README.md	procfile	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/simple_pattern/README.md	Simple patterns	Published	Contributing/libnetdata	Netdata supports simple patterns, which are less cryptic versions of regular expressions. Use familiar notation for powerful results.
-https://github.com/netdata/netdata/edit/master/libnetdata/statistical/README.md	Statistical functions	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/storage_number/README.md	Storage number	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/string/README.md	String	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/threads/README.md	Threads	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/url/README.md	URL	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/worker_utilization/README.md	Worker Utilization	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/dictionary/README.md	Dictionaries	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/july/README.md	July interface	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/libnetdata/socket/README.md	Socket	Published	Contributing/libnetdata	
-https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed Software	Published	Contributing	
-https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	Health command API tester	Published	Contributing	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/misc-overview.md	Miscellaneous	Published	Miscellaneous	Available integrations in Netdata
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	Glossary	Published	Miscellaneous	
+https://github.com/netdata/netdata/edit/master/libnetdata/README.md	libnetdata	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/adaptive_resortable_list/README.md	Adaptive re-sortable list (ARL)	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/aral/README.md	Array allocator	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/avl/README.md	AVL	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/buffer/README.md	BUFFER library	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/circular_buffer/README.md	Circular Buffer	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/clocks/README.md	Clocks	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/config/README.md	Netdata ini config files	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/ebpf/README.md	eBPF	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/json/README.md	JSON	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/locks/README.md	Locks	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/log/README.md	Log	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/onewayalloc/README.md	One way allocator	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/popen/README.md	popen	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/parser/README.md	parser	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/procfile/README.md	procfile	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/simple_pattern/README.md	Simple patterns	Published	Miscellaneous/libnetdata	Netdata supports simple patterns, which are less cryptic versions of regular expressions. Use familiar notation for powerful results.
+https://github.com/netdata/netdata/edit/master/libnetdata/statistical/README.md	Statistical functions	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/storage_number/README.md	Storage number	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/string/README.md	String	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/threads/README.md	Threads	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/url/README.md	URL	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/worker_utilization/README.md	Worker Utilization	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/dictionary/README.md	Dictionaries	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/july/README.md	July interface	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/libnetdata/socket/README.md	Socket	Published	Miscellaneous/libnetdata	
+https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed Software	Published	Miscellaneous	
+https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	Health command API tester	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	Customize the standard dashboard	Unpublished	Miscellaneous	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	Import, export, and print a snapshot	Published	Miscellaneous	Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
 https://github.com/netdata/netdata/edit/master/web/gui/custom/README.md	Build a custom Dashboard HTML page	Published	Miscellaneous	Build custom dashboards with key metrics from one or more nodes running the Netdata Agent and host them anywhere.
@@ -393,9 +395,6 @@ https://github.com/netdata/netdata/edit/master/docs/guides/monitor/pi-hole-raspb
 https://github.com/netdata/netdata/edit/master/docs/guides/monitor/raspberry-pi-anomaly-detection.md	Unsupervised anomaly detection for Raspberry Pi monitoring	Published	Miscellaneous	Use a low-overhead machine learning algorithm and an open-source monitoring tool to detect anomalous metrics on a Raspberry Pi.
 https://github.com/netdata/netdata/edit/master/docs/guides/troubleshoot/monitor-debug-applications-ebpf.md	Monitor, troubleshoot, and debug applications with eBPF metrics	Published	Miscellaneous	Use Netdata's built-in eBPF metrics collector to monitor, troubleshoot, and debug your custom application using low-level kernel feedback.
 https://github.com/netdata/netdata/edit/master/docs/guides/monitor/process.md	Monitor any process in real-time with Netdata	Published	Miscellaneous	Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions.
-https://github.com/netdata/netdata/edit/master/docs/cloud/spaces.md	Spaces	Unpublished	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/cloud/war-rooms.md	War rooms	Unpublished	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/invite-your-team.md	Invite your team	Unpublished	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/haproxy/README.md	haproxy-python.d.plugin	Unpublished	Data collection/Monitor Anything/Web Servers	
 https://github.com/netdata/go.d.plugin/edit/master/modules/lighttpd2/README.md	Lighttpd2	Unpublished	Data collection/Monitor Anything/Web Servers	Monitor the health and performance of Lighttpd2 web servers with zero configuration, per-second metric granularity, and interactive visualizations.
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/traefik/README.md	traefik-python.d.plugin	Unpublished	Data collection/Monitor Anything/Web Servers	
@@ -425,29 +424,22 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/cassandra/dev.md		Unp
 https://github.com/netdata/netdata/edit/master/HISTORICAL_CHANGELOG.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/README.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/CHANGELOG.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/contribution-guidelines.md		Unpublished		File deleted
 https://github.com/netdata/netdata/edit/master/libnetdata/eval/README.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/ml/notebooks/README.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/database/engine/metadata_log/README.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/tests/ebpf/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/web/gui/dashboard/README.md		Unpublished		File deleted
 https://github.com/netdata/netdata/edit/master/spawn/README.md		Unpublished		
 https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/CHANGELOG.md		Unpublished		
 https://github.com/netdata/.github/edit/main/SUPPORT.md		Unpublished		
 https://github.com/netdata/.github/edit/main/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/concepts-overview.md		Unpublished		File deleted
 https://github.com/netdata/helmchart/edit/master/README.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/docs/visualize/interact-dashboards-charts.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/operations-overview.md		Unpublished		File deleted
 https://github.com/netdata/netdata/edit/master/collectors/checks.plugin/README.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/web/api/exporters/README.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/database/ram/README.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/web/api/exporters/prometheus/README.md		Unpublished		
 https://github.com/netdata/go.d.plugin/edit/master/agent/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/docs/visualize/create-dashboards.md		Unpublished		File deleted
-https://github.com/netdata/netdata/edit/master/docs/dashboard/how-dashboard-works.md		Unpublished		File deleted
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/developers-overview.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/reference-streaming.md		Unpublished		File deleted
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/integrations-overview.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/database/contexts/README.md		Unpublished		
 https://github.com/netdata/netdata/edit/master/docs/guides/monitor/anomaly-detection.md		Unpublished		
