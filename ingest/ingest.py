@@ -212,7 +212,7 @@ def create_mdx_path_from_metadata(metadata):
                           .replace("`", " ")).split())
 
     if "Data collection" in metadata['learn_rel_path']\
-            and metadata['learn_rel_path'].split("/")[-1] != "Data collection":
+            and metadata['learn_rel_path'].split("/")[-1] != "Data collection" and 'External-plugins' not in metadata['learn_rel_path']:
         last_folder = metadata['learn_rel_path'].split("Data collection")[1]
         last_folder = "data-collection" + last_folder
         # print(last_folder)
