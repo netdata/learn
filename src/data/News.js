@@ -1,20 +1,30 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.41.0';
+export const ReleaseVersion = '1.42.0';
 
-export const ReleaseDate = 'July 20, 2023';
+export const ReleaseDate = 'Aug 9, 2023';
 
 export const ReleaseNotes = [
-	'New Agent Dashboard!',
-	'Netdata Assistant',
-	'New FreeIPMI collector for monitoring enterprise hardware',
-	'Netdata Detects FDs Leaking'
+	'Integrations Marketplace',
+	'SystemD Journal plugin',
+	'Claiming via the UI',
+	'Easily Spot Anomalies'
 ];
 
 
 
 export const News = [
 	{
+		title: <>Netdata release 1.42.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.42.0',
+		date: 'Aug 9, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Check out our Netdata v1.42.0 release notes to learn about our newest features and improvements.
+			</>
+		),
+	},	{
 		title: <>Netdata Integrations Marketplace</>,
 		href: 'https://app.netdata.cloud/spaces/netdata-demo/rooms/all-nodes/overview#integrationsModalOpen=true',
 		date: 'August 3, 2023',
