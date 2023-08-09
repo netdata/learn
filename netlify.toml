@@ -85,6 +85,10 @@
   from="/guides"
   to="/docs"
 
+[[redirects]]
+  from="/docs/monitor/configure-alerts"
+  to="/docs/alerting/health-configuration-reference"
+
 # section: static << END
 
 # section: dynamic << START
