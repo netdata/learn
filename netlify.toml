@@ -85,10 +85,6 @@
   from="/guides"
   to="/docs"
 
-[[redirects]]
-  from="/docs/monitor/configure-alerts"
-  to="/docs/alerting/health-configuration-reference"
-
 # section: static << END
 
 # section: dynamic << START
@@ -1542,10 +1538,6 @@
   to="/docs/alerting/notifications"
 
 [[redirects]]
-  from="/docs/monitor/view-active-alarms"
-  to="/docs/monitor-your-infrastructure/view-active-alerts"
-
-[[redirects]]
   from="/docs/quickstart/infrastructure"
   to="/docs/architecture/the-role-of-netdata-cloud"
 
@@ -1880,14 +1872,6 @@
 [[redirects]]
   from="/docs/cloud"
   to="/docs/architecture/the-role-of-netdata-cloud"
-
-[[redirects]]
-  from="/docs/cloud/alerts-notifications/smartboard"
-  to="/docs/monitor-your-infrastructure/view-active-alerts"
-
-[[redirects]]
-  from="/docs/cloud/alerts-notifications/view-active-alerts"
-  to="/docs/monitor-your-infrastructure/view-active-alerts"
 
 [[redirects]]
   from="/docs/cloud/get-started"
@@ -3076,10 +3060,6 @@
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/view-plan-&-billing"
   to="/docs/monitor-your-infrastructure/view-plan-&-billing"
-
-[[redirects]]
-  from="/docs/getting-started/monitor-your-infrastructure/view-active-alerts"
-  to="/docs/monitor-your-infrastructure/view-active-alerts"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/troubleshoot-agent-cloud-connectivity-issues"
