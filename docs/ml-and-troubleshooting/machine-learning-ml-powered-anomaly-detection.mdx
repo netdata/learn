@@ -144,7 +144,8 @@ Below is a list of all the available configuration params and their default valu
 	# hosts to skip from training = !*
 	# charts to skip from training = netdata.*
 	# dimension anomaly rate suppression window = 900
-	# dimension anomaly rate suppression threshold = 450    
+	# dimension anomaly rate suppression threshold = 450
+	# delete models older than = 604800
 ```
 
 ### Configuration Examples
@@ -201,7 +202,8 @@ This example assumes 3 child nodes [streaming](/docs/streaming/streaming-configu
 - `anomaly detection grouping method`: The grouping method used when calculating node level anomaly rate.
 - `anomaly detection grouping duration`: (`60`/`900`) The duration across which to calculate the node level anomaly rate, the default of `900` means that the node level anomaly rate is calculated across a rolling 5 minute window.
 - `hosts to skip from training`: This parameter allows you to turn off anomaly detection for any child hosts on a parent host by defining those you would like to skip from training here. For example, a value like `dev-*` skips all hosts on a parent that begin with the "dev-" prefix. The default value of `!*` means "don't skip any".
-- `charts to skip from training`: This parameter allows you to exclude certain charts from anomaly detection. By default, only netdata related charts are excluded. This is to avoid the scenario where accessing the netdata dashboard could itself trigger some anomalies if you don't access them regularly. If you want to include charts that are excluded by default, add them in small groups and then measure any impact on performance before adding additional ones. Example: If you want to include system, apps, and user charts:`!system.* !apps.* !user.* *`. 
+- `charts to skip from training`: This parameter allows you to exclude certain charts from anomaly detection. By default, only netdata related charts are excluded. This is to avoid the scenario where accessing the netdata dashboard could itself trigger some anomalies if you don't access them regularly. If you want to include charts that are excluded by default, add them in small groups and then measure any impact on performance before adding additional ones. Example: If you want to include system, apps, and user charts:`!system.* !apps.* !user.* *`.
+- `delete models older than`: (`86400`/`604800`) Delete old models from the database that are unused, by default models will be deleted after 7 days.
 
 ## Charts
 
@@ -267,7 +269,7 @@ The anomaly rate across all dimensions of a node.
 
 - We would love to hear any feedback relating to this functionality, please email us at analytics-ml-team@netdata.cloud or come join us in the [🤖-ml-powered-monitoring](https://discord.gg/4eRSEUpJnc) channel of the Netdata discord.
 - We are working on additional UI/UX based features that build on these core components to make them as useful as possible out of the box.
-- Although not yet a core focus of this work, users could leverage the `anomaly_detection` chart dimensions and/or `anomaly-bit` options in defining alarms based on ML driven anomaly detection models.
+- Although not yet a core focus of this work, users could leverage the `anomaly_detection` chart dimensions and/or `anomaly-bit` options in defining alerts based on ML driven anomaly detection models.
 - [This presentation](https://docs.google.com/presentation/d/18zkCvU3nKP-Bw_nQZuXTEa4PIVM6wppH3VUnAauq-RU/edit?usp=sharing) walks through some of the main concepts covered above in a more informal way.
 - After restart Netdata will wait until `minimum num samples to train` observations of data are available before starting training and prediction.
 - Netdata uses [dlib](https://github.com/davisking/dlib) under the hood for its core ML features.

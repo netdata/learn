@@ -10,9 +10,9 @@ sidebar_position: "212000"
 
 <a href="https://artifacthub.io/packages/search?repo=netdata" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/netdata" alt="Artifact HUB" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img></a>
 
-<img src="https://img.shields.io/badge/Version-3.7.65-informational" alt="Version: 3.7.65"></img>
+<img src="https://img.shields.io/badge/Version-3.7.69-informational" alt="Version: 3.7.69"></img>
 
-<img loading="lazy" src="https://img.shields.io/badge/AppVersion-v1.41.0-informational" alt="AppVersion: v1.41.0" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img>
+<img loading="lazy" src="https://img.shields.io/badge/AppVersion-v1.42.1-informational" alt="AppVersion: v1.42.1" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img>
 
 _Based on the work of varyumin (https://github.com/varyumin/netdata)_.
 
@@ -244,8 +244,8 @@ The following table lists the configurable parameters of the netdata chart and t
 | `child.claiming.room`                         | Comma separated list of claim rooms IDs                                                                                                                | `""`                                                                                    |
 | `child.extraVolumeMounts`                     | Additional volumeMounts to add to the child pods                                                                                                       | `[]`                                                                                    |
 | `child.extraVolumes`                          | Additional volumes to add to the child pods                                                                                                            | `[]`                                                                                    |
-| `notifications.slackurl`                      | URL for slack notifications                                                                                                                            | `""`                                                                                    |
-| `notifications.slackrecipient`                | Slack recipient list                                                                                                                                   | `""`                                                                                    |
+| `notifications.slack.webhook_url`             | Slack webhook URL                                                                                                                                      | `""`                                                                                    |
+| `notifications.slack.recipient`               | Slack recipient list                                                                                                                                   | `""`                                                                                    |
 | `initContainersImage.repository`              | Init containers' image repository                                                                                                                      | `alpine`                                                                                |
 | `initContainersImage.tag`                     | Init containers' image tag                                                                                                                             | `latest`                                                                                |
 | `initContainersImage.pullPolicy`              | Init containers' image pull policy                                                                                                                     | `Always`                                                                                |
@@ -266,8 +266,8 @@ Example to set the parameters from the command line:
 
 ```console
 $ helm install ./netdata --name my-release \
-    --set notifications.slackurl=MySlackAPIURL \
-    --set notifications.slackrecipiet="@MyUser MyChannel"
+    --set notifications.slack.webhook_url=MySlackAPIURL \
+    --set notifications.slack.recipient="@MyUser MyChannel"
 ```
 
 Another example, to set a different ingress controller.
