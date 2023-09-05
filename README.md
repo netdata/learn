@@ -1,7 +1,5 @@
 # Netdata Learn
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status)](https://app.netlify.com/sites/netdata-docusaurus/deploys)
-
 This repository hosts the code for Netdata's documentation site, **Netdata Learn** built on [Docusaurus](https://docusaurus.io/).
 Docusaurus is a free, open-source project maintained by Facebook.
 The site is then deployed automatically to Netlify from the latest commit of the master branch, which we also use to maintain certain redirects.
@@ -16,6 +14,12 @@ The [documentation contribution guidelines](https://github.com/netdata/netdata/b
 Moreover, after taking a look at the [documentation contribution guidelines](https://github.com/netdata/netdata/blob/master/docs/guidelines.md),
 please also take a look at the [style guide](https://github.com/netdata/netdata/blob/master/docs/contributing/style-guide.md).
 We offer friendly advice on how to produce quality documentation, hoping that it will help you in your contribution.
+
+## Netlify status
+
+master    : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status)](https://app.netlify.com/sites/netdata-docusaurus/deploys) </br>
+staging  : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status)](https://app.netlify.com/sites/netdata-docusaurus//deploy-status?branch=staging) </br>
+staging1  : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status)](https://app.netlify.com/sites/netdata-docusaurus//deploy-status?branch=staging1) </br>
 
 ## Installation
 
