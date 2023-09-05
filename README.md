@@ -18,8 +18,8 @@ We offer friendly advice on how to produce quality documentation, hoping that it
 ## Netlify status
 
 master    : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status)](https://app.netlify.com/sites/netdata-docusaurus/deploys) </br>
-staging  : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status)](https://app.netlify.com/sites/netdata-docusaurus//deploy-status?branch=staging) </br>
-staging1  : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status)](https://app.netlify.com/sites/netdata-docusaurus//deploy-status?branch=staging1) </br>
+staging  : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status?branch=staging)](https://app.netlify.com/sites/netdata-docusaurus/deploy-status?branch=staging) </br>
+staging1  : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status?branch=staging1)](https://app.netlify.com/sites/netdata-docusaurus/deploy-status?branch=staging1) </br>
 
 ## Installation
 
