@@ -1,5 +1,7 @@
 # Netdata Learn
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status)](https://app.netlify.com/sites/netdata-docusaurus/deploys)
+
 This repository hosts the code for Netdata's documentation site, **Netdata Learn** built on [Docusaurus](https://docusaurus.io/).
 Docusaurus is a free, open-source project maintained by Facebook.
 The site is then deployed automatically to Netlify from the latest commit of the master branch, which we also use to maintain certain redirects.
