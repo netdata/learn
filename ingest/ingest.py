@@ -195,7 +195,7 @@ def clone_repo(owner, repo, branch, depth, prefix_folder):
         print(f"Cloned the {branch} branch from {repo} repo (owner: {owner})")
     except Exception as e:
         print(f"Couldn't clone the {branch} branch from {repo} repo (owner: {owner}) \n Exception {e} raised")
-        raise()
+        raise
 
 
 def create_mdx_path_from_metadata(metadata):
