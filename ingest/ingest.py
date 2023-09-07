@@ -14,6 +14,7 @@ import git
 import autogenerateRedirects as genRedirects
 import pandas as pd
 import numpy as np
+from retrypy import retry, delay
 
 
 """
@@ -179,6 +180,7 @@ def copy_doc(src, dest):
         shutil.copy(src, dest)
 
 
+@retry.decorate(times=3, wait=delay.random(min_seconds=1, max_seconds=5))
 def clone_repo(owner, repo, branch, depth, prefix_folder):
     """
     Clone a repo in a specific depth and place it under the prefixFolder
@@ -190,9 +192,10 @@ def clone_repo(owner, repo, branch, depth, prefix_folder):
         output_folder = prefix_folder + repo
         # print("DEBUG", outputFolder)
         git.Git().clone(f"https://github.com/{owner}/{repo}.git", output_folder, depth=depth, branch=branch)
-        return f"Cloned the {branch} branch from {repo} repo (owner: {owner})"
+        print(f"Cloned the {branch} branch from {repo} repo (owner: {owner})")
     except Exception as e:
-        return f"Couldn't clone the {branch} branch from {repo} repo (owner: {owner}) \n Exception {e} raised"
+        print(f"Couldn't clone the {branch} branch from {repo} repo (owner: {owner}) \n Exception {e} raised")
+        raise()
 
 
 def create_mdx_path_from_metadata(metadata):
@@ -721,8 +724,8 @@ if __name__ == '__main__':
 
     '''Clone all the predefined repos'''
     for repo_name in default_repos.keys():
-        print(clone_repo(default_repos[repo_name]["owner"], repo_name,
-              default_repos[repo_name]["branch"], 1, TEMP_FOLDER + "/"))
+        clone_repo(default_repos[repo_name]["owner"], repo_name,
+            default_repos[repo_name]["branch"], 1, TEMP_FOLDER + "/")
     # This line is useful only during the rework
     # print(cloneRepo("netdata", "learn", "rework-learn", 1, TEMP_FOLDER + "/"))
     # We fetch the markdown files from the repositories

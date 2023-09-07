@@ -5,3 +5,4 @@ gitpython
 mergedeep
 pandas
 numpy
+retrypy
