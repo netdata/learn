@@ -157,7 +157,13 @@ To run the ingest process and spin up a local development environment:
   source myenv/bin/activate
   ```
 
-5. Run the ingest process to fetch the documents you are working on from one or multiple repos.
+5. Install the required packages, via pip
+
+  ```bash
+  pip install -r .learn_environment/ingest-requirements.txt
+  ```
+
+6. Run the ingest process to fetch the documents you are working on from one or multiple repos.
 
   ```bash
   python ingest/ingest.py --repos <owner>/<repo>:<branch>
@@ -170,7 +176,7 @@ To run the ingest process and spin up a local development environment:
   python ingest/ingest.py --repos netdata/netdata:patch1 user1/go.d.plugin:user1-patch
   ```
 
-6. Build a local website,
+7. Build a local website,
 
   ```bash
   yarn start
