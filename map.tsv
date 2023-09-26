@@ -380,6 +380,7 @@ https://github.com/netdata/netdata/edit/master/libnetdata/dictionary/README.md	D
 https://github.com/netdata/netdata/edit/master/libnetdata/july/README.md	July interface	Published	Miscellaneous/libnetdata	
 https://github.com/netdata/netdata/edit/master/libnetdata/socket/README.md	Socket	Published	Miscellaneous/libnetdata	
 https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed Software	Published	Miscellaneous	
+https://github.com/netdata/netdata/edit/master/docs/running-through-cf-tunnels.md	Running a Local Dashboard through Cloudflare Tunnels	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	Health command API tester	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	Customize the standard dashboard	Unpublished	Miscellaneous	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	Import, export, and print a snapshot	Published	Miscellaneous	Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
