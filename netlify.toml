@@ -1154,10 +1154,6 @@
   to="/docs/alerting/notifications/netdata-agent-notifications/sms-server"
 
 [[redirects]]
-  from="/docs/agent/health/notifications/stackpulse"
-  to="/docs/alerting/notifications/netdata-agent-notifications/stackpulse"
-
-[[redirects]]
   from="/docs/agent/health/notifications/syslog"
   to="/docs/alerting/notifications/netdata-agent-notifications/syslog"
 
@@ -3990,10 +3986,6 @@
   to="/docs/alerting/notifications/netdata-agent-notifications/syslog"
 
 [[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/stackpulse"
-  to="/docs/alerting/notifications/netdata-agent-notifications/stackpulse"
-
-[[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/sms-server"
   to="/docs/alerting/notifications/netdata-agent-notifications/sms-server"
 
@@ -4780,10 +4772,6 @@
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/syslog"
   to="/docs/alerting/notifications/netdata-agent-notifications/syslog"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/stackpulse"
-  to="/docs/alerting/notifications/netdata-agent-notifications/stackpulse"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/sms-server"
