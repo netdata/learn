@@ -125,6 +125,7 @@ https://github.com/netdata/netdata/edit/master/docs/Running-behind-nginx.md	/doc
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	/docs/miscellaneous/glossary
 https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	/docs//live-demo
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-caddy.md	/docs/configuring/securing-netdata-agents/reverse-proxies/caddy
+https://github.com/netdata/netdata/edit/master/docs/running-through-cf-tunnels.md	/docs/miscellaneous/running-a-local-dashboard-through-cloudflare-tunnels
 https://github.com/netdata/netdata/edit/master/docs/store/distributed-data-architecture.md	/docs/architecture/distributed-data-architecture
 https://github.com/netdata/netdata/edit/master/docs/store/change-metrics-storage.md	/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics
 https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/enable-streaming.md	/docs/streaming/understanding-how-streaming-works
@@ -287,7 +288,6 @@ https://github.com/netdata/netdata/edit/master/health/notifications/email/README
 https://github.com/netdata/netdata/edit/master/health/notifications/gotify/README.md	/docs/alerting/notifications/netdata-agent-notifications/gotify
 https://github.com/netdata/netdata/edit/master/health/notifications/discord/README.md	/docs/alerting/notifications/netdata-agent-notifications/discord
 https://github.com/netdata/netdata/edit/master/health/notifications/pagerduty/README.md	/docs/alerting/notifications/netdata-agent-notifications/pagerduty
-https://github.com/netdata/netdata/edit/master/health/notifications/stackpulse/README.md	/docs/alerting/notifications/netdata-agent-notifications/stackpulse
 https://github.com/netdata/netdata/edit/master/health/notifications/smstools3/README.md	/docs/alerting/notifications/netdata-agent-notifications/sms-server
 https://github.com/netdata/netdata/edit/master/health/notifications/pushbullet/README.md	/docs/alerting/notifications/netdata-agent-notifications/pushbullet
 https://github.com/netdata/netdata/edit/master/health/notifications/msteams/README.md	/docs/alerting/notifications/netdata-agent-notifications/microsoft-teams
