@@ -91,7 +91,6 @@ default_repos = {
         }
 }
 
-
 def unsafe_cleanup_folders(folder_to_delete):
     """Cleanup every file in the specified folderToDelete."""
     print("Try to clean up the folder: ", folder_to_delete)
@@ -764,13 +763,23 @@ if __name__ == '__main__':
                                 "learnPath": str(response[0]),
                                 "ingestedRepo": str(markdown.split("/", 2)[1])
                             }
-                            update_metadata_of_file(markdown, md_metadata)
+
+                            md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + md_metadata['slug']})
+
+                            
                         else:
                             to_publish[markdown] = {
                                 "metadata": md_metadata,
                                 "learnPath": str(response),
                                 "ingestedRepo": str(markdown.split("/", 2)[1])
                             }
+                            # replace first ", " and then " ", this needs to be handled in a prettier way, but other updates in this file are on the way.
+                            if md_metadata['learn_rel_path'] != md_metadata['sidebar_label']:
+                                md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs/" + md_metadata['learn_rel_path'].lower().replace(", ", "-").replace(" ", "-").replace("//", "/") + "/" + md_metadata['sidebar_label'].lower().replace(", ", "-").replace(" ", "-").replace("//", "/")})
+                            else:
+                                md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs/" + md_metadata['learn_rel_path'].lower().replace(", ", "-").replace(" ", "-").replace("//", "/")})
+                        update_metadata_of_file(markdown, md_metadata)
+                        # insert_link_metadata(markdown, md_metadata)
                     except Exception as exc:
                         print(
                             f"File {markdown} doesn't contain key-value {KeyError}", exc)
