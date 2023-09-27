@@ -91,14 +91,6 @@ default_repos = {
         }
 }
 
-
-def insert_link_metadata(markdown, metadata):
-    if metadata['slug']:
-        print(metadata['slug'])
-        quit()
-        metadata['learn_link'] = "https:learn.netdata.cloud/docs" + metadata['slug']
-
-
 def unsafe_cleanup_folders(folder_to_delete):
     """Cleanup every file in the specified folderToDelete."""
     print("Try to clean up the folder: ", folder_to_delete)
