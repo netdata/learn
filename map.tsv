@@ -26,7 +26,6 @@ https://github.com/netdata/netdata/edit/master/packaging/installer/methods/aws.m
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/azure.md	Azure	Published	Installing	The Netdata Agent runs on all popular cloud providers, but often requires additional steps and configuration for full functionality.
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/gcp.md	GCP	Published	Installing	The Netdata Agent runs on all popular cloud providers, but often requires additional steps and configuration for full functionality.
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/pfsense.md	pfSense	Published	Installing	Install Netdata on pfSense to monitor the health and performance of firewalls with thousands of real-time, per-second metrics.
-https://github.com/netdata/netdata/edit/master/packaging/installer/INSTALL-DEBUG.md	Installation troubleshoot actions	Unpublished	Installing	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/build-the-netdata-agent-yourself.md	Build the Netdata Agent Yourself	Published	Installing/Build the Netdata Agent Yourself	
 https://github.com/netdata/netdata/edit/master/packaging/maintainers/README.md	Package Maintainers	Published	Installing/Build the Netdata Agent Yourself	
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/source.md	Compile from source code	Published	Installing/Build the Netdata Agent Yourself	Package maintainers and power users may be interested in manually building Netdata from source without using any of our installation scripts.
@@ -60,7 +59,9 @@ https://github.com/netdata/netdata/edit/master/aclk/README.md	Agent-Cloud link (
 https://github.com/netdata/netdata/edit/master/docs/configure/nodes.md	Configuration	Published	Configuring	Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings.
 https://github.com/netdata/netdata/edit/master/daemon/README.md	Netdata daemon	Published	Configuring	
 https://github.com/netdata/netdata/edit/master/daemon/config/README.md	Daemon configuration	Published	Configuring	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
+https://github.com/netdata/netdata/edit/master/collectors/REFERENCE.md	Collectors configuration	Published	Configuring	
 https://github.com/netdata/netdata/edit/master/cli/README.md	Agent CLI	Published	Configuring	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
+https://github.com/netdata/agent-service-discovery/edit/master/README.md	Service discovery	Published	Configuring	
 https://github.com/netdata/netdata/edit/master/docs/guides/using-host-labels.md	Organize systems, metrics, and alerts	Published	Configuring	
 https://github.com/netdata/netdata/edit/master/claim/README.md	Connect Agent to Cloud	Published	Configuring	
 https://github.com/netdata/netdata/edit/master/docs/guides/troubleshoot/troubleshooting-agent-with-cloud-connection.md	Troubleshoot Agent-Cloud connectivity issues	Published	Configuring	
@@ -71,232 +72,23 @@ https://github.com/netdata/netdata/edit/master/collectors/README.md	Data Collect
 https://github.com/netdata/netdata/edit/master/docs/collect/system-metrics.md	System metrics	Published	Data collection	Netdata collects thousands of metrics from physical and virtual systems, IoT/edge devices, and containers with zero configuration.
 https://github.com/netdata/netdata/edit/master/docs/collect/application-metrics.md	Application metrics	Published	Data collection	Monitor and troubleshoot every application on your infrastructure with per-second metrics, zero configuration, and meaningful charts.
 https://github.com/netdata/netdata/edit/master/docs/collect/container-metrics.md	Container metrics	Published	Data collection	Use Netdata to collect per-second utilization and application-level metrics from Linux/Docker containers and Kubernetes clusters.
-https://github.com/netdata/netdata/edit/master/collectors/REFERENCE.md	Collectors configuration	Published	Data collection	
-https://github.com/netdata/agent-service-discovery/edit/master/README.md	Service discovery	Published	Data collection	
-https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	Chart dimensions, contexts, and families	Published	Data collection	 Netdata organizes charts into dimensions, contexts, and families to automaticallyand meaningfully organize thousands of metrics into interactive charts.
-https://github.com/netdata/netdata/edit/master/collectors/plugins.d/README.md	External plugins	Published	Data collection/External-plugins	
-https://github.com/netdata/go.d.plugin/edit/master/README.md	go.d.plugin	Published	Data collection/External-plugins/go.d.plugin	go.d.plugin is an external plugin for Netdata, responsible for running individual data collectors written in Go.
-https://github.com/netdata/go.d.plugin/edit/master/docs/how-to-write-a-module.md	How to write a Netdata collector in Go	Published	Data collection/External-plugins/go.d.plugin	This guide will walk you through the technical implementation of writing a new Netdata collector in Golang, with tips on interfaces, structure, configuration files, and more.
-https://github.com/netdata/go.d.plugin/edit/master/pkg/README.md	Helper packages	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/iprange/README.md	iprange	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/matcher/README.md	matcher	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/prometheus/selector/README.md	Time series selector	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/stm/README.md	stm	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/tlscfg/README.md	tlscfg	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/go.d.plugin/edit/master/pkg/web/README.md	web	Unpublished	Data collection/External-plugins/go.d.plugin/Helper Packages	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/README.md	python.d.plugin	Published	Data collection/External-plugins/python.d.plugin	
-https://github.com/netdata/netdata/edit/master/docs/guides/python-collector.md	Develop a custom data collector in Python	Published	Data collection/External-plugins/python.d.plugin	Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box.
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/README.md	charts.d.plugin	Published	Data collection/External-plugins	
-https://github.com/netdata/netdata/edit/master/collectors/debugfs.plugin/README.md	debugfs.plugin	Published	Data collection/External-plugins	
-https://github.com/netdata/netdata/edit/master/collectors/profile.plugin/README.md	profile.plugin	Published	Data collection/External-plugins	
 https://github.com/netdata/netdata/edit/master/collectors/COLLECTORS.md	Monitor Anything	Published	Data collection	Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box.
-https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/README.md	OpenMetrics Endpoints	Published	Data collection/APM	Monitor the health and performance of 600+ services that support the Prometheus metrics with Netdata's per-second frequency and zero configuration.
-https://github.com/netdata/netdata/edit/master/collectors/statsd.plugin/README.md	StatsD	Published	Data collection/APM	The Netdata Agent is a fully-featured StatsD server that collects metrics from any custom application and visualizes them in real-time.
-https://github.com/netdata/netdata/edit/master/collectors/apps.plugin/README.md	Application monitoring 	Published	Data collection/APM	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/go_expvar/README.md	Go applications	Published	Data collection/APM	
-https://github.com/netdata/go.d.plugin/edit/master/modules/springboot2/README.md	Java Spring Boot 2 applications	Published	Data collection/APM	Monitor the health and performance of Spring Boot 2-compatible apps with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/phpdaemon/README.md	PHP Applications	Published	Data collection/APM	Monitor the health and performance of phpDaemon workers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/proc.plugin/README.md	OS provided metrics	Published	Data collection/Linux Systems	
-https://github.com/netdata/netdata/edit/master/collectors/slabinfo.plugin/README.md	Slabinfo	Published	Data collection/Linux Systems/Other	
-https://github.com/netdata/netdata/edit/master/collectors/perf.plugin/README.md	Perf	Published	Data collection/Linux Systems/Other	
-https://github.com/netdata/netdata/edit/master/collectors/ebpf.plugin/README.md	eBPF for Systems Monitoring	Published	Data collection/Linux Systems	Use Netdata's extended Berkeley Packet Filter (eBPF) collector to monitor kernel-level metrics about yourcomplex applications with per-second granularity.
-https://github.com/netdata/go.d.plugin/edit/master/modules/windows/README.md	Windows Systems	Published	Data collection	Monitor the health and performance of Windows machines with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/freebsd.plugin/README.md	FreeBSD Systems	Published	Data collection	
-https://github.com/netdata/netdata/edit/master/collectors/macos.plugin/README.md	macOS Systems	Published	Data collection	
-https://github.com/netdata/netdata/edit/master/collectors/diskspace.plugin/README.md	Disks	Published	Data collection/Storage, Mount Points and Filesystems	Monitor the disk usage space of mounted disks in real-time with the Netdata Agent, plus preconfigured alarms for disks at risk of filling up.
-https://github.com/netdata/go.d.plugin/edit/master/modules/hdfs/README.md	HDFS	Published	Data collection/Storage, Mount Points and Filesystems/Filesystems	Monitor the health and performance of HDFS nodes with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/ipfs/README.md	IPFS	Published	Data collection/Storage, Mount Points and Filesystems/Filesystems	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/samba/README.md	SMBFS	Published	Data collection/Storage, Mount Points and Filesystems/Filesystems	
-https://github.com/netdata/go.d.plugin/edit/master/modules/filecheck/README.md	Files and Directories	Published	Data collection/Storage, Mount Points and Filesystems	Monitor the health and performance of files and directories with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/smartd_log/README.md	S.M.A.R.T. attributes	Published	Data collection/Storage, Mount Points and Filesystems/Hardware Storage	
-https://github.com/netdata/go.d.plugin/edit/master/modules/nvme/README.md	NVMe devices	Published	Data collection/Storage, Mount Points and Filesystems/Hardware Storage	Monitors NVMe devices health metrics using the nvme CLI tool.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/hddtemp/README.md	Hard Drive Temperature	Published	Data collection/Storage, Mount Points and Filesystems/Hardware Storage	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/adaptec_raid/README.md	Adaptec RAID	Published	Data collection/Storage, Mount Points and Filesystems/Hardware Storage	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/hpssa/README.md	HP Smart Storage Arrays	Published	Data collection/Storage, Mount Points and Filesystems/Hardware Storage	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/megacli/README.md	MegaRAID controllers	Published	Data collection/Storage, Mount Points and Filesystems/Hardware Storage	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/ceph/README.md	CEPH	Published	Data collection/Storage, Mount Points and Filesystems/Software Storage	
-https://github.com/netdata/go.d.plugin/edit/master/modules/pika/README.md	Pika	Published	Data collection/Storage, Mount Points and Filesystems/Software Storage	Monitor the health and performance of Pika storage services with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/scaleio/README.md	ScaleIO	Published	Data collection/Storage, Mount Points and Filesystems/Software Storage	Monitor the health and performance of ScaleIO storage with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/ap/README.md	Linux Access Points	Published	Data collection/Networking Stack and Network Interfaces	
-https://github.com/netdata/netdata/edit/master/collectors/tc.plugin/README.md	Network Interface QoS	Published	Data collection/Networking Stack and Network Interfaces	
-https://github.com/netdata/netdata/edit/master/collectors/nfacct.plugin/README.md	Netfilter Accounting	Published	Data collection/Networking Stack and Network Interfaces	
-https://github.com/netdata/go.d.plugin/edit/master/modules/systemdunits/README.md	Systemd Units	Published	Data collection/Systemd	Monitor the health and performance of Systemd units states with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/logind/README.md	Logind	Published	Data collection/Systemd	Monitors number of sessions and users with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/supervisord/README.md	Supervisord	Published	Data collection/Processes and System Services	Monitor the processes running by Supervisor with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/README.md	CGROUPS	Published	Data collection/Containers and VMs	
-https://github.com/netdata/go.d.plugin/edit/master/modules/docker/README.md	Docker	Published	Data collection/Containers and VMs	Monitor Docker containers health metrics and data usage metrics.
-https://github.com/netdata/go.d.plugin/edit/master/modules/docker_engine/README.md	Docker Engine	Published	Data collection/Containers and VMs	Monitor the health and performance of the Docker Engine runtime with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/vcsa/README.md	VMWare Center Server Appliance	Published	Data collection/Containers and VMs	Monitor the health and performance of vCenter appliances with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/vsphere/README.md	VMWare Center Servers	Published	Data collection/Containers and VMs	Monitor the health and performance of vCenter servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/xenstat.plugin/README.md	Xen	Published	Data collection/Containers and VMs	
-https://github.com/netdata/go.d.plugin/edit/master/modules/k8s_kubelet/README.md	Kubelet	Published	Data collection/Kubernetes	Monitor the health and performance of Kubelet agents with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/k8s_kubeproxy/README.md	Kube-proxy	Published	Data collection/Kubernetes	Monitor the health and performance of Kube-proxy instances with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/k8s_state/README.md	Kubernetes cluster state	Published	Data collection/Kubernetes	Monitor the state of your Kubernetes clusters with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/snmp/README.md	SNMP	Published	Data collection/SNMP and Networked Devices	
-https://github.com/netdata/go.d.plugin/edit/master/modules/bind/README.md	Bind9	Published	Data collection/DNS and DHCP Servers	Monitor the health and performance of Bind9 DNS servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/coredns/README.md	CoreDNS	Published	Data collection/DNS and DHCP Servers	Monitor the health and performance of CoreDNS servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/dnsdist/README.md	DNSdist	Published	Data collection/DNS and DHCP Servers	Monitor the health and performance of DNSdist load balancers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/dnsmasq_dhcp/README.md	Dnsmasq DHCP	Published	Data collection/DNS and DHCP Servers	Monitor the health and performance of Dnsmasq DHCP servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/dnsmasq/README.md	Dnsmasq DNS Forwarder	Published	Data collection/DNS and DHCP Servers	Monitor the health and performance of Dnsmasq DNS forwarders with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/bind_rndc/README.md	ISC Bind	Published	Data collection/DNS and DHCP Servers	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/nsd/README.md	NSD	Published	Data collection/DNS and DHCP Servers	
-https://github.com/netdata/go.d.plugin/edit/master/modules/powerdns/README.md	PowerDNS Authoritative Server	Published	Data collection/DNS and DHCP Servers	Monitor the health and performance of PowerDNS nameservers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/powerdns_recursor/README.md	PowerDNS Recursor	Published	Data collection/DNS and DHCP Servers	Monitor the health and performance of PowerDNS recursor instances with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/unbound/README.md	Unbound	Published	Data collection/DNS and DHCP Servers	Monitor the health and performance of Unbound DNS resolvers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/pihole/README.md	Pi-hole	Published	Data collection/DNS and DHCP Servers	Monitor the health and performance of Pi-hole instances with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/isc_dhcpd/README.md	ISC DHCPd	Published	Data collection/DNS and DHCP Servers	Monitor the health and performance of ISC DHCP servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/timex.plugin/README.md	Linux Kernel	Published	Data collection/System CLock and NTP	Monitor the system clock synchronization state.
-https://github.com/netdata/go.d.plugin/edit/master/modules/chrony/README.md	Chrony	Published	Data collection/System CLock and NTP	
-https://github.com/netdata/go.d.plugin/edit/master/modules/ntpd/README.md	NTP daemon	Published	Data collection/System CLock and NTP	
-https://github.com/netdata/netdata/edit/master/collectors/idlejitter.plugin/README.md	CPU Idle Jitter check	Published	Data collection/Synthetic Checks	
-https://github.com/netdata/go.d.plugin/edit/master/modules/ping/README.md	Network latency check	Published	Data collection/Synthetic Checks	Monitor round-trip time and packet loss to network hosts with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/ioping.plugin/README.md	Disk Latency with check	Published	Data collection/Synthetic Checks	
-https://github.com/netdata/go.d.plugin/edit/master/modules/portcheck/README.md	TCP endpoints check	Published	Data collection/Synthetic Checks	Monitor the health and performance of any TCP endpoint with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/httpcheck/README.md	HTTP endpoints check	Published	Data collection/Synthetic Checks	Monitor the health and performance of any HTTP endpoint with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/monit/README.md	Monit	Published	Data collection/Synthetic Checks	
-https://github.com/netdata/go.d.plugin/edit/master/modules/dnsquery/README.md	DNS queries check	Published	Data collection/Synthetic Checks	Monitor the health and performance of DNS query round-trip time with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/x509check/README.md	x509 certificate check	Published	Data collection/Synthetic Checks	Monitor the health and performance of x509 certificates with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/whoisquery/README.md	Whois domain expiry check	Published	Data collection/Synthetic Checks	Monitor the health and performance of domain expiry with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/statsd.plugin/k6.md	K6 Load test	Published	Data collection/Synthetic Checks	
-https://github.com/netdata/go.d.plugin/edit/master/modules/cassandra/README.md	Cassandra	Published	Data collection/Database servers	Monitor the health and performance of Cassandra database servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/cockroachdb/README.md	CockroachDB	Published	Data collection/Database servers	Monitor the health and performance of CockroachDB databases with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/couchbase/README.md	Couchbase	Published	Data collection/Database servers	Monitor the health and performance of Couchbase databases with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/couchdb/README.md	CouchDB	Published	Data collection/Database servers	Monitor the health and performance of CouchDB databases with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/memcached/README.md	Memcached	Published	Data collection/Database servers	
-https://github.com/netdata/go.d.plugin/edit/master/modules/mongodb/README.md	MongoDB	Published	Data collection/Database servers	Monitor the health and performance of MongoDB with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/mysql/README.md	MySQL and MariaDB	Published	Data collection/Database servers	Monitor connections, slow queries, InnoDB memory and disk utilization, locks, and more with zero configuration and per-second metric granularity.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/oracledb/README.md	OracleDB	Published	Data collection/Database servers	
-https://github.com/netdata/go.d.plugin/edit/master/modules/pgbouncer/README.md	PgBouncer	Published	Data collection/Database servers	Monitor client and server connections and databases statistics.
-https://github.com/netdata/go.d.plugin/edit/master/modules/postgres/README.md	PostgresSQL	Published	Data collection/Database servers	Monitor connections, replication, databases, locks, and more with zero configuration and per-second metric granularity.
-https://github.com/netdata/go.d.plugin/edit/master/modules/proxysql/README.md	ProxySQL	Published	Data collection/Database servers	Monitor connections, slow queries, lagging, backends status and more with zero configuration and per-second metric granularity.
-https://github.com/netdata/go.d.plugin/edit/master/modules/redis/README.md	Redis	Published	Data collection/Database servers	Monitor the health and performance of Redis storage services with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/rethinkdbs/README.md	RethinkDB	Published	Data collection/Database servers	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/riakkv/README.md	Riak KV	Published	Data collection/Database servers	
-https://github.com/netdata/go.d.plugin/edit/master/modules/apache/README.md	Apache	Published	Data collection/Web Servers and Web Proxies	Monitor the health and performance of Apache web servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/tomcat/README.md	Apache Tomcat	Published	Data collection/Web Servers and Web Proxies	
-https://github.com/netdata/go.d.plugin/edit/master/modules/envoy/README.md	Envoy	Published	Data collection/Web Servers and Web Proxies	
-https://github.com/netdata/go.d.plugin/edit/master/modules/haproxy/README.md	HAProxy	Published	Data collection/Web Servers and Web Proxies	Monitor the health and performance of HAProxy with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/lighttpd/README.md	Lighttpd	Published	Data collection/Web Servers and Web Proxies	Monitor the health and performance of Lighttpd web servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/litespeed/README.md	LiteSpeed	Published	Data collection/Web Servers and Web Proxies	
-https://github.com/netdata/go.d.plugin/edit/master/modules/nginx/README.md	NGINX	Published	Data collection/Web Servers and Web Proxies	Monitor the health and performance of NGINX web servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/nginxplus/README.md	NGINX Plus	Published	Data collection/Web Servers and Web Proxies	Monitor the health and performance of NGINX Plus web servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/nginxvts/README.md	NGINX VTS	Published	Data collection/Web Servers and Web Proxies	
-https://github.com/netdata/go.d.plugin/edit/master/modules/phpfpm/README.md	PHP-FPM	Published	Data collection/Web Servers and Web Proxies	Monitor the health and performance of PHP-FPM instances with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/squid/README.md	Squid	Published	Data collection/Web Servers and Web Proxies	
-https://github.com/netdata/go.d.plugin/edit/master/modules/tengine/README.md	Tengine	Published	Data collection/Web Servers and Web Proxies	Monitor the health and performance of Tengine web servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/traefik/README.md	Traefik	Published	Data collection/Web Servers and Web Proxies	Monitor the health and performance of Traefik with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/uwsgi/README.md	uWSGI	Published	Data collection/Web Servers and Web Proxies	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/varnish/README.md	Varnish Cache	Published	Data collection/Web Servers and Web Proxies	
-https://github.com/netdata/go.d.plugin/edit/master/modules/weblog/README.md	Apache, NGINX, Microsoft IIS	Published	Data collection/Web Servers and Web Proxies/Web Logs	Monitor the health and performance of Apache or Nginx logs with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/squidlog/README.md	Squid	Published	Data collection/Web Servers and Web Proxies/Web Logs	Monitor the health and performance of Squid web server logs with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/activemq/README.md	ActiveMQ	Published	Data collection/Message brokers	Monitor the health and performance of ActiveMQ message brokers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/beanstalk/README.md	Beanstalk	Published	Data collection/Message brokers	
-https://github.com/netdata/go.d.plugin/edit/master/modules/pulsar/README.md	Pulsar	Published	Data collection/Message brokers	Monitor the health and performance of Apache Pulsar messaging systems with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/rabbitmq/README.md	RabbitMQ	Published	Data collection/Message brokers	Monitor the health and performance of RabbitMQ message brokers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/vernemq/README.md	VerneMQ	Published	Data collection/Message brokers	Monitor the health and performance of VerneMQ MQTT brokers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/elasticsearch/README.md	Elasticsearch	Published	Data collection/Search Engines	Monitor the health and performance of Elasticsearch engines with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/solr/README.md	Solr	Published	Data collection/Search Engines	Monitor the health and performance of Solr search servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/consul/README.md	Consul	Published	Data collection/Service Discovery & Registry	Monitor the health and performance of Consul service meshes with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/zookeeper/README.md	ZooKeeper	Published	Data collection/Service Discovery & Registry	Monitor the health and performance of Zookeeper servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/fluentd/README.md	Fluentd	Published	Data collection/Logs Servers	Monitor the health and performance of Fluentd servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/logstash/README.md	Logstash	Published	Data collection/Logs Servers	Monitor the health and performance of Logstash instances with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/dovecot/README.md	Dovecot	Published	Data collection/Mail Servers	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/exim/README.md	Exim	Published	Data collection/Mail Servers	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/postfix/README.md	Postfix	Published	Data collection/Mail Servers	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/icecast/README.md	Icecast	Published	Data collection/Media Streaming Servers	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/puppet/README.md	Puppet	Published	Data collection/Provisioning Systems	
-https://github.com/netdata/go.d.plugin/edit/master/modules/wireguard/README.md	WireGuard	Published	Data collection/VPNs	Monitor WireGuard VPN network interfaces and peers traffic.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/tor/README.md	Tor	Published	Data collection/VPNs	
-https://github.com/netdata/go.d.plugin/edit/master/modules/openvpn/README.md	OpenVPN	Published	Data collection/VPNs	Monitor the health and performance of OpenVPN servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/openvpn_status_log/README.md	OpenVPN Status Log	Published	Data collection/VPNs	
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/libreswan/README.md	Libreswan IPSec	Published	Data collection/VPNs	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/fail2ban/README.md	Fail2ban	Published	Data collection/Access Control, Authentication and Authorization	
-https://github.com/netdata/go.d.plugin/edit/master/modules/freeradius/README.md	FreeRADIUS	Published	Data collection/Access Control, Authentication and Authorization	Monitor the health and performance of FreeRADIUS servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/openldap/README.md	OpenLDAP	Published	Data collection/Access Control, Authentication and Authorization	
-https://github.com/netdata/netdata/edit/master/collectors/statsd.plugin/asterisk.md	Asterisk	Published	Data collection/Telephony Servers	
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/opensips/README.md	OpenSIPS	Published	Data collection/Telephony Servers	
-https://github.com/netdata/go.d.plugin/edit/master/modules/energid/README.md	Energi Core Wallet	Published	Data collection/Blockchain Servers	Monitor the health and performance of Energi Core Wallets with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/go.d.plugin/edit/master/modules/geth/README.md	Go Ethereum	Published	Data collection/Blockchain Servers	Monitor the health and performance of your go-ethereum Nodes (Geth) with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/apcupsd/README.md	APC UPS	Published	Data collection/UPS	
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/nut/README.md	NUT	Published	Data collection/UPS	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/boinc/README.md	BOINC	Published	Data collection/Distributed Computing Systems	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/gearman/README.md	Gearman	Published	Data collection/Distributed Computing Systems	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/pandas/README.md	Structured data (Pandas)	Published	Data collection/Generic Data Collection	Monitor metrics exposed in CSV, JSON, XML, HTML and other formats, with a Python collector that gathers metrics from a pandas dataframe.
-https://github.com/netdata/netdata/edit/master/collectors/freeipmi.plugin/README.md	Server Hardware	Published	Data collection/Hardware Devices and Sensors	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/sensors/README.md	Linux Machine Sensors	Published	Data collection/Hardware Devices and Sensors	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/am2320/README.md	AM2320	Published	Data collection/Hardware Devices and Sensors	
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/sensors/README.md	sensors	Published	Data collection/Hardware Devices and Sensors	
-https://github.com/netdata/go.d.plugin/edit/master/modules/nvidia_smi/README.md	NVIDIA SMI	Published	Data collection/Hardware Devices and Sensors	Monitors performance metrics using the nvidia-smi CLI tool.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/nvidia_smi/README.md	NVIDIA SMI (python)	Unpublished	Data collection/Hardware Devices and Sensors	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/w1sensor/README.md	Wire sensors	Published	Data collection/Hardware Devices and Sensors	
-https://github.com/netdata/netdata/edit/master/collectors/cups.plugin/README.md	cups.plugin	Published	Data collection/Hardware Devices and Sensors	
-https://github.com/netdata/go.d.plugin/edit/master/modules/dockerhub/README.md	Docker Hub	Published	Data collection/Online Services	Monitor the health and performance of Docker Hub repositories with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/changefinder/README.md	Change Finder	Published	Data collection/Netdata Specific	Use ML-driven change point detection to narrow your focus and shorten root cause analysis.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/zscores/README.md	ZScores	Published	Data collection/Netdata Specific	Use statistical anomaly detection to narrow your focus and shorten root cause analysis.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/alarms/README.md	Alarms	Published	Data collection/Netdata Specific	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/anomalies/README.md	Anomalies	Published	Data collection/Netdata Specific	Use ML-driven anomaly detection to narrow your focus to only affected metrics and services/processes on your node to shorten root cause analysis.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/spigotmc/README.md	SpigotMC	Published	Data collection/Gaming	
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/example/README.md	Example module in Bash	Published	Data collection/Examples	
-https://github.com/netdata/go.d.plugin/edit/master/modules/example/README.md	Example module in Go	Published	Data collection/Examples	Use this example data collection module, which produces example charts with random values, to better understand how to build your own collector in Go.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/example/README.md	Example module in Python	Published	Data collection/Examples	
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/retroshare/README.md	RetroShare	Published	Data collection/P2P	
+collectors_integrations				
 https://github.com/netdata/netdata/edit/master/health/README.md	Alerting	Published	Alerting	
-https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	Notifications	Published	Alerting/Notifications	Send Netdata alarms from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
-https://github.com/netdata/netdata/edit/master/health/notifications/README.md	Netdata Agent notifications	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/alerta/README.md	Alerta	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/awssns/README.md	Amazon SNS	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/custom/README.md	Custom endpoint	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/discord/README.md	Discord	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/dynatrace/README.md	Dynatrace Events	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/email/README.md	Email	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/flock/README.md	Flock	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/gotify/README.md	Gotify	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/irc/README.md	IRC	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/kavenegar/README.md	Kavenegar	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/matrix/README.md	Matrix	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/messagebird/README.md	Messagebird	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/msteams/README.md	Microsoft Teams	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/ntfy/README.md	ntfy	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/opsgenie/README.md	Opsgenie	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/pagerduty/README.md	PagerDuty	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/prowl/README.md	Prowl	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/pushbullet/README.md	PushBullet	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/pushover/README.md	PushOver	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/rocketchat/README.md	Rocket Chat	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/slack/README.md	Slack	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/smstools3/README.md	SMS server	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/stackpulse/README.md	StackPulse	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/syslog/README.md	Syslog	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/telegram/README.md	Telegram	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/twilio/README.md	Twilio	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/health/notifications/web/README.md	Browser pop ups	Published	Alerting/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/notifications.md	Netdata Cloud notifications	Published	Alerting/Notifications/Netdata Cloud notifications	Configure Netdata Cloud to send notifications to your team whenever any node on your infrastructure triggers an alert threshold.
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-notification-methods.md	Manage notification methods	Published	Alerting/Notifications/Netdata Cloud notifications	Instructions on how to manage notification methods
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-discord-notification.md	Add Discord notification configuration	Published	Alerting/Notifications/Netdata Cloud notifications	Instructions on how to add notification configuration for Discord
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-pagerduty-notification-configuration.md	Add PagerDuty notification configuration	Published	Alerting/Notifications/Netdata Cloud notifications	Instructions on how to add notification configuration for PagerDuty
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-slack-notification-configuration.md	Add Slack notification configuration	Published	Alerting/Notifications/Netdata Cloud notifications	Instructions on how to add notification configuration for Slack
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-webhook-notification-configuration.md	Add webhook notification configuration	Published	Alerting/Notifications/Netdata Cloud notifications	Instructions on how to add notification configuration for webhook
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-opsgenie-notification-configuration.md	Add Opsgenie notification configuration	Published	Alerting/Notifications/Netdata Cloud notifications	
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-mattermost-notification-configuration.md	Add Mattermost notification configuration	Published	Alerting/Notifications/Netdata Cloud notifications	
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/add-rocketchat-notification-configuration.md	Add RocketChat notification configuration	Published	Alerting/Notifications/Netdata Cloud notifications	
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-alert-notification-silencing-rules.md	Manage alert notification silencing rules	Published	Alerting/Notifications/Netdata Cloud notifications	Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
+https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	Notifications	Published	Alerting/Notifications	Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
+https://github.com/netdata/netdata/edit/master/health/notifications/README.md	Agent Dispatched Notifications	Published	Alerting/Notifications/Agent Dispatched Notifications	
+agent_notifications_integrations				
+https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/notifications.md	Centralized Cloud Notifications	Published	Alerting/Notifications/Centralized Cloud Notifications	Configure Netdata Cloud to send notifications to your team whenever any node on your infrastructure triggers an alert threshold.
+https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-notification-methods.md	Manage notification methods	Published	Alerting/Notifications/Centralized Cloud Notifications	Instructions on how to manage notification methods
+https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-alert-notification-silencing-rules.md	Manage alert notification silencing rules	Published	Alerting/Notifications/Centralized Cloud Notifications	Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
+cloud_notifications_integrations				
 https://github.com/netdata/netdata/edit/master/health/REFERENCE.md	Health Configuration Reference	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/web/api/health/README.md	Health API Calls	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md	Exporting	Published	Exporting	Use the exporting engine to send Netdata metrics to popular external time series databases for long-term storage or further analysis.
 https://github.com/netdata/netdata/edit/master/exporting/README.md	Exporting reference	Published	Exporting	With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis.
 https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	Enable an exporting connector	Published	Exporting	Learn how to enable and configure any connector using examples to start exporting metrics to external time-series databases in minutes.
-https://github.com/netdata/netdata/edit/master/exporting/prometheus/README.md	Prometheus	Published	Exporting/Prometheus	Export Netdata metrics to Prometheus for archiving and further analysis.
-https://github.com/netdata/netdata/edit/master/exporting/prometheus/remote_write/README.md	Remote Write	Published	Exporting/Prometheus	Send Netdata metrics to your choice of more than 20 external storage providers for long-term archiving and further analysis.
-https://github.com/netdata/netdata/edit/master/exporting/WALKTHROUGH.md	User guide: Netdata, Prometheus, Grafana stack	Published	Exporting/Prometheus	Using Netdata in conjunction with Prometheus and Grafana.
-https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana data source plugin	Published	Exporting	
-https://github.com/netdata/netdata/edit/master/web/gui/confluence/README.md	Atlassian Confluence dashboards	Published	Exporting	
-https://github.com/netdata/netdata/edit/master/exporting/aws_kinesis/README.md	AWS Kinesis data streams	Published	Exporting	Archive your Agent's metrics to AWS Kinesis Data Streams for long-term storage, further analysis, or correlation with data from other sources.
-https://github.com/netdata/netdata/edit/master/exporting/TIMESCALE.md	TimescaleDB	Published	Exporting	Send Netdata metrics to TimescaleDB for long-term archiving and further analysis.
-https://github.com/netdata/netdata/edit/master/exporting/pubsub/README.md	Google Cloud pub/sub service	Published	Exporting	Export Netdata metrics to the Google Cloud Pub/Sub Service for long-term archiving or analytical processing.
-https://github.com/netdata/netdata/edit/master/exporting/graphite/README.md	Graphite	Published	Exporting	Archive your Agent's metrics to a any Graphite database provider for long-term storage, further analysis, or correlation with data from other sources.
-https://github.com/netdata/netdata/edit/master/exporting/json/README.md	JSON document databases	Published	Exporting	Archive your Agent's metrics to a JSON document database for long-term storage, further analysis, or correlation with data from other sources.
-https://github.com/netdata/netdata/edit/master/exporting/mongodb/README.md	MongoDB	Published	Exporting	Archive your Agent's metrics to a MongoDB database for long-term storage, further analysis, or correlation with data from other sources.
-https://github.com/netdata/netdata/edit/master/exporting/opentsdb/README.md	OpenTSDB	Published	Exporting	Archive your Agent's metrics to an OpenTSDB database for long-term storage and further analysis.
+https://github.com/netdata/netdata/edit/master/exporting/prometheus/README.md	Prometheus	Published	Exporting	Export Netdata metrics to Prometheus for archiving and further analysis.
+exporters_integrations				
 https://github.com/netdata/netdata/edit/master/web/api/exporters/shell/README.md	Shell Scripts	Published	Exporting	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/monitor-your-infrastructure.md	Monitor your Infrastructure	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	Sign in with email, Google, or GitHub	Published	Monitor your Infrastructure	
@@ -304,19 +96,22 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-i
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	Node filter	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/overview.md	Home, overview and single node view	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	Visualization date and time controls	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alarms.md	View active alerts	Published	Monitor your Infrastructure	
+https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.md	View active alerts	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	Netdata plans	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	View Plan & Billing	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	Choose your Netdata Cloud theme	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-dashboards-and-visualizations.md	Visualizations	Published	Visualizations	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	Accessing Netdata Dashboards	Published	Visualizations	
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	Netdata Charts	Published	Visualizations	
+https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	Chart dimensions, contexts, and families	Published	Visualizations	 Netdata organizes charts into dimensions, contexts, and families to automaticallyand meaningfully organize thousands of metrics into interactive charts.
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	Custom Dashboards	Published	Visualizations	Design new dashboards that target your infrastructure's unique needs and share them with your team fortargeted visual anomaly detection or incident response.
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/nodes.md	Nodes Tab	Published	Visualizations	See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.
 https://github.com/netdata/netdata/edit/master/docs/visualize/overview-infrastructure.md	Infrastructure Overview	Published	Visualizations	With Netdata Cloud's War Rooms, you can see real-time metrics, from any number of nodes in your infrastructure, in composite charts.
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	Kubernetes visualizations	Published	Visualizations	Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Functions	Published	Visualizations	Present the Netdata Functions what these are and why they should be used.
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Visualizations	Present the Netdata Events feed.
+https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana data source plugin	Published	Visualizations	
+https://github.com/netdata/netdata/edit/master/web/gui/confluence/README.md	Atlassian Confluence dashboards	Published	Visualizations	
 https://github.com/netdata/netdata/edit/master/web/gui/README.md	Legacy Agent Dashboard	Published	Visualizations	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	ML and Troubleshooting	Published	ML and Troubleshooting	
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correlations.md	Metric Correlations	Published	ML and Troubleshooting	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
@@ -348,6 +143,13 @@ https://github.com/netdata/netdata/edit/master/web/api/badges/README.md	Netdata 
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	Contributing	Published	Contributing	
 https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	Community code of conduct	Published	Contributing	
 https://github.com/netdata/.github/edit/main/SECURITY.md	Security Policy	Published	Contributing	The Netdata team maintains and adheres to a formal process any time a member of the community reports a security vulnerability.
+https://github.com/netdata/netdata/edit/master/collectors/plugins.d/README.md	External plugins	Published	Contributing/External-plugins	
+https://github.com/netdata/go.d.plugin/edit/master/README.md	go.d.plugin	Published	Contributing/External-plugins/go.d.plugin	go.d.plugin is an external plugin for Netdata, responsible for running individual data collectors written in Go.
+https://github.com/netdata/go.d.plugin/edit/master/docs/how-to-write-a-module.md	How to write a Netdata collector in Go	Published	Contributing/External-plugins/go.d.plugin	This guide will walk you through the technical implementation of writing a new Netdata collector in Golang, with tips on interfaces, structure, configuration files, and more.
+https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/README.md	python.d.plugin	Published	Contributing/External-plugins/python.d.plugin	
+https://github.com/netdata/netdata/edit/master/docs/guides/python-collector.md	Develop a custom data collector in Python	Published	Contributing/External-plugins/python.d.plugin	Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box.
+https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/README.md	charts.d.plugin	Published	Contributing/External-plugins	
+https://github.com/netdata/netdata/edit/master/collectors/profile.plugin/README.md	profile.plugin	Published	Contributing/External-plugins	
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	Contribute to the documentation	Published	Contributing/Contribute to the documentation	
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	Netdata style guide	Published	Contributing/Contribute to the documentation	The Netdata style guide establishes editorial guidelines for all of Netdata's writing, including documentation, blog posts, in-product UX copy, and more.
 https://github.com/netdata/netdata/edit/master/web/README.md	Web	Unpublished	Contributing	Every Netdata Agent comes bundled with hundreds of interactive, customizable charts designed by monitoring and troubleshooting experts.
@@ -379,8 +181,8 @@ https://github.com/netdata/netdata/edit/master/libnetdata/worker_utilization/REA
 https://github.com/netdata/netdata/edit/master/libnetdata/dictionary/README.md	Dictionaries	Published	Miscellaneous/libnetdata	
 https://github.com/netdata/netdata/edit/master/libnetdata/july/README.md	July interface	Published	Miscellaneous/libnetdata	
 https://github.com/netdata/netdata/edit/master/libnetdata/socket/README.md	Socket	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed Software	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/running-through-cf-tunnels.md	Running a Local Dashboard through Cloudflare Tunnels	Published	Miscellaneous	
+https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed Software	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	Health command API tester	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	Customize the standard dashboard	Unpublished	Miscellaneous	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	Import, export, and print a snapshot	Published	Miscellaneous	Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
@@ -396,53 +198,3 @@ https://github.com/netdata/netdata/edit/master/docs/guides/monitor/pi-hole-raspb
 https://github.com/netdata/netdata/edit/master/docs/guides/monitor/raspberry-pi-anomaly-detection.md	Unsupervised anomaly detection for Raspberry Pi monitoring	Published	Miscellaneous	Use a low-overhead machine learning algorithm and an open-source monitoring tool to detect anomalous metrics on a Raspberry Pi.
 https://github.com/netdata/netdata/edit/master/docs/guides/troubleshoot/monitor-debug-applications-ebpf.md	Monitor, troubleshoot, and debug applications with eBPF metrics	Published	Miscellaneous	Use Netdata's built-in eBPF metrics collector to monitor, troubleshoot, and debug your custom application using low-level kernel feedback.
 https://github.com/netdata/netdata/edit/master/docs/guides/monitor/process.md	Monitor any process in real-time with Netdata	Published	Miscellaneous	Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/haproxy/README.md	haproxy-python.d.plugin	Unpublished	Data collection/Monitor Anything/Web Servers	
-https://github.com/netdata/go.d.plugin/edit/master/modules/lighttpd2/README.md	Lighttpd2	Unpublished	Data collection/Monitor Anything/Web Servers	Monitor the health and performance of Lighttpd2 web servers with zero configuration, per-second metric granularity, and interactive visualizations.
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/traefik/README.md	traefik-python.d.plugin	Unpublished	Data collection/Monitor Anything/Web Servers	
-https://github.com/netdata/netdata/edit/master/health/notifications/hangouts/README.md	Google Hangouts	Unpublished	Alerts and notifications/Notifications/Netdata Agent notifications	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/troubleshooting-overview.md	Troubleshooting and machine learning	Unpublished	Machine Learning and Assisted Troubleshooting	
-https://github.com/netdata/netdata/edit/master/web/server/static/README.md	`static-threaded` web server	Unpublished	Contributing to Netdata	The Netdata Agent's static-threaded web server spawns a fixed number of threads that listen to web requests and uses non-blocking I/O.
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/methods.md	Installation methods	Unpublished	Install the Netdata Agent	Netdata can be installed as a DEB/RPM package, a static binary, a docker container or from source
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freenas.md	FreeNAS	Unpublished	Install the Netdata Agent	
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/systems.md	Install on specific environments	Unpublished	Install the Netdata Agent	Netdata can be installed as a DEB/RPM package, a static binary, a docker container or from source
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/installation-overview.md	Installation	Unpublished	Install the Netdata Agent	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/visualizations-overview.md	Visualizations	Unpublished	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-architecture.md	Netdata Architecture overview	Unpublished	Netdata Architecture	
-https://github.com/netdata/go.d.plugin/edit/master/modules/dnsmasq/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/powerdns/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/nginxvts/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/dnsdist/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/pika/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/couchbase/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/redis/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/powerdns_recursor/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/coredns/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/supervisord/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/mongodb/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/mysql/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/energid/dev.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/modules/cassandra/dev.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/HISTORICAL_CHANGELOG.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/CHANGELOG.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/libnetdata/eval/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/ml/notebooks/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/database/engine/metadata_log/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/tests/ebpf/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/spawn/README.md		Unpublished		
-https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/CHANGELOG.md		Unpublished		
-https://github.com/netdata/.github/edit/main/SUPPORT.md		Unpublished		
-https://github.com/netdata/.github/edit/main/README.md		Unpublished		
-https://github.com/netdata/helmchart/edit/master/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/docs/visualize/interact-dashboards-charts.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/collectors/checks.plugin/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/web/api/exporters/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/database/ram/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/web/api/exporters/prometheus/README.md		Unpublished		
-https://github.com/netdata/go.d.plugin/edit/master/agent/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/developers-overview.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/integrations-overview.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/database/contexts/README.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor/anomaly-detection.md		Unpublished		
-https://github.com/netdata/netdata/edit/master/build_external/scenarios/children-to-localhost/README.md		Unpublished		New file, was causing the ingest to fail
-https://github.com/netdata/netdata/edit/master/web/rtc/README.md		Unpublished		
