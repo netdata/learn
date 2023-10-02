@@ -4,7 +4,7 @@ sidebar_label: "Monitor Pi-hole (and a Raspberry Pi) with Netdata"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
 description: "Monitor Pi-hole metrics, plus Raspberry Pi system metrics, in minutes and completely for free with Netdata's open-source monitoring agent."
-sidebar_position: "1432000"
+sidebar_position: "1532000"
 learn_link: "https://learn.netdata.cloud/docs/miscellaneous/monitor-pi-hole-(and-a-raspberry-pi)-with-netdata"
 ---
 
@@ -106,9 +106,9 @@ If you're completely new to Netdata, look at the [Introduction](/docs/architectu
 ### Enable temperature sensor monitoring
 
 You need to manually enable Netdata's built-in [temperature sensor
-collector](/docs/data-collection/hardware-devices-and-sensors/sensors) to start collecting metrics.
+collector](/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs) to start collecting metrics.
 
-> Netdata uses a few plugins to manage its [collectors](/docs/data-collection/collectors-configuration), each using a different language: Go,
+> Netdata uses a few plugins to manage its [collectors](/docs/configuring/collectors-configuration), each using a different language: Go,
 > Python, Node.js, and Bash. While our Go collectors are undergoing the most active development, we still support the
 > other languages. In this case, you need to enable a temperature sensor collector that's written in Bash.
 

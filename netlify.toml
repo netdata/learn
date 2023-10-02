@@ -386,36 +386,24 @@
   to="/docs/configuring/agent-cli"
 
 [[redirects]]
-  from="/docs/agent/collectors/apps.plugin"
-  to="/docs/data-collection/apm/application-monitoring"
-
-[[redirects]]
-  from="/docs/agent/collectors/cgroups.plugin"
-  to="/docs/data-collection/containers-and-vms/cgroups"
-
-[[redirects]]
   from="/docs/agent/collectors/charts.d.plugin"
-  to="/docs/data-collection/external-plugins/charts.d.plugin"
+  to="/docs/contributing/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/ap"
-  to="/docs/data-collection/networking-stack-and-network-interfaces/linux-access-points"
+  to="/docs/data-collection/linux-systems/network/access-points"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/apcupsd"
   to="/docs/data-collection/ups/apc-ups"
 
 [[redirects]]
-  from="/docs/agent/collectors/charts.d.plugin/example"
-  to="/docs/data-collection/examples/example-module-in-bash"
-
-[[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/libreswan"
-  to="/docs/data-collection/vpns/libreswan-ipsec"
+  to="/docs/data-collection/vpns/libreswan"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/nut"
-  to="/docs/data-collection/ups/nut"
+  to="/docs/data-collection/ups/network-ups-tools-nut"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/opensips"
@@ -423,35 +411,27 @@
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
 
 [[redirects]]
   from="/docs/agent/collectors/cups.plugin"
-  to="/docs/data-collection/hardware-devices-and-sensors/cups.plugin"
+  to="/docs/data-collection/hardware-devices-and-sensors/cups"
 
 [[redirects]]
   from="/docs/agent/collectors/diskspace.plugin"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/disks"
-
-[[redirects]]
-  from="/docs/agent/collectors/ebpf.plugin"
-  to="/docs/data-collection/linux-systems/ebpf-for-systems-monitoring"
-
-[[redirects]]
-  from="/docs/agent/collectors/freebsd.plugin"
-  to="/docs/data-collection/freebsd-systems"
+  to="/docs/data-collection/linux-systems/disk-space"
 
 [[redirects]]
   from="/docs/agent/collectors/freeipmi.plugin"
-  to="/docs/data-collection/hardware-devices-and-sensors/server-hardware"
+  to="/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin"
-  to="/docs/data-collection/external-plugins/go.d.plugin"
+  to="/docs/contributing/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/docs/how-to-write-a-module"
-  to="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/activemq"
@@ -462,12 +442,8 @@
   to="/docs/data-collection/web-servers-and-web-proxies/apache"
 
 [[redirects]]
-  from="/docs/agent/collectors/go.d.plugin/modules/bind"
-  to="/docs/data-collection/dns-and-dhcp-servers/bind9"
-
-[[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/cassandra"
-  to="/docs/data-collection/database-servers/cassandra"
+  to="/docs/data-collection/databases/cassandra"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/chrony"
@@ -475,11 +451,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/cockroachdb"
-  to="/docs/data-collection/database-servers/cockroachdb"
+  to="/docs/data-collection/databases/cockroachdb"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/consul"
-  to="/docs/data-collection/service-discovery-&-registry/consul"
+  to="/docs/data-collection/service-discovery-/-registry/consul"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/coredns"
@@ -487,11 +463,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/couchbase"
-  to="/docs/data-collection/database-servers/couchbase"
+  to="/docs/data-collection/databases/couchbase"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/couchdb"
-  to="/docs/data-collection/database-servers/couchdb"
+  to="/docs/data-collection/databases/couchdb"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dnsdist"
@@ -499,7 +475,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dnsmasq"
-  to="/docs/data-collection/dns-and-dhcp-servers/dnsmasq-dns-forwarder"
+  to="/docs/data-collection/dns-and-dhcp-servers/dnsmasq"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dnsmasq_dhcp"
@@ -507,7 +483,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dnsquery"
-  to="/docs/data-collection/synthetic-checks/dns-queries-check"
+  to="/docs/data-collection/dns-and-dhcp-servers/dns-query"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/docker"
@@ -519,7 +495,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dockerhub"
-  to="/docs/data-collection/online-services/docker-hub"
+  to="/docs/data-collection/containers-and-vms/docker-hub-repository"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/elasticsearch"
@@ -530,12 +506,8 @@
   to="/docs/data-collection/blockchain-servers/energi-core-wallet"
 
 [[redirects]]
-  from="/docs/agent/collectors/go.d.plugin/modules/example"
-  to="/docs/data-collection/examples/example-module-in-go"
-
-[[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/filecheck"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/files-and-directories"
+  to="/docs/data-collection/linux-systems/files-and-directories"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/fluentd"
@@ -543,7 +515,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/freeradius"
-  to="/docs/data-collection/access-control,-authentication-and-authorization/freeradius"
+  to="/docs/data-collection/authentication-and-authorization/freeradius"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/geth"
@@ -555,15 +527,15 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/hdfs"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/hdfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/httpcheck"
-  to="/docs/data-collection/synthetic-checks/http-endpoints-check"
+  to="/docs/data-collection/synthetic-checks/http-endpoints"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/isc_dhcpd"
-  to="/docs/data-collection/dns-and-dhcp-servers/isc-dhcpd"
+  to="/docs/data-collection/dns-and-dhcp-servers/isc-dhcp"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_kubelet"
@@ -571,7 +543,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_kubeproxy"
-  to="/docs/data-collection/kubernetes/kube-proxy"
+  to="/docs/data-collection/kubernetes/kubeproxy"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_state"
@@ -583,7 +555,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/logind"
-  to="/docs/data-collection/systemd/logind"
+  to="/docs/data-collection/systemd/systemd-logind-users"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/logstash"
@@ -591,11 +563,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/mongodb"
-  to="/docs/data-collection/database-servers/mongodb"
+  to="/docs/data-collection/databases/mongodb"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/mysql"
-  to="/docs/data-collection/database-servers/mysql-and-mariadb"
+  to="/docs/data-collection/databases/mysql"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nginx"
@@ -611,7 +583,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvme"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/nvme-devices"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/openvpn"
@@ -623,11 +595,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/pgbouncer"
-  to="/docs/data-collection/database-servers/pgbouncer"
+  to="/docs/data-collection/databases/pgbouncer"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/phpdaemon"
-  to="/docs/data-collection/apm/php-applications"
+  to="/docs/data-collection/apm/phpdaemon"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/phpfpm"
@@ -639,19 +611,19 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/pika"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/pika"
+  to="/docs/data-collection/databases/pika"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/ping"
-  to="/docs/data-collection/synthetic-checks/network-latency-check"
+  to="/docs/data-collection/synthetic-checks/ping"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/portcheck"
-  to="/docs/data-collection/synthetic-checks/tcp-endpoints-check"
+  to="/docs/data-collection/synthetic-checks/tcp-endpoints"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/postgres"
-  to="/docs/data-collection/database-servers/postgressql"
+  to="/docs/data-collection/databases/postgresql"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/powerdns"
@@ -663,15 +635,15 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/prometheus"
-  to="/docs/data-collection/apm/openmetrics-endpoints"
+  to="/docs/data-collection/generic-data-collection/prometheus-endpoint"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/proxysql"
-  to="/docs/data-collection/database-servers/proxysql"
+  to="/docs/data-collection/databases/proxysql"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/pulsar"
-  to="/docs/data-collection/message-brokers/pulsar"
+  to="/docs/data-collection/message-brokers/apache-pulsar"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/rabbitmq"
@@ -679,19 +651,19 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/redis"
-  to="/docs/data-collection/database-servers/redis"
+  to="/docs/data-collection/databases/redis"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/scaleio"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/scaleio"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/service-discovery"
-  to="/docs/data-collection/service-discovery"
+  to="/docs/configuring/service-discovery"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/snmp"
-  to="/docs/data-collection/snmp-and-networked-devices/snmp"
+  to="/docs/data-collection/generic-data-collection/snmp-devices"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/solr"
@@ -703,11 +675,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/squidlog"
-  to="/docs/data-collection/web-servers-and-web-proxies/web-logs/squid"
+  to="/docs/data-collection/web-servers-and-web-proxies/squid-log-files"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/supervisord"
-  to="/docs/data-collection/processes-and-system-services/supervisord"
+  to="/docs/data-collection/processes-and-system-services/supervisor"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/systemdunits"
@@ -727,7 +699,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vcsa"
-  to="/docs/data-collection/containers-and-vms/vmware-center-server-appliance"
+  to="/docs/data-collection/containers-and-vms/vcenter-server-appliance"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vernemq"
@@ -735,15 +707,15 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vsphere"
-  to="/docs/data-collection/containers-and-vms/vmware-center-servers"
+  to="/docs/data-collection/containers-and-vms/vmware-vcenter-server"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/weblog"
-  to="/docs/data-collection/web-servers-and-web-proxies/web-logs/apache-nginx-microsoft-iis"
+  to="/docs/data-collection/web-servers-and-web-proxies/web-server-log-files"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/whoisquery"
-  to="/docs/data-collection/synthetic-checks/whois-domain-expiry-check"
+  to="/docs/data-collection/synthetic-checks/domain-expiration-date"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/wireguard"
@@ -751,67 +723,59 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/x509check"
-  to="/docs/data-collection/synthetic-checks/x509-certificate-check"
+  to="/docs/data-collection/synthetic-checks/x.509-certificate"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/zookeeper"
-  to="/docs/data-collection/service-discovery-&-registry/zookeeper"
+  to="/docs/data-collection/service-discovery-/-registry/zookeeper"
 
 [[redirects]]
   from="/docs/agent/collectors/idlejitter.plugin"
-  to="/docs/data-collection/synthetic-checks/cpu-idle-jitter-check"
+  to="/docs/data-collection/synthetic-checks/idle-os-jitter"
 
 [[redirects]]
   from="/docs/agent/collectors/ioping.plugin"
-  to="/docs/data-collection/synthetic-checks/disk-latency-with-check"
+  to="/docs/data-collection/synthetic-checks/ioping"
 
 [[redirects]]
   from="/docs/agent/collectors/macos.plugin"
-  to="/docs/data-collection/macos-systems"
+  to="/docs/data-collection/macos-systems/macos"
 
 [[redirects]]
   from="/docs/agent/collectors/nfacct.plugin"
-  to="/docs/data-collection/networking-stack-and-network-interfaces/netfilter-accounting"
+  to="/docs/data-collection/linux-systems/firewall/netfilter"
 
 [[redirects]]
   from="/docs/agent/collectors/perf.plugin"
-  to="/docs/data-collection/linux-systems/other/perf"
+  to="/docs/data-collection/linux-systems/cpu-performance"
 
 [[redirects]]
   from="/docs/agent/collectors/plugins.d"
-  to="/docs/data-collection/external-plugins"
-
-[[redirects]]
-  from="/docs/agent/collectors/proc.plugin"
-  to="/docs/data-collection/linux-systems/os-provided-metrics"
+  to="/docs/contributing/external-plugins"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin"
-  to="/docs/data-collection/external-plugins/python.d.plugin"
+  to="/docs/contributing/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/adaptec_raid"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/adaptec-raid"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/adaptecraid"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/alarms"
-  to="/docs/data-collection/netdata-specific/alarms"
+  to="/docs/data-collection/other/netdata-agent-alarms"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/am2320"
   to="/docs/data-collection/hardware-devices-and-sensors/am2320"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/anomalies"
-  to="/docs/data-collection/netdata-specific/anomalies"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/beanstalk"
-  to="/docs/data-collection/message-brokers/beanstalk"
+  to="/docs/data-collection/task-queues/beanstalk"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/bind_rndc"
-  to="/docs/data-collection/dns-and-dhcp-servers/isc-bind"
+  to="/docs/data-collection/dns-and-dhcp-servers/isc-bind-rndc"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/boinc"
@@ -819,11 +783,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/ceph"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/ceph"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/ceph"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/changefinder"
-  to="/docs/data-collection/netdata-specific/change-finder"
+  to="/docs/data-collection/other/python.d-changefinder"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/dovecot"
@@ -831,7 +795,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/example"
-  to="/docs/data-collection/examples/example-module-in-python"
+  to="/docs/data-collection/other/example-collector"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/exim"
@@ -839,7 +803,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/fail2ban"
-  to="/docs/data-collection/access-control,-authentication-and-authorization/fail2ban"
+  to="/docs/data-collection/authentication-and-authorization/fail2ban"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/gearman"
@@ -847,23 +811,23 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/go_expvar"
-  to="/docs/data-collection/apm/go-applications"
+  to="/docs/data-collection/apm/go-applications-expvar"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/hddtemp"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hard-drive-temperature"
+  to="/docs/data-collection/hardware-devices-and-sensors/hdd-temperature"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/hpssa"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hp-smart-storage-arrays"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/icecast"
-  to="/docs/data-collection/media-streaming-servers/icecast"
+  to="/docs/data-collection/media-services/icecast"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/ipfs"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/ipfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/ipfs"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/litespeed"
@@ -871,11 +835,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/megacli"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/megaraid-controllers"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/megacli"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/memcached"
-  to="/docs/data-collection/database-servers/memcached"
+  to="/docs/data-collection/databases/memcached"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/monit"
@@ -883,19 +847,19 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/nsd"
-  to="/docs/data-collection/dns-and-dhcp-servers/nsd"
+  to="/docs/data-collection/dns-and-dhcp-servers/name-server-daemon"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/openldap"
-  to="/docs/data-collection/access-control,-authentication-and-authorization/openldap"
+  to="/docs/data-collection/authentication-and-authorization/openldap"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/oracledb"
-  to="/docs/data-collection/database-servers/oracledb"
+  to="/docs/data-collection/databases/oracle-db"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/pandas"
-  to="/docs/data-collection/generic-data-collection/structured-data-pandas"
+  to="/docs/data-collection/generic-data-collection/pandas"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/postfix"
@@ -903,31 +867,31 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/puppet"
-  to="/docs/data-collection/provisioning-systems/puppet"
+  to="/docs/data-collection/ci/cd-platforms/puppet"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/rethinkdbs"
-  to="/docs/data-collection/database-servers/rethinkdb"
+  to="/docs/data-collection/databases/rethinkdb"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/retroshare"
-  to="/docs/data-collection/p2p/retroshare"
+  to="/docs/data-collection/media-services/retroshare"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/riakkv"
-  to="/docs/data-collection/database-servers/riak-kv"
+  to="/docs/data-collection/databases/riakkv"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/samba"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/smbfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/samba"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/linux-machine-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-lm-sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/smartd_log"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes"
+  to="/docs/data-collection/hardware-devices-and-sensors/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/spigotmc"
@@ -939,7 +903,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/tomcat"
-  to="/docs/data-collection/web-servers-and-web-proxies/apache-tomcat"
+  to="/docs/data-collection/web-servers-and-web-proxies/tomcat"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/tor"
@@ -951,47 +915,35 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/varnish"
-  to="/docs/data-collection/web-servers-and-web-proxies/varnish-cache"
+  to="/docs/data-collection/web-servers-and-web-proxies/varnish"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/w1sensor"
-  to="/docs/data-collection/hardware-devices-and-sensors/wire-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/1-wire-sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/zscores"
-  to="/docs/data-collection/netdata-specific/zscores"
+  to="/docs/data-collection/other/python.d-zscores"
 
 [[redirects]]
   from="/docs/agent/collectors/reference"
-  to="/docs/data-collection/collectors-configuration"
+  to="/docs/configuring/collectors-configuration"
 
 [[redirects]]
   from="/docs/agent/collectors/slabinfo.plugin"
-  to="/docs/data-collection/linux-systems/other/slabinfo"
-
-[[redirects]]
-  from="/docs/agent/collectors/statsd.plugin"
-  to="/docs/data-collection/apm/statsd"
-
-[[redirects]]
-  from="/docs/agent/collectors/statsd.plugin/asterisk"
-  to="/docs/data-collection/telephony-servers/asterisk"
-
-[[redirects]]
-  from="/docs/agent/collectors/statsd.plugin/k6"
-  to="/docs/data-collection/synthetic-checks/k6-load-test"
+  to="/docs/data-collection/linux-systems/kernel/linux-kernel-slab-allocator-statistics"
 
 [[redirects]]
   from="/docs/agent/collectors/tc.plugin"
-  to="/docs/data-collection/networking-stack-and-network-interfaces/network-interface-qos"
+  to="/docs/data-collection/linux-systems/network/tc-qos-classes"
 
 [[redirects]]
   from="/docs/agent/collectors/timex.plugin"
-  to="/docs/data-collection/system-clock-and-ntp/linux-kernel"
+  to="/docs/data-collection/system-clock-and-ntp/timex"
 
 [[redirects]]
   from="/docs/agent/collectors/xenstat.plugin"
-  to="/docs/data-collection/containers-and-vms/xen"
+  to="/docs/data-collection/containers-and-vms/xen-xcp-ng"
 
 [[redirects]]
   from="/docs/agent/contrib"
@@ -1023,7 +975,7 @@
 
 [[redirects]]
   from="/docs/agent/exporting/aws_kinesis"
-  to="/docs/exporting/aws-kinesis-data-streams"
+  to="/docs/exporting/aws-kinesis"
 
 [[redirects]]
   from="/docs/agent/exporting/graphite"
@@ -1031,7 +983,7 @@
 
 [[redirects]]
   from="/docs/agent/exporting/json"
-  to="/docs/exporting/json-document-databases"
+  to="/docs/exporting/json"
 
 [[redirects]]
   from="/docs/agent/exporting/mongodb"
@@ -1047,19 +999,11 @@
 
 [[redirects]]
   from="/docs/agent/exporting/prometheus/remote_write"
-  to="/docs/exporting/prometheus/remote-write"
+  to="/docs/exporting/prometheus-remote-write"
 
 [[redirects]]
   from="/docs/agent/exporting/pubsub"
-  to="/docs/exporting/google-cloud-pub-sub-service"
-
-[[redirects]]
-  from="/docs/agent/exporting/timescale"
-  to="/docs/exporting/timescaledb"
-
-[[redirects]]
-  from="/docs/agent/exporting/walkthrough"
-  to="/docs/exporting/prometheus/user-guide-netdata-prometheus-grafana-stack"
+  to="/docs/exporting/google-cloud-pub-sub"
 
 [[redirects]]
   from="/docs/agent/health"
@@ -1067,107 +1011,103 @@
 
 [[redirects]]
   from="/docs/agent/health/notifications"
-  to="/docs/alerting/notifications/netdata-agent-notifications"
+  to="/docs/alerting/notifications/agent-dispatched-notifications"
 
 [[redirects]]
   from="/docs/agent/health/notifications/alerta"
-  to="/docs/alerting/notifications/netdata-agent-notifications/alerta"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/alerta"
 
 [[redirects]]
   from="/docs/agent/health/notifications/awssns"
-  to="/docs/alerting/notifications/netdata-agent-notifications/amazon-sns"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/agent/health/notifications/custom"
-  to="/docs/alerting/notifications/netdata-agent-notifications/custom-endpoint"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/custom"
 
 [[redirects]]
   from="/docs/agent/health/notifications/discord"
-  to="/docs/alerting/notifications/netdata-agent-notifications/discord"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/discord"
 
 [[redirects]]
   from="/docs/agent/health/notifications/dynatrace"
-  to="/docs/alerting/notifications/netdata-agent-notifications/dynatrace-events"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/dynatrace"
 
 [[redirects]]
   from="/docs/agent/health/notifications/email"
-  to="/docs/alerting/notifications/netdata-agent-notifications/email"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/email"
 
 [[redirects]]
   from="/docs/agent/health/notifications/flock"
-  to="/docs/alerting/notifications/netdata-agent-notifications/flock"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/flock"
 
 [[redirects]]
   from="/docs/agent/health/notifications/gotify"
-  to="/docs/alerting/notifications/netdata-agent-notifications/gotify"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/gotify"
 
 [[redirects]]
   from="/docs/agent/health/notifications/irc"
-  to="/docs/alerting/notifications/netdata-agent-notifications/irc"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/irc"
 
 [[redirects]]
   from="/docs/agent/health/notifications/kavenegar"
-  to="/docs/alerting/notifications/netdata-agent-notifications/kavenegar"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/kavenegar"
 
 [[redirects]]
   from="/docs/agent/health/notifications/matrix"
-  to="/docs/alerting/notifications/netdata-agent-notifications/matrix"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/matrix"
 
 [[redirects]]
   from="/docs/agent/health/notifications/messagebird"
-  to="/docs/alerting/notifications/netdata-agent-notifications/messagebird"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/messagebird"
 
 [[redirects]]
   from="/docs/agent/health/notifications/msteams"
-  to="/docs/alerting/notifications/netdata-agent-notifications/microsoft-teams"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/agent/health/notifications/opsgenie"
-  to="/docs/alerting/notifications/netdata-agent-notifications/opsgenie"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pagerduty"
-  to="/docs/alerting/notifications/netdata-agent-notifications/pagerduty"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/agent/health/notifications/prowl"
-  to="/docs/alerting/notifications/netdata-agent-notifications/prowl"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/prowl"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pushbullet"
-  to="/docs/alerting/notifications/netdata-agent-notifications/pushbullet"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pushbullet"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pushover"
-  to="/docs/alerting/notifications/netdata-agent-notifications/pushover"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pushover"
 
 [[redirects]]
   from="/docs/agent/health/notifications/rocketchat"
-  to="/docs/alerting/notifications/netdata-agent-notifications/rocket-chat"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/rocketchat"
 
 [[redirects]]
   from="/docs/agent/health/notifications/slack"
-  to="/docs/alerting/notifications/netdata-agent-notifications/slack"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/slack"
 
 [[redirects]]
   from="/docs/agent/health/notifications/smstools3"
-  to="/docs/alerting/notifications/netdata-agent-notifications/sms-server"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/sms"
 
 [[redirects]]
   from="/docs/agent/health/notifications/syslog"
-  to="/docs/alerting/notifications/netdata-agent-notifications/syslog"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/syslog"
 
 [[redirects]]
   from="/docs/agent/health/notifications/telegram"
-  to="/docs/alerting/notifications/netdata-agent-notifications/telegram"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/telegram"
 
 [[redirects]]
   from="/docs/agent/health/notifications/twilio"
-  to="/docs/alerting/notifications/netdata-agent-notifications/twilio"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/web"
-  to="/docs/alerting/notifications/netdata-agent-notifications/browser-pop-ups"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/twilio"
 
 [[redirects]]
   from="/docs/agent/health/reference"
@@ -1471,7 +1411,7 @@
 
 [[redirects]]
   from="/docs/agent/web/gui/confluence"
-  to="/docs/exporting/atlassian-confluence-dashboards"
+  to="/docs/visualizations/atlassian-confluence-dashboards"
 
 [[redirects]]
   from="/docs/agent/web/gui/custom"
@@ -1507,7 +1447,7 @@
 
 [[redirects]]
   from="/docs/dashboard/dimensions-contexts-families"
-  to="/docs/data-collection/chart-dimensions-contexts-and-families"
+  to="/docs/visualizations/chart-dimensions-contexts-and-families"
 
 [[redirects]]
   from="/docs/dashboard/import-export-print-snapshot"
@@ -1591,7 +1531,7 @@
 
 [[redirects]]
   from="/guides/python-collector"
-  to="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/guides/troubleshoot/monitor-debug-applications-ebpf"
@@ -1607,7 +1547,7 @@
 
 [[redirects]]
   from="/docs/cloud/alerts-notifications/notifications"
-  to="/docs/alerting/notifications/netdata-cloud-notifications"
+  to="/docs/alerting/notifications/centralized-cloud-notifications"
 
 [[redirects]]
   from="/docs/cloud/data-privacy"
@@ -1691,7 +1631,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/wmi"
-  to="/docs/data-collection/windows-systems"
+  to="/docs/data-collection/windows-systems/windows"
 
 [[redirects]]
   from="/docs/agent/database/ram"
@@ -1743,7 +1683,7 @@
 
 [[redirects]]
   from="/docs/collect/enable-configure"
-  to="/docs/data-collection/collectors-configuration"
+  to="/docs/configuring/collectors-configuration"
 
 [[redirects]]
   from="/docs/collect/how-collectors-work"
@@ -1808,10 +1748,6 @@
 [[redirects]]
   from="/guides/monitor/dimension-templates"
   to="/docs/alerting"
-
-[[redirects]]
-  from="/guides/monitor/statsd"
-  to="/docs/data-collection/apm/statsd"
 
 [[redirects]]
   from="/guides/monitor/visualize-monitor-anomalies"
@@ -1883,7 +1819,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/mongodb"
-  to="/docs/data-collection/database-servers/mongodb"
+  to="/docs/data-collection/databases/mongodb"
 
 [[redirects]]
   from="/guides/export/export-netdata-metrics-graphite"
@@ -1895,7 +1831,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/fping.plugin"
-  to="/docs/data-collection/synthetic-checks/network-latency-check"
+  to="/docs/data-collection/synthetic-checks/ping"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/dockerd"
@@ -1911,11 +1847,11 @@
 
 [[redirects]]
   from="/docs/next/agent/collectors/fping.plugin"
-  to="/docs/data-collection/synthetic-checks/network-latency-check"
+  to="/docs/data-collection/synthetic-checks/ping"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/prometheus-endpoints"
-  to="/docs/data-collection/apm/openmetrics-endpoints"
+  to="/docs/data-collection/generic-data-collection/prometheus-endpoint"
 
 [[redirects]]
   from="/docs/cloud/beta-architecture/new-architecture"
@@ -1991,11 +1927,11 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system%20metrics/windows-machine"
-  to="/docs/data-collection/windows-systems"
+  to="/docs/data-collection/windows-systems/windows"
 
 [[redirects]]
   from="/docs/next/agent/health/notifications/awssns"
-  to="/docs/alerting/notifications/netdata-agent-notifications/amazon-sns"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/why-netdata"
@@ -2159,19 +2095,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Squid"
-  to="/docs/data-collection/web-servers-and-web-proxies/web-logs/squid"
+  to="/docs/data-collection/web-servers-and-web-proxies/squid-log-files"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Apache-NGINX-Microsoft-IIS"
-  to="/docs/data-collection/web-servers-and-web-proxies/web-logs/apache-nginx-microsoft-iis"
+  to="/docs/data-collection/web-servers-and-web-proxies/web-server-log-files"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/Varnish-Cache"
-  to="/docs/data-collection/web-servers-and-web-proxies/varnish-cache"
+  to="/docs/data-collection/web-servers-and-web-proxies/varnish"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/Tomcat"
-  to="/docs/data-collection/web-servers-and-web-proxies/apache-tomcat"
+  to="/docs/data-collection/web-servers-and-web-proxies/tomcat"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/Tengine"
@@ -2211,19 +2147,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/xenstat.plugin"
-  to="/docs/data-collection/containers-and-vms/xen"
+  to="/docs/data-collection/containers-and-vms/xen-xcp-ng"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/vCenter-Servers"
-  to="/docs/data-collection/containers-and-vms/vmware-center-servers"
+  to="/docs/data-collection/containers-and-vms/vmware-vcenter-server"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/vCenter-Server-Appliance"
-  to="/docs/data-collection/containers-and-vms/vmware-center-server-appliance"
+  to="/docs/data-collection/containers-and-vms/vcenter-server-appliance"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Supervisord"
-  to="/docs/data-collection/processes-and-system-services/supervisord"
+  to="/docs/data-collection/processes-and-system-services/supervisor"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kubernetes-cluster-state"
@@ -2235,7 +2171,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kube-proxy"
-  to="/docs/data-collection/kubernetes/kube-proxy"
+  to="/docs/data-collection/kubernetes/kubeproxy"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker-Engine"
@@ -2246,72 +2182,52 @@
   to="/docs/data-collection/containers-and-vms/docker"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Containers-and-VMs-cgroups"
-  to="/docs/data-collection/containers-and-vms/cgroups"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/timex.plugin"
-  to="/docs/data-collection/system-clock-and-ntp/linux-kernel"
+  to="/docs/data-collection/system-clock-and-ntp/timex"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/slabinfo.plugin"
-  to="/docs/data-collection/linux-systems/other/slabinfo"
+  to="/docs/data-collection/linux-systems/kernel/linux-kernel-slab-allocator-statistics"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/macOS"
-  to="/docs/data-collection/macos-systems"
+  to="/docs/data-collection/macos-systems/macos"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/logind-go.d.plugin-Recommended"
-  to="/docs/data-collection/systemd/logind"
+  to="/docs/data-collection/systemd/systemd-logind-users"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/Windows-machines"
-  to="/docs/data-collection/windows-systems"
+  to="/docs/data-collection/windows-systems/windows"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/Systemd-units"
   to="/docs/data-collection/systemd/systemd-units"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/System%20Metrics/OS-provided-metrics-proc.plugin"
-  to="/docs/data-collection/linux-systems/os-provided-metrics"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/System%20Metrics/Kernel-traces-metrics-eBPF"
-  to="/docs/data-collection/linux-systems/ebpf-for-systems-monitoring"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/System%20Metrics/FreeBSD-system-metrics-freebsd.plugin"
-  to="/docs/data-collection/freebsd-systems"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/Files-and-Dirs"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/files-and-directories"
+  to="/docs/data-collection/linux-systems/files-and-directories"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/Disks"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/disks"
+  to="/docs/data-collection/linux-systems/disk-space"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/CPU-performance-statistics-perf.plugin"
-  to="/docs/data-collection/linux-systems/other/perf"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring"
-  to="/docs/data-collection/apm/application-monitoring"
+  to="/docs/data-collection/linux-systems/cpu-performance"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/ScaleIO"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/scaleio"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/Pika"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/pika"
+  to="/docs/data-collection/databases/pika"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/NVMe-devices"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/nvme-devices"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/Monit"
@@ -2319,27 +2235,27 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/MegaRAID-controllers"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/megaraid-controllers"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/megacli"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/IPFS"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/ipfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/ipfs"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/HP-Smart-Storage-Arrays"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hp-smart-storage-arrays"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/HDFS"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/hdfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/CEPH"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/ceph"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/ceph"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/Adaptec-RAID"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/adaptec-raid"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/adaptecraid"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Search/Solr"
@@ -2351,19 +2267,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Qos/idlejitter.plugin"
-  to="/docs/data-collection/synthetic-checks/cpu-idle-jitter-check"
+  to="/docs/data-collection/synthetic-checks/idle-os-jitter"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Qos/changefinder"
-  to="/docs/data-collection/netdata-specific/change-finder"
+  to="/docs/data-collection/other/python.d-changefinder"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Qos/Ping"
-  to="/docs/data-collection/synthetic-checks/network-latency-check"
+  to="/docs/data-collection/synthetic-checks/ping"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Qos/Latency-monitoring-ioping.plugin"
-  to="/docs/data-collection/synthetic-checks/disk-latency-with-check"
+  to="/docs/data-collection/synthetic-checks/ioping"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Proxies/Envoy"
@@ -2371,23 +2287,23 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Provisioning%20Tools/ZooKeeper"
-  to="/docs/data-collection/service-discovery-&-registry/zookeeper"
+  to="/docs/data-collection/service-discovery-/-registry/zookeeper"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Provisioning%20Tools/Puppet"
-  to="/docs/data-collection/provisioning-systems/puppet"
+  to="/docs/data-collection/ci/cd-platforms/puppet"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Provisioning%20Tools/Consul"
-  to="/docs/data-collection/service-discovery-&-registry/consul"
+  to="/docs/data-collection/service-discovery-/-registry/consul"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/x509-certificates"
-  to="/docs/data-collection/synthetic-checks/x509-certificate-check"
+  to="/docs/data-collection/synthetic-checks/x.509-certificate"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/tc.plugin"
-  to="/docs/data-collection/networking-stack-and-network-interfaces/network-interface-qos"
+  to="/docs/data-collection/linux-systems/network/tc-qos-classes"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/WireGuard"
@@ -2399,15 +2315,15 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/TCP-endpoints"
-  to="/docs/data-collection/synthetic-checks/tcp-endpoints-check"
+  to="/docs/data-collection/synthetic-checks/tcp-endpoints"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/Samba"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/smbfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/samba"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/SNMP"
-  to="/docs/data-collection/snmp-and-networked-devices/snmp"
+  to="/docs/data-collection/generic-data-collection/snmp-devices"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/OpenVPN-StatusLog"
@@ -2423,47 +2339,39 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/Netfilter-statistics-nfacct.plugin"
-  to="/docs/data-collection/networking-stack-and-network-interfaces/netfilter-accounting"
+  to="/docs/data-collection/linux-systems/firewall/netfilter"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/Libreswan-IPSec-tunnels"
-  to="/docs/data-collection/vpns/libreswan-ipsec"
+  to="/docs/data-collection/vpns/libreswan"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/Icecast"
-  to="/docs/data-collection/media-streaming-servers/icecast"
+  to="/docs/data-collection/media-services/icecast"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/ISC-DHCPd"
-  to="/docs/data-collection/dns-and-dhcp-servers/isc-dhcpd"
+  to="/docs/data-collection/dns-and-dhcp-servers/isc-dhcp"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/HTTP-endpoints"
-  to="/docs/data-collection/synthetic-checks/http-endpoints-check"
+  to="/docs/data-collection/synthetic-checks/http-endpoints"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/Access-points"
-  to="/docs/data-collection/networking-stack-and-network-interfaces/linux-access-points"
+  to="/docs/data-collection/linux-systems/network/access-points"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Netdata/zscores"
-  to="/docs/data-collection/netdata-specific/zscores"
+  to="/docs/data-collection/other/python.d-zscores"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Netdata/Alarms"
-  to="/docs/data-collection/netdata-specific/alarms"
+  to="/docs/data-collection/other/netdata-agent-alarms"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Python"
-  to="/docs/data-collection/examples/example-module-in-python"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Go"
-  to="/docs/data-collection/examples/example-module-in-go"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Bash"
-  to="/docs/data-collection/examples/example-module-in-bash"
+  to="/docs/data-collection/other/example-collector"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Message%20Brokers/VerneMQ"
@@ -2475,11 +2383,11 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Message%20Brokers/Pulsar"
-  to="/docs/data-collection/message-brokers/pulsar"
+  to="/docs/data-collection/message-brokers/apache-pulsar"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Message%20Brokers/Beanstalk"
-  to="/docs/data-collection/message-brokers/beanstalk"
+  to="/docs/data-collection/task-queues/beanstalk"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Message%20Brokers/ActiveMQ"
@@ -2495,35 +2403,35 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/lm-sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/cups.plugin"
-  to="/docs/data-collection/hardware-devices-and-sensors/cups.plugin"
+  to="/docs/data-collection/hardware-devices-and-sensors/cups"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/Wire-sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/wire-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/1-wire-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/UPS-PDU"
-  to="/docs/data-collection/ups/nut"
+  to="/docs/data-collection/ups/network-ups-tools-nut"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/Sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/linux-machine-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-lm-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/S.M.A.R.T.-attributes"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes"
+  to="/docs/data-collection/hardware-devices-and-sensors/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/Hard-drive-temperature"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hard-drive-temperature"
+  to="/docs/data-collection/hardware-devices-and-sensors/hdd-temperature"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/FreeIPMI"
-  to="/docs/data-collection/hardware-devices-and-sensors/server-hardware"
+  to="/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/APC-UPS"
@@ -2535,7 +2443,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/Whois-domain-expiry"
-  to="/docs/data-collection/synthetic-checks/whois-domain-expiry-check"
+  to="/docs/data-collection/synthetic-checks/domain-expiration-date"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/Unbound"
@@ -2551,15 +2459,15 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/NSD"
-  to="/docs/data-collection/dns-and-dhcp-servers/nsd"
+  to="/docs/data-collection/dns-and-dhcp-servers/name-server-daemon"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/ISC-Bind"
-  to="/docs/data-collection/dns-and-dhcp-servers/isc-bind"
+  to="/docs/data-collection/dns-and-dhcp-servers/isc-bind-rndc"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/Dnsmasq-DNS-Forwarder"
-  to="/docs/data-collection/dns-and-dhcp-servers/dnsmasq-dns-forwarder"
+  to="/docs/data-collection/dns-and-dhcp-servers/dnsmasq"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/Dnsmasq-DHCP"
@@ -2571,15 +2479,11 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/DNS-queries"
-  to="/docs/data-collection/synthetic-checks/dns-queries-check"
+  to="/docs/data-collection/dns-and-dhcp-servers/dns-query"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/CoreDNS"
   to="/docs/data-collection/dns-and-dhcp-servers/coredns"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Dns/Bind9"
-  to="/docs/data-collection/dns-and-dhcp-servers/bind9"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Distributed%20Computing/Gearman"
@@ -2591,59 +2495,59 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/Riak-KV"
-  to="/docs/data-collection/database-servers/riak-kv"
+  to="/docs/data-collection/databases/riakkv"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/RethinkDB"
-  to="/docs/data-collection/database-servers/rethinkdb"
+  to="/docs/data-collection/databases/rethinkdb"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/Redis"
-  to="/docs/data-collection/database-servers/redis"
+  to="/docs/data-collection/databases/redis"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/ProxySQL"
-  to="/docs/data-collection/database-servers/proxysql"
+  to="/docs/data-collection/databases/proxysql"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/PostgresSQL"
-  to="/docs/data-collection/database-servers/postgressql"
+  to="/docs/data-collection/databases/postgresql"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/PgBouncer"
-  to="/docs/data-collection/database-servers/pgbouncer"
+  to="/docs/data-collection/databases/pgbouncer"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/OracleDB"
-  to="/docs/data-collection/database-servers/oracledb"
+  to="/docs/data-collection/databases/oracle-db"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/MySQL"
-  to="/docs/data-collection/database-servers/mysql-and-mariadb"
+  to="/docs/data-collection/databases/mysql"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/MongoDB"
-  to="/docs/data-collection/database-servers/mongodb"
+  to="/docs/data-collection/databases/mongodb"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/Memcached"
-  to="/docs/data-collection/database-servers/memcached"
+  to="/docs/data-collection/databases/memcached"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/Couchbase"
-  to="/docs/data-collection/database-servers/couchbase"
+  to="/docs/data-collection/databases/couchbase"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/CouchDB"
-  to="/docs/data-collection/database-servers/couchdb"
+  to="/docs/data-collection/databases/couchdb"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/CockroachDB"
-  to="/docs/data-collection/database-servers/cockroachdb"
+  to="/docs/data-collection/databases/cockroachdb"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/Cassandra"
-  to="/docs/data-collection/database-servers/cassandra"
+  to="/docs/data-collection/databases/cassandra"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Blockchain/Go-ethereum"
@@ -2659,7 +2563,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/RetroShare"
-  to="/docs/data-collection/p2p/retroshare"
+  to="/docs/data-collection/media-services/retroshare"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Postfix"
@@ -2671,23 +2575,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/OpenLDAP"
-  to="/docs/data-collection/access-control,-authentication-and-authorization/openldap"
+  to="/docs/data-collection/authentication-and-authorization/openldap"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/NTP-daemon"
-  to="/docs/data-collection/system-clock-and-ntp/ntp-daemon"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Applications/K6-Load-Testing"
-  to="/docs/data-collection/synthetic-checks/k6-load-test"
+  to="/docs/data-collection/system-clock-and-ntp/ntpd"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/FreeRADIUS"
-  to="/docs/data-collection/access-control,-authentication-and-authorization/freeradius"
+  to="/docs/data-collection/authentication-and-authorization/freeradius"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Fail2ban"
-  to="/docs/data-collection/access-control,-authentication-and-authorization/fail2ban"
+  to="/docs/data-collection/authentication-and-authorization/fail2ban"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Exim"
@@ -2699,31 +2599,23 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Docker-Hub-repositories"
-  to="/docs/data-collection/online-services/docker-hub"
+  to="/docs/data-collection/containers-and-vms/docker-hub-repository"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Chrony"
   to="/docs/data-collection/system-clock-and-ntp/chrony"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Applications/Asterisk"
-  to="/docs/data-collection/telephony-servers/asterisk"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Structured-data-Pandas"
-  to="/docs/data-collection/generic-data-collection/structured-data-pandas"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/StatsD"
-  to="/docs/data-collection/apm/statsd"
+  to="/docs/data-collection/generic-data-collection/pandas"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Prometheus-endpoints"
-  to="/docs/data-collection/apm/openmetrics-endpoints"
+  to="/docs/data-collection/generic-data-collection/prometheus-endpoint"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/PHP-Applications"
-  to="/docs/data-collection/apm/php-applications"
+  to="/docs/data-collection/apm/phpdaemon"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Java-Spring-Boot-2-applications"
@@ -2731,11 +2623,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Go-applications"
-  to="/docs/data-collection/apm/go-applications"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Anomalies"
-  to="/docs/data-collection/netdata-specific/anomalies"
+  to="/docs/data-collection/apm/go-applications-expvar"
 
 [[redirects]]
   from="/docs/visualizations/nodes-view"
@@ -3007,27 +2895,27 @@
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/python.d.plugin"
-  to="/docs/data-collection/external-plugins/python.d.plugin"
+  to="/docs/contributing/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/go.d.plugin"
-  to="/docs/data-collection/external-plugins/go.d.plugin"
+  to="/docs/contributing/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/charts.d.plugin"
-  to="/docs/data-collection/external-plugins/charts.d.plugin"
+  to="/docs/contributing/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins"
-  to="/docs/data-collection/external-plugins"
+  to="/docs/contributing/external-plugins"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/database-engine"
@@ -3142,20 +3030,12 @@
   to="/docs/architecture"
 
 [[redirects]]
-  from="/docs/exporting-data/timescaledb"
-  to="/docs/exporting/timescaledb"
-
-[[redirects]]
   from="/docs/exporting-data/shell-exporter"
   to="/docs/exporting/shell-scripts"
 
 [[redirects]]
-  from="/docs/exporting-data/prometheus/user-guide-netdata-prometheus-grafana-stack"
-  to="/docs/exporting/prometheus/user-guide-netdata-prometheus-grafana-stack"
-
-[[redirects]]
   from="/docs/exporting-data/prometheus/prometheus-remote-write"
-  to="/docs/exporting/prometheus/remote-write"
+  to="/docs/exporting/prometheus-remote-write"
 
 [[redirects]]
   from="/docs/exporting-data/prometheus"
@@ -3171,7 +3051,7 @@
 
 [[redirects]]
   from="/docs/exporting-data/json-document-databases"
-  to="/docs/exporting/json-document-databases"
+  to="/docs/exporting/json"
 
 [[redirects]]
   from="/docs/exporting-data/graphite"
@@ -3179,11 +3059,11 @@
 
 [[redirects]]
   from="/docs/exporting-data/grafana-data-source-plugin"
-  to="/docs/exporting/grafana-data-source-plugin"
+  to="/docs/visualizations/grafana-data-source-plugin"
 
 [[redirects]]
   from="/docs/exporting-data/google-cloud-pub-sub-service"
-  to="/docs/exporting/google-cloud-pub-sub-service"
+  to="/docs/exporting/google-cloud-pub-sub"
 
 [[redirects]]
   from="/docs/exporting-data/exporting-reference"
@@ -3195,11 +3075,11 @@
 
 [[redirects]]
   from="/docs/exporting-data/aws-kinesis-data-streams"
-  to="/docs/exporting/aws-kinesis-data-streams"
+  to="/docs/exporting/aws-kinesis"
 
 [[redirects]]
   from="/docs/exporting-data/atlassian-confluence-dashboards"
-  to="/docs/exporting/atlassian-confluence-dashboards"
+  to="/docs/visualizations/atlassian-confluence-dashboards"
 
 [[redirects]]
   from="/docs/exporting-data"
@@ -3283,15 +3163,15 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/web-server-logs-squid"
-  to="/docs/data-collection/web-servers-and-web-proxies/web-logs/squid"
+  to="/docs/data-collection/web-servers-and-web-proxies/squid-log-files"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/web-server-logs-apache-nginx-microsoft-iis"
-  to="/docs/data-collection/web-servers-and-web-proxies/web-logs/apache-nginx-microsoft-iis"
+  to="/docs/data-collection/web-servers-and-web-proxies/web-server-log-files"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/varnish-cache"
-  to="/docs/data-collection/web-servers-and-web-proxies/varnish-cache"
+  to="/docs/data-collection/web-servers-and-web-proxies/varnish"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/uwsgi"
@@ -3303,7 +3183,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/tomcat"
-  to="/docs/data-collection/web-servers-and-web-proxies/apache-tomcat"
+  to="/docs/data-collection/web-servers-and-web-proxies/tomcat"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/tengine"
@@ -3347,19 +3227,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/xenstat.plugin"
-  to="/docs/data-collection/containers-and-vms/xen"
+  to="/docs/data-collection/containers-and-vms/xen-xcp-ng"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/vcenter-servers"
-  to="/docs/data-collection/containers-and-vms/vmware-center-servers"
+  to="/docs/data-collection/containers-and-vms/vmware-vcenter-server"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/vcenter-server-appliance"
-  to="/docs/data-collection/containers-and-vms/vmware-center-server-appliance"
+  to="/docs/data-collection/containers-and-vms/vcenter-server-appliance"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/supervisord"
-  to="/docs/data-collection/processes-and-system-services/supervisord"
+  to="/docs/data-collection/processes-and-system-services/supervisor"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/kubernetes-cluster-state"
@@ -3371,7 +3251,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/kube-proxy"
-  to="/docs/data-collection/kubernetes/kube-proxy"
+  to="/docs/data-collection/kubernetes/kubeproxy"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/docker-engine"
@@ -3382,16 +3262,12 @@
   to="/docs/data-collection/containers-and-vms/docker"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups"
-  to="/docs/data-collection/containers-and-vms/cgroups"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
-  to="/docs/data-collection/windows-systems"
+  to="/docs/data-collection/windows-systems/windows"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/timex.plugin"
-  to="/docs/data-collection/system-clock-and-ntp/linux-kernel"
+  to="/docs/data-collection/system-clock-and-ntp/timex"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/systemd-units"
@@ -3399,55 +3275,39 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/slabinfo.plugin"
-  to="/docs/data-collection/linux-systems/other/slabinfo"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin"
-  to="/docs/data-collection/linux-systems/os-provided-metrics"
+  to="/docs/data-collection/linux-systems/kernel/linux-kernel-slab-allocator-statistics"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/macos"
-  to="/docs/data-collection/macos-systems"
+  to="/docs/data-collection/macos-systems/macos"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/logind-go.d.plugin-recommended"
-  to="/docs/data-collection/systemd/logind"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf"
-  to="/docs/data-collection/linux-systems/ebpf-for-systems-monitoring"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/freebsd-system-metrics-freebsd.plugin"
-  to="/docs/data-collection/freebsd-systems"
+  to="/docs/data-collection/systemd/systemd-logind-users"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/files-and-dirs"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/files-and-directories"
+  to="/docs/data-collection/linux-systems/files-and-directories"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/disks"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/disks"
+  to="/docs/data-collection/linux-systems/disk-space"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/cpu-performance-statistics-perf.plugin"
-  to="/docs/data-collection/linux-systems/other/perf"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/application-monitoring"
-  to="/docs/data-collection/apm/application-monitoring"
+  to="/docs/data-collection/linux-systems/cpu-performance"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/scaleio"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/scaleio"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/pika"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/pika"
+  to="/docs/data-collection/databases/pika"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/nvme-devices"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/nvme-devices"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/monit"
@@ -3455,27 +3315,27 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/megaraid-controllers"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/megaraid-controllers"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/megacli"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/ipfs"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/ipfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/ipfs"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/hp-smart-storage-arrays"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hp-smart-storage-arrays"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/hdfs"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/hdfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/ceph"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/ceph"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/ceph"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/adaptec-raid"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/adaptec-raid"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/adaptecraid"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/search/solr"
@@ -3487,19 +3347,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/qos/ping"
-  to="/docs/data-collection/synthetic-checks/network-latency-check"
+  to="/docs/data-collection/synthetic-checks/ping"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/qos/latency-monitoring-ioping.plugin"
-  to="/docs/data-collection/synthetic-checks/disk-latency-with-check"
+  to="/docs/data-collection/synthetic-checks/ioping"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/qos/idlejitter.plugin"
-  to="/docs/data-collection/synthetic-checks/cpu-idle-jitter-check"
+  to="/docs/data-collection/synthetic-checks/idle-os-jitter"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/qos/changefinder"
-  to="/docs/data-collection/netdata-specific/change-finder"
+  to="/docs/data-collection/other/python.d-changefinder"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/proxies/envoy"
@@ -3507,19 +3367,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/provisioning-tools/zookeeper"
-  to="/docs/data-collection/service-discovery-&-registry/zookeeper"
+  to="/docs/data-collection/service-discovery-/-registry/zookeeper"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/provisioning-tools/puppet"
-  to="/docs/data-collection/provisioning-systems/puppet"
+  to="/docs/data-collection/ci/cd-platforms/puppet"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/provisioning-tools/consul"
-  to="/docs/data-collection/service-discovery-&-registry/consul"
+  to="/docs/data-collection/service-discovery-/-registry/consul"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/x509-certificates"
-  to="/docs/data-collection/synthetic-checks/x509-certificate-check"
+  to="/docs/data-collection/synthetic-checks/x.509-certificate"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/wireguard"
@@ -3531,19 +3391,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/tcp-endpoints"
-  to="/docs/data-collection/synthetic-checks/tcp-endpoints-check"
+  to="/docs/data-collection/synthetic-checks/tcp-endpoints"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/tc.plugin"
-  to="/docs/data-collection/networking-stack-and-network-interfaces/network-interface-qos"
+  to="/docs/data-collection/linux-systems/network/tc-qos-classes"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/snmp"
-  to="/docs/data-collection/snmp-and-networked-devices/snmp"
+  to="/docs/data-collection/generic-data-collection/snmp-devices"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/samba"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/smbfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/samba"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/openvpn-statuslog"
@@ -3559,47 +3419,39 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/netfilter-statistics-nfacct.plugin"
-  to="/docs/data-collection/networking-stack-and-network-interfaces/netfilter-accounting"
+  to="/docs/data-collection/linux-systems/firewall/netfilter"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/libreswan-ipsec-tunnels"
-  to="/docs/data-collection/vpns/libreswan-ipsec"
+  to="/docs/data-collection/vpns/libreswan"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/isc-dhcpd"
-  to="/docs/data-collection/dns-and-dhcp-servers/isc-dhcpd"
+  to="/docs/data-collection/dns-and-dhcp-servers/isc-dhcp"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/icecast"
-  to="/docs/data-collection/media-streaming-servers/icecast"
+  to="/docs/data-collection/media-services/icecast"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/http-endpoints"
-  to="/docs/data-collection/synthetic-checks/http-endpoints-check"
+  to="/docs/data-collection/synthetic-checks/http-endpoints"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/access-points"
-  to="/docs/data-collection/networking-stack-and-network-interfaces/linux-access-points"
+  to="/docs/data-collection/linux-systems/network/access-points"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/netdata/zscores"
-  to="/docs/data-collection/netdata-specific/zscores"
+  to="/docs/data-collection/other/python.d-zscores"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/netdata/alarms"
-  to="/docs/data-collection/netdata-specific/alarms"
+  to="/docs/data-collection/other/netdata-agent-alarms"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-python"
-  to="/docs/data-collection/examples/example-module-in-python"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-go"
-  to="/docs/data-collection/examples/example-module-in-go"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-bash"
-  to="/docs/data-collection/examples/example-module-in-bash"
+  to="/docs/data-collection/other/example-collector"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/message-brokers/vernemq"
@@ -3611,11 +3463,11 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/message-brokers/pulsar"
-  to="/docs/data-collection/message-brokers/pulsar"
+  to="/docs/data-collection/message-brokers/apache-pulsar"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/message-brokers/beanstalk"
-  to="/docs/data-collection/message-brokers/beanstalk"
+  to="/docs/data-collection/task-queues/beanstalk"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/message-brokers/activemq"
@@ -3631,35 +3483,35 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/wire-sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/wire-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/1-wire-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/ups-pdu"
-  to="/docs/data-collection/ups/nut"
+  to="/docs/data-collection/ups/network-ups-tools-nut"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/linux-machine-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-lm-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/s.m.a.r.t.-attributes"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes"
+  to="/docs/data-collection/hardware-devices-and-sensors/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/lm-sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/hard-drive-temperature"
-  to="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hard-drive-temperature"
+  to="/docs/data-collection/hardware-devices-and-sensors/hdd-temperature"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/freeipmi"
-  to="/docs/data-collection/hardware-devices-and-sensors/server-hardware"
+  to="/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/cups.plugin"
-  to="/docs/data-collection/hardware-devices-and-sensors/cups.plugin"
+  to="/docs/data-collection/hardware-devices-and-sensors/cups"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/apc-ups"
@@ -3671,7 +3523,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/whois-domain-expiry"
-  to="/docs/data-collection/synthetic-checks/whois-domain-expiry-check"
+  to="/docs/data-collection/synthetic-checks/domain-expiration-date"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/unbound"
@@ -3687,15 +3539,15 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/nsd"
-  to="/docs/data-collection/dns-and-dhcp-servers/nsd"
+  to="/docs/data-collection/dns-and-dhcp-servers/name-server-daemon"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/isc-bind"
-  to="/docs/data-collection/dns-and-dhcp-servers/isc-bind"
+  to="/docs/data-collection/dns-and-dhcp-servers/isc-bind-rndc"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/dnsmasq-dns-forwarder"
-  to="/docs/data-collection/dns-and-dhcp-servers/dnsmasq-dns-forwarder"
+  to="/docs/data-collection/dns-and-dhcp-servers/dnsmasq"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/dnsmasq-dhcp"
@@ -3707,15 +3559,11 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/dns-queries"
-  to="/docs/data-collection/synthetic-checks/dns-queries-check"
+  to="/docs/data-collection/dns-and-dhcp-servers/dns-query"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/coredns"
   to="/docs/data-collection/dns-and-dhcp-servers/coredns"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/dns/bind9"
-  to="/docs/data-collection/dns-and-dhcp-servers/bind9"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/distributed-computing/gearman"
@@ -3727,59 +3575,59 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/riak-kv"
-  to="/docs/data-collection/database-servers/riak-kv"
+  to="/docs/data-collection/databases/riakkv"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/rethinkdb"
-  to="/docs/data-collection/database-servers/rethinkdb"
+  to="/docs/data-collection/databases/rethinkdb"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/redis"
-  to="/docs/data-collection/database-servers/redis"
+  to="/docs/data-collection/databases/redis"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/proxysql"
-  to="/docs/data-collection/database-servers/proxysql"
+  to="/docs/data-collection/databases/proxysql"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/postgressql"
-  to="/docs/data-collection/database-servers/postgressql"
+  to="/docs/data-collection/databases/postgresql"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/pgbouncer"
-  to="/docs/data-collection/database-servers/pgbouncer"
+  to="/docs/data-collection/databases/pgbouncer"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/oracledb"
-  to="/docs/data-collection/database-servers/oracledb"
+  to="/docs/data-collection/databases/oracle-db"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/mysql"
-  to="/docs/data-collection/database-servers/mysql-and-mariadb"
+  to="/docs/data-collection/databases/mysql"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/mongodb"
-  to="/docs/data-collection/database-servers/mongodb"
+  to="/docs/data-collection/databases/mongodb"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/memcached"
-  to="/docs/data-collection/database-servers/memcached"
+  to="/docs/data-collection/databases/memcached"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/couchdb"
-  to="/docs/data-collection/database-servers/couchdb"
+  to="/docs/data-collection/databases/couchdb"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/couchbase"
-  to="/docs/data-collection/database-servers/couchbase"
+  to="/docs/data-collection/databases/couchbase"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/cockroachdb"
-  to="/docs/data-collection/database-servers/cockroachdb"
+  to="/docs/data-collection/databases/cockroachdb"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/cassandra"
-  to="/docs/data-collection/database-servers/cassandra"
+  to="/docs/data-collection/databases/cassandra"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/blockchain/go-ethereum"
@@ -3795,7 +3643,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/retroshare"
-  to="/docs/data-collection/p2p/retroshare"
+  to="/docs/data-collection/media-services/retroshare"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/postfix"
@@ -3807,23 +3655,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/openldap"
-  to="/docs/data-collection/access-control,-authentication-and-authorization/openldap"
+  to="/docs/data-collection/authentication-and-authorization/openldap"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/ntp-daemon"
-  to="/docs/data-collection/system-clock-and-ntp/ntp-daemon"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/applications/k6-load-testing"
-  to="/docs/data-collection/synthetic-checks/k6-load-test"
+  to="/docs/data-collection/system-clock-and-ntp/ntpd"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/freeradius"
-  to="/docs/data-collection/access-control,-authentication-and-authorization/freeradius"
+  to="/docs/data-collection/authentication-and-authorization/freeradius"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/fail2ban"
-  to="/docs/data-collection/access-control,-authentication-and-authorization/fail2ban"
+  to="/docs/data-collection/authentication-and-authorization/fail2ban"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/exim"
@@ -3835,27 +3679,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/docker-hub-repositories"
-  to="/docs/data-collection/online-services/docker-hub"
+  to="/docs/data-collection/containers-and-vms/docker-hub-repository"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/chrony"
   to="/docs/data-collection/system-clock-and-ntp/chrony"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/applications/asterisk"
-  to="/docs/data-collection/telephony-servers/asterisk"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/structured-data-pandas"
-  to="/docs/data-collection/generic-data-collection/structured-data-pandas"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/any-application---generic-collectors/statsd"
-  to="/docs/data-collection/apm/statsd"
+  to="/docs/data-collection/generic-data-collection/pandas"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/php-applications"
-  to="/docs/data-collection/apm/php-applications"
+  to="/docs/data-collection/apm/phpdaemon"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/java-spring-boot-2-applications"
@@ -3863,11 +3699,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/go-applications"
-  to="/docs/data-collection/apm/go-applications"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/any-application---generic-collectors/anomalies"
-  to="/docs/data-collection/netdata-specific/anomalies"
+  to="/docs/data-collection/apm/go-applications-expvar"
 
 [[redirects]]
   from="/docs/api/queries/trimmed-mean"
@@ -3947,139 +3779,115 @@
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/manage-notification-methods"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/manage-notification-methods"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-webhook-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-webhook-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-slack-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-slack-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-pagerduty-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-pagerduty-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-opsgenie-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-opsgenie-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-discord-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-discord-notification-configuration"
+  to="/docs/alerting/notifications/centralized-cloud-notifications/manage-notification-methods"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications"
-  to="/docs/alerting/notifications/netdata-cloud-notifications"
+  to="/docs/alerting/notifications/centralized-cloud-notifications"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/twilio"
-  to="/docs/alerting/notifications/netdata-agent-notifications/twilio"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/twilio"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/telegram"
-  to="/docs/alerting/notifications/netdata-agent-notifications/telegram"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/telegram"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/syslog"
-  to="/docs/alerting/notifications/netdata-agent-notifications/syslog"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/syslog"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/sms-server"
-  to="/docs/alerting/notifications/netdata-agent-notifications/sms-server"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/sms"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/slack"
-  to="/docs/alerting/notifications/netdata-agent-notifications/slack"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/slack"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/rocket-chat"
-  to="/docs/alerting/notifications/netdata-agent-notifications/rocket-chat"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/rocketchat"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushover"
-  to="/docs/alerting/notifications/netdata-agent-notifications/pushover"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pushover"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushbullet"
-  to="/docs/alerting/notifications/netdata-agent-notifications/pushbullet"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pushbullet"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/prowl"
-  to="/docs/alerting/notifications/netdata-agent-notifications/prowl"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/prowl"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pagerduty"
-  to="/docs/alerting/notifications/netdata-agent-notifications/pagerduty"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/opsgenie"
-  to="/docs/alerting/notifications/netdata-agent-notifications/opsgenie"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/ntfy"
-  to="/docs/alerting/notifications/netdata-agent-notifications/ntfy"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/ntfy"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/microsoft-teams"
-  to="/docs/alerting/notifications/netdata-agent-notifications/microsoft-teams"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/messagebird"
-  to="/docs/alerting/notifications/netdata-agent-notifications/messagebird"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/messagebird"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/matrix"
-  to="/docs/alerting/notifications/netdata-agent-notifications/matrix"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/matrix"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/kavenegar"
-  to="/docs/alerting/notifications/netdata-agent-notifications/kavenegar"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/kavenegar"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/irc"
-  to="/docs/alerting/notifications/netdata-agent-notifications/irc"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/irc"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/gotify"
-  to="/docs/alerting/notifications/netdata-agent-notifications/gotify"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/gotify"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/flock"
-  to="/docs/alerting/notifications/netdata-agent-notifications/flock"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/flock"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/email"
-  to="/docs/alerting/notifications/netdata-agent-notifications/email"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/email"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/dynatrace-events"
-  to="/docs/alerting/notifications/netdata-agent-notifications/dynatrace-events"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/dynatrace"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/discord"
-  to="/docs/alerting/notifications/netdata-agent-notifications/discord"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/discord"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/custom-endpoint"
-  to="/docs/alerting/notifications/netdata-agent-notifications/custom-endpoint"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/browser-pop-ups"
-  to="/docs/alerting/notifications/netdata-agent-notifications/browser-pop-ups"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/custom"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/amazon-sns"
-  to="/docs/alerting/notifications/netdata-agent-notifications/amazon-sns"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/alerta"
-  to="/docs/alerting/notifications/netdata-agent-notifications/alerta"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/alerta"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications"
-  to="/docs/alerting/notifications/netdata-agent-notifications"
+  to="/docs/alerting/notifications/agent-dispatched-notifications"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/configure-alerts"
@@ -4087,23 +3895,19 @@
 
 [[redirects]]
   from="/docs/data-collection/service-discovery-/-registry/zookeeper"
-  to="/docs/data-collection/service-discovery-&-registry/zookeeper"
+  to="/docs/data-collection/service-discovery-/-registry/zookeeper"
 
 [[redirects]]
   from="/docs/data-collection/service-discovery-/-registry/consul"
-  to="/docs/data-collection/service-discovery-&-registry/consul"
+  to="/docs/data-collection/service-discovery-/-registry/consul"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/lm-sensors"
-  to="/docs/data-collection/hardware-devices-and-sensors/sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
 
 [[redirects]]
   from="/docs/miscellaneous/live-demos"
   to="/docs//live-demo"
-
-[[redirects]]
-  from="/docs/nightly/operations/alerts/add-mattermost-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-mattermost-notification-configuration"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/troubleshoot-agent-cloud-connectivity-issues"
@@ -4506,20 +4310,12 @@
   to="/docs/installing"
 
 [[redirects]]
-  from="/docs/exporting-data-to-other-systems/timescaledb"
-  to="/docs/exporting/timescaledb"
-
-[[redirects]]
   from="/docs/exporting-data-to-other-systems/shell-scripts"
   to="/docs/exporting/shell-scripts"
 
 [[redirects]]
-  from="/docs/exporting-data-to-other-systems/prometheus/user-guide-netdata-prometheus-grafana-stack"
-  to="/docs/exporting/prometheus/user-guide-netdata-prometheus-grafana-stack"
-
-[[redirects]]
   from="/docs/exporting-data-to-other-systems/prometheus/remote-write"
-  to="/docs/exporting/prometheus/remote-write"
+  to="/docs/exporting/prometheus-remote-write"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/prometheus"
@@ -4535,7 +4331,7 @@
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/json-document-databases"
-  to="/docs/exporting/json-document-databases"
+  to="/docs/exporting/json"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/graphite"
@@ -4543,11 +4339,11 @@
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/grafana-data-source-plugin"
-  to="/docs/exporting/grafana-data-source-plugin"
+  to="/docs/visualizations/grafana-data-source-plugin"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/google-cloud-pub-sub-service"
-  to="/docs/exporting/google-cloud-pub-sub-service"
+  to="/docs/exporting/google-cloud-pub-sub"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/exporting-reference"
@@ -4559,11 +4355,11 @@
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/aws-kinesis-data-streams"
-  to="/docs/exporting/aws-kinesis-data-streams"
+  to="/docs/exporting/aws-kinesis"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/atlassian-confluence-dashboards"
-  to="/docs/exporting/atlassian-confluence-dashboards"
+  to="/docs/visualizations/atlassian-confluence-dashboards"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems"
@@ -4683,27 +4479,27 @@
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/python.d.plugin"
-  to="/docs/data-collection/external-plugins/python.d.plugin"
+  to="/docs/contributing/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/go.d.plugin"
-  to="/docs/data-collection/external-plugins/go.d.plugin"
+  to="/docs/contributing/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/charts.d.plugin"
-  to="/docs/data-collection/external-plugins/charts.d.plugin"
+  to="/docs/contributing/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins"
-  to="/docs/data-collection/external-plugins"
+  to="/docs/contributing/external-plugins"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/database-engine"
@@ -4727,147 +4523,119 @@
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/manage-notification-methods"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/manage-notification-methods"
+  to="/docs/alerting/notifications/centralized-cloud-notifications/manage-notification-methods"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/manage-alert-notification-silencing-rules"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/manage-alert-notification-silencing-rules"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/add-webhook-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-webhook-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/add-slack-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-slack-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/add-pagerduty-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-pagerduty-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/add-opsgenie-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-opsgenie-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/add-mattermost-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-mattermost-notification-configuration"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/add-discord-notification-configuration"
-  to="/docs/alerting/notifications/netdata-cloud-notifications/add-discord-notification-configuration"
+  to="/docs/alerting/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications"
-  to="/docs/alerting/notifications/netdata-cloud-notifications"
+  to="/docs/alerting/notifications/centralized-cloud-notifications"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/twilio"
-  to="/docs/alerting/notifications/netdata-agent-notifications/twilio"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/twilio"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/telegram"
-  to="/docs/alerting/notifications/netdata-agent-notifications/telegram"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/telegram"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/syslog"
-  to="/docs/alerting/notifications/netdata-agent-notifications/syslog"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/syslog"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/sms-server"
-  to="/docs/alerting/notifications/netdata-agent-notifications/sms-server"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/sms"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/slack"
-  to="/docs/alerting/notifications/netdata-agent-notifications/slack"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/slack"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/rocket-chat"
-  to="/docs/alerting/notifications/netdata-agent-notifications/rocket-chat"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/rocketchat"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/pushover"
-  to="/docs/alerting/notifications/netdata-agent-notifications/pushover"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pushover"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/pushbullet"
-  to="/docs/alerting/notifications/netdata-agent-notifications/pushbullet"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pushbullet"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/prowl"
-  to="/docs/alerting/notifications/netdata-agent-notifications/prowl"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/prowl"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/pagerduty"
-  to="/docs/alerting/notifications/netdata-agent-notifications/pagerduty"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/opsgenie"
-  to="/docs/alerting/notifications/netdata-agent-notifications/opsgenie"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/ntfy"
-  to="/docs/alerting/notifications/netdata-agent-notifications/ntfy"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/ntfy"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/microsoft-teams"
-  to="/docs/alerting/notifications/netdata-agent-notifications/microsoft-teams"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/messagebird"
-  to="/docs/alerting/notifications/netdata-agent-notifications/messagebird"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/messagebird"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/matrix"
-  to="/docs/alerting/notifications/netdata-agent-notifications/matrix"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/matrix"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/kavenegar"
-  to="/docs/alerting/notifications/netdata-agent-notifications/kavenegar"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/kavenegar"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/irc"
-  to="/docs/alerting/notifications/netdata-agent-notifications/irc"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/irc"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/gotify"
-  to="/docs/alerting/notifications/netdata-agent-notifications/gotify"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/gotify"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/flock"
-  to="/docs/alerting/notifications/netdata-agent-notifications/flock"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/flock"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/email"
-  to="/docs/alerting/notifications/netdata-agent-notifications/email"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/email"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/dynatrace-events"
-  to="/docs/alerting/notifications/netdata-agent-notifications/dynatrace-events"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/dynatrace"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/discord"
-  to="/docs/alerting/notifications/netdata-agent-notifications/discord"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/discord"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/custom-endpoint"
-  to="/docs/alerting/notifications/netdata-agent-notifications/custom-endpoint"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/browser-pop-ups"
-  to="/docs/alerting/notifications/netdata-agent-notifications/browser-pop-ups"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/custom"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/amazon-sns"
-  to="/docs/alerting/notifications/netdata-agent-notifications/amazon-sns"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/alerta"
-  to="/docs/alerting/notifications/netdata-agent-notifications/alerta"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/alerta"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications"
-  to="/docs/alerting/notifications/netdata-agent-notifications"
+  to="/docs/alerting/notifications/agent-dispatched-notifications"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications"
@@ -4931,11 +4699,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvidia_smi"
-  to="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
+  to="/docs/data-collection/hardware-devices-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/NVIDIA"
-  to="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
+  to="/docs/data-collection/hardware-devices-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/contributing/redistributed-software"
@@ -5047,26 +4815,554 @@
 
 [[redirects]]
   from="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/contributing/external-plugins/python.d.plugin"
-  to="/docs/data-collection/external-plugins/python.d.plugin"
+  to="/docs/contributing/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/contributing/external-plugins/go.d.plugin"
-  to="/docs/data-collection/external-plugins/go.d.plugin"
+  to="/docs/contributing/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/contributing/external-plugins/charts.d.plugin"
-  to="/docs/data-collection/external-plugins/charts.d.plugin"
+  to="/docs/contributing/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/contributing/external-plugins"
-  to="/docs/data-collection/external-plugins"
+  to="/docs/contributing/external-plugins"
+
+[[redirects]]
+  from="/docs/exporting/prometheus/remote-write"
+  to="/docs/exporting/prometheus-remote-write"
+
+[[redirects]]
+  from="/docs/exporting/json-document-databases"
+  to="/docs/exporting/json"
+
+[[redirects]]
+  from="/docs/exporting/grafana-data-source-plugin"
+  to="/docs/visualizations/grafana-data-source-plugin"
+
+[[redirects]]
+  from="/docs/exporting/google-cloud-pub-sub-service"
+  to="/docs/exporting/google-cloud-pub-sub"
+
+[[redirects]]
+  from="/docs/exporting/aws-kinesis-data-streams"
+  to="/docs/exporting/aws-kinesis"
+
+[[redirects]]
+  from="/docs/exporting/atlassian-confluence-dashboards"
+  to="/docs/visualizations/atlassian-confluence-dashboards"
+
+[[redirects]]
+  from="/docs/data-collection/windows-systems"
+  to="/docs/data-collection/windows-systems/windows"
+
+[[redirects]]
+  from="/docs/data-collection/web-servers-and-web-proxies/web-logs/squid"
+  to="/docs/data-collection/web-servers-and-web-proxies/squid-log-files"
+
+[[redirects]]
+  from="/docs/data-collection/web-servers-and-web-proxies/web-logs/apache-nginx-microsoft-iis"
+  to="/docs/data-collection/web-servers-and-web-proxies/web-server-log-files"
+
+[[redirects]]
+  from="/docs/data-collection/web-servers-and-web-proxies/varnish-cache"
+  to="/docs/data-collection/web-servers-and-web-proxies/varnish"
+
+[[redirects]]
+  from="/docs/data-collection/web-servers-and-web-proxies/apache-tomcat"
+  to="/docs/data-collection/web-servers-and-web-proxies/tomcat"
+
+[[redirects]]
+  from="/docs/data-collection/vpns/libreswan-ipsec"
+  to="/docs/data-collection/vpns/libreswan"
+
+[[redirects]]
+  from="/docs/data-collection/ups/nut"
+  to="/docs/data-collection/ups/network-ups-tools-nut"
+
+[[redirects]]
+  from="/docs/data-collection/systemd/logind"
+  to="/docs/data-collection/systemd/systemd-logind-users"
+
+[[redirects]]
+  from="/docs/data-collection/system-clock-and-ntp/ntp-daemon"
+  to="/docs/data-collection/system-clock-and-ntp/ntpd"
+
+[[redirects]]
+  from="/docs/data-collection/system-clock-and-ntp/linux-kernel"
+  to="/docs/data-collection/system-clock-and-ntp/timex"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks/x509-certificate-check"
+  to="/docs/data-collection/synthetic-checks/x.509-certificate"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks/whois-domain-expiry-check"
+  to="/docs/data-collection/synthetic-checks/domain-expiration-date"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks/tcp-endpoints-check"
+  to="/docs/data-collection/synthetic-checks/tcp-endpoints"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks/network-latency-check"
+  to="/docs/data-collection/synthetic-checks/ping"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks/http-endpoints-check"
+  to="/docs/data-collection/synthetic-checks/http-endpoints"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks/dns-queries-check"
+  to="/docs/data-collection/dns-and-dhcp-servers/dns-query"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks/disk-latency-with-check"
+  to="/docs/data-collection/synthetic-checks/ioping"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks/cpu-idle-jitter-check"
+  to="/docs/data-collection/synthetic-checks/idle-os-jitter"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/scaleio"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-scaleio"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/pika"
+  to="/docs/data-collection/databases/pika"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/ceph"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/ceph"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes"
+  to="/docs/data-collection/hardware-devices-and-sensors/s.m.a.r.t."
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/nvme-devices"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/nvme-devices"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/megaraid-controllers"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/megacli"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hp-smart-storage-arrays"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hard-drive-temperature"
+  to="/docs/data-collection/hardware-devices-and-sensors/hdd-temperature"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/adaptec-raid"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/adaptecraid"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/smbfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/samba"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/ipfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/ipfs"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/hdfs"
+  to="/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/files-and-directories"
+  to="/docs/data-collection/linux-systems/files-and-directories"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/disks"
+  to="/docs/data-collection/linux-systems/disk-space"
+
+[[redirects]]
+  from="/docs/data-collection/snmp-and-networked-devices/snmp"
+  to="/docs/data-collection/generic-data-collection/snmp-devices"
+
+[[redirects]]
+  from="/docs/data-collection/service-discovery-&-registry/zookeeper"
+  to="/docs/data-collection/service-discovery-/-registry/zookeeper"
+
+[[redirects]]
+  from="/docs/data-collection/service-discovery-&-registry/consul"
+  to="/docs/data-collection/service-discovery-/-registry/consul"
+
+[[redirects]]
+  from="/docs/data-collection/service-discovery"
+  to="/docs/configuring/service-discovery"
+
+[[redirects]]
+  from="/docs/data-collection/provisioning-systems/puppet"
+  to="/docs/data-collection/ci/cd-platforms/puppet"
+
+[[redirects]]
+  from="/docs/data-collection/processes-and-system-services/supervisord"
+  to="/docs/data-collection/processes-and-system-services/supervisor"
+
+[[redirects]]
+  from="/docs/data-collection/p2p/retroshare"
+  to="/docs/data-collection/media-services/retroshare"
+
+[[redirects]]
+  from="/docs/data-collection/online-services/docker-hub"
+  to="/docs/data-collection/containers-and-vms/docker-hub-repository"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/network-interface-qos"
+  to="/docs/data-collection/linux-systems/network/tc-qos-classes"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/netfilter-accounting"
+  to="/docs/data-collection/linux-systems/firewall/netfilter"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/linux-access-points"
+  to="/docs/data-collection/linux-systems/network/access-points"
+
+[[redirects]]
+  from="/docs/data-collection/netdata-specific/zscores"
+  to="/docs/data-collection/other/python.d-zscores"
+
+[[redirects]]
+  from="/docs/data-collection/netdata-specific/change-finder"
+  to="/docs/data-collection/other/python.d-changefinder"
+
+[[redirects]]
+  from="/docs/data-collection/netdata-specific/alarms"
+  to="/docs/data-collection/other/netdata-agent-alarms"
+
+[[redirects]]
+  from="/docs/data-collection/message-brokers/pulsar"
+  to="/docs/data-collection/message-brokers/apache-pulsar"
+
+[[redirects]]
+  from="/docs/data-collection/message-brokers/beanstalk"
+  to="/docs/data-collection/task-queues/beanstalk"
+
+[[redirects]]
+  from="/docs/data-collection/media-streaming-servers/icecast"
+  to="/docs/data-collection/media-services/icecast"
+
+[[redirects]]
+  from="/docs/data-collection/macos-systems"
+  to="/docs/data-collection/macos-systems/macos"
+
+[[redirects]]
+  from="/docs/data-collection/linux-systems/other/slabinfo"
+  to="/docs/data-collection/linux-systems/kernel/linux-kernel-slab-allocator-statistics"
+
+[[redirects]]
+  from="/docs/data-collection/linux-systems/other/perf"
+  to="/docs/data-collection/linux-systems/cpu-performance"
+
+[[redirects]]
+  from="/docs/data-collection/kubernetes/kube-proxy"
+  to="/docs/data-collection/kubernetes/kubeproxy"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/wire-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/1-wire-sensors"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/server-hardware"
+  to="/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
+  to="/docs/data-collection/hardware-devices-and-sensors/nvidia-gpu"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/linux-machine-sensors"
+  to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-lm-sensors"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/cups.plugin"
+  to="/docs/data-collection/hardware-devices-and-sensors/cups"
+
+[[redirects]]
+  from="/docs/data-collection/generic-data-collection/structured-data-pandas"
+  to="/docs/data-collection/generic-data-collection/pandas"
+
+[[redirects]]
+  from="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+
+[[redirects]]
+  from="/docs/data-collection/external-plugins/python.d.plugin"
+  to="/docs/contributing/external-plugins/python.d.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/external-plugins/profile.plugin"
+  to="/docs/contributing/external-plugins/profile.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+
+[[redirects]]
+  from="/docs/data-collection/external-plugins/go.d.plugin"
+  to="/docs/contributing/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/external-plugins/charts.d.plugin"
+  to="/docs/contributing/external-plugins/charts.d.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/external-plugins"
+  to="/docs/contributing/external-plugins"
+
+[[redirects]]
+  from="/docs/data-collection/examples/example-module-in-python"
+  to="/docs/data-collection/other/example-collector"
+
+[[redirects]]
+  from="/docs/data-collection/dns-and-dhcp-servers/nsd"
+  to="/docs/data-collection/dns-and-dhcp-servers/name-server-daemon"
+
+[[redirects]]
+  from="/docs/data-collection/dns-and-dhcp-servers/isc-dhcpd"
+  to="/docs/data-collection/dns-and-dhcp-servers/isc-dhcp"
+
+[[redirects]]
+  from="/docs/data-collection/dns-and-dhcp-servers/isc-bind"
+  to="/docs/data-collection/dns-and-dhcp-servers/isc-bind-rndc"
+
+[[redirects]]
+  from="/docs/data-collection/dns-and-dhcp-servers/dnsmasq-dns-forwarder"
+  to="/docs/data-collection/dns-and-dhcp-servers/dnsmasq"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/riak-kv"
+  to="/docs/data-collection/databases/riakkv"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/rethinkdb"
+  to="/docs/data-collection/databases/rethinkdb"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/redis"
+  to="/docs/data-collection/databases/redis"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/proxysql"
+  to="/docs/data-collection/databases/proxysql"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/postgressql"
+  to="/docs/data-collection/databases/postgresql"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/pgbouncer"
+  to="/docs/data-collection/databases/pgbouncer"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/oracledb"
+  to="/docs/data-collection/databases/oracle-db"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/mysql-and-mariadb"
+  to="/docs/data-collection/databases/mysql"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/mongodb"
+  to="/docs/data-collection/databases/mongodb"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/memcached"
+  to="/docs/data-collection/databases/memcached"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/couchdb"
+  to="/docs/data-collection/databases/couchdb"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/couchbase"
+  to="/docs/data-collection/databases/couchbase"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/cockroachdb"
+  to="/docs/data-collection/databases/cockroachdb"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/cassandra"
+  to="/docs/data-collection/databases/cassandra"
+
+[[redirects]]
+  from="/docs/data-collection/containers-and-vms/xen"
+  to="/docs/data-collection/containers-and-vms/xen-xcp-ng"
+
+[[redirects]]
+  from="/docs/data-collection/containers-and-vms/vmware-center-servers"
+  to="/docs/data-collection/containers-and-vms/vmware-vcenter-server"
+
+[[redirects]]
+  from="/docs/data-collection/containers-and-vms/vmware-center-server-appliance"
+  to="/docs/data-collection/containers-and-vms/vcenter-server-appliance"
+
+[[redirects]]
+  from="/docs/data-collection/collectors-configuration"
+  to="/docs/configuring/collectors-configuration"
+
+[[redirects]]
+  from="/docs/data-collection/chart-dimensions-contexts-and-families"
+  to="/docs/visualizations/chart-dimensions-contexts-and-families"
+
+[[redirects]]
+  from="/docs/data-collection/apm/php-applications"
+  to="/docs/data-collection/apm/phpdaemon"
+
+[[redirects]]
+  from="/docs/data-collection/apm/openmetrics-endpoints"
+  to="/docs/data-collection/generic-data-collection/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/data-collection/apm/go-applications"
+  to="/docs/data-collection/apm/go-applications-expvar"
+
+[[redirects]]
+  from="/docs/data-collection/access-control,-authentication-and-authorization/openldap"
+  to="/docs/data-collection/authentication-and-authorization/openldap"
+
+[[redirects]]
+  from="/docs/data-collection/access-control,-authentication-and-authorization/freeradius"
+  to="/docs/data-collection/authentication-and-authorization/freeradius"
+
+[[redirects]]
+  from="/docs/data-collection/access-control,-authentication-and-authorization/fail2ban"
+  to="/docs/data-collection/authentication-and-authorization/fail2ban"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-cloud-notifications/manage-notification-methods"
+  to="/docs/alerting/notifications/centralized-cloud-notifications/manage-notification-methods"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-cloud-notifications/manage-alert-notification-silencing-rules"
+  to="/docs/alerting/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-cloud-notifications"
+  to="/docs/alerting/notifications/centralized-cloud-notifications"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/twilio"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/twilio"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/telegram"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/telegram"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/syslog"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/syslog"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/sms-server"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/sms"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/slack"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/slack"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/rocket-chat"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/rocketchat"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/pushover"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pushover"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/pushbullet"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pushbullet"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/prowl"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/prowl"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/pagerduty"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/pagerduty"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/opsgenie"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/opsgenie"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/ntfy"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/ntfy"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/microsoft-teams"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/microsoft-teams"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/messagebird"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/messagebird"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/matrix"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/matrix"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/kavenegar"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/kavenegar"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/irc"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/irc"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/gotify"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/gotify"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/flock"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/flock"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/email"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/email"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/dynatrace-events"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/dynatrace"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/discord"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/discord"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/custom-endpoint"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/custom"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/amazon-sns"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/alerta"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/alerta"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications"
+  to="/docs/alerting/notifications/agent-dispatched-notifications"
 
 # section: dynamic << END
