@@ -3,9 +3,10 @@ custom_edit_url: "https://github.com/netdata/.github/edit/main/CONTRIBUTING.md"
 sidebar_label: "Contributing"
 learn_status: "Published"
 learn_rel_path: "Contributing"
-sidebar_position: "1300000"
+sidebar_position: "1400000"
 learn_link: "https://learn.netdata.cloud/docs/contributing"
 ---
+
 # Contributing
 
 Thank you for considering contributing to Netdata.
@@ -203,13 +204,13 @@ To contribute a new collector (or improve an existing one):
    1. Authenticate with GitHub from inside the container
    2. Create a new branch and name it after the feature you are developing (e.g "apache-collector"). Switch to that branch.
    3. **For Python collectors:**
-      1. Follow the contribution guidelines on the [python.d](/docs/data-collection/external-plugins/python.d.plugin) documentation.
-      2. Follow the Guide we have released: [How to contribute a Python collector](/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python)
+      1. Follow the contribution guidelines on the [python.d](/docs/contributing/external-plugins/python.d.plugin) documentation.
+      2. Follow the Guide we have released: [How to contribute a Python collector](/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python)
    4. **For Golang collectors:**
-      1. Follow the contribution guidelines on the [go.d](/docs/data-collection/external-plugins/go.d.plugin) documentation.
-      2. Follow the Guide we have released: [How to develop a go.d collector](/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go).
+      1. Follow the contribution guidelines on the [go.d](/docs/contributing/external-plugins/go.d.plugin) documentation.
+      2. Follow the Guide we have released: [How to develop a go.d collector](/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go).
    5. **For Shell/Bash**
-     1. Follow the guidelines on the [charts.d](/docs/data-collection/external-plugins/charts.d.plugin).
+     1. Follow the guidelines on the [charts.d](/docs/contributing/external-plugins/charts.d.plugin).
    6. **For StatsD:**
       1. If you are not familiar with StatD, we have written an [introduction](https://www.netdata.cloud/blog/introduction-to-statsd/) to the protocol.
       2. Take a look at the [reference documentation](https://github.com/netdata/netdata/tree/master/collectors/statsd.plugin) for the StatsD plugin
@@ -239,7 +240,7 @@ In order to modify existing ones or create new notification alarms you will need
 
 To create a new alarm, we can look to:
 - Already implemented alarms inside `alarm-notify.sh` and copy their structure
-- Use the [custom endpoint](/docs/alerting/notifications/netdata-agent-notifications/custom-endpoint) notification as boilerplate.
+- Use the [custom endpoint](/docs/alerting/notifications/agent-dispatched-notifications/custom) notification as boilerplate.
 
 
 ## Code of Conduct and CLA

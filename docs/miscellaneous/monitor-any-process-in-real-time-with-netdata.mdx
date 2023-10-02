@@ -4,7 +4,7 @@ sidebar_label: "Monitor any process in real-time with Netdata"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
 description: "Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions."
-sidebar_position: "1438000"
+sidebar_position: "1538000"
 learn_link: "https://learn.netdata.cloud/docs/miscellaneous/monitor-any-process-in-real-time-with-netdata"
 ---
 
@@ -56,12 +56,12 @@ process-specific charts.
 
 The process and groups settings are used by two unique and powerful collectors.
 
-[**`apps.plugin`**](/docs/data-collection/apm/application-monitoring) looks at the Linux
+[**`apps.plugin`**](https://github.com/netdata/netdata/blob/master/collectors/apps.plugin/README.md) looks at the Linux
 process tree every second, much like `top` or
 `ps fax`, and collects resource utilization information on every running process. It then automatically adds a layer of
 meaningful visualization on top of these metrics, and creates per-process/application charts.
 
-[**`ebpf.plugin`**](/docs/data-collection/linux-systems/ebpf-for-systems-monitoring): Netdata's extended
+[**`ebpf.plugin`**](https://github.com/netdata/netdata/blob/master/collectors/ebpf.plugin/README.md): Netdata's extended
 Berkeley Packet Filter (eBPF) collector
 monitors Linux kernel-level metrics for file descriptors, virtual filesystem IO, and process management, and then hands
 process-specific metrics over to `apps.plugin` for visualization. The eBPF collector also collects and visualizes

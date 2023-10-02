@@ -6,6 +6,7 @@ learn_rel_path: "Architecture"
 sidebar_position: "6000"
 learn_link: "https://learn.netdata.cloud/docs/architecture/the-role-of-netdata-cloud"
 ---
+
 import { Grid, Box, BoxList, BoxListItemRegexLink } from '@site/src/components/Grid/'
 import { RiExternalLinkLine } from 'react-icons/ri'
 
@@ -87,7 +88,7 @@ These tabs can be separated into "static", meaning they are by default presented
 
 - The [Dashboards tab](/docs/visualizations/custom-dashboards) gives you the ability to have tailored made views of specific/targeted interfaces for your infrastructure using any number of charts from any number of nodes.
 
-- The [Alerts tab](https://github.com/netdata/netdata/blob/master/docs/monitor/view-active-alerts.md) provides you with an overview for all the active alerts you receive for the nodes in this War Room, you can also see all the alerts that are configured to be triggered in any given moment.
+- The [Alerts tab](/docs/monitor-your-infrastructure/view-active-alerts) provides you with an overview for all the active alerts you receive for the nodes in this War Room, you can also see all the alerts that are configured to be triggered in any given moment.
 
 - The [Anomalies tab](/docs/ml-and-troubleshooting/anomaly-advisor) is dedicated to the Anomaly Advisor tool.
 
@@ -161,7 +162,7 @@ Netdata has [300+ pre-installed collectors](/docs/data-collection/monitor-anythi
 configuration. Collectors search each of your nodes in default locations and ports to find running applications and
 gather as many metrics as they can without you having to configure them individually.
 
-Most collectors work without configuration, should you want more info, you can read more on [how Netdata's metrics collectors work](/docs/data-collection) and the [Collectors configuration reference](/docs/data-collection/collectors-configuration) documentation.
+Most collectors work without configuration, should you want more info, you can read more on [how Netdata's metrics collectors work](/docs/data-collection) and the [Collectors configuration reference](/docs/configuring/collectors-configuration) documentation.
 
 In addition, find detailed information about which [system](/docs/data-collection/system-metrics),
 [container](/docs/data-collection/container-metrics), and [application](/docs/data-collection/application-metrics) metrics you can
@@ -189,8 +190,8 @@ collect from across your infrastructure with Netdata.
   <Box
     title="Alerts and notifications">
     <BoxList>
-      <BoxListItemRegexLink to="[](https://github.com/netdata/netdata/blob/master/docs/monitor/view-active-alerts.md#netdata-cloud)" title="View active alerts" />
-      <BoxListItemRegexLink to="[](/docs/alerting/notifications/netdata-cloud-notifications)" title="Alert notifications" />
+      <BoxListItemRegexLink to="[](/docs/monitor-your-infrastructure/view-active-alerts#netdata-cloud)" title="View active alerts" />
+      <BoxListItemRegexLink to="[](/docs/alerting/notifications/centralized-cloud-notifications)" title="Alert notifications" />
     </BoxList>
   </Box>
   <Box
@@ -220,8 +221,8 @@ collect from across your infrastructure with Netdata.
   - [Kubernetes](/docs/visualizations/kubernetes-visualizations)
   - [Create new dashboards](/docs/visualizations/custom-dashboards)
 - Alerts and notifications
-  - [View active alerts](https://github.com/netdata/netdata/blob/master/docs/monitor/view-active-alerts.md#netdata-cloud)
-  - [Alert notifications](/docs/alerting/notifications/netdata-cloud-notifications)
+  - [View active alerts](/docs/monitor-your-infrastructure/view-active-alerts#netdata-cloud)
+  - [Alert notifications](/docs/alerting/notifications/centralized-cloud-notifications)
 - Troubleshooting with Netdata Cloud
   - [Metric Correlations](/docs/ml-and-troubleshooting/metric-correlations)
   - [Anomaly Advisor](/docs/ml-and-troubleshooting/anomaly-advisor)

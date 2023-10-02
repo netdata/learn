@@ -7,6 +7,7 @@ description: "With metrics streaming enabled, you can not only replicate metrics
 sidebar_position: "502000"
 learn_link: "https://learn.netdata.cloud/docs/streaming/understanding-how-streaming-works"
 ---
+
 # How metrics streaming works
 
 Each node running Netdata can stream the metrics it collects, in real time, to another node. Streaming allows you to
@@ -14,7 +15,7 @@ replicate metrics data across multiple nodes, or centralize all your metrics dat
 (TSDB).
 
 When one node streams metrics to another, the node receiving metrics can visualize them on the dashboard, run health checks to 
-[trigger alerts](https://github.com/netdata/netdata/blob/master/docs/monitor/view-active-alerts.md) and 
+[trigger alerts](/docs/monitor-your-infrastructure/view-active-alerts) and 
 [send notifications](/docs/alerting/notifications), and
 [export](/docs/exporting) all metrics to an external TSDB. When Netdata streams metrics to another
 Netdata, the receiving one is able to perform everything a Netdata instance is capable of.

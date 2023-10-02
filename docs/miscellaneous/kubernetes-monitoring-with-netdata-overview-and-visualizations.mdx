@@ -4,9 +4,10 @@ sidebar_label: "Kubernetes monitoring with Netdata: Overview and visualizations"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
 description: "Learn how to navigate Netdata's Kubernetes monitoring features for visualizing the health and performance of a Kubernetes cluster with per-second granularity."
-sidebar_position: "1428000"
+sidebar_position: "1528000"
 learn_link: "https://learn.netdata.cloud/docs/miscellaneous/kubernetes-monitoring-with-netdata:-overview-and-visualizations"
 ---
+
 # Kubernetes monitoring with Netdata
 
 This document gives an overview of what visualizations Netdata provides on Kubernetes deployments.
@@ -184,7 +185,7 @@ for complete customization. For example, grouping the top chart by `k8s_containe
 Netdata has a [service discovery plugin](https://github.com/netdata/agent-service-discovery), which discovers and
 creates configuration files for [compatible
 services](https://github.com/netdata/helmchart#service-discovery-and-supported-services) and any endpoints covered by
-our [generic Prometheus collector](/docs/data-collection/apm/openmetrics-endpoints).
+our [generic Prometheus collector](/docs/data-collection/generic-data-collection/prometheus-endpoint).
 Netdata uses these files to collect metrics from any compatible application as they run _inside_ of a pod. Service
 discovery happens without manual intervention as pods are created, destroyed, or moved between nodes.
 
@@ -227,7 +228,7 @@ configuration-related errors, and the actual vs. desired numbers of volumes, plu
 The **k8s kube-proxy** section displays metrics about the network proxy that runs on each node in your Kubernetes
 cluster. kube-proxy lets pods communicate with each other and accept sessions from outside your cluster. Its metrics are
 collected by the [kube-proxy
-collector](/docs/data-collection/kubernetes/kube-proxy).
+collector](/docs/data-collection/kubernetes/kubeproxy).
 
 With Netdata, you can monitor how often your k8s proxies are syncing proxy rules between nodes. Dramatic changes in
 these figures could indicate an anomaly in your cluster that's worthy of further investigation.
@@ -249,7 +250,7 @@ clusters of all sizes.
 - [Netdata Agent · `kubelet`
   collector](/docs/data-collection/kubernetes/kubelet)
 - [Netdata Agent · `kube-proxy`
-  collector](/docs/data-collection/kubernetes/kube-proxy)
-- [Netdata Agent · `cgroups.plugin`](/docs/data-collection/containers-and-vms/cgroups)
+  collector](/docs/data-collection/kubernetes/kubeproxy)
+- [Netdata Agent · `cgroups.plugin`](https://github.com/netdata/netdata/blob/master/collectors/cgroups.plugin/README.md)
 
 

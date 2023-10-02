@@ -3,8 +3,8 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/monitor/en
 sidebar_label: "Notifications"
 learn_status: "Published"
 learn_rel_path: "Alerting/Notifications"
-description: "Send Netdata alarms from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution."
-sidebar_position: "702000"
+description: "Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution."
+sidebar_position: "802000"
 learn_link: "https://learn.netdata.cloud/docs/alerting/notifications/notifications"
 ---
 
@@ -30,7 +30,7 @@ response process.
 ## Netdata Cloud
 
 Netdata Cloud's [centralized alert
-notifications](/docs/alerting/notifications/netdata-cloud-notifications) is a zero-configuration way to
+notifications](/docs/alerting/notifications/centralized-cloud-notifications) is a zero-configuration way to
 get notified when an anomaly or incident strikes any node or application in your infrastructure. The advantage of using
 centralized alert notifications from Netdata Cloud is that you don't have to worry about configuring each node in your
 infrastructure.
@@ -45,13 +45,13 @@ choose what types of notifications to receive from each War Room.
 ![Enabling and configuring alert notifications in Netdata
 Cloud](https://user-images.githubusercontent.com/1153921/101936280-93c50900-3b9d-11eb-9ba0-d6927fa872b7.gif)
 
-See the [centralized alert notifications](/docs/alerting/notifications/netdata-cloud-notifications)
+See the [centralized alert notifications](/docs/alerting/notifications/centralized-cloud-notifications)
 reference doc for further details about what information is conveyed in an email notification, flood protection, and
 more.
 
 ## Netdata Agent
 
-The Netdata Agent's [notification system](/docs/alerting/notifications/netdata-agent-notifications) runs on every node and dispatches
+The Netdata Agent's [notification system](/docs/alerting/notifications/agent-dispatched-notifications) runs on every node and dispatches
 notifications based on configured endpoints and roles. You can enable multiple endpoints on any one node _and_ use Agent
 notifications in parallel with centralized alert notifications in Netdata Cloud.
 
@@ -63,30 +63,30 @@ notification platform.
 
 ### Supported notification endpoints
 
--   [**alerta.io**](/docs/alerting/notifications/netdata-agent-notifications/alerta)
--   [**Amazon SNS**](/docs/alerting/notifications/netdata-agent-notifications/amazon-sns)
--   [**Custom endpoint**](/docs/alerting/notifications/netdata-agent-notifications/custom-endpoint)
--   [**Discord**](/docs/alerting/notifications/netdata-agent-notifications/discord)
--   [**Dynatrace**](/docs/alerting/notifications/netdata-agent-notifications/dynatrace-events)
--   [**Email**](/docs/alerting/notifications/netdata-agent-notifications/email)
--   [**Flock**](/docs/alerting/notifications/netdata-agent-notifications/flock)
--   [**Gotify**](/docs/alerting/notifications/netdata-agent-notifications/gotify)
--   [**IRC**](/docs/alerting/notifications/netdata-agent-notifications/irc)
--   [**Kavenegar**](/docs/alerting/notifications/netdata-agent-notifications/kavenegar)
--   [**Matrix**](/docs/alerting/notifications/netdata-agent-notifications/matrix)
--   [**Messagebird**](/docs/alerting/notifications/netdata-agent-notifications/messagebird)
--   [**Microsoft Teams**](/docs/alerting/notifications/netdata-agent-notifications/microsoft-teams)
--   [**Netdata Agent dashboard**](/docs/alerting/notifications/netdata-agent-notifications/browser-pop-ups)
--   [**Opsgenie**](/docs/alerting/notifications/netdata-agent-notifications/opsgenie)
--   [**PagerDuty**](/docs/alerting/notifications/netdata-agent-notifications/pagerduty)
--   [**Prowl**](/docs/alerting/notifications/netdata-agent-notifications/prowl)
--   [**PushBullet**](/docs/alerting/notifications/netdata-agent-notifications/pushbullet)
--   [**PushOver**](/docs/alerting/notifications/netdata-agent-notifications/pushover)
--   [**Rocket.Chat**](/docs/alerting/notifications/netdata-agent-notifications/rocket-chat)
--   [**Slack**](/docs/alerting/notifications/netdata-agent-notifications/slack)
--   [**SMS Server Tools 3**](/docs/alerting/notifications/netdata-agent-notifications/sms-server)
--   [**Syslog**](/docs/alerting/notifications/netdata-agent-notifications/syslog)
--   [**Telegram**](/docs/alerting/notifications/netdata-agent-notifications/telegram)
--   [**Twilio**](/docs/alerting/notifications/netdata-agent-notifications/twilio)
+-   [**alerta.io**](/docs/alerting/notifications/agent-dispatched-notifications/alerta)
+-   [**Amazon SNS**](/docs/alerting/notifications/agent-dispatched-notifications/aws-sns)
+-   [**Custom endpoint**](/docs/alerting/notifications/agent-dispatched-notifications/custom)
+-   [**Discord**](/docs/alerting/notifications/agent-dispatched-notifications/discord)
+-   [**Dynatrace**](/docs/alerting/notifications/agent-dispatched-notifications/dynatrace)
+-   [**Email**](/docs/alerting/notifications/agent-dispatched-notifications/email)
+-   [**Flock**](/docs/alerting/notifications/agent-dispatched-notifications/flock)
+-   [**Gotify**](/docs/alerting/notifications/agent-dispatched-notifications/gotify)
+-   [**IRC**](/docs/alerting/notifications/agent-dispatched-notifications/irc)
+-   [**Kavenegar**](/docs/alerting/notifications/agent-dispatched-notifications/kavenegar)
+-   [**Matrix**](/docs/alerting/notifications/agent-dispatched-notifications/matrix)
+-   [**Messagebird**](/docs/alerting/notifications/agent-dispatched-notifications/messagebird)
+-   [**Microsoft Teams**](/docs/alerting/notifications/agent-dispatched-notifications/microsoft-teams)
+-   [**Netdata Agent dashboard**](https://github.com/netdata/netdata/blob/master/health/notifications/web/README.md)
+-   [**Opsgenie**](/docs/alerting/notifications/agent-dispatched-notifications/opsgenie)
+-   [**PagerDuty**](/docs/alerting/notifications/agent-dispatched-notifications/pagerduty)
+-   [**Prowl**](/docs/alerting/notifications/agent-dispatched-notifications/prowl)
+-   [**PushBullet**](/docs/alerting/notifications/agent-dispatched-notifications/pushbullet)
+-   [**PushOver**](/docs/alerting/notifications/agent-dispatched-notifications/pushover)
+-   [**Rocket.Chat**](/docs/alerting/notifications/agent-dispatched-notifications/rocketchat)
+-   [**Slack**](/docs/alerting/notifications/agent-dispatched-notifications/slack)
+-   [**SMS Server Tools 3**](/docs/alerting/notifications/agent-dispatched-notifications/sms)
+-   [**Syslog**](/docs/alerting/notifications/agent-dispatched-notifications/syslog)
+-   [**Telegram**](/docs/alerting/notifications/agent-dispatched-notifications/telegram)
+-   [**Twilio**](/docs/alerting/notifications/agent-dispatched-notifications/twilio)
 
 

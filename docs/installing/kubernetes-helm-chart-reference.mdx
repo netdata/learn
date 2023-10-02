@@ -361,17 +361,17 @@ Service discovery currently supports the following applications via their associ
 
 - [ActiveMQ](/docs/data-collection/message-brokers/activemq)
 - [Apache](/docs/data-collection/web-servers-and-web-proxies/apache)
-- [Bind](/docs/data-collection/dns-and-dhcp-servers/bind9)
-- [CockroachDB](/docs/data-collection/database-servers/cockroachdb)
-- [Consul](/docs/data-collection/service-discovery-&-registry/consul)
+- [Bind](https://github.com/netdata/go.d.plugin/blob/master/modules/bind/README.md)
+- [CockroachDB](/docs/data-collection/databases/cockroachdb)
+- [Consul](/docs/data-collection/service-discovery-/-registry/consul)
 - [CoreDNS](/docs/data-collection/dns-and-dhcp-servers/coredns)
 - [Elasticsearch](/docs/data-collection/search-engines/elasticsearch)
 - [Fluentd](/docs/data-collection/logs-servers/fluentd)
-- [FreeRADIUS](/docs/data-collection/access-control,-authentication-and-authorization/freeradius)
-- [HDFS](/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/hdfs)
+- [FreeRADIUS](/docs/data-collection/authentication-and-authorization/freeradius)
+- [HDFS](/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs)
 - [Lighttpd](/docs/data-collection/web-servers-and-web-proxies/lighttpd)
 - [Logstash](/docs/data-collection/logs-servers/logstash)
-- [MySQL](/docs/data-collection/database-servers/mysql-and-mariadb)
+- [MySQL](/docs/data-collection/databases/mysql)
 - [NGINX](/docs/data-collection/web-servers-and-web-proxies/nginx)
 - [OpenVPN](/docs/data-collection/vpns/openvpn)
 - [PHP-FPM](/docs/data-collection/web-servers-and-web-proxies/php-fpm)
@@ -380,12 +380,12 @@ Service discovery currently supports the following applications via their associ
 - [Tengine](/docs/data-collection/web-servers-and-web-proxies/tengine)
 - [Unbound](/docs/data-collection/dns-and-dhcp-servers/unbound)
 - [VerneMQ](/docs/data-collection/message-brokers/vernemq)
-- [ZooKeeper](/docs/data-collection/service-discovery-&-registry/zookeeper)
+- [ZooKeeper](/docs/data-collection/service-discovery-/-registry/zookeeper)
 
 #### Prometheus endpoints
 
 Service discovery supports Prometheus endpoints via
-the [Prometheus](/docs/data-collection/apm/openmetrics-endpoints) collector.
+the [Prometheus](/docs/data-collection/generic-data-collection/prometheus-endpoint) collector.
 
 Annotations on pods allow a fine control of the scraping process:
 
