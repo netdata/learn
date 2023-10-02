@@ -3,9 +3,10 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/glossary.m
 sidebar_label: "Glossary"
 learn_status: "Published"
 learn_rel_path: "Miscellaneous"
-sidebar_position: "1402000"
+sidebar_position: "1502000"
 learn_link: "https://learn.netdata.cloud/docs/miscellaneous/glossary"
 ---
+
 # Glossary
 
 The Netdata community welcomes engineers, SREs, admins, etc. of all levels of expertise with engineering and the Netdata tool. And just as a journey of a thousand miles starts with one step, sometimes, the journey to mastery begins with understanding a single term.
@@ -27,7 +28,7 @@ Use the alphabatized list below to find the answer to your single-term questions
 
 - [**Aggregate Function**](/docs/visualizations/netdata-charts#aggregate-functions-over-time): A function applied When the granularity of the data collected is higher than the plotted points on the chart.
 
-- [**Alerts** (formerly **Alarms**)](/docs/alerting/notifications/netdata-cloud-notifications): With the information that appears on Netdata Cloud and the local dashboard about active alerts, you can configure alerts to match your infrastructure's needs or your team's goals.
+- [**Alerts** (formerly **Alarms**)](/docs/alerting/notifications/centralized-cloud-notifications): With the information that appears on Netdata Cloud and the local dashboard about active alerts, you can configure alerts to match your infrastructure's needs or your team's goals.
 
 - [**Alarm Entity Type**](/docs/alerting/health-configuration-reference#health-entity-reference): Entity types that are attached to specific charts and use the `alarm` label.
 
@@ -49,7 +50,7 @@ Use the alphabatized list below to find the answer to your single-term questions
 
 - [**Composite Charts**](/docs/monitor-your-infrastructure/home-overview-and-single-node-view#overview-and-single-node-view): Charts used by the **Overview** tab which aggregate metrics from all the nodes (or a filtered selection) in a given War Room.
 
-- [**Context**](/docs/data-collection/chart-dimensions-contexts-and-families#context): A way of grouping charts by the types of metrics collected and dimensions displayed. It's kind of like a machine-readable naming and organization scheme.
+- [**Context**](/docs/visualizations/chart-dimensions-contexts-and-families#context): A way of grouping charts by the types of metrics collected and dimensions displayed. It's kind of like a machine-readable naming and organization scheme.
 
 - [**Custom dashboards**](/docs/miscellaneous/build-a-custom-dashboard-html-page) A dashboard that you can create using simple HTML (no javascript is required for basic dashboards).
 
@@ -59,19 +60,19 @@ Use the alphabatized list below to find the answer to your single-term questions
 
 - [**Definition Bar**](/docs/visualizations/netdata-charts): Bar within a composite chart that provides important information and options about the metrics within the chart.
 
-- [**Dimension**](/docs/data-collection/chart-dimensions-contexts-and-families#dimension): A dimension is a value that gets shown on a chart.
+- [**Dimension**](/docs/visualizations/chart-dimensions-contexts-and-families#dimension): A dimension is a value that gets shown on a chart.
 
 - [**Distributed Architecture**](/docs/architecture/distributed-data-architecture): The data architecture mindset with which Netdata was built, where all data are collected and stored on the edge, whenever it's possible, creating countless benefits.
 
 ## E
 
-- [**External Plugins**](/docs/data-collection/external-plugins): These gather metrics from external processes, such as a webserver or database, and run as independent processes that communicate with the Netdata daemon via pipes.
+- [**External Plugins**](/docs/contributing/external-plugins): These gather metrics from external processes, such as a webserver or database, and run as independent processes that communicate with the Netdata daemon via pipes.
 
 ## F
 
-- [**Family**](/docs/data-collection/chart-dimensions-contexts-and-families#family): 1. What we consider our Netdata community of users and engineers. 2. A single instance of a hardware or software resource that needs to be displayed separately from similar instances.
+- [**Family**](/docs/visualizations/chart-dimensions-contexts-and-families#family): 1. What we consider our Netdata community of users and engineers. 2. A single instance of a hardware or software resource that needs to be displayed separately from similar instances.
 
-- [**Flood Protection**](/docs/alerting/notifications/netdata-cloud-notifications#flood-protection): If a node has too many state changes like firing too many alerts or going from reachable to unreachable, Netdata Cloud enables flood protection. As long as a node is in flood protection mode, Netdata Cloud does not send notifications about this node
+- [**Flood Protection**](/docs/alerting/notifications/centralized-cloud-notifications#flood-protection): If a node has too many state changes like firing too many alerts or going from reachable to unreachable, Netdata Cloud enables flood protection. As long as a node is in flood protection mode, Netdata Cloud does not send notifications about this node
 
 - [**Functions** or **Netdata Functions**](/docs/visualizations/functions): Routines exposed by a collector on the Netdata Agent that can  bring additional information to support troubleshooting or trigger some action to happen on the node itself.
 
@@ -113,7 +114,7 @@ Use the alphabatized list below to find the answer to your single-term questions
 
 - [**Metrics Streaming Replication**](/docs/streaming/understanding-how-streaming-works): Each node running Netdata can stream the metrics it collects, in real time, to another node. Metric streaming allows you to replicate metrics data across multiple nodes, or centralize all your metrics data into a single time-series database (TSDB).
 
-- [**Module**](/docs/data-collection/collectors-configuration#enable-and-disable-a-specific-collection-module): A type of collector.
+- [**Module**](/docs/configuring/collectors-configuration#enable-and-disable-a-specific-collection-module): A type of collector.
 
 ## N
 

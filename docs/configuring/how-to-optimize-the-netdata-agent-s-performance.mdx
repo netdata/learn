@@ -7,6 +7,7 @@ description: "While the Netdata Agent is designed to monitor a system with only 
 sidebar_position: "404000"
 learn_link: "https://learn.netdata.cloud/docs/configuring/how-to-optimize-the-netdata-agent's-performance"
 ---
+
 # How to optimize the Netdata Agent's performance
 
 We designed the Netdata Agent to be incredibly lightweight, even when it's collecting a few thousand dimensions every
@@ -162,7 +163,7 @@ seconds, respectively.
 
 Every collector and plugin has its own `update every` setting, which you can also change in the `go.d.conf`,
 `python.d.conf`, or `charts.d.conf` files, or in individual collector configuration files. If the `update
-every` for an individual collector is less than the global, the Netdata Agent uses the global setting. See the [collectors configuration reference](/docs/data-collection/collectors-configuration) for details.
+every` for an individual collector is less than the global, the Netdata Agent uses the global setting. See the [collectors configuration reference](/docs/configuring/collectors-configuration) for details.
 
 To reduce the frequency of an [internal
 plugin/collector](/docs/data-collection#collector-architecture-and-terminology), open `netdata.conf` and
@@ -174,7 +175,7 @@ metrics on application resource utilization:
     update every = 5
 ```
 
-To [configure an individual collector](/docs/data-collection/collectors-configuration#configure-a-collector), open its specific configuration file with
+To [configure an individual collector](/docs/configuring/collectors-configuration#configure-a-collector), open its specific configuration file with
 `edit-config` and look for the `update_every` setting. For example, to reduce the frequency of the `nginx` collector,
 run `sudo ./edit-config go.d/nginx.conf`:
 

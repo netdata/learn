@@ -2,11 +2,11 @@
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/collectors/README.md"
 sidebar_label: "Data Collection"
 learn_status: "Published"
-toc_max_heading_level: "4"
 learn_rel_path: "Data collection"
 sidebar_position: "600000"
 learn_link: "https://learn.netdata.cloud/docs/data-collection/data-collection"
 ---
+
 # Collectors
 
 When Netdata starts, and with zero configuration, it auto-detects thousands of data sources and immediately collects
@@ -21,7 +21,7 @@ See how you can [monitor anything with Netdata](/docs/data-collection/monitor-an
 
 Upon startup, Netdata will **auto-detect** any application or service that has a collector, as long as both the collector
 and the app/service are configured correctly. If you don't see charts for your application, see
-our [collectors' configuration reference](/docs/data-collection/collectors-configuration).
+our [collectors' configuration reference](/docs/configuring/collectors-configuration).
 
 ## How Netdata's metrics collectors work
 
@@ -54,18 +54,18 @@ specifics of what a given collector does.
     -   **External** plugins organize collectors that gather metrics from external processes, such as a MySQL database or
         Nginx web server. They can be written in any language, and the `netdata` daemon spawns them as long-running
         independent processes. They communicate with the daemon via pipes. All external plugins are managed by
-        [plugins.d](/docs/data-collection/external-plugins), which provides additional management options.
+        [plugins.d](/docs/contributing/external-plugins), which provides additional management options.
 
 -   **Orchestrators** are external plugins that run and manage one or more modules. They run as independent processes.
     The Go orchestrator is in active development.
 
-    -   [go.d.plugin](/docs/data-collection/external-plugins/go.d.plugin): An orchestrator for data
+    -   [go.d.plugin](/docs/contributing/external-plugins/go.d.plugin): An orchestrator for data
         collection modules written in `go`.
 
-    -   [python.d.plugin](/docs/data-collection/external-plugins/python.d.plugin): 
+    -   [python.d.plugin](/docs/contributing/external-plugins/python.d.plugin): 
         An orchestrator for data collection modules written in `python` v2/v3.
 
-    -   [charts.d.plugin](/docs/data-collection/external-plugins/charts.d.plugin): 
+    -   [charts.d.plugin](/docs/contributing/external-plugins/charts.d.plugin): 
         An orchestrator for data collection modules written in`bash` v4+.
 
 -   **Modules** are the individual programs controlled by an orchestrator to collect data from a specific application, or type of endpoint.
