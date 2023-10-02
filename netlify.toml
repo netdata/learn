@@ -5365,4 +5365,72 @@
   from="/docs/alerting/notifications/netdata-agent-notifications"
   to="/docs/alerting/notifications/agent-dispatched-notifications"
 
+[[redirects]]
+  from="/docs/agent/collectors/apps.plugin"
+  to="/docs/data-collection/application-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/cgroups.plugin"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/ebpf.plugin"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/freebsd.plugin"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/proc.plugin"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/haproxy"
+  to="/docs/data-collection/web-servers-and-web-proxies/haproxy"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Web%20Servers/haproxy-python.d.plugin"
+  to="/docs/data-collection/web-servers-and-web-proxies/haproxy"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Containers-and-VMs-cgroups"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/OS-provided-metrics-proc.plugin"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Kernel-traces-metrics-eBPF"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/FreeBSD-system-metrics-freebsd.plugin"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring"
+  to="/docs/data-collection/application-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/freebsd-system-metrics-freebsd.plugin"
+  to="/docs/data-collection/system-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/application-monitoring"
+  to="/docs/data-collection/application-metrics"
+
 # section: dynamic << END

@@ -28,3 +28,4 @@ yarn-error.log*
 # Ingest python environment
 /ingest/__pycache__/
 /myenv/
+venv

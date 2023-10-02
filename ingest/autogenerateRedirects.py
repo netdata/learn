@@ -162,7 +162,7 @@ def append_entries_to_json(dictionary):
 		for key in dictionary:
 			json_dictionary.update({key: dictionary[key]})
 
-		print(len(json_dictionary))
+		# print(len(json_dictionary))
 		json.dump(json_dictionary, json_file, indent=4)
 
 
