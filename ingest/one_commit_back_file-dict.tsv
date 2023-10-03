@@ -203,7 +203,7 @@ https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/megacl
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/example/README.md	/docs/data-collection/other/example-collector
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/w1sensor/README.md	/docs/data-collection/hardware-devices-and-sensors/1-wire-sensors
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/bind_rndc/README.md	/docs/data-collection/dns-and-dhcp-servers/isc-bind-rndc
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/beanstalk/README.md	/docs/data-collection/task-queues/beanstalk
+https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/beanstalk/README.md	/docs/data-collection/message-brokers/beanstalk
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/samba/README.md	/docs/data-collection/storage,-mount-points-and-filesystems/samba
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/memcached/README.md	/docs/data-collection/databases/memcached
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/pandas/README.md	/docs/data-collection/generic-data-collection/pandas
@@ -252,7 +252,7 @@ https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integra
 https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integrations/virtual_machines.md	/docs/data-collection/containers-and-vms/virtual-machines
 https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integrations/lxc_containers.md	/docs/data-collection/containers-and-vms/lxc-containers
 https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integrations/containers.md	/docs/data-collection/containers-and-vms/containers
-https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integrations/kubernetes_containers.md	/docs/data-collection/containers-and-vms/kubernetes-containers
+https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integrations/kubernetes_containers.md	/docs/data-collection/kubernetes/kubernetes-containers
 https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integrations/ovirt_containers.md	/docs/data-collection/containers-and-vms/ovirt-containers
 https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integrations/libvirt_containers.md	/docs/data-collection/containers-and-vms/libvirt-containers
 https://github.com/netdata/netdata/edit/master/collectors/perf.plugin/README.md	/docs/data-collection/linux-systems/cpu-performance
