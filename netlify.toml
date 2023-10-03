@@ -1446,10 +1446,6 @@
   to="/docs/maintaining/starting-and-stopping-netdata-agents"
 
 [[redirects]]
-  from="/docs/dashboard/dimensions-contexts-families"
-  to="/docs/visualizations/chart-dimensions-contexts-and-families"
-
-[[redirects]]
   from="/docs/dashboard/import-export-print-snapshot"
   to="/docs/miscellaneous/import-export-and-print-a-snapshot"
 
@@ -5222,10 +5218,6 @@
   to="/docs/configuring/collectors-configuration"
 
 [[redirects]]
-  from="/docs/data-collection/chart-dimensions-contexts-and-families"
-  to="/docs/visualizations/chart-dimensions-contexts-and-families"
-
-[[redirects]]
   from="/docs/data-collection/apm/php-applications"
   to="/docs/data-collection/apm/phpdaemon"
 
@@ -5448,5 +5440,13 @@
 [[redirects]]
   from="/docs/data-collection/task-queues/mesos"
   to="/docs/data-collection/provisioning-systems/mesos"
+
+[[redirects]]
+  from="/docs/dashboard/customize"
+  to="/docs/miscellaneous/customize-the-standard-dashboard"
+
+[[redirects]]
+  from="/docs/visualizations/agent-dashboard/customize-the-standard-dashboard"
+  to="/docs/miscellaneous/customize-the-standard-dashboard"
 
 # section: dynamic << END

@@ -291,6 +291,7 @@ https://github.com/netdata/netdata/edit/master/collectors/idlejitter.plugin/READ
 https://github.com/netdata/netdata/edit/master/collectors/debugfs.plugin/integrations/system_memory_fragmentation.md	/docs/data-collection/linux-systems/memory/system-memory-fragmentation
 https://github.com/netdata/netdata/edit/master/collectors/debugfs.plugin/integrations/power_capping.md	/docs/data-collection/linux-systems/kernel/power-capping
 https://github.com/netdata/netdata/edit/master/collectors/debugfs.plugin/integrations/linux_zswap.md	/docs/data-collection/linux-systems/memory/linux-zswap
+https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/README.md	/docs/data-collection/systemd-journal
 https://github.com/netdata/netdata/edit/master/collectors/freebsd.plugin/integrations/vm.vmtotal.md	/docs/data-collection/freebsd/vm.vmtotal
 https://github.com/netdata/netdata/edit/master/collectors/freebsd.plugin/integrations/net.inet.icmp.stats.md	/docs/data-collection/freebsd/net.inet.icmp.stats
 https://github.com/netdata/netdata/edit/master/collectors/freebsd.plugin/integrations/vm.stats.vm.v_swappgs.md	/docs/data-collection/freebsd/vm.stats.vm.v_swappgs
@@ -333,8 +334,8 @@ https://github.com/netdata/netdata/edit/master/docs/Running-behind-haproxy.md	/d
 https://github.com/netdata/netdata/edit/master/docs/netdata-security.md	/docs/architecture/security-and-privacy-design
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-lighttpd.md	/docs/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x
 https://github.com/netdata/netdata/edit/master/docs/running-through-cf-tunnels.md	/docs/miscellaneous/running-a-local-dashboard-through-cloudflare-tunnels
-https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	/docs/visualizations/chart-dimensions-contexts-and-families
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	/docs/monitor-your-infrastructure/visualization-date-and-time-controls
+https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	/docs/miscellaneous/customize-the-standard-dashboard
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	/docs/miscellaneous/import-export-and-print-a-snapshot
 https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	/docs/exporting/enable-an-exporting-connector
 https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md	/docs/exporting
