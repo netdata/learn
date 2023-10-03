@@ -203,12 +203,12 @@ https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/megacl
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/example/README.md	/docs/data-collection/other/example-collector
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/w1sensor/README.md	/docs/data-collection/hardware-devices-and-sensors/1-wire-sensors
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/bind_rndc/README.md	/docs/data-collection/dns-and-dhcp-servers/isc-bind-rndc
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/beanstalk/README.md	/docs/data-collection/message-brokers/beanstalk
+https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/beanstalk/README.md	/docs/data-collection/task-queues/beanstalk
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/samba/README.md	/docs/data-collection/storage,-mount-points-and-filesystems/samba
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/memcached/README.md	/docs/data-collection/databases/memcached
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/pandas/README.md	/docs/data-collection/generic-data-collection/pandas
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/litespeed/README.md	/docs/data-collection/web-servers-and-web-proxies/litespeed
-https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/puppet/README.md	/docs/data-collection/ci/cd-platforms/puppet
+https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/puppet/README.md	/docs/data-collection/cicd-platforms/puppet
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/changefinder/README.md	/docs/data-collection/other/python.d-changefinder
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/fail2ban/README.md	/docs/data-collection/authentication-and-authorization/fail2ban
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/rethinkdbs/README.md	/docs/data-collection/databases/rethinkdb
