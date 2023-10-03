@@ -771,7 +771,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/beanstalk"
-  to="/docs/data-collection/task-queues/beanstalk"
+  to="/docs/data-collection/message-brokers/beanstalk"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/bind_rndc"
@@ -2387,7 +2387,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Message%20Brokers/Beanstalk"
-  to="/docs/data-collection/task-queues/beanstalk"
+  to="/docs/data-collection/message-brokers/beanstalk"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Message%20Brokers/ActiveMQ"
@@ -3467,7 +3467,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/message-brokers/beanstalk"
-  to="/docs/data-collection/task-queues/beanstalk"
+  to="/docs/data-collection/message-brokers/beanstalk"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/message-brokers/activemq"
@@ -5051,7 +5051,7 @@
 
 [[redirects]]
   from="/docs/data-collection/message-brokers/beanstalk"
-  to="/docs/data-collection/task-queues/beanstalk"
+  to="/docs/data-collection/message-brokers/beanstalk"
 
 [[redirects]]
   from="/docs/data-collection/media-streaming-servers/icecast"
@@ -5432,5 +5432,13 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/application-monitoring"
   to="/docs/data-collection/application-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/task-queues/beanstalk"
+  to="/docs/data-collection/message-brokers/beanstalk"
+
+[[redirects]]
+  from="/docs/data-collection/containers-and-vms/kubernetes-containers"
+  to="/docs/data-collection/kubernetes/kubernetes-containers"
 
 # section: dynamic << END
