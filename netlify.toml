@@ -5441,4 +5441,12 @@
   from="/docs/data-collection/containers-and-vms/kubernetes-containers"
   to="/docs/data-collection/kubernetes/kubernetes-containers"
 
+[[redirects]]
+  from="/docs/data-collection/task-queues/slurm"
+  to="/docs/data-collection/provisioning-systems/slurm"
+
+[[redirects]]
+  from="/docs/data-collection/task-queues/mesos"
+  to="/docs/data-collection/provisioning-systems/mesos"
+
 # section: dynamic << END
