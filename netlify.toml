@@ -6,6 +6,10 @@
 
 
 [[redirects]]
+  from="/docs/visualizations/chart-dimensions-contexts-and-families"
+  to="/docs/visualizations/netdata-charts"
+
+[[redirects]]
   from="/docs/nightly/operations/alerts/add-opsgenie-notification-configuration"
   to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-opsgenie-notification-configuration"
 
