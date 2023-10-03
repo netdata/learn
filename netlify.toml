@@ -6,10 +6,6 @@
 
 
 [[redirects]]
-  from="/docs/visualizations/chart-dimensions-contexts-and-families"
-  to="/docs/visualizations/netdata-charts"
-
-[[redirects]]
   from="/docs/nightly/operations/alerts/add-opsgenie-notification-configuration"
   to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-opsgenie-notification-configuration"
 
@@ -775,7 +771,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/beanstalk"
-  to="/docs/data-collection/message-brokers/beanstalk"
+  to="/docs/data-collection/task-queues/beanstalk"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/bind_rndc"
@@ -871,7 +867,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/puppet"
-  to="/docs/data-collection/ci/cd-platforms/puppet"
+  to="/docs/data-collection/cicd-platforms/puppet"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/rethinkdbs"
@@ -2291,7 +2287,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Provisioning%20Tools/Puppet"
-  to="/docs/data-collection/ci/cd-platforms/puppet"
+  to="/docs/data-collection/cicd-platforms/puppet"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Provisioning%20Tools/Consul"
@@ -2387,7 +2383,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Message%20Brokers/Beanstalk"
-  to="/docs/data-collection/message-brokers/beanstalk"
+  to="/docs/data-collection/task-queues/beanstalk"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Message%20Brokers/ActiveMQ"
@@ -3371,7 +3367,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/provisioning-tools/puppet"
-  to="/docs/data-collection/ci/cd-platforms/puppet"
+  to="/docs/data-collection/cicd-platforms/puppet"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/provisioning-tools/consul"
@@ -3467,7 +3463,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/message-brokers/beanstalk"
-  to="/docs/data-collection/message-brokers/beanstalk"
+  to="/docs/data-collection/task-queues/beanstalk"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/message-brokers/activemq"
@@ -5007,7 +5003,7 @@
 
 [[redirects]]
   from="/docs/data-collection/provisioning-systems/puppet"
-  to="/docs/data-collection/ci/cd-platforms/puppet"
+  to="/docs/data-collection/cicd-platforms/puppet"
 
 [[redirects]]
   from="/docs/data-collection/processes-and-system-services/supervisord"
@@ -5051,7 +5047,7 @@
 
 [[redirects]]
   from="/docs/data-collection/message-brokers/beanstalk"
-  to="/docs/data-collection/message-brokers/beanstalk"
+  to="/docs/data-collection/task-queues/beanstalk"
 
 [[redirects]]
   from="/docs/data-collection/media-streaming-servers/icecast"
@@ -5431,7 +5427,7 @@
 
 [[redirects]]
   from="/docs/data-collection/task-queues/beanstalk"
-  to="/docs/data-collection/message-brokers/beanstalk"
+  to="/docs/data-collection/task-queues/beanstalk"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/kubernetes-containers"
@@ -5452,5 +5448,9 @@
 [[redirects]]
   from="/docs/visualizations/agent-dashboard/customize-the-standard-dashboard"
   to="/docs/miscellaneous/customize-the-standard-dashboard"
+
+[[redirects]]
+  from="/docs/data-collection/ci/cd-platforms/puppet"
+  to="/docs/data-collection/cicd-platforms/puppet"
 
 # section: dynamic << END
