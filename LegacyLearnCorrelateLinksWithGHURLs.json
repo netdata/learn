@@ -1343,5 +1343,10 @@
     "https://learn.netdata.cloud/docs/data-collection/containers-and-vms/kubernetes-containers": "https://github.com/netdata/netdata/blob/master/collectors/cgroups.plugin/integrations/kubernetes_containers.md",
     "https://learn.netdata.cloud/docs/data-collection/task-queues/slurm": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/slurm.md",
     "https://learn.netdata.cloud/docs/data-collection/task-queues/mesos": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/mesos.md",
-    "https://learn.netdata.cloud/docs/data-collection/ci/cd-platforms/puppet": "https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/puppet/README.md"
+    "https://learn.netdata.cloud/docs/data-collection/ci/cd-platforms/puppet": "https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/puppet/README.md",
+    "https://learn.netdata.cloud/docs/data-collection/provisioning-systems/slurm": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/slurm.md",
+    "https://learn.netdata.cloud/docs/data-collection/provisioning-systems/mesos": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/mesos.md",
+    "https://learn.netdata.cloud/docs/data-collection/ci/cd-platforms/jenkins": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/jenkins.md",
+    "https://learn.netdata.cloud/docs/data-collection/ci/cd-platforms/gitlab-runner": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/gitlab_runner.md",
+    "https://learn.netdata.cloud/docs/data-collection/ci/cd-platforms/concourse": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/concourse.md"
 }

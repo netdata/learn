@@ -535,7 +535,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integratio
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/mogilefs.md	/docs/data-collection/storage,-mount-points-and-filesystems/mogilefs
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/dependency-track.md	/docs/data-collection/apm/dependency-track
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/strongswan.md	/docs/data-collection/vpns/strongswan
-https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/jenkins.md	/docs/data-collection/ci/cd-platforms/jenkins
+https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/jenkins.md	/docs/data-collection/cicd-platforms/jenkins
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/arm_hwcpipe.md	/docs/data-collection/hardware-devices-and-sensors/arm-hwcpipe
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/apache_flink.md	/docs/data-collection/apm/apache-flink
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/zyxel_gs1200-8.md	/docs/data-collection/networking-stack-and-network-interfaces/zyxel-gs1200-8
@@ -547,7 +547,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integratio
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/meraki_dashboard.md	/docs/data-collection/networking-stack-and-network-interfaces/meraki-dashboard
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/ibm_spectrum.md	/docs/data-collection/storage,-mount-points-and-filesystems/ibm-spectrum
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/vscode.md	/docs/data-collection/apm/vscode
-https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/slurm.md	/docs/data-collection/provisioning-systems/slurm
+https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/slurm.md	/docs/data-collection/task-queues/slurm
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/borg_backup.md	/docs/data-collection/storage,-mount-points-and-filesystems/borg-backup
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/gcp_quota.md	/docs/data-collection/cloud-provider-managed/gcp-quota
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/warp10.md	/docs/data-collection/databases/warp10
@@ -590,7 +590,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integratio
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/discourse.md	/docs/data-collection/media-services/discourse
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/jolokia.md	/docs/data-collection/apm/jolokia
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/tacacs.md	/docs/data-collection/authentication-and-authorization/tacacs
-https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/concourse.md	/docs/data-collection/ci/cd-platforms/concourse
+https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/concourse.md	/docs/data-collection/cicd-platforms/concourse
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/modbus_protocol.md	/docs/data-collection/iot-devices/modbus-protocol
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/netflow.md	/docs/data-collection/networking-stack-and-network-interfaces/netflow
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/clamav_daemon.md	/docs/data-collection/security-systems/clamav-daemon
@@ -711,7 +711,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integratio
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/twitch.md	/docs/data-collection/media-services/twitch
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/raritan_pdu.md	/docs/data-collection/hardware-devices-and-sensors/raritan-pdu
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/aws_health_events.md	/docs/data-collection/cloud-provider-managed/aws-health-events
-https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/gitlab_runner.md	/docs/data-collection/ci/cd-platforms/gitlab-runner
+https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/gitlab_runner.md	/docs/data-collection/cicd-platforms/gitlab-runner
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/freifunk_network.md	/docs/data-collection/networking-stack-and-network-interfaces/freifunk-network
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/pingdom.md	/docs/data-collection/synthetic-checks/pingdom
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/storidge.md	/docs/data-collection/storage,-mount-points-and-filesystems/storidge
@@ -737,7 +737,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integratio
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/ubiquiti_ufiber_olt.md	/docs/data-collection/networking-stack-and-network-interfaces/ubiquiti-ufiber-olt
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/azure_ad_app_passwords.md	/docs/data-collection/cloud-provider-managed/azure-ad-app-passwords
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/jetbrains_floating_license_server.md	/docs/data-collection/generic-data-collection/jetbrains-floating-license-server
-https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/mesos.md	/docs/data-collection/provisioning-systems/mesos
+https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/mesos.md	/docs/data-collection/task-queues/mesos
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/aws_ecs.md	/docs/data-collection/cloud-provider-managed/aws-ecs
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/openvas.md	/docs/data-collection/security-systems/openvas
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/sentry.md	/docs/data-collection/apm/sentry
