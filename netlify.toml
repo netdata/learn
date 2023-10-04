@@ -5435,11 +5435,11 @@
 
 [[redirects]]
   from="/docs/data-collection/task-queues/slurm"
-  to="/docs/data-collection/provisioning-systems/slurm"
+  to="/docs/data-collection/task-queues/slurm"
 
 [[redirects]]
   from="/docs/data-collection/task-queues/mesos"
-  to="/docs/data-collection/provisioning-systems/mesos"
+  to="/docs/data-collection/task-queues/mesos"
 
 [[redirects]]
   from="/docs/dashboard/customize"
@@ -5452,5 +5452,25 @@
 [[redirects]]
   from="/docs/data-collection/ci/cd-platforms/puppet"
   to="/docs/data-collection/cicd-platforms/puppet"
+
+[[redirects]]
+  from="/docs/data-collection/provisioning-systems/slurm"
+  to="/docs/data-collection/task-queues/slurm"
+
+[[redirects]]
+  from="/docs/data-collection/provisioning-systems/mesos"
+  to="/docs/data-collection/task-queues/mesos"
+
+[[redirects]]
+  from="/docs/data-collection/ci/cd-platforms/jenkins"
+  to="/docs/data-collection/cicd-platforms/jenkins"
+
+[[redirects]]
+  from="/docs/data-collection/ci/cd-platforms/gitlab-runner"
+  to="/docs/data-collection/cicd-platforms/gitlab-runner"
+
+[[redirects]]
+  from="/docs/data-collection/ci/cd-platforms/concourse"
+  to="/docs/data-collection/cicd-platforms/concourse"
 
 # section: dynamic << END
