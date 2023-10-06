@@ -1,29 +1,13 @@
 """
 This is the script that gathers markdown files from all of Netdata's repos in this repo
-"""
-# Imports
-import argparse
-import glob
-import os
-import re
-import shutil
-import errno
-import json
-import ast
-import git
-import autogenerateRedirects as genRedirects
-import pandas as pd
-import numpy as np
 
-
-"""
 Stages of this ingest script:
 
     Stage_1: Ingest every available markdown from the defaultRepos
 
     Stage_2: We create three buckets:
-                1. markdownFiles: all the markdown files in defaultRepos
-                2. reducedMarkdownFiles: all the markdown files that have hidden metadata fields
+                1. all_markdown_files: all the markdown files in defaultRepos
+                2. markdown_files_with_metadata: all the markdown files that have hidden metadata fields
                 3. toPublish: markdown files that must be included in the learn 
                     (metadata_key_value: "learn_status": "Published") 
 
@@ -39,13 +23,29 @@ Stages of this ingest script:
     Stage_5: Convert GH links to version specific links
 """
 
+# Imports
+import argparse
+import glob
+import os
+import re
+import shutil
+import errno
+import json
+import ast
+import git
+import autogenerateRedirects as genRedirects
+import pandas as pd
+import numpy as np
+from pathlib import Path
+
 
 DRY_RUN = False
+DEBUG = False
 
 rest_files_dictionary = {}
 rest_files_with_metadata_dictionary = {}
 to_publish = {}
-markdownFiles = []
+all_markdown_files = []
 UNCORRELATED_LINK_COUNTER = 0
 FAIL_ON_NETDATA_BROKEN_LINKS = False
 # Temporarily until we release (change it (the default) to /docs
@@ -90,10 +90,19 @@ default_repos = {
         }
 }
 
+def clean_and_lower_string(string):
+    return re.sub(r'(-)+', '-', 
+    
+    
+    string.lower().replace(",", "-").replace(" ", "-").replace("//", "/"))
+
 def populate_integrations(markdownFiles):
     """
     if a symlink, read that, if not, look inside integrations folder.
     """
+
+    print("### Populating map from Integration metadata rows ###\n")
+
     metadata_dictionary = {}
     ignore_dup = []
 
@@ -580,23 +589,23 @@ def sanitize_page(path):
     file.close()
 
 
-def reduce_to_publish_in_gh_links_correlation(input_matrix, docs_prefix, docs_path_learn, temp_folder):
+def add_newLearnPath_key_to_dict(input_dict, docs_prefix, docs_path_learn, temp_folder):
     """
-    This function takes as an argument our Matrix of the Ingest process and creates a new dictionary with key value
-    pairs the Source file (keys) to the Target file (value: learn_absolute path)
+    This function takes as an argument our dictionary of the Ingest process and creates a new dictionary with key-value
+    pairs of type Source file -> Target file (learn_absolute path)
     """
     output_dictionary = dict()
-    for element in input_matrix:
-        repo = input_matrix[element]["ingestedRepo"]
+    for element in input_dict:
+        repo = input_dict[element]["ingestedRepo"]
         file_path = element.replace(temp_folder+"/"+repo+"/", "")
         source_link = produce_gh_view_link_for_repo(repo, file_path)
-        output_dictionary[source_link] = input_matrix[element]["learnPath"]\
+        output_dictionary[source_link] = input_dict[element]["learnPath"]\
             .split(".mdx")[0]\
             .lstrip('"')\
             .rstrip('"')\
             .replace(docs_prefix, docs_path_learn)
         source_link = produce_gh_edit_link_for_repo(repo, file_path)
-        output_dictionary[source_link] = input_matrix[element]["learnPath"]\
+        output_dictionary[source_link] = input_dict[element]["learnPath"]\
             .split(".mdx")[0]\
             .lstrip('"')\
             .rstrip('"')\
@@ -605,7 +614,7 @@ def reduce_to_publish_in_gh_links_correlation(input_matrix, docs_prefix, docs_pa
         # For now don't remove learnPath, as we need it for the link replacement logic
 
         # Check for pages that are category overview pages, and have filepath like ".../monitor/monitor".
-        # This way we remove the double dirname in the end, because docusaurus routes the file to ../monitor
+        # This way we remove the double dirname in the end, because docusaurus routes the file to .../monitor
         if output_dictionary[source_link].split("/")[len(output_dictionary[source_link].split("/"))-1] == \
                 output_dictionary[source_link].split("/")[len(output_dictionary[source_link].split("/"))-2]:
 
@@ -620,32 +629,30 @@ def reduce_to_publish_in_gh_links_correlation(input_matrix, docs_prefix, docs_pa
             ",", " ").replace("(", " ").replace("/  +/g", ' ').replace(" ", "%20").replace('/-+/', '-')
         # If there is a slug present in the file, then that is the newLearnPath, with a "/docs" added in the front.
         try:
-            input_matrix[element].update(
-                {"newLearnPath": "/docs"+input_matrix[element]["metadata"]["slug"]})
-        except:
-            input_matrix[element].update({"newLearnPath": _temp})
+            input_dict[element].update(
+                {"newLearnPath": "/docs"+input_dict[element]["metadata"]["slug"]})
+        except KeyError:
+            input_dict[element].update({"newLearnPath": _temp})
 
-    return input_matrix
+    return input_dict
 
 
-def convert_github_links(path, arg_dictionary):
+def convert_github_links(path_to_file, input_dict):
     """
     Input:
         path: The path to the markdown file
-        fileDic: the fileDictionary with every info about a file
+        input_dict: the dictionary with every info about all files
 
     Expected format of links in files:
         [*](https://github.com/netdata/netdata/blob/master/*)
+        or go.d.plugin or any other Netdata repo
     """
 
-    # Open the file for reading
-    dummy_file = open(path, "r")
-    whole_file = dummy_file.read()
-    dummy_file.close()
+    whole_file = Path(path_to_file).read_text()
 
     global UNCORRELATED_LINK_COUNTER
 
-    # Split the file into metadata that this function won't touch and the file's body
+    # Split the file into its metadata and body, so that this function doesn't touch the metadata fields
     metadata = "---" + whole_file.split("---", 2)[1] + "---"
     body = whole_file.split("---", 2)[2]
 
@@ -656,25 +663,21 @@ def convert_github_links(path, arg_dictionary):
         # Find all the links and add them in an array
         urls = []
         temp = re.findall(r'\[\n|.*?]\((\n|.*?)\)', body)
-        # For every link, try to not touch the heading that link points to, as it stays the same
-        for i in temp:
-            try:
-                urls.append(i.split('#')[0])
-            except:
-                urls.append(i)
+        # For every link, try to not touch the heading that link points to, as it stays the same after the conversion
+        for link in temp:
+            urls.append(link.split('#')[0])
 
         for url in urls:
-            
             # The URL will get replaced by the value of the replaceString
             try:
                 # The keys inside fileDict are like "ingest-temp-folder/netdata/collectors/charts.d.plugin/ap/README.md"
-                # , so from the link, we need:
-                # replace the https link prefix until our organization identifier with the prefix of the temp folder
-                # try and catch any mishaps in links that instead of "blob" have "edit"
-                # remove "blob/master/" or "blob/main/"
-                # Then we have the correct key for the dictionary
+                # so from the link, we need:
+                # 1. replace the https link prefix up until our organization identifier with the prefix of the temp folder
+                # 2. try and catch any mishaps in links that instead of "blob" have "edit"
+                # 3. remove "blob/master/" or "blob/main/"
+                # 4. Then we have the correct key for the dictionary
 
-                dictionary = arg_dictionary[url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
+                dictionary = input_dict[url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
                     "edit/", "blob/", 1).replace("blob/master/", "").replace("blob/main/", "")]
 
                 if "starwind" in url:
@@ -716,7 +719,7 @@ def convert_github_links(path, arg_dictionary):
                             # remove "blob/master/" or "blob/main/"
                             # Then we have the correct key for the dictionary
 
-                            dictionary = arg_dictionary[try_url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
+                            dictionary = input_dict[try_url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
                                 "edit", "blob").replace("blob/master/", "").replace("blob/main/", "")]
                             replace_string = dictionary["newLearnPath"]
 
@@ -771,15 +774,28 @@ def convert_github_links(path, arg_dictionary):
     whole_file = metadata + body
 
     # Write everything onto the file again
-    dummy_file = open(path, "w")
+    dummy_file = open(path_to_file, "w")
     dummy_file.seek(0)
     dummy_file.write(whole_file)
     dummy_file.close()
 
 
 def automate_sidebar_position(dictionary):
-    # The array that will be returned and placed as a column in the dataFrame
-    position = []
+    """
+    This function returns a column for the map dataframe, that assigns a certain number to every entry.
+
+    There are 3 different rules
+
+    Level 1 -> 100_000 gap between the top categories
+    Level 2 -> 2_000 gap between the level two categories
+    Level 3 -> 40 gap between the level three categories
+    Level 4 -> categories and documents at this level have no gap
+    """
+
+
+    print("### Automating sidebar_position ###", '\n')
+    
+    position_array = []
 
     # counters
     counter_one = 0
@@ -787,7 +803,7 @@ def automate_sidebar_position(dictionary):
     counter_three = 0
     counter_four = 0
 
-    # Start from the first entry adn keep it as the previous
+    # Start from the first entry and keep it as the previous
     split = dictionary['learn_rel_path'][0].split("/")
     try:
         previous_first_level = split[0]
@@ -796,12 +812,13 @@ def automate_sidebar_position(dictionary):
     except:
         pass
 
-    # For every entry, check for every level of the path if it is different,
-    # if it is, increment that level's counter by the specified amount.
+    # For every entry, check for every level of the path whether or not it is different.
+    # If it is, increment that level's counter by the specified amount.
     for path, i in zip(dictionary['learn_rel_path'], range(0, len(dictionary))):
         if str(path) != "nan":
             split = str(path+f"/{i}").split("/")
 
+            # Split the current path
             try:
                 current_first_level = split[0]
                 current_second_level = split[1]
@@ -836,11 +853,12 @@ def automate_sidebar_position(dictionary):
             except:
                 pass
 
-            position.append(counter_one+counter_two+counter_three+counter_four)
+            position_array.append(counter_one+counter_two+counter_three+counter_four)
         else:
-            position.append(-1)
+            # If for any reason the path is nan, just add a -1, this is very unlikely that it will be the case
+            position_array.append(-1)
 
-    return position
+    return position_array
 
 
 if __name__ == '__main__':
@@ -855,8 +873,14 @@ if __name__ == '__main__':
     )
 
     parser.add_argument(
-        "-d", "--dry-run",
+        "--dry-run",
         help="Don't save a file with the output.",
+        action="store_true",
+    )
+
+    parser.add_argument(
+        "-d", "--debug",
+        help="Enable debug printing",
         action="store_true",
     )
 
@@ -877,15 +901,17 @@ if __name__ == '__main__':
     # netdata/netdata:branch tkatsoulas/go.d.plugin:mybranch
     args = parser.parse_args()
     kArgs = args._get_kwargs()
-    '''Create local copies from the parse_args input'''
+    
+    # Create local copies from the parse_args input
     DOCS_PREFIX = args.DOCS_PREFIX
     for arg in kArgs:
-        # print(x)
         if arg[0] == "repos":
             list_of_repos_in_str = arg[1]
-        if arg[0] == "dryRun":
-            print(arg[1])
+        if arg[0] == "dry_run":
             DRY_RUN = arg[1]
+        if arg[0] == "d" or arg[0] == "debug":
+            DEBUG = True
+            print("RUNNING WITH DEBUG MESSAGES ON")
         if arg[0] == "fail_on_internal_broken_links":
             FAIL_ON_NETDATA_BROKEN_LINKS = arg[1]
 
@@ -911,62 +937,55 @@ if __name__ == '__main__':
             except Exception as exc:
                 print("Unknown error in parsing", exc)
 
-    '''
-    Clean up old clones into a temp dir
-    '''
+    # Clean up old clones into a temp dir
     unsafe_cleanup_folders(TEMP_FOLDER)
-    '''
-    Clean up old ingested docs
-    '''
+    # Clean up old ingested docs
     safe_cleanup_learn_folders(DOCS_PREFIX)
     print("Creating a temp directory: ", TEMP_FOLDER)
+    
     try:
         os.mkdir(TEMP_FOLDER)
     except FileExistsError:
         print("Folder already exists")
 
-
-    '''Clone all the predefined repos'''
+    # Clone all the predefined repos
     for repo_name in default_repos.keys():
         print(clone_repo(default_repos[repo_name]["owner"], repo_name,
               default_repos[repo_name]["branch"], 1, TEMP_FOLDER + "/"))
 
-
-    # This line is useful only during the rework
-    # print(cloneRepo("netdata", "learn", "rework-learn", 1, TEMP_FOLDER + "/"))
     # We fetch the markdown files from the repositories
-    markdownFiles = fetch_markdown_from_repo(TEMP_FOLDER)
-    print("Files detected: ", len(markdownFiles))
-    print("Gathering Learn files...")
-    # After this we need to keep only the files that have metadata, so we will fetch metadata for everything and keep
-    # the entries that have populated dictionaries
+    all_markdown_files = fetch_markdown_from_repo(TEMP_FOLDER)
+    print("Files detected: ", len(all_markdown_files), "\n")
 
+    # Fill the mapDict with the metadata the integration mds have (autogenerated metadata)
+    mapDict = populate_integrations(all_markdown_files)
 
-
-    mapDict = populate_integrations(markdownFiles)
-
+    # set the index to the unique custom_edit_url column
     mapDict.set_index('custom_edit_url').T.to_dict('dict')
 
+    # Automate the sidebar position
     mapDict['sidebar_position'] = automate_sidebar_position(mapDict)
+    # Make the column type integer
     mapDict['sidebar_position'] = mapDict['sidebar_position'].astype(int)
 
-    flag = 0
-    reduced_markdown_files = []
-    for markdown in markdownFiles:
+    markdown_files_with_metadata = []
+
+    for markdown in all_markdown_files:
         # print("File: ", markdown)
         md_metadata = insert_and_read_hidden_metadata_from_doc(markdown, mapDict)
         # Check to see if the dictionary returned is empty
         if len(md_metadata) > 0:
             # print("FOUND METADATA", markdown)
             # print(metadata)
-            reduced_markdown_files.append(markdown)
-            if "learn_status" in md_metadata.keys():
-                if md_metadata["learn_status"] == "Published":
+            markdown_files_with_metadata.append(markdown)
+            if "learn_status" in md_metadata.keys() and md_metadata["learn_status"] == "Published":
                     try:
                         # check the type of the response (for more info of what the response can be check
                         # the return statements of the function itself)
                         response = create_mdx_path_from_metadata(md_metadata)
+                        
                         if type(response) != str:
+                            # If the response is not a string then it is a two item array, [final path, slug]
                             md_metadata.update({"slug": str(response[1])})
                             to_publish[markdown] = {
                                 "metadata": md_metadata,
@@ -985,16 +1004,15 @@ if __name__ == '__main__':
                             }
                             # replace first ", " and then " ", this needs to be handled in a prettier way, but other updates in this file are on the way.
                             if md_metadata['learn_rel_path'] != md_metadata['sidebar_label']:
-                                md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs/" + md_metadata['learn_rel_path'].lower().replace(", ", "-").replace(" ", "-").replace("//", "/") + "/" + md_metadata['sidebar_label'].lower().replace(", ", "-").replace(" ", "-").replace("//", "/")})
+                                md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs/" + clean_and_lower_string(md_metadata['learn_rel_path']) + "/" + clean_and_lower_string(md_metadata['sidebar_label'])})
                             else:
-                                md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs/" + md_metadata['learn_rel_path'].lower().replace(", ", "-").replace(" ", "-").replace("//", "/")})
+                                md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs/" + clean_and_lower_string(md_metadata['learn_rel_path'])})
                         update_metadata_of_file(markdown, md_metadata)
-                        # insert_link_metadata(markdown, md_metadata)
-                    except Exception as exc:
+                    except KeyError as exc:
                         print(
-                            f"File {markdown} doesn't contain key-value {KeyError}", exc)
-
+                            f"File {markdown} doesn't contain key-value", exc)
             else:
+                # We don't need these files
                 rest_files_with_metadata_dictionary[markdown] = {
                     "metadata": md_metadata,
                     "learnPath": str(f"docs/_archive/_{markdown}"),
@@ -1004,35 +1022,27 @@ if __name__ == '__main__':
         elif not os.stat(markdown).st_size == 0:
             rest_files_dictionary[markdown] = {"tmpPath": markdown}
         del md_metadata
-    # we update the list only with the files that are destined for Learn
-
 
     # FILE MOVING
-    print("Moving files...")
+    print("### Moving files ###\n")
 
-    # identify published documents:q
-    print("Found Learn files: ", len(to_publish))
-    # print(json.dumps(toPublish, indent=4))
-    # print(json.dumps(toPublish, indent=4))
+    # identify published documents
+    print(f"### Found Learn files: {len(to_publish)}###\n")
+    
     for md_file in to_publish:
         copy_doc(md_file, to_publish[md_file]["learnPath"])
         sanitize_page(to_publish[md_file]["learnPath"])
-    for md_file in rest_files_with_metadata_dictionary:
-        pass
-        # moveDoc(file, restFilesDictionary[file]["learnPath"])
-    # print("Generating integrations page")
-    # genIntPage.generate(toPublish, DOCS_PREFIX+"/getting-started/integrations.mdx")
-    # print("Done")
 
-    print("Fixing github links...")
+    print("### Fixing github links ###")
+    
     # After the moving, we have a new metadata, called newLearnPath, and we utilize that to fix links that were
     # pointing to GitHub relative paths
-    # print(json.dumps(reduceToPublishInGHLinksCorrelation(toPublish, DOCS_PREFIX, "/docs", TEMP_FOLDER), indent=4))
-    file_dict = reduce_to_publish_in_gh_links_correlation(
+    file_dict = add_newLearnPath_key_to_dict(
         to_publish, DOCS_PREFIX, "/docs", TEMP_FOLDER)
-    # print(json.dumps(fileDict, indent=4))
+
     for md_file in to_publish:
         convert_github_links(file_dict[md_file]["learnPath"], file_dict)
+
     genRedirects.main(file_dict)
     print("Done.", "Uncorrelated links (links from our github repos that the files are not in Learn):", UNCORRELATED_LINK_COUNTER)
     
