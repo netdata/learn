@@ -5439,7 +5439,7 @@
 
 [[redirects]]
   from="/docs/data-collection/task-queues/mesos"
-  to="/docs/data-collection/task-queues/mesos"
+  to="/docs/data-collection/provisioning-systems/mesos"
 
 [[redirects]]
   from="/docs/dashboard/customize"
@@ -5459,7 +5459,7 @@
 
 [[redirects]]
   from="/docs/data-collection/provisioning-systems/mesos"
-  to="/docs/data-collection/task-queues/mesos"
+  to="/docs/data-collection/provisioning-systems/mesos"
 
 [[redirects]]
   from="/docs/data-collection/ci/cd-platforms/jenkins"

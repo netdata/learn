@@ -737,7 +737,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integratio
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/ubiquiti_ufiber_olt.md	/docs/data-collection/networking-stack-and-network-interfaces/ubiquiti-ufiber-olt
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/azure_ad_app_passwords.md	/docs/data-collection/cloud-provider-managed/azure-ad-app-passwords
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/jetbrains_floating_license_server.md	/docs/data-collection/generic-data-collection/jetbrains-floating-license-server
-https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/mesos.md	/docs/data-collection/task-queues/mesos
+https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/mesos.md	/docs/data-collection/provisioning-systems/mesos
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/aws_ecs.md	/docs/data-collection/cloud-provider-managed/aws-ecs
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/openvas.md	/docs/data-collection/security-systems/openvas
 https://github.com/netdata/go.d.plugin/edit/master/modules/prometheus/integrations/sentry.md	/docs/data-collection/apm/sentry
