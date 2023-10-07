@@ -229,5 +229,10 @@ module.exports = {
 			crossorigin: '',
 		},
 	],
-	scripts: [],
+	scripts: [
+		{
+			src:'/loadtags.js',
+			async: false
+		}
+	],
 };
