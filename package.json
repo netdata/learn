@@ -28,7 +28,7 @@
 		"clsx": "^1.1.1",
 		"docusaurus-tailwindcss-loader": "file:plugins/docusaurus-tailwindcss-loader",
 		"dotenv": "^8.2.0",
-		"postcss": "^8.2.8",
+		"postcss": "^8.4.31",
 		"postcss-import": "^15.1.0",
 		"postcss-nesting": "^8.0.1",
 		"posthog-docusaurus": "^2.0.0",
