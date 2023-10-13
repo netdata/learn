@@ -645,9 +645,6 @@ def convert_github_links(path_to_file, input_dict):
                 dictionary = input_dict[url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
                     "edit/", "blob/", 1).replace("blob/master/", "").replace("blob/main/", "")]
 
-                if "starwind" in url:
-                    dictionary
-
                 replace_string = dictionary["new_learn_path"]
 
                 # In some cases, a "id: someId" will be in a file, this is to change a file's link in Docusaurus,
