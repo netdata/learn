@@ -413,19 +413,14 @@ def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
     if len(output) > 0:
         output = "<!--\n" + output + "-->\n"
 
-        dummy_file = open(path_to_file, "r")
-        whole_file = dummy_file.read()
-        dummy_file.close()
+        whole_file = Path(path_to_file).read_text()
 
         if whole_file.startswith("<!--"):
             body = whole_file.split("-->", 1)[1]
         else:
             body = whole_file
 
-        dummy_file = open(path_to_file, "w")
-        dummy_file.seek(0)
-        dummy_file.write(output + body)
-        dummy_file.close()
+        Path(path_to_file).write_text(output + body)
 
         # print(path_to_file, output)
         metadata_dictionary = {}
