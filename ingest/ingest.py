@@ -41,6 +41,7 @@ from pathlib import Path
 
 DRY_RUN = False
 DEBUG = False
+DOCS_PREFIX = "will be added by arguments"
 
 rest_files_dictionary = {}
 rest_files_with_metadata_dictionary = {}
@@ -338,7 +339,7 @@ def create_mdx_path_from_metadata(metadata):
 
     if "Data Collection" in metadata['learn_rel_path']\
             and metadata['learn_rel_path'].split("/")[-1] != "Data Collection" and 'External-plugins' not in metadata['learn_rel_path']:
-        last_folder = metadata['learn_rel_path'].split("Data Collection")[1]
+        last_folder = metadata['learn_rel_path'].split("Data Collection", 1)[1]
         last_folder = "data-collection" + last_folder
         # print(last_folder)
         # exit()
@@ -675,10 +676,12 @@ def convert_github_links(path_to_file, input_dict):
             except Exception as e:
                 # This is probably a link that can't be translated to a Learn link (e.g. An external file)
                 if url.startswith("https://github.com/netdata") and re.search(r"\.md", url):
-
+                    # Try to rescue an integration link
                     if "integrations" in url and ("collectors" in url or "modules" in url):
-
-                        try_url = url.split("integrations")[0] + "README.md"
+                        # Due to the integrations/cloud_notifications/integrations/.. scenario, we use rsplit to remove the last occurrence of "integrations"
+                        # We want to map links to specific integrations mds, to their parent README, in case the above try-catch failed to find the replacement.
+                        try_url = url.rsplit("integrations", 1)[
+                            0] + "README.md"
                         # The URL will get replaced by the value of the replaceString
                         try:
                             # The keys inside fileDict are like "ingest-temp-folder/netdata/collectors/charts.d.plugin/ap/README.md"
@@ -743,10 +746,7 @@ def convert_github_links(path_to_file, input_dict):
     whole_file = metadata + body
 
     # Write everything onto the file again
-    dummy_file = open(path_to_file, "w")
-    dummy_file.seek(0)
-    dummy_file.write(whole_file)
-    dummy_file.close()
+    Path(path_to_file).write_text(whole_file)
 
 
 def automate_sidebar_position(dictionary):
@@ -777,7 +777,7 @@ def automate_sidebar_position(dictionary):
         previous_first_level = split[0]
         previous_second_level = split[1]
         previous_third_level = split[2]
-    except:
+    except IndexError:
         pass
 
     # For every entry, check for every level of the path whether or not it is different.
@@ -791,7 +791,7 @@ def automate_sidebar_position(dictionary):
                 current_first_level = split[0]
                 current_second_level = split[1]
                 current_third_level = split[2]
-            except:
+            except IndexError:
                 pass
 
             # This works more or less like a Greek abacus
@@ -811,14 +811,14 @@ def automate_sidebar_position(dictionary):
                 else:
                     counter_four += 1
 
-            except:
+            except UnboundLocalError:
                 pass
 
             try:
                 previous_first_level = current_first_level
                 previous_second_level = current_second_level
                 previous_third_level = current_third_level
-            except:
+            except UnboundLocalError:
                 pass
 
             position_array.append(
@@ -878,9 +878,10 @@ if __name__ == '__main__':
             list_of_repos_in_str = arg[1]
         if arg[0] == "dry_run":
             DRY_RUN = arg[1]
-        if arg[0] == "d" or arg[0] == "debug":
-            DEBUG = True
-            print("RUNNING WITH DEBUG MESSAGES ON")
+        if arg[0] == "debug" or arg[0] == "debug":
+            if arg[1]:
+                DEBUG = True
+                print("RUNNING WITH DEBUG MESSAGES ON")
         if arg[0] == "fail_on_internal_broken_links":
             FAIL_ON_NETDATA_BROKEN_LINKS = arg[1]
 
