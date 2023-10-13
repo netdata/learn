@@ -38,11 +38,29 @@ journal centralization servers.
 `systemd-journal.plugin` is a Netdata Function Plugin.
 
 To protect your privacy, as with all Netdata Functions, a free Netdata Cloud user account is required to access it.
+For more information check [this discussion](https://github.com/netdata/netdata/discussions/16136).
 
 ### Limitations
 
+#### Plugin availability
+
+The following are limitations related to the availability of the plugin:
+
 - This plugin is not available when Netdata is installed in a container. The problem is that `libsystemd` is not available in Alpine Linux (there is a `libsystemd`, but it is a dummy that returns failure on all calls). We plan to change this, by shipping Netdata containers based on Debian.
 - For the same reason (lack of `systemd` support for Alpine Linux), the plugin is not available on `static` builds of Netdata (which are based on `muslc`, not `glibc`).
+- On old systemd systems (like Centos 7), the plugin runs always in "full data query" mode, which makes it slower. The reason, is that systemd API is missing some important calls we need to use the field indexes of `systemd` journal. However, when running in this mode, the plugin offers also negative matches on the data (like filtering for all logs that do not have set some field), and this is the reason "full data query" mode is also offered as an option even on newer versions of `systemd`.
+
+To use the plugin, install one of our native distribution packages, or install it from source.
+
+#### `systemd` journal features
+
+The following are limitations related to the features of `systemd` journal:
+
+- This plugin does not support binary field values. `systemd` journal has the ability to assign fields with binary data. This plugin assumes all fields contain text values (text in this context includes numbers).
+- This plugin does not support multiple values per field for any given log entry. `systemd` journal has the ability to accept the same field key, multiple times, with multiple values on a single log entry. This plugin will present the last value and ignore the others for this log entry.
+- This plugin will only read journal files located in `/var/log/journal` or `/run/log/journal`. `systemd-remote` has the ability to store journal files anywhere (user configured). If journal files are not located in `/var/log/journal` or `/run/log/journal` (and any of their subdirectories), the plugin will not find them.
+
+Other than the above, this plugin supports all features of `systemd` journals.
 
 ## Journal Sources
 
@@ -57,36 +75,44 @@ The plugin, by default, merges all journal sources together, to provide a unifie
 
 ### `system` journals
 
-These are the default journals available on all systems.
+`system` journals are the default journals available on all `systemd` based systems.
 
 `system` journals contain:
 
 - kernel log messages (via `kmsg`),
 - audit records, originating from the kernel audit subsystem,
-- messages received via `syslog`,
+- messages received by `systemd-journald` via `syslog`,
 - messages received via the standard output and error of service units,
 - structured messages received via the native journal API.
 
 ### `user` journals
 
+Unlike `journalctl`, the Netdata plugin allows viewing, exploring and querying the journal files of **all users**.
+
 By default, each user, with a UID outside the range of system users (0 - 999), dynamic service users,
 and the nobody user (65534), will get their own set of `user` journal files. For more information about
 this policy check [Users, Groups, UIDs and GIDs on systemd Systems](https://systemd.io/UIDS-GIDS/).
 
-The plugin allows viewing, exploring and querying the journal files of all users.
+Keep in mind that `user` journals are merged with the `system` journals when they are propagated to a journal
+centralization server. So, at the centralization server, the `remote` journals contain both the `system` and `user`
+journals of the sender.
 
 ### `namespaces` journals
 
-Journal 'namespaces' are both a mechanism for logically isolating the log stream of projects consisting
-of one or more services from the rest of the system and a mechanism for improving performance. `systemd` service
-units may be assigned to a specific journal namespace through the `LogNamespace=` unit file setting.
-
 The plugin auto-detects the namespaces available and provides a list of all namespaces at the "sources" list on the UI.
+
+Journal namespaces are both a mechanism for logically isolating the log stream of projects consisting
+of one or more services from the rest of the system and a mechanism for improving performance.
+
+`systemd` service units may be assigned to a specific journal namespace through the `LogNamespace=` unit file setting.
+
+Keep in mind that namespaces require special configuration to be propagated to a journal centralization server.
+This makes them a little more difficult to handle, from the administration perspective.
 
 ### `remote` journals
 
-Remote journals are created by `systemd-journal-remote`. This feature allows creating logs centralization points within
-your infrastructure.
+Remote journals are created by `systemd-journal-remote`. This `systemd` feature allows creating logs centralization points within
+your infrastructure, based exclusively on `systemd`.
 
 Usually `remote` journals are named by the IP of the server sending these logs. The Netdata plugin automatically
 extracts these IPs and performs a reverse DNS lookup to find their hostnames. When this is successful,
@@ -96,6 +122,15 @@ For information about configuring a journals' centralization server, check [this
 
 ## Journal Fields
 
+`systemd` journals are designed to support multiple fields per log entry. The power of `systemd` journals is that,
+unlike other log management systems, it supports dynamic and variable fields for each log message,
+while all fields and their values are indexed for fast querying.
+
+This means that each application can log messages annotated with its own unique fields and values, and `systemd`
+journals will automatically index all of them, without any configuration or manual action.
+
+For a description of the most frequent fields found in `systemd` journals, check `man systemd.journal-fields`. 
+
 Fields found in the journal files are automatically added to the UI in multiple places to help you explore
 and filter the data.
 
@@ -103,19 +138,19 @@ The plugin automatically enriches certain fields to make them more user-friendly
 
 - `_BOOT_ID`: the hex value is annotated with the timestamp of the first message encountered for this boot id.
 - `PRIORITY`: the numeric value is replaced with the human-readable name of each priority.
-- `SYSLOG_FACILITY`: the encoded value is replaced with the human-readable name of each value.
+- `SYSLOG_FACILITY`: the encoded value is replaced with the human-readable name of each facility.
 - `ERRNO`: the numeric value is annotated with the short name of each value.
-- `_UID` `_AUDIT_LOGINUID` and `_SYSTEMD_OWNER_UID`: the local user database is consulted to annotate them with usernames.
-- `_GID`: the local group database is consulted to annotate them with group names.
+- `_UID` `_AUDIT_LOGINUID`, `_SYSTEMD_OWNER_UID`, `OBJECT_UID`, `OBJECT_SYSTEMD_OWNER_UID`, `OBJECT_AUDIT_LOGINUID`: the local user database is consulted to annotate them with usernames.
+- `_GID`, `OBJECT_GID`: the local group database is consulted to annotate them with group names.
 - `_CAP_EFFECTIVE`: the encoded value is annotated with a human-readable list of the linux capabilities.
 - `_SOURCE_REALTIME_TIMESTAMP`: the numeric value is annotated with human-readable datetime in UTC.
 
 The values of all other fields are presented as found in the journals.
 
-> IMPORTANT:  
-> `_UID` `_AUDIT_LOGINUID`, `_SYSTEMD_OWNER_UID` and `_GID` annotations are added during presentation and are taken
-> from the server running the plugin. For `remote` sources, the names presented may not reflect the actual user and
-> group names on the origin server. 
+> IMPORTANT:
+> The UID and GID annotations are added during presentation and are taken from the server running the plugin.
+> For `remote` sources, the names presented may not reflect the actual user and group names on the origin server.
+> The numeric value will still be visible though, as-is on the origin server.
 
 The annotations are not searchable with full text search. They are only added for the presentation of the fields. 
 
@@ -127,8 +162,8 @@ All journal fields available in the journal files are offered as columns on the 
 
 ### Journal fields as additional info to each log entry
 
-When you click a log line, the sidebar, on the right of the screen, provides the full list of fields related to this
-log line. You can close this info sidebar, by selecting the filter icon at its top.
+When you click a log line, the `info` sidebar will open on the right of the screen, to provide the full list of fields related to this
+log line. You can close this `info` sidebar, by selecting the filter icon at its top.
 
 ![image](https://github.com/netdata/netdata/assets/2662304/3207794c-a61b-444c-8ffe-6c07cbc90ae2)
 
@@ -153,7 +188,7 @@ When "full data queries" is off, empty values are hidden and cannot be selected.
 
 When "full data queries" is on, Netdata is applying all filtering to the data (not `libsystemd`), but this means
 that all the data of the entire time-frame, without any filtering applied, have to be read by the plugin to prepare
-the response required.
+the response required. So, "full data queries" can be significantly slower over long time-frames.
 
 ### Journal fields as histogram sources
 
@@ -176,14 +211,18 @@ The histogram presented by the plugin is interactive:
 ## PLAY mode
 
 The plugin supports PLAY mode, to continuously update the screen with new log entries found in the journal files.
+Just hit the "play" button at the top of the Netdata dashboard screen.
 
-On centralized log servers, this provides a unified view of all the logs encountered across the entire infrastructure.
+On centralized log servers, PLAY mode provides a unified view of all the new logs encountered across the entire infrastructure,
+from all hosts sending logs to the central logs server via `systemd-remote`.
 
 ## Full-text search
 
 The plugin supports searching for any text on all fields of the log entries.
 
 Full text search is combined with the selected filters.
+
+The text box accepts asterisks `*` as wildcards. So, `a*b*c` means match anything that contains `a`, then `b` and then `c` with anything between them.
 
 ## Query performance
 
@@ -194,16 +233,27 @@ of the files into memory, to satisfy each query.
 
 On logs aggregation servers, the performance of the queries depend on the following factors:
 
-1. The number of files involved in each query. This is why we suggest to select a source when possible.
-2. The speed of the disks hosting the journal files. Journal files perform a lot of reading while querying, so the fastest the disks, the faster the query will finish.
-3. The memory available for caching parts of the files. Increased memory will help the kernel cache the most frequently used parts of the journal files, avoiding disk I/O and speeding up queries.
-4. The number of filters applied. Queries are significantly faster when just a few filters are selected.
+1. The **number of files** involved in each query.
 
-In general, for a faster experience, keep a low number of rows within the visible timeframe.
+   This is why we suggest to select a source when possible.
+   
+2. The **speed of the disks** hosting the journal files.
 
-Even on long timeframes, selecting a couple of filters that will result in a few dozen thousand log entries
-will provide fast / rapid responses, usually less than a second. To the contrary, viewing timeframes with millions
-of entries may result in longer delays.
+   Journal files perform a lot of reading while querying, so the fastest the disks, the faster the query will finish.
+   
+3. The **memory available** for caching parts of the files.
+
+   Increased memory will help the kernel cache the most frequently used parts of the journal files, avoiding disk I/O and speeding up queries.
+   
+4. The **number of filters** applied.
+
+   Queries are significantly faster when just a few filters are selected.
+
+In general, for a faster experience, **keep a low number of rows within the visible timeframe**.
+
+Even on long timeframes, selecting a couple of filters that will result in a **few dozen thousand** log entries
+will provide fast / rapid responses, usually less than a second. To the contrary, viewing timeframes with **millions
+of entries** may result in longer delays.
 
 The plugin aborts journal queries when your browser cancels inflight requests. This allows you to work on the UI
 while there are background queries running.
@@ -257,7 +307,7 @@ You need a free Netdata Cloud account only to verify your identity and enable th
 Netdata Functions. Once this is done, all the data flow directly from your Netdata agent
 to your web browser.
 
-To understand why this is required, check [this discussion](https://github.com/netdata/netdata/discussions/16136).
+Also check [this discussion](https://github.com/netdata/netdata/discussions/16136).
 
 When you access Netdata via `https://app.netdata.cloud`, your data travel via Netdata Cloud,
 but they are not stored in Netdata Cloud. This is to allow you access your Netdata agents from
@@ -272,6 +322,26 @@ and `persistent` journals stored on disk.
 disk I/O, or does not have any writable disks at all.
 
 For more information check `man systemd-journald`.
+
+### I centralize my logs with Loki. Why to use Netdata for my journals?
+
+`systemd` journals have almost infinite cardinality at their labels and all of them are indexed,
+even if every single message has unique fields and values.
+
+When you send `systemd` journal logs to Loki, even if you use the `relabel_rules` argument to
+`loki.source.journal` with a JSON format, you need to specify which of the fields from journald
+you want inherited by Loki. This means you need to know the most important fields beforehand.
+At the same time you loose all the flexibility `systemd` journal provides:
+**indexing on all fields and all their values**.
+
+Loki generally assumes that all logs are like a table. All entries in a stream share the same
+fields. But journald does exactly the opposite. Each log entry is unique and may have its own unique fields.
+
+So, Loki and `systemd-journal` are good for different use cases.
+
+`systemd-journal` already runs in your systems. You use it today. It is there inside all your systems
+collecting the system and applications logs. And for its use case, it has advantages over other
+centralization solutions. So, why not use it?
 
 ### Is it worth to build a `systemd` logs centralization server?
 
