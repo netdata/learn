@@ -5439,7 +5439,7 @@
 
 [[redirects]]
   from="/docs/data-collection/task-queues/mesos"
-  to="/docs/data-collection/provisioning-systems/mesos"
+  to="/docs/data-collection/task-queues/mesos"
 
 [[redirects]]
   from="/docs/dashboard/customize"
@@ -5459,7 +5459,7 @@
 
 [[redirects]]
   from="/docs/data-collection/provisioning-systems/mesos"
-  to="/docs/data-collection/provisioning-systems/mesos"
+  to="/docs/data-collection/task-queues/mesos"
 
 [[redirects]]
   from="/docs/data-collection/ci/cd-platforms/jenkins"
@@ -5472,5 +5472,9 @@
 [[redirects]]
   from="/docs/data-collection/ci/cd-platforms/concourse"
   to="/docs/data-collection/cicd-platforms/concourse"
+
+[[redirects]]
+  from="/docs/data-collection/apm/dynatrace"
+  to="/docs/data-collection/observability/dynatrace"
 
 # section: dynamic << END
