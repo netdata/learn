@@ -291,9 +291,9 @@ https://github.com/netdata/netdata/edit/master/collectors/idlejitter.plugin/READ
 https://github.com/netdata/netdata/edit/master/collectors/debugfs.plugin/integrations/system_memory_fragmentation.md	/docs/data-collection/linux-systems/memory/system-memory-fragmentation
 https://github.com/netdata/netdata/edit/master/collectors/debugfs.plugin/integrations/power_capping.md	/docs/data-collection/linux-systems/kernel/power-capping
 https://github.com/netdata/netdata/edit/master/collectors/debugfs.plugin/integrations/linux_zswap.md	/docs/data-collection/linux-systems/memory/linux-zswap
-https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_self_signed_certs.md	/docs/logs/passive-journal-centralization-with-encryption-using-self-signed-certificates
+https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_self_signed_certs.md	/docs/logs/systemd-journal/passive-journal-centralization-with-encryption-using-self-signed-certificates
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/README.md	/docs/logs/systemd-journal
-https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_no_encryption.md	/docs/logs/passive-journal-centralization-without-encryption
+https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_no_encryption.md	/docs/logs/systemd-journal/passive-journal-centralization-without-encryption
 https://github.com/netdata/netdata/edit/master/collectors/freebsd.plugin/integrations/vm.vmtotal.md	/docs/data-collection/freebsd/vm.vmtotal
 https://github.com/netdata/netdata/edit/master/collectors/freebsd.plugin/integrations/net.inet.icmp.stats.md	/docs/data-collection/freebsd/net.inet.icmp.stats
 https://github.com/netdata/netdata/edit/master/collectors/freebsd.plugin/integrations/vm.stats.vm.v_swappgs.md	/docs/data-collection/freebsd/vm.stats.vm.v_swappgs
