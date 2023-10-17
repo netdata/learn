@@ -5,9 +5,9 @@ export const ReleaseVersion = '1.43.0';
 export const ReleaseDate = 'Oct 16, 2023';
 
 export const ReleaseNotes = [
-	'`systemd-journal` plugin overhaul',
+	'<code>systemd-journal</code> plugin overhaul',
 	'Virtual Machine monitoring (VMWare vSphere) improvements',
-	'Instances Slice and Dice overhaul on `apps.plugin`, `systemd` units and more',
+	'Instances Slice and Dice overhaul on <code>apps.plugin</code>, <code>systemd</code> units and more',
 	'Stock Alerts improvements utilizing the new dashboard',
 	'Alerts tier accuracy',
 	'Lower Resources Utilization',
