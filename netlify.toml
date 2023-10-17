@@ -5477,4 +5477,8 @@
   from="/docs/data-collection/apm/dynatrace"
   to="/docs/data-collection/observability/dynatrace"
 
+[[redirects]]
+  from="/docs/data-collection/systemd-journal"
+  to="/docs/logs/systemd-journal"
+
 # section: dynamic << END
