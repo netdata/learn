@@ -75,7 +75,7 @@ https://github.com/netdata/netdata/edit/master/docs/collect/container-metrics.md
 https://github.com/netdata/netdata/edit/master/collectors/COLLECTORS.md	Monitor Anything	Published	Data collection	Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box.
 collectors_integrations				
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/logs.md	Logs	Published	Logs	
-https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/README.md	systemd-journal	Published	Logs	View and analyze logs available in systemd journal
+https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/README.md	systemd-journal	Published	Logs/systemd-journal	View and analyze logs available in systemd journal
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_self_signed_certs.md	Passive journal centralization with encryption using self-signed certificates	Published	Logs/systemd-journal	
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_no_encryption.md	Passive journal centralization without encryption	Published	Logs/systemd-journal	
 https://github.com/netdata/netdata/edit/master/health/README.md	Alerting	Published	Alerting	
