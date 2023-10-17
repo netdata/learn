@@ -1349,5 +1349,6 @@
     "https://learn.netdata.cloud/docs/data-collection/ci/cd-platforms/jenkins": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/jenkins.md",
     "https://learn.netdata.cloud/docs/data-collection/ci/cd-platforms/gitlab-runner": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/gitlab_runner.md",
     "https://learn.netdata.cloud/docs/data-collection/ci/cd-platforms/concourse": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/concourse.md",
-    "https://learn.netdata.cloud/docs/data-collection/apm/dynatrace": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/dynatrace.md"
+    "https://learn.netdata.cloud/docs/data-collection/apm/dynatrace": "https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/dynatrace.md",
+    "https://learn.netdata.cloud/docs/data-collection/systemd-journal": "https://github.com/netdata/netdata/blob/master/collectors/systemd-journal.plugin/README.md"
 }
