@@ -53,15 +53,15 @@ def combineDictsOverwrite(dict1, dict2):
     return (new_dict)
 
 
-def reductTonewLearnPathFromGHLinksCorrelation(inputMatrix):
+def reductTonew_learn_pathFromGHLinksCorrelation(inputMatrix):
     """
     This function takes as an argument our Matrix of the Ingest process and creates a new dictionary with key value
     pairs the Source file (keys) to the Target file (value: learn_absolute path)
     """
     outputDictionary = dict()
     for x in inputMatrix:
-        outputDictionary[inputMatrix[x]["metadata"]["custom_edit_url"]] = inputMatrix[x]["newLearnPath"]
-        outputDictionary[inputMatrix[x]["metadata"]["custom_edit_url"].replace("/edit/", "/blob/")] = inputMatrix[x]["newLearnPath"]
+        outputDictionary[inputMatrix[x]["metadata"]["custom_edit_url"]] = inputMatrix[x]["new_learn_path"]
+        outputDictionary[inputMatrix[x]["metadata"]["custom_edit_url"].replace("/edit/", "/blob/")] = inputMatrix[x]["new_learn_path"]
     return (outputDictionary)
 
 
@@ -168,7 +168,7 @@ def append_entries_to_json(dictionary):
 
 def main(GHLinksCorrelation):
 
-	mapping = reductTonewLearnPathFromGHLinksCorrelation(GHLinksCorrelation)
+	mapping = reductTonew_learn_pathFromGHLinksCorrelation(GHLinksCorrelation)
 	append_entries_to_json(addMovedRedirects(mapping))
 	# print(GHLinksCorrelation)
 	oldLearn = readLegacyLearnDocMap("LegacyLearnCorrelateLinksWithGHURLs.json")
