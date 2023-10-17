@@ -74,7 +74,10 @@ https://github.com/netdata/netdata/edit/master/docs/collect/application-metrics.
 https://github.com/netdata/netdata/edit/master/docs/collect/container-metrics.md	Container metrics	Published	Data collection	Use Netdata to collect per-second utilization and application-level metrics from Linux/Docker containers and Kubernetes clusters.
 https://github.com/netdata/netdata/edit/master/collectors/COLLECTORS.md	Monitor Anything	Published	Data collection	Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box.
 collectors_integrations				
-https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/README.md	systemd journal	Published	Logs	View and analyze logs available in systemd journal
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/logs.md	Logs	Published	Logs	
+https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/README.md	systemd-journal	Published	Logs	View and analyze logs available in systemd journal
+https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_self_signed_certs.md	Passive journal centralization with encryption using self-signed certificates	Published	Logs	
+https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_no_encryption.md	Passive journal centralization without encryption	Published	Logs	
 https://github.com/netdata/netdata/edit/master/health/README.md	Alerting	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	Notifications	Published	Alerting/Notifications	Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
 https://github.com/netdata/netdata/edit/master/health/notifications/README.md	Agent Dispatched Notifications	Published	Alerting/Notifications/Agent Dispatched Notifications	
