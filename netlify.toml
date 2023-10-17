@@ -5481,4 +5481,12 @@
   from="/docs/data-collection/systemd-journal"
   to="/docs/logs/systemd-journal"
 
+[[redirects]]
+  from="/docs/logs/passive-journal-centralization-without-encryption"
+  to="/docs/logs/systemd-journal/passive-journal-centralization-without-encryption"
+
+[[redirects]]
+  from="/docs/logs/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/logs/systemd-journal/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+
 # section: dynamic << END
