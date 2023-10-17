@@ -1,20 +1,35 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.42.0';
+export const ReleaseVersion = '1.43.0';
 
-export const ReleaseDate = 'Aug 9, 2023';
+export const ReleaseDate = 'Oct 16, 2023';
 
 export const ReleaseNotes = [
-	'Integrations Marketplace',
-	'SystemD Journal plugin',
-	'Claiming via the UI',
-	'Easily Spot Anomalies'
+	'`systemd-journal` plugin overhaul',
+	'Virtual Machine monitoring (VMWare vSphere) improvements',
+	'Instances Slice and Dice overhaul on `apps.plugin`, `systemd` units and more'
+	'Stock Alerts improvements utilizing the new dashboard',
+	'Alerts tier accuracy',
+	'Lower Resources Utilization',
+	'32bit Netdata on 64bit IoT machines',
+	'Netdata Cloud on prem'
 ];
 
 
 
 export const News = [
 	{
+		title: <>Netdata release 1.43.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.43.0',
+		date: 'Oct 16, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Check out our Netdata v1.43.0 release notes to learn about our newest features and improvements.
+			</>
+		),	
+	}
+	,{
 		title: <>Netdata release 1.42.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.42.0',
 		date: 'Aug 9, 2023',
