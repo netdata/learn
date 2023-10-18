@@ -402,10 +402,6 @@
   to="/docs/data-collection/vpns/libreswan"
 
 [[redirects]]
-  from="/docs/agent/collectors/charts.d.plugin/nut"
-  to="/docs/data-collection/ups/network-ups-tools-nut"
-
-[[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/opensips"
   to="/docs/data-collection/telephony-servers/opensips"
 
@@ -2410,10 +2406,6 @@
   to="/docs/data-collection/hardware-devices-and-sensors/1-wire-sensors"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Hardware/UPS-PDU"
-  to="/docs/data-collection/ups/network-ups-tools-nut"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/Sensors"
   to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-lm-sensors"
 
@@ -3480,10 +3472,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/wire-sensors"
   to="/docs/data-collection/hardware-devices-and-sensors/1-wire-sensors"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/hardware/ups-pdu"
-  to="/docs/data-collection/ups/network-ups-tools-nut"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/sensors"
@@ -4880,10 +4868,6 @@
 [[redirects]]
   from="/docs/data-collection/vpns/libreswan-ipsec"
   to="/docs/data-collection/vpns/libreswan"
-
-[[redirects]]
-  from="/docs/data-collection/ups/nut"
-  to="/docs/data-collection/ups/network-ups-tools-nut"
 
 [[redirects]]
   from="/docs/data-collection/systemd/logind"

@@ -277,7 +277,6 @@ https://github.com/netdata/netdata/edit/master/collectors/macos.plugin/README.md
 https://github.com/netdata/netdata/edit/master/collectors/freeipmi.plugin/README.md	/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/README.md	/docs/contributing/external-plugins/charts.d.plugin
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/ap/README.md	/docs/data-collection/linux-systems/network/access-points
-https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/nut/README.md	/docs/data-collection/ups/network-ups-tools-nut
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/opensips/README.md	/docs/data-collection/telephony-servers/opensips
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/sensors/README.md	/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs
 https://github.com/netdata/netdata/edit/master/collectors/charts.d.plugin/apcupsd/README.md	/docs/data-collection/ups/apc-ups
