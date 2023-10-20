@@ -669,8 +669,10 @@ https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/oracle
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/beanstalk/README.md	/docs/data-collection/message-brokers/beanstalk
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/squid/README.md	/docs/data-collection/web-servers-and-web-proxies/squid
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/megacli/README.md	/docs/data-collection/storage,-mount-points-and-filesystems/megacli
+https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/forward_secure_sealing.md	/docs/logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/README.md	/docs/logs/systemd-journal
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_self_signed_certs.md	/docs/logs/systemd-journal/passive-journal-centralization-with-encryption-using-self-signed-certificates
+https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/active_journal_centralization_guide_no_encryption.md	/docs/logs/systemd-journal/active-journal-centralization-without-encryption
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_no_encryption.md	/docs/logs/systemd-journal/passive-journal-centralization-without-encryption
 https://github.com/netdata/netdata/edit/master/collectors/slabinfo.plugin/README.md	/docs/data-collection/linux-systems/kernel/linux-kernel-slab-allocator-statistics
 https://github.com/netdata/netdata/edit/master/collectors/nfacct.plugin/README.md	/docs/data-collection/linux-systems/firewall/netfilter
