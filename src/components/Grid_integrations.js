@@ -18,28 +18,50 @@ export const Grid = ({ className, columns, children }) => {
 	);
 };
 
-export const Box = ({ className, to, title, cta, image, children }) => {
+export const Box = ({ banner, banner_color, to, title, cta, image, children }) => {
 
 	return (
 		<custom-link>
+			
+
 			<Link
 				to={to}
-				className={` custom-element p-8  border-gray-500  rounded !no-underline `}
+				className={`white custom-element p-8 rounded !no-underline `}
 				style={{
-					borderColor: className,
-					boxShadow: "0 4px 10px #0000006D",
+					// borderColor: className,
+					// boxShadow: "0 4px 10px #0000006D",
+					position: "relative",
+					boxShadow: "0px 0px 12px -5px rgba(76, 76, 76, 0.48)",
 					backgroundColor: "white",
 					display: "flex",
-					flexDirection: 'column',
+					flexDirection: 'column-reverse',
 					alignItems: 'center',
-					borderBottomWidth: "3px",
+					// borderBottomWidth: "3px",
 					aspectRatio: "1/1",
 					maxHeight: "100%",
 					justifyContent: "space-around",
 					margin: "10px",
 					borderRadius: "20px",
 				}}
-			>
+			>	
+				<div style={{width:"100%",
+				height:"10%",
+				//  padding:"15px",
+				// backgroundColor: banner_color,
+				position: "absolute",
+				bottom: "0",
+				color: banner_color,
+				borderBottomLeftRadius: "20px",
+				borderBottomRightRadius: "20px",
+				fontSize: "7pt",
+				textAlign: "center",
+				fontWeight: "1000",
+				// paddingRight: "10%",
+				lineHeight: "normal",
+				}}>
+					{banner}
+				</div> 
+				
 				<custom-h7
 					className={`h7 group-hover:text-green-light dark:group-hover:text-green-light`}
 
@@ -61,6 +83,8 @@ export const Box = ({ className, to, title, cta, image, children }) => {
 				>
 					{children}
 				</div>
+
+				
 			</Link>
 		</custom-link>
 	);
