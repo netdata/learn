@@ -1007,7 +1007,7 @@
 
 [[redirects]]
   from="/docs/agent/health/notifications"
-  to="/docs/alerting/notifications/agent-dispatched-notifications"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference"
 
 [[redirects]]
   from="/docs/agent/health/notifications/alerta"
@@ -1454,10 +1454,6 @@
   to="/docs/exporting/enable-an-exporting-connector"
 
 [[redirects]]
-  from="/docs/export/external-databases"
-  to="/docs/exporting"
-
-[[redirects]]
   from="/docs/metrics-storage-management/enable-streaming"
   to="/docs/streaming/understanding-how-streaming-works"
 
@@ -1539,7 +1535,7 @@
 
 [[redirects]]
   from="/docs/cloud/alerts-notifications/notifications"
-  to="/docs/alerting/notifications/centralized-cloud-notifications"
+  to="/docs/alerting/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
 
 [[redirects]]
   from="/docs/cloud/data-privacy"
@@ -1644,10 +1640,6 @@
 [[redirects]]
   from="/docs/agent/libnetdata/arrayalloc"
   to="/docs/miscellaneous/libnetdata/array-allocator"
-
-[[redirects]]
-  from="/docs/agent/web/api/exporters"
-  to="/docs/exporting"
 
 [[redirects]]
   from="/docs/agent/web/api/exporters/prometheus"
@@ -1816,10 +1808,6 @@
 [[redirects]]
   from="/guides/export/export-netdata-metrics-graphite"
   to="/docs/exporting/graphite"
-
-[[redirects]]
-  from="/docs/agent/backends"
-  to="/docs/exporting"
 
 [[redirects]]
   from="/docs/agent/collectors/fping.plugin"
@@ -3070,10 +3058,6 @@
   to="/docs/visualizations/atlassian-confluence-dashboards"
 
 [[redirects]]
-  from="/docs/exporting-data"
-  to="/docs/exporting"
-
-[[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference"
   to="/docs/streaming/streaming-configuration-reference"
 
@@ -3767,7 +3751,7 @@
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications"
-  to="/docs/alerting/notifications/centralized-cloud-notifications"
+  to="/docs/alerting/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/twilio"
@@ -3871,7 +3855,7 @@
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications"
-  to="/docs/alerting/notifications/agent-dispatched-notifications"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/configure-alerts"
@@ -4346,10 +4330,6 @@
   to="/docs/visualizations/atlassian-confluence-dashboards"
 
 [[redirects]]
-  from="/docs/exporting-data-to-other-systems"
-  to="/docs/exporting"
-
-[[redirects]]
   from="/docs/contributing-to-netdata/security-policy"
   to="/docs/contributing/security-policy"
 
@@ -4515,7 +4495,7 @@
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications"
-  to="/docs/alerting/notifications/centralized-cloud-notifications"
+  to="/docs/alerting/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/twilio"
@@ -4619,7 +4599,7 @@
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications"
-  to="/docs/alerting/notifications/agent-dispatched-notifications"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications"
@@ -5235,7 +5215,7 @@
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-cloud-notifications"
-  to="/docs/alerting/notifications/centralized-cloud-notifications"
+  to="/docs/alerting/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/twilio"
@@ -5339,7 +5319,7 @@
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications"
-  to="/docs/alerting/notifications/agent-dispatched-notifications"
+  to="/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference"
 
 [[redirects]]
   from="/docs/agent/collectors/apps.plugin"
@@ -5476,5 +5456,25 @@
 [[redirects]]
   from="/docs/logs/systemd-journal/active-journal-centralization-without-encryption"
   to="/docs/logs/systemd-journal/active-journal-source-without-encryption"
+
+[[redirects]]
+  from="/docs/agent/backends"
+  to="/docs/exporting/exporting-quickstart"
+
+[[redirects]]
+  from="/docs/agent/web/api/exporters"
+  to="/docs/exporting/exporting-quickstart"
+
+[[redirects]]
+  from="/docs/export/external-databases"
+  to="/docs/exporting/exporting-quickstart"
+
+[[redirects]]
+  from="/docs/exporting-data"
+  to="/docs/exporting/exporting-quickstart"
+
+[[redirects]]
+  from="/docs/exporting-data-to-other-systems"
+  to="/docs/exporting/exporting-quickstart"
 
 # section: dynamic << END
