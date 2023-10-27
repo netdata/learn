@@ -1,0 +1,45 @@
+
+
+.custom-grid{
+    grid-template-columns: 47.5% 47.5%;
+  }
+
+.custom-img {
+display: block;
+/* object-fit: contain; */
+margin-left: auto;
+margin-right: auto;
+}
+
+
+custom-h7{
+    font-weight: 1000;
+    color: black;
+}
+
+
+
+custom-link:hover custom-h7 {
+    color: #00ab44 !important;
+}
+
+
+@media only screen and (min-width: 650px) {
+.custom-grid {
+    grid-template-columns: 30% 30% 30%;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+.custom-grid {
+    grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+}
+}
+
+
+@media only screen and (min-width: 1500px) {
+.custom-grid {
+    grid-template-columns: 18% 18% 18% 18% 18%;
+}
+}
+

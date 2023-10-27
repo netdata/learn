@@ -1038,4 +1038,4 @@ if __name__ == '__main__':
 
     unsafe_cleanup_folders(TEMP_FOLDER)
 
-print("OPERATION FINISHED")
+    print("OPERATION FINISHED")

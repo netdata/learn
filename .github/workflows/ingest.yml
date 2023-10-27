@@ -26,6 +26,10 @@ jobs:
       - name: Ingest process
         run: |
           python ingest/ingest.py
+      
+      - name: Make integrations grids
+        run: |
+          python ingest/create_grid_integration_pages.py
 
       - name: Update kickstart checksum
         run: |
