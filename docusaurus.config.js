@@ -10,7 +10,14 @@ module.exports = {
 	favicon: 'img/favicon-32x32.png',
 	organizationName: 'netdata',
 	projectName: 'netdata',
+	markdown: {
+		mermaid: true,
+	},
+	themes: ['@docusaurus/theme-mermaid'],
 	themeConfig: {
+		mermaid: {
+			theme: { light: 'neutral', dark: 'forest' },
+		},
 		image: 'img/netdata_meta-default.png',
 		prism: {
 			theme: require('prism-react-renderer/themes/dracula'),
@@ -32,49 +39,49 @@ module.exports = {
 					to: 'https://www.netdata.cloud/features/',
 					position: 'left',
 					label: 'Features',
-					style: {'font-weight': '500'}
+					style: { 'font-weight': '500' }
 				},
 				{
 					to: 'https://www.netdata.cloud/open-source/',
 					position: 'left',
 					label: 'Open Source',
-					style: {'font-weight': '500'}
+					style: { 'font-weight': '500' }
 				},
 				{
 					to: 'https://www.netdata.cloud/pricing/',
 					position: 'left',
 					label: 'Pricing',
-					style: {'font-weight': '500'}
+					style: { 'font-weight': '500' }
 				},
 				{
 					to: 'https://www.netdata.cloud/integrations/',
 					position: 'left',
 					label: 'Integrations',
-					style: {'font-weight': '500'}
+					style: { 'font-weight': '500' }
 				},
 				{
 					position: 'left',
 					label: 'Use cases',
-					style: {'font-weight': '500'},
+					style: { 'font-weight': '500' },
 					items: [
 						{
 							label: 'Response Time',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/response-time-monitoring/'
 						},
 						{
 							label: 'Cloud',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/cloud-monitoring/',
 						},
 						{
 							label: 'Web Servers',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/webserver-monitoring/',
 						},
 						{
 							label: 'Containers',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/container-monitoring/',
 						}
 					]
@@ -82,80 +89,80 @@ module.exports = {
 				{
 					position: 'left',
 					label: 'Resources',
-					style: {'font-weight': '500'},
+					style: { 'font-weight': '500' },
 					items: [
 						{
 							type: 'doc',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							docId: 'architecture/architecture',
 							label: 'Documentation'
 						},
 						{
 							type: 'doc',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							docId: 'installing/installing',
 							label: 'Getting Started'
 						},
 						{
 							label: 'Community',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/community/',
 						},
 						{
 							label: 'About',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/about/',
 						},
 						{
 							label: 'Forums',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							to: 'https://community.netdata.cloud/',
 						},
 						{
 							label: 'Blog',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							to: 'https://blog.netdata.cloud/',
 						},
 						{
 							label: 'Roadmap',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/roadmap/'
 						},
 						{
 							label: 'Videos',
-							style: {'color': 'white'},
+							style: { 'color': 'white' },
 							to: 'https://www.youtube.com/c/Netdata/'
 						},
 					]
 				},
-				
+
 				{
 					to: 'https://app.netdata.cloud/spaces/netdata-demo?utm_source=learn&utm_content=top_navigation_demo',
 					label: 'Live Demo',
 					position: 'left',
 					// style: {color : '#00ab44'},
 					className: 'custom_text',
-					style: {'font-weight': '500'}
+					style: { 'font-weight': '500' }
 				},
 				{
 					to: 'https://app.netdata.cloud/',
 					label: 'Login',
 					position: 'right',
 					className: 'button custom_button_grey',
-					style: {'font-weight': '500'}
+					style: { 'font-weight': '500' }
 				},
 				{
 					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
 					label: 'Sign Up',
 					position: 'right',
 					className: 'button custom_button',
-					style: {'font-weight': '500'}
+					style: { 'font-weight': '500' }
 
 				},
 			],
 		},
 		footer: {
-			
+
 			copyright: `Copyright © ${new Date().getFullYear()} Netdata, Inc.`,
 		},
 	},
@@ -172,13 +179,13 @@ module.exports = {
 		[
 			'@docusaurus/plugin-google-tag-manager',
 			{
-			  containerId: 'GTM-N6CBMJD',
+				containerId: 'GTM-N6CBMJD',
 			},
 		],
 		[
 			'@docusaurus/plugin-google-gtag',
 			{
-			  trackingID: 'G-J69Z2JCTFB',
+				trackingID: 'G-J69Z2JCTFB',
 			},
 		],
 	],
