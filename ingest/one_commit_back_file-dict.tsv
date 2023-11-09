@@ -609,6 +609,7 @@ https://github.com/netdata/netdata/edit/master/database/engine/README.md	/docs/a
 https://github.com/netdata/netdata/edit/master/build_external/README.md	/docs/installing/build-the-netdata-agent-yourself/external-build-system
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/pagerduty.md	/docs/alerting/notifications/centralized-cloud-notifications/pagerduty
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/slack.md	/docs/alerting/notifications/centralized-cloud-notifications/slack
+https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/amazon_sns.md	/docs/alerting/notifications/centralized-cloud-notifications/amazon-sns
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/discord.md	/docs/alerting/notifications/centralized-cloud-notifications/discord
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/mattermost.md	/docs/alerting/notifications/centralized-cloud-notifications/mattermost
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/webhook.md	/docs/alerting/notifications/centralized-cloud-notifications/webhook
