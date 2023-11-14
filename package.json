@@ -25,7 +25,7 @@
 		"@mdx-js/react": "^1.6.21",
 		"@tailwindcss/typography": "^0.4.0",
 		"@types/react": "^18.0.21",
-		"axios": "^0.21.2",
+		"axios": "^1.6.0",
 		"clsx": "^1.1.1",
 		"docusaurus-tailwindcss-loader": "file:plugins/docusaurus-tailwindcss-loader",
 		"dotenv": "^8.2.0",
