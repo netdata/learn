@@ -689,6 +689,9 @@ https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.m
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	Netdata plans	Published	Monitor your Infrastructure				
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	View Plan & Billing	Published	Monitor your Infrastructure				
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	Choose your Netdata Cloud theme	Published	Monitor your Infrastructure				
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud-onprem/getting-started.md	Netdata Cloud On-Prem	Published	Netdata Cloud On-Prem				
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud-onprem/getting-started-light-poc.md	Light PoC deployment	Published	Netdata Cloud On-Prem				
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud-onprem/troubleshooting-onprem.md	Basic Troubleshooting	Published	Netdata Cloud On-Prem				
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-dashboards-and-visualizations.md	Visualizations	Published	Visualizations				
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	Accessing Netdata Dashboards	Published	Visualizations				
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	Netdata Charts	Published	Visualizations				

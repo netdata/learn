@@ -110,6 +110,9 @@ https://github.com/netdata/netdata/edit/master/docs/glossary.md	/docs/miscellane
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-lighttpd.md	/docs/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-nginx.md	/docs/configuring/securing-netdata-agents/reverse-proxies/nginx
 https://github.com/netdata/netdata/edit/master/docs/getting-started/introduction.md	/docs/architecture
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud-onprem/troubleshooting-onprem.md	/docs/netdata-cloud-on-prem/basic-troubleshooting
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud-onprem/getting-started-light-poc.md	/docs/netdata-cloud-on-prem/light-poc-deployment
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud-onprem/getting-started.md	/docs/netdata-cloud-on-prem
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	/docs/contributing/contribute-to-the-documentation/netdata-style-guide
 https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.md	/docs/monitor-your-infrastructure/view-active-alerts
 https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	/docs/alerting/notifications
