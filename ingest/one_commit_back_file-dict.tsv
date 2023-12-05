@@ -38,6 +38,7 @@ https://github.com/netdata/netdata/edit/master/libnetdata/dictionary/README.md	/
 https://github.com/netdata/netdata/edit/master/libnetdata/aral/README.md	/docs/miscellaneous/libnetdata/array-allocator
 https://github.com/netdata/netdata/edit/master/libnetdata/clocks/README.md	/docs/miscellaneous/libnetdata/clocks
 https://github.com/netdata/netdata/edit/master/libnetdata/adaptive_resortable_list/README.md	/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl
+https://github.com/netdata/netdata/edit/master/libnetdata/log/systemd-cat-native.md	/docs/logs/systemd-cat-native
 https://github.com/netdata/netdata/edit/master/libnetdata/log/README.md	/docs/miscellaneous/libnetdata/log
 https://github.com/netdata/netdata/edit/master/libnetdata/statistical/README.md	/docs/miscellaneous/libnetdata/statistical-functions
 https://github.com/netdata/netdata/edit/master/libnetdata/procfile/README.md	/docs/miscellaneous/libnetdata/procfile
@@ -267,6 +268,7 @@ https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integra
 https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integrations/lxc_containers.md	/docs/data-collection/containers-and-vms/lxc-containers
 https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integrations/containers.md	/docs/data-collection/containers-and-vms/containers
 https://github.com/netdata/netdata/edit/master/collectors/cgroups.plugin/integrations/kubernetes_containers.md	/docs/data-collection/kubernetes/kubernetes-containers
+https://github.com/netdata/netdata/edit/master/collectors/log2journal/README.md	/docs/logs/log2journal
 https://github.com/netdata/netdata/edit/master/collectors/slabinfo.plugin/README.md	/docs/data-collection/linux-systems/kernel/linux-kernel-slab-allocator-statistics
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/README.md	/docs/contributing/external-plugins/python.d.plugin
 https://github.com/netdata/netdata/edit/master/collectors/python.d.plugin/ipfs/README.md	/docs/data-collection/storage,-mount-points-and-filesystems/ipfs
