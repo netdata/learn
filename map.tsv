@@ -80,6 +80,8 @@ https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/passive_journal_centralization_guide_no_encryption.md	Passive journal centralization without encryption	Published	Logs/systemd-journal	
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/active_journal_centralization_guide_no_encryption.md	Active journal source without encryption	Published	Logs/systemd-journal	
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/forward_secure_sealing.md	Forward Secure Sealing (FSS) in Systemd-Journal	Published	Logs/systemd-journal	
+https://github.com/netdata/netdata/edit/master/collectors/log2journal/README.md	log2journal	Published	Logs/log2journal	
+https://github.com/netdata/netdata/edit/master/libnetdata/log/systemd-cat-native.md	systemd-cat-native	Published	Logs/systemd-cat-native	
 https://github.com/netdata/netdata/edit/master/health/README.md	Alerting	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	Notifications	Published	Alerting/Notifications	Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
 https://github.com/netdata/netdata/edit/master/health/notifications/README.md	Agent Notifications Reference	Published	Alerting/Notifications/Agent Dispatched Notifications	
