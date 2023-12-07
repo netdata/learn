@@ -28,6 +28,28 @@ export const News = [
 		),	
 	},
 	{
+		title: <>Netdata Cloud On-Prem is here, explore the possibilites</>,
+		href: 'https://www.netdata.cloud/contact-us/?subject=on-prem',
+		date: 'Nov 20, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Book a meeting today and discover how Netdata can transform infrastructure monitoring for your organization.
+			</>
+		),	
+	},
+	{
+		title: <>Unlock Log Management Mastery with systemd-journal and Netdata</>,
+		href: 'https://blog.netdata.cloud/system-operators-unlock-log-management-mastery-with-systemd-journal-and-netdata/',
+		date: 'Nov 3, 2023',
+		type: 'Link',
+		description: (
+			<>
+				The dynamic duo of systemd-journal and Netdata is revolutionizing log management!
+			</>
+		),	
+	},
+	{
 		title: <>Netdata release 1.43.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.43.0',
 		date: 'Oct 16, 2023',
@@ -37,8 +59,8 @@ export const News = [
 				Check out our Netdata v1.43.0 release notes to learn about our newest features and improvements.
 			</>
 		),	
-	}
-	,{
+	},
+	{
 		title: <>Netdata release 1.42.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.42.0',
 		date: 'Aug 9, 2023',
