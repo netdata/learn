@@ -29,12 +29,12 @@ export const News = [
 	},
 	{
 		title: <>Netdata Cloud On-Prem is here, explore the possibilites</>,
-		href: 'https://learn.netdata.cloud/docs/netdata-cloud-on-prem/light-poc-deployment',
+		href: 'https://www.netdata.cloud/contact-us/?subject=on-prem',
 		date: 'Nov 20, 2023',
 		type: 'Link',
 		description: (
 			<>
-				Book a [meeting](https://www.netdata.cloud/contact-us/?subject=on-prem) today and discover how Netdata can transform infrastructure monitoring for your organization.
+				Book a meeting today and discover how Netdata can transform infrastructure monitoring for your organization.
 			</>
 		),	
 	},
