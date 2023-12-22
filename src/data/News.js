@@ -23,7 +23,7 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				Check out our Netdata v1.44.0 release notes to learn about our newest features and improvements.
+				The wait is finally over! The Alerts Configuration Manager provides a wizard to create and manage alerts for your infrastructure monitoring, directly from the Netdata Dashboards.
 			</>
 		),	
 	},
@@ -34,7 +34,7 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				The wait is finally over! The Alerts Configuration Manager provides a wizard to create and manage alerts for your infrastructure monitoring, directly from the Netdata Dashboards. 
+				 Check out our Netdata v1.44.0 release notes to learn about our newest features and improvements. 
 
 			</>
 		),	
