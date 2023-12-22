@@ -17,13 +17,25 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Netdata Alerts Configuration Manager released!</>,
+		href: 'https://learn.netdata.cloud/docs/alerting/creating-alerts-with-the-alerts-configuration-manager',
+		date: 'Dec 22, 2023',
+		type: 'Link',
+		description: (
+			<>
+				Check out our Netdata v1.44.0 release notes to learn about our newest features and improvements.
+			</>
+		),	
+	},
+	{
 		title: <>Netdata release 1.44.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.44.0',
 		date: 'Dec 6, 2023',
 		type: 'Link',
 		description: (
 			<>
-				Check out our Netdata v1.44.0 release notes to learn about our newest features and improvements.
+				The wait is finally over! The Alerts Configuration Manager provides a wizard to create and manage alerts for your infrastructure monitoring, directly from the Netdata Dashboards. 
+
 			</>
 		),	
 	},
