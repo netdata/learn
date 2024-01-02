@@ -370,6 +370,7 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/whoisquery/README.md	
 https://github.com/netdata/go.d.plugin/edit/master/docs/how-to-write-a-module.md	/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go
 https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	/docs/miscellaneous/redistributed-software
 https://github.com/netdata/netdata/edit/master/cli/README.md	/docs/configuring/agent-cli
+https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/netdata_mobile_app.md	/docs/alerting/notifications/centralized-cloud-notifications/netdata-mobile-app
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/webhook.md	/docs/alerting/notifications/centralized-cloud-notifications/webhook
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/telegram.md	/docs/alerting/notifications/centralized-cloud-notifications/telegram
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/rocketchat.md	/docs/alerting/notifications/centralized-cloud-notifications/rocketchat
