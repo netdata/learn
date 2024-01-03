@@ -17,6 +17,17 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Netdata Mobile App released!</>,
+		href: 'https://learn.netdata.cloud/docs/alerting/notifications/centralized-cloud-notifications/netdata-mobile-app',
+		date: 'Jan 03, 2024',
+		type: 'Link',
+		description: (
+			<>
+				Receive and manage alert notifications from your infrastructure on the go!
+			</>
+		),	
+	},	
+	{
 		title: <>Netdata Alerts Configuration Manager released!</>,
 		href: 'https://learn.netdata.cloud/docs/alerting/creating-alerts-with-the-alerts-configuration-manager',
 		date: 'Dec 22, 2023',
