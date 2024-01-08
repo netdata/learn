@@ -16,7 +16,7 @@ export function OneLineInstallWget() {
   const [statsChecked, setStatsChecked] = useState(true);
   const [cloudChecked, setCloudChecked] = useState(false);
 
-  let currentCommand = `wget -O /tmp/netdata-kickstart.sh https://my-netdata.io/kickstart.sh && sh /tmp/netdata-kickstart.sh${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}${currentCloudOption}`;
+  let currentCommand = `wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}${currentCloudOption}`;
   const lang = `bash`
 
   function handleUpdatesChange() {
@@ -115,7 +115,7 @@ export function OneLineInstallCurl() {
   const [statsChecked, setStatsChecked] = useState(true);
   const [cloudChecked, setCloudChecked] = useState(false);
 
-  let currentCommand = `curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}${currentCloudOption}`;
+  let currentCommand = `curl https://get.netdata.cloud/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}${currentCloudOption}`;
   const lang = `bash`
 
   function handleUpdatesChange() {
