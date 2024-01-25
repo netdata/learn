@@ -217,6 +217,7 @@ https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/mattermost.md	/docs/alerting/notifications/centralized-cloud-notifications/mattermost
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/opsgenie.md	/docs/alerting/notifications/centralized-cloud-notifications/opsgenie
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/splunk.md	/docs/alerting/notifications/centralized-cloud-notifications/splunk
+https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/microsoft_teams.md	/docs/alerting/notifications/centralized-cloud-notifications/microsoft-teams
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/rocketchat.md	/docs/alerting/notifications/centralized-cloud-notifications/rocketchat
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/slack.md	/docs/alerting/notifications/centralized-cloud-notifications/slack
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/telegram.md	/docs/alerting/notifications/centralized-cloud-notifications/telegram
