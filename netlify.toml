@@ -378,6 +378,14 @@
   to="/docs/installing/build-the-netdata-agent-yourself/external-build-system"
 
 [[redirects]]
+  from="/docs/agent/claim"
+  to="/docs/configuring/connect-agent-to-cloud"
+
+[[redirects]]
+  from="/docs/agent/cli"
+  to="/docs/configuring/agent-cli"
+
+[[redirects]]
   from="/docs/agent/collectors/charts.d.plugin"
   to="/docs/contributing/external-plugins/charts.d.plugin"
 
@@ -946,6 +954,14 @@
   to="/docs/configuring/daemon-configuration"
 
 [[redirects]]
+  from="/docs/agent/database"
+  to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
+
+[[redirects]]
+  from="/docs/agent/database/engine"
+  to="/docs/architecture/database-engine"
+
+[[redirects]]
   from="/docs/agent/demo-sites"
   to="/docs//live-demo"
 
@@ -1094,6 +1110,94 @@
   to="/docs/alerting/health-configuration-reference"
 
 [[redirects]]
+  from="/docs/agent/libnetdata"
+  to="/docs/miscellaneous/libnetdata"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/adaptive_resortable_list"
+  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/avl"
+  to="/docs/miscellaneous/libnetdata/avl"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/buffer"
+  to="/docs/miscellaneous/libnetdata/buffer-library"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/circular_buffer"
+  to="/docs/miscellaneous/libnetdata/circular-buffer"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/clocks"
+  to="/docs/miscellaneous/libnetdata/clocks"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/config"
+  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/dictionary"
+  to="/docs/miscellaneous/libnetdata/dictionaries"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/ebpf"
+  to="/docs/miscellaneous/libnetdata/ebpf"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/json"
+  to="/docs/miscellaneous/libnetdata/json"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/locks"
+  to="/docs/miscellaneous/libnetdata/locks"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/log"
+  to="/docs/miscellaneous/libnetdata/log"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/popen"
+  to="/docs/miscellaneous/libnetdata/popen"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/procfile"
+  to="/docs/miscellaneous/libnetdata/procfile"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/simple_pattern"
+  to="/docs/miscellaneous/libnetdata/simple-patterns"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/socket"
+  to="/docs/miscellaneous/libnetdata/socket"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/statistical"
+  to="/docs/miscellaneous/libnetdata/statistical-functions"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/storage_number"
+  to="/docs/miscellaneous/libnetdata/storage-number"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/string"
+  to="/docs/miscellaneous/libnetdata/string"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/threads"
+  to="/docs/miscellaneous/libnetdata/threads"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/url"
+  to="/docs/miscellaneous/libnetdata/url"
+
+[[redirects]]
+  from="/docs/agent/ml"
+  to="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
+
+[[redirects]]
   from="/docs/agent/netdata-security"
   to="/docs/architecture/security-and-privacy-design"
 
@@ -1174,6 +1278,10 @@
   to="/docs/miscellaneous/redistributed-software"
 
 [[redirects]]
+  from="/docs/agent/registry"
+  to="/docs/configuring/securing-netdata-agents/registry"
+
+[[redirects]]
   from="/docs/agent/running-behind-apache"
   to="/docs/configuring/securing-netdata-agents/reverse-proxies/apache"
 
@@ -1196,6 +1304,10 @@
 [[redirects]]
   from="/docs/agent/running-behind-nginx"
   to="/docs/configuring/securing-netdata-agents/reverse-proxies/nginx"
+
+[[redirects]]
+  from="/docs/agent/streaming"
+  to="/docs/streaming/streaming-configuration-reference"
 
 [[redirects]]
   from="/docs/agent/tests/health_mgmtapi"
@@ -1482,6 +1594,10 @@
   to="/docs/data-collection/monitor-anything"
 
 [[redirects]]
+  from="/docs/agent/agent-cloud"
+  to="/docs/configuring/connect-agent-to-cloud"
+
+[[redirects]]
   from="/docs/agent/breaking_changes"
   to="/docs/architecture"
 
@@ -1490,12 +1606,24 @@
   to="/docs/architecture"
 
 [[redirects]]
+  from="/guides/monitor/anomaly-detection"
+  to="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
+
+[[redirects]]
+  from="/guides/monitor/anomaly-detection-python"
+  to="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
+
+[[redirects]]
   from="/docs/agent/build"
   to="/docs/installing/build-the-netdata-agent-yourself/compile-from-source-code"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/wmi"
   to="/docs/data-collection/windows-systems/windows"
+
+[[redirects]]
+  from="/docs/agent/database/ram"
+  to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
 
 [[redirects]]
   from="/docs/agent/diagrams/data_structures"
@@ -1508,6 +1636,10 @@
 [[redirects]]
   from="/docs/agent/health/quickstart"
   to="/docs/alerting"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/arrayalloc"
+  to="/docs/miscellaneous/libnetdata/array-allocator"
 
 [[redirects]]
   from="/docs/agent/web/api/exporters/prometheus"
@@ -1560,6 +1692,10 @@
 [[redirects]]
   from="/docs/metrics-storage-management/how-streaming-works"
   to="/docs/streaming/understanding-how-streaming-works"
+
+[[redirects]]
+  from="/docs/metrics-storage-management/reference-streaming"
+  to="/docs/streaming/streaming-configuration-reference"
 
 [[redirects]]
   from="/docs/monitor/configure-alarms"
@@ -1810,8 +1946,16 @@
   to="/docs/configuring/securing-netdata-agents"
 
 [[redirects]]
+  from="/docs/deployment-in-production/metric-retention---database/database-engine"
+  to="/docs/architecture/database-engine"
+
+[[redirects]]
   from="/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics"
   to="/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+
+[[redirects]]
+  from="/docs/deployment-in-production/metric-retention---database"
+  to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
 
 [[redirects]]
   from="/docs/deployment-in-production/agent-cloud-link-aclk"
@@ -1904,6 +2048,10 @@
 [[redirects]]
   from="/docs/improving-netdata---developers/web/api"
   to="/docs/rest-api/api"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/metric-retention---database/database-engine"
+  to="/docs/architecture/database-engine"
 
 [[redirects]]
   from="/docs/exporting-data/rest-api-for-database-queries"
@@ -2494,6 +2642,10 @@
   to="/docs/ml-and-troubleshooting/metric-correlations"
 
 [[redirects]]
+  from="/docs/troubleshooting-and-machine-learning/machine-learning-ml-powered-anomaly-detection"
+  to="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
+
+[[redirects]]
   from="/docs/troubleshooting-and-machine-learning/functions"
   to="/docs/visualizations/functions"
 
@@ -2614,6 +2766,106 @@
   to="/docs/miscellaneous/redistributed-software"
 
 [[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/worker-utilization"
+  to="/docs/miscellaneous/libnetdata/worker-utilization"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/url"
+  to="/docs/miscellaneous/libnetdata/url"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/threads"
+  to="/docs/miscellaneous/libnetdata/threads"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/string"
+  to="/docs/miscellaneous/libnetdata/string"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/storage-number"
+  to="/docs/miscellaneous/libnetdata/storage-number"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/statistical-functions"
+  to="/docs/miscellaneous/libnetdata/statistical-functions"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/socket"
+  to="/docs/miscellaneous/libnetdata/socket"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/simple-patterns"
+  to="/docs/miscellaneous/libnetdata/simple-patterns"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/procfile"
+  to="/docs/miscellaneous/libnetdata/procfile"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/popen"
+  to="/docs/miscellaneous/libnetdata/popen"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/one-way-allocator"
+  to="/docs/miscellaneous/libnetdata/one-way-allocator"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/netdata-ini-config-files"
+  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/log"
+  to="/docs/miscellaneous/libnetdata/log"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/locks"
+  to="/docs/miscellaneous/libnetdata/locks"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/july-interface"
+  to="/docs/miscellaneous/libnetdata/july-interface"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/json"
+  to="/docs/miscellaneous/libnetdata/json"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/ebpf"
+  to="/docs/miscellaneous/libnetdata/ebpf"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/dictionaries"
+  to="/docs/miscellaneous/libnetdata/dictionaries"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/clocks"
+  to="/docs/miscellaneous/libnetdata/clocks"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/circular-buffer"
+  to="/docs/miscellaneous/libnetdata/circular-buffer"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/buffer-library"
+  to="/docs/miscellaneous/libnetdata/buffer-library"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/avl"
+  to="/docs/miscellaneous/libnetdata/avl"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/array-allocator"
+  to="/docs/miscellaneous/libnetdata/array-allocator"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/libnetdata"
+  to="/docs/miscellaneous/libnetdata"
+
+[[redirects]]
   from="/docs/improving-netdata---developers/health-command-api-tester"
   to="/docs/miscellaneous/health-command-api-tester"
 
@@ -2640,6 +2892,10 @@
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins"
   to="/docs/contributing/external-plugins"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/database-engine"
+  to="/docs/architecture/database-engine"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/contribute-to-the-documentation/netdata-style-guide"
@@ -2690,6 +2946,10 @@
   to="/docs/monitor-your-infrastructure/home-overview-and-single-node-view"
 
 [[redirects]]
+  from="/docs/getting-started/monitor-your-infrastructure/connect-agent-to-cloud"
+  to="/docs/configuring/connect-agent-to-cloud"
+
+[[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
   to="/docs/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
 
@@ -2716,6 +2976,10 @@
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/common-configuration-changes"
   to="/docs/configuring/common-configuration-changes"
+
+[[redirects]]
+  from="/docs/getting-started/manage-and-configure/agent-cli"
+  to="/docs/configuring/agent-cli"
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure"
@@ -2794,6 +3058,14 @@
   to="/docs/visualizations/atlassian-confluence-dashboards"
 
 [[redirects]]
+  from="/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference"
+  to="/docs/streaming/streaming-configuration-reference"
+
+[[redirects]]
+  from="/docs/deployment-in-production/streaming-and-replication/database-modes-for-parent-child-setups"
+  to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
+
+[[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication"
   to="/docs/streaming/understanding-how-streaming-works"
 
@@ -2836,6 +3108,10 @@
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies"
   to="/docs/configuring/securing-netdata-agents/reverse-proxies"
+
+[[redirects]]
+  from="/docs/deployment-in-production/secure-your-nodes/registry"
+  to="/docs/configuring/securing-netdata-agents/registry"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/anonymous-telemetry-events"
@@ -3642,6 +3918,10 @@
   to="/docs/configuring/securing-netdata-agents/reverse-proxies"
 
 [[redirects]]
+  from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/registry"
+  to="/docs/configuring/securing-netdata-agents/registry"
+
+[[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/anonymous-telemetry-events"
   to="/docs/configuring/securing-netdata-agents/anonymous-telemetry-events"
 
@@ -3656,6 +3936,10 @@
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/organize-systems-metrics-and-alerts"
   to="/docs/configuring/organize-systems-metrics-and-alerts"
+
+[[redirects]]
+  from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
@@ -3678,12 +3962,20 @@
   to="/docs/configuring/daemon-configuration"
 
 [[redirects]]
+  from="/docs/typical-netdata-agent-configurations/connect-agent-to-cloud"
+  to="/docs/configuring/connect-agent-to-cloud"
+
+[[redirects]]
   from="/docs/typical-netdata-agent-configurations/configuration"
   to="/docs/configuring/configuration"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/common-configuration-changes"
   to="/docs/configuring/common-configuration-changes"
+
+[[redirects]]
+  from="/docs/typical-netdata-agent-configurations/agent-cli"
+  to="/docs/configuring/agent-cli"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations"
@@ -3834,6 +4126,10 @@
   to="/docs/streaming/understanding-how-streaming-works"
 
 [[redirects]]
+  from="/docs/metrics-streaming-and-replication/streaming-configuration-reference"
+  to="/docs/streaming/streaming-configuration-reference"
+
+[[redirects]]
   from="/docs/metrics-streaming-and-replication"
   to="/docs/streaming"
 
@@ -3864,6 +4160,10 @@
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/metric-correlations"
   to="/docs/ml-and-troubleshooting/metric-correlations"
+
+[[redirects]]
+  from="/docs/machine-learning-and-assisted-troubleshooting/machine-learning-ml-powered-anomaly-detection"
+  to="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/anomaly-advisor"
@@ -4038,6 +4338,106 @@
   to="/docs/miscellaneous/redistributed-software"
 
 [[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/worker-utilization"
+  to="/docs/miscellaneous/libnetdata/worker-utilization"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/url"
+  to="/docs/miscellaneous/libnetdata/url"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/threads"
+  to="/docs/miscellaneous/libnetdata/threads"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/string"
+  to="/docs/miscellaneous/libnetdata/string"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/storage-number"
+  to="/docs/miscellaneous/libnetdata/storage-number"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/statistical-functions"
+  to="/docs/miscellaneous/libnetdata/statistical-functions"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/socket"
+  to="/docs/miscellaneous/libnetdata/socket"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/simple-patterns"
+  to="/docs/miscellaneous/libnetdata/simple-patterns"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/procfile"
+  to="/docs/miscellaneous/libnetdata/procfile"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/popen"
+  to="/docs/miscellaneous/libnetdata/popen"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/one-way-allocator"
+  to="/docs/miscellaneous/libnetdata/one-way-allocator"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/netdata-ini-config-files"
+  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/log"
+  to="/docs/miscellaneous/libnetdata/log"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/locks"
+  to="/docs/miscellaneous/libnetdata/locks"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/july-interface"
+  to="/docs/miscellaneous/libnetdata/july-interface"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/json"
+  to="/docs/miscellaneous/libnetdata/json"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/ebpf"
+  to="/docs/miscellaneous/libnetdata/ebpf"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/dictionaries"
+  to="/docs/miscellaneous/libnetdata/dictionaries"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/clocks"
+  to="/docs/miscellaneous/libnetdata/clocks"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/circular-buffer"
+  to="/docs/miscellaneous/libnetdata/circular-buffer"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/buffer-library"
+  to="/docs/miscellaneous/libnetdata/buffer-library"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/avl"
+  to="/docs/miscellaneous/libnetdata/avl"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/array-allocator"
+  to="/docs/miscellaneous/libnetdata/array-allocator"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/libnetdata"
+  to="/docs/miscellaneous/libnetdata"
+
+[[redirects]]
   from="/docs/contributing-to-netdata/health-command-api-tester"
   to="/docs/miscellaneous/health-command-api-tester"
 
@@ -4064,6 +4464,10 @@
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins"
   to="/docs/contributing/external-plugins"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/database-engine"
+  to="/docs/architecture/database-engine"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/contribute-to-the-documentation/netdata-style-guide"
@@ -4218,6 +4622,10 @@
   to="/docs//live-demo"
 
 [[redirects]]
+  from="/docs/contributing/database-engine"
+  to="/docs/architecture/database-engine"
+
+[[redirects]]
   from="/docs/monitor-your-infrastructure/spaces"
   to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
 
@@ -4264,6 +4672,106 @@
 [[redirects]]
   from="/docs/contributing/redistributed-software"
   to="/docs/miscellaneous/redistributed-software"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/worker-utilization"
+  to="/docs/miscellaneous/libnetdata/worker-utilization"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/url"
+  to="/docs/miscellaneous/libnetdata/url"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/threads"
+  to="/docs/miscellaneous/libnetdata/threads"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/string"
+  to="/docs/miscellaneous/libnetdata/string"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/storage-number"
+  to="/docs/miscellaneous/libnetdata/storage-number"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/statistical-functions"
+  to="/docs/miscellaneous/libnetdata/statistical-functions"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/socket"
+  to="/docs/miscellaneous/libnetdata/socket"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/simple-patterns"
+  to="/docs/miscellaneous/libnetdata/simple-patterns"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/procfile"
+  to="/docs/miscellaneous/libnetdata/procfile"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/popen"
+  to="/docs/miscellaneous/libnetdata/popen"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/one-way-allocator"
+  to="/docs/miscellaneous/libnetdata/one-way-allocator"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/netdata-ini-config-files"
+  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/log"
+  to="/docs/miscellaneous/libnetdata/log"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/locks"
+  to="/docs/miscellaneous/libnetdata/locks"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/july-interface"
+  to="/docs/miscellaneous/libnetdata/july-interface"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/json"
+  to="/docs/miscellaneous/libnetdata/json"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/ebpf"
+  to="/docs/miscellaneous/libnetdata/ebpf"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/dictionaries"
+  to="/docs/miscellaneous/libnetdata/dictionaries"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/clocks"
+  to="/docs/miscellaneous/libnetdata/clocks"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/circular-buffer"
+  to="/docs/miscellaneous/libnetdata/circular-buffer"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/buffer-library"
+  to="/docs/miscellaneous/libnetdata/buffer-library"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/avl"
+  to="/docs/miscellaneous/libnetdata/avl"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/array-allocator"
+  to="/docs/miscellaneous/libnetdata/array-allocator"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
+
+[[redirects]]
+  from="/docs/contributing/libnetdata"
+  to="/docs/miscellaneous/libnetdata"
 
 [[redirects]]
   from="/docs/contributing/health-command-api-tester"
