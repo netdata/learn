@@ -55,7 +55,7 @@ https://github.com/netdata/netdata/edit/master/docs/Running-behind-apache.md	Apa
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-lighttpd.md	Lighttpd v1.4.x	Published	Configuring/Securing Netdata Agents/Reverse proxies	
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-caddy.md	Caddy	Published	Configuring/Securing Netdata Agents/Reverse proxies	
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-h2o.md	H2O	Published	Configuring/Securing Netdata Agents/Reverse proxies	
-https://github.com/netdata/netdata/edit/master/aclk/README.md	Agent-Cloud link (ACLK)	Published	Configuring/Securing Netdata Agents	The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud.
+https://github.com/netdata/netdata/edit/master/src/aclk/README.md	Agent-Cloud link (ACLK)	Published	Configuring/Securing Netdata Agents	The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud.
 https://github.com/netdata/netdata/edit/master/docs/configure/nodes.md	Configuration	Published	Configuring	Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings.
 https://github.com/netdata/netdata/edit/master/daemon/README.md	Netdata daemon	Published	Configuring	
 https://github.com/netdata/netdata/edit/master/daemon/config/README.md	Daemon configuration	Published	Configuring	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
