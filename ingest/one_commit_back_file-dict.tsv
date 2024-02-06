@@ -370,8 +370,6 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/filecheck/README.md	/
 https://github.com/netdata/go.d.plugin/edit/master/modules/vernemq/README.md	/docs/data-collection/message-brokers/vernemq
 https://github.com/netdata/go.d.plugin/edit/master/modules/vsphere/README.md	/docs/data-collection/containers-and-vms/vmware-vcenter-server
 https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	/docs/miscellaneous/redistributed-software
-https://github.com/netdata/netdata/edit/master/daemon/README.md	/docs/configuring/netdata-daemon
-https://github.com/netdata/netdata/edit/master/daemon/config/README.md	/docs/configuring/daemon-configuration
 https://github.com/netdata/netdata/edit/master/health/REFERENCE.md	/docs/alerting/health-configuration-reference
 https://github.com/netdata/netdata/edit/master/health/README.md	/docs/alerting
 https://github.com/netdata/netdata/edit/master/health/notifications/README.md	/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference

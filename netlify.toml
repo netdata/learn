@@ -946,14 +946,6 @@
   to="/docs/installing/build-the-netdata-agent-yourself/netdata-contrib"
 
 [[redirects]]
-  from="/docs/agent/daemon"
-  to="/docs/configuring/netdata-daemon"
-
-[[redirects]]
-  from="/docs/agent/daemon/config"
-  to="/docs/configuring/daemon-configuration"
-
-[[redirects]]
   from="/docs/agent/database"
   to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
 
@@ -2962,14 +2954,6 @@
   to="/docs/maintaining/starting-and-stopping-netdata-agents"
 
 [[redirects]]
-  from="/docs/getting-started/manage-and-configure/netdata-daemon"
-  to="/docs/configuring/netdata-daemon"
-
-[[redirects]]
-  from="/docs/getting-started/manage-and-configure/daemon-configuration"
-  to="/docs/configuring/daemon-configuration"
-
-[[redirects]]
   from="/docs/getting-started/manage-and-configure/configuration"
   to="/docs/configuring/configuration"
 
@@ -3950,16 +3934,8 @@
   to="/docs/configuring/optimizing-metrics-database"
 
 [[redirects]]
-  from="/docs/typical-netdata-agent-configurations/netdata-daemon"
-  to="/docs/configuring/netdata-daemon"
-
-[[redirects]]
   from="/docs/typical-netdata-agent-configurations/how-to-optimize-the-netdata-agent-s-performance"
   to="/docs/configuring/how-to-optimize-the-netdata-agent-s-performance"
-
-[[redirects]]
-  from="/docs/typical-netdata-agent-configurations/daemon-configuration"
-  to="/docs/configuring/daemon-configuration"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/connect-agent-to-cloud"
