@@ -1,5 +1,5 @@
 ---
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/daemon/config/README.md"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md"
 sidebar_label: "Daemon configuration"
 learn_status: "Published"
 learn_rel_path: "Configuring"
@@ -38,7 +38,7 @@ the [web server access lists](/docs/configuring/securing-netdata-agents/web-serv
    Netdata.
 6. `[sqlite]` to [configure](#sqlite-section-options) the [Netdata daemon](/docs/configuring/netdata-daemon) SQLite settings.
 7. `[ml]` to configure settings for [machine learning](/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection).
-8. `[health]` to [configure](#health-section-options) general settings for [health monitoring](/docs/alerting).
+8. `[health]` to [configure](#health-section-options) general settings for [health monitoring](https://github.com/netdata/netdata/blob/master/src/health/README.md).
 9. `[web]` to [configure the web server](/docs/configuring/securing-netdata-agents/web-server).
 10. `[registry]` for the [Netdata registry](/docs/configuring/securing-netdata-agents/registry).
 11. `[global statistics]` for the [Netdata registry](/docs/configuring/securing-netdata-agents/registry).
@@ -166,9 +166,9 @@ Please note that your data history will be lost if you have modified `history` p
 This section controls the general behavior of the health monitoring capabilities of Netdata.
 
 Specific alerts are configured in per-collector config files under the `health.d` directory. For more info, see [health
-monitoring](/docs/alerting).
+monitoring](https://github.com/netdata/netdata/blob/master/src/health/README.md).
 
-[Alert notifications](/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference) are configured in `health_alarm_notify.conf`.
+[Alert notifications](https://github.com/netdata/netdata/blob/master/src/health/notifications/README.md) are configured in `health_alarm_notify.conf`.
 
 |                    setting                     |                     default                      | info                                                                                                                                                                                                                                                                                                                                            |
 |:----------------------------------------------:|:------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

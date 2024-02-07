@@ -1002,114 +1002,6 @@
   to="/docs/exporting/google-cloud-pub-sub"
 
 [[redirects]]
-  from="/docs/agent/health"
-  to="/docs/alerting"
-
-[[redirects]]
-  from="/docs/agent/health/notifications"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/alerta"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/alerta"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/awssns"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/custom"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/custom"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/discord"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/discord"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/dynatrace"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/dynatrace"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/email"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/email"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/flock"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/flock"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/gotify"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/gotify"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/irc"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/irc"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/kavenegar"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/kavenegar"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/matrix"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/matrix"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/messagebird"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/messagebird"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/msteams"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/microsoft-teams"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/opsgenie"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/opsgenie"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/pagerduty"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pagerduty"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/prowl"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/prowl"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/pushbullet"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pushbullet"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/pushover"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pushover"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/rocketchat"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/rocketchat"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/slack"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/slack"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/smstools3"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/sms"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/syslog"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/syslog"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/telegram"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/telegram"
-
-[[redirects]]
-  from="/docs/agent/health/notifications/twilio"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/twilio"
-
-[[redirects]]
-  from="/docs/agent/health/reference"
-  to="/docs/alerting/health-configuration-reference"
-
-[[redirects]]
   from="/docs/agent/libnetdata"
   to="/docs/miscellaneous/libnetdata"
 
@@ -1634,10 +1526,6 @@
   to="/docs/architecture"
 
 [[redirects]]
-  from="/docs/agent/health/quickstart"
-  to="/docs/alerting"
-
-[[redirects]]
   from="/docs/agent/libnetdata/arrayalloc"
   to="/docs/miscellaneous/libnetdata/array-allocator"
 
@@ -1698,10 +1586,6 @@
   to="/docs/streaming/streaming-configuration-reference"
 
 [[redirects]]
-  from="/docs/monitor/configure-alarms"
-  to="/docs/alerting/health-configuration-reference"
-
-[[redirects]]
   from="/docs/overview/netdata-monitoring-stack"
   to="/docs/architecture"
 
@@ -1728,10 +1612,6 @@
 [[redirects]]
   from="/guides/longer-metrics-storage"
   to="/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
-
-[[redirects]]
-  from="/guides/monitor/dimension-templates"
-  to="/docs/alerting"
 
 [[redirects]]
   from="/guides/monitor/visualize-monitor-anomalies"
@@ -1796,10 +1676,6 @@
 [[redirects]]
   from="/docs/agent/a-github-star-is-important"
   to="/docs/contributing"
-
-[[redirects]]
-  from="/guides/monitor/stop-notifications-alarms"
-  to="/docs/alerting/health-configuration-reference"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/mongodb"
@@ -1908,10 +1784,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system%20metrics/windows-machine"
   to="/docs/data-collection/windows-systems/windows"
-
-[[redirects]]
-  from="/docs/next/agent/health/notifications/awssns"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/why-netdata"
@@ -3754,114 +3626,6 @@
   to="/docs/alerting/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
 
 [[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/twilio"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/twilio"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/telegram"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/telegram"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/syslog"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/syslog"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/sms-server"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/sms"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/slack"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/slack"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/rocket-chat"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/rocketchat"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushover"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pushover"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushbullet"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pushbullet"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/prowl"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/prowl"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pagerduty"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pagerduty"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/opsgenie"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/opsgenie"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/ntfy"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/ntfy"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/microsoft-teams"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/microsoft-teams"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/messagebird"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/messagebird"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/matrix"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/matrix"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/kavenegar"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/kavenegar"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/irc"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/irc"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/gotify"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/gotify"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/flock"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/flock"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/email"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/email"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/dynatrace-events"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/dynatrace"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/discord"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/discord"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/custom-endpoint"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/custom"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/amazon-sns"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/alerta"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/alerta"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/agent-alert-notifications"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/configure-alerts"
-  to="/docs/alerting/health-configuration-reference"
-
-[[redirects]]
   from="/docs/data-collection/service-discovery-/-registry/zookeeper"
   to="/docs/data-collection/service-discovery-/-registry/zookeeper"
 
@@ -4498,124 +4262,12 @@
   to="/docs/alerting/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
 
 [[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/twilio"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/twilio"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/telegram"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/telegram"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/syslog"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/syslog"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/sms-server"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/sms"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/slack"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/slack"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/rocket-chat"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/rocketchat"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/pushover"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pushover"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/pushbullet"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pushbullet"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/prowl"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/prowl"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/pagerduty"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pagerduty"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/opsgenie"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/opsgenie"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/ntfy"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/ntfy"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/microsoft-teams"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/microsoft-teams"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/messagebird"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/messagebird"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/matrix"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/matrix"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/kavenegar"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/kavenegar"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/irc"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/irc"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/gotify"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/gotify"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/flock"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/flock"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/email"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/email"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/dynatrace-events"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/dynatrace"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/discord"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/discord"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/custom-endpoint"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/custom"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/amazon-sns"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/alerta"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/alerta"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference"
-
-[[redirects]]
   from="/docs/alerts-and-notifications/notifications"
   to="/docs/alerting/notifications"
 
 [[redirects]]
-  from="/docs/alerts-and-notifications/health-configuration-reference"
-  to="/docs/alerting/health-configuration-reference"
-
-[[redirects]]
   from="/docs/alerts-and-notifications/health-api-calls"
   to="/docs/alerting/health-api-calls"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications"
-  to="/docs/alerting"
 
 [[redirects]]
   from="/docs//live-demos"
@@ -5216,110 +4868,6 @@
 [[redirects]]
   from="/docs/alerting/notifications/netdata-cloud-notifications"
   to="/docs/alerting/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/twilio"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/twilio"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/telegram"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/telegram"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/syslog"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/syslog"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/sms-server"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/sms"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/slack"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/slack"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/rocket-chat"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/rocketchat"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/pushover"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pushover"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/pushbullet"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pushbullet"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/prowl"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/prowl"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/pagerduty"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/pagerduty"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/opsgenie"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/opsgenie"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/ntfy"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/ntfy"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/microsoft-teams"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/microsoft-teams"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/messagebird"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/messagebird"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/matrix"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/matrix"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/kavenegar"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/kavenegar"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/irc"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/irc"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/gotify"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/gotify"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/flock"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/flock"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/email"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/email"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/dynatrace-events"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/dynatrace"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/discord"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/discord"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/custom-endpoint"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/custom"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/amazon-sns"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications/alerta"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/alerta"
-
-[[redirects]]
-  from="/docs/alerting/notifications/netdata-agent-notifications"
-  to="/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference"
 
 [[redirects]]
   from="/docs/agent/collectors/apps.plugin"
