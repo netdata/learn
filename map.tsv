@@ -57,8 +57,8 @@ https://github.com/netdata/netdata/edit/master/docs/Running-behind-caddy.md	Cadd
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-h2o.md	H2O	Published	Configuring/Securing Netdata Agents/Reverse proxies	
 https://github.com/netdata/netdata/edit/master/src/aclk/README.md	Agent-Cloud link (ACLK)	Published	Configuring/Securing Netdata Agents	The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud.
 https://github.com/netdata/netdata/edit/master/docs/configure/nodes.md	Configuration	Published	Configuring	Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings.
-https://github.com/netdata/netdata/edit/master/src/daemon/README.md	Netdata daemon	Published	Configuring	
-https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md	Daemon configuration	Published	Configuring	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
+https://github.com/netdata/netdata/edit/master/daemon/README.md	Netdata daemon	Published	Configuring	
+https://github.com/netdata/netdata/edit/master/daemon/config/README.md	Daemon configuration	Published	Configuring	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
 https://github.com/netdata/netdata/edit/master/collectors/REFERENCE.md	Collectors configuration	Published	Configuring	
 https://github.com/netdata/netdata/edit/master/src/cli/README.md	Agent CLI	Published	Configuring	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
 https://github.com/netdata/agent-service-discovery/edit/master/README.md	Service discovery	Published	Configuring	
@@ -82,16 +82,16 @@ https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/forward_secure_sealing.md	Forward Secure Sealing (FSS) in Systemd-Journal	Published	Logs/systemd-journal	
 https://github.com/netdata/netdata/edit/master/collectors/log2journal/README.md	log2journal	Published	Logs/log2journal	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md	systemd-cat-native	Published	Logs/systemd-cat-native	
-https://github.com/netdata/netdata/edit/master/health/README.md	Alerting	Published	Alerting	
+https://github.com/netdata/netdata/edit/master/src/health/README.md	Alerting	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-configuration-manager.md	Creating Alerts with the Alerts Configuration Manager	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	Notifications	Published	Alerting/Notifications	Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
-https://github.com/netdata/netdata/edit/master/health/notifications/README.md	Agent Notifications Reference	Published	Alerting/Notifications/Agent Dispatched Notifications	
+https://github.com/netdata/netdata/edit/master/src/health/notifications/README.md	Agent Notifications Reference	Published	Alerting/Notifications/Agent Dispatched Notifications	
 agent_notifications_integrations				
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/notifications.md	Centralized Cloud Notifications Reference	Published	Alerting/Notifications/Centralized Cloud Notifications	Configure Netdata Cloud to send notifications to your team whenever any node on your infrastructure triggers an alert threshold.
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-notification-methods.md	Manage notification methods	Published	Alerting/Notifications/Centralized Cloud Notifications	Instructions on how to manage notification methods
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-alert-notification-silencing-rules.md	Manage alert notification silencing rules	Published	Alerting/Notifications/Centralized Cloud Notifications	Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
 cloud_notifications_integrations				
-https://github.com/netdata/netdata/edit/master/health/REFERENCE.md	Health Configuration Reference	Published	Alerting	
+https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	Health Configuration Reference	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/web/api/health/README.md	Health API Calls	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md	Exporting quickstart	Published	Exporting	Use the exporting engine to send Netdata metrics to popular external time series databases for long-term storage or further analysis.
 https://github.com/netdata/netdata/edit/master/src/exporting/README.md	Exporting reference	Published	Exporting	With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis.
