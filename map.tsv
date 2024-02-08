@@ -82,16 +82,16 @@ https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin
 https://github.com/netdata/netdata/edit/master/collectors/systemd-journal.plugin/forward_secure_sealing.md	Forward Secure Sealing (FSS) in Systemd-Journal	Published	Logs/systemd-journal	
 https://github.com/netdata/netdata/edit/master/collectors/log2journal/README.md	log2journal	Published	Logs/log2journal	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md	systemd-cat-native	Published	Logs/systemd-cat-native	
-https://github.com/netdata/netdata/edit/master/health/README.md	Alerting	Published	Alerting	
+https://github.com/netdata/netdata/edit/master/src/health/README.md	Alerting	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-configuration-manager.md	Creating Alerts with the Alerts Configuration Manager	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	Notifications	Published	Alerting/Notifications	Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
-https://github.com/netdata/netdata/edit/master/health/notifications/README.md	Agent Notifications Reference	Published	Alerting/Notifications/Agent Dispatched Notifications	
+https://github.com/netdata/netdata/edit/master/src/health/notifications/README.md	Agent Notifications Reference	Published	Alerting/Notifications/Agent Dispatched Notifications	
 agent_notifications_integrations				
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/notifications.md	Centralized Cloud Notifications Reference	Published	Alerting/Notifications/Centralized Cloud Notifications	Configure Netdata Cloud to send notifications to your team whenever any node on your infrastructure triggers an alert threshold.
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-notification-methods.md	Manage notification methods	Published	Alerting/Notifications/Centralized Cloud Notifications	Instructions on how to manage notification methods
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-alert-notification-silencing-rules.md	Manage alert notification silencing rules	Published	Alerting/Notifications/Centralized Cloud Notifications	Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
 cloud_notifications_integrations				
-https://github.com/netdata/netdata/edit/master/health/REFERENCE.md	Health Configuration Reference	Published	Alerting	
+https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	Health Configuration Reference	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/web/api/health/README.md	Health API Calls	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md	Exporting quickstart	Published	Exporting	Use the exporting engine to send Netdata metrics to popular external time series databases for long-term storage or further analysis.
 https://github.com/netdata/netdata/edit/master/src/exporting/README.md	Exporting reference	Published	Exporting	With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis.
