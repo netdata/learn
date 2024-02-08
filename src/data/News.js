@@ -17,6 +17,17 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>New plan alert: Homelab plan is launched!</>,
+		href: 'https://blog.netdata.cloud/netdata-homelab-plan/',
+		date: 'Feb 08, 2024',
+		type: 'Link',
+		description: (
+			<>
+				Homelab enthusiasts, rejoice! Unrestricted Netdata is now yours with our new Homelab plan.
+			</>
+		),	
+	},	
+	{
 		title: <>Netdata Mobile App released!</>,
 		href: 'https://learn.netdata.cloud/docs/alerting/notifications/centralized-cloud-notifications/netdata-mobile-app',
 		date: 'Jan 03, 2024',
