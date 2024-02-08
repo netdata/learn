@@ -183,7 +183,7 @@ The Netdata Agent has a modular approach to collecting data from data sources, m
 - Shell
 - StatsD
 
-Before you  continue, take a look at our [documentation  about collectors](/docs/data-collection) and how they work. It will greatly help you if you have a good understanding of the general architecture, the different collectors that we have, how they are divided into different *plugins* and finally what it means that a collector is _internal_ or _external_.
+Before you  continue, take a look at our [documentation  about collectors](https://github.com/netdata/netdata/blob/master/collectors/README.md) and how they work. It will greatly help you if you have a good understanding of the general architecture, the different collectors that we have, how they are divided into different *plugins* and finally what it means that a collector is _internal_ or _external_.
 
 When deciding which framework to use, please consider our approach:
 1. **Golang** is used for all production-grade collectors and *most* of the python collectors will be migrated to Golang. We actively support, maintain and improve the Golang collectors. We are migrating to Golang for 2 reasons:
@@ -204,13 +204,13 @@ To contribute a new collector (or improve an existing one):
    1. Authenticate with GitHub from inside the container
    2. Create a new branch and name it after the feature you are developing (e.g "apache-collector"). Switch to that branch.
    3. **For Python collectors:**
-      1. Follow the contribution guidelines on the [python.d](/docs/contributing/external-plugins/python.d.plugin) documentation.
+      1. Follow the contribution guidelines on the [python.d](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/README.md) documentation.
       2. Follow the Guide we have released: [How to contribute a Python collector](/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python)
    4. **For Golang collectors:**
       1. Follow the contribution guidelines on the [go.d](/docs/contributing/external-plugins/go.d.plugin) documentation.
       2. Follow the Guide we have released: [How to develop a go.d collector](/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go).
    5. **For Shell/Bash**
-     1. Follow the guidelines on the [charts.d](/docs/contributing/external-plugins/charts.d.plugin).
+     1. Follow the guidelines on the [charts.d](https://github.com/netdata/netdata/blob/master/collectors/charts.d.plugin/README.md).
    6. **For StatsD:**
       1. If you are not familiar with StatD, we have written an [introduction](https://www.netdata.cloud/blog/introduction-to-statsd/) to the protocol.
       2. Take a look at the [reference documentation](https://github.com/netdata/netdata/tree/master/collectors/statsd.plugin) for the StatsD plugin
@@ -230,7 +230,7 @@ There are 2 reasons why you may want to contribute to our alarms:
 1. You want to improve the sane defaults by modifying an existing alarm or adding a new one
 2. You want to contribute a new collector. Every new collector should come with some basic alarms out-of-the-box
 
-To do both, you will need to create (or modify) alarm configuration files. Our [documentation](/docs/alerting/health-configuration-reference) details the process. To develop and test the alarm, you will only need an active installation of the Netdata Agent, so the developer container described above is not required.
+To do both, you will need to create (or modify) alarm configuration files. Our [documentation](https://github.com/netdata/netdata/edit/master/health/REFERENCE.md) details the process. To develop and test the alarm, you will only need an active installation of the Netdata Agent, so the developer container described above is not required.
 
 ### Contribute a new alarm notification
 
@@ -240,7 +240,7 @@ In order to modify existing ones or create new notification alarms you will need
 
 To create a new alarm, we can look to:
 - Already implemented alarms inside `alarm-notify.sh` and copy their structure
-- Use the [custom endpoint](/docs/alerting/notifications/agent-dispatched-notifications/custom) notification as boilerplate.
+- Use the [custom endpoint](https://github.com/netdata/netdata/edit/master/health/notifications/custom/README.md) notification as boilerplate.
 
 
 ## Code of Conduct and CLA

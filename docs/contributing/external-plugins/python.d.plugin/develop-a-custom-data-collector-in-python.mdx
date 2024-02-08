@@ -37,7 +37,7 @@ want to make it available for other users, you should create the pull request in
 ### Quick start
 
 For a quick start, you can look at the 
-[example plugin](https://raw.githubusercontent.com/netdata/netdata/master/collectors/python.d.plugin/example/example.chart.py).
+[example plugin](https://raw.githubusercontent.com/netdata/netdata/master/src/collectors/python.d.plugin/example/example.chart.py).
 
 **Note**: If you are working 'locally' on a new collector and would like to run it in an already installed and running
 Netdata (as opposed to having to install Netdata from source again with your new changes) you can copy over the relevant
@@ -497,7 +497,7 @@ configuration in [YAML](https://www.tutorialspoint.com/yaml/yaml_basics.htm) for
   more chances to work out-of-the-box. For example, if the data source supports both `HTTP` and `linux socket`, you can
   define 2 jobs named `local`, with each using a different method. 
 - Check the `example` collector configuration file on
-  [GitHub](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/example/example.conf) to get a
+  [GitHub](https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/example/example.conf) to get a
   sense of the structure.
 
 ```yaml
@@ -528,7 +528,7 @@ find the configuration field. This allows you to define sane defaults for your c
 
 Moreover, when creating the configuration file, create a large comment section that describes the configuration
 variables and inform the user about the defaults. For example, take a look at the `example` collector on
-[GitHub](https://github.com/netdata/netdata/blob/master/collectors/python.d.plugin/example/example.conf).
+[GitHub](https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/example/example.conf).
 
 You can read more about the configuration file on the [`python.d.plugin`
 documentation](/docs/contributing/external-plugins/python.d.plugin). 

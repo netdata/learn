@@ -49,11 +49,11 @@ exist.
 - Various directories ending in `.d`, which contain other configuration files, each ending in `.conf`, for [configuring
   specific collectors](/docs/configuring/collectors-configuration).
 - `apps_groups.conf` is a configuration file for changing how applications/processes are grouped when viewing the
-  **Application** charts from [`apps.plugin`](https://github.com/netdata/netdata/blob/master/collectors/apps.plugin/README.md) or
-  [`ebpf.plugin`](https://github.com/netdata/netdata/blob/master/collectors/ebpf.plugin/README.md).
+  **Application** charts from [`apps.plugin`](https://github.com/netdata/netdata/blob/master/src/collectors/apps.plugin/README.md) or
+  [`ebpf.plugin`](https://github.com/netdata/netdata/blob/master/src/collectors/ebpf.plugin/README.md).
 - `health.d/` is a directory that contains [health configuration files](/docs/alerting/health-configuration-reference).
 - `health_alarm_notify.conf` enables and configures [alert notifications](/docs/alerting/notifications).
-- `statsd.d/` is a directory for configuring Netdata's [statsd collector](https://github.com/netdata/netdata/blob/master/collectors/statsd.plugin/README.md).
+- `statsd.d/` is a directory for configuring Netdata's [statsd collector](https://github.com/netdata/netdata/blob/master/src/collectors/statsd.plugin/README.md).
 - `stream.conf` configures [parent-child streaming](/docs/streaming/streaming-configuration-reference) between separate nodes running the Agent.
 - `.environment` is a hidden file that describes the environment in which the Netdata Agent is installed, including the
   `PATH` and any installation options. Useful for [reinstalling](/docs/maintaining/reinstall-netdata-agents) or
