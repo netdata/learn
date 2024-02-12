@@ -44,7 +44,7 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/opti
 https://github.com/netdata/netdata/edit/master/src/database/README.md	Database modes for parent child setups	Published	Configuring/Optimizing Metrics Database	The Netdata Agent leverages multiple, user-configurable time-series databases that use RAM and/or disk to store metrics on any type of node.
 https://github.com/netdata/netdata/edit/master/docs/store/change-metrics-storage.md	Change how long Netdata stores metrics	Published	Configuring/Optimizing Metrics Database	With a single configuration change, the Netdata Agent can store days, weeks, or months of metrics at its famous per-second granularity.
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/secure-nodes.md	Securing Netdata Agents	Published	Configuring/Securing Netdata Agents	Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
-https://github.com/netdata/netdata/edit/master/web/server/README.md	Web server	Published	Configuring/Securing Netdata Agents	The Netdata Agent's local static-threaded web server serves dashboards and real-time visualizations with security and DDoS protection.
+https://github.com/netdata/netdata/edit/master/src/web/server/README.md	Web server	Published	Configuring/Securing Netdata Agents	The Netdata Agent's local static-threaded web server serves dashboards and real-time visualizations with security and DDoS protection.
 https://github.com/netdata/netdata/edit/master/docs/anonymous-statistics.md	Anonymous telemetry events	Published	Configuring/Securing Netdata Agents	
 https://github.com/netdata/netdata/edit/master/src/registry/README.md	Registry	Published	Configuring/Securing Netdata Agents	Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards.
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	Role-based access model	Published	Configuring/Securing Netdata Agents	Explanation of Netdata roles and permissions linked to them
@@ -92,13 +92,13 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/m
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-alert-notification-silencing-rules.md	Manage alert notification silencing rules	Published	Alerting/Notifications/Centralized Cloud Notifications	Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
 cloud_notifications_integrations				
 https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	Health Configuration Reference	Published	Alerting	
-https://github.com/netdata/netdata/edit/master/web/api/health/README.md	Health API Calls	Published	Alerting	
+https://github.com/netdata/netdata/edit/master/src/web/api/health/README.md	Health API Calls	Published	Alerting	
 https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md	Exporting quickstart	Published	Exporting	Use the exporting engine to send Netdata metrics to popular external time series databases for long-term storage or further analysis.
 https://github.com/netdata/netdata/edit/master/src/exporting/README.md	Exporting reference	Published	Exporting	With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis.
 https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	Enable an exporting connector	Published	Exporting	Learn how to enable and configure any connector using examples to start exporting metrics to external time-series databases in minutes.
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/README.md	Prometheus	Published	Exporting	Export Netdata metrics to Prometheus for archiving and further analysis.
 exporters_integrations				
-https://github.com/netdata/netdata/edit/master/web/api/exporters/shell/README.md	Shell Scripts	Published	Exporting	
+https://github.com/netdata/netdata/edit/master/src/web/api/exporters/shell/README.md	Shell Scripts	Published	Exporting	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/monitor-your-infrastructure.md	Monitor your Infrastructure	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	Sign in with email, Google, or GitHub	Published	Monitor your Infrastructure	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	Organize your Infrastructure and Invite your Team	Published	Monitor your Infrastructure	
@@ -123,8 +123,8 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.m
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Functions	Published	Visualizations	Present the Netdata Functions what these are and why they should be used.
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Visualizations	Present the Netdata Events feed.
 https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana data source plugin	Published	Visualizations	
-https://github.com/netdata/netdata/edit/master/web/gui/confluence/README.md	Atlassian Confluence dashboards	Published	Visualizations	
-https://github.com/netdata/netdata/edit/master/web/gui/README.md	Legacy Agent Dashboard	Published	Visualizations	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
+https://github.com/netdata/netdata/edit/master/src/web/gui/confluence/README.md	Atlassian Confluence dashboards	Published	Visualizations	
+https://github.com/netdata/netdata/edit/master/src/web/gui/README.md	Legacy Agent Dashboard	Published	Visualizations	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	ML and Troubleshooting	Published	ML and Troubleshooting	
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correlations.md	Metric Correlations	Published	ML and Troubleshooting	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-assistant.md	AI powered troubleshooting assistant	Published	ML and Troubleshooting	
@@ -132,26 +132,26 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/insights/anomaly-advis
 https://github.com/netdata/netdata/edit/master/src/ml/README.md	Machine learning (ML) powered anomaly detection	Published	ML and Troubleshooting	This is an in-depth look at how Netdata uses ML to detect anomalies.
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	Run-time troubleshooting with Functions	Published	ML and Troubleshooting	Instructions on how to use Functions
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-apis.md	REST API	Published	REST API	
-https://github.com/netdata/netdata/edit/master/web/api/README.md	API	Published	REST API	
-https://github.com/netdata/netdata/edit/master/web/api/queries/README.md	Queries	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/web/api/queries/average/README.md	Average or Mean	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/web/api/queries/countif/README.md	CountIf	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/web/api/queries/des/README.md	Double exponential smoothing	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/web/api/queries/incremental_sum/README.md	Incremental Sum (`incremental_sum`)	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/web/api/queries/max/README.md	Max	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/web/api/queries/median/README.md	Median	Published	REST API/Queries	Use median in API queries and health entities to find the 'middle' value from a sample, eliminating any unwanted spikes in the returned metrics.
-https://github.com/netdata/netdata/edit/master/web/api/queries/min/README.md	Min	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/web/api/queries/percentile/README.md	Percentile	Published	REST API/Queries	Use percentile in API queries and health entities to find the 'percentile' value from a sample, eliminating any unwanted spikes in the returned metrics.
-https://github.com/netdata/netdata/edit/master/web/api/queries/ses/README.md	Single (or Simple) Exponential Smoothing (`ses`)	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/web/api/queries/stddev/README.md	Standard deviation (`stddev`)	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/web/api/queries/sum/README.md	Sum	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/web/api/queries/trimmed_mean/README.md	Trimmed Mean	Published	REST API/Queries	Use trimmed-mean in API queries and health entities to find the average value from a sample, eliminating any unwanted spikes in the returned metrics.
-https://github.com/netdata/netdata/edit/master/web/api/formatters/README.md	Formatters	Published	REST API/Formatters	
-https://github.com/netdata/netdata/edit/master/web/api/formatters/csv/README.md	CSV formatter	Published	REST API/Formatters	
-https://github.com/netdata/netdata/edit/master/web/api/formatters/json/README.md	JSON formatter	Published	REST API/Formatters	
-https://github.com/netdata/netdata/edit/master/web/api/formatters/ssv/README.md	SSV formatter	Published	REST API/Formatters	
-https://github.com/netdata/netdata/edit/master/web/api/formatters/value/README.md	Value formatter	Published	REST API/Formatters	
-https://github.com/netdata/netdata/edit/master/web/api/badges/README.md	Netdata badges	Published	REST API	
+https://github.com/netdata/netdata/edit/master/src/web/api/README.md	API	Published	REST API	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/README.md	Queries	Published	REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/average/README.md	Average or Mean	Published	REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/countif/README.md	CountIf	Published	REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/des/README.md	Double exponential smoothing	Published	REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/incremental_sum/README.md	Incremental Sum (`incremental_sum`)	Published	REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/max/README.md	Max	Published	REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/median/README.md	Median	Published	REST API/Queries	Use median in API queries and health entities to find the 'middle' value from a sample, eliminating any unwanted spikes in the returned metrics.
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/min/README.md	Min	Published	REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/percentile/README.md	Percentile	Published	REST API/Queries	Use percentile in API queries and health entities to find the 'percentile' value from a sample, eliminating any unwanted spikes in the returned metrics.
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/ses/README.md	Single (or Simple) Exponential Smoothing (`ses`)	Published	REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/stddev/README.md	Standard deviation (`stddev`)	Published	REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/sum/README.md	Sum	Published	REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/trimmed_mean/README.md	Trimmed Mean	Published	REST API/Queries	Use trimmed-mean in API queries and health entities to find the average value from a sample, eliminating any unwanted spikes in the returned metrics.
+https://github.com/netdata/netdata/edit/master/src/web/api/formatters/README.md	Formatters	Published	REST API/Formatters	
+https://github.com/netdata/netdata/edit/master/src/web/api/formatters/csv/README.md	CSV formatter	Published	REST API/Formatters	
+https://github.com/netdata/netdata/edit/master/src/web/api/formatters/json/README.md	JSON formatter	Published	REST API/Formatters	
+https://github.com/netdata/netdata/edit/master/src/web/api/formatters/ssv/README.md	SSV formatter	Published	REST API/Formatters	
+https://github.com/netdata/netdata/edit/master/src/web/api/formatters/value/README.md	Value formatter	Published	REST API/Formatters	
+https://github.com/netdata/netdata/edit/master/src/web/api/badges/README.md	Netdata badges	Published	REST API	
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	Contributing	Published	Contributing	
 https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	Community code of conduct	Published	Contributing	
 https://github.com/netdata/.github/edit/main/SECURITY.md	Security Policy	Published	Contributing	The Netdata team maintains and adheres to a formal process any time a member of the community reports a security vulnerability.
@@ -164,7 +164,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/RE
 https://github.com/netdata/netdata/edit/master/src/collectors/profile.plugin/README.md	profile.plugin	Published	Contributing/External-plugins	
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	Contribute to the documentation	Published	Contributing/Contribute to the documentation	
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	Netdata style guide	Published	Contributing/Contribute to the documentation	The Netdata style guide establishes editorial guidelines for all of Netdata's writing, including documentation, blog posts, in-product UX copy, and more.
-https://github.com/netdata/netdata/edit/master/web/README.md	Web	Unpublished	Contributing	Every Netdata Agent comes bundled with hundreds of interactive, customizable charts designed by monitoring and troubleshooting experts.
+https://github.com/netdata/netdata/edit/master/src/web/README.md	Web	Unpublished	Contributing	Every Netdata Agent comes bundled with hundreds of interactive, customizable charts designed by monitoring and troubleshooting experts.
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/misc-overview.md	Miscellaneous	Published	Miscellaneous	Available integrations in Netdata
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	Glossary	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/README.md	libnetdata	Published	Miscellaneous/libnetdata	
@@ -198,7 +198,7 @@ https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed So
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	Health command API tester	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	Customize the standard dashboard	Published	Miscellaneous	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	Import, export, and print a snapshot	Published	Miscellaneous	Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
-https://github.com/netdata/netdata/edit/master/web/gui/custom/README.md	Build a custom Dashboard HTML page	Published	Miscellaneous	Build custom dashboards with key metrics from one or more nodes running the Netdata Agent and host them anywhere.
+https://github.com/netdata/netdata/edit/master/src/web/gui/custom/README.md	Build a custom Dashboard HTML page	Published	Miscellaneous	Build custom dashboards with key metrics from one or more nodes running the Netdata Agent and host them anywhere.
 https://github.com/netdata/netdata/edit/master/docs/netdata-for-IoT.md	Netdata for IoT	Unpublished	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/guides/collect-apache-nginx-web-logs.md	Monitor Nginx or Apache web server log files with Netdata	Published	Miscellaneous	
 https://github.com/netdata/netdata/edit/master/docs/guides/collect-unbound-metrics.md	Monitor Unbound DNS servers with Netdata	Published	Miscellaneous	
