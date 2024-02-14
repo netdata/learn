@@ -33,7 +33,7 @@ accompanying configuration file.
 If you don't see the app/service you'd like to monitor in this list:
 
 - If your application has a Prometheus endpoint, Netdata can monitor it! Look at our
-  [generic Prometheus collector](/docs/data-collection/generic-data-collection/prometheus-endpoint).
+  [generic Prometheus collector](https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/README.md).
 
 - If your application is instrumented to expose [StatsD](https://blog.netdata.cloud/introduction-to-statsd/) metrics,
   see our [generic StatsD collector](https://github.com/netdata/netdata/blob/master/src/collectors/statsd.plugin/README.md).
@@ -73,7 +73,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [JMX](/docs/data-collection/apm/jmx)
 
-- [Java Spring-boot 2 applications](/docs/data-collection/apm/java-spring-boot-2-applications)
+- [Java Spring-boot 2 applications](https://github.com/netdata/go.d.plugin/blob/master/modules/springboot2/integrations/java_spring-boot_2_applications.md)
 
 - [NRPE daemon](/docs/data-collection/apm/nrpe-daemon)
 
@@ -91,13 +91,13 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [jolokia](/docs/data-collection/apm/jolokia)
 
-- [phpDaemon](/docs/data-collection/apm/phpdaemon)
+- [phpDaemon](https://github.com/netdata/go.d.plugin/blob/master/modules/phpdaemon/integrations/phpdaemon.md)
 
 ### Authentication and Authorization
 
 - [Fail2ban](/docs/data-collection/authentication-and-authorization/fail2ban)
 
-- [FreeRADIUS](/docs/data-collection/authentication-and-authorization/freeradius)
+- [FreeRADIUS](https://github.com/netdata/go.d.plugin/blob/master/modules/freeradius/integrations/freeradius.md)
 
 - [HashiCorp Vault secrets](/docs/data-collection/authentication-and-authorization/hashicorp-vault-secrets)
 
@@ -121,9 +121,9 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Cryptowatch](/docs/data-collection/blockchain-servers/cryptowatch)
 
-- [Energi Core Wallet](/docs/data-collection/blockchain-servers/energi-core-wallet)
+- [Energi Core Wallet](https://github.com/netdata/go.d.plugin/blob/master/modules/energid/integrations/energi_core_wallet.md)
 
-- [Go-ethereum](/docs/data-collection/blockchain-servers/go-ethereum)
+- [Go-ethereum](https://github.com/netdata/go.d.plugin/blob/master/modules/geth/integrations/go-ethereum.md)
 
 - [Helium miner (validator)](/docs/data-collection/blockchain-servers/helium-miner-validator)
 
@@ -209,11 +209,11 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Containers](/docs/data-collection/containers-and-vms/containers)
 
-- [Docker Engine](/docs/data-collection/containers-and-vms/docker-engine)
+- [Docker Engine](https://github.com/netdata/go.d.plugin/blob/master/modules/docker_engine/integrations/docker_engine.md)
 
-- [Docker Hub repository](/docs/data-collection/containers-and-vms/docker-hub-repository)
+- [Docker Hub repository](https://github.com/netdata/go.d.plugin/blob/master/modules/dockerhub/integrations/docker_hub_repository.md)
 
-- [Docker](/docs/data-collection/containers-and-vms/docker)
+- [Docker](https://github.com/netdata/go.d.plugin/blob/master/modules/docker/integrations/docker.md)
 
 - [LXC Containers](/docs/data-collection/containers-and-vms/lxc-containers)
 
@@ -227,7 +227,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Proxmox VE](/docs/data-collection/containers-and-vms/proxmox-ve)
 
-- [VMware vCenter Server](/docs/data-collection/containers-and-vms/vmware-vcenter-server)
+- [VMware vCenter Server](https://github.com/netdata/go.d.plugin/blob/master/modules/vsphere/integrations/vmware_vcenter_server.md)
 
 - [Virtual Machines](/docs/data-collection/containers-and-vms/virtual-machines)
 
@@ -237,7 +237,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [oVirt Containers](/docs/data-collection/containers-and-vms/ovirt-containers)
 
-- [vCenter Server Appliance](/docs/data-collection/containers-and-vms/vcenter-server-appliance)
+- [vCenter Server Appliance](https://github.com/netdata/go.d.plugin/blob/master/modules/vcsa/integrations/vcenter_server_appliance.md)
 
 ### Databases
 
@@ -245,17 +245,17 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [AWS RDS](/docs/data-collection/databases/aws-rds)
 
-- [Cassandra](/docs/data-collection/databases/cassandra)
+- [Cassandra](https://github.com/netdata/go.d.plugin/blob/master/modules/cassandra/integrations/cassandra.md)
 
 - [ClickHouse](/docs/data-collection/databases/clickhouse)
 
 - [ClusterControl CMON](/docs/data-collection/databases/clustercontrol-cmon)
 
-- [CockroachDB](/docs/data-collection/databases/cockroachdb)
+- [CockroachDB](https://github.com/netdata/go.d.plugin/blob/master/modules/cockroachdb/integrations/cockroachdb.md)
 
-- [CouchDB](/docs/data-collection/databases/couchdb)
+- [CouchDB](https://github.com/netdata/go.d.plugin/blob/master/modules/couchdb/integrations/couchdb.md)
 
-- [Couchbase](/docs/data-collection/databases/couchbase)
+- [Couchbase](https://github.com/netdata/go.d.plugin/blob/master/modules/couchbase/integrations/couchbase.md)
 
 - [HANA](/docs/data-collection/databases/hana)
 
@@ -271,9 +271,9 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Memcached](/docs/data-collection/databases/memcached)
 
-- [MongoDB](/docs/data-collection/databases/mongodb)
+- [MongoDB](https://github.com/netdata/go.d.plugin/blob/master/modules/mongodb/integrations/mongodb.md)
 
-- [MySQL](/docs/data-collection/databases/mysql)
+- [MySQL](https://github.com/netdata/go.d.plugin/blob/master/modules/mysql/integrations/mysql.md)
 
 - [ODBC](/docs/data-collection/databases/odbc)
 
@@ -285,17 +285,17 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Percona MySQL](/docs/data-collection/databases/percona-mysql)
 
-- [PgBouncer](/docs/data-collection/databases/pgbouncer)
+- [PgBouncer](https://github.com/netdata/go.d.plugin/blob/master/modules/pgbouncer/integrations/pgbouncer.md)
 
 - [Pgpool-II](/docs/data-collection/databases/pgpool-ii)
 
-- [Pika](/docs/data-collection/databases/pika)
+- [Pika](https://github.com/netdata/go.d.plugin/blob/master/modules/pika/integrations/pika.md)
 
-- [PostgreSQL](/docs/data-collection/databases/postgresql)
+- [PostgreSQL](https://github.com/netdata/go.d.plugin/blob/master/modules/postgres/integrations/postgresql.md)
 
-- [ProxySQL](/docs/data-collection/databases/proxysql)
+- [ProxySQL](https://github.com/netdata/go.d.plugin/blob/master/modules/proxysql/integrations/proxysql.md)
 
-- [Redis](/docs/data-collection/databases/redis)
+- [Redis](https://github.com/netdata/go.d.plugin/blob/master/modules/redis/integrations/redis.md)
 
 - [RethinkDB](/docs/data-collection/databases/rethinkdb)
 
@@ -319,33 +319,33 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Akamai Edge DNS Traffic](/docs/data-collection/dns-and-dhcp-servers/akamai-edge-dns-traffic)
 
-- [CoreDNS](/docs/data-collection/dns-and-dhcp-servers/coredns)
+- [CoreDNS](https://github.com/netdata/go.d.plugin/blob/master/modules/coredns/integrations/coredns.md)
 
-- [DNS query](/docs/data-collection/dns-and-dhcp-servers/dns-query)
+- [DNS query](https://github.com/netdata/go.d.plugin/blob/master/modules/dnsquery/integrations/dns_query.md)
 
 - [DNSBL](/docs/data-collection/dns-and-dhcp-servers/dnsbl)
 
-- [DNSdist](/docs/data-collection/dns-and-dhcp-servers/dnsdist)
+- [DNSdist](https://github.com/netdata/go.d.plugin/blob/master/modules/dnsdist/integrations/dnsdist.md)
 
-- [Dnsmasq DHCP](/docs/data-collection/dns-and-dhcp-servers/dnsmasq-dhcp)
+- [Dnsmasq DHCP](https://github.com/netdata/go.d.plugin/blob/master/modules/dnsmasq_dhcp/integrations/dnsmasq_dhcp.md)
 
-- [Dnsmasq](/docs/data-collection/dns-and-dhcp-servers/dnsmasq)
+- [Dnsmasq](https://github.com/netdata/go.d.plugin/blob/master/modules/dnsmasq/integrations/dnsmasq.md)
 
 - [ISC Bind (RNDC)](/docs/data-collection/dns-and-dhcp-servers/isc-bind-rndc)
 
-- [ISC DHCP](/docs/data-collection/dns-and-dhcp-servers/isc-dhcp)
+- [ISC DHCP](https://github.com/netdata/go.d.plugin/blob/master/modules/isc_dhcpd/integrations/isc_dhcp.md)
 
 - [Name Server Daemon](/docs/data-collection/dns-and-dhcp-servers/name-server-daemon)
 
 - [NextDNS](/docs/data-collection/dns-and-dhcp-servers/nextdns)
 
-- [Pi-hole](/docs/data-collection/dns-and-dhcp-servers/pi-hole)
+- [Pi-hole](https://github.com/netdata/go.d.plugin/blob/master/modules/pihole/integrations/pi-hole.md)
 
-- [PowerDNS Authoritative Server](/docs/data-collection/dns-and-dhcp-servers/powerdns-authoritative-server)
+- [PowerDNS Authoritative Server](https://github.com/netdata/go.d.plugin/blob/master/modules/powerdns/integrations/powerdns_authoritative_server.md)
 
-- [PowerDNS Recursor](/docs/data-collection/dns-and-dhcp-servers/powerdns-recursor)
+- [PowerDNS Recursor](https://github.com/netdata/go.d.plugin/blob/master/modules/powerdns_recursor/integrations/powerdns_recursor.md)
 
-- [Unbound](/docs/data-collection/dns-and-dhcp-servers/unbound)
+- [Unbound](https://github.com/netdata/go.d.plugin/blob/master/modules/unbound/integrations/unbound.md)
 
 ### eBPF
 
@@ -457,7 +457,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [BungeeCord](/docs/data-collection/gaming/bungeecord)
 
-- [CS:GO](/docs/data-collection/generic-data-collection/prometheus-endpoint)
+- [CS:GO](https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/cs:go.md)
 
 - [Minecraft](/docs/data-collection/gaming/minecraft)
 
@@ -481,9 +481,9 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Pandas](/docs/data-collection/generic-data-collection/pandas)
 
-- [Prometheus endpoint](/docs/data-collection/generic-data-collection/prometheus-endpoint)
+- [Prometheus endpoint](https://github.com/netdata/go.d.plugin/blob/master/modules/prometheus/integrations/prometheus_endpoint.md)
 
-- [SNMP devices](/docs/data-collection/generic-data-collection/snmp-devices)
+- [SNMP devices](https://github.com/netdata/go.d.plugin/blob/master/modules/snmp/integrations/snmp_devices.md)
 
 - [Shell command](/docs/data-collection/generic-data-collection/shell-command)
 
@@ -523,7 +523,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [NVML](/docs/data-collection/hardware-devices-and-sensors/nvml)
 
-- [Nvidia GPU](/docs/data-collection/hardware-devices-and-sensors/nvidia-gpu)
+- [Nvidia GPU](https://github.com/netdata/go.d.plugin/blob/master/modules/nvidia_smi/integrations/nvidia_gpu.md)
 
 - [Raritan PDU](/docs/data-collection/hardware-devices-and-sensors/raritan-pdu)
 
@@ -621,13 +621,13 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Cilium Proxy](/docs/data-collection/kubernetes/cilium-proxy)
 
-- [Kubelet](/docs/data-collection/kubernetes/kubelet)
+- [Kubelet](https://github.com/netdata/go.d.plugin/blob/master/modules/k8s_kubelet/integrations/kubelet.md)
 
-- [Kubeproxy](/docs/data-collection/kubernetes/kubeproxy)
+- [Kubeproxy](https://github.com/netdata/go.d.plugin/blob/master/modules/k8s_kubeproxy/integrations/kubeproxy.md)
 
 - [Kubernetes Cluster Cloud Cost](/docs/data-collection/kubernetes/kubernetes-cluster-cloud-cost)
 
-- [Kubernetes Cluster State](/docs/data-collection/kubernetes/kubernetes-cluster-state)
+- [Kubernetes Cluster State](https://github.com/netdata/go.d.plugin/blob/master/modules/k8s_state/integrations/kubernetes_cluster_state.md)
 
 - [Kubernetes Containers](/docs/data-collection/kubernetes/kubernetes-containers)
 
@@ -639,7 +639,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Disk space](/docs/data-collection/linux-systems/disk-space)
 
-- [Files and directories](/docs/data-collection/linux-systems/files-and-directories)
+- [Files and directories](https://github.com/netdata/go.d.plugin/blob/master/modules/filecheck/integrations/files_and_directories.md)
 
 - [OpenRC](/docs/data-collection/linux-systems/openrc)
 
@@ -757,11 +757,11 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [AuthLog](/docs/data-collection/logs-servers/authlog)
 
-- [Fluentd](/docs/data-collection/logs-servers/fluentd)
+- [Fluentd](https://github.com/netdata/go.d.plugin/blob/master/modules/fluentd/integrations/fluentd.md)
 
 - [Graylog Server](/docs/data-collection/logs-servers/graylog-server)
 
-- [Logstash](/docs/data-collection/logs-servers/logstash)
+- [Logstash](https://github.com/netdata/go.d.plugin/blob/master/modules/logstash/integrations/logstash.md)
 
 - [journald](/docs/data-collection/logs-servers/journald)
 
@@ -809,9 +809,9 @@ If you don't see the app/service you'd like to monitor in this list:
 
 ### Message Brokers
 
-- [ActiveMQ](/docs/data-collection/message-brokers/activemq)
+- [ActiveMQ](https://github.com/netdata/go.d.plugin/blob/master/modules/activemq/integrations/activemq.md)
 
-- [Apache Pulsar](/docs/data-collection/message-brokers/apache-pulsar)
+- [Apache Pulsar](https://github.com/netdata/go.d.plugin/blob/master/modules/pulsar/integrations/apache_pulsar.md)
 
 - [Beanstalk](/docs/data-collection/message-brokers/beanstalk)
 
@@ -825,11 +825,11 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [MQTT Blackbox](/docs/data-collection/message-brokers/mqtt-blackbox)
 
-- [RabbitMQ](/docs/data-collection/message-brokers/rabbitmq)
+- [RabbitMQ](https://github.com/netdata/go.d.plugin/blob/master/modules/rabbitmq/integrations/rabbitmq.md)
 
 - [Redis Queue](/docs/data-collection/message-brokers/redis-queue)
 
-- [VerneMQ](/docs/data-collection/message-brokers/vernemq)
+- [VerneMQ](https://github.com/netdata/go.d.plugin/blob/master/modules/vernemq/integrations/vernemq.md)
 
 - [XMPP Server](/docs/data-collection/message-brokers/xmpp-server)
 
@@ -939,7 +939,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Applications](/docs/data-collection/processes-and-system-services/applications)
 
-- [Supervisor](/docs/data-collection/processes-and-system-services/supervisor)
+- [Supervisor](https://github.com/netdata/go.d.plugin/blob/master/modules/supervisord/integrations/supervisor.md)
 
 - [User Groups](/docs/data-collection/processes-and-system-services/user-groups)
 
@@ -957,13 +957,13 @@ If you don't see the app/service you'd like to monitor in this list:
 
 ### Search Engines
 
-- [Elasticsearch](/docs/data-collection/search-engines/elasticsearch)
+- [Elasticsearch](https://github.com/netdata/go.d.plugin/blob/master/modules/elasticsearch/integrations/elasticsearch.md)
 
 - [Meilisearch](/docs/data-collection/search-engines/meilisearch)
 
 - [OpenSearch](/docs/data-collection/search-engines/opensearch)
 
-- [Solr](/docs/data-collection/search-engines/solr)
+- [Solr](https://github.com/netdata/go.d.plugin/blob/master/modules/solr/integrations/solr.md)
 
 - [Sphinx](/docs/data-collection/search-engines/sphinx)
 
@@ -991,11 +991,11 @@ If you don't see the app/service you'd like to monitor in this list:
 
 ### Service Discovery / Registry
 
-- [Consul](/docs/data-collection/service-discovery-/-registry/consul)
+- [Consul](https://github.com/netdata/go.d.plugin/blob/master/modules/consul/integrations/consul.md)
 
 - [Kafka Consumer Lag](/docs/data-collection/service-discovery-/-registry/kafka-consumer-lag)
 
-- [ZooKeeper](/docs/data-collection/service-discovery-/-registry/zookeeper)
+- [ZooKeeper](https://github.com/netdata/go.d.plugin/blob/master/modules/zookeeper/integrations/zookeeper.md)
 
 - [etcd](/docs/data-collection/service-discovery-/-registry/etcd)
 
@@ -1013,7 +1013,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Dell EMC Isilon cluster](/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-isilon-cluster)
 
-- [Dell EMC ScaleIO](/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-scaleio)
+- [Dell EMC ScaleIO](https://github.com/netdata/go.d.plugin/blob/master/modules/scaleio/integrations/dell_emc_scaleio.md)
 
 - [Dell EMC XtremIO cluster](/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-xtremio-cluster)
 
@@ -1027,7 +1027,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [HP Smart Storage Arrays](/docs/data-collection/storage,-mount-points-and-filesystems/hp-smart-storage-arrays)
 
-- [Hadoop Distributed File System (HDFS)](/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs)
+- [Hadoop Distributed File System (HDFS)](https://github.com/netdata/go.d.plugin/blob/master/modules/hdfs/integrations/hadoop_distributed_file_system_hdfs.md)
 
 - [IBM Spectrum Virtualize](/docs/data-collection/storage,-mount-points-and-filesystems/ibm-spectrum-virtualize)
 
@@ -1041,7 +1041,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [MogileFS](/docs/data-collection/storage,-mount-points-and-filesystems/mogilefs)
 
-- [NVMe devices](/docs/data-collection/storage,-mount-points-and-filesystems/nvme-devices)
+- [NVMe devices](https://github.com/netdata/go.d.plugin/blob/master/modules/nvme/integrations/nvme_devices.md)
 
 - [NetApp Solidfire](/docs/data-collection/storage,-mount-points-and-filesystems/netapp-solidfire)
 
@@ -1059,9 +1059,9 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Blackbox](/docs/data-collection/synthetic-checks/blackbox)
 
-- [Domain expiration date](/docs/data-collection/synthetic-checks/domain-expiration-date)
+- [Domain expiration date](https://github.com/netdata/go.d.plugin/blob/master/modules/whoisquery/integrations/domain_expiration_date.md)
 
-- [HTTP Endpoints](/docs/data-collection/synthetic-checks/http-endpoints)
+- [HTTP Endpoints](https://github.com/netdata/go.d.plugin/blob/master/modules/httpcheck/integrations/http_endpoints.md)
 
 - [IOPing](/docs/data-collection/synthetic-checks/ioping)
 
@@ -1069,23 +1069,23 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Monit](/docs/data-collection/synthetic-checks/monit)
 
-- [Ping](/docs/data-collection/synthetic-checks/ping)
+- [Ping](https://github.com/netdata/go.d.plugin/blob/master/modules/ping/integrations/ping.md)
 
 - [Pingdom](/docs/data-collection/synthetic-checks/pingdom)
 
 - [Site 24x7](/docs/data-collection/synthetic-checks/site-24x7)
 
-- [TCP Endpoints](/docs/data-collection/synthetic-checks/tcp-endpoints)
+- [TCP Endpoints](https://github.com/netdata/go.d.plugin/blob/master/modules/portcheck/integrations/tcp_endpoints.md)
 
 - [Uptimerobot](/docs/data-collection/synthetic-checks/uptimerobot)
 
-- [X.509 certificate](/docs/data-collection/synthetic-checks/x.509-certificate)
+- [X.509 certificate](https://github.com/netdata/go.d.plugin/blob/master/modules/x509check/integrations/x.509_certificate.md)
 
 ### System Clock and NTP
 
-- [Chrony](/docs/data-collection/system-clock-and-ntp/chrony)
+- [Chrony](https://github.com/netdata/go.d.plugin/blob/master/modules/chrony/integrations/chrony.md)
 
-- [NTPd](/docs/data-collection/system-clock-and-ntp/ntpd)
+- [NTPd](https://github.com/netdata/go.d.plugin/blob/master/modules/ntpd/integrations/ntpd.md)
 
 - [Timex](/docs/data-collection/system-clock-and-ntp/timex)
 
@@ -1093,9 +1093,9 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Systemd Services](/docs/data-collection/systemd/systemd-services)
 
-- [Systemd Units](/docs/data-collection/systemd/systemd-units)
+- [Systemd Units](https://github.com/netdata/go.d.plugin/blob/master/modules/systemdunits/integrations/systemd_units.md)
 
-- [systemd-logind users](/docs/data-collection/systemd/systemd-logind-users)
+- [systemd-logind users](https://github.com/netdata/go.d.plugin/blob/master/modules/logind/integrations/systemd-logind_users.md)
 
 ### Task Queues
 
@@ -1119,7 +1119,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Eaton UPS](/docs/data-collection/ups/eaton-ups)
 
-- [UPS (NUT)](/docs/data-collection/ups/ups-nut)
+- [UPS (NUT)](https://github.com/netdata/go.d.plugin/blob/master/modules/upsd/integrations/ups_nut.md)
 
 ### VPNs
 
@@ -1127,9 +1127,9 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Libreswan](/docs/data-collection/vpns/libreswan)
 
-- [OpenVPN status log](/docs/data-collection/vpns/openvpn-status-log)
+- [OpenVPN status log](https://github.com/netdata/go.d.plugin/blob/master/modules/openvpn_status_log/integrations/openvpn_status_log.md)
 
-- [OpenVPN](/docs/data-collection/vpns/openvpn)
+- [OpenVPN](https://github.com/netdata/go.d.plugin/blob/master/modules/openvpn/integrations/openvpn.md)
 
 - [SoftEther VPN Server](/docs/data-collection/vpns/softether-vpn-server)
 
@@ -1137,7 +1137,7 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [Tor](/docs/data-collection/vpns/tor)
 
-- [WireGuard](/docs/data-collection/vpns/wireguard)
+- [WireGuard](https://github.com/netdata/go.d.plugin/blob/master/modules/wireguard/integrations/wireguard.md)
 
 - [strongSwan](/docs/data-collection/vpns/strongswan)
 
@@ -1145,47 +1145,47 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [APIcast](/docs/data-collection/web-servers-and-web-proxies/apicast)
 
-- [Apache](/docs/data-collection/web-servers-and-web-proxies/apache)
+- [Apache](https://github.com/netdata/go.d.plugin/blob/master/modules/apache/integrations/apache.md)
 
 - [Clash](/docs/data-collection/web-servers-and-web-proxies/clash)
 
 - [Cloudflare PCAP](/docs/data-collection/web-servers-and-web-proxies/cloudflare-pcap)
 
-- [Envoy](/docs/data-collection/web-servers-and-web-proxies/envoy)
+- [Envoy](https://github.com/netdata/go.d.plugin/blob/master/modules/envoy/integrations/envoy.md)
 
 - [Gobetween](/docs/data-collection/web-servers-and-web-proxies/gobetween)
 
-- [HAProxy](/docs/data-collection/web-servers-and-web-proxies/haproxy)
+- [HAProxy](https://github.com/netdata/go.d.plugin/blob/master/modules/haproxy/integrations/haproxy.md)
 
 - [HHVM](/docs/data-collection/web-servers-and-web-proxies/hhvm)
 
 - [HTTPD](/docs/data-collection/web-servers-and-web-proxies/httpd)
 
-- [Lighttpd](/docs/data-collection/web-servers-and-web-proxies/lighttpd)
+- [Lighttpd](https://github.com/netdata/go.d.plugin/blob/master/modules/lighttpd/integrations/lighttpd.md)
 
 - [Litespeed](/docs/data-collection/web-servers-and-web-proxies/litespeed)
 
-- [NGINX Plus](/docs/data-collection/web-servers-and-web-proxies/nginx-plus)
+- [NGINX Plus](https://github.com/netdata/go.d.plugin/blob/master/modules/nginxplus/integrations/nginx_plus.md)
 
-- [NGINX VTS](/docs/data-collection/web-servers-and-web-proxies/nginx-vts)
+- [NGINX VTS](https://github.com/netdata/go.d.plugin/blob/master/modules/nginxvts/integrations/nginx_vts.md)
 
-- [NGINX](/docs/data-collection/web-servers-and-web-proxies/nginx)
+- [NGINX](https://github.com/netdata/go.d.plugin/blob/master/modules/nginx/integrations/nginx.md)
 
-- [PHP-FPM](/docs/data-collection/web-servers-and-web-proxies/php-fpm)
+- [PHP-FPM](https://github.com/netdata/go.d.plugin/blob/master/modules/phpfpm/integrations/php-fpm.md)
 
-- [Squid log files](/docs/data-collection/web-servers-and-web-proxies/squid-log-files)
+- [Squid log files](https://github.com/netdata/go.d.plugin/blob/master/modules/squidlog/integrations/squid_log_files.md)
 
 - [Squid](/docs/data-collection/web-servers-and-web-proxies/squid)
 
-- [Tengine](/docs/data-collection/web-servers-and-web-proxies/tengine)
+- [Tengine](https://github.com/netdata/go.d.plugin/blob/master/modules/tengine/integrations/tengine.md)
 
 - [Tomcat](/docs/data-collection/web-servers-and-web-proxies/tomcat)
 
-- [Traefik](/docs/data-collection/web-servers-and-web-proxies/traefik)
+- [Traefik](https://github.com/netdata/go.d.plugin/blob/master/modules/traefik/integrations/traefik.md)
 
 - [Varnish](/docs/data-collection/web-servers-and-web-proxies/varnish)
 
-- [Web server log files](/docs/data-collection/web-servers-and-web-proxies/web-server-log-files)
+- [Web server log files](https://github.com/netdata/go.d.plugin/blob/master/modules/weblog/integrations/web_server_log_files.md)
 
 - [uWSGI](/docs/data-collection/web-servers-and-web-proxies/uwsgi)
 
@@ -1201,4 +1201,4 @@ If you don't see the app/service you'd like to monitor in this list:
 
 - [NET Framework](/docs/data-collection/windows-systems/net-framework)
 
-- [Windows](/docs/data-collection/windows-systems/windows)
+- [Windows](https://github.com/netdata/go.d.plugin/blob/master/modules/windows/integrations/windows.md)
