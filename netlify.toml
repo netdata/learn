@@ -374,10 +374,6 @@
   to="/docs/architecture/security-and-privacy-design"
 
 [[redirects]]
-  from="/docs/agent/build_external"
-  to="/docs/installing/build-the-netdata-agent-yourself/external-build-system"
-
-[[redirects]]
   from="/docs/agent/claim"
   to="/docs/configuring/connect-agent-to-cloud"
 
@@ -2686,10 +2682,6 @@
   to="/docs/installing/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
 
 [[redirects]]
-  from="/docs/installation/package-maintainers/external-build-system"
-  to="/docs/installing/build-the-netdata-agent-yourself/external-build-system"
-
-[[redirects]]
   from="/docs/installation/package-maintainers"
   to="/docs/installing/build-the-netdata-agent-yourself/package-maintainers"
 
@@ -4252,10 +4244,6 @@
 [[redirects]]
   from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
   to="/docs/installing/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
-
-[[redirects]]
-  from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/external-build-system"
-  to="/docs/installing/build-the-netdata-agent-yourself/external-build-system"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/compile-from-source-code"

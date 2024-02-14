@@ -369,7 +369,6 @@ https://github.com/netdata/go.d.plugin/edit/master/modules/couchdb/README.md	/do
 https://github.com/netdata/go.d.plugin/edit/master/modules/snmp/README.md	/docs/data-collection/generic-data-collection/snmp-devices
 https://github.com/netdata/go.d.plugin/edit/master/modules/hdfs/README.md	/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs
 https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	/docs/miscellaneous/redistributed-software
-https://github.com/netdata/netdata/edit/master/build_external/README.md	/docs/installing/build-the-netdata-agent-yourself/external-build-system
 https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md	/docs/installing/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing
 https://github.com/netdata/netdata/edit/master/packaging/PLATFORM_SUPPORT.md	/docs/installing/platform-support-policy
 https://github.com/netdata/netdata/edit/master/packaging/docker/README.md	/docs/installing/docker
