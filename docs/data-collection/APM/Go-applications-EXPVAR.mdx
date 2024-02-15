@@ -88,7 +88,7 @@ There are no alerts configured by default for this integration.
 
 #### Enable the go_expvar collector
 
-The `go_expvar` collector is disabled by default. To enable it, use `edit-config` from the Netdata [config directory](/docs/configuring/configuration), which is typically at `/etc/netdata`, to edit the `python.d.conf` file.
+The `go_expvar` collector is disabled by default. To enable it, use `edit-config` from the Netdata [config directory](/docs/netdata-agent/configuration), which is typically at `/etc/netdata`, to edit the `python.d.conf` file.
 
 ```bash
 cd /etc/netdata   # Replace this path with your Netdata config directory, if different
@@ -176,7 +176,7 @@ The configuration file name for this integration is `python.d/go_expvar.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](/docs/configuring/configuration#the-netdata-config-directory).
+Netdata [config directory](/docs/netdata-agent/configuration#the-netdata-config-directory).
 
 ```bash
 cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
@@ -235,8 +235,8 @@ See [this issue](https://github.com/netdata/netdata/pull/1902#issuecomment-28449
 
 Please see these two links to the official Netdata documentation for more information about the values:
 
--   [External plugins - charts](/docs/contributing/external-plugins#chart)
--   [Chart variables](/docs/contributing/external-plugins/python.d.plugin#global-variables-order-and-chart)
+-   [External plugins - charts](/docs/developer-and-contributor-corner/external-plugins#chart)
+-   [Chart variables](/docs/developer-and-contributor-corner/external-plugins/python.d.plugin#global-variables-order-and-chart)
 
 **Line definitions**
 
@@ -259,7 +259,7 @@ hidden: False
 ```
 
 Please see the following link for more information about the options and their default values:
-[External plugins - dimensions](/docs/contributing/external-plugins#dimension)
+[External plugins - dimensions](/docs/developer-and-contributor-corner/external-plugins#dimension)
 
 Apart from top-level expvars, this plugin can also parse expvars stored in a multi-level map;
 All dicts in the resulting JSON document are then flattened to one level.

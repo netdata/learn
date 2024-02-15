@@ -4,7 +4,7 @@ sidebar_label: "Legacy Agent Dashboard"
 learn_status: "Published"
 learn_rel_path: "Visualizations"
 description: "The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts."
-sidebar_position: "1324000"
+sidebar_position: "1224000"
 learn_link: "https://learn.netdata.cloud/docs/visualizations/legacy-agent-dashboard"
 ---
 
@@ -26,10 +26,10 @@ By default, Netdata starts a web server for its dashboard at port `19999`. Open 
 navigate to `http://NODE:19999`, replacing `NODE` with the IP address or hostname of your Agent. If installed on localhost,
 you can access it through `http://localhost:19999`.
 
-Netdata uses an [internal, static-threaded web server](/docs/configuring/securing-netdata-agents/web-server) to host the HTML, CSS, and JavaScript
+Netdata uses an [internal, static-threaded web server](/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/web-server) to host the HTML, CSS, and JavaScript
 files that make up the local Agent dashboard. You don't have to configure anything to access it, although you can adjust
-[your settings](/docs/configuring/securing-netdata-agents/web-server#other-netdataconf-web-section-options) in the `netdata.conf` file, or run Netdata
-behind an [Nginx proxy](/docs/configuring/securing-netdata-agents/reverse-proxies/nginx), and so on.
+[your settings](/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/web-server#other-netdataconf-web-section-options) in the `netdata.conf` file, or run Netdata
+behind an [Nginx proxy](/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/nginx), and so on.
 
 ## Navigating the local dashboard
 
@@ -80,7 +80,7 @@ Use the calendar to select multiple days. Click on a date to begin the timeframe
 
 Click **Apply** to re-render all visualizations with new metrics data, or **Clear** to restore the default timeframe.
 
-[Increase the metrics retention policy](/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics) for your node to see more historical
+[Increase the metrics retention policy](/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics) for your node to see more historical
 timeframes.
 
 ### Metrics menus
@@ -171,5 +171,5 @@ file](https://user-images.githubusercontent.com/1153921/62798924-570e6c80-ba94-1
 
 ## Custom dashboards
 
-For information on creating custom dashboards from scratch, see the [custom dashboards](/docs/miscellaneous/build-a-custom-dashboard-html-page) or
+For information on creating custom dashboards from scratch, see the [custom dashboards](/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page) or
 [Atlassian Confluence dashboards](/docs/visualizations/atlassian-confluence-dashboards) guides.

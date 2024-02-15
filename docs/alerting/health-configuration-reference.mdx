@@ -19,7 +19,7 @@ applications in real time.
 
 While you can see active alerts both on the local dashboard and Netdata Cloud, all health alerts are configured _per
 node_ via individual Netdata Agents. If you want to deploy a new alert across your
-[infrastructure](/docs/architecture/the-role-of-netdata-cloud), you must configure each node with the same health configuration
+[infrastructure](https://github.com/netdata/netdata/blob/master/docs/quickstart/infrastructure.md), you must configure each node with the same health configuration
 files.
 
 ## Edit health configuration files
@@ -28,14 +28,14 @@ You can configure the Agent's health watchdog service by editing files in two lo
 
 - The `[health]` section in `netdata.conf`. By editing the daemon's behavior, you can disable health monitoring
     altogether, run health checks more or less often, and more. See
-    [daemon configuration](/docs/configuring/daemon-configuration#health-section-options) for a table of
+    [daemon configuration](/docs/developer-and-contributor-corner/configuring/daemon-configuration#health-section-options) for a table of
     all the available settings, their default values, and what they control.
 
 - The individual `.conf` files in `health.d/`. These health entity files are organized by the type of metric they are
     performing calculations on or their associated collector. You should edit these files using the `edit-config`
     script. For example: `sudo ./edit-config health.d/cpu.conf`.
 
-Navigate to your [Netdata config directory](/docs/configuring/configuration) and
+Navigate to your [Netdata config directory](/docs/netdata-agent/configuration) and
 use `edit-config` to make changes to any of these files.
 
 ### Edit individual alerts
@@ -91,7 +91,7 @@ In the `netdata.conf` `[health]` section, set `enabled` to `no`, and restart the
 ### Disable some alerts
 
 In the `netdata.conf` `[health]` section, set `enabled alarms` to a
-[simple pattern](/docs/miscellaneous/libnetdata/simple-patterns) that
+[simple pattern](/docs/developer-and-contributor-corner/libnetdata/simple-patterns) that
 excludes one or more alerts. e.g. `enabled alarms = !oom_kill *` will load all alerts except `oom_kill`.
 
 You can also [edit the file where the alert is defined](#edit-individual-alerts), comment out its definition,
@@ -131,7 +131,7 @@ your systems, containers, and applications work.
 Read the [health entity reference](#health-entity-reference) for a full listing of the format,
 syntax, and functionality of health entities.
 
-To write a new health entity into a new file, navigate to your [Netdata config directory](/docs/configuring/configuration),
+To write a new health entity into a new file, navigate to your [Netdata config directory](/docs/netdata-agent/configuration),
 then use `touch` to create a new file in the `health.d/` directory. Use `edit-config` to start editing the file.
 
 As an example, let's create a `ram-usage.conf` file.
@@ -225,7 +225,7 @@ Netdata parses the following lines. Beneath the table is an in-depth explanation
 - The `every` line is **required** if not using `lookup`.
 - Each entity **must** have at least one of the following lines: `lookup`, `calc`, `warn`, or `crit`.
 - A few lines use space-separated lists to define how the entity behaves. You can use `*` as a wildcard or prefix with
-    `!` for a negative match. Order is important, too! See our [simple patterns docs](/docs/miscellaneous/libnetdata/simple-patterns) for
+    `!` for a negative match. Order is important, too! See our [simple patterns docs](/docs/developer-and-contributor-corner/libnetdata/simple-patterns) for
     more examples.
 - Lines terminated by a `\` are spliced together with the next line. The backslash is removed and the following line is
     joined with the current one. No space is inserted, so you may split a line anywhere, even in the middle of a word.
@@ -411,7 +411,7 @@ hosts: server1 server2 database* !redis3 redis*
 #### Alert line `plugin`
 
 The `plugin` line filters which plugin within the context this alert should apply to. The value is a space-separated
-list of [simple patterns](/docs/miscellaneous/libnetdata/simple-patterns). For example,
+list of [simple patterns](/docs/developer-and-contributor-corner/libnetdata/simple-patterns). For example,
 you can create a filter for an alert that applies specifically to `python.d.plugin`:
 
 ```yaml
@@ -425,7 +425,7 @@ comprehensive example using both.
 #### Alert line `module`
 
 The `module` line filters which module within the context this alert should apply to. The value is a space-separated
-list of [simple patterns](/docs/miscellaneous/libnetdata/simple-patterns). For
+list of [simple patterns](/docs/developer-and-contributor-corner/libnetdata/simple-patterns). For
 example, you can create an alert that applies only on the `isc_dhcpd` module started by `python.d.plugin`:
 
 ```yaml
@@ -437,7 +437,7 @@ module: isc_dhcpd
 
 The `charts` line filters which chart this alert should apply to. It is only available on entities using the
 [`template`](#alert-line-alarm-or-template) line.
-The value is a space-separated list of [simple patterns](/docs/miscellaneous/libnetdata/simple-patterns). For
+The value is a space-separated list of [simple patterns](/docs/developer-and-contributor-corner/libnetdata/simple-patterns). For
 example, a template that applies to `disk.svctm` (Average Service Time) context, but excludes the disk `sdb` from alerts:
 
 ```yaml
@@ -661,7 +661,7 @@ good idea to tell Netdata to not clear the notification, by using the `no-clear-
 
 #### Alert line `host labels`
 
-Defines the list of labels present on a host. See our [host labels guide](/docs/configuring/organize-systems-metrics-and-alerts) for
+Defines the list of labels present on a host. See our [host labels guide](/docs/developer-and-contributor-corner/configuring/organize-systems-metrics-and-alerts) for
 an explanation of host labels and how to implement them.
 
 For example, let's suppose that `netdata.conf` is configured with the following labels:
@@ -694,7 +694,7 @@ that will be applied to all hosts installed in the last decade with the followin
 host labels: installed = 201*
 ```
 
-See our [simple patterns docs](/docs/miscellaneous/libnetdata/simple-patterns) for more examples.
+See our [simple patterns docs](/docs/developer-and-contributor-corner/libnetdata/simple-patterns) for more examples.
 
 #### Alert line `chart labels`
 
@@ -723,7 +723,7 @@ chart labels: mount_point=/mnt/disk1 device=sda
 Will create the alert if the `mount_point` is `/mnt/disk1` or the `device` is `sda`. Furthermore, if a chart label name
 is specified that does not exist in the chart, the chart won't be matched.
 
-See our [simple patterns docs](/docs/miscellaneous/libnetdata/simple-patterns) for more examples.
+See our [simple patterns docs](/docs/developer-and-contributor-corner/libnetdata/simple-patterns) for more examples.
 
 #### Alert line `summary`
 
@@ -1231,7 +1231,7 @@ is where the magic happens.
 
 You use the `foreach` parameter to specify which dimensions you want to monitor with this single alert. You can separate
 them with a comma (`,`) or a pipe (`|`). You can also use
-a [Netdata simple pattern](/docs/miscellaneous/libnetdata/simple-patterns) to create
+a [Netdata simple pattern](/docs/developer-and-contributor-corner/libnetdata/simple-patterns) to create
 many alerts with a regex-like syntax.
 
 The `foreach` parameter _has_ to be the last parameter in your `lookup` line, and if you have both `of` and `foreach` in
@@ -1302,7 +1302,7 @@ Let's look at some other examples of how `foreach` works, so you can best apply 
 In the last example, we used `foreach system,user,nice` to create three distinct alerts using dimension templates. But
 what if you want to quickly create alerts for _all_ the dimensions of a given chart?
 
-Use a [simple pattern](/docs/miscellaneous/libnetdata/simple-patterns)! One example of a simple pattern is a single wildcard
+Use a [simple pattern](/docs/developer-and-contributor-corner/libnetdata/simple-patterns)! One example of a simple pattern is a single wildcard
 (`*`).
 
 Instead of monitoring system CPU usage, let's monitor per-application CPU usage using the `apps.cpu` chart. Passing a
@@ -1321,7 +1321,7 @@ This entity will now create alerts for every dimension in the `apps.cpu` chart. 
 10 or more dimensions, using the wildcard ensures you catch every CPU-hogging process.
 
 To learn more about how to use simple patterns with dimension templates, see
-our [simple patterns documentation](/docs/miscellaneous/libnetdata/simple-patterns).
+our [simple patterns documentation](/docs/developer-and-contributor-corner/libnetdata/simple-patterns).
 
 ### Using `foreach` with alert templates
 
@@ -1377,7 +1377,7 @@ health configuration files!
 
 ## Troubleshooting
 
-You can compile Netdata with [debugging](/docs/configuring/netdata-daemon#debugging) and then set in `netdata.conf`:
+You can compile Netdata with [debugging](/docs/developer-and-contributor-corner/configuring/netdata-daemon#debugging) and then set in `netdata.conf`:
 
 ```yaml
 [global]

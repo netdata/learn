@@ -4,13 +4,13 @@ sidebar_label: "Starting and Stopping Netdata Agents "
 learn_status: "Published"
 learn_rel_path: "Maintaining"
 description: "Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes."
-sidebar_position: "302000"
+sidebar_position: "502000"
 learn_link: "https://learn.netdata.cloud/docs/maintaining/starting-and-stopping-netdata-agents-"
 ---
 
 # Start, stop, or restart the Netdata Agent
 
-When you install the Netdata Agent, the [daemon](/docs/configuring/netdata-daemon) is 
+When you install the Netdata Agent, the [daemon](/docs/developer-and-contributor-corner/configuring/netdata-daemon) is 
 configured to start at boot and stop and restart/shutdown.
 
 You will most often need to _restart_ the Agent to load new or editing configuration files. 
@@ -44,7 +44,7 @@ If you start the daemon this way, close it with `sudo killall netdata`.
 
 ## Using `netdatacli`
 
-The Netdata Agent also comes with a [CLI tool](/docs/configuring/agent-cli) capable of performing shutdowns. Start the Agent back up
+The Netdata Agent also comes with a [CLI tool](/docs/developer-and-contributor-corner/configuring/agent-cli) capable of performing shutdowns. Start the Agent back up
 using your preferred method listed above.
 
 ```bash

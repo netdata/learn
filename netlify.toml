@@ -239,7 +239,7 @@
 
 [[redirects]]
   from="/docs/get-started"
-  to="/docs/installing"
+  to="/docs/netdata-agent/installation"
 
 [[redirects]]
   from="/docs/agent/packaging/DISTRIBUTIONS"
@@ -351,43 +351,35 @@
 
 [[redirects]]
   from="/contribute/code-of-conduct"
-  to="/docs/contributing/community-code-of-conduct"
+  to="/docs/developer-and-contributor-corner/community-code-of-conduct"
 
 [[redirects]]
   from="/contribute/handbook"
-  to="/docs/contributing"
+  to="/docs/developer-and-contributor-corner/contributing"
 
 [[redirects]]
   from="/contribute/security"
-  to="/docs/contributing/security-policy"
+  to="/docs/developer-and-contributor-corner/security-policy"
 
 [[redirects]]
   from="/contribute/style-guide"
-  to="/docs/contributing/contribute-to-the-documentation/netdata-style-guide"
+  to="/docs/developer-and-contributor-corner/contribute-to-the-documentation/netdata-style-guide"
 
 [[redirects]]
   from="/docs/agent/aclk"
-  to="/docs/configuring/securing-netdata-agents/agent-cloud-link-aclk"
-
-[[redirects]]
-  from="/docs/agent/anonymous-statistics"
-  to="/docs/architecture/security-and-privacy-design"
-
-[[redirects]]
-  from="/docs/agent/build_external"
-  to="/docs/installing/build-the-netdata-agent-yourself/external-build-system"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/agent-cloud-link-aclk"
 
 [[redirects]]
   from="/docs/agent/claim"
-  to="/docs/configuring/connect-agent-to-cloud"
+  to="/docs/developer-and-contributor-corner/configuring/connect-agent-to-cloud"
 
 [[redirects]]
   from="/docs/agent/cli"
-  to="/docs/configuring/agent-cli"
+  to="/docs/developer-and-contributor-corner/configuring/agent-cli"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin"
-  to="/docs/contributing/external-plugins/charts.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/ap"
@@ -423,11 +415,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin"
-  to="/docs/contributing/external-plugins/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/docs/how-to-write-a-module"
-  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/activemq"
@@ -655,7 +647,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/service-discovery"
-  to="/docs/configuring/service-discovery"
+  to="/docs/developer-and-contributor-corner/configuring/service-discovery"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/snmp"
@@ -747,11 +739,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/plugins.d"
-  to="/docs/contributing/external-plugins"
+  to="/docs/developer-and-contributor-corner/external-plugins"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin"
-  to="/docs/contributing/external-plugins/python.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/adaptec_raid"
@@ -923,7 +915,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/reference"
-  to="/docs/configuring/collectors-configuration"
+  to="/docs/developer-and-contributor-corner/configuring/collectors-configuration"
 
 [[redirects]]
   from="/docs/agent/collectors/slabinfo.plugin"
@@ -943,27 +935,19 @@
 
 [[redirects]]
   from="/docs/agent/contrib"
-  to="/docs/installing/build-the-netdata-agent-yourself/netdata-contrib"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/netdata-contrib"
 
 [[redirects]]
   from="/docs/agent/daemon"
-  to="/docs/configuring/netdata-daemon"
+  to="/docs/developer-and-contributor-corner/configuring/netdata-daemon"
 
 [[redirects]]
   from="/docs/agent/daemon/config"
-  to="/docs/configuring/daemon-configuration"
+  to="/docs/developer-and-contributor-corner/configuring/daemon-configuration"
 
 [[redirects]]
   from="/docs/agent/database"
-  to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
-
-[[redirects]]
-  from="/docs/agent/database/engine"
-  to="/docs/architecture/database-engine"
-
-[[redirects]]
-  from="/docs/agent/demo-sites"
-  to="/docs//live-demo"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
 
 [[redirects]]
   from="/docs/agent/exporting"
@@ -1111,143 +1095,139 @@
 
 [[redirects]]
   from="/docs/agent/libnetdata"
-  to="/docs/miscellaneous/libnetdata"
+  to="/docs/developer-and-contributor-corner/libnetdata"
 
 [[redirects]]
   from="/docs/agent/libnetdata/adaptive_resortable_list"
-  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/developer-and-contributor-corner/libnetdata/adaptive-re-sortable-list-arl"
 
 [[redirects]]
   from="/docs/agent/libnetdata/avl"
-  to="/docs/miscellaneous/libnetdata/avl"
+  to="/docs/developer-and-contributor-corner/libnetdata/avl"
 
 [[redirects]]
   from="/docs/agent/libnetdata/buffer"
-  to="/docs/miscellaneous/libnetdata/buffer-library"
+  to="/docs/developer-and-contributor-corner/libnetdata/buffer-library"
 
 [[redirects]]
   from="/docs/agent/libnetdata/circular_buffer"
-  to="/docs/miscellaneous/libnetdata/circular-buffer"
+  to="/docs/developer-and-contributor-corner/libnetdata/circular-buffer"
 
 [[redirects]]
   from="/docs/agent/libnetdata/clocks"
-  to="/docs/miscellaneous/libnetdata/clocks"
+  to="/docs/developer-and-contributor-corner/libnetdata/clocks"
 
 [[redirects]]
   from="/docs/agent/libnetdata/config"
-  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
+  to="/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files"
 
 [[redirects]]
   from="/docs/agent/libnetdata/dictionary"
-  to="/docs/miscellaneous/libnetdata/dictionaries"
+  to="/docs/developer-and-contributor-corner/libnetdata/dictionaries"
 
 [[redirects]]
   from="/docs/agent/libnetdata/ebpf"
-  to="/docs/miscellaneous/libnetdata/ebpf"
+  to="/docs/developer-and-contributor-corner/libnetdata/ebpf"
 
 [[redirects]]
   from="/docs/agent/libnetdata/json"
-  to="/docs/miscellaneous/libnetdata/json"
+  to="/docs/developer-and-contributor-corner/libnetdata/json"
 
 [[redirects]]
   from="/docs/agent/libnetdata/locks"
-  to="/docs/miscellaneous/libnetdata/locks"
+  to="/docs/developer-and-contributor-corner/libnetdata/locks"
 
 [[redirects]]
   from="/docs/agent/libnetdata/log"
-  to="/docs/miscellaneous/libnetdata/log"
+  to="/docs/developer-and-contributor-corner/libnetdata/log"
 
 [[redirects]]
   from="/docs/agent/libnetdata/popen"
-  to="/docs/miscellaneous/libnetdata/popen"
+  to="/docs/developer-and-contributor-corner/libnetdata/popen"
 
 [[redirects]]
   from="/docs/agent/libnetdata/procfile"
-  to="/docs/miscellaneous/libnetdata/procfile"
+  to="/docs/developer-and-contributor-corner/libnetdata/procfile"
 
 [[redirects]]
   from="/docs/agent/libnetdata/simple_pattern"
-  to="/docs/miscellaneous/libnetdata/simple-patterns"
+  to="/docs/developer-and-contributor-corner/libnetdata/simple-patterns"
 
 [[redirects]]
   from="/docs/agent/libnetdata/socket"
-  to="/docs/miscellaneous/libnetdata/socket"
+  to="/docs/developer-and-contributor-corner/libnetdata/socket"
 
 [[redirects]]
   from="/docs/agent/libnetdata/statistical"
-  to="/docs/miscellaneous/libnetdata/statistical-functions"
+  to="/docs/developer-and-contributor-corner/libnetdata/statistical-functions"
 
 [[redirects]]
   from="/docs/agent/libnetdata/storage_number"
-  to="/docs/miscellaneous/libnetdata/storage-number"
+  to="/docs/developer-and-contributor-corner/libnetdata/storage-number"
 
 [[redirects]]
   from="/docs/agent/libnetdata/string"
-  to="/docs/miscellaneous/libnetdata/string"
+  to="/docs/developer-and-contributor-corner/libnetdata/string"
 
 [[redirects]]
   from="/docs/agent/libnetdata/threads"
-  to="/docs/miscellaneous/libnetdata/threads"
+  to="/docs/developer-and-contributor-corner/libnetdata/threads"
 
 [[redirects]]
   from="/docs/agent/libnetdata/url"
-  to="/docs/miscellaneous/libnetdata/url"
+  to="/docs/developer-and-contributor-corner/libnetdata/url"
 
 [[redirects]]
   from="/docs/agent/ml"
   to="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
 
 [[redirects]]
-  from="/docs/agent/netdata-security"
-  to="/docs/architecture/security-and-privacy-design"
-
-[[redirects]]
   from="/docs/agent/packaging/building-native-packages-locally"
-  to="/docs/installing/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
 
 [[redirects]]
   from="/docs/agent/packaging/docker"
-  to="/docs/installing/docker"
+  to="/docs/netdata-agent/installation/docker"
 
 [[redirects]]
   from="/docs/agent/packaging/installer"
-  to="/docs/installing"
+  to="/docs/netdata-agent/installation"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/freebsd"
-  to="/docs/installing/freebsd"
+  to="/docs/netdata-agent/installation/freebsd"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/kickstart"
-  to="/docs/installing/one-line-installer-for-all-linux-systems"
+  to="/docs/netdata-agent/installation/one-line-installer-for-all-linux-systems"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/kubernetes"
-  to="/docs/installing/kubernetes"
+  to="/docs/netdata-agent/installation/kubernetes"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/macos"
-  to="/docs/installing/macos"
+  to="/docs/netdata-agent/installation/macos"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/manual"
-  to="/docs/installing/from-a-git-checkout"
+  to="/docs/netdata-agent/installation/from-a-git-checkout"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/offline"
-  to="/docs/installing/offline-systems"
+  to="/docs/netdata-agent/installation/offline-systems"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/pfsense"
-  to="/docs/installing/pfsense"
+  to="/docs/netdata-agent/installation/pfsense"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/source"
-  to="/docs/installing/build-the-netdata-agent-yourself/compile-from-source-code"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/compile-from-source-code"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/synology"
-  to="/docs/installing/install-netdata-on-embedded-systems/synology"
+  to="/docs/netdata-agent/installation/synology"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/reinstall"
@@ -1263,55 +1243,55 @@
 
 [[redirects]]
   from="/docs/agent/packaging/maintainers"
-  to="/docs/installing/build-the-netdata-agent-yourself/package-maintainers"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/package-maintainers"
 
 [[redirects]]
   from="/docs/agent/packaging/makeself"
-  to="/docs/installing/static-binary-linux-packages"
+  to="/docs/netdata-agent/installation/static-binary-linux-packages"
 
 [[redirects]]
   from="/docs/agent/packaging/platform_support"
-  to="/docs/installing/platform-support-policy"
+  to="/docs/netdata-agent/netdata-agent-versions-&-platforms"
 
 [[redirects]]
   from="/docs/agent/redistributed"
-  to="/docs/miscellaneous/redistributed-software"
+  to="/docs/developer-and-contributor-corner/redistributed-software"
 
 [[redirects]]
   from="/docs/agent/registry"
-  to="/docs/configuring/securing-netdata-agents/registry"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/registry"
 
 [[redirects]]
   from="/docs/agent/running-behind-apache"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/apache"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/apache"
 
 [[redirects]]
   from="/docs/agent/running-behind-caddy"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/caddy"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/caddy"
 
 [[redirects]]
   from="/docs/agent/running-behind-h2o"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/h2o"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/h2o"
 
 [[redirects]]
   from="/docs/agent/running-behind-haproxy"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/haproxy"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/haproxy"
 
 [[redirects]]
   from="/docs/agent/running-behind-lighttpd"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
 
 [[redirects]]
   from="/docs/agent/running-behind-nginx"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/nginx"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/nginx"
 
 [[redirects]]
   from="/docs/agent/streaming"
-  to="/docs/streaming/streaming-configuration-reference"
+  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/agent/tests/health_mgmtapi"
-  to="/docs/miscellaneous/health-command-api-tester"
+  to="/docs/developer-and-contributor-corner/health-command-api-tester"
 
 [[redirects]]
   from="/docs/agent/web/api"
@@ -1411,11 +1391,11 @@
 
 [[redirects]]
   from="/docs/agent/web/gui/custom"
-  to="/docs/miscellaneous/build-a-custom-dashboard-html-page"
+  to="/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page"
 
 [[redirects]]
   from="/docs/agent/web/server"
-  to="/docs/configuring/securing-netdata-agents/web-server"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/web-server"
 
 [[redirects]]
   from="/docs/collect/application-metrics"
@@ -1431,11 +1411,11 @@
 
 [[redirects]]
   from="/docs/configure/common-changes"
-  to="/docs/configuring/common-configuration-changes"
+  to="/docs/developer-and-contributor-corner/configuring/common-configuration-changes"
 
 [[redirects]]
   from="/docs/configure/nodes"
-  to="/docs/configuring/configuration"
+  to="/docs/netdata-agent/configuration"
 
 [[redirects]]
   from="/docs/configure/start-stop-restart"
@@ -1443,7 +1423,7 @@
 
 [[redirects]]
   from="/docs/dashboard/import-export-print-snapshot"
-  to="/docs/miscellaneous/import-export-and-print-a-snapshot"
+  to="/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot"
 
 [[redirects]]
   from="/docs/dashboard/visualization-date-and-time-controls"
@@ -1454,24 +1434,12 @@
   to="/docs/exporting/enable-an-exporting-connector"
 
 [[redirects]]
-  from="/docs/metrics-storage-management/enable-streaming"
-  to="/docs/streaming/understanding-how-streaming-works"
-
-[[redirects]]
   from="/docs/monitor/enable-notifications"
   to="/docs/alerting/notifications"
 
 [[redirects]]
-  from="/docs/quickstart/infrastructure"
-  to="/docs/architecture/the-role-of-netdata-cloud"
-
-[[redirects]]
   from="/docs/store/change-metrics-storage"
-  to="/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
-
-[[redirects]]
-  from="/docs/store/distributed-data-architecture"
-  to="/docs/architecture/distributed-data-architecture"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
 
 [[redirects]]
   from="/docs/visualize/overview-infrastructure"
@@ -1479,67 +1447,63 @@
 
 [[redirects]]
   from="/guides/collect-apache-nginx-web-logs"
-  to="/docs/miscellaneous/monitor-nginx-or-apache-web-server-log-files-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-nginx-or-apache-web-server-log-files-with-netdata"
 
 [[redirects]]
   from="/guides/collect-unbound-metrics"
-  to="/docs/miscellaneous/monitor-unbound-dns-servers-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata"
 
 [[redirects]]
   from="/guides/configure/performance"
-  to="/docs/configuring/how-to-optimize-the-netdata-agent-s-performance"
+  to="/docs/developer-and-contributor-corner/configuring/how-to-optimize-the-netdata-agent-s-performance"
 
 [[redirects]]
   from="/guides/monitor-cockroachdb"
-  to="/docs/miscellaneous/monitor-cockroachdb-metrics-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-cockroachdb-metrics-with-netdata"
 
 [[redirects]]
   from="/guides/monitor-hadoop-cluster"
-  to="/docs/miscellaneous/monitor-a-hadoop-cluster-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata"
 
 [[redirects]]
   from="/guides/monitor/kubernetes-k8s-netdata"
-  to="/docs/miscellaneous/kubernetes-monitoring-with-netdata-overview-and-visualizations"
+  to="/docs/developer-and-contributor-corner/kubernetes-monitoring-with-netdata-overview-and-visualizations"
 
 [[redirects]]
   from="/guides/monitor/lamp-stack"
-  to="/docs/miscellaneous/lamp-stack-monitoring-linux-apache-mysql-php-with-netdata"
+  to="/docs/developer-and-contributor-corner/lamp-stack-monitoring-linux-apache-mysql-php-with-netdata"
 
 [[redirects]]
   from="/guides/monitor/pi-hole-raspberry-pi"
-  to="/docs/miscellaneous/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
 
 [[redirects]]
   from="/guides/monitor/process"
-  to="/docs/miscellaneous/monitor-any-process-in-real-time-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-any-process-in-real-time-with-netdata"
 
 [[redirects]]
   from="/guides/monitor/raspberry-pi-anomaly-detection"
-  to="/docs/miscellaneous/unsupervised-anomaly-detection-for-raspberry-pi-monitoring"
+  to="/docs/developer-and-contributor-corner/unsupervised-anomaly-detection-for-raspberry-pi-monitoring"
 
 [[redirects]]
   from="/guides/python-collector"
-  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/guides/troubleshoot/monitor-debug-applications-ebpf"
-  to="/docs/miscellaneous/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
 
 [[redirects]]
   from="/guides/using-host-labels"
-  to="/docs/configuring/organize-systems-metrics-and-alerts"
+  to="/docs/developer-and-contributor-corner/configuring/organize-systems-metrics-and-alerts"
 
 [[redirects]]
   from="/docs/cheatsheet"
-  to="/docs/configuring"
+  to="/docs/developer-and-contributor-corner/configuring"
 
 [[redirects]]
   from="/docs/cloud/alerts-notifications/notifications"
   to="/docs/alerting/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
-
-[[redirects]]
-  from="/docs/cloud/data-privacy"
-  to="/docs/architecture/security-and-privacy-design"
 
 [[redirects]]
   from="/docs/cloud/insights/anomaly-advisor"
@@ -1583,11 +1547,11 @@
 
 [[redirects]]
   from="/contribute/documentation"
-  to="/docs/contributing/contribute-to-the-documentation"
+  to="/docs/developer-and-contributor-corner/contribute-to-the-documentation"
 
 [[redirects]]
   from="/contribute/projects"
-  to="/docs/contributing"
+  to="/docs/developer-and-contributor-corner/contributing"
 
 [[redirects]]
   from="/docs/agent/add-more-charts-to-netdata"
@@ -1595,15 +1559,7 @@
 
 [[redirects]]
   from="/docs/agent/agent-cloud"
-  to="/docs/configuring/connect-agent-to-cloud"
-
-[[redirects]]
-  from="/docs/agent/breaking_changes"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/docs/overview/what-is-netdata"
-  to="/docs/architecture"
+  to="/docs/developer-and-contributor-corner/configuring/connect-agent-to-cloud"
 
 [[redirects]]
   from="/guides/monitor/anomaly-detection"
@@ -1615,7 +1571,7 @@
 
 [[redirects]]
   from="/docs/agent/build"
-  to="/docs/installing/build-the-netdata-agent-yourself/compile-from-source-code"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/compile-from-source-code"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/wmi"
@@ -1623,15 +1579,11 @@
 
 [[redirects]]
   from="/docs/agent/database/ram"
-  to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
 
 [[redirects]]
   from="/docs/agent/diagrams/data_structures"
-  to="/docs/contributing"
-
-[[redirects]]
-  from="/docs/agent/donations-netdata-has-received"
-  to="/docs/architecture"
+  to="/docs/developer-and-contributor-corner/contributing"
 
 [[redirects]]
   from="/docs/agent/health/quickstart"
@@ -1639,35 +1591,15 @@
 
 [[redirects]]
   from="/docs/agent/libnetdata/arrayalloc"
-  to="/docs/miscellaneous/libnetdata/array-allocator"
+  to="/docs/developer-and-contributor-corner/libnetdata/array-allocator"
 
 [[redirects]]
   from="/docs/agent/web/api/exporters/prometheus"
   to="/docs/exporting/prometheus"
 
 [[redirects]]
-  from="/docs/agent/why-netdata"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/docs/agent/why-netdata/1s-granularity"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/docs/agent/why-netdata/immediate-results"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/docs/agent/why-netdata/meaningful-presentation"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/docs/agent/why-netdata/unlimited-metrics"
-  to="/docs/architecture"
-
-[[redirects]]
   from="/docs/collect/enable-configure"
-  to="/docs/configuring/collectors-configuration"
+  to="/docs/developer-and-contributor-corner/configuring/collectors-configuration"
 
 [[redirects]]
   from="/docs/collect/how-collectors-work"
@@ -1675,11 +1607,7 @@
 
 [[redirects]]
   from="/docs/configure/secure-nodes"
-  to="/docs/configuring/securing-netdata-agents"
-
-[[redirects]]
-  from="/docs/dashboard/how-dashboard-works"
-  to="/docs/architecture/the-role-of-netdata-cloud"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents"
 
 [[redirects]]
   from="/docs/dashboard/interact-charts"
@@ -1687,27 +1615,15 @@
 
 [[redirects]]
   from="/docs/dashboard/reference-web-server"
-  to="/docs/configuring/securing-netdata-agents/web-server"
-
-[[redirects]]
-  from="/docs/metrics-storage-management/how-streaming-works"
-  to="/docs/streaming/understanding-how-streaming-works"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/web-server"
 
 [[redirects]]
   from="/docs/metrics-storage-management/reference-streaming"
-  to="/docs/streaming/streaming-configuration-reference"
+  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/monitor/configure-alarms"
   to="/docs/alerting/health-configuration-reference"
-
-[[redirects]]
-  from="/docs/overview/netdata-monitoring-stack"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/docs/overview/why-netdata"
-  to="/docs/architecture"
 
 [[redirects]]
   from="/docs/quickstart/single-node"
@@ -1723,11 +1639,11 @@
 
 [[redirects]]
   from="/guides/deploy/ansible"
-  to="/docs/installing/install-with-a-cicd-provisioning-system/ansible"
+  to="/docs/netdata-agent/installation/ansible"
 
 [[redirects]]
   from="/guides/longer-metrics-storage"
-  to="/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
 
 [[redirects]]
   from="/guides/monitor/dimension-templates"
@@ -1738,64 +1654,12 @@
   to="/docs/ml-and-troubleshooting/anomaly-advisor"
 
 [[redirects]]
-  from="/guides/step-by-step/step-00"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-01"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-02"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-03"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-04"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-05"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-06"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-07"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-08"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-09"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-10"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/guides/step-by-step/step-99"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/docs/cloud"
-  to="/docs/architecture/the-role-of-netdata-cloud"
-
-[[redirects]]
   from="/docs/cloud/get-started"
-  to="/docs/installing"
+  to="/docs/netdata-agent/installation"
 
 [[redirects]]
   from="/docs/agent/a-github-star-is-important"
-  to="/docs/contributing"
+  to="/docs/developer-and-contributor-corner/contributing"
 
 [[redirects]]
   from="/guides/monitor/stop-notifications-alarms"
@@ -1819,11 +1683,11 @@
 
 [[redirects]]
   from="/docs/agent/packaging"
-  to="/docs/installing/build-the-netdata-agent-yourself/package-maintainers"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/package-maintainers"
 
 [[redirects]]
   from="/docs/cloud/faq-glossary"
-  to="/docs/miscellaneous/glossary"
+  to="/docs/developer-and-contributor-corner/glossary"
 
 [[redirects]]
   from="/docs/next/agent/collectors/fping.plugin"
@@ -1832,58 +1696,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/prometheus-endpoints"
   to="/docs/data-collection/generic-data-collection/prometheus-endpoint"
-
-[[redirects]]
-  from="/docs/cloud/beta-architecture/new-architecture"
-  to="/docs/architecture/distributed-data-architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-00"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-01"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-02"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-03"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-04"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-05"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-06"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-07"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-08"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-09"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-10"
-  to="/docs/architecture"
-
-[[redirects]]
-  from="/agent/step-by-step/step-99"
-  to="/docs/architecture"
 
 [[redirects]]
   from="/docs/nightly/concepts/events-feed"
@@ -1903,7 +1715,7 @@
 
 [[redirects]]
   from="/contribute/support"
-  to="/docs/contributing"
+  to="/docs/developer-and-contributor-corner/contributing"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system%20metrics/windows-machine"
@@ -1914,52 +1726,28 @@
   to="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
-  from="/docs/why-netdata"
-  to="/docs/architecture"
-
-[[redirects]]
   from="/docs/api/"
   to="/docs/rest-api/api"
 
 [[redirects]]
-  from="/streaming"
-  to="/docs/streaming/understanding-how-streaming-works"
-
-[[redirects]]
-  from="/docs/data-privacy"
-  to="/docs/architecture/security-and-privacy-design"
-
-[[redirects]]
-  from="/docs/deployment-in-production/data-privacy"
-  to="/docs/architecture/security-and-privacy-design"
-
-[[redirects]]
-  from="/docs/deployment-in-production/pci-dss-soc-2-hipaa-environments"
-  to="/docs/architecture/security-and-privacy-design"
-
-[[redirects]]
   from="/docs/miscellaneous/security-policy"
-  to="/docs/contributing/security-policy"
+  to="/docs/developer-and-contributor-corner/security-policy"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes"
-  to="/docs/configuring/securing-netdata-agents"
-
-[[redirects]]
-  from="/docs/deployment-in-production/metric-retention---database/database-engine"
-  to="/docs/architecture/database-engine"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents"
 
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics"
-  to="/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
 
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database"
-  to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
 
 [[redirects]]
   from="/docs/deployment-in-production/agent-cloud-link-aclk"
-  to="/docs/configuring/securing-netdata-agents/agent-cloud-link-aclk"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/agent-cloud-link-aclk"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/web/api/queries/standard-deviation-`stddev`"
@@ -2050,16 +1838,12 @@
   to="/docs/rest-api/api"
 
 [[redirects]]
-  from="/docs/improving-netdata---developers/metric-retention---database/database-engine"
-  to="/docs/architecture/database-engine"
-
-[[redirects]]
   from="/docs/exporting-data/rest-api-for-database-queries"
   to="/docs/rest-api/queries"
 
 [[redirects]]
   from="/docs/deployment-in-production/use-host-labels-to-organize-systems-metrics-and-alarms"
-  to="/docs/configuring/organize-systems-metrics-and-alerts"
+  to="/docs/developer-and-contributor-corner/configuring/organize-systems-metrics-and-alerts"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/uWSGI"
@@ -2623,11 +2407,11 @@
 
 [[redirects]]
   from="/docs/visualizations/agent-dashboard/import-export-and-print-a-snapshot"
-  to="/docs/miscellaneous/import-export-and-print-a-snapshot"
+  to="/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot"
 
 [[redirects]]
   from="/docs/visualizations/agent-dashboard/custom-dashboards"
-  to="/docs/miscellaneous/build-a-custom-dashboard-html-page"
+  to="/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page"
 
 [[redirects]]
   from="/docs/visualizations/agent-dashboard"
@@ -2671,247 +2455,239 @@
 
 [[redirects]]
   from="/docs/installation/platform-support-policy"
-  to="/docs/installing/platform-support-policy"
+  to="/docs/netdata-agent/netdata-agent-versions-&-platforms"
 
 [[redirects]]
   from="/docs/installation/package-maintainers/netdata-contrib"
-  to="/docs/installing/build-the-netdata-agent-yourself/netdata-contrib"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/netdata-contrib"
 
 [[redirects]]
   from="/docs/installation/package-maintainers/manually-build-netdata-from-source"
-  to="/docs/installing/build-the-netdata-agent-yourself/compile-from-source-code"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/compile-from-source-code"
 
 [[redirects]]
   from="/docs/installation/package-maintainers/how-to-build-native-deb-rpm-packages-locally-for-testing"
-  to="/docs/installing/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
-
-[[redirects]]
-  from="/docs/installation/package-maintainers/external-build-system"
-  to="/docs/installing/build-the-netdata-agent-yourself/external-build-system"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
 
 [[redirects]]
   from="/docs/installation/package-maintainers"
-  to="/docs/installing/build-the-netdata-agent-yourself/package-maintainers"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/package-maintainers"
 
 [[redirects]]
   from="/docs/installation/installation-methods/static-binary-packages"
-  to="/docs/installing/static-binary-linux-packages"
+  to="/docs/netdata-agent/installation/static-binary-linux-packages"
 
 [[redirects]]
   from="/docs/installation/installation-methods/one-line-installer-kickstart.sh"
-  to="/docs/installing/one-line-installer-for-all-linux-systems"
+  to="/docs/netdata-agent/installation/one-line-installer-for-all-linux-systems"
 
 [[redirects]]
   from="/docs/installation/installation-methods/offline-systems"
-  to="/docs/installing/offline-systems"
+  to="/docs/netdata-agent/installation/offline-systems"
 
 [[redirects]]
   from="/docs/installation/installation-methods/native-deb-rpm-packages"
-  to="/docs/installing/native-linux-distribution-packages"
+  to="/docs/netdata-agent/installation/native-linux-distribution-packages"
 
 [[redirects]]
   from="/docs/installation/installation-methods/from-a-git-checkout"
-  to="/docs/installing/from-a-git-checkout"
+  to="/docs/netdata-agent/installation/from-a-git-checkout"
 
 [[redirects]]
   from="/docs/installation/installation-methods/docker"
-  to="/docs/installing/docker"
+  to="/docs/netdata-agent/installation/docker"
 
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/synology"
-  to="/docs/installing/install-netdata-on-embedded-systems/synology"
+  to="/docs/netdata-agent/installation/synology"
 
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/pfsense"
-  to="/docs/installing/pfsense"
+  to="/docs/netdata-agent/installation/pfsense"
 
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/macos"
-  to="/docs/installing/macos"
+  to="/docs/netdata-agent/installation/macos"
 
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/kubernetes/kubernetes-helm-chart-reference"
-  to="/docs/installing/kubernetes-helm-chart-reference"
+  to="/docs/netdata-agent/installation/kubernetes-helm-chart-reference"
 
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/kubernetes"
-  to="/docs/installing/kubernetes"
+  to="/docs/netdata-agent/installation/kubernetes"
 
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/gcp"
-  to="/docs/installing/gcp"
+  to="/docs/netdata-agent/installation/gcp"
 
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/freebsd"
-  to="/docs/installing/freebsd"
+  to="/docs/netdata-agent/installation/freebsd"
 
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/azure"
-  to="/docs/installing/azure"
+  to="/docs/netdata-agent/installation/azure"
 
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/aws"
-  to="/docs/installing/aws"
+  to="/docs/netdata-agent/installation/aws"
 
 [[redirects]]
   from="/docs/installation/install-on-specific-environments/ansible"
-  to="/docs/installing/install-with-a-cicd-provisioning-system/ansible"
+  to="/docs/netdata-agent/installation/ansible"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/security-policy"
-  to="/docs/contributing/security-policy"
+  to="/docs/developer-and-contributor-corner/security-policy"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/redistributed-software"
-  to="/docs/miscellaneous/redistributed-software"
+  to="/docs/developer-and-contributor-corner/redistributed-software"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/worker-utilization"
-  to="/docs/miscellaneous/libnetdata/worker-utilization"
+  to="/docs/developer-and-contributor-corner/libnetdata/worker-utilization"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/url"
-  to="/docs/miscellaneous/libnetdata/url"
+  to="/docs/developer-and-contributor-corner/libnetdata/url"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/threads"
-  to="/docs/miscellaneous/libnetdata/threads"
+  to="/docs/developer-and-contributor-corner/libnetdata/threads"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/string"
-  to="/docs/miscellaneous/libnetdata/string"
+  to="/docs/developer-and-contributor-corner/libnetdata/string"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/storage-number"
-  to="/docs/miscellaneous/libnetdata/storage-number"
+  to="/docs/developer-and-contributor-corner/libnetdata/storage-number"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/statistical-functions"
-  to="/docs/miscellaneous/libnetdata/statistical-functions"
+  to="/docs/developer-and-contributor-corner/libnetdata/statistical-functions"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/socket"
-  to="/docs/miscellaneous/libnetdata/socket"
+  to="/docs/developer-and-contributor-corner/libnetdata/socket"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/simple-patterns"
-  to="/docs/miscellaneous/libnetdata/simple-patterns"
+  to="/docs/developer-and-contributor-corner/libnetdata/simple-patterns"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/procfile"
-  to="/docs/miscellaneous/libnetdata/procfile"
+  to="/docs/developer-and-contributor-corner/libnetdata/procfile"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/popen"
-  to="/docs/miscellaneous/libnetdata/popen"
+  to="/docs/developer-and-contributor-corner/libnetdata/popen"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/one-way-allocator"
-  to="/docs/miscellaneous/libnetdata/one-way-allocator"
+  to="/docs/developer-and-contributor-corner/libnetdata/one-way-allocator"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/netdata-ini-config-files"
-  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
+  to="/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/log"
-  to="/docs/miscellaneous/libnetdata/log"
+  to="/docs/developer-and-contributor-corner/libnetdata/log"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/locks"
-  to="/docs/miscellaneous/libnetdata/locks"
+  to="/docs/developer-and-contributor-corner/libnetdata/locks"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/july-interface"
-  to="/docs/miscellaneous/libnetdata/july-interface"
+  to="/docs/developer-and-contributor-corner/libnetdata/july-interface"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/json"
-  to="/docs/miscellaneous/libnetdata/json"
+  to="/docs/developer-and-contributor-corner/libnetdata/json"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/ebpf"
-  to="/docs/miscellaneous/libnetdata/ebpf"
+  to="/docs/developer-and-contributor-corner/libnetdata/ebpf"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/dictionaries"
-  to="/docs/miscellaneous/libnetdata/dictionaries"
+  to="/docs/developer-and-contributor-corner/libnetdata/dictionaries"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/clocks"
-  to="/docs/miscellaneous/libnetdata/clocks"
+  to="/docs/developer-and-contributor-corner/libnetdata/clocks"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/circular-buffer"
-  to="/docs/miscellaneous/libnetdata/circular-buffer"
+  to="/docs/developer-and-contributor-corner/libnetdata/circular-buffer"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/buffer-library"
-  to="/docs/miscellaneous/libnetdata/buffer-library"
+  to="/docs/developer-and-contributor-corner/libnetdata/buffer-library"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/avl"
-  to="/docs/miscellaneous/libnetdata/avl"
+  to="/docs/developer-and-contributor-corner/libnetdata/avl"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/array-allocator"
-  to="/docs/miscellaneous/libnetdata/array-allocator"
+  to="/docs/developer-and-contributor-corner/libnetdata/array-allocator"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/adaptive-re-sortable-list-arl"
-  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/developer-and-contributor-corner/libnetdata/adaptive-re-sortable-list-arl"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata"
-  to="/docs/miscellaneous/libnetdata"
+  to="/docs/developer-and-contributor-corner/libnetdata"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/health-command-api-tester"
-  to="/docs/miscellaneous/health-command-api-tester"
+  to="/docs/developer-and-contributor-corner/health-command-api-tester"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/python.d.plugin"
-  to="/docs/contributing/external-plugins/python.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/go.d.plugin"
-  to="/docs/contributing/external-plugins/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/charts.d.plugin"
-  to="/docs/contributing/external-plugins/charts.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins"
-  to="/docs/contributing/external-plugins"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/database-engine"
-  to="/docs/architecture/database-engine"
+  to="/docs/developer-and-contributor-corner/external-plugins"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/contribute-to-the-documentation/netdata-style-guide"
-  to="/docs/contributing/contribute-to-the-documentation/netdata-style-guide"
+  to="/docs/developer-and-contributor-corner/contribute-to-the-documentation/netdata-style-guide"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/contribute-to-the-documentation"
-  to="/docs/contributing/contribute-to-the-documentation"
+  to="/docs/developer-and-contributor-corner/contribute-to-the-documentation"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/community-code-of-conduct"
-  to="/docs/contributing/community-code-of-conduct"
+  to="/docs/developer-and-contributor-corner/community-code-of-conduct"
 
 [[redirects]]
   from="/docs/improving-netdata---developers"
-  to="/docs/contributing"
+  to="/docs/developer-and-contributor-corner/contributing"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/visualization-date-and-time-controls"
@@ -2923,7 +2699,7 @@
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/troubleshoot-agent-cloud-connectivity-issues"
-  to="/docs/configuring/troubleshoot-agent-cloud-connectivity-issues"
+  to="/docs/developer-and-contributor-corner/configuring/troubleshoot-agent-cloud-connectivity-issues"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/sign-in-with-email-google-or-github"
@@ -2947,15 +2723,11 @@
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/connect-agent-to-cloud"
-  to="/docs/configuring/connect-agent-to-cloud"
+  to="/docs/developer-and-contributor-corner/configuring/connect-agent-to-cloud"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
   to="/docs/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
-
-[[redirects]]
-  from="/docs/getting-started/monitor-your-infrastructure"
-  to="/docs/architecture/the-role-of-netdata-cloud"
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent"
@@ -2963,47 +2735,35 @@
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/netdata-daemon"
-  to="/docs/configuring/netdata-daemon"
+  to="/docs/developer-and-contributor-corner/configuring/netdata-daemon"
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/daemon-configuration"
-  to="/docs/configuring/daemon-configuration"
+  to="/docs/developer-and-contributor-corner/configuring/daemon-configuration"
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/configuration"
-  to="/docs/configuring/configuration"
+  to="/docs/netdata-agent/configuration"
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/common-configuration-changes"
-  to="/docs/configuring/common-configuration-changes"
+  to="/docs/developer-and-contributor-corner/configuring/common-configuration-changes"
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/agent-cli"
-  to="/docs/configuring/agent-cli"
+  to="/docs/developer-and-contributor-corner/configuring/agent-cli"
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure"
-  to="/docs/configuring"
-
-[[redirects]]
-  from="/docs/getting-started/live-demos"
-  to="/docs//live-demo"
+  to="/docs/developer-and-contributor-corner/configuring"
 
 [[redirects]]
   from="/docs/getting-started/install-netdata"
-  to="/docs/installing"
+  to="/docs/netdata-agent/installation"
 
 [[redirects]]
   from="/docs/getting-started/glossary"
-  to="/docs/miscellaneous/glossary"
-
-[[redirects]]
-  from="/docs/getting-started/distributed-data-architecture"
-  to="/docs/architecture/distributed-data-architecture"
-
-[[redirects]]
-  from="/docs/getting-started"
-  to="/docs/architecture"
+  to="/docs/developer-and-contributor-corner/glossary"
 
 [[redirects]]
   from="/docs/exporting-data/shell-exporter"
@@ -3059,79 +2819,71 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference"
-  to="/docs/streaming/streaming-configuration-reference"
+  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication/database-modes-for-parent-child-setups"
-  to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
-
-[[redirects]]
-  from="/docs/deployment-in-production/streaming-and-replication"
-  to="/docs/streaming/understanding-how-streaming-works"
-
-[[redirects]]
-  from="/docs/deployment-in-production/security-and-privacy-design"
-  to="/docs/architecture/security-and-privacy-design"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/web-server"
-  to="/docs/configuring/securing-netdata-agents/web-server"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/web-server"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/role-based-access-model"
-  to="/docs/configuring/securing-netdata-agents/role-based-access-model"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/role-based-access-model"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/nginx"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/nginx"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/nginx"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/lighttpd-v1.4.x"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/haproxy"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/haproxy"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/haproxy"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/h2o"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/h2o"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/h2o"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/caddy"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/caddy"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/caddy"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/apache"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/apache"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/apache"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/registry"
-  to="/docs/configuring/securing-netdata-agents/registry"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/registry"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/anonymous-telemetry-events"
-  to="/docs/configuring/securing-netdata-agents/anonymous-telemetry-events"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/anonymous-telemetry-events"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/agent-cloud-link-aclk"
-  to="/docs/configuring/securing-netdata-agents/agent-cloud-link-aclk"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/agent-cloud-link-aclk"
 
 [[redirects]]
   from="/docs/deployment-in-production/organize-systems-metrics-and-alerts"
-  to="/docs/configuring/organize-systems-metrics-and-alerts"
+  to="/docs/developer-and-contributor-corner/configuring/organize-systems-metrics-and-alerts"
 
 [[redirects]]
   from="/docs/deployment-in-production/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/configuring/how-to-optimize-the-netdata-agent-s-performance"
+  to="/docs/developer-and-contributor-corner/configuring/how-to-optimize-the-netdata-agent-s-performance"
 
 [[redirects]]
   from="/docs/deployment-in-production/change-how-long-netdata-stores-metrics"
-  to="/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/web-server-logs-squid"
@@ -3874,112 +3626,108 @@
   to="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
 
 [[redirects]]
-  from="/docs/miscellaneous/live-demos"
-  to="/docs//live-demo"
-
-[[redirects]]
   from="/docs/typical-netdata-agent-configurations/troubleshoot-agent-cloud-connectivity-issues"
-  to="/docs/configuring/troubleshoot-agent-cloud-connectivity-issues"
+  to="/docs/developer-and-contributor-corner/configuring/troubleshoot-agent-cloud-connectivity-issues"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/web-server"
-  to="/docs/configuring/securing-netdata-agents/web-server"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/web-server"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/role-based-access-model"
-  to="/docs/configuring/securing-netdata-agents/role-based-access-model"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/role-based-access-model"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/nginx"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/nginx"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/nginx"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/haproxy"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/haproxy"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/haproxy"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/h2o"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/h2o"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/h2o"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/caddy"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/caddy"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/caddy"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/apache"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies/apache"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/apache"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies"
-  to="/docs/configuring/securing-netdata-agents/reverse-proxies"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/registry"
-  to="/docs/configuring/securing-netdata-agents/registry"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/registry"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/anonymous-telemetry-events"
-  to="/docs/configuring/securing-netdata-agents/anonymous-telemetry-events"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/anonymous-telemetry-events"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/agent-cloud-link-aclk"
-  to="/docs/configuring/securing-netdata-agents/agent-cloud-link-aclk"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/agent-cloud-link-aclk"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents"
-  to="/docs/configuring/securing-netdata-agents"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/organize-systems-metrics-and-alerts"
-  to="/docs/configuring/organize-systems-metrics-and-alerts"
+  to="/docs/developer-and-contributor-corner/configuring/organize-systems-metrics-and-alerts"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database/database-modes-for-parent-child-setups"
-  to="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
-  to="/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database"
-  to="/docs/configuring/optimizing-metrics-database"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/netdata-daemon"
-  to="/docs/configuring/netdata-daemon"
+  to="/docs/developer-and-contributor-corner/configuring/netdata-daemon"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/configuring/how-to-optimize-the-netdata-agent-s-performance"
+  to="/docs/developer-and-contributor-corner/configuring/how-to-optimize-the-netdata-agent-s-performance"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/daemon-configuration"
-  to="/docs/configuring/daemon-configuration"
+  to="/docs/developer-and-contributor-corner/configuring/daemon-configuration"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/connect-agent-to-cloud"
-  to="/docs/configuring/connect-agent-to-cloud"
+  to="/docs/developer-and-contributor-corner/configuring/connect-agent-to-cloud"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/configuration"
-  to="/docs/configuring/configuration"
+  to="/docs/netdata-agent/configuration"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/common-configuration-changes"
-  to="/docs/configuring/common-configuration-changes"
+  to="/docs/developer-and-contributor-corner/configuring/common-configuration-changes"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/agent-cli"
-  to="/docs/configuring/agent-cli"
+  to="/docs/developer-and-contributor-corner/configuring/agent-cli"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations"
-  to="/docs/configuring"
+  to="/docs/developer-and-contributor-corner/configuring"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/nodes-view"
@@ -4020,22 +3768,6 @@
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations"
   to="/docs/visualizations"
-
-[[redirects]]
-  from="/docs/netdata-architecture/the-role-of-netdata-cloud"
-  to="/docs/architecture/the-role-of-netdata-cloud"
-
-[[redirects]]
-  from="/docs/netdata-architecture/security-and-privacy-design"
-  to="/docs/architecture/security-and-privacy-design"
-
-[[redirects]]
-  from="/docs/netdata-architecture/distributed-data-architecture"
-  to="/docs/architecture/distributed-data-architecture"
-
-[[redirects]]
-  from="/docs/netdata-architecture"
-  to="/docs/architecture"
 
 [[redirects]]
   from="/docs/netdata-apis/queries/trimmed-mean"
@@ -4122,16 +3854,12 @@
   to="/docs/rest-api"
 
 [[redirects]]
-  from="/docs/metrics-streaming-and-replication/understanding-how-streaming-works"
-  to="/docs/streaming/understanding-how-streaming-works"
-
-[[redirects]]
   from="/docs/metrics-streaming-and-replication/streaming-configuration-reference"
-  to="/docs/streaming/streaming-configuration-reference"
+  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/metrics-streaming-and-replication"
-  to="/docs/streaming"
+  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/metrics-centralization-points-netdata-parents"
 
 [[redirects]]
   from="/docs/maintenance-operations-on-netdata-agents/update-netdata-agents"
@@ -4175,107 +3903,103 @@
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/static-binary-linux-packages"
-  to="/docs/installing/static-binary-linux-packages"
+  to="/docs/netdata-agent/installation/static-binary-linux-packages"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/platform-support-policy"
-  to="/docs/installing/platform-support-policy"
+  to="/docs/netdata-agent/netdata-agent-versions-&-platforms"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/pfsense"
-  to="/docs/installing/pfsense"
+  to="/docs/netdata-agent/installation/pfsense"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/one-line-installer-for-all-linux-systems"
-  to="/docs/installing/one-line-installer-for-all-linux-systems"
+  to="/docs/netdata-agent/installation/one-line-installer-for-all-linux-systems"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/offline-systems"
-  to="/docs/installing/offline-systems"
+  to="/docs/netdata-agent/installation/offline-systems"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/native-linux-distribution-packages"
-  to="/docs/installing/native-linux-distribution-packages"
+  to="/docs/netdata-agent/installation/native-linux-distribution-packages"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/macos"
-  to="/docs/installing/macos"
+  to="/docs/netdata-agent/installation/macos"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/kubernetes-helm-chart-reference"
-  to="/docs/installing/kubernetes-helm-chart-reference"
+  to="/docs/netdata-agent/installation/kubernetes-helm-chart-reference"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/kubernetes"
-  to="/docs/installing/kubernetes"
+  to="/docs/netdata-agent/installation/kubernetes"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/install-with-a-cicd-provisioning-system/ansible"
-  to="/docs/installing/install-with-a-cicd-provisioning-system/ansible"
+  to="/docs/netdata-agent/installation/ansible"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/install-with-a-cicd-provisioning-system"
-  to="/docs/installing/install-with-a-cicd-provisioning-system"
+  to="/docs/netdata-agent/installation/install-with-a-cicd-provisioning-system"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/install-netdata-on-embedded-systems/synology"
-  to="/docs/installing/install-netdata-on-embedded-systems/synology"
+  to="/docs/netdata-agent/installation/synology"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/install-netdata-on-embedded-systems"
-  to="/docs/installing/install-netdata-on-embedded-systems"
+  to="/docs/netdata-agent/installation/install-netdata-on-embedded-systems"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/gcp"
-  to="/docs/installing/gcp"
+  to="/docs/netdata-agent/installation/gcp"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/from-a-git-checkout"
-  to="/docs/installing/from-a-git-checkout"
+  to="/docs/netdata-agent/installation/from-a-git-checkout"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/freebsd"
-  to="/docs/installing/freebsd"
+  to="/docs/netdata-agent/installation/freebsd"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/docker"
-  to="/docs/installing/docker"
+  to="/docs/netdata-agent/installation/docker"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/package-maintainers"
-  to="/docs/installing/build-the-netdata-agent-yourself/package-maintainers"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/package-maintainers"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/netdata-contrib"
-  to="/docs/installing/build-the-netdata-agent-yourself/netdata-contrib"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/netdata-contrib"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
-  to="/docs/installing/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
-
-[[redirects]]
-  from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/external-build-system"
-  to="/docs/installing/build-the-netdata-agent-yourself/external-build-system"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/compile-from-source-code"
-  to="/docs/installing/build-the-netdata-agent-yourself/compile-from-source-code"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/compile-from-source-code"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself"
-  to="/docs/installing/build-the-netdata-agent-yourself"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/azure"
-  to="/docs/installing/azure"
+  to="/docs/netdata-agent/installation/azure"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/aws"
-  to="/docs/installing/aws"
+  to="/docs/netdata-agent/installation/aws"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent"
-  to="/docs/installing"
+  to="/docs/netdata-agent/installation"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/shell-scripts"
@@ -4331,159 +4055,155 @@
 
 [[redirects]]
   from="/docs/contributing-to-netdata/security-policy"
-  to="/docs/contributing/security-policy"
+  to="/docs/developer-and-contributor-corner/security-policy"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/redistributed-software"
-  to="/docs/miscellaneous/redistributed-software"
+  to="/docs/developer-and-contributor-corner/redistributed-software"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/worker-utilization"
-  to="/docs/miscellaneous/libnetdata/worker-utilization"
+  to="/docs/developer-and-contributor-corner/libnetdata/worker-utilization"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/url"
-  to="/docs/miscellaneous/libnetdata/url"
+  to="/docs/developer-and-contributor-corner/libnetdata/url"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/threads"
-  to="/docs/miscellaneous/libnetdata/threads"
+  to="/docs/developer-and-contributor-corner/libnetdata/threads"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/string"
-  to="/docs/miscellaneous/libnetdata/string"
+  to="/docs/developer-and-contributor-corner/libnetdata/string"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/storage-number"
-  to="/docs/miscellaneous/libnetdata/storage-number"
+  to="/docs/developer-and-contributor-corner/libnetdata/storage-number"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/statistical-functions"
-  to="/docs/miscellaneous/libnetdata/statistical-functions"
+  to="/docs/developer-and-contributor-corner/libnetdata/statistical-functions"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/socket"
-  to="/docs/miscellaneous/libnetdata/socket"
+  to="/docs/developer-and-contributor-corner/libnetdata/socket"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/simple-patterns"
-  to="/docs/miscellaneous/libnetdata/simple-patterns"
+  to="/docs/developer-and-contributor-corner/libnetdata/simple-patterns"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/procfile"
-  to="/docs/miscellaneous/libnetdata/procfile"
+  to="/docs/developer-and-contributor-corner/libnetdata/procfile"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/popen"
-  to="/docs/miscellaneous/libnetdata/popen"
+  to="/docs/developer-and-contributor-corner/libnetdata/popen"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/one-way-allocator"
-  to="/docs/miscellaneous/libnetdata/one-way-allocator"
+  to="/docs/developer-and-contributor-corner/libnetdata/one-way-allocator"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/netdata-ini-config-files"
-  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
+  to="/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/log"
-  to="/docs/miscellaneous/libnetdata/log"
+  to="/docs/developer-and-contributor-corner/libnetdata/log"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/locks"
-  to="/docs/miscellaneous/libnetdata/locks"
+  to="/docs/developer-and-contributor-corner/libnetdata/locks"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/july-interface"
-  to="/docs/miscellaneous/libnetdata/july-interface"
+  to="/docs/developer-and-contributor-corner/libnetdata/july-interface"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/json"
-  to="/docs/miscellaneous/libnetdata/json"
+  to="/docs/developer-and-contributor-corner/libnetdata/json"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/ebpf"
-  to="/docs/miscellaneous/libnetdata/ebpf"
+  to="/docs/developer-and-contributor-corner/libnetdata/ebpf"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/dictionaries"
-  to="/docs/miscellaneous/libnetdata/dictionaries"
+  to="/docs/developer-and-contributor-corner/libnetdata/dictionaries"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/clocks"
-  to="/docs/miscellaneous/libnetdata/clocks"
+  to="/docs/developer-and-contributor-corner/libnetdata/clocks"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/circular-buffer"
-  to="/docs/miscellaneous/libnetdata/circular-buffer"
+  to="/docs/developer-and-contributor-corner/libnetdata/circular-buffer"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/buffer-library"
-  to="/docs/miscellaneous/libnetdata/buffer-library"
+  to="/docs/developer-and-contributor-corner/libnetdata/buffer-library"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/avl"
-  to="/docs/miscellaneous/libnetdata/avl"
+  to="/docs/developer-and-contributor-corner/libnetdata/avl"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/array-allocator"
-  to="/docs/miscellaneous/libnetdata/array-allocator"
+  to="/docs/developer-and-contributor-corner/libnetdata/array-allocator"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/adaptive-re-sortable-list-arl"
-  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/developer-and-contributor-corner/libnetdata/adaptive-re-sortable-list-arl"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata"
-  to="/docs/miscellaneous/libnetdata"
+  to="/docs/developer-and-contributor-corner/libnetdata"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/health-command-api-tester"
-  to="/docs/miscellaneous/health-command-api-tester"
+  to="/docs/developer-and-contributor-corner/health-command-api-tester"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/python.d.plugin"
-  to="/docs/contributing/external-plugins/python.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/go.d.plugin"
-  to="/docs/contributing/external-plugins/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/charts.d.plugin"
-  to="/docs/contributing/external-plugins/charts.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/external-plugins"
-  to="/docs/contributing/external-plugins"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/database-engine"
-  to="/docs/architecture/database-engine"
+  to="/docs/developer-and-contributor-corner/external-plugins"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/contribute-to-the-documentation/netdata-style-guide"
-  to="/docs/contributing/contribute-to-the-documentation/netdata-style-guide"
+  to="/docs/developer-and-contributor-corner/contribute-to-the-documentation/netdata-style-guide"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/contribute-to-the-documentation"
-  to="/docs/contributing/contribute-to-the-documentation"
+  to="/docs/developer-and-contributor-corner/contribute-to-the-documentation"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/community-code-of-conduct"
-  to="/docs/contributing/community-code-of-conduct"
+  to="/docs/developer-and-contributor-corner/community-code-of-conduct"
 
 [[redirects]]
   from="/docs/contributing-to-netdata"
-  to="/docs/contributing"
+  to="/docs/developer-and-contributor-corner/contributing"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/manage-notification-methods"
@@ -4618,14 +4338,6 @@
   to="/docs/alerting"
 
 [[redirects]]
-  from="/docs//live-demos"
-  to="/docs//live-demo"
-
-[[redirects]]
-  from="/docs/contributing/database-engine"
-  to="/docs/architecture/database-engine"
-
-[[redirects]]
   from="/docs/monitor-your-infrastructure/spaces"
   to="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
 
@@ -4671,135 +4383,135 @@
 
 [[redirects]]
   from="/docs/contributing/redistributed-software"
-  to="/docs/miscellaneous/redistributed-software"
+  to="/docs/developer-and-contributor-corner/redistributed-software"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/worker-utilization"
-  to="/docs/miscellaneous/libnetdata/worker-utilization"
+  to="/docs/developer-and-contributor-corner/libnetdata/worker-utilization"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/url"
-  to="/docs/miscellaneous/libnetdata/url"
+  to="/docs/developer-and-contributor-corner/libnetdata/url"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/threads"
-  to="/docs/miscellaneous/libnetdata/threads"
+  to="/docs/developer-and-contributor-corner/libnetdata/threads"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/string"
-  to="/docs/miscellaneous/libnetdata/string"
+  to="/docs/developer-and-contributor-corner/libnetdata/string"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/storage-number"
-  to="/docs/miscellaneous/libnetdata/storage-number"
+  to="/docs/developer-and-contributor-corner/libnetdata/storage-number"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/statistical-functions"
-  to="/docs/miscellaneous/libnetdata/statistical-functions"
+  to="/docs/developer-and-contributor-corner/libnetdata/statistical-functions"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/socket"
-  to="/docs/miscellaneous/libnetdata/socket"
+  to="/docs/developer-and-contributor-corner/libnetdata/socket"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/simple-patterns"
-  to="/docs/miscellaneous/libnetdata/simple-patterns"
+  to="/docs/developer-and-contributor-corner/libnetdata/simple-patterns"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/procfile"
-  to="/docs/miscellaneous/libnetdata/procfile"
+  to="/docs/developer-and-contributor-corner/libnetdata/procfile"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/popen"
-  to="/docs/miscellaneous/libnetdata/popen"
+  to="/docs/developer-and-contributor-corner/libnetdata/popen"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/one-way-allocator"
-  to="/docs/miscellaneous/libnetdata/one-way-allocator"
+  to="/docs/developer-and-contributor-corner/libnetdata/one-way-allocator"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/netdata-ini-config-files"
-  to="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
+  to="/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/log"
-  to="/docs/miscellaneous/libnetdata/log"
+  to="/docs/developer-and-contributor-corner/libnetdata/log"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/locks"
-  to="/docs/miscellaneous/libnetdata/locks"
+  to="/docs/developer-and-contributor-corner/libnetdata/locks"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/july-interface"
-  to="/docs/miscellaneous/libnetdata/july-interface"
+  to="/docs/developer-and-contributor-corner/libnetdata/july-interface"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/json"
-  to="/docs/miscellaneous/libnetdata/json"
+  to="/docs/developer-and-contributor-corner/libnetdata/json"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/ebpf"
-  to="/docs/miscellaneous/libnetdata/ebpf"
+  to="/docs/developer-and-contributor-corner/libnetdata/ebpf"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/dictionaries"
-  to="/docs/miscellaneous/libnetdata/dictionaries"
+  to="/docs/developer-and-contributor-corner/libnetdata/dictionaries"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/clocks"
-  to="/docs/miscellaneous/libnetdata/clocks"
+  to="/docs/developer-and-contributor-corner/libnetdata/clocks"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/circular-buffer"
-  to="/docs/miscellaneous/libnetdata/circular-buffer"
+  to="/docs/developer-and-contributor-corner/libnetdata/circular-buffer"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/buffer-library"
-  to="/docs/miscellaneous/libnetdata/buffer-library"
+  to="/docs/developer-and-contributor-corner/libnetdata/buffer-library"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/avl"
-  to="/docs/miscellaneous/libnetdata/avl"
+  to="/docs/developer-and-contributor-corner/libnetdata/avl"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/array-allocator"
-  to="/docs/miscellaneous/libnetdata/array-allocator"
+  to="/docs/developer-and-contributor-corner/libnetdata/array-allocator"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/adaptive-re-sortable-list-arl"
-  to="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/developer-and-contributor-corner/libnetdata/adaptive-re-sortable-list-arl"
 
 [[redirects]]
   from="/docs/contributing/libnetdata"
-  to="/docs/miscellaneous/libnetdata"
+  to="/docs/developer-and-contributor-corner/libnetdata"
 
 [[redirects]]
   from="/docs/contributing/health-command-api-tester"
-  to="/docs/miscellaneous/health-command-api-tester"
+  to="/docs/developer-and-contributor-corner/health-command-api-tester"
 
 [[redirects]]
   from="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/contributing/external-plugins/python.d.plugin"
-  to="/docs/contributing/external-plugins/python.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/contributing/external-plugins/go.d.plugin"
-  to="/docs/contributing/external-plugins/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/contributing/external-plugins/charts.d.plugin"
-  to="/docs/contributing/external-plugins/charts.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/contributing/external-plugins"
-  to="/docs/contributing/external-plugins"
+  to="/docs/developer-and-contributor-corner/external-plugins"
 
 [[redirects]]
   from="/docs/exporting/prometheus/remote-write"
@@ -4963,7 +4675,7 @@
 
 [[redirects]]
   from="/docs/data-collection/service-discovery"
-  to="/docs/configuring/service-discovery"
+  to="/docs/developer-and-contributor-corner/configuring/service-discovery"
 
 [[redirects]]
   from="/docs/data-collection/provisioning-systems/puppet"
@@ -5063,31 +4775,31 @@
 
 [[redirects]]
   from="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/data-collection/external-plugins/python.d.plugin"
-  to="/docs/contributing/external-plugins/python.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
 [[redirects]]
   from="/docs/data-collection/external-plugins/profile.plugin"
-  to="/docs/contributing/external-plugins/profile.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/profile.plugin"
 
 [[redirects]]
   from="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 
 [[redirects]]
   from="/docs/data-collection/external-plugins/go.d.plugin"
-  to="/docs/contributing/external-plugins/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/data-collection/external-plugins/charts.d.plugin"
-  to="/docs/contributing/external-plugins/charts.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin"
 
 [[redirects]]
   from="/docs/data-collection/external-plugins"
-  to="/docs/contributing/external-plugins"
+  to="/docs/developer-and-contributor-corner/external-plugins"
 
 [[redirects]]
   from="/docs/data-collection/examples/example-module-in-python"
@@ -5179,7 +4891,7 @@
 
 [[redirects]]
   from="/docs/data-collection/collectors-configuration"
-  to="/docs/configuring/collectors-configuration"
+  to="/docs/developer-and-contributor-corner/configuring/collectors-configuration"
 
 [[redirects]]
   from="/docs/data-collection/apm/php-applications"
@@ -5407,11 +5119,11 @@
 
 [[redirects]]
   from="/docs/dashboard/customize"
-  to="/docs/miscellaneous/customize-the-standard-dashboard"
+  to="/docs/developer-and-contributor-corner/customize-the-standard-dashboard"
 
 [[redirects]]
   from="/docs/visualizations/agent-dashboard/customize-the-standard-dashboard"
-  to="/docs/miscellaneous/customize-the-standard-dashboard"
+  to="/docs/developer-and-contributor-corner/customize-the-standard-dashboard"
 
 [[redirects]]
   from="/docs/data-collection/ci/cd-platforms/puppet"
@@ -5447,15 +5159,15 @@
 
 [[redirects]]
   from="/docs/logs/passive-journal-centralization-without-encryption"
-  to="/docs/logs/systemd-journal/passive-journal-centralization-without-encryption"
+  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
 
 [[redirects]]
   from="/docs/logs/passive-journal-centralization-with-encryption-using-self-signed-certificates"
-  to="/docs/logs/systemd-journal/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/active-journal-centralization-without-encryption"
-  to="/docs/logs/systemd-journal/active-journal-source-without-encryption"
+  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
 
 [[redirects]]
   from="/docs/agent/backends"
@@ -5476,5 +5188,445 @@
 [[redirects]]
   from="/docs/exporting-data-to-other-systems"
   to="/docs/exporting/exporting-quickstart"
+
+[[redirects]]
+  from="/docs/streaming/streaming-configuration-reference"
+  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/streaming"
+  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/metrics-centralization-points-netdata-parents"
+
+[[redirects]]
+  from="/docs/netdata-cloud-on-prem/light-poc-deployment"
+  to="/docs/netdata-cloud/netdata-cloud-on-prem/netdata-cloud-on-prem-poc-withouth-k8s"
+
+[[redirects]]
+  from="/docs/netdata-cloud-on-prem/basic-troubleshooting"
+  to="/docs/netdata-cloud/netdata-cloud-on-prem/netdata-cloud-on-prem-troubleshooting"
+
+[[redirects]]
+  from="/docs/netdata-cloud-on-prem"
+  to="/docs/netdata-cloud/netdata-cloud-on-prem"
+
+[[redirects]]
+  from="/docs/miscellaneous/unsupervised-anomaly-detection-for-raspberry-pi-monitoring"
+  to="/docs/developer-and-contributor-corner/unsupervised-anomaly-detection-for-raspberry-pi-monitoring"
+
+[[redirects]]
+  from="/docs/miscellaneous/running-a-local-dashboard-through-cloudflare-tunnels"
+  to="/docs/developer-and-contributor-corner/running-a-local-dashboard-through-cloudflare-tunnels"
+
+[[redirects]]
+  from="/docs/miscellaneous/redistributed-software"
+  to="/docs/developer-and-contributor-corner/redistributed-software"
+
+[[redirects]]
+  from="/docs/miscellaneous/monitor-unbound-dns-servers-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata"
+
+[[redirects]]
+  from="/docs/miscellaneous/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/miscellaneous/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
+
+[[redirects]]
+  from="/docs/miscellaneous/monitor-nginx-or-apache-web-server-log-files-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-nginx-or-apache-web-server-log-files-with-netdata"
+
+[[redirects]]
+  from="/docs/miscellaneous/monitor-cockroachdb-metrics-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-cockroachdb-metrics-with-netdata"
+
+[[redirects]]
+  from="/docs/miscellaneous/monitor-any-process-in-real-time-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-any-process-in-real-time-with-netdata"
+
+[[redirects]]
+  from="/docs/miscellaneous/monitor-a-hadoop-cluster-with-netdata"
+  to="/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/worker-utilization"
+  to="/docs/developer-and-contributor-corner/libnetdata/worker-utilization"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/url"
+  to="/docs/developer-and-contributor-corner/libnetdata/url"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/threads"
+  to="/docs/developer-and-contributor-corner/libnetdata/threads"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/string"
+  to="/docs/developer-and-contributor-corner/libnetdata/string"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/storage-number"
+  to="/docs/developer-and-contributor-corner/libnetdata/storage-number"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/statistical-functions"
+  to="/docs/developer-and-contributor-corner/libnetdata/statistical-functions"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/socket"
+  to="/docs/developer-and-contributor-corner/libnetdata/socket"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/simple-patterns"
+  to="/docs/developer-and-contributor-corner/libnetdata/simple-patterns"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/procfile"
+  to="/docs/developer-and-contributor-corner/libnetdata/procfile"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/popen"
+  to="/docs/developer-and-contributor-corner/libnetdata/popen"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/one-way-allocator"
+  to="/docs/developer-and-contributor-corner/libnetdata/one-way-allocator"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
+  to="/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/log"
+  to="/docs/developer-and-contributor-corner/libnetdata/log"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/locks"
+  to="/docs/developer-and-contributor-corner/libnetdata/locks"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/july-interface"
+  to="/docs/developer-and-contributor-corner/libnetdata/july-interface"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/json"
+  to="/docs/developer-and-contributor-corner/libnetdata/json"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/ebpf"
+  to="/docs/developer-and-contributor-corner/libnetdata/ebpf"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/dictionaries"
+  to="/docs/developer-and-contributor-corner/libnetdata/dictionaries"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/clocks"
+  to="/docs/developer-and-contributor-corner/libnetdata/clocks"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/circular-buffer"
+  to="/docs/developer-and-contributor-corner/libnetdata/circular-buffer"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/buffer-library"
+  to="/docs/developer-and-contributor-corner/libnetdata/buffer-library"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/avl"
+  to="/docs/developer-and-contributor-corner/libnetdata/avl"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/array-allocator"
+  to="/docs/developer-and-contributor-corner/libnetdata/array-allocator"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata/adaptive-re-sortable-list-arl"
+  to="/docs/developer-and-contributor-corner/libnetdata/adaptive-re-sortable-list-arl"
+
+[[redirects]]
+  from="/docs/miscellaneous/libnetdata"
+  to="/docs/developer-and-contributor-corner/libnetdata"
+
+[[redirects]]
+  from="/docs/miscellaneous/lamp-stack-monitoring-linux-apache-mysql-php-with-netdata"
+  to="/docs/developer-and-contributor-corner/lamp-stack-monitoring-linux-apache-mysql-php-with-netdata"
+
+[[redirects]]
+  from="/docs/miscellaneous/kubernetes-monitoring-with-netdata-overview-and-visualizations"
+  to="/docs/developer-and-contributor-corner/kubernetes-monitoring-with-netdata-overview-and-visualizations"
+
+[[redirects]]
+  from="/docs/miscellaneous/import-export-and-print-a-snapshot"
+  to="/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot"
+
+[[redirects]]
+  from="/docs/miscellaneous/health-command-api-tester"
+  to="/docs/developer-and-contributor-corner/health-command-api-tester"
+
+[[redirects]]
+  from="/docs/miscellaneous/glossary"
+  to="/docs/developer-and-contributor-corner/glossary"
+
+[[redirects]]
+  from="/docs/miscellaneous/customize-the-standard-dashboard"
+  to="/docs/developer-and-contributor-corner/customize-the-standard-dashboard"
+
+[[redirects]]
+  from="/docs/miscellaneous/build-a-custom-dashboard-html-page"
+  to="/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page"
+
+[[redirects]]
+  from="/docs/miscellaneous"
+  to="/docs/developer-and-contributor-corner/miscellaneous"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal/passive-journal-centralization-without-encryption"
+  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal/active-journal-source-without-encryption"
+  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+
+[[redirects]]
+  from="/docs/installing/static-binary-linux-packages"
+  to="/docs/netdata-agent/installation/static-binary-linux-packages"
+
+[[redirects]]
+  from="/docs/installing/platform-support-policy"
+  to="/docs/netdata-agent/netdata-agent-versions-&-platforms"
+
+[[redirects]]
+  from="/docs/installing/pfsense"
+  to="/docs/netdata-agent/installation/pfsense"
+
+[[redirects]]
+  from="/docs/installing/one-line-installer-for-all-linux-systems"
+  to="/docs/netdata-agent/installation/one-line-installer-for-all-linux-systems"
+
+[[redirects]]
+  from="/docs/installing/offline-systems"
+  to="/docs/netdata-agent/installation/offline-systems"
+
+[[redirects]]
+  from="/docs/installing/native-linux-distribution-packages"
+  to="/docs/netdata-agent/installation/native-linux-distribution-packages"
+
+[[redirects]]
+  from="/docs/installing/macos"
+  to="/docs/netdata-agent/installation/macos"
+
+[[redirects]]
+  from="/docs/installing/kubernetes-helm-chart-reference"
+  to="/docs/netdata-agent/installation/kubernetes-helm-chart-reference"
+
+[[redirects]]
+  from="/docs/installing/kubernetes"
+  to="/docs/netdata-agent/installation/kubernetes"
+
+[[redirects]]
+  from="/docs/installing/install-with-a-cicd-provisioning-system/ansible"
+  to="/docs/netdata-agent/installation/ansible"
+
+[[redirects]]
+  from="/docs/installing/install-with-a-cicd-provisioning-system"
+  to="/docs/netdata-agent/installation/install-with-a-cicd-provisioning-system"
+
+[[redirects]]
+  from="/docs/installing/install-netdata-on-embedded-systems/synology"
+  to="/docs/netdata-agent/installation/synology"
+
+[[redirects]]
+  from="/docs/installing/install-netdata-on-embedded-systems"
+  to="/docs/netdata-agent/installation/install-netdata-on-embedded-systems"
+
+[[redirects]]
+  from="/docs/installing/gcp"
+  to="/docs/netdata-agent/installation/gcp"
+
+[[redirects]]
+  from="/docs/installing/from-a-git-checkout"
+  to="/docs/netdata-agent/installation/from-a-git-checkout"
+
+[[redirects]]
+  from="/docs/installing/freebsd"
+  to="/docs/netdata-agent/installation/freebsd"
+
+[[redirects]]
+  from="/docs/installing/docker"
+  to="/docs/netdata-agent/installation/docker"
+
+[[redirects]]
+  from="/docs/installing/build-the-netdata-agent-yourself/package-maintainers"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/package-maintainers"
+
+[[redirects]]
+  from="/docs/installing/build-the-netdata-agent-yourself/netdata-contrib"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/netdata-contrib"
+
+[[redirects]]
+  from="/docs/installing/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
+
+[[redirects]]
+  from="/docs/installing/build-the-netdata-agent-yourself/compile-from-source-code"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/compile-from-source-code"
+
+[[redirects]]
+  from="/docs/installing/build-the-netdata-agent-yourself"
+  to="/docs/netdata-agent/installation/build-the-netdata-agent-yourself"
+
+[[redirects]]
+  from="/docs/installing/azure"
+  to="/docs/netdata-agent/installation/azure"
+
+[[redirects]]
+  from="/docs/installing/aws"
+  to="/docs/netdata-agent/installation/aws"
+
+[[redirects]]
+  from="/docs/installing"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/contributing/security-policy"
+  to="/docs/developer-and-contributor-corner/security-policy"
+
+[[redirects]]
+  from="/docs/contributing/external-plugins/profile.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/profile.plugin"
+
+[[redirects]]
+  from="/docs/contributing/contribute-to-the-documentation/netdata-style-guide"
+  to="/docs/developer-and-contributor-corner/contribute-to-the-documentation/netdata-style-guide"
+
+[[redirects]]
+  from="/docs/contributing/contribute-to-the-documentation"
+  to="/docs/developer-and-contributor-corner/contribute-to-the-documentation"
+
+[[redirects]]
+  from="/docs/contributing/community-code-of-conduct"
+  to="/docs/developer-and-contributor-corner/community-code-of-conduct"
+
+[[redirects]]
+  from="/docs/contributing"
+  to="/docs/developer-and-contributor-corner/contributing"
+
+[[redirects]]
+  from="/docs/configuring/troubleshoot-agent-cloud-connectivity-issues"
+  to="/docs/developer-and-contributor-corner/configuring/troubleshoot-agent-cloud-connectivity-issues"
+
+[[redirects]]
+  from="/docs/configuring/service-discovery"
+  to="/docs/developer-and-contributor-corner/configuring/service-discovery"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/web-server"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/web-server"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/role-based-access-model"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/role-based-access-model"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/reverse-proxies/nginx"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/nginx"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/reverse-proxies/haproxy"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/haproxy"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/reverse-proxies/h2o"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/h2o"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/reverse-proxies/caddy"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/caddy"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/reverse-proxies/apache"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/apache"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/reverse-proxies"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/registry"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/registry"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/anonymous-telemetry-events"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/anonymous-telemetry-events"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents/agent-cloud-link-aclk"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/agent-cloud-link-aclk"
+
+[[redirects]]
+  from="/docs/configuring/securing-netdata-agents"
+  to="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents"
+
+[[redirects]]
+  from="/docs/configuring/organize-systems-metrics-and-alerts"
+  to="/docs/developer-and-contributor-corner/configuring/organize-systems-metrics-and-alerts"
+
+[[redirects]]
+  from="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
+
+[[redirects]]
+  from="/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+
+[[redirects]]
+  from="/docs/configuring/optimizing-metrics-database"
+  to="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database"
+
+[[redirects]]
+  from="/docs/configuring/netdata-daemon"
+  to="/docs/developer-and-contributor-corner/configuring/netdata-daemon"
+
+[[redirects]]
+  from="/docs/configuring/how-to-optimize-the-netdata-agent-s-performance"
+  to="/docs/developer-and-contributor-corner/configuring/how-to-optimize-the-netdata-agent-s-performance"
+
+[[redirects]]
+  from="/docs/configuring/daemon-configuration"
+  to="/docs/developer-and-contributor-corner/configuring/daemon-configuration"
+
+[[redirects]]
+  from="/docs/configuring/connect-agent-to-cloud"
+  to="/docs/developer-and-contributor-corner/configuring/connect-agent-to-cloud"
+
+[[redirects]]
+  from="/docs/configuring/configuration"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/configuring/common-configuration-changes"
+  to="/docs/developer-and-contributor-corner/configuring/common-configuration-changes"
+
+[[redirects]]
+  from="/docs/configuring/collectors-configuration"
+  to="/docs/developer-and-contributor-corner/configuring/collectors-configuration"
+
+[[redirects]]
+  from="/docs/configuring/agent-cli"
+  to="/docs/developer-and-contributor-corner/configuring/agent-cli"
+
+[[redirects]]
+  from="/docs/configuring"
+  to="/docs/developer-and-contributor-corner/configuring"
 
 # section: dynamic << END

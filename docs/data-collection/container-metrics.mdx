@@ -20,7 +20,7 @@ containers**, such as Docker, LXC, LXD, Libvirt, systemd-nspawn, and more. Read 
 monitoring](#collect-docker-metrics) below.
 
 Netdata also has robust **Kubernetes monitoring** support thanks to a
-[Helmchart](/docs/installing/kubernetes) to automate deployment, collectors for k8s agent services, and
+[Helmchart](/docs/netdata-agent/installation/kubernetes) to automate deployment, collectors for k8s agent services, and
 robust [service discovery](https://github.com/netdata/agent-service-discovery/#service-discovery) to monitor the
 services running inside of pods in your k8s cluster. Read more about [Kubernetes
 monitoring](#collect-kubernetes-metrics) below.
@@ -56,10 +56,10 @@ metrics](/docs/data-collection/databases/mysql#charts) as well.
 
 ### Collect metrics from applications running in Docker containers
 
-You could use this technique to monitor an entire infrastructure of Docker containers. The same [enable and configure](/docs/configuring/collectors-configuration) procedures apply whether an application runs on the host system or inside
+You could use this technique to monitor an entire infrastructure of Docker containers. The same [enable and configure](/docs/developer-and-contributor-corner/configuring/collectors-configuration) procedures apply whether an application runs on the host system or inside
 a container. You may need to configure the target endpoint if it's not the application's default.
 
-Netdata can even [run in a Docker container](/docs/installing/docker) itself, and then collect metrics about the
+Netdata can even [run in a Docker container](/docs/netdata-agent/installation/docker) itself, and then collect metrics about the
 host system, its own container with cgroups, and any applications you want to monitor.
 
 See our [application metrics doc](/docs/data-collection/application-metrics) for details about Netdata's application metrics
@@ -89,7 +89,7 @@ your k8s infrastructure.
     each container running on your k8s cluster.
 
 For a holistic view of Netdata's Kubernetes monitoring capabilities, see our guide: [_Monitor a Kubernetes (k8s) cluster
-with Netdata_](/docs/miscellaneous/kubernetes-monitoring-with-netdata-overview-and-visualizations).
+with Netdata_](/docs/developer-and-contributor-corner/kubernetes-monitoring-with-netdata-overview-and-visualizations).
 
 ## What's next?
 
