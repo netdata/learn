@@ -3,7 +3,7 @@ window.onload = function() {
   console.log(window.location.pathname);
   // the following lines will be replaced by docker/configurator, when it runs in a docker-container
   window.ui = SwaggerUIBundle({
-    url: "https://raw.githubusercontent.com/netdata/netdata/master/web/api/netdata-swagger.json",
+    url: "https://raw.githubusercontent.com/netdata/netdata/master/src/web/api/netdata-swagger.json",
     dom_id: '#swagger-ui',
     deepLinking: true,
     presets: [
