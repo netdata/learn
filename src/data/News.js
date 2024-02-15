@@ -17,6 +17,18 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Ease of creating and managing Custom Dashboards!</>,
+		href: 'https://github.com/netdata/netdata/discussions/17016',
+		date: 'Feb 08, 2024',
+		type: 'Link',
+		description: (
+			<>
+				Major release to improve the way to interact with Custom Dashboards! 📊🖱️
+				Even though this is still an early release, the overall experience and usability have improved in a major way and (hopefully) will bring a lot of value to you.
+			</>
+		),	
+	},
+	{
 		title: <>New plan alert: Homelab plan is launched!</>,
 		href: 'https://blog.netdata.cloud/netdata-homelab-plan/',
 		date: 'Feb 08, 2024',
