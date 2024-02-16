@@ -4,7 +4,7 @@ sidebar_label: "Kubernetes"
 learn_status: "Published"
 learn_rel_path: "Netdata Agent/Installation"
 description: "Deploy Netdata to monitor a Kubernetes cluster to monitor the health, performance, resource utilization, and application metrics of a Kubernetes cluster in real time."
-sidebar_position: "106200"
+sidebar_position: "204120"
 learn_link: "https://learn.netdata.cloud/docs/netdata-agent/installation/kubernetes"
 ---
 
@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
 # Install Netdata on Kubernetes
 
-This document details how to install Netdata on an existing Kubernetes (k8s) cluster, and connect it to Netdata Cloud. Read our [Kubernetes visualizations](/docs/visualizations/kubernetes-visualizations) documentation, to see what you will get.
+This document details how to install Netdata on an existing Kubernetes (k8s) cluster, and connect it to Netdata Cloud. Read our [Kubernetes visualizations](/docs/dashboards-and-charts/kubernetes-visualizations) documentation, to see what you will get.
 
 The [Netdata Helm chart](/docs/netdata-agent/installation/kubernetes-helm-chart-reference) installs one `parent` pod for storing metrics and managing alert notifications, plus an additional
 `child` pod for every node in the cluster, responsible for collecting metrics from the node, Kubernetes control planes,
@@ -201,10 +201,10 @@ helm upgrade netdata netdata/netdata
 
 ## What's next?
 
-[Start Kubernetes monitoring](/docs/visualizations/kubernetes-visualizations) in Netdata Cloud, which comes with meaningful visualizations out of the box.
+[Start Kubernetes monitoring](/docs/dashboards-and-charts/kubernetes-visualizations) in Netdata Cloud, which comes with meaningful visualizations out of the box.
 
 ### Related reference documentation
 
-- [Netdata Cloud · Kubernetes monitoring](/docs/visualizations/kubernetes-visualizations)
+- [Netdata Cloud · Kubernetes monitoring](/docs/dashboards-and-charts/kubernetes-visualizations)
 - [Netdata Helm chart](https://github.com/netdata/helmchart)
 - [Netdata service discovery](https://github.com/netdata/agent-service-discovery/)

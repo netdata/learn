@@ -337,10 +337,10 @@ def create_mdx_path_from_metadata(metadata):
                           .replace("(", " ")
                           .replace("`", " ")).split())
 
-    if "Data Collection" in metadata['learn_rel_path']\
-            and metadata['learn_rel_path'].split("/")[-1] != "Data Collection" and 'External-plugins' not in metadata['learn_rel_path']:
-        last_folder = metadata['learn_rel_path'].split("Data Collection", 1)[1]
-        last_folder = "data-collection" + last_folder
+    if "Collecting Metrics" in metadata['learn_rel_path']\
+            and metadata['learn_rel_path'].split("/")[-1] != "Collecting Metrics" and 'External-plugins' not in metadata['learn_rel_path']:
+        last_folder = metadata['learn_rel_path'].split("Collecting Metrics", 1)[1]
+        last_folder = "collecting-metrics" + last_folder
         # print(last_folder)
         # exit()
         # If the file is inside the monitor-anything category,
@@ -349,7 +349,7 @@ def create_mdx_path_from_metadata(metadata):
         # We use the slug to avoid having %20 (replacing spaces) in the link of the file.
         return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
                                       metadata["learn_rel_path"]
-                                      .split("Data Collection")[0].lower().replace(" ", "-") + last_folder,
+                                      .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
                                       final_file.replace(" ", "-")).replace("//", "/"),
                 "/{}/{}".format(metadata["learn_rel_path"],
                                 final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
@@ -397,7 +397,7 @@ def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
                         # print("ROOT")
                         val = "/"
 
-                    if "Data Collection" in val or "Data Collection" in val:
+                    if "Collecting Metrics" in val or "Collecting Metrics" in val:
                         output += "toc_max_heading_level: 4\n"
 
                 if field == "sidebar_position":

@@ -4,7 +4,7 @@ sidebar_label: "Monitor, troubleshoot, and debug applications with eBPF metrics"
 learn_status: "Published"
 learn_rel_path: "Developer and Contributor Corner"
 description: "Use Netdata's built-in eBPF metrics collector to monitor, troubleshoot, and debug your custom application using low-level kernel feedback."
-sidebar_position: "1550000"
+sidebar_position: "61252000"
 learn_link: "https://learn.netdata.cloud/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
 ---
 
@@ -62,12 +62,12 @@ dev: custom-app
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/maintaining/starting-and-stopping-netdata-agents) for your system, to begin seeing metrics for this particular
+method](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for your system, to begin seeing metrics for this particular
 group+process. You can also add additional processes to the same group.
 
 You can set up `apps_groups.conf` to more show more precise eBPF metrics for any application or service running on your
 system, even if it's a standard package like Redis, Apache, or any other [application/service Netdata collects
-from](/docs/data-collection/monitor-anything).
+from](/docs/collecting-metrics/monitor-anything).
 
 ```conf
 # -----------------------------------------------------------------------------
@@ -111,7 +111,7 @@ Replace `entry` with `return`:
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or the [appropriate
-method](/docs/maintaining/starting-and-stopping-netdata-agents) for your system.
+method](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for your system.
 
 ## Get familiar with per-application eBPF metrics and charts
 
@@ -243,13 +243,13 @@ If you don't already have a Netdata Cloud account, go [sign in](https://app.netd
 You can also read how to [monitor your infrastructure with Netdata Cloud](https://github.com/netdata/netdata/blob/master/docs/quickstart/infrastructure.md) to understand the key features that it has to offer.
 
 Once you've added one or more nodes to a Space in Netdata Cloud, you can see aggregated eBPF metrics in the [Overview
-dashboard](/docs/visualizations/infrastructure-overview) under the same **Applications** or **eBPF** sections that you
-find on the local Agent dashboard. Or, [create new dashboards](/docs/visualizations/custom-dashboards) using eBPF metrics
+dashboard](/docs/dashboards-and-charts/infrastructure-overview) under the same **Applications** or **eBPF** sections that you
+find on the local Agent dashboard. Or, [create new dashboards](/docs/dashboards-and-charts/custom-dashboards) using eBPF metrics
 from any number of distributed nodes to see how your application interacts with multiple Linux kernels on multiple Linux
 systems. 
 
 Now that you can see eBPF metrics in Netdata Cloud, you can [invite your
-team](/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team#invite-your-team) and share your findings with others.
+team](/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team#invite-your-team) and share your findings with others.
 
 
 

@@ -51,7 +51,7 @@ export default function Home() {
 						container platforms (Kubernetes clusters, Docker), and many other
 						operating systems, with no <code>sudo</code> required.
 					</Box>
-					<Box to="/docs/architecture" title="Docs" cta="Read the docs" image={false}>
+					<Box to="/docs/deployment-guides" title="Docs" cta="Read the docs" image={false}>
 						Solution- and action-based docs for Netdata's many features and
 						capabilities. Your table of contents to becoming an expert in using
 						Netdata to monitor and troubleshoot applications and their

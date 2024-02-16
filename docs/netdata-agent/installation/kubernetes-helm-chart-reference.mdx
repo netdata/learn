@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/helmchart/edit/master/charts/netdat
 sidebar_label: "Kubernetes Helm chart reference"
 learn_status: "Published"
 learn_rel_path: "Netdata Agent/Installation"
-sidebar_position: "106240"
+sidebar_position: "204160"
 learn_link: "https://learn.netdata.cloud/docs/netdata-agent/installation/kubernetes-helm-chart-reference"
 ---
 
@@ -359,33 +359,33 @@ and exports them, so they can be monitored.
 
 Service discovery currently supports the following applications via their associated collector:
 
-- [ActiveMQ](/docs/data-collection/message-brokers/activemq)
-- [Apache](/docs/data-collection/web-servers-and-web-proxies/apache)
+- [ActiveMQ](/docs/collecting-metrics/message-brokers/activemq)
+- [Apache](/docs/collecting-metrics/web-servers-and-web-proxies/apache)
 - [Bind](https://github.com/netdata/go.d.plugin/blob/master/modules/bind/README.md)
-- [CockroachDB](/docs/data-collection/databases/cockroachdb)
-- [Consul](/docs/data-collection/service-discovery-/-registry/consul)
-- [CoreDNS](/docs/data-collection/dns-and-dhcp-servers/coredns)
-- [Elasticsearch](/docs/data-collection/search-engines/elasticsearch)
-- [Fluentd](/docs/data-collection/logs-servers/fluentd)
-- [FreeRADIUS](/docs/data-collection/authentication-and-authorization/freeradius)
-- [HDFS](/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs)
-- [Lighttpd](/docs/data-collection/web-servers-and-web-proxies/lighttpd)
-- [Logstash](/docs/data-collection/logs-servers/logstash)
-- [MySQL](/docs/data-collection/databases/mysql)
-- [NGINX](/docs/data-collection/web-servers-and-web-proxies/nginx)
-- [OpenVPN](/docs/data-collection/vpns/openvpn)
-- [PHP-FPM](/docs/data-collection/web-servers-and-web-proxies/php-fpm)
-- [RabbitMQ](/docs/data-collection/message-brokers/rabbitmq)
-- [Solr](/docs/data-collection/search-engines/solr)
-- [Tengine](/docs/data-collection/web-servers-and-web-proxies/tengine)
-- [Unbound](/docs/data-collection/dns-and-dhcp-servers/unbound)
-- [VerneMQ](/docs/data-collection/message-brokers/vernemq)
-- [ZooKeeper](/docs/data-collection/service-discovery-/-registry/zookeeper)
+- [CockroachDB](/docs/collecting-metrics/databases/cockroachdb)
+- [Consul](/docs/collecting-metrics/service-discovery-/-registry/consul)
+- [CoreDNS](/docs/collecting-metrics/dns-and-dhcp-servers/coredns)
+- [Elasticsearch](/docs/collecting-metrics/search-engines/elasticsearch)
+- [Fluentd](/docs/collecting-metrics/logs-servers/fluentd)
+- [FreeRADIUS](/docs/collecting-metrics/authentication-and-authorization/freeradius)
+- [HDFS](/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs)
+- [Lighttpd](/docs/collecting-metrics/web-servers-and-web-proxies/lighttpd)
+- [Logstash](/docs/collecting-metrics/logs-servers/logstash)
+- [MySQL](/docs/collecting-metrics/databases/mysql)
+- [NGINX](/docs/collecting-metrics/web-servers-and-web-proxies/nginx)
+- [OpenVPN](/docs/collecting-metrics/vpns/openvpn)
+- [PHP-FPM](/docs/collecting-metrics/web-servers-and-web-proxies/php-fpm)
+- [RabbitMQ](/docs/collecting-metrics/message-brokers/rabbitmq)
+- [Solr](/docs/collecting-metrics/search-engines/solr)
+- [Tengine](/docs/collecting-metrics/web-servers-and-web-proxies/tengine)
+- [Unbound](/docs/collecting-metrics/dns-and-dhcp-servers/unbound)
+- [VerneMQ](/docs/collecting-metrics/message-brokers/vernemq)
+- [ZooKeeper](/docs/collecting-metrics/service-discovery-/-registry/zookeeper)
 
 #### Prometheus endpoints
 
 Service discovery supports Prometheus endpoints via
-the [Prometheus](/docs/data-collection/generic-data-collection/prometheus-endpoint) collector.
+the [Prometheus](/docs/collecting-metrics/generic-collecting-metrics/prometheus-endpoint) collector.
 
 Annotations on pods allow a fine control of the scraping process:
 

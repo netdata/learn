@@ -4,7 +4,7 @@ sidebar_label: "Monitor any process in real-time with Netdata"
 learn_status: "Published"
 learn_rel_path: "Developer and Contributor Corner"
 description: "Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions."
-sidebar_position: "1552000"
+sidebar_position: "61254000"
 learn_link: "https://learn.netdata.cloud/docs/developer-and-contributor-corner/monitor-any-process-in-real-time-with-netdata"
 ---
 
@@ -40,14 +40,14 @@ With Netdata's process monitoring, you can:
 
 - One or more Linux nodes running [Netdata](/docs/netdata-agent/installation)
 - A general understanding of how
-  to [configure the Netdata Agent](/docs/netdata-agent/configuration)
+  to [configure the Netdata Agent](https://github.com/netdata/netdata/blob/master/docs/configure/nodes.md)
   using `edit-config`.
 - A Netdata Cloud account. [Sign up](https://app.netdata.cloud) if you don't have one already.
 
 ## How does Netdata do process monitoring?
 
 The Netdata Agent already knows to look for hundreds
-of [standard applications that we support via collectors](/docs/data-collection/monitor-anything),
+of [standard applications that we support via collectors](/docs/collecting-metrics/monitor-anything),
 and groups them based on their
 purpose. Let's say you want to monitor a MySQL
 database using its process. The Netdata Agent already knows to look for processes with the string `mysqld` in their
@@ -131,7 +131,7 @@ aware of hundreds of processes, and collects metrics from them automatically.
 But, if you want to change the grouping behavior, add an application that isn't yet supported in the Netdata Agent, or
 monitor a custom application, you need to edit the `apps_groups.conf` configuration file.
 
-Navigate to your [Netdata config directory](/docs/netdata-agent/configuration) and
+Navigate to your [Netdata config directory](https://github.com/netdata/netdata/blob/master/docs/configure/nodes.md) and
 use `edit-config` to edit the file.
 
 ```bash
@@ -181,7 +181,7 @@ sql: mariad* postmaster* oracle_* ora_* sqlservr
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or
-the [appropriate method](/docs/maintaining/starting-and-stopping-netdata-agents) for your system, to start collecting utilization metrics
+the [appropriate method](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for your system, to start collecting utilization metrics
 from your application. Time to [visualize your process metrics](#visualize-process-metrics).
 
 ### Custom applications
@@ -208,7 +208,7 @@ custom-app: custom-app
 ```
 
 Restart Netdata with `sudo systemctl restart netdata`, or
-the [appropriate method](/docs/maintaining/starting-and-stopping-netdata-agents) for your system, to start collecting utilization metrics
+the [appropriate method](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for your system, to start collecting utilization metrics
 from your application.
 
 ## Visualize process metrics

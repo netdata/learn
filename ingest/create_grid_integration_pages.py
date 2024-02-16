@@ -50,17 +50,17 @@ def get_dir_make_file_and_recurse(directory):
 
         sidebar_label = str(directory).rsplit("/", 1)[1]
 
-        if "data-collection" in str(directory):
+        if "collecting-metrics" in str(directory):
             sidebar_position = ""
 
         if "centralized-cloud-notifications" in sidebar_label:
             sidebar_label = "Centralized Cloud Notifications"
         elif "agent-dispatched-notifications" in sidebar_label:
             sidebar_label = "Agent Dispatched Notifications"
-        elif sidebar_label == "notifications":
-            sidebar_label = "Notifications"
-        elif sidebar_label == "exporting":
-            sidebar_label = "Exporting"
+        elif sidebar_label == "alerts-&-notifications":
+            sidebar_label = "Alerts & Notifications"
+        elif sidebar_label == "exporting-metrics":
+            sidebar_label = "Exporting Metrics"
 
         md = \
             f"""---
@@ -117,11 +117,11 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
             get_dir_make_file_and_recurse(subdir)
 
 
-for path in Path('docs/data-collection').glob('*/'):
+for path in Path('docs/collecting-metrics').glob('*/'):
     get_dir_make_file_and_recurse(path)
 
 get_dir_make_file_and_recurse(
     'docs/alerting/notifications/agent-dispatched-notifications')
 get_dir_make_file_and_recurse(
     'docs/alerting/notifications/centralized-cloud-notifications')
-get_dir_make_file_and_recurse('docs/exporting')
+get_dir_make_file_and_recurse('docs/exporting-metrics')

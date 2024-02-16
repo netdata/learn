@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/packaging/insta
 sidebar_label: "Installation"
 learn_status: "Published"
 learn_rel_path: "Netdata Agent/Installation"
-sidebar_position: "106000"
+sidebar_position: "204000"
 learn_link: "https://learn.netdata.cloud/docs/netdata-agent/installation/installation"
 ---
 
@@ -49,22 +49,22 @@ for the [single line installer](#install-on-linux-with-one-line-installer), or [
 
 #### Configuration
 
-Discover the recommended way to [configure Netdata's settings or behavior](/docs/netdata-agent/configuration) using our built-in
+Discover the recommended way to [configure Netdata's settings or behavior](https://github.com/netdata/netdata/blob/master/docs/configure/nodes.md) using our built-in
 `edit-config` script, then apply that knowledge to mission-critical tweaks, such as [changing how long Netdata stores
-metrics](/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics).
+metrics](/docs/netdata-agent/configuration/optimizing-metrics-database/change-how-long-netdata-stores-metrics).
 
 #### Data collection
 
 If Netdata didn't autodetect all the hardware, containers, services, or applications running on your node, you should
-learn more about [how data collectors work](/docs/data-collection). If there's a [supported
-collector](/docs/data-collection/monitor-anything) for metrics you need, [configure the collector](/docs/developer-and-contributor-corner/configuring/collectors-configuration)
+learn more about [how data collectors work](/docs/collecting-metrics). If there's a [supported
+collector](/docs/collecting-metrics/monitor-anything) for metrics you need, [configure the collector](/docs/collecting-metrics/collectors-configuration)
 or read about its requirements to configure your endpoint to publish metrics in the correct format and endpoint.
 
 #### Alerts & notifications
 
 Netdata comes with hundreds of preconfigured alerts, designed by our monitoring gurus in parallel with our open-source
-community, but you may want to [edit alerts](/docs/alerting/health-configuration-reference) or
-[enable notifications](/docs/alerting/notifications) to customize your Netdata experience.
+community, but you may want to [edit alerts](/docs/alerts-&-notifications/health-configuration-reference) or
+[enable notifications](/docs/alerts-&-notifications/notifications) to customize your Netdata experience.
 
 #### Make your deployment production ready
 
@@ -74,7 +74,7 @@ for suggested configuration changes for production deployments.
 ## Install on Linux with one-line installer
 
 The **recommended** way to install Netdata on a Linux node (physical, virtual, container, IoT) is our one-line
-[kickstart script](/docs/netdata-agent/installation/one-line-installer-for-all-linux-systems).
+[kickstart script](/docs/netdata-agent/installation/linux).
 This script automatically installs dependencies and builds Netdata from its source code.
 
 To install, copy the script, paste it into your node's terminal, and hit `Enter` to begin the installation process.
@@ -116,30 +116,30 @@ troubleshooting with Netdata.
     os="Install on macOS"
     svg="macos" />
   <InstallBoxRegexLink
-    to="[](/docs/netdata-agent/installation/native-linux-distribution-packages)"
+    to="[](/docs/netdata-agent/installation/linux/native-linux-distribution-packages)"
     os="Native DEB/RPM packages"
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/netdata-agent/installation/from-a-git-checkout)"
+    to="[](/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout)"
     os="Linux from Git"
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/netdata-agent/installation/build-the-netdata-agent-yourself/compile-from-source-code)"
+    to="[](/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/compile-from-source-code)"
     os="Linux from source"
     svg="linux" />
   <InstallBoxRegexLink
-    to="[](/docs/netdata-agent/installation/offline-systems)"
+    to="[](/docs/netdata-agent/installation/linux/offline-systems)"
     os="Linux for offline nodes"
     svg="linux" />
 </InstallRegexLink>
 
-- [Native DEB/RPM packages](/docs/netdata-agent/installation/native-linux-distribution-packages)
+- [Native DEB/RPM packages](/docs/netdata-agent/installation/linux/native-linux-distribution-packages)
 - [Run with Docker](/docs/netdata-agent/installation/docker)
 - [Deploy on Kubernetes](/docs/netdata-agent/installation/kubernetes)
 - [Install on macOS](/docs/netdata-agent/installation/macos)
-- [Linux from Git](/docs/netdata-agent/installation/from-a-git-checkout)
-- [Linux from source](/docs/netdata-agent/installation/build-the-netdata-agent-yourself/compile-from-source-code)
-- [Linux for offline nodes](/docs/netdata-agent/installation/offline-systems)
+- [Linux from Git](/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout)
+- [Linux from source](/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/compile-from-source-code)
+- [Linux for offline nodes](/docs/netdata-agent/installation/linux/offline-systems)
 
 The full list of all installation methods for various systems is available in [Netdata Learn](https://learn.netdata.cloud),
 under [Installation](https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/installation-overview.md).
@@ -159,7 +159,7 @@ wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /
 ```
 
 With automatic updates disabled, you can choose exactly when and how you [update
-Netdata](/docs/maintaining/update-netdata-agents).
+Netdata](https://github.com/netdata/netdata/blob/master/packaging/installer/UPDATE.md).
 
 #### Network usage of Netdata’s automatic updater
 
@@ -202,7 +202,7 @@ the community helps fix any bugs that might have been introduced in previous rel
 
 ### Anonymous statistics
 
-Starting with v1.30, Netdata collects anonymous usage information by default and sends it to a self-hosted PostHog instance within the Netdata infrastructure. Read about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/anonymous-telemetry-events) page.
+Starting with v1.30, Netdata collects anonymous usage information by default and sends it to a self-hosted PostHog instance within the Netdata infrastructure. Read about the information collected, and learn how to-opt, on our [anonymous statistics](/docs/netdata-agent/configuration/anonymous-telemetry-events) page.
 
 The usage statistics are _vital_ for us, as we use them to discover bugs and prioritize new features. We thank you for
 _actively_ contributing to Netdata's future.
@@ -224,12 +224,12 @@ There are three potential workarounds for this:
    affect many projects other than just Netdata, and there are unfortunately a number of other services out there
    that do not provide IPv6 connectivity, so taking this route is likely to save you time in the future as well.
 2. If you are using a system that we publish native packages for (see our [platform support
-   policy](/docs/netdata-agent/netdata-agent-versions-&-platforms) for more details),
+   policy](/docs/netdata-agent/versions-&-platforms) for more details),
    you can manually set up our native package repositories as outlined in our [native package install
-   documentation](/docs/netdata-agent/installation/native-linux-distribution-packages). Our official
+   documentation](/docs/netdata-agent/installation/linux/native-linux-distribution-packages). Our official
    package repositories do provide service over IPv6, so they work without issue on hosts without IPv4 connectivity.
 3. If neither of the above options work for you, you can still install using our [offline installation
-   instructions](/docs/netdata-agent/installation/offline-systems), though
+   instructions](/docs/netdata-agent/installation/linux/offline-systems), though
    do note that the offline install source must be prepared from a system with IPv4 connectivity.
 
 #### Older distributions (Ubuntu 14.04, Debian 8, CentOS 6) and OpenSSL
@@ -246,8 +246,8 @@ man-in-the-middle attacks.
 #### CentOS 6 and CentOS 8
 
 To install the Agent on certain CentOS and RHEL systems, you must enable non-default repositories, such as EPEL or
-PowerTools, to gather hard dependencies. See the [CentOS 6](/docs/netdata-agent/installation/from-a-git-checkout#centos--rhel-6x) and
-[CentOS 8](/docs/netdata-agent/installation/from-a-git-checkout#centos--rhel-8x) sections for more information.
+PowerTools, to gather hard dependencies. See the [CentOS 6](/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout#centos--rhel-6x) and
+[CentOS 8](/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout#centos--rhel-8x) sections for more information.
 
 #### Access to file is not permitted
 
@@ -281,4 +281,4 @@ both.
 
 Our current build process has some issues when using certain configurations of the `clang` C compiler on Linux. See [the
 section on `nonrepresentable section on output`
-errors](/docs/netdata-agent/installation/from-a-git-checkout#nonrepresentable-section-on-output-errors) for a workaround.
+errors](/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout#nonrepresentable-section-on-output-errors) for a workaround.

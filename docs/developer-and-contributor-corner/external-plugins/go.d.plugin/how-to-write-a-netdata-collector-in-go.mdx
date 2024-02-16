@@ -4,7 +4,7 @@ sidebar_label: "How to write a Netdata collector in Go"
 learn_status: "Published"
 learn_rel_path: "Developer and Contributor Corner/External-plugins/go.d.plugin"
 description: "This guide will walk you through the technical implementation of writing a new Netdata collector in Golang, with tips on interfaces, structure, configuration files, and more."
-sidebar_position: "1508041"
+sidebar_position: "61212041"
 learn_link: "https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
 ---
 
@@ -46,7 +46,7 @@ The steps are:
   our [documentation](/docs/developer-and-contributor-corner/external-plugins#external-plugins-api).
 - If you want to test the collector with the actual Netdata Agent, you need to replace the `go.d.plugin` binary that
   exists in the Netdata Agent installation directory with the one you just compiled. Once
-  you [restart](/docs/maintaining/starting-and-stopping-netdata-agents) the Netdata Agent, it will detect and run
+  you [restart](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) the Netdata Agent, it will detect and run
   it, creating all the charts. It is advised not to remove the default `go.d.plugin` binary, but simply rename it
   to `go.d.plugin.old` so that the Agent doesn't run it, but you can easily rename it back once you are done.
 - Run `make clean` when you are done with testing.

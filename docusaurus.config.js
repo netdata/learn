@@ -91,12 +91,12 @@ module.exports = {
 					label: 'Resources',
 					style: { 'font-weight': '500' },
 					items: [
-						// {
-						// 	type: 'doc',
-						// 	style: { 'color': 'white' },
-						// 	docId: 'architecture/architecture',
-						// 	label: 'Documentation'
-						// },
+						{
+							type: 'doc',
+							style: { 'color': 'white' },
+							docId: 'deployment-guides/deployment-guides',
+							label: 'Documentation'
+						},
 						// {
 						// 	type: 'doc',
 						// 	style: { 'color': 'white' },

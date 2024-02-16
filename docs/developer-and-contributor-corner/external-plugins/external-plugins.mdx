@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/collectors/
 sidebar_label: "External plugins"
 learn_status: "Published"
 learn_rel_path: "Developer and Contributor Corner/External-plugins"
-sidebar_position: "1508000"
+sidebar_position: "61212000"
 learn_link: "https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins/external-plugins"
 ---
 
@@ -19,16 +19,16 @@ from external processes, thus allowing Netdata to use **external plugins**.
 |:------------------------------------------------------------------------------------------------------:|:--------:|:--------------:|:----------------------------------------------------------------------------------------------------------------------------------------|
 |     [apps.plugin](https://github.com/netdata/netdata/blob/master/src/collectors/apps.plugin/README.md)     |   `C`    | linux, freebsd | monitors the whole process tree on Linux and FreeBSD and breaks down system resource usage by **process**, **user** and **user group**. |
 | [charts.d.plugin](/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin) |  `BASH`  |      all       | a **plugin orchestrator** for data collection modules written in `BASH` v4+.                                                            |
-|     [cups.plugin](/docs/data-collection/hardware-devices-and-sensors/cups)     |   `C`    |      all       | monitors **CUPS**                                                                                                                       |
+|     [cups.plugin](/docs/collecting-metrics/hardware-devices-and-sensors/cups)     |   `C`    |      all       | monitors **CUPS**                                                                                                                       |
 |     [ebpf.plugin](https://github.com/netdata/netdata/blob/master/src/collectors/ebpf.plugin/README.md)     |   `C`    |     linux      | monitors different metrics on environments using kernel internal functions.                                                             |
 |              [go.d.plugin](/docs/developer-and-contributor-corner/external-plugins/go.d.plugin)               |   `GO`   |      all       | collects metrics from the system, applications, or third-party APIs.                                                                    |
-|   [ioping.plugin](/docs/data-collection/synthetic-checks/ioping)   |   `C`    |      all       | measures disk latency.                                                                                                                  |
-| [freeipmi.plugin](/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi) |   `C`    |     linux      | collects metrics from enterprise hardware sensors, on Linux servers.                                                                    |
-|   [nfacct.plugin](/docs/data-collection/linux-systems/firewall/netfilter)   |   `C`    |     linux      | collects netfilter firewall, connection tracker and accounting metrics using `libmnl` and `libnetfilter_acct`.                          |
-|  [xenstat.plugin](/docs/data-collection/containers-and-vms/xen-xcp-ng)  |   `C`    |     linux      | collects XenServer and XCP-ng metrics using `lxenstat`.                                                                                 |
-|     [perf.plugin](/docs/data-collection/linux-systems/cpu-performance)     |   `C`    |     linux      | collects CPU performance metrics using performance monitoring units (PMU).                                                              |
+|   [ioping.plugin](/docs/collecting-metrics/synthetic-checks/ioping)   |   `C`    |      all       | measures disk latency.                                                                                                                  |
+| [freeipmi.plugin](/docs/collecting-metrics/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi) |   `C`    |     linux      | collects metrics from enterprise hardware sensors, on Linux servers.                                                                    |
+|   [nfacct.plugin](/docs/collecting-metrics/linux-systems/firewall/netfilter)   |   `C`    |     linux      | collects netfilter firewall, connection tracker and accounting metrics using `libmnl` and `libnetfilter_acct`.                          |
+|  [xenstat.plugin](/docs/collecting-metrics/containers-and-vms/xen-xcp-ng)  |   `C`    |     linux      | collects XenServer and XCP-ng metrics using `lxenstat`.                                                                                 |
+|     [perf.plugin](/docs/collecting-metrics/linux-systems/cpu-performance)     |   `C`    |     linux      | collects CPU performance metrics using performance monitoring units (PMU).                                                              |
 | [python.d.plugin](/docs/developer-and-contributor-corner/external-plugins/python.d.plugin) | `python` |      all       | a **plugin orchestrator** for data collection modules written in `python` v2 or v3 (both are supported).                                |
-| [slabinfo.plugin](/docs/data-collection/linux-systems/kernel/linux-kernel-slab-allocator-statistics) |   `C`    |     linux      | collects kernel internal cache objects (SLAB) metrics.                                                                                  |
+| [slabinfo.plugin](/docs/collecting-metrics/linux-systems/kernel/linux-kernel-slab-allocator-statistics) |   `C`    |     linux      | collects kernel internal cache objects (SLAB) metrics.                                                                                  |
 
 Plugin orchestrators may also be described as **modular plugins**. They are modular since they accept custom made modules to be included. Writing modules for these plugins is easier than accessing the native Netdata API directly. You will find modules already available for each orchestrator under the directory of the particular modular plugin (e.g. under python.d.plugin for the python orchestrator).
 Each of these modular plugins has each own methods for defining modules. Please check the examples and their documentation.

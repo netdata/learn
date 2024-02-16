@@ -4,15 +4,15 @@ sidebar_label: "Develop a custom data collector in Python"
 learn_status: "Published"
 learn_rel_path: "Developer and Contributor Corner/External-plugins/python.d.plugin"
 description: "Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box."
-sidebar_position: "1508081"
+sidebar_position: "61212081"
 learn_link: "https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 ---
 
 # Develop a custom data collector in Python
 
-The Netdata Agent uses [data collectors](/docs/data-collection) to 
+The Netdata Agent uses [data collectors](/docs/collecting-metrics) to 
 fetch metrics from hundreds of system, container, and service endpoints. While the Netdata team and community has built 
-[powerful collectors](/docs/data-collection/monitor-anything) for most system, container, 
+[powerful collectors](/docs/collecting-metrics/monitor-anything) for most system, container, 
 and service/application endpoints, some custom applications can't be monitored by default.
 
 In this tutorial, you'll learn how to leverage the [Python programming language](https://www.python.org/) to build a
@@ -43,7 +43,7 @@ For a quick start, you can look at the
 Netdata (as opposed to having to install Netdata from source again with your new changes) you can copy over the relevant
 file to where Netdata expects it and then either `sudo systemctl restart netdata` to have it be picked up and used by
 Netdata or you can just run the updated collector in debug mode by following a process like below (this assumes you have
-[installed Netdata from a GitHub fork](/docs/netdata-agent/installation/from-a-git-checkout) you
+[installed Netdata from a GitHub fork](/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout) you
 have made to do your development on).
 
 ```bash
@@ -420,7 +420,7 @@ ORDER = [
 ]
 ```
 
-[Restart Netdata](/docs/maintaining/starting-and-stopping-netdata-agents) with `sudo systemctl restart netdata` to see the new humidity
+[Restart Netdata](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) with `sudo systemctl restart netdata` to see the new humidity
 chart:
 
 ![A snapshot of the modified chart](https://i.imgur.com/XOeCBmg.png)
@@ -477,7 +477,7 @@ ORDER = [
 ]
 ```
 
-[Restart Netdata](/docs/maintaining/starting-and-stopping-netdata-agents) with `sudo systemctl restart netdata` to see the new
+[Restart Netdata](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) with `sudo systemctl restart netdata` to see the new
 min/max/average temperature chart with multiple dimensions:
 
 ![A snapshot of the modified chart](https://i.imgur.com/g7E8lnG.png)

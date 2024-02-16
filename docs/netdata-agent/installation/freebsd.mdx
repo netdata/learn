@@ -4,7 +4,7 @@ sidebar_label: "FreeBSD"
 learn_status: "Published"
 learn_rel_path: "Netdata Agent/Installation"
 description: "Install Netdata on FreeBSD to monitor the health and performance of bare metal or VMs with thousands of real-time, per-second metrics."
-sidebar_position: "106400"
+sidebar_position: "204280"
 learn_link: "https://learn.netdata.cloud/docs/netdata-agent/installation/freebsd"
 ---
 
@@ -92,7 +92,7 @@ You can now access the Netdata dashboard by navigating to `http://NODE:19999`, r
 
 Starting with v1.30, Netdata collects anonymous usage information by default and sends it to a self hosted PostHog instance within the Netdata infrastructure. To read
 more about the information collected and how to opt-out, check the [anonymous statistics
-page](/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/anonymous-telemetry-events).
+page](/docs/netdata-agent/configuration/anonymous-telemetry-events).
 
 ## Updating the Agent on FreeBSD
 If you have not passed the `--auto-update` or `-u` parameter for the installer to enable automatic updating, repeat the last step to update Netdata whenever a new version becomes available. 
@@ -136,7 +136,7 @@ The following options are mutually exclusive and specifiy special operations oth
 - `--uninstall`: Uninstall an existing installation of Netdata. Fails if there is no existing install.
 - `--claim-only`: If there is an existing install, only try to claim it without attempting to update it. If there is no existing install, install and claim Netdata normally.
 - `--repositories-only`: Only install repository configuration packages instead of doing a full install of Netdata. Automatically sets --native-only.
-- `--prepare-offline-install-source`: Instead of insallling the agent, prepare a directory that can be used to install on another system without needing to download anything. See our [offline installation documentation](/docs/netdata-agent/installation/offline-systems) for more info.
+- `--prepare-offline-install-source`: Instead of insallling the agent, prepare a directory that can be used to install on another system without needing to download anything. See our [offline installation documentation](/docs/netdata-agent/installation/linux/offline-systems) for more info.
 
 Additionally, the following environment variables may be used to further customize how the script runs (most users
 should not need to use special values for any of these):
