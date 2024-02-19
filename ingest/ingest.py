@@ -316,6 +316,16 @@ def clone_repo(owner, repo, branch, depth, prefix_folder):
         # print("DEBUG", outputFolder)
         git.Git().clone(
             f"https://github.com/{owner}/{repo}.git", output_folder, depth=depth, branch=branch)
+
+        print("trying to ignore new go.d dir in netdata/netdata until move is completed")
+
+        if str(output_folder) == "ingest-temp-folder/netdata":
+            shutil.rmtree(str(output_folder) + '/src' + '/go')
+            # os.rmdir("output_folder)
+            print(output_folder, owner, repo)
+
+        # "ingest-temp-folder/netdata"
+
         return f"Cloned the {branch} branch from {repo} repo (owner: {owner})"
     except Exception as e:
         return f"Couldn't clone the {branch} branch from {repo} repo (owner: {owner}) \n Exception {e} raised"

@@ -70,13 +70,13 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billi
 				
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/README.md	Observability Centralization Points	Published	Observability Centralization Points	
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/best-practices.md	Best Practices for Observability Centralization Points	Published	Observability Centralization Points	
-https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/README.md	Metrics Centralization Points (Netdata Parents)	Published	Observability Centralization Points/Metrics Centralization Points (Netdata Parents)	
-https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/configuration.md	Configuring Metrics Centralization Points	Published	Observability Centralization Points/Metrics Centralization Points (Netdata Parents)	
-https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/sizing-netdata-parents.md	Sizing Netdata Parents	Published	Observability Centralization Points/Metrics Centralization Points (Netdata Parents)	
-	Optimizing Netdata Children	Unpublished	Observability Centralization Points/Metrics Centralization Points (Netdata Parents)	
-https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents.md	Clustering and High Availability of Netdata Parents	Published	Observability Centralization Points/Metrics Centralization Points (Netdata Parents)	
-https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples.md	Replication of Past Samples	Published	Observability Centralization Points/Metrics Centralization Points (Netdata Parents)	
-https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/faq.md	FAQ on Metrics Cantralization Points	Published	Observability Centralization Points/Metrics Centralization Points (Netdata Parents)	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/README.md	Metrics Centralization Points	Published	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/configuration.md	Configuring Metrics Centralization Points	Published	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/sizing-netdata-parents.md	Sizing Netdata Parents	Published	Observability Centralization Points/Metrics Centralization Points	
+	Optimizing Netdata Children	Unpublished	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents.md	Clustering and High Availability of Netdata Parents	Published	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples.md	Replication of Past Samples	Published	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/faq.md	FAQ on Metrics Cantralization Points	Published	Observability Centralization Points/Metrics Centralization Points	
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/README.md	Logs Centralization Points with systemd-journald	Published	Observability Centralization Points/Logs Centralization Points with systemd-journald	
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates.md	Passive journal centralization with encryption using self-signed certificates	Published	Observability Centralization Points/Logs Centralization Points with systemd-journald	
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption.md	Passive journal centralization without encryption	Published	Observability Centralization Points/Logs Centralization Points with systemd-journald	
@@ -152,9 +152,9 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/overview.md	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	Visualization date and time controls	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.md	View active alerts	Published	Dashboards and Charts	
 				
-	Security and Privacy Design	Unpublished	Security and Privacy Design	
-	Netdata Agent Security and Privacy Design	Unpublished	Security and Privacy Design	
-	Netdata Cloud Security and Privacy Design	Unpublished	Security and Privacy Design	
+https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/README.md	Security and Privacy Design	Published	Security and Privacy Design	
+https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	Netdata Agent Security and Privacy Design	Published	Security and Privacy Design	
+https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	Netdata Cloud Security and Privacy Design	Published	Security and Privacy Design	
 				
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	Maintaining	Unpublished	Maintaining	
 https://github.com/netdata/netdata/edit/master/docs/configure/start-stop-restart.md	Starting and Stopping Netdata Agents 	Unpublished	Maintaining	Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes.

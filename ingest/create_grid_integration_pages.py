@@ -121,7 +121,7 @@ for path in Path('docs/collecting-metrics').glob('*/'):
     get_dir_make_file_and_recurse(path)
 
 get_dir_make_file_and_recurse(
-    'docs/alerting/notifications/agent-dispatched-notifications')
+    'docs/alerts-&-notifications/notifications/agent-dispatched-notifications')
 get_dir_make_file_and_recurse(
-    'docs/alerting/notifications/centralized-cloud-notifications')
+    'docs/alerts-&-notifications/notifications/centralized-cloud-notifications')
 get_dir_make_file_and_recurse('docs/exporting-metrics')

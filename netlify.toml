@@ -991,99 +991,99 @@
 
 [[redirects]]
   from="/docs/agent/health/notifications/alerta"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/alerta"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/alerta"
 
 [[redirects]]
   from="/docs/agent/health/notifications/awssns"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/aws-sns"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/agent/health/notifications/custom"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/custom"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/custom"
 
 [[redirects]]
   from="/docs/agent/health/notifications/discord"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/discord"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/discord"
 
 [[redirects]]
   from="/docs/agent/health/notifications/dynatrace"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/dynatrace"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/dynatrace"
 
 [[redirects]]
   from="/docs/agent/health/notifications/email"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/email"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/email"
 
 [[redirects]]
   from="/docs/agent/health/notifications/flock"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/flock"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/flock"
 
 [[redirects]]
   from="/docs/agent/health/notifications/gotify"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/gotify"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/gotify"
 
 [[redirects]]
   from="/docs/agent/health/notifications/irc"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/irc"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/irc"
 
 [[redirects]]
   from="/docs/agent/health/notifications/kavenegar"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/kavenegar"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/kavenegar"
 
 [[redirects]]
   from="/docs/agent/health/notifications/matrix"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/matrix"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/matrix"
 
 [[redirects]]
   from="/docs/agent/health/notifications/messagebird"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/messagebird"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/messagebird"
 
 [[redirects]]
   from="/docs/agent/health/notifications/msteams"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/microsoft-teams"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/agent/health/notifications/opsgenie"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/opsgenie"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pagerduty"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pagerduty"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/agent/health/notifications/prowl"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/prowl"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/prowl"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pushbullet"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pushbullet"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushbullet"
 
 [[redirects]]
   from="/docs/agent/health/notifications/pushover"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pushover"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushover"
 
 [[redirects]]
   from="/docs/agent/health/notifications/rocketchat"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/rocketchat"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/rocketchat"
 
 [[redirects]]
   from="/docs/agent/health/notifications/slack"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/slack"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/slack"
 
 [[redirects]]
   from="/docs/agent/health/notifications/smstools3"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/sms"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/sms"
 
 [[redirects]]
   from="/docs/agent/health/notifications/syslog"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/syslog"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/syslog"
 
 [[redirects]]
   from="/docs/agent/health/notifications/telegram"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/telegram"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/telegram"
 
 [[redirects]]
   from="/docs/agent/health/notifications/twilio"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/twilio"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/twilio"
 
 [[redirects]]
   from="/docs/agent/health/reference"
@@ -1683,7 +1683,7 @@
 
 [[redirects]]
   from="/docs/next/agent/health/notifications/awssns"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/aws-sns"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/api/"
@@ -3431,103 +3431,103 @@
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/twilio"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/twilio"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/twilio"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/telegram"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/telegram"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/telegram"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/syslog"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/syslog"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/syslog"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/sms-server"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/sms"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/sms"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/slack"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/slack"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/slack"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/rocket-chat"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/rocketchat"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/rocketchat"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushover"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pushover"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushover"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pushbullet"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pushbullet"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushbullet"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/prowl"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/prowl"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/prowl"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/pagerduty"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pagerduty"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/opsgenie"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/opsgenie"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/ntfy"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/ntfy"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/ntfy"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/microsoft-teams"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/microsoft-teams"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/messagebird"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/messagebird"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/messagebird"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/matrix"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/matrix"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/matrix"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/kavenegar"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/kavenegar"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/kavenegar"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/irc"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/irc"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/irc"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/gotify"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/gotify"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/gotify"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/flock"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/flock"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/flock"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/email"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/email"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/email"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/dynatrace-events"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/dynatrace"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/dynatrace"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/discord"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/discord"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/discord"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/custom-endpoint"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/custom"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/custom"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/amazon-sns"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/aws-sns"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications/alerta"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/alerta"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/alerta"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/agent-alert-notifications"
@@ -3763,7 +3763,7 @@
 
 [[redirects]]
   from="/docs/metrics-streaming-and-replication"
-  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/metrics-centralization-points-netdata-parents"
+  to="/docs/observability-centralization-points/metrics-centralization-points"
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/run-time-troubleshooting-with-functions"
@@ -4091,103 +4091,103 @@
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/twilio"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/twilio"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/twilio"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/telegram"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/telegram"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/telegram"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/syslog"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/syslog"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/syslog"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/sms-server"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/sms"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/sms"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/slack"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/slack"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/slack"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/rocket-chat"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/rocketchat"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/rocketchat"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/pushover"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pushover"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushover"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/pushbullet"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pushbullet"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushbullet"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/prowl"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/prowl"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/prowl"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/pagerduty"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pagerduty"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/opsgenie"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/opsgenie"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/ntfy"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/ntfy"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/ntfy"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/microsoft-teams"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/microsoft-teams"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/messagebird"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/messagebird"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/messagebird"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/matrix"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/matrix"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/matrix"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/kavenegar"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/kavenegar"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/kavenegar"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/irc"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/irc"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/irc"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/gotify"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/gotify"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/gotify"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/flock"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/flock"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/flock"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/email"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/email"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/email"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/dynatrace-events"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/dynatrace"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/dynatrace"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/discord"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/discord"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/discord"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/custom-endpoint"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/custom"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/custom"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/amazon-sns"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/aws-sns"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications/alerta"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/alerta"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/alerta"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-agent-notifications"
@@ -4795,103 +4795,103 @@
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/twilio"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/twilio"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/twilio"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/telegram"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/telegram"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/telegram"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/syslog"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/syslog"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/syslog"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/sms-server"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/sms"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/sms"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/slack"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/slack"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/slack"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/rocket-chat"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/rocketchat"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/rocketchat"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/pushover"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pushover"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushover"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/pushbullet"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pushbullet"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushbullet"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/prowl"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/prowl"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/prowl"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/pagerduty"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pagerduty"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/opsgenie"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/opsgenie"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/ntfy"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/ntfy"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/ntfy"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/microsoft-teams"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/microsoft-teams"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/messagebird"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/messagebird"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/messagebird"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/matrix"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/matrix"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/matrix"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/kavenegar"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/kavenegar"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/kavenegar"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/irc"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/irc"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/irc"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/gotify"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/gotify"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/gotify"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/flock"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/flock"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/flock"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/email"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/email"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/email"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/dynatrace-events"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/dynatrace"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/dynatrace"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/discord"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/discord"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/discord"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/custom-endpoint"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/custom"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/custom"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/amazon-sns"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/aws-sns"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications/alerta"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/alerta"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/alerta"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-agent-notifications"
@@ -4979,7 +4979,7 @@
 
 [[redirects]]
   from="/docs/data-collection/task-queues/mesos"
-  to="/docs/data-collection/task-queues/mesos"
+  to="/docs/collecting-metrics/task-queues/mesos"
 
 [[redirects]]
   from="/docs/dashboard/customize"
@@ -4999,7 +4999,7 @@
 
 [[redirects]]
   from="/docs/data-collection/provisioning-systems/mesos"
-  to="/docs/data-collection/task-queues/mesos"
+  to="/docs/collecting-metrics/task-queues/mesos"
 
 [[redirects]]
   from="/docs/data-collection/ci/cd-platforms/jenkins"
@@ -5011,7 +5011,7 @@
 
 [[redirects]]
   from="/docs/data-collection/ci/cd-platforms/concourse"
-  to="/docs/data-collection/cicd-platforms/concourse"
+  to="/docs/collecting-metrics/cicd-platforms/concourse"
 
 [[redirects]]
   from="/docs/data-collection/apm/dynatrace"
@@ -5047,7 +5047,7 @@
 
 [[redirects]]
   from="/docs/streaming"
-  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/metrics-centralization-points-netdata-parents"
+  to="/docs/observability-centralization-points/metrics-centralization-points"
 
 [[redirects]]
   from="/docs/netdata-cloud-on-prem/light-poc-deployment"
@@ -6615,43 +6615,43 @@
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/webhook"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/webhook"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/webhook"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/telegram"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/telegram"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/telegram"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/splunk"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/splunk"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/splunk"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/slack"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/slack"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/slack"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/rocketchat"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/rocketchat"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/rocketchat"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/pagerduty"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/pagerduty"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/opsgenie"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/opsgenie"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/netdata-mobile-app"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/netdata-mobile-app"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/netdata-mobile-app"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/microsoft-teams"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/microsoft-teams"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/mattermost"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/mattermost"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/mattermost"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/manage-notification-methods"
@@ -6663,7 +6663,7 @@
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/discord"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/discord"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/discord"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
@@ -6671,107 +6671,107 @@
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/amazon-sns"
-  to="/docs/alerts-&-notifications/centralized-cloud-notifications/amazon-sns"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/amazon-sns"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/twilio"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/twilio"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/twilio"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/telegram"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/telegram"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/telegram"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/syslog"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/syslog"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/syslog"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/sms"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/sms"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/sms"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/slack"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/slack"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/slack"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/rocketchat"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/rocketchat"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/rocketchat"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/pushover"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pushover"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushover"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/pushbullet"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pushbullet"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushbullet"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/prowl"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/prowl"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/prowl"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/pagerduty"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/pagerduty"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/opsgenie"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/opsgenie"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/ntfy"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/ntfy"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/ntfy"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/microsoft-teams"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/microsoft-teams"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/microsoft-teams"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/messagebird"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/messagebird"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/messagebird"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/matrix"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/matrix"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/matrix"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/kavenegar"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/kavenegar"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/kavenegar"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/irc"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/irc"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/irc"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/gotify"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/gotify"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/gotify"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/flock"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/flock"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/flock"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/email"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/email"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/email"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/dynatrace"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/dynatrace"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/dynatrace"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/discord"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/discord"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/discord"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/custom"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/custom"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/custom"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/aws-sns"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/aws-sns"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/aws-sns"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/alerta"
-  to="/docs/alerts-&-notifications/agent-dispatched-notifications/alerta"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/alerta"
 
 [[redirects]]
   from="/docs/alerting/notifications/agent-dispatched-notifications/agent-notifications-reference"
@@ -6807,19 +6807,19 @@
 
 [[redirects]]
   from="/docs/agent/streaming"
-  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/metrics-storage-management/reference-streaming"
-  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference"
-  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/metrics-streaming-and-replication/streaming-configuration-reference"
-  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/logs/passive-journal-centralization-without-encryption"
@@ -6831,7 +6831,7 @@
 
 [[redirects]]
   from="/docs/streaming/streaming-configuration-reference"
-  to="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/passive-journal-centralization-without-encryption"
@@ -7006,20 +7006,12 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/storidge"
 
 [[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/nvme-devices"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/nvme-devices"
-
-[[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/netapp-solidfire"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/netapp-solidfire"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hdsentinel"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hdsentinel"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/generic-storage-enclosure-tool"
@@ -7032,10 +7024,6 @@
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/dell-powermax"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-powermax"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-scaleio"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-isilon-cluster"
@@ -7747,35 +7735,35 @@
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/synology-activebackup"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/synology-activebackup"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/synology-activebackup"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/netapp-ontap-api"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/netapp-ontap-api"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/netapp-ontap-api"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/mogilefs"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/mogilefs"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/mogilefs"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/lagerist-disk-latency"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/lagerist-disk-latency"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/lagerist-disk-latency"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ibm-spectrum-virtualize"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/ibm-spectrum-virtualize"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ibm-spectrum-virtualize"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ibm-spectrum"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/ibm-spectrum"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ibm-spectrum"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-xtremio-cluster"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/dell-emc-xtremio-cluster"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-xtremio-cluster"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/altaro-backup"
-  to="/docs/data-collection/storage%20-mount-points-and-filesystems/altaro-backup"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/altaro-backup"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/storidge"
@@ -7856,5 +7844,893 @@
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/filesystem/btrfs"
   to="/docs/collecting-metrics/linux-systems/filesystem/btrfs/btrfs"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/sizing-netdata-parents"
+  to="/docs/observability-centralization-points/metrics-centralization-points/sizing-netdata-parents"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/replication-of-past-samples"
+  to="/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/metrics-centralization-points-netdata-parents"
+  to="/docs/observability-centralization-points/metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/faq-on-metrics-cantralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/clustering-and-high-availability-of-netdata-parents"
+  to="/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-/sizing-netdata-parents"
+  to="/docs/observability-centralization-points/metrics-centralization-points/sizing-netdata-parents"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-/replication-of-past-samples"
+  to="/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-/faq-on-metrics-cantralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-/configuring-metrics-centralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-/clustering-and-high-availability-of-netdata-parents"
+  to="/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+
+[[redirects]]
+  from="/docs/data-collection/windows-systems/ms-exchange"
+  to="/docs/collecting-metrics/windows-systems/ms-exchange"
+
+[[redirects]]
+  from="/docs/data-collection/windows-systems/hyperv"
+  to="/docs/collecting-metrics/windows-systems/hyperv"
+
+[[redirects]]
+  from="/docs/data-collection/web-servers-and-web-proxies/hhvm"
+  to="/docs/collecting-metrics/web-servers-and-web-proxies/hhvm"
+
+[[redirects]]
+  from="/docs/data-collection/web-servers-and-web-proxies/cloudflare-pcap"
+  to="/docs/collecting-metrics/web-servers-and-web-proxies/cloudflare-pcap"
+
+[[redirects]]
+  from="/docs/data-collection/web-servers-and-web-proxies/clash"
+  to="/docs/collecting-metrics/web-servers-and-web-proxies/clash"
+
+[[redirects]]
+  from="/docs/data-collection/web-servers-and-web-proxies/apicast"
+  to="/docs/collecting-metrics/web-servers-and-web-proxies/apicast"
+
+[[redirects]]
+  from="/docs/data-collection/vpns/strongswan"
+  to="/docs/collecting-metrics/vpns/strongswan"
+
+[[redirects]]
+  from="/docs/data-collection/vpns/softether-vpn-server"
+  to="/docs/collecting-metrics/vpns/softether-vpn-server"
+
+[[redirects]]
+  from="/docs/data-collection/telephony-servers/gtp"
+  to="/docs/collecting-metrics/telephony-servers/gtp"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/synology-activebackup"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/synology-activebackup"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/netapp-ontap-api"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/netapp-ontap-api"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/mogilefs"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/mogilefs"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/lagerist-disk-latency"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/lagerist-disk-latency"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/ibm-spectrum-virtualize"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ibm-spectrum-virtualize"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/ibm-spectrum"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ibm-spectrum"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/dell-emc-xtremio-cluster"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-xtremio-cluster"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/altaro-backup"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/altaro-backup"
+
+[[redirects]]
+  from="/docs/data-collection/service-discovery-/-registry/kafka-consumer-lag"
+  to="/docs/collecting-metrics/service-discovery-/-registry/kafka-consumer-lag"
+
+[[redirects]]
+  from="/docs/data-collection/security-systems/suricata"
+  to="/docs/collecting-metrics/security-systems/suricata"
+
+[[redirects]]
+  from="/docs/data-collection/security-systems/ssl-certificate"
+  to="/docs/collecting-metrics/security-systems/ssl-certificate"
+
+[[redirects]]
+  from="/docs/data-collection/security-systems/lynis-audit-reports"
+  to="/docs/collecting-metrics/security-systems/lynis-audit-reports"
+
+[[redirects]]
+  from="/docs/data-collection/security-systems/clamav-daemon"
+  to="/docs/collecting-metrics/security-systems/clamav-daemon"
+
+[[redirects]]
+  from="/docs/data-collection/search-engines/meilisearch"
+  to="/docs/collecting-metrics/search-engines/meilisearch"
+
+[[redirects]]
+  from="/docs/data-collection/provisioning-systems/spacelift"
+  to="/docs/collecting-metrics/provisioning-systems/spacelift"
+
+[[redirects]]
+  from="/docs/data-collection/provisioning-systems/cloud-foundry"
+  to="/docs/collecting-metrics/provisioning-systems/cloud-foundry"
+
+[[redirects]]
+  from="/docs/data-collection/provisioning-systems/bosh"
+  to="/docs/collecting-metrics/provisioning-systems/bosh"
+
+[[redirects]]
+  from="/docs/data-collection/other/github-api-rate-limit"
+  to="/docs/collecting-metrics/other/github-api-rate-limit"
+
+[[redirects]]
+  from="/docs/data-collection/observability/new-relic"
+  to="/docs/collecting-metrics/observability/new-relic"
+
+[[redirects]]
+  from="/docs/data-collection/observability/naemon"
+  to="/docs/collecting-metrics/observability/naemon"
+
+[[redirects]]
+  from="/docs/data-collection/observability/grafana"
+  to="/docs/collecting-metrics/observability/grafana"
+
+[[redirects]]
+  from="/docs/data-collection/observability/collectd"
+  to="/docs/collecting-metrics/observability/collectd"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/zyxel-gs1200-8"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/zyxel-gs1200-8"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/ubiquiti-ufiber-olt"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/ubiquiti-ufiber-olt"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/starlink-spacex"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/starlink-spacex"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/sonic-nos"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/sonic-nos"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/smartrg-808ac-cable-modem"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/smartrg-808ac-cable-modem"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/ripe-atlas"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/ripe-atlas"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/openroadm-devices"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/openroadm-devices"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/netflow"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/netflow"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/frrouting"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/frrouting"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/citrix-netscaler"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/citrix-netscaler"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/checkpoint-device"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/checkpoint-device"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/aruba-devices"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/aruba-devices"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/a10-acos-network-devices"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/a10-acos-network-devices"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/8430ft-modem"
+  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/8430ft-modem"
+
+[[redirects]]
+  from="/docs/data-collection/message-brokers/xmpp-server"
+  to="/docs/collecting-metrics/message-brokers/xmpp-server"
+
+[[redirects]]
+  from="/docs/data-collection/message-brokers/redis-queue"
+  to="/docs/collecting-metrics/message-brokers/redis-queue"
+
+[[redirects]]
+  from="/docs/data-collection/message-brokers/mqtt-blackbox"
+  to="/docs/collecting-metrics/message-brokers/mqtt-blackbox"
+
+[[redirects]]
+  from="/docs/data-collection/message-brokers/kafka-zookeeper"
+  to="/docs/collecting-metrics/message-brokers/kafka-zookeeper"
+
+[[redirects]]
+  from="/docs/data-collection/message-brokers/kafka-connect"
+  to="/docs/collecting-metrics/message-brokers/kafka-connect"
+
+[[redirects]]
+  from="/docs/data-collection/message-brokers/ibm-mq"
+  to="/docs/collecting-metrics/message-brokers/ibm-mq"
+
+[[redirects]]
+  from="/docs/data-collection/media-services/zulip"
+  to="/docs/collecting-metrics/media-services/zulip"
+
+[[redirects]]
+  from="/docs/data-collection/media-services/stream"
+  to="/docs/collecting-metrics/media-services/stream"
+
+[[redirects]]
+  from="/docs/data-collection/media-services/discourse"
+  to="/docs/collecting-metrics/media-services/discourse"
+
+[[redirects]]
+  from="/docs/data-collection/logs-servers/mtail"
+  to="/docs/collecting-metrics/logs-servers/mtail"
+
+[[redirects]]
+  from="/docs/data-collection/logs-servers/loki"
+  to="/docs/collecting-metrics/logs-servers/loki"
+
+[[redirects]]
+  from="/docs/data-collection/logs-servers/graylog-server"
+  to="/docs/collecting-metrics/logs-servers/graylog-server"
+
+[[redirects]]
+  from="/docs/data-collection/linux-systems/firewall/nftables"
+  to="/docs/collecting-metrics/linux-systems/firewall/nftables"
+
+[[redirects]]
+  from="/docs/data-collection/kubernetes/rancher"
+  to="/docs/collecting-metrics/kubernetes/rancher"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/tesla-wall-connector"
+  to="/docs/collecting-metrics/iot-devices/tesla-wall-connector"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/tesla-powerwall"
+  to="/docs/collecting-metrics/iot-devices/tesla-powerwall"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/tado-smart-heating-solution"
+  to="/docs/collecting-metrics/iot-devices/tado-smart-heating-solution"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/solis-ginlong-5g-inverters"
+  to="/docs/collecting-metrics/iot-devices/solis-ginlong-5g-inverters"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/solaredge-inverters"
+  to="/docs/collecting-metrics/iot-devices/solaredge-inverters"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/solar-logging-stick"
+  to="/docs/collecting-metrics/iot-devices/solar-logging-stick"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/sma-inverters"
+  to="/docs/collecting-metrics/iot-devices/sma-inverters"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/shelly-humidity-sensor"
+  to="/docs/collecting-metrics/iot-devices/shelly-humidity-sensor"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/sense-energy"
+  to="/docs/collecting-metrics/iot-devices/sense-energy"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/radio-thermostat"
+  to="/docs/collecting-metrics/iot-devices/radio-thermostat"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/philips-hue"
+  to="/docs/collecting-metrics/iot-devices/philips-hue"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/personal-weather-station"
+  to="/docs/collecting-metrics/iot-devices/personal-weather-station"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/openhab"
+  to="/docs/collecting-metrics/iot-devices/openhab"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/nature-remo-e-lite-devices"
+  to="/docs/collecting-metrics/iot-devices/nature-remo-e-lite-devices"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/mp707-usb-thermometer"
+  to="/docs/collecting-metrics/iot-devices/mp707-usb-thermometer"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/modbus-protocol"
+  to="/docs/collecting-metrics/iot-devices/modbus-protocol"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/iqair-airvisual-air-quality-monitors"
+  to="/docs/collecting-metrics/iot-devices/iqair-airvisual-air-quality-monitors"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/homebridge"
+  to="/docs/collecting-metrics/iot-devices/homebridge"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/helium-hotspot"
+  to="/docs/collecting-metrics/iot-devices/helium-hotspot"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/elgato-key-light-devices."
+  to="/docs/collecting-metrics/iot-devices/elgato-key-light-devices."
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/dutch-electricity-smart-meter"
+  to="/docs/collecting-metrics/iot-devices/dutch-electricity-smart-meter"
+
+[[redirects]]
+  from="/docs/data-collection/iot-devices/airthings-waveplus-air-sensor"
+  to="/docs/collecting-metrics/iot-devices/airthings-waveplus-air-sensor"
+
+[[redirects]]
+  from="/docs/data-collection/incident-management/otrs"
+  to="/docs/collecting-metrics/incident-management/otrs"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/t-rex-nvidia-gpu-miner"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/t-rex-nvidia-gpu-miner"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/ipmi-by-soundcloud"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/ipmi-by-soundcloud"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/ibm-cryptoexpress-cex-cards"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/ibm-cryptoexpress-cex-cards"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/arm-hwcpipe"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/arm-hwcpipe"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/amd-cpu-&-gpu"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/amd-cpu-&-gpu"
+
+[[redirects]]
+  from="/docs/data-collection/generic-data-collection/tankerkoenig-api"
+  to="/docs/collecting-metrics/generic-collecting-metrics/tankerkoenig-api"
+
+[[redirects]]
+  from="/docs/data-collection/generic-data-collection/shell-command"
+  to="/docs/collecting-metrics/generic-collecting-metrics/shell-command"
+
+[[redirects]]
+  from="/docs/data-collection/generic-data-collection/jetbrains-floating-license-server"
+  to="/docs/collecting-metrics/generic-collecting-metrics/jetbrains-floating-license-server"
+
+[[redirects]]
+  from="/docs/data-collection/generic-data-collection/excel-spreadsheet"
+  to="/docs/collecting-metrics/generic-collecting-metrics/excel-spreadsheet"
+
+[[redirects]]
+  from="/docs/data-collection/gaming/cs-go"
+  to="/docs/collecting-metrics/gaming/cs-go"
+
+[[redirects]]
+  from="/docs/data-collection/gaming/bungeecord"
+  to="/docs/collecting-metrics/gaming/bungeecord"
+
+[[redirects]]
+  from="/docs/data-collection/ftp-servers/proftpd"
+  to="/docs/collecting-metrics/ftp-servers/proftpd"
+
+[[redirects]]
+  from="/docs/data-collection/freebsd/freebsd-rctl-racct"
+  to="/docs/collecting-metrics/freebsd/freebsd-rctl-racct"
+
+[[redirects]]
+  from="/docs/data-collection/freebsd/freebsd-nfs"
+  to="/docs/collecting-metrics/freebsd/freebsd-nfs"
+
+[[redirects]]
+  from="/docs/data-collection/dns-and-dhcp-servers/akamai-edge-dns-traffic"
+  to="/docs/collecting-metrics/dns-and-dhcp-servers/akamai-edge-dns-traffic"
+
+[[redirects]]
+  from="/docs/data-collection/databases/warp10"
+  to="/docs/collecting-metrics/databases/warp10"
+
+[[redirects]]
+  from="/docs/data-collection/databases/vertica"
+  to="/docs/collecting-metrics/databases/vertica"
+
+[[redirects]]
+  from="/docs/data-collection/databases/sql-database-agnostic"
+  to="/docs/collecting-metrics/databases/sql-database-agnostic"
+
+[[redirects]]
+  from="/docs/data-collection/databases/pgpool-ii"
+  to="/docs/collecting-metrics/databases/pgpool-ii"
+
+[[redirects]]
+  from="/docs/data-collection/databases/pgbackrest"
+  to="/docs/collecting-metrics/databases/pgbackrest"
+
+[[redirects]]
+  from="/docs/data-collection/databases/patroni"
+  to="/docs/collecting-metrics/databases/patroni"
+
+[[redirects]]
+  from="/docs/data-collection/databases/mariadb"
+  to="/docs/collecting-metrics/databases/mariadb"
+
+[[redirects]]
+  from="/docs/data-collection/databases/machbase"
+  to="/docs/collecting-metrics/databases/machbase"
+
+[[redirects]]
+  from="/docs/data-collection/databases/influxdb"
+  to="/docs/collecting-metrics/databases/influxdb"
+
+[[redirects]]
+  from="/docs/data-collection/containers-and-vms/proxmox-ve"
+  to="/docs/collecting-metrics/containers-and-vms/proxmox-ve"
+
+[[redirects]]
+  from="/docs/data-collection/containers-and-vms/cadvisor"
+  to="/docs/collecting-metrics/containers-and-vms/cadvisor"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/zerto"
+  to="/docs/collecting-metrics/cloud-provider-managed/zerto"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/nextcloud-servers"
+  to="/docs/collecting-metrics/cloud-provider-managed/nextcloud-servers"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/google-stackdriver"
+  to="/docs/collecting-metrics/cloud-provider-managed/google-stackdriver"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/gcp-gce"
+  to="/docs/collecting-metrics/cloud-provider-managed/gcp-gce"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/bigquery"
+  to="/docs/collecting-metrics/cloud-provider-managed/bigquery"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/azure-sql"
+  to="/docs/collecting-metrics/cloud-provider-managed/azure-sql"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/azure-service-bus"
+  to="/docs/collecting-metrics/cloud-provider-managed/azure-service-bus"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/azure-resources"
+  to="/docs/collecting-metrics/cloud-provider-managed/azure-resources"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/azure-elastic-pool-sql"
+  to="/docs/collecting-metrics/cloud-provider-managed/azure-elastic-pool-sql"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/azure-application"
+  to="/docs/collecting-metrics/cloud-provider-managed/azure-application"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/aws-ec2-spot-instance"
+  to="/docs/collecting-metrics/cloud-provider-managed/aws-ec2-spot-instance"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/aws-ec2-compute-instances"
+  to="/docs/collecting-metrics/cloud-provider-managed/aws-ec2-compute-instances"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/akami-cloudmonitor"
+  to="/docs/collecting-metrics/cloud-provider-managed/akami-cloudmonitor"
+
+[[redirects]]
+  from="/docs/data-collection/cicd-platforms/concourse"
+  to="/docs/collecting-metrics/cicd-platforms/concourse"
+
+[[redirects]]
+  from="/docs/data-collection/blockchain-servers/sia"
+  to="/docs/collecting-metrics/blockchain-servers/sia"
+
+[[redirects]]
+  from="/docs/data-collection/blockchain-servers/iota-full-node"
+  to="/docs/collecting-metrics/blockchain-servers/iota-full-node"
+
+[[redirects]]
+  from="/docs/data-collection/blockchain-servers/cryptowatch"
+  to="/docs/collecting-metrics/blockchain-servers/cryptowatch"
+
+[[redirects]]
+  from="/docs/data-collection/blockchain-servers/chia"
+  to="/docs/collecting-metrics/blockchain-servers/chia"
+
+[[redirects]]
+  from="/docs/data-collection/authentication-and-authorization/tacacs"
+  to="/docs/collecting-metrics/authentication-and-authorization/tacacs"
+
+[[redirects]]
+  from="/docs/data-collection/authentication-and-authorization/ssh"
+  to="/docs/collecting-metrics/authentication-and-authorization/ssh"
+
+[[redirects]]
+  from="/docs/data-collection/authentication-and-authorization/radius"
+  to="/docs/collecting-metrics/authentication-and-authorization/radius"
+
+[[redirects]]
+  from="/docs/data-collection/authentication-and-authorization/ldap"
+  to="/docs/collecting-metrics/authentication-and-authorization/ldap"
+
+[[redirects]]
+  from="/docs/data-collection/apm/vscode"
+  to="/docs/collecting-metrics/apm/vscode"
+
+[[redirects]]
+  from="/docs/data-collection/apm/jolokia"
+  to="/docs/collecting-metrics/apm/jolokia"
+
+[[redirects]]
+  from="/docs/data-collection/apm/gpsd"
+  to="/docs/collecting-metrics/apm/gpsd"
+
+[[redirects]]
+  from="/docs/data-collection/apm/google-pagespeed"
+  to="/docs/collecting-metrics/apm/google-pagespeed"
+
+[[redirects]]
+  from="/docs/data-collection/apm/bpftrace-variables"
+  to="/docs/collecting-metrics/apm/bpftrace-variables"
+
+[[redirects]]
+  from="/docs/data-collection/apm/audisto"
+  to="/docs/collecting-metrics/apm/audisto"
+
+[[redirects]]
+  from="/docs/data-collection/apm/alamos-fe2-server"
+  to="/docs/collecting-metrics/apm/alamos-fe2-server"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/webhook"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/webhook"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/telegram"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/telegram"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/splunk"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/splunk"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/slack"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/slack"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/rocketchat"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/rocketchat"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/pagerduty"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/pagerduty"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/opsgenie"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/opsgenie"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/netdata-mobile-app"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/netdata-mobile-app"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/microsoft-teams"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/microsoft-teams"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/mattermost"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/mattermost"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/discord"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/discord"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/centralized-cloud-notifications/amazon-sns"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/amazon-sns"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/twilio"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/twilio"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/telegram"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/telegram"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/syslog"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/syslog"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/sms"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/sms"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/slack"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/slack"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/rocketchat"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/rocketchat"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/pushover"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushover"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/pushbullet"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushbullet"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/prowl"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/prowl"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/pagerduty"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pagerduty"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/opsgenie"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/opsgenie"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/ntfy"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/ntfy"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/microsoft-teams"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/microsoft-teams"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/messagebird"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/messagebird"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/matrix"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/matrix"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/kavenegar"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/kavenegar"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/irc"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/irc"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/gotify"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/gotify"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/flock"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/flock"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/email"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/email"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/dynatrace"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/dynatrace"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/discord"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/discord"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/custom"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/custom"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/aws-sns"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/aws-sns"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/agent-dispatched-notifications/alerta"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/alerta"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/webhook"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/webhook"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/telegram"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/telegram"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/splunk"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/splunk"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/slack"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/slack"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/rocketchat"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/rocketchat"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/pagerduty"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/pagerduty"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/opsgenie"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/opsgenie"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/netdata-mobile-app"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/netdata-mobile-app"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/microsoft-teams"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/microsoft-teams"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/mattermost"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/mattermost"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/discord"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/discord"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/centralized-cloud-notifications/amazon-sns"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/amazon-sns"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/twilio"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/twilio"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/telegram"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/telegram"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/syslog"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/syslog"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/sms"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/sms"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/slack"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/slack"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/rocketchat"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/rocketchat"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/pushover"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushover"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/pushbullet"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushbullet"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/prowl"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/prowl"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/pagerduty"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pagerduty"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/opsgenie"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/opsgenie"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/ntfy"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/ntfy"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/microsoft-teams"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/microsoft-teams"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/messagebird"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/messagebird"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/matrix"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/matrix"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/kavenegar"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/kavenegar"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/irc"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/irc"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/gotify"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/gotify"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/flock"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/flock"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/email"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/email"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/dynatrace"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/dynatrace"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/discord"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/discord"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/custom"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/custom"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/aws-sns"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/aws-sns"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/alerta"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/alerta"
 
 # section: dynamic << END
