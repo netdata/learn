@@ -1,212 +1,255 @@
 custom_edit_url	sidebar_label	learn_status	learn_rel_path	description
-https://github.com/netdata/netdata/edit/master/docs/getting-started/introduction.md	Architecture	Published	Architecture	
-https://github.com/netdata/netdata/edit/master/docs/store/distributed-data-architecture.md	Distributed data architecture	Published	Architecture	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/deployment-strategies.md	Deployment Strategies	Published	Architecture	
-https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	The Role of Netdata Cloud	Published	Architecture	
-https://github.com/netdata/netdata/edit/master/docs/netdata-security.md	Security and privacy design	Published	Architecture	Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
-https://github.com/netdata/netdata/edit/master/src/database/engine/README.md	Database engine	Published	Architecture	Netdata's highly-efficient database engine use both RAM and disk for distributed, long-term storage of per-second metrics.
-https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	Live demo	Published	root	
-https://github.com/netdata/netdata/edit/master/packaging/installer/README.md	Installing	Published	Installing	
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kickstart.md	One-Line Installer for All Linux Systems	Published	Installing	The kickstart.sh script installs Netdata from source, including all dependencies required to connect to Netdata Cloud, with a single command.
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/packages.md	Native Linux Distribution packages	Published	Installing	Instructions for how to install Netdata using native DEB or RPM packages.
-https://github.com/netdata/netdata/edit/master/packaging/makeself/README.md	Static binary Linux Packages	Published	Installing	Users can build the static 64-bit binary package that we ship with every release of the open-source Netdata Agent for debugging or specialize purposes.
-https://github.com/netdata/netdata/edit/master/packaging/docker/README.md	Docker	Published	Installing	
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kubernetes.md	Kubernetes	Published	Installing	Deploy Netdata to monitor a Kubernetes cluster to monitor the health, performance, resource utilization, and application metrics of a Kubernetes cluster in real time.
-https://github.com/netdata/helmchart/edit/master/charts/netdata/README.md	Kubernetes Helm chart reference	Published	Installing	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/install-with-a-cicd-provisioning-system.md	Install with a CICD Provisioning System	Published	Installing/Install with a CICD Provisioning System	
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/ansible.md	Ansible	Published	Installing/Install with a CICD Provisioning System	Deploy an infrastructure monitoring solution in minutes with the Netdata Agent and Ansible. Use and customize a simple playbook for monitoring as code.
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/macos.md	macOS	Published	Installing	
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freebsd.md	FreeBSD	Published	Installing	Install Netdata on FreeBSD to monitor the health and performance of bare metal or VMs with thousands of real-time, per-second metrics.
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/install-netdata-on-embedded-systems.md	Install Netdata on Embedded Systems	Published	Installing/Install Netdata on Embedded Systems	
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/synology.md	Synology	Published	Installing/Install Netdata on Embedded Systems	The Netdata Agent can be installed on AMD64-compatible NAS systems using the 64-bit pre-compiled static binary.
-https://github.com/netdata/netdata/edit/master/packaging/PLATFORM_SUPPORT.md	Platform support policy	Published	Installing	Present all the supported platform in the Netdata solution
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md	From a Git checkout	Published	Installing	Use the Netdata Agent source code from GitHub, plus helper scripts to set up your system, to install Netdata without packages or binaries.
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md	Offline systems	Published	Installing	Install the Netdata Agent on offline/air gapped systems to benefit from real-time, per-second monitoring without connecting to the internet.
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/aws.md	AWS	Published	Installing	The Netdata Agent runs on all popular cloud providers, but often requires additional steps and configuration for full functionality.
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/azure.md	Azure	Published	Installing	The Netdata Agent runs on all popular cloud providers, but often requires additional steps and configuration for full functionality.
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/gcp.md	GCP	Published	Installing	The Netdata Agent runs on all popular cloud providers, but often requires additional steps and configuration for full functionality.
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/pfsense.md	pfSense	Published	Installing	Install Netdata on pfSense to monitor the health and performance of firewalls with thousands of real-time, per-second metrics.
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/build-the-netdata-agent-yourself.md	Build the Netdata Agent Yourself	Published	Installing/Build the Netdata Agent Yourself	
-https://github.com/netdata/netdata/edit/master/packaging/maintainers/README.md	Package Maintainers	Published	Installing/Build the Netdata Agent Yourself	
-https://github.com/netdata/netdata/edit/master/packaging/installer/methods/source.md	Compile from source code	Published	Installing/Build the Netdata Agent Yourself	Package maintainers and power users may be interested in manually building Netdata from source without using any of our installation scripts.
-https://github.com/netdata/netdata/edit/master/build_external/README.md	External build-system	Published	Installing/Build the Netdata Agent Yourself	
-https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md	How to build native (DEB/RPM) packages locally for testing	Published	Installing/Build the Netdata Agent Yourself	Instructions for developers who need to build native packages locally for testing.
-https://github.com/netdata/netdata/edit/master/contrib/README.md	Netdata contrib	Published	Installing/Build the Netdata Agent Yourself	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	Maintaining	Published	Maintaining	
-https://github.com/netdata/netdata/edit/master/docs/configure/start-stop-restart.md	Starting and Stopping Netdata Agents 	Published	Maintaining	Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes.
-https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	Update Netdata Agents	Published	Maintaining	If you opted out of automatic updates, you need to update your Netdata Agent to the latest nightly or stable version.
-https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	Reinstall Netdata Agents	Published	Maintaining	Troubleshooting installation issues or force an update of the Netdata Agent by reinstalling it using the same method you used during installation.
-https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	Uninstall Netdata Agents	Published	Maintaining	If you are no longer interested in using the Netdata Agent, use the self-contained uninstaller to remove all traces of binaries and configuration files.
-https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	Configuring	Published	Configuring	Connecting an Agent to the Cloud allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud via the encrypted Agent-Cloud link (ACLK).'
-https://github.com/netdata/netdata/edit/master/docs/configure/common-changes.md	Common configuration changes	Published	Configuring	See the most popular configuration changes to make to the Netdata Agent, including longer metrics retention, reduce sampling, and more.
-https://github.com/netdata/netdata/edit/master/docs/guides/configure/performance.md	How to optimize the Netdata Agent's performance	Published	Configuring	While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/optimizing-metrics-database.md	Optimizing Metrics Database	Published	Configuring/Optimizing Metrics Database	
-https://github.com/netdata/netdata/edit/master/src/database/README.md	Database modes for parent child setups	Published	Configuring/Optimizing Metrics Database	The Netdata Agent leverages multiple, user-configurable time-series databases that use RAM and/or disk to store metrics on any type of node.
-https://github.com/netdata/netdata/edit/master/docs/store/change-metrics-storage.md	Change how long Netdata stores metrics	Published	Configuring/Optimizing Metrics Database	With a single configuration change, the Netdata Agent can store days, weeks, or months of metrics at its famous per-second granularity.
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/secure-nodes.md	Securing Netdata Agents	Published	Configuring/Securing Netdata Agents	Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
-https://github.com/netdata/netdata/edit/master/src/web/server/README.md	Web server	Published	Configuring/Securing Netdata Agents	The Netdata Agent's local static-threaded web server serves dashboards and real-time visualizations with security and DDoS protection.
-https://github.com/netdata/netdata/edit/master/docs/anonymous-statistics.md	Anonymous telemetry events	Published	Configuring/Securing Netdata Agents	
-https://github.com/netdata/netdata/edit/master/src/registry/README.md	Registry	Published	Configuring/Securing Netdata Agents	Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards.
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	Role-based access model	Published	Configuring/Securing Netdata Agents	Explanation of Netdata roles and permissions linked to them
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/reverse-proxies.md	Reverse proxies	Published	Configuring/Securing Netdata Agents/Reverse proxies	
-https://github.com/netdata/netdata/edit/master/docs/Running-behind-nginx.md	Nginx	Published	Configuring/Securing Netdata Agents/Reverse proxies	
-https://github.com/netdata/netdata/edit/master/docs/Running-behind-haproxy.md	HAProxy	Published	Configuring/Securing Netdata Agents/Reverse proxies	
-https://github.com/netdata/netdata/edit/master/docs/Running-behind-apache.md	Apache	Published	Configuring/Securing Netdata Agents/Reverse proxies	
-https://github.com/netdata/netdata/edit/master/docs/Running-behind-lighttpd.md	Lighttpd v1.4.x	Published	Configuring/Securing Netdata Agents/Reverse proxies	
-https://github.com/netdata/netdata/edit/master/docs/Running-behind-caddy.md	Caddy	Published	Configuring/Securing Netdata Agents/Reverse proxies	
-https://github.com/netdata/netdata/edit/master/docs/Running-behind-h2o.md	H2O	Published	Configuring/Securing Netdata Agents/Reverse proxies	
-https://github.com/netdata/netdata/edit/master/src/aclk/README.md	Agent-Cloud link (ACLK)	Published	Configuring/Securing Netdata Agents	The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud.
-https://github.com/netdata/netdata/edit/master/docs/configure/nodes.md	Configuration	Published	Configuring	Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings.
-https://github.com/netdata/netdata/edit/master/src/daemon/README.md	Netdata daemon	Published	Configuring	
-https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md	Daemon configuration	Published	Configuring	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
-https://github.com/netdata/netdata/edit/master/src/collectors/REFERENCE.md	Collectors configuration	Published	Configuring	
-https://github.com/netdata/netdata/edit/master/src/cli/README.md	Agent CLI	Published	Configuring	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
-https://github.com/netdata/agent-service-discovery/edit/master/README.md	Service discovery	Published	Configuring	
-https://github.com/netdata/netdata/edit/master/docs/guides/using-host-labels.md	Organize systems, metrics, and alerts	Published	Configuring	
-https://github.com/netdata/netdata/edit/master/src/claim/README.md	Connect Agent to Cloud	Published	Configuring	
-https://github.com/netdata/netdata/edit/master/docs/guides/troubleshoot/troubleshooting-agent-with-cloud-connection.md	Troubleshoot Agent-Cloud connectivity issues	Published	Configuring	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/metrics-streaming-and-replication.md	Streaming	Published	Streaming	
-https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/enable-streaming.md	Understanding How Streaming Works	Published	Streaming	With metrics streaming enabled, you can not only replicate metrics data into a second database, but also view dashboards and trigger alarm notifications for multiple nodes in parallel.
-https://github.com/netdata/netdata/edit/master/src/streaming/README.md	Streaming configuration reference	Published	Streaming	Replicate and mirror Netdata's metrics through real-time streaming from child to parent nodes. Then combine, correlate, and export.
-https://github.com/netdata/netdata/edit/master/src/collectors/README.md	Data Collection	Published	Data collection	
-https://github.com/netdata/netdata/edit/master/docs/collect/system-metrics.md	System metrics	Published	Data collection	Netdata collects thousands of metrics from physical and virtual systems, IoT/edge devices, and containers with zero configuration.
-https://github.com/netdata/netdata/edit/master/docs/collect/application-metrics.md	Application metrics	Published	Data collection	Monitor and troubleshoot every application on your infrastructure with per-second metrics, zero configuration, and meaningful charts.
-https://github.com/netdata/netdata/edit/master/docs/collect/container-metrics.md	Container metrics	Published	Data collection	Use Netdata to collect per-second utilization and application-level metrics from Linux/Docker containers and Kubernetes clusters.
-https://github.com/netdata/netdata/edit/master/src/collectors/COLLECTORS.md	Monitor Anything	Published	Data collection	Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box.
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	Deployment Guides	Published	Deployment Guides	
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	Standalone Deployment	Published	Deployment Guides	
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	Deployment with Centralization Points	Published	Deployment Guides	
+				
+https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	Live Demo	Published	root	
+				
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/README.md	Netdata Agent	Published	Netdata Agent	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/versions-and-platforms.md	Versions & Platforms	Published	Netdata Agent	Present all the supported platform in the Netdata solution
+https://github.com/netdata/netdata/edit/master/packaging/installer/README.md	Installation	Published	Netdata Agent/Installation	
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kickstart.md	Linux	Published	Netdata Agent/Installation/Linux	The kickstart.sh script installs Netdata from source, including all dependencies required to connect to Netdata Cloud, with a single command.
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/packages.md	Native Linux Distribution packages	Published	Netdata Agent/Installation/Linux	Instructions for how to install Netdata using native DEB or RPM packages.
+https://github.com/netdata/netdata/edit/master/packaging/makeself/README.md	Static binary Linux Packages	Published	Netdata Agent/Installation/Linux	Users can build the static 64-bit binary package that we ship with every release of the open-source Netdata Agent for debugging or specialize purposes.
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md	Offline systems	Published	Netdata Agent/Installation/Linux	Install the Netdata Agent on offline/air gapped systems to benefit from real-time, per-second monitoring without connecting to the internet.
+https://github.com/netdata/netdata/edit/master/packaging/docker/README.md	Docker	Published	Netdata Agent/Installation	
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kubernetes.md	Kubernetes	Published	Netdata Agent/Installation	Deploy Netdata to monitor a Kubernetes cluster to monitor the health, performance, resource utilization, and application metrics of a Kubernetes cluster in real time.
+https://github.com/netdata/helmchart/edit/master/charts/netdata/README.md	Kubernetes Helm chart reference	Published	Netdata Agent/Installation	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/install-with-a-cicd-provisioning-system.md	Install with a CICD Provisioning System	Unpublished	Netdata Agent/Installation	
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/macos.md	macOS	Published	Netdata Agent/Installation	
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freebsd.md	FreeBSD	Published	Netdata Agent/Installation	Install Netdata on FreeBSD to monitor the health and performance of bare metal or VMs with thousands of real-time, per-second metrics.
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/pfsense.md	pfSense	Published	Netdata Agent/Installation	Install Netdata on pfSense to monitor the health and performance of firewalls with thousands of real-time, per-second metrics.
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/synology.md	Synology	Published	Netdata Agent/Installation	The Netdata Agent can be installed on AMD64-compatible NAS systems using the 64-bit pre-compiled static binary.
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/ansible.md	Ansible	Published	Netdata Agent/Installation	Deploy an infrastructure monitoring solution in minutes with the Netdata Agent and Ansible. Use and customize a simple playbook for monitoring as code.
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/aws.md	AWS	Published	Netdata Agent/Installation	The Netdata Agent runs on all popular cloud providers, but often requires additional steps and configuration for full functionality.
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/azure.md	Azure	Published	Netdata Agent/Installation	The Netdata Agent runs on all popular cloud providers, but often requires additional steps and configuration for full functionality.
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/gcp.md	GCP	Published	Netdata Agent/Installation	The Netdata Agent runs on all popular cloud providers, but often requires additional steps and configuration for full functionality.
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/install-netdata-on-embedded-systems.md	Install Netdata on Embedded Systems	Unpublished	Netdata Agent/Installation	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/README.md	Sizing Netdata Agents	Published	Netdata Agent/Sizing Netdata Agents	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md	CPU Requirements	Published	Netdata Agent/Sizing Netdata Agents	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/ram-requirements.md	RAM Requirements	Published	Netdata Agent/Sizing Netdata Agents	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements.md	Bandwidth Requirements	Published	Netdata Agent/Sizing Netdata Agents	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/disk-requirements-and-retention.md	Disk Requirements & Retention	Published	Netdata Agent/Sizing Netdata Agents	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration.md	Configuration	Published	Netdata Agent/Configuration	Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings.
+https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	Cheatsheet	Published	Netdata Agent/Configuration	Connecting an Agent to the Cloud allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud via the encrypted Agent-Cloud link (ACLK).'
+https://github.com/netdata/netdata/edit/master/docs/configure/common-changes.md	Common configuration changes	Published	Netdata Agent/Configuration	See the most popular configuration changes to make to the Netdata Agent, including longer metrics retention, reduce sampling, and more.
+https://github.com/netdata/netdata/edit/master/docs/guides/configure/performance.md	How to optimize the Netdata Agent's performance	Published	Netdata Agent/Configuration	While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/optimizing-metrics-database.md	Optimizing Metrics Database	Published	Netdata Agent/Configuration/Optimizing Metrics Database	
+https://github.com/netdata/netdata/edit/master/src/database/README.md	Database modes for parent child setups	Published	Netdata Agent/Configuration/Optimizing Metrics Database	The Netdata Agent leverages multiple, user-configurable time-series databases that use RAM and/or disk to store metrics on any type of node.
+https://github.com/netdata/netdata/edit/master/docs/store/change-metrics-storage.md	Change how long Netdata stores metrics	Published	Netdata Agent/Configuration/Optimizing Metrics Database	With a single configuration change, the Netdata Agent can store days, weeks, or months of metrics at its famous per-second granularity.
+https://github.com/netdata/netdata/edit/master/docs/anonymous-statistics.md	Anonymous telemetry events	Published	Netdata Agent/Configuration	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/reverse-proxies.md	Running the Netdata Agent behind a reverse proxy	Published	Netdata Agent/Configuration/Running the Netdata Agent behind a reverse proxy	
+https://github.com/netdata/netdata/edit/master/docs/Running-behind-nginx.md	Nginx	Published	Netdata Agent/Configuration/Running the Netdata Agent behind a reverse proxy	
+https://github.com/netdata/netdata/edit/master/docs/Running-behind-haproxy.md	HAProxy	Published	Netdata Agent/Configuration/Running the Netdata Agent behind a reverse proxy	
+https://github.com/netdata/netdata/edit/master/docs/Running-behind-apache.md	Apache	Published	Netdata Agent/Configuration/Running the Netdata Agent behind a reverse proxy	
+https://github.com/netdata/netdata/edit/master/docs/Running-behind-lighttpd.md	Lighttpd v1.4.x	Published	Netdata Agent/Configuration/Running the Netdata Agent behind a reverse proxy	
+https://github.com/netdata/netdata/edit/master/docs/Running-behind-caddy.md	Caddy	Published	Netdata Agent/Configuration/Running the Netdata Agent behind a reverse proxy	
+https://github.com/netdata/netdata/edit/master/docs/Running-behind-h2o.md	H2O	Published	Netdata Agent/Configuration/Running the Netdata Agent behind a reverse proxy	
+https://github.com/netdata/netdata/edit/master/src/daemon/README.md	Netdata daemon	Published	Netdata Agent/Configuration	
+https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md	Daemon configuration	Published	Netdata Agent/Configuration	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
+https://github.com/netdata/netdata/edit/master/docs/guides/using-host-labels.md	Organize systems, metrics, and alerts	Published	Netdata Agent/Configuration	
+https://github.com/netdata/netdata/edit/master/src/claim/README.md	Connect Agent to Cloud	Unpublished	Netdata Agent/Configuration	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/secure-nodes.md	Securing Netdata Agents	Published	Netdata Agent/Securing Netdata Agents	Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
+https://github.com/netdata/netdata/edit/master/src/web/server/README.md	Web server	Published	Netdata Agent/Securing Netdata Agents	The Netdata Agent's local static-threaded web server serves dashboards and real-time visualizations with security and DDoS protection.
+https://github.com/netdata/netdata/edit/master/src/registry/README.md	Registry	Published	Netdata Agent	Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards.
+https://github.com/netdata/netdata/edit/master/src/cli/README.md	Agent CLI	Published	Netdata Agent	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
+				
+				
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	Netdata Cloud	Published	Netdata Cloud	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/versions.md	Netdata Cloud Versions	Published	Netdata Cloud	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/README.md	Netdata Cloud On-Prem	Published	Netdata Cloud/Netdata Cloud On-Prem	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/installation.md	Installation	Published	Netdata Cloud/Netdata Cloud On-Prem	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s.md	PoC without K8s	Published	Netdata Cloud/Netdata Cloud On-Prem	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting.md	Troubleshooting	Published	Netdata Cloud/Netdata Cloud On-Prem	
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	Role-based access model	Published	Netdata Cloud	Explanation of Netdata roles and permissions linked to them
+https://github.com/netdata/netdata/edit/master/src/aclk/README.md	Agent-Cloud Link (ACLK)	Published	Netdata Cloud	The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud.
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	Netdata plans	Published	Netdata Cloud	
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	View Plan & Billing	Published	Netdata Cloud	
+				
+				
+				
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/README.md	Observability Centralization Points	Published	Observability Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/best-practices.md	Best Practices for Observability Centralization Points	Published	Observability Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/README.md	Metrics Centralization Points	Published	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/configuration.md	Configuring Metrics Centralization Points	Published	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/sizing-netdata-parents.md	Sizing Netdata Parents	Published	Observability Centralization Points/Metrics Centralization Points	
+	Optimizing Netdata Children	Unpublished	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents.md	Clustering and High Availability of Netdata Parents	Published	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples.md	Replication of Past Samples	Published	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/faq.md	FAQ on Metrics Cantralization Points	Published	Observability Centralization Points/Metrics Centralization Points	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/README.md	Logs Centralization Points with systemd-journald	Published	Observability Centralization Points/Logs Centralization Points with systemd-journald	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates.md	Passive journal centralization with encryption using self-signed certificates	Published	Observability Centralization Points/Logs Centralization Points with systemd-journald	
+https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption.md	Passive journal centralization without encryption	Published	Observability Centralization Points/Logs Centralization Points with systemd-journald	
+https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/active_journal_centralization_guide_no_encryption.md	Active journal source without encryption	Published	Observability Centralization Points/Logs Centralization Points with systemd-journald	
+				
+				
+https://github.com/netdata/netdata/edit/master/src/collectors/README.md	Collecting Metrics	Published	Collecting Metrics	
+https://github.com/netdata/netdata/edit/master/src/collectors/REFERENCE.md	Collectors configuration	Published	Collecting Metrics	
+https://github.com/netdata/agent-service-discovery/edit/master/README.md	Service discovery	Published	Collecting Metrics	
+https://github.com/netdata/netdata/edit/master/docs/collect/system-metrics.md	System metrics	Published	Collecting Metrics	Netdata collects thousands of metrics from physical and virtual systems, IoT/edge devices, and containers with zero configuration.
+https://github.com/netdata/netdata/edit/master/docs/collect/application-metrics.md	Application metrics	Published	Collecting Metrics	Monitor and troubleshoot every application on your infrastructure with per-second metrics, zero configuration, and meaningful charts.
+https://github.com/netdata/netdata/edit/master/docs/collect/container-metrics.md	Container metrics	Published	Collecting Metrics	Use Netdata to collect per-second utilization and application-level metrics from Linux/Docker containers and Kubernetes clusters.
+https://github.com/netdata/netdata/edit/master/src/collectors/COLLECTORS.md	Monitor Anything	Published	Collecting Metrics	Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box.
 collectors_integrations				
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/logs.md	Logs	Published	Logs	
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md	systemd-journal	Published	Logs/systemd-journal	View and analyze logs available in systemd journal
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/passive_journal_centralization_guide_self_signed_certs.md	Passive journal centralization with encryption using self-signed certificates	Published	Logs/systemd-journal	
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/passive_journal_centralization_guide_no_encryption.md	Passive journal centralization without encryption	Published	Logs/systemd-journal	
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/active_journal_centralization_guide_no_encryption.md	Active journal source without encryption	Published	Logs/systemd-journal	
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md	Forward Secure Sealing (FSS) in Systemd-Journal	Published	Logs/systemd-journal	
-https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md	log2journal	Published	Logs/log2journal	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md	systemd-cat-native	Published	Logs/systemd-cat-native	
-https://github.com/netdata/netdata/edit/master/src/health/README.md	Alerting	Published	Alerting	
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-configuration-manager.md	Creating Alerts with the Alerts Configuration Manager	Published	Alerting	
-https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	Notifications	Published	Alerting/Notifications	Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
-https://github.com/netdata/netdata/edit/master/src/health/notifications/README.md	Agent Notifications Reference	Published	Alerting/Notifications/Agent Dispatched Notifications	
-agent_notifications_integrations				
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/notifications.md	Centralized Cloud Notifications Reference	Published	Alerting/Notifications/Centralized Cloud Notifications	Configure Netdata Cloud to send notifications to your team whenever any node on your infrastructure triggers an alert threshold.
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-notification-methods.md	Manage notification methods	Published	Alerting/Notifications/Centralized Cloud Notifications	Instructions on how to manage notification methods
-https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-alert-notification-silencing-rules.md	Manage alert notification silencing rules	Published	Alerting/Notifications/Centralized Cloud Notifications	Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
-cloud_notifications_integrations				
-https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	Health Configuration Reference	Published	Alerting	
-https://github.com/netdata/netdata/edit/master/src/web/api/health/README.md	Health API Calls	Published	Alerting	
-https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md	Exporting quickstart	Published	Exporting	Use the exporting engine to send Netdata metrics to popular external time series databases for long-term storage or further analysis.
-https://github.com/netdata/netdata/edit/master/src/exporting/README.md	Exporting reference	Published	Exporting	With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis.
-https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	Enable an exporting connector	Published	Exporting	Learn how to enable and configure any connector using examples to start exporting metrics to external time-series databases in minutes.
-https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/README.md	Prometheus	Published	Exporting	Export Netdata metrics to Prometheus for archiving and further analysis.
+				
+				
+				
+				
+https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md	Exporting quickstart	Published	Exporting Metrics	Use the exporting engine to send Netdata metrics to popular external time series databases for long-term storage or further analysis.
+https://github.com/netdata/netdata/edit/master/src/exporting/README.md	Exporting reference	Published	Exporting Metrics	With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis.
+https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	Enable an exporting connector	Published	Exporting Metrics	Learn how to enable and configure any connector using examples to start exporting metrics to external time-series databases in minutes.
+https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/README.md	Prometheus	Published	Exporting Metrics	Export Netdata metrics to Prometheus for archiving and further analysis.
 exporters_integrations				
-https://github.com/netdata/netdata/edit/master/src/web/api/exporters/shell/README.md	Shell Scripts	Published	Exporting	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/monitor-your-infrastructure.md	Monitor your Infrastructure	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	Sign in with email, Google, or GitHub	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	Organize your Infrastructure and Invite your Team	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	Node filter	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/overview.md	Home, overview and single node view	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	Visualization date and time controls	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.md	View active alerts	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	Netdata plans	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	View Plan & Billing	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	Choose your Netdata Cloud theme	Published	Monitor your Infrastructure	
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud-onprem/getting-started.md	Netdata Cloud On-Prem	Published	Netdata Cloud On-Prem	
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud-onprem/getting-started-light-poc.md	Light PoC deployment	Published	Netdata Cloud On-Prem	
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud-onprem/troubleshooting-onprem.md	Basic Troubleshooting	Published	Netdata Cloud On-Prem	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-dashboards-and-visualizations.md	Visualizations	Published	Visualizations	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	Accessing Netdata Dashboards	Published	Visualizations	
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	Netdata Charts	Published	Visualizations	
-https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	Chart dimensions, contexts, and families	Unpublished	Visualizations	 Netdata organizes charts into dimensions, contexts, and families to automaticallyand meaningfully organize thousands of metrics into interactive charts.
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	Custom Dashboards	Published	Visualizations	Design new dashboards that target your infrastructure's unique needs and share them with your team fortargeted visual anomaly detection or incident response.
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/nodes.md	Nodes Tab	Published	Visualizations	See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.
-https://github.com/netdata/netdata/edit/master/docs/visualize/overview-infrastructure.md	Infrastructure Overview	Published	Visualizations	With Netdata Cloud's War Rooms, you can see real-time metrics, from any number of nodes in your infrastructure, in composite charts.
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	Kubernetes visualizations	Published	Visualizations	Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
-https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Functions	Published	Visualizations	Present the Netdata Functions what these are and why they should be used.
-https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Visualizations	Present the Netdata Events feed.
-https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana data source plugin	Published	Visualizations	
-https://github.com/netdata/netdata/edit/master/src/web/gui/confluence/README.md	Atlassian Confluence dashboards	Published	Visualizations	
-https://github.com/netdata/netdata/edit/master/src/web/gui/README.md	Legacy Agent Dashboard	Published	Visualizations	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	ML and Troubleshooting	Published	ML and Troubleshooting	
-https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correlations.md	Metric Correlations	Published	ML and Troubleshooting	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
-https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-assistant.md	AI powered troubleshooting assistant	Published	ML and Troubleshooting	
-https://github.com/netdata/netdata/edit/master/docs/cloud/insights/anomaly-advisor.md	Anomaly Advisor	Published	ML and Troubleshooting	Quickly find anomalous metrics anywhere in your infrastructure.
-https://github.com/netdata/netdata/edit/master/src/ml/README.md	Machine learning (ML) powered anomaly detection	Published	ML and Troubleshooting	This is an in-depth look at how Netdata uses ML to detect anomalies.
-https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	Run-time troubleshooting with Functions	Published	ML and Troubleshooting	Instructions on how to use Functions
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-apis.md	REST API	Published	REST API	
-https://github.com/netdata/netdata/edit/master/src/web/api/README.md	API	Published	REST API	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/README.md	Queries	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/average/README.md	Average or Mean	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/countif/README.md	CountIf	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/des/README.md	Double exponential smoothing	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/incremental_sum/README.md	Incremental Sum (`incremental_sum`)	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/max/README.md	Max	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/median/README.md	Median	Published	REST API/Queries	Use median in API queries and health entities to find the 'middle' value from a sample, eliminating any unwanted spikes in the returned metrics.
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/min/README.md	Min	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/percentile/README.md	Percentile	Published	REST API/Queries	Use percentile in API queries and health entities to find the 'percentile' value from a sample, eliminating any unwanted spikes in the returned metrics.
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/ses/README.md	Single (or Simple) Exponential Smoothing (`ses`)	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/stddev/README.md	Standard deviation (`stddev`)	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/sum/README.md	Sum	Published	REST API/Queries	
-https://github.com/netdata/netdata/edit/master/src/web/api/queries/trimmed_mean/README.md	Trimmed Mean	Published	REST API/Queries	Use trimmed-mean in API queries and health entities to find the average value from a sample, eliminating any unwanted spikes in the returned metrics.
-https://github.com/netdata/netdata/edit/master/src/web/api/formatters/README.md	Formatters	Published	REST API/Formatters	
-https://github.com/netdata/netdata/edit/master/src/web/api/formatters/csv/README.md	CSV formatter	Published	REST API/Formatters	
-https://github.com/netdata/netdata/edit/master/src/web/api/formatters/json/README.md	JSON formatter	Published	REST API/Formatters	
-https://github.com/netdata/netdata/edit/master/src/web/api/formatters/ssv/README.md	SSV formatter	Published	REST API/Formatters	
-https://github.com/netdata/netdata/edit/master/src/web/api/formatters/value/README.md	Value formatter	Published	REST API/Formatters	
-https://github.com/netdata/netdata/edit/master/src/web/api/badges/README.md	Netdata badges	Published	REST API	
-https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	Contributing	Published	Contributing	
-https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	Community code of conduct	Published	Contributing	
-https://github.com/netdata/.github/edit/main/SECURITY.md	Security Policy	Published	Contributing	The Netdata team maintains and adheres to a formal process any time a member of the community reports a security vulnerability.
-https://github.com/netdata/netdata/edit/master/src/collectors/plugins.d/README.md	External plugins	Published	Contributing/External-plugins	
-https://github.com/netdata/go.d.plugin/edit/master/README.md	go.d.plugin	Published	Contributing/External-plugins/go.d.plugin	go.d.plugin is an external plugin for Netdata, responsible for running individual data collectors written in Go.
-https://github.com/netdata/go.d.plugin/edit/master/docs/how-to-write-a-module.md	How to write a Netdata collector in Go	Published	Contributing/External-plugins/go.d.plugin	This guide will walk you through the technical implementation of writing a new Netdata collector in Golang, with tips on interfaces, structure, configuration files, and more.
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/README.md	python.d.plugin	Published	Contributing/External-plugins/python.d.plugin	
-https://github.com/netdata/netdata/edit/master/docs/guides/python-collector.md	Develop a custom data collector in Python	Published	Contributing/External-plugins/python.d.plugin	Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box.
-https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/README.md	charts.d.plugin	Published	Contributing/External-plugins	
-https://github.com/netdata/netdata/edit/master/src/collectors/profile.plugin/README.md	profile.plugin	Published	Contributing/External-plugins	
-https://github.com/netdata/netdata/edit/master/docs/guidelines.md	Contribute to the documentation	Published	Contributing/Contribute to the documentation	
-https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	Netdata style guide	Published	Contributing/Contribute to the documentation	The Netdata style guide establishes editorial guidelines for all of Netdata's writing, including documentation, blog posts, in-product UX copy, and more.
-https://github.com/netdata/netdata/edit/master/src/web/README.md	Web	Unpublished	Contributing	Every Netdata Agent comes bundled with hundreds of interactive, customizable charts designed by monitoring and troubleshooting experts.
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/misc-overview.md	Miscellaneous	Published	Miscellaneous	Available integrations in Netdata
-https://github.com/netdata/netdata/edit/master/docs/glossary.md	Glossary	Published	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/README.md	libnetdata	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/adaptive_resortable_list/README.md	Adaptive re-sortable list (ARL)	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/aral/README.md	Array allocator	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/avl/README.md	AVL	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/buffer/README.md	BUFFER library	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/circular_buffer/README.md	Circular Buffer	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/clocks/README.md	Clocks	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/config/README.md	Netdata ini config files	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/ebpf/README.md	eBPF	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md	JSON	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md	Locks	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md	Log	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/onewayalloc/README.md	One way allocator	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/popen/README.md	popen	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/parser/README.md	parser	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/procfile/README.md	procfile	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/simple_pattern/README.md	Simple patterns	Published	Miscellaneous/libnetdata	Netdata supports simple patterns, which are less cryptic versions of regular expressions. Use familiar notation for powerful results.
-https://github.com/netdata/netdata/edit/master/src/libnetdata/statistical/README.md	Statistical functions	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/storage_number/README.md	Storage number	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/string/README.md	String	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/threads/README.md	Threads	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/url/README.md	URL	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/worker_utilization/README.md	Worker Utilization	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/dictionary/README.md	Dictionaries	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/july/README.md	July interface	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/socket/README.md	Socket	Published	Miscellaneous/libnetdata	
-https://github.com/netdata/netdata/edit/master/docs/running-through-cf-tunnels.md	Running a Local Dashboard through Cloudflare Tunnels	Published	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed Software	Published	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	Health command API tester	Published	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	Customize the standard dashboard	Published	Miscellaneous	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
-https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	Import, export, and print a snapshot	Published	Miscellaneous	Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
-https://github.com/netdata/netdata/edit/master/src/web/gui/custom/README.md	Build a custom Dashboard HTML page	Published	Miscellaneous	Build custom dashboards with key metrics from one or more nodes running the Netdata Agent and host them anywhere.
-https://github.com/netdata/netdata/edit/master/docs/netdata-for-IoT.md	Netdata for IoT	Unpublished	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/docs/guides/collect-apache-nginx-web-logs.md	Monitor Nginx or Apache web server log files with Netdata	Published	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/docs/guides/collect-unbound-metrics.md	Monitor Unbound DNS servers with Netdata	Published	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor-cockroachdb.md	Monitor CockroachDB metrics with Netdata	Published	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor-hadoop-cluster.md	Monitor a Hadoop cluster with Netdata	Published	Miscellaneous	
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor/kubernetes-k8s-netdata.md	Kubernetes monitoring with Netdata: Overview and visualizations	Published	Miscellaneous	Learn how to navigate Netdata's Kubernetes monitoring features for visualizing the health and performance of a Kubernetes cluster with per-second granularity.
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor/lamp-stack.md	LAMP stack monitoring (Linux, Apache, MySQL, PHP) with Netdata	Published	Miscellaneous	Set up robust LAMP stack monitoring (Linux, Apache, MySQL, PHP) in just a few minutes using a free, open-source monitoring tool that collects metrics every second.
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor/pi-hole-raspberry-pi.md	Monitor Pi-hole (and a Raspberry Pi) with Netdata	Published	Miscellaneous	Monitor Pi-hole metrics, plus Raspberry Pi system metrics, in minutes and completely for free with Netdata's open-source monitoring agent.
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor/raspberry-pi-anomaly-detection.md	Unsupervised anomaly detection for Raspberry Pi monitoring	Published	Miscellaneous	Use a low-overhead machine learning algorithm and an open-source monitoring tool to detect anomalous metrics on a Raspberry Pi.
-https://github.com/netdata/netdata/edit/master/docs/guides/troubleshoot/monitor-debug-applications-ebpf.md	Monitor, troubleshoot, and debug applications with eBPF metrics	Published	Miscellaneous	Use Netdata's built-in eBPF metrics collector to monitor, troubleshoot, and debug your custom application using low-level kernel feedback.
-https://github.com/netdata/netdata/edit/master/docs/guides/monitor/process.md	Monitor any process in real-time with Netdata	Published	Miscellaneous	Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions.
+https://github.com/netdata/netdata/edit/master/src/web/api/exporters/shell/README.md	Shell Scripts	Published	Exporting Metrics	
+				
+				
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/logs.md	Working with Logs	Published	Working with Logs	
+https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md	systemd-journal	Published	Working with Logs/systemd-journal	View and analyze logs available in systemd journal
+https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md	Forward Secure Sealing (FSS) in Systemd-Journal	Published	Working with Logs/systemd-journal	
+https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md	log2journal	Published	Working with Logs/log2journal	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md	systemd-cat-native	Published	Working with Logs/systemd-cat-native	
+				
+				
+https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Top Monitoring	Published	Top Monitoring	Present the Netdata Functions what these are and why they should be used.
+				
+https://github.com/netdata/netdata/edit/master/src/health/README.md	Alerts & Notifications	Published	Alerts & Notifications	
+https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-configuration-manager.md	Creating Alerts with the Alerts Configuration Manager	Published	Alerts & Notifications	
+https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	Notifications	Published	Alerts & Notifications/Notifications	Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
+https://github.com/netdata/netdata/edit/master/src/health/notifications/README.md	Agent Notifications Reference	Published	Alerts & Notifications/Notifications/Agent Dispatched Notifications	
+agent_notifications_integrations				
+https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/notifications.md	Centralized Cloud Notifications Reference	Published	Alerts & Notifications/Notifications/Centralized Cloud Notifications	Configure Netdata Cloud to send notifications to your team whenever any node on your infrastructure triggers an alert threshold.
+https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-notification-methods.md	Manage notification methods	Published	Alerts & Notifications/Notifications/Centralized Cloud Notifications	Instructions on how to manage notification methods
+https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-alert-notification-silencing-rules.md	Manage alert notification silencing rules	Published	Alerts & Notifications/Notifications/Centralized Cloud Notifications	Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
+cloud_notifications_integrations				
+https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	Health Configuration Reference	Published	Alerts & Notifications	
+https://github.com/netdata/netdata/edit/master/src/web/api/health/README.md	Health API Calls	Published	Alerts & Notifications	
+				
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	Machine Learning and Anomaly Detection	Published	Machine Learning and Anomaly Detection	
+https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correlations.md	Metric Correlations	Published	Machine Learning and Anomaly Detection	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
+https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-assistant.md	AI powered troubleshooting assistant	Published	Machine Learning and Anomaly Detection	
+https://github.com/netdata/netdata/edit/master/docs/cloud/insights/anomaly-advisor.md	Anomaly Advisor	Published	Machine Learning and Anomaly Detection	Quickly find anomalous metrics anywhere in your infrastructure.
+https://github.com/netdata/netdata/edit/master/src/ml/README.md	Machine learning (ML) powered anomaly detection	Published	Machine Learning and Anomaly Detection	This is an in-depth look at how Netdata uses ML to detect anomalies.
+https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	Run-time troubleshooting with Functions	Published	Machine Learning and Anomaly Detection	Instructions on how to use Functions
+				
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-dashboards-and-visualizations.md	Visualizations	Unpublished	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	Dashboards and Charts	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	Netdata Charts	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	Chart dimensions, contexts, and families	Unpublished	Dashboards and Charts	 Netdata organizes charts into dimensions, contexts, and families to automaticallyand meaningfully organize thousands of metrics into interactive charts.
+https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	Custom Dashboards	Published	Dashboards and Charts	Design new dashboards that target your infrastructure's unique needs and share them with your team fortargeted visual anomaly detection or incident response.
+https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/nodes.md	Nodes Tab	Published	Dashboards and Charts	See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.
+https://github.com/netdata/netdata/edit/master/docs/visualize/overview-infrastructure.md	Infrastructure Overview	Published	Dashboards and Charts	With Netdata Cloud's War Rooms, you can see real-time metrics, from any number of nodes in your infrastructure, in composite charts.
+https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	Kubernetes visualizations	Published	Dashboards and Charts	Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
+https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Dashboards and Charts	Present the Netdata Events feed.
+https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana data source plugin	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/src/web/gui/confluence/README.md	Atlassian Confluence dashboards	Unpublished	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/src/web/gui/README.md	Legacy Agent Dashboard	Unpublished	Dashboards and Charts	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	Choose your Netdata Cloud theme	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/monitor-your-infrastructure.md	Monitor your Infrastructure	Unpublished	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	Sign in with email, Google, or GitHub	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	Organize your Infrastructure and Invite your Team	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	Node filter	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/overview.md	Home, overview and single node view	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	Visualization date and time controls	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.md	View active alerts	Published	Dashboards and Charts	
+				
+https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/README.md	Security and Privacy Design	Published	Security and Privacy Design	
+https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	Netdata Agent Security and Privacy Design	Published	Security and Privacy Design	
+https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	Netdata Cloud Security and Privacy Design	Published	Security and Privacy Design	
+				
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	Maintaining	Unpublished	Maintaining	
+https://github.com/netdata/netdata/edit/master/docs/configure/start-stop-restart.md	Starting and Stopping Netdata Agents 	Unpublished	Maintaining	Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes.
+https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	Update Netdata Agents	Unpublished	Maintaining	If you opted out of automatic updates, you need to update your Netdata Agent to the latest nightly or stable version.
+https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	Reinstall Netdata Agents	Unpublished	Maintaining	Troubleshooting installation issues or force an update of the Netdata Agent by reinstalling it using the same method you used during installation.
+https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	Uninstall Netdata Agents	Unpublished	Maintaining	If you are no longer interested in using the Netdata Agent, use the self-contained uninstaller to remove all traces of binaries and configuration files.
+https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	Backup Netdata Agent's data	Unpublished	Maintaining	Back up all Netdata artifacts
+				
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/developer-and-contributor-corner.md	Developer and Contributor Corner	Published	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-apis.md	REST API	Published	Developer and Contributor Corner/REST API	
+https://github.com/netdata/netdata/edit/master/src/web/api/README.md	API	Published	Developer and Contributor Corner/REST API	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/README.md	Queries	Published	Developer and Contributor Corner/REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/average/README.md	Average or Mean	Published	Developer and Contributor Corner/REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/countif/README.md	CountIf	Published	Developer and Contributor Corner/REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/des/README.md	Double exponential smoothing	Published	Developer and Contributor Corner/REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/incremental_sum/README.md	Incremental Sum (`incremental_sum`)	Published	Developer and Contributor Corner/REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/max/README.md	Max	Published	Developer and Contributor Corner/REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/median/README.md	Median	Published	Developer and Contributor Corner/REST API/Queries	Use median in API queries and health entities to find the 'middle' value from a sample, eliminating any unwanted spikes in the returned metrics.
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/min/README.md	Min	Published	Developer and Contributor Corner/REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/percentile/README.md	Percentile	Published	Developer and Contributor Corner/REST API/Queries	Use percentile in API queries and health entities to find the 'percentile' value from a sample, eliminating any unwanted spikes in the returned metrics.
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/ses/README.md	Single (or Simple) Exponential Smoothing (`ses`)	Published	Developer and Contributor Corner/REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/stddev/README.md	Standard deviation (`stddev`)	Published	Developer and Contributor Corner/REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/sum/README.md	Sum	Published	Developer and Contributor Corner/REST API/Queries	
+https://github.com/netdata/netdata/edit/master/src/web/api/queries/trimmed_mean/README.md	Trimmed Mean	Published	Developer and Contributor Corner/REST API/Queries	Use trimmed-mean in API queries and health entities to find the average value from a sample, eliminating any unwanted spikes in the returned metrics.
+https://github.com/netdata/netdata/edit/master/src/web/api/formatters/README.md	Formatters	Published	Developer and Contributor Corner/REST API/Formatters	
+https://github.com/netdata/netdata/edit/master/src/web/api/formatters/csv/README.md	CSV formatter	Published	Developer and Contributor Corner/REST API/Formatters	
+https://github.com/netdata/netdata/edit/master/src/web/api/formatters/json/README.md	JSON formatter	Published	Developer and Contributor Corner/REST API/Formatters	
+https://github.com/netdata/netdata/edit/master/src/web/api/formatters/ssv/README.md	SSV formatter	Published	Developer and Contributor Corner/REST API/Formatters	
+https://github.com/netdata/netdata/edit/master/src/web/api/formatters/value/README.md	Value formatter	Published	Developer and Contributor Corner/REST API/Formatters	
+https://github.com/netdata/netdata/edit/master/src/web/api/badges/README.md	Netdata badges	Published	Developer and Contributor Corner/REST API	
+https://github.com/netdata/netdata/edit/master/src/database/engine/README.md	Database Engine	Published	Developer and Contributor Corner	
+https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	Contributing	Published	Developer and Contributor Corner	
+https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	Community code of conduct	Published	Developer and Contributor Corner	
+https://github.com/netdata/.github/edit/main/SECURITY.md	Security Policy	Published	Developer and Contributor Corner	The Netdata team maintains and adheres to a formal process any time a member of the community reports a security vulnerability.
+https://github.com/netdata/netdata/edit/master/src/collectors/plugins.d/README.md	External plugins	Published	Developer and Contributor Corner/External-plugins	
+https://github.com/netdata/go.d.plugin/edit/master/README.md	go.d.plugin	Published	Developer and Contributor Corner/External-plugins/go.d.plugin	go.d.plugin is an external plugin for Netdata, responsible for running individual data collectors written in Go.
+https://github.com/netdata/go.d.plugin/edit/master/docs/how-to-write-a-module.md	How to write a Netdata collector in Go	Published	Developer and Contributor Corner/External-plugins/go.d.plugin	This guide will walk you through the technical implementation of writing a new Netdata collector in Golang, with tips on interfaces, structure, configuration files, and more.
+https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/README.md	python.d.plugin	Published	Developer and Contributor Corner/External-plugins/python.d.plugin	
+https://github.com/netdata/netdata/edit/master/docs/guides/python-collector.md	Develop a custom data collector in Python	Published	Developer and Contributor Corner/External-plugins/python.d.plugin	Learn how write a custom data collector in Python, which you'll use to collect metrics from and monitor any application that isn't supported out of the box.
+https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/README.md	charts.d.plugin	Published	Developer and Contributor Corner/External-plugins	
+https://github.com/netdata/netdata/edit/master/src/collectors/profile.plugin/README.md	profile.plugin	Published	Developer and Contributor Corner/External-plugins	
+https://github.com/netdata/netdata/edit/master/docs/guidelines.md	Contribute to the documentation	Published	Developer and Contributor Corner/Contribute to the documentation	
+https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	Netdata style guide	Published	Developer and Contributor Corner/Contribute to the documentation	The Netdata style guide establishes editorial guidelines for all of Netdata's writing, including documentation, blog posts, in-product UX copy, and more.
+https://github.com/netdata/netdata/edit/master/src/web/README.md	Web	Unpublished	Developer and Contributor Corner	Every Netdata Agent comes bundled with hundreds of interactive, customizable charts designed by monitoring and troubleshooting experts.
+https://github.com/netdata/netdata/edit/master/docs/glossary.md	Glossary	Published	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/README.md	libnetdata	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/adaptive_resortable_list/README.md	Adaptive re-sortable list (ARL)	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/aral/README.md	Array allocator	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/avl/README.md	AVL	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/buffer/README.md	BUFFER library	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/circular_buffer/README.md	Circular Buffer	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/clocks/README.md	Clocks	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/config/README.md	Netdata ini config files	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/ebpf/README.md	eBPF	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md	JSON	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md	Locks	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md	Log	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/onewayalloc/README.md	One way allocator	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/popen/README.md	popen	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/parser/README.md	parser	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/procfile/README.md	procfile	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/simple_pattern/README.md	Simple patterns	Published	Developer and Contributor Corner/libnetdata	Netdata supports simple patterns, which are less cryptic versions of regular expressions. Use familiar notation for powerful results.
+https://github.com/netdata/netdata/edit/master/src/libnetdata/statistical/README.md	Statistical functions	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/storage_number/README.md	Storage number	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/string/README.md	String	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/threads/README.md	Threads	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/url/README.md	URL	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/worker_utilization/README.md	Worker Utilization	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/dictionary/README.md	Dictionaries	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/july/README.md	July interface	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/socket/README.md	Socket	Published	Developer and Contributor Corner/libnetdata	
+https://github.com/netdata/netdata/edit/master/docs/running-through-cf-tunnels.md	Running a Local Dashboard through Cloudflare Tunnels	Published	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed Software	Published	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	Health command API tester	Published	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	Customize the standard dashboard	Published	Developer and Contributor Corner	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
+https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	Import, export, and print a snapshot	Published	Developer and Contributor Corner	Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
+https://github.com/netdata/netdata/edit/master/src/web/gui/custom/README.md	Build a custom Dashboard HTML page	Published	Developer and Contributor Corner	Build custom dashboards with key metrics from one or more nodes running the Netdata Agent and host them anywhere.
+https://github.com/netdata/netdata/edit/master/docs/netdata-for-IoT.md	Netdata for IoT	Unpublished	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/docs/guides/collect-apache-nginx-web-logs.md	Monitor Nginx or Apache web server log files with Netdata	Published	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/docs/guides/collect-unbound-metrics.md	Monitor Unbound DNS servers with Netdata	Published	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/docs/guides/monitor-cockroachdb.md	Monitor CockroachDB metrics with Netdata	Published	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/docs/guides/monitor-hadoop-cluster.md	Monitor a Hadoop cluster with Netdata	Published	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/docs/guides/monitor/kubernetes-k8s-netdata.md	Kubernetes monitoring with Netdata: Overview and visualizations	Published	Developer and Contributor Corner	Learn how to navigate Netdata's Kubernetes monitoring features for visualizing the health and performance of a Kubernetes cluster with per-second granularity.
+https://github.com/netdata/netdata/edit/master/docs/guides/monitor/lamp-stack.md	LAMP stack monitoring (Linux, Apache, MySQL, PHP) with Netdata	Published	Developer and Contributor Corner	Set up robust LAMP stack monitoring (Linux, Apache, MySQL, PHP) in just a few minutes using a free, open-source monitoring tool that collects metrics every second.
+https://github.com/netdata/netdata/edit/master/docs/guides/monitor/pi-hole-raspberry-pi.md	Monitor Pi-hole (and a Raspberry Pi) with Netdata	Published	Developer and Contributor Corner	Monitor Pi-hole metrics, plus Raspberry Pi system metrics, in minutes and completely for free with Netdata's open-source monitoring agent.
+https://github.com/netdata/netdata/edit/master/docs/guides/monitor/raspberry-pi-anomaly-detection.md	Unsupervised anomaly detection for Raspberry Pi monitoring	Published	Developer and Contributor Corner	Use a low-overhead machine learning algorithm and an open-source monitoring tool to detect anomalous metrics on a Raspberry Pi.
+https://github.com/netdata/netdata/edit/master/docs/guides/troubleshoot/monitor-debug-applications-ebpf.md	Monitor, troubleshoot, and debug applications with eBPF metrics	Published	Developer and Contributor Corner	Use Netdata's built-in eBPF metrics collector to monitor, troubleshoot, and debug your custom application using low-level kernel feedback.
+https://github.com/netdata/netdata/edit/master/docs/guides/monitor/process.md	Monitor any process in real-time with Netdata	Published	Developer and Contributor Corner	Tap into Netdata's powerful collectors, with per-second utilization metrics for every process, to troubleshoot faster and make data-informed decisions.
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/build-the-netdata-agent-yourself.md	Build the Netdata Agent Yourself	Published	Developer and Contributor Corner/Build the Netdata Agent Yourself	
+https://github.com/netdata/netdata/edit/master/packaging/maintainers/README.md	Package Maintainers	Published	Developer and Contributor Corner/Build the Netdata Agent Yourself	
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/source.md	Compile from source code	Published	Developer and Contributor Corner/Build the Netdata Agent Yourself	Package maintainers and power users may be interested in manually building Netdata from source without using any of our installation scripts.
+https://github.com/netdata/netdata/edit/master/build_external/README.md	External build-system	Published	Developer and Contributor Corner/Build the Netdata Agent Yourself	
+https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md	How to build native (DEB/RPM) packages locally for testing	Published	Developer and Contributor Corner/Build the Netdata Agent Yourself	Instructions for developers who need to build native packages locally for testing.
+https://github.com/netdata/netdata/edit/master/contrib/README.md	Netdata contrib	Published	Developer and Contributor Corner/Build the Netdata Agent Yourself	
+https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md	Install the Netdata Agent from a Git checkout	Published	Developer and Contributor Corner	Use the Netdata Agent source code from GitHub, plus helper scripts to set up your system, to install Netdata without packages or binaries.
+https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	The role of Netdata Cloud	Unpublished	Rest files	
+https://github.com/netdata/netdata/edit/master/docs/metrics-storage-management/enable-streaming.md	Understanding How Streaming Works	Unpublished	Streaming	With metrics streaming enabled, you can not only replicate metrics data into a second database, but also view dashboards and trigger alarm notifications for multiple nodes in parallel.
+https://github.com/netdata/netdata/edit/master/docs/guides/troubleshoot/troubleshooting-agent-with-cloud-connection.md	Troubleshoot Agent-Cloud connectivity issues	Unpublished		

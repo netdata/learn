@@ -316,6 +316,16 @@ def clone_repo(owner, repo, branch, depth, prefix_folder):
         # print("DEBUG", outputFolder)
         git.Git().clone(
             f"https://github.com/{owner}/{repo}.git", output_folder, depth=depth, branch=branch)
+
+        print("trying to ignore new go.d dir in netdata/netdata until move is completed")
+
+        if str(output_folder) == "ingest-temp-folder/netdata":
+            shutil.rmtree(str(output_folder) + '/src' + '/go')
+            # os.rmdir("output_folder)
+            print(output_folder, owner, repo)
+
+        # "ingest-temp-folder/netdata"
+
         return f"Cloned the {branch} branch from {repo} repo (owner: {owner})"
     except Exception as e:
         return f"Couldn't clone the {branch} branch from {repo} repo (owner: {owner}) \n Exception {e} raised"
@@ -337,10 +347,10 @@ def create_mdx_path_from_metadata(metadata):
                           .replace("(", " ")
                           .replace("`", " ")).split())
 
-    if "Data Collection" in metadata['learn_rel_path']\
-            and metadata['learn_rel_path'].split("/")[-1] != "Data Collection" and 'External-plugins' not in metadata['learn_rel_path']:
-        last_folder = metadata['learn_rel_path'].split("Data Collection", 1)[1]
-        last_folder = "data-collection" + last_folder
+    if "Collecting Metrics" in metadata['learn_rel_path']\
+            and metadata['learn_rel_path'].split("/")[-1] != "Collecting Metrics" and 'External-plugins' not in metadata['learn_rel_path']:
+        last_folder = metadata['learn_rel_path'].split("Collecting Metrics", 1)[1]
+        last_folder = "collecting-metrics" + last_folder
         # print(last_folder)
         # exit()
         # If the file is inside the monitor-anything category,
@@ -349,7 +359,7 @@ def create_mdx_path_from_metadata(metadata):
         # We use the slug to avoid having %20 (replacing spaces) in the link of the file.
         return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
                                       metadata["learn_rel_path"]
-                                      .split("Data Collection")[0].lower().replace(" ", "-") + last_folder,
+                                      .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
                                       final_file.replace(" ", "-")).replace("//", "/"),
                 "/{}/{}".format(metadata["learn_rel_path"],
                                 final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
@@ -397,7 +407,7 @@ def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
                         # print("ROOT")
                         val = "/"
 
-                    if "Data Collection" in val or "Data Collection" in val:
+                    if "Collecting Metrics" in val or "Collecting Metrics" in val:
                         output += "toc_max_heading_level: 4\n"
 
                 if field == "sidebar_position":

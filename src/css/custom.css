@@ -11,6 +11,11 @@
 	font-weight: 600;
 } */
 
+svg span.nodeLabel {
+	display: inline-block;
+	line-height: 1.5 !important;
+  }
+
 .table-of-contents, .table-of-contents ul {
 	padding-left: unset;
 	/* font-weight: 600; */
