@@ -1,5 +1,5 @@
 ---
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/README.md"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/README.md"
 sidebar_label: "go.d.plugin"
 learn_status: "Published"
 learn_rel_path: "Developer and Contributor Corner/External-plugins/go.d.plugin"
@@ -109,7 +109,7 @@ see the appropriate collector readme.
 | [rabbitmq](https://github.com/netdata/go.d.plugin/tree/master/modules/rabbitmq)                     |           RabbitMQ            |
 | [redis](https://github.com/netdata/go.d.plugin/tree/master/modules/redis)                           |             Redis             |
 | [scaleio](https://github.com/netdata/go.d.plugin/tree/master/modules/scaleio)                       |       Dell EMC ScaleIO        |
-| [SNMP](https://github.com/netdata/go.d.plugin/blob/master/modules/snmp)                             |             SNMP              |
+| [SNMP](https://github.com/netdata/netdata/blob/master/src/go/collectors/go.d.plugin/modules/snmp)                             |             SNMP              |
 | [solr](https://github.com/netdata/go.d.plugin/tree/master/modules/solr)                             |             Solr              |
 | [squidlog](https://github.com/netdata/go.d.plugin/tree/master/modules/squidlog)                     |             Squid             |
 | [springboot2](https://github.com/netdata/go.d.plugin/tree/master/modules/springboot2)               |         Spring Boot2          |
@@ -132,7 +132,7 @@ see the appropriate collector readme.
 ## Configuration
 
 Edit the `go.d.conf` configuration file using `edit-config` from the
-Netdata [config directory](/docs/netdata-agent/configuration#the-netdata-config-directory), which is typically
+Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/configure/nodes.md), which is typically
 at `/etc/netdata`.
 
 ```bash
@@ -142,7 +142,7 @@ sudo ./edit-config go.d.conf
 
 Configurations are written in [YAML](http://yaml.org/).
 
-- [plugin configuration](https://github.com/netdata/go.d.plugin/blob/master/config/go.d.conf)
+- [plugin configuration](https://github.com/netdata/netdata/blob/master/src/go/collectors/go.d.plugin/config/go.d.conf)
 - [specific module configuration](https://github.com/netdata/go.d.plugin/tree/master/config/go.d)
 
 ### Enable a collector
@@ -164,7 +164,7 @@ modules:
   example: yes
 ```
 
-Then [restart netdata](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for the
+Then [restart netdata](/docs/netdata-agent/installation#maintaining-a-netdata-agent-installation) for the
 change to take effect.
 
 ## Contributing
