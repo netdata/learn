@@ -82,10 +82,6 @@ having to restart the server. If you want to suppress warnings you can run `yarn
 As explained in the [contributing to Netdata Learn](#contributing-to-netdata-learn) section above,
 all of the files in the `/docs` folder are mirrors of their original versions located in Netdata's repositories.
 
-The organization of the files is handled by the `map.tsv` file, that contains metadata for every file. That file should only be edited by members of the Netdata team.
-
-In the `ingest` GitHub action, the ingest script runs with the flag `-f`, which allows it to fail upon detecting broken links.
-
 To run the ingest process refer to the [Manual ingest via local environment](#manual-ingest-via-local-environment) section.
 
 ### Ingested repositories
@@ -145,42 +141,62 @@ To run the ingest process and spin up a local development environment:
 
 3. Create a python virtual environment.
 
-  ```bash
-  python -m venv myenv
-  ```
-  
-  The name `myenv` is included in the `.gitignore` file of this repo.
+    ```bash
+    python -m venv myenv
+    ```
+    
+    The name `myenv` is included in the `.gitignore` file of this repo.
 
 4. Activate your environment.
 
-  ```bash
-  source myenv/bin/activate
-  ```
+    ```bash
+    source myenv/bin/activate
+    ```
 
 5. Install the required packages, via pip
+    
+    ```bash
+    pip install -r .learn_environment/ingest-requirements.txt
+    ```
 
-  ```bash
-  pip install -r .learn_environment/ingest-requirements.txt
-  ```
+6. The organization of the files is handled by the [`map.tsv` file](https://docs.google.com/spreadsheets/d/1DhwL1yr7-sY6f8vfyHsKlPqxhu4_zUHXYiBrllglFfc/edit?usp=sharing), that contains metadata for every file. That file should only be edited by members of the Netdata team.
 
-6. Run the ingest process to fetch the documents you are working on from one or multiple repos.
+7. Once you edit the file from Google Sheets, you download the second sheet and replace `map.tsv` in your local repo.
 
-  ```bash
-  python ingest/ingest.py --repos <owner>/<repo>:<branch>
-  ```
+8. Run the ingest process to fetch the documents you are working on from one or multiple repos.
+    
+    ```bash
+    python ingest/ingest.py --repos <owner>/<repo>:<branch>
+    ```
+    
+    for example, let's assume that you made some changes in the markdown files of `netdata/netdata` repo (branch: patch1)
+    and on your own fork `user1/go.d.plugin` repo (branch: user1-patch).
+    
+    ```bash
+    python ingest/ingest.py --repos netdata/netdata:patch1 user1/go.d.plugin:user1-patch
+    ```
+
+    If you don't use `--repos` the ingest will run on the master branches of netdata's repos.
+
+9. You then need to run `ingest/create_grid_integration_pages.py` to generate the dynamic integration pages.
   
-  for example, let's assume that you made some changes in the markdown files of `netdata/netdata` repo (branch: patch1)
-  and on your own fork `user1/go.d.plugin` repo (branch: user1-patch).
+10. Build a local website,
 
-  ```bash
-  python ingest/ingest.py --repos netdata/netdata:patch1 user1/go.d.plugin:user1-patch
-  ```
-
-7. Build a local website,
-
-  ```bash
-  yarn start
-  ```
+    ```bash
+    yarn start
+    ```
+    
+    You can also build the project instead of running by:
+    
+    ```bash
+    yarn build
+    ```
+    
+    and then:
+    
+    ```bash
+    npm run serve
+    ```
 
 ## Update news on the Learn homepage
 
