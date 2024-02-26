@@ -59,12 +59,12 @@ default_repos = {
             "branch": "master",
             "HEAD": "master",
         },
-    "go.d.plugin":
-        {
-            "owner": "netdata",
-            "branch": "master",
-            "HEAD": "master",
-        },
+    # "go.d.plugin":
+    #     {
+    #         "owner": "netdata",
+    #         "branch": "master",
+    #         "HEAD": "master",
+    #     },
     ".github":
         {
             "owner": "netdata",
@@ -317,14 +317,6 @@ def clone_repo(owner, repo, branch, depth, prefix_folder):
         git.Git().clone(
             f"https://github.com/{owner}/{repo}.git", output_folder, depth=depth, branch=branch)
 
-        print("trying to ignore new go.d dir in netdata/netdata until move is completed")
-
-        if str(output_folder) == "ingest-temp-folder/netdata":
-            shutil.rmtree(str(output_folder) + '/src' + '/go')
-            # os.rmdir("output_folder)
-            print(output_folder, owner, repo)
-
-        # "ingest-temp-folder/netdata"
 
         return f"Cloned the {branch} branch from {repo} repo (owner: {owner})"
     except Exception as e:
@@ -620,7 +612,7 @@ def convert_github_links(path_to_file, input_dict):
 
     Expected format of links in files:
         [*](https://github.com/netdata/netdata/blob/master/*)
-        or go.d.plugin or any other Netdata repo
+        or any other Netdata repo
     """
 
     whole_file = Path(path_to_file).read_text()

@@ -8733,4 +8733,28 @@
   from="/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/alerta"
   to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/alerta"
 
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/nvme-devices"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-scaleio"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/nvme-devices"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-scaleio"
+
 # section: dynamic << END
