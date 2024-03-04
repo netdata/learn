@@ -161,7 +161,7 @@ https://github.com/netdata/netdata/edit/master/docs/configure/start-stop-restart
 https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	Update Netdata Agents	Unpublished	Maintaining	If you opted out of automatic updates, you need to update your Netdata Agent to the latest nightly or stable version.
 https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	Reinstall Netdata Agents	Unpublished	Maintaining	Troubleshooting installation issues or force an update of the Netdata Agent by reinstalling it using the same method you used during installation.
 https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	Uninstall Netdata Agents	Unpublished	Maintaining	If you are no longer interested in using the Netdata Agent, use the self-contained uninstaller to remove all traces of binaries and configuration files.
-https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	Backup Netdata Agent's data	Unpublished	Maintaining	Back up all Netdata artifacts
+				
 				
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/developer-and-contributor-corner.md	Developer and Contributor Corner	Published	Developer and Contributor Corner	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-apis.md	REST API	Published	Developer and Contributor Corner/REST API	
@@ -186,6 +186,7 @@ https://github.com/netdata/netdata/edit/master/src/web/api/formatters/ssv/README
 https://github.com/netdata/netdata/edit/master/src/web/api/formatters/value/README.md	Value formatter	Published	Developer and Contributor Corner/REST API/Formatters	
 https://github.com/netdata/netdata/edit/master/src/web/api/badges/README.md	Netdata badges	Published	Developer and Contributor Corner/REST API	
 https://github.com/netdata/netdata/edit/master/src/database/engine/README.md	Database Engine	Published	Developer and Contributor Corner	
+https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	Backing up a Netdata Agent	Published	Developer and Contributor Corner	Back up all Netdata artifacts
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	Contributing	Published	Developer and Contributor Corner	
 https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	Community code of conduct	Published	Developer and Contributor Corner	
 https://github.com/netdata/.github/edit/main/SECURITY.md	Security Policy	Published	Developer and Contributor Corner	The Netdata team maintains and adheres to a formal process any time a member of the community reports a security vulnerability.
