@@ -773,6 +773,7 @@ https://github.com/netdata/netdata/edit/master/docs/guides/monitor/kubernetes-k8
 https://github.com/netdata/netdata/edit/master/docs/guides/monitor/pi-hole-raspberry-pi.md	/docs/developer-and-contributor-corner/monitor-pi-hole-and-a-raspberry-pi-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/guides/configure/performance.md	/docs/netdata-agent/configuration/how-to-optimize-the-netdata-agent-s-performance
 https://github.com/netdata/netdata/edit/master/docs/guides/troubleshoot/monitor-debug-applications-ebpf.md	/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics
+https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	/docs/developer-and-contributor-corner/backing-up-a-netdata-agent
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/README.md	/docs/security-and-privacy-design
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	/docs/security-and-privacy-design/netdata-cloud-security-and-privacy-design
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	/docs/security-and-privacy-design/netdata-agent-security-and-privacy-design
