@@ -36,7 +36,6 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/mongodb/README.md	/docs/collecting-metrics/databases/mongodb
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/pulsar/README.md	/docs/collecting-metrics/message-brokers/apache-pulsar
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/k8s_state/README.md	/docs/collecting-metrics/kubernetes/kubernetes-cluster-state
-https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/solr/README.md	/docs/collecting-metrics/search-engines/solr
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/systemdunits/README.md	/docs/collecting-metrics/systemd/systemd-units
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/openvpn/README.md	/docs/collecting-metrics/vpns/openvpn
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/vsphere/README.md	/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server
@@ -361,7 +360,6 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/nvme/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/proxysql/README.md	/docs/collecting-metrics/databases/proxysql
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/upsd/README.md	/docs/collecting-metrics/ups/ups-nut
-https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/springboot2/README.md	/docs/collecting-metrics/apm/java-spring-boot-2-applications
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/ping/README.md	/docs/collecting-metrics/synthetic-checks/ping
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/logind/README.md	/docs/collecting-metrics/systemd/systemd-logind-users
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/portcheck/README.md	/docs/collecting-metrics/synthetic-checks/tcp-endpoints
@@ -380,7 +378,6 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/windows/integrations/ms_exchange.md	/docs/collecting-metrics/windows-systems/ms-exchange
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/windows/integrations/net_framework.md	/docs/collecting-metrics/windows-systems/net-framework
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/scaleio/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-scaleio
-https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/energid/README.md	/docs/collecting-metrics/blockchain-servers/energi-core-wallet
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/filecheck/README.md	/docs/collecting-metrics/linux-systems/files-and-directories
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/rabbitmq/README.md	/docs/collecting-metrics/message-brokers/rabbitmq
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/dnsmasq/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq
