@@ -34,7 +34,6 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration.
 https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	Cheatsheet	Published	Netdata Agent/Configuration	Connecting an Agent to the Cloud allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud via the encrypted Agent-Cloud link (ACLK).'			
 https://github.com/netdata/netdata/edit/master/docs/configure/common-changes.md	Common configuration changes	Published	Netdata Agent/Configuration	See the most popular configuration changes to make to the Netdata Agent, including longer metrics retention, reduce sampling, and more.			
 https://github.com/netdata/netdata/edit/master/docs/guides/configure/performance.md	How to optimize the Netdata Agent's performance	Published	Netdata Agent/Configuration	While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.			
-https://github.com/netdata/netdata/edit/master/src/claim/README.md	Connect Agent to Cloud	Published	Netdata Agent/Configuration				
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/optimizing-metrics-database.md	Optimizing Metrics Database	Published	Netdata Agent/Configuration/Optimizing Metrics Database				
 https://github.com/netdata/netdata/edit/master/src/database/README.md	Database modes for parent child setups	Published	Netdata Agent/Configuration/Optimizing Metrics Database	The Netdata Agent leverages multiple, user-configurable time-series databases that use RAM and/or disk to store metrics on any type of node.			
 https://github.com/netdata/netdata/edit/master/docs/store/change-metrics-storage.md	Change how long Netdata stores metrics	Published	Netdata Agent/Configuration/Optimizing Metrics Database	With a single configuration change, the Netdata Agent can store days, weeks, or months of metrics at its famous per-second granularity.			
@@ -63,6 +62,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting.md	Troubleshooting	Published	Netdata Cloud/Netdata Cloud On-Prem				
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	Role-based access model	Published	Netdata Cloud	Explanation of Netdata roles and permissions linked to them			
 https://github.com/netdata/netdata/edit/master/src/aclk/README.md	Agent-Cloud Link (ACLK)	Published	Netdata Cloud	The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud.			
+https://github.com/netdata/netdata/edit/master/src/claim/README.md	Connect Agent to Cloud	Published	Netdata Cloud				
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	Netdata plans	Published	Netdata Cloud				
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	View Plan & Billing	Published	Netdata Cloud				
 							

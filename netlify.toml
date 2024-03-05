@@ -8759,22 +8759,26 @@
 
 [[redirects]]
   from="/docs/agent/agent-cloud"
-  to="/docs/netdata-agent/configuration/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent-to-cloud"
 
 [[redirects]]
   from="/docs/agent/claim"
-  to="/docs/netdata-agent/configuration/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent-to-cloud"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/connect-agent-to-cloud"
-  to="/docs/netdata-agent/configuration/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent-to-cloud"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/connect-agent-to-cloud"
-  to="/docs/netdata-agent/configuration/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent-to-cloud"
 
 [[redirects]]
   from="/docs/configuring/connect-agent-to-cloud"
-  to="/docs/netdata-agent/configuration/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent-to-cloud"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent-to-cloud"
 
 # section: dynamic << END

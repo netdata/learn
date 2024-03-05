@@ -37,7 +37,7 @@ The Netdata Agent is installed under `/usr/local/netdata`. Dependencies are hand
 
 **Automatically connect to Netdata Cloud during installation**
 
-The `kickstart.sh` script accepts additional parameters to automatically [connect](/docs/netdata-agent/configuration/connect-agent-to-cloud) your node to Netdata
+The `kickstart.sh` script accepts additional parameters to automatically [connect](/docs/netdata-cloud/connect-agent-to-cloud) your node to Netdata
 Cloud immediately after installation. Find the `token` and `rooms` strings by [signing in to Netdata
 Cloud](https://app.netdata.cloud/sign-in?cloudRoute=/spaces), then clicking on **Connect Nodes** in the [Spaces management
 area](/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team#netdata-cloud-spaces).
@@ -46,7 +46,7 @@ area](/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-t
   after the install.
 - `--claim-rooms`: Specify a comma-separated list of tokens for each War Room this node should appear in.
 - `--claim-proxy`: Specify a proxy to use when connecting to the cloud in the form of `http://[user:pass@]host:ip` for an HTTP(S) proxy.
-  See [connecting through a proxy](/docs/netdata-agent/configuration/connect-agent-to-cloud#connect-through-a-proxy) for details.
+  See [connecting through a proxy](/docs/netdata-cloud/connect-agent-to-cloud#connect-through-a-proxy) for details.
 - `--claim-url`: Specify a URL to use when connecting to the cloud. Defaults to `https://app.netdata.cloud`.
 
 For example: 
@@ -55,7 +55,7 @@ curl https://get.netdata.cloud/kickstart.sh > /tmp/netdata-kickstart.sh && sh /t
 ```
 The Netdata Agent is installed under `/usr/local/netdata` on your machine. Your machine will also show up as a node in your Netdata Cloud.
 
-If you experience issues while claiming your node, follow the steps in our [Troubleshooting](/docs/netdata-agent/configuration/connect-agent-to-cloud#troubleshooting) documentation.
+If you experience issues while claiming your node, follow the steps in our [Troubleshooting](/docs/netdata-cloud/connect-agent-to-cloud#troubleshooting) documentation.
 ## Install Netdata via Homebrew
 
 ### For macOS Intel
