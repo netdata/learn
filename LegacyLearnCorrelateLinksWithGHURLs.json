@@ -2272,5 +2272,6 @@
     "https://learn.netdata.cloud/docs/alerts-&-notifications-/-notifications/agent-dispatched-notifications/alerta": "https://github.com/netdata/netdata/blob/master/src/health/notifications/alerta/README.md",
     "https://learn.netdata.cloud/docs/data-collection/storage%20-mount-points-and-filesystems/nvme-devices": "https://github.com/netdata/netdata/blob/master/src/go/collectors/go.d.plugin/modules/nvme/README.md",
     "https://learn.netdata.cloud/docs/data-collection/storage%20-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs": "https://github.com/netdata/netdata/blob/master/src/go/collectors/go.d.plugin/modules/hdfs/README.md",
-    "https://learn.netdata.cloud/docs/data-collection/storage%20-mount-points-and-filesystems/dell-emc-scaleio": "https://github.com/netdata/netdata/blob/master/src/go/collectors/go.d.plugin/modules/scaleio/README.md"
+    "https://learn.netdata.cloud/docs/data-collection/storage%20-mount-points-and-filesystems/dell-emc-scaleio": "https://github.com/netdata/netdata/blob/master/src/go/collectors/go.d.plugin/modules/scaleio/README.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/configuration/connect-agent-to-cloud": "https://github.com/netdata/netdata/blob/master/src/claim/README.md"
 }

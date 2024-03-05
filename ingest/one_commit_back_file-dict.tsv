@@ -586,7 +586,7 @@ https://github.com/netdata/netdata/edit/master/src/health/notifications/rocketch
 https://github.com/netdata/netdata/edit/master/src/health/notifications/awssns/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/aws-sns
 https://github.com/netdata/netdata/edit/master/src/health/notifications/messagebird/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/messagebird
 https://github.com/netdata/netdata/edit/master/src/health/notifications/gotify/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/gotify
-https://github.com/netdata/netdata/edit/master/src/claim/README.md	/docs/netdata-agent/configuration/connect-agent-to-cloud
+https://github.com/netdata/netdata/edit/master/src/claim/README.md	/docs/netdata-cloud/connect-agent-to-cloud
 https://github.com/netdata/netdata/edit/master/src/web/server/README.md	/docs/netdata-agent/securing-netdata-agents/web-server
 https://github.com/netdata/netdata/edit/master/src/web/api/README.md	/docs/developer-and-contributor-corner/rest-api/api
 https://github.com/netdata/netdata/edit/master/src/web/api/exporters/shell/README.md	/docs/exporting-metrics/shell-scripts
