@@ -486,10 +486,6 @@
   to="/docs/collecting-metrics/search-engines/elasticsearch"
 
 [[redirects]]
-  from="/docs/agent/collectors/go.d.plugin/modules/energid"
-  to="/docs/collecting-metrics/blockchain-servers/energi-core-wallet"
-
-[[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/filecheck"
   to="/docs/collecting-metrics/linux-systems/files-and-directories"
 
@@ -648,14 +644,6 @@
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/snmp"
   to="/docs/collecting-metrics/generic-collecting-metrics/snmp-devices"
-
-[[redirects]]
-  from="/docs/agent/collectors/go.d.plugin/modules/solr"
-  to="/docs/collecting-metrics/search-engines/solr"
-
-[[redirects]]
-  from="/docs/agent/collectors/go.d.plugin/modules/springboot2"
-  to="/docs/collecting-metrics/apm/java-spring-boot-2-applications"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/squidlog"
@@ -1982,10 +1970,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptecraid"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Search/Solr"
-  to="/docs/collecting-metrics/search-engines/solr"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Search/Elasticsearch"
   to="/docs/collecting-metrics/search-engines/elasticsearch"
 
@@ -2274,10 +2258,6 @@
   to="/docs/collecting-metrics/blockchain-servers/go-ethereum"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Blockchain/Energi-Core-Wallet"
-  to="/docs/collecting-metrics/blockchain-servers/energi-core-wallet"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/SpigotMC"
   to="/docs/collecting-metrics/gaming/spigotmc"
 
@@ -2336,10 +2316,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/PHP-Applications"
   to="/docs/collecting-metrics/apm/phpdaemon"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Java-Spring-Boot-2-applications"
-  to="/docs/collecting-metrics/apm/java-spring-boot-2-applications"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Go-applications"
@@ -2986,10 +2962,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptecraid"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/search/solr"
-  to="/docs/collecting-metrics/search-engines/solr"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/search/elasticsearch"
   to="/docs/collecting-metrics/search-engines/elasticsearch"
 
@@ -3278,10 +3250,6 @@
   to="/docs/collecting-metrics/blockchain-servers/go-ethereum"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/blockchain/energi-core-wallet"
-  to="/docs/collecting-metrics/blockchain-servers/energi-core-wallet"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/applications/spigotmc"
   to="/docs/collecting-metrics/gaming/spigotmc"
 
@@ -3336,10 +3304,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/php-applications"
   to="/docs/collecting-metrics/apm/phpdaemon"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/any-application---generic-collectors/java-spring-boot-2-applications"
-  to="/docs/collecting-metrics/apm/java-spring-boot-2-applications"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/go-applications"
@@ -7070,10 +7034,6 @@
   to="/docs/collecting-metrics/search-engines/sphinx"
 
 [[redirects]]
-  from="/docs/data-collection/search-engines/solr"
-  to="/docs/collecting-metrics/search-engines/solr"
-
-[[redirects]]
   from="/docs/data-collection/search-engines/opensearch"
   to="/docs/collecting-metrics/search-engines/opensearch"
 
@@ -7658,10 +7618,6 @@
   to="/docs/collecting-metrics/blockchain-servers/go-ethereum"
 
 [[redirects]]
-  from="/docs/data-collection/blockchain-servers/energi-core-wallet"
-  to="/docs/collecting-metrics/blockchain-servers/energi-core-wallet"
-
-[[redirects]]
   from="/docs/data-collection/blockchain-servers/crypto-exchanges"
   to="/docs/collecting-metrics/blockchain-servers/crypto-exchanges"
 
@@ -7700,10 +7656,6 @@
 [[redirects]]
   from="/docs/data-collection/apm/jmx"
   to="/docs/collecting-metrics/apm/jmx"
-
-[[redirects]]
-  from="/docs/data-collection/apm/java-spring-boot-2-applications"
-  to="/docs/collecting-metrics/apm/java-spring-boot-2-applications"
 
 [[redirects]]
   from="/docs/data-collection/apm/ibm-aix-systems-njmon"
