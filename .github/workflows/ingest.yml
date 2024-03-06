@@ -3,7 +3,18 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "10 8-23/3 * * *" # every 3rd hour from 8 through 23
-
+  push:
+    branches:
+      - master
+    paths:
+      - plugins/**
+      - src/**
+      - static/**
+      - map.tsv
+      - sidebar.js
+      - package.json
+      - yarn.lock
+      - tailwind.config.js
 jobs:
   ingest:
     runs-on: ubuntu-latest
