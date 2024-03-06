@@ -186,7 +186,6 @@ https://github.com/netdata/netdata/edit/master/src/web/api/formatters/ssv/README
 https://github.com/netdata/netdata/edit/master/src/web/api/formatters/value/README.md	Value formatter	Published	Developer and Contributor Corner/REST API/Formatters	
 https://github.com/netdata/netdata/edit/master/src/web/api/badges/README.md	Netdata badges	Published	Developer and Contributor Corner/REST API	
 https://github.com/netdata/netdata/edit/master/src/database/engine/README.md	Database Engine	Published	Developer and Contributor Corner	
-https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	Backing up a Netdata Agent	Published	Developer and Contributor Corner	Back up all Netdata artifacts
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	Contributing	Published	Developer and Contributor Corner	
 https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	Community code of conduct	Published	Developer and Contributor Corner	
 https://github.com/netdata/.github/edit/main/SECURITY.md	Security Policy	Published	Developer and Contributor Corner	The Netdata team maintains and adheres to a formal process any time a member of the community reports a security vulnerability.
