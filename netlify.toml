@@ -8737,4 +8737,24 @@
   from="/docs/developer-and-contributor-corner/backing-up-a-netdata-agent"
   to="/docs/netdata-agent/backup-and-restore-an-agent"
 
+[[redirects]]
+  from="/docs/dashboard/how-dashboard-works"
+  to="/docs/netdata-cloud/monitor-your-infrastructure"
+
+[[redirects]]
+  from="/docs/quickstart/infrastructure"
+  to="/docs/netdata-cloud/monitor-your-infrastructure"
+
+[[redirects]]
+  from="/docs/cloud"
+  to="/docs/netdata-cloud/monitor-your-infrastructure"
+
+[[redirects]]
+  from="/docs/getting-started/monitor-your-infrastructure"
+  to="/docs/netdata-cloud/monitor-your-infrastructure"
+
+[[redirects]]
+  from="/docs/netdata-architecture/the-role-of-netdata-cloud"
+  to="/docs/netdata-cloud/monitor-your-infrastructure"
+
 # section: dynamic << END

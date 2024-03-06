@@ -55,6 +55,7 @@ https://github.com/netdata/netdata/edit/master/src/cli/README.md	Agent CLI	Publi
 https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	Backup and restore an Agent	Published	Netdata Agent	What actions you need to do to backup and Agent and restore it.			
 							
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	Netdata Cloud	Published	Netdata Cloud				
+https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	Monitor your infrastructure	Published	Netdata Cloud				
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/versions.md	Netdata Cloud Versions	Published	Netdata Cloud				
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/README.md	Netdata Cloud On-Prem	Published	Netdata Cloud/Netdata Cloud On-Prem				
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/installation.md	Installation	Published	Netdata Cloud/Netdata Cloud On-Prem				
