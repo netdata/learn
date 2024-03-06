@@ -8733,4 +8733,8 @@
   from="/docs/netdata-agent/configuration/connect-agent-to-cloud"
   to="/docs/netdata-cloud/connect-agent-to-cloud"
 
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/backing-up-a-netdata-agent"
+  to="/docs/netdata-agent/backup-and-restore-an-agent"
+
 # section: dynamic << END
