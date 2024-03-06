@@ -52,7 +52,7 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/secu
 https://github.com/netdata/netdata/edit/master/src/web/server/README.md	Web server	Published	Netdata Agent/Securing Netdata Agents	The Netdata Agent's local static-threaded web server serves dashboards and real-time visualizations with security and DDoS protection.
 https://github.com/netdata/netdata/edit/master/src/registry/README.md	Registry	Published	Netdata Agent	Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards.
 https://github.com/netdata/netdata/edit/master/src/cli/README.md	Agent CLI	Published	Netdata Agent	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
-				
+https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	Backup and restore an Agent	Published	Netdata Agent	What actions you need to do to backup and Agent and restore it.
 				
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	Netdata Cloud	Published	Netdata Cloud	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/versions.md	Netdata Cloud Versions	Published	Netdata Cloud	
