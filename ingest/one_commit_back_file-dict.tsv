@@ -758,6 +758,7 @@ https://github.com/netdata/netdata/edit/master/docs/observability-centralization
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/configuration.md	/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/sizing-netdata-parents.md	/docs/observability-centralization-points/metrics-centralization-points/sizing-netdata-parents
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	/docs/developer-and-contributor-corner/contribute-to-the-documentation/netdata-style-guide
+https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	/docs/netdata-cloud/monitor-your-infrastructure
 https://github.com/netdata/netdata/edit/master/docs/guides/collect-apache-nginx-web-logs.md	/docs/developer-and-contributor-corner/monitor-nginx-or-apache-web-server-log-files-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/guides/python-collector.md	/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python
 https://github.com/netdata/netdata/edit/master/docs/guides/collect-unbound-metrics.md	/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata
