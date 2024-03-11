@@ -2,7 +2,7 @@ custom_edit_url	sidebar_label	learn_status	learn_rel_path	description	meta_yaml	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	Deployment Guides	Published	Deployment Guides				
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	Standalone Deployment	Published	Deployment Guides				
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	Deployment with Centralization Points	Published	Deployment Guides				
-							
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-strategies.md	Deployment Strategies	Published	Deployment Guides				
 https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	Live Demo	Published	root				
 							
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/README.md	Netdata Agent	Published	Netdata Agent				
@@ -25,6 +25,13 @@ https://github.com/netdata/netdata/edit/master/packaging/installer/methods/aws.m
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/azure.md	Azure	Published	Netdata Agent/Installation	The Netdata Agent runs on all popular cloud providers, but often requires additional steps and configuration for full functionality.			
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/gcp.md	GCP	Published	Netdata Agent/Installation	The Netdata Agent runs on all popular cloud providers, but often requires additional steps and configuration for full functionality.			
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/install-netdata-on-embedded-systems.md	Install Netdata on Embedded Systems	Unpublished	Netdata Agent/Installation				
+							
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	Maintenance	Published	Netdata Agent/Maintenance				
+https://github.com/netdata/netdata/edit/master/docs/maintenance/start-stop-restart.md	Starting and Stopping Netdata Agents 	Published	Netdata Agent/Maintenance	Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes.			
+https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	Update Netdata Agents	Published	Netdata Agent/Maintenance	If you opted out of automatic updates, you need to update your Netdata Agent to the latest nightly or stable version.			
+https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	Reinstall Netdata Agents	Published	Netdata Agent/Maintenance	Troubleshooting installation issues or force an update of the Netdata Agent by reinstalling it using the same method you used during installation.			
+https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	Uninstall Netdata Agents	Published	Netdata Agent/Maintenance	If you are no longer interested in using the Netdata Agent, use the self-contained uninstaller to remove all traces of binaries and configuration files.			
+							
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/README.md	Sizing Netdata Agents	Published	Netdata Agent/Sizing Netdata Agents				
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md	CPU Requirements	Published	Netdata Agent/Sizing Netdata Agents				
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/ram-requirements.md	RAM Requirements	Published	Netdata Agent/Sizing Netdata Agents				
@@ -53,6 +60,19 @@ https://github.com/netdata/netdata/edit/master/src/web/server/README.md	Web serv
 https://github.com/netdata/netdata/edit/master/src/registry/README.md	Registry	Published	Netdata Agent	Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards.			
 https://github.com/netdata/netdata/edit/master/src/cli/README.md	Agent CLI	Published	Netdata Agent	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.			
 https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	Backup and restore an Agent	Published	Netdata Agent	What actions you need to do to backup and Agent and restore it.			
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 							
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	Netdata Cloud	Published	Netdata Cloud				
 https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	Monitor your infrastructure	Published	Netdata Cloud				
@@ -740,11 +760,11 @@ https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	Netdata Agent Security and Privacy Design	Published	Security and Privacy Design				
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	Netdata Cloud Security and Privacy Design	Published	Security and Privacy Design				
 							
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	Maintaining	Unpublished	Maintaining				
-https://github.com/netdata/netdata/edit/master/docs/configure/start-stop-restart.md	Starting and Stopping Netdata Agents 	Unpublished	Maintaining	Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes.			
-https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	Update Netdata Agents	Unpublished	Maintaining	If you opted out of automatic updates, you need to update your Netdata Agent to the latest nightly or stable version.			
-https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	Reinstall Netdata Agents	Unpublished	Maintaining	Troubleshooting installation issues or force an update of the Netdata Agent by reinstalling it using the same method you used during installation.			
-https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	Uninstall Netdata Agents	Unpublished	Maintaining	If you are no longer interested in using the Netdata Agent, use the self-contained uninstaller to remove all traces of binaries and configuration files.			
+							
+							
+							
+							
+							
 							
 							
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/developer-and-contributor-corner.md	Developer and Contributor Corner	Published	Developer and Contributor Corner				

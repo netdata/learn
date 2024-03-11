@@ -8757,4 +8757,44 @@
   from="/docs/netdata-architecture/the-role-of-netdata-cloud"
   to="/docs/netdata-cloud/monitor-your-infrastructure"
 
+[[redirects]]
+  from="/docs/agent/packaging/installer/reinstall"
+  to="/docs/netdata-agent/maintenance/reinstall-netdata-agents"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/uninstall"
+  to="/docs/netdata-agent/maintenance/uninstall-netdata-agents"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/update"
+  to="/docs/netdata-agent/maintenance/update-netdata-agents"
+
+[[redirects]]
+  from="/docs/installation/update-netdata"
+  to="/docs/netdata-agent/maintenance/update-netdata-agents"
+
+[[redirects]]
+  from="/docs/installation/uninstall-netdata"
+  to="/docs/netdata-agent/maintenance/uninstall-netdata-agents"
+
+[[redirects]]
+  from="/docs/installation/reinstall-netdata"
+  to="/docs/netdata-agent/maintenance/reinstall-netdata-agents"
+
+[[redirects]]
+  from="/docs/maintenance-operations-on-netdata-agents/update-netdata-agents"
+  to="/docs/netdata-agent/maintenance/update-netdata-agents"
+
+[[redirects]]
+  from="/docs/maintenance-operations-on-netdata-agents/uninstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/uninstall-netdata-agents"
+
+[[redirects]]
+  from="/docs/maintenance-operations-on-netdata-agents/reinstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/reinstall-netdata-agents"
+
+[[redirects]]
+  from="/docs/maintenance-operations-on-netdata-agents"
+  to="/docs/netdata-agent/maintenance"
+
 # section: dynamic << END

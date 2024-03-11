@@ -15,6 +15,7 @@ https://github.com/netdata/netdata/edit/master/docs/anonymous-statistics.md	/doc
 https://github.com/netdata/netdata/edit/master/docs/Running-behind-haproxy.md	/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	/docs/deployment-guides
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	/docs/deployment-guides/standalone-deployment
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-strategies.md	/docs/deployment-guides/deployment-strategies
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	/docs/deployment-guides/deployment-with-centralization-points
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	/docs/security-and-privacy-design/netdata-cloud-security-and-privacy-design
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/README.md	/docs/security-and-privacy-design
@@ -24,6 +25,7 @@ https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	/
 https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md	/docs/exporting-metrics/exporting-quickstart
 https://github.com/netdata/netdata/edit/master/docs/contributing/style-guide.md	/docs/developer-and-contributor-corner/contribute-to-the-documentation/netdata-style-guide
 https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	/docs/netdata-agent/backup-and-restore-an-agent
+https://github.com/netdata/netdata/edit/master/docs/maintenance/start-stop-restart.md	/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents
 https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	/docs/netdata-cloud/monitor-your-infrastructure
 https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	/docs/netdata-agent/configuration/cheatsheet
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs/top-monitoring
@@ -76,6 +78,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-apis.md	/docs/developer-and-contributor-corner/rest-api
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/machine-learning-and-anomaly-detection
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/logs.md	/docs/working-with-logs
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	/docs/dashboards-and-charts
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/secure-nodes.md	/docs/netdata-agent/securing-netdata-agents
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/optimizing-metrics-database.md	/docs/netdata-agent/configuration/optimizing-metrics-database
@@ -771,7 +774,10 @@ https://github.com/netdata/netdata/edit/master/src/daemon/README.md	/docs/netdat
 https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md	/docs/netdata-agent/configuration/daemon-configuration
 https://github.com/netdata/netdata/edit/master/contrib/README.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/netdata-contrib
 https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing
+https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	/docs/netdata-agent/maintenance/uninstall-netdata-agents
 https://github.com/netdata/netdata/edit/master/packaging/installer/README.md	/docs/netdata-agent/installation
+https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	/docs/netdata-agent/maintenance/update-netdata-agents
+https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	/docs/netdata-agent/maintenance/reinstall-netdata-agents
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/gcp.md	/docs/netdata-agent/installation/gcp
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/ansible.md	/docs/netdata-agent/installation/ansible
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/synology.md	/docs/netdata-agent/installation/synology
