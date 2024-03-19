@@ -1475,7 +1475,7 @@
 
 [[redirects]]
   from="/docs/cloud/manage/themes"
-  to="/docs/dashboards-and-charts/choose-your-netdata-cloud-theme"
+  to="/docs/dashboards-and-charts/choose-your-netdata-ui-theme"
 
 [[redirects]]
   from="/docs/cloud/visualize/dashboards"
@@ -2639,7 +2639,7 @@
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
-  to="/docs/dashboards-and-charts/choose-your-netdata-cloud-theme"
+  to="/docs/dashboards-and-charts/choose-your-netdata-ui-theme"
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/netdata-daemon"
@@ -5643,7 +5643,7 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
-  to="/docs/dashboards-and-charts/choose-your-netdata-cloud-theme"
+  to="/docs/dashboards-and-charts/choose-your-netdata-ui-theme"
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting/run-time-troubleshooting-with-functions"
@@ -8796,5 +8796,9 @@
 [[redirects]]
   from="/docs/maintenance-operations-on-netdata-agents"
   to="/docs/netdata-agent/maintenance"
+
+[[redirects]]
+  from="/docs/dashboards-and-charts/choose-your-netdata-cloud-theme"
+  to="/docs/dashboards-and-charts/choose-your-netdata-ui-theme"
 
 # section: dynamic << END
