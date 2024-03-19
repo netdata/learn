@@ -164,7 +164,7 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.m
 https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana data source plugin	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/src/web/gui/confluence/README.md	Atlassian Confluence dashboards	Unpublished	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/src/web/gui/README.md	Legacy Agent Dashboard	Unpublished	Dashboards and Charts	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	Choose your Netdata Cloud theme	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	Choose your Netdata UI theme	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/monitor-your-infrastructure.md	Monitor your Infrastructure	Unpublished	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	Sign in with email, Google, or GitHub	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	Organize your Infrastructure and Invite your Team	Published	Dashboards and Charts	
