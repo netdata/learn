@@ -1,21 +1,36 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.44.0';
+export const ReleaseVersion = '1.45.0';
 
-export const ReleaseDate = 'Dec 6, 2023';
+export const ReleaseDate = 'Mar 21, 2024';
 
 export const ReleaseNotes = [
-	'Netdata vs. Prometheus',
-	'systemd-journal plugin improvements',
-	'log2journal, a new tool in your quiver for log management',
-	'Netdata now logs to systemd-journal',
-	'Functions, power up your troubleshooting toolkit!',
-	'New Alert Notification Integrations to Netdata Cloud'
+	'Netdata Mobile App',
+	'Custom Dashboards',
+	'Network Viewer',
+	'User Settings',
+	'Dynamic Configuration (beta)',
+	'MacOS Processes Monitoring',
+	'Homelab Plan',
+	'New Build Infrastructure',
+	'Go Plugin Moved to Main Repository'
 ];
 
 
 
 export const News = [
+	{
+		title: <>Netdata release 1.45.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.45.0',
+		date: 'Mar 21, 2024',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v1.45.0 release notes to learn about our newest features and improvements. 
+
+			</>
+		),	
+	},
 	{
 		title: <>Ease of creating and managing Custom Dashboards!</>,
 		href: 'https://github.com/netdata/netdata/discussions/17016',
