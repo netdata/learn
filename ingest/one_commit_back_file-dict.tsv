@@ -665,6 +665,7 @@ https://github.com/netdata/netdata/edit/master/docs/Running-behind-caddy.md	/doc
 https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	/docs//live-demo
 https://github.com/netdata/netdata/edit/master/docs/anonymous-statistics.md	/docs/netdata-agent/configuration/anonymous-telemetry-events
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/versions.md	/docs/netdata-cloud/netdata-cloud-versions
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/api-tokens.md	/docs/netdata-cloud/api-tokens
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	/docs/netdata-cloud
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s.md	/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/installation.md	/docs/netdata-cloud/netdata-cloud-on-prem/installation
