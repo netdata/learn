@@ -1399,7 +1399,7 @@
 
 [[redirects]]
   from="/docs/visualize/overview-infrastructure"
-  to="/docs/dashboards-and-charts/infrastructure-overview"
+  to="/docs/dashboards-and-charts/home-tab"
 
 [[redirects]]
   from="/guides/collect-apache-nginx-web-logs"
@@ -2335,7 +2335,7 @@
 
 [[redirects]]
   from="/docs/visualizations/infrastructure-overview"
-  to="/docs/dashboards-and-charts/infrastructure-overview"
+  to="/docs/dashboards-and-charts/home-tab"
 
 [[redirects]]
   from="/docs/visualizations/build-new-dashboards"
@@ -3623,7 +3623,7 @@
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/infrastructure-overview"
-  to="/docs/dashboards-and-charts/infrastructure-overview"
+  to="/docs/dashboards-and-charts/home-tab"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/functions"
