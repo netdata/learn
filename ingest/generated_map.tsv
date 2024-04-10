@@ -81,6 +81,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/installation.md	Installation	Published	Netdata Cloud/Netdata Cloud On-Prem				
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s.md	PoC without K8s	Published	Netdata Cloud/Netdata Cloud On-Prem				
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting.md	Troubleshooting	Published	Netdata Cloud/Netdata Cloud On-Prem				
+https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/okta_sso.md	Okta SSO	Published	Netdata Cloud				
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	Role-based access model	Published	Netdata Cloud	Explanation of Netdata roles and permissions linked to them			
 https://github.com/netdata/netdata/edit/master/src/aclk/README.md	Agent-Cloud Link (ACLK)	Published	Netdata Cloud	The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud.			
 https://github.com/netdata/netdata/edit/master/src/claim/README.md	Connect Agent to Cloud	Published	Netdata Cloud				

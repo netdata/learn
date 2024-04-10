@@ -15,7 +15,7 @@ https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/netdata_mobile_app.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/netdata-mobile-app
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/amazon_sns.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/amazon-sns
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/opsgenie.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/opsgenie
-https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/okta_sso.md	/docs/authentication/okta-sso
+https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/okta_sso.md	/docs/netdata-cloud/okta-sso
 https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing
 https://github.com/netdata/netdata/edit/master/packaging/maintainers/README.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/package-maintainers
 https://github.com/netdata/netdata/edit/master/packaging/docker/README.md	/docs/netdata-agent/installation/docker

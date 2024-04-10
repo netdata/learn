@@ -8801,4 +8801,8 @@
   from="/docs/dashboards-and-charts/choose-your-netdata-cloud-theme"
   to="/docs/dashboards-and-charts/choose-your-netdata-ui-theme"
 
+[[redirects]]
+  from="/docs/authentication/okta-sso"
+  to="/docs/netdata-cloud/okta-sso"
+
 # section: dynamic << END
