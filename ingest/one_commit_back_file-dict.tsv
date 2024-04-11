@@ -296,6 +296,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/mysql/integrations/percona_mysql.md	/docs/collecting-metrics/databases/percona-mysql
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/cockroachdb/README.md	/docs/collecting-metrics/databases/cockroachdb
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/couchdb/README.md	/docs/collecting-metrics/databases/couchdb
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/zfspool/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/zfs-pools
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/logstash/README.md	/docs/collecting-metrics/logs-servers/logstash
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/envoy/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/envoy
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/traefik/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/traefik
@@ -732,7 +733,6 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-assistant.md	/
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	/docs/machine-learning-and-anomaly-detection/run-time-troubleshooting-with-functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs/top-monitoring
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	/docs/dashboards-and-charts/kubernetes-visualizations
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/overview.md	/docs/dashboards-and-charts/home-overview-and-single-node-view
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	/docs/dashboards-and-charts/custom-dashboards
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	/docs/dashboards-and-charts/node-filter
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	/docs/dashboards-and-charts/netdata-charts
@@ -780,6 +780,7 @@ https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	/docs
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot
 https://github.com/netdata/netdata/edit/master/docs/dashboard/nodes-tab.md	/docs/dashboards-and-charts/nodes-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	/docs/dashboards-and-charts/visualization-date-and-time-controls
+https://github.com/netdata/netdata/edit/master/docs/dashboard/metrics-tab-and-single-node-tabs.md	/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs
 https://github.com/netdata/netdata/edit/master/docs/dashboard/home-tab.md	/docs/dashboards-and-charts/home-tab
 https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	/docs/netdata-cloud/monitor-your-infrastructure
 https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	/docs/exporting-metrics/enable-an-exporting-connector

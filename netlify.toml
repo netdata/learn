@@ -1495,7 +1495,7 @@
 
 [[redirects]]
   from="/docs/cloud/visualize/overview"
-  to="/docs/dashboards-and-charts/home-overview-and-single-node-view"
+  to="/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs"
 
 [[redirects]]
   from="/docs/agent/collectors/collectors"
@@ -1575,7 +1575,7 @@
 
 [[redirects]]
   from="/docs/quickstart/single-node"
-  to="/docs/dashboards-and-charts/home-overview-and-single-node-view"
+  to="/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs"
 
 [[redirects]]
   from="/docs/visualize/create-dashboards"
@@ -2635,7 +2635,7 @@
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view"
-  to="/docs/dashboards-and-charts/home-overview-and-single-node-view"
+  to="/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
@@ -5639,7 +5639,7 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/home-overview-and-single-node-view"
-  to="/docs/dashboards-and-charts/home-overview-and-single-node-view"
+  to="/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
