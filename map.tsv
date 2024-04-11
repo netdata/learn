@@ -158,6 +158,7 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/acce
 https://github.com/netdata/netdata/edit/master/docs/dashboard/home-tab.md	Home Tab	Published	Dashboards and Charts	With Netdata Cloud's War Rooms, you can see real-time metrics, from any number of nodes in your infrastructure, in composite charts.
 https://github.com/netdata/netdata/edit/master/docs/dashboard/nodes-tab.md	Nodes Tab	Published	Dashboards and Charts	See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	Netdata Charts	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/dashboard/metrics-tab-and-single-node-tabs.md	Metrics tab and single node tabs	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/dimensions-contexts-families.md	Chart dimensions, contexts, and families	Unpublished	Dashboards and Charts	 Netdata organizes charts into dimensions, contexts, and families to automaticallyand meaningfully organize thousands of metrics into interactive charts.
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	Custom Dashboards	Published	Dashboards and Charts	Design new dashboards that target your infrastructure's unique needs and share them with your team fortargeted visual anomaly detection or incident response.
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	Kubernetes visualizations	Published	Dashboards and Charts	Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
@@ -170,7 +171,6 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/moni
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	Sign in with email, Google, or GitHub	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	Organize your Infrastructure and Invite your Team	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	Node filter	Published	Dashboards and Charts	
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/overview.md	Home, overview and single node view	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	Visualization date and time controls	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.md	View active alerts	Published	Dashboards and Charts	
 				
