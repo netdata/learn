@@ -317,6 +317,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/mongodb/README.md	/docs/collecting-metrics/databases/mongodb
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/intelgpu/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/intel-gpu
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/pihole/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/pi-hole
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/lvm/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/lvm-logical-volumes
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/dnsdist/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsdist
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/pika/README.md	/docs/collecting-metrics/databases/pika
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/prometheus/README.md	/docs/collecting-metrics/generic-collecting-metrics/prometheus-endpoint
