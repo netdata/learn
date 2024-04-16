@@ -778,6 +778,7 @@ https://github.com/netdata/netdata/edit/master/docs/observability-centralization
 https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.md	/docs/dashboards-and-charts/view-active-alerts
 https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	/docs/alerts-&-notifications/notifications
 https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	/docs/developer-and-contributor-corner/customize-the-standard-dashboard
+https://github.com/netdata/netdata/edit/master/docs/dashboard/logs-tab.md	/docs/dashboards-and-charts/logs-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot
 https://github.com/netdata/netdata/edit/master/docs/dashboard/nodes-tab.md	/docs/dashboards-and-charts/nodes-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	/docs/dashboards-and-charts/visualization-date-and-time-controls
