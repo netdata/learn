@@ -731,8 +731,8 @@ https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/
 https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	/docs/netdata-agent/configuration/cheatsheet
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-configuration-manager.md	/docs/alerts-&-notifications/creating-alerts-with-the-alerts-configuration-manager
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-assistant.md	/docs/machine-learning-and-anomaly-detection/ai-powered-troubleshooting-assistant
-https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	/docs/machine-learning-and-anomaly-detection/run-time-troubleshooting-with-functions
-https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs/top-monitoring
+https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	/docs/dashboards-and-charts/top-tab
+https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	/docs/dashboards-and-charts/kubernetes-visualizations
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	/docs/dashboards-and-charts/custom-dashboards
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	/docs/dashboards-and-charts/node-filter
