@@ -2276,5 +2276,7 @@
     "https://learn.netdata.cloud/docs/netdata-agent/configuration/connect-agent-to-cloud": "https://github.com/netdata/netdata/blob/master/src/claim/README.md",
     "https://learn.netdata.cloud/docs/developer-and-contributor-corner/backing-up-a-netdata-agent": "https://github.com/netdata/netdata/blob/master/docs/maintenance/backup-restore.md",
     "https://learn.netdata.cloud/docs/dashboards-and-charts/choose-your-netdata-cloud-theme": "https://github.com/netdata/netdata/blob/master/docs/cloud/manage/themes.md",
-    "https://learn.netdata.cloud/docs/authentication/okta-sso": "https://github.com/netdata/netdata/blob/master/integrations/cloud-authentication/integrations/okta_sso.md"
+    "https://learn.netdata.cloud/docs/authentication/okta-sso": "https://github.com/netdata/netdata/blob/master/integrations/cloud-authentication/integrations/okta_sso.md",
+    "https://learn.netdata.cloud/docs/top-monitoring": "https://github.com/netdata/netdata/blob/master/docs/cloud/netdata-functions.md",
+    "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection/run-time-troubleshooting-with-functions": "https://github.com/netdata/netdata/blob/master/docs/cloud/runtime-troubleshooting-with-functions.md"
 }
