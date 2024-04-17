@@ -199,13 +199,14 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/traefik/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/traefik
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/dnsmasq_dhcp/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq-dhcp
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/nvidia_smi/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/nvidia-gpu
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/adaptecraid/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptec-raid
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/pgbouncer/README.md	/docs/collecting-metrics/databases/pgbouncer
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/zfspool/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/zfs-pools
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/fluentd/README.md	/docs/collecting-metrics/logs-servers/fluentd
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/docker_engine/README.md	/docs/collecting-metrics/containers-and-vms/docker-engine
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/powerdns/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/powerdns-authoritative-server
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/chrony/README.md	/docs/collecting-metrics/system-clock-and-ntp/chrony
-https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/megacli/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-hardware-raid
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/megacli/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-megaraid
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/k8s_state/README.md	/docs/collecting-metrics/kubernetes/kubernetes-cluster-state
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/filecheck/README.md	/docs/collecting-metrics/linux-systems/files-and-directories
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/unbound/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/unbound
@@ -654,7 +655,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/diskspace.plugin/README.md	/docs/collecting-metrics/linux-systems/disk-space
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/python.d.plugin
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/adaptec_raid/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptecraid
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/dovecot/README.md	/docs/collecting-metrics/mail-servers/dovecot
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/uwsgi/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/uwsgi
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/postfix/README.md	/docs/collecting-metrics/mail-servers/postfix
