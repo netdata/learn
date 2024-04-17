@@ -730,10 +730,6 @@
   to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/adaptec_raid"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptecraid"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/alarms"
   to="/docs/collecting-metrics/other/netdata-agent-alarms"
 
@@ -1958,10 +1954,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ceph"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Storage/Adaptec-RAID"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptecraid"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Search/Elasticsearch"
   to="/docs/collecting-metrics/search-engines/elasticsearch"
 
@@ -2944,10 +2936,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/ceph"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ceph"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/storage/adaptec-raid"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptecraid"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/search/elasticsearch"
@@ -4448,10 +4436,6 @@
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hard-drive-temperature"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/adaptec-raid"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptecraid"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/smbfs"
@@ -6000,10 +5984,6 @@
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ceph"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ceph"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/adaptecraid"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptecraid"
 
 [[redirects]]
   from="/docs/data-collection/processes-and-system-services/users"
@@ -7762,10 +7742,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/borg-backup"
 
 [[redirects]]
-  from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/adaptecraid"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptecraid"
-
-[[redirects]]
   from="/docs/collecting-metrics/linux-systems/power-supply"
   to="/docs/collecting-metrics/linux-systems/power-supply/power-supply"
 
@@ -8788,5 +8764,9 @@
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/run-time-troubleshooting-with-functions"
   to="/docs/dashboards-and-charts/top-tab"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-hardware-raid"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-megaraid"
 
 # section: dynamic << END
