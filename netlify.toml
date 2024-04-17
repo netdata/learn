@@ -806,10 +806,6 @@
   to="/docs/collecting-metrics/web-servers-and-web-proxies/litespeed"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/megacli"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/memcached"
   to="/docs/collecting-metrics/databases/memcached"
 
@@ -1946,10 +1942,6 @@
   to="/docs/collecting-metrics/synthetic-checks/monit"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Storage/MegaRAID-controllers"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/IPFS"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
 
@@ -2936,10 +2928,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/monit"
   to="/docs/collecting-metrics/synthetic-checks/monit"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/storage/megaraid-controllers"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/ipfs"
@@ -4452,10 +4440,6 @@
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/nvme-devices"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/megaraid-controllers"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hp-smart-storage-arrays"
@@ -6004,10 +5988,6 @@
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/samba"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/megacli"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ipfs"
@@ -7732,10 +7712,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/netapp-solidfire"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/netapp-solidfire"
-
-[[redirects]]
-  from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/megacli"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/ipfs"
