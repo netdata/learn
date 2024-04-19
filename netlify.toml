@@ -1471,7 +1471,7 @@
 
 [[redirects]]
   from="/docs/cloud/visualize/dashboards"
-  to="/docs/dashboards-and-charts/custom-dashboards"
+  to="/docs/dashboards-and-charts/dashboards-tab"
 
 [[redirects]]
   from="/docs/cloud/visualize/interact-new-charts"
@@ -1571,7 +1571,7 @@
 
 [[redirects]]
   from="/docs/visualize/create-dashboards"
-  to="/docs/dashboards-and-charts/custom-dashboards"
+  to="/docs/dashboards-and-charts/dashboards-tab"
 
 [[redirects]]
   from="/docs/visualize/interact-dashboards-charts"
@@ -2323,7 +2323,7 @@
 
 [[redirects]]
   from="/docs/visualizations/build-new-dashboards"
-  to="/docs/dashboards-and-charts/custom-dashboards"
+  to="/docs/dashboards-and-charts/dashboards-tab"
 
 [[redirects]]
   from="/docs/visualizations/agent-dashboard/import-export-and-print-a-snapshot"
@@ -2347,7 +2347,7 @@
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/functions"
-  to="/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions"
+  to="/docs//top-monitoring-netdata-functions"
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/events-feed"
@@ -3603,7 +3603,7 @@
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/functions"
-  to="/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions"
+  to="/docs//top-monitoring-netdata-functions"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/events-feed"
@@ -3611,7 +3611,7 @@
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/custom-dashboards"
-  to="/docs/dashboards-and-charts/custom-dashboards"
+  to="/docs/dashboards-and-charts/dashboards-tab"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/accessing-netdata-dashboards"
@@ -5439,7 +5439,7 @@
 
 [[redirects]]
   from="/docs/visualizations/functions"
-  to="/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions"
+  to="/docs//top-monitoring-netdata-functions"
 
 [[redirects]]
   from="/docs/visualizations/events-feed"
@@ -5447,7 +5447,7 @@
 
 [[redirects]]
   from="/docs/visualizations/custom-dashboards"
-  to="/docs/dashboards-and-charts/custom-dashboards"
+  to="/docs/dashboards-and-charts/dashboards-tab"
 
 [[redirects]]
   from="/docs/visualizations/accessing-netdata-dashboards"
@@ -8759,7 +8759,7 @@
 
 [[redirects]]
   from="/docs/top-monitoring"
-  to="/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions"
+  to="/docs//top-monitoring-netdata-functions"
 
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/run-time-troubleshooting-with-functions"
@@ -8768,5 +8768,13 @@
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-hardware-raid"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-megaraid"
+
+[[redirects]]
+  from="/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions"
+  to="/docs//top-monitoring-netdata-functions"
+
+[[redirects]]
+  from="/docs/dashboards-and-charts/custom-dashboards"
+  to="/docs/dashboards-and-charts/dashboards-tab"
 
 # section: dynamic << END
