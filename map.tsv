@@ -132,7 +132,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README
 https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md	systemd-cat-native	Published	Working with Logs/systemd-cat-native	
 				
 				
-https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Top Monitoring (Netdata Functions)	Published	Top Monitoring (Netdata Functions)	Present the Netdata Functions what these are and why they should be used.
+https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	Top Monitoring (Netdata Functions)	Published	root	Present the Netdata Functions what these are and why they should be used.
 				
 https://github.com/netdata/netdata/edit/master/src/health/README.md	Alerts & Notifications	Published	Alerts & Notifications	
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-configuration-manager.md	Creating Alerts with the Alerts Configuration Manager	Published	Alerts & Notifications	
