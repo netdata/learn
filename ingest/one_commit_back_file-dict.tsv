@@ -541,6 +541,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/mysql/README.md	/docs/collecting-metrics/databases/mysql
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/mysql/integrations/percona_mysql.md	/docs/collecting-metrics/databases/percona-mysql
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/mysql/integrations/mariadb.md	/docs/collecting-metrics/databases/mariadb
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/storcli/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/storecli-raid
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/openvpn_status_log/README.md	/docs/collecting-metrics/vpns/openvpn-status-log
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/lvm/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/lvm-logical-volumes
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/wireguard/README.md	/docs/collecting-metrics/vpns/wireguard
