@@ -782,10 +782,6 @@
   to="/docs/collecting-metrics/apm/go-applications-expvar"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/hddtemp"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/hpssa"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
 
@@ -2114,10 +2110,6 @@
   to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Hardware/Hard-drive-temperature"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/FreeIPMI"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
 
@@ -3092,10 +3084,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/lm-sensors"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-sysfs"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/hardware/hard-drive-temperature"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/freeipmi"
@@ -4432,10 +4420,6 @@
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hp-smart-storage-arrays"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hard-drive-temperature"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/smbfs"
@@ -6232,10 +6216,6 @@
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/hdd-temperature"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/cups"
