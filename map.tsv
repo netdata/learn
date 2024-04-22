@@ -161,7 +161,7 @@ https://github.com/netdata/netdata/edit/master/docs/dashboard/metrics-tab-and-si
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	Top tab	Published	Dashboards and Charts	Instructions on how to use Functions
 https://github.com/netdata/netdata/edit/master/docs/dashboard/logs-tab.md	Logs tab	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	Kubernetes visualizations	Published	Dashboards and Charts	Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	Dashboards tab	Published	Dashboards and Charts	Design new dashboards that target your infrastructure's unique needs and share them with your team fortargeted visual anomaly detection or incident response.
+https://github.com/netdata/netdata/edit/master/docs/dashboard/dashboards-tab.md	Dashboards tab	Published	Dashboards and Charts	Design new dashboards that target your infrastructure's unique needs and share them with your team fortargeted visual anomaly detection or incident response.
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Dashboards and Charts	Present the Netdata Events feed.
 https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana data source plugin	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/src/web/gui/confluence/README.md	Atlassian Confluence dashboards	Unpublished	Dashboards and Charts	
