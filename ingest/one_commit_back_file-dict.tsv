@@ -65,8 +65,7 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	/docs/ne
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-configuration-manager.md	/docs/alerts-&-notifications/creating-alerts-with-the-alerts-configuration-manager
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	/docs/dashboards-and-charts/top-tab
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs//top-monitoring-netdata-functions
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/dashboards.md	/docs/dashboards-and-charts/dashboards-tab
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	/docs/dashboards-and-charts/kubernetes-visualizations
+https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	/docs/dashboards-and-charts/kubernetes-tab
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	/docs/dashboards-and-charts/netdata-charts
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	/docs/dashboards-and-charts/node-filter
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	/docs/dashboards-and-charts/choose-your-netdata-ui-theme
@@ -105,6 +104,7 @@ https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	/
 https://github.com/netdata/netdata/edit/master/docs/maintenance/start-stop-restart.md	/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents
 https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	/docs/netdata-agent/backup-and-restore-an-agent
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	/docs/dashboards-and-charts/visualization-date-and-time-controls
+https://github.com/netdata/netdata/edit/master/docs/dashboard/dashboards-tab.md	/docs/dashboards-and-charts/dashboards-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/home-tab.md	/docs/dashboards-and-charts/home-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot
 https://github.com/netdata/netdata/edit/master/docs/dashboard/logs-tab.md	/docs/dashboards-and-charts/logs-tab
@@ -537,6 +537,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/activemq/README.md	/docs/collecting-metrics/message-brokers/activemq
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/envoy/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/envoy
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/ntpd/README.md	/docs/collecting-metrics/system-clock-and-ntp/ntpd
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/sensors/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/freeradius/README.md	/docs/collecting-metrics/authentication-and-authorization/freeradius
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/pihole/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/pi-hole
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/mysql/README.md	/docs/collecting-metrics/databases/mysql
@@ -683,7 +684,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/mo
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/gearman/README.md	/docs/collecting-metrics/distributed-computing-systems/gearman
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/bind_rndc/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/isc-bind-rndc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/riakkv/README.md	/docs/collecting-metrics/databases/riakkv
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/sensors/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/exim/README.md	/docs/collecting-metrics/mail-servers/exim
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/hpssa/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/tor/README.md	/docs/collecting-metrics/vpns/tor

@@ -846,10 +846,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/sensors"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/smartd_log"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
 
@@ -1475,7 +1471,7 @@
 
 [[redirects]]
   from="/docs/cloud/visualize/kubernetes"
-  to="/docs/dashboards-and-charts/kubernetes-visualizations"
+  to="/docs/dashboards-and-charts/kubernetes-tab"
 
 [[redirects]]
   from="/docs/cloud/visualize/nodes"
@@ -2102,10 +2098,6 @@
   to="/docs/collecting-metrics/hardware-devices-and-sensors/1-wire-sensors"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Hardware/Sensors"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/S.M.A.R.T.-attributes"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
 
@@ -2307,7 +2299,7 @@
 
 [[redirects]]
   from="/docs/visualizations/kubernetes-visualizations"
-  to="/docs/dashboards-and-charts/kubernetes-visualizations"
+  to="/docs/dashboards-and-charts/kubernetes-tab"
 
 [[redirects]]
   from="/docs/visualizations/infrastructure-overview"
@@ -3074,10 +3066,6 @@
   to="/docs/collecting-metrics/hardware-devices-and-sensors/1-wire-sensors"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/hardware/sensors"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/s.m.a.r.t.-attributes"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
 
@@ -3583,7 +3571,7 @@
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/kubernetes-visualizations"
-  to="/docs/dashboards-and-charts/kubernetes-visualizations"
+  to="/docs/dashboards-and-charts/kubernetes-tab"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/infrastructure-overview"
@@ -4540,10 +4528,6 @@
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/nvidia-gpu"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/linux-machine-sensors"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/cups.plugin"
@@ -6208,10 +6192,6 @@
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-sysfs"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-lm-sensors"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
@@ -8756,5 +8736,9 @@
 [[redirects]]
   from="/docs/dashboards-and-charts/custom-dashboards"
   to="/docs/dashboards-and-charts/dashboards-tab"
+
+[[redirects]]
+  from="/docs/dashboards-and-charts/kubernetes-visualizations"
+  to="/docs/dashboards-and-charts/kubernetes-tab"
 
 # section: dynamic << END
