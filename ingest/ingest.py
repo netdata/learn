@@ -113,6 +113,7 @@ def populate_integrations(markdownFiles):
     exporting_entries = pd.DataFrame()
     alerting_agent_entries = pd.DataFrame()
     alerting_cloud_entries = pd.DataFrame()
+    authentication_entries = pd.DataFrame()
 
     readmes_first = []
     others_last = []
@@ -152,6 +153,7 @@ def populate_integrations(markdownFiles):
                     # print(metadata_dictionary)
 
             metadf = pd.DataFrame([metadata_dictionary])
+            # print(file)
             if "collectors" in path or "modules" in path:
                 collectors_entries = pd.concat(
                     [collectors_entries, metadf])
@@ -160,6 +162,8 @@ def populate_integrations(markdownFiles):
             elif "exporting" in path:
                 exporting_entries = pd.concat([exporting_entries, metadf])
                 # print(exporting_entries)
+            elif "cloud-authentication" in file:
+                authentication_entries = pd.concat([authentication_entries, metadf])
             # here we need a different check, as the path variable gets messed up
             elif "cloud-notifications" in file:
 
@@ -171,6 +175,17 @@ def populate_integrations(markdownFiles):
                     [alerting_agent_entries, metadf])
 
     # print("Collectors\n", collectors_entries, "Agent alerts\n", alerting_agent, "Cloud alerts\n",  alerting_cloud, "Exporting",  exporting_entries)
+
+
+    replace_index = map_file.loc[map_file['custom_edit_url']
+                                 == "authentication_integrations"].index
+    # print(replace_index[0])
+    upper = map_file.iloc[:replace_index[0]]
+    lower = map_file.iloc[replace_index[0]+1:]
+
+    map_file = pd.concat([upper, authentication_entries.sort_values(
+        by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "collectors_integrations"].index
