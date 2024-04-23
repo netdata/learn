@@ -429,7 +429,7 @@
     "https://learn.netdata.cloud/docs/cloud/spaces": "https://github.com/netdata/netdata/blob/master/docs/cloud/spaces.md",
     "https://learn.netdata.cloud/docs/cloud/visualize/dashboards": "https://github.com/netdata/netdata/blob/master/docs/dashboard/dashboards-tab.md",
     "https://learn.netdata.cloud/docs/cloud/visualize/interact-new-charts": "https://github.com/netdata/netdata/blob/master/docs/dashboard/netdata-charts.md",
-    "https://learn.netdata.cloud/docs/cloud/visualize/kubernetes": "https://github.com/netdata/netdata/blob/master/docs/cloud/visualize/kubernetes.md",
+    "https://learn.netdata.cloud/docs/cloud/visualize/kubernetes": "https://github.com/netdata/netdata/blob/master/docs/dashboard/kubernetes-tab.md",
     "https://learn.netdata.cloud/docs/cloud/visualize/nodes": "https://github.com/netdata/netdata/blob/master/docs/dashboard/nodes-tab.md",
     "https://learn.netdata.cloud/docs/cloud/visualize/overview": "https://github.com/netdata/netdata/blob/master/docs/dashboard/metrics-tab-and-single-node-tabs.md",
     "https://learn.netdata.cloud/docs/cloud/war-rooms": "https://github.com/netdata/netdata/blob/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md",
@@ -621,7 +621,7 @@
     "https://learn.netdata.cloud/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Anomalies": "https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/anomalies/README.md",
     "https://learn.netdata.cloud/docs/visualizations/nodes-view": "https://github.com/netdata/netdata/blob/master/docs/dashboard/nodes-tab.md",
     "https://learn.netdata.cloud/docs/visualizations/netdata-badges": "https://github.com/netdata/netdata/blob/master/src/web/api/badges/README.md",
-    "https://learn.netdata.cloud/docs/visualizations/kubernetes-visualizations": "https://github.com/netdata/netdata/blob/master/docs/cloud/visualize/kubernetes.md",
+    "https://learn.netdata.cloud/docs/visualizations/kubernetes-visualizations": "https://github.com/netdata/netdata/blob/master/docs/dashboard/kubernetes-tab.md",
     "https://learn.netdata.cloud/docs/visualizations/infrastructure-overview": "https://github.com/netdata/netdata/blob/master/docs/dashboard/home-tab.md",
     "https://learn.netdata.cloud/docs/visualizations/build-new-dashboards": "https://github.com/netdata/netdata/blob/master/docs/dashboard/dashboards-tab.md",
     "https://learn.netdata.cloud/docs/visualizations/agent-dashboard/import-export-and-print-a-snapshot": "https://github.com/netdata/netdata/blob/master/docs/dashboard/import-export-print-snapshot.md",
@@ -998,7 +998,7 @@
     "https://learn.netdata.cloud/docs/typical-netdata-agent-configurations": "https://github.com/netdata/netdata/blob/master/docs/cloud/cheatsheet.md",
     "https://learn.netdata.cloud/docs/netdata-dashboards-and-visualizations/nodes-view": "https://github.com/netdata/netdata/blob/master/docs/dashboard/nodes-tab.md",
     "https://learn.netdata.cloud/docs/netdata-dashboards-and-visualizations/netdata-charts": "https://github.com/netdata/netdata/blob/master/docs/dashboard/netdata-charts.md",
-    "https://learn.netdata.cloud/docs/netdata-dashboards-and-visualizations/kubernetes-visualizations": "https://github.com/netdata/netdata/blob/master/docs/cloud/visualize/kubernetes.md",
+    "https://learn.netdata.cloud/docs/netdata-dashboards-and-visualizations/kubernetes-visualizations": "https://github.com/netdata/netdata/blob/master/docs/dashboard/kubernetes-tab.md",
     "https://learn.netdata.cloud/docs/netdata-dashboards-and-visualizations/infrastructure-overview": "https://github.com/netdata/netdata/blob/master/docs/dashboard/home-tab.md",
     "https://learn.netdata.cloud/docs/netdata-dashboards-and-visualizations/functions": "https://github.com/netdata/netdata/blob/master/docs/cloud/netdata-functions.md",
     "https://learn.netdata.cloud/docs/netdata-dashboards-and-visualizations/events-feed": "https://github.com/netdata/netdata/blob/master/docs/cloud/insights/events-feed.md",
@@ -2282,5 +2282,5 @@
     "https://learn.netdata.cloud/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-hardware-raid": "https://github.com/netdata/netdata/blob/master/src/go/collectors/go.d.plugin/modules/megacli/README.md",
     "https://learn.netdata.cloud/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions": "https://github.com/netdata/netdata/blob/master/docs/cloud/netdata-functions.md",
     "https://learn.netdata.cloud/docs/dashboards-and-charts/custom-dashboards": "https://github.com/netdata/netdata/blob/master/docs/dashboard/dashboards-tab.md",
-    "https://learn.netdata.cloud/docs/dashboards-and-charts/kubernetes-visualizations": "https://github.com/netdata/netdata/blob/master/docs/cloud/visualize/kubernetes.md"
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/kubernetes-visualizations": "https://github.com/netdata/netdata/blob/master/docs/dashboard/kubernetes-tab.md"
 }
