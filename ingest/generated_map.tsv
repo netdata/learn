@@ -745,7 +745,7 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netd
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	Dashboards and Charts	Published	Dashboards and Charts				
 https://github.com/netdata/netdata/edit/master/docs/dashboard/home-tab.md	Home tab	Published	Dashboards and Charts	With Netdata Cloud's War Rooms, you can see real-time metrics, from any number of nodes in your infrastructure, in composite charts.			
 https://github.com/netdata/netdata/edit/master/docs/dashboard/nodes-tab.md	Nodes tab	Published	Dashboards and Charts	See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.			
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	Netdata Charts	Published	Dashboards and Charts				
+https://github.com/netdata/netdata/edit/master/docs/dashboard/netdata-charts.md	Netdata Charts	Published	Dashboards and Charts				
 https://github.com/netdata/netdata/edit/master/docs/dashboard/metrics-tab-and-single-node-tabs.md	Metrics tab and single node tabs	Published	Dashboards and Charts				
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	Top tab	Published	Dashboards and Charts	Instructions on how to use Functions			
 https://github.com/netdata/netdata/edit/master/docs/dashboard/logs-tab.md	Logs tab	Published	Dashboards and Charts				

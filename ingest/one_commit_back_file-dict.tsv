@@ -66,7 +66,6 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-configuration-m
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	/docs/dashboards-and-charts/top-tab
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs//top-monitoring-netdata-functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	/docs/dashboards-and-charts/kubernetes-tab
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/interact-new-charts.md	/docs/dashboards-and-charts/netdata-charts
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	/docs/dashboards-and-charts/node-filter
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	/docs/dashboards-and-charts/choose-your-netdata-ui-theme
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team
@@ -108,6 +107,7 @@ https://github.com/netdata/netdata/edit/master/docs/dashboard/dashboards-tab.md	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/home-tab.md	/docs/dashboards-and-charts/home-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/import-export-print-snapshot.md	/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot
 https://github.com/netdata/netdata/edit/master/docs/dashboard/logs-tab.md	/docs/dashboards-and-charts/logs-tab
+https://github.com/netdata/netdata/edit/master/docs/dashboard/netdata-charts.md	/docs/dashboards-and-charts/netdata-charts
 https://github.com/netdata/netdata/edit/master/docs/dashboard/customize.md	/docs/developer-and-contributor-corner/customize-the-standard-dashboard
 https://github.com/netdata/netdata/edit/master/docs/dashboard/nodes-tab.md	/docs/dashboards-and-charts/nodes-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/metrics-tab-and-single-node-tabs.md	/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs
