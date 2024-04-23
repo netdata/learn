@@ -65,7 +65,6 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/cheatsheet.md	/docs/ne
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-configuration-manager.md	/docs/alerts-&-notifications/creating-alerts-with-the-alerts-configuration-manager
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	/docs/dashboards-and-charts/top-tab
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs//top-monitoring-netdata-functions
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	/docs/dashboards-and-charts/kubernetes-tab
 https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/node-filter.md	/docs/dashboards-and-charts/node-filter
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	/docs/dashboards-and-charts/choose-your-netdata-ui-theme
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team
@@ -102,6 +101,7 @@ https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md
 https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	/docs/exporting-metrics/enable-an-exporting-connector
 https://github.com/netdata/netdata/edit/master/docs/maintenance/start-stop-restart.md	/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents
 https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	/docs/netdata-agent/backup-and-restore-an-agent
+https://github.com/netdata/netdata/edit/master/docs/dashboard/kubernetes-tab.md	/docs/dashboards-and-charts/kubernetes-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	/docs/dashboards-and-charts/visualization-date-and-time-controls
 https://github.com/netdata/netdata/edit/master/docs/dashboard/dashboards-tab.md	/docs/dashboards-and-charts/dashboards-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/home-tab.md	/docs/dashboards-and-charts/home-tab
