@@ -36,8 +36,8 @@ def get_dir_make_file_and_recurse(directory):
     path, name = str(directory).rsplit("/", 1)
     filename = f"{path}/{name}/{name}.mdx"
 
-    # Do stuff for all the files inside the dict
-    if len(sorted(Path(directory).glob("**/**/*"))) > 1:
+    # Do stuff for all the files inside the dict, auth folder currently has only one file
+    if len(sorted(Path(directory).glob("**/**/*"))) > 1 or directory == "docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations":
         # print(directory)
 
         sorted_list = sort_files(Path(directory).glob("**/**/*"))
@@ -50,6 +50,10 @@ def get_dir_make_file_and_recurse(directory):
 
         sidebar_label = str(directory).rsplit("/", 1)[1]
 
+        
+
+        if "cloud-authentication-&-authorization-integrations" in sidebar_label:
+            sidebar_label = "Cloud Authentication & Authorization Integrations"
         if "collecting-metrics" in str(directory):
             sidebar_position = ""
 
@@ -125,3 +129,4 @@ get_dir_make_file_and_recurse(
 get_dir_make_file_and_recurse(
     'docs/alerts-&-notifications/notifications/centralized-cloud-notifications')
 get_dir_make_file_and_recurse('docs/exporting-metrics')
+get_dir_make_file_and_recurse('docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations')

@@ -2282,5 +2282,8 @@
     "https://learn.netdata.cloud/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-hardware-raid": "https://github.com/netdata/netdata/blob/master/src/go/collectors/go.d.plugin/modules/megacli/README.md",
     "https://learn.netdata.cloud/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions": "https://github.com/netdata/netdata/blob/master/docs/cloud/netdata-functions.md",
     "https://learn.netdata.cloud/docs/dashboards-and-charts/custom-dashboards": "https://github.com/netdata/netdata/blob/master/docs/dashboard/dashboards-tab.md",
-    "https://learn.netdata.cloud/docs/dashboards-and-charts/kubernetes-visualizations": "https://github.com/netdata/netdata/blob/master/docs/dashboard/kubernetes-tab.md"
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/kubernetes-visualizations": "https://github.com/netdata/netdata/blob/master/docs/dashboard/kubernetes-tab.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/role-based-access-model": "https://github.com/netdata/netdata/blob/master/docs/cloud/manage/role-based-access.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/sign-in-with-email-google-or-github": "https://github.com/netdata/netdata/blob/master/docs/cloud/manage/sign-in.md",
+    "https://learn.netdata.cloud/docs/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso": "https://github.com/netdata/netdata/blob/master/integrations/cloud-authentication/integrations/okta_sso.md"
 }

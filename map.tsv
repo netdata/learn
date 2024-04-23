@@ -81,14 +81,16 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/installation.md	Installation	Published	Netdata Cloud/Netdata Cloud On-Prem	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s.md	PoC without K8s	Published	Netdata Cloud/Netdata Cloud On-Prem	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting.md	Troubleshooting	Published	Netdata Cloud/Netdata Cloud On-Prem	
-https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/okta_sso.md	Okta SSO	Published	Netdata Cloud	
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	Role-based access model	Published	Netdata Cloud	Explanation of Netdata roles and permissions linked to them
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/authentication-and-authorization.md	Authentication & Authorization	Published	Netdata Cloud/Authentication & Authorization	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/enterprise-sso-authentication.md	Enterprise SSO Authentication	Published	Netdata Cloud/Authentication & Authorization	
+authentication_integrations				
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	Role-based access model	Published	Netdata Cloud/Authentication & Authorization	Explanation of Netdata roles and permissions linked to them
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	Sign in to Netdata	Published	Netdata Cloud/Authentication & Authorization	
 https://github.com/netdata/netdata/edit/master/src/aclk/README.md	Agent-Cloud Link (ACLK)	Published	Netdata Cloud	The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud.
 https://github.com/netdata/netdata/edit/master/src/claim/README.md	Connect Agent to Cloud	Published	Netdata Cloud	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	Netdata plans	Published	Netdata Cloud	
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	View Plan & Billing	Published	Netdata Cloud	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/api-tokens.md	API Tokens	Published	Netdata Cloud	
-				
 				
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/README.md	Observability Centralization Points	Published	Observability Centralization Points	
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/best-practices.md	Best Practices for Observability Centralization Points	Published	Observability Centralization Points	
@@ -160,7 +162,7 @@ https://github.com/netdata/netdata/edit/master/docs/dashboard/netdata-charts.md	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/metrics-tab-and-single-node-tabs.md	Metrics tab and single node tabs	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	Top tab	Published	Dashboards and Charts	Instructions on how to use Functions
 https://github.com/netdata/netdata/edit/master/docs/dashboard/logs-tab.md	Logs tab	Published	Dashboards and Charts	
-https://github.com/netdata/netdata/edit/master/docs/dashboard/kubernetes-tab.md	Kubernetes tab	Published	Dashboards and Charts	Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
+https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	Kubernetes visualizations	Published	Dashboards and Charts	Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
 https://github.com/netdata/netdata/edit/master/docs/dashboard/dashboards-tab.md	Dashboards tab	Published	Dashboards and Charts	Design new dashboards that target your infrastructure's unique needs and share them with your team fortargeted visual anomaly detection or incident response.
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Dashboards and Charts	Present the Netdata Events feed.
 https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana data source plugin	Published	Dashboards and Charts	
@@ -168,7 +170,7 @@ https://github.com/netdata/netdata/edit/master/src/web/gui/confluence/README.md	
 https://github.com/netdata/netdata/edit/master/src/web/gui/README.md	Legacy Agent Dashboard	Unpublished	Dashboards and Charts	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	Choose your Netdata UI theme	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/monitor-your-infrastructure.md	Monitor your Infrastructure	Unpublished	Dashboards and Charts	
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	Sign in with email, Google, or GitHub	Published	Dashboards and Charts	
+				
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	Organize your Infrastructure and Invite your Team	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/node-filter.md	Node filter	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	Visualization date and time controls	Published	Dashboards and Charts	
