@@ -18,6 +18,7 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/buil
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/secure-nodes.md	/docs/netdata-agent/securing-netdata-agents
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/reverse-proxies.md	/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	/docs/dashboards-and-charts
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/authentication-and-authorization.md	/docs/netdata-cloud/authentication-&-authorization
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/logs.md	/docs/working-with-logs
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/machine-learning-and-anomaly-detection
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/netdata-apis.md	/docs/developer-and-contributor-corner/rest-api
@@ -26,7 +27,8 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/opti
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	/docs/netdata-cloud
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/versions.md	/docs/netdata-cloud/netdata-cloud-versions
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/api-tokens.md	/docs/netdata-cloud/api-tokens
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/enterprise-sso-authentication.md	/docs/netdata-cloud/authentication-&-authorization/enterprise-sso-authentication
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/api-tokens.md	/docs/netdata-cloud/authentication-&-authorization/api-tokens
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/README.md	/docs/netdata-cloud/netdata-cloud-on-prem
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting.md	/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s.md	/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s
@@ -67,8 +69,8 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshootin
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs//top-monitoring-netdata-functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	/docs/dashboards-and-charts/choose-your-netdata-ui-theme
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	/docs/dashboards-and-charts/sign-in-with-email-google-or-github
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	/docs/netdata-cloud/role-based-access-model
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	/docs/netdata-cloud/authentication-&-authorization/sign-in-to-netdata
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	/docs/netdata-cloud/authentication-&-authorization/role-based-access-model
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	/docs/netdata-cloud/view-plan-&-billing
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/plans.md	/docs/netdata-cloud/netdata-plans
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-notification-methods.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-notification-methods
@@ -100,7 +102,6 @@ https://github.com/netdata/netdata/edit/master/docs/export/external-databases.md
 https://github.com/netdata/netdata/edit/master/docs/export/enable-connector.md	/docs/exporting-metrics/enable-an-exporting-connector
 https://github.com/netdata/netdata/edit/master/docs/maintenance/start-stop-restart.md	/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents
 https://github.com/netdata/netdata/edit/master/docs/maintenance/backup-restore.md	/docs/netdata-agent/backup-and-restore-an-agent
-https://github.com/netdata/netdata/edit/master/docs/dashboard/kubernetes-tab.md	/docs/dashboards-and-charts/kubernetes-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	/docs/dashboards-and-charts/visualization-date-and-time-controls
 https://github.com/netdata/netdata/edit/master/docs/dashboard/dashboards-tab.md	/docs/dashboards-and-charts/dashboards-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboard/home-tab.md	/docs/dashboards-and-charts/home-tab
@@ -133,7 +134,7 @@ https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freeb
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/macos.md	/docs/netdata-agent/installation/macos
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/source.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/compile-from-source-code
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md	/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout
-https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/okta_sso.md	/docs/netdata-cloud/okta-sso
+https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/okta_sso.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/mattermost.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/mattermost
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/discord.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/discord
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/rocketchat.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/rocketchat

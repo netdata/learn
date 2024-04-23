@@ -1455,7 +1455,7 @@
 
 [[redirects]]
   from="/docs/cloud/manage/sign-in"
-  to="/docs/dashboards-and-charts/sign-in-with-email-google-or-github"
+  to="/docs/netdata-cloud/authentication-&-authorization/sign-in-to-netdata"
 
 [[redirects]]
   from="/docs/cloud/manage/themes"
@@ -1468,10 +1468,6 @@
 [[redirects]]
   from="/docs/cloud/visualize/interact-new-charts"
   to="/docs/dashboards-and-charts/netdata-charts"
-
-[[redirects]]
-  from="/docs/cloud/visualize/kubernetes"
-  to="/docs/dashboards-and-charts/kubernetes-tab"
 
 [[redirects]]
   from="/docs/cloud/visualize/nodes"
@@ -2298,10 +2294,6 @@
   to="/docs/developer-and-contributor-corner/rest-api/netdata-badges"
 
 [[redirects]]
-  from="/docs/visualizations/kubernetes-visualizations"
-  to="/docs/dashboards-and-charts/kubernetes-tab"
-
-[[redirects]]
   from="/docs/visualizations/infrastructure-overview"
   to="/docs/dashboards-and-charts/home-tab"
 
@@ -2587,7 +2579,7 @@
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/sign-in-with-email-google-or-github"
-  to="/docs/dashboards-and-charts/sign-in-with-email-google-or-github"
+  to="/docs/netdata-cloud/authentication-&-authorization/sign-in-to-netdata"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/node-filter"
@@ -2699,7 +2691,7 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/role-based-access-model"
-  to="/docs/netdata-cloud/role-based-access-model"
+  to="/docs/netdata-cloud/authentication-&-authorization/role-based-access-model"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/nginx"
@@ -3471,7 +3463,7 @@
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/role-based-access-model"
-  to="/docs/netdata-cloud/role-based-access-model"
+  to="/docs/netdata-cloud/authentication-&-authorization/role-based-access-model"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/nginx"
@@ -3568,10 +3560,6 @@
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/netdata-charts"
   to="/docs/dashboards-and-charts/netdata-charts"
-
-[[redirects]]
-  from="/docs/netdata-dashboards-and-visualizations/kubernetes-visualizations"
-  to="/docs/dashboards-and-charts/kubernetes-tab"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/infrastructure-overview"
@@ -5259,7 +5247,7 @@
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/role-based-access-model"
-  to="/docs/netdata-cloud/role-based-access-model"
+  to="/docs/netdata-cloud/authentication-&-authorization/role-based-access-model"
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/reverse-proxies/nginx"
@@ -5559,7 +5547,7 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/sign-in-with-email-google-or-github"
-  to="/docs/dashboards-and-charts/sign-in-with-email-google-or-github"
+  to="/docs/netdata-cloud/authentication-&-authorization/sign-in-to-netdata"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
@@ -5787,7 +5775,7 @@
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/role-based-access-model"
-  to="/docs/netdata-cloud/role-based-access-model"
+  to="/docs/netdata-cloud/authentication-&-authorization/role-based-access-model"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/nginx"
@@ -8715,7 +8703,7 @@
 
 [[redirects]]
   from="/docs/authentication/okta-sso"
-  to="/docs/netdata-cloud/okta-sso"
+  to="/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso"
 
 [[redirects]]
   from="/docs/top-monitoring"
@@ -8738,7 +8726,23 @@
   to="/docs/dashboards-and-charts/dashboards-tab"
 
 [[redirects]]
-  from="/docs/dashboards-and-charts/kubernetes-visualizations"
-  to="/docs/dashboards-and-charts/kubernetes-tab"
+  from="/docs/netdata-cloud/role-based-access-model"
+  to="/docs/netdata-cloud/authentication-&-authorization/role-based-access-model"
+
+[[redirects]]
+  from="/docs/dashboards-and-charts/sign-in-with-email-google-or-github"
+  to="/docs/netdata-cloud/authentication-&-authorization/sign-in-to-netdata"
+
+[[redirects]]
+  from="/docs/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso"
+  to="/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso"
+
+[[redirects]]
+  from="/docs/netdata-cloud/okta-sso"
+  to="/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso"
+
+[[redirects]]
+  from="/docs/netdata-cloud/api-tokens"
+  to="/docs/netdata-cloud/authentication-&-authorization/api-tokens"
 
 # section: dynamic << END
