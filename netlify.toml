@@ -770,10 +770,6 @@
   to="/docs/collecting-metrics/mail-servers/exim"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/fail2ban"
-  to="/docs/collecting-metrics/authentication-and-authorization/fail2ban"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/gearman"
   to="/docs/collecting-metrics/distributed-computing-systems/gearman"
 
@@ -2250,10 +2246,6 @@
   to="/docs/collecting-metrics/authentication-and-authorization/freeradius"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Applications/Fail2ban"
-  to="/docs/collecting-metrics/authentication-and-authorization/fail2ban"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Exim"
   to="/docs/collecting-metrics/mail-servers/exim"
 
@@ -3220,10 +3212,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/freeradius"
   to="/docs/collecting-metrics/authentication-and-authorization/freeradius"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/applications/fail2ban"
-  to="/docs/collecting-metrics/authentication-and-authorization/fail2ban"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/exim"
@@ -4664,10 +4652,6 @@
 [[redirects]]
   from="/docs/data-collection/access-control,-authentication-and-authorization/freeradius"
   to="/docs/collecting-metrics/authentication-and-authorization/freeradius"
-
-[[redirects]]
-  from="/docs/data-collection/access-control,-authentication-and-authorization/fail2ban"
-  to="/docs/collecting-metrics/authentication-and-authorization/fail2ban"
 
 [[redirects]]
   from="/docs/alerting/notifications/netdata-cloud-notifications/manage-notification-methods"
@@ -6468,10 +6452,6 @@
 [[redirects]]
   from="/docs/data-collection/authentication-and-authorization/openldap"
   to="/docs/collecting-metrics/authentication-and-authorization/openldap"
-
-[[redirects]]
-  from="/docs/data-collection/authentication-and-authorization/fail2ban"
-  to="/docs/collecting-metrics/authentication-and-authorization/fail2ban"
 
 [[redirects]]
   from="/docs/data-collection/application-metrics"

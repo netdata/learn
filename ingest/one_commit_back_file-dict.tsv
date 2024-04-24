@@ -556,6 +556,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/pulsar/README.md	/docs/collecting-metrics/message-brokers/apache-pulsar
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/httpcheck/README.md	/docs/collecting-metrics/synthetic-checks/http-endpoints
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/upsd/README.md	/docs/collecting-metrics/ups/ups-nut
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/fail2ban/README.md	/docs/collecting-metrics/authentication-and-authorization/fail2ban
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/cassandra/README.md	/docs/collecting-metrics/databases/cassandra
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/consul/README.md	/docs/collecting-metrics/service-discovery-/-registry/consul
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/dockerhub/README.md	/docs/collecting-metrics/containers-and-vms/docker-hub-repository
@@ -693,7 +694,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/sm
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/ipfs/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/memcached/README.md	/docs/collecting-metrics/databases/memcached
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/nsd/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/fail2ban/README.md	/docs/collecting-metrics/authentication-and-authorization/fail2ban
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/rethinkdbs/README.md	/docs/collecting-metrics/databases/rethinkdb
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/boinc/README.md	/docs/collecting-metrics/distributed-computing-systems/boinc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am2320/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/am2320
