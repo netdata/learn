@@ -37,7 +37,7 @@ https://github.com/netdata/netdata/edit/master/docs/collect/system-metrics.md	/d
 https://github.com/netdata/netdata/edit/master/docs/collect/application-metrics.md	/docs/collecting-metrics/application-metrics
 https://github.com/netdata/netdata/edit/master/docs/collect/container-metrics.md	/docs/collecting-metrics/container-metrics
 https://github.com/netdata/netdata/edit/master/docs/monitor/enable-notifications.md	/docs/alerts-&-notifications/notifications
-https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.md	/docs/dashboards-and-charts/view-active-alerts
+https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.md	/docs/dashboards-and-charts/alerts-tab
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/README.md	/docs/observability-centralization-points
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/best-practices.md	/docs/observability-centralization-points/best-practices-for-observability-centralization-points
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/README.md	/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald
@@ -68,7 +68,7 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-configuration-m
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	/docs/dashboards-and-charts/top-tab
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-functions.md	/docs//top-monitoring-netdata-functions
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	/docs/dashboards-and-charts/choose-your-netdata-ui-theme
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md	/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/sign-in.md	/docs/netdata-cloud/authentication-&-authorization/sign-in-to-netdata
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/role-based-access.md	/docs/netdata-cloud/authentication-&-authorization/role-based-access-model
 https://github.com/netdata/netdata/edit/master/docs/cloud/manage/view-plan-billing.md	/docs/netdata-cloud/view-plan-&-billing

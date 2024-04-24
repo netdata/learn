@@ -4103,35 +4103,35 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/spaces"
-  to="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/war-rooms"
-  to="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/invite-your-team"
-  to="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/cloud/manage/invite-your-team"
-  to="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/cloud/war-rooms"
-  to="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/war-rooms"
-  to="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/spaces"
-  to="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/invite-your-team"
-  to="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvidia_smi"
@@ -5527,7 +5527,7 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/view-active-alerts"
-  to="/docs/dashboards-and-charts/view-active-alerts"
+  to="/docs/dashboards-and-charts/alerts-tab"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/sign-in-with-email-google-or-github"
@@ -5535,7 +5535,7 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
-  to="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/node-filter"
@@ -8724,5 +8724,13 @@
 [[redirects]]
   from="/docs/netdata-cloud/api-tokens"
   to="/docs/netdata-cloud/authentication-&-authorization/api-tokens"
+
+[[redirects]]
+  from="/docs/dashboards-and-charts/view-active-alerts"
+  to="/docs/dashboards-and-charts/alerts-tab"
+
+[[redirects]]
+  from="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 # section: dynamic << END
