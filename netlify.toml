@@ -1443,7 +1443,7 @@
 
 [[redirects]]
   from="/docs/cloud/insights/anomaly-advisor"
-  to="/docs/machine-learning-and-anomaly-detection/anomaly-advisor"
+  to="/docs/dashboards-and-charts/anomaly-advisor-tab"
 
 [[redirects]]
   from="/docs/cloud/insights/metric-correlations"
@@ -1575,7 +1575,7 @@
 
 [[redirects]]
   from="/guides/monitor/visualize-monitor-anomalies"
-  to="/docs/machine-learning-and-anomaly-detection/anomaly-advisor"
+  to="/docs/dashboards-and-charts/anomaly-advisor-tab"
 
 [[redirects]]
   from="/docs/cloud/get-started"
@@ -2323,7 +2323,7 @@
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/anomaly-advisor"
-  to="/docs/machine-learning-and-anomaly-detection/anomaly-advisor"
+  to="/docs/dashboards-and-charts/anomaly-advisor-tab"
 
 [[redirects]]
   from="/docs/installation/platform-support-policy"
@@ -3671,7 +3671,7 @@
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/anomaly-advisor"
-  to="/docs/machine-learning-and-anomaly-detection/anomaly-advisor"
+  to="/docs/dashboards-and-charts/anomaly-advisor-tab"
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting"
@@ -5567,7 +5567,7 @@
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting/anomaly-advisor"
-  to="/docs/machine-learning-and-anomaly-detection/anomaly-advisor"
+  to="/docs/dashboards-and-charts/anomaly-advisor-tab"
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting/ai-powered-troubleshooting-assistant"
@@ -8732,5 +8732,21 @@
 [[redirects]]
   from="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
   to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+
+[[redirects]]
+  from="/docs/cloud/visualize/kubernetes"
+  to="/docs/dashboards-and-charts/kubernetes-tab"
+
+[[redirects]]
+  from="/docs/visualizations/kubernetes-visualizations"
+  to="/docs/dashboards-and-charts/kubernetes-tab"
+
+[[redirects]]
+  from="/docs/netdata-dashboards-and-visualizations/kubernetes-visualizations"
+  to="/docs/dashboards-and-charts/kubernetes-tab"
+
+[[redirects]]
+  from="/docs/dashboards-and-charts/kubernetes-visualizations"
+  to="/docs/dashboards-and-charts/kubernetes-tab"
 
 # section: dynamic << END
