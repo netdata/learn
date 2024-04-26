@@ -152,7 +152,6 @@ https://github.com/netdata/netdata/edit/master/src/web/api/health/README.md	Heal
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	Machine Learning and Anomaly Detection	Published	Machine Learning and Anomaly Detection	
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correlations.md	Metric Correlations	Published	Machine Learning and Anomaly Detection	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-assistant.md	AI powered troubleshooting assistant	Published	Machine Learning and Anomaly Detection	
-https://github.com/netdata/netdata/edit/master/docs/cloud/insights/anomaly-advisor.md	Anomaly Advisor	Published	Machine Learning and Anomaly Detection	Quickly find anomalous metrics anywhere in your infrastructure.
 https://github.com/netdata/netdata/edit/master/src/ml/README.md	Machine learning (ML) powered anomaly detection	Published	Machine Learning and Anomaly Detection	This is an in-depth look at how Netdata uses ML to detect anomalies.
 				
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	Dashboards and Charts	Published	Dashboards and Charts	
@@ -162,18 +161,19 @@ https://github.com/netdata/netdata/edit/master/docs/dashboard/netdata-charts.md	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/metrics-tab-and-single-node-tabs.md	Metrics tab and single node tabs	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/cloud/runtime-troubleshooting-with-functions.md	Top tab	Published	Dashboards and Charts	Instructions on how to use Functions
 https://github.com/netdata/netdata/edit/master/docs/dashboard/logs-tab.md	Logs tab	Published	Dashboards and Charts	
-https://github.com/netdata/netdata/edit/master/docs/cloud/visualize/kubernetes.md	Kubernetes visualizations	Published	Dashboards and Charts	Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
+https://github.com/netdata/netdata/edit/master/docs/dashboard/kubernetes-tab.md	Kubernetes tab	Published	Dashboards and Charts	Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
 https://github.com/netdata/netdata/edit/master/docs/dashboard/dashboards-tab.md	Dashboards tab	Published	Dashboards and Charts	Design new dashboards that target your infrastructure's unique needs and share them with your team fortargeted visual anomaly detection or incident response.
 https://github.com/netdata/netdata/edit/master/docs/monitor/view-active-alerts.md	Alerts tab	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/dashboard/anomaly-advisor-tab.md	Anomaly Advisor tab	Published	Dashboards and Charts	Quickly find anomalous metrics anywhere in your infrastructure.
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/events-feed.md	Events feed	Published	Dashboards and Charts	Present the Netdata Events feed.
 https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana data source plugin	Published	Dashboards and Charts	
-https://github.com/netdata/netdata/edit/master/src/web/gui/confluence/README.md	Atlassian Confluence dashboards	Unpublished	Dashboards and Charts	
-https://github.com/netdata/netdata/edit/master/src/web/gui/README.md	Legacy Agent Dashboard	Unpublished	Dashboards and Charts	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
-https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	Choose your Netdata UI theme	Published	Dashboards and Charts	
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/monitor-your-infrastructure.md	Monitor your Infrastructure	Unpublished	Dashboards and Charts	
-				
 https://github.com/netdata/netdata/edit/master/docs/dashboard/node-filter.md	Node filter	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/visualization-date-and-time-controls.md	Visualization date and time controls	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/cloud/manage/themes.md	Choose your Netdata UI theme	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/src/web/gui/confluence/README.md	Atlassian Confluence dashboards	Unpublished	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/src/web/gui/README.md	Legacy Agent Dashboard	Unpublished	Dashboards and Charts	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/monitor-your-infrastructure.md	Monitor your Infrastructure	Unpublished	Dashboards and Charts	
+				
 				
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/README.md	Security and Privacy Design	Published	Security and Privacy Design	
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	Netdata Agent Security and Privacy Design	Published	Security and Privacy Design	
