@@ -185,7 +185,8 @@ https://github.com/netdata/netdata/edit/master/src/exporting/graphite/integratio
 https://github.com/netdata/netdata/edit/master/src/exporting/graphite/integrations/blueflood.md	/docs/exporting-metrics/blueflood
 https://github.com/netdata/netdata/edit/master/src/exporting/graphite/integrations/influxdb.md	/docs/exporting-metrics/influxdb
 https://github.com/netdata/netdata/edit/master/src/exporting/pubsub/README.md	/docs/exporting-metrics/google-cloud-pub-sub
-https://github.com/netdata/netdata/edit/master/src/ml/README.md	/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection
+https://github.com/netdata/netdata/edit/master/src/ml/README.md	/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection
+https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	/docs/machine-learning-and-anomaly-detection/ml-configuration
 https://github.com/netdata/netdata/edit/master/src/database/README.md	/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups
 https://github.com/netdata/netdata/edit/master/src/database/engine/README.md	/docs/developer-and-contributor-corner/database-engine
 https://github.com/netdata/netdata/edit/master/src/claim/README.md	/docs/netdata-cloud/connect-agent-to-cloud
@@ -618,7 +619,7 @@ https://github.com/netdata/netdata/edit/master/src/cli/README.md	/docs/netdata-a
 https://github.com/netdata/netdata/edit/master/src/daemon/README.md	/docs/netdata-agent/configuration/netdata-daemon
 https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md	/docs/netdata-agent/configuration/daemon-configuration
 https://github.com/netdata/netdata/edit/master/src/health/README.md	/docs/alerts-&-notifications
-https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	/docs/alerts-&-notifications/health-configuration-reference
+https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	/docs/alerts-&-notifications/alert-configuration-reference
 https://github.com/netdata/netdata/edit/master/src/health/notifications/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/agent-notifications-reference
 https://github.com/netdata/netdata/edit/master/src/health/notifications/pushover/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushover
 https://github.com/netdata/netdata/edit/master/src/health/notifications/flock/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/flock

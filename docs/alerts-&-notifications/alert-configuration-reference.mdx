@@ -1,10 +1,10 @@
 ---
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md"
-sidebar_label: "Health Configuration Reference"
+sidebar_label: "Alert Configuration Reference"
 learn_status: "Published"
 learn_rel_path: "Alerts & Notifications"
 sidebar_position: "906000"
-learn_link: "https://learn.netdata.cloud/docs/alerts-&-notifications/health-configuration-reference"
+learn_link: "https://learn.netdata.cloud/docs/alerts-&-notifications/alert-configuration-reference"
 ---
 
 # Configure alerts
@@ -1057,9 +1057,9 @@ lookup: mean -10s of user
 
 Since [`z = (x - mean) / stddev`](https://en.wikipedia.org/wiki/Standard_score) we create two input alerts, one for `mean` and one for `stddev` and then use them both as inputs in our final `cpu_user_zscore` alert.
 
-### Example 6 - [Anomaly rate](/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection#anomaly-rate) based CPU chart alert
+### Example 6 - [Anomaly rate](/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection#anomaly-rate) based CPU chart alert
 
-Warning if 5 minute rolling [anomaly rate](/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection#anomaly-rate) averaged across all CPU dimensions is above 5%, critical if it goes above 20%:
+Warning if 5 minute rolling [anomaly rate](/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection#anomaly-rate) averaged across all CPU dimensions is above 5%, critical if it goes above 20%:
 
 ```yaml
 template: ml_5min_cpu_chart
@@ -1076,9 +1076,9 @@ template: ml_5min_cpu_chart
 The `lookup` line will calculate the average anomaly rate across all `system.cpu` dimensions over the last 5 minues. In this case
 Netdata will create one alert for the chart.
 
-### Example 7 - [Anomaly rate](/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection#anomaly-rate) based node level alert
+### Example 7 - [Anomaly rate](/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection#anomaly-rate) based node level alert
 
-Warning if 5 minute rolling [anomaly rate](/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection#anomaly-rate) averaged across all ML enabled dimensions is above 5%, critical if it goes above 20%:
+Warning if 5 minute rolling [anomaly rate](/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection#anomaly-rate) averaged across all ML enabled dimensions is above 5%, critical if it goes above 20%:
 
 ```yaml
 template: ml_5min_node
@@ -1092,7 +1092,7 @@ template: ml_5min_node
     info: rolling 5min anomaly rate for all ML enabled dims
 ```
 
-The `lookup` line will use the `anomaly_rate` dimension of the `anomaly_detection.anomaly_rate` ML chart to calculate the average [node level anomaly rate](/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection#node-anomaly-rate) over the last 5 minutes.
+The `lookup` line will use the `anomaly_rate` dimension of the `anomaly_detection.anomaly_rate` ML chart to calculate the average [node level anomaly rate](/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection#node-anomaly-rate) over the last 5 minutes.
 
 ## Troubleshooting
 

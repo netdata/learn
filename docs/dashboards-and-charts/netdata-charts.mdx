@@ -51,7 +51,7 @@ With a quick glance you have immediate information available at your disposal:
 While Netdata's charts require no configuration and are easy to interact with, they have a lot of underlying complexity. To meaningfully organize charts out of the box based on what's happening in your nodes, Netdata uses the concepts of [dimensions](#dimensions), [contexts](#contexts), and [families](#families).
 
 Understanding how these work will help you more easily navigate the dashboard,
-[write new alerts](/docs/alerts-&-notifications/health-configuration-reference), or play around
+[write new alerts](/docs/alerts-&-notifications/alert-configuration-reference), or play around
 with the [API](/docs/developer-and-contributor-corner/rest-api/api).
 
 ### Dimensions
@@ -80,7 +80,7 @@ whereas anything after the `.` is specified either by the chart's developer or b
 
 By default, a chart's type affects where it fits in the menu, while its family creates submenus.
 
-Netdata also relies on contexts for [alert configuration](/docs/alerts-&-notifications/health-configuration-reference) (the [`on` line](/docs/alerts-&-notifications/health-configuration-reference#alert-line-on)).
+Netdata also relies on contexts for [alert configuration](/docs/alerts-&-notifications/alert-configuration-reference) (the [`on` line](/docs/alerts-&-notifications/alert-configuration-reference#alert-line-on)).
 
 ### Families
 
