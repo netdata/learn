@@ -2289,5 +2289,7 @@
     "https://learn.netdata.cloud/docs/netdata-cloud/okta-sso": "https://github.com/netdata/netdata/blob/master/integrations/cloud-authentication/integrations/okta_sso.md",
     "https://learn.netdata.cloud/docs/netdata-cloud/api-tokens": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/api-tokens.md",
     "https://learn.netdata.cloud/docs/dashboards-and-charts/view-active-alerts": "https://github.com/netdata/netdata/blob/master/docs/monitor/view-active-alerts.md",
-    "https://learn.netdata.cloud/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team": "https://github.com/netdata/netdata/blob/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md"
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team": "https://github.com/netdata/netdata/blob/master/docs/cloud/manage/organize-your-infrastrucutre-invite-your-team.md",
+    "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection": "https://github.com/netdata/netdata/blob/master/src/ml/README.md",
+    "https://learn.netdata.cloud/docs/alerts-&-notifications/health-configuration-reference": "https://github.com/netdata/netdata/blob/master/src/health/REFERENCE.md"
 }
