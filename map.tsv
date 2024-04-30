@@ -146,13 +146,14 @@ https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/n
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-notification-methods.md	Manage notification methods	Published	Alerts & Notifications/Notifications/Centralized Cloud Notifications	Instructions on how to manage notification methods
 https://github.com/netdata/netdata/edit/master/docs/cloud/alerts-notifications/manage-alert-notification-silencing-rules.md	Manage alert notification silencing rules	Published	Alerts & Notifications/Notifications/Centralized Cloud Notifications	Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
 cloud_notifications_integrations				
-https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	Health Configuration Reference	Published	Alerts & Notifications	
+https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	Alert Configuration Reference	Published	Alerts & Notifications	
 https://github.com/netdata/netdata/edit/master/src/web/api/health/README.md	Health API Calls	Published	Alerts & Notifications	
 				
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	Machine Learning and Anomaly Detection	Published	Machine Learning and Anomaly Detection	
+https://github.com/netdata/netdata/edit/master/src/ml/README.md	ML models and anomaly detection	Published	Machine Learning and Anomaly Detection	This is an in-depth look at how Netdata uses ML to detect anomalies.
+https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	ML Configuration	Published	Machine Learning and Anomaly Detection	
 https://github.com/netdata/netdata/edit/master/docs/cloud/insights/metric-correlations.md	Metric Correlations	Published	Machine Learning and Anomaly Detection	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
 https://github.com/netdata/netdata/edit/master/docs/cloud/netdata-assistant.md	AI powered troubleshooting assistant	Published	Machine Learning and Anomaly Detection	
-https://github.com/netdata/netdata/edit/master/src/ml/README.md	Machine learning (ML) powered anomaly detection	Published	Machine Learning and Anomaly Detection	This is an in-depth look at how Netdata uses ML to detect anomalies.
 				
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/accessing-netdata-dashboards.md	Dashboards and Charts	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/dashboard/home-tab.md	Home tab	Published	Dashboards and Charts	With Netdata Cloud's War Rooms, you can see real-time metrics, from any number of nodes in your infrastructure, in composite charts.
