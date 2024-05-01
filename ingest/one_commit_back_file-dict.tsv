@@ -136,6 +136,7 @@ https://github.com/netdata/netdata/edit/master/packaging/installer/methods/macos
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/source.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/compile-from-source-code
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md	/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout
 https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/okta_sso.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso
+https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/oidc.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/oidc
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/mattermost.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/mattermost
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/discord.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/discord
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/rocketchat.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/rocketchat
@@ -521,6 +522,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/docker/README.md	/docs/collecting-metrics/containers-and-vms/docker
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/vernemq/README.md	/docs/collecting-metrics/message-brokers/vernemq
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/postgres/README.md	/docs/collecting-metrics/databases/postgresql
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/smartctl/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t.
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/windows/README.md	/docs/collecting-metrics/windows-systems/windows
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/windows/integrations/net_framework.md	/docs/collecting-metrics/windows-systems/net-framework
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/windows/integrations/ms_sql_server.md	/docs/collecting-metrics/windows-systems/ms-sql-server
