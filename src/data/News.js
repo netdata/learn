@@ -20,6 +20,30 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Okta and OIDC SSO integrations</>,
+		href: 'https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations',
+		date: 'May 02, 2024',
+		type: 'Link',
+		description: (
+			<>
+				🧑🏻‍💻Effortlessly manage your teams’ access with SSO through Okta or OpenID integrations.
+				This feature ensures streamlined access and heightened security across your systems.
+			</>
+		),	
+	},
+	{
+		title: <>New Alert Notification Integration available!</>,
+		href: 'https://learn.netdata.cloud/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/splunk-victorops',
+		date: 'Apr 19, 2024',
+		type: 'Link',
+		description: (
+			<>
+				 We have brought a new Alert Notification Integrations to Netdata Cloud - Splunk On-call/VictorOps 💪
+
+			</>
+		),	
+	},
+	{
 		title: <>Netdata release 1.45.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.45.0',
 		date: 'Mar 21, 2024',
