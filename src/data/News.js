@@ -20,8 +20,8 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
-		title: <>Manage teams' access with SSO through Okta or OpenID integrations</>,
-		href: 'https://github.com/netdata/netdata/releases/tag/v1.45.0',
+		title: <>Okta and OIDC SSO integrations</>,
+		href: 'https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations',
 		date: 'May 02, 2024',
 		type: 'Link',
 		description: (
