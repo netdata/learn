@@ -694,7 +694,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/ex
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/hpssa/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/tor/README.md	/docs/collecting-metrics/vpns/tor
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/changefinder/README.md	/docs/collecting-metrics/other/python.d-changefinder
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/smartd_log/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t.
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/ipfs/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/memcached/README.md	/docs/collecting-metrics/databases/memcached
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/nsd/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon

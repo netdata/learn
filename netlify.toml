@@ -842,10 +842,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/smartd_log"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/spigotmc"
   to="/docs/collecting-metrics/gaming/spigotmc"
 
@@ -2090,10 +2086,6 @@
   to="/docs/collecting-metrics/hardware-devices-and-sensors/1-wire-sensors"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Hardware/S.M.A.R.T.-attributes"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/FreeIPMI"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
 
@@ -3048,10 +3040,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/wire-sensors"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/1-wire-sensors"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/hardware/s.m.a.r.t.-attributes"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/lm-sensors"
@@ -4372,10 +4360,6 @@
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/ceph"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ceph"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/nvme-devices"
@@ -6156,10 +6140,6 @@
 [[redirects]]
   from="/docs/data-collection/kubernetes/kubernetes-containers"
   to="/docs/collecting-metrics/kubernetes/kubernetes-containers"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/s.m.a.r.t."
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
