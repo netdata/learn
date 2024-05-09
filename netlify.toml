@@ -742,10 +742,6 @@
   to="/docs/collecting-metrics/message-brokers/beanstalk"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/bind_rndc"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/isc-bind-rndc"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/boinc"
   to="/docs/collecting-metrics/distributed-computing-systems/boinc"
 
@@ -2114,10 +2110,6 @@
   to="/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Dns/ISC-Bind"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/isc-bind-rndc"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/Dnsmasq-DNS-Forwarder"
   to="/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq"
 
@@ -3072,10 +3064,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/nsd"
   to="/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/dns/isc-bind"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/isc-bind-rndc"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/dnsmasq-dns-forwarder"
@@ -4524,10 +4512,6 @@
 [[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/isc-dhcpd"
   to="/docs/collecting-metrics/dns-and-dhcp-servers/isc-dhcp"
-
-[[redirects]]
-  from="/docs/data-collection/dns-and-dhcp-servers/isc-bind"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/isc-bind-rndc"
 
 [[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/dnsmasq-dns-forwarder"
@@ -6344,10 +6328,6 @@
 [[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/name-server-daemon"
   to="/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon"
-
-[[redirects]]
-  from="/docs/data-collection/dns-and-dhcp-servers/isc-bind-rndc"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/isc-bind-rndc"
 
 [[redirects]]
   from="/docs/data-collection/distributed-computing-systems/gearman"
