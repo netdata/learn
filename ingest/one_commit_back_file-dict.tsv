@@ -688,7 +688,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/sp
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/icecast/README.md	/docs/collecting-metrics/media-services/icecast
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/monit/README.md	/docs/collecting-metrics/synthetic-checks/monit
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/gearman/README.md	/docs/collecting-metrics/distributed-computing-systems/gearman
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/bind_rndc/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/isc-bind-rndc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/riakkv/README.md	/docs/collecting-metrics/databases/riakkv
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/exim/README.md	/docs/collecting-metrics/mail-servers/exim
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/hpssa/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays
