@@ -808,7 +808,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/power_capping.md	/docs/collecting-metrics/linux-systems/kernel/power-capping
 https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/system_memory_fragmentation.md	/docs/collecting-metrics/linux-systems/memory/system-memory-fragmentation
 https://github.com/netdata/netdata/edit/master/src/collectors/xenstat.plugin/README.md	/docs/collecting-metrics/containers-and-vms/xen-xcp-ng
-https://github.com/netdata/netdata/edit/master/contrib/README.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/netdata-contrib
 https://github.com/netdata/.github/edit/main/SECURITY.md	/docs/developer-and-contributor-corner/security-policy
 https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	/docs/developer-and-contributor-corner/community-code-of-conduct
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	/docs/developer-and-contributor-corner/contributing

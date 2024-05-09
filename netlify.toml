@@ -894,10 +894,6 @@
   to="/docs/collecting-metrics/containers-and-vms/xen-xcp-ng"
 
 [[redirects]]
-  from="/docs/agent/contrib"
-  to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/netdata-contrib"
-
-[[redirects]]
   from="/docs/agent/daemon"
   to="/docs/netdata-agent/configuration/netdata-daemon"
 
@@ -2322,10 +2318,6 @@
   to="/docs/netdata-agent/versions-&-platforms"
 
 [[redirects]]
-  from="/docs/installation/package-maintainers/netdata-contrib"
-  to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/netdata-contrib"
-
-[[redirects]]
   from="/docs/installation/package-maintainers/manually-build-netdata-from-source"
   to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/compile-from-source-code"
 
@@ -3728,10 +3720,6 @@
 [[redirects]]
   from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/package-maintainers"
   to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/package-maintainers"
-
-[[redirects]]
-  from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/netdata-contrib"
-  to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/netdata-contrib"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
@@ -5154,10 +5142,6 @@
   to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/package-maintainers"
 
 [[redirects]]
-  from="/docs/installing/build-the-netdata-agent-yourself/netdata-contrib"
-  to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/netdata-contrib"
-
-[[redirects]]
   from="/docs/installing/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
   to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
 
@@ -5484,10 +5468,6 @@
 [[redirects]]
   from="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/package-maintainers"
   to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/package-maintainers"
-
-[[redirects]]
-  from="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/netdata-contrib"
-  to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/netdata-contrib"
 
 [[redirects]]
   from="/docs/netdata-agent/installation/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing"
