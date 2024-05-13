@@ -1439,7 +1439,7 @@
 
 [[redirects]]
   from="/docs/cloud/manage/sign-in"
-  to="/docs/netdata-cloud/authentication-&-authorization/sign-in-to-netdata"
+  to="/docs/netdata-cloud/authentication-&-authorization"
 
 [[redirects]]
   from="/docs/cloud/manage/themes"
@@ -2547,7 +2547,7 @@
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/sign-in-with-email-google-or-github"
-  to="/docs/netdata-cloud/authentication-&-authorization/sign-in-to-netdata"
+  to="/docs/netdata-cloud/authentication-&-authorization"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/node-filter"
@@ -5479,7 +5479,7 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/sign-in-with-email-google-or-github"
-  to="/docs/netdata-cloud/authentication-&-authorization/sign-in-to-netdata"
+  to="/docs/netdata-cloud/authentication-&-authorization"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
@@ -8651,7 +8651,7 @@
 
 [[redirects]]
   from="/docs/dashboards-and-charts/sign-in-with-email-google-or-github"
-  to="/docs/netdata-cloud/authentication-&-authorization/sign-in-to-netdata"
+  to="/docs/netdata-cloud/authentication-&-authorization"
 
 [[redirects]]
   from="/docs/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso"
