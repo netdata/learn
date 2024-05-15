@@ -73,7 +73,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/backup-and-res
 				
 				
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	Netdata Cloud	Published	Netdata Cloud	
-https://github.com/netdata/netdata/edit/master/docs/quickstart/infrastructure.md	Monitor your infrastructure	Published	Netdata Cloud	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/monitor-your-infrastructure.md	Monitor your infrastructure	Published	Netdata Cloud	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/organize-your-infrastructure-invite-your-team.md	Organize your Infrastructure and Invite your Team	Published	Netdata Cloud	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/versions.md	Netdata Cloud Versions	Published	Netdata Cloud	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/README.md	Netdata Cloud On-Prem	Published	Netdata Cloud/Netdata Cloud On-Prem	
@@ -136,12 +136,12 @@ https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-funct
 				
 https://github.com/netdata/netdata/edit/master/src/health/README.md	Alerts & Notifications	Published	Alerts & Notifications	
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/creating-alerts-with-netdata-alerts-configuration-manager.md	Creating Alerts with the Alerts Configuration Manager	Published	Alerts & Notifications	
-https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/creating-alerts-with-netdata-alerts-configuration-manager.md	Notifications	Published	Alerts & Notifications/Notifications	Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
+https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/README.md	Notifications	Published	Alerts & Notifications/Notifications	Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
 https://github.com/netdata/netdata/edit/master/src/health/notifications/README.md	Agent Notifications Reference	Published	Alerts & Notifications/Notifications/Agent Dispatched Notifications	
 agent_notifications_integrations				
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference.md	Centralized Cloud Notifications Reference	Published	Alerts & Notifications/Notifications/Centralized Cloud Notifications	Configure Netdata Cloud to send notifications to your team whenever any node on your infrastructure triggers an alert threshold.
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/centralized-cloud-notifications/manage-notification-methods.md	Manage notification methods	Published	Alerts & Notifications/Notifications/Centralized Cloud Notifications	Instructions on how to manage notification methods
-https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/centralized/cloud/notifications/manage-alert-notification-silending-rules.md	Manage alert notification silencing rules	Published	Alerts & Notifications/Notifications/Centralized Cloud Notifications	Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
+https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules.md	Manage alert notification silencing rules	Published	Alerts & Notifications/Notifications/Centralized Cloud Notifications	Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
 cloud_notifications_integrations				
 https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	Alert Configuration Reference	Published	Alerts & Notifications	
 https://github.com/netdata/netdata/edit/master/src/web/api/health/README.md	Health API Calls	Published	Alerts & Notifications	
@@ -250,7 +250,7 @@ https://github.com/netdata/netdata/edit/master/src/libnetdata/socket/README.md	S
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/running-through-cf-tunnels.md	Running a Local Dashboard through Cloudflare Tunnels	Published	Developer and Contributor Corner	
 https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	Redistributed Software	Published	Developer and Contributor Corner	
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	Health command API tester	Published	Developer and Contributor Corner	
-https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/customize.md	Customize the standard dashboard	Published	Developer and Contributor Corner	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
+https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/customize.md	Customize the standard dashboard	Published	Developer and Contributor Corner	Netdata's preconfigured dashboard offers many customization options, such as choosing when charts are updated, your preferred theme, and custom text to document processes, and more.
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/import-export-print-snapshot.md	Import, export, and print a snapshot	Published	Developer and Contributor Corner	Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
 https://github.com/netdata/netdata/edit/master/src/web/gui/custom/README.md	Build a custom Dashboard HTML page	Published	Developer and Contributor Corner	Build custom dashboards with key metrics from one or more nodes running the Netdata Agent and host them anywhere.
 https://github.com/netdata/netdata/edit/master/docs/netdata-for-IoT.md	Netdata for IoT	Unpublished	Developer and Contributor Corner	
@@ -271,4 +271,3 @@ https://github.com/netdata/netdata/edit/master/build_external/README.md	External
 https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md	How to build native (DEB/RPM) packages locally for testing	Published	Developer and Contributor Corner/Build the Netdata Agent Yourself	Instructions for developers who need to build native packages locally for testing.
 https://github.com/netdata/netdata/edit/master/contrib/README.md	Netdata contrib	Published	Developer and Contributor Corner/Build the Netdata Agent Yourself	
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md	Install the Netdata Agent from a Git checkout	Published	Developer and Contributor Corner	Use the Netdata Agent source code from GitHub, plus helper scripts to set up your system, to install Netdata without packages or binaries.
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/monitor-your-infrastructure.md	The role of Netdata Cloud	Unpublished	Rest files	
