@@ -1,5 +1,5 @@
 ---
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/secure-nodes.md"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/netdata-agent/securing-netdata-agents.md"
 sidebar_label: "Securing Netdata Agents"
 learn_status: "Published"
 learn_rel_path: "Netdata Agent/Securing Netdata Agents"
@@ -8,7 +8,7 @@ sidebar_position: "212000"
 learn_link: "https://learn.netdata.cloud/docs/netdata-agent/securing-netdata-agents/securing-netdata-agents"
 ---
 
-# Secure your nodes
+# Securing Netdata Agents
 
 Netdata is a monitoring system. It should be protected, the same way you protect all your admin apps. We assume Netdata 
 will be installed privately, for your eyes only.
@@ -75,7 +75,7 @@ using `sudo systemctl
 restart netdata`. If you try to visit the local dashboard to `http://NODE:19999` again, the connection will fail because
 that node no longer serves its local dashboard.
 
-> See the [configuration basics doc](https://github.com/netdata/netdata/blob/master/docs/configure/nodes.md) for details on how to find 
+> See the [configuration basics doc](/docs/netdata-agent/configuration) for details on how to find 
 `netdata.conf` and use
 > `edit-config`.
 
@@ -169,7 +169,7 @@ your production systems from the rest of the world. Netdata
 Parents receive metric data from Netdata Agents or other Netdata Parents on one side, and serve most queries using their own 
 copy of the data to satisfy dashboard requests on the other side.
 
-For more information see [Streaming and replication](https://github.com/netdata/netdata/blob/master/docs/metrics-storage-management/enable-streaming.md).
+For more information see [Streaming and replication](/docs/observability-centralization-points).
 
 ## Other methods
 

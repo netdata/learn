@@ -774,10 +774,6 @@
   to="/docs/collecting-metrics/apm/go-applications-expvar"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/hpssa"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/icecast"
   to="/docs/collecting-metrics/media-services/icecast"
 
@@ -1231,7 +1227,7 @@
 
 [[redirects]]
   from="/docs/agent/web/api"
-  to="/docs/developer-and-contributor-corner/rest-api/api"
+  to="/docs/developer-and-contributor-corner/rest-api"
 
 [[redirects]]
   from="/docs/agent/web/api/badges"
@@ -1326,32 +1322,12 @@
   to="/docs/netdata-agent/securing-netdata-agents/web-server"
 
 [[redirects]]
-  from="/docs/collect/application-metrics"
-  to="/docs/collecting-metrics/application-metrics"
-
-[[redirects]]
-  from="/docs/collect/container-metrics"
-  to="/docs/collecting-metrics/container-metrics"
-
-[[redirects]]
-  from="/docs/collect/system-metrics"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
   from="/docs/configure/common-changes"
   to="/docs/netdata-agent/configuration/common-configuration-changes"
 
 [[redirects]]
   from="/docs/configure/nodes"
   to="/docs/netdata-agent/configuration"
-
-[[redirects]]
-  from="/docs/dashboard/import-export-print-snapshot"
-  to="/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot"
-
-[[redirects]]
-  from="/docs/dashboard/visualization-date-and-time-controls"
-  to="/docs/dashboards-and-charts/visualization-date-and-time-controls"
 
 [[redirects]]
   from="/docs/export/enable-connector"
@@ -1364,10 +1340,6 @@
 [[redirects]]
   from="/docs/store/change-metrics-storage"
   to="/docs/netdata-agent/configuration/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
-
-[[redirects]]
-  from="/docs/visualize/overview-infrastructure"
-  to="/docs/dashboards-and-charts/home-tab"
 
 [[redirects]]
   from="/guides/collect-apache-nginx-web-logs"
@@ -1388,10 +1360,6 @@
 [[redirects]]
   from="/guides/monitor-hadoop-cluster"
   to="/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata"
-
-[[redirects]]
-  from="/guides/monitor/kubernetes-k8s-netdata"
-  to="/docs/developer-and-contributor-corner/kubernetes-monitoring-with-netdata-overview-and-visualizations"
 
 [[redirects]]
   from="/guides/monitor/lamp-stack"
@@ -1430,10 +1398,6 @@
   to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
 
 [[redirects]]
-  from="/docs/cloud/insights/anomaly-advisor"
-  to="/docs/dashboards-and-charts/anomaly-advisor-tab"
-
-[[redirects]]
   from="/docs/cloud/insights/metric-correlations"
   to="/docs/machine-learning-and-anomaly-detection/metric-correlations"
 
@@ -1444,22 +1408,6 @@
 [[redirects]]
   from="/docs/cloud/manage/themes"
   to="/docs/dashboards-and-charts/choose-your-netdata-ui-theme"
-
-[[redirects]]
-  from="/docs/cloud/visualize/dashboards"
-  to="/docs/dashboards-and-charts/dashboards-tab"
-
-[[redirects]]
-  from="/docs/cloud/visualize/interact-new-charts"
-  to="/docs/dashboards-and-charts/netdata-charts"
-
-[[redirects]]
-  from="/docs/cloud/visualize/nodes"
-  to="/docs/dashboards-and-charts/nodes-tab"
-
-[[redirects]]
-  from="/docs/cloud/visualize/overview"
-  to="/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs"
 
 [[redirects]]
   from="/docs/agent/collectors/collectors"
@@ -1526,28 +1474,12 @@
   to="/docs/netdata-agent/securing-netdata-agents"
 
 [[redirects]]
-  from="/docs/dashboard/interact-charts"
-  to="/docs/dashboards-and-charts/netdata-charts"
-
-[[redirects]]
   from="/docs/dashboard/reference-web-server"
   to="/docs/netdata-agent/securing-netdata-agents/web-server"
 
 [[redirects]]
   from="/docs/monitor/configure-alarms"
   to="/docs/alerts-&-notifications/alert-configuration-reference"
-
-[[redirects]]
-  from="/docs/quickstart/single-node"
-  to="/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs"
-
-[[redirects]]
-  from="/docs/visualize/create-dashboards"
-  to="/docs/dashboards-and-charts/dashboards-tab"
-
-[[redirects]]
-  from="/docs/visualize/interact-dashboards-charts"
-  to="/docs/dashboards-and-charts/netdata-charts"
 
 [[redirects]]
   from="/guides/deploy/ansible"
@@ -1560,10 +1492,6 @@
 [[redirects]]
   from="/guides/monitor/dimension-templates"
   to="/docs/alerts-&-notifications"
-
-[[redirects]]
-  from="/guides/monitor/visualize-monitor-anomalies"
-  to="/docs/dashboards-and-charts/anomaly-advisor-tab"
 
 [[redirects]]
   from="/docs/cloud/get-started"
@@ -1615,7 +1543,7 @@
 
 [[redirects]]
   from="/docs/improving-netdata---developers/agent-api"
-  to="/docs/developer-and-contributor-corner/rest-api/api"
+  to="/docs/developer-and-contributor-corner/rest-api"
 
 [[redirects]]
   from="/docs/agent/backends/walkthrough"
@@ -1639,7 +1567,7 @@
 
 [[redirects]]
   from="/docs/api/"
-  to="/docs/developer-and-contributor-corner/rest-api/api"
+  to="/docs/developer-and-contributor-corner/rest-api"
 
 [[redirects]]
   from="/docs/miscellaneous/security-policy"
@@ -1747,7 +1675,7 @@
 
 [[redirects]]
   from="/docs/improving-netdata---developers/web/api"
-  to="/docs/developer-and-contributor-corner/rest-api/api"
+  to="/docs/developer-and-contributor-corner/rest-api"
 
 [[redirects]]
   from="/docs/exporting-data/rest-api-for-database-queries"
@@ -1912,10 +1840,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/IPFS"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Storage/HP-Smart-Storage-Arrays"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/HDFS"
@@ -2258,24 +2182,8 @@
   to="/docs/collecting-metrics/apm/go-applications-expvar"
 
 [[redirects]]
-  from="/docs/visualizations/nodes-view"
-  to="/docs/dashboards-and-charts/nodes-tab"
-
-[[redirects]]
   from="/docs/visualizations/netdata-badges"
   to="/docs/developer-and-contributor-corner/rest-api/netdata-badges"
-
-[[redirects]]
-  from="/docs/visualizations/infrastructure-overview"
-  to="/docs/dashboards-and-charts/home-tab"
-
-[[redirects]]
-  from="/docs/visualizations/build-new-dashboards"
-  to="/docs/dashboards-and-charts/dashboards-tab"
-
-[[redirects]]
-  from="/docs/visualizations/agent-dashboard/import-export-and-print-a-snapshot"
-  to="/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot"
 
 [[redirects]]
   from="/docs/visualizations/agent-dashboard/custom-dashboards"
@@ -2300,10 +2208,6 @@
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/events-feed"
   to="/docs/dashboards-and-charts/events-feed"
-
-[[redirects]]
-  from="/docs/troubleshooting-and-machine-learning/anomaly-advisor"
-  to="/docs/dashboards-and-charts/anomaly-advisor-tab"
 
 [[redirects]]
   from="/docs/installation/platform-support-policy"
@@ -2538,10 +2442,6 @@
   to="/docs/developer-and-contributor-corner/contributing"
 
 [[redirects]]
-  from="/docs/getting-started/monitor-your-infrastructure/visualization-date-and-time-controls"
-  to="/docs/dashboards-and-charts/visualization-date-and-time-controls"
-
-[[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/view-plan-&-billing"
   to="/docs/netdata-cloud/view-plan-&-billing"
 
@@ -2550,20 +2450,8 @@
   to="/docs/netdata-cloud/authentication-&-authorization"
 
 [[redirects]]
-  from="/docs/getting-started/monitor-your-infrastructure/node-filter"
-  to="/docs/dashboards-and-charts/node-filter"
-
-[[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/netdata-plans"
   to="/docs/netdata-cloud/netdata-plans"
-
-[[redirects]]
-  from="/docs/getting-started/monitor-your-infrastructure/interact-with-charts"
-  to="/docs/dashboards-and-charts/netdata-charts"
-
-[[redirects]]
-  from="/docs/getting-started/monitor-your-infrastructure/home-overview-and-single-node-view"
-  to="/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
@@ -2868,10 +2756,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/ipfs"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/storage/hp-smart-storage-arrays"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/hdfs"
@@ -3283,7 +3167,7 @@
 
 [[redirects]]
   from="/docs/api"
-  to="/docs/developer-and-contributor-corner/rest-api/api"
+  to="/docs/developer-and-contributor-corner/rest-api"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/manage-notification-methods"
@@ -3510,28 +3394,12 @@
   to="/docs/netdata-agent/configuration/cheatsheet"
 
 [[redirects]]
-  from="/docs/netdata-dashboards-and-visualizations/nodes-view"
-  to="/docs/dashboards-and-charts/nodes-tab"
-
-[[redirects]]
-  from="/docs/netdata-dashboards-and-visualizations/netdata-charts"
-  to="/docs/dashboards-and-charts/netdata-charts"
-
-[[redirects]]
-  from="/docs/netdata-dashboards-and-visualizations/infrastructure-overview"
-  to="/docs/dashboards-and-charts/home-tab"
-
-[[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/functions"
   to="/docs//top-monitoring-netdata-functions"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/events-feed"
   to="/docs/dashboards-and-charts/events-feed"
-
-[[redirects]]
-  from="/docs/netdata-dashboards-and-visualizations/custom-dashboards"
-  to="/docs/dashboards-and-charts/dashboards-tab"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/accessing-netdata-dashboards"
@@ -3615,7 +3483,7 @@
 
 [[redirects]]
   from="/docs/netdata-apis/api"
-  to="/docs/developer-and-contributor-corner/rest-api/api"
+  to="/docs/developer-and-contributor-corner/rest-api"
 
 [[redirects]]
   from="/docs/netdata-apis"
@@ -3636,10 +3504,6 @@
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/machine-learning-ml-powered-anomaly-detection"
   to="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
-
-[[redirects]]
-  from="/docs/machine-learning-and-assisted-troubleshooting/anomaly-advisor"
-  to="/docs/dashboards-and-charts/anomaly-advisor-tab"
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting"
@@ -3936,10 +3800,6 @@
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/manage-notification-methods"
   to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-notification-methods"
-
-[[redirects]]
-  from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications/manage-alert-notification-silencing-rules"
-  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules"
 
 [[redirects]]
   from="/docs/alerts-and-notifications/notifications/netdata-cloud-notifications"
@@ -4342,10 +4202,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices"
 
 [[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hp-smart-storage-arrays"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
-
-[[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/smbfs"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba"
 
@@ -4614,10 +4470,6 @@
   to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-notification-methods"
 
 [[redirects]]
-  from="/docs/alerting/notifications/netdata-cloud-notifications/manage-alert-notification-silencing-rules"
-  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules"
-
-[[redirects]]
   from="/docs/alerting/notifications/netdata-cloud-notifications"
   to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
 
@@ -4726,72 +4578,12 @@
   to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/agent-notifications-reference"
 
 [[redirects]]
-  from="/docs/agent/collectors/apps.plugin"
-  to="/docs/collecting-metrics/application-metrics"
-
-[[redirects]]
-  from="/docs/agent/collectors/cgroups.plugin"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/agent/collectors/ebpf.plugin"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/agent/collectors/freebsd.plugin"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/agent/collectors/proc.plugin"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/haproxy"
   to="/docs/collecting-metrics/web-servers-and-web-proxies/haproxy"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/haproxy-python.d.plugin"
   to="/docs/collecting-metrics/web-servers-and-web-proxies/haproxy"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Containers-and-VMs-cgroups"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/System%20Metrics/OS-provided-metrics-proc.plugin"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/System%20Metrics/Kernel-traces-metrics-eBPF"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/System%20Metrics/FreeBSD-system-metrics-freebsd.plugin"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring"
-  to="/docs/collecting-metrics/application-metrics"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/freebsd-system-metrics-freebsd.plugin"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/application-monitoring"
-  to="/docs/collecting-metrics/application-metrics"
 
 [[redirects]]
   from="/docs/data-collection/task-queues/beanstalk"
@@ -4808,14 +4600,6 @@
 [[redirects]]
   from="/docs/data-collection/task-queues/mesos"
   to="/docs/collecting-metrics/task-queues/mesos"
-
-[[redirects]]
-  from="/docs/dashboard/customize"
-  to="/docs/developer-and-contributor-corner/customize-the-standard-dashboard"
-
-[[redirects]]
-  from="/docs/visualizations/agent-dashboard/customize-the-standard-dashboard"
-  to="/docs/developer-and-contributor-corner/customize-the-standard-dashboard"
 
 [[redirects]]
   from="/docs/data-collection/ci/cd-platforms/puppet"
@@ -5034,24 +4818,12 @@
   to="/docs/developer-and-contributor-corner/lamp-stack-monitoring-linux-apache-mysql-php-with-netdata"
 
 [[redirects]]
-  from="/docs/miscellaneous/kubernetes-monitoring-with-netdata-overview-and-visualizations"
-  to="/docs/developer-and-contributor-corner/kubernetes-monitoring-with-netdata-overview-and-visualizations"
-
-[[redirects]]
-  from="/docs/miscellaneous/import-export-and-print-a-snapshot"
-  to="/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot"
-
-[[redirects]]
   from="/docs/miscellaneous/health-command-api-tester"
   to="/docs/developer-and-contributor-corner/health-command-api-tester"
 
 [[redirects]]
   from="/docs/miscellaneous/glossary"
   to="/docs/developer-and-contributor-corner/glossary"
-
-[[redirects]]
-  from="/docs/miscellaneous/customize-the-standard-dashboard"
-  to="/docs/developer-and-contributor-corner/customize-the-standard-dashboard"
 
 [[redirects]]
   from="/docs/miscellaneous/build-a-custom-dashboard-html-page"
@@ -5318,14 +5090,6 @@
   to="/docs/developer-and-contributor-corner/database-engine"
 
 [[redirects]]
-  from="/docs/visualizations/nodes-tab"
-  to="/docs/dashboards-and-charts/nodes-tab"
-
-[[redirects]]
-  from="/docs/visualizations/netdata-charts"
-  to="/docs/dashboards-and-charts/netdata-charts"
-
-[[redirects]]
   from="/docs/visualizations/grafana-data-source-plugin"
   to="/docs/dashboards-and-charts/grafana-data-source-plugin"
 
@@ -5336,10 +5100,6 @@
 [[redirects]]
   from="/docs/visualizations/events-feed"
   to="/docs/dashboards-and-charts/events-feed"
-
-[[redirects]]
-  from="/docs/visualizations/custom-dashboards"
-  to="/docs/dashboards-and-charts/dashboards-tab"
 
 [[redirects]]
   from="/docs/visualizations/accessing-netdata-dashboards"
@@ -5423,7 +5183,7 @@
 
 [[redirects]]
   from="/docs/rest-api/api"
-  to="/docs/developer-and-contributor-corner/rest-api/api"
+  to="/docs/developer-and-contributor-corner/rest-api"
 
 [[redirects]]
   from="/docs/rest-api"
@@ -5466,10 +5226,6 @@
   to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself"
 
 [[redirects]]
-  from="/docs/monitor-your-infrastructure/visualization-date-and-time-controls"
-  to="/docs/dashboards-and-charts/visualization-date-and-time-controls"
-
-[[redirects]]
   from="/docs/monitor-your-infrastructure/view-plan-&-billing"
   to="/docs/netdata-cloud/view-plan-&-billing"
 
@@ -5486,16 +5242,8 @@
   to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
-  from="/docs/monitor-your-infrastructure/node-filter"
-  to="/docs/dashboards-and-charts/node-filter"
-
-[[redirects]]
   from="/docs/monitor-your-infrastructure/netdata-plans"
   to="/docs/netdata-cloud/netdata-plans"
-
-[[redirects]]
-  from="/docs/monitor-your-infrastructure/home-overview-and-single-node-view"
-  to="/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
@@ -5512,10 +5260,6 @@
 [[redirects]]
   from="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
   to="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
-
-[[redirects]]
-  from="/docs/ml-and-troubleshooting/anomaly-advisor"
-  to="/docs/dashboards-and-charts/anomaly-advisor-tab"
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting/ai-powered-troubleshooting-assistant"
@@ -5838,10 +5582,6 @@
   to="/docs/collecting-metrics/systemd/systemd-services"
 
 [[redirects]]
-  from="/docs/data-collection/system-metrics"
-  to="/docs/collecting-metrics/system-metrics"
-
-[[redirects]]
   from="/docs/data-collection/system-clock-and-ntp/timex"
   to="/docs/collecting-metrics/system-clock-and-ntp/timex"
 
@@ -5864,10 +5604,6 @@
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ipfs"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ceph"
@@ -6382,20 +6118,12 @@
   to="/docs/collecting-metrics/containers-and-vms/containers"
 
 [[redirects]]
-  from="/docs/data-collection/container-metrics"
-  to="/docs/collecting-metrics/container-metrics"
-
-[[redirects]]
   from="/docs/data-collection/cicd-platforms/puppet"
   to="/docs/collecting-metrics/cicd-platforms/puppet"
 
 [[redirects]]
   from="/docs/data-collection/authentication-and-authorization/openldap"
   to="/docs/collecting-metrics/authentication-and-authorization/openldap"
-
-[[redirects]]
-  from="/docs/data-collection/application-metrics"
-  to="/docs/collecting-metrics/application-metrics"
 
 [[redirects]]
   from="/docs/data-collection/apm/go-applications-expvar"
@@ -6448,10 +6176,6 @@
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/manage-notification-methods"
   to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-notification-methods"
-
-[[redirects]]
-  from="/docs/alerting/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules"
-  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules"
 
 [[redirects]]
   from="/docs/alerting/notifications/centralized-cloud-notifications/discord"
@@ -7566,10 +7290,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
 
 [[redirects]]
-  from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/hp-smart-storage-arrays"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hp-smart-storage-arrays"
-
-[[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/hdsentinel"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hdsentinel"
 
@@ -8642,10 +8362,6 @@
   to="/docs//top-monitoring-netdata-functions"
 
 [[redirects]]
-  from="/docs/dashboards-and-charts/custom-dashboards"
-  to="/docs/dashboards-and-charts/dashboards-tab"
-
-[[redirects]]
   from="/docs/netdata-cloud/role-based-access-model"
   to="/docs/netdata-cloud/authentication-&-authorization/role-based-access-model"
 
@@ -8674,27 +8390,183 @@
   to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
-  from="/docs/cloud/visualize/kubernetes"
-  to="/docs/dashboards-and-charts/kubernetes-tab"
-
-[[redirects]]
-  from="/docs/visualizations/kubernetes-visualizations"
-  to="/docs/dashboards-and-charts/kubernetes-tab"
-
-[[redirects]]
-  from="/docs/netdata-dashboards-and-visualizations/kubernetes-visualizations"
-  to="/docs/dashboards-and-charts/kubernetes-tab"
-
-[[redirects]]
-  from="/docs/dashboards-and-charts/kubernetes-visualizations"
-  to="/docs/dashboards-and-charts/kubernetes-tab"
-
-[[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection"
   to="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
 
 [[redirects]]
   from="/docs/alerts-&-notifications/health-configuration-reference"
   to="/docs/alerts-&-notifications/alert-configuration-reference"
+
+[[redirects]]
+  from="/docs/why-netdata"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/agent/breaking_changes"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/agent/donations-netdata-has-received"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/agent/why-netdata"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/agent/why-netdata/1s-granularity"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/agent/why-netdata/immediate-results"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/agent/why-netdata/meaningful-presentation"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/agent/why-netdata/unlimited-metrics"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/streaming"
+  to="/docs/observability-centralization-points"
+
+[[redirects]]
+  from="/docs/metrics-storage-management/enable-streaming"
+  to="/docs/observability-centralization-points"
+
+[[redirects]]
+  from="/docs/metrics-storage-management/how-streaming-works"
+  to="/docs/observability-centralization-points"
+
+[[redirects]]
+  from="/docs/overview/netdata-monitoring-stack"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/overview/what-is-netdata"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/overview/why-netdata"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-00"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-01"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-02"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-03"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-04"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-05"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-06"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-07"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-08"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-09"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-10"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/guides/step-by-step/step-99"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-00"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-01"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-02"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-03"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-04"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-05"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-06"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-07"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-08"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-09"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-10"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/agent/step-by-step/step-99"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/getting-started"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/deployment-in-production/streaming-and-replication"
+  to="/docs/observability-centralization-points"
+
+[[redirects]]
+  from="/docs/netdata-architecture"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/metrics-streaming-and-replication/understanding-how-streaming-works"
+  to="/docs/observability-centralization-points"
+
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/rest-api/api"
+  to="/docs/developer-and-contributor-corner/rest-api"
 
 # section: dynamic << END
