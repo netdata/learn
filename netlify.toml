@@ -782,10 +782,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/litespeed"
-  to="/docs/collecting-metrics/web-servers-and-web-proxies/litespeed"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/memcached"
   to="/docs/collecting-metrics/databases/memcached"
 
@@ -1738,10 +1734,6 @@
   to="/docs/collecting-metrics/web-servers-and-web-proxies/nginx"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Web%20Servers/LiteSpeed"
-  to="/docs/collecting-metrics/web-servers-and-web-proxies/litespeed"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/Lighttpd"
   to="/docs/collecting-metrics/web-servers-and-web-proxies/lighttpd"
 
@@ -2648,10 +2640,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/nginx"
   to="/docs/collecting-metrics/web-servers-and-web-proxies/nginx"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/web-servers/litespeed"
-  to="/docs/collecting-metrics/web-servers-and-web-proxies/litespeed"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/lighttpd"
@@ -5556,10 +5544,6 @@
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/squid"
   to="/docs/collecting-metrics/web-servers-and-web-proxies/squid"
-
-[[redirects]]
-  from="/docs/data-collection/web-servers-and-web-proxies/litespeed"
-  to="/docs/collecting-metrics/web-servers-and-web-proxies/litespeed"
 
 [[redirects]]
   from="/docs/data-collection/vpns/tor"
