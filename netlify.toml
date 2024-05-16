@@ -7730,10 +7730,6 @@
   to="/docs/collecting-metrics/generic-collecting-metrics/excel-spreadsheet"
 
 [[redirects]]
-  from="/docs/data-collection/gaming/cs-go"
-  to="/docs/collecting-metrics/gaming/cs-go"
-
-[[redirects]]
   from="/docs/data-collection/gaming/bungeecord"
   to="/docs/collecting-metrics/gaming/bungeecord"
 
