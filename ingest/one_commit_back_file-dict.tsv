@@ -183,6 +183,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/powerdns_recursor/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/powerdns-recursor
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/haproxy/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/haproxy
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/docker/README.md	/docs/collecting-metrics/containers-and-vms/docker
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/rspamd/README.md	/docs/collecting-metrics/security-systems/rspamd
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/portcheck/README.md	/docs/collecting-metrics/synthetic-checks/tcp-endpoints
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/supervisord/README.md	/docs/collecting-metrics/processes-and-system-services/supervisor
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/dnsquery/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dns-query
