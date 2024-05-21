@@ -619,6 +619,97 @@ def add_new_learn_path_key_to_dict(input_dict, docs_prefix, docs_path_learn, tem
     return input_dict
 
 
+def local_to_absolute_links(path_to_file, input_dict):
+    """
+    This function is able to recognize and parse relative github links like:
+
+    ../../../../src/database/engine/README.md
+    /docs/abc.md
+    """
+
+    whole_file = Path(path_to_file).read_text()
+
+    global UNCORRELATED_LINK_COUNTER
+
+    # Split the file into its metadata and body, so that this function doesn't touch the metadata fields
+    # metadata = "---" + whole_file.split("---", 2)[1] + "---"
+    body = whole_file
+
+
+    # custom_edit_url_arr = re.findall(r'custom_edit_url(.*)', metadata)
+
+    
+    # If there are links inside the body
+    if re.search(r"\]\((.*?)\)", body):
+        # Find all the links and add them in an array
+        urls = []
+        temp = re.findall(r'\[\n|.*?]\((\n|.*?)\)', body)
+        # For every link, try to not touch the heading that link points to, as it stays the same after the conversion
+        for link in temp:
+            urls.append(link.split('#')[0])
+
+        for url in list(set(urls)):
+            
+            if "http" not in url and url.startswith(".") and len(url) > 0:
+                # print("Link starts with '.'")
+                # The URL will get replaced by the value of the replaceString
+                # try:
+                url_to_replace = url
+                # print(url, path_to_file)
+
+                path_arr = path_to_file.split('/')
+
+                url_arr = url.split('/')
+
+                url_leftover = url_arr.copy()
+
+                path_arr.pop()
+                for piece in url_arr:
+                    if piece == "..":
+                        url_leftover.pop(0)
+                        path_arr.pop()
+                        print(path_arr)
+                
+                replace = "/".join(path_arr) + "/" + "/".join(url_leftover)
+
+
+                check = Path(replace)
+
+                if check.exists():
+                    body = body.replace(f"({url_to_replace}", "(" + replace)
+                    # print("FILE:", path_to_file)
+                    # print("url:", url)
+                    # print(replace)
+                    # print(url_to_replace)
+                    # # print(body[:1000])
+                    # print("\n")
+            elif url.startswith("/"):
+                # print("link starting with dash")
+                url_to_replace = url
+
+                path_arr = path_to_file.split('/')
+
+                url_arr = url.split('/')
+
+                # print(path_arr, url_arr)
+
+                url_leftover = url_arr.copy()
+
+                replace = f"{path_arr[0]}/{path_arr[1]}" + "/".join(url_leftover)
+
+                check = Path(replace)
+
+                if check.exists():
+                    body = body.replace(f"({url_to_replace}", "(" + replace)
+                    # print("FILE:", path_to_file)
+                    # print("url:", url)
+                    # print(replace)
+                    # print(url_to_replace)
+                    # # print(body[:1000])
+                    # print("\n")
+    Path(path_to_file).write_text(body)
+
+
 def convert_github_links(path_to_file, input_dict):
     """
     Input:
@@ -1012,6 +1103,7 @@ if __name__ == '__main__':
     print(f"### Found Learn files: {len(to_publish)}###\n")
 
     for md_file in to_publish:
+        local_to_absolute_links(md_file, to_publish)
         copy_doc(md_file, to_publish[md_file]["learnPath"])
         sanitize_page(to_publish[md_file]["learnPath"])
 
