@@ -121,7 +121,7 @@ see [Connect node to Netdata Cloud during installation](/docs/netdata-agent/inst
 If you don't have root access, you can still connect your node to Netdata Cloud by following these steps:
 
 1. Identify the Netdata Agent User: Use the `grep` command to search your `netdata.conf` file which is located at
-   your [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory)
+   your [config directory](/docs/netdata-agent/configuration#the-netdata-config-directory)
    and find the `run as user` setting. This will tell you which user is running the Netdata Agent.
    ```bash
    grep "run as user" /etc/netdata/netdata.conf
@@ -626,7 +626,7 @@ If in case of some security reason, or other, you need to revoke your previous c
 can achieve that from the Netdata Cloud UI.
 
 On any screen where you see the connect the node to Netdata Cloud command you'll see above it, next to
-the [updates channel](https://github.com/netdata/netdata/blob/master/docs/netdata-Agent/versions-and-platforms.md), a
+the [updates channel](/docs/netdata-agent/versions-&-platforms), a
 button to **Regenerate token**. This action will invalidate your previous token and generate a fresh new one.
 
 Only the administrators of a Space in Netdata Cloud can trigger this action.
