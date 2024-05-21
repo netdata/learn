@@ -638,6 +638,7 @@ def local_to_absolute_links(path_to_file, input_dict):
 
     # custom_edit_url_arr = re.findall(r'custom_edit_url(.*)', metadata)
 
+    # print(input_dict.keys())
     
     # If there are links inside the body
     if re.search(r"\]\((.*?)\)", body):
@@ -649,64 +650,85 @@ def local_to_absolute_links(path_to_file, input_dict):
             urls.append(link.split('#')[0])
 
         for url in list(set(urls)):
+            # if not url.startswith("/"):
+
             
-            if "http" not in url and url.startswith(".") and len(url) > 0:
-                # print("Link starts with '.'")
-                # The URL will get replaced by the value of the replaceString
-                # try:
-                url_to_replace = url
-                # print(url, path_to_file)
+            
+            
+            if ".md" in url and (any(url in key for key in input_dict.keys())):
+                if "http" not in url and url.startswith(".") and len(url) > 0:
+                    # print("Link starts with '.'")
+                    # The URL will get replaced by the value of the replaceString
+                    # try:
+                    url_to_replace = url
+                    # print(url, path_to_file)
 
-                path_arr = path_to_file.split('/')
+                    path_arr = path_to_file.split('/')
 
-                url_arr = url.split('/')
+                    url_arr = url.split('/')
 
-                url_leftover = url_arr.copy()
+                    url_leftover = url_arr.copy()
 
-                path_arr.pop()
-                for piece in url_arr:
-                    if piece == "..":
-                        url_leftover.pop(0)
-                        path_arr.pop()
-                        print(path_arr)
-                
-                replace = "/".join(path_arr) + "/" + "/".join(url_leftover)
+                    path_arr.pop()
+                    for piece in url_arr:
+                        if piece == "..":
+                            url_leftover.pop(0)
+                            path_arr.pop()
+                            print(path_arr)
+                    
+                    replace = "/".join(path_arr) + "/" + "/".join(url_leftover)
 
 
-                check = Path(replace)
+                    check = Path(replace)
 
-                if check.exists():
-                    body = body.replace(f"({url_to_replace}", "(" + replace)
-                    # print("FILE:", path_to_file)
-                    # print("url:", url)
-                    # print(replace)
-                    # print(url_to_replace)
-                    # # print(body[:1000])
-                    # print("\n")
-            elif url.startswith("/"):
-                # print("link starting with dash")
-                url_to_replace = url
+                    if check.exists():
+                        body = body.replace(f"({url_to_replace}", "(" + replace)
+                        # print("FILE:", path_to_file)
+                        # print("url:", url)
+                        # print(replace)
+                        # print(url_to_replace)
+                        # # print(body[:1000])
+                        # print("\n")
+                elif url.startswith("/"):
+                    # print("link starting with dash")
+                    url_to_replace = url
 
-                path_arr = path_to_file.split('/')
+                    path_arr = path_to_file.split('/')
 
-                url_arr = url.split('/')
+                    url_arr = url.split('/')
 
-                # print(path_arr, url_arr)
+                    # print(path_arr, url_arr)
 
-                url_leftover = url_arr.copy()
+                    url_leftover = url_arr.copy()
 
-                replace = f"{path_arr[0]}/{path_arr[1]}" + "/".join(url_leftover)
+                    replace = f"{path_arr[0]}/{path_arr[1]}" + "/".join(url_leftover)
 
-                check = Path(replace)
+                    check = Path(replace)
 
-                if check.exists():
-                    body = body.replace(f"({url_to_replace}", "(" + replace)
-                    # print("FILE:", path_to_file)
-                    # print("url:", url)
-                    # print(replace)
-                    # print(url_to_replace)
-                    # # print(body[:1000])
-                    # print("\n")
+                    if check.exists():
+                        body = body.replace(f"({url_to_replace}", "(" + replace)
+                        # print("FILE:", path_to_file)
+                        # print("url:", url)
+                        # print(replace)
+                        # print(url_to_replace)
+                        # # print(body[:1000])
+                        # print("\n")
+            else:
+                if (url.startswith(".") or url.startswith("/")):
+                    
+                    directory = "ingest-temp-folder"
+                    substring = url
+
+                    for root, dirs, files in os.walk(directory):
+                        for name in files + dirs:
+                            if substring in os.path.join(root, name):
+
+                                # print(url, path_to_file, path_to_file.split('/')[1], "NOT IN LEARN")
+
+                                replace = f"(https://github.com/netdata/{path_to_file.split('/')[1]}/blob/master{url}"
+
+                                body = body.replace(f"({url}", replace)
+
     Path(path_to_file).write_text(body)
 
 
