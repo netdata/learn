@@ -9,4 +9,10 @@ learn_link: "https://learn.netdata.cloud/docs/working-with-logs"
 
 # Working with Logs
 
-This section talks about ways Netdata collects and visualizes logs, while also providing useful guides on log centralization setups that can be used with Netdata.
+This section talks about ways Netdata collects and visualizes logs.
+
+The [systemd journal plugin](https://github.com/netdata/netdata/blob/master/src/collectors/systemd-journal.plugin/) is the core Netdata component for reading systemd journal logs.
+
+For structured logs, Netdata provides tools like [log2journal](/docs/working-with-logs/log2journal) and [systemd-cat-native](/docs/working-with-logs/systemd-cat-native) to convert them into compatible systemd journal entries.
+
+You can also find useful guides on how to set up log centralization points in the [Observability Cetralization Points](/docs/observability-centralization-points) section of our docs.
