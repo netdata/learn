@@ -246,6 +246,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/powerdns/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/powerdns-authoritative-server
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/envoy/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/envoy
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/squidlog/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/squid-log-files
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/clickhouse/README.md	/docs/collecting-metrics/databases/clickhouse
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/openvpn/README.md	/docs/collecting-metrics/vpns/openvpn
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/pihole/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/pi-hole
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/consul/README.md	/docs/collecting-metrics/service-discovery-/-registry/consul
@@ -432,7 +433,6 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/prometheus/integrations/modbus_protocol.md	/docs/collecting-metrics/iot-devices/modbus-protocol
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/prometheus/integrations/sunspec_solar_energy.md	/docs/collecting-metrics/iot-devices/sunspec-solar-energy
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/prometheus/integrations/generic_command_line_output.md	/docs/collecting-metrics/generic-collecting-metrics/generic-command-line-output
-https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/prometheus/integrations/clickhouse.md	/docs/collecting-metrics/databases/clickhouse
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/prometheus/integrations/tp-link_p110.md	/docs/collecting-metrics/iot-devices/tp-link-p110
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/prometheus/integrations/tesla_vehicle.md	/docs/collecting-metrics/iot-devices/tesla-vehicle
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/prometheus/integrations/bobcat_miner_300.md	/docs/collecting-metrics/iot-devices/bobcat-miner-300

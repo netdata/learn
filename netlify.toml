@@ -7022,10 +7022,6 @@
   to="/docs/collecting-metrics/databases/clustercontrol-cmon"
 
 [[redirects]]
-  from="/docs/data-collection/databases/clickhouse"
-  to="/docs/collecting-metrics/databases/clickhouse"
-
-[[redirects]]
   from="/docs/data-collection/databases/cassandra"
   to="/docs/collecting-metrics/databases/cassandra"
 
