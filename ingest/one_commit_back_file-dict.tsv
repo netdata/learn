@@ -61,9 +61,6 @@ https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/visual
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/events-feed.md	/docs/dashboards-and-charts/events-feed
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/dashboards-tab.md	/docs/dashboards-and-charts/dashboards-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/kubernetes-tab.md	/docs/dashboards-and-charts/kubernetes-tab
-https://github.com/netdata/netdata/edit/master/docs/collecting-metrics/container-metrics.md	/docs/collecting-metrics/container-metrics
-https://github.com/netdata/netdata/edit/master/docs/collecting-metrics/system-metrics.md	/docs/collecting-metrics/system-metrics
-https://github.com/netdata/netdata/edit/master/docs/collecting-metrics/application-metrics.md	/docs/collecting-metrics/application-metrics
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/README.md	/docs/observability-centralization-points
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/best-practices.md	/docs/observability-centralization-points/best-practices-for-observability-centralization-points
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/README.md	/docs/observability-centralization-points/metrics-centralization-points
