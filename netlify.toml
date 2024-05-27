@@ -8545,4 +8545,8 @@
   from="/docs/developer-and-contributor-corner/rest-api/api"
   to="/docs/developer-and-contributor-corner/rest-api"
 
+[[redirects]]
+  from="/docs/deployment-guides/deployment-strategies"
+  to="/docs/deployment-guides/deployment-examples"
+
 # section: dynamic << END

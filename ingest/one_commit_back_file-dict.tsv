@@ -105,7 +105,7 @@ https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-co
 https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/README.md	/docs/exporting-metrics/exporting-quickstart
 https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/enable-an-exporting-connector.md	/docs/exporting-metrics/enable-an-exporting-connector
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	/docs/deployment-guides
-https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-strategies.md	/docs/deployment-guides/deployment-strategies
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-strategies.md	/docs/deployment-guides/deployment-examples
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	/docs/deployment-guides/deployment-with-centralization-points
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	/docs/deployment-guides/standalone-deployment
 https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing
