@@ -2435,7 +2435,7 @@
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/view-plan-&-billing"
-  to="/docs/netdata-cloud/view-plan-&-billing"
+  to="/docs/netdata-cloud/netdata-plans-&-billing"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/sign-in-with-email-google-or-github"
@@ -2443,7 +2443,7 @@
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/netdata-plans"
-  to="/docs/netdata-cloud/netdata-plans"
+  to="/docs/netdata-cloud/netdata-plans-&-billing"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
@@ -5215,7 +5215,7 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/view-plan-&-billing"
-  to="/docs/netdata-cloud/view-plan-&-billing"
+  to="/docs/netdata-cloud/netdata-plans-&-billing"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/view-active-alerts"
@@ -5231,7 +5231,7 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/netdata-plans"
-  to="/docs/netdata-cloud/netdata-plans"
+  to="/docs/netdata-cloud/netdata-plans-&-billing"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
@@ -8255,23 +8255,23 @@
 
 [[redirects]]
   from="/docs/dashboard/how-dashboard-works"
-  to="/docs/netdata-cloud/monitor-your-infrastructure"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/quickstart/infrastructure"
-  to="/docs/netdata-cloud/monitor-your-infrastructure"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/cloud"
-  to="/docs/netdata-cloud/monitor-your-infrastructure"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure"
-  to="/docs/netdata-cloud/monitor-your-infrastructure"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/netdata-architecture/the-role-of-netdata-cloud"
-  to="/docs/netdata-cloud/monitor-your-infrastructure"
+  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/reinstall"
@@ -8548,5 +8548,9 @@
 [[redirects]]
   from="/docs/deployment-guides/deployment-strategies"
   to="/docs/deployment-guides/deployment-examples"
+
+[[redirects]]
+  from="/docs/netdata-cloud/view-plan-&-billing"
+  to="/docs/netdata-cloud/netdata-plans-&-billing"
 
 # section: dynamic << END

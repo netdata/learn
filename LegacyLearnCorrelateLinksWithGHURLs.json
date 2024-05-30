@@ -2285,5 +2285,6 @@
     "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection": "https://github.com/netdata/netdata/blob/master/src/ml/README.md",
     "https://learn.netdata.cloud/docs/alerts-&-notifications/health-configuration-reference": "https://github.com/netdata/netdata/blob/master/src/health/REFERENCE.md",
     "https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/api": "https://github.com/netdata/netdata/blob/master/src/web/api/README.md",
-    "https://learn.netdata.cloud/docs/deployment-guides/deployment-strategies": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-strategies.md"
+    "https://learn.netdata.cloud/docs/deployment-guides/deployment-strategies": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-strategies.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/view-plan-&-billing": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/view-plan-and-billing.md"
 }
