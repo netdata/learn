@@ -20,6 +20,17 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Dynamic Configuration Manager</>,
+		href: 'https://www.netdata.cloud/blog/netdata-dynamic-configuration-manager/',
+		date: 'Jun 03, 2024',
+		type: 'Link',
+		description: (
+			<>
+				Configure your Collectors, Alerts and Logs from the Netdata Dashboard.
+			</>
+		),	
+	},
+	{
 		title: <>Okta and OIDC SSO integrations</>,
 		href: 'https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations',
 		date: 'May 02, 2024',
