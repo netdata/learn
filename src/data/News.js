@@ -22,7 +22,7 @@ export const News = [
 	{
 		title: <>Dynamic Configuration Feature</>,
 		href: 'https://www.netdata.cloud/blog/netdata-dynamic-configuration-manager/',
-		date: 'June 03, 2024',
+		date: 'Jun 03, 2024',
 		type: 'Link',
 		description: (
 			<>
