@@ -214,7 +214,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/docker_engine/README.md	/docs/collecting-metrics/containers-and-vms/docker-engine
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/whoisquery/README.md	/docs/collecting-metrics/synthetic-checks/domain-expiration-date
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/freeradius/README.md	/docs/collecting-metrics/authentication-and-authorization/freeradius
-https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/filecheck/README.md	/docs/collecting-metrics/linux-systems/files-and-directories
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/filecheck/README.md	/docs/collecting-metrics/other/files-and-directories
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/wireguard/README.md	/docs/collecting-metrics/vpns/wireguard
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/windows/README.md	/docs/collecting-metrics/windows-systems/windows
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/windows/integrations/active_directory.md	/docs/collecting-metrics/windows-systems/active-directory
