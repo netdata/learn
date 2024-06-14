@@ -487,7 +487,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/filecheck"
-  to="/docs/collecting-metrics/linux-systems/files-and-directories"
+  to="/docs/collecting-metrics/other/files-and-directories"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/fluentd"
@@ -1803,7 +1803,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/Files-and-Dirs"
-  to="/docs/collecting-metrics/linux-systems/files-and-directories"
+  to="/docs/collecting-metrics/other/files-and-directories"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/Disks"
@@ -2715,7 +2715,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/files-and-dirs"
-  to="/docs/collecting-metrics/linux-systems/files-and-directories"
+  to="/docs/collecting-metrics/other/files-and-directories"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/disks"
@@ -4203,7 +4203,7 @@
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/files-and-directories"
-  to="/docs/collecting-metrics/linux-systems/files-and-directories"
+  to="/docs/collecting-metrics/other/files-and-directories"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/disks"
@@ -6743,7 +6743,7 @@
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/files-and-directories"
-  to="/docs/collecting-metrics/linux-systems/files-and-directories"
+  to="/docs/collecting-metrics/other/files-and-directories"
 
 [[redirects]]
   from="/docs/data-collection/kubernetes/kubernetes-cluster-state"
@@ -8552,5 +8552,9 @@
 [[redirects]]
   from="/docs/netdata-cloud/view-plan-&-billing"
   to="/docs/netdata-cloud/netdata-plans-&-billing"
+
+[[redirects]]
+  from="/docs/collecting-metrics/linux-systems/files-and-directories"
+  to="/docs/collecting-metrics/other/files-and-directories"
 
 # section: dynamic << END
