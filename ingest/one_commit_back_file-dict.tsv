@@ -756,6 +756,7 @@ https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrat
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/quasardb.md	/docs/exporting-metrics/quasardb
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/metricfire.md	/docs/exporting-metrics/metricfire
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/gnocchi.md	/docs/exporting-metrics/gnocchi
+https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/greptimedb.md	/docs/exporting-metrics/greptimedb
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/chronix.md	/docs/exporting-metrics/chronix
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/splunk_signalfx.md	/docs/exporting-metrics/splunk-signalfx
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/azure_event_hub.md	/docs/exporting-metrics/azure-event-hub
