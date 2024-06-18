@@ -177,6 +177,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/traefik/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/traefik
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/powerdns_recursor/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/powerdns-recursor
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/haproxy/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/haproxy
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/dmcache/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/dmcache-devices
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/docker/README.md	/docs/collecting-metrics/containers-and-vms/docker
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/rspamd/README.md	/docs/collecting-metrics/security-systems/rspamd
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/portcheck/README.md	/docs/collecting-metrics/synthetic-checks/tcp-endpoints
@@ -743,6 +744,7 @@ https://github.com/netdata/netdata/edit/master/src/exporting/graphite/integratio
 https://github.com/netdata/netdata/edit/master/src/exporting/graphite/integrations/blueflood.md	/docs/exporting-metrics/blueflood
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/README.md	/docs/exporting-metrics/prometheus
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/remote_write/README.md	/docs/exporting-metrics/prometheus-remote-write
+https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/opeansearch.md	/docs/exporting-metrics/opeansearch
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/google_bigquery.md	/docs/exporting-metrics/google-bigquery
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/timescaledb.md	/docs/exporting-metrics/timescaledb
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/azure_data_explorer.md	/docs/exporting-metrics/azure-data-explorer
