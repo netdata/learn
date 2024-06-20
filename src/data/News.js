@@ -1,24 +1,36 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.45.0';
+export const ReleaseVersion = '1.46.0';
 
-export const ReleaseDate = 'Mar 21, 2024';
+export const ReleaseDate = 'Jun 19, 2024';
 
 export const ReleaseNotes = [
-	'Netdata Mobile App',
-	'Custom Dashboards',
-	'Network Viewer',
-	'User Settings',
-	'Dynamic Configuration (beta)',
-	'MacOS Processes Monitoring',
-	'Homelab Plan',
-	'New Build Infrastructure',
-	'Go Plugin Moved to Main Repository'
+	'Dynamic Configuration out of beta',
+	'Netdata subscriptions on AWS Marketplace',
+	'Native Windows Support',
+	'Okta and OpenID SSO Authentication',
+	'Time Based Retention',
+	'Database Compression',
+	'ClickHouse Collector',
+	'OpenTelemetry Compatibility',
+	'More Notification Integrations'
 ];
 
 
 
 export const News = [
+	{
+		title: <>Netdata release 1.46.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.46.0',
+		date: 'Jun 19, 2024',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v1.46.0 release notes to learn about our newest features and improvements. 
+
+			</>
+		),	
+	},
 	{
 		title: <>Dynamic Configuration Manager</>,
 		href: 'https://www.netdata.cloud/blog/netdata-dynamic-configuration-manager/',
