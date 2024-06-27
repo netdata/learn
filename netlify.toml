@@ -806,10 +806,6 @@
   to="/docs/collecting-metrics/generic-collecting-metrics/pandas"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/postfix"
-  to="/docs/collecting-metrics/mail-servers/postfix"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/puppet"
   to="/docs/collecting-metrics/cicd-platforms/puppet"
 
@@ -2122,10 +2118,6 @@
   to="/docs/collecting-metrics/media-services/retroshare"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Applications/Postfix"
-  to="/docs/collecting-metrics/mail-servers/postfix"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Pi-hole"
   to="/docs/collecting-metrics/dns-and-dhcp-servers/pi-hole"
 
@@ -3032,10 +3024,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/retroshare"
   to="/docs/collecting-metrics/media-services/retroshare"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/applications/postfix"
-  to="/docs/collecting-metrics/mail-servers/postfix"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/pi-hole"
@@ -5632,10 +5620,6 @@
 [[redirects]]
   from="/docs/data-collection/media-services/icecast"
   to="/docs/collecting-metrics/media-services/icecast"
-
-[[redirects]]
-  from="/docs/data-collection/mail-servers/postfix"
-  to="/docs/collecting-metrics/mail-servers/postfix"
 
 [[redirects]]
   from="/docs/data-collection/mail-servers/exim"

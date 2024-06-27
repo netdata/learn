@@ -82,6 +82,7 @@ https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/mod
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/windows/integrations/hyperv.md	/docs/collecting-metrics/windows-systems/hyperv
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/windows/integrations/net_framework.md	/docs/collecting-metrics/windows-systems/net-framework
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/windows/integrations/active_directory.md	/docs/collecting-metrics/windows-systems/active-directory
+https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/postfix/README.md	/docs/collecting-metrics/mail-servers/postfix
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/k8s_kubeproxy/README.md	/docs/collecting-metrics/kubernetes/kubeproxy
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/cassandra/README.md	/docs/collecting-metrics/databases/cassandra
 https://github.com/netdata/netdata/edit/master/src/go/collectors/go.d.plugin/modules/wireguard/README.md	/docs/collecting-metrics/vpns/wireguard
@@ -514,7 +515,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/freeipmi.plugin/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi
 https://github.com/netdata/netdata/edit/master/src/collectors/ioping.plugin/README.md	/docs/collecting-metrics/synthetic-checks/ioping
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/python.d.plugin
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/postfix/README.md	/docs/collecting-metrics/mail-servers/postfix
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am2320/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/am2320
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/changefinder/README.md	/docs/collecting-metrics/other/python.d-changefinder
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/rethinkdbs/README.md	/docs/collecting-metrics/databases/rethinkdb
