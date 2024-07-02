@@ -410,14 +410,6 @@
   to="/docs/collecting-metrics/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
 
 [[redirects]]
-  from="/docs/agent/collectors/go.d.plugin"
-  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
-
-[[redirects]]
-  from="/docs/agent/collectors/go.d.plugin/docs/how-to-write-a-module"
-  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-
-[[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/activemq"
   to="/docs/collecting-metrics/message-brokers/activemq"
 
@@ -2394,14 +2386,6 @@
   to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
 [[redirects]]
-  from="/docs/improving-netdata---developers/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/external-plugins/go.d.plugin"
-  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
-
-[[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/charts.d.plugin"
   to="/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin"
 
@@ -3742,14 +3726,6 @@
   to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
 [[redirects]]
-  from="/docs/contributing-to-netdata/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-
-[[redirects]]
-  from="/docs/contributing-to-netdata/external-plugins/go.d.plugin"
-  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
-
-[[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/charts.d.plugin"
   to="/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin"
 
@@ -4058,14 +4034,6 @@
   to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
 [[redirects]]
-  from="/docs/contributing/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-
-[[redirects]]
-  from="/docs/contributing/external-plugins/go.d.plugin"
-  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
-
-[[redirects]]
   from="/docs/contributing/external-plugins/charts.d.plugin"
   to="/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin"
 
@@ -4316,14 +4284,6 @@
 [[redirects]]
   from="/docs/data-collection/external-plugins/profile.plugin"
   to="/docs/developer-and-contributor-corner/external-plugins/profile.plugin"
-
-[[redirects]]
-  from="/docs/data-collection/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go"
-
-[[redirects]]
-  from="/docs/data-collection/external-plugins/go.d.plugin"
-  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
 
 [[redirects]]
   from="/docs/data-collection/external-plugins/charts.d.plugin"
