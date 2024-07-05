@@ -770,10 +770,6 @@
   to="/docs/collecting-metrics/media-services/icecast"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/ipfs"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/memcached"
   to="/docs/collecting-metrics/databases/memcached"
 
@@ -1818,10 +1814,6 @@
   to="/docs/collecting-metrics/synthetic-checks/monit"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Storage/IPFS"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/HDFS"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
 
@@ -2716,10 +2708,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/monit"
   to="/docs/collecting-metrics/synthetic-checks/monit"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/storage/ipfs"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/hdfs"
@@ -4150,10 +4138,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba"
 
 [[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/ipfs"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
-
-[[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/hdfs"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
 
@@ -5532,10 +5516,6 @@
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/samba"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/ipfs"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ceph"
@@ -7208,10 +7188,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/netapp-solidfire"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/netapp-solidfire"
-
-[[redirects]]
-  from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/ipfs"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/hdsentinel"
