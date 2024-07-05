@@ -433,6 +433,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/megacl
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nvme/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/logind/README.md	/docs/collecting-metrics/systemd/systemd-logind-users
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/redis/README.md	/docs/collecting-metrics/databases/redis
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/ipfs/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/ping/README.md	/docs/collecting-metrics/synthetic-checks/ping
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dnsquery/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dns-query
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/pihole/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/pi-hole
@@ -534,7 +535,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pu
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/dovecot/README.md	/docs/collecting-metrics/mail-servers/dovecot
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/exim/README.md	/docs/collecting-metrics/mail-servers/exim
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/go_expvar/README.md	/docs/collecting-metrics/apm/go-applications-expvar
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/ipfs/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/retroshare/README.md	/docs/collecting-metrics/media-services/retroshare
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/alarms/README.md	/docs/collecting-metrics/other/netdata-agent-alarms
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/spigotmc/README.md	/docs/collecting-metrics/gaming/spigotmc
