@@ -646,7 +646,6 @@ https://github.com/netdata/netdata/edit/master/src/libnetdata/onewayalloc/README
 https://github.com/netdata/netdata/edit/master/src/libnetdata/worker_utilization/README.md	/docs/developer-and-contributor-corner/libnetdata/worker-utilization
 https://github.com/netdata/netdata/edit/master/src/libnetdata/statistical/README.md	/docs/developer-and-contributor-corner/libnetdata/statistical-functions
 https://github.com/netdata/netdata/edit/master/src/libnetdata/simple_pattern/README.md	/docs/developer-and-contributor-corner/libnetdata/simple-patterns
-https://github.com/netdata/netdata/edit/master/src/libnetdata/popen/README.md	/docs/developer-and-contributor-corner/libnetdata/popen
 https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md	/docs/developer-and-contributor-corner/libnetdata/json
 https://github.com/netdata/netdata/edit/master/src/libnetdata/july/README.md	/docs/developer-and-contributor-corner/libnetdata/july-interface
 https://github.com/netdata/netdata/edit/master/src/libnetdata/buffer/README.md	/docs/developer-and-contributor-corner/libnetdata/buffer-library
