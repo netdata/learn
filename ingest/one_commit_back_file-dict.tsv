@@ -104,7 +104,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integr
 https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/applications.md	/docs/collecting-metrics/processes-and-system-services/applications
 https://github.com/netdata/netdata/edit/master/src/collectors/nfacct.plugin/README.md	/docs/collecting-metrics/linux-systems/firewall/netfilter
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin
-https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/ap/README.md	/docs/collecting-metrics/linux-systems/network/access-points
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/apcupsd/README.md	/docs/collecting-metrics/ups/apc-ups
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/opensips/README.md	/docs/collecting-metrics/telephony-servers/opensips
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/libreswan/README.md	/docs/collecting-metrics/vpns/libreswan
@@ -562,6 +561,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/logsta
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/rspamd/README.md	/docs/collecting-metrics/security-systems/rspamd
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/filecheck/README.md	/docs/collecting-metrics/other/files-and-directories
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/powerdns/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/powerdns-authoritative-server
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/ap/README.md	/docs/collecting-metrics/linux-systems/network/access-points
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nginxvts/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/nginx-vts
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/k8s_kubelet/README.md	/docs/collecting-metrics/kubernetes/kubelet
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/portcheck/README.md	/docs/collecting-metrics/synthetic-checks/tcp-endpoints

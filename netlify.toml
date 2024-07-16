@@ -378,10 +378,6 @@
   to="/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin"
 
 [[redirects]]
-  from="/docs/agent/collectors/charts.d.plugin/ap"
-  to="/docs/collecting-metrics/linux-systems/network/access-points"
-
-[[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/apcupsd"
   to="/docs/collecting-metrics/ups/apc-ups"
 
@@ -1914,10 +1910,6 @@
   to="/docs/collecting-metrics/synthetic-checks/http-endpoints"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Networking/Access-points"
-  to="/docs/collecting-metrics/linux-systems/network/access-points"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Netdata/zscores"
   to="/docs/collecting-metrics/other/python.d-zscores"
 
@@ -2804,10 +2796,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/http-endpoints"
   to="/docs/collecting-metrics/synthetic-checks/http-endpoints"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/networking/access-points"
-  to="/docs/collecting-metrics/linux-systems/network/access-points"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/netdata/zscores"
@@ -4172,10 +4160,6 @@
 [[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/netfilter-accounting"
   to="/docs/collecting-metrics/linux-systems/firewall/netfilter"
-
-[[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/linux-access-points"
-  to="/docs/collecting-metrics/linux-systems/network/access-points"
 
 [[redirects]]
   from="/docs/data-collection/netdata-specific/zscores"
@@ -5616,10 +5600,6 @@
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/infiniband"
   to="/docs/collecting-metrics/linux-systems/network/infiniband"
-
-[[redirects]]
-  from="/docs/data-collection/linux-systems/network/access-points"
-  to="/docs/collecting-metrics/linux-systems/network/access-points"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/memory/zram"
