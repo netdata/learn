@@ -41,7 +41,7 @@ export default function Home() {
 			<main className="container">
 				<Grid className="mb-16" columns="2">
 					<Box
-						to="docs/installing"
+						to="/docs/installing"
 						title="Get started"
 						cta="Install now"
 						image={true}
