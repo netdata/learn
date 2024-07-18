@@ -126,7 +126,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/go
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/samba/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/openldap/README.md	/docs/collecting-metrics/authentication-and-authorization/openldap
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/ceph/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/ceph
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/icecast/README.md	/docs/collecting-metrics/media-services/icecast
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/example/README.md	/docs/collecting-metrics/other/example-collector
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/alarms/README.md	/docs/collecting-metrics/other/netdata-agent-alarms
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/tor/README.md	/docs/collecting-metrics/vpns/tor
@@ -588,6 +587,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/lightt
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/postgres/README.md	/docs/collecting-metrics/databases/postgresql
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/activemq/README.md	/docs/collecting-metrics/message-brokers/activemq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/squidlog/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/squid-log-files
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/icecast/README.md	/docs/collecting-metrics/media-services/icecast
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dnsmasq_dhcp/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq-dhcp
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/pihole/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/pi-hole
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/powerdns_recursor/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/powerdns-recursor
