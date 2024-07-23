@@ -118,7 +118,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/uw
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/beanstalk/README.md	/docs/collecting-metrics/message-brokers/beanstalk
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/tomcat/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/tomcat
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/oracledb/README.md	/docs/collecting-metrics/databases/oracle-db
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/memcached/README.md	/docs/collecting-metrics/databases/memcached
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/varnish/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/varnish
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/dovecot/README.md	/docs/collecting-metrics/mail-servers/dovecot
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
@@ -255,6 +254,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/isc_dh
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/vernemq/README.md	/docs/collecting-metrics/message-brokers/vernemq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/wireguard/README.md	/docs/collecting-metrics/vpns/wireguard
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/k8s_state/README.md	/docs/collecting-metrics/kubernetes/kubernetes-cluster-state
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/memcached/README.md	/docs/collecting-metrics/databases/memcached
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/logind/README.md	/docs/collecting-metrics/systemd/systemd-logind-users
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/freeradius/README.md	/docs/collecting-metrics/authentication-and-authorization/freeradius
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/elasticsearch/README.md	/docs/collecting-metrics/search-engines/elasticsearch
