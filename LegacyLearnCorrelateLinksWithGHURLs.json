@@ -163,7 +163,7 @@
     "https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/smartd_log": "https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/smartd_log/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/spigotmc": "https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/spigotmc/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/squid": "https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/squid/README.md",
-    "https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/tomcat": "https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/tomcat/README.md",
+    "https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/tomcat": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/modules/tomcat/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/tor": "https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/tor/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/traefik": "https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/traefik/README.md",
     "https://learn.netdata.cloud/docs/agent/collectors/python.d.plugin/uwsgi": "https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/uwsgi/README.md",
