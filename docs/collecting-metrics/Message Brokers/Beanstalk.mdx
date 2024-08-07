@@ -1,5 +1,5 @@
 ---
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/beanstalk/metadata.yaml"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/beanstalk/metadata.yaml"
 sidebar_label: "Beanstalk"
 learn_status: "Published"
 toc_max_heading_level: "4"
@@ -18,16 +18,23 @@ learn_link: "https://learn.netdata.cloud/docs/collecting-metrics/message-brokers
 <img src="https://netdata.cloud/img/beanstalk.svg" width="150"/>
 
 
-Plugin: python.d.plugin
+Plugin: go.d.plugin
 Module: beanstalk
 
 <img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
 
 ## Overview
 
-Monitor Beanstalk metrics to enhance job queueing and processing efficiency. Track job rates, processing times, and queue lengths for better task management.
+This collector monitors Beanstalk server performance and provides detailed statistics for each tube.
 
-The collector uses the `beanstalkc` python module to connect to a `beanstalkd` service and gather metrics.
+
+Using the [beanstalkd protocol](https://github.com/beanstalkd/beanstalkd/blob/master/doc/protocol.txt), it communicates with the Beanstalk daemon to gather essential metrics that help understand the server's performance and activity.
+Executed commands:
+
+- [stats](https://github.com/beanstalkd/beanstalkd/blob/91c54fc05dc759ef27459ce4383934e1a4f2fb4b/doc/protocol.txt#L553).
+- [list-tubes](https://github.com/beanstalkd/beanstalkd/blob/91c54fc05dc759ef27459ce4383934e1a4f2fb4b/doc/protocol.txt#L688).
+- [stats-tube](https://github.com/beanstalkd/beanstalkd/blob/91c54fc05dc759ef27459ce4383934e1a4f2fb4b/doc/protocol.txt#L497).
+
 
 This collector is supported on all platforms.
 
@@ -38,7 +45,8 @@ This collector supports collecting metrics from multiple instances of this integ
 
 #### Auto-Detection
 
-If no configuration is given, module will attempt to connect to beanstalkd on 127.0.0.1:11300 address.
+By default, it detects Beanstalk instances running on localhost that are listening on port 11300.
+
 
 #### Limits
 
@@ -67,31 +75,36 @@ Metrics:
 
 | Metric | Dimensions | Unit |
 |:------|:----------|:----|
-| beanstalk.cpu_usage | user, system | cpu time |
-| beanstalk.jobs_rate | total, timeouts | jobs/s |
-| beanstalk.connections_rate | connections | connections/s |
-| beanstalk.commands_rate | put, peek, peek-ready, peek-delayed, peek-buried, reserve, use, watch, ignore, delete, bury, kick, stats, stats-job, stats-tube, list-tubes, list-tube-used, list-tubes-watched, pause-tube | commands/s |
+| beanstalk.current_jobs | ready, buried, urgent, delayed, reserved | jobs |
+| beanstalk.jobs_rate | created | jobs/s |
+| beanstalk.jobs_timeouts | timeouts | jobs/s |
 | beanstalk.current_tubes | tubes | tubes |
-| beanstalk.current_jobs | urgent, ready, reserved, delayed, buried | jobs |
-| beanstalk.current_connections | written, producers, workers, waiting | connections |
-| beanstalk.binlog | written, migrated | records/s |
+| beanstalk.commands_rate | put, peek, peek-ready, peek-delayed, peek-buried, reserve, reserve-with-timeout, touch, use, watch, ignore, delete, bury, kick, stats, stats-job, stats-tube, list-tubes, list-tube-used, list-tubes-watched, pause-tube | commands/s |
+| beanstalk.current_connections | open, producers, workers, waiting | connections |
+| beanstalk.connections_rate | created | connections/s |
+| beanstalk.binlog_records | written, migrated | records/s |
+| beanstalk.cpu_usage | user, system | percent |
 | beanstalk.uptime | uptime | seconds |
 
 ### Per tube
 
-Metrics related to Beanstalk tubes. Each tube produces its own set of the following metrics.
+Metrics related to Beanstalk tubes. This set of metrics is provided for each tube.
 
-This scope has no labels.
+Labels:
+
+| Label      | Description     |
+|:-----------|:----------------|
+| tube_name | Tube name. |
 
 Metrics:
 
 | Metric | Dimensions | Unit |
 |:------|:----------|:----|
-| beanstalk.jobs_rate | jobs | jobs/s |
-| beanstalk.jobs | urgent, ready, reserved, delayed, buried | jobs |
-| beanstalk.connections | using, waiting, watching | connections |
-| beanstalk.commands | deletes, pauses | commands/s |
-| beanstalk.pause | since, left | seconds |
+| beanstalk.tube_current_jobs | ready, buried, urgent, delayed, reserved | jobs |
+| beanstalk.tube_jobs_rate | created | jobs/s |
+| beanstalk.tube_commands_rate | delete, pause-tube | commands/s |
+| beanstalk.tube_current_connections | using, waiting, watching | connections |
+| beanstalk.tube_pause_time | since, left | seconds |
 
 
 
@@ -109,16 +122,13 @@ The following alerts are available:
 
 ### Prerequisites
 
-#### beanstalkc python module
-
-The collector requires the `beanstalkc` python module to be installed.
-
+No action required.
 
 ### Configuration
 
 #### File
 
-The configuration file name for this integration is `python.d/beanstalk.conf`.
+The configuration file name for this integration is `go.d/beanstalk.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
@@ -126,49 +136,41 @@ Netdata [config directory](/docs/netdata-agent/configuration#the-netdata-config-
 
 ```bash
 cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
-sudo ./edit-config python.d/beanstalk.conf
+sudo ./edit-config go.d/beanstalk.conf
 ```
 #### Options
 
-There are 2 sections:
-
-* Global variables
-* One or more JOBS that can define multiple different instances to monitor.
-
-The following options can be defined globally: priority, penalty, autodetection_retry, update_every, but can also be defined per JOB to override the global values.
-
-Additionally, the following collapsed table contains all the options that can be configured inside a JOB definition.
-
-Every configuration JOB starts with a `job_name` value which will appear in the dashboard, unless a `name` parameter is specified.
+The following options can be defined globally: update_every, autodetection_retry.
 
 
 <details open><summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
-| update_every | Sets the default data collection frequency. | 5 | no |
-| priority | Controls the order of charts at the netdata dashboard. | 60000 | no |
-| autodetection_retry | Sets the job re-check interval in seconds. | 0 | no |
-| penalty | Indicates whether to apply penalty to update_every in case of failures. | yes | no |
-| name | Job name. This value will overwrite the `job_name` value. JOBS with the same name are mutually exclusive. Only one of them will be allowed running at any time. This allows autodetection to try several alternatives and pick the one that works. |  | no |
-| host | IP or URL to a beanstalk service. | 127.0.0.1 | no |
-| port | Port to the IP or URL to a beanstalk service. | 11300 | no |
+| update_every | Data collection frequency. | 1 | no |
+| autodetection_retry | Recheck interval in seconds. Zero means no recheck will be scheduled. | 0 | no |
+| address | The IP address and port where the Beanstalk service listens for connections. | 127.0.0.1:11300 | yes |
+| timeout | Connection, read, and write timeout duration in seconds. The timeout includes name resolution. | 1 | no |
+| tube_selector | Specifies a [pattern](https://github.com/netdata/netdata/tree/master/src/libnetdata/simple_pattern#readme) for which Beanstalk tubes Netdata will collect statistics. | * | no |
 
 </details>
 
 #### Examples
 
-##### Remote beanstalk server
+##### Basic
 
-A basic remote beanstalk server
+A basic example configuration.
+
+<details open><summary>Config</summary>
 
 ```yaml
-remote:
-  name: 'beanstalk'
-  host: '1.2.3.4'
-  port: 11300
+jobs:
+  - name: local
+    address: 127.0.0.1:11300
 
 ```
+</details>
+
 ##### Multi-instance
 
 > **Note**: When you define multiple jobs, their names must be unique.
@@ -179,15 +181,12 @@ Collecting metrics from local and remote instances.
 <details open><summary>Config</summary>
 
 ```yaml
-localhost:
-  name: 'local_beanstalk'
-  host: '127.0.0.1'
-  port: 11300
+jobs:
+  - name: local
+    address: 127.0.0.1:11300
 
-remote_job:
-  name: 'remote_beanstalk'
-  host: '192.0.2.1'
-  port: 113000
+  - name: remote
+    address: 203.0.113.0:11300
 
 ```
 </details>
@@ -198,7 +197,7 @@ remote_job:
 
 ### Debug Mode
 
-To troubleshoot issues with the `beanstalk` collector, run the `python.d.plugin` with the debug option enabled. The output
+To troubleshoot issues with the `beanstalk` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
 - Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
@@ -214,10 +213,10 @@ should give you clues as to why the collector isn't working.
   sudo -u netdata -s
   ```
 
-- Run the `python.d.plugin` to debug the collector:
+- Run the `go.d.plugin` to debug the collector:
 
   ```bash
-  ./python.d.plugin beanstalk debug trace
+  ./go.d.plugin -d -m beanstalk
   ```
 
 ### Getting Logs
