@@ -319,7 +319,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/w1sensor/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/1-wire-sensors
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/riakkv/README.md	/docs/collecting-metrics/databases/riakkv
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/squid/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/squid
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/samba/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/gearman/README.md	/docs/collecting-metrics/distributed-computing-systems/gearman
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/changefinder/README.md	/docs/collecting-metrics/other/python.d-changefinder
@@ -333,7 +332,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/or
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/uwsgi/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/uwsgi
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/zscores/README.md	/docs/collecting-metrics/other/python.d-zscores
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/go_expvar/README.md	/docs/collecting-metrics/apm/go-applications-expvar
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/rethinkdbs/README.md	/docs/collecting-metrics/databases/rethinkdb
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/nsd/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/openldap/README.md	/docs/collecting-metrics/authentication-and-authorization/openldap
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/monit/README.md	/docs/collecting-metrics/synthetic-checks/monit
@@ -445,6 +443,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/elasti
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nginx/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/nginx
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/pihole/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/pi-hole
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/megacli/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-megaraid
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/squid/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/squid
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/docker_engine/README.md	/docs/collecting-metrics/containers-and-vms/docker-engine
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dnsmasq_dhcp/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq-dhcp
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/proxysql/README.md	/docs/collecting-metrics/databases/proxysql
@@ -459,6 +458,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/scalei
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/mongodb/README.md	/docs/collecting-metrics/databases/mongodb
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/whoisquery/README.md	/docs/collecting-metrics/synthetic-checks/domain-expiration-date
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/k8s_kubelet/README.md	/docs/collecting-metrics/kubernetes/kubelet
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/rethinkdb/README.md	/docs/collecting-metrics/databases/rethinkdb
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/ntpd/README.md	/docs/collecting-metrics/system-clock-and-ntp/ntpd
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/filecheck/README.md	/docs/collecting-metrics/other/files-and-directories
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/activemq/README.md	/docs/collecting-metrics/message-brokers/activemq
