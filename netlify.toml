@@ -718,10 +718,6 @@
   to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/alarms"
-  to="/docs/collecting-metrics/other/netdata-agent-alarms"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/am2320"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/am2320"
 
@@ -1914,10 +1910,6 @@
   to="/docs/collecting-metrics/other/python.d-zscores"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Netdata/Alarms"
-  to="/docs/collecting-metrics/other/netdata-agent-alarms"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Python"
   to="/docs/collecting-metrics/other/example-collector"
 
@@ -2800,10 +2792,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/netdata/zscores"
   to="/docs/collecting-metrics/other/python.d-zscores"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/netdata/alarms"
-  to="/docs/collecting-metrics/other/netdata-agent-alarms"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-python"
@@ -4170,10 +4158,6 @@
   to="/docs/collecting-metrics/other/python.d-changefinder"
 
 [[redirects]]
-  from="/docs/data-collection/netdata-specific/alarms"
-  to="/docs/collecting-metrics/other/netdata-agent-alarms"
-
-[[redirects]]
   from="/docs/data-collection/message-brokers/pulsar"
   to="/docs/collecting-metrics/message-brokers/apache-pulsar"
 
@@ -5504,10 +5488,6 @@
 [[redirects]]
   from="/docs/data-collection/other/python.d-changefinder"
   to="/docs/collecting-metrics/other/python.d-changefinder"
-
-[[redirects]]
-  from="/docs/data-collection/other/netdata-agent-alarms"
-  to="/docs/collecting-metrics/other/netdata-agent-alarms"
 
 [[redirects]]
   from="/docs/data-collection/other/example-collector"
