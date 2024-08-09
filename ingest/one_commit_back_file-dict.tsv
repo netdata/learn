@@ -320,7 +320,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/w1
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/riakkv/README.md	/docs/collecting-metrics/databases/riakkv
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/samba/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/gearman/README.md	/docs/collecting-metrics/distributed-computing-systems/gearman
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/changefinder/README.md	/docs/collecting-metrics/other/python.d-changefinder
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/exim/README.md	/docs/collecting-metrics/mail-servers/exim
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/dovecot/README.md	/docs/collecting-metrics/mail-servers/dovecot
@@ -336,7 +335,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/ns
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/openldap/README.md	/docs/collecting-metrics/authentication-and-authorization/openldap
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/monit/README.md	/docs/collecting-metrics/synthetic-checks/monit
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/tor/README.md	/docs/collecting-metrics/vpns/tor
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/alarms/README.md	/docs/collecting-metrics/other/netdata-agent-alarms
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/retroshare/README.md	/docs/collecting-metrics/media-services/retroshare
 https://github.com/netdata/netdata/edit/master/src/database/README.md	/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups
 https://github.com/netdata/netdata/edit/master/src/database/engine/README.md	/docs/developer-and-contributor-corner/database-engine
@@ -448,6 +446,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/docker
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dnsmasq_dhcp/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq-dhcp
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/proxysql/README.md	/docs/collecting-metrics/databases/proxysql
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/vernemq/README.md	/docs/collecting-metrics/message-brokers/vernemq
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/gearman/README.md	/docs/collecting-metrics/distributed-computing-systems/gearman
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/supervisord/README.md	/docs/collecting-metrics/processes-and-system-services/supervisor
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dnsmasq/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nvme/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices
