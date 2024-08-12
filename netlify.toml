@@ -771,7 +771,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/nsd"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon"
+  to="/docs/collecting-metrics/dns-and-dhcp-servers/nsd"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/openldap"
@@ -1983,7 +1983,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/NSD"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon"
+  to="/docs/collecting-metrics/dns-and-dhcp-servers/nsd"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/Dnsmasq-DNS-Forwarder"
@@ -2867,7 +2867,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/nsd"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon"
+  to="/docs/collecting-metrics/dns-and-dhcp-servers/nsd"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/dnsmasq-dns-forwarder"
@@ -4235,7 +4235,7 @@
 
 [[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/nsd"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon"
+  to="/docs/collecting-metrics/dns-and-dhcp-servers/nsd"
 
 [[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/isc-dhcpd"
@@ -5911,7 +5911,7 @@
 
 [[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/name-server-daemon"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon"
+  to="/docs/collecting-metrics/dns-and-dhcp-servers/nsd"
 
 [[redirects]]
   from="/docs/data-collection/distributed-computing-systems/gearman"

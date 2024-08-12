@@ -321,7 +321,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/ri
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/samba/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/changefinder/README.md	/docs/collecting-metrics/other/python.d-changefinder
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/exim/README.md	/docs/collecting-metrics/mail-servers/exim
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/dovecot/README.md	/docs/collecting-metrics/mail-servers/dovecot
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/boinc/README.md	/docs/collecting-metrics/distributed-computing-systems/boinc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/example/README.md	/docs/collecting-metrics/other/example-collector
@@ -331,7 +330,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/or
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/uwsgi/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/uwsgi
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/zscores/README.md	/docs/collecting-metrics/other/python.d-zscores
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/go_expvar/README.md	/docs/collecting-metrics/apm/go-applications-expvar
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/nsd/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/name-server-daemon
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/openldap/README.md	/docs/collecting-metrics/authentication-and-authorization/openldap
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/monit/README.md	/docs/collecting-metrics/synthetic-checks/monit
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/tor/README.md	/docs/collecting-metrics/vpns/tor
@@ -448,6 +446,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/proxys
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/vernemq/README.md	/docs/collecting-metrics/message-brokers/vernemq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/gearman/README.md	/docs/collecting-metrics/distributed-computing-systems/gearman
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/supervisord/README.md	/docs/collecting-metrics/processes-and-system-services/supervisor
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/exim/README.md	/docs/collecting-metrics/mail-servers/exim
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dnsmasq/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nvme/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/isc_dhcpd/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/isc-dhcp
@@ -474,6 +473,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/litesp
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/fluentd/README.md	/docs/collecting-metrics/logs-servers/fluentd
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/postfix/README.md	/docs/collecting-metrics/mail-servers/postfix
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/puppet/README.md	/docs/collecting-metrics/cicd-platforms/puppet
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nsd/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/nsd
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/squidlog/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/squid-log-files
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/freeradius/README.md	/docs/collecting-metrics/authentication-and-authorization/freeradius
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/phpfpm/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/php-fpm
