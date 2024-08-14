@@ -321,13 +321,11 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/ri
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/samba/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/changefinder/README.md	/docs/collecting-metrics/other/python.d-changefinder
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/dovecot/README.md	/docs/collecting-metrics/mail-servers/dovecot
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/boinc/README.md	/docs/collecting-metrics/distributed-computing-systems/boinc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/example/README.md	/docs/collecting-metrics/other/example-collector
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/varnish/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/varnish
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/spigotmc/README.md	/docs/collecting-metrics/gaming/spigotmc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/oracledb/README.md	/docs/collecting-metrics/databases/oracle-db
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/uwsgi/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/uwsgi
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/zscores/README.md	/docs/collecting-metrics/other/python.d-zscores
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/go_expvar/README.md	/docs/collecting-metrics/apm/go-applications-expvar
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/openldap/README.md	/docs/collecting-metrics/authentication-and-authorization/openldap
@@ -450,6 +448,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/exim/R
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dnsmasq/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nvme/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/isc_dhcpd/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/isc-dhcp
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dovecot/README.md	/docs/collecting-metrics/mail-servers/dovecot
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/adaptecraid/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptec-raid
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/powerdns/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/powerdns-authoritative-server
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/scaleio/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-scaleio
@@ -461,6 +460,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/ntpd/R
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/filecheck/README.md	/docs/collecting-metrics/other/files-and-directories
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/activemq/README.md	/docs/collecting-metrics/message-brokers/activemq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/chrony/README.md	/docs/collecting-metrics/system-clock-and-ntp/chrony
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/uwsgi/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/uwsgi
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/haproxy/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/haproxy
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/clickhouse/README.md	/docs/collecting-metrics/databases/clickhouse
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/tengine/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/tengine
