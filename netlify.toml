@@ -734,16 +734,8 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ceph"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/changefinder"
-  to="/docs/collecting-metrics/other/python.d-changefinder"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/dovecot"
   to="/docs/collecting-metrics/mail-servers/dovecot"
-
-[[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/example"
-  to="/docs/collecting-metrics/other/example-collector"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/exim"
@@ -764,10 +756,6 @@
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/memcached"
   to="/docs/collecting-metrics/databases/memcached"
-
-[[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/monit"
-  to="/docs/collecting-metrics/synthetic-checks/monit"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/nsd"
@@ -794,14 +782,6 @@
   to="/docs/collecting-metrics/databases/rethinkdb"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/retroshare"
-  to="/docs/collecting-metrics/media-services/retroshare"
-
-[[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/riakkv"
-  to="/docs/collecting-metrics/databases/riakkv"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/samba"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba"
 
@@ -816,10 +796,6 @@
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/tomcat"
   to="/docs/collecting-metrics/web-servers-and-web-proxies/tomcat"
-
-[[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/tor"
-  to="/docs/collecting-metrics/vpns/tor"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/uwsgi"
@@ -1798,10 +1774,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Storage/Monit"
-  to="/docs/collecting-metrics/synthetic-checks/monit"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/HDFS"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
 
@@ -1816,10 +1788,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Qos/idlejitter.plugin"
   to="/docs/collecting-metrics/synthetic-checks/idle-os-jitter"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Qos/changefinder"
-  to="/docs/collecting-metrics/other/python.d-changefinder"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Qos/Ping"
@@ -1856,10 +1824,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/WireGuard"
   to="/docs/collecting-metrics/vpns/wireguard"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Networking/Tor"
-  to="/docs/collecting-metrics/vpns/tor"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/TCP-endpoints"
@@ -1908,10 +1872,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Netdata/zscores"
   to="/docs/collecting-metrics/other/python.d-zscores"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Mock%20Collectors/Example-module-in-Python"
-  to="/docs/collecting-metrics/other/example-collector"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Message%20Brokers/VerneMQ"
@@ -2014,10 +1974,6 @@
   to="/docs/collecting-metrics/distributed-computing-systems/boinc"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Databases/Riak-KV"
-  to="/docs/collecting-metrics/databases/riakkv"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/RethinkDB"
   to="/docs/collecting-metrics/databases/rethinkdb"
 
@@ -2076,10 +2032,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/SpigotMC"
   to="/docs/collecting-metrics/gaming/spigotmc"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/Applications/RetroShare"
-  to="/docs/collecting-metrics/media-services/retroshare"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Pi-hole"
@@ -2682,10 +2634,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/storage/monit"
-  to="/docs/collecting-metrics/synthetic-checks/monit"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/storage/hdfs"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
 
@@ -2710,10 +2658,6 @@
   to="/docs/collecting-metrics/synthetic-checks/idle-os-jitter"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/qos/changefinder"
-  to="/docs/collecting-metrics/other/python.d-changefinder"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/proxies/envoy"
   to="/docs/collecting-metrics/web-servers-and-web-proxies/envoy"
 
@@ -2736,10 +2680,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/wireguard"
   to="/docs/collecting-metrics/vpns/wireguard"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/networking/tor"
-  to="/docs/collecting-metrics/vpns/tor"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/tcp-endpoints"
@@ -2792,10 +2732,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/netdata/zscores"
   to="/docs/collecting-metrics/other/python.d-zscores"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/mock-collectors/example-module-in-python"
-  to="/docs/collecting-metrics/other/example-collector"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/message-brokers/vernemq"
@@ -2898,10 +2834,6 @@
   to="/docs/collecting-metrics/distributed-computing-systems/boinc"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/databases/riak-kv"
-  to="/docs/collecting-metrics/databases/riakkv"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/databases/rethinkdb"
   to="/docs/collecting-metrics/databases/rethinkdb"
 
@@ -2960,10 +2892,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/spigotmc"
   to="/docs/collecting-metrics/gaming/spigotmc"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/applications/retroshare"
-  to="/docs/collecting-metrics/media-services/retroshare"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/pi-hole"
@@ -4134,10 +4062,6 @@
   to="/docs/collecting-metrics/processes-and-system-services/supervisor"
 
 [[redirects]]
-  from="/docs/data-collection/p2p/retroshare"
-  to="/docs/collecting-metrics/media-services/retroshare"
-
-[[redirects]]
   from="/docs/data-collection/online-services/docker-hub"
   to="/docs/collecting-metrics/containers-and-vms/docker-hub-repository"
 
@@ -4152,10 +4076,6 @@
 [[redirects]]
   from="/docs/data-collection/netdata-specific/zscores"
   to="/docs/collecting-metrics/other/python.d-zscores"
-
-[[redirects]]
-  from="/docs/data-collection/netdata-specific/change-finder"
-  to="/docs/collecting-metrics/other/python.d-changefinder"
 
 [[redirects]]
   from="/docs/data-collection/message-brokers/pulsar"
@@ -4230,10 +4150,6 @@
   to="/docs/developer-and-contributor-corner/external-plugins"
 
 [[redirects]]
-  from="/docs/data-collection/examples/example-module-in-python"
-  to="/docs/collecting-metrics/other/example-collector"
-
-[[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/nsd"
   to="/docs/collecting-metrics/dns-and-dhcp-servers/nsd"
 
@@ -4244,10 +4160,6 @@
 [[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/dnsmasq-dns-forwarder"
   to="/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq"
-
-[[redirects]]
-  from="/docs/data-collection/database-servers/riak-kv"
-  to="/docs/collecting-metrics/databases/riakkv"
 
 [[redirects]]
   from="/docs/data-collection/database-servers/rethinkdb"
@@ -5426,10 +5338,6 @@
   to="/docs/collecting-metrics/web-servers-and-web-proxies/squid"
 
 [[redirects]]
-  from="/docs/data-collection/vpns/tor"
-  to="/docs/collecting-metrics/vpns/tor"
-
-[[redirects]]
   from="/docs/data-collection/vpns/libreswan"
   to="/docs/collecting-metrics/vpns/libreswan"
 
@@ -5448,10 +5356,6 @@
 [[redirects]]
   from="/docs/data-collection/system-clock-and-ntp/timex"
   to="/docs/collecting-metrics/system-clock-and-ntp/timex"
-
-[[redirects]]
-  from="/docs/data-collection/synthetic-checks/monit"
-  to="/docs/collecting-metrics/synthetic-checks/monit"
 
 [[redirects]]
   from="/docs/data-collection/synthetic-checks/ioping"
@@ -5486,20 +5390,8 @@
   to="/docs/collecting-metrics/other/python.d-zscores"
 
 [[redirects]]
-  from="/docs/data-collection/other/python.d-changefinder"
-  to="/docs/collecting-metrics/other/python.d-changefinder"
-
-[[redirects]]
-  from="/docs/data-collection/other/example-collector"
-  to="/docs/collecting-metrics/other/example-collector"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything"
   to="/docs/collecting-metrics/monitor-anything"
-
-[[redirects]]
-  from="/docs/data-collection/media-services/retroshare"
-  to="/docs/collecting-metrics/media-services/retroshare"
 
 [[redirects]]
   from="/docs/data-collection/media-services/icecast"
@@ -5920,10 +5812,6 @@
 [[redirects]]
   from="/docs/data-collection/distributed-computing-systems/boinc"
   to="/docs/collecting-metrics/distributed-computing-systems/boinc"
-
-[[redirects]]
-  from="/docs/data-collection/databases/riakkv"
-  to="/docs/collecting-metrics/databases/riakkv"
 
 [[redirects]]
   from="/docs/data-collection/databases/rethinkdb"
