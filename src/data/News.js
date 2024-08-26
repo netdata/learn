@@ -1,24 +1,35 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.46.0';
+export const ReleaseVersion = '1.47.0';
 
-export const ReleaseDate = 'Jun 19, 2024';
+export const ReleaseDate = 'Aug 22, 2024';
 
 export const ReleaseNotes = [
-	'Dynamic Configuration out of beta',
-	'Netdata subscriptions on AWS Marketplace',
-	'Native Windows Support',
-	'Okta and OpenID SSO Authentication',
-	'Time Based Retention',
-	'Database Compression',
-	'ClickHouse Collector',
-	'OpenTelemetry Compatibility',
-	'More Notification Integrations'
+	'SNMP Plugin Enhancements',
+	'Migration of Python Plugins to Go',
+	'Introduction of Identity Management Integrations with SCIM',
+	'Enhancement of Reachability Notifications',
+	'MS Teams Notification Integration using MS Workflows',
+	'Automatic Removal of Stale Nodes',
+	'IPv6-Only Environment Support',
+	'Stale Alerts Fix',
 ];
 
 
 
 export const News = [
+	{
+		title: <>Netdata release 1.47.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v1.47.0',
+		date: 'Aug 22, 2024',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v1.47.0 release notes to learn about our newest features and improvements. 
+
+			</>
+		),	
+	},
 	{
 		title: <>Netdata release 1.46.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.46.0',
