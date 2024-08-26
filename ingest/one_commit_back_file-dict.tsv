@@ -175,7 +175,6 @@ https://github.com/netdata/netdata/edit/master/src/web/api/formatters/value/READ
 https://github.com/netdata/netdata/edit/master/src/web/api/formatters/ssv/README.md	/docs/developer-and-contributor-corner/rest-api/formatters/ssv-formatter
 https://github.com/netdata/netdata/edit/master/src/web/api/formatters/csv/README.md	/docs/developer-and-contributor-corner/rest-api/formatters/csv-formatter
 https://github.com/netdata/netdata/edit/master/src/web/api/formatters/json/README.md	/docs/developer-and-contributor-corner/rest-api/formatters/json-formatter
-https://github.com/netdata/netdata/edit/master/src/web/api/badges/README.md	/docs/developer-and-contributor-corner/rest-api/netdata-badges
 https://github.com/netdata/netdata/edit/master/src/web/api/health/README.md	/docs/alerts-&-notifications/health-api-calls
 https://github.com/netdata/netdata/edit/master/src/web/api/queries/README.md	/docs/developer-and-contributor-corner/rest-api/queries
 https://github.com/netdata/netdata/edit/master/src/web/api/queries/stddev/README.md	/docs/developer-and-contributor-corner/rest-api/queries/standard-deviation-stddev
@@ -239,7 +238,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integr
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/pressure_stall_information.md	/docs/collecting-metrics/linux-systems/pressure/pressure-stall-information
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/conntrack.md	/docs/collecting-metrics/linux-systems/firewall/conntrack
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/page_types.md	/docs/collecting-metrics/linux-systems/memory/page-types
-https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/zfs_pools.md	/docs/collecting-metrics/linux-systems/filesystem/zfs/zfs-pools
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/network_statistics.md	/docs/collecting-metrics/linux-systems/network/network-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/wireless_network_interfaces.md	/docs/collecting-metrics/linux-systems/network/wireless-network-interfaces
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/softirq_statistics.md	/docs/collecting-metrics/linux-systems/cpu/softirq-statistics
@@ -319,7 +317,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/w1sensor/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/1-wire-sensors
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/samba/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/boinc/README.md	/docs/collecting-metrics/distributed-computing-systems/boinc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/varnish/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/varnish
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/spigotmc/README.md	/docs/collecting-metrics/gaming/spigotmc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/oracledb/README.md	/docs/collecting-metrics/databases/oracle-db
@@ -444,6 +441,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dnsmas
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nvme/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/isc_dhcpd/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/isc-dhcp
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dovecot/README.md	/docs/collecting-metrics/mail-servers/dovecot
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/boinc/README.md	/docs/collecting-metrics/databases/boinc
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/adaptecraid/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptec-raid
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/powerdns/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/powerdns-authoritative-server
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/scaleio/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-scaleio

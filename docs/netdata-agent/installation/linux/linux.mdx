@@ -53,7 +53,7 @@ To use `md5sum` to verify the integrity of the `kickstart.sh` script you will do
 run the following:
 
 ```bash
-[ "9b316e64126da6996d0dc71c8a6afdef" = "$(curl -Ss https://get.netdata.cloud/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "3e1c3c2a2f429632319f4d7257edae4b" = "$(curl -Ss https://get.netdata.cloud/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`.
@@ -255,10 +255,6 @@ By default, the kickstart script will provide a Netdata agent installation that 
   Specify a proxy to use when connecting to the cloud in the form of `http://[user:pass@]host:ip` for an HTTP(S) proxy. See [connecting through a proxy](/docs/netdata-cloud/connect-agent-to-cloud#connect-through-a-proxy) for details.
 - `--claim-only`
   If there is an existing install, only try to claim it without attempting to update it. If there is no existing install, install and claim Netdata normally.
-- `--require-cloud`
-  Only install if Netdata Cloud can be enabled.
-- `--disable-cloud`
-  For local builds, don’t build any of the Netdata Cloud code at all. For native packages and static builds, use runtime configuration to disable Netdata Cloud support.
 
 ### anonymous telemetry
 
