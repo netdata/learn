@@ -727,7 +727,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/boinc"
-  to="/docs/collecting-metrics/distributed-computing-systems/boinc"
+  to="/docs/collecting-metrics/databases/boinc"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/ceph"
@@ -1174,10 +1174,6 @@
   to="/docs/developer-and-contributor-corner/rest-api"
 
 [[redirects]]
-  from="/docs/agent/web/api/badges"
-  to="/docs/developer-and-contributor-corner/rest-api/netdata-badges"
-
-[[redirects]]
   from="/docs/agent/web/api/exporters/shell"
   to="/docs/exporting-metrics/shell-scripts"
 
@@ -1594,10 +1590,6 @@
   to="/docs/developer-and-contributor-corner/rest-api/queries/average-or-mean"
 
 [[redirects]]
-  from="/docs/improving-netdata---developers/web/api/netdata-badges"
-  to="/docs/developer-and-contributor-corner/rest-api/netdata-badges"
-
-[[redirects]]
   from="/docs/improving-netdata---developers/web/api/formatters/value-formatter"
   to="/docs/developer-and-contributor-corner/rest-api/formatters/value-formatter"
 
@@ -1971,7 +1963,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Distributed%20Computing/BOINC"
-  to="/docs/collecting-metrics/distributed-computing-systems/boinc"
+  to="/docs/collecting-metrics/databases/boinc"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/RethinkDB"
@@ -2080,10 +2072,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Go-applications"
   to="/docs/collecting-metrics/apm/go-applications-expvar"
-
-[[redirects]]
-  from="/docs/visualizations/netdata-badges"
-  to="/docs/developer-and-contributor-corner/rest-api/netdata-badges"
 
 [[redirects]]
   from="/docs/visualizations/agent-dashboard/custom-dashboards"
@@ -2831,7 +2819,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/distributed-computing/boinc"
-  to="/docs/collecting-metrics/distributed-computing-systems/boinc"
+  to="/docs/collecting-metrics/databases/boinc"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/rethinkdb"
@@ -3300,10 +3288,6 @@
 [[redirects]]
   from="/docs/netdata-apis/queries"
   to="/docs/developer-and-contributor-corner/rest-api/queries"
-
-[[redirects]]
-  from="/docs/netdata-apis/netdata-badges"
-  to="/docs/developer-and-contributor-corner/rest-api/netdata-badges"
 
 [[redirects]]
   from="/docs/netdata-apis/formatters/value-formatter"
@@ -4938,10 +4922,6 @@
   to="/docs/developer-and-contributor-corner/rest-api/queries"
 
 [[redirects]]
-  from="/docs/rest-api/netdata-badges"
-  to="/docs/developer-and-contributor-corner/rest-api/netdata-badges"
-
-[[redirects]]
   from="/docs/rest-api/formatters/value-formatter"
   to="/docs/developer-and-contributor-corner/rest-api/formatters/value-formatter"
 
@@ -5534,10 +5514,6 @@
   to="/docs/collecting-metrics/linux-systems/firewall/conntrack"
 
 [[redirects]]
-  from="/docs/data-collection/linux-systems/filesystem/zfs/zfs-pools"
-  to="/docs/collecting-metrics/linux-systems/filesystem/zfs/zfs-pools"
-
-[[redirects]]
   from="/docs/data-collection/linux-systems/filesystem/zfs/zfs-adaptive-replacement-cache"
   to="/docs/collecting-metrics/linux-systems/filesystem/zfs/zfs-adaptive-replacement-cache"
 
@@ -5811,7 +5787,7 @@
 
 [[redirects]]
   from="/docs/data-collection/distributed-computing-systems/boinc"
-  to="/docs/collecting-metrics/distributed-computing-systems/boinc"
+  to="/docs/collecting-metrics/databases/boinc"
 
 [[redirects]]
   from="/docs/data-collection/databases/rethinkdb"
@@ -8304,5 +8280,57 @@
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/files-and-directories"
   to="/docs/collecting-metrics/other/files-and-directories"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/monit"
+  to="/docs/collecting-metrics/synthetic-checks/monit"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/riakkv"
+  to="/docs/collecting-metrics/databases/riak-kv"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/tor"
+  to="/docs/collecting-metrics/vpns/tor"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Storage/Monit"
+  to="/docs/collecting-metrics/synthetic-checks/monit"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Networking/Tor"
+  to="/docs/collecting-metrics/vpns/tor"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Databases/Riak-KV"
+  to="/docs/collecting-metrics/databases/riak-kv"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/storage/monit"
+  to="/docs/collecting-metrics/synthetic-checks/monit"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/networking/tor"
+  to="/docs/collecting-metrics/vpns/tor"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/databases/riak-kv"
+  to="/docs/collecting-metrics/databases/riak-kv"
+
+[[redirects]]
+  from="/docs/data-collection/database-servers/riak-kv"
+  to="/docs/collecting-metrics/databases/riak-kv"
+
+[[redirects]]
+  from="/docs/data-collection/vpns/tor"
+  to="/docs/collecting-metrics/vpns/tor"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks/monit"
+  to="/docs/collecting-metrics/synthetic-checks/monit"
+
+[[redirects]]
+  from="/docs/data-collection/databases/riakkv"
+  to="/docs/collecting-metrics/databases/riak-kv"
 
 # section: dynamic << END
