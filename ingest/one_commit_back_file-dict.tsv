@@ -316,7 +316,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/ce
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am2320/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/am2320
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/w1sensor/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/1-wire-sensors
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/samba/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/varnish/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/varnish
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/spigotmc/README.md	/docs/collecting-metrics/gaming/spigotmc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/oracledb/README.md	/docs/collecting-metrics/databases/oracle-db
@@ -433,6 +432,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/squid/
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/docker_engine/README.md	/docs/collecting-metrics/containers-and-vms/docker-engine
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dnsmasq_dhcp/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq-dhcp
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/proxysql/README.md	/docs/collecting-metrics/databases/proxysql
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/samba/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/vernemq/README.md	/docs/collecting-metrics/message-brokers/vernemq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/gearman/README.md	/docs/collecting-metrics/distributed-computing-systems/gearman
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/supervisord/README.md	/docs/collecting-metrics/processes-and-system-services/supervisor
