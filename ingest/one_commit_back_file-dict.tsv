@@ -200,7 +200,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README
 https://github.com/netdata/netdata/edit/master/src/collectors/freeipmi.plugin/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/apcupsd/README.md	/docs/collecting-metrics/ups/apc-ups
-https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/sensors/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-sysfs
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/libreswan/README.md	/docs/collecting-metrics/vpns/libreswan
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/opensips/README.md	/docs/collecting-metrics/telephony-servers/opensips
 https://github.com/netdata/netdata/edit/master/src/collectors/cups.plugin/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/cups
