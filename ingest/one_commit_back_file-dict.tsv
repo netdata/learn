@@ -368,6 +368,7 @@ https://github.com/netdata/netdata/edit/master/src/health/notifications/pagerdut
 https://github.com/netdata/netdata/edit/master/src/health/notifications/gotify/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/gotify
 https://github.com/netdata/netdata/edit/master/src/health/notifications/custom/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/custom
 https://github.com/netdata/netdata/edit/master/src/health/notifications/discord/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/discord
+https://github.com/netdata/netdata/edit/master/src/health/notifications/ilert/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/ilert
 https://github.com/netdata/netdata/edit/master/src/health/notifications/email/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/email
 https://github.com/netdata/netdata/edit/master/src/health/notifications/messagebird/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/messagebird
 https://github.com/netdata/netdata/edit/master/src/health/notifications/smstools3/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/sms
