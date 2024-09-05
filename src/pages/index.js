@@ -120,7 +120,7 @@ export default function Home() {
 								release notes
 							</Link>{' '}
 							or{' '}
-							<Link to="/docs/maintaining/update-netdata-agents">
+							<Link to="/docs/netdata-agent/maintenance/update-netdata-agents">
 								{' '}
 								update now
 							</Link>
