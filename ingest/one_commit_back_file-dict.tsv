@@ -168,6 +168,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/window
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/windows/integrations/ms_sql_server.md	/docs/collecting-metrics/windows-systems/ms-sql-server
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/windows/integrations/net_framework.md	/docs/collecting-metrics/windows-systems/net-framework
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dovecot/README.md	/docs/collecting-metrics/mail-servers/dovecot
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/apcupsd/README.md	/docs/collecting-metrics/ups/apc-ups
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/phpdaemon/README.md	/docs/collecting-metrics/apm/phpdaemon
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/supervisord/README.md	/docs/collecting-metrics/processes-and-system-services/supervisor
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nginxplus/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/nginx-plus
@@ -562,7 +563,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/lxc_containers.md	/docs/collecting-metrics/containers-and-vms/lxc-containers
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/opensips/README.md	/docs/collecting-metrics/telephony-servers/opensips
-https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/apcupsd/README.md	/docs/collecting-metrics/ups/apc-ups
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/libreswan/README.md	/docs/collecting-metrics/vpns/libreswan
 https://github.com/netdata/netdata/edit/master/src/collectors/slabinfo.plugin/README.md	/docs/collecting-metrics/linux-systems/kernel/linux-kernel-slab-allocator-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/power_capping.md	/docs/collecting-metrics/linux-systems/kernel/power-capping
