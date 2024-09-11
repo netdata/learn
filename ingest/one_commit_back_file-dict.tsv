@@ -192,6 +192,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/cassan
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/vernemq/README.md	/docs/collecting-metrics/message-brokers/vernemq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/hdfs/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/systemdunits/README.md	/docs/collecting-metrics/systemd/systemd-units
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/varnish/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/varnish
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/x509check/README.md	/docs/collecting-metrics/synthetic-checks/x.509-certificate
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/consul/README.md	/docs/collecting-metrics/service-discovery-/-registry/consul
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/openvpn/README.md	/docs/collecting-metrics/vpns/openvpn
@@ -609,7 +610,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/RE
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am2320/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/am2320
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/zscores/README.md	/docs/collecting-metrics/other/python.d-zscores
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/varnish/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/varnish
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/openldap/README.md	/docs/collecting-metrics/authentication-and-authorization/openldap
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/spigotmc/README.md	/docs/collecting-metrics/gaming/spigotmc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/oracledb/README.md	/docs/collecting-metrics/databases/oracle-db
