@@ -237,10 +237,12 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/powerd
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/docker_engine/README.md	/docs/collecting-metrics/containers-and-vms/docker-engine
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/upsd/README.md	/docs/collecting-metrics/ups/ups-nut
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/ntpd/README.md	/docs/collecting-metrics/system-clock-and-ntp/ntpd
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nginxunit/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/nginx-unit
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/smartctl/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t.
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/chrony/README.md	/docs/collecting-metrics/system-clock-and-ntp/chrony
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/ap/README.md	/docs/collecting-metrics/linux-systems/network/access-points
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/monit/README.md	/docs/collecting-metrics/synthetic-checks/monit
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/typesense/README.md	/docs/collecting-metrics/search-engines/typesense
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/mysql/README.md	/docs/collecting-metrics/databases/mysql
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/mysql/integrations/mariadb.md	/docs/collecting-metrics/databases/mariadb
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/mysql/integrations/percona_mysql.md	/docs/collecting-metrics/databases/percona-mysql
