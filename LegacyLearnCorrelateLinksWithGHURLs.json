@@ -2282,5 +2282,6 @@
     "https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/api": "https://github.com/netdata/netdata/blob/master/src/web/api/README.md",
     "https://learn.netdata.cloud/docs/deployment-guides/deployment-strategies": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-strategies.md",
     "https://learn.netdata.cloud/docs/netdata-cloud/view-plan-&-billing": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/view-plan-and-billing.md",
-    "https://learn.netdata.cloud/docs/collecting-metrics/linux-systems/files-and-directories": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/modules/filecheck/README.md"
+    "https://learn.netdata.cloud/docs/collecting-metrics/linux-systems/files-and-directories": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/modules/filecheck/README.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/synthetic-checks/tcp-endpoints": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/modules/portcheck/README.md"
 }
