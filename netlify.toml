@@ -587,7 +587,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/portcheck"
-  to="/docs/collecting-metrics/synthetic-checks/tcp-endpoints"
+  to="/docs/collecting-metrics/synthetic-checks/tcp-udp-endpoints"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/postgres"
@@ -1819,7 +1819,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/TCP-endpoints"
-  to="/docs/collecting-metrics/synthetic-checks/tcp-endpoints"
+  to="/docs/collecting-metrics/synthetic-checks/tcp-udp-endpoints"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/Samba"
@@ -2671,7 +2671,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/tcp-endpoints"
-  to="/docs/collecting-metrics/synthetic-checks/tcp-endpoints"
+  to="/docs/collecting-metrics/synthetic-checks/tcp-udp-endpoints"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/tc.plugin"
@@ -3967,7 +3967,7 @@
 
 [[redirects]]
   from="/docs/data-collection/synthetic-checks/tcp-endpoints-check"
-  to="/docs/collecting-metrics/synthetic-checks/tcp-endpoints"
+  to="/docs/collecting-metrics/synthetic-checks/tcp-udp-endpoints"
 
 [[redirects]]
   from="/docs/data-collection/synthetic-checks/network-latency-check"
@@ -6203,7 +6203,7 @@
 
 [[redirects]]
   from="/docs/data-collection/synthetic-checks/tcp-endpoints"
-  to="/docs/collecting-metrics/synthetic-checks/tcp-endpoints"
+  to="/docs/collecting-metrics/synthetic-checks/tcp-udp-endpoints"
 
 [[redirects]]
   from="/docs/data-collection/synthetic-checks/site-24x7"
@@ -8332,5 +8332,9 @@
 [[redirects]]
   from="/docs/data-collection/databases/riakkv"
   to="/docs/collecting-metrics/databases/riak-kv"
+
+[[redirects]]
+  from="/docs/collecting-metrics/synthetic-checks/tcp-endpoints"
+  to="/docs/collecting-metrics/synthetic-checks/tcp-udp-endpoints"
 
 # section: dynamic << END
