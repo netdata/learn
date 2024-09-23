@@ -612,7 +612,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/cassan
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/traefik/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/traefik
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/w1sensor/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/1-wire-sensors
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dnsmasq_dhcp/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/dnsmasq-dhcp
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/sensors/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/sensors/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/couchbase/README.md	/docs/collecting-metrics/databases/couchbase
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/apache/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/apache
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/apache/integrations/httpd.md	/docs/collecting-metrics/web-servers-and-web-proxies/httpd
