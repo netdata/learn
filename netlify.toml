@@ -391,7 +391,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/sensors"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/cups.plugin"
@@ -1895,7 +1895,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/lm-sensors"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/cups.plugin"
@@ -2755,7 +2755,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/lm-sensors"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/freeipmi"
@@ -3127,7 +3127,7 @@
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/lm-sensors"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/web-server"
@@ -4099,7 +4099,7 @@
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/sensors"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
@@ -5559,7 +5559,7 @@
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
@@ -8336,5 +8336,9 @@
 [[redirects]]
   from="/docs/collecting-metrics/synthetic-checks/tcp-endpoints"
   to="/docs/collecting-metrics/synthetic-checks/tcp-udp-endpoints"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
 
 # section: dynamic << END
