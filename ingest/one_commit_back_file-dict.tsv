@@ -81,7 +81,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integr
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/ip_virtual_server.md	/docs/collecting-metrics/linux-systems/network/ip-virtual-server
 https://github.com/netdata/netdata/edit/master/src/collectors/plugins.d/README.md	/docs/developer-and-contributor-corner/external-plugins
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/python.d.plugin
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/ceph/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/ceph
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/go_expvar/README.md	/docs/collecting-metrics/apm/go-applications-expvar
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/zscores/README.md	/docs/collecting-metrics/other/python.d-zscores
@@ -259,6 +258,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/k8s_ku
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/postfix/README.md	/docs/collecting-metrics/mail-servers/postfix
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/httpcheck/README.md	/docs/collecting-metrics/synthetic-checks/http-endpoints
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/vcsa/README.md	/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/ceph/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/ceph
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/coredns/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/coredns
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/pika/README.md	/docs/collecting-metrics/databases/pika
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/mongodb/README.md	/docs/collecting-metrics/databases/mongodb
