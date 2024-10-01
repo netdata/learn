@@ -79,13 +79,11 @@ https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integr
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/entropy.md	/docs/collecting-metrics/linux-systems/system/entropy
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/nfs_server.md	/docs/collecting-metrics/linux-systems/filesystem/nfs/nfs-server
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/ip_virtual_server.md	/docs/collecting-metrics/linux-systems/network/ip-virtual-server
-https://github.com/netdata/netdata/edit/master/src/collectors/plugins.d/README.md	/docs/developer-and-contributor-corner/external-plugins
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/python.d.plugin
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/go_expvar/README.md	/docs/collecting-metrics/apm/go-applications-expvar
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/zscores/README.md	/docs/collecting-metrics/other/python.d-zscores
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/spigotmc/README.md	/docs/collecting-metrics/gaming/spigotmc
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/openldap/README.md	/docs/collecting-metrics/authentication-and-authorization/openldap
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am2320/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/am2320
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/oracledb/README.md	/docs/collecting-metrics/databases/oracle-db
 https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/user_groups.md	/docs/collecting-metrics/processes-and-system-services/user-groups
@@ -163,6 +161,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.inet.ip.stats.md	/docs/collecting-metrics/freebsd/net.inet.ip.stats
 https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/dev.cpu.temperature.md	/docs/collecting-metrics/freebsd/dev.cpu.temperature
 https://github.com/netdata/netdata/edit/master/src/collectors/perf.plugin/README.md	/docs/collecting-metrics/linux-systems/cpu-performance
+https://github.com/netdata/netdata/edit/master/src/plugins.d/README.md	/docs/developer-and-contributor-corner/external-plugins
 https://github.com/netdata/netdata/edit/master/src/registry/README.md	/docs/netdata-agent/registry
 https://github.com/netdata/netdata/edit/master/src/exporting/README.md	/docs/exporting-metrics/exporting-reference
 https://github.com/netdata/netdata/edit/master/src/exporting/aws_kinesis/README.md	/docs/exporting-metrics/aws-kinesis
@@ -628,6 +627,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/ping/R
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/geth/README.md	/docs/collecting-metrics/blockchain-servers/go-ethereum
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/nginxplus/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/nginx-plus
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/logstash/README.md	/docs/collecting-metrics/logs-servers/logstash
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/openldap/README.md	/docs/collecting-metrics/authentication-and-authorization/openldap
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/dockerhub/README.md	/docs/collecting-metrics/containers-and-vms/docker-hub-repository
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/docker_engine/README.md	/docs/collecting-metrics/containers-and-vms/docker-engine
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/isc_dhcpd/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/isc-dhcp
