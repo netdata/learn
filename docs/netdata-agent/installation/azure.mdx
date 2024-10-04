@@ -8,10 +8,9 @@ sidebar_position: "204440"
 learn_link: "https://learn.netdata.cloud/docs/netdata-agent/installation/azure"
 ---
 
-
 # Install Netdata on Azure
 
-Netdata is fully compatible with Azure. 
+Netdata is fully compatible with Azure.
 You can install Netdata on cloud instances to monitor the apps/services running there, or use
 multiple instances in a [parent-child streaming](https://github.com/netdata/netdata/blob/master/src/streaming/README.md) configuration.
 
@@ -43,18 +42,18 @@ command from a remote system, and it fails, it's likely that a firewall is block
 Another option is to put Netdata behind web server, which will proxy requests through standard HTTP/HTTPS ports
 (80/443), which are likely already open on your instance. We have a number of guides available:
 
--   [Apache](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/apache)
--   [Nginx](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/nginx)
--   [Caddy](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy)
--   [HAProxy](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy)
--   [lighttpd](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/lighttpd-v1.4.x)
+- [Apache](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/apache)
+- [Nginx](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/nginx)
+- [Caddy](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy)
+- [HAProxy](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy)
+- [lighttpd](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/lighttpd-v1.4.x)
 
 Sign in to the [Azure portal](https://portal.azure.com) and open the virtual machine running Netdata. Click on the
 **Networking** link beneath the **Settings** header, then click on the **Add inbound security rule** button.
 
 Add a new rule with the following options:
 
-```conf
+```text
 Source: Any
 Source port ranges: 19999
 Destination: Any
@@ -66,5 +65,3 @@ Name: Netdata
 ```
 
 Click **Add** to apply your new inbound security rule.
-
-

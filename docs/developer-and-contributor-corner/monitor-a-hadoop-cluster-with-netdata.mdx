@@ -7,7 +7,6 @@ sidebar_position: "1342000"
 learn_link: "https://learn.netdata.cloud/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata"
 ---
 
-
 # Monitor a Hadoop cluster with Netdata
 
 Hadoop is an [Apache project](https://hadoop.apache.org/) is a framework for processing large sets of data across a
@@ -28,8 +27,8 @@ alternative, like the guide available from
 
 For more specifics on the collection modules used in this guide, read the respective pages in our documentation:
 
--   [HDFS](/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs)
--   [Zookeeper](/docs/collecting-metrics/service-discovery-/-registry/zookeeper)
+- [HDFS](/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs)
+- [Zookeeper](/docs/collecting-metrics/service-discovery-/-registry/zookeeper)
 
 ## Set up your HDFS and Zookeeper installations
 
@@ -165,7 +164,7 @@ jobs:
     address : 203.0.113.10:2182
 ```
 
-Finally, [restart Netdata](/docs/netdata-agent/installation#maintaining-a-netdata-agent-installation).
+Finally, [restart Netdata](/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents).
 
 ```sh
 sudo systemctl restart netdata
@@ -179,7 +178,7 @@ showing real-time metrics for both in your Netdata dashboard. 🎉
 The Netdata community helped us create sane defaults for alerts related to both HDFS and Zookeeper. You may want to
 investigate these to ensure they work well with your Hadoop implementation.
 
--   [HDFS alerts](https://raw.githubusercontent.com/netdata/netdata/master/src/health/health.d/hdfs.conf)
+- [HDFS alerts](https://raw.githubusercontent.com/netdata/netdata/master/src/health/health.d/hdfs.conf)
 
 You can also access/edit these files directly with `edit-config`:
 
@@ -188,5 +187,4 @@ sudo /etc/netdata/edit-config health.d/hdfs.conf
 sudo /etc/netdata/edit-config health.d/zookeeper.conf
 ```
 
-For more information about editing the defaults or writing new alert entities, see our 
-[health monitoring documentation](/docs/alerts-&-notifications).
+For more information about editing the defaults or writing new alert entities, see our [health monitoring documentation](/docs/alerts-&-notifications).
