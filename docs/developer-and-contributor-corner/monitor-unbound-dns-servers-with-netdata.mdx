@@ -7,7 +7,6 @@ sidebar_position: "1338000"
 learn_link: "https://learn.netdata.cloud/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata"
 ---
 
-
 # Monitor Unbound DNS servers with Netdata
 
 [Unbound](https://nlnetlabs.nl/projects/unbound/about/) is a "validating, recursive, caching DNS resolver" from NLNet
@@ -35,7 +34,7 @@ the TLS key files that will encrypt connections to the remote interface. Then ad
 documentation](https://nlnetlabs.nl/documentation/unbound/howto-setup/#setup-remote-control) for more details on using
 `unbound-control`, such as how to handle situations when Unbound is run under a unique user.
 
-```conf
+```text
 # enable remote-control
 remote-control:
     control-enable: yes
@@ -137,5 +136,3 @@ Now that you're collecting metrics from your Unbound servers, let us know how it
 for improvement or refinement based on real-world use cases. Feel free to [file an
 issue](https://github.com/netdata/netdata/issues/new?assignees=&labels=bug%2Cneeds+triage&template=BUG_REPORT.yml) with your
 thoughts.
-
-

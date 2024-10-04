@@ -85,7 +85,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/go
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/zscores/README.md	/docs/collecting-metrics/other/python.d-zscores
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/spigotmc/README.md	/docs/collecting-metrics/gaming/spigotmc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am2320/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/am2320
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/oracledb/README.md	/docs/collecting-metrics/databases/oracle-db
 https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/user_groups.md	/docs/collecting-metrics/processes-and-system-services/user-groups
 https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/applications.md	/docs/collecting-metrics/processes-and-system-services/applications
 https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/users.md	/docs/collecting-metrics/processes-and-system-services/users
@@ -645,6 +644,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/ipfs/R
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/snmp/README.md	/docs/collecting-metrics/generic-collecting-metrics/snmp-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/gearman/README.md	/docs/collecting-metrics/distributed-computing-systems/gearman
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/rabbitmq/README.md	/docs/collecting-metrics/message-brokers/rabbitmq
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/oracledb/README.md	/docs/collecting-metrics/databases/oracle-db
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/pulsar/README.md	/docs/collecting-metrics/message-brokers/apache-pulsar
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/phpdaemon/README.md	/docs/collecting-metrics/apm/phpdaemon
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/consul/README.md	/docs/collecting-metrics/service-discovery-/-registry/consul
@@ -761,20 +761,13 @@ https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	/docs/deployment-guides/deployment-with-centralization-points
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/style-guide.md	/docs/developer-and-contributor-corner/contribute-to-the-documentation/netdata-style-guide
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/collect-unbound-metrics.md	/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata
-https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/monitor-cockroachdb.md	/docs/developer-and-contributor-corner/monitor-cockroachdb-metrics-with-netdata
-https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/process.md	/docs/developer-and-contributor-corner/monitor-any-process-in-real-time-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/running-through-cf-tunnels.md	/docs/developer-and-contributor-corner/running-a-local-dashboard-through-cloudflare-tunnels
-https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/python-collector.md	/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/customize.md	/docs/developer-and-contributor-corner/customize-the-standard-dashboard
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/README.md	/docs/developer-and-contributor-corner
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/monitor-debug-applications-ebpf.md	/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics
-https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/raspberry-pi-anomaly-detection.md	/docs/developer-and-contributor-corner/unsupervised-anomaly-detection-for-raspberry-pi-monitoring
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/collect-apache-nginx-web-logs.md	/docs/developer-and-contributor-corner/monitor-nginx-or-apache-web-server-log-files-with-netdata
-https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/kubernetes-k8s-netdata.md	/docs/developer-and-contributor-corner/kubernetes-monitoring-with-netdata-overview-and-visualizations
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/monitor-hadoop-cluster.md	/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata
-https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/lamp-stack.md	/docs/developer-and-contributor-corner/lamp-stack-monitoring-linux-apache-mysql-php-with-netdata
-https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/pi-hole-raspberry-pi.md	/docs/developer-and-contributor-corner/monitor-pi-hole-and-a-raspberry-pi-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/working-with-logs.md	/docs/working-with-logs
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/machine-learning-and-anomaly-detection

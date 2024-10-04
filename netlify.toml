@@ -1294,32 +1294,8 @@
   to="/docs/netdata-agent/configuration/how-to-optimize-the-netdata-agent-s-performance"
 
 [[redirects]]
-  from="/guides/monitor-cockroachdb"
-  to="/docs/developer-and-contributor-corner/monitor-cockroachdb-metrics-with-netdata"
-
-[[redirects]]
   from="/guides/monitor-hadoop-cluster"
   to="/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata"
-
-[[redirects]]
-  from="/guides/monitor/lamp-stack"
-  to="/docs/developer-and-contributor-corner/lamp-stack-monitoring-linux-apache-mysql-php-with-netdata"
-
-[[redirects]]
-  from="/guides/monitor/pi-hole-raspberry-pi"
-  to="/docs/developer-and-contributor-corner/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
-
-[[redirects]]
-  from="/guides/monitor/process"
-  to="/docs/developer-and-contributor-corner/monitor-any-process-in-real-time-with-netdata"
-
-[[redirects]]
-  from="/guides/monitor/raspberry-pi-anomaly-detection"
-  to="/docs/developer-and-contributor-corner/unsupervised-anomaly-detection-for-raspberry-pi-monitoring"
-
-[[redirects]]
-  from="/guides/python-collector"
-  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/guides/troubleshoot/monitor-debug-applications-ebpf"
@@ -2284,10 +2260,6 @@
 [[redirects]]
   from="/docs/improving-netdata---developers/health-command-api-tester"
   to="/docs/developer-and-contributor-corner/health-command-api-tester"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/external-plugins/python.d.plugin"
@@ -3582,10 +3554,6 @@
   to="/docs/developer-and-contributor-corner/health-command-api-tester"
 
 [[redirects]]
-  from="/docs/contributing-to-netdata/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-
-[[redirects]]
   from="/docs/contributing-to-netdata/external-plugins/python.d.plugin"
   to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
@@ -3886,10 +3854,6 @@
   to="/docs/developer-and-contributor-corner/health-command-api-tester"
 
 [[redirects]]
-  from="/docs/contributing/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-
-[[redirects]]
   from="/docs/contributing/external-plugins/python.d.plugin"
   to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
 
@@ -4112,10 +4076,6 @@
 [[redirects]]
   from="/docs/data-collection/generic-data-collection/structured-data-pandas"
   to="/docs/collecting-metrics/generic-collecting-metrics/pandas"
-
-[[redirects]]
-  from="/docs/data-collection/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
-  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
 
 [[redirects]]
   from="/docs/data-collection/external-plugins/python.d.plugin"
@@ -4442,10 +4402,6 @@
   to="/docs/netdata-cloud/netdata-cloud-on-prem"
 
 [[redirects]]
-  from="/docs/miscellaneous/unsupervised-anomaly-detection-for-raspberry-pi-monitoring"
-  to="/docs/developer-and-contributor-corner/unsupervised-anomaly-detection-for-raspberry-pi-monitoring"
-
-[[redirects]]
   from="/docs/miscellaneous/running-a-local-dashboard-through-cloudflare-tunnels"
   to="/docs/developer-and-contributor-corner/running-a-local-dashboard-through-cloudflare-tunnels"
 
@@ -4462,20 +4418,8 @@
   to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
 
 [[redirects]]
-  from="/docs/miscellaneous/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
-  to="/docs/developer-and-contributor-corner/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
-
-[[redirects]]
   from="/docs/miscellaneous/monitor-nginx-or-apache-web-server-log-files-with-netdata"
   to="/docs/developer-and-contributor-corner/monitor-nginx-or-apache-web-server-log-files-with-netdata"
-
-[[redirects]]
-  from="/docs/miscellaneous/monitor-cockroachdb-metrics-with-netdata"
-  to="/docs/developer-and-contributor-corner/monitor-cockroachdb-metrics-with-netdata"
-
-[[redirects]]
-  from="/docs/miscellaneous/monitor-any-process-in-real-time-with-netdata"
-  to="/docs/developer-and-contributor-corner/monitor-any-process-in-real-time-with-netdata"
 
 [[redirects]]
   from="/docs/miscellaneous/monitor-a-hadoop-cluster-with-netdata"
@@ -4576,10 +4520,6 @@
 [[redirects]]
   from="/docs/miscellaneous/libnetdata"
   to="/docs/developer-and-contributor-corner/libnetdata"
-
-[[redirects]]
-  from="/docs/miscellaneous/lamp-stack-monitoring-linux-apache-mysql-php-with-netdata"
-  to="/docs/developer-and-contributor-corner/lamp-stack-monitoring-linux-apache-mysql-php-with-netdata"
 
 [[redirects]]
   from="/docs/miscellaneous/health-command-api-tester"

@@ -8,19 +8,17 @@ sidebar_position: "204320"
 learn_link: "https://learn.netdata.cloud/docs/netdata-agent/installation/synology"
 ---
 
-
 # Install Netdata on Synology
 
 > 💡 This document is maintained by Netdata's community, and may not be completely up-to-date. Please double-check the
 > details of the installation process, before proceeding.
 >
-> You can help improve this document by 
-> [submitting a PR](/docs/netdata-agent/installation/synology) 
+> You can help improve this document by
+> [submitting a PR](/docs/netdata-agent/installation/synology)
 > with your recommended improvements or changes. Thank you!
 
-
-The good news is that our 
-[one-line installation script](/docs/netdata-agent/installation/linux) 
+The good news is that our
+[one-line installation script](/docs/netdata-agent/installation/linux)
 works fine if your NAS is one that uses the amd64 architecture. It
 will install the content into `/opt/netdata`, making future removal safe and simple.
 
@@ -51,15 +49,13 @@ installations run it as the `netdata` user, you might wish to do the same. This 
 Additionally, as of 2018/06/24, the Netdata installer doesn't recognize DSM as an operating system, so no init script is
 installed. You'll have to do this manually:
 
-1.  Add [this file](https://gist.github.com/oskapt/055d474d7bfef32c49469c1b53e8225f) as `/etc/rc.netdata`. Make it
+1. Add [this file](https://gist.github.com/oskapt/055d474d7bfef32c49469c1b53e8225f) as `/etc/rc.netdata`. Make it
     executable with `chmod 0755 /etc/rc.netdata`.
-2.  Add or edit `/etc/rc.local` and add a line calling `/etc/rc.netdata` to have it start on boot:
+2. Add or edit `/etc/rc.local` and add a line calling `/etc/rc.netdata` to have it start on boot:
 
-```conf
-# Netdata startup
-[ -x /etc/rc.netdata ] && /etc/rc.netdata start
-```
+    ```text
+    # Netdata startup
+    [ -x /etc/rc.netdata ] && /etc/rc.netdata start
+    ```
 
 3. Make sure `/etc/rc.local` is executable: `chmod 0755 /etc/rc.local`.
-
-

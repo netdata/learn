@@ -7,10 +7,9 @@ sidebar_position: "210245"
 learn_link: "https://learn.netdata.cloud/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy"
 ---
 
+# Running Netdata behind Caddy
 
-# Netdata via Caddy
-
-To run Netdata via [Caddy v2 proxying,](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy) set your Caddyfile up like this:
+To run Netdata via [Caddy v2 reverse proxy,](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy) set your Caddyfile up like this:
 
 ```caddyfile
 netdata.domain.tld {
@@ -35,5 +34,3 @@ netdata.domain.tld {
 You would also need to instruct Netdata to listen only to `127.0.0.1` or `::1`.
 
 To limit access to Netdata only from localhost, set `bind socket to IP = 127.0.0.1` or `bind socket to IP = ::1` in `/etc/netdata/netdata.conf`.
-
-

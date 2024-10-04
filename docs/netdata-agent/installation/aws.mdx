@@ -8,7 +8,6 @@ sidebar_position: "204400"
 learn_link: "https://learn.netdata.cloud/docs/netdata-agent/installation/aws"
 ---
 
-
 # Install Netdata on AWS
 
 Netdata is fully compatible with Amazon Web Services (AWS).
@@ -43,11 +42,11 @@ command from a remote system, and it fails, it's likely that a firewall is block
 Another option is to put Netdata behind web server, which will proxy requests through standard HTTP/HTTPS ports
 (80/443), which are likely already open on your instance. We have a number of guides available:
 
--   [Apache](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/apache)
--   [Nginx](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/nginx)
--   [Caddy](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy)
--   [HAProxy](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy)
--   [lighttpd](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/lighttpd-v1.4.x)
+- [Apache](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/apache)
+- [Nginx](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/nginx)
+- [Caddy](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy)
+- [HAProxy](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy)
+- [lighttpd](/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/lighttpd-v1.4.x)
 
 Sign in to the [AWS console](https://console.aws.amazon.com/) and navigate to the EC2 dashboard. Click on the **Security
 Groups** link in the navigation, beneath the **Network & Security** heading. Find the Security Group your instance
@@ -56,7 +55,7 @@ inbound rules**.
 
 Add a new rule with the following options:
 
-```conf
+```text
 Type: Custom TCP
 Protocol: TCP
 Port Range: 19999

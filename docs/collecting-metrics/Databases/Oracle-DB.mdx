@@ -1,5 +1,5 @@
 ---
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/oracledb/metadata.yaml"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/oracledb/metadata.yaml"
 sidebar_label: "Oracle DB"
 learn_status: "Published"
 toc_max_heading_level: "4"
@@ -18,29 +18,42 @@ learn_link: "https://learn.netdata.cloud/docs/collecting-metrics/databases/oracl
 <img src="https://netdata.cloud/img/oracle.svg" width="150"/>
 
 
-Plugin: python.d.plugin
+Plugin: go.d.plugin
 Module: oracledb
 
 <img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
 
 ## Overview
 
-This collector monitors OracleDB database metrics about sessions, tables, memory and more.
+This collector monitors the health and performance of Oracle DB servers and collects general statistics, replication and user metrics.
 
-It collects the metrics via the supported database client library
+
+It establishes a connection to the Oracle DB instance via a TCP or UNIX socket and extracts metrics from the following database tables:
+
+- `v$sysmetric`
+- `v$sysstat`
+- `v$waitclassmetric`
+- `v$system_wait_class`
+- `dba_data_files`
+- `dba_free_space`
+
 
 This collector is supported on all platforms.
 
 This collector supports collecting metrics from multiple instances of this integration, including remote instances.
-
-In order for this collector to work, it needs a read-only user `netdata` in the RDBMS.
 
 
 ### Default Behavior
 
 #### Auto-Detection
 
-When the requirements are met, databases on the local host on port 1521 will be auto-detected
+The collector can automatically detect Oracle DB instances running on:
+
+- Localhost, listening on port 1521
+- Within Docker containers
+
+> **Note**: Oracle DB requires a username and password. While Netdata can automatically discover Oracle DB instances and create data collection jobs, these jobs will fail unless you provide the correct credentials.
+
 
 #### Limits
 
@@ -57,11 +70,11 @@ Metrics grouped by *scope*.
 
 The scope defines the instance that the metric belongs to. An instance is uniquely identified by a set of labels.
 
-These metrics refer to the entire monitored application.
+
 
 ### Per Oracle DB instance
 
-
+These metrics refer to the entire monitored application.
 
 This scope has no labels.
 
@@ -69,28 +82,54 @@ Metrics:
 
 | Metric | Dimensions | Unit |
 |:------|:----------|:----|
-| oracledb.session_count | total, active | sessions |
-| oracledb.session_limit_usage | usage | % |
-| oracledb.logons | logons | events/s |
-| oracledb.physical_disk_read_writes | reads, writes | events/s |
-| oracledb.sorts_on_disks | sorts | events/s |
-| oracledb.full_table_scans | full table scans | events/s |
-| oracledb.database_wait_time_ratio | wait time ratio | % |
-| oracledb.shared_pool_free_memory | free memory | % |
-| oracledb.in_memory_sorts_ratio | in-memory sorts | % |
-| oracledb.sql_service_response_time | time | seconds |
-| oracledb.user_rollbacks | rollbacks | events/s |
-| oracledb.enqueue_timeouts | enqueue timeouts | events/s |
-| oracledb.cache_hit_ration | buffer, cursor, library, row | % |
-| oracledb.global_cache_blocks | corrupted, lost | events/s |
-| oracledb.activity | parse count, execute count, user commits, user rollbacks | events/s |
-| oracledb.wait_time | application, configuration, administrative, concurrency, commit, network, user I/O, system I/O, scheduler, other | ms |
-| oracledb.tablespace_size | a dimension per active tablespace | KiB |
-| oracledb.tablespace_usage | a dimension per active tablespace | KiB |
-| oracledb.tablespace_usage_in_percent | a dimension per active tablespace | % |
-| oracledb.allocated_size | a dimension per active tablespace | B |
-| oracledb.allocated_usage | a dimension per active tablespace | B |
-| oracledb.allocated_usage_in_percent | a dimension per active tablespace | % |
+| oracledb.sessions | session | sessions |
+| oracledb.average_active_sessions | active | sessions |
+| oracledb.sessions_utilization | session_limit | percent |
+| oracledb.current_logons | logons | logons |
+| oracledb.logons | logons | logons/s |
+| oracledb.database_wait_time_ratio | db_wait_time | percent |
+| oracledb.sql_service_response_time | sql_resp_time | seconds |
+| oracledb.enqueue_timeouts | enqueue | timeouts/s |
+| oracledb.disk_io | read, written | bytes/s |
+| oracledb.disk_iops | read, write | operations/s |
+| oracledb.sorts | memory, disk | sorts/s |
+| oracledb.table_scans | short_table, long_table | scans/s |
+| oracledb.cache_hit_ratio | buffer, cursor, library, row | percent |
+| oracledb.global_cache_blocks | corrupted, lost | blocks/s |
+| oracledb.activity | parse, execute, user_commits, user_rollbacks | events/s |
+
+### Per tablespace
+
+These metrics refer to the Tablespace.
+
+Labels:
+
+| Label      | Description     |
+|:-----------|:----------------|
+| tablespace | Tablespace name. |
+
+Metrics:
+
+| Metric | Dimensions | Unit |
+|:------|:----------|:----|
+| oracledb.tablespace_utilization | utilization | percent |
+| oracledb.tablespace_usage | avail, used | bytes |
+
+### Per wait class
+
+These metrics refer to the [Wait Class](https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/classes-of-wait-events.html).
+
+Labels:
+
+| Label      | Description     |
+|:-----------|:----------------|
+| wait_class | [Wait Class name](https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/classes-of-wait-events.html). |
+
+Metrics:
+
+| Metric | Dimensions | Unit |
+|:------|:----------|:----|
+| oracledb.wait_class_wait_time | wait_time | milliseconds |
 
 
 
@@ -102,13 +141,6 @@ There are no alerts configured by default for this integration.
 ## Setup
 
 ### Prerequisites
-
-#### Install the python-oracledb package
-
-You can follow the official guide below to install the required package:
-
-Source: https://python-oracledb.readthedocs.io/en/latest/user_guide/installation.html
-
 
 #### Create a read only user for netdata
 
@@ -124,20 +156,12 @@ GRANT SELECT_CATALOG_ROLE TO netdata;
 ```
 
 
-#### Edit the configuration
-
-Edit the configuration troubleshooting:
-
-1. Provide a valid user for the netdata collector to access the database
-2. Specify the network target this database is listening.
-
-
 
 ### Configuration
 
 #### File
 
-The configuration file name for this integration is `python.d/oracledb.conf`.
+The configuration file name for this integration is `go.d/oracle.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
@@ -145,68 +169,83 @@ Netdata [config directory](/docs/netdata-agent/configuration#the-netdata-config-
 
 ```bash
 cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
-sudo ./edit-config python.d/oracledb.conf
+sudo ./edit-config go.d/oracle.conf
 ```
 #### Options
 
-There are 2 sections:
-
-* Global variables
-* One or more JOBS that can define multiple different instances to monitor.
-
-The following options can be defined globally: priority, penalty, autodetection_retry, update_every, but can also be defined per JOB to override the global values.
-
-Additionally, the following collapsed table contains all the options that can be configured inside a JOB definition.
-
-Every configuration JOB starts with a `job_name` value which will appear in the dashboard, unless a `name` parameter is specified.
+The following options can be defined globally: update_every, autodetection_retry.
 
 
 <details open><summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
-| update_every | Sets the default data collection frequency. | 5 | no |
-| priority | Controls the order of charts at the netdata dashboard. | 60000 | no |
-| autodetection_retry | Sets the job re-check interval in seconds. | 0 | no |
-| penalty | Indicates whether to apply penalty to update_every in case of failures. | yes | no |
-| user | The username for the user account. | no | yes |
-| password | The password for the user account. | no | yes |
-| server | The IP address or hostname (and port) of the Oracle Database Server. | no | yes |
-| service | The Oracle Database service name. To view the services available on your server run this query, `select SERVICE_NAME from gv$session where sid in (select sid from V$MYSTAT)`. | no | yes |
-| protocol | one of the strings "tcp" or "tcps" indicating whether to use unencrypted network traffic or encrypted network traffic | no | yes |
+| update_every | Data collection frequency. | 1 | no |
+| autodetection_retry | Recheck interval in seconds. Zero means no recheck will be scheduled. | 0 | no |
+| dsn | Oracle server DSN (Data Source Name). Format is `oracle://username:password@host:port/service?param1=value1&...&paramN=valueN`. |  | yes |
+| timeout | Query timeout in seconds. | 1 | no |
 
 </details>
 
 #### Examples
 
-##### Basic
+##### TCP socket
 
-A basic example configuration, two jobs described for two databases.
+An example configuration.
+
+<details open><summary>Config</summary>
 
 ```yaml
-local:
-    user: 'netdata'
-    password: 'secret'
-    server: 'localhost:1521'
-    service: 'XE'
-    protocol: 'tcps'
-
-remote:
-    user: 'netdata'
-    password: 'secret'
-    server: '10.0.0.1:1521'
-    service: 'XE'
-    protocol: 'tcps'
+jobs:
+  - name: local
+    dsn: oracle://netdata:secret@127.0.0.1:1521/XE
 
 ```
+</details>
+
+##### TLS connection (TCPS)
+
+An example configuration for TLS connection.
+
+<details open><summary>Config</summary>
+
+```yaml
+jobs:
+  - name: local
+    dsn: 'oracle://netdata:secret@127.0.0.1:1521/XE?ssl=true&ssl verify=true'
+
+```
+</details>
+
+##### Multi-instance
+
+> **Note**: When you define multiple jobs, their names must be unique.
+
+Local and remote instances.
+
+
+<details open><summary>Config</summary>
+
+```yaml
+jobs:
+  - name: local
+    dsn: oracle://netdata:secret@127.0.0.1:1521/XE
+
+  - name: remote
+    dsn: oracle://netdata:secret@203.0.113.0:1521/XE
+
+```
+</details>
+
 
 
 ## Troubleshooting
 
 ### Debug Mode
 
+**Important**: Debug mode is not supported for data collection jobs created via the UI using the Dyncfg feature.
 
-To troubleshoot issues with the `oracledb` collector, run the `python.d.plugin` with the debug option enabled. The output
+To troubleshoot issues with the `oracledb` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
 - Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
@@ -222,10 +261,10 @@ should give you clues as to why the collector isn't working.
   sudo -u netdata -s
   ```
 
-- Run the `python.d.plugin` to debug the collector:
+- Run the `go.d.plugin` to debug the collector:
 
   ```bash
-  ./python.d.plugin oracledb debug trace
+  ./go.d.plugin -d -m oracledb
   ```
 
 ### Getting Logs
