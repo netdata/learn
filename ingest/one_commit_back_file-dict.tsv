@@ -673,6 +673,7 @@ https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/rocketchat.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/rocketchat
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/pagerduty.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/pagerduty
 https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing
+https://github.com/netdata/netdata/edit/master/packaging/windows/WINDOWS_INSTALLER.md	/docs/netdata-agent/installation/windows
 https://github.com/netdata/netdata/edit/master/packaging/docker/README.md	/docs/netdata-agent/installation/docker
 https://github.com/netdata/netdata/edit/master/packaging/makeself/README.md	/docs/netdata-agent/installation/linux/static-binary-linux-packages
 https://github.com/netdata/netdata/edit/master/packaging/maintainers/README.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/package-maintainers
