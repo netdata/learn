@@ -12,7 +12,7 @@ https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kicks
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/packages.md	Native Linux Distribution packages	Published	Netdata Agent/Installation/Linux	Instructions for how to install Netdata using native DEB or RPM packages.
 https://github.com/netdata/netdata/edit/master/packaging/makeself/README.md	Static binary Linux Packages	Published	Netdata Agent/Installation/Linux	Users can build the static 64-bit binary package that we ship with every release of the open-source Netdata Agent for debugging or specialize purposes.
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md	Offline systems	Published	Netdata Agent/Installation/Linux	Install the Netdata Agent on offline/air gapped systems to benefit from real-time, per-second monitoring without connecting to the internet.
-https://github.com/netdata/netdata/edit/master/packaging/windows/WINDOWS_INSTALLER.md	Windows	Published	Netdata Agent	
+https://github.com/netdata/netdata/edit/master/packaging/windows/WINDOWS_INSTALLER.md	Windows	Published	Netdata Agent/Installation	
 https://github.com/netdata/netdata/edit/master/packaging/docker/README.md	Docker	Published	Netdata Agent/Installation	
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kubernetes.md	Kubernetes	Published	Netdata Agent/Installation	Deploy Netdata to monitor a Kubernetes cluster to monitor the health, performance, resource utilization, and application metrics of a Kubernetes cluster in real time.
 https://github.com/netdata/helmchart/edit/master/charts/netdata/README.md	Kubernetes Helm chart reference	Published	Netdata Agent/Installation	
