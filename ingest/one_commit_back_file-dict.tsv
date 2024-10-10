@@ -713,6 +713,9 @@ https://github.com/netdata/netdata/edit/master/src/collectors/profile.plugin/REA
 https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/users.md	/docs/collecting-metrics/processes-and-system-services/users
 https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/user_groups.md	/docs/collecting-metrics/processes-and-system-services/user-groups
 https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/applications.md	/docs/collecting-metrics/processes-and-system-services/applications
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_thermal_zone.md	/docs/collecting-metrics/windows-systems/system-thermal-zone
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_statistics.md	/docs/collecting-metrics/windows-systems/system-statistics
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/memory_statistics.md	/docs/collecting-metrics/windows-systems/memory-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_softirq.md	/docs/collecting-metrics/ebpf/ebpf-softirq
 https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_shm.md	/docs/collecting-metrics/ebpf/ebpf-shm
 https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_vfs.md	/docs/collecting-metrics/ebpf/ebpf-vfs
@@ -790,6 +793,7 @@ https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/telegram.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/telegram
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/netdata_mobile_app.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/netdata-mobile-app
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/splunk.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/splunk
+https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/ilert.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/ilert
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/mattermost.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/mattermost
 https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	/docs/dashboards-and-charts/grafana-data-source-plugin
 https://github.com/netdata/helmchart/edit/master/charts/netdata/README.md	/docs/netdata-agent/installation/kubernetes-helm-chart-reference
