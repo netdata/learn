@@ -175,8 +175,6 @@ def populate_integrations(markdownFiles):
                 # Custom location for Logs integrations, as they normally have a pretty big README that we add as a reference, as a child to the integration's folder.
                 metadf['learn_rel_path'] = metadf['learn_rel_path'] + "/" + metadf['sidebar_label']
 
-                print(metadf['learn_rel_path'])
-
                 logs_entries = pd.concat([logs_entries, metadf])
             else:
                 alerting_agent_entries = pd.concat(

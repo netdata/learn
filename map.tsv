@@ -125,12 +125,12 @@ exporters_integrations
 https://github.com/netdata/netdata/edit/master/src/web/api/exporters/shell/README.md	Shell Scripts	Published	Exporting Metrics	
 				
 				
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/working-with-logs.md	Working with Logs	Published	Working with Logs	
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md	systemd-journal.plugin	Published	Logs/systemd-journal	View and analyze logs available in systemd journal
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md	Forward Secure Sealing (FSS) in Systemd-Journal	Published	Logs/systemd-journal	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/working-with-logs.md	Working with Logs	Unpublished	Working with Logs	
+logs_integrations				
+https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md	Systemd Journal Reference	Published	Logs/Systemd Journal Logs	View and analyze logs available in systemd journal
+https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md	Forward Secure Sealing (FSS) in Systemd-Journal	Published	Logs/Systemd Journal Logs	
 https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md	log2journal	Published	Logs/log2journal	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md	systemd-cat-native	Published	Logs/systemd-cat-native	
-logs_integrations				
 				
 				
 https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md	Top Monitoring (Netdata Functions)	Published	root	Present the Netdata Functions what these are and why they should be used.
