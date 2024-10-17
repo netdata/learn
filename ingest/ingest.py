@@ -114,6 +114,7 @@ def populate_integrations(markdownFiles):
     alerting_agent_entries = pd.DataFrame()
     alerting_cloud_entries = pd.DataFrame()
     authentication_entries = pd.DataFrame()
+    logs_entries = pd.DataFrame()
 
     readmes_first = []
     others_last = []
@@ -170,6 +171,8 @@ def populate_integrations(markdownFiles):
                 # print("in")
                 alerting_cloud_entries = pd.concat(
                     [alerting_cloud_entries, metadf])
+            elif "logs" in file:
+                logs_entries = pd.concat([logs_entries, metadf])
             else:
                 alerting_agent_entries = pd.concat(
                     [alerting_agent_entries, metadf])
@@ -220,6 +223,14 @@ def populate_integrations(markdownFiles):
     lower = map_file.iloc[replace_index[0]+1:]
 
     map_file = pd.concat([upper, exporting_entries.sort_values(
+        by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+
+    replace_index = map_file.loc[map_file['custom_edit_url']
+                                 == "logs_integrations"].index
+    upper = map_file.iloc[:replace_index[0]]
+    lower = map_file.iloc[replace_index[0]+1:]
+
+    map_file = pd.concat([upper, logs_entries.sort_values(
         by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     map_file.to_csv("ingest/generated_map.tsv", sep='\t', index=False)
@@ -401,6 +412,10 @@ def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
     output = ""
     for field in dictionary.loc[dictionary['custom_edit_url'] == key]:
         try:
+            if "integrations/logs/integrations/systemd" in path_to_file:
+                print(dictionary.loc[dictionary['custom_edit_url'] == key])
+
+
             val = dictionary.loc[dictionary['custom_edit_url']
                                  == key][field].values[0]
 
