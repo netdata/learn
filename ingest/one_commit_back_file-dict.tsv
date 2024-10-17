@@ -782,6 +782,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/xenstat.plugin/REA
 https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/okta_sso.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso
 https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/scim.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/scim
 https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/oidc.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/oidc
+https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/systemd_journal_logs.md	/docs/logs/systemd-journal-logs
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/slack.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/slack
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/splunk_victorops.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/splunk-victorops
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/amazon_sns.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/amazon-sns
