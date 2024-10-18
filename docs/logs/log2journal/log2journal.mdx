@@ -2,9 +2,9 @@
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md"
 sidebar_label: "log2journal"
 learn_status: "Published"
-learn_rel_path: "Working with Logs/log2journal"
-sidebar_position: "704000"
-learn_link: "https://learn.netdata.cloud/docs/working-with-logs/log2journal/log2journal"
+learn_rel_path: "Logs/log2journal"
+sidebar_position: "802000"
+learn_link: "https://learn.netdata.cloud/docs/logs/log2journal/log2journal"
 ---
 
 # log2journal
@@ -529,7 +529,7 @@ journalctl -f --namespace=nginx-logs
 
 Netdata will automatically pick the new namespace and present it at the list of sources of the dashboard.
 
-You can also instruct `systemd-cat-native` to log to a remote system, sending the logs to a `systemd-journal-remote` instance running on another server. Check [the manual of systemd-cat-native](/docs/working-with-logs/systemd-cat-native).
+You can also instruct `systemd-cat-native` to log to a remote system, sending the logs to a `systemd-journal-remote` instance running on another server. Check [the manual of systemd-cat-native](/docs/logs/systemd-cat-native).
 
 ## Performance
 
@@ -915,4 +915,4 @@ You can find the most common fields at 'man systemd.journal-fields'.
 
 ## `systemd-cat-native` options
 
-Read [the manual of systemd-cat-native](/docs/working-with-logs/systemd-cat-native).
+Read [the manual of systemd-cat-native](/docs/logs/systemd-cat-native).

@@ -102,7 +102,6 @@ https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-co
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/monitor-hadoop-cluster.md	/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/working-with-logs.md	/docs/working-with-logs
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/machine-learning-and-anomaly-detection
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/view-plan-and-billing.md	/docs/netdata-cloud/netdata-plans-&-billing
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	/docs/netdata-cloud
@@ -576,7 +575,7 @@ https://github.com/netdata/netdata/edit/master/src/libnetdata/storage_number/REA
 https://github.com/netdata/netdata/edit/master/src/libnetdata/threads/README.md	/docs/developer-and-contributor-corner/libnetdata/threads
 https://github.com/netdata/netdata/edit/master/src/libnetdata/statistical/README.md	/docs/developer-and-contributor-corner/libnetdata/statistical-functions
 https://github.com/netdata/netdata/edit/master/src/libnetdata/config/README.md	/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files
-https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md	/docs/working-with-logs/systemd-cat-native
+https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md	/docs/logs/systemd-cat-native
 https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md	/docs/developer-and-contributor-corner/libnetdata/log
 https://github.com/netdata/netdata/edit/master/src/libnetdata/string/README.md	/docs/developer-and-contributor-corner/libnetdata/string
 https://github.com/netdata/netdata/edit/master/src/libnetdata/procfile/README.md	/docs/developer-and-contributor-corner/libnetdata/procfile
@@ -656,7 +655,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/COLLECTORS.md	/doc
 https://github.com/netdata/netdata/edit/master/src/collectors/REFERENCE.md	/docs/collecting-metrics/collectors-configuration
 https://github.com/netdata/netdata/edit/master/src/collectors/README.md	/docs/collecting-metrics
 https://github.com/netdata/netdata/edit/master/src/collectors/ioping.plugin/README.md	/docs/collecting-metrics/synthetic-checks/ioping
-https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md	/docs/working-with-logs/log2journal
+https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md	/docs/logs/log2journal
 https://github.com/netdata/netdata/edit/master/src/collectors/tc.plugin/README.md	/docs/collecting-metrics/linux-systems/network/tc-qos-classes
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/opensips/README.md	/docs/collecting-metrics/telephony-servers/opensips
@@ -694,8 +693,8 @@ https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.loadavg.md	/docs/collecting-metrics/freebsd/vm.loadavg
 https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.stats.sys.v_intr.md	/docs/collecting-metrics/freebsd/vm.stats.sys.v_intr
 https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/active_journal_centralization_guide_no_encryption.md	/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md	/docs/working-with-logs/systemd-journal
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md	/docs/working-with-logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal
+https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md	/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference
+https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md	/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal
 https://github.com/netdata/netdata/edit/master/src/collectors/macos.plugin/README.md	/docs/collecting-metrics/macos-systems/macos
 https://github.com/netdata/netdata/edit/master/src/collectors/idlejitter.plugin/README.md	/docs/collecting-metrics/synthetic-checks/idle-os-jitter
 https://github.com/netdata/netdata/edit/master/src/collectors/slabinfo.plugin/README.md	/docs/collecting-metrics/linux-systems/kernel/linux-kernel-slab-allocator-statistics
@@ -782,6 +781,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/xenstat.plugin/REA
 https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/okta_sso.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso
 https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/scim.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/scim
 https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/oidc.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/oidc
+https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/systemd_journal_logs.md	/docs/logs/systemd-journal-logs
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/slack.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/slack
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/splunk_victorops.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/splunk-victorops
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/amazon_sns.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/amazon-sns
