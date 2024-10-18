@@ -4359,7 +4359,7 @@
 
 [[redirects]]
   from="/docs/data-collection/systemd-journal"
-  to="/docs/working-with-logs/systemd-journal"
+  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/active-journal-centralization-without-encryption"
@@ -4971,23 +4971,19 @@
 
 [[redirects]]
   from="/docs/logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
-  to="/docs/working-with-logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
+  to="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
 
 [[redirects]]
   from="/docs/logs/systemd-journal"
-  to="/docs/working-with-logs/systemd-journal"
+  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
 
 [[redirects]]
   from="/docs/logs/systemd-cat-native"
-  to="/docs/working-with-logs/systemd-cat-native"
+  to="/docs/logs/systemd-cat-native"
 
 [[redirects]]
   from="/docs/logs/log2journal"
-  to="/docs/working-with-logs/log2journal"
-
-[[redirects]]
-  from="/docs/logs"
-  to="/docs/working-with-logs"
+  to="/docs/logs/log2journal"
 
 [[redirects]]
   from="/docs/exporting/wavefront"
@@ -5964,10 +5960,6 @@
 [[redirects]]
   from="/docs/alerting"
   to="/docs/alerts-&-notifications"
-
-[[redirects]]
-  from="/docs/working-with-logs/logs"
-  to="/docs/working-with-logs"
 
 [[redirects]]
   from="/docs/netdata-agent/configuration/cheatshet"
@@ -8280,5 +8272,21 @@
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
+
+[[redirects]]
+  from="/docs/working-with-logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
+  to="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
+
+[[redirects]]
+  from="/docs/working-with-logs/systemd-journal"
+  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+
+[[redirects]]
+  from="/docs/working-with-logs/systemd-cat-native"
+  to="/docs/logs/systemd-cat-native"
+
+[[redirects]]
+  from="/docs/working-with-logs/log2journal"
+  to="/docs/logs/log2journal"
 
 # section: dynamic << END
