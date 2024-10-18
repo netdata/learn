@@ -887,80 +887,64 @@ def convert_github_links(path_to_file, input_dict):
 
 def automate_sidebar_position(dictionary):
     """
-    This function returns a column for the map dataframe, that assigns a certain number to every entry.
+    Dynamically assigns position numbers to each file entry based on its depth in the directory.
+    More room is provided between categories to accommodate up to 500 files per level.
 
-    There are 3 different rules
-
-    Level 1 -> 100_000 gap between the top categories
-    Level 2 -> 2_000 gap between the level two categories
-    Level 3 -> 40 gap between the level three categories
-    Level 4 -> categories and documents at this level have no gap
+    Levels:
+    - Level 1: 100,000 gap between categories
+    - Level 2: 2,000 gap between subcategories (allows room for 500+ files per category)
+    - Level 3: 500 gap between sub-subcategories
+    - Level 4: Serial numbering within Level 3 (increments by 10 for documents)
     """
 
     print("### Automating sidebar_position ###", '\n')
 
     position_array = []
 
-    # counters
-    counter_one = 0
-    counter_two = 0
-    counter_three = 0
-    counter_four = 0
+    # Initial counters for each level
+    counter_one = 100_000
+    serial_two = 0  # Serial counter for level 2
+    serial_three = 0  # Serial counter for level 3
+    serial_four = 0  # Serial counter for level 4
 
-    # Start from the first entry and keep it as the previous
-    split = dictionary['learn_rel_path'][0].split("/")
-    try:
-        previous_first_level = split[0]
-        previous_second_level = split[1]
-        previous_third_level = split[2]
-    except IndexError:
-        pass
+    previous_levels = ["", "", ""]
 
-    # For every entry, check for every level of the path whether or not it is different.
-    # If it is, increment that level's counter by the specified amount.
-    for path, i in zip(dictionary['learn_rel_path'], range(0, len(dictionary))):
+    for path in dictionary['learn_rel_path']:
         if str(path) != "nan":
-            split = str(path+f"/{i}").split("/")
+            split = str(path).split("/")
 
-            # Split the current path
-            try:
-                current_first_level = split[0]
-                current_second_level = split[1]
-                current_third_level = split[2]
-            except IndexError:
-                pass
+            # Ensure there are at least 3 levels (for category and subcategories)
+            current_levels = split + [""] * (3 - len(split))
 
-            # This works more or less like a Greek abacus
-            try:
-                if current_first_level != previous_first_level:
-                    counter_one += 100000
-                    counter_two = 0
-                    counter_three = 0
-                    counter_four = 0
-                elif current_second_level != previous_second_level:
-                    counter_two += 2000
-                    counter_three = 0
-                    counter_four = 0
-                elif current_third_level != previous_third_level:
-                    counter_three += 40
-                    counter_four = 0
-                else:
-                    counter_four += 1
+            # Update counters based on level changes
+            if current_levels[0] != previous_levels[0]:
+                # New Level 1 category, reset counters
+                counter_one += 100_000
+                serial_two = 0
+                serial_three = 0
+                serial_four = 0
+            elif current_levels[1] != previous_levels[1]:
+                # New Level 2 category, increment serial for Level 2
+                serial_two += 2_000  # Allow 2,000 gap for each subcategory
+                serial_three = 0  # Reset serial for Level 3
+                serial_four = 0  # Reset serial for Level 4
+            elif current_levels[2] != previous_levels[2]:
+                # New Level 3 category, increment serial for Level 3
+                serial_three += 500  # Allow 500 gap for files within each subcategory
+                serial_four = 0  # Reset serial for Level 4
+            else:
+                # Increment serial for Level 4
+                serial_four += 10  # Serial for documents within Level 3
 
-            except UnboundLocalError:
-                pass
+            previous_levels = current_levels
 
-            try:
-                previous_first_level = current_first_level
-                previous_second_level = current_second_level
-                previous_third_level = current_third_level
-            except UnboundLocalError:
-                pass
+            # Calculate the final position based on the counters
+            position_value = counter_one + serial_two + serial_three + serial_four
 
-            position_array.append(
-                counter_one+counter_two+counter_three+counter_four)
+            # Append the calculated position
+            position_array.append(position_value)
         else:
-            # If for any reason the path is nan, just add a -1, this is very unlikely that it will be the case
+            # If the path is nan, return -1
             position_array.append(-1)
 
     return position_array
