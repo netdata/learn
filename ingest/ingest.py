@@ -114,6 +114,7 @@ def populate_integrations(markdownFiles):
     alerting_agent_entries = pd.DataFrame()
     alerting_cloud_entries = pd.DataFrame()
     authentication_entries = pd.DataFrame()
+    logs_entries = pd.DataFrame()
 
     readmes_first = []
     others_last = []
@@ -170,6 +171,11 @@ def populate_integrations(markdownFiles):
                 # print("in")
                 alerting_cloud_entries = pd.concat(
                     [alerting_cloud_entries, metadf])
+            elif "logs" in file:
+                # Custom location for Logs integrations, as they normally have a pretty big README that we add as a reference, as a child to the integration's folder.
+                metadf['learn_rel_path'] = metadf['learn_rel_path'] + "/" + metadf['sidebar_label']
+
+                logs_entries = pd.concat([logs_entries, metadf])
             else:
                 alerting_agent_entries = pd.concat(
                     [alerting_agent_entries, metadf])
@@ -220,6 +226,14 @@ def populate_integrations(markdownFiles):
     lower = map_file.iloc[replace_index[0]+1:]
 
     map_file = pd.concat([upper, exporting_entries.sort_values(
+        by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+
+    replace_index = map_file.loc[map_file['custom_edit_url']
+                                 == "logs_integrations"].index
+    upper = map_file.iloc[:replace_index[0]]
+    lower = map_file.iloc[replace_index[0]+1:]
+
+    map_file = pd.concat([upper, logs_entries.sort_values(
         by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     map_file.to_csv("ingest/generated_map.tsv", sep='\t', index=False)
