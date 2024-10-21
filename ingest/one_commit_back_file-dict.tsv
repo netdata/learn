@@ -782,6 +782,7 @@ https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication
 https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/scim.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/scim
 https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/oidc.md	/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/oidc
 https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/systemd_journal_logs.md	/docs/logs/systemd-journal-logs
+https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/windows_event_logs.md	/docs/logs/windows-event-logs
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/slack.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/slack
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/splunk_victorops.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/splunk-victorops
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/amazon_sns.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/amazon-sns
