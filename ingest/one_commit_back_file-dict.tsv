@@ -501,6 +501,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/smartc
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/proxysql/README.md	/docs/collecting-metrics/databases/proxysql
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/consul/README.md	/docs/collecting-metrics/service-discovery-/-registry/consul
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/typesense/README.md	/docs/collecting-metrics/search-engines/typesense
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/maxscale/README.md	/docs/collecting-metrics/databases/maxscale
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/postgres/README.md	/docs/collecting-metrics/databases/postgresql
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/exim/README.md	/docs/collecting-metrics/mail-servers/exim
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/rabbitmq/README.md	/docs/collecting-metrics/message-brokers/rabbitmq
