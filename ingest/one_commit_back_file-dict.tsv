@@ -481,6 +481,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/storcl
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/vernemq/README.md	/docs/collecting-metrics/message-brokers/vernemq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/zfspool/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/zfs-pools
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/logind/README.md	/docs/collecting-metrics/systemd/systemd-logind-users
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/spigotmc/README.md	/docs/collecting-metrics/gaming/spigotmc
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/megacli/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-megaraid
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/mongodb/README.md	/docs/collecting-metrics/databases/mongodb
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/modules/freeradius/README.md	/docs/collecting-metrics/authentication-and-authorization/freeradius
@@ -737,7 +738,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integr
 https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_socket.md	/docs/collecting-metrics/ebpf/ebpf-socket
 https://github.com/netdata/netdata/edit/master/src/collectors/diskspace.plugin/README.md	/docs/collecting-metrics/linux-systems/disk-space
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/python.d.plugin
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/spigotmc/README.md	/docs/collecting-metrics/gaming/spigotmc
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/zscores/README.md	/docs/collecting-metrics/other/python.d-zscores
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am2320/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/am2320
