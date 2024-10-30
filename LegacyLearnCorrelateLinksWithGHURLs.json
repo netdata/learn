@@ -2288,5 +2288,9 @@
     "https://learn.netdata.cloud/docs/working-with-logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal": "https://github.com/netdata/netdata/blob/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md",
     "https://learn.netdata.cloud/docs/working-with-logs/systemd-journal": "https://github.com/netdata/netdata/blob/master/src/collectors/systemd-journal.plugin/README.md",
     "https://learn.netdata.cloud/docs/working-with-logs/systemd-cat-native": "https://github.com/netdata/netdata/blob/master/src/libnetdata/log/systemd-cat-native.md",
-    "https://learn.netdata.cloud/docs/working-with-logs/log2journal": "https://github.com/netdata/netdata/blob/master/src/collectors/log2journal/README.md"
+    "https://learn.netdata.cloud/docs/working-with-logs/log2journal": "https://github.com/netdata/netdata/blob/master/src/collectors/log2journal/README.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/maintenance/update-netdata-agents": "https://github.com/netdata/netdata/blob/master/packaging/installer/UPDATE.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/maintenance/uninstall-netdata-agents": "https://github.com/netdata/netdata/blob/master/packaging/installer/UNINSTALL.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/start-stop-restart.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/maintenance/reinstall-netdata-agents": "https://github.com/netdata/netdata/blob/master/packaging/installer/REINSTALL.md"
 }
