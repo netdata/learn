@@ -1,8 +1,12 @@
 # Netdata Learn
 
 This repository hosts the code for Netdata's documentation site, **Netdata Learn** built on [Docusaurus](https://docusaurus.io/).
-Docusaurus is a free, open-source project maintained by Facebook.
-The site is then deployed automatically to Netlify from the latest commit of the master branch, which we also use to maintain certain redirects.
+
+> **Important**
+>
+> This repo is a **mirror**! Means any changes made here on the `docs/` directory will be overwritten from the [`netdata/netdata`](https://github.com/netdata/netdata)
+
+The site is then deployed automatically to Netlify from the latest commit of the [`netdata/netdata`](https://github.com/netdata/netdata) master branch, which we also use to maintain certain redirects.
 
 ## Contributing to Netdata Learn
 
