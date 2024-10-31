@@ -810,10 +810,6 @@
   to="/docs/collecting-metrics/hardware-devices-and-sensors/1-wire-sensors"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/zscores"
-  to="/docs/collecting-metrics/other/python.d-zscores"
-
-[[redirects]]
   from="/docs/agent/collectors/reference"
   to="/docs/collecting-metrics/collectors-configuration"
 
@@ -1838,10 +1834,6 @@
   to="/docs/collecting-metrics/synthetic-checks/http-endpoints"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Netdata/zscores"
-  to="/docs/collecting-metrics/other/python.d-zscores"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Message%20Brokers/VerneMQ"
   to="/docs/collecting-metrics/message-brokers/vernemq"
 
@@ -2688,10 +2680,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/http-endpoints"
   to="/docs/collecting-metrics/synthetic-checks/http-endpoints"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/netdata/zscores"
-  to="/docs/collecting-metrics/other/python.d-zscores"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/message-brokers/vernemq"
@@ -4022,10 +4010,6 @@
   to="/docs/collecting-metrics/linux-systems/firewall/netfilter"
 
 [[redirects]]
-  from="/docs/data-collection/netdata-specific/zscores"
-  to="/docs/collecting-metrics/other/python.d-zscores"
-
-[[redirects]]
   from="/docs/data-collection/message-brokers/pulsar"
   to="/docs/collecting-metrics/message-brokers/apache-pulsar"
 
@@ -5300,10 +5284,6 @@
 [[redirects]]
   from="/docs/data-collection/processes-and-system-services/applications"
   to="/docs/collecting-metrics/processes-and-system-services/applications"
-
-[[redirects]]
-  from="/docs/data-collection/other/python.d-zscores"
-  to="/docs/collecting-metrics/other/python.d-zscores"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything"
@@ -7931,39 +7911,39 @@
 
 [[redirects]]
   from="/docs/agent/packaging/installer/reinstall"
-  to="/docs/netdata-agent/maintenance/reinstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/reinstall"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/uninstall"
-  to="/docs/netdata-agent/maintenance/uninstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/uninstall"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/update"
-  to="/docs/netdata-agent/maintenance/update-netdata-agents"
+  to="/docs/netdata-agent/maintenance/update"
 
 [[redirects]]
   from="/docs/installation/update-netdata"
-  to="/docs/netdata-agent/maintenance/update-netdata-agents"
+  to="/docs/netdata-agent/maintenance/update"
 
 [[redirects]]
   from="/docs/installation/uninstall-netdata"
-  to="/docs/netdata-agent/maintenance/uninstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/uninstall"
 
 [[redirects]]
   from="/docs/installation/reinstall-netdata"
-  to="/docs/netdata-agent/maintenance/reinstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/reinstall"
 
 [[redirects]]
   from="/docs/maintenance-operations-on-netdata-agents/update-netdata-agents"
-  to="/docs/netdata-agent/maintenance/update-netdata-agents"
+  to="/docs/netdata-agent/maintenance/update"
 
 [[redirects]]
   from="/docs/maintenance-operations-on-netdata-agents/uninstall-netdata-agents"
-  to="/docs/netdata-agent/maintenance/uninstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/uninstall"
 
 [[redirects]]
   from="/docs/maintenance-operations-on-netdata-agents/reinstall-netdata-agents"
-  to="/docs/netdata-agent/maintenance/reinstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/reinstall"
 
 [[redirects]]
   from="/docs/maintenance-operations-on-netdata-agents"
@@ -8288,5 +8268,21 @@
 [[redirects]]
   from="/docs/working-with-logs/log2journal"
   to="/docs/logs/log2journal"
+
+[[redirects]]
+  from="/docs/netdata-agent/maintenance/update-netdata-agents"
+  to="/docs/netdata-agent/maintenance/update"
+
+[[redirects]]
+  from="/docs/netdata-agent/maintenance/uninstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/uninstall"
+
+[[redirects]]
+  from="/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents"
+  to="/docs/netdata-agent/maintenance/service-control"
+
+[[redirects]]
+  from="/docs/netdata-agent/maintenance/reinstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/reinstall"
 
 # section: dynamic << END

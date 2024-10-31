@@ -6,10 +6,10 @@ https://github.com/netdata/netdata/edit/master/packaging/makeself/README.md	/doc
 https://github.com/netdata/netdata/edit/master/packaging/docker/README.md	/docs/netdata-agent/installation/docker
 https://github.com/netdata/netdata/edit/master/packaging/windows/WINDOWS_INSTALLER.md	/docs/netdata-agent/installation/windows
 https://github.com/netdata/netdata/edit/master/packaging/maintainers/README.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/package-maintainers
-https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	/docs/netdata-agent/maintenance/update-netdata-agents
+https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	/docs/netdata-agent/maintenance/update
 https://github.com/netdata/netdata/edit/master/packaging/installer/README.md	/docs/netdata-agent/installation
-https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	/docs/netdata-agent/maintenance/uninstall-netdata-agents
-https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	/docs/netdata-agent/maintenance/reinstall-netdata-agents
+https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	/docs/netdata-agent/maintenance/uninstall
+https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	/docs/netdata-agent/maintenance/reinstall
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freebsd.md	/docs/netdata-agent/installation/freebsd
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/ansible.md	/docs/netdata-agent/installation/ansible
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md	/docs/netdata-agent/installation/linux/offline-systems
@@ -67,7 +67,7 @@ https://github.com/netdata/netdata/edit/master/docs/observability-centralization
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/README.md	/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates.md	/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/securing-netdata-agents.md	/docs/netdata-agent/securing-netdata-agents
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/start-stop-restart.md	/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/start-stop-restart.md	/docs/netdata-agent/maintenance/service-control
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/versions-and-platforms.md	/docs/netdata-agent/versions-&-platforms
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/README.md	/docs/netdata-agent
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/backup-and-restore-an-agent.md	/docs/netdata-agent/backup-and-restore-an-agent
@@ -738,7 +738,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integr
 https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_socket.md	/docs/collecting-metrics/ebpf/ebpf-socket
 https://github.com/netdata/netdata/edit/master/src/collectors/diskspace.plugin/README.md	/docs/collecting-metrics/linux-systems/disk-space
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/python.d.plugin
-https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/zscores/README.md	/docs/collecting-metrics/other/python.d-zscores
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md	/docs/collecting-metrics/generic-collecting-metrics/pandas
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am2320/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/am2320
 https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/go_expvar/README.md	/docs/collecting-metrics/apm/go-applications-expvar

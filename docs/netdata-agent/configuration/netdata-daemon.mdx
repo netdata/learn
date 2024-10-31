@@ -11,7 +11,7 @@ learn_link: "https://learn.netdata.cloud/docs/netdata-agent/configuration/netdat
 
 The Netdata daemon is practically a synonym for the Netdata Agent, as it controls its
 entire operation. We support various methods to
-[start, stop, or restart the daemon](/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents).
+[start, stop, or restart the daemon](/docs/netdata-agent/maintenance/service-control).
 
 This document provides some basic information on the command line options, log files, and how to debug and troubleshoot
 
@@ -287,7 +287,7 @@ all programs), edit `netdata.conf` and set:
   process nice level = -1
 ```
 
-then [restart Netdata](/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents):
+then [restart Netdata](/docs/netdata-agent/maintenance/service-control):
 
 #### Example 2: Netdata with nice -1 on systemd systems
 
