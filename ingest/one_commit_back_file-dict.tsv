@@ -9,7 +9,6 @@ https://github.com/netdata/netdata/edit/master/packaging/maintainers/README.md	/
 https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	/docs/netdata-agent/maintenance/update
 https://github.com/netdata/netdata/edit/master/packaging/installer/README.md	/docs/netdata-agent/installation
 https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	/docs/netdata-agent/maintenance/uninstall
-https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	/docs/netdata-agent/maintenance/reinstall
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freebsd.md	/docs/netdata-agent/installation/freebsd
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/ansible.md	/docs/netdata-agent/installation/ansible
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md	/docs/netdata-agent/installation/linux/offline-systems
