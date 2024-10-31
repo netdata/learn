@@ -7910,10 +7910,6 @@
   to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
 
 [[redirects]]
-  from="/docs/agent/packaging/installer/reinstall"
-  to="/docs/netdata-agent/maintenance/reinstall"
-
-[[redirects]]
   from="/docs/agent/packaging/installer/uninstall"
   to="/docs/netdata-agent/maintenance/uninstall"
 
@@ -7930,20 +7926,12 @@
   to="/docs/netdata-agent/maintenance/uninstall"
 
 [[redirects]]
-  from="/docs/installation/reinstall-netdata"
-  to="/docs/netdata-agent/maintenance/reinstall"
-
-[[redirects]]
   from="/docs/maintenance-operations-on-netdata-agents/update-netdata-agents"
   to="/docs/netdata-agent/maintenance/update"
 
 [[redirects]]
   from="/docs/maintenance-operations-on-netdata-agents/uninstall-netdata-agents"
   to="/docs/netdata-agent/maintenance/uninstall"
-
-[[redirects]]
-  from="/docs/maintenance-operations-on-netdata-agents/reinstall-netdata-agents"
-  to="/docs/netdata-agent/maintenance/reinstall"
 
 [[redirects]]
   from="/docs/maintenance-operations-on-netdata-agents"
@@ -8280,9 +8268,5 @@
 [[redirects]]
   from="/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents"
   to="/docs/netdata-agent/maintenance/service-control"
-
-[[redirects]]
-  from="/docs/netdata-agent/maintenance/reinstall-netdata-agents"
-  to="/docs/netdata-agent/maintenance/reinstall"
 
 # section: dynamic << END
