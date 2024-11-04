@@ -70,11 +70,11 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/start-stop-res
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/versions-and-platforms.md	/docs/netdata-agent/versions-&-platforms
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/README.md	/docs/netdata-agent
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/backup-and-restore-an-agent.md	/docs/netdata-agent/backup-and-restore-an-agent
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md	/docs/netdata-agent/sizing-netdata-agents/cpu-requirements
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/ram-requirements.md	/docs/netdata-agent/sizing-netdata-agents/ram-requirements
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements.md	/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/disk-requirements-and-retention.md	/docs/netdata-agent/sizing-netdata-agents/disk-requirements-&-retention
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/README.md	/docs/netdata-agent/sizing-netdata-agents
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md	/docs/netdata-agent/resource-utilization/cpu
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/ram-requirements.md	/docs/netdata-agent/resource-utilization/ram
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements.md	/docs/netdata-agent/resource-utilization/bandwidth
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/disk-requirements-and-retention.md	/docs/netdata-agent/resource-utilization/disk-&-retention
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/README.md	/docs/netdata-agent/resource-utilization
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/dynamic-configuration.md	/docs/netdata-agent/configuration/dynamic-configuration-manager
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts.md	/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/common-configuration-changes.md	/docs/netdata-agent/configuration/common-configuration-changes
