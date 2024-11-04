@@ -2292,5 +2292,10 @@
     "https://learn.netdata.cloud/docs/netdata-agent/maintenance/update-netdata-agents": "https://github.com/netdata/netdata/blob/master/packaging/installer/UPDATE.md",
     "https://learn.netdata.cloud/docs/netdata-agent/maintenance/uninstall-netdata-agents": "https://github.com/netdata/netdata/blob/master/packaging/installer/UNINSTALL.md",
     "https://learn.netdata.cloud/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/start-stop-restart.md",
-    "https://learn.netdata.cloud/docs/netdata-agent/maintenance/reinstall-netdata-agents": "https://github.com/netdata/netdata/blob/master/packaging/installer/REINSTALL.md"
+    "https://learn.netdata.cloud/docs/netdata-agent/maintenance/reinstall-netdata-agents": "https://github.com/netdata/netdata/blob/master/packaging/installer/REINSTALL.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/sizing-netdata-agents/ram-requirements": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/sizing-netdata-agents/ram-requirements.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/sizing-netdata-agents/disk-requirements-&-retention": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/sizing-netdata-agents/disk-requirements-and-retention.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/sizing-netdata-agents/cpu-requirements": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/sizing-netdata-agents": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/sizing-netdata-agents/README.md"
 }

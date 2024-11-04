@@ -8269,4 +8269,24 @@
   from="/docs/netdata-agent/maintenance/starting-and-stopping-netdata-agents"
   to="/docs/netdata-agent/maintenance/service-control"
 
+[[redirects]]
+  from="/docs/netdata-agent/sizing-netdata-agents/ram-requirements"
+  to="/docs/netdata-agent/resource-utilization/ram"
+
+[[redirects]]
+  from="/docs/netdata-agent/sizing-netdata-agents/disk-requirements-&-retention"
+  to="/docs/netdata-agent/resource-utilization/disk-&-retention"
+
+[[redirects]]
+  from="/docs/netdata-agent/sizing-netdata-agents/cpu-requirements"
+  to="/docs/netdata-agent/resource-utilization/cpu"
+
+[[redirects]]
+  from="/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements"
+  to="/docs/netdata-agent/resource-utilization/bandwidth"
+
+[[redirects]]
+  from="/docs/netdata-agent/sizing-netdata-agents"
+  to="/docs/netdata-agent/resource-utilization"
+
 # section: dynamic << END
