@@ -31,11 +31,11 @@ https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	Upd
 https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	Reinstall	Published	Netdata Agent/Maintenance	Troubleshooting installation issues or force an update of the Netdata Agent by reinstalling it using the same method you used during installation.
 https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	Uninstall	Published	Netdata Agent/Maintenance	If you are no longer interested in using the Netdata Agent, use the self-contained uninstaller to remove all traces of binaries and configuration files.
 				
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/README.md	Sizing Netdata Agents	Published	Netdata Agent/Sizing Netdata Agents	
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md	CPU Requirements	Published	Netdata Agent/Sizing Netdata Agents	
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/ram-requirements.md	RAM Requirements	Published	Netdata Agent/Sizing Netdata Agents	
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements.md	Bandwidth Requirements	Published	Netdata Agent/Sizing Netdata Agents	
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/disk-requirements-and-retention.md	Disk Requirements & Retention	Published	Netdata Agent/Sizing Netdata Agents	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/README.md	Resource Utilization	Published	Netdata Agent/Resource Utilization	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md	CPU	Published	Netdata Agent/Resource Utilization	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/ram-requirements.md	RAM	Published	Netdata Agent/Resource Utilization	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements.md	Bandwidth	Published	Netdata Agent/Resource Utilization	
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/disk-requirements-and-retention.md	Disk & Retention	Published	Netdata Agent/Resource Utilization	
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/README.md	Configuration	Published	Netdata Agent/Configuration	Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings.
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/dynamic-configuration.md	Dynamic Configuration Manager	Published	Netdata Agent/Configuration	
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/cheatsheet.md	Cheatsheet	Published	Netdata Agent/Configuration	Connecting an Agent to the Cloud allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud via the encrypted Agent-Cloud link (ACLK).'
