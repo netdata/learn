@@ -1,23 +1,35 @@
 import React from 'react';
 
-export const ReleaseVersion = '1.47.0';
+export const ReleaseVersion = '2.0.0';
 
-export const ReleaseDate = 'Aug 22, 2024';
+export const ReleaseDate = 'Nov 7, 2024';
 
 export const ReleaseNotes = [
-	'SNMP Plugin Enhancements',
-	'Migration of Python Plugins to Go',
-	'Introduction of Identity Management Integrations with SCIM',
-	'Enhancement of Reachability Notifications',
-	'MS Teams Notification Integration using MS Workflows',
-	'Automatic Removal of Stale Nodes',
-	'IPv6-Only Environment Support',
-	'Stale Alerts Fix',
+	'Native Windows Support',
+	'Process Monitoring: Simplified and Enhanced',
+	'Network Monitoring',
+	'Netdata SSO',
+	'Enterprise SSO - Enhanced SP Initiated SSO Flow',
+	'Netdata Referral Program',
+	'Alerts Silencing Recurrence',
+	'Configurable Timeouts on Reachability Notifications',
 ];
 
 
 
 export const News = [
+	{
+		title: <>Netdata release 2.0.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v2.0.0',
+		date: 'Nov 7, 2024',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v2.0.0 release notes to learn about our newest features and improvements. 
+
+			</>
+		),	
+	},
 	{
 		title: <>Netdata release 1.47.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.47.0',
