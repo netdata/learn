@@ -85,6 +85,10 @@
   from="/guides"
   to="/docs"
 
+[[redirects]]
+  from="/docs/collecting-metrics/windows-systems/windows"
+  to="/docs/netdata-agent/installation/windows"
+
 # section: static << END
 
 # section: dynamic << START
