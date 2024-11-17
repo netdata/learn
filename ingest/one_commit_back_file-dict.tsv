@@ -715,6 +715,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integr
 https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/user_groups.md	/docs/collecting-metrics/processes-and-system-services/user-groups
 https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/applications.md	/docs/collecting-metrics/processes-and-system-services/applications
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_thermal_zone.md	/docs/collecting-metrics/windows-systems/system-thermal-zone
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/iis.md	/docs/collecting-metrics/windows-systems/iis
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_statistics.md	/docs/collecting-metrics/windows-systems/system-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/memory_statistics.md	/docs/collecting-metrics/windows-systems/memory-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/windows-events.plugin/README.md	/docs/logs/windows-event-logs/windows-events-plugin-reference
