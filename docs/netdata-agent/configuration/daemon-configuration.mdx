@@ -25,7 +25,7 @@ adapt the general behavior of Netdata, in great detail. You can find all these s
 accessing the URL `https://netdata.server.hostname:19999/netdata.conf`. For example check the configuration file
 of [netdata.firehol.org](http://netdata.firehol.org/netdata.conf). HTTP access to this file is limited by default to
 [private IPs](https://en.wikipedia.org/wiki/Private_network), via
-the [web server access lists](/docs/netdata-agent/securing-netdata-agents/web-server#access-lists).
+the [web server access lists](/docs/netdata-agent/configuration/securing-agents/web-server-reference#access-lists).
 
 `netdata.conf` has sections stated with `[section]`. You will see the following sections:
 
@@ -38,7 +38,7 @@ the [web server access lists](/docs/netdata-agent/securing-netdata-agents/web-se
 6. `[sqlite]` to [configure](#sqlite-section-options) the [Netdata daemon](/docs/netdata-agent/configuration/netdata-daemon) SQLite settings.
 7. `[ml]` to configure settings for [machine learning](/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection).
 8. `[health]` to [configure](#health-section-options) general settings for [health monitoring](/docs/alerts-&-notifications).
-9. `[web]` to [configure the web server](/docs/netdata-agent/securing-netdata-agents/web-server).
+9. `[web]` to [configure the web server](/docs/netdata-agent/configuration/securing-agents/web-server-reference).
 10. `[registry]` for the [Netdata registry](/docs/netdata-agent/registry).
 11. `[global statistics]` for the [Netdata registry](/docs/netdata-agent/registry).
 12. `[statsd]` for the general settings of the [stats.d.plugin](https://github.com/netdata/netdata/blob/master/src/collectors/statsd.plugin/README.md).
@@ -182,7 +182,7 @@ monitoring](/docs/alerts-&-notifications).
 
 ### [web] section options
 
-Refer to the [web server documentation](/docs/netdata-agent/securing-netdata-agents/web-server)
+Refer to the [web server documentation](/docs/netdata-agent/configuration/securing-agents/web-server-reference)
 
 ### [plugins] section options
 

@@ -1143,27 +1143,27 @@
 
 [[redirects]]
   from="/docs/agent/running-behind-apache"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/apache"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/apache"
 
 [[redirects]]
   from="/docs/agent/running-behind-caddy"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/caddy"
 
 [[redirects]]
   from="/docs/agent/running-behind-h2o"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/h2o"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/h2o"
 
 [[redirects]]
   from="/docs/agent/running-behind-haproxy"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/haproxy"
 
 [[redirects]]
   from="/docs/agent/running-behind-lighttpd"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
 
 [[redirects]]
   from="/docs/agent/running-behind-nginx"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/nginx"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/nginx"
 
 [[redirects]]
   from="/docs/agent/tests/health_mgmtapi"
@@ -1259,7 +1259,7 @@
 
 [[redirects]]
   from="/docs/agent/web/server"
-  to="/docs/netdata-agent/securing-netdata-agents/web-server"
+  to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
 
 [[redirects]]
   from="/docs/configure/common-changes"
@@ -1387,11 +1387,11 @@
 
 [[redirects]]
   from="/docs/configure/secure-nodes"
-  to="/docs/netdata-agent/securing-netdata-agents"
+  to="/docs/netdata-agent/configuration/securing-agents"
 
 [[redirects]]
   from="/docs/dashboard/reference-web-server"
-  to="/docs/netdata-agent/securing-netdata-agents/web-server"
+  to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
 
 [[redirects]]
   from="/docs/monitor/configure-alarms"
@@ -1491,7 +1491,7 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes"
-  to="/docs/netdata-agent/securing-netdata-agents"
+  to="/docs/netdata-agent/configuration/securing-agents"
 
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics"
@@ -2387,7 +2387,7 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/web-server"
-  to="/docs/netdata-agent/securing-netdata-agents/web-server"
+  to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/role-based-access-model"
@@ -2395,31 +2395,31 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/nginx"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/nginx"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/nginx"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/lighttpd-v1.4.x"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/haproxy"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/haproxy"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/h2o"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/h2o"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/h2o"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/caddy"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/caddy"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies/apache"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/apache"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/apache"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/reverse-proxies"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/registry"
@@ -3095,7 +3095,7 @@
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/web-server"
-  to="/docs/netdata-agent/securing-netdata-agents/web-server"
+  to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/role-based-access-model"
@@ -3103,31 +3103,31 @@
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/nginx"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/nginx"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/nginx"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/haproxy"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/haproxy"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/h2o"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/h2o"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/h2o"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/caddy"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/caddy"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies/apache"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/apache"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/apache"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/reverse-proxies"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/registry"
@@ -3143,7 +3143,7 @@
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents"
-  to="/docs/netdata-agent/securing-netdata-agents"
+  to="/docs/netdata-agent/configuration/securing-agents"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/organize-systems-metrics-and-alerts"
@@ -4643,7 +4643,7 @@
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/web-server"
-  to="/docs/netdata-agent/securing-netdata-agents/web-server"
+  to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/role-based-access-model"
@@ -4651,31 +4651,31 @@
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/reverse-proxies/nginx"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/nginx"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/nginx"
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/reverse-proxies/haproxy"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/haproxy"
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/reverse-proxies/h2o"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/h2o"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/h2o"
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/reverse-proxies/caddy"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/caddy"
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/reverse-proxies/apache"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/apache"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/apache"
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/reverse-proxies"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy"
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/registry"
@@ -4691,7 +4691,7 @@
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents"
-  to="/docs/netdata-agent/securing-netdata-agents"
+  to="/docs/netdata-agent/configuration/securing-agents"
 
 [[redirects]]
   from="/docs/configuring/organize-systems-metrics-and-alerts"
@@ -5131,7 +5131,7 @@
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/web-server"
-  to="/docs/netdata-agent/securing-netdata-agents/web-server"
+  to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/role-based-access-model"
@@ -5139,31 +5139,31 @@
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/nginx"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/nginx"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/nginx"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/lighttpd-v1.4.x"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/haproxy"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/haproxy"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/h2o"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/h2o"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/h2o"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/caddy"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/caddy"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies/apache"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/apache"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/apache"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/reverse-proxies"
-  to="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/registry"
@@ -5179,7 +5179,7 @@
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents"
-  to="/docs/netdata-agent/securing-netdata-agents"
+  to="/docs/netdata-agent/configuration/securing-agents"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/organize-systems-metrics-and-alerts"
@@ -8292,5 +8292,41 @@
 [[redirects]]
   from="/docs/netdata-agent/sizing-netdata-agents"
   to="/docs/netdata-agent/resource-utilization"
+
+[[redirects]]
+  from="/docs/netdata-agent/securing-netdata-agents/web-server"
+  to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
+
+[[redirects]]
+  from="/docs/netdata-agent/securing-netdata-agents"
+  to="/docs/netdata-agent/configuration/securing-agents"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/nginx"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/nginx"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/lighttpd-v1.4.x"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/haproxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/haproxy"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/h2o"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/h2o"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/caddy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/caddy"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/apache"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/apache"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy"
 
 # section: dynamic << END
