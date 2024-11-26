@@ -36,14 +36,11 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/ram-requirements.md	RAM	Published	Netdata Agent/Resource Utilization	
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements.md	Bandwidth	Published	Netdata Agent/Resource Utilization	
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/disk-requirements-and-retention.md	Disk & Retention	Published	Netdata Agent/Resource Utilization	
+				
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/README.md	Configuration	Published	Netdata Agent/Configuration	Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings.
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/dynamic-configuration.md	Dynamic Configuration Manager	Published	Netdata Agent/Configuration	
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/cheatsheet.md	Cheatsheet	Published	Netdata Agent/Configuration	Connecting an Agent to the Cloud allows a Netdata Agent, running on a distributed node, to securely connect to Netdata Cloud via the encrypted Agent-Cloud link (ACLK).'
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/common-configuration-changes.md	Common configuration changes	Published	Netdata Agent/Configuration	See the most popular configuration changes to make to the Netdata Agent, including longer metrics retention, reduce sampling, and more.
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/optimize-the-netdata-agents-performance.md	How to optimize the Netdata Agent's performance	Published	Netdata Agent/Configuration	While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
-https://github.com/netdata/netdata/edit/master/src/database/README.md	Database	Published	Netdata Agent/Configuration/Database	
-https://github.com/netdata/netdata/edit/master/src/database/CONFIGURATION.md	Configuration Reference	Published	Netdata Agent/Configuration/Database	With a single configuration change, the Netdata Agent can store days, weeks, or months of metrics at its famous per-second granularity.
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md	Anonymous telemetry events	Published	Netdata Agent/Configuration	
+https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md	Daemon	Published	Netdata Agent/Configuration	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
+https://github.com/netdata/netdata/edit/master/src/database/CONFIGURATION.md	Database	Published	Netdata Agent/Configuration	With a single configuration change, the Netdata Agent can store days, weeks, or months of metrics at its famous per-second granularity.
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/securing-netdata-agents.md	Securing Agents	Published	Netdata Agent/Configuration/Securing Agents	Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
 https://github.com/netdata/netdata/edit/master/src/web/server/README.md	Web Server Reference	Published	Netdata Agent/Configuration/Securing Agents	The Netdata Agent's local static-threaded web server serves dashboards and real-time visualizations with security and DDoS protection.
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/README.md	Running the Agent behind a reverse proxy	Published	Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy	
@@ -53,12 +50,14 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-lighttpd.md	Lighttpd v1.4.x	Published	Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy	
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-caddy.md	Caddy	Published	Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy	
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-h2o.md	H2O	Published	Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy	
-https://github.com/netdata/netdata/edit/master/src/daemon/README.md	Netdata daemon	Published	Netdata Agent/Configuration	
-https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md	Daemon configuration	Published	Netdata Agent/Configuration	The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/optimize-the-netdata-agents-performance.md	Optimize the Agent's performance	Published	Netdata Agent/Configuration	While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts.md	Organize systems, metrics, and alerts	Published	Netdata Agent/Configuration	
+https://github.com/netdata/netdata/edit/master/src/daemon/README.md	Daemon	Published	Netdata Agent	
+https://github.com/netdata/netdata/edit/master/src/database/README.md	Database	Published	Netdata Agent	
 https://github.com/netdata/netdata/edit/master/src/registry/README.md	Registry	Published	Netdata Agent	Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards.
 https://github.com/netdata/netdata/edit/master/src/cli/README.md	Agent CLI	Published	Netdata Agent	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/backup-and-restore-an-agent.md	Backup and restore an Agent	Published	Netdata Agent	What actions you need to do to backup and Agent and restore it.
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md	Anonymous telemetry events	Published	Netdata Agent	
 				
 				
 				
