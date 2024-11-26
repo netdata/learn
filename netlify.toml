@@ -843,7 +843,7 @@
 
 [[redirects]]
   from="/docs/agent/database"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/agent/exporting"
@@ -1279,7 +1279,7 @@
 
 [[redirects]]
   from="/docs/store/change-metrics-storage"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/netdata-agent/configuration/database/configuration-reference"
 
 [[redirects]]
   from="/guides/collect-apache-nginx-web-logs"
@@ -1354,12 +1354,8 @@
   to="/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/compile-from-source-code"
 
 [[redirects]]
-  from="/docs/agent/collectors/go.d.plugin/modules/wmi"
-  to="/docs/collecting-metrics/windows-systems/windows"
-
-[[redirects]]
   from="/docs/agent/database/ram"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/agent/diagrams/data_structures"
@@ -1403,7 +1399,7 @@
 
 [[redirects]]
   from="/guides/longer-metrics-storage"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/netdata-agent/configuration/database/configuration-reference"
 
 [[redirects]]
   from="/guides/monitor/dimension-templates"
@@ -1474,10 +1470,6 @@
   to="/docs/developer-and-contributor-corner/contributing"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/system%20metrics/windows-machine"
-  to="/docs/collecting-metrics/windows-systems/windows"
-
-[[redirects]]
   from="/docs/next/agent/health/notifications/awssns"
   to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/aws-sns"
 
@@ -1495,11 +1487,11 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/netdata-agent/configuration/database/configuration-reference"
 
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/deployment-in-production/agent-cloud-link-aclk"
@@ -1708,10 +1700,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/logind-go.d.plugin-Recommended"
   to="/docs/collecting-metrics/systemd/systemd-logind-users"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/System%20Metrics/Windows-machines"
-  to="/docs/collecting-metrics/windows-systems/windows"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/Systemd-units"
@@ -2383,7 +2371,7 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication/database-modes-for-parent-child-setups"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/web-server"
@@ -2443,7 +2431,7 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/change-how-long-netdata-stores-metrics"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/netdata-agent/configuration/database/configuration-reference"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/web-server-logs-squid"
@@ -2540,10 +2528,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/docker"
   to="/docs/collecting-metrics/containers-and-vms/docker"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
-  to="/docs/collecting-metrics/windows-systems/windows"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/timex.plugin"
@@ -3151,15 +3135,15 @@
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database/database-modes-for-parent-child-setups"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/netdata-agent/configuration/database/configuration-reference"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/netdata-daemon"
@@ -3876,10 +3860,6 @@
 [[redirects]]
   from="/docs/exporting/aws-kinesis-data-streams"
   to="/docs/exporting-metrics/aws-kinesis"
-
-[[redirects]]
-  from="/docs/data-collection/windows-systems"
-  to="/docs/collecting-metrics/windows-systems/windows"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/web-logs/squid"
@@ -4699,15 +4679,15 @@
 
 [[redirects]]
   from="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/netdata-agent/configuration/database/configuration-reference"
 
 [[redirects]]
   from="/docs/configuring/optimizing-metrics-database"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/configuring/netdata-daemon"
@@ -5187,15 +5167,15 @@
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/netdata-agent/configuration/database/configuration-reference"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database"
-  to="/docs/netdata-agent/configuration/optimizing-metrics-database"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/netdata-daemon"
@@ -5984,22 +5964,6 @@
 [[redirects]]
   from="/docs/logs/systemd-journal/passive-journal-centralization-with-encryption-using-self-signed-certificates"
   to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
-
-[[redirects]]
-  from="/docs/data-collection/windows-systems/windows"
-  to="/docs/collecting-metrics/windows-systems/windows"
-
-[[redirects]]
-  from="/docs/data-collection/windows-systems/net-framework"
-  to="/docs/collecting-metrics/windows-systems/net-framework"
-
-[[redirects]]
-  from="/docs/data-collection/windows-systems/ms-sql-server"
-  to="/docs/collecting-metrics/windows-systems/ms-sql-server"
-
-[[redirects]]
-  from="/docs/data-collection/windows-systems/active-directory"
-  to="/docs/collecting-metrics/windows-systems/active-directory"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/web-server-log-files"
@@ -7000,14 +6964,6 @@
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/clustering-and-high-availability-of-netdata-parents"
   to="/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
-
-[[redirects]]
-  from="/docs/data-collection/windows-systems/ms-exchange"
-  to="/docs/collecting-metrics/windows-systems/ms-exchange"
-
-[[redirects]]
-  from="/docs/data-collection/windows-systems/hyperv"
-  to="/docs/collecting-metrics/windows-systems/hyperv"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/hhvm"
@@ -8328,5 +8284,9 @@
 [[redirects]]
   from="/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy"
   to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/netdata-agent/configuration/database"
 
 # section: dynamic << END
