@@ -155,7 +155,7 @@ def populate_integrations(markdownFiles):
 
             metadf = pd.DataFrame([metadata_dictionary])
             # print(file)
-            if "collectors" in path or "modules" in path:
+            if "collector" in path:
                 collectors_entries = pd.concat(
                     [collectors_entries, metadf])
                 # print(collectors_entries)
@@ -813,7 +813,7 @@ def convert_github_links(path_to_file, input_dict):
                 # This is probably a link that can't be translated to a Learn link (e.g. An external file)
                 if url.startswith("https://github.com/netdata") and re.search(r"\.md", url):
                     # Try to rescue an integration link
-                    if "integrations" in url and ("collectors" in url or "modules" in url):
+                    if "integrations" in url and ("collector" in url):
                         # Due to the integrations/cloud_notifications/integrations/.. scenario, we use rsplit to remove the last occurrence of "integrations"
                         # We want to map links to specific integrations mds, to their parent README, in case the above try-catch failed to find the replacement.
                         try_url = url.rsplit("integrations", 1)[
