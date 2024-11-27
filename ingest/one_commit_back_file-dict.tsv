@@ -69,7 +69,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/securing-netda
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/start-stop-restart.md	/docs/netdata-agent/maintenance/service-control
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/versions-and-platforms.md	/docs/netdata-agent/versions-&-platforms
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/README.md	/docs/netdata-agent
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/backup-and-restore-an-agent.md	/docs/netdata-agent/backup-and-restore-an-agent
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/backup-and-restore-an-agent.md	/docs/netdata-agent/maintenance/backup-and-restore-an-agent
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md	/docs/netdata-agent/resource-utilization/cpu
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/ram-requirements.md	/docs/netdata-agent/resource-utilization/ram
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements.md	/docs/netdata-agent/resource-utilization/bandwidth
@@ -78,7 +78,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/dynamic-configuration.md	/docs/netdata-agent/configuration/dynamic-configuration-manager
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts.md	/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/README.md	/docs/netdata-agent/configuration
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/optimize-the-netdata-agents-performance.md	/docs/netdata-agent/configuration/optimize-the-agent-s-performance
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/optimize-the-netdata-agents-performance.md	/docs/netdata-agent/configuration/performance-optimization
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md	/docs/netdata-agent/anonymous-telemetry-events
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-h2o.md	/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/h2o
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-apache.md	/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/apache

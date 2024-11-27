@@ -2313,5 +2313,7 @@
     "https://learn.netdata.cloud/docs/netdata-agent/configuration/database/configuration-reference": "https://github.com/netdata/netdata/blob/master/src/database/CONFIGURATION.md",
     "https://learn.netdata.cloud/docs/netdata-agent/configuration/database": "https://github.com/netdata/netdata/blob/master/src/database/README.md",
     "https://learn.netdata.cloud/docs/netdata-agent/configuration/daemon-configuration": "https://github.com/netdata/netdata/blob/master/src/daemon/config/README.md",
-    "https://learn.netdata.cloud/docs/netdata-agent/configuration/anonymous-telemetry-events": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md"
+    "https://learn.netdata.cloud/docs/netdata-agent/configuration/anonymous-telemetry-events": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/configuration/optimize-the-agent-s-performance": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration/optimize-the-netdata-agents-performance.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/backup-and-restore-an-agent": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/backup-and-restore-an-agent.md"
 }

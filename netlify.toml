@@ -1287,7 +1287,7 @@
 
 [[redirects]]
   from="/guides/configure/performance"
-  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
+  to="/docs/netdata-agent/configuration/performance-optimization"
 
 [[redirects]]
   from="/guides/monitor-hadoop-cluster"
@@ -2411,7 +2411,7 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
+  to="/docs/netdata-agent/configuration/performance-optimization"
 
 [[redirects]]
   from="/docs/deployment-in-production/change-how-long-netdata-stores-metrics"
@@ -3135,7 +3135,7 @@
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
+  to="/docs/netdata-agent/configuration/performance-optimization"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/daemon-configuration"
@@ -4671,7 +4671,7 @@
 
 [[redirects]]
   from="/docs/configuring/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
+  to="/docs/netdata-agent/configuration/performance-optimization"
 
 [[redirects]]
   from="/docs/configuring/daemon-configuration"
@@ -5151,7 +5151,7 @@
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
+  to="/docs/netdata-agent/configuration/performance-optimization"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/daemon-configuration"
@@ -7803,7 +7803,7 @@
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/backing-up-a-netdata-agent"
-  to="/docs/netdata-agent/backup-and-restore-an-agent"
+  to="/docs/netdata-agent/maintenance/backup-and-restore-an-agent"
 
 [[redirects]]
   from="/docs/dashboard/how-dashboard-works"
@@ -8251,7 +8251,7 @@
 
 [[redirects]]
   from="/docs/netdata-agent/configuration/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
+  to="/docs/netdata-agent/configuration/performance-optimization"
 
 [[redirects]]
   from="/docs/netdata-agent/configuration/database/configuration-reference"
@@ -8268,5 +8268,13 @@
 [[redirects]]
   from="/docs/netdata-agent/configuration/anonymous-telemetry-events"
   to="/docs/netdata-agent/anonymous-telemetry-events"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
+  to="/docs/netdata-agent/configuration/performance-optimization"
+
+[[redirects]]
+  from="/docs/netdata-agent/backup-and-restore-an-agent"
+  to="/docs/netdata-agent/maintenance/backup-and-restore-an-agent"
 
 # section: dynamic << END
