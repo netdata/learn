@@ -835,15 +835,15 @@
 
 [[redirects]]
   from="/docs/agent/daemon"
-  to="/docs/netdata-agent/configuration/netdata-daemon"
+  to="/docs/netdata-agent/daemon"
 
 [[redirects]]
   from="/docs/agent/daemon/config"
-  to="/docs/netdata-agent/configuration/daemon-configuration"
+  to="/docs/netdata-agent/configuration/daemon"
 
 [[redirects]]
   from="/docs/agent/database"
-  to="/docs/netdata-agent/configuration/database"
+  to="/docs/netdata-agent/database"
 
 [[redirects]]
   from="/docs/agent/exporting"
@@ -1262,10 +1262,6 @@
   to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
 
 [[redirects]]
-  from="/docs/configure/common-changes"
-  to="/docs/netdata-agent/configuration/common-configuration-changes"
-
-[[redirects]]
   from="/docs/configure/nodes"
   to="/docs/netdata-agent/configuration"
 
@@ -1279,7 +1275,7 @@
 
 [[redirects]]
   from="/docs/store/change-metrics-storage"
-  to="/docs/netdata-agent/configuration/database/configuration-reference"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/guides/collect-apache-nginx-web-logs"
@@ -1291,7 +1287,7 @@
 
 [[redirects]]
   from="/guides/configure/performance"
-  to="/docs/netdata-agent/configuration/how-to-optimize-the-netdata-agent-s-performance"
+  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
 
 [[redirects]]
   from="/guides/monitor-hadoop-cluster"
@@ -1304,10 +1300,6 @@
 [[redirects]]
   from="/guides/using-host-labels"
   to="/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts"
-
-[[redirects]]
-  from="/docs/cheatsheet"
-  to="/docs/netdata-agent/configuration/cheatsheet"
 
 [[redirects]]
   from="/docs/cloud/alerts-notifications/notifications"
@@ -1355,7 +1347,7 @@
 
 [[redirects]]
   from="/docs/agent/database/ram"
-  to="/docs/netdata-agent/configuration/database"
+  to="/docs/netdata-agent/database"
 
 [[redirects]]
   from="/docs/agent/diagrams/data_structures"
@@ -1399,7 +1391,7 @@
 
 [[redirects]]
   from="/guides/longer-metrics-storage"
-  to="/docs/netdata-agent/configuration/database/configuration-reference"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/guides/monitor/dimension-templates"
@@ -1487,11 +1479,11 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database/change-how-long-netdata-stores-metrics"
-  to="/docs/netdata-agent/configuration/database/configuration-reference"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database"
-  to="/docs/netdata-agent/configuration/database"
+  to="/docs/netdata-agent/database"
 
 [[redirects]]
   from="/docs/deployment-in-production/agent-cloud-link-aclk"
@@ -2291,27 +2283,19 @@
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/netdata-daemon"
-  to="/docs/netdata-agent/configuration/netdata-daemon"
+  to="/docs/netdata-agent/daemon"
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/daemon-configuration"
-  to="/docs/netdata-agent/configuration/daemon-configuration"
+  to="/docs/netdata-agent/configuration/daemon"
 
 [[redirects]]
   from="/docs/getting-started/manage-and-configure/configuration"
   to="/docs/netdata-agent/configuration"
 
 [[redirects]]
-  from="/docs/getting-started/manage-and-configure/common-configuration-changes"
-  to="/docs/netdata-agent/configuration/common-configuration-changes"
-
-[[redirects]]
   from="/docs/getting-started/manage-and-configure/agent-cli"
   to="/docs/netdata-agent/agent-cli"
-
-[[redirects]]
-  from="/docs/getting-started/manage-and-configure"
-  to="/docs/netdata-agent/configuration/cheatsheet"
 
 [[redirects]]
   from="/docs/getting-started/install-netdata"
@@ -2371,7 +2355,7 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication/database-modes-for-parent-child-setups"
-  to="/docs/netdata-agent/configuration/database"
+  to="/docs/netdata-agent/database"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/web-server"
@@ -2415,7 +2399,7 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/anonymous-telemetry-events"
-  to="/docs/netdata-agent/configuration/anonymous-telemetry-events"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
 
 [[redirects]]
   from="/docs/deployment-in-production/secure-your-nodes/agent-cloud-link-aclk"
@@ -2427,11 +2411,11 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/netdata-agent/configuration/how-to-optimize-the-netdata-agent-s-performance"
+  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
 
 [[redirects]]
   from="/docs/deployment-in-production/change-how-long-netdata-stores-metrics"
-  to="/docs/netdata-agent/configuration/database/configuration-reference"
+  to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/web-server-logs-squid"
@@ -3119,7 +3103,7 @@
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/anonymous-telemetry-events"
-  to="/docs/netdata-agent/configuration/anonymous-telemetry-events"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/agent-cloud-link-aclk"
@@ -3135,43 +3119,35 @@
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database/database-modes-for-parent-child-setups"
-  to="/docs/netdata-agent/configuration/database"
+  to="/docs/netdata-agent/database"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
-  to="/docs/netdata-agent/configuration/database/configuration-reference"
-
-[[redirects]]
-  from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database"
   to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
+  from="/docs/typical-netdata-agent-configurations/optimizing-metrics-database"
+  to="/docs/netdata-agent/database"
+
+[[redirects]]
   from="/docs/typical-netdata-agent-configurations/netdata-daemon"
-  to="/docs/netdata-agent/configuration/netdata-daemon"
+  to="/docs/netdata-agent/daemon"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/netdata-agent/configuration/how-to-optimize-the-netdata-agent-s-performance"
+  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/daemon-configuration"
-  to="/docs/netdata-agent/configuration/daemon-configuration"
+  to="/docs/netdata-agent/configuration/daemon"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/configuration"
   to="/docs/netdata-agent/configuration"
 
 [[redirects]]
-  from="/docs/typical-netdata-agent-configurations/common-configuration-changes"
-  to="/docs/netdata-agent/configuration/common-configuration-changes"
-
-[[redirects]]
   from="/docs/typical-netdata-agent-configurations/agent-cli"
   to="/docs/netdata-agent/agent-cli"
-
-[[redirects]]
-  from="/docs/typical-netdata-agent-configurations"
-  to="/docs/netdata-agent/configuration/cheatsheet"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/functions"
@@ -4663,7 +4639,7 @@
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/anonymous-telemetry-events"
-  to="/docs/netdata-agent/configuration/anonymous-telemetry-events"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
 
 [[redirects]]
   from="/docs/configuring/securing-netdata-agents/agent-cloud-link-aclk"
@@ -4679,35 +4655,31 @@
 
 [[redirects]]
   from="/docs/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
-  to="/docs/netdata-agent/configuration/database"
+  to="/docs/netdata-agent/database"
 
 [[redirects]]
   from="/docs/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
-  to="/docs/netdata-agent/configuration/database/configuration-reference"
-
-[[redirects]]
-  from="/docs/configuring/optimizing-metrics-database"
   to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
+  from="/docs/configuring/optimizing-metrics-database"
+  to="/docs/netdata-agent/database"
+
+[[redirects]]
   from="/docs/configuring/netdata-daemon"
-  to="/docs/netdata-agent/configuration/netdata-daemon"
+  to="/docs/netdata-agent/daemon"
 
 [[redirects]]
   from="/docs/configuring/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/netdata-agent/configuration/how-to-optimize-the-netdata-agent-s-performance"
+  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
 
 [[redirects]]
   from="/docs/configuring/daemon-configuration"
-  to="/docs/netdata-agent/configuration/daemon-configuration"
+  to="/docs/netdata-agent/configuration/daemon"
 
 [[redirects]]
   from="/docs/configuring/configuration"
   to="/docs/netdata-agent/configuration"
-
-[[redirects]]
-  from="/docs/configuring/common-configuration-changes"
-  to="/docs/netdata-agent/configuration/common-configuration-changes"
 
 [[redirects]]
   from="/docs/configuring/collectors-configuration"
@@ -4716,10 +4688,6 @@
 [[redirects]]
   from="/docs/configuring/agent-cli"
   to="/docs/netdata-agent/agent-cli"
-
-[[redirects]]
-  from="/docs/configuring"
-  to="/docs/netdata-agent/configuration/cheatsheet"
 
 [[redirects]]
   from="/docs/agent/database/engine"
@@ -5151,7 +5119,7 @@
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/anonymous-telemetry-events"
-  to="/docs/netdata-agent/configuration/anonymous-telemetry-events"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/agent-cloud-link-aclk"
@@ -5167,31 +5135,27 @@
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/database-modes-for-parent-child-setups"
-  to="/docs/netdata-agent/configuration/database"
+  to="/docs/netdata-agent/database"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
-  to="/docs/netdata-agent/configuration/database/configuration-reference"
-
-[[redirects]]
-  from="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database"
   to="/docs/netdata-agent/configuration/database"
 
 [[redirects]]
+  from="/docs/developer-and-contributor-corner/configuring/optimizing-metrics-database"
+  to="/docs/netdata-agent/database"
+
+[[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/netdata-daemon"
-  to="/docs/netdata-agent/configuration/netdata-daemon"
+  to="/docs/netdata-agent/daemon"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/how-to-optimize-the-netdata-agent-s-performance"
-  to="/docs/netdata-agent/configuration/how-to-optimize-the-netdata-agent-s-performance"
+  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/daemon-configuration"
-  to="/docs/netdata-agent/configuration/daemon-configuration"
-
-[[redirects]]
-  from="/docs/developer-and-contributor-corner/configuring/common-configuration-changes"
-  to="/docs/netdata-agent/configuration/common-configuration-changes"
+  to="/docs/netdata-agent/configuration/daemon"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/collectors-configuration"
@@ -5200,10 +5164,6 @@
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/agent-cli"
   to="/docs/netdata-agent/agent-cli"
-
-[[redirects]]
-  from="/docs/developer-and-contributor-corner/configuring"
-  to="/docs/netdata-agent/configuration/cheatsheet"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/varnish"
@@ -5924,10 +5884,6 @@
 [[redirects]]
   from="/docs/alerting"
   to="/docs/alerts-&-notifications"
-
-[[redirects]]
-  from="/docs/netdata-agent/configuration/cheatshet"
-  to="/docs/netdata-agent/configuration/cheatsheet"
 
 [[redirects]]
   from="/docs/agent/streaming"
@@ -8287,6 +8243,30 @@
 
 [[redirects]]
   from="/docs/netdata-agent/configuration/optimizing-metrics-database/database-modes-for-parent-child-setups"
+  to="/docs/netdata-agent/database"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/netdata-daemon"
+  to="/docs/netdata-agent/daemon"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/how-to-optimize-the-netdata-agent-s-performance"
+  to="/docs/netdata-agent/configuration/optimize-the-agent-s-performance"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/database/configuration-reference"
   to="/docs/netdata-agent/configuration/database"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/database"
+  to="/docs/netdata-agent/database"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/daemon-configuration"
+  to="/docs/netdata-agent/configuration/daemon"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/anonymous-telemetry-events"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
 
 # section: dynamic << END
