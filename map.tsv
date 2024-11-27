@@ -30,6 +30,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/start-stop-res
 https://github.com/netdata/netdata/edit/master/packaging/installer/UPDATE.md	Update	Published	Netdata Agent/Maintenance	If you opted out of automatic updates, you need to update your Netdata Agent to the latest nightly or stable version.
 https://github.com/netdata/netdata/edit/master/packaging/installer/REINSTALL.md	Reinstall	Published	Netdata Agent/Maintenance	Troubleshooting installation issues or force an update of the Netdata Agent by reinstalling it using the same method you used during installation.
 https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md	Uninstall	Published	Netdata Agent/Maintenance	If you are no longer interested in using the Netdata Agent, use the self-contained uninstaller to remove all traces of binaries and configuration files.
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/backup-and-restore-an-agent.md	Backup and restore an Agent	Published	Netdata Agent/Maintenance	What actions you need to do to backup and Agent and restore it.
 				
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/README.md	Resource Utilization	Published	Netdata Agent/Resource Utilization	
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md	CPU	Published	Netdata Agent/Resource Utilization	
@@ -50,13 +51,12 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-lighttpd.md	Lighttpd v1.4.x	Published	Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy	
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-caddy.md	Caddy	Published	Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy	
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-h2o.md	H2O	Published	Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy	
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/optimize-the-netdata-agents-performance.md	Optimize the Agent's performance	Published	Netdata Agent/Configuration	While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
+https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/optimize-the-netdata-agents-performance.md	Performance Optimization Guide	Published	Netdata Agent/Configuration	While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts.md	Organize systems, metrics, and alerts	Published	Netdata Agent/Configuration	
 https://github.com/netdata/netdata/edit/master/src/daemon/README.md	Daemon	Published	Netdata Agent	
 https://github.com/netdata/netdata/edit/master/src/database/README.md	Database	Published	Netdata Agent	
 https://github.com/netdata/netdata/edit/master/src/registry/README.md	Registry	Published	Netdata Agent	Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards.
 https://github.com/netdata/netdata/edit/master/src/cli/README.md	Agent CLI	Published	Netdata Agent	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
-https://github.com/netdata/netdata/edit/master/docs/netdata-agent/backup-and-restore-an-agent.md	Backup and restore an Agent	Published	Netdata Agent	What actions you need to do to backup and Agent and restore it.
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md	Anonymous telemetry events	Published	Netdata Agent	
 				
 				
