@@ -448,6 +448,7 @@ h1 {
 	--ifm-navbar-background-color: #35414a;
 	--ifm-navbar-link-color: white;
 	--ifm-navbar-link-hover-color: var(--ifm-color-primary-light);
+	--ifm-menu-link-padding-horizontal: 1.5rem;
 }
 
 html[data-theme='dark']:root {
