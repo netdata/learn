@@ -76,11 +76,11 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	Netdata Cloud	Published	Netdata Cloud	
 https://github.com/netdata/netdata/edit/master/src/claim/README.md	Connect Agent to Cloud	Published	Netdata Cloud	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/organize-your-infrastructure-invite-your-team.md	Organize your Infrastructure and Invite your Team	Published	Netdata Cloud	
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/versions.md	Netdata Cloud Versions	Published	Netdata Cloud/Netdata Cloud Versions	
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/README.md	Netdata Cloud On-Prem	Published	Netdata Cloud/Netdata Cloud Versions/Netdata Cloud On-Prem	
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/installation.md	Installation	Published	Netdata Cloud/Netdata Cloud Versions/Netdata Cloud On-Prem	
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s.md	PoC without K8s	Published	Netdata Cloud/Netdata Cloud Versions/Netdata Cloud On-Prem	
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting.md	Troubleshooting	Published	Netdata Cloud/Netdata Cloud Versions/Netdata Cloud On-Prem	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/versions.md	Versions	Published	Netdata Cloud/Versions	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/README.md	On-Prem	Published	Netdata Cloud/Versions/On-Prem	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/installation.md	Installation	Published	Netdata Cloud/Versions/On-Prem	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s.md	PoC without K8s	Published	Netdata Cloud/Versions/On-Prem	
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting.md	Troubleshooting	Published	Netdata Cloud/Versions/On-Prem	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/README.md	Authentication & Authorization	Published	Netdata Cloud/Authentication & Authorization	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/enterprise-sso-authentication.md	Enterprise SSO Authentication	Published	Netdata Cloud/Authentication & Authorization	
 authentication_integrations				
