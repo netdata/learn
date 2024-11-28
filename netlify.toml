@@ -3663,35 +3663,35 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/spaces"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/war-rooms"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/invite-your-team"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/cloud/manage/invite-your-team"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/cloud/war-rooms"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/war-rooms"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/spaces"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/invite-your-team"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvidia_smi"
@@ -4875,7 +4875,7 @@
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/organize-your-infrastructure-and-invite-your-team"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/monitor-your-infrastructure/netdata-plans"
@@ -7807,23 +7807,23 @@
 
 [[redirects]]
   from="/docs/dashboard/how-dashboard-works"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/quickstart/infrastructure"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/cloud"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/netdata-architecture/the-role-of-netdata-cloud"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/uninstall"
@@ -7903,7 +7903,7 @@
 
 [[redirects]]
   from="/docs/dashboards-and-charts/organize-your-infrastructure-and-invite-your-team"
-  to="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection"
@@ -8296,5 +8296,9 @@
 [[redirects]]
   from="/docs/netdata-cloud/netdata-cloud-on-prem"
   to="/docs/netdata-cloud/versions/on-prem"
+
+[[redirects]]
+  from="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
+  to="/docs/netdata-cloud/spaces-and-rooms"
 
 # section: dynamic << END
