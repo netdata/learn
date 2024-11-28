@@ -2320,5 +2320,6 @@
     "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting.md",
     "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s.md",
     "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem/installation": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/netdata-cloud-on-prem/installation.md",
-    "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/netdata-cloud-on-prem/README.md"
+    "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/netdata-cloud-on-prem/README.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/organize-your-infrastructure-invite-your-team.md"
 }
