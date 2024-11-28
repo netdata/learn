@@ -2315,5 +2315,10 @@
     "https://learn.netdata.cloud/docs/netdata-agent/configuration/daemon-configuration": "https://github.com/netdata/netdata/blob/master/src/daemon/config/README.md",
     "https://learn.netdata.cloud/docs/netdata-agent/configuration/anonymous-telemetry-events": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md",
     "https://learn.netdata.cloud/docs/netdata-agent/configuration/optimize-the-agent-s-performance": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration/optimize-the-netdata-agents-performance.md",
-    "https://learn.netdata.cloud/docs/netdata-agent/backup-and-restore-an-agent": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/backup-and-restore-an-agent.md"
+    "https://learn.netdata.cloud/docs/netdata-agent/backup-and-restore-an-agent": "https://github.com/netdata/netdata/blob/master/docs/netdata-agent/backup-and-restore-an-agent.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-versions": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/versions.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem/installation": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/netdata-cloud-on-prem/installation.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/netdata-cloud-on-prem/README.md"
 }
