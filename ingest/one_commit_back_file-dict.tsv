@@ -116,6 +116,7 @@ https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/not
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/centralized-cloud-notifications/manage-notification-methods.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-notification-methods
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	/docs/developer-and-contributor-corner/health-command-api-tester
+https://github.com/netdata/netdata/edit/master/src/registry/CONFIGURATION.md	/docs/netdata-agent/configuration/registry
 https://github.com/netdata/netdata/edit/master/src/registry/README.md	/docs/netdata-agent/registry
 https://github.com/netdata/netdata/edit/master/src/database/CONFIGURATION.md	/docs/netdata-agent/configuration/database
 https://github.com/netdata/netdata/edit/master/src/database/README.md	/docs/netdata-agent/database
