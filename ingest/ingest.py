@@ -789,7 +789,7 @@ def convert_github_links(path_to_file, input_dict):
                 dictionary = input_dict[url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
                     "edit/", "blob/", 1).replace("blob/master/", "").replace("blob/main/", "")]
 
-                replace_string = dictionary["new_learn_path"]
+                replace_string = dictionary["new_learn_path"].replace("//", "/")
 
                 # In some cases, a "id: someId" will be in a file, this is to change a file's link in Docusaurus,
                 # so we need to be careful to honor that
@@ -858,10 +858,10 @@ def convert_github_links(path_to_file, input_dict):
                             else:
                                 custom_edit_url = "NO custom_edit_url found, please add one"
 
-                            print(UNCORRELATED_LINK_COUNTER,
-                                  "INFO: In File:",
-                                  custom_edit_url,
-                                  "\n", "URL:", url, "\n")
+                            # print(UNCORRELATED_LINK_COUNTER,
+                            #       "INFO: In File:",
+                            #       custom_edit_url,
+                            #       "\n", "URL:", url, "\n")
                     else:
                         # Increase the counter of the broken links,
                         # fetch the custom_edit_url variable for printing and print a message
@@ -873,10 +873,10 @@ def convert_github_links(path_to_file, input_dict):
                         else:
                             custom_edit_url = "NO custom_edit_url found, please add one"
 
-                        print(UNCORRELATED_LINK_COUNTER,
-                              "INFO: In File:",
-                              custom_edit_url,
-                              "\n", "URL:", url, "\n")
+                        # print(UNCORRELATED_LINK_COUNTER,
+                        #       "INFO: In File:",
+                        #       custom_edit_url,
+                        #       "\n", "URL:", url, "\n")
 
     # Construct again the whole file
     whole_file = metadata + body
