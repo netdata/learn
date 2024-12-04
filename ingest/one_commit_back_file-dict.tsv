@@ -560,7 +560,6 @@ https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md	/d
 https://github.com/netdata/netdata/edit/master/src/libnetdata/july/README.md	/docs/developer-and-contributor-corner/libnetdata/july-interface
 https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md	/docs/developer-and-contributor-corner/libnetdata/json
 https://github.com/netdata/netdata/edit/master/src/libnetdata/worker_utilization/README.md	/docs/developer-and-contributor-corner/libnetdata/worker-utilization
-https://github.com/netdata/netdata/edit/master/src/libnetdata/ebpf/README.md	/docs/developer-and-contributor-corner/libnetdata/ebpf
 https://github.com/netdata/netdata/edit/master/src/libnetdata/url/README.md	/docs/developer-and-contributor-corner/libnetdata/url
 https://github.com/netdata/netdata/edit/master/src/libnetdata/adaptive_resortable_list/README.md	/docs/developer-and-contributor-corner/libnetdata/adaptive-re-sortable-list-arl
 https://github.com/netdata/netdata/edit/master/src/libnetdata/dictionary/README.md	/docs/developer-and-contributor-corner/libnetdata/dictionaries
