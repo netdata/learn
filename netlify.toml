@@ -1022,10 +1022,6 @@
   to="/docs/developer-and-contributor-corner/libnetdata/dictionaries"
 
 [[redirects]]
-  from="/docs/agent/libnetdata/ebpf"
-  to="/docs/developer-and-contributor-corner/libnetdata/ebpf"
-
-[[redirects]]
   from="/docs/agent/libnetdata/json"
   to="/docs/developer-and-contributor-corner/libnetdata/json"
 
@@ -2196,10 +2192,6 @@
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/json"
   to="/docs/developer-and-contributor-corner/libnetdata/json"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/libnetdata/ebpf"
-  to="/docs/developer-and-contributor-corner/libnetdata/ebpf"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/dictionaries"
@@ -3466,10 +3458,6 @@
   to="/docs/developer-and-contributor-corner/libnetdata/json"
 
 [[redirects]]
-  from="/docs/contributing-to-netdata/libnetdata/ebpf"
-  to="/docs/developer-and-contributor-corner/libnetdata/ebpf"
-
-[[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/dictionaries"
   to="/docs/developer-and-contributor-corner/libnetdata/dictionaries"
 
@@ -3764,10 +3752,6 @@
 [[redirects]]
   from="/docs/contributing/libnetdata/json"
   to="/docs/developer-and-contributor-corner/libnetdata/json"
-
-[[redirects]]
-  from="/docs/contributing/libnetdata/ebpf"
-  to="/docs/developer-and-contributor-corner/libnetdata/ebpf"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/dictionaries"
@@ -4428,10 +4412,6 @@
 [[redirects]]
   from="/docs/miscellaneous/libnetdata/json"
   to="/docs/developer-and-contributor-corner/libnetdata/json"
-
-[[redirects]]
-  from="/docs/miscellaneous/libnetdata/ebpf"
-  to="/docs/developer-and-contributor-corner/libnetdata/ebpf"
 
 [[redirects]]
   from="/docs/miscellaneous/libnetdata/dictionaries"

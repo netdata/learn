@@ -819,7 +819,7 @@ https://github.com/netdata/netdata/edit/master/src/libnetdata/buffer/README.md	B
 https://github.com/netdata/netdata/edit/master/src/libnetdata/circular_buffer/README.md	Circular Buffer	Published	Developer and Contributor Corner/libnetdata				
 https://github.com/netdata/netdata/edit/master/src/libnetdata/clocks/README.md	Clocks	Published	Developer and Contributor Corner/libnetdata				
 https://github.com/netdata/netdata/edit/master/src/libnetdata/config/README.md	Netdata ini config files	Published	Developer and Contributor Corner/libnetdata				
-https://github.com/netdata/netdata/edit/master/src/libnetdata/ebpf/README.md	eBPF	Published	Developer and Contributor Corner/libnetdata				
+							
 https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md	JSON	Published	Developer and Contributor Corner/libnetdata				
 https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md	Locks	Published	Developer and Contributor Corner/libnetdata				
 https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md	Log	Published	Developer and Contributor Corner/libnetdata				
