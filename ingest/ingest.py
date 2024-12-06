@@ -190,8 +190,7 @@ def populate_integrations(markdownFiles):
     lower = map_file.iloc[replace_index[0]+1:]
 
     map_file = pd.concat([upper, authentication_entries.sort_values(
-        by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
-
+        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "collectors_integrations"].index
@@ -200,7 +199,7 @@ def populate_integrations(markdownFiles):
     lower = map_file.iloc[replace_index[0]+1:]
 
     map_file = pd.concat([upper, collectors_entries.sort_values(
-        by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "agent_notifications_integrations"].index
@@ -209,7 +208,7 @@ def populate_integrations(markdownFiles):
     lower = map_file.iloc[replace_index[0]+1:]
 
     map_file = pd.concat([upper, alerting_agent_entries.sort_values(
-        by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "cloud_notifications_integrations"].index
@@ -217,7 +216,7 @@ def populate_integrations(markdownFiles):
     lower = map_file.iloc[replace_index[0]+1:]
 
     map_file = pd.concat([upper, alerting_cloud_entries.sort_values(
-        by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "exporters_integrations"].index
@@ -226,7 +225,7 @@ def populate_integrations(markdownFiles):
     lower = map_file.iloc[replace_index[0]+1:]
 
     map_file = pd.concat([upper, exporting_entries.sort_values(
-        by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "logs_integrations"].index
@@ -234,7 +233,7 @@ def populate_integrations(markdownFiles):
     lower = map_file.iloc[replace_index[0]+1:]
 
     map_file = pd.concat([upper, logs_entries.sort_values(
-        by=['sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     map_file.to_csv("ingest/generated_map.tsv", sep='\t', index=False)
 
