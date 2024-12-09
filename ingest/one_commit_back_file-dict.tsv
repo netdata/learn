@@ -709,6 +709,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/net_framework.md	/docs/collecting-metrics/windows-systems/net-framework
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/iis.md	/docs/collecting-metrics/windows-systems/iis
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_statistics.md	/docs/collecting-metrics/windows-systems/system-statistics
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/processor.md	/docs/collecting-metrics/windows-systems/processor
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/memory_statistics.md	/docs/collecting-metrics/windows-systems/memory-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_sql_server.md	/docs/collecting-metrics/windows-systems/ms-sql-server
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hyper-v.md	/docs/collecting-metrics/windows-systems/hyper-v
