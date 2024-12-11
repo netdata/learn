@@ -713,6 +713,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/processor.md	/docs/collecting-metrics/windows-systems/processor
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/memory_statistics.md	/docs/collecting-metrics/windows-systems/memory-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_sql_server.md	/docs/collecting-metrics/windows-systems/ms-sql-server
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/physical_and_logical_disk_performance_metrics.md	/docs/collecting-metrics/windows-systems/physical-and-logical-disk-performance-metrics
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hyper-v.md	/docs/collecting-metrics/windows-systems/hyper-v
 https://github.com/netdata/netdata/edit/master/src/collectors/windows-events.plugin/README.md	/docs/logs/windows-event-logs/windows-events-plugin-reference
 https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_softirq.md	/docs/collecting-metrics/ebpf/ebpf-softirq
