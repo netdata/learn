@@ -2186,10 +2186,6 @@
   to="/docs/developer-and-contributor-corner/libnetdata/locks"
 
 [[redirects]]
-  from="/docs/improving-netdata---developers/libnetdata/july-interface"
-  to="/docs/developer-and-contributor-corner/libnetdata/july-interface"
-
-[[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/json"
   to="/docs/developer-and-contributor-corner/libnetdata/json"
 
@@ -3450,10 +3446,6 @@
   to="/docs/developer-and-contributor-corner/libnetdata/locks"
 
 [[redirects]]
-  from="/docs/contributing-to-netdata/libnetdata/july-interface"
-  to="/docs/developer-and-contributor-corner/libnetdata/july-interface"
-
-[[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/json"
   to="/docs/developer-and-contributor-corner/libnetdata/json"
 
@@ -3744,10 +3736,6 @@
 [[redirects]]
   from="/docs/contributing/libnetdata/locks"
   to="/docs/developer-and-contributor-corner/libnetdata/locks"
-
-[[redirects]]
-  from="/docs/contributing/libnetdata/july-interface"
-  to="/docs/developer-and-contributor-corner/libnetdata/july-interface"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/json"
@@ -4404,10 +4392,6 @@
 [[redirects]]
   from="/docs/miscellaneous/libnetdata/locks"
   to="/docs/developer-and-contributor-corner/libnetdata/locks"
-
-[[redirects]]
-  from="/docs/miscellaneous/libnetdata/july-interface"
-  to="/docs/developer-and-contributor-corner/libnetdata/july-interface"
 
 [[redirects]]
   from="/docs/miscellaneous/libnetdata/json"
