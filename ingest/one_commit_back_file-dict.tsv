@@ -100,8 +100,8 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/main
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/machine-learning-and-anomaly-detection
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/view-plan-and-billing.md	/docs/netdata-cloud/netdata-plans-&-billing
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	/docs/netdata-cloud
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-membership-rules.md	/docs/netdata-cloud/spaces-and-rooms/node-membership-rules
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/organize-your-infrastructure-invite-your-team.md	/docs/netdata-cloud/spaces-and-rooms
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-rule-based-room-assignment.md	/docs/netdata-cloud/spaces-and-rooms/node-rule-based-room-assignment
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/versions.md	/docs/netdata-cloud/versions
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/api-tokens.md	/docs/netdata-cloud/authentication-&-authorization/api-tokens
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/enterprise-sso-authentication.md	/docs/netdata-cloud/authentication-&-authorization/enterprise-sso-authentication
@@ -513,6 +513,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/nsd/
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/envoy/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/envoy
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/elasticsearch/README.md	/docs/collecting-metrics/search-engines/elasticsearch
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/elasticsearch/integrations/opensearch.md	/docs/collecting-metrics/search-engines/opensearch
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/nats/README.md	/docs/collecting-metrics/message-brokers/nats
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/openvpn/README.md	/docs/collecting-metrics/vpns/openvpn
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/openvpn_status_log/README.md	/docs/collecting-metrics/vpns/openvpn-status-log
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/wireguard/README.md	/docs/collecting-metrics/vpns/wireguard
