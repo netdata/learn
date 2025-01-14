@@ -161,6 +161,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/ceph
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/postfix/README.md	/docs/collecting-metrics/mail-servers/postfix
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/haproxy/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/haproxy
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/k8s_state/README.md	/docs/collecting-metrics/kubernetes/kubernetes-cluster-state
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/yugabytedb/README.md	/docs/collecting-metrics/databases/yugabytedb
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/maxscale/README.md	/docs/collecting-metrics/databases/maxscale
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/samba/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/squid/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/squid
