@@ -184,6 +184,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/cassandra/README.md	/docs/collecting-metrics/databases/cassandra
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dovecot/README.md	/docs/collecting-metrics/mail-servers/dovecot
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redis/README.md	/docs/collecting-metrics/databases/redis
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/ethtool/README.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/optical-modules
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/openvpn/README.md	/docs/collecting-metrics/vpns/openvpn
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/clickhouse/README.md	/docs/collecting-metrics/databases/clickhouse
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/openldap/README.md	/docs/collecting-metrics/authentication-and-authorization/openldap
