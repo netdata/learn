@@ -8265,4 +8265,20 @@
   from="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
   to="/docs/netdata-cloud/spaces-and-rooms"
 
+[[redirects]]
+  from="/docs/agent/collectors/statsd.plugin"
+  to="/docs/collecting-metrics/statsd"
+
+[[redirects]]
+  from="/guides/monitor/statsd"
+  to="/docs/collecting-metrics/statsd"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/StatsD"
+  to="/docs/collecting-metrics/statsd"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/any-application---generic-collectors/statsd"
+  to="/docs/collecting-metrics/statsd"
+
 # section: dynamic << END
