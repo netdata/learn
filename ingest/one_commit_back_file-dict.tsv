@@ -627,6 +627,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.pl
 https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md	/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal
 https://github.com/netdata/netdata/edit/master/src/collectors/xenstat.plugin/README.md	/docs/collecting-metrics/containers-and-vms/xen-xcp-ng
 https://github.com/netdata/netdata/edit/master/src/collectors/diskspace.plugin/README.md	/docs/collecting-metrics/linux-systems/disk-space
+https://github.com/netdata/netdata/edit/master/src/collectors/statsd.plugin/README.md	/docs/collecting-metrics/statsd
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/disk_statistics.md	/docs/collecting-metrics/linux-systems/disk/disk-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/ipv6_socket_statistics.md	/docs/collecting-metrics/linux-systems/network/ipv6-socket-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/socket_statistics.md	/docs/collecting-metrics/linux-systems/network/socket-statistics
