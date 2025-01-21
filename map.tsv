@@ -1,3 +1,4 @@
+custom_edit_url	sidebar_label	learn_status	learn_rel_path	description
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	Deployment Guides	Published	Deployment Guides	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	Standalone Deployment	Published	Deployment Guides	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	Deployment with Centralization Points	Published	Deployment Guides	
