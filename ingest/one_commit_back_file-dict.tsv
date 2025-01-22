@@ -24,6 +24,7 @@ https://github.com/netdata/netdata/edit/master/packaging/makeself/README.md	/doc
 https://github.com/netdata/netdata/edit/master/packaging/maintainers/README.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/package-maintainers
 https://github.com/netdata/netdata/edit/master/packaging/windows/WINDOWS_INSTALLER.md	/docs/netdata-agent/installation/windows
 https://github.com/netdata/netdata/edit/master/src/claim/README.md	/docs/netdata-cloud/connect-agent-to-cloud
+https://github.com/netdata/netdata/edit/master/src/streaming/README.md	/docs/observability-centralization-points/streaming-and-replication-reference
 https://github.com/netdata/netdata/edit/master/src/web/gui/custom/README.md	/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page
 https://github.com/netdata/netdata/edit/master/src/web/api/README.md	/docs/developer-and-contributor-corner/rest-api
 https://github.com/netdata/netdata/edit/master/src/web/api/formatters/README.md	/docs/developer-and-contributor-corner/rest-api/formatters
