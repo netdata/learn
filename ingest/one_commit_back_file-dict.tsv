@@ -100,6 +100,7 @@ https://github.com/netdata/netdata/edit/master/src/health/notifications/irc/READ
 https://github.com/netdata/netdata/edit/master/src/health/notifications/ntfy/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/ntfy
 https://github.com/netdata/netdata/edit/master/src/health/notifications/flock/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/flock
 https://github.com/netdata/netdata/edit/master/src/health/notifications/rocketchat/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/rocketchat
+https://github.com/netdata/netdata/edit/master/src/health/notifications/smseagle/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/smseagle
 https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	/docs/machine-learning-and-anomaly-detection/ml-configuration
 https://github.com/netdata/netdata/edit/master/src/ml/README.md	/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection
 https://github.com/netdata/netdata/edit/master/src/web/api/README.md	/docs/developer-and-contributor-corner/rest-api
@@ -124,7 +125,6 @@ https://github.com/netdata/netdata/edit/master/src/web/api/queries/percentile/RE
 https://github.com/netdata/netdata/edit/master/src/web/api/queries/median/README.md	/docs/developer-and-contributor-corner/rest-api/queries/median
 https://github.com/netdata/netdata/edit/master/src/web/api/exporters/shell/README.md	/docs/exporting-metrics/shell-scripts
 https://github.com/netdata/netdata/edit/master/src/web/server/README.md	/docs/netdata-agent/configuration/securing-agents/web-server-reference
-https://github.com/netdata/netdata/edit/master/src/web/gui/custom/README.md	/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page
 https://github.com/netdata/netdata/edit/master/src/daemon/README.md	/docs/netdata-agent/daemon
 https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md	/docs/netdata-agent/configuration/daemon
 https://github.com/netdata/netdata/edit/master/src/plugins.d/README.md	/docs/developer-and-contributor-corner/external-plugins

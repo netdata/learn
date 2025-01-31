@@ -1250,10 +1250,6 @@
   to="/docs/developer-and-contributor-corner/rest-api/queries/trimmed-mean"
 
 [[redirects]]
-  from="/docs/agent/web/gui/custom"
-  to="/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page"
-
-[[redirects]]
   from="/docs/agent/web/server"
   to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
 
@@ -2020,10 +2016,6 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Go-applications"
   to="/docs/collecting-metrics/apm/go-applications-expvar"
-
-[[redirects]]
-  from="/docs/visualizations/agent-dashboard/custom-dashboards"
-  to="/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page"
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
@@ -4436,10 +4428,6 @@
 [[redirects]]
   from="/docs/miscellaneous/glossary"
   to="/docs/developer-and-contributor-corner/glossary"
-
-[[redirects]]
-  from="/docs/miscellaneous/build-a-custom-dashboard-html-page"
-  to="/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/active-journal-source-without-encryption"

@@ -11,6 +11,13 @@ learn_link: "https://learn.netdata.cloud/docs/collecting-metrics/service-discove
 
 # Service discovery
 
+> [!WARNING]
+>
+> **Deprecation Notice**: This repository's service discovery functionality has been migrated to go.d.plugin in the main [Netdata repository](https://github.com/netdata/netdata). All future development, maintenance, and updates will continue there.
+
+<details>
+<summary>Old readme</summary>
+
 Service discovery extracts all the potentially useful information from different sources, converts it to the
 configurations and exports them to the different destinations.
 
@@ -52,7 +59,7 @@ Tags special cases:
 
 Selectors special cases:
 
-- `!word`: should not contain the word.
+- `!word`: shouldn’t contain the word.
 - `word|word|word`: should contain any word.
 
 ## Discovery
@@ -290,3 +297,5 @@ Application Options:
 Help Options:
   -h, --help         Show this help message
 ```
+
+</details>
