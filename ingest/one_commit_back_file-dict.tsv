@@ -49,7 +49,6 @@ https://github.com/netdata/netdata/edit/master/src/libnetdata/onewayalloc/README
 https://github.com/netdata/netdata/edit/master/src/libnetdata/worker_utilization/README.md	/docs/developer-and-contributor-corner/libnetdata/worker-utilization
 https://github.com/netdata/netdata/edit/master/src/libnetdata/avl/README.md	/docs/developer-and-contributor-corner/libnetdata/avl
 https://github.com/netdata/netdata/edit/master/src/libnetdata/storage_number/README.md	/docs/developer-and-contributor-corner/libnetdata/storage-number
-https://github.com/netdata/netdata/edit/master/src/libnetdata/config/README.md	/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files
 https://github.com/netdata/netdata/edit/master/src/libnetdata/simple_pattern/README.md	/docs/developer-and-contributor-corner/libnetdata/simple-patterns
 https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md	/docs/developer-and-contributor-corner/libnetdata/json
 https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md	/docs/developer-and-contributor-corner/libnetdata/locks
