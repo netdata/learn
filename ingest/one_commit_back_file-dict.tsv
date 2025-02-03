@@ -49,7 +49,6 @@ https://github.com/netdata/netdata/edit/master/src/libnetdata/onewayalloc/README
 https://github.com/netdata/netdata/edit/master/src/libnetdata/worker_utilization/README.md	/docs/developer-and-contributor-corner/libnetdata/worker-utilization
 https://github.com/netdata/netdata/edit/master/src/libnetdata/avl/README.md	/docs/developer-and-contributor-corner/libnetdata/avl
 https://github.com/netdata/netdata/edit/master/src/libnetdata/storage_number/README.md	/docs/developer-and-contributor-corner/libnetdata/storage-number
-https://github.com/netdata/netdata/edit/master/src/libnetdata/config/README.md	/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files
 https://github.com/netdata/netdata/edit/master/src/libnetdata/simple_pattern/README.md	/docs/developer-and-contributor-corner/libnetdata/simple-patterns
 https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md	/docs/developer-and-contributor-corner/libnetdata/json
 https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md	/docs/developer-and-contributor-corner/libnetdata/locks
@@ -200,10 +199,12 @@ https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/net_framework.md	/docs/collecting-metrics/windows-systems/net-framework
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_thermal_zone.md	/docs/collecting-metrics/windows-systems/system-thermal-zone
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/iis.md	/docs/collecting-metrics/windows-systems/iis
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory.md	/docs/collecting-metrics/windows-systems/active-directory
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/physical_and_logical_disk_performance_metrics.md	/docs/collecting-metrics/windows-systems/physical-and-logical-disk-performance-metrics
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/network_subsystem.md	/docs/collecting-metrics/windows-systems/network-subsystem
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hyper-v.md	/docs/collecting-metrics/windows-systems/hyper-v
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/semaphore_statistics.md	/docs/collecting-metrics/windows-systems/semaphore-statistics
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory_certificate_service.md	/docs/collecting-metrics/windows-systems/active-directory-certificate-service
 https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_dcstat.md	/docs/collecting-metrics/ebpf/ebpf-dcstat
 https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_hardirq.md	/docs/collecting-metrics/ebpf/ebpf-hardirq
 https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_processes.md	/docs/collecting-metrics/ebpf/ebpf-processes
