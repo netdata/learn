@@ -1014,10 +1014,6 @@
   to="/docs/developer-and-contributor-corner/libnetdata/clocks"
 
 [[redirects]]
-  from="/docs/agent/libnetdata/config"
-  to="/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files"
-
-[[redirects]]
   from="/docs/agent/libnetdata/dictionary"
   to="/docs/developer-and-contributor-corner/libnetdata/dictionaries"
 
@@ -2164,10 +2160,6 @@
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/one-way-allocator"
   to="/docs/developer-and-contributor-corner/libnetdata/one-way-allocator"
-
-[[redirects]]
-  from="/docs/improving-netdata---developers/libnetdata/netdata-ini-config-files"
-  to="/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/log"
@@ -3426,10 +3418,6 @@
   to="/docs/developer-and-contributor-corner/libnetdata/one-way-allocator"
 
 [[redirects]]
-  from="/docs/contributing-to-netdata/libnetdata/netdata-ini-config-files"
-  to="/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files"
-
-[[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/log"
   to="/docs/developer-and-contributor-corner/libnetdata/log"
 
@@ -3716,10 +3704,6 @@
 [[redirects]]
   from="/docs/contributing/libnetdata/one-way-allocator"
   to="/docs/developer-and-contributor-corner/libnetdata/one-way-allocator"
-
-[[redirects]]
-  from="/docs/contributing/libnetdata/netdata-ini-config-files"
-  to="/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/log"
@@ -4372,10 +4356,6 @@
 [[redirects]]
   from="/docs/miscellaneous/libnetdata/one-way-allocator"
   to="/docs/developer-and-contributor-corner/libnetdata/one-way-allocator"
-
-[[redirects]]
-  from="/docs/miscellaneous/libnetdata/netdata-ini-config-files"
-  to="/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files"
 
 [[redirects]]
   from="/docs/miscellaneous/libnetdata/log"
