@@ -694,6 +694,7 @@ https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	/docs
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	/docs/developer-and-contributor-corner/glossary
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	/docs/developer-and-contributor-corner/contribute-to-the-documentation
 https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md	/docs//top-monitoring-netdata-functions
+https://github.com/netdata/netdata/edit/master/docs/nodes-ephemerality.md	/docs/observability-centralization-points/nodes-ephemerality
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/creating-alerts-with-netdata-alerts-configuration-manager.md	/docs/alerts-&-notifications/creating-alerts-with-the-alerts-configuration-manager
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/README.md	/docs/alerts-&-notifications/notifications
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules
