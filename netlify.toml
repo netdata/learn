@@ -4938,10 +4938,6 @@
   to="/docs/exporting-metrics/irondb"
 
 [[redirects]]
-  from="/docs/exporting/influxdb"
-  to="/docs/exporting-metrics/influxdb"
-
-[[redirects]]
   from="/docs/exporting/graphite"
   to="/docs/exporting-metrics/graphite"
 
