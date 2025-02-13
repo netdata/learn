@@ -675,7 +675,6 @@ https://github.com/netdata/netdata/edit/master/src/exporting/README.md	/docs/exp
 https://github.com/netdata/netdata/edit/master/src/exporting/json/README.md	/docs/exporting-metrics/json
 https://github.com/netdata/netdata/edit/master/src/exporting/graphite/README.md	/docs/exporting-metrics/graphite
 https://github.com/netdata/netdata/edit/master/src/exporting/graphite/integrations/kairosdb.md	/docs/exporting-metrics/kairosdb
-https://github.com/netdata/netdata/edit/master/src/exporting/graphite/integrations/influxdb.md	/docs/exporting-metrics/influxdb
 https://github.com/netdata/netdata/edit/master/src/exporting/graphite/integrations/blueflood.md	/docs/exporting-metrics/blueflood
 https://github.com/netdata/netdata/edit/master/src/exporting/opentsdb/README.md	/docs/exporting-metrics/opentsdb
 https://github.com/netdata/netdata/edit/master/src/exporting/pubsub/README.md	/docs/exporting-metrics/google-cloud-pub-sub
