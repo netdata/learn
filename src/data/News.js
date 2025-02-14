@@ -19,6 +19,66 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Netdata release 2.2.5</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v2.2.5',
+		date: 'Feb 12, 2025',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v2.2.5 patch notes to learn about the latest bug fixes and stability improvements.
+
+			</>
+		),	
+	},
+	{
+		title: <>Netdata release 2.2.4</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v2.2.4',
+		date: 'Feb 4, 2025',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v2.2.4 patch notes to learn about the latest bug fixes and stability improvements.
+
+			</>
+		),	
+	},
+	{
+		title: <>Netdata release 2.2.3</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v2.2.3',
+		date: 'Jan 31, 2025',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v2.2.3 patch notes to learn about the latest bug fixes and stability improvements.
+
+			</>
+		),	
+	},
+	{
+		title: <>Netdata release 2.2.2</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v2.2.2',
+		date: 'Jan 30, 2025',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v2.2.2 patch notes to learn about the latest bug fixes and stability improvements.
+
+			</>
+		),	
+	},
+	{
+		title: <>Netdata release 2.2.1</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v2.2.1',
+		date: 'Jan 27, 2025',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v2.2.1 patch notes to learn about the latest bug fixes and stability improvements.
+
+			</>
+		),	
+	},
+	{
 		title: <>Netdata release 2.2.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v2.2.0',
 		date: 'Jan 22, 2025',
