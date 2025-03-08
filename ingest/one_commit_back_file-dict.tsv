@@ -82,6 +82,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/net_framework.md	/docs/collecting-metrics/windows-systems/net-framework
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_statistics.md	/docs/collecting-metrics/windows-systems/system-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_thermal_zone.md	/docs/collecting-metrics/windows-systems/system-thermal-zone
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory_federation_service.md	/docs/collecting-metrics/windows-systems/active-directory-federation-service
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory.md	/docs/collecting-metrics/windows-systems/active-directory
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/physical_and_logical_disk_performance_metrics.md	/docs/collecting-metrics/windows-systems/physical-and-logical-disk-performance-metrics
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/iis.md	/docs/collecting-metrics/windows-systems/iis
