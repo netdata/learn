@@ -50,26 +50,6 @@ staging1  : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-60
     yarn install
     ```
 
-3. Create a `.env` file in the project root. This file will be ignored by Git and should **NOT** be committed, as it will
-contain sensitive environment variables.
-
-    ```bash
-    touch .env
-    ```
-
-    Edit the `.env` file and add the following.
-
-    ```bash
-    GITHUB_TOKEN=<token>
-    ```
-
-    Generate a new GitHub personal access token [here](https://github.com/settings/tokens).
-
-    - Set the token note as `netdata-learn`.
-    - Check `repo`.
-    - Click **Generate**.
-    - Copy the token and replace `<token>` in the `.env` file with it.
-
 ## Local development
 
 To start a local version of Netdata Learn, running at port `3000` use:
