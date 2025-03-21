@@ -22,7 +22,7 @@ The files in the `/docs` folder of repository should not be edited.
 
 The [documentation contribution guidelines](https://github.com/netdata/netdata/blob/master/docs/guidelines.md) explain this architecture a bit further and go through some of the methods for making or suggesting edits.
 
-Please also take a look at the [style guide](https://github.com/netdata/netdata/blob/master/docs/contributing/style-guide.md). We offer friendly advice on how to produce quality documentation, hoping that it will help you in your contribution.
+Please also look at the [style guide](https://github.com/netdata/netdata/blob/master/docs/contributing/style-guide.md). We offer friendly advice on producing quality documentation, hoping that it will help you contribute.
 
 ## Local Deploy of Learn
 
@@ -56,9 +56,9 @@ all of the files in the `/docs` folder are mirrors of their original versions lo
 
 ### Manual ingest via local environment
 
-You can run the ingest script manually in a local development environment. Most of the times you will make changes in any repo of the [repos](#ingested-repositories) (or your forks).
+You can run the ingest script manually in a local development environment. Most of the time you will make changes in any repo of the [repos](#ingested-repositories) (or your forks).
 To do that you need to setup your local environment for the ingest process to work.
-The ingest script is a python script and has it's own dependencies (separate from the docusaurus framework).
+The ingest script is a python script and has its dependencies (separate from the docusaurus framework).
 
 #### Prerequisites
 
