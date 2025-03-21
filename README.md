@@ -6,18 +6,7 @@ This repository hosts the code for Netdata's documentation site, **Netdata Learn
 >
 > This repo is a **mirror**! Means any changes made here on the `docs/` directory will be overwritten from the [`netdata/netdata`](https://github.com/netdata/netdata)
 
-The site is then deployed automatically to Netlify from the latest commit of the [`netdata/netdata`](https://github.com/netdata/netdata) master branch, which we also use to maintain certain redirects.
-
-## Contributing to Netdata Learn
-
-Most of the files in the `/docs` folder are "mirrors" of their original files found in the [ingested repositories](#ingested-repositories).
-
-Generally speaking, the files in the `/docs` folder of repository should not be edited.
-The [documentation contribution guidelines](https://github.com/netdata/netdata/blob/master/docs/guidelines.md) explains this architecture a bit further and explains some of the methods for making or suggesting edits.
-
-Moreover, after taking a look at the [documentation contribution guidelines](https://github.com/netdata/netdata/blob/master/docs/guidelines.md),
-please also take a look at the [style guide](https://github.com/netdata/netdata/blob/master/docs/contributing/style-guide.md).
-We offer friendly advice on how to produce quality documentation, hoping that it will help you in your contribution.
+The site is then deployed automatically to Netlify from the latest ingested commit of the [`netdata/netdata`](https://github.com/netdata/netdata) master branch, which we also use to maintain certain redirects.
 
 ## Netlify status
 
@@ -25,17 +14,17 @@ master    : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-60
 staging  : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status?branch=staging)](https://app.netlify.com/sites/netdata-docusaurus/deploy-status?branch=staging) </br>
 staging1  : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-602b-4635-94f4-17c0b1235480/deploy-status?branch=staging1)](https://app.netlify.com/sites/netdata-docusaurus/deploy-status?branch=staging1) </br>
 
-## Installation
+## Contributing to Netdata Learn
 
-### Prerequisites
+Most of the files in the `/docs` folder are "mirrors" of their original files found in the [ingested repositories](#ingested-repositories).
 
-- `yarn` version `1.22.19` or higher should be installed on the system, if you don't have it check the different package types listed in the [yarn releases](https://github.com/yarnpkg/yarn/releases) page
-- `node.js`, version `12 - 16` should also be installed on the system, [install node.js v16.19.1 from here](https://nodejs.org/download/release/v16.19.1)
-- Git installed on the system
+The files in the `/docs` folder of repository should not be edited.
 
-### Steps
+The [documentation contribution guidelines](https://github.com/netdata/netdata/blob/master/docs/guidelines.md) explain this architecture a bit further and go through some of the methods for making or suggesting edits.
 
-> Note, if you are using Windows, use Powershell or CMD for these commands, as for example the integrated terminal of VSCode might not find the commands.
+Please also take a look at the [style guide](https://github.com/netdata/netdata/blob/master/docs/contributing/style-guide.md). We offer friendly advice on how to produce quality documentation, hoping that it will help you in your contribution.
+
+## Local Deploy of Learn
 
 1. Clone this repository
 
@@ -44,36 +33,107 @@ staging1  : [![Netlify Status](https://api.netlify.com/api/v1/badges/bafd033d-60
     cd learn
     ```
 
-2. Install dependencies.
+2. `yarn` version `14.16` or higher should be installed on the system, usually with `npm install yarn` (you can also use the `--global` tag)
+3. `node.js`, version `12 - 16` should also be installed on the system, `nvm` works best for this, so you can hot-swap node.js versions.
+4. Install dependencies.
 
     ```bash
     yarn install
     ```
 
-## Local development
+5. To start the frontend end of Learn, running at port `3000`, use:
 
-To start a local version of Netdata Learn, running at port `3000` use:
-
-```console
+```bash
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without
-having to restart the server. If you want to suppress warnings you can run `yarn -s start`.
+This command starts a local development server and opens up a browser window. Markdown changes are reflected live without having to restart the server (removing/adding files will need a re-run of the command). If you want to suppress warnings you can run `yarn -s start`.
 
 ## Ingest and process documentation files
 
 As explained in the [contributing to Netdata Learn](#contributing-to-netdata-learn) section above,
 all of the files in the `/docs` folder are mirrors of their original versions located in Netdata's repositories.
 
-To run the ingest process refer to the [Manual ingest via local environment](#manual-ingest-via-local-environment) section.
+### Manual ingest via local environment
+
+You can run the ingest script manually in a local development environment. Most of the times you will make changes in any repo of the [repos](#ingested-repositories) (or your forks).
+To do that you need to setup your local environment for the ingest process to work.
+The ingest script is a python script and has it's own dependencies (separate from the docusaurus framework).
+
+#### Prerequisites
+
+- Python v3.9+
+
+#### Steps
+
+1. Navigate under your `netdata/learn` local clone.
+
+2. (Optional) Create a local test branch otherwise work on the `master` branch.
+
+3. Create a python virtual environment.
+
+    ```bash
+    python -m venv myenv
+    ```
+
+    The name `myenv` is included in the `.gitignore` file of this repo.
+
+4. Activate your environment.
+
+    ```bash
+    source myenv/bin/activate
+    ```
+
+5. Install the required packages, via pip
+
+    ```bash
+    pip install -r .learn_environment/ingest-requirements.txt
+    ```
+
+6. The organization of the files is handled by the [`map.tsv` file](https://docs.google.com/spreadsheets/d/1DhwL1yr7-sY6f8vfyHsKlPqxhu4_zUHXYiBrllglFfc/edit?usp=sharing), that contains metadata for every file. That file should only be edited by members of the Netdata team.
+
+7. Once you edit the file from Google Sheets, you download the **second** sheet and replace `map.tsv` in your local repo.
+
+8. Run the ingest process to fetch the documents you are working on from one or multiple repos.
+
+    ```bash
+    python ingest/ingest.py --repos <owner>/<repo>:<branch>
+    ```
+
+    for example, let's assume that you made some changes in the markdown files of `netdata/netdata` repo (branch: patch1)
+    and on your own fork `user1/go.d.plugin` repo (branch: user1-patch).
+
+    ```bash
+    python ingest/ingest.py --repos netdata/netdata:patch1 user1/go.d.plugin:user1-patch
+    ```
+
+    If you don't use `--repos` the ingest will run on the master branches of netdata's repos.
+
+9. You then need to run `ingest/create_grid_integration_pages.py` to generate the dynamic integration pages.
+  
+10. Build a local website  
+
+    ```bash
+    yarn start
+    ```
+
+    You can also build the project instead of running by:
+
+    ```bash
+    yarn build
+    ```
+
+    and then:
+
+    ```bash
+    npm run serve
+    ```
 
 ### Ingested repositories
 
 At the moment documentation is ingested from the following repos:
 
 - netdata/netdata
-- netdata/go.d.plugin
 - netdata/.github
 - netdata/agent-service-discovery
 - netdata/netdata-grafana-datasource-plugin
@@ -91,96 +151,6 @@ If there are changes to any documentation file, the GitHub Action creates a PR t
 
 The action can be configured to automatically assign one or more reviewers.
 To enable automatic assignments, uncomment the `# reviewers:` line at the end of [`ingest.yml`](.github/ingest.yml) and add the appropriate GitHub username(s)either space or comma-separated.
-
-### Manual ingest via GitHub Actions
-
-To run the action manually:
-
-1. Click on the **Actions** tab at the top of the page.
-2. Click on the **Ingest** workflow.
-3. On the right-hand side of the screen, there's a small dropdown menu that reads **Run workflow**. Click on that, then **Run workflow**.
-
-As with the automated ingest, the action creates a PR if there are any changes.
-
-### Manual ingest via local environment
-
-You can also run the script manually in a local development environment. Most of the times you will make changes in
-any repo of the [repos](#ingested-repositories) (or your forks) we mentioned above.
-To do that you need to setup your local environment for the ingest process to work.
-This script is a python script and has it's own dependencies (separate from the docusaurus framework).
-
-To run the ingest process and spin up a local development environment:
-
-#### Linux environments or WSL
-
-##### Prerequisites
-
-- Python v3.9+
-
-##### Steps
-
-1. Navigate under your `netdata/learn` local clone.
-
-2. [Optional] Create a local test branch otherwise work on the `master` branch.
-
-3. Create a python virtual environment.
-
-    ```bash
-    python -m venv myenv
-    ```
-    
-    The name `myenv` is included in the `.gitignore` file of this repo.
-
-4. Activate your environment.
-
-    ```bash
-    source myenv/bin/activate
-    ```
-
-5. Install the required packages, via pip
-    
-    ```bash
-    pip install -r .learn_environment/ingest-requirements.txt
-    ```
-
-6. The organization of the files is handled by the [`map.tsv` file](https://docs.google.com/spreadsheets/d/1DhwL1yr7-sY6f8vfyHsKlPqxhu4_zUHXYiBrllglFfc/edit?usp=sharing), that contains metadata for every file. That file should only be edited by members of the Netdata team.
-
-7. Once you edit the file from Google Sheets, you download the second sheet and replace `map.tsv` in your local repo.
-
-8. Run the ingest process to fetch the documents you are working on from one or multiple repos.
-    
-    ```bash
-    python ingest/ingest.py --repos <owner>/<repo>:<branch>
-    ```
-    
-    for example, let's assume that you made some changes in the markdown files of `netdata/netdata` repo (branch: patch1)
-    and on your own fork `user1/go.d.plugin` repo (branch: user1-patch).
-    
-    ```bash
-    python ingest/ingest.py --repos netdata/netdata:patch1 user1/go.d.plugin:user1-patch
-    ```
-
-    If you don't use `--repos` the ingest will run on the master branches of netdata's repos.
-
-9. You then need to run `ingest/create_grid_integration_pages.py` to generate the dynamic integration pages.
-  
-10. Build a local website,
-
-    ```bash
-    yarn start
-    ```
-    
-    You can also build the project instead of running by:
-    
-    ```bash
-    yarn build
-    ```
-    
-    and then:
-    
-    ```bash
-    npm run serve
-    ```
 
 ## Update news on the Learn homepage
 
