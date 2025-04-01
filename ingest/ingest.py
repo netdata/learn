@@ -59,12 +59,12 @@ default_repos = {
             "branch": "master",
             "HEAD": "master",
         },
-    # "go.d.plugin":
-    #     {
-    #         "owner": "netdata",
-    #         "branch": "master",
-    #         "HEAD": "master",
-    #     },
+    "netdata-cloud-onprem":
+        {
+            "owner": "netdata",
+            "branch": "master",
+            "HEAD": "master",
+        },
     ".github":
         {
             "owner": "netdata",
@@ -343,7 +343,7 @@ def clone_repo(owner, repo, branch, depth, prefix_folder):
         output_folder = prefix_folder + repo
         # print("DEBUG", outputFolder)
         git.Git().clone(
-            f"https://github.com/{owner}/{repo}.git", output_folder, depth=depth, branch=branch)
+            f"git@github.com:{owner}/{repo}.git", output_folder, depth=depth, branch=branch)
 
 
         return f"Cloned the {branch} branch from {repo} repo (owner: {owner})"
