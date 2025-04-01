@@ -726,10 +726,6 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/README.md	/docs/netdata-cloud/authentication-&-authorization
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/role-based-access-model.md	/docs/netdata-cloud/authentication-&-authorization/role-based-access-model
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/api-tokens.md	/docs/netdata-cloud/authentication-&-authorization/api-tokens
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting.md	/docs/netdata-cloud/versions/on-prem/troubleshooting
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/README.md	/docs/netdata-cloud/versions/on-prem
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s.md	/docs/netdata-cloud/versions/on-prem/poc-without-k8s
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-on-prem/installation.md	/docs/netdata-cloud/versions/on-prem/installation
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/machine-learning-and-anomaly-detection
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/collect-unbound-metrics.md	/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata
@@ -805,6 +801,10 @@ https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	/docs/security-and-privacy-design/netdata-agent-security-and-privacy-design
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	/docs/security-and-privacy-design/netdata-cloud-security-and-privacy-design
 https://github.com/netdata/agent-service-discovery/edit/master/README.md	/docs/collecting-metrics/service-discovery
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/troubleshooting.md	/docs/netdata-cloud/versions/on-prem/troubleshooting
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/README.md	/docs/netdata-cloud/versions/on-prem
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/poc-without-k8s.md	/docs/netdata-cloud/versions/on-prem/poc-without-k8s
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md	/docs/netdata-cloud/versions/on-prem/installation
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	/docs/developer-and-contributor-corner/contributing
 https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	/docs/developer-and-contributor-corner/community-code-of-conduct
 https://github.com/netdata/.github/edit/main/SECURITY.md	/docs/developer-and-contributor-corner/security-policy
