@@ -25,6 +25,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      - name: github authentication
+        uses: webfactory/ssh-agent@v0.9.1
+        with:
+          ssh-private-key: ${{ secrets.NETDATABOT_SSH_PRIVATE_KEY }}
+
       - name: Init python env
         uses: actions/setup-python@v4
         with:
