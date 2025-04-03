@@ -4283,15 +4283,15 @@
 
 [[redirects]]
   from="/docs/netdata-cloud-on-prem/light-poc-deployment"
-  to="/docs/netdata-cloud/versions/on-prem/poc-without-k8s"
+  to="/docs/netdata-cloud-on-prem/poc-without-k8s"
 
 [[redirects]]
   from="/docs/netdata-cloud-on-prem/basic-troubleshooting"
-  to="/docs/netdata-cloud/versions/on-prem/troubleshooting"
+  to="/docs/netdata-cloud-on-prem/troubleshooting"
 
 [[redirects]]
   from="/docs/netdata-cloud-on-prem"
-  to="/docs/netdata-cloud/versions/on-prem"
+  to="/docs/netdata-cloud-on-prem"
 
 [[redirects]]
   from="/docs/miscellaneous/running-a-local-dashboard-through-cloudflare-tunnels"
@@ -8206,24 +8206,20 @@
   to="/docs/netdata-agent/maintenance/backup-and-restore-an-agent"
 
 [[redirects]]
-  from="/docs/netdata-cloud/netdata-cloud-versions"
-  to="/docs/netdata-cloud/versions"
-
-[[redirects]]
   from="/docs/netdata-cloud/netdata-cloud-on-prem/troubleshooting"
-  to="/docs/netdata-cloud/versions/on-prem/troubleshooting"
+  to="/docs/netdata-cloud-on-prem/troubleshooting"
 
 [[redirects]]
   from="/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s"
-  to="/docs/netdata-cloud/versions/on-prem/poc-without-k8s"
+  to="/docs/netdata-cloud-on-prem/poc-without-k8s"
 
 [[redirects]]
   from="/docs/netdata-cloud/netdata-cloud-on-prem/installation"
-  to="/docs/netdata-cloud/versions/on-prem/installation"
+  to="/docs/netdata-cloud-on-prem/installation"
 
 [[redirects]]
   from="/docs/netdata-cloud/netdata-cloud-on-prem"
-  to="/docs/netdata-cloud/versions/on-prem"
+  to="/docs/netdata-cloud-on-prem"
 
 [[redirects]]
   from="/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team"
@@ -8244,5 +8240,21 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/statsd"
   to="/docs/collecting-metrics/statsd"
+
+[[redirects]]
+  from="/docs/netdata-cloud/versions/on-prem/troubleshooting"
+  to="/docs/netdata-cloud-on-prem/troubleshooting"
+
+[[redirects]]
+  from="/docs/netdata-cloud/versions/on-prem/poc-without-k8s"
+  to="/docs/netdata-cloud-on-prem/poc-without-k8s"
+
+[[redirects]]
+  from="/docs/netdata-cloud/versions/on-prem/installation"
+  to="/docs/netdata-cloud-on-prem/installation"
+
+[[redirects]]
+  from="/docs/netdata-cloud/versions/on-prem"
+  to="/docs/netdata-cloud-on-prem"
 
 # section: dynamic << END

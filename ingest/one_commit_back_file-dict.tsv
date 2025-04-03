@@ -717,7 +717,6 @@ https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	/docs
 https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md	/docs//top-monitoring-netdata-functions
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	/docs/developer-and-contributor-corner/glossary
 https://github.com/netdata/netdata/edit/master/docs/nodes-ephemerality.md	/docs/observability-centralization-points/nodes-ephemerality
-https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/versions.md	/docs/netdata-cloud/versions
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/view-plan-and-billing.md	/docs/netdata-cloud/netdata-plans-&-billing
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/organize-your-infrastructure-invite-your-team.md	/docs/netdata-cloud/spaces-and-rooms
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	/docs/netdata-cloud
@@ -801,10 +800,10 @@ https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	/docs/security-and-privacy-design/netdata-agent-security-and-privacy-design
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	/docs/security-and-privacy-design/netdata-cloud-security-and-privacy-design
 https://github.com/netdata/agent-service-discovery/edit/master/README.md	/docs/collecting-metrics/service-discovery
-https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/troubleshooting.md	/docs/netdata-cloud/versions/on-prem/troubleshooting
-https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/README.md	/docs/netdata-cloud/versions/on-prem
-https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/poc-without-k8s.md	/docs/netdata-cloud/versions/on-prem/poc-without-k8s
-https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md	/docs/netdata-cloud/versions/on-prem/installation
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/troubleshooting.md	/docs/netdata-cloud-on-prem/troubleshooting
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/README.md	/docs/netdata-cloud-on-prem
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/poc-without-k8s.md	/docs/netdata-cloud-on-prem/poc-without-k8s
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md	/docs/netdata-cloud-on-prem/installation
 https://github.com/netdata/.github/edit/main/CONTRIBUTING.md	/docs/developer-and-contributor-corner/contributing
 https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md	/docs/developer-and-contributor-corner/community-code-of-conduct
 https://github.com/netdata/.github/edit/main/SECURITY.md	/docs/developer-and-contributor-corner/security-policy
