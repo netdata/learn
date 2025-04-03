@@ -2321,5 +2321,9 @@
     "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem/poc-without-k8s": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/poc-without-k8s.md",
     "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem/installation": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/installation.md",
     "https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-on-prem": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/README.md",
-    "https://learn.netdata.cloud/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/organize-your-infrastructure-invite-your-team.md"
+    "https://learn.netdata.cloud/docs/netdata-cloud/organize-your-infrastructure-and-invite-your-team": "https://github.com/netdata/netdata/blob/master/docs/netdata-cloud/organize-your-infrastructure-invite-your-team.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/versions/on-prem/troubleshooting": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/troubleshooting.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/versions/on-prem/poc-without-k8s": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/poc-without-k8s.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/versions/on-prem/installation": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/installation.md",
+    "https://learn.netdata.cloud/docs/netdata-cloud/versions/on-prem": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/README.md"
 }
