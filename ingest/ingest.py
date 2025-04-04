@@ -553,6 +553,22 @@ def sanitize_page(path):
     body = body.replace("<!--", "---", 1)
     body = body.replace("-->", "---", 1)
 
+    # MDX 3 compatibility replacements
+    body = body.replace("<details><summary>", "<details>\n<summary>")
+    body = body.replace("<details open><summary>", "<details open>\n<summary>")
+    body = body.replace("${", r"$\{")
+    body = body.replace("<=", r"\<=")
+    body = body.replace("%<",r"%\<")
+    body = body.replace("{{",r"\{\{")
+    body = body.replace("<->",r"\<->")
+    body = body.replace("{attribute_name}",r"\{attribute_name}")
+    body = body.replace("{attribute_unit}",r"\{attribute_unit}")
+
+    # <url> into [url](url)
+    body = re.sub(r'<(https://[^>]+)>', r'[\1](\1)', body)
+    body = re.sub(r'<(http://[^>]+)>', r'[\1](\1)', body)
+    body = re.sub(r'<([\w\.-]+@[\w\.-]+\.\w+)>',  r'[\1](mailto:\1)', body)
+
     match_group = re.search(r'meta_yaml: "(.*)"', body)
     if match_group:
         # If the file has a meta_yaml field, then it is an integration, and we need to put the value into custom_edit_url too
