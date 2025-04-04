@@ -25,10 +25,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.3.2 patch notes to learn about the latest bug fixes and stability improvements.
+				Check out our Netdata v2.3.2 patch notes to learn about the latest bug fixes and stability improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.3.1</>,
@@ -37,10 +37,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.3.1 patch notes to learn about the latest bug fixes and stability improvements.
+				Check out our Netdata v2.3.1 patch notes to learn about the latest bug fixes and stability improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.3.0</>,
@@ -49,10 +49,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out the Netdata v2.3.0 notes to learn about the newest features and improvements.
+				Check out the Netdata v2.3.0 notes to learn about the newest features and improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.2.6</>,
@@ -61,10 +61,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.2.6 patch notes to learn about the latest bug fixes and stability improvements.
+				Check out our Netdata v2.2.6 patch notes to learn about the latest bug fixes and stability improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.2.5</>,
@@ -73,10 +73,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.2.5 patch notes to learn about the latest bug fixes and stability improvements.
+				Check out our Netdata v2.2.5 patch notes to learn about the latest bug fixes and stability improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.2.4</>,
@@ -85,10 +85,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.2.4 patch notes to learn about the latest bug fixes and stability improvements.
+				Check out our Netdata v2.2.4 patch notes to learn about the latest bug fixes and stability improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.2.3</>,
@@ -97,10 +97,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.2.3 patch notes to learn about the latest bug fixes and stability improvements.
+				Check out our Netdata v2.2.3 patch notes to learn about the latest bug fixes and stability improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.2.2</>,
@@ -109,10 +109,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.2.2 patch notes to learn about the latest bug fixes and stability improvements.
+				Check out our Netdata v2.2.2 patch notes to learn about the latest bug fixes and stability improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.2.1</>,
@@ -121,10 +121,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.2.1 patch notes to learn about the latest bug fixes and stability improvements.
+				Check out our Netdata v2.2.1 patch notes to learn about the latest bug fixes and stability improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.2.0</>,
@@ -133,10 +133,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.2.0 release notes to learn about our newest features and improvements. 
+				Check out our Netdata v2.2.0 release notes to learn about our newest features and improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.1.1</>,
@@ -145,10 +145,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.1.1 patch notes to learn about the latest bug fixes and stability improvements.
+				Check out our Netdata v2.1.1 patch notes to learn about the latest bug fixes and stability improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.1.0</>,
@@ -157,10 +157,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.1.0 release notes to learn about our newest features and improvements. 
+				Check out our Netdata v2.1.0 release notes to learn about our newest features and improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 2.0.0</>,
@@ -169,10 +169,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v2.0.0 release notes to learn about our newest features and improvements. 
+				Check out our Netdata v2.0.0 release notes to learn about our newest features and improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 1.47.0</>,
@@ -181,10 +181,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v1.47.0 release notes to learn about our newest features and improvements. 
+				Check out our Netdata v1.47.0 release notes to learn about our newest features and improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 1.46.0</>,
@@ -193,10 +193,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v1.46.0 release notes to learn about our newest features and improvements. 
+				Check out our Netdata v1.46.0 release notes to learn about our newest features and improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Dynamic Configuration Manager</>,
@@ -207,7 +207,7 @@ export const News = [
 			<>
 				Configure your Collectors, Alerts and Logs from the Netdata Dashboard.
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Okta and OIDC SSO integrations</>,
@@ -219,7 +219,7 @@ export const News = [
 				🧑🏻‍💻Effortlessly manage your teams’ access with SSO through Okta or OpenID integrations.
 				This feature ensures streamlined access and heightened security across your systems.
 			</>
-		),	
+		),
 	},
 	{
 		title: <>New Alert Notification Integration available!</>,
@@ -228,10 +228,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 We have brought a new Alert Notification Integrations to Netdata Cloud - Splunk On-call/VictorOps 💪
+				We have brought a new Alert Notification Integrations to Netdata Cloud - Splunk On-call/VictorOps 💪
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 1.45.0</>,
@@ -240,10 +240,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v1.45.0 release notes to learn about our newest features and improvements. 
+				Check out our Netdata v1.45.0 release notes to learn about our newest features and improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Ease of creating and managing Custom Dashboards!</>,
@@ -255,7 +255,7 @@ export const News = [
 				Major release to improve the way to interact with Custom Dashboards! 📊🖱️
 				Even though this is still an early release, the overall experience and usability have improved in a major way and (hopefully) will bring a lot of value to you.
 			</>
-		),	
+		),
 	},
 	{
 		title: <>New plan alert: Homelab plan is launched!</>,
@@ -266,8 +266,8 @@ export const News = [
 			<>
 				Homelab enthusiasts, rejoice! Unrestricted Netdata is now yours with our new Homelab plan.
 			</>
-		),	
-	},	
+		),
+	},
 	{
 		title: <>Netdata Mobile App released!</>,
 		href: 'https://learn.netdata.cloud/docs/alerting/notifications/centralized-cloud-notifications/netdata-mobile-app',
@@ -277,8 +277,8 @@ export const News = [
 			<>
 				Receive and manage alert notifications from your infrastructure on the go!
 			</>
-		),	
-	},	
+		),
+	},
 	{
 		title: <>Netdata Alerts Configuration Manager released!</>,
 		href: 'https://learn.netdata.cloud/docs/alerting/creating-alerts-with-the-alerts-configuration-manager',
@@ -288,7 +288,7 @@ export const News = [
 			<>
 				The wait is finally over! The Alerts Configuration Manager provides a wizard to create and manage alerts for your infrastructure monitoring, directly from the Netdata Dashboards.
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 1.44.0</>,
@@ -297,10 +297,10 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				 Check out our Netdata v1.44.0 release notes to learn about our newest features and improvements. 
+				Check out our Netdata v1.44.0 release notes to learn about our newest features and improvements.
 
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata Cloud On-Prem is here, explore the possibilites</>,
@@ -311,7 +311,7 @@ export const News = [
 			<>
 				Book a meeting today and discover how Netdata can transform infrastructure monitoring for your organization.
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Unlock Log Management Mastery with systemd-journal and Netdata</>,
@@ -322,7 +322,7 @@ export const News = [
 			<>
 				The dynamic duo of systemd-journal and Netdata is revolutionizing log management!
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 1.43.0</>,
@@ -333,7 +333,7 @@ export const News = [
 			<>
 				Check out our Netdata v1.43.0 release notes to learn about our newest features and improvements.
 			</>
-		),	
+		),
 	},
 	{
 		title: <>Netdata release 1.42.0</>,
@@ -345,7 +345,7 @@ export const News = [
 				Check out our Netdata v1.42.0 release notes to learn about our newest features and improvements.
 			</>
 		),
-	},	{
+	}, {
 		title: <>Netdata Integrations Marketplace</>,
 		href: 'https://app.netdata.cloud/spaces/netdata-demo/rooms/all-nodes/overview#integrationsModalOpen=true',
 		date: 'August 3, 2023',
@@ -355,7 +355,7 @@ export const News = [
 				Check out our Netdata Integrations Marketplace to find all the integrations Netdata supports across Deploy, Data Collection, Alert Notifications, and Exporters..
 			</>
 		),
-	},	{
+	}, {
 		title: <>Netdata release 1.41.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.41.0',
 		date: 'July 20, 2023',
@@ -365,7 +365,7 @@ export const News = [
 				Check out our Netdata v1.41.0 release notes to learn about our newest features and improvements.
 			</>
 		),
-	},	{
+	}, {
 		title: <>Netdata Assistant</>,
 		href: 'https://blog.netdata.cloud/netdata-assistant/',
 		date: 'July 18, 2023',
@@ -386,7 +386,7 @@ export const News = [
 				Check out our Netdata v1.40.0 release notes to learn about our newest features and improvements.
 			</>
 		),
-	},	
+	},
 	{
 		title: <>Netdata release 1.39.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.39.0',
@@ -394,7 +394,7 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				Explore the new capabitilies of your powerful Agent! 
+				Explore the new capabitilies of your powerful Agent!
 			</>
 		),
 	},
@@ -416,7 +416,7 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				Receive Live feed of events from your infrastructure! 
+				Receive Live feed of events from your infrastructure!
 			</>
 		),
 	},
@@ -430,7 +430,7 @@ export const News = [
 				Execute anything from the Netdata Agent Collector in run-time and on-demand using Functions.
 			</>
 		),
-	},	
+	},
 	{
 		title: <>Netdata release 1.38.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v1.38.0',
@@ -438,7 +438,7 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				Huge performance, scalability and stability improvements, runtime functions, events feed, more alert notifications on Netdata Cloud and more! 	
+				Huge performance, scalability and stability improvements, runtime functions, events feed, more alert notifications on Netdata Cloud and more!
 			</>
 		),
 	},
@@ -449,7 +449,7 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				This initial release of the Netdata data source plugin aims to maximize the troubleshooting capabilities of Netdata in Grafana, making them more widely available. 
+				This initial release of the Netdata data source plugin aims to maximize the troubleshooting capabilities of Netdata in Grafana, making them more widely available.
 			</>
 		),
 	},
@@ -460,7 +460,7 @@ export const News = [
 		type: 'Link',
 		description: (
 			<>
-				We have made available multiple rooms in our Demo space for you to experience the power and simplicity of Netdata with live infrastructure monitoring. 
+				We have made available multiple rooms in our Demo space for you to experience the power and simplicity of Netdata with live infrastructure monitoring.
 			</>
 		),
 	},
