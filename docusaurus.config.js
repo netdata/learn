@@ -25,6 +25,7 @@ module.exports = {
 		docs: {
 			sidebar: {
 				hideable: true,
+				autoCollapseCategories: true,
 			},
 		},
 		navbar: {
