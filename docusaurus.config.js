@@ -19,12 +19,10 @@ module.exports = {
 			theme: { light: 'neutral', dark: 'forest' },
 		},
 		image: 'img/netdata_meta-default.png',
-		prism: {
-			theme: require('prism-react-renderer/themes/dracula'),
-		},
 		docs: {
 			sidebar: {
 				hideable: true,
+				autoCollapseCategories: true,
 			},
 		},
 		navbar: {
@@ -197,7 +195,7 @@ module.exports = {
 				docs: {
 					sidebarPath: require.resolve('./sidebars.js'),
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
-					docLayoutComponent: "@theme/DocPage",
+					// docLayoutComponent: "@theme/DocPage",
 					showLastUpdateTime: true,
 				},
 				theme: {
