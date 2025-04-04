@@ -19,6 +19,30 @@ export const ReleaseNotes = [
 
 export const News = [
 	{
+		title: <>Netdata release 2.3.2</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v2.3.2',
+		date: 'April 2, 2025',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v2.3.2 patch notes to learn about the latest bug fixes and stability improvements.
+
+			</>
+		),	
+	},
+	{
+		title: <>Netdata release 2.3.1</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v2.3.1',
+		date: 'March 24, 2025',
+		type: 'Link',
+		description: (
+			<>
+				 Check out our Netdata v2.3.1 patch notes to learn about the latest bug fixes and stability improvements.
+
+			</>
+		),	
+	},
+	{
 		title: <>Netdata release 2.3.0</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v2.3.0',
 		date: 'March 19, 2025',
