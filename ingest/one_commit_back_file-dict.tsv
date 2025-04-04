@@ -801,6 +801,7 @@ https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	/docs/security-and-privacy-design/netdata-cloud-security-and-privacy-design
 https://github.com/netdata/agent-service-discovery/edit/master/README.md	/docs/collecting-metrics/service-discovery
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/troubleshooting.md	/docs/netdata-cloud-on-prem/troubleshooting
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/image-signature-verification.md	/docs/netdata-cloud-on-prem/container-image-signature-verification
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/README.md	/docs/netdata-cloud-on-prem
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/poc-without-k8s.md	/docs/netdata-cloud-on-prem/poc-without-k8s
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md	/docs/netdata-cloud-on-prem/installation

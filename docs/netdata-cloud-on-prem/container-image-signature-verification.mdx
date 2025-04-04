@@ -1,0 +1,104 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/image-signature-verification.md"
+sidebar_label: "Container Image Signature Verification"
+learn_status: "Published"
+learn_rel_path: "Netdata Cloud On-Prem"
+sidebar_position: "600020"
+learn_link: "https://learn.netdata.cloud/docs/netdata-cloud-on-prem/container-image-signature-verification"
+---
+
+# Netdata Cloud On-Prem Image Signature Verification
+
+All on-prem images stored in the container registry are digitally signed, providing a robust mechanism to verify their authenticity and integrity. This also applies to Helm charts, because they are distributed as OCI artifacts.
+
+## Implementation Details
+
+AWS ECR is used to store on-premises images. To sign images, AWS ECR leverages AWS Signer with Notary v2 support, a secure image signing and verification standard. Notary v2 offers several verification levels; we strongly recommend using the strict verification level for maximum security. This level ensures that only images signed by trusted entities and not subsequently revoked are accepted.
+
+## Verifying Image Signatures and Revocation Status
+
+Several methods exist for verifying the signature of an image and checking for revocation:
+
+1. **Local Verification using the Notary CLI with AWS Signer Plugin:** This method allows you to verify image signatures directly on your machine. You'll need the Notary CLI and the AWS Signer plugin installed.  Detailed instructions for installation and configuration can be found in the [AWS Signer Developer Guide](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html).
+
+2. **Kubernetes Admission Controller:**  For Kubernetes deployments, the AWS Signer admission controller provides automated image verification at the cluster level.  This prevents unauthorized or compromised images from being deployed.  Refer to the [AWS Signer Developer Guide](https://docs.aws.amazon.com/signer/latest/developerguide/kubernetes-verification.html) for configuration details.
+
+**Trust and Identity:**
+
+AWS ECR uses AWS Signer to sign images.  Therefore, your verification process relies on the AWS root certificate, which can be downloaded from the [AWS Signer Developer Guide](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html).  The trusted identity ARN (Amazon Resource Name) for the signing profile: `arn:aws:signer:us-east-1:362923047827:/signing-profiles/onprem`.
+
+## Local Image Verification Example using Notary CLI
+
+This example demonstrates local signature verification using the Notary CLI and the AWS Signer plugin.  Ensure you have the necessary prerequisites installed and configured.  Replace placeholders like `<provided_aws_credentials>`.
+
+**1. Verify Plugin Installation:**
+
+```bash
+$ notation plugin list
+```
+
+This command lists installed plugins. You should see `com.amazonaws.signer.notation.plugin` listed.
+
+**2. Configure AWS Credentials:**
+
+```bash
+$ export AWS_ACCESS_KEY_ID=<provided_aws_credentials>
+$ export AWS_SECRET_ACCESS_KEY=<provided_aws_credentials>
+```
+
+**3. Login to ECR:**
+
+```bash
+$ aws ecr get-login-password --region us-east-1 | notation login --username AWS --password-stdin 362923047827.dkr.ecr.us-east-1.amazonaws.com
+```
+
+**4. List Certificates:**
+
+```bash
+$ notation cert list
+```
+
+Ensure that you have the root certificated from the AWS installed.
+
+**5. View Policy:**
+
+```bash
+$ notation policy show
+```
+
+Sample policy:
+
+```json
+{
+  "version":"1.0",
+  "trustPolicies":[
+    {
+	    "name":"test",
+	    "registryScopes":[
+		    "*"
+	    ],
+	    "signatureVerification":{
+		    "level":"strict"
+	    },
+	    "trustStores":[
+		   "signingAuthority:aws-signer-ts"
+	    ],
+	    "trustedIdentities":[
+		   "arn:aws:signer:us-east-1:362923047827:/signing-profiles/onprem"
+	    ]
+	  }
+  ]
+}
+```
+
+
+**6. Verify Image Signature:**
+
+```bash
+$ notation verify 362923047827.dkr.ecr.us-east-1.amazonaws.com/onprem-cloud-environment-service@sha256:4117f06045b5b94a58ded40238fa7e9c2f228c6e0fac45dc78732052e3f48d1b --plugin-config aws-region=us-east-1
+```
+
+A successful verification will output a message confirming the signature's validity.
+
+
+This comprehensive approach ensures the integrity and authenticity of your container images, strengthening your overall security posture.
