@@ -62,7 +62,7 @@ These binaries are not optimized (they are a bit slower), they have certain feat
 Once you have installed a binary package with debugging info, you will need to install `valgrind` and run this command to start Netdata:
 
 ```bash
-PATH="/opt/netdata/bin:${PATH}" valgrind --undef-value-errors=no /opt/netdata/bin/srv/netdata -D
+PATH="/opt/netdata/bin:$\{PATH}" valgrind --undef-value-errors=no /opt/netdata/bin/srv/netdata -D
 ```
 
 The above command, will run Netdata under `valgrind`. While Netdata runs under `valgrind` it will be 10x slower and use a lot more memory.

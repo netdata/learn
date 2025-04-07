@@ -438,7 +438,7 @@ Use the dictionary in 2 ways:
 1.  set `dimension = myapp.metric1 ''` and have at the dictionary `myapp.metric1 = metric1 name`
 2.  set `dimension = myapp.metric1 'm1'` and have at the dictionary `m1 = metric1 name`
 
-In both cases, the dimension will be added with ID `myapp.metric1` and will be named `metric1 name`. So, in alerts use either of the 2 as `${myapp.metric1}` or `${metric1 name}`.
+In both cases, the dimension will be added with ID `myapp.metric1` and will be named `metric1 name`. So, in alerts use either of the 2 as `$\{myapp.metric1}` or `$\{metric1 name}`.
 
 > keep in mind that if you add multiple times the same StatsD metric to a chart, Netdata will append `TYPE` to the dimension ID, so `myapp.metric1` will be added as `myapp.metric1_last` or `myapp.metric1_events`, etc. If you add multiple times the same metric with the same `TYPE` to a chart, Netdata will also append an incremental counter to the dimension ID, i.e. `myapp.metric1_last1`, `myapp.metric1_last2`, etc.
 
@@ -674,23 +674,23 @@ You can also use this little function to take care of all the details:
 STATSD_HOST="localhost"
 STATSD_PORT="8125"
 statsd() {
-        local options="-u -w 0" all="${*}"
+        local options="-u -w 0" all="$\{*}"
         
         # replace all spaces with newlines
-        all="${all// /\\n}"
+        all="$\{all// /\\n}"
 
         # if the string length of all parameters given is above 1000, use TCP
-        [ "${#all}" -gt 1000 ] && options="-N -w 0"
+        [ "$\{#all}" -gt 1000 ] && options="-N -w 0"
 
         # send the metrics to statsd
-        printf "${all}\n" | nc ${options} ${STATSD_HOST} ${STATSD_PORT} || return 1
+        printf "$\{all}\n" | nc $\{options} $\{STATSD_HOST} $\{STATSD_PORT} || return 1
 
         return 0
 }
 
-if [ ! -z "${*}" ]
+if [ ! -z "$\{*}" ]
 then
-  statsd "${@}"
+  statsd "$\{@}"
 fi
 ```
 

@@ -86,7 +86,7 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ dns_query_query_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/dns_query.conf) | dns_query.query_status | DNS request type ${label:record_type} to server ${label:server} is unsuccessful |
+| [ dns_query_query_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/dns_query.conf) | dns_query.query_status | DNS request type $\{label:record_type} to server $\{label:server} is unsuccessful |
 
 
 ## Setup
@@ -114,7 +114,8 @@ sudo ./edit-config go.d/dns_query.conf
 The following options can be defined globally: update_every, autodetection_retry.
 
 
-<details open><summary>All options</summary>
+<details open>
+<summary>All options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
@@ -135,7 +136,8 @@ The following options can be defined globally: update_every, autodetection_retry
 
 An example configuration using Google's public DNS servers.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -158,7 +160,8 @@ jobs:
 
 An example configuration using DNS servers from `/etc/resolv.conf`.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:

@@ -328,7 +328,7 @@ rename:
 
 inject:                         # <<< we added this
   - key: PRIORITY               # <<< we added this
-    value: '${NGINX_STATUS}'    # <<< we added this
+    value: '$\{NGINX_STATUS}'    # <<< we added this
     
   - key: SYSLOG_IDENTIFIER      # <<< we added this
     value: 'nginx-log'          # <<< we added this
@@ -387,7 +387,7 @@ rename:
 
 inject:                         
   - key: PRIORITY               
-    value: '${NGINX_STATUS}'    
+    value: '$\{NGINX_STATUS}'    
 
 rewrite:                        # <<< we added this
   - key: PRIORITY               # <<< we added this
@@ -584,7 +584,7 @@ If on other hand your organization prefers to maintain the full logs and control
 
 ## `log2journal` options
 
-```text
+````text
 
 Netdata log2journal v1.43.0-341-gdac4df856
 
@@ -687,7 +687,7 @@ Options:
        Inject constant fields to the output (both matched and unmatched logs).
        --inject entries are added to unmatched lines too, when their key is
        not used in --inject-unmatched (--inject-unmatched override --inject).
-       VALUE can use variable like ${OTHER_KEY} to be replaced with the values
+       VALUE can use variable like $\{OTHER_KEY} to be replaced with the values
        of other keys available.
 
        Up to 512 fields can be injected.
@@ -698,7 +698,7 @@ Options:
          - key: KEY1
            value: 'VALUE1'
          - key: KEY2
-           value: '${KEY3}${KEY4}' # gets the values of KEY3 and KEY4
+           value: '$\{KEY3}$\{KEY4}' # gets the values of KEY3 and KEY4
          # add as many as required
        ```
 
@@ -714,19 +714,19 @@ Options:
        `inject`.
 
        When `non-empty` is given, MATCH is expected to be a variable
-       substitution using `${KEY1}${KEY2}`. Once the substitution is completed
+       substitution using `$\{KEY1}$\{KEY2}`. Once the substitution is completed
        the rule is matching the KEY only if the result is not empty.
        When `non-empty` is not set, the MATCH string is expected to be a PCRE2
        regular expression to be checked against the KEY value. This PCRE2
        pattern may include named groups to extract parts of the KEY's value.
 
-       REPLACE supports variable substitution like `${variable}` against MATCH
-       named groups (when MATCH is a PCRE2 pattern) and `${KEY}` against the
+       REPLACE supports variable substitution like `$\{variable}` against MATCH
+       named groups (when MATCH is a PCRE2 pattern) and `$\{KEY}` against the
        keys defined so far.
 
        Example:
               --rewrite DATE=/^(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})$/
-                             ${day}/${month}/${year}
+                             $\{day}/$\{month}/$\{year}
        The above will rewrite dates in the format YYYY-MM-DD to DD/MM/YYYY.
 
        Only one rewrite rule is applied per key; the sequence of rewrites for a
@@ -745,12 +745,12 @@ Options:
          # the order if these rules in important - processed top to bottom
          - key: KEY1
            match: 'PCRE2 PATTERN WITH NAMED GROUPS'
-           value: 'all match fields and input keys as ${VARIABLE}'
+           value: 'all match fields and input keys as $\{VARIABLE}'
            inject: BOOLEAN # yes = inject the field, don't just rewrite it
            stop: BOOLEAN # no = continue processing, don't stop if matched
          - key: KEY2
-           non_empty: '${KEY3}${KEY4}' # match only if this evaluates to non empty
-           value: 'all input keys as ${VARIABLE}'
+           non_empty: '$\{KEY3}$\{KEY4}' # match only if this evaluates to non empty
+           value: 'all input keys as $\{VARIABLE}'
            inject: BOOLEAN # yes = inject the field, don't just rewrite it
            stop: BOOLEAN # no = continue processing, don't stop if matched
          # add as many rewrites as required
@@ -909,7 +909,7 @@ JOURNAL FIELDS RULES (enforced by systemd-journald)
 
 You can find the most common fields at 'man systemd.journal-fields'.
 
-```
+````
 
 `log2journal` supports YAML configuration files, like the ones found [in this directory](https://github.com/netdata/netdata/tree/master/src/collectors/log2journal/log2journal.d).
 

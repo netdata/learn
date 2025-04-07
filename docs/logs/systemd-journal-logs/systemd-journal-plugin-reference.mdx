@@ -302,9 +302,9 @@ multiple journal files, over long time-frames.
 During the development of this plugin, we submitted, to `systemd`, a number of patches to improve `journalctl`
 performance by a factor of 14:
 
-- <https://github.com/systemd/systemd/pull/29365>
-- <https://github.com/systemd/systemd/pull/29366>
-- <https://github.com/systemd/systemd/pull/29261>
+- [https://github.com/systemd/systemd/pull/29365](https://github.com/systemd/systemd/pull/29365)
+- [https://github.com/systemd/systemd/pull/29366](https://github.com/systemd/systemd/pull/29366)
+- [https://github.com/systemd/systemd/pull/29261](https://github.com/systemd/systemd/pull/29261)
 
 However, even after these patches are merged, `journalctl` will still be 2x slower than this Netdata plugin,
 on multi-journal queries.

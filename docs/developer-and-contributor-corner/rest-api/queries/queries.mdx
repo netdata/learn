@@ -182,7 +182,7 @@ When you request `points=1`, Netdata understands that you need 1 point for the w
 
 So, the proper way to query the database is to also set at least `after`. The following call will returns 1 point for the last complete 10-second duration (it starts at `timestamp % 10 = 0`):
 
-<http://netdata.firehol.org/api/v1/data?chart=system.cpu&points=1&after=-10&options=seconds>
+[http://netdata.firehol.org/api/v1/data?chart=system.cpu&points=1&after=-10&options=seconds](http://netdata.firehol.org/api/v1/data?chart=system.cpu&points=1&after=-10&options=seconds)
 
 When you keep calling this URL, you will see that it returns one new value every 10 seconds, and the timestamp always ends with zero. Similarly, if you say `points=1&after=-5` it will always return timestamps ending with 0 or 5.
 

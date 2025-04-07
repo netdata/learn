@@ -98,12 +98,12 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ httpcheck_web_service_up ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | HTTP check endpoint ${label:url} liveness status |
-| [ httpcheck_web_service_bad_content ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | Percentage of HTTP responses from ${label:url} with unexpected content in the last 5 minutes |
-| [ httpcheck_web_service_bad_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | Percentage of HTTP responses from ${label:url} with unexpected status in the last 5 minutes |
-| [ httpcheck_web_service_bad_header ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | Percentage of HTTP responses from ${label:url} with unexpected header in the last 5 minutes |
-| [ httpcheck_web_service_timeouts ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | Percentage of timed-out HTTP requests to ${label:url} in the last 5 minutes |
-| [ httpcheck_web_service_no_connection ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | Percentage of failed HTTP requests to ${label:url} in the last 5 minutes |
+| [ httpcheck_web_service_up ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | HTTP check endpoint $\{label:url} liveness status |
+| [ httpcheck_web_service_bad_content ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | Percentage of HTTP responses from $\{label:url} with unexpected content in the last 5 minutes |
+| [ httpcheck_web_service_bad_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | Percentage of HTTP responses from $\{label:url} with unexpected status in the last 5 minutes |
+| [ httpcheck_web_service_bad_header ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | Percentage of HTTP responses from $\{label:url} with unexpected header in the last 5 minutes |
+| [ httpcheck_web_service_timeouts ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | Percentage of timed-out HTTP requests to $\{label:url} in the last 5 minutes |
+| [ httpcheck_web_service_no_connection ](https://github.com/netdata/netdata/blob/master/src/health/health.d/httpcheck.conf) | httpcheck.status | Percentage of failed HTTP requests to $\{label:url} in the last 5 minutes |
 
 
 ## Setup
@@ -131,7 +131,8 @@ sudo ./edit-config go.d/httpcheck.conf
 The following options can be defined globally: update_every, autodetection_retry.
 
 
-<details open><summary>Config options</summary>
+<details open>
+<summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
@@ -168,7 +169,8 @@ The following options can be defined globally: update_every, autodetection_retry
 
 A basic example configuration.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -182,7 +184,8 @@ jobs:
 
 Configuration with HTTP request headers that will be sent by the client.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -200,7 +203,8 @@ jobs:
 
 A basic example configuration with non-default status_accepted.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -217,7 +221,8 @@ jobs:
 
 Example configurations with `header_match`. See the value [pattern](https://github.com/netdata/netdata/tree/master/src/go/pkg/matcher#supported-format) syntax.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -264,7 +269,8 @@ jobs:
 
 Basic HTTP authentication.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -281,7 +287,8 @@ jobs:
 Do not validate server certificate chain and hostname.
 
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -299,7 +306,8 @@ jobs:
 Collecting metrics from local and remote instances.
 
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:

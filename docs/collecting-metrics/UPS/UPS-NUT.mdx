@@ -107,9 +107,9 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ upsd_10min_ups_load ](https://github.com/netdata/netdata/blob/master/src/health/health.d/upsd.conf) | upsd.ups_load | UPS ${label:ups_name} average load over the last 10 minutes |
-| [ upsd_ups_battery_charge ](https://github.com/netdata/netdata/blob/master/src/health/health.d/upsd.conf) | upsd.ups_battery_charge | UPS ${label:ups_name} average battery charge over the last minute |
-| [ upsd_ups_last_collected_secs ](https://github.com/netdata/netdata/blob/master/src/health/health.d/upsd.conf) | upsd.ups_load | UPS ${label:ups_name} number of seconds since the last successful data collection |
+| [ upsd_10min_ups_load ](https://github.com/netdata/netdata/blob/master/src/health/health.d/upsd.conf) | upsd.ups_load | UPS $\{label:ups_name} average load over the last 10 minutes |
+| [ upsd_ups_battery_charge ](https://github.com/netdata/netdata/blob/master/src/health/health.d/upsd.conf) | upsd.ups_battery_charge | UPS $\{label:ups_name} average battery charge over the last minute |
+| [ upsd_ups_last_collected_secs ](https://github.com/netdata/netdata/blob/master/src/health/health.d/upsd.conf) | upsd.ups_load | UPS $\{label:ups_name} number of seconds since the last successful data collection |
 
 
 ## Setup
@@ -137,7 +137,8 @@ sudo ./edit-config go.d/upsd.conf
 The following options can be defined globally: update_every, autodetection_retry.
 
 
-<details open><summary>Config options</summary>
+<details open>
+<summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
@@ -154,7 +155,8 @@ The following options can be defined globally: update_every, autodetection_retry
 
 A basic example configuration.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -171,7 +173,8 @@ jobs:
 Collecting metrics from local and remote instances.
 
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:

@@ -93,8 +93,8 @@ Metrics:
 | smartctl.device_read_errors_rate | corrected, uncorrected | errors/s |
 | smartctl.device_write_errors_rate | corrected, uncorrected | errors/s |
 | smartctl.device_verify_errors_rate | corrected, uncorrected | errors/s |
-| smartctl.device_smart_attr_{attribute_name} | {attribute_name} | {attribute_unit} |
-| smartctl.device_smart_attr_{attribute_name}_normalized | {attribute_name} | value |
+| smartctl.device_smart_attr_\{attribute_name} | \{attribute_name} | \{attribute_unit} |
+| smartctl.device_smart_attr_\{attribute_name}_normalized | \{attribute_name} | value |
 
 
 
@@ -166,7 +166,8 @@ sudo ./edit-config go.d/smartctl.conf
 The following options can be defined globally: update_every.
 
 
-<details open><summary>Config options</summary>
+<details open>
+<summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
@@ -198,7 +199,8 @@ The valid arguments to this option are:
 
 Allows you to override the default devices poll interval (data collection).
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -213,7 +215,8 @@ jobs:
 This example demonstrates using `extra_devices` to manually add a storage device (`/dev/sdc`) not automatically detected by `smartctl --scan`.
 
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:

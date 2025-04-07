@@ -106,10 +106,10 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ zfs_pool_space_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/zfs.conf) | zfspool.pool_space_utilization | ZFS pool ${label:pool} is nearing capacity. Current space usage is above the threshold. |
-| [ zfs_pool_health_state_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/zfs.conf) | zfspool.pool_health_state | ZFS pool ${label:pool} state is degraded |
-| [ zfs_pool_health_state_crit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/zfs.conf) | zfspool.pool_health_state | ZFS pool ${label:pool} state is faulted or unavail |
-| [ zfs_vdev_health_state ](https://github.com/netdata/netdata/blob/master/src/health/health.d/zfs.conf) | zfspool.vdev_health_state | ZFS vdev ${label:vdev} state is faulted or degraded |
+| [ zfs_pool_space_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/zfs.conf) | zfspool.pool_space_utilization | ZFS pool $\{label:pool} is nearing capacity. Current space usage is above the threshold. |
+| [ zfs_pool_health_state_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/zfs.conf) | zfspool.pool_health_state | ZFS pool $\{label:pool} state is degraded |
+| [ zfs_pool_health_state_crit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/zfs.conf) | zfspool.pool_health_state | ZFS pool $\{label:pool} state is faulted or unavail |
+| [ zfs_vdev_health_state ](https://github.com/netdata/netdata/blob/master/src/health/health.d/zfs.conf) | zfspool.vdev_health_state | ZFS vdev $\{label:vdev} state is faulted or degraded |
 
 
 ## Setup
@@ -137,7 +137,8 @@ sudo ./edit-config go.d/zfspool.conf
 The following options can be defined globally: update_every.
 
 
-<details open><summary>Config options</summary>
+<details open>
+<summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
@@ -153,7 +154,8 @@ The following options can be defined globally: update_every.
 
 The executable is not in the directories specified in the PATH environment variable.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:

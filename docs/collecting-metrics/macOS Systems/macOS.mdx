@@ -167,7 +167,7 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ interface_speed ](https://github.com/netdata/netdata/blob/master/src/health/health.d/net.conf) | net.net | network interface ${label:device} current speed |
+| [ interface_speed ](https://github.com/netdata/netdata/blob/master/src/health/health.d/net.conf) | net.net | network interface $\{label:device} current speed |
 
 
 ## Setup
@@ -208,7 +208,8 @@ There are three sections in the file which you can configure:
 - `[plugin:macos:iokit]` - Enable or disable monitoring for storage device.
 
 
-<details open><summary>Config options</summary>
+<details open>
+<summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
@@ -259,7 +260,8 @@ There are three sections in the file which you can configure:
 
 A basic example that discards swap monitoring
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 [plugin:macos:sysctl]
@@ -274,7 +276,8 @@ A basic example that discards swap monitoring
 
 A basic example that discards swap monitoring
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 [plugin:macos:mach_smi]
