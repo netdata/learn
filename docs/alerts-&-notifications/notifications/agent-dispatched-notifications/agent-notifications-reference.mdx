@@ -94,15 +94,15 @@ You can edit `health_alarm_notify.conf` using the `edit-config` script to config
 - **Recipients** per role per notification method
 
      ```text
-     role_recipients_email[sysadmin]="${DEFAULT_RECIPIENT_EMAIL}"
-     role_recipients_pushover[sysadmin]="${DEFAULT_RECIPIENT_PUSHOVER}"
-     role_recipients_pushbullet[sysadmin]="${DEFAULT_RECIPIENT_PUSHBULLET}"
-     role_recipients_telegram[sysadmin]="${DEFAULT_RECIPIENT_TELEGRAM}"
-     role_recipients_slack[sysadmin]="${DEFAULT_RECIPIENT_SLACK}"
+     role_recipients_email[sysadmin]="$\{DEFAULT_RECIPIENT_EMAIL}"
+     role_recipients_pushover[sysadmin]="$\{DEFAULT_RECIPIENT_PUSHOVER}"
+     role_recipients_pushbullet[sysadmin]="$\{DEFAULT_RECIPIENT_PUSHBULLET}"
+     role_recipients_telegram[sysadmin]="$\{DEFAULT_RECIPIENT_TELEGRAM}"
+     role_recipients_slack[sysadmin]="$\{DEFAULT_RECIPIENT_SLACK}"
      ...
      ```
 
-     Here you can change the `${DEFAULT_...}` values to the values of the recipients you want, separated by a space if you have multiple recipients.
+     Here you can change the `$\{DEFAULT_...}` values to the values of the recipients you want, separated by a space if you have multiple recipients.
 
 ## Testing Alert Notifications
 

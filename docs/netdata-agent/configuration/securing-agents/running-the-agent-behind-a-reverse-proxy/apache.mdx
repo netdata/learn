@@ -138,8 +138,8 @@ with this content:
     ProxyPass "/" "http://localhost:19999/" connectiontimeout=5 timeout=30 keepalive=on
     ProxyPassReverse "/" "http://localhost:19999/"
 
-    ErrorLog ${APACHE_LOG_DIR}/netdata-error.log
-    CustomLog ${APACHE_LOG_DIR}/netdata-access.log combined
+    ErrorLog $\{APACHE_LOG_DIR}/netdata-error.log
+    CustomLog $\{APACHE_LOG_DIR}/netdata-access.log combined
 
 </VirtualHost>
 ```
@@ -218,8 +218,8 @@ Specify `Location /` if Netdata is running on dedicated virtual host.
     ProxyPass "/" "http://localhost:19999/" connectiontimeout=5 timeout=30 keepalive=on
     ProxyPassReverse "/" "http://localhost:19999/"
 
-    ErrorLog ${APACHE_LOG_DIR}/netdata-error.log
-    CustomLog ${APACHE_LOG_DIR}/netdata-access.log combined
+    ErrorLog $\{APACHE_LOG_DIR}/netdata-error.log
+    CustomLog $\{APACHE_LOG_DIR}/netdata-access.log combined
 </VirtualHost>
 ```
 

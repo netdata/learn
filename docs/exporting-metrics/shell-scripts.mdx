@@ -37,7 +37,7 @@ NETDATA_SYSTEM_CPU_USER=4
 NETDATA_SYSTEM_CPU_VISIBLETOTAL=5
 
 # let's see the total cpu utilization of the system
-echo ${NETDATA_SYSTEM_CPU_VISIBLETOTAL}
+echo $\{NETDATA_SYSTEM_CPU_VISIBLETOTAL}
 5
 
 # what about alerts?
@@ -46,7 +46,7 @@ NETDATA_ALARM_SYSTEM_SWAP_USED_SWAP_STATUS=CLEAR
 NETDATA_ALARM_SYSTEM_SWAP_USED_SWAP_VALUE=51
 
 # let's get the current status of the alert 'used swap'
-echo ${NETDATA_ALARM_SYSTEM_SWAP_USED_SWAP_STATUS}
+echo $\{NETDATA_ALARM_SYSTEM_SWAP_USED_SWAP_STATUS}
 CLEAR
 
 # is it fast?
@@ -65,7 +65,7 @@ The `_VISIBLETOTAL` variable sums up all the dimensions of each chart.
 The format of the variables is:
 
 ```sh
-NETDATA_${chart_id^^}_${dimension_id^^}="${value}"
+NETDATA_$\{chart_id^^}_$\{dimension_id^^}="$\{value}"
 ```
 
 The value is rounded to the closest integer, since shell script cannot process decimal numbers.

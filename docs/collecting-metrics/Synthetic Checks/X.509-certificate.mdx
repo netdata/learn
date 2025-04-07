@@ -86,8 +86,8 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ x509check_days_until_expiration ](https://github.com/netdata/netdata/blob/master/src/health/health.d/x509check.conf) | x509check.time_until_expiration | SSL cert expiring soon (${label:source} cn:${label:common_name}) |
-| [ x509check_revocation_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/x509check.conf) | x509check.revocation_status | SSL cert revoked (${label:source}) |
+| [ x509check_days_until_expiration ](https://github.com/netdata/netdata/blob/master/src/health/health.d/x509check.conf) | x509check.time_until_expiration | SSL cert expiring soon ($\{label:source} cn:$\{label:common_name}) |
+| [ x509check_revocation_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/x509check.conf) | x509check.revocation_status | SSL cert revoked ($\{label:source}) |
 
 
 ## Setup
@@ -115,7 +115,8 @@ sudo ./edit-config go.d/x509check.conf
 The following options can be defined globally: update_every, autodetection_retry.
 
 
-<details open><summary>Config options</summary>
+<details open>
+<summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
@@ -138,7 +139,8 @@ The following options can be defined globally: update_every, autodetection_retry
 
 Website certificate.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -152,7 +154,8 @@ jobs:
 
 Local file certificate.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -166,7 +169,8 @@ jobs:
 
 SMTP certificate.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -183,7 +187,8 @@ jobs:
 Check the expiration status of the multiple websites' certificates.
 
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:

@@ -402,7 +402,7 @@ The full [database query API](/docs/developer-and-contributor-corner/rest-api/qu
 - `METHOD` is one of the available [grouping methods](/docs/developer-and-contributor-corner/rest-api/queries#grouping-methods) such as `average`, `min`, `max` etc.
      This is required.
 
-  - `GROUPING OPTIONS` are optional and can have the form `CONDITION VALUE`, where `CONDITION` is `!=`, `=`, `<=`, `<`, `>`, `>=` and `VALUE` is a number. The `CONDITION` and `VALUE` are required for `countif`, while `VALUE` is used by `percentile`, `trimmed_mean` and `trimmed_median`.
+  - `GROUPING OPTIONS` are optional and can have the form `CONDITION VALUE`, where `CONDITION` is `!=`, `=`, `\<=`, `<`, `>`, `>=` and `VALUE` is a number. The `CONDITION` and `VALUE` are required for `countif`, while `VALUE` is used by `percentile`, `trimmed_mean` and `trimmed_median`.
 
 - `AFTER` is a relative number of seconds, but it also accepts a single letter for changing
      the units, like `-1s` = 1 second in the past, `-1m` = 1 minute in the past, `-1h` = 1 hour
@@ -649,7 +649,7 @@ See our [simple patterns docs](/docs/developer-and-contributor-corner/libnetdata
 Similar to host labels, the `chart labels` key can be used to filter if an alert loads or not for a specific chart, based on
 whether these chart labels match or not.
 
-The list of chart labels present on each chart can be obtained from <http://localhost:19999/api/v1/charts?all>
+The list of chart labels present on each chart can be obtained from [http://localhost:19999/api/v1/charts?all](http://localhost:19999/api/v1/charts?all)
 
 For example, each `disk_space` chart defines a chart label called `mount_point` with each instance of this chart having
 a value there of which mount point it monitors.
@@ -687,13 +687,13 @@ alert information. Current variables supported are:
 
 | variable            | description                                                       |
 |---------------------|-------------------------------------------------------------------|
-| ${family}           | Will be replaced by the family instance for the alert (e.g. eth0) |
-| ${label:LABEL_NAME} | The variable will be replaced with the value of the chart label   |
+| $\{family}           | Will be replaced by the family instance for the alert (e.g. eth0) |
+| $\{label:LABEL_NAME} | The variable will be replaced with the value of the chart label   |
 
 For example, a summary field like the following:
 
 ```yaml
-summary: 1 minute received traffic overflow for ${label:device}
+summary: 1 minute received traffic overflow for $\{label:device}
 ```
 
 Will be rendered on the alert acting on interface `eth0` as:
@@ -718,13 +718,13 @@ alert information. Current variables supported are:
 
 | variable            | description                                                       |
 |---------------------|-------------------------------------------------------------------|
-| ${family}           | Will be replaced by the family instance for the alert (e.g. eth0) |
-| ${label:LABEL_NAME} | The variable will be replaced with the value of the chart label   |
+| $\{family}           | Will be replaced by the family instance for the alert (e.g. eth0) |
+| $\{label:LABEL_NAME} | The variable will be replaced with the value of the chart label   |
 
 For example, an info field like the following:
 
 ```yaml
-info: average inbound utilization for the network interface ${family} over the last minute
+info: average inbound utilization for the network interface $\{family} over the last minute
 ```
 
 Will be rendered on the alert acting on interface `eth0` as:
@@ -737,7 +737,7 @@ An alert acting on a chart that has a chart label named e.g. `target`, with a va
 can be enriched as follows:
 
 ```yaml
-info: average ratio of HTTP responses with unexpected status over the last 5 minutes for the site ${label:target}
+info: average ratio of HTTP responses with unexpected status over the last 5 minutes for the site $\{label:target}
 ```
 
 Will become:
@@ -753,7 +753,7 @@ info: average ratio of HTTP responses with unexpected status over the last 5 min
 Netdata has an internal infix expression parser under `libnetdata/eval`. This parses expressions and creates an internal
 structure that allows fast execution of them.
 
-These operators are supported `+`, `-`, `*`, `/`, `<`, `==`, `<=`, `<>`, `!=`, `>`, `>=`, `&&`, `||`, `!`, `AND`, `OR`, `NOT`.
+These operators are supported `+`, `-`, `*`, `/`, `<`, `==`, `\<=`, `<>`, `!=`, `>`, `>=`, `&&`, `||`, `!`, `AND`, `OR`, `NOT`.
 Boolean operators result in either `1` (true) or `0` (false).
 
 The conditional evaluation operator `?` is supported too. Using this operator, IF-THEN-ELSE conditional statements can be
@@ -809,7 +809,8 @@ registry](https://registry.my-netdata.io/api/v1/alarm_variables?chart=system.cpu
 
 Netdata supports three internal indexes for variables that will be used in health monitoring.
 
-<details><summary>The variables below can be used in both chart alerts and context templates.</summary>
+<details>
+<summary>The variables below can be used in both chart alerts and context templates.</summary>
 
 Although the `alarm_variables` link shows you variables for a particular chart, the same variables can also be used in
 templates for charts belonging to a given context. The reason is that all charts of a given

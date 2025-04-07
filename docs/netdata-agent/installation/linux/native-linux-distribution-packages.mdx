@@ -20,7 +20,7 @@ Our [kickstart.sh installer](/docs/netdata-agent/installation/linux) uses these 
 
 ## Manual setup of RPM packages
 
-Netdata’s official RPM repositories are hosted at <https://repository.netdata.cloud/repos/index.html>. We provide four groups of
+Netdata’s official RPM repositories are hosted at [https://repository.netdata.cloud/repos/index.html](https://repository.netdata.cloud/repos/index.html). We provide four groups of
 repositories at that top level:
 
 - `stable`: Contains packages for stable releases of the Netdata Agent.
@@ -40,15 +40,15 @@ Within each top level group of repositories, there are directories for each supp
 Each distribution has a directory for supported releases, with subdirectories for each CPU architecture containing the actual repository.  
 
 For example, the stable release for RHEL 9 on 64-bit x86 is at:  
-<https://repository.netdata.cloud/repos/stable/el/9/x86_64/>  
+[https://repository.netdata.cloud/repos/stable/el/9/x86_64/](https://repository.netdata.cloud/repos/stable/el/9/x86_64/)  
 
 Our RPM packages and repository metadata are signed with a GPG key (`Netdatabot`), fingerprint:  
 `6E155DC153906B73765A74A99DD4A74CECFA8F4F`.  
 Public key:  
-<https://repository.netdata.cloud/netdatabot.gpg.key>  
+[https://repository.netdata.cloud/netdatabot.gpg.key](https://repository.netdata.cloud/netdatabot.gpg.key)  
 
 For manual repository setup, download the appropriate config package from:  
-<https://repository.netdata.cloud/repos/repoconfig/index.html>  
+[https://repository.netdata.cloud/repos/repoconfig/index.html](https://repository.netdata.cloud/repos/repoconfig/index.html)  
 Install it with your package manager to ensure dependencies and smooth updates.  
 
 > **Note:**  
@@ -57,7 +57,7 @@ Install it with your package manager to ensure dependencies and smooth updates.
 
 ## Manual setup of DEB packages
 
-Netdata’s official DEB repositories are hosted at <https://repository.netdata.cloud/repos/index.html>. 
+Netdata’s official DEB repositories are hosted at [https://repository.netdata.cloud/repos/index.html](https://repository.netdata.cloud/repos/index.html). 
 We provide four groups of repositories at that top level:
 
 - `stable`: Contains packages for stable releases of the Netdata Agent.
@@ -98,7 +98,7 @@ current key fingerprint is `6E155DC153906B73765A74A99DD4A74CECFA8F4F`. The assoc
 `https://repository.netdata.cloud/netdatabot.gpg.key`.
 
 For manual repository setup, download the appropriate config package from:  
-<https://repository.netdata.cloud/repos/repoconfig/index.html>  
+[https://repository.netdata.cloud/repos/repoconfig/index.html](https://repository.netdata.cloud/repos/repoconfig/index.html)  
 
 Install it using your package manager to ensure all dependencies are met and to allow a smooth transition if our infrastructure changes.
 
@@ -120,7 +120,7 @@ We don’t officially support mirroring our repositories, but here are some tips
 - A full mirror requires up to **100 GB** of storage, so mirror only what you need.  
 - For daily syncing, **05:00–08:00 UTC** is ideal, as nightly packages are usually published by then.  
 - If using our GPG signatures, grab our public key:  
-  <https://repository.netdata.cloud/netdatabot.gpg.key>
+  [https://repository.netdata.cloud/netdatabot.gpg.key](https://repository.netdata.cloud/netdatabot.gpg.key)
 
 ## Public mirrors of the official Netdata repositories
 

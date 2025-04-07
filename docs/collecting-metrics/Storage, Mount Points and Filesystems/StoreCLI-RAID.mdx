@@ -138,10 +138,10 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ storcli_controller_health_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/storcli.conf) | storcli.controller_health_status | RAID controller ${label:controller_number} is unhealthy |
-| [ storcli_controller_bbu_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/storcli.conf) | storcli.controller_bbu_status | RAID controller ${label:controller_number} BBU is unhealthy |
-| [ storcli_phys_drive_errors ](https://github.com/netdata/netdata/blob/master/src/health/health.d/storcli.conf) | storcli.phys_drive_errors | RAID physical drive c${label:controller_number}/e${label:enclosure_number}/s${label:slot_number} errors |
-| [ storcli_phys_drive_predictive_failures ](https://github.com/netdata/netdata/blob/master/src/health/health.d/storcli.conf) | storcli.phys_drive_predictive_failures | RAID physical drive c${label:controller_number}/e${label:enclosure_number}/s${label:slot_number} predictive failures |
+| [ storcli_controller_health_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/storcli.conf) | storcli.controller_health_status | RAID controller $\{label:controller_number} is unhealthy |
+| [ storcli_controller_bbu_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/storcli.conf) | storcli.controller_bbu_status | RAID controller $\{label:controller_number} BBU is unhealthy |
+| [ storcli_phys_drive_errors ](https://github.com/netdata/netdata/blob/master/src/health/health.d/storcli.conf) | storcli.phys_drive_errors | RAID physical drive c$\{label:controller_number}/e$\{label:enclosure_number}/s$\{label:slot_number} errors |
+| [ storcli_phys_drive_predictive_failures ](https://github.com/netdata/netdata/blob/master/src/health/health.d/storcli.conf) | storcli.phys_drive_predictive_failures | RAID physical drive c$\{label:controller_number}/e$\{label:enclosure_number}/s$\{label:slot_number} predictive failures |
 
 
 ## Setup
@@ -169,7 +169,8 @@ sudo ./edit-config go.d/storcli.conf
 The following options can be defined globally: update_every.
 
 
-<details open><summary>Config options</summary>
+<details open>
+<summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
@@ -184,7 +185,8 @@ The following options can be defined globally: update_every.
 
 Allows you to override the default data collection interval.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:

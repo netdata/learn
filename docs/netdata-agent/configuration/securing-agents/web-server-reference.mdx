@@ -124,7 +124,8 @@ If you publish your Netdata web server to the internet, you may want to apply so
 
 ### Disable the Web Server
 
-<details><summary>details</summary>
+<details>
+<summary>details</summary>
 
 Edit `netdata.conf` using the [`edit-config` script](/docs/netdata-agent/configuration#edit-a-configuration-file-using-edit-config)
 
@@ -137,7 +138,8 @@ Edit `netdata.conf` using the [`edit-config` script](/docs/netdata-agent/configu
 
 ### Change the number of threads
 
-<details><summary>details</summary>
+<details>
+<summary>details</summary>
 
 Control the number of threads and sockets with the following settings:
 
@@ -151,7 +153,8 @@ Control the number of threads and sockets with the following settings:
 
 ### Binding Netdata to multiple ports
 
-<details><summary>details</summary>
+<details>
+<summary>details</summary>
 
 Netdata can bind to multiple IPs and ports, offering access to different services on each. Up to 100 sockets can be used (increase it at compile time with `CFLAGS="-DMAX_LISTEN_FDS=200" ./netdata-installer.sh ...`).
 
@@ -190,7 +193,8 @@ The API requests are serviced as follows:
 
 ### Enable HTTPS/TLS support
 
-<details><summary>details</summary>
+<details>
+<summary>details</summary>
 
 Since v1.16.0, Netdata supports encrypted HTTP connections to the web server, plus encryption of streaming data to a
 parent from its child nodes, via the TLS protocol.
@@ -230,7 +234,8 @@ openssl req -newkey rsa:2048 -nodes -sha512 -x509 -days 365 -keyout key.pem -out
 
 ### Select TLS version
 
-<details><summary>details</summary>
+<details>
+<summary>details</summary>
 
 Beginning with version `v1.21.0`, specify the TLS version and the ciphers that you want to use:
 

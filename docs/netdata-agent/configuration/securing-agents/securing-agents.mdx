@@ -69,7 +69,8 @@ Edit the `[web]` section in `netdata.conf` using the [`edit-config`](/docs/netda
 
 The Agent supports binding to multiple IPs and ports. When using hostnames, all resolved IPs will be used (for example, `localhost` typically resolves to both `127.0.0.1` and `::1`).
 
-<details><summary>More info for cloud-based installations</summary>
+<details>
+<summary>More info for cloud-based installations</summary>
 
 For cloud environments without private LAN capabilities or multi-cloud deployments, you can create a virtual management network using mesh VPN tools like `tincd` or `gvpe`. These tools enable secure, private communication between servers while allowing administration stations to access management functions across your cloud infrastructure.
 

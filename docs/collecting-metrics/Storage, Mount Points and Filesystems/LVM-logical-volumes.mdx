@@ -89,8 +89,8 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ lvm_lv_data_space_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/lvm.conf) | lvm.lv_data_space_utilization | LVM logical volume high data space usage (LV ${label:lv_name} VG ${label:vg_name} Type ${label:volume_type}) |
-| [ lvm_lv_metadata_space_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/lvm.conf) | lvm.lv_metadata_space_utilization | LVM logical volume high metadata space usage (LV ${label:lv_name} VG ${label:vg_name} Type ${label:volume_type}) |
+| [ lvm_lv_data_space_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/lvm.conf) | lvm.lv_data_space_utilization | LVM logical volume high data space usage (LV $\{label:lv_name} VG $\{label:vg_name} Type $\{label:volume_type}) |
+| [ lvm_lv_metadata_space_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/lvm.conf) | lvm.lv_metadata_space_utilization | LVM logical volume high metadata space usage (LV $\{label:lv_name} VG $\{label:vg_name} Type $\{label:volume_type}) |
 
 
 ## Setup
@@ -118,7 +118,8 @@ sudo ./edit-config go.d/lvm.conf
 The following options can be defined globally: update_every.
 
 
-<details open><summary>Config options</summary>
+<details open>
+<summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
@@ -133,7 +134,8 @@ The following options can be defined globally: update_every.
 
 Allows you to override the default data collection interval.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:

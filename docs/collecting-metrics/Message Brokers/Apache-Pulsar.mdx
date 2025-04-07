@@ -79,8 +79,8 @@ Metrics:
 | pulsar.storage_size | used | KiB |
 | pulsar.storage_operations_rate | read, write | message batches/s |
 | pulsar.msg_backlog | backlog | messages |
-| pulsar.storage_write_latency | <=0.5ms, <=1ms, <=5ms, =10ms, <=20ms, <=50ms, <=100ms, <=200ms, <=1s, >1s | entries/s |
-| pulsar.entry_size | <=128B, <=512B, <=1KB, <=2KB, <=4KB, <=16KB, <=100KB, <=1MB, >1MB | entries/s |
+| pulsar.storage_write_latency | \<=0.5ms, \<=1ms, \<=5ms, =10ms, \<=20ms, \<=50ms, \<=100ms, \<=200ms, \<=1s, >1s | entries/s |
+| pulsar.entry_size | \<=128B, \<=512B, \<=1KB, \<=2KB, \<=4KB, \<=16KB, \<=100KB, \<=1MB, >1MB | entries/s |
 | pulsar.subscription_delayed | delayed | message batches |
 | pulsar.subscription_msg_rate_redeliver | redelivered | messages/s |
 | pulsar.subscription_blocked_on_unacked_messages | blocked | subscriptions |
@@ -104,8 +104,8 @@ Metrics:
 | pulsar.namespace_storage_size | used | KiB |
 | pulsar.namespace_storage_operations_rate | read, write | message batches/s |
 | pulsar.namespace_msg_backlog | backlog | messages |
-| pulsar.namespace_storage_write_latency | <=0.5ms, <=1ms, <=5ms, =10ms, <=20ms, <=50ms, <=100ms, <=200ms, <=1s, >1s | entries/s |
-| pulsar.namespace_entry_size | <=128B, <=512B, <=1KB, <=2KB, <=4KB, <=16KB, <=100KB, <=1MB, >1MB | entries/s |
+| pulsar.namespace_storage_write_latency | \<=0.5ms, \<=1ms, \<=5ms, =10ms, \<=20ms, \<=50ms, \<=100ms, \<=200ms, \<=1s, >1s | entries/s |
+| pulsar.namespace_entry_size | \<=128B, \<=512B, \<=1KB, \<=2KB, \<=4KB, \<=16KB, \<=100KB, \<=1MB, >1MB | entries/s |
 | pulsar.namespace_subscription_delayed | delayed | message batches |
 | pulsar.namespace_subscription_msg_rate_redeliver | redelivered | messages/s |
 | pulsar.namespace_subscription_blocked_on_unacked_messages | blocked | subscriptions |
@@ -164,7 +164,8 @@ sudo ./edit-config go.d/pulsar.conf
 The following options can be defined globally: update_every, autodetection_retry.
 
 
-<details open><summary>Config options</summary>
+<details open>
+<summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
@@ -204,7 +205,8 @@ jobs:
 
 Basic HTTP authentication.
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -221,7 +223,8 @@ jobs:
 Do not validate server certificate chain and hostname.
 
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:
@@ -239,7 +242,8 @@ jobs:
 Collecting metrics from local and remote instances.
 
 
-<details open><summary>Config</summary>
+<details open>
+<summary>Config</summary>
 
 ```yaml
 jobs:

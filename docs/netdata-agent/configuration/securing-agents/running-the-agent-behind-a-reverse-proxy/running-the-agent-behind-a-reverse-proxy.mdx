@@ -27,7 +27,7 @@ When you run Netdata behind a reverse proxy, we recommend you firewall protect a
 
 ```sh
 PROXY_IP="1.2.3.4"
-iptables -t filter -I INPUT -p tcp --dport 19999 \! -s ${PROXY_IP} -m conntrack --ctstate NEW -j DROP
+iptables -t filter -I INPUT -p tcp --dport 19999 \! -s $\{PROXY_IP} -m conntrack --ctstate NEW -j DROP
 ```
 
 The above will prevent anyone except your web server from accessing a Netdata dashboard running on the host.

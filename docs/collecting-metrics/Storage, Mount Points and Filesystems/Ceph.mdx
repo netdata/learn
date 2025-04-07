@@ -159,7 +159,7 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ ceph_cluster_physical_capacity_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/ceph.conf) | ceph.cluster_physical_capacity_utilization | Ceph cluster ${label:fsid} disk space utilization |
+| [ ceph_cluster_physical_capacity_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/ceph.conf) | ceph.cluster_physical_capacity_utilization | Ceph cluster $\{label:fsid} disk space utilization |
 
 
 ## Setup
@@ -187,7 +187,8 @@ sudo ./edit-config go.d/ceph.conf
 The following options can be defined globally: update_every.
 
 
-<details open><summary>Config options</summary>
+<details open>
+<summary>Config options</summary>
 
 | Name | Description | Default | Required |
 |:----|:-----------|:-------|:--------:|
