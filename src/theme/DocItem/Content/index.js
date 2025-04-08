@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import {ThemeClassNames} from '@docusaurus/theme-common';
-import {useDoc} from '@docusaurus/plugin-content-docs/client';
+import { ThemeClassNames } from '@docusaurus/theme-common';
+import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
 import EditThisPage from '../../CustomEditThisPage';
@@ -16,7 +16,7 @@ import EditThisPage from '../../CustomEditThisPage';
  - the markdown content does not already contain a top-level h1 heading
 */
 function useSyntheticTitle() {
-  const {metadata, frontMatter, contentTitle} = useDoc();
+  const { metadata, frontMatter, contentTitle } = useDoc();
   const shouldRender =
     !frontMatter.hide_title && typeof contentTitle === 'undefined';
   if (!shouldRender) {
@@ -32,11 +32,11 @@ function EditMetaRow({
   formattedLastUpdatedAt,
 }) {
   return (
-    <div className={clsx(ThemeClassNames.docs.docFooterEditMetaRow, 'row')}style={{'float': 'right'}}>
+    <div className={clsx(ThemeClassNames.docs.docFooterEditMetaRow, 'row')} style={{ 'float': 'right' }}>
       {/* <div className="col">{editUrl && }</div> */}
 
       {/* <div className={clsx('col', styles.lastUpdated)}> */}
-        <EditThisPage editUrl={editUrl} />
+      <EditThisPage editUrl={editUrl} />
       {/* {(lastUpdatedAt || lastUpdatedBy) && (
         
         <LastUpdated
@@ -45,15 +45,15 @@ function EditMetaRow({
           lastUpdatedBy={lastUpdatedBy}
         />
       )} */}
-      </div>
+    </div>
     // </div>
   );
 }
 
-export default function DocItemContent({children}) {
-  const {metadata} = useDoc();
-  const {editUrl, lastUpdatedAt, formattedLastUpdatedAt, lastUpdatedBy, tags} =
-      metadata;
+export default function DocItemContent({ children }) {
+  const { metadata } = useDoc();
+  const { editUrl, lastUpdatedAt, formattedLastUpdatedAt, lastUpdatedBy, tags } =
+    metadata;
   const syntheticTitle = useSyntheticTitle();
   return (
     <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
