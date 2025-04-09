@@ -59,7 +59,7 @@ export default function Home() {
 					</Box>
 				</Grid>
 				<div id="updates" className="relative flex flex-row flex-wrap pb-12">
-					<div className="relative w-full lg:w-3/4">
+					<div className="relative w-full">
 						<h2 className="z-10 relative text-xl lg:text-3xl font-semibold mb-6">
 							What's new at Netdata?
 						</h2>
@@ -92,40 +92,6 @@ export default function Home() {
 								</li>
 							))}
 						</ul>
-					</div>
-					<div className="flex-1 markdown prose-lg ml-0 lg:ml-8 mt-16">
-						<h2 className="z-10 relative text-lg lg:text-2xl font-semibold mb-6">
-							Latest major release
-							<span className="flex items-center font-semibold">
-								<code className="text-base">{ReleaseVersion}</code>
-								<span className="text-base mx-2">•</span>
-								<time className="text-base text-gray-500 font-medium uppercase dark:text-gray-400">
-									{ReleaseDate}
-								</time>
-							</span>
-						</h2>
-						<ul>
-							{ReleaseNotes.map((props, idx) => (
-								<li
-									key={props}
-									dangerouslySetInnerHTML={{ __html: props }}
-								></li>
-							))}
-						</ul>
-						<p>
-							Read the{' '}
-							<Link
-								to={`https://github.com/netdata/netdata/releases/tag/v${ReleaseVersion}`}
-							>
-								release notes
-							</Link>{' '}
-							or{' '}
-							<Link to="/docs/netdata-agent/maintenance/update-netdata-agents">
-								{' '}
-								update now
-							</Link>
-							.
-						</p>
 					</div>
 				</div>
 			</main>

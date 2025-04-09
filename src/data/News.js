@@ -1,22 +1,5 @@
 import React from 'react';
 
-export const ReleaseVersion = '2.0.0';
-
-export const ReleaseDate = 'Nov 7, 2024';
-
-export const ReleaseNotes = [
-	'Native Windows Support',
-	'Process Monitoring: Simplified and Enhanced',
-	'Network Monitoring',
-	'Netdata SSO',
-	'Enterprise SSO - Enhanced SP Initiated SSO Flow',
-	'Netdata Referral Program',
-	'Alerts Silencing Recurrence',
-	'Configurable Timeouts on Reachability Notifications',
-];
-
-
-
 export const News = [
 	{
 		title: <>Netdata release 2.3.2</>,

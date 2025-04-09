@@ -2,7 +2,7 @@
 module.exports = {
 	title: 'Learn Netdata',
 	tagline:
-		"Here you'll find documentation and reference material for monitoring and troubleshooting your systems with Netdata. Discover new insights of your systems, containers, and applications using per-second metrics, insightful visualizations, and every metric imaginable.",
+		"Here you'll find documentation and reference material for monitoring and troubleshooting your systems with Netdata.",
 	url: 'https://learn.netdata.cloud',
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
