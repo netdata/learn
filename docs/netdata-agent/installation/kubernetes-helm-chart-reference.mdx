@@ -11,9 +11,9 @@ learn_link: "https://learn.netdata.cloud/docs/netdata-agent/installation/kuberne
 
 <a href="https://artifacthub.io/packages/search?repo=netdata" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/netdata" alt="Artifact HUB" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img></a>
 
-<img src="https://img.shields.io/badge/Version-3.7.131-informational" alt="Version: 3.7.131"></img>
+<img src="https://img.shields.io/badge/Version-3.7.134-informational" alt="Version: 3.7.134"></img>
 
-<img loading="lazy" src="https://img.shields.io/badge/AppVersion-v2.3.2-informational" alt="AppVersion: v2.3.2" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img>
+<img loading="lazy" src="https://img.shields.io/badge/AppVersion-v2.4.0-informational" alt="AppVersion: v2.4.0" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img>
 
 _Based on the work of varyumin (https://github.com/varyumin/netdata)_.
 
@@ -218,6 +218,10 @@ The following table lists the configurable parameters of the netdata chart and t
 | `parent.claiming.enabled`                     | Enable parent claiming for netdata cloud                                                                                                               | `false`                                                                                 |
 | `parent.claiming.token`                       | Claim token                                                                                                                                            | `""`                                                                                    |
 | `parent.claiming.room`                        | Comma separated list of claim rooms IDs                                                                                                                | `""`                                                                                    |
+| `parent.securityContext.runAsUser`            | The UID to run the container process                                                                                                                   | `201`                                                                                   |
+| `parent.securityContext.runAsGroup`           | The GID to run the container process                                                                                                                   | `201`                                                                                   |
+| `parent.securityContext.fsGroup`              | The supplementary group for setting permissions on volumes                                                                                             | `201`                                                                                   |
+| `parent.extraInitContainers`                  | Additional init containers to add to the parent pods                                                                                                   | `[]`                                                                                    |
 | `parent.extraVolumeMounts`                    | Additional volumeMounts to add to the parent pods                                                                                                      | `[]`                                                                                    |
 | `parent.extraVolumes`                         | Additional volumes to add to the parent pods                                                                                                           | `[]`                                                                                    |
 | `k8sState.hostname`                           | K8s state node hostname                                                                                                                                | `netdata-k8s-state`                                                                     |
