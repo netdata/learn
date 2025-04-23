@@ -2325,5 +2325,8 @@
     "https://learn.netdata.cloud/docs/netdata-cloud/versions/on-prem/troubleshooting": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/troubleshooting.md",
     "https://learn.netdata.cloud/docs/netdata-cloud/versions/on-prem/poc-without-k8s": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/poc-without-k8s.md",
     "https://learn.netdata.cloud/docs/netdata-cloud/versions/on-prem/installation": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/installation.md",
-    "https://learn.netdata.cloud/docs/netdata-cloud/versions/on-prem": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/README.md"
+    "https://learn.netdata.cloud/docs/netdata-cloud/versions/on-prem": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/README.md",
+    "https://learn.netdata.cloud/docs/deployment-guides/standalone-deployment": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/standalone-deployment.md",
+    "https://learn.netdata.cloud/docs/deployment-guides/deployment-with-centralization-points": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-with-centralization-points.md",
+    "https://learn.netdata.cloud/docs/deployment-guides/deployment-examples": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-strategies.md"
 }

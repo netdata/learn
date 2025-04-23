@@ -8015,7 +8015,7 @@
 
 [[redirects]]
   from="/docs/deployment-guides/deployment-strategies"
-  to="/docs/deployment-guides/deployment-examples"
+  to="/docs/deployment-guides/examples"
 
 [[redirects]]
   from="/docs/netdata-cloud/view-plan-&-billing"
@@ -8256,5 +8256,17 @@
 [[redirects]]
   from="/docs/netdata-cloud/versions/on-prem"
   to="/docs/netdata-cloud-on-prem"
+
+[[redirects]]
+  from="/docs/deployment-guides/standalone-deployment"
+  to="/docs/deployment-guides/standalone"
+
+[[redirects]]
+  from="/docs/deployment-guides/deployment-with-centralization-points"
+  to="/docs/deployment-guides/centralized"
+
+[[redirects]]
+  from="/docs/deployment-guides/deployment-examples"
+  to="/docs/deployment-guides/examples"
 
 # section: dynamic << END
