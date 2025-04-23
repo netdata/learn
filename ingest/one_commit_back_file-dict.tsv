@@ -794,9 +794,9 @@ https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/node-f
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/nodes-tab.md	/docs/dashboards-and-charts/nodes-tab
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/events-feed.md	/docs/dashboards-and-charts/events-feed
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	/docs/deployment-guides
-https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	/docs/deployment-guides/deployment-with-centralization-points
-https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	/docs/deployment-guides/standalone-deployment
-https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-strategies.md	/docs/deployment-guides/deployment-examples
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	/docs/deployment-guides/centralized
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	/docs/deployment-guides/standalone
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-strategies.md	/docs/deployment-guides/examples
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/README.md	/docs/security-and-privacy-design
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	/docs/security-and-privacy-design/netdata-agent-security-and-privacy-design
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	/docs/security-and-privacy-design/netdata-cloud-security-and-privacy-design
