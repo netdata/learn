@@ -171,9 +171,9 @@ https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/metric
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/nodes-tab.md	Nodes	Published	Dashboards and Charts/Tabs	See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/top-tab.md	Top	Published	Dashboards and Charts/Tabs	Instructions on how to use Functions
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/themes.md	Theme	Published	Dashboards and Charts	
-https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana plugin	Published	Dashboards and Charts	
+https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	Grafana Plugin	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/netdata-charts.md	Charts	Published	Dashboards and Charts	
-https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/node-filter.md	Node filter	Published	Dashboards and Charts	
+https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/node-filter.md	Node Filter	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/visualization-date-and-time-controls.md	Time Controls	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/src/web/gui/confluence/README.md	Atlassian Confluence dashboards	Unpublished	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/src/web/gui/README.md	Legacy Agent Dashboard	Unpublished	Dashboards and Charts	The local Netdata Agent dashboard is the heart of health monitoring and performance troubleshooting, with hundreds of real-time charts.
