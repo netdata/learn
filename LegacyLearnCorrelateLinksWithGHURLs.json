@@ -2328,5 +2328,19 @@
     "https://learn.netdata.cloud/docs/netdata-cloud/versions/on-prem": "https://github.com/netdata/netdata-cloud-onprem/blob/master/docs/learn.netdata.cloud/README.md",
     "https://learn.netdata.cloud/docs/deployment-guides/standalone-deployment": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/standalone-deployment.md",
     "https://learn.netdata.cloud/docs/deployment-guides/deployment-with-centralization-points": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-with-centralization-points.md",
-    "https://learn.netdata.cloud/docs/deployment-guides/deployment-examples": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-strategies.md"
+    "https://learn.netdata.cloud/docs/deployment-guides/deployment-examples": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-strategies.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/visualization-date-and-time-controls": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/visualization-date-and-time-controls.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/top-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/top-tab.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/nodes-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/nodes-tab.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/netdata-charts": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/netdata-charts.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/logs-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/logs-tab.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/kubernetes-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/kubernetes-tab.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/home-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/home-tab.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/grafana-data-source-plugin": "https://github.com/netdata/netdata-grafana-datasource-plugin/blob/master/README.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/events-feed": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/events-feed.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/dashboards-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/dashboards-tab.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/choose-your-netdata-ui-theme": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/themes.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/anomaly-advisor-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/anomaly-advisor-tab.md",
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/alerts-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/alerts-tab.md"
 }

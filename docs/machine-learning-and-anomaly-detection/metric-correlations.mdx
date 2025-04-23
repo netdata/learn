@@ -18,12 +18,12 @@ Since it leverages every available metric in your infrastructure with up to 1-se
 
 ## Using Metric Correlations
 
-When viewing the [Metrics tab or a single-node dashboard](/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs), you'll find the **Metric Correlations** button in the top-right corner.
+When viewing the [Metrics tab or a single-node dashboard](/docs/dashboards-and-charts/tabs/metrics), you'll find the **Metric Correlations** button in the top-right corner.
 
 To start:
 
 1. Click **Metric Correlations**.
-2. [Highlight a selection of metrics](/docs/dashboards-and-charts/netdata-charts#highlight) on a single chart. The selected timeframe must be at least 15 seconds.
+2. [Highlight a selection of metrics](/docs/dashboards-and-charts/charts#highlight) on a single chart. The selected timeframe must be at least 15 seconds.
 3. The menu displays details about the selected area and reference baseline. Metric Correlations compares the highlighted window to a reference baseline, which is four times its length and precedes it immediately.
 4. Click **Find Correlations**. This button is only active if a valid timeframe is selected.
 5. The process evaluates all available metrics and returns a filtered Netdata dashboard showing only the most changed metrics between the baseline and the highlighted window.
@@ -60,7 +60,7 @@ Metric Correlations (MC) requests to Netdata Cloud are handled in two ways:
 
 ## Usage Tips
 
-- When running Metric Correlations from the [Metrics tab](/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs) across multiple nodes, refine your results by grouping by node:
+- When running Metric Correlations from the [Metrics tab](/docs/dashboards-and-charts/tabs/metrics) across multiple nodes, refine your results by grouping by node:
     1. Run MC on all nodes if you're unsure which ones are relevant.
     2. Group the most interesting charts by node to determine whether changes affect all nodes or just a subset.
     3. If a subset of nodes stands out, filter for those nodes and rerun MC to get more precise results.
