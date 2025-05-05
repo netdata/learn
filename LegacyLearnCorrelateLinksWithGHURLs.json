@@ -2342,5 +2342,6 @@
     "https://learn.netdata.cloud/docs/dashboards-and-charts/dashboards-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/dashboards-tab.md",
     "https://learn.netdata.cloud/docs/dashboards-and-charts/choose-your-netdata-ui-theme": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/themes.md",
     "https://learn.netdata.cloud/docs/dashboards-and-charts/anomaly-advisor-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/anomaly-advisor-tab.md",
-    "https://learn.netdata.cloud/docs/dashboards-and-charts/alerts-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/alerts-tab.md"
+    "https://learn.netdata.cloud/docs/dashboards-and-charts/alerts-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/alerts-tab.md",
+    "https://learn.netdata.cloud/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points": "https://github.com/netdata/netdata/blob/master/docs/observability-centralization-points/metrics-centralization-points/faq.md"
 }
