@@ -6819,7 +6819,7 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/faq-on-metrics-cantralization-points"
-  to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
@@ -6839,7 +6839,7 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/faq-on-metrics-cantralization-points"
-  to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/configuring-metrics-centralization-points"
@@ -8324,5 +8324,9 @@
 [[redirects]]
   from="/docs/dashboards-and-charts/alerts-tab"
   to="/docs/dashboards-and-charts/tabs/alerts"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points"
+  to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-centralization-points"
 
 # section: dynamic << END
