@@ -2,6 +2,30 @@ import React from 'react';
 
 export const News = [
 	{
+		title: <>Netdata release 2.5.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v2.5.0',
+		date: 'May 5, 2025',
+		type: 'Link',
+		description: (
+			<>
+				Check out the Netdata v2.5.0 notes to learn about the newest features and improvements.
+
+			</>
+		),
+	},
+	{
+		title: <>Netdata release 2.4.0</>,
+		href: 'https://github.com/netdata/netdata/releases/tag/v2.4.0',
+		date: 'April 14, 2025',
+		type: 'Link',
+		description: (
+			<>
+				Check out the Netdata v2.4.0 notes to learn about the newest features and improvements.
+
+			</>
+		),
+	},
+	{
 		title: <>Netdata release 2.3.2</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v2.3.2',
 		date: 'April 2, 2025',
