@@ -2,8 +2,10 @@ custom_edit_url	learn_path
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/README.md	/docs/netdata-cloud-on-prem
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md	/docs/netdata-cloud-on-prem/installation
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/poc-without-k8s.md	/docs/netdata-cloud-on-prem/poc-without-k8s
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/sbom.md	/docs/netdata-cloud-on-prem/software-bill-of-materials
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/troubleshooting.md	/docs/netdata-cloud-on-prem/troubleshooting
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/image-signature-verification.md	/docs/netdata-cloud-on-prem/container-image-signature-verification
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/netpol.md	/docs/netdata-cloud-on-prem/kubernetes-network-policy-configuration
 https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md	/docs/dashboards-and-charts/grafana-plugin
 https://github.com/netdata/helmchart/edit/master/charts/netdata/README.md	/docs/netdata-agent/installation/kubernetes-helm-chart-reference
 https://github.com/netdata/agent-service-discovery/edit/master/README.md	/docs/collecting-metrics/service-discovery
@@ -758,6 +760,7 @@ https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-co
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/monitor-debug-applications-ebpf.md	/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/README.md	/docs/developer-and-contributor-corner
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself
+https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/dyncfg.md	/docs/developer-and-contributor-corner/dynamic-configuration
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/collect-unbound-metrics.md	/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/organize-your-infrastructure-invite-your-team.md	/docs/netdata-cloud/spaces-and-rooms
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/view-plan-and-billing.md	/docs/netdata-cloud/netdata-plans-&-billing

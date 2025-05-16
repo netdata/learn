@@ -1,0 +1,85 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/sbom.md"
+sidebar_label: "Software Bill of Materials"
+learn_status: "Published"
+learn_rel_path: "Netdata Cloud On-Prem"
+sidebar_position: "600020"
+learn_link: "https://learn.netdata.cloud/docs/netdata-cloud-on-prem/software-bill-of-materials"
+---
+
+# Software Bill of Materials (SBOM) for Netdata Cloud On-Prem
+
+## Understanding SBOMs
+
+A Software Bill of Materials (SBOM) is a formal record containing details of the software components, libraries, and dependencies included in a software product.  Think of it as an ingredient list for your software.  It lists everything that makes up the software, including versions, licenses, and even known vulnerabilities.
+
+SBOMs are crucial for several reasons:
+
+* **Security:**  By providing a complete inventory of components, SBOMs enable quick identification of vulnerabilities.  If a known security flaw is discovered in a library used in your software, the SBOM helps you determine if your application is affected and prioritize remediation efforts.
+* **Compliance:** Many regulatory frameworks and industry standards now mandate the provision of SBOMs to ensure supply chain security and transparency.
+* **License Management:**  An SBOM clarifies the licenses associated with each component, helping you avoid licensing conflicts and ensuring compliance.
+* **Reproducibility:**  SBOMs enable the recreation of a software build, ensuring consistency and traceability.
+* **Supply Chain Risk Management:**  SBOMs provide a clear picture of your software's supply chain, allowing you to identify and mitigate potential risks associated with third-party components.
+
+Several formats exist for representing SBOMs, including SPDX, CycloneDX, and SWID.  Netdata Cloud On-Prem utilizes the **CycloneDX** format, known for its flexibility and machine-readability.
+
+
+## Netdata Cloud On-Prem SBOM Provisioning
+
+Netdata Cloud On-Prem provides SBOMs for its container images.  These SBOMs are generated using **Trivy**, a popular open-source vulnerability scanner, and are formatted in CycloneDX JSON.  Importantly, these SBOMs are digitally signed using the same mechanism as the container images themselves, ensuring their authenticity and integrity.  They are stored securely in Amazon Elastic Container Registry (ECR) alongside the corresponding container images.  This ensures that the SBOM you retrieve matches the image you deploy.
+
+
+## Verifying the SBOM's Authenticity
+
+Verifying the SBOM's authenticity is crucial to ensure you are using a legitimate and unaltered SBOM.  This process is similar to verifying the signature of the container image itself (see [Container Image Signature Verification](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/container-image-signature-verification) for details).  We leverage the `notation` tool for verification.  This ensures that the SBOM you download hasn't been tampered with since it was signed by Netdata.
+
+
+## Accessing and Verifying the SBOM
+
+The following steps demonstrate how to verify and retrieve the SBOM for a given Netdata Cloud On-Prem container image:
+
+**Prerequisites:**
+
+* You need to have the [oras](https://github.com/oras-project/oras), [jq](https://github.com/jqlang/jq), and [notation](https://github.com/notaryproject/notation) tools installed on your system.  Refer to their respective documentation for installation instructions.  Ensure that your AWS credentials are properly configured for access to your ECR repository.
+
+**Steps:**
+
+1. **Identify the Image URI:** Determine the URI of the container image for which you need the SBOM.  For example:
+
+   ```bash
+   image_uri="362923047827.dkr.ecr.us-east-1.amazonaws.com/onprem-cloud-metrics-exporter:1.0.4"
+   ```
+
+   Replace this with the actual URI of your target image.
+
+2. **Discover the SBOM Reference:** Use `oras discover` to find the SBOM manifest reference:
+
+   ```bash
+   sbom_image=$(oras discover --format json $image_uri --artifact-type "application/vnd.example.sbom.v1+json" | jq -r '.manifests[].reference')
+   ```
+
+3. **Verify the SBOM Signature:** Use `notation verify` to check the digital signature of the SBOM.  This step requires specifying the AWS region:
+
+   ```bash
+   notation verify $sbom_image --plugin-config aws-region=us-east-1
+   ```
+
+   If the signature is valid, the command will complete successfully.  If not, an error will be reported, indicating potential tampering.
+
+4. **Pull the SBOM:** Download the SBOM using `oras pull`:
+
+   ```bash
+   oras pull $sbom_image
+   ```
+
+   This will download the SBOM to a file named `sbom.cdx.json` in your current directory.
+
+5. **Inspect the SBOM:**  View the contents of the SBOM file:
+
+   ```bash
+   cat sbom.cdx.json
+   ```
+
+   This will display the CycloneDX JSON representation of the SBOM, detailing all the components included in the Netdata Cloud On-Prem container image.
+
+By following these steps, you can ensure the integrity and authenticity of the SBOM for your Netdata Cloud On-Prem deployments, contributing to a more secure and trustworthy operational environment.  Remember to replace `"362923047827.dkr.ecr.us-east-1.amazonaws.com/onprem-cloud-metrics-exporter:1.0.4"` with the actual URI of your target image.
