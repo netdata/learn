@@ -1,0 +1,98 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/netpol.md"
+sidebar_label: "Kubernetes Network Policy Configuration"
+learn_status: "Published"
+learn_rel_path: "Netdata Cloud On-Prem"
+sidebar_position: "600040"
+learn_link: "https://learn.netdata.cloud/docs/netdata-cloud-on-prem/kubernetes-network-policy-configuration"
+---
+
+# Kubernetes Network Policy Configuration for Netdata Cloud On-Prem
+
+This document details the configuration of Kubernetes Network Policies within the Netdata Cloud On-Prem Helm chart.  Network policies enhance the security of your deployment by restricting network traffic between pods.
+
+## Enabling Network Policies
+
+By default, network policies are disabled. To enable them, set the following Helm value to `true`:
+
+```yaml
+global.networkPolicy.enabled: true
+```
+
+This will apply network policies to all workloads managed by the Netdata Cloud On-Prem Helm chart, including Deployments, CronJobs, and provisioning jobs.
+
+## Default Policy Behavior
+
+When enabled, the default policy restricts communication *within* the namespace to only the ports specified in:
+
+```yaml
+global.networkPolicy.allowIngressTCPPorts: [8080, 8081, 50051]
+```
+
+Port 8080 is used for the Rest API, port 8081 for the monitoring, and port 50051 for gRPC communication.
+
+By default, only traffic on these specified ports will be permitted between pods within the Netdata Cloud On-Prem deployment.  All other ingress traffic will be denied.
+
+You can also enable DNS egress traffic for all pods within the namespace by setting:
+
+```yaml
+global.networkPolicy.allowEgressDNS: true
+```
+
+This allows pods to resolve DNS names, which is essential for many services.
+
+## External Dependencies
+
+Netdata Cloud On-Prem does not manage external dependencies such as Apache Pulsar, Elasticsearch, PostgreSQL, EMQX, and Redis.  To allow communication with these external services, you must explicitly define network policy rules.  Use the following Helm value keys to configure these rules:
+
+* `global.networkPolicy.ingressRulesForTraefik`: Ingress rules for Traefik.
+* `global.networkPolicy.egressRulesForPostgreSQL`: Egress rules for PostgreSQL.
+* `global.networkPolicy.egressRulesForEMQX`: Egress rules for EMQX.
+* `global.networkPolicy.egressRulesForElasticsearch`: Egress rules for Elasticsearch.
+* `global.networkPolicy.egressRulesForPulsar`: Egress rules for Pulsar.
+* `global.networkPolicy.egressRulesForRedis`: Egress rules for Redis.
+
+Each of these keys expects a Kubernetes NetworkPolicy rule definition as its value.  Refer to the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/) for details on defining NetworkPolicy rules.  These rules should specify the appropriate selectors or/and port ranges to allow communication with your external dependencies.
+
+**Example (PostgreSQL):**
+
+```yaml
+global.networkPolicy.egressRulesForPostgreSQL: |-
+  - to:
+    - podSelector:
+        matchLabels:
+            app: postgresql
+```
+
+
+## Service-Specific Network Policies
+
+Each service can have its own `extraIngress` and `extraEgress` network policy rules added.  This allows for fine-grained control over network access for individual services.
+
+##  Services with External Internet Access
+
+The `cloud-notifications-dispatcher-service` may need to communicate with external notification providers like Slack and Discord.  It is enabled by default, but you can disable and customize it as needed:
+
+```yaml
+cloud_notifications_dispatcher_service.networkPolicy.allowInternetAccess.enabled: true
+cloud_notifications_dispatcher_service.networkPolicy.allowInternetAccess.egressRule: |-
+  - to:
+      - ipBlock:
+          cidr: 0.0.0.0/0
+    ports:
+      - protocol: TCP
+        port: 443
+```
+
+The `cloud-accounts-service` may need to communicate with external identity providers like Google or Github.  It is enabled by default, but you can disable and customize it as needed:
+
+```yaml
+cloud_accounts_service.networkPolicy.allowInternetAccess.enabled: true
+cloud_accounts_service.networkPolicy.allowInternetAccess.egressRule: |-
+  - to:
+      - ipBlock:
+          cidr: 0.0.0.0/0
+    ports:
+      - protocol: TCP
+        port: 443
+```
