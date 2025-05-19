@@ -1,5 +1,6 @@
 custom_edit_url	learn_path
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/README.md	/docs/netdata-cloud-on-prem
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/hardening-guide.md	/docs/netdata-cloud-on-prem/security-hardening-guide
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md	/docs/netdata-cloud-on-prem/installation
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/poc-without-k8s.md	/docs/netdata-cloud-on-prem/poc-without-k8s
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/sbom.md	/docs/netdata-cloud-on-prem/software-bill-of-materials

@@ -1,0 +1,72 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/hardening-guide.md"
+sidebar_label: "Security Hardening Guide"
+learn_status: "Published"
+learn_rel_path: "Netdata Cloud On-Prem"
+sidebar_position: "600040"
+learn_link: "https://learn.netdata.cloud/docs/netdata-cloud-on-prem/security-hardening-guide"
+---
+
+# Security Hardening Guide for Netdata Cloud On-Prem
+
+This guide outlines security hardening steps for Netdata Cloud On-Prem installations using the Helm chart.  Following these best practices will significantly improve the security posture of your deployment.
+
+## Introduction
+
+The Netdata Cloud On-Prem Helm chart incorporates several default security measures.  Most workloads leverage [Kubernetes Security Contexts](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) with settings such as `readOnlyRootFilesystem: true`, `allowPrivilegeEscalation: false`, and `runAsNonRoot: true`. These settings help mitigate potential vulnerabilities. The container base image are also scanned for known vulnerabilities. Each image has its own SBOM (Software Bill of Materials) to provide a detailed inventory of components, which is crucial for vulnerability management and compliance more information is available in the [SBOM documentation](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/software-bill-of-materials).
+
+## Security Hardening Steps
+
+### 1. Verify Image Signatures
+
+Ensure that the images used in your deployment are signed and verified.  This prevents the use of tampered or untrusted images.  The Netdata Cloud On-Prem Helm chart is signed with Notary, and you can verify the signatures using the `notary` CLI tool.  For more information on image signature verification, refer to the [Netdata Cloud On-Prem Image Signature Verification](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/container-image-signature-verification).
+
+### 2. Network Policies
+
+Implementing Kubernetes Network Policies is paramount for controlling inter-pod and inter-service communication.  Network policies restrict network traffic based on labels, namespaces, and ports, preventing unauthorized access.  Refer to the detailed guide on configuring Network Policies for Netdata Cloud On-Prem: [Kubernetes Network Policy Configuration for Netdata Cloud On-Prem](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/kubernetes-network-policy-configuration).  This involves defining rules to access the dependent services like Apache Pulsar, Elasticsearch, PostgreSQL, EMQX, and Redis.
+
+### 3. Secrets Management
+
+Never hardcode sensitive information like usernames, passwords or licenses directly into your Helm value files.  Always use Kubernetes Secrets to store and manage sensitive data.  Create your own secret with the required keys and values, and reference them in your Helm values. In example, the following helm values:
+
+```yaml
+global:
+  netdata_cloud_license:
+    secretBased:
+      existingSecret: "my-netdata-cloud-license-secret"
+      licenseKeyKey: license-key
+      licenseSubjectKey: license-subject
+      licenseSummaryEmailRecipientsKey: license-summary-email-recipients
+```
+
+requires to have a secret named `my-netdata-cloud-license-secret` with the keys `license-key`, `license-subject`, and `license-summary-email-recipients` containing the respective values.
+
+### 4. Authentication
+
+Ensure that all dependent service are using strong passwords and only the provisioning jobs should be using the elevated priviliges. For Apache Pulsar make sure that you have enabled authentication and strongly recommend using OAuth 2.0.  This is crucial for securing your messaging system and preventing unauthorized access to sensitive data.  The Helm values for Apache Pulsar authentication is available under `global.pulsar.authentication`.
+
+### 5. Ingress Security
+
+Secure your ingress controller by configuring TLS (Transport Layer Security) certificates.  This ensures that all communication with your Netdata Cloud On-Prem instance is encrypted.  Configure the `global.ingress.tls` section in your Helm values to specify your TLS certificates.  For example:
+
+```yaml
+global:
+  ingress:
+    tls:
+     - hosts:
+       - your-netdata-domain.com
+       secretName: your-tls-secret
+```
+
+You would need to create a Kubernetes secret `your-tls-secret` containing your certificate and key.
+
+### 6. Communication Security (TLS)
+
+Enable TLS encryption for all sensitive communication channels.  Specifically:
+
+* **Elasticsearch:** Enable secure TLS connections to Elasticsearch by setting `global.elastic.secureTls: true`. This protects communication between your application and the Elasticsearch cluster.
+* **SMTP:** If using SMTP for email notifications, ensure TLS is enabled via `global.mail.smtp.tls: true`. This encrypts email communication to protect sensitive information.
+
+## Conclusion
+
+By implementing the security hardening steps outlined above, you significantly enhance the security of your Netdata Cloud On-Prem deployment.  Stay updated on Kubernetes security best practices and regularly patch your components to address any known vulnerabilities.
