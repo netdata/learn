@@ -31,16 +31,16 @@ learn_link: "https://learn.netdata.cloud/docs/netdata-cloud-on-prem/installation
 
 All components below are included in the `netdata-cloud-dependency` package:
 
-| Component              | Version | Purpose                             |
-| ---------------------- | ------- | ----------------------------------- |
-| **PostgreSQL**         | 14.15   | Main metadata database              |
-| **EMQX**               | 5.8.6   | MQTT Broker for Agent communication |
-| **Apache Pulsar**      | 2.10+   | Inter-container message broker      |
-| **Traefik**            | 2.11.x  | Internal API Gateway                |
-| **Elasticsearch**      | 8.8.x   | Events feed storage                 |
-| **Redis**              | 6.2     | Caching layer                       |
-| **Ingress Controller** | -       | HTTPS support                       |
-| **imagePullSecret**    | -       | Secured ECR repository access       |
+| Component              | Version | Purpose                             | Notes                                 |
+| ---------------------- | ------- | ----------------------------------- |-------------------------------------- |
+| **PostgreSQL**         | 14.15   | Main metadata database              |                                       |
+| **EMQX**               | 5.8.6   | MQTT Broker for Agent communication |                                       |
+| **Apache Pulsar**      | 2.10+   | Inter-container message broker      |                                       |
+| **Traefik**            | 3.x     | Internal API Gateway                | should be running with v2 rule format |
+| **Elasticsearch**      | 8.8.x   | Events feed storage                 |                                       |
+| **Redis**              | 6.2     | Caching layer                       |                                       |
+| **Ingress Controller** | -       | HTTPS support                       |                                       |
+| **imagePullSecret**    | -       | Secured ECR repository access       |                                       |
 
 > **Important**:
 >
