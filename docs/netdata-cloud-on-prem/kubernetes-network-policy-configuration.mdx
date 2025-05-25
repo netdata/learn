@@ -96,3 +96,16 @@ cloud_accounts_service.networkPolicy.allowInternetAccess.egressRule: |-
       - protocol: TCP
         port: 443
 ```
+
+The `cloud-spaceroom-service` may need to communicate with your custom identity provider.  It is enabled by default, but you can disable and customize it as needed:
+
+```yaml
+cloud_spaceroom_service.networkPolicy.allowInternetAccess.enabled: true
+cloud_spaceroom_service.networkPolicy.allowInternetAccess.egressRule: |-
+  - to:
+      - ipBlock:
+          cidr: 0.0.0.0/0
+    ports:
+      - protocol: TCP
+        port: 443
+```
