@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const News = [
-		{
+	{
 		title: <>Netdata release 2.5.3</>,
 		href: 'https://github.com/netdata/netdata/releases/tag/v2.5.3',
 		date: 'June 5 2025',
