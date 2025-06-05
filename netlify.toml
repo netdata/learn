@@ -6806,10 +6806,6 @@
   to="/docs/collecting-metrics/linux-systems/filesystem/btrfs/btrfs"
 
 [[redirects]]
-  from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/sizing-netdata-parents"
-  to="/docs/observability-centralization-points/metrics-centralization-points/sizing-netdata-parents"
-
-[[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/replication-of-past-samples"
   to="/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples"
 
@@ -6828,10 +6824,6 @@
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/clustering-and-high-availability-of-netdata-parents"
   to="/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
-
-[[redirects]]
-  from="/docs/observability-centralization-points/metrics-centralization-points-/sizing-netdata-parents"
-  to="/docs/observability-centralization-points/metrics-centralization-points/sizing-netdata-parents"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/replication-of-past-samples"
