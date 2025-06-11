@@ -1,5 +1,5 @@
 pip
-requests==2.32.0
+requests==2.32.4
 PyGithub
 gitpython
 mergedeep
