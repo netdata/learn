@@ -1063,7 +1063,7 @@
 
 [[redirects]]
   from="/docs/agent/ml"
-  to="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning/ml-models-and-anomaly-detection"
 
 [[redirects]]
   from="/docs/agent/packaging/building-native-packages-locally"
@@ -1295,7 +1295,7 @@
 
 [[redirects]]
   from="/docs/cloud/insights/metric-correlations"
-  to="/docs/machine-learning-and-anomaly-detection/metric-correlations"
+  to="/docs/ai-and-machine-learning/metric-correlations"
 
 [[redirects]]
   from="/docs/cloud/manage/sign-in"
@@ -1323,11 +1323,11 @@
 
 [[redirects]]
   from="/guides/monitor/anomaly-detection"
-  to="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning/ml-models-and-anomaly-detection"
 
 [[redirects]]
   from="/guides/monitor/anomaly-detection-python"
-  to="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning/ml-models-and-anomaly-detection"
 
 [[redirects]]
   from="/docs/agent/build"
@@ -2019,11 +2019,11 @@
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/metric-correlations"
-  to="/docs/machine-learning-and-anomaly-detection/metric-correlations"
+  to="/docs/ai-and-machine-learning/metric-correlations"
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/machine-learning-ml-powered-anomaly-detection"
-  to="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning/ml-models-and-anomaly-detection"
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/functions"
@@ -3223,15 +3223,15 @@
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/metric-correlations"
-  to="/docs/machine-learning-and-anomaly-detection/metric-correlations"
+  to="/docs/ai-and-machine-learning/metric-correlations"
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/machine-learning-ml-powered-anomaly-detection"
-  to="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning/ml-models-and-anomaly-detection"
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting"
-  to="/docs/machine-learning-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/static-binary-linux-packages"
@@ -4823,19 +4823,19 @@
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting/metric-correlations"
-  to="/docs/machine-learning-and-anomaly-detection/metric-correlations"
+  to="/docs/ai-and-machine-learning/metric-correlations"
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
-  to="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning/ml-models-and-anomaly-detection"
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting/ai-powered-troubleshooting-assistant"
-  to="/docs/machine-learning-and-anomaly-detection/ai-powered-troubleshooting-assistant"
+  to="/docs/ai-and-machine-learning/ai-powered-troubleshooting-assistant"
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting"
-  to="/docs/machine-learning-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
@@ -7827,7 +7827,7 @@
 
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection"
-  to="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning/ml-models-and-anomaly-detection"
 
 [[redirects]]
   from="/docs/alerts-&-notifications/health-configuration-reference"
@@ -8320,5 +8320,25 @@
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points"
   to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning/ml-models-and-anomaly-detection"
+
+[[redirects]]
+  from="/docs/machine-learning-and-anomaly-detection/ml-configuration"
+  to="/docs/ai-and-machine-learning/ml-configuration"
+
+[[redirects]]
+  from="/docs/machine-learning-and-anomaly-detection/metric-correlations"
+  to="/docs/ai-and-machine-learning/metric-correlations"
+
+[[redirects]]
+  from="/docs/machine-learning-and-anomaly-detection/ai-powered-troubleshooting-assistant"
+  to="/docs/ai-and-machine-learning/ai-powered-troubleshooting-assistant"
+
+[[redirects]]
+  from="/docs/machine-learning-and-anomaly-detection"
+  to="/docs/ai-and-machine-learning"
 
 # section: dynamic << END

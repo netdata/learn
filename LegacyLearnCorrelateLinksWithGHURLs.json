@@ -2343,5 +2343,10 @@
     "https://learn.netdata.cloud/docs/dashboards-and-charts/choose-your-netdata-ui-theme": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/themes.md",
     "https://learn.netdata.cloud/docs/dashboards-and-charts/anomaly-advisor-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/anomaly-advisor-tab.md",
     "https://learn.netdata.cloud/docs/dashboards-and-charts/alerts-tab": "https://github.com/netdata/netdata/blob/master/docs/dashboards-and-charts/alerts-tab.md",
-    "https://learn.netdata.cloud/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points": "https://github.com/netdata/netdata/blob/master/docs/observability-centralization-points/metrics-centralization-points/faq.md"
+    "https://learn.netdata.cloud/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points": "https://github.com/netdata/netdata/blob/master/docs/observability-centralization-points/metrics-centralization-points/faq.md",
+    "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection": "https://github.com/netdata/netdata/blob/master/src/ml/README.md",
+    "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection/ml-configuration": "https://github.com/netdata/netdata/blob/master/src/ml/ml-configuration.md",
+    "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection/metric-correlations": "https://github.com/netdata/netdata/blob/master/docs/metric-correlations.md",
+    "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection/ai-powered-troubleshooting-assistant": "https://github.com/netdata/netdata/blob/master/docs/netdata-assistant.md",
+    "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection": "https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md"
 }

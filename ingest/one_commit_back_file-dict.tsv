@@ -50,8 +50,8 @@ https://github.com/netdata/netdata/edit/master/src/web/api/formatters/json/READM
 https://github.com/netdata/netdata/edit/master/src/web/api/formatters/value/README.md	/docs/developer-and-contributor-corner/rest-api/formatters/value-formatter
 https://github.com/netdata/netdata/edit/master/src/web/server/README.md	/docs/netdata-agent/configuration/securing-agents/web-server-reference
 https://github.com/netdata/netdata/edit/master/src/claim/README.md	/docs/netdata-cloud/connect-agent-to-cloud
-https://github.com/netdata/netdata/edit/master/src/ml/README.md	/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection
-https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	/docs/machine-learning-and-anomaly-detection/ml-configuration
+https://github.com/netdata/netdata/edit/master/src/ml/README.md	/docs/ai-and-machine-learning/ml-models-and-anomaly-detection
+https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	/docs/ai-and-machine-learning/ml-configuration
 https://github.com/netdata/netdata/edit/master/src/cli/README.md	/docs/netdata-agent/agent-cli
 https://github.com/netdata/netdata/edit/master/src/plugins.d/README.md	/docs/developer-and-contributor-corner/external-plugins
 https://github.com/netdata/netdata/edit/master/src/aclk/README.md	/docs/netdata-cloud/agent-cloud-link-aclk
@@ -643,6 +643,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/semaphore_statistics.md	/docs/collecting-metrics/windows-systems/semaphore-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_sql_server.md	/docs/collecting-metrics/windows-systems/ms-sql-server
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory.md	/docs/collecting-metrics/windows-systems/active-directory
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_exchange.md	/docs/collecting-metrics/windows-systems/ms-exchange
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/iis.md	/docs/collecting-metrics/windows-systems/iis
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/net_framework.md	/docs/collecting-metrics/windows-systems/net-framework
 https://github.com/netdata/netdata/edit/master/src/collectors/diskspace.plugin/README.md	/docs/collecting-metrics/linux-systems/disk-space
@@ -695,13 +696,14 @@ https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/perf.plugin/README.md	/docs/collecting-metrics/linux-systems/cpu-performance
 https://github.com/netdata/netdata/edit/master/src/collectors/macos.plugin/README.md	/docs/collecting-metrics/macos-systems/macos
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	/docs/developer-and-contributor-corner/health-command-api-tester
-https://github.com/netdata/netdata/edit/master/docs/netdata-assistant.md	/docs/machine-learning-and-anomaly-detection/ai-powered-troubleshooting-assistant
+https://github.com/netdata/netdata/edit/master/docs/netdata-assistant.md	/docs/ai-and-machine-learning/ai-powered-troubleshooting-assistant
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	/docs/developer-and-contributor-corner/contribute-to-the-documentation
 https://github.com/netdata/netdata/edit/master/docs/nodes-ephemerality.md	/docs/observability-centralization-points/nodes-ephemerality
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	/docs/developer-and-contributor-corner/glossary
-https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	/docs/machine-learning-and-anomaly-detection/metric-correlations
+https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	/docs/ai-and-machine-learning/metric-correlations
 https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	/docs//live-demo
 https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md	/docs//top-monitoring-netdata-functions
+https://github.com/netdata/netdata/edit/master/docs/learn/mcp.md	/docs/ai-and-machine-learning/mcp-integration
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/kubernetes-tab.md	/docs/dashboards-and-charts/tabs/kubernetes
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/events-feed.md	/docs/dashboards-and-charts/tabs/events
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/anomaly-advisor-tab.md	/docs/dashboards-and-charts/tabs/anomalies
@@ -760,7 +762,7 @@ https://github.com/netdata/netdata/edit/master/docs/observability-centralization
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples.md	/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents.md	/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/faq.md	/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-centralization-points
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/machine-learning-and-anomaly-detection
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/ai-and-machine-learning
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/monitor-hadoop-cluster.md	/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/README.md	/docs/developer-and-contributor-corner
