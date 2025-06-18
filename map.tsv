@@ -156,11 +156,12 @@ cloud_notifications_integrations
 https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	Alert Configuration Reference	Published	Alerts & Notifications	
 https://github.com/netdata/netdata/edit/master/src/web/api/health/README.md	Health API Calls	Published	Alerts & Notifications	
 				
-https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	Machine Learning and Anomaly Detection	Published	Machine Learning and Anomaly Detection	
-https://github.com/netdata/netdata/edit/master/src/ml/README.md	ML models and anomaly detection	Published	Machine Learning and Anomaly Detection	This is an in-depth look at how Netdata uses ML to detect anomalies.
-https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	ML Configuration	Published	Machine Learning and Anomaly Detection	
-https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	Metric Correlations	Published	Machine Learning and Anomaly Detection	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
-https://github.com/netdata/netdata/edit/master/docs/netdata-assistant.md	AI powered troubleshooting assistant	Published	Machine Learning and Anomaly Detection	
+https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	AI and Machine Learning	Published	AI and Machine Learning	
+https://github.com/netdata/netdata/edit/master/src/ml/README.md	ML models and anomaly detection	Published	AI and Machine Learning	This is an in-depth look at how Netdata uses ML to detect anomalies.
+https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	ML Configuration	Published	AI and Machine Learning	
+https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	Metric Correlations	Published	AI and Machine Learning	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
+https://github.com/netdata/netdata/edit/master/docs/netdata-assistant.md	AI powered troubleshooting assistant	Published	AI and Machine Learning	
+https://github.com/netdata/netdata/edit/master/docs/learn/mcp.md	MCP Integration	Published	AI and Machine Learning	
 				
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/README.md	Dashboards and Charts	Published	Dashboards and Charts	
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/home-tab.md	Tabs	Published	Dashboards and Charts/Tabs	With Netdata Cloud's War Rooms, you can see real-time metrics, from any number of nodes in your infrastructure, in composite charts.
