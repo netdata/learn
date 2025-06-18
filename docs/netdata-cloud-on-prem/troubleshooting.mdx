@@ -9,106 +9,141 @@ learn_link: "https://learn.netdata.cloud/docs/netdata-cloud-on-prem/troubleshoot
 
 # Netdata Cloud On-Prem Troubleshooting
 
-Netdata Cloud On-Prem is an enterprise-grade monitoring solution that relies on several infrastructure components:
+Your Netdata Cloud On-Prem deployment relies on several infrastructure components that need proper resources and configuration:
 
-- Databases: PostgreSQL, Redis, Elasticsearch
-- Message Brokers: Pulsar, EMQX
-- Traffic Controllers: Ingress, Traefik
-- Kubernetes Cluster
+**Core Components:**
 
-These components should be monitored and managed according to your organization's established practices and requirements.
+- **Databases**: PostgreSQL, Redis, Elasticsearch
+- **Message Brokers**: Pulsar, EMQX
+- **Traffic Controllers**: Ingress, Traefik
+- **Kubernetes Cluster**
 
-## Common Issues
+**Monitor and manage these components** according to your organization's established practices and requirements.
 
-### Timeout During Installation
+## Common Issues and Solutions
 
-If your installation fails with this error:
+### Installation Timeout Error
+
+**If your installation fails with this error:**
 
 ```
 Installing netdata-cloud-onprem (or netdata-cloud-dependency) helm chart...
 [...]
-Error: client rate limiter Wait returned an error:  Context deadline exceeded.
+Error: client rate limiter Wait returned an error: Context deadline exceeded.
 ```
 
-This error typically indicates **insufficient cluster resources**. Here's how to diagnose and resolve the issue.
+**This typically means your cluster doesn't have enough resources.** Here's how to diagnose and fix it:
 
-#### Diagnosis Steps
+#### Diagnose the Problem
 
-> **Important**
->
-> - For full installation: Ensure you're in the correct cluster context.
-> - For Light PoC: SSH into the Ubuntu VM with `kubectl` pre-configured.
-> - For Light PoC, always perform a complete uninstallation before attempting a new installation.
+:::note
 
-1. Check for pods stuck in Pending state:
+**Before you start:**
 
-   ```shell
-   kubectl get pods -n netdata-cloud | grep -v Running
-   ```
+- **Full installation**: Ensure you're in the correct cluster context
+- **Light PoC**: SSH into your Ubuntu VM with `kubectl` pre-configured
 
-2. If you find Pending pods, examine the resource constraints:
+:::
 
-   ```shell
-   kubectl describe pod <POD_NAME> -n netdata-cloud
-   ```
+:::inportant
 
-   Review the Events section at the bottom of the output. Look for messages about:
-    - Insufficient CPU
-    - Insufficient Memory
-    - Node capacity issues
+<strong>Always</strong> perform complete uninstallation before trying a new installation. There is a safety check in the installation script that will prevent you from attempting installation twice.
 
-3. View overall cluster resources:
+```bash
+./provision.sh uninstall
+```
 
-   ```shell
-   # Check resource allocation across nodes
-   kubectl top nodes
-   
-   # View detailed node capacity
-   kubectl describe nodes | grep -A 5 "Allocated resources"
-   ```
+:::
 
-#### Solution
+<details>
+<summary><strong>Troubleshooting individual pods in Kuberentes</strong></summary><br/>
+<strong>Step 1: Check for stuck pods</strong><br/>
 
-1. Compare your available resources against the [minimum requirements](/docs/netdata-cloud-on-prem/installation#system-requirements).
-2. Take one of these actions:
-    - Add more resources to your cluster.
-    - Free up existing resources.
+```bash
+kubectl get pods -n netdata-cloud
+```
 
-### Login Issues After Installation
+:::tip
 
-Installation may complete successfully, but login issues can occur due to configuration mismatches. This table provides a quick reference for troubleshooting common login issues after installation.
+Look for pods that are not in `Running` state or they are running properly - i.e. `0/1 Running`
 
-| Issue                         | Symptoms                                                | Cause                                                                                                                         | Solution                                                                                                                          |
-|-------------------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| SSO Login Failure             | Unable to authenticate via SSO providers                | - Invalid callback URLs<br/>- Expired/invalid SSO tokens<br/>- Untrusted certificates<br/>- Incorrect FQDN in `global.public` | - Update SSO configuration in `values.yaml`<br/>- Verify certificates are valid and trusted<br/>- Ensure FQDN matches certificate |
-| MailCatcher Login (Light PoC) | - Magic links not arriving<br/>- "Invalid token" errors | - Incorrect hostname during installation<br/>- Modified default MailCatcher values                                            | - Reinstall with correct FQDN<br/>- Restore default MailCatcher settings<br/>- Ensure hostname matches certificate                |
-| Custom Mail Server Login      | Magic links not arriving                                | - Incorrect SMTP configuration<br/>- Network connectivity issues                                                              | - Update SMTP settings in `values.yaml`<br/>- Verify network allows SMTP traffic<br/>- Check mail server logs                     |
-| Invalid Token Error           | "Something went wrong - invalid token" message          | - Mismatched `netdata-cloud-common` secret<br/>- Database hash mismatch<br/>- Namespace change without secret migration       | - Migrate secret before namespace change<br/>- Perform fresh installation<br/>- Contact support for data recovery                 |
+:::
 
-> **Warning**
->
-> If you're modifying the installation namespace, the `netdata-cloud-common` secret will be recreated.
->
-> **Before proceeding**: Back up the existing `netdata-cloud-common` secret. Alternatively, wipe the PostgreSQL database to prevent data conflicts.
+<strong>Step 2: Examine resource constraints</strong><br/>
+If you found `Pending` pods, check what's blocking them:<br/>
 
-### Slow Chart Loading or Chart Errors
+```bash
+kubectl describe pod <POD_NAME> -n netdata-cloud
+```
 
-When charts take a long time to load or fail with errors, the issue typically stems from data collection challenges. The `charts` service must gather data from multiple Agents within a Room, requiring successful responses from all queried Agents.
+<strong>Look at the Events section</strong> for messages about:<br/>
 
-| Issue                | Symptoms                                                                                                        | Cause                                                                        | Solution                                                                                                                                                                                  |
-|----------------------|-----------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Agent Connectivity   | - Queries stall or timeout<br/>- Inconsistent chart loading                                                     | Slow Agents or unreliable network connections prevent timely data collection | Deploy additional [Parent](/docs/observability-centralization-points) nodes to provide reliable backends. The system will automatically prefer these for queries when available |
-| Kubernetes Resources | - Service throttling<br/>- Slow data processing<br/>- Delayed dashboard updates                                 | Resource saturation at the node level or restrictive container limits        | Review and adjust container resource limits and node capacity as needed                                                                                                                   |
-| Database Performance | - Slow query responses<br/>- Increased latency across services                                                  | PostgreSQL performance bottlenecks                                           | Monitor and optimize database resource utilization:<br/>- CPU usage<br/>- Memory allocation<br/>- Disk I/O performance                                                                    |
-| Message Broker       | - Delayed node status updates (online/offline/stale)<br/>- Slow alert transitions<br/>- Dashboard update delays | Message accumulation in Pulsar due to processing bottlenecks                 | - Review Pulsar configuration<br/>- Adjust microservice resource allocation<br/>- Monitor message processing rates                                                                        |
+- Insufficient CPU<br/>
+- Insufficient Memory<br/>
+- Node capacity issues
 
-## Need Help?
+<strong>Step 3: View your cluster resources</strong><br/>
 
-If issues persist:
+<strong>Check your overall cluster capacity:</strong><br/><br/>
 
-1. Gather the following information:
+```bash
+# Check resource allocation across nodes
+kubectl top nodes
 
-    - Installation logs
-    - Your cluster specifications
+# View detailed node capacity
+kubectl describe nodes | grep -A 5 "Allocated resources"
+```
 
-2. Contact support at `support@netdata.cloud`.
+</details>
+
+#### Fix the Issue
+
+**Compare your available resources** against the [minimum requirements](/docs/netdata-cloud-on-prem/installation#system-requirements). Then **add more resources to your cluster** or **free up existing resources** by removing unnecessary workloads.
+
+### Login Problems After Installation
+
+**Your installation might complete successfully, but you can't log in.** This usually happens due to configuration mismatches.
+
+| Problem                           | What You'll See                                  | Why It Happens                                                                                              | How to Fix It                                                                                                                   |
+| --------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **SSO Login Failure**             | Can't authenticate via SSO providers             | Invalid callback URLs, expired SSO tokens, untrusted certificates, incorrect FQDN in `global.public`        | Update SSO configuration in your `values.yaml`, verify certificates are valid and trusted, ensure FQDN matches your certificate |
+| **MailCatcher Login (Light PoC)** | Magic links don't arrive, "Invalid token" errors | Incorrect hostname during installation, modified default MailCatcher values                                 | Reinstall with correct FQDN, restore default MailCatcher settings, ensure hostname matches certificate                          |
+| **Custom Mail Server Login**      | Magic links don't arrive                         | Incorrect SMTP configuration, network connectivity issues                                                   | Update SMTP settings in your `values.yaml`, verify network allows SMTP traffic, check your mail server logs                     |
+| **Invalid Token Error**           | "Something went wrong - invalid token" message   | Mismatched `netdata-cloud-common` secret, database hash mismatch, namespace change without secret migration | Migrate secret before namespace change, perform fresh installation, or contact support for data recovery                        |
+
+:::warning
+
+**Important for Namespace Changes**
+
+If you're changing your installation namespace, the `netdata-cloud-common` secret will be recreated.
+
+**Before you proceed**
+
+Back up your existing `netdata-cloud-common` secret, or wipe your PostgreSQL database to prevent data conflicts.
+
+:::
+
+### Slow or Failing Charts
+
+**When your charts take forever to load or fail with errors**, the problem usually comes from data collection challenges. Your `charts` service needs to gather data from multiple Agents in a Room, requiring successful responses from all queried Agents.
+
+| Problem                   | What You'll See                                                                                     | Why It Happens                                                               | How to Fix It                                                                                                                                                                                                                            |
+| ------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Agent Connectivity**    | Queries stall or timeout, inconsistent chart loading                                                | Slow Agents or unreliable network connections prevent timely data collection | Deploy additional [Parent](/docs/observability-centralization-points) nodes to provide reliable backends. Your system will automatically prefer these for queries when available |
+| **Kubernetes Resources**  | Service throttling, slow data processing, delayed dashboard updates                                 | Resource saturation at your node level or restrictive container limits       | Review and adjust your container resource limits and node capacity as needed                                                                                                                                                             |
+| **Database Performance**  | Slow query responses, increased latency across services                                             | PostgreSQL performance bottlenecks in your setup                             | Monitor and optimize your database resource utilization: CPU usage, memory allocation, disk I/O performance                                                                                                                              |
+| **Message Broker Issues** | Delayed node status updates (online/offline/stale), slow alert transitions, dashboard update delays | Message accumulation in Pulsar due to processing bottlenecks                 | Review your Pulsar configuration, adjust microservice resource allocation, monitor message processing rates                                                                                                                              |
+
+## Get Help
+
+**If problems persist after trying these solutions:**
+
+1. **Gather the following information:**
+
+   - Your installation logs
+   - Your cluster specifications
+   - Description of the specific issue you're experiencing
+
+2. **Contact our support team** at `support@netdata.cloud`
+
+We're here to help you get your monitoring running smoothly.
