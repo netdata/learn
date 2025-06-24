@@ -644,6 +644,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_sql_server.md	/docs/collecting-metrics/windows-systems/ms-sql-server
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory.md	/docs/collecting-metrics/windows-systems/active-directory
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_exchange.md	/docs/collecting-metrics/windows-systems/ms-exchange
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/power_supply.md	/docs/collecting-metrics/windows-systems/power-supply
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/iis.md	/docs/collecting-metrics/windows-systems/iis
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/net_framework.md	/docs/collecting-metrics/windows-systems/net-framework
 https://github.com/netdata/netdata/edit/master/src/collectors/diskspace.plugin/README.md	/docs/collecting-metrics/linux-systems/disk-space
