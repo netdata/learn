@@ -705,6 +705,7 @@ https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	/docs
 https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	/docs//live-demo
 https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md	/docs//top-monitoring-netdata-functions
 https://github.com/netdata/netdata/edit/master/docs/learn/mcp.md	/docs/ai-and-machine-learning/mcp-integration
+https://github.com/netdata/netdata/edit/master/docs/learn/switching-install-types.md	/docs/netdata-agent/installation/linux/switch-install-types-and-release-channels
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/kubernetes-tab.md	/docs/dashboards-and-charts/tabs/kubernetes
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/events-feed.md	/docs/dashboards-and-charts/tabs/events
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/anomaly-advisor-tab.md	/docs/dashboards-and-charts/tabs/anomalies
