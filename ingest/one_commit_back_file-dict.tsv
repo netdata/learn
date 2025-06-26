@@ -640,6 +640,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_thermal_zone.md	/docs/collecting-metrics/windows-systems/system-thermal-zone
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/processor.md	/docs/collecting-metrics/windows-systems/processor
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hyper-v.md	/docs/collecting-metrics/windows-systems/hyper-v
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/numa_architecture.md	/docs/collecting-metrics/windows-systems/numa-architecture
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/semaphore_statistics.md	/docs/collecting-metrics/windows-systems/semaphore-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_sql_server.md	/docs/collecting-metrics/windows-systems/ms-sql-server
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory.md	/docs/collecting-metrics/windows-systems/active-directory
