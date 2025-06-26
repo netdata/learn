@@ -7699,27 +7699,27 @@
 
 [[redirects]]
   from="/docs/agent/agent-cloud"
-  to="/docs/netdata-cloud/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent"
 
 [[redirects]]
   from="/docs/agent/claim"
-  to="/docs/netdata-cloud/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent"
 
 [[redirects]]
   from="/docs/getting-started/monitor-your-infrastructure/connect-agent-to-cloud"
-  to="/docs/netdata-cloud/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/connect-agent-to-cloud"
-  to="/docs/netdata-cloud/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent"
 
 [[redirects]]
   from="/docs/configuring/connect-agent-to-cloud"
-  to="/docs/netdata-cloud/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent"
 
 [[redirects]]
   from="/docs/netdata-agent/configuration/connect-agent-to-cloud"
-  to="/docs/netdata-cloud/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/backing-up-a-netdata-agent"
@@ -8340,5 +8340,9 @@
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection"
   to="/docs/ai-and-machine-learning"
+
+[[redirects]]
+  from="/docs/netdata-cloud/connect-agent-to-cloud"
+  to="/docs/netdata-cloud/connect-agent"
 
 # section: dynamic << END

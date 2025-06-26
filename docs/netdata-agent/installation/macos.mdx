@@ -34,7 +34,7 @@ The Netdata Agent is installed under `/usr/local/netdata`. Dependencies are hand
 
 ### Automatically connect to Netdata Cloud during installation
 
-The `kickstart.sh` script accepts additional parameters to automatically [connect](/docs/netdata-cloud/connect-agent-to-cloud) your node to Netdata
+The `kickstart.sh` script accepts additional parameters to automatically [connect](/docs/netdata-cloud/connect-agent) your node to Netdata
 Cloud immediately after installation. Find the `token` and `rooms` strings by [signing in to Netdata
 Cloud](https://app.netdata.cloud/sign-in?cloudRoute=/spaces), then clicking on **Connect Nodes** on any of the prompts from the UI.
 
@@ -42,7 +42,7 @@ Cloud](https://app.netdata.cloud/sign-in?cloudRoute=/spaces), then clicking on *
   after the install.
 - `--claim-rooms`: Specify a comma-separated list of tokens for each Room this node should appear in.
 - `--claim-proxy`: Specify a proxy to use when connecting to the Cloud in the form of `http://[user:pass@]host:ip` for an HTTP(S) proxy.
-  See [connecting through a proxy](/docs/netdata-cloud/connect-agent-to-cloud#automatically-via-a-provisioning-system-or-the-command-line) for details.
+  See [connecting through a proxy](/docs/netdata-cloud/connect-agent#automatically-via-a-provisioning-system-or-the-command-line) for details.
 - `--claim-url`: Specify a URL to use when connecting to the Cloud. Defaults to `https://app.netdata.cloud`.
 
 For example:
@@ -53,7 +53,7 @@ curl https://get.netdata.cloud/kickstart.sh > /tmp/netdata-kickstart.sh && sh /t
 
 The Netdata Agent is installed under `/usr/local/netdata` on your machine. Your machine will also show up as a node in your Netdata Cloud.
 
-If you experience issues while connecting your node, follow the steps in our [Troubleshoot](/docs/netdata-cloud/connect-agent-to-cloud#troubleshoot) documentation.
+If you experience issues while connecting your node, follow the steps in our [Troubleshoot](/docs/netdata-cloud/connect-agent#troubleshoot) documentation.
 
 ## Install Netdata via Homebrew
 
