@@ -22,7 +22,7 @@ The files in the `/docs` folder of repository should not be edited.
 
 The [documentation contribution guidelines](https://github.com/netdata/netdata/blob/master/docs/guidelines.md) explain this architecture a bit further and go through some of the methods for making or suggesting edits.
 
-Please also look at the [style guide](https://github.com/netdata/netdata/blob/master/docs/contributing/style-guide.md). We offer friendly advice on producing quality documentation, hoping that it will help you contribute.
+Please also look at the [style guide](https://github.com/netdata/netdata/blob/master/docs/developer-and-contributor-corner/style-guide.md). We offer friendly advice on producing quality documentation, hoping that it will help you contribute.
 
 ## Local Deploy of Learn
 
