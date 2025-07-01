@@ -169,9 +169,9 @@ https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/vs-cod
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/ai-devops-copilot.md	DevOps Copilot	Published	AI & ML/DevOps Copilot	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/claude-code.md	Claude Code	Published	AI & ML/DevOps Copilot	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/gemini-cli.md	Gemini CLI	Published	AI & ML/DevOps Copilot	
-	AI Insights	Published	AI & ML	
-	Anomaly Advisor	Published	AI & ML	
-	ML Anomaly Detection	Published	AI & ML/ML Anomaly Detection	
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-insights.md	AI Insights	Published	AI & ML	
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/anomaly-advisor.md	Anomaly Advisor	Published	AI & ML	
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-anomaly-detection.md	ML Anomaly Detection	Published	AI & ML/ML Anomaly Detection	
 https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	ML Configuration	Published	AI & ML/ML Anomaly Detection	
 https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	Metric Correlations	Published	AI & ML/ML Anomaly Detection	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
 				
