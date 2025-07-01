@@ -2349,5 +2349,9 @@
     "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection/metric-correlations": "https://github.com/netdata/netdata/blob/master/docs/metric-correlations.md",
     "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection/ai-powered-troubleshooting-assistant": "https://github.com/netdata/netdata/blob/master/docs/netdata-assistant.md",
     "https://learn.netdata.cloud/docs/machine-learning-and-anomaly-detection": "https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md",
-    "https://learn.netdata.cloud/docs/netdata-cloud/connect-agent-to-cloud": "https://github.com/netdata/netdata/blob/master/src/claim/README.md"
+    "https://learn.netdata.cloud/docs/netdata-cloud/connect-agent-to-cloud": "https://github.com/netdata/netdata/blob/master/src/claim/README.md",
+    "https://learn.netdata.cloud/docs/ai-and-machine-learning/ml-configuration": "https://github.com/netdata/netdata/blob/master/src/ml/ml-configuration.md",
+    "https://learn.netdata.cloud/docs/ai-and-machine-learning/metric-correlations": "https://github.com/netdata/netdata/blob/master/docs/metric-correlations.md",
+    "https://learn.netdata.cloud/docs/ai-and-machine-learning/mcp-integration": "https://github.com/netdata/netdata/blob/master/docs/learn/mcp.md",
+    "https://learn.netdata.cloud/docs/ai-and-machine-learning": "https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md"
 }
