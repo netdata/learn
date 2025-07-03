@@ -92,7 +92,7 @@ module.exports = {
 						{
 							type: 'doc',
 							style: { 'color': 'white' },
-							docId: 'deployment-guides/deployment-guides',
+							docId: 'at-a-glance',
 							label: 'Documentation'
 						},
 						// {
