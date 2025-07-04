@@ -697,6 +697,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/perf.plugin/README.md	/docs/collecting-metrics/linux-systems/cpu-performance
 https://github.com/netdata/netdata/edit/master/src/collectors/macos.plugin/README.md	/docs/collecting-metrics/macos-systems/macos
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	/docs/developer-and-contributor-corner/health-command-api-tester
+https://github.com/netdata/netdata/edit/master/docs/NIDL-Framework.md	/docs/dashboards-and-charts/nidl-framework
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	/docs/developer-and-contributor-corner/contribute-to-the-documentation
 https://github.com/netdata/netdata/edit/master/docs/nodes-ephemerality.md	/docs/observability-centralization-points/nodes-ephemerality
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	/docs/developer-and-contributor-corner/glossary
