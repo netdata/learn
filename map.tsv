@@ -173,6 +173,7 @@ https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/gemi
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-insights.md	AI Insights	Published	AI & ML	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/anomaly-advisor.md	Anomaly Advisor	Published	AI & ML	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-anomaly-detection.md	ML Anomaly Detection	Published	AI & ML/ML Anomaly Detection	
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-accuracy.md	ML Accuracy	Published	AI & ML/ML Anomaly Detection	Analysis of Netdata's ML anomaly detection accuracy, false positive rates, and comparison with other approaches
 https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	ML Configuration	Published	AI & ML/ML Anomaly Detection	
 https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	Metric Correlations	Published	AI & ML/ML Anomaly Detection	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
 				
