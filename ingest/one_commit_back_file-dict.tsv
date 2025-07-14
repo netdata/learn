@@ -678,8 +678,8 @@ https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md	/docs
 https://github.com/netdata/netdata/edit/master/src/database/README.md	/docs/netdata-agent/database
 https://github.com/netdata/netdata/edit/master/src/database/CONFIGURATION.md	/docs/netdata-agent/configuration/database
 https://github.com/netdata/netdata/edit/master/src/database/engine/README.md	/docs/developer-and-contributor-corner/database-engine
-https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md	/docs//at-a-glance
-https://github.com/netdata/netdata/edit/master/docs/welcome-to-netdata.md	/docs//welcome-to-netdata
+https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md	/docs/welcome-to-netdata/enterprise-evaluation-guide
+https://github.com/netdata/netdata/edit/master/docs/welcome-to-netdata.md	/docs/welcome-to-netdata
 https://github.com/netdata/netdata/edit/master/docs/NIDL-Framework.md	/docs/dashboards-and-charts/nidl-framework
 https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md	/docs//top-monitoring-netdata-functions
 https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	/docs/ai-&-ml/ml-anomaly-detection/metric-correlations
