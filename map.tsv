@@ -1,6 +1,6 @@
 custom_edit_url	sidebar_label	learn_status	learn_rel_path	description
 https://github.com/netdata/netdata/edit/master/docs/welcome-to-netdata.md	Welcome to Netdata	Published	Welcome to Netdata	
-https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md	At a glance	Published	Welcome to Netdata	
+https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md	Enterprise Evaluation Guide	Published	Welcome to Netdata	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	Deployment Guides	Published	Deployment Guides	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	Standalone	Published	Deployment Guides	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	Centralized	Published	Deployment Guides	
