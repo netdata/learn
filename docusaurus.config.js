@@ -92,7 +92,7 @@ module.exports = {
 						{
 							type: 'doc',
 							style: { 'color': 'white' },
-							docId: 'at-a-glance',
+							docId: 'welcome-to-netdata',
 							label: 'Documentation'
 						},
 						// {
