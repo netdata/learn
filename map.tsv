@@ -1,4 +1,5 @@
 custom_edit_url	sidebar_label	learn_status	learn_rel_path	description
+https://github.com/netdata/netdata/edit/master/docs/welcome-to-netdata.md	Welcome to Netdata	Published	root	
 https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md	At a glance	Published	root	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	Deployment Guides	Published	Deployment Guides	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	Standalone	Published	Deployment Guides	
@@ -173,6 +174,7 @@ https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/gemi
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-insights.md	AI Insights	Published	AI & ML	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/anomaly-advisor.md	Anomaly Advisor	Published	AI & ML	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-anomaly-detection.md	ML Anomaly Detection	Published	AI & ML/ML Anomaly Detection	
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-accuracy.md	ML Accuracy	Published	AI & ML/ML Anomaly Detection	Analysis of Netdata's ML anomaly detection accuracy, false positive rates, and comparison with other approaches
 https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	ML Configuration	Published	AI & ML/ML Anomaly Detection	
 https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	Metric Correlations	Published	AI & ML/ML Anomaly Detection	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
 				
