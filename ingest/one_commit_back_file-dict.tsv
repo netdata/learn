@@ -9,6 +9,8 @@ https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.c
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/troubleshooting.md	/docs/netdata-cloud-on-prem/troubleshooting
 https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	/docs/developer-and-contributor-corner/redistributed-software
 https://github.com/netdata/netdata/edit/master/src/plugins.d/README.md	/docs/developer-and-contributor-corner/external-plugins
+https://github.com/netdata/netdata/edit/master/src/plugins.d/FUNCTION_UI_DEVELOPER_GUIDE.md	/docs/developer-and-contributor-corner/external-plugins/functions-developer-guide
+https://github.com/netdata/netdata/edit/master/src/plugins.d/FUNCTION_UI_REFERENCE.md	/docs/developer-and-contributor-corner/external-plugins/functions-v3-protocol-reference
 https://github.com/netdata/netdata/edit/master/src/exporting/README.md	/docs/exporting-metrics/exporting-reference
 https://github.com/netdata/netdata/edit/master/src/exporting/mongodb/README.md	/docs/exporting-metrics/mongodb
 https://github.com/netdata/netdata/edit/master/src/exporting/graphite/README.md	/docs/exporting-metrics/graphite
