@@ -689,6 +689,7 @@ https://github.com/netdata/netdata/edit/master/docs/glossary.md	/docs/developer-
 https://github.com/netdata/netdata/edit/master/docs/nodes-ephemerality.md	/docs/observability-centralization-points/nodes-ephemerality
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/ai-&-ml
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
+https://github.com/netdata/netdata/edit/master/docs/getting-started-netdata/guide.md	/docs//getting-started
 https://github.com/netdata/netdata/edit/master/docs/learn/switching-install-types.md	/docs/netdata-agent/installation/linux/switch-install-types-and-release-channels
 https://github.com/netdata/netdata/edit/master/docs/learn/remove-node.md	/docs/netdata-cloud/remove-agent
 https://github.com/netdata/netdata/edit/master/docs/learn/mcp.md	/docs/ai-&-ml/model-context-protocol-mcp
