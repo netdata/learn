@@ -161,16 +161,16 @@ https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	Alert Con
 https://github.com/netdata/netdata/edit/master/src/web/api/health/README.md	Health API Calls	Published	Alerts & Notifications	
 				
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	AI & ML	Published	AI & ML	
-https://github.com/netdata/netdata/edit/master/docs/learn/mcp.md	MCP	Published	AI & ML	
+https://github.com/netdata/netdata/edit/master/docs/learn/mcp.md	Model Context Protocol (MCP)	Published	AI & ML	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/ai-chat-netdata.md	Chat with Netdata	Published	AI & ML/Chat with Netdata	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/claude-desktop.md	Claude Desktop	Published	AI & ML/Chat with Netdata	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/cursor.md	Cursor	Published	AI & ML/Chat with Netdata	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/jetbrains-ides.md	JetBrains IDEs	Published	AI & ML/Chat with Netdata	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/netdata-web-client.md	Netdata Web Client	Published	AI & ML/Chat with Netdata	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/vs-code.md	Visual Studio Code	Published	AI & ML/Chat with Netdata	
-https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/ai-devops-copilot.md	DevOps Copilot	Published	AI & ML/DevOps Copilot	
-https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/claude-code.md	Claude Code	Published	AI & ML/DevOps Copilot	
-https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/gemini-cli.md	Gemini CLI	Published	AI & ML/DevOps Copilot	
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/ai-devops-copilot.md	DevOps Copilots	Published	AI & ML/DevOps Copilots	
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/claude-code.md	Claude Code	Published	AI & ML/DevOps Copilots	
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/gemini-cli.md	Gemini CLI	Published	AI & ML/DevOps Copilots	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-insights.md	AI Insights	Published	AI & ML	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/anomaly-advisor.md	Anomaly Advisor	Published	AI & ML	
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-anomaly-detection.md	ML Anomaly Detection	Published	AI & ML/ML Anomaly Detection	
