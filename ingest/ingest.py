@@ -553,6 +553,10 @@ def sanitize_page(path):
     body = body.replace("<!--", "---", 1)
     body = body.replace("-->", "---", 1)
 
+    # Custom elements we don't want on GitHub
+    body = body.replace("<!--unhideme", "")
+    body = body.replace("unhideme-->", "")
+
     # MDX 3 compatibility replacements
     body = body.replace("<details><summary>", "<details>\n<summary>")
     body = body.replace("<details open><summary>", "<details open>\n<summary>")
