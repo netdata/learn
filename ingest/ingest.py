@@ -564,6 +564,7 @@ def sanitize_page(path):
     body = body.replace("<=", r"\<=")
     body = body.replace("%<",r"%\<")
     body = body.replace("{{",r"\{\{")
+    body = body.replace("style=\\{\\{","style={{")
     body = body.replace("<->",r"\<->")
     body = body.replace("{attribute_name}",r"\{attribute_name}")
     body = body.replace("{attribute_unit}",r"\{attribute_unit}")
