@@ -2,9 +2,9 @@
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/gemini-cli.md"
 sidebar_label: "Gemini CLI"
 learn_status: "Published"
-learn_rel_path: "AI & ML/DevOps Copilot"
+learn_rel_path: "AI & ML/DevOps Copilots"
 sidebar_position: "1504020"
-learn_link: "https://learn.netdata.cloud/docs/ai-&-ml/devops-copilot/gemini-cli"
+learn_link: "https://learn.netdata.cloud/docs/ai-&-ml/devops-copilots/gemini-cli"
 ---
 
 # Gemini CLI
@@ -15,8 +15,8 @@ Configure Google's Gemini CLI to access your Netdata infrastructure through MCP 
 
 1. **Gemini CLI installed** - Available from [GitHub](https://github.com/google-gemini/gemini-cli)
 2. **The IP and port (usually 19999) of a running Netdata Agent** - Prefer a Netdata Parent to get infrastructure level visibility. Currently the latest nightly version of Netdata has MCP support (not released to the stable channel yet). Your AI Client (running on your desktop or laptop) needs to have direct network access to this IP and port.
-3. **`nd-mcp` program available on your desktop or laptop** - This is the bridge that translates `stdio` to `websocket`, connecting your AI Client to your Netdata Agent or Parent. [Find its absolute path](/docs/ai-&-ml/mcp#finding-the-nd-mcp-bridge)
-4. **Optionally, the Netdata MCP API key** that unlocks full access to sensitive observability data (protected functions, full access to logs) on your Netdata. Each Netdata Agent or Parent has its own unique API key for MCP - [Find your Netdata MCP API key](/docs/ai-&-ml/mcp#finding-your-api-key)
+3. **`nd-mcp` program available on your desktop or laptop** - This is the bridge that translates `stdio` to `websocket`, connecting your AI Client to your Netdata Agent or Parent. [Find its absolute path](/docs/ai-&-ml/model-context-protocol-mcp#finding-the-nd-mcp-bridge)
+4. **Optionally, the Netdata MCP API key** that unlocks full access to sensitive observability data (protected functions, full access to logs) on your Netdata. Each Netdata Agent or Parent has its own unique API key for MCP - [Find your Netdata MCP API key](/docs/ai-&-ml/model-context-protocol-mcp#finding-your-api-key)
 
 ## Installation
 
@@ -74,9 +74,9 @@ Use the `/mcp` command to verify your setup:
 
 Replace:
 
-- `/usr/sbin/nd-mcp` - With your [actual nd-mcp path](/docs/ai-&-ml/mcp#finding-the-nd-mcp-bridge)
+- `/usr/sbin/nd-mcp` - With your [actual nd-mcp path](/docs/ai-&-ml/model-context-protocol-mcp#finding-the-nd-mcp-bridge)
 - `YOUR_NETDATA_IP` - IP address or hostname of your Netdata Agent/Parent
-- `NETDATA_MCP_API_KEY` - Your [Netdata MCP API key](/docs/ai-&-ml/mcp#finding-your-api-key)
+- `NETDATA_MCP_API_KEY` - Your [Netdata MCP API key](/docs/ai-&-ml/model-context-protocol-mcp#finding-your-api-key)
 
 ## How to Use
 
@@ -109,7 +109,7 @@ Check memory usage patterns and suggest optimization strategies
 Explain the current active alerts and their potential impact
 ```
 
-> **💡 Advanced Usage:** Gemini CLI can combine observability data with system automation for powerful DevOps workflows. Learn about the opportunities and security considerations in [AI DevOps Copilot](/docs/ai-&-ml/devops-copilot).
+> **💡 Advanced Usage:** Gemini CLI can combine observability data with system automation for powerful DevOps workflows. Learn about the opportunities and security considerations in [AI DevOps Copilot](/docs/ai-&-ml/devops-copilots).
 
 ## Troubleshooting
 
@@ -135,5 +135,5 @@ Explain the current active alerts and their potential impact
 
 - [Gemini CLI GitHub Repository](https://github.com/google-gemini/gemini-cli)
 - [Gemini CLI Official Documentation](https://developers.google.com/gemini-code-assist/docs/gemini-cli)
-- [Netdata MCP Setup](/docs/ai-&-ml/mcp)
-- [AI DevOps Best Practices](/docs/ai-&-ml/devops-copilot)
+- [Netdata MCP Setup](/docs/ai-&-ml/model-context-protocol-mcp)
+- [AI DevOps Best Practices](/docs/ai-&-ml/devops-copilots)

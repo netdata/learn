@@ -15,8 +15,8 @@ Configure Cursor IDE to access your Netdata infrastructure through MCP.
 
 1. **Cursor installed** - Download from [cursor.com](https://www.cursor.com)
 2. **The IP and port (usually 19999) of a running Netdata Agent** - Prefer a Netdata Parent to get infrastructure level visibility. Currently the latest nightly version of Netdata has MCP support (not released to the stable channel yet). Your AI Client (running on your desktop or laptop) needs to have direct network access to this IP and port.
-3. **`nd-mcp` program available on your desktop or laptop** - This is the bridge that translates `stdio` to `websocket`, connecting your AI Client to your Netdata Agent or Parent. [Find its absolute path](/docs/ai-&-ml/mcp#finding-the-nd-mcp-bridge)
-4. **Optionally, the Netdata MCP API key** that unlocks full access to sensitive observability data (protected functions, full access to logs) on your Netdata. Each Netdata Agent or Parent has its own unique API key for MCP - [Find your Netdata MCP API key](/docs/ai-&-ml/mcp#finding-your-api-key)
+3. **`nd-mcp` program available on your desktop or laptop** - This is the bridge that translates `stdio` to `websocket`, connecting your AI Client to your Netdata Agent or Parent. [Find its absolute path](/docs/ai-&-ml/model-context-protocol-mcp#finding-the-nd-mcp-bridge)
+4. **Optionally, the Netdata MCP API key** that unlocks full access to sensitive observability data (protected functions, full access to logs) on your Netdata. Each Netdata Agent or Parent has its own unique API key for MCP - [Find your Netdata MCP API key](/docs/ai-&-ml/model-context-protocol-mcp#finding-your-api-key)
 
 ## Configuration
 
@@ -44,9 +44,9 @@ The configuration format:
 
 Replace:
 
-- `/usr/sbin/nd-mcp` - With your [actual nd-mcp path](/docs/ai-&-ml/mcp#finding-the-nd-mcp-bridge)
+- `/usr/sbin/nd-mcp` - With your [actual nd-mcp path](/docs/ai-&-ml/model-context-protocol-mcp#finding-the-nd-mcp-bridge)
 - `YOUR_NETDATA_IP` - IP address or hostname of your Netdata Agent/Parent
-- `NETDATA_MCP_API_KEY` - Your [Netdata MCP API key](/docs/ai-&-ml/mcp#finding-your-api-key)
+- `NETDATA_MCP_API_KEY` - Your [Netdata MCP API key](/docs/ai-&-ml/model-context-protocol-mcp#finding-your-api-key)
 
 ## Using Netdata in Cursor
 

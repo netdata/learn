@@ -2,9 +2,9 @@
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/claude-code.md"
 sidebar_label: "Claude Code"
 learn_status: "Published"
-learn_rel_path: "AI & ML/DevOps Copilot"
+learn_rel_path: "AI & ML/DevOps Copilots"
 sidebar_position: "1504010"
-learn_link: "https://learn.netdata.cloud/docs/ai-&-ml/devops-copilot/claude-code"
+learn_link: "https://learn.netdata.cloud/docs/ai-&-ml/devops-copilots/claude-code"
 ---
 
 # Claude Code
@@ -15,8 +15,8 @@ Configure Claude Code to access your Netdata infrastructure through MCP.
 
 1. **Claude Code installed** - Available at [anthropic.com/claude-code](https://www.anthropic.com/claude-code)
 2. **The IP and port (usually 19999) of a running Netdata Agent** - Prefer a Netdata Parent to get infrastructure level visibility. Currently the latest nightly version of Netdata has MCP support (not released to the stable channel yet). Your AI Client (running on your desktop or laptop) needs to have direct network access to this IP and port.
-3. **`nd-mcp` program available on your desktop or laptop** - This is the bridge that translates `stdio` to `websocket`, connecting your AI Client to your Netdata Agent or Parent. [Find its absolute path](/docs/ai-&-ml/mcp#finding-the-nd-mcp-bridge)
-4. **Optionally, the Netdata MCP API key** that unlocks full access to sensitive observability data (protected functions, full access to logs) on your Netdata. Each Netdata Agent or Parent has its own unique API key for MCP - [Find your Netdata MCP API key](/docs/ai-&-ml/mcp#finding-your-api-key)
+3. **`nd-mcp` program available on your desktop or laptop** - This is the bridge that translates `stdio` to `websocket`, connecting your AI Client to your Netdata Agent or Parent. [Find its absolute path](/docs/ai-&-ml/model-context-protocol-mcp#finding-the-nd-mcp-bridge)
+4. **Optionally, the Netdata MCP API key** that unlocks full access to sensitive observability data (protected functions, full access to logs) on your Netdata. Each Netdata Agent or Parent has its own unique API key for MCP - [Find your Netdata MCP API key](/docs/ai-&-ml/model-context-protocol-mcp#finding-your-api-key)
 
 ## Configuration
 
@@ -42,9 +42,9 @@ claude mcp get netdata
 
 Replace:
 
-- `/usr/sbin/nd-mcp` - With your [actual nd-mcp path](/docs/ai-&-ml/mcp#finding-the-nd-mcp-bridge)
+- `/usr/sbin/nd-mcp` - With your [actual nd-mcp path](/docs/ai-&-ml/model-context-protocol-mcp#finding-the-nd-mcp-bridge)
 - `YOUR_NETDATA_IP` - IP address or hostname of your Netdata Agent/Parent
-- `NETDATA_MCP_API_KEY` - Your [Netdata MCP API key](/docs/ai-&-ml/mcp#finding-your-api-key)
+- `NETDATA_MCP_API_KEY` - Your [Netdata MCP API key](/docs/ai-&-ml/model-context-protocol-mcp#finding-your-api-key)
 
 **Project-scoped configuration** creates a `.mcp.json` file that can be shared with your team via version control.
 
@@ -74,7 +74,7 @@ Claude Code also allows you to explicitly specify which MCP server to use with t
 
 This is particularly useful when you have multiple MCP servers configured and want to ensure Claude uses the correct one.
 
-> **💡 Advanced Usage:** Claude Code can combine observability data with system automation for powerful DevOps workflows. Learn about the opportunities and security considerations in [AI DevOps Copilot](/docs/ai-&-ml/devops-copilot).
+> **💡 Advanced Usage:** Claude Code can combine observability data with system automation for powerful DevOps workflows. Learn about the opportunities and security considerations in [AI DevOps Copilot](/docs/ai-&-ml/devops-copilots).
 
 ## Project-Based Configuration
 

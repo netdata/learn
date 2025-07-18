@@ -8315,7 +8315,7 @@
 
 [[redirects]]
   from="/docs/ai-and-machine-learning/mcp-integration"
-  to="/docs/ai-&-ml/mcp"
+  to="/docs/ai-&-ml/model-context-protocol-mcp"
 
 [[redirects]]
   from="/docs/ai-and-machine-learning"
@@ -8328,5 +8328,21 @@
 [[redirects]]
   from="/docs//at-a-glance"
   to="/docs/welcome-to-netdata/enterprise-evaluation-guide"
+
+[[redirects]]
+  from="/docs/ai-&-ml/mcp"
+  to="/docs/ai-&-ml/model-context-protocol-mcp"
+
+[[redirects]]
+  from="/docs/ai-&-ml/devops-copilot/gemini-cli"
+  to="/docs/ai-&-ml/devops-copilots/gemini-cli"
+
+[[redirects]]
+  from="/docs/ai-&-ml/devops-copilot/claude-code"
+  to="/docs/ai-&-ml/devops-copilots/claude-code"
+
+[[redirects]]
+  from="/docs/ai-&-ml/devops-copilot"
+  to="/docs/ai-&-ml/devops-copilots"
 
 # section: dynamic << END

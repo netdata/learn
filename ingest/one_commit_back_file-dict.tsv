@@ -691,7 +691,7 @@ https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/mach
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
 https://github.com/netdata/netdata/edit/master/docs/learn/switching-install-types.md	/docs/netdata-agent/installation/linux/switch-install-types-and-release-channels
 https://github.com/netdata/netdata/edit/master/docs/learn/remove-node.md	/docs/netdata-cloud/remove-agent
-https://github.com/netdata/netdata/edit/master/docs/learn/mcp.md	/docs/ai-&-ml/mcp
+https://github.com/netdata/netdata/edit/master/docs/learn/mcp.md	/docs/ai-&-ml/model-context-protocol-mcp
 https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/README.md	/docs/exporting-metrics/exporting-quickstart
 https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/enable-an-exporting-connector.md	/docs/exporting-metrics/enable-an-exporting-connector
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	/docs/deployment-guides
@@ -717,9 +717,9 @@ https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/ai-cha
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/jetbrains-ides.md	/docs/ai-&-ml/chat-with-netdata/jetbrains-ides
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/claude-desktop.md	/docs/ai-&-ml/chat-with-netdata/claude-desktop
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/vs-code.md	/docs/ai-&-ml/chat-with-netdata/visual-studio-code
-https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/ai-devops-copilot.md	/docs/ai-&-ml/devops-copilot
-https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/claude-code.md	/docs/ai-&-ml/devops-copilot/claude-code
-https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/gemini-cli.md	/docs/ai-&-ml/devops-copilot/gemini-cli
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/ai-devops-copilot.md	/docs/ai-&-ml/devops-copilots
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/claude-code.md	/docs/ai-&-ml/devops-copilots/claude-code
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/gemini-cli.md	/docs/ai-&-ml/devops-copilots/gemini-cli
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-accuracy.md	/docs/ai-&-ml/ml-anomaly-detection/ml-accuracy
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-anomaly-detection.md	/docs/ai-&-ml/ml-anomaly-detection
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/netdata-charts.md	/docs/dashboards-and-charts/charts

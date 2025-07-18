@@ -2355,5 +2355,9 @@
     "https://learn.netdata.cloud/docs/ai-and-machine-learning/mcp-integration": "https://github.com/netdata/netdata/blob/master/docs/learn/mcp.md",
     "https://learn.netdata.cloud/docs/ai-and-machine-learning": "https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md",
     "https://learn.netdata.cloud/docs//welcome-to-netdata": "https://github.com/netdata/netdata/blob/master/docs/welcome-to-netdata.md",
-    "https://learn.netdata.cloud/docs//at-a-glance": "https://github.com/netdata/netdata/blob/master/docs/netdata-enterprise-evaluation-corrected.md"
+    "https://learn.netdata.cloud/docs//at-a-glance": "https://github.com/netdata/netdata/blob/master/docs/netdata-enterprise-evaluation-corrected.md",
+    "https://learn.netdata.cloud/docs/ai-&-ml/mcp": "https://github.com/netdata/netdata/blob/master/docs/learn/mcp.md",
+    "https://learn.netdata.cloud/docs/ai-&-ml/devops-copilot/gemini-cli": "https://github.com/netdata/netdata/blob/master/docs/ml-ai/ai-devops-copilot/gemini-cli.md",
+    "https://learn.netdata.cloud/docs/ai-&-ml/devops-copilot/claude-code": "https://github.com/netdata/netdata/blob/master/docs/ml-ai/ai-devops-copilot/claude-code.md",
+    "https://learn.netdata.cloud/docs/ai-&-ml/devops-copilot": "https://github.com/netdata/netdata/blob/master/docs/ml-ai/ai-devops-copilot/ai-devops-copilot.md"
 }
