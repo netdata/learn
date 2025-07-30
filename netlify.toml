@@ -3199,7 +3199,7 @@
 
 [[redirects]]
   from="/docs/metrics-streaming-and-replication"
-  to="/docs/observability-centralization-points/metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points"
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/run-time-troubleshooting-with-functions"
@@ -4235,7 +4235,7 @@
 
 [[redirects]]
   from="/docs/logs/systemd-journal/active-journal-centralization-without-encryption"
-  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
 
 [[redirects]]
   from="/docs/agent/backends"
@@ -4259,7 +4259,7 @@
 
 [[redirects]]
   from="/docs/streaming"
-  to="/docs/observability-centralization-points/metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points"
 
 [[redirects]]
   from="/docs/netdata-cloud-on-prem/light-poc-deployment"
@@ -4391,7 +4391,7 @@
 
 [[redirects]]
   from="/docs/logs/systemd-journal/active-journal-source-without-encryption"
-  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
 
 [[redirects]]
   from="/docs/installing/static-binary-linux-packages"
@@ -5787,39 +5787,39 @@
 
 [[redirects]]
   from="/docs/agent/streaming"
-  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/metrics-storage-management/reference-streaming"
-  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference"
-  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/metrics-streaming-and-replication/streaming-configuration-reference"
-  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/logs/passive-journal-centralization-without-encryption"
-  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
 
 [[redirects]]
   from="/docs/logs/passive-journal-centralization-with-encryption-using-self-signed-certificates"
-  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
 
 [[redirects]]
   from="/docs/streaming/streaming-configuration-reference"
-  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/passive-journal-centralization-without-encryption"
-  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/passive-journal-centralization-with-encryption-using-self-signed-certificates"
-  to="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/web-server-log-files"
@@ -6779,39 +6779,39 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/replication-of-past-samples"
-  to="/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples"
+  to="/docs/collecting-metrics/metrics-centralization-points/replication-of-past-samples"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/metrics-centralization-points-netdata-parents"
-  to="/docs/observability-centralization-points/metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/faq-on-metrics-cantralization-points"
-  to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/faq-on-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
-  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/clustering-and-high-availability-of-netdata-parents"
-  to="/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+  to="/docs/collecting-metrics/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/replication-of-past-samples"
-  to="/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples"
+  to="/docs/collecting-metrics/metrics-centralization-points/replication-of-past-samples"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/faq-on-metrics-cantralization-points"
-  to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/faq-on-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/configuring-metrics-centralization-points"
-  to="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/clustering-and-high-availability-of-netdata-parents"
-  to="/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+  to="/docs/collecting-metrics/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/hhvm"
@@ -7834,18 +7834,6 @@
   to="/docs/deployment-guides"
 
 [[redirects]]
-  from="/streaming"
-  to="/docs/observability-centralization-points"
-
-[[redirects]]
-  from="/docs/metrics-storage-management/enable-streaming"
-  to="/docs/observability-centralization-points"
-
-[[redirects]]
-  from="/docs/metrics-storage-management/how-streaming-works"
-  to="/docs/observability-centralization-points"
-
-[[redirects]]
   from="/docs/overview/netdata-monitoring-stack"
   to="/docs/deployment-guides"
 
@@ -7958,16 +7946,8 @@
   to="/docs/deployment-guides"
 
 [[redirects]]
-  from="/docs/deployment-in-production/streaming-and-replication"
-  to="/docs/observability-centralization-points"
-
-[[redirects]]
   from="/docs/netdata-architecture"
   to="/docs/deployment-guides"
-
-[[redirects]]
-  from="/docs/metrics-streaming-and-replication/understanding-how-streaming-works"
-  to="/docs/observability-centralization-points"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/rest-api/api"
@@ -7975,7 +7955,7 @@
 
 [[redirects]]
   from="/docs/deployment-guides/deployment-strategies"
-  to="/docs/deployment-guides/examples"
+  to="/docs/deployment-guides/configuration-examples"
 
 [[redirects]]
   from="/docs/netdata-cloud/view-plan-&-billing"
@@ -8219,15 +8199,15 @@
 
 [[redirects]]
   from="/docs/deployment-guides/standalone-deployment"
-  to="/docs/deployment-guides/standalone"
+  to="/docs/deployment-guides/single-agent"
 
 [[redirects]]
   from="/docs/deployment-guides/deployment-with-centralization-points"
-  to="/docs/deployment-guides/centralized"
+  to="/docs/deployment-guides/parent-child"
 
 [[redirects]]
   from="/docs/deployment-guides/deployment-examples"
-  to="/docs/deployment-guides/examples"
+  to="/docs/deployment-guides/configuration-examples"
 
 [[redirects]]
   from="/docs/dashboards-and-charts/visualization-date-and-time-controls"
@@ -8287,7 +8267,7 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points"
-  to="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/faq-on-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/ml-configuration"
@@ -8344,5 +8324,65 @@
 [[redirects]]
   from="/docs/ai-&-ml/devops-copilot"
   to="/docs/ai-&-ml/devops-copilots"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/streaming-and-replication-reference"
+  to="/docs/deployment-guides/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/nodes-ephemerality"
+  to="/docs/deployment-guides/node-types-and-lifecycle-reference"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples"
+  to="/docs/collecting-metrics/metrics-centralization-points/replication-of-past-samples"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/faq-on-metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+  to="/docs/collecting-metrics/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points"
+  to="/docs/collecting-metrics/metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/best-practices-for-observability-centralization-points"
+  to="/docs/deployment-guides/parent-configuration-best-practices"
+
+[[redirects]]
+  from="/docs/deployment-guides/standalone"
+  to="/docs/deployment-guides/single-agent"
+
+[[redirects]]
+  from="/docs/deployment-guides/examples"
+  to="/docs/deployment-guides/configuration-examples"
+
+[[redirects]]
+  from="/docs/deployment-guides/centralized"
+  to="/docs/deployment-guides/parent-child"
 
 # section: dynamic << END
