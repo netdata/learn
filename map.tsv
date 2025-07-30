@@ -3,8 +3,8 @@ https://github.com/netdata/netdata/edit/master/docs/welcome-to-netdata.md	Welcom
 https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md	Enterprise Evaluation Guide	Published	Welcome to Netdata	
 https://github.com/netdata/netdata/edit/master/docs/getting-started-netdata/guide.md	Getting Started	Published	root	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md	Deployment Guides	Published	Deployment Guides	
-https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	Single Agent	Published	Deployment Guides	
-https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	Centralized	Published	Deployment Guides	
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md	Standalone	Published	Deployment Guides	
+https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md	Parent-Child	Published	Deployment Guides	
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/best-practices.md	Parent Configuration Best Practices	Published	Deployment Guides	
 https://github.com/netdata/netdata/edit/master/src/streaming/README.md	Parent-Child Configuration Reference	Published	Deployment Guides	
 https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-strategies.md	Configuration Examples	Published	Deployment Guides	
