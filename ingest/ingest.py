@@ -371,6 +371,26 @@ def create_mdx_path_from_metadata(metadata):
             and metadata['learn_rel_path'].split("/")[-1] != "Collecting Metrics" and 'External-plugins' not in metadata['learn_rel_path']:
         last_folder = metadata['learn_rel_path'].split("Collecting Metrics", 1)[1]
         last_folder = "collecting-metrics" + last_folder
+
+        # non-integration folders inside collecting metrics
+        if "Metrics Centralization Points" in metadata['learn_rel_path']:
+            slug = "/{}/{}".format(metadata["learn_rel_path"],
+                                final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")
+            if slug.rsplit("/")[-1] == slug.rsplit("/")[-2]:
+                return["{}/{}/{}.mdx".format(DOCS_PREFIX,
+                                        metadata["learn_rel_path"]
+                                        .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
+                                        final_file).replace("//", "/"),
+                    "/{}/{}".format(metadata["learn_rel_path"],
+                                    final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/").rsplit("/",1)[0]]
+            else:
+                return["{}/{}/{}.mdx".format(DOCS_PREFIX,
+                                        metadata["learn_rel_path"]
+                                        .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
+                                        final_file).replace("//", "/"),
+                    "/{}/{}".format(metadata["learn_rel_path"],
+                                    final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
+
         # print(last_folder)
         # exit()
         # If the file is inside the monitor-anything category,
