@@ -785,7 +785,6 @@ https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-co
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/monitor-hadoop-cluster.md	/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/running-through-cf-tunnels.md	/docs/developer-and-contributor-corner/running-a-local-dashboard-through-cloudflare-tunnels
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/README.md	/docs/developer-and-contributor-corner
-https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/customize.md	/docs/developer-and-contributor-corner/customize-the-standard-dashboard
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/dyncfg.md	/docs/developer-and-contributor-corner/dynamic-configuration
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	/docs/developer-and-contributor-corner/health-command-api-tester
 https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md	/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing
