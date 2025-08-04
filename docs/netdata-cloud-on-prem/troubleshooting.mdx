@@ -45,7 +45,7 @@ Error: client rate limiter Wait returned an error: Context deadline exceeded.
 
 :::
 
-:::inportant
+:::important
 
 <strong>Always</strong> perform complete uninstallation before trying a new installation. There is a safety check in the installation script that will prevent you from attempting installation twice.
 
@@ -99,6 +99,24 @@ kubectl describe nodes | grep -A 5 "Allocated resources"
 #### Fix the Issue
 
 **Compare your available resources** against the [minimum requirements](/docs/netdata-cloud-on-prem/installation#system-requirements). Then **add more resources to your cluster** or **free up existing resources** by removing unnecessary workloads.
+
+#### Submit the support ticket
+
+If you still can't resolve the issue, please submit a support ticket with the support bundle.
+
+To create the support bundle, run:
+
+<strong>Step 1. Download the `netdata-support-tool`</strong><br/>
+```bash
+wget https://netdata-cloud-netdata-static-content.s3.amazonaws.com/netdata-support-tool.sh
+```
+
+<strong>Step 2. Run the `netdata-support-tool` to gather support data from your Netdata Cloud On-Prem installation</strong><br/>
+```
+./netdata-support-tool.sh gather -c <kubectl-context> -n <netdata-cloud-onprem-namespace>
+```
+
+<strong>Step 3. Attach the generated bundle to the support ticket</strong><br/>
 
 ### Login Problems After Installation
 
