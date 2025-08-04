@@ -683,6 +683,7 @@ https://github.com/netdata/netdata/edit/master/src/database/engine/README.md	/do
 https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md	/docs/welcome-to-netdata/enterprise-evaluation-guide
 https://github.com/netdata/netdata/edit/master/docs/welcome-to-netdata.md	/docs/welcome-to-netdata
 https://github.com/netdata/netdata/edit/master/docs/NIDL-Framework.md	/docs/dashboards-and-charts/nidl-framework
+https://github.com/netdata/netdata/edit/master/docs/streaming-routing.md	/docs/deployment-guides/streaming-routing-reference
 https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md	/docs//top-monitoring-netdata-functions
 https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	/docs/ai-&-ml/ml-anomaly-detection/metric-correlations
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	/docs/developer-and-contributor-corner/contribute-to-the-documentation
