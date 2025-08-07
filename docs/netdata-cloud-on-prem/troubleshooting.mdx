@@ -96,6 +96,29 @@ kubectl describe nodes | grep -A 5 "Allocated resources"
 
 </details>
 
+#### Install Custom Dashboard
+
+Custom dashboard helps you get some insights about how the Netdata On-prem installation performs, by exposing some of the crucial metrics
+in a dedicated Netdata Cloud Dashboard.
+
+Before you install the custom dashboard, make sure to:
+
+- [monitor the Apache Pulsar](https://learn.netdata.cloud/docs/collecting-metrics/message-brokers/apache-pulsar)
+- [issue the API Token](https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization/api-tokens) with the `scope:all` permissions
+- get the Space ID and Room ID where the custom dashboard should be installed
+
+To install custom dashboard go with the following steps:
+
+<strong>Step 1. Download the `netdata-support-dashboard` script</strong><br/>
+```bash
+wget https://netdata-cloud-netdata-static-content.s3.amazonaws.com/netdata-support-dashboard.sh
+```
+
+<strong>Step 2. Run the `netdata-support-dashboard`</strong><br/>
+```bash
+./netdata-support-dashboard.sh --url <netdata-onprem-installation-url> --space <space_id> --room <room_id>
+```
+
 #### Fix the Issue
 
 **Compare your available resources** against the [minimum requirements](/docs/netdata-cloud-on-prem/installation#system-requirements). Then **add more resources to your cluster** or **free up existing resources** by removing unnecessary workloads.
