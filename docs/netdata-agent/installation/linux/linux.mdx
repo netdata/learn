@@ -122,7 +122,7 @@ These environment variables provide additional customization options (most users
 Before running the installation script, you can verify its integrity using the following command:
 
 ```bash
-[ "b6cffd1932d6a4c4d832e57ece8abe79" = "$(curl -Ss https://get.netdata.cloud/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "60044f1f11f65ffb090e235df7ec51e3" = "$(curl -Ss https://get.netdata.cloud/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`. We recommend verifying script integrity before installation, especially in production environments.
