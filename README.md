@@ -158,6 +158,10 @@ The Learn site includes a floating "Ask Netdata" AI chat widget that appears in 
 
 The widget is automatically loaded on all pages via the `docusaurus.config.js` scripts configuration.
 
+### Adding context for Ask Netdata
+
+A text embedding will be generated weekly on the contents of github.com/netdata/learn so if any information outside of docs need to be provided as context, we should add this in markdown format in context/ directory.
+
 ### Widget Configuration
 
 The widget is configured via three main files:
