@@ -152,6 +152,35 @@ If there are changes to any documentation file, the GitHub Action creates a PR t
 The action can be configured to automatically assign one or more reviewers.
 To enable automatic assignments, uncomment the `# reviewers:` line at the end of [`ingest.yml`](.github/ingest.yml) and add the appropriate GitHub username(s)either space or comma-separated.
 
+## Ask Netdata AI Widget
+
+The Learn site includes a floating "Ask Netdata" AI chat widget that appears in the bottom-right corner of every page. This widget provides users with AI assistance (grounded in Netdata learn docs) for Netdata-related questions.
+
+The widget is automatically loaded on all pages via the `docusaurus.config.js` scripts configuration.
+
+### Widget Configuration
+
+The widget is configured via three main files:
+
+- **`/static/widget-config.js`** - Main configuration including the widget URL
+- **`/static/chat-widget.js`** - Widget functionality and behavior
+- **`/static/chat-widget.css`** - Widget styling and responsive design
+
+### Updating the Widget URL
+
+To change the widget's backend URL (e.g., when moving from development to production):
+
+1. Edit `/static/widget-config.js`
+2. Update the `widgetUrl` value:
+   ```javascript
+   window.NETDATA_WIDGET_CONFIG = {
+     widgetUrl: 'https://your-new-widget-url.com/widget.html',
+     // ... other config options
+   };
+   ```
+3. Commit and deploy the changes
+
+
 ## Update news on the Learn homepage
 
 There are two parts to the news section on the Learn homepage: the _timeline_ and the _latest release_.
