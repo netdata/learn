@@ -53,6 +53,14 @@
         Ask Netdata AI
       </div>
       <div class="chat-header-actions">
+        <button class="chat-fullscreen-btn" title="Fullscreen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="fullscreen-icon">
+            <path d="M7 14H5V19H10V17H7V14ZM5 10H7V7H10V5H5V10ZM17 17H14V19H19V14H17V17ZM14 5V7H17V10H19V5H14Z" fill="currentColor"/>
+          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="exit-fullscreen-icon" style="display: none;">
+            <path d="M5 16H8V19H10V14H5V16ZM8 8H5V10H10V5H8V8ZM14 19H16V16H19V14H14V19ZM16 8V5H14V10H19V8H16Z" fill="currentColor"/>
+          </svg>
+        </button>
         <button class="chat-minimize-btn" title="Minimize">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
             <path d="M19 13H5V11H19V13Z" fill="currentColor"/>
@@ -65,6 +73,23 @@
         </button>
       </div>
     `;
+    
+    // Create resize handles
+    const resizeHandles = {
+      n: document.createElement('div'),
+      ne: document.createElement('div'),
+      e: document.createElement('div'),
+      se: document.createElement('div'),
+      s: document.createElement('div'),
+      sw: document.createElement('div'),
+      w: document.createElement('div'),
+      nw: document.createElement('div')
+    };
+    
+    Object.keys(resizeHandles).forEach(direction => {
+      resizeHandles[direction].className = `resize-handle resize-${direction}`;
+      chatWindow.appendChild(resizeHandles[direction]);
+    });
     
     // Create iframe for chat content
     const chatIframe = document.createElement('iframe');
@@ -86,18 +111,35 @@
     // State management
     let isOpen = false;
     let isMinimized = false;
+    let isFullscreen = false;
+    let currentWidth = parseInt(config.expandedWidth) || 400;
+    let currentHeight = parseInt(config.expandedHeight) || 600;
+    let previousPosition = { bottom: '90px', right: '20px' };
+    let previousSize = { width: currentWidth, height: currentHeight };
     
     // Load saved state from localStorage
     const savedState = localStorage.getItem('netdata-chat-widget-state');
     if (savedState) {
       const state = JSON.parse(savedState);
+      if (state.width) currentWidth = state.width;
+      if (state.height) currentHeight = state.height;
       if (state.isOpen) {
+        chatWindow.style.width = currentWidth + 'px';
+        chatWindow.style.height = currentHeight + 'px';
         openChat();
+      }
+      if (state.isFullscreen) {
+        toggleFullscreen();
       }
     }
     
     // Event handlers
     floatingButton.addEventListener('click', toggleChat);
+    
+    chatHeader.querySelector('.chat-fullscreen-btn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleFullscreen();
+    });
     
     chatHeader.querySelector('.chat-minimize-btn').addEventListener('click', function(e) {
       e.stopPropagation();
@@ -108,6 +150,9 @@
       e.stopPropagation();
       closeChat();
     });
+    
+    // Initialize resize functionality
+    initResize();
     
     // Functions
     function toggleChat() {
@@ -159,8 +204,196 @@
     
     function saveState() {
       localStorage.setItem('netdata-chat-widget-state', JSON.stringify({
-        isOpen: isOpen && !isMinimized
+        isOpen: isOpen && !isMinimized,
+        isFullscreen: isFullscreen,
+        width: currentWidth,
+        height: currentHeight
       }));
+    }
+    
+    function toggleFullscreen() {
+      const fullscreenBtn = chatHeader.querySelector('.chat-fullscreen-btn');
+      const fullscreenIcon = fullscreenBtn.querySelector('.fullscreen-icon');
+      const exitFullscreenIcon = fullscreenBtn.querySelector('.exit-fullscreen-icon');
+      
+      if (!isFullscreen) {
+        // Enter fullscreen
+        isFullscreen = true;
+        previousPosition = {
+          bottom: chatWindow.style.bottom || '90px',
+          right: chatWindow.style.right || '20px'
+        };
+        previousSize = {
+          width: chatWindow.offsetWidth,
+          height: chatWindow.offsetHeight
+        };
+        
+        chatWindow.classList.add('fullscreen');
+        fullscreenIcon.style.display = 'none';
+        exitFullscreenIcon.style.display = 'block';
+        
+        // Disable resize handles in fullscreen
+        Object.keys(resizeHandles).forEach(direction => {
+          resizeHandles[direction].style.display = 'none';
+        });
+      } else {
+        // Exit fullscreen
+        isFullscreen = false;
+        chatWindow.classList.remove('fullscreen');
+        fullscreenIcon.style.display = 'block';
+        exitFullscreenIcon.style.display = 'none';
+        
+        // Restore previous size
+        chatWindow.style.width = previousSize.width + 'px';
+        chatWindow.style.height = previousSize.height + 'px';
+        chatWindow.style.bottom = previousPosition.bottom;
+        chatWindow.style.right = previousPosition.right;
+        
+        // Re-enable resize handles
+        Object.keys(resizeHandles).forEach(direction => {
+          resizeHandles[direction].style.display = '';
+        });
+      }
+      
+      saveState();
+    }
+    
+    function initResize() {
+      let isResizing = false;
+      let currentHandle = null;
+      let startX = 0;
+      let startY = 0;
+      let startWidth = 0;
+      let startHeight = 0;
+      let startBottom = 0;
+      let startRight = 0;
+      
+      // Add mousedown listeners to all resize handles
+      Object.keys(resizeHandles).forEach(direction => {
+        resizeHandles[direction].addEventListener('mousedown', (e) => {
+          if (isFullscreen) return;
+          
+          isResizing = true;
+          currentHandle = direction;
+          startX = e.clientX;
+          startY = e.clientY;
+          startWidth = chatWindow.offsetWidth;
+          startHeight = chatWindow.offsetHeight;
+          
+          const rect = chatWindow.getBoundingClientRect();
+          startBottom = window.innerHeight - rect.bottom;
+          startRight = window.innerWidth - rect.right;
+          
+          chatWindow.classList.add('resizing');
+          document.body.style.userSelect = 'none';
+          e.preventDefault();
+        });
+      });
+      
+      // Global mouse move handler
+      document.addEventListener('mousemove', (e) => {
+        if (!isResizing) return;
+        
+        const deltaX = e.clientX - startX;
+        const deltaY = e.clientY - startY;
+        
+        let newWidth = startWidth;
+        let newHeight = startHeight;
+        let newBottom = startBottom;
+        let newRight = startRight;
+        
+        // Handle resize based on direction
+        if (currentHandle.includes('e')) {
+          newWidth = Math.max(300, Math.min(startWidth + deltaX, window.innerWidth - 40));
+        }
+        if (currentHandle.includes('w')) {
+          newWidth = Math.max(300, Math.min(startWidth - deltaX, window.innerWidth - 40));
+          newRight = startRight + deltaX;
+        }
+        if (currentHandle.includes('s')) {
+          newHeight = Math.max(400, Math.min(startHeight + deltaY, window.innerHeight - 120));
+        }
+        if (currentHandle.includes('n')) {
+          newHeight = Math.max(400, Math.min(startHeight - deltaY, window.innerHeight - 120));
+          newBottom = startBottom + deltaY;
+        }
+        
+        // Apply new dimensions
+        chatWindow.style.width = newWidth + 'px';
+        chatWindow.style.height = newHeight + 'px';
+        
+        // Apply new position for west/north handles
+        if (currentHandle.includes('w')) {
+          chatWindow.style.right = Math.max(20, newRight) + 'px';
+        }
+        if (currentHandle.includes('n')) {
+          chatWindow.style.bottom = Math.max(90, newBottom) + 'px';
+        }
+        
+        currentWidth = newWidth;
+        currentHeight = newHeight;
+      });
+      
+      // Global mouse up handler
+      document.addEventListener('mouseup', () => {
+        if (isResizing) {
+          isResizing = false;
+          currentHandle = null;
+          chatWindow.classList.remove('resizing');
+          document.body.style.userSelect = '';
+          saveState();
+        }
+      });
+      
+      // Make header draggable
+      let isDragging = false;
+      let dragStartX = 0;
+      let dragStartY = 0;
+      let windowStartX = 0;
+      let windowStartY = 0;
+      
+      chatHeader.addEventListener('mousedown', (e) => {
+        if (isFullscreen) return;
+        if (e.target.closest('.chat-header-actions')) return;
+        
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+        
+        const rect = chatWindow.getBoundingClientRect();
+        windowStartX = rect.left;
+        windowStartY = rect.top;
+        
+        chatWindow.classList.add('dragging');
+        document.body.style.userSelect = 'none';
+        e.preventDefault();
+      });
+      
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        
+        const deltaX = e.clientX - dragStartX;
+        const deltaY = e.clientY - dragStartY;
+        
+        const newLeft = windowStartX + deltaX;
+        const newTop = windowStartY + deltaY;
+        
+        // Convert to right/bottom positioning
+        const newRight = window.innerWidth - newLeft - chatWindow.offsetWidth;
+        const newBottom = window.innerHeight - newTop - chatWindow.offsetHeight;
+        
+        // Apply boundaries
+        chatWindow.style.right = Math.max(0, Math.min(newRight, window.innerWidth - chatWindow.offsetWidth)) + 'px';
+        chatWindow.style.bottom = Math.max(0, Math.min(newBottom, window.innerHeight - chatWindow.offsetHeight)) + 'px';
+      });
+      
+      document.addEventListener('mouseup', () => {
+        if (isDragging) {
+          isDragging = false;
+          chatWindow.classList.remove('dragging');
+          document.body.style.userSelect = '';
+        }
+      });
     }
     
     // Listen for messages from iframe (optional - for notifications)
