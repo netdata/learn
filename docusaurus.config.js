@@ -233,6 +233,19 @@ module.exports = {
 			type: 'font/woff2',
 			crossorigin: '',
 		},
+		{
+			href: '/chat-widget.css',
+			type: 'text/css',
+		},
 	],
-	scripts: [],
+	scripts: [
+		{
+			src: '/widget-config.js',
+			async: false,
+		},
+		{
+			src: '/chat-widget.js',
+			async: true,
+		},
+	],
 };
