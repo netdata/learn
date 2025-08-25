@@ -64,6 +64,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts.md	Organize systems, metrics, and alerts	Published	Netdata Agent/Configuration	
 https://github.com/netdata/netdata/edit/master/src/daemon/README.md	Daemon	Published	Netdata Agent	
 https://github.com/netdata/netdata/edit/master/src/database/README.md	Database	Published	Netdata Agent	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md	Logging	Published	Netdata Agent	
 https://github.com/netdata/netdata/edit/master/src/registry/README.md	Registry	Published	Netdata Agent	Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards.
 https://github.com/netdata/netdata/edit/master/src/cli/README.md	Agent CLI	Published	Netdata Agent	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md	Anonymous telemetry events	Published	Netdata Agent	
@@ -270,7 +271,7 @@ https://github.com/netdata/netdata/edit/master/src/libnetdata/config/README.md	N
 				
 https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md	JSON	Published	Developer and Contributor Corner/libnetdata	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md	Locks	Published	Developer and Contributor Corner/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md	Log	Published	Developer and Contributor Corner/libnetdata	
+				
 https://github.com/netdata/netdata/edit/master/src/libnetdata/onewayalloc/README.md	One way allocator	Published	Developer and Contributor Corner/libnetdata	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/popen/README.md	popen	Published	Developer and Contributor Corner/libnetdata	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/parser/README.md	parser	Published	Developer and Contributor Corner/libnetdata	
