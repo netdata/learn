@@ -396,6 +396,19 @@
       });
     }
     
+    // Expose global function for homepage to open widget in fullscreen
+    window.openAskNetdata = function(openInFullscreen = false) {
+      if (!isOpen) {
+        openChat();
+      }
+      
+      if (openInFullscreen && !isFullscreen) {
+        setTimeout(() => {
+          toggleFullscreen();
+        }, 100); // Small delay to ensure widget is open first
+      }
+    };
+    
     // Listen for messages from iframe (optional - for notifications)
     window.addEventListener('message', function(e) {
       // You can implement notification logic here

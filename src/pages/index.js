@@ -39,7 +39,22 @@ export default function Home() {
 		<Layout description="Here you'll find documentation and reference material for monitoring and troubleshooting your systems with Netdata.">
 			<HomepageHeader />
 			<main className="container">
-				<Grid className="mb-16" columns="2">
+				<Grid className="mb-16" columns="3">
+					<Box
+						onClick={() => {
+							// Open Ask Netdata widget in regular mode
+							if (window.openAskNetdata) {
+								window.openAskNetdata(false);
+							}
+						}}
+						title="Ask Netdata"
+						cta="Chat with the docs"
+						image={false}
+					>
+						Get instant answers to your Netdata questions with our AI assistant. 
+						Ask about configuration, troubleshooting, best practices, or any other 
+						Netdata-related topic and get personalized guidance.
+					</Box>
 					<Box
 						to="/docs/getting-started/"
 						title="Get started"
