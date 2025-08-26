@@ -504,7 +504,7 @@ body.is-home .netdata-chat-window {
 }
 
 [data-theme='dark'] {
-  --nd-card-bg: #12161c;                  /* subtle dark surface */
+  --nd-card-bg: #181c20;                  /* subtle dark surface */
   --nd-card-border: rgba(255, 255, 255, 0.10);
   --nd-card-border-hover: rgba(255, 255, 255, 0.18);
   --nd-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
