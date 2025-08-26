@@ -8,58 +8,64 @@ sidebar_position: "1000000"
 learn_link: "https://learn.netdata.cloud/docs/exporting-metrics/exporting-quickstart"
 ---
 
-# Export metrics to external time-series databases
+# Export Metrics to External Time-Series Databases
 
-Netdata natively supports long term retention of metrics. Its tiered database design typically provides significantly longer retention (months to years) and faster queries (typically 20+ times faster), compared to other common time-series databases.
+Netdata natively provides long-term metrics retention through its tiered database design. This architecture delivers significantly longer retention (months to years) and faster queries (typically 20+ times faster) compared to other common time-series databases.
 
-For integration with other observability tools, Netdata provides a number of exporters allow you to copy metrics to third party time-series databases for additional analysis or integration with other tools.
+For integration with other observability tools, Netdata includes exporters that copy metrics to third-party time-series databases for additional analysis or integration with other tools.
 
-Exporters enable connections to [more than thirty](#supported-databases) supported databases, including InfluxDB, Prometheus, Graphite, ElasticSearch, and much more.
+## Exporting Capabilities
 
-The exporting engine is able to downsample Netdata's per-second metrics at a user-configurable interval (e.g per minute), and can export metrics to multiple time-series databases simultaneously.
+The exporting engine provides these key features:
 
-Based on your needs and resources you allocated to your external time-series database, you can configure the interval
-that metrics are exported or export only certain charts with filtering. You can also choose whether metrics are exported
-as-collected, a normalized average, or the sum/volume of metrics values over the configured interval.
+- **Multi-database support**: Export to [more than thirty](#supported-databases) databases including InfluxDB, Prometheus, Graphite, ElasticSearch, and more
+- **Downsampling**: Configure export intervals from Netdata's per-second metrics (e.g., per minute)
+- **Simultaneous exports**: Send metrics to multiple time-series databases at once
+- **Flexible data processing**: Export metrics as-collected, normalized averages, or sum/volume over configured intervals
+- **Selective exporting**: Filter specific charts based on your needs and allocated resources
 
-## Supported databases
+## Supported Databases
 
-Netdata supports exporting metrics to the following databases through several
-[connectors](/docs/exporting-metrics/exporting-reference#features). Once you find the connector that works for your database, open its
-documentation and the [enabling a connector](/docs/exporting-metrics/enable-an-exporting-connector) doc for details on enabling it.
+Netdata exports metrics to the following databases through various [connectors](/docs/exporting-metrics/exporting-reference#supported-connectors). Each connector includes documentation with [enabling instructions](/docs/exporting-metrics/enable-an-exporting-connector).
 
-- **AppOptics**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **AWS Kinesis**: [AWS Kinesis Data Streams](/docs/exporting-metrics/aws-kinesis).
-- **Azure Data Explorer**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **Azure Event Hubs**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **Blueflood**: [Graphite](/docs/exporting-metrics/graphite).
-- **Chronix**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **Cortex**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **CrateDB**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **ElasticSearch**: [Graphite](/docs/exporting-metrics/graphite), [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **Gnocchi**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **Google BigQuery**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **Google Cloud Pub/Sub**: [Google Cloud Pub/Sub Service](/docs/exporting-metrics/google-cloud-pub-sub).
-- **Graphite**: [Graphite](/docs/exporting-metrics/graphite), [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **InfluxDB**: [Graphite](/docs/exporting-metrics/graphite), [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **IRONdb**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **JSON**: [JSON document databases](/docs/exporting-metrics/json).
-- **Kafka**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **KairosDB**: [Graphite](/docs/exporting-metrics/graphite), [OpenTSDB](/docs/exporting-metrics/opentsdb).
-- **M3DB**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **MetricFire**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **MongoDB**: [MongoDB](/docs/exporting-metrics/mongodb).
-- **New Relic**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **OpenTSDB**: [OpenTSDB](/docs/exporting-metrics/opentsdb), [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **PostgreSQL**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write) via [PostgreSQL Prometheus Adapter](https://github.com/CrunchyData/postgresql-prometheus-adapter).
-- **Prometheus**: [Prometheus scraper](/docs/exporting-metrics/prometheus).
-- **TimescaleDB**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write), [netdata-timescale-relay](https://github.com/netdata/netdata/blob/master/src/exporting/TIMESCALE.md).
-- **QuasarDB**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **SignalFx**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **Splunk**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **TiKV**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **Thanos**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **VictoriaMetrics**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
-- **Wavefront**: [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write).
+|         Database         |                                                                             Supported Connectors                                                                              |
+|:------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|      **AppOptics**       |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|     **AWS Kinesis**      |                                                       [AWS Kinesis Data Streams](/docs/exporting-metrics/aws-kinesis)                                                        |
+| **Azure Data Explorer**  |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|   **Azure Event Hubs**   |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|      **Blueflood**       |                                                                 [Graphite](/docs/exporting-metrics/graphite)                                                                 |
+|       **Chronix**        |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|        **Cortex**        |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|       **CrateDB**        |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|    **ElasticSearch**     |                          [Graphite](/docs/exporting-metrics/graphite), [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                           |
+|       **Gnocchi**        |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|   **Google BigQuery**    |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+| **Google Cloud Pub/Sub** |                                                        [Google Cloud Pub/Sub Service](/docs/exporting-metrics/google-cloud-pub-sub)                                                        |
+|       **Graphite**       |                          [Graphite](/docs/exporting-metrics/graphite), [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                           |
+|       **InfluxDB**       |                          [Graphite](/docs/exporting-metrics/graphite), [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                           |
+|        **IRONdb**        |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|         **JSON**         |                                                           [JSON document databases](/docs/exporting-metrics/json)                                                            |
+|        **Kafka**         |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|       **KairosDB**       |                                         [Graphite](/docs/exporting-metrics/graphite), [OpenTSDB](/docs/exporting-metrics/opentsdb)                                          |
+|         **M3DB**         |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|      **MetricFire**      |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|       **MongoDB**        |                                                                  [MongoDB](/docs/exporting-metrics/mongodb)                                                                  |
+|      **New Relic**       |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|       **OpenTSDB**       |                          [OpenTSDB](/docs/exporting-metrics/opentsdb), [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                           |
+|      **PostgreSQL**      | [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write) via [PostgreSQL Prometheus Adapter](https://github.com/CrunchyData/postgresql-prometheus-adapter) |
+|      **Prometheus**      |                                                           [Prometheus scraper](/docs/exporting-metrics/prometheus)                                                           |
+|     **TimescaleDB**      |                      [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write), [netdata-timescale-relay](https://github.com/netdata/netdata/blob/master/src/exporting/TIMESCALE.md)                      |
+|       **QuasarDB**       |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|       **SignalFx**       |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|        **Splunk**        |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|         **TiKV**         |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|        **Thanos**        |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|   **VictoriaMetrics**    |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
+|      **Wavefront**       |                                                  [Prometheus remote write](/docs/exporting-metrics/prometheus-remote-write)                                                  |
 
-Can't find your preferred external time-series database? Ask our [community](https://community.netdata.cloud/) for solutions, or file an [issue on GitHub](https://github.com/netdata/netdata/issues/new?assignees=&labels=bug%2Cneeds+triage&template=BUG_REPORT.yml).
+:::tip
+
+**Can't find your preferred external time-series database?** Ask our [community](https://community.netdata.cloud/) for solutions, or file an [issue on GitHub](https://github.com/netdata/netdata/issues/new?assignees=&labels=bug%2Cneeds+triage&template=BUG_REPORT.yml).
+
+:::
