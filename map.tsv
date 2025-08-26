@@ -64,6 +64,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts.md	Organize systems, metrics, and alerts	Published	Netdata Agent/Configuration	
 https://github.com/netdata/netdata/edit/master/src/daemon/README.md	Daemon	Published	Netdata Agent	
 https://github.com/netdata/netdata/edit/master/src/database/README.md	Database	Published	Netdata Agent	
+https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md	Logging	Published	Netdata Agent	
 https://github.com/netdata/netdata/edit/master/src/registry/README.md	Registry	Published	Netdata Agent	Netdata utilizes a central registry of machines/person GUIDs, URLs, and opt-in account information to provide unified cross-server dashboards.
 https://github.com/netdata/netdata/edit/master/src/cli/README.md	Agent CLI	Published	Netdata Agent	The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md	Anonymous telemetry events	Published	Netdata Agent	
@@ -178,8 +179,8 @@ https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/m
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-accuracy.md	ML Accuracy	Published	AI & ML/ML Anomaly Detection	Analysis of Netdata's ML anomaly detection accuracy, false positive rates, and comparison with other approaches
 https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	ML Configuration	Published	AI & ML/ML Anomaly Detection	
 https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	Metric Correlations	Published	AI & ML/ML Anomaly Detection	Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
-				
-				
+https://github.com/netdata/netdata/edit/master/docs/troubleshooting/troubleshoot.md	AI-Powered Alert Troubleshooting	Published	AI & ML	
+https://github.com/netdata/netdata/edit/master/docs/troubleshooting/custom-investigations.md	Custom Investigations	Published	AI & ML	
 				
 https://github.com/netdata/netdata/edit/master/docs/netdata-assistant.md	AI powered troubleshooting assistant	Unpublished	AI and Machine Learning	
 https://github.com/netdata/netdata/edit/master/src/ml/README.md	ML models and anomaly detection	Unpublished	AI and Machine Learning	This is an in-depth look at how Netdata uses ML to detect anomalies.
@@ -270,7 +271,7 @@ https://github.com/netdata/netdata/edit/master/src/libnetdata/config/README.md	N
 				
 https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md	JSON	Published	Developer and Contributor Corner/libnetdata	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md	Locks	Published	Developer and Contributor Corner/libnetdata	
-https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md	Log	Published	Developer and Contributor Corner/libnetdata	
+				
 https://github.com/netdata/netdata/edit/master/src/libnetdata/onewayalloc/README.md	One way allocator	Published	Developer and Contributor Corner/libnetdata	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/popen/README.md	popen	Published	Developer and Contributor Corner/libnetdata	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/parser/README.md	parser	Published	Developer and Contributor Corner/libnetdata	
