@@ -1027,7 +1027,7 @@
 
 [[redirects]]
   from="/docs/agent/libnetdata/log"
-  to="/docs/developer-and-contributor-corner/libnetdata/log"
+  to="/docs/netdata-agent/logging"
 
 [[redirects]]
   from="/docs/agent/libnetdata/procfile"
@@ -2147,7 +2147,7 @@
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/log"
-  to="/docs/developer-and-contributor-corner/libnetdata/log"
+  to="/docs/netdata-agent/logging"
 
 [[redirects]]
   from="/docs/improving-netdata---developers/libnetdata/locks"
@@ -3399,7 +3399,7 @@
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/log"
-  to="/docs/developer-and-contributor-corner/libnetdata/log"
+  to="/docs/netdata-agent/logging"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/libnetdata/locks"
@@ -3687,7 +3687,7 @@
 
 [[redirects]]
   from="/docs/contributing/libnetdata/log"
-  to="/docs/developer-and-contributor-corner/libnetdata/log"
+  to="/docs/netdata-agent/logging"
 
 [[redirects]]
   from="/docs/contributing/libnetdata/locks"
@@ -4339,7 +4339,7 @@
 
 [[redirects]]
   from="/docs/miscellaneous/libnetdata/log"
-  to="/docs/developer-and-contributor-corner/libnetdata/log"
+  to="/docs/netdata-agent/logging"
 
 [[redirects]]
   from="/docs/miscellaneous/libnetdata/locks"
@@ -8384,5 +8384,9 @@
 [[redirects]]
   from="/docs/deployment-guides/centralized"
   to="/docs/deployment-guides/parent-child"
+
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/libnetdata/log"
+  to="/docs/netdata-agent/logging"
 
 # section: dynamic << END
