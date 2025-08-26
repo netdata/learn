@@ -39,9 +39,7 @@ export const Box = ({ className, to, onClick, title, cta, image, children }) => 
 		<Element
 			to={to}
 			onClick={handleClick}
-			className={`group relative p-8 border border-gray-200 rounded !no-underline shadow-sm dark:bg-gray-800 dark:border-gray-500 ${
-				onClick && !to ? 'cursor-pointer hover:border-green-light hover:shadow-md transition-all duration-200' : ''
-			} ${className && className}`}
+			className={`nd-card group relative p-8 !no-underline transition-shadow ${onClick && !to ? 'cursor-pointer hover:shadow-md' : ''} ${className || ''}`}
 		>
 			<h2
 				className={`text-xl xl:text-2xl font-semibold !mt-0 !mb-2 ${

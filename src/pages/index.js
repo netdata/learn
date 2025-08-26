@@ -1,30 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { Grid, Box } from '@site/src/components/Grid';
-import {
-	News,
-	ReleaseVersion,
-	ReleaseDate,
-	ReleaseNotes,
-} from '@site/src/data/News';
+import AskNetdataInline from '@site/src/components/AskNetdataInline';
+
+import { News } from '@site/src/data/News';
 import HeroImage from '/static/img/hero.svg';
 
 function HomepageHeader() {
 	const { siteConfig } = useDocusaurusContext();
 	return (
-		<header className="overflow-hidden bg-gradient-to-br from-gray-200 to-gray-50 dark:from-gray-800 dark:to-gray-900 py-16 mb-16">
+		<header className="overflow-hidden bg-gradient-to-br from-gray-200 to-gray-50 dark:from-gray-800 dark:to-gray-900 py-10 mb-10">
 			<div className="container relative">
-				<div className="z-10 relative w-full md:w-3/4 lg:w-1/2">
-					<h1 className="text-2xl lg:text-5xl text-text font-semibold mb-6 dark:text-gray-50">
+				<div className="z-10 relative w-full md:w-2/3 lg:w-1/2">
+					<h1 className="text-xl lg:text-4xl font-semibold mb-3 text-text dark:text-gray-50">
 						{siteConfig.title}
 					</h1>
-					<p className="prose text-lg lg:text-xl text-text dark:text-gray-50">
+					<p className="prose text-base lg:text-lg text-text dark:text-gray-50">
 						{siteConfig.tagline}
 					</p>
 				</div>
-				<div className="z-0 absolute hidden lg:block -top-24 -right-24">
+				<div className="z-0 absolute hidden lg:block -top-24 -right-1 w-1/3 max-w-sm">
 					<HeroImage />
 				</div>
 			</div>
@@ -32,74 +29,78 @@ function HomepageHeader() {
 	);
 }
 
+
 export default function Home() {
 	const { siteConfig } = useDocusaurusContext();
+	useEffect(() => {
+		// Hide if it's already there
+		const hideWidget = () => {
+			const el = document.getElementById('netdata-chat-widget');
+			if (el) el.style.display = 'none';
+		};
+
+		hideWidget();
+
+		// Also observe for late injection
+		const observer = new MutationObserver(() => hideWidget());
+		observer.observe(document.body, { childList: true, subtree: true });
+
+		return () => {
+			// Re-show when leaving homepage
+			const el = document.getElementById('netdata-chat-widget');
+			if (el) el.style.display = '';
+			observer.disconnect();
+		};
+	}, []);
 
 	return (
 		<Layout description="Here you'll find documentation and reference material for monitoring and troubleshooting your systems with Netdata.">
 			<HomepageHeader />
 			<main className="container">
-				<Grid className="mb-16" columns="3">
-					<Box
-						onClick={() => {
-							// Open Ask Netdata widget in regular mode
-							if (window.openAskNetdata) {
-								window.openAskNetdata(false);
-							}
-						}}
-						title="Ask Netdata"
-						cta="Chat with the docs"
-						image={false}
-					>
-						Get instant answers to your Netdata questions with our AI assistant. 
-						Ask about configuration, troubleshooting, best practices, or any other 
-						Netdata-related topic and get personalized guidance.
-					</Box>
-					<Box
-						to="/docs/getting-started/"
-						title="Get started"
-						cta="Install now"
-						image={true}
-					>
-						Install the open-source monitoring agent on physical/virtual systems
-						running most Linux distributions (Ubuntu, Debian, CentOS, and more),
-						container platforms (Kubernetes clusters, Docker), and many other
-						operating systems, with no <code>sudo</code> required.
-					</Box>
-					<Box to="/docs/welcome-to-netdata" title="Docs" cta="Read the docs" image={false}>
-						Solution- and action-based docs for Netdata's many features and
-						capabilities. Your table of contents to becoming an expert in using
-						Netdata to monitor and troubleshoot applications and their
-						infrastructure.
-					</Box>
-				</Grid>
+				<div className="mb-16" style={{ display: 'grid', gridTemplateColumns: '1fr 2.6fr', gap: '1rem' }}>
+					<div className="flex flex-col gap-4">
+						<Box to="/docs/getting-started/" title="Get started" cta="Install now" image>
+							Install on Linux, containers, Kubernetes — no <code>sudo</code> needed.
+						</Box>
+						<Box to="/docs/welcome-to-netdata" title="Docs" cta="Read the docs">
+							Action-based docs to monitor & troubleshoot fast.
+						</Box>
+					</div>
+					<div>
+						<AskNetdataInline height={400} />
+					</div>
+				</div>
+
 				<div id="updates" className="relative flex flex-row flex-wrap pb-12">
 					<div className="relative w-full">
 						<h2 className="z-10 relative text-xl lg:text-3xl font-semibold mb-6">
 							What's new at Netdata?
 						</h2>
+
+						{/* vertical line */}
 						<div className="z-0 absolute top-4 -bottom-8 left-1.5">
-							<div
-								className="z-0 absolute top-0 w-1 h-full"
-								id="timeline"
-							></div>
+							<div className="z-0 absolute top-0 w-1 h-full nd-timeline-line" id="timeline" />
 						</div>
+
 						<ul>
 							{News.map((props, idx) => (
-								<li key={`${props.title}-${idx}`} className="group">
+								<li key={`${props.title}-${idx}`} className="group nd-timeline-item">
 									<Link
 										to={props.href}
 										className="grid md:grid-cols-8 xl:grid-cols-9 items-start"
 									>
-										<div className="md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 p-8 rounded group-hover:bg-gray-50 dark:group-hover:bg-gray-800">
+										{/* center content */}
+										<div className="nd-timeline-content md:col-start-3 md:col-span-6 xl:col-start-3 xl:col-span-7 p-6 md:p-8 rounded">
 											<h3 className="text-lg lg:text-xl font-semibold mb-2">
 												{props.title}
 											</h3>
 											<p>{props.description}</p>
 										</div>
+
+										{/* left rail: dot + date */}
 										<div className="flex items-center md:col-start-1 md:col-span-2 row-start-1 md:row-end-3 pt-8">
-											<div className="z-10 w-4 h-4 mr-8 bg-green rounded-full group-hover:bg-blue" />
-											<time className="text-base text-gray-500 font-medium uppercase dark:text-gray-400">
+											<div className="nd-timeline-dot mr-8" />
+											<time className="text-base font-medium uppercase">
 												{props.date}
 											</time>
 										</div>
@@ -109,6 +110,7 @@ export default function Home() {
 						</ul>
 					</div>
 				</div>
+
 			</main>
 		</Layout>
 	);

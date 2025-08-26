@@ -483,3 +483,85 @@ html[data-theme='dark']:root {
 		rgba(0, 203, 81, 0) 100%
 	);
 }
+
+/* Hide floating chat UI on homepage only */
+body.is-home #netdata-chat-widget,
+body.is-home .netdata-chat-widget,
+body.is-home .netdata-chat-button,
+body.is-home .netdata-chat-window {
+  display: none !important;
+}
+
+:root {
+  --nd-card-bg: var(--ifm-background-surface-color);
+  --nd-card-border: rgba(0, 0, 0, 0.08);
+  --nd-card-border-hover: rgba(0, 0, 0, 0.16);
+  --nd-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+
+  --nd-muted: #6b7280;                    /* gray-500-ish */
+  --nd-timeline: var(--ifm-color-emphasis-200);
+  --nd-timeline-dot: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] {
+  --nd-card-bg: #12161c;                  /* subtle dark surface */
+  --nd-card-border: rgba(255, 255, 255, 0.10);
+  --nd-card-border-hover: rgba(255, 255, 255, 0.18);
+  --nd-card-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+
+  --nd-muted: #a3a3a3;
+  --nd-timeline: rgba(255, 255, 255, 0.14);
+}
+
+/* Reusable card */
+.nd-card {
+  background: var(--nd-card-bg);
+  border: 1px solid var(--nd-card-border);
+  border-radius: 12px;
+  box-shadow: var(--nd-card-shadow);
+}
+.nd-card:hover { border-color: var(--nd-card-border-hover); }
+
+/* tiny timeline accents */
+.nd-news .dot {
+  position: absolute; left: .5rem; top: .45rem;
+  width: .5rem; height: .5rem; border-radius: 9999px;
+  background: var(--nd-timeline-dot);
+  box-shadow: 0 0 0 2px var(--nd-card-bg);
+}
+/* Bottom timeline */
+.nd-timeline-line {
+  background: var(--nd-timeline);
+}
+
+/* items */
+.nd-timeline-item { position: relative; }
+
+/* date text */
+.nd-timeline-item time {
+  color: var(--nd-muted);
+  font-size: 0.95rem;
+  letter-spacing: .01em;
+}
+
+/* date dot */
+.nd-timeline-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  background: var(--nd-timeline-dot);
+  box-shadow: 0 0 0 3px var(--nd-card-bg); /* ring so it stays visible on dark */
+}
+
+/* clickable content card */
+.nd-timeline-content {
+  border-radius: 12px;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+
+/* On hover, make it look like a card */
+.group:hover .nd-timeline-content {
+  background: var(--nd-card-bg);
+  /* border: 1px solid var(--nd-card-border-hover); */
+  box-shadow: var(--nd-card-shadow);
+}
