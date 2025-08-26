@@ -1,10 +1,9 @@
 (function() {
-  // Wait for DOM to be ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initWidget);
-  } else {
-    initWidget();
+  if (location.pathname === '/' || location.pathname === '/index.html') {
+    return;
   }
+  
+  window.addEventListener('load', initWidget);
 
   function initWidget() {
     // Get configuration
