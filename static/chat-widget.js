@@ -9,7 +9,7 @@
   function initWidget() {
     // Get configuration
     const config = window.NETDATA_WIDGET_CONFIG || {
-      widgetUrl: 'https://fcd3e57ca366.ngrok-free.app/widget.html',
+      widgetUrl: 'https://agent-events.netdata.cloud/ask-netdata/widget',
       position: 'bottom-right',
       buttonSize: '60px',
       expandedWidth: '400px',
@@ -47,9 +47,6 @@
     chatHeader.className = 'netdata-chat-header';
     chatHeader.innerHTML = `
       <div class="chat-header-title">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
-          <path d="M12 2L2 7V12C2 16.55 4.84 20.74 9 22C13.16 20.74 22 16.55 22 12V7L12 2Z" fill="#00AB44"/>
-        </svg>
         Ask Netdata AI
       </div>
       <div class="chat-header-actions">
