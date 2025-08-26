@@ -80,6 +80,8 @@ https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-co
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/style-guide.md	/docs/developer-and-contributor-corner/contribute-to-the-documentation/netdata-style-guide
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/collect-unbound-metrics.md	/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/collect-apache-nginx-web-logs.md	/docs/developer-and-contributor-corner/monitor-nginx-or-apache-web-server-log-files-with-netdata
+https://github.com/netdata/netdata/edit/master/docs/troubleshooting/troubleshoot.md	/docs/ai-&-ml/ai-powered-alert-troubleshooting
+https://github.com/netdata/netdata/edit/master/docs/troubleshooting/custom-investigations.md	/docs/ai-&-ml/custom-investigations
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/best-practices.md	/docs/deployment-guides/parent-configuration-best-practices
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/README.md	/docs/logs/logs-centralization-points-with-systemd-journald
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption.md	/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption
@@ -323,7 +325,7 @@ https://github.com/netdata/netdata/edit/master/src/libnetdata/threads/README.md	
 https://github.com/netdata/netdata/edit/master/src/libnetdata/avl/README.md	/docs/developer-and-contributor-corner/libnetdata/avl
 https://github.com/netdata/netdata/edit/master/src/libnetdata/clocks/README.md	/docs/developer-and-contributor-corner/libnetdata/clocks
 https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md	/docs/developer-and-contributor-corner/libnetdata/locks
-https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md	/docs/developer-and-contributor-corner/libnetdata/log
+https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md	/docs/netdata-agent/logging
 https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md	/docs/logs/systemd-cat-native
 https://github.com/netdata/netdata/edit/master/src/libnetdata/statistical/README.md	/docs/developer-and-contributor-corner/libnetdata/statistical-functions
 https://github.com/netdata/netdata/edit/master/src/libnetdata/aral/README.md	/docs/developer-and-contributor-corner/libnetdata/array-allocator
