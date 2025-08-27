@@ -12,7 +12,7 @@ learn_link: "https://learn.netdata.cloud/docs/exporting-metrics/exporting-refere
 
 This reference guide provides comprehensive information about enabling, configuring, and monitoring Netdata's exporting engine for sending metrics to external time-series databases.
 
-For a quick introduction, read our [exporting metrics overview](/docs/exporting-metrics/exporting-quickstart) or start with [enabling a connector](/docs/exporting-metrics/enable-an-exporting-connector).
+For a quick introduction, read our [exporting metrics overview](/docs/exporting-metrics) or start with [enabling a connector](/docs/exporting-metrics/enable-an-exporting-connector).
 
 ## Core Capabilities
 
@@ -52,14 +52,14 @@ Netdata provides three data export modes:
 
 | Connector                                                                   | Protocol/Format            | Metric Format                      |
 |:----------------------------------------------------------------------------|:---------------------------|:-----------------------------------|
-| [AWS Kinesis](/docs/exporting-metrics/aws-kinesis)                         | JSON                       | Stream-based                       |
-| [Google Pub/Sub](/docs/exporting-metrics/google-cloud-pub-sub)                           | JSON                       | Message-based                      |
-| [Graphite](/docs/exporting-metrics/graphite)                               | Plaintext                  | `prefix.hostname.chart.dimension`  |
-| [JSON Databases](/docs/exporting-metrics/json)                             | JSON                       | Document-based                     |
-| [OpenTSDB](/docs/exporting-metrics/opentsdb)                               | Plaintext/HTTP             | `prefix.chart.dimension` with tags |
-| [MongoDB](/docs/exporting-metrics/mongodb)                                 | JSON                       | Document-based                     |
+| [AWS Kinesis](/docs/exporting-metrics/connectors/aws-kinesis)                         | JSON                       | Stream-based                       |
+| [Google Pub/Sub](/docs/exporting-metrics/connectors/google-cloud-pub-sub)                           | JSON                       | Message-based                      |
+| [Graphite](/docs/exporting-metrics/connectors/graphite)                               | Plaintext                  | `prefix.hostname.chart.dimension`  |
+| [JSON Databases](/docs/exporting-metrics/connectors/json)                             | JSON                       | Document-based                     |
+| [OpenTSDB](/docs/exporting-metrics/connectors/opentsdb)                               | Plaintext/HTTP             | `prefix.chart.dimension` with tags |
+| [MongoDB](/docs/exporting-metrics/connectors/mongodb)                                 | JSON                       | Document-based                     |
 | [Prometheus](/docs/exporting-metrics/prometheus)                           | HTTP scraping              | Prometheus exposition format       |
-| [Prometheus Remote Write](/docs/exporting-metrics/prometheus-remote-write) | Snappy-compressed protobuf | Binary over HTTP                   |
+| [Prometheus Remote Write](/docs/exporting-metrics/connectors/prometheus-remote-write) | Snappy-compressed protobuf | Binary over HTTP                   |
 | [TimescaleDB](https://github.com/netdata/netdata/blob/master/src/exporting/TIMESCALE.md)                                  | JSON streams               | Time-series tables                 |
 
 ## Configuration Structure

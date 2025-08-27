@@ -851,23 +851,23 @@
 
 [[redirects]]
   from="/docs/agent/exporting/aws_kinesis"
-  to="/docs/exporting-metrics/aws-kinesis"
+  to="/docs/exporting-metrics/connectors/aws-kinesis"
 
 [[redirects]]
   from="/docs/agent/exporting/graphite"
-  to="/docs/exporting-metrics/graphite"
+  to="/docs/exporting-metrics/connectors/graphite"
 
 [[redirects]]
   from="/docs/agent/exporting/json"
-  to="/docs/exporting-metrics/json"
+  to="/docs/exporting-metrics/connectors/json"
 
 [[redirects]]
   from="/docs/agent/exporting/mongodb"
-  to="/docs/exporting-metrics/mongodb"
+  to="/docs/exporting-metrics/connectors/mongodb"
 
 [[redirects]]
   from="/docs/agent/exporting/opentsdb"
-  to="/docs/exporting-metrics/opentsdb"
+  to="/docs/exporting-metrics/connectors/opentsdb"
 
 [[redirects]]
   from="/docs/agent/exporting/prometheus"
@@ -875,11 +875,11 @@
 
 [[redirects]]
   from="/docs/agent/exporting/prometheus/remote_write"
-  to="/docs/exporting-metrics/prometheus-remote-write"
+  to="/docs/exporting-metrics/connectors/prometheus-remote-write"
 
 [[redirects]]
   from="/docs/agent/exporting/pubsub"
-  to="/docs/exporting-metrics/google-cloud-pub-sub"
+  to="/docs/exporting-metrics/connectors/google-cloud-pub-sub"
 
 [[redirects]]
   from="/docs/agent/health"
@@ -1391,7 +1391,7 @@
 
 [[redirects]]
   from="/guides/export/export-netdata-metrics-graphite"
-  to="/docs/exporting-metrics/graphite"
+  to="/docs/exporting-metrics/connectors/graphite"
 
 [[redirects]]
   from="/docs/agent/collectors/fping.plugin"
@@ -1431,7 +1431,7 @@
 
 [[redirects]]
   from="/docs/next/agent/exporting/graphite"
-  to="/docs/exporting-metrics/graphite"
+  to="/docs/exporting-metrics/connectors/graphite"
 
 [[redirects]]
   from="/contribute/support"
@@ -2267,7 +2267,7 @@
 
 [[redirects]]
   from="/docs/exporting-data/prometheus/prometheus-remote-write"
-  to="/docs/exporting-metrics/prometheus-remote-write"
+  to="/docs/exporting-metrics/connectors/prometheus-remote-write"
 
 [[redirects]]
   from="/docs/exporting-data/prometheus"
@@ -2275,19 +2275,19 @@
 
 [[redirects]]
   from="/docs/exporting-data/opentsdb"
-  to="/docs/exporting-metrics/opentsdb"
+  to="/docs/exporting-metrics/connectors/opentsdb"
 
 [[redirects]]
   from="/docs/exporting-data/mongodb"
-  to="/docs/exporting-metrics/mongodb"
+  to="/docs/exporting-metrics/connectors/mongodb"
 
 [[redirects]]
   from="/docs/exporting-data/json-document-databases"
-  to="/docs/exporting-metrics/json"
+  to="/docs/exporting-metrics/connectors/json"
 
 [[redirects]]
   from="/docs/exporting-data/graphite"
-  to="/docs/exporting-metrics/graphite"
+  to="/docs/exporting-metrics/connectors/graphite"
 
 [[redirects]]
   from="/docs/exporting-data/grafana-data-source-plugin"
@@ -2295,7 +2295,7 @@
 
 [[redirects]]
   from="/docs/exporting-data/google-cloud-pub-sub-service"
-  to="/docs/exporting-metrics/google-cloud-pub-sub"
+  to="/docs/exporting-metrics/connectors/google-cloud-pub-sub"
 
 [[redirects]]
   from="/docs/exporting-data/exporting-reference"
@@ -2307,7 +2307,7 @@
 
 [[redirects]]
   from="/docs/exporting-data/aws-kinesis-data-streams"
-  to="/docs/exporting-metrics/aws-kinesis"
+  to="/docs/exporting-metrics/connectors/aws-kinesis"
 
 [[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication/database-modes-for-parent-child-setups"
@@ -3307,7 +3307,7 @@
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/prometheus/remote-write"
-  to="/docs/exporting-metrics/prometheus-remote-write"
+  to="/docs/exporting-metrics/connectors/prometheus-remote-write"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/prometheus"
@@ -3315,19 +3315,19 @@
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/opentsdb"
-  to="/docs/exporting-metrics/opentsdb"
+  to="/docs/exporting-metrics/connectors/opentsdb"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/mongodb"
-  to="/docs/exporting-metrics/mongodb"
+  to="/docs/exporting-metrics/connectors/mongodb"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/json-document-databases"
-  to="/docs/exporting-metrics/json"
+  to="/docs/exporting-metrics/connectors/json"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/graphite"
-  to="/docs/exporting-metrics/graphite"
+  to="/docs/exporting-metrics/connectors/graphite"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/grafana-data-source-plugin"
@@ -3335,7 +3335,7 @@
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/google-cloud-pub-sub-service"
-  to="/docs/exporting-metrics/google-cloud-pub-sub"
+  to="/docs/exporting-metrics/connectors/google-cloud-pub-sub"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/exporting-reference"
@@ -3347,7 +3347,7 @@
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems/aws-kinesis-data-streams"
-  to="/docs/exporting-metrics/aws-kinesis"
+  to="/docs/exporting-metrics/connectors/aws-kinesis"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/security-policy"
@@ -3747,11 +3747,11 @@
 
 [[redirects]]
   from="/docs/exporting/prometheus/remote-write"
-  to="/docs/exporting-metrics/prometheus-remote-write"
+  to="/docs/exporting-metrics/connectors/prometheus-remote-write"
 
 [[redirects]]
   from="/docs/exporting/json-document-databases"
-  to="/docs/exporting-metrics/json"
+  to="/docs/exporting-metrics/connectors/json"
 
 [[redirects]]
   from="/docs/exporting/grafana-data-source-plugin"
@@ -3759,11 +3759,11 @@
 
 [[redirects]]
   from="/docs/exporting/google-cloud-pub-sub-service"
-  to="/docs/exporting-metrics/google-cloud-pub-sub"
+  to="/docs/exporting-metrics/connectors/google-cloud-pub-sub"
 
 [[redirects]]
   from="/docs/exporting/aws-kinesis-data-streams"
-  to="/docs/exporting-metrics/aws-kinesis"
+  to="/docs/exporting-metrics/connectors/aws-kinesis"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/web-logs/squid"
@@ -4239,23 +4239,23 @@
 
 [[redirects]]
   from="/docs/agent/backends"
-  to="/docs/exporting-metrics/exporting-quickstart"
+  to="/docs/exporting-metrics"
 
 [[redirects]]
   from="/docs/agent/web/api/exporters"
-  to="/docs/exporting-metrics/exporting-quickstart"
+  to="/docs/exporting-metrics"
 
 [[redirects]]
   from="/docs/export/external-databases"
-  to="/docs/exporting-metrics/exporting-quickstart"
+  to="/docs/exporting-metrics"
 
 [[redirects]]
   from="/docs/exporting-data"
-  to="/docs/exporting-metrics/exporting-quickstart"
+  to="/docs/exporting-metrics"
 
 [[redirects]]
   from="/docs/exporting-data-to-other-systems"
-  to="/docs/exporting-metrics/exporting-quickstart"
+  to="/docs/exporting-metrics"
 
 [[redirects]]
   from="/docs/streaming"
@@ -4827,31 +4827,31 @@
 
 [[redirects]]
   from="/docs/exporting/wavefront"
-  to="/docs/exporting-metrics/wavefront"
+  to="/docs/exporting-metrics/connectors/wavefront"
 
 [[redirects]]
   from="/docs/exporting/vmware-aria"
-  to="/docs/exporting-metrics/vmware-aria"
+  to="/docs/exporting-metrics/connectors/vmware-aria"
 
 [[redirects]]
   from="/docs/exporting/victoriametrics"
-  to="/docs/exporting-metrics/victoriametrics"
+  to="/docs/exporting-metrics/connectors/victoriametrics"
 
 [[redirects]]
   from="/docs/exporting/timescaledb"
-  to="/docs/exporting-metrics/timescaledb"
+  to="/docs/exporting-metrics/connectors/timescaledb"
 
 [[redirects]]
   from="/docs/exporting/tikv"
-  to="/docs/exporting-metrics/tikv"
+  to="/docs/exporting-metrics/connectors/tikv"
 
 [[redirects]]
   from="/docs/exporting/thanos"
-  to="/docs/exporting-metrics/thanos"
+  to="/docs/exporting-metrics/connectors/thanos"
 
 [[redirects]]
   from="/docs/exporting/splunk-signalfx"
-  to="/docs/exporting-metrics/splunk-signalfx"
+  to="/docs/exporting-metrics/connectors/splunk-signalfx"
 
 [[redirects]]
   from="/docs/exporting/shell-scripts"
@@ -4859,11 +4859,11 @@
 
 [[redirects]]
   from="/docs/exporting/quasardb"
-  to="/docs/exporting-metrics/quasardb"
+  to="/docs/exporting-metrics/connectors/quasardb"
 
 [[redirects]]
   from="/docs/exporting/prometheus-remote-write"
-  to="/docs/exporting-metrics/prometheus-remote-write"
+  to="/docs/exporting-metrics/connectors/prometheus-remote-write"
 
 [[redirects]]
   from="/docs/exporting/prometheus"
@@ -4871,59 +4871,59 @@
 
 [[redirects]]
   from="/docs/exporting/postgresql"
-  to="/docs/exporting-metrics/postgresql"
+  to="/docs/exporting-metrics/connectors/postgresql"
 
 [[redirects]]
   from="/docs/exporting/opentsdb"
-  to="/docs/exporting-metrics/opentsdb"
+  to="/docs/exporting-metrics/connectors/opentsdb"
 
 [[redirects]]
   from="/docs/exporting/new-relic"
-  to="/docs/exporting-metrics/new-relic"
+  to="/docs/exporting-metrics/connectors/new-relic"
 
 [[redirects]]
   from="/docs/exporting/mongodb"
-  to="/docs/exporting-metrics/mongodb"
+  to="/docs/exporting-metrics/connectors/mongodb"
 
 [[redirects]]
   from="/docs/exporting/metricfire"
-  to="/docs/exporting-metrics/metricfire"
+  to="/docs/exporting-metrics/connectors/metricfire"
 
 [[redirects]]
   from="/docs/exporting/m3db"
-  to="/docs/exporting-metrics/m3db"
+  to="/docs/exporting-metrics/connectors/m3db"
 
 [[redirects]]
   from="/docs/exporting/kairosdb"
-  to="/docs/exporting-metrics/kairosdb"
+  to="/docs/exporting-metrics/connectors/kairosdb"
 
 [[redirects]]
   from="/docs/exporting/kafka"
-  to="/docs/exporting-metrics/kafka"
+  to="/docs/exporting-metrics/connectors/kafka"
 
 [[redirects]]
   from="/docs/exporting/json"
-  to="/docs/exporting-metrics/json"
+  to="/docs/exporting-metrics/connectors/json"
 
 [[redirects]]
   from="/docs/exporting/irondb"
-  to="/docs/exporting-metrics/irondb"
+  to="/docs/exporting-metrics/connectors/irondb"
 
 [[redirects]]
   from="/docs/exporting/graphite"
-  to="/docs/exporting-metrics/graphite"
+  to="/docs/exporting-metrics/connectors/graphite"
 
 [[redirects]]
   from="/docs/exporting/google-cloud-pub-sub"
-  to="/docs/exporting-metrics/google-cloud-pub-sub"
+  to="/docs/exporting-metrics/connectors/google-cloud-pub-sub"
 
 [[redirects]]
   from="/docs/exporting/google-bigquery"
-  to="/docs/exporting-metrics/google-bigquery"
+  to="/docs/exporting-metrics/connectors/google-bigquery"
 
 [[redirects]]
   from="/docs/exporting/gnocchi"
-  to="/docs/exporting-metrics/gnocchi"
+  to="/docs/exporting-metrics/connectors/gnocchi"
 
 [[redirects]]
   from="/docs/exporting/exporting-reference"
@@ -4931,7 +4931,7 @@
 
 [[redirects]]
   from="/docs/exporting/exporting-quickstart"
-  to="/docs/exporting-metrics/exporting-quickstart"
+  to="/docs/exporting-metrics"
 
 [[redirects]]
   from="/docs/exporting/enable-an-exporting-connector"
@@ -4939,39 +4939,39 @@
 
 [[redirects]]
   from="/docs/exporting/elasticsearch"
-  to="/docs/exporting-metrics/elasticsearch"
+  to="/docs/exporting-metrics/connectors/elasticsearch"
 
 [[redirects]]
   from="/docs/exporting/cratedb"
-  to="/docs/exporting-metrics/cratedb"
+  to="/docs/exporting-metrics/connectors/cratedb"
 
 [[redirects]]
   from="/docs/exporting/cortex"
-  to="/docs/exporting-metrics/cortex"
+  to="/docs/exporting-metrics/connectors/cortex"
 
 [[redirects]]
   from="/docs/exporting/chronix"
-  to="/docs/exporting-metrics/chronix"
+  to="/docs/exporting-metrics/connectors/chronix"
 
 [[redirects]]
   from="/docs/exporting/blueflood"
-  to="/docs/exporting-metrics/blueflood"
+  to="/docs/exporting-metrics/connectors/blueflood"
 
 [[redirects]]
   from="/docs/exporting/azure-event-hub"
-  to="/docs/exporting-metrics/azure-event-hub"
+  to="/docs/exporting-metrics/connectors/azure-event-hub"
 
 [[redirects]]
   from="/docs/exporting/azure-data-explorer"
-  to="/docs/exporting-metrics/azure-data-explorer"
+  to="/docs/exporting-metrics/connectors/azure-data-explorer"
 
 [[redirects]]
   from="/docs/exporting/aws-kinesis"
-  to="/docs/exporting-metrics/aws-kinesis"
+  to="/docs/exporting-metrics/connectors/aws-kinesis"
 
 [[redirects]]
   from="/docs/exporting/appoptics"
-  to="/docs/exporting-metrics/appoptics"
+  to="/docs/exporting-metrics/connectors/appoptics"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/service-discovery"
@@ -8388,5 +8388,145 @@
 [[redirects]]
   from="/docs/developer-and-contributor-corner/libnetdata/log"
   to="/docs/netdata-agent/logging"
+
+[[redirects]]
+  from="/docs/exporting-metrics/wavefront"
+  to="/docs/exporting-metrics/connectors/wavefront"
+
+[[redirects]]
+  from="/docs/exporting-metrics/vmware-aria"
+  to="/docs/exporting-metrics/connectors/vmware-aria"
+
+[[redirects]]
+  from="/docs/exporting-metrics/victoriametrics"
+  to="/docs/exporting-metrics/connectors/victoriametrics"
+
+[[redirects]]
+  from="/docs/exporting-metrics/timescaledb"
+  to="/docs/exporting-metrics/connectors/timescaledb"
+
+[[redirects]]
+  from="/docs/exporting-metrics/tikv"
+  to="/docs/exporting-metrics/connectors/tikv"
+
+[[redirects]]
+  from="/docs/exporting-metrics/thanos"
+  to="/docs/exporting-metrics/connectors/thanos"
+
+[[redirects]]
+  from="/docs/exporting-metrics/splunk-signalfx"
+  to="/docs/exporting-metrics/connectors/splunk-signalfx"
+
+[[redirects]]
+  from="/docs/exporting-metrics/quasardb"
+  to="/docs/exporting-metrics/connectors/quasardb"
+
+[[redirects]]
+  from="/docs/exporting-metrics/prometheus-remote-write"
+  to="/docs/exporting-metrics/connectors/prometheus-remote-write"
+
+[[redirects]]
+  from="/docs/exporting-metrics/postgresql"
+  to="/docs/exporting-metrics/connectors/postgresql"
+
+[[redirects]]
+  from="/docs/exporting-metrics/opentsdb"
+  to="/docs/exporting-metrics/connectors/opentsdb"
+
+[[redirects]]
+  from="/docs/exporting-metrics/opeansearch"
+  to="/docs/exporting-metrics/connectors/opeansearch"
+
+[[redirects]]
+  from="/docs/exporting-metrics/new-relic"
+  to="/docs/exporting-metrics/connectors/new-relic"
+
+[[redirects]]
+  from="/docs/exporting-metrics/mongodb"
+  to="/docs/exporting-metrics/connectors/mongodb"
+
+[[redirects]]
+  from="/docs/exporting-metrics/metricfire"
+  to="/docs/exporting-metrics/connectors/metricfire"
+
+[[redirects]]
+  from="/docs/exporting-metrics/m3db"
+  to="/docs/exporting-metrics/connectors/m3db"
+
+[[redirects]]
+  from="/docs/exporting-metrics/kairosdb"
+  to="/docs/exporting-metrics/connectors/kairosdb"
+
+[[redirects]]
+  from="/docs/exporting-metrics/kafka"
+  to="/docs/exporting-metrics/connectors/kafka"
+
+[[redirects]]
+  from="/docs/exporting-metrics/json"
+  to="/docs/exporting-metrics/connectors/json"
+
+[[redirects]]
+  from="/docs/exporting-metrics/irondb"
+  to="/docs/exporting-metrics/connectors/irondb"
+
+[[redirects]]
+  from="/docs/exporting-metrics/greptimedb"
+  to="/docs/exporting-metrics/connectors/greptimedb"
+
+[[redirects]]
+  from="/docs/exporting-metrics/graphite"
+  to="/docs/exporting-metrics/connectors/graphite"
+
+[[redirects]]
+  from="/docs/exporting-metrics/google-cloud-pub-sub"
+  to="/docs/exporting-metrics/connectors/google-cloud-pub-sub"
+
+[[redirects]]
+  from="/docs/exporting-metrics/google-bigquery"
+  to="/docs/exporting-metrics/connectors/google-bigquery"
+
+[[redirects]]
+  from="/docs/exporting-metrics/gnocchi"
+  to="/docs/exporting-metrics/connectors/gnocchi"
+
+[[redirects]]
+  from="/docs/exporting-metrics/exporting-quickstart"
+  to="/docs/exporting-metrics"
+
+[[redirects]]
+  from="/docs/exporting-metrics/elasticsearch"
+  to="/docs/exporting-metrics/connectors/elasticsearch"
+
+[[redirects]]
+  from="/docs/exporting-metrics/cratedb"
+  to="/docs/exporting-metrics/connectors/cratedb"
+
+[[redirects]]
+  from="/docs/exporting-metrics/cortex"
+  to="/docs/exporting-metrics/connectors/cortex"
+
+[[redirects]]
+  from="/docs/exporting-metrics/chronix"
+  to="/docs/exporting-metrics/connectors/chronix"
+
+[[redirects]]
+  from="/docs/exporting-metrics/blueflood"
+  to="/docs/exporting-metrics/connectors/blueflood"
+
+[[redirects]]
+  from="/docs/exporting-metrics/azure-event-hub"
+  to="/docs/exporting-metrics/connectors/azure-event-hub"
+
+[[redirects]]
+  from="/docs/exporting-metrics/azure-data-explorer"
+  to="/docs/exporting-metrics/connectors/azure-data-explorer"
+
+[[redirects]]
+  from="/docs/exporting-metrics/aws-kinesis"
+  to="/docs/exporting-metrics/connectors/aws-kinesis"
+
+[[redirects]]
+  from="/docs/exporting-metrics/appoptics"
+  to="/docs/exporting-metrics/connectors/appoptics"
 
 # section: dynamic << END

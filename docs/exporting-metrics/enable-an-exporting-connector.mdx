@@ -10,7 +10,7 @@ learn_link: "https://learn.netdata.cloud/docs/exporting-metrics/enable-an-export
 
 # Enable an Exporting Connector
 
-After selecting the right connector for your [external time-series database](/docs/exporting-metrics/exporting-quickstart#supported-databases), you can enable the exporting engine and configure your connector. This guide walks through enabling the exporting engine itself, followed by two examples using the OpenTSDB and Graphite connectors.
+After selecting the right connector for your [external time-series database](/docs/exporting-metrics#supported-databases), you can enable the exporting engine and configure your connector. This guide walks through enabling the exporting engine itself, followed by two examples using the OpenTSDB and Graphite connectors.
 
 :::info
 
@@ -48,7 +48,7 @@ Replace `my_opentsdb_http_instance` with an instance name of your choice, and ch
 
 [Restart your Agent](/docs/netdata-agent/maintenance/service-control) to initiate exporting to your OpenTSDB database. The Netdata Agent continuously exports metrics collected from the moment it starts. You can expect to see data appear in your OpenTSDB database within seconds of restarting the Agent.
 
-Any further configuration is optional, based on your needs and the configuration of your OpenTSDB database. See the [OpenTSDB connector doc](/docs/exporting-metrics/opentsdb) and [exporting engine reference](/docs/exporting-metrics/exporting-reference#configuration-structure) for details.
+Any further configuration is optional, based on your needs and the configuration of your OpenTSDB database. See the [OpenTSDB connector doc](/docs/exporting-metrics/connectors/opentsdb) and [exporting engine reference](/docs/exporting-metrics/exporting-reference#configuration-structure) for details.
 
 </details>
 
@@ -67,6 +67,6 @@ Replace `netdata` with an instance name of your choice, and change the `destinat
 
 [Restart your Agent](/docs/netdata-agent/maintenance/service-control) to initiate exporting to your Graphite database. The Netdata Agent continuously exports metrics collected from the moment it starts. You can expect to see data appear in your Graphite database within seconds of restarting the Agent.
 
-Any further configuration is optional, based on your needs and the configuration of your Graphite database. See the [Graphite connector doc](/docs/exporting-metrics/graphite) and [exporting engine reference](/docs/exporting-metrics/exporting-reference#configuration-structure) for details.
+Any further configuration is optional, based on your needs and the configuration of your Graphite database. See the [Graphite connector doc](/docs/exporting-metrics/connectors/graphite) and [exporting engine reference](/docs/exporting-metrics/exporting-reference#configuration-structure) for details.
 
 </details>
