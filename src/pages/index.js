@@ -98,7 +98,7 @@ export default function Home() {
         <div id="updates" className="relative flex flex-row flex-wrap pb-12">
           <div className="relative w-full">
             <h2 className="z-10 relative text-xl lg:text-3xl font-semibold mb-6">
-              What&apos;s new at Netdata?
+              What's new at Netdata?
             </h2>
 
             {/* vertical line */}
