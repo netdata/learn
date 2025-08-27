@@ -415,7 +415,14 @@
     window.addEventListener('message', function(e) {
       // You can implement notification logic here
       // For example, show a badge when a new message arrives while minimized
-      if (isMinimized && e.origin === new URL(config.widgetUrl).origin) {
+      let widgetOrigin;
+      try {
+        widgetOrigin = new URL(config.widgetUrl).origin;
+      } catch (err) {
+        // Malformed widgetUrl, skip origin check
+        return;
+      }
+      if (isMinimized && e.origin === widgetOrigin) {
         const badge = floatingButton.querySelector('.notification-badge');
         if (badge && e.data.type === 'new-message') {
           badge.style.display = 'flex';
