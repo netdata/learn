@@ -102,12 +102,12 @@ export default function Home() {
             </h2>
 
             {/* vertical line */}
-            <div className="z-0 absolute top-4 -bottom-8 left-1.5">
+            <div className="z-0 absolute top-14 -bottom-4 left-1">
               <div className="z-0 absolute top-0 w-1 h-full nd-timeline-line" id="timeline" />
             </div>
 
             <ul>
-              {News.map((props, idx) => (
+              {News.slice(0,5).map((props, idx) => (
                 <li key={idx} className="group nd-timeline-item">
                   <Link
                     to={props.href}
