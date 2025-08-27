@@ -237,10 +237,6 @@ module.exports = {
 			href: '/chat-widget.css',
 			type: 'text/css',
 		},
-		{
-			href: '/nd-chat.css',
-			type: 'text/css',
-		}
 	],
 	scripts: [
 		{
@@ -250,10 +246,6 @@ module.exports = {
 		{
 			src: '/chat-widget.js',
 			async: true,
-		},
-		{ 
-			src: '/nd-chat-gate.js', 
-			async: false 
 		},
 	],
 };

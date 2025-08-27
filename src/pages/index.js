@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -30,22 +30,6 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  useEffect(() => {
-    // Hide floating bubble on the homepage
-    const hideWidget = () => {
-      const el = document.getElementById('netdata-chat-widget');
-      if (el) el.style.display = 'none';
-    };
-    hideWidget();
-    const observer = new MutationObserver(hideWidget);
-    observer.observe(document.body, { childList: true, subtree: true });
-    return () => {
-      const el = document.getElementById('netdata-chat-widget');
-      if (el) el.style.display = '';
-      observer.disconnect();
-    };
-  }, []);
-
   return (
     <Layout description="Here you'll find documentation and reference material for monitoring and troubleshooting your systems with Netdata.">
       <HomepageHeader />
@@ -60,7 +44,7 @@ export default function Home() {
             alignItems: 'start',
             // Tweak these to control heights:
             '--col-gap': '1rem',
-            '--ai-header-h': '48px',           // AskNetdataInline header height
+            '--ai-header-h': '48px',           // AskNetdataInline header height 
             '--chat-iframe-h': '400px',        // AskNetdataInline `height` prop below
             '--chat-h': 'calc(var(--ai-header-h) + var(--chat-iframe-h))',
           }}
@@ -124,7 +108,7 @@ export default function Home() {
 
             <ul>
               {News.map((props, idx) => (
-                <li key={`${props.title}-${idx}`} className="group nd-timeline-item">
+                <li key={idx} className="group nd-timeline-item">
                   <Link
                     to={props.href}
                     className="grid md:grid-cols-8 xl:grid-cols-9 items-start"

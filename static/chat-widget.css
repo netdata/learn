@@ -515,7 +515,6 @@
   }
 }
 
-/* Hide floating button when widget is open */
 .netdata-chat-button.active {
   transform: scale(0.9);
   opacity: 0.8;

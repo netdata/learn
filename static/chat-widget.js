@@ -1,7 +1,4 @@
 (function() {
-  if (location.pathname === '/' || location.pathname === '/index.html') {
-    return;
-  }
   
   window.addEventListener('load', initWidget);
 
@@ -103,6 +100,7 @@
     widgetContainer.appendChild(floatingButton);
     widgetContainer.appendChild(chatWindow);
     document.body.appendChild(widgetContainer);
+    setupRouteGate(widgetContainer);
     
     // State management
     let isOpen = false;
@@ -123,6 +121,12 @@
         chatWindow.style.width = currentWidth + 'px';
         chatWindow.style.height = currentHeight + 'px';
         openChat();
+      }
+      if (state.isMinimized && !state.isOpen) {
+        isOpen = false;
+        isMinimized = true;
+        chatWindow.style.display = 'none';
+        floatingButton.classList.remove('active');
       }
       if (state.isFullscreen) {
         toggleFullscreen();
@@ -152,10 +156,10 @@
     
     // Functions
     function toggleChat() {
-      if (isOpen) {
-        minimizeChat();
-      } else {
+      if (isMinimized || !isOpen) {
         openChat();
+      } else {
+        minimizeChat();
       }
     }
     
@@ -174,8 +178,9 @@
         badge.style.display = 'none';
       }
     }
-    
+
     function minimizeChat() {
+      isOpen = false;
       isMinimized = true;
       chatWindow.classList.add('minimized');
       chatWindow.classList.remove('open');
@@ -185,7 +190,7 @@
       }, 300);
       saveState();
     }
-    
+
     function closeChat() {
       isOpen = false;
       isMinimized = false;
@@ -197,13 +202,14 @@
       }, 300);
       saveState();
     }
-    
+
     function saveState() {
       localStorage.setItem('netdata-chat-widget-state', JSON.stringify({
-        isOpen: isOpen && !isMinimized,
-        isFullscreen: isFullscreen,
+        isOpen,               // true only when the window is actually open
+        isMinimized,          // explicitly track this
+        isFullscreen,
         width: currentWidth,
-        height: currentHeight
+        height: currentHeight,
       }));
     }
     
@@ -417,4 +423,45 @@
       }
     });
   }
+  function setupRouteGate(container) {
+  // Start hidden, fade in/out
+  container.style.opacity = '0';
+  container.style.display = 'none';
+  container.style.transition = 'opacity 180ms ease';
+
+  const isHome = () =>
+    location.pathname === '/' || location.pathname === '/index.html';
+
+  const show = () => {
+    if (container.style.display !== 'block') container.style.display = 'block';
+    // next frame for smooth fade
+    requestAnimationFrame(() => (container.style.opacity = '1'));
+  };
+
+  const hide = () => {
+    container.style.opacity = '0';
+    setTimeout(() => {
+      // only hide if we’re still supposed to be hidden
+      if (isHome()) container.style.display = 'none';
+    }, 180);
+  };
+
+  const apply = () => (isHome() ? hide() : show());
+
+  // Apply once now
+  apply();
+
+  // Watch SPA navigations
+  const patch = (name) => {
+    const orig = history[name];
+    history[name] = function () {
+      const rv = orig.apply(this, arguments);
+      queueMicrotask(apply); // run after URL changes
+      return rv;
+    };
+  };
+  patch('pushState');
+  patch('replaceState');
+  window.addEventListener('popstate', apply);
+}
 })();
