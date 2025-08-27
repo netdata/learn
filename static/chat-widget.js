@@ -117,21 +117,16 @@
       const state = JSON.parse(savedState);
       if (state.width) currentWidth = state.width;
       if (state.height) currentHeight = state.height;
-      if (state.isOpen) {
-        chatWindow.style.width = currentWidth + 'px';
-        chatWindow.style.height = currentHeight + 'px';
-        openChat();
-      }
-      if (state.isMinimized && !state.isOpen) {
-        isOpen = false;
-        isMinimized = true;
-        chatWindow.style.display = 'none';
-        floatingButton.classList.remove('active');
-      }
-      if (state.isFullscreen) {
-        toggleFullscreen();
-      }
+      chatWindow.style.width = currentWidth + 'px';
+      chatWindow.style.height = currentHeight + 'px';
     }
+    isOpen = false;
+    isMinimized = true;
+    isFullscreen = false;
+    chatWindow.classList.remove('open', 'minimized');
+    floatingButton.classList.remove('active');
+    chatWindow.style.display = 'none';
+    saveState();
     
     // Event handlers
     floatingButton.addEventListener('click', toggleChat);
