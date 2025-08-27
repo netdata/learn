@@ -61,8 +61,8 @@ def get_dir_make_file_and_recurse(directory):
             sidebar_label = "Agent Dispatched Notifications"
         elif sidebar_label == "alerts-&-notifications":
             sidebar_label = "Alerts & Notifications"
-        elif sidebar_label == "exporting-metrics":
-            sidebar_label = "Exporting Metrics"
+        elif sidebar_label == "connectors":
+            sidebar_label = "Connectors"
         elif "logs" in sidebar_label:
             sidebar_label = "Logs"
 
@@ -152,7 +152,7 @@ get_dir_make_file_and_recurse(
     'docs/alerts-&-notifications/notifications/agent-dispatched-notifications')
 get_dir_make_file_and_recurse(
     'docs/alerts-&-notifications/notifications/centralized-cloud-notifications')
-get_dir_make_file_and_recurse('docs/exporting-metrics')
+get_dir_make_file_and_recurse('docs/exporting-metrics/connectors')
 get_dir_make_file_and_recurse(
     'docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations')
 get_dir_make_file_and_recurse(

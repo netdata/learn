@@ -127,11 +127,11 @@ collectors_integrations
 				
 				
 				
-https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/README.md	Exporting quickstart	Published	Exporting Metrics	Use the exporting engine to send Netdata metrics to popular external time series databases for long-term storage or further analysis.
+https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/README.md	Exporting Metrics	Published	Exporting Metrics	Use the exporting engine to send Netdata metrics to popular external time series databases for long-term storage or further analysis.
 https://github.com/netdata/netdata/edit/master/src/exporting/README.md	Exporting reference	Published	Exporting Metrics	With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis.
 https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/enable-an-exporting-connector.md	Enable an exporting connector	Published	Exporting Metrics	Learn how to enable and configure any connector using examples to start exporting metrics to external time-series databases in minutes.
-https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/README.md	Prometheus	Published	Exporting Metrics	Export Netdata metrics to Prometheus for archiving and further analysis.
 exporters_integrations				
+https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/README.md	Prometheus	Published	Exporting Metrics	Export Netdata metrics to Prometheus for archiving and further analysis.
 https://github.com/netdata/netdata/edit/master/src/web/api/exporters/shell/README.md	Shell Scripts	Published	Exporting Metrics	
 				
 				
