@@ -88,7 +88,7 @@
     const chatIframe = document.createElement('iframe');
     chatIframe.id = 'netdata-chat-iframe';
     chatIframe.src = config.widgetUrl;
-    chatIframe.frameBorder = '0';
+    chatIframe.setAttribute('frameborder', '0');
     chatIframe.style.width = '100%';
     chatIframe.style.height = 'calc(100% - 50px)'; // Subtract header height
     chatIframe.style.border = 'none';
