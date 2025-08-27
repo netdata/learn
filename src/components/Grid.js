@@ -42,16 +42,14 @@ export const Box = ({ className, to, onClick, title, cta, image, children }) => 
 			className={`nd-card group relative p-8 !no-underline transition-shadow ${onClick && !to ? 'cursor-pointer hover:shadow-md' : ''} ${className || ''}`}
 		>
 			<h2
-				className={`text-xl xl:text-2xl font-semibold !mt-0 !mb-2 ${
-					(to || onClick) && 'group-hover:text-green-light dark:group-hover:text-green-light'
-				}`}
+				className={`text-xl xl:text-2xl font-semibold !mt-0 !mb-2 ${(to || onClick) && 'group-hover:text-green-light dark:group-hover:text-green-light'
+					}`}
 			>
 				{title}
 			</h2>
 			<div
-				className={`markdown font-normal leading-relaxed ${
-					cta ? 'mb-4' : 'mb-0'
-				} dark:text-gray-100`}
+				className={`markdown font-normal leading-relaxed ${cta ? 'mb-4' : 'mb-0'
+					} dark:text-gray-100`}
 			>
 				{children}
 			</div>

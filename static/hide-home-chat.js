@@ -1,4 +1,4 @@
-(function(){
+(function () {
   if (location.pathname === '/') {
     var s = document.createElement('style');
     s.id = 'nd-hide-bubble';

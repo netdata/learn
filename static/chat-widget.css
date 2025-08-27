@@ -70,6 +70,7 @@
   from {
     text-shadow: none;
   }
+
   to {
     text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
   }
@@ -79,9 +80,11 @@
   0% {
     box-shadow: 0 4px 12px rgba(0, 171, 68, 0.3);
   }
+
   50% {
     box-shadow: 0 4px 20px rgba(0, 171, 68, 0.5);
   }
+
   100% {
     box-shadow: 0 4px 12px rgba(0, 171, 68, 0.3);
   }
@@ -107,12 +110,19 @@
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-5px);
   }
+
   60% {
     transform: translateY(-3px);
   }
@@ -202,7 +212,10 @@
 }
 
 /* Corner handles */
-.resize-nw, .resize-ne, .resize-sw, .resize-se {
+.resize-nw,
+.resize-ne,
+.resize-sw,
+.resize-se {
   width: 12px;
   height: 12px;
 }
@@ -254,7 +267,8 @@
 }
 
 /* Edge handles */
-.resize-n, .resize-s {
+.resize-n,
+.resize-s {
   left: 12px;
   right: 12px;
   height: 6px;
@@ -270,7 +284,8 @@
   cursor: s-resize;
 }
 
-.resize-e, .resize-w {
+.resize-e,
+.resize-w {
   top: 12px;
   bottom: 12px;
   width: 6px;
@@ -397,27 +412,27 @@
     right: 10px;
     bottom: 10px;
   }
-  
+
   .netdata-chat-button {
     min-width: 120px;
     height: 48px;
     border-radius: 24px;
     padding: 0 14px;
   }
-  
+
   .netdata-chat-button .button-text {
     font-size: 13px;
   }
-  
+
   .netdata-chat-button .button-content {
     gap: 8px;
   }
-  
+
   .netdata-chat-button .chat-icon {
     width: 20px;
     height: 20px;
   }
-  
+
   .netdata-chat-window {
     width: calc(100vw - 20px);
     height: calc(100vh - 80px);
@@ -437,12 +452,13 @@
 
 /* Animation for smooth transitions */
 @media (prefers-reduced-motion: reduce) {
+
   .netdata-chat-button,
   .netdata-chat-window,
   .chat-header-actions button {
     transition: none;
   }
-  
+
   .netdata-chat-button.active,
   .notification-badge {
     animation: none;
@@ -455,6 +471,7 @@
     opacity: 0;
     transform: translateY(20px) scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -465,6 +482,7 @@
   0% {
     background-position: -1000px 0;
   }
+
   100% {
     background-position: 1000px 0;
   }
@@ -477,12 +495,12 @@
 /* Smooth shadow transitions */
 .netdata-chat-window:not(.fullscreen) {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15),
-              0 0 0 1px rgba(0, 171, 68, 0.05);
+    0 0 0 1px rgba(0, 171, 68, 0.05);
 }
 
 .netdata-chat-window:not(.fullscreen):hover {
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2),
-              0 0 0 1px rgba(0, 171, 68, 0.1);
+    0 0 0 1px rgba(0, 171, 68, 0.1);
 }
 
 /* Resize handle visual feedback */
@@ -496,7 +514,7 @@
   background: rgba(0, 171, 68, 0.5);
   border-radius: 50%;
   box-shadow: 4px 0 0 rgba(0, 171, 68, 0.5),
-              0 4px 0 rgba(0, 171, 68, 0.5);
+    0 4px 0 rgba(0, 171, 68, 0.5);
 }
 
 /* Fullscreen transition enhancement */
@@ -509,6 +527,7 @@
     border-radius: 12px;
     transform: scale(0.95);
   }
+
   to {
     border-radius: 0;
     transform: scale(1);
@@ -533,11 +552,11 @@
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, 
-    transparent,
-    rgba(0, 171, 68, 0.2) 20%,
-    rgba(0, 171, 68, 0.2) 80%,
-    transparent);
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(0, 171, 68, 0.2) 20%,
+      rgba(0, 171, 68, 0.2) 80%,
+      transparent);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -545,21 +564,21 @@
     background: #1a1a1a;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   }
-  
+
   .resize-handle:hover {
     background: rgba(0, 214, 89, 0.15);
   }
-  
+
   .resize-se::after {
     border-color: transparent transparent rgba(0, 214, 89, 0.5) transparent;
   }
-  
+
   .resize-se::before {
     background: rgba(0, 214, 89, 0.6);
     box-shadow: 4px 0 0 rgba(0, 214, 89, 0.6),
-                0 4px 0 rgba(0, 214, 89, 0.6);
+      0 4px 0 rgba(0, 214, 89, 0.6);
   }
-  
+
   #netdata-chat-iframe {
     background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
   }
@@ -581,7 +600,8 @@
   backface-visibility: hidden;
   will-change: auto;
 
-  background-clip: padding-box;             /* stops tiny fringe on corners */
+  background-clip: padding-box;
+  /* stops tiny fringe on corners */
 }
 
 /* Add a 1px inset stroke to hide any residual fringe */
@@ -591,7 +611,7 @@
   inset: 0;
   border-radius: 24px;
   pointer-events: none;
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
 }
 
 /* Make sure ancestors don’t clip the corners */

@@ -89,19 +89,19 @@ export default function AskNetdataInline({
   // Styles (fade only, no transform/scale anywhere)
   const wrapperStyle = isMax
     ? {
-        position: "fixed",
-        inset: 0,
-        zIndex: 9999,
-        overflow: "hidden",
-        borderRadius: 0,
-        background: "var(--nd-card-bg)",
-      }
+      position: "fixed",
+      inset: 0,
+      zIndex: 9999,
+      overflow: "hidden",
+      borderRadius: 0,
+      background: "var(--nd-card-bg)",
+    }
     : {
-        position: "relative",
-        overflow: "hidden",
-        borderRadius: 12,
-        background: "var(--nd-card-bg)",
-      };
+      position: "relative",
+      overflow: "hidden",
+      borderRadius: 12,
+      background: "var(--nd-card-bg)",
+    };
 
   const coverStyle = {
     position: "absolute",

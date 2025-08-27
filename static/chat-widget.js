@@ -1,5 +1,5 @@
-(function() {
-  
+(function () {
+
   window.addEventListener('load', initWidget);
 
   function initWidget() {
@@ -16,7 +16,7 @@
     const widgetContainer = document.createElement('div');
     widgetContainer.id = 'netdata-chat-widget';
     widgetContainer.className = 'netdata-chat-widget';
-    
+
     // Create floating button
     const floatingButton = document.createElement('button');
     floatingButton.id = 'netdata-chat-button';
@@ -31,13 +31,13 @@
       </div>
       <span class="notification-badge" style="display: none;">1</span>
     `;
-    
+
     // Create chat window container
     const chatWindow = document.createElement('div');
     chatWindow.id = 'netdata-chat-window';
     chatWindow.className = 'netdata-chat-window';
     chatWindow.style.display = 'none';
-    
+
     // Create header for chat window
     const chatHeader = document.createElement('div');
     chatHeader.className = 'netdata-chat-header';
@@ -66,7 +66,7 @@
         </button>
       </div>
     `;
-    
+
     // Create resize handles
     const resizeHandles = {
       n: document.createElement('div'),
@@ -78,12 +78,12 @@
       w: document.createElement('div'),
       nw: document.createElement('div')
     };
-    
+
     Object.keys(resizeHandles).forEach(direction => {
       resizeHandles[direction].className = `resize-handle resize-${direction}`;
       chatWindow.appendChild(resizeHandles[direction]);
     });
-    
+
     // Create iframe for chat content
     const chatIframe = document.createElement('iframe');
     chatIframe.id = 'netdata-chat-iframe';
@@ -93,7 +93,7 @@
     chatIframe.style.height = 'calc(100% - 50px)'; // Subtract header height
     chatIframe.style.border = 'none';
     chatIframe.style.borderRadius = '0 0 12px 12px';
-    
+
     // Assemble the widget
     chatWindow.appendChild(chatHeader);
     chatWindow.appendChild(chatIframe);
@@ -101,7 +101,7 @@
     widgetContainer.appendChild(chatWindow);
     document.body.appendChild(widgetContainer);
     setupRouteGate(widgetContainer);
-    
+
     // State management
     let isOpen = false;
     let isMinimized = false;
@@ -110,7 +110,7 @@
     let currentHeight = parseInt(config.expandedHeight) || 600;
     let previousPosition = { bottom: '90px', right: '20px' };
     let previousSize = { width: currentWidth, height: currentHeight };
-    
+
     // Load saved state from localStorage
     const savedState = localStorage.getItem('netdata-chat-widget-state');
     if (savedState) {
@@ -127,28 +127,28 @@
     floatingButton.classList.remove('active');
     chatWindow.style.display = 'none';
     saveState();
-    
+
     // Event handlers
     floatingButton.addEventListener('click', toggleChat);
-    
-    chatHeader.querySelector('.chat-fullscreen-btn').addEventListener('click', function(e) {
+
+    chatHeader.querySelector('.chat-fullscreen-btn').addEventListener('click', function (e) {
       e.stopPropagation();
       toggleFullscreen();
     });
-    
-    chatHeader.querySelector('.chat-minimize-btn').addEventListener('click', function(e) {
+
+    chatHeader.querySelector('.chat-minimize-btn').addEventListener('click', function (e) {
       e.stopPropagation();
       minimizeChat();
     });
-    
-    chatHeader.querySelector('.chat-close-btn').addEventListener('click', function(e) {
+
+    chatHeader.querySelector('.chat-close-btn').addEventListener('click', function (e) {
       e.stopPropagation();
       closeChat();
     });
-    
+
     // Initialize resize functionality
     initResize();
-    
+
     // Functions
     function toggleChat() {
       if (isMinimized || !isOpen) {
@@ -157,7 +157,7 @@
         minimizeChat();
       }
     }
-    
+
     function openChat() {
       isOpen = true;
       isMinimized = false;
@@ -166,7 +166,7 @@
       chatWindow.classList.add('open');
       chatWindow.classList.remove('minimized');
       saveState();
-      
+
       // Hide notification badge when opening
       const badge = floatingButton.querySelector('.notification-badge');
       if (badge) {
@@ -207,12 +207,12 @@
         height: currentHeight,
       }));
     }
-    
+
     function toggleFullscreen() {
       const fullscreenBtn = chatHeader.querySelector('.chat-fullscreen-btn');
       const fullscreenIcon = fullscreenBtn.querySelector('.fullscreen-icon');
       const exitFullscreenIcon = fullscreenBtn.querySelector('.exit-fullscreen-icon');
-      
+
       if (!isFullscreen) {
         // Enter fullscreen
         isFullscreen = true;
@@ -224,11 +224,11 @@
           width: chatWindow.offsetWidth,
           height: chatWindow.offsetHeight
         };
-        
+
         chatWindow.classList.add('fullscreen');
         fullscreenIcon.style.display = 'none';
         exitFullscreenIcon.style.display = 'block';
-        
+
         // Disable resize handles in fullscreen
         Object.keys(resizeHandles).forEach(direction => {
           resizeHandles[direction].style.display = 'none';
@@ -239,22 +239,22 @@
         chatWindow.classList.remove('fullscreen');
         fullscreenIcon.style.display = 'block';
         exitFullscreenIcon.style.display = 'none';
-        
+
         // Restore previous size
         chatWindow.style.width = previousSize.width + 'px';
         chatWindow.style.height = previousSize.height + 'px';
         chatWindow.style.bottom = previousPosition.bottom;
         chatWindow.style.right = previousPosition.right;
-        
+
         // Re-enable resize handles
         Object.keys(resizeHandles).forEach(direction => {
           resizeHandles[direction].style.display = '';
         });
       }
-      
+
       saveState();
     }
-    
+
     function initResize() {
       let isResizing = false;
       let currentHandle = null;
@@ -264,41 +264,41 @@
       let startHeight = 0;
       let startBottom = 0;
       let startRight = 0;
-      
+
       // Add mousedown listeners to all resize handles
       Object.keys(resizeHandles).forEach(direction => {
         resizeHandles[direction].addEventListener('mousedown', (e) => {
           if (isFullscreen) return;
-          
+
           isResizing = true;
           currentHandle = direction;
           startX = e.clientX;
           startY = e.clientY;
           startWidth = chatWindow.offsetWidth;
           startHeight = chatWindow.offsetHeight;
-          
+
           const rect = chatWindow.getBoundingClientRect();
           startBottom = window.innerHeight - rect.bottom;
           startRight = window.innerWidth - rect.right;
-          
+
           chatWindow.classList.add('resizing');
           document.body.style.userSelect = 'none';
           e.preventDefault();
         });
       });
-      
+
       // Global mouse move handler
       document.addEventListener('mousemove', (e) => {
         if (!isResizing) return;
-        
+
         const deltaX = e.clientX - startX;
         const deltaY = e.clientY - startY;
-        
+
         let newWidth = startWidth;
         let newHeight = startHeight;
         let newBottom = startBottom;
         let newRight = startRight;
-        
+
         // Handle resize based on direction
         if (currentHandle.includes('e')) {
           newWidth = Math.max(300, Math.min(startWidth + deltaX, window.innerWidth - 40));
@@ -314,11 +314,11 @@
           newHeight = Math.max(400, Math.min(startHeight - deltaY, window.innerHeight - 120));
           newBottom = startBottom + deltaY;
         }
-        
+
         // Apply new dimensions
         chatWindow.style.width = newWidth + 'px';
         chatWindow.style.height = newHeight + 'px';
-        
+
         // Apply new position for west/north handles
         if (currentHandle.includes('w')) {
           chatWindow.style.right = Math.max(20, newRight) + 'px';
@@ -326,11 +326,11 @@
         if (currentHandle.includes('n')) {
           chatWindow.style.bottom = Math.max(90, newBottom) + 'px';
         }
-        
+
         currentWidth = newWidth;
         currentHeight = newHeight;
       });
-      
+
       // Global mouse up handler
       document.addEventListener('mouseup', () => {
         if (isResizing) {
@@ -341,49 +341,49 @@
           saveState();
         }
       });
-      
+
       // Make header draggable
       let isDragging = false;
       let dragStartX = 0;
       let dragStartY = 0;
       let windowStartX = 0;
       let windowStartY = 0;
-      
+
       chatHeader.addEventListener('mousedown', (e) => {
         if (isFullscreen) return;
         if (e.target.closest('.chat-header-actions')) return;
-        
+
         isDragging = true;
         dragStartX = e.clientX;
         dragStartY = e.clientY;
-        
+
         const rect = chatWindow.getBoundingClientRect();
         windowStartX = rect.left;
         windowStartY = rect.top;
-        
+
         chatWindow.classList.add('dragging');
         document.body.style.userSelect = 'none';
         e.preventDefault();
       });
-      
+
       document.addEventListener('mousemove', (e) => {
         if (!isDragging) return;
-        
+
         const deltaX = e.clientX - dragStartX;
         const deltaY = e.clientY - dragStartY;
-        
+
         const newLeft = windowStartX + deltaX;
         const newTop = windowStartY + deltaY;
-        
+
         // Convert to right/bottom positioning
         const newRight = window.innerWidth - newLeft - chatWindow.offsetWidth;
         const newBottom = window.innerHeight - newTop - chatWindow.offsetHeight;
-        
+
         // Apply boundaries
         chatWindow.style.right = Math.max(0, Math.min(newRight, window.innerWidth - chatWindow.offsetWidth)) + 'px';
         chatWindow.style.bottom = Math.max(0, Math.min(newBottom, window.innerHeight - chatWindow.offsetHeight)) + 'px';
       });
-      
+
       document.addEventListener('mouseup', () => {
         if (isDragging) {
           isDragging = false;
@@ -392,22 +392,22 @@
         }
       });
     }
-    
+
     // Expose global function for homepage to open widget in fullscreen
-    window.openAskNetdata = function(openInFullscreen = false) {
+    window.openAskNetdata = function (openInFullscreen = false) {
       if (!isOpen) {
         openChat();
       }
-      
+
       if (openInFullscreen && !isFullscreen) {
         setTimeout(() => {
           toggleFullscreen();
         }, 100); // Small delay to ensure widget is open first
       }
     };
-    
+
     // Listen for messages from iframe (optional - for notifications)
-    window.addEventListener('message', function(e) {
+    window.addEventListener('message', function (e) {
       // You can implement notification logic here
       // For example, show a badge when a new message arrives while minimized
       let widgetOrigin;
@@ -426,44 +426,44 @@
     });
   }
   function setupRouteGate(container) {
-  // Start hidden, fade in/out
-  container.style.opacity = '0';
-  container.style.display = 'none';
-  container.style.transition = 'opacity 180ms ease';
-
-  const isHome = () =>
-    location.pathname === '/' || location.pathname === '/index.html';
-
-  const show = () => {
-    if (container.style.display !== 'block') container.style.display = 'block';
-    // next frame for smooth fade
-    requestAnimationFrame(() => (container.style.opacity = '1'));
-  };
-
-  const hide = () => {
+    // Start hidden, fade in/out
     container.style.opacity = '0';
-    setTimeout(() => {
-      // only hide if we’re still supposed to be hidden
-      if (isHome()) container.style.display = 'none';
-    }, 180);
-  };
+    container.style.display = 'none';
+    container.style.transition = 'opacity 180ms ease';
 
-  const apply = () => (isHome() ? hide() : show());
+    const isHome = () =>
+      location.pathname === '/' || location.pathname === '/index.html';
 
-  // Apply once now
-  apply();
-
-  // Watch SPA navigations
-  const patch = (name) => {
-    const orig = history[name];
-    history[name] = function () {
-      const rv = orig.apply(this, arguments);
-      queueMicrotask(apply); // run after URL changes
-      return rv;
+    const show = () => {
+      if (container.style.display !== 'block') container.style.display = 'block';
+      // next frame for smooth fade
+      requestAnimationFrame(() => (container.style.opacity = '1'));
     };
-  };
-  patch('pushState');
-  patch('replaceState');
-  window.addEventListener('popstate', apply);
-}
+
+    const hide = () => {
+      container.style.opacity = '0';
+      setTimeout(() => {
+        // only hide if we’re still supposed to be hidden
+        if (isHome()) container.style.display = 'none';
+      }, 180);
+    };
+
+    const apply = () => (isHome() ? hide() : show());
+
+    // Apply once now
+    apply();
+
+    // Watch SPA navigations
+    const patch = (name) => {
+      const orig = history[name];
+      history[name] = function () {
+        const rv = orig.apply(this, arguments);
+        queueMicrotask(apply); // run after URL changes
+        return rv;
+      };
+    };
+    patch('pushState');
+    patch('replaceState');
+    window.addEventListener('popstate', apply);
+  }
 })();
