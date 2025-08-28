@@ -22,29 +22,34 @@ export const Grid = ({ className, columns, children }) => {
 	);
 };
 
-export const Box = ({ className, to, title, cta, image, children }) => {
-	// If there's a `to` prop, then we make this Box into a `Link`. Otherwise,
-	// it's a `div` to avoid nested `a` elements.
+export const Box = ({ className, to, onClick, title, cta, image, children }) => {
+	// If there's a `to` prop, then we make this Box into a `Link`. 
+	// If there's an `onClick` prop, it's a clickable div.
+	// Otherwise, it's a regular `div`.
 	const Element = to ? Link : `div`;
+
+	const handleClick = (e) => {
+		if (onClick && !to) {
+			e.preventDefault();
+			onClick(e);
+		}
+	};
 
 	return (
 		<Element
 			to={to}
-			className={`group relative p-8 border border-gray-200 rounded !no-underline shadow-sm dark:bg-gray-800 dark:border-gray-500 ${
-				className && className
-			}`}
+			onClick={handleClick}
+			className={`nd-card group relative p-8 !no-underline transition-shadow ${onClick && !to ? 'cursor-pointer hover:shadow-md' : ''} ${className || ''}`}
 		>
 			<h2
-				className={`text-xl xl:text-2xl font-semibold !mt-0 !mb-2 ${
-					to && 'group-hover:text-green-light dark:group-hover:text-green-light'
-				}`}
+				className={`text-xl xl:text-2xl font-semibold !mt-0 !mb-2 ${(to || onClick) && 'group-hover:text-green-light dark:group-hover:text-green-light'
+					}`}
 			>
 				{title}
 			</h2>
 			<div
-				className={`markdown font-normal leading-relaxed ${
-					cta ? 'mb-4' : 'mb-0'
-				} dark:text-gray-100`}
+				className={`markdown font-normal leading-relaxed ${cta ? 'mb-4' : 'mb-0'
+					} dark:text-gray-100`}
 			>
 				{children}
 			</div>
