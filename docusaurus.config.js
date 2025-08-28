@@ -15,6 +15,11 @@ module.exports = {
 	},
 	themes: ['@docusaurus/theme-mermaid'],
 	themeConfig: {
+		colorMode: {
+			defaultMode: 'light',
+			disableSwitch: false,
+			respectPrefersColorScheme: true,
+		},
 		mermaid: {
 			theme: { light: 'neutral', dark: 'forest' },
 		},
@@ -37,30 +42,30 @@ module.exports = {
 					to: 'https://www.netdata.cloud/features/',
 					position: 'left',
 					label: 'Features',
-					style: { 'font-weight': '500' }
+					style: { fontWeight: '500' }
 				},
 				{
 					to: 'https://www.netdata.cloud/open-source/',
 					position: 'left',
 					label: 'Open Source',
-					style: { 'font-weight': '500' }
+					style: { fontWeight: '500' }
 				},
 				{
 					to: 'https://www.netdata.cloud/pricing/',
 					position: 'left',
 					label: 'Pricing',
-					style: { 'font-weight': '500' }
+					style: { fontWeight: '500' }
 				},
 				{
 					to: 'https://www.netdata.cloud/integrations/',
 					position: 'left',
 					label: 'Integrations',
-					style: { 'font-weight': '500' }
+					style: { fontWeight: '500' }
 				},
 				{
 					position: 'left',
 					label: 'Use cases',
-					style: { 'font-weight': '500' },
+					style: { fontWeight: '500' },
 					items: [
 						{
 							label: 'Response Time',
@@ -87,7 +92,7 @@ module.exports = {
 				{
 					position: 'left',
 					label: 'Resources',
-					style: { 'font-weight': '500' },
+					style: { fontWeight: '500' },
 					items: [
 						{
 							type: 'doc',
@@ -140,21 +145,21 @@ module.exports = {
 					position: 'left',
 					// style: {color : '#00ab44'},
 					className: 'custom_text',
-					style: { 'font-weight': '500' }
+					style: { fontWeight: '500' }
 				},
 				{
 					to: 'https://app.netdata.cloud/',
 					label: 'Login',
 					position: 'right',
 					className: 'button custom_button_grey',
-					style: { 'font-weight': '500' }
+					style: { fontWeight: '500' }
 				},
 				{
 					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
 					label: 'Sign Up',
 					position: 'right',
 					className: 'button custom_button',
-					style: { 'font-weight': '500' }
+					style: { fontWeight: '500' }
 
 				},
 			],
@@ -173,7 +178,14 @@ module.exports = {
 				enableInDevelopment: false,
 			}
 		],
-		'docusaurus-tailwindcss-loader',
+		// [
+		// 	'./plugins/askNetdataSidebarPlugin',
+		// 	{
+		// 		apiUrl: process.env.ASK_NETDATA_API || 'http://localhost:3002/api',
+		// 		position: 'top'
+		// 	}
+		// ],
+		// 'docusaurus-tailwindcss-loader',
 		[
 			'@docusaurus/plugin-google-tag-manager',
 			{
