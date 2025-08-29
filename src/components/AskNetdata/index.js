@@ -111,7 +111,14 @@ export const ASK_LAYOUT = {
   MAX_COLUMNS: 6,               // cap for columns on very wide screens
   MAX_ITEMS_PER_CATEGORY: 5,    // richest per-category sentences for first row
   MIN_ITEMS_PER_CATEGORY: 1,    // never show fewer than this per category
-  MIN_VISIBLE_CATEGORIES: 2     // preference for number of categories when trimming
+  MIN_VISIBLE_CATEGORIES: 3,    // preference for number of categories when trimming
+  // Additional rows behavior:
+  // 'auto' = if MIN_ITEMS_PER_CATEGORY <= 1 prefer small cards (asc), else prefer more items (desc)
+  // 'asc'  = prefer smaller N first on rows after the first (more categories feel)
+  // 'desc' = prefer larger N first on rows after the first (more sentences per category)
+  ADDITIONAL_ROWS_ORDER: 'asc',
+  // Optional cap for N on additional rows (e.g., set to 2 to force tiny cards on later rows)
+  ADDITIONAL_ROWS_MAX_ITEMS: null
 };
 
 // API configuration
@@ -675,10 +682,10 @@ export default function AskNetdata() {
   const MIN_EQ_ITEMS = ASK_LAYOUT.MIN_ITEMS_PER_CATEGORY; // never go below per requirement
   const GRID_GAP = ASK_LAYOUT.GRID_GAP_PX; // must match render gap
 
-      // Helper: measure tallest card height for N items at current card width
+      // Helpers to measure per-category heights and pick the shortest fitting set for a row
       const cardWidth = columns > 0 ? Math.max(0, (containerW - (columns - 1) * GRID_GAP) / columns) : containerW;
-      const measureHeightForN = (N, eligible) => {
-        if (!eligible || eligible.length === 0) return 0;
+      const measureHeightsForGroups = (N, eligible) => {
+        if (!eligible || eligible.length === 0) return [];
         const measureRoot = document.createElement('div');
         measureRoot.style.position = 'absolute';
         measureRoot.style.visibility = 'hidden';
@@ -689,8 +696,8 @@ export default function AskNetdata() {
         measureRoot.style.boxSizing = 'border-box';
         document.body.appendChild(measureRoot);
 
-        let maxCardH = 0;
-        const sampleCount = Math.min(eligible.length, Math.max(columns * 2, 4));
+        const results = [];
+        const sampleCount = eligible.length; // measure all to allow best selection
         for (let i = 0; i < sampleCount; i++) {
           const g = eligible[i];
           const card = document.createElement('div');
@@ -727,11 +734,25 @@ export default function AskNetdata() {
           card.appendChild(list);
           measureRoot.appendChild(card);
           const h = card.getBoundingClientRect().height;
-          if (h > maxCardH) maxCardH = h;
+          results.push({ group: g, height: h });
           measureRoot.removeChild(card);
         }
         document.body.removeChild(measureRoot);
-        return maxCardH;
+        // Sort by height ascending to favor compact cards
+        results.sort((a, b) => a.height - b.height);
+        return results;
+      };
+      const pickRowForN = (N, eligible, remainingHLocal) => {
+        const measured = measureHeightsForGroups(N, eligible);
+        if (measured.length === 0) return { height: 0, selected: [] };
+        // Take up to 'columns' shortest cards
+        const take = Math.min(columns, measured.length);
+        const selected = measured.slice(0, take);
+        const rowH = selected.reduce((mx, r) => Math.max(mx, r.height), 0);
+        if (rowH <= remainingHLocal + 0.5) {
+          return { height: rowH, selected: selected.map(r => r.group) };
+        }
+        return { height: rowH, selected: [] };
       };
 
       // 1) Choose richest first row (highest N that fits at least one row)
@@ -741,8 +762,8 @@ export default function AskNetdata() {
       for (let N = MAX_EQ_ITEMS; N >= MIN_EQ_ITEMS; N--) {
         const eligible = order.filter(g => (g.items || []).length >= N);
         if (eligible.length === 0) continue;
-        const H = measureHeightForN(N, eligible);
-        if (H <= availableH + 0.5) { // at least one row fits
+        const { height: H } = pickRowForN(N, eligible, availableH);
+        if (H > 0 && H <= availableH + 0.5) { // at least one row fits
           firstRowN = N;
           firstRowH = H;
           eligibleForFirst = eligible;
@@ -753,7 +774,10 @@ export default function AskNetdata() {
       // Pick categories for first row
       let layout = [];
       if (eligibleForFirst.length > 0) {
-        const firstRowCats = eligibleForFirst.slice(0, Math.min(columns, eligibleForFirst.length)).map(g => {
+  // Choose the shortest-fitting categories for the first row
+  const { selected } = pickRowForN(firstRowN, eligibleForFirst, availableH);
+  const toUse = selected.length ? selected : eligibleForFirst.slice(0, Math.min(columns, eligibleForFirst.length));
+  const firstRowCats = toUse.map(g => {
           if (!categoryItemOrderRef.current[g.key]) {
             categoryItemOrderRef.current[g.key] = [...(g.items || [])].sort(() => Math.random() - 0.5);
           }
@@ -761,20 +785,51 @@ export default function AskNetdata() {
           return { key: g.key, title: g.title, items: ordered.slice(0, firstRowN) };
         });
         layout = layout.concat(firstRowCats);
+
+        // Fill any leftover slots in the first row with smaller categories (>= MIN items)
+        let usedKeysFirst = new Set(layout.map(c => c.key));
+        let slotsLeft = Math.max(0, columns - firstRowCats.length);
+        for (let Nfill = firstRowN - 1; Nfill >= MIN_EQ_ITEMS && slotsLeft > 0; Nfill--) {
+          const fillers = (categoriesOrderRef.current || groups)
+            .filter(g => !usedKeysFirst.has(g.key) && (g.items || []).length >= Nfill);
+          if (fillers.length === 0) continue;
+          const toAdd = fillers.slice(0, slotsLeft).map(g => {
+            if (!categoryItemOrderRef.current[g.key]) {
+              categoryItemOrderRef.current[g.key] = [...(g.items || [])].sort(() => Math.random() - 0.5);
+            }
+            const ordered = categoryItemOrderRef.current[g.key];
+            return { key: g.key, title: g.title, items: ordered.slice(0, Nfill) };
+          });
+          layout = layout.concat(toAdd);
+          toAdd.forEach(c => usedKeysFirst.add(c.key));
+          slotsLeft -= toAdd.length;
+        }
       }
 
       // 2) Append additional rows with as many sentences as possible (may use smaller N per row)
-      let usedKeys = new Set(layout.map(b => b.key));
+  let usedKeys = new Set(layout.map(b => b.key));
       let remainingH = availableH - firstRowH;
       if (layout.length > 0) remainingH -= ROW_GAP; // account for gap before next row
       while (remainingH > 0) {
         let appended = false;
-        for (let N = Math.min(firstRowN, MAX_EQ_ITEMS); N >= MIN_EQ_ITEMS; N--) {
+        // Decide iteration order for N on additional rows
+        const maxNForAdditional = Math.min(
+          firstRowN,
+          MAX_EQ_ITEMS,
+          (ASK_LAYOUT.ADDITIONAL_ROWS_MAX_ITEMS ?? MAX_EQ_ITEMS)
+        );
+        const NsDesc = [];
+        for (let n = maxNForAdditional; n >= MIN_EQ_ITEMS; n--) NsDesc.push(n);
+        const NsAsc = [...NsDesc].reverse();
+        const preferAsc = (ASK_LAYOUT.ADDITIONAL_ROWS_ORDER === 'asc') ||
+                          (ASK_LAYOUT.ADDITIONAL_ROWS_ORDER === 'auto' && ASK_LAYOUT.MIN_ITEMS_PER_CATEGORY <= 1);
+        const Ns = preferAsc ? NsAsc : NsDesc;
+        for (const N of Ns) {
           const eligible = order.filter(g => (g.items || []).length >= N && !usedKeys.has(g.key));
           if (eligible.length === 0) continue;
-          const H = measureHeightForN(N, eligible);
-          if (H <= remainingH + 0.5) {
-            const addCats = eligible.slice(0, Math.min(columns, eligible.length)).map(g => {
+          const { height: H, selected } = pickRowForN(N, eligible, remainingH);
+          if (selected.length > 0 && H <= remainingH + 0.5) {
+            const addCats = selected.map(g => {
               if (!categoryItemOrderRef.current[g.key]) {
                 categoryItemOrderRef.current[g.key] = [...(g.items || [])].sort(() => Math.random() - 0.5);
               }
@@ -788,7 +843,82 @@ export default function AskNetdata() {
             break; // move to next row with updated remainingH
           }
         }
-        if (!appended) break; // no N fits, stop
+        if (!appended) {
+          // Micro-fit fallback: try to place a single smallest card with the minimum N
+          const minN = Math.min(
+            ASK_LAYOUT.MIN_ITEMS_PER_CATEGORY,
+            ASK_LAYOUT.ADDITIONAL_ROWS_MAX_ITEMS ?? ASK_LAYOUT.MAX_ITEMS_PER_CATEGORY
+          );
+          const eligibleMin = order.filter(g => (g.items || []).length >= minN && !usedKeys.has(g.key));
+          if (eligibleMin.length === 0) break;
+          const measuredMin = (function(){
+            const res = [];
+            const measureRoot = document.createElement('div');
+            measureRoot.style.position = 'absolute';
+            measureRoot.style.visibility = 'hidden';
+            measureRoot.style.pointerEvents = 'none';
+            measureRoot.style.left = '-99999px';
+            measureRoot.style.top = '0';
+            measureRoot.style.width = `${Math.floor(columns > 0 ? ( (containerW - (columns - 1) * GRID_GAP) / columns ) : containerW)}px`;
+            measureRoot.style.boxSizing = 'border-box';
+            document.body.appendChild(measureRoot);
+            for (const g of eligibleMin) {
+              const card = document.createElement('div');
+              card.style.padding = '20px';
+              card.style.border = '1px solid transparent';
+              card.style.boxSizing = 'border-box';
+              card.style.borderRadius = '12px';
+              const title = document.createElement('div');
+              title.style.fontWeight = '700';
+              title.style.fontSize = '17px';
+              title.style.textAlign = 'center';
+              title.style.marginBottom = '8px';
+              title.textContent = g.title || '';
+              card.appendChild(title);
+              const list = document.createElement('div');
+              list.style.display = 'grid';
+              list.style.gap = '10px';
+              for (let k = 0; k < minN; k++) {
+                const btn = document.createElement('button');
+                btn.style.textAlign = 'left';
+                btn.style.padding = '10px 12px';
+                btn.style.borderRadius = '8px';
+                btn.style.border = 'none';
+                btn.style.background = 'transparent';
+                btn.style.width = '100%';
+                btn.style.boxSizing = 'border-box';
+                btn.style.whiteSpace = 'normal';
+                btn.style.wordBreak = 'break-word';
+                btn.style.overflowWrap = 'anywhere';
+                btn.style.lineHeight = '1.4';
+                btn.textContent = (g.items && g.items[k]) ? g.items[k] : '';
+                list.appendChild(btn);
+              }
+              card.appendChild(list);
+              measureRoot.appendChild(card);
+              const h = card.getBoundingClientRect().height;
+              res.push({ group: g, height: h });
+              measureRoot.removeChild(card);
+            }
+            document.body.removeChild(measureRoot);
+            res.sort((a,b)=>a.height-b.height);
+            return res;
+          })();
+          const best = measuredMin.find(m => m.height <= remainingH + 0.5);
+          if (best) {
+            const g = best.group;
+            if (!categoryItemOrderRef.current[g.key]) {
+              categoryItemOrderRef.current[g.key] = [...(g.items || [])].sort(() => Math.random() - 0.5);
+            }
+            const ordered = categoryItemOrderRef.current[g.key];
+            layout = layout.concat([{ key: g.key, title: g.title, items: ordered.slice(0, minN) }]);
+            usedKeys.add(g.key);
+            remainingH -= best.height + ROW_GAP;
+            // continue loop to try more micro rows if space remains
+          } else {
+            break; // nothing fits vertically
+          }
+        }
       }
 
       setVisibleCategories(layout);
@@ -849,7 +979,7 @@ export default function AskNetdata() {
     // If we already are at the minimum category count, start trimming items per category
     let trimmed = false;
     for (let i = 0; i < next.length; i++) {
-      if (next[i].items.length > 2) {
+      if (next[i].items.length > ASK_LAYOUT.MIN_ITEMS_PER_CATEGORY) {
         next[i].items.pop();
         trimmed = true;
       }
