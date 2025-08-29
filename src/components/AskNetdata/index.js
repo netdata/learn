@@ -1424,7 +1424,7 @@ export default function AskNetdata() {
                   <div ref={suggestionBoxRef} style={{
                     background: 'transparent',
                     border: 'none',
-                    color: isDarkMode ? 'rgba(0,171,68,0.48)' : 'rgba(0,171,68,0.48)',
+                    color: isDarkMode ? 'rgba(0,171,68,0.62)' : 'rgba(0,171,68,0.48)',
                     borderRadius: '12px',
                     padding: '8px 18px',
                     boxSizing: 'border-box',
@@ -1439,6 +1439,7 @@ export default function AskNetdata() {
                     textAlign: 'center'
                   }}>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
+                      {/* Arrows row (centered above category title) */}
                       <div style={{
                         display: 'flex',
                         flexDirection: 'row',
@@ -1447,19 +1448,20 @@ export default function AskNetdata() {
                         gap: '18px',
                         width: '100%',
                         margin: '0 auto',
-                        textAlign: 'center',
+                        textAlign: 'center'
                       }}>
-                        <button onClick={goPrevGroup} aria-label="Previous category" onMouseEnter={() => setIsPrevHover(true)} onMouseLeave={() => setIsPrevHover(false)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: isPrevHover ? '#00AB44' : (isDarkMode ? 'rgba(0,171,68,0.48)' : 'rgba(0,171,68,0.48)'), padding: '6px 10px', borderRadius: '10px', fontSize: '18px', lineHeight: '1', transition: 'color 140ms, transform 120ms', transform: isPrevHover ? 'translateY(-3px)' : 'translateY(0)' }}>
+                        <button onClick={goPrevGroup} aria-label="Previous category" onMouseEnter={() => setIsPrevHover(true)} onMouseLeave={() => setIsPrevHover(false)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: isPrevHover ? '#00AB44' : (isDarkMode ? 'rgba(0,171,68,0.62)' : 'rgba(0,171,68,0.48)'), padding: '6px 10px', borderRadius: '10px', fontSize: '18px', lineHeight: '1', transition: 'color 140ms, transform 120ms', transform: isPrevHover ? 'translateY(-3px)' : 'translateY(0)' }}>
                           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                         </button>
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 'fit-content' }}>
-                          <span style={{ fontWeight: 700, color: (isDarkMode ? 'rgba(0,171,68,0.48)' : 'rgba(0,171,68,0.48)'), textAlign: 'center', fontSize: '1.25rem', display: 'block', width: '100%' }}>
-                            {currentGroup.title}
-                          </span>
-                        </div>
-                        <button onClick={goNextGroup} aria-label="Next category" onMouseEnter={() => setIsNextHover(true)} onMouseLeave={() => setIsNextHover(false)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: isNextHover ? '#00AB44' : (isDarkMode ? 'rgba(0,171,68,0.48)' : 'rgba(0,171,68,0.48)'), padding: '6px 10px', borderRadius: '10px', fontSize: '18px', lineHeight: '1', transition: 'color 140ms, transform 120ms', transform: isNextHover ? 'translateY(-3px)' : 'translateY(0)' }}>
+                        <button onClick={goNextGroup} aria-label="Next category" onMouseEnter={() => setIsNextHover(true)} onMouseLeave={() => setIsNextHover(false)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: isNextHover ? '#00AB44' : (isDarkMode ? 'rgba(0,171,68,0.62)' : 'rgba(0,171,68,0.48)'), padding: '6px 10px', borderRadius: '10px', fontSize: '18px', lineHeight: '1', transition: 'color 140ms, transform 120ms', transform: isNextHover ? 'translateY(-3px)' : 'translateY(0)' }}>
                           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                         </button>
+                      </div>
+                      {/* Category title row */}
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+                        <span style={{ fontWeight: 700, color: (isDarkMode ? 'rgba(0,171,68,0.62)' : 'rgba(0,171,68,0.48)'), textAlign: 'center', fontSize: '1.25rem' }}>
+                          {currentGroup.title}
+                        </span>
                       </div>
                     </div>
                     <div style={{ display: 'grid', gap: '8px', width: '100%', gridTemplateColumns: '1fr', maxWidth: '520px', margin: '0 auto', padding: '0 8px', boxSizing: 'border-box' }}>
@@ -1474,7 +1476,7 @@ export default function AskNetdata() {
                                   borderRadius: '8px',
                                   border: 'none',
                                   background: 'transparent',
-                                  color: isDarkMode ? 'rgba(0,171,68,0.36)' : 'rgba(0,171,68,0.36)',
+                                  color: isDarkMode ? 'rgba(0,171,68,0.50)' : 'rgba(0,171,68,0.36)',
                                   cursor: 'pointer',
                                   transition: 'color 160ms, transform 120ms',
                                   width: '100%',
@@ -1487,7 +1489,7 @@ export default function AskNetdata() {
                                   display: 'block'
                                 }}
                                 onMouseEnter={(e) => { e.currentTarget.style.color = '#00AB44'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-                                onMouseLeave={(e) => { e.currentTarget.style.color = isDarkMode ? 'rgba(0,171,68,0.36)' : 'rgba(0,171,68,0.36)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.color = isDarkMode ? 'rgba(0,171,68,0.50)' : 'rgba(0,171,68,0.36)'; e.currentTarget.style.transform = 'translateY(0)'; }}
                               >
                                 {q}
                               </button>
