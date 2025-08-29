@@ -15,6 +15,105 @@ import MDXLi from '@theme/MDXComponents/Li';
 import MDXImg from '@theme/MDXComponents/Img';
 import Mermaid from '@theme/Mermaid';
 
+// =============================
+// Ask Netdata Suggestion Groups
+// =============================
+// Edit this single constant to add/remove categories or sentences.
+// - key: stable identifier (no spaces)
+// - title: category display title
+// - items: array of suggestion sentences (strings)
+export const SUGGESTION_GROUPS = [
+  {
+    key: 'about',
+    title: 'About Netdata',
+    items: [
+      'What is Netdata and what makes it different?',
+      'What is a Netdata Agent, a Parent, and Netdata Cloud?',
+      'What is distributed monitoring and why it matters for me?',
+      'Why and how is Netdata more cost efficient?',
+      'How does Netdata handle data privacy and security?',
+      'How do I install Netdata on Ubuntu?'
+    ]
+  },
+  {
+    key: 'deployment',
+    title: 'Deployment',
+    items: [
+      'Can I run Netdata in hybrid or multi-cloud setups?',
+      'How does Netdata scale in large environments?',
+      'Will running Netdata slow down my production servers?',
+      'Can Netdata monitor bare-metal servers and GPUs?',
+      'Can you visually explain how to setup parents for high availability?',
+      'How to monitor Docker containers with Netdata?'
+    ]
+  },
+  {
+    key: 'operations',
+    title: 'Operations',
+    items: [
+      'Do I need to learn a query language to use Netdata?',
+      'How Netdata will help me optimize my SRE team?',
+      'Where are my data stored with Netdata?',
+      'Which of my data are stored at Netdata Cloud?',
+      'How do I visualize cost/resource usage per environment?',
+      'How do I configure email notifications?',
+      'Why is my agent not connecting to Netdata Cloud?'
+    ]
+  },
+  {
+    key: 'ai',
+    title: 'AI & Machine Learning',
+    items: [
+      'How does anomaly detection work in Netdata?',
+      'Can I chat with Netdata with Claude Code or Gemini?',
+      'What is AI Insights and how it can help me?',
+      'Can Netdata identify the root cause of an issue for me?'
+    ]
+  },
+  {
+    key: 'dashboards',
+    title: 'Dashboards',
+    items: [
+      'How can I slice and dice any dataset with Netdata?',
+      'How can I correlate a spike or a dive across my infrastructure?',
+      'How can I create and edit custom dashboards, do I need to learn a query language?',
+      'Can I use Netdata to search systemd journals or windows event logs?',
+      'Does Netdata provide any fallback to access dashboards without internet access?',
+      'What is the relationship between Spaces, Rooms, and dashboards?',
+      'How do I share a dashboard view with a teammate?'
+    ]
+  },
+  {
+    key: 'alerts',
+    title: 'Alerts',
+    items: [
+      'How do I configure alerts in Netdata?',
+      'What are the best practices for setting alert thresholds?',
+      'How can I integrate Netdata alerts with PagerDuty or Slack?',
+      'How do I reduce alert noise and prevent alert fatigue?',
+      'What alerts should I configure for MySQL monitoring?'
+    ]
+  }
+];
+
+// =============================
+// Layout and Behavior Constants
+// =============================
+// Tweak these to adjust positioning and packing rules.
+export const ASK_LAYOUT = {
+  TOP_PERCENT: 0.35,            // percentage of viewport height above the grid anchor
+  TOP_OFFSET_PX: 80,            // extra pixels below the title/input to the grid
+  BOTTOM_MARGIN_PX: 24,         // breathing room at the bottom of the viewport
+  SIDE_GUTTERS_PX: 48,          // combined side paddings (approx 24px each side)
+  GRID_GAP_PX: 20,              // gap between cards in the grid
+  ROW_GAP_PX: 20,               // vertical gap between grid rows (for measurement)
+  MIN_CARD_WIDTH_PX: 260,       // minimum card width used to compute columns
+  MAX_COLUMNS: 6,               // cap for columns on very wide screens
+  MAX_ITEMS_PER_CATEGORY: 5,    // richest per-category sentences for first row
+  MIN_ITEMS_PER_CATEGORY: 1,    // never show fewer than this per category
+  MIN_VISIBLE_CATEGORIES: 2     // preference for number of categories when trimming
+};
+
 // API configuration
 // Automatically detect environment and use appropriate API
 const getApiUrl = () => {
@@ -58,63 +157,19 @@ const SmartLink = ({ href, children, ...props }) => {
     };
     
     return (
-      <Link to={internalPath} {...props}>
+      <Link to={internalPath} onClick={handleClick} {...props}>
         {children}
       </Link>
     );
+  } else {
+    // External links open in a new tab
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+        {children}
+      </a>
+    );
   }
-  
-  // External links still open in new tab
-  return (
-    <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
-      {children}
-    </a>
-  );
 };
-
-const MessageContent = ({ content }) => {
-  // Custom component for code blocks that uses Docusaurus's CodeBlock
-  const CodeBlockWrapper = ({ node, inline, className, children, ...props }) => {
-    const match = /language-(\w+)/.exec(className || '');
-    const content = String(children);
-    
-    // Determine if this is inline code:
-    // 1. If inline prop is explicitly true
-    // 2. If there are no newlines in the content (single line)
-    // 3. If there's no language specified and content is short
-    const isInline = inline === true || 
-                     (inline !== false && !content.includes('\n') && !match);
-    
-    if (!isInline && match) {
-      const language = match[1];
-      
-      // Check if this is a mermaid diagram
-      if (language === 'mermaid') {
-        return (
-          <div style={{ marginTop: '16px', marginBottom: '16px' }}>
-            <Mermaid value={content.replace(/\n$/, '')} />
-          </div>
-        );
-      }
-      
-      // Multi-line code block with language
-      return (
-        <CodeBlock language={language}>
-          {content.replace(/\n$/, '')}
-        </CodeBlock>
-      );
-    } else if (!isInline) {
-      // Multi-line code block without language
-      return (
-        <CodeBlock>
-          {content.replace(/\n$/, '')}
-        </CodeBlock>
-      );
-    } else {
-      // Inline code
-      return <MDXCode {...props}>{children}</MDXCode>;
-    }
-  };
 
   // Custom paragraph component that prevents wrapping code blocks
   const ParagraphWrapper = ({ children }) => {
@@ -152,7 +207,29 @@ const MessageContent = ({ content }) => {
     return <p>{children}</p>;
   };
 
-  return (
+  // Markdown renderer pieces used inside chat messages
+  const CodeBlockWrapper = ({ inline, className, children, ...props }) => {
+    const match = /language-(\w+)/.exec(className || '');
+    const content = Array.isArray(children) ? children.join('') : (children || '');
+    if (!inline) {
+      if (match) {
+        const language = match[1];
+        return (
+          <CodeBlock language={language}>
+            {String(content).replace(/\n$/, '')}
+          </CodeBlock>
+        );
+      }
+      return (
+        <CodeBlock>
+          {String(content).replace(/\n$/, '')}
+        </CodeBlock>
+      );
+    }
+    return <MDXCode {...props}>{children}</MDXCode>;
+  };
+
+  const MessageContent = ({ content }) => (
     <div className="theme-doc-markdown markdown" style={{ 
       maxWidth: '100%',
       width: '100%',
@@ -182,53 +259,26 @@ const MessageContent = ({ content }) => {
           box-sizing: border-box !important;
         }
         @keyframes pulse {
-          0% {
-            transform: scale(0.8);
-            opacity: 0.5;
-          }
-          50% {
-            transform: scale(1.2);
-            opacity: 1;
-          }
-          100% {
-            transform: scale(0.8);
-            opacity: 0.5;
-          }
+          0% { transform: scale(0.8); opacity: 0.5; }
+          50% { transform: scale(1.2); opacity: 1; }
+          100% { transform: scale(0.8); opacity: 0.5; }
         }
         @keyframes orbit {
-          0% {
-            transform: rotate(0deg) translateX(20px) rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg) translateX(20px) rotate(-360deg);
-          }
+          0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+          100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
         }
         @keyframes glow {
-          0%, 100% {
-            box-shadow: 0 0 5px rgba(0, 212, 255, 0.5), 0 0 10px rgba(0, 212, 255, 0.3), 0 0 15px rgba(0, 171, 68, 0.2);
-          }
-          50% {
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.8), 0 0 20px rgba(0, 212, 255, 0.6), 0 0 30px rgba(0, 171, 68, 0.4);
-          }
+          0%, 100% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.5), 0 0 10px rgba(0, 212, 255, 0.3), 0 0 15px rgba(0, 171, 68, 0.2); }
+          50% { box-shadow: 0 0 10px rgba(0, 212, 255, 0.8), 0 0 20px rgba(0, 212, 255, 0.6), 0 0 30px rgba(0, 171, 68, 0.4); }
         }
         @keyframes wave {
-          0%, 100% {
-            transform: translateY(0) scale(1);
-          }
-          50% {
-            transform: translateY(-10px) scale(1.1);
-          }
+          0%, 100% { transform: translateY(0) scale(1); }
+          50% { transform: translateY(-10px) scale(1.1); }
         }
         @keyframes scanBackForth {
-          0% {
-            transform: translateX(-100px);
-          }
-          50% {
-            transform: translateX(300px);
-          }
-          100% {
-            transform: translateX(-100px);
-          }
+          0% { transform: translateX(-100px); }
+          50% { transform: translateX(300px); }
+          100% { transform: translateX(-100px); }
         }
       `}</style>
       <ReactMarkdown 
@@ -248,7 +298,6 @@ const MessageContent = ({ content }) => {
       </ReactMarkdown>
     </div>
   );
-};
 
 // Configuration: Number of conversation pairs (user + assistant messages) to send as context
 const MAX_CONVERSATION_PAIRS = 3;
@@ -581,128 +630,242 @@ export default function AskNetdata() {
     }
   }, []);
 
-  // All About Netdata questions
-  const aboutNetdataQuestions = [
-    'What is Netdata and what makes it different?',
-    'What is a Netdata Agent, a Parent, and Netdata Cloud?',
-    'What is distributed monitoring and why it matters for me?',
-    'Why and how is Netdata more cost efficient?',
-    'How does Netdata handle data privacy and security?',
-    'How do I install Netdata on Ubuntu?'
-  ];
-
-  // All deployment questions - we'll randomly select them
-  const deploymentQuestions = [
-    'Can I run Netdata in hybrid or multi-cloud setups?',
-    'How does Netdata scale in large environments?',
-    'Will running Netdata slow down my production servers?',
-    'Can Netdata monitor bare-metal servers and GPUs?',
-    'Can you visually explain how to setup parents for high availability?',
-    'How to monitor Docker containers with Netdata?'
-  ];
-
-  // Configuration: Number of questions to show per category
-  const QUESTIONS_PER_CATEGORY = 6;
-
-  // Function to randomly select n items from an array
-  const getRandomSelection = (arr, n) => {
-    if (arr.length <= n) return arr;
-    const shuffled = [...arr].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, n);
-  };
-
-  // Get random About Netdata questions (persist for component lifetime)
-  const selectedAboutNetdataQuestionsRef = useRef();
-  if (!selectedAboutNetdataQuestionsRef.current) {
-    selectedAboutNetdataQuestionsRef.current = getRandomSelection(aboutNetdataQuestions, 6);
-  }
-  const selectedAboutNetdataQuestions = selectedAboutNetdataQuestionsRef.current;
-
-  // Get random deployment questions (persist for component lifetime)
-  const selectedDeploymentQuestionsRef = useRef();
-  if (!selectedDeploymentQuestionsRef.current) {
-    selectedDeploymentQuestionsRef.current = getRandomSelection(deploymentQuestions, 6);
-  }
-  const selectedDeploymentQuestions = selectedDeploymentQuestionsRef.current;
-
-  // All operations questions
-  const operationsQuestions = [
-    'Do I need to learn a query language to use Netdata?',
-    'How Netdata will help me optimize my SRE team?',
-    'Where are my data stored with Netdata?',
-    'Which of my data are stored at Netdata Cloud?',
-    'How do I visualize cost/resource usage per environment?',
-    'How do I configure email notifications?',
-    'Why is my agent not connecting to Netdata Cloud?'
-  ];
-
-  // Get random operations questions (persist for component lifetime)
-  const selectedOperationsQuestionsRef = useRef();
-  if (!selectedOperationsQuestionsRef.current) {
-    selectedOperationsQuestionsRef.current = getRandomSelection(operationsQuestions, 6);
-  }
-  const selectedOperationsQuestions = selectedOperationsQuestionsRef.current;
-
-  // All AI & Machine Learning questions
-  const aiMlQuestions = [
-    'How does anomaly detection work in Netdata?',
-    'Can I chat with Netdata with Claude Code or Gemini?',
-    'What is AI Insights and how it can help me?',
-    'Can Netdata identify the root cause of an issue for me?'
-  ];
-
-  // Get random AI & ML questions (persist for component lifetime)
-  const selectedAiMlQuestionsRef = useRef();
-  if (!selectedAiMlQuestionsRef.current) {
-    selectedAiMlQuestionsRef.current = getRandomSelection(aiMlQuestions, 6);
-  }
-  const selectedAiMlQuestions = selectedAiMlQuestionsRef.current;
-
-  // All dashboard questions
-  const dashboardQuestions = [
-    'How can I slice and dice any dataset with Netdata?',
-    'How can I correlate a spike or a dive across my infrastructure?',
-    'How can I create and edit custom dashboards, do I need to learn a query language?',
-    'Can I use Netdata to search systemd journals or windows event logs?',
-    'Does Netdata provide any fallback to access dashboards without internet access?',
-    'What is the relationship between Spaces, Rooms, and dashboards?',
-    'How do I share a dashboard view with a teammate?'
-  ];
-
-  // Get random dashboard questions (persist for component lifetime)
-  const selectedDashboardQuestionsRef = useRef();
-  if (!selectedDashboardQuestionsRef.current) {
-    selectedDashboardQuestionsRef.current = getRandomSelection(dashboardQuestions, 6);
-  }
-  const selectedDashboardQuestions = selectedDashboardQuestionsRef.current;
-
-  // All alerts questions
-  const alertsQuestions = [
-    'How do I configure alerts in Netdata?',
-    'What are the best practices for setting alert thresholds?',
-    'How can I integrate Netdata alerts with PagerDuty or Slack?',
-    'How do I reduce alert noise and prevent alert fatigue?',
-    'What alerts should I configure for MySQL monitoring?'
-  ];
-
-  // Get random alerts questions (persist for component lifetime)
-  const selectedAlertsQuestionsRef = useRef();
-  if (!selectedAlertsQuestionsRef.current) {
-    selectedAlertsQuestionsRef.current = getRandomSelection(alertsQuestions, 6);
-  }
-  const selectedAlertsQuestions = selectedAlertsQuestionsRef.current;
-
-  // Build groups (full arrays). User will navigate them with arrows.
-  const groups = useMemo(() => ([
-    { key: 'about', title: 'About Netdata', items: selectedAboutNetdataQuestions },
-    { key: 'deployment', title: 'Deployment', items: selectedDeploymentQuestions },
-    { key: 'operations', title: 'Operations', items: selectedOperationsQuestions },
-    { key: 'ai', title: 'AI & Machine Learning', items: selectedAiMlQuestions },
-    { key: 'dashboards', title: 'Dashboards', items: selectedDashboardQuestions },
-    { key: 'alerts', title: 'Alerts', items: selectedAlertsQuestions }
-  ]), [selectedAboutNetdataQuestions, selectedDeploymentQuestions, selectedOperationsQuestions, selectedAiMlQuestions, selectedDashboardQuestions, selectedAlertsQuestions]);
+  // Build groups from the top-level constant. Keep per-session item order stable.
+  const groups = useMemo(() => SUGGESTION_GROUPS, []);
 
   const currentGroup = groups.length ? groups[currentGroupIndex % groups.length] : null;
+
+  // Multi-category layout: choose as many categories as fit and 4-5 items per category (most that fit)
+  const [visibleCategories, setVisibleCategories] = useState([]);
+  const categoriesOrderRef = useRef(null);
+  const categoryItemOrderRef = useRef({});
+  const fitPassRef = useRef(0);
+  const MAX_FIT_PASSES = 12;
+  if (!categoriesOrderRef.current && groups.length) {
+    // Persist a random order for this session
+    const order = [...groups].sort(() => Math.random() - 0.5);
+    categoriesOrderRef.current = order;
+  }
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const getViewport = () => {
+      const vv = window.visualViewport;
+      return {
+        width: vv?.width || window.innerWidth,
+        height: vv?.height || window.innerHeight
+      };
+    };
+
+    let rafId = null;
+    const computeLayout = () => {
+      const vp = getViewport();
+  // Suggestion container anchor
+  const top = (vp.height * ASK_LAYOUT.TOP_PERCENT) + ASK_LAYOUT.TOP_OFFSET_PX;
+  const availableH = Math.max(0, vp.height - top - ASK_LAYOUT.BOTTOM_MARGIN_PX);
+
+  // Columns based on available viewport width (use near-full width)
+  const containerW = Math.max(0, vp.width - ASK_LAYOUT.SIDE_GUTTERS_PX);
+  let columns = Math.max(1, Math.floor(containerW / ASK_LAYOUT.MIN_CARD_WIDTH_PX));
+  columns = Math.min(columns, ASK_LAYOUT.MAX_COLUMNS);
+
+  const ROW_GAP = ASK_LAYOUT.ROW_GAP_PX;
+      const order = categoriesOrderRef.current || groups;
+  const MAX_EQ_ITEMS = ASK_LAYOUT.MAX_ITEMS_PER_CATEGORY;
+  const MIN_EQ_ITEMS = ASK_LAYOUT.MIN_ITEMS_PER_CATEGORY; // never go below per requirement
+  const GRID_GAP = ASK_LAYOUT.GRID_GAP_PX; // must match render gap
+
+      // Helper: measure tallest card height for N items at current card width
+      const cardWidth = columns > 0 ? Math.max(0, (containerW - (columns - 1) * GRID_GAP) / columns) : containerW;
+      const measureHeightForN = (N, eligible) => {
+        if (!eligible || eligible.length === 0) return 0;
+        const measureRoot = document.createElement('div');
+        measureRoot.style.position = 'absolute';
+        measureRoot.style.visibility = 'hidden';
+        measureRoot.style.pointerEvents = 'none';
+        measureRoot.style.left = '-99999px';
+        measureRoot.style.top = '0';
+        measureRoot.style.width = `${Math.floor(cardWidth)}px`;
+        measureRoot.style.boxSizing = 'border-box';
+        document.body.appendChild(measureRoot);
+
+        let maxCardH = 0;
+        const sampleCount = Math.min(eligible.length, Math.max(columns * 2, 4));
+        for (let i = 0; i < sampleCount; i++) {
+          const g = eligible[i];
+          const card = document.createElement('div');
+          card.style.padding = '20px';
+          card.style.border = '1px solid transparent';
+          card.style.boxSizing = 'border-box';
+          card.style.borderRadius = '12px';
+          const title = document.createElement('div');
+          title.style.fontWeight = '700';
+          title.style.fontSize = '17px';
+          title.style.textAlign = 'center';
+          title.style.marginBottom = '8px';
+          title.textContent = g.title || '';
+          card.appendChild(title);
+          const list = document.createElement('div');
+          list.style.display = 'grid';
+          list.style.gap = '10px';
+          for (let k = 0; k < N; k++) {
+            const btn = document.createElement('button');
+            btn.style.textAlign = 'left';
+            btn.style.padding = '10px 12px';
+            btn.style.borderRadius = '8px';
+            btn.style.border = 'none';
+            btn.style.background = 'transparent';
+            btn.style.width = '100%';
+            btn.style.boxSizing = 'border-box';
+            btn.style.whiteSpace = 'normal';
+            btn.style.wordBreak = 'break-word';
+            btn.style.overflowWrap = 'anywhere';
+            btn.style.lineHeight = '1.4';
+            btn.textContent = (g.items && g.items[k]) ? g.items[k] : '';
+            list.appendChild(btn);
+          }
+          card.appendChild(list);
+          measureRoot.appendChild(card);
+          const h = card.getBoundingClientRect().height;
+          if (h > maxCardH) maxCardH = h;
+          measureRoot.removeChild(card);
+        }
+        document.body.removeChild(measureRoot);
+        return maxCardH;
+      };
+
+      // 1) Choose richest first row (highest N that fits at least one row)
+      let firstRowN = MIN_EQ_ITEMS;
+      let firstRowH = 0;
+      let eligibleForFirst = [];
+      for (let N = MAX_EQ_ITEMS; N >= MIN_EQ_ITEMS; N--) {
+        const eligible = order.filter(g => (g.items || []).length >= N);
+        if (eligible.length === 0) continue;
+        const H = measureHeightForN(N, eligible);
+        if (H <= availableH + 0.5) { // at least one row fits
+          firstRowN = N;
+          firstRowH = H;
+          eligibleForFirst = eligible;
+          break;
+        }
+      }
+
+      // Pick categories for first row
+      let layout = [];
+      if (eligibleForFirst.length > 0) {
+        const firstRowCats = eligibleForFirst.slice(0, Math.min(columns, eligibleForFirst.length)).map(g => {
+          if (!categoryItemOrderRef.current[g.key]) {
+            categoryItemOrderRef.current[g.key] = [...(g.items || [])].sort(() => Math.random() - 0.5);
+          }
+          const ordered = categoryItemOrderRef.current[g.key];
+          return { key: g.key, title: g.title, items: ordered.slice(0, firstRowN) };
+        });
+        layout = layout.concat(firstRowCats);
+      }
+
+      // 2) Append additional rows with as many sentences as possible (may use smaller N per row)
+      let usedKeys = new Set(layout.map(b => b.key));
+      let remainingH = availableH - firstRowH;
+      if (layout.length > 0) remainingH -= ROW_GAP; // account for gap before next row
+      while (remainingH > 0) {
+        let appended = false;
+        for (let N = Math.min(firstRowN, MAX_EQ_ITEMS); N >= MIN_EQ_ITEMS; N--) {
+          const eligible = order.filter(g => (g.items || []).length >= N && !usedKeys.has(g.key));
+          if (eligible.length === 0) continue;
+          const H = measureHeightForN(N, eligible);
+          if (H <= remainingH + 0.5) {
+            const addCats = eligible.slice(0, Math.min(columns, eligible.length)).map(g => {
+              if (!categoryItemOrderRef.current[g.key]) {
+                categoryItemOrderRef.current[g.key] = [...(g.items || [])].sort(() => Math.random() - 0.5);
+              }
+              const ordered = categoryItemOrderRef.current[g.key];
+              return { key: g.key, title: g.title, items: ordered.slice(0, N) };
+            });
+            layout = layout.concat(addCats);
+            addCats.forEach(c => usedKeys.add(c.key));
+            remainingH -= H + ROW_GAP; // prepare for possible next row
+            appended = true;
+            break; // move to next row with updated remainingH
+          }
+        }
+        if (!appended) break; // no N fits, stop
+      }
+
+      setVisibleCategories(layout);
+      fitPassRef.current = 0; // reset guard
+    };
+
+    computeLayout();
+    const onResize = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(computeLayout);
+    };
+    window.addEventListener('resize', onResize);
+    window.addEventListener('orientationchange', onResize);
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', onResize);
+    }
+    return () => {
+      window.removeEventListener('resize', onResize);
+      window.removeEventListener('orientationchange', onResize);
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener('resize', onResize);
+      }
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [groups.length]);
+
+  // Post-render safety net: prefer fewer categories over fewer items per category
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (!showWelcome) return; // only applies to welcome grid
+    if (!suggestionBoxRef.current) return;
+    if (!visibleCategories || visibleCategories.length === 0) return;
+
+    const vp = window.visualViewport || window;
+    const rect = suggestionBoxRef.current.getBoundingClientRect();
+    const bottomLimit = (vp.height || window.innerHeight) - 16; // a bit more padding
+    const overflows = rect.bottom > bottomLimit;
+
+    if (!overflows) {
+      // Reset guard when it fits
+      fitPassRef.current = 0;
+      return;
+    }
+
+    if (fitPassRef.current >= MAX_FIT_PASSES) return;
+
+  const MIN_VISIBLE_CATEGORIES = ASK_LAYOUT.MIN_VISIBLE_CATEGORIES;
+    const next = visibleCategories.map(c => ({ ...c, items: [...c.items] }));
+
+    // Prefer removing categories first (keep richer per-category content)
+    if (next.length > MIN_VISIBLE_CATEGORIES) {
+      next.pop();
+      fitPassRef.current += 1;
+      setVisibleCategories(next);
+      return;
+    }
+
+    // If we already are at the minimum category count, start trimming items per category
+    let trimmed = false;
+    for (let i = 0; i < next.length; i++) {
+      if (next[i].items.length > 2) {
+        next[i].items.pop();
+        trimmed = true;
+      }
+    }
+    if (trimmed) {
+      fitPassRef.current += 1;
+      setVisibleCategories(next);
+    } else if (next.length > 1) {
+      // As a last resort, drop a category if all items are at minimum
+      next.pop();
+      fitPassRef.current += 1;
+      setVisibleCategories(next);
+    } else {
+      fitPassRef.current = 0;
+    }
+  }, [visibleCategories, showWelcome]);
 
   const goPrevGroup = () => setCurrentGroupIndex(i => (i - 1 + groups.length) % groups.length);
   const goNextGroup = () => setCurrentGroupIndex(i => (i + 1) % groups.length);
@@ -752,15 +915,8 @@ export default function AskNetdata() {
 
   // Combine all questions for placeholder rotation
   const allQuestions = useMemo(() => {
-    return [
-      ...selectedAboutNetdataQuestions,
-      ...selectedDeploymentQuestions,
-      ...selectedOperationsQuestions,
-      ...selectedAiMlQuestions,
-      ...selectedDashboardQuestions,
-      ...selectedAlertsQuestions
-    ];
-  }, [selectedAboutNetdataQuestions, selectedDeploymentQuestions, selectedOperationsQuestions, selectedAiMlQuestions, selectedDashboardQuestions, selectedAlertsQuestions]);
+    return groups.flatMap(g => g.items || []);
+  }, [groups]);
 
   // Placeholder rotation effect
   useEffect(() => {
@@ -1079,7 +1235,7 @@ export default function AskNetdata() {
   const floatingContainerStyle = {
   position: 'absolute',
   left: '50%',
-  top: '35%',
+  top: '25%',
   transform: 'translate(-50%, -50%)',
   display: 'flex',
   flexDirection: 'column',
@@ -1401,102 +1557,83 @@ export default function AskNetdata() {
               </div>
             </div>
 
-              {/* Single random suggestion group rendered absolutely below the centered chatbox */}
-              {currentGroup && (
+              {/* Responsive multi-category suggestions grid below the centered chatbox */}
+              {visibleCategories.length > 0 && (
                 <div style={{
                   position: 'absolute',
                   left: 0,
                   right: 0,
-                  top: 'calc(35% + 160px)', // place it below the floating container; doesn't affect centering
-                  transform: 'none',
+                  // Keep this in sync with ASK_LAYOUT TOP_PERCENT/OFFSET
+                  top: `calc(${ASK_LAYOUT.TOP_PERCENT * 100}% + ${ASK_LAYOUT.TOP_OFFSET_PX}px)`,
                   width: '100%',
-                  maxWidth: '800px',
-                  pointerEvents: 'auto',
-                  zIndex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  gap: '12px',
+                  maxWidth: '100%',
+                  padding: '0 24px',
                   margin: '0 auto',
-                  textAlign: 'center'
+                  boxSizing: 'border-box',
+                  pointerEvents: 'auto',
+                  zIndex: 1
                 }}>
+                  {(() => {
+                    // Accessible suggestion colors
+                    var suggestionTextColor = isDarkMode ? '#7ED9A6' : '#0B7D3B';
+                    var suggestionTitleColor = isDarkMode ? '#98E9BC' : '#0E8A43';
+                    return (
                   <div ref={suggestionBoxRef} style={{
-                    background: 'transparent',
-                    border: 'none',
-                    color: isDarkMode ? 'rgba(0,171,68,0.62)' : 'rgba(0,171,68,0.48)',
-                    borderRadius: '12px',
-                    padding: '8px 18px',
-                    boxSizing: 'border-box',
-                    width: '100%',
-                    maxWidth: '560px',
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    textAlign: 'center'
+                    display: 'grid',
+                    gridTemplateColumns: `repeat(auto-fit, minmax(${ASK_LAYOUT.MIN_CARD_WIDTH_PX}px, 1fr))`,
+                    gap: `${ASK_LAYOUT.GRID_GAP_PX}px`,
+                    alignItems: 'stretch'
                   }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
-                      {/* Arrows row (centered above category title) */}
-                      <div style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '18px',
-                        width: '100%',
-                        margin: '0 auto',
-                        textAlign: 'center'
+                    {visibleCategories.map((cat) => (
+                      <div key={cat.key} style={{
+                        background: isDarkMode ? 'var(--ifm-background-surface-color)' : 'white',
+                        border: isDarkMode ? '1px solid var(--ifm-color-emphasis-300)' : '1px solid #e5e7eb',
+                        borderRadius: '12px',
+                        padding: '20px',
+                        boxSizing: 'border-box',
+                        height: '100%'
                       }}>
-                        <button onClick={goPrevGroup} aria-label="Previous category" onMouseEnter={() => setIsPrevHover(true)} onMouseLeave={() => setIsPrevHover(false)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: isPrevHover ? '#00AB44' : (isDarkMode ? 'rgba(0,171,68,0.62)' : 'rgba(0,171,68,0.48)'), padding: '6px 10px', borderRadius: '10px', fontSize: '18px', lineHeight: '1', transition: 'color 140ms, transform 120ms', transform: isPrevHover ? 'translateY(-3px)' : 'translateY(0)' }}>
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                        </button>
-                        <button onClick={goNextGroup} aria-label="Next category" onMouseEnter={() => setIsNextHover(true)} onMouseLeave={() => setIsNextHover(false)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: isNextHover ? '#00AB44' : (isDarkMode ? 'rgba(0,171,68,0.62)' : 'rgba(0,171,68,0.48)'), padding: '6px 10px', borderRadius: '10px', fontSize: '18px', lineHeight: '1', transition: 'color 140ms, transform 120ms', transform: isNextHover ? 'translateY(-3px)' : 'translateY(0)' }}>
-                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                        </button>
+                        <div style={{
+                          fontWeight: 700,
+                          color: suggestionTitleColor,
+                          fontSize: '1.05rem',
+                          marginBottom: '8px',
+                          textAlign: 'center'
+                        }}>
+                          {cat.title}
+                        </div>
+                        <div style={{ display: 'grid', gap: '10px' }}>
+                          {cat.items.map((q, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => handleSuggestionClick(q)}
+                              style={{
+                                textAlign: 'left',
+                                padding: '10px 12px',
+                                borderRadius: '8px',
+                                border: 'none',
+                                background: 'transparent',
+                                color: suggestionTextColor,
+                                cursor: 'pointer',
+                                transition: 'color 160ms, transform 120ms',
+                                width: '100%',
+                                boxSizing: 'border-box',
+                                whiteSpace: 'normal',
+                                wordBreak: 'break-word',
+                                overflowWrap: 'anywhere',
+                                lineHeight: 1.4
+                              }}
+                              onMouseEnter={(e) => { e.currentTarget.style.color = '#00AB44'; }}
+                              onMouseLeave={(e) => { e.currentTarget.style.color = suggestionTextColor; }}
+                            >
+                              {q}
+                            </button>
+                          ))}
+                        </div>
                       </div>
-                      {/* Category title row */}
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-                        <span style={{ fontWeight: 700, color: (isDarkMode ? 'rgba(0,171,68,0.62)' : 'rgba(0,171,68,0.48)'), textAlign: 'center', fontSize: '1.25rem' }}>
-                          {currentGroup.title}
-                        </span>
-                      </div>
-                    </div>
-                    <div style={{ display: 'grid', gap: '8px', width: '100%', gridTemplateColumns: '1fr', maxWidth: '520px', margin: '0 auto', padding: '0 8px', boxSizing: 'border-box' }}>
-                          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-                            {(visibleSuggestionCount ? currentGroup.items.slice(0, visibleSuggestionCount) : currentGroup.items).map((q, idx) => (
-                <button
-                                key={idx}
-                                onClick={() => handleSuggestionClick(q)}
-                                style={{
-                                  textAlign: 'center',
-                                  padding: '8px 12px',
-                                  borderRadius: '8px',
-                                  border: 'none',
-                                  background: 'transparent',
-                                  color: isDarkMode ? 'rgba(0,171,68,0.50)' : 'rgba(0,171,68,0.36)',
-                                  cursor: 'pointer',
-                                  transition: 'color 160ms, transform 120ms',
-                                  width: '100%',
-                                  boxSizing: 'border-box',
-                                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                                  marginLeft: 'auto',
-                                  marginRight: 'auto',
-                                  display: 'block'
-                                }}
-                                onMouseEnter={(e) => { e.currentTarget.style.color = '#00AB44'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
-                                onMouseLeave={(e) => { e.currentTarget.style.color = isDarkMode ? 'rgba(0,171,68,0.50)' : 'rgba(0,171,68,0.36)'; e.currentTarget.style.transform = 'translateY(0)'; }}
-                              >
-                                {q}
-                              </button>
-                            ))}
-                          </div>
-                    </div>
+                    ))}
                   </div>
+                    ); })()}
                 </div>
               )}
 
