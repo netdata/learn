@@ -294,6 +294,11 @@ export default function AskNetdata() {
   const textareaRef = useRef(null);
   const scrollSaveTimer = useRef(null);
   const hasRestoredScroll = useRef(false);
+  const suggestionBoxRef = useRef(null);
+  const [visibleSuggestionCount, setVisibleSuggestionCount] = useState(null);
+  const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
+  const [isPrevHover, setIsPrevHover] = useState(false);
+  const [isNextHover, setIsNextHover] = useState(false);
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
 
@@ -597,7 +602,7 @@ export default function AskNetdata() {
   ];
 
   // Configuration: Number of questions to show per category
-  const QUESTIONS_PER_CATEGORY = 3;
+  const QUESTIONS_PER_CATEGORY = 6;
 
   // Function to randomly select n items from an array
   const getRandomSelection = (arr, n) => {
@@ -606,17 +611,19 @@ export default function AskNetdata() {
     return shuffled.slice(0, n);
   };
 
-  // Get random About Netdata questions
-  const selectedAboutNetdataQuestions = useMemo(() => 
-    getRandomSelection(aboutNetdataQuestions, QUESTIONS_PER_CATEGORY), 
-    []
-  );
+  // Get random About Netdata questions (persist for component lifetime)
+  const selectedAboutNetdataQuestionsRef = useRef();
+  if (!selectedAboutNetdataQuestionsRef.current) {
+    selectedAboutNetdataQuestionsRef.current = getRandomSelection(aboutNetdataQuestions, 6);
+  }
+  const selectedAboutNetdataQuestions = selectedAboutNetdataQuestionsRef.current;
 
-  // Get random deployment questions
-  const selectedDeploymentQuestions = useMemo(() => 
-    getRandomSelection(deploymentQuestions, QUESTIONS_PER_CATEGORY), 
-    []
-  );
+  // Get random deployment questions (persist for component lifetime)
+  const selectedDeploymentQuestionsRef = useRef();
+  if (!selectedDeploymentQuestionsRef.current) {
+    selectedDeploymentQuestionsRef.current = getRandomSelection(deploymentQuestions, 6);
+  }
+  const selectedDeploymentQuestions = selectedDeploymentQuestionsRef.current;
 
   // All operations questions
   const operationsQuestions = [
@@ -629,11 +636,12 @@ export default function AskNetdata() {
     'Why is my agent not connecting to Netdata Cloud?'
   ];
 
-  // Get random operations questions
-  const selectedOperationsQuestions = useMemo(() => 
-    getRandomSelection(operationsQuestions, QUESTIONS_PER_CATEGORY), 
-    []
-  );
+  // Get random operations questions (persist for component lifetime)
+  const selectedOperationsQuestionsRef = useRef();
+  if (!selectedOperationsQuestionsRef.current) {
+    selectedOperationsQuestionsRef.current = getRandomSelection(operationsQuestions, 6);
+  }
+  const selectedOperationsQuestions = selectedOperationsQuestionsRef.current;
 
   // All AI & Machine Learning questions
   const aiMlQuestions = [
@@ -643,11 +651,12 @@ export default function AskNetdata() {
     'Can Netdata identify the root cause of an issue for me?'
   ];
 
-  // Get random AI & ML questions
-  const selectedAiMlQuestions = useMemo(() => 
-    getRandomSelection(aiMlQuestions, QUESTIONS_PER_CATEGORY), 
-    []
-  );
+  // Get random AI & ML questions (persist for component lifetime)
+  const selectedAiMlQuestionsRef = useRef();
+  if (!selectedAiMlQuestionsRef.current) {
+    selectedAiMlQuestionsRef.current = getRandomSelection(aiMlQuestions, 6);
+  }
+  const selectedAiMlQuestions = selectedAiMlQuestionsRef.current;
 
   // All dashboard questions
   const dashboardQuestions = [
@@ -660,11 +669,12 @@ export default function AskNetdata() {
     'How do I share a dashboard view with a teammate?'
   ];
 
-  // Get random dashboard questions
-  const selectedDashboardQuestions = useMemo(() => 
-    getRandomSelection(dashboardQuestions, QUESTIONS_PER_CATEGORY), 
-    []
-  );
+  // Get random dashboard questions (persist for component lifetime)
+  const selectedDashboardQuestionsRef = useRef();
+  if (!selectedDashboardQuestionsRef.current) {
+    selectedDashboardQuestionsRef.current = getRandomSelection(dashboardQuestions, 6);
+  }
+  const selectedDashboardQuestions = selectedDashboardQuestionsRef.current;
 
   // All alerts questions
   const alertsQuestions = [
@@ -675,11 +685,70 @@ export default function AskNetdata() {
     'What alerts should I configure for MySQL monitoring?'
   ];
 
-  // Get random alerts questions
-  const selectedAlertsQuestions = useMemo(() => 
-    getRandomSelection(alertsQuestions, QUESTIONS_PER_CATEGORY), 
-    []
-  );
+  // Get random alerts questions (persist for component lifetime)
+  const selectedAlertsQuestionsRef = useRef();
+  if (!selectedAlertsQuestionsRef.current) {
+    selectedAlertsQuestionsRef.current = getRandomSelection(alertsQuestions, 6);
+  }
+  const selectedAlertsQuestions = selectedAlertsQuestionsRef.current;
+
+  // Build groups (full arrays). User will navigate them with arrows.
+  const groups = useMemo(() => ([
+    { key: 'about', title: 'About Netdata', items: selectedAboutNetdataQuestions },
+    { key: 'deployment', title: 'Deployment', items: selectedDeploymentQuestions },
+    { key: 'operations', title: 'Operations', items: selectedOperationsQuestions },
+    { key: 'ai', title: 'AI & Machine Learning', items: selectedAiMlQuestions },
+    { key: 'dashboards', title: 'Dashboards', items: selectedDashboardQuestions },
+    { key: 'alerts', title: 'Alerts', items: selectedAlertsQuestions }
+  ]), [selectedAboutNetdataQuestions, selectedDeploymentQuestions, selectedOperationsQuestions, selectedAiMlQuestions, selectedDashboardQuestions, selectedAlertsQuestions]);
+
+  const currentGroup = groups.length ? groups[currentGroupIndex % groups.length] : null;
+
+  const goPrevGroup = () => setCurrentGroupIndex(i => (i - 1 + groups.length) % groups.length);
+  const goNextGroup = () => setCurrentGroupIndex(i => (i + 1) % groups.length);
+
+  // Compute how many suggestion items fit in the viewport below the suggestion box top
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (!currentGroup) return;
+
+    let rafId = null;
+    const computeVisible = () => {
+      const container = suggestionBoxRef.current;
+      if (!container) return;
+      const rect = container.getBoundingClientRect();
+      const top = rect.top;
+      const available = window.innerHeight - top - 24; // 24px bottom margin
+
+      // Measure item height
+      const firstBtn = container.querySelector('button');
+      let itemHeight = 36; // fallback
+      if (firstBtn) {
+        const r = firstBtn.getBoundingClientRect();
+        itemHeight = r.height + 6; // include gap
+      }
+
+      // We want a single column; compute how many rows fit and cap to 6
+      const rows = Math.max(1, Math.floor(available / itemHeight));
+      const cappedRows = Math.min(rows, 6);
+
+      setVisibleSuggestionCount(curr => {
+        const items = currentGroup ? currentGroup.items.length : 0;
+        return Math.min(items, cappedRows);
+      });
+    };
+
+    // Compute on next frame to allow DOM to layout
+    rafId = window.requestAnimationFrame(computeVisible);
+    const t = setTimeout(computeVisible, 120);
+    window.addEventListener('resize', computeVisible);
+
+    return () => {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      clearTimeout(t);
+      window.removeEventListener('resize', computeVisible);
+    };
+  }, [currentGroup]);
 
   // Combine all questions for placeholder rotation
   const allQuestions = useMemo(() => {
@@ -1030,18 +1099,26 @@ export default function AskNetdata() {
   };
 
   const suggestionContainerStyle = {
-    marginTop: 'auto',
-    marginBottom: '10px'
+  marginTop: 'auto',
+  marginBottom: '10px',
+  width: '100%',
+  maxWidth: '980px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  padding: '0 24px',
+  boxSizing: 'border-box'
   };
 
   const suggestionGridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '20px'
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+  gap: '20px',
+  justifyItems: 'center',
+  alignItems: 'start'
   };
 
   const suggestionButtonStyle = {
-    textAlign: 'left',
+  textAlign: 'center',
     padding: '0.5rem',
     borderRadius: '6px',
     border: '1px solid transparent',
@@ -1324,348 +1401,92 @@ export default function AskNetdata() {
               </div>
             </div>
 
+              {/* Single random suggestion group rendered absolutely below the centered chatbox */}
+              {currentGroup && (
+                <div style={{
+                  position: 'absolute',
+                  left: '50%',
+                  top: 'calc(35% + 160px)', // place it below the floating container; doesn't affect centering
+                  transform: 'translateX(-50%)',
+                  width: 'min(640px, 84%)',
+                  pointerEvents: 'auto',
+                  zIndex: 1,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'flex-start',
+                  gap: '12px'
+                }}>
+                  <div ref={suggestionBoxRef} style={{
+                    background: 'transparent',
+                    border: 'none',
+                    color: isDarkMode ? 'rgba(0,171,68,0.48)' : 'rgba(0,171,68,0.48)',
+                    borderRadius: '12px',
+                    padding: '8px 18px',
+                    boxSizing: 'border-box',
+                    width: 'min(560px, 76%)',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center'
+                  }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px', marginBottom: '8px' }}>
+                      <div style={{ display: 'flex', gap: '18px', alignItems: 'center' }}>
+                        <button onClick={goPrevGroup} aria-label="Previous category" onMouseEnter={() => setIsPrevHover(true)} onMouseLeave={() => setIsPrevHover(false)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: isPrevHover ? '#00AB44' : (isDarkMode ? 'rgba(0,171,68,0.48)' : 'rgba(0,171,68,0.48)'), padding: '6px 10px', borderRadius: '10px', fontSize: '18px', lineHeight: '1', transition: 'color 140ms, transform 120ms', transform: isPrevHover ? 'translateY(-3px)' : 'translateY(0)' }}>
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        </button>
+                        <button onClick={goNextGroup} aria-label="Next category" onMouseEnter={() => setIsNextHover(true)} onMouseLeave={() => setIsNextHover(false)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: isNextHover ? '#00AB44' : (isDarkMode ? 'rgba(0,171,68,0.48)' : 'rgba(0,171,68,0.48)'), padding: '6px 10px', borderRadius: '10px', fontSize: '18px', lineHeight: '1', transition: 'color 140ms, transform 120ms', transform: isNextHover ? 'translateY(-3px)' : 'translateY(0)' }}>
+                          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        </button>
+                      </div>
+                      <div style={{ fontWeight: 700, color: (isDarkMode ? 'rgba(0,171,68,0.48)' : 'rgba(0,171,68,0.48)'), textAlign: 'center' }}>
+                        {currentGroup.title}
+                      </div>
+                    </div>
+                    <div style={{ display: 'grid', gap: '8px', width: '100%', gridTemplateColumns: '1fr', maxWidth: '520px', margin: '0 auto', padding: '0 8px', boxSizing: 'border-box' }}>
+                          {(visibleSuggestionCount ? currentGroup.items.slice(0, visibleSuggestionCount) : currentGroup.items).map((q, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleSuggestionClick(q)}
+                          style={{
+                            textAlign: 'center',
+                            padding: '8px 12px',
+                            borderRadius: '8px',
+                            border: 'none',
+                            background: 'transparent',
+                            color: isDarkMode ? 'rgba(0,171,68,0.36)' : 'rgba(0,171,68,0.36)',
+                            cursor: 'pointer',
+                            transition: 'color 160ms, transform 120ms',
+                            width: '100%',
+                            boxSizing: 'border-box',
+                            whiteSpace: 'nowrap',
+                            overflow: 'visible',
+                            textOverflow: 'clip'
+                          }}
+                          onMouseEnter={(e) => { e.currentTarget.style.color = '#00AB44'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.color = isDarkMode ? 'rgba(0,171,68,0.36)' : 'rgba(0,171,68,0.36)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                        >
+                          {q}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
             {/* Title and Categorized Questions together */}
             <div style={suggestionContainerStyle}>
               
               <div style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-                gap: '0.375rem',
-                marginBottom: '0.5rem'
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '0.5rem',
+                marginBottom: '0.5rem',
+                width: '100%',
+                maxWidth: '880px',
+                margin: '0 auto',
+                boxSizing: 'border-box'
               }}>
-              {/*
-              <div style={{
-                padding: '0.375rem',
-                borderRadius: '12px'
-              }}>
-                <button
-                  onClick={() => setExpandedCategory(expandedCategory === 'about' ? null : 'about')}
-                  style={{ 
-                    fontSize: '1.125rem', 
-                    fontWeight: 600, 
-                    color: expandedCategory === 'about' ? 'white' : '#00AB44',
-                    marginBottom: '0.375rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.5rem',
-                    background: expandedCategory === 'about' ? '#00AB44' : 'transparent',
-                    border: `2px solid #00AB44`,
-                    cursor: 'pointer',
-                    padding: '0.75rem 1.25rem',
-                    borderRadius: '50px',
-                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                    transform: 'scale(1)'
-                  }}
-                  onMouseEnter={(e) => {
-                    if (expandedCategory !== 'about') {
-                      e.currentTarget.style.backgroundColor = 'rgba(0, 171, 68, 0.1)';
-                    }
-                    e.currentTarget.style.transform = 'scale(1.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    if (expandedCategory !== 'about') {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                    } else {
-                      e.currentTarget.style.backgroundColor = '#00AB44';
-                    }
-                    e.currentTarget.style.transform = 'scale(1)';
-                  }}
-                >
-                  <span>✨</span> About Netdata
-                </button>
-                {expandedCategory === 'about' && (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.125rem' }}>
-                    {selectedAboutNetdataQuestions.map((question, idx) => (
-                    <button 
-                      key={idx}
-                      onClick={() => handleSuggestionClick(question)}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.5rem',
-                        borderRadius: '6px',
-                        border: '1px solid transparent',
-                        backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                        cursor: 'pointer',
-                        fontSize: '0.875rem',
-                        color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                        transition: 'all 0.2s'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#00AB44';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'transparent';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                          <use href="#corner-arrow-icon" />
-                        </svg>
-                        <span>{question}</span>
-                      </div>
-                    </button>
-                  ))}
-                  </div>
-                )}
-              </div>
-
-              <div style={{
-                padding: '0.375rem',
-                borderRadius: '12px'
-              }}>
-                <div style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: 600, 
-                  color: '#00AB44',
-                  marginBottom: '0.375rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem'
-                }}>
-                  <span>🚀</span> Deployment
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  {selectedDeploymentQuestions.map((question, idx) => (
-                    <button 
-                      key={idx}
-                      onClick={() => handleSuggestionClick(question)}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.5rem',
-                        borderRadius: '6px',
-                        border: '1px solid transparent',
-                        backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                        cursor: 'pointer',
-                        fontSize: '0.875rem',
-                        color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                        transition: 'all 0.2s'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#00AB44';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'transparent';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                          <use href="#corner-arrow-icon" />
-                        </svg>
-                        <span>{question}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div style={{
-                padding: '0.375rem',
-                borderRadius: '12px'
-              }}>
-                <div style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: 600, 
-                  color: '#00AB44',
-                  marginBottom: '0.375rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem'
-                }}>
-                  <span>⚙️</span> Operations
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  {selectedOperationsQuestions.map((question, idx) => (
-                    <button 
-                      key={idx}
-                      onClick={() => handleSuggestionClick(question)}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.5rem',
-                        borderRadius: '6px',
-                        border: '1px solid transparent',
-                        backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                        cursor: 'pointer',
-                        fontSize: '0.875rem',
-                        color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                        transition: 'all 0.2s'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#00AB44';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'transparent';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                          <use href="#corner-arrow-icon" />
-                        </svg>
-                        <span>{question}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div style={{
-                padding: '0.375rem',
-                borderRadius: '12px'
-              }}>
-                <div style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: 600, 
-                  color: '#00AB44',
-                  marginBottom: '0.375rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem'
-                }}>
-                  <span>🤖</span> AI & Machine Learning
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  {selectedAiMlQuestions.map((question, idx) => (
-                    <button 
-                      key={idx}
-                      onClick={() => handleSuggestionClick(question)}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.5rem',
-                        borderRadius: '6px',
-                        border: '1px solid transparent',
-                        backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                        cursor: 'pointer',
-                        fontSize: '0.875rem',
-                        color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                        transition: 'all 0.2s'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#00AB44';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'transparent';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                          <use href="#corner-arrow-icon" />
-                        </svg>
-                        <span>{question}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div style={{
-                padding: '0.375rem',
-                borderRadius: '12px'
-              }}>
-                <div style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: 600, 
-                  color: '#00AB44',
-                  marginBottom: '0.375rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem'
-                }}>
-                  <span>📊</span> Dashboards
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  {selectedDashboardQuestions.map((question, idx) => (
-                    <button 
-                      key={idx}
-                      onClick={() => handleSuggestionClick(question)}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.5rem',
-                        borderRadius: '6px',
-                        border: '1px solid transparent',
-                        backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                        cursor: 'pointer',
-                        fontSize: '0.875rem',
-                        color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                        transition: 'all 0.2s'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#00AB44';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'transparent';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                          <use href="#corner-arrow-icon" />
-                        </svg>
-                        <span>{question}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div style={{
-                padding: '0.375rem',
-                borderRadius: '12px'
-              }}>
-                <div style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: 600, 
-                  color: '#00AB44',
-                  marginBottom: '0.375rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem'
-                }}>
-                  <span>🔔</span> Alerts
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  {selectedAlertsQuestions.map((question, idx) => (
-                    <button 
-                      key={idx}
-                      onClick={() => handleSuggestionClick(question)}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.5rem',
-                        borderRadius: '6px',
-                        border: '1px solid transparent',
-                        backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                        cursor: 'pointer',
-                        fontSize: '0.875rem',
-                        color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                        transition: 'all 0.2s'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderColor = '#00AB44';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderColor = 'transparent';
-                        e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                          <use href="#corner-arrow-icon" />
-                        </svg>
-                        <span>{question}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div> 
-              */}
             </div>
             </div>
           </>
