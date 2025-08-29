@@ -367,23 +367,52 @@ export default function AskNetdata() {
   const adjustTextareaHeight = () => {
     const textarea = textareaRef.current;
     if (!textarea) return;
-    
-    // Reset height to calculate scroll height correctly
-    textarea.style.height = '56px';
-    
-    // Calculate new height
+    const wrapper = textarea.parentElement;
+
+    // Reset height to auto to get the correct scrollHeight
+    textarea.style.height = 'auto';
+
     const scrollHeight = textarea.scrollHeight;
-    const maxHeight = typeof window !== 'undefined' ? Math.max(200, window.innerHeight / 3) : 200;
-    
-    // If user manually resized beyond max, respect their choice
-    const currentHeight = parseInt(textarea.style.height);
-    if (currentHeight > maxHeight && scrollHeight <= currentHeight) {
-      return; // Keep user's manual resize
+    const maxHeight = 200; // Max height for the textarea
+
+    const newTextareaHeight = Math.min(scrollHeight, maxHeight);
+    textarea.style.height = `${newTextareaHeight}px`;
+
+    // Adjust the wrapper's height to contain the textarea, with a minimum height
+    if (wrapper) {
+      const newWrapperHeight = Math.max(44, newTextareaHeight);
+      wrapper.style.height = `${newWrapperHeight}px`;
     }
-    
-    // Set new height
-    const newHeight = Math.min(scrollHeight, maxHeight);
-    textarea.style.height = `${newHeight}px`;
+
+    // Toggle the .is-scrollable class so our CSS shows the scrollbar only when needed
+    try {
+      // If the scrollHeight is larger than the visible clientHeight, content overflows
+      const canScroll = textarea.scrollHeight > textarea.clientHeight + 1;
+      if (canScroll) {
+        textarea.classList.add('is-scrollable');
+      } else {
+        textarea.classList.remove('is-scrollable');
+      }
+    } catch (err) {
+      // Defensive: ignore if classList isn't available for any reason
+    }
+  };
+
+  // Prevent page from scrolling when the user scrolls inside the textarea
+  const handleTextareaWheel = (e) => {
+    const ta = textareaRef.current;
+    if (!ta) return;
+
+    const delta = e.deltaY;
+    const atTop = ta.scrollTop === 0;
+    const atBottom = ta.scrollHeight - ta.clientHeight - ta.scrollTop <= 1;
+
+    // If textarea can scroll in the direction of the wheel, stop propagation
+    if ((delta < 0 && !atTop) || (delta > 0 && !atBottom)) {
+      e.stopPropagation();
+      // Let the textarea handle the scroll
+    }
+    // Otherwise allow the page to scroll
   };
 
   useEffect(() => {
@@ -887,24 +916,22 @@ export default function AskNetdata() {
   const containerStyle = {
     display: 'flex',
     flexDirection: 'column',
-    height: 'calc(100vh - var(--ifm-navbar-height))',
+    justifyContent: 'center', // Center content vertically
+    alignItems: 'center', // Center content horizontally
+    minHeight: 'calc(100vh - var(--ifm-navbar-height))', // Full viewport height minus navbar
     background: 'transparent',
     position: 'relative',
-    margin: '-24px -24px -24px -24px',
-    padding: '0'
+    margin: '0', // Remove negative margins
+    padding: '20px'
   };
 
   const chatAreaStyle = {
-    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    minHeight: '100vh',
-    padding: '40px 20px',
-    marginTop: 'calc(-1 * var(--ifm-navbar-height))',
-    paddingTop: 'calc(40px + var(--ifm-navbar-height))'
-    // Removed overflowY: 'auto' - page expands vertically
+    width: '100%',
+    maxWidth: '800px', // Consistent max-width
   };
 
   const welcomeStyle = {
@@ -917,18 +944,21 @@ export default function AskNetdata() {
   };
 
   const floatingContainerStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    maxWidth: '800px',
-    margin: '0 auto'
+  position: 'absolute',
+  left: '50%',
+  top: '40%',
+  transform: 'translate(-50%, -50%)',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  maxWidth: '800px',
+  margin: '0',
+  pointerEvents: 'auto'
   };
 
   const welcomeTitleStyle = {
-    fontSize: '48px',
-    fontWeight: '700',
     color: '#00AB44',
     marginBottom: '8px',
     lineHeight: '1',
@@ -1016,22 +1046,24 @@ export default function AskNetdata() {
   };
 
   const chatInputStyle = {
-    flex: 1,
-    padding: '12px 16px',
+    position: 'absolute',
+    top: '50%',
+    left: '16px',
+    right: '50px',
+    transform: 'translateY(-50%)',
+    zIndex: 2,
+    width: 'calc(100% - 20px)',
+    backgroundColor: 'transparent',
     border: 'none',
-    borderRadius: '50px',
-    fontSize: '16px',
-    resize: 'none',
-    minHeight: '44px',
-    maxHeight: '100px',
-    background: 'transparent',
     color: isDarkMode ? 'var(--ifm-font-color-base)' : '#1f2937',
+    fontSize: '16px',
     fontFamily: 'inherit',
-    transition: 'border-color 0.2s',
-    outline: 'none',
     lineHeight: '1.4',
-    display: 'flex',
-    alignItems: 'center'
+    padding: 0,
+    resize: 'none',
+    outline: 'none',
+    height: 'auto', // Let height be determined by content
+    maxHeight: '100px', // Match original maxHeight
   };
 
   const inputWrapperStyle = {
@@ -1078,6 +1110,15 @@ export default function AskNetdata() {
 
   return (
     <div style={containerStyle}>
+      <style>{`
+        /* Disable native resize handle but allow internal vertical scrolling */
+  .asknetdata-textarea { resize: none !important; overflow-y: auto !important; -webkit-appearance: none !important; appearance: none !important; }
+  /* Hide the tiny native resize handle on WebKit/Blink */
+  .asknetdata-textarea::-webkit-resizer, .asknetdata-textarea::-webkit-resize-handle { display: none !important; }
+  /* By default hide the scrollbar; show it only when the textarea has .is-scrollable */
+  .asknetdata-textarea:not(.is-scrollable) { scrollbar-width: none; -ms-overflow-style: none; }
+  .asknetdata-textarea:not(.is-scrollable)::-webkit-scrollbar { display: none; }
+      `}</style>
       <div ref={chatAreaRef} style={chatAreaStyle}>
         {showWelcome ? (
           <>
@@ -1093,29 +1134,29 @@ export default function AskNetdata() {
             {/* Floating Title and Input Container */}
             <div style={floatingContainerStyle}>
               <div style={welcomeStyle}>
-                <h1 style={welcomeTitleStyle}>
+                <h2 style={welcomeTitleStyle}>
                   Ask Netdata Docs
-                </h1>
+                </h2>
                 <p style={{ 
                   fontSize: '20px', 
                   color: isDarkMode ? 'var(--ifm-color-secondary)' : '#6b7280', 
                   marginBottom: '0', 
                   lineHeight: '1.3', 
-                  maxWidth: '600px',
                   margin: '0 auto',
                   textAlign: 'center'
                 }}>
-                  Get instant answers about monitoring, troubleshooting, and optimizing your infrastructure
+                  Placeholder text below title
                 </p>
               </div>
               
               <div style={inputContainerStyle}>
                 <form onSubmit={handleSubmit} style={inputFormStyle}>
-                  <div style={inputWrapperStyle}>
+                  <div style={{ ...inputWrapperStyle, overflow: 'visible' }}>
                     <div style={animatedPlaceholderStyle}>
                       {currentPlaceholder || "Ask anything about Netdata, in any language... (Shift+Enter for new line)"}
                     </div>
                     <textarea
+                      className="asknetdata-textarea"
                       ref={(el) => {
                         inputRef.current = el;
                         textareaRef.current = el;
@@ -1128,6 +1169,7 @@ export default function AskNetdata() {
                       onKeyDown={handleKeyDown}
                       onFocus={() => setIsInputFocused(true)}
                       onBlur={() => setIsInputFocused(false)}
+                      onWheel={handleTextareaWheel}
                       placeholder=""
                       style={chatInputStyle}
                       rows={1}
