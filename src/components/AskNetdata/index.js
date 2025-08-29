@@ -272,6 +272,13 @@ export default function AskNetdata() {
     return true;
   });
   const [isInputFocused, setIsInputFocused] = useState(false);
+  // Hover state for the send button so we can animate between dim and full green
+  const [isSendHovered, setIsSendHovered] = useState(false);
+  // Ref to pause placeholder cycling while hovering the send button
+  const sendHoverRef = useRef(false);
+  // Track which messages have animated in (by id)
+  const [appearedMessages, setAppearedMessages] = useState(() => new Set());
+  const appearTimeouts = useRef([]);
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [currentPlaceholder, setCurrentPlaceholder] = useState('');
   const [isPlaceholderAnimating, setIsPlaceholderAnimating] = useState(false);
@@ -694,6 +701,9 @@ export default function AskNetdata() {
     setCurrentPlaceholder(allQuestions[0]);
     
     const interval = setInterval(() => {
+      // If paused (user hovering send button), skip rotation
+      if (sendHoverRef.current) return;
+
       // Start fade out animation
       setIsPlaceholderAnimating(true);
       
@@ -937,7 +947,11 @@ export default function AskNetdata() {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      handleSubmit();
+      if (!input.trim()) {
+        handleSubmit(null, currentPlaceholder || '');
+      } else {
+        handleSubmit();
+      }
     }
   };
 
@@ -1148,10 +1162,11 @@ export default function AskNetdata() {
     left: '16px',
     right: '50px',
     fontSize: '16px',
-    color: isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
+  // Turn placeholder green when the send button is hovered and there's no user input
+  color: (isSendHovered && !input.trim()) ? '#00AB44' : (isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'),
     fontFamily: 'inherit',
     pointerEvents: 'none',
-    transition: 'all 0.4s ease',
+  transition: 'all 0.4s ease, color 220ms ease',
     transform: isPlaceholderAnimating ? 'translateY(calc(-50% - 5px))' : 'translateY(-50%)',
     opacity: isPlaceholderAnimating ? 0 : (input ? 0 : 1),
     zIndex: 1,
@@ -1178,6 +1193,43 @@ export default function AskNetdata() {
     transition: 'background 0.2s',
     flexShrink: 0
   };
+
+
+  // Dimmed background color (solid) for light/dark modes
+  const dimmedBg = isDarkMode ? 'rgba(0,171,68,0.12)' : 'rgba(0,171,68,0.08)';
+  const computedSendButtonStyle = {
+    ...sendButtonStyle,
+    background: input.trim() ? '#00AB44' : dimmedBg,
+    // On hover, always show full green background (unless disabled)
+    ...(isSendHovered && !isLoading ? { background: '#00AB44' } : {})
+  };
+
+  // When messages array changes, animate them in with a small stagger
+  useEffect(() => {
+    // Clear any pending timeouts
+    appearTimeouts.current.forEach(id => clearTimeout(id));
+    appearTimeouts.current = [];
+
+    const newIds = messages.map(m => m.id);
+    const newSet = new Set();
+    let delay = 0;
+    newIds.forEach(id => {
+      const t = setTimeout(() => {
+        setAppearedMessages(prev => {
+          const copy = new Set(prev);
+          copy.add(id);
+          return copy;
+        });
+      }, delay);
+      appearTimeouts.current.push(t);
+      delay += 90; // stagger gap
+    });
+
+    return () => {
+      appearTimeouts.current.forEach(id => clearTimeout(id));
+      appearTimeouts.current = [];
+    };
+  }, [messages]);
 
   return (
     <div style={containerStyle}>
@@ -1242,15 +1294,27 @@ export default function AskNetdata() {
                       onBlur={() => setIsInputFocused(false)}
                       onWheel={handleTextareaWheel}
                       placeholder=""
-                      style={chatInputStyle}
+                      style={{ ...chatInputStyle, caretColor: isSendHovered ? 'transparent' : undefined }}
                       rows={1}
                       disabled={isLoading}
                     />
                   </div>
                   <button
-                    type="submit"
-                    style={sendButtonStyle}
-                    disabled={!input.trim() || isLoading}
+                    type="button"
+                    style={computedSendButtonStyle}
+                    disabled={isLoading}
+                    onMouseEnter={() => { setIsSendHovered(true); sendHoverRef.current = true; }}
+                    onMouseLeave={() => { setIsSendHovered(false); sendHoverRef.current = false; }}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (isLoading) return;
+                      if (!input.trim()) {
+                        // Submit the current placeholder when input is empty
+                        handleSubmit(null, currentPlaceholder || '');
+                      } else {
+                        handleSubmit();
+                      }
+                    }}
                   >
                     <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
                       <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
@@ -1633,12 +1697,15 @@ export default function AskNetdata() {
               </div>
             )}
             {messages.map((message) => {
-              const isLatestAssistant = lastAssistantMessageId.current === message.id;
-              const appearStyle = isLatestAssistant ? {
-                opacity: isLoading ? 0 : 1,
-                transform: isLoading ? 'translateY(8px)' : 'translateY(0)',
+              const hasAppeared = appearedMessages.has(message.id);
+              const appearStyle = hasAppeared ? {
+                opacity: 1,
+                transform: 'translateY(0)',
                 transition: 'opacity 420ms ease, transform 420ms ease'
-              } : {};
+              } : {
+                opacity: 0,
+                transform: 'translateY(8px)'
+              };
 
               return (
               <div 
