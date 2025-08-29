@@ -29,7 +29,6 @@
 		"axios": "^1.8.2",
 		"babel": "^6.23.0",
 		"clsx": "^1.1.1",
-		"docusaurus-tailwindcss-loader": "file:plugins/docusaurus-tailwindcss-loader",
 		"dotenv": "^8.2.0",
 		"postcss": "^8.4.31",
 		"postcss-import": "^15.1.0",
