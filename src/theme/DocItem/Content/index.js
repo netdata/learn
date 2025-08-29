@@ -4,7 +4,7 @@ import { ThemeClassNames } from '@docusaurus/theme-common';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
-import EditThisPage from '../../CustomEditThisPage';
+import EditThisPage from '@theme/EditThisPage';
 /**
  Title can be declared inside md content or declared through
  front matter and added manually. To make both cases consistent,
@@ -51,10 +51,12 @@ function EditMetaRow({
 }
 
 export default function DocItemContent({ children }) {
-  const { metadata } = useDoc();
+  const { metadata, frontMatter } = useDoc();
   const { editUrl, lastUpdatedAt, formattedLastUpdatedAt, lastUpdatedBy, tags } =
     metadata;
   const syntheticTitle = useSyntheticTitle();
+  const isAskNetdata = frontMatter.id === 'ask-netdata';
+  
   return (
     <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
       {syntheticTitle && (
@@ -62,12 +64,14 @@ export default function DocItemContent({ children }) {
           <Heading as="h1">{syntheticTitle}</Heading>
         </header>
       )}
-      <EditMetaRow
-        editUrl={metadata.editUrl}
-        lastUpdatedAt={metadata.lastUpdatedAt}
-        lastUpdatedBy={metadata.lastUpdatedBy}
-        formattedLastUpdatedAt={metadata.formattedLastUpdatedAt}
-      />
+      {!isAskNetdata && (
+        <EditMetaRow
+          editUrl={metadata.editUrl}
+          lastUpdatedAt={metadata.lastUpdatedAt}
+          lastUpdatedBy={metadata.lastUpdatedBy}
+          formattedLastUpdatedAt={metadata.formattedLastUpdatedAt}
+        />
+      )}
       <br />
       <MDXContent>{children}</MDXContent>
     </div>
