@@ -290,6 +290,47 @@ export default function AskNetdata() {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
 
+  // Keep track of original overflow styles so we can restore them
+  const originalOverflow = useRef({ html: '', body: '' });
+
+  // Disable page scroll while the welcome view is visible or while waiting for an answer
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const shouldLock = showWelcome || isLoading;
+
+    const html = document.documentElement;
+    const body = document.body;
+
+    if (shouldLock) {
+      // Save existing values the first time
+      if (originalOverflow.current.html === '') originalOverflow.current.html = html.style.overflow || '';
+      if (originalOverflow.current.body === '') originalOverflow.current.body = body.style.overflow || '';
+
+      // Prevent scrolling
+      html.style.overflow = 'hidden';
+      body.style.overflow = 'hidden';
+    } else {
+      // Restore previous values
+      try {
+        html.style.overflow = originalOverflow.current.html || '';
+        body.style.overflow = originalOverflow.current.body || '';
+      } catch (err) {
+        // ignore
+      }
+      // Clear saved values so future mounts can capture fresh originals
+      originalOverflow.current = { html: '', body: '' };
+    }
+
+    // Cleanup on unmount: restore whatever we saved
+    return () => {
+      try {
+        document.documentElement.style.overflow = originalOverflow.current.html || '';
+        document.body.style.overflow = originalOverflow.current.body || '';
+      } catch (err) {}
+    };
+  }, [showWelcome, isLoading]);
+
   // Save messages to sessionStorage whenever they change
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -931,7 +972,16 @@ export default function AskNetdata() {
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    maxWidth: '800px', // Consistent max-width
+  maxWidth: '800px', // Consistent max-width
+  transition: 'max-width 520ms cubic-bezier(0.2, 0, 0, 1), padding 420ms ease',
+  willChange: 'max-width'
+  };
+
+  // When showing messages (welcome hidden), allow the chat area to expand
+  // and use the full available width; keep the compact maxWidth for the welcome view.
+  const computedChatAreaStyle = {
+    ...chatAreaStyle,
+    maxWidth: showWelcome ? chatAreaStyle.maxWidth : '100%'
   };
 
   const welcomeStyle = {
@@ -946,7 +996,7 @@ export default function AskNetdata() {
   const floatingContainerStyle = {
   position: 'absolute',
   left: '50%',
-  top: '40%',
+  top: '35%',
   transform: 'translate(-50%, -50%)',
   display: 'flex',
   flexDirection: 'column',
@@ -1008,6 +1058,14 @@ export default function AskNetdata() {
     padding: '10px 20px'
   };
 
+  // Messages content should fade in after the container expands
+  const computedMessagesContainerStyle = {
+    ...messagesContainerStyle,
+    opacity: showWelcome ? 0 : 1,
+    transition: 'opacity 520ms ease 260ms', // delay so expansion happens first
+    willChange: 'opacity'
+  };
+
   const messageStyle = {
     marginBottom: '32px'
   };
@@ -1035,6 +1093,15 @@ export default function AskNetdata() {
     borderRadius: '50px',
     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
     width: '100%'
+  };
+
+  // Animate the input pill separately: scale and fade subtly when the layout expands
+  const computedInputContainerStyle = {
+    ...inputContainerStyle,
+    transition: 'transform 520ms cubic-bezier(0.2, 0, 0, 1), opacity 320ms ease',
+    transform: showWelcome ? 'translateY(0) scale(1)' : 'translateY(-6px) scale(0.98)',
+    opacity: showWelcome ? 1 : 0.98,
+    willChange: 'transform, opacity'
   };
 
   const inputFormStyle = {
@@ -1119,7 +1186,7 @@ export default function AskNetdata() {
   .asknetdata-textarea:not(.is-scrollable) { scrollbar-width: none; -ms-overflow-style: none; }
   .asknetdata-textarea:not(.is-scrollable)::-webkit-scrollbar { display: none; }
       `}</style>
-      <div ref={chatAreaRef} style={chatAreaStyle}>
+  <div ref={chatAreaRef} style={computedChatAreaStyle}>
         {showWelcome ? (
           <>
             {/* Corner Arrow Icon */}
@@ -1149,7 +1216,7 @@ export default function AskNetdata() {
                 </p>
               </div>
               
-              <div style={inputContainerStyle}>
+              <div style={computedInputContainerStyle}>
                 <form onSubmit={handleSubmit} style={inputFormStyle}>
                   <div style={{ ...inputWrapperStyle, overflow: 'visible' }}>
                     <div style={animatedPlaceholderStyle}>
@@ -1535,7 +1602,7 @@ export default function AskNetdata() {
             </div>
           </>
         ) : (
-          <div style={messagesContainerStyle}>
+          <div style={computedMessagesContainerStyle}>
             {messages.length > 0 && (
               <div style={{ textAlign: 'right', marginBottom: '20px' }}>
                 <button
