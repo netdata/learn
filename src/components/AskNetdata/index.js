@@ -1098,10 +1098,14 @@ export default function AskNetdata() {
   // Animate the input pill separately: scale and fade subtly when the layout expands
   const computedInputContainerStyle = {
     ...inputContainerStyle,
-    transition: 'transform 520ms cubic-bezier(0.2, 0, 0, 1), opacity 320ms ease',
+    transition: 'transform 520ms cubic-bezier(0.2, 0, 0, 1), opacity 320ms ease, box-shadow 260ms ease',
     transform: showWelcome ? 'translateY(0) scale(1)' : 'translateY(-6px) scale(0.98)',
     opacity: showWelcome ? 1 : 0.98,
-    willChange: 'transform, opacity'
+    // Add a green outline ring when the textarea is focused without affecting layout
+    boxShadow: isInputFocused
+      ? `${inputContainerStyle.boxShadow}, 0 0 0 3px rgba(0, 171, 68, 0.12), 0 0 12px rgba(0, 171, 68, 0.06)`
+      : inputContainerStyle.boxShadow,
+    willChange: 'transform, opacity, box-shadow'
   };
 
   const inputFormStyle = {
@@ -1628,7 +1632,15 @@ export default function AskNetdata() {
                 </button>
               </div>
             )}
-            {messages.map((message) => (
+            {messages.map((message) => {
+              const isLatestAssistant = lastAssistantMessageId.current === message.id;
+              const appearStyle = isLatestAssistant ? {
+                opacity: isLoading ? 0 : 1,
+                transform: isLoading ? 'translateY(8px)' : 'translateY(0)',
+                transition: 'opacity 420ms ease, transform 420ms ease'
+              } : {};
+
+              return (
               <div 
                 key={message.id} 
                 ref={(el) => { if (el) messageRefs.current[message.id] = el; }}
@@ -1640,7 +1652,8 @@ export default function AskNetdata() {
                     borderColor: isDarkMode ? 'rgba(220, 38, 38, 0.3)' : '#fecaca',
                     borderRadius: '8px',
                     padding: '16px'
-                  } : {})
+                  } : {}),
+                  ...appearStyle
                 }}>
                 <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
                   <div style={{
@@ -1802,7 +1815,8 @@ export default function AskNetdata() {
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
             {isLoading && (
               <div style={{ ...messageStyle, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px 0' }}>
                 <div style={{ position: 'relative', width: '300px', height: '4px', overflow: 'hidden', borderRadius: '2px', backgroundColor: 'rgba(156, 163, 175, 0.1)' }}>
@@ -1813,9 +1827,9 @@ export default function AskNetdata() {
                     left: '0',
                     width: '100px',
                     height: '100%',
-                    background: 'linear-gradient(90deg, transparent, #00d4ff, #00ab44, transparent)',
+                    background: 'linear-gradient(90deg, transparent, #00ab44, transparent)',
                     animation: 'scanBackForth 2s ease-in-out infinite',
-                    boxShadow: '0 0 10px rgba(0, 212, 255, 0.8), 0 0 20px rgba(0, 171, 68, 0.6)'
+                    boxShadow: '0 0 10px rgba(0, 171, 68, 0.32), 0 0 20px rgba(0, 171, 68, 0.16)'
                   }}></div>
                 </div>
               </div>
