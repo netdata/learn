@@ -14,6 +14,28 @@ export default function AskNetdataFixed() {
 
   useEffect(() => {
     console.log('AskNetdata component is mounting!');
+    
+    // Hide the footer and other page elements
+    const footer = document.querySelector('footer');
+    const editPage = document.querySelector('[class*="editThisPage"]');
+    const pagination = document.querySelector('[class*="pagination"]');
+    const lastUpdated = document.querySelector('[class*="lastUpdated"]');
+    const breadcrumbs = document.querySelector('[class*="breadcrumbs"]');
+    
+    const elementsToHide = [footer, editPage, pagination, lastUpdated, breadcrumbs].filter(Boolean);
+    
+    // Store original display values
+    const originalDisplays = elementsToHide.map(el => el.style.display);
+    
+    // Hide elements
+    elementsToHide.forEach(el => el.style.display = 'none');
+    
+    // Cleanup function to restore elements when component unmounts
+    return () => {
+      elementsToHide.forEach((el, index) => {
+        el.style.display = originalDisplays[index];
+      });
+    };
   }, []);
 
   useEffect(() => {
@@ -197,19 +219,21 @@ export default function AskNetdataFixed() {
   const containerStyle = {
     display: 'flex',
     flexDirection: 'column',
-    height: 'calc(100vh - var(--ifm-navbar-height))',
-    background: 'linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)'
+    minHeight: 'calc(100vh - var(--ifm-navbar-height))',
+    background: 'linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%)',
+    margin: '-24px -24px 0 -24px',
+    padding: '0'
   };
 
   const chatAreaStyle = {
     flex: 1,
     overflowY: 'auto',
-    paddingBottom: '100px'
+    paddingBottom: '120px'
   };
 
   const welcomeStyle = {
     maxWidth: '900px',
-    margin: '60px auto',
+    margin: '20px auto',
     padding: '20px',
     textAlign: 'center'
   };
@@ -228,7 +252,7 @@ export default function AskNetdataFixed() {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
     gap: '20px',
-    marginTop: '40px'
+    marginTop: '24px'
   };
 
   const suggestionCardStyle = {
@@ -321,7 +345,7 @@ export default function AskNetdataFixed() {
         {showWelcome ? (
           <div style={welcomeStyle}>
             <h1 style={welcomeTitleStyle}>Ask Netdata AI</h1>
-            <p style={{ fontSize: '20px', color: '#6b7280', marginBottom: '48px' }}>
+            <p style={{ fontSize: '20px', color: '#6b7280', marginBottom: '32px', marginTop: '-20px' }}>
               Get instant answers about monitoring, troubleshooting, and optimizing your infrastructure
             </p>
 

@@ -164,10 +164,10 @@ module.exports = {
 				},
 			],
 		},
-		footer: {
+		// footer: {
 
-			copyright: `Copyright © ${new Date().getFullYear()} Netdata, Inc.`,
-		},
+		// 	copyright: `Copyright © ${new Date().getFullYear()} Netdata, Inc.`,
+		// },
 	},
 	plugins: [
 		[

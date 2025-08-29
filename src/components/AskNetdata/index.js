@@ -272,6 +272,9 @@ export default function AskNetdata() {
     return true;
   });
   const [isInputFocused, setIsInputFocused] = useState(false);
+  const [expandedCategory, setExpandedCategory] = useState(null);
+  const [currentPlaceholder, setCurrentPlaceholder] = useState('');
+  const [isPlaceholderAnimating, setIsPlaceholderAnimating] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
   const messageRefs = useRef({});
@@ -387,52 +390,137 @@ export default function AskNetdata() {
     adjustTextareaHeight();
   }, [input]);
 
-  const suggestions = [
-    {
-      icon: '🚀',
-      category: 'Getting Started',
-      question: 'How do I install Netdata on Ubuntu?'
-    },
-    {
-      icon: '🏗️',
-      category: 'Deployment',
-      question: 'Can you visually explain how to setup parents for high availability?'
-    },
-    {
-      icon: '🐳',
-      category: 'Container Monitoring',
-      question: 'How to monitor Docker containers with Netdata?'
-    },
-    {
-      icon: '⚠️',
-      category: 'Alerting',
-      question: 'What alerts should I configure for MySQL monitoring?'
-    },
-    {
-      icon: '📊',
-      category: 'Dashboards',
-      question: 'How to create custom dashboards in Netdata Cloud?'
-    },
-    {
-      icon: '🔧',
-      category: 'Configuration',
-      question: 'How do I configure email notifications?'
-    },
-    {
-      icon: '🔍',
-      category: 'Troubleshooting',
-      question: 'Why is my agent not connecting to Netdata Cloud?'
+  // Hide footer and other documentation elements
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hideElements = () => {
+        // Target specific footer and documentation elements
+        const footer = document.querySelector('footer');
+        const editPage = document.querySelector('[class*="editThisPage"]');
+        const pagination = document.querySelector('[class*="pagination"]');
+        const lastUpdated = document.querySelector('[class*="lastUpdated"]');
+        const breadcrumbs = document.querySelector('nav[class*="breadcrumbs"]');
+        const tocMobile = document.querySelector('[class*="tocMobile"]');
+        
+        // Find all elements containing the specific feedback/copyright text
+        const allElements = document.querySelectorAll('*');
+        const elementsToHide = [];
+        
+        allElements.forEach(el => {
+          if (el.textContent) {
+            const text = el.textContent.trim();
+            // Look for exact matches or very specific patterns
+            if (
+              text.includes('Do you have any feedback for this page?') ||
+              text.includes('Copyright © 2025 Netdata, Inc.') ||
+              (text.includes('open a new issue') && text.includes('netdata/learn')) ||
+              text === 'Copyright © 2025 Netdata, Inc.'
+            ) {
+              // Make sure we're not hiding our own component
+              const isInAskNetdata = el.closest('[style*="containerStyle"]') || 
+                                   el.closest('[class*="askNetdata"]') ||
+                                   el.textContent.includes('Ask Netdata Docs');
+              
+              if (!isInAskNetdata) {
+                elementsToHide.push(el);
+                // Also hide parent elements that might contain only this text
+                let parent = el.parentElement;
+                while (parent && parent !== document.body) {
+                  const parentText = parent.textContent.trim();
+                  if (parentText === text || parentText.length < text.length + 50) {
+                    elementsToHide.push(parent);
+                  }
+                  parent = parent.parentElement;
+                }
+              }
+            }
+          }
+        });
+        
+        // Combine all elements to hide
+        const allElementsToHide = [
+          footer, 
+          editPage, 
+          pagination, 
+          lastUpdated, 
+          breadcrumbs, 
+          tocMobile,
+          ...elementsToHide
+        ].filter(Boolean);
+        
+        // Remove duplicates
+        const uniqueElementsToHide = [...new Set(allElementsToHide)];
+        
+        // Hide elements permanently
+        uniqueElementsToHide.forEach(el => {
+          if (el && el.style.display !== 'none') {
+            el.style.display = 'none';
+            el.style.visibility = 'hidden';
+            el.style.opacity = '0';
+            el.style.height = '0';
+            el.style.maxHeight = '0';
+            el.style.overflow = 'hidden';
+            el.style.margin = '0';
+            el.style.padding = '0';
+            el.setAttribute('data-hidden-by-asknetdata', 'true');
+          }
+        });
+      };
+
+      // Run multiple times to catch all elements
+      hideElements();
+      const timeoutId1 = setTimeout(hideElements, 100);
+      const timeoutId2 = setTimeout(hideElements, 500);
+      const timeoutId3 = setTimeout(hideElements, 1000);
+      
+      // Set up a MutationObserver to watch for new elements being added
+      const observer = new MutationObserver(() => {
+        hideElements();
+      });
+      
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['style', 'class']
+      });
+      
+      // Also set up an interval to periodically check
+      const intervalId = setInterval(hideElements, 2000);
+      
+      // Cleanup function
+      return () => {
+        clearTimeout(timeoutId1);
+        clearTimeout(timeoutId2);
+        clearTimeout(timeoutId3);
+        clearInterval(intervalId);
+        observer.disconnect();
+      };
     }
+  }, []);
+
+  // All About Netdata questions
+  const aboutNetdataQuestions = [
+    'What is Netdata and what makes it different?',
+    'What is a Netdata Agent, a Parent, and Netdata Cloud?',
+    'What is distributed monitoring and why it matters for me?',
+    'Why and how is Netdata more cost efficient?',
+    'How does Netdata handle data privacy and security?',
+    'How do I install Netdata on Ubuntu?'
   ];
 
-  // All deployment questions - we'll randomly select 4
+  // All deployment questions - we'll randomly select them
   const deploymentQuestions = [
     'Can I run Netdata in hybrid or multi-cloud setups?',
     'How does Netdata scale in large environments?',
     'Will running Netdata slow down my production servers?',
     'Can Netdata monitor bare-metal servers and GPUs?',
-    'Can you visually explain how to setup parents for high availability?'
+    'Can you visually explain how to setup parents for high availability?',
+    'How to monitor Docker containers with Netdata?'
   ];
+
+  // Configuration: Number of questions to show per category
+  const QUESTIONS_PER_CATEGORY = 3;
 
   // Function to randomly select n items from an array
   const getRandomSelection = (arr, n) => {
@@ -441,13 +529,50 @@ export default function AskNetdata() {
     return shuffled.slice(0, n);
   };
 
-  // Get 4 random deployment questions
-  const selectedDeploymentQuestions = useMemo(() => 
-    getRandomSelection(deploymentQuestions, 4), 
+  // Get random About Netdata questions
+  const selectedAboutNetdataQuestions = useMemo(() => 
+    getRandomSelection(aboutNetdataQuestions, QUESTIONS_PER_CATEGORY), 
     []
   );
 
-  // All dashboard questions - we'll randomly select 4
+  // Get random deployment questions
+  const selectedDeploymentQuestions = useMemo(() => 
+    getRandomSelection(deploymentQuestions, QUESTIONS_PER_CATEGORY), 
+    []
+  );
+
+  // All operations questions
+  const operationsQuestions = [
+    'Do I need to learn a query language to use Netdata?',
+    'How Netdata will help me optimize my SRE team?',
+    'Where are my data stored with Netdata?',
+    'Which of my data are stored at Netdata Cloud?',
+    'How do I visualize cost/resource usage per environment?',
+    'How do I configure email notifications?',
+    'Why is my agent not connecting to Netdata Cloud?'
+  ];
+
+  // Get random operations questions
+  const selectedOperationsQuestions = useMemo(() => 
+    getRandomSelection(operationsQuestions, QUESTIONS_PER_CATEGORY), 
+    []
+  );
+
+  // All AI & Machine Learning questions
+  const aiMlQuestions = [
+    'How does anomaly detection work in Netdata?',
+    'Can I chat with Netdata with Claude Code or Gemini?',
+    'What is AI Insights and how it can help me?',
+    'Can Netdata identify the root cause of an issue for me?'
+  ];
+
+  // Get random AI & ML questions
+  const selectedAiMlQuestions = useMemo(() => 
+    getRandomSelection(aiMlQuestions, QUESTIONS_PER_CATEGORY), 
+    []
+  );
+
+  // All dashboard questions
   const dashboardQuestions = [
     'How can I slice and dice any dataset with Netdata?',
     'How can I correlate a spike or a dive across my infrastructure?',
@@ -458,26 +583,64 @@ export default function AskNetdata() {
     'How do I share a dashboard view with a teammate?'
   ];
 
-  // Get 4 random dashboard questions
+  // Get random dashboard questions
   const selectedDashboardQuestions = useMemo(() => 
-    getRandomSelection(dashboardQuestions, 4), 
+    getRandomSelection(dashboardQuestions, QUESTIONS_PER_CATEGORY), 
     []
   );
 
-  // All operations questions - we'll randomly select 4
-  const operationsQuestions = [
-    'Do I need to learn a query language to use Netdata?',
-    'How Netdata will help me optimize my SRE team?',
-    'Where are my data stored with Netdata?',
-    'Which of my data are stored at Netdata Cloud?',
-    'How do I visualize cost/resource usage per environment?'
+  // All alerts questions
+  const alertsQuestions = [
+    'How do I configure alerts in Netdata?',
+    'What are the best practices for setting alert thresholds?',
+    'How can I integrate Netdata alerts with PagerDuty or Slack?',
+    'How do I reduce alert noise and prevent alert fatigue?',
+    'What alerts should I configure for MySQL monitoring?'
   ];
 
-  // Get 4 random operations questions
-  const selectedOperationsQuestions = useMemo(() => 
-    getRandomSelection(operationsQuestions, 4), 
+  // Get random alerts questions
+  const selectedAlertsQuestions = useMemo(() => 
+    getRandomSelection(alertsQuestions, QUESTIONS_PER_CATEGORY), 
     []
   );
+
+  // Combine all questions for placeholder rotation
+  const allQuestions = useMemo(() => {
+    return [
+      ...selectedAboutNetdataQuestions,
+      ...selectedDeploymentQuestions,
+      ...selectedOperationsQuestions,
+      ...selectedAiMlQuestions,
+      ...selectedDashboardQuestions,
+      ...selectedAlertsQuestions
+    ];
+  }, [selectedAboutNetdataQuestions, selectedDeploymentQuestions, selectedOperationsQuestions, selectedAiMlQuestions, selectedDashboardQuestions, selectedAlertsQuestions]);
+
+  // Placeholder rotation effect
+  useEffect(() => {
+    if (allQuestions.length === 0) return;
+    
+    // Set initial placeholder
+    setCurrentPlaceholder(allQuestions[0]);
+    
+    const interval = setInterval(() => {
+      // Start fade out animation
+      setIsPlaceholderAnimating(true);
+      
+      // After fade out, change text and fade in
+      setTimeout(() => {
+        setCurrentPlaceholder(prev => {
+          const currentIndex = allQuestions.indexOf(prev);
+          const nextIndex = (currentIndex + 1) % allQuestions.length;
+          return allQuestions[nextIndex];
+        });
+        setIsPlaceholderAnimating(false);
+      }, 200); // Half animation duration
+      
+    }, 5000); // Change every 5 seconds
+    
+    return () => clearInterval(interval);
+  }, [allQuestions]);
 
   const handleSubmit = async (e, overrideMessage = null) => {
     e?.preventDefault();
@@ -724,36 +887,76 @@ export default function AskNetdata() {
   const containerStyle = {
     display: 'flex',
     flexDirection: 'column',
-    minHeight: 'calc(100vh - var(--ifm-navbar-height))',
+    height: 'calc(100vh - var(--ifm-navbar-height))',
     background: 'transparent',
-    position: 'relative'
+    position: 'relative',
+    margin: '-24px -24px -24px -24px',
+    padding: '0'
   };
 
   const chatAreaStyle = {
     flex: 1,
-    paddingBottom: '20px'
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh',
+    padding: '40px 20px',
+    marginTop: 'calc(-1 * var(--ifm-navbar-height))',
+    paddingTop: 'calc(40px + var(--ifm-navbar-height))'
     // Removed overflowY: 'auto' - page expands vertically
   };
 
   const welcomeStyle = {
     width: '100%',
-    margin: '60px auto',
-    padding: '20px',
-    textAlign: 'center'
+    maxWidth: '800px',
+    margin: '0 auto 24px auto',
+    padding: '0 20px',
+    textAlign: 'center',
+    flexShrink: 0
+  };
+
+  const floatingContainerStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    maxWidth: '800px',
+    margin: '0 auto'
   };
 
   const welcomeTitleStyle = {
     fontSize: '48px',
     fontWeight: '700',
     color: '#00AB44',
-    marginBottom: '16px'
+    marginBottom: '8px',
+    lineHeight: '1',
+    whiteSpace: 'nowrap'
+  };
+
+  const suggestionContainerStyle = {
+    marginTop: 'auto',
+    marginBottom: '10px'
   };
 
   const suggestionGridStyle = {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-    gap: '20px',
-    marginTop: '40px'
+    gap: '20px'
+  };
+
+  const suggestionButtonStyle = {
+    textAlign: 'left',
+    padding: '0.5rem',
+    borderRadius: '6px',
+    border: '1px solid transparent',
+    backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
+    cursor: 'pointer',
+    fontSize: '0.875rem',
+    lineHeight: '1.2',
+    color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
+    transition: 'all 0.2s'
   };
 
   const suggestionCardStyle = {
@@ -763,13 +966,16 @@ export default function AskNetdata() {
     padding: '24px',
     cursor: 'pointer',
     textAlign: 'left',
-    transition: 'all 0.2s ease'
+    transition: 'all 0.2s ease',
+    minHeight: '200px',
+    display: 'flex',
+    flexDirection: 'column'
   };
 
   const messagesContainerStyle = {
     width: '100%',
     margin: '0 auto',
-    padding: '40px 20px'
+    padding: '10px 20px'
   };
 
   const messageStyle = {
@@ -793,36 +999,65 @@ export default function AskNetdata() {
   });
 
   const inputContainerStyle = {
-    position: 'sticky',
-    bottom: 0,
     background: isDarkMode ? 'var(--ifm-background-surface-color)' : 'white',
-    borderTop: isDarkMode ? '1px solid var(--ifm-color-emphasis-300)' : '1px solid #e5e7eb',
-    padding: '16px 20px',
-    marginTop: 'auto'
+    border: isDarkMode ? '1px solid var(--ifm-color-emphasis-300)' : '1px solid #e5e7eb',
+    padding: '8px 12px',
+    borderRadius: '50px',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12)',
+    width: '100%'
   };
 
   const inputFormStyle = {
     width: '100%',
     margin: '0 auto',
     display: 'flex',
-    gap: '12px',
-    alignItems: 'flex-end'
+    gap: '8px',
+    alignItems: 'center'
   };
 
   const chatInputStyle = {
     flex: 1,
-    padding: '14px 20px',
-    border: isInputFocused ? '2px solid #00AB44' : (isDarkMode ? '2px solid var(--ifm-color-emphasis-300)' : '2px solid #e5e7eb'),
-    borderRadius: '12px',
+    padding: '12px 16px',
+    border: 'none',
+    borderRadius: '50px',
     fontSize: '16px',
-    resize: 'vertical',
-    minHeight: '56px',
-    maxHeight: typeof window !== 'undefined' ? `${Math.max(200, window.innerHeight / 3)}px` : '200px',
-    background: isDarkMode ? 'var(--ifm-background-color)' : 'white',
+    resize: 'none',
+    minHeight: '44px',
+    maxHeight: '100px',
+    background: 'transparent',
     color: isDarkMode ? 'var(--ifm-font-color-base)' : '#1f2937',
     fontFamily: 'inherit',
     transition: 'border-color 0.2s',
-    outline: 'none'
+    outline: 'none',
+    lineHeight: '1.4',
+    display: 'flex',
+    alignItems: 'center'
+  };
+
+  const inputWrapperStyle = {
+    position: 'relative',
+    flex: 1
+  };
+
+  const animatedPlaceholderStyle = {
+    position: 'absolute',
+    top: '50%',
+    left: '16px',
+    right: '50px',
+    fontSize: '16px',
+    color: isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
+    fontFamily: 'inherit',
+    pointerEvents: 'none',
+    transition: 'all 0.4s ease',
+    transform: isPlaceholderAnimating ? 'translateY(calc(-50% - 5px))' : 'translateY(-50%)',
+    opacity: isPlaceholderAnimating ? 0 : (input ? 0 : 1),
+    zIndex: 1,
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    lineHeight: '1.4',
+    display: 'flex',
+    alignItems: 'center'
   };
 
   const sendButtonStyle = {
@@ -830,28 +1065,22 @@ export default function AskNetdata() {
     color: 'white',
     border: 'none',
     borderRadius: '50%',
-    width: '48px',
-    height: '48px',
+    width: '40px',
+    height: '40px',
     cursor: isLoading ? 'not-allowed' : 'pointer',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     opacity: isLoading ? 0.5 : 1,
-    transition: 'background 0.2s'
+    transition: 'background 0.2s',
+    flexShrink: 0
   };
 
   return (
     <div style={containerStyle}>
       <div ref={chatAreaRef} style={chatAreaStyle}>
         {showWelcome ? (
-          <div style={welcomeStyle}>
-            <h1 style={welcomeTitleStyle}>
-              Ask Netdata Docs
-            </h1>
-            <p style={{ fontSize: '20px', color: isDarkMode ? 'var(--ifm-color-secondary)' : '#6b7280', marginBottom: '48px' }}>
-              Get instant answers about monitoring, troubleshooting, and optimizing your infrastructure
-            </p>
-
+          <>
             {/* Corner Arrow Icon */}
             <svg style={{ display: 'none' }}>
               <defs>
@@ -861,160 +1090,159 @@ export default function AskNetdata() {
               </defs>
             </svg>
 
-            {/* Categorized Questions */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-              gap: '0.75rem',
-              marginBottom: '1rem',
-              marginTop: '20px'
-            }}>
-              {/* About Netdata */}
+            {/* Floating Title and Input Container */}
+            <div style={floatingContainerStyle}>
+              <div style={welcomeStyle}>
+                <h1 style={welcomeTitleStyle}>
+                  Ask Netdata Docs
+                </h1>
+                <p style={{ 
+                  fontSize: '20px', 
+                  color: isDarkMode ? 'var(--ifm-color-secondary)' : '#6b7280', 
+                  marginBottom: '0', 
+                  lineHeight: '1.3', 
+                  maxWidth: '600px',
+                  margin: '0 auto',
+                  textAlign: 'center'
+                }}>
+                  Get instant answers about monitoring, troubleshooting, and optimizing your infrastructure
+                </p>
+              </div>
+              
+              <div style={inputContainerStyle}>
+                <form onSubmit={handleSubmit} style={inputFormStyle}>
+                  <div style={inputWrapperStyle}>
+                    <div style={animatedPlaceholderStyle}>
+                      {currentPlaceholder || "Ask anything about Netdata, in any language... (Shift+Enter for new line)"}
+                    </div>
+                    <textarea
+                      ref={(el) => {
+                        inputRef.current = el;
+                        textareaRef.current = el;
+                      }}
+                      value={input}
+                      onChange={(e) => {
+                        setInput(e.target.value);
+                        adjustTextareaHeight();
+                      }}
+                      onKeyDown={handleKeyDown}
+                      onFocus={() => setIsInputFocused(true)}
+                      onBlur={() => setIsInputFocused(false)}
+                      placeholder=""
+                      style={chatInputStyle}
+                      rows={1}
+                      disabled={isLoading}
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    style={sendButtonStyle}
+                    disabled={!input.trim() || isLoading}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            {/* Title and Categorized Questions together */}
+            <div style={suggestionContainerStyle}>
+              
               <div style={{
-                padding: '0.5rem',
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+                gap: '0.375rem',
+                marginBottom: '0.5rem'
+              }}>
+              {/*
+              <div style={{
+                padding: '0.375rem',
                 borderRadius: '12px'
               }}>
-                <div style={{ 
-                  fontSize: '1.125rem', 
-                  fontWeight: 600, 
-                  color: '#00AB44',
-                  marginBottom: '0.5rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem'
-                }}>
+                <button
+                  onClick={() => setExpandedCategory(expandedCategory === 'about' ? null : 'about')}
+                  style={{ 
+                    fontSize: '1.125rem', 
+                    fontWeight: 600, 
+                    color: expandedCategory === 'about' ? 'white' : '#00AB44',
+                    marginBottom: '0.375rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    background: expandedCategory === 'about' ? '#00AB44' : 'transparent',
+                    border: `2px solid #00AB44`,
+                    cursor: 'pointer',
+                    padding: '0.75rem 1.25rem',
+                    borderRadius: '50px',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    transform: 'scale(1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (expandedCategory !== 'about') {
+                      e.currentTarget.style.backgroundColor = 'rgba(0, 171, 68, 0.1)';
+                    }
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (expandedCategory !== 'about') {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                    } else {
+                      e.currentTarget.style.backgroundColor = '#00AB44';
+                    }
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                >
                   <span>✨</span> About Netdata
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  <button 
-                    onClick={() => handleSuggestionClick('What is Netdata and what makes it different?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>What is Netdata and what makes it different?</span>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => handleSuggestionClick('What is a Netdata Agent, a Parent, and Netdata Cloud?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>What is a Netdata Agent, a Parent, and Netdata Cloud?</span>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => handleSuggestionClick('What is distributed monitoring and why it matters for me?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>What is distributed monitoring and why it matters for me?</span>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => handleSuggestionClick('Why and how is Netdata more cost efficient?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>Why and how is Netdata more cost efficient?</span>
-                    </div>
-                  </button>
-                </div>
+                </button>
+                {expandedCategory === 'about' && (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.125rem' }}>
+                    {selectedAboutNetdataQuestions.map((question, idx) => (
+                    <button 
+                      key={idx}
+                      onClick={() => handleSuggestionClick(question)}
+                      style={{
+                        textAlign: 'left',
+                        padding: '0.5rem',
+                        borderRadius: '6px',
+                        border: '1px solid transparent',
+                        backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
+                        cursor: 'pointer',
+                        fontSize: '0.875rem',
+                        color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
+                        transition: 'all 0.2s'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = '#00AB44';
+                        e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'transparent';
+                        e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <svg width="14" height="14" style={{ flexShrink: 0 }}>
+                          <use href="#corner-arrow-icon" />
+                        </svg>
+                        <span>{question}</span>
+                      </div>
+                    </button>
+                  ))}
+                  </div>
+                )}
               </div>
 
-              {/* Deployment */}
               <div style={{
-                padding: '0.5rem',
+                padding: '0.375rem',
                 borderRadius: '12px'
               }}>
                 <div style={{ 
                   fontSize: '1.125rem', 
                   fontWeight: 600, 
                   color: '#00AB44',
-                  marginBottom: '0.5rem',
+                  marginBottom: '0.375rem',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem'
@@ -1057,16 +1285,15 @@ export default function AskNetdata() {
                 </div>
               </div>
 
-              {/* Operations */}
               <div style={{
-                padding: '0.5rem',
+                padding: '0.375rem',
                 borderRadius: '12px'
               }}>
                 <div style={{ 
                   fontSize: '1.125rem', 
                   fontWeight: 600, 
                   color: '#00AB44',
-                  marginBottom: '0.5rem',
+                  marginBottom: '0.375rem',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem'
@@ -1109,16 +1336,15 @@ export default function AskNetdata() {
                 </div>
               </div>
 
-              {/* AI & Machine Learning */}
               <div style={{
-                padding: '0.5rem',
+                padding: '0.375rem',
                 borderRadius: '12px'
               }}>
                 <div style={{ 
                   fontSize: '1.125rem', 
                   fontWeight: 600, 
                   color: '#00AB44',
-                  marginBottom: '0.5rem',
+                  marginBottom: '0.375rem',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem'
@@ -1126,135 +1352,50 @@ export default function AskNetdata() {
                   <span>🤖</span> AI & Machine Learning
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  <button 
-                    onClick={() => handleSuggestionClick('How does anomaly detection work in Netdata?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>How does anomaly detection work in Netdata?</span>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => handleSuggestionClick('Can I chat with Netdata with Claude Code or Gemini?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>Can I chat with Netdata with Claude Code or Gemini?</span>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => handleSuggestionClick('What is AI Insights and how it can help me?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>What is AI Insights and how it can help me?</span>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => handleSuggestionClick('Can Netdata identify the root cause of an issue for me?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>Can Netdata identify the root cause of an issue for me?</span>
-                    </div>
-                  </button>
+                  {selectedAiMlQuestions.map((question, idx) => (
+                    <button 
+                      key={idx}
+                      onClick={() => handleSuggestionClick(question)}
+                      style={{
+                        textAlign: 'left',
+                        padding: '0.5rem',
+                        borderRadius: '6px',
+                        border: '1px solid transparent',
+                        backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
+                        cursor: 'pointer',
+                        fontSize: '0.875rem',
+                        color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
+                        transition: 'all 0.2s'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = '#00AB44';
+                        e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'transparent';
+                        e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <svg width="14" height="14" style={{ flexShrink: 0 }}>
+                          <use href="#corner-arrow-icon" />
+                        </svg>
+                        <span>{question}</span>
+                      </div>
+                    </button>
+                  ))}
                 </div>
               </div>
 
-              {/* Dashboards */}
               <div style={{
-                padding: '0.5rem',
+                padding: '0.375rem',
                 borderRadius: '12px'
               }}>
                 <div style={{ 
                   fontSize: '1.125rem', 
                   fontWeight: 600, 
                   color: '#00AB44',
-                  marginBottom: '0.5rem',
+                  marginBottom: '0.375rem',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem'
@@ -1297,16 +1438,15 @@ export default function AskNetdata() {
                 </div>
               </div>
 
-              {/* Alerts */}
               <div style={{
-                padding: '0.5rem',
+                padding: '0.375rem',
                 borderRadius: '12px'
               }}>
                 <div style={{ 
                   fontSize: '1.125rem', 
                   fontWeight: 600, 
                   color: '#00AB44',
-                  marginBottom: '0.5rem',
+                  marginBottom: '0.375rem',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '0.5rem'
@@ -1314,126 +1454,44 @@ export default function AskNetdata() {
                   <span>🔔</span> Alerts
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  <button 
-                    onClick={() => handleSuggestionClick('How do I configure alerts in Netdata?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>How do I configure alerts in Netdata?</span>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => handleSuggestionClick('What are the best practices for setting alert thresholds?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>What are the best practices for setting alert thresholds?</span>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => handleSuggestionClick('How can I integrate Netdata alerts with PagerDuty or Slack?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>How can I integrate Netdata alerts with PagerDuty or Slack?</span>
-                    </div>
-                  </button>
-                  <button 
-                    onClick={() => handleSuggestionClick('How do I reduce alert noise and prevent alert fatigue?')}
-                    style={{
-                      textAlign: 'left',
-                      padding: '0.5rem',
-                      borderRadius: '6px',
-                      border: '1px solid transparent',
-                      backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-                      cursor: 'pointer',
-                      fontSize: '0.875rem',
-                      color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-                      transition: 'all 0.2s'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#00AB44';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'transparent';
-                      e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <svg width="14" height="14" style={{ flexShrink: 0 }}>
-                        <use href="#corner-arrow-icon" />
-                      </svg>
-                      <span>How do I reduce alert noise and prevent alert fatigue?</span>
-                    </div>
-                  </button>
+                  {selectedAlertsQuestions.map((question, idx) => (
+                    <button 
+                      key={idx}
+                      onClick={() => handleSuggestionClick(question)}
+                      style={{
+                        textAlign: 'left',
+                        padding: '0.5rem',
+                        borderRadius: '6px',
+                        border: '1px solid transparent',
+                        backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
+                        cursor: 'pointer',
+                        fontSize: '0.875rem',
+                        color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
+                        transition: 'all 0.2s'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = '#00AB44';
+                        e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'transparent';
+                        e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white';
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <svg width="14" height="14" style={{ flexShrink: 0 }}>
+                          <use href="#corner-arrow-icon" />
+                        </svg>
+                        <span>{question}</span>
+                      </div>
+                    </button>
+                  ))}
                 </div>
-              </div>
+              </div> 
+              */}
             </div>
-          </div>
+            </div>
+          </>
         ) : (
           <div style={messagesContainerStyle}>
             {messages.length > 0 && (
@@ -1656,38 +1714,6 @@ export default function AskNetdata() {
             <div ref={messagesEndRef} />
           </div>
         )}
-      </div>
-
-      <div style={inputContainerStyle}>
-        <form onSubmit={handleSubmit} style={inputFormStyle}>
-          <textarea
-            ref={(el) => {
-              inputRef.current = el;
-              textareaRef.current = el;
-            }}
-            value={input}
-            onChange={(e) => {
-              setInput(e.target.value);
-              adjustTextareaHeight();
-            }}
-            onKeyDown={handleKeyDown}
-            onFocus={() => setIsInputFocused(true)}
-            onBlur={() => setIsInputFocused(false)}
-            placeholder="Ask anything about Netdata, in any language... (Shift+Enter for new line)"
-            style={chatInputStyle}
-            rows={1}
-            disabled={isLoading}
-          />
-          <button
-            type="submit"
-            style={sendButtonStyle}
-            disabled={!input.trim() || isLoading}
-          >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-            </svg>
-          </button>
-        </form>
       </div>
     </div>
   );
