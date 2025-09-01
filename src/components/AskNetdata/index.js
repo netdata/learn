@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
+import styles from './styles.module.css';
 import { useColorMode } from '@docusaurus/theme-common';
 import Link from '@docusaurus/Link';
 import { useHistory } from '@docusaurus/router';
@@ -67,7 +68,8 @@ export const SUGGESTION_GROUPS = [
       'How does anomaly detection work in Netdata?',
       'Can I chat with Netdata with Claude Code or Gemini?',
       'What is AI Insights and how it can help me?',
-      'Can Netdata identify the root cause of an issue for me?'
+      'Can Netdata identify the root cause of an issue for me?',
+      'How can I use Metric Correlations?'
     ]
   },
   {
@@ -104,10 +106,10 @@ export const ASK_LAYOUT = {
   TOP_PERCENT: 0.35,            // percentage of viewport height above the grid anchor
   TOP_OFFSET_PX: 80,            // extra pixels below the title/input to the grid
   BOTTOM_MARGIN_PX: 24,         // breathing room at the bottom of the viewport
-  SIDE_GUTTERS_PX: 48,          // combined side paddings (approx 24px each side)
-  GRID_GAP_PX: 20,              // gap between cards in the grid
+  SIDE_GUTTERS_PX: 8,           // combined side paddings (approx 4px each side)
+  GRID_GAP_PX: 12,              // gap between cards in the grid - match render gap
   ROW_GAP_PX: 20,               // vertical gap between grid rows (for measurement)
-  MIN_CARD_WIDTH_PX: 260,       // minimum card width used to compute columns
+  MIN_CARD_WIDTH_PX: 100,       // lower minimum to allow wider cards
   MAX_COLUMNS: 6,               // cap for columns on very wide screens
   MAX_ITEMS_PER_CATEGORY: 5,    // richest per-category sentences for first row
   MIN_ITEMS_PER_CATEGORY: 1,    // never show fewer than this per category
@@ -340,6 +342,8 @@ export default function AskNetdata() {
   const appearTimeouts = useRef([]);
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [currentPlaceholder, setCurrentPlaceholder] = useState('');
+  // Transient flag toggled when a new placeholder rotates in
+  const [placeholderPulse, setPlaceholderPulse] = useState(false);
   const [isPlaceholderAnimating, setIsPlaceholderAnimating] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
@@ -362,47 +366,47 @@ export default function AskNetdata() {
   // Expand suggestions to the full screen area (right of the sidebar) with dynamic columns
   const [contentBounds, setContentBounds] = useState(null);
   const GRID_MIN_COL_PX = 300; // desired min width per column for centering math
-  const GRID_GAP_PX = 16;      // keep in sync with grid gap below
+  const GRID_GAP_PX = 12;      // reduce gap slightly to allocate more space to cards
   const [suggestionsTopPx, setSuggestionsTopPx] = useState(null);
   const TOTAL_SECTIONS = 6; // About, Deployment, Operations, AI, Dashboards, Alerts
-  const MIN_SINGLE_ROW_COL_PX = 400; // only force a single row when columns are comfortably wide
-  const MAX_SINGLE_ROW_COL_PX = 520; // allow wider cards to use side space while staying readable
-  const H_PADDING_PX = 48; // matches padding: '0 24px'
+  const MIN_SINGLE_ROW_COL_PX = 180; // force single row even with narrow columns for max cards
+  const MAX_SINGLE_ROW_COL_PX = 800; // increase to allow much wider cards for full sentences
+  const H_PADDING_PX = 8; // matches padding: '0 4px' (4px each side)
   const MAX_SUGGESTIONS_WIDTH_PX = 3000; // hard cap for the suggestions container width
   const [forcedRowWidthPx, setForcedRowWidthPx] = useState(null);
   const [forcedTemplateColumns, setForcedTemplateColumns] = useState(null);
-  const [generalTemplateColumns, setGeneralTemplateColumns] = useState('repeat(auto-fit, minmax(300px, 300px))');
+  const [generalTemplateColumns, setGeneralTemplateColumns] = useState('repeat(auto-fit, minmax(280px, 1fr))');
   useEffect(() => {
     const updateBounds = () => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       const left = Math.max(0, Math.round(rect.left));
-      const width = Math.max(0, Math.round(window.innerWidth - left));
+      const width = Math.max(0, Math.round(window.innerWidth - left)); // use full window width from sidebar edge
       setContentBounds({ left, width });
 
     // Default, fixed-width tracks so rows center nicely and cards stay readable
     // Try to fit 6 columns by slightly shrinking cards, but not below a readable minimum
-  const MIN_CARD_TRACK = 260; // don't go narrower than this
-  const MAX_CARD_TRACK = 480; // widen cards further to better use available side space
-      const innerWidth = Math.max(0, width - H_PADDING_PX); // account for our horizontal padding (24px each side)
+  const MIN_CARD_TRACK = 180; // much smaller minimum to fit maximum cards per row
+  const MAX_CARD_TRACK = 800; // significantly increase max width to fit full sentences
+      const innerWidth = Math.max(0, window.innerWidth - left - H_PADDING_PX); // use full window width minus sidebar
       const trackForSix = Math.floor((innerWidth - (TOTAL_SECTIONS - 1) * GRID_GAP_PX) / TOTAL_SECTIONS);
       // Use a min smaller than the exact six-fit track so 1fr has room to expand
-      const LEEWAY = 24; // px of slack to ensure stretch
+      const LEEWAY = 8; // minimal leeway to allow maximum card expansion
       const chosenMin = (trackForSix >= MIN_CARD_TRACK)
         ? Math.min(Math.max(MIN_CARD_TRACK, trackForSix - LEEWAY), MAX_CARD_TRACK)
         : MIN_CARD_TRACK;
   // Let columns grow to fill available space while maintaining a readable minimum
-  setGeneralTemplateColumns(`repeat(auto-fit, minmax(${chosenMin}px, 1fr))`);
+  setGeneralTemplateColumns('repeat(auto-fit, minmax(280px, 1fr))');
 
       // Compute if we can fit all sections on one centered row
-      const available = Math.max(0, width - H_PADDING_PX);
+      const available = Math.max(0, window.innerWidth - left - H_PADDING_PX); // use full window width
       const rawCol = Math.floor((available - (TOTAL_SECTIONS - 1) * GRID_GAP_PX) / TOTAL_SECTIONS);
   if (rawCol >= MIN_SINGLE_ROW_COL_PX) {
   const colPx = Math.min(rawCol, MAX_SINGLE_ROW_COL_PX);
         const rowWidth = colPx * TOTAL_SECTIONS + (TOTAL_SECTIONS - 1) * GRID_GAP_PX;
         setForcedRowWidthPx(rowWidth);
   // Use fractional columns so tracks stretch to consume side space
-  setForcedTemplateColumns(`repeat(${TOTAL_SECTIONS}, minmax(${colPx}px, 1fr))`);
+  setForcedTemplateColumns(null); // Always use responsive grid, not forced columns
       } else {
         setForcedRowWidthPx(null);
         setForcedTemplateColumns(null);
@@ -752,260 +756,97 @@ export default function AskNetdata() {
 
     let rafId = null;
     const computeLayout = () => {
-      const vp = getViewport();
-  // Suggestion container anchor
-  const top = (vp.height * ASK_LAYOUT.TOP_PERCENT) + ASK_LAYOUT.TOP_OFFSET_PX;
-  const availableH = Math.max(0, vp.height - top - ASK_LAYOUT.BOTTOM_MARGIN_PX);
-
-  // Columns based on available viewport width (use near-full width)
-  const containerW = Math.max(0, vp.width - ASK_LAYOUT.SIDE_GUTTERS_PX);
-  let columns = Math.max(1, Math.floor(containerW / ASK_LAYOUT.MIN_CARD_WIDTH_PX));
-  columns = Math.min(columns, ASK_LAYOUT.MAX_COLUMNS);
-
-  const ROW_GAP = ASK_LAYOUT.ROW_GAP_PX;
-      const order = categoriesOrderRef.current || groups;
-  const MAX_EQ_ITEMS = ASK_LAYOUT.MAX_ITEMS_PER_CATEGORY;
-  const MIN_EQ_ITEMS = ASK_LAYOUT.MIN_ITEMS_PER_CATEGORY; // never go below per requirement
-  const GRID_GAP = ASK_LAYOUT.GRID_GAP_PX; // must match render gap
-
-      // Helpers to measure per-category heights and pick the shortest fitting set for a row
-      const cardWidth = columns > 0 ? Math.max(0, (containerW - (columns - 1) * GRID_GAP) / columns) : containerW;
-      const measureHeightsForGroups = (N, eligible) => {
-        if (!eligible || eligible.length === 0) return [];
-        const measureRoot = document.createElement('div');
-        measureRoot.style.position = 'absolute';
-        measureRoot.style.visibility = 'hidden';
-        measureRoot.style.pointerEvents = 'none';
-        measureRoot.style.left = '-99999px';
-        measureRoot.style.top = '0';
-        measureRoot.style.width = `${Math.floor(cardWidth)}px`;
-        measureRoot.style.boxSizing = 'border-box';
-        document.body.appendChild(measureRoot);
-
-        const results = [];
-        const sampleCount = eligible.length; // measure all to allow best selection
-        for (let i = 0; i < sampleCount; i++) {
-          const g = eligible[i];
-          const card = document.createElement('div');
-          card.style.padding = '20px';
-          card.style.border = '1px solid transparent';
-          card.style.boxSizing = 'border-box';
-          card.style.borderRadius = '12px';
-          const title = document.createElement('div');
-          title.style.fontWeight = '700';
-          title.style.fontSize = '17px';
-          title.style.textAlign = 'center';
-          title.style.marginBottom = '8px';
-          title.textContent = g.title || '';
-          card.appendChild(title);
-          const list = document.createElement('div');
-          list.style.display = 'grid';
-          list.style.gap = '10px';
-          for (let k = 0; k < N; k++) {
-            const btn = document.createElement('button');
-            btn.style.textAlign = 'left';
-            btn.style.padding = '10px 12px';
-            btn.style.borderRadius = '8px';
-            btn.style.border = 'none';
-            btn.style.background = 'transparent';
-            btn.style.width = '100%';
-            btn.style.boxSizing = 'border-box';
-            btn.style.whiteSpace = 'normal';
-            btn.style.wordBreak = 'break-word';
-            btn.style.overflowWrap = 'anywhere';
-            btn.style.lineHeight = '1.4';
-            btn.textContent = (g.items && g.items[k]) ? g.items[k] : '';
-            list.appendChild(btn);
-          }
-          card.appendChild(list);
-          measureRoot.appendChild(card);
-          const h = card.getBoundingClientRect().height;
-          results.push({ group: g, height: h });
-          measureRoot.removeChild(card);
+      // Fixed layout logic with vertical space checking:
+      // 1. First row: Up to 5 suggestions per category (reduce if needed for large zoom)
+      // 2. Second row: Remaining categories with conservative suggestion counts
+      // 3. Check if content fits vertically and reduce if needed
+      
+      const allCategories = (categoriesOrderRef.current || groups).map(group => {
+        // Randomize items if not already done
+        if (!categoryItemOrderRef.current[group.key]) {
+          categoryItemOrderRef.current[group.key] = [...(group.items || [])].sort(() => Math.random() - 0.5);
         }
-        document.body.removeChild(measureRoot);
-        // Sort by height ascending to favor compact cards
-        results.sort((a, b) => a.height - b.height);
-        return results;
-      };
-      const pickRowForN = (N, eligible, remainingHLocal) => {
-        const measured = measureHeightsForGroups(N, eligible);
-        if (measured.length === 0) return { height: 0, selected: [] };
-        // Take up to 'columns' shortest cards
-        const take = Math.min(columns, measured.length);
-        const selected = measured.slice(0, take);
-        const rowH = selected.reduce((mx, r) => Math.max(mx, r.height), 0);
-        if (rowH <= remainingHLocal + 0.5) {
-          return { height: rowH, selected: selected.map(r => r.group) };
-        }
-        return { height: rowH, selected: [] };
-      };
+        return {
+          ...group,
+          items: categoryItemOrderRef.current[group.key]
+        };
+      });
 
-      // 1) Choose richest first row (highest N that fits at least one row)
-      let firstRowN = MIN_EQ_ITEMS;
-      let firstRowH = 0;
-      let eligibleForFirst = [];
-      for (let N = MAX_EQ_ITEMS; N >= MIN_EQ_ITEMS; N--) {
-        const eligible = order.filter(g => (g.items || []).length >= N);
-        if (eligible.length === 0) continue;
-        const { height: H } = pickRowForN(N, eligible, availableH);
-        if (H > 0 && H <= availableH + 0.5) { // at least one row fits
-          firstRowN = N;
-          firstRowH = H;
-          eligibleForFirst = eligible;
-          break;
-        }
-      }
-
-      // Pick categories for first row
-      let layout = [];
-      if (eligibleForFirst.length > 0) {
-  // Choose the shortest-fitting categories for the first row
-  const { selected } = pickRowForN(firstRowN, eligibleForFirst, availableH);
-  const toUse = selected.length ? selected : eligibleForFirst.slice(0, Math.min(columns, eligibleForFirst.length));
-  const firstRowCats = toUse.map(g => {
-          if (!categoryItemOrderRef.current[g.key]) {
-            categoryItemOrderRef.current[g.key] = [...(g.items || [])].sort(() => Math.random() - 0.5);
-          }
-          const ordered = categoryItemOrderRef.current[g.key];
-          return { key: g.key, title: g.title, items: ordered.slice(0, firstRowN) };
-        });
-        layout = layout.concat(firstRowCats);
-
-        // Fill any leftover slots in the first row with smaller categories (>= MIN items)
-        let usedKeysFirst = new Set(layout.map(c => c.key));
-        let slotsLeft = Math.max(0, columns - firstRowCats.length);
-        for (let Nfill = firstRowN - 1; Nfill >= MIN_EQ_ITEMS && slotsLeft > 0; Nfill--) {
-          const fillers = (categoriesOrderRef.current || groups)
-            .filter(g => !usedKeysFirst.has(g.key) && (g.items || []).length >= Nfill);
-          if (fillers.length === 0) continue;
-          const toAdd = fillers.slice(0, slotsLeft).map(g => {
-            if (!categoryItemOrderRef.current[g.key]) {
-              categoryItemOrderRef.current[g.key] = [...(g.items || [])].sort(() => Math.random() - 0.5);
-            }
-            const ordered = categoryItemOrderRef.current[g.key];
-            return { key: g.key, title: g.title, items: ordered.slice(0, Nfill) };
+      // Calculate available vertical space
+      const viewportHeight = window.innerHeight;
+      const suggestionsTop = suggestionsTopPx != null ? 
+        suggestionsTopPx : 
+        (ASK_LAYOUT.TOP_PERCENT * viewportHeight + ASK_LAYOUT.TOP_OFFSET_PX);
+      const availableHeight = viewportHeight - suggestionsTop - 40; // 40px buffer at bottom
+      
+      // Estimate heights (approximate values based on typical card dimensions)
+      const categoryTitleHeight = 40; // Height of category title
+      const suggestionItemHeight = 60; // Height of each suggestion item
+      const rowGap = 20; // Gap between categories
+      const betweenRowGap = 24; // Gap between first and second row
+      
+      const layout = [];
+      
+      // FIRST ROW: Calculate how many suggestions can fit per category
+      const firstRowCategories = allCategories.slice(0, 4); // Take first 4 categories
+      
+      // Calculate maximum suggestions that can fit in first row
+      const maxFirstRowHeight = availableHeight * 0.7; // Use 70% of space for first row
+      const maxSuggestionsFirstRow = Math.floor((maxFirstRowHeight - categoryTitleHeight) / suggestionItemHeight);
+      const suggestionsPerFirstRowCategory = Math.max(1, Math.min(5, maxSuggestionsFirstRow));
+      
+      firstRowCategories.forEach(cat => {
+        if (cat.items.length > 0) {
+          layout.push({
+            key: cat.key,
+            title: cat.title,
+            items: cat.items.slice(0, suggestionsPerFirstRowCategory),
+            isFirstRow: true
           });
-          layout = layout.concat(toAdd);
-          toAdd.forEach(c => usedKeysFirst.add(c.key));
-          slotsLeft -= toAdd.length;
         }
-      }
-
-      // 2) Append additional rows with as many sentences as possible (may use smaller N per row)
-  let usedKeys = new Set(layout.map(b => b.key));
-      let remainingH = availableH - firstRowH;
-      if (layout.length > 0) remainingH -= ROW_GAP; // account for gap before next row
-      while (remainingH > 0) {
-        let appended = false;
-        // Decide iteration order for N on additional rows
-        const maxNForAdditional = Math.min(
-          firstRowN,
-          MAX_EQ_ITEMS,
-          (ASK_LAYOUT.ADDITIONAL_ROWS_MAX_ITEMS ?? MAX_EQ_ITEMS)
-        );
-        const NsDesc = [];
-        for (let n = maxNForAdditional; n >= MIN_EQ_ITEMS; n--) NsDesc.push(n);
-        const NsAsc = [...NsDesc].reverse();
-        const preferAsc = (ASK_LAYOUT.ADDITIONAL_ROWS_ORDER === 'asc') ||
-                          (ASK_LAYOUT.ADDITIONAL_ROWS_ORDER === 'auto' && ASK_LAYOUT.MIN_ITEMS_PER_CATEGORY <= 1);
-        const Ns = preferAsc ? NsAsc : NsDesc;
-        for (const N of Ns) {
-          const eligible = order.filter(g => (g.items || []).length >= N && !usedKeys.has(g.key));
-          if (eligible.length === 0) continue;
-          const { height: H, selected } = pickRowForN(N, eligible, remainingH);
-          if (selected.length > 0 && H <= remainingH + 0.5) {
-            const addCats = selected.map(g => {
-              if (!categoryItemOrderRef.current[g.key]) {
-                categoryItemOrderRef.current[g.key] = [...(g.items || [])].sort(() => Math.random() - 0.5);
-              }
-              const ordered = categoryItemOrderRef.current[g.key];
-              return { key: g.key, title: g.title, items: ordered.slice(0, N) };
+      });
+      
+      // Calculate actual first row height
+      const firstRowHeight = categoryTitleHeight + (suggestionsPerFirstRowCategory * suggestionItemHeight);
+      
+      // Check if we can fit a second row
+      const remainingHeight = availableHeight - firstRowHeight - betweenRowGap;
+      const secondRowCategories = allCategories.slice(4); // Take remaining categories
+      
+      if (remainingHeight > (categoryTitleHeight + suggestionItemHeight + 20) && secondRowCategories.length > 0) {
+        // We have space for at least one suggestion per category in second row
+        const maxSuggestionsPerCategory = Math.floor((remainingHeight - categoryTitleHeight - 20) / suggestionItemHeight);
+        
+        secondRowCategories.forEach(cat => {
+          const availableItems = cat.items.length;
+          if (availableItems > 0) {
+            // Conservative approach: show 1 fewer suggestion if more than 1 available, for safety
+            let suggestionsToShow;
+            if (availableItems === 1) {
+              suggestionsToShow = 1;
+            } else {
+              const maxAllowed = Math.max(1, Math.min(5, maxSuggestionsPerCategory));
+              suggestionsToShow = Math.max(1, Math.min(maxAllowed, availableItems - 1));
+            }
+            
+            layout.push({
+              key: cat.key,
+              title: cat.title,
+              items: cat.items.slice(0, suggestionsToShow),
+              isFirstRow: false
             });
-            layout = layout.concat(addCats);
-            addCats.forEach(c => usedKeys.add(c.key));
-            remainingH -= H + ROW_GAP; // prepare for possible next row
-            appended = true;
-            break; // move to next row with updated remainingH
           }
-        }
-        if (!appended) {
-          // Micro-fit fallback: try to place a single smallest card with the minimum N
-          const minN = Math.min(
-            ASK_LAYOUT.MIN_ITEMS_PER_CATEGORY,
-            ASK_LAYOUT.ADDITIONAL_ROWS_MAX_ITEMS ?? ASK_LAYOUT.MAX_ITEMS_PER_CATEGORY
-          );
-          const eligibleMin = order.filter(g => (g.items || []).length >= minN && !usedKeys.has(g.key));
-          if (eligibleMin.length === 0) break;
-          const measuredMin = (function(){
-            const res = [];
-            const measureRoot = document.createElement('div');
-            measureRoot.style.position = 'absolute';
-            measureRoot.style.visibility = 'hidden';
-            measureRoot.style.pointerEvents = 'none';
-            measureRoot.style.left = '-99999px';
-            measureRoot.style.top = '0';
-            measureRoot.style.width = `${Math.floor(columns > 0 ? ( (containerW - (columns - 1) * GRID_GAP) / columns ) : containerW)}px`;
-            measureRoot.style.boxSizing = 'border-box';
-            document.body.appendChild(measureRoot);
-            for (const g of eligibleMin) {
-              const card = document.createElement('div');
-              card.style.padding = '20px';
-              card.style.border = '1px solid transparent';
-              card.style.boxSizing = 'border-box';
-              card.style.borderRadius = '12px';
-              const title = document.createElement('div');
-              title.style.fontWeight = '700';
-              title.style.fontSize = '17px';
-              title.style.textAlign = 'center';
-              title.style.marginBottom = '8px';
-              title.textContent = g.title || '';
-              card.appendChild(title);
-              const list = document.createElement('div');
-              list.style.display = 'grid';
-              list.style.gap = '10px';
-              for (let k = 0; k < minN; k++) {
-                const btn = document.createElement('button');
-                btn.style.textAlign = 'left';
-                btn.style.padding = '10px 12px';
-                btn.style.borderRadius = '8px';
-                btn.style.border = 'none';
-                btn.style.background = 'transparent';
-                btn.style.width = '100%';
-                btn.style.boxSizing = 'border-box';
-                btn.style.whiteSpace = 'normal';
-                btn.style.wordBreak = 'break-word';
-                btn.style.overflowWrap = 'anywhere';
-                btn.style.lineHeight = '1.4';
-                btn.textContent = (g.items && g.items[k]) ? g.items[k] : '';
-                list.appendChild(btn);
-              }
-              card.appendChild(list);
-              measureRoot.appendChild(card);
-              const h = card.getBoundingClientRect().height;
-              res.push({ group: g, height: h });
-              measureRoot.removeChild(card);
-            }
-            document.body.removeChild(measureRoot);
-            res.sort((a,b)=>a.height-b.height);
-            return res;
-          })();
-          const best = measuredMin.find(m => m.height <= remainingH + 0.5);
-          if (best) {
-            const g = best.group;
-            if (!categoryItemOrderRef.current[g.key]) {
-              categoryItemOrderRef.current[g.key] = [...(g.items || [])].sort(() => Math.random() - 0.5);
-            }
-            const ordered = categoryItemOrderRef.current[g.key];
-            layout = layout.concat([{ key: g.key, title: g.title, items: ordered.slice(0, minN) }]);
-            usedKeys.add(g.key);
-            remainingH -= best.height + ROW_GAP;
-            // continue loop to try more micro rows if space remains
-          } else {
-            break; // nothing fits vertically
-          }
-        }
+        });
       }
+      
+      // Collect remaining suggestions for placeholder rotation
+      const remainingSuggestions = [];
+      allCategories.forEach(cat => {
+        const usedInLayout = layout.find(l => l.key === cat.key);
+        const usedCount = usedInLayout ? usedInLayout.items.length : 0;
+        const remaining = cat.items.slice(usedCount);
+        remainingSuggestions.push(...remaining);
+      });
 
       setVisibleCategories(layout);
       fitPassRef.current = 0; // reset guard
@@ -1031,69 +872,37 @@ export default function AskNetdata() {
     };
   }, [groups.length]);
 
-  // Post-render safety net: prefer fewer categories over fewer items per category
+  // Disable complex height fitting - let CSS Grid handle the layout naturally
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (!showWelcome) return; // only applies to welcome grid
-    if (!suggestionBoxRef.current) return;
+    
+    // Simple check - no more complex height calculations or category removal
     if (!visibleCategories || visibleCategories.length === 0) return;
-
-    const vp = window.visualViewport || window;
-    const rect = suggestionBoxRef.current.getBoundingClientRect();
-    const bottomLimit = (vp.height || window.innerHeight) - 16; // a bit more padding
-    const overflows = rect.bottom > bottomLimit;
-
-    if (!overflows) {
-      // Reset guard when it fits
-      fitPassRef.current = 0;
-      return;
-    }
-
-    if (fitPassRef.current >= MAX_FIT_PASSES) return;
-
-  const MIN_VISIBLE_CATEGORIES = ASK_LAYOUT.MIN_VISIBLE_CATEGORIES;
-    const next = visibleCategories.map(c => ({ ...c, items: [...c.items] }));
-
-    // Prefer removing categories first (keep richer per-category content)
-    if (next.length > MIN_VISIBLE_CATEGORIES) {
-      next.pop();
-      fitPassRef.current += 1;
-      setVisibleCategories(next);
-      return;
-    }
-
-    // If we already are at the minimum category count, start trimming items per category
-    let trimmed = false;
-    for (let i = 0; i < next.length; i++) {
-      if (next[i].items.length > ASK_LAYOUT.MIN_ITEMS_PER_CATEGORY) {
-        next[i].items.pop();
-        trimmed = true;
-      }
-    }
-    if (trimmed) {
-      fitPassRef.current += 1;
-      setVisibleCategories(next);
-    } else if (next.length > 1) {
-      // As a last resort, drop a category if all items are at minimum
-      next.pop();
-      fitPassRef.current += 1;
-      setVisibleCategories(next);
-    } else {
-      fitPassRef.current = 0;
-    }
+    
+    // Reset the fit pass counter since we're not using complex fitting anymore
+    fitPassRef.current = 0;
   }, [visibleCategories, showWelcome]);
 
-  // Combine all questions for placeholder rotation
-  const allQuestions = useMemo(() => {
-    return groups.flatMap(g => g.items || []);
-  }, [groups]);
+  // Use remaining suggestions for placeholder rotation
+  const placeholderQuestions = useMemo(() => {
+    // Get remaining suggestions that aren't displayed in cards
+    const remainingSuggestions = [];
+    groups.forEach(group => {
+      if (categoryItemOrderRef.current[group.key]) {
+        const remaining = categoryItemOrderRef.current[group.key].slice(5);
+        remainingSuggestions.push(...remaining);
+      }
+    });
+    return remainingSuggestions.length > 0 ? remainingSuggestions : groups.flatMap(g => g.items || []);
+  }, [groups, visibleCategories]);
 
   // Placeholder rotation effect
   useEffect(() => {
-    if (allQuestions.length === 0) return;
+    if (placeholderQuestions.length === 0) return;
     
     // Set initial placeholder
-    setCurrentPlaceholder(allQuestions[0]);
+    setCurrentPlaceholder(placeholderQuestions[0]);
     
     const interval = setInterval(() => {
       // If paused (user hovering send button), skip rotation
@@ -1105,9 +914,14 @@ export default function AskNetdata() {
       // After fade out, change text and fade in
       setTimeout(() => {
         setCurrentPlaceholder(prev => {
-          const currentIndex = allQuestions.indexOf(prev);
-          const nextIndex = (currentIndex + 1) % allQuestions.length;
-          return allQuestions[nextIndex];
+          const currentIndex = placeholderQuestions.indexOf(prev);
+          const nextIndex = (currentIndex + 1) % placeholderQuestions.length;
+          const next = placeholderQuestions[nextIndex];
+          // Trigger a brief pulse to indicate the new placeholder is sendable
+          setPlaceholderPulse(true);
+          // Clear pulse after animation duration (match CSS animation length)
+          setTimeout(() => setPlaceholderPulse(false), 900);
+          return next;
         });
         setIsPlaceholderAnimating(false);
       }, 200); // Half animation duration
@@ -1115,7 +929,7 @@ export default function AskNetdata() {
     }, 5000); // Change every 5 seconds
     
     return () => clearInterval(interval);
-  }, [allQuestions]);
+  }, [placeholderQuestions]);
 
   const handleSubmit = async (e, overrideMessage = null) => {
     e?.preventDefault();
@@ -1372,7 +1186,7 @@ export default function AskNetdata() {
     background: 'transparent',
     position: 'relative',
     margin: '0', // Remove negative margins
-    padding: '20px'
+    padding: '0' // Remove all padding to eliminate sidebar gap
   };
 
   const chatAreaStyle = {
@@ -1521,11 +1335,12 @@ export default function AskNetdata() {
     left: '16px',
     right: '50px',
     fontSize: '16px',
-  // Turn placeholder green when the send button is hovered and there's no user input
+  // Default placeholder color; keep green when hovered only
   color: (isSendHovered && !input.trim()) ? '#00AB44' : (isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'),
     fontFamily: 'inherit',
     pointerEvents: 'none',
-  transition: 'all 0.4s ease, color 220ms ease',
+  // Slightly gentler color transition
+  transition: 'all 0.4s ease, color 360ms ease',
     transform: isPlaceholderAnimating ? 'translateY(calc(-50% - 5px))' : 'translateY(-50%)',
     opacity: isPlaceholderAnimating ? 0 : (input ? 0 : 1),
     zIndex: 1,
@@ -1549,18 +1364,20 @@ export default function AskNetdata() {
     alignItems: 'center',
     justifyContent: 'center',
     opacity: isLoading ? 0.5 : 1,
-    transition: 'background 0.2s',
+  transition: 'background 0.2s, box-shadow 260ms',
+  boxShadow: isDarkMode ? '0 2px 8px rgba(0,0,0,0.5)' : '0 2px 8px rgba(0,171,68,0.14)',
     flexShrink: 0
   };
 
 
   // Dimmed background color (solid) for light/dark modes
-  const dimmedBg = isDarkMode ? 'rgba(0,171,68,0.12)' : 'rgba(0,171,68,0.08)';
+  // More prominent dimmed background so the inactive button reads as interactive
+  const dimmedBg = isDarkMode ? 'rgba(0,171,68,0.28)' : 'rgba(0,171,68,0.18)';
   const computedSendButtonStyle = {
     ...sendButtonStyle,
-    background: input.trim() ? '#00AB44' : dimmedBg,
-    // On hover, always show full green background (unless disabled)
-    ...(isSendHovered && !isLoading ? { background: '#00AB44' } : {})
+  background: input.trim() ? '#00AB44' : dimmedBg,
+  // On hover, always show full green background (unless disabled)
+  ...(isSendHovered && !isLoading ? { background: '#00AB44' } : {}),
   };
 
   // When messages array changes, animate them in with a small stagger
@@ -1600,6 +1417,13 @@ export default function AskNetdata() {
   /* By default hide the scrollbar; show it only when the textarea has .is-scrollable */
   .asknetdata-textarea:not(.is-scrollable) { scrollbar-width: none; -ms-overflow-style: none; }
   .asknetdata-textarea:not(.is-scrollable)::-webkit-scrollbar { display: none; }
+  
+  /* Override Docusaurus container width limits for Ask Netdata page */
+  .container { max-width: none !important; }
+  .docMainContainer_TBSr { max-width: none !important; }
+  [class*="docMainContainer"] { max-width: none !important; }
+  [class*="container"] { max-width: none !important; }
+  .main-wrapper { max-width: none !important; }
       `}</style>
   <div ref={chatAreaRef} style={computedChatAreaStyle}>
         {showWelcome ? (
@@ -1660,6 +1484,10 @@ export default function AskNetdata() {
                   </div>
                   <button
                     type="button"
+                    className={
+                      // Apply CSS pulse class when a new placeholder rotated in
+                      (!input.trim() && currentPlaceholder && !isLoading && !isInputFocused && placeholderPulse) ? styles.sendPulse : undefined
+                    }
                     style={computedSendButtonStyle}
                     disabled={isLoading}
                     onMouseEnter={() => { setIsSendHovered(true); sendHoverRef.current = true; }}
@@ -1686,16 +1514,12 @@ export default function AskNetdata() {
               {/* Categorized suggestions below the centered chatbox */}
               <div style={{
                 position: 'absolute',
-                // Center horizontally to match the chatbox centerline
-                left: '50%',
-                transform: 'translateX(-50%)',
-                right: '50%',
+                // Use full available width from sidebar to screen edge
+                left: '0',
+                right: '0',
                 top: suggestionsTopPx != null ? `${suggestionsTopPx}px` : `calc(${ASK_LAYOUT.TOP_PERCENT * 100}% + ${ASK_LAYOUT.TOP_OFFSET_PX}px)`,
-                // Constrain to the computed content width (area to the right of the docs sidebar)
-                // and clamp to a maximum for readability on very wide screens
-                width: contentBounds && contentBounds.width ? `${Math.min(contentBounds.width, MAX_SUGGESTIONS_WIDTH_PX)}px` : '100%',
-                maxWidth: 'none',
-                padding: '0 24px',
+                // Full width with minimal padding
+                padding: '0 8px',
                 margin: 0,
                 boxSizing: 'border-box',
                 pointerEvents: 'auto',
@@ -1711,30 +1535,54 @@ export default function AskNetdata() {
                     gridTemplateColumns: forcedTemplateColumns || generalTemplateColumns,
                     gap: `${GRID_GAP_PX}px`,
                     marginTop: '8px',
-                    justifyContent: 'center',
                     justifyItems: 'stretch',
                     alignItems: 'stretch',
                     width: '100%',
                     boxSizing: 'border-box'
                   }}>
       {visibleCategories.map((cat) => (
-                    <div key={cat.key} style={{ padding: '8px', borderRadius: '12px', width: '100%', boxSizing: 'border-box' }}>
-                      <div style={{ fontSize: '1.125rem', fontWeight: 600, color: '#00AB44', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <div key={cat.key} style={{ 
+                      padding: '8px', 
+                      borderRadius: '12px', 
+                      width: '100%', 
+                      boxSizing: 'border-box',
+                      minHeight: cat.isFirstRow ? '300px' : 'auto', // Consistent height for first row
+                      display: 'flex',
+                      flexDirection: 'column'
+                    }}>
+                      <div style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
         <span>{categoryEmoji[cat.key] || '•'}</span> {cat.title}
                       </div>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                        {cat.items.map((q, i) => (
-                          <button key={i} onClick={() => handleSuggestionClick(q)}
-                            style={{ textAlign: 'left', padding: '8px', borderRadius: '6px', border: '1px solid transparent', backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white', cursor: 'pointer', fontSize: '0.875rem', color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057', transition: 'all 0.2s' }}
-                            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#00AB44'; e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4'; }}
-                            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'transparent'; e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white'; }}
-                          >
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                              <svg width="14" height="14" style={{ flexShrink: 0 }}><use href="#corner-arrow-icon" /></svg>
-                              <span>{q}</span>
-                            </div>
-                          </button>
-                        ))}
+                      <div style={{ 
+                        display: 'flex', 
+                        flexDirection: 'column', 
+                        gap: '6px',
+                        flex: cat.isFirstRow ? '1' : 'none' // Fill available space for first row cards
+                      }}>
+                        {cat.items.length > 0 ? (
+                          cat.items.map((q, i) => (
+                            <button key={i} onClick={() => handleSuggestionClick(q)}
+                              style={{ textAlign: 'left', padding: '8px', borderRadius: '6px', border: '1px solid transparent', backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white', cursor: 'pointer', fontSize: '0.875rem', color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057', transition: 'all 0.2s', wordBreak: 'break-word', overflowWrap: 'break-word' }}
+                              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#00AB44'; e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4'; }}
+                              onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'transparent'; e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white'; }}
+                            >
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                <svg width="14" height="14" style={{ flexShrink: 0 }}><use href="#corner-arrow-icon" /></svg>
+                                <span>{q}</span>
+                              </div>
+                            </button>
+                          ))
+                        ) : (
+                          <div style={{ 
+                            padding: '8px', 
+                            fontSize: '0.875rem', 
+                            color: isDarkMode ? 'var(--ifm-color-content-secondary)' : '#6c757d',
+                            fontStyle: 'italic',
+                            textAlign: 'center'
+                          }}>
+                            More questions coming soon...
+                          </div>
+                        )}
                       </div>
                     </div>
                   ))}

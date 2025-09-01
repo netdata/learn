@@ -188,6 +188,28 @@
   cursor: not-allowed;
 }
 
+/* Pulse outline to indicate the placeholder can be sent */
+@keyframes pulseOutline {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 171, 68, 0.65);
+  }
+  60% {
+    box-shadow: 0 0 0 10px rgba(0, 171, 68, 0.0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 171, 68, 0);
+  }
+}
+
+.sendPulse {
+  /* circular send button glow in 00AB44 without changing size */
+  border-radius: 50%;
+  animation: pulseOutline 0.9s ease-out 1;
+  transition: box-shadow 160ms;
+}
+
+/* Pulse animation handled inline via temporary style changes (background + transition) */
+
 /* Dark mode adjustments */
 [data-theme='dark'] .messageContent {
   background: var(--ifm-color-emphasis-100);
