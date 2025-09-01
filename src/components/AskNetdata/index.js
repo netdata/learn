@@ -398,6 +398,14 @@ export default function AskNetdata() {
   const [forcedRowWidthPx, setForcedRowWidthPx] = useState(null);
   const [forcedTemplateColumns, setForcedTemplateColumns] = useState(null);
   const [generalTemplateColumns, setGeneralTemplateColumns] = useState('repeat(auto-fit, minmax(280px, 1fr))');
+  const [isClearing, setIsClearing] = useState(false);
+  // Docking animation state: animate the floating input into the messages area
+  const [isAnimatingDock, setIsAnimatingDock] = useState(false);
+  const [isDocked, setIsDocked] = useState(false);
+  const [portalStyles, setPortalStyles] = useState(null);
+  const [dockSize, setDockSize] = useState(null);
+  const dockTargetRef = useRef(null); // where the input will dock inside the messages
+  const inputPortalRef = useRef(null);
 
   // If the page is opened with a question in the URL (e.g. ?q=how+to+install),
   // trigger a search automatically. Supports `q` and `question` params.
@@ -418,6 +426,77 @@ export default function AskNetdata() {
       console.debug('AskNetdata: invalid URL params', e);
     }
   }, []);
+
+  // When transitioning from welcome -> messages, start dock animation
+  useEffect(() => {
+    if (!showWelcome) {
+      // start docking animation from the floating input to the messages area
+      try {
+        const floating = floatingContainerRef.current?.querySelector('[data-asknet-input]');
+        const messagesContainer = containerRef.current?.querySelector('[data-asknet-messages]');
+        if (floating && messagesContainer) {
+          const fRect = floating.getBoundingClientRect();
+          const mRect = messagesContainer.getBoundingClientRect();
+          // target: bottom of messages container (dock there)
+          const targetX = mRect.left + 16; // small inset
+          const targetY = mRect.bottom - 84; // place above bottom
+
+          const initial = { left: fRect.left, top: fRect.top, width: fRect.width, height: fRect.height };
+          // Clamp the dock width so it doesn't expand to full viewport; prefer the floating container's max (800px)
+          try {
+            const floatingContainerWidth = floatingContainerRef.current ? floatingContainerRef.current.offsetWidth : 800;
+            const clampedWidth = Math.min(initial.width, floatingContainerWidth, 800);
+            setDockSize({ width: clampedWidth, height: initial.height });
+          } catch (e) {
+            setDockSize({ width: Math.min(initial.width, 800), height: initial.height });
+          }
+          const target = { left: targetX, top: targetY, width: Math.min(fRect.width, mRect.width - 32), height: fRect.height };
+
+          // compute translate delta
+          const dx = target.left - initial.left;
+          const dy = target.top - initial.top;
+
+          setPortalStyles({
+            position: 'absolute',
+            left: `${initial.left}px`,
+            top: `${initial.top}px`,
+            width: `${initial.width}px`,
+            height: `${initial.height}px`,
+            transform: 'translate(0px, 0px) scale(1)',
+            transition: 'transform 360ms cubic-bezier(0.2,0,0,1), left 0ms, top 0ms',
+            zIndex: 1002
+          });
+
+          // trigger next tick to animate to target
+          requestAnimationFrame(() => {
+            setIsAnimatingDock(true);
+            setPortalStyles(prev => ({
+              ...prev,
+              transform: `translate(${dx}px, ${dy}px) scale(0.98)`,
+              transition: 'transform 360ms cubic-bezier(0.2,0,0,1)'
+            }));
+          });
+
+          // after animation, set docked and remove portalStyles so the real input renders in-place
+          setTimeout(() => {
+            setIsAnimatingDock(false);
+            setIsDocked(true);
+            setPortalStyles(null);
+          }, 380);
+        } else {
+          // fallback: just dock without animation
+          setIsDocked(true);
+        }
+      } catch (e) {
+        setIsDocked(true);
+      }
+    } else {
+      // showWelcome true -> undock
+      setIsDocked(false);
+      setIsAnimatingDock(false);
+      setPortalStyles(null);
+    }
+  }, [showWelcome]);
   useEffect(() => {
     const updateBounds = () => {
       if (!containerRef.current) return;
@@ -941,14 +1020,18 @@ export default function AskNetdata() {
 
   // Placeholder rotation effect
   useEffect(() => {
-    if (placeholderQuestions.length === 0) return;
+  if (placeholderQuestions.length === 0) return;
+  // Don't rotate placeholders when the input is docked in the answer view
+  if (isDocked || isAnimatingDock) return;
+  // Only rotate placeholders while on the welcome screen
+  if (!showWelcome) return;
     
     // Set initial placeholder
     setCurrentPlaceholder(placeholderQuestions[0]);
     
     const interval = setInterval(() => {
-      // If paused (user hovering send button), skip rotation
-      if (sendHoverRef.current) return;
+  // If paused (user hovering send button), skip rotation
+  if (sendHoverRef.current) return;
 
       // Start fade out animation
       setIsPlaceholderAnimating(true);
@@ -1234,6 +1317,17 @@ export default function AskNetdata() {
     }
   };
 
+  // Trigger a short fade/scale animation, then clear history and reset
+  const handleNewChat = () => {
+    if (isClearing) return; // guard double clicks
+    setIsClearing(true);
+    // Animation duration should match the CSS transitions below (300ms)
+    setTimeout(() => {
+      clearHistory();
+      setIsClearing(false);
+    }, 320);
+  };
+
   // Markdown renderer is now defined outside the component
 
   const containerStyle = {
@@ -1307,9 +1401,11 @@ export default function AskNetdata() {
   // Messages content should fade in after the container expands
   const computedMessagesContainerStyle = {
     ...messagesContainerStyle,
-    opacity: showWelcome ? 0 : 1,
-    transition: 'opacity 520ms ease 260ms', // delay so expansion happens first
-    willChange: 'opacity'
+  opacity: isClearing ? 0 : (showWelcome ? 0 : 1),
+  transition: isClearing ? 'opacity 320ms ease, transform 320ms ease' : 'opacity 520ms ease 260ms', // shorter when clearing
+  transform: isClearing ? 'scale(0.985) translateY(-6px)' : 'none',
+  willChange: isClearing ? 'opacity, transform' : 'opacity',
+  pointerEvents: isClearing ? 'none' : undefined
   };
 
   const messageStyle = {
@@ -1466,6 +1562,64 @@ export default function AskNetdata() {
     };
   }, [messages]);
 
+  // Shared renderer for the input form so floating and docked views are identical
+  const renderInputForm = ({ attachRef = false, placeholderOverride = null } = {}) => {
+    const placeholderText = placeholderOverride !== null ? placeholderOverride : (currentPlaceholder || "Ask anything about Netdata, in any language... (Shift+Enter for new line)");
+    const placeholderStyle = placeholderOverride !== null
+      ? { ...animatedPlaceholderStyle, color: isDarkMode ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)' }
+      : animatedPlaceholderStyle;
+
+    return (
+      <div style={computedInputContainerStyle}>
+        <form onSubmit={handleSubmit} style={inputFormStyle} data-asknet-input>
+          <div style={{ ...inputWrapperStyle, overflow: 'visible' }}>
+            <div style={placeholderStyle}>{placeholderText}</div>
+            <textarea
+              className="asknetdata-textarea"
+              ref={(el) => {
+                if (attachRef) {
+                  inputRef.current = el;
+                  textareaRef.current = el;
+                }
+              }}
+              value={input}
+              onChange={(e) => { setInput(e.target.value); adjustTextareaHeight(); }}
+              onKeyDown={handleKeyDown}
+              onFocus={() => setIsInputFocused(true)}
+              onBlur={() => setIsInputFocused(false)}
+              onWheel={handleTextareaWheel}
+              placeholder=""
+              style={{ ...chatInputStyle, caretColor: isSendHovered ? 'transparent' : undefined }}
+              rows={1}
+              disabled={isLoading}
+            />
+          </div>
+          <button
+            type="button"
+            className={placeholderPulse ? styles.sendPulse : ''}
+            style={computedSendButtonStyle}
+            disabled={isLoading}
+            onMouseEnter={() => setIsSendHovered(true)}
+            onMouseLeave={() => setIsSendHovered(false)}
+            onClick={(e) => {
+              e.preventDefault();
+              if (isLoading) return;
+              // If a placeholder override is provided for the docked/portal view, don't auto-submit that placeholder
+              if (!input.trim()) {
+                if (placeholderOverride !== null) handleSubmit(null, '');
+                else handleSubmit(null, currentPlaceholder || '');
+              } else {
+                handleSubmit();
+              }
+            }}
+          >
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+          </button>
+        </form>
+      </div>
+    );
+  };
+
   return (
   <div ref={containerRef} style={containerStyle}>
       <style>{`
@@ -1515,60 +1669,7 @@ export default function AskNetdata() {
                 </p>
               </div>
               
-              <div style={computedInputContainerStyle}>
-                <form onSubmit={handleSubmit} style={inputFormStyle}>
-                  <div style={{ ...inputWrapperStyle, overflow: 'visible' }}>
-                    <div style={animatedPlaceholderStyle}>
-                      {currentPlaceholder || "Ask anything about Netdata, in any language... (Shift+Enter for new line)"}
-                    </div>
-                    <textarea
-                      className="asknetdata-textarea"
-                      ref={(el) => {
-                        inputRef.current = el;
-                        textareaRef.current = el;
-                      }}
-                      value={input}
-                      onChange={(e) => {
-                        setInput(e.target.value);
-                        adjustTextareaHeight();
-                      }}
-                      onKeyDown={handleKeyDown}
-                      onFocus={() => setIsInputFocused(true)}
-                      onBlur={() => setIsInputFocused(false)}
-                      onWheel={handleTextareaWheel}
-                      placeholder=""
-                      style={{ ...chatInputStyle, caretColor: isSendHovered ? 'transparent' : undefined }}
-                      rows={1}
-                      disabled={isLoading}
-                    />
-                  </div>
-                  <button
-                    type="button"
-                    className={
-                      // Apply CSS pulse class when a new placeholder rotated in
-                      (!input.trim() && currentPlaceholder && !isLoading && !isInputFocused && placeholderPulse) ? styles.sendPulse : undefined
-                    }
-                    style={computedSendButtonStyle}
-                    disabled={isLoading}
-                    onMouseEnter={() => { setIsSendHovered(true); sendHoverRef.current = true; }}
-                    onMouseLeave={() => { setIsSendHovered(false); sendHoverRef.current = false; }}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (isLoading) return;
-                      if (!input.trim()) {
-                        // Submit the current placeholder when input is empty
-                        handleSubmit(null, currentPlaceholder || '');
-                      } else {
-                        handleSubmit();
-                      }
-                    }}
-                  >
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-                    </svg>
-                  </button>
-                </form>
-              </div>
+              {renderInputForm({ attachRef: true })}
             </div>
 
               {/* Categorized suggestions below the centered chatbox */}
@@ -1656,7 +1757,8 @@ export default function AskNetdata() {
             {messages.length > 0 && (
               <div style={{ textAlign: 'right', marginBottom: '20px' }}>
                 <button
-                  onClick={clearHistory}
+                  onClick={handleNewChat}
+                  aria-label="Start a new chat"
                   style={{
                     background: 'transparent',
                     border: isDarkMode ? '1px solid var(--ifm-color-emphasis-300)' : '1px solid #e5e7eb',
@@ -1665,7 +1767,7 @@ export default function AskNetdata() {
                     color: isDarkMode ? 'var(--ifm-color-secondary)' : '#6b7280',
                     cursor: 'pointer',
                     fontSize: '14px',
-                    transition: 'all 0.2s ease'
+                    transition: 'all 0.28s ease'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = isDarkMode ? 'var(--ifm-background-surface-color)' : '#f9fafb';
@@ -1674,7 +1776,7 @@ export default function AskNetdata() {
                     e.currentTarget.style.background = 'transparent';
                   }}
                 >
-                  Clear History
+                  {isClearing ? 'Starting...' : 'New chat'}
                 </button>
               </div>
             )}
@@ -1866,6 +1968,21 @@ export default function AskNetdata() {
               </div>
               );
             })}
+            {/* Dock target: place the input at bottom of messages when docked */}
+            <div ref={dockTargetRef} style={{ height: isDocked ? '80px' : '0px', transition: 'height 260ms ease' }} />
+            {/* Portal: animated clone of the floating input while transitioning */}
+            {isAnimatingDock && portalStyles && (
+              <div ref={inputPortalRef} style={portalStyles} aria-hidden>
+                {renderInputForm({ attachRef: false, placeholderOverride: 'Reply / Ask something else' })}
+              </div>
+            )}
+
+            {/* When docked, show the real input inside the messages area */}
+            {!isAnimatingDock && isDocked && (
+              <div style={{ marginTop: '12px', padding: '8px 20px', width: '100%', maxWidth: dockSize ? `${dockSize.width}px` : '800px', marginLeft: 'auto', marginRight: 'auto', height: dockSize ? `${dockSize.height}px` : undefined }}>
+                {renderInputForm({ attachRef: true, placeholderOverride: 'Reply / Ask something else' })}
+              </div>
+            )}
             {isLoading && (
               <div style={{ ...messageStyle, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '20px 0' }}>
                 <div style={{ position: 'relative', width: '300px', height: '4px', overflow: 'hidden', borderRadius: '2px', backgroundColor: 'rgba(156, 163, 175, 0.1)' }}>
