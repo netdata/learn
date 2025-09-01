@@ -121,6 +121,9 @@ export const ASK_LAYOUT = {
   ADDITIONAL_ROWS_MAX_ITEMS: null
 };
 
+
+
+
 // API configuration
 // Automatically detect environment and use appropriate API
 const getApiUrl = () => {
@@ -342,6 +345,8 @@ export default function AskNetdata() {
   const inputRef = useRef(null);
   const messageRefs = useRef({});
   const chatAreaRef = useRef(null);
+  const containerRef = useRef(null);
+  const floatingContainerRef = useRef(null);
   const lastUserMessageId = useRef(null);
   const lastAssistantMessageId = useRef(null);
   const targetScrollPosition = useRef(null);
@@ -351,12 +356,95 @@ export default function AskNetdata() {
   const scrollSaveTimer = useRef(null);
   const hasRestoredScroll = useRef(false);
   const suggestionBoxRef = useRef(null);
-  const [visibleSuggestionCount, setVisibleSuggestionCount] = useState(null);
-  const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
-  const [isPrevHover, setIsPrevHover] = useState(false);
-  const [isNextHover, setIsNextHover] = useState(false);
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
+
+  // Expand suggestions to the full screen area (right of the sidebar) with dynamic columns
+  const [contentBounds, setContentBounds] = useState(null);
+  const GRID_MIN_COL_PX = 300; // desired min width per column for centering math
+  const GRID_GAP_PX = 16;      // keep in sync with grid gap below
+  const [suggestionsTopPx, setSuggestionsTopPx] = useState(null);
+  const TOTAL_SECTIONS = 6; // About, Deployment, Operations, AI, Dashboards, Alerts
+  const MIN_SINGLE_ROW_COL_PX = 400; // only force a single row when columns are comfortably wide
+  const MAX_SINGLE_ROW_COL_PX = 520; // allow wider cards to use side space while staying readable
+  const H_PADDING_PX = 48; // matches padding: '0 24px'
+  const MAX_SUGGESTIONS_WIDTH_PX = 3000; // hard cap for the suggestions container width
+  const [forcedRowWidthPx, setForcedRowWidthPx] = useState(null);
+  const [forcedTemplateColumns, setForcedTemplateColumns] = useState(null);
+  const [generalTemplateColumns, setGeneralTemplateColumns] = useState('repeat(auto-fit, minmax(300px, 300px))');
+  useEffect(() => {
+    const updateBounds = () => {
+      if (!containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const left = Math.max(0, Math.round(rect.left));
+      const width = Math.max(0, Math.round(window.innerWidth - left));
+      setContentBounds({ left, width });
+
+    // Default, fixed-width tracks so rows center nicely and cards stay readable
+    // Try to fit 6 columns by slightly shrinking cards, but not below a readable minimum
+  const MIN_CARD_TRACK = 260; // don't go narrower than this
+  const MAX_CARD_TRACK = 480; // widen cards further to better use available side space
+      const innerWidth = Math.max(0, width - H_PADDING_PX); // account for our horizontal padding (24px each side)
+      const trackForSix = Math.floor((innerWidth - (TOTAL_SECTIONS - 1) * GRID_GAP_PX) / TOTAL_SECTIONS);
+      // Use a min smaller than the exact six-fit track so 1fr has room to expand
+      const LEEWAY = 24; // px of slack to ensure stretch
+      const chosenMin = (trackForSix >= MIN_CARD_TRACK)
+        ? Math.min(Math.max(MIN_CARD_TRACK, trackForSix - LEEWAY), MAX_CARD_TRACK)
+        : MIN_CARD_TRACK;
+  // Let columns grow to fill available space while maintaining a readable minimum
+  setGeneralTemplateColumns(`repeat(auto-fit, minmax(${chosenMin}px, 1fr))`);
+
+      // Compute if we can fit all sections on one centered row
+      const available = Math.max(0, width - H_PADDING_PX);
+      const rawCol = Math.floor((available - (TOTAL_SECTIONS - 1) * GRID_GAP_PX) / TOTAL_SECTIONS);
+  if (rawCol >= MIN_SINGLE_ROW_COL_PX) {
+  const colPx = Math.min(rawCol, MAX_SINGLE_ROW_COL_PX);
+        const rowWidth = colPx * TOTAL_SECTIONS + (TOTAL_SECTIONS - 1) * GRID_GAP_PX;
+        setForcedRowWidthPx(rowWidth);
+  // Use fractional columns so tracks stretch to consume side space
+  setForcedTemplateColumns(`repeat(${TOTAL_SECTIONS}, minmax(${colPx}px, 1fr))`);
+      } else {
+        setForcedRowWidthPx(null);
+        setForcedTemplateColumns(null);
+      }
+    };
+    updateBounds();
+    const id = setTimeout(updateBounds, 60);
+    window.addEventListener('resize', updateBounds);
+    return () => {
+      clearTimeout(id);
+      window.removeEventListener('resize', updateBounds);
+    };
+  }, []);
+
+  // Measure and anchor suggestions below the floating chat container to avoid overlap on zoom/resize
+  useEffect(() => {
+    const updateTop = () => {
+      if (!floatingContainerRef.current || !containerRef.current) return;
+      const fRect = floatingContainerRef.current.getBoundingClientRect();
+      const cRect = containerRef.current.getBoundingClientRect();
+      const top = Math.max(0, Math.round(fRect.bottom - cRect.top + 12));
+      setSuggestionsTopPx(top);
+    };
+    updateTop();
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(updateTop) : null;
+    if (ro && floatingContainerRef.current) ro.observe(floatingContainerRef.current);
+    window.addEventListener('resize', updateTop);
+    return () => {
+      window.removeEventListener('resize', updateTop);
+      if (ro && floatingContainerRef.current) ro.disconnect();
+    };
+  }, []);
+
+  // Emoji for category headings
+  const categoryEmoji = useMemo(() => ({
+    about: '✨',
+    deployment: '🚀',
+    operations: '⚙️',
+    ai: '🤖',
+    dashboards: '📊',
+    alerts: '🔔'
+  }), []);
 
   // Keep track of original overflow styles so we can restore them
   const originalOverflow = useRef({ html: '', body: '' });
@@ -639,8 +727,6 @@ export default function AskNetdata() {
 
   // Build groups from the top-level constant. Keep per-session item order stable.
   const groups = useMemo(() => SUGGESTION_GROUPS, []);
-
-  const currentGroup = groups.length ? groups[currentGroupIndex % groups.length] : null;
 
   // Multi-category layout: choose as many categories as fit and 4-5 items per category (most that fit)
   const [visibleCategories, setVisibleCategories] = useState([]);
@@ -997,52 +1083,6 @@ export default function AskNetdata() {
     }
   }, [visibleCategories, showWelcome]);
 
-  const goPrevGroup = () => setCurrentGroupIndex(i => (i - 1 + groups.length) % groups.length);
-  const goNextGroup = () => setCurrentGroupIndex(i => (i + 1) % groups.length);
-
-  // Compute how many suggestion items fit in the viewport below the suggestion box top
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (!currentGroup) return;
-
-    let rafId = null;
-    const computeVisible = () => {
-      const container = suggestionBoxRef.current;
-      if (!container) return;
-      const rect = container.getBoundingClientRect();
-      const top = rect.top;
-      const available = window.innerHeight - top - 24; // 24px bottom margin
-
-      // Measure item height
-      const firstBtn = container.querySelector('button');
-      let itemHeight = 36; // fallback
-      if (firstBtn) {
-        const r = firstBtn.getBoundingClientRect();
-        itemHeight = r.height + 6; // include gap
-      }
-
-      // We want a single column; compute how many rows fit and cap to 6
-      const rows = Math.max(1, Math.floor(available / itemHeight));
-      const cappedRows = Math.min(rows, 6);
-
-      setVisibleSuggestionCount(curr => {
-        const items = currentGroup ? currentGroup.items.length : 0;
-        return Math.min(items, cappedRows);
-      });
-    };
-
-    // Compute on next frame to allow DOM to layout
-    rafId = window.requestAnimationFrame(computeVisible);
-    const t = setTimeout(computeVisible, 120);
-    window.addEventListener('resize', computeVisible);
-
-    return () => {
-      if (rafId) window.cancelAnimationFrame(rafId);
-      clearTimeout(t);
-      window.removeEventListener('resize', computeVisible);
-    };
-  }, [currentGroup]);
-
   // Combine all questions for placeholder rotation
   const allQuestions = useMemo(() => {
     return groups.flatMap(g => g.items || []);
@@ -1349,8 +1389,9 @@ export default function AskNetdata() {
   // When showing messages (welcome hidden), allow the chat area to expand
   // and use the full available width; keep the compact maxWidth for the welcome view.
   const computedChatAreaStyle = {
-    ...chatAreaStyle,
-    maxWidth: showWelcome ? chatAreaStyle.maxWidth : '100%'
+  ...chatAreaStyle,
+  // Make the chat area full-width even on the welcome screen so suggestions can span the screen
+  maxWidth: '100%'
   };
 
   const welcomeStyle = {
@@ -1382,51 +1423,6 @@ export default function AskNetdata() {
     marginBottom: '8px',
     lineHeight: '1',
     whiteSpace: 'nowrap'
-  };
-
-  const suggestionContainerStyle = {
-  marginTop: 'auto',
-  marginBottom: '10px',
-  width: '100%',
-  maxWidth: '980px',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  padding: '0 24px',
-  boxSizing: 'border-box'
-  };
-
-  const suggestionGridStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-  gap: '20px',
-  justifyItems: 'center',
-  alignItems: 'start'
-  };
-
-  const suggestionButtonStyle = {
-  textAlign: 'center',
-    padding: '0.5rem',
-    borderRadius: '6px',
-    border: '1px solid transparent',
-    backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white',
-    cursor: 'pointer',
-    fontSize: '0.875rem',
-    lineHeight: '1.2',
-    color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057',
-    transition: 'all 0.2s'
-  };
-
-  const suggestionCardStyle = {
-    background: isDarkMode ? 'var(--ifm-background-surface-color)' : 'white',
-    border: isDarkMode ? '2px solid var(--ifm-color-emphasis-300)' : '2px solid #e5e7eb',
-    borderRadius: '12px',
-    padding: '24px',
-    cursor: 'pointer',
-    textAlign: 'left',
-    transition: 'all 0.2s ease',
-    minHeight: '200px',
-    display: 'flex',
-    flexDirection: 'column'
   };
 
   const messagesContainerStyle = {
@@ -1595,7 +1591,7 @@ export default function AskNetdata() {
   }, [messages]);
 
   return (
-    <div style={containerStyle}>
+  <div ref={containerRef} style={containerStyle}>
       <style>{`
         /* Disable native resize handle but allow internal vertical scrolling */
   .asknetdata-textarea { resize: none !important; overflow-y: auto !important; -webkit-appearance: none !important; appearance: none !important; }
@@ -1618,7 +1614,7 @@ export default function AskNetdata() {
             </svg>
 
             {/* Floating Title and Input Container */}
-            <div style={floatingContainerStyle}>
+            <div ref={floatingContainerRef} style={floatingContainerStyle}>
               <div style={welcomeStyle}>
                 <h2 style={welcomeTitleStyle}>
                   Ask Netdata Docs
@@ -1687,101 +1683,65 @@ export default function AskNetdata() {
               </div>
             </div>
 
-              {/* Responsive multi-category suggestions grid below the centered chatbox */}
-              {visibleCategories.length > 0 && (
+              {/* Categorized suggestions below the centered chatbox */}
+              <div style={{
+                position: 'absolute',
+                // Center horizontally to match the chatbox centerline
+                left: '50%',
+                transform: 'translateX(-50%)',
+                right: '50%',
+                top: suggestionsTopPx != null ? `${suggestionsTopPx}px` : `calc(${ASK_LAYOUT.TOP_PERCENT * 100}% + ${ASK_LAYOUT.TOP_OFFSET_PX}px)`,
+                // Constrain to the computed content width (area to the right of the docs sidebar)
+                // and clamp to a maximum for readability on very wide screens
+                width: contentBounds && contentBounds.width ? `${Math.min(contentBounds.width, MAX_SUGGESTIONS_WIDTH_PX)}px` : '100%',
+                maxWidth: 'none',
+                padding: '0 24px',
+                margin: 0,
+                boxSizing: 'border-box',
+                pointerEvents: 'auto',
+                zIndex: 1
+              }}>
+                {/* Center wrapper to align grid columns under the chatbox. When possible, force a single centered row. */}
                 <div style={{
-                  position: 'absolute',
-                  left: 0,
-                  right: 0,
-                  // Keep this in sync with ASK_LAYOUT TOP_PERCENT/OFFSET
-                  top: `calc(${ASK_LAYOUT.TOP_PERCENT * 100}% + ${ASK_LAYOUT.TOP_OFFSET_PX}px)`,
                   width: '100%',
-                  maxWidth: '100%',
-                  padding: '0 24px',
-                  margin: '0 auto',
-                  boxSizing: 'border-box',
-                  pointerEvents: 'auto',
-                  zIndex: 1
+                  margin: '0 auto'
                 }}>
-                  {(() => {
-                    // Accessible suggestion colors
-                    var suggestionTextColor = isDarkMode ? '#7ED9A6' : '#0B7D3B';
-                    var suggestionTitleColor = isDarkMode ? '#98E9BC' : '#0E8A43';
-                    return (
                   <div ref={suggestionBoxRef} style={{
                     display: 'grid',
-                    gridTemplateColumns: `repeat(auto-fit, minmax(${ASK_LAYOUT.MIN_CARD_WIDTH_PX}px, 1fr))`,
-                    gap: `${ASK_LAYOUT.GRID_GAP_PX}px`,
-                    alignItems: 'stretch'
+                    gridTemplateColumns: forcedTemplateColumns || generalTemplateColumns,
+                    gap: `${GRID_GAP_PX}px`,
+                    marginTop: '8px',
+                    justifyContent: 'center',
+                    justifyItems: 'stretch',
+                    alignItems: 'stretch',
+                    width: '100%',
+                    boxSizing: 'border-box'
                   }}>
-                    {visibleCategories.map((cat) => (
-                      <div key={cat.key} style={{
-                        background: isDarkMode ? 'var(--ifm-background-surface-color)' : 'white',
-                        border: isDarkMode ? '1px solid var(--ifm-color-emphasis-300)' : '1px solid #e5e7eb',
-                        borderRadius: '12px',
-                        padding: '20px',
-                        boxSizing: 'border-box',
-                        height: '100%'
-                      }}>
-                        <div style={{
-                          fontWeight: 700,
-                          color: suggestionTitleColor,
-                          fontSize: '1.05rem',
-                          marginBottom: '8px',
-                          textAlign: 'center'
-                        }}>
-                          {cat.title}
-                        </div>
-                        <div style={{ display: 'grid', gap: '10px' }}>
-                          {cat.items.map((q, idx) => (
-                            <button
-                              key={idx}
-                              onClick={() => handleSuggestionClick(q)}
-                              style={{
-                                textAlign: 'left',
-                                padding: '10px 12px',
-                                borderRadius: '8px',
-                                border: 'none',
-                                background: 'transparent',
-                                color: suggestionTextColor,
-                                cursor: 'pointer',
-                                transition: 'color 160ms, transform 120ms',
-                                width: '100%',
-                                boxSizing: 'border-box',
-                                whiteSpace: 'normal',
-                                wordBreak: 'break-word',
-                                overflowWrap: 'anywhere',
-                                lineHeight: 1.4
-                              }}
-                              onMouseEnter={(e) => { e.currentTarget.style.color = '#00AB44'; }}
-                              onMouseLeave={(e) => { e.currentTarget.style.color = suggestionTextColor; }}
-                            >
-                              {q}
-                            </button>
-                          ))}
-                        </div>
+      {visibleCategories.map((cat) => (
+                    <div key={cat.key} style={{ padding: '8px', borderRadius: '12px', width: '100%', boxSizing: 'border-box' }}>
+                      <div style={{ fontSize: '1.125rem', fontWeight: 600, color: '#00AB44', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <span>{categoryEmoji[cat.key] || '•'}</span> {cat.title}
                       </div>
-                    ))}
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        {cat.items.map((q, i) => (
+                          <button key={i} onClick={() => handleSuggestionClick(q)}
+                            style={{ textAlign: 'left', padding: '8px', borderRadius: '6px', border: '1px solid transparent', backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white', cursor: 'pointer', fontSize: '0.875rem', color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057', transition: 'all 0.2s' }}
+                            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#00AB44'; e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4'; }}
+                            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'transparent'; e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white'; }}
+                          >
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                              <svg width="14" height="14" style={{ flexShrink: 0 }}><use href="#corner-arrow-icon" /></svg>
+                              <span>{q}</span>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                   </div>
-                    ); })()}
                 </div>
-              )}
+              </div>
 
-            {/* Title and Categorized Questions together */}
-            <div style={suggestionContainerStyle}>
-              
-              <div style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '0.5rem',
-                marginBottom: '0.5rem',
-                width: '100%',
-                maxWidth: '880px',
-                margin: '0 auto',
-                boxSizing: 'border-box'
-              }}>
-            </div>
-            </div>
           </>
         ) : (
           <div style={computedMessagesContainerStyle}>
