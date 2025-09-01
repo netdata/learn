@@ -46,6 +46,28 @@ export default function AskNetdataFixed() {
     inputRef.current?.focus();
   }, []);
 
+  // If the page is opened with a question in the URL (e.g. ?q=how+to+install),
+  // trigger a search automatically. Supports `q` and `question` params.
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get('q') || params.get('question');
+      if (q && q.trim()) {
+        // Hide welcome and perform a search with the provided question.
+        setShowWelcome(false);
+        // Call handleSubmit with an override message so we don't rely on setInput's async update.
+        // Small timeout to allow the component to finish mounting and focus.
+        setTimeout(() => {
+          handleSubmit(null, decodeURIComponent(q));
+        }, 50);
+      }
+    } catch (e) {
+      // Ignore malformed URLs
+      // eslint-disable-next-line no-console
+      console.debug('AskNetdata: invalid URL params', e);
+    }
+  }, []);
+
   const suggestions = [
     {
       icon: '🚀',
@@ -84,12 +106,22 @@ export default function AskNetdataFixed() {
     }
   ];
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e, overrideMessage) => {
     e?.preventDefault();
-    const message = input.trim();
+    const message = (overrideMessage ?? input).trim();
     if (!message || isLoading) return;
 
     setShowWelcome(false);
+
+    try {
+      // Update the URL so the current question is shareable without reloading the page.
+      const url = new URL(window.location.href);
+      url.searchParams.set('q', message);
+      // use replaceState to avoid polluting history with every intermediate query
+      window.history.replaceState({}, '', url.toString());
+    } catch (err) {
+      // ignore
+    }
 
     const userMessage = {
       id: Date.now(),
@@ -183,7 +215,8 @@ export default function AskNetdataFixed() {
 
   const handleSuggestionClick = (question) => {
     setInput(question);
-    handleSubmit();
+    // Use the override to submit immediately without waiting for setInput to flush.
+    handleSubmit(null, question);
   };
 
   const handleKeyDown = (e) => {
@@ -287,7 +320,7 @@ export default function AskNetdataFixed() {
     fontSize: '18px',
     background: type === 'user' 
       ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-      : 'linear-gradient(135deg, #00ab44 0%, #00d46a 100%)',
+      : 'linear-gradient(135deg, var(--asknet-green, #00ab44) 0%, #00d46a 100%)',
     color: 'white'
   });
 
@@ -356,21 +389,23 @@ export default function AskNetdataFixed() {
                   style={suggestionCardStyle}
                   onClick={() => handleSuggestionClick(suggestion.question)}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#667eea';
+                    e.currentTarget.style.borderColor = 'var(--asknet-green)';
                     e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(102, 126, 234, 0.15)';
+                    e.currentTarget.style.boxShadow = `0 10px 28px rgba(${getComputedStyle(document.documentElement).getPropertyValue('--asknet-green-rgb') || '0,171,68'}, 0.28)`;
+                    e.currentTarget.style.backgroundColor = 'rgba(0,171,68,0.08)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = '#e5e7eb';
                     e.currentTarget.style.transform = 'translateY(0)';
                     e.currentTarget.style.boxShadow = 'none';
+                    e.currentTarget.style.backgroundColor = 'white';
                   }}
                 >
                   <div style={{ fontSize: '32px', marginBottom: '12px' }}>{suggestion.icon}</div>
-                  <div style={{ fontWeight: '600', color: '#667eea', marginBottom: '8px', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                  <div style={{ fontWeight: '600', color: 'var(--asknet-green)', marginBottom: '8px', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
                     {suggestion.category}
                   </div>
-                  <div style={{ fontSize: '14px', color: '#4b5563', lineHeight: '1.5' }}>
+                  <div style={{ fontSize: '14px', color: 'inherit', lineHeight: '1.5' }}>
                     "{suggestion.question}"
                   </div>
                 </div>

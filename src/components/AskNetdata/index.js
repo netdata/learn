@@ -123,6 +123,17 @@ export const ASK_LAYOUT = {
   ADDITIONAL_ROWS_MAX_ITEMS: null
 };
 
+// =============================
+// Placeholder pool (rotate on refresh)
+// =============================
+// Edit this array to add/remove placeholder sentences shown below the title.
+export const PLACEHOLDER_POOL = [
+  'Go on, it does not bite',
+  'Come on, spill the beans',
+  'Fire away'
+];
+
+
 
 
 
@@ -280,8 +291,8 @@ const SmartLink = ({ href, children, ...props }) => {
           100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
         }
         @keyframes glow {
-          0%, 100% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.5), 0 0 10px rgba(0, 212, 255, 0.3), 0 0 15px rgba(0, 171, 68, 0.2); }
-          50% { box-shadow: 0 0 10px rgba(0, 212, 255, 0.8), 0 0 20px rgba(0, 212, 255, 0.6), 0 0 30px rgba(0, 171, 68, 0.4); }
+          0%, 100% { box-shadow: 0 0 8px rgba(0, 212, 255, 0.6), 0 0 16px rgba(0, 212, 255, 0.4), 0 0 24px rgba(0, 171, 68, 0.36); }
+          50% { box-shadow: 0 0 18px rgba(0, 212, 255, 0.95), 0 0 36px rgba(0, 212, 255, 0.7), 0 0 48px rgba(0, 171, 68, 0.6); }
         }
         @keyframes wave {
           0%, 100% { transform: translateY(0) scale(1); }
@@ -345,6 +356,17 @@ export default function AskNetdata() {
   // Transient flag toggled when a new placeholder rotates in
   const [placeholderPulse, setPlaceholderPulse] = useState(false);
   const [isPlaceholderAnimating, setIsPlaceholderAnimating] = useState(false);
+  // Randomized subtitle under the main title (rotates on refresh)
+  const [titleSubtitle] = useState(() => {
+    try {
+      if (Array.isArray(PLACEHOLDER_POOL) && PLACEHOLDER_POOL.length > 0) {
+        return PLACEHOLDER_POOL[Math.floor(Math.random() * PLACEHOLDER_POOL.length)];
+      }
+    } catch (e) {
+      // ignore
+    }
+    return 'Get instant answers about monitoring, troubleshooting, and optimizing your infrastructure';
+  });
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
   const messageRefs = useRef({});
@@ -376,6 +398,26 @@ export default function AskNetdata() {
   const [forcedRowWidthPx, setForcedRowWidthPx] = useState(null);
   const [forcedTemplateColumns, setForcedTemplateColumns] = useState(null);
   const [generalTemplateColumns, setGeneralTemplateColumns] = useState('repeat(auto-fit, minmax(280px, 1fr))');
+
+  // If the page is opened with a question in the URL (e.g. ?q=how+to+install),
+  // trigger a search automatically. Supports `q` and `question` params.
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get('q') || params.get('question');
+      if (q && q.trim()) {
+        setShowWelcome(false);
+        // small timeout to allow component mount
+        setTimeout(() => {
+          handleSubmit(null, decodeURIComponent(q));
+        }, 50);
+      }
+    } catch (e) {
+      // ignore malformed URL
+      // eslint-disable-next-line no-console
+      console.debug('AskNetdata: invalid URL params', e);
+    }
+  }, []);
   useEffect(() => {
     const updateBounds = () => {
       if (!containerRef.current) return;
@@ -938,6 +980,14 @@ export default function AskNetdata() {
 
     setShowWelcome(false);
 
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('q', message);
+      window.history.replaceState({}, '', url.toString());
+    } catch (err) {
+      // ignore
+    }
+
     const userMessageId = Date.now();
     const userMessage = {
       id: userMessageId,
@@ -1172,6 +1222,15 @@ export default function AskNetdata() {
       sessionStorage.removeItem('askNetdataScrollPosition');
       // Reset scroll position flags
       hasRestoredScroll.current = false;
+      try {
+        // Remove query params `q` or `question` without adding a history entry
+        const url = new URL(window.location.href);
+        url.searchParams.delete('q');
+        url.searchParams.delete('question');
+        window.history.replaceState({}, '', url.toString());
+      } catch (e) {
+        // ignore malformed URL or environment without history
+      }
     }
   };
 
@@ -1233,7 +1292,7 @@ export default function AskNetdata() {
   };
 
   const welcomeTitleStyle = {
-    color: '#00AB44',
+  color: 'var(--asknet-green)',
     marginBottom: '8px',
     lineHeight: '1',
     whiteSpace: 'nowrap'
@@ -1269,7 +1328,7 @@ export default function AskNetdata() {
     fontSize: '18px',
     background: type === 'user' 
       ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-      : 'linear-gradient(135deg, #00ab44 0%, #00d46a 100%)',
+      : 'linear-gradient(135deg, var(--asknet-green) 0%, #00d46a 100%)',
     color: 'white'
   });
 
@@ -1290,7 +1349,7 @@ export default function AskNetdata() {
     opacity: showWelcome ? 1 : 0.98,
     // Add a green outline ring when the textarea is focused without affecting layout
     boxShadow: isInputFocused
-      ? `${inputContainerStyle.boxShadow}, 0 0 0 3px rgba(0, 171, 68, 0.12), 0 0 12px rgba(0, 171, 68, 0.06)`
+      ? `${inputContainerStyle.boxShadow}, 0 0 0 4px rgba(var(--asknet-green-rgb), 0.18), 0 0 18px rgba(var(--asknet-green-rgb), 0.12)`
       : inputContainerStyle.boxShadow,
     willChange: 'transform, opacity, box-shadow'
   };
@@ -1336,7 +1395,7 @@ export default function AskNetdata() {
     right: '50px',
     fontSize: '16px',
   // Default placeholder color; keep green when hovered only
-  color: (isSendHovered && !input.trim()) ? '#00AB44' : (isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'),
+  color: (isSendHovered && !input.trim()) ? 'var(--asknet-green)' : (isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'),
     fontFamily: 'inherit',
     pointerEvents: 'none',
   // Slightly gentler color transition
@@ -1353,7 +1412,7 @@ export default function AskNetdata() {
   };
 
   const sendButtonStyle = {
-    background: '#00AB44',
+    background: 'var(--asknet-green)',
     color: 'white',
     border: 'none',
     borderRadius: '50%',
@@ -1365,19 +1424,19 @@ export default function AskNetdata() {
     justifyContent: 'center',
     opacity: isLoading ? 0.5 : 1,
   transition: 'background 0.2s, box-shadow 260ms',
-  boxShadow: isDarkMode ? '0 2px 8px rgba(0,0,0,0.5)' : '0 2px 8px rgba(0,171,68,0.14)',
+  boxShadow: isDarkMode ? '0 2px 10px rgba(0,0,0,0.6)' : '0 4px 18px rgba(var(--asknet-green-rgb), 0.28)',
     flexShrink: 0
   };
 
 
   // Dimmed background color (solid) for light/dark modes
   // More prominent dimmed background so the inactive button reads as interactive
-  const dimmedBg = isDarkMode ? 'rgba(0,171,68,0.28)' : 'rgba(0,171,68,0.18)';
+  const dimmedBg = isDarkMode ? 'rgba(var(--asknet-green-rgb), 0.42)' : 'rgba(var(--asknet-green-rgb), 0.28)';
   const computedSendButtonStyle = {
     ...sendButtonStyle,
-  background: input.trim() ? '#00AB44' : dimmedBg,
+  background: input.trim() ? 'var(--asknet-green)' : dimmedBg,
   // On hover, always show full green background (unless disabled)
-  ...(isSendHovered && !isLoading ? { background: '#00AB44' } : {}),
+  ...(isSendHovered && !isLoading ? { background: 'var(--asknet-green)' } : {}),
   };
 
   // When messages array changes, animate them in with a small stagger
@@ -1444,14 +1503,15 @@ export default function AskNetdata() {
                   Ask Netdata Docs
                 </h2>
                 <p style={{ 
-                  fontSize: '20px', 
-                  color: isDarkMode ? 'var(--ifm-color-secondary)' : '#6b7280', 
+                  fontSize: '15px', 
+                  color: isDarkMode ? '#787b81ff' : '#6b7280', 
                   marginBottom: '0', 
                   lineHeight: '1.3', 
                   margin: '0 auto',
-                  textAlign: 'center'
+                  textAlign: 'center',
+                  fontStyle: 'italic'
                 }}>
-                  Placeholder text below title
+                  {titleSubtitle}
                 </p>
               </div>
               
@@ -1562,8 +1622,8 @@ export default function AskNetdata() {
                         {cat.items.length > 0 ? (
                           cat.items.map((q, i) => (
                             <button key={i} onClick={() => handleSuggestionClick(q)}
-                              style={{ textAlign: 'left', padding: '8px', borderRadius: '6px', border: '1px solid transparent', backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white', cursor: 'pointer', fontSize: '0.875rem', color: isDarkMode ? 'var(--ifm-font-color-base)' : '#495057', transition: 'all 0.2s', wordBreak: 'break-word', overflowWrap: 'break-word' }}
-                              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#00AB44'; e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.1)' : '#f0fff4'; }}
+                              style={{ textAlign: 'left', padding: '8px', borderRadius: '6px', border: '1px solid transparent', backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white', cursor: 'pointer', fontSize: '0.875rem', color: 'inherit', transition: 'all 0.2s', wordBreak: 'break-word', overflowWrap: 'break-word' }}
+                              onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--asknet-green)'; e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.08)' : '#f0fff4'; }}
                               onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'transparent'; e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white'; }}
                             >
                               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1816,9 +1876,9 @@ export default function AskNetdata() {
                     left: '0',
                     width: '100px',
                     height: '100%',
-                    background: 'linear-gradient(90deg, transparent, #00ab44, transparent)',
+                    background: `linear-gradient(90deg, transparent, var(--asknet-green), transparent)`,
                     animation: 'scanBackForth 2s ease-in-out infinite',
-                    boxShadow: '0 0 10px rgba(0, 171, 68, 0.32), 0 0 20px rgba(0, 171, 68, 0.16)'
+                    boxShadow: `0 0 10px rgba(${getComputedStyle(document.documentElement).getPropertyValue('--asknet-green-rgb') || '0,171,68'}, 0.32), 0 0 20px rgba(${getComputedStyle(document.documentElement).getPropertyValue('--asknet-green-rgb') || '0,171,68'}, 0.16)`
                   }}></div>
                 </div>
               </div>
