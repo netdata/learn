@@ -111,7 +111,7 @@ export const ASK_LAYOUT = {
   ROW_GAP_PX: 20,               // vertical gap between grid rows (for measurement)
   MIN_CARD_WIDTH_PX: 100,       // lower minimum to allow wider cards
   MAX_COLUMNS: 6,               // cap for columns on very wide screens
-  MAX_ITEMS_PER_CATEGORY: 5,    // richest per-category sentences for first row
+  MAX_ITEMS_PER_CATEGORY: 6,    // richest per-category sentences for first row
   MIN_ITEMS_PER_CATEGORY: 1,    // never show fewer than this per category
   MIN_VISIBLE_CATEGORIES: 3,    // preference for number of categories when trimming
   // Additional rows behavior:
@@ -853,7 +853,6 @@ export default function AskNetdata() {
   // Build groups from the top-level constant. Keep per-session item order stable.
   const groups = useMemo(() => SUGGESTION_GROUPS, []);
 
-  // Multi-category layout: choose as many categories as fit and 4-5 items per category (most that fit)
   const [visibleCategories, setVisibleCategories] = useState([]);
   const categoriesOrderRef = useRef(null);
   const categoryItemOrderRef = useRef({});
@@ -877,11 +876,7 @@ export default function AskNetdata() {
 
     let rafId = null;
     const computeLayout = () => {
-      // Fixed layout logic with vertical space checking:
-      // 1. First row: Up to 5 suggestions per category (reduce if needed for large zoom)
-      // 2. Second row: Remaining categories with conservative suggestion counts
-      // 3. Check if content fits vertically and reduce if needed
-      
+
       const allCategories = (categoriesOrderRef.current || groups).map(group => {
         // Randomize items if not already done
         if (!categoryItemOrderRef.current[group.key]) {
@@ -914,7 +909,7 @@ export default function AskNetdata() {
       // Calculate maximum suggestions that can fit in first row
       const maxFirstRowHeight = availableHeight * 0.7; // Use 70% of space for first row
       const maxSuggestionsFirstRow = Math.floor((maxFirstRowHeight - categoryTitleHeight) / suggestionItemHeight);
-      const suggestionsPerFirstRowCategory = Math.max(1, Math.min(5, maxSuggestionsFirstRow));
+  const suggestionsPerFirstRowCategory = Math.max(1, Math.min(ASK_LAYOUT.MAX_ITEMS_PER_CATEGORY, maxSuggestionsFirstRow));
       
       firstRowCategories.forEach(cat => {
         if (cat.items.length > 0) {
@@ -930,35 +925,7 @@ export default function AskNetdata() {
       // Calculate actual first row height
       const firstRowHeight = categoryTitleHeight + (suggestionsPerFirstRowCategory * suggestionItemHeight);
       
-      // Check if we can fit a second row
-      const remainingHeight = availableHeight - firstRowHeight - betweenRowGap;
-      const secondRowCategories = allCategories.slice(4); // Take remaining categories
-      
-      if (remainingHeight > (categoryTitleHeight + suggestionItemHeight + 20) && secondRowCategories.length > 0) {
-        // We have space for at least one suggestion per category in second row
-        const maxSuggestionsPerCategory = Math.floor((remainingHeight - categoryTitleHeight - 20) / suggestionItemHeight);
-        
-        secondRowCategories.forEach(cat => {
-          const availableItems = cat.items.length;
-          if (availableItems > 0) {
-            // Conservative approach: show 1 fewer suggestion if more than 1 available, for safety
-            let suggestionsToShow;
-            if (availableItems === 1) {
-              suggestionsToShow = 1;
-            } else {
-              const maxAllowed = Math.max(1, Math.min(5, maxSuggestionsPerCategory));
-              suggestionsToShow = Math.max(1, Math.min(maxAllowed, availableItems - 1));
-            }
-            
-            layout.push({
-              key: cat.key,
-              title: cat.title,
-              items: cat.items.slice(0, suggestionsToShow),
-              isFirstRow: false
-            });
-          }
-        });
-      }
+
       
       // Collect remaining suggestions for placeholder rotation
       const remainingSuggestions = [];
@@ -1011,7 +978,7 @@ export default function AskNetdata() {
     const remainingSuggestions = [];
     groups.forEach(group => {
       if (categoryItemOrderRef.current[group.key]) {
-        const remaining = categoryItemOrderRef.current[group.key].slice(5);
+  const remaining = categoryItemOrderRef.current[group.key].slice(ASK_LAYOUT.MAX_ITEMS_PER_CATEGORY);
         remainingSuggestions.push(...remaining);
       }
     });

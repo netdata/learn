@@ -245,6 +245,23 @@ module.exports = {
 			type: 'font/woff2',
 			crossorigin: '',
 		},
+		{
+			href: '/chat-widget.css',
+			type: 'text/css',
+		},
 	],
-	scripts: [],
+	scripts: [
+		{
+			src: '/hide-home-chat.js',
+			async: false,
+		},
+		{
+			src: '/widget-config.js',
+			async: false,
+		},
+		{
+			src: '/chat-widget.js',
+			async: true,
+		},
+	],
 };
