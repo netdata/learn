@@ -574,11 +574,13 @@ export default function AskNetdata() {
   // Keep track of original overflow styles so we can restore them
   const originalOverflow = useRef({ html: '', body: '' });
 
-  // Disable page scroll while the welcome view is visible or while waiting for an answer
+  // Disable page scroll only while the welcome view is visible.
+  // Avoid locking the page while an answer is streaming (isLoading) because
+  // changing document overflow during streaming causes the page to jump to the top.
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    const shouldLock = showWelcome || isLoading;
+    const shouldLock = showWelcome;
 
     const html = document.documentElement;
     const body = document.body;
