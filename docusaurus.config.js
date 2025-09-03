@@ -21,7 +21,7 @@ module.exports = {
 			respectPrefersColorScheme: true,
 		},
 		mermaid: {
-			theme: { light: 'neutral', dark: 'forest' },
+			theme: { light: 'default', dark: 'dark' },
 		},
 		image: 'img/netdata_meta-default.png',
 		docs: {
