@@ -126,6 +126,7 @@ https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	/docs/ale
 https://github.com/netdata/netdata/edit/master/src/health/notifications/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/agent-notifications-reference
 https://github.com/netdata/netdata/edit/master/src/health/notifications/smstools3/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/sms
 https://github.com/netdata/netdata/edit/master/src/health/notifications/flock/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/flock
+https://github.com/netdata/netdata/edit/master/src/health/notifications/signl4/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/signl4
 https://github.com/netdata/netdata/edit/master/src/health/notifications/pushover/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pushover
 https://github.com/netdata/netdata/edit/master/src/health/notifications/opsgenie/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/opsgenie
 https://github.com/netdata/netdata/edit/master/src/health/notifications/custom/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/custom
