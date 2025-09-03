@@ -329,6 +329,20 @@ export default function AskNetdata() {
   // Initialize state from sessionStorage if available
   const [messages, setMessages] = useState(() => {
     if (typeof window !== 'undefined') {
+      // Detect if the page load is a full reload. If so, clear previous session messages
+      // so a refresh forces a new chat. Back/forward navigations preserve chat.
+      try {
+        const navEntries = performance.getEntriesByType && performance.getEntriesByType('navigation');
+        const navType = (navEntries && navEntries[0] && navEntries[0].type) || (performance && performance.navigation && performance.navigation.type);
+        const isReload = (navType === 'reload') || (navType === 1); // 1 === TYPE_RELOAD in older API
+        if (isReload) {
+          sessionStorage.removeItem('askNetdataMessages');
+          sessionStorage.removeItem('askNetdataScrollPosition');
+          return [];
+        }
+      } catch (e) {
+        // ignore and fall back to loading saved messages
+      }
       const saved = sessionStorage.getItem('askNetdataMessages');
       return saved ? JSON.parse(saved) : [];
     }
@@ -338,6 +352,14 @@ export default function AskNetdata() {
   const [isLoading, setIsLoading] = useState(false);
   const [showWelcome, setShowWelcome] = useState(() => {
     if (typeof window !== 'undefined') {
+      try {
+        const navEntries = performance.getEntriesByType && performance.getEntriesByType('navigation');
+        const navType = (navEntries && navEntries[0] && navEntries[0].type) || (performance && performance.navigation && performance.navigation.type);
+        const isReload = (navType === 'reload') || (navType === 1);
+        if (isReload) return true; // Force welcome on reload
+      } catch (e) {
+        // ignore
+      }
       const savedMessages = sessionStorage.getItem('askNetdataMessages');
       return !savedMessages || JSON.parse(savedMessages).length === 0;
     }
@@ -411,6 +433,22 @@ export default function AskNetdata() {
   // trigger a search automatically. Supports `q` and `question` params.
   useEffect(() => {
     try {
+      // If this load was a full reload, don't auto-submit the URL query (we clear URL below on reload)
+      const navEntries = performance.getEntriesByType && performance.getEntriesByType('navigation');
+      const navType = (navEntries && navEntries[0] && navEntries[0].type) || (performance && performance.navigation && performance.navigation.type);
+      const isReload = (navType === 'reload') || (navType === 1);
+
+      if (isReload) {
+        // Don't auto-submit on reload; ensure URL params are removed so future reloads stay clean
+        try {
+          const url = new URL(window.location.href);
+          url.searchParams.delete('q');
+          url.searchParams.delete('question');
+          window.history.replaceState({}, '', url.toString());
+        } catch (err) {}
+        return;
+      }
+
       const params = new URLSearchParams(window.location.search);
       const q = params.get('q') || params.get('question');
       if (q && q.trim()) {
@@ -424,6 +462,31 @@ export default function AskNetdata() {
       // ignore malformed URL
       // eslint-disable-next-line no-console
       console.debug('AskNetdata: invalid URL params', e);
+    }
+  }, []);
+
+  // On mount, detect full page reload and clear any persisted messages so a refresh always starts a new chat.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const navEntries = performance.getEntriesByType && performance.getEntriesByType('navigation');
+      const navType = (navEntries && navEntries[0] && navEntries[0].type) || (performance && performance.navigation && performance.navigation.type);
+      const isReload = (navType === 'reload') || (navType === 1);
+      if (isReload) {
+        sessionStorage.removeItem('askNetdataMessages');
+        sessionStorage.removeItem('askNetdataScrollPosition');
+        setMessages([]);
+        setShowWelcome(true);
+        // Clean up URL as well
+        try {
+          const url = new URL(window.location.href);
+          url.searchParams.delete('q');
+          url.searchParams.delete('question');
+          window.history.replaceState({}, '', url.toString());
+        } catch (err) {}
+      }
+    } catch (e) {
+      // ignore
     }
   }, []);
 
