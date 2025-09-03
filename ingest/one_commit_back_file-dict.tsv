@@ -3,6 +3,7 @@ https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.c
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md	/docs/netdata-cloud-on-prem/installation
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/hardening-guide.md	/docs/netdata-cloud-on-prem/security-hardening-guide
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/netpol.md	/docs/netdata-cloud-on-prem/kubernetes-network-policy-configuration
+https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/ecr-mirror.md	/docs/netdata-cloud-on-prem/mirroring-image-registry
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/sbom.md	/docs/netdata-cloud-on-prem/software-bill-of-materials
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/poc-without-k8s.md	/docs/netdata-cloud-on-prem/poc-without-k8s
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/troubleshooting.md	/docs/netdata-cloud-on-prem/troubleshooting

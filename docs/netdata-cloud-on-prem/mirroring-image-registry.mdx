@@ -1,0 +1,95 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/ecr-mirror.md"
+sidebar_label: "Mirroring image registry"
+learn_status: "Published"
+learn_rel_path: "Netdata Cloud On-Prem"
+sidebar_position: "800070"
+learn_link: "https://learn.netdata.cloud/docs/netdata-cloud-on-prem/mirroring-image-registry"
+---
+
+# Mirroring Netdata Cloud On-Prem image registry
+
+## Before You Begin
+
+This document is only applicable to those who need to mirror our ECR repository because their environment does not allow external image repository access.
+Keep in mind that it also forces administrators to remember about image upgrades in their mirrored repositories on their own.
+
+## Required Components
+
+You need AWS CLI installed and a tool that can pull, push, and manipulate images - in this example we use Docker.
+
+## Step by Step Guide to prepare images
+
+:::warning
+
+These steps need to be repeated for every image used in the netdata-cloud-onprem Helm chart.
+
+:::
+
+<strong>Step 1: Configure AWS CLI</strong><br/>
+
+Set up your AWS credentials to access the ECR repository containing the Docker images.<br/>
+
+_Option 1: Environment Variables_<br/>
+
+```bash
+export AWS_ACCESS_KEY_ID=<your_secret_id>
+export AWS_SECRET_ACCESS_KEY=<your_secret_key>
+```
+
+_Option 2: Interactive Setup_<br/>
+
+```bash
+aws configure
+```
+
+<br/><strong>Step 2: Configure Docker for ECR Access</strong><br/>
+
+Generate a token for ECR access to allow Docker to pull images from the secured repository:<br/>
+
+```bash
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 362923047827.dkr.ecr.us-east-1.amazonaws.com
+```
+
+It should return `Login Succeeded`.
+
+<br/><strong>Step 3: Pull the images</strong><br/>
+
+Pull the required images to your local store:<br/>
+
+```bash
+docker pull 362923047827.dkr.ecr.us-east-1.amazonaws.com/<image>:<tag>
+```
+
+You can validate this operation by using:<br/>
+
+```bash
+docker image list
+```
+
+<br/><strong>Step 4: Change the image tag</strong><br/>
+
+The image tag provides information about where the image came from. By changing the image tag, you can instruct Docker to push the image to a different repository.
+
+```bash
+docker tag <org_tag> <destination_tag>
+```
+
+For example:
+
+```bash
+docker tag 362923047827.dkr.ecr.us-east-1.amazonaws.com/onprem-cloud-frontend:latest my.image.registry/onprem-cloud-frontend:latest
+```
+
+<br/><strong>Step 5: Push the re-tagged image to your repository</strong><br/>
+
+```bash
+docker push my.image.registry/onprem-cloud-frontend:latest
+```
+
+## Additional Steps (optional)
+
+Netdata also provides:
+
+- [Image signatures](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/container-image-signature-verification)
+- [Software Bill of Materials (SBOM)](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/software-bill-of-materials)
