@@ -1724,7 +1724,7 @@ export default function AskNetdata() {
         ) : (
           <div style={computedMessagesContainerStyle}>
             {messages.length > 0 && (
-              <div style={{ textAlign: 'right', marginBottom: '20px' }}>
+              <div style={{ textAlign: 'right', marginBottom: '20px', position: 'sticky', top: 'calc(var(--ifm-navbar-height) + 12px)', zIndex: 1100 }}>
                 <button
                   onClick={handleNewChat}
                   aria-label="Start a new chat"
@@ -1736,7 +1736,9 @@ export default function AskNetdata() {
                     color: isDarkMode ? 'var(--ifm-color-secondary)' : '#6b7280',
                     cursor: 'pointer',
                     fontSize: '14px',
-                    transition: 'all 0.28s ease'
+                    transition: 'all 0.28s ease',
+                    // Ensure it stays clickable when overlapping content
+                    pointerEvents: 'auto'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.background = isDarkMode ? 'var(--ifm-background-surface-color)' : '#f9fafb';
