@@ -905,12 +905,17 @@ export default function AskNetdata() {
       
       const layout = [];
       
-      // FIRST ROW: Calculate how many suggestions can fit per category
-      const firstRowCategories = allCategories.slice(0, 4); // Take first 4 categories
-      
-      // Calculate maximum suggestions that can fit in first row
-      const maxFirstRowHeight = availableHeight * 0.7; // Use 70% of space for first row
-      const maxSuggestionsFirstRow = Math.floor((maxFirstRowHeight - categoryTitleHeight) / suggestionItemHeight);
+  // FIRST ROW: Calculate how many category cards can fit horizontally based on available width
+  // Use a desired minimum column width to decide how many categories to render in the first row.
+  const availableWidthForSuggestions = (contentBounds && contentBounds.left != null) ? Math.max(0, window.innerWidth - contentBounds.left - H_PADDING_PX) : window.innerWidth;
+  const desiredCol = MIN_SINGLE_ROW_COL_PX; // desired minimum width per category card
+  const possibleCols = Math.max(1, Math.floor((availableWidthForSuggestions + GRID_GAP_PX) / (desiredCol + GRID_GAP_PX)));
+  const colsToShow = Math.min(allCategories.length, Math.max(1, possibleCols));
+  const firstRowCategories = allCategories.slice(0, colsToShow);
+
+  // Calculate maximum suggestions that can fit in first row vertically
+  const maxFirstRowHeight = availableHeight * 0.7; // Use 70% of space for first row
+  const maxSuggestionsFirstRow = Math.floor((maxFirstRowHeight - categoryTitleHeight) / suggestionItemHeight);
   const suggestionsPerFirstRowCategory = Math.max(1, Math.min(ASK_LAYOUT.MAX_ITEMS_PER_CATEGORY, maxSuggestionsFirstRow));
       
       firstRowCategories.forEach(cat => {
