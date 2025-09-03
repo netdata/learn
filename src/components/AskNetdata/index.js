@@ -391,7 +391,7 @@ export default function AskNetdata() {
   const GRID_GAP_PX = 12;      // reduce gap slightly to allocate more space to cards
   const [suggestionsTopPx, setSuggestionsTopPx] = useState(null);
   const TOTAL_SECTIONS = 6; // About, Deployment, Operations, AI, Dashboards, Alerts
-  const MIN_SINGLE_ROW_COL_PX = 180; // force single row even with narrow columns for max cards
+  const MIN_SINGLE_ROW_COL_PX = 300; // force single row even with narrow columns for max cards
   const MAX_SINGLE_ROW_COL_PX = 800; // increase to allow much wider cards for full sentences
   const H_PADDING_PX = 8; // matches padding: '0 4px' (4px each side)
   const MAX_SUGGESTIONS_WIDTH_PX = 3000; // hard cap for the suggestions container width
@@ -905,19 +905,32 @@ export default function AskNetdata() {
       
       const layout = [];
       
-  // FIRST ROW: Calculate how many category cards can fit horizontally based on available width
-  // Use a desired minimum column width to decide how many categories to render in the first row.
-  const availableWidthForSuggestions = (contentBounds && contentBounds.left != null) ? Math.max(0, window.innerWidth - contentBounds.left - H_PADDING_PX) : window.innerWidth;
-  const desiredCol = MIN_SINGLE_ROW_COL_PX; // desired minimum width per category card
-  const possibleCols = Math.max(1, Math.floor((availableWidthForSuggestions + GRID_GAP_PX) / (desiredCol + GRID_GAP_PX)));
-  const colsToShow = Math.min(allCategories.length, Math.max(1, possibleCols));
-  const firstRowCategories = allCategories.slice(0, colsToShow);
+      // SINGLE ROW: calculate how many columns (categories) fit in one responsive row
+  // Determine available width from the left edge of the AskNetdata container to the viewport right
+  const containerLeft = containerRef.current ? Math.max(0, Math.round(containerRef.current.getBoundingClientRect().left)) : 0;
+  const viewportWidth = getViewport().width;
+  const availableWidthForRow = Math.max(0, viewportWidth - containerLeft - H_PADDING_PX);
 
-  // Calculate maximum suggestions that can fit in first row vertically
-  const maxFirstRowHeight = availableHeight * 0.7; // Use 70% of space for first row
-  const maxSuggestionsFirstRow = Math.floor((maxFirstRowHeight - categoryTitleHeight) / suggestionItemHeight);
-  const suggestionsPerFirstRowCategory = Math.max(1, Math.min(ASK_LAYOUT.MAX_ITEMS_PER_CATEGORY, maxSuggestionsFirstRow));
-      
+      // Decide how many columns we can fit based on minimum/maximum single-row column widths
+      const maxPossibleCols = allCategories.length;
+      // Compute a candidate cols count by dividing available width by minimum card width + gap
+      const approxCols = Math.floor((availableWidthForRow + GRID_GAP_PX) / (MIN_SINGLE_ROW_COL_PX + GRID_GAP_PX));
+      const cols = Math.max(1, Math.min(maxPossibleCols, approxCols || 1));
+
+      // Calculate target column pixel width and clamp it into min/max bounds
+      const rawColPx = Math.floor((availableWidthForRow - (cols - 1) * GRID_GAP_PX) / cols);
+      const colPx = Math.max(MIN_SINGLE_ROW_COL_PX, Math.min(MAX_SINGLE_ROW_COL_PX, rawColPx || MIN_SINGLE_ROW_COL_PX));
+
+      // Build forced grid template so CSS Grid renders exactly one row with `cols` columns
+      setForcedTemplateColumns(`repeat(${cols}, minmax(${colPx}px, 1fr))`);
+
+      // Calculate how many suggestion items per category can fit vertically given the available height
+      const maxFirstRowHeight = availableHeight * 0.7; // Use 70% of space for first row
+      const maxSuggestionsFirstRow = Math.floor((maxFirstRowHeight - categoryTitleHeight) / suggestionItemHeight);
+      const suggestionsPerFirstRowCategory = Math.max(1, Math.min(ASK_LAYOUT.MAX_ITEMS_PER_CATEGORY, maxSuggestionsFirstRow));
+
+      // Take the first `cols` categories for the single row layout
+      const firstRowCategories = allCategories.slice(0, cols);
       firstRowCategories.forEach(cat => {
         if (cat.items.length > 0) {
           layout.push({
@@ -928,7 +941,6 @@ export default function AskNetdata() {
           });
         }
       });
-      
       // Calculate actual first row height
       const firstRowHeight = categoryTitleHeight + (suggestionsPerFirstRowCategory * suggestionItemHeight);
       
@@ -956,14 +968,45 @@ export default function AskNetdata() {
     window.addEventListener('orientationchange', onResize);
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', onResize);
+      window.visualViewport.addEventListener('scroll', onResize);
     }
+
+    // ResizeObserver fallback: observe container changes (helps with zoom in some browsers)
+    let ro = null;
+    try {
+      if (typeof ResizeObserver !== 'undefined' && containerRef.current) {
+        ro = new ResizeObserver(() => {
+          computeLayout();
+        });
+        ro.observe(containerRef.current);
+        if (suggestionBoxRef.current) ro.observe(suggestionBoxRef.current);
+      }
+    } catch (e) {
+      ro = null;
+    }
+
+    // Polling fallback for browsers that don't emit viewport resize on zoom (cheap, 300ms)
+    let lastViewportWidth = getViewport().width;
+    const pollId = setInterval(() => {
+      const vw = getViewport().width;
+      if (vw !== lastViewportWidth) {
+        lastViewportWidth = vw;
+        computeLayout();
+      }
+    }, 300);
+
     return () => {
       window.removeEventListener('resize', onResize);
       window.removeEventListener('orientationchange', onResize);
       if (window.visualViewport) {
         window.visualViewport.removeEventListener('resize', onResize);
+        window.visualViewport.removeEventListener('scroll', onResize);
+      }
+      if (ro) {
+        try { ro.disconnect(); } catch (err) {}
       }
       if (rafId) cancelAnimationFrame(rafId);
+      clearInterval(pollId);
     };
   }, [groups.length]);
 
