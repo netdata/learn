@@ -46,7 +46,7 @@
         // Normalize pathname (strip trailing slash)
         p = p.replace(/\/+$/, '') || '/';
         // Hide only on the exact site root
-        if (p === '/') return;
+        // Removed early return for homepage; widget should be initialized on all pages
         if (pathIsIgnored(p)) return; // do not initialize widget on these pages
     } catch (e) {
       // ignore
