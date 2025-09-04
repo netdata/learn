@@ -395,6 +395,9 @@ export default function AskNetdata() {
   const chatAreaRef = useRef(null);
   const containerRef = useRef(null);
   const floatingContainerRef = useRef(null);
+  // Positioning for the bottom notice: left (px) and width (px)
+  const [noticeLeftPx, setNoticeLeftPx] = useState(null);
+  const [noticeWidthPx, setNoticeWidthPx] = useState(null);
   const lastUserMessageId = useRef(null);
   const lastAssistantMessageId = useRef(null);
   const targetScrollPosition = useRef(null);
@@ -477,6 +480,37 @@ export default function AskNetdata() {
   const [dockSize, setDockSize] = useState(null);
   const dockTargetRef = useRef(null); // where the input will dock inside the messages
   const inputPortalRef = useRef(null);
+
+  // Measure chat area to center the bottom notice relative to it
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const update = () => {
+      try {
+        const el = chatAreaRef.current || containerRef.current;
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const leftCenter = Math.round(rect.left + rect.width / 2);
+        const width = Math.round(Math.min(rect.width, 800));
+        setNoticeLeftPx(leftCenter);
+        setNoticeWidthPx(width);
+      } catch (e) {
+        // ignore
+      }
+    };
+
+    update();
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(update) : null;
+    if (ro && (chatAreaRef.current || containerRef.current)) {
+      try { ro.observe(chatAreaRef.current || containerRef.current); } catch (e) {}
+    }
+    window.addEventListener('resize', update);
+    window.addEventListener('scroll', update, { passive: true });
+    return () => {
+      if (ro) try { ro.disconnect(); } catch (e) {}
+      window.removeEventListener('resize', update);
+      window.removeEventListener('scroll', update);
+    };
+  }, [chatAreaRef.current, containerRef.current, isDocked, dockSize]);
 
   // If the page is opened with a question in the URL (e.g. ?q=how+to+install),
   // trigger a search automatically. Supports `q` and `question` params.
@@ -1768,6 +1802,36 @@ export default function AskNetdata() {
   .main-wrapper { max-width: none !important; }
       `}</style>
   <div ref={chatAreaRef} style={computedChatAreaStyle}>
+        {/* Fixed bottom-center notice visible in both welcome and messages views */}
+        {showWelcome && (
+          <div aria-hidden style={{
+            position: 'fixed',
+            bottom: isDocked ? (dockSize ? `calc(${dockSize.height}px + 20px)` : '100px') : '12px',
+            left: noticeLeftPx ? `${noticeLeftPx}px` : '50%',
+            transform: 'translateX(-50%)',
+            pointerEvents: 'none',
+            zIndex: 1300,
+            display: 'flex',
+            justifyContent: 'center',
+            padding: '0 12px',
+            boxSizing: 'border-box',
+            width: noticeWidthPx ? `${noticeWidthPx}px` : '100%'
+          }}>
+            <div style={{
+              fontSize: '12px',
+              color: isDarkMode ? 'rgba(255,255,255,0.78)' : 'rgba(0,0,0,0.72)',
+              background: 'transparent',
+              padding: '4px 8px',
+              borderRadius: '6px',
+              maxWidth: '800px',
+              textAlign: 'center',
+              width: '100%'
+            }}>
+              AI can make mistakes - please validate before use. Our model is also multi-lingual so use it in your language!
+
+            </div>
+          </div>
+        )}
         {showWelcome ? (
           <>
             {/* Corner Arrow Icon */}
@@ -2274,6 +2338,14 @@ export default function AskNetdata() {
               </div>
             )}
             <div ref={messagesEndRef} />
+            {/* Footer-like notice anchored under conversation on answer page */}
+            {!showWelcome && (
+              <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '12px', padding: '8px 20px', boxSizing: 'border-box' }}>
+                <div style={{ fontSize: '12px', color: isDarkMode ? 'rgba(255,255,255,0.65)' : 'rgba(0,0,0,0.65)', maxWidth: '800px', textAlign: 'center', width: '100%' }}>
+                  AI can make mistakes - please validate before use. Our model is also multi-lingual so use it in your language!
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
