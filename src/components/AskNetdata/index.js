@@ -407,6 +407,55 @@ export default function AskNetdata() {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
 
+  // --- Feedback state & helpers (missing previously) ---
+  // Tracks per-message feedback status: { [messageId]: { sending, sent, rating } }
+  const [feedbackState, setFeedbackState] = useState({});
+  // Tracks which message's comment box is open
+  const [commentBoxOpen, setCommentBoxOpen] = useState({});
+  // Draft comments per message
+  const [commentDraft, setCommentDraft] = useState({});
+  // Which feedback button is hovered (string key like `${messageId}:up|down|copy`)
+  const [hoveredButton, setHoveredButton] = useState(null);
+  // Per-message copied state to show transient checkmark animation
+  const [copiedState, setCopiedState] = useState({});
+  const copiedTimersRef = useRef({});
+
+  // Clear any pending copied timers on unmount
+  useEffect(() => {
+    return () => {
+      Object.values(copiedTimersRef.current).forEach(t => {
+        try { clearTimeout(t); } catch (e) {}
+      });
+      copiedTimersRef.current = {};
+    };
+  }, []);
+
+  // Post feedback to same-origin endpoint. Return true on success.
+  const postFeedback = async ({ question, answer, rating, comment = '', citations = [], meta = {} }) => {
+    const payload = {
+      question: question || '',
+      answer: answer || '',
+      rating: rating || '',
+      comment: comment || '',
+      citations: citations || [],
+      responseTimeMs: meta.responseTimeMs || null,
+      model: meta.model || null,
+      sessionId: meta.sessionId || (typeof window !== 'undefined' && window.askNetdataSessionId) || null
+    };
+
+    try {
+      const resp = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      return resp.ok;
+    } catch (err) {
+      console.error('postFeedback error', err);
+      return false;
+    }
+  };
+
   // Expand suggestions to the full screen area (right of the sidebar) with dynamic columns
   const [contentBounds, setContentBounds] = useState(null);
   const GRID_MIN_COL_PX = 300; // desired min width per column for centering math
@@ -1901,7 +1950,7 @@ export default function AskNetdata() {
                     flex: 1, 
                     minWidth: 0, // Critical: allows flex item to shrink below content size
                     maxWidth: '100%',
-                    overflow: 'hidden', // Prevent expansion
+                    overflow: 'visible', // Allow inline overlays (feedback box) to be visible
                     lineHeight: '1.7', 
                     color: message.isError ? (isDarkMode ? '#fca5a5' : '#dc2626') : (isDarkMode ? 'var(--ifm-font-color-base)' : '#1f2937'), 
                     fontSize: '16px' 
@@ -2043,6 +2092,148 @@ export default function AskNetdata() {
                           </a>
                           );
                         })}
+                      </div>
+                    )}
+                    {/* Feedback actions: copy, thumbs up, thumbs down (use same SVGs as widget) */}
+                    {message.type === 'assistant' && (
+                      <div style={{ marginTop: '12px' }}>
+                        <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                          {/* Copy button - simple copy of rendered markdown */}
+                          <button
+                            className="feedback-btn copy-btn"
+                            onMouseEnter={() => setHoveredButton(`${message.id}:copy`)}
+                            onMouseLeave={() => setHoveredButton(null)}
+                            onClick={async () => {
+                              try {
+                                const temp = document.createElement('div');
+                                temp.innerHTML = (message.content || '');
+                                const plain = temp.textContent || temp.innerText || '';
+                                await navigator.clipboard.writeText(plain);
+                                // show transient copied state
+                                setCopiedState(prev => ({ ...prev, [message.id]: true }));
+                                if (copiedTimersRef.current[message.id]) clearTimeout(copiedTimersRef.current[message.id]);
+                                copiedTimersRef.current[message.id] = setTimeout(() => {
+                                  setCopiedState(prev => ({ ...prev, [message.id]: false }));
+                                  delete copiedTimersRef.current[message.id];
+                                }, 1000);
+                              } catch (e) { console.error(e); }
+                            }}
+                            style={{
+                              border: 'none',
+                              background: hoveredButton === `${message.id}:copy` ? 'var(--feedback-hover, #f8fafc)' : 'transparent',
+                              padding: 6,
+                              borderRadius: 6,
+                              cursor: 'pointer',
+                              opacity: hoveredButton === `${message.id}:copy` ? 0.9 : 0.7
+                            }}
+                          >
+                            <span style={{ display: 'inline-block', width: 20, height: 20, position: 'relative' }}>
+                              {/* Copy icon (fades out when copied) */}
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style={{ position: 'absolute', left: 0, top: 0, stroke: hoveredButton === `${message.id}:copy` ? 'var(--fg, #1a1a1a)' : 'var(--muted, #6b7280)', fill: 'none', strokeWidth: 1.5, transform: copiedState[message.id] ? 'scale(0.85)' : 'scale(1)', transformOrigin: 'center', transition: 'transform 180ms ease, opacity 180ms ease', opacity: copiedState[message.id] ? 0 : 1, pointerEvents: 'none' }}>
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                              </svg>
+                              {/* Black checkmark icon (fades in when copied) */}
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style={{ position: 'absolute', left: 0, top: 0, stroke: '#000', fill: 'none', strokeWidth: 2.5, transform: copiedState[message.id] ? 'scale(1.05)' : 'scale(0.85)', transformOrigin: 'center', transition: 'transform 180ms ease, opacity 180ms ease', opacity: copiedState[message.id] ? 1 : 0, pointerEvents: 'none' }}>
+                                <path d="M20 6L9 17l-5-5" stroke="#000" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </span>
+                          </button>
+
+                          {/* Thumbs up */}
+                          <button
+                            className={`feedback-btn thumbs-up ${feedbackState[message.id]?.rating === 'positive' ? 'active' : ''}`}
+                            onMouseEnter={() => setHoveredButton(`${message.id}:up`)}
+                            onMouseLeave={() => setHoveredButton(null)}
+                            onClick={async () => {
+                              if (feedbackState[message.id] && feedbackState[message.id].sending) return;
+                              setFeedbackState(prev => ({ ...prev, [message.id]: { ...(prev[message.id]||{}), sending: true } }));
+                              const question = messages.slice().reverse().find(m => m.type === 'user')?.content || '';
+                              await postFeedback({ question, answer: message.content, rating: 'positive', citations: message.citations || [] });
+                              setFeedbackState(prev => ({ ...prev, [message.id]: { ...(prev[message.id]||{}), sending: false, sent: true, rating: 'positive' } }));
+                            }}
+                            style={{
+                              border: 'none',
+                              background: (feedbackState[message.id]?.rating === 'positive') ? 'var(--feedback-active, #e5f9f0)' : (hoveredButton === `${message.id}:up` ? 'var(--feedback-hover, #f8fafc)' : 'transparent'),
+                              padding: 6,
+                              borderRadius: 6,
+                              cursor: 'pointer',
+                              opacity: (feedbackState[message.id]?.rating === 'positive' || hoveredButton === `${message.id}:up`) ? 1 : 0.7
+                            }}
+                          aria-label="Thumbs up"
+                          title="Good answer"
+                          >
+                            <svg role="img" aria-hidden={false} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style={{ pointerEvents: 'none', stroke: hoveredButton === `${message.id}:up` ? 'var(--fg, #1a1a1a)' : 'var(--muted, #6b7280)', fill: feedbackState[message.id]?.rating === 'positive' ? 'var(--accent, #00ab44)' : 'none', strokeWidth: 2, transition: 'all 0.2s ease' }}>
+                              <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                            </svg>
+                          </button>
+
+                          {/* Thumbs down */}
+                          <div style={{ position: 'relative' }}>
+                            <button
+                              className={`feedback-btn thumbs-down ${feedbackState[message.id]?.rating === 'negative' ? 'active' : ''}`}
+                              onMouseEnter={() => setHoveredButton(`${message.id}:down`)}
+                              onMouseLeave={() => setHoveredButton(null)}
+                              onClick={() => {
+                                setCommentBoxOpen(prev => ({ ...prev, [message.id]: !prev[message.id] }));
+                                setCommentDraft(prev => ({ ...prev, [message.id]: prev[message.id] || '' }));
+                              }}
+                              style={{
+                                border: 'none',
+                                background: (feedbackState[message.id]?.rating === 'negative') ? 'var(--feedback-active, #e5f9f0)' : (hoveredButton === `${message.id}:down` ? 'var(--feedback-hover, #f8fafc)' : 'transparent'),
+                                padding: 6,
+                                borderRadius: 6,
+                                cursor: 'pointer',
+                                opacity: (feedbackState[message.id]?.rating === 'negative' || hoveredButton === `${message.id}:down`) ? 1 : 0.7
+                              }}
+                          aria-label="Thumbs down"
+                          title="Could be better"
+                            >
+                              <svg role="img" aria-hidden={false} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style={{ pointerEvents: 'none', stroke: hoveredButton === `${message.id}:down` ? 'var(--fg, #1a1a1a)' : 'var(--muted, #6b7280)', fill: feedbackState[message.id]?.rating === 'negative' ? '#ef4444' : 'none', strokeWidth: 2, transition: 'all 0.2s ease' }}>
+                                <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path>
+                              </svg>
+                            </button>
+
+                          </div>
+                        </div>
+
+                        {/* Compact expandable comment box: small footprint by default, expands when opened */}
+                        <div style={{ minHeight: '28px', marginTop: 8 }}>
+                          <div style={{
+                            maxHeight: commentBoxOpen[message.id] ? '260px' : '0px',
+                            overflow: 'hidden',
+                            transition: 'max-height 220ms ease, padding 160ms ease, opacity 160ms ease',
+                            opacity: commentBoxOpen[message.id] ? 1 : 0,
+                            position: 'relative',
+                            background: isDarkMode ? 'var(--ifm-background-surface-color)' : 'white',
+                            border: isDarkMode ? '1px solid var(--ifm-color-emphasis-300)' : '1px solid #e5e7eb',
+                            padding: commentBoxOpen[message.id] ? '8px' : '0px 8px',
+                            borderRadius: '8px',
+                            minWidth: '260px',
+                            boxShadow: commentBoxOpen[message.id] ? '0 6px 24px rgba(0,0,0,0.08)' : 'none',
+                            zIndex: 999
+                          }}>
+                            <textarea
+                              value={commentDraft[message.id] || ''}
+                              onChange={(e) => setCommentDraft(prev => ({ ...prev, [message.id]: e.target.value }))}
+                              placeholder="What could be improved? Your feedback helps us enhance our responses."
+                              rows={3}
+                              style={{ width: '100%', resize: 'vertical', fontSize: '13px', padding: '8px', borderRadius: '6px', border: '1px solid var(--muted)', opacity: commentBoxOpen[message.id] ? 1 : 0, transition: 'opacity 120ms ease' }}
+                            />
+                            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px', marginTop: '8px', opacity: commentBoxOpen[message.id] ? 1 : 0, transition: 'opacity 120ms ease' }}>
+                              <button onClick={() => setCommentBoxOpen(prev => ({ ...prev, [message.id]: false }))} style={{ background: 'transparent', border: '1px solid var(--muted)', padding: '6px 10px', borderRadius: '6px', cursor: 'pointer' }}>Cancel</button>
+                              <button onClick={async () => {
+                                if (feedbackState[message.id] && feedbackState[message.id].sending) return;
+                                setFeedbackState(prev => ({ ...prev, [message.id]: { ...(prev[message.id]||{}), sending: true } }));
+                                const question = messages.slice().reverse().find(m => m.type === 'user')?.content || '';
+                                await postFeedback({ question, answer: message.content, rating: 'negative', comment: commentDraft[message.id] || '', citations: message.citations || [] });
+                                setFeedbackState(prev => ({ ...prev, [message.id]: { ...(prev[message.id]||{}), sending: false, sent: true, rating: 'negative' } }));
+                                setCommentBoxOpen(prev => ({ ...prev, [message.id]: false }));
+                                setCommentDraft(prev => ({ ...prev, [message.id]: '' }));
+                              }} style={{ background: 'var(--accent, #10b981)', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '6px', cursor: 'pointer' }}>Submit</button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
