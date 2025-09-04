@@ -183,7 +183,7 @@
     // Double-check: if we somehow landed on an ignored path after init, remove the widget
     try {
       const checkP = (window.location.pathname || '').replace(/\/+$/, '') || '/';
-      for (const ip of ignorePaths) {
+      for (const ip of IGNORE_PATHS) {
         const ni = (ip || '').replace(/\/+$/, '');
         if (checkP === ni || checkP.startsWith(ni + '/')) {
           widgetContainer.parentNode && widgetContainer.parentNode.removeChild(widgetContainer);
