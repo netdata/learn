@@ -192,19 +192,14 @@ const SHORTCUT_LABEL = 'Ctrl + /';
 
 
 // API configuration
-// Automatically detect environment and use appropriate API
+// Use same-origin relative `/api` for browser requests so deployed sites
+// call their local API mount (avoids hardcoded external hosts that 404).
+// Keep a harmless SSR fallback when `window` is not available.
 const getApiUrl = () => {
-  if (typeof window === 'undefined') return 'http://localhost:30002/api';
-  
-  const hostname = window.location.hostname;
-  
-  // Local development - use the real Ask Netdata API running locally
-  if (hostname === 'localhost' || hostname === '127.0.0.1') {
-    return 'http://localhost:30002/api';  // Real Ask Netdata API on port 30002
-  }
-  
-  // Production
-  return 'https://agent-events.netdata.cloud/ask-netdata/api';
+  if (typeof window === 'undefined') return 'http://localhost:30002/api'; // SSR/dev fallback
+  // In the browser, use same-origin relative path so production and previews
+  // call the site's mounted API (e.g. `/api/chat/docs/search`).
+  return '/api';
 };
 
 const apiUrl = getApiUrl();
