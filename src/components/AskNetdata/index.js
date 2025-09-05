@@ -2281,7 +2281,7 @@ export default function AskNetdata() {
               width: '100%'
             }}>
               <div style={{ transition: 'opacity 220ms ease', opacity: toggleOn ? 0.18 : 1 }}>
-                AI can make mistakes - please validate before use. Our model is also multi-lingual so use it in your language!
+                AI can make mistakes - please validate before use. Ask-netdata is multilingual so use it in your language!
               </div>
 
             </div>
