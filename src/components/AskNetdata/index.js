@@ -357,6 +357,37 @@ const SmartLink = ({ href, children, ...props }) => {
           50% { transform: translateX(300px); }
           100% { transform: translateX(-100px); }
         }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes slideUpIn {
+          0% { 
+            transform: translateY(20px);
+            opacity: 0;
+          }
+          100% { 
+            transform: translateY(0px);
+            opacity: 1;
+          }
+        }
+        @keyframes slideUpInSmooth {
+          0% { 
+            transform: translateY(40px) scale(0.96);
+            opacity: 0;
+            filter: blur(1px);
+          }
+          60% {
+            transform: translateY(-2px) scale(1.01);
+            opacity: 0.8;
+            filter: blur(0px);
+          }
+          100% { 
+            transform: translateY(0px) scale(1);
+            opacity: 1;
+            filter: blur(0px);
+          }
+        }
       `}</style>
       <ReactMarkdown 
         remarkPlugins={[remarkGfm]}
@@ -434,6 +465,10 @@ export default function AskNetdata() {
   const [isPlaceholderAnimating, setIsPlaceholderAnimating] = useState(false);
   // Centered pill toggle (sliding) state - controls a feature (user will decide what it does)
   const [toggleOn, setToggleOn] = useState(false);
+  // Search functionality state
+  const [searchResults, setSearchResults] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   // Randomized subtitle under the main title (rotates on refresh)
   const [titleSubtitle] = useState(() => {
     try {
@@ -1531,10 +1566,52 @@ export default function AskNetdata() {
     return () => clearInterval(interval);
   }, [placeholderQuestions, isDocked, isAnimatingDock, showWelcome, toggleOn]);
 
+  // Search function for docs search mode
+  const handleSearch = async (query) => {
+    if (!query.trim()) {
+      setSearchResults([]);
+      setSearchQuery('');
+      return;
+    }
+
+    setIsSearching(true);
+    setSearchQuery(query);
+    setSearchResults([]);
+
+    try {
+      const response = await fetch(`${apiUrl}/chat/docs/search`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: query.trim() })
+      });
+
+      if (!response.ok) {
+        throw new Error(`Search failed: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setSearchResults(data.results || []);
+    } catch (error) {
+      console.error('Search error:', error);
+      setSearchResults([]);
+    } finally {
+      setIsSearching(false);
+    }
+  };
+
   const handleSubmit = async (e, overrideMessage = null) => {
     e?.preventDefault();
     const message = overrideMessage || input.trim();
     if (!message || isLoading) return;
+
+    // If in search mode (toggle is ON), handle as search instead of chat
+    if (toggleOn) {
+      setInput('');
+      await handleSearch(message);
+      return;
+    }
 
     setShowWelcome(false);
 
@@ -2279,6 +2356,115 @@ export default function AskNetdata() {
               </div>
               
               {renderInputForm({ attachRef: true })}
+              
+              {/* Search results display */}
+              {toggleOn && (searchResults.length > 0 || isSearching || (searchQuery && !isSearching)) && (
+                <div style={{
+                  maxWidth: '800px',
+                  margin: '2rem auto 0',
+                  padding: '1rem',
+                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                  borderRadius: '8px',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  transform: 'translateY(0px)',
+                  opacity: 1,
+                  transition: 'transform 600ms cubic-bezier(0.16, 1, 0.3, 1), opacity 600ms cubic-bezier(0.16, 1, 0.3, 1)',
+                  animation: 'slideUpInSmooth 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                }}>
+                  {isSearching ? (
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '2rem',
+                      color: '#ffffff',
+                      fontSize: '1rem'
+                    }}>
+                      <div style={{
+                        marginRight: '0.5rem',
+                        animation: 'spin 1s linear infinite'
+                      }}>⭘</div>
+                      Searching documentation...
+                    </div>
+                  ) : searchResults.length > 0 ? (
+                    <>
+                      <div style={{
+                        marginBottom: '1rem',
+                        fontSize: '1.1rem',
+                        fontWeight: 'bold',
+                        color: '#ffffff'
+                      }}>
+                        Found {searchResults.length} result{searchResults.length !== 1 ? 's' : ''} for "{searchQuery}"
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                        {searchResults.map((result, index) => (
+                          <div key={index} style={{
+                            padding: '1rem',
+                            backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                            borderRadius: '6px',
+                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                            transition: 'background-color 0.2s ease'
+                          }}>
+                            <a
+                              href={result.url}
+                              style={{
+                                color: ASKNET_SECOND,
+                                textDecoration: 'none',
+                                fontSize: '1.1rem',
+                                fontWeight: 'bold',
+                                display: 'block',
+                                marginBottom: '0.5rem',
+                                transition: 'color 0.2s ease'
+                              }}
+                              onMouseEnter={(e) => e.target.style.color = '#66bb6a'}
+                              onMouseLeave={(e) => e.target.style.color = ASKNET_SECOND}
+                            >
+                              {result.title}
+                            </a>
+                            {result.section && (
+                              <div style={{
+                                fontSize: '0.8rem',
+                                color: 'rgba(255, 255, 255, 0.6)',
+                                marginBottom: '0.5rem'
+                              }}>
+                                Section: {result.section}
+                              </div>
+                            )}
+                            <p style={{
+                              color: 'rgba(255, 255, 255, 0.8)',
+                              fontSize: '0.9rem',
+                              lineHeight: '1.4',
+                              margin: 0
+                            }}>
+                              {result.snippet}
+                            </p>
+                            {result.score && (
+                              <div style={{
+                                fontSize: '0.7rem',
+                                color: 'rgba(255, 255, 255, 0.4)',
+                                marginTop: '0.5rem'
+                              }}>
+                                Relevance: {Math.round(result.score * 100)}%
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </>
+                  ) : (
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '2rem',
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      fontSize: '1rem'
+                    }}>
+                      No results found for "{searchQuery}"
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
 
               {/* Categorized suggestions below the centered chatbox */}
