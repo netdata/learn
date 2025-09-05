@@ -22,7 +22,7 @@ const SearchBar = () => {
           tag: "search",
           gname: "gsearch",
         });
-        document.getElementById('gsc-i-id1').placeholder = 'SEARCH ⌘ + K';
+        document.getElementById('gsc-i-id1').placeholder = 'SEARCH ⌘ + L';
       } else {
         window.google.setOnLoadCallback(function () {
           window.google.search.cse.element.render({
@@ -48,7 +48,7 @@ const SearchBar = () => {
       var name = event.key;
       var code = event.code;
 
-      if ((event.ctrlKey && event.keyCode === 75) || (event.metaKey && event.keyCode === 75)) {
+      if ((event.ctrlKey && event.keyCode === 76) || (event.metaKey && event.keyCode === 76)) {
         event.preventDefault();
         document.getElementById('gsc-i-id1').focus()
       }
