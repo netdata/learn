@@ -133,6 +133,60 @@ export const PLACEHOLDER_POOL = [
   'Fire away'
 ];
 
+// Exposed toggle colors (off/on) so other modules can import and configure
+// Toggle colors now include primary and secondary entries for each state.
+// primary = main accent (used across the chatbox)
+// secondary = header/contrast accent (used for the opposite title)
+// Primary and secondary color constants - change these to customize the theme
+export const ASKNET_PRIMARY = '#00ab9c';  // Main green color
+export const ASKNET_SECOND = '#00ab44';   // Secondary color (will be derived if enabled)
+
+// Configurable visual defaults (keep at top so authors can change them)
+export const TITLE_DIM_LIGHT = 'rgba(0,0,0,0.56)';
+export const TITLE_DIM_DARK = 'rgba(255,255,255,0.56)';
+
+// How opaque the active search-title should be when using the secondary hue (0-1)
+export const TITLE_ACTIVE_SECONDARY_OPACITY = 0.92;
+
+// Secondary color derivation: keep defaults 0/1 so nothing changes unless you edit these
+// Change these to shift the hue (degrees) and multiply saturation (e.g., 1.2) for the
+export const SECONDARY_DERIVE_FROM_PRIMARY = false;
+// secondary palette when deriving it from the primary color.
+// By default we do not derive or change secondary colors. Set to true to enable
+// deriving the secondary palette from the primary by shifting hue/saturation.
+// When enabled, tweak these to taste. Example: set SECONDARY_HUE_SHIFT_DEG = 30
+// to shift hue +30 degrees, and SECONDARY_SATURATION_MULT = 0.9 to slightly
+// reduce saturation.
+export const SECONDARY_HUE_SHIFT_DEG = 0; // degrees to add to hue (can be negative)
+export const SECONDARY_SATURATION_MULT = 1.0; // multiplier for saturation (1.0 = unchanged)
+
+// Title desaturation control - how much to desaturate unselected titles (0.0 = no change, 1.0 = fully gray)
+export const TITLE_DESATURATION = 0.9; // 65% desaturation for unselected titles
+
+// UI sizing constants
+export const TITLE_FONT_SIZE = '1.7rem'; // Font size for AI/Search titles
+export const TITLE_FONT_WEIGHT = 'bold'; // Font weight for AI/Search titles (normal, bold, 600, 700, etc.)
+export const TITLE_GAP = '2rem'; // Gap between AI and Search titles
+export const TOGGLE_SIZE_MULTIPLIER = .8; // Multiplier for toggle size (1.0 = default, 1.2 = 20% larger)
+
+export const TOGGLE_COLORS = {
+  off: { primary: ASKNET_PRIMARY, secondary: ASKNET_SECOND },
+  on:  { primary: ASKNET_PRIMARY, secondary: ASKNET_SECOND }
+};
+
+// Exposed header titles
+export const HEADER_TITLES = {
+  left: 'Ask Netdata',
+  right: 'Search Docs'
+};
+
+
+// Hard-coded flag to hide the subtitle (set true to hide)
+export const HIDE_SUBTITLE = true;
+
+// Keybind label displayed inside the toggle hint
+const SHORTCUT_LABEL = 'Ctrl + /';
+
 
 
 
@@ -378,6 +432,8 @@ export default function AskNetdata() {
   // Transient flag toggled when a new placeholder rotates in
   const [placeholderPulse, setPlaceholderPulse] = useState(false);
   const [isPlaceholderAnimating, setIsPlaceholderAnimating] = useState(false);
+  // Centered pill toggle (sliding) state - controls a feature (user will decide what it does)
+  const [toggleOn, setToggleOn] = useState(false);
   // Randomized subtitle under the main title (rotates on refresh)
   const [titleSubtitle] = useState(() => {
     try {
@@ -409,6 +465,260 @@ export default function AskNetdata() {
   const suggestionBoxRef = useRef(null);
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
+
+  // Helper: try to extract RGB components from common color formats (#rrggbb, rgb(...)).
+  const extractRgb = (color) => {
+    if (!color) return null;
+    color = color.trim();
+    // rgb(...) -> extract numbers
+    const rgbMatch = color.match(/rgb\s*\(([^)]+)\)/i);
+    if (rgbMatch) {
+      const parts = rgbMatch[1].split(',').map(p => parseInt(p.trim(), 10));
+      if (parts.length >= 3 && parts.every(n => !isNaN(n))) return `${parts[0]},${parts[1]},${parts[2]}`;
+    }
+    // hex #rrggbb
+    const hexMatch = color.match(/^#([0-9a-f]{6})$/i);
+    if (hexMatch) {
+      const hex = hexMatch[1];
+      const r = parseInt(hex.substring(0,2), 16);
+      const g = parseInt(hex.substring(2,4), 16);
+      const b = parseInt(hex.substring(4,6), 16);
+      return `${r},${g},${b}`;
+    }
+    return null;
+  };
+
+  // Extract RGB values from the color constants
+  const activeGreenRgb = (() => {
+    const rgb = extractRgb(ASKNET_PRIMARY);
+    return rgb || '0,171,68';
+  })();
+
+  // Extract RGB for secondary color
+  const activeSecondRgb = (() => {
+    const secondaryColor = SECONDARY_DERIVE_FROM_PRIMARY && derivedSecondaryState ? derivedSecondaryState : ASKNET_SECOND;
+    const rgb = extractRgb(secondaryColor);
+    return rgb || activeGreenRgb;
+  })();
+
+  // Which accent to use across the chat UI: when in search mode (toggleOn) prefer secondary
+  const [derivedSecondaryState, setDerivedSecondaryState] = useState(null);
+  // If derivation is enabled, prefer the derived secondary color when available.
+  // Effective secondary: use derived if derivation is enabled and available, otherwise use ASKNET_SECOND
+  const effectiveSecondary = SECONDARY_DERIVE_FROM_PRIMARY && derivedSecondaryState ? derivedSecondaryState : ASKNET_SECOND;
+  const currentAccent = toggleOn ? effectiveSecondary : ASKNET_PRIMARY;
+  const currentAccentRgb = toggleOn ? activeSecondRgb : activeGreenRgb;
+
+  // Compute and set derived secondary on the client when configured.
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    if (!SECONDARY_DERIVE_FROM_PRIMARY) {
+      setDerivedSecondaryState(null);
+      return;
+    }
+    try {
+      // Resolve primary color string (handle var(--asknet-green))
+      let primaryRaw = ASKNET_PRIMARY || '';
+      if (/var\(/.test(primaryRaw)) {
+        const val = getComputedStyle(document.documentElement).getPropertyValue('--asknet-green');
+        if (val && val.trim()) primaryRaw = val.trim();
+      }
+      // Try parse rgb(...) or hex #rrggbb
+      const rgbMatch = primaryRaw.match(/rgb\s*\(([^)]+)\)/i);
+      let r=0,g=0,b=0;
+      if (rgbMatch) {
+        const parts = rgbMatch[1].split(',').map(p => parseInt(p.trim(),10));
+        if (parts.length >=3) { r=parts[0]/255; g=parts[1]/255; b=parts[2]/255; }
+      } else {
+        const hexMatch = primaryRaw.trim().match(/^#([0-9a-f]{6})$/i);
+        if (hexMatch) {
+          const hex = hexMatch[1];
+          r = parseInt(hex.substring(0,2),16)/255;
+          g = parseInt(hex.substring(2,4),16)/255;
+          b = parseInt(hex.substring(4,6),16)/255;
+        }
+      }
+      // If we don't have valid rgb, bail
+      if ([r,g,b].some(v => isNaN(v))) { setDerivedSecondaryState(null); return; }
+      const max = Math.max(r,g,b), min = Math.min(r,g,b);
+      let h = 0, s = 0, l = (max + min) / 2;
+      if (max !== min) {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch(max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+        }
+        h = h / 6;
+      }
+      // Apply configured adjustments
+      const newH = (h * 360 + SECONDARY_HUE_SHIFT_DEG + 360) % 360;
+      const newS = Math.min(1, Math.max(0, s * SECONDARY_SATURATION_MULT));
+      const newL = l;
+      // HSL->RGB helper
+      const h2rgb = (p, q, t) => {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1/6) return p + (q - p) * 6 * t;
+        if (t < 1/2) return q;
+        if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+        return p;
+      };
+      let r2,g2,b2;
+      if (newS === 0) {
+        r2 = g2 = b2 = Math.round(newL * 255);
+      } else {
+        const q = newL < 0.5 ? newL * (1 + newS) : newL + newS - newL * newS;
+        const p = 2 * newL - q;
+        const hn = newH / 360;
+        r2 = Math.round(h2rgb(p, q, hn + 1/3) * 255);
+        g2 = Math.round(h2rgb(p, q, hn) * 255);
+        b2 = Math.round(h2rgb(p, q, hn - 1/3) * 255);
+      }
+      const toHex = n => n.toString(16).padStart(2, '0');
+      const derived = `#${toHex(r2)}${toHex(g2)}${toHex(b2)}`;
+      setDerivedSecondaryState(derived);
+    } catch (e) {
+      setDerivedSecondaryState(null);
+    }
+  }, [ASKNET_PRIMARY, SECONDARY_DERIVE_FROM_PRIMARY, SECONDARY_HUE_SHIFT_DEG, SECONDARY_SATURATION_MULT]);
+
+  // Helper: desaturate a color by converting to HSL, reducing saturation, and converting back
+  const desaturateColor = (color, desaturationAmount = TITLE_DESATURATION) => {
+    if (!color || desaturationAmount === 0) return color;
+    
+    // Handle hex colors
+    const hexMatch = color.match(/^#([0-9a-f]{6})$/i);
+    if (hexMatch) {
+      const hex = hexMatch[1];
+      let r = parseInt(hex.substring(0,2), 16) / 255;
+      let g = parseInt(hex.substring(2,4), 16) / 255;
+      let b = parseInt(hex.substring(4,6), 16) / 255;
+      
+      // Convert RGB to HSL
+      const max = Math.max(r, g, b);
+      const min = Math.min(r, g, b);
+      let h = 0, s = 0, l = (max + min) / 2;
+      
+      if (max !== min) {
+        const d = max - min;
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch(max) {
+          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+          case g: h = (b - r) / d + 2; break;
+          case b: h = (r - g) / d + 4; break;
+        }
+        h = h / 6;
+      }
+      
+      // Reduce saturation by the desaturation amount
+      const newS = s * (1 - desaturationAmount);
+      
+      // Convert HSL back to RGB
+      const h2rgb = (p, q, t) => {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1/6) return p + (q - p) * 6 * t;
+        if (t < 1/2) return q;
+        if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+        return p;
+      };
+      
+      let r2, g2, b2;
+      if (newS === 0) {
+        r2 = g2 = b2 = Math.round(l * 255);
+      } else {
+        const q = l < 0.5 ? l * (1 + newS) : l + newS - l * newS;
+        const p = 2 * l - q;
+        r2 = Math.round(h2rgb(p, q, h + 1/3) * 255);
+        g2 = Math.round(h2rgb(p, q, h) * 255);
+        b2 = Math.round(h2rgb(p, q, h - 1/3) * 255);
+      }
+      
+      const toHex = n => n.toString(16).padStart(2, '0');
+      return `#${toHex(r2)}${toHex(g2)}${toHex(b2)}`;
+    }
+    
+    return color; // Return unchanged if not a hex color
+  };
+
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    try {
+      const existingGreenRgb = (getComputedStyle(document.documentElement).getPropertyValue('--asknet-green-rgb') || '').trim();
+      const g = extractRgb(ASKNET_PRIMARY) || extractRgb(getComputedStyle(document.documentElement).getPropertyValue('--asknet-green')) || '0,171,68';
+      if (!existingGreenRgb) {
+        document.documentElement.style.setProperty('--asknet-green-rgb', g);
+      }
+      // Only set second rgb if we derived a secondary, otherwise keep existing value if present
+      const existingSecondRgb = (getComputedStyle(document.documentElement).getPropertyValue('--asknet-second-rgb') || '').trim();
+      const sCandidate = extractRgb(effectiveSecondary) || extractRgb(getComputedStyle(document.documentElement).getPropertyValue('--asknet-second')) || g;
+      // If we derived a secondary and derivation is enabled, set the CSS var so
+      // any styles using `var(--asknet-second)` pick up the derived hue.
+      if (derivedSecondaryState && SECONDARY_DERIVE_FROM_PRIMARY) {
+        try { document.documentElement.style.setProperty('--asknet-second', derivedSecondaryState); } catch (e) {}
+        try { document.documentElement.style.setProperty('--asknet-second-rgb', sCandidate); } catch (e) {}
+      } else if (!existingSecondRgb) {
+        // If no derived secondary, set the rgb var only if it's missing to avoid overwriting host styles.
+        try { document.documentElement.style.setProperty('--asknet-second-rgb', sCandidate); } catch (e) {}
+      }
+    } catch (e) {}
+  }, [ASKNET_PRIMARY, effectiveSecondary, derivedSecondaryState]);
+  
+  // Simplified title coloring with desaturation for unselected titles
+  // Use the constants directly for maximum clarity
+  const baseLeftColor = ASKNET_PRIMARY;  // AI title always uses primary
+  const baseRightColor = effectiveSecondary;  // Search title uses effective secondary (derived or constant)
+  
+  // AI title: use primary when active (toggleOff), desaturated primary when inactive (toggleOn)
+  const titleLeftColor = toggleOn ? desaturateColor(baseLeftColor) : baseLeftColor;
+  // Search title: use secondary when active (toggleOn), desaturated secondary when inactive (toggleOff)
+  const titleRightColor = toggleOn ? baseRightColor : desaturateColor(baseRightColor);
+
+  // Ensure CSS variable --asknet-second is available on the document root so it can be used in styles
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    // Only set a default asknet-second if the document does not already provide one.
+    const current = getComputedStyle(document.documentElement).getPropertyValue('--asknet-second');
+    if (!current || !current.trim()) {
+      try { document.documentElement.style.setProperty('--asknet-second', ASKNET_SECOND); } catch (e) {}
+      // On unmount, remove the var so we don't leave side-effects
+      return () => { try { document.documentElement.style.removeProperty('--asknet-second'); } catch (e) {} };
+    }
+    return () => {};
+  }, []);
+
+  useEffect(() => {
+    const onKey = (e) => {
+  // Use Ctrl + / (slash) as the requested shortcut
+  // Accept either Control (Windows/Linux) or Meta (Mac) with the slash key
+  if ((e.ctrlKey || e.metaKey) && e.key === '/') {
+        try { e.preventDefault(); } catch (err) {}
+        // Toggle the pill and focus the textarea
+        try {
+          setToggleOn(v => !v);
+        } catch (err) {}
+        try {
+          (textareaRef.current || inputRef.current)?.focus();
+        } catch (err) {}
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  // Ensure the chat textarea is focused from the start (immediate and after a short timeout)
+  useEffect(() => {
+    const focus = () => {
+      try {
+        (textareaRef.current || inputRef.current)?.focus();
+      } catch (e) {}
+    };
+    focus();
+    const t = setTimeout(focus, 120);
+    return () => clearTimeout(t);
+  }, []);
 
   // --- Feedback state & helpers (missing previously) ---
   // Tracks per-message feedback status: { [messageId]: { sending, sent, rating } }
@@ -1188,6 +1498,8 @@ export default function AskNetdata() {
   if (isDocked || isAnimatingDock) return;
   // Only rotate placeholders while on the welcome screen
   if (!showWelcome) return;
+  // Pause placeholder rotation when search mode (toggle) is active
+  if (toggleOn) return;
     
     // Set initial placeholder
     setCurrentPlaceholder(placeholderQuestions[0]);
@@ -1217,7 +1529,7 @@ export default function AskNetdata() {
     }, 5000); // Change every 5 seconds
     
     return () => clearInterval(interval);
-  }, [placeholderQuestions]);
+  }, [placeholderQuestions, isDocked, isAnimatingDock, showWelcome, toggleOn]);
 
   const handleSubmit = async (e, overrideMessage = null) => {
     e?.preventDefault();
@@ -1549,10 +1861,80 @@ export default function AskNetdata() {
   };
 
   const welcomeTitleStyle = {
-  color: 'var(--asknet-green)',
-    marginBottom: '8px',
+  // Leave color off here so individual titles use their computed colors (titleLeftColor/titleRightColor)
+  fontSize: TITLE_FONT_SIZE,
+  fontWeight: TITLE_FONT_WEIGHT,
+  margin: 0,
     lineHeight: '1',
     whiteSpace: 'nowrap'
+  };
+
+  // Toggle (pill) styles
+  const toggleWrapperStyle = {
+    display: 'flex',
+    alignItems: 'center'
+  };
+
+  const toggleTrackStyle = (on) => ({
+  // compact track width to preserve original look while allowing hint text
+  width: `${104 * TOGGLE_SIZE_MULTIPLIER}px`,
+  height: `${36 * TOGGLE_SIZE_MULTIPLIER}px`,
+    borderRadius: '999px',
+  // Use solid colors for both states (no gradient)
+  // When ON use the effective secondary so the track visually matches Search mode.
+  background: on ? effectiveSecondary : ASKNET_PRIMARY,
+    // Subtle glow using the active accent's RGB when ON, keep inset for OFF
+    boxShadow: on ? `0 6px 18px rgba(${currentAccentRgb}, 0.12)` : 'inset 0 1px 2px rgba(0,0,0,0.04)',
+  padding: `${4 * TOGGLE_SIZE_MULTIPLIER}px`,
+  position: 'relative',
+  display: 'block',
+  // ensure content doesn't wrap
+  whiteSpace: 'nowrap',
+    cursor: 'pointer',
+    // Smoothly transition background and shadow so green elements track toggle color
+  transition: 'background 220ms ease, box-shadow 180ms ease',
+    userSelect: 'none'
+  });
+
+  const toggleKnobStyle = (on) => ({
+  width: `${28 * TOGGLE_SIZE_MULTIPLIER}px`,
+  height: `${28 * TOGGLE_SIZE_MULTIPLIER}px`,
+  borderRadius: '50%',
+  background: isDarkMode ? '#0b1220' : '#fff',
+  position: 'absolute',
+  top: '50%',
+  transform: on ? `translateY(-50%) translateX(${68 * TOGGLE_SIZE_MULTIPLIER}px)` : 'translateY(-50%) translateX(0px)',
+  transition: 'transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms ease',
+  boxShadow: '0 6px 12px rgba(11,18,32,0.12)'
+  });
+
+  // Toggle hint style (inside the track, opposite the knob)
+  const toggleHintStyle = (on) => ({
+  position: 'absolute',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  left: on ? `${12 * TOGGLE_SIZE_MULTIPLIER}px` : undefined,
+  right: on ? undefined : `${12 * TOGGLE_SIZE_MULTIPLIER}px`,
+  fontSize: `${12 * TOGGLE_SIZE_MULTIPLIER}px`,
+  color: 'white',
+  userSelect: 'none',
+  pointerEvents: 'none'
+  });
+
+  const titleRowStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '100%',
+  maxWidth: '800px',
+  gap: TITLE_GAP
+  };
+
+  const secondTitleStyle = {
+    fontSize: '15px',
+    color: isDarkMode ? '#787b81ff' : '#6b7280',
+    margin: 0,
+    fontStyle: 'italic'
   };
 
   const messagesContainerStyle = {
@@ -1586,8 +1968,8 @@ export default function AskNetdata() {
     flexShrink: 0,
     fontSize: '18px',
     background: type === 'user' 
-      ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-      : 'linear-gradient(135deg, var(--asknet-green) 0%, #00d46a 100%)',
+      ? ASKNET_SECOND
+      : ASKNET_PRIMARY,
     color: 'white'
   });
 
@@ -1608,7 +1990,7 @@ export default function AskNetdata() {
     opacity: showWelcome ? 1 : 0.98,
     // Add a green outline ring when the textarea is focused without affecting layout
     boxShadow: isInputFocused
-      ? `${inputContainerStyle.boxShadow}, 0 0 0 4px rgba(var(--asknet-green-rgb), 0.18), 0 0 18px rgba(var(--asknet-green-rgb), 0.12)`
+      ? `${inputContainerStyle.boxShadow}, 0 0 0 4px rgba(${currentAccentRgb}, 0.18), 0 0 18px rgba(${currentAccentRgb}, 0.12)`
       : inputContainerStyle.boxShadow,
     willChange: 'transform, opacity, box-shadow'
   };
@@ -1654,7 +2036,7 @@ export default function AskNetdata() {
     right: '50px',
     fontSize: '16px',
   // Default placeholder color; keep green when hovered only
-  color: (isSendHovered && !input.trim()) ? 'var(--asknet-green)' : (isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'),
+  color: (isSendHovered && !input.trim()) ? currentAccent : (isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'),
     fontFamily: 'inherit',
     pointerEvents: 'none',
   // Slightly gentler color transition
@@ -1671,7 +2053,7 @@ export default function AskNetdata() {
   };
 
   const sendButtonStyle = {
-    background: 'var(--asknet-green)',
+  background: currentAccent,
     color: 'white',
     border: 'none',
     borderRadius: '50%',
@@ -1683,19 +2065,20 @@ export default function AskNetdata() {
     justifyContent: 'center',
     opacity: isLoading ? 0.5 : 1,
   transition: 'background 0.2s, box-shadow 260ms',
-  boxShadow: isDarkMode ? '0 2px 10px rgba(0,0,0,0.6)' : '0 4px 18px rgba(var(--asknet-green-rgb), 0.28)',
+  boxShadow: isDarkMode ? '0 2px 10px rgba(0,0,0,0.6)' : `0 4px 18px rgba(${currentAccentRgb}, 0.28)`,
     flexShrink: 0
   };
 
 
   // Dimmed background color (solid) for light/dark modes
   // More prominent dimmed background so the inactive button reads as interactive
-  const dimmedBg = isDarkMode ? 'rgba(var(--asknet-green-rgb), 0.42)' : 'rgba(var(--asknet-green-rgb), 0.28)';
+  const dimmedBg = isDarkMode ? `rgba(${currentAccentRgb}, 0.42)` : `rgba(${currentAccentRgb}, 0.28)`;
   const computedSendButtonStyle = {
     ...sendButtonStyle,
-  background: input.trim() ? 'var(--asknet-green)' : dimmedBg,
-  // On hover, always show full green background (unless disabled)
-  ...(isSendHovered && !isLoading ? { background: 'var(--asknet-green)' } : {}),
+  background: input.trim() ? currentAccent : dimmedBg,
+  // On hover, always show full accent background (unless disabled)
+  ...(isSendHovered && !isLoading ? { background: currentAccent } : {}),
+  transition: 'background 220ms ease, box-shadow 220ms ease'
   };
 
   // When messages array changes, animate them in with a small stagger
@@ -1727,7 +2110,7 @@ export default function AskNetdata() {
 
   // Shared renderer for the input form so floating and docked views are identical
   const renderInputForm = ({ attachRef = false, placeholderOverride = null } = {}) => {
-    const placeholderText = placeholderOverride !== null ? placeholderOverride : (currentPlaceholder || "Ask anything about Netdata, in any language... (Shift+Enter for new line)");
+  const placeholderText = placeholderOverride !== null ? placeholderOverride : (toggleOn ? 'Enter search term' : (currentPlaceholder || "Ask anything about Netdata, in any language... (Shift+Enter for new line)"));
     const placeholderStyle = placeholderOverride !== null
       ? { ...animatedPlaceholderStyle, color: isDarkMode ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)' }
       : animatedPlaceholderStyle;
@@ -1759,7 +2142,6 @@ export default function AskNetdata() {
           </div>
           <button
             type="button"
-            className={placeholderPulse ? styles.sendPulse : ''}
             style={computedSendButtonStyle}
             disabled={isLoading}
             onMouseEnter={() => setIsSendHovered(true)}
@@ -1803,7 +2185,7 @@ export default function AskNetdata() {
       `}</style>
   <div ref={chatAreaRef} style={computedChatAreaStyle}>
         {/* Fixed bottom-center notice visible in both welcome and messages views */}
-        {showWelcome && (
+  {showWelcome && (
           <div aria-hidden style={{
             position: 'fixed',
             bottom: isDocked ? (dockSize ? `calc(${dockSize.height}px + 20px)` : '100px') : '12px',
@@ -1815,7 +2197,10 @@ export default function AskNetdata() {
             justifyContent: 'center',
             padding: '0 12px',
             boxSizing: 'border-box',
-            width: noticeWidthPx ? `${noticeWidthPx}px` : '100%'
+            width: noticeWidthPx ? `${noticeWidthPx}px` : '100%',
+            transition: 'opacity 240ms ease, visibility 240ms',
+            opacity: toggleOn ? 0 : 1,
+            visibility: toggleOn ? 'hidden' : 'visible'
           }}>
             <div style={{
               fontSize: '12px',
@@ -1827,7 +2212,9 @@ export default function AskNetdata() {
               textAlign: 'center',
               width: '100%'
             }}>
-              AI can make mistakes - please validate before use. Our model is also multi-lingual so use it in your language!
+              <div style={{ transition: 'opacity 220ms ease', opacity: toggleOn ? 0.18 : 1 }}>
+                AI can make mistakes - please validate before use. Our model is also multi-lingual so use it in your language!
+              </div>
 
             </div>
           </div>
@@ -1846,20 +2233,49 @@ export default function AskNetdata() {
             {/* Floating Title and Input Container */}
             <div ref={floatingContainerRef} style={floatingContainerStyle}>
               <div style={welcomeStyle}>
-                <h2 style={welcomeTitleStyle}>
-                  Ask Netdata Docs
-                </h2>
-                <p style={{ 
-                  fontSize: '15px', 
-                  color: isDarkMode ? '#787b81ff' : '#6b7280', 
-                  marginBottom: '0', 
-                  lineHeight: '1.3', 
-                  margin: '0 auto',
-                  textAlign: 'center',
-                  fontStyle: 'italic'
-                }}>
-                  {titleSubtitle}
-                </p>
+                {/* header structure: toggle above titles */}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', width: '100%' }}>
+                  {/* Toggle positioned above titles */}
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <div style={toggleWrapperStyle}>
+                      <div
+                        role="switch"
+                        aria-checked={toggleOn}
+                        tabIndex={0}
+                        onClick={() => {
+                          setToggleOn(v => !v);
+                          // Focus the input like the keyboard shortcut does
+                          setTimeout(() => {
+                            (textareaRef.current || inputRef.current)?.focus();
+                          }, 50);
+                        }}
+                        onKeyDown={(e) => { 
+                          if (e.key === 'Enter' || e.key === ' ') { 
+                            e.preventDefault(); 
+                            setToggleOn(v => !v);
+                            // Focus the input like the keyboard shortcut does
+                            setTimeout(() => {
+                              (textareaRef.current || inputRef.current)?.focus();
+                            }, 50);
+                          } 
+                        }}
+                        style={toggleTrackStyle(toggleOn)}
+                        aria-label={toggleOn ? 'Toggle on' : 'Toggle off'}
+                      >
+                          {/* Hint on the track showing the keybind; positioned opposite the knob */}
+                          <div style={toggleHintStyle(toggleOn)}>{SHORTCUT_LABEL}</div>
+                          <div style={toggleKnobStyle(toggleOn)} />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Titles row */}
+                  <div style={titleRowStyle}>
+                    <div style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleLeftColor, transition: 'opacity 220ms ease, color 220ms ease' }}>{HEADER_TITLES.left}</div>
+                    <div style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleRightColor, transition: 'opacity 220ms ease, color 220ms ease' }}>{HEADER_TITLES.right}</div>
+                  </div>
+                  {!HIDE_SUBTITLE && <p style={secondTitleStyle}>{titleSubtitle}</p>}
+                </div>
               </div>
               
               {renderInputForm({ attachRef: true })}
@@ -1884,6 +2300,7 @@ export default function AskNetdata() {
                   width: '100%',
                   margin: '0 auto'
                 }}>
+                  <div style={{ transition: 'opacity 280ms ease, transform 280ms ease', opacity: toggleOn ? 0 : 1, transform: toggleOn ? 'translateY(6px)' : 'translateY(0)', pointerEvents: toggleOn ? 'none' : 'auto' }}>
                   <div ref={suggestionBoxRef} style={{
                     display: 'grid',
                     gridTemplateColumns: forcedTemplateColumns || generalTemplateColumns,
@@ -1905,7 +2322,7 @@ export default function AskNetdata() {
                       flexDirection: 'column'
                     }}>
                       <div style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <span>{categoryEmoji[cat.key] || '•'}</span> {cat.title}
+  <span>{categoryEmoji[cat.key] || '•'}</span> {cat.title}
                       </div>
                       <div style={{ 
                         display: 'flex', 
@@ -1917,7 +2334,7 @@ export default function AskNetdata() {
                           cat.items.map((q, i) => (
                             <button key={i} onClick={() => handleSuggestionClick(q)}
                               style={{ textAlign: 'left', padding: '8px', borderRadius: '6px', border: '1px solid transparent', backgroundColor: isDarkMode ? 'var(--ifm-background-color)' : 'white', cursor: 'pointer', fontSize: '0.875rem', color: 'inherit', transition: 'all 0.2s', wordBreak: 'break-word', overflowWrap: 'break-word' }}
-                              onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--asknet-green)'; e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(0, 171, 68, 0.08)' : '#f0fff4'; }}
+                              onMouseEnter={(e) => { e.currentTarget.style.borderColor = currentAccent; e.currentTarget.style.backgroundColor = isDarkMode ? `rgba(${currentAccentRgb}, 0.08)` : '#f0fff4'; }}
                               onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'transparent'; e.currentTarget.style.backgroundColor = isDarkMode ? 'var(--ifm-background-color)' : 'white'; }}
                             >
                               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1940,6 +2357,7 @@ export default function AskNetdata() {
                       </div>
                     </div>
                   ))}
+                  </div>
                   </div>
                 </div>
               </div>
@@ -2005,7 +2423,7 @@ export default function AskNetdata() {
                   <div style={{
                     ...avatarStyle(message.type),
                     ...(message.isError ? {
-                      background: 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)'
+                      background: '#dc2626'
                     } : {})
                   }}>
                     {message.isError ? '⚠' : (message.type === 'user' ? 'U' : 'N')}
@@ -2056,20 +2474,20 @@ export default function AskNetdata() {
                                   display: 'inline-block',
                                   marginRight: '16px',
                                   marginBottom: '8px',
-                                  color: '#667eea',
+                                  color: baseRightColor,
                                   textDecoration: 'none',
                                   fontSize: '14px',
-                                  borderBottom: '1px dotted #667eea',
+                                  borderBottom: `1px dotted ${baseRightColor}`,
                                   transition: 'all 0.2s ease'
                                 }}
                                 onMouseEnter={(e) => {
-                                  e.currentTarget.style.color = '#4c51bf';
-                                  e.currentTarget.style.borderBottomColor = '#4c51bf';
+                                  e.currentTarget.style.color = baseLeftColor;
+                                  e.currentTarget.style.borderBottomColor = baseLeftColor;
                                   e.currentTarget.style.textDecoration = 'none';
                                 }}
                                 onMouseLeave={(e) => {
-                                  e.currentTarget.style.color = '#667eea';
-                                  e.currentTarget.style.borderBottomColor = '#667eea';
+                                  e.currentTarget.style.color = baseRightColor;
+                                  e.currentTarget.style.borderBottomColor = baseRightColor;
                                   e.currentTarget.style.textDecoration = 'none';
                                 }}
                               >
@@ -2112,20 +2530,20 @@ export default function AskNetdata() {
                                 display: 'inline-block',
                                 marginRight: '16px',
                                 marginBottom: '8px',
-                                color: '#667eea',
+                                color: baseRightColor,
                                 textDecoration: 'none',
                                 fontSize: '14px',
-                                borderBottom: '1px dotted #667eea',
+                                borderBottom: `1px dotted ${baseRightColor}`,
                                 transition: 'all 0.2s ease'
                               }}
                               onMouseEnter={(e) => {
-                                e.target.style.color = '#4c51bf';
-                                e.target.style.borderBottomColor = '#4c51bf';
+                                e.target.style.color = baseLeftColor;
+                                e.target.style.borderBottomColor = baseLeftColor;
                                 e.target.style.textDecoration = 'none';
                               }}
                               onMouseLeave={(e) => {
-                                e.target.style.color = '#667eea';
-                                e.target.style.borderBottomColor = '#667eea';
+                                e.target.style.color = baseRightColor;
+                                e.target.style.borderBottomColor = baseRightColor;
                                 e.target.style.textDecoration = 'none';
                               }}
                             >
@@ -2227,7 +2645,7 @@ export default function AskNetdata() {
                           aria-label="Thumbs up"
                           title="Good answer"
                           >
-                            <svg role="img" aria-hidden={false} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style={{ pointerEvents: 'none', stroke: hoveredButton === `${message.id}:up` ? 'var(--fg, #1a1a1a)' : 'var(--muted, #6b7280)', fill: feedbackState[message.id]?.rating === 'positive' ? 'var(--accent, #00ab44)' : 'none', strokeWidth: 2, transition: 'all 0.2s ease' }}>
+                            <svg role="img" aria-hidden={false} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style={{ pointerEvents: 'none', stroke: hoveredButton === `${message.id}:up` ? 'var(--fg, #1a1a1a)' : 'var(--muted, #6b7280)', fill: feedbackState[message.id]?.rating === 'positive' ? effectiveSecondary : 'none', strokeWidth: 2, transition: 'all 0.2s ease' }}>
                               <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
                             </svg>
                           </button>
@@ -2253,7 +2671,7 @@ export default function AskNetdata() {
                           aria-label="Thumbs down"
                           title="Could be better"
                             >
-                              <svg role="img" aria-hidden={false} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style={{ pointerEvents: 'none', stroke: hoveredButton === `${message.id}:down` ? 'var(--fg, #1a1a1a)' : 'var(--muted, #6b7280)', fill: feedbackState[message.id]?.rating === 'negative' ? '#ef4444' : 'none', strokeWidth: 2, transition: 'all 0.2s ease' }}>
+                              <svg role="img" aria-hidden={false} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" style={{ pointerEvents: 'none', stroke: hoveredButton === `${message.id}:down` ? 'var(--fg, #1a1a1a)' : 'var(--muted, #6b7280)', fill: feedbackState[message.id]?.rating === 'negative' ? '#dc2626' : 'none', strokeWidth: 2, transition: 'all 0.2s ease' }}>
                                 <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"></path>
                               </svg>
                             </button>
@@ -2294,7 +2712,7 @@ export default function AskNetdata() {
                                 setFeedbackState(prev => ({ ...prev, [message.id]: { ...(prev[message.id]||{}), sending: false, sent: true, rating: 'negative' } }));
                                 setCommentBoxOpen(prev => ({ ...prev, [message.id]: false }));
                                 setCommentDraft(prev => ({ ...prev, [message.id]: '' }));
-                              }} style={{ background: 'var(--accent, #10b981)', color: 'white', border: 'none', padding: '6px 10px', borderRadius: '6px', cursor: 'pointer' }}>Submit</button>
+                              }} style={{ background: currentAccent, color: 'white', border: 'none', padding: '6px 10px', borderRadius: '6px', cursor: 'pointer' }}>Submit</button>
                             </div>
                           </div>
                         </div>
@@ -2330,9 +2748,9 @@ export default function AskNetdata() {
                     left: '0',
                     width: '100px',
                     height: '100%',
-                    background: `linear-gradient(90deg, transparent, var(--asknet-green), transparent)`,
+                    background: currentAccent,
                     animation: 'scanBackForth 2s ease-in-out infinite',
-                    boxShadow: `0 0 10px rgba(${getComputedStyle(document.documentElement).getPropertyValue('--asknet-green-rgb') || '0,171,68'}, 0.32), 0 0 20px rgba(${getComputedStyle(document.documentElement).getPropertyValue('--asknet-green-rgb') || '0,171,68'}, 0.16)`
+                    boxShadow: `0 0 10px rgba(${currentAccentRgb}, 0.32), 0 0 20px rgba(${currentAccentRgb}, 0.16)`
                   }}></div>
                 </div>
               </div>
