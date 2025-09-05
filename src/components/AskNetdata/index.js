@@ -192,17 +192,13 @@ const SHORTCUT_LABEL = 'Ctrl + /';
 
 
 // API configuration
-// Use same-origin relative `/api` for browser requests so deployed sites
-// call their local API mount (avoids hardcoded external hosts that 404).
-// Keep a harmless SSR fallback when `window` is not available.
-const getApiUrl = () => {
-  if (typeof window === 'undefined') return 'http://localhost:30002/api'; // SSR/dev fallback
-  // In the browser, use same-origin relative path so production and previews
-  // call the site's mounted API (e.g. `/api/chat/docs/search`).
-  return '/api';
-};
-
-const apiUrl = getApiUrl();
+// Automatically detect environment and use appropriate API
+// API configuration
+// The deployed API base (production) is always the same host.
+// Keep this as a hardcoded constant so the client always targets the
+// production Ask Netdata API endpoint.
+const API_BASE = 'https://agent-events.netdata.cloud/ask-netdata/api';
+const apiUrl = API_BASE;
 
 // Smart link component that handles internal vs external links
 const SmartLink = ({ href, children, ...props }) => {
