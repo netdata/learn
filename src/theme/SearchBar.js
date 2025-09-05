@@ -42,17 +42,32 @@ const SearchBar = () => {
   }, []);
 
   useEffect(() => {
-
-    // Add event listener on keydown
-    document.addEventListener('keydown', (event) => {
-      var name = event.key;
-      var code = event.code;
-
-      if ((event.ctrlKey && event.keyCode === 75) || (event.metaKey && event.keyCode === 75)) {
-        event.preventDefault();
-        document.getElementById('gsc-i-id1').focus()
+    // Add event listener on keydown once and clean up on unmount.
+    const onKeyDown = (event) => {
+      // If the google search input is focused, stop Enter from bubbling to parent forms
+      try {
+        const active = document.activeElement;
+        if (active && (event.key === 'Enter' || event.keyCode === 13)) {
+          if (active.closest && active.closest('#googlesearch')) {
+            // Allow the input to handle Enter (don't preventDefault) but stop propagation
+            event.stopPropagation();
+            return;
+          }
+        }
+      } catch (err) {
+        // ignore DOM errors
       }
-    });
+
+      // focus search input on Ctrl/Cmd + K
+      if ((event.ctrlKey || event.metaKey) && (event.key === 'k' || event.key === 'K')) {
+        event.preventDefault();
+        const el = document.getElementById('gsc-i-id1');
+        if (el && typeof el.focus === 'function') el.focus();
+      }
+    };
+
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
   });
 
   return (
