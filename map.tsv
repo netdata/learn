@@ -94,7 +94,8 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/api-tokens.md	API Tokens	Published	Netdata Cloud/Authentication & Authorization	
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/view-plan-and-billing.md	Netdata Plans & Billing	Published	Netdata Cloud	
 https://github.com/netdata/netdata/edit/master/src/aclk/README.md	Agent-Cloud Link (ACLK)	Published	Netdata Cloud	The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud.
-https://github.com/netdata/netdata/edit/master/docs/learn/remove-node.md	Remove Agent	Published	Netdata Cloud	
+https://github.com/netdata/netdata/edit/master/docs/learn/remove-node.md	Remove Agent	Published	Netdata Cloud
+https://github.com/netdata/netdata/edit/master/docs/delete/netdata/account.md	Account Deletion	Published	Netdata Cloud	
 				
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/README.md	Netdata Cloud On-Prem	Published	Netdata Cloud On-Prem	
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md	Installation	Published	Netdata Cloud On-Prem	
@@ -311,3 +312,4 @@ https://github.com/netdata/netdata/edit/master/build_external/README.md	External
 https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md	How to build native (DEB/RPM) packages locally for testing	Published	Developer and Contributor Corner/Build the Netdata Agent Yourself	Instructions for developers who need to build native packages locally for testing.
 https://github.com/netdata/netdata/edit/master/contrib/README.md	Netdata contrib	Published	Developer and Contributor Corner/Build the Netdata Agent Yourself	
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md	Install the Netdata Agent from a Git checkout	Published	Developer and Contributor Corner	Use the Netdata Agent source code from GitHub, plus helper scripts to set up your system, to install Netdata without packages or binaries.
+
