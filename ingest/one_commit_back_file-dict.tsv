@@ -49,6 +49,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-lighttpd.md	/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/lighttpd-v1.4.x
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/ai-&-ml
+https://github.com/netdata/netdata/edit/master/docs/delete/netdata/account.md	/docs/netdata-cloud/account-deletion
 https://github.com/netdata/netdata/edit/master/docs/learn/switching-install-types.md	/docs/netdata-agent/installation/linux/switch-install-types-and-release-channels
 https://github.com/netdata/netdata/edit/master/docs/learn/remove-node.md	/docs/netdata-cloud/remove-agent
 https://github.com/netdata/netdata/edit/master/docs/learn/mcp.md	/docs/ai-&-ml/model-context-protocol-mcp
