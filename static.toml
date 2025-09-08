@@ -5,6 +5,90 @@
 
 
 [[redirects]]
+  from="/guides/monitor/kubernetes-k8s-netdata"
+  to="/docs/collecting-metrics/kubernetes"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/cheatsheet"
+  to="/docs/netdata-agent/configuration/"
+
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
+  to="/docs/netdata-agent/installation/"
+
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page"
+  to="/docs/dashboards-and-charts/tabs/dashboards"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/collect/system-metrics"
+  to="/docs/collecting-metrics/"
+
+[[redirects]]
+  from="/docs/collect/container-metrics"
+  to="/docs/collecting-metrics/containers-and-vms/"
+
+[[redirects]]
+  from="/docs/rest-api/netdata-badges"
+  to="/api"
+
+[[redirects]]
+  from="/docs/agent/web/api/badges/"
+  to="/api"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/springboot"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/alarms"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/anomalies"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="docs/agent/collectors/proc.plugin"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/cgroups.plugin"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/node.d.plugin/"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/modules/wmi"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Windows-machines"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/data-collection/windows-systems"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/data-collection/windows-systems/windows"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
   from="/docs/nightly/operations/alerts/add-opsgenie-notification-configuration"
   to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-opsgenie-notification-configuration"
 
