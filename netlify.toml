@@ -6,6 +6,90 @@
 
 
 [[redirects]]
+  from="/guides/monitor/kubernetes-k8s-netdata"
+  to="/docs/collecting-metrics/kubernetes"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/cheatsheet"
+  to="/docs/netdata-agent/configuration/"
+
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
+  to="/docs/netdata-agent/installation/"
+
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page"
+  to="/docs/dashboards-and-charts/tabs/dashboards"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/collect/system-metrics"
+  to="/docs/collecting-metrics/"
+
+[[redirects]]
+  from="/docs/collect/container-metrics"
+  to="/docs/collecting-metrics/containers-and-vms/"
+
+[[redirects]]
+  from="/docs/rest-api/netdata-badges"
+  to="/api"
+
+[[redirects]]
+  from="/docs/agent/web/api/badges/"
+  to="/api"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/springboot"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/alarms"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/anomalies"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="docs/agent/collectors/proc.plugin
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/cgroups.plugin"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/node.d.plugin/"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/modules/wmi"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Windows-machines"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/data-collection/windows-systems"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
+  from="/docs/data-collection/windows-systems/windows"
+  to="/docs/collecting-metrics/windows-systems"
+
+[[redirects]]
   from="/docs/nightly/operations/alerts/add-opsgenie-notification-configuration"
   to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-opsgenie-notification-configuration"
 
@@ -8528,5 +8612,429 @@
 [[redirects]]
   from="/docs/exporting-metrics/appoptics"
   to="/docs/exporting-metrics/connectors/appoptics"
+
+[[redirects]]
+  from="/docs/agent/collectors/apps.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins"
+
+[[redirects]]
+  from="/docs/agent/collectors/cgroups.plugin"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/ebpf.plugin"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/freebsd.plugin"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/agent/collectors/proc.plugin"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/agent/anonymous-statistics"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
+
+[[redirects]]
+  from="/docs/agent/netdata-security"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
+
+[[redirects]]
+  from="/docs/collect/application-metrics"
+  to="/docs/developer-and-contributor-corner/external-plugins"
+
+[[redirects]]
+  from="/docs/collect/system-metrics"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/cloud/data-privacy"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
+
+[[redirects]]
+  from="/docs/data-privacy"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
+
+[[redirects]]
+  from="/docs/deployment-in-production/data-privacy"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
+
+[[redirects]]
+  from="/docs/deployment-in-production/pci-dss-soc-2-hipaa-environments"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Containers-and-VMs-cgroups"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/OS-provided-metrics-proc.plugin"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Kernel-traces-metrics-eBPF"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/FreeBSD-system-metrics-freebsd.plugin"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring"
+  to="/docs/developer-and-contributor-corner/external-plugins"
+
+[[redirects]]
+  from="/docs/improving-netdata---developers/external-plugins/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/deployment-in-production/security-and-privacy-design"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/kernel-traces-metrics-ebpf"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/freebsd-system-metrics-freebsd.plugin"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/application-monitoring"
+  to="/docs/developer-and-contributor-corner/external-plugins"
+
+[[redirects]]
+  from="/docs/netdata-architecture/security-and-privacy-design"
+  to="/docs/netdata-agent/anonymous-telemetry-events"
+
+[[redirects]]
+  from="/docs/contributing-to-netdata/external-plugins/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/contributing/external-plugins/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/external-plugins/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/system-metrics"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/application-metrics"
+  to="/docs/developer-and-contributor-corner/external-plugins"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/adaptec_raid"
+  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptec-raid"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/hddtemp"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/nvidia_smi"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/nvidia-gpu"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/postfix"
+  to="/docs/collecting-metrics/mail-servers/postfix"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/smartd_log"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
+
+[[redirects]]
+  from="/docs/agent/ml"
+  to="/docs/ai-&-ml/ml-anomaly-detection"
+
+[[redirects]]
+  from="/docs/maintaining/reinstall-netdata-agents"
+  to="/docs/netdata-agent/installation/linux"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/reinstall"
+  to="/docs/netdata-agent/installation/linux"
+
+[[redirects]]
+  from="/docs/maintaining/update-netdata-agents"
+  to="/docs/netdata-agent/maintenance/update"
+
+[[redirects]]
+  from="/docs/agent/web/gui/custom"
+  to="/docs/dashboards-and-charts"
+
+[[redirects]]
+  from="/docs/configure/common-changes"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/configure/start-stop-restart"
+  to="/docs/netdata-agent/maintenance/service-control"
+
+[[redirects]]
+  from="/streaming"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/metrics-storage-management/enable-streaming"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/metrics-storage-management/how-streaming-works"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/visualize/create-dashboards"
+  to="/docs/dashboards-and-charts/tabs/dashboards"
+
+[[redirects]]
+  from="/guides/monitor/anomaly-detection"
+  to="/docs/ai-&-ml/ml-anomaly-detection"
+
+[[redirects]]
+  from="/guides/monitor/anomaly-detection-python"
+  to="/docs/ai-&-ml/ml-anomaly-detection"
+
+[[redirects]]
+  from="/docs/cloud/spaces"
+  to="/docs/netdata-cloud/spaces-and-rooms"
+
+[[redirects]]
+  from="/docs/cloud/visualize/dashboards"
+  to="/docs/dashboards-and-charts/tabs/dashboards"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/nvidia_smi-python.d.plugin"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/nvidia-gpu"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/Sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/S.M.A.R.T.-attributes"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Hardware/Hard-drive-temperature"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Applications/Postfix"
+  to="/docs/collecting-metrics/mail-servers/postfix"
+
+[[redirects]]
+  from="/docs/visualizations/build-new-dashboards"
+  to="/docs/dashboards-and-charts/tabs/dashboards"
+
+[[redirects]]
+  from="/docs/visualizations/agent-dashboard/custom-dashboards"
+  to="/docs/dashboards-and-charts"
+
+[[redirects]]
+  from="/docs/troubleshooting-and-machine-learning/machine-learning-ml-powered-anomaly-detection"
+  to="/docs/ai-&-ml/ml-anomaly-detection"
+
+[[redirects]]
+  from="/docs/installation/reinstall-netdata"
+  to="/docs/netdata-agent/installation/linux"
+
+[[redirects]]
+  from="/docs/getting-started/manage-and-configure/start-stop-or-restart-the-netdata-agent"
+  to="/docs/netdata-agent/maintenance/service-control"
+
+[[redirects]]
+  from="/docs/getting-started/manage-and-configure/common-configuration-changes"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/common-configuration-changes"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/deployment-in-production/streaming-and-replication"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/hardware/sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/hardware/s.m.a.r.t.-attributes"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/hardware/nvidia_smi-python.d.plugin"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/nvidia-gpu"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/hardware/hard-drive-temperature"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/applications/postfix"
+  to="/docs/collecting-metrics/mail-servers/postfix"
+
+[[redirects]]
+  from="/docs/typical-netdata-agent-configurations/common-configuration-changes"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/netdata-dashboards-and-visualizations/custom-dashboards"
+  to="/docs/dashboards-and-charts/tabs/dashboards"
+
+[[redirects]]
+  from="/docs/metrics-streaming-and-replication/understanding-how-streaming-works"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents"
+  to="/docs/netdata-agent/maintenance/service-control"
+
+[[redirects]]
+  from="/docs/maintenance-operations-on-netdata-agents/reinstall-netdata-agents"
+  to="/docs/netdata-agent/installation/linux"
+
+[[redirects]]
+  from="/docs/machine-learning-and-assisted-troubleshooting/machine-learning-ml-powered-anomaly-detection"
+  to="/docs/ai-&-ml/ml-anomaly-detection"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hard-drive-temperature"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/linux-machine-sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
+
+[[redirects]]
+  from="/docs/miscellaneous/build-a-custom-dashboard-html-page"
+  to="/docs/dashboards-and-charts"
+
+[[redirects]]
+  from="/docs/configuring/common-configuration-changes"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/visualizations/custom-dashboards"
+  to="/docs/dashboards-and-charts/tabs/dashboards"
+
+[[redirects]]
+  from="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
+  to="/docs/ai-&-ml/ml-anomaly-detection"
+
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/configuring/common-configuration-changes"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/data-collection/mail-servers/postfix"
+  to="/docs/collecting-metrics/mail-servers/postfix"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/s.m.a.r.t."
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-lm-sensors"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/hdd-temperature"
+  to="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/sizing-netdata-parents"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points-/sizing-netdata-parents"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/dashboards-and-charts/custom-dashboards"
+  to="/docs/dashboards-and-charts/tabs/dashboards"
+
+[[redirects]]
+  from="/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection"
+  to="/docs/ai-&-ml/ml-anomaly-detection"
+
+[[redirects]]
+  from="/docs/netdata-agent/maintenance/reinstall-netdata-agents"
+  to="/docs/netdata-agent/installation/linux"
+
+[[redirects]]
+  from="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
+  to="/docs/ai-&-ml/ml-anomaly-detection"
+
+[[redirects]]
+  from="/docs/agent/health/tutorials/stop-notifications-alarms/"
+  to="/docs/alerts-&-notifications"
+
+[[redirects]]
+  from="/docs/agent/step-by-step/step-00/"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/agent/step-by-step/step-05/"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/agent/step-by-step/step-10/"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/agent/tutorials/collect-apache-nginx-web-logs/"
+  to="/docs/developer-and-contributor-corner/monitor-nginx-or-apache-web-server-log-files-with-netdata"
+
+[[redirects]]
+  from="/docs/agent/what-is-netdata"
+  to="/docs/welcome-to-netdata"
+
+[[redirects]]
+  from="/docs/architecture/deployment-strategies"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/architecture/security-and-privacy-design"
+  to="/docs/security-and-privacy-design"
+
+[[redirects]]
+  from="/docs/net/installation/windows"
+  to="/docs/netdata-agent/installation/windows"
+
+[[redirects]]
+  from="/docs/netdata-agent/architecture-overview/"
+  to="/docs/deployment-guides"
+
+[[redirects]]
+  from="/docs/streaming/understanding-how-streaming-works"
+  to="/docs/deployment-guides/parent-child"
 
 # section: dynamic << END
