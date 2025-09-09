@@ -90,11 +90,9 @@ The ingest script is a python script and has its dependencies (separate from the
     pip install -r .learn_environment/ingest-requirements.txt
     ```
 
-6. The organization of the files is handled by the [`map.tsv` file](https://docs.google.com/spreadsheets/d/1DhwL1yr7-sY6f8vfyHsKlPqxhu4_zUHXYiBrllglFfc/edit?usp=sharing), that contains metadata for every file. That file should only be edited by members of the Netdata team.
+6. The organization of the files is handled by the [`map.csv` file](https://github.com/netdata/netdata/blob/master/docs/.map/map.csv), that contains metadata for every file. That file should only be edited by members of the Netdata team.
 
-7. Once you edit the file from Google Sheets, you download the **second** sheet and replace `map.tsv` in your local repo.
-
-8. Run the ingest process to fetch the documents you are working on from one or multiple repos.
+7. Run the ingest process to fetch the documents you are working on from one or multiple repos.
 
     ```bash
     python ingest/ingest.py --repos <owner>/<repo>:<branch>
@@ -109,9 +107,9 @@ The ingest script is a python script and has its dependencies (separate from the
 
     If you don't use `--repos` the ingest will run on the master branches of netdata's repos.
 
-9. You then need to run `ingest/create_grid_integration_pages.py` to generate the dynamic integration pages.
+8. You then need to run `ingest/create_grid_integration_pages.py` to generate the dynamic integration pages.
   
-10. Build a local website  
+9.  Build a local website  
 
     ```bash
     yarn start

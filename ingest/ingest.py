@@ -107,7 +107,7 @@ def populate_integrations(markdownFiles):
     ignore_dup = []
 
     # Read the map file, to replace the placeholder for the dynamic part
-    map_file = pd.read_csv("map.tsv", sep='\t')
+    map_file = pd.read_csv("map.csv")
 
     collectors_entries = pd.DataFrame()
     exporting_entries = pd.DataFrame()
@@ -1083,6 +1083,8 @@ if __name__ == '__main__':
         print(clone_repo(default_repos[repo_name]["owner"], repo_name,
               default_repos[repo_name]["branch"], 1, TEMP_FOLDER + "/"))
 
+    shutil.move("ingest-temp-folder/netdata/docs/.map/map.csv", "map.csv")
+
     # We fetch the markdown files from the repositories
     all_markdown_files = fetch_markdown_from_repo(TEMP_FOLDER)
     print("Files detected: ", len(all_markdown_files), "\n")
@@ -1206,5 +1208,5 @@ if __name__ == '__main__':
     df.to_csv("./ingest/one_commit_back_file-dict.tsv", sep='\t', index=False)
 
     unsafe_cleanup_folders(TEMP_FOLDER)
-
-    print("OPERATION FINISHED")
+    os.remove("map.csv")
+    print("OPERATION FINISHED, map deleted")

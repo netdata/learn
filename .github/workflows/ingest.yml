@@ -10,7 +10,6 @@ on:
       - plugins/**
       - src/**
       - static/**
-      - map.tsv
       - sidebar.js
       - package.json
       - yarn.lock
