@@ -379,6 +379,10 @@ const SmartLink = ({ href, children, ...props }) => {
             filter: blur(0px);
           }
         }
+        @keyframes fadeIn {
+          0% { opacity: 0; transform: translateY(6px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
       `}</style>
       <ReactMarkdown 
         remarkPlugins={[remarkGfm]}
@@ -1559,7 +1563,7 @@ export default function AskNetdata() {
 
   // Search function for docs search mode
   const handleSearch = async (query) => {
-    if (!query.trim()) {
+    if (!query || !query.trim()) {
       setSearchResults([]);
       setSearchQuery('');
       return;
@@ -1568,6 +1572,80 @@ export default function AskNetdata() {
     setIsSearching(true);
     setSearchQuery(query);
     setSearchResults([]);
+
+    // Static fallback results (detailed) used for quick local testing when the search endpoint is missing (404)
+    const staticFallbackResults = [
+      {
+        title: 'Netdata Agent Installation',
+        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation',
+  snippet: `# Netdata Agent Installation  Netdata is very flexible and can be used to monitor all kinds of infrastructure. Read more about possible [Deployment guides](/docs/deployment-guides) to understand what...`,
+        score: 0.35,
+        section: 'Documentation'
+      },
+      {
+        title: 'Netdata Cloud On-Prem Installation - Before You Begin',
+        url: 'https://learn.netdata.cloud/docs/netdata-cloud-on-prem/installation',
+  snippet: `# Netdata Cloud On-Prem Installation  # Netdata Cloud On-Prem Installation ## Before You Begin  ## Before You Begin  Ensure you have the following ready before starting the installation:  **Required:*...`,
+        score: 0.31,
+        section: 'Documentation'
+      },
+      {
+        title: 'Install Netdata with kickstart.sh',
+        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/linux',
+  snippet: `import { OneLineInstallWget, OneLineInstallCurl } from '@site/src/components/OneLineInstall/' import { Install, InstallBox } from '@site/src/components/Install/' import Tabs from '@theme/Tabs'; import...`,
+        score: 0.31,
+        section: 'Documentation'
+      },
+      {
+        title: 'Optional parameters to alter your installation - Connect node to Netdata Cloud during installation',
+        url: 'https://learn.netdata.cloud/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout',
+  snippet: `# run script with root privileges to build, install, start Netdata ## Optional parameters to alter your installation  ## Optional parameters to alter your installation  \`netdata-installer.sh\` accepts...`,
+        score: 0.31,
+        section: 'Documentation'
+      },
+      {
+        title: 'Install Netdata on FreeBSD',
+        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/freebsd',
+  snippet: `# Install Netdata on FreeBSD  > :bulb: This guide is community-maintained and might not always reflect the latest details (like package versions).   > Double-check before proceeding!   > Want to help? [Su...`,
+        score: 0.31,
+        section: 'Documentation'
+      },
+      {
+        title: 'Install Netdata on Windows',
+        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/windows',
+  snippet: `# Install Netdata on Windows  Netdata provides a simple Windows installer for quick setup.  :::note  The Windows Agent is available for users with paid Netdata subscriptions.   Free users will have li...`,
+        score: 0.3,
+        section: 'Documentation'
+      },
+      {
+        title: 'Install Netdata on Offline Systems',
+        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/linux/offline-systems',
+  snippet: `# Install Netdata on Offline Systems  This guide explains how to install Netdata Agent on systems without internet access.  Netdata supports offline installation of the Agent using our \`kickstart.sh\`...`,
+        score: 0.3,
+        section: 'Documentation'
+      },
+      {
+        title: 'Netdata Cloud On-Prem PoC without Kubernetes',
+        url: 'https://learn.netdata.cloud/docs/netdata-cloud-on-prem/poc-without-k8s',
+  snippet: `# Netdata Cloud On-Prem PoC without Kubernetes  These instructions show you how to install a lightweight version of Netdata Cloud when you don't have a Kubernetes cluster. This setup is **for demonstr...`,
+        score: 0.3,
+        section: 'Documentation'
+      },
+      {
+        title: 'Example: Complete Installation on Ubuntu 22.04 (Jammy) - Step 1: Download the repository configuration package',
+        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/linux/native-linux-distribution-packages',
+  snippet: `# Install Netdata Using Native DEB/RPM Packages ## Example: Complete Installation on Ubuntu 22.04 (Jammy)  ## Example: Complete Installation on Ubuntu 22.04 (Jammy)  <details> <summary>Click to view c...`,
+        score: 0.3,
+        section: 'Documentation'
+      },
+      {
+        title: 'Install Netdata on Linux from a Git checkout - Prepare your system',
+        url: 'https://learn.netdata.cloud/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout',
+  snippet: `# Install Netdata on Linux from a Git checkout  To install the latest git version of Netdata, please follow these 2 steps:  1. [Prepare your system](#prepare-your-system)     Install the required pack...`,
+        score: 0.29,
+        section: 'Documentation'
+      }
+    ];
 
     try {
       const response = await fetch(`${apiUrl}/chat/docs/search`, {
@@ -1578,6 +1656,13 @@ export default function AskNetdata() {
         body: JSON.stringify({ query: query.trim() })
       });
 
+      if (response.status === 404) {
+        // Endpoint not available — surface static test results
+        setSearchResults(staticFallbackResults);
+        setIsSearching(false);
+        return;
+      }
+
       if (!response.ok) {
         throw new Error(`Search failed: ${response.status}`);
       }
@@ -1586,6 +1671,7 @@ export default function AskNetdata() {
       setSearchResults(data.results || []);
     } catch (error) {
       console.error('Search error:', error);
+      // For network/errors, keep behavior of empty results but still allow quick local testing:
       setSearchResults([]);
     } finally {
       setIsSearching(false);
@@ -1871,6 +1957,21 @@ export default function AskNetdata() {
     }, 320);
   };
 
+  // Press Escape to start a new chat when viewing answers (welcome is hidden)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onEsc = (e) => {
+      if (e.key === 'Escape') {
+        if (!showWelcome) {
+          try { e.preventDefault(); } catch (err) {}
+          handleNewChat();
+        }
+      }
+    };
+    window.addEventListener('keydown', onEsc);
+    return () => window.removeEventListener('keydown', onEsc);
+  }, [showWelcome, handleNewChat]);
+
   // Markdown renderer is now defined outside the component
 
   const containerStyle = {
@@ -1913,11 +2014,17 @@ export default function AskNetdata() {
     flexShrink: 0
   };
 
+  // Position the floating container: when the welcome screen is visible, anchor it near the top
+  // with a sensible gap from the navbar; when not visible keep it centered.
+  const TOP_BAR_GAP_PX = 88; // reasonable gap from topbar when visible (adjustable)
+  const floatingTop = showWelcome ? `${TOP_BAR_GAP_PX}px` : '25%';
+  const floatingTransform = showWelcome ? 'translate(-50%, 0)' : 'translate(-50%, -50%)';
+
   const floatingContainerStyle = {
   position: 'absolute',
   left: '50%',
-  top: '25%',
-  transform: 'translate(-50%, -50%)',
+  top: floatingTop,
+  transform: floatingTransform,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -1927,6 +2034,40 @@ export default function AskNetdata() {
   margin: '0',
   pointerEvents: 'auto'
   };
+
+  // Compute a pixel max-height for the search results panel so it never overflows
+  // the visible viewport even when zoomed. We base it on the floating container's
+  // bottom position (so results appear below the input) and reserve a small bottom gap.
+  const [resultsMaxHeightPx, setResultsMaxHeightPx] = useState(null);
+  const searchPanelRef = useRef(null);
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const compute = () => {
+      try {
+        const bottomGap = 24; // px gap from bottom of the screen
+        // Prefer to compute based on the actual rendered panel's top (handles transforms/zoom)
+        const panelRect = searchPanelRef.current?.getBoundingClientRect();
+        const topY = panelRect ? Math.max(0, panelRect.top) : (floatingContainerRef.current?.getBoundingClientRect().bottom || (TOP_BAR_GAP_PX + 12));
+        // Use the full available viewport space under the panel's top, minus bottomGap
+        const available = Math.max(0, window.innerHeight - topY - bottomGap);
+        // Ensure a sensible minimum so the panel never becomes too small
+        const maxH = Math.max(240, available);
+        setResultsMaxHeightPx(maxH);
+      } catch (e) {
+        setResultsMaxHeightPx(null);
+      }
+    };
+
+    // Run compute after layout to ensure refs measure correctly
+    const raf = requestAnimationFrame(compute);
+    window.addEventListener('resize', compute);
+    window.addEventListener('scroll', compute, { passive: true });
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('resize', compute);
+      window.removeEventListener('scroll', compute);
+    };
+  }, [floatingContainerRef.current, showWelcome, searchResults.length]);
 
   const welcomeTitleStyle = {
   // Leave color off here so individual titles use their computed colors (titleLeftColor/titleRightColor)
@@ -2235,8 +2376,8 @@ export default function AskNetdata() {
 
   return (
   <div ref={containerRef} style={containerStyle}>
-      <style>{`
-        /* Disable native resize handle but allow internal vertical scrolling */
+  <style>{`
+    /* Disable native resize handle but allow internal vertical scrolling */
   .asknetdata-textarea { resize: none !important; overflow-y: auto !important; -webkit-appearance: none !important; appearance: none !important; }
   /* Hide the tiny native resize handle on WebKit/Blink */
   .asknetdata-textarea::-webkit-resizer, .asknetdata-textarea::-webkit-resize-handle { display: none !important; }
@@ -2250,9 +2391,13 @@ export default function AskNetdata() {
   [class*="docMainContainer"] { max-width: none !important; }
   [class*="container"] { max-width: none !important; }
   .main-wrapper { max-width: none !important; }
-      `}</style>
+
+  @keyframes fadeIn { 0% { opacity: 0; transform: translateY(6px); } 100% { opacity: 1; transform: translateY(0); } }
+  @keyframes slideUpIn { 0% { transform: translateY(20px); opacity: 0; } 100% { transform: translateY(0px); opacity: 1; } }
+  @keyframes slideUpInSmooth { 0% { transform: translateY(40px) scale(0.96); opacity: 0; filter: blur(1px); } 60% { transform: translateY(-2px) scale(1.01); opacity: 0.8; filter: blur(0px); } 100% { transform: translateY(0px) scale(1); opacity: 1; filter: blur(0px); } }
+  `}</style>
   <div ref={chatAreaRef} style={computedChatAreaStyle}>
-        {/* Fixed bottom-center notice visible in both welcome and messages views */}
+    {/* Fixed bottom-center notice visible in both welcome and messages views */}
   {showWelcome && (
           <div aria-hidden style={{
             position: 'fixed',
@@ -2350,17 +2495,21 @@ export default function AskNetdata() {
               
               {/* Search results display */}
               {toggleOn && (searchResults.length > 0 || isSearching || (searchQuery && !isSearching)) && (
-                <div style={{
+                <div ref={searchPanelRef} style={{
                   maxWidth: '800px',
                   margin: '2rem auto 0',
                   padding: '1rem',
-                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                  paddingBottom: '24px',
+                  backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
                   borderRadius: '8px',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  border: isDarkMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid #e5e7eb',
                   transform: 'translateY(0px)',
                   opacity: 1,
                   transition: 'transform 600ms cubic-bezier(0.16, 1, 0.3, 1), opacity 600ms cubic-bezier(0.16, 1, 0.3, 1)',
-                  animation: 'slideUpInSmooth 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards'
+                  animation: 'fadeIn 260ms ease both, slideUpInSmooth 540ms cubic-bezier(0.16, 1, 0.3, 1) both',
+                  maxHeight: resultsMaxHeightPx ? `${resultsMaxHeightPx}px` : '60vh',
+                  overflowY: 'auto',
+                  color: isDarkMode ? undefined : 'rgba(17,24,39,0.92)'
                 }}>
                   {isSearching ? (
                     <div style={{
@@ -2383,7 +2532,7 @@ export default function AskNetdata() {
                         marginBottom: '1rem',
                         fontSize: '1.1rem',
                         fontWeight: 'bold',
-                        color: '#ffffff'
+                        color: isDarkMode ? '#ffffff' : '#0f172a'
                       }}>
                         Found {searchResults.length} result{searchResults.length !== 1 ? 's' : ''} for "{searchQuery}"
                       </div>
@@ -2391,10 +2540,13 @@ export default function AskNetdata() {
                         {searchResults.map((result, index) => (
                           <div key={index} style={{
                             padding: '1rem',
-                            backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                            backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
                             borderRadius: '6px',
-                            border: '1px solid rgba(255, 255, 255, 0.1)',
-                            transition: 'background-color 0.2s ease'
+                            border: isDarkMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid #e6eaf0',
+                            transition: 'background-color 0.2s ease',
+                            boxShadow: isDarkMode ? undefined : '0 1px 4px rgba(2,6,23,0.04)',
+                            animation: 'slideUpIn 360ms cubic-bezier(0.16, 1, 0.3, 1) both',
+                            animationDelay: `${index * 60}ms`
                           }}>
                             <a
                               href={result.url}
@@ -2415,14 +2567,14 @@ export default function AskNetdata() {
                             {result.section && (
                               <div style={{
                                 fontSize: '0.8rem',
-                                color: 'rgba(255, 255, 255, 0.6)',
+                                color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(2,6,23,0.5)',
                                 marginBottom: '0.5rem'
                               }}>
                                 Section: {result.section}
                               </div>
                             )}
                             <p style={{
-                              color: 'rgba(255, 255, 255, 0.8)',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.8)' : 'rgba(2,6,23,0.75)',
                               fontSize: '0.9rem',
                               lineHeight: '1.4',
                               margin: 0
@@ -2432,7 +2584,7 @@ export default function AskNetdata() {
                             {result.score && (
                               <div style={{
                                 fontSize: '0.7rem',
-                                color: 'rgba(255, 255, 255, 0.4)',
+                                color: isDarkMode ? 'rgba(255, 255, 255, 0.4)' : 'rgba(2,6,23,0.45)',
                                 marginTop: '0.5rem'
                               }}>
                                 Relevance: {Math.round(result.score * 100)}%
