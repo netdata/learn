@@ -5,6 +5,9 @@ import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
 import EditThisPage from '@theme/EditThisPage';
+// Direct import (Docusaurus does not provide '@docusaurus/dynamic').
+// The widget only uses browser APIs inside effects/handlers so SSR is safe.
+import AskNetdataWidget from '../../../components/AskNetdataWidget';
 /**
  Title can be declared inside md content or declared through
  front matter and added manually. To make both cases consistent,
@@ -58,8 +61,10 @@ export default function DocItemContent({ children }) {
   const isAskNetdata = frontMatter.id === 'ask-netdata';
   
   return (
-    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
-      {syntheticTitle && (
+    <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')} style={{ position: 'relative' }}>
+  {/* Ask Netdata Top Pill (renders above content) */}
+  {!isAskNetdata && <AskNetdataWidget />}
+  {syntheticTitle && (
         <header>
           <Heading as="h1">{syntheticTitle}</Heading>
         </header>
@@ -73,7 +78,9 @@ export default function DocItemContent({ children }) {
         />
       )}
       <br />
-      <MDXContent>{children}</MDXContent>
+      <div style={{ marginTop: '12px' }}>
+        <MDXContent>{children}</MDXContent>
+      </div>
     </div>
   );
 }
