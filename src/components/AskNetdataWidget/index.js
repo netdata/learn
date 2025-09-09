@@ -45,6 +45,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   const textareaRef = useRef(null);
   const pillRef = useRef(null);
   const overlayRef = useRef(null);
+  const panelRef = useRef(null);
   const sendHoverRef = useRef(false);
   const messagesBottomRef = useRef(null);
   const currentAccent = toggleOn ? ASKNET_SECOND : ASKNET_PRIMARY;
@@ -120,6 +121,27 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
+  }, [showOverlay, isOverlayClosing]);
+
+  // Outside click: collapse & reset like Escape
+  useEffect(() => {
+    if (!(showOverlay || isOverlayClosing)) return;
+    const handleDown = (e) => {
+      const target = e.target;
+      if (panelRef.current && panelRef.current.contains(target)) return; // inside panel
+      if (pillRef.current && pillRef.current.contains(target)) return; // clicking the pill shouldn't auto-reset
+      try { chatAbortRef.current?.abort(); } catch {}
+      const wasVisible = showOverlay && !isOverlayClosing;
+      if (wasVisible) closeOverlay(); else setShowOverlay(false);
+      if (wasVisible) {
+        setTimeout(() => { resetConversationState(); textareaRef.current?.focus(); }, CLOSE_ANIMATION_MS);
+      } else {
+        resetConversationState();
+        textareaRef.current?.focus();
+      }
+    };
+    document.addEventListener('mousedown', handleDown, true);
+    return () => document.removeEventListener('mousedown', handleDown, true);
   }, [showOverlay, isOverlayClosing]);
 
   // Scroll overlay to bottom on new messages
@@ -360,7 +382,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
       {/* Floating overlay */}
       <div ref={overlayRef} style={overlayStyle}>
         <div style={overlayInnerStyle}>
-          <div style={{...panelStyle, animation: isOverlayClosing ? 'fadeOutDown 260ms ease forwards' : 'slideUpInSmooth 520ms cubic-bezier(0.16,1,0.3,1)'}} className="asknet-overlay-panel">
+          <div ref={panelRef} style={{...panelStyle, animation: isOverlayClosing ? 'fadeOutDown 260ms ease forwards' : 'slideUpInSmooth 520ms cubic-bezier(0.16,1,0.3,1)'}} className="asknet-overlay-panel">
             {/* Header row with actions */}
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:24 }}>
               <div style={{ fontSize: '1.05rem', fontWeight:700 }}>
