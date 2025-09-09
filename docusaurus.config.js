@@ -35,7 +35,6 @@ module.exports = {
 			logo: {
 				alt: 'Netdata Logo',
 				src: 'img/logo-letter-green-white.svg',
-				height: 145
 			},
 			items: [
 				{
@@ -69,22 +68,18 @@ module.exports = {
 					items: [
 						{
 							label: 'Response Time',
-							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/response-time-monitoring/'
 						},
 						{
 							label: 'Cloud',
-							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/cloud-monitoring/',
 						},
 						{
 							label: 'Web Servers',
-							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/webserver-monitoring/',
 						},
 						{
 							label: 'Containers',
-							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/container-monitoring/',
 						}
 					]
@@ -96,44 +91,31 @@ module.exports = {
 					items: [
 						{
 							type: 'doc',
-							style: { 'color': 'white' },
 							docId: 'welcome-to-netdata/welcome-to-netdata',
 							label: 'Documentation'
 						},
-						// {
-						// 	type: 'doc',
-						// 	style: { 'color': 'white' },
-						// 	docId: 'installing/installing',
-						// 	label: 'Getting Started'
-						// },
 						{
 							label: 'Community',
-							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/community/',
 						},
 						{
 							label: 'About',
-							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/about/',
 						},
 						{
 							label: 'Forums',
-							style: { 'color': 'white' },
 							to: 'https://community.netdata.cloud/',
 						},
 						{
 							label: 'Blog',
-							style: { 'color': 'white' },
 							to: 'https://blog.netdata.cloud/',
 						},
 						{
 							label: 'Roadmap',
-							style: { 'color': 'white' },
 							to: 'https://www.netdata.cloud/roadmap/'
 						},
 						{
 							label: 'Videos',
-							style: { 'color': 'white' },
 							to: 'https://www.youtube.com/c/Netdata/'
 						},
 					]
@@ -143,7 +125,6 @@ module.exports = {
 					to: 'https://app.netdata.cloud/spaces/netdata-demo?utm_source=learn&utm_content=top_navigation_demo',
 					label: 'Live Demo',
 					position: 'left',
-					// style: {color : '#00ab44'},
 					className: 'custom_text',
 					style: { fontWeight: '500' }
 				},
@@ -244,24 +225,6 @@ module.exports = {
 			as: 'font',
 			type: 'font/woff2',
 			crossorigin: '',
-		},
-		{
-			href: '/chat-widget.css',
-			type: 'text/css',
-		},
-	],
-	scripts: [
-		{
-			src: '/hide-home-chat.js',
-			async: false,
-		},
-		{
-			src: '/widget-config.js',
-			async: false,
-		},
-		{
-			src: '/chat-widget.js',
-			async: true,
 		},
 	],
 };

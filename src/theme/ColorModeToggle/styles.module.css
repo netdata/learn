@@ -5,7 +5,7 @@
 
 .toggleButton {
   -webkit-tap-highlight-color: transparent;
-  color: white;
+  /* color: white; */
   align-items: center;
   display: flex;
   justify-content: center;
@@ -16,8 +16,14 @@
   margin-left: 5px;
 }
 
-.toggleButton:hover {
+[data-theme='light'] .toggleButton:hover {
   background: #00ab44;
+  color: white;
+}
+
+[data-theme='dark'] .toggleButton:hover {
+  background: #00ab44;
+  color: black;
 }
 
 [data-theme='light'] .darkToggleIcon,

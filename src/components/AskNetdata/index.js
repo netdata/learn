@@ -167,7 +167,7 @@ export const TITLE_DESATURATION = 0.9; // 65% desaturation for unselected titles
 export const TITLE_FONT_SIZE = '1.7rem'; // Font size for AI/Search titles
 export const TITLE_FONT_WEIGHT = 'bold'; // Font weight for AI/Search titles (normal, bold, 600, 700, etc.)
 export const TITLE_GAP = '2rem'; // Gap between AI and Search titles
-export const TOGGLE_SIZE_MULTIPLIER = .8; // Multiplier for toggle size (1.0 = default, 1.2 = 20% larger)
+export const TOGGLE_SIZE_MULTIPLIER = 1; // Align with widget exact sizing
 
 export const TOGGLE_COLORS = {
   off: { primary: ASKNET_PRIMARY, secondary: ASKNET_SECOND },
@@ -1577,70 +1577,70 @@ export default function AskNetdata() {
     const staticFallbackResults = [
       {
         title: 'Netdata Agent Installation',
-        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation',
+  url: '/docs/netdata-agent/installation',
   snippet: `# Netdata Agent Installation  Netdata is very flexible and can be used to monitor all kinds of infrastructure. Read more about possible [Deployment guides](/docs/deployment-guides) to understand what...`,
         score: 0.35,
         section: 'Documentation'
       },
       {
         title: 'Netdata Cloud On-Prem Installation - Before You Begin',
-        url: 'https://learn.netdata.cloud/docs/netdata-cloud-on-prem/installation',
+  url: '/docs/netdata-cloud-on-prem/installation',
   snippet: `# Netdata Cloud On-Prem Installation  # Netdata Cloud On-Prem Installation ## Before You Begin  ## Before You Begin  Ensure you have the following ready before starting the installation:  **Required:*...`,
         score: 0.31,
         section: 'Documentation'
       },
       {
         title: 'Install Netdata with kickstart.sh',
-        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/linux',
+  url: '/docs/netdata-agent/installation/linux',
   snippet: `import { OneLineInstallWget, OneLineInstallCurl } from '@site/src/components/OneLineInstall/' import { Install, InstallBox } from '@site/src/components/Install/' import Tabs from '@theme/Tabs'; import...`,
         score: 0.31,
         section: 'Documentation'
       },
       {
         title: 'Optional parameters to alter your installation - Connect node to Netdata Cloud during installation',
-        url: 'https://learn.netdata.cloud/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout',
+  url: '/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout',
   snippet: `# run script with root privileges to build, install, start Netdata ## Optional parameters to alter your installation  ## Optional parameters to alter your installation  \`netdata-installer.sh\` accepts...`,
         score: 0.31,
         section: 'Documentation'
       },
       {
         title: 'Install Netdata on FreeBSD',
-        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/freebsd',
+  url: '/docs/netdata-agent/installation/freebsd',
   snippet: `# Install Netdata on FreeBSD  > :bulb: This guide is community-maintained and might not always reflect the latest details (like package versions).   > Double-check before proceeding!   > Want to help? [Su...`,
         score: 0.31,
         section: 'Documentation'
       },
       {
         title: 'Install Netdata on Windows',
-        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/windows',
+  url: '/docs/netdata-agent/installation/windows',
   snippet: `# Install Netdata on Windows  Netdata provides a simple Windows installer for quick setup.  :::note  The Windows Agent is available for users with paid Netdata subscriptions.   Free users will have li...`,
         score: 0.3,
         section: 'Documentation'
       },
       {
         title: 'Install Netdata on Offline Systems',
-        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/linux/offline-systems',
+  url: '/docs/netdata-agent/installation/linux/offline-systems',
   snippet: `# Install Netdata on Offline Systems  This guide explains how to install Netdata Agent on systems without internet access.  Netdata supports offline installation of the Agent using our \`kickstart.sh\`...`,
         score: 0.3,
         section: 'Documentation'
       },
       {
         title: 'Netdata Cloud On-Prem PoC without Kubernetes',
-        url: 'https://learn.netdata.cloud/docs/netdata-cloud-on-prem/poc-without-k8s',
+  url: '/docs/netdata-cloud-on-prem/poc-without-k8s',
   snippet: `# Netdata Cloud On-Prem PoC without Kubernetes  These instructions show you how to install a lightweight version of Netdata Cloud when you don't have a Kubernetes cluster. This setup is **for demonstr...`,
         score: 0.3,
         section: 'Documentation'
       },
       {
         title: 'Example: Complete Installation on Ubuntu 22.04 (Jammy) - Step 1: Download the repository configuration package',
-        url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/linux/native-linux-distribution-packages',
+  url: '/docs/netdata-agent/installation/linux/native-linux-distribution-packages',
   snippet: `# Install Netdata Using Native DEB/RPM Packages ## Example: Complete Installation on Ubuntu 22.04 (Jammy)  ## Example: Complete Installation on Ubuntu 22.04 (Jammy)  <details> <summary>Click to view c...`,
         score: 0.3,
         section: 'Documentation'
       },
       {
         title: 'Install Netdata on Linux from a Git checkout - Prepare your system',
-        url: 'https://learn.netdata.cloud/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout',
+  url: '/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout',
   snippet: `# Install Netdata on Linux from a Git checkout  To install the latest git version of Netdata, please follow these 2 steps:  1. [Prepare your system](#prepare-your-system)     Install the required pack...`,
         score: 0.29,
         section: 'Documentation'
@@ -2085,49 +2085,46 @@ export default function AskNetdata() {
   };
 
   const toggleTrackStyle = (on) => ({
-  // compact track width to preserve original look while allowing hint text
-  width: `${104 * TOGGLE_SIZE_MULTIPLIER}px`,
-  height: `${36 * TOGGLE_SIZE_MULTIPLIER}px`,
+    width: `${96 * TOGGLE_SIZE_MULTIPLIER}px`,
+    height: `${40 * TOGGLE_SIZE_MULTIPLIER}px`,
     borderRadius: '999px',
-  // Use solid colors for both states (no gradient)
-  // When ON use the effective secondary so the track visually matches Search mode.
-  background: on ? effectiveSecondary : ASKNET_PRIMARY,
-    // Subtle glow using the active accent's RGB when ON, keep inset for OFF
+    background: on ? effectiveSecondary : ASKNET_PRIMARY,
     boxShadow: on ? `0 6px 18px rgba(${currentAccentRgb}, 0.12)` : 'inset 0 1px 2px rgba(0,0,0,0.04)',
-  padding: `${4 * TOGGLE_SIZE_MULTIPLIER}px`,
-  position: 'relative',
-  display: 'block',
-  // ensure content doesn't wrap
-  whiteSpace: 'nowrap',
+    padding: `${4 * TOGGLE_SIZE_MULTIPLIER}px`,
+    position: 'relative',
+    display: 'block',
+    whiteSpace: 'nowrap',
     cursor: 'pointer',
-    // Smoothly transition background and shadow so green elements track toggle color
-  transition: 'background 220ms ease, box-shadow 180ms ease',
+    transition: 'background 220ms ease, box-shadow 180ms ease',
     userSelect: 'none'
   });
 
   const toggleKnobStyle = (on) => ({
-  width: `${28 * TOGGLE_SIZE_MULTIPLIER}px`,
-  height: `${28 * TOGGLE_SIZE_MULTIPLIER}px`,
-  borderRadius: '50%',
-  background: isDarkMode ? '#0b1220' : '#fff',
-  position: 'absolute',
-  top: '50%',
-  transform: on ? `translateY(-50%) translateX(${68 * TOGGLE_SIZE_MULTIPLIER}px)` : 'translateY(-50%) translateX(0px)',
-  transition: 'transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms ease',
-  boxShadow: '0 6px 12px rgba(11,18,32,0.12)'
+    width: `${30 * TOGGLE_SIZE_MULTIPLIER}px`,
+    height: `${30 * TOGGLE_SIZE_MULTIPLIER}px`,
+    borderRadius: '50%',
+    background: isDarkMode ? '#0b1220' : '#fff',
+    position: 'absolute',
+    top: '50%',
+    left: on ? `calc(100% - ${30 * TOGGLE_SIZE_MULTIPLIER + 4}px)` : '4px',
+    transform: 'translateY(-50%)',
+    transition: 'left 220ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms ease',
+    boxShadow: '0 6px 12px rgba(11,18,32,0.12)'
   });
 
   // Toggle hint style (inside the track, opposite the knob)
   const toggleHintStyle = (on) => ({
-  position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-50%)',
-  left: on ? `${12 * TOGGLE_SIZE_MULTIPLIER}px` : undefined,
-  right: on ? undefined : `${12 * TOGGLE_SIZE_MULTIPLIER}px`,
-  fontSize: `${12 * TOGGLE_SIZE_MULTIPLIER}px`,
-  color: 'white',
-  userSelect: 'none',
-  pointerEvents: 'none'
+    position: 'absolute',
+    top: '50%',
+    transform: 'translateY(-50%)',
+    left: on ? '16px' : 'auto',
+    right: on ? 'auto' : '16px',
+    fontSize: '12px',
+    fontWeight: 600,
+    letterSpacing: '.4px',
+    color: 'white',
+    userSelect: 'none',
+    pointerEvents: 'none'
   });
 
   const titleRowStyle = {
