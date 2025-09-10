@@ -1,10 +1,10 @@
 ---
 custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md"
-sidebar_label: "Deployment Guides"
+sidebar_label: "Quickstart Deployment"
 learn_status: "Published"
-learn_rel_path: "Deployment Guides"
-sidebar_position: "400000"
-learn_link: "https://learn.netdata.cloud/docs/deployment-guides"
+learn_rel_path: "Netdata Agent"
+sidebar_position: "400020"
+learn_link: "https://learn.netdata.cloud/docs/netdata-agent/quickstart-deployment"
 ---
 
 # Deployment Guides
@@ -16,8 +16,8 @@ Get Netdata up and running in your infrastructure. Choose a deployment method th
 :::tip Getting Started
 
 - **Testing Netdata?** → [Docker deployment](/docs/netdata-agent/installation/docker) (2 minutes, easy cleanup)
-- **Monitoring one server?** → [Standalone installation](/docs/deployment-guides/single-agent) (1 minute, upgradeable)
-- **Production ready?** → [Parent-Child setup](/docs/deployment-guides/parent-child) (recommended)
+- **Monitoring one server?** → [Standalone installation](/docs/netdata-agent) (1 minute, upgradeable)
+- **Production ready?** → [Parent-Child setup](/docs/netdata-parents) (recommended)
 
 :::
 
@@ -31,7 +31,7 @@ Single Netdata Agent monitoring one system. Perfect for getting started or monit
 
 **Setup time:** < 1 minute
 
-[→ Deploy Standalone Agent](/docs/deployment-guides/single-agent)
+[→ Deploy Standalone Agent](/docs/netdata-agent)
 
 ### Parent-Child Streaming (Recommended)
 
@@ -41,7 +41,7 @@ The recommended production setup. Stream metrics from Child Agents to centralize
 
 **Setup time:** 10-15 minutes
 
-[→ Deploy Parent-Child Setup](/docs/deployment-guides/parent-child)
+[→ Deploy Parent-Child Setup](/docs/netdata-parents)
 
 ### Kubernetes
 
@@ -67,10 +67,10 @@ Run Netdata in containers for quick testing. Note: Some features are limited com
 
 | Environment             | Recommended Method                                                                                                                                                 | Why                                                                 |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------|
-| **Production servers**  | [Parent-Child](/docs/deployment-guides/parent-child)                                                                                   | Best data persistence, resource optimization, and high availability |
+| **Production servers**  | [Parent-Child](/docs/netdata-parents)                                                                                   | Best data persistence, resource optimization, and high availability |
 | **Kubernetes**          | [Helm Chart](https://github.com/netdata/helmchart#netdata-helm-chart-for-kubernetes-deployments)                                                                   | Required for K8s API access and pod metadata collection             |
-| **Testing/Development** | [Standalone](/docs/deployment-guides/single-agent) or [Docker](/docs/netdata-agent/installation/docker)                                                            | Quick setup, easy to remove                                         |
-| **Single server**       | [Standalone](/docs/deployment-guides/single-agent) (upgrade to [Parent-Child](/docs/deployment-guides/parent-child) later) | Start simple, upgrade when ready for production                     |
+| **Testing/Development** | [Standalone](/docs/netdata-agent) or [Docker](/docs/netdata-agent/installation/docker)                                                            | Quick setup, easy to remove                                         |
+| **Single server**       | [Standalone](/docs/netdata-agent) (upgrade to [Parent-Child](/docs/netdata-parents) later) | Start simple, upgrade when ready for production                     |
 
 :::warning Important Notes
 

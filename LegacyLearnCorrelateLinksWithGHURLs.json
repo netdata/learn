@@ -2414,5 +2414,13 @@
     "https://learn.netdata.cloud/docs/architecture/security-and-privacy-design": "https://github.com/netdata/netdata/blob/master/docs/security-and-privacy-design/README.md",
     "https://learn.netdata.cloud/docs/net/installation/windows": "https://github.com/netdata/netdata/blob/master/packaging/windows/WINDOWS_INSTALLER.md",
     "https://learn.netdata.cloud/docs/netdata-agent/architecture-overview/": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/README.md",
-    "https://learn.netdata.cloud/docs/streaming/understanding-how-streaming-works": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-with-centralization-points.md"
+    "https://learn.netdata.cloud/docs/streaming/understanding-how-streaming-works": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-with-centralization-points.md",
+    "https://learn.netdata.cloud/docs/deployment-guides/streaming-routing-reference": "https://github.com/netdata/netdata/blob/master/docs/streaming-routing.md",
+    "https://learn.netdata.cloud/docs/deployment-guides/single-agent": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/standalone-deployment.md",
+    "https://learn.netdata.cloud/docs/deployment-guides/parent-configuration-best-practices": "https://github.com/netdata/netdata/blob/master/docs/observability-centralization-points/best-practices.md",
+    "https://learn.netdata.cloud/docs/deployment-guides/parent-child-configuration-reference": "https://github.com/netdata/netdata/blob/master/src/streaming/README.md",
+    "https://learn.netdata.cloud/docs/deployment-guides/parent-child": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-with-centralization-points.md",
+    "https://learn.netdata.cloud/docs/deployment-guides/node-types-and-lifecycle-reference": "https://github.com/netdata/netdata/blob/master/docs/nodes-ephemerality.md",
+    "https://learn.netdata.cloud/docs/deployment-guides/configuration-examples": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-strategies.md",
+    "https://learn.netdata.cloud/docs/deployment-guides": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/README.md"
 }
