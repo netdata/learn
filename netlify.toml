@@ -7887,151 +7887,151 @@
 
 [[redirects]]
   from="/docs/why-netdata"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/agent/breaking_changes"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/agent/donations-netdata-has-received"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/agent/why-netdata"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/agent/why-netdata/1s-granularity"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/agent/why-netdata/immediate-results"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/agent/why-netdata/meaningful-presentation"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/agent/why-netdata/unlimited-metrics"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/overview/netdata-monitoring-stack"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/overview/what-is-netdata"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/overview/why-netdata"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-00"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-01"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-02"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-03"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-04"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-05"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-06"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-07"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-08"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-09"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-10"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/guides/step-by-step/step-99"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-00"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-01"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-02"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-03"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-04"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-05"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-06"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-07"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-08"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-09"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-10"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/agent/step-by-step/step-99"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/getting-started"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/netdata-architecture"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/rest-api/api"
@@ -8039,7 +8039,7 @@
 
 [[redirects]]
   from="/docs/deployment-guides/deployment-strategies"
-  to="/docs/deployment-guides/configuration-examples"
+  to="/docs/netdata-parents/configuration-examples"
 
 [[redirects]]
   from="/docs/netdata-cloud/view-plan-&-billing"
@@ -8283,15 +8283,15 @@
 
 [[redirects]]
   from="/docs/deployment-guides/standalone-deployment"
-  to="/docs/deployment-guides/single-agent"
+  to="/docs/netdata-agent"
 
 [[redirects]]
   from="/docs/deployment-guides/deployment-with-centralization-points"
-  to="/docs/deployment-guides/parent-child"
+  to="/docs/netdata-parents"
 
 [[redirects]]
   from="/docs/deployment-guides/deployment-examples"
-  to="/docs/deployment-guides/configuration-examples"
+  to="/docs/netdata-parents/configuration-examples"
 
 [[redirects]]
   from="/docs/dashboards-and-charts/visualization-date-and-time-controls"
@@ -8411,11 +8411,11 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/streaming-and-replication-reference"
-  to="/docs/deployment-guides/parent-child-configuration-reference"
+  to="/docs/netdata-parents/parent-child-configuration-reference"
 
 [[redirects]]
   from="/docs/observability-centralization-points/nodes-ephemerality"
-  to="/docs/deployment-guides/node-types-and-lifecycle-reference"
+  to="/docs/netdata-parents/node-types-and-lifecycle-reference"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples"
@@ -8455,19 +8455,19 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/best-practices-for-observability-centralization-points"
-  to="/docs/deployment-guides/parent-configuration-best-practices"
+  to="/docs/netdata-parents/parent-configuration-best-practices"
 
 [[redirects]]
   from="/docs/deployment-guides/standalone"
-  to="/docs/deployment-guides/single-agent"
+  to="/docs/netdata-agent"
 
 [[redirects]]
   from="/docs/deployment-guides/examples"
-  to="/docs/deployment-guides/configuration-examples"
+  to="/docs/netdata-parents/configuration-examples"
 
 [[redirects]]
   from="/docs/deployment-guides/centralized"
-  to="/docs/deployment-guides/parent-child"
+  to="/docs/netdata-parents"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/libnetdata/log"
@@ -8795,15 +8795,15 @@
 
 [[redirects]]
   from="/streaming"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/metrics-storage-management/enable-streaming"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/metrics-storage-management/how-streaming-works"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/visualize/create-dashboards"
@@ -8875,7 +8875,7 @@
 
 [[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/sensors"
@@ -8907,7 +8907,7 @@
 
 [[redirects]]
   from="/docs/metrics-streaming-and-replication/understanding-how-streaming-works"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/maintenance-operations-on-netdata-agents/starting-and-stopping-netdata-agents"
@@ -8971,11 +8971,11 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/sizing-netdata-parents"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/sizing-netdata-parents"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/dashboards-and-charts/custom-dashboards"
@@ -9019,7 +9019,7 @@
 
 [[redirects]]
   from="/docs/architecture/deployment-strategies"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/architecture/security-and-privacy-design"
@@ -9031,10 +9031,42 @@
 
 [[redirects]]
   from="/docs/netdata-agent/architecture-overview/"
-  to="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 [[redirects]]
   from="/docs/streaming/understanding-how-streaming-works"
-  to="/docs/deployment-guides/parent-child"
+  to="/docs/netdata-parents"
+
+[[redirects]]
+  from="/docs/deployment-guides/streaming-routing-reference"
+  to="/docs/netdata-parents/streaming-routing-reference"
+
+[[redirects]]
+  from="/docs/deployment-guides/single-agent"
+  to="/docs/netdata-agent"
+
+[[redirects]]
+  from="/docs/deployment-guides/parent-configuration-best-practices"
+  to="/docs/netdata-parents/parent-configuration-best-practices"
+
+[[redirects]]
+  from="/docs/deployment-guides/parent-child-configuration-reference"
+  to="/docs/netdata-parents/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/docs/deployment-guides/parent-child"
+  to="/docs/netdata-parents"
+
+[[redirects]]
+  from="/docs/deployment-guides/node-types-and-lifecycle-reference"
+  to="/docs/netdata-parents/node-types-and-lifecycle-reference"
+
+[[redirects]]
+  from="/docs/deployment-guides/configuration-examples"
+  to="/docs/netdata-parents/configuration-examples"
+
+[[redirects]]
+  from="/docs/deployment-guides"
+  to="/docs/netdata-agent/quickstart-deployment"
 
 # section: dynamic << END

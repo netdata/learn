@@ -1,112 +1,176 @@
 ---
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/netdata-agent/README.md"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md"
 sidebar_label: "Netdata Agent"
 learn_status: "Published"
 learn_rel_path: "Netdata Agent"
-sidebar_position: "600000"
+sidebar_position: "400000"
 learn_link: "https://learn.netdata.cloud/docs/netdata-agent"
 ---
 
-# Netdata Agent
+# Single Agent Deployment
 
-The Netdata Agent is the main building block in the Netdata ecosystem. You install it on all monitored systems to monitor system components, containers, and applications.
+The simplest way to use Netdata - install it, and you're monitoring. Each Agent works independently with zero configuration.
 
-The Netdata Agent is an **observability pipeline in a box** that you can either operate standalone, or blend into a bigger pipeline made by more Netdata Agents (Children and Parents).
+## Single Agents With Netdata Cloud (Recommended)
 
-## Distributed Observability Pipeline
+Get the best experience - one dashboard for all your systems, mobile alerts, and team collaboration. Your data stays on your servers.
 
-Your Netdata observability pipeline looks like in the following graph.
+### What You Get
 
-You can extend the pipeline by creating Metrics Observability Centralization Points that are linked all together (`from a remote Netdata`, `to a remote Netdata`), so that all Netdata you install become a vast integrated observability pipeline.
+| Feature                         | How it Works                             |
+|---------------------------------|------------------------------------------|
+| **Unified metrics dashboard**   | ✓ See all Agents in one place            |
+| **Unified logs view**           | ✓ Access all logs from Cloud             |
+| **Central alert configuration** | Each Agent still manages its own alerts  |
+| **Central notifications**       | ✓ Cloud handles all notifications        |
+| **Data stays on-premise**       | ✓ Cloud queries your Agents in real-time |
 
 <details>
-<summary><strong>Click to see visual representation of the observability pipeline</strong></summary>
+<summary><strong>Click to see visual representation of the architecture</strong></summary><br/>
 
 ```mermaid
-flowchart TD
-    Start(["<b>Remote Netdata Input</b>"]) --> Discover
-    LocalAgent["<b>Local Netdata Agent</b>"] --> Discover
-    Discover["<b>Discover</b><br/>Auto-detect metric sources<br/>Auto-discover on Kubernetes"] --> Collect
-    Collect["<b>Collect</b><br/>Query data sources<br/>800+ integrations<br/>OpenMetrics, StatsD"] --> Detect
-    Detect["<b>Detect Anomalies</b><br/>Machine learning models<br/>Real-time outlier detection"] --> Store
-    Store["<b>Store</b><br/>Time-series database<br/>Anomaly status tracking"] --> Learn
-    Store --> Check
-    Store --> Query
-    Store --> Score
-    Store --> Stream
-    Store --> Export
-    Learn["<b>Learn</b><br/>Train ML models<br/>Behavior patterns"] --> Detect
-    Check["<b>Check</b><br/>Health engine<br/>Alert triggering"] --> Alerts
-    Query["<b>Query</b><br/>Time-series data queries"] --> Visualize
-    Score["<b>Score</b><br/>Metric comparison<br/>Correlation analysis"] --> Visualize
-    Query --> MCP
-    Score --> MCP
-    Alerts["<b>Alert Transitions</b>"] --> Notifications
-    Stream --> End(["<b>Remote Netdata Output</b>"])
-    Export --> ThirdParty
-    Visualize --> Dashboard
-    MCP --> AIAssistant
-    ThirdParty["<b>Third-party DBs</b><br/>External systems"] --> ExternalDash
-    Dashboard["<b>Netdata Dashboards</b><br/>Real-time visualization"]
-    AIAssistant["<b>AI Assistant</b><br/>Intelligent analysis"]
-    ExternalDash["<b>Third-party Dashboards</b><br/>Grafana, etc."]
-    Notifications["<b>Alert Notifications</b><br/>Multi-channel delivery"]
-    classDef input fill: #e8f4fd, stroke: #4a90e2, stroke-width: 3px, color: #2c3e50, rx: 15, ry: 15, font-size: 14px
-    classDef process fill: #e8f5e8, stroke: #27ae60, stroke-width: 3px, color: #2c3e50, rx: 15, ry: 15, font-size: 14px
-    classDef storage fill: #f3e8ff, stroke: #9b59b6, stroke-width: 3px, color: #2c3e50, rx: 15, ry: 15, font-size: 14px
-    classDef output fill: #ffe8e8, stroke: #e74c3c, stroke-width: 3px, color: #2c3e50, rx: 15, ry: 15, font-size: 14px
-    classDef userFeature fill: #fff2e8, stroke: #f39c12, stroke-width: 3px, color: #2c3e50, rx: 15, ry: 15, font-size: 14px
-    classDef cloudFeature fill: #f0f8ff, stroke: #87ceeb, stroke-width: 3px, color: #2c3e50, rx: 15, ry: 15, font-size: 14px
-    class Start input
-    class LocalAgent input
-    class End input
-    class Discover process
-    class Collect process
-    class Detect process
-    class Learn process
-    class Check process
-    class Store storage
-    class Stream output
-    class Export output
-    class Alerts output
-    class Dashboard userFeature
-    class AIAssistant userFeature
-    class ExternalDash userFeature
-    class Notifications userFeature
-    class Query cloudFeature
-    class Score cloudFeature
-    class MCP cloudFeature
-    class Visualize cloudFeature
+flowchart TB
+    NC[NC]
+    Users[Users]
+    Notifications[Notifications]
+    NC("**Netdata Cloud**<br/>• Unified dashboards<br/>• Central notifications<br/>• Access from anywhere")
+    Users("**One Dashboard**<br/>for all your systems")
+    Notifications("**Alert Notifications**<br/>Email, Slack, Mobile App")
+    Users <--> NC
+    NC --> Notifications
+
+    subgraph infrastructure["Your Infrastructure"]
+        direction TB
+        Agents[Agents]
+        Data[Data]
+        Agents("**Netdata Agents**<br/>Agent 1, Agent 2, Agent 3")
+        Data("**Your Metrics**<br/>Stay on your servers")
+        Agents <--> Data
+    end
+
+    NC <--> Agents
+    classDef cloud fill: #e8f4fd, stroke: #4a90e2, stroke-width: 2px, color: #2c3e50, rx: 10, ry: 10
+    classDef users fill: #fff2e8, stroke: #f39c12, stroke-width: 2px, color: #2c3e50, rx: 10, ry: 10
+    classDef notifications fill: #ffe8e8, stroke: #e74c3c, stroke-width: 2px, color: #2c3e50, rx: 10, ry: 10
+    classDef agents fill: #e8f5e8, stroke: #27ae60, stroke-width: 2px, color: #2c3e50, rx: 10, ry: 10
+    classDef data fill: #f3e8ff, stroke: #9b59b6, stroke-width: 2px, color: #2c3e50, rx: 10, ry: 10
+    classDef subgraphStyle fill: #f8f9fa, stroke: #6c757d, stroke-width: 2px, color: #2c3e50, rx: 15, ry: 15
+    class NC cloud
+    class Users users
+    class Notifications notifications
+    class Agents agents
+    class Data data
+    class infrastructure subgraphStyle
 ```
 
-</details><br/>
+</details>
 
-1. **Discover**: You can auto-detect metric sources on localhost and auto-discover metric sources on Kubernetes.
-2. **Collect**: Query data sources to collect metric samples, using the optimal protocol for each data source. You get 800+ integrations supported, including dozens of native application protocols, OpenMetrics and StatsD.
-3. **Detect Anomalies**: Use the trained machine learning models for each metric to detect in real-time if each sample collected is an outlier (an anomaly), or not.
-4. **Store**: Keep collected samples and their anomaly status, in the time-series database (database mode `dbengine`) or a ring buffer (database modes `ram` and `alloc`).
-5. **Learn**: Train multiple machine learning models for each metric collected, learning behaviors and patterns for detecting anomalies.
-6. **Check**: A health engine, triggering alerts and sending notifications. Netdata comes with hundreds of alert configurations that are automatically attached to metrics when they get collected, detecting errors, common configuration errors and performance issues.
-7. **Query**: A query engine for querying time-series data.
-8. **Score**: A scoring engine for comparing and correlating metrics.
-9. **Stream**: A mechanism to connect Netdata Agents and build Metrics Centralization Points (Netdata Parents).
-10. **Visualize**: Netdata's fully automated dashboards for all metrics.
-11. **Export**: Export metric samples to third party time-series databases, enabling you to use third party tools for visualization, like Grafana.
+### Setup
 
-## Comparison to Other Observability Solutions
+Getting started is simple:
 
-| Aspect                    | Traditional Solutions                                                                                                | Netdata                                                                                                                                             |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Architecture**          | Multiple components (metrics exporters, time-series databases, visualization engines) requiring separate maintenance | One integrated package with everything included, even for Metrics Centralization Points                                                             |
-| **Setup & Configuration** | Manual configuration and setup required                                                                              | Fully automated with comprehensive dashboards and alerts available instantly with zero configuration                                                |
-| **Monitoring Fidelity**   | Variable granularity depending on configuration                                                                      | Console-level granularity and fidelity, plus holistic monitoring tools like [Top Monitoring](/docs/top-monitoring-netdata-functions)             |
-| **System Impact**         | Higher CPU usage, RAM utilization, and execution time impact on monitored systems                                    | Minimal impact on monitored systems and applications, verified by [independent studies](https://www.ivanomalavolta.com/files/papers/ICSOC_2023.pdf) |
-| **Energy Efficiency**     | Higher energy consumption                                                                                            | [Most energy efficient monitoring tool](https://twitter.com/IMalavolta/status/1734208439096676680) according to University of Amsterdam research    |
+1. **Sign up for Netdata Cloud** (it's free)
+2. **Get your connection command** - Once logged in, you have three ways to get it:
+    - Navigate to **Space Settings** → **Nodes** → Click **"+"**
+    - Go to **Nodes** tab → Click **Add nodes**
+    - Visit **Integrations** page → Select your OS
 
-## Dashboard Versions
+3. **Run the installation command** that includes your unique claim token and room information
 
-Your Netdata Agents (Standalone, Children and Parents) **share the dashboard** of Netdata Cloud. However, when you are logged in and your Agent is connected to the Cloud, the following are enabled (which are otherwise disabled):
+**What happens next:**
 
-1. **Access to Sensitive Data**: Some data, like systemd-journal logs and several [Top Monitoring](/docs/top-monitoring-netdata-functions) features expose sensitive data, like IPs, ports, process command lines and more. To access all these when the dashboard is served directly from an Agent, Netdata Cloud is required to verify that you have the required permissions to access the dashboard.
+- The command automatically detects your OS
+- Installs the latest Netdata Agent
+- Connects to your Cloud Space
+- Your node appears live in seconds
+- Charts start streaming real-time data immediately
 
-2. **Dynamic Configuration**: You can configure Netdata Agents via configuration files, manually or through some provisioning system. The latest Netdata includes a feature to allow you to change some configurations (collectors, alerts) via the dashboard. This feature is only available to you if you have a paid Netdata Cloud plan.
+:::tip
+
+Get detailed instructions on how to connect Agents to Cloud in our [Connect Agent to Cloud Guide](/docs/netdata-cloud/connect-agent).
+
+:::
+
+### Optional Optimizations
+
+- Disable local Agent notifications (Cloud handles them better)
+- Restrict local dashboard access for security (use Cloud instead)
+
+## Single Agents Without Cloud
+
+You can also run Agents independently, though you'll miss out on unified dashboards and mobile alerts.
+
+<details>
+<summary><strong>Click to see visual representation of standalone architecture</strong></summary><br/>
+
+```mermaid
+flowchart TB
+    subgraph infrastructure["Your Infrastructure"]
+        direction TB
+        A1["Agent 1"]
+        A2["Agent 2"]
+        A3["Agent 3"]
+        D1["Dashboard 1<br/>:19999"]
+        D2["Dashboard 2<br/>:19999"]
+        D3["Dashboard 3<br/>:19999"]
+        N1["Alerts"]
+        N2["Alerts"]
+        N3["Alerts"]
+        A1 --> D1
+        A2 --> D2
+        A3 --> D3
+        A1 --> N1
+        A2 --> N2
+        A3 --> N3
+    end
+
+    classDef agents fill: #e8f5e8, stroke: #27ae60, stroke-width: 2px, color: #2c3e50, rx: 10, ry: 10
+    classDef dashboards fill: #fff2e8, stroke: #f39c12, stroke-width: 2px, color: #2c3e50, rx: 10, ry: 10
+    classDef alerts fill: #ffe8e8, stroke: #e74c3c, stroke-width: 2px, color: #2c3e50, rx: 10, ry: 10
+    classDef subgraphStyle fill: #f8f9fa, stroke: #6c757d, stroke-width: 2px, color: #2c3e50, rx: 15, ry: 15
+    class A1 agents
+    class A2 agents
+    class A3 agents
+    class D1 dashboards
+    class D2 dashboards
+    class D3 dashboards
+    class N1 alerts
+    class N2 alerts
+    class N3 alerts
+    class infrastructure subgraphStyle
+```
+
+</details>
+
+### Setup
+
+:::tip
+
+Check the [Version & Platform](https://learn.netdata.cloud/docs/netdata-agent/versions-&-platforms) that's suitable for your needs and install the Agent.
+
+:::
+
+1. Install Netdata on each system
+2. Access each dashboard at `http://agent-ip:19999`
+3. Configure alerts individually on each Agent
+
+## When to Use Each Approach
+
+**Use Cloud-connected Agents when:**
+
+- You want one dashboard for everything
+- You need mobile alerts
+- Multiple people need access
+- You're managing more than one system
+
+**Use standalone Agents only when:**
+
+- You have strict air-gapped requirements
+- You're testing on a single system
+- Cloud connectivity is not possible
+
+:::note
+
+Without Netdata Cloud, each Agent operates independently - you'll need to check multiple dashboards, configure alerts on each system separately, and won't receive mobile notifications. Cloud connection is free and keeps your data on-premise while providing a unified view.
+
+:::
