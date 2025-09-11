@@ -3,14 +3,14 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Link from '@docusaurus/Link';
 import { useColorMode } from '@docusaurus/theme-common';
+// Centralized Ask Netdata color constants
+import { ASKNET_PRIMARY, ASKNET_SECOND, rgba, rgbString, OPACITY } from '../AskNetdata/colors';
 
 // Top pill variant replicating main Ask Netdata input (colors/animations) for all docs pages.
 // Renders a single pill under navbar. Answers & search results float above docs content.
 
 const API_BASE = 'https://agent-events.netdata.cloud/ask-netdata/api';
 const MAX_CONVERSATION_PAIRS = 3;
-const ASKNET_PRIMARY = '#00ab9c';
-const ASKNET_SECOND = '#00ab44';
 const SHORTCUT_LABEL = 'Ctrl + /';
 // Sizing constants to mirror main page input height & allow easy tuning
 const PILL_MIN_HEIGHT = 22; // main page pill visual height (adjust if main changes)
@@ -49,6 +49,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   const sendHoverRef = useRef(false);
   const messagesBottomRef = useRef(null);
   const currentAccent = toggleOn ? ASKNET_SECOND : ASKNET_PRIMARY;
+  const currentAccentRgb = rgbString(currentAccent);
   // Derived sizing based on configurable pillHeight (baseline 44)
   const sizeRatio = pillHeight / 44;
   const effectiveTrackHeight = Math.round(TOGGLE_TRACK_HEIGHT * sizeRatio);
@@ -89,7 +90,8 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   const CLOSE_ANIMATION_MS = 260; // keep in sync with fadeOutDown duration
 
   // Reset all chat/search state (new chat)
-  const resetConversationState = () => {
+  const resetConversationState = (opts = {}) => {
+    const { preserveMode = false } = opts;
     setMessages([]);
     setSearchResults([]);
     setSearchQuery('');
@@ -98,7 +100,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     setCommentDraft({});
     setCopiedState({});
     setInput('');
-    setToggleOn(false); // default back to chat mode
+    if (!preserveMode) setToggleOn(false); // default back to chat unless preserving
   };
 
   // Keyboard: toggle (Ctrl+/) and close+reset overlay (Escape)
@@ -112,9 +114,9 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
         if (wasVisible) closeOverlay(); else setShowOverlay(false);
         // Delay clearing until after fade-out animation to avoid visual flash
         if (wasVisible) {
-          setTimeout(() => { resetConversationState(); textareaRef.current?.focus(); }, CLOSE_ANIMATION_MS);
+          setTimeout(() => { resetConversationState({ preserveMode: toggleOn }); textareaRef.current?.focus(); }, CLOSE_ANIMATION_MS);
         } else {
-          resetConversationState();
+          resetConversationState({ preserveMode: toggleOn });
           textareaRef.current?.focus();
         }
       }
@@ -134,9 +136,9 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
       const wasVisible = showOverlay && !isOverlayClosing;
       if (wasVisible) closeOverlay(); else setShowOverlay(false);
       if (wasVisible) {
-        setTimeout(() => { resetConversationState(); textareaRef.current?.focus(); }, CLOSE_ANIMATION_MS);
+        setTimeout(() => { resetConversationState({ preserveMode: toggleOn }); textareaRef.current?.focus(); }, CLOSE_ANIMATION_MS);
       } else {
-        resetConversationState();
+        resetConversationState({ preserveMode: toggleOn });
         textareaRef.current?.focus();
       }
     };
@@ -232,7 +234,18 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     } finally { setIsLoading(false); }
   };
 
-  const handleKeyDown = (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); if (!input.trim()) handleSubmit(null, toggleOn ? 'Search Docs' : 'Ask Netdata'); else handleSubmit(); } };
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      const trimmed = input.trim();
+      if (!trimmed) {
+        if (toggleOn) return; // do not send placeholder in search mode
+        handleSubmit(null, 'Ask Netdata');
+      } else {
+        handleSubmit();
+      }
+    }
+  };
 
   const copyAnswer = async (message) => {
     try { const temp = document.createElement('div'); temp.innerHTML = message.content || ''; const plain = temp.textContent || temp.innerText || ''; await navigator.clipboard.writeText(plain); setCopiedState(p=>({ ...p, [message.id]:true })); if (copiedTimersRef.current[message.id]) clearTimeout(copiedTimersRef.current[message.id]); copiedTimersRef.current[message.id]=setTimeout(()=>{ setCopiedState(p=>({ ...p, [message.id]:false })); },1000); } catch {}
@@ -260,7 +273,9 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     // Reduced right padding so the send button sits closer to edge (was 20px)
     padding: '10px 12px 10px 20px',
     borderRadius: '44px',
-    boxShadow: isInputFocused ? `0 4px 18px rgba(0,0,0,0.18), 0 0 0 3px rgba(${currentAccent===ASKNET_PRIMARY?'0,171,156':'0,171,68'},0.35)` : '0 4px 16px rgba(0,0,0,0.10)',
+    boxShadow: isInputFocused
+      ? `0 4px 18px rgba(0,0,0,0.18), 0 0 0 3px ${rgba(currentAccent, OPACITY.focusRing)}`
+      : '0 4px 16px rgba(0,0,0,0.10)',
     width: '100%',
     position: 'relative',
     display: 'flex',
@@ -281,8 +296,8 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   };
   // Dim background (different opacity for dark vs light) when no input, match main page semantics
   const dimmedBg = isDarkMode
-    ? (currentAccent===ASKNET_PRIMARY ? 'rgba(0,171,156,0.42)' : 'rgba(0,171,68,0.42)')
-    : (currentAccent===ASKNET_PRIMARY ? 'rgba(0,171,156,0.28)' : 'rgba(0,171,68,0.28)');
+    ? rgba(currentAccent, OPACITY.dimDark)
+    : rgba(currentAccent, OPACITY.dimLight);
   const sendButtonStyle = {
     background: input.trim() ? currentAccent : (isSendHovered ? currentAccent : dimmedBg),
     color:'#fff', border:'none', borderRadius:'50%', width:pillHeight, height:pillHeight,
@@ -290,6 +305,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     boxShadow: isDarkMode ? '0 2px 10px rgba(0,0,0,0.6)' : '0 4px 18px rgba(0,0,0,0.12)',
     transition:'background 200ms ease, box-shadow 200ms ease'
   };
+  // Removed glow/outline from toggle per request
   const toggleTrackStyle = (on) => ({ width:TOGGLE_TRACK_WIDTH, height:effectiveTrackHeight, padding:'4px', boxSizing:'border-box', borderRadius:999, background: on ? ASKNET_SECOND : ASKNET_PRIMARY, position:'relative', cursor:'pointer', transition:'background 200ms ease', flexShrink:0, display:'flex', alignItems:'center' });
   const toggleKnobStyle = (on) => ({ width:effectiveKnobSize, height:effectiveKnobSize, borderRadius:'50%', background: isDarkMode ? '#0b1220' : '#fff', position:'absolute', top:'50%', left: on ? `calc(100% - ${effectiveKnobSize + 4}px)` : '4px', transform:'translateY(-50%)', transition:'left 200ms cubic-bezier(.2,.9,.2,1)' });
   const toggleHintStyle = (on) => ({ position:'absolute', top:'50%', left: on? '16px':'auto', right: on? 'auto':'16px', transform:'translateY(-50%)', fontSize:12, fontWeight:600, letterSpacing:'.4px', color:'#fff', userSelect:'none', pointerEvents:'none' });
@@ -357,7 +373,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
               role="switch"
               aria-checked={toggleOn}
               tabIndex={0}
-              onClick={() => setToggleOn(v => !v)}
+              onClick={() => { setToggleOn(v => !v); setTimeout(()=>textareaRef.current?.focus(), 0); }}
               onKeyDown={(e) => { if (e.key==='Enter' || e.key===' ') { e.preventDefault(); setToggleOn(v => !v); } }}
               style={toggleTrackStyle(toggleOn)}
               title="Toggle search / chat"
@@ -369,7 +385,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
               type="button"
               style={sendButtonStyle}
               disabled={isLoading}
-              onClick={(e)=>{ e.preventDefault(); if (!input.trim()) handleSubmit(null, toggleOn ? 'Search Docs' : 'Ask Netdata'); else handleSubmit(); }}
+              onClick={(e)=>{ e.preventDefault(); const trimmed = input.trim(); if (!trimmed) { if (toggleOn) return; handleSubmit(null, 'Ask Netdata'); } else handleSubmit(); }}
               onMouseEnter={()=>{ if(!isLoading) { setIsSendHovered(true); sendHoverRef.current=true; } }}
               onMouseLeave={()=>{ setIsSendHovered(false); sendHoverRef.current=false; }}
             >
@@ -469,7 +485,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
             {isLoading && (
               <div style={{ display:'flex', justifyContent:'center', padding:'8px 0 24px 0' }}>
                 <div style={{ position:'relative', width:300, height:4, overflow:'hidden', borderRadius:2, background:'rgba(156,163,175,0.2)' }}>
-                  <div style={{ position:'absolute', top:0, left:0, width:100, height:'100%', background: currentAccent, animation:'scanBackForth 2s ease-in-out infinite', boxShadow:`0 0 10px rgba(0,171,68,0.32),0 0 20px rgba(0,171,68,0.16)` }} />
+                  <div style={{ position:'absolute', top:0, left:0, width:100, height:'100%', background: currentAccent, animation:'scanBackForth 2s ease-in-out infinite', boxShadow:`0 0 10px ${rgba(currentAccent, OPACITY.glowStrong)},0 0 20px ${rgba(currentAccent, OPACITY.glowSoft)}` }} />
                 </div>
               </div>
             )}

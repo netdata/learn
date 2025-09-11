@@ -138,8 +138,9 @@ export const PLACEHOLDER_POOL = [
 // primary = main accent (used across the chatbox)
 // secondary = header/contrast accent (used for the opposite title)
 // Primary and secondary color constants - change these to customize the theme
-export const ASKNET_PRIMARY = '#00ab9c';  // Main green color
-export const ASKNET_SECOND = '#00ab44';   // Secondary color (will be derived if enabled)
+// Central color constants now centralized in colors.js so widget & main stay in sync
+import { ASKNET_PRIMARY, ASKNET_SECOND, rgba, rgbString, OPACITY } from './colors';
+export { ASKNET_PRIMARY, ASKNET_SECOND };
 
 // Configurable visual defaults (keep at top so authors can change them)
 export const TITLE_DIM_LIGHT = 'rgba(0,0,0,0.56)';
@@ -162,6 +163,9 @@ export const SECONDARY_SATURATION_MULT = 1.0; // multiplier for saturation (1.0 
 
 // Title desaturation control - how much to desaturate unselected titles (0.0 = no change, 1.0 = fully gray)
 export const TITLE_DESATURATION = 0.9; // 65% desaturation for unselected titles
+// Unified inactive title grayscale (avoid per-hue discrepancies)
+export const TITLE_INACTIVE_LIGHT = '#6b7280';
+export const TITLE_INACTIVE_DARK = '#787b81';
 
 // UI sizing constants
 export const TITLE_FONT_SIZE = '1.7rem'; // Font size for AI/Search titles
@@ -464,6 +468,21 @@ export default function AskNetdata() {
   const [searchResults, setSearchResults] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  // Track previous toggle to handle mode transitions cleanly
+  const prevToggleRef = useRef(toggleOn);
+  useEffect(() => {
+    // Always focus the input shortly after any toggle change
+    setTimeout(() => {
+      try { (textareaRef.current || inputRef.current)?.focus(); } catch (e) {}
+    }, 30);
+    // If we just left search mode, clear residual search UI state so Ask view is unaffected
+    if (prevToggleRef.current && !toggleOn) {
+      setSearchResults([]);
+      setSearchQuery('');
+      setIsSearching(false);
+    }
+    prevToggleRef.current = toggleOn;
+  }, [toggleOn]);
   // Randomized subtitle under the main title (rotates on refresh)
   const [titleSubtitle] = useState(() => {
     try {
@@ -537,7 +556,7 @@ export default function AskNetdata() {
   // Effective secondary: use derived if derivation is enabled and available, otherwise use ASKNET_SECOND
   const effectiveSecondary = SECONDARY_DERIVE_FROM_PRIMARY && derivedSecondaryState ? derivedSecondaryState : ASKNET_SECOND;
   const currentAccent = toggleOn ? effectiveSecondary : ASKNET_PRIMARY;
-  const currentAccentRgb = toggleOn ? activeSecondRgb : activeGreenRgb;
+  const currentAccentRgb = rgbString(currentAccent);
 
   // Compute and set derived secondary on the client when configured.
   useEffect(() => {
@@ -614,64 +633,8 @@ export default function AskNetdata() {
     }
   }, [ASKNET_PRIMARY, SECONDARY_DERIVE_FROM_PRIMARY, SECONDARY_HUE_SHIFT_DEG, SECONDARY_SATURATION_MULT]);
 
-  // Helper: desaturate a color by converting to HSL, reducing saturation, and converting back
-  const desaturateColor = (color, desaturationAmount = TITLE_DESATURATION) => {
-    if (!color || desaturationAmount === 0) return color;
-    
-    // Handle hex colors
-    const hexMatch = color.match(/^#([0-9a-f]{6})$/i);
-    if (hexMatch) {
-      const hex = hexMatch[1];
-      let r = parseInt(hex.substring(0,2), 16) / 255;
-      let g = parseInt(hex.substring(2,4), 16) / 255;
-      let b = parseInt(hex.substring(4,6), 16) / 255;
-      
-      // Convert RGB to HSL
-      const max = Math.max(r, g, b);
-      const min = Math.min(r, g, b);
-      let h = 0, s = 0, l = (max + min) / 2;
-      
-      if (max !== min) {
-        const d = max - min;
-        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-        switch(max) {
-          case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-          case g: h = (b - r) / d + 2; break;
-          case b: h = (r - g) / d + 4; break;
-        }
-        h = h / 6;
-      }
-      
-      // Reduce saturation by the desaturation amount
-      const newS = s * (1 - desaturationAmount);
-      
-      // Convert HSL back to RGB
-      const h2rgb = (p, q, t) => {
-        if (t < 0) t += 1;
-        if (t > 1) t -= 1;
-        if (t < 1/6) return p + (q - p) * 6 * t;
-        if (t < 1/2) return q;
-        if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-        return p;
-      };
-      
-      let r2, g2, b2;
-      if (newS === 0) {
-        r2 = g2 = b2 = Math.round(l * 255);
-      } else {
-        const q = l < 0.5 ? l * (1 + newS) : l + newS - l * newS;
-        const p = 2 * l - q;
-        r2 = Math.round(h2rgb(p, q, h + 1/3) * 255);
-        g2 = Math.round(h2rgb(p, q, h) * 255);
-        b2 = Math.round(h2rgb(p, q, h - 1/3) * 255);
-      }
-      
-      const toHex = n => n.toString(16).padStart(2, '0');
-      return `#${toHex(r2)}${toHex(g2)}${toHex(b2)}`;
-    }
-    
-    return color; // Return unchanged if not a hex color
-  };
+  // Unified inactive color (we keep function stub in case future logic needs it)
+  const desaturateColor = () => (isDarkMode ? TITLE_INACTIVE_DARK : TITLE_INACTIVE_LIGHT);
 
   useEffect(() => {
     if (typeof document === 'undefined') return;
@@ -702,9 +665,9 @@ export default function AskNetdata() {
   const baseRightColor = effectiveSecondary;  // Search title uses effective secondary (derived or constant)
   
   // AI title: use primary when active (toggleOff), desaturated primary when inactive (toggleOn)
-  const titleLeftColor = toggleOn ? desaturateColor(baseLeftColor) : baseLeftColor;
-  // Search title: use secondary when active (toggleOn), desaturated secondary when inactive (toggleOff)
-  const titleRightColor = toggleOn ? baseRightColor : desaturateColor(baseRightColor);
+  const inactiveTitleColor = isDarkMode ? TITLE_INACTIVE_DARK : TITLE_INACTIVE_LIGHT;
+  const titleLeftColor = toggleOn ? inactiveTitleColor : baseLeftColor;
+  const titleRightColor = toggleOn ? baseRightColor : inactiveTitleColor;
 
   // Ensure CSS variable --asknet-second is available on the document root so it can be used in styles
   useEffect(() => {
@@ -733,10 +696,17 @@ export default function AskNetdata() {
           (textareaRef.current || inputRef.current)?.focus();
         } catch (err) {}
       }
+      // Escape: dismiss only search results if open in search mode
+      if (e.key === 'Escape' && toggleOn && (isSearching || searchResults.length > 0 || searchQuery)) {
+        try { e.preventDefault(); } catch {}
+        setSearchResults([]);
+        setSearchQuery('');
+        setIsSearching(false);
+      }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, []);
+  }, [toggleOn, isSearching, searchResults.length, searchQuery]);
 
   // Ensure the chat textarea is focused from the start (immediate and after a short timeout)
   useEffect(() => {
@@ -2017,23 +1987,51 @@ export default function AskNetdata() {
   // Position the floating container: when the welcome screen is visible, anchor it near the top
   // with a sensible gap from the navbar; when not visible keep it centered.
   const TOP_BAR_GAP_PX = 88; // reasonable gap from topbar when visible (adjustable)
-  const floatingTop = showWelcome ? `${TOP_BAR_GAP_PX}px` : '25%';
-  const floatingTransform = showWelcome ? 'translate(-50%, 0)' : 'translate(-50%, -50%)';
+  // When search results are active, pin the input section nearer the top to maximize vertical space.
+  // Consider panel "active" when we are in search mode and either loading, have results, or have a query entered (panel visible)
+  const hasSearchPanelActive = toggleOn && (isSearching || searchResults.length > 0 || (searchQuery && !isSearching));
+  const SEARCH_PIN_OFFSET_PX = -100; // tweak if you want a tiny gap below navbar
+  const floatingPinnedTop = `calc(var(--ifm-navbar-height) + ${SEARCH_PIN_OFFSET_PX}px)`;
+  const floatingTop = hasSearchPanelActive
+    ? floatingPinnedTop
+    : (showWelcome ? `${TOP_BAR_GAP_PX}px` : '25%');
+  const floatingTransform = hasSearchPanelActive
+    ? 'translate(-50%, 0)' // no vertical centering when pinned
+    : (showWelcome ? 'translate(-50%, 0)' : 'translate(-50%, -50%)');
 
   const floatingContainerStyle = {
-  position: 'absolute',
-  left: '50%',
-  top: floatingTop,
-  transform: floatingTransform,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  width: '100%',
-  maxWidth: '800px',
-  margin: '0',
-  pointerEvents: 'auto'
+    position: 'absolute',
+    left: '50%',
+    top: floatingTop,
+    transform: floatingTransform,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    maxWidth: '800px',
+    margin: '0',
+    pointerEvents: 'auto',
+    transition: 'top 420ms cubic-bezier(0.16,1,0.3,1), transform 420ms cubic-bezier(0.16,1,0.3,1)'
   };
+
+  // Recompute suggestions anchor after mode or results visibility changes (pin/unpin & header show/hide)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const update = () => {
+      try {
+        if (!floatingContainerRef.current || !containerRef.current) return;
+        const fRect = floatingContainerRef.current.getBoundingClientRect();
+        const cRect = containerRef.current.getBoundingClientRect();
+        const top = Math.max(0, Math.round(fRect.bottom - cRect.top + 12));
+        setSuggestionsTopPx(top);
+      } catch (e) {}
+    };
+    // Run immediately and after transition duration to capture final layout
+    update();
+    const t = setTimeout(update, 440); // matches floating transition ~420ms
+    return () => { try { clearTimeout(t); } catch (e) {} };
+  }, [toggleOn, hasSearchPanelActive, isSearching, searchResults.length]);
 
   // Compute a pixel max-height for the search results panel so it never overflows
   // the visible viewport even when zoomed. We base it on the floating container's
@@ -2430,7 +2428,7 @@ export default function AskNetdata() {
           </div>
         )}
         {showWelcome ? (
-          <>
+          <div>
             {/* Corner Arrow Icon */}
             <svg style={{ display: 'none' }}>
               <defs>
@@ -2444,70 +2442,77 @@ export default function AskNetdata() {
             <div ref={floatingContainerRef} style={floatingContainerStyle}>
               <div style={welcomeStyle}>
                 {/* header structure: toggle above titles */}
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', width: '100%' }}>
-                  {/* Toggle positioned above titles */}
-                  <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <div style={toggleWrapperStyle}>
-                      <div
-                        role="switch"
-                        aria-checked={toggleOn}
-                        tabIndex={0}
-                        onClick={() => {
-                          setToggleOn(v => !v);
-                          // Focus the input like the keyboard shortcut does
-                          setTimeout(() => {
-                            (textareaRef.current || inputRef.current)?.focus();
-                          }, 50);
-                        }}
-                        onKeyDown={(e) => { 
-                          if (e.key === 'Enter' || e.key === ' ') { 
-                            e.preventDefault(); 
-                            setToggleOn(v => !v);
-                            // Focus the input like the keyboard shortcut does
-                            setTimeout(() => {
-                              (textareaRef.current || inputRef.current)?.focus();
-                            }, 50);
-                          } 
-                        }}
-                        style={toggleTrackStyle(toggleOn)}
-                        aria-label={toggleOn ? 'Toggle on' : 'Toggle off'}
-                      >
-                          {/* Hint on the track showing the keybind; positioned opposite the knob */}
-                          <div style={toggleHintStyle(toggleOn)}>{SHORTCUT_LABEL}</div>
-                          <div style={toggleKnobStyle(toggleOn)} />
+                {!hasSearchPanelActive && (
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', width: '100%' }}>
+                      {/* Toggle positioned above titles */}
+                      <div style={{ display: 'flex', justifyContent: 'center' }}>
+                        <div style={toggleWrapperStyle}>
+                          <div
+                            role="switch"
+                            aria-checked={toggleOn}
+                            tabIndex={0}
+                            onClick={() => {
+                              setToggleOn(v => !v);
+                              setTimeout(() => {
+                                (textareaRef.current || inputRef.current)?.focus();
+                              }, 50);
+                            }}
+                            onKeyDown={(e) => { 
+                              if (e.key === 'Enter' || e.key === ' ') { 
+                                e.preventDefault(); 
+                                setToggleOn(v => !v);
+                                setTimeout(() => {
+                                  (textareaRef.current || inputRef.current)?.focus();
+                                }, 50);
+                              } 
+                            }}
+                            style={toggleTrackStyle(toggleOn)}
+                            aria-label={toggleOn ? 'Toggle on' : 'Toggle off'}
+                          >
+                            <div style={toggleHintStyle(toggleOn)}>{SHORTCUT_LABEL}</div>
+                            <div style={toggleKnobStyle(toggleOn)} />
+                          </div>
+                        </div>
                       </div>
+                      {/* Titles row */}
+                      <div style={titleRowStyle}>
+                        <div style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleLeftColor, transition: 'opacity 220ms ease, color 220ms ease' }}>{HEADER_TITLES.left}</div>
+                        <div style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleRightColor, transition: 'opacity 220ms ease, color 220ms ease' }}>{HEADER_TITLES.right}</div>
+                      </div>
+                      {!HIDE_SUBTITLE && <p style={secondTitleStyle}>{titleSubtitle}</p>}
                     </div>
-                  </div>
-                  
-                  {/* Titles row */}
-                  <div style={titleRowStyle}>
-                    <div style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleLeftColor, transition: 'opacity 220ms ease, color 220ms ease' }}>{HEADER_TITLES.left}</div>
-                    <div style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleRightColor, transition: 'opacity 220ms ease, color 220ms ease' }}>{HEADER_TITLES.right}</div>
-                  </div>
-                  {!HIDE_SUBTITLE && <p style={secondTitleStyle}>{titleSubtitle}</p>}
-                </div>
+                )}
               </div>
-              
+
               {renderInputForm({ attachRef: true })}
               
               {/* Search results display */}
               {toggleOn && (searchResults.length > 0 || isSearching || (searchQuery && !isSearching)) && (
-                <div ref={searchPanelRef} style={{
-                  maxWidth: '800px',
-                  margin: '2rem auto 0',
-                  padding: '1rem',
-                  paddingBottom: '24px',
-                  backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
-                  borderRadius: '8px',
-                  border: isDarkMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid #e5e7eb',
-                  transform: 'translateY(0px)',
-                  opacity: 1,
-                  transition: 'transform 600ms cubic-bezier(0.16, 1, 0.3, 1), opacity 600ms cubic-bezier(0.16, 1, 0.3, 1)',
-                  animation: 'fadeIn 260ms ease both, slideUpInSmooth 540ms cubic-bezier(0.16, 1, 0.3, 1) both',
-                  maxHeight: resultsMaxHeightPx ? `${resultsMaxHeightPx}px` : '60vh',
-                  overflowY: 'auto',
-                  color: isDarkMode ? undefined : 'rgba(17,24,39,0.92)'
-                }}>
+                <div
+                  ref={searchPanelRef}
+                  tabIndex={0}
+                  style={{
+                    maxWidth: '1000px',
+                    width: '100%',
+                    margin: hasSearchPanelActive ? '0.4rem auto 0' : '2rem auto 0',
+                    padding: '1rem',
+                    paddingBottom: '24px',
+                    backgroundColor: isDarkMode ? 'rgba(255, 255, 255, 0.05)' : '#ffffff',
+                    borderRadius: '10px',
+                    border: isDarkMode ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid #e5e7eb',
+                    transform: hasSearchPanelActive ? 'translateY(0)' : 'translateY(0)',
+                    opacity: 1,
+                    transition: 'margin 420ms cubic-bezier(0.16,1,0.3,1)',
+                    animation: 'fadeIn 220ms ease both, slideUpInSmooth 480ms cubic-bezier(0.16,1,0.3,1) both',
+                    maxHeight: hasSearchPanelActive ? 'calc(100vh - (var(--ifm-navbar-height) + 140px))' : (resultsMaxHeightPx ? `${resultsMaxHeightPx}px` : '60vh'),
+                    overflowY: 'auto',
+                    WebkitOverflowScrolling: 'touch',
+                    overscrollBehavior: 'contain',
+                    scrollbarWidth: 'thin',
+                    pointerEvents: 'auto',
+                    color: isDarkMode ? undefined : 'rgba(17,24,39,0.92)'
+                  }}
+                >
                   {isSearching ? (
                     <div style={{
                       display: 'flex',
@@ -2607,8 +2612,8 @@ export default function AskNetdata() {
               )}
             </div>
 
-              {/* Categorized suggestions below the centered chatbox */}
-              <div style={{
+            {/* Categorized suggestions below the centered chatbox */}
+            <div style={{
                 position: 'absolute',
                 // Use full available width from sidebar to screen edge
                 left: '0',
@@ -2686,9 +2691,9 @@ export default function AskNetdata() {
                   </div>
                   </div>
                 </div>
-              </div>
+            </div>
 
-          </>
+          </div>
         ) : (
           <div style={computedMessagesContainerStyle}>
             {messages.length > 0 && (
