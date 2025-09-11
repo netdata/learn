@@ -348,7 +348,9 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   return (
     <>
       <style>{`
-        @keyframes slideUpInSmooth { 0% { transform: translateY(40px) scale(.96); opacity:0; filter:blur(1px);} 60% { transform: translateY(-2px) scale(1.01); opacity:.8; filter:blur(0);} 100% { transform: translateY(0) scale(1); opacity:1; filter:blur(0);} }
+        /* Opacity removed from entrance animations to avoid fade */
+        @keyframes slideUpInSmoothNoFade { 0% { transform: translateY(40px) scale(.96); filter:blur(1px);} 60% { transform: translateY(-2px) scale(1.01); filter:blur(0);} 100% { transform: translateY(0) scale(1); filter:blur(0);} }
+        @keyframes riseInNoFade { 0% { transform: translateY(12px); } 100% { transform: translateY(0); } }
         @keyframes scanBackForth { 0% { transform: translateX(-100px);} 50% { transform: translateX(300px);} 100% { transform: translateX(-100px);} }
         @keyframes fadeOutDown { 0% { opacity:1; transform: translateY(0) scale(1);} 100% { opacity:0; transform: translateY(16px) scale(.97);} }
         .asknet-overlay-panel::-webkit-scrollbar { display: none; }
@@ -398,7 +400,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
       {/* Floating overlay */}
       <div ref={overlayRef} style={overlayStyle}>
         <div style={overlayInnerStyle}>
-          <div ref={panelRef} style={{...panelStyle, animation: isOverlayClosing ? 'fadeOutDown 260ms ease forwards' : 'slideUpInSmooth 520ms cubic-bezier(0.16,1,0.3,1)'}} className="asknet-overlay-panel">
+          <div ref={panelRef} style={{...panelStyle, animation: isOverlayClosing ? 'fadeOutDown 260ms ease forwards' : 'slideUpInSmoothNoFade 520ms cubic-bezier(0.16,1,0.3,1)'}} className="asknet-overlay-panel">
             {/* Header row with actions */}
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:24 }}>
               <div style={{ fontSize: '1.05rem', fontWeight:700 }}>
@@ -419,7 +421,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
                     <div style={{ fontSize:15, fontWeight:600, marginBottom:12 }}>Found {searchResults.length} result{searchResults.length!==1?'s':''} for "{searchQuery}"</div>
                     <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
                       {searchResults.map((r,i)=>(
-                        <div key={i} style={{ padding:'16px 16px 14px 16px', background: isDarkMode?'rgba(255,255,255,0.05)':'#fff', border: isDarkMode?'1px solid rgba(255,255,255,0.1)':'1px solid #e6eaf0', borderRadius:8, animation:'slideUpIn 360ms cubic-bezier(0.16,1,0.3,1) both', animationDelay:`${i*40}ms` }}>
+                        <div key={i} style={{ padding:'16px 16px 14px 16px', background: isDarkMode?'rgba(255,255,255,0.05)':'#fff', border: isDarkMode?'1px solid rgba(255,255,255,0.1)':'1px solid #e6eaf0', borderRadius:8, animation:'riseInNoFade 360ms cubic-bezier(0.16,1,0.3,1) both', animationDelay:`${i*40}ms` }}>
                           <Link to={r.url.includes('learn.netdata.cloud')? r.url.substring(r.url.indexOf('/docs/')) : r.url} style={{ color:ASKNET_SECOND, textDecoration:'none', fontWeight:600, fontSize:16 }}>{r.title}</Link>
                           {r.section && <div style={{ fontSize:11, opacity:0.6, marginTop:4 }}>Section: {r.section}</div>}
                           {r.snippet && <div style={{ fontSize:13, lineHeight:1.4, marginTop:8, opacity:0.85 }}>{r.snippet}</div>}
