@@ -38,6 +38,11 @@ module.exports = {
 				srcDark: 'img/logo-letter-green-white.svg',
 			},
 			items: [
+				// Ask Netdata widget in the top navbar (initial placement; adjust items later if needed)
+				{
+					type: 'custom-asknetdata-widget-item',
+					position: 'right',
+				},
 				{
 					to: 'https://www.netdata.cloud/features/',
 					position: 'left',
@@ -129,21 +134,21 @@ module.exports = {
 					className: 'custom_text',
 					style: { fontWeight: '500' }
 				},
-				{
-					to: 'https://app.netdata.cloud/',
-					label: 'Login',
-					position: 'right',
-					className: 'button custom_button_grey',
-					style: { fontWeight: '500' }
-				},
-				{
-					to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
-					label: 'Sign Up',
-					position: 'right',
-					className: 'button custom_button',
-					style: { fontWeight: '500' }
+				// {
+				// 	to: 'https://app.netdata.cloud/',
+				// 	label: 'Login',
+				// 	position: 'right',
+				// 	className: 'button custom_button_grey',
+				// 	style: { fontWeight: '500' }
+				// },
+				// {
+				// 	to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
+				// 	label: 'Sign Up',
+				// 	position: 'right',
+				// 	className: 'button custom_button',
+				// 	style: { fontWeight: '500' }
 
-				},
+				// },
 			],
 		},
 		// footer: {
