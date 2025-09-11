@@ -27,6 +27,11 @@ const SHORTCUT_LABEL = 'Ctrl + /';
 const TOGGLE_TRACK_WIDTH = 90; // exported constant for toggle width
 const TOGGLE_TRACK_HEIGHT = 45; // exported constant for toggle height
 const TOGGLE_KNOB_SIZE = 35; // knob diameter
+// Overlay positioning constants
+const OVERLAY_GAP_PX = 16; // vertical gap between the pill and the overlay panel
+// Panel outline (applies to whole container for both answers and search results)
+const PANEL_OUTLINE_WIDTH = 4; // px
+const PANEL_OUTLINE_OPACITY = 0.28; // 0..1
 
 export default function AskNetdataWidget({ pillHeight = 40 }) {
   const { colorMode } = useColorMode();
@@ -67,6 +72,36 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
 
   // Focus input after mount
   useEffect(() => { textareaRef.current?.focus(); }, []);
+
+  // Compute horizontal shift so the overlay aligns under the navbar pill even at different zooms
+  const [overlayShiftX, setOverlayShiftX] = useState(0);
+  useEffect(() => {
+    const computeShift = () => {
+      try {
+        const pr = pillRef.current?.getBoundingClientRect();
+        if (!pr) return;
+        const vw = window.innerWidth;
+        const pillCenter = pr.left + pr.width / 2;
+        const viewportCenter = vw / 2;
+        let shift = pillCenter - viewportCenter;
+        // keep panel within viewport considering maxWidth and side paddings
+        const sidePad = 20; // matches overlayInnerStyle horizontal padding
+        const maxWidth = 1000; // matches overlayInnerStyle maxWidth
+        const maxShift = Math.max(0, (vw - sidePad * 2 - maxWidth) / 2);
+        if (Number.isFinite(maxShift)) {
+          shift = Math.max(-maxShift, Math.min(maxShift, shift));
+        }
+        setOverlayShiftX(Math.round(shift));
+      } catch {}
+    };
+    computeShift();
+    window.addEventListener('resize', computeShift);
+    window.addEventListener('scroll', computeShift, true);
+    return () => {
+      window.removeEventListener('resize', computeShift);
+      window.removeEventListener('scroll', computeShift, true);
+    };
+  }, [showOverlay, pillHeight, toggleOn]);
 
   // Auto-resize textarea height like main page
   const adjustTextareaHeight = () => {
@@ -278,22 +313,20 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     boxSizing: 'border-box'
   };
   const pillStyle = {
-    background: isDarkMode ? 'var(--ifm-background-surface-color)' : '#fff',
     border: isDarkMode ? '1px solid var(--ifm-color-emphasis-300)' : '1px solid #e5e7eb',
-    // Reduced right padding so the send button sits closer to edge (was 20px)
-    padding: '10px 12px 10px 20px',
-    borderRadius: '44px',
-    boxShadow: isInputFocused
-      ? `0 4px 18px rgba(0,0,0,0.18), 0 0 0 3px ${rgba(currentAccent, OPACITY.focusRing)}`
-      : '0 4px 16px rgba(0,0,0,0.10)',
+    background: isDarkMode ? '#0A0A0A' : 'rgba(255,255,255,0.96)',
+    backdropFilter: 'blur(18px)',
+    boxShadow: isInputFocused ? `0 0 0 3px ${rgba(currentAccent, OPACITY.focusRing)}` : 'none',
     width: '100%',
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
-    gap: '18px',
+    gap: '5px',
     pointerEvents: 'auto',
     transition: 'box-shadow 220ms ease, background 220ms ease',
-  minHeight: pillHeight,
+    minHeight: pillHeight,
+    borderRadius: 999,
+    padding: '6px 8px 6px 20px',
     overflow: 'hidden'
   };
   const placeholderStyle = {
@@ -312,7 +345,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     background: input.trim() ? currentAccent : (isSendHovered ? currentAccent : dimmedBg),
     color:'#fff', border:'none', borderRadius:'50%', width:pillHeight, height:pillHeight,
     cursor: isLoading ? 'not-allowed' : 'pointer', display:'flex', alignItems:'center', justifyContent:'center',
-    boxShadow: isDarkMode ? '0 2px 10px rgba(0,0,0,0.6)' : '0 4px 18px rgba(0,0,0,0.12)',
+    boxShadow: 'none',
     transition:'background 200ms ease, box-shadow 200ms ease'
   };
   // Removed glow/outline from toggle per request
@@ -321,7 +354,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   const toggleHintStyle = (on) => ({ position:'absolute', top:'50%', left: on? '16px':'auto', right: on? 'auto':'16px', transform:'translateY(-50%)', fontSize:12, fontWeight:600, letterSpacing:'.4px', color:'#fff', userSelect:'none', pointerEvents:'none' });
 
   const overlayBaseTop = () => {
-    try { if (pillRef.current) { const r = pillRef.current.getBoundingClientRect(); return r.bottom + 12; } } catch {}
+    try { if (pillRef.current) { const r = pillRef.current.getBoundingClientRect(); return r.bottom + OVERLAY_GAP_PX; } } catch {}
     return 140;
   };
   const overlayStyle = {
@@ -335,15 +368,22 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     pointerEvents: 'none'
   };
   const overlayInnerStyle = {
-    width: '100%', maxWidth: 1000, padding: '0 20px', boxSizing:'border-box', pointerEvents:'auto'
+    width: '100%',
+    maxWidth: 1000,
+    padding: '0 20px',
+    boxSizing:'border-box',
+    pointerEvents:'auto',
+  // Follow the pill horizontally across zoom/resize
+  transform: `translateX(${overlayShiftX}px)`
   };
   const panelStyle = {
     background: isDarkMode ? '#0A0A0A' : 'rgba(255,255,255,0.96)',
     backdropFilter:'blur(18px)',
-    border: isDarkMode ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(0,0,0,0.06)',
+  // Accent outline for the whole container (answers and search results)
+  border: `${PANEL_OUTLINE_WIDTH}px solid ${rgba(currentAccent, PANEL_OUTLINE_OPACITY)}`,
     borderRadius: 24,
     padding: '24px 28px 32px 28px',
-    boxShadow: '0 24px 68px -12px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.12)',
+    boxShadow: 'none',
     maxHeight: '70vh',
     overflowY: 'auto',
     scrollbarWidth: 'none',
@@ -353,7 +393,15 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   };
 
   const questionMessageStyle = { background: isDarkMode ? 'rgba(255,255,255,0.05)' : '#f8fafc', border: isDarkMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0', borderRadius: 12, padding: '14px 16px', marginBottom: 18, fontSize: 15, lineHeight:1.5, fontWeight:500 };
-  const answerMessageStyle = (m) => ({ background: m.isError ? (isDarkMode?'rgba(220,38,38,0.12)':'#fef2f2') : (isDarkMode ? '0A0A0A' : '#ffffff'), border: m.isError ? (isDarkMode?'1px solid rgba(220,38,38,0.4)':'1px solid #fecaca') : (isDarkMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0'), borderRadius: 16, padding:'18px 20px 22px 20px', marginBottom:20, fontSize:15, lineHeight:1.6, boxShadow: isDarkMode? 'none':'0 1px 4px rgba(2,6,23,0.04)' });
+  const answerMessageStyle = (m) => ({
+    background: m.isError ? (isDarkMode?'rgba(220,38,38,0.12)':'#fef2f2') : (isDarkMode ? '0A0A0A' : '#ffffff'),
+    borderRadius: 16,
+    padding: '18px 20px 22px 20px',
+    marginBottom: 20,
+    fontSize: 15,
+    lineHeight: 1.6,
+    boxShadow: 'none'
+  });
 
   return (
     <>
