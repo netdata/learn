@@ -34,7 +34,8 @@ module.exports = {
 			title: '',
 			logo: {
 				alt: 'Netdata Logo',
-				src: 'img/logo-letter-green-white.svg',
+				src: 'img/logo-letter-green-black.svg',
+				srcDark: 'img/logo-letter-green-white.svg',
 			},
 			items: [
 				{
