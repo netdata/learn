@@ -189,13 +189,15 @@ h5 {
 	/* font-size: 16px; */
 }
 
+:root { --ifm-navbar-height: 72px; }
+
 @media screen and (max-width: 1440px) {
 	.navbar__inner {
 		display: block;
 	}
 
 	:root {
-		--ifm-navbar-height: 100px
+		--ifm-navbar-height: 120px
 	}
 }
 

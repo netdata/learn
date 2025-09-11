@@ -195,13 +195,18 @@ const SHORTCUT_LABEL = 'Ctrl + /';
 
 
 
-// API configuration
-// Automatically detect environment and use appropriate API
-// API configuration
-// The deployed API base (production) is always the same host.
-// Keep this as a hardcoded constant so the client always targets the
-// production Ask Netdata API endpoint.
-const API_BASE = 'https://agent-events.netdata.cloud/ask-netdata/api';
+// API configuration: when docs run on localhost, use local Ask Netdata; otherwise use production
+const getApiBase = () => {
+  try {
+    if (typeof window !== 'undefined') {
+      const h = window.location.hostname;
+      if (h === 'localhost' || h === '127.0.0.1') return 'http://localhost:3000/api';
+    }
+  } catch {}
+  return 'https://agent-events.netdata.cloud/ask-netdata/api';
+};
+
+const API_BASE = getApiBase();
 const apiUrl = API_BASE;
 
 // Smart link component that handles internal vs external links

@@ -9,14 +9,24 @@ import { ASKNET_PRIMARY, ASKNET_SECOND, rgba, rgbString, OPACITY } from '../AskN
 // Top pill variant replicating main Ask Netdata input (colors/animations) for all docs pages.
 // Renders a single pill under navbar. Answers & search results float above docs content.
 
-const API_BASE = 'https://agent-events.netdata.cloud/ask-netdata/api';
+// API configuration: when docs run on localhost, use local Ask Netdata; otherwise use production
+const getApiBase = () => {
+  try {
+    if (typeof window !== 'undefined') {
+      const h = window.location.hostname;
+      if (h === 'localhost' || h === '127.0.0.1') return 'http://localhost:3000/api';
+    }
+  } catch {}
+  return 'https://agent-events.netdata.cloud/ask-netdata/api';
+};
+
+const API_BASE = getApiBase();
 const MAX_CONVERSATION_PAIRS = 3;
 const SHORTCUT_LABEL = 'Ctrl + /';
 // Sizing constants to mirror main page input height & allow easy tuning
-const PILL_MIN_HEIGHT = 22; // main page pill visual height (adjust if main changes)
-const TOGGLE_TRACK_WIDTH = 96; // exported constant for toggle width
-const TOGGLE_TRACK_HEIGHT = 40; // exported constant for toggle height
-const TOGGLE_KNOB_SIZE = 30; // knob diameter
+const TOGGLE_TRACK_WIDTH = 90; // exported constant for toggle width
+const TOGGLE_TRACK_HEIGHT = 45; // exported constant for toggle height
+const TOGGLE_KNOB_SIZE = 35; // knob diameter
 
 export default function AskNetdataWidget({ pillHeight = 40 }) {
   const { colorMode } = useColorMode();
