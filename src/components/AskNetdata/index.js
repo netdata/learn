@@ -188,8 +188,10 @@ export const HEADER_TITLES = {
 // Hard-coded flag to hide the subtitle (set true to hide)
 export const HIDE_SUBTITLE = true;
 
-// Keybind label displayed inside the toggle hint
-const SHORTCUT_LABEL = 'Ctrl + /';
+// Platform-aware keybind labels (Ctrl vs Cmd)
+const IS_MAC = (typeof navigator !== 'undefined') && /Mac|Macintosh|MacIntel|MacPPC|Mac68K/.test(navigator.platform);
+const SHORTCUT_LABEL = (IS_MAC ? '⌘' : 'Ctrl') + ' + /';
+const FOCUS_SHORTCUT_LABEL = (IS_MAC ? '⌘' : 'Ctrl') + ' + K';
 
 
 
@@ -2074,7 +2076,7 @@ export default function AskNetdata() {
   };
 
   const toggleTrackStyle = (on) => ({
-    width: `${96 * TOGGLE_SIZE_MULTIPLIER}px`,
+    width: `${105 * TOGGLE_SIZE_MULTIPLIER}px`,
     height: `${40 * TOGGLE_SIZE_MULTIPLIER}px`,
     borderRadius: '999px',
     background: on ? effectiveSecondary : ASKNET_PRIMARY,
@@ -2106,8 +2108,8 @@ export default function AskNetdata() {
     position: 'absolute',
     top: '50%',
     transform: 'translateY(-50%)',
-    left: on ? '16px' : 'auto',
-    right: on ? 'auto' : '16px',
+    left: on ? '10px' : 'auto',
+    right: on ? 'auto' : '10px',
     fontSize: '12px',
     fontWeight: 600,
     letterSpacing: '.4px',
@@ -2460,7 +2462,20 @@ export default function AskNetdata() {
                             style={toggleTrackStyle(toggleOn)}
                             aria-label={toggleOn ? 'Toggle on' : 'Toggle off'}
                           >
-                            <div style={toggleHintStyle(toggleOn)}>{SHORTCUT_LABEL}</div>
+                            <div style={toggleHintStyle(toggleOn)}>
+                              <span style={{
+                                fontSize:11,
+                                fontWeight:600,
+                                letterSpacing:'.5px',
+                                padding:'3px 7px',
+                                borderRadius:6,
+                                background:'rgba(255,255,255,0.25)',
+                                color:'#fff',
+                                lineHeight:1,
+                                userSelect:'none',
+                                display:'inline-block'
+                              }}>{SHORTCUT_LABEL}</span>
+                            </div>
                             <div style={toggleKnobStyle(toggleOn)} />
                           </div>
                         </div>

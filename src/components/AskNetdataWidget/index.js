@@ -243,6 +243,11 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
         } else {
           resetConversationState({ preserveMode: toggleOn });
         }
+        // Remove focus from the input (and hide virtual keyboard on mobile) when user presses Escape
+        if (textareaRef.current) {
+          textareaRef.current.blur();
+          setIsInputFocused(false);
+        }
       }
     };
     window.addEventListener('keydown', onEsc);
