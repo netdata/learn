@@ -417,6 +417,16 @@ const SmartLink = ({ href, children, ...props }) => {
 const MAX_CONVERSATION_PAIRS = 3;
 
 export default function AskNetdata() {
+  // Ensure global animation keyframes exist even before any messages render (search view needs scanBackForth)
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    if (!document.getElementById('asknet-global-animations')) {
+      const style = document.createElement('style');
+      style.id = 'asknet-global-animations';
+      style.textContent = `@keyframes scanBackForth { 0% { transform: translateX(-100px);} 50% { transform: translateX(300px);} 100% { transform: translateX(-100px);} }`;
+      try { document.head.appendChild(style); } catch (e) {}
+    }
+  }, []);
   // Initialize state from sessionStorage if available
   const [messages, setMessages] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -1648,7 +1658,7 @@ export default function AskNetdata() {
 
     // If in search mode (toggle is ON), handle as search instead of chat
     if (toggleOn) {
-      setInput('');
+      // Preserve search text after sending
       await handleSearch(message);
       return;
     }
@@ -2193,18 +2203,24 @@ export default function AskNetdata() {
   };
 
   const inputFormStyle = {
-    width: '100%',
-    margin: '0 auto',
-    display: 'flex',
-    gap: '8px',
-    alignItems: 'center'
+  width: '100%',
+  margin: '0 auto',
+  display: 'flex',
+  gap: '8px',
+  alignItems: 'center'
   };
+
+  // Reserve horizontal space inside the absolute-positioned textarea area for the toggle + send button
+  const TOGGLE_TRACK_WIDTH = 96 * TOGGLE_SIZE_MULTIPLIER; // keep in sync with toggleTrackStyle
+  const SEND_BUTTON_RESERVE = 50; // existing reserved space for send button
+  const EXTRA_GAP_RESERVE = 24; // breathing room between text and toggle
+  const RIGHT_RESERVE_TOTAL = TOGGLE_TRACK_WIDTH + SEND_BUTTON_RESERVE + EXTRA_GAP_RESERVE; // total px to reserve on the right of the input content
 
   const chatInputStyle = {
     position: 'absolute',
     top: '50%',
     left: '16px',
-    right: '50px',
+    right: `${RIGHT_RESERVE_TOTAL}px`,
     transform: 'translateY(-50%)',
     zIndex: 2,
     width: 'calc(100% - 20px)',
@@ -2230,7 +2246,7 @@ export default function AskNetdata() {
     position: 'absolute',
     top: '50%',
     left: '16px',
-    right: '50px',
+    right: `${RIGHT_RESERVE_TOTAL}px`,
     fontSize: '16px',
   // Default placeholder color; keep green when hovered only
   color: (isSendHovered && !input.trim()) ? currentAccent : (isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)'),
@@ -2337,6 +2353,21 @@ export default function AskNetdata() {
               disabled={isLoading}
             />
           </div>
+          {/* Toggle now positioned immediately before send button on right edge */}
+          <div
+            role="switch"
+            aria-checked={toggleOn}
+            tabIndex={0}
+            onClick={() => { setToggleOn(v=>!v); setTimeout(()=> (textareaRef.current||inputRef.current)?.focus(),0); }}
+            onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' ') { e.preventDefault(); setToggleOn(v=>!v); } }}
+            style={{ ...toggleTrackStyle(toggleOn), flexShrink:0 }}
+            title="Toggle search / chat"
+          >
+            <div style={toggleHintStyle(toggleOn)}><span style={{
+              fontSize:11,fontWeight:600,letterSpacing:'.5px',padding:'3px 7px',borderRadius:6,background:'rgba(255,255,255,0.25)',color:'#fff',lineHeight:1, userSelect:'none'
+            }}>{SHORTCUT_LABEL}</span></div>
+            <div style={toggleKnobStyle(toggleOn)} />
+          </div>
           <button
             type="button"
             style={computedSendButtonStyle}
@@ -2437,49 +2468,6 @@ export default function AskNetdata() {
                 {/* header structure: toggle above titles */}
                 {!hasSearchPanelActive && (
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', width: '100%' }}>
-                      {/* Toggle positioned above titles */}
-                      <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <div style={toggleWrapperStyle}>
-                          <div
-                            role="switch"
-                            aria-checked={toggleOn}
-                            tabIndex={0}
-                            onClick={() => {
-                              setToggleOn(v => !v);
-                              setTimeout(() => {
-                                (textareaRef.current || inputRef.current)?.focus();
-                              }, 50);
-                            }}
-                            onKeyDown={(e) => { 
-                              if (e.key === 'Enter' || e.key === ' ') { 
-                                e.preventDefault(); 
-                                setToggleOn(v => !v);
-                                setTimeout(() => {
-                                  (textareaRef.current || inputRef.current)?.focus();
-                                }, 50);
-                              } 
-                            }}
-                            style={toggleTrackStyle(toggleOn)}
-                            aria-label={toggleOn ? 'Toggle on' : 'Toggle off'}
-                          >
-                            <div style={toggleHintStyle(toggleOn)}>
-                              <span style={{
-                                fontSize:11,
-                                fontWeight:600,
-                                letterSpacing:'.5px',
-                                padding:'3px 7px',
-                                borderRadius:6,
-                                background:'rgba(255,255,255,0.25)',
-                                color:'#fff',
-                                lineHeight:1,
-                                userSelect:'none',
-                                display:'inline-block'
-                              }}>{SHORTCUT_LABEL}</span>
-                            </div>
-                            <div style={toggleKnobStyle(toggleOn)} />
-                          </div>
-                        </div>
-                      </div>
                       {/* Titles row */}
                       <div style={titleRowStyle}>
                         <div style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleLeftColor, transition: 'opacity 220ms ease, color 220ms ease' }}>{HEADER_TITLES.left}</div>
@@ -2520,19 +2508,11 @@ export default function AskNetdata() {
                   }}
                 >
                   {isSearching ? (
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      padding: '2rem',
-                      color: '#ffffff',
-                      fontSize: '1rem'
-                    }}>
-                      <div style={{
-                        marginRight: '0.5rem',
-                        animation: 'spin 1s linear infinite'
-                      }}>⭘</div>
-                      Searching documentation...
+                    <div style={{ display:'flex', flexDirection:'column', alignItems:'center', gap:18, padding:'1.6rem 0 2rem 0' }}>
+                      <div style={{ fontSize:'0.95rem', opacity:0.8 }}>Searching documentation...</div>
+                      <div style={{ position:'relative', width:300, height:4, overflow:'hidden', borderRadius:2, background:'rgba(156,163,175,0.25)' }}>
+                        <div style={{ position:'absolute', top:0, left:0, width:100, height:'100%', background: currentAccent, animation:'scanBackForth 2s ease-in-out infinite', boxShadow:`0 0 10px rgba(${currentAccentRgb},0.6),0 0 20px rgba(${currentAccentRgb},0.35)` }} />
+                      </div>
                     </div>
                   ) : searchResults.length > 0 ? (
                     <>
