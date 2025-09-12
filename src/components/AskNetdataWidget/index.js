@@ -22,9 +22,24 @@ const getApiBase = () => {
 
 const API_BASE = getApiBase();
 const MAX_CONVERSATION_PAIRS = 3;
-const SHORTCUT_LABEL = 'Ctrl + /';
+// Dynamic shortcut label: show Command symbol on macOS, otherwise Ctrl
+const SHORTCUT_LABEL = (() => {
+  if (typeof navigator !== 'undefined') {
+    const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
+    return isMac ? '⌘ + /' : 'Ctrl + /';
+  }
+  return 'Ctrl + /';
+})();
+// Dynamic focus shortcut (Ctrl/⌘ + K)
+const FOCUS_SHORTCUT_LABEL = (() => {
+  if (typeof navigator !== 'undefined') {
+    const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
+    return isMac ? '⌘ + K' : 'Ctrl + K';
+  }
+  return 'Ctrl + K';
+})();
 // Sizing constants to mirror main page input height & allow easy tuning
-const TOGGLE_TRACK_WIDTH = 90; // exported constant for toggle width
+const TOGGLE_TRACK_WIDTH = 98; // exported constant for toggle width
 const TOGGLE_TRACK_HEIGHT = 45; // exported constant for toggle height
 const TOGGLE_KNOB_SIZE = 35; // knob diameter
 // Overlay positioning constants
@@ -32,8 +47,15 @@ const OVERLAY_GAP_PX = 16; // vertical gap between the pill and the overlay pane
 // Panel outline (applies to whole container for both answers and search results)
 const PANEL_OUTLINE_WIDTH = 4; // px
 const PANEL_OUTLINE_OPACITY = 0.28; // 0..1
+// Adaptive corner radius for the overlay panel: reduce roundness as content grows
+const PANEL_BASE_RADIUS = 24; // small content
+const PANEL_MIN_RADIUS = 12;  // very tall content
+// Adaptive corner radius for the input pill when it grows tall due to multi-line input
+const PILL_TALL_START = 56;   // px height where we start relaxing the capsule corners
+const PILL_MIN_RADIUS = 14;   // px min radius for very tall pills
+const PILL_MAX_CAPSULE = 999; // fully rounded capsule for short pills
 
-export default function AskNetdataWidget({ pillHeight = 40 }) {
+export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, overlayMaxWidth = 1000 }) {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
 
@@ -70,8 +92,30 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   const effectiveTrackHeight = Math.round(TOGGLE_TRACK_HEIGHT * sizeRatio);
   const effectiveKnobSize = Math.round(TOGGLE_KNOB_SIZE * sizeRatio);
 
-  // Focus input after mount
-  useEffect(() => { textareaRef.current?.focus(); }, []);
+  // Remove auto-focus on load (accessibility & user preference) and add keyboard shortcuts
+  useEffect(() => {
+    const onGlobalKey = (e) => {
+      // Toggle mode with Ctrl+/ (existing behavior preserved)
+      if ((e.ctrlKey || e.metaKey) && e.key === '/') {
+        e.preventDefault();
+        setToggleOn(v => !v);
+        // Do NOT auto focus immediately—user can press Ctrl+K next if desired
+        return;
+      }
+      // Focus caret with Ctrl+K (robust across browsers: also prevent default to block browser search)
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+        e.preventDefault();
+        // Open overlay only if there is existing content or we are in search mode; otherwise just focus pill
+        if (!showOverlay && !isOverlayClosing) {
+          // Do not implicitly submit anything, just reveal overlay framework for continuity if messages exist
+          if (messages.length > 0 || searchResults.length > 0) setShowOverlay(true);
+        }
+        setTimeout(() => textareaRef.current?.focus(), 0);
+      }
+    };
+    window.addEventListener('keydown', onGlobalKey);
+    return () => window.removeEventListener('keydown', onGlobalKey);
+  }, [showOverlay, isOverlayClosing, messages.length, searchResults.length]);
 
   // Compute horizontal shift so the overlay aligns under the navbar pill even at different zooms
   const [overlayShiftX, setOverlayShiftX] = useState(0);
@@ -85,8 +129,8 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
         const viewportCenter = vw / 2;
         let shift = pillCenter - viewportCenter;
         // keep panel within viewport considering maxWidth and side paddings
-        const sidePad = 20; // matches overlayInnerStyle horizontal padding
-        const maxWidth = 1000; // matches overlayInnerStyle maxWidth
+  const sidePad = 20; // matches overlayInnerStyle horizontal padding
+  const maxWidth = overlayMaxWidth; // matches overlayInnerStyle maxWidth
         const maxShift = Math.max(0, (vw - sidePad * 2 - maxWidth) / 2);
         if (Number.isFinite(maxShift)) {
           shift = Math.max(-maxShift, Math.min(maxShift, shift));
@@ -112,6 +156,45 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     ta.style.height = newH + 'px';
   };
   useEffect(() => { adjustTextareaHeight(); }, [input]);
+
+  // Adapt panel corner radius to content height (less rounded when tall for readability)
+  const [panelRadius, setPanelRadius] = useState(PANEL_BASE_RADIUS);
+  useEffect(() => {
+    const computeRadius = () => {
+      try {
+        const r = panelRef.current?.getBoundingClientRect();
+        if (!r) { setPanelRadius(PANEL_BASE_RADIUS); return; }
+        // Reduce radius gradually as height increases beyond a comfortable reading height
+        const excess = Math.max(0, r.height - 320); // start relaxing after ~320px height
+        const reduction = Math.min(PANEL_BASE_RADIUS - PANEL_MIN_RADIUS, Math.floor(excess / 120) * 4); // -4px per +120px
+        setPanelRadius(PANEL_BASE_RADIUS - reduction);
+      } catch { setPanelRadius(PANEL_BASE_RADIUS); }
+    };
+    // Run after layout settles
+    const raf = requestAnimationFrame(computeRadius);
+    window.addEventListener('resize', computeRadius);
+    return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', computeRadius); };
+  }, [messages, searchResults, isSearching, toggleOn, showOverlay]);
+
+  // Adapt pill corner radius when the input grows to multiple lines
+  const [pillRadius, setPillRadius] = useState(PILL_MAX_CAPSULE);
+  useEffect(() => {
+    const computePillRadius = () => {
+      try {
+        const r = pillRef.current?.getBoundingClientRect();
+        if (!r) { setPillRadius(PILL_MAX_CAPSULE); return; }
+        if (r.height <= PILL_TALL_START) { setPillRadius(PILL_MAX_CAPSULE); return; }
+        // As the pill height grows beyond the threshold, ease the radius down to improve readability
+        const excess = r.height - PILL_TALL_START;
+        const steps = Math.floor(excess / 80); // relax 1 step per +80px
+        const radius = Math.max(PILL_MIN_RADIUS, 24 - steps * 4);
+        setPillRadius(radius);
+      } catch { setPillRadius(PILL_MAX_CAPSULE); }
+    };
+    const raf = requestAnimationFrame(computePillRadius);
+    window.addEventListener('resize', computePillRadius);
+    return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', computePillRadius); };
+  }, [input, pillHeight]);
 
   // Overlay open helper (cancels any pending close)
   const openOverlay = () => {
@@ -148,26 +231,22 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     if (!preserveMode) setToggleOn(false); // default back to chat unless preserving
   };
 
-  // Keyboard: toggle (Ctrl+/) and close+reset overlay (Escape)
+  // Keyboard: Escape closes & resets (no auto focus after closing unless overlay remained hidden)
   useEffect(() => {
-    const onKey = (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key === '/') { e.preventDefault(); setToggleOn(v => !v); setTimeout(() => textareaRef.current?.focus(), 60); }
+    const onEsc = (e) => {
       if (e.key === 'Escape') {
-        // Abort any active streaming request
         try { chatAbortRef.current?.abort(); } catch {}
         const wasVisible = showOverlay && !isOverlayClosing;
         if (wasVisible) closeOverlay(); else setShowOverlay(false);
-        // Delay clearing until after fade-out animation to avoid visual flash
         if (wasVisible) {
-          setTimeout(() => { resetConversationState({ preserveMode: toggleOn }); textareaRef.current?.focus(); }, CLOSE_ANIMATION_MS);
+          setTimeout(() => { resetConversationState({ preserveMode: toggleOn }); }, CLOSE_ANIMATION_MS);
         } else {
           resetConversationState({ preserveMode: toggleOn });
-          textareaRef.current?.focus();
         }
       }
     };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    window.addEventListener('keydown', onEsc);
+    return () => window.removeEventListener('keydown', onEsc);
   }, [showOverlay, isOverlayClosing]);
 
   // Outside click: collapse & reset like Escape
@@ -308,7 +387,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   };
   const pillInnerStyle = {
     width: '100%',
-    maxWidth: 800,
+  maxWidth: pillMaxWidth,
     padding: '0 20px',
     boxSizing: 'border-box'
   };
@@ -325,13 +404,14 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     pointerEvents: 'auto',
     transition: 'box-shadow 220ms ease, background 220ms ease',
     minHeight: pillHeight,
-    borderRadius: 999,
+  borderRadius: pillRadius,
     padding: '6px 8px 6px 20px',
     overflow: 'hidden'
   };
   const placeholderStyle = {
     position: 'absolute', left: 26, top: '50%', transform: 'translateY(-50%)', right: 190,
-    opacity: input ? 0 : 1, fontSize: 16, lineHeight: 1.4, color: (isSendHovered && !input.trim()) ? currentAccent : (isDarkMode ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.50)'),
+    display: 'flex', alignItems: 'center', gap: 8,
+    opacity: input ? 0 : 1, fontSize: 16, lineHeight: 1.3, color: (isSendHovered && !input.trim()) ? currentAccent : (isDarkMode ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.50)'),
     transition: 'opacity 260ms ease, color 300ms ease', pointerEvents: 'none'
   };
   const textareaStyle = {
@@ -351,7 +431,19 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   // Removed glow/outline from toggle per request
   const toggleTrackStyle = (on) => ({ width:TOGGLE_TRACK_WIDTH, height:effectiveTrackHeight, padding:'4px', boxSizing:'border-box', borderRadius:999, background: on ? ASKNET_SECOND : ASKNET_PRIMARY, position:'relative', cursor:'pointer', transition:'background 200ms ease', flexShrink:0, display:'flex', alignItems:'center' });
   const toggleKnobStyle = (on) => ({ width:effectiveKnobSize, height:effectiveKnobSize, borderRadius:'50%', background: isDarkMode ? '#0b1220' : '#fff', position:'absolute', top:'50%', left: on ? `calc(100% - ${effectiveKnobSize + 4}px)` : '4px', transform:'translateY(-50%)', transition:'left 200ms cubic-bezier(.2,.9,.2,1)' });
-  const toggleHintStyle = (on) => ({ position:'absolute', top:'50%', left: on? '16px':'auto', right: on? 'auto':'16px', transform:'translateY(-50%)', fontSize:12, fontWeight:600, letterSpacing:'.4px', color:'#fff', userSelect:'none', pointerEvents:'none' });
+  const toggleHintStyle = (on) => ({ position:'absolute', top:'50%', left: on? '10px':'auto', right: on? 'auto':'10px', transform:'translateY(-50%)', fontSize:12, fontWeight:600, letterSpacing:'.4px', color:'#fff', userSelect:'none', pointerEvents:'none' });
+  const toggleShortcutBadgeStyle = {
+    fontSize:11,
+    fontWeight:600,
+    letterSpacing:'.5px',
+  padding:'3px 7px',
+    borderRadius:6,
+    background:'rgba(255,255,255,0.25)',
+    color:'#fff',
+    lineHeight:1,
+    userSelect:'none',
+    display:'inline-block'
+  };
 
   const overlayBaseTop = () => {
     try { if (pillRef.current) { const r = pillRef.current.getBoundingClientRect(); return r.bottom + OVERLAY_GAP_PX; } } catch {}
@@ -369,7 +461,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
   };
   const overlayInnerStyle = {
     width: '100%',
-    maxWidth: 1000,
+  maxWidth: overlayMaxWidth,
     padding: '0 20px',
     boxSizing:'border-box',
     pointerEvents:'auto',
@@ -381,7 +473,7 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
     backdropFilter:'blur(18px)',
   // Accent outline for the whole container (answers and search results)
   border: `${PANEL_OUTLINE_WIDTH}px solid ${rgba(currentAccent, PANEL_OUTLINE_OPACITY)}`,
-    borderRadius: 24,
+  borderRadius: panelRadius,
     padding: '24px 28px 32px 28px',
     boxShadow: 'none',
     maxHeight: '70vh',
@@ -416,13 +508,30 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
       <div ref={pillRef} style={pillContainerStyle}>
         <div style={pillInnerStyle}>
           <div style={pillStyle}>
-            <div style={placeholderStyle}>{toggleOn ? 'Search Docs' : 'Ask Netdata'}</div>
+            <div style={placeholderStyle}>
+              {toggleOn ? 'Search Docs' : 'Ask Netdata'}
+              <span
+                style={{
+                  marginLeft: 10,
+                  fontSize: 12,
+                  fontWeight: 600,
+                  letterSpacing: '.5px',
+                  padding: '2px 6px',
+                  borderRadius: 4,
+                  background: isDarkMode ? 'rgba(164, 164, 164, 0.42)' : 'rgba(0,0,0,0.06)',
+                  color: isDarkMode ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.60)',
+                  lineHeight: 1,
+                  userSelect: 'none'
+                }}
+                title="Focus input"
+              >{FOCUS_SHORTCUT_LABEL}</span>
+            </div>
             <textarea
               ref={textareaRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              onFocus={()=> setIsInputFocused(true)}
+                onFocus={()=> setIsInputFocused(true)}
               onBlur={()=> setIsInputFocused(false)}
               style={textareaStyle}
               rows={1}
@@ -438,7 +547,9 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
               style={toggleTrackStyle(toggleOn)}
               title="Toggle search / chat"
             >
-              <div style={toggleHintStyle(toggleOn)}>{SHORTCUT_LABEL}</div>
+              <div style={toggleHintStyle(toggleOn)}>
+                <span style={toggleShortcutBadgeStyle}>{SHORTCUT_LABEL}</span>
+              </div>
               <div style={toggleKnobStyle(toggleOn)}></div>
             </div>
             <button
@@ -461,8 +572,22 @@ export default function AskNetdataWidget({ pillHeight = 40 }) {
           <div ref={panelRef} style={{...panelStyle, animation: isOverlayClosing ? 'fadeOutDown 260ms ease forwards' : 'slideUpInSmoothNoFade 520ms cubic-bezier(0.16,1,0.3,1)'}} className="asknet-overlay-panel">
             {/* Header row with actions */}
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:24 }}>
-              <div style={{ fontSize: '1.05rem', fontWeight:700 }}>
-                <span style={{ color: currentAccent }}>Ask Netdata</span>
+              <div style={{ display:'flex', alignItems:'center', gap:10, fontSize: '1.05rem', fontWeight:700 }}>
+                <span style={{ color: currentAccent }}>{toggleOn ? 'Search Docs' : 'Ask Netdata'}</span>
+                <span
+                  style={{
+                    fontSize:11,
+                    fontWeight:600,
+                    letterSpacing:'.5px',
+                    padding:'4px 8px',
+                    borderRadius:6,
+                    background: rgba(currentAccent, 0.16),
+                    color: currentAccent,
+                    lineHeight:1,
+                    userSelect:'none'
+                  }}
+                  title="Focus input"
+                >{FOCUS_SHORTCUT_LABEL}</span>
               </div>
               <div style={{ display:'flex', gap:12 }}>
                 {!toggleOn && messages.length > 0 && <button onClick={() => { setMessages([]); closeOverlay(); setSearchResults([]); setSearchQuery(''); }} style={{ background:'transparent', border: isDarkMode?'1px solid rgba(255,255,255,0.2)':'1px solid #d1d5db', borderRadius:8, padding:'6px 12px', cursor:'pointer', fontSize:13 }}>New chat</button>}

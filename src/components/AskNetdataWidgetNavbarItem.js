@@ -8,7 +8,8 @@ export default function AskNetdataWidgetNavbarItem() {
   if (pathname && pathname.endsWith('/ask-netdata')) return null;
   return (
     <div style={{ display: 'flex', alignItems: 'center', minWidth: 260, width: 520, maxWidth: '50vw' }}>
-      <AskNetdataWidget pillHeight={30} />
+      {/* Tune width via these props: pillMaxWidth (pill row), overlayMaxWidth (floating panel) */}
+      <AskNetdataWidget pillHeight={30} pillMaxWidth={520} overlayMaxWidth={960} />
     </div>
   );
 }

@@ -687,43 +687,31 @@ export default function AskNetdata() {
     return () => {};
   }, []);
 
+  // Global keyboard shortcuts: Ctrl+/ toggles mode, Ctrl+K focuses input (no auto-focus on load)
   useEffect(() => {
-    const onKey = (e) => {
-  // Use Ctrl + / (slash) as the requested shortcut
-  // Accept either Control (Windows/Linux) or Meta (Mac) with the slash key
-  if ((e.ctrlKey || e.metaKey) && e.key === '/') {
-        try { e.preventDefault(); } catch (err) {}
-        // Toggle the pill and focus the textarea
-        try {
-          setToggleOn(v => !v);
-        } catch (err) {}
-        try {
-          (textareaRef.current || inputRef.current)?.focus();
-        } catch (err) {}
+    const onGlobalKey = (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === '/') {
+        e.preventDefault();
+        setToggleOn(v => !v);
+        return; // Do not auto focus; user can press Ctrl+K next
       }
-      // Escape: dismiss only search results if open in search mode
+      if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+        e.preventDefault();
+        (textareaRef.current || inputRef.current)?.focus();
+        return;
+      }
       if (e.key === 'Escape' && toggleOn && (isSearching || searchResults.length > 0 || searchQuery)) {
-        try { e.preventDefault(); } catch {}
+        e.preventDefault();
         setSearchResults([]);
         setSearchQuery('');
         setIsSearching(false);
       }
     };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+    window.addEventListener('keydown', onGlobalKey);
+    return () => window.removeEventListener('keydown', onGlobalKey);
   }, [toggleOn, isSearching, searchResults.length, searchQuery]);
 
-  // Ensure the chat textarea is focused from the start (immediate and after a short timeout)
-  useEffect(() => {
-    const focus = () => {
-      try {
-        (textareaRef.current || inputRef.current)?.focus();
-      } catch (e) {}
-    };
-    focus();
-    const t = setTimeout(focus, 120);
-    return () => clearTimeout(t);
-  }, []);
+  // Removed initial auto-focus to align with widget behavior; user triggers focus via Ctrl+K
 
   // --- Feedback state & helpers (missing previously) ---
   // Tracks per-message feedback status: { [messageId]: { sending, sent, rating } }
@@ -1144,9 +1132,7 @@ export default function AskNetdata() {
   //   messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   // }, [messages]);
 
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
+  // Removed delayed mount auto-focus
 
   // Auto-resize textarea based on content
   const adjustTextareaHeight = () => {
