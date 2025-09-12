@@ -289,7 +289,8 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
 
   const handleSearch = async (query) => {
     if (!query.trim()) { setSearchResults([]); setSearchQuery(''); return; }
-  setIsSearching(true); setSearchQuery(query.trim()); setSearchResults([]); openOverlay();
+    // Preserve input text when searching; do not clear textarea
+    setIsSearching(true); setSearchQuery(query.trim()); setSearchResults([]); openOverlay();
     // Fallback static sample results (parity with main page when endpoint 404 / offline)
     const staticFallbackResults = [
       { title: 'Install Netdata on Linux', url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/linux', snippet: 'Quick install on Linux with kickstart.sh script, optional parameters for customizing your setup...', score: 0.42, section: 'Documentation' },
@@ -311,7 +312,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     e?.preventDefault();
     const message = (override || input).trim();
     if (!message || isLoading) return;
-    if (toggleOn) { setInput(''); await handleSearch(message); return; }
+  if (toggleOn) { await handleSearch(message); return; }
   openOverlay();
     const userMessageId = Date.now();
     const userMessage = { id:userMessageId, type:'user', content:message, timestamp:new Date() };
@@ -603,7 +604,14 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
             {toggleOn && (searchResults.length>0 || isSearching || (searchQuery && !isSearching)) && (
               <div style={{ marginBottom:24 }}>
                 {isSearching ? (
-                  <div style={{ display:'flex', alignItems:'center', gap:8, fontSize:14, opacity:0.8 }}><div style={{ animation:'spin 1s linear infinite' }}>⭘</div>Searching documentation...</div>
+                  <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
+                    <div style={{ fontSize:14, opacity:0.75 }}>Searching documentation...</div>
+                    <div style={{ display:'flex', justifyContent:'center', padding:'0 0 8px 0' }}>
+                      <div style={{ position:'relative', width:300, height:4, overflow:'hidden', borderRadius:2, background:'rgba(156,163,175,0.2)' }}>
+                        <div style={{ position:'absolute', top:0, left:0, width:100, height:'100%', background: currentAccent, animation:'scanBackForth 2s ease-in-out infinite', boxShadow:`0 0 10px ${rgba(currentAccent, OPACITY.glowStrong)},0 0 20px ${rgba(currentAccent, OPACITY.glowSoft)}` }} />
+                      </div>
+                    </div>
+                  </div>
                 ) : searchResults.length>0 ? (
                   <>
                     <div style={{ fontSize:15, fontWeight:600, marginBottom:12 }}>Found {searchResults.length} result{searchResults.length!==1?'s':''} for "{searchQuery}"</div>
