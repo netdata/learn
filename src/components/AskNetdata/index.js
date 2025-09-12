@@ -1631,7 +1631,7 @@ export default function AskNetdata() {
 
       if (response.status === 404) {
         // Endpoint not available — surface static test results
-        setSearchResults(staticFallbackResults);
+  setSearchResults(staticFallbackResults.sort((a,b)=>(b.score||0)-(a.score||0)));
         setIsSearching(false);
         return;
       }
@@ -1641,7 +1641,10 @@ export default function AskNetdata() {
       }
 
       const data = await response.json();
-      setSearchResults(data.results || []);
+      {
+        const sorted = (data.results || []).slice().sort((a,b)=> (b.score||0) - (a.score||0));
+        setSearchResults(sorted);
+      }
     } catch (error) {
       console.error('Search error:', error);
       // For network/errors, keep behavior of empty results but still allow quick local testing:
@@ -2552,23 +2555,45 @@ export default function AskNetdata() {
                             >
                               {result.title}
                             </a>
-                            {result.section && (
-                              <div style={{
-                                fontSize: '0.8rem',
-                                color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(2,6,23,0.5)',
-                                marginBottom: '0.5rem'
-                              }}>
-                                Section: {result.section}
-                              </div>
-                            )}
-                            <p style={{
-                              color: isDarkMode ? 'rgba(255, 255, 255, 0.8)' : 'rgba(2,6,23,0.75)',
-                              fontSize: '0.9rem',
-                              lineHeight: '1.4',
-                              margin: 0
-                            }}>
-                              {result.snippet}
-                            </p>
+                            {(() => {
+                              const cleanSnippet = (snippet) => {
+                                if(!snippet) return '';
+                                let s = snippet.replace(/\r/g,'').trimStart();
+                                const fmMatch = s.match(/^---[\s\S]*?\n---\s*/);
+                                if(fmMatch) s = s.slice(fmMatch[0].length);
+                                // Remove metadata header key: value lines
+                                let lines = s.split('\n');
+                                let removed = false;
+                                while(lines.length) {
+                                  const L = lines[0].trim();
+                                  if(!L) { lines.shift(); removed = true; continue; }
+                                  if(/^[A-Za-z0-9_\-]+:/.test(L) && !L.startsWith('#') && L.length < 300) { lines.shift(); removed = true; continue; }
+                                  break;
+                                }
+                                if(removed) s = lines.join('\n');
+                                s = s.replace(/^---+\s*/,'');
+                                s = s.replace(/```[\s\S]*?```/g,' '); // fenced code
+                                s = s.replace(/`([^`]+)`/g,'$1'); // inline code
+                                s = s.replace(/\[([^\]]+)\]\([^\)]+\)/g,'$1'); // links
+                                s = s.replace(/<[^>]+>/g,' '); // html tags
+                                s = s.replace(/^#+\s+/gm,''); // headings
+                                s = s.replace(/\*{1,3}([^*_`]+)\*{1,3}/g,'$1').replace(/_{1,3}([^*_`]+)_{1,3}/g,'$1'); // emphasis
+                                s = s.replace(/^\s*[-*+]\s+/gm,''); // bullets
+                                s = s.replace(/\s+/g,' ').trim();
+                                return s;
+                              };
+                              const body = cleanSnippet(result.snippet);
+                              if(!body) return null;
+                              const truncated = body.length > 400 ? body.slice(0,400).trim() + '…' : body;
+                              return (
+                                <p style={{
+                                  color: isDarkMode ? 'rgba(255, 255, 255, 0.78)' : 'rgba(2,6,23,0.72)',
+                                  fontSize: '0.7rem',
+                                  lineHeight: '1.3',
+                                  margin: 0
+                                }}>{truncated}</p>
+                              );
+                            })()}
                             {result.score && (
                               <div style={{
                                 fontSize: '0.7rem',
