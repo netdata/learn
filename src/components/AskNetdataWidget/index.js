@@ -300,10 +300,11 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     ];
     try {
       const resp = await fetch(`${API_BASE}/chat/docs/search`, { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ query: query.trim() }) });
-      if (resp.status === 404) { setSearchResults(staticFallbackResults); setIsSearching(false); return; }
+  if (resp.status === 404) { setSearchResults(staticFallbackResults.sort((a,b)=>(b.score||0)-(a.score||0))); setIsSearching(false); return; }
       if (!resp.ok) throw new Error();
       const data = await resp.json();
-      setSearchResults(data.results || []);
+  const sorted = (data.results || []).slice().sort((a,b)=> (b.score||0) - (a.score||0));
+  setSearchResults(sorted);
     } catch (e) { setSearchResults([]); }
     finally { setIsSearching(false); }
   };
@@ -619,8 +620,57 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                       {searchResults.map((r,i)=>(
                         <div key={i} style={{ padding:'16px 16px 14px 16px', background: isDarkMode?'rgba(255,255,255,0.05)':'#fff', border: isDarkMode?'1px solid rgba(255,255,255,0.1)':'1px solid #e6eaf0', borderRadius:8, animation:'riseInNoFade 360ms cubic-bezier(0.16,1,0.3,1) both', animationDelay:`${i*40}ms` }}>
                           <Link to={r.url.includes('learn.netdata.cloud')? r.url.substring(r.url.indexOf('/docs/')) : r.url} style={{ color:ASKNET_SECOND, textDecoration:'none', fontWeight:600, fontSize:16 }}>{r.title}</Link>
-                          {r.section && <div style={{ fontSize:11, opacity:0.6, marginTop:4 }}>Section: {r.section}</div>}
-                          {r.snippet && <div style={{ fontSize:13, lineHeight:1.4, marginTop:8, opacity:0.85 }}>{r.snippet}</div>}
+                          {(() => {
+                            if(!r.snippet) return null;
+                            const cleanSnippet = (snippet) => {
+                              if(!snippet) return '';
+                              let s = snippet.replace(/\r/g,'').trimStart();
+                              // Strip YAML frontmatter block
+                              const fmMatch = s.match(/^---[\s\S]*?\n---\s*/);
+                              if(fmMatch) {
+                                s = s.slice(fmMatch[0].length);
+                              }
+                              // If metadata lines still at top (key: value)
+                              let lines = s.split('\n');
+                              let removedSomething = false;
+                              while(lines.length) {
+                                const L = lines[0].trim();
+                                if(!L) { lines.shift(); removedSomething = true; continue; }
+                                if(/^[A-Za-z0-9_\-]+:/.test(L) && !L.startsWith('#') && L.length < 300) {
+                                  lines.shift(); removedSomething = true; continue;
+                                }
+                                break;
+                              }
+                              if(removedSomething) s = lines.join('\n');
+                              // Remove lingering starting --- line(s)
+                              s = s.replace(/^---+\s*/,'');
+                              // Remove code fences entirely
+                              s = s.replace(/```[\s\S]*?```/g,' ');
+                              // Remove inline code markers
+                              s = s.replace(/`([^`]+)`/g,'$1');
+                              // Convert links [text](url) to text
+                              s = s.replace(/\[([^\]]+)\]\([^\)]+\)/g,'$1');
+                              // Strip HTML tags
+                              s = s.replace(/<[^>]+>/g,' ');
+                              // Remove headings markers
+                              s = s.replace(/^#+\s+/gm,'');
+                              // Emphasis markers
+                              s = s.replace(/\*{1,3}([^*_`]+)\*{1,3}/g,'$1').replace(/_{1,3}([^*_`]+)_{1,3}/g,'$1');
+                              // Bullet markers at line starts
+                              s = s.replace(/^\s*[-*+]\s+/gm,'');
+                              // Collapse whitespace & newlines
+                              s = s.replace(/\s+/g,' ').trim();
+                              return s;
+                            };
+                            const body = cleanSnippet(r.snippet);
+                            if(!body) return null;
+                            const truncated = body.length > 400 ? body.slice(0,400).trim() + '…' : body;
+                            return (
+                              <div style={{ fontSize:11, lineHeight:1.3, marginTop:8, opacity:0.8 }}>
+                                {truncated}
+                              </div>
+                            );
+                          })()}
                         </div>
                       ))}
                     </div>
