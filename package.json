@@ -26,7 +26,7 @@
 		"@tailwindcss/typography": "^0.4.0",
 		"@types/react": "^18.0.21",
 		"acorn": "^8.14.1",
-		"axios": "^1.8.2",
+		"axios": "^1.12.0",
 		"babel": "^6.23.0",
 		"clsx": "^1.1.1",
 		"dotenv": "^8.2.0",
