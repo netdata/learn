@@ -93,23 +93,6 @@ You can install the command by passing the argument `install` to the plugin (`/u
 
 ### Configuration
 
-#### File
-
-The configuration file name for this integration is `ioping.conf`.
-
-The file format is POSIX shell script. Generally, the structure is:
-
-```sh
-OPTION_1="some value"
-OPTION_2="some other value"
-```
-You can edit the configuration file using the [`edit-config`](/docs/netdata-agent/configuration#edit-a-configuration-file-using-edit-config) script from the
-Netdata [config directory](/docs/netdata-agent/configuration#the-netdata-config-directory).
-
-```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
-sudo ./edit-config ioping.conf
-```
 #### Options
 
 
@@ -126,9 +109,29 @@ sudo ./edit-config ioping.conf
 
 </details>
 
-#### Examples
 
-##### Basic Configuration
+
+#### via File
+
+The configuration file name for this integration is `ioping.conf`.
+
+The file format is POSIX shell script. Generally, the structure is:
+
+```sh
+OPTION_1="some value"
+OPTION_2="some other value"
+```
+You can edit the configuration file using the [`edit-config`](/docs/netdata-agent/configuration#edit-a-configuration-file-using-edit-config) script from the
+Netdata [config directory](/docs/netdata-agent/configuration#the-netdata-config-directory).
+
+```bash
+cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+sudo ./edit-config ioping.conf
+```
+
+##### Examples
+
+###### Basic Configuration
 
 This example has the minimum configuration necessary to have the plugin running.
 
