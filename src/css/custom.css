@@ -612,28 +612,6 @@ html[data-theme='dark']:root {
 	--ifm-code-background: #0A0A0A;
 	--ifm-pre-background: #0A0A0A;
 	--docusaurus-highlighted-code-line-bg: #1A1A1A;
-	
-	/* Alerts/Admonitions */
-	--ifm-alert-background-color: #0A0A0A;
-	--ifm-alert-border-color: #1A1A1A;
-}
-
-/* Dark theme: Make INFO admonitions gentle */
-html[data-theme='dark'] .alert--info {
-	--ifm-alert-background-color: #0f1419; /* Very subtle blue-grey */
-	--ifm-alert-border-color: #1e2936; /* Muted blue-grey border */
-	--ifm-alert-color: #c0c0c0; /* Match default page text color */
-}
-
-/* Force text color in INFO admonitions */
-html[data-theme='dark'] .alert--info,
-html[data-theme='dark'] .alert--info p,
-html[data-theme='dark'] .alert--info .admonitionContent_BuS1 {
-	color: #c0c0c0 !important;
-}
-
-html[data-theme='dark'] .alert--info .admonitionIcon_Rf37 svg {
-	fill: #4a6b8a; /* Muted blue icon */
 }
 
 /* Dark theme: Collapsed details - slightly brighter entire box */
@@ -648,42 +626,6 @@ html[data-theme='dark'] .details_lb9f.alert--info[data-collapsed="false"],
 html[data-theme='dark'] details.alert--info:not([data-collapsed="true"]) {
 	--ifm-alert-background-color: #0a0d10; /* Darker when expanded */
 	background-color: #0a0d10;
-}
-
-/* Dark theme: Make TIP admonitions gentle with green tint */
-html[data-theme='dark'] .alert--success {
-	--ifm-alert-background-color: #0f1912; /* Subtle green-black */
-	--ifm-alert-border-color: #1e3624; /* Muted green border */
-	--ifm-alert-color: #c0c0c0; /* Match default page text color */
-}
-
-/* Force text color in TIP admonitions */
-html[data-theme='dark'] .alert--success,
-html[data-theme='dark'] .alert--success p,
-html[data-theme='dark'] .alert--success .admonitionContent_BuS1 {
-	color: #c0c0c0 !important;
-}
-
-html[data-theme='dark'] .alert--success .admonitionIcon_Rf37 svg {
-	fill: #5a8a6a; /* More visible green icon */
-}
-
-/* Dark theme: Make WARNING admonitions gentle with orange tint */
-html[data-theme='dark'] .alert--warning {
-	--ifm-alert-background-color: #1d1611; /* Even more orange-black */
-	--ifm-alert-border-color: #4a3020; /* Strong orange border */
-	--ifm-alert-color: #c0c0c0; /* Match default page text color */
-}
-
-/* Force text color in WARNING admonitions */
-html[data-theme='dark'] .alert--warning,
-html[data-theme='dark'] .alert--warning p,
-html[data-theme='dark'] .alert--warning .admonitionContent_BuS1 {
-	color: #c0c0c0 !important;
-}
-
-html[data-theme='dark'] .alert--warning .admonitionIcon_Rf37 svg {
-	fill: #b08060; /* Strong orange icon */
 }
 
 /*
