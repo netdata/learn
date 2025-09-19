@@ -172,6 +172,8 @@ export const TITLE_FONT_SIZE = '1.7rem'; // Font size for AI/Search titles
 export const TITLE_FONT_WEIGHT = 'bold'; // Font weight for AI/Search titles (normal, bold, 600, 700, etc.)
 export const TITLE_GAP = '2rem'; // Gap between AI and Search titles
 export const TOGGLE_SIZE_MULTIPLIER = 1; // Align with widget exact sizing
+// How far the knob sits from track edges (increase to move the circle inward)
+export const TOGGLE_KNOB_INSET_PX = 6;
 
 export const TOGGLE_COLORS = {
   off: { primary: ASKNET_PRIMARY, secondary: ASKNET_SECOND },
@@ -702,11 +704,22 @@ export default function AskNetdata() {
     return () => {};
   }, []);
 
+  // Derived early flags for keyboard logic
+  const hasSearchPanelActiveEarly = toggleOn && (isSearching || searchResults.length > 0 || (searchQuery && !isSearching));
+  const hasResultsOrAnswers = hasSearchPanelActiveEarly || (messages && messages.length > 0);
+
   // Global keyboard shortcuts: Ctrl+/ toggles mode, Ctrl+K focuses input (no auto-focus on load)
   useEffect(() => {
     const onGlobalKey = (e) => {
+      // When results panel is active or we have answers, lock mode switching
+      const modeLocked = hasResultsOrAnswers;
       if ((e.ctrlKey || e.metaKey) && e.key === '/') {
         e.preventDefault();
+        if (modeLocked) {
+          // Ignore toggle shortcut while locked; keep focus on input for convenience
+          try { (textareaRef.current || inputRef.current)?.focus(); } catch (_) {}
+          return;
+        }
         setToggleOn(v => !v);
         return; // Do not auto focus; user can press Ctrl+K next
       }
@@ -715,16 +728,29 @@ export default function AskNetdata() {
         (textareaRef.current || inputRef.current)?.focus();
         return;
       }
-      if (e.key === 'Escape' && toggleOn && (isSearching || searchResults.length > 0 || searchQuery)) {
-        e.preventDefault();
-        setSearchResults([]);
-        setSearchQuery('');
-        setIsSearching(false);
+      // Escape behavior:
+      // - If search results are open, clear the panel (back to main page) without changing mode.
+      // - Otherwise (answers), just focus the textbox.
+      if (e.key === 'Escape') {
+        if (hasSearchPanelActiveEarly) {
+          e.preventDefault();
+          setSearchResults([]);
+          setSearchQuery('');
+          setIsSearching(false);
+          setInput('');
+          try { (textareaRef.current || inputRef.current)?.focus(); } catch (_) {}
+          return;
+        }
+        if (messages && messages.length > 0) {
+          e.preventDefault();
+          try { (textareaRef.current || inputRef.current)?.focus(); } catch (_) {}
+          return;
+        }
       }
     };
     window.addEventListener('keydown', onGlobalKey);
     return () => window.removeEventListener('keydown', onGlobalKey);
-  }, [toggleOn, isSearching, searchResults.length, searchQuery]);
+  }, [toggleOn, isSearching, searchResults.length, searchQuery, hasResultsOrAnswers, hasSearchPanelActiveEarly, messages]);
 
   // Removed initial auto-focus to align with widget behavior; user triggers focus via Ctrl+K
 
@@ -2135,7 +2161,9 @@ export default function AskNetdata() {
     background: isDarkMode ? '#0b1220' : '#fff',
     position: 'absolute',
     top: '50%',
-    left: on ? `calc(100% - ${30 * TOGGLE_SIZE_MULTIPLIER + 4}px)` : '4px',
+    left: on
+      ? `calc(100% - ${30 * TOGGLE_SIZE_MULTIPLIER + TOGGLE_KNOB_INSET_PX}px)`
+      : `${TOGGLE_KNOB_INSET_PX}px`,
     transform: 'translateY(-50%)',
     transition: 'left 220ms cubic-bezier(.2,.9,.2,1), box-shadow 180ms ease',
     boxShadow: '0 6px 12px rgba(11,18,32,0.12)'
@@ -2239,10 +2267,10 @@ export default function AskNetdata() {
   };
 
   // Reserve horizontal space inside the absolute-positioned textarea area for the toggle + send button
-  const TOGGLE_TRACK_WIDTH = 96 * TOGGLE_SIZE_MULTIPLIER; // keep in sync with toggleTrackStyle
+  const TOGGLE_TRACK_WIDTH = 110 * TOGGLE_SIZE_MULTIPLIER; // keep in sync with toggleTrackStyle width
   const SEND_BUTTON_RESERVE = 50; // existing reserved space for send button
   const EXTRA_GAP_RESERVE = 24; // breathing room between text and toggle
-  const RIGHT_RESERVE_TOTAL = TOGGLE_TRACK_WIDTH + SEND_BUTTON_RESERVE + EXTRA_GAP_RESERVE; // total px to reserve on the right of the input content
+  const RIGHT_RESERVE_TOTAL = TOGGLE_TRACK_WIDTH + SEND_BUTTON_RESERVE + EXTRA_GAP_RESERVE; // default reserve when toggle is visible
 
   const chatInputStyle = {
     position: 'absolute',
@@ -2350,11 +2378,31 @@ export default function AskNetdata() {
   }, [messages]);
 
   // Shared renderer for the input form so floating and docked views are identical
-  const renderInputForm = ({ attachRef = false, placeholderOverride = null } = {}) => {
+  const renderInputForm = ({ attachRef = false, placeholderOverride = null, showToggle = true } = {}) => {
   const placeholderText = placeholderOverride !== null ? placeholderOverride : (toggleOn ? 'Enter search term' : (currentPlaceholder || "Ask anything about Netdata, in any language... (Shift+Enter for new line)"));
     const placeholderStyle = placeholderOverride !== null
       ? { ...animatedPlaceholderStyle, color: isDarkMode ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)' }
-      : animatedPlaceholderStyle;
+      : { ...animatedPlaceholderStyle, right: `${(showToggle ? TOGGLE_TRACK_WIDTH : 0) + SEND_BUTTON_RESERVE + EXTRA_GAP_RESERVE}px` };
+
+    // When toggle is hidden, reduce the reserved right space for the textarea/placeholder
+    const rightReservePx = (showToggle ? TOGGLE_TRACK_WIDTH : 0) + SEND_BUTTON_RESERVE + EXTRA_GAP_RESERVE;
+    const localChatInputStyle = { ...chatInputStyle, right: `${rightReservePx}px` };
+
+    // Wrapper styles to animate toggle hide/show smoothly
+    const toggleWrapperAnimatedStyle = {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: showToggle ? `${TOGGLE_TRACK_WIDTH}px` : '0px',
+      minWidth: showToggle ? `${TOGGLE_TRACK_WIDTH}px` : '0px',
+      height: `${40 * TOGGLE_SIZE_MULTIPLIER}px`,
+      marginRight: '0px',
+      overflow: 'visible', // avoid clipping rounded corners
+      opacity: showToggle ? 1 : 0,
+      transform: showToggle ? 'translateY(0)' : 'translateY(4px)',
+      transition: 'width 260ms ease, opacity 180ms ease, transform 220ms ease',
+      pointerEvents: showToggle ? 'auto' : 'none'
+    };
 
     return (
       <div style={computedInputContainerStyle}>
@@ -2376,25 +2424,29 @@ export default function AskNetdata() {
               onBlur={() => setIsInputFocused(false)}
               onWheel={handleTextareaWheel}
               placeholder=""
-              style={{ ...chatInputStyle, caretColor: isSendHovered ? 'transparent' : undefined }}
+              style={{ ...localChatInputStyle, caretColor: isSendHovered ? 'transparent' : undefined }}
               rows={1}
               disabled={isLoading}
             />
           </div>
           {/* Toggle now positioned immediately before send button on right edge */}
-          <div
-            role="switch"
-            aria-checked={toggleOn}
-            tabIndex={0}
-            onClick={() => { setToggleOn(v=>!v); setTimeout(()=> (textareaRef.current||inputRef.current)?.focus(),0); }}
-            onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' ') { e.preventDefault(); setToggleOn(v=>!v); } }}
-            style={{ ...toggleTrackStyle(toggleOn), flexShrink:0 }}
-            title="Toggle search / chat"
-          >
-            <div style={toggleHintStyle(toggleOn)}><span style={{
-              fontSize:11,fontWeight:600,letterSpacing:'.5px',padding:'3px 7px',borderRadius:6,background:'rgba(255,255,255,0.25)',color:'#fff',lineHeight:1, userSelect:'none'
-            }}>{SHORTCUT_LABEL}</span></div>
-            <div style={toggleKnobStyle(toggleOn)} />
+          <div style={toggleWrapperAnimatedStyle} aria-hidden={!showToggle}>
+            {showToggle && (
+              <div
+                role="switch"
+                aria-checked={toggleOn}
+                tabIndex={0}
+                onClick={() => { setToggleOn(v=>!v); setTimeout(()=> (textareaRef.current||inputRef.current)?.focus(),0); }}
+                onKeyDown={(e)=>{ if(e.key==='Enter'||e.key===' ') { e.preventDefault(); setToggleOn(v=>!v); } }}
+                style={{ ...toggleTrackStyle(toggleOn), flexShrink:0 }}
+                title="Toggle search / chat"
+              >
+                <div style={toggleHintStyle(toggleOn)}><span style={{
+                  fontSize:11,fontWeight:600,letterSpacing:'.5px',padding:'3px 7px',borderRadius:6,background:'rgba(255,255,255,0.25)',color:'#fff',lineHeight:1, userSelect:'none'
+                }}>{SHORTCUT_LABEL}</span></div>
+                <div style={toggleKnobStyle(toggleOn)} />
+              </div>
+            )}
           </div>
           <button
             type="button"
@@ -2506,7 +2558,7 @@ export default function AskNetdata() {
                 )}
               </div>
 
-              {renderInputForm({ attachRef: true })}
+              {renderInputForm({ attachRef: true, showToggle: !hasSearchPanelActive })}
               
               {/* Search results display */}
               {toggleOn && (searchResults.length > 0 || isSearching || (searchQuery && !isSearching)) && (
@@ -2667,13 +2719,40 @@ export default function AskNetdata() {
                   ) : (
                     <div style={{
                       display: 'flex',
+                      flexDirection: 'column',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      padding: '2rem',
-                      color: 'rgba(255, 255, 255, 0.7)',
-                      fontSize: '1rem'
+                      gap: '10px',
+                      padding: '1.6rem',
+                      color: isDarkMode ? 'rgba(255,255,255,0.8)' : 'rgba(2,6,23,0.8)',
+                      textAlign: 'center'
                     }}>
-                      No results found for "{searchQuery}"
+                      <div style={{ fontSize: '1rem', fontWeight: 600 }}>
+                        No results for "{searchQuery}"
+                      </div>
+                      <div style={{ fontSize: '0.9rem', opacity: 0.8 }}>
+                        Try different keywords or check your spelling. Press Esc to clear.
+                      </div>
+                      <div style={{ marginTop: '4px' }}>
+                        <button
+                          type="button"
+                          onClick={() => { setSearchResults([]); setSearchQuery(''); setIsSearching(false); setInput(''); try { (textareaRef.current || inputRef.current)?.focus(); } catch (_) {} }}
+                          style={{
+                            background: 'transparent',
+                            border: isDarkMode ? '1px solid rgba(255,255,255,0.2)' : '1px solid #e5e7eb',
+                            color: isDarkMode ? 'rgba(255,255,255,0.9)' : '#111827',
+                            padding: '6px 12px',
+                            borderRadius: '8px',
+                            cursor: 'pointer',
+                            fontSize: '0.9rem',
+                            transition: 'background 0.2s ease'
+                          }}
+                          onMouseEnter={(e) => { e.currentTarget.style.background = isDarkMode ? 'rgba(255,255,255,0.06)' : '#f9fafb'; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; }}
+                        >
+                          Clear
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -3000,14 +3079,14 @@ export default function AskNetdata() {
             {/* Portal: animated clone of the floating input while transitioning */}
             {isAnimatingDock && portalStyles && (
               <div ref={inputPortalRef} style={portalStyles} aria-hidden>
-                {renderInputForm({ attachRef: false, placeholderOverride: 'Reply / Ask something else' })}
+                {renderInputForm({ attachRef: false, placeholderOverride: 'Reply / Ask something else', showToggle: false })}
               </div>
             )}
 
             {/* When docked, show the real input inside the messages area */}
             {!isAnimatingDock && isDocked && (
               <div style={{ marginTop: '12px', padding: '8px 20px', width: '100%', maxWidth: dockSize ? `${dockSize.width}px` : '800px', marginLeft: 'auto', marginRight: 'auto', height: dockSize ? `${dockSize.height}px` : undefined }}>
-                {renderInputForm({ attachRef: true, placeholderOverride: 'Reply / Ask something else' })}
+                {renderInputForm({ attachRef: true, placeholderOverride: 'Reply / Ask something else', showToggle: false })}
               </div>
             )}
             {isLoading && (
