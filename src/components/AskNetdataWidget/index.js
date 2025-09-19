@@ -48,6 +48,8 @@ const OVERLAY_GAP_PX = 16; // vertical gap between the pill and the overlay pane
 const PANEL_OUTLINE_WIDTH = 4; // px
 const PANEL_OUTLINE_OPACITY = 0.28; // 0..1
 // Adaptive corner radius for the overlay panel: reduce roundness as content grows
+// Feature flags
+const SHOW_SEARCH_RELEVANCE_SCORE = false; // Set to false to hide relevance scores in search results
 const PANEL_BASE_RADIUS = 24; // small content
 const PANEL_MIN_RADIUS = 12;  // very tall content
 // Adaptive corner radius for the input pill when it grows tall due to multi-line input
@@ -323,11 +325,20 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     try {
       // Prepare abort controller for this streaming request
       chatAbortRef.current = new AbortController();
-      const response = await fetch(`${API_BASE}/chat/stream`, {
+      let response = await fetch(`${API_BASE}/chat/docs/stream`, {
         method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({
           messages:[ ...(() => { const max = MAX_CONVERSATION_PAIRS*2; return messages.slice(-max).map(m => ({ role: m.type==='user'?'user':'assistant', content:m.content })); })(), { role:'user', content:message } ]
         }), signal: chatAbortRef.current.signal
       });
+      if (!response.ok) {
+        try {
+          response = await fetch(`${API_BASE}/chat/docs/stream`, {
+            method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({
+              messages:[ ...(() => { const max = MAX_CONVERSATION_PAIRS*2; return messages.slice(-max).map(m => ({ role: m.type==='user'?'user':'assistant', content:m.content })); })(), { role:'user', content:message } ]
+            }), signal: chatAbortRef.current.signal
+          });
+        } catch (e) {}
+      }
       if (!response.ok) throw new Error();
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
@@ -619,7 +630,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                     <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
                       {searchResults.map((r,i)=>(
                         <div key={i} style={{ padding:'16px 16px 14px 16px', background: isDarkMode?'rgba(255,255,255,0.05)':'#fff', border: isDarkMode?'1px solid rgba(255,255,255,0.1)':'1px solid #e6eaf0', borderRadius:8, animation:'riseInNoFade 360ms cubic-bezier(0.16,1,0.3,1) both', animationDelay:`${i*40}ms` }}>
-                          <Link to={r.url.includes('learn.netdata.cloud')? r.url.substring(r.url.indexOf('/docs/')) : r.url} style={{ color:ASKNET_SECOND, textDecoration:'none', fontWeight:600, fontSize:16 }}>{r.title}</Link>
+                          <Link to={r.url.includes('learn.netdata.cloud')? r.url.substring(r.url.indexOf('/docs/')) : r.url} onClick={closeOverlay} style={{ color:ASKNET_SECOND, textDecoration:'none', fontWeight:600, fontSize:16 }}>{r.title}</Link>
                           {(() => {
                             if(!r.snippet) return null;
                             const cleanSnippet = (snippet) => {
@@ -671,6 +682,51 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                               </div>
                             );
                           })()}
+                          {/* Breadcrumb for learn_rel_path */}
+                          {r.learn_rel_path && (
+                            <div style={{
+                              marginTop: 6,
+                              fontSize: 10,
+                              fontWeight: 600,
+                              letterSpacing: '.5px',
+                              opacity: 0.6,
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: 4,
+                              flexWrap: 'wrap'
+                            }}>
+                              {r.learn_rel_path.split('/').filter(Boolean).map((part, idx, arr) => (
+                                <span key={idx} style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                                  <span style={{
+                                    padding: '2px 6px',
+                                    borderRadius: 4,
+                                    background: isDarkMode ? 'rgba(164, 164, 164, 0.25)' : 'rgba(0,0,0,0.08)',
+                                    color: isDarkMode ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.65)',
+                                    lineHeight: 1,
+                                    userSelect: 'none'
+                                  }}>
+                                    {part.trim()}
+                                  </span>
+                                  {idx < arr.length - 1 && (
+                                    <span style={{ opacity: 0.4, fontSize: 8 }}>/</span>
+                                  )}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                          {/* Relevance Score */}
+                          {SHOW_SEARCH_RELEVANCE_SCORE && r.score && (
+                            <div style={{
+                              marginTop: 6,
+                              fontSize: 10,
+                              fontWeight: 600,
+                              letterSpacing: '.5px',
+                              opacity: 0.5,
+                              color: isDarkMode ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.55)'
+                            }}>
+                              Relevance: {Math.round(r.score * 100)}%
+                            </div>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -698,20 +754,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                 ) : (
                   <div style={{ whiteSpace:'pre-wrap' }}>{m.content}</div>
                 )}
-                {m.citations && m.citations.length>0 && (
-                  <div style={{ marginTop:12, paddingTop:12, borderTop: isDarkMode?'1px solid rgba(255,255,255,0.1)':'1px solid #e5e7eb' }}>
-                    <div style={{ fontSize:11, textTransform:'uppercase', opacity:0.55, marginBottom:6 }}>Learn more:</div>
-                    {m.citations.map((c,i)=>{
-                      const isInternal = c.url && (c.url.includes('learn.netdata.cloud/docs/') || c.url.startsWith('/docs/'));
-                      let internal = c.url;
-                      if (isInternal && c.url.includes('learn.netdata.cloud')) internal = c.url.substring(c.url.indexOf('/docs/'));
-                      const Tag = isInternal ? Link : 'a';
-                      return (
-                        <Tag key={i} to={isInternal?internal:undefined} href={!isInternal?c.url:undefined} target={!isInternal?'_blank':undefined} rel={!isInternal?'noopener noreferrer':undefined} style={{ display:'inline-block', marginRight:16, marginBottom:8, fontSize:12, color: ASKNET_SECOND, textDecoration:'none', borderBottom:`1px dotted ${ASKNET_SECOND}` }}>{i+1}. {c.title}</Tag>
-                      );
-                    })}
-                  </div>
-                )}
+                {/* Citations removed: hide 'Learn more' footer block in widget per UX request */}
                 {m.type==='assistant' && (
                   <div style={{ display:'flex', gap:8, marginTop:8, flexWrap:'wrap' }}>
                     <button type="button" onClick={()=>copyAnswer(m)} style={{ fontSize:11, padding:'4px 8px', borderRadius:6, border:'1px solid rgba(0,0,0,0.15)', background:'transparent', cursor:'pointer' }}>{copiedState[m.id]?'Copied!':'Copy'}</button>

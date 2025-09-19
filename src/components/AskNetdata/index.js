@@ -178,6 +178,9 @@ export const TOGGLE_COLORS = {
   on:  { primary: ASKNET_PRIMARY, secondary: ASKNET_SECOND }
 };
 
+// Feature flags
+export const SHOW_SEARCH_RELEVANCE_SCORE = false; // Set to false to hide relevance scores in search results
+
 // Exposed header titles
 export const HEADER_TITLES = {
   left: 'Ask Netdata',
@@ -1752,7 +1755,7 @@ export default function AskNetdata() {
     window.addEventListener('touchmove', handleUserScroll);
 
     try {
-      const response = await fetch(`${apiUrl}/chat/stream`, {
+      let response = await fetch(`${apiUrl}/chat/docs/stream`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -1777,6 +1780,28 @@ export default function AskNetdata() {
           ]
         })
       });
+
+      // Fallback to agent-specific stream if the generic one isn't available
+      if (!response.ok) {
+        try {
+          response = await fetch(`${apiUrl}/chat/docs/stream`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              messages: [
+                ...(() => {
+                  const maxMessages = MAX_CONVERSATION_PAIRS * 2;
+                  const recentMessages = messages.slice(-maxMessages);
+                  return recentMessages.map(m => ({ role: m.type === 'user' ? 'user' : 'assistant', content: m.content }));
+                })(),
+                { role: 'user', content: message }
+              ]
+            })
+          });
+        } catch (err) {
+          // ignore, handled by !ok below
+        }
+      }
 
       if (!response.ok) throw new Error('Failed to get response');
       const reader = response.body.getReader();
@@ -2594,7 +2619,39 @@ export default function AskNetdata() {
                                 }}>{truncated}</p>
                               );
                             })()}
-                            {result.score && (
+                            {/* Breadcrumb for learn_rel_path */}
+                            {result.learn_rel_path && (
+                              <div style={{
+                                marginTop: '0.5rem',
+                                fontSize: '0.65rem',
+                                fontWeight: 600,
+                                letterSpacing: '.5px',
+                                opacity: 0.6,
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.25rem',
+                                flexWrap: 'wrap'
+                              }}>
+                                {result.learn_rel_path.split('/').filter(Boolean).map((part, idx, arr) => (
+                                  <span key={idx} style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                                    <span style={{
+                                      padding: '2px 6px',
+                                      borderRadius: 4,
+                                      background: isDarkMode ? 'rgba(164, 164, 164, 0.25)' : 'rgba(0,0,0,0.08)',
+                                      color: isDarkMode ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.65)',
+                                      lineHeight: 1,
+                                      userSelect: 'none'
+                                    }}>
+                                      {part.trim()}
+                                    </span>
+                                    {idx < arr.length - 1 && (
+                                      <span style={{ opacity: 0.4, fontSize: '0.5rem' }}>/</span>
+                                    )}
+                                  </span>
+                                ))}
+                              </div>
+                            )}
+                            {SHOW_SEARCH_RELEVANCE_SCORE && result.score && (
                               <div style={{
                                 fontSize: '0.7rem',
                                 color: isDarkMode ? 'rgba(255, 255, 255, 0.4)' : 'rgba(2,6,23,0.45)',
@@ -2790,134 +2847,7 @@ export default function AskNetdata() {
                         {message.errorInfo}
                       </div>
                     )}
-                    {message.citations && message.citations.length > 0 && (
-                      <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: isDarkMode ? '1px solid var(--ifm-color-emphasis-300)' : '1px solid #e5e7eb' }}>
-                        <div style={{ fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px', color: isDarkMode ? 'var(--ifm-color-secondary)' : '#6b7280', marginBottom: '8px', fontWeight: '600' }}>
-                          Learn more:
-                        </div>
-                        {message.citations.map((citation, idx) => {
-                          const isInternalLink = citation.url && (
-                            citation.url.startsWith('https://learn.netdata.cloud/docs/') ||
-                            citation.url.startsWith('http://learn.netdata.cloud/docs/') ||
-                            citation.url.startsWith('/docs/')
-                          );
-                          
-                          if (isInternalLink) {
-                            let internalPath = citation.url;
-                            if (citation.url.includes('learn.netdata.cloud/docs/')) {
-                              internalPath = citation.url.substring(citation.url.indexOf('/docs/'));
-                            }
-                            
-                            return (
-                              <Link
-                                key={idx}
-                                to={internalPath}
-                                style={{
-                                  display: 'inline-block',
-                                  marginRight: '16px',
-                                  marginBottom: '8px',
-                                  color: baseRightColor,
-                                  textDecoration: 'none',
-                                  fontSize: '14px',
-                                  borderBottom: `1px dotted ${baseRightColor}`,
-                                  transition: 'all 0.2s ease'
-                                }}
-                                onMouseEnter={(e) => {
-                                  e.currentTarget.style.color = baseLeftColor;
-                                  e.currentTarget.style.borderBottomColor = baseLeftColor;
-                                  e.currentTarget.style.textDecoration = 'none';
-                                }}
-                                onMouseLeave={(e) => {
-                                  e.currentTarget.style.color = baseRightColor;
-                                  e.currentTarget.style.borderBottomColor = baseRightColor;
-                                  e.currentTarget.style.textDecoration = 'none';
-                                }}
-                              >
-                                <span style={{
-                                  display: 'inline-flex',
-                                  alignItems: 'center',
-                                  gap: '4px'
-                                }}>
-                                  <span style={{
-                                    fontSize: '12px',
-                                    fontWeight: '600',
-                                    color: '#6b7280',
-                                    backgroundColor: 'rgba(0,0,0,0.03)',
-                                    borderRadius: '4px',
-                                    padding: '1px 4px',
-                                    minWidth: '20px',
-                                    textAlign: 'center'
-                                  }}>
-                                    {idx + 1}
-                                  </span>
-                                  <span>{citation.title}</span>
-                                  <span style={{ 
-                                    fontSize: '10px', 
-                                    opacity: '0.7',
-                                    marginLeft: '2px'
-                                  }}>→</span>
-                                </span>
-                              </Link>
-                            );
-                          }
-                          
-                          // External links still open in new tab
-                          return (
-                            <a
-                              key={idx}
-                              href={citation.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              style={{
-                                display: 'inline-block',
-                                marginRight: '16px',
-                                marginBottom: '8px',
-                                color: baseRightColor,
-                                textDecoration: 'none',
-                                fontSize: '14px',
-                                borderBottom: `1px dotted ${baseRightColor}`,
-                                transition: 'all 0.2s ease'
-                              }}
-                              onMouseEnter={(e) => {
-                                e.target.style.color = baseLeftColor;
-                                e.target.style.borderBottomColor = baseLeftColor;
-                                e.target.style.textDecoration = 'none';
-                              }}
-                              onMouseLeave={(e) => {
-                                e.target.style.color = baseRightColor;
-                                e.target.style.borderBottomColor = baseRightColor;
-                                e.target.style.textDecoration = 'none';
-                              }}
-                            >
-                            <span style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '4px'
-                            }}>
-                              <span style={{
-                                fontSize: '12px',
-                                fontWeight: '600',
-                                color: isDarkMode ? 'var(--ifm-color-secondary)' : '#6b7280',
-                                backgroundColor: isDarkMode ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)',
-                                borderRadius: '4px',
-                                padding: '1px 4px',
-                                minWidth: '20px',
-                                textAlign: 'center'
-                              }}>
-                                {idx + 1}
-                              </span>
-                              <span>{citation.title}</span>
-                              <span style={{ 
-                                fontSize: '10px', 
-                                opacity: '0.7',
-                                marginLeft: '2px'
-                              }}>→</span>
-                            </span>
-                          </a>
-                          );
-                        })}
-                      </div>
-                    )}
+                    {/* Citations removed: hide 'Learn more' footer block per UX request */}
                     {/* Feedback actions: copy, thumbs up, thumbs down (use same SVGs as widget) */}
                     {message.type === 'assistant' && (
                       <div style={{ marginTop: '12px' }}>
