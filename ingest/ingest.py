@@ -1145,23 +1145,14 @@ if __name__ == '__main__':
                         clean_sidebar = clean_and_lower_string(md_metadata['sidebar_label'])
                         rel_path = clean_and_lower_string(md_metadata['learn_rel_path'])
                         if rel_path != clean_sidebar:
+                            # Compose the canonical link and remove only a single duplicated final segment if present.
                             link = "https://learn.netdata.cloud/docs/" + rel_path + "/" + clean_sidebar
-                            # Fix duplicate last segment if present
                             link_parts = link.rstrip('/').split('/')
                             if len(link_parts) >= 2 and link_parts[-1] == link_parts[-2]:
                                 link = '/'.join(link_parts[:-1])
                             md_metadata.update({"learn_link": link})
-                            if clean_sidebar in md_metadata['learn_rel_path']:
-                                link2 = "https://learn.netdata.cloud/docs/" + clean_and_lower_string(
-                                    md_metadata['learn_rel_path'].replace(clean_sidebar, "", 1).rstrip("/"))
-                                # Fix duplicate last segment if present
-                                link2_parts = link2.rstrip('/').split('/')
-                                if len(link2_parts) >= 2 and link2_parts[-1] == link2_parts[-2]:
-                                    link2 = '/'.join(link2_parts[:-1])
-                                md_metadata.update({"learn_link": link2})
                         else:
                             link = "https://learn.netdata.cloud/docs/" + rel_path
-                            # Fix duplicate last segment if present
                             link_parts = link.rstrip('/').split('/')
                             if len(link_parts) >= 2 and link_parts[-1] == link_parts[-2]:
                                 link = '/'.join(link_parts[:-1])
