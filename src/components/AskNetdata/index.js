@@ -218,41 +218,37 @@ const apiUrl = API_BASE;
 
 // Smart link component that handles internal vs external links
 const SmartLink = ({ href, children, ...props }) => {
-  const history = useHistory();
-  
-  // Check if this is an internal documentation link
-  const isInternalLink = href && (
-    href.startsWith('https://learn.netdata.cloud/docs/') ||
-    href.startsWith('http://learn.netdata.cloud/docs/') ||
-    href.startsWith('/docs/')
+  if (!href) return <a {...props}>{children}</a>;
+  // Treat any learn.netdata.cloud URL or /docs/ path as internal
+  const isInternalLink = (
+    href.startsWith('/docs/') ||
+    href.startsWith('https://learn.netdata.cloud') ||
+    href.startsWith('http://learn.netdata.cloud')
   );
-  
+
   if (isInternalLink) {
-    // Convert full URL to relative path for Docusaurus
+    // Normalize to a relative path, preserving query and hash
     let internalPath = href;
-    if (href.includes('learn.netdata.cloud/docs/')) {
-      internalPath = href.substring(href.indexOf('/docs/'));
-    }
-    
-    // Handle click to use Docusaurus router
-    const handleClick = (e) => {
-      e.preventDefault();
-      history.push(internalPath);
-    };
-    
+    try {
+      if (href.startsWith('http')) {
+        const u = new URL(href);
+        if (u.hostname.endsWith('learn.netdata.cloud')) {
+          internalPath = `${u.pathname}${u.search}${u.hash}` || '/';
+        }
+      }
+    } catch {}
     return (
-      <Link to={internalPath} onClick={handleClick} {...props}>
+      <Link to={internalPath} {...props}>
         {children}
       </Link>
     );
-  } else {
-    // External links open in a new tab
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
-        {children}
-      </a>
-    );
   }
+  // External links open in a new tab
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+      {children}
+    </a>
+  );
 };
 
   // Custom paragraph component that prevents wrapping code blocks
@@ -1063,6 +1059,7 @@ export default function AskNetdata() {
 
   // Keep track of original overflow styles so we can restore them
   const originalOverflow = useRef({ html: '', body: '' });
+  const hiddenElementsRef = useRef(new Map()); // Map<Element, {display:string}>
 
   // Disable page scroll only while the welcome view is visible.
   // Avoid locking the page while an answer is streaming (isLoading) because
@@ -1128,52 +1125,14 @@ export default function AskNetdata() {
         setTimeout(() => {
           window.scrollTo({
             top: parseInt(savedPosition),
-            behavior: 'instant'
+            left: 0,
+            behavior: 'auto'
           });
           hasRestoredScroll.current = true;
         }, 100);
       }
     }
   }, [messages.length]); // Only run when messages are loaded
-
-  // Set up scroll listener with debouncing
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const handleScroll = () => {
-      // Clear existing timer
-      if (scrollSaveTimer.current) {
-        clearTimeout(scrollSaveTimer.current);
-      }
-      // Save scroll position after 500ms of no scrolling
-      scrollSaveTimer.current = setTimeout(saveScrollPosition, 500);
-    };
-
-    // Save scroll position on page unload
-    const handleBeforeUnload = () => {
-      saveScrollPosition();
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-      if (scrollSaveTimer.current) {
-        clearTimeout(scrollSaveTimer.current);
-      }
-    };
-  }, []);
-
-  // Session-only history - no localStorage persistence
-
-  // Remove old auto-scroll mechanism - we'll handle scrolling explicitly
-  // useEffect(() => {
-  //   messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  // }, [messages]);
-
-  // Removed delayed mount auto-focus
 
   // Auto-resize textarea based on content
   const adjustTextareaHeight = () => {
@@ -1231,113 +1190,93 @@ export default function AskNetdata() {
     adjustTextareaHeight();
   }, [input]);
 
-  // Hide footer and other documentation elements
+  // Hide non-content chrome (footer, breadcrumbs, edit links) while AskNetdata is visible,
+  // and restore them on unmount to avoid blank pages after navigation.
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const hideElements = () => {
-        // Target specific footer and documentation elements
-        const footer = document.querySelector('footer');
-        const editPage = document.querySelector('[class*="editThisPage"]');
-        const pagination = document.querySelector('[class*="pagination"]');
-        const lastUpdated = document.querySelector('[class*="lastUpdated"]');
-        const breadcrumbs = document.querySelector('nav[class*="breadcrumbs"]');
-        const tocMobile = document.querySelector('[class*="tocMobile"]');
-        
-        // Find all elements containing the specific feedback/copyright text
-        const allElements = document.querySelectorAll('*');
-        const elementsToHide = [];
-        
-        allElements.forEach(el => {
-          if (el.textContent) {
-            const text = el.textContent.trim();
-            // Look for exact matches or very specific patterns
-            if (
-              text.includes('Do you have any feedback for this page?') ||
-              text.includes('Copyright © 2025 Netdata, Inc.') ||
-              (text.includes('open a new issue') && text.includes('netdata/learn')) ||
-              text === 'Copyright © 2025 Netdata, Inc.'
-            ) {
-              // Make sure we're not hiding our own component
-              const isInAskNetdata = el.closest('[style*="containerStyle"]') || 
-                                   el.closest('[class*="askNetdata"]') ||
-                                   el.textContent.includes('Ask Netdata Docs');
-              
-              if (!isInAskNetdata) {
-                elementsToHide.push(el);
-                // Also hide parent elements that might contain only this text
-                let parent = el.parentElement;
-                while (parent && parent !== document.body) {
-                  const parentText = parent.textContent.trim();
-                  if (parentText === text || parentText.length < text.length + 50) {
-                    elementsToHide.push(parent);
-                  }
-                  parent = parent.parentElement;
-                }
-              }
-            }
-          }
-        });
-        
-        // Combine all elements to hide
-        const allElementsToHide = [
-          footer, 
-          editPage, 
-          pagination, 
-          lastUpdated, 
-          breadcrumbs, 
-          tocMobile,
-          ...elementsToHide
-        ].filter(Boolean);
-        
-        // Remove duplicates
-        const uniqueElementsToHide = [...new Set(allElementsToHide)];
-        
-        // Hide elements permanently
-        uniqueElementsToHide.forEach(el => {
-          if (el && el.style.display !== 'none') {
-            el.style.display = 'none';
-            el.style.visibility = 'hidden';
-            el.style.opacity = '0';
-            el.style.height = '0';
-            el.style.maxHeight = '0';
-            el.style.overflow = 'hidden';
-            el.style.margin = '0';
-            el.style.padding = '0';
-            el.setAttribute('data-hidden-by-asknetdata', 'true');
-          }
-        });
-      };
+    if (typeof window === 'undefined') return;
 
-      // Run multiple times to catch all elements
-      hideElements();
-      const timeoutId1 = setTimeout(hideElements, 100);
-      const timeoutId2 = setTimeout(hideElements, 500);
-      const timeoutId3 = setTimeout(hideElements, 1000);
-      
-      // Set up a MutationObserver to watch for new elements being added
-      const observer = new MutationObserver(() => {
-        hideElements();
+    const rememberAndHide = (el) => {
+      if (!el) return;
+      if (!hiddenElementsRef.current.has(el)) {
+        hiddenElementsRef.current.set(el, { display: el.style.display || '' });
+      }
+      el.style.display = 'none';
+    };
+
+    const isAskRoute = () => {
+      try {
+        const p = window.location.pathname || '';
+        // Support variants like /docs/ask-netdata and /ask-netdata
+        return (/\/ask-netdata(\/.+)?$/).test(p) || p === '/docs/ask-netdata' || p.endsWith('/ask-netdata');
+      } catch (_) {
+        return false;
+      }
+    };
+
+    const hideChrome = () => {
+      // If we're not on the Ask page anymore, restore anything we hid and skip.
+      if (!isAskRoute()) {
+        hiddenElementsRef.current.forEach((prev, el) => {
+          try { if (el) el.style.display = prev.display; } catch (_) {}
+        });
+        hiddenElementsRef.current.clear();
+        return;
+      }
+      const candidates = [
+        document.querySelector('footer'),
+        document.querySelector('nav[class*="breadcrumbs"]'),
+        document.querySelector('[class*="editThisPage"]'),
+        document.querySelector('[class*="pagination"]'),
+        document.querySelector('[class*="lastUpdated"]'),
+        document.querySelector('[class*="tocMobile"]'),
+        document.querySelector('.theme-doc-footer'),
+        document.querySelector('.theme-edit-this-page'),
+      ].filter(Boolean);
+      candidates.forEach(rememberAndHide);
+    };
+
+    const restoreHidden = () => {
+      hiddenElementsRef.current.forEach((prev, el) => {
+        try { if (el) el.style.display = prev.display; } catch (_) {}
       });
-      
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true,
-        attributes: true,
-        attributeFilter: ['style', 'class']
-      });
-      
-      // Also set up an interval to periodically check
-      const intervalId = setInterval(hideElements, 2000);
-      
-      // Cleanup function
-      return () => {
-        clearTimeout(timeoutId1);
-        clearTimeout(timeoutId2);
-        clearTimeout(timeoutId3);
-        clearInterval(intervalId);
-        observer.disconnect();
-      };
-    }
+      hiddenElementsRef.current.clear();
+    };
+
+    hideChrome();
+    const t1 = setTimeout(hideChrome, 100);
+    const t2 = setTimeout(hideChrome, 500);
+
+    const observer = new MutationObserver(hideChrome);
+    try {
+      observer.observe(document.body, { childList: true, subtree: true });
+    } catch (_) {}
+
+    // Also re-run on history navigation in SPAs
+    const onPop = () => hideChrome();
+    window.addEventListener('popstate', onPop);
+    window.addEventListener('hashchange', onPop);
+
+    // Patch pushState/replaceState to emit re-checks while this component is mounted
+    const { pushState, replaceState } = window.history;
+    const wrap = (fn) => function() { const r = fn.apply(this, arguments); try { hideChrome(); } catch (_) {} return r; };
+    try {
+      window.history.pushState = wrap(pushState);
+      window.history.replaceState = wrap(replaceState);
+    } catch (_) {}
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      try { observer.disconnect(); } catch (_) {}
+      try {
+        window.removeEventListener('popstate', onPop);
+        window.removeEventListener('hashchange', onPop);
+        // Best effort: restore originals if we wrapped them
+        window.history.pushState = pushState;
+        window.history.replaceState = replaceState;
+      } catch (_) {}
+      restoreHidden();
+    };
   }, []);
 
   // Build groups from the top-level constant. Keep per-session item order stable.
@@ -2616,7 +2555,7 @@ export default function AskNetdata() {
                             animation: 'slideUpIn 360ms cubic-bezier(0.16, 1, 0.3, 1) both',
                             animationDelay: `${index * 60}ms`
                           }}>
-                            <a
+                            <SmartLink
                               href={result.url}
                               style={{
                                 color: ASKNET_SECOND,
@@ -2631,7 +2570,7 @@ export default function AskNetdata() {
                               onMouseLeave={(e) => e.target.style.color = ASKNET_SECOND}
                             >
                               {result.title}
-                            </a>
+                            </SmartLink>
                             {(() => {
                               const cleanSnippet = (snippet) => {
                                 if(!snippet) return '';

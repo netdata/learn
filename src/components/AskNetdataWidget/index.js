@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Link from '@docusaurus/Link';
+import { useHistory } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
 // Centralized Ask Netdata color constants
 import { ASKNET_PRIMARY, ASKNET_SECOND, rgba, rgbString, OPACITY } from '../AskNetdata/colors';
@@ -60,6 +61,37 @@ const PILL_MAX_CAPSULE = 999; // fully rounded capsule for short pills
 export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, overlayMaxWidth = 1000 }) {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
+  const history = useHistory();
+
+  // Smart internal/external link handling (same behavior as main AskNetdata)
+  const SmartLink = ({ href, children, ...props }) => {
+    const isInternal = href && (
+      href.startsWith('https://learn.netdata.cloud/docs/') ||
+      href.startsWith('http://learn.netdata.cloud/docs/') ||
+      href.startsWith('/docs/')
+    );
+    if (isInternal) {
+      let internalPath = href;
+      if (href.includes('learn.netdata.cloud/docs/')) {
+        internalPath = href.substring(href.indexOf('/docs/'));
+      }
+      const onClick = (e) => {
+        e.preventDefault();
+        try { closeOverlay(); } catch {}
+        history.push(internalPath);
+      };
+      return (
+        <Link to={internalPath} onClick={onClick} {...props}>
+          {children}
+        </Link>
+      );
+    }
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
+        {children}
+      </a>
+    );
+  };
 
   // Core state
   const [messages, setMessages] = useState([]);
@@ -630,7 +662,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                     <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
                       {searchResults.map((r,i)=>(
                         <div key={i} style={{ padding:'16px 16px 14px 16px', background: isDarkMode?'rgba(255,255,255,0.05)':'#fff', border: isDarkMode?'1px solid rgba(255,255,255,0.1)':'1px solid #e6eaf0', borderRadius:8, animation:'riseInNoFade 360ms cubic-bezier(0.16,1,0.3,1) both', animationDelay:`${i*40}ms` }}>
-                          <Link to={r.url.includes('learn.netdata.cloud')? r.url.substring(r.url.indexOf('/docs/')) : r.url} onClick={closeOverlay} style={{ color:ASKNET_SECOND, textDecoration:'none', fontWeight:600, fontSize:16 }}>{r.title}</Link>
+                          <SmartLink href={r.url} onClick={closeOverlay} style={{ color:ASKNET_SECOND, textDecoration:'none', fontWeight:600, fontSize:16 }}>{r.title}</SmartLink>
                           {(() => {
                             if(!r.snippet) return null;
                             const cleanSnippet = (snippet) => {
@@ -743,12 +775,16 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                     remarkPlugins={[remarkGfm]}
                     components={{
                       code: ({inline, className, children, ...props}) => <code style={{ background: isDarkMode?'rgba(255,255,255,0.08)':'#f1f5f9', padding:'2px 6px', borderRadius:4, fontSize:13 }} {...props}>{children}</code>,
-                       a: ({href, children}) => <a href={href} target="_blank" rel="noopener noreferrer" style={{ color: currentAccent, textDecoration:'none', borderBottom:`1px solid ${currentAccent}40` }}>{children}</a>,
-                       p: (p)=> <p style={{ margin:'0 0 12px 0' }}>{p.children}</p>,
-                       ul: (p)=> <ul style={{ margin:'0 0 14px 20px' }}>{p.children}</ul>,
-                       ol: (p)=> <ol style={{ margin:'0 0 14px 22px' }}>{p.children}</ol>,
-                       li: (p)=> <li style={{ marginBottom:6 }}>{p.children}</li>,
-                       h1:'h3', h2:'h4', h3:'h5'
+                      a: ({href, children, ...props}) => (
+                        <SmartLink href={href} style={{ color: currentAccent, textDecoration:'none', borderBottom:`1px solid ${currentAccent}40` }} {...props}>
+                          {children}
+                        </SmartLink>
+                      ),
+                      p: (p)=> <p style={{ margin:'0 0 12px 0' }}>{p.children}</p>,
+                      ul: (p)=> <ul style={{ margin:'0 0 14px 20px' }}>{p.children}</ul>,
+                      ol: (p)=> <ol style={{ margin:'0 0 14px 22px' }}>{p.children}</ol>,
+                      li: (p)=> <li style={{ marginBottom:6 }}>{p.children}</li>,
+                      h1:'h3', h2:'h4', h3:'h5'
                     }}
                   >{m.content}</ReactMarkdown>
                 ) : (
