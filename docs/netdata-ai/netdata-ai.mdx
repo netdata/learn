@@ -1,0 +1,132 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md"
+sidebar_label: "Netdata AI"
+learn_status: "Published"
+learn_rel_path: "Netdata AI"
+sidebar_position: "1400000"
+learn_link: "https://learn.netdata.cloud/docs/netdata-ai"
+---
+
+# Netdata AI
+
+Netdata AI transforms infrastructure monitoring from reactive dashboards to intelligent, proactive observability. Our AI-powered features help you troubleshoot faster, predict problems before they occur, and optimize your infrastructure with data-driven insights.
+
+## AI Features Overview
+
+### 🔍 [AI Insights](./insights/ai-insights)
+**Strategic Infrastructure Analysis**
+
+Generate comprehensive reports that transform your metrics into actionable intelligence. Perfect for capacity planning, performance reviews, and executive briefings.
+
+- **Infrastructure Summary** - Complete system health overview and incident analysis
+- **Capacity Planning** - Growth projections with resource recommendations
+- **Performance Optimization** - Bottleneck identification and tuning suggestions
+- **Anomaly Analysis** - Deep dive into unusual patterns and their impacts
+
+**Available**: Netdata Cloud (Business & Free Trial)
+
+---
+
+### 🔬 [AI Investigations](./investigations/custom-investigations)
+**Conversational Troubleshooting**
+
+Ask open-ended questions about your infrastructure and receive deeply researched reports in minutes. Your AI Co-SRE analyzes real-time data to provide contextual answers.
+
+- Natural language queries about any infrastructure concern
+- Comprehensive analysis with root cause hypothesis
+- Perfect for incident response and optimization tasks
+- Context-aware responses based on your actual metrics
+
+**Available**: Netdata Cloud (Business & Free Trial)
+
+---
+
+### 🚨 [AI Troubleshooting](./troubleshooting/ai-powered-alert-troubleshooting)
+**Automated Alert Analysis**
+
+When alerts fire, skip the manual investigation. AI automatically analyzes alert history, correlates signals across your infrastructure, and provides root cause analysis.
+
+- Instant alert triage and impact assessment
+- Correlated metrics from across your infrastructure
+- Root cause hypothesis with supporting evidence
+- [Anomaly Advisor](./troubleshooting/anomaly-advisor) for visual correlation
+
+**Available**: Netdata Cloud (Business & Free Trial)
+
+---
+
+### 🤖 [Anomaly Detection](./anomaly-detection/ml-anomaly-detection)
+**Machine Learning-Powered Monitoring**
+
+Automatically detect unusual patterns in your metrics without manual threshold configuration. ML models learn your system's normal behavior and alert on deviations.
+
+- Unsupervised learning adapts to your infrastructure
+- [Metric Correlations](./anomaly-detection/metric-correlations) across services
+- [Configurable sensitivity](./anomaly-detection/ml-configuration)
+- [Accuracy insights](./anomaly-detection/ml-accuracy) for model performance
+
+**Available**: All Netdata deployments
+
+---
+
+### 💬 [AI Chat](./chat/chat-with-netdata)
+**Natural Language Infrastructure Interaction**
+
+Chat with your infrastructure using natural language through the Model Context Protocol (MCP). Ask questions, get instant answers, and explore your systems conversationally.
+
+**Integration Options**:
+- [Netdata Web Client](./chat/netdata-web-client) - Purpose-built chat interface
+- [Claude Desktop](./chat/claude-desktop) - Anthropic's AI assistant
+- [Cursor](./chat/cursor) - AI-powered code editor
+- [VS Code](./chat/visual-studio-code) - Popular IDE integration
+- [JetBrains IDEs](./chat/jetbrains-ides) - IntelliJ, PyCharm, etc.
+- [Claude Code](./chat/claude-code) - CLI AI assistant
+- [Gemini CLI](./chat/gemini-cli) - Google's command-line AI
+
+**Available**: All Netdata deployments (Agent & Parents)
+
+---
+
+## Getting Started
+
+### For Netdata Cloud Users
+1. Access AI features through the **Insights** tab in your Space
+2. Use "Troubleshoot with AI" buttons throughout the interface
+3. Business and Free Trial users get full access to all features
+
+### For Netdata Agent Users
+1. Set up the [Model Context Protocol](./chat/model-context-protocol-mcp)
+2. Choose your preferred [AI Chat client](./chat/chat-with-netdata)
+3. Start conversing with your infrastructure in natural language
+
+## Architecture
+
+Netdata AI operates on two levels:
+
+**Cloud-Based AI** (Insights, Investigations, Troubleshooting)
+- Processes historical data from your Netdata Cloud Space
+- Generates comprehensive reports and analysis
+- No data used for model training
+
+**Local AI Integration** (Chat, DevOps Copilot)
+- Direct connection to Netdata Agents via MCP
+- Real-time data access without cloud dependency
+- Complete data privacy and control
+
+## Privacy & Security
+
+- **Your data remains yours** - Never used for AI model training
+- **Ephemeral processing** - Data analyzed then immediately discarded
+- **Audit trails** - Track all AI operations in your Space
+- **Local options** - MCP enables fully on-premises AI integration
+
+## Coming Soon
+
+- **Scheduled Reports** - Automated weekly/monthly AI analysis
+- **Proactive Alerts** - AI predicts issues before they occur
+- **Custom Models** - Train models on your specific infrastructure patterns
+- **Workflow Integrations** - Direct integration with ticketing and chat systems
+
+---
+
+Ready to transform your monitoring with AI? Start with [AI Insights](./insights/ai-insights) for strategic analysis or set up [AI Chat](./chat/chat-with-netdata) for real-time interaction with your infrastructure.
