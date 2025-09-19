@@ -2,16 +2,6 @@ summary {
   font-weight: 600;
 }
 
-:root {
-  --custom-background: #E8E8E8;
-  --custom-border: #D1D1D1;
-}
-
-html[data-theme='dark']:root {
-  --custom-background: #49545f;
-  --custom-border: #2b303b;
-}
-
 /* 
 html[data-theme=dark] {
   .details_lb9f:not([open]) {
