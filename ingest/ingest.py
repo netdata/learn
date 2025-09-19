@@ -1126,8 +1126,15 @@ if __name__ == '__main__':
                             "ingestedRepo": str(markdown.split("/", 2)[1])
                         }
 
-                        md_metadata.update(
-                            {"learn_link": "https://learn.netdata.cloud/docs" + md_metadata['slug']})
+                        # Fix duplicate last segment in learn_link for overview pages
+                        slug = md_metadata['slug']
+                        slug_parts = slug.strip('/').split('/')
+                        if len(slug_parts) >= 2 and slug_parts[-1] == slug_parts[-2]:
+                            # Remove duplicate last segment
+                            fixed_slug = '/' + '/'.join(slug_parts[:-1])
+                            md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + fixed_slug})
+                        else:
+                            md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + slug})
 
                     else:
                         to_publish[markdown] = {
@@ -1135,13 +1142,30 @@ if __name__ == '__main__':
                             "learnPath": str(response),
                             "ingestedRepo": str(markdown.split("/", 2)[1])
                         }
-                        # replace first ", " and then " ", this needs to be handled in a prettier way, but other updates in this file are on the way.
-                        if md_metadata['learn_rel_path'] != md_metadata['sidebar_label']:
-                            md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs/" + clean_and_lower_string(
-                                md_metadata['learn_rel_path']) + "/" + clean_and_lower_string(md_metadata['sidebar_label'])})
+                        clean_sidebar = clean_and_lower_string(md_metadata['sidebar_label'])
+                        rel_path = clean_and_lower_string(md_metadata['learn_rel_path'])
+                        if rel_path != clean_sidebar:
+                            link = "https://learn.netdata.cloud/docs/" + rel_path + "/" + clean_sidebar
+                            # Fix duplicate last segment if present
+                            link_parts = link.rstrip('/').split('/')
+                            if len(link_parts) >= 2 and link_parts[-1] == link_parts[-2]:
+                                link = '/'.join(link_parts[:-1])
+                            md_metadata.update({"learn_link": link})
+                            if clean_sidebar in md_metadata['learn_rel_path']:
+                                link2 = "https://learn.netdata.cloud/docs/" + clean_and_lower_string(
+                                    md_metadata['learn_rel_path'].replace(clean_sidebar, "", 1).rstrip("/"))
+                                # Fix duplicate last segment if present
+                                link2_parts = link2.rstrip('/').split('/')
+                                if len(link2_parts) >= 2 and link2_parts[-1] == link2_parts[-2]:
+                                    link2 = '/'.join(link2_parts[:-1])
+                                md_metadata.update({"learn_link": link2})
                         else:
-                            md_metadata.update(
-                                {"learn_link": "https://learn.netdata.cloud/docs/" + clean_and_lower_string(md_metadata['learn_rel_path'])})
+                            link = "https://learn.netdata.cloud/docs/" + rel_path
+                            # Fix duplicate last segment if present
+                            link_parts = link.rstrip('/').split('/')
+                            if len(link_parts) >= 2 and link_parts[-1] == link_parts[-2]:
+                                link = '/'.join(link_parts[:-1])
+                            md_metadata.update({"learn_link": link})
                     update_metadata_of_file(markdown, md_metadata)
                 except KeyError as exc:
                     print(
