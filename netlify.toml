@@ -2095,7 +2095,7 @@
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/functions"
-  to="/docs//top-monitoring-netdata-functions"
+  to="/docs/top-consumers"
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/events-feed"
@@ -3191,7 +3191,7 @@
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/functions"
-  to="/docs//top-monitoring-netdata-functions"
+  to="/docs/top-consumers"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/events-feed"
@@ -4731,7 +4731,7 @@
 
 [[redirects]]
   from="/docs/visualizations/functions"
-  to="/docs//top-monitoring-netdata-functions"
+  to="/docs/top-consumers"
 
 [[redirects]]
   from="/docs/visualizations/events-feed"
@@ -7839,7 +7839,7 @@
 
 [[redirects]]
   from="/docs/top-monitoring"
-  to="/docs//top-monitoring-netdata-functions"
+  to="/docs/top-consumers"
 
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/run-time-troubleshooting-with-functions"
@@ -7851,7 +7851,7 @@
 
 [[redirects]]
   from="/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions"
-  to="/docs//top-monitoring-netdata-functions"
+  to="/docs/top-consumers"
 
 [[redirects]]
   from="/docs/netdata-cloud/role-based-access-model"
@@ -9068,5 +9068,9 @@
 [[redirects]]
   from="/docs/deployment-guides"
   to="/docs/netdata-agent/quickstart-deployment"
+
+[[redirects]]
+  from="/docs//top-monitoring-netdata-functions"
+  to="/docs/top-consumers"
 
 # section: dynamic << END

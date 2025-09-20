@@ -2422,5 +2422,6 @@
     "https://learn.netdata.cloud/docs/deployment-guides/parent-child": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-with-centralization-points.md",
     "https://learn.netdata.cloud/docs/deployment-guides/node-types-and-lifecycle-reference": "https://github.com/netdata/netdata/blob/master/docs/nodes-ephemerality.md",
     "https://learn.netdata.cloud/docs/deployment-guides/configuration-examples": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/deployment-strategies.md",
-    "https://learn.netdata.cloud/docs/deployment-guides": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/README.md"
+    "https://learn.netdata.cloud/docs/deployment-guides": "https://github.com/netdata/netdata/blob/master/docs/deployment-guides/README.md",
+    "https://learn.netdata.cloud/docs//top-monitoring-netdata-functions": "https://github.com/netdata/netdata/blob/master/docs/top-monitoring-netdata-functions.md"
 }

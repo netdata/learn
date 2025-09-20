@@ -14,10 +14,13 @@ https://github.com/netdata/helmchart/edit/master/charts/netdata/README.md	/docs/
 https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md	/docs/developer-and-contributor-corner/redistributed-software
 https://github.com/netdata/netdata/edit/master/docs/guidelines.md	/docs/developer-and-contributor-corner/contribute-to-the-documentation
 https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md	/docs/welcome-to-netdata/enterprise-evaluation-guide
-https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md	/docs//top-monitoring-netdata-functions
+https://github.com/netdata/netdata/edit/master/docs/fleet-configuration-management.md	/docs/welcome-to-netdata/fleet-deployment-and-configuration-management
+https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md	/docs/top-consumers
 https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	/docs//live-demo
+https://github.com/netdata/netdata/edit/master/docs/realtime-monitoring.md	/docs/welcome-to-netdata/real-time-monitoring
 https://github.com/netdata/netdata/edit/master/docs/NIDL-Framework.md	/docs/dashboards-and-charts/nidl-framework
 https://github.com/netdata/netdata/edit/master/docs/nodes-ephemerality.md	/docs/netdata-parents/node-types-and-lifecycle-reference
+https://github.com/netdata/netdata/edit/master/docs/scalability.md	/docs/welcome-to-netdata/scalability
 https://github.com/netdata/netdata/edit/master/docs/streaming-routing.md	/docs/netdata-parents/streaming-routing-reference
 https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md	/docs/ai-&-ml/ml-anomaly-detection/metric-correlations
 https://github.com/netdata/netdata/edit/master/docs/welcome-to-netdata.md	/docs/welcome-to-netdata
@@ -49,6 +52,7 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/ai-&-ml
 https://github.com/netdata/netdata/edit/master/docs/delete/netdata/account.md	/docs/netdata-cloud/account-deletion
+https://github.com/netdata/netdata/edit/master/docs/functions/processes.md	/docs/top-consumers/processes
 https://github.com/netdata/netdata/edit/master/docs/learn/switching-install-types.md	/docs/netdata-agent/installation/linux/switch-install-types-and-release-channels
 https://github.com/netdata/netdata/edit/master/docs/learn/remove-node.md	/docs/netdata-cloud/remove-agent
 https://github.com/netdata/netdata/edit/master/docs/learn/mcp.md	/docs/ai-&-ml/model-context-protocol-mcp
