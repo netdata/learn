@@ -21,9 +21,7 @@ const getApiBase = () => {
   return 'https://agent-events.netdata.cloud/ask-netdata/api';
 };
 
-const API_BASE = getApiBase();
-const MAX_CONVERSATION_PAIRS = 3;
-// Dynamic shortcut label: show Command symbol on macOS, otherwise Ctrl
+
 const SHORTCUT_LABEL = (() => {
   if (typeof navigator !== 'undefined') {
     const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
@@ -58,7 +56,7 @@ const PILL_TALL_START = 56;   // px height where we start relaxing the capsule c
 const PILL_MIN_RADIUS = 14;   // px min radius for very tall pills
 const PILL_MAX_CAPSULE = 999; // fully rounded capsule for short pills
 
-export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, overlayMaxWidth = 1000 }) {
+export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, overlayMaxWidth = 1000, panelPct = 25 }) {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
   const history = useHistory();
@@ -153,33 +151,169 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
 
   // Compute horizontal shift so the overlay aligns under the navbar pill even at different zooms
   const [overlayShiftX, setOverlayShiftX] = useState(0);
+  // panelPct: percent (0-100) of available docs/content width the panel should occupy
+  const [panelWidth, setPanelWidth] = useState(() => Math.min(overlayMaxWidth, Math.floor((typeof window !== 'undefined' ? Math.min(window.innerWidth, overlayMaxWidth || 560) : 560) * (panelPct / 100))));
+  const [isDragging, setIsDragging] = useState(false);
+  const [resizerHover, setResizerHover] = useState(false);
+  const dragStartXRef = useRef(0);
+  const dragStartWidthRef = useRef(0);
+
+  // Drag handlers (mouse + touch) to resize panelWidth
+  const clampPanelWidth = (w) => {
+    const vw = window.innerWidth;
+    // If narrow screen (<720) we treat as full-width drawer
+    if (vw < 720) return Math.max(0, Math.min(w, vw));
+    const min = 320; // keep some content visible
+    const max = Math.min(overlayMaxWidth || 560, Math.max(360, Math.floor(vw * 0.9)));
+    return Math.max(min, Math.min(w, max));
+  };
+
+  const onDragMove = (clientX) => {
+    const dx = dragStartXRef.current - clientX; // dragging left increases width
+    const newW = clampPanelWidth(dragStartWidthRef.current + dx);
+    setPanelWidth(newW);
+  };
+
+  const stopDragging = () => {
+    setIsDragging(false);
+    try {
+      window.removeEventListener('mousemove', mouseMove);
+      window.removeEventListener('mouseup', mouseUp);
+      window.removeEventListener('touchmove', touchMove, { passive: false });
+      window.removeEventListener('touchend', touchEnd);
+    } catch {}
+  };
+
+  const mouseMove = (e) => { e.preventDefault(); onDragMove(e.clientX); };
+  const mouseUp = (e) => { e.preventDefault(); stopDragging(); };
+  const touchMove = (e) => { if (e.touches && e.touches[0]) { e.preventDefault(); onDragMove(e.touches[0].clientX); } };
+  const touchEnd = () => { stopDragging(); };
+
+  const startDragging = (startX) => (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+    dragStartXRef.current = startX;
+    dragStartWidthRef.current = panelWidth;
+    window.addEventListener('mousemove', mouseMove);
+    window.addEventListener('mouseup', mouseUp);
+  };
+  const startDraggingTouch = (e) => {
+    if (!(e.touches && e.touches[0])) return;
+    setIsDragging(true);
+    dragStartXRef.current = e.touches[0].clientX;
+    dragStartWidthRef.current = panelWidth;
+    window.addEventListener('touchmove', touchMove, { passive: false });
+    window.addEventListener('touchend', touchEnd);
+  };
+  // Refs for content padding/animation management
+  const contentTargetRef = useRef(null);
+  const prevPaddingRef = useRef(null);
+  const addedAnimateClassRef = useRef(false);
+  const closeTimerRef = useRef(null);
+  const PANEL_OPEN_ANIM_MS = 320;
+  const PANEL_CLOSE_ANIM_MS = 260;
   useEffect(() => {
+    // For right-docked panel we only need to ensure it stays within viewport when resizing.
     const computeShift = () => {
       try {
-        const pr = pillRef.current?.getBoundingClientRect();
-        if (!pr) return;
-        const vw = window.innerWidth;
-        const pillCenter = pr.left + pr.width / 2;
-        const viewportCenter = vw / 2;
-        let shift = pillCenter - viewportCenter;
-        // keep panel within viewport considering maxWidth and side paddings
-  const sidePad = 20; // matches overlayInnerStyle horizontal padding
-  const maxWidth = overlayMaxWidth; // matches overlayInnerStyle maxWidth
-        const maxShift = Math.max(0, (vw - sidePad * 2 - maxWidth) / 2);
-        if (Number.isFinite(maxShift)) {
-          shift = Math.max(-maxShift, Math.min(maxShift, shift));
-        }
-        setOverlayShiftX(Math.round(shift));
+        // no-op for now but keep hook to respond to resize/scroll if needed in future
+        setOverlayShiftX(0);
       } catch {}
     };
+    const computeWidth = () => {
+      try {
+        const vw = window.innerWidth;
+        // If narrow screen, use full width for the panel (behave like a drawer)
+        if (vw < 720) {
+          setPanelWidth(vw);
+          return;
+        }
+        // Try to measure the docs container width to compute percentage-based panel width
+        const selectors = ['.theme-docs-wrapper', '.theme-docs', '.main-wrapper', '.container', '#__docusaurus'];
+        let contentEl = null;
+        for (const s of selectors) {
+          const el = document.querySelector(s);
+          if (el) { contentEl = el; break; }
+        }
+        const contentWidth = contentEl ? Math.max(360, Math.floor(contentEl.getBoundingClientRect().width)) : Math.floor(vw * 0.7);
+        const target = Math.max(320, Math.min(overlayMaxWidth || 560, Math.floor(contentWidth * (panelPct / 100))));
+        setPanelWidth(clampPanelWidth(target));
+      } catch { }
+    };
     computeShift();
+    computeWidth();
     window.addEventListener('resize', computeShift);
     window.addEventListener('scroll', computeShift, true);
+    window.addEventListener('resize', computeWidth);
+    window.addEventListener('orientationchange', computeWidth);
     return () => {
       window.removeEventListener('resize', computeShift);
       window.removeEventListener('scroll', computeShift, true);
+      window.removeEventListener('resize', computeWidth);
+      window.removeEventListener('orientationchange', computeWidth);
     };
   }, [showOverlay, pillHeight, toggleOn]);
+
+  // Push page content when overlay open by adding padding-right to the main content container
+  useEffect(() => {
+    // Common container selectors in Docusaurus / Learn layout
+    const selectors = [
+      '.theme-docs-wrapper',
+      '.theme-docs',
+      '.main-wrapper',
+      '.container',
+      '#__docusaurus'
+    ];
+    let target = null;
+    for (const s of selectors) {
+      const el = document.querySelector(s);
+      if (el) { target = el; break; }
+    }
+    if (!target) target = document.body;
+
+    // store refs for cleanup
+    contentTargetRef.current = target;
+    // store previous padding if not already stored
+    if (prevPaddingRef.current === null) prevPaddingRef.current = target.style.paddingRight || '';
+
+    // add animate class if missing
+    const hadAnimateClass = target.classList.contains('asknet-content-animate');
+    if (!hadAnimateClass) { target.classList.add('asknet-content-animate'); addedAnimateClassRef.current = true; }
+
+    // clear any existing close timer
+    if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null; }
+
+    if (showOverlay && !isOverlayClosing) {
+      target.style.paddingRight = panelWidth + 28 + 'px';
+    } else {
+      if (isOverlayClosing) {
+        // keep padding for closing animation, then restore
+        closeTimerRef.current = setTimeout(() => {
+          try { target.style.paddingRight = prevPaddingRef.current || ''; } catch {}
+          if (addedAnimateClassRef.current) target.classList.remove('asknet-content-animate');
+          addedAnimateClassRef.current = false;
+          prevPaddingRef.current = null;
+          closeTimerRef.current = null;
+        }, PANEL_CLOSE_ANIM_MS);
+      } else {
+        try { target.style.paddingRight = prevPaddingRef.current || ''; } catch {}
+        if (addedAnimateClassRef.current) target.classList.remove('asknet-content-animate');
+        addedAnimateClassRef.current = false;
+        prevPaddingRef.current = null;
+      }
+    }
+
+    return () => {
+      if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null; }
+      if (contentTargetRef.current) {
+        try { contentTargetRef.current.style.paddingRight = prevPaddingRef.current || ''; } catch {}
+        if (addedAnimateClassRef.current) contentTargetRef.current.classList.remove('asknet-content-animate');
+      }
+      prevPaddingRef.current = null;
+      addedAnimateClassRef.current = false;
+      contentTargetRef.current = null;
+    };
+  }, [showOverlay, isOverlayClosing, panelWidth]);
 
   // Auto-resize textarea height like main page
   const adjustTextareaHeight = () => {
@@ -500,44 +634,50 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     return 140;
   };
   const overlayStyle = {
-    position: 'fixed',
-    left: 0,
-    top: overlayBaseTop(),
-    width: '100%',
-    zIndex: 1200,
-    display: (showOverlay || isOverlayClosing) ? 'flex' : 'none',
-    justifyContent: 'center',
-    pointerEvents: 'none'
+  position: 'fixed',
+  top: overlayBaseTop(),
+  right: 20,
+  height: 'calc(100% - ' + overlayBaseTop() + 'px)',
+  zIndex: 1200,
+  display: (showOverlay || isOverlayClosing) ? 'block' : 'none',
+  pointerEvents: 'none'
   };
   const overlayInnerStyle = {
-    width: '100%',
+  width: 'auto',
   maxWidth: overlayMaxWidth,
-    padding: '0 20px',
-    boxSizing:'border-box',
-    pointerEvents:'auto',
-  // Follow the pill horizontally across zoom/resize
-  transform: `translateX(${overlayShiftX}px)`
+  height: '100%',
+  padding: '0',
+  boxSizing:'border-box',
+  pointerEvents:'auto',
+  display: 'flex',
+  flexDirection: 'column'
   };
   const panelStyle = {
     background: isDarkMode ? '#0A0A0A' : 'rgba(255,255,255,0.96)',
     backdropFilter:'blur(18px)',
-  // Accent outline for the whole container (answers and search results)
-  border: `${PANEL_OUTLINE_WIDTH}px solid ${rgba(currentAccent, PANEL_OUTLINE_OPACITY)}`,
-  borderRadius: panelRadius,
-    padding: '24px 28px 32px 28px',
-    boxShadow: 'none',
-    maxHeight: '70vh',
-    overflowY: 'auto',
+  // Remove accent outline for widget panel (use subtle neutral stroke instead)
+  border: isDarkMode ? '1px solid rgba(255,255,255,0.04)' : '1px solid rgba(16,24,40,0.04)',
+  // UX: make panel flush with page edges (no rounded corners)
+  borderRadius: 0,
+  padding: '18px 20px',
+  boxShadow: 'none',
+  maxHeight: '100%',
+  overflowY: 'auto',
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
-    animation: 'slideUpInSmooth 520ms cubic-bezier(0.16,1,0.3,1)',
-    position: 'relative'
+  animation: 'slideUpInSmoothNoFade 520ms cubic-bezier(0.16,1,0.3,1)',
+  position: 'relative',
+  width: panelWidth,
+  height: '100%'
   };
 
-  const questionMessageStyle = { background: isDarkMode ? 'rgba(255,255,255,0.05)' : '#f8fafc', border: isDarkMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0', borderRadius: 12, padding: '14px 16px', marginBottom: 18, fontSize: 15, lineHeight:1.5, fontWeight:500 };
+  // Use the docs background so the widget feels native to the page
+  const docsBgLight = 'var(--ifm-background-color, #ffffff)';
+  const docsBgDark = 'var(--ifm-color-emphasis-0, #0A0A0A)';
+  const questionMessageStyle = { background: isDarkMode ? docsBgDark : docsBgLight, border: isDarkMode ? '1px solid rgba(255,255,255,0.04)' : '1px solid rgba(16,24,40,0.04)', borderRadius: 4, padding: '14px 16px', marginBottom: 18, fontSize: 15, lineHeight:1.5, fontWeight:500 };
   const answerMessageStyle = (m) => ({
-    background: m.isError ? (isDarkMode?'rgba(220,38,38,0.12)':'#fef2f2') : (isDarkMode ? '0A0A0A' : '#ffffff'),
-    borderRadius: 16,
+    background: m.isError ? (isDarkMode ? 'rgba(220,38,38,0.12)' : '#fef2f2') : (isDarkMode ? docsBgDark : docsBgLight),
+    borderRadius: 4,
     padding: '18px 20px 22px 20px',
     marginBottom: 20,
     fontSize: 15,
@@ -549,11 +689,20 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     <>
       <style>{`
         /* Opacity removed from entrance animations to avoid fade */
-        @keyframes slideUpInSmoothNoFade { 0% { transform: translateY(40px) scale(.96); filter:blur(1px);} 60% { transform: translateY(-2px) scale(1.01); filter:blur(0);} 100% { transform: translateY(0) scale(1); filter:blur(0);} }
+  @keyframes slideUpInSmoothNoFade { 0% { transform: translateY(40px) scale(.96); filter:blur(1px);} 60% { transform: translateY(-2px) scale(1.01); filter:blur(0);} 100% { transform: translateY(0) scale(1); filter:blur(0);} }
         @keyframes riseInNoFade { 0% { transform: translateY(12px); } 100% { transform: translateY(0); } }
         @keyframes scanBackForth { 0% { transform: translateX(-100px);} 50% { transform: translateX(300px);} 100% { transform: translateX(-100px);} }
         @keyframes fadeOutDown { 0% { opacity:1; transform: translateY(0) scale(1);} 100% { opacity:0; transform: translateY(16px) scale(.97);} }
-        .asknet-overlay-panel::-webkit-scrollbar { display: none; }
+  /* Slide panel in from right and out to right */
+  @keyframes slideInFromRight { 0% { transform: translateX(16px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+  @keyframes slideOutToRight { 0% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(16px); opacity: 0; } }
+  .asknet-overlay-panel::-webkit-scrollbar { display: none; }
+  /* Smoothly transition content padding when panel opens/closes */
+  .asknet-content-animate { transition: padding-right 320ms cubic-bezier(0.16,1,0.3,1); }
+  /* Resizer: base + hover/drag states (uses CSS vars set on panel) */
+  .asknet-resizer { transition: background 160ms ease, box-shadow 160ms ease, border-left 160ms ease; background: transparent; }
+  /* Only highlight the visible resizer on direct hover; use solid accent color (no faded inward) */
+  .asknet-resizer:hover, .asknet-resizer.is-dragging { background: var(--asknet-resizer-border); box-shadow: none; border-left: 1px solid var(--asknet-resizer-border); }
       `}</style>
       <div ref={pillRef} style={pillContainerStyle}>
         <div style={pillInnerStyle}>
@@ -618,26 +767,36 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
 
       {/* Floating overlay */}
       <div ref={overlayRef} style={overlayStyle}>
-        <div style={overlayInnerStyle}>
-          <div ref={panelRef} style={{...panelStyle, animation: isOverlayClosing ? 'fadeOutDown 260ms ease forwards' : 'slideUpInSmoothNoFade 520ms cubic-bezier(0.16,1,0.3,1)'}} className="asknet-overlay-panel">
+        <div style={{ display: 'flex', height: '100%', alignItems: 'flex-start' }}>
+          <div style={overlayInnerStyle}>
+            <div ref={panelRef} style={{...panelStyle, animation: isOverlayClosing ? 'slideOutToRight 260ms ease forwards' : 'slideInFromRight 320ms cubic-bezier(0.16,1,0.3,1) forwards', ['--asknet-resizer-bg']: currentAccent, ['--asknet-resizer-glow']: currentAccent, ['--asknet-resizer-border']: currentAccent }} className="asknet-overlay-panel">
+              {/* Resizer: draggable vertical bar (thinner, hoverable) */}
+              <div
+                role="separator"
+                aria-orientation="vertical"
+                onMouseDown={(e)=>{ startDragging(e.clientX)(e); }}
+                onTouchStart={startDraggingTouch}
+                style={{ position:'absolute', left: -6, top:0, bottom:0, width:12, cursor:'ew-resize', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1300 }}
+              >
+                <div
+                  className={`asknet-resizer ${isDragging ? 'is-dragging' : ''}`}
+                  onMouseEnter={() => setResizerHover(true)}
+                  onMouseLeave={() => setResizerHover(false)}
+                  style={{
+                    width: 6,
+                    height: '100%',
+                    display: 'block',
+                    borderRadius: 0,
+                    background: (isDragging || resizerHover) ? currentAccent : 'transparent',
+                    borderLeft: (isDragging || resizerHover) ? `1px solid ${currentAccent}` : '1px solid transparent'
+                  }}
+                />
+              </div>
             {/* Header row with actions */}
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:24 }}>
               <div style={{ display:'flex', alignItems:'center', gap:10, fontSize: '1.05rem', fontWeight:700 }}>
                 <span style={{ color: currentAccent }}>{toggleOn ? 'Search Docs' : 'Ask Netdata'}</span>
-                <span
-                  style={{
-                    fontSize:11,
-                    fontWeight:600,
-                    letterSpacing:'.5px',
-                    padding:'4px 8px',
-                    borderRadius:6,
-                    background: rgba(currentAccent, 0.16),
-                    color: currentAccent,
-                    lineHeight:1,
-                    userSelect:'none'
-                  }}
-                  title="Focus input"
-                >{FOCUS_SHORTCUT_LABEL}</span>
+                {/* removed shortcut hint in results header per UX request */}
               </div>
               <div style={{ display:'flex', gap:12 }}>
                 {!toggleOn && messages.length > 0 && <button onClick={() => { setMessages([]); closeOverlay(); setSearchResults([]); setSearchQuery(''); }} style={{ background:'transparent', border: isDarkMode?'1px solid rgba(255,255,255,0.2)':'1px solid #d1d5db', borderRadius:8, padding:'6px 12px', cursor:'pointer', fontSize:13 }}>New chat</button>}
@@ -776,7 +935,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                     components={{
                       code: ({inline, className, children, ...props}) => <code style={{ background: isDarkMode?'rgba(255,255,255,0.08)':'#f1f5f9', padding:'2px 6px', borderRadius:4, fontSize:13 }} {...props}>{children}</code>,
                       a: ({href, children, ...props}) => (
-                        <SmartLink href={href} style={{ color: currentAccent, textDecoration:'none', borderBottom:`1px solid ${currentAccent}40` }} {...props}>
+                        <SmartLink href={href} style={{ color: currentAccent, textDecoration:'none', borderBottom:`1px solid ${currentAccent}` }} {...props}>
                           {children}
                         </SmartLink>
                       ),
@@ -823,6 +982,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 }
