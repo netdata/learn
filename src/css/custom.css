@@ -211,7 +211,9 @@ h5 {
 	}
 
 	.navbar__logo {
-		width: 80px;
+		/* hide logo on mobile to make room for the chat pill */
+		display: none;
+		visibility: hidden;
 	}
 
 	.navbar__item {

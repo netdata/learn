@@ -21,6 +21,10 @@ const getApiBase = () => {
   return 'https://agent-events.netdata.cloud/ask-netdata/api';
 };
 
+// Ensure widget has the same API base and conversation limit constants as the main component
+const API_BASE = getApiBase();
+const MAX_CONVERSATION_PAIRS = 3;
+
 
 const SHORTCUT_LABEL = (() => {
   if (typeof navigator !== 'undefined') {
@@ -51,6 +55,8 @@ const PANEL_OUTLINE_OPACITY = 0.28; // 0..1
 const SHOW_SEARCH_RELEVANCE_SCORE = false; // Set to false to hide relevance scores in search results
 const PANEL_BASE_RADIUS = 24; // small content
 const PANEL_MIN_RADIUS = 12;  // very tall content
+// Mobile sizing
+const MOBILE_MIN_HEIGHT = 300; // px minimum mobile panel height
 // Adaptive corner radius for the input pill when it grows tall due to multi-line input
 const PILL_TALL_START = 56;   // px height where we start relaxing the capsule corners
 const PILL_MIN_RADIUS = 14;   // px min radius for very tall pills
@@ -153,10 +159,25 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   const [overlayShiftX, setOverlayShiftX] = useState(0);
   // panelPct: percent (0-100) of available docs/content width the panel should occupy
   const [panelWidth, setPanelWidth] = useState(() => Math.min(overlayMaxWidth, Math.floor((typeof window !== 'undefined' ? Math.min(window.innerWidth, overlayMaxWidth || 560) : 560) * (panelPct / 100))));
+  const [panelHeight, setPanelHeight] = useState(() => {
+    try {
+      const vh = typeof window !== 'undefined' ? window.innerHeight : 800;
+  // Increase mobile default so at least one result card is visible on open
+  return Math.max(MOBILE_MIN_HEIGHT, Math.floor(vh * (panelPct / 100)));
+    } catch { return 320; }
+  });
   const [isDragging, setIsDragging] = useState(false);
   const [resizerHover, setResizerHover] = useState(false);
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 720 : false);
+  const [isMobileMaximized, setIsMobileMaximized] = useState(false);
+  const prevPanelHeightRef = useRef(null);
+  const [mobileAnim, setMobileAnim] = useState('');
+  const mobileAnimTimerRef = useRef(null);
   const dragStartXRef = useRef(0);
   const dragStartWidthRef = useRef(0);
+  const dragStartYRef = useRef(0);
+  const dragStartHeightRef = useRef(0);
+  const isMobileRef = useRef(isMobile);
 
   // Drag handlers (mouse + touch) to resize panelWidth
   const clampPanelWidth = (w) => {
@@ -168,10 +189,23 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     return Math.max(min, Math.min(w, max));
   };
 
+  const clampPanelHeight = (h) => {
+    const vh = window.innerHeight;
+  const min = 240; // raise minimum so a result is visible
+  const max = Math.max(320, Math.floor(vh * 0.9));
+    return Math.max(min, Math.min(h, max));
+  };
+
   const onDragMove = (clientX) => {
     const dx = dragStartXRef.current - clientX; // dragging left increases width
     const newW = clampPanelWidth(dragStartWidthRef.current + dx);
     setPanelWidth(newW);
+  };
+
+  const onDragMoveVertical = (clientY) => {
+    const dy = dragStartYRef.current - clientY; // dragging up increases height
+    const newH = clampPanelHeight(dragStartHeightRef.current + dy);
+    setPanelHeight(newH);
   };
 
   const stopDragging = () => {
@@ -184,14 +218,15 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     } catch {}
   };
 
-  const mouseMove = (e) => { e.preventDefault(); onDragMove(e.clientX); };
+  const mouseMove = (e) => { e.preventDefault(); if (isMobileRef.current) onDragMoveVertical(e.clientY); else onDragMove(e.clientX); };
   const mouseUp = (e) => { e.preventDefault(); stopDragging(); };
-  const touchMove = (e) => { if (e.touches && e.touches[0]) { e.preventDefault(); onDragMove(e.touches[0].clientX); } };
+  const touchMove = (e) => { if (e.touches && e.touches[0]) { e.preventDefault(); if (isMobileRef.current) onDragMoveVertical(e.touches[0].clientY); else onDragMove(e.touches[0].clientX); } };
   const touchEnd = () => { stopDragging(); };
 
   const startDragging = (startX) => (e) => {
     e.preventDefault();
     setIsDragging(true);
+    isMobileRef.current = isMobile;
     dragStartXRef.current = startX;
     dragStartWidthRef.current = panelWidth;
     window.addEventListener('mousemove', mouseMove);
@@ -200,10 +235,26 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   const startDraggingTouch = (e) => {
     if (!(e.touches && e.touches[0])) return;
     setIsDragging(true);
-    dragStartXRef.current = e.touches[0].clientX;
-    dragStartWidthRef.current = panelWidth;
+    isMobileRef.current = isMobile;
+    if (isMobile) {
+      dragStartYRef.current = e.touches[0].clientY;
+      dragStartHeightRef.current = panelHeight;
+    } else {
+      dragStartXRef.current = e.touches[0].clientX;
+      dragStartWidthRef.current = panelWidth;
+    }
     window.addEventListener('touchmove', touchMove, { passive: false });
     window.addEventListener('touchend', touchEnd);
+  };
+  // vertical mouse start
+  const startDraggingVertical = (startY) => (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+    isMobileRef.current = true;
+    dragStartYRef.current = startY;
+    dragStartHeightRef.current = panelHeight;
+    window.addEventListener('mousemove', mouseMove);
+    window.addEventListener('mouseup', mouseUp);
   };
   // Refs for content padding/animation management
   const contentTargetRef = useRef(null);
@@ -223,9 +274,14 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     const computeWidth = () => {
       try {
         const vw = window.innerWidth;
+        setIsMobile(vw < 720);
         // If narrow screen, use full width for the panel (behave like a drawer)
         if (vw < 720) {
+          // treat as bottom drawer: set panel to full width and compute panelHeight
           setPanelWidth(vw);
+          const vh = window.innerHeight;
+          const targetH = Math.max(MOBILE_MIN_HEIGHT, Math.floor(vh * (panelPct / 100)));
+          setPanelHeight(clampPanelHeight(targetH));
           return;
         }
         // Try to measure the docs container width to compute percentage-based panel width
@@ -271,10 +327,10 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     }
     if (!target) target = document.body;
 
-    // store refs for cleanup
-    contentTargetRef.current = target;
-    // store previous padding if not already stored
-    if (prevPaddingRef.current === null) prevPaddingRef.current = target.style.paddingRight || '';
+  // store refs for cleanup
+  contentTargetRef.current = target;
+  // store previous padding if not already stored (use bottom for mobile)
+  if (prevPaddingRef.current === null) prevPaddingRef.current = isMobile ? (target.style.paddingBottom || '') : (target.style.paddingRight || '');
 
     // add animate class if missing
     const hadAnimateClass = target.classList.contains('asknet-content-animate');
@@ -284,7 +340,11 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null; }
 
     if (showOverlay && !isOverlayClosing) {
-      target.style.paddingRight = panelWidth + 28 + 'px';
+      if (isMobile) {
+        target.style.paddingBottom = panelHeight + 28 + 'px';
+      } else {
+        target.style.paddingRight = panelWidth + 28 + 'px';
+      }
     } else {
       if (isOverlayClosing) {
         // keep padding for closing animation, then restore
@@ -296,7 +356,9 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
           closeTimerRef.current = null;
         }, PANEL_CLOSE_ANIM_MS);
       } else {
-        try { target.style.paddingRight = prevPaddingRef.current || ''; } catch {}
+        try {
+          if (isMobile) target.style.paddingBottom = prevPaddingRef.current || ''; else target.style.paddingRight = prevPaddingRef.current || '';
+        } catch {}
         if (addedAnimateClassRef.current) target.classList.remove('asknet-content-animate');
         addedAnimateClassRef.current = false;
         prevPaddingRef.current = null;
@@ -306,7 +368,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     return () => {
       if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null; }
       if (contentTargetRef.current) {
-        try { contentTargetRef.current.style.paddingRight = prevPaddingRef.current || ''; } catch {}
+  try { if (isMobile) contentTargetRef.current.style.paddingBottom = prevPaddingRef.current || ''; else contentTargetRef.current.style.paddingRight = prevPaddingRef.current || ''; } catch {}
         if (addedAnimateClassRef.current) contentTargetRef.current.classList.remove('asknet-content-animate');
       }
       prevPaddingRef.current = null;
@@ -467,6 +529,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       { title: 'Install Netdata on Windows', url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/windows', snippet: 'Windows installer for Netdata with subscription requirements and feature notes...', score: 0.3, section: 'Documentation' }
     ];
     try {
+      console.debug('[AskNetdataWidget] search ->', `${API_BASE}/chat/docs/search`, { query: query.trim() });
       const resp = await fetch(`${API_BASE}/chat/docs/search`, { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ query: query.trim() }) });
   if (resp.status === 404) { setSearchResults(staticFallbackResults.sort((a,b)=>(b.score||0)-(a.score||0))); setIsSearching(false); return; }
       if (!resp.ok) throw new Error();
@@ -491,12 +554,14 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     try {
       // Prepare abort controller for this streaming request
       chatAbortRef.current = new AbortController();
+  console.debug('[AskNetdataWidget] send ->', `${API_BASE}/chat/docs/stream`, { message, messagesCount: messages.length });
       let response = await fetch(`${API_BASE}/chat/docs/stream`, {
         method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({
           messages:[ ...(() => { const max = MAX_CONVERSATION_PAIRS*2; return messages.slice(-max).map(m => ({ role: m.type==='user'?'user':'assistant', content:m.content })); })(), { role:'user', content:message } ]
         }), signal: chatAbortRef.current.signal
       });
       if (!response.ok) {
+  console.warn('[AskNetdataWidget] initial stream response not ok, retrying...', response.status);
         try {
           response = await fetch(`${API_BASE}/chat/docs/stream`, {
             method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({
@@ -538,6 +603,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
         // aborted: do not append error message, just exit
         return;
       }
+  console.error('[AskNetdataWidget] send error', e);
       setMessages(prev => [...prev, { id: Date.now()+2, type:'assistant', content:'Sorry, I encountered an error.', isError:true }]);
     } finally { setIsLoading(false); }
   };
@@ -635,16 +701,18 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   };
   const overlayStyle = {
   position: 'fixed',
-  top: overlayBaseTop(),
-  right: 20,
-  height: 'calc(100% - ' + overlayBaseTop() + 'px)',
+  top: isMobile ? 'auto' : overlayBaseTop(),
+  bottom: isMobile ? 0 : 'auto',
+  right: isMobile ? 0 : 20,
+  left: isMobile ? 0 : 'auto',
+  height: isMobile ? panelHeight + 'px' : 'calc(100% - ' + overlayBaseTop() + 'px)',
   zIndex: 1200,
   display: (showOverlay || isOverlayClosing) ? 'block' : 'none',
   pointerEvents: 'none'
   };
   const overlayInnerStyle = {
-  width: 'auto',
-  maxWidth: overlayMaxWidth,
+  width: isMobile ? '100%' : 'auto',
+  maxWidth: isMobile ? '100%' : overlayMaxWidth,
   height: '100%',
   padding: '0',
   boxSizing:'border-box',
@@ -698,7 +766,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   @keyframes slideOutToRight { 0% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(16px); opacity: 0; } }
   .asknet-overlay-panel::-webkit-scrollbar { display: none; }
   /* Smoothly transition content padding when panel opens/closes */
-  .asknet-content-animate { transition: padding-right 320ms cubic-bezier(0.16,1,0.3,1); }
+  .asknet-content-animate { transition: padding-right 320ms cubic-bezier(0.16,1,0.3,1), padding-bottom 320ms cubic-bezier(0.16,1,0.3,1); }
   /* Resizer: base + hover/drag states (uses CSS vars set on panel) */
   .asknet-resizer { transition: background 160ms ease, box-shadow 160ms ease, border-left 160ms ease; background: transparent; }
   /* Only highlight the visible resizer on direct hover; use solid accent color (no faded inward) */
@@ -769,29 +837,73 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       <div ref={overlayRef} style={overlayStyle}>
         <div style={{ display: 'flex', height: '100%', alignItems: 'flex-start' }}>
           <div style={overlayInnerStyle}>
-            <div ref={panelRef} style={{...panelStyle, animation: isOverlayClosing ? 'slideOutToRight 260ms ease forwards' : 'slideInFromRight 320ms cubic-bezier(0.16,1,0.3,1) forwards', ['--asknet-resizer-bg']: currentAccent, ['--asknet-resizer-glow']: currentAccent, ['--asknet-resizer-border']: currentAccent }} className="asknet-overlay-panel">
+            <div ref={panelRef} style={{...panelStyle,
+              animation: isMobile && mobileAnim ? mobileAnim : (isOverlayClosing ? (isMobile ? 'slideOutToRight 260ms ease forwards' : 'slideOutToRight 260ms ease forwards') : (isMobile ? 'slideInFromRight 320ms cubic-bezier(0.16,1,0.3,1) forwards' : 'slideInFromRight 320ms cubic-bezier(0.16,1,0.3,1) forwards')),
+              ['--asknet-resizer-bg']: currentAccent, ['--asknet-resizer-glow']: currentAccent, ['--asknet-resizer-border']: currentAccent,
+              width: isMobile ? '100%' : panelWidth,
+              height: isMobile ? panelHeight : '100%',
+              borderTop: isMobile ? `6px solid ${currentAccent}` : undefined,
+              boxShadow: panelStyle.boxShadow
+            }} className="asknet-overlay-panel">
+              {isMobile && (
+                <div style={{ position: 'absolute', top: -6, left: 0, right: 0, height: 6, background: currentAccent, zIndex: 1405, pointerEvents: 'none' }} />
+              )}
               {/* Resizer: draggable vertical bar (thinner, hoverable) */}
-              <div
-                role="separator"
-                aria-orientation="vertical"
-                onMouseDown={(e)=>{ startDragging(e.clientX)(e); }}
-                onTouchStart={startDraggingTouch}
-                style={{ position:'absolute', left: -6, top:0, bottom:0, width:12, cursor:'ew-resize', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1300 }}
-              >
+              {/* Resizer: draggable - vertical on desktop (left), horizontal on mobile (top of panel) */}
+              {!isMobile ? (
                 <div
-                  className={`asknet-resizer ${isDragging ? 'is-dragging' : ''}`}
-                  onMouseEnter={() => setResizerHover(true)}
-                  onMouseLeave={() => setResizerHover(false)}
-                  style={{
-                    width: 6,
-                    height: '100%',
-                    display: 'block',
-                    borderRadius: 0,
-                    background: (isDragging || resizerHover) ? currentAccent : 'transparent',
-                    borderLeft: (isDragging || resizerHover) ? `1px solid ${currentAccent}` : '1px solid transparent'
-                  }}
-                />
-              </div>
+                  role="separator"
+                  aria-orientation="vertical"
+                  onMouseDown={(e)=>{ startDragging(e.clientX)(e); }}
+                  onTouchStart={startDraggingTouch}
+                  style={{ position:'absolute', left: -6, top:0, bottom:0, width:12, cursor:'ew-resize', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1300 }}
+                >
+                  <div
+                    className={`asknet-resizer ${isDragging ? 'is-dragging' : ''}`}
+                    onMouseEnter={() => setResizerHover(true)}
+                    onMouseLeave={() => setResizerHover(false)}
+                    style={{
+                      width: 6,
+                      height: '100%',
+                      display: 'block',
+                      borderRadius: 0,
+                      background: (isDragging || resizerHover) ? currentAccent : 'transparent',
+                      borderLeft: (isDragging || resizerHover) ? `1px solid ${currentAccent}` : '1px solid transparent'
+                    }}
+                  />
+                </div>
+              ) : (
+                <div style={{ position:'absolute', right:84, top:18, display:'flex', justifyContent:'flex-end', zIndex:1505, pointerEvents:'auto' }}>
+                  <button
+                    aria-label={isMobileMaximized ? 'Restore' : 'Maximize'}
+                    title={isMobileMaximized ? 'Restore' : 'Maximize'}
+                    onClick={() => {
+                      try {
+                        // apply same animation used by show/hide
+                        if (mobileAnimTimerRef.current) { clearTimeout(mobileAnimTimerRef.current); mobileAnimTimerRef.current = null; }
+                        if (!isMobileMaximized) {
+                          prevPanelHeightRef.current = panelHeight;
+                          // animate 'open' style
+                          setMobileAnim(`slideInFromRight ${PANEL_OPEN_ANIM_MS}ms cubic-bezier(0.16,1,0.3,1) forwards`);
+                          setPanelHeight(Math.max(MOBILE_MIN_HEIGHT, Math.floor(window.innerHeight * 0.9)));
+                          setIsMobileMaximized(true);
+                          mobileAnimTimerRef.current = setTimeout(()=>{ setMobileAnim(''); mobileAnimTimerRef.current = null; }, PANEL_OPEN_ANIM_MS + 20);
+                        } else {
+                          // animate 'close' style
+                          setMobileAnim(`slideOutToRight ${PANEL_CLOSE_ANIM_MS}ms ease forwards`);
+                          setPanelHeight(prevPanelHeightRef.current || Math.max(MOBILE_MIN_HEIGHT, Math.floor(window.innerHeight * (panelPct / 100))));
+                          prevPanelHeightRef.current = null;
+                          setIsMobileMaximized(false);
+                          mobileAnimTimerRef.current = setTimeout(()=>{ setMobileAnim(''); mobileAnimTimerRef.current = null; }, PANEL_CLOSE_ANIM_MS + 20);
+                        }
+                      } catch {}
+                    }}
+                    style={{ background:'transparent', border:'1px solid rgba(0,0,0,0.12)', color:currentAccent, padding:'6px 10px', borderRadius:8, cursor:'pointer', boxShadow:'none' }}
+                  >
+                    {isMobileMaximized ? 'Restore' : 'Maximize'}
+                  </button>
+                </div>
+              )}
             {/* Header row with actions */}
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:24 }}>
               <div style={{ display:'flex', alignItems:'center', gap:10, fontSize: '1.05rem', fontWeight:700 }}>
