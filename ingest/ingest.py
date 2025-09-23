@@ -96,6 +96,23 @@ def clean_and_lower_string(string):
     return re.sub(r'(-)+', '-', string.lower().replace(",", "-").replace(" ", "-").replace("//", "/"))
 
 
+def convert_parenthetical_slash(segment: str) -> str:
+    """
+    Convert occurrences like "(ABC/XYZ)" into "ABC-XYZ" inside a string.
+    Only converts simple parenthetical groups containing a single slash.
+    """
+    if not segment:
+        return segment
+
+    # Replace occurrences of (A/B) or (A/B/C) with A-B or A-B-C respectively
+    def repl(m):
+        inner = m.group(1)
+        parts = inner.split('/')
+        return '-'.join(parts)
+
+    return re.sub(r"\(([^()]+?/[^()]+?)\)", repl, segment)
+
+
 def populate_integrations(markdownFiles):
     """
     if a symlink, read that, if not, look inside integrations folder.
@@ -1116,7 +1133,7 @@ if __name__ == '__main__':
                     # check the type of the response (for more info of what the response can be check
                     # the return statements of the function itself)
                     response = create_mdx_path_from_metadata(md_metadata)
-
+                    sanitize_regex = r'`|\(|\)'
                     if type(response) != str:
                         # If the response is not a string then it is a two item array, [final path, slug]
                         md_metadata.update({"slug": str(response[1])})
@@ -1132,8 +1149,12 @@ if __name__ == '__main__':
                         if len(slug_parts) >= 2 and slug_parts[-1] == slug_parts[-2]:
                             # Remove duplicate last segment
                             fixed_slug = '/' + '/'.join(slug_parts[:-1])
+                            fixed_slug = convert_parenthetical_slash(fixed_slug)
+                            fixed_slug = re.sub(sanitize_regex, '', fixed_slug)
                             md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + fixed_slug})
                         else:
+                            slug = convert_parenthetical_slash(slug)
+                            slug = re.sub(sanitize_regex, '', slug)
                             md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + slug})
 
                     else:
@@ -1150,12 +1171,16 @@ if __name__ == '__main__':
                             link_parts = link.rstrip('/').split('/')
                             if len(link_parts) >= 2 and link_parts[-1] == link_parts[-2]:
                                 link = '/'.join(link_parts[:-1])
+                            link = convert_parenthetical_slash(link)
+                            link = re.sub(sanitize_regex, '', link)
                             md_metadata.update({"learn_link": link})
                         else:
                             link = "https://learn.netdata.cloud/docs/" + rel_path
                             link_parts = link.rstrip('/').split('/')
                             if len(link_parts) >= 2 and link_parts[-1] == link_parts[-2]:
                                 link = '/'.join(link_parts[:-1])
+                            link = convert_parenthetical_slash(link)
+                            link = re.sub(sanitize_regex, '', link)
                             md_metadata.update({"learn_link": link})
                     update_metadata_of_file(markdown, md_metadata)
                 except KeyError as exc:
