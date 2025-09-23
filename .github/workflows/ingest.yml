@@ -38,13 +38,9 @@ jobs:
         run: |
           pip install -r .learn_environment/ingest-requirements.txt
 
-      - name: Ingest process
+      - name: Ingest process, integration generation and learn_link checking
         run: |
-          python ingest/ingest.py
-      
-      - name: Make integrations grids
-        run: |
-          python ingest/create_grid_integration_pages.py
+          python ingest/ingest.py --learn-link-check
 
       - name: Update kickstart checksum
         run: |
