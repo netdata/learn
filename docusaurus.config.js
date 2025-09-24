@@ -43,112 +43,6 @@ module.exports = {
 					type: 'custom-asknetdata-widget-item',
 					position: 'right',
 				},
-				{
-					to: 'https://www.netdata.cloud/features/',
-					position: 'left',
-					label: 'Features',
-					style: { fontWeight: '500' }
-				},
-				{
-					to: 'https://www.netdata.cloud/open-source/',
-					position: 'left',
-					label: 'Open Source',
-					style: { fontWeight: '500' }
-				},
-				{
-					to: 'https://www.netdata.cloud/pricing/',
-					position: 'left',
-					label: 'Pricing',
-					style: { fontWeight: '500' }
-				},
-				{
-					to: 'https://www.netdata.cloud/integrations/',
-					position: 'left',
-					label: 'Integrations',
-					style: { fontWeight: '500' }
-				},
-				{
-					position: 'left',
-					label: 'Use cases',
-					style: { fontWeight: '500' },
-					items: [
-						{
-							label: 'Response Time',
-							to: 'https://www.netdata.cloud/response-time-monitoring/'
-						},
-						{
-							label: 'Cloud',
-							to: 'https://www.netdata.cloud/cloud-monitoring/',
-						},
-						{
-							label: 'Web Servers',
-							to: 'https://www.netdata.cloud/webserver-monitoring/',
-						},
-						{
-							label: 'Containers',
-							to: 'https://www.netdata.cloud/container-monitoring/',
-						}
-					]
-				},
-				{
-					position: 'left',
-					label: 'Resources',
-					style: { fontWeight: '500' },
-					items: [
-						{
-							type: 'doc',
-							docId: 'welcome-to-netdata/welcome-to-netdata',
-							label: 'Documentation'
-						},
-						{
-							label: 'Community',
-							to: 'https://www.netdata.cloud/community/',
-						},
-						{
-							label: 'About',
-							to: 'https://www.netdata.cloud/about/',
-						},
-						{
-							label: 'Forums',
-							to: 'https://community.netdata.cloud/',
-						},
-						{
-							label: 'Blog',
-							to: 'https://blog.netdata.cloud/',
-						},
-						{
-							label: 'Roadmap',
-							to: 'https://www.netdata.cloud/roadmap/'
-						},
-						{
-							label: 'Videos',
-							to: 'https://www.youtube.com/c/Netdata/'
-						},
-					]
-				},
-
-				{
-					to: 'https://app.netdata.cloud/spaces/netdata-demo?utm_source=learn&utm_content=top_navigation_demo',
-					label: 'Live Demo',
-					position: 'left',
-					className: 'custom_text',
-					style: { fontWeight: '500' }
-				},
-				// {
-				// 	to: 'https://app.netdata.cloud/',
-				// 	label: 'Login',
-				// 	position: 'right',
-				// 	className: 'button custom_button_grey',
-				// 	style: { fontWeight: '500' }
-				// },
-				// {
-				// 	to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
-				// 	label: 'Sign Up',
-				// 	position: 'right',
-				// 	className: 'button custom_button',
-				// 	style: { fontWeight: '500' }
-
-				// },
 			],
 		},
 		// footer: {
@@ -165,14 +59,6 @@ module.exports = {
 				enableInDevelopment: false,
 			}
 		],
-		// [
-		// 	'./plugins/askNetdataSidebarPlugin',
-		// 	{
-		// 		apiUrl: process.env.ASK_NETDATA_API || 'http://localhost:3002/api',
-		// 		position: 'top'
-		// 	}
-		// ],
-		// 'docusaurus-tailwindcss-loader',
 		[
 			'@docusaurus/plugin-google-tag-manager',
 			{

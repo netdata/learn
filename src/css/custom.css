@@ -191,16 +191,6 @@ h5 {
 
 :root { --ifm-navbar-height: 72px; }
 
-@media screen and (max-width: 1440px) {
-	.navbar__inner {
-		display: block;
-	}
-
-	:root {
-		--ifm-navbar-height: 120px
-	}
-}
-
 @media screen and (max-width: 996px) {
 	.navbar-sidebar {
 		visibility: visible;

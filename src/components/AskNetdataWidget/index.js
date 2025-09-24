@@ -62,7 +62,11 @@ const PILL_TALL_START = 56;   // px height where we start relaxing the capsule c
 const PILL_MIN_RADIUS = 14;   // px min radius for very tall pills
 const PILL_MAX_CAPSULE = 999; // fully rounded capsule for short pills
 
-export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, overlayMaxWidth = 1000, panelPct = 25 }) {
+// Add a constant for mobile font size
+const MOBILE_FONT_SIZE = 11; // px
+const MOBILE_CHATBOX_WIDTH = 90; // Mobile chatbox width as a percentage
+
+export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, overlayMaxWidth = 1000, panelPct = 25, onOverlayVisibilityChange }) {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
   const history = useHistory();
@@ -81,8 +85,8 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       }
       const onClick = (e) => {
         e.preventDefault();
-        try { closeOverlay(); } catch {}
-        history.push(internalPath);
+  // Do not close the overlay when navigating internal docs — keep the panel open
+  history.push(internalPath);
       };
       return (
         <Link to={internalPath} onClick={onClick} {...props}>
@@ -114,8 +118,8 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   const [commentDraft, setCommentDraft] = useState({});
   const copiedTimersRef = useRef({});
   const [copiedState, setCopiedState] = useState({});
-  const overlayCloseTimerRef = useRef(null);
   const chatAbortRef = useRef(null); // abort controller for streaming chat
+  const overlayCloseTimerRef = useRef(null);
 
   const textareaRef = useRef(null);
   const pillRef = useRef(null);
@@ -130,6 +134,14 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   const effectiveTrackHeight = Math.round(TOGGLE_TRACK_HEIGHT * sizeRatio);
   const effectiveKnobSize = Math.round(TOGGLE_KNOB_SIZE * sizeRatio);
 
+  // Notify parent when overlay visibility changes
+  useEffect(() => {
+    const effectiveVisible = showOverlay && !isOverlayClosing;
+    if (onOverlayVisibilityChange) {
+      onOverlayVisibilityChange(effectiveVisible);
+    }
+  }, [showOverlay, isOverlayClosing, onOverlayVisibilityChange]);
+
   // Remove auto-focus on load (accessibility & user preference) and add keyboard shortcuts
   useEffect(() => {
     const onGlobalKey = (e) => {
@@ -137,7 +149,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       if ((e.ctrlKey || e.metaKey) && e.key === '/') {
         e.preventDefault();
         setToggleOn(v => !v);
-        // Do NOT auto focus immediately—user can press Ctrl+K next if desired
+        setTimeout(() => textareaRef.current?.focus(), 0);
         return;
       }
       // Focus caret with Ctrl+K (robust across browsers: also prevent default to block browser search)
@@ -157,6 +169,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
 
   // Compute horizontal shift so the overlay aligns under the navbar pill even at different zooms
   const [overlayShiftX, setOverlayShiftX] = useState(0);
+  // (overlay is flush to viewport right edge)
   // panelPct: percent (0-100) of available docs/content width the panel should occupy
   const [panelWidth, setPanelWidth] = useState(() => Math.min(overlayMaxWidth, Math.floor((typeof window !== 'undefined' ? Math.min(window.innerWidth, overlayMaxWidth || 560) : 560) * (panelPct / 100))));
   const [panelHeight, setPanelHeight] = useState(() => {
@@ -292,6 +305,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
           if (el) { contentEl = el; break; }
         }
         const contentWidth = contentEl ? Math.max(360, Math.floor(contentEl.getBoundingClientRect().width)) : Math.floor(vw * 0.7);
+  // No overlay right-gap computation; keep overlay flush to viewport edge.
         const target = Math.max(320, Math.min(overlayMaxWidth || 560, Math.floor(contentWidth * (panelPct / 100))));
         setPanelWidth(clampPanelWidth(target));
       } catch { }
@@ -341,9 +355,9 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
 
     if (showOverlay && !isOverlayClosing) {
       if (isMobile) {
-        target.style.paddingBottom = panelHeight + 28 + 'px';
+        target.style.paddingBottom = panelHeight + 'px';
       } else {
-        target.style.paddingRight = panelWidth + 28 + 'px';
+        target.style.paddingRight = panelWidth + 'px';
       }
     } else {
       if (isOverlayClosing) {
@@ -491,6 +505,10 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       const target = e.target;
       if (panelRef.current && panelRef.current.contains(target)) return; // inside panel
       if (pillRef.current && pillRef.current.contains(target)) return; // clicking the pill shouldn't auto-reset
+      // If the click is inside the main docs/content container that we push, do not close the overlay
+      try {
+        if (contentTargetRef.current && contentTargetRef.current.contains(target)) return;
+      } catch {}
       try { chatAbortRef.current?.abort(); } catch {}
       const wasVisible = showOverlay && !isOverlayClosing;
       if (wasVisible) closeOverlay(); else setShowOverlay(false);
@@ -618,6 +636,8 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       } else {
         handleSubmit();
       }
+  // After submitting via Enter, remove focus from the chatbox to dismiss virtual keyboards
+  try { textareaRef.current?.blur(); setIsInputFocused(false); } catch {}
     }
   };
 
@@ -635,18 +655,20 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     justifyContent: 'center',
     pointerEvents: 'none'
   };
+  // Update pillInnerStyle to align chatbox to the right on mobile
   const pillInnerStyle = {
-    width: '100%',
-  maxWidth: pillMaxWidth,
+    width: isMobile ? '85vw' : '100%', // Use 100vw for mobile to span the entire screen width
+  maxWidth: isMobile ? '85vw' : 800, // Ensure maxWidth matches width for mobile
     padding: '0 20px',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    textAlign: isMobile ? 'right' : 'center' // Align to the right on mobile
   };
   const pillStyle = {
     border: isDarkMode ? '1px solid var(--ifm-color-emphasis-300)' : '1px solid #e5e7eb',
     background: isDarkMode ? '#0A0A0A' : 'rgba(255,255,255,0.96)',
     backdropFilter: 'blur(18px)',
     boxShadow: isInputFocused ? `0 0 0 3px ${rgba(currentAccent, OPACITY.focusRing)}` : 'none',
-    width: '100%',
+    width: '400px',
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
@@ -658,14 +680,40 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     padding: '6px 8px 6px 20px',
     overflow: 'hidden'
   };
+  // Update placeholderStyle to use MOBILE_FONT_SIZE for mobile
   const placeholderStyle = {
-    position: 'absolute', left: 26, top: '50%', transform: 'translateY(-50%)', right: 190,
-    display: 'flex', alignItems: 'center', gap: 8,
-    opacity: input ? 0 : 1, fontSize: 16, lineHeight: 1.3, color: (isSendHovered && !input.trim()) ? currentAccent : (isDarkMode ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.50)'),
-    transition: 'opacity 260ms ease, color 300ms ease', pointerEvents: 'none'
+    position: 'absolute',
+    left: 26,
+    top: '50%',
+    transform: 'translateY(-50%)',
+    right: 190,
+    display: 'flex',
+    alignItems: 'center',
+    gap: 8,
+    flexWrap: 'nowrap',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    opacity: input ? 0 : 1,
+    fontSize: isMobile ? MOBILE_FONT_SIZE : 16, // Use MOBILE_FONT_SIZE for mobile
+    lineHeight: 1.3,
+    color: (isSendHovered && !input.trim()) ? currentAccent : (isDarkMode ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.50)'),
+    transition: 'opacity 260ms ease, color 300ms ease',
+    pointerEvents: 'none'
   };
   const textareaStyle = {
-  flex: 1, background:'transparent', border:'none', outline:'none', resize:'none', fontSize:16, fontFamily:'inherit', lineHeight:1.45, color: isDarkMode ? 'var(--ifm-font-color-base)' : '#1f2937', padding: 0, maxHeight:200, overflow:'hidden'
+  flex: 1,
+  background: 'transparent',
+  border: 'none',
+  outline: 'none',
+  resize: 'none',
+  fontSize: isMobile ? MOBILE_FONT_SIZE : 16, // Use MOBILE_FONT_SIZE for mobile
+  fontFamily: 'inherit',
+  lineHeight: 1.45,
+  color: isDarkMode ? 'var(--ifm-font-color-base)' : '#1f2937',
+  padding: 0,
+  maxHeight: 200,
+  overflow: 'hidden'
   };
   // Dim background (different opacity for dark vs light) when no input, match main page semantics
   const dimmedBg = isDarkMode
@@ -681,12 +729,24 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   // Removed glow/outline from toggle per request
   const toggleTrackStyle = (on) => ({ width:TOGGLE_TRACK_WIDTH, height:effectiveTrackHeight, padding:'4px', boxSizing:'border-box', borderRadius:999, background: on ? ASKNET_SECOND : ASKNET_PRIMARY, position:'relative', cursor:'pointer', transition:'background 200ms ease', flexShrink:0, display:'flex', alignItems:'center' });
   const toggleKnobStyle = (on) => ({ width:effectiveKnobSize, height:effectiveKnobSize, borderRadius:'50%', background: isDarkMode ? '#0b1220' : '#fff', position:'absolute', top:'50%', left: on ? `calc(100% - ${effectiveKnobSize + 4}px)` : '4px', transform:'translateY(-50%)', transition:'left 200ms cubic-bezier(.2,.9,.2,1)' });
-  const toggleHintStyle = (on) => ({ position:'absolute', top:'50%', left: on? '10px':'auto', right: on? 'auto':'10px', transform:'translateY(-50%)', fontSize:12, fontWeight:600, letterSpacing:'.4px', color:'#fff', userSelect:'none', pointerEvents:'none' });
+  const toggleHintStyle = (on) => ({
+    position: 'absolute',
+    top: '50%',
+    left: on ? '10px' : 'auto',
+    right: on ? 'auto' : '10px',
+    transform: 'translateY(-50%)',
+    fontSize: isMobile ? MOBILE_FONT_SIZE : 12, // Use MOBILE_FONT_SIZE for mobile
+    fontWeight: 600,
+    letterSpacing: '.4px',
+    color: '#fff',
+    userSelect: 'none',
+    pointerEvents: 'none'
+  });
   const toggleShortcutBadgeStyle = {
-    fontSize:11,
+  fontSize: isMobile ? MOBILE_FONT_SIZE : 11,
     fontWeight:600,
     letterSpacing:'.5px',
-  padding:'3px 7px',
+  padding:isMobile ? '3px 8px' : '3px 7px',
     borderRadius:6,
     background:'rgba(255,255,255,0.25)',
     color:'#fff',
@@ -703,7 +763,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   position: 'fixed',
   top: isMobile ? 'auto' : overlayBaseTop(),
   bottom: isMobile ? 0 : 'auto',
-  right: isMobile ? 0 : 20,
+  right: 0,
   left: isMobile ? 0 : 'auto',
   height: isMobile ? panelHeight + 'px' : 'calc(100% - ' + overlayBaseTop() + 'px)',
   zIndex: 1200,
@@ -719,7 +779,11 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   pointerEvents:'auto',
   display: 'flex',
   flexDirection: 'column'
+  ,
+  // center panel on mobile, align to right on desktop
+  alignItems: isMobile ? 'center' : 'flex-end'
   };
+  // Update panelStyle to use 100vw for mobile width
   const panelStyle = {
     background: isDarkMode ? '#0A0A0A' : 'rgba(255,255,255,0.96)',
     backdropFilter:'blur(18px)',
@@ -727,29 +791,42 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   border: isDarkMode ? '1px solid rgba(255,255,255,0.04)' : '1px solid rgba(16,24,40,0.04)',
   // UX: make panel flush with page edges (no rounded corners)
   borderRadius: 0,
-  padding: '18px 20px',
+  padding: '10px 10px',
   boxShadow: 'none',
   maxHeight: '100%',
-  overflowY: 'auto',
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
   animation: 'slideUpInSmoothNoFade 520ms cubic-bezier(0.16,1,0.3,1)',
   position: 'relative',
-  width: panelWidth,
+  display: 'flex',
+  flexDirection: 'column',
+  width: isMobile ? '100vw' : panelWidth, // Use 100vw for mobile to span the entire screen width
   height: '100%'
   };
 
   // Use the docs background so the widget feels native to the page
   const docsBgLight = 'var(--ifm-background-color, #ffffff)';
   const docsBgDark = 'var(--ifm-color-emphasis-0, #0A0A0A)';
-  const questionMessageStyle = { background: isDarkMode ? docsBgDark : docsBgLight, border: isDarkMode ? '1px solid rgba(255,255,255,0.04)' : '1px solid rgba(16,24,40,0.04)', borderRadius: 4, padding: '14px 16px', marginBottom: 18, fontSize: 15, lineHeight:1.5, fontWeight:500 };
+  // Answer font sizing constants so we can clamp to N lines reliably
+  const ANSWER_FONT_SIZE = 15; // px
+  const ANSWER_LINE_HEIGHT = 1.6; // unitless
+  const ANSWER_CLAMP_LINES = 2; // number of visible lines
+  const ANSWER_CLAMP_HEIGHT_PX = Math.round(ANSWER_FONT_SIZE * ANSWER_LINE_HEIGHT * ANSWER_CLAMP_LINES);
+
+  // Search snippet clamp constants (two wrapped lines)
+  const SEARCH_SNIPPET_FONT_SIZE = 11; // px
+  const SEARCH_SNIPPET_LINE_HEIGHT = 1.3; // unitless
+  const SEARCH_SNIPPET_CLAMP_LINES = 2;
+  const SEARCH_SNIPPET_CLAMP_HEIGHT_PX = Math.round(SEARCH_SNIPPET_FONT_SIZE * SEARCH_SNIPPET_LINE_HEIGHT * SEARCH_SNIPPET_CLAMP_LINES);
+
+  const questionMessageStyle = { background: isDarkMode ? docsBgDark : docsBgLight, border: isDarkMode ? '1px solid rgba(255,255,255,0.04)' : '1px solid rgba(16,24,40,0.04)', borderRadius: 4, padding: '14px 16px', marginBottom: 18, fontSize: ANSWER_FONT_SIZE, lineHeight:1.5, fontWeight:500 };
   const answerMessageStyle = (m) => ({
     background: m.isError ? (isDarkMode ? 'rgba(220,38,38,0.12)' : '#fef2f2') : (isDarkMode ? docsBgDark : docsBgLight),
     borderRadius: 4,
     padding: '18px 20px 22px 20px',
     marginBottom: 20,
-    fontSize: 15,
-    lineHeight: 1.6,
+    fontSize: ANSWER_FONT_SIZE,
+    lineHeight: ANSWER_LINE_HEIGHT,
     boxShadow: 'none'
   });
 
@@ -770,7 +847,11 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   /* Resizer: base + hover/drag states (uses CSS vars set on panel) */
   .asknet-resizer { transition: background 160ms ease, box-shadow 160ms ease, border-left 160ms ease; background: transparent; }
   /* Only highlight the visible resizer on direct hover; use solid accent color (no faded inward) */
-  .asknet-resizer:hover, .asknet-resizer.is-dragging { background: var(--asknet-resizer-border); box-shadow: none; border-left: 1px solid var(--asknet-resizer-border); }
+  /* On hover/drag, the visible handle will be filled with the focus-ring color; disable extra outline to avoid double-color */
+  .asknet-resizer:hover, .asknet-resizer.is-dragging { box-shadow: none; border-left: 1px solid transparent; }
+  /* Search result card hover: subtle lift + accent border */
+  .asknet-search-result { transition: box-shadow 180ms ease, transform 160ms ease, border-color 160ms ease; }
+  .asknet-search-result:hover { transform: none; box-shadow: 0 0 0 2px var(--asknet-focus-ring); border-color: var(--asknet-resizer-border); }
       `}</style>
       <div ref={pillRef} style={pillContainerStyle}>
         <div style={pillInnerStyle}>
@@ -780,11 +861,15 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
               <span
                 style={{
                   marginLeft: 10,
-                  fontSize: 12,
+                  fontSize: isMobile ? MOBILE_FONT_SIZE : 12,
                   fontWeight: 600,
                   letterSpacing: '.5px',
-                  padding: '2px 6px',
+                  padding: isMobile ? '2px 8px' : '2px 6px',
                   borderRadius: 4,
+                  display: 'inline-block',
+                  whiteSpace: 'nowrap',
+                  minWidth: isMobile ? 56 : 44,
+                  textAlign: 'center',
                   background: isDarkMode ? 'rgba(164, 164, 164, 0.42)' : 'rgba(0,0,0,0.06)',
                   color: isDarkMode ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.60)',
                   lineHeight: 1,
@@ -840,7 +925,8 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
             <div ref={panelRef} style={{...panelStyle,
               animation: isMobile && mobileAnim ? mobileAnim : (isOverlayClosing ? (isMobile ? 'slideOutToRight 260ms ease forwards' : 'slideOutToRight 260ms ease forwards') : (isMobile ? 'slideInFromRight 320ms cubic-bezier(0.16,1,0.3,1) forwards' : 'slideInFromRight 320ms cubic-bezier(0.16,1,0.3,1) forwards')),
               ['--asknet-resizer-bg']: currentAccent, ['--asknet-resizer-glow']: currentAccent, ['--asknet-resizer-border']: currentAccent,
-              width: isMobile ? '100%' : panelWidth,
+              ['--asknet-glow-strong']: `${rgba(currentAccent, OPACITY.glowStrong)}`, ['--asknet-glow-soft']: `${rgba(currentAccent, OPACITY.glowSoft)}`, ['--asknet-focus-ring']: `${rgba(currentAccent, OPACITY.focusRing)}`,
+              width: isMobile ? '100vw' : panelWidth, // Use 100vw for mobile to span the entire screen width
               height: isMobile ? panelHeight : '100%',
               borderTop: isMobile ? `6px solid ${currentAccent}` : undefined,
               boxShadow: panelStyle.boxShadow
@@ -850,71 +936,73 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
               )}
               {/* Resizer: draggable vertical bar (thinner, hoverable) */}
               {/* Resizer: draggable - vertical on desktop (left), horizontal on mobile (top of panel) */}
-              {!isMobile ? (
+              {!isMobile && (
                 <div
                   role="separator"
                   aria-orientation="vertical"
                   onMouseDown={(e)=>{ startDragging(e.clientX)(e); }}
                   onTouchStart={startDraggingTouch}
-                  style={{ position:'absolute', left: -6, top:0, bottom:0, width:12, cursor:'ew-resize', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1300 }}
+                  style={{ position:'absolute', left: -10, top:0, bottom:0, width:20, cursor:'ew-resize', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1300 }}
                 >
                   <div
                     className={`asknet-resizer ${isDragging ? 'is-dragging' : ''}`}
                     onMouseEnter={() => setResizerHover(true)}
                     onMouseLeave={() => setResizerHover(false)}
                     style={{
-                      width: 6,
+                      width: (isDragging || resizerHover) ? 14 : 8,
                       height: '100%',
                       display: 'block',
+                      boxSizing: 'border-box',
                       borderRadius: 0,
-                      background: (isDragging || resizerHover) ? currentAccent : 'transparent',
-                      borderLeft: (isDragging || resizerHover) ? `1px solid ${currentAccent}` : '1px solid transparent'
+                      background: (isDragging || resizerHover) ? 'var(--asknet-focus-ring)' : 'transparent',
+                      borderLeft: '1px solid transparent',
+                      transition: 'width 120ms ease, background 120ms ease'
                     }}
                   />
-                </div>
-              ) : (
-                <div style={{ position:'absolute', right:84, top:18, display:'flex', justifyContent:'flex-end', zIndex:1505, pointerEvents:'auto' }}>
-                  <button
-                    aria-label={isMobileMaximized ? 'Restore' : 'Maximize'}
-                    title={isMobileMaximized ? 'Restore' : 'Maximize'}
-                    onClick={() => {
-                      try {
-                        // apply same animation used by show/hide
-                        if (mobileAnimTimerRef.current) { clearTimeout(mobileAnimTimerRef.current); mobileAnimTimerRef.current = null; }
-                        if (!isMobileMaximized) {
-                          prevPanelHeightRef.current = panelHeight;
-                          // animate 'open' style
-                          setMobileAnim(`slideInFromRight ${PANEL_OPEN_ANIM_MS}ms cubic-bezier(0.16,1,0.3,1) forwards`);
-                          setPanelHeight(Math.max(MOBILE_MIN_HEIGHT, Math.floor(window.innerHeight * 0.9)));
-                          setIsMobileMaximized(true);
-                          mobileAnimTimerRef.current = setTimeout(()=>{ setMobileAnim(''); mobileAnimTimerRef.current = null; }, PANEL_OPEN_ANIM_MS + 20);
-                        } else {
-                          // animate 'close' style
-                          setMobileAnim(`slideOutToRight ${PANEL_CLOSE_ANIM_MS}ms ease forwards`);
-                          setPanelHeight(prevPanelHeightRef.current || Math.max(MOBILE_MIN_HEIGHT, Math.floor(window.innerHeight * (panelPct / 100))));
-                          prevPanelHeightRef.current = null;
-                          setIsMobileMaximized(false);
-                          mobileAnimTimerRef.current = setTimeout(()=>{ setMobileAnim(''); mobileAnimTimerRef.current = null; }, PANEL_CLOSE_ANIM_MS + 20);
-                        }
-                      } catch {}
-                    }}
-                    style={{ background:'transparent', border:'1px solid rgba(0,0,0,0.12)', color:currentAccent, padding:'6px 10px', borderRadius:8, cursor:'pointer', boxShadow:'none' }}
-                  >
-                    {isMobileMaximized ? 'Restore' : 'Maximize'}
-                  </button>
                 </div>
               )}
             {/* Header row with actions */}
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:24 }}>
-              <div style={{ display:'flex', alignItems:'center', gap:10, fontSize: '1.05rem', fontWeight:700 }}>
-                <span style={{ color: currentAccent }}>{toggleOn ? 'Search Docs' : 'Ask Netdata'}</span>
-                {/* removed shortcut hint in results header per UX request */}
+              <div style={{ fontSize:15, fontWeight:600 }}>
+                {toggleOn && searchResults.length > 0 && `Found ${searchResults.length} result${searchResults.length !== 1 ? 's' : ''} for "${searchQuery}"`}
               </div>
+              {isMobile && (
+                <button
+                  aria-label={isMobileMaximized ? 'Restore' : 'Maximize'}
+                  title={isMobileMaximized ? 'Restore' : 'Maximize'}
+                  onClick={() => {
+                    try {
+                      // apply same animation used by show/hide
+                      if (mobileAnimTimerRef.current) { clearTimeout(mobileAnimTimerRef.current); mobileAnimTimerRef.current = null; }
+                      if (!isMobileMaximized) {
+                        prevPanelHeightRef.current = panelHeight;
+                        // animate 'open' style
+                        setMobileAnim(`slideInFromRight ${PANEL_OPEN_ANIM_MS}ms cubic-bezier(0.16,1,0.3,1) forwards`);
+                        setPanelHeight(Math.max(MOBILE_MIN_HEIGHT, Math.floor(window.innerHeight * 0.9)));
+                        setIsMobileMaximized(true);
+                        mobileAnimTimerRef.current = setTimeout(()=>{ setMobileAnim(''); mobileAnimTimerRef.current = null; }, PANEL_OPEN_ANIM_MS + 20);
+                      } else {
+                        // animate 'close' style
+                        setMobileAnim(`slideOutToRight ${PANEL_CLOSE_ANIM_MS}ms ease forwards`);
+                        setPanelHeight(prevPanelHeightRef.current || Math.max(MOBILE_MIN_HEIGHT, Math.floor(window.innerHeight * (panelPct / 100))));
+                        prevPanelHeightRef.current = null;
+                        setIsMobileMaximized(false);
+                        mobileAnimTimerRef.current = setTimeout(()=>{ setMobileAnim(''); mobileAnimTimerRef.current = null; }, PANEL_CLOSE_ANIM_MS + 20);
+                      }
+                    } catch {}
+                  }}
+                  style={{ background:'transparent', border:'1px solid rgba(0,0,0,0.12)', color:currentAccent, padding:'6px 10px', borderRadius:8, cursor:'pointer', boxShadow:'none' }}
+                >
+                  {isMobileMaximized ? 'Restore' : 'Maximize'}
+                </button>
+              )}
               <div style={{ display:'flex', gap:12 }}>
                 {!toggleOn && messages.length > 0 && <button onClick={() => { setMessages([]); closeOverlay(); setSearchResults([]); setSearchQuery(''); }} style={{ background:'transparent', border: isDarkMode?'1px solid rgba(255,255,255,0.2)':'1px solid #d1d5db', borderRadius:8, padding:'6px 12px', cursor:'pointer', fontSize:13 }}>New chat</button>}
                 <button onClick={() => closeOverlay()} style={{ background:'transparent', border:'none', fontSize:18, cursor:'pointer', lineHeight:1, padding:'4px 6px' }} aria-label="Close overlay">×</button>
               </div>
             </div>
+            {/* Scrollable content area (results / messages / loading) */}
+            <div style={{ flex: 1, overflowY: 'auto', paddingRight: 6, paddingTop: 8 }}>
             {/* Search results (exclusive view) */}
             {toggleOn && (searchResults.length>0 || isSearching || (searchQuery && !isSearching)) && (
               <div style={{ marginBottom:24 }}>
@@ -929,11 +1017,11 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                   </div>
                 ) : searchResults.length>0 ? (
                   <>
-                    <div style={{ fontSize:15, fontWeight:600, marginBottom:12 }}>Found {searchResults.length} result{searchResults.length!==1?'s':''} for "{searchQuery}"</div>
                     <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
                       {searchResults.map((r,i)=>(
-                        <div key={i} style={{ padding:'16px 16px 14px 16px', background: isDarkMode?'rgba(255,255,255,0.05)':'#fff', border: isDarkMode?'1px solid rgba(255,255,255,0.1)':'1px solid #e6eaf0', borderRadius:8, animation:'riseInNoFade 360ms cubic-bezier(0.16,1,0.3,1) both', animationDelay:`${i*40}ms` }}>
-                          <SmartLink href={r.url} onClick={closeOverlay} style={{ color:ASKNET_SECOND, textDecoration:'none', fontWeight:600, fontSize:16 }}>{r.title}</SmartLink>
+                        <SmartLink key={i} href={r.url} style={{ textDecoration:'none', color:'inherit', display:'block', maxWidth: '90%', margin: '0 auto' }}>
+                          <div className="asknet-search-result" style={{ padding:'16px 16px 14px 16px', background: isDarkMode?'rgba(255,255,255,0.05)':'#fff', border: isDarkMode?'1px solid rgba(255,255,255,0.1)':'1px solid #e6eaf0', borderRadius:8 }}>
+                            <div style={{ color: ASKNET_SECOND, textDecoration:'none', fontWeight:600, fontSize:16 }}>{r.title}</div>
                           {(() => {
                             if(!r.snippet) return null;
                             const cleanSnippet = (snippet) => {
@@ -980,7 +1068,17 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                             if(!body) return null;
                             const truncated = body.length > 400 ? body.slice(0,400).trim() + '…' : body;
                             return (
-                              <div style={{ fontSize:11, lineHeight:1.3, marginTop:8, opacity:0.8 }}>
+                              <div style={{
+                                fontSize: SEARCH_SNIPPET_FONT_SIZE,
+                                lineHeight: SEARCH_SNIPPET_LINE_HEIGHT,
+                                marginTop: 8,
+                                opacity: 0.8,
+                                display: '-webkit-box',
+                                WebkitLineClamp: SEARCH_SNIPPET_CLAMP_LINES,
+                                WebkitBoxOrient: 'vertical',
+                                overflow: 'hidden',
+                                maxHeight: SEARCH_SNIPPET_CLAMP_HEIGHT_PX + 'px'
+                              }}>
                                 {truncated}
                               </div>
                             );
@@ -1030,11 +1128,12 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                               Relevance: {Math.round(r.score * 100)}%
                             </div>
                           )}
-                        </div>
+                          </div>
+                        </SmartLink>
                       ))}
                     </div>
                   </>
-                ) : (<div style={{ fontSize:14, opacity:0.7 }}>No results for "{searchQuery}"</div>)}
+                ) : (<div style={{ fontSize:14, opacity:0.7 }}>No results for "{searchQuery}"</div>) }
               </div>
             )}
             {/* Messages (hidden in search mode) */}
@@ -1042,6 +1141,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
               <div key={m.id} style={m.type==='user'?questionMessageStyle:answerMessageStyle(m)}>
                 <div style={{ fontSize:11, fontWeight:600, letterSpacing:'0.5px', textTransform:'uppercase', opacity:0.50, marginBottom:8 }}>{m.type==='user'?'You':'Netdata'}</div>
                 {m.type==='assistant' ? (
+                  // Remove the clamp for messages inside the scrollable area - let them expand fully
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={{
@@ -1091,6 +1191,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
             {(messages.length>0 || toggleOn) && (
               <div style={{ fontSize:12, opacity:0.6, marginTop:4, textAlign:'center' }}>AI can make mistakes - validate before use.</div>
             )}
+            </div>
           </div>
         </div>
       </div>
