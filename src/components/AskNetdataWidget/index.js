@@ -1160,7 +1160,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
               </div>
             )}
             <div ref={messagesBottomRef} />
-            {(messages.length>0 || toggleOn) && (
+            {messages.length > 0 && !toggleOn && (
               <div style={{ fontSize:12, opacity:0.6, marginTop:4, textAlign:'center' }}>AI can make mistakes - validate before use.</div>
             )}
             </div>
