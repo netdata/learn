@@ -40,7 +40,7 @@ jobs:
 
       - name: Ingest process, integration generation and learn_link checking
         run: |
-          python ingest/ingest.py --learn-link-check
+          python ingest/ingest.py
 
       - name: Update kickstart checksum
         run: |

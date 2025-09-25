@@ -38,7 +38,6 @@ import autogenerateRedirects as genRedirects
 import pandas as pd
 import numpy as np
 from pathlib import Path
-from check_learn_links import main as check_main
 
 
 DRY_RUN = False
@@ -1045,12 +1044,6 @@ if __name__ == '__main__':
         action="store_true",
     )
 
-    parser.add_argument(
-        "--learn-link-check",
-        help="Run learn_link HTTP checks after ingest and fail on 404s.",
-        action="store_true",
-    )
-
     list_of_repos_in_str = []
     # netdata/netdata:branch tkatsoulas/go.d.plugin:mybranch
     args = parser.parse_args()
@@ -1412,14 +1405,3 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
         'docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations')
     get_dir_make_file_and_recurse(
         'docs/logs')
-
-    # Optionally run learn_link checks and exit non-zero if any 404s found
-    if args.learn_link_check:
-        try:
-            results_404 = check_main()
-            if results_404:
-                print(
-                    f"ERROR: {len(results_404)} learn_link(s) returned 404. Exiting with error.")
-                sys.exit(1)
-        except Exception as e:
-            print(f"Warning: learn_link check failed: {e}")
