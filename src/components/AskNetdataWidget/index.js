@@ -379,7 +379,13 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
     return () => {
       if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null; }
       if (contentTargetRef.current) {
-  try { if (isMobile) contentTargetRef.current.style.paddingBottom = prevPaddingRef.current || ''; else contentTargetRef.current.style.paddingRight = prevPaddingRef.current || ''; } catch {}
+  try {
+    if (isMobile) {
+      contentTargetRef.current.style.paddingBottom = prevPaddingRef.current || '';
+    } else {
+      contentTargetRef.current.style.paddingRight = prevPaddingRef.current || '';
+    }
+  } catch {}
         if (addedAnimateClassRef.current) contentTargetRef.current.classList.remove('asknet-content-animate');
       }
       prevPaddingRef.current = null;
