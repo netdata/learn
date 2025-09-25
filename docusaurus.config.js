@@ -43,6 +43,103 @@ module.exports = {
 					type: 'custom-asknetdata-widget-item',
 					position: 'right',
 				},
+				{
+					to: 'https://www.netdata.cloud/features/',
+					position: 'left',
+					label: 'Features',
+					className: 'navbar-item-hide-large-1',
+					style: { fontWeight: '500' }
+				},
+				{
+					to: 'https://www.netdata.cloud/open-source/',
+					position: 'left',
+					label: 'Open Source',
+					className: 'navbar-item-hide-large-2',
+					style: { fontWeight: '500' }
+				},
+				{
+					to: 'https://www.netdata.cloud/pricing/',
+					position: 'left',
+					label: 'Pricing',
+					className: 'navbar-item-hide-large-3',
+					style: { fontWeight: '500' }
+				},
+				{
+					to: 'https://www.netdata.cloud/integrations/',
+					position: 'left',
+					label: 'Integrations',
+					className: 'navbar-item-hide-large-4',
+					style: { fontWeight: '500' }
+				},
+				{
+					position: 'left',
+					label: 'Use cases',
+					className: 'navbar-item-hide-large-5',
+					style: { fontWeight: '500' },
+					items: [
+						{
+							label: 'Response Time',
+							to: 'https://www.netdata.cloud/response-time-monitoring/'
+						},
+						{
+							label: 'Cloud',
+							to: 'https://www.netdata.cloud/cloud-monitoring/',
+						},
+						{
+							label: 'Web Servers',
+							to: 'https://www.netdata.cloud/webserver-monitoring/',
+						},
+						{
+							label: 'Containers',
+							to: 'https://www.netdata.cloud/container-monitoring/',
+						}
+					]
+				},
+				{
+					position: 'left',
+					label: 'Resources',
+					className: 'navbar-item-hide-large-6',
+					style: { fontWeight: '500' },
+					items: [
+						{
+							type: 'doc',
+							docId: 'welcome-to-netdata/welcome-to-netdata',
+							label: 'Documentation'
+						},
+						{
+							label: 'Community',
+							to: 'https://www.netdata.cloud/community/',
+						},
+						{
+							label: 'About',
+							to: 'https://www.netdata.cloud/about/',
+						},
+						{
+							label: 'Forums',
+							to: 'https://community.netdata.cloud/',
+						},
+						{
+							label: 'Blog',
+							to: 'https://blog.netdata.cloud/',
+						},
+						{
+							label: 'Roadmap',
+							to: 'https://www.netdata.cloud/roadmap/'
+						},
+						{
+							label: 'Videos',
+							to: 'https://www.youtube.com/c/Netdata/'
+						},
+					]
+				},
+
+				{
+					to: 'https://app.netdata.cloud/spaces/netdata-demo?utm_source=learn&utm_content=top_navigation_demo',
+					label: 'Live Demo',
+					position: 'left',
+					className: 'navbar-item-hide-large-7',
+					style: { fontWeight: '500' }
+				},
 			],
 		},
 		// footer: {

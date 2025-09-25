@@ -784,7 +784,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
   };
   // Update panelStyle to use 100vw for mobile width
   const panelStyle = {
-    background: isDarkMode ? '#0A0A0A' : 'rgba(255,255,255,0.96)',
+    background: isDarkMode ? 'var(--ifm-background-color)' : 'rgba(255,255,255,0.96)',
     backdropFilter:'blur(18px)',
   // Remove accent outline for widget panel (use subtle neutral stroke instead)
   border: isDarkMode ? '1px solid rgba(255,255,255,0.04)' : '1px solid rgba(16,24,40,0.04)',
