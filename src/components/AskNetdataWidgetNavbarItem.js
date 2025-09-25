@@ -9,25 +9,6 @@ export default function AskNetdataWidgetNavbarItem() {
   const { pathname } = useLocation();
   const [collapsedByWidget, setCollapsedByWidget] = useState(false);
 
-  // Hide the navbar widget on the Ask Netdata page
-  if (pathname && pathname.endsWith('/ask-netdata')) return null;
-
-  const handleOverlayVisibility = (visible) => {
-    if (window.innerWidth < MIN_WIDTH_FOR_COLLAPSE || window.innerWidth > MAX_WIDTH_FOR_COLLAPSE) return;
-    const button = document.querySelector('.collapseSidebarButton_PEFL');
-    if (visible && !collapsedByWidget) {
-      if (button) {
-        button.click();
-        setCollapsedByWidget(true);
-      }
-    } else if (!visible && collapsedByWidget) {
-      if (button) {
-        button.click();
-        setCollapsedByWidget(false);
-      }
-    }
-  };
-
   useEffect(() => {
     if (collapsedByWidget) {
       const sidebar = document.querySelector('.theme-doc-sidebar-container');
@@ -57,6 +38,25 @@ export default function AskNetdataWidgetNavbarItem() {
       }
     }
   }, [collapsedByWidget]);
+
+  // Hide the navbar widget on the Ask Netdata page
+  if (pathname && pathname.endsWith('/ask-netdata')) return null;
+
+  const handleOverlayVisibility = (visible) => {
+    if (window.innerWidth < MIN_WIDTH_FOR_COLLAPSE || window.innerWidth > MAX_WIDTH_FOR_COLLAPSE) return;
+    const button = document.querySelector('.collapseSidebarButton_PEFL');
+    if (visible && !collapsedByWidget) {
+      if (button) {
+        button.click();
+        setCollapsedByWidget(true);
+      }
+    } else if (!visible && collapsedByWidget) {
+      if (button) {
+        button.click();
+        setCollapsedByWidget(false);
+      }
+    }
+  };
 
   return (
     <div style={{ display: 'flex', alignItems: 'center', minWidth: 0, width: '100%', maxWidth: 520, justifyContent: 'center' }}>
