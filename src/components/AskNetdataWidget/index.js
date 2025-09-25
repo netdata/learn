@@ -57,6 +57,9 @@ const PANEL_BASE_RADIUS = 24; // small content
 const PANEL_MIN_RADIUS = 12;  // very tall content
 // Mobile sizing
 const MOBILE_MIN_HEIGHT = 300; // px minimum mobile panel height
+// Animation durations
+const PANEL_OPEN_ANIM_MS = 320;
+const PANEL_CLOSE_ANIM_MS = 260;
 // Adaptive corner radius for the input pill when it grows tall due to multi-line input
 const PILL_TALL_START = 56;   // px height where we start relaxing the capsule corners
 const PILL_MIN_RADIUS = 14;   // px min radius for very tall pills
@@ -182,10 +185,6 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
   const [isDragging, setIsDragging] = useState(false);
   const [resizerHover, setResizerHover] = useState(false);
   const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 720 : false);
-  const [isMobileMaximized, setIsMobileMaximized] = useState(false);
-  const prevPanelHeightRef = useRef(null);
-  const [mobileAnim, setMobileAnim] = useState('');
-  const mobileAnimTimerRef = useRef(null);
   const dragStartXRef = useRef(0);
   const dragStartWidthRef = useRef(0);
   const dragStartYRef = useRef(0);
@@ -524,7 +523,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
   }, [showOverlay, isOverlayClosing]);
 
   // Scroll overlay to bottom on new messages
-  useEffect(() => { messagesBottomRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages, isLoading]);
+  // Removed auto-scroll to bottom for LLM answers
 
   // Feedback copy timers cleanup
   useEffect(() => () => { Object.values(copiedTimersRef.current).forEach(t => clearTimeout(t)); }, []);
@@ -796,12 +795,13 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
   maxHeight: '100%',
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
-  animation: 'slideUpInSmoothNoFade 520ms cubic-bezier(0.16,1,0.3,1)',
+  animation: isMobile ? undefined : 'slideUpInSmoothNoFade 520ms cubic-bezier(0.16,1,0.3,1)',
   position: 'relative',
   display: 'flex',
   flexDirection: 'column',
   width: isMobile ? '100vw' : panelWidth, // Use 100vw for mobile to span the entire screen width
-  height: '100%'
+  height: '100%',
+  transition: isDragging ? 'none' : (isMobile ? 'height 260ms ease' : 'none')
   };
 
   // Use the docs background so the widget feels native to the page
@@ -841,6 +841,9 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
   /* Slide panel in from right and out to right */
   @keyframes slideInFromRight { 0% { transform: translateX(16px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
   @keyframes slideOutToRight { 0% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(16px); opacity: 0; } }
+  /* Slide panel up from bottom and down to bottom for mobile */
+  @keyframes slideUpFromBottom { 0% { transform: translateY(100%); } 100% { transform: translateY(0); } }
+  @keyframes slideDownToBottom { 0% { transform: translateY(0); } 100% { transform: translateY(100%); } }
   .asknet-overlay-panel::-webkit-scrollbar { display: none; }
   /* Smoothly transition content padding when panel opens/closes */
   .asknet-content-animate { transition: padding-right 320ms cubic-bezier(0.16,1,0.3,1), padding-bottom 320ms cubic-bezier(0.16,1,0.3,1); }
@@ -923,16 +926,15 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
         <div style={{ display: 'flex', height: '100%', alignItems: 'flex-start' }}>
           <div style={overlayInnerStyle}>
             <div ref={panelRef} style={{...panelStyle,
-              animation: isMobile && mobileAnim ? mobileAnim : (isOverlayClosing ? (isMobile ? 'slideOutToRight 260ms ease forwards' : 'slideOutToRight 260ms ease forwards') : (isMobile ? 'slideInFromRight 320ms cubic-bezier(0.16,1,0.3,1) forwards' : 'slideInFromRight 320ms cubic-bezier(0.16,1,0.3,1) forwards')),
+              animation: isOverlayClosing ? (isMobile ? 'slideDownToBottom 260ms ease forwards' : 'slideOutToRight 260ms ease forwards') : (isMobile ? 'slideUpFromBottom 320ms cubic-bezier(0.16,1,0.3,1) forwards' : 'slideInFromRight 320ms cubic-bezier(0.16,1,0.3,1) forwards'),
               ['--asknet-resizer-bg']: currentAccent, ['--asknet-resizer-glow']: currentAccent, ['--asknet-resizer-border']: currentAccent,
               ['--asknet-glow-strong']: `${rgba(currentAccent, OPACITY.glowStrong)}`, ['--asknet-glow-soft']: `${rgba(currentAccent, OPACITY.glowSoft)}`, ['--asknet-focus-ring']: `${rgba(currentAccent, OPACITY.focusRing)}`,
               width: isMobile ? '100vw' : panelWidth, // Use 100vw for mobile to span the entire screen width
               height: isMobile ? panelHeight : '100%',
-              borderTop: isMobile ? `6px solid ${currentAccent}` : undefined,
               boxShadow: panelStyle.boxShadow
             }} className="asknet-overlay-panel">
               {isMobile && (
-                <div style={{ position: 'absolute', top: -6, left: 0, right: 0, height: 6, background: currentAccent, zIndex: 1405, pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', top: 14, left: '50%', transform: 'translateX(-50%)', width: 60, height: 6, background: currentAccent, borderRadius: 3, zIndex: 1405, cursor: 'ns-resize', pointerEvents: 'auto' }} onMouseDown={(e) => startDraggingVertical(e.clientY)(e)} onTouchStart={startDraggingTouch} />
               )}
               {/* Resizer: draggable vertical bar (thinner, hoverable) */}
               {/* Resizer: draggable - vertical on desktop (left), horizontal on mobile (top of panel) */}
@@ -966,36 +968,6 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
               <div style={{ fontSize:15, fontWeight:600 }}>
                 {toggleOn && searchResults.length > 0 && `Found ${searchResults.length} result${searchResults.length !== 1 ? 's' : ''} for "${searchQuery}"`}
               </div>
-              {isMobile && (
-                <button
-                  aria-label={isMobileMaximized ? 'Restore' : 'Maximize'}
-                  title={isMobileMaximized ? 'Restore' : 'Maximize'}
-                  onClick={() => {
-                    try {
-                      // apply same animation used by show/hide
-                      if (mobileAnimTimerRef.current) { clearTimeout(mobileAnimTimerRef.current); mobileAnimTimerRef.current = null; }
-                      if (!isMobileMaximized) {
-                        prevPanelHeightRef.current = panelHeight;
-                        // animate 'open' style
-                        setMobileAnim(`slideInFromRight ${PANEL_OPEN_ANIM_MS}ms cubic-bezier(0.16,1,0.3,1) forwards`);
-                        setPanelHeight(Math.max(MOBILE_MIN_HEIGHT, Math.floor(window.innerHeight * 0.9)));
-                        setIsMobileMaximized(true);
-                        mobileAnimTimerRef.current = setTimeout(()=>{ setMobileAnim(''); mobileAnimTimerRef.current = null; }, PANEL_OPEN_ANIM_MS + 20);
-                      } else {
-                        // animate 'close' style
-                        setMobileAnim(`slideOutToRight ${PANEL_CLOSE_ANIM_MS}ms ease forwards`);
-                        setPanelHeight(prevPanelHeightRef.current || Math.max(MOBILE_MIN_HEIGHT, Math.floor(window.innerHeight * (panelPct / 100))));
-                        prevPanelHeightRef.current = null;
-                        setIsMobileMaximized(false);
-                        mobileAnimTimerRef.current = setTimeout(()=>{ setMobileAnim(''); mobileAnimTimerRef.current = null; }, PANEL_CLOSE_ANIM_MS + 20);
-                      }
-                    } catch {}
-                  }}
-                  style={{ background:'transparent', border:'1px solid rgba(0,0,0,0.12)', color:currentAccent, padding:'6px 10px', borderRadius:8, cursor:'pointer', boxShadow:'none' }}
-                >
-                  {isMobileMaximized ? 'Restore' : 'Maximize'}
-                </button>
-              )}
               <div style={{ display:'flex', gap:12 }}>
                 {!toggleOn && messages.length > 0 && <button onClick={() => { setMessages([]); closeOverlay(); setSearchResults([]); setSearchQuery(''); }} style={{ background:'transparent', border: isDarkMode?'1px solid rgba(255,255,255,0.2)':'1px solid #d1d5db', borderRadius:8, padding:'6px 12px', cursor:'pointer', fontSize:13 }}>New chat</button>}
                 <button onClick={() => closeOverlay()} style={{ background:'transparent', border:'none', fontSize:18, cursor:'pointer', lineHeight:1, padding:'4px 6px' }} aria-label="Close overlay">×</button>

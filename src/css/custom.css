@@ -222,7 +222,22 @@ h5 {
 	.navbar--fixed-top {
 		height: unset
 	}
+
+	/* Hide color mode toggle in mobile navbar sidebar */
+	.navbar-sidebar .toggle {
+		display: none;
+	}
+
+	/* Hide back to main menu button in mobile navbar sidebar */
+	.navbar-sidebar__back {
+		display: none;
+	}
+
+	:root {
+		--ifm-navbar-sidebar-width: 300px;
+	}
 }
+
 /*
  * Tailwind
 */
