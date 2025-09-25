@@ -273,8 +273,6 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
   const prevPaddingRef = useRef(null);
   const addedAnimateClassRef = useRef(false);
   const closeTimerRef = useRef(null);
-  const PANEL_OPEN_ANIM_MS = 320;
-  const PANEL_CLOSE_ANIM_MS = 260;
   useEffect(() => {
     // For right-docked panel we only need to ensure it stays within viewport when resizing.
     const computeShift = () => {
