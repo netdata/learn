@@ -1,0 +1,27 @@
+name: Daily Learn Link Check
+on:
+  schedule:
+    - cron: "59 23 * * *" # Daily at 23:59 UTC
+  workflow_dispatch:
+
+jobs:
+  check-learn-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run learn link check
+        run: |
+          python ingest/check_learn_links.py
