@@ -21,9 +21,11 @@ const getApiBase = () => {
   return 'https://agent-events.netdata.cloud/ask-netdata/api';
 };
 
+// Ensure widget has the same API base and conversation limit constants as the main component
 const API_BASE = getApiBase();
 const MAX_CONVERSATION_PAIRS = 3;
-// Dynamic shortcut label: show Command symbol on macOS, otherwise Ctrl
+
+
 const SHORTCUT_LABEL = (() => {
   if (typeof navigator !== 'undefined') {
     const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
@@ -53,12 +55,21 @@ const PANEL_OUTLINE_OPACITY = 0.28; // 0..1
 const SHOW_SEARCH_RELEVANCE_SCORE = false; // Set to false to hide relevance scores in search results
 const PANEL_BASE_RADIUS = 24; // small content
 const PANEL_MIN_RADIUS = 12;  // very tall content
+// Mobile sizing
+const MOBILE_MIN_HEIGHT = 300; // px minimum mobile panel height
+// Animation durations
+const PANEL_OPEN_ANIM_MS = 320;
+const PANEL_CLOSE_ANIM_MS = 260;
 // Adaptive corner radius for the input pill when it grows tall due to multi-line input
 const PILL_TALL_START = 56;   // px height where we start relaxing the capsule corners
 const PILL_MIN_RADIUS = 14;   // px min radius for very tall pills
 const PILL_MAX_CAPSULE = 999; // fully rounded capsule for short pills
 
-export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, overlayMaxWidth = 1000 }) {
+// Add a constant for mobile font size
+const MOBILE_FONT_SIZE = 11; // px
+const MOBILE_CHATBOX_WIDTH = 90; // Mobile chatbox width as a percentage
+
+export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, overlayMaxWidth = 1000, panelPct = 25, onOverlayVisibilityChange }) {
   const { colorMode } = useColorMode();
   const isDarkMode = colorMode === 'dark';
   const history = useHistory();
@@ -77,8 +88,8 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       }
       const onClick = (e) => {
         e.preventDefault();
-        try { closeOverlay(); } catch {}
-        history.push(internalPath);
+  // Do not close the overlay when navigating internal docs — keep the panel open
+  history.push(internalPath);
       };
       return (
         <Link to={internalPath} onClick={onClick} {...props}>
@@ -110,8 +121,8 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   const [commentDraft, setCommentDraft] = useState({});
   const copiedTimersRef = useRef({});
   const [copiedState, setCopiedState] = useState({});
-  const overlayCloseTimerRef = useRef(null);
   const chatAbortRef = useRef(null); // abort controller for streaming chat
+  const overlayCloseTimerRef = useRef(null);
 
   const textareaRef = useRef(null);
   const pillRef = useRef(null);
@@ -126,6 +137,14 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   const effectiveTrackHeight = Math.round(TOGGLE_TRACK_HEIGHT * sizeRatio);
   const effectiveKnobSize = Math.round(TOGGLE_KNOB_SIZE * sizeRatio);
 
+  // Notify parent when overlay visibility changes
+  useEffect(() => {
+    const effectiveVisible = showOverlay && !isOverlayClosing;
+    if (onOverlayVisibilityChange) {
+      onOverlayVisibilityChange(effectiveVisible);
+    }
+  }, [showOverlay, isOverlayClosing, onOverlayVisibilityChange]);
+
   // Remove auto-focus on load (accessibility & user preference) and add keyboard shortcuts
   useEffect(() => {
     const onGlobalKey = (e) => {
@@ -133,7 +152,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       if ((e.ctrlKey || e.metaKey) && e.key === '/') {
         e.preventDefault();
         setToggleOn(v => !v);
-        // Do NOT auto focus immediately—user can press Ctrl+K next if desired
+        setTimeout(() => textareaRef.current?.focus(), 0);
         return;
       }
       // Focus caret with Ctrl+K (robust across browsers: also prevent default to block browser search)
@@ -153,33 +172,227 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
 
   // Compute horizontal shift so the overlay aligns under the navbar pill even at different zooms
   const [overlayShiftX, setOverlayShiftX] = useState(0);
+  // (overlay is flush to viewport right edge)
+  // panelPct: percent (0-100) of available docs/content width the panel should occupy
+  const [panelWidth, setPanelWidth] = useState(() => Math.min(overlayMaxWidth, Math.floor((typeof window !== 'undefined' ? Math.min(window.innerWidth, overlayMaxWidth || 560) : 560) * (panelPct / 100))));
+  const [panelHeight, setPanelHeight] = useState(() => {
+    try {
+      const vh = typeof window !== 'undefined' ? window.innerHeight : 800;
+  // Increase mobile default so at least one result card is visible on open
+  return Math.max(MOBILE_MIN_HEIGHT, Math.floor(vh * (panelPct / 100)));
+    } catch { return 320; }
+  });
+  const [isDragging, setIsDragging] = useState(false);
+  const [resizerHover, setResizerHover] = useState(false);
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth < 720 : false);
+  const dragStartXRef = useRef(0);
+  const dragStartWidthRef = useRef(0);
+  const dragStartYRef = useRef(0);
+  const dragStartHeightRef = useRef(0);
+  const isMobileRef = useRef(isMobile);
+
+  // Drag handlers (mouse + touch) to resize panelWidth
+  const clampPanelWidth = (w) => {
+    const vw = window.innerWidth;
+    // If narrow screen (<720) we treat as full-width drawer
+    if (vw < 720) return Math.max(0, Math.min(w, vw));
+    const min = 320; // keep some content visible
+    const max = Math.min(overlayMaxWidth || 560, Math.max(360, Math.floor(vw * 0.9)));
+    return Math.max(min, Math.min(w, max));
+  };
+
+  const clampPanelHeight = (h) => {
+    const vh = window.innerHeight;
+  const min = 240; // raise minimum so a result is visible
+  const max = Math.max(320, Math.floor(vh * 0.9));
+    return Math.max(min, Math.min(h, max));
+  };
+
+  const onDragMove = (clientX) => {
+    const dx = dragStartXRef.current - clientX; // dragging left increases width
+    const newW = clampPanelWidth(dragStartWidthRef.current + dx);
+    setPanelWidth(newW);
+  };
+
+  const onDragMoveVertical = (clientY) => {
+    const dy = dragStartYRef.current - clientY; // dragging up increases height
+    const newH = clampPanelHeight(dragStartHeightRef.current + dy);
+    setPanelHeight(newH);
+  };
+
+  const stopDragging = () => {
+    setIsDragging(false);
+    try {
+      window.removeEventListener('mousemove', mouseMove);
+      window.removeEventListener('mouseup', mouseUp);
+      window.removeEventListener('touchmove', touchMove, { passive: false });
+      window.removeEventListener('touchend', touchEnd);
+    } catch {}
+  };
+
+  const mouseMove = (e) => { e.preventDefault(); if (isMobileRef.current) onDragMoveVertical(e.clientY); else onDragMove(e.clientX); };
+  const mouseUp = (e) => { e.preventDefault(); stopDragging(); };
+  const touchMove = (e) => { if (e.touches && e.touches[0]) { e.preventDefault(); if (isMobileRef.current) onDragMoveVertical(e.touches[0].clientY); else onDragMove(e.touches[0].clientX); } };
+  const touchEnd = () => { stopDragging(); };
+
+  const startDragging = (startX) => (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+    isMobileRef.current = isMobile;
+    dragStartXRef.current = startX;
+    dragStartWidthRef.current = panelWidth;
+    window.addEventListener('mousemove', mouseMove);
+    window.addEventListener('mouseup', mouseUp);
+  };
+  const startDraggingTouch = (e) => {
+    if (!(e.touches && e.touches[0])) return;
+    setIsDragging(true);
+    isMobileRef.current = isMobile;
+    if (isMobile) {
+      dragStartYRef.current = e.touches[0].clientY;
+      dragStartHeightRef.current = panelHeight;
+    } else {
+      dragStartXRef.current = e.touches[0].clientX;
+      dragStartWidthRef.current = panelWidth;
+    }
+    window.addEventListener('touchmove', touchMove, { passive: false });
+    window.addEventListener('touchend', touchEnd);
+  };
+  // vertical mouse start
+  const startDraggingVertical = (startY) => (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+    isMobileRef.current = true;
+    dragStartYRef.current = startY;
+    dragStartHeightRef.current = panelHeight;
+    window.addEventListener('mousemove', mouseMove);
+    window.addEventListener('mouseup', mouseUp);
+  };
+  // Refs for content padding/animation management
+  const contentTargetRef = useRef(null);
+  const prevPaddingRef = useRef(null);
+  const addedAnimateClassRef = useRef(false);
+  const closeTimerRef = useRef(null);
   useEffect(() => {
+    // For right-docked panel we only need to ensure it stays within viewport when resizing.
     const computeShift = () => {
       try {
-        const pr = pillRef.current?.getBoundingClientRect();
-        if (!pr) return;
-        const vw = window.innerWidth;
-        const pillCenter = pr.left + pr.width / 2;
-        const viewportCenter = vw / 2;
-        let shift = pillCenter - viewportCenter;
-        // keep panel within viewport considering maxWidth and side paddings
-  const sidePad = 20; // matches overlayInnerStyle horizontal padding
-  const maxWidth = overlayMaxWidth; // matches overlayInnerStyle maxWidth
-        const maxShift = Math.max(0, (vw - sidePad * 2 - maxWidth) / 2);
-        if (Number.isFinite(maxShift)) {
-          shift = Math.max(-maxShift, Math.min(maxShift, shift));
-        }
-        setOverlayShiftX(Math.round(shift));
+        // no-op for now but keep hook to respond to resize/scroll if needed in future
+        setOverlayShiftX(0);
       } catch {}
     };
+    const computeWidth = () => {
+      try {
+        const vw = window.innerWidth;
+        setIsMobile(vw < 720);
+        // If narrow screen, use full width for the panel (behave like a drawer)
+        if (vw < 720) {
+          // treat as bottom drawer: set panel to full width and compute panelHeight
+          setPanelWidth(vw);
+          const vh = window.innerHeight;
+          const targetH = Math.max(MOBILE_MIN_HEIGHT, Math.floor(vh * (panelPct / 100)));
+          setPanelHeight(clampPanelHeight(targetH));
+          return;
+        }
+        // Try to measure the docs container width to compute percentage-based panel width
+        const selectors = ['.theme-docs-wrapper', '.theme-docs', '.main-wrapper', '.container', '#__docusaurus'];
+        let contentEl = null;
+        for (const s of selectors) {
+          const el = document.querySelector(s);
+          if (el) { contentEl = el; break; }
+        }
+        const contentWidth = contentEl ? Math.max(360, Math.floor(contentEl.getBoundingClientRect().width)) : Math.floor(vw * 0.7);
+  // No overlay right-gap computation; keep overlay flush to viewport edge.
+        const target = Math.max(320, Math.min(overlayMaxWidth || 560, Math.floor(contentWidth * (panelPct / 100))));
+        setPanelWidth(clampPanelWidth(target));
+      } catch { }
+    };
     computeShift();
+    computeWidth();
     window.addEventListener('resize', computeShift);
     window.addEventListener('scroll', computeShift, true);
+    window.addEventListener('resize', computeWidth);
+    window.addEventListener('orientationchange', computeWidth);
     return () => {
       window.removeEventListener('resize', computeShift);
       window.removeEventListener('scroll', computeShift, true);
+      window.removeEventListener('resize', computeWidth);
+      window.removeEventListener('orientationchange', computeWidth);
     };
   }, [showOverlay, pillHeight, toggleOn]);
+
+  // Push page content when overlay open by adding padding-right to the main content container
+  useEffect(() => {
+    // Common container selectors in Docusaurus / Learn layout
+    const selectors = [
+      '.theme-docs-wrapper',
+      '.theme-docs',
+      '.main-wrapper',
+      '.container',
+      '#__docusaurus'
+    ];
+    let target = null;
+    for (const s of selectors) {
+      const el = document.querySelector(s);
+      if (el) { target = el; break; }
+    }
+    if (!target) target = document.body;
+
+  // store refs for cleanup
+  contentTargetRef.current = target;
+  // store previous padding if not already stored (use bottom for mobile)
+  if (prevPaddingRef.current === null) prevPaddingRef.current = isMobile ? (target.style.paddingBottom || '') : (target.style.paddingRight || '');
+
+    // add animate class if missing
+    const hadAnimateClass = target.classList.contains('asknet-content-animate');
+    if (!hadAnimateClass) { target.classList.add('asknet-content-animate'); addedAnimateClassRef.current = true; }
+
+    // clear any existing close timer
+    if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null; }
+
+    if (showOverlay && !isOverlayClosing) {
+      if (isMobile) {
+        target.style.paddingBottom = panelHeight + 'px';
+      } else {
+        target.style.paddingRight = panelWidth + 'px';
+      }
+    } else {
+      if (isOverlayClosing) {
+        // keep padding for closing animation, then restore
+        closeTimerRef.current = setTimeout(() => {
+          try { target.style.paddingRight = prevPaddingRef.current || ''; } catch {}
+          if (addedAnimateClassRef.current) target.classList.remove('asknet-content-animate');
+          addedAnimateClassRef.current = false;
+          prevPaddingRef.current = null;
+          closeTimerRef.current = null;
+        }, PANEL_CLOSE_ANIM_MS);
+      } else {
+        try {
+          if (isMobile) target.style.paddingBottom = prevPaddingRef.current || ''; else target.style.paddingRight = prevPaddingRef.current || '';
+        } catch {}
+        if (addedAnimateClassRef.current) target.classList.remove('asknet-content-animate');
+        addedAnimateClassRef.current = false;
+        prevPaddingRef.current = null;
+      }
+    }
+
+    return () => {
+      if (closeTimerRef.current) { clearTimeout(closeTimerRef.current); closeTimerRef.current = null; }
+      if (contentTargetRef.current) {
+  try {
+    if (isMobile) {
+      contentTargetRef.current.style.paddingBottom = prevPaddingRef.current || '';
+    } else {
+      contentTargetRef.current.style.paddingRight = prevPaddingRef.current || '';
+    }
+  } catch {}
+        if (addedAnimateClassRef.current) contentTargetRef.current.classList.remove('asknet-content-animate');
+      }
+      prevPaddingRef.current = null;
+      addedAnimateClassRef.current = false;
+      contentTargetRef.current = null;
+    };
+  }, [showOverlay, isOverlayClosing, panelWidth]);
 
   // Auto-resize textarea height like main page
   const adjustTextareaHeight = () => {
@@ -295,6 +508,10 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       const target = e.target;
       if (panelRef.current && panelRef.current.contains(target)) return; // inside panel
       if (pillRef.current && pillRef.current.contains(target)) return; // clicking the pill shouldn't auto-reset
+      // If the click is inside the main docs/content container that we push, do not close the overlay
+      try {
+        if (contentTargetRef.current && contentTargetRef.current.contains(target)) return;
+      } catch {}
       try { chatAbortRef.current?.abort(); } catch {}
       const wasVisible = showOverlay && !isOverlayClosing;
       if (wasVisible) closeOverlay(); else setShowOverlay(false);
@@ -310,7 +527,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   }, [showOverlay, isOverlayClosing]);
 
   // Scroll overlay to bottom on new messages
-  useEffect(() => { messagesBottomRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages, isLoading]);
+  // Removed auto-scroll to bottom for LLM answers
 
   // Feedback copy timers cleanup
   useEffect(() => () => { Object.values(copiedTimersRef.current).forEach(t => clearTimeout(t)); }, []);
@@ -333,6 +550,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       { title: 'Install Netdata on Windows', url: 'https://learn.netdata.cloud/docs/netdata-agent/installation/windows', snippet: 'Windows installer for Netdata with subscription requirements and feature notes...', score: 0.3, section: 'Documentation' }
     ];
     try {
+      console.debug('[AskNetdataWidget] search ->', `${API_BASE}/chat/docs/search`, { query: query.trim() });
       const resp = await fetch(`${API_BASE}/chat/docs/search`, { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ query: query.trim() }) });
   if (resp.status === 404) { setSearchResults(staticFallbackResults.sort((a,b)=>(b.score||0)-(a.score||0))); setIsSearching(false); return; }
       if (!resp.ok) throw new Error();
@@ -357,12 +575,14 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     try {
       // Prepare abort controller for this streaming request
       chatAbortRef.current = new AbortController();
+  console.debug('[AskNetdataWidget] send ->', `${API_BASE}/chat/docs/stream`, { message, messagesCount: messages.length });
       let response = await fetch(`${API_BASE}/chat/docs/stream`, {
         method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({
           messages:[ ...(() => { const max = MAX_CONVERSATION_PAIRS*2; return messages.slice(-max).map(m => ({ role: m.type==='user'?'user':'assistant', content:m.content })); })(), { role:'user', content:message } ]
         }), signal: chatAbortRef.current.signal
       });
       if (!response.ok) {
+  console.warn('[AskNetdataWidget] initial stream response not ok, retrying...', response.status);
         try {
           response = await fetch(`${API_BASE}/chat/docs/stream`, {
             method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({
@@ -404,6 +624,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
         // aborted: do not append error message, just exit
         return;
       }
+  console.error('[AskNetdataWidget] send error', e);
       setMessages(prev => [...prev, { id: Date.now()+2, type:'assistant', content:'Sorry, I encountered an error.', isError:true }]);
     } finally { setIsLoading(false); }
   };
@@ -418,6 +639,8 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
       } else {
         handleSubmit();
       }
+  // After submitting via Enter, remove focus from the chatbox to dismiss virtual keyboards
+  try { textareaRef.current?.blur(); setIsInputFocused(false); } catch {}
     }
   };
 
@@ -435,18 +658,20 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     justifyContent: 'center',
     pointerEvents: 'none'
   };
+  // Update pillInnerStyle to align chatbox to the right on mobile
   const pillInnerStyle = {
-    width: '100%',
-  maxWidth: pillMaxWidth,
+    width: isMobile ? '85vw' : '100%', // Use 100vw for mobile to span the entire screen width
+  maxWidth: isMobile ? '85vw' : 800, // Ensure maxWidth matches width for mobile
     padding: '0 20px',
-    boxSizing: 'border-box'
+    boxSizing: 'border-box',
+    textAlign: isMobile ? 'right' : 'center' // Align to the right on mobile
   };
   const pillStyle = {
     border: isDarkMode ? '1px solid var(--ifm-color-emphasis-300)' : '1px solid #e5e7eb',
     background: isDarkMode ? '#0A0A0A' : 'rgba(255,255,255,0.96)',
     backdropFilter: 'blur(18px)',
     boxShadow: isInputFocused ? `0 0 0 3px ${rgba(currentAccent, OPACITY.focusRing)}` : 'none',
-    width: '100%',
+    width: '400px',
     position: 'relative',
     display: 'flex',
     alignItems: 'center',
@@ -458,14 +683,40 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     padding: '6px 8px 6px 20px',
     overflow: 'hidden'
   };
+  // Update placeholderStyle to use MOBILE_FONT_SIZE for mobile
   const placeholderStyle = {
-    position: 'absolute', left: 26, top: '50%', transform: 'translateY(-50%)', right: 190,
-    display: 'flex', alignItems: 'center', gap: 8,
-    opacity: input ? 0 : 1, fontSize: 16, lineHeight: 1.3, color: (isSendHovered && !input.trim()) ? currentAccent : (isDarkMode ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.50)'),
-    transition: 'opacity 260ms ease, color 300ms ease', pointerEvents: 'none'
+    position: 'absolute',
+    left: 26,
+    top: '50%',
+    transform: 'translateY(-50%)',
+    right: 190,
+    display: 'flex',
+    alignItems: 'center',
+    gap: 8,
+    flexWrap: 'nowrap',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    opacity: input ? 0 : 1,
+    fontSize: isMobile ? MOBILE_FONT_SIZE : 16, // Use MOBILE_FONT_SIZE for mobile
+    lineHeight: 1.3,
+    color: (isSendHovered && !input.trim()) ? currentAccent : (isDarkMode ? 'rgba(255,255,255,0.55)' : 'rgba(0,0,0,0.50)'),
+    transition: 'opacity 260ms ease, color 300ms ease',
+    pointerEvents: 'none'
   };
   const textareaStyle = {
-  flex: 1, background:'transparent', border:'none', outline:'none', resize:'none', fontSize:16, fontFamily:'inherit', lineHeight:1.45, color: isDarkMode ? 'var(--ifm-font-color-base)' : '#1f2937', padding: 0, maxHeight:200, overflow:'hidden'
+  flex: 1,
+  background: 'transparent',
+  border: 'none',
+  outline: 'none',
+  resize: 'none',
+  fontSize: isMobile ? MOBILE_FONT_SIZE : 16, // Use MOBILE_FONT_SIZE for mobile
+  fontFamily: 'inherit',
+  lineHeight: 1.45,
+  color: isDarkMode ? 'var(--ifm-font-color-base)' : '#1f2937',
+  padding: 0,
+  maxHeight: 200,
+  overflow: 'hidden'
   };
   // Dim background (different opacity for dark vs light) when no input, match main page semantics
   const dimmedBg = isDarkMode
@@ -481,12 +732,24 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
   // Removed glow/outline from toggle per request
   const toggleTrackStyle = (on) => ({ width:TOGGLE_TRACK_WIDTH, height:effectiveTrackHeight, padding:'4px', boxSizing:'border-box', borderRadius:999, background: on ? ASKNET_SECOND : ASKNET_PRIMARY, position:'relative', cursor:'pointer', transition:'background 200ms ease', flexShrink:0, display:'flex', alignItems:'center' });
   const toggleKnobStyle = (on) => ({ width:effectiveKnobSize, height:effectiveKnobSize, borderRadius:'50%', background: isDarkMode ? '#0b1220' : '#fff', position:'absolute', top:'50%', left: on ? `calc(100% - ${effectiveKnobSize + 4}px)` : '4px', transform:'translateY(-50%)', transition:'left 200ms cubic-bezier(.2,.9,.2,1)' });
-  const toggleHintStyle = (on) => ({ position:'absolute', top:'50%', left: on? '10px':'auto', right: on? 'auto':'10px', transform:'translateY(-50%)', fontSize:12, fontWeight:600, letterSpacing:'.4px', color:'#fff', userSelect:'none', pointerEvents:'none' });
+  const toggleHintStyle = (on) => ({
+    position: 'absolute',
+    top: '50%',
+    left: on ? '10px' : 'auto',
+    right: on ? 'auto' : '10px',
+    transform: 'translateY(-50%)',
+    fontSize: isMobile ? MOBILE_FONT_SIZE : 12, // Use MOBILE_FONT_SIZE for mobile
+    fontWeight: 600,
+    letterSpacing: '.4px',
+    color: '#fff',
+    userSelect: 'none',
+    pointerEvents: 'none'
+  });
   const toggleShortcutBadgeStyle = {
-    fontSize:11,
+  fontSize: isMobile ? MOBILE_FONT_SIZE : 11,
     fontWeight:600,
     letterSpacing:'.5px',
-  padding:'3px 7px',
+  padding:isMobile ? '3px 8px' : '3px 7px',
     borderRadius:6,
     background:'rgba(255,255,255,0.25)',
     color:'#fff',
@@ -500,48 +763,73 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     return 140;
   };
   const overlayStyle = {
-    position: 'fixed',
-    left: 0,
-    top: overlayBaseTop(),
-    width: '100%',
-    zIndex: 1200,
-    display: (showOverlay || isOverlayClosing) ? 'flex' : 'none',
-    justifyContent: 'center',
-    pointerEvents: 'none'
+  position: 'fixed',
+  top: isMobile ? 'auto' : overlayBaseTop(),
+  bottom: isMobile ? 0 : 'auto',
+  right: 0,
+  left: isMobile ? 0 : 'auto',
+  height: isMobile ? panelHeight + 'px' : 'calc(100% - ' + overlayBaseTop() + 'px)',
+  zIndex: 1200,
+  display: (showOverlay || isOverlayClosing) ? 'block' : 'none',
+  pointerEvents: 'none'
   };
   const overlayInnerStyle = {
-    width: '100%',
-  maxWidth: overlayMaxWidth,
-    padding: '0 20px',
-    boxSizing:'border-box',
-    pointerEvents:'auto',
-  // Follow the pill horizontally across zoom/resize
-  transform: `translateX(${overlayShiftX}px)`
+  width: isMobile ? '100%' : 'auto',
+  maxWidth: isMobile ? '100%' : overlayMaxWidth,
+  height: '100%',
+  padding: '0',
+  boxSizing:'border-box',
+  pointerEvents:'auto',
+  display: 'flex',
+  flexDirection: 'column',
+  // center panel on mobile, align to right on desktop
+  alignItems: isMobile ? 'center' : 'flex-end'
   };
+  // Update panelStyle to use 100vw for mobile width
   const panelStyle = {
-    background: isDarkMode ? '#0A0A0A' : 'rgba(255,255,255,0.96)',
+    background: isDarkMode ? 'var(--ifm-background-color)' : 'rgba(255,255,255,0.96)',
     backdropFilter:'blur(18px)',
-  // Accent outline for the whole container (answers and search results)
-  border: `${PANEL_OUTLINE_WIDTH}px solid ${rgba(currentAccent, PANEL_OUTLINE_OPACITY)}`,
-  borderRadius: panelRadius,
-    padding: '24px 28px 32px 28px',
-    boxShadow: 'none',
-    maxHeight: '70vh',
-    overflowY: 'auto',
+  // Remove accent outline for widget panel (use subtle neutral stroke instead)
+  border: isDarkMode ? '1px solid rgba(255,255,255,0.04)' : '1px solid rgba(16,24,40,0.04)',
+  // UX: make panel flush with page edges (no rounded corners)
+  borderRadius: 0,
+  padding: '10px 10px',
+  boxShadow: 'none',
+  maxHeight: '100%',
     scrollbarWidth: 'none',
     msOverflowStyle: 'none',
-    animation: 'slideUpInSmooth 520ms cubic-bezier(0.16,1,0.3,1)',
-    position: 'relative'
+  animation: isMobile ? undefined : 'slideUpInSmoothNoFade 520ms cubic-bezier(0.16,1,0.3,1)',
+  position: 'relative',
+  display: 'flex',
+  flexDirection: 'column',
+  width: isMobile ? '100vw' : panelWidth, // Use 100vw for mobile to span the entire screen width
+  height: '100%',
+  transition: isDragging ? 'none' : (isMobile ? 'height 260ms ease' : 'none')
   };
 
-  const questionMessageStyle = { background: isDarkMode ? 'rgba(255,255,255,0.05)' : '#f8fafc', border: isDarkMode ? '1px solid rgba(255,255,255,0.08)' : '1px solid #e2e8f0', borderRadius: 12, padding: '14px 16px', marginBottom: 18, fontSize: 15, lineHeight:1.5, fontWeight:500 };
+  // Use the docs background so the widget feels native to the page
+  const docsBgLight = 'var(--ifm-background-color, #ffffff)';
+  const docsBgDark = 'var(--ifm-color-emphasis-0, #0A0A0A)';
+  // Answer font sizing constants so we can clamp to N lines reliably
+  const ANSWER_FONT_SIZE = 15; // px
+  const ANSWER_LINE_HEIGHT = 1.6; // unitless
+  const ANSWER_CLAMP_LINES = 2; // number of visible lines
+  const ANSWER_CLAMP_HEIGHT_PX = Math.round(ANSWER_FONT_SIZE * ANSWER_LINE_HEIGHT * ANSWER_CLAMP_LINES);
+
+  // Search snippet clamp constants (two wrapped lines)
+  const SEARCH_SNIPPET_FONT_SIZE = 11; // px
+  const SEARCH_SNIPPET_LINE_HEIGHT = 1.3; // unitless
+  const SEARCH_SNIPPET_CLAMP_LINES = 2;
+  const SEARCH_SNIPPET_CLAMP_HEIGHT_PX = Math.round(SEARCH_SNIPPET_FONT_SIZE * SEARCH_SNIPPET_LINE_HEIGHT * SEARCH_SNIPPET_CLAMP_LINES);
+
+  const questionMessageStyle = { background: isDarkMode ? docsBgDark : docsBgLight, border: isDarkMode ? '1px solid rgba(255,255,255,0.04)' : '1px solid rgba(16,24,40,0.04)', borderRadius: 4, padding: '14px 16px', marginBottom: 18, fontSize: ANSWER_FONT_SIZE, lineHeight:1.5, fontWeight:500 };
   const answerMessageStyle = (m) => ({
-    background: m.isError ? (isDarkMode?'rgba(220,38,38,0.12)':'#fef2f2') : (isDarkMode ? '0A0A0A' : '#ffffff'),
-    borderRadius: 16,
+    background: m.isError ? (isDarkMode ? 'rgba(220,38,38,0.12)' : '#fef2f2') : (isDarkMode ? docsBgDark : docsBgLight),
+    borderRadius: 4,
     padding: '18px 20px 22px 20px',
     marginBottom: 20,
-    fontSize: 15,
-    lineHeight: 1.6,
+    fontSize: ANSWER_FONT_SIZE,
+    lineHeight: ANSWER_LINE_HEIGHT,
     boxShadow: 'none'
   });
 
@@ -549,11 +837,27 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
     <>
       <style>{`
         /* Opacity removed from entrance animations to avoid fade */
-        @keyframes slideUpInSmoothNoFade { 0% { transform: translateY(40px) scale(.96); filter:blur(1px);} 60% { transform: translateY(-2px) scale(1.01); filter:blur(0);} 100% { transform: translateY(0) scale(1); filter:blur(0);} }
+  @keyframes slideUpInSmoothNoFade { 0% { transform: translateY(40px) scale(.96); filter:blur(1px);} 60% { transform: translateY(-2px) scale(1.01); filter:blur(0);} 100% { transform: translateY(0) scale(1); filter:blur(0);} }
         @keyframes riseInNoFade { 0% { transform: translateY(12px); } 100% { transform: translateY(0); } }
         @keyframes scanBackForth { 0% { transform: translateX(-100px);} 50% { transform: translateX(300px);} 100% { transform: translateX(-100px);} }
         @keyframes fadeOutDown { 0% { opacity:1; transform: translateY(0) scale(1);} 100% { opacity:0; transform: translateY(16px) scale(.97);} }
-        .asknet-overlay-panel::-webkit-scrollbar { display: none; }
+  /* Slide panel in from right and out to right */
+  @keyframes slideInFromRight { 0% { transform: translateX(16px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+  @keyframes slideOutToRight { 0% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(16px); opacity: 0; } }
+  /* Slide panel up from bottom and down to bottom for mobile */
+  @keyframes slideUpFromBottom { 0% { transform: translateY(100%); } 100% { transform: translateY(0); } }
+  @keyframes slideDownToBottom { 0% { transform: translateY(0); } 100% { transform: translateY(100%); } }
+  .asknet-overlay-panel::-webkit-scrollbar { display: none; }
+  /* Smoothly transition content padding when panel opens/closes */
+  .asknet-content-animate { transition: padding-right 320ms cubic-bezier(0.16,1,0.3,1), padding-bottom 320ms cubic-bezier(0.16,1,0.3,1); }
+  /* Resizer: base + hover/drag states (uses CSS vars set on panel) */
+  .asknet-resizer { transition: background 160ms ease, box-shadow 160ms ease, border-left 160ms ease; background: transparent; }
+  /* Only highlight the visible resizer on direct hover; use solid accent color (no faded inward) */
+  /* On hover/drag, the visible handle will be filled with the focus-ring color; disable extra outline to avoid double-color */
+  .asknet-resizer:hover, .asknet-resizer.is-dragging { box-shadow: none; border-left: 1px solid transparent; }
+  /* Search result card hover: subtle lift + accent border */
+  .asknet-search-result { transition: box-shadow 180ms ease, transform 160ms ease, border-color 160ms ease; }
+  .asknet-search-result:hover { transform: none; box-shadow: 0 0 0 2px var(--asknet-focus-ring); border-color: var(--asknet-resizer-border); }
       `}</style>
       <div ref={pillRef} style={pillContainerStyle}>
         <div style={pillInnerStyle}>
@@ -563,11 +867,15 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
               <span
                 style={{
                   marginLeft: 10,
-                  fontSize: 12,
+                  fontSize: isMobile ? MOBILE_FONT_SIZE : 12,
                   fontWeight: 600,
                   letterSpacing: '.5px',
-                  padding: '2px 6px',
+                  padding: isMobile ? '2px 8px' : '2px 6px',
                   borderRadius: 4,
+                  display: 'inline-block',
+                  whiteSpace: 'nowrap',
+                  minWidth: isMobile ? 56 : 44,
+                  textAlign: 'center',
                   background: isDarkMode ? 'rgba(164, 164, 164, 0.42)' : 'rgba(0,0,0,0.06)',
                   color: isDarkMode ? 'rgba(255,255,255,0.75)' : 'rgba(0,0,0,0.60)',
                   lineHeight: 1,
@@ -618,32 +926,58 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
 
       {/* Floating overlay */}
       <div ref={overlayRef} style={overlayStyle}>
-        <div style={overlayInnerStyle}>
-          <div ref={panelRef} style={{...panelStyle, animation: isOverlayClosing ? 'fadeOutDown 260ms ease forwards' : 'slideUpInSmoothNoFade 520ms cubic-bezier(0.16,1,0.3,1)'}} className="asknet-overlay-panel">
+        <div style={{ display: 'flex', height: '100%', alignItems: 'flex-start' }}>
+          <div style={overlayInnerStyle}>
+            <div ref={panelRef} style={{...panelStyle,
+              animation: isOverlayClosing ? (isMobile ? 'slideDownToBottom 260ms ease forwards' : 'slideOutToRight 260ms ease forwards') : (isMobile ? 'slideUpFromBottom 320ms cubic-bezier(0.16,1,0.3,1) forwards' : 'slideInFromRight 320ms cubic-bezier(0.16,1,0.3,1) forwards'),
+              ['--asknet-resizer-bg']: currentAccent, ['--asknet-resizer-glow']: currentAccent, ['--asknet-resizer-border']: currentAccent,
+              ['--asknet-glow-strong']: `${rgba(currentAccent, OPACITY.glowStrong)}`, ['--asknet-glow-soft']: `${rgba(currentAccent, OPACITY.glowSoft)}`, ['--asknet-focus-ring']: `${rgba(currentAccent, OPACITY.focusRing)}`,
+              width: isMobile ? '100vw' : panelWidth, // Use 100vw for mobile to span the entire screen width
+              height: isMobile ? panelHeight : '100%',
+              boxShadow: panelStyle.boxShadow
+            }} className="asknet-overlay-panel">
+              {isMobile && (
+                <div style={{ position: 'absolute', top: 14, left: '50%', transform: 'translateX(-50%)', width: 60, height: 6, background: currentAccent, borderRadius: 3, zIndex: 1405, cursor: 'ns-resize', pointerEvents: 'auto' }} onMouseDown={(e) => startDraggingVertical(e.clientY)(e)} onTouchStart={startDraggingTouch} />
+              )}
+              {/* Resizer: draggable vertical bar (thinner, hoverable) */}
+              {/* Resizer: draggable - vertical on desktop (left), horizontal on mobile (top of panel) */}
+              {!isMobile && (
+                <div
+                  role="separator"
+                  aria-orientation="vertical"
+                  onMouseDown={(e)=>{ startDragging(e.clientX)(e); }}
+                  onTouchStart={startDraggingTouch}
+                  style={{ position:'absolute', left: -10, top:0, bottom:0, width:20, cursor:'ew-resize', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1300 }}
+                >
+                  <div
+                    className={`asknet-resizer ${isDragging ? 'is-dragging' : ''}`}
+                    onMouseEnter={() => setResizerHover(true)}
+                    onMouseLeave={() => setResizerHover(false)}
+                    style={{
+                      width: (isDragging || resizerHover) ? 14 : 8,
+                      height: '100%',
+                      display: 'block',
+                      boxSizing: 'border-box',
+                      borderRadius: 0,
+                      background: (isDragging || resizerHover) ? 'var(--asknet-focus-ring)' : 'transparent',
+                      borderLeft: '1px solid transparent',
+                      transition: 'width 120ms ease, background 120ms ease'
+                    }}
+                  />
+                </div>
+              )}
             {/* Header row with actions */}
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:24 }}>
-              <div style={{ display:'flex', alignItems:'center', gap:10, fontSize: '1.05rem', fontWeight:700 }}>
-                <span style={{ color: currentAccent }}>{toggleOn ? 'Search Docs' : 'Ask Netdata'}</span>
-                <span
-                  style={{
-                    fontSize:11,
-                    fontWeight:600,
-                    letterSpacing:'.5px',
-                    padding:'4px 8px',
-                    borderRadius:6,
-                    background: rgba(currentAccent, 0.16),
-                    color: currentAccent,
-                    lineHeight:1,
-                    userSelect:'none'
-                  }}
-                  title="Focus input"
-                >{FOCUS_SHORTCUT_LABEL}</span>
+              <div style={{ fontSize:15, fontWeight:600 }}>
+                {toggleOn && searchResults.length > 0 && `Found ${searchResults.length} result${searchResults.length !== 1 ? 's' : ''} for "${searchQuery}"`}
               </div>
               <div style={{ display:'flex', gap:12 }}>
                 {!toggleOn && messages.length > 0 && <button onClick={() => { setMessages([]); closeOverlay(); setSearchResults([]); setSearchQuery(''); }} style={{ background:'transparent', border: isDarkMode?'1px solid rgba(255,255,255,0.2)':'1px solid #d1d5db', borderRadius:8, padding:'6px 12px', cursor:'pointer', fontSize:13 }}>New chat</button>}
                 <button onClick={() => closeOverlay()} style={{ background:'transparent', border:'none', fontSize:18, cursor:'pointer', lineHeight:1, padding:'4px 6px' }} aria-label="Close overlay">×</button>
               </div>
             </div>
+            {/* Scrollable content area (results / messages / loading) */}
+            <div style={{ flex: 1, overflowY: 'auto', paddingRight: 6, paddingTop: 8 }}>
             {/* Search results (exclusive view) */}
             {toggleOn && (searchResults.length>0 || isSearching || (searchQuery && !isSearching)) && (
               <div style={{ marginBottom:24 }}>
@@ -658,11 +992,11 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                   </div>
                 ) : searchResults.length>0 ? (
                   <>
-                    <div style={{ fontSize:15, fontWeight:600, marginBottom:12 }}>Found {searchResults.length} result{searchResults.length!==1?'s':''} for "{searchQuery}"</div>
                     <div style={{ display:'flex', flexDirection:'column', gap:16 }}>
                       {searchResults.map((r,i)=>(
-                        <div key={i} style={{ padding:'16px 16px 14px 16px', background: isDarkMode?'rgba(255,255,255,0.05)':'#fff', border: isDarkMode?'1px solid rgba(255,255,255,0.1)':'1px solid #e6eaf0', borderRadius:8, animation:'riseInNoFade 360ms cubic-bezier(0.16,1,0.3,1) both', animationDelay:`${i*40}ms` }}>
-                          <SmartLink href={r.url} onClick={closeOverlay} style={{ color:ASKNET_SECOND, textDecoration:'none', fontWeight:600, fontSize:16 }}>{r.title}</SmartLink>
+                        <SmartLink key={i} href={r.url} style={{ textDecoration:'none', color:'inherit', display:'block', maxWidth: '90%', margin: '0 auto' }}>
+                          <div className="asknet-search-result" style={{ padding:'16px 16px 14px 16px', background: isDarkMode?'rgba(255,255,255,0.05)':'#fff', border: isDarkMode?'1px solid rgba(255,255,255,0.1)':'1px solid #e6eaf0', borderRadius:8 }}>
+                            <div style={{ color: ASKNET_SECOND, textDecoration:'none', fontWeight:600, fontSize:16 }}>{r.title}</div>
                           {(() => {
                             if(!r.snippet) return null;
                             const cleanSnippet = (snippet) => {
@@ -709,7 +1043,17 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                             if(!body) return null;
                             const truncated = body.length > 400 ? body.slice(0,400).trim() + '…' : body;
                             return (
-                              <div style={{ fontSize:11, lineHeight:1.3, marginTop:8, opacity:0.8 }}>
+                              <div style={{
+                                fontSize: SEARCH_SNIPPET_FONT_SIZE,
+                                lineHeight: SEARCH_SNIPPET_LINE_HEIGHT,
+                                marginTop: 8,
+                                opacity: 0.8,
+                                display: '-webkit-box',
+                                WebkitLineClamp: SEARCH_SNIPPET_CLAMP_LINES,
+                                WebkitBoxOrient: 'vertical',
+                                overflow: 'hidden',
+                                maxHeight: SEARCH_SNIPPET_CLAMP_HEIGHT_PX + 'px'
+                              }}>
                                 {truncated}
                               </div>
                             );
@@ -759,11 +1103,12 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
                               Relevance: {Math.round(r.score * 100)}%
                             </div>
                           )}
-                        </div>
+                          </div>
+                        </SmartLink>
                       ))}
                     </div>
                   </>
-                ) : (<div style={{ fontSize:14, opacity:0.7 }}>No results for "{searchQuery}"</div>)}
+                ) : (<div style={{ fontSize:14, opacity:0.7 }}>No results for "{searchQuery}"</div>) }
               </div>
             )}
             {/* Messages (hidden in search mode) */}
@@ -771,12 +1116,13 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
               <div key={m.id} style={m.type==='user'?questionMessageStyle:answerMessageStyle(m)}>
                 <div style={{ fontSize:11, fontWeight:600, letterSpacing:'0.5px', textTransform:'uppercase', opacity:0.50, marginBottom:8 }}>{m.type==='user'?'You':'Netdata'}</div>
                 {m.type==='assistant' ? (
+                  // Remove the clamp for messages inside the scrollable area - let them expand fully
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={{
                       code: ({inline, className, children, ...props}) => <code style={{ background: isDarkMode?'rgba(255,255,255,0.08)':'#f1f5f9', padding:'2px 6px', borderRadius:4, fontSize:13 }} {...props}>{children}</code>,
                       a: ({href, children, ...props}) => (
-                        <SmartLink href={href} style={{ color: currentAccent, textDecoration:'none', borderBottom:`1px solid ${currentAccent}40` }} {...props}>
+                        <SmartLink href={href} style={{ color: currentAccent, textDecoration:'none', borderBottom:`1px solid ${currentAccent}` }} {...props}>
                           {children}
                         </SmartLink>
                       ),
@@ -817,12 +1163,14 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 30, o
               </div>
             )}
             <div ref={messagesBottomRef} />
-            {(messages.length>0 || toggleOn) && (
+            {messages.length > 0 && !toggleOn && (
               <div style={{ fontSize:12, opacity:0.6, marginTop:4, textAlign:'center' }}>AI can make mistakes - validate before use.</div>
             )}
+            </div>
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 }

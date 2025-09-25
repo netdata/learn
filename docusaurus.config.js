@@ -47,29 +47,34 @@ module.exports = {
 					to: 'https://www.netdata.cloud/features/',
 					position: 'left',
 					label: 'Features',
+					className: 'navbar-item-hide-large-1',
 					style: { fontWeight: '500' }
 				},
 				{
 					to: 'https://www.netdata.cloud/open-source/',
 					position: 'left',
 					label: 'Open Source',
+					className: 'navbar-item-hide-large-2',
 					style: { fontWeight: '500' }
 				},
 				{
 					to: 'https://www.netdata.cloud/pricing/',
 					position: 'left',
 					label: 'Pricing',
+					className: 'navbar-item-hide-large-3',
 					style: { fontWeight: '500' }
 				},
 				{
 					to: 'https://www.netdata.cloud/integrations/',
 					position: 'left',
 					label: 'Integrations',
+					className: 'navbar-item-hide-large-4',
 					style: { fontWeight: '500' }
 				},
 				{
 					position: 'left',
 					label: 'Use cases',
+					className: 'navbar-item-hide-large-5',
 					style: { fontWeight: '500' },
 					items: [
 						{
@@ -93,6 +98,7 @@ module.exports = {
 				{
 					position: 'left',
 					label: 'Resources',
+					className: 'navbar-item-hide-large-6',
 					style: { fontWeight: '500' },
 					items: [
 						{
@@ -131,24 +137,9 @@ module.exports = {
 					to: 'https://app.netdata.cloud/spaces/netdata-demo?utm_source=learn&utm_content=top_navigation_demo',
 					label: 'Live Demo',
 					position: 'left',
-					className: 'custom_text',
+					className: 'navbar-item-hide-large-7',
 					style: { fontWeight: '500' }
 				},
-				// {
-				// 	to: 'https://app.netdata.cloud/',
-				// 	label: 'Login',
-				// 	position: 'right',
-				// 	className: 'button custom_button_grey',
-				// 	style: { fontWeight: '500' }
-				// },
-				// {
-				// 	to: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_up',
-				// 	label: 'Sign Up',
-				// 	position: 'right',
-				// 	className: 'button custom_button',
-				// 	style: { fontWeight: '500' }
-
-				// },
 			],
 		},
 		// footer: {
@@ -165,14 +156,6 @@ module.exports = {
 				enableInDevelopment: false,
 			}
 		],
-		// [
-		// 	'./plugins/askNetdataSidebarPlugin',
-		// 	{
-		// 		apiUrl: process.env.ASK_NETDATA_API || 'http://localhost:3002/api',
-		// 		position: 'top'
-		// 	}
-		// ],
-		// 'docusaurus-tailwindcss-loader',
 		[
 			'@docusaurus/plugin-google-tag-manager',
 			{

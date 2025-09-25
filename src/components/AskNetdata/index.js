@@ -2464,7 +2464,7 @@ export default function AskNetdata() {
               width: '100%'
             }}>
               <div style={{ transition: 'opacity 220ms ease', opacity: toggleOn ? 0.18 : 1 }}>
-                AI can make mistakes - please validate before use. Ask-netdata is multilingual so use it in your language!
+                
               </div>
 
             </div>
@@ -2489,8 +2489,18 @@ export default function AskNetdata() {
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', width: '100%' }}>
                       {/* Titles row */}
                       <div style={titleRowStyle}>
-                        <div style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleLeftColor, transition: 'opacity 220ms ease, color 220ms ease' }}>{HEADER_TITLES.left}</div>
-                        <div style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleRightColor, transition: 'opacity 220ms ease, color 220ms ease' }}>{HEADER_TITLES.right}</div>
+                        <div
+                          style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleLeftColor, transition: 'opacity 220ms ease, color 220ms ease', cursor: 'pointer' }}
+                          onClick={() => { setToggleOn(false); setTimeout(() => (textareaRef.current || inputRef.current)?.focus(), 0); }}
+                        >
+                          {HEADER_TITLES.left}
+                        </div>
+                        <div
+                          style={{ ...welcomeTitleStyle, fontSize: TITLE_FONT_SIZE, fontWeight: TITLE_FONT_WEIGHT, color: titleRightColor, transition: 'opacity 220ms ease, color 220ms ease', cursor: 'pointer' }}
+                          onClick={() => { setToggleOn(true); setTimeout(() => (textareaRef.current || inputRef.current)?.focus(), 0); }}
+                        >
+                          {HEADER_TITLES.right}
+                        </div>
                       </div>
                       {!HIDE_SUBTITLE && <p style={secondTitleStyle}>{titleSubtitle}</p>}
                     </div>
@@ -3047,7 +3057,7 @@ export default function AskNetdata() {
             )}
             <div ref={messagesEndRef} />
             {/* Footer-like notice anchored under conversation on answer page */}
-            {!showWelcome && (
+            {!showWelcome && messages.length > 0 && (
               <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '12px', padding: '8px 20px', boxSizing: 'border-box' }}>
                 <div style={{ fontSize: '12px', color: isDarkMode ? 'rgba(255,255,255,0.65)' : 'rgba(0,0,0,0.65)', maxWidth: '800px', textAlign: 'center', width: '100%' }}>
                   AI can make mistakes - please validate before use. Our model is also multi-lingual so use it in your language!

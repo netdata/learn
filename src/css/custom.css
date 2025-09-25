@@ -182,7 +182,7 @@ h5 {
 	color: white;
 }
 
-.custom_text {
+.navbar-item-hide-large-7 {
 	color: #029d40;
 	text-align: center;
 	display: inline-block;
@@ -191,13 +191,13 @@ h5 {
 
 :root { --ifm-navbar-height: 72px; }
 
-@media screen and (max-width: 1440px) {
-	.navbar__inner {
-		display: block;
-	}
 
-	:root {
-		--ifm-navbar-height: 120px
+@media screen and (max-width: 720px) {
+
+.navbar__logo {
+		/* hide logo on mobile to make room for the chat pill */
+		display: none;
+		visibility: hidden;
 	}
 }
 
@@ -208,10 +208,6 @@ h5 {
 
 	.navbar-item {
 		visibility: hidden;
-	}
-
-	.navbar__logo {
-		width: 80px;
 	}
 
 	.navbar__item {
@@ -230,7 +226,22 @@ h5 {
 	.navbar--fixed-top {
 		height: unset
 	}
+
+	/* Hide color mode toggle in mobile navbar sidebar */
+	.navbar-sidebar .toggle {
+		display: none;
+	}
+
+	/* Hide back to main menu button in mobile navbar sidebar */
+	.navbar-sidebar__back {
+		display: none;
+	}
+
+	:root {
+		--ifm-navbar-sidebar-width: 300px;
+	}
 }
+
 /*
  * Tailwind
 */
@@ -614,3 +625,35 @@ html[data-theme='dark'] details.alert--info:not([data-collapsed="true"]) {
 		rgba(0, 203, 81, 0) 100%
 	);
 }
+
+/* Hide navbar items on small screens */
+@media (max-width: 1459px) {
+	.navbar__link.navbar-item-hide-large-7 {
+		display: none !important;
+	}
+}
+/* Hide navbar items on small screens */
+@media (max-width: 1355px) {
+	.navbar__link.navbar-item-hide-large-6 {
+		display: none !important;
+	}
+}
+/* Hide navbar items on small screens */
+@media (max-width: 1260px) {
+	.navbar__link.navbar-item-hide-large-5 {
+		display: none !important;
+	}
+}
+/* Hide navbar items on small screens */
+@media (max-width: 1168px) {
+	.navbar__link.navbar-item-hide-large-4 {
+		display: none !important;
+	}
+}
+/* Hide navbar items on small screens */
+@media (max-width: 1055px) {
+	.navbar__link.navbar-item-hide-large-3 {
+		display: none !important;
+	}
+}
+/* 1350 */
