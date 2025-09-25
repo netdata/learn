@@ -781,8 +781,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
   boxSizing:'border-box',
   pointerEvents:'auto',
   display: 'flex',
-  flexDirection: 'column'
-  ,
+  flexDirection: 'column',
   // center panel on mobile, align to right on desktop
   alignItems: isMobile ? 'center' : 'flex-end'
   };
