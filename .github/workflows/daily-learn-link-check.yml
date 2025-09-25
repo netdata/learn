@@ -1,7 +1,7 @@
-name: Daily Learn Link Check
+name: Daily learn_link Check
 on:
   schedule:
-    - cron: "59 23 * * *" # Daily at 23:59 UTC
+    - cron: "00 04 * * *"
   workflow_dispatch:
 
 jobs:
