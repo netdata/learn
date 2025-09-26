@@ -1375,7 +1375,7 @@
 
 [[redirects]]
   from="/docs/cloud/insights/metric-correlations"
-  to="/docs/ai-&-ml/ml-anomaly-detection/metric-correlations"
+  to="/docs/netdata-ai/troubleshooting/metric-correlations"
 
 [[redirects]]
   from="/docs/cloud/manage/sign-in"
@@ -2091,7 +2091,7 @@
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/metric-correlations"
-  to="/docs/ai-&-ml/ml-anomaly-detection/metric-correlations"
+  to="/docs/netdata-ai/troubleshooting/metric-correlations"
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/functions"
@@ -3283,7 +3283,7 @@
 
 [[redirects]]
   from="/docs/metrics-streaming-and-replication"
-  to="/docs/collecting-metrics/metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points"
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/run-time-troubleshooting-with-functions"
@@ -3291,11 +3291,11 @@
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/metric-correlations"
-  to="/docs/ai-&-ml/ml-anomaly-detection/metric-correlations"
+  to="/docs/netdata-ai/troubleshooting/metric-correlations"
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting"
-  to="/docs/ai-&-ml"
+  to="/docs/netdata-ai"
 
 [[redirects]]
   from="/docs/install-the-netdata-agent/static-binary-linux-packages"
@@ -4343,7 +4343,7 @@
 
 [[redirects]]
   from="/docs/streaming"
-  to="/docs/collecting-metrics/metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points"
 
 [[redirects]]
   from="/docs/netdata-cloud-on-prem/light-poc-deployment"
@@ -4887,11 +4887,11 @@
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting/metric-correlations"
-  to="/docs/ai-&-ml/ml-anomaly-detection/metric-correlations"
+  to="/docs/netdata-ai/troubleshooting/metric-correlations"
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting"
-  to="/docs/ai-&-ml"
+  to="/docs/netdata-ai"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
@@ -5871,19 +5871,19 @@
 
 [[redirects]]
   from="/docs/agent/streaming"
-  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/metrics-storage-management/reference-streaming"
-  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference"
-  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/metrics-streaming-and-replication/streaming-configuration-reference"
-  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/logs/passive-journal-centralization-without-encryption"
@@ -5895,7 +5895,7 @@
 
 [[redirects]]
   from="/docs/streaming/streaming-configuration-reference"
-  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/passive-journal-centralization-without-encryption"
@@ -6863,39 +6863,39 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/replication-of-past-samples"
-  to="/docs/collecting-metrics/metrics-centralization-points/replication-of-past-samples"
+  to="/docs/netdata-parents/metrics-centralization-points/replication-of-past-samples"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/metrics-centralization-points-netdata-parents"
-  to="/docs/collecting-metrics/metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/faq-on-metrics-cantralization-points"
-  to="/docs/collecting-metrics/metrics-centralization-points/faq-on-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/faq-on-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/configuring-metrics-centralization-points"
-  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/clustering-and-high-availability-of-netdata-parents"
-  to="/docs/collecting-metrics/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+  to="/docs/netdata-parents/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/replication-of-past-samples"
-  to="/docs/collecting-metrics/metrics-centralization-points/replication-of-past-samples"
+  to="/docs/netdata-parents/metrics-centralization-points/replication-of-past-samples"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/faq-on-metrics-cantralization-points"
-  to="/docs/collecting-metrics/metrics-centralization-points/faq-on-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/faq-on-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/configuring-metrics-centralization-points"
-  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-/clustering-and-high-availability-of-netdata-parents"
-  to="/docs/collecting-metrics/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+  to="/docs/netdata-parents/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/hhvm"
@@ -8351,19 +8351,19 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-cantralization-points"
-  to="/docs/collecting-metrics/metrics-centralization-points/faq-on-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/faq-on-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/ml-configuration"
-  to="/docs/ai-&-ml/ml-anomaly-detection/ml-configuration"
+  to="/docs/netdata-ai/anomaly-detection/ml-configuration"
 
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/metric-correlations"
-  to="/docs/ai-&-ml/ml-anomaly-detection/metric-correlations"
+  to="/docs/netdata-ai/troubleshooting/metric-correlations"
 
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection"
-  to="/docs/ai-&-ml"
+  to="/docs/netdata-ai"
 
 [[redirects]]
   from="/docs/netdata-cloud/connect-agent-to-cloud"
@@ -8371,19 +8371,19 @@
 
 [[redirects]]
   from="/docs/ai-and-machine-learning/ml-configuration"
-  to="/docs/ai-&-ml/ml-anomaly-detection/ml-configuration"
+  to="/docs/netdata-ai/anomaly-detection/ml-configuration"
 
 [[redirects]]
   from="/docs/ai-and-machine-learning/metric-correlations"
-  to="/docs/ai-&-ml/ml-anomaly-detection/metric-correlations"
+  to="/docs/netdata-ai/troubleshooting/metric-correlations"
 
 [[redirects]]
   from="/docs/ai-and-machine-learning/mcp-integration"
-  to="/docs/ai-&-ml/model-context-protocol-mcp"
+  to="/docs/netdata-ai/mcp"
 
 [[redirects]]
   from="/docs/ai-and-machine-learning"
-  to="/docs/ai-&-ml"
+  to="/docs/netdata-ai"
 
 [[redirects]]
   from="/docs//welcome-to-netdata"
@@ -8395,19 +8395,19 @@
 
 [[redirects]]
   from="/docs/ai-&-ml/mcp"
-  to="/docs/ai-&-ml/model-context-protocol-mcp"
+  to="/docs/netdata-ai/mcp"
 
 [[redirects]]
   from="/docs/ai-&-ml/devops-copilot/gemini-cli"
-  to="/docs/ai-&-ml/devops-copilots/gemini-cli"
+  to="/docs/netdata-ai/mcp/mcp-clients/gemini-cli"
 
 [[redirects]]
   from="/docs/ai-&-ml/devops-copilot/claude-code"
-  to="/docs/ai-&-ml/devops-copilots/claude-code"
+  to="/docs/netdata-ai/mcp/mcp-clients/claude-code"
 
 [[redirects]]
   from="/docs/ai-&-ml/devops-copilot"
-  to="/docs/ai-&-ml/devops-copilots"
+  to="/docs/netdata-ai/mcp/mcp-clients"
 
 [[redirects]]
   from="/docs/observability-centralization-points/streaming-and-replication-reference"
@@ -8419,23 +8419,23 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples"
-  to="/docs/collecting-metrics/metrics-centralization-points/replication-of-past-samples"
+  to="/docs/netdata-parents/metrics-centralization-points/replication-of-past-samples"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points/faq-on-metrics-centralization-points"
-  to="/docs/collecting-metrics/metrics-centralization-points/faq-on-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/faq-on-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points/configuring-metrics-centralization-points"
-  to="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
-  to="/docs/collecting-metrics/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+  to="/docs/netdata-parents/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points"
-  to="/docs/collecting-metrics/metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
@@ -8767,7 +8767,7 @@
 
 [[redirects]]
   from="/docs/agent/ml"
-  to="/docs/ai-&-ml/ml-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/docs/maintaining/reinstall-netdata-agents"
@@ -8811,11 +8811,11 @@
 
 [[redirects]]
   from="/guides/monitor/anomaly-detection"
-  to="/docs/ai-&-ml/ml-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/guides/monitor/anomaly-detection-python"
-  to="/docs/ai-&-ml/ml-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/docs/cloud/spaces"
@@ -8855,7 +8855,7 @@
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/machine-learning-ml-powered-anomaly-detection"
-  to="/docs/ai-&-ml/ml-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/docs/installation/reinstall-netdata"
@@ -8919,7 +8919,7 @@
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/machine-learning-ml-powered-anomaly-detection"
-  to="/docs/ai-&-ml/ml-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes"
@@ -8947,7 +8947,7 @@
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting/machine-learning-ml-powered-anomaly-detection"
-  to="/docs/ai-&-ml/ml-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/common-configuration-changes"
@@ -8983,7 +8983,7 @@
 
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/machine-learning-ml-powered-anomaly-detection"
-  to="/docs/ai-&-ml/ml-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/docs/netdata-agent/maintenance/reinstall-netdata-agents"
@@ -8991,7 +8991,7 @@
 
 [[redirects]]
   from="/docs/machine-learning-and-anomaly-detection/ml-models-and-anomaly-detection"
-  to="/docs/ai-&-ml/ml-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/docs/agent/health/tutorials/stop-notifications-alarms/"
@@ -9072,5 +9072,97 @@
 [[redirects]]
   from="/docs//top-monitoring-netdata-functions"
   to="/docs/top-consumers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/metrics-centralization-points/replication-of-past-samples"
+  to="/docs/netdata-parents/metrics-centralization-points/replication-of-past-samples"
+
+[[redirects]]
+  from="/docs/collecting-metrics/metrics-centralization-points/faq-on-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/faq-on-metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/collecting-metrics/metrics-centralization-points/configuring-metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/collecting-metrics/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+  to="/docs/netdata-parents/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
+
+[[redirects]]
+  from="/docs/collecting-metrics/metrics-centralization-points"
+  to="/docs/netdata-parents/metrics-centralization-points"
+
+[[redirects]]
+  from="/docs/ai-&-ml/model-context-protocol-mcp"
+  to="/docs/netdata-ai/mcp"
+
+[[redirects]]
+  from="/docs/ai-&-ml/ml-anomaly-detection/ml-configuration"
+  to="/docs/netdata-ai/anomaly-detection/ml-configuration"
+
+[[redirects]]
+  from="/docs/ai-&-ml/ml-anomaly-detection/ml-accuracy"
+  to="/docs/netdata-ai/anomaly-detection/ml-accuracy"
+
+[[redirects]]
+  from="/docs/ai-&-ml/ml-anomaly-detection/metric-correlations"
+  to="/docs/netdata-ai/troubleshooting/metric-correlations"
+
+[[redirects]]
+  from="/docs/ai-&-ml/ml-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/ai-&-ml/devops-copilots/gemini-cli"
+  to="/docs/netdata-ai/mcp/mcp-clients/gemini-cli"
+
+[[redirects]]
+  from="/docs/ai-&-ml/devops-copilots/claude-code"
+  to="/docs/netdata-ai/mcp/mcp-clients/claude-code"
+
+[[redirects]]
+  from="/docs/ai-&-ml/devops-copilots"
+  to="/docs/netdata-ai/mcp/mcp-clients"
+
+[[redirects]]
+  from="/docs/ai-&-ml/chat-with-netdata/visual-studio-code"
+  to="/docs/netdata-ai/mcp/mcp-clients/visual-studio-code"
+
+[[redirects]]
+  from="/docs/ai-&-ml/chat-with-netdata/netdata-web-client"
+  to="/docs/netdata-ai/mcp/mcp-clients/netdata-web-client"
+
+[[redirects]]
+  from="/docs/ai-&-ml/chat-with-netdata/jetbrains-ides"
+  to="/docs/netdata-ai/mcp/mcp-clients/jetbrains-ides"
+
+[[redirects]]
+  from="/docs/ai-&-ml/chat-with-netdata/cursor"
+  to="/docs/netdata-ai/mcp/mcp-clients/cursor"
+
+[[redirects]]
+  from="/docs/ai-&-ml/chat-with-netdata/claude-desktop"
+  to="/docs/netdata-ai/mcp/mcp-clients/claude-desktop"
+
+[[redirects]]
+  from="/docs/ai-&-ml/chat-with-netdata"
+  to="/docs/netdata-ai/mcp/chat-with-netdata"
+
+[[redirects]]
+  from="/docs/ai-&-ml/anomaly-advisor"
+  to="/docs/netdata-ai/troubleshooting/anomaly-advisor"
+
+[[redirects]]
+  from="/docs/ai-&-ml/ai-powered-alert-troubleshooting"
+  to="/docs/netdata-ai/troubleshooting/alert-troubleshooting"
+
+[[redirects]]
+  from="/docs/ai-&-ml/ai-insights"
+  to="/docs/netdata-ai/insights"
+
+[[redirects]]
+  from="/docs/ai-&-ml"
+  to="/docs/netdata-ai"
 
 # section: dynamic << END
