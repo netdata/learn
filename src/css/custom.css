@@ -8,7 +8,7 @@
 /* Set font families to match Netdata website */
 :root {
 	--ifm-font-family-base: 'IBM Plex Sans', sans-serif;
-	--ifm-font-family-monospace: 'IBM Plex Mono', monospace;
+	--ifm-font-family-monospace: monospace;
 	--ifm-heading-font-family: 'IBM Plex Sans', sans-serif;
 	
 	/* Code font sizes */
