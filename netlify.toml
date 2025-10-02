@@ -8378,10 +8378,6 @@
   to="/docs/netdata-ai/troubleshooting/metric-correlations"
 
 [[redirects]]
-  from="/docs/ai-and-machine-learning/mcp-integration"
-  to="/docs/netdata-ai/mcp"
-
-[[redirects]]
   from="/docs/ai-and-machine-learning"
   to="/docs/netdata-ai"
 
@@ -8392,22 +8388,6 @@
 [[redirects]]
   from="/docs//at-a-glance"
   to="/docs/welcome-to-netdata/enterprise-evaluation-guide"
-
-[[redirects]]
-  from="/docs/ai-&-ml/mcp"
-  to="/docs/netdata-ai/mcp"
-
-[[redirects]]
-  from="/docs/ai-&-ml/devops-copilot/gemini-cli"
-  to="/docs/netdata-ai/mcp/mcp-clients/gemini-cli"
-
-[[redirects]]
-  from="/docs/ai-&-ml/devops-copilot/claude-code"
-  to="/docs/netdata-ai/mcp/mcp-clients/claude-code"
-
-[[redirects]]
-  from="/docs/ai-&-ml/devops-copilot"
-  to="/docs/netdata-ai/mcp/mcp-clients"
 
 [[redirects]]
   from="/docs/observability-centralization-points/streaming-and-replication-reference"
@@ -9094,10 +9074,6 @@
   to="/docs/netdata-parents/metrics-centralization-points"
 
 [[redirects]]
-  from="/docs/ai-&-ml/model-context-protocol-mcp"
-  to="/docs/netdata-ai/mcp"
-
-[[redirects]]
   from="/docs/ai-&-ml/ml-anomaly-detection/ml-configuration"
   to="/docs/netdata-ai/anomaly-detection/ml-configuration"
 
@@ -9112,42 +9088,6 @@
 [[redirects]]
   from="/docs/ai-&-ml/ml-anomaly-detection"
   to="/docs/netdata-ai/anomaly-detection"
-
-[[redirects]]
-  from="/docs/ai-&-ml/devops-copilots/gemini-cli"
-  to="/docs/netdata-ai/mcp/mcp-clients/gemini-cli"
-
-[[redirects]]
-  from="/docs/ai-&-ml/devops-copilots/claude-code"
-  to="/docs/netdata-ai/mcp/mcp-clients/claude-code"
-
-[[redirects]]
-  from="/docs/ai-&-ml/devops-copilots"
-  to="/docs/netdata-ai/mcp/mcp-clients"
-
-[[redirects]]
-  from="/docs/ai-&-ml/chat-with-netdata/visual-studio-code"
-  to="/docs/netdata-ai/mcp/mcp-clients/visual-studio-code"
-
-[[redirects]]
-  from="/docs/ai-&-ml/chat-with-netdata/netdata-web-client"
-  to="/docs/netdata-ai/mcp/mcp-clients/netdata-web-client"
-
-[[redirects]]
-  from="/docs/ai-&-ml/chat-with-netdata/jetbrains-ides"
-  to="/docs/netdata-ai/mcp/mcp-clients/jetbrains-ides"
-
-[[redirects]]
-  from="/docs/ai-&-ml/chat-with-netdata/cursor"
-  to="/docs/netdata-ai/mcp/mcp-clients/cursor"
-
-[[redirects]]
-  from="/docs/ai-&-ml/chat-with-netdata/claude-desktop"
-  to="/docs/netdata-ai/mcp/mcp-clients/claude-desktop"
-
-[[redirects]]
-  from="/docs/ai-&-ml/chat-with-netdata"
-  to="/docs/netdata-ai/mcp/chat-with-netdata"
 
 [[redirects]]
   from="/docs/ai-&-ml/anomaly-advisor"
