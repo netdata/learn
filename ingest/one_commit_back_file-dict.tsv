@@ -90,8 +90,11 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-ai/investigations/cu
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/investigations/index.md	/docs/netdata-ai/investigations
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/anomaly-advisor.md	/docs/netdata-ai/troubleshooting/anomaly-advisor
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-insights.md	/docs/netdata-ai/insights
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/codex-cli.md	/docs/netdata-ai/mcp/mcp-clients/openai-codex-cli
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/ai-devops-copilot.md	/docs/netdata-ai/mcp/mcp-clients
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/crush.md	/docs/netdata-ai/mcp/mcp-clients/crush
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/gemini-cli.md	/docs/netdata-ai/mcp/mcp-clients/gemini-cli
+https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/opencode.md	/docs/netdata-ai/mcp/mcp-clients/opencode
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-devops-copilot/claude-code.md	/docs/netdata-ai/mcp/mcp-clients/claude-code
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/ai-chat-netdata.md	/docs/netdata-ai/mcp/chat-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-chat-netdata/claude-desktop.md	/docs/netdata-ai/mcp/mcp-clients/claude-desktop
