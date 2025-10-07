@@ -849,6 +849,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/yuga
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dmcache/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/dmcache-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/docs/how-to-write-a-module.md	/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go
 https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	/docs/netdata-ai/anomaly-detection/ml-configuration
+https://github.com/netdata/netdata/edit/master/src/crates/jf/otel-plugin/README.md	/docs/collecting-metrics/opentelemetry/opentelemetry-metrics
 https://github.com/netdata/netdata/edit/master/src/database/CONFIGURATION.md	/docs/netdata-agent/configuration/database
 https://github.com/netdata/netdata/edit/master/src/database/README.md	/docs/netdata-agent/database
 https://github.com/netdata/netdata/edit/master/src/database/engine/README.md	/docs/developer-and-contributor-corner/database-engine
