@@ -164,6 +164,7 @@ https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/sy
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/discord.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/discord
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/netdata_mobile_app.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/netdata-mobile-app
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/mattermost.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/mattermost
+https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/servicenow.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/servicenow
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/telegram.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/telegram
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/opsgenie.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/opsgenie
 https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/pagerduty.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/pagerduty
