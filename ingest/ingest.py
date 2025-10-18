@@ -351,22 +351,21 @@ def copy_doc(src, dest):
 
 
 def clone_repo(owner, repo, branch, depth, prefix_folder):
-    """
-    Clone a repo in a specific depth and place it under the prefixFolder
-    INPUTS:
-        https://github.com/{owner}/{repo}:{branch}
-        as depth we specify the history of the repo (depth=1 fetches only the latest commit in this repo)
-    """
     try:
         output_folder = prefix_folder + repo
-        # print("DEBUG", outputFolder)
-        git.Git().clone(
-            f"git@github.com:{owner}/{repo}.git", output_folder, depth=depth, branch=branch)
+        token = os.environ.get("DOCS_GH_TOKEN")
 
+        if token:
+            # Safer not to echo this URL anywhere (don’t print it)
+            url = f"https://oauth2:{token}@github.com/{owner}/{repo}.git"
+        else:
+            url = f"git@github.com:{owner}/{repo}.git"
 
+        git.Git().clone(url, output_folder, depth=depth, branch=branch)
         return f"Cloned the {branch} branch from {repo} repo (owner: {owner})"
     except Exception as e:
-        return f"Couldn't clone the {branch} branch from {repo} repo (owner: {owner}) \n Exception {e} raised"
+        return (f"Couldn't clone the {branch} branch from {repo} repo (owner: {owner}) \n"
+                f" Exception {e} raised")
 
 
 def create_mdx_path_from_metadata(metadata):
@@ -522,9 +521,9 @@ def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
 def update_metadata_of_file(path_to_file, dictionary):
     """
     Taking a path of a file as input
-    Identify the area with pattern 
-    "<!-- ...multiline string -->" 
-    and converts them to a dictionary 
+    Identify the area with pattern
+    "<!-- ...multiline string -->"
+    and converts them to a dictionary
     of key:value pairs
     """
 
@@ -711,7 +710,7 @@ def local_to_absolute_links(path_to_file, input_dict):
     # custom_edit_url_arr = re.findall(r'custom_edit_url(.*)', metadata)
 
     # print(input_dict.keys())
-    
+
     # If there are links inside the body
     if re.search(r"\]\((.*?)\)", body):
         # Find all the links and add them in an array
@@ -724,9 +723,9 @@ def local_to_absolute_links(path_to_file, input_dict):
         for url in list(set(urls)):
             # if not url.startswith("/"):
 
-            
-            
-            
+
+
+
             if ".md" in url and (any(url in key for key in input_dict.keys())):
                 if "http" not in url and url.startswith(".") and len(url) > 0:
                     # print("Link starts with '.'")
@@ -747,7 +746,7 @@ def local_to_absolute_links(path_to_file, input_dict):
                             url_leftover.pop(0)
                             path_arr.pop()
                             print(path_arr)
-                    
+
                     replace = "/".join(path_arr) + "/" + "/".join(url_leftover)
 
 
@@ -787,7 +786,7 @@ def local_to_absolute_links(path_to_file, input_dict):
                         # print("\n")
             else:
                 if (url.startswith(".") or url.startswith("/")):
-                    
+
                     directory = "ingest-temp-folder"
                     substring = url
 
