@@ -25,20 +25,20 @@ Stages of this ingest script:
 
 # Imports
 import argparse
-import sys
+import ast
+import errno
 import glob
 import os
 import re
 import shutil
-import errno
-import json
-import ast
-import git
-import autogenerateRedirects as genRedirects
-import pandas as pd
-import numpy as np
+import urllib.parse
 from pathlib import Path
 
+import git
+import numpy as np
+import pandas as pd
+
+import autogenerateRedirects as genRedirects
 
 DRY_RUN = False
 DEBUG = False
@@ -159,13 +159,14 @@ def populate_integrations(markdownFiles):
             if os.path.islink(file):
                 ignore_dup.append(whole_file)
                 # If it is a manual symlink, meaning a README symlink but the folder has more than one integration, thus their custom_edit_urls are unique. 1:1 integrations have the README link as custom_edit_url
-                if not file.replace("ingest-temp-folder/", "").split('/', 1)[1] in metadata_dictionary['custom_edit_url']:
+                if not file.replace("ingest-temp-folder/", "").split('/', 1)[1] in metadata_dictionary[
+                    'custom_edit_url']:
                     proper_edit_url = file.replace(
                         "ingest-temp-folder/", "")
 
                     proper_edit_url = "https://github.com/netdata/" + \
-                        proper_edit_url.split(
-                            '/', 1)[0] + "/edit/master/" + proper_edit_url.split('/', 1)[1]
+                                      proper_edit_url.split(
+                                          '/', 1)[0] + "/edit/master/" + proper_edit_url.split('/', 1)[1]
                     metadata_dictionary['custom_edit_url'] = proper_edit_url
 
                     # print("path:", file)
@@ -200,58 +201,57 @@ def populate_integrations(markdownFiles):
 
     # print("Collectors\n", collectors_entries, "Agent alerts\n", alerting_agent, "Cloud alerts\n",  alerting_cloud, "Exporting",  exporting_entries)
 
-
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "authentication_integrations"].index
     # print(replace_index[0])
     upper = map_file.iloc[:replace_index[0]]
-    lower = map_file.iloc[replace_index[0]+1:]
+    lower = map_file.iloc[replace_index[0] + 1:]
 
     map_file = pd.concat([upper, authentication_entries.sort_values(
-        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path', 'sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "collectors_integrations"].index
     # print(replace_index[0])
     upper = map_file.iloc[:replace_index[0]]
-    lower = map_file.iloc[replace_index[0]+1:]
+    lower = map_file.iloc[replace_index[0] + 1:]
 
     map_file = pd.concat([upper, collectors_entries.sort_values(
-        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path', 'sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "agent_notifications_integrations"].index
     # print(replace_index[0])
     upper = map_file.iloc[:replace_index[0]]
-    lower = map_file.iloc[replace_index[0]+1:]
+    lower = map_file.iloc[replace_index[0] + 1:]
 
     map_file = pd.concat([upper, alerting_agent_entries.sort_values(
-        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path', 'sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "cloud_notifications_integrations"].index
     upper = map_file.iloc[:replace_index[0]]
-    lower = map_file.iloc[replace_index[0]+1:]
+    lower = map_file.iloc[replace_index[0] + 1:]
 
     map_file = pd.concat([upper, alerting_cloud_entries.sort_values(
-        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path', 'sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "exporters_integrations"].index
     # print(replace_index[0])
     upper = map_file.iloc[:replace_index[0]]
-    lower = map_file.iloc[replace_index[0]+1:]
+    lower = map_file.iloc[replace_index[0] + 1:]
 
     map_file = pd.concat([upper, exporting_entries.sort_values(
-        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path', 'sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     replace_index = map_file.loc[map_file['custom_edit_url']
                                  == "logs_integrations"].index
     upper = map_file.iloc[:replace_index[0]]
-    lower = map_file.iloc[replace_index[0]+1:]
+    lower = map_file.iloc[replace_index[0] + 1:]
 
     map_file = pd.concat([upper, logs_entries.sort_values(
-        by=['learn_rel_path','sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
+        by=['learn_rel_path', 'sidebar_label'], key=lambda col: col.str.lower()), lower], ignore_index=True)
 
     map_file.to_csv("ingest/generated_map.tsv", sep='\t', index=False)
 
@@ -350,23 +350,29 @@ def copy_doc(src, dest):
         shutil.copy(src, dest)
 
 
-def clone_repo(owner, repo, branch, depth, prefix_folder):
+def clone_repo(owner, repo, branch, depth, prefix_folder, gh_token=None):
     """
-    Clone a repo in a specific depth and place it under the prefixFolder
-    INPUTS:
-        https://github.com/{owner}/{repo}:{branch}
-        as depth we specify the history of the repo (depth=1 fetches only the latest commit in this repo)
+    Clone a repo using HTTPS+PAT (if provided) or SSH.
+    Removes secrets from the remote after cloning.
     """
     try:
-        output_folder = prefix_folder + repo
-        # print("DEBUG", outputFolder)
-        git.Git().clone(
-            f"git@github.com:{owner}/{repo}.git", output_folder, depth=depth, branch=branch)
+        output_folder = os.path.join(prefix_folder, repo)
+        if gh_token:
+            enc = urllib.parse.quote(gh_token, safe="")
+            url = f"https://x-access-token:{enc}@github.com/{owner}/{repo}.git"
+        else:
+            url = f"git@github.com:{owner}/{repo}.git"
 
+        git.Git().clone(url, output_folder, depth=depth, branch=branch)
+
+        # Immediately scrub the remote to a non-secret URL
+        clean_url = f"https://github.com/{owner}/{repo}.git"
+        git.Git(output_folder).remote('set-url', 'origin', clean_url)
 
         return f"Cloned the {branch} branch from {repo} repo (owner: {owner})"
     except Exception as e:
-        return f"Couldn't clone the {branch} branch from {repo} repo (owner: {owner}) \n Exception {e} raised"
+        return (f"Couldn't clone the {branch} branch from {repo} repo (owner: {owner}) \n"
+                f" Exception {e} raised")
 
 
 def create_mdx_path_from_metadata(metadata):
@@ -377,37 +383,41 @@ def create_mdx_path_from_metadata(metadata):
     In the returned (final) path we sanitize "/", "//" , "-", "," with one dash
     """
     final_file = ' '.join((metadata["sidebar_label"]
-                          .replace("'", " ")
-                          .replace(":", " ")
-                          .replace("/", " ")
-                          .replace(")", " ")
-                          .replace(",", " ")
-                          .replace("(", " ")
-                          .replace("`", " ")).split())
+                           .replace("'", " ")
+                           .replace(":", " ")
+                           .replace("/", " ")
+                           .replace(")", " ")
+                           .replace(",", " ")
+                           .replace("(", " ")
+                           .replace("`", " ")).split())
 
-    if "Collecting Metrics" in metadata['learn_rel_path']\
-            and metadata['learn_rel_path'].split("/")[-1] != "Collecting Metrics" and 'External-plugins' not in metadata['learn_rel_path']:
+    if "Collecting Metrics" in metadata['learn_rel_path'] \
+            and metadata['learn_rel_path'].split("/")[-1] != "Collecting Metrics" and 'External-plugins' not in \
+            metadata['learn_rel_path']:
         last_folder = metadata['learn_rel_path'].split("Collecting Metrics", 1)[1]
         last_folder = "collecting-metrics" + last_folder
 
         # non-integration folders inside collecting metrics
         if "Metrics Centralization Points" in metadata['learn_rel_path']:
             slug = "/{}/{}".format(metadata["learn_rel_path"],
-                                final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")
+                                   final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")
             if slug.rsplit("/")[-1] == slug.rsplit("/")[-2]:
-                return["{}/{}/{}.mdx".format(DOCS_PREFIX,
-                                        metadata["learn_rel_path"]
-                                        .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
-                                        final_file).replace("//", "/"),
-                    "/{}/{}".format(metadata["learn_rel_path"],
-                                    final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/").rsplit("/",1)[0]]
+                return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
+                                              metadata["learn_rel_path"]
+                                              .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
+                                              final_file).replace("//", "/"),
+                        "/{}/{}".format(metadata["learn_rel_path"],
+                                        final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//",
+                                                                                                        "/").rsplit("/",
+                                                                                                                    1)[
+                            0]]
             else:
-                return["{}/{}/{}.mdx".format(DOCS_PREFIX,
-                                        metadata["learn_rel_path"]
-                                        .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
-                                        final_file).replace("//", "/"),
-                    "/{}/{}".format(metadata["learn_rel_path"],
-                                    final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
+                return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
+                                              metadata["learn_rel_path"]
+                                              .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
+                                              final_file).replace("//", "/"),
+                        "/{}/{}".format(metadata["learn_rel_path"],
+                                        final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
 
         # print(last_folder)
         # exit()
@@ -522,9 +532,9 @@ def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
 def update_metadata_of_file(path_to_file, dictionary):
     """
     Taking a path of a file as input
-    Identify the area with pattern 
-    "<!-- ...multiline string -->" 
-    and converts them to a dictionary 
+    Identify the area with pattern
+    "<!-- ...multiline string -->"
+    and converts them to a dictionary
     of key:value pairs
     """
 
@@ -543,7 +553,7 @@ def update_metadata_of_file(path_to_file, dictionary):
     else:
         body = whole_file
 
-    Path(path_to_file).write_text(output+body)
+    Path(path_to_file).write_text(output + body)
 
 
 def read_metadata(meta):
@@ -600,17 +610,17 @@ def sanitize_page(path):
     body = body.replace("<details open><summary>", "<details open>\n<summary>")
     body = body.replace("${", r"$\{")
     body = body.replace("<=", r"\<=")
-    body = body.replace("%<",r"%\<")
-    body = body.replace("{{",r"\{\{")
-    body = body.replace("style=\\{\\{","style={{")
-    body = body.replace("<->",r"\<->")
-    body = body.replace("{attribute_name}",r"\{attribute_name}")
-    body = body.replace("{attribute_unit}",r"\{attribute_unit}")
+    body = body.replace("%<", r"%\<")
+    body = body.replace("{{", r"\{\{")
+    body = body.replace("style=\\{\\{", "style={{")
+    body = body.replace("<->", r"\<->")
+    body = body.replace("{attribute_name}", r"\{attribute_name}")
+    body = body.replace("{attribute_unit}", r"\{attribute_unit}")
 
     # <url> into [url](url)
     body = re.sub(r'<(https://[^>]+)>', r'[\1](\1)', body)
     body = re.sub(r'<(http://[^>]+)>', r'[\1](\1)', body)
-    body = re.sub(r'<([\w\.-]+@[\w\.-]+\.\w+)>',  r'[\1](mailto:\1)', body)
+    body = re.sub(r'<([\w\.-]+@[\w\.-]+\.\w+)>', r'[\1](mailto:\1)', body)
 
     match_group = re.search(r'meta_yaml: "(.*)"', body)
     if match_group:
@@ -651,40 +661,39 @@ def add_new_learn_path_key_to_dict(input_dict, docs_prefix, docs_path_learn, tem
     output_dictionary = dict()
     for element in input_dict:
         repo = input_dict[element]["ingestedRepo"]
-        file_path = element.replace(temp_folder+"/"+repo+"/", "")
+        file_path = element.replace(temp_folder + "/" + repo + "/", "")
 
         source_link = produce_gh_view_link_for_repo(repo, file_path)
-        output_dictionary[source_link] = input_dict[element]["learnPath"]\
-            .split(".mdx")[0]\
-            .lstrip('"')\
-            .rstrip('"')\
+        output_dictionary[source_link] = input_dict[element]["learnPath"] \
+            .split(".mdx")[0] \
+            .lstrip('"') \
+            .rstrip('"') \
             .replace(docs_prefix, docs_path_learn)
         source_link = produce_gh_edit_link_for_repo(repo, file_path)
-        output_dictionary[source_link] = input_dict[element]["learnPath"]\
-            .split(".mdx")[0]\
-            .lstrip('"')\
-            .rstrip('"')\
+        output_dictionary[source_link] = input_dict[element]["learnPath"] \
+            .split(".mdx")[0] \
+            .lstrip('"') \
+            .rstrip('"') \
             .replace(docs_prefix, docs_path_learn)
 
         # Check for pages that are category overview pages, and have filepath like ".../monitor/monitor".
         # This way we remove the double dirname in the end, because docusaurus routes the file to .../monitor
-        if output_dictionary[source_link].split("/")[len(output_dictionary[source_link].split("/"))-1] == \
-                output_dictionary[source_link].split("/")[len(output_dictionary[source_link].split("/"))-2]:
-
+        if output_dictionary[source_link].split("/")[len(output_dictionary[source_link].split("/")) - 1] == \
+                output_dictionary[source_link].split("/")[len(output_dictionary[source_link].split("/")) - 2]:
             same_parent_dir = output_dictionary[source_link].split(
-                "/")[len(output_dictionary[source_link].split("/"))-2]
+                "/")[len(output_dictionary[source_link].split("/")) - 2]
 
             proper_link = output_dictionary[source_link].split(
                 same_parent_dir, 1)
             output_dictionary[source_link] = proper_link[0] + \
-                proper_link[1].strip("/")
+                                             proper_link[1].strip("/")
 
         _temp = output_dictionary[source_link].replace("'", " ").replace(":", " ").replace(")", " ").replace(
             ",", " ").replace("(", " ").replace("/  +/g", ' ').replace(" ", "%20").replace('/-+/', '-')
         # If there is a slug present in the file, then that is the new_learn_path, with a "/docs" added in the front.
         try:
             input_dict[element].update(
-                {"new_learn_path": "/docs"+input_dict[element]["metadata"]["slug"]})
+                {"new_learn_path": "/docs" + input_dict[element]["metadata"]["slug"]})
         except KeyError:
             input_dict[element].update({"new_learn_path": _temp})
 
@@ -707,11 +716,10 @@ def local_to_absolute_links(path_to_file, input_dict):
     # metadata = "---" + whole_file.split("---", 2)[1] + "---"
     body = whole_file
 
-
     # custom_edit_url_arr = re.findall(r'custom_edit_url(.*)', metadata)
 
     # print(input_dict.keys())
-    
+
     # If there are links inside the body
     if re.search(r"\]\((.*?)\)", body):
         # Find all the links and add them in an array
@@ -724,9 +732,6 @@ def local_to_absolute_links(path_to_file, input_dict):
         for url in list(set(urls)):
             # if not url.startswith("/"):
 
-            
-            
-            
             if ".md" in url and (any(url in key for key in input_dict.keys())):
                 if "http" not in url and url.startswith(".") and len(url) > 0:
                     # print("Link starts with '.'")
@@ -747,9 +752,8 @@ def local_to_absolute_links(path_to_file, input_dict):
                             url_leftover.pop(0)
                             path_arr.pop()
                             print(path_arr)
-                    
-                    replace = "/".join(path_arr) + "/" + "/".join(url_leftover)
 
+                    replace = "/".join(path_arr) + "/" + "/".join(url_leftover)
 
                     check = Path(replace)
 
@@ -787,14 +791,13 @@ def local_to_absolute_links(path_to_file, input_dict):
                         # print("\n")
             else:
                 if (url.startswith(".") or url.startswith("/")):
-                    
+
                     directory = "ingest-temp-folder"
                     substring = url
 
                     for root, dirs, files in os.walk(directory):
                         for name in files + dirs:
                             if substring in os.path.join(root, name):
-
                                 # print(url, path_to_file, path_to_file.split('/')[1], "NOT IN LEARN")
 
                                 replace = f"(https://github.com/netdata/{path_to_file.split('/')[1]}/blob/master{url}"
@@ -856,7 +859,7 @@ def convert_github_links(path_to_file, input_dict):
 
                     replace_string = replace_string.replace(
                         replace_string.split(
-                            "/")[len(replace_string.split("/"))-1],
+                            "/")[len(replace_string.split("/")) - 1],
                         metadata_id
                     )
 
@@ -865,7 +868,7 @@ def convert_github_links(path_to_file, input_dict):
 
                     pass
 
-                body = body.replace("]("+url, "]("+replace_string)
+                body = body.replace("](" + url, "](" + replace_string)
                 # In the end replace the URL with the replaceString
             except Exception as e:
                 # This is probably a link that can't be translated to a Learn link (e.g. An external file)
@@ -875,7 +878,7 @@ def convert_github_links(path_to_file, input_dict):
                         # Due to the integrations/cloud_notifications/integrations/.. scenario, we use rsplit to remove the last occurrence of "integrations"
                         # We want to map links to specific integrations mds, to their parent README, in case the above try-catch failed to find the replacement.
                         try_url = url.rsplit("integrations", 1)[
-                            0] + "README.md"
+                                      0] + "README.md"
                         # The URL will get replaced by the value of the replaceString
                         try:
                             # The keys inside fileDict are like "ingest-temp-folder/netdata/collectors/charts.d.plugin/ap/README.md"
@@ -896,7 +899,7 @@ def convert_github_links(path_to_file, input_dict):
 
                                 replace_string = replace_string.replace(
                                     replace_string.split(
-                                        "/")[len(replace_string.split("/"))-1],
+                                        "/")[len(replace_string.split("/")) - 1],
                                     metadata_id
                                 )
                             except Exception as e:
@@ -904,7 +907,7 @@ def convert_github_links(path_to_file, input_dict):
                                 pass
 
                             # In the end replace the URL with the replaceString
-                            body = body.replace("]("+url, "]("+replace_string)
+                            body = body.replace("](" + url, "](" + replace_string)
                         except:
                             # Increase the counter of the broken links,
                             # fetch the custom_edit_url variable for printing and print a message
@@ -1044,10 +1047,18 @@ if __name__ == '__main__':
         action="store_true",
     )
 
+    parser.add_argument(
+        "--gh-token",
+        help="GitHub Personal Access Token for HTTPS cloning (optional, used only for local testing).",
+        dest="gh_token",
+        default=None,
+    )
+
     list_of_repos_in_str = []
     # netdata/netdata:branch tkatsoulas/go.d.plugin:mybranch
     args = parser.parse_args()
     kArgs = args._get_kwargs()
+    GITHUB_TOKEN = args.gh_token
 
     # Create local copies from the parse_args input
     DOCS_PREFIX = args.DOCS_PREFIX
@@ -1068,7 +1079,7 @@ if __name__ == '__main__':
             try:
                 _temp = repo_str.split("/")
                 repo_owner, repository, repo_branch = [
-                    _temp[0]] + (_temp[1].split(":"))
+                                                          _temp[0]] + (_temp[1].split(":"))
                 default_repos[repository]["owner"] = repo_owner
                 default_repos[repository]["branch"] = repo_branch
             except (TypeError, ValueError):
@@ -1098,8 +1109,14 @@ if __name__ == '__main__':
 
     # Clone all the predefined repos
     for repo_name in default_repos.keys():
-        print(clone_repo(default_repos[repo_name]["owner"], repo_name,
-              default_repos[repo_name]["branch"], 1, TEMP_FOLDER + "/"))
+        print(clone_repo(
+            default_repos[repo_name]["owner"],
+            repo_name,
+            default_repos[repo_name]["branch"],
+            1,
+            TEMP_FOLDER + "/",
+            GITHUB_TOKEN,
+        ))
 
     shutil.move("ingest-temp-folder/netdata/docs/.map/map.csv", "map.csv")
 
@@ -1224,8 +1241,6 @@ if __name__ == '__main__':
     print("Done.", "Uncorrelated links (links from our github repos that the files are not in Learn):",
           UNCORRELATED_LINK_COUNTER)
 
-
-
     if DEBUG:
         # Print the list of markdown not in Learn, for debugging purposes
         if len(rest_files_dictionary):
@@ -1254,6 +1269,7 @@ if __name__ == '__main__':
     os.remove("map.csv")
     print("OPERATION FINISHED, map deleted")
 
+
     def sort_files(file_array):
         most_popular = []
         rest_netdata_integrations = []
@@ -1266,7 +1282,7 @@ if __name__ == '__main__':
 
                 if "most_popular: \"True\"" in content:
                     most_popular.append(
-                        [str(file).lower().rsplit("/", 1)[1], file, "by Netdata",  "#00ab44"])
+                        [str(file).lower().rsplit("/", 1)[1], file, "by Netdata", "#00ab44"])
                 elif "maintained%20by-Netdata-" in content:
                     rest_netdata_integrations.append(
                         [str(file).lower().rsplit("/", 1)[1], file, "by Netdata", "#00ab44"])
@@ -1279,6 +1295,7 @@ if __name__ == '__main__':
 
         return sorted_array
 
+
     def get_dir_make_file_and_recurse(directory):
         dir_path, dir_name = str(directory).rsplit("/", 1)
         filename = f"{dir_path}/{dir_name}/{dir_name}.mdx"
@@ -1290,7 +1307,8 @@ if __name__ == '__main__':
             return
 
         # Do stuff for all the files inside the dict, auth folder currently has only one file
-        if len(sorted(Path(directory).glob("**/**/*"))) > 1 or directory == "docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations":
+        if len(sorted(Path(directory).glob(
+                "**/**/*"))) > 1 or directory == "docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations":
             sorted_list = sort_files(Path(directory).glob("**/**/*"))
 
             try:
@@ -1363,7 +1381,8 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
                                 return
 
                         # if the structure is like A/B/B.mdx but B/ has more files in it (Logs integrations mainly) then truncate the B.mdx from B/B.mdx as it is a folder now.
-                        if meta_dict["learn_link"].split("/")[-1] == meta_dict["learn_link"].split("/")[-2] and not is_only_file:
+                        if meta_dict["learn_link"].split("/")[-1] == meta_dict["learn_link"].split("/")[
+                            -2] and not is_only_file:
                             meta_dict["learn_link"] = meta_dict["learn_link"].rsplit(
                                 "/", 1)[0]
                             print("IN", type(meta_dict["learn_link"]), file_array_entry, directory, direct_child
@@ -1371,7 +1390,9 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
 
                         try:
                             img = re.search(r'<img src="https:\/\/netdata.cloud\/img.*', whole_file)[0].replace(
-                                "width=\"150\"", "style={{width: '90%', maxHeight: '100%', verticalAlign: 'middle' }}").replace("<img", "<img custom-image")
+                                "width=\"150\"",
+                                "style={{width: '90%', maxHeight: '100%', verticalAlign: 'middle' }}").replace("<img",
+                                                                                                               "<img custom-image")
                         except TypeError:
                             img = ""
 
@@ -1392,6 +1413,7 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
 
             for subdir in sorted(Path(directory).glob("*/")):
                 get_dir_make_file_and_recurse(subdir)
+
 
     for path in Path('docs/collecting-metrics').glob('*/'):
         get_dir_make_file_and_recurse(path)
