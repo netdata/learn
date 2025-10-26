@@ -454,6 +454,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/hddt
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/chrony/README.md	/docs/collecting-metrics/system-clock-and-ntp/chrony
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/gearman/README.md	/docs/collecting-metrics/distributed-computing-systems/gearman
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/oracledb/README.md	/docs/collecting-metrics/databases/oracle-db
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/profile-format.md	/docs/collecting-metrics/snmp-profile-format
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/README.md	/docs/collecting-metrics/generic-collecting-metrics/snmp-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/rabbitmq/README.md	/docs/collecting-metrics/message-brokers/rabbitmq
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/maxscale/README.md	/docs/collecting-metrics/databases/maxscale
