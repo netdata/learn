@@ -304,7 +304,7 @@ https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrat
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/wavefront.md	/docs/exporting-metrics/connectors/wavefront
 https://github.com/netdata/netdata/edit/master/src/exporting/prometheus/integrations/irondb.md	/docs/exporting-metrics/connectors/irondb
 https://github.com/netdata/netdata/edit/master/src/collectors/README.md	/docs/collecting-metrics
-https://github.com/netdata/netdata/edit/master/src/collectors/COLLECTORS.md	/docs/collecting-metrics/monitor-anything
+https://github.com/netdata/netdata/edit/master/src/collectors/COLLECTORS.md	/docs/welcome-to-netdata/monitor-anything
 https://github.com/netdata/netdata/edit/master/src/collectors/REFERENCE.md	/docs/collecting-metrics/collectors-configuration
 https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md	/docs/logs/log2journal
 https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_softirq.md	/docs/collecting-metrics/ebpf/ebpf-softirq
