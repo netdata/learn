@@ -2446,5 +2446,6 @@
     "https://learn.netdata.cloud/docs/ai-&-ml/anomaly-advisor": "https://github.com/netdata/netdata/blob/master/docs/ml-ai/anomaly-advisor.md",
     "https://learn.netdata.cloud/docs/ai-&-ml/ai-powered-alert-troubleshooting": "https://github.com/netdata/netdata/blob/master/docs/troubleshooting/troubleshoot.md",
     "https://learn.netdata.cloud/docs/ai-&-ml/ai-insights": "https://github.com/netdata/netdata/blob/master/docs/ml-ai/ai-insights.md",
-    "https://learn.netdata.cloud/docs/ai-&-ml": "https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md"
+    "https://learn.netdata.cloud/docs/ai-&-ml": "https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/monitor-anything": "https://github.com/netdata/netdata/blob/master/src/collectors/COLLECTORS.md"
 }

@@ -1387,7 +1387,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/collectors"
-  to="/docs/collecting-metrics/monitor-anything"
+  to="/docs/welcome-to-netdata/monitor-anything"
 
 [[redirects]]
   from="/contribute/documentation"
@@ -1399,7 +1399,7 @@
 
 [[redirects]]
   from="/docs/agent/add-more-charts-to-netdata"
-  to="/docs/collecting-metrics/monitor-anything"
+  to="/docs/welcome-to-netdata/monitor-anything"
 
 [[redirects]]
   from="/docs/agent/build"
@@ -5215,7 +5215,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything"
-  to="/docs/collecting-metrics/monitor-anything"
+  to="/docs/welcome-to-netdata/monitor-anything"
 
 [[redirects]]
   from="/docs/data-collection/media-services/icecast"
@@ -9104,5 +9104,9 @@
 [[redirects]]
   from="/docs/ai-&-ml"
   to="/docs/netdata-ai"
+
+[[redirects]]
+  from="/docs/collecting-metrics/monitor-anything"
+  to="/docs/welcome-to-netdata/monitor-anything"
 
 # section: dynamic << END
