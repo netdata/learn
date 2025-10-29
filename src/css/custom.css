@@ -278,6 +278,7 @@ h5 {
 	font-family: 'IBM Plex Sans';
 	font-style: normal;
 	font-weight: 400;
+	font-stretch: normal;
 	font-display: swap;
 	src: url('/font/ibm-plex-sans-v8-latin-regular.woff2') format('woff2'),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -289,6 +290,7 @@ h5 {
 	font-family: 'IBM Plex Sans';
 	font-style: normal;
 	font-weight: 500;
+	font-stretch: normal;
 	font-display: swap;
 	src: url('/font/ibm-plex-sans-v8-latin-500.woff2') format('woff2'),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -300,6 +302,7 @@ h5 {
 	font-family: 'IBM Plex Sans';
 	font-style: normal;
 	font-weight: 700;
+	font-stretch: normal;
 	font-display: swap;
 	src: url('/font/ibm-plex-sans-v8-latin-700.woff2') format('woff2'),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -322,6 +325,10 @@ h5 {
 */
 
 body {
+	font-weight: 400 !important;
+}
+
+p, div, span, li, td, th {
 	font-weight: 400;
 }
 
