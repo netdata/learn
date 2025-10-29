@@ -9,7 +9,6 @@
 :root {
 	--ifm-font-family-base: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, "Helvetica Neue", sans-serif;
 	--ifm-font-weight-base: 300;
-	--ifm-font-weight-base: 300;
 	--ifm-font-family-monospace: monospace;
 	--ifm-heading-font-family: 'IBM Plex Sans', sans-serif;
 	
@@ -293,8 +292,8 @@ h5 {
   font-style: normal;
   font-weight: 300;
   src: local(''),
-       url('/font/ibm-plex-sans-v8-latin-300.woff2') format('woff2'),
-       url('/font/ibm-plex-sans-v8-latin-300.woff') format('woff');
+       url('/font/ibm-plex-sans-v110-light.woff2') format('woff2'),
+       url('/font/ibm-plex-sans-v110-light.woff') format('woff');
   font-display: swap;
 }
 
