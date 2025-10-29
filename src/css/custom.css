@@ -277,8 +277,7 @@ h5 {
 	font-family: 'IBM Plex Sans';
 	font-style: normal;
 	font-weight: 400;
-	src: local(''),
-		url('/font/ibm-plex-sans-v8-latin-regular.woff2') format('woff2'),
+	src: url('/font/ibm-plex-sans-v8-latin-regular.woff2') format('woff2'),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
 			url('/font/ibm-plex-sans-v8-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -288,7 +287,7 @@ h5 {
 	font-family: 'IBM Plex Sans';
 	font-style: normal;
 	font-weight: 500;
-	src: local(''), url('/font/ibm-plex-sans-v8-latin-500.woff2') format('woff2'),
+	src: url('/font/ibm-plex-sans-v8-latin-500.woff2') format('woff2'),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
 			url('/font/ibm-plex-sans-v8-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -298,7 +297,7 @@ h5 {
 	font-family: 'IBM Plex Sans';
 	font-style: normal;
 	font-weight: 700;
-	src: local(''), url('/font/ibm-plex-sans-v8-latin-700.woff2') format('woff2'),
+	src: url('/font/ibm-plex-sans-v8-latin-700.woff2') format('woff2'),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
 			url('/font/ibm-plex-sans-v8-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
@@ -308,8 +307,7 @@ h5 {
 	font-family: 'IBM Plex Mono';
 	font-style: normal;
 	font-weight: 400;
-	src: local(''),
-		url('/font/ibm-plex-mono-v6-latin-regular.woff2') format('woff2'),
+	src: url('/font/ibm-plex-mono-v6-latin-regular.woff2') format('woff2'),
 		/* Chrome 26+, Opera 23+, Firefox 39+ */
 			url('/font/ibm-plex-mono-v6-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
