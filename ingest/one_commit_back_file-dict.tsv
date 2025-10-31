@@ -342,6 +342,7 @@ https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/int
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/windows_services.md	/docs/collecting-metrics/windows-systems/windows-services
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/numa_architecture.md	/docs/collecting-metrics/windows-systems/numa-architecture
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/iis.md	/docs/collecting-metrics/windows-systems/iis
+https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hardware_information_collected_from_kernel_ring..md	/docs/collecting-metrics/windows-systems/hardware-information-collected-from-kernel-ring.
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory.md	/docs/collecting-metrics/windows-systems/active-directory
 https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/sensors.md	/docs/collecting-metrics/windows-systems/sensors
 https://github.com/netdata/netdata/edit/master/src/collectors/nfacct.plugin/README.md	/docs/collecting-metrics/linux-systems/firewall/netfilter
