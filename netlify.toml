@@ -7282,10 +7282,6 @@
   to="/docs/collecting-metrics/databases/vertica"
 
 [[redirects]]
-  from="/docs/data-collection/databases/sql-database-agnostic"
-  to="/docs/collecting-metrics/databases/sql-database-agnostic"
-
-[[redirects]]
   from="/docs/data-collection/databases/pgpool-ii"
   to="/docs/collecting-metrics/databases/pgpool-ii"
 
