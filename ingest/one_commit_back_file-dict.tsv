@@ -590,6 +590,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prom
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/arm_hwcpipe.md	/docs/collecting-metrics/hardware-devices-and-sensors/arm-hwcpipe
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/energomera_smart_power_meters.md	/docs/collecting-metrics/iot-devices/energomera-smart-power-meters
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/certificate_transparency.md	/docs/collecting-metrics/security-systems/certificate-transparency
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/scylladb.md	/docs/collecting-metrics/databases/scylladb
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ibm_z_hardware_management_console.md	/docs/collecting-metrics/hardware-devices-and-sensors/ibm-z-hardware-management-console
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/site_24x7.md	/docs/collecting-metrics/synthetic-checks/site-24x7
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/eos.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/eos
@@ -773,7 +774,6 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prom
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/homebridge.md	/docs/collecting-metrics/iot-devices/homebridge
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/etcd.md	/docs/collecting-metrics/service-discovery-/-registry/etcd
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/crowdsec.md	/docs/collecting-metrics/security-systems/crowdsec
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/sql_database_agnostic.md	/docs/collecting-metrics/databases/sql-database-agnostic
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/traceroute.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/traceroute
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/pimoroni_enviro+.md	/docs/collecting-metrics/iot-devices/pimoroni-enviro+
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/tesla_powerwall.md	/docs/collecting-metrics/iot-devices/tesla-powerwall
