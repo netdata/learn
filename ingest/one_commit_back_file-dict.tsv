@@ -485,6 +485,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/open
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/unbound/README.md	/docs/collecting-metrics/dns-and-dhcp-servers/unbound
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/ntpd/README.md	/docs/collecting-metrics/system-clock-and-ntp/ntpd
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/portcheck/README.md	/docs/collecting-metrics/synthetic-checks/tcp-udp-endpoints
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/sql/README.md	/docs/collecting-metrics/databases/sql-databases-generic
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/squid/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/squid
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/upsd/README.md	/docs/collecting-metrics/ups/ups-nut
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/traefik/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/traefik
