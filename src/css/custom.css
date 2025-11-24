@@ -151,6 +151,11 @@ h5 {
 	font-weight: 600!important;
   }
 
+h6 {
+	font-size: 1rem!important;  /* adjust size as needed */
+	font-weight: 600!important;
+  }
+
 /* Markdown and prose heading styles */
 .markdown h2, .prose h2 {
 	font-size: 1.5em;
