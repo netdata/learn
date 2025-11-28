@@ -216,4 +216,24 @@ module.exports = {
 			crossorigin: '',
 		},
 	],
+	scripts: [
+      {
+        src: 'https://static.reo.dev/8a197d1119ef2d4/reo.js',
+        defer: true,
+        'data-reo-client-id': '8a197d1119ef2d4',
+      },
+    ],
+    headTags: [
+      {
+        tagName: 'script',
+	    attributes: {},
+        innerHTML: `
+          window.addEventListener('load', function() {
+            if (typeof Reo !== 'undefined') {
+              Reo.init({ clientID: '8a197d1119ef2d4' });
+            }
+          });
+        `,
+      },
+    ],
 };
