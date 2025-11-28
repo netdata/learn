@@ -226,6 +226,7 @@ module.exports = {
     headTags: [
       {
         tagName: 'script',
+	    attributes: {},
         innerHTML: `
           window.addEventListener('load', function() {
             if (typeof Reo !== 'undefined') {
