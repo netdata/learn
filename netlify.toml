@@ -9105,4 +9105,12 @@
   from="/docs/collecting-metrics/monitor-anything"
   to="/docs/welcome-to-netdata/monitor-anything"
 
+[[redirects]]
+  from="/docs/security-and-privacy-design/netdata-cloud-security-and-privacy-design"
+  to="/docs/security-and-privacy-design/netdata-cloud"
+
+[[redirects]]
+  from="/docs/security-and-privacy-design/netdata-agent-security-and-privacy-design"
+  to="/docs/security-and-privacy-design/netdata-agent"
+
 # section: dynamic << END

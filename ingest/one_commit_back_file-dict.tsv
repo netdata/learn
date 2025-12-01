@@ -58,9 +58,9 @@ https://github.com/netdata/netdata/edit/master/docs/observability-centralization
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/netdata-ai
 https://github.com/netdata/netdata/edit/master/docs/getting-started-netdata/guide.md	/docs//getting-started
-https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	/docs/security-and-privacy-design/netdata-cloud-security-and-privacy-design
+https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	/docs/security-and-privacy-design/netdata-cloud
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/README.md	/docs/security-and-privacy-design
-https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	/docs/security-and-privacy-design/netdata-agent-security-and-privacy-design
+https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	/docs/security-and-privacy-design/netdata-agent
 https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/enable-an-exporting-connector.md	/docs/exporting-metrics/enable-an-exporting-connector
 https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/README.md	/docs/exporting-metrics
 https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/collect-unbound-metrics.md	/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata
