@@ -49,6 +49,8 @@ rest_files_with_metadata_dictionary = {}
 to_publish = {}
 all_markdown_files = []
 UNCORRELATED_LINK_COUNTER = 0
+UNCORRELATED_URLS = {}  # Dict mapping broken URLs to set of source files that reference them
+BROKEN_HEADER_LINKS = {}  # Dict mapping (url, header) to set of source files
 FAIL_ON_NETDATA_BROKEN_LINKS = False
 # Temporarily until we release (change it (the default) to /docs
 # version_prefix = "nightly"  # We use this as the version prefix in the link strategy
@@ -95,6 +97,82 @@ default_repos = {
 
 def clean_and_lower_string(string):
     return re.sub(r'(-)+', '-', string.lower().replace(",", "-").replace(" ", "-").replace("//", "/"))
+
+
+def extract_headers_from_file(file_path):
+    """
+    Extract all headers from a markdown file and return them as a set of anchor IDs.
+    Headers are converted to anchor format: lowercase, spaces to hyphens, special chars removed.
+    """
+    headers = set()
+    try:
+        content = Path(file_path).read_text()
+        # Match markdown headers (# Header, ## Header, etc.)
+        header_pattern = r'^#{1,6}\s+(.+)$'
+        for match in re.finditer(header_pattern, content, re.MULTILINE):
+            header_text = match.group(1).strip()
+            # Convert header to anchor ID (similar to how markdown processors do it)
+            # Remove inline code backticks, bold/italic markers
+            anchor = re.sub(r'[`*_]', '', header_text)
+            # Remove HTML tags
+            anchor = re.sub(r'<[^>]+>', '', anchor)
+            # Convert to lowercase, replace spaces with hyphens
+            anchor = anchor.lower().replace(' ', '-')
+            # Remove special characters except hyphens
+            anchor = re.sub(r'[^a-z0-9-]', '', anchor)
+            # Remove multiple consecutive hyphens
+            anchor = re.sub(r'-+', '-', anchor)
+            # Remove leading/trailing hyphens
+            anchor = anchor.strip('-')
+            if anchor:
+                headers.add(anchor)
+    except Exception as e:
+        pass
+    return headers
+
+
+def validate_header_in_file(file_path, header):
+    """
+    Check if a header/anchor exists in the target file.
+    Returns True if the header exists or if header is empty, False otherwise.
+    """
+    if not header:
+        return True
+    headers = extract_headers_from_file(file_path)
+    # Also check the raw header (some anchors are preserved as-is)
+    return header.lower() in headers or header in headers
+
+
+def github_url_to_local_path(url):
+    """
+    Convert a GitHub URL to a local path in the temp folder.
+    Returns the local path if it can be constructed, None otherwise.
+    
+    Example:
+        https://github.com/netdata/netdata/blob/master/src/go/pkg/prometheus/selector/README.md
+        -> ingest-temp-folder/netdata/src/go/pkg/prometheus/selector/README.md
+    """
+    if not url.startswith("https://github.com/netdata"):
+        return None
+    
+    # Convert URL to local path
+    local_path = url.replace("https://github.com/netdata", TEMP_FOLDER)
+    local_path = local_path.replace("edit/", "blob/", 1)
+    local_path = local_path.replace("blob/master/", "")
+    local_path = local_path.replace("blob/main/", "")
+    
+    return local_path
+
+
+def file_exists_in_repos(url):
+    """
+    Check if a GitHub URL points to a file that exists in the cloned repos.
+    Returns True if the file exists, False otherwise.
+    """
+    local_path = github_url_to_local_path(url)
+    if local_path is None:
+        return False
+    return Path(local_path).exists()
 
 
 def convert_parenthetical_slash(segment: str) -> str:
@@ -711,6 +789,8 @@ def local_to_absolute_links(path_to_file, input_dict):
     whole_file = Path(path_to_file).read_text()
 
     global UNCORRELATED_LINK_COUNTER
+    global UNCORRELATED_URLS
+    global BROKEN_HEADER_LINKS
 
     # Split the file into its metadata and body, so that this function doesn't touch the metadata fields
     # metadata = "---" + whole_file.split("---", 2)[1] + "---"
@@ -723,13 +803,23 @@ def local_to_absolute_links(path_to_file, input_dict):
     # If there are links inside the body
     if re.search(r"\]\((.*?)\)", body):
         # Find all the links and add them in an array
-        urls = []
+        urls_with_headers = []
         temp = re.findall(r'\[\n|.*?]\((\n|.*?)\)', body)
-        # For every link, try to not touch the heading that link points to, as it stays the same after the conversion
+        # For every link, store both the base URL and the header
         for link in temp:
-            urls.append(link.split('#')[0])
+            base_url = link.split('#')[0]
+            header = link.split('#')[1] if '#' in link else ''
+            urls_with_headers.append((base_url, header, link))
 
-        for url in list(set(urls)):
+        # Deduplicate by full link
+        seen = set()
+        unique_urls = []
+        for base_url, header, full_link in urls_with_headers:
+            if full_link not in seen:
+                seen.add(full_link)
+                unique_urls.append((base_url, header, full_link))
+
+        for url, header, full_link in unique_urls:
             # if not url.startswith("/"):
 
             if ".md" in url and (any(url in key for key in input_dict.keys())):
@@ -759,12 +849,12 @@ def local_to_absolute_links(path_to_file, input_dict):
 
                     if check.exists():
                         body = body.replace(f"({url_to_replace}", "(" + replace)
-                        # print("FILE:", path_to_file)
-                        # print("url:", url)
-                        # print(replace)
-                        # print(url_to_replace)
-                        # # print(body[:1000])
-                        # print("\n")
+                        # Validate header if present
+                        if header and not validate_header_in_file(replace, header):
+                            key = (full_link, header)
+                            if key not in BROKEN_HEADER_LINKS:
+                                BROKEN_HEADER_LINKS[key] = set()
+                            BROKEN_HEADER_LINKS[key].add(path_to_file)
                 elif url.startswith("/"):
                     # print("link starting with dash")
                     url_to_replace = url
@@ -783,17 +873,18 @@ def local_to_absolute_links(path_to_file, input_dict):
 
                     if check.exists():
                         body = body.replace(f"({url_to_replace}", "(" + replace)
-                        # print("FILE:", path_to_file)
-                        # print("url:", url)
-                        # print(replace)
-                        # print(url_to_replace)
-                        # # print(body[:1000])
-                        # print("\n")
+                        # Validate header if present
+                        if header and not validate_header_in_file(replace, header):
+                            key = (full_link, header)
+                            if key not in BROKEN_HEADER_LINKS:
+                                BROKEN_HEADER_LINKS[key] = set()
+                            BROKEN_HEADER_LINKS[key].add(path_to_file)
             else:
                 if (url.startswith(".") or url.startswith("/")):
 
                     directory = "ingest-temp-folder"
                     substring = url
+                    found = False
 
                     for root, dirs, files in os.walk(directory):
                         for name in files + dirs:
@@ -803,6 +894,17 @@ def local_to_absolute_links(path_to_file, input_dict):
                                 replace = f"(https://github.com/netdata/{path_to_file.split('/')[1]}/blob/master{url}"
 
                                 body = body.replace(f"({url}", replace)
+                                found = True
+                                break
+                        if found:
+                            break
+                    
+                    if not found:
+                        UNCORRELATED_LINK_COUNTER += 1
+                        if url not in UNCORRELATED_URLS:
+                            UNCORRELATED_URLS[url] = set()
+                        UNCORRELATED_URLS[url].add(path_to_file)
+
 
     Path(path_to_file).write_text(body)
 
@@ -821,6 +923,8 @@ def convert_github_links(path_to_file, input_dict):
     whole_file = Path(path_to_file).read_text()
 
     global UNCORRELATED_LINK_COUNTER
+    global UNCORRELATED_URLS
+    global BROKEN_HEADER_LINKS
 
     # Split the file into its metadata and body, so that this function doesn't touch the metadata fields
     metadata = "---" + whole_file.split("---", 2)[1] + "---"
@@ -831,13 +935,15 @@ def convert_github_links(path_to_file, input_dict):
     # If there are links inside the body
     if re.search(r"\]\((.*?)\)", body):
         # Find all the links and add them in an array
-        urls = []
+        urls_with_headers = []
         temp = re.findall(r'\[\n|.*?]\((\n|.*?)\)', body)
-        # For every link, try to not touch the heading that link points to, as it stays the same after the conversion
+        # For every link, store both the base URL and the header
         for link in temp:
-            urls.append(link.split('#')[0])
+            base_url = link.split('#')[0]
+            header = link.split('#')[1] if '#' in link else ''
+            urls_with_headers.append((base_url, header, link))
 
-        for url in urls:
+        for url, header, full_link in urls_with_headers:
             # The URL will get replaced by the value of the replaceString
             try:
                 # The keys inside fileDict are like "ingest-temp-folder/netdata/collectors/charts.d.plugin/ap/README.md"
@@ -847,8 +953,9 @@ def convert_github_links(path_to_file, input_dict):
                 # 3. remove "blob/master/" or "blob/main/"
                 # 4. Then we have the correct key for the dictionary
 
-                dictionary = input_dict[url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
-                    "edit/", "blob/", 1).replace("blob/master/", "").replace("blob/main/", "")]
+                dict_key = url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
+                    "edit/", "blob/", 1).replace("blob/master/", "").replace("blob/main/", "")
+                dictionary = input_dict[dict_key]
 
                 replace_string = dictionary["new_learn_path"].replace("//", "/")
 
@@ -869,6 +976,16 @@ def convert_github_links(path_to_file, input_dict):
                     pass
 
                 body = body.replace("](" + url, "](" + replace_string)
+                
+                # Validate header if present - check against the source file in temp folder
+                if header and dict_key in input_dict:
+                    source_file = dict_key
+                    if Path(source_file).exists() and not validate_header_in_file(source_file, header):
+                        key = (full_link, header)
+                        if key not in BROKEN_HEADER_LINKS:
+                            BROKEN_HEADER_LINKS[key] = set()
+                        BROKEN_HEADER_LINKS[key].add(path_to_file)
+                        
                 # In the end replace the URL with the replaceString
             except Exception as e:
                 # This is probably a link that can't be translated to a Learn link (e.g. An external file)
@@ -888,8 +1005,9 @@ def convert_github_links(path_to_file, input_dict):
                             # remove "blob/master/" or "blob/main/"
                             # Then we have the correct key for the dictionary
 
-                            dictionary = input_dict[try_url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
-                                "edit", "blob").replace("blob/master/", "").replace("blob/main/", "")]
+                            dict_key = try_url.replace("https://github.com/netdata", TEMP_FOLDER).replace(
+                                "edit", "blob").replace("blob/master/", "").replace("blob/main/", "")
+                            dictionary = input_dict[dict_key]
                             replace_string = dictionary["new_learn_path"]
 
                             # In some cases, a "id: someId" will be in a file, this is to change a file's link in Docusaurus,
@@ -908,10 +1026,21 @@ def convert_github_links(path_to_file, input_dict):
 
                             # In the end replace the URL with the replaceString
                             body = body.replace("](" + url, "](" + replace_string)
+                            
+                            # Validate header if present
+                            if header and Path(dict_key).exists() and not validate_header_in_file(dict_key, header):
+                                key = (full_link, header)
+                                if key not in BROKEN_HEADER_LINKS:
+                                    BROKEN_HEADER_LINKS[key] = set()
+                                BROKEN_HEADER_LINKS[key].add(path_to_file)
                         except:
-                            # Increase the counter of the broken links,
-                            # fetch the custom_edit_url variable for printing and print a message
-                            UNCORRELATED_LINK_COUNTER += 1
+                            # Only mark as broken if the file doesn't exist in the repos
+                            # Files that exist but aren't published to Learn are fine - they stay as GitHub links
+                            if not file_exists_in_repos(url):
+                                UNCORRELATED_LINK_COUNTER += 1
+                                if url not in UNCORRELATED_URLS:
+                                    UNCORRELATED_URLS[url] = set()
+                                UNCORRELATED_URLS[url].add(path_to_file)
 
                             if len(custom_edit_url_arr[0]) > 1:
                                 custom_edit_url = custom_edit_url_arr[0].replace(
@@ -924,9 +1053,13 @@ def convert_github_links(path_to_file, input_dict):
                             #       custom_edit_url,
                             #       "\n", "URL:", url, "\n")
                     else:
-                        # Increase the counter of the broken links,
-                        # fetch the custom_edit_url variable for printing and print a message
-                        UNCORRELATED_LINK_COUNTER += 1
+                        # Only mark as broken if the file doesn't exist in the repos
+                        # Files that exist but aren't published to Learn are fine - they stay as GitHub links
+                        if not file_exists_in_repos(url):
+                            UNCORRELATED_LINK_COUNTER += 1
+                            if url not in UNCORRELATED_URLS:
+                                UNCORRELATED_URLS[url] = set()
+                            UNCORRELATED_URLS[url].add(path_to_file)
 
                         if len(custom_edit_url_arr[0]) > 1:
                             custom_edit_url = custom_edit_url_arr[0].replace(
@@ -1240,6 +1373,35 @@ if __name__ == '__main__':
     genRedirects.main(file_dict)
     print("Done.", "Uncorrelated links (links from our github repos that the files are not in Learn):",
           UNCORRELATED_LINK_COUNTER)
+
+    # Print deduplicated list of uncorrelated URLs grouped by broken link
+    if len(UNCORRELATED_URLS) > 0:
+        print("\n### Uncorrelated URLs (grouped by broken link) ###")
+        for url in sorted(UNCORRELATED_URLS.keys()):
+            print(f"\n  Broken link: {url}")
+            print(f"  Referenced in {len(UNCORRELATED_URLS[url])} file(s):")
+            for source_file in sorted(UNCORRELATED_URLS[url]):
+                print(f"    - {source_file}")
+        print(f"\nTotal unique broken URLs: {len(UNCORRELATED_URLS)}")
+
+    # Print broken header links grouped by (link, header)
+    if len(BROKEN_HEADER_LINKS) > 0:
+        print("\n### Broken Header/Anchor Links (grouped by link) ###")
+        for (full_link, header) in sorted(BROKEN_HEADER_LINKS.keys()):
+            print(f"\n  Broken link: {full_link}")
+            print(f"  Missing header: #{header}")
+            print(f"  Referenced in {len(BROKEN_HEADER_LINKS[(full_link, header)])} file(s):")
+            for source_file in sorted(BROKEN_HEADER_LINKS[(full_link, header)]):
+                print(f"    - {source_file}")
+        print(f"\nTotal unique broken header links: {len(BROKEN_HEADER_LINKS)}")
+
+    # Fail if broken links found and flag is set
+    if FAIL_ON_NETDATA_BROKEN_LINKS and (len(UNCORRELATED_URLS) > 0 or len(BROKEN_HEADER_LINKS) > 0):
+        print("\n### FAILURE: Broken links detected and --fail-on-internal-broken-links flag is set ###")
+        unsafe_cleanup_folders(TEMP_FOLDER)
+        if os.path.exists("map.csv"):
+            os.remove("map.csv")
+        exit(1)
 
     if DEBUG:
         # Print the list of markdown not in Learn, for debugging purposes
