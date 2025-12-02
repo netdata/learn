@@ -53,7 +53,7 @@ In this setup:
 - **You** access all metrics through the Parent nodes
 
 :::tip
-This architecture works especially well in production environments where you monitor many systems. Learn more in our [Centralization Points documentation](/docs/observability-centralization-points/README.md).
+This architecture works especially well in production environments where you monitor many systems. Learn more in our [Centralization Points documentation](/docs/netdata-parents).
 :::
 
 ## Disable unneeded collectors
@@ -90,7 +90,7 @@ Configure retention settings using our [database configuration guide](/docs/netd
 
 ## Switch to RAM mode
 
-For IoT devices and Child nodes in [Parent-Child setups](/docs/observability-centralization-points/README.md), switch to RAM mode to eliminate disk operations entirely. This mode:
+For IoT devices and Child nodes in [Parent-Child setups](/docs/netdata-parents), switch to RAM mode to eliminate disk operations entirely. This mode:
 
 - Stores all metrics in memory only
 - Eliminates disk IO for metric storage

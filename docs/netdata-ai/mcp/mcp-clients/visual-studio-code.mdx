@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/netdata-ai
 sidebar_label: "Visual Studio Code"
 learn_status: "Published"
 learn_rel_path: "Netdata AI/MCP/MCP Clients"
-sidebar_position: "1610530"
+sidebar_position: "1510530"
 learn_link: "https://learn.netdata.cloud/docs/netdata-ai/mcp/mcp-clients/visual-studio-code"
 ---
 
@@ -43,13 +43,13 @@ VS Code extensions typically support stdio-based MCP servers:
    - **v2.6.0 - v2.7.1**: Only WebSocket transport available, requires `nd-mcp` bridge
    - **v2.7.2+**: Can use `npx mcp-remote` bridge for HTTP/SSE support
 4. **Bridge required: Choose one:**
-   - `nd-mcp` bridge - The stdio-to-websocket bridge for all Netdata versions. [Find its absolute path](/docs/learn/mcp.md#finding-the-nd-mcp-bridge)
+   - `nd-mcp` bridge - The stdio-to-websocket bridge for all Netdata versions. [Find its absolute path](/docs/netdata-ai/mcp#finding-the-nd-mcp-bridge)
    - `npx mcp-remote@latest` - Official MCP remote client supporting HTTP/SSE (requires Netdata v2.7.2+)
 5. **Netdata MCP API key exported before launching VS Code** - keep secrets out of config files by setting:
    ```bash
    export ND_MCP_BEARER_TOKEN="$(cat /var/lib/netdata/mcp_dev_preview_api_key)"
    ```
-   Each Netdata Agent or Parent has its own unique API key for MCP - [Find your Netdata MCP API key](/docs/learn/mcp.md#finding-your-api-key)
+   Each Netdata Agent or Parent has its own unique API key for MCP - [Find your Netdata MCP API key](/docs/netdata-ai/mcp#finding-your-api-key)
 
 ## Continue Extension Setup
 

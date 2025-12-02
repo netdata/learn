@@ -221,8 +221,8 @@ job_name:
   job_option1: some_value
   job_option2: some_other_vlaue
 ```
-You can edit the configuration file using the [`edit-config`](/docs/netdata-agent/configuration#edit-a-configuration-file-using-edit-config) script from the
-Netdata [config directory](/docs/netdata-agent/configuration#the-netdata-config-directory).
+You can edit the configuration file using the [`edit-config`](/docs/netdata-agent/configuration#edit-configuration-files) script from the
+Netdata [config directory](/docs/netdata-agent/configuration#locate-your-config-directory).
 
 ```bash
 cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
@@ -248,11 +248,6 @@ lines:      a list of line definitions
 
 **Note: please do not use dots in the chart or line ID field.
 See [this issue](https://github.com/netdata/netdata/pull/1902#issuecomment-284494195) for explanation.**
-
-Please see these two links to the official Netdata documentation for more information about the values:
-
--   [External plugins - charts](/docs/developer-and-contributor-corner/external-plugins#chart)
--   [Chart variables](/docs/developer-and-contributor-corner/external-plugins/python.d.plugin#global-variables-order-and-chart)
 
 **Line definitions**
 
