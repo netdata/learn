@@ -14,6 +14,11 @@ on:
       - package.json
       - yarn.lock
       - tailwind.config.js
+
+env:
+  # Assignees for broken links issues (all repos)
+  BROKEN_LINKS_ASSIGNEES: "Ancairon"
+
 jobs:
   ingest:
     runs-on: ubuntu-latest
@@ -39,8 +44,31 @@ jobs:
           pip install -r .learn_environment/ingest-requirements.txt
 
       - name: Ingest process, integration generation and learn_link checking
+        id: ingest
         run: |
-          python ingest/ingest.py
+          # Run ingest and capture output
+          set +e
+          OUTPUT=$(python ingest/ingest.py -f 2>&1)
+          EXIT_CODE=$?
+          set -e
+          
+          echo "$OUTPUT"
+          
+          # Save output for later steps
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          echo "output<<$EOF" >> $GITHUB_OUTPUT
+          echo "$OUTPUT" >> $GITHUB_OUTPUT
+          echo "$EOF" >> $GITHUB_OUTPUT
+          
+          # Check if there are broken links (exit code 1 means broken links found)
+          if [ $EXIT_CODE -eq 1 ]; then
+            echo "has_broken_links=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_broken_links=false" >> $GITHUB_OUTPUT
+          fi
+          
+          # Don't fail the workflow - we'll create an issue instead
+          exit 0
 
       - name: Update kickstart checksum
         run: |
@@ -64,4 +92,85 @@ jobs:
             [1]: https://github.com/peter-evans/create-pull-request:
           branch: ingest
           labels: ingest, automation
-        # reviewers:
+
+      - name: Create or update broken links issue
+        if: steps.ingest.outputs.has_broken_links == 'true'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const output = `${{ steps.ingest.outputs.output }}`;
+            const assignees = '${{ env.BROKEN_LINKS_ASSIGNEES }}'.split(',').map(s => s.trim()).filter(s => s);
+            const today = new Date().toISOString().split('T')[0];
+            
+            // Build issue body with the script output
+            let body = `## Broken Links Detected\n\n`;
+            body += `**Date:** ${today}\n\n`;
+            body += `This issue was automatically created by the ingest workflow.\n\n`;
+            body += `### Ingest Output\n\n`;
+            body += `\`\`\`\n`;
+            
+            // Extract only the broken links sections from output
+            const lines = output.split('\n');
+            let inBrokenSection = false;
+            let brokenOutput = [];
+            
+            for (const line of lines) {
+              if (line.includes('### Uncorrelated URLs') || line.includes('### Broken Header/Anchor Links')) {
+                inBrokenSection = true;
+              }
+              if (inBrokenSection) {
+                brokenOutput.push(line);
+              }
+              if (line.includes('### FAILURE:')) {
+                break;
+              }
+            }
+            
+            body += brokenOutput.join('\n');
+            body += `\n\`\`\`\n\n`;
+            body += `---\n`;
+            body += `> Please fix these broken links in the respective source repositories.\n`;
+            body += `> Once fixed, the links will be updated in Learn on the next ingest run.\n`;
+            
+            // Check if there's already an open issue
+            const existingIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'broken-links'
+            });
+            
+            if (existingIssues.data.length > 0) {
+              // Update existing issue
+              const issueNumber = existingIssues.data[0].number;
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: body,
+                assignees: assignees
+              });
+              
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: `🔄 **Updated on ${today}**\n\nThis issue has been updated with the latest broken links scan results.`
+              });
+              
+              console.log(`Updated existing issue #${issueNumber}`);
+            } else {
+              // Create new issue
+              const issue = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: `[Broken Links] Documentation has broken internal links`,
+                body: body,
+                labels: ['broken-links', 'automation'],
+                assignees: assignees
+              });
+              
+              console.log(`Created issue #${issue.data.number}`);
+            }
+
