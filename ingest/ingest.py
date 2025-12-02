@@ -49,9 +49,12 @@ rest_files_with_metadata_dictionary = {}
 to_publish = {}
 all_markdown_files = []
 UNCORRELATED_LINK_COUNTER = 0
-UNCORRELATED_URLS = {}  # Dict mapping broken URLs to set of source files that reference them
-BROKEN_HEADER_LINKS = {}  # Dict mapping (url, header) to set of source files
-FAIL_ON_NETDATA_BROKEN_LINKS = False
+# Dict mapping repo name to dict of broken URLs -> set of source files
+UNCORRELATED_URLS_BY_REPO = {}
+# Dict mapping repo name to dict of (url, header) -> set of source files
+BROKEN_HEADER_LINKS_BY_REPO = {}
+FAIL_ON_REPOS = set()  # Set of repo names to fail on if broken links found
+FAIL_ON_ALL_BROKEN_LINKS = False  # If True, fail on any broken link regardless of repo
 # Temporarily until we release (change it (the default) to /docs
 # version_prefix = "nightly"  # We use this as the version prefix in the link strategy
 TEMP_FOLDER = "ingest-temp-folder"
@@ -141,6 +144,60 @@ def validate_header_in_file(file_path, header):
     headers = extract_headers_from_file(file_path)
     # Also check the raw header (some anchors are preserved as-is)
     return header.lower() in headers or header in headers
+
+
+def extract_repo_from_github_url(url):
+    """
+    Extract the repository name from a GitHub URL.
+    
+    Example:
+        https://github.com/netdata/netdata/blob/master/src/file.md -> netdata
+        https://github.com/netdata/helmchart/blob/master/README.md -> helmchart
+    """
+    if not url.startswith("https://github.com/netdata/"):
+        return "unknown"
+    
+    # URL format: https://github.com/netdata/<repo>/...
+    parts = url.replace("https://github.com/netdata/", "").split("/")
+    if parts:
+        return parts[0]
+    return "unknown"
+
+
+def extract_repo_from_local_path(path):
+    """
+    Extract the repository name from a local path in the temp folder.
+    
+    Example:
+        ingest-temp-folder/netdata/src/file.md -> netdata
+        docs/something/file.mdx -> unknown (not from temp folder)
+    """
+    if path.startswith(TEMP_FOLDER + "/"):
+        parts = path.replace(TEMP_FOLDER + "/", "").split("/")
+        if parts:
+            return parts[0]
+    return "unknown"
+
+
+def add_broken_url(repo, url, source_file):
+    """Add a broken URL to the tracking dictionary, categorized by repo."""
+    global UNCORRELATED_URLS_BY_REPO
+    if repo not in UNCORRELATED_URLS_BY_REPO:
+        UNCORRELATED_URLS_BY_REPO[repo] = {}
+    if url not in UNCORRELATED_URLS_BY_REPO[repo]:
+        UNCORRELATED_URLS_BY_REPO[repo][url] = set()
+    UNCORRELATED_URLS_BY_REPO[repo][url].add(source_file)
+
+
+def add_broken_header(repo, full_link, header, source_file):
+    """Add a broken header link to the tracking dictionary, categorized by repo."""
+    global BROKEN_HEADER_LINKS_BY_REPO
+    if repo not in BROKEN_HEADER_LINKS_BY_REPO:
+        BROKEN_HEADER_LINKS_BY_REPO[repo] = {}
+    key = (full_link, header)
+    if key not in BROKEN_HEADER_LINKS_BY_REPO[repo]:
+        BROKEN_HEADER_LINKS_BY_REPO[repo][key] = set()
+    BROKEN_HEADER_LINKS_BY_REPO[repo][key].add(source_file)
 
 
 def github_url_to_local_path(url):
@@ -789,8 +846,9 @@ def local_to_absolute_links(path_to_file, input_dict):
     whole_file = Path(path_to_file).read_text()
 
     global UNCORRELATED_LINK_COUNTER
-    global UNCORRELATED_URLS
-    global BROKEN_HEADER_LINKS
+
+    # Determine the repo this file belongs to
+    source_repo = extract_repo_from_local_path(path_to_file)
 
     # Split the file into its metadata and body, so that this function doesn't touch the metadata fields
     # metadata = "---" + whole_file.split("---", 2)[1] + "---"
@@ -851,10 +909,7 @@ def local_to_absolute_links(path_to_file, input_dict):
                         body = body.replace(f"({url_to_replace}", "(" + replace)
                         # Validate header if present
                         if header and not validate_header_in_file(replace, header):
-                            key = (full_link, header)
-                            if key not in BROKEN_HEADER_LINKS:
-                                BROKEN_HEADER_LINKS[key] = set()
-                            BROKEN_HEADER_LINKS[key].add(path_to_file)
+                            add_broken_header(source_repo, full_link, header, path_to_file)
                 elif url.startswith("/"):
                     # print("link starting with dash")
                     url_to_replace = url
@@ -875,10 +930,7 @@ def local_to_absolute_links(path_to_file, input_dict):
                         body = body.replace(f"({url_to_replace}", "(" + replace)
                         # Validate header if present
                         if header and not validate_header_in_file(replace, header):
-                            key = (full_link, header)
-                            if key not in BROKEN_HEADER_LINKS:
-                                BROKEN_HEADER_LINKS[key] = set()
-                            BROKEN_HEADER_LINKS[key].add(path_to_file)
+                            add_broken_header(source_repo, full_link, header, path_to_file)
             else:
                 if (url.startswith(".") or url.startswith("/")):
 
@@ -901,9 +953,7 @@ def local_to_absolute_links(path_to_file, input_dict):
                     
                     if not found:
                         UNCORRELATED_LINK_COUNTER += 1
-                        if url not in UNCORRELATED_URLS:
-                            UNCORRELATED_URLS[url] = set()
-                        UNCORRELATED_URLS[url].add(path_to_file)
+                        add_broken_url(source_repo, url, path_to_file)
 
 
     Path(path_to_file).write_text(body)
@@ -923,14 +973,19 @@ def convert_github_links(path_to_file, input_dict):
     whole_file = Path(path_to_file).read_text()
 
     global UNCORRELATED_LINK_COUNTER
-    global UNCORRELATED_URLS
-    global BROKEN_HEADER_LINKS
 
     # Split the file into its metadata and body, so that this function doesn't touch the metadata fields
     metadata = "---" + whole_file.split("---", 2)[1] + "---"
     body = whole_file.split("---", 2)[2]
 
     custom_edit_url_arr = re.findall(r'custom_edit_url(.*)', metadata)
+    
+    # Determine the source repo from the custom_edit_url in metadata
+    # This tells us which repo the current file originally came from
+    source_repo = "unknown"
+    if custom_edit_url_arr and len(custom_edit_url_arr[0]) > 1:
+        custom_edit_url = custom_edit_url_arr[0].replace("\"", "").strip(": ")
+        source_repo = extract_repo_from_github_url(custom_edit_url)
 
     # If there are links inside the body
     if re.search(r"\]\((.*?)\)", body):
@@ -981,10 +1036,8 @@ def convert_github_links(path_to_file, input_dict):
                 if header and dict_key in input_dict:
                     source_file = dict_key
                     if Path(source_file).exists() and not validate_header_in_file(source_file, header):
-                        key = (full_link, header)
-                        if key not in BROKEN_HEADER_LINKS:
-                            BROKEN_HEADER_LINKS[key] = set()
-                        BROKEN_HEADER_LINKS[key].add(path_to_file)
+                        # Use source_repo (where the file with the broken link is from)
+                        add_broken_header(source_repo, full_link, header, path_to_file)
                         
                 # In the end replace the URL with the replaceString
             except Exception as e:
@@ -1029,18 +1082,13 @@ def convert_github_links(path_to_file, input_dict):
                             
                             # Validate header if present
                             if header and Path(dict_key).exists() and not validate_header_in_file(dict_key, header):
-                                key = (full_link, header)
-                                if key not in BROKEN_HEADER_LINKS:
-                                    BROKEN_HEADER_LINKS[key] = set()
-                                BROKEN_HEADER_LINKS[key].add(path_to_file)
+                                add_broken_header(source_repo, full_link, header, path_to_file)
                         except:
                             # Only mark as broken if the file doesn't exist in the repos
                             # Files that exist but aren't published to Learn are fine - they stay as GitHub links
                             if not file_exists_in_repos(url):
                                 UNCORRELATED_LINK_COUNTER += 1
-                                if url not in UNCORRELATED_URLS:
-                                    UNCORRELATED_URLS[url] = set()
-                                UNCORRELATED_URLS[url].add(path_to_file)
+                                add_broken_url(source_repo, url, path_to_file)
 
                             if len(custom_edit_url_arr[0]) > 1:
                                 custom_edit_url = custom_edit_url_arr[0].replace(
@@ -1057,9 +1105,7 @@ def convert_github_links(path_to_file, input_dict):
                         # Files that exist but aren't published to Learn are fine - they stay as GitHub links
                         if not file_exists_in_repos(url):
                             UNCORRELATED_LINK_COUNTER += 1
-                            if url not in UNCORRELATED_URLS:
-                                UNCORRELATED_URLS[url] = set()
-                            UNCORRELATED_URLS[url].add(path_to_file)
+                            add_broken_url(source_repo, url, path_to_file)
 
                         if len(custom_edit_url_arr[0]) > 1:
                             custom_edit_url = custom_edit_url_arr[0].replace(
@@ -1176,7 +1222,43 @@ if __name__ == '__main__':
 
     parser.add_argument(
         "-f", "--fail-on-internal-broken-links",
-        help="Don't proceed with the process if internal broken links are found.",
+        help="Exit with error code 1 if any internal broken links are found (any repo).",
+        action="store_true",
+    )
+
+    parser.add_argument(
+        "--fail-on-netdata",
+        help="Exit with error code 1 if broken links are found in the netdata repo.",
+        action="store_true",
+    )
+
+    parser.add_argument(
+        "--fail-on-helmchart",
+        help="Exit with error code 1 if broken links are found in the helmchart repo.",
+        action="store_true",
+    )
+
+    parser.add_argument(
+        "--fail-on-cloud-onprem",
+        help="Exit with error code 1 if broken links are found in the netdata-cloud-onprem repo.",
+        action="store_true",
+    )
+
+    parser.add_argument(
+        "--fail-on-agent-service-discovery",
+        help="Exit with error code 1 if broken links are found in the agent-service-discovery repo.",
+        action="store_true",
+    )
+
+    parser.add_argument(
+        "--fail-on-grafana-plugin",
+        help="Exit with error code 1 if broken links are found in the netdata-grafana-datasource-plugin repo.",
+        action="store_true",
+    )
+
+    parser.add_argument(
+        "--fail-on-github-repo",
+        help="Exit with error code 1 if broken links are found in the .github repo.",
         action="store_true",
     )
 
@@ -1205,7 +1287,25 @@ if __name__ == '__main__':
                 DEBUG = True
                 print("RUNNING WITH DEBUG MESSAGES ON")
         if arg[0] == "fail_on_internal_broken_links":
-            FAIL_ON_NETDATA_BROKEN_LINKS = arg[1]
+            FAIL_ON_ALL_BROKEN_LINKS = arg[1]
+        if arg[0] == "fail_on_netdata":
+            if arg[1]:
+                FAIL_ON_REPOS.add("netdata")
+        if arg[0] == "fail_on_helmchart":
+            if arg[1]:
+                FAIL_ON_REPOS.add("helmchart")
+        if arg[0] == "fail_on_cloud_onprem":
+            if arg[1]:
+                FAIL_ON_REPOS.add("netdata-cloud-onprem")
+        if arg[0] == "fail_on_agent_service_discovery":
+            if arg[1]:
+                FAIL_ON_REPOS.add("agent-service-discovery")
+        if arg[0] == "fail_on_grafana_plugin":
+            if arg[1]:
+                FAIL_ON_REPOS.add("netdata-grafana-datasource-plugin")
+        if arg[0] == "fail_on_github_repo":
+            if arg[1]:
+                FAIL_ON_REPOS.add(".github")
 
     if len(list_of_repos_in_str) > 0:
         for repo_str in list_of_repos_in_str:
@@ -1374,30 +1474,69 @@ if __name__ == '__main__':
     print("Done.", "Uncorrelated links (links from our github repos that the files are not in Learn):",
           UNCORRELATED_LINK_COUNTER)
 
-    # Print deduplicated list of uncorrelated URLs grouped by broken link
-    if len(UNCORRELATED_URLS) > 0:
-        print("\n### Uncorrelated URLs (grouped by broken link) ###")
-        for url in sorted(UNCORRELATED_URLS.keys()):
-            print(f"\n  Broken link: {url}")
-            print(f"  Referenced in {len(UNCORRELATED_URLS[url])} file(s):")
-            for source_file in sorted(UNCORRELATED_URLS[url]):
-                print(f"    - {source_file}")
-        print(f"\nTotal unique broken URLs: {len(UNCORRELATED_URLS)}")
+    # Print deduplicated list of uncorrelated URLs grouped by repo
+    total_broken_urls = sum(len(urls) for urls in UNCORRELATED_URLS_BY_REPO.values())
+    repos_with_broken_urls = set()
+    if total_broken_urls > 0:
+        print("\n### Uncorrelated URLs (grouped by repo) ###")
+        for repo in sorted(UNCORRELATED_URLS_BY_REPO.keys()):
+            repo_urls = UNCORRELATED_URLS_BY_REPO[repo]
+            if len(repo_urls) > 0:
+                repos_with_broken_urls.add(repo)
+                print(f"\n=== Repo: {repo} ({len(repo_urls)} broken URLs) ===")
+                for url in sorted(repo_urls.keys()):
+                    print(f"\n  Broken link: {url}")
+                    print(f"  Referenced in {len(repo_urls[url])} file(s):")
+                    for source_file in sorted(repo_urls[url]):
+                        print(f"    - {source_file}")
+        print(f"\nTotal unique broken URLs: {total_broken_urls}")
 
-    # Print broken header links grouped by (link, header)
-    if len(BROKEN_HEADER_LINKS) > 0:
-        print("\n### Broken Header/Anchor Links (grouped by link) ###")
-        for (full_link, header) in sorted(BROKEN_HEADER_LINKS.keys()):
-            print(f"\n  Broken link: {full_link}")
-            print(f"  Missing header: #{header}")
-            print(f"  Referenced in {len(BROKEN_HEADER_LINKS[(full_link, header)])} file(s):")
-            for source_file in sorted(BROKEN_HEADER_LINKS[(full_link, header)]):
-                print(f"    - {source_file}")
-        print(f"\nTotal unique broken header links: {len(BROKEN_HEADER_LINKS)}")
+    # Print broken header links grouped by repo
+    total_broken_headers = sum(len(headers) for headers in BROKEN_HEADER_LINKS_BY_REPO.values())
+    repos_with_broken_headers = set()
+    if total_broken_headers > 0:
+        print("\n### Broken Header/Anchor Links (grouped by repo) ###")
+        for repo in sorted(BROKEN_HEADER_LINKS_BY_REPO.keys()):
+            repo_headers = BROKEN_HEADER_LINKS_BY_REPO[repo]
+            if len(repo_headers) > 0:
+                repos_with_broken_headers.add(repo)
+                print(f"\n=== Repo: {repo} ({len(repo_headers)} broken header links) ===")
+                for (full_link, header) in sorted(repo_headers.keys()):
+                    print(f"\n  Broken link: {full_link}")
+                    print(f"  Missing header: #{header}")
+                    print(f"  Referenced in {len(repo_headers[(full_link, header)])} file(s):")
+                    for source_file in sorted(repo_headers[(full_link, header)]):
+                        print(f"    - {source_file}")
+        print(f"\nTotal unique broken header links: {total_broken_headers}")
 
-    # Fail if broken links found and flag is set
-    if FAIL_ON_NETDATA_BROKEN_LINKS and (len(UNCORRELATED_URLS) > 0 or len(BROKEN_HEADER_LINKS) > 0):
-        print("\n### FAILURE: Broken links detected and --fail-on-internal-broken-links flag is set ###")
+    # Combine all repos with any broken links
+    all_repos_with_issues = repos_with_broken_urls | repos_with_broken_headers
+    
+    # Determine if we should fail based on flags
+    should_fail = False
+    failed_repos = []
+    
+    # Check if --fail-on-internal-broken-links is set (fail on any broken link)
+    if FAIL_ON_ALL_BROKEN_LINKS and len(all_repos_with_issues) > 0:
+        should_fail = True
+        failed_repos = list(all_repos_with_issues)
+    
+    # Check per-repo failure flags
+    for repo in FAIL_ON_REPOS:
+        if repo in all_repos_with_issues:
+            should_fail = True
+            if repo not in failed_repos:
+                failed_repos.append(repo)
+    
+    if should_fail:
+        print(f"\n### FAILURE: Broken links detected in repos: {', '.join(sorted(failed_repos))} ###")
+        print("Failure triggered by flags:")
+        if FAIL_ON_ALL_BROKEN_LINKS:
+            print("  --fail-on-internal-broken-links (fail on any broken link)")
+        for repo in sorted(failed_repos):
+            if repo in FAIL_ON_REPOS:
+                flag_name = repo.replace("-", "_").replace(".", "_")
+                print(f"  --fail-on-{repo.replace('_', '-')}")
         unsafe_cleanup_folders(TEMP_FOLDER)
         if os.path.exists("map.csv"):
             os.remove("map.csv")
