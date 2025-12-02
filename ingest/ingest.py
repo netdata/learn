@@ -1221,8 +1221,8 @@ if __name__ == '__main__':
     )
 
     parser.add_argument(
-        "-f", "--fail-on-internal-broken-links",
-        help="Exit with error code 1 if any internal broken links are found (any repo).",
+        "--fail-ingest-workflow",
+        help="Exit with error code 1 at the end if any internal broken links are found (any repo).",
         action="store_true",
     )
 
@@ -1286,7 +1286,7 @@ if __name__ == '__main__':
             if arg[1]:
                 DEBUG = True
                 print("RUNNING WITH DEBUG MESSAGES ON")
-        if arg[0] == "fail_on_internal_broken_links":
+        if arg[0] == "fail_ingest_workflow":
             FAIL_ON_ALL_BROKEN_LINKS = arg[1]
         if arg[0] == "fail_on_netdata":
             if arg[1]:
@@ -1528,19 +1528,18 @@ if __name__ == '__main__':
             if repo not in failed_repos:
                 failed_repos.append(repo)
     
+    # Store failure state but continue processing
+    SHOULD_EXIT_WITH_FAILURE = False
     if should_fail:
-        print(f"\n### FAILURE: Broken links detected in repos: {', '.join(sorted(failed_repos))} ###")
-        print("Failure triggered by flags:")
+        SHOULD_EXIT_WITH_FAILURE = True
+        print(f"\n### BROKEN LINKS DETECTED in repos: {', '.join(sorted(failed_repos))} ###")
+        print("Will exit with error code 1 at the end due to flags:")
         if FAIL_ON_ALL_BROKEN_LINKS:
-            print("  --fail-on-internal-broken-links (fail on any broken link)")
+            print("  --fail-ingest-workflow (fail on any broken link)")
         for repo in sorted(failed_repos):
             if repo in FAIL_ON_REPOS:
-                flag_name = repo.replace("-", "_").replace(".", "_")
                 print(f"  --fail-on-{repo.replace('_', '-')}")
-        unsafe_cleanup_folders(TEMP_FOLDER)
-        if os.path.exists("map.csv"):
-            os.remove("map.csv")
-        exit(1)
+        print("\nContinuing with remaining ingest steps...")
 
     if DEBUG:
         # Print the list of markdown not in Learn, for debugging purposes
@@ -1728,3 +1727,8 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
         'docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations')
     get_dir_make_file_and_recurse(
         'docs/logs')
+
+    # Exit with failure if broken links were detected and failure flag was set
+    if SHOULD_EXIT_WITH_FAILURE:
+        print("\n### FAILURE: Exiting with error code 1 due to broken links ###")
+        exit(1)
