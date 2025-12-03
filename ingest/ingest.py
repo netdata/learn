@@ -876,6 +876,13 @@ def local_to_absolute_links(path_to_file, input_dict):
     # Determine the repo this file belongs to
     source_repo = extract_repo_from_local_path(path_to_file)
 
+    # Get the custom_edit_url from input_dict for this file (the GitHub URL to the source file)
+    source_github_url = path_to_file  # fallback to local path
+    try:
+        source_github_url = input_dict[path_to_file]["metadata"]["custom_edit_url"]
+    except (KeyError, TypeError):
+        pass
+
     # Split the file into its metadata and body, so that this function doesn't touch the metadata fields
     # metadata = "---" + whole_file.split("---", 2)[1] + "---"
     body = whole_file
@@ -935,7 +942,7 @@ def local_to_absolute_links(path_to_file, input_dict):
                         body = body.replace(f"({url_to_replace}", "(" + replace)
                         # Validate header if present
                         if header and not validate_header_in_file(replace, header):
-                            add_broken_header(source_repo, full_link, header, path_to_file)
+                            add_broken_header(source_repo, full_link, header, source_github_url)
                 elif url.startswith("/"):
                     # print("link starting with dash")
                     url_to_replace = url
@@ -956,7 +963,7 @@ def local_to_absolute_links(path_to_file, input_dict):
                         body = body.replace(f"({url_to_replace}", "(" + replace)
                         # Validate header if present
                         if header and not validate_header_in_file(replace, header):
-                            add_broken_header(source_repo, full_link, header, path_to_file)
+                            add_broken_header(source_repo, full_link, header, source_github_url)
             else:
                 if (url.startswith(".") or url.startswith("/")):
 
@@ -979,7 +986,7 @@ def local_to_absolute_links(path_to_file, input_dict):
 
                     if not found:
                         UNCORRELATED_LINK_COUNTER += 1
-                        add_broken_url(source_repo, url, path_to_file)
+                        add_broken_url(source_repo, url, source_github_url)
 
     Path(path_to_file).write_text(body)
 
@@ -1008,9 +1015,11 @@ def convert_github_links(path_to_file, input_dict):
     # Determine the source repo from the custom_edit_url in metadata
     # This tells us which repo the current file originally came from
     source_repo = "unknown"
+    source_github_url = path_to_file  # fallback to local path
     if custom_edit_url_arr and len(custom_edit_url_arr[0]) > 1:
         custom_edit_url = custom_edit_url_arr[0].replace("\"", "").strip(": ")
         source_repo = extract_repo_from_github_url(custom_edit_url)
+        source_github_url = custom_edit_url
 
     # If there are links inside the body
     if re.search(r"\]\((.*?)\)", body):
@@ -1062,7 +1071,7 @@ def convert_github_links(path_to_file, input_dict):
                     source_file = dict_key
                     if Path(source_file).exists() and not validate_header_in_file(source_file, header):
                         # Use source_repo (where the file with the broken link is from)
-                        add_broken_header(source_repo, full_link, header, path_to_file)
+                        add_broken_header(source_repo, full_link, header, source_github_url)
 
                 # In the end replace the URL with the replaceString
             except Exception as e:
@@ -1107,13 +1116,13 @@ def convert_github_links(path_to_file, input_dict):
 
                             # Validate header if present
                             if header and Path(dict_key).exists() and not validate_header_in_file(dict_key, header):
-                                add_broken_header(source_repo, full_link, header, path_to_file)
+                                add_broken_header(source_repo, full_link, header, source_github_url)
                         except:
                             # Only mark as broken if the file doesn't exist in the repos
                             # Files that exist but aren't published to Learn are fine - they stay as GitHub links
                             if not file_exists_in_repos(url):
                                 UNCORRELATED_LINK_COUNTER += 1
-                                add_broken_url(source_repo, url, path_to_file)
+                                add_broken_url(source_repo, url, source_github_url)
 
                             if len(custom_edit_url_arr[0]) > 1:
                                 custom_edit_url = custom_edit_url_arr[0].replace(
@@ -1130,18 +1139,7 @@ def convert_github_links(path_to_file, input_dict):
                         # Files that exist but aren't published to Learn are fine - they stay as GitHub links
                         if not file_exists_in_repos(url):
                             UNCORRELATED_LINK_COUNTER += 1
-                            add_broken_url(source_repo, url, path_to_file)
-
-                        if len(custom_edit_url_arr[0]) > 1:
-                            custom_edit_url = custom_edit_url_arr[0].replace(
-                                "\"", "").strip(":")
-                        else:
-                            custom_edit_url = "NO custom_edit_url found, please add one"
-
-                        # print(UNCORRELATED_LINK_COUNTER,
-                        #       "INFO: In File:",
-                        #       custom_edit_url,
-                        #       "\n", "URL:", url, "\n")
+                            add_broken_url(source_repo, url, source_github_url)
 
     # Construct again the whole file
     whole_file = metadata + body
