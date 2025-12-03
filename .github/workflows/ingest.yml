@@ -152,13 +152,6 @@ jobs:
                 assignees: assignees
               });
               
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: issueNumber,
-                body: `🔄 **Updated on ${today}**\n\nThis issue has been updated with the latest broken links scan results.`
-              });
-              
               console.log(`Updated existing issue #${issueNumber}`);
             } else {
               // Create new issue
