@@ -48,7 +48,7 @@ jobs:
         run: |
           # Run ingest and capture output
           set +e
-          OUTPUT=$(python ingest/ingest.py --fail-ingest-workflow 2>&1)
+          OUTPUT=$(python ingest/ingest.py --fail-links 2>&1)
           EXIT_CODE=$?
           set -e
           

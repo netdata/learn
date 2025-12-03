@@ -55,6 +55,7 @@ UNCORRELATED_URLS_BY_REPO = {}
 BROKEN_HEADER_LINKS_BY_REPO = {}
 FAIL_ON_REPOS = set()  # Set of repo names to fail on if broken links found
 FAIL_ON_ALL_BROKEN_LINKS = False  # If True, fail on any broken link regardless of repo
+IGNORE_ON_PREM_REPO = False  # If True, skip cloning on-prem repo and ignore links pointing to it
 # Temporarily until we release (change it (the default) to /docs
 # version_prefix = "nightly"  # We use this as the version prefix in the link strategy
 TEMP_FOLDER = "ingest-temp-folder"
@@ -182,6 +183,13 @@ def extract_repo_from_local_path(path):
 def add_broken_url(repo, url, source_file):
     """Add a broken URL to the tracking dictionary, categorized by repo."""
     global UNCORRELATED_URLS_BY_REPO
+    
+    # If ignoring on-prem repo, skip URLs that point to it
+    if IGNORE_ON_PREM_REPO:
+        target_repo = extract_repo_from_github_url(url)
+        if target_repo == "netdata-cloud-onprem":
+            return
+    
     if repo not in UNCORRELATED_URLS_BY_REPO:
         UNCORRELATED_URLS_BY_REPO[repo] = {}
     if url not in UNCORRELATED_URLS_BY_REPO[repo]:
@@ -192,6 +200,13 @@ def add_broken_url(repo, url, source_file):
 def add_broken_header(repo, full_link, header, source_file):
     """Add a broken header link to the tracking dictionary, categorized by repo."""
     global BROKEN_HEADER_LINKS_BY_REPO
+    
+    # If ignoring on-prem repo, skip links that point to it
+    if IGNORE_ON_PREM_REPO:
+        target_repo = extract_repo_from_github_url(full_link)
+        if target_repo == "netdata-cloud-onprem":
+            return
+    
     if repo not in BROKEN_HEADER_LINKS_BY_REPO:
         BROKEN_HEADER_LINKS_BY_REPO[repo] = {}
     key = (full_link, header)
@@ -1221,44 +1236,44 @@ if __name__ == '__main__':
     )
 
     parser.add_argument(
-        "--fail-ingest-workflow",
-        help="Exit with error code 1 at the end if any internal broken links are found (any repo).",
+        "--fail-links",
+        help="Exit with error code 1 at the end if any internal broken links are found.",
         action="store_true",
     )
 
     parser.add_argument(
-        "--fail-on-netdata",
-        help="Exit with error code 1 if broken links are found in the netdata repo.",
+        "--fail-links-netdata",
+        help="Exit with error code 1 if broken links found in netdata repo.",
         action="store_true",
     )
 
     parser.add_argument(
-        "--fail-on-helmchart",
-        help="Exit with error code 1 if broken links are found in the helmchart repo.",
+        "--fail-links-helmchart",
+        help="Exit with error code 1 if broken links found in helmchart repo.",
         action="store_true",
     )
 
     parser.add_argument(
-        "--fail-on-cloud-onprem",
-        help="Exit with error code 1 if broken links are found in the netdata-cloud-onprem repo.",
+        "--fail-links-onprem",
+        help="Exit with error code 1 if broken links found in netdata-cloud-onprem repo.",
         action="store_true",
     )
 
     parser.add_argument(
-        "--fail-on-agent-service-discovery",
-        help="Exit with error code 1 if broken links are found in the agent-service-discovery repo.",
+        "--fail-links-asd",
+        help="Exit with error code 1 if broken links found in agent-service-discovery repo.",
         action="store_true",
     )
 
     parser.add_argument(
-        "--fail-on-grafana-plugin",
-        help="Exit with error code 1 if broken links are found in the netdata-grafana-datasource-plugin repo.",
+        "--fail-links-grafana",
+        help="Exit with error code 1 if broken links found in netdata-grafana-datasource-plugin repo.",
         action="store_true",
     )
 
     parser.add_argument(
-        "--fail-on-github-repo",
-        help="Exit with error code 1 if broken links are found in the .github repo.",
+        "--fail-links-github",
+        help="Exit with error code 1 if broken links found in .github repo.",
         action="store_true",
     )
 
@@ -1267,6 +1282,12 @@ if __name__ == '__main__':
         help="GitHub Personal Access Token for HTTPS cloning (optional, used only for local testing).",
         dest="gh_token",
         default=None,
+    )
+
+    parser.add_argument(
+        "--ignore-on-prem-repo",
+        help="Skip cloning the netdata-cloud-onprem repo and ignore broken links pointing to it.",
+        action="store_true",
     )
 
     list_of_repos_in_str = []
@@ -1286,26 +1307,30 @@ if __name__ == '__main__':
             if arg[1]:
                 DEBUG = True
                 print("RUNNING WITH DEBUG MESSAGES ON")
-        if arg[0] == "fail_ingest_workflow":
+        if arg[0] == "fail_links":
             FAIL_ON_ALL_BROKEN_LINKS = arg[1]
-        if arg[0] == "fail_on_netdata":
+        if arg[0] == "fail_links_netdata":
             if arg[1]:
                 FAIL_ON_REPOS.add("netdata")
-        if arg[0] == "fail_on_helmchart":
+        if arg[0] == "fail_links_helmchart":
             if arg[1]:
                 FAIL_ON_REPOS.add("helmchart")
-        if arg[0] == "fail_on_cloud_onprem":
+        if arg[0] == "fail_links_onprem":
             if arg[1]:
                 FAIL_ON_REPOS.add("netdata-cloud-onprem")
-        if arg[0] == "fail_on_agent_service_discovery":
+        if arg[0] == "fail_links_asd":
             if arg[1]:
                 FAIL_ON_REPOS.add("agent-service-discovery")
-        if arg[0] == "fail_on_grafana_plugin":
+        if arg[0] == "fail_links_grafana":
             if arg[1]:
                 FAIL_ON_REPOS.add("netdata-grafana-datasource-plugin")
-        if arg[0] == "fail_on_github_repo":
+        if arg[0] == "fail_links_github":
             if arg[1]:
                 FAIL_ON_REPOS.add(".github")
+        if arg[0] == "ignore_on_prem_repo":
+            if arg[1]:
+                IGNORE_ON_PREM_REPO = True
+                print("IGNORING ON-PREM REPO: Will skip cloning and ignore broken links pointing to netdata-cloud-onprem")
 
     if len(list_of_repos_in_str) > 0:
         for repo_str in list_of_repos_in_str:
@@ -1342,6 +1367,10 @@ if __name__ == '__main__':
 
     # Clone all the predefined repos
     for repo_name in default_repos.keys():
+        # Skip on-prem repo if flag is set
+        if IGNORE_ON_PREM_REPO and repo_name == "netdata-cloud-onprem":
+            print(f"Skipping {repo_name} (--ignore-on-prem-repo flag is set)")
+            continue
         print(clone_repo(
             default_repos[repo_name]["owner"],
             repo_name,
@@ -1516,7 +1545,7 @@ if __name__ == '__main__':
     should_fail = False
     failed_repos = []
     
-    # Check if --fail-on-internal-broken-links is set (fail on any broken link)
+    # Check if --fail is set (fail on any broken link)
     if FAIL_ON_ALL_BROKEN_LINKS and len(all_repos_with_issues) > 0:
         should_fail = True
         failed_repos = list(all_repos_with_issues)
@@ -1535,10 +1564,19 @@ if __name__ == '__main__':
         print(f"\n### BROKEN LINKS DETECTED in repos: {', '.join(sorted(failed_repos))} ###")
         print("Will exit with error code 1 at the end due to flags:")
         if FAIL_ON_ALL_BROKEN_LINKS:
-            print("  --fail-ingest-workflow (fail on any broken link)")
+            print("  --fail-links")
         for repo in sorted(failed_repos):
             if repo in FAIL_ON_REPOS:
-                print(f"  --fail-on-{repo.replace('_', '-')}")
+                # Map repo names to flag names
+                flag_map = {
+                    "netdata": "--fail-links-netdata",
+                    "helmchart": "--fail-links-helmchart",
+                    "netdata-cloud-onprem": "--fail-links-onprem",
+                    "agent-service-discovery": "--fail-links-asd",
+                    "netdata-grafana-datasource-plugin": "--fail-links-grafana",
+                    ".github": "--fail-links-github"
+                }
+                print(f"  {flag_map.get(repo, repo)}")
         print("\nContinuing with remaining ingest steps...")
 
     if DEBUG:
@@ -1567,7 +1605,17 @@ if __name__ == '__main__':
 
     unsafe_cleanup_folders(TEMP_FOLDER)
     os.remove("map.csv")
-    print("OPERATION FINISHED, map deleted")
+    
+    # Print final operation status with exit code
+    if SHOULD_EXIT_WITH_FAILURE:
+        print("\n" + "=" * 60)
+        print("OPERATION FINISHED - FAILURE (exit code: 1)")
+        print("Broken links detected matching failure criteria")
+        print("=" * 60)
+    else:
+        print("\n" + "=" * 60)
+        print("OPERATION FINISHED - SUCCESS (exit code: 0)")
+        print("=" * 60)
 
 
     def sort_files(file_array):
@@ -1730,5 +1778,4 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
 
     # Exit with failure if broken links were detected and failure flag was set
     if SHOULD_EXIT_WITH_FAILURE:
-        print("\n### FAILURE: Exiting with error code 1 due to broken links ###")
         exit(1)
