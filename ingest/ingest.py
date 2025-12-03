@@ -56,6 +56,7 @@ BROKEN_HEADER_LINKS_BY_REPO = {}
 FAIL_ON_REPOS = set()  # Set of repo names to fail on if broken links found
 FAIL_ON_ALL_BROKEN_LINKS = False  # If True, fail on any broken link regardless of repo
 IGNORE_ON_PREM_REPO = False  # If True, skip cloning on-prem repo and ignore links pointing to it
+LOCAL_REPOS = {}  # Dict mapping repo name to local path (use local dir instead of cloning)
 # Temporarily until we release (change it (the default) to /docs
 # version_prefix = "nightly"  # We use this as the version prefix in the link strategy
 TEMP_FOLDER = "ingest-temp-folder"
@@ -1290,6 +1291,14 @@ if __name__ == '__main__':
         action="store_true",
     )
 
+    parser.add_argument(
+        "--local-repo",
+        dest="local_repos",
+        default=[],
+        nargs='+',
+        help='Use a local directory instead of cloning. Format: repo_name:local_path (e.g., netdata:/path/to/netdata)'
+    )
+
     list_of_repos_in_str = []
     # netdata/netdata:branch tkatsoulas/go.d.plugin:mybranch
     args = parser.parse_args()
@@ -1331,6 +1340,18 @@ if __name__ == '__main__':
             if arg[1]:
                 IGNORE_ON_PREM_REPO = True
                 print("IGNORING ON-PREM REPO: Will skip cloning and ignore broken links pointing to netdata-cloud-onprem")
+        if arg[0] == "local_repos":
+            for local_repo_str in arg[1]:
+                try:
+                    repo_name, local_path = local_repo_str.split(":", 1)
+                    if not os.path.isdir(local_path):
+                        print(f"ERROR: Local path '{local_path}' for repo '{repo_name}' does not exist or is not a directory")
+                        exit(-1)
+                    LOCAL_REPOS[repo_name] = os.path.abspath(local_path)
+                    print(f"Using local directory for {repo_name}: {LOCAL_REPOS[repo_name]}")
+                except ValueError:
+                    print(f"ERROR: Invalid --local-repo format '{local_repo_str}'. Expected format: repo_name:local_path")
+                    exit(-1)
 
     if len(list_of_repos_in_str) > 0:
         for repo_str in list_of_repos_in_str:
@@ -1371,14 +1392,22 @@ if __name__ == '__main__':
         if IGNORE_ON_PREM_REPO and repo_name == "netdata-cloud-onprem":
             print(f"Skipping {repo_name} (--ignore-on-prem-repo flag is set)")
             continue
-        print(clone_repo(
-            default_repos[repo_name]["owner"],
-            repo_name,
-            default_repos[repo_name]["branch"],
-            1,
-            TEMP_FOLDER + "/",
-            GITHUB_TOKEN,
-        ))
+        # Use local directory if specified, otherwise clone
+        if repo_name in LOCAL_REPOS:
+            local_path = LOCAL_REPOS[repo_name]
+            dest_path = os.path.join(TEMP_FOLDER, repo_name)
+            print(f"Copying local directory {local_path} to {dest_path}")
+            shutil.copytree(local_path, dest_path, symlinks=True)
+            print(f"Using local directory for {repo_name} (copied from {local_path})")
+        else:
+            print(clone_repo(
+                default_repos[repo_name]["owner"],
+                repo_name,
+                default_repos[repo_name]["branch"],
+                1,
+                TEMP_FOLDER + "/",
+                GITHUB_TOKEN,
+            ))
 
     shutil.move("ingest-temp-folder/netdata/docs/.map/map.csv", "map.csv")
 
