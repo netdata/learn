@@ -17,7 +17,7 @@ on:
 
 env:
   # Assignees for broken links issues (all repos)
-  BROKEN_LINKS_ASSIGNEES: "Ancairon"
+  BROKEN_LINKS_ASSIGNEES: "kanelatechnical,ilyam8"
 
 jobs:
   ingest:
