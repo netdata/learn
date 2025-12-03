@@ -1395,6 +1395,8 @@ if __name__ == '__main__':
             except Exception as exc:
                 print("Unknown error in parsing", exc)
 
+    USE_PLAIN_HTTPS = USE_PLAIN_HTTPS or IGNORE_ON_PREM_REPO
+
     # Clean up old clones into a temp dir
     unsafe_cleanup_folders(TEMP_FOLDER)
     # Clean up old ingested docs
