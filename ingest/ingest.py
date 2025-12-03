@@ -158,7 +158,7 @@ def extract_repo_from_github_url(url):
     """
     if not url.startswith("https://github.com/netdata/"):
         return "unknown"
-    
+
     # URL format: https://github.com/netdata/<repo>/...
     parts = url.replace("https://github.com/netdata/", "").split("/")
     if parts:
@@ -184,13 +184,13 @@ def extract_repo_from_local_path(path):
 def add_broken_url(repo, url, source_file):
     """Add a broken URL to the tracking dictionary, categorized by repo."""
     global UNCORRELATED_URLS_BY_REPO
-    
+
     # If ignoring on-prem repo, skip URLs that point to it
     if IGNORE_ON_PREM_REPO:
         target_repo = extract_repo_from_github_url(url)
         if target_repo == "netdata-cloud-onprem":
             return
-    
+
     if repo not in UNCORRELATED_URLS_BY_REPO:
         UNCORRELATED_URLS_BY_REPO[repo] = {}
     if url not in UNCORRELATED_URLS_BY_REPO[repo]:
@@ -201,13 +201,13 @@ def add_broken_url(repo, url, source_file):
 def add_broken_header(repo, full_link, header, source_file):
     """Add a broken header link to the tracking dictionary, categorized by repo."""
     global BROKEN_HEADER_LINKS_BY_REPO
-    
+
     # If ignoring on-prem repo, skip links that point to it
     if IGNORE_ON_PREM_REPO:
         target_repo = extract_repo_from_github_url(full_link)
         if target_repo == "netdata-cloud-onprem":
             return
-    
+
     if repo not in BROKEN_HEADER_LINKS_BY_REPO:
         BROKEN_HEADER_LINKS_BY_REPO[repo] = {}
     key = (full_link, header)
@@ -227,13 +227,13 @@ def github_url_to_local_path(url):
     """
     if not url.startswith("https://github.com/netdata"):
         return None
-    
+
     # Convert URL to local path
     local_path = url.replace("https://github.com/netdata", TEMP_FOLDER)
     local_path = local_path.replace("edit/", "blob/", 1)
     local_path = local_path.replace("blob/master/", "")
     local_path = local_path.replace("blob/main/", "")
-    
+
     return local_path
 
 
@@ -501,22 +501,32 @@ def copy_doc(src, dest):
         shutil.copy(src, dest)
 
 
-def clone_repo(owner, repo, branch, depth, prefix_folder, gh_token=None):
+def clone_repo(owner, repo, branch, depth, prefix_folder, gh_token=None, use_plain_https=False):
     """
-    Clone a repo using HTTPS+PAT (if provided) or SSH.
-    Removes secrets from the remote after cloning.
+    Clone a repo using:
+    - HTTPS + token (if gh_token is provided),
+    - HTTPS without token (if use_plain_https=True),
+    - SSH otherwise.
+
+    After cloning, the remote URL is scrubbed to a clean HTTPS URL.
     """
     try:
         output_folder = os.path.join(prefix_folder, repo)
-        if gh_token:
+
+        if use_plain_https:
+            # Forced plain HTTPS (no token)
+            gh_url = f"https://github.com/{owner}/{repo}.git"
+        elif gh_token:
+            # HTTPS + PAT
             enc = urllib.parse.quote(gh_token, safe="")
-            url = f"https://x-access-token:{enc}@github.com/{owner}/{repo}.git"
+            gh_url = f"https://x-access-token:{enc}@github.com/{owner}/{repo}.git"
         else:
-            url = f"git@github.com:{owner}/{repo}.git"
+            # SSH fallback
+            gh_url = f"git@github.com:{owner}/{repo}.git"
 
-        git.Git().clone(url, output_folder, depth=depth, branch=branch)
+        git.Git().clone(gh_url, output_folder, depth=depth, branch=branch)
 
-        # Immediately scrub the remote to a non-secret URL
+        # Scrub remote to clean HTTPS
         clean_url = f"https://github.com/{owner}/{repo}.git"
         git.Git(output_folder).remote('set-url', 'origin', clean_url)
 
@@ -966,11 +976,10 @@ def local_to_absolute_links(path_to_file, input_dict):
                                 break
                         if found:
                             break
-                    
+
                     if not found:
                         UNCORRELATED_LINK_COUNTER += 1
                         add_broken_url(source_repo, url, path_to_file)
-
 
     Path(path_to_file).write_text(body)
 
@@ -995,7 +1004,7 @@ def convert_github_links(path_to_file, input_dict):
     body = whole_file.split("---", 2)[2]
 
     custom_edit_url_arr = re.findall(r'custom_edit_url(.*)', metadata)
-    
+
     # Determine the source repo from the custom_edit_url in metadata
     # This tells us which repo the current file originally came from
     source_repo = "unknown"
@@ -1047,14 +1056,14 @@ def convert_github_links(path_to_file, input_dict):
                     pass
 
                 body = body.replace("](" + url, "](" + replace_string)
-                
+
                 # Validate header if present - check against the source file in temp folder
                 if header and dict_key in input_dict:
                     source_file = dict_key
                     if Path(source_file).exists() and not validate_header_in_file(source_file, header):
                         # Use source_repo (where the file with the broken link is from)
                         add_broken_header(source_repo, full_link, header, path_to_file)
-                        
+
                 # In the end replace the URL with the replaceString
             except Exception as e:
                 # This is probably a link that can't be translated to a Learn link (e.g. An external file)
@@ -1095,7 +1104,7 @@ def convert_github_links(path_to_file, input_dict):
 
                             # In the end replace the URL with the replaceString
                             body = body.replace("](" + url, "](" + replace_string)
-                            
+
                             # Validate header if present
                             if header and Path(dict_key).exists() and not validate_header_in_file(dict_key, header):
                                 add_broken_header(source_repo, full_link, header, path_to_file)
@@ -1286,6 +1295,13 @@ if __name__ == '__main__':
     )
 
     parser.add_argument(
+        "--use_plain_https",
+        help="Clone using plain HTTPS without a token (overrides --gh-token if provided).",
+        action="store_true",
+        dest="use_plain_https",
+    )
+
+    parser.add_argument(
         "--ignore-on-prem-repo",
         help="Skip cloning the netdata-cloud-onprem repo and ignore broken links pointing to it.",
         action="store_true",
@@ -1304,6 +1320,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     kArgs = args._get_kwargs()
     GITHUB_TOKEN = args.gh_token
+    USE_PLAIN_HTTPS = args.use_plain_https
 
     # Create local copies from the parse_args input
     DOCS_PREFIX = args.DOCS_PREFIX
@@ -1339,18 +1356,21 @@ if __name__ == '__main__':
         if arg[0] == "ignore_on_prem_repo":
             if arg[1]:
                 IGNORE_ON_PREM_REPO = True
-                print("IGNORING ON-PREM REPO: Will skip cloning and ignore broken links pointing to netdata-cloud-onprem")
+                print(
+                    "IGNORING ON-PREM REPO: Will skip cloning and ignore broken links pointing to netdata-cloud-onprem")
         if arg[0] == "local_repos":
             for local_repo_str in arg[1]:
                 try:
                     repo_name, local_path = local_repo_str.split(":", 1)
                     if not os.path.isdir(local_path):
-                        print(f"ERROR: Local path '{local_path}' for repo '{repo_name}' does not exist or is not a directory")
+                        print(
+                            f"ERROR: Local path '{local_path}' for repo '{repo_name}' does not exist or is not a directory")
                         exit(-1)
                     LOCAL_REPOS[repo_name] = os.path.abspath(local_path)
                     print(f"Using local directory for {repo_name}: {LOCAL_REPOS[repo_name]}")
                 except ValueError:
-                    print(f"ERROR: Invalid --local-repo format '{local_repo_str}'. Expected format: repo_name:local_path")
+                    print(
+                        f"ERROR: Invalid --local-repo format '{local_repo_str}'. Expected format: repo_name:local_path")
                     exit(-1)
 
     if len(list_of_repos_in_str) > 0:
@@ -1407,6 +1427,7 @@ if __name__ == '__main__':
                 1,
                 TEMP_FOLDER + "/",
                 GITHUB_TOKEN,
+                USE_PLAIN_HTTPS,
             ))
 
     shutil.move("ingest-temp-folder/netdata/docs/.map/map.csv", "map.csv")
@@ -1569,23 +1590,23 @@ if __name__ == '__main__':
 
     # Combine all repos with any broken links
     all_repos_with_issues = repos_with_broken_urls | repos_with_broken_headers
-    
+
     # Determine if we should fail based on flags
     should_fail = False
     failed_repos = []
-    
+
     # Check if --fail is set (fail on any broken link)
     if FAIL_ON_ALL_BROKEN_LINKS and len(all_repos_with_issues) > 0:
         should_fail = True
         failed_repos = list(all_repos_with_issues)
-    
+
     # Check per-repo failure flags
     for repo in FAIL_ON_REPOS:
         if repo in all_repos_with_issues:
             should_fail = True
             if repo not in failed_repos:
                 failed_repos.append(repo)
-    
+
     # Store failure state but continue processing
     SHOULD_EXIT_WITH_FAILURE = False
     if should_fail:
@@ -1634,7 +1655,7 @@ if __name__ == '__main__':
 
     unsafe_cleanup_folders(TEMP_FOLDER)
     os.remove("map.csv")
-    
+
     # Print final operation status with exit code
     if SHOULD_EXIT_WITH_FAILURE:
         print("\n" + "=" * 60)
