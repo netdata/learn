@@ -702,8 +702,33 @@ def update_metadata_of_file(path_to_file, dictionary):
     output = ""
 
     for field in dictionary:
-        val = str(dictionary[field]).replace("\"", "")
-        output += f"{field}: \"{val}\"\n"
+        val = dictionary[field]
+        # Special-case keywords: accept CSV values (strings with quotes/brackets)
+        # and also Python lists. Normalize to an inline YAML array.
+        if field == 'keywords':
+            # If it's already a list, use it directly
+            if isinstance(val, (list, tuple)):
+                items = [str(v).strip().strip('"').strip("'") for v in val if str(v).strip()]
+            else:
+                # Normalize to string and strip outer quotes
+                sval = str(val).strip()
+                # Remove surrounding double quotes if present
+                if sval.startswith('"') and sval.endswith('"'):
+                    sval = sval[1:-1]
+                if sval.startswith("'") and sval.endswith("'"):
+                    sval = sval[1:-1]
+                # If value is in bracket form [a,b,...], strip brackets
+                if sval.startswith('[') and sval.endswith(']'):
+                    sval_inner = sval[1:-1]
+                else:
+                    sval_inner = sval
+                # Split on commas to form array items
+                items = [it.strip().strip('"').strip("'") for it in sval_inner.split(',') if it.strip()]
+            # Join items without surrounding quotes to match existing files' style
+            output += f"{field}: [{', '.join(items)}]\n"
+        else:
+            val_str = str(val).replace('"', '')
+            output += f"{field}: \"{val_str}\"\n"
     if len(output) > 0:
         output = "<!--\n" + output + "-->"
 
