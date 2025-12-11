@@ -566,7 +566,6 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/phpf
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/README.md	/docs/collecting-metrics/generic-collecting-metrics/prometheus-endpoint
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/meilisearch.md	/docs/collecting-metrics/search-engines/meilisearch
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/generic_command_line_output.md	/docs/collecting-metrics/generic-collecting-metrics/generic-command-line-output
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/a10_acos_network_devices.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/a10-acos-network-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/openrc.md	/docs/collecting-metrics/linux-systems/openrc
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/siemens_s7_plc.md	/docs/collecting-metrics/hardware-devices-and-sensors/siemens-s7-plc
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/sonic_nos.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/sonic-nos
@@ -584,7 +583,6 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prom
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/proftpd.md	/docs/collecting-metrics/ftp-servers/proftpd
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/azure_elastic_pool_sql.md	/docs/collecting-metrics/cloud-provider-managed/azure-elastic-pool-sql
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/tp-link_p110.md	/docs/collecting-metrics/iot-devices/tp-link-p110
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/zyxel_gs1200-8.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/zyxel-gs1200-8
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cilium_agent.md	/docs/collecting-metrics/kubernetes/cilium-agent
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/bigquery.md	/docs/collecting-metrics/cloud-provider-managed/bigquery
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/arm_hwcpipe.md	/docs/collecting-metrics/hardware-devices-and-sensors/arm-hwcpipe
@@ -634,7 +632,6 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prom
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/altaro_backup.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/altaro-backup
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/twitch.md	/docs/collecting-metrics/media-services/twitch
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/open_vswitch.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/open-vswitch
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/smartrg_808ac_cable_modem.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/smartrg-808ac-cable-modem
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/honeypot.md	/docs/collecting-metrics/security-systems/honeypot
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/aruba_devices.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/aruba-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cloud_foundry_firehose.md	/docs/collecting-metrics/provisioning-systems/cloud-foundry-firehose
@@ -684,7 +681,6 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prom
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/custom_exporter.md	/docs/collecting-metrics/generic-collecting-metrics/custom-exporter
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/hasura_graphql_server.md	/docs/collecting-metrics/databases/hasura-graphql-server
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/lagerist_disk_latency.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/lagerist-disk-latency
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/mikrotik_devices.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/mikrotik-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/vault_pki.md	/docs/collecting-metrics/security-systems/vault-pki
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/halon.md	/docs/collecting-metrics/mail-servers/halon
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/gpsd.md	/docs/collecting-metrics/apm/gpsd
@@ -719,13 +715,11 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prom
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/aws_ec2_spot_instance.md	/docs/collecting-metrics/cloud-provider-managed/aws-ec2-spot-instance
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/proxmox_ve.md	/docs/collecting-metrics/containers-and-vms/proxmox-ve
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/sphinx.md	/docs/collecting-metrics/search-engines/sphinx
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/mikrotik_routeros_devices.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/mikrotik-routeros-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/warp10.md	/docs/collecting-metrics/databases/warp10
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/aws_quota.md	/docs/collecting-metrics/cloud-provider-managed/aws-quota
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/bpftrace_variables.md	/docs/collecting-metrics/apm/bpftrace-variables
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/authlog.md	/docs/collecting-metrics/logs-servers/authlog
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/freebsd_rctl-racct.md	/docs/collecting-metrics/freebsd/freebsd-rctl-racct
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/fortigate_firewall.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/fortigate-firewall
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/graylog_server.md	/docs/collecting-metrics/logs-servers/graylog-server
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/akamai_edge_dns_traffic.md	/docs/collecting-metrics/dns-and-dhcp-servers/akamai-edge-dns-traffic
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/linode.md	/docs/collecting-metrics/cloud-provider-managed/linode
@@ -734,7 +728,6 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prom
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/alibaba_cloud.md	/docs/collecting-metrics/cloud-provider-managed/alibaba-cloud
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/tankerkoenig_api.md	/docs/collecting-metrics/generic-collecting-metrics/tankerkoenig-api
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/pgbackrest.md	/docs/collecting-metrics/databases/pgbackrest
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/meraki_dashboard.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/meraki-dashboard
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/vscode.md	/docs/collecting-metrics/apm/vscode
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/netapp_ontap_api.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/netapp-ontap-api
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/helium_hotspot.md	/docs/collecting-metrics/iot-devices/helium-hotspot
@@ -777,7 +770,6 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prom
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/traceroute.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/traceroute
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/pimoroni_enviro+.md	/docs/collecting-metrics/iot-devices/pimoroni-enviro+
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/tesla_powerwall.md	/docs/collecting-metrics/iot-devices/tesla-powerwall
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cisco_aci.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/cisco-aci
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/checkpoint_device.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/checkpoint-device
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/hana.md	/docs/collecting-metrics/databases/hana
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/amd_cpu_&_gpu.md	/docs/collecting-metrics/hardware-devices-and-sensors/amd-cpu-&-gpu
@@ -822,7 +814,6 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prom
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/gobetween.md	/docs/collecting-metrics/web-servers-and-web-proxies/gobetween
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ssl_certificate.md	/docs/collecting-metrics/security-systems/ssl-certificate
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/hdsentinel.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/hdsentinel
-https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/fritzbox_network_devices.md	/docs/collecting-metrics/networking-stack-and-network-interfaces/fritzbox-network-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/storidge.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/storidge
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/dmarc.md	/docs/collecting-metrics/mail-servers/dmarc
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/nrpe_daemon.md	/docs/collecting-metrics/apm/nrpe-daemon
