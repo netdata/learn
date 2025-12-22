@@ -5966,10 +5966,6 @@
   to="/docs/collecting-metrics/vpns/wireguard"
 
 [[redirects]]
-  from="/docs/data-collection/vpns/speedify-cli"
-  to="/docs/collecting-metrics/vpns/speedify-cli"
-
-[[redirects]]
   from="/docs/data-collection/vpns/openvpn-status-log"
   to="/docs/collecting-metrics/vpns/openvpn-status-log"
 
@@ -5984,10 +5980,6 @@
 [[redirects]]
   from="/docs/data-collection/ups/ups-nut"
   to="/docs/collecting-metrics/ups/ups-nut"
-
-[[redirects]]
-  from="/docs/data-collection/ups/eaton-ups"
-  to="/docs/collecting-metrics/ups/eaton-ups"
 
 [[redirects]]
   from="/docs/data-collection/telephony-servers/kannel"
@@ -6030,10 +6022,6 @@
   to="/docs/collecting-metrics/synthetic-checks/site-24x7"
 
 [[redirects]]
-  from="/docs/data-collection/synthetic-checks/pingdom"
-  to="/docs/collecting-metrics/synthetic-checks/pingdom"
-
-[[redirects]]
   from="/docs/data-collection/synthetic-checks/ping"
   to="/docs/collecting-metrics/synthetic-checks/ping"
 
@@ -6058,10 +6046,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/netapp-solidfire"
 
 [[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/hdsentinel"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hdsentinel"
-
-[[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/generic-storage-enclosure-tool"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/generic-storage-enclosure-tool"
 
@@ -6070,32 +6054,12 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/eos"
 
 [[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/dell-powermax"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-powermax"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-isilon-cluster"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-isilon-cluster"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/cvmfs-clients"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/cvmfs-clients"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/borg-backup"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/borg-backup"
-
-[[redirects]]
   from="/docs/data-collection/service-discovery-/-registry/etcd"
   to="/docs/collecting-metrics/service-discovery-/-registry/etcd"
 
 [[redirects]]
   from="/docs/data-collection/security-systems/vault-pki"
   to="/docs/collecting-metrics/security-systems/vault-pki"
-
-[[redirects]]
-  from="/docs/data-collection/security-systems/openvas"
-  to="/docs/collecting-metrics/security-systems/openvas"
 
 [[redirects]]
   from="/docs/data-collection/security-systems/honeypot"
@@ -6108,10 +6072,6 @@
 [[redirects]]
   from="/docs/data-collection/security-systems/clamscan-results"
   to="/docs/collecting-metrics/security-systems/clamscan-results"
-
-[[redirects]]
-  from="/docs/data-collection/security-systems/certificate-transparency"
-  to="/docs/collecting-metrics/security-systems/certificate-transparency"
 
 [[redirects]]
   from="/docs/data-collection/search-engines/sphinx"
@@ -6150,48 +6110,24 @@
   to="/docs/collecting-metrics/observability/dynatrace"
 
 [[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/traceroute"
-  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/traceroute"
-
-[[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/open-vswitch"
   to="/docs/collecting-metrics/networking-stack-and-network-interfaces/open-vswitch"
-
-[[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/netmeter"
-  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/netmeter"
 
 [[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/keepalived"
   to="/docs/collecting-metrics/networking-stack-and-network-interfaces/keepalived"
 
 [[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/huawei-devices"
-  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/huawei-devices"
-
-[[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/hitron-coda-cable-modem"
   to="/docs/collecting-metrics/networking-stack-and-network-interfaces/hitron-coda-cable-modem"
-
-[[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/hitron-cgn-series-cpe"
-  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/hitron-cgn-series-cpe"
 
 [[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/freifunk-network"
   to="/docs/collecting-metrics/networking-stack-and-network-interfaces/freifunk-network"
 
 [[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/ddwrt-routers"
-  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/ddwrt-routers"
-
-[[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/bird-routing-daemon"
   to="/docs/collecting-metrics/networking-stack-and-network-interfaces/bird-routing-daemon"
-
-[[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/andrews-&-arnold-line-status"
-  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/andrews-&-arnold-line-status"
 
 [[redirects]]
   from="/docs/data-collection/message-brokers/vernemq"
@@ -6230,20 +6166,12 @@
   to="/docs/collecting-metrics/media-services/obs-studio"
 
 [[redirects]]
-  from="/docs/data-collection/mail-servers/maildir"
-  to="/docs/collecting-metrics/mail-servers/maildir"
-
-[[redirects]]
   from="/docs/data-collection/mail-servers/halon"
   to="/docs/collecting-metrics/mail-servers/halon"
 
 [[redirects]]
   from="/docs/data-collection/mail-servers/dmarc"
   to="/docs/collecting-metrics/mail-servers/dmarc"
-
-[[redirects]]
-  from="/docs/data-collection/macos-systems/apple-time-machine"
-  to="/docs/collecting-metrics/macos-systems/apple-time-machine"
 
 [[redirects]]
   from="/docs/data-collection/logs-servers/logstash"
@@ -6274,10 +6202,6 @@
   to="/docs/collecting-metrics/kubernetes/kubernetes-cluster-state"
 
 [[redirects]]
-  from="/docs/data-collection/kubernetes/kubernetes-cluster-cloud-cost"
-  to="/docs/collecting-metrics/kubernetes/kubernetes-cluster-cloud-cost"
-
-[[redirects]]
   from="/docs/data-collection/kubernetes/kubeproxy"
   to="/docs/collecting-metrics/kubernetes/kubeproxy"
 
@@ -6300,10 +6224,6 @@
 [[redirects]]
   from="/docs/data-collection/iot-devices/xiaomi-mi-flora"
   to="/docs/collecting-metrics/iot-devices/xiaomi-mi-flora"
-
-[[redirects]]
-  from="/docs/data-collection/iot-devices/tp-link-p110"
-  to="/docs/collecting-metrics/iot-devices/tp-link-p110"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/tesla-vehicle"
@@ -6334,10 +6254,6 @@
   to="/docs/collecting-metrics/iot-devices/netatmo-sensors"
 
 [[redirects]]
-  from="/docs/data-collection/iot-devices/monnit-sensors-mqtt"
-  to="/docs/collecting-metrics/iot-devices/monnit-sensors-mqtt"
-
-[[redirects]]
   from="/docs/data-collection/iot-devices/jarvis-standing-desk"
   to="/docs/collecting-metrics/iot-devices/jarvis-standing-desk"
 
@@ -6358,10 +6274,6 @@
   to="/docs/collecting-metrics/iot-devices/christ-elektronik-clm5ip-power-panel"
 
 [[redirects]]
-  from="/docs/data-collection/iot-devices/bobcat-miner-300"
-  to="/docs/collecting-metrics/iot-devices/bobcat-miner-300"
-
-[[redirects]]
   from="/docs/data-collection/incident-management/statuspage"
   to="/docs/collecting-metrics/incident-management/statuspage"
 
@@ -6370,16 +6282,8 @@
   to="/docs/collecting-metrics/hardware-devices-and-sensors/siemens-s7-plc"
 
 [[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/servertech"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/servertech"
-
-[[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/raritan-pdu"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/raritan-pdu"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/nvml"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/nvml"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/nvidia-gpu"
@@ -6388,14 +6292,6 @@
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/ibm-z-hardware-management-console"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/ibm-z-hardware-management-console"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/hp-ilo"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/hp-ilo"
-
-[[redirects]]
-  from="/docs/data-collection/generic-data-collection/twincat-ads-web-service"
-  to="/docs/collecting-metrics/generic-collecting-metrics/twincat-ads-web-service"
 
 [[redirects]]
   from="/docs/data-collection/generic-data-collection/snmp-devices"
@@ -6410,20 +6306,8 @@
   to="/docs/collecting-metrics/generic-collecting-metrics/openweathermap"
 
 [[redirects]]
-  from="/docs/data-collection/generic-data-collection/generic-command-line-output"
-  to="/docs/collecting-metrics/generic-collecting-metrics/generic-command-line-output"
-
-[[redirects]]
-  from="/docs/data-collection/generic-data-collection/custom-exporter"
-  to="/docs/collecting-metrics/generic-collecting-metrics/custom-exporter"
-
-[[redirects]]
   from="/docs/data-collection/gaming/steam"
   to="/docs/collecting-metrics/gaming/steam"
-
-[[redirects]]
-  from="/docs/data-collection/gaming/openrct2"
-  to="/docs/collecting-metrics/gaming/openrct2"
 
 [[redirects]]
   from="/docs/data-collection/gaming/minecraft"
@@ -6502,28 +6386,12 @@
   to="/docs/collecting-metrics/databases/percona-mysql"
 
 [[redirects]]
-  from="/docs/data-collection/databases/oracle-db-community"
-  to="/docs/collecting-metrics/databases/oracle-db-community"
-
-[[redirects]]
-  from="/docs/data-collection/databases/odbc"
-  to="/docs/collecting-metrics/databases/odbc"
-
-[[redirects]]
   from="/docs/data-collection/databases/mysql"
   to="/docs/collecting-metrics/databases/mysql"
 
 [[redirects]]
   from="/docs/data-collection/databases/mongodb"
   to="/docs/collecting-metrics/databases/mongodb"
-
-[[redirects]]
-  from="/docs/data-collection/databases/memcached-community"
-  to="/docs/collecting-metrics/databases/memcached-community"
-
-[[redirects]]
-  from="/docs/data-collection/databases/hasura-graphql-server"
-  to="/docs/collecting-metrics/databases/hasura-graphql-server"
 
 [[redirects]]
   from="/docs/data-collection/databases/hana"
@@ -6570,10 +6438,6 @@
   to="/docs/collecting-metrics/containers-and-vms/podman"
 
 [[redirects]]
-  from="/docs/data-collection/containers-and-vms/nsx-t"
-  to="/docs/collecting-metrics/containers-and-vms/nsx-t"
-
-[[redirects]]
   from="/docs/data-collection/containers-and-vms/docker-hub-repository"
   to="/docs/collecting-metrics/containers-and-vms/docker-hub-repository"
 
@@ -6584,10 +6448,6 @@
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/docker"
   to="/docs/collecting-metrics/containers-and-vms/docker"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/openstack"
-  to="/docs/collecting-metrics/cloud-provider-managed/openstack"
 
 [[redirects]]
   from="/docs/data-collection/cloud-provider-managed/lustre-metadata"
@@ -6602,60 +6462,12 @@
   to="/docs/collecting-metrics/cloud-provider-managed/google-cloud-platform"
 
 [[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/gcp-quota"
-  to="/docs/collecting-metrics/cloud-provider-managed/gcp-quota"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/digitalocean"
-  to="/docs/collecting-metrics/cloud-provider-managed/digitalocean"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/dell-emc-ecs-cluster"
-  to="/docs/collecting-metrics/cloud-provider-managed/dell-emc-ecs-cluster"
-
-[[redirects]]
   from="/docs/data-collection/cloud-provider-managed/cloudwatch"
   to="/docs/collecting-metrics/cloud-provider-managed/cloudwatch"
 
 [[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/azure-ad-app-passwords"
-  to="/docs/collecting-metrics/cloud-provider-managed/azure-ad-app-passwords"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/aws-sqs"
-  to="/docs/collecting-metrics/cloud-provider-managed/aws-sqs"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/aws-s3-buckets"
-  to="/docs/collecting-metrics/cloud-provider-managed/aws-s3-buckets"
-
-[[redirects]]
   from="/docs/data-collection/cloud-provider-managed/aws-quota"
   to="/docs/collecting-metrics/cloud-provider-managed/aws-quota"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/aws-instance-health"
-  to="/docs/collecting-metrics/cloud-provider-managed/aws-instance-health"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/aws-health-events"
-  to="/docs/collecting-metrics/cloud-provider-managed/aws-health-events"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/aws-ecs"
-  to="/docs/collecting-metrics/cloud-provider-managed/aws-ecs"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/arvancloud-cdn"
-  to="/docs/collecting-metrics/cloud-provider-managed/arvancloud-cdn"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/alibaba-cloud"
-  to="/docs/collecting-metrics/cloud-provider-managed/alibaba-cloud"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/akamai-global-traffic-management"
-  to="/docs/collecting-metrics/cloud-provider-managed/akamai-global-traffic-management"
 
 [[redirects]]
   from="/docs/data-collection/cicd-platforms/jenkins"
@@ -6666,24 +6478,8 @@
   to="/docs/collecting-metrics/cicd-platforms/gitlab-runner"
 
 [[redirects]]
-  from="/docs/data-collection/blockchain-servers/helium-miner-validator"
-  to="/docs/collecting-metrics/blockchain-servers/helium-miner-validator"
-
-[[redirects]]
   from="/docs/data-collection/blockchain-servers/go-ethereum"
   to="/docs/collecting-metrics/blockchain-servers/go-ethereum"
-
-[[redirects]]
-  from="/docs/data-collection/blockchain-servers/crypto-exchanges"
-  to="/docs/collecting-metrics/blockchain-servers/crypto-exchanges"
-
-[[redirects]]
-  from="/docs/data-collection/authentication-and-authorization/openldap-community"
-  to="/docs/collecting-metrics/authentication-and-authorization/openldap-community"
-
-[[redirects]]
-  from="/docs/data-collection/authentication-and-authorization/hashicorp-vault-secrets"
-  to="/docs/collecting-metrics/authentication-and-authorization/hashicorp-vault-secrets"
 
 [[redirects]]
   from="/docs/data-collection/authentication-and-authorization/freeradius"
@@ -6696,10 +6492,6 @@
 [[redirects]]
   from="/docs/data-collection/apm/sysload"
   to="/docs/collecting-metrics/apm/sysload"
-
-[[redirects]]
-  from="/docs/data-collection/apm/sentry"
-  to="/docs/collecting-metrics/apm/sentry"
 
 [[redirects]]
   from="/docs/data-collection/apm/phpdaemon"
@@ -6716,18 +6508,6 @@
 [[redirects]]
   from="/docs/data-collection/apm/ibm-aix-systems-njmon"
   to="/docs/collecting-metrics/apm/ibm-aix-systems-njmon"
-
-[[redirects]]
-  from="/docs/data-collection/apm/dependency-track"
-  to="/docs/collecting-metrics/apm/dependency-track"
-
-[[redirects]]
-  from="/docs/data-collection/apm/apache-flink"
-  to="/docs/collecting-metrics/apm/apache-flink"
-
-[[redirects]]
-  from="/docs/data-collection/apm/apache-airflow"
-  to="/docs/collecting-metrics/apm/apache-airflow"
 
 [[redirects]]
   from="/docs/alerts-&-notifications/alerting"
@@ -6754,24 +6534,12 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/mogilefs"
 
 [[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/lagerist-disk-latency"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/lagerist-disk-latency"
-
-[[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ibm-spectrum-virtualize"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ibm-spectrum-virtualize"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ibm-spectrum"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ibm-spectrum"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-xtremio-cluster"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-xtremio-cluster"
-
-[[redirects]]
-  from="/docs/data-collection/storage,-mount-points-and-filesystems/altaro-backup"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/altaro-backup"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/storidge"
@@ -6790,10 +6558,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/netapp-solidfire"
 
 [[redirects]]
-  from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/hdsentinel"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hdsentinel"
-
-[[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
 
@@ -6806,28 +6570,12 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/eos"
 
 [[redirects]]
-  from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/dell-powermax"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-powermax"
-
-[[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/dell-emc-scaleio"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
-  from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/dell-emc-isilon-cluster"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-isilon-cluster"
-
-[[redirects]]
-  from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/cvmfs-clients"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/cvmfs-clients"
-
-[[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/ceph"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ceph"
-
-[[redirects]]
-  from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/borg-backup"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/borg-backup"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/power-supply"
@@ -6874,14 +6622,6 @@
   to="/docs/netdata-parents/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents"
 
 [[redirects]]
-  from="/docs/data-collection/web-servers-and-web-proxies/hhvm"
-  to="/docs/collecting-metrics/web-servers-and-web-proxies/hhvm"
-
-[[redirects]]
-  from="/docs/data-collection/web-servers-and-web-proxies/cloudflare-pcap"
-  to="/docs/collecting-metrics/web-servers-and-web-proxies/cloudflare-pcap"
-
-[[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/clash"
   to="/docs/collecting-metrics/web-servers-and-web-proxies/clash"
 
@@ -6898,10 +6638,6 @@
   to="/docs/collecting-metrics/vpns/softether-vpn-server"
 
 [[redirects]]
-  from="/docs/data-collection/telephony-servers/gtp"
-  to="/docs/collecting-metrics/telephony-servers/gtp"
-
-[[redirects]]
   from="/docs/data-collection/storage%20-mount-points-and-filesystems/synology-activebackup"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/synology-activebackup"
 
@@ -6914,10 +6650,6 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/mogilefs"
 
 [[redirects]]
-  from="/docs/data-collection/storage%20-mount-points-and-filesystems/lagerist-disk-latency"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/lagerist-disk-latency"
-
-[[redirects]]
   from="/docs/data-collection/storage%20-mount-points-and-filesystems/ibm-spectrum-virtualize"
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ibm-spectrum-virtualize"
 
@@ -6926,24 +6658,12 @@
   to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ibm-spectrum"
 
 [[redirects]]
-  from="/docs/data-collection/storage%20-mount-points-and-filesystems/dell-emc-xtremio-cluster"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-xtremio-cluster"
-
-[[redirects]]
-  from="/docs/data-collection/storage%20-mount-points-and-filesystems/altaro-backup"
-  to="/docs/collecting-metrics/storage,-mount-points-and-filesystems/altaro-backup"
-
-[[redirects]]
   from="/docs/data-collection/service-discovery-/-registry/kafka-consumer-lag"
   to="/docs/collecting-metrics/service-discovery-/-registry/kafka-consumer-lag"
 
 [[redirects]]
   from="/docs/data-collection/security-systems/suricata"
   to="/docs/collecting-metrics/security-systems/suricata"
-
-[[redirects]]
-  from="/docs/data-collection/security-systems/ssl-certificate"
-  to="/docs/collecting-metrics/security-systems/ssl-certificate"
 
 [[redirects]]
   from="/docs/data-collection/security-systems/lynis-audit-reports"
@@ -6974,14 +6694,6 @@
   to="/docs/collecting-metrics/other/github-api-rate-limit"
 
 [[redirects]]
-  from="/docs/data-collection/observability/new-relic"
-  to="/docs/collecting-metrics/observability/new-relic"
-
-[[redirects]]
-  from="/docs/data-collection/observability/naemon"
-  to="/docs/collecting-metrics/observability/naemon"
-
-[[redirects]]
   from="/docs/data-collection/observability/grafana"
   to="/docs/collecting-metrics/observability/grafana"
 
@@ -7010,32 +6722,12 @@
   to="/docs/collecting-metrics/networking-stack-and-network-interfaces/openroadm-devices"
 
 [[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/netflow"
-  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/netflow"
-
-[[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/frrouting"
   to="/docs/collecting-metrics/networking-stack-and-network-interfaces/frrouting"
 
 [[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/citrix-netscaler"
-  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/citrix-netscaler"
-
-[[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/checkpoint-device"
-  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/checkpoint-device"
-
-[[redirects]]
-  from="/docs/data-collection/networking-stack-and-network-interfaces/aruba-devices"
-  to="/docs/collecting-metrics/networking-stack-and-network-interfaces/aruba-devices"
-
-[[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/8430ft-modem"
   to="/docs/collecting-metrics/networking-stack-and-network-interfaces/8430ft-modem"
-
-[[redirects]]
-  from="/docs/data-collection/message-brokers/xmpp-server"
-  to="/docs/collecting-metrics/message-brokers/xmpp-server"
 
 [[redirects]]
   from="/docs/data-collection/message-brokers/redis-queue"
@@ -7050,20 +6742,8 @@
   to="/docs/collecting-metrics/message-brokers/kafka-zookeeper"
 
 [[redirects]]
-  from="/docs/data-collection/message-brokers/kafka-connect"
-  to="/docs/collecting-metrics/message-brokers/kafka-connect"
-
-[[redirects]]
   from="/docs/data-collection/message-brokers/ibm-mq"
   to="/docs/collecting-metrics/message-brokers/ibm-mq"
-
-[[redirects]]
-  from="/docs/data-collection/media-services/zulip"
-  to="/docs/collecting-metrics/media-services/zulip"
-
-[[redirects]]
-  from="/docs/data-collection/media-services/stream"
-  to="/docs/collecting-metrics/media-services/stream"
 
 [[redirects]]
   from="/docs/data-collection/media-services/discourse"
@@ -7082,20 +6762,8 @@
   to="/docs/collecting-metrics/logs-servers/graylog-server"
 
 [[redirects]]
-  from="/docs/data-collection/linux-systems/firewall/nftables"
-  to="/docs/collecting-metrics/linux-systems/firewall/nftables"
-
-[[redirects]]
-  from="/docs/data-collection/kubernetes/rancher"
-  to="/docs/collecting-metrics/kubernetes/rancher"
-
-[[redirects]]
   from="/docs/data-collection/iot-devices/tesla-wall-connector"
   to="/docs/collecting-metrics/iot-devices/tesla-wall-connector"
-
-[[redirects]]
-  from="/docs/data-collection/iot-devices/tesla-powerwall"
-  to="/docs/collecting-metrics/iot-devices/tesla-powerwall"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/tado-smart-heating-solution"
@@ -7104,10 +6772,6 @@
 [[redirects]]
   from="/docs/data-collection/iot-devices/solis-ginlong-5g-inverters"
   to="/docs/collecting-metrics/iot-devices/solis-ginlong-5g-inverters"
-
-[[redirects]]
-  from="/docs/data-collection/iot-devices/solaredge-inverters"
-  to="/docs/collecting-metrics/iot-devices/solaredge-inverters"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/solar-logging-stick"
@@ -7138,32 +6802,16 @@
   to="/docs/collecting-metrics/iot-devices/personal-weather-station"
 
 [[redirects]]
-  from="/docs/data-collection/iot-devices/openhab"
-  to="/docs/collecting-metrics/iot-devices/openhab"
-
-[[redirects]]
   from="/docs/data-collection/iot-devices/nature-remo-e-lite-devices"
   to="/docs/collecting-metrics/iot-devices/nature-remo-e-lite-devices"
-
-[[redirects]]
-  from="/docs/data-collection/iot-devices/mp707-usb-thermometer"
-  to="/docs/collecting-metrics/iot-devices/mp707-usb-thermometer"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/modbus-protocol"
   to="/docs/collecting-metrics/iot-devices/modbus-protocol"
 
 [[redirects]]
-  from="/docs/data-collection/iot-devices/iqair-airvisual-air-quality-monitors"
-  to="/docs/collecting-metrics/iot-devices/iqair-airvisual-air-quality-monitors"
-
-[[redirects]]
   from="/docs/data-collection/iot-devices/homebridge"
   to="/docs/collecting-metrics/iot-devices/homebridge"
-
-[[redirects]]
-  from="/docs/data-collection/iot-devices/helium-hotspot"
-  to="/docs/collecting-metrics/iot-devices/helium-hotspot"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/elgato-key-light-devices."
@@ -7174,28 +6822,8 @@
   to="/docs/collecting-metrics/iot-devices/dutch-electricity-smart-meter"
 
 [[redirects]]
-  from="/docs/data-collection/iot-devices/airthings-waveplus-air-sensor"
-  to="/docs/collecting-metrics/iot-devices/airthings-waveplus-air-sensor"
-
-[[redirects]]
-  from="/docs/data-collection/incident-management/otrs"
-  to="/docs/collecting-metrics/incident-management/otrs"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/t-rex-nvidia-gpu-miner"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/t-rex-nvidia-gpu-miner"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/ipmi-by-soundcloud"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/ipmi-by-soundcloud"
-
-[[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/ibm-cryptoexpress-cex-cards"
   to="/docs/collecting-metrics/hardware-devices-and-sensors/ibm-cryptoexpress-cex-cards"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/arm-hwcpipe"
-  to="/docs/collecting-metrics/hardware-devices-and-sensors/arm-hwcpipe"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/amd-cpu-&-gpu"
@@ -7204,18 +6832,6 @@
 [[redirects]]
   from="/docs/data-collection/generic-data-collection/tankerkoenig-api"
   to="/docs/collecting-metrics/generic-collecting-metrics/tankerkoenig-api"
-
-[[redirects]]
-  from="/docs/data-collection/generic-data-collection/shell-command"
-  to="/docs/collecting-metrics/generic-collecting-metrics/shell-command"
-
-[[redirects]]
-  from="/docs/data-collection/generic-data-collection/jetbrains-floating-license-server"
-  to="/docs/collecting-metrics/generic-collecting-metrics/jetbrains-floating-license-server"
-
-[[redirects]]
-  from="/docs/data-collection/generic-data-collection/excel-spreadsheet"
-  to="/docs/collecting-metrics/generic-collecting-metrics/excel-spreadsheet"
 
 [[redirects]]
   from="/docs/data-collection/gaming/bungeecord"
@@ -7232,10 +6848,6 @@
 [[redirects]]
   from="/docs/data-collection/freebsd/freebsd-nfs"
   to="/docs/collecting-metrics/freebsd/freebsd-nfs"
-
-[[redirects]]
-  from="/docs/data-collection/dns-and-dhcp-servers/akamai-edge-dns-traffic"
-  to="/docs/collecting-metrics/dns-and-dhcp-servers/akamai-edge-dns-traffic"
 
 [[redirects]]
   from="/docs/data-collection/databases/warp10"
@@ -7262,20 +6874,12 @@
   to="/docs/collecting-metrics/databases/mariadb"
 
 [[redirects]]
-  from="/docs/data-collection/databases/machbase"
-  to="/docs/collecting-metrics/databases/machbase"
-
-[[redirects]]
   from="/docs/data-collection/databases/influxdb"
   to="/docs/collecting-metrics/databases/influxdb"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/proxmox-ve"
   to="/docs/collecting-metrics/containers-and-vms/proxmox-ve"
-
-[[redirects]]
-  from="/docs/data-collection/containers-and-vms/cadvisor"
-  to="/docs/collecting-metrics/containers-and-vms/cadvisor"
 
 [[redirects]]
   from="/docs/data-collection/cloud-provider-managed/zerto"
@@ -7294,52 +6898,12 @@
   to="/docs/collecting-metrics/cloud-provider-managed/gcp-gce"
 
 [[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/bigquery"
-  to="/docs/collecting-metrics/cloud-provider-managed/bigquery"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/azure-sql"
-  to="/docs/collecting-metrics/cloud-provider-managed/azure-sql"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/azure-service-bus"
-  to="/docs/collecting-metrics/cloud-provider-managed/azure-service-bus"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/azure-resources"
-  to="/docs/collecting-metrics/cloud-provider-managed/azure-resources"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/azure-elastic-pool-sql"
-  to="/docs/collecting-metrics/cloud-provider-managed/azure-elastic-pool-sql"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/azure-application"
-  to="/docs/collecting-metrics/cloud-provider-managed/azure-application"
-
-[[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/aws-ec2-spot-instance"
-  to="/docs/collecting-metrics/cloud-provider-managed/aws-ec2-spot-instance"
-
-[[redirects]]
   from="/docs/data-collection/cloud-provider-managed/aws-ec2-compute-instances"
   to="/docs/collecting-metrics/cloud-provider-managed/aws-ec2-compute-instances"
 
 [[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/akami-cloudmonitor"
-  to="/docs/collecting-metrics/cloud-provider-managed/akami-cloudmonitor"
-
-[[redirects]]
   from="/docs/data-collection/cicd-platforms/concourse"
   to="/docs/collecting-metrics/cicd-platforms/concourse"
-
-[[redirects]]
-  from="/docs/data-collection/blockchain-servers/sia"
-  to="/docs/collecting-metrics/blockchain-servers/sia"
-
-[[redirects]]
-  from="/docs/data-collection/blockchain-servers/iota-full-node"
-  to="/docs/collecting-metrics/blockchain-servers/iota-full-node"
 
 [[redirects]]
   from="/docs/data-collection/blockchain-servers/cryptowatch"
@@ -7354,24 +6918,12 @@
   to="/docs/collecting-metrics/authentication-and-authorization/tacacs"
 
 [[redirects]]
-  from="/docs/data-collection/authentication-and-authorization/ssh"
-  to="/docs/collecting-metrics/authentication-and-authorization/ssh"
-
-[[redirects]]
   from="/docs/data-collection/authentication-and-authorization/radius"
   to="/docs/collecting-metrics/authentication-and-authorization/radius"
 
 [[redirects]]
-  from="/docs/data-collection/authentication-and-authorization/ldap"
-  to="/docs/collecting-metrics/authentication-and-authorization/ldap"
-
-[[redirects]]
   from="/docs/data-collection/apm/vscode"
   to="/docs/collecting-metrics/apm/vscode"
-
-[[redirects]]
-  from="/docs/data-collection/apm/jolokia"
-  to="/docs/collecting-metrics/apm/jolokia"
 
 [[redirects]]
   from="/docs/data-collection/apm/gpsd"
@@ -7380,14 +6932,6 @@
 [[redirects]]
   from="/docs/data-collection/apm/google-pagespeed"
   to="/docs/collecting-metrics/apm/google-pagespeed"
-
-[[redirects]]
-  from="/docs/data-collection/apm/bpftrace-variables"
-  to="/docs/collecting-metrics/apm/bpftrace-variables"
-
-[[redirects]]
-  from="/docs/data-collection/apm/audisto"
-  to="/docs/collecting-metrics/apm/audisto"
 
 [[redirects]]
   from="/docs/data-collection/apm/alamos-fe2-server"
