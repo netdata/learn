@@ -128,6 +128,8 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-lighttpd.md	/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/lighttpd-v1.4.x
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-caddy.md	/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/caddy
 https://github.com/netdata/netdata/edit/master/docs/troubleshooting/troubleshoot.md	/docs/netdata-ai/troubleshooting/alert-troubleshooting
+https://github.com/netdata/netdata/edit/master/docs/learn/node-identities.md	/docs/netdata-agent/node-identities
+https://github.com/netdata/netdata/edit/master/docs/learn/vm-templates.md	/docs/netdata-agent/vm-templates
 https://github.com/netdata/netdata/edit/master/docs/learn/switching-install-types.md	/docs/netdata-agent/installation/linux/switch-install-types-and-release-channels
 https://github.com/netdata/netdata/edit/master/docs/learn/remove-node.md	/docs/netdata-cloud/remove-agent
 https://github.com/netdata/netdata/edit/master/docs/install/windows-release-channels.md	/docs/netdata-agent/installation/windows/switching-install-types-and-release-channels
