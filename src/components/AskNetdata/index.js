@@ -322,7 +322,6 @@ const SmartLink = ({ href, children, ...props }) => {
       })
     );
 
-
     
     // Initialize and render Mermaid
     useEffect(() => {

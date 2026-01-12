@@ -126,7 +126,6 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
     );
 
 
-
     useEffect(() => {
       if (!isValidMermaid || renderError || !isContentComplete) {
         return;
