@@ -322,6 +322,9 @@ const SmartLink = ({ href, children, ...props }) => {
         return arrowMatch; // Returns true if line ends with an incomplete arrow
       })
     );
+
+    // Detect Mermaid's built-in error SVG (bomb graphic)
+    const isErrorSvg = (svg) => /syntax error|parse error|error in text/i.test(svg || '');
     
     // Initialize and render Mermaid
     useEffect(() => {
@@ -375,6 +378,13 @@ const SmartLink = ({ href, children, ...props }) => {
           // Use mermaid.render instead of mermaid.run for better control
           const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;
           const { svg } = await mermaid.render(id, trimmedValue);
+          
+          if (isErrorSvg(svg)) {
+            mermaidLog('[Mermaid] ⚠️  Mermaid returned error SVG; falling back to code block');
+            setRenderError(true);
+            setSvgContent(null);
+            return;
+          }
           
           mermaidLog('[Mermaid] ✅ RENDER SUCCESS - SVG generated');
           setSvgContent(svg);

@@ -126,6 +126,9 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
       })
     );
 
+    // Detect Mermaid's built-in error SVG (bomb graphic)
+    const isErrorSvg = (svg) => /syntax error|parse error|error in text/i.test(svg || '');
+
     useEffect(() => {
       if (!isValidMermaid || renderError || !isContentComplete) {
         return;
@@ -154,6 +157,11 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
 
           const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;
           const { svg } = await mermaid.render(id, trimmedValue);
+          if (isErrorSvg(svg)) {
+            setRenderError(true);
+            setSvgContent(null);
+            return;
+          }
           setSvgContent(svg);
         } catch (error) {
           setRenderError(true);
