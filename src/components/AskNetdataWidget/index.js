@@ -109,7 +109,6 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
   const MermaidWrapper = ({ value }) => {
     const mermaidRef = useRef(null);
     const [renderError, setRenderError] = useState(false);
-    const [svgContent, setSvgContent] = useState(null);
     const trimmedValue = value ? value.trim() : '';
     const mermaidTypes = [
       'graph', 'flowchart', 'sequenceDiagram', 'classDiagram', 'stateDiagram',
@@ -126,8 +125,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
       })
     );
 
-    // Detect Mermaid's built-in error SVG (bomb graphic)
-    const isErrorSvg = (svg) => /syntax error|parse error|error in text/i.test(svg || '');
+
 
     useEffect(() => {
       if (!isValidMermaid || renderError || !isContentComplete) {
@@ -152,17 +150,15 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
           mermaid.initialize({
             startOnLoad: false,
             theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default',
-            securityLevel: 'loose'
+            securityLevel: 'loose',
+            suppressErrorRendering: true,
           });
 
-          const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;
-          const { svg } = await mermaid.render(id, trimmedValue);
-          if (isErrorSvg(svg)) {
-            setRenderError(true);
-            setSvgContent(null);
-            return;
+          if (mermaidRef.current) {
+            mermaidRef.current.textContent = trimmedValue;
+            mermaidRef.current.removeAttribute('data-processed');
+            await mermaid.run({ nodes: [mermaidRef.current] });
           }
-          setSvgContent(svg);
         } catch (error) {
           setRenderError(true);
         }
@@ -188,16 +184,15 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
       );
     }
 
-    if (svgContent) {
-      return (
-        <div
-          ref={mermaidRef}
-          className="mermaid-rendered"
-          style={{ textAlign: 'center', margin: '1rem 0' }}
-          dangerouslySetInnerHTML={{ __html: svgContent }}
-        />
-      );
-    }
+    return (
+      <div
+        ref={mermaidRef}
+        className="mermaid"
+        style={{ textAlign: 'center', margin: '1rem 0' }}
+      >
+        {trimmedValue}
+      </div>
+    );
 
     return (
       <div style={{ padding: '1rem', opacity: 0.6, fontStyle: 'italic' }}>

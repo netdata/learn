@@ -297,7 +297,6 @@ const SmartLink = ({ href, children, ...props }) => {
   const MermaidWrapper = ({ value }) => {
     const mermaidRef = useRef(null);
     const [renderError, setRenderError] = useState(false);
-    const [svgContent, setSvgContent] = useState(null);
     
     // Use the value directly without sanitization since LLM provides proper diagrams
     const trimmedValue = value ? value.trim() : '';
@@ -323,8 +322,7 @@ const SmartLink = ({ href, children, ...props }) => {
       })
     );
 
-    // Detect Mermaid's built-in error SVG (bomb graphic)
-    const isErrorSvg = (svg) => /syntax error|parse error|error in text/i.test(svg || '');
+
     
     // Initialize and render Mermaid
     useEffect(() => {
@@ -373,21 +371,16 @@ const SmartLink = ({ href, children, ...props }) => {
             startOnLoad: false,
             theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default',
             securityLevel: 'loose',
+            suppressErrorRendering: true,
           });
           
-          // Use mermaid.render instead of mermaid.run for better control
-          const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;
-          const { svg } = await mermaid.render(id, trimmedValue);
-          
-          if (isErrorSvg(svg)) {
-            mermaidLog('[Mermaid] ⚠️  Mermaid returned error SVG; falling back to code block');
-            setRenderError(true);
-            setSvgContent(null);
-            return;
+          // Set the content and let mermaid render directly to the element
+          if (mermaidRef.current) {
+            mermaidRef.current.textContent = trimmedValue;
+            mermaidRef.current.removeAttribute('data-processed');
+            await mermaid.run({ nodes: [mermaidRef.current] });
+            mermaidLog('[Mermaid] ✅ RENDER SUCCESS');
           }
-          
-          mermaidLog('[Mermaid] ✅ RENDER SUCCESS - SVG generated');
-          setSvgContent(svg);
           
         } catch (error) {
           console.error('[Mermaid] ❌ RENDER FAILED - Error:', error);
@@ -421,24 +414,14 @@ const SmartLink = ({ href, children, ...props }) => {
       );
     }
     
-    // Show the rendered SVG if available, otherwise show loading
-    if (svgContent) {
-      mermaidLog('[Mermaid] 🎯 Displaying rendered SVG');
-      return (
-        <div 
-          ref={mermaidRef} 
-          className="mermaid-rendered" 
-          style={{ textAlign: 'center', margin: '1rem 0' }}
-          dangerouslySetInnerHTML={{ __html: svgContent }}
-        />
-      );
-    }
-    
-    // Show loading state while waiting for complete content or rendering
-    mermaidLog('[Mermaid] ⏳ Showing loading state');
+    // Return the div that mermaid will render into
     return (
-      <div style={{ padding: '1rem', opacity: 0.6, fontStyle: 'italic' }}>
-        Rendering diagram...
+      <div 
+        ref={mermaidRef} 
+        className="mermaid" 
+        style={{ textAlign: 'center', margin: '1rem 0' }}
+      >
+        {trimmedValue}
       </div>
     );
   };
