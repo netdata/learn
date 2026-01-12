@@ -322,7 +322,7 @@ const SmartLink = ({ href, children, ...props }) => {
       })
     );
 
-    
+
     // Initialize and render Mermaid
     useEffect(() => {
       // Only attempt rendering if validation passes and content looks complete
