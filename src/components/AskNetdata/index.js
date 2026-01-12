@@ -16,6 +16,12 @@ import MDXLi from '@theme/MDXComponents/Li';
 import MDXImg from '@theme/MDXComponents/Img';
 import Mermaid from '@theme/Mermaid';
 
+// Toggle verbose Mermaid logging
+const MERMAID_LOG_ENABLED = false;
+const mermaidLog = (...args) => {
+  if (MERMAID_LOG_ENABLED) console.log(...args);
+};
+
 // =============================
 // Ask Netdata Suggestion Groups
 // =============================
@@ -288,12 +294,154 @@ const SmartLink = ({ href, children, ...props }) => {
   };
 
   // Markdown renderer pieces used inside chat messages
+  const MermaidWrapper = ({ value }) => {
+    const mermaidRef = useRef(null);
+    const [renderError, setRenderError] = useState(false);
+    const [svgContent, setSvgContent] = useState(null);
+    
+    // Use the value directly without sanitization since LLM provides proper diagrams
+    const trimmedValue = value ? value.trim() : '';
+    const mermaidTypes = [
+      'graph', 'flowchart', 'sequenceDiagram', 'classDiagram', 'stateDiagram',
+      'erDiagram', 'journey', 'gantt', 'pie', 'gitgraph', 'mindmap', 
+      'timeline', 'sankey', 'block-beta', 'packet-beta', 'architecture-beta'
+    ];
+    
+    // More lenient check: just see if it starts with a known diagram type
+    const isValidMermaid = trimmedValue && 
+      mermaidTypes.some(type => {
+        // Case-insensitive match at start of string
+        return new RegExp(`^${type}\\b`, 'i').test(trimmedValue);
+      });
+    
+    // Check if the diagram content looks complete (has multiple lines with node definitions)
+    const isContentComplete = trimmedValue && (
+      // Check if all lines with arrows have destinations
+      !trimmedValue.split('\n').some(line => {
+        const arrowMatch = line.match(/--[->](?:\|[^|]+\|)?$/);
+        return arrowMatch; // Returns true if line ends with an incomplete arrow
+      })
+    );
+    
+    // Initialize and render Mermaid
+    useEffect(() => {
+      // Only attempt rendering if validation passes and content looks complete
+      if (!isValidMermaid || renderError || !isContentComplete) {
+        if (!isValidMermaid) {
+          mermaidLog('[Mermaid] ⏭️  Skipping - validation failed');
+        } else if (!isContentComplete) {
+          mermaidLog('[Mermaid] ⏳ Waiting for complete content... Current length:', trimmedValue.length);
+        }
+        return;
+      }
+      
+      const renderDiagram = async () => {
+        try {
+          mermaidLog('[Mermaid] 🔍 Checking for mermaid library...');
+          
+          // Try to load mermaid from window or import
+          let mermaid = null;
+          if (typeof window !== 'undefined' && window.mermaid) {
+            mermaid = window.mermaid;
+            mermaidLog('[Mermaid] ✓ Found mermaid on window object');
+          } else {
+            mermaidLog('[Mermaid] ⚠️  Mermaid not found on window, trying dynamic import...');
+            try {
+              const mermaidModule = await import('mermaid');
+              mermaid = mermaidModule.default || mermaidModule;
+              mermaidLog('[Mermaid] ✓ Loaded mermaid via dynamic import');
+            } catch (importError) {
+              console.error('[Mermaid] ❌ Failed to import mermaid:', importError);
+            }
+          }
+          
+          if (!mermaid) {
+            console.error('[Mermaid] ❌ Mermaid library not available');
+            setRenderError(true);
+            return;
+          }
+          
+          mermaidLog('[Mermaid] 🎨 Attempting to render diagram');
+          mermaidLog('[Mermaid] Diagram lines:', trimmedValue.split('\n').length);
+          mermaidLog('[Mermaid] First 200 chars:', trimmedValue.substring(0, 200));
+          
+          // Initialize mermaid
+          mermaid.initialize({ 
+            startOnLoad: false,
+            theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default',
+            securityLevel: 'loose',
+          });
+          
+          // Use mermaid.render instead of mermaid.run for better control
+          const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;
+          const { svg } = await mermaid.render(id, trimmedValue);
+          
+          mermaidLog('[Mermaid] ✅ RENDER SUCCESS - SVG generated');
+          setSvgContent(svg);
+          
+        } catch (error) {
+          console.error('[Mermaid] ❌ RENDER FAILED - Error:', error);
+          console.error('[Mermaid] Error details:', error.message || error.str);
+          console.warn('[Mermaid] Diagram content that failed:', trimmedValue);
+          setRenderError(true);
+        }
+      };
+      
+      // Delay to ensure content is complete and DOM is ready
+      const timer = setTimeout(renderDiagram, 300);
+      return () => clearTimeout(timer);
+    }, [trimmedValue, isValidMermaid, renderError, isContentComplete]);
+    
+    // If we already encountered a render error, show code block
+    if (renderError) {
+      mermaidLog('[Mermaid] 📦 Showing code block due to render error');
+      return (
+        <CodeBlock language="mermaid">
+          {value || ''}
+        </CodeBlock>
+      );
+    }
+    
+    // Fallback to code block if validation fails
+    if (!isValidMermaid) {
+      return (
+        <CodeBlock language="mermaid">
+          {value || ''}
+        </CodeBlock>
+      );
+    }
+    
+    // Show the rendered SVG if available, otherwise show loading
+    if (svgContent) {
+      mermaidLog('[Mermaid] 🎯 Displaying rendered SVG');
+      return (
+        <div 
+          ref={mermaidRef} 
+          className="mermaid-rendered" 
+          style={{ textAlign: 'center', margin: '1rem 0' }}
+          dangerouslySetInnerHTML={{ __html: svgContent }}
+        />
+      );
+    }
+    
+    // Show loading state while waiting for complete content or rendering
+    mermaidLog('[Mermaid] ⏳ Showing loading state');
+    return (
+      <div style={{ padding: '1rem', opacity: 0.6, fontStyle: 'italic' }}>
+        Rendering diagram...
+      </div>
+    );
+  };
+
   const CodeBlockWrapper = ({ inline, className, children, ...props }) => {
     const match = /language-(\w+)/.exec(className || '');
     const content = Array.isArray(children) ? children.join('') : (children || '');
     if (!inline) {
       if (match) {
         const language = match[1];
+        if (language === 'mermaid') {
+          return <MermaidWrapper value={String(content).replace(/\n$/, '')} />;
+        }
         return (
           <CodeBlock language={language}>
             {String(content).replace(/\n$/, '')}

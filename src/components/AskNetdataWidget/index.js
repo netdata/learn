@@ -4,6 +4,7 @@ import remarkGfm from 'remark-gfm';
 import Link from '@docusaurus/Link';
 import { useHistory } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
+import CodeBlock from '@theme/CodeBlock';
 // Centralized Ask Netdata color constants
 import { ASKNET_PRIMARY, ASKNET_SECOND, rgba, rgbString, OPACITY } from '../AskNetdata/colors';
 
@@ -101,6 +102,119 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
       <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
         {children}
       </a>
+    );
+  };
+
+  // Mermaid renderer (mirrors main AskNetdata component)
+  const MermaidWrapper = ({ value }) => {
+    const mermaidRef = useRef(null);
+    const [renderError, setRenderError] = useState(false);
+    const [svgContent, setSvgContent] = useState(null);
+    const trimmedValue = value ? value.trim() : '';
+    const mermaidTypes = [
+      'graph', 'flowchart', 'sequenceDiagram', 'classDiagram', 'stateDiagram',
+      'erDiagram', 'journey', 'gantt', 'pie', 'gitgraph', 'mindmap',
+      'timeline', 'sankey', 'block-beta', 'packet-beta', 'architecture-beta'
+    ];
+
+    const isValidMermaid = trimmedValue && mermaidTypes.some(type => new RegExp(`^${type}\\b`, 'i').test(trimmedValue));
+
+    const isContentComplete = trimmedValue && (
+      !trimmedValue.split('\n').some(line => {
+        const arrowMatch = line.match(/--[->](?:\|[^|]+\|)?$/);
+        return arrowMatch;
+      })
+    );
+
+    useEffect(() => {
+      if (!isValidMermaid || renderError || !isContentComplete) {
+        return;
+      }
+
+      const renderDiagram = async () => {
+        try {
+          let mermaid = null;
+          if (typeof window !== 'undefined' && window.mermaid) {
+            mermaid = window.mermaid;
+          } else {
+            const mermaidModule = await import('mermaid');
+            mermaid = mermaidModule.default || mermaidModule;
+          }
+
+          if (!mermaid) {
+            setRenderError(true);
+            return;
+          }
+
+          mermaid.initialize({
+            startOnLoad: false,
+            theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default',
+            securityLevel: 'loose'
+          });
+
+          const id = `mermaid-${Math.random().toString(36).substr(2, 9)}`;
+          const { svg } = await mermaid.render(id, trimmedValue);
+          setSvgContent(svg);
+        } catch (error) {
+          setRenderError(true);
+        }
+      };
+
+      const timer = setTimeout(renderDiagram, 300);
+      return () => clearTimeout(timer);
+    }, [trimmedValue, isValidMermaid, renderError, isContentComplete]);
+
+    if (renderError) {
+      return (
+        <CodeBlock language="mermaid">
+          {value || ''}
+        </CodeBlock>
+      );
+    }
+
+    if (!isValidMermaid) {
+      return (
+        <CodeBlock language="mermaid">
+          {value || ''}
+        </CodeBlock>
+      );
+    }
+
+    if (svgContent) {
+      return (
+        <div
+          ref={mermaidRef}
+          className="mermaid-rendered"
+          style={{ textAlign: 'center', margin: '1rem 0' }}
+          dangerouslySetInnerHTML={{ __html: svgContent }}
+        />
+      );
+    }
+
+    return (
+      <div style={{ padding: '1rem', opacity: 0.6, fontStyle: 'italic' }}>
+        Rendering diagram...
+      </div>
+    );
+  };
+
+  const CodeBlockWrapper = ({ inline, className, children, ...props }) => {
+    const match = /language-(\w+)/.exec(className || '');
+    const content = Array.isArray(children) ? children.join('') : (children || '');
+    if (!inline) {
+      if (match && match[1].toLowerCase() === 'mermaid') {
+        return <MermaidWrapper value={content} />;
+      }
+      return (
+        <CodeBlock className={className || ''} {...props}>
+          {content}
+        </CodeBlock>
+      );
+    }
+    return (
+      <code style={{ background: isDarkMode?'rgba(255,255,255,0.08)':'#f1f5f9', padding:'2px 6px', borderRadius:4, fontSize:13 }} {...props}>
+        {children}
+      </code>
     );
   };
 
@@ -1120,7 +1234,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm]}
                     components={{
-                      code: ({inline, className, children, ...props}) => <code style={{ background: isDarkMode?'rgba(255,255,255,0.08)':'#f1f5f9', padding:'2px 6px', borderRadius:4, fontSize:13 }} {...props}>{children}</code>,
+                      code: CodeBlockWrapper,
                       a: ({href, children, ...props}) => (
                         <SmartLink href={href} style={{ color: currentAccent, textDecoration:'none', borderBottom:`1px solid ${currentAccent}` }} {...props}>
                           {children}
