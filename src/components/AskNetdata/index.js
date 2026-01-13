@@ -313,9 +313,11 @@ const SmartLink = ({ href, children, ...props }) => {
         return new RegExp(`^${type}\\b`, 'i').test(trimmedValue);
       });
     
-    // Check if the diagram content looks complete (has multiple lines with node definitions)
+    // Check if the diagram content is complete - must have at least one diagram type and NO incomplete arrows
     const isContentComplete = trimmedValue && (
-      // Check if all lines with arrows have destinations
+      // Must start with a diagram type
+      mermaidTypes.some(type => new RegExp(`^${type}\\b`, 'i').test(trimmedValue)) &&
+      // Must not have lines ending with incomplete arrows
       !trimmedValue.split('\n').some(line => {
         const arrowMatch = line.match(/--[->](?:\|[^|]+\|)?$/);
         return arrowMatch; // Returns true if line ends with an incomplete arrow
@@ -323,7 +325,6 @@ const SmartLink = ({ href, children, ...props }) => {
     );
 
 
-    
     // Initialize and render Mermaid
     useEffect(() => {
       // Only attempt rendering if validation passes and content looks complete
@@ -379,7 +380,7 @@ const SmartLink = ({ href, children, ...props }) => {
             mermaidRef.current.textContent = trimmedValue;
             mermaidRef.current.removeAttribute('data-processed');
             await mermaid.run({ nodes: [mermaidRef.current] });
-            mermaidLog('[Mermaid] ✅ RENDER SUCCESS');
+            console.log('[Mermaid] ✅ Successfully rendered mermaid diagram');
           }
           
         } catch (error) {
@@ -391,7 +392,8 @@ const SmartLink = ({ href, children, ...props }) => {
       };
       
       // Delay to ensure content is complete and DOM is ready
-      const timer = setTimeout(renderDiagram, 300);
+      // Large diagrams need more time to stream in completely
+      const timer = setTimeout(renderDiagram, 1000);
       return () => clearTimeout(timer);
     }, [trimmedValue, isValidMermaid, renderError, isContentComplete]);
     
@@ -429,35 +431,26 @@ const SmartLink = ({ href, children, ...props }) => {
   const CodeBlockWrapper = ({ inline, className, children, ...props }) => {
     const match = /language-(\w+)/.exec(className || '');
     const content = Array.isArray(children) ? children.join('') : (children || '');
-    if (!inline) {
-      if (match) {
-        const language = match[1];
-        if (language === 'mermaid') {
-          return <MermaidWrapper value={String(content).replace(/\n$/, '')} />;
-        }
-        return (
-          <CodeBlock language={language}>
-            {String(content).replace(/\n$/, '')}
-          </CodeBlock>
-        );
-      }
-      return (
-        <CodeBlock>
-          {String(content).replace(/\n$/, '')}
-        </CodeBlock>
-      );
+    
+    // Handle Mermaid diagrams
+    if (!inline && match && match[1] === 'mermaid') {
+      console.log('[Mermaid] 📊 Attempting to render mermaid diagram, type:', match[1]);
+      return <MermaidWrapper value={String(content).replace(/\n$/, '')} />;
     }
+    
+    // Use MDXCode for all other cases to apply Docusaurus styling
     return <MDXCode {...props}>{children}</MDXCode>;
   };
 
-  const MessageContent = ({ content }) => (
-    <div className="theme-doc-markdown markdown" style={{ 
-      maxWidth: '100%',
-      width: '100%',
-      boxSizing: 'border-box',
-      overflowX: 'auto',
-      overflowY: 'visible'
-    }}>
+  const MessageContent = ({ content }) => {
+    return (
+      <div className="theme-doc-markdown markdown" style={{ 
+        maxWidth: '100%',
+        width: '100%',
+        boxSizing: 'border-box',
+        overflowX: 'auto',
+        overflowY: 'visible'
+      }}>
       <style>{`
         .theme-doc-markdown {
           width: 100% !important;
@@ -540,20 +533,14 @@ const SmartLink = ({ href, children, ...props }) => {
       <ReactMarkdown 
         remarkPlugins={[remarkGfm]}
         components={{
-          p: ParagraphWrapper,
           code: CodeBlockWrapper,
-          a: SmartLink,
-          h1: 'h3',
-          h2: 'h4', 
-          h3: 'h5',
-          h4: 'h6',
-          h5: 'h6',
-          h6: 'h6'
+          a: SmartLink
         }}>
         {content}
       </ReactMarkdown>
     </div>
-  );
+    );
+  };
 
 // Configuration: Number of conversation pairs (user + assistant messages) to send as context
 const MAX_CONVERSATION_PAIRS = 3;
@@ -3028,9 +3015,8 @@ export default function AskNetdata() {
                             onMouseLeave={() => setHoveredButton(null)}
                             onClick={async () => {
                               try {
-                                const temp = document.createElement('div');
-                                temp.innerHTML = (message.content || '');
-                                const plain = temp.textContent || temp.innerText || '';
+                                // Copy the raw markdown content directly without HTML conversion
+                                const plain = message.content || '';
                                 await navigator.clipboard.writeText(plain);
                                 // show transient copied state
                                 setCopiedState(prev => ({ ...prev, [message.id]: true }));

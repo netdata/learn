@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import { useHistory } from '@docusaurus/router';
 import { useColorMode } from '@docusaurus/theme-common';
 import CodeBlock from '@theme/CodeBlock';
+import MDXCode from '@theme/MDXComponents/Code';
 // Centralized Ask Netdata color constants
 import { ASKNET_PRIMARY, ASKNET_SECOND, rgba, rgbString, OPACITY } from '../AskNetdata/colors';
 
@@ -119,12 +120,14 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
     const isValidMermaid = trimmedValue && mermaidTypes.some(type => new RegExp(`^${type}\\b`, 'i').test(trimmedValue));
 
     const isContentComplete = trimmedValue && (
+      // Must start with a diagram type
+      mermaidTypes.some(type => new RegExp(`^${type}\\b`, 'i').test(trimmedValue)) &&
+      // Must not have lines ending with incomplete arrows
       !trimmedValue.split('\n').some(line => {
         const arrowMatch = line.match(/--[->](?:\|[^|]+\|)?$/);
         return arrowMatch;
       })
     );
-
 
 
     useEffect(() => {
@@ -158,13 +161,14 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
             mermaidRef.current.textContent = trimmedValue;
             mermaidRef.current.removeAttribute('data-processed');
             await mermaid.run({ nodes: [mermaidRef.current] });
+            console.log('[Mermaid] ✅ Successfully rendered mermaid diagram');
           }
         } catch (error) {
           setRenderError(true);
         }
       };
 
-      const timer = setTimeout(renderDiagram, 300);
+      const timer = setTimeout(renderDiagram, 1000);
       return () => clearTimeout(timer);
     }, [trimmedValue, isValidMermaid, renderError, isContentComplete]);
 
@@ -204,21 +208,14 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
   const CodeBlockWrapper = ({ inline, className, children, ...props }) => {
     const match = /language-(\w+)/.exec(className || '');
     const content = Array.isArray(children) ? children.join('') : (children || '');
-    if (!inline) {
-      if (match && match[1].toLowerCase() === 'mermaid') {
-        return <MermaidWrapper value={content} />;
-      }
-      return (
-        <CodeBlock className={className || ''} {...props}>
-          {content}
-        </CodeBlock>
-      );
+    
+    // Only handle Mermaid specially
+    if (!inline && match && match[1].toLowerCase() === 'mermaid') {
+      return <MermaidWrapper value={content} />;
     }
-    return (
-      <code style={{ background: isDarkMode?'rgba(255,255,255,0.08)':'#f1f5f9', padding:'2px 6px', borderRadius:4, fontSize:13 }} {...props}>
-        {children}
-      </code>
-    );
+    
+    // Use MDXCode for all other cases to apply Docusaurus styling
+    return <MDXCode {...props}>{children}</MDXCode>;
   };
 
   // Core state
@@ -1242,12 +1239,7 @@ export default function AskNetdataWidget({ pillHeight = 40, pillMaxWidth = 50, o
                         <SmartLink href={href} style={{ color: currentAccent, textDecoration:'none', borderBottom:`1px solid ${currentAccent}` }} {...props}>
                           {children}
                         </SmartLink>
-                      ),
-                      p: (p)=> <p style={{ margin:'0 0 12px 0' }}>{p.children}</p>,
-                      ul: (p)=> <ul style={{ margin:'0 0 14px 20px' }}>{p.children}</ul>,
-                      ol: (p)=> <ol style={{ margin:'0 0 14px 22px' }}>{p.children}</ol>,
-                      li: (p)=> <li style={{ marginBottom:6 }}>{p.children}</li>,
-                      h1:'h3', h2:'h4', h3:'h5'
+                      )
                     }}
                   >{m.content}</ReactMarkdown>
                 ) : (
