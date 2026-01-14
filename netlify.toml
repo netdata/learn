@@ -4314,14 +4314,6 @@
   to="/docs/collecting-metrics/observability/dynatrace"
 
 [[redirects]]
-  from="/docs/data-collection/systemd-journal"
-  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
-
-[[redirects]]
-  from="/docs/logs/systemd-journal/active-journal-centralization-without-encryption"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
-
-[[redirects]]
   from="/docs/agent/backends"
   to="/docs/exporting-metrics"
 
@@ -4472,10 +4464,6 @@
 [[redirects]]
   from="/docs/miscellaneous/glossary"
   to="/docs/developer-and-contributor-corner/glossary"
-
-[[redirects]]
-  from="/docs/logs/systemd-journal/active-journal-source-without-encryption"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
 
 [[redirects]]
   from="/docs/installing/static-binary-linux-packages"
@@ -4892,14 +4880,6 @@
 [[redirects]]
   from="/docs/ml-and-troubleshooting"
   to="/docs/netdata-ai"
-
-[[redirects]]
-  from="/docs/logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
-  to="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
-
-[[redirects]]
-  from="/docs/logs/systemd-journal"
-  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
 
 [[redirects]]
   from="/docs/logs/systemd-cat-native"
@@ -7614,14 +7594,6 @@
   to="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
 
 [[redirects]]
-  from="/docs/working-with-logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
-  to="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
-
-[[redirects]]
-  from="/docs/working-with-logs/systemd-journal"
-  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
-
-[[redirects]]
   from="/docs/working-with-logs/systemd-cat-native"
   to="/docs/logs/systemd-cat-native"
 
@@ -7928,10 +7900,6 @@
 [[redirects]]
   from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
   to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
-
-[[redirects]]
-  from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
 
 [[redirects]]
   from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald"
