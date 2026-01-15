@@ -105,6 +105,9 @@ https://github.com/netdata/netdata/edit/master/docs/ml-ai/anomaly-advisor.md	/do
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-insights.md	/docs/netdata-ai/insights
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-anomaly-detection.md	/docs/netdata-ai/anomaly-detection
 https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-accuracy.md	/docs/netdata-ai/anomaly-detection/ml-accuracy
+https://github.com/netdata/netdata/edit/master/docs/logs/forward_secure_sealing.md	/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal
+https://github.com/netdata/netdata/edit/master/docs/logs/active_journal_centralization_guide_no_encryption.md	/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption
+https://github.com/netdata/netdata/edit/master/docs/logs/README.md	/docs/logs/systemd-journal-logs/journal-viewer-plugin
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/start-stop-restart.md	/docs/netdata-agent/maintenance/service-control
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/versions-and-platforms.md	/docs/netdata-agent/versions-&-platforms
 https://github.com/netdata/netdata/edit/master/docs/netdata-agent/securing-netdata-agents.md	/docs/netdata-agent/configuration/securing-agents
@@ -358,9 +361,6 @@ https://github.com/netdata/netdata/edit/master/src/collectors/tc.plugin/README.m
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/libreswan/README.md	/docs/collecting-metrics/vpns/libreswan
 https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/opensips/README.md	/docs/collecting-metrics/telephony-servers/opensips
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md	/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/active_journal_centralization_guide_no_encryption.md	/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption
-https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md	/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference
 https://github.com/netdata/netdata/edit/master/src/collectors/profile.plugin/README.md	/docs/developer-and-contributor-corner/external-plugins/profile.plugin
 https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/getifaddrs.md	/docs/collecting-metrics/freebsd/getifaddrs
 https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.inet.tcp.stats.md	/docs/collecting-metrics/freebsd/net.inet.tcp.stats
@@ -742,7 +742,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/yuga
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dmcache/README.md	/docs/collecting-metrics/storage,-mount-points-and-filesystems/dmcache-devices
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/docs/how-to-write-a-module.md	/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go
 https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md	/docs/netdata-ai/anomaly-detection/ml-configuration
-https://github.com/netdata/netdata/edit/master/src/crates/jf/otel-plugin/README.md	/docs/collecting-metrics/opentelemetry/opentelemetry-metrics
+https://github.com/netdata/netdata/edit/master/src/crates/netdata-otel/otel-plugin/README.md	/docs/collecting-metrics/opentelemetry/opentelemetry-metrics
 https://github.com/netdata/netdata/edit/master/src/database/CONFIGURATION.md	/docs/netdata-agent/configuration/database
 https://github.com/netdata/netdata/edit/master/src/database/README.md	/docs/netdata-agent/database
 https://github.com/netdata/netdata/edit/master/src/database/engine/README.md	/docs/developer-and-contributor-corner/database-engine
