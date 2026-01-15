@@ -1,4 +1,5 @@
 custom_edit_url	learn_path
+https://github.com/netdata/netdata-cloud-onprem/edit/master/netdata-cloud-onprem/RELEASE-NOTES.md	/docs/netdata-cloud-on-prem/release-notes
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/hardening-guide.md	/docs/netdata-cloud-on-prem/security-hardening-guide
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/troubleshooting.md	/docs/netdata-cloud-on-prem/troubleshooting
 https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/ecr-mirror.md	/docs/netdata-cloud-on-prem/mirroring-image-registry
