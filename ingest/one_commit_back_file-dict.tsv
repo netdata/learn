@@ -545,6 +545,7 @@ https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dock
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/intelgpu/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/intel-gpu
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/filecheck/README.md	/docs/collecting-metrics/other/files-and-directories
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/httpcheck/README.md	/docs/collecting-metrics/synthetic-checks/http-endpoints
+https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/mssql/README.md	/docs/collecting-metrics/databases/microsoft-sql-server
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/tomcat/README.md	/docs/collecting-metrics/web-servers-and-web-proxies/tomcat
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/systemdunits/README.md	/docs/collecting-metrics/systemd/systemd-units
 https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/smartctl/README.md	/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t.
