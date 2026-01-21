@@ -79,6 +79,7 @@ https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/not
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/centralized-cloud-notifications/manage-notification-methods.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-notification-methods
 https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference.md	/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference
+https://github.com/netdata/netdata/edit/master/docs/netdata-ai/conversations.md	/docs/netdata-ai/conversations
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/ai-chat-netdata.md	/docs/netdata-ai/mcp/chat-with-netdata
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/README.md	/docs/netdata-ai/mcp
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/codex-cli.md	/docs/netdata-ai/mcp/mcp-clients/openai-codex-cli
@@ -92,12 +93,12 @@ https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/o
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/cursor.md	/docs/netdata-ai/mcp/mcp-clients/cursor
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-code.md	/docs/netdata-ai/mcp/mcp-clients/claude-code
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/jetbrains-ides.md	/docs/netdata-ai/mcp/mcp-clients/jetbrains-ides
+https://github.com/netdata/netdata/edit/master/docs/netdata-ai/alerts-automation/alerts-automation.md	/docs/netdata-ai/alerts-automation
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/anomaly-analysis.md	/docs/netdata-ai/insights/anomaly-analysis
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/performance-optimization.md	/docs/netdata-ai/insights/performance-optimization
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/capacity-planning.md	/docs/netdata-ai/insights/capacity-planning
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/infrastructure-summary.md	/docs/netdata-ai/insights/infrastructure-summary
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/scheduled-reports.md	/docs/netdata-ai/insights/scheduled-reports
-https://github.com/netdata/netdata/edit/master/docs/netdata-ai/troubleshooting/troubleshoot-button.md	/docs/netdata-ai/troubleshooting/troubleshoot-button
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/troubleshooting/index.md	/docs/netdata-ai/troubleshooting
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/investigations/scheduled-investigations.md	/docs/netdata-ai/investigations/scheduled-investigations
 https://github.com/netdata/netdata/edit/master/docs/netdata-ai/investigations/custom-investigations.md	/docs/netdata-ai/investigations/custom-investigations
@@ -155,7 +156,6 @@ https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/visual
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/home-tab.md	/docs/dashboards-and-charts/tabs
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/alerts-tab.md	/docs/dashboards-and-charts/tabs/alerts
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/anomaly-advisor-tab.md	/docs/dashboards-and-charts/tabs/anomalies
-https://github.com/netdata/netdata/edit/master/docs/ai-powered-alert-configuration/ai-powered-alert-configuration.md	/docs/netdata-ai/ai-powered-alert-configuration
 https://github.com/netdata/netdata/edit/master/docs/functions/processes.md	/docs/top-consumers/processes
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	/docs/netdata-cloud
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-rule-based-room-assignment.md	/docs/netdata-cloud/spaces-and-rooms/node-rule-based-room-assignment
