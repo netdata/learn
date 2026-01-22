@@ -192,6 +192,8 @@ https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication
 https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md	/docs/developer-and-contributor-corner/health-command-api-tester
 https://github.com/netdata/netdata/edit/master/src/health/README.md	/docs/alerts-&-notifications
 https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md	/docs/alerts-&-notifications/alert-configuration-reference
+https://github.com/netdata/netdata/edit/master/src/health/alert-configuration-ordering.md	/docs/alerts-&-notifications/alert-configuration-ordering
+https://github.com/netdata/netdata/edit/master/src/health/overriding-stock-alerts.md	/docs/alerts-&-notifications/overriding-stock-alerts
 https://github.com/netdata/netdata/edit/master/src/health/notifications/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/agent-notifications-reference
 https://github.com/netdata/netdata/edit/master/src/health/notifications/smstools3/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/sms
 https://github.com/netdata/netdata/edit/master/src/health/notifications/matrix/README.md	/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/matrix
