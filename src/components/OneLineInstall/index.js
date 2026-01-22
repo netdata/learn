@@ -1,205 +1,122 @@
-import React, { useState } from 'react';
-import Link from '@docusaurus/Link'
-import clsx from 'clsx';
+import React, { useMemo, useState } from "react";
+import Link from "@docusaurus/Link";
+import clsx from "clsx";
+import CodeBlock from "@theme/CodeBlock";
 
-import CodeBlock from '@theme/CodeBlock'
+import styles from "./styles.module.css";
 
-import styles from './styles.module.css'; 
-
-export function OneLineInstallWget() {
-  const [currentCommandUpdates, setCurrentCommandUpdates] = useState('');
-  const [currentCommandRelease, setCurrentCommandRelease] = useState('');
-  const [currentCommandStatistics, setCurrentCommandStatistics] = useState('');
-  const [currentCloudOption, setCurrentCloudOption] = useState('');
-  const [updatesChecked, setUpdatesChecked] = useState(true);
-  const [releaseChecked, setReleaseChecked] = useState(true);
-  const [statsChecked, setStatsChecked] = useState(true);
-  const [cloudChecked, setCloudChecked] = useState(false);
-
-  let currentCommand = `wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}${currentCloudOption}`;
-  const lang = `bash`
-
-  function handleUpdatesChange() {
-    if (currentCommandUpdates === '' && updatesChecked == true) {
-      setCurrentCommandUpdates(' --no-updates');
-      setUpdatesChecked(false);
-    } else {
-      setCurrentCommandUpdates('');
-      setUpdatesChecked(true);
+export function OneLineInstall({
+  method = "wget", // "wget" | "curl"
+  privacyLink = "/docs/deployment-in-production/security-and-privacy-design",
+  connectLink = "/docs/getting-started/monitor-your-infrastructure/connect-agent-to-cloud",
+  defaultUpdatesEnabled = true,
+  defaultNightlyEnabled = true, // nightly == default; stable toggle flips this
+  defaultTelemetryEnabled = true,
+  defaultCloudEnabled = false,
+  claimTokenPlaceholder = "YOUR_CLAIM_TOKEN",
+}) {
+  // Base command depends on method
+  const baseCommand = useMemo(() => {
+    if (method === "curl") {
+      return "curl https://get.netdata.cloud/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh";
     }
-  }
+    // default: wget
+    return "wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh";
+  }, [method]);
 
-  function handleReleaseChange() {
-    if (currentCommandRelease === '' && releaseChecked == true) {
-      setCurrentCommandRelease(' --stable-channel');
-      setReleaseChecked(false);
-    } else {
-      setCurrentCommandRelease('');
-      setReleaseChecked(true);
-    }
-  }
+  // Checkboxes reflect *enabled* state (like your original code)
+  const [updatesEnabled, setUpdatesEnabled] = useState(!!defaultUpdatesEnabled);
+  const [nightlyEnabled, setNightlyEnabled] = useState(!!defaultNightlyEnabled);
+  const [telemetryEnabled, setTelemetryEnabled] = useState(!!defaultTelemetryEnabled);
+  const [cloudEnabled, setCloudEnabled] = useState(!!defaultCloudEnabled);
 
-  function handleStatisticsChange() {
-    if (currentCommandStatistics === '' && statsChecked == true) {
-      setCurrentCommandStatistics(' --disable-telemetry');
-      setStatsChecked(false);
-    } else {
-      setCurrentCommandStatistics('');
-      setStatsChecked(true);
-    }
-  }
+  // Build flags from enabled state
+  const flags = useMemo(() => {
+    const parts = [];
 
-  function handleCloudChange() {
-    if (currentCloudOption === '' && cloudChecked == false) {
-      setCurrentCloudOption(' --claim-token YOUR_CLAIM_TOKEN');
-      setCloudChecked(true);
-    } else {
-      setCurrentCloudOption('');
-      setCloudChecked(false);
-    }
-  }
+    // If updates are disabled => add --no-updates
+    if (!updatesEnabled) parts.push("--no-updates");
+
+    // If nightly is disabled => stable channel
+    if (!nightlyEnabled) parts.push("--stable-channel");
+
+    // If telemetry is disabled => disable telemetry
+    if (!telemetryEnabled) parts.push("--disable-telemetry");
+
+    // If cloud is enabled => add claim token placeholder
+    if (cloudEnabled) parts.push(`--claim-token ${claimTokenPlaceholder}`);
+
+    return parts.length ? " " + parts.join(" ") : "";
+  }, [updatesEnabled, nightlyEnabled, telemetryEnabled, cloudEnabled, claimTokenPlaceholder]);
+
+  const currentCommand = `${baseCommand}${flags}`;
+
+  // Unique-ish ids so multiple instances on a page don't clash
+  const idPrefix = useMemo(() => `oli_${method}_${Math.random().toString(36).slice(2, 8)}`, [method]);
 
   return (
-    <div className={clsx('relative overflow-hidden mt-8 mb-8 rounded-tr rounded-tl', styles.Container)}>
+    <div className={clsx("relative overflow-hidden mt-8 mb-8 rounded-tr rounded-tl", styles.Container)}>
       <div className="text-lg lg:text-xl">
-        <CodeBlock className="bash">
-          {currentCommand}
-        </CodeBlock>
+        <CodeBlock className="bash">{currentCommand}</CodeBlock>
       </div>
+
       <div className="z-10 relative -t-2 p-6 border-l border-b border-r border-gray-200 rounded-br rounded-bl dark:bg-gray-darkbg dark:border-gray-500">
         <div className="py-1 flex items-center">
-          <input 
-            onChange={handleUpdatesChange}
-            checked={updatesChecked}
-            type="checkbox" 
-            id="toggle__updates"/>
-          <label htmlFor="toggle__updates" className="relative text-sm pl-2">Do you want automatic updates? <code>default: enabled</code></label>
+          <input
+            onChange={() => setUpdatesEnabled((v) => !v)}
+            checked={updatesEnabled}
+            type="checkbox"
+            id={`${idPrefix}__updates`}
+          />
+          <label htmlFor={`${idPrefix}__updates`} className="relative text-sm pl-2">
+            Do you want automatic updates? <code>default: enabled</code>
+          </label>
         </div>
-        <div className="py-1 flex items-center">
-          <input 
-            onChange={handleReleaseChange}
-            checked={releaseChecked}
-            type="checkbox" 
-            id="toggle__type" />
-          <label htmlFor="toggle__type" className="relative text-sm pl-2">Do you want nightly or stable releases? <code>default: nightly</code></label>
-        </div>
-        <div className="py-1 flex items-center">
-          <input 
-            onChange={handleStatisticsChange}
-            checked={statsChecked}
-            type="checkbox" 
-            id="toggle__stats" />
-          <label htmlFor="toggle__stats" className="relative text-sm pl-2">Do you want to contribute <Link to="/docs/deployment-in-production/security-and-privacy-design" className="hover:text-blue">anonymous statistics?</Link> <code>default: enabled</code></label>
-        </div>
+
         <div className="py-1 flex items-center">
           <input
-            onChange={handleCloudChange}
-            checked={cloudChecked}
+            onChange={() => setNightlyEnabled((v) => !v)}
+            checked={nightlyEnabled}
             type="checkbox"
-            id="toggle__cloud" />
-          <label htmlFor="toggle__cloud" className="relative text-sm pl-2">Do you want to <Link to="/docs/netdata-cloud/connect-agent" className="hover:text-blue">connect</Link> the node to Netdata Cloud?<code>default: disabled</code></label>
+            id={`${idPrefix}__type`}
+          />
+          <label htmlFor={`${idPrefix}__type`} className="relative text-sm pl-2">
+            Do you want nightly or stable releases? <code>default: nightly</code>
+          </label>
+        </div>
+
+        <div className="py-1 flex items-center">
+          <input
+            onChange={() => setTelemetryEnabled((v) => !v)}
+            checked={telemetryEnabled}
+            type="checkbox"
+            id={`${idPrefix}__stats`}
+          />
+          <label htmlFor={`${idPrefix}__stats`} className="relative text-sm pl-2">
+            Do you want to contribute{" "}
+            <Link to={privacyLink} className="hover:text-blue">
+              anonymous statistics?
+            </Link>{" "}
+            <code>default: enabled</code>
+          </label>
+        </div>
+
+        <div className="py-1 flex items-center">
+          <input
+            onChange={() => setCloudEnabled((v) => !v)}
+            checked={cloudEnabled}
+            type="checkbox"
+            id={`${idPrefix}__cloud`}
+          />
+          <label htmlFor={`${idPrefix}__cloud`} className="relative text-sm pl-2">
+            Do you want to{" "}
+            <Link to={connectLink} className="hover:text-blue">
+              connect
+            </Link>{" "}
+            the node to Netdata Cloud? <code>default: disabled</code>
+          </label>
         </div>
       </div>
     </div>
-  )
-}
-
-
-export function OneLineInstallCurl() {
-  const [currentCommandUpdates, setCurrentCommandUpdates] = useState('');
-  const [currentCommandRelease, setCurrentCommandRelease] = useState('');
-  const [currentCommandStatistics, setCurrentCommandStatistics] = useState('');
-  const [currentCloudOption, setCurrentCloudOption] = useState('');
-  const [updatesChecked, setUpdatesChecked] = useState(true);
-  const [releaseChecked, setReleaseChecked] = useState(true);
-  const [statsChecked, setStatsChecked] = useState(true);
-  const [cloudChecked, setCloudChecked] = useState(false);
-
-  let currentCommand = `curl https://get.netdata.cloud/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh${currentCommandUpdates}${currentCommandRelease}${currentCommandStatistics}${currentCloudOption}`;
-  const lang = `bash`
-
-  function handleUpdatesChange() {
-    if (currentCommandUpdates === '' && updatesChecked == true) {
-      setCurrentCommandUpdates(' --no-updates');
-      setUpdatesChecked(false);
-    } else {
-      setCurrentCommandUpdates('');
-      setUpdatesChecked(true);
-    }
-  }
-
-  function handleReleaseChange() {
-    if (currentCommandRelease === '' && releaseChecked == true) {
-      setCurrentCommandRelease(' --stable-channel');
-      setReleaseChecked(false);
-    } else {
-      setCurrentCommandRelease('');
-      setReleaseChecked(true);
-    }
-  }
-
-  function handleStatisticsChange() {
-    if (currentCommandStatistics === '' && statsChecked == true) {
-      setCurrentCommandStatistics(' --disable-telemetry');
-      setStatsChecked(false);
-    } else {
-      setCurrentCommandStatistics('');
-      setStatsChecked(true);
-    }
-  }
-
-  function handleCloudChange() {
-    if (currentCloudOption === '' && cloudChecked == false) {
-      setCurrentCloudOption(' --claim-token YOUR_CLAIM_TOKEN');
-      setCloudChecked(true);
-    } else {
-      setCurrentCloudOption('');
-      setCloudChecked(false);
-    }
-  }
-
-
-  return (
-    <div className={clsx('relative overflow-hidden mt-8 mb-8 rounded-tr rounded-tl', styles.Container)}>
-      <div className="text-lg lg:text-xl">
-        <CodeBlock className="bash">
-          {currentCommand}
-        </CodeBlock>
-      </div>
-      <div className="z-10 relative -t-2 p-6 border-l border-b border-r border-gray-200 rounded-br rounded-bl dark:bg-gray-darkbg dark:border-gray-500">
-        <div className="py-1 flex items-center">
-          <input 
-            onChange={handleUpdatesChange}
-            checked={updatesChecked}
-            type="checkbox" 
-            id="toggle__updates_curl" />
-          <label htmlFor="toggle__updates_curl" className="relative text-sm pl-2">Do you want automatic updates? <code>default: enabled</code></label>
-        </div>
-        <div className="py-1 flex items-center">
-          <input 
-            onChange={handleReleaseChange}
-            checked={releaseChecked}
-            type="checkbox" 
-            id="toggle__type_curl" />
-          <label htmlFor="toggle__type_curl" className="relative text-sm pl-2">Do you want nightly or stable releases? <code>default: nightly</code></label>
-        </div>
-        <div className="py-1 flex items-center">
-          <input 
-            onChange={handleStatisticsChange}
-            checked={statsChecked}
-            type="checkbox" 
-            id="toggle__stats_curl" />
-          <label htmlFor="toggle__stats_curl" className="relative text-sm pl-2">Do you want to contribute <Link to="/docs/deployment-in-production/security-and-privacy-design" className="hover:text-blue">anonymous statistics?</Link> <code>default: enabled</code></label>
-        </div>
-        <div className="py-1 flex items-center">
-          <input
-            onChange={handleCloudChange}
-            checked={cloudChecked}
-            type="checkbox"
-            id="toggle__cloud_curl" />
-          <label htmlFor="toggle__cloud_curl" className="relative text-sm pl-2">Do you want to <Link to="/docs/getting-started/monitor-your-infrastructure/connect-agent-to-cloud" className="hover:text-blue">connect</Link> the node to Netdata Cloud?<code>default: disabled</code></label>
-        </div>
-      </div>
-    </div>
-  )
+  );
 }
