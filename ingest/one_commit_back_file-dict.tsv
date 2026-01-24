@@ -159,6 +159,7 @@ https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/anomal
 https://github.com/netdata/netdata/edit/master/docs/functions/processes.md	/docs/top-consumers/processes
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	/docs/netdata-cloud
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-rule-based-room-assignment.md	/docs/netdata-cloud/spaces-and-rooms/node-rule-based-room-assignment
+https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-states-and-transitions.md	/docs/netdata-cloud/node-states-and-transitions
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/view-plan-and-billing.md	/docs/netdata-cloud/netdata-plans-&-billing
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/organize-your-infrastructure-invite-your-team.md	/docs/netdata-cloud/spaces-and-rooms
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/api-tokens.md	/docs/netdata-cloud/authentication-&-authorization/api-tokens
