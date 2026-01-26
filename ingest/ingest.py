@@ -1842,9 +1842,9 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
         get_dir_make_file_and_recurse(path)
 
     get_dir_make_file_and_recurse(
-        'docs/alerts-&-notifications/notifications/agent-dispatched-notifications')
+        'docs/alerts-&-notifications/receiving-notifications/agent-dispatched-notifications')
     get_dir_make_file_and_recurse(
-        'docs/alerts-&-notifications/notifications/centralized-cloud-notifications')
+        'docs/alerts-&-notifications/receiving-notifications/centralized-cloud-notifications')
     get_dir_make_file_and_recurse('docs/exporting-metrics/connectors')
     get_dir_make_file_and_recurse(
         'docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations')
