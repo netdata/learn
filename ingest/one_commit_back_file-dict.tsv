@@ -157,6 +157,7 @@ https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/home-t
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/alerts-tab.md	/docs/dashboards-and-charts/tabs/alerts
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/anomaly-advisor-tab.md	/docs/dashboards-and-charts/tabs/anomalies
 https://github.com/netdata/netdata/edit/master/docs/functions/processes.md	/docs/top-consumers/processes
+https://github.com/netdata/netdata/edit/master/docs/functions/databases.md	/docs/top-consumers/database-queries
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	/docs/netdata-cloud
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-rule-based-room-assignment.md	/docs/netdata-cloud/spaces-and-rooms/node-rule-based-room-assignment
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-states-and-transitions.md	/docs/netdata-cloud/node-states-and-transitions
