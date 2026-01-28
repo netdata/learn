@@ -33,7 +33,7 @@ import re
 import shutil
 import urllib.parse
 from pathlib import Path
-
+import json
 import git
 import numpy as np
 import pandas as pd
@@ -98,6 +98,68 @@ default_repos = {
             "HEAD": "master",
         }
 }
+
+
+POS_RE = re.compile(r'(?m)^\s*sidebar_position\s*:\s*"?(\d+)"?\s*$')
+
+def ensure_category_json_for_dirs(docs_root):
+    """
+    For every directory under docs_root:
+    - if <dir>/<basename(dir)>.mdx exists => treat as category overview; do nothing
+    - else if _category_.json missing => create it using min sidebar_position of direct-child mdx files
+    """
+    for dirpath, dirnames, filenames in os.walk(docs_root):
+        abs_dir = os.path.abspath(dirpath)
+        abs_root = os.path.abspath(docs_root)
+
+        base = os.path.basename(os.path.normpath(dirpath))
+        fnset = {f.casefold() for f in filenames}
+
+
+        # 0) skip docs root
+        if abs_dir == abs_root:
+            continue
+
+        category_json = os.path.join(dirpath, "_category_.json")
+        overview_by_same_name = f"{base.casefold()}.mdx" in fnset
+
+        # 2) skip if overview doc exists
+        if overview_by_same_name:
+            get_dir_make_file_and_recurse(dirpath)
+            continue
+
+        # 4) compute position from direct child mdx files
+        mdx_files = [f for f in filenames if f.lower().endswith(".mdx")]
+
+        positions = []
+        for fn in mdx_files:
+            p = os.path.join(dirpath, fn)
+            try:
+                with open(p, "r", encoding="utf-8") as fh:
+                    head = fh.read(64 * 1024)
+            except OSError as e:
+                continue
+
+            m = POS_RE.search(head)
+            if m:
+                positions.append(int(m.group(1)))
+
+        if positions:
+            cat_pos = min(positions)
+        else:
+            if not mdx_files:
+                continue
+
+            mdx_files.sort(key=lambda s: s.casefold())
+            cat_pos = 999999999  # choose your fallback policy
+
+        payload = {"label": base, "position": cat_pos, "link": None}
+
+        with open(category_json, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+
+        print(f"CREATE {category_json} with position={cat_pos} label='{base}'")
 
 
 def clean_and_lower_string(string):
@@ -449,8 +511,9 @@ def safe_cleanup_learn_folders(folder_to_delete):
     """
     deleted_files = []
     md_files = fetch_markdown_from_repo(folder_to_delete)
+    json_files = fetch_json_from_repo(folder_to_delete)
     print(
-        f"Files in the {folder_to_delete} folder #{len(md_files)} which are about to be deleted")
+        f"Files in the {folder_to_delete} folder #{len(md_files)+len(md_files)} which are about to be deleted")
     for md in md_files:
 
         metadata = read_metadata(Path(md).read_text().split("-->")[0])
@@ -464,6 +527,9 @@ def safe_cleanup_learn_folders(folder_to_delete):
                 os.remove(md)
         except Exception as e:
             print(f"Couldn't delete the {md} file reason: {e}")
+    for json in json_files:
+        deleted_files.append(json)
+        os.remove(json)
     print(
         f"Cleaned up #{len(deleted_files)} files under {folder_to_delete} folder")
 
@@ -551,57 +617,45 @@ def create_mdx_path_from_metadata(metadata):
                            .replace(",", " ")
                            .replace("(", " ")
                            .replace("`", " ")).split())
+    
+    slug = "/{}/{}".format(metadata["learn_rel_path"],
+                                    final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")
+    
 
-    if "Collecting Metrics" in metadata['learn_rel_path'] \
-            and metadata['learn_rel_path'].split("/")[-1] != "Collecting Metrics" and 'External-plugins' not in \
-            metadata['learn_rel_path']:
-        last_folder = metadata['learn_rel_path'].split("Collecting Metrics", 1)[1]
-        last_folder = "collecting-metrics" + last_folder
-
-        # non-integration folders inside collecting metrics
-        if "Metrics Centralization Points" in metadata['learn_rel_path']:
-            slug = "/{}/{}".format(metadata["learn_rel_path"],
-                                   final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")
-            if slug.rsplit("/")[-1] == slug.rsplit("/")[-2]:
-                return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
-                                              metadata["learn_rel_path"]
-                                              .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
-                                              final_file).replace("//", "/"),
-                        "/{}/{}".format(metadata["learn_rel_path"],
-                                        final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//",
-                                                                                                        "/").rsplit("/",
-                                                                                                                    1)[
-                            0]]
-            else:
-                return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
-                                              metadata["learn_rel_path"]
-                                              .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
-                                              final_file).replace("//", "/"),
-                        "/{}/{}".format(metadata["learn_rel_path"],
-                                        final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
-
-        # print(last_folder)
-        # exit()
-        # If the file is inside the monitor-anything category,
-        # meaning that it will try to render the sidebar category label to whatever the folder has,
-        # return an array of two things; [the final path, the proper slug].
-        # We use the slug to avoid having %20 (replacing spaces) in the link of the file.
-        return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
-                                      metadata["learn_rel_path"]
-                                      .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
-                                      final_file.replace(" ", "-")).replace("//", "/"),
-                "/{}/{}".format(metadata["learn_rel_path"],
-                                final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
-
+    if slug.rsplit("/")[-1] == slug.rsplit("/")[-2]:
+        return [
+            "{}/{}/{}.mdx".format(
+                DOCS_PREFIX,
+                metadata["learn_rel_path"],
+                final_file
+            ).replace("//", "/"),
+            re.sub('//+', '/', "/{}/{}".format(
+                metadata["learn_rel_path"],
+                final_file.replace(" ", "-")).lower().replace(" ", "-").rsplit("/",1)[0]
+                )
+            
+            ]
     else:
-        return ("{}/{}/{}.mdx".format(DOCS_PREFIX,
-                                      metadata["learn_rel_path"],
-                                      final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/"))
+        return [
+            "{}/{}/{}.mdx".format(
+                DOCS_PREFIX,
+                metadata["learn_rel_path"],
+                final_file
+            ).replace("//", "/"),
+            re.sub('//+', '/', "/{}/{}".format(
+                metadata["learn_rel_path"],
+                final_file.replace(" ", "-")).lower().replace(" ", "-")
+                )
+        ]
 
 
 def fetch_markdown_from_repo(output_folder):
     return glob.glob(
         output_folder + '/**/*.md*', recursive=True) + glob.glob(output_folder + '/.**/*.md*', recursive=True)
+
+def fetch_json_from_repo(output_folder):
+    return glob.glob(
+        output_folder + '/**/*.json*', recursive=True) + glob.glob(output_folder + '/.**/*.json*', recursive=True)
 
 
 def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
@@ -1237,6 +1291,116 @@ def automate_sidebar_position(dictionary):
 
     return position_array
 
+def sort_files(file_array):
+    most_popular = []
+    rest_netdata_integrations = []
+    community_integrations = []
+
+    for file in file_array:
+        if Path(file).is_file():
+            # [filename, filepath, banner message, banner color]
+            content = Path(file).read_text()
+
+            if "most_popular: \"True\"" in content:
+                most_popular.append(
+                    [str(file).lower().rsplit("/", 1)[1], file, "by Netdata", "#00ab44"])
+            elif "maintained%20by-Netdata-" in content:
+                rest_netdata_integrations.append(
+                    [str(file).lower().rsplit("/", 1)[1], file, "by Netdata", "#00ab44"])
+            else:
+                community_integrations.append(
+                    [str(file).lower().rsplit("/", 1)[1], file, "by Community", "rgba(0, 0, 0, 0.25)"])
+
+    sorted_array = sorted(
+        most_popular) + sorted(rest_netdata_integrations) + sorted(community_integrations)
+
+    return sorted_array
+
+
+def get_dir_make_file_and_recurse(directory):
+    dir_path, dir_name = str(directory).rsplit("/", 1)
+    filename = f"{dir_path}/{dir_name}/{dir_name}.mdx"
+
+    if len(sorted(Path(directory).glob(
+            "**/**/*"))) >= 1:
+        sorted_list = sort_files(Path(directory).glob("**/**/*"))
+
+        try:
+            sidebar_position = re.search(
+                r'sidebar_position:.*', Path(sorted_list[0][1]).read_text(encoding='utf-8'))[0]
+        except TypeError:
+            sidebar_position = ""
+
+        sidebar_label = str(directory).rsplit("/", 1)[1]
+
+        md = \
+            f"""---
+sidebar_label: "{sidebar_label}"
+{sidebar_position}
+hide_table_of_contents: true
+learn_status: "AUTOGENERATED"
+slug: "{clean_and_lower_string(str(directory)).split('docs', 1)[1]}"
+learn_link: "https://learn.netdata.cloud/{clean_and_lower_string(str(directory))}"
+---
+
+# {sidebar_label}
+
+import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
+
+<Grid  columns="4">
+"""
+
+        integrations = 0
+
+        for file_array_entry in sorted_list:
+            file = file_array_entry[1]
+            message = file_array_entry[2]
+            color = file_array_entry[3]
+            if Path(file).is_file():
+                whole_file = Path(file).read_text(encoding='utf-8')
+
+
+                is_only_file = sum(1 for f in Path(str(file_array_entry[1]).rsplit(
+                    "/", 1)[0]).iterdir() if f.is_file()) <= 1
+
+                direct_child = file.parent == Path(directory)
+
+                if "DO NOT EDIT THIS FILE DIRECTLY" in whole_file:
+
+                    meta_dict = read_metadata(whole_file)
+
+                    if meta_dict["learn_link"].split("/")[-1] == meta_dict["learn_link"].split("/")[
+                        -2]:
+                        meta_dict["learn_link"] = meta_dict["learn_link"].rsplit(
+                            "/", 1)[0]
+                        print("IN", type(meta_dict["learn_link"]), file_array_entry, directory, direct_child
+                                )
+
+                    try:
+                        img = re.search(r'<img src="https:\/\/netdata.cloud\/img.*', whole_file)[0].replace(
+                            "width=\"150\"",
+                            "style={{width: '90%', maxHeight: '100%', verticalAlign: 'middle' }}").replace("<img",
+                                                                                                            "<img custom-image")
+                    except TypeError:
+                        img = ""
+
+                    md += \
+                        f"""
+<Box banner="{message}" banner_color="{color}" to="{meta_dict["learn_link"].replace("https://learn.netdata.cloud", "")}"  title="{meta_dict["sidebar_label"]}">
+{img}
+</Box>
+"""
+                    integrations += 1
+
+        if integrations < 1:
+            return
+
+        md += "\n</Grid>"
+        Path(filename.rsplit("/", 1)[0]).mkdir(parents=True, exist_ok=True)
+        Path(filename).write_text(md, encoding='utf-8')
+
+        for subdir in sorted(Path(directory).glob("*/")):
+            get_dir_make_file_and_recurse(subdir)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
@@ -1489,54 +1653,16 @@ if __name__ == '__main__':
                     # the return statements of the function itself)
                     response = create_mdx_path_from_metadata(md_metadata)
                     sanitize_regex = r'`|\(|\)'
-                    if type(response) != str:
+                    # if type(response) != str:
                         # If the response is not a string then it is a two item array, [final path, slug]
-                        md_metadata.update({"slug": str(response[1])})
-                        to_publish[markdown] = {
-                            "metadata": md_metadata,
-                            "learnPath": str(response[0]),
-                            "ingestedRepo": str(markdown.split("/", 2)[1])
-                        }
+                    to_publish[markdown] = {
+                        "metadata": md_metadata,
+                        "learnPath": str(response[0]),
+                        "ingestedRepo": str(markdown.split("/", 2)[1])
+                    }
 
-                        # Fix duplicate last segment in learn_link for overview pages
-                        slug = md_metadata['slug']
-                        slug_parts = slug.strip('/').split('/')
-                        if len(slug_parts) >= 2 and slug_parts[-1] == slug_parts[-2]:
-                            # Remove duplicate last segment
-                            fixed_slug = '/' + '/'.join(slug_parts[:-1])
-                            fixed_slug = convert_parenthetical_slash(fixed_slug)
-                            fixed_slug = re.sub(sanitize_regex, '', fixed_slug)
-                            md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + fixed_slug})
-                        else:
-                            slug = convert_parenthetical_slash(slug)
-                            slug = re.sub(sanitize_regex, '', slug)
-                            md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + slug})
+                    md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + response[1], "slug": response[1]})
 
-                    else:
-                        to_publish[markdown] = {
-                            "metadata": md_metadata,
-                            "learnPath": str(response),
-                            "ingestedRepo": str(markdown.split("/", 2)[1])
-                        }
-                        clean_sidebar = clean_and_lower_string(md_metadata['sidebar_label'])
-                        rel_path = clean_and_lower_string(md_metadata['learn_rel_path'])
-                        if rel_path != clean_sidebar:
-                            # Compose the canonical link and remove only a single duplicated final segment if present.
-                            link = "https://learn.netdata.cloud/docs/" + rel_path + "/" + clean_sidebar
-                            link_parts = link.rstrip('/').split('/')
-                            if len(link_parts) >= 2 and link_parts[-1] == link_parts[-2]:
-                                link = '/'.join(link_parts[:-1])
-                            link = convert_parenthetical_slash(link)
-                            link = re.sub(sanitize_regex, '', link)
-                            md_metadata.update({"learn_link": link})
-                        else:
-                            link = "https://learn.netdata.cloud/docs/" + rel_path
-                            link_parts = link.rstrip('/').split('/')
-                            if len(link_parts) >= 2 and link_parts[-1] == link_parts[-2]:
-                                link = '/'.join(link_parts[:-1])
-                            link = convert_parenthetical_slash(link)
-                            link = re.sub(sanitize_regex, '', link)
-                            md_metadata.update({"learn_link": link})
                     update_metadata_of_file(markdown, md_metadata)
                 except KeyError as exc:
                     print(
@@ -1681,6 +1807,8 @@ if __name__ == '__main__':
     unsafe_cleanup_folders(TEMP_FOLDER)
     os.remove("map.csv")
 
+    ensure_category_json_for_dirs("docs")
+
     # Print final operation status with exit code
     if SHOULD_EXIT_WITH_FAILURE:
         print("\n" + "=" * 60)
@@ -1691,165 +1819,6 @@ if __name__ == '__main__':
         print("\n" + "=" * 60)
         print("OPERATION FINISHED - SUCCESS (exit code: 0)")
         print("=" * 60)
-
-
-    def sort_files(file_array):
-        most_popular = []
-        rest_netdata_integrations = []
-        community_integrations = []
-
-        for file in file_array:
-            if Path(file).is_file():
-                # [filename, filepath, banner message, banner color]
-                content = Path(file).read_text()
-
-                if "most_popular: \"True\"" in content:
-                    most_popular.append(
-                        [str(file).lower().rsplit("/", 1)[1], file, "by Netdata", "#00ab44"])
-                elif "maintained%20by-Netdata-" in content:
-                    rest_netdata_integrations.append(
-                        [str(file).lower().rsplit("/", 1)[1], file, "by Netdata", "#00ab44"])
-                else:
-                    community_integrations.append(
-                        [str(file).lower().rsplit("/", 1)[1], file, "by Community", "rgba(0, 0, 0, 0.25)"])
-
-        sorted_array = sorted(
-            most_popular) + sorted(rest_netdata_integrations) + sorted(community_integrations)
-
-        return sorted_array
-
-
-    def get_dir_make_file_and_recurse(directory):
-        dir_path, dir_name = str(directory).rsplit("/", 1)
-        filename = f"{dir_path}/{dir_name}/{dir_name}.mdx"
-
-        # Check if the directory contains only one file and that file matches the directory name
-        direct_files = list(Path(directory).glob("*.mdx"))
-        if len(direct_files) == 1 and direct_files[0].stem == dir_name:
-            # Skip generating a grid page for single integration leaf files
-            return
-
-        # Do stuff for all the files inside the dict, auth folder currently has only one file
-        if len(sorted(Path(directory).glob(
-                "**/**/*"))) > 1 or directory == "docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations":
-            sorted_list = sort_files(Path(directory).glob("**/**/*"))
-
-            try:
-                sidebar_position = re.search(
-                    r'sidebar_position:.*', Path(sorted_list[0][1]).read_text(encoding='utf-8'))[0]
-            except TypeError:
-                sidebar_position = ""
-
-            sidebar_label = str(directory).rsplit("/", 1)[1]
-
-            if "cloud-authentication-&-authorization-integrations" in sidebar_label:
-                sidebar_label = "Cloud Authentication & Authorization Integrations"
-            if "collecting-metrics" in str(directory):
-                sidebar_position = ""
-
-            if "centralized-cloud-notifications" in sidebar_label:
-                sidebar_label = "Centralized Cloud Notifications"
-            elif "agent-dispatched-notifications" in sidebar_label:
-                sidebar_label = "Agent Dispatched Notifications"
-            elif sidebar_label == "alerts-&-notifications":
-                sidebar_label = "Alerts & Notifications"
-            elif sidebar_label == "connectors":
-                sidebar_label = "Connectors"
-            elif "logs" in sidebar_label:
-                sidebar_label = "Logs"
-
-            md = \
-                f"""---
-sidebar_label: "{sidebar_label}"
-{sidebar_position}
-hide_table_of_contents: true
-learn_status: "AUTOGENERATED"
-slug: "{clean_and_lower_string(str(directory)).split('docs', 1)[1]}"
-learn_link: "https://learn.netdata.cloud/{clean_and_lower_string(str(directory))}"
----
-
-# {sidebar_label}
-
-import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
-
-<Grid  columns="4">
-"""
-
-            integrations = 0
-
-            for file_array_entry in sorted_list:
-                file = file_array_entry[1]
-                message = file_array_entry[2]
-                color = file_array_entry[3]
-                if Path(file).is_file():
-                    whole_file = Path(file).read_text(encoding='utf-8')
-
-                    is_only_integration = sum(1 for f in Path(str(file_array_entry[1]).rsplit("/", 1)[0]).iterdir(
-                    ) if f.is_file() and "DO NOT EDIT THIS FILE DIRECTLY" in f.read_text(errors='ignore')) <= 1
-
-                    is_only_file = sum(1 for f in Path(str(file_array_entry[1]).rsplit(
-                        "/", 1)[0]).iterdir() if f.is_file()) <= 1
-
-                    direct_child = file.parent == Path(directory)
-
-                    if "DO NOT EDIT THIS FILE DIRECTLY" in whole_file:
-
-                        meta_dict = read_metadata(whole_file)
-
-                        # if it is the only integration, and the direct child is a published/custom integration
-                        # (e.g. a proper content file), then we don't want to create/replace a grid page for this dir.
-                        if direct_child and is_only_integration:
-                            # prefer explicit publish flag or presence of custom_edit_url to determine a content page
-                            if meta_dict.get("learn_status") == "Published" or "custom_edit_url" in meta_dict:
-                                return
-
-                        # if the structure is like A/B/B.mdx but B/ has more files in it (Logs integrations mainly) then truncate the B.mdx from B/B.mdx as it is a folder now.
-                        if meta_dict["learn_link"].split("/")[-1] == meta_dict["learn_link"].split("/")[
-                            -2] and not is_only_file:
-                            meta_dict["learn_link"] = meta_dict["learn_link"].rsplit(
-                                "/", 1)[0]
-                            print("IN", type(meta_dict["learn_link"]), file_array_entry, directory, direct_child
-                                  )
-
-                        try:
-                            img = re.search(r'<img src="https:\/\/netdata.cloud\/img.*', whole_file)[0].replace(
-                                "width=\"150\"",
-                                "style={{width: '90%', maxHeight: '100%', verticalAlign: 'middle' }}").replace("<img",
-                                                                                                               "<img custom-image")
-                        except TypeError:
-                            img = ""
-
-                        md += \
-                            f"""
-<Box banner="{message}" banner_color="{color}" to="{meta_dict["learn_link"].replace("https://learn.netdata.cloud", "")}"  title="{meta_dict["sidebar_label"]}">
-    {img}
-</Box>
-"""
-                        integrations += 1
-
-            if integrations < 1:
-                return
-
-            md += "\n</Grid>"
-            Path(filename.rsplit("/", 1)[0]).mkdir(parents=True, exist_ok=True)
-            Path(filename).write_text(md, encoding='utf-8')
-
-            for subdir in sorted(Path(directory).glob("*/")):
-                get_dir_make_file_and_recurse(subdir)
-
-
-    for path in Path('docs/collecting-metrics').glob('*/'):
-        get_dir_make_file_and_recurse(path)
-
-    get_dir_make_file_and_recurse(
-        'docs/alerts-&-notifications/notifications/agent-dispatched-notifications')
-    get_dir_make_file_and_recurse(
-        'docs/alerts-&-notifications/notifications/centralized-cloud-notifications')
-    get_dir_make_file_and_recurse('docs/exporting-metrics/connectors')
-    get_dir_make_file_and_recurse(
-        'docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations')
-    get_dir_make_file_and_recurse(
-        'docs/logs')
 
     # Exit with failure if broken links were detected and failure flag was set
     if SHOULD_EXIT_WITH_FAILURE:
