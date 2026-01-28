@@ -162,7 +162,7 @@ def ensure_category_json_for_dirs(docs_root: str) -> None:
 
 
 def clean_and_lower_string(string):
-    return re.sub(r'-+', '-', string.lower().replace(",", "-").replace(" ", "-").replace("//", "/"))
+    return re.sub(r'(-)+', '-', string.lower().replace(",", "-").replace(" ", "-").replace("//", "/"))
 
 
 def extract_headers_from_file(file_path):
@@ -628,11 +628,6 @@ def create_mdx_path_from_metadata(metadata):
                 metadata["learn_rel_path"],
                 final_file
             ).replace("//", "/"),
-            "{}/{}/{}.mdx".format(
-                DOCS_PREFIX,
-                metadata["learn_rel_path"].rsplit("/",1)[0],
-                final_file
-            ).replace("//", "/"),
             re.sub('//+', '/', "/{}/{}".format(
                 metadata["learn_rel_path"],
                 final_file.replace(" ", "-")).lower().replace(" ", "-").rsplit("/",1)[0]
@@ -641,11 +636,6 @@ def create_mdx_path_from_metadata(metadata):
             ]
     else:
         return [
-            "{}/{}/{}.mdx".format(
-                DOCS_PREFIX,
-                metadata["learn_rel_path"],
-                final_file
-            ).replace("//", "/"),
             "{}/{}/{}.mdx".format(
                 DOCS_PREFIX,
                 metadata["learn_rel_path"],
@@ -1560,7 +1550,7 @@ if __name__ == '__main__':
                         "ingestedRepo": str(markdown.split("/", 2)[1])
                     }
 
-                    md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + response[1], "slug": response[2]})
+                    md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + response[1], "slug": response[1]})
 
                     update_metadata_of_file(markdown, md_metadata)
                 except KeyError as exc:
@@ -1748,15 +1738,9 @@ if __name__ == '__main__':
         dir_path, dir_name = str(directory).rsplit("/", 1)
         filename = f"{dir_path}/{dir_name}/{dir_name}.mdx"
 
-        # Check if the directory contains only one file and that file matches the directory name
-        direct_files = list(Path(directory).glob("*.mdx"))
-        if len(direct_files) == 1 and direct_files[0].stem == dir_name:
-            # Skip generating a grid page for single integration leaf files
-            return
-
         # Do stuff for all the files inside the dict, auth folder currently has only one file
         if len(sorted(Path(directory).glob(
-                "**/**/*"))) > 1 or directory == "docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations":
+                "**/**/*"))) >= 1:
             sorted_list = sort_files(Path(directory).glob("**/**/*"))
 
             try:
@@ -1805,14 +1789,6 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
 
                         meta_dict = read_metadata(whole_file)
 
-                        # if it is the only integration, and the direct child is a published/custom integration
-                        # (e.g. a proper content file), then we don't want to create/replace a grid page for this dir.
-                        if direct_child and is_only_integration:
-                            # prefer explicit publish flag or presence of custom_edit_url to determine a content page
-                            if meta_dict.get("learn_status") == "Published" or "custom_edit_url" in meta_dict:
-                                return
-
-                        # if the structure is like A/B/B.mdx but B/ has more files in it (Logs integrations mainly) then truncate the B.mdx from B/B.mdx as it is a folder now.
                         if meta_dict["learn_link"].split("/")[-1] == meta_dict["learn_link"].split("/")[
                             -2] and not is_only_file:
                             meta_dict["learn_link"] = meta_dict["learn_link"].rsplit(
