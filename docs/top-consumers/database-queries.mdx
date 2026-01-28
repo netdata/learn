@@ -35,13 +35,15 @@ Database query functions provide deep visibility into SQL and NoSQL database per
 | MariaDB | ✅ | - | ✅ | ✅* | [MariaDB](/docs/collecting-metrics/databases/mariadb) |
 | Percona Server | ✅ | - | ✅ | ✅* | [Percona](/docs/collecting-metrics/databases/percona-mysql) |
 | Oracle Database | ✅ | ✅ | - | - | [Oracle](/docs/collecting-metrics/databases/oracle-db) |
-| PostgreSQL | ✅ | - | - | - | [PostgreSQL](/docs/collecting-metrics/databases/postgresql) |
+| PostgreSQL | ✅ | ✅ | - | ✅** | [PostgreSQL](/docs/collecting-metrics/databases/postgresql) |
 | ProxySQL | ✅ | - | - | - | [ProxySQL](/docs/collecting-metrics/databases/proxysql) |
 | Redis | ✅ | - | - | - | [Redis](/docs/collecting-metrics/databases/redis) |
 | RethinkDB | - | ✅ | - | - | [RethinkDB](/docs/collecting-metrics/databases/rethinkdb) |
 | YugabyteDB | ✅ | ✅ | - | - | [YugabyteDB](/docs/collecting-metrics/databases/yugabytedb) |
 
 *\* Error Info is integrated directly into Top Queries results—each query row shows its associated errors.*
+
+*\*\* PostgreSQL error info requires [pg_stat_monitor](https://docs.percona.com/pg-stat-monitor/) (Percona). The collector auto-detects and uses it when available.*
 
 ## Function Types
 
@@ -64,7 +66,7 @@ The number of queries returned is configurable (default: 500). This is a two-sta
 
 Shows **currently executing queries** at the moment of request. Essential for diagnosing stuck queries, long-running transactions, or unexpected load.
 
-**Supported**: CockroachDB, Oracle, RethinkDB, YugabyteDB
+**Supported**: CockroachDB, Oracle, PostgreSQL, RethinkDB, YugabyteDB
 
 ### Deadlock Info
 
@@ -83,7 +85,7 @@ Information provided:
 
 Shows **recent SQL errors** from the database's error history. Error attribution is embedded directly in Top Queries results—each query row includes error details when available.
 
-**Supported**: MySQL/MariaDB/Percona, Microsoft SQL Server
+**Supported**: MySQL/MariaDB/Percona, Microsoft SQL Server, PostgreSQL (with pg_stat_monitor)
 
 Attribution status values:
 - `enabled` — Error details available for this query
