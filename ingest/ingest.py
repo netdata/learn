@@ -33,7 +33,7 @@ import re
 import shutil
 import urllib.parse
 from pathlib import Path
-
+import json
 import git
 import numpy as np
 import pandas as pd
@@ -100,8 +100,69 @@ default_repos = {
 }
 
 
+POS_RE = re.compile(r'(?m)^\s*sidebar_position\s*:\s*"?(\d+)"?\s*$')
+
+def ensure_category_json_for_dirs(docs_root: str) -> None:
+    """
+    For every directory under docs_root:
+    - if <dir>/<basename(dir)>.mdx exists => treat as category overview; do nothing
+    - else if _category_.json missing => create it using min sidebar_position of direct-child mdx files
+    """
+    for dirpath, dirnames, filenames in os.walk(docs_root):
+        abs_dir = os.path.abspath(dirpath)
+        abs_root = os.path.abspath(docs_root)
+
+        base = os.path.basename(os.path.normpath(dirpath))
+        fnset = {f.casefold() for f in filenames}
+
+
+        # 0) skip docs root
+        if abs_dir == abs_root:
+            continue
+
+        category_json = os.path.join(dirpath, "_category_.json")
+        overview_by_same_name = f"{base.casefold()}.mdx" in fnset
+
+        # 2) skip if overview doc exists
+        if overview_by_same_name:
+            continue
+
+        # 4) compute position from direct child mdx files
+        mdx_files = [f for f in filenames if f.lower().endswith(".mdx")]
+
+        positions = []
+        for fn in mdx_files:
+            p = os.path.join(dirpath, fn)
+            try:
+                with open(p, "r", encoding="utf-8") as fh:
+                    head = fh.read(64 * 1024)
+            except OSError as e:
+                continue
+
+            m = POS_RE.search(head)
+            if m:
+                positions.append(int(m.group(1)))
+
+        if positions:
+            cat_pos = min(positions)
+        else:
+            if not mdx_files:
+                continue
+
+            mdx_files.sort(key=lambda s: s.casefold())
+            cat_pos = 999999999  # choose your fallback policy
+
+        payload = {"label": base, "position": cat_pos, "link": None}
+
+        with open(category_json, "w", encoding="utf-8") as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+            f.write("\n")
+
+        print(f"CREATE {category_json} with position={cat_pos} label='{base}'")
+
+
 def clean_and_lower_string(string):
-    return re.sub(r'(-)+', '-', string.lower().replace(",", "-").replace(" ", "-").replace("//", "/"))
+    return re.sub(r'-+', '-', string.lower().replace(",", "-").replace(" ", "-").replace("//", "/"))
 
 
 def extract_headers_from_file(file_path):
@@ -449,8 +510,9 @@ def safe_cleanup_learn_folders(folder_to_delete):
     """
     deleted_files = []
     md_files = fetch_markdown_from_repo(folder_to_delete)
+    json_files = fetch_json_from_repo(folder_to_delete)
     print(
-        f"Files in the {folder_to_delete} folder #{len(md_files)} which are about to be deleted")
+        f"Files in the {folder_to_delete} folder #{len(md_files)+len(md_files)} which are about to be deleted")
     for md in md_files:
 
         metadata = read_metadata(Path(md).read_text().split("-->")[0])
@@ -464,6 +526,9 @@ def safe_cleanup_learn_folders(folder_to_delete):
                 os.remove(md)
         except Exception as e:
             print(f"Couldn't delete the {md} file reason: {e}")
+    for json in json_files:
+        deleted_files.append(json)
+        os.remove(json)
     print(
         f"Cleaned up #{len(deleted_files)} files under {folder_to_delete} folder")
 
@@ -551,57 +616,55 @@ def create_mdx_path_from_metadata(metadata):
                            .replace(",", " ")
                            .replace("(", " ")
                            .replace("`", " ")).split())
+    
+    slug = "/{}/{}".format(metadata["learn_rel_path"],
+                                    final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")
+    
 
-    if "Collecting Metrics" in metadata['learn_rel_path'] \
-            and metadata['learn_rel_path'].split("/")[-1] != "Collecting Metrics" and 'External-plugins' not in \
-            metadata['learn_rel_path']:
-        last_folder = metadata['learn_rel_path'].split("Collecting Metrics", 1)[1]
-        last_folder = "collecting-metrics" + last_folder
-
-        # non-integration folders inside collecting metrics
-        if "Metrics Centralization Points" in metadata['learn_rel_path']:
-            slug = "/{}/{}".format(metadata["learn_rel_path"],
-                                   final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")
-            if slug.rsplit("/")[-1] == slug.rsplit("/")[-2]:
-                return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
-                                              metadata["learn_rel_path"]
-                                              .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
-                                              final_file).replace("//", "/"),
-                        "/{}/{}".format(metadata["learn_rel_path"],
-                                        final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//",
-                                                                                                        "/").rsplit("/",
-                                                                                                                    1)[
-                            0]]
-            else:
-                return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
-                                              metadata["learn_rel_path"]
-                                              .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
-                                              final_file).replace("//", "/"),
-                        "/{}/{}".format(metadata["learn_rel_path"],
-                                        final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
-
-        # print(last_folder)
-        # exit()
-        # If the file is inside the monitor-anything category,
-        # meaning that it will try to render the sidebar category label to whatever the folder has,
-        # return an array of two things; [the final path, the proper slug].
-        # We use the slug to avoid having %20 (replacing spaces) in the link of the file.
-        return ["{}/{}/{}.mdx".format(DOCS_PREFIX,
-                                      metadata["learn_rel_path"]
-                                      .split("Collecting Metrics")[0].lower().replace(" ", "-") + last_folder,
-                                      final_file.replace(" ", "-")).replace("//", "/"),
-                "/{}/{}".format(metadata["learn_rel_path"],
-                                final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/")]
-
+    if slug.rsplit("/")[-1] == slug.rsplit("/")[-2]:
+        return [
+            "{}/{}/{}.mdx".format(
+                DOCS_PREFIX,
+                metadata["learn_rel_path"],
+                final_file
+            ).replace("//", "/"),
+            "{}/{}/{}.mdx".format(
+                DOCS_PREFIX,
+                metadata["learn_rel_path"].rsplit("/",1)[0],
+                final_file
+            ).replace("//", "/"),
+            re.sub('//+', '/', "/{}/{}".format(
+                metadata["learn_rel_path"],
+                final_file.replace(" ", "-")).lower().replace(" ", "-").rsplit("/",1)[0]
+                )
+            
+            ]
     else:
-        return ("{}/{}/{}.mdx".format(DOCS_PREFIX,
-                                      metadata["learn_rel_path"],
-                                      final_file.replace(" ", "-")).lower().replace(" ", "-").replace("//", "/"))
+        return [
+            "{}/{}/{}.mdx".format(
+                DOCS_PREFIX,
+                metadata["learn_rel_path"],
+                final_file
+            ).replace("//", "/"),
+            "{}/{}/{}.mdx".format(
+                DOCS_PREFIX,
+                metadata["learn_rel_path"],
+                final_file
+            ).replace("//", "/"),
+            re.sub('//+', '/', "/{}/{}".format(
+                metadata["learn_rel_path"],
+                final_file.replace(" ", "-")).lower().replace(" ", "-")
+                )
+        ]
 
 
 def fetch_markdown_from_repo(output_folder):
     return glob.glob(
         output_folder + '/**/*.md*', recursive=True) + glob.glob(output_folder + '/.**/*.md*', recursive=True)
+
+def fetch_json_from_repo(output_folder):
+    return glob.glob(
+        output_folder + '/**/*.json*', recursive=True) + glob.glob(output_folder + '/.**/*.json*', recursive=True)
 
 
 def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
@@ -1489,54 +1552,16 @@ if __name__ == '__main__':
                     # the return statements of the function itself)
                     response = create_mdx_path_from_metadata(md_metadata)
                     sanitize_regex = r'`|\(|\)'
-                    if type(response) != str:
+                    # if type(response) != str:
                         # If the response is not a string then it is a two item array, [final path, slug]
-                        md_metadata.update({"slug": str(response[1])})
-                        to_publish[markdown] = {
-                            "metadata": md_metadata,
-                            "learnPath": str(response[0]),
-                            "ingestedRepo": str(markdown.split("/", 2)[1])
-                        }
+                    to_publish[markdown] = {
+                        "metadata": md_metadata,
+                        "learnPath": str(response[0]),
+                        "ingestedRepo": str(markdown.split("/", 2)[1])
+                    }
 
-                        # Fix duplicate last segment in learn_link for overview pages
-                        slug = md_metadata['slug']
-                        slug_parts = slug.strip('/').split('/')
-                        if len(slug_parts) >= 2 and slug_parts[-1] == slug_parts[-2]:
-                            # Remove duplicate last segment
-                            fixed_slug = '/' + '/'.join(slug_parts[:-1])
-                            fixed_slug = convert_parenthetical_slash(fixed_slug)
-                            fixed_slug = re.sub(sanitize_regex, '', fixed_slug)
-                            md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + fixed_slug})
-                        else:
-                            slug = convert_parenthetical_slash(slug)
-                            slug = re.sub(sanitize_regex, '', slug)
-                            md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + slug})
+                    md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + response[1], "slug": response[2]})
 
-                    else:
-                        to_publish[markdown] = {
-                            "metadata": md_metadata,
-                            "learnPath": str(response),
-                            "ingestedRepo": str(markdown.split("/", 2)[1])
-                        }
-                        clean_sidebar = clean_and_lower_string(md_metadata['sidebar_label'])
-                        rel_path = clean_and_lower_string(md_metadata['learn_rel_path'])
-                        if rel_path != clean_sidebar:
-                            # Compose the canonical link and remove only a single duplicated final segment if present.
-                            link = "https://learn.netdata.cloud/docs/" + rel_path + "/" + clean_sidebar
-                            link_parts = link.rstrip('/').split('/')
-                            if len(link_parts) >= 2 and link_parts[-1] == link_parts[-2]:
-                                link = '/'.join(link_parts[:-1])
-                            link = convert_parenthetical_slash(link)
-                            link = re.sub(sanitize_regex, '', link)
-                            md_metadata.update({"learn_link": link})
-                        else:
-                            link = "https://learn.netdata.cloud/docs/" + rel_path
-                            link_parts = link.rstrip('/').split('/')
-                            if len(link_parts) >= 2 and link_parts[-1] == link_parts[-2]:
-                                link = '/'.join(link_parts[:-1])
-                            link = convert_parenthetical_slash(link)
-                            link = re.sub(sanitize_regex, '', link)
-                            md_metadata.update({"learn_link": link})
                     update_metadata_of_file(markdown, md_metadata)
                 except KeyError as exc:
                     print(
@@ -1742,22 +1767,6 @@ if __name__ == '__main__':
 
             sidebar_label = str(directory).rsplit("/", 1)[1]
 
-            if "cloud-authentication-&-authorization-integrations" in sidebar_label:
-                sidebar_label = "Cloud Authentication & Authorization Integrations"
-            if "collecting-metrics" in str(directory):
-                sidebar_position = ""
-
-            if "centralized-cloud-notifications" in sidebar_label:
-                sidebar_label = "Centralized Cloud Notifications"
-            elif "agent-dispatched-notifications" in sidebar_label:
-                sidebar_label = "Agent Dispatched Notifications"
-            elif sidebar_label == "alerts-&-notifications":
-                sidebar_label = "Alerts & Notifications"
-            elif sidebar_label == "connectors":
-                sidebar_label = "Connectors"
-            elif "logs" in sidebar_label:
-                sidebar_label = "Logs"
-
             md = \
                 f"""---
 sidebar_label: "{sidebar_label}"
@@ -1838,18 +1847,20 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
                 get_dir_make_file_and_recurse(subdir)
 
 
-    for path in Path('docs/collecting-metrics').glob('*/'):
+    for path in Path('docs/Collecting Metrics').glob('*/'):
         get_dir_make_file_and_recurse(path)
 
     get_dir_make_file_and_recurse(
-        'docs/alerts-&-notifications/receiving-notifications/agent-dispatched-notifications')
+        'docs/Alerts & Notifications/Receiving Notifications/Agent Dispatched Notifications')
     get_dir_make_file_and_recurse(
-        'docs/alerts-&-notifications/receiving-notifications/centralized-cloud-notifications')
-    get_dir_make_file_and_recurse('docs/exporting-metrics/connectors')
+        'docs/Alerts & Notifications/Receiving Notifications/Centralized Cloud Notifications')
+    get_dir_make_file_and_recurse('docs/Exporting Metrics/Connectors')
     get_dir_make_file_and_recurse(
-        'docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations')
+        'docs/Netdata Cloud/Authentication & Authorization/Cloud Authentication & Authorization Integrations')
     get_dir_make_file_and_recurse(
-        'docs/logs')
+        'docs/Logs')
+    
+    ensure_category_json_for_dirs("docs")
 
     # Exit with failure if broken links were detected and failure flag was set
     if SHOULD_EXIT_WITH_FAILURE:
