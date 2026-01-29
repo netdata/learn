@@ -628,8 +628,7 @@ def create_mdx_path_from_metadata(metadata):
                 metadata["learn_rel_path"],
                 final_file.replace(" ", "-")).lower().rsplit("/",1)[0]
                 )
-            
-            ]
+        ]
     else:
         return [
             "{}/{}/{}.mdx".format(
