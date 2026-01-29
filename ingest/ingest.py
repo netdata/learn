@@ -1830,6 +1830,7 @@ if __name__ == '__main__':
 
     # check if we need integration grid
     get_dir_make_file_and_recurse(f"./{DOCS_PREFIX}")
+    # After needed grid pages are made, check if there are leftover dirs without overview pages
     ensure_category_json_for_dirs(DOCS_PREFIX)
 
     # Print final operation status with exit code
