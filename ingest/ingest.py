@@ -1404,7 +1404,7 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
             and (not Path(filename).is_file() and "docs.mdx" not in filename)
         ):
             md += "\n</Grid>"
-            Path(filename.rsplit("/", 1)[0]).mkdir(parents=True, exist_ok=True)
+            Path(filename).parent.mkdir(parents=True, exist_ok=True)
             Path(filename).write_text(md, encoding='utf-8')
 
         for subdir in sorted(Path(directory).glob("*/")):
