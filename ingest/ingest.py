@@ -1651,8 +1651,6 @@ if __name__ == '__main__':
                     # the return statements of the function itself)
                     response = create_mdx_path_from_metadata(md_metadata)
                     sanitize_regex = r'`|\(|\)'
-                    # if type(response) != str:
-                        # If the response is not a string then it is a two item array, [final path, slug]
                     to_publish[markdown] = {
                         "metadata": md_metadata,
                         "learnPath": str(response[0]),
