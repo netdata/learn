@@ -1294,7 +1294,11 @@ def sort_files(file_array):
     for file in file_array:
         if Path(file).is_file():
             # [filename, filepath, banner message, banner color]
-            content = Path(file).read_text()
+            try:
+                content = Path(file).read_text(encoding='utf-8')
+            except (UnicodeDecodeError, OSError):
+                # Skip files that cannot be decoded or read
+                continue
 
             if "most_popular: \"True\"" in content:
                 most_popular.append(
