@@ -1328,8 +1328,6 @@ def get_dir_make_file_and_recurse(directory):
                 r'sidebar_position:.*', Path(sorted_list[0][1]).read_text(encoding='utf-8'))[0]
         except (TypeError, IndexError):
             sidebar_position = ""
-        
-
         sidebar_label = str(directory).rsplit("/", 1)[1]
 
         dir_path = Path(directory)
