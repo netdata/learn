@@ -509,7 +509,7 @@ def safe_cleanup_learn_folders(folder_to_delete):
     md_files = fetch_markdown_from_repo(folder_to_delete)
     json_files = fetch_json_from_repo(folder_to_delete)
     print(
-        f"Files in the {folder_to_delete} folder #{len(md_files)+len(md_files)} which are about to be deleted")
+        f"Files in the {folder_to_delete} folder #{len(md_files) + len(json_files)} which are about to be deleted")
     for md in md_files:
 
         metadata = read_metadata(Path(md).read_text().split("-->")[0])
