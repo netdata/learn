@@ -1373,7 +1373,11 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
             message = file_array_entry[2]
             color = file_array_entry[3]
             if Path(file).is_file():
-                whole_file = Path(file).read_text(encoding='utf-8')
+                try:
+                    whole_file = Path(file).read_text(encoding='utf-8')
+                except (UnicodeDecodeError, OSError) as e:
+                    print(f"Skipping file {file} due to read/decode error: {e}")
+                    continue
 
                 direct_child = Path(file).parent == Path(directory)
 
