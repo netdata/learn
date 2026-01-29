@@ -1302,15 +1302,18 @@ def sort_files(file_array):
                 # Skip files that cannot be decoded or read
                 continue
 
+            # Use a normalized version of the filename as the sort key
+            normalized_name = clean_and_lower_string(Path(file).stem)
+
             if "most_popular: \"True\"" in content:
                 most_popular.append(
-                    [str(file).lower().rsplit("/", 1)[1], file, "by Netdata", "#00ab44"])
+                    [normalized_name, file, "by Netdata", "#00ab44"])
             elif "maintained%20by-Netdata-" in content:
                 rest_netdata_integrations.append(
-                    [str(file).lower().rsplit("/", 1)[1], file, "by Netdata", "#00ab44"])
+                    [normalized_name, file, "by Netdata", "#00ab44"])
             else:
                 community_integrations.append(
-                    [str(file).lower().rsplit("/", 1)[1], file, "by Community", "rgba(0, 0, 0, 0.25)"])
+                    [normalized_name, file, "by Community", "rgba(0, 0, 0, 0.25)"])
 
     sorted_array = sorted(
         most_popular) + sorted(rest_netdata_integrations) + sorted(community_integrations)
