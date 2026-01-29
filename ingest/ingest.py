@@ -1383,7 +1383,7 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
                     integrations += 1
                 else:
                     if direct_child:
-                        direct_non_integrations+=1
+                        direct_non_integrations += 1
         # if there are only integrations in current dir and subdirs
         # for the case where we got integrations in subdirs, but more files, like Collecting Metrics directory, we don't want to make anything
         if integrations > 0 and (
