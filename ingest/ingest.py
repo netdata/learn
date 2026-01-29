@@ -522,9 +522,9 @@ def safe_cleanup_learn_folders(folder_to_delete):
                 os.remove(md)
         except Exception as e:
             print(f"Couldn't delete the {md} file reason: {e}")
-    for json in json_files:
-        deleted_files.append(json)
-        os.remove(json)
+    for json_file in json_files:
+        deleted_files.append(json_file)
+        os.remove(json_file)
     print(
         f"Cleaned up #{len(deleted_files)} files under {folder_to_delete} folder")
 
