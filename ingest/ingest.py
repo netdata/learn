@@ -1317,9 +1317,8 @@ def get_dir_make_file_and_recurse(directory):
     dir_path, dir_name = str(directory).rsplit("/", 1)
     filename = f"{dir_path}/{dir_name}/{dir_name}.mdx"
 
-    if len(sorted(Path(directory).glob(
-            "**/**/*"))) >= 1:
-        sorted_list = sort_files(Path(directory).glob("**/**/*"))
+    if any(Path(directory).glob("**/*")):
+        sorted_list = sort_files(Path(directory).glob("**/*"))
 
         try:
             sidebar_position = re.search(
