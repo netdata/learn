@@ -1,0 +1,140 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata-cloud-onprem/edit/master/netdata-cloud-onprem/RELEASE-NOTES.md"
+sidebar_label: "Release Notes"
+learn_status: "Published"
+learn_rel_path: "Netdata Cloud On-Prem"
+sidebar_position: "700090"
+learn_link: "https://learn.netdata.cloud/docs/netdata cloud on-prem/release-notes"
+slug: "/netdata cloud on-prem/release-notes"
+---
+
+# Release notes
+
+## 2.4.0 (2025-12-19)
+
+### Features
+
+- New consolidated cronjob cleanup-nodes for cleaning up nodes from several reasons (soft-deleted, offline nodes etc.)
+- Add ServiceNow notification integration
+- Alert Notification performance improvements
+- Expire older claim tokens upon creating a new one
+- Introduce chart section filters
+
+## 2.3.0 (2025-09-30)
+
+### Features
+
+- Simplified the layout of the rooms list in the left sidebar for improved clarity and usability
+- Added support for custom identity parameters in OAuth provider configuration to enhance SSO flexibility
+- Improved SSO login process with enhanced query parameter handling for better provider identification
+- Support for the latest Redis 8.x
+
+### Bug fixes
+
+- Resolved an issue preventing users from setting custom dates in the global date picker
+- Fixed an issue that prevented TV mode from loading on the local dashboard
+- Resolved an issue where deleted nodes could incorrectly reappear in the system
+- Fixed a race condition that could occur when revoking access control permissions in EMQX
+- Resolved a callback issue that could prevent successful authentication with OAuth providers
+
+## 2.2.1 (2025-08-06)
+
+### Bug fixes
+
+- Prevent from global configmap and secrets deletion when using helm hooks
+
+## 2.2.0 (2025-08-06)
+
+### Features
+
+- Enrich reachability notifications with space node stats
+- Support Redis as EMQX authentication and authorization backend
+- Support adding/removing a user to/from multiple rooms
+- Add support for additional filters when searching for alert transitions
+- SCIM: Add support for filters when removing group members
+- SCIM: Add support for user addition/removal operations
+- SCIM: Infer member type if reference attribute is missing
+- Prioritize liveness over higher hops when routing by node
+- Update OpenTelemetry library version
+- Helm Chart: .Values.global.customCaCertificates now it is supported in every workload ie. netdata cloud onprem can connect to the Elasticsearch exposed with a custom SSL certificate
+
+### Bug fixes
+
+- Fix named emails for SMTP backend
+- Deprecate legacy alarm streaming service
+- Fix bug that would make member creation fail when active invitation pre-existed
+- Fix recurrence silencing rules by fully supporting RRule specifications
+- SCIM: Avoid returning groups for disabled accounts
+- SCIM: Multiple small fixes to increase robustness
+
+## 2.1.0 (2025-06-02)
+
+### Features
+
+- Add custom CA certificate for accessing OIDC providers
+- Updated Traefik to version 3.4.0 in the `netdata-cloud-dependency` helm chart
+- Performance improvements for `/data` requests leading to lower memory/cpu consumption and lower response times as well
+- Improved the performance of Alert notifications processing through a bulk processing mechanism using PostgreSQL
+- Feed events improvements on alert-notification-dispatched actions.
+
+### Bug fixes
+
+- Fix network policy to provide access to the internet by the `cloud-spaceroom-service` to allow it to fetch the OIDC discovery document
+
+## 2.0.0 (2025-05-16)
+
+### Breaking changes
+
+- Upgraded EMQX to version 5.8.6. After upgrading, netdata‑cloud‑onprem should be released with Helm chart version 2.0.0 or higher (provisioning). If persistent volumes are used, you can upgrade EMQX by completely removing its volume to preserve core functionality. The Spaceroom service will repopulate credentials for the Agents.Any additional user-defined settings require manual action
+- Updated the dependency Helm chart to use the native EMQX Helm chart
+- Dropped support for EMQX versions older than 5.5.0
+- Default traefik service name is changed (potential breaking change)
+- Changed keys responsible for provisioning images in netdata-cloud-onprem helm chart
+
+### Features
+
+- Introduced downloadable metrics from charts (raw data, normalized data, PNG, PDF). On every chart, you can find a new button in the top-right corner that allows you to download the chart data
+- Introduced downloadable events as NDJSON. In the Events tab, you can download the feed in NDJSON format
+- Removed the visited nodes list from the sidebar. This feature was obsolete and has been removed
+- Bumped Golang to version 1.23 and updated dependencies
+- Introduced Kubernetes security context for CronJobs
+- Disallowed connections from Agents running versions earlier than v1.40
+- Replaced protobuf feed events with JSON for agent-, node-, and node-instance-related events
+- Added support for OIDC discovery, validating the issuer via the `/.well-known/openid-connect` endpoint
+- Joining a space via invitation with a new Netdata account no longer creates an additional personal space
+- Improved Alerts processing performance
+- Introduced Network Policy into the Helm charts (opt-in). Documentation is available at https://learn.netdata.cloud/docs/netdata-cloud-on-prem/kubernetes-network-policy-configuration
+- Added SBOM for onprem images. Documentation is available at https://learn.netdata.cloud/docs/netdata-cloud-on-prem/software-bill-of-materials
+- Switched the base image for provisioning scripts from Ubuntu to Alpine (with Curl)
+- All of the images for netdata-cloud-onprem and netdata-cloud-dependency now point to Netdata's ECR by default, making it easier to install in network-restricted environments
+- Improved the documentation (in `values.yaml` and `README.md`) for both the netdata-cloud-onprem and netdata-cloud-dependency charts
+
+### Bug fixes
+
+- Better timeout handling
+- Better error handling
+- Markdoc style fixes
+- Agent dyncfg schema
+- Improved EMQX credential and ACL handling
+- Fixed an issue where a newer version of EMQX was not provisioned correctly
+- Onprem now have custom error pages
+
+## 1.0.4 (2025-03-31)
+
+### Features
+
+- Introduces SCIM Groups support
+- Refactor reachability notifications improving performance, reliability and logging
+- Improves Invitations flow error handling/messages improving the error clarity
+- Introduce contexts autocomplete widget in DYNCFG (Dynamic Config)
+- Frontend framework refactor. Better performance and less memory consumption on the browser
+- Enhance functions and logs with better and easier filtering on facets
+- Introduce chart and function user settings
+
+### Bug fixes
+
+- Fix DYNCFG (Dynamic Config) bug that was causing false error report after enabling multiple jobs
+- We now perform a node cleanup when last pruned node instance gets deleted
+- Fixes reachability notifications bug related to rooms without members
+- Addresses JWT-related [CVE](https://github.com/golang-jwt/jwt/security/advisories/GHSA-mh63-6h87-95cp) that could result in excessive memory allocation
+- Other minor bugs

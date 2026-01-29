@@ -1,0 +1,191 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/troubleshooting.md"
+sidebar_label: "Troubleshooting"
+learn_status: "Published"
+learn_rel_path: "Netdata Cloud On-Prem"
+sidebar_position: "700080"
+learn_link: "https://learn.netdata.cloud/docs/netdata cloud on-prem/troubleshooting"
+slug: "/netdata cloud on-prem/troubleshooting"
+---
+
+# Netdata Cloud On-Prem Troubleshooting
+
+Your Netdata Cloud On-Prem deployment relies on several infrastructure components that need proper resources and configuration:
+
+**Core Components:**
+
+- **Databases**: PostgreSQL, Redis, Elasticsearch
+- **Message Brokers**: Pulsar, EMQX
+- **Traffic Controllers**: Ingress, Traefik
+- **Kubernetes Cluster**
+
+**Monitor and manage these components** according to your organization's established practices and requirements.
+
+## Common Issues and Solutions
+
+### Installation Timeout Error
+
+**If your installation fails with this error:**
+
+```
+Installing netdata-cloud-onprem (or netdata-cloud-dependency) helm chart...
+[...]
+Error: client rate limiter Wait returned an error: Context deadline exceeded.
+```
+
+**This typically means your cluster doesn't have enough resources.** Here's how to diagnose and fix it:
+
+#### Diagnose the Problem
+
+:::note
+
+**Before you start:**
+
+- **Full installation**: Ensure you're in the correct cluster context
+- **Light PoC**: SSH into your Ubuntu VM with `kubectl` pre-configured
+
+:::
+
+:::important
+
+<strong>Always</strong> perform complete uninstallation before trying a new installation. There is a safety check in the installation script that will prevent you from attempting installation twice.
+
+```bash
+./provision.sh uninstall
+```
+
+:::
+
+<details>
+<summary><strong>Troubleshooting individual pods in Kuberentes</strong></summary><br/>
+<strong>Step 1: Check for stuck pods</strong><br/>
+
+```bash
+kubectl get pods -n netdata-cloud
+```
+
+:::tip
+
+Look for pods that are not in `Running` state or they are running properly - i.e. `0/1 Running`
+
+:::
+
+<strong>Step 2: Examine resource constraints</strong><br/>
+If you found `Pending` pods, check what's blocking them:<br/>
+
+```bash
+kubectl describe pod <POD_NAME> -n netdata-cloud
+```
+
+<strong>Look at the Events section</strong> for messages about:<br/>
+
+- Insufficient CPU<br/>
+- Insufficient Memory<br/>
+- Node capacity issues
+
+<strong>Step 3: View your cluster resources</strong><br/>
+
+<strong>Check your overall cluster capacity:</strong><br/><br/>
+
+```bash
+# Check resource allocation across nodes
+kubectl top nodes
+
+# View detailed node capacity
+kubectl describe nodes | grep -A 5 "Allocated resources"
+```
+
+</details>
+
+#### Install Custom Dashboard
+
+Custom dashboard helps you get some insights about how the Netdata On-prem installation performs, by exposing some of the crucial metrics
+in a dedicated Netdata Cloud Dashboard.
+
+Before you install the custom dashboard, make sure to:
+
+- [monitor the Apache Pulsar](https://learn.netdata.cloud/docs/collecting-metrics/message-brokers/apache-pulsar)
+- [issue the API Token](https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization/api-tokens) with the `scope:all` permissions
+- get the Space ID and Room ID where the custom dashboard should be installed
+
+To install custom dashboard go with the following steps:
+
+<strong>Step 1. Download the `netdata-support-dashboard` script</strong><br/>
+```bash
+wget https://netdata-cloud-netdata-static-content.s3.amazonaws.com/netdata-support-dashboard.sh
+```
+
+<strong>Step 2. Run the `netdata-support-dashboard`</strong><br/>
+```bash
+./netdata-support-dashboard.sh --url <netdata-onprem-installation-url> --space <space_id> --room <room_id>
+```
+
+#### Fix the Issue
+
+**Compare your available resources** against the [minimum requirements](/docs/netdata cloud on-prem/installation#before-you-begin). Then **add more resources to your cluster** or **free up existing resources** by removing unnecessary workloads.
+
+#### Submit the support ticket
+
+If you still can't resolve the issue, please submit a support ticket with the support bundle.
+
+To create the support bundle, run:
+
+<strong>Step 1. Download the `netdata-support-tool`</strong><br/>
+```bash
+wget https://netdata-cloud-netdata-static-content.s3.amazonaws.com/netdata-support-tool.sh
+```
+
+<strong>Step 2. Run the `netdata-support-tool` to gather support data from your Netdata Cloud On-Prem installation</strong><br/>
+```
+./netdata-support-tool.sh gather -c <kubectl-context> -n <netdata-cloud-onprem-namespace>
+```
+
+<strong>Step 3. Attach the generated bundle to the support ticket</strong><br/>
+
+### Login Problems After Installation
+
+**Your installation might complete successfully, but you can't log in.** This usually happens due to configuration mismatches.
+
+| Problem                           | What You'll See                                  | Why It Happens                                                                                              | How to Fix It                                                                                                                   |
+| --------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **SSO Login Failure**             | Can't authenticate via SSO providers             | Invalid callback URLs, expired SSO tokens, untrusted certificates, incorrect FQDN in `global.public`        | Update SSO configuration in your `values.yaml`, verify certificates are valid and trusted, ensure FQDN matches your certificate |
+| **MailCatcher Login (Light PoC)** | Magic links don't arrive, "Invalid token" errors | Incorrect hostname during installation, modified default MailCatcher values                                 | Reinstall with correct FQDN, restore default MailCatcher settings, ensure hostname matches certificate                          |
+| **Custom Mail Server Login**      | Magic links don't arrive                         | Incorrect SMTP configuration, network connectivity issues                                                   | Update SMTP settings in your `values.yaml`, verify network allows SMTP traffic, check your mail server logs                     |
+| **Invalid Token Error**           | "Something went wrong - invalid token" message   | Mismatched `netdata-cloud-common` secret, database hash mismatch, namespace change without secret migration | Migrate secret before namespace change, perform fresh installation, or contact support for data recovery                        |
+
+:::warning
+
+**Important for Namespace Changes**
+
+If you're changing your installation namespace, the `netdata-cloud-common` secret will be recreated.
+
+**Before you proceed**
+
+Back up your existing `netdata-cloud-common` secret, or wipe your PostgreSQL database to prevent data conflicts.
+
+:::
+
+### Slow or Failing Charts
+
+**When your charts take forever to load or fail with errors**, the problem usually comes from data collection challenges. Your `charts` service needs to gather data from multiple Agents in a Room, requiring successful responses from all queried Agents.
+
+| Problem                   | What You'll See                                                                                     | Why It Happens                                                               | How to Fix It                                                                                                                                                                                                                            |
+| ------------------------- | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Agent Connectivity**    | Queries stall or timeout, inconsistent chart loading                                                | Slow Agents or unreliable network connections prevent timely data collection | Deploy additional [Parent](/docs/netdata parents/netdata-parents) nodes to provide reliable backends. Your system will automatically prefer these for queries when available |
+| **Kubernetes Resources**  | Service throttling, slow data processing, delayed dashboard updates                                 | Resource saturation at your node level or restrictive container limits       | Review and adjust your container resource limits and node capacity as needed                                                                                                                                                             |
+| **Database Performance**  | Slow query responses, increased latency across services                                             | PostgreSQL performance bottlenecks in your setup                             | Monitor and optimize your database resource utilization: CPU usage, memory allocation, disk I/O performance                                                                                                                              |
+| **Message Broker Issues** | Delayed node status updates (online/offline/stale), slow alert transitions, dashboard update delays | Message accumulation in Pulsar due to processing bottlenecks                 | Review your Pulsar configuration, adjust microservice resource allocation, monitor message processing rates                                                                                                                              |
+
+## Get Help
+
+**If problems persist after trying these solutions:**
+
+1. **Gather the following information:**
+
+   - Your installation logs
+   - Your cluster specifications
+   - Description of the specific issue you're experiencing
+
+2. **Contact our support team** at `support@netdata.cloud`
+
+We're here to help you get your monitoring running smoothly.
