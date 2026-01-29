@@ -150,9 +150,13 @@ def ensure_category_json_for_dirs(docs_root):
 
         payload = {"label": base, "position": cat_pos, "link": None}
 
-        with open(category_json, "w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2)
-            f.write("\n")
+        try:
+            with open(category_json, "w", encoding="utf-8") as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+                f.write("\n")
+        except OSError as e:
+            print(f"WARNING: Failed to write category JSON '{category_json}': {e}")
+            continue
 
         print(f"CREATE {category_json} with position={cat_pos} label='{base}'")
 
