@@ -146,7 +146,8 @@ def ensure_category_json_for_dirs(docs_root):
                 continue
 
             mdx_files.sort(key=lambda s: s.casefold())
-            cat_pos = 999999999  # choose your fallback policy
+            # Fallback: use a large position so this category appears after any explicitly positioned items
+            cat_pos = 9999
 
         payload = {"label": base, "position": cat_pos, "link": None}
 
