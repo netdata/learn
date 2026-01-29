@@ -114,16 +114,14 @@ def ensure_category_json_for_dirs(docs_root):
 
         base = os.path.basename(os.path.normpath(dirpath))
 
-        # 0) skip docs root
         if abs_dir == abs_root:
             continue
 
         category_json = os.path.join(dirpath, "_category_.json")
-        
+
         if os.path.exists(os.path.join(dirpath, f"{base}.mdx")):
             continue
 
-        # 4) compute position from direct child mdx files
         mdx_files = [f for f in filenames if f.lower().endswith(".mdx")]
 
         positions = []
@@ -1321,8 +1319,9 @@ def sort_files(file_array):
 
 
 def get_dir_make_file_and_recurse(directory):
-    dir_path, dir_name = str(directory).rsplit("/", 1)
-    filename = f"{dir_path}/{dir_name}/{dir_name}.mdx"
+    dir_name = os.path.dirname(directory)
+    file_name = Path(directory).name
+    filename = f"{dir_name}/{file_name}/{file_name}.mdx"
 
     if any(Path(directory).glob("**/*")):
         sorted_list = sort_files(Path(directory).glob("**/*"))
@@ -1332,16 +1331,16 @@ def get_dir_make_file_and_recurse(directory):
                 r'sidebar_position:.*', Path(sorted_list[0][1]).read_text(encoding='utf-8'))[0]
         except (TypeError, IndexError):
             sidebar_position = ""
-        sidebar_label = str(directory).rsplit("/", 1)[1]
+        sidebar_label = Path(directory).name
 
-        dir_path = Path(directory)
+        dir_name = Path(directory)
         try:
             # Compute path relative to the docs root (e.g. "docs/foo/bar" -> "foo/bar")
-            relative_dir = dir_path.relative_to(Path("docs"))
+            relative_dir = dir_name.relative_to(Path("docs"))
             slug_path = clean_and_lower_string(str(relative_dir))
         except ValueError:
             # Fallback: use the full directory path if it is not under "docs"
-            slug_path = clean_and_lower_string(str(dir_path))
+            slug_path = clean_and_lower_string(str(dir_name))
 
         slug = "/" + slug_path.lstrip("/")
 
@@ -1389,13 +1388,17 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
                     except TypeError:
                         img = ""
 
-                    md += \
-                        f"""
-<Box banner="{message}" banner_color="{color}" to="{meta_dict["learn_link"].replace("https://learn.netdata.cloud", "")}"  title="{meta_dict["sidebar_label"]}">
-{img}
-</Box>
-"""
-                    integrations += 1
+                    try:
+                        md += \
+                            f"""
+    <Box banner="{message}" banner_color="{color}" to="{meta_dict["learn_link"].replace("https://learn.netdata.cloud", "")}"  title="{meta_dict["sidebar_label"]}">
+    {img}
+    </Box>
+    """
+                        integrations += 1
+                    except KeyError as e:
+                        print("Missing keys in grid generation logic", e)
+                        continue
                 else:
                     if direct_child:
                         direct_non_integrations += 1
