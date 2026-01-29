@@ -1324,7 +1324,7 @@ def sort_files(file_array):
 def get_dir_make_file_and_recurse(directory):
     dir_name = os.path.dirname(directory)
     file_name = Path(directory).name
-    filename = f"{dir_name}/{file_name}/{file_name}.mdx"
+    filename = str(Path(dir_name) / file_name / f"{file_name}.mdx")
 
     if any(Path(directory).glob("**/*")):
         sorted_list = sort_files(Path(directory).glob("**/*"))
