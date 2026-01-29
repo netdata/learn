@@ -114,7 +114,6 @@ def ensure_category_json_for_dirs(docs_root):
 
         base = os.path.basename(os.path.normpath(dirpath))
 
-
         # 0) skip docs root
         if abs_dir == abs_root:
             continue
