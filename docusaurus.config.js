@@ -103,7 +103,7 @@ module.exports = {
 					items: [
 						{
 							type: 'doc',
-							docId: 'welcome-to-netdata/welcome-to-netdata',
+							docId: 'Welcome to Netdata/Welcome to Netdata',
 							label: 'Documentation'
 						},
 						{
