@@ -152,17 +152,6 @@ def ensure_category_json_for_dirs(docs_root):
 
         payload = {"label": base, "position": cat_pos}
 
-        # Preserve existing _category_.json properties if file exists
-        if os.path.exists(category_json):
-            try:
-                with open(category_json, "r", encoding="utf-8") as f:
-                    existing = json.load(f)
-                    # Merge: existing properties take precedence except for position
-                    existing.update(payload)
-                    payload = existing
-            except (json.JSONDecodeError, OSError):
-                pass  # If can't read existing, overwrite with new
-
         try:
             with open(category_json, "w", encoding="utf-8") as f:
                 json.dump(payload, f, ensure_ascii=False, indent=2)
@@ -176,27 +165,6 @@ def ensure_category_json_for_dirs(docs_root):
 
 def clean_and_lower_string(string):
     return re.sub(r'(-)+', '-', string.lower().replace(",", "-").replace(" ", "-").replace("//", "/"))
-
-
-def slug_to_title(slug):
-    """
-    Convert a URL-style slug to a human-readable title.
-    Examples:
-        'collecting-metrics' -> 'Collecting Metrics'
-        'alerts-&-notifications' -> 'Alerts & Notifications'
-        'cloud-authentication-&-authorization-integrations' -> 'Cloud Authentication & Authorization Integrations'
-    """
-    # Replace hyphens with spaces, but preserve & as-is
-    title = slug.replace("-", " ").replace("  ", " ")
-    # Title case each word
-    words = title.split()
-    result = []
-    for word in words:
-        if word == "&":
-            result.append("&")
-        else:
-            result.append(word.capitalize())
-    return " ".join(result)
 
 
 def extract_headers_from_file(file_path):
@@ -1380,10 +1348,10 @@ def get_dir_make_file_and_recurse(directory):
                 r'sidebar_position:.*', Path(sorted_list[0][1]).read_text(encoding='utf-8'))[0]
         except (TypeError, IndexError):
             sidebar_position = ""
-        # Convert directory name to human-readable title
-        sidebar_label = slug_to_title(Path(directory).name)
 
+        sidebar_label = Path(directory).name
         dir_name = Path(directory)
+
         try:
             # Compute path relative to the docs root (e.g. "docs/foo/bar" -> "foo/bar")
             relative_dir = dir_name.relative_to(Path("docs"))
