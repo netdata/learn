@@ -106,7 +106,7 @@ def ensure_category_json_for_dirs(docs_root):
     """
     For every directory under docs_root:
     - if <dir>/<basename(dir)>.mdx exists => treat as category overview; do nothing
-    - else if _category_.json missing => create it using min sidebar_position of direct-child mdx files
+    - else create or overwrite _category_.json using min sidebar_position of direct-child mdx files
     """
     for dirpath, dirnames, filenames in os.walk(docs_root):
         abs_dir = os.path.abspath(dirpath)
