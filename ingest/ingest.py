@@ -1397,7 +1397,7 @@ import \u007b Grid, Box \u007d from '@site/src/components/Grid_integrations';
     """
                         integrations += 1
                     except KeyError as e:
-                        print("Missing keys in grid generation logic", e)
+                        print(f"Missing key {e} in grid generation logic for file {file}")
                         continue
                 else:
                     if direct_child:
