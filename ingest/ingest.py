@@ -133,7 +133,7 @@ def ensure_category_json_for_dirs(docs_root):
             try:
                 with open(p, "r", encoding="utf-8") as fh:
                     head = fh.read(64 * 1024)
-            except OSError as e:
+            except OSError:
                 continue
 
             m = POS_RE.search(head)
