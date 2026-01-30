@@ -4679,7 +4679,7 @@
 
 [[redirects]]
   from="/docs/agent/demo-sites"
-  to="/docs//live-demo"
+  to="/docs/live-demo"
 
 [[redirects]]
   from="/docs/deployment-in-production/metric-retention---database/database-engine"
@@ -4695,11 +4695,11 @@
 
 [[redirects]]
   from="/docs/getting-started/live-demos"
-  to="/docs//live-demo"
+  to="/docs/live-demo"
 
 [[redirects]]
   from="/docs/miscellaneous/live-demos"
-  to="/docs//live-demo"
+  to="/docs/live-demo"
 
 [[redirects]]
   from="/docs/contributing-to-netdata/database-engine"
@@ -4707,7 +4707,7 @@
 
 [[redirects]]
   from="/docs//live-demos"
-  to="/docs//live-demo"
+  to="/docs/live-demo"
 
 [[redirects]]
   from="/docs/contributing/database-engine"
@@ -5235,7 +5235,7 @@
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/power-supply/power-supply"
-  to="/docs/collecting-metrics/linux-systems/power-supply/power-supply"
+  to="/docs/collecting-metrics/linux-systems/power-supply"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/wireless-network-interfaces"
@@ -5351,7 +5351,7 @@
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/filesystem/btrfs/btrfs"
-  to="/docs/collecting-metrics/linux-systems/filesystem/btrfs/btrfs"
+  to="/docs/collecting-metrics/linux-systems/filesystem/btrfs"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/disk/md-raid"
@@ -6559,11 +6559,11 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/power-supply"
-  to="/docs/collecting-metrics/linux-systems/power-supply/power-supply"
+  to="/docs/collecting-metrics/linux-systems/power-supply"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/filesystem/btrfs"
-  to="/docs/collecting-metrics/linux-systems/filesystem/btrfs/btrfs"
+  to="/docs/collecting-metrics/linux-systems/filesystem/btrfs"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/replication-of-past-samples"
@@ -8588,5 +8588,21 @@
 [[redirects]]
   from="/docs/security-and-privacy-design/netdata-agent-security-and-privacy-design"
   to="/docs/security-and-privacy-design/netdata-agent"
+
+[[redirects]]
+  from="/docs/collecting-metrics/linux-systems/power-supply/power-supply"
+  to="/docs/collecting-metrics/linux-systems/power-supply"
+
+[[redirects]]
+  from="/docs/collecting-metrics/linux-systems/filesystem/btrfs/btrfs"
+  to="/docs/collecting-metrics/linux-systems/filesystem/btrfs"
+
+[[redirects]]
+  from="/docs//live-demo"
+  to="/docs/live-demo"
+
+[[redirects]]
+  from="/docs//getting-started"
+  to="/docs/getting-started"
 
 # section: dynamic << END
