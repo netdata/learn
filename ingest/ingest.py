@@ -1715,7 +1715,7 @@ if __name__ == '__main__':
                         "ingestedRepo": str(markdown.split("/", 2)[1])
                     }
 
-                    print(response[1])
+                    # print(response[1])
 
                     md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + response[1], "slug": response[1]})
 
