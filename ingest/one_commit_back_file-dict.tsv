@@ -36,7 +36,7 @@ https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kuber
 https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md	/docs/netdata-agent/installation/linux/offline-systems
 https://github.com/netdata/netdata/edit/master/docs/welcome-to-netdata.md	/docs/welcome-to-netdata
 https://github.com/netdata/netdata/edit/master/docs/nodes-ephemerality.md	/docs/netdata-parents/node-types-and-lifecycle-reference
-https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	/docs//live-demo
+https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	/docs/live-demo
 https://github.com/netdata/netdata/edit/master/docs/scalability.md	/docs/welcome-to-netdata/scalability
 https://github.com/netdata/netdata/edit/master/docs/fleet-configuration-management.md	/docs/welcome-to-netdata/fleet-deployment-and-configuration-management
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	/docs/developer-and-contributor-corner/glossary
@@ -59,7 +59,7 @@ https://github.com/netdata/netdata/edit/master/docs/observability-centralization
 https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/README.md	/docs/logs/logs-centralization-points-with-systemd-journald
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md	/docs/netdata-agent/maintenance
 https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md	/docs/netdata-ai
-https://github.com/netdata/netdata/edit/master/docs/getting-started-netdata/guide.md	/docs//getting-started
+https://github.com/netdata/netdata/edit/master/docs/getting-started-netdata/guide.md	/docs/getting-started
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-cloud-security.md	/docs/security-and-privacy-design/netdata-cloud
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/README.md	/docs/security-and-privacy-design
 https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/netdata-agent-security.md	/docs/security-and-privacy-design/netdata-agent
@@ -423,9 +423,9 @@ https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integr
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/system_uptime.md	/docs/collecting-metrics/linux-systems/system/system-uptime
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/ipv6_socket_statistics.md	/docs/collecting-metrics/linux-systems/network/ipv6-socket-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/infiniband.md	/docs/collecting-metrics/linux-systems/network/infiniband
-https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/btrfs.md	/docs/collecting-metrics/linux-systems/filesystem/btrfs/btrfs
+https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/btrfs.md	/docs/collecting-metrics/linux-systems/filesystem/btrfs
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/wireless_network_interfaces.md	/docs/collecting-metrics/linux-systems/network/wireless-network-interfaces
-https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/power_supply.md	/docs/collecting-metrics/linux-systems/power-supply/power-supply
+https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/power_supply.md	/docs/collecting-metrics/linux-systems/power-supply
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/pressure_stall_information.md	/docs/collecting-metrics/linux-systems/pressure/pressure-stall-information
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/socket_statistics.md	/docs/collecting-metrics/linux-systems/network/socket-statistics
 https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/memory_statistics.md	/docs/collecting-metrics/linux-systems/memory/memory-statistics

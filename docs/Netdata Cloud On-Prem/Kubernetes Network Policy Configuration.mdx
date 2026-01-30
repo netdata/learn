@@ -1,0 +1,140 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/netpol.md"
+sidebar_label: "Kubernetes Network Policy Configuration"
+learn_status: "Published"
+learn_rel_path: "Netdata Cloud On-Prem"
+sidebar_position: "700050"
+learn_link: "https://learn.netdata.cloud/docs/netdata-cloud-on-prem/kubernetes-network-policy-configuration"
+slug: "/netdata-cloud-on-prem/kubernetes-network-policy-configuration"
+---
+
+# Kubernetes Network Policy Configuration for Netdata Cloud On-Prem
+
+This guide shows you how to configure Kubernetes Network Policies for your Netdata Cloud On-Prem deployment. Network policies **enhance your security** by restricting network traffic between pods in your cluster.
+
+## Enable Network Policies
+
+Network policies are **disabled by default**. To enable them in your deployment, set this Helm value to `true`:
+
+```yaml
+global.networkPolicy.enabled: true
+```
+
+This applies network policies to **all workloads** managed by your Netdata Cloud On-Prem Helm chart, including Deployments, CronJobs, and provisioning jobs.
+
+## How Default Policies Work
+
+When you enable network policies, the default behavior **restricts communication within your namespace** to only these specified ports:
+
+```yaml
+global.networkPolicy.allowIngressTCPPorts: [8080, 8081, 50051]
+```
+
+**What each port does:**
+
+- **Port 8080**: Rest API communication
+- **Port 8081**: Monitoring traffic
+- **Port 50051**: gRPC communication
+
+By default, **only traffic on these ports is permitted** between pods within your Netdata Cloud On-Prem deployment. All other ingress traffic is denied.
+
+### Enable DNS Resolution
+
+You can allow DNS egress traffic for all pods in your namespace by setting:
+
+```yaml
+global.networkPolicy.allowEgressDNS: true
+```
+
+**This allows your pods to resolve DNS names**, which is essential for most services to function properly.
+
+## Configure External Dependencies
+
+Your Netdata Cloud On-Prem deployment **doesn't manage external dependencies** like Apache Pulsar, Elasticsearch, PostgreSQL, EMQX, and Redis. To allow communication with these external services, **you must explicitly define network policy rules**.
+
+### Configuration Options
+
+Use these Helm value keys to configure rules for your external services:
+
+| Service           | Configuration Key                                  | Purpose                               |
+| ----------------- | -------------------------------------------------- | ------------------------------------- |
+| **Traefik**       | `global.networkPolicy.ingressRulesForTraefik`      | Allow ingress traffic through Traefik |
+| **PostgreSQL**    | `global.networkPolicy.egressRulesForPostgreSQL`    | Connect to your PostgreSQL database   |
+| **EMQX**          | `global.networkPolicy.egressRulesForEMQX`          | Connect to your EMQX message broker   |
+| **Elasticsearch** | `global.networkPolicy.egressRulesForElasticsearch` | Connect to your Elasticsearch cluster |
+| **Pulsar**        | `global.networkPolicy.egressRulesForPulsar`        | Connect to your Pulsar message system |
+| **Redis**         | `global.networkPolicy.egressRulesForRedis`         | Connect to your Redis cache           |
+
+**Each key expects a Kubernetes NetworkPolicy rule definition.** See the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/) for details on defining NetworkPolicy rules. Your rules should specify the appropriate selectors and port ranges to allow communication with your external dependencies.
+
+### Example Configuration
+
+**PostgreSQL connection example:**
+
+```yaml
+global.networkPolicy.egressRulesForPostgreSQL: |-
+  - to:
+    - podSelector:
+        matchLabels:
+            app: postgresql
+```
+
+## Service-Specific Policies
+
+**You can add custom network policies** for individual services using `extraIngress` and `extraEgress` rules. This gives you **fine-grained control** over network access for specific services in your deployment.
+
+## Services That Need Internet Access
+
+Some services in your deployment may need to communicate with external providers on the internet.
+
+### Notification Service
+
+Your `cloud-notifications-dispatcher-service` **may need internet access** to communicate with external notification providers like **Slack** and **Discord**. This is **enabled by default**, but you can customize it:
+
+```yaml
+cloud_notifications_dispatcher_service.networkPolicy.allowInternetAccess.enabled: true
+cloud_notifications_dispatcher_service.networkPolicy.allowInternetAccess.egressRule:
+  |-
+  - to:
+      - ipBlock:
+          cidr: 0.0.0.0/0
+    ports:
+      - protocol: TCP
+        port: 443
+```
+
+### Account Service
+
+Your `cloud-accounts-service` **may need internet access** to communicate with external identity providers like **Google** or **GitHub**. This is **enabled by default**, but you can customize it:
+
+```yaml
+cloud_accounts_service.networkPolicy.allowInternetAccess.enabled: true
+cloud_accounts_service.networkPolicy.allowInternetAccess.egressRule: |-
+  - to:
+      - ipBlock:
+          cidr: 0.0.0.0/0
+    ports:
+      - protocol: TCP
+        port: 443
+```
+
+### Space/Room Service
+
+Your `cloud-spaceroom-service` **may need internet access** to communicate with your custom identity provider. This is **enabled by default**, but you can customize it:
+
+```yaml
+cloud_spaceroom_service.networkPolicy.allowInternetAccess.enabled: true
+cloud_spaceroom_service.networkPolicy.allowInternetAccess.egressRule: |-
+  - to:
+      - ipBlock:
+          cidr: 0.0.0.0/0
+    ports:
+      - protocol: TCP
+        port: 443
+```
+
+:::tip
+
+**Security Best Practice**: For the external dependencies ingress and egress rules, you should precisely define the restrictive rules without giving widely open access.
+
+:::

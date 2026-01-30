@@ -1,0 +1,69 @@
+---
+custom_edit_url: "https://github.com/netdata/.github/edit/main/CONTRIBUTING.md"
+sidebar_label: "Contributing"
+learn_status: "Published"
+learn_rel_path: "Developer and Contributor Corner"
+sidebar_position: "1906010"
+learn_link: "https://learn.netdata.cloud/docs/developer-and-contributor-corner/contributing"
+slug: "/developer-and-contributor-corner/contributing"
+---
+
+# Contributing
+
+Thank you for considering contributing to Netdata!
+
+Maintaining a platform for monitoring everything requires a vast knowledge base. We rely on community contributions and user feedback to continue to provide the best monitoring solution.
+
+There are many ways to contribute, with varying skill requirements, explained in detail in the following sections.
+
+One good way to start is searching through [specific GitHub issues](https://github.com/netdata/netdata/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22help+wanted%22) we need help with. Some of them are also labeled as "good first issue".
+
+## Give Netdata a GitHub star
+
+GitHub stars are a great way to show your appreciation for open-source projects like Netdata. Starring Netdata helps us in several ways:
+
+- **Increases project discoverability**: More stars make Netdata more visible to others searching for monitoring solutions on GitHub.
+- **Attracts valuable contributors**: A high star count signals to developers that Netdata is a thriving project worth contributing to. This can lead to more features, bug fixes, and overall project improvement.
+
+If you enjoy using Netdata, consider giving it a 🌟!
+
+## Join the Netdata Community
+
+Engage with the Netdata community and get help, share knowledge, and contribute to the project's future! Here are the ways to connect:
+
+- [GitHub Discussions](https://github.com/netdata/netdata/discussions): Discuss technical topics, ask questions, and get help from the Netdata developers and community.
+- [Discord server](https://discord.com/invite/2mEmfW735j): Chat with other Netdata users in real-time, share experiences, and get quick answers.
+- [Community Forum](https://community.netdata.cloud): Find in-depth discussions, tutorials, and ask questions on a dedicated forum platform.
+
+### Contribute collectors
+
+Netdata lets you add custom data sources through collector plugins. Before diving in, check our [collector documentation](/docs/collecting-metrics) to understand how they work.
+
+The Netdata Agent has a modular approach to collecting data from data sources, meaning that we have a number of collector plugins that send data to the Netdata Agent. For each collector plugin, you can create a new module which collects data from a data source.
+
+To contribute a new collector:
+
+- **Go**: Follow the guide [How to write a Netdata collector in Go](/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go).
+- **Python**: Refer to the [collector's README](/docs/developer-and-contributor-corner/external-plugins/python.d.plugin).
+- **Shell/Bash**: Refer to the [charts.d documentation](/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin).
+- **StatsD**: Unfamiliar with StatsD? We have an [intro](https://www.netdata.cloud/blog/introduction-to-statsd/) and [reference docs](/docs/collecting-metrics/statsd).
+
+### Contribute alerts
+
+Netdata comes pre-configured with alerts for common monitoring needs. You can help improve these in two ways:
+
+1. **Modify or add alerts**: Enhance existing alerts or define new ones for specific use cases.
+2. **Alerts for new collectors**: If you contribute a new collector, consider including basic alerts for it.
+
+To do both, you'll need to create or modify alert configuration files. The process is covered in the [Health Reference](/docs/alerts-&-notifications/alert-configuration-reference) documentation.
+
+### Contribute alert notifications
+
+Netdata Agent supports sending notifications for various monitoring alerts. The Agent uses alerts to trigger notifications and then executes a script called `alarm-notify.sh`.
+
+To modify existing notifications or create new ones, you'll need to use Bash scripting.
+
+Here are ways to get started:
+
+- **Copy existing notifications**: Look at the structure of already implemented notifications within `alarm-notify.sh` and adapt them for your needs.
+- **Use custom endpoint as boilerplate**: Look at the [custom endpoint notification](/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/custom) as a starting point for your custom notification script.

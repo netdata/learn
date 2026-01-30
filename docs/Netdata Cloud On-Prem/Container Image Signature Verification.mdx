@@ -1,0 +1,142 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/image-signature-verification.md"
+sidebar_label: "Container Image Signature Verification"
+learn_status: "Published"
+learn_rel_path: "Netdata Cloud On-Prem"
+sidebar_position: "700030"
+learn_link: "https://learn.netdata.cloud/docs/netdata-cloud-on-prem/container-image-signature-verification"
+slug: "/netdata-cloud-on-prem/container-image-signature-verification"
+---
+
+# Netdata Cloud On-Prem Image Signature Verification
+
+All your on-premises images stored in the container registry are **digitally signed**, providing a robust way to verify their **authenticity and integrity**. This also applies to **your Helm charts**, because they are distributed as OCI artifacts.
+
+## How Image Signing Works
+
+**AWS ECR** stores all your on-premises images and uses **AWS Signer with Notary v2 support**, a secure image signing and verification standard. Notary v2 offers several verification levels - we **strongly recommend you use strict verification** for maximum security. This level ensures that only images signed by trusted entities and not subsequently revoked are accepted in your environment.
+
+## Two Ways to Verify Your Images
+
+You can verify your image signatures using either method:
+
+| Method                              | Best For                         | How It Works                                                                   |
+| ----------------------------------- | -------------------------------- | ------------------------------------------------------------------------------ |
+| **Local Verification**              | Manual verification and testing  | You use Notary CLI with AWS Signer plugin on your machine                      |
+| **Kubernetes Admission Controller** | Automated cluster-level security | Prevents unauthorized images from being deployed to your cluster automatically |
+
+## Trust and Identity Requirements
+
+Your verification process relies on the **AWS root certificate**, which you can download from the [AWS Signer Developer Guide](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html).
+
+**Your Trusted Identity ARN:** `arn:aws:signer:us-east-1:362923047827:/signing-profiles/onprem`
+
+## Local Verification Step-by-Step
+
+### What You'll Need
+
+Before you start, ensure you have:
+
+- **Notary CLI** installed and configured on your system
+- **AWS Signer plugin** installed
+- **Your AWS credentials** with ECR access
+
+See the [AWS Signer Developer Guide](https://docs.aws.amazon.com/signer/latest/developerguide/image-signing-prerequisites.html) for installation details.
+
+### Your Verification Process
+
+<br/><strong>Step 1: Verify Your Plugin Installation</strong><br/>
+
+Check that you have the AWS Signer plugin installed:<br/>
+
+```bash
+notation plugin list
+```
+
+You should see `com.amazonaws.signer.notation.plugin` in your list.
+
+<br/><strong>Step 2: Configure Your AWS Credentials</strong><br/>
+
+Set your AWS credentials:<br/>
+
+```bash
+export AWS_ACCESS_KEY_ID=<your_access_key>
+export AWS_SECRET_ACCESS_KEY=<your_secret_key>
+```
+
+<br/><strong>Step 3: Login to Your ECR</strong><br/>
+
+Authenticate with your ECR registry:<br/>
+
+```bash
+aws ecr get-login-password --region us-east-1 | notation login --username AWS --password-stdin 362923047827.dkr.ecr.us-east-1.amazonaws.com
+```
+
+<br/><strong>Step 4: Verify Your Root Certificate</strong><br/>
+
+Ensure you have the AWS root certificate installed:<br/>
+
+```bash
+notation cert list
+```
+
+The AWS root certificate should appear in your list. If you don't see it, download it from the AWS Signer Developer Guide.
+
+<br/><strong>Step 5: Check Your Policy Configuration</strong><br/>
+
+View your current trust policy:<br/>
+
+```bash
+notation policy show
+```
+
+Your policy should look like this:<br/>
+
+```json
+{
+  "version": "1.0",
+  "trustPolicies": [
+    {
+      "name": "test",
+      "registryScopes": ["*"],
+      "signatureVerification": {
+        "level": "strict"
+      },
+      "trustStores": ["signingAuthority:aws-signer-ts"],
+      "trustedIdentities": [
+        "arn:aws:signer:us-east-1:362923047827:/signing-profiles/onprem"
+      ]
+    }
+  ]
+}
+```
+
+<br/><strong>Step 6: Verify Your Image Signature</strong><br/>
+
+Verify a specific image in your registry:<br/>
+
+```bash
+notation verify 362923047827.dkr.ecr.us-east-1.amazonaws.com/onprem-cloud-environment-service@sha256:4117f06045b5b94a58ded40238fa7e9c2f228c6e0fac45dc78732052e3f48d1b --plugin-config aws-region=us-east-1
+```
+
+<strong>Success means your image is authentic and hasn't been tampered with.</strong>
+
+## Your Kubernetes Admission Controller Setup
+
+For automated verification in your Kubernetes deployments, you can configure the AWS Signer admission controller to **prevent unauthorized images** from being deployed to your cluster automatically.
+
+See the [AWS Signer Developer Guide](https://docs.aws.amazon.com/signer/latest/developerguide/kubernetes-verification.html) for detailed configuration steps for your environment.
+
+:::tip
+
+**Security Best Practice**: Use strict verification level and regularly verify your images, especially before you deploy updates to your production environments.
+
+:::
+
+## Security Best Practices
+
+:::important
+
+Using signature verification ensures the **integrity and authenticity** of container images, strengthening your overall security posture. It is recommended to use this mechanism in a way that deployment without signature verification is impossible to any environment, including non-production ones.
+
+:::
