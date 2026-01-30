@@ -2449,5 +2449,9 @@
     "https://learn.netdata.cloud/docs/ai-&-ml": "https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/monitor-anything": "https://github.com/netdata/netdata/blob/master/src/collectors/COLLECTORS.md",
     "https://learn.netdata.cloud/docs/security-and-privacy-design/netdata-cloud-security-and-privacy-design": "https://github.com/netdata/netdata/blob/master/docs/security-and-privacy-design/netdata-cloud-security.md",
-    "https://learn.netdata.cloud/docs/security-and-privacy-design/netdata-agent-security-and-privacy-design": "https://github.com/netdata/netdata/blob/master/docs/security-and-privacy-design/netdata-agent-security.md"
+    "https://learn.netdata.cloud/docs/security-and-privacy-design/netdata-agent-security-and-privacy-design": "https://github.com/netdata/netdata/blob/master/docs/security-and-privacy-design/netdata-agent-security.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/linux-systems/power-supply/power-supply": "https://github.com/netdata/netdata/blob/master/src/collectors/proc.plugin/integrations/power_supply.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/linux-systems/filesystem/btrfs/btrfs": "https://github.com/netdata/netdata/blob/master/src/collectors/proc.plugin/integrations/btrfs.md",
+    "https://learn.netdata.cloud/docs//live-demo": "https://github.com/netdata/netdata/blob/master/docs/Demo-Sites.md",
+    "https://learn.netdata.cloud/docs//getting-started": "https://github.com/netdata/netdata/blob/master/docs/getting-started-netdata/guide.md"
 }
