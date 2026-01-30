@@ -620,7 +620,7 @@ def create_mdx_path_from_metadata(metadata):
                            .replace("`", " ")).split())
     
     slug = "/{}/{}".format(metadata["learn_rel_path"],
-                                    final_file.replace(" ", "-")).lower().replace("//", "/")
+                                    final_file).lower().replace(" ", "-").replace("//", "/")
     
 
     if slug.rsplit("/")[-1] == slug.rsplit("/")[-2]:
@@ -632,7 +632,7 @@ def create_mdx_path_from_metadata(metadata):
             ).replace("//", "/"),
             re.sub('//+', '/', "/{}/{}".format(
                 metadata["learn_rel_path"],
-                final_file.replace(" ", "-")).lower().rsplit("/",1)[0]
+                final_file).lower().replace(" ", "-").rsplit("/",1)[0]
                 )
         ]
     else:
@@ -644,7 +644,7 @@ def create_mdx_path_from_metadata(metadata):
             ).replace("//", "/"),
             re.sub('//+', '/', "/{}/{}".format(
                 metadata["learn_rel_path"],
-                final_file.replace(" ", "-")).lower()
+                final_file).lower().replace(" ", "-")
                 )
         ]
 
@@ -1714,6 +1714,8 @@ if __name__ == '__main__':
                         "learnPath": str(response[0]),
                         "ingestedRepo": str(markdown.split("/", 2)[1])
                     }
+
+                    print(response[1])
 
                     md_metadata.update({"learn_link": "https://learn.netdata.cloud/docs" + response[1], "slug": response[1]})
 
