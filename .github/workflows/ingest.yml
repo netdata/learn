@@ -72,7 +72,7 @@ jobs:
 
       - name: Update kickstart checksum
         run: |
-          docfile="docs/netdata-agent/installation/linux/linux.mdx"
+          docfile="docs/Netdata Agent/Installation/Linux/Linux.mdx"
           wget -O /tmp/kickstart.sh https://raw.githubusercontent.com/netdata/netdata/master/packaging/installer/kickstart.sh || exit 1
           checksum="$(md5sum /tmp/kickstart.sh | cut -d ' ' -f 1)"
           sed -e "s/@KICKSTART_CHECKSUM@/${checksum}/" "${docfile}" > tmp || exit 1
