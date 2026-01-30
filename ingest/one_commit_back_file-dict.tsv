@@ -40,6 +40,7 @@ https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md	/docs//live-de
 https://github.com/netdata/netdata/edit/master/docs/scalability.md	/docs/welcome-to-netdata/scalability
 https://github.com/netdata/netdata/edit/master/docs/fleet-configuration-management.md	/docs/welcome-to-netdata/fleet-deployment-and-configuration-management
 https://github.com/netdata/netdata/edit/master/docs/glossary.md	/docs/developer-and-contributor-corner/glossary
+https://github.com/netdata/netdata/edit/master/docs/reporting.md	/docs/welcome-to-netdata/reporting
 https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md	/docs/welcome-to-netdata/enterprise-evaluation-guide
 https://github.com/netdata/netdata/edit/master/docs/streaming-routing.md	/docs/netdata-parents/streaming-routing-reference
 https://github.com/netdata/netdata/edit/master/docs/realtime-monitoring.md	/docs/welcome-to-netdata/real-time-monitoring
@@ -157,6 +158,7 @@ https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/home-t
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/alerts-tab.md	/docs/dashboards-and-charts/tabs/alerts
 https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/anomaly-advisor-tab.md	/docs/dashboards-and-charts/tabs/anomalies
 https://github.com/netdata/netdata/edit/master/docs/functions/processes.md	/docs/top-consumers/processes
+https://github.com/netdata/netdata/edit/master/docs/functions/databases.md	/docs/top-consumers/database-queries
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md	/docs/netdata-cloud
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-rule-based-room-assignment.md	/docs/netdata-cloud/spaces-and-rooms/node-rule-based-room-assignment
 https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-states-and-transitions.md	/docs/netdata-cloud/node-states-and-transitions
