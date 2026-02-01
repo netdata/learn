@@ -6,12 +6,14 @@ module.exports = {
 	url: 'https://learn.netdata.cloud',
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
-	onBrokenMarkdownLinks: 'warn',
 	favicon: 'img/favicon-32x32.png',
 	organizationName: 'netdata',
 	projectName: 'netdata',
 	markdown: {
 		mermaid: true,
+		hooks: {
+			onBrokenMarkdownLinks: 'warn',
+		},
 	},
 	themes: ['@docusaurus/theme-mermaid'],
 	themeConfig: {

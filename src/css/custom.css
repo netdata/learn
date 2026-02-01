@@ -21,7 +21,11 @@
 	--ifm-code-padding-vertical: 0.125rem;
 	
 	/* Code block line height for ASCII art */
-	--ifm-pre-line-height: 1.2; /* Tighter line spacing for ASCII art */
+	--ifm-pre-line-height: 1.0; /* Line spacing 1.0 for ASCII art */
+
+	/* Light mode code blocks */
+	--ifm-code-background: #f5f5f5;
+	--ifm-pre-background: #f5f5f5;
 }
 
 html,
@@ -265,7 +269,9 @@ h6 {
  * Tailwind 4
  */
 
-@import "tailwindcss";
+/* Import Tailwind without Preflight to avoid conflicting with Docusaurus/Infima styles */
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
 
 /* Legacy config compatibility - path relative to this CSS file */
 @config "../../tailwind.config.js";
@@ -482,9 +488,105 @@ html[data-theme='dark'] .sui-layout .sui-result em {
  * Markdown/prose
 */
 
-/*Tailwind prose styles the text;  dark:prose-dark is needed to correctly render dark mode. */
+/*Tailwind prose styles the text */
 .markdown {
 	@apply prose max-w-none;
+}
+
+/* Dark mode: Override prose colors to respect Infima variables */
+html[data-theme='dark'] .markdown {
+	--tw-prose-body: var(--ifm-font-color-base);
+	--tw-prose-headings: var(--ifm-font-color-base);
+	--tw-prose-lead: var(--ifm-font-color-base);
+	--tw-prose-links: #00D454; /* Netdata green for links */
+	--tw-prose-bold: var(--ifm-font-color-base);
+	--tw-prose-counters: var(--ifm-font-color-base);
+	--tw-prose-bullets: var(--ifm-font-color-base);
+	--tw-prose-hr: var(--ifm-toc-border-color);
+	--tw-prose-quotes: var(--ifm-font-color-base);
+	--tw-prose-quote-borders: var(--ifm-toc-border-color);
+	--tw-prose-captions: var(--ifm-font-color-base);
+	--tw-prose-th-borders: var(--ifm-table-border-color);
+	--tw-prose-td-borders: var(--ifm-table-border-color);
+}
+
+/* Dark mode: Inline code text color */
+html[data-theme='dark'] code,
+html[data-theme='dark'] .markdown code,
+html[data-theme='dark'] .prose code {
+	color: #e0e0e0 !important;
+}
+
+/* Code blocks - light mode */
+pre, .prism-code, [class*="codeBlock"] {
+	background-color: #e8e8e8 !important;
+	line-height: 1.0 !important;
+}
+
+pre code, .prism-code code,
+pre .token, .prism-code .token {
+	color: #1a1a1a !important;
+}
+
+/* Light mode - Prism token overrides for better contrast */
+.token.comment, .token.prolog, .token.doctype, .token.cdata {
+	color: #5c6370 !important;
+}
+.token.punctuation {
+	color: #1a1a1a !important;
+}
+.token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted {
+	color: #1a1a1a !important;
+}
+.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+	color: #1a1a1a !important;
+}
+.token.operator, .token.entity, .token.url, .token.keyword, .token.function, .token.class-name {
+	color: #1a1a1a !important;
+}
+
+/* Code blocks - dark mode */
+html[data-theme='dark'] pre,
+html[data-theme='dark'] .prism-code,
+html[data-theme='dark'] [class*="codeBlock"] {
+	background-color: #1a1a1a !important;
+}
+
+html[data-theme='dark'] pre code,
+html[data-theme='dark'] .prism-code code,
+html[data-theme='dark'] pre .token,
+html[data-theme='dark'] .prism-code .token {
+	color: #e0e0e0 !important;
+}
+
+/* Dark mode - Prism token overrides */
+html[data-theme='dark'] .token.comment,
+html[data-theme='dark'] .token.prolog,
+html[data-theme='dark'] .token.doctype,
+html[data-theme='dark'] .token.cdata {
+	color: #7f8c8d !important;
+}
+html[data-theme='dark'] .token.punctuation,
+html[data-theme='dark'] .token.property,
+html[data-theme='dark'] .token.tag,
+html[data-theme='dark'] .token.boolean,
+html[data-theme='dark'] .token.number,
+html[data-theme='dark'] .token.constant,
+html[data-theme='dark'] .token.symbol,
+html[data-theme='dark'] .token.deleted,
+html[data-theme='dark'] .token.selector,
+html[data-theme='dark'] .token.attr-name,
+html[data-theme='dark'] .token.string,
+html[data-theme='dark'] .token.char,
+html[data-theme='dark'] .token.builtin,
+html[data-theme='dark'] .token.inserted,
+html[data-theme='dark'] .token.operator,
+html[data-theme='dark'] .token.entity,
+html[data-theme='dark'] .token.url,
+html[data-theme='dark'] .token.keyword,
+html[data-theme='dark'] .token.function,
+html[data-theme='dark'] .token.class-name {
+	color: #e0e0e0 !important;
 }
 
 .markdown ol > li::before  {
@@ -510,12 +612,26 @@ h1 {
 	@apply font-bold;
 }
 
-.markdown a {
-	@apply hover:text-green;
+/* Light mode: Links should be Netdata green */
+.markdown a,
+.prose a {
+	color: #00AB44 !important;
 }
 
-.dark .markdown a {
-	@apply hover:text-blue;
+.markdown a:hover,
+.prose a:hover {
+	color: #00CB51 !important;
+}
+
+/* Dark mode: Links should be brighter Netdata green */
+html[data-theme='dark'] .markdown a,
+html[data-theme='dark'] .prose a {
+	color: #00D454 !important;
+}
+
+html[data-theme='dark'] .markdown a:hover,
+html[data-theme='dark'] .prose a:hover {
+	color: #26FF7D !important;
 }
 
 .markdown a code {
@@ -619,18 +735,43 @@ html[data-theme='dark']:root {
 	--docusaurus-highlighted-code-line-bg: #1A1A1A;
 }
 
-/* Dark theme: Collapsed details - slightly brighter entire box */
-html[data-theme='dark'] .details_lb9f.alert--info[data-collapsed="true"],
-html[data-theme='dark'] details.alert--info[data-collapsed="true"] {
-	--ifm-alert-background-color: #141820; /* Slightly brighter when collapsed */
-	background-color: #141820;
+/* Light theme: Details/expandable items background */
+details, .details_lb9f {
+	--ifm-alert-background-color: #e8e8e8;
+	background-color: #e8e8e8 !important;
 }
 
-/* Dark theme: Expanded details - darker background */
-html[data-theme='dark'] .details_lb9f.alert--info[data-collapsed="false"],
-html[data-theme='dark'] details.alert--info:not([data-collapsed="true"]) {
-	--ifm-alert-background-color: #0a0d10; /* Darker when expanded */
-	background-color: #0a0d10;
+/* Dark theme: Details/expandable items - neutral dark background like code blocks */
+html[data-theme='dark'] details,
+html[data-theme='dark'] .details_lb9f {
+	--ifm-alert-background-color: #1a1a1a;
+	background-color: #1a1a1a !important;
+}
+
+/*
+ * Mermaid diagrams - fix text colors for dark mode
+ */
+
+/* Dark mode: Force dark text on mermaid node content (boxes with light backgrounds) */
+html[data-theme='dark'] svg .nodeLabel,
+html[data-theme='dark'] svg .nodeLabel *,
+html[data-theme='dark'] svg .label,
+html[data-theme='dark'] svg .label *,
+html[data-theme='dark'] svg foreignObject,
+html[data-theme='dark'] svg foreignObject *,
+html[data-theme='dark'] svg foreignObject strong,
+html[data-theme='dark'] svg foreignObject p,
+html[data-theme='dark'] svg foreignObject div,
+html[data-theme='dark'] svg foreignObject span {
+	color: #1a1a1a !important;
+}
+
+/* Dark mode: Edge labels (connectors) should have light text on dark background */
+html[data-theme='dark'] svg .edgeLabel,
+html[data-theme='dark'] svg .edgeLabel *,
+html[data-theme='dark'] svg .labelBkg,
+html[data-theme='dark'] svg .labelBkg * {
+	color: #e0e0e0 !important;
 }
 
 /*
