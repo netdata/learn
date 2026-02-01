@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`NavbarItem ComponentTypes > snapshots > should match snapshot of exported keys 1`] = `
+[
+  "custom-asknetdata-widget-item",
+  "default",
+  "doc",
+  "docSidebar",
+  "docsVersion",
+  "docsVersionDropdown",
+  "dropdown",
+  "html",
+  "localeDropdown",
+  "search",
+]
+`;

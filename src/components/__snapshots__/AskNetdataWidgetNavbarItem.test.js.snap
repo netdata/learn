@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AskNetdataWidgetNavbarItem component > snapshots > should match snapshot on regular page 1`] = `
+<div>
+  <div
+    style="display: flex; align-items: center; min-width: 0; width: 100%; max-width: 520px; justify-content: center; z-index: auto;"
+  >
+    <div
+      data-overlay-max-width="1200"
+      data-pill-height="30"
+      data-pill-max-width="520"
+      data-testid="ask-netdata-widget"
+    >
+      Mock Widget
+      <button
+        data-testid="trigger-overlay"
+      >
+        Show Overlay
+      </button>
+      <button
+        data-testid="hide-overlay"
+      >
+        Hide Overlay
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AskNetdataWidgetNavbarItem component > snapshots > should match snapshot when hidden on ask-netdata 1`] = `<div />`;

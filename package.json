@@ -11,7 +11,11 @@
 		"clear": "docusaurus clear",
 		"serve": "docusaurus serve",
 		"write-translations": "docusaurus write-translations",
-		"write-heading-ids": "docusaurus write-heading-ids"
+		"write-heading-ids": "docusaurus write-heading-ids",
+		"test": "vitest",
+		"test:run": "vitest run",
+		"test:coverage": "vitest run --coverage",
+		"test:ui": "vitest --ui"
 	},
 	"dependencies": {
 		"@babel/core": "^7.26.10",
@@ -47,10 +51,19 @@
 		"webpack": "^5.94.0"
 	},
 	"devDependencies": {
+		"@testing-library/dom": "^10.4.1",
+		"@testing-library/jest-dom": "^6.9.1",
+		"@testing-library/react": "^16.3.2",
+		"@testing-library/user-event": "^14.6.1",
+		"@vitejs/plugin-react": "^5.1.2",
+		"@vitest/coverage-v8": "^4.0.18",
 		"autoprefixer": "^10.2.5",
+		"happy-dom": "^20.4.0",
+		"jsdom": "^27.4.0",
 		"postcss-loader": "^5.2.0",
 		"postcss-preset-env": "^7.8.0",
-		"tailwindcss": "^2.1.2"
+		"tailwindcss": "^2.1.2",
+		"vitest": "^4.0.18"
 	},
 	"browserslist": {
 		"production": [

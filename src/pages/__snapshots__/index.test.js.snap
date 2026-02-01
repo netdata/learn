@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home page > snapshots > should match snapshot 1`] = `
+<div>
+  <div
+    data-testid="redirect"
+    data-to="/docs/ask-netdata"
+  >
+    Redirect to /docs/ask-netdata
+  </div>
+</div>
+`;
