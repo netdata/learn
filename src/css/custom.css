@@ -262,29 +262,29 @@ h6 {
 }
 
 /*
- * Tailwind
-*/
+ * Tailwind 4
+ */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@responsive {
-	.text-shadow {
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	}
+/* Legacy config compatibility - path relative to this CSS file */
+@config "../../tailwind.config.js";
 
-	.text-shadow-md {
-		text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
-	}
+/* Custom text-shadow utilities */
+@utility text-shadow {
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-	.text-shadow-lg {
-		text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
-	}
+@utility text-shadow-md {
+	text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+}
 
-	.text-shadow-none {
-		text-shadow: none;
-	}
+@utility text-shadow-lg {
+	text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+@utility text-shadow-none {
+	text-shadow: none;
 }
 
 /*

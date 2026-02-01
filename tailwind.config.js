@@ -1,25 +1,30 @@
+/** @type {import('tailwindcss').Config} */
+
 const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
-const { themeConfig } = require('./docusaurus.config');
 
 module.exports = {
-	mode: 'jit',
-	purge: {
-		content: ['./src/**/*.html', './src/**/*.js', './src/**/*.tsx'],
-		options: {
-			safelist: {
-				greedy: ['/safe$/', '/^md:grid-cols/'],
-			},
-		},
-	},
-	darkMode: 'class', // or 'media' or 'class'
+	// Tailwind 4 uses automatic content detection, no content config needed
+	darkMode: 'class',
 	theme: {
 		colors: {
 			transparent: 'transparent',
 			current: 'currentColor',
-			black: colors.black,
-			white: colors.white,
-			gray: colors.gray,
+			black: '#000',
+			white: '#fff',
+			gray: {
+				50: '#f9fafb',
+				100: '#f3f4f6',
+				200: '#e5e7eb',
+				300: '#d1d5db',
+				400: '#9ca3af',
+				500: '#6b7280',
+				600: '#4b5563',
+				700: '#374151',
+				800: '#1f2937',
+				900: '#111827',
+				950: '#030712',
+				darkbg: '#35414a',
+			},
 			text: {
 				DEFAULT: '#1d1d40',
 			},
@@ -55,90 +60,7 @@ module.exports = {
 				sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans],
 				mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono],
 			},
-			colors: {
-				gray: {
-					darkbg: '#35414a',
-				},
-			},
-			typography: (theme) => ({
-				DEFAULT: {
-					css: {
-						color: theme('colors.text'),
-						a: {
-							color: theme('colors.text'),
-							'&:hover': {
-								color: theme('colors.blue'),
-							},
-						},
-						h1: { color: theme('colors.text') },
-						h2: { color: theme('colors.text') },
-						h3: { color: theme('colors.text') },
-						h4: { color: theme('colors.text') },
-						h5: { color: theme('colors.text') },
-						h6: { color: theme('colors.text') },
-						strong: { color: theme('colors.text') },
-						code: {
-							color: theme('colors.green.DEFAULT'),
-							backgroundColor: theme('colors.gray.100'),
-							paddingLeft: '4px',
-							paddingRight: '4px',
-							paddingTop: '2px',
-							paddingBottom: '2px',
-							borderRadius: theme('rounded'),
-							border: 'none',
-						},
-						'code:before': {
-							content: 'none',
-						},
-						'code:after': {
-							content: 'none',
-						},
-						'> ul > li > *:first-child': {
-							marginTop: '0',
-						},
-						blockquote: {
-							color: theme('colors.text'),
-							p: {
-								fontStyle: 'normal',
-								margin: '0',
-							},
-						},
-						table: {
-							thead: {
-								'th:first-child': {
-									paddingLeft: '0.5714286em',
-								},
-								'th:last-child': {
-									paddingRight: '0.5714286em',
-								},
-							},
-							tbody: {
-								'td:first-child': {
-									paddingLeft: '0.5714286em',
-								},
-								tr: {
-									border: 'none',
-									'&:nth-child(2n)': {
-										background: 'none',
-									},
-									td: {
-										paddingLeft: '0.5714286em',
-										code: {
-											color: theme('colors.text'),
-										},
-									},
-								},
-							},
-						},
-					},
-				},
-				/*Dark needs to be defined in order for the custom.css .markdown class to work*/
-				dark: {},
-			}),
 		},
-	},
-	variants: {
-		typography: ['dark'],
 	},
 	plugins: [require('@tailwindcss/typography')],
 };
