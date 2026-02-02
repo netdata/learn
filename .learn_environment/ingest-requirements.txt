@@ -6,3 +6,4 @@ mergedeep
 pandas
 numpy
 retrypy
+pyyaml
