@@ -131,7 +131,7 @@ def load_map_yaml(map_path):
 
     sidebar = data.get("sidebar")
     if not isinstance(sidebar, list):
-        raise ValueError("map.yaml must contain a top-level 'sidebar' list. Regenerate map.yaml from map.csv using docs/.map/convertor.py.")
+        raise ValueError("map.yaml must contain a top-level 'sidebar' list.")
 
     rows = []
 
