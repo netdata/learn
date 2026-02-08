@@ -2,7 +2,6 @@
 
 exports[`NavbarItem ComponentTypes > snapshots > should match snapshot of exported keys 1`] = `
 [
-  "custom-asknetdata-widget-item",
   "default",
   "doc",
   "docSidebar",

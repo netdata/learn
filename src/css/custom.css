@@ -55,20 +55,21 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 	top: -0.05em; /* Slight adjustment to align better */
 }
 
-/* Import ask-netdata styles */
-/* @import './ask-netdata.css'; */
-/* @import './ask-netdata-page.css'; */
 
-/* Loading animation for Ask Netdata */
-@keyframes bounce {
-  0%, 80%, 100% {
-    transform: scale(0);
-    opacity: 0.5;
-  }
-  40% {
-    transform: scale(1);
-    opacity: 1;
-  }
+/* Hide Nedi's built-in theme toggle (synced from Docusaurus) */
+.ai-agent-theme {
+	display: none !important;
+}
+
+/* Full-page (Nedi) layout: hide back-to-top button and remove bottom padding */
+body:has(.nedi-full-page) [class*="backToTop"] {
+	display: none !important;
+}
+.padding-bottom--lg:has(.nedi-full-page) {
+	padding-bottom: 0 !important;
+}
+.padding-top--md:has(.nedi-full-page) {
+	padding-top: 0 !important;
 }
 
 /* custom Netdata overrides */
@@ -77,7 +78,7 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 	font-weight: 600;
 } */
 
-/* Make Ask Netdata Docs sidebar icon and text green */
+/* Make Ask Nedi sidebar link green */
 .menu__link[href*="/docs/ask-netdata"] {
 	color: #00AB44 !important;
 }
@@ -218,7 +219,6 @@ h6 {
 @media screen and (max-width: 720px) {
 
 .navbar__logo {
-		/* hide logo on mobile to make room for the chat pill */
 		display: none;
 		visibility: hidden;
 	}

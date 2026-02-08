@@ -13,6 +13,25 @@ exports[`DocItemContent component > snapshots > should match snapshot for ask-ne
         Ask Netdata
       </h1>
     </header>
+    <div
+      class="theme-doc-footer-edit-meta-row row"
+      style="float: right;"
+    >
+      <a
+        class="theme-edit-this-page"
+        href="https://github.com/edit/test"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        <svg
+          data-testid="icon-edit"
+        >
+          <path
+            d="M0 0h24v24H0z"
+          />
+        </svg>
+      </a>
+    </div>
     <br />
     <div
       style="margin-top: 12px;"

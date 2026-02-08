@@ -80,14 +80,14 @@ describe('DocItemContent component', () => {
       expect(editLink).toHaveAttribute('href', 'https://github.com/edit/test');
     });
 
-    it('should not render edit row for ask-netdata page', () => {
+    it('should render edit row for ask-netdata page', () => {
       __setMockDoc({
         frontMatter: { id: 'ask-netdata' },
         metadata: { editUrl: 'https://github.com/edit/test' }
       });
       render(<DocItemContent>Content</DocItemContent>);
-      // Should not show edit link for ask-netdata
-      expect(screen.queryByRole('link')).not.toBeInTheDocument();
+      const editLink = screen.getByRole('link');
+      expect(editLink).toHaveAttribute('href', 'https://github.com/edit/test');
     });
   });
 
