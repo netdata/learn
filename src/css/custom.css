@@ -775,6 +775,68 @@ html[data-theme='dark'] svg .labelBkg * {
 }
 
 /*
+ * Search plugin
+ */
+
+/* Place search bar to the left of the theme toggle */
+.navbar__items--right {
+	display: flex;
+	align-items: center;
+}
+
+.navbar__items--right > [class*="navbarSearchContainer"] {
+	order: -1;
+}
+
+/* Blend search input into navbar */
+.navbar__search-input {
+	background-color: transparent !important;
+	border: 1px solid var(--ifm-color-emphasis-300) !important;
+	border-radius: 6px;
+	color: var(--ifm-navbar-link-color) !important;
+	font-size: 0.85rem;
+	transition: border-color 0.2s, background-color 0.2s;
+}
+
+.navbar__search-input:focus {
+	background-color: var(--ifm-background-surface-color) !important;
+	border-color: var(--ifm-color-emphasis-400) !important;
+}
+
+.navbar__search-input::placeholder {
+	color: var(--ifm-color-emphasis-400);
+}
+
+/* Dark mode - search dropdown overrides */
+html[data-theme='dark'] {
+	--search-local-modal-background: #0A0A0A;
+	--search-local-modal-shadow: inset 1px 1px 0 0 #1A1A1A, 0 3px 8px 0 rgba(0, 0, 0, 0.6);
+	--search-local-hit-background: #1A1A1A;
+	--search-local-hit-shadow: none;
+	--search-local-hit-color: #c0c0c0;
+	--search-local-highlight-color: #00AB44;
+	--search-local-muted-color: #808080;
+	--search-local-hit-active-color: #ffffff;
+}
+
+html[data-theme='dark'] .navbar__search-input {
+	border-color: #333 !important;
+}
+
+html[data-theme='dark'] .navbar__search-input:focus {
+	background-color: #0A0A0A !important;
+	border-color: #555 !important;
+}
+
+/* Subtle keyboard shortcut hints in dark mode */
+html[data-theme='dark'] [class*="searchHint"]:not([class*="Container"]) {
+	background-color: #1A1A1A !important;
+	color: #555 !important;
+	border-color: #333 !important;
+	box-shadow: inset 0 -1px 0 #333 !important;
+}
+
+/*
  * Etc
 */
 

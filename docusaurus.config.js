@@ -15,7 +15,13 @@ module.exports = {
 			onBrokenMarkdownLinks: 'warn',
 		},
 	},
-	themes: ['@docusaurus/theme-mermaid'],
+	themes: [
+		'@docusaurus/theme-mermaid',
+		['@easyops-cn/docusaurus-search-local', {
+			hashed: true,
+			searchBarPosition: 'right',
+		}],
+	],
 	themeConfig: {
 		colorMode: {
 			defaultMode: 'light',
