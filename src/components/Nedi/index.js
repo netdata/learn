@@ -4,7 +4,6 @@ import { useColorMode } from '@docusaurus/theme-common';
 const NEDI_ENDPOINT = 'https://nedi.netdata.cloud';
 const PERSISTENT_ID = 'nedi-persistent';
 const SCROLL_KEY = 'nedi-scroll-y';
-const PLACEHOLDER_INTERVAL = 5000;
 const PLACEHOLDERS = [
   'Ask anything about Netdata...',
   'How do I configure alerts?',
@@ -183,6 +182,8 @@ function getOrCreateNedi(theme) {
     stickyInput: true,
     cssVariables: CSS_VARIABLES,
     homeContent: buildHomeSvg(),
+    placeholders: PLACEHOLDERS,
+    placeholderInterval: 5000,
     urlParams: ['q', 'question'],
     onEvent: (event) => {
       if (event.type === 'user-message' && window.posthog) {
@@ -238,24 +239,13 @@ export default function Nedi() {
         setTimeout(() => window.scrollTo(0, parseInt(savedScroll, 10)), 50);
       }
 
-      // Focus the chat input and start rotating placeholders
-      let placeholderTimer;
+      // Focus the chat input after DOM settles
       requestAnimationFrame(() => {
         const input = nediEl.querySelector('.ai-agent-input');
-        if (!input) return;
-        input.focus();
-
-        let idx = 0;
-        input.placeholder = PLACEHOLDERS[idx];
-        placeholderTimer = setInterval(() => {
-          if (input.value) return; // don't rotate while user is typing
-          idx = (idx + 1) % PLACEHOLDERS.length;
-          input.placeholder = PLACEHOLDERS[idx];
-        }, PLACEHOLDER_INTERVAL);
+        if (input) input.focus();
       });
 
       cleanups = [
-        () => clearInterval(placeholderTimer),
         () => window.removeEventListener('scroll', onScroll),
         () => window.removeEventListener('resize', setMinHeight),
         () => { nediEl.style.display = 'none'; document.body.appendChild(nediEl); },
