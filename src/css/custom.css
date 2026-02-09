@@ -142,6 +142,7 @@ html[data-theme='dark'] .table-of-contents__link--active {
 	font-weight: 600;
 }
 
+
 /* .menu .menu__link{
 	font-weight: 600 !important;
 } */
@@ -776,6 +777,11 @@ html[data-theme='dark']:root {
 	--docusaurus-highlighted-code-line-bg: #1A1A1A;
 }
 
+/* Dark theme: Subtle scrollbars */
+html[data-theme='dark'] .thin-scrollbar {
+	scrollbar-color: #333 transparent;
+}
+
 /* Light theme: Details/expandable items background */
 details, .details_lb9f {
 	--ifm-alert-background-color: #e8e8e8;
@@ -828,7 +834,7 @@ html[data-theme='dark'] svg .labelBkg * {
 .navbar__items--right > .header-github-link { order: 1; }
 .navbar__items--right > [class*="colorModeToggle"] { order: 2; }
 .navbar__items--right > [class*="navbarSearchContainer"] { order: 3; }
-.navbar__items--right > .navbar-item-sign-in { order: 4; }
+.navbar__items--right > .navbar-item-sign-in { order: 4; margin-left: 0.5rem; }
 
 /* Blend search input into navbar */
 .navbar__search-input {
