@@ -4,6 +4,16 @@ import { useColorMode } from '@docusaurus/theme-common';
 const NEDI_ENDPOINT = 'https://nedi.netdata.cloud';
 const PERSISTENT_ID = 'nedi-persistent';
 const SCROLL_KEY = 'nedi-scroll-y';
+const PLACEHOLDER_INTERVAL = 5000;
+const PLACEHOLDERS = [
+  'Ask anything about Netdata...',
+  'How do I configure alerts?',
+  'What metrics does Netdata collect?',
+  'How does anomaly detection work?',
+  'How do I monitor Docker containers?',
+  'Tell me about parent-child streaming...',
+  'Paste logs or error messages to get help...',
+];
 
 // Match Docusaurus theme colors for seamless integration
 const CSS_VARIABLES = {
@@ -19,7 +29,7 @@ const CSS_VARIABLES = {
   },
   dark: {
     '--ai-bg-primary': '#000000',
-    '--ai-bg-secondary': '#0A0A0A',
+    '--ai-bg-secondary': '#141414',
     '--ai-bg-tertiary': '#1A1A1A',
     '--ai-text-primary': '#c0c0c0',
     '--ai-text-secondary': '#808080',
@@ -228,13 +238,24 @@ export default function Nedi() {
         setTimeout(() => window.scrollTo(0, parseInt(savedScroll, 10)), 50);
       }
 
-      // Focus the chat input after DOM settles
+      // Focus the chat input and start rotating placeholders
+      let placeholderTimer;
       requestAnimationFrame(() => {
         const input = nediEl.querySelector('.ai-agent-input');
-        if (input) input.focus();
+        if (!input) return;
+        input.focus();
+
+        let idx = 0;
+        input.placeholder = PLACEHOLDERS[idx];
+        placeholderTimer = setInterval(() => {
+          if (input.value) return; // don't rotate while user is typing
+          idx = (idx + 1) % PLACEHOLDERS.length;
+          input.placeholder = PLACEHOLDERS[idx];
+        }, PLACEHOLDER_INTERVAL);
       });
 
       cleanups = [
+        () => clearInterval(placeholderTimer),
         () => window.removeEventListener('scroll', onScroll),
         () => window.removeEventListener('resize', setMinHeight),
         () => { nediEl.style.display = 'none'; document.body.appendChild(nediEl); },

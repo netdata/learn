@@ -61,6 +61,12 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 	display: none !important;
 }
 
+/* Nedi input: match site's border-radius and fix scrollbar overlap */
+.ai-agent-wrapper .ai-agent-input {
+	border-radius: 6px;
+	scrollbar-gutter: stable;
+}
+
 /* Full-page (Nedi) layout: hide back-to-top button and remove bottom padding */
 body:has(.nedi-full-page) [class*="backToTop"] {
 	display: none !important;
