@@ -12,10 +12,10 @@ describe('Home page', () => {
       expect(redirect).toBeInTheDocument();
     });
 
-    it('should redirect to /docs/ask-netdata', () => {
+    it('should redirect to /docs/ask-nedi', () => {
       render(<Home />);
       const redirect = screen.getByTestId('redirect');
-      expect(redirect).toHaveAttribute('data-to', '/docs/ask-netdata');
+      expect(redirect).toHaveAttribute('data-to', '/docs/ask-nedi');
     });
   });
 

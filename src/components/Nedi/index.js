@@ -191,46 +191,64 @@ export default function Nedi() {
 
   useEffect(() => {
     if (!mountRef.current) return;
-    if (typeof window.AiAgentChatUI === 'undefined') return;
 
-    const nediEl = getOrCreateNedi(colorMode);
+    let cleanups = [];
 
-    // Move persistent container into the mount point
-    mountRef.current.appendChild(nediEl);
-    nediEl.style.display = '';
+    const boot = () => {
+      if (!mountRef.current) return;
+      if (typeof window.AiAgentChatUI === 'undefined') return false;
 
-    // Ensure containers fill viewport so sticky footer stays at bottom even when empty.
-    // Uses document-relative position (rect.top + scrollY) so the value stays
-    // correct even when a resize fires while the user is scrolled down.
-    const setMinHeight = () => {
-      const top = mountRef.current.getBoundingClientRect().top + window.scrollY;
-      const vh = `calc(100vh - ${top}px)`;
-      mountRef.current.style.minHeight = vh;
-      nediEl.style.minHeight = vh;
-      const wrapper = nediEl.querySelector('.ai-agent-wrapper');
-      if (wrapper) wrapper.style.minHeight = vh;
+      const nediEl = getOrCreateNedi(colorMode);
+
+      // Move persistent container into the mount point
+      mountRef.current.appendChild(nediEl);
+      nediEl.style.display = '';
+
+      // Ensure containers fill viewport so sticky footer stays at bottom even when empty.
+      // Uses document-relative position (rect.top + scrollY) so the value stays
+      // correct even when a resize fires while the user is scrolled down.
+      const setMinHeight = () => {
+        const top = mountRef.current.getBoundingClientRect().top + window.scrollY;
+        const vh = `calc(100vh - ${top}px)`;
+        mountRef.current.style.minHeight = vh;
+        nediEl.style.minHeight = vh;
+        const wrapper = nediEl.querySelector('.ai-agent-wrapper');
+        if (wrapper) wrapper.style.minHeight = vh;
+      };
+      requestAnimationFrame(setMinHeight);
+      window.addEventListener('resize', setMinHeight);
+
+      // Save scroll position continuously while on this page
+      const onScroll = () => sessionStorage.setItem(SCROLL_KEY, String(window.scrollY));
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // Restore scroll position after DOM settles
+      const savedScroll = sessionStorage.getItem(SCROLL_KEY);
+      if (savedScroll) {
+        setTimeout(() => window.scrollTo(0, parseInt(savedScroll, 10)), 50);
+      }
+
+      // Focus the chat input after DOM settles
+      requestAnimationFrame(() => {
+        const input = nediEl.querySelector('.ai-agent-input');
+        if (input) input.focus();
+      });
+
+      cleanups = [
+        () => window.removeEventListener('scroll', onScroll),
+        () => window.removeEventListener('resize', setMinHeight),
+        () => { nediEl.style.display = 'none'; document.body.appendChild(nediEl); },
+      ];
+      return true;
     };
-    requestAnimationFrame(setMinHeight);
-    window.addEventListener('resize', setMinHeight);
 
-    // Save scroll position continuously while on this page
-    const onScroll = () => sessionStorage.setItem(SCROLL_KEY, String(window.scrollY));
-    window.addEventListener('scroll', onScroll, { passive: true });
-
-    // Restore scroll position after DOM settles
-    const savedScroll = sessionStorage.getItem(SCROLL_KEY);
-    if (savedScroll) {
-      setTimeout(() => window.scrollTo(0, parseInt(savedScroll, 10)), 50);
+    // Try immediately; poll if async script hasn't loaded yet
+    if (!boot()) {
+      const poll = setInterval(() => { if (boot()) clearInterval(poll); }, 150);
+      cleanups.push(() => clearInterval(poll));
     }
 
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', setMinHeight);
-
-      // Hide and park back on body - keeps instance alive
-      nediEl.style.display = 'none';
-      document.body.appendChild(nediEl);
-    };
+    return () => cleanups.forEach(fn => fn());
   }, []);
 
   // Sync Docusaurus theme changes to Nedi

@@ -2,7 +2,6 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import "../css/grid.css"
 
-import { RiExternalLinkLine } from 'react-icons/ri';
 
 export const Grid = ({ className, columns, children }) => {
 	return (

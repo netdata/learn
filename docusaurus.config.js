@@ -46,102 +46,102 @@ module.exports = {
 				srcDark: 'img/logo-letter-green-white.svg',
 			},
 			items: [
+				// Left side - documentation-focused navigation
 				{
-					to: 'https://www.netdata.cloud/features/',
+					type: 'doc',
+					docId: 'Welcome to Netdata/Welcome to Netdata',
 					position: 'left',
-					label: 'Features',
-					className: 'navbar-item-hide-large-1',
-					style: { fontWeight: '500' }
-				},
-				{
-					to: 'https://www.netdata.cloud/open-source/',
-					position: 'left',
-					label: 'Open Source',
-					className: 'navbar-item-hide-large-2',
-					style: { fontWeight: '500' }
-				},
-				{
-					to: 'https://www.netdata.cloud/pricing/',
-					position: 'left',
-					label: 'Pricing',
-					className: 'navbar-item-hide-large-3',
-					style: { fontWeight: '500' }
+					label: 'Docs',
 				},
 				{
 					to: 'https://www.netdata.cloud/integrations/',
 					position: 'left',
 					label: 'Integrations',
-					className: 'navbar-item-hide-large-4',
-					style: { fontWeight: '500' }
 				},
 				{
 					position: 'left',
-					label: 'Use cases',
-					className: 'navbar-item-hide-large-5',
-					style: { fontWeight: '500' },
+					label: 'Community',
 					items: [
 						{
-							label: 'Response Time',
-							to: 'https://www.netdata.cloud/response-time-monitoring/'
+							label: 'GitHub',
+							href: 'https://github.com/netdata/netdata',
 						},
 						{
-							label: 'Cloud',
-							to: 'https://www.netdata.cloud/cloud-monitoring/',
+							label: 'GitHub Discussions',
+							href: 'https://github.com/netdata/netdata/discussions',
 						},
 						{
-							label: 'Web Servers',
-							to: 'https://www.netdata.cloud/webserver-monitoring/',
-						},
-						{
-							label: 'Containers',
-							to: 'https://www.netdata.cloud/container-monitoring/',
-						}
-					]
-				},
-				{
-					position: 'left',
-					label: 'Resources',
-					className: 'navbar-item-hide-large-6',
-					style: { fontWeight: '500' },
-					items: [
-						{
-							type: 'doc',
-							docId: 'Welcome to Netdata/Welcome to Netdata',
-							label: 'Documentation'
-						},
-						{
-							label: 'Community',
-							to: 'https://www.netdata.cloud/community/',
-						},
-						{
-							label: 'About',
-							to: 'https://www.netdata.cloud/about/',
+							label: 'Discord',
+							href: 'https://discord.com/invite/mPZ6WZKKG2',
 						},
 						{
 							label: 'Forums',
-							to: 'https://community.netdata.cloud/',
+							href: 'https://community.netdata.cloud/',
 						},
 						{
-							label: 'Blog',
-							to: 'https://blog.netdata.cloud/',
-						},
-						{
-							label: 'Roadmap',
-							to: 'https://www.netdata.cloud/roadmap/'
-						},
-						{
-							label: 'Videos',
-							to: 'https://www.youtube.com/c/Netdata/'
+							label: 'Reddit',
+							href: 'https://www.reddit.com/r/netdata/',
 						},
 					]
 				},
-
+				{
+					position: 'left',
+					label: 'Learn',
+					items: [
+						{
+							label: 'Blog',
+							href: 'https://blog.netdata.cloud/',
+						},
+						{
+							label: 'Academy',
+							href: 'https://www.netdata.cloud/academy/',
+						},
+						{
+							label: 'YouTube',
+							href: 'https://www.youtube.com/c/Netdata',
+						},
+						{
+							label: 'Roadmap',
+							href: 'https://www.netdata.cloud/roadmap/',
+						},
+					]
+				},
+				{
+					position: 'left',
+					label: 'Trust & Status',
+					items: [
+						{
+							label: 'Trust Center (SOC2)',
+							href: 'https://trust.netdata.cloud',
+						},
+						{
+							label: 'OpenSSF Best Practices',
+							href: 'https://www.bestpractices.dev/en/projects/2231/',
+						},
+						{
+							label: 'Service Status',
+							href: 'https://status.netdata.cloud/',
+						},
+					]
+				},
 				{
 					to: 'https://app.netdata.cloud/spaces/netdata-demo?utm_source=learn&utm_content=top_navigation_demo',
 					label: 'Live Demo',
 					position: 'left',
-					className: 'navbar-item-hide-large-7',
-					style: { fontWeight: '500' }
+					className: 'navbar-item-live-demo',
+				},
+				// Right side - GitHub icon + Sign In
+				{
+					href: 'https://github.com/netdata/netdata',
+					position: 'right',
+					className: 'header-github-link',
+					'aria-label': 'GitHub repository',
+				},
+				{
+					href: 'https://app.netdata.cloud/?utm_source=learn&utm_content=top_navigation_sign_in',
+					label: 'Sign In',
+					position: 'right',
+					className: 'navbar-item-sign-in',
 				},
 			],
 		},
@@ -151,6 +151,17 @@ module.exports = {
 		// },
 	},
 	plugins: [
+		[
+			'@docusaurus/plugin-client-redirects',
+			{
+				redirects: [
+					{
+						from: '/docs/ask-netdata',
+						to: '/docs/ask-nedi',
+					},
+				],
+			},
+		],
 		[
 			"posthog-docusaurus",
 			{

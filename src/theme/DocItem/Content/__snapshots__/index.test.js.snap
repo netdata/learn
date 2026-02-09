@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DocItemContent component > snapshots > should match snapshot for ask-netdata page 1`] = `
+exports[`DocItemContent component > snapshots > should match snapshot for ask-nedi page 1`] = `
 <div>
   <div
     class="theme-doc-markdown markdown"

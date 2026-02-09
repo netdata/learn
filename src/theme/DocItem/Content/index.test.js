@@ -80,9 +80,9 @@ describe('DocItemContent component', () => {
       expect(editLink).toHaveAttribute('href', 'https://github.com/edit/test');
     });
 
-    it('should render edit row for ask-netdata page', () => {
+    it('should render edit row for ask-nedi page', () => {
       __setMockDoc({
-        frontMatter: { id: 'ask-netdata' },
+        frontMatter: { id: 'ask-nedi' },
         metadata: { editUrl: 'https://github.com/edit/test' }
       });
       render(<DocItemContent>Content</DocItemContent>);
@@ -130,10 +130,10 @@ describe('DocItemContent component', () => {
       expect(container).toMatchSnapshot();
     });
 
-    it('should match snapshot for ask-netdata page', () => {
+    it('should match snapshot for ask-nedi page', () => {
       __setMockDoc({
         contentTitle: undefined,
-        frontMatter: { hide_title: false, id: 'ask-netdata' },
+        frontMatter: { hide_title: false, id: 'ask-nedi' },
         metadata: {
           title: 'Ask Netdata',
           editUrl: 'https://github.com/edit/test'
