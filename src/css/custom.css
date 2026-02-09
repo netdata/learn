@@ -78,9 +78,25 @@ body:has(.nedi-full-page) [class*="backToTop"] {
 	font-weight: 600;
 } */
 
-/* Ask Nedi sidebar link: bold white, green only when active */
+/* Ask Nedi sidebar link: bold with chat icon, green only when active */
 .menu__link[href*="/docs/ask-nedi"] {
-	font-weight: 700;
+	font-weight: 700 !important;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+.menu__link[href*="/docs/ask-nedi"]::before {
+	content: '';
+	width: 18px;
+	height: 18px;
+	flex-shrink: 0;
+	background-color: currentColor;
+	mask-image: url('/img/icons/ph-chats-circle.svg');
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	-webkit-mask-image: url('/img/icons/ph-chats-circle.svg');
+	-webkit-mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
 }
 .menu__link[href*="/docs/ask-nedi"].menu__link--active {
 	color: #00AB44 !important;
