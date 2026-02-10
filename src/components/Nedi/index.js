@@ -114,7 +114,7 @@ const HOME_QUICK_LINKS = [
   { label: 'Install', url: '/docs/netdata-agent/installation' },
   { label: 'Update', url: '/docs/netdata-agent/maintenance/update' },
   { label: 'Uninstall', url: '/docs/netdata-agent/maintenance/uninstall' },
-  { label: 'Configure Alerts', url: '/docs/alerts-and-notifications' },
+  { label: 'Configure Alerts', url: '/docs/alerts-&-notifications' },
   { label: 'Netdata Parents', url: '/docs/netdata-parents' },
   { label: 'Collecting Metrics', url: '/docs/collecting-metrics' },
 ];
@@ -212,6 +212,8 @@ export default function Nedi() {
         if (wrapper) wrapper.style.minHeight = vh;
       };
       requestAnimationFrame(setMinHeight);
+      // SPA back-navigation: layout may need extra time to settle
+      const settleTimer = setTimeout(setMinHeight, 150);
       window.addEventListener('resize', setMinHeight);
 
       // Save scroll position continuously while on this page
@@ -231,6 +233,7 @@ export default function Nedi() {
       });
 
       cleanups = [
+        () => clearTimeout(settleTimer),
         () => window.removeEventListener('scroll', onScroll),
         () => window.removeEventListener('resize', setMinHeight),
         () => { nediEl.style.display = 'none'; document.body.appendChild(nediEl); },
