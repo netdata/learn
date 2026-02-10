@@ -198,7 +198,7 @@ module.exports = {
 	],
 	stylesheets: [
 		// Nedi embed styles
-		'https://nedi.netdata.cloud/test.css?v=13',
+		'https://nedi.netdata.cloud/test.css?v=14',
 		{
 			href: '/font/ibm-plex-sans-v8-latin-regular.woff2',
 			rel: 'preload',
@@ -241,8 +241,8 @@ module.exports = {
       { src: 'https://cdn.jsdelivr.net/npm/turndown@7.2.2/dist/turndown.js', async: true },
       { src: 'https://cdn.jsdelivr.net/npm/@guyplusplus/turndown-plugin-gfm@1.0.7/dist/turndown-plugin-gfm.js', async: true },
       // Nedi embed
-      { src: 'https://nedi.netdata.cloud/ai-agent-public.js?v=13', async: true },
-      { src: 'https://nedi.netdata.cloud/test.js?v=13', async: true },
+      { src: 'https://nedi.netdata.cloud/ai-agent-public.js?v=14', async: true },
+      { src: 'https://nedi.netdata.cloud/test.js?v=14', async: true },
     ],
     headTags: [
       {
