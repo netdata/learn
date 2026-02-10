@@ -5,8 +5,6 @@ import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
 import EditThisPage from '@theme/EditThisPage';
-// Direct import (Docusaurus does not provide '@docusaurus/dynamic').
-// The widget only uses browser APIs inside effects/handlers so SSR is safe.
 /**
  Title can be declared inside md content or declared through
  front matter and added manually. To make both cases consistent,
@@ -54,11 +52,13 @@ function EditMetaRow({
 
 export default function DocItemContent({ children }) {
   const { metadata, frontMatter } = useDoc();
-  const { editUrl, lastUpdatedAt, formattedLastUpdatedAt, lastUpdatedBy, tags } =
-    metadata;
   const syntheticTitle = useSyntheticTitle();
-  const isAskNetdata = frontMatter.id === 'ask-netdata';
-  
+
+  // Full-page layout: render content only, no chrome.
+  if (frontMatter.full_page) {
+    return <MDXContent>{children}</MDXContent>;
+  }
+
   return (
     <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')} style={{ position: 'relative' }}>
   {syntheticTitle && (
@@ -66,14 +66,12 @@ export default function DocItemContent({ children }) {
           <Heading as="h1">{syntheticTitle}</Heading>
         </header>
       )}
-      {!isAskNetdata && (
-        <EditMetaRow
-          editUrl={metadata.editUrl}
-          lastUpdatedAt={metadata.lastUpdatedAt}
-          lastUpdatedBy={metadata.lastUpdatedBy}
-          formattedLastUpdatedAt={metadata.formattedLastUpdatedAt}
-        />
-      )}
+      <EditMetaRow
+        editUrl={metadata.editUrl}
+        lastUpdatedAt={metadata.lastUpdatedAt}
+        lastUpdatedBy={metadata.lastUpdatedBy}
+        formattedLastUpdatedAt={metadata.formattedLastUpdatedAt}
+      />
       <br />
       <div style={{ marginTop: '12px' }}>
         <MDXContent>{children}</MDXContent>

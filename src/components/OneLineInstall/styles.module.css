@@ -10,7 +10,10 @@
 }
 
 .Container div[class*="codeBlock_"] {
-  @apply rounded-tl rounded-tr !rounded-br-none !rounded-bl-none;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }
 
 .installCheckboxes {

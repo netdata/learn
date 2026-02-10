@@ -1,0 +1,132 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocItemContent component > snapshots > should match snapshot for ask-nedi page 1`] = `
+<div>
+  <div
+    class="theme-doc-markdown markdown"
+    style="position: relative;"
+  >
+    <header>
+      <h1
+        data-testid="heading"
+      >
+        Ask Netdata
+      </h1>
+    </header>
+    <div
+      class="theme-doc-footer-edit-meta-row row"
+      style="float: right;"
+    >
+      <a
+        class="theme-edit-this-page"
+        href="https://github.com/edit/test"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        <svg
+          data-testid="icon-edit"
+        >
+          <path
+            d="M0 0h24v24H0z"
+          />
+        </svg>
+      </a>
+    </div>
+    <br />
+    <div
+      style="margin-top: 12px;"
+    >
+      <div
+        data-testid="mdx-content"
+      >
+        Ask Netdata content
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DocItemContent component > snapshots > should match snapshot with synthetic title 1`] = `
+<div>
+  <div
+    class="theme-doc-markdown markdown"
+    style="position: relative;"
+  >
+    <header>
+      <h1
+        data-testid="heading"
+      >
+        Test Document
+      </h1>
+    </header>
+    <div
+      class="theme-doc-footer-edit-meta-row row"
+      style="float: right;"
+    >
+      <a
+        class="theme-edit-this-page"
+        href="https://github.com/edit/test"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        <svg
+          data-testid="icon-edit"
+        >
+          <path
+            d="M0 0h24v24H0z"
+          />
+        </svg>
+      </a>
+    </div>
+    <br />
+    <div
+      style="margin-top: 12px;"
+    >
+      <div
+        data-testid="mdx-content"
+      >
+        Test content
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DocItemContent component > snapshots > should match snapshot without synthetic title 1`] = `
+<div>
+  <div
+    class="theme-doc-markdown markdown"
+    style="position: relative;"
+  >
+    <div
+      class="theme-doc-footer-edit-meta-row row"
+      style="float: right;"
+    >
+      <a
+        class="theme-edit-this-page"
+        href="https://github.com/edit/test"
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        <svg
+          data-testid="icon-edit"
+        >
+          <path
+            d="M0 0h24v24H0z"
+          />
+        </svg>
+      </a>
+    </div>
+    <br />
+    <div
+      style="margin-top: 12px;"
+    >
+      <div
+        data-testid="mdx-content"
+      >
+        Test content
+      </div>
+    </div>
+  </div>
+</div>
+`;

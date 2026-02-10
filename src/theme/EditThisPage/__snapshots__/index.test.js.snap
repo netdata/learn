@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`EditThisPage component > snapshots > should match snapshot 1`] = `
+<div>
+  <a
+    class="theme-edit-this-page"
+    href="https://github.com/netdata/learn/edit/master/docs/test.md"
+    rel="noreferrer noopener"
+    target="_blank"
+  >
+    <svg
+      data-testid="icon-edit"
+    >
+      <path
+        d="M0 0h24v24H0z"
+      />
+    </svg>
+  </a>
+</div>
+`;

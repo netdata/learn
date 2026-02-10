@@ -21,7 +21,11 @@
 	--ifm-code-padding-vertical: 0.125rem;
 	
 	/* Code block line height for ASCII art */
-	--ifm-pre-line-height: 1.2; /* Tighter line spacing for ASCII art */
+	--ifm-pre-line-height: 1.0; /* Line spacing 1.0 for ASCII art */
+
+	/* Light mode code blocks */
+	--ifm-code-background: #f5f5f5;
+	--ifm-pre-background: #f5f5f5;
 }
 
 html,
@@ -51,20 +55,27 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 	top: -0.05em; /* Slight adjustment to align better */
 }
 
-/* Import ask-netdata styles */
-/* @import './ask-netdata.css'; */
-/* @import './ask-netdata-page.css'; */
 
-/* Loading animation for Ask Netdata */
-@keyframes bounce {
-  0%, 80%, 100% {
-    transform: scale(0);
-    opacity: 0.5;
-  }
-  40% {
-    transform: scale(1);
-    opacity: 1;
-  }
+/* Hide Nedi's built-in theme toggle (synced from Docusaurus) */
+.ai-agent-theme {
+	display: none !important;
+}
+
+/* Nedi input: match site's border-radius and fix scrollbar overlap */
+.ai-agent-wrapper .ai-agent-input {
+	border-radius: 6px;
+	scrollbar-gutter: stable;
+}
+
+/* Full-page (Nedi) layout: hide back-to-top button and remove bottom padding */
+body:has(.nedi-full-page) [class*="backToTop"] {
+	display: none !important;
+}
+.padding-bottom--lg:has(.nedi-full-page) {
+	padding-bottom: 0 !important;
+}
+.padding-top--md:has(.nedi-full-page) {
+	padding-top: 0 !important;
 }
 
 /* custom Netdata overrides */
@@ -73,8 +84,27 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 	font-weight: 600;
 } */
 
-/* Make Ask Netdata Docs sidebar icon and text green */
-.menu__link[href*="/docs/ask-netdata"] {
+/* Ask Nedi sidebar link: bold with chat icon, green only when active */
+.menu__link[href*="/docs/ask-nedi"] {
+	font-weight: 700 !important;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+.menu__link[href*="/docs/ask-nedi"]::before {
+	content: '';
+	width: 18px;
+	height: 18px;
+	flex-shrink: 0;
+	background-color: currentColor;
+	mask-image: url('/img/icons/ph-chats-circle.svg');
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	-webkit-mask-image: url('/img/icons/ph-chats-circle.svg');
+	-webkit-mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
+}
+.menu__link[href*="/docs/ask-nedi"].menu__link--active {
 	color: #00AB44 !important;
 }
 
@@ -117,6 +147,7 @@ html[data-theme='dark'] .table-of-contents__link--active {
 	color: #00AB44;
 	font-weight: 600;
 }
+
 
 /* .menu .menu__link{
 	font-weight: 600 !important;
@@ -201,11 +232,41 @@ h6 {
 	color: white;
 }
 
-.navbar-item-hide-large-7 {
-	color: #029d40;
-	text-align: center;
-	display: inline-block;
-	/* font-size: 16px; */
+/* Live Demo link - green accent */
+.navbar-item-live-demo {
+	color: #00AB44 !important;
+	font-weight: 500;
+}
+
+/* Sign In button */
+.navbar-item-sign-in {
+	background-color: #00AB44;
+	color: #fff !important;
+	border-radius: 6px;
+	padding: 6px 16px !important;
+	font-weight: 500;
+	font-size: 0.85rem;
+	transition: background-color 0.2s;
+}
+
+.navbar-item-sign-in:hover {
+	background-color: #009a3d;
+	color: #fff !important;
+}
+
+/* GitHub icon in navbar (Phosphor ph-github-logo) */
+.header-github-link::before {
+	content: '';
+	width: 24px;
+	height: 24px;
+	display: flex;
+	background-color: var(--ifm-navbar-link-color);
+	mask-image: url('/img/icons/ph-github-logo.svg');
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	-webkit-mask-image: url('/img/icons/ph-github-logo.svg');
+	-webkit-mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
 }
 
 :root { --ifm-navbar-height: 72px; }
@@ -214,7 +275,6 @@ h6 {
 @media screen and (max-width: 720px) {
 
 .navbar__logo {
-		/* hide logo on mobile to make room for the chat pill */
 		display: none;
 		visibility: hidden;
 	}
@@ -262,29 +322,31 @@ h6 {
 }
 
 /*
- * Tailwind
-*/
+ * Tailwind 4
+ */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Import Tailwind without Preflight to avoid conflicting with Docusaurus/Infima styles */
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
 
-@responsive {
-	.text-shadow {
-		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-	}
+/* Legacy config compatibility - path relative to this CSS file */
+@config "../../tailwind.config.js";
 
-	.text-shadow-md {
-		text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
-	}
+/* Custom text-shadow utilities */
+@utility text-shadow {
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-	.text-shadow-lg {
-		text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
-	}
+@utility text-shadow-md {
+	text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+}
 
-	.text-shadow-none {
-		text-shadow: none;
-	}
+@utility text-shadow-lg {
+	text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+@utility text-shadow-none {
+	text-shadow: none;
 }
 
 /*
@@ -363,14 +425,6 @@ a:hover {
 
 
 
-.header-github-link::before {
-	background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
-		no-repeat;
-	content: '';
-	display: flex;
-	height: 24px;
-	width: 24px;
-}
 
 .react-toggle .react-toggle-track {
 	@apply bg-gray-50;
@@ -482,9 +536,63 @@ html[data-theme='dark'] .sui-layout .sui-result em {
  * Markdown/prose
 */
 
-/*Tailwind prose styles the text;  dark:prose-dark is needed to correctly render dark mode. */
+/*Tailwind prose styles the text */
 .markdown {
 	@apply prose max-w-none;
+}
+
+/* Prevent Tailwind prose from adding backtick characters around inline code */
+.markdown code::before,
+.markdown code::after,
+.prose code::before,
+.prose code::after {
+	content: none !important;
+}
+
+/* Dark mode: Override prose colors to respect Infima variables */
+html[data-theme='dark'] .markdown {
+	--tw-prose-body: var(--ifm-font-color-base);
+	--tw-prose-headings: var(--ifm-font-color-base);
+	--tw-prose-lead: var(--ifm-font-color-base);
+	--tw-prose-links: #00D454; /* Netdata green for links */
+	--tw-prose-bold: var(--ifm-font-color-base);
+	--tw-prose-counters: var(--ifm-font-color-base);
+	--tw-prose-bullets: var(--ifm-font-color-base);
+	--tw-prose-hr: var(--ifm-toc-border-color);
+	--tw-prose-quotes: var(--ifm-font-color-base);
+	--tw-prose-quote-borders: var(--ifm-toc-border-color);
+	--tw-prose-captions: var(--ifm-font-color-base);
+	--tw-prose-th-borders: var(--ifm-table-border-color);
+	--tw-prose-td-borders: var(--ifm-table-border-color);
+}
+
+/* Dark mode: Inline code text color */
+html[data-theme='dark'] code,
+html[data-theme='dark'] .markdown code,
+html[data-theme='dark'] .prose code {
+	color: #e0e0e0 !important;
+}
+
+/* Code blocks - light mode */
+pre, .prism-code, [class*="codeBlock"] {
+	background-color: #e8e8e8 !important;
+	line-height: 1.0 !important;
+}
+
+pre code, .prism-code code, [class*="codeBlock"] code {
+	color: #1a1a1a !important;
+}
+
+/* Code blocks - dark mode */
+html[data-theme='dark'] pre,
+html[data-theme='dark'] .prism-code,
+html[data-theme='dark'] [class*="codeBlock"] {
+	background-color: #1a1a1a !important;
+}
+
+html[data-theme='dark'] pre code,
+html[data-theme='dark'] .prism-code code {
+	color: #e0e0e0;
 }
 
 .markdown ol > li::before  {
@@ -497,8 +605,6 @@ html[data-theme='dark'] .sui-layout .sui-result em {
 }
 
 .markdown pre {
-    @apply text-green;
-    background:none;
     margin:5px;
 }
 
@@ -510,12 +616,26 @@ h1 {
 	@apply font-bold;
 }
 
-.markdown a {
-	@apply hover:text-green;
+/* Light mode: Links should be Netdata green */
+.markdown a,
+.prose a {
+	color: #00AB44 !important;
 }
 
-.dark .markdown a {
-	@apply hover:text-blue;
+.markdown a:hover,
+.prose a:hover {
+	color: #00CB51 !important;
+}
+
+/* Dark mode: Links should be brighter Netdata green */
+html[data-theme='dark'] .markdown a,
+html[data-theme='dark'] .prose a {
+	color: #00D454 !important;
+}
+
+html[data-theme='dark'] .markdown a:hover,
+html[data-theme='dark'] .prose a:hover {
+	color: #26FF7D !important;
 }
 
 .markdown a code {
@@ -619,18 +739,120 @@ html[data-theme='dark']:root {
 	--docusaurus-highlighted-code-line-bg: #1A1A1A;
 }
 
-/* Dark theme: Collapsed details - slightly brighter entire box */
-html[data-theme='dark'] .details_lb9f.alert--info[data-collapsed="true"],
-html[data-theme='dark'] details.alert--info[data-collapsed="true"] {
-	--ifm-alert-background-color: #141820; /* Slightly brighter when collapsed */
-	background-color: #141820;
+/* Prevent TOC from wrapping below content — matches Docusaurus default CSS module rule
+   that doesn't apply because our custom Layout uses docItemCol as a plain class name */
+@media (min-width: 997px) {
+	.docItemCol {
+		max-width: 75% !important;
+	}
 }
 
-/* Dark theme: Expanded details - darker background */
-html[data-theme='dark'] .details_lb9f.alert--info[data-collapsed="false"],
-html[data-theme='dark'] details.alert--info:not([data-collapsed="true"]) {
-	--ifm-alert-background-color: #0a0d10; /* Darker when expanded */
-	background-color: #0a0d10;
+/* Dark theme: Subtle scrollbars */
+html[data-theme='dark'] .thin-scrollbar {
+	scrollbar-color: #333 transparent;
+}
+
+/* Light theme: Details/expandable items background */
+details, .details_lb9f {
+	--ifm-alert-background-color: #e8e8e8;
+	background-color: #e8e8e8 !important;
+}
+
+/* Dark theme: Details/expandable items - neutral dark background like code blocks */
+html[data-theme='dark'] details,
+html[data-theme='dark'] .details_lb9f {
+	--ifm-alert-background-color: #1a1a1a;
+	background-color: #1a1a1a !important;
+}
+
+/*
+ * Mermaid diagrams - fix text colors for dark mode
+ */
+
+/* Dark mode: Force dark text on mermaid node content (boxes with light backgrounds) */
+html[data-theme='dark'] svg .nodeLabel,
+html[data-theme='dark'] svg .nodeLabel *,
+html[data-theme='dark'] svg .label,
+html[data-theme='dark'] svg .label *,
+html[data-theme='dark'] svg foreignObject,
+html[data-theme='dark'] svg foreignObject *,
+html[data-theme='dark'] svg foreignObject strong,
+html[data-theme='dark'] svg foreignObject p,
+html[data-theme='dark'] svg foreignObject div,
+html[data-theme='dark'] svg foreignObject span {
+	color: #1a1a1a !important;
+}
+
+/* Dark mode: Edge labels (connectors) should have light text on dark background */
+html[data-theme='dark'] svg .edgeLabel,
+html[data-theme='dark'] svg .edgeLabel *,
+html[data-theme='dark'] svg .labelBkg,
+html[data-theme='dark'] svg .labelBkg * {
+	color: #e0e0e0 !important;
+}
+
+/*
+ * Search plugin
+ */
+
+/* Right side order: GitHub | theme toggle | search | Sign In */
+.navbar__items--right {
+	display: flex;
+	align-items: center;
+}
+
+.navbar__items--right > .header-github-link { order: 1; }
+.navbar__items--right > [class*="colorModeToggle"] { order: 2; }
+.navbar__items--right > [class*="navbarSearchContainer"] { order: 3; }
+.navbar__items--right > .navbar-item-sign-in { order: 4; margin-left: 0.5rem; }
+
+/* Blend search input into navbar */
+.navbar__search-input {
+	background-color: transparent !important;
+	border: 1px solid var(--ifm-color-emphasis-300) !important;
+	border-radius: 6px;
+	color: var(--ifm-navbar-link-color) !important;
+	font-size: 0.85rem;
+	transition: border-color 0.2s, background-color 0.2s;
+}
+
+.navbar__search-input:focus {
+	background-color: var(--ifm-background-surface-color) !important;
+	border-color: var(--ifm-color-emphasis-400) !important;
+}
+
+.navbar__search-input::placeholder {
+	color: var(--ifm-color-emphasis-400);
+}
+
+/* Dark mode - search dropdown overrides */
+html[data-theme='dark'] {
+	--search-local-modal-background: #0A0A0A;
+	--search-local-modal-shadow: inset 1px 1px 0 0 #1A1A1A, 0 3px 8px 0 rgba(0, 0, 0, 0.6);
+	--search-local-hit-background: #1A1A1A;
+	--search-local-hit-shadow: none;
+	--search-local-hit-color: #c0c0c0;
+	--search-local-highlight-color: #00AB44;
+	--search-local-muted-color: #808080;
+	--search-local-hit-active-color: #ffffff;
+}
+
+html[data-theme='dark'] .navbar__search-input {
+	border-color: #333 !important;
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29823,0,.89749.89749,0,0,0,0-1.29811Z" fill="%23c0c0c0"/></svg>') !important;
+}
+
+html[data-theme='dark'] .navbar__search-input:focus {
+	background-color: #0A0A0A !important;
+	border-color: #555 !important;
+}
+
+/* Subtle keyboard shortcut hints in dark mode */
+html[data-theme='dark'] [class*="searchHint"]:not([class*="Container"]) {
+	background-color: #1A1A1A !important;
+	color: #555 !important;
+	border-color: #333 !important;
+	box-shadow: inset 0 -1px 0 #333 !important;
 }
 
 /*
@@ -656,34 +878,3 @@ html[data-theme='dark'] details.alert--info:not([data-collapsed="true"]) {
 	);
 }
 
-/* Hide navbar items on small screens */
-@media (max-width: 1459px) {
-	.navbar__link.navbar-item-hide-large-7 {
-		display: none !important;
-	}
-}
-/* Hide navbar items on small screens */
-@media (max-width: 1355px) {
-	.navbar__link.navbar-item-hide-large-6 {
-		display: none !important;
-	}
-}
-/* Hide navbar items on small screens */
-@media (max-width: 1260px) {
-	.navbar__link.navbar-item-hide-large-5 {
-		display: none !important;
-	}
-}
-/* Hide navbar items on small screens */
-@media (max-width: 1168px) {
-	.navbar__link.navbar-item-hide-large-4 {
-		display: none !important;
-	}
-}
-/* Hide navbar items on small screens */
-@media (max-width: 1055px) {
-	.navbar__link.navbar-item-hide-large-3 {
-		display: none !important;
-	}
-}
-/* 1350 */

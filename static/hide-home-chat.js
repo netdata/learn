@@ -4,10 +4,11 @@
     return (p || '').replace(/\/+$/, '') || '/';
   }
 
-  // Only hide the widget on the Ask Netdata docs page(s)
+  // Only hide the widget on the Ask Nedi docs page(s)
   const shouldHide = (path) => {
     const np = normalizePath(path || location.pathname || '');
-    return np === '/docs/ask-netdata' || np.startsWith('/docs/ask-netdata');
+    return np === '/docs/ask-nedi' || np.startsWith('/docs/ask-nedi')
+        || np === '/docs/ask-netdata' || np.startsWith('/docs/ask-netdata');
   };
 
   function ensureHideStyle(on) {
