@@ -839,6 +839,7 @@ html[data-theme='dark'] {
 
 html[data-theme='dark'] .navbar__search-input {
 	border-color: #333 !important;
+	background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29823,0,.89749.89749,0,0,0,0-1.29811Z" fill="%23c0c0c0"/></svg>') !important;
 }
 
 html[data-theme='dark'] .navbar__search-input:focus {
