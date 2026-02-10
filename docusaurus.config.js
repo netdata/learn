@@ -20,6 +20,7 @@ module.exports = {
 		['@easyops-cn/docusaurus-search-local', {
 			hashed: true,
 			searchBarPosition: 'right',
+			explicitSearchResultPath: true,
 		}],
 	],
 	themeConfig: {
