@@ -542,6 +542,8 @@ html[data-theme='dark'] .sui-layout .sui-result em {
 }
 
 /* Prevent Tailwind prose from adding backtick characters around inline code */
+.markdown code::before,
+.markdown code::after,
 .prose code::before,
 .prose code::after {
 	content: none !important;
