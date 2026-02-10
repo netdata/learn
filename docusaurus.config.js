@@ -48,13 +48,7 @@ module.exports = {
 				srcDark: 'img/logo-letter-green-white.svg',
 			},
 			items: [
-				// Left side - documentation-focused navigation
-				{
-					type: 'doc',
-					docId: 'Welcome to Netdata/Welcome to Netdata',
-					position: 'left',
-					label: 'Docs',
-				},
+				// Left side - navigation
 				{
 					to: 'https://www.netdata.cloud/integrations/',
 					position: 'left',
