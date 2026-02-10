@@ -541,6 +541,12 @@ html[data-theme='dark'] .sui-layout .sui-result em {
 	@apply prose max-w-none;
 }
 
+/* Prevent Tailwind prose from adding backtick characters around inline code */
+.prose code::before,
+.prose code::after {
+	content: none !important;
+}
+
 /* Dark mode: Override prose colors to respect Infima variables */
 html[data-theme='dark'] .markdown {
 	--tw-prose-body: var(--ifm-font-color-base);
@@ -571,26 +577,8 @@ pre, .prism-code, [class*="codeBlock"] {
 	line-height: 1.0 !important;
 }
 
-pre code, .prism-code code,
-pre .token, .prism-code .token {
-	color: #1a1a1a !important;
-}
-
-/* Light mode - Prism token overrides for better contrast */
-.token.comment, .token.prolog, .token.doctype, .token.cdata {
-	color: #5c6370 !important;
-}
-.token.punctuation {
-	color: #1a1a1a !important;
-}
-.token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted {
-	color: #1a1a1a !important;
-}
-.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
-	color: #1a1a1a !important;
-}
-.token.operator, .token.entity, .token.url, .token.keyword, .token.function, .token.class-name {
-	color: #1a1a1a !important;
+pre code, .prism-code code {
+	color: #1a1a1a;
 }
 
 /* Code blocks - dark mode */
@@ -601,40 +589,8 @@ html[data-theme='dark'] [class*="codeBlock"] {
 }
 
 html[data-theme='dark'] pre code,
-html[data-theme='dark'] .prism-code code,
-html[data-theme='dark'] pre .token,
-html[data-theme='dark'] .prism-code .token {
-	color: #e0e0e0 !important;
-}
-
-/* Dark mode - Prism token overrides */
-html[data-theme='dark'] .token.comment,
-html[data-theme='dark'] .token.prolog,
-html[data-theme='dark'] .token.doctype,
-html[data-theme='dark'] .token.cdata {
-	color: #7f8c8d !important;
-}
-html[data-theme='dark'] .token.punctuation,
-html[data-theme='dark'] .token.property,
-html[data-theme='dark'] .token.tag,
-html[data-theme='dark'] .token.boolean,
-html[data-theme='dark'] .token.number,
-html[data-theme='dark'] .token.constant,
-html[data-theme='dark'] .token.symbol,
-html[data-theme='dark'] .token.deleted,
-html[data-theme='dark'] .token.selector,
-html[data-theme='dark'] .token.attr-name,
-html[data-theme='dark'] .token.string,
-html[data-theme='dark'] .token.char,
-html[data-theme='dark'] .token.builtin,
-html[data-theme='dark'] .token.inserted,
-html[data-theme='dark'] .token.operator,
-html[data-theme='dark'] .token.entity,
-html[data-theme='dark'] .token.url,
-html[data-theme='dark'] .token.keyword,
-html[data-theme='dark'] .token.function,
-html[data-theme='dark'] .token.class-name {
-	color: #e0e0e0 !important;
+html[data-theme='dark'] .prism-code code {
+	color: #e0e0e0;
 }
 
 .markdown ol > li::before  {
@@ -647,8 +603,6 @@ html[data-theme='dark'] .token.class-name {
 }
 
 .markdown pre {
-    @apply text-green;
-    background:none;
     margin:5px;
 }
 
@@ -781,6 +735,14 @@ html[data-theme='dark']:root {
 	--ifm-code-background: #0A0A0A;
 	--ifm-pre-background: #0A0A0A;
 	--docusaurus-highlighted-code-line-bg: #1A1A1A;
+}
+
+/* Prevent TOC from wrapping below content — matches Docusaurus default CSS module rule
+   that doesn't apply because our custom Layout uses docItemCol as a plain class name */
+@media (min-width: 997px) {
+	.docItemCol {
+		max-width: 75% !important;
+	}
 }
 
 /* Dark theme: Subtle scrollbars */
