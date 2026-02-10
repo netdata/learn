@@ -21,6 +21,7 @@ module.exports = {
 			hashed: true,
 			searchBarPosition: 'right',
 			explicitSearchResultPath: true,
+			searchResultLimits: 12,
 		}],
 	],
 	themeConfig: {
