@@ -160,7 +160,7 @@ describe('Grid component', () => {
     });
 
     it('should not render external link icon for internal URLs', () => {
-      const { container } = render(<BoxListItem to="/docs/test" title="Internal" />);
+      render(<BoxListItem to="/docs/test" title="Internal" />);
       // Should only have the link, no external icon
       const link = screen.getByTestId('docusaurus-link');
       expect(link).toBeInTheDocument();

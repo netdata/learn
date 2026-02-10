@@ -49,8 +49,5 @@ export const useDocsSidebar = vi.fn(() => ({
   items: [],
 }));
 
-// Mock useWindowSize
-export const useWindowSize = vi.fn(() => ({
-  width: 1024,
-  height: 768,
-}));
+// Mock useWindowSize — returns a string like the real hook ('desktop', 'mobile', 'ssr')
+export const useWindowSize = vi.fn(() => 'desktop');

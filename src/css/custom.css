@@ -579,8 +579,8 @@ pre, .prism-code, [class*="codeBlock"] {
 	line-height: 1.0 !important;
 }
 
-pre code, .prism-code code {
-	color: #1a1a1a;
+pre code, .prism-code code, [class*="codeBlock"] code {
+	color: #1a1a1a !important;
 }
 
 /* Code blocks - dark mode */

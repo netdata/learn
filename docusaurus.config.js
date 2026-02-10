@@ -1,3 +1,5 @@
+const {themes: prismThemes} = require('prism-react-renderer');
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
 	title: 'Learn Netdata',
@@ -32,6 +34,10 @@ module.exports = {
 		},
 		mermaid: {
 			theme: { light: 'default', dark: 'dark' },
+		},
+		prism: {
+			theme: prismThemes.github,
+			darkTheme: prismThemes.dracula,
 		},
 		image: 'img/netdata_meta-default.png',
 		docs: {

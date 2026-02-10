@@ -74,7 +74,7 @@ describe('Grid_integrations component', () => {
     });
 
     it('should apply banner_color style', () => {
-      const { container } = render(
+      render(
         <Box to="/docs/test" title="Box" banner="New" banner_color="#ff0000">
           Content
         </Box>

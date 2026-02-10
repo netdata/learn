@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /ask-nedi
-Disallow: /ask-netdata
+Disallow: /docs/ask-nedi
+Disallow: /docs/ask-netdata
 Sitemap: https://learn.netdata.cloud/sitemap.xml
