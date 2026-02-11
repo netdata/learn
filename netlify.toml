@@ -5634,20 +5634,8 @@
   to="/docs/collecting-metrics/containers-and-vms/virtual-machines"
 
 [[redirects]]
-  from="/docs/data-collection/containers-and-vms/proxmox-containers"
-  to="/docs/collecting-metrics/containers-and-vms/proxmox-containers"
-
-[[redirects]]
-  from="/docs/data-collection/containers-and-vms/ovirt-containers"
-  to="/docs/collecting-metrics/containers-and-vms/ovirt-containers"
-
-[[redirects]]
   from="/docs/data-collection/containers-and-vms/lxc-containers"
   to="/docs/collecting-metrics/containers-and-vms/lxc-containers"
-
-[[redirects]]
-  from="/docs/data-collection/containers-and-vms/libvirt-containers"
-  to="/docs/collecting-metrics/containers-and-vms/libvirt-containers"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/containers"
