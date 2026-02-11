@@ -8605,4 +8605,36 @@
   from="/docs//getting-started"
   to="/docs/getting-started"
 
+[[redirects]]
+  from="/docs/data-collection/systemd-journal"
+  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal/active-journal-centralization-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal/active-journal-source-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
+  to="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal"
+  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+
+[[redirects]]
+  from="/docs/working-with-logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
+  to="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
+
+[[redirects]]
+  from="/docs/working-with-logs/systemd-journal"
+  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+
 # section: dynamic << END

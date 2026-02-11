@@ -1,19 +1,19 @@
 ---
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/logs/README.md"
-sidebar_label: "Journal Viewer Plugin"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md"
+sidebar_label: "Systemd Journal Plugin Reference"
 learn_status: "Published"
 learn_rel_path: "Logs/Systemd Journal Logs"
 description: "View and analyze logs available in systemd journal"
 sidebar_position: "1204000"
-learn_link: "https://learn.netdata.cloud/docs/logs/systemd-journal-logs/journal-viewer-plugin"
-slug: "/logs/systemd-journal-logs/journal-viewer-plugin"
+learn_link: "https://learn.netdata.cloud/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+slug: "/logs/systemd-journal-logs/systemd-journal-plugin-reference"
 ---
 
-# `journal-viewer` plugin
+# `systemd` journal plugin
 
 [KEY FEATURES](#key-features) | [PREREQUISITES](#prerequisites) | [JOURNAL SOURCES](#journal-sources) | [JOURNAL FIELDS](#journal-fields) | [VISUALIZATION](#visualization-capabilities) | [PLAY MODE](#play-mode) | [FULL TEXT SEARCH](#full-text-search) | [QUERY PERFORMANCE](#query-performance) | [PERFORMANCE AT SCALE](#performance-at-scale) | [BEST PRACTICES](#best-practices-for-better-performance) | [CONFIGURATION](#configuration-and-maintenance) | [FAQ](#faq) | [HOW TO TROUBLESHOOT COMMON ISSUES](#how-to-troubleshoot-common-issues) | [HOW TO VERIFY SETUP](#how-to-verify-setup)
 
-The `journal-viewer` plugin provides an efficient way to view, explore, and analyze `systemd` journal logs directly from the Netdata dashboard. It combines powerful filtering, real-time updates, and visual analysis tools to help you troubleshoot system issues effectively.
+The `systemd` journal plugin provides an efficient way to view, explore, and analyze `systemd` journal logs directly from the Netdata dashboard. It combines powerful filtering, real-time updates, and visual analysis tools to help you troubleshoot system issues effectively.
 
 ![Netdata systemd journal plugin interface](https://github.com/netdata/netdata/assets/2662304/691b7470-ec56-430c-8b81-0c9e49012679)
 
@@ -555,7 +555,7 @@ Sampling ensures responsiveness at scale, but selecting sources and filters rema
 
 | Error Message | Meaning | Solution |
 |--------------|---------|----------|
-| "Plugin not available" | The journal-viewer plugin isn't loaded | Check your Netdata installation type (must not be Alpine or static) |
+| "Plugin not available" | The systemd-journal plugin isn't loaded | Check your Netdata installation type (must not be Alpine or static) |
 | "Unable to open journal" | Permission issues accessing journal files | Ensure Netdata has proper permissions for journal directories |
 | "Timeout while querying" | Query is taking too long to complete | Reduce the query scope with filters or shorter timeframes |
 | "No sources detected" | Cannot find valid journal files | Check journal file locations and setup |
@@ -569,7 +569,7 @@ Sampling ensures responsiveness at scale, but selecting sources and filters rema
 sudo netdata -W plugins
 ```
 
-Check that the `journal-viewer-plugin` is listed as active.
+Check that the `systemd-journal` plugin is listed as active.
 
 ### How to confirm journal sources are detected
 
