@@ -171,18 +171,26 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 
 | Integration | Description |
 |-------------|-------------|
-| [Containers](/docs/collecting-metrics/containers-and-vms/containers) | Monitor Containers for performance, resource usage, and health status. |
+| [AWS ECS Containers](/docs/collecting-metrics/containers-and-vms/aws-ecs-containers) | Monitor AWS ECS container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [containerd Containers](/docs/collecting-metrics/containers-and-vms/containerd-containers) | Monitor containerd container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Containers](/docs/collecting-metrics/containers-and-vms/containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [Docker](/docs/collecting-metrics/containers-and-vms/docker) | This collector monitors Docker containers state, health status and more. |
+| [Docker Containers](/docs/collecting-metrics/containers-and-vms/docker-containers) | Monitor Docker container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [Docker Engine](/docs/collecting-metrics/containers-and-vms/docker-engine) | This collector monitors the activity and health of Docker Engine and Docker Swarm. |
 | [Docker Hub repository](/docs/collecting-metrics/containers-and-vms/docker-hub-repository) | This collector keeps track of DockerHub repositories statistics such as the number of stars, pulls, current status, and more. |
-| [Libvirt Containers](/docs/collecting-metrics/containers-and-vms/libvirt-containers) | Monitor Libvirt for performance, resource usage, and health status. |
-| [LXC Containers](/docs/collecting-metrics/containers-and-vms/lxc-containers) | Monitor LXC Containers for performance, resource usage, and health status. |
-| [oVirt Containers](/docs/collecting-metrics/containers-and-vms/ovirt-containers) | Monitor oVirt for performance, resource usage, and health status. |
+| [Libvirt VMs and Containers](/docs/collecting-metrics/containers-and-vms/libvirt-vms-and-containers) | Monitor libvirt-managed VM and container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [LXC Containers](/docs/collecting-metrics/containers-and-vms/lxc-containers) | Monitor LXC/LXD/Incus container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Nomad Containers](/docs/collecting-metrics/containers-and-vms/nomad-containers) | Monitor HashiCorp Nomad container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [OpenShift Containers](/docs/collecting-metrics/containers-and-vms/openshift-containers) | Monitor Red Hat OpenShift container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [OpenStack VMs](/docs/collecting-metrics/containers-and-vms/openstack-vms) | Monitor OpenStack Nova virtual machine resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [oVirt VMs](/docs/collecting-metrics/containers-and-vms/ovirt-vms) | Monitor oVirt/RHEV virtual machine resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [Podman](/docs/collecting-metrics/containers-and-vms/podman) | Keep tabs on Podman container runtime metrics for efficient container management and performance. |
-| [Proxmox Containers](/docs/collecting-metrics/containers-and-vms/proxmox-containers) | Monitor Proxmox for performance, resource usage, and health status. |
+| [Podman Containers](/docs/collecting-metrics/containers-and-vms/podman-containers) | Monitor Podman container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [Proxmox VE](/docs/collecting-metrics/containers-and-vms/proxmox-ve) | Keep tabs on Proxmox Virtual Environment metrics for efficient virtualization and container management. |
+| [Proxmox VMs and Containers](/docs/collecting-metrics/containers-and-vms/proxmox-vms-and-containers) | Monitor Proxmox VE virtual machine and container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [systemd-nspawn Containers](/docs/collecting-metrics/containers-and-vms/systemd-nspawn-containers) | Monitor systemd-nspawn container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [vCenter Server Appliance](/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance) | This collector monitors [health statistics](https://developer.vmware.com/apis/vsphere-automation/latest/appliance/health/) of vCenter Server Appliance servers. |
-| [Virtual Machines](/docs/collecting-metrics/containers-and-vms/virtual-machines) | Monitor Virtual Machines for performance, resource usage, and health status. |
+| [Virtual Machines](/docs/collecting-metrics/containers-and-vms/virtual-machines) | Monitor virtual machine resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [VMware vCenter Server](/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server) | This collector monitors hosts and vms performance statistics from `vCenter` servers. |
 | [Xen XCP-ng](/docs/collecting-metrics/containers-and-vms/xen-xcp-ng) | This collector monitors XenServer and XCP-ng host and domains statistics. |
 
@@ -235,7 +243,8 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Kubelet](/docs/collecting-metrics/kubernetes/kubelet) | This collector monitors Kubelet instances. |
 | [Kubeproxy](/docs/collecting-metrics/kubernetes/kubeproxy) | This collector monitors Kubeproxy instances. |
 | [Kubernetes Cluster State](/docs/collecting-metrics/kubernetes/kubernetes-cluster-state) | This collector monitors Kubernetes Nodes, Pods and Containers. |
-| [Kubernetes Containers](/docs/collecting-metrics/kubernetes/kubernetes-containers) | Monitor Containers for performance, resource usage, and health status. |
+| [Kubernetes Containers](/docs/collecting-metrics/kubernetes/kubernetes-containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [OpenShift Containers](/docs/collecting-metrics/containers-and-vms/openshift-containers) | Monitor Red Hat OpenShift container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 
 ### Incident Management
 
@@ -613,7 +622,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 
 | Integration | Description |
 |-------------|-------------|
-| [Systemd Services](/docs/collecting-metrics/systemd/systemd-services) | Monitor Containers for performance, resource usage, and health status. |
+| [Systemd Services](/docs/collecting-metrics/systemd/systemd-services) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [Systemd Units](/docs/collecting-metrics/systemd/systemd-units) | This collector monitors the state of Systemd units and unit files. |
 | [systemd-logind users](/docs/collecting-metrics/systemd/systemd-logind-users) | This collector monitors number of sessions and users as reported by the `org.freedesktop.login1` DBus API. |
 
