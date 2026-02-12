@@ -467,7 +467,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/apcupsd"
-  to="/docs/collecting-metrics/hardware-and-iot/apc-ups"
+  to="/docs/collecting-metrics/hardware-and-sensors/apc-ups"
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/libreswan"
@@ -479,19 +479,19 @@
 
 [[redirects]]
   from="/docs/agent/collectors/charts.d.plugin/sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/cups.plugin"
-  to="/docs/collecting-metrics/hardware-and-iot/cups"
+  to="/docs/collecting-metrics/applications/cups"
 
 [[redirects]]
   from="/docs/agent/collectors/diskspace.plugin"
-  to="/docs/collecting-metrics/operating-systems/disk-space"
+  to="/docs/collecting-metrics/storage-and-filesystems/disk-space"
 
 [[redirects]]
   from="/docs/agent/collectors/freeipmi.plugin"
-  to="/docs/collecting-metrics/hardware-and-iot/intelligent-platform-management-interface-ipmi"
+  to="/docs/collecting-metrics/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/activemq"
@@ -543,19 +543,19 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dnsquery"
-  to="/docs/collecting-metrics/networking/dns-query"
+  to="/docs/collecting-metrics/synthetic-testing/dns-query"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/docker"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker"
+  to="/docs/collecting-metrics/containers-and-vms/docker"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/docker_engine"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-engine"
+  to="/docs/collecting-metrics/containers-and-vms/docker-engine"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/dockerhub"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-hub-repository"
+  to="/docs/collecting-metrics/containers-and-vms/docker-hub-repository"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/elasticsearch"
@@ -563,7 +563,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/filecheck"
-  to="/docs/collecting-metrics/applications/files-and-directories"
+  to="/docs/collecting-metrics/synthetic-testing/files-and-directories"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/fluentd"
@@ -583,7 +583,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/hdfs"
-  to="/docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/httpcheck"
@@ -595,15 +595,15 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_kubelet"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubelet"
+  to="/docs/collecting-metrics/containers-and-vms/kubelet"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_kubeproxy"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubeproxy"
+  to="/docs/collecting-metrics/containers-and-vms/kubeproxy"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/k8s_state"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubernetes-cluster-state"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-cluster-state"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/lighttpd"
@@ -639,7 +639,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvme"
-  to="/docs/collecting-metrics/storage/nvme-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/openvpn"
@@ -711,7 +711,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/scaleio"
-  to="/docs/collecting-metrics/storage/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/service-discovery"
@@ -719,7 +719,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/snmp"
-  to="/docs/collecting-metrics/applications/snmp-devices"
+  to="/docs/collecting-metrics/networking/snmp-devices"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/squidlog"
@@ -747,7 +747,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vcsa"
-  to="/docs/collecting-metrics/containers-and-orchestration/vcenter-server-appliance"
+  to="/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vernemq"
@@ -755,7 +755,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/vsphere"
-  to="/docs/collecting-metrics/containers-and-orchestration/vmware-vcenter-server"
+  to="/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/weblog"
@@ -791,7 +791,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/nfacct.plugin"
-  to="/docs/collecting-metrics/operating-systems/netfilter"
+  to="/docs/collecting-metrics/networking/netfilter"
 
 [[redirects]]
   from="/docs/agent/collectors/perf.plugin"
@@ -807,7 +807,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/am2320"
-  to="/docs/collecting-metrics/hardware-and-iot/am2320"
+  to="/docs/collecting-metrics/hardware-and-sensors/am2320"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/beanstalk"
@@ -815,11 +815,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/boinc"
-  to="/docs/collecting-metrics/databases/boinc"
+  to="/docs/collecting-metrics/applications/boinc"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/ceph"
-  to="/docs/collecting-metrics/storage/ceph"
+  to="/docs/collecting-metrics/storage-and-filesystems/ceph"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/dovecot"
@@ -859,7 +859,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/pandas"
-  to="/docs/collecting-metrics/applications/pandas"
+  to="/docs/collecting-metrics/databases/pandas"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/puppet"
@@ -871,7 +871,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/samba"
-  to="/docs/collecting-metrics/storage/samba"
+  to="/docs/collecting-metrics/storage-and-filesystems/samba"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/spigotmc"
@@ -895,7 +895,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/w1sensor"
-  to="/docs/collecting-metrics/hardware-and-iot/1-wire-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/1-wire-sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/reference"
@@ -907,7 +907,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/tc.plugin"
-  to="/docs/collecting-metrics/operating-systems/tc-qos-classes"
+  to="/docs/collecting-metrics/networking/tc-qos-classes"
 
 [[redirects]]
   from="/docs/agent/collectors/timex.plugin"
@@ -915,7 +915,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/xenstat.plugin"
-  to="/docs/collecting-metrics/containers-and-orchestration/xen-xcp-ng"
+  to="/docs/collecting-metrics/containers-and-vms/xen-xcp-ng"
 
 [[redirects]]
   from="/docs/agent/daemon"
@@ -1483,7 +1483,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/dockerd"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker"
+  to="/docs/collecting-metrics/containers-and-vms/docker"
 
 [[redirects]]
   from="/docs/agent/packaging"
@@ -1703,15 +1703,15 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/xenstat.plugin"
-  to="/docs/collecting-metrics/containers-and-orchestration/xen-xcp-ng"
+  to="/docs/collecting-metrics/containers-and-vms/xen-xcp-ng"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/vCenter-Servers"
-  to="/docs/collecting-metrics/containers-and-orchestration/vmware-vcenter-server"
+  to="/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/vCenter-Server-Appliance"
-  to="/docs/collecting-metrics/containers-and-orchestration/vcenter-server-appliance"
+  to="/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Supervisord"
@@ -1719,23 +1719,23 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kubernetes-cluster-state"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubernetes-cluster-state"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-cluster-state"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kubelet"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubelet"
+  to="/docs/collecting-metrics/containers-and-vms/kubelet"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Kube-proxy"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubeproxy"
+  to="/docs/collecting-metrics/containers-and-vms/kubeproxy"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker-Engine"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-engine"
+  to="/docs/collecting-metrics/containers-and-vms/docker-engine"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Docker"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker"
+  to="/docs/collecting-metrics/containers-and-vms/docker"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/timex.plugin"
@@ -1759,11 +1759,11 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/Files-and-Dirs"
-  to="/docs/collecting-metrics/applications/files-and-directories"
+  to="/docs/collecting-metrics/synthetic-testing/files-and-directories"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/Disks"
-  to="/docs/collecting-metrics/operating-systems/disk-space"
+  to="/docs/collecting-metrics/storage-and-filesystems/disk-space"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/CPU-performance-statistics-perf.plugin"
@@ -1771,7 +1771,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/ScaleIO"
-  to="/docs/collecting-metrics/storage/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/Pika"
@@ -1779,15 +1779,15 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/NVMe-devices"
-  to="/docs/collecting-metrics/storage/nvme-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/HDFS"
-  to="/docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Storage/CEPH"
-  to="/docs/collecting-metrics/storage/ceph"
+  to="/docs/collecting-metrics/storage-and-filesystems/ceph"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Search/Elasticsearch"
@@ -1827,7 +1827,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/tc.plugin"
-  to="/docs/collecting-metrics/operating-systems/tc-qos-classes"
+  to="/docs/collecting-metrics/networking/tc-qos-classes"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/WireGuard"
@@ -1839,11 +1839,11 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/Samba"
-  to="/docs/collecting-metrics/storage/samba"
+  to="/docs/collecting-metrics/storage-and-filesystems/samba"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/SNMP"
-  to="/docs/collecting-metrics/applications/snmp-devices"
+  to="/docs/collecting-metrics/networking/snmp-devices"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/OpenVPN-StatusLog"
@@ -1859,7 +1859,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/Netfilter-statistics-nfacct.plugin"
-  to="/docs/collecting-metrics/operating-systems/netfilter"
+  to="/docs/collecting-metrics/networking/netfilter"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/Libreswan-IPSec-tunnels"
@@ -1907,27 +1907,27 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/lm-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/cups.plugin"
-  to="/docs/collecting-metrics/hardware-and-iot/cups"
+  to="/docs/collecting-metrics/applications/cups"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/Wire-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/1-wire-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/1-wire-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/FreeIPMI"
-  to="/docs/collecting-metrics/hardware-and-iot/intelligent-platform-management-interface-ipmi"
+  to="/docs/collecting-metrics/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/APC-UPS"
-  to="/docs/collecting-metrics/hardware-and-iot/apc-ups"
+  to="/docs/collecting-metrics/hardware-and-sensors/apc-ups"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/AM2320"
-  to="/docs/collecting-metrics/hardware-and-iot/am2320"
+  to="/docs/collecting-metrics/hardware-and-sensors/am2320"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/Whois-domain-expiry"
@@ -1963,7 +1963,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/DNS-queries"
-  to="/docs/collecting-metrics/networking/dns-query"
+  to="/docs/collecting-metrics/synthetic-testing/dns-query"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Dns/CoreDNS"
@@ -1975,7 +1975,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Distributed%20Computing/BOINC"
-  to="/docs/collecting-metrics/databases/boinc"
+  to="/docs/collecting-metrics/applications/boinc"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Databases/RethinkDB"
@@ -2063,7 +2063,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Docker-Hub-repositories"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-hub-repository"
+  to="/docs/collecting-metrics/containers-and-vms/docker-hub-repository"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Chrony"
@@ -2071,7 +2071,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Structured-data-Pandas"
-  to="/docs/collecting-metrics/applications/pandas"
+  to="/docs/collecting-metrics/databases/pandas"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Prometheus-endpoints"
@@ -2519,15 +2519,15 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/xenstat.plugin"
-  to="/docs/collecting-metrics/containers-and-orchestration/xen-xcp-ng"
+  to="/docs/collecting-metrics/containers-and-vms/xen-xcp-ng"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/vcenter-servers"
-  to="/docs/collecting-metrics/containers-and-orchestration/vmware-vcenter-server"
+  to="/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/vcenter-server-appliance"
-  to="/docs/collecting-metrics/containers-and-orchestration/vcenter-server-appliance"
+  to="/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/supervisord"
@@ -2535,23 +2535,23 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/kubernetes-cluster-state"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubernetes-cluster-state"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-cluster-state"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/kubelet"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubelet"
+  to="/docs/collecting-metrics/containers-and-vms/kubelet"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/kube-proxy"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubeproxy"
+  to="/docs/collecting-metrics/containers-and-vms/kubeproxy"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/docker-engine"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-engine"
+  to="/docs/collecting-metrics/containers-and-vms/docker-engine"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/docker"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker"
+  to="/docs/collecting-metrics/containers-and-vms/docker"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/timex.plugin"
@@ -2575,11 +2575,11 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/files-and-dirs"
-  to="/docs/collecting-metrics/applications/files-and-directories"
+  to="/docs/collecting-metrics/synthetic-testing/files-and-directories"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/disks"
-  to="/docs/collecting-metrics/operating-systems/disk-space"
+  to="/docs/collecting-metrics/storage-and-filesystems/disk-space"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/cpu-performance-statistics-perf.plugin"
@@ -2587,7 +2587,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/scaleio"
-  to="/docs/collecting-metrics/storage/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/pika"
@@ -2595,15 +2595,15 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/nvme-devices"
-  to="/docs/collecting-metrics/storage/nvme-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/hdfs"
-  to="/docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/storage/ceph"
-  to="/docs/collecting-metrics/storage/ceph"
+  to="/docs/collecting-metrics/storage-and-filesystems/ceph"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/search/elasticsearch"
@@ -2651,15 +2651,15 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/tc.plugin"
-  to="/docs/collecting-metrics/operating-systems/tc-qos-classes"
+  to="/docs/collecting-metrics/networking/tc-qos-classes"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/snmp"
-  to="/docs/collecting-metrics/applications/snmp-devices"
+  to="/docs/collecting-metrics/networking/snmp-devices"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/samba"
-  to="/docs/collecting-metrics/storage/samba"
+  to="/docs/collecting-metrics/storage-and-filesystems/samba"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/openvpn-statuslog"
@@ -2675,7 +2675,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/netfilter-statistics-nfacct.plugin"
-  to="/docs/collecting-metrics/operating-systems/netfilter"
+  to="/docs/collecting-metrics/networking/netfilter"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/libreswan-ipsec-tunnels"
@@ -2723,27 +2723,27 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/wire-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/1-wire-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/1-wire-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/lm-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/freeipmi"
-  to="/docs/collecting-metrics/hardware-and-iot/intelligent-platform-management-interface-ipmi"
+  to="/docs/collecting-metrics/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/cups.plugin"
-  to="/docs/collecting-metrics/hardware-and-iot/cups"
+  to="/docs/collecting-metrics/applications/cups"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/apc-ups"
-  to="/docs/collecting-metrics/hardware-and-iot/apc-ups"
+  to="/docs/collecting-metrics/hardware-and-sensors/apc-ups"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/am2320"
-  to="/docs/collecting-metrics/hardware-and-iot/am2320"
+  to="/docs/collecting-metrics/hardware-and-sensors/am2320"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/whois-domain-expiry"
@@ -2779,7 +2779,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/dns-queries"
-  to="/docs/collecting-metrics/networking/dns-query"
+  to="/docs/collecting-metrics/synthetic-testing/dns-query"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/dns/coredns"
@@ -2791,7 +2791,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/distributed-computing/boinc"
-  to="/docs/collecting-metrics/databases/boinc"
+  to="/docs/collecting-metrics/applications/boinc"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/databases/rethinkdb"
@@ -2879,7 +2879,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/docker-hub-repositories"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-hub-repository"
+  to="/docs/collecting-metrics/containers-and-vms/docker-hub-repository"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/chrony"
@@ -2887,7 +2887,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/structured-data-pandas"
-  to="/docs/collecting-metrics/applications/pandas"
+  to="/docs/collecting-metrics/databases/pandas"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/any-application---generic-collectors/php-applications"
@@ -3099,7 +3099,7 @@
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/lm-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/web-server"
@@ -3719,11 +3719,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/nvidia_smi"
-  to="/docs/collecting-metrics/hardware-and-iot/nvidia-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/NVIDIA"
-  to="/docs/collecting-metrics/hardware-and-iot/nvidia-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/contributing/redistributed-software"
@@ -3903,7 +3903,7 @@
 
 [[redirects]]
   from="/docs/data-collection/synthetic-checks/dns-queries-check"
-  to="/docs/collecting-metrics/networking/dns-query"
+  to="/docs/collecting-metrics/synthetic-testing/dns-query"
 
 [[redirects]]
   from="/docs/data-collection/synthetic-checks/disk-latency-with-check"
@@ -3915,7 +3915,7 @@
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/scaleio"
-  to="/docs/collecting-metrics/storage/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/pika"
@@ -3923,31 +3923,31 @@
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/software-storage/ceph"
-  to="/docs/collecting-metrics/storage/ceph"
+  to="/docs/collecting-metrics/storage-and-filesystems/ceph"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/nvme-devices"
-  to="/docs/collecting-metrics/storage/nvme-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/smbfs"
-  to="/docs/collecting-metrics/storage/samba"
+  to="/docs/collecting-metrics/storage-and-filesystems/samba"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/filesystems/hdfs"
-  to="/docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/files-and-directories"
-  to="/docs/collecting-metrics/applications/files-and-directories"
+  to="/docs/collecting-metrics/synthetic-testing/files-and-directories"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/disks"
-  to="/docs/collecting-metrics/operating-systems/disk-space"
+  to="/docs/collecting-metrics/storage-and-filesystems/disk-space"
 
 [[redirects]]
   from="/docs/data-collection/snmp-and-networked-devices/snmp"
-  to="/docs/collecting-metrics/applications/snmp-devices"
+  to="/docs/collecting-metrics/networking/snmp-devices"
 
 [[redirects]]
   from="/docs/data-collection/service-discovery-&-registry/zookeeper"
@@ -3971,15 +3971,15 @@
 
 [[redirects]]
   from="/docs/data-collection/online-services/docker-hub"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-hub-repository"
+  to="/docs/collecting-metrics/containers-and-vms/docker-hub-repository"
 
 [[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/network-interface-qos"
-  to="/docs/collecting-metrics/operating-systems/tc-qos-classes"
+  to="/docs/collecting-metrics/networking/tc-qos-classes"
 
 [[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/netfilter-accounting"
-  to="/docs/collecting-metrics/operating-systems/netfilter"
+  to="/docs/collecting-metrics/networking/netfilter"
 
 [[redirects]]
   from="/docs/data-collection/message-brokers/pulsar"
@@ -4007,31 +4007,31 @@
 
 [[redirects]]
   from="/docs/data-collection/kubernetes/kube-proxy"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubeproxy"
+  to="/docs/collecting-metrics/containers-and-vms/kubeproxy"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/wire-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/1-wire-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/1-wire-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/server-hardware"
-  to="/docs/collecting-metrics/hardware-and-iot/intelligent-platform-management-interface-ipmi"
+  to="/docs/collecting-metrics/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
-  to="/docs/collecting-metrics/hardware-and-iot/nvidia-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/cups.plugin"
-  to="/docs/collecting-metrics/hardware-and-iot/cups"
+  to="/docs/collecting-metrics/applications/cups"
 
 [[redirects]]
   from="/docs/data-collection/generic-data-collection/structured-data-pandas"
-  to="/docs/collecting-metrics/applications/pandas"
+  to="/docs/collecting-metrics/databases/pandas"
 
 [[redirects]]
   from="/docs/data-collection/external-plugins/python.d.plugin"
@@ -4115,15 +4115,15 @@
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/xen"
-  to="/docs/collecting-metrics/containers-and-orchestration/xen-xcp-ng"
+  to="/docs/collecting-metrics/containers-and-vms/xen-xcp-ng"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/vmware-center-servers"
-  to="/docs/collecting-metrics/containers-and-orchestration/vmware-vcenter-server"
+  to="/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/vmware-center-server-appliance"
-  to="/docs/collecting-metrics/containers-and-orchestration/vcenter-server-appliance"
+  to="/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance"
 
 [[redirects]]
   from="/docs/data-collection/collectors-configuration"
@@ -4275,7 +4275,7 @@
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/kubernetes-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubernetes-containers"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-containers"
 
 [[redirects]]
   from="/docs/data-collection/task-queues/slurm"
@@ -4283,7 +4283,7 @@
 
 [[redirects]]
   from="/docs/data-collection/task-queues/mesos"
-  to="/docs/collecting-metrics/applications/mesos"
+  to="/docs/collecting-metrics/containers-and-vms/mesos"
 
 [[redirects]]
   from="/docs/data-collection/ci/cd-platforms/puppet"
@@ -4295,7 +4295,7 @@
 
 [[redirects]]
   from="/docs/data-collection/provisioning-systems/mesos"
-  to="/docs/collecting-metrics/applications/mesos"
+  to="/docs/collecting-metrics/containers-and-vms/mesos"
 
 [[redirects]]
   from="/docs/data-collection/ci/cd-platforms/jenkins"
@@ -5151,7 +5151,7 @@
 
 [[redirects]]
   from="/docs/data-collection/ups/apc-ups"
-  to="/docs/collecting-metrics/hardware-and-iot/apc-ups"
+  to="/docs/collecting-metrics/hardware-and-sensors/apc-ups"
 
 [[redirects]]
   from="/docs/data-collection/telephony-servers/opensips"
@@ -5175,11 +5175,11 @@
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/samba"
-  to="/docs/collecting-metrics/storage/samba"
+  to="/docs/collecting-metrics/storage-and-filesystems/samba"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ceph"
-  to="/docs/collecting-metrics/storage/ceph"
+  to="/docs/collecting-metrics/storage-and-filesystems/ceph"
 
 [[redirects]]
   from="/docs/data-collection/processes-and-system-services/users"
@@ -5235,47 +5235,47 @@
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/power-supply/power-supply"
-  to="/docs/collecting-metrics/operating-systems/power-supply"
+  to="/docs/collecting-metrics/hardware-and-sensors/power-supply"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/wireless-network-interfaces"
-  to="/docs/collecting-metrics/operating-systems/wireless-network-interfaces"
+  to="/docs/collecting-metrics/networking/wireless-network-interfaces"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/tc-qos-classes"
-  to="/docs/collecting-metrics/operating-systems/tc-qos-classes"
+  to="/docs/collecting-metrics/networking/tc-qos-classes"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/softnet-statistics"
-  to="/docs/collecting-metrics/operating-systems/softnet-statistics"
+  to="/docs/collecting-metrics/networking/softnet-statistics"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/socket-statistics"
-  to="/docs/collecting-metrics/operating-systems/socket-statistics"
+  to="/docs/collecting-metrics/networking/socket-statistics"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/sctp-statistics"
-  to="/docs/collecting-metrics/operating-systems/sctp-statistics"
+  to="/docs/collecting-metrics/networking/sctp-statistics"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/network-statistics"
-  to="/docs/collecting-metrics/operating-systems/network-statistics"
+  to="/docs/collecting-metrics/networking/network-statistics"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/network-interfaces"
-  to="/docs/collecting-metrics/operating-systems/network-interfaces"
+  to="/docs/collecting-metrics/networking/network-interfaces"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/ipv6-socket-statistics"
-  to="/docs/collecting-metrics/operating-systems/ipv6-socket-statistics"
+  to="/docs/collecting-metrics/networking/ipv6-socket-statistics"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/ip-virtual-server"
-  to="/docs/collecting-metrics/operating-systems/ip-virtual-server"
+  to="/docs/collecting-metrics/networking/ip-virtual-server"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/network/infiniband"
-  to="/docs/collecting-metrics/operating-systems/infiniband"
+  to="/docs/collecting-metrics/networking/infiniband"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/memory/zram"
@@ -5303,7 +5303,7 @@
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/memory/memory-modules-dimms"
-  to="/docs/collecting-metrics/operating-systems/memory-modules-dimms"
+  to="/docs/collecting-metrics/hardware-and-sensors/memory-modules-dimms"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/memory/linux-zswap"
@@ -5315,7 +5315,7 @@
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/kernel/power-capping"
-  to="/docs/collecting-metrics/operating-systems/power-capping"
+  to="/docs/collecting-metrics/hardware-and-sensors/power-capping"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/kernel/linux-kernel-slab-allocator-statistics"
@@ -5327,43 +5327,43 @@
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/firewall/synproxy"
-  to="/docs/collecting-metrics/operating-systems/synproxy"
+  to="/docs/collecting-metrics/networking/synproxy"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/firewall/netfilter"
-  to="/docs/collecting-metrics/operating-systems/netfilter"
+  to="/docs/collecting-metrics/networking/netfilter"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/firewall/conntrack"
-  to="/docs/collecting-metrics/operating-systems/conntrack"
+  to="/docs/collecting-metrics/networking/conntrack"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/filesystem/zfs/zfs-adaptive-replacement-cache"
-  to="/docs/collecting-metrics/operating-systems/zfs-adaptive-replacement-cache"
+  to="/docs/collecting-metrics/storage-and-filesystems/zfs-adaptive-replacement-cache"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/filesystem/nfs/nfs-server"
-  to="/docs/collecting-metrics/operating-systems/nfs-server"
+  to="/docs/collecting-metrics/storage-and-filesystems/nfs-server"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/filesystem/nfs/nfs-client"
-  to="/docs/collecting-metrics/operating-systems/nfs-client"
+  to="/docs/collecting-metrics/storage-and-filesystems/nfs-client"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/filesystem/btrfs/btrfs"
-  to="/docs/collecting-metrics/operating-systems/btrfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/btrfs"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/disk/md-raid"
-  to="/docs/collecting-metrics/operating-systems/md-raid"
+  to="/docs/collecting-metrics/storage-and-filesystems/md-raid"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/disk/disk-statistics"
-  to="/docs/collecting-metrics/operating-systems/disk-statistics"
+  to="/docs/collecting-metrics/storage-and-filesystems/disk-statistics"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/disk-space"
-  to="/docs/collecting-metrics/operating-systems/disk-space"
+  to="/docs/collecting-metrics/storage-and-filesystems/disk-space"
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/cpu/softirq-statistics"
@@ -5379,35 +5379,35 @@
 
 [[redirects]]
   from="/docs/data-collection/kubernetes/kubernetes-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubernetes-containers"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-containers"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
-  to="/docs/collecting-metrics/hardware-and-iot/intelligent-platform-management-interface-ipmi"
+  to="/docs/collecting-metrics/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/cups"
-  to="/docs/collecting-metrics/hardware-and-iot/cups"
+  to="/docs/collecting-metrics/applications/cups"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/amd-gpu"
-  to="/docs/collecting-metrics/hardware-and-iot/amd-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/amd-gpu"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/am2320"
-  to="/docs/collecting-metrics/hardware-and-iot/am2320"
+  to="/docs/collecting-metrics/hardware-and-sensors/am2320"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/1-wire-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/1-wire-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/1-wire-sensors"
 
 [[redirects]]
   from="/docs/data-collection/generic-data-collection/pandas"
-  to="/docs/collecting-metrics/applications/pandas"
+  to="/docs/collecting-metrics/databases/pandas"
 
 [[redirects]]
   from="/docs/data-collection/gaming/spigotmc"
@@ -5415,7 +5415,7 @@
 
 [[redirects]]
   from="/docs/data-collection/freebsd/zfs"
-  to="/docs/collecting-metrics/operating-systems/zfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/zfs"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/vm.vmtotal"
@@ -5459,35 +5459,35 @@
 
 [[redirects]]
   from="/docs/data-collection/freebsd/net.isr"
-  to="/docs/collecting-metrics/operating-systems/net.isr"
+  to="/docs/collecting-metrics/networking/net.isr"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/net.inet6.ip6.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet6.ip6.stats"
+  to="/docs/collecting-metrics/networking/net.inet6.ip6.stats"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/net.inet6.icmp6.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet6.icmp6.stats"
+  to="/docs/collecting-metrics/networking/net.inet6.icmp6.stats"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/net.inet.udp.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet.udp.stats"
+  to="/docs/collecting-metrics/networking/net.inet.udp.stats"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/net.inet.tcp.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet.tcp.stats"
+  to="/docs/collecting-metrics/networking/net.inet.tcp.stats"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/net.inet.tcp.states"
-  to="/docs/collecting-metrics/operating-systems/net.inet.tcp.states"
+  to="/docs/collecting-metrics/networking/net.inet.tcp.states"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/net.inet.ip.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet.ip.stats"
+  to="/docs/collecting-metrics/networking/net.inet.ip.stats"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/net.inet.icmp.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet.icmp.stats"
+  to="/docs/collecting-metrics/networking/net.inet.icmp.stats"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/kern.ipc.shm"
@@ -5507,7 +5507,7 @@
 
 [[redirects]]
   from="/docs/data-collection/freebsd/ipfw"
-  to="/docs/collecting-metrics/operating-systems/ipfw"
+  to="/docs/collecting-metrics/networking/ipfw"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/hw.intrcnt"
@@ -5515,19 +5515,19 @@
 
 [[redirects]]
   from="/docs/data-collection/freebsd/getmntinfo"
-  to="/docs/collecting-metrics/operating-systems/getmntinfo"
+  to="/docs/collecting-metrics/storage-and-filesystems/getmntinfo"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/getifaddrs"
-  to="/docs/collecting-metrics/operating-systems/getifaddrs"
+  to="/docs/collecting-metrics/networking/getifaddrs"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/devstat"
-  to="/docs/collecting-metrics/operating-systems/devstat"
+  to="/docs/collecting-metrics/storage-and-filesystems/devstat"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/dev.cpu.temperature"
-  to="/docs/collecting-metrics/operating-systems/dev.cpu.temperature"
+  to="/docs/collecting-metrics/hardware-and-sensors/dev.cpu.temperature"
 
 [[redirects]]
   from="/docs/data-collection/freebsd/dev.cpu.0.freq"
@@ -5535,11 +5535,11 @@
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-vfs"
-  to="/docs/collecting-metrics/operating-systems/ebpf-vfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-vfs"
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-sync"
-  to="/docs/collecting-metrics/operating-systems/ebpf-sync"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-sync"
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-swap"
@@ -5551,7 +5551,7 @@
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-socket"
-  to="/docs/collecting-metrics/operating-systems/ebpf-socket"
+  to="/docs/collecting-metrics/networking/ebpf-socket"
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-shm"
@@ -5571,11 +5571,11 @@
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-mount"
-  to="/docs/collecting-metrics/operating-systems/ebpf-mount"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-mount"
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-mdflush"
-  to="/docs/collecting-metrics/operating-systems/ebpf-mdflush"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-mdflush"
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-hardirq"
@@ -5583,7 +5583,7 @@
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-filesystem"
-  to="/docs/collecting-metrics/operating-systems/ebpf-filesystem"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-filesystem"
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-filedescriptor"
@@ -5591,7 +5591,7 @@
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-disk"
-  to="/docs/collecting-metrics/operating-systems/ebpf-disk"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-disk"
 
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-dcstat"
@@ -5611,7 +5611,7 @@
 
 [[redirects]]
   from="/docs/data-collection/distributed-computing-systems/boinc"
-  to="/docs/collecting-metrics/databases/boinc"
+  to="/docs/collecting-metrics/applications/boinc"
 
 [[redirects]]
   from="/docs/data-collection/databases/rethinkdb"
@@ -5627,19 +5627,19 @@
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/xen-xcp-ng"
-  to="/docs/collecting-metrics/containers-and-orchestration/xen-xcp-ng"
+  to="/docs/collecting-metrics/containers-and-vms/xen-xcp-ng"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/virtual-machines"
-  to="/docs/collecting-metrics/containers-and-orchestration/virtual-machines"
+  to="/docs/collecting-metrics/containers-and-vms/virtual-machines"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/lxc-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/lxc-containers"
+  to="/docs/collecting-metrics/containers-and-vms/lxc-containers"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/containers"
+  to="/docs/collecting-metrics/containers-and-vms/containers"
 
 [[redirects]]
   from="/docs/data-collection/cicd-platforms/puppet"
@@ -5947,7 +5947,7 @@
 
 [[redirects]]
   from="/docs/data-collection/ups/ups-nut"
-  to="/docs/collecting-metrics/hardware-and-iot/ups-nut"
+  to="/docs/collecting-metrics/hardware-and-sensors/ups-nut"
 
 [[redirects]]
   from="/docs/data-collection/telephony-servers/kannel"
@@ -6007,19 +6007,19 @@
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/storidge"
-  to="/docs/collecting-metrics/storage/storidge"
+  to="/docs/collecting-metrics/storage-and-filesystems/storidge"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/netapp-solidfire"
-  to="/docs/collecting-metrics/storage/netapp-solidfire"
+  to="/docs/collecting-metrics/storage-and-filesystems/netapp-solidfire"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/generic-storage-enclosure-tool"
-  to="/docs/collecting-metrics/storage/generic-storage-enclosure-tool"
+  to="/docs/collecting-metrics/storage-and-filesystems/generic-storage-enclosure-tool"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/eos"
-  to="/docs/collecting-metrics/storage/eos"
+  to="/docs/collecting-metrics/storage-and-filesystems/eos"
 
 [[redirects]]
   from="/docs/data-collection/service-discovery-/-registry/etcd"
@@ -6067,7 +6067,7 @@
 
 [[redirects]]
   from="/docs/data-collection/observability/nagios"
-  to="/docs/collecting-metrics/cloud-and-devops/nagios"
+  to="/docs/collecting-metrics/applications/nagios"
 
 [[redirects]]
   from="/docs/data-collection/observability/hubble"
@@ -6163,83 +6163,83 @@
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/files-and-directories"
-  to="/docs/collecting-metrics/applications/files-and-directories"
+  to="/docs/collecting-metrics/synthetic-testing/files-and-directories"
 
 [[redirects]]
   from="/docs/data-collection/kubernetes/kubernetes-cluster-state"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubernetes-cluster-state"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-cluster-state"
 
 [[redirects]]
   from="/docs/data-collection/kubernetes/kubeproxy"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubeproxy"
+  to="/docs/collecting-metrics/containers-and-vms/kubeproxy"
 
 [[redirects]]
   from="/docs/data-collection/kubernetes/kubelet"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubelet"
+  to="/docs/collecting-metrics/containers-and-vms/kubelet"
 
 [[redirects]]
   from="/docs/data-collection/kubernetes/cilium-proxy"
-  to="/docs/collecting-metrics/containers-and-orchestration/cilium-proxy"
+  to="/docs/collecting-metrics/containers-and-vms/cilium-proxy"
 
 [[redirects]]
   from="/docs/data-collection/kubernetes/cilium-operator"
-  to="/docs/collecting-metrics/containers-and-orchestration/cilium-operator"
+  to="/docs/collecting-metrics/containers-and-vms/cilium-operator"
 
 [[redirects]]
   from="/docs/data-collection/kubernetes/cilium-agent"
-  to="/docs/collecting-metrics/containers-and-orchestration/cilium-agent"
+  to="/docs/collecting-metrics/containers-and-vms/cilium-agent"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/xiaomi-mi-flora"
-  to="/docs/collecting-metrics/hardware-and-iot/xiaomi-mi-flora"
+  to="/docs/collecting-metrics/hardware-and-sensors/xiaomi-mi-flora"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/tesla-vehicle"
-  to="/docs/collecting-metrics/hardware-and-iot/tesla-vehicle"
+  to="/docs/collecting-metrics/hardware-and-sensors/tesla-vehicle"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/sunspec-solar-energy"
-  to="/docs/collecting-metrics/hardware-and-iot/sunspec-solar-energy"
+  to="/docs/collecting-metrics/hardware-and-sensors/sunspec-solar-energy"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/smart-meters-sml"
-  to="/docs/collecting-metrics/hardware-and-iot/smart-meters-sml"
+  to="/docs/collecting-metrics/hardware-and-sensors/smart-meters-sml"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/salicru-eqx-inverter"
-  to="/docs/collecting-metrics/hardware-and-iot/salicru-eqx-inverter"
+  to="/docs/collecting-metrics/hardware-and-sensors/salicru-eqx-inverter"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/powerpal-devices"
-  to="/docs/collecting-metrics/hardware-and-iot/powerpal-devices"
+  to="/docs/collecting-metrics/hardware-and-sensors/powerpal-devices"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/pimoroni-enviro+"
-  to="/docs/collecting-metrics/hardware-and-iot/pimoroni-enviro+"
+  to="/docs/collecting-metrics/hardware-and-sensors/pimoroni-enviro+"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/netatmo-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/netatmo-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/netatmo-sensors"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/jarvis-standing-desk"
-  to="/docs/collecting-metrics/hardware-and-iot/jarvis-standing-desk"
+  to="/docs/collecting-metrics/hardware-and-sensors/jarvis-standing-desk"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/homey"
-  to="/docs/collecting-metrics/hardware-and-iot/homey"
+  to="/docs/collecting-metrics/applications/homey"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/energomera-smart-power-meters"
-  to="/docs/collecting-metrics/hardware-and-iot/energomera-smart-power-meters"
+  to="/docs/collecting-metrics/hardware-and-sensors/energomera-smart-power-meters"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/craftbeerpi"
-  to="/docs/collecting-metrics/hardware-and-iot/craftbeerpi"
+  to="/docs/collecting-metrics/hardware-and-sensors/craftbeerpi"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/christ-elektronik-clm5ip-power-panel"
-  to="/docs/collecting-metrics/hardware-and-iot/christ-elektronik-clm5ip-power-panel"
+  to="/docs/collecting-metrics/hardware-and-sensors/christ-elektronik-clm5ip-power-panel"
 
 [[redirects]]
   from="/docs/data-collection/incident-management/statuspage"
@@ -6247,23 +6247,23 @@
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/siemens-s7-plc"
-  to="/docs/collecting-metrics/hardware-and-iot/siemens-s7-plc"
+  to="/docs/collecting-metrics/hardware-and-sensors/siemens-s7-plc"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/raritan-pdu"
-  to="/docs/collecting-metrics/hardware-and-iot/raritan-pdu"
+  to="/docs/collecting-metrics/hardware-and-sensors/raritan-pdu"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/nvidia-gpu"
-  to="/docs/collecting-metrics/hardware-and-iot/nvidia-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/ibm-z-hardware-management-console"
-  to="/docs/collecting-metrics/hardware-and-iot/ibm-z-hardware-management-console"
+  to="/docs/collecting-metrics/hardware-and-sensors/ibm-z-hardware-management-console"
 
 [[redirects]]
   from="/docs/data-collection/generic-data-collection/snmp-devices"
-  to="/docs/collecting-metrics/applications/snmp-devices"
+  to="/docs/collecting-metrics/networking/snmp-devices"
 
 [[redirects]]
   from="/docs/data-collection/generic-data-collection/prometheus-endpoint"
@@ -6323,7 +6323,7 @@
 
 [[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/dns-query"
-  to="/docs/collecting-metrics/networking/dns-query"
+  to="/docs/collecting-metrics/synthetic-testing/dns-query"
 
 [[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/coredns"
@@ -6395,31 +6395,31 @@
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/vmware-vcenter-server"
-  to="/docs/collecting-metrics/containers-and-orchestration/vmware-vcenter-server"
+  to="/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/vcenter-server-appliance"
-  to="/docs/collecting-metrics/containers-and-orchestration/vcenter-server-appliance"
+  to="/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/podman"
-  to="/docs/collecting-metrics/containers-and-orchestration/podman"
+  to="/docs/collecting-metrics/containers-and-vms/podman"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/docker-hub-repository"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-hub-repository"
+  to="/docs/collecting-metrics/containers-and-vms/docker-hub-repository"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/docker-engine"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-engine"
+  to="/docs/collecting-metrics/containers-and-vms/docker-engine"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/docker"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker"
+  to="/docs/collecting-metrics/containers-and-vms/docker"
 
 [[redirects]]
   from="/docs/data-collection/cloud-provider-managed/lustre-metadata"
-  to="/docs/collecting-metrics/cloud-and-devops/lustre-metadata"
+  to="/docs/collecting-metrics/storage-and-filesystems/lustre-metadata"
 
 [[redirects]]
   from="/docs/data-collection/cloud-provider-managed/linode"
@@ -6491,67 +6491,67 @@
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/synology-activebackup"
-  to="/docs/collecting-metrics/storage/synology-activebackup"
+  to="/docs/collecting-metrics/storage-and-filesystems/synology-activebackup"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/netapp-ontap-api"
-  to="/docs/collecting-metrics/storage/netapp-ontap-api"
+  to="/docs/collecting-metrics/storage-and-filesystems/netapp-ontap-api"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/mogilefs"
-  to="/docs/collecting-metrics/storage/mogilefs"
+  to="/docs/collecting-metrics/storage-and-filesystems/mogilefs"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ibm-spectrum-virtualize"
-  to="/docs/collecting-metrics/storage/ibm-spectrum-virtualize"
+  to="/docs/collecting-metrics/storage-and-filesystems/ibm-spectrum-virtualize"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/ibm-spectrum"
-  to="/docs/collecting-metrics/storage/ibm-spectrum"
+  to="/docs/collecting-metrics/storage-and-filesystems/ibm-spectrum"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/storidge"
-  to="/docs/collecting-metrics/storage/storidge"
+  to="/docs/collecting-metrics/storage-and-filesystems/storidge"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/samba"
-  to="/docs/collecting-metrics/storage/samba"
+  to="/docs/collecting-metrics/storage-and-filesystems/samba"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/nvme-devices"
-  to="/docs/collecting-metrics/storage/nvme-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/netapp-solidfire"
-  to="/docs/collecting-metrics/storage/netapp-solidfire"
+  to="/docs/collecting-metrics/storage-and-filesystems/netapp-solidfire"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
-  to="/docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/generic-storage-enclosure-tool"
-  to="/docs/collecting-metrics/storage/generic-storage-enclosure-tool"
+  to="/docs/collecting-metrics/storage-and-filesystems/generic-storage-enclosure-tool"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/eos"
-  to="/docs/collecting-metrics/storage/eos"
+  to="/docs/collecting-metrics/storage-and-filesystems/eos"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/dell-emc-scaleio"
-  to="/docs/collecting-metrics/storage/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/ceph"
-  to="/docs/collecting-metrics/storage/ceph"
+  to="/docs/collecting-metrics/storage-and-filesystems/ceph"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/power-supply"
-  to="/docs/collecting-metrics/operating-systems/power-supply"
+  to="/docs/collecting-metrics/hardware-and-sensors/power-supply"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/filesystem/btrfs"
-  to="/docs/collecting-metrics/operating-systems/btrfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/btrfs"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/replication-of-past-samples"
@@ -6591,7 +6591,7 @@
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/clash"
-  to="/docs/collecting-metrics/web-servers-and-proxies/clash"
+  to="/docs/collecting-metrics/networking/clash"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/apicast"
@@ -6607,27 +6607,27 @@
 
 [[redirects]]
   from="/docs/data-collection/storage%20-mount-points-and-filesystems/synology-activebackup"
-  to="/docs/collecting-metrics/storage/synology-activebackup"
+  to="/docs/collecting-metrics/storage-and-filesystems/synology-activebackup"
 
 [[redirects]]
   from="/docs/data-collection/storage%20-mount-points-and-filesystems/netapp-ontap-api"
-  to="/docs/collecting-metrics/storage/netapp-ontap-api"
+  to="/docs/collecting-metrics/storage-and-filesystems/netapp-ontap-api"
 
 [[redirects]]
   from="/docs/data-collection/storage%20-mount-points-and-filesystems/mogilefs"
-  to="/docs/collecting-metrics/storage/mogilefs"
+  to="/docs/collecting-metrics/storage-and-filesystems/mogilefs"
 
 [[redirects]]
   from="/docs/data-collection/storage%20-mount-points-and-filesystems/ibm-spectrum-virtualize"
-  to="/docs/collecting-metrics/storage/ibm-spectrum-virtualize"
+  to="/docs/collecting-metrics/storage-and-filesystems/ibm-spectrum-virtualize"
 
 [[redirects]]
   from="/docs/data-collection/storage%20-mount-points-and-filesystems/ibm-spectrum"
-  to="/docs/collecting-metrics/storage/ibm-spectrum"
+  to="/docs/collecting-metrics/storage-and-filesystems/ibm-spectrum"
 
 [[redirects]]
   from="/docs/data-collection/service-discovery-/-registry/kafka-consumer-lag"
-  to="/docs/collecting-metrics/applications/kafka-consumer-lag"
+  to="/docs/collecting-metrics/databases/kafka-consumer-lag"
 
 [[redirects]]
   from="/docs/data-collection/security-systems/suricata"
@@ -6663,11 +6663,11 @@
 
 [[redirects]]
   from="/docs/data-collection/observability/grafana"
-  to="/docs/collecting-metrics/cloud-and-devops/grafana"
+  to="/docs/collecting-metrics/applications/grafana"
 
 [[redirects]]
   from="/docs/data-collection/observability/collectd"
-  to="/docs/collecting-metrics/cloud-and-devops/collectd"
+  to="/docs/collecting-metrics/applications/collectd"
 
 [[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/ubiquiti-ufiber-olt"
@@ -6703,7 +6703,7 @@
 
 [[redirects]]
   from="/docs/data-collection/message-brokers/mqtt-blackbox"
-  to="/docs/collecting-metrics/databases/mqtt-blackbox"
+  to="/docs/collecting-metrics/synthetic-testing/mqtt-blackbox"
 
 [[redirects]]
   from="/docs/data-collection/message-brokers/kafka-zookeeper"
@@ -6731,71 +6731,71 @@
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/tesla-wall-connector"
-  to="/docs/collecting-metrics/hardware-and-iot/tesla-wall-connector"
+  to="/docs/collecting-metrics/hardware-and-sensors/tesla-wall-connector"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/tado-smart-heating-solution"
-  to="/docs/collecting-metrics/hardware-and-iot/tado-smart-heating-solution"
+  to="/docs/collecting-metrics/hardware-and-sensors/tado-smart-heating-solution"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/solis-ginlong-5g-inverters"
-  to="/docs/collecting-metrics/hardware-and-iot/solis-ginlong-5g-inverters"
+  to="/docs/collecting-metrics/hardware-and-sensors/solis-ginlong-5g-inverters"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/solar-logging-stick"
-  to="/docs/collecting-metrics/hardware-and-iot/solar-logging-stick"
+  to="/docs/collecting-metrics/hardware-and-sensors/solar-logging-stick"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/sma-inverters"
-  to="/docs/collecting-metrics/hardware-and-iot/sma-inverters"
+  to="/docs/collecting-metrics/hardware-and-sensors/sma-inverters"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/shelly-humidity-sensor"
-  to="/docs/collecting-metrics/hardware-and-iot/shelly-humidity-sensor"
+  to="/docs/collecting-metrics/hardware-and-sensors/shelly-humidity-sensor"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/sense-energy"
-  to="/docs/collecting-metrics/hardware-and-iot/sense-energy"
+  to="/docs/collecting-metrics/hardware-and-sensors/sense-energy"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/radio-thermostat"
-  to="/docs/collecting-metrics/hardware-and-iot/radio-thermostat"
+  to="/docs/collecting-metrics/hardware-and-sensors/radio-thermostat"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/philips-hue"
-  to="/docs/collecting-metrics/hardware-and-iot/philips-hue"
+  to="/docs/collecting-metrics/hardware-and-sensors/philips-hue"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/personal-weather-station"
-  to="/docs/collecting-metrics/hardware-and-iot/personal-weather-station"
+  to="/docs/collecting-metrics/hardware-and-sensors/personal-weather-station"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/nature-remo-e-lite-devices"
-  to="/docs/collecting-metrics/hardware-and-iot/nature-remo-e-lite-devices"
+  to="/docs/collecting-metrics/hardware-and-sensors/nature-remo-e-lite-devices"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/modbus-protocol"
-  to="/docs/collecting-metrics/hardware-and-iot/modbus-protocol"
+  to="/docs/collecting-metrics/hardware-and-sensors/modbus-protocol"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/homebridge"
-  to="/docs/collecting-metrics/hardware-and-iot/homebridge"
+  to="/docs/collecting-metrics/applications/homebridge"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/elgato-key-light-devices."
-  to="/docs/collecting-metrics/hardware-and-iot/elgato-key-light-devices."
+  to="/docs/collecting-metrics/hardware-and-sensors/elgato-key-light-devices."
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/dutch-electricity-smart-meter"
-  to="/docs/collecting-metrics/hardware-and-iot/dutch-electricity-smart-meter"
+  to="/docs/collecting-metrics/hardware-and-sensors/dutch-electricity-smart-meter"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/ibm-cryptoexpress-cex-cards"
-  to="/docs/collecting-metrics/hardware-and-iot/ibm-cryptoexpress-cex-cards"
+  to="/docs/collecting-metrics/hardware-and-sensors/ibm-cryptoexpress-cex-cards"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/amd-cpu-&-gpu"
-  to="/docs/collecting-metrics/hardware-and-iot/amd-cpu-&-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/amd-cpu-&-gpu"
 
 [[redirects]]
   from="/docs/data-collection/generic-data-collection/tankerkoenig-api"
@@ -6815,7 +6815,7 @@
 
 [[redirects]]
   from="/docs/data-collection/freebsd/freebsd-nfs"
-  to="/docs/collecting-metrics/operating-systems/freebsd-nfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/freebsd-nfs"
 
 [[redirects]]
   from="/docs/data-collection/databases/warp10"
@@ -6847,7 +6847,7 @@
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/proxmox-ve"
-  to="/docs/collecting-metrics/containers-and-orchestration/proxmox-ve"
+  to="/docs/collecting-metrics/containers-and-vms/proxmox-ve"
 
 [[redirects]]
   from="/docs/data-collection/cloud-provider-managed/zerto"
@@ -6855,7 +6855,7 @@
 
 [[redirects]]
   from="/docs/data-collection/cloud-provider-managed/nextcloud-servers"
-  to="/docs/collecting-metrics/cloud-and-devops/nextcloud-servers"
+  to="/docs/collecting-metrics/applications/nextcloud-servers"
 
 [[redirects]]
   from="/docs/data-collection/cloud-provider-managed/google-stackdriver"
@@ -7203,27 +7203,27 @@
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/nvme-devices"
-  to="/docs/collecting-metrics/storage/nvme-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
-  to="/docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-scaleio"
-  to="/docs/collecting-metrics/storage/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/data-collection/storage%20-mount-points-and-filesystems/nvme-devices"
-  to="/docs/collecting-metrics/storage/nvme-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/data-collection/storage%20-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
-  to="/docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/data-collection/storage%20-mount-points-and-filesystems/dell-emc-scaleio"
-  to="/docs/collecting-metrics/storage/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/agent/agent-cloud"
@@ -7319,7 +7319,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-hardware-raid"
-  to="/docs/collecting-metrics/storage/megacli-megaraid"
+  to="/docs/collecting-metrics/storage-and-filesystems/megacli-megaraid"
 
 [[redirects]]
   from="/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions"
@@ -7519,7 +7519,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/files-and-directories"
-  to="/docs/collecting-metrics/applications/files-and-directories"
+  to="/docs/collecting-metrics/synthetic-testing/files-and-directories"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/monit"
@@ -7579,7 +7579,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/working-with-logs/systemd-cat-native"
@@ -8183,15 +8183,15 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/adaptec_raid"
-  to="/docs/collecting-metrics/storage/adaptec-raid"
+  to="/docs/collecting-metrics/storage-and-filesystems/adaptec-raid"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/hddtemp"
-  to="/docs/collecting-metrics/hardware-and-iot/hdd-temperature"
+  to="/docs/collecting-metrics/storage-and-filesystems/hdd-temperature"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/nvidia_smi"
-  to="/docs/collecting-metrics/hardware-and-iot/nvidia-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/postfix"
@@ -8199,11 +8199,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/smartd_log"
-  to="/docs/collecting-metrics/hardware-and-iot/s.m.a.r.t."
+  to="/docs/collecting-metrics/storage-and-filesystems/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/agent/ml"
@@ -8267,19 +8267,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/nvidia_smi-python.d.plugin"
-  to="/docs/collecting-metrics/hardware-and-iot/nvidia-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/Sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/S.M.A.R.T.-attributes"
-  to="/docs/collecting-metrics/hardware-and-iot/s.m.a.r.t."
+  to="/docs/collecting-metrics/storage-and-filesystems/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/Hard-drive-temperature"
-  to="/docs/collecting-metrics/hardware-and-iot/hdd-temperature"
+  to="/docs/collecting-metrics/storage-and-filesystems/hdd-temperature"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Applications/Postfix"
@@ -8319,19 +8319,19 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/s.m.a.r.t.-attributes"
-  to="/docs/collecting-metrics/hardware-and-iot/s.m.a.r.t."
+  to="/docs/collecting-metrics/storage-and-filesystems/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/nvidia_smi-python.d.plugin"
-  to="/docs/collecting-metrics/hardware-and-iot/nvidia-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/hard-drive-temperature"
-  to="/docs/collecting-metrics/hardware-and-iot/hdd-temperature"
+  to="/docs/collecting-metrics/storage-and-filesystems/hdd-temperature"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/applications/postfix"
@@ -8363,15 +8363,15 @@
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/s.m.a.r.t.-attributes"
-  to="/docs/collecting-metrics/hardware-and-iot/s.m.a.r.t."
+  to="/docs/collecting-metrics/storage-and-filesystems/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/data-collection/storage,-mount-points-and-filesystems/hardware-storage/hard-drive-temperature"
-  to="/docs/collecting-metrics/hardware-and-iot/hdd-temperature"
+  to="/docs/collecting-metrics/storage-and-filesystems/hdd-temperature"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/linux-machine-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/miscellaneous/build-a-custom-dashboard-html-page"
@@ -8399,15 +8399,15 @@
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/s.m.a.r.t."
-  to="/docs/collecting-metrics/hardware-and-iot/s.m.a.r.t."
+  to="/docs/collecting-metrics/storage-and-filesystems/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-lm-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/hdd-temperature"
-  to="/docs/collecting-metrics/hardware-and-iot/hdd-temperature"
+  to="/docs/collecting-metrics/storage-and-filesystems/hdd-temperature"
 
 [[redirects]]
   from="/docs/observability-centralization-points/metrics-centralization-points-%20netdata-parents%20/sizing-netdata-parents"
@@ -8579,11 +8579,11 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/power-supply/power-supply"
-  to="/docs/collecting-metrics/operating-systems/power-supply"
+  to="/docs/collecting-metrics/hardware-and-sensors/power-supply"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/filesystem/btrfs/btrfs"
-  to="/docs/collecting-metrics/operating-systems/btrfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/btrfs"
 
 [[redirects]]
   from="/docs//live-demo"
@@ -8631,7 +8631,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/system-thermal-zone"
-  to="/docs/collecting-metrics/operating-systems/system-thermal-zone"
+  to="/docs/collecting-metrics/hardware-and-sensors/system-thermal-zone"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/system-statistics"
@@ -8639,7 +8639,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/sensors"
-  to="/docs/collecting-metrics/operating-systems/sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/sensors"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/semaphore-statistics"
@@ -8651,11 +8651,11 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/power-supply"
-  to="/docs/collecting-metrics/operating-systems/power-supply"
+  to="/docs/collecting-metrics/hardware-and-sensors/power-supply"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/physical-and-logical-disk-performance-metrics"
-  to="/docs/collecting-metrics/operating-systems/physical-and-logical-disk-performance-metrics"
+  to="/docs/collecting-metrics/storage-and-filesystems/physical-and-logical-disk-performance-metrics"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/numa-architecture"
@@ -8663,19 +8663,19 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/network-subsystem"
-  to="/docs/collecting-metrics/operating-systems/network-subsystem"
+  to="/docs/collecting-metrics/networking/network-subsystem"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/net-framework"
-  to="/docs/collecting-metrics/operating-systems/net-framework"
+  to="/docs/collecting-metrics/applications/net-framework"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/ms-sql-server"
-  to="/docs/collecting-metrics/operating-systems/ms-sql-server"
+  to="/docs/collecting-metrics/databases/ms-sql-server"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/ms-exchange"
-  to="/docs/collecting-metrics/operating-systems/ms-exchange"
+  to="/docs/collecting-metrics/applications/ms-exchange"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/memory-statistics"
@@ -8683,31 +8683,31 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/iis"
-  to="/docs/collecting-metrics/operating-systems/iis"
+  to="/docs/collecting-metrics/web-servers-and-proxies/iis"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/hyper-v"
-  to="/docs/collecting-metrics/operating-systems/hyper-v"
+  to="/docs/collecting-metrics/containers-and-vms/hyper-v"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/hardware-information-collected-from-kernel-ring."
-  to="/docs/collecting-metrics/operating-systems/hardware-information-collected-from-kernel-ring."
+  to="/docs/collecting-metrics/hardware-and-sensors/hardware-information-collected-from-kernel-ring."
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/asp.net"
-  to="/docs/collecting-metrics/operating-systems/asp.net"
+  to="/docs/collecting-metrics/web-servers-and-proxies/asp.net"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/active-directory-federation-service"
-  to="/docs/collecting-metrics/operating-systems/active-directory-federation-service"
+  to="/docs/collecting-metrics/applications/active-directory-federation-service"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/active-directory-certificate-service"
-  to="/docs/collecting-metrics/operating-systems/active-directory-certificate-service"
+  to="/docs/collecting-metrics/applications/active-directory-certificate-service"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/active-directory"
-  to="/docs/collecting-metrics/operating-systems/active-directory"
+  to="/docs/collecting-metrics/applications/active-directory"
 
 [[redirects]]
   from="/docs/collecting-metrics/web-servers-and-web-proxies/web-server-log-files"
@@ -8787,7 +8787,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/web-servers-and-web-proxies/clash"
-  to="/docs/collecting-metrics/web-servers-and-proxies/clash"
+  to="/docs/collecting-metrics/networking/clash"
 
 [[redirects]]
   from="/docs/collecting-metrics/web-servers-and-web-proxies/apicast"
@@ -8831,11 +8831,11 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/ups/ups-nut"
-  to="/docs/collecting-metrics/hardware-and-iot/ups-nut"
+  to="/docs/collecting-metrics/hardware-and-sensors/ups-nut"
 
 [[redirects]]
   from="/docs/collecting-metrics/ups/apc-ups"
-  to="/docs/collecting-metrics/hardware-and-iot/apc-ups"
+  to="/docs/collecting-metrics/hardware-and-sensors/apc-ups"
 
 [[redirects]]
   from="/docs/collecting-metrics/telephony-servers/opensips"
@@ -8851,7 +8851,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/task-queues/mesos"
-  to="/docs/collecting-metrics/applications/mesos"
+  to="/docs/collecting-metrics/containers-and-vms/mesos"
 
 [[redirects]]
   from="/docs/collecting-metrics/task-queues/celery"
@@ -8927,91 +8927,91 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/zfs-pools"
-  to="/docs/collecting-metrics/storage/zfs-pools"
+  to="/docs/collecting-metrics/storage-and-filesystems/zfs-pools"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/synology-activebackup"
-  to="/docs/collecting-metrics/storage/synology-activebackup"
+  to="/docs/collecting-metrics/storage-and-filesystems/synology-activebackup"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/storidge"
-  to="/docs/collecting-metrics/storage/storidge"
+  to="/docs/collecting-metrics/storage-and-filesystems/storidge"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/storecli-raid"
-  to="/docs/collecting-metrics/storage/storecli-raid"
+  to="/docs/collecting-metrics/storage-and-filesystems/storecli-raid"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/samba"
-  to="/docs/collecting-metrics/storage/samba"
+  to="/docs/collecting-metrics/storage-and-filesystems/samba"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/nvme-devices"
-  to="/docs/collecting-metrics/storage/nvme-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/nvme-devices"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/netapp-solidfire"
-  to="/docs/collecting-metrics/storage/netapp-solidfire"
+  to="/docs/collecting-metrics/storage-and-filesystems/netapp-solidfire"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/netapp-ontap-api"
-  to="/docs/collecting-metrics/storage/netapp-ontap-api"
+  to="/docs/collecting-metrics/storage-and-filesystems/netapp-ontap-api"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/mogilefs"
-  to="/docs/collecting-metrics/storage/mogilefs"
+  to="/docs/collecting-metrics/storage-and-filesystems/mogilefs"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-megaraid"
-  to="/docs/collecting-metrics/storage/megacli-megaraid"
+  to="/docs/collecting-metrics/storage-and-filesystems/megacli-megaraid"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/lvm-logical-volumes"
-  to="/docs/collecting-metrics/storage/lvm-logical-volumes"
+  to="/docs/collecting-metrics/storage-and-filesystems/lvm-logical-volumes"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ipfs"
-  to="/docs/collecting-metrics/storage/ipfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/ipfs"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ibm-spectrum-virtualize"
-  to="/docs/collecting-metrics/storage/ibm-spectrum-virtualize"
+  to="/docs/collecting-metrics/storage-and-filesystems/ibm-spectrum-virtualize"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ibm-spectrum"
-  to="/docs/collecting-metrics/storage/ibm-spectrum"
+  to="/docs/collecting-metrics/storage-and-filesystems/ibm-spectrum"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hpe-smart-arrays"
-  to="/docs/collecting-metrics/storage/hpe-smart-arrays"
+  to="/docs/collecting-metrics/storage-and-filesystems/hpe-smart-arrays"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs"
-  to="/docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/generic-storage-enclosure-tool"
-  to="/docs/collecting-metrics/storage/generic-storage-enclosure-tool"
+  to="/docs/collecting-metrics/storage-and-filesystems/generic-storage-enclosure-tool"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/eos"
-  to="/docs/collecting-metrics/storage/eos"
+  to="/docs/collecting-metrics/storage-and-filesystems/eos"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dmcache-devices"
-  to="/docs/collecting-metrics/storage/dmcache-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/dmcache-devices"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-scaleio"
-  to="/docs/collecting-metrics/storage/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/ceph"
-  to="/docs/collecting-metrics/storage/ceph"
+  to="/docs/collecting-metrics/storage-and-filesystems/ceph"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptec-raid"
-  to="/docs/collecting-metrics/storage/adaptec-raid"
+  to="/docs/collecting-metrics/storage-and-filesystems/adaptec-raid"
 
 [[redirects]]
   from="/docs/collecting-metrics/service-discovery-/-registry/zookeeper"
@@ -9019,7 +9019,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/service-discovery-/-registry/kafka-consumer-lag"
-  to="/docs/collecting-metrics/applications/kafka-consumer-lag"
+  to="/docs/collecting-metrics/databases/kafka-consumer-lag"
 
 [[redirects]]
   from="/docs/collecting-metrics/service-discovery-/-registry/etcd"
@@ -9123,11 +9123,11 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/other/files-and-directories"
-  to="/docs/collecting-metrics/applications/files-and-directories"
+  to="/docs/collecting-metrics/synthetic-testing/files-and-directories"
 
 [[redirects]]
   from="/docs/collecting-metrics/observability/nagios"
-  to="/docs/collecting-metrics/cloud-and-devops/nagios"
+  to="/docs/collecting-metrics/applications/nagios"
 
 [[redirects]]
   from="/docs/collecting-metrics/observability/hubble"
@@ -9135,7 +9135,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/observability/grafana"
-  to="/docs/collecting-metrics/cloud-and-devops/grafana"
+  to="/docs/collecting-metrics/applications/grafana"
 
 [[redirects]]
   from="/docs/collecting-metrics/observability/dynatrace"
@@ -9143,7 +9143,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/observability/collectd"
-  to="/docs/collecting-metrics/cloud-and-devops/collectd"
+  to="/docs/collecting-metrics/applications/collectd"
 
 [[redirects]]
   from="/docs/collecting-metrics/networking-stack-and-network-interfaces/ubiquiti-ufiber-olt"
@@ -9215,7 +9215,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/message-brokers/mqtt-blackbox"
-  to="/docs/collecting-metrics/databases/mqtt-blackbox"
+  to="/docs/collecting-metrics/synthetic-testing/mqtt-blackbox"
 
 [[redirects]]
   from="/docs/collecting-metrics/message-brokers/mosquitto"
@@ -9343,47 +9343,47 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/wireless-network-interfaces"
-  to="/docs/collecting-metrics/operating-systems/wireless-network-interfaces"
+  to="/docs/collecting-metrics/networking/wireless-network-interfaces"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/tc-qos-classes"
-  to="/docs/collecting-metrics/operating-systems/tc-qos-classes"
+  to="/docs/collecting-metrics/networking/tc-qos-classes"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/softnet-statistics"
-  to="/docs/collecting-metrics/operating-systems/softnet-statistics"
+  to="/docs/collecting-metrics/networking/softnet-statistics"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/socket-statistics"
-  to="/docs/collecting-metrics/operating-systems/socket-statistics"
+  to="/docs/collecting-metrics/networking/socket-statistics"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/sctp-statistics"
-  to="/docs/collecting-metrics/operating-systems/sctp-statistics"
+  to="/docs/collecting-metrics/networking/sctp-statistics"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/network-statistics"
-  to="/docs/collecting-metrics/operating-systems/network-statistics"
+  to="/docs/collecting-metrics/networking/network-statistics"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/network-interfaces"
-  to="/docs/collecting-metrics/operating-systems/network-interfaces"
+  to="/docs/collecting-metrics/networking/network-interfaces"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/ipv6-socket-statistics"
-  to="/docs/collecting-metrics/operating-systems/ipv6-socket-statistics"
+  to="/docs/collecting-metrics/networking/ipv6-socket-statistics"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/ip-virtual-server"
-  to="/docs/collecting-metrics/operating-systems/ip-virtual-server"
+  to="/docs/collecting-metrics/networking/ip-virtual-server"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/infiniband"
-  to="/docs/collecting-metrics/operating-systems/infiniband"
+  to="/docs/collecting-metrics/networking/infiniband"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/network/access-points"
-  to="/docs/collecting-metrics/operating-systems/access-points"
+  to="/docs/collecting-metrics/networking/access-points"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/memory/zram"
@@ -9411,7 +9411,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/memory/memory-modules-dimms"
-  to="/docs/collecting-metrics/operating-systems/memory-modules-dimms"
+  to="/docs/collecting-metrics/hardware-and-sensors/memory-modules-dimms"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/memory/linux-zswap"
@@ -9423,7 +9423,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/kernel/power-capping"
-  to="/docs/collecting-metrics/operating-systems/power-capping"
+  to="/docs/collecting-metrics/hardware-and-sensors/power-capping"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/kernel/linux-kernel-slab-allocator-statistics"
@@ -9435,39 +9435,39 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/firewall/synproxy"
-  to="/docs/collecting-metrics/operating-systems/synproxy"
+  to="/docs/collecting-metrics/networking/synproxy"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/firewall/netfilter"
-  to="/docs/collecting-metrics/operating-systems/netfilter"
+  to="/docs/collecting-metrics/networking/netfilter"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/firewall/conntrack"
-  to="/docs/collecting-metrics/operating-systems/conntrack"
+  to="/docs/collecting-metrics/networking/conntrack"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/filesystem/zfs/zfs-adaptive-replacement-cache"
-  to="/docs/collecting-metrics/operating-systems/zfs-adaptive-replacement-cache"
+  to="/docs/collecting-metrics/storage-and-filesystems/zfs-adaptive-replacement-cache"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/filesystem/nfs/nfs-server"
-  to="/docs/collecting-metrics/operating-systems/nfs-server"
+  to="/docs/collecting-metrics/storage-and-filesystems/nfs-server"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/filesystem/nfs/nfs-client"
-  to="/docs/collecting-metrics/operating-systems/nfs-client"
+  to="/docs/collecting-metrics/storage-and-filesystems/nfs-client"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/disk/md-raid"
-  to="/docs/collecting-metrics/operating-systems/md-raid"
+  to="/docs/collecting-metrics/storage-and-filesystems/md-raid"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/disk/disk-statistics"
-  to="/docs/collecting-metrics/operating-systems/disk-statistics"
+  to="/docs/collecting-metrics/storage-and-filesystems/disk-statistics"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/disk-space"
-  to="/docs/collecting-metrics/operating-systems/disk-space"
+  to="/docs/collecting-metrics/storage-and-filesystems/disk-space"
 
 [[redirects]]
   from="/docs/collecting-metrics/linux-systems/cpu/softirq-statistics"
@@ -9483,143 +9483,143 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/kubernetes/kubernetes-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubernetes-containers"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/kubernetes/kubernetes-cluster-state"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubernetes-cluster-state"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-cluster-state"
 
 [[redirects]]
   from="/docs/collecting-metrics/kubernetes/kubeproxy"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubeproxy"
+  to="/docs/collecting-metrics/containers-and-vms/kubeproxy"
 
 [[redirects]]
   from="/docs/collecting-metrics/kubernetes/kubelet"
-  to="/docs/collecting-metrics/containers-and-orchestration/kubelet"
+  to="/docs/collecting-metrics/containers-and-vms/kubelet"
 
 [[redirects]]
   from="/docs/collecting-metrics/kubernetes/cilium-proxy"
-  to="/docs/collecting-metrics/containers-and-orchestration/cilium-proxy"
+  to="/docs/collecting-metrics/containers-and-vms/cilium-proxy"
 
 [[redirects]]
   from="/docs/collecting-metrics/kubernetes/cilium-operator"
-  to="/docs/collecting-metrics/containers-and-orchestration/cilium-operator"
+  to="/docs/collecting-metrics/containers-and-vms/cilium-operator"
 
 [[redirects]]
   from="/docs/collecting-metrics/kubernetes/cilium-agent"
-  to="/docs/collecting-metrics/containers-and-orchestration/cilium-agent"
+  to="/docs/collecting-metrics/containers-and-vms/cilium-agent"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/xiaomi-mi-flora"
-  to="/docs/collecting-metrics/hardware-and-iot/xiaomi-mi-flora"
+  to="/docs/collecting-metrics/hardware-and-sensors/xiaomi-mi-flora"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/tesla-wall-connector"
-  to="/docs/collecting-metrics/hardware-and-iot/tesla-wall-connector"
+  to="/docs/collecting-metrics/hardware-and-sensors/tesla-wall-connector"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/tesla-vehicle"
-  to="/docs/collecting-metrics/hardware-and-iot/tesla-vehicle"
+  to="/docs/collecting-metrics/hardware-and-sensors/tesla-vehicle"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/tado-smart-heating-solution"
-  to="/docs/collecting-metrics/hardware-and-iot/tado-smart-heating-solution"
+  to="/docs/collecting-metrics/hardware-and-sensors/tado-smart-heating-solution"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/sunspec-solar-energy"
-  to="/docs/collecting-metrics/hardware-and-iot/sunspec-solar-energy"
+  to="/docs/collecting-metrics/hardware-and-sensors/sunspec-solar-energy"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/solis-ginlong-5g-inverters"
-  to="/docs/collecting-metrics/hardware-and-iot/solis-ginlong-5g-inverters"
+  to="/docs/collecting-metrics/hardware-and-sensors/solis-ginlong-5g-inverters"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/solar-logging-stick"
-  to="/docs/collecting-metrics/hardware-and-iot/solar-logging-stick"
+  to="/docs/collecting-metrics/hardware-and-sensors/solar-logging-stick"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/smart-meters-sml"
-  to="/docs/collecting-metrics/hardware-and-iot/smart-meters-sml"
+  to="/docs/collecting-metrics/hardware-and-sensors/smart-meters-sml"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/sma-inverters"
-  to="/docs/collecting-metrics/hardware-and-iot/sma-inverters"
+  to="/docs/collecting-metrics/hardware-and-sensors/sma-inverters"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/shelly-humidity-sensor"
-  to="/docs/collecting-metrics/hardware-and-iot/shelly-humidity-sensor"
+  to="/docs/collecting-metrics/hardware-and-sensors/shelly-humidity-sensor"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/sense-energy"
-  to="/docs/collecting-metrics/hardware-and-iot/sense-energy"
+  to="/docs/collecting-metrics/hardware-and-sensors/sense-energy"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/salicru-eqx-inverter"
-  to="/docs/collecting-metrics/hardware-and-iot/salicru-eqx-inverter"
+  to="/docs/collecting-metrics/hardware-and-sensors/salicru-eqx-inverter"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/radio-thermostat"
-  to="/docs/collecting-metrics/hardware-and-iot/radio-thermostat"
+  to="/docs/collecting-metrics/hardware-and-sensors/radio-thermostat"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/powerpal-devices"
-  to="/docs/collecting-metrics/hardware-and-iot/powerpal-devices"
+  to="/docs/collecting-metrics/hardware-and-sensors/powerpal-devices"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/pimoroni-enviro+"
-  to="/docs/collecting-metrics/hardware-and-iot/pimoroni-enviro+"
+  to="/docs/collecting-metrics/hardware-and-sensors/pimoroni-enviro+"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/philips-hue"
-  to="/docs/collecting-metrics/hardware-and-iot/philips-hue"
+  to="/docs/collecting-metrics/hardware-and-sensors/philips-hue"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/personal-weather-station"
-  to="/docs/collecting-metrics/hardware-and-iot/personal-weather-station"
+  to="/docs/collecting-metrics/hardware-and-sensors/personal-weather-station"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/netatmo-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/netatmo-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/netatmo-sensors"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/nature-remo-e-lite-devices"
-  to="/docs/collecting-metrics/hardware-and-iot/nature-remo-e-lite-devices"
+  to="/docs/collecting-metrics/hardware-and-sensors/nature-remo-e-lite-devices"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/modbus-protocol"
-  to="/docs/collecting-metrics/hardware-and-iot/modbus-protocol"
+  to="/docs/collecting-metrics/hardware-and-sensors/modbus-protocol"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/jarvis-standing-desk"
-  to="/docs/collecting-metrics/hardware-and-iot/jarvis-standing-desk"
+  to="/docs/collecting-metrics/hardware-and-sensors/jarvis-standing-desk"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/homey"
-  to="/docs/collecting-metrics/hardware-and-iot/homey"
+  to="/docs/collecting-metrics/applications/homey"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/homebridge"
-  to="/docs/collecting-metrics/hardware-and-iot/homebridge"
+  to="/docs/collecting-metrics/applications/homebridge"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/energomera-smart-power-meters"
-  to="/docs/collecting-metrics/hardware-and-iot/energomera-smart-power-meters"
+  to="/docs/collecting-metrics/hardware-and-sensors/energomera-smart-power-meters"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/elgato-key-light-devices."
-  to="/docs/collecting-metrics/hardware-and-iot/elgato-key-light-devices."
+  to="/docs/collecting-metrics/hardware-and-sensors/elgato-key-light-devices."
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/dutch-electricity-smart-meter"
-  to="/docs/collecting-metrics/hardware-and-iot/dutch-electricity-smart-meter"
+  to="/docs/collecting-metrics/hardware-and-sensors/dutch-electricity-smart-meter"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/craftbeerpi"
-  to="/docs/collecting-metrics/hardware-and-iot/craftbeerpi"
+  to="/docs/collecting-metrics/hardware-and-sensors/craftbeerpi"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/christ-elektronik-clm5ip-power-panel"
-  to="/docs/collecting-metrics/hardware-and-iot/christ-elektronik-clm5ip-power-panel"
+  to="/docs/collecting-metrics/hardware-and-sensors/christ-elektronik-clm5ip-power-panel"
 
 [[redirects]]
   from="/docs/collecting-metrics/incident-management/statuspage"
@@ -9627,67 +9627,67 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/siemens-s7-plc"
-  to="/docs/collecting-metrics/hardware-and-iot/siemens-s7-plc"
+  to="/docs/collecting-metrics/hardware-and-sensors/siemens-s7-plc"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t."
-  to="/docs/collecting-metrics/hardware-and-iot/s.m.a.r.t."
+  to="/docs/collecting-metrics/storage-and-filesystems/s.m.a.r.t."
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/raritan-pdu"
-  to="/docs/collecting-metrics/hardware-and-iot/raritan-pdu"
+  to="/docs/collecting-metrics/hardware-and-sensors/raritan-pdu"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/nvidia-gpu"
-  to="/docs/collecting-metrics/hardware-and-iot/nvidia-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/nvidia-dcgm-exporter"
-  to="/docs/collecting-metrics/hardware-and-iot/nvidia-dcgm-exporter"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-data-center-gpu-manager-dcgm"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
-  to="/docs/collecting-metrics/hardware-and-iot/intelligent-platform-management-interface-ipmi"
+  to="/docs/collecting-metrics/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/intel-gpu"
-  to="/docs/collecting-metrics/hardware-and-iot/intel-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/intel-gpu"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/ibm-z-hardware-management-console"
-  to="/docs/collecting-metrics/hardware-and-iot/ibm-z-hardware-management-console"
+  to="/docs/collecting-metrics/hardware-and-sensors/ibm-z-hardware-management-console"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/ibm-cryptoexpress-cex-cards"
-  to="/docs/collecting-metrics/hardware-and-iot/ibm-cryptoexpress-cex-cards"
+  to="/docs/collecting-metrics/hardware-and-sensors/ibm-cryptoexpress-cex-cards"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/hdd-temperature"
-  to="/docs/collecting-metrics/hardware-and-iot/hdd-temperature"
+  to="/docs/collecting-metrics/storage-and-filesystems/hdd-temperature"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/cups"
-  to="/docs/collecting-metrics/hardware-and-iot/cups"
+  to="/docs/collecting-metrics/applications/cups"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/amd-gpu"
-  to="/docs/collecting-metrics/hardware-and-iot/amd-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/amd-gpu"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/amd-cpu-&-gpu"
-  to="/docs/collecting-metrics/hardware-and-iot/amd-cpu-&-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/amd-cpu-&-gpu"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/am2320"
-  to="/docs/collecting-metrics/hardware-and-iot/am2320"
+  to="/docs/collecting-metrics/hardware-and-sensors/am2320"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/1-wire-sensors"
-  to="/docs/collecting-metrics/hardware-and-iot/1-wire-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/1-wire-sensors"
 
 [[redirects]]
   from="/docs/collecting-metrics/generic-collecting-metrics/tankerkoenig-api"
@@ -9695,7 +9695,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/generic-collecting-metrics/snmp-devices"
-  to="/docs/collecting-metrics/applications/snmp-devices"
+  to="/docs/collecting-metrics/networking/snmp-devices"
 
 [[redirects]]
   from="/docs/collecting-metrics/generic-collecting-metrics/prometheus-endpoint"
@@ -9703,7 +9703,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/generic-collecting-metrics/pandas"
-  to="/docs/collecting-metrics/applications/pandas"
+  to="/docs/collecting-metrics/databases/pandas"
 
 [[redirects]]
   from="/docs/collecting-metrics/generic-collecting-metrics/openweathermap"
@@ -9731,7 +9731,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/zfs"
-  to="/docs/collecting-metrics/operating-systems/zfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/zfs"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/vm.vmtotal"
@@ -9775,35 +9775,35 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/net.isr"
-  to="/docs/collecting-metrics/operating-systems/net.isr"
+  to="/docs/collecting-metrics/networking/net.isr"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/net.inet6.ip6.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet6.ip6.stats"
+  to="/docs/collecting-metrics/networking/net.inet6.ip6.stats"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/net.inet6.icmp6.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet6.icmp6.stats"
+  to="/docs/collecting-metrics/networking/net.inet6.icmp6.stats"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/net.inet.udp.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet.udp.stats"
+  to="/docs/collecting-metrics/networking/net.inet.udp.stats"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/net.inet.tcp.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet.tcp.stats"
+  to="/docs/collecting-metrics/networking/net.inet.tcp.stats"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/net.inet.tcp.states"
-  to="/docs/collecting-metrics/operating-systems/net.inet.tcp.states"
+  to="/docs/collecting-metrics/networking/net.inet.tcp.states"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/net.inet.ip.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet.ip.stats"
+  to="/docs/collecting-metrics/networking/net.inet.ip.stats"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/net.inet.icmp.stats"
-  to="/docs/collecting-metrics/operating-systems/net.inet.icmp.stats"
+  to="/docs/collecting-metrics/networking/net.inet.icmp.stats"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/kern.ipc.shm"
@@ -9823,7 +9823,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/ipfw"
-  to="/docs/collecting-metrics/operating-systems/ipfw"
+  to="/docs/collecting-metrics/networking/ipfw"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/hw.intrcnt"
@@ -9831,11 +9831,11 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/getmntinfo"
-  to="/docs/collecting-metrics/operating-systems/getmntinfo"
+  to="/docs/collecting-metrics/storage-and-filesystems/getmntinfo"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/getifaddrs"
-  to="/docs/collecting-metrics/operating-systems/getifaddrs"
+  to="/docs/collecting-metrics/networking/getifaddrs"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/freebsd-rctl-racct"
@@ -9843,15 +9843,15 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/freebsd-nfs"
-  to="/docs/collecting-metrics/operating-systems/freebsd-nfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/freebsd-nfs"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/devstat"
-  to="/docs/collecting-metrics/operating-systems/devstat"
+  to="/docs/collecting-metrics/storage-and-filesystems/devstat"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/dev.cpu.temperature"
-  to="/docs/collecting-metrics/operating-systems/dev.cpu.temperature"
+  to="/docs/collecting-metrics/hardware-and-sensors/dev.cpu.temperature"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd/dev.cpu.0.freq"
@@ -9859,11 +9859,11 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-vfs"
-  to="/docs/collecting-metrics/operating-systems/ebpf-vfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-vfs"
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-sync"
-  to="/docs/collecting-metrics/operating-systems/ebpf-sync"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-sync"
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-swap"
@@ -9875,7 +9875,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-socket"
-  to="/docs/collecting-metrics/operating-systems/ebpf-socket"
+  to="/docs/collecting-metrics/networking/ebpf-socket"
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-shm"
@@ -9895,11 +9895,11 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-mount"
-  to="/docs/collecting-metrics/operating-systems/ebpf-mount"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-mount"
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-mdflush"
-  to="/docs/collecting-metrics/operating-systems/ebpf-mdflush"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-mdflush"
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-hardirq"
@@ -9907,7 +9907,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-filesystem"
-  to="/docs/collecting-metrics/operating-systems/ebpf-filesystem"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-filesystem"
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-filedescriptor"
@@ -9915,7 +9915,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-disk"
-  to="/docs/collecting-metrics/operating-systems/ebpf-disk"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-disk"
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-dcstat"
@@ -9971,7 +9971,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/dns-and-dhcp-servers/dns-query"
-  to="/docs/collecting-metrics/networking/dns-query"
+  to="/docs/collecting-metrics/synthetic-testing/dns-query"
 
 [[redirects]]
   from="/docs/collecting-metrics/dns-and-dhcp-servers/coredns"
@@ -9983,91 +9983,91 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/xen-xcp-ng"
-  to="/docs/collecting-metrics/containers-and-orchestration/xen-xcp-ng"
+  to="/docs/collecting-metrics/containers-and-vms/xen-xcp-ng"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server"
-  to="/docs/collecting-metrics/containers-and-orchestration/vmware-vcenter-server"
+  to="/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/virtual-machines"
-  to="/docs/collecting-metrics/containers-and-orchestration/virtual-machines"
+  to="/docs/collecting-metrics/containers-and-vms/virtual-machines"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance"
-  to="/docs/collecting-metrics/containers-and-orchestration/vcenter-server-appliance"
+  to="/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/systemd-nspawn-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/systemd-nspawn-containers"
+  to="/docs/collecting-metrics/containers-and-vms/systemd-nspawn-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/proxmox-vms-and-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/proxmox-vms-and-containers"
+  to="/docs/collecting-metrics/containers-and-vms/proxmox-vms-and-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/proxmox-ve"
-  to="/docs/collecting-metrics/containers-and-orchestration/proxmox-ve"
+  to="/docs/collecting-metrics/containers-and-vms/proxmox-ve"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/podman-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/podman-containers"
+  to="/docs/collecting-metrics/containers-and-vms/podman-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/podman"
-  to="/docs/collecting-metrics/containers-and-orchestration/podman"
+  to="/docs/collecting-metrics/containers-and-vms/podman"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/ovirt-vms"
-  to="/docs/collecting-metrics/containers-and-orchestration/ovirt-vms"
+  to="/docs/collecting-metrics/containers-and-vms/ovirt-vms"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/openstack-vms"
-  to="/docs/collecting-metrics/containers-and-orchestration/openstack-vms"
+  to="/docs/collecting-metrics/containers-and-vms/openstack-vms"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/openshift-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/openshift-containers"
+  to="/docs/collecting-metrics/containers-and-vms/openshift-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/nomad-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/nomad-containers"
+  to="/docs/collecting-metrics/containers-and-vms/nomad-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/lxc-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/lxc-containers"
+  to="/docs/collecting-metrics/containers-and-vms/lxc-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/libvirt-vms-and-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/libvirt-vms-and-containers"
+  to="/docs/collecting-metrics/containers-and-vms/libvirt-vms-and-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/docker-hub-repository"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-hub-repository"
+  to="/docs/collecting-metrics/containers-and-vms/docker-hub-repository"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/docker-engine"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-engine"
+  to="/docs/collecting-metrics/containers-and-vms/docker-engine"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/docker-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker-containers"
+  to="/docs/collecting-metrics/containers-and-vms/docker-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/docker"
-  to="/docs/collecting-metrics/containers-and-orchestration/docker"
+  to="/docs/collecting-metrics/containers-and-vms/docker"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/containers"
+  to="/docs/collecting-metrics/containers-and-vms/containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/containerd-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/containerd-containers"
+  to="/docs/collecting-metrics/containers-and-vms/containerd-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/containers-and-vms/aws-ecs-containers"
-  to="/docs/collecting-metrics/containers-and-orchestration/aws-ecs-containers"
+  to="/docs/collecting-metrics/containers-and-vms/aws-ecs-containers"
 
 [[redirects]]
   from="/docs/collecting-metrics/cloud-provider-managed/zerto"
@@ -10075,11 +10075,11 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/cloud-provider-managed/nextcloud-servers"
-  to="/docs/collecting-metrics/cloud-and-devops/nextcloud-servers"
+  to="/docs/collecting-metrics/applications/nextcloud-servers"
 
 [[redirects]]
   from="/docs/collecting-metrics/cloud-provider-managed/lustre-metadata"
-  to="/docs/collecting-metrics/cloud-and-devops/lustre-metadata"
+  to="/docs/collecting-metrics/storage-and-filesystems/lustre-metadata"
 
 [[redirects]]
   from="/docs/collecting-metrics/cloud-provider-managed/linode"
@@ -10200,5 +10200,697 @@
 [[redirects]]
   from="/docs/collecting-metrics/apm/alamos-fe2-server"
   to="/docs/collecting-metrics/applications/alamos-fe2-server"
+
+[[redirects]]
+  from="/docs/collecting-metrics/web-servers-and-proxies/clash"
+  to="/docs/collecting-metrics/networking/clash"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/zfs-pools"
+  to="/docs/collecting-metrics/storage-and-filesystems/zfs-pools"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/synology-activebackup"
+  to="/docs/collecting-metrics/storage-and-filesystems/synology-activebackup"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/storidge"
+  to="/docs/collecting-metrics/storage-and-filesystems/storidge"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/storecli-raid"
+  to="/docs/collecting-metrics/storage-and-filesystems/storecli-raid"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/samba"
+  to="/docs/collecting-metrics/storage-and-filesystems/samba"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/nvme-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/nvme-devices"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/netapp-solidfire"
+  to="/docs/collecting-metrics/storage-and-filesystems/netapp-solidfire"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/netapp-ontap-api"
+  to="/docs/collecting-metrics/storage-and-filesystems/netapp-ontap-api"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/mogilefs"
+  to="/docs/collecting-metrics/storage-and-filesystems/mogilefs"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/megacli-megaraid"
+  to="/docs/collecting-metrics/storage-and-filesystems/megacli-megaraid"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/lvm-logical-volumes"
+  to="/docs/collecting-metrics/storage-and-filesystems/lvm-logical-volumes"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/ipfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/ipfs"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/ibm-spectrum-virtualize"
+  to="/docs/collecting-metrics/storage-and-filesystems/ibm-spectrum-virtualize"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/ibm-spectrum"
+  to="/docs/collecting-metrics/storage-and-filesystems/ibm-spectrum"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/hpe-smart-arrays"
+  to="/docs/collecting-metrics/storage-and-filesystems/hpe-smart-arrays"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/generic-storage-enclosure-tool"
+  to="/docs/collecting-metrics/storage-and-filesystems/generic-storage-enclosure-tool"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/eos"
+  to="/docs/collecting-metrics/storage-and-filesystems/eos"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/dmcache-devices"
+  to="/docs/collecting-metrics/storage-and-filesystems/dmcache-devices"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/dell-emc-scaleio"
+  to="/docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/ceph"
+  to="/docs/collecting-metrics/storage-and-filesystems/ceph"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage/adaptec-raid"
+  to="/docs/collecting-metrics/storage-and-filesystems/adaptec-raid"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/zfs-adaptive-replacement-cache"
+  to="/docs/collecting-metrics/storage-and-filesystems/zfs-adaptive-replacement-cache"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/zfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/zfs"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/wireless-network-interfaces"
+  to="/docs/collecting-metrics/networking/wireless-network-interfaces"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/tc-qos-classes"
+  to="/docs/collecting-metrics/networking/tc-qos-classes"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/system-thermal-zone"
+  to="/docs/collecting-metrics/hardware-and-sensors/system-thermal-zone"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/synproxy"
+  to="/docs/collecting-metrics/networking/synproxy"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/softnet-statistics"
+  to="/docs/collecting-metrics/networking/softnet-statistics"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/socket-statistics"
+  to="/docs/collecting-metrics/networking/socket-statistics"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/sensors"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/sctp-statistics"
+  to="/docs/collecting-metrics/networking/sctp-statistics"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/power-supply"
+  to="/docs/collecting-metrics/hardware-and-sensors/power-supply"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/power-capping"
+  to="/docs/collecting-metrics/hardware-and-sensors/power-capping"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/physical-and-logical-disk-performance-metrics"
+  to="/docs/collecting-metrics/storage-and-filesystems/physical-and-logical-disk-performance-metrics"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/nfs-server"
+  to="/docs/collecting-metrics/storage-and-filesystems/nfs-server"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/nfs-client"
+  to="/docs/collecting-metrics/storage-and-filesystems/nfs-client"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/network-subsystem"
+  to="/docs/collecting-metrics/networking/network-subsystem"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/network-statistics"
+  to="/docs/collecting-metrics/networking/network-statistics"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/network-interfaces"
+  to="/docs/collecting-metrics/networking/network-interfaces"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/netfilter"
+  to="/docs/collecting-metrics/networking/netfilter"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/net.isr"
+  to="/docs/collecting-metrics/networking/net.isr"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/net.inet6.ip6.stats"
+  to="/docs/collecting-metrics/networking/net.inet6.ip6.stats"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/net.inet6.icmp6.stats"
+  to="/docs/collecting-metrics/networking/net.inet6.icmp6.stats"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/net.inet.udp.stats"
+  to="/docs/collecting-metrics/networking/net.inet.udp.stats"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/net.inet.tcp.stats"
+  to="/docs/collecting-metrics/networking/net.inet.tcp.stats"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/net.inet.tcp.states"
+  to="/docs/collecting-metrics/networking/net.inet.tcp.states"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/net.inet.ip.stats"
+  to="/docs/collecting-metrics/networking/net.inet.ip.stats"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/net.inet.icmp.stats"
+  to="/docs/collecting-metrics/networking/net.inet.icmp.stats"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/net-framework"
+  to="/docs/collecting-metrics/applications/net-framework"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ms-sql-server"
+  to="/docs/collecting-metrics/databases/ms-sql-server"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ms-exchange"
+  to="/docs/collecting-metrics/applications/ms-exchange"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/memory-modules-dimms"
+  to="/docs/collecting-metrics/hardware-and-sensors/memory-modules-dimms"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/md-raid"
+  to="/docs/collecting-metrics/storage-and-filesystems/md-raid"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ipv6-socket-statistics"
+  to="/docs/collecting-metrics/networking/ipv6-socket-statistics"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ipfw"
+  to="/docs/collecting-metrics/networking/ipfw"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ip-virtual-server"
+  to="/docs/collecting-metrics/networking/ip-virtual-server"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/infiniband"
+  to="/docs/collecting-metrics/networking/infiniband"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/iis"
+  to="/docs/collecting-metrics/web-servers-and-proxies/iis"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/hyper-v"
+  to="/docs/collecting-metrics/containers-and-vms/hyper-v"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/hardware-information-collected-from-kernel-ring."
+  to="/docs/collecting-metrics/hardware-and-sensors/hardware-information-collected-from-kernel-ring."
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/getmntinfo"
+  to="/docs/collecting-metrics/storage-and-filesystems/getmntinfo"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/getifaddrs"
+  to="/docs/collecting-metrics/networking/getifaddrs"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/freebsd-nfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/freebsd-nfs"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ebpf-vfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-vfs"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ebpf-sync"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-sync"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ebpf-socket"
+  to="/docs/collecting-metrics/networking/ebpf-socket"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ebpf-mount"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-mount"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ebpf-mdflush"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-mdflush"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ebpf-filesystem"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-filesystem"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/ebpf-disk"
+  to="/docs/collecting-metrics/storage-and-filesystems/ebpf-disk"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/disk-statistics"
+  to="/docs/collecting-metrics/storage-and-filesystems/disk-statistics"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/disk-space"
+  to="/docs/collecting-metrics/storage-and-filesystems/disk-space"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/devstat"
+  to="/docs/collecting-metrics/storage-and-filesystems/devstat"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/dev.cpu.temperature"
+  to="/docs/collecting-metrics/hardware-and-sensors/dev.cpu.temperature"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/conntrack"
+  to="/docs/collecting-metrics/networking/conntrack"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/btrfs"
+  to="/docs/collecting-metrics/storage-and-filesystems/btrfs"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/asp.net"
+  to="/docs/collecting-metrics/web-servers-and-proxies/asp.net"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/active-directory-federation-service"
+  to="/docs/collecting-metrics/applications/active-directory-federation-service"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/active-directory-certificate-service"
+  to="/docs/collecting-metrics/applications/active-directory-certificate-service"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/active-directory"
+  to="/docs/collecting-metrics/applications/active-directory"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems/access-points"
+  to="/docs/collecting-metrics/networking/access-points"
+
+[[redirects]]
+  from="/docs/collecting-metrics/networking/dns-query"
+  to="/docs/collecting-metrics/synthetic-testing/dns-query"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/xiaomi-mi-flora"
+  to="/docs/collecting-metrics/hardware-and-sensors/xiaomi-mi-flora"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/ups-nut"
+  to="/docs/collecting-metrics/hardware-and-sensors/ups-nut"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/tesla-wall-connector"
+  to="/docs/collecting-metrics/hardware-and-sensors/tesla-wall-connector"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/tesla-vehicle"
+  to="/docs/collecting-metrics/hardware-and-sensors/tesla-vehicle"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/tado-smart-heating-solution"
+  to="/docs/collecting-metrics/hardware-and-sensors/tado-smart-heating-solution"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/sunspec-solar-energy"
+  to="/docs/collecting-metrics/hardware-and-sensors/sunspec-solar-energy"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/solis-ginlong-5g-inverters"
+  to="/docs/collecting-metrics/hardware-and-sensors/solis-ginlong-5g-inverters"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/solar-logging-stick"
+  to="/docs/collecting-metrics/hardware-and-sensors/solar-logging-stick"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/smart-meters-sml"
+  to="/docs/collecting-metrics/hardware-and-sensors/smart-meters-sml"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/sma-inverters"
+  to="/docs/collecting-metrics/hardware-and-sensors/sma-inverters"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/siemens-s7-plc"
+  to="/docs/collecting-metrics/hardware-and-sensors/siemens-s7-plc"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/shelly-humidity-sensor"
+  to="/docs/collecting-metrics/hardware-and-sensors/shelly-humidity-sensor"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/sense-energy"
+  to="/docs/collecting-metrics/hardware-and-sensors/sense-energy"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/salicru-eqx-inverter"
+  to="/docs/collecting-metrics/hardware-and-sensors/salicru-eqx-inverter"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/s.m.a.r.t."
+  to="/docs/collecting-metrics/storage-and-filesystems/s.m.a.r.t."
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/raritan-pdu"
+  to="/docs/collecting-metrics/hardware-and-sensors/raritan-pdu"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/radio-thermostat"
+  to="/docs/collecting-metrics/hardware-and-sensors/radio-thermostat"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/powerpal-devices"
+  to="/docs/collecting-metrics/hardware-and-sensors/powerpal-devices"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/pimoroni-enviro+"
+  to="/docs/collecting-metrics/hardware-and-sensors/pimoroni-enviro+"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/philips-hue"
+  to="/docs/collecting-metrics/hardware-and-sensors/philips-hue"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/personal-weather-station"
+  to="/docs/collecting-metrics/hardware-and-sensors/personal-weather-station"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/nvidia-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-gpu"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/nvidia-dcgm-exporter"
+  to="/docs/collecting-metrics/hardware-and-sensors/nvidia-data-center-gpu-manager-dcgm"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/netatmo-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/netatmo-sensors"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/nature-remo-e-lite-devices"
+  to="/docs/collecting-metrics/hardware-and-sensors/nature-remo-e-lite-devices"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/modbus-protocol"
+  to="/docs/collecting-metrics/hardware-and-sensors/modbus-protocol"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/jarvis-standing-desk"
+  to="/docs/collecting-metrics/hardware-and-sensors/jarvis-standing-desk"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/intelligent-platform-management-interface-ipmi"
+  to="/docs/collecting-metrics/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/intel-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/intel-gpu"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/ibm-z-hardware-management-console"
+  to="/docs/collecting-metrics/hardware-and-sensors/ibm-z-hardware-management-console"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/ibm-cryptoexpress-cex-cards"
+  to="/docs/collecting-metrics/hardware-and-sensors/ibm-cryptoexpress-cex-cards"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/homey"
+  to="/docs/collecting-metrics/applications/homey"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/homebridge"
+  to="/docs/collecting-metrics/applications/homebridge"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/hdd-temperature"
+  to="/docs/collecting-metrics/storage-and-filesystems/hdd-temperature"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/energomera-smart-power-meters"
+  to="/docs/collecting-metrics/hardware-and-sensors/energomera-smart-power-meters"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/elgato-key-light-devices."
+  to="/docs/collecting-metrics/hardware-and-sensors/elgato-key-light-devices."
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/dutch-electricity-smart-meter"
+  to="/docs/collecting-metrics/hardware-and-sensors/dutch-electricity-smart-meter"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/cups"
+  to="/docs/collecting-metrics/applications/cups"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/craftbeerpi"
+  to="/docs/collecting-metrics/hardware-and-sensors/craftbeerpi"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/christ-elektronik-clm5ip-power-panel"
+  to="/docs/collecting-metrics/hardware-and-sensors/christ-elektronik-clm5ip-power-panel"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/apc-ups"
+  to="/docs/collecting-metrics/hardware-and-sensors/apc-ups"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/amd-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/amd-gpu"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/amd-cpu-&-gpu"
+  to="/docs/collecting-metrics/hardware-and-sensors/amd-cpu-&-gpu"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/am2320"
+  to="/docs/collecting-metrics/hardware-and-sensors/am2320"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-iot/1-wire-sensors"
+  to="/docs/collecting-metrics/hardware-and-sensors/1-wire-sensors"
+
+[[redirects]]
+  from="/docs/collecting-metrics/databases/mqtt-blackbox"
+  to="/docs/collecting-metrics/synthetic-testing/mqtt-blackbox"
+
+[[redirects]]
+  from="/docs/collecting-metrics/databases/boinc"
+  to="/docs/collecting-metrics/applications/boinc"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/xen-xcp-ng"
+  to="/docs/collecting-metrics/containers-and-vms/xen-xcp-ng"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/vmware-vcenter-server"
+  to="/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/virtual-machines"
+  to="/docs/collecting-metrics/containers-and-vms/virtual-machines"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/vcenter-server-appliance"
+  to="/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/systemd-nspawn-containers"
+  to="/docs/collecting-metrics/containers-and-vms/systemd-nspawn-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/proxmox-vms-and-containers"
+  to="/docs/collecting-metrics/containers-and-vms/proxmox-vms-and-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/proxmox-ve-monitoring"
+  to="/docs/collecting-metrics/containers-and-vms/proxmox-ve-monitoring"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/proxmox-ve"
+  to="/docs/collecting-metrics/containers-and-vms/proxmox-ve"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/podman-containers"
+  to="/docs/collecting-metrics/containers-and-vms/podman-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/podman"
+  to="/docs/collecting-metrics/containers-and-vms/podman"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/ovirt-vms"
+  to="/docs/collecting-metrics/containers-and-vms/ovirt-vms"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/openstack-vms"
+  to="/docs/collecting-metrics/containers-and-vms/openstack-vms"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/openshift-containers"
+  to="/docs/collecting-metrics/containers-and-vms/openshift-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/nomad-containers"
+  to="/docs/collecting-metrics/containers-and-vms/nomad-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/lxc-containers"
+  to="/docs/collecting-metrics/containers-and-vms/lxc-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/libvirt-vms-and-containers"
+  to="/docs/collecting-metrics/containers-and-vms/libvirt-vms-and-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/kubernetes-containers"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/kubernetes-cluster-state"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-cluster-state"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/kubernetes-api-server"
+  to="/docs/collecting-metrics/containers-and-vms/kubernetes-api-server"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/kubeproxy"
+  to="/docs/collecting-metrics/containers-and-vms/kubeproxy"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/kubelet"
+  to="/docs/collecting-metrics/containers-and-vms/kubelet"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/docker-hub-repository"
+  to="/docs/collecting-metrics/containers-and-vms/docker-hub-repository"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/docker-engine"
+  to="/docs/collecting-metrics/containers-and-vms/docker-engine"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/docker-containers"
+  to="/docs/collecting-metrics/containers-and-vms/docker-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/docker"
+  to="/docs/collecting-metrics/containers-and-vms/docker"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/containers"
+  to="/docs/collecting-metrics/containers-and-vms/containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/containerd-containers"
+  to="/docs/collecting-metrics/containers-and-vms/containerd-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/cilium-proxy"
+  to="/docs/collecting-metrics/containers-and-vms/cilium-proxy"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/cilium-operator"
+  to="/docs/collecting-metrics/containers-and-vms/cilium-operator"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/cilium-agent"
+  to="/docs/collecting-metrics/containers-and-vms/cilium-agent"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-orchestration/aws-ecs-containers"
+  to="/docs/collecting-metrics/containers-and-vms/aws-ecs-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/cloud-and-devops/nextcloud-servers"
+  to="/docs/collecting-metrics/applications/nextcloud-servers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/cloud-and-devops/nagios"
+  to="/docs/collecting-metrics/applications/nagios"
+
+[[redirects]]
+  from="/docs/collecting-metrics/cloud-and-devops/lustre-metadata"
+  to="/docs/collecting-metrics/storage-and-filesystems/lustre-metadata"
+
+[[redirects]]
+  from="/docs/collecting-metrics/cloud-and-devops/grafana"
+  to="/docs/collecting-metrics/applications/grafana"
+
+[[redirects]]
+  from="/docs/collecting-metrics/cloud-and-devops/collectd"
+  to="/docs/collecting-metrics/applications/collectd"
+
+[[redirects]]
+  from="/docs/collecting-metrics/applications/snmp-devices"
+  to="/docs/collecting-metrics/networking/snmp-devices"
+
+[[redirects]]
+  from="/docs/collecting-metrics/applications/pandas"
+  to="/docs/collecting-metrics/databases/pandas"
+
+[[redirects]]
+  from="/docs/collecting-metrics/applications/mesos"
+  to="/docs/collecting-metrics/containers-and-vms/mesos"
+
+[[redirects]]
+  from="/docs/collecting-metrics/applications/kafka-consumer-lag"
+  to="/docs/collecting-metrics/databases/kafka-consumer-lag"
+
+[[redirects]]
+  from="/docs/collecting-metrics/applications/files-and-directories"
+  to="/docs/collecting-metrics/synthetic-testing/files-and-directories"
 
 # section: dynamic << END
