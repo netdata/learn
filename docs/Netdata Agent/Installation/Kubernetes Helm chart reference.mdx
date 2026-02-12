@@ -409,32 +409,32 @@ and exports them, so they can be monitored.
 
 Service discovery currently supports the following applications via their associated collector:
 
-- [ActiveMQ](/docs/collecting-metrics/message-brokers/activemq)
-- [Apache](/docs/collecting-metrics/web-servers-and-web-proxies/apache)
+- [ActiveMQ](/docs/collecting-metrics/databases/activemq)
+- [Apache](/docs/collecting-metrics/web-servers-and-proxies/apache)
 - [Bind](https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/bind/README.md)
 - [CockroachDB](/docs/collecting-metrics/databases/cockroachdb)
-- [Consul](/docs/collecting-metrics/service-discovery-/-registry/consul)
-- [CoreDNS](/docs/collecting-metrics/dns-and-dhcp-servers/coredns)
-- [Elasticsearch](/docs/collecting-metrics/search-engines/elasticsearch)
-- [Fluentd](/docs/collecting-metrics/logs-servers/fluentd)
-- [FreeRADIUS](/docs/collecting-metrics/authentication-and-authorization/freeradius)
-- [HDFS](/docs/collecting-metrics/storage,-mount-points-and-filesystems/hadoop-distributed-file-system-hdfs)
-- [Lighttpd](/docs/collecting-metrics/web-servers-and-web-proxies/lighttpd)
-- [Logstash](/docs/collecting-metrics/logs-servers/logstash)
+- [Consul](/docs/collecting-metrics/applications/consul)
+- [CoreDNS](/docs/collecting-metrics/networking/coredns)
+- [Elasticsearch](/docs/collecting-metrics/databases/elasticsearch)
+- [Fluentd](/docs/collecting-metrics/applications/fluentd)
+- [FreeRADIUS](/docs/collecting-metrics/applications/freeradius)
+- [HDFS](/docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs)
+- [Lighttpd](/docs/collecting-metrics/web-servers-and-proxies/lighttpd)
+- [Logstash](/docs/collecting-metrics/applications/logstash)
 - [MySQL](/docs/collecting-metrics/databases/mysql)
-- [NGINX](/docs/collecting-metrics/web-servers-and-web-proxies/nginx)
-- [OpenVPN](/docs/collecting-metrics/vpns/openvpn)
-- [PHP-FPM](/docs/collecting-metrics/web-servers-and-web-proxies/php-fpm)
-- [RabbitMQ](/docs/collecting-metrics/message-brokers/rabbitmq)
-- [Tengine](/docs/collecting-metrics/web-servers-and-web-proxies/tengine)
-- [Unbound](/docs/collecting-metrics/dns-and-dhcp-servers/unbound)
-- [VerneMQ](/docs/collecting-metrics/message-brokers/vernemq)
-- [ZooKeeper](/docs/collecting-metrics/service-discovery-/-registry/zookeeper)
+- [NGINX](/docs/collecting-metrics/web-servers-and-proxies/nginx)
+- [OpenVPN](/docs/collecting-metrics/networking/openvpn)
+- [PHP-FPM](/docs/collecting-metrics/web-servers-and-proxies/php-fpm)
+- [RabbitMQ](/docs/collecting-metrics/databases/rabbitmq)
+- [Tengine](/docs/collecting-metrics/web-servers-and-proxies/tengine)
+- [Unbound](/docs/collecting-metrics/networking/unbound)
+- [VerneMQ](/docs/collecting-metrics/databases/vernemq)
+- [ZooKeeper](/docs/collecting-metrics/applications/zookeeper)
 
 #### Prometheus endpoints
 
 Service discovery supports Prometheus endpoints via
-the [Prometheus](/docs/collecting-metrics/generic-collecting-metrics/prometheus-endpoint) collector.
+the [Prometheus](/docs/collecting-metrics/applications/prometheus-endpoint) collector.
 
 Annotations on pods allow a fine control of the scraping process:
 
