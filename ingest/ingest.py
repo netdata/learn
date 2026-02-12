@@ -1485,67 +1485,107 @@ def convert_github_links(path_to_file, input_dict):
 
 def automate_sidebar_position(dictionary):
     """
-    Dynamically assigns position numbers to each file entry based on its depth in the directory.
-    More room is provided between categories to accommodate up to 500 files per level.
+    Assign deterministic sidebar positions from learn_rel_path hierarchy.
 
-    Levels:
-    - Level 1: 100,000 gap between categories
-    - Level 2: 2,000 gap between subcategories (allows room for 500+ files per category)
-    - Level 3: 500 gap between sub-subcategories
-    - Level 4: Serial numbering within Level 3 (increments by 10 for documents)
+    Compact fixed-width scheme:
+    - L1 stride: 500000
+    - L2 stride: 10000
+    - L3 stride: 500
+    - L4 stride: 100
+    - L5 stride: 1
+
+    L1..L4 are path-segment indexes. L5 is the per-path document sequence.
     """
 
     print("### Automating sidebar_position ###", "\n")
 
-    position_array = []
+    L1_STEP = 500_000
+    L2_STEP = 10_000
+    L3_STEP = 500
+    L4_STEP = 100
+    L5_STEP = 1
 
-    # Initial counters for each level
-    counter_one = 100_000
-    serial_two = 0  # Serial counter for level 2
-    serial_three = 0  # Serial counter for level 3
-    serial_four = 0  # Serial counter for level 4
+    MAX_L2_INDEX = (L1_STEP // L2_STEP) - 1
+    MAX_L3_INDEX = (L2_STEP // L3_STEP) - 1
+    MAX_L4_INDEX = (L3_STEP // L4_STEP) - 1
+    MAX_L5_INDEX = (L4_STEP // L5_STEP) - 1
 
-    previous_levels = ["", "", ""]
+    level_maps = [{}, {}, {}, {}]
+    level_counters = [{}, {}, {}, {}]
+    leaf_counter = {}
 
-    for path in dictionary["learn_rel_path"]:
-        if str(path) != "nan":
-            split = str(path).split("/")
+    positions = []
+    used_positions = {}
 
-            # Ensure there are at least 3 levels (for category and subcategories)
-            current_levels = split + [""] * (3 - len(split))
+    for row in dictionary.itertuples(index=False):
+        raw_path = getattr(row, "learn_rel_path", None)
+        if raw_path is None or (isinstance(raw_path, float) and np.isnan(raw_path)):
+            positions.append(-1)
+            continue
 
-            # Update counters based on level changes
-            if current_levels[0] != previous_levels[0]:
-                # New Level 1 category, reset counters
-                counter_one += 100_000
-                serial_two = 0
-                serial_three = 0
-                serial_four = 0
-            elif current_levels[1] != previous_levels[1]:
-                # New Level 2 category, increment serial for Level 2
-                serial_two += 2_000  # Allow 2,000 gap for each subcategory
-                serial_three = 0  # Reset serial for Level 3
-                serial_four = 0  # Reset serial for Level 4
-            elif current_levels[2] != previous_levels[2]:
-                # New Level 3 category, increment serial for Level 3
-                serial_three += 500  # Allow 500 gap for files within each subcategory
-                serial_four = 0  # Reset serial for Level 4
-            else:
-                # Increment serial for Level 4
-                serial_four += 10  # Serial for documents within Level 3
+        path = str(raw_path).strip()
+        if not path or path == "nan":
+            positions.append(-1)
+            continue
 
-            previous_levels = current_levels
+        parts = [segment for segment in path.split("/") if segment]
+        if len(parts) > 4:
+            raise ValueError(
+                f"learn_rel_path depth > 4 is not supported by current sidebar scheme: '{path}'"
+            )
 
-            # Calculate the final position based on the counters
-            position_value = counter_one + serial_two + serial_three + serial_four
+        idx = [0, 0, 0, 0]
+        for level in range(len(parts)):
+            parent = tuple(parts[:level])
+            segment = parts[level]
 
-            # Append the calculated position
-            position_array.append(position_value)
-        else:
-            # If the path is nan, return -1
-            position_array.append(-1)
+            mapping = level_maps[level].setdefault(parent, {})
+            if segment not in mapping:
+                start_index = 0 if level == 0 else 1
+                counter = level_counters[level].get(parent, start_index)
+                mapping[segment] = counter
+                level_counters[level][parent] = counter + 1
+            idx[level] = mapping[segment]
 
-    return position_array
+        leaf_parent = tuple(parts)
+        leaf_idx = leaf_counter.get(leaf_parent, 0)
+        leaf_counter[leaf_parent] = leaf_idx + 1
+
+        if idx[1] > MAX_L2_INDEX:
+            raise ValueError(
+                f"Too many level-2 siblings under '{parts[0]}': index {idx[1]} exceeds {MAX_L2_INDEX}"
+            )
+        if idx[2] > MAX_L3_INDEX:
+            raise ValueError(
+                f"Too many level-3 siblings under '{'/'.join(parts[:2])}': index {idx[2]} exceeds {MAX_L3_INDEX}"
+            )
+        if idx[3] > MAX_L4_INDEX:
+            raise ValueError(
+                f"Too many level-4 siblings under '{'/'.join(parts[:3])}': index {idx[3]} exceeds {MAX_L4_INDEX}"
+            )
+        if leaf_idx > MAX_L5_INDEX:
+            raise ValueError(
+                f"Too many documents under '{path}': index {leaf_idx} exceeds {MAX_L5_INDEX}"
+            )
+
+        position = (
+            idx[0] * L1_STEP
+            + idx[1] * L2_STEP
+            + idx[2] * L3_STEP
+            + idx[3] * L4_STEP
+            + leaf_idx * L5_STEP
+        )
+
+        if position in used_positions:
+            prev_path = used_positions[position]
+            raise ValueError(
+                f"Duplicate sidebar_position {position} for '{path}' and '{prev_path}'"
+            )
+
+        used_positions[position] = path
+        positions.append(position)
+
+    return positions
 
 
 def sort_files(file_array):
