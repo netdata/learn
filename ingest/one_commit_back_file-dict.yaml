@@ -144,6 +144,8 @@
   learn_path: /docs/collecting-metrics/search-engines/opensearch
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/megacli/README.md
   learn_path: /docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-megaraid
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dcgm/README.md
+  learn_path: /docs/collecting-metrics/hardware-devices-and-sensors/nvidia-dcgm-exporter
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/k8s_state/README.md
   learn_path: /docs/collecting-metrics/kubernetes/kubernetes-cluster-state
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/nginx/README.md
@@ -834,6 +836,12 @@
   learn_path: /docs/collecting-metrics/linux-systems/cpu-performance
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cups.plugin/README.md
   learn_path: /docs/collecting-metrics/hardware-devices-and-sensors/cups
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md
+  learn_path: /docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/active_journal_centralization_guide_no_encryption.md
+  learn_path: /docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md
+  learn_path: /docs/logs/systemd-journal-logs/systemd-journal-plugin-reference
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/nfacct.plugin/README.md
   learn_path: /docs/collecting-metrics/linux-systems/firewall/netfilter
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.stats.vm.v_swappgs.md
@@ -944,18 +952,34 @@
   learn_path: /docs/collecting-metrics/windows-systems/net-framework
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/kubernetes_containers.md
   learn_path: /docs/collecting-metrics/kubernetes/kubernetes-containers
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/proxmox_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-vms/proxmox-containers
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/aws_ecs_containers.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/aws-ecs-containers
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/nomad_containers.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/nomad-containers
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/docker_containers.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/docker-containers
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/ovirt_vms.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/ovirt-vms
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/systemd-nspawn_containers.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/systemd-nspawn-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/systemd_services.md
   learn_path: /docs/collecting-metrics/systemd/systemd-services
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/libvirt_vms_and_containers.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/libvirt-vms-and-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/virtual_machines.md
   learn_path: /docs/collecting-metrics/containers-and-vms/virtual-machines
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/podman_containers.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/podman-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/containers.md
   learn_path: /docs/collecting-metrics/containers-and-vms/containers
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/libvirt_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-vms/libvirt-containers
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/ovirt_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-vms/ovirt-containers
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/containerd_containers.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/containerd-containers
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/openstack_vms.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/openstack-vms
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/openshift_containers.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/openshift-containers
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/proxmox_vms_and_containers.md
+  learn_path: /docs/collecting-metrics/containers-and-vms/proxmox-vms-and-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/lxc_containers.md
   learn_path: /docs/collecting-metrics/containers-and-vms/lxc-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/slabinfo.plugin/README.md
@@ -1210,6 +1234,8 @@
   learn_path: /docs/welcome-to-netdata/reporting
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/streaming-routing.md
   learn_path: /docs/netdata-parents/streaming-routing-reference
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-oss-limitations.md
+  learn_path: /docs/security-and-privacy-design/access-control-and-feature-availability
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/welcome-to-netdata.md
   learn_path: /docs/welcome-to-netdata
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/glossary.md
@@ -1348,12 +1374,6 @@
   learn_path: /docs/dashboards-and-charts/theme
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/node-filter.md
   learn_path: /docs/dashboards-and-charts/node-filter
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/logs/forward_secure_sealing.md
-  learn_path: /docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/logs/active_journal_centralization_guide_no_encryption.md
-  learn_path: /docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/logs/README.md
-  learn_path: /docs/logs/systemd-journal-logs/journal-viewer-plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/enable-an-exporting-connector.md
   learn_path: /docs/exporting-metrics/enable-an-exporting-connector
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/README.md
