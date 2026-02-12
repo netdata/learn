@@ -153,6 +153,12 @@ html[data-theme='dark'] .table-of-contents__link--active {
 	font-weight: 600 !important;
 } */
 
+/* Table first/last column padding to avoid dense appearance */
+.markdown thead th:first-child,
+.markdown tbody td:first-child {
+	padding-left: .5714286em !important;
+}
+.markdown thead th:last-child,
 .markdown tbody td:last-child {
 	padding-right: .5714286em !important;
 }
@@ -564,35 +570,29 @@ html[data-theme='dark'] .markdown {
 	--tw-prose-captions: var(--ifm-font-color-base);
 	--tw-prose-th-borders: var(--ifm-table-border-color);
 	--tw-prose-td-borders: var(--ifm-table-border-color);
+	--tw-prose-pre-code: #e0e0e0;
+	--tw-prose-pre-bg: #1a1a1a;
+	--tw-prose-code: #e0e0e0;
 }
 
-/* Dark mode: Inline code text color */
-html[data-theme='dark'] code,
-html[data-theme='dark'] .markdown code,
-html[data-theme='dark'] .prose code {
+/* Dark mode: Inline code text color (exclude code blocks — Prism handles those) */
+html[data-theme='dark'] :not(pre) > code,
+html[data-theme='dark'] .markdown :not(pre) > code,
+html[data-theme='dark'] .prose :not(pre) > code {
 	color: #e0e0e0 !important;
 }
 
-/* Code blocks - light mode */
+/* Code blocks - light mode backgrounds */
 pre, .prism-code, [class*="codeBlock"] {
 	background-color: #e8e8e8 !important;
 	line-height: 1.0 !important;
 }
 
-pre code, .prism-code code, [class*="codeBlock"] code {
-	color: #1a1a1a !important;
-}
-
-/* Code blocks - dark mode */
+/* Code blocks - dark mode backgrounds */
 html[data-theme='dark'] pre,
 html[data-theme='dark'] .prism-code,
 html[data-theme='dark'] [class*="codeBlock"] {
 	background-color: #1a1a1a !important;
-}
-
-html[data-theme='dark'] pre code,
-html[data-theme='dark'] .prism-code code {
-	color: #e0e0e0;
 }
 
 .markdown ol > li::before  {

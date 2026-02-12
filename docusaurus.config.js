@@ -1,5 +1,17 @@
 const {themes: prismThemes} = require('prism-react-renderer');
 
+// Extend Dracula with missing token type mappings for YAML, config files, etc.
+const draculaExtended = {
+	...prismThemes.dracula,
+	styles: [
+		...prismThemes.dracula.styles,
+		{types: ['number', 'boolean', 'constant', 'property'], style: {color: 'rgb(189, 147, 249)'}},  // purple
+		{types: ['atrule', 'keyword', 'key'], style: {color: 'rgb(139, 233, 253)'}},                   // cyan
+		{types: ['selector', 'tag'], style: {color: 'rgb(255, 121, 198)'}},                              // pink
+		{types: ['operator', 'entity', 'url'], style: {color: 'rgb(248, 248, 242)'}},                   // base white
+	],
+};
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
 	title: 'Learn Netdata',
@@ -37,7 +49,7 @@ module.exports = {
 		},
 		prism: {
 			theme: prismThemes.github,
-			darkTheme: prismThemes.dracula,
+			darkTheme: draculaExtended,
 		},
 		image: 'img/netdata_meta-default.png',
 		docs: {
