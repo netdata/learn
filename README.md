@@ -165,7 +165,7 @@ This action runs at 14:00 UTC every day.
 If there are changes to any documentation file, the GitHub Action creates a PR that is then reviewed by a member of the Netdata team.
 
 The action can be configured to automatically assign one or more reviewers.
-To enable automatic assignments, uncomment the `# reviewers:` line at the end of [`ingest.yml`](/.github/workflows/ingest.yml) and add the appropriate GitHub username(s)either space or comma-separated.
+To enable automatic assignments, uncomment the `# reviewers:` line at the end of [`ingest.yml`](/.github/workflows/ingest.yml) and add the appropriate GitHub username(s) either space or comma-separated.
 
 ## Update news on the Learn homepage
 
