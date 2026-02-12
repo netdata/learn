@@ -220,9 +220,9 @@ Each job defines a single Nagios plugin execution. Jobs are listed under the `jo
 |  | check_interval | Base scheduling interval between executions. Duration string. | 1m | no |
 |  | retry_interval | Interval between soft retries after a non-OK result. Duration string. | 30s | no |
 |  | max_check_attempts | Number of soft-state attempts before transitioning to a hard state. | 3 | no |
-| **Environment** | user_macros | Key/value pairs exposed as `$USERn$` macros. For example, `USER1` becomes `$USER1$`. | {} | no |
-|  | custom_vars | Key/value pairs exported as `$_SERVICEvar$` environment variables (`NAGIOS__SERVICEvar`). | {} | no |
-|  | environment | Additional environment variables set before executing the plugin. | {} | no |
+| **Environment** | user_macros | Key/value pairs exposed as `$USERn$` macros. For example, `USER1` becomes `$USER1$`. | \{} | no |
+|  | custom_vars | Key/value pairs exported as `$_SERVICEvar$` environment variables (`NAGIOS__SERVICEvar`). | \{} | no |
+|  | environment | Additional environment variables set before executing the plugin. | \{} | no |
 | **General** | working_directory | Working directory for plugin execution. |  | no |
 
 

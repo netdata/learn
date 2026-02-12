@@ -205,7 +205,7 @@ Create `~/projects/production/.mcp.json`:
       "type": "http",
       "url": "http://prod-parent.company.com:19999/mcp",
       "headers": [
-        "Authorization: Bearer $\{NETDATA_API_KEY}"
+        "Authorization: Bearer ${NETDATA_API_KEY}"
       ]
     }
   }
@@ -223,7 +223,7 @@ Create `~/projects/production/.mcp.json`:
       "command": "/usr/sbin/nd-mcp",
       "args": [
         "--bearer",
-        "$\{NETDATA_API_KEY}",
+        "${NETDATA_API_KEY}",
         "ws://prod-parent.company.com:19999/mcp"
       ]
     }
@@ -246,7 +246,7 @@ Create `~/projects/production/.mcp.json`:
     "http://prod-parent.company.com:19999/mcp",
     "--allow-http",
     "--header",
-    "Authorization: Bearer $\{NETDATA_API_KEY}",
+    "Authorization: Bearer ${NETDATA_API_KEY}",
       ]
     }
   }
@@ -256,8 +256,8 @@ Create `~/projects/production/.mcp.json`:
 ### Environment Variables
 
 Claude Code supports environment variable expansion in `.mcp.json`:
-- `$\{VAR}` - Expands to the value of environment variable `VAR`
-- `$\{VAR:-default}` - Uses `VAR` if set, otherwise uses `default`
+- `${VAR}` - Expands to the value of environment variable `VAR`
+- `${VAR:-default}` - Uses `VAR` if set, otherwise uses `default`
 
 This allows you to keep sensitive API keys out of version control.
 

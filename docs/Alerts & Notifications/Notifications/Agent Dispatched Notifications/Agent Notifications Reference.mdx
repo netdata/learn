@@ -176,8 +176,8 @@ You can use external scripts to dynamically change recipients based on work hour
 ```ini
 # Use a script to determine the current on-call engineer
 ONCALL_EMAIL=$(get_oncall_email.sh)
-role_recipients_email[oncall]="$\{ONCALL_EMAIL}"
-role_recipients_sms[oncall]="$\{ONCALL_PHONE}"
+role_recipients_email[oncall]="${ONCALL_EMAIL}"
+role_recipients_sms[oncall]="${ONCALL_PHONE}"
 
 # Standard business hours team gets non-critical alerts during work hours
 role_recipients_slack[business_hours]="#daytime-monitoring"
@@ -198,7 +198,7 @@ The API is protected by an authorization token stored in `/var/lib/netdata/netda
 TOKEN=$(cat /var/lib/netdata/netdata.api.key)
 
 # Use the token in API calls
-curl "http://localhost:19999/api/v1/manage/health?cmd=RESET" -H "X-Auth-Token: $\{TOKEN}"
+curl "http://localhost:19999/api/v1/manage/health?cmd=RESET" -H "X-Auth-Token: ${TOKEN}"
 ```
 
 ### Common API Commands
@@ -209,7 +209,7 @@ curl "http://localhost:19999/api/v1/manage/health?cmd=RESET" -H "X-Auth-Token: $
 Completely stops evaluation of health checks during maintenance:
 
 ```bash
-curl "http://localhost:19999/api/v1/manage/health?cmd=DISABLE ALL" -H "X-Auth-Token: $\{TOKEN}"
+curl "http://localhost:19999/api/v1/manage/health?cmd=DISABLE ALL" -H "X-Auth-Token: ${TOKEN}"
 ```
 
 </details>
@@ -220,7 +220,7 @@ curl "http://localhost:19999/api/v1/manage/health?cmd=DISABLE ALL" -H "X-Auth-To
 Continues to evaluate health checks but prevents notifications:
 
 ```bash
-curl "http://localhost:19999/api/v1/manage/health?cmd=SILENCE ALL" -H "X-Auth-Token: $\{TOKEN}"
+curl "http://localhost:19999/api/v1/manage/health?cmd=SILENCE ALL" -H "X-Auth-Token: ${TOKEN}"
 ```
 
 </details>
@@ -232,10 +232,10 @@ Target only certain alerts by name, chart, context, host, or family:
 
 ```bash
 # Silence all disk space alerts
-curl "http://localhost:19999/api/v1/manage/health?cmd=SILENCE&context=disk_space" -H "X-Auth-Token: $\{TOKEN}"
+curl "http://localhost:19999/api/v1/manage/health?cmd=SILENCE&context=disk_space" -H "X-Auth-Token: ${TOKEN}"
 
 # Disable CPU alerts for specific hosts
-curl "http://localhost:19999/api/v1/manage/health?cmd=DISABLE&context=cpu&hosts=prod-db-*" -H "X-Auth-Token: $\{TOKEN}"
+curl "http://localhost:19999/api/v1/manage/health?cmd=DISABLE&context=cpu&hosts=prod-db-*" -H "X-Auth-Token: ${TOKEN}"
 ```
 
 </details>
@@ -246,7 +246,7 @@ curl "http://localhost:19999/api/v1/manage/health?cmd=DISABLE&context=cpu&hosts=
 Check what's currently silenced or disabled:
 
 ```bash
-curl "http://localhost:19999/api/v1/manage/health?cmd=LIST" -H "X-Auth-Token: $\{TOKEN}"
+curl "http://localhost:19999/api/v1/manage/health?cmd=LIST" -H "X-Auth-Token: ${TOKEN}"
 ```
 
 </details>
@@ -257,7 +257,7 @@ curl "http://localhost:19999/api/v1/manage/health?cmd=LIST" -H "X-Auth-Token: $\
 Re-enable all health checks and notifications:
 
 ```bash
-curl "http://localhost:19999/api/v1/manage/health?cmd=RESET" -H "X-Auth-Token: $\{TOKEN}"
+curl "http://localhost:19999/api/v1/manage/health?cmd=RESET" -H "X-Auth-Token: ${TOKEN}"
 ```
 
 </details>

@@ -555,7 +555,7 @@ You can use the dictionary in two ways:
 1. Set `dimension = myapp.metric1 ''` and have in the dictionary `myapp.metric1 = metric1 name`
 2. Set `dimension = myapp.metric1 'm1'` and have in the dictionary `m1 = metric1 name`
 
-In both cases, the dimension will be added with ID `myapp.metric1` and named `metric1 name`. In alerts, you can reference it as either `$\{myapp.metric1}` or `$\{metric1 name}`.
+In both cases, the dimension will be added with ID `myapp.metric1` and named `metric1 name`. In alerts, you can reference it as either `${myapp.metric1}` or `${metric1 name}`.
 
 :::note
 
@@ -779,23 +779,23 @@ This function handles both UDP and TCP automatically:
 STATSD_HOST="localhost"
 STATSD_PORT="8125"
 statsd() {
-        local options="-u -w 0" all="$\{*}"
+        local options="-u -w 0" all="${*}"
         
         # replace all spaces with newlines
-        all="$\{all// /\\n}"
+        all="${all// /\\n}"
 
         # if the string length of all parameters given is above 1000, use TCP
-        [ "$\{#all}" -gt 1000 ] && options="-N -w 0"
+        [ "${#all}" -gt 1000 ] && options="-N -w 0"
 
         # send the metrics to statsd
-        printf "$\{all}\n" | nc $\{options} $\{STATSD_HOST} $\{STATSD_PORT} || return 1
+        printf "${all}\n" | nc ${options} ${STATSD_HOST} ${STATSD_PORT} || return 1
 
         return 0
 }
 
-if [ ! -z "$\{*}" ]
+if [ ! -z "${*}" ]
 then
-  statsd "$\{@}"
+  statsd "${@}"
 fi
 ```
 

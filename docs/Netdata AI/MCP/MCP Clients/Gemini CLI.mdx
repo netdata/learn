@@ -218,7 +218,7 @@ Or configure in `~/.gemini/settings.json`:
 ## Environment Variables
 
 Gemini CLI supports environment variable expansion in `settings.json`:
-- `$VAR_NAME` or `$\{VAR_NAME}` - Expands to the value of environment variable
+- `$VAR_NAME` or `${VAR_NAME}` - Expands to the value of environment variable
 
 Example configuration with environment variables:
 
@@ -226,9 +226,9 @@ Example configuration with environment variables:
 {
   "mcpServers": {
     "netdata": {
-      "httpUrl": "http://$\{NETDATA_HOST}:19999/mcp",
+      "httpUrl": "http://${NETDATA_HOST}:19999/mcp",
       "headers": [
-        "Authorization: Bearer $\{NETDATA_API_KEY}"
+        "Authorization: Bearer ${NETDATA_API_KEY}"
       ]
     }
   }
@@ -323,20 +323,20 @@ Configure different Netdata instances for different purposes:
     "netdata-prod": {
       "httpUrl": "https://prod-parent.company.com:19999/mcp",
       "headers": [
-        "Authorization: Bearer $\{PROD_API_KEY}"
+        "Authorization: Bearer ${PROD_API_KEY}"
       ]
     },
     "netdata-staging": {
       "httpUrl": "https://staging-parent.company.com:19999/mcp",
       "headers": [
-        "Authorization: Bearer $\{STAGING_API_KEY}"
+        "Authorization: Bearer ${STAGING_API_KEY}"
       ]
     },
     "netdata-local": {
       "command": "/usr/sbin/nd-mcp",
       "args": [
         "--bearer",
-        "$\{LOCAL_API_KEY}",
+        "${LOCAL_API_KEY}",
         "ws://localhost:19999/mcp"
       ]
     }

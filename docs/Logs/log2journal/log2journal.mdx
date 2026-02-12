@@ -329,7 +329,7 @@ rename:
 
 inject:                         # <<< we added this
   - key: PRIORITY               # <<< we added this
-    value: '$\{NGINX_STATUS}'    # <<< we added this
+    value: '${NGINX_STATUS}'    # <<< we added this
     
   - key: SYSLOG_IDENTIFIER      # <<< we added this
     value: 'nginx-log'          # <<< we added this
@@ -388,7 +388,7 @@ rename:
 
 inject:                         
   - key: PRIORITY               
-    value: '$\{NGINX_STATUS}'    
+    value: '${NGINX_STATUS}'    
 
 rewrite:                        # <<< we added this
   - key: PRIORITY               # <<< we added this
@@ -688,7 +688,7 @@ Options:
        Inject constant fields to the output (both matched and unmatched logs).
        --inject entries are added to unmatched lines too, when their key is
        not used in --inject-unmatched (--inject-unmatched override --inject).
-       VALUE can use variable like $\{OTHER_KEY} to be replaced with the values
+       VALUE can use variable like ${OTHER_KEY} to be replaced with the values
        of other keys available.
 
        Up to 512 fields can be injected.
@@ -715,19 +715,19 @@ Options:
        `inject`.
 
        When `non-empty` is given, MATCH is expected to be a variable
-       substitution using `$\{KEY1}$\{KEY2}`. Once the substitution is completed
+       substitution using `${KEY1}${KEY2}`. Once the substitution is completed
        the rule is matching the KEY only if the result is not empty.
        When `non-empty` is not set, the MATCH string is expected to be a PCRE2
        regular expression to be checked against the KEY value. This PCRE2
        pattern may include named groups to extract parts of the KEY's value.
 
-       REPLACE supports variable substitution like `$\{variable}` against MATCH
-       named groups (when MATCH is a PCRE2 pattern) and `$\{KEY}` against the
+       REPLACE supports variable substitution like `${variable}` against MATCH
+       named groups (when MATCH is a PCRE2 pattern) and `${KEY}` against the
        keys defined so far.
 
        Example:
               --rewrite DATE=/^(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})$/
-                             $\{day}/$\{month}/$\{year}
+                             ${day}/${month}/${year}
        The above will rewrite dates in the format YYYY-MM-DD to DD/MM/YYYY.
 
        Only one rewrite rule is applied per key; the sequence of rewrites for a

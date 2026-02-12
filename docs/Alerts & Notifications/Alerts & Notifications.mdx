@@ -407,7 +407,7 @@ template: cpu_check
 ```yaml
 template: disk_io_vs_iops
       on: disk.io
-    calc: $reads / $\{disk.iops.reads}
+    calc: $reads / ${disk.iops.reads}
    units: bytes per operation
 ```
 
@@ -419,7 +419,7 @@ When alerts reference variables matching multiple instances, Netdata uses label 
 2. **Score by labels** - count common labels
 3. **Select best match** - highest label overlap
 
-Example: Alert on `disk.io` (labels: `device=sda`, `mount=/data`) references `$\{disk.iops.reads}`:
+Example: Alert on `disk.io` (labels: `device=sda`, `mount=/data`) references `${disk.iops.reads}`:
 - `disk.iops` for sda (labels match) → Score: 2
 - `disk.iops` for sdb (no match) → Score: 0
 Result: Uses sda's value

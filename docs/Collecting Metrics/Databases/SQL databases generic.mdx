@@ -310,7 +310,7 @@ functions:
 | **Target** | driver | SQL driver to use. Supported values: `mysql`, `pgx`, `oracle`, `sqlserver`. | mysql | yes |
 |  | dsn | Database connection string (DSN). The format depends on the selected driver ( [MySQL](https://github.com/go-sql-driver/mysql#dsn-data-source-name), [PostgreSQL](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING-URIS), [MS SQL Server](https://github.com/denisenkom/go-mssqldb#connection-parameters-and-dsn)). |  | yes |
 | **Connection** | timeout | Query and connection check timeout (seconds). | 5 | no |
-| **Labels** | static_labels | A map of static labels added to every chart created by this job. Useful for tagging charts with environment, region, or role. | {} | no |
+| **Labels** | static_labels | A map of static labels added to every chart created by this job. Useful for tagging charts with environment, region, or role. | \{} | no |
 | **Queries & Metrics** | queries | A list of reusable queries. Metric blocks can reference these via `query_ref` to avoid repeating SQL. See [Configuration Structure](#configuration) for details. | [] | no |
 |  | metrics | A list of metric blocks. Each block defines how a query is executed and how its result is transformed into one or more charts. See [Configuration Structure](#configuration) for details. | [] | no |
 | **Functions** | functions | A list of SQL functions exposed as interactive table views in Netdata's Top tab. Each function runs a SQL query and displays results in a filterable, sortable table. See [Functions](#functions) for details. | [] | no |
@@ -322,7 +322,7 @@ functions:
 |  | functions[].limit | Maximum rows to return. | 100 | no |
 |  | functions[].default_sort | Column name for initial sort order. |  | no |
 |  | functions[].default_sort_desc | Sort in descending order by default. | yes | no |
-|  | functions[].columns | Override auto-detected column metadata. Map of column name to settings (type, units, tooltip, visible, sortable). | {} | no |
+|  | functions[].columns | Override auto-detected column metadata. Map of column name to settings (type, units, tooltip, visible, sortable). | \{} | no |
 |  | function_only | Set to true if this job only provides functions (no metrics). When enabled, metrics configuration is not required and no charts are created. | no | no |
 | **Virtual Node** | vnode | Associates this data collection job with a Virtual Node. |  | no |
 

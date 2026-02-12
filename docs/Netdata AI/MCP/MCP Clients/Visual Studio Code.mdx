@@ -179,7 +179,7 @@ mcpServers:
     url: https://YOUR_NETDATA_IP:19999/mcp
     requestOptions:
       headers:
-        Authorization: Bearer $\{NETDATA_MCP_API_KEY}
+        Authorization: Bearer ${NETDATA_MCP_API_KEY}
 ```
 
 **Method 3: Streamable HTTP (Netdata v2.7.2+)**
@@ -194,10 +194,10 @@ mcpServers:
     url: https://YOUR_NETDATA_IP:19999/mcp
     requestOptions:
       headers:
-        Authorization: Bearer $\{NETDATA_MCP_API_KEY}
+        Authorization: Bearer ${NETDATA_MCP_API_KEY}
 ```
 
-Continue expands environment placeholders such as `$\{NETDATA_MCP_API_KEY}` so you can keep API keys out of source control. After saving, reload the window to pick up the new server.
+Continue expands environment placeholders such as `${NETDATA_MCP_API_KEY}` so you can keep API keys out of source control. After saving, reload the window to pick up the new server.
 
 #### Usage
 
@@ -355,7 +355,7 @@ Create snippets that include metric checks:
   "Check Performance": {
     "prefix": "perf",
     "body": [
-      "// @netdata: Current $\{1:CPU} usage?",
+      "// @netdata: Current ${1:CPU} usage?",
       "$0"
     ]
   }

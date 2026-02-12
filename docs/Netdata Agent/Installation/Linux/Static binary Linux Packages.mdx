@@ -125,7 +125,7 @@ Debug build characteristics:
 To diagnose memory issues or crashes:
 
 ```bash
-PATH="/opt/netdata/bin:$\{PATH}" valgrind --undef-value-errors=no /opt/netdata/bin/srv/netdata -D
+PATH="/opt/netdata/bin:${PATH}" valgrind --undef-value-errors=no /opt/netdata/bin/srv/netdata -D
 ```
 
 **Important notes**:
