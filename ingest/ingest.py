@@ -1264,6 +1264,9 @@ def _escape_mdx_braces(body):
     body = re.sub(r"```.*?```", _save, body, flags=re.DOTALL)
     # Preserve inline code
     body = re.sub(r"`[^`\n]+`", _save, body)
+    # Preserve MDX import/export statements (ESM syntax uses { for destructuring)
+    body = re.sub(r"^import\s+.*$", _save, body, flags=re.MULTILINE)
+    body = re.sub(r"^export\s+(?:default|function|const|let|var|\{).*$", _save, body, flags=re.MULTILINE)
 
     # Escape every bare { not already preceded by a backslash
     body = re.sub(r"(?<!\\)\{", r"\\{", body)
