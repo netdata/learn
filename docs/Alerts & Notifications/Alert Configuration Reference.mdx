@@ -822,13 +822,13 @@ summary: Available Ram
 
 | Variable              | Replaced With                |
 |-----------------------|------------------------------|
-| `$\{family}`           | Family instance (e.g., eth0) |
-| `$\{label:LABEL_NAME}` | Chart label value            |
+| `${family}`           | Family instance (e.g., eth0) |
+| `${label:LABEL_NAME}` | Chart label value            |
 
 **Example with Variables:**
 
 ```text
-summary: 1 minute received traffic overflow for $\{label:device}
+summary: 1 minute received traffic overflow for ${label:device}
 ```
 
 Renders as: `1 minute received traffic overflow for eth0`
@@ -851,15 +851,15 @@ info: Percentage of estimated amount of RAM available for userspace processes, w
 
 | Variable              | Replaced With                |
 |-----------------------|------------------------------|
-| `$\{family}`           | Family instance (e.g., eth0) |
-| `$\{label:LABEL_NAME}` | Chart label value            |
+| `${family}`           | Family instance (e.g., eth0) |
+| `${label:LABEL_NAME}` | Chart label value            |
 
 **Examples with Variables:**
 
 **Family Variable:**
 
 ```text
-info: average inbound utilization for the network interface $\{family} over the last minute
+info: average inbound utilization for the network interface ${family} over the last minute
 ```
 
 Renders as: `average inbound utilization for the network interface eth0 over the last minute`
@@ -867,7 +867,7 @@ Renders as: `average inbound utilization for the network interface eth0 over the
 **Label Variable:**
 
 ```text
-info: average ratio of HTTP responses with unexpected status over the last 5 minutes for the site $\{label:target}
+info: average ratio of HTTP responses with unexpected status over the last 5 minutes for the site ${label:target}
 ```
 
 Renders as: `average ratio of HTTP responses with unexpected status over the last 5 minutes for the site https://netdata.cloud/`

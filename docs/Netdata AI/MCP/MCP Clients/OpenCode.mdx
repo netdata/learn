@@ -200,7 +200,7 @@ For remote servers with environment variables:
       "type": "remote",
       "url": "https://YOUR_NETDATA_IP:19999/mcp",
       "headers": {
-        "Authorization": "Bearer $\{NETDATA_API_KEY}"
+        "Authorization": "Bearer ${NETDATA_API_KEY}"
       },
       "enabled": true
     }
@@ -325,7 +325,7 @@ Configure different Netdata instances for different purposes:
       "type": "remote",
       "url": "https://prod-parent.company.com:19999/mcp",
       "headers": {
-        "Authorization": "Bearer $\{PROD_API_KEY}"
+        "Authorization": "Bearer ${PROD_API_KEY}"
       },
       "enabled": true
     },
@@ -333,7 +333,7 @@ Configure different Netdata instances for different purposes:
       "type": "remote",
       "url": "https://staging-parent.company.com:19999/mcp",
       "headers": {
-        "Authorization": "Bearer $\{STAGING_API_KEY}"
+        "Authorization": "Bearer ${STAGING_API_KEY}"
       },
       "enabled": false
     },
@@ -341,7 +341,7 @@ Configure different Netdata instances for different purposes:
       "type": "local",
       "command": ["/usr/sbin/nd-mcp", "ws://localhost:19999/mcp"],
       "environment": {
-        "ND_MCP_BEARER_TOKEN": "$\{LOCAL_API_KEY}"
+        "ND_MCP_BEARER_TOKEN": "${LOCAL_API_KEY}"
       },
       "enabled": true
     }

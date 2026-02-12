@@ -280,7 +280,7 @@ check("bash export NOT preserved",
       "export NETDATA_ALARM_NOTIFY_DEBUG=1")
 
 # ---------------------------------------------------------------------------
-# 13. Edge cases
+# 13a. Edge cases
 # ---------------------------------------------------------------------------
 print("\n=== Edge cases ===")
 check("empty string", "", "")

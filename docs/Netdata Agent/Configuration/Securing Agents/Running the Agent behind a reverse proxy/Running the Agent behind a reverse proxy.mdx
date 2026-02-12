@@ -51,7 +51,7 @@ You can use iptables to block direct access. Run this on each of your servers (o
 
 ```bash
 PROXY_IP="1.2.3.4"
-iptables -t filter -I INPUT -p tcp --dport 19999 \! -s $\{PROXY_IP} -m conntrack --ctstate NEW -j DROP
+iptables -t filter -I INPUT -p tcp --dport 19999 \! -s ${PROXY_IP} -m conntrack --ctstate NEW -j DROP
 ```
 
 This prevents anyone except your web server from accessing a Netdata dashboard running on the host.

@@ -98,7 +98,7 @@ experimental_use_rmcp_client = true
 
 [mcp_servers.netdata]
 url = "https://YOUR_NETDATA_IP:19999/mcp"
-bearer_token = "$\{NETDATA_MCP_API_KEY}"
+bearer_token = "${NETDATA_MCP_API_KEY}"
 startup_timeout_sec = 20
 tool_timeout_sec = 120
 ```
@@ -158,7 +158,7 @@ tool_timeout_sec = 60
 [mcp_servers.netdata_prod]
 command = "/usr/sbin/nd-mcp"
 args = ["ws://prod-parent:19999/mcp"]
-env = { "ND_MCP_BEARER_TOKEN" = "$\{NETDATA_PROD_API_KEY}" }
+env = { "ND_MCP_BEARER_TOKEN" = "${NETDATA_PROD_API_KEY}" }
 ```
 
 Export `ND_MCP_BEARER_TOKEN` before starting Codex CLI (or define it in your shell profile) so the bridge authenticates without exposing the key in command-line arguments.
@@ -268,19 +268,19 @@ Configure different Netdata instances for different purposes:
 [mcp_servers.netdata_prod]
 command = "/usr/sbin/nd-mcp"
 args = ["ws://prod-parent.company.com:19999/mcp"]
-env = { "ND_MCP_BEARER_TOKEN" = "$\{PROD_API_KEY}" }
+env = { "ND_MCP_BEARER_TOKEN" = "${PROD_API_KEY}" }
 startup_timeout_sec = 30
 tool_timeout_sec = 120
 
 [mcp_servers.netdata_staging]
 command = "/usr/sbin/nd-mcp"
 args = ["ws://staging-parent.company.com:19999/mcp"]
-env = { "ND_MCP_BEARER_TOKEN" = "$\{STAGING_API_KEY}" }
+env = { "ND_MCP_BEARER_TOKEN" = "${STAGING_API_KEY}" }
 
 [mcp_servers.netdata_local]
 command = "/usr/sbin/nd-mcp"
 args = ["ws://localhost:19999/mcp"]
-env = { "ND_MCP_BEARER_TOKEN" = "$\{LOCAL_API_KEY}" }
+env = { "ND_MCP_BEARER_TOKEN" = "${LOCAL_API_KEY}" }
 ```
 
 ### Timeout Configuration

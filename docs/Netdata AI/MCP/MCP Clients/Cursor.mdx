@@ -127,7 +127,7 @@ The following methods connect directly to a Netdata Agent or Parent on your netw
 }
 ```
 
-> Cursor supports config interpolation such as `$\{env:NETDATA_MCP_API_KEY}` or `$\{workspaceFolder}` inside `command`, `args`, `env`, `url`, and `headers` (https://cursor.com/docs/context/mcp#config-interpolation). Use these to avoid storing secrets in plain text.
+> Cursor supports config interpolation such as `${env:NETDATA_MCP_API_KEY}` or `${workspaceFolder}` inside `command`, `args`, `env`, `url`, and `headers` (https://cursor.com/docs/context/mcp#config-interpolation). Use these to avoid storing secrets in plain text.
 
 After editing `.cursor/mcp.json`, restart Cursor or run “Reload Window” for the new server to appear in **Settings → MCP**.
 

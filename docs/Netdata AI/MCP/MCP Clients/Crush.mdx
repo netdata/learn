@@ -345,7 +345,7 @@ Find any anomalous metrics in the last 2 hours and explain what might be causing
 
 ### Environment Variable Issues
 
-- Crush uses `$(echo $VAR)` syntax, not `$VAR` or `$\{VAR}`
+- Crush uses `$(echo $VAR)` syntax, not `$VAR` or `${VAR}`
 - Ensure environment variables are exported before starting Crush
 - Test with `echo $NETDATA_API_KEY` to verify the variable is set
 
@@ -369,7 +369,7 @@ Configure different Netdata instances using different transport methods:
       "type": "http",
       "url": "https://parent.company.com:19999/mcp",
       "headers": {
-        "Authorization": "Bearer $\{PARENT_API_KEY}"
+        "Authorization": "Bearer ${PARENT_API_KEY}"
       },
       "timeout": 180
     },
@@ -377,7 +377,7 @@ Configure different Netdata instances using different transport methods:
       "type": "sse",
       "url": "https://stream-parent.company.com:19999/mcp?transport=sse",
       "headers": {
-        "Authorization": "Bearer $\{STREAM_API_KEY}"
+        "Authorization": "Bearer ${STREAM_API_KEY}"
       },
       "timeout": 300
     }
