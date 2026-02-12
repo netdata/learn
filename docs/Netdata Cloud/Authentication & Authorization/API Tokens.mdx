@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/netdata-cl
 sidebar_label: "API Tokens"
 learn_status: "Published"
 learn_rel_path: "Netdata Cloud/Authentication & Authorization"
-sidebar_position: "605010"
+sidebar_position: "30"
 learn_link: "https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization/api-tokens"
 slug: "/netdata-cloud/authentication-&-authorization/api-tokens"
 ---
@@ -37,6 +37,7 @@ You can limit each token to specific scopes that define its access permissions:
 | `scope:all`            | Grants the same permissions as the user who created the token. Use case: Terraform provider integration.                                           | Full access to all API endpoints   |
 | `scope:agent-ui`       | Used by Agent for accessing the Cloud UI                                                                                                           | Access to UI-related endpoints     |
 | `scope:grafana-plugin` | Used for the [Netdata Grafana plugin](/docs/dashboards-and-charts/grafana-plugin) to access Netdata charts | Access to chart and data endpoints |
+| `scope:mcp`            | Used to connect MCP clients (Claude Desktop, Cursor, etc.) to [Netdata Cloud MCP](/docs/netdata-ai/mcp#netdata-cloud-mcp) for AI-assisted monitoring | Access to MCP server endpoints     |
 
 ## API Versions
 
