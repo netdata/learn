@@ -1836,13 +1836,9 @@ def get_dir_make_file_and_recurse(directory):
         if sidebar_pos_value is not None:
             sidebar_position = f'sidebar_position: "{sidebar_pos_value}"'
         else:
-            try:
-                sidebar_position = re.search(
-                    r"sidebar_position:.*",
-                    Path(sorted_list[0][1]).read_text(encoding="utf-8"),
-                )[0]
-            except (TypeError, IndexError):
-                sidebar_position = ""
+            # Keep empty here; normalize_sidebar_positions_by_parent() will assign
+            # deterministic sibling positions for generated overview pages.
+            sidebar_position = ""
 
         try:
             # Compute path relative to the docs root (e.g. "docs/foo/bar" -> "foo/bar")
