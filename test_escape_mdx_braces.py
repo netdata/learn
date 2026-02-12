@@ -33,6 +33,9 @@ def _escape_mdx_braces(body):
     body = re.sub(r"```.*?```", _save, body, flags=re.DOTALL)
     # Preserve inline code
     body = re.sub(r"`[^`\n]+`", _save, body)
+    # Preserve MDX import/export statements (ESM syntax uses { for destructuring)
+    body = re.sub(r"^import\s+.*$", _save, body, flags=re.MULTILINE)
+    body = re.sub(r"^export\s+(?:default|function|const|let|var|\{).*$", _save, body, flags=re.MULTILINE)
 
     # Escape every bare { not already preceded by a backslash
     body = re.sub(r"(?<!\\)\{", r"\\{", body)
@@ -241,7 +244,43 @@ After config \\{bare2}'''
 check("config in code block preserved", config_block, config_expected)
 
 # ---------------------------------------------------------------------------
-# 12. Edge cases
+# 12. MDX import/export preservation
+# ---------------------------------------------------------------------------
+print("\n=== MDX import/export ===")
+check("import with destructuring",
+      "import { OneLineInstall } from '@site/src/components/OneLineInstall/'",
+      "import { OneLineInstall } from '@site/src/components/OneLineInstall/'")
+
+check("import multiple destructured",
+      "import { Install, InstallBox } from '@site/src/components/Install/'",
+      "import { Install, InstallBox } from '@site/src/components/Install/'")
+
+check("import Grid Box",
+      "import { Grid, Box } from '@site/src/components/Grid_integrations';",
+      "import { Grid, Box } from '@site/src/components/Grid_integrations';")
+
+check("import default (no braces)",
+      "import Tabs from '@theme/Tabs';",
+      "import Tabs from '@theme/Tabs';")
+
+check("import in document with braces",
+      "import { X } from 'Y'\n\nSome text with {bare} braces.",
+      "import { X } from 'Y'\n\nSome text with \\{bare} braces.")
+
+check("export default function",
+      "export default function MyComponent() {\n  return <div />\n}",
+      "export default function MyComponent() {\n  return <div />\n}")
+
+check("export const",
+      "export const foo = {bar: 1}",
+      "export const foo = {bar: 1}")
+
+check("bash export NOT preserved",
+      "export NETDATA_ALARM_NOTIFY_DEBUG=1",
+      "export NETDATA_ALARM_NOTIFY_DEBUG=1")
+
+# ---------------------------------------------------------------------------
+# 13a. Edge cases
 # ---------------------------------------------------------------------------
 print("\n=== Edge cases ===")
 check("empty string", "", "")
