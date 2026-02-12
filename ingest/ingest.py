@@ -1242,6 +1242,42 @@ def read_metadata(meta):
     return metadata_dictionary
 
 
+def _escape_mdx_braces(body):
+    """
+    Escape bare { outside of fenced code blocks and inline code for MDX 3.
+
+    MDX interprets {word} as a JSX expression, which breaks when the content
+    is plain text from metadata (e.g. metric names like zabbix.{context}).
+
+    This function:
+    - Preserves fenced code blocks (```...```) and inline code (`...`)
+    - Escapes every bare { that isn't already escaped
+    - Restores style={{ which is valid JSX
+    """
+    preserved = []
+
+    def _save(match):
+        preserved.append(match.group(0))
+        return f"\x00MDXBRACE{len(preserved) - 1}\x00"
+
+    # Preserve fenced code blocks — must come before inline code
+    body = re.sub(r"```.*?```", _save, body, flags=re.DOTALL)
+    # Preserve inline code
+    body = re.sub(r"`[^`\n]+`", _save, body)
+
+    # Escape every bare { not already preceded by a backslash
+    body = re.sub(r"(?<!\\)\{", r"\\{", body)
+
+    # Restore style={{ which is valid JSX (the above turns it into style=\{\{)
+    body = body.replace("style=\\{\\{", "style={{")
+
+    # Restore preserved code sections
+    for i, original in enumerate(preserved):
+        body = body.replace(f"\x00MDXBRACE{i}\x00", original)
+
+    return body
+
+
 def sanitize_page(path):
     """
     Converts the
@@ -1266,14 +1302,10 @@ def sanitize_page(path):
     # MDX 3 compatibility replacements
     body = body.replace("<details><summary>", "<details>\n<summary>")
     body = body.replace("<details open><summary>", "<details open>\n<summary>")
-    body = body.replace("${", r"$\{")
+    body = _escape_mdx_braces(body)
     body = body.replace("<=", r"\<=")
     body = body.replace("%<", r"%\<")
-    body = body.replace("{{", r"\{\{")
-    body = body.replace("style=\\{\\{", "style={{")
     body = body.replace("<->", r"\<->")
-    body = body.replace("{attribute_name}", r"\{attribute_name}")
-    body = body.replace("{attribute_unit}", r"\{attribute_unit}")
 
     # <url> into [url](url)
     body = re.sub(r"<(https://[^>]+)>", r"[\1](\1)", body)
