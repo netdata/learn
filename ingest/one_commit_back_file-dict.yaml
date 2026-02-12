@@ -344,6 +344,8 @@
   learn_path: /docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/haproxy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-h2o.md
   learn_path: /docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/h2o
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/opentelemetry_logs.md
+  learn_path: /docs/logs/opentelemetry-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/windows_event_logs.md
   learn_path: /docs/logs/windows-event-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/systemd_journal_logs.md
@@ -386,6 +388,12 @@
   learn_path: /docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/scim
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/cli/README.md
   learn_path: /docs/netdata-agent/agent-cli
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/modules/zabbix/README.md
+  learn_path: /docs/collecting-metrics/applications/zabbix-preprocessing
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/modules/nagios/README.md
+  learn_path: /docs/collecting-metrics/synthetic-testing/nagios-plugins
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/modules/scheduler/README.md
+  learn_path: /docs/collecting-metrics/applications/scripts.d-scheduler
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/README.md
   learn_path: /docs/developer-and-contributor-corner/external-plugins/go.d.plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/litespeed/README.md
@@ -395,7 +403,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/isc_dhcpd/README.md
   learn_path: /docs/collecting-metrics/networking/isc-dhcp
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/samba/README.md
-  learn_path: /docs/collecting-metrics/storage/samba
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/samba
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/squid/README.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/squid
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/nginxplus/README.md
@@ -407,7 +415,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/powerdns/README.md
   learn_path: /docs/collecting-metrics/networking/powerdns-authoritative-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/megacli/README.md
-  learn_path: /docs/collecting-metrics/storage/megacli-megaraid
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/megacli-megaraid
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/nsd/README.md
   learn_path: /docs/collecting-metrics/networking/nsd
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dnsmasq_dhcp/README.md
@@ -415,11 +423,11 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/varnish/README.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/varnish
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/k8s_apiserver/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/kubernetes-api-server
+  learn_path: /docs/collecting-metrics/containers-and-vms/kubernetes-api-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redis/README.md
   learn_path: /docs/collecting-metrics/databases/redis
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/nvme/README.md
-  learn_path: /docs/collecting-metrics/storage/nvme-devices
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/nvme-devices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/yugabytedb/README.md
   learn_path: /docs/collecting-metrics/databases/yugabytedb
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/nginx/README.md
@@ -433,7 +441,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/apache/integrations/httpd.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/httpd
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dockerhub/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/docker-hub-repository
+  learn_path: /docs/collecting-metrics/containers-and-vms/docker-hub-repository
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/postgres/README.md
   learn_path: /docs/collecting-metrics/databases/postgresql
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/openvpn/README.md
@@ -447,29 +455,29 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/monit/README.md
   learn_path: /docs/collecting-metrics/synthetic-testing/monit
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/ap/README.md
-  learn_path: /docs/collecting-metrics/operating-systems/access-points
+  learn_path: /docs/collecting-metrics/networking/access-points
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/boinc/README.md
-  learn_path: /docs/collecting-metrics/databases/boinc
+  learn_path: /docs/collecting-metrics/applications/boinc
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/hdfs/README.md
-  learn_path: /docs/collecting-metrics/storage/hadoop-distributed-file-system-hdfs
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/k8s_kubeproxy/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/kubeproxy
+  learn_path: /docs/collecting-metrics/containers-and-vms/kubeproxy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/freeradius/README.md
   learn_path: /docs/collecting-metrics/applications/freeradius
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/consul/README.md
   learn_path: /docs/collecting-metrics/applications/consul
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/scaleio/README.md
-  learn_path: /docs/collecting-metrics/storage/dell-emc-scaleio
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/maxscale/README.md
   learn_path: /docs/collecting-metrics/databases/maxscale
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/filecheck/README.md
-  learn_path: /docs/collecting-metrics/applications/files-and-directories
+  learn_path: /docs/collecting-metrics/synthetic-testing/files-and-directories
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/upsd/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/ups-nut
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/ups-nut
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dovecot/README.md
   learn_path: /docs/collecting-metrics/applications/dovecot
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/docker/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/docker
+  learn_path: /docs/collecting-metrics/containers-and-vms/docker
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/powerdns_recursor/README.md
   learn_path: /docs/collecting-metrics/networking/powerdns-recursor
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/supervisord/README.md
@@ -489,23 +497,23 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/couchbase/README.md
   learn_path: /docs/collecting-metrics/databases/couchbase
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/vcsa/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/vcenter-server-appliance
+  learn_path: /docs/collecting-metrics/containers-and-vms/vcenter-server-appliance
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/memcached/README.md
   learn_path: /docs/collecting-metrics/databases/memcached
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/k8s_state/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/kubernetes-cluster-state
+  learn_path: /docs/collecting-metrics/containers-and-vms/kubernetes-cluster-state
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/x509check/README.md
   learn_path: /docs/collecting-metrics/synthetic-testing/x.509-certificate
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/fluentd/README.md
   learn_path: /docs/collecting-metrics/applications/fluentd
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/ceph/README.md
-  learn_path: /docs/collecting-metrics/storage/ceph
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/ceph
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/traefik/README.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/traefik
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/exim/README.md
   learn_path: /docs/collecting-metrics/applications/exim
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/docker_engine/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/docker-engine
+  learn_path: /docs/collecting-metrics/containers-and-vms/docker-engine
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/vernemq/README.md
   learn_path: /docs/collecting-metrics/databases/vernemq
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/rspamd/README.md
@@ -513,7 +521,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/ping/README.md
   learn_path: /docs/collecting-metrics/synthetic-testing/ping
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/vsphere/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/vmware-vcenter-server
+  learn_path: /docs/collecting-metrics/containers-and-vms/vmware-vcenter-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/couchdb/README.md
   learn_path: /docs/collecting-metrics/databases/couchdb
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/icecast/README.md
@@ -523,11 +531,11 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dnsdist/README.md
   learn_path: /docs/collecting-metrics/networking/dnsdist
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/k8s_kubelet/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/kubelet
+  learn_path: /docs/collecting-metrics/containers-and-vms/kubelet
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/sql/README.md
   learn_path: /docs/collecting-metrics/databases/sql-databases-generic
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/apcupsd/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/apc-ups
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/apc-ups
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/lighttpd/README.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/lighttpd
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/proxysql/README.md
@@ -537,11 +545,11 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/haproxy/README.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/haproxy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/hddtemp/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/hdd-temperature
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/hdd-temperature
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/ipfs/README.md
-  learn_path: /docs/collecting-metrics/storage/ipfs
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/ipfs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/w1sensor/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/1-wire-sensors
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/1-wire-sensors
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/elasticsearch/README.md
   learn_path: /docs/collecting-metrics/databases/elasticsearch
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/elasticsearch/integrations/opensearch.md
@@ -561,7 +569,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/coredns/README.md
   learn_path: /docs/collecting-metrics/networking/coredns
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/lvm/README.md
-  learn_path: /docs/collecting-metrics/storage/lvm-logical-volumes
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/lvm-logical-volumes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/nginxvts/README.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/nginx-vts
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/wireguard/README.md
@@ -571,7 +579,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/tor/README.md
   learn_path: /docs/collecting-metrics/networking/tor
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/nvidia_smi/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/nvidia-gpu
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/nvidia-gpu
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/openldap/README.md
   learn_path: /docs/collecting-metrics/applications/openldap
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/logstash/README.md
@@ -579,25 +587,25 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/beanstalk/README.md
   learn_path: /docs/collecting-metrics/databases/beanstalk
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/storcli/README.md
-  learn_path: /docs/collecting-metrics/storage/storecli-raid
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/storecli-raid
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/sensors/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/linux-sensors
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/linux-sensors
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/geth/README.md
   learn_path: /docs/collecting-metrics/applications/go-ethereum
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/intelgpu/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/intel-gpu
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/intel-gpu
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/pgbouncer/README.md
   learn_path: /docs/collecting-metrics/databases/pgbouncer
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/adaptecraid/README.md
-  learn_path: /docs/collecting-metrics/storage/adaptec-raid
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/adaptec-raid
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/README.md
-  learn_path: /docs/collecting-metrics/applications/snmp-devices
+  learn_path: /docs/collecting-metrics/networking/snmp-devices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/profile-format.md
   learn_path: /docs/collecting-metrics/snmp-profile-format
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/cassandra/README.md
   learn_path: /docs/collecting-metrics/databases/cassandra
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/zfspool/README.md
-  learn_path: /docs/collecting-metrics/storage/zfs-pools
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/zfs-pools
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/cockroachdb/README.md
   learn_path: /docs/collecting-metrics/databases/cockroachdb
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/puppet/README.md
@@ -605,17 +613,17 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/whoisquery/README.md
   learn_path: /docs/collecting-metrics/synthetic-testing/domain-expiration-date
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/hpssa/README.md
-  learn_path: /docs/collecting-metrics/storage/hpe-smart-arrays
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/hpe-smart-arrays
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/logind/README.md
   learn_path: /docs/collecting-metrics/operating-systems/systemd-logind-users
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dnsquery/README.md
-  learn_path: /docs/collecting-metrics/networking/dns-query
+  learn_path: /docs/collecting-metrics/synthetic-testing/dns-query
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/envoy/README.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/envoy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/openvpn_status_log/README.md
   learn_path: /docs/collecting-metrics/networking/openvpn-status-log
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dmcache/README.md
-  learn_path: /docs/collecting-metrics/storage/dmcache-devices
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/dmcache-devices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/fail2ban/README.md
   learn_path: /docs/collecting-metrics/applications/fail2ban
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/tengine/README.md
@@ -625,13 +633,13 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/spigotmc/README.md
   learn_path: /docs/collecting-metrics/applications/spigotmc
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/smartctl/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/s.m.a.r.t.
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/s.m.a.r.t.
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/rethinkdb/README.md
   learn_path: /docs/collecting-metrics/databases/rethinkdb
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/pihole/README.md
   learn_path: /docs/collecting-metrics/networking/pi-hole
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dcgm/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/nvidia-dcgm-exporter
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/nvidia-data-center-gpu-manager-dcgm
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/clickhouse/README.md
   learn_path: /docs/collecting-metrics/databases/clickhouse
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/riakkv/README.md
@@ -651,9 +659,9 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/freebsd_rctl-racct.md
   learn_path: /docs/collecting-metrics/operating-systems/freebsd-rctl-racct
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/modbus_protocol.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/modbus-protocol
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/modbus-protocol
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/shelly_humidity_sensor.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/shelly-humidity-sensor
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/shelly-humidity-sensor
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/authlog.md
   learn_path: /docs/collecting-metrics/applications/authlog
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/concourse.md
@@ -669,25 +677,25 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/mosquitto.md
   learn_path: /docs/collecting-metrics/databases/mosquitto
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/solar_logging_stick.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/solar-logging-stick
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/solar-logging-stick
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/synology_activebackup.md
-  learn_path: /docs/collecting-metrics/storage/synology-activebackup
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/synology-activebackup
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/clash.md
-  learn_path: /docs/collecting-metrics/web-servers-and-proxies/clash
+  learn_path: /docs/collecting-metrics/networking/clash
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/freebsd_nfs.md
-  learn_path: /docs/collecting-metrics/operating-systems/freebsd-nfs
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/freebsd-nfs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/grafana.md
-  learn_path: /docs/collecting-metrics/cloud-and-devops/grafana
+  learn_path: /docs/collecting-metrics/applications/grafana
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/podman.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/podman
+  learn_path: /docs/collecting-metrics/containers-and-vms/podman
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/blackbox.md
   learn_path: /docs/collecting-metrics/synthetic-testing/blackbox
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/jarvis_standing_desk.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/jarvis-standing-desk
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/jarvis-standing-desk
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cloudwatch.md
   learn_path: /docs/collecting-metrics/cloud-and-devops/cloudwatch
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ibm_z_hardware_management_console.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/ibm-z-hardware-management-console
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/ibm-z-hardware-management-console
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/apicast.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/apicast
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/github_api_rate_limit.md
@@ -705,27 +713,27 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/softether_vpn_server.md
   learn_path: /docs/collecting-metrics/networking/softether-vpn-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/mogilefs.md
-  learn_path: /docs/collecting-metrics/storage/mogilefs
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/mogilefs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/clamav_daemon.md
   learn_path: /docs/collecting-metrics/applications/clamav-daemon
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/crowdsec.md
   learn_path: /docs/collecting-metrics/applications/crowdsec
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/netapp_solidfire.md
-  learn_path: /docs/collecting-metrics/storage/netapp-solidfire
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/netapp-solidfire
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/nextdns.md
   learn_path: /docs/collecting-metrics/networking/nextdns
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ibm_spectrum_virtualize.md
-  learn_path: /docs/collecting-metrics/storage/ibm-spectrum-virtualize
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/ibm-spectrum-virtualize
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/mtail.md
   learn_path: /docs/collecting-metrics/applications/mtail
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/nextcloud_servers.md
-  learn_path: /docs/collecting-metrics/cloud-and-devops/nextcloud-servers
+  learn_path: /docs/collecting-metrics/applications/nextcloud-servers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cloud_foundry_firehose.md
   learn_path: /docs/collecting-metrics/cloud-and-devops/cloud-foundry-firehose
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/mesos.md
-  learn_path: /docs/collecting-metrics/applications/mesos
+  learn_path: /docs/collecting-metrics/containers-and-vms/mesos
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/powerpal_devices.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/powerpal-devices
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/powerpal-devices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/minecraft.md
   learn_path: /docs/collecting-metrics/applications/minecraft
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/proftpd.md
@@ -733,9 +741,9 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/aws_ec2_compute_instances.md
   learn_path: /docs/collecting-metrics/cloud-and-devops/aws-ec2-compute-instances
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/homebridge.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/homebridge
+  learn_path: /docs/collecting-metrics/applications/homebridge
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/christ_elektronik_clm5ip_power_panel.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/christ-elektronik-clm5ip-power-panel
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/christ-elektronik-clm5ip-power-panel
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/aws_quota.md
   learn_path: /docs/collecting-metrics/cloud-and-devops/aws-quota
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/gpsd.md
@@ -743,7 +751,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/open_vswitch.md
   learn_path: /docs/collecting-metrics/networking/open-vswitch
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/amd_cpu_&_gpu.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/amd-cpu-&-gpu
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/amd-cpu-&-gpu
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/gobetween.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/gobetween
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/nrpe_daemon.md
@@ -753,7 +761,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/bungeecord.md
   learn_path: /docs/collecting-metrics/applications/bungeecord
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/energomera_smart_power_meters.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/energomera-smart-power-meters
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/energomera-smart-power-meters
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ripe_atlas.md
   learn_path: /docs/collecting-metrics/networking/ripe-atlas
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/google_cloud_platform.md
@@ -761,21 +769,21 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/etcd.md
   learn_path: /docs/collecting-metrics/applications/etcd
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/homey.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/homey
+  learn_path: /docs/collecting-metrics/applications/homey
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/sonic_nos.md
   learn_path: /docs/collecting-metrics/networking/sonic-nos
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/journald.md
   learn_path: /docs/collecting-metrics/applications/journald
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/pimoroni_enviro+.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/pimoroni-enviro+
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/pimoroni-enviro+
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/eos.md
-  learn_path: /docs/collecting-metrics/storage/eos
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/eos
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/google_pagespeed.md
   learn_path: /docs/collecting-metrics/applications/google-pagespeed
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/vscode.md
   learn_path: /docs/collecting-metrics/applications/vscode
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/personal_weather_station.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/personal-weather-station
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/personal-weather-station
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/fastd.md
   learn_path: /docs/collecting-metrics/networking/fastd
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/openroadm_devices.md
@@ -783,49 +791,49 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/kannel.md
   learn_path: /docs/collecting-metrics/applications/kannel
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/nagios.md
-  learn_path: /docs/collecting-metrics/cloud-and-devops/nagios
+  learn_path: /docs/collecting-metrics/applications/nagios
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/4d_server.md
   learn_path: /docs/collecting-metrics/databases/4d-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/gitlab_runner.md
   learn_path: /docs/collecting-metrics/cloud-and-devops/gitlab-runner
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cilium_proxy.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/cilium-proxy
+  learn_path: /docs/collecting-metrics/containers-and-vms/cilium-proxy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/raritan_pdu.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/raritan-pdu
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/raritan-pdu
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/salicru_eqx_inverter.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/salicru-eqx-inverter
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/salicru-eqx-inverter
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/8430ft_modem.md
   learn_path: /docs/collecting-metrics/networking/8430ft-modem
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/graylog_server.md
   learn_path: /docs/collecting-metrics/applications/graylog-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/tesla_vehicle.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/tesla-vehicle
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/tesla-vehicle
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/chia.md
   learn_path: /docs/collecting-metrics/applications/chia
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/suricata.md
   learn_path: /docs/collecting-metrics/applications/suricata
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/xiaomi_mi_flora.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/xiaomi-mi-flora
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/xiaomi-mi-flora
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ubiquiti_ufiber_olt.md
   learn_path: /docs/collecting-metrics/networking/ubiquiti-ufiber-olt
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/dynatrace.md
   learn_path: /docs/collecting-metrics/cloud-and-devops/dynatrace
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/smart_meters_sml.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/smart-meters-sml
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/smart-meters-sml
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/radio_thermostat.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/radio-thermostat
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/radio-thermostat
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/generic_storage_enclosure_tool.md
-  learn_path: /docs/collecting-metrics/storage/generic-storage-enclosure-tool
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/generic-storage-enclosure-tool
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/sma_inverters.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/sma-inverters
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/sma-inverters
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/slurm.md
   learn_path: /docs/collecting-metrics/applications/slurm
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/statuspage.md
   learn_path: /docs/collecting-metrics/applications/statuspage
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/craftbeerpi.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/craftbeerpi
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/craftbeerpi
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ibm_spectrum.md
-  learn_path: /docs/collecting-metrics/storage/ibm-spectrum
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/ibm-spectrum
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/lynis_audit_reports.md
   learn_path: /docs/collecting-metrics/applications/lynis-audit-reports
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/honeypot.md
@@ -839,13 +847,13 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/halon.md
   learn_path: /docs/collecting-metrics/applications/halon
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/dutch_electricity_smart_meter.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/dutch-electricity-smart-meter
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/dutch-electricity-smart-meter
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/loki.md
   learn_path: /docs/collecting-metrics/applications/loki
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/uptimerobot.md
   learn_path: /docs/collecting-metrics/synthetic-testing/uptimerobot
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/mqtt_blackbox.md
-  learn_path: /docs/collecting-metrics/databases/mqtt-blackbox
+  learn_path: /docs/collecting-metrics/synthetic-testing/mqtt-blackbox
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/openrc.md
   learn_path: /docs/collecting-metrics/operating-systems/openrc
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/linode.md
@@ -853,7 +861,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/frrouting.md
   learn_path: /docs/collecting-metrics/networking/frrouting
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ibm_cryptoexpress_cex_cards.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/ibm-cryptoexpress-cex-cards
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/ibm-cryptoexpress-cex-cards
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/strongswan.md
   learn_path: /docs/collecting-metrics/networking/strongswan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/starlink_spacex.md
@@ -863,9 +871,9 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/clustercontrol_cmon.md
   learn_path: /docs/collecting-metrics/databases/clustercontrol-cmon
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/elgato_key_light_devices..md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/elgato-key-light-devices.
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/elgato-key-light-devices.
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cilium_agent.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/cilium-agent
+  learn_path: /docs/collecting-metrics/containers-and-vms/cilium-agent
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/bosh.md
   learn_path: /docs/collecting-metrics/cloud-and-devops/bosh
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cloud_foundry.md
@@ -873,7 +881,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/radius.md
   learn_path: /docs/collecting-metrics/applications/radius
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/sunspec_solar_energy.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/sunspec-solar-energy
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/sunspec-solar-energy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ibm_mq.md
   learn_path: /docs/collecting-metrics/databases/ibm-mq
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/tacacs.md
@@ -881,7 +889,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/vault_pki.md
   learn_path: /docs/collecting-metrics/applications/vault-pki
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/siemens_s7_plc.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/siemens-s7-plc
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/siemens-s7-plc
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/bird_routing_daemon.md
   learn_path: /docs/collecting-metrics/networking/bird-routing-daemon
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/alamos_fe2_server.md
@@ -891,29 +899,29 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/github_repository.md
   learn_path: /docs/collecting-metrics/applications/github-repository
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/tesla_wall_connector.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/tesla-wall-connector
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/tesla-wall-connector
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ibm_aix_systems_njmon.md
   learn_path: /docs/collecting-metrics/applications/ibm-aix-systems-njmon
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cilium_operator.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/cilium-operator
+  learn_path: /docs/collecting-metrics/containers-and-vms/cilium-operator
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/sense_energy.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/sense-energy
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/sense-energy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/keepalived.md
   learn_path: /docs/collecting-metrics/networking/keepalived
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/obs_studio.md
   learn_path: /docs/collecting-metrics/applications/obs-studio
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/storidge.md
-  learn_path: /docs/collecting-metrics/storage/storidge
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/storidge
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/solis_ginlong_5g_inverters.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/solis-ginlong-5g-inverters
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/solis-ginlong-5g-inverters
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/lustre_metadata.md
-  learn_path: /docs/collecting-metrics/cloud-and-devops/lustre-metadata
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/lustre-metadata
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/spacelift.md
   learn_path: /docs/collecting-metrics/cloud-and-devops/spacelift
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/patroni.md
   learn_path: /docs/collecting-metrics/databases/patroni
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/netapp_ontap_api.md
-  learn_path: /docs/collecting-metrics/storage/netapp-ontap-api
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/netapp-ontap-api
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/meilisearch.md
   learn_path: /docs/collecting-metrics/databases/meilisearch
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/warp10.md
@@ -925,11 +933,11 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/kafka.md
   learn_path: /docs/collecting-metrics/databases/kafka
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/nature_remo_e_lite_devices.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/nature-remo-e-lite-devices
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/nature-remo-e-lite-devices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/clamscan_results.md
   learn_path: /docs/collecting-metrics/applications/clamscan-results
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/collectd.md
-  learn_path: /docs/collecting-metrics/cloud-and-devops/collectd
+  learn_path: /docs/collecting-metrics/applications/collectd
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/redis_queue.md
   learn_path: /docs/collecting-metrics/databases/redis-queue
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/twitch.md
@@ -949,23 +957,23 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/dmarc.md
   learn_path: /docs/collecting-metrics/applications/dmarc
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/kafka_consumer_lag.md
-  learn_path: /docs/collecting-metrics/applications/kafka-consumer-lag
+  learn_path: /docs/collecting-metrics/databases/kafka-consumer-lag
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/scylladb.md
   learn_path: /docs/collecting-metrics/databases/scylladb
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/proxmox_ve.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/proxmox-ve
+  learn_path: /docs/collecting-metrics/containers-and-vms/proxmox-ve
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/tado_smart_heating_solution.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/tado-smart-heating-solution
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/tado-smart-heating-solution
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/google_stackdriver.md
   learn_path: /docs/collecting-metrics/cloud-and-devops/google-stackdriver
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/netatmo_sensors.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/netatmo-sensors
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/netatmo-sensors
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/zerto.md
   learn_path: /docs/collecting-metrics/cloud-and-devops/zerto
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/pgpool-ii.md
   learn_path: /docs/collecting-metrics/databases/pgpool-ii
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/philips_hue.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/philips-hue
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/philips-hue
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/postfix/README.md
   learn_path: /docs/collecting-metrics/applications/postfix
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/oracledb/README.md
@@ -981,9 +989,9 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/REFERENCE.md
   learn_path: /docs/collecting-metrics/collectors-configuration
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/diskspace.plugin/README.md
-  learn_path: /docs/collecting-metrics/operating-systems/disk-space
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/disk-space
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freeipmi.plugin/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/intelligent-platform-management-interface-ipmi
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/intelligent-platform-management-interface-ipmi
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/profile.plugin/README.md
   learn_path: /docs/developer-and-contributor-corner/external-plugins/profile.plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/idlejitter.plugin/README.md
@@ -991,9 +999,9 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/README.md
   learn_path: /docs/developer-and-contributor-corner/external-plugins/python.d.plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/pandas/README.md
-  learn_path: /docs/collecting-metrics/applications/pandas
+  learn_path: /docs/collecting-metrics/databases/pandas
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/am2320/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/am2320
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/am2320
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/python.d.plugin/go_expvar/README.md
   learn_path: /docs/collecting-metrics/applications/go-applications-expvar
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/macos.plugin/README.md
@@ -1001,47 +1009,47 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/processor.md
   learn_path: /docs/collecting-metrics/operating-systems/processor
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory_federation_service.md
-  learn_path: /docs/collecting-metrics/operating-systems/active-directory-federation-service
+  learn_path: /docs/collecting-metrics/applications/active-directory-federation-service
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/asp.net.md
-  learn_path: /docs/collecting-metrics/operating-systems/asp.net
+  learn_path: /docs/collecting-metrics/web-servers-and-proxies/asp.net
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_thermal_zone.md
-  learn_path: /docs/collecting-metrics/operating-systems/system-thermal-zone
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/system-thermal-zone
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/memory_statistics.md
   learn_path: /docs/collecting-metrics/operating-systems/memory-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hyper-v.md
-  learn_path: /docs/collecting-metrics/operating-systems/hyper-v
+  learn_path: /docs/collecting-metrics/containers-and-vms/hyper-v
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/semaphore_statistics.md
   learn_path: /docs/collecting-metrics/operating-systems/semaphore-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/iis.md
-  learn_path: /docs/collecting-metrics/operating-systems/iis
+  learn_path: /docs/collecting-metrics/web-servers-and-proxies/iis
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/windows_services.md
   learn_path: /docs/collecting-metrics/operating-systems/windows-services
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_statistics.md
   learn_path: /docs/collecting-metrics/operating-systems/system-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/network_subsystem.md
-  learn_path: /docs/collecting-metrics/operating-systems/network-subsystem
+  learn_path: /docs/collecting-metrics/networking/network-subsystem
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory.md
-  learn_path: /docs/collecting-metrics/operating-systems/active-directory
+  learn_path: /docs/collecting-metrics/applications/active-directory
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/numa_architecture.md
   learn_path: /docs/collecting-metrics/operating-systems/numa-architecture
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_exchange.md
-  learn_path: /docs/collecting-metrics/operating-systems/ms-exchange
+  learn_path: /docs/collecting-metrics/applications/ms-exchange
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/power_supply.md
-  learn_path: /docs/collecting-metrics/operating-systems/power-supply
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/power-supply
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/physical_and_logical_disk_performance_metrics.md
-  learn_path: /docs/collecting-metrics/operating-systems/physical-and-logical-disk-performance-metrics
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/physical-and-logical-disk-performance-metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hardware_information_collected_from_kernel_ring..md
-  learn_path: /docs/collecting-metrics/operating-systems/hardware-information-collected-from-kernel-ring.
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/hardware-information-collected-from-kernel-ring.
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_sql_server.md
-  learn_path: /docs/collecting-metrics/operating-systems/ms-sql-server
+  learn_path: /docs/collecting-metrics/databases/ms-sql-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/net_framework.md
-  learn_path: /docs/collecting-metrics/operating-systems/net-framework
+  learn_path: /docs/collecting-metrics/applications/net-framework
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/sensors.md
-  learn_path: /docs/collecting-metrics/operating-systems/sensors
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/sensors
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory_certificate_service.md
-  learn_path: /docs/collecting-metrics/operating-systems/active-directory-certificate-service
+  learn_path: /docs/collecting-metrics/applications/active-directory-certificate-service
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cups.plugin/README.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/cups
+  learn_path: /docs/collecting-metrics/applications/cups
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md
   learn_path: /docs/logs/log2journal
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/users.md
@@ -1053,25 +1061,25 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_shm.md
   learn_path: /docs/collecting-metrics/operating-systems/ebpf-shm
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_mdflush.md
-  learn_path: /docs/collecting-metrics/operating-systems/ebpf-mdflush
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/ebpf-mdflush
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_vfs.md
-  learn_path: /docs/collecting-metrics/operating-systems/ebpf-vfs
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/ebpf-vfs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_socket.md
-  learn_path: /docs/collecting-metrics/operating-systems/ebpf-socket
+  learn_path: /docs/collecting-metrics/networking/ebpf-socket
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_hardirq.md
   learn_path: /docs/collecting-metrics/operating-systems/ebpf-hardirq
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_disk.md
-  learn_path: /docs/collecting-metrics/operating-systems/ebpf-disk
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/ebpf-disk
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_swap.md
   learn_path: /docs/collecting-metrics/operating-systems/ebpf-swap
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_filesystem.md
-  learn_path: /docs/collecting-metrics/operating-systems/ebpf-filesystem
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/ebpf-filesystem
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_filedescriptor.md
   learn_path: /docs/collecting-metrics/operating-systems/ebpf-filedescriptor
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_process.md
   learn_path: /docs/collecting-metrics/operating-systems/ebpf-process
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_sync.md
-  learn_path: /docs/collecting-metrics/operating-systems/ebpf-sync
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/ebpf-sync
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_processes.md
   learn_path: /docs/collecting-metrics/operating-systems/ebpf-processes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_cachestat.md
@@ -1081,11 +1089,11 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_oomkill.md
   learn_path: /docs/collecting-metrics/operating-systems/ebpf-oomkill
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_mount.md
-  learn_path: /docs/collecting-metrics/operating-systems/ebpf-mount
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/ebpf-mount
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_dcstat.md
   learn_path: /docs/collecting-metrics/operating-systems/ebpf-dcstat
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/nfacct.plugin/README.md
-  learn_path: /docs/collecting-metrics/operating-systems/netfilter
+  learn_path: /docs/collecting-metrics/networking/netfilter
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md
   learn_path: /docs/logs/systemd-journal-logs/systemd-journal-plugin-reference
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md
@@ -1099,39 +1107,39 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/opensips/README.md
   learn_path: /docs/collecting-metrics/applications/opensips
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/tc.plugin/README.md
-  learn_path: /docs/collecting-metrics/operating-systems/tc-qos-classes
+  learn_path: /docs/collecting-metrics/networking/tc-qos-classes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/linux_zswap.md
   learn_path: /docs/collecting-metrics/operating-systems/linux-zswap
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/system_memory_fragmentation.md
   learn_path: /docs/collecting-metrics/operating-systems/system-memory-fragmentation
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/power_capping.md
-  learn_path: /docs/collecting-metrics/operating-systems/power-capping
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/power-capping
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.inet.tcp.stats.md
-  learn_path: /docs/collecting-metrics/operating-systems/net.inet.tcp.stats
+  learn_path: /docs/collecting-metrics/networking/net.inet.tcp.stats
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.stats.vm.v_swappgs.md
   learn_path: /docs/collecting-metrics/operating-systems/vm.stats.vm.v_swappgs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/getifaddrs.md
-  learn_path: /docs/collecting-metrics/operating-systems/getifaddrs
+  learn_path: /docs/collecting-metrics/networking/getifaddrs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.stats.vm.v_pgfaults.md
   learn_path: /docs/collecting-metrics/operating-systems/vm.stats.vm.v_pgfaults
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/system.ram.md
   learn_path: /docs/collecting-metrics/operating-systems/system.ram
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/dev.cpu.temperature.md
-  learn_path: /docs/collecting-metrics/operating-systems/dev.cpu.temperature
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/dev.cpu.temperature
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.stats.sys.v_intr.md
   learn_path: /docs/collecting-metrics/operating-systems/vm.stats.sys.v_intr
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.inet6.ip6.stats.md
-  learn_path: /docs/collecting-metrics/operating-systems/net.inet6.ip6.stats
+  learn_path: /docs/collecting-metrics/networking/net.inet6.ip6.stats
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.inet.icmp.stats.md
-  learn_path: /docs/collecting-metrics/operating-systems/net.inet.icmp.stats
+  learn_path: /docs/collecting-metrics/networking/net.inet.icmp.stats
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/devstat.md
-  learn_path: /docs/collecting-metrics/operating-systems/devstat
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/devstat
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.isr.md
-  learn_path: /docs/collecting-metrics/operating-systems/net.isr
+  learn_path: /docs/collecting-metrics/networking/net.isr
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/dev.cpu.0.freq.md
   learn_path: /docs/collecting-metrics/operating-systems/dev.cpu.0.freq
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/getmntinfo.md
-  learn_path: /docs/collecting-metrics/operating-systems/getmntinfo
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/getmntinfo
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/kern.ipc.sem.md
   learn_path: /docs/collecting-metrics/operating-systems/kern.ipc.sem
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.stats.sys.v_swtch.md
@@ -1141,17 +1149,17 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.loadavg.md
   learn_path: /docs/collecting-metrics/operating-systems/vm.loadavg
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.inet.ip.stats.md
-  learn_path: /docs/collecting-metrics/operating-systems/net.inet.ip.stats
+  learn_path: /docs/collecting-metrics/networking/net.inet.ip.stats
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.stats.sys.v_soft.md
   learn_path: /docs/collecting-metrics/operating-systems/vm.stats.sys.v_soft
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.inet.tcp.states.md
-  learn_path: /docs/collecting-metrics/operating-systems/net.inet.tcp.states
+  learn_path: /docs/collecting-metrics/networking/net.inet.tcp.states
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.inet6.icmp6.stats.md
-  learn_path: /docs/collecting-metrics/operating-systems/net.inet6.icmp6.stats
+  learn_path: /docs/collecting-metrics/networking/net.inet6.icmp6.stats
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/uptime.md
   learn_path: /docs/collecting-metrics/operating-systems/uptime
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/ipfw.md
-  learn_path: /docs/collecting-metrics/operating-systems/ipfw
+  learn_path: /docs/collecting-metrics/networking/ipfw
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/kern.cp_time.md
   learn_path: /docs/collecting-metrics/operating-systems/kern.cp_time
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/hw.intrcnt.md
@@ -1159,55 +1167,55 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/kern.ipc.shm.md
   learn_path: /docs/collecting-metrics/operating-systems/kern.ipc.shm
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/zfs.md
-  learn_path: /docs/collecting-metrics/operating-systems/zfs
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/zfs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.inet.udp.stats.md
-  learn_path: /docs/collecting-metrics/operating-systems/net.inet.udp.stats
+  learn_path: /docs/collecting-metrics/networking/net.inet.udp.stats
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/kern.ipc.msq.md
   learn_path: /docs/collecting-metrics/operating-systems/kern.ipc.msq
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.vmtotal.md
   learn_path: /docs/collecting-metrics/operating-systems/vm.vmtotal
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/containerd_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/containerd-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/containerd-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/nomad_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/nomad-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/nomad-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/podman_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/podman-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/podman-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/ovirt_vms.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/ovirt-vms
+  learn_path: /docs/collecting-metrics/containers-and-vms/ovirt-vms
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/libvirt_vms_and_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/libvirt-vms-and-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/libvirt-vms-and-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/openshift_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/openshift-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/openshift-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/docker_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/docker-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/docker-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/kubernetes_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/kubernetes-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/kubernetes-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/systemd-nspawn_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/systemd-nspawn-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/systemd-nspawn-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/aws_ecs_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/aws-ecs-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/aws-ecs-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/virtual_machines.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/virtual-machines
+  learn_path: /docs/collecting-metrics/containers-and-vms/virtual-machines
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/lxc_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/lxc-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/lxc-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/proxmox_vms_and_containers.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/proxmox-vms-and-containers
+  learn_path: /docs/collecting-metrics/containers-and-vms/proxmox-vms-and-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/systemd_services.md
   learn_path: /docs/collecting-metrics/operating-systems/systemd-services
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/integrations/openstack_vms.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/openstack-vms
+  learn_path: /docs/collecting-metrics/containers-and-vms/openstack-vms
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/timex.plugin/README.md
   learn_path: /docs/collecting-metrics/networking/timex
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/xenstat.plugin/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/xen-xcp-ng
+  learn_path: /docs/collecting-metrics/containers-and-vms/xen-xcp-ng
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/perf.plugin/README.md
   learn_path: /docs/collecting-metrics/operating-systems/cpu-performance
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ioping.plugin/README.md
   learn_path: /docs/collecting-metrics/synthetic-testing/ioping
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/guides/proxmox/README.md
-  learn_path: /docs/collecting-metrics/containers-and-orchestration/proxmox-ve-monitoring
+  learn_path: /docs/collecting-metrics/containers-and-vms/proxmox-ve-monitoring
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/slabinfo.plugin/README.md
   learn_path: /docs/collecting-metrics/operating-systems/linux-kernel-slab-allocator-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/statsd.plugin/README.md
@@ -1215,11 +1223,11 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/memory_usage.md
   learn_path: /docs/collecting-metrics/operating-systems/memory-usage
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/md_raid.md
-  learn_path: /docs/collecting-metrics/operating-systems/md-raid
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/md-raid
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/ip_virtual_server.md
-  learn_path: /docs/collecting-metrics/operating-systems/ip-virtual-server
+  learn_path: /docs/collecting-metrics/networking/ip-virtual-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/conntrack.md
-  learn_path: /docs/collecting-metrics/operating-systems/conntrack
+  learn_path: /docs/collecting-metrics/networking/conntrack
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/system_uptime.md
   learn_path: /docs/collecting-metrics/operating-systems/system-uptime
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/memory_statistics.md
@@ -1229,57 +1237,59 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/non-uniform_memory_access.md
   learn_path: /docs/collecting-metrics/operating-systems/non-uniform-memory-access
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/nfs_client.md
-  learn_path: /docs/collecting-metrics/operating-systems/nfs-client
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/nfs-client
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/zram.md
   learn_path: /docs/collecting-metrics/operating-systems/zram
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/bcache.md
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/bcache
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/softirq_statistics.md
   learn_path: /docs/collecting-metrics/operating-systems/softirq-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/system_statistics.md
   learn_path: /docs/collecting-metrics/operating-systems/system-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/zfs_adaptive_replacement_cache.md
-  learn_path: /docs/collecting-metrics/operating-systems/zfs-adaptive-replacement-cache
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/zfs-adaptive-replacement-cache
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/ipv6_socket_statistics.md
-  learn_path: /docs/collecting-metrics/operating-systems/ipv6-socket-statistics
+  learn_path: /docs/collecting-metrics/networking/ipv6-socket-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/amd_gpu.md
-  learn_path: /docs/collecting-metrics/hardware-and-iot/amd-gpu
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/amd-gpu
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/kernel_same-page_merging.md
   learn_path: /docs/collecting-metrics/operating-systems/kernel-same-page-merging
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/nfs_server.md
-  learn_path: /docs/collecting-metrics/operating-systems/nfs-server
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/nfs-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/power_supply.md
-  learn_path: /docs/collecting-metrics/operating-systems/power-supply
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/power-supply
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/interrupts.md
   learn_path: /docs/collecting-metrics/operating-systems/interrupts
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/network_interfaces.md
-  learn_path: /docs/collecting-metrics/operating-systems/network-interfaces
+  learn_path: /docs/collecting-metrics/networking/network-interfaces
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/page_types.md
   learn_path: /docs/collecting-metrics/operating-systems/page-types
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/memory_modules_dimms.md
-  learn_path: /docs/collecting-metrics/operating-systems/memory-modules-dimms
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/memory-modules-dimms
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/system_load_average.md
   learn_path: /docs/collecting-metrics/operating-systems/system-load-average
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/socket_statistics.md
-  learn_path: /docs/collecting-metrics/operating-systems/socket-statistics
+  learn_path: /docs/collecting-metrics/networking/socket-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/infiniband.md
-  learn_path: /docs/collecting-metrics/operating-systems/infiniband
+  learn_path: /docs/collecting-metrics/networking/infiniband
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/softnet_statistics.md
-  learn_path: /docs/collecting-metrics/operating-systems/softnet-statistics
+  learn_path: /docs/collecting-metrics/networking/softnet-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/synproxy.md
-  learn_path: /docs/collecting-metrics/operating-systems/synproxy
+  learn_path: /docs/collecting-metrics/networking/synproxy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/btrfs.md
-  learn_path: /docs/collecting-metrics/operating-systems/btrfs
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/btrfs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/disk_statistics.md
-  learn_path: /docs/collecting-metrics/operating-systems/disk-statistics
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/disk-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/inter_process_communication.md
   learn_path: /docs/collecting-metrics/operating-systems/inter-process-communication
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/network_statistics.md
-  learn_path: /docs/collecting-metrics/operating-systems/network-statistics
+  learn_path: /docs/collecting-metrics/networking/network-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/entropy.md
   learn_path: /docs/collecting-metrics/operating-systems/entropy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/sctp_statistics.md
-  learn_path: /docs/collecting-metrics/operating-systems/sctp-statistics
+  learn_path: /docs/collecting-metrics/networking/sctp-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/wireless_network_interfaces.md
-  learn_path: /docs/collecting-metrics/operating-systems/wireless-network-interfaces
+  learn_path: /docs/collecting-metrics/networking/wireless-network-interfaces
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows-events.plugin/README.md
   learn_path: /docs/logs/windows-event-logs/windows-events-plugin-reference
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/claim/README.md
