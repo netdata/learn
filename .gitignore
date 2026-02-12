@@ -30,3 +30,6 @@ yarn-error.log*
 /myenv/
 venv
 .python-version
+
+# Test coverage reports
+/coverage/

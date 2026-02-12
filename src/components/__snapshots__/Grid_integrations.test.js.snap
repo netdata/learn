@@ -1,0 +1,122 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Grid_integrations component > snapshots > should match Box snapshot with banner 1`] = `
+<div>
+  <custom-link>
+    <a
+      class="white custom-element p-8 rounded !no-underline "
+      data-testid="docusaurus-link"
+      href="/docs/test"
+      style="position: relative; box-shadow: 0px 0px 12px -5px rgba(76, 76, 76, 0.48); background-color: white; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
+    >
+      <div
+        style="width: 100%; height: 10%; position: absolute; bottom: 0px; color: rgb(0, 255, 0); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; font-size: 7pt; text-align: center; font-weight: 1000; line-height: normal;"
+      >
+        New
+      </div>
+      <custom-h7
+        class="h7 group-hover:text-green-light dark:group-hover:text-green-light"
+        style="text-align: center; font-size: 12px;"
+      >
+        Test Integration
+      </custom-h7>
+      <div
+        style="width: 60%; max-height: 60%; aspect-ratio: 1/1; display: flex; justify-content: center; align-items: center;"
+      >
+        <span>
+          Integration Icon
+        </span>
+      </div>
+    </a>
+  </custom-link>
+</div>
+`;
+
+exports[`Grid_integrations component > snapshots > should match Box snapshot without banner 1`] = `
+<div>
+  <custom-link>
+    <a
+      class="white custom-element p-8 rounded !no-underline "
+      data-testid="docusaurus-link"
+      href="/docs/test"
+      style="position: relative; box-shadow: 0px 0px 12px -5px rgba(76, 76, 76, 0.48); background-color: white; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
+    >
+      <div
+        style="width: 100%; height: 10%; position: absolute; bottom: 0px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; font-size: 7pt; text-align: center; font-weight: 1000; line-height: normal;"
+      />
+      <custom-h7
+        class="h7 group-hover:text-green-light dark:group-hover:text-green-light"
+        style="text-align: center; font-size: 12px;"
+      >
+        Simple Integration
+      </custom-h7>
+      <div
+        style="width: 60%; max-height: 60%; aspect-ratio: 1/1; display: flex; justify-content: center; align-items: center;"
+      >
+        <span>
+          Simple Icon
+        </span>
+      </div>
+    </a>
+  </custom-link>
+</div>
+`;
+
+exports[`Grid_integrations component > snapshots > should match Grid snapshot 1`] = `
+<div>
+  <div
+    class="grid custom-grid"
+  >
+    <custom-link>
+      <a
+        class="white custom-element p-8 rounded !no-underline "
+        data-testid="docusaurus-link"
+        href="/docs/test1"
+        style="position: relative; box-shadow: 0px 0px 12px -5px rgba(76, 76, 76, 0.48); background-color: white; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
+      >
+        <div
+          style="width: 100%; height: 10%; position: absolute; bottom: 0px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; font-size: 7pt; text-align: center; font-weight: 1000; line-height: normal;"
+        />
+        <custom-h7
+          class="h7 group-hover:text-green-light dark:group-hover:text-green-light"
+          style="text-align: center; font-size: 12px;"
+        >
+          Integration 1
+        </custom-h7>
+        <div
+          style="width: 60%; max-height: 60%; aspect-ratio: 1/1; display: flex; justify-content: center; align-items: center;"
+        >
+          <span>
+            Icon 1
+          </span>
+        </div>
+      </a>
+    </custom-link>
+    <custom-link>
+      <a
+        class="white custom-element p-8 rounded !no-underline "
+        data-testid="docusaurus-link"
+        href="/docs/test2"
+        style="position: relative; box-shadow: 0px 0px 12px -5px rgba(76, 76, 76, 0.48); background-color: white; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
+      >
+        <div
+          style="width: 100%; height: 10%; position: absolute; bottom: 0px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; font-size: 7pt; text-align: center; font-weight: 1000; line-height: normal;"
+        />
+        <custom-h7
+          class="h7 group-hover:text-green-light dark:group-hover:text-green-light"
+          style="text-align: center; font-size: 12px;"
+        >
+          Integration 2
+        </custom-h7>
+        <div
+          style="width: 60%; max-height: 60%; aspect-ratio: 1/1; display: flex; justify-content: center; align-items: center;"
+        >
+          <span>
+            Icon 2
+          </span>
+        </div>
+      </a>
+    </custom-link>
+  </div>
+</div>
+`;

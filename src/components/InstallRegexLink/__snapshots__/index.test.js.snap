@@ -1,0 +1,87 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`InstallRegexLink components > snapshots > should match InstallBoxRegexLink snapshot 1`] = `
+<div>
+  <a
+    class="group relative p-8 border border-gray-200 rounded !no-underline shadow-sm hover:text-text dark:bg-gray-800 dark:border-gray-500"
+    data-testid="docusaurus-link"
+    href="/docs/install/linux"
+  >
+    <div
+      class="flex items-center justify-center w-8 h-8 bg-blue group-hover:bg-green-light rounded-full mb-1"
+    >
+      <svg
+        aria-label="Linux"
+        data-src="/img/install/linux.svg"
+        data-testid="inline-svg"
+      >
+        <title>
+          Linux
+        </title>
+      </svg>
+    </div>
+    <h3
+      class="!text-base font-semibold group-hover:text-green-light"
+    >
+      Linux
+    </h3>
+  </a>
+</div>
+`;
+
+exports[`InstallRegexLink components > snapshots > should match InstallRegexLink snapshot 1`] = `
+<div>
+  <div
+    class="grid grid-flow-row grid-cols-1 md:grid-cols-3 gap-8 test-class"
+  >
+    <a
+      class="group relative p-8 border border-gray-200 rounded !no-underline shadow-sm hover:text-text dark:bg-gray-800 dark:border-gray-500"
+      data-testid="docusaurus-link"
+      href="/docs/install/linux"
+    >
+      <div
+        class="flex items-center justify-center w-8 h-8 bg-blue group-hover:bg-green-light rounded-full mb-1"
+      >
+        <svg
+          aria-label="Linux"
+          data-src="/img/install/linux.svg"
+          data-testid="inline-svg"
+        >
+          <title>
+            Linux
+          </title>
+        </svg>
+      </div>
+      <h3
+        class="!text-base font-semibold group-hover:text-green-light"
+      >
+        Linux
+      </h3>
+    </a>
+    <a
+      class="group relative p-8 border border-gray-200 rounded !no-underline shadow-sm hover:text-text dark:bg-gray-800 dark:border-gray-500"
+      data-testid="docusaurus-link"
+      href="/docs/install/macos"
+    >
+      <div
+        class="flex items-center justify-center w-8 h-8 bg-blue group-hover:bg-green-light rounded-full mb-1"
+      >
+        <svg
+          aria-label="macOS"
+          data-src="/img/install/macos.svg"
+          data-testid="inline-svg"
+        >
+          <title>
+            macOS
+          </title>
+        </svg>
+      </div>
+      <h3
+        class="!text-base font-semibold group-hover:text-green-light"
+      >
+        macOS
+      </h3>
+    </a>
+  </div>
+</div>
+`;

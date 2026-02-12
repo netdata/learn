@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FooterWrapper component > snapshots > should match snapshot 1`] = `
+<div>
+  <footer
+    data-testid="doc-item-footer"
+  >
+    Original Footer
+  </footer>
+  <i>
+    <br />
+    Do you have any feedback for this page? If so, you can open a new issue on our 
+    <a
+      href="https://github.com/netdata/learn/issues/new?assignees=&labels=feedback&template=feedback_form.yml&title=%5BFeedback%5D%3A+"
+      style="text-decoration: underline;"
+      target="_blank"
+    >
+      netdata/learn
+    </a>
+     repository.
+  </i>
+</div>
+`;

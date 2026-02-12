@@ -1,0 +1,107 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ColorModeToggle component > snapshots > should match snapshot in dark mode 1`] = `
+<div>
+  <div
+    class="toggle"
+  >
+    <button
+      aria-label="Switch between dark and light mode (currently dark mode)"
+      aria-live="polite"
+      class="clean-btn toggleButton"
+      title="Switch between dark and light mode (currently dark mode)"
+      type="button"
+    >
+      <svg
+        class="toggleIcon lightToggleIcon"
+        data-testid="icon-light-mode"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="5"
+        />
+      </svg>
+      <svg
+        class="toggleIcon darkToggleIcon"
+        data-testid="icon-dark-mode"
+      >
+        <path
+          d="M21 12.79A9 9 0 1 1 11.21 3"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ColorModeToggle component > snapshots > should match snapshot in light mode 1`] = `
+<div>
+  <div
+    class="toggle"
+  >
+    <button
+      aria-label="Switch between dark and light mode (currently light mode)"
+      aria-live="polite"
+      class="clean-btn toggleButton"
+      title="Switch between dark and light mode (currently light mode)"
+      type="button"
+    >
+      <svg
+        class="toggleIcon lightToggleIcon"
+        data-testid="icon-light-mode"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="5"
+        />
+      </svg>
+      <svg
+        class="toggleIcon darkToggleIcon"
+        data-testid="icon-dark-mode"
+      >
+        <path
+          d="M21 12.79A9 9 0 1 1 11.21 3"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ColorModeToggle component > snapshots > should match snapshot when disabled 1`] = `
+<div>
+  <div
+    class="toggle"
+  >
+    <button
+      aria-label="Switch between dark and light mode (currently light mode)"
+      aria-live="polite"
+      class="clean-btn toggleButton toggleButtonDisabled"
+      disabled=""
+      title="Switch between dark and light mode (currently light mode)"
+      type="button"
+    >
+      <svg
+        class="toggleIcon lightToggleIcon"
+        data-testid="icon-light-mode"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="5"
+        />
+      </svg>
+      <svg
+        class="toggleIcon darkToggleIcon"
+        data-testid="icon-dark-mode"
+      >
+        <path
+          d="M21 12.79A9 9 0 1 1 11.21 3"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;

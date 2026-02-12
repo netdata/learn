@@ -5634,20 +5634,8 @@
   to="/docs/collecting-metrics/containers-and-vms/virtual-machines"
 
 [[redirects]]
-  from="/docs/data-collection/containers-and-vms/proxmox-containers"
-  to="/docs/collecting-metrics/containers-and-vms/proxmox-containers"
-
-[[redirects]]
-  from="/docs/data-collection/containers-and-vms/ovirt-containers"
-  to="/docs/collecting-metrics/containers-and-vms/ovirt-containers"
-
-[[redirects]]
   from="/docs/data-collection/containers-and-vms/lxc-containers"
   to="/docs/collecting-metrics/containers-and-vms/lxc-containers"
-
-[[redirects]]
-  from="/docs/data-collection/containers-and-vms/libvirt-containers"
-  to="/docs/collecting-metrics/containers-and-vms/libvirt-containers"
 
 [[redirects]]
   from="/docs/data-collection/containers-and-vms/containers"
@@ -8604,5 +8592,37 @@
 [[redirects]]
   from="/docs//getting-started"
   to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/data-collection/systemd-journal"
+  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal/active-journal-centralization-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal/active-journal-source-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
+  to="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal"
+  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+
+[[redirects]]
+  from="/docs/working-with-logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
+  to="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
+
+[[redirects]]
+  from="/docs/working-with-logs/systemd-journal"
+  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
 
 # section: dynamic << END

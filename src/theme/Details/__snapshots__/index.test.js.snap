@@ -1,0 +1,56 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Details component > snapshots > should match snapshot with basic content 1`] = `
+<div>
+  <details
+    class="alert alert--info details"
+    data-testid="docusaurus-details-generic"
+  >
+    <summary>
+      Click to expand
+    </summary>
+    This is the expandable content.
+  </details>
+</div>
+`;
+
+exports[`Details component > snapshots > should match snapshot with complex children 1`] = `
+<div>
+  <details
+    class="alert alert--info details"
+    data-testid="docusaurus-details-generic"
+  >
+    <summary>
+      Complex Content
+    </summary>
+    <p>
+      First paragraph
+    </p>
+    <code>
+      Some code
+    </code>
+    <ul>
+      <li>
+        Item 1
+      </li>
+      <li>
+        Item 2
+      </li>
+    </ul>
+  </details>
+</div>
+`;
+
+exports[`Details component > snapshots > should match snapshot with custom className 1`] = `
+<div>
+  <details
+    class="alert alert--info details custom-details"
+    data-testid="docusaurus-details-generic"
+  >
+    <summary>
+      Summary
+    </summary>
+    Content with custom class
+  </details>
+</div>
+`;

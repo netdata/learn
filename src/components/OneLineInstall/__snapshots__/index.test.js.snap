@@ -1,0 +1,347 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`OneLineInstall component > snapshots > should match snapshot with all flags disabled 1`] = `
+<div>
+  <div
+    class="relative overflow-hidden mt-8 mb-8 rounded-tr rounded-tl Container"
+  >
+    <div
+      class="text-lg lg:text-xl"
+    >
+      <pre
+        class="language-bash"
+        data-language="bash"
+        data-testid="code-block"
+      >
+        <code>
+          wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh --no-updates --stable-channel --disable-telemetry --claim-token TEST_TOKEN
+        </code>
+      </pre>
+    </div>
+    <div
+      class="z-10 relative -t-2 p-6 border-l border-b border-r border-gray-200 rounded-br rounded-bl dark:bg-gray-darkbg dark:border-gray-500"
+    >
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          id="oli_wget_4fzzzx__updates"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_wget_4fzzzx__updates"
+        >
+          Do you want automatic updates? 
+          <code>
+            default: enabled
+          </code>
+        </label>
+      </div>
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          id="oli_wget_4fzzzx__type"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_wget_4fzzzx__type"
+        >
+          Do you want nightly or stable releases? 
+          <code>
+            default: nightly
+          </code>
+        </label>
+      </div>
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          id="oli_wget_4fzzzx__stats"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_wget_4fzzzx__stats"
+        >
+          Do you want to contribute
+           
+          <a
+            class="hover:text-blue"
+            data-testid="docusaurus-link"
+            href="docs/netdata-agent/anonymous-telemetry-events"
+          >
+            anonymous statistics?
+          </a>
+           
+          <code>
+            default: enabled
+          </code>
+        </label>
+      </div>
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          checked=""
+          id="oli_wget_4fzzzx__cloud"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_wget_4fzzzx__cloud"
+        >
+          Do you want to
+           
+          <a
+            class="hover:text-blue"
+            data-testid="docusaurus-link"
+            href="/docs/netdata-cloud/connect-agent"
+          >
+            connect
+          </a>
+           
+          the node to Netdata Cloud? 
+          <code>
+            default: disabled
+          </code>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`OneLineInstall component > snapshots > should match snapshot with curl method 1`] = `
+<div>
+  <div
+    class="relative overflow-hidden mt-8 mb-8 rounded-tr rounded-tl Container"
+  >
+    <div
+      class="text-lg lg:text-xl"
+    >
+      <pre
+        class="language-bash"
+        data-language="bash"
+        data-testid="code-block"
+      >
+        <code>
+          curl https://get.netdata.cloud/kickstart.sh &gt; /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh
+        </code>
+      </pre>
+    </div>
+    <div
+      class="z-10 relative -t-2 p-6 border-l border-b border-r border-gray-200 rounded-br rounded-bl dark:bg-gray-darkbg dark:border-gray-500"
+    >
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          checked=""
+          id="oli_curl_4fzzzx__updates"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_curl_4fzzzx__updates"
+        >
+          Do you want automatic updates? 
+          <code>
+            default: enabled
+          </code>
+        </label>
+      </div>
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          checked=""
+          id="oli_curl_4fzzzx__type"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_curl_4fzzzx__type"
+        >
+          Do you want nightly or stable releases? 
+          <code>
+            default: nightly
+          </code>
+        </label>
+      </div>
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          checked=""
+          id="oli_curl_4fzzzx__stats"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_curl_4fzzzx__stats"
+        >
+          Do you want to contribute
+           
+          <a
+            class="hover:text-blue"
+            data-testid="docusaurus-link"
+            href="docs/netdata-agent/anonymous-telemetry-events"
+          >
+            anonymous statistics?
+          </a>
+           
+          <code>
+            default: enabled
+          </code>
+        </label>
+      </div>
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          id="oli_curl_4fzzzx__cloud"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_curl_4fzzzx__cloud"
+        >
+          Do you want to
+           
+          <a
+            class="hover:text-blue"
+            data-testid="docusaurus-link"
+            href="/docs/netdata-cloud/connect-agent"
+          >
+            connect
+          </a>
+           
+          the node to Netdata Cloud? 
+          <code>
+            default: disabled
+          </code>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`OneLineInstall component > snapshots > should match snapshot with defaults 1`] = `
+<div>
+  <div
+    class="relative overflow-hidden mt-8 mb-8 rounded-tr rounded-tl Container"
+  >
+    <div
+      class="text-lg lg:text-xl"
+    >
+      <pre
+        class="language-bash"
+        data-language="bash"
+        data-testid="code-block"
+      >
+        <code>
+          wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh
+        </code>
+      </pre>
+    </div>
+    <div
+      class="z-10 relative -t-2 p-6 border-l border-b border-r border-gray-200 rounded-br rounded-bl dark:bg-gray-darkbg dark:border-gray-500"
+    >
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          checked=""
+          id="oli_wget_4fzzzx__updates"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_wget_4fzzzx__updates"
+        >
+          Do you want automatic updates? 
+          <code>
+            default: enabled
+          </code>
+        </label>
+      </div>
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          checked=""
+          id="oli_wget_4fzzzx__type"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_wget_4fzzzx__type"
+        >
+          Do you want nightly or stable releases? 
+          <code>
+            default: nightly
+          </code>
+        </label>
+      </div>
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          checked=""
+          id="oli_wget_4fzzzx__stats"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_wget_4fzzzx__stats"
+        >
+          Do you want to contribute
+           
+          <a
+            class="hover:text-blue"
+            data-testid="docusaurus-link"
+            href="docs/netdata-agent/anonymous-telemetry-events"
+          >
+            anonymous statistics?
+          </a>
+           
+          <code>
+            default: enabled
+          </code>
+        </label>
+      </div>
+      <div
+        class="py-1 flex items-center"
+      >
+        <input
+          id="oli_wget_4fzzzx__cloud"
+          type="checkbox"
+        />
+        <label
+          class="relative text-sm pl-2"
+          for="oli_wget_4fzzzx__cloud"
+        >
+          Do you want to
+           
+          <a
+            class="hover:text-blue"
+            data-testid="docusaurus-link"
+            href="/docs/netdata-cloud/connect-agent"
+          >
+            connect
+          </a>
+           
+          the node to Netdata Cloud? 
+          <code>
+            default: disabled
+          </code>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
