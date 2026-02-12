@@ -90,7 +90,7 @@ The ingest script is a python script and has its dependencies (separate from the
     pip install -r .learn_environment/ingest-requirements.txt
     ```
 
-6. The organization of the files is handled by the [`map.csv` file](https://github.com/netdata/netdata/blob/master/docs/.map/map.csv), that contains metadata for every file. That file should only be edited by members of the Netdata team.
+6. The organization of the files is handled by the [`map.yaml` file](https://github.com/netdata/netdata/blob/master/docs/.map/map.yaml), that contains metadata for every file. That file should only be edited by members of the Netdata team.
 
 7. Run the ingest process to fetch the documents you are working on from one or multiple repos.
 
@@ -98,8 +98,25 @@ The ingest script is a python script and has its dependencies (separate from the
     python ingest/ingest.py --repos <owner>/<repo>:<branch>
     ```
 
-    for example, let's assume that you made some changes in the markdown files of `netdata/netdata` repo (branch: patch1)
-    and on your own fork `user1/go.d.plugin` repo (branch: user1-patch).
+    You can also use local paths instead of GitHub repos:
+
+    ```bash
+    python ingest/ingest.py --repos /path/to/local/netdata
+    ```
+
+    Or specify the repo name explicitly for a local path:
+
+    ```bash
+    python ingest/ingest.py --repos netdata:/path/to/local/netdata
+    ```
+
+    Examples combining GitHub and local paths:
+
+    ```bash
+    python ingest/ingest.py --repos netdata/netdata:patch1 /path/to/local/go.d.plugin
+    ```
+
+    Or if you have your own fork:
 
     ```bash
     python ingest/ingest.py --repos netdata/netdata:patch1 user1/go.d.plugin:user1-patch
@@ -148,7 +165,7 @@ This action runs at 14:00 UTC every day.
 If there are changes to any documentation file, the GitHub Action creates a PR that is then reviewed by a member of the Netdata team.
 
 The action can be configured to automatically assign one or more reviewers.
-To enable automatic assignments, uncomment the `# reviewers:` line at the end of [`ingest.yml`](.github/ingest.yml) and add the appropriate GitHub username(s)either space or comma-separated.
+To enable automatic assignments, uncomment the `# reviewers:` line at the end of [`ingest.yml`](/.github/workflows/ingest.yml) and add the appropriate GitHub username(s) either space or comma-separated.
 
 ## Update news on the Learn homepage
 

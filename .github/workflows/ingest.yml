@@ -14,6 +14,8 @@ on:
       - package.json
       - yarn.lock
       - tailwind.config.js
+      - '**/*.md'
+      - '**/*.mdx'
 
 env:
   # Assignees for broken links issues (all repos)

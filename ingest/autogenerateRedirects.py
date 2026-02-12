@@ -10,6 +10,7 @@ import errno
 import git
 import json
 import ast
+import yaml
 import autogenerateSupportedIntegrationsPage as genIntPage
 import pandas as pd
 import numpy as np
@@ -125,7 +126,9 @@ def addMovedRedirects(mapping):
 	# Reads one_commit_back, that is how the map was before these changes,
 	# and has the current mapping from the mapping variable.
 
-	one_commit_back = pd.read_csv("./ingest/one_commit_back_file-dict.tsv", sep='\t').set_index('custom_edit_url').T.to_dict('dict')
+	with open("./ingest/one_commit_back_file-dict.yaml", "r", encoding="utf-8") as fh:
+		redirect_list = yaml.safe_load(fh) or []
+	one_commit_back = {item['custom_edit_url']: item for item in redirect_list}
 
 	redirects = {}
 
