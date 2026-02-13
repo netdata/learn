@@ -77,6 +77,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [CouchDB](/docs/collecting-metrics/databases/couchdb) | This collector monitors CouchDB servers. |
 | [Elasticsearch](/docs/collecting-metrics/databases/elasticsearch) | This collector monitors the performance and health of the Elasticsearch cluster. |
 | [HANA](/docs/collecting-metrics/databases/hana) | Track SAP HANA database metrics for efficient data storage and query performance. |
+| [IBM DB2](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/db2/integrations/ibm_db2.md) | Monitors IBM DB2 databases using system catalog views and MON_GET_* table functions to expose connections, locking, buffer pool efficiency, tablespace capacity, and workload performance metrics. |
 | [IBM MQ](/docs/collecting-metrics/databases/ibm-mq) | Keep tabs on IBM MQ message queue metrics for efficient message transport and performance. |
 | [InfluxDB](/docs/collecting-metrics/databases/influxdb) | Monitor InfluxDB time-series database metrics for efficient data storage and query performance. |
 | [Kafka](/docs/collecting-metrics/databases/kafka) | Keep an eye on Kafka message queue metrics for optimized data streaming and performance. |
@@ -203,6 +204,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Entropy](/docs/collecting-metrics/operating-systems/entropy) | Entropy, a measure of the randomness or unpredictability of data. |
 | [FreeBSD RCTL-RACCT](/docs/collecting-metrics/operating-systems/freebsd-rctl-racct) | Keep an eye on FreeBSD Resource Container metrics for optimized resource management and performance. |
 | [hw.intrcnt](/docs/collecting-metrics/operating-systems/hw.intrcnt) | Get total number of interrupts |
+| [IBM i (AS/400)](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/as400/integrations/ibm_i_as-400.md) | Monitors IBM i (AS/400) systems using SQL services and CL commands to expose CPU, memory, storage, job, and subsystem activity. |
 | [Inter Process Communication](/docs/collecting-metrics/operating-systems/inter-process-communication) | IPC stands for Inter-Process Communication. |
 | [Interrupts](/docs/collecting-metrics/operating-systems/interrupts) | Monitors `/proc/interrupts`, a file organized by CPU and then by the type of interrupt. |
 | [kern.cp_time](/docs/collecting-metrics/operating-systems/kern.cp_time) | Total CPU utilization |
@@ -285,6 +287,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [net.inet6.ip6.stats](/docs/collecting-metrics/networking/net.inet6.ip6.stats) | Collect information abou IPv6 stats. |
 | [net.isr](/docs/collecting-metrics/networking/net.isr) | Collect information about system softnet stat. |
 | [Netfilter](/docs/collecting-metrics/networking/netfilter) | Monitor Netfilter metrics for optimal packet filtering and manipulation. |
+| [Network Connections](/docs/collecting-metrics/networking/network-connections) | This plugin reads the system's socket tables to enumerate all active network connections, including TCP and UDP sockets in all states, for both IPv4 and IPv6. |
 | [Network interfaces](/docs/collecting-metrics/networking/network-interfaces) | Monitor network interface metrics about bandwidth, state, errors and more. |
 | [Network statistics](/docs/collecting-metrics/networking/network-statistics) | This integration provides metrics from the `netstat`, `snmp` and `snmp6` modules. |
 | [Network Subsystem](/docs/collecting-metrics/networking/network-subsystem) | Monitor network interface metrics about bandwidth, state, errors and more. |
@@ -336,6 +339,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Hubble](/docs/collecting-metrics/cloud-and-devops/hubble) | Monitor Hubble network observability metrics for efficient network visibility and management. |
 | [Jenkins](/docs/collecting-metrics/cloud-and-devops/jenkins) | Track Jenkins continuous integration server metrics for efficient development and build management. |
 | [Linode](/docs/collecting-metrics/cloud-and-devops/linode) | Monitor Linode cloud hosting metrics for efficient virtual server management and performance. |
+| [OpenTelemetry](https://github.com/netdata/netdata/blob/master/src/crates/netdata-otel/otel-plugin/integrations/opentelemetry.md) | This plugin ingests OpenTelemetry metrics and logs via the OTLP/gRPC protocol. |
 | [Puppet](/docs/collecting-metrics/cloud-and-devops/puppet) | This collector monitors Puppet metrics, including JVM heap and non-heap memory, CPU usage, and file descriptors. |
 | [Spacelift](/docs/collecting-metrics/cloud-and-devops/spacelift) | Track Spacelift infrastructure-as-code (IaC) platform metrics for efficient infrastructure automation and management. |
 | [Zerto](/docs/collecting-metrics/cloud-and-devops/zerto) | Monitor Zerto disaster recovery and data protection metrics for efficient backup and recovery management. |
@@ -436,6 +440,10 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Homey](/docs/collecting-metrics/applications/homey) | Track Homey smart home controller metrics for efficient home automation and performance. |
 | [Honeypot](/docs/collecting-metrics/applications/honeypot) | Monitor honeypot metrics for efficient threat detection and management. |
 | [IBM AIX systems Njmon](/docs/collecting-metrics/applications/ibm-aix-systems-njmon) | Keep an eye on NJmon system performance monitoring metrics for efficient IT infrastructure management and performance. |
+| [IBM MQ](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/mq/integrations/ibm_mq.md) | Monitors IBM MQ queue managers, queues, channels, and topics using the PCF (Programmable Command Format) protocol. |
+| [IBM WebSphere JMX](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/websphere/jmx/integrations/ibm_websphere_jmx.md) | Collects JVM, thread pool, and middleware metrics from IBM WebSphere Application Server via the embedded JMX bridge helper. |
+| [IBM WebSphere MicroProfile](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/websphere/mp/integrations/ibm_websphere_microprofile.md) | Collects JVM, vendor, and REST endpoint metrics from WebSphere Liberty / Open Liberty servers via the MicroProfile Metrics (Prometheus/OpenMetrics) endpoint. |
+| [IBM WebSphere PMI](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/websphere/pmi/integrations/ibm_websphere_pmi.md) | Collects WebSphere Application Server performance metrics via the PerfServlet (PMI) interface, covering JVM, thread pools, JDBC/JMS resources, applications, and clustering information. |
 | [Icecast](/docs/collecting-metrics/applications/icecast) | This collector monitors Icecast listener counts. |
 | [JMX](/docs/collecting-metrics/applications/jmx) | Track Java Management Extensions (JMX) metrics for efficient Java application management and performance. |
 | [journald](/docs/collecting-metrics/applications/journald) | Keep an eye on systemd-journald metrics for efficient log management and analysis. |
