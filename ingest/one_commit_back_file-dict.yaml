@@ -388,8 +388,6 @@
   learn_path: /docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/scim
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/cli/README.md
   learn_path: /docs/netdata-agent/agent-cli
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/modules/zabbix/README.md
-  learn_path: /docs/collecting-metrics/applications/zabbix-preprocessing
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/modules/nagios/README.md
   learn_path: /docs/collecting-metrics/synthetic-testing/nagios-plugins
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/modules/scheduler/README.md
