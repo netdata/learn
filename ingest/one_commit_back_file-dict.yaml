@@ -394,6 +394,18 @@
   learn_path: /docs/collecting-metrics/synthetic-testing/nagios-plugins
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/modules/scheduler/README.md
   learn_path: /docs/collecting-metrics/applications/scripts.d-scheduler
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/websphere/jmx/README.md
+  learn_path: /docs/collecting-metrics/applications/ibm-websphere-jmx
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/websphere/pmi/README.md
+  learn_path: /docs/collecting-metrics/applications/ibm-websphere-pmi
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/websphere/mp/README.md
+  learn_path: /docs/collecting-metrics/applications/ibm-websphere-microprofile
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/mq/README.md
+  learn_path: /docs/collecting-metrics/applications/ibm-mq
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/as400/README.md
+  learn_path: /docs/collecting-metrics/operating-systems/ibm-i-as-400
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/db2/README.md
+  learn_path: /docs/collecting-metrics/databases/ibm-db2
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/README.md
   learn_path: /docs/developer-and-contributor-corner/external-plugins/go.d.plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/litespeed/README.md
@@ -1290,6 +1302,8 @@
   learn_path: /docs/collecting-metrics/networking/sctp-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/wireless_network_interfaces.md
   learn_path: /docs/collecting-metrics/networking/wireless-network-interfaces
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/network-viewer.plugin/README.md
+  learn_path: /docs/collecting-metrics/networking/network-connections
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows-events.plugin/README.md
   learn_path: /docs/logs/windows-event-logs/windows-events-plugin-reference
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/claim/README.md
