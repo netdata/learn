@@ -216,7 +216,7 @@ module.exports = {
 	],
 	stylesheets: [
 		// Nedi embed styles
-		'https://nedi.netdata.cloud/test.css?v=16',
+			'https://nedi.netdata.cloud/test.css?v=17',
 		{
 			href: '/font/ibm-plex-sans-v8-latin-regular.woff2',
 			rel: 'preload',
@@ -254,13 +254,13 @@ module.exports = {
       },
       // Nedi dependencies (CDN) - async to avoid blocking other scripts
       { src: 'https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js', async: true },
-      { src: 'https://cdn.jsdelivr.net/npm/mermaid@11.12.2/dist/mermaid.min.js', async: true },
+      { src: 'https://cdn.jsdelivr.net/npm/mermaid@11.12.3/dist/mermaid.min.js', async: true },
       { src: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.24.0/dist/viz-global.js', async: true },
       { src: 'https://cdn.jsdelivr.net/npm/turndown@7.2.2/dist/turndown.js', async: true },
       { src: 'https://cdn.jsdelivr.net/npm/@guyplusplus/turndown-plugin-gfm@1.0.7/dist/turndown-plugin-gfm.js', async: true },
       // Nedi embed
-      { src: 'https://nedi.netdata.cloud/ai-agent-public.js?v=16', async: true },
-      { src: 'https://nedi.netdata.cloud/test.js?v=16', async: true },
+      { src: 'https://nedi.netdata.cloud/ai-agent-public.js?v=17', async: true },
+      { src: 'https://nedi.netdata.cloud/ai-agent-ui.js?v=17', async: true },
     ],
     headTags: [
       {
