@@ -216,7 +216,7 @@ module.exports = {
 	],
 	stylesheets: [
 		// Nedi embed styles
-			'https://nedi.netdata.cloud/test.css?v=17',
+			'https://nedi.netdata.cloud/ai-agent-ui.css?v=17',
 		{
 			href: '/font/ibm-plex-sans-v8-latin-regular.woff2',
 			rel: 'preload',
