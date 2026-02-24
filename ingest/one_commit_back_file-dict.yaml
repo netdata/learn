@@ -1530,8 +1530,6 @@
   learn_path: /docs/collecting-metrics/databases/yugabytedb
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dmcache/README.md
   learn_path: /docs/collecting-metrics/storage-and-filesystems/dmcache-devices
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/docs/how-to-write-a-module.md
-  learn_path: /docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/as400/README.md
   learn_path: /docs/collecting-metrics/operating-systems/ibm-i-as-400
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/db2/README.md
