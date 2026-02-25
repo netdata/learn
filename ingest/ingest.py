@@ -1266,7 +1266,12 @@ def _escape_mdx_braces(body):
     body = re.sub(r"`[^`\n]+`", _save, body)
     # Preserve MDX import/export statements (ESM syntax uses { for destructuring)
     body = re.sub(r"^import\s+.*$", _save, body, flags=re.MULTILINE)
-    body = re.sub(r"^export\s+(?:default|function|const|let|var|\{).*$", _save, body, flags=re.MULTILINE)
+    body = re.sub(
+        r"^export\s+(?:default|function|const|let|var|\{).*$",
+        _save,
+        body,
+        flags=re.MULTILINE,
+    )
 
     # Escape every bare { not already preceded by a backslash
     body = re.sub(r"(?<!\\)\{", r"\\{", body)
@@ -1793,9 +1798,8 @@ def automate_sidebar_position(dictionary):
 
 
 def sort_files(file_array):
-    """Sort integration files by priority buckets and normalized title."""
-    most_popular = []
-    rest_netdata_integrations = []
+    """Sort integration files by maintainer type and normalized title."""
+    netdata_integrations = []
     community_integrations = []
 
     for file in file_array:
@@ -1810,10 +1814,8 @@ def sort_files(file_array):
             # Use a normalized version of the filename as the sort key
             normalized_name = clean_and_lower_string(Path(file).stem)
 
-            if 'most_popular: "True"' in content:
-                most_popular.append([normalized_name, file, "by Netdata", "#00ab44"])
-            elif "maintained%20by-Netdata-" in content:
-                rest_netdata_integrations.append(
+            if "maintained%20by-Netdata-" in content:
+                netdata_integrations.append(
                     [normalized_name, file, "by Netdata", "#00ab44"]
                 )
             else:
@@ -1821,11 +1823,7 @@ def sort_files(file_array):
                     [normalized_name, file, "by Community", "rgba(0, 0, 0, 0.25)"]
                 )
 
-    sorted_array = (
-        sorted(most_popular)
-        + sorted(rest_netdata_integrations)
-        + sorted(community_integrations)
-    )
+    sorted_array = sorted(netdata_integrations) + sorted(community_integrations)
 
     return sorted_array
 
