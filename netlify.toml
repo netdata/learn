@@ -2086,16 +2086,12 @@
   to="/docs/collecting-metrics/applications/go-applications-expvar"
 
 [[redirects]]
-  from="/docs/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
-  to="/docs/dashboards-and-charts/tabs/top"
-
-[[redirects]]
   from="/docs/troubleshooting-and-machine-learning/metric-correlations"
   to="/docs/netdata-ai/troubleshooting/metric-correlations"
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/functions"
-  to="/docs/top-consumers"
+  to="/docs/live-view"
 
 [[redirects]]
   from="/docs/troubleshooting-and-machine-learning/events-feed"
@@ -3191,7 +3187,7 @@
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/functions"
-  to="/docs/top-consumers"
+  to="/docs/live-view"
 
 [[redirects]]
   from="/docs/netdata-dashboards-and-visualizations/events-feed"
@@ -3284,10 +3280,6 @@
 [[redirects]]
   from="/docs/metrics-streaming-and-replication"
   to="/docs/netdata-parents/metrics-centralization-points"
-
-[[redirects]]
-  from="/docs/machine-learning-and-assisted-troubleshooting/run-time-troubleshooting-with-functions"
-  to="/docs/dashboards-and-charts/tabs/top"
 
 [[redirects]]
   from="/docs/machine-learning-and-assisted-troubleshooting/metric-correlations"
@@ -4719,7 +4711,7 @@
 
 [[redirects]]
   from="/docs/visualizations/functions"
-  to="/docs/top-consumers"
+  to="/docs/live-view"
 
 [[redirects]]
   from="/docs/visualizations/events-feed"
@@ -4868,10 +4860,6 @@
 [[redirects]]
   from="/docs/monitor-your-infrastructure/choose-your-netdata-cloud-theme"
   to="/docs/dashboards-and-charts/theme"
-
-[[redirects]]
-  from="/docs/ml-and-troubleshooting/run-time-troubleshooting-with-functions"
-  to="/docs/dashboards-and-charts/tabs/top"
 
 [[redirects]]
   from="/docs/ml-and-troubleshooting/metric-correlations"
@@ -7311,11 +7299,7 @@
 
 [[redirects]]
   from="/docs/top-monitoring"
-  to="/docs/top-consumers"
-
-[[redirects]]
-  from="/docs/machine-learning-and-anomaly-detection/run-time-troubleshooting-with-functions"
-  to="/docs/dashboards-and-charts/tabs/top"
+  to="/docs/live-view"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/megacli-hardware-raid"
@@ -7323,7 +7307,7 @@
 
 [[redirects]]
   from="/docs/top-monitoring-%20netdata-functions%20/top-monitoring-netdata-functions"
-  to="/docs/top-consumers"
+  to="/docs/live-view"
 
 [[redirects]]
   from="/docs/netdata-cloud/role-based-access-model"
@@ -7760,10 +7744,6 @@
 [[redirects]]
   from="/docs/dashboards-and-charts/visualization-date-and-time-controls"
   to="/docs/dashboards-and-charts/time-controls"
-
-[[redirects]]
-  from="/docs/dashboards-and-charts/top-tab"
-  to="/docs/dashboards-and-charts/tabs/top"
 
 [[redirects]]
   from="/docs/dashboards-and-charts/nodes-tab"
@@ -8511,7 +8491,7 @@
 
 [[redirects]]
   from="/docs//top-monitoring-netdata-functions"
-  to="/docs/top-consumers"
+  to="/docs/live-view"
 
 [[redirects]]
   from="/docs/collecting-metrics/metrics-centralization-points/replication-of-past-samples"
@@ -10892,5 +10872,17 @@
 [[redirects]]
   from="/docs/collecting-metrics/applications/files-and-directories"
   to="/docs/collecting-metrics/synthetic-testing/files-and-directories"
+
+[[redirects]]
+  from="/docs/top-consumers/processes"
+  to="/docs/live-view/processes"
+
+[[redirects]]
+  from="/docs/top-consumers/database-queries"
+  to="/docs/live-view/database-queries"
+
+[[redirects]]
+  from="/docs/top-consumers"
+  to="/docs/live-view"
 
 # section: dynamic << END

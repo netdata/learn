@@ -99,7 +99,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md
   learn_path: /docs/welcome-to-netdata/enterprise-evaluation-guide
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md
-  learn_path: /docs/top-consumers
+  learn_path: /docs/live-view
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/glossary.md
   learn_path: /docs/developer-and-contributor-corner/glossary
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/realtime-monitoring.md
@@ -179,9 +179,9 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/getting-started-netdata/guide.md
   learn_path: /docs/getting-started
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/functions/processes.md
-  learn_path: /docs/top-consumers/processes
+  learn_path: /docs/live-view/processes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/functions/databases.md
-  learn_path: /docs/top-consumers/database-queries
+  learn_path: /docs/live-view/database-queries
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/nodes-tab.md
   learn_path: /docs/dashboards-and-charts/tabs/nodes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/netdata-charts.md
@@ -206,8 +206,8 @@
   learn_path: /docs/dashboards-and-charts/tabs/alerts
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/anomaly-advisor-tab.md
   learn_path: /docs/dashboards-and-charts/tabs/anomalies
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/top-tab.md
-  learn_path: /docs/dashboards-and-charts/tabs/top
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/live-tab.md
+  learn_path: /docs/dashboards-and-charts/tabs/live
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/kubernetes-tab.md
   learn_path: /docs/dashboards-and-charts/tabs/kubernetes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/expanded-chart-analysis.md
