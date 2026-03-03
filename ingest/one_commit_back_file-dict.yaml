@@ -30,6 +30,8 @@
   learn_path: /docs/developer-and-contributor-corner/health-command-api-tester
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md
   learn_path: /docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/PLATFORM_SUPPORT.md
+  learn_path: /docs/netdata-agent/versions-&-platforms
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/docker/README.md
   learn_path: /docs/netdata-agent/installation/docker
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/README.md
@@ -302,8 +304,6 @@
   learn_path: /docs/netdata-ai/alerts-automation
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/backup-and-restore-an-agent.md
   learn_path: /docs/netdata-agent/maintenance/backup-and-restore-an-agent
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/versions-and-platforms.md
-  learn_path: /docs/netdata-agent/versions-&-platforms
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/securing-netdata-agents.md
   learn_path: /docs/netdata-agent/configuration/securing-agents
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/start-stop-restart.md

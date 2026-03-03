@@ -97,7 +97,7 @@
   description: null
   meta_yaml: .nan
   message: .nan
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/versions-and-platforms.md
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/PLATFORM_SUPPORT.md
   sidebar_label: Versions & Platforms
   learn_status: Published
   learn_rel_path: Netdata Agent
