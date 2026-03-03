@@ -3020,5 +3020,8 @@
     "https://learn.netdata.cloud/docs/collecting-metrics/applications/pandas": "https://github.com/netdata/netdata/blob/master/src/collectors/python.d.plugin/pandas/README.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/applications/mesos": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/prometheus/integrations/mesos.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/applications/kafka-consumer-lag": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/prometheus/integrations/kafka_consumer_lag.md",
-    "https://learn.netdata.cloud/docs/collecting-metrics/applications/files-and-directories": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/filecheck/README.md"
+    "https://learn.netdata.cloud/docs/collecting-metrics/applications/files-and-directories": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/filecheck/README.md",
+    "https://learn.netdata.cloud/docs/top-consumers/processes": "https://github.com/netdata/netdata/blob/master/docs/functions/processes.md",
+    "https://learn.netdata.cloud/docs/top-consumers/database-queries": "https://github.com/netdata/netdata/blob/master/docs/functions/databases.md",
+    "https://learn.netdata.cloud/docs/top-consumers": "https://github.com/netdata/netdata/blob/master/docs/top-monitoring-netdata-functions.md"
 }

@@ -1,17 +1,17 @@
 ---
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/top-tab.md"
-sidebar_label: "Top"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/live-tab.md"
+sidebar_label: "Live"
 learn_status: "Published"
 learn_rel_path: "Dashboards and Charts/Tabs"
-description: "Instructions on how to use Functions"
+description: "Access live information from monitored nodes through Netdata Functions"
 sidebar_position: "90"
-learn_link: "https://learn.netdata.cloud/docs/dashboards-and-charts/tabs/top"
-slug: "/dashboards-and-charts/tabs/top"
+learn_link: "https://learn.netdata.cloud/docs/dashboards-and-charts/tabs/live"
+slug: "/dashboards-and-charts/tabs/live"
 ---
 
-# Top Tab
+# Live Tab
 
-The **Top tab** gives you access to [Netdata Functions](/docs/top-consumers) that can be executed on any node running the Netdata Agent. These specialized routines, provided by various collectors, offer enhanced insights and allow you to trigger specific actions directly on the monitored node.
+The **Live tab** gives you real-time access to [Netdata Functions](/docs/live-view) that can be executed on any node running the Netdata Agent. These specialized routines, provided by various collectors, deliver live information from your monitored nodes—including database monitoring functions, network topology maps, process explorers, and more.
 
 You can **use these Functions to**:
 
@@ -26,11 +26,11 @@ You can also execute a Function from the [Nodes tab](/docs/dashboards-and-charts
 
 :::note
 
-If you receive an error saying that your node can’t execute Functions, check the [prerequisites](/docs/top-consumers) to ensure your node is configured properly.
+If you receive an error saying that your node can't execute Functions, check the [prerequisites](/docs/live-view) to ensure your node is configured properly.
 
 :::
 
-## Top Tab Structure Overview
+## Live Tab Structure Overview
 
 ```mermaid
 flowchart TD
@@ -53,13 +53,13 @@ flowchart TD
 
 :::tip
 
-The diagram above shows how Function selection and execution work in the Top tab, helping you visualize the flow from choosing a Function to viewing the results.
+The diagram above shows how Function selection and execution work in the Live tab, helping you visualize the flow from choosing a Function to viewing the results.
 
 :::
 
-## Top Tab View
+## Live Tab View
 
-The main view of the Top tab provides two elements, depending on the selected Function:
+The main view of the Live tab provides two elements, depending on the selected Function:
 
 | Element           | Description                                                                                                                  |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------|
@@ -77,7 +77,7 @@ You can control the data refresh and update settings in the top right-hand corne
 
 ## Functions Bar
 
-The **Functions bar**, located on the right-hand side of the Top tab, lets you select which Function to run, on which node, and apply filtering where available.
+The **Functions bar**, located on the right-hand side of the Live tab, lets you select which Function to run, on which node, and apply filtering where available.
 
 | Option              | Description                                                                                                                                                                  |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
