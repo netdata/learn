@@ -8650,10 +8650,6 @@
   to="/docs/collecting-metrics/applications/net-framework"
 
 [[redirects]]
-  from="/docs/collecting-metrics/windows-systems/ms-sql-server"
-  to="/docs/collecting-metrics/databases/ms-sql-server"
-
-[[redirects]]
   from="/docs/collecting-metrics/windows-systems/ms-exchange"
   to="/docs/collecting-metrics/applications/ms-exchange"
 
@@ -10384,10 +10380,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/operating-systems/net-framework"
   to="/docs/collecting-metrics/applications/net-framework"
-
-[[redirects]]
-  from="/docs/collecting-metrics/operating-systems/ms-sql-server"
-  to="/docs/collecting-metrics/databases/ms-sql-server"
 
 [[redirects]]
   from="/docs/collecting-metrics/operating-systems/ms-exchange"

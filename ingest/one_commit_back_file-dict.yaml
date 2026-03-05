@@ -1048,8 +1048,6 @@
   learn_path: /docs/collecting-metrics/storage-and-filesystems/physical-and-logical-disk-performance-metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hardware_information_collected_from_kernel_ring..md
   learn_path: /docs/collecting-metrics/hardware-and-sensors/hardware-information-collected-from-kernel-ring.
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_sql_server.md
-  learn_path: /docs/collecting-metrics/databases/ms-sql-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/net_framework.md
   learn_path: /docs/collecting-metrics/applications/net-framework
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/sensors.md
