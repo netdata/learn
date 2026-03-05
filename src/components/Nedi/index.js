@@ -147,7 +147,9 @@ const CSS_VARIABLES = {
 };
 
 // Set source identifier for Nedi analytics
-window.AI_AGENT_UI_SOURCE = 'learn';
+if (typeof window !== 'undefined') {
+  window.AI_AGENT_UI_SOURCE = 'learn';
+}
 
 // Persistent container + instance, survives React unmounts
 function getOrCreateNedi(theme) {
