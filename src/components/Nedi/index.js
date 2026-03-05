@@ -146,6 +146,9 @@ const CSS_VARIABLES = {
   },
 };
 
+// Set source identifier for Nedi analytics
+window.AI_AGENT_UI_SOURCE = 'learn';
+
 // Persistent container + instance, survives React unmounts
 function getOrCreateNedi(theme) {
   let container = document.getElementById(PERSISTENT_ID);
