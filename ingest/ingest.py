@@ -661,6 +661,7 @@ def populate_integrations(markdownFiles):
     map_file = load_map_yaml("map.yaml")
 
     collectors_entries = pd.DataFrame()
+    live_functions_entries = pd.DataFrame()
     exporting_entries = pd.DataFrame()
     alerting_agent_entries = pd.DataFrame()
     alerting_cloud_entries = pd.DataFrame()
@@ -678,6 +679,7 @@ def populate_integrations(markdownFiles):
     markdownFiles = readmes_first + others_last
 
     for file in markdownFiles:
+        normalized_file = file.replace("\\", "/")
         path = file.split("integrations")[0].replace("README.md", "")
 
         whole_file = Path(file).read_text()
@@ -712,7 +714,19 @@ def populate_integrations(markdownFiles):
 
             metadf = pd.DataFrame([metadata_dictionary])
             # print(file)
-            if "collector" in path:
+            if "/integrations/functions/" in normalized_file:
+                # Compatibility for generated function tiles: ensure
+                # custom_edit_url is path-based so map lookup can match files.
+                proper_edit_url = file.replace("ingest-temp-folder/", "")
+                if "/" in proper_edit_url:
+                    repo_name, repo_rel_path = proper_edit_url.split("/", 1)
+                    branch_name = "main" if repo_name == ".github" else "master"
+                    metadf["custom_edit_url"] = (
+                        f"https://github.com/netdata/{repo_name}/edit/{branch_name}/{repo_rel_path}"
+                    )
+
+                live_functions_entries = pd.concat([live_functions_entries, metadf])
+            elif "collector" in path:
                 collectors_entries = pd.concat([collectors_entries, metadf])
                 # print(collectors_entries)
                 # quit()
@@ -772,6 +786,25 @@ def populate_integrations(markdownFiles):
         ],
         ignore_index=True,
     )
+
+    replace_index = map_file.loc[
+        map_file["custom_edit_url"] == "live_functions_integrations"
+    ].index
+    if len(replace_index) > 0:
+        upper = map_file.iloc[: replace_index[0]]
+        lower = map_file.iloc[replace_index[0] + 1 :]
+
+        map_file = pd.concat(
+            [
+                upper,
+                live_functions_entries.sort_values(
+                    by=["learn_rel_path", "sidebar_label"],
+                    key=lambda col: col.str.lower(),
+                ),
+                lower,
+            ],
+            ignore_index=True,
+        )
 
     replace_index = map_file.loc[
         map_file["custom_edit_url"] == "agent_notifications_integrations"
@@ -999,10 +1032,21 @@ def create_mdx_path_from_metadata(metadata):
         [sidebar_label, learn_rel_path]
     In the returned (final) path we sanitize "/", "//" , "-", "," with one dash
     """
+    final_file_source = metadata["sidebar_label"]
+    custom_edit_url = str(metadata.get("custom_edit_url", "") or "")
+
+    # Function docs can share identical labels (e.g. "Top Queries") across
+    # many integrations. Derive filename from source function slug to avoid
+    # collisions during ingest output path generation.
+    if "/integrations/functions/" in custom_edit_url:
+        parsed = urllib.parse.urlparse(custom_edit_url)
+        function_slug = Path(parsed.path).stem
+        if function_slug:
+            final_file_source = function_slug.replace("-", " ")
+
     final_file = " ".join(
         (
-            metadata["sidebar_label"]
-            .replace("'", " ")
+            final_file_source.replace("'", " ")
             .replace(":", " ")
             .replace("/", " ")
             .replace(")", " ")
@@ -2231,11 +2275,10 @@ if __name__ == "__main__":
                     )
             else:
                 # Handle GitHub repo: owner/repo:branch
+                repository = None
                 try:
-                    _temp = repo_str.split("/")
-                    repo_owner, repository, repo_branch = [_temp[0]] + (
-                        _temp[1].split(":")
-                    )
+                    repo_owner, repo_with_branch = repo_str.split("/", 1)
+                    repository, repo_branch = repo_with_branch.split(":", 1)
                     default_repos[repository]["owner"] = repo_owner
                     default_repos[repository]["branch"] = repo_branch
                 except (TypeError, ValueError):
@@ -2246,7 +2289,7 @@ if __name__ == "__main__":
                     parser.print_usage()
                     exit(-1)
                 except KeyError:
-                    print(repository)
+                    print(repository or repo_str)
                     print("The repo you specified in not in predefined repos")
                     print(default_repos.keys())
                     parser.print_usage()
