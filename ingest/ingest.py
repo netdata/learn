@@ -31,7 +31,7 @@ import os
 import re
 import shutil
 import urllib.parse
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import json
 import git
 import numpy as np
@@ -637,6 +637,53 @@ def github_url_to_local_path(url):
     local_path = local_path.replace("blob/main/", "")
 
     return local_path
+
+
+def resolve_repo_relative_link(raw_link, source_file_path):
+    """
+    Resolve a local markdown link into:
+      1) repo-root-relative path (e.g. src/go/plugin/README.md)
+      2) local temp-folder path (e.g. ingest-temp-folder/netdata/src/go/plugin/README.md)
+
+    Returns tuple(repo_relative_path, local_path) or (None, None) if not resolvable.
+    """
+    if not raw_link:
+        return None, None
+
+    repo_name = extract_repo_from_local_path(source_file_path)
+    if repo_name == "unknown":
+        return None, None
+
+    repo_root = Path(TEMP_FOLDER) / repo_name
+    source_path = Path(source_file_path)
+
+    try:
+        source_parent = source_path.relative_to(repo_root).parent
+    except ValueError:
+        return None, None
+
+    link = raw_link.replace("\\", "/").strip()
+
+    # Root-relative links are relative to repo root. Dot-relative links are from the source file directory.
+    if link.startswith("/"):
+        candidate = link.lstrip("/")
+    elif link.startswith("."):
+        parent_prefix = source_parent.as_posix()
+        candidate = f"{parent_prefix}/{link}" if parent_prefix != "." else link
+    else:
+        return None, None
+
+    normalized = PurePosixPath(candidate).as_posix()
+    normalized = os.path.normpath(normalized).replace("\\", "/")
+
+    while normalized.startswith("./"):
+        normalized = normalized[2:]
+
+    if normalized in ("", ".", "..") or normalized.startswith("../"):
+        return None, None
+
+    local_path = (repo_root / Path(normalized)).as_posix()
+    return normalized, local_path
 
 
 def file_exists_in_repos(url):
@@ -1536,6 +1583,30 @@ def local_to_absolute_links(path_to_file, input_dict):
                 unique_urls.append((base_url, header, full_link))
 
         for url, header, full_link in unique_urls:
+            if "http" not in url and (url.startswith(".") or url.startswith("/")):
+                repo_relative_path, resolved_local_path = resolve_repo_relative_link(
+                    url, path_to_file
+                )
+                if resolved_local_path:
+                    resolved_path_obj = Path(resolved_local_path)
+                    if (
+                        resolved_path_obj.exists()
+                        and resolved_path_obj.suffix.lower() in [".md", ".mdx"]
+                    ):
+                        resolved_repo = extract_repo_from_local_path(path_to_file)
+                        if repo_relative_path and resolved_repo != "unknown":
+                            gh_view_link = produce_gh_view_link_for_repo(
+                                resolved_repo, repo_relative_path
+                            )
+                            body = body.replace(f"({url}", "(" + gh_view_link)
+                        if header and not validate_header_in_file(
+                            resolved_local_path, header
+                        ):
+                            add_broken_header(
+                                source_repo, full_link, header, source_github_url
+                            )
+                        continue
+
             # if not url.startswith("/"):
 
             if ".md" in url and (any(url in key for key in input_dict.keys())):
