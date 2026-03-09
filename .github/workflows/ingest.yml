@@ -65,11 +65,15 @@ jobs:
           # Check if there are broken links (exit code 1 means broken links found)
           if [ $EXIT_CODE -eq 1 ]; then
             echo "has_broken_links=true" >> $GITHUB_OUTPUT
+          elif [ $EXIT_CODE -eq 0 ]; then
+            echo "has_broken_links=false" >> $GITHUB_OUTPUT
           else
             echo "has_broken_links=false" >> $GITHUB_OUTPUT
+            echo "Ingest failed with non-broken-links error (exit code: $EXIT_CODE)"
+            exit $EXIT_CODE
           fi
-          
-          # Don't fail the workflow - we'll create an issue instead
+
+          # Don't fail the workflow on broken links - we'll create an issue instead
           exit 0
 
       - name: Update kickstart checksum
@@ -168,4 +172,3 @@ jobs:
               
               console.log(`Created issue #${issue.data.number}`);
             }
-
