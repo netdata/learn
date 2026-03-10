@@ -125,7 +125,10 @@ The ingest script is a python script and has its dependencies (separate from the
     If you don't use `--repos` the ingest will run on the master branches of netdata's repos.
 
 8. You then need to run `ingest/create_grid_integration_pages.py` to generate the dynamic integration pages.
-  
+
+   During ingest, integration logos from `netdata.cloud/img` are also analyzed for theme contrast.
+   The ingest process tags low-contrast logos so Learn can apply a subtle glow only where needed.
+   
 9.  Build a local website  
 
     ```bash

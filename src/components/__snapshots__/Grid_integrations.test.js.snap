@@ -4,10 +4,10 @@ exports[`Grid_integrations component > snapshots > should match Box snapshot wit
 <div>
   <custom-link>
     <a
-      class="white custom-element p-8 rounded !no-underline "
+      class="white custom-element integration-grid-card p-8 rounded !no-underline "
       data-testid="docusaurus-link"
       href="/docs/test"
-      style="position: relative; box-shadow: 0px 0px 12px -5px rgba(76, 76, 76, 0.48); background-color: white; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
+      style="position: relative; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
     >
       <div
         style="width: 100%; height: 10%; position: absolute; bottom: 0px; color: rgb(0, 255, 0); border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; font-size: 7pt; text-align: center; font-weight: 1000; line-height: normal;"
@@ -36,10 +36,10 @@ exports[`Grid_integrations component > snapshots > should match Box snapshot wit
 <div>
   <custom-link>
     <a
-      class="white custom-element p-8 rounded !no-underline "
+      class="white custom-element integration-grid-card p-8 rounded !no-underline "
       data-testid="docusaurus-link"
       href="/docs/test"
-      style="position: relative; box-shadow: 0px 0px 12px -5px rgba(76, 76, 76, 0.48); background-color: white; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
+      style="position: relative; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
     >
       <div
         style="width: 100%; height: 10%; position: absolute; bottom: 0px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; font-size: 7pt; text-align: center; font-weight: 1000; line-height: normal;"
@@ -69,10 +69,10 @@ exports[`Grid_integrations component > snapshots > should match Grid snapshot 1`
   >
     <custom-link>
       <a
-        class="white custom-element p-8 rounded !no-underline "
+        class="white custom-element integration-grid-card p-8 rounded !no-underline "
         data-testid="docusaurus-link"
         href="/docs/test1"
-        style="position: relative; box-shadow: 0px 0px 12px -5px rgba(76, 76, 76, 0.48); background-color: white; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
+        style="position: relative; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
       >
         <div
           style="width: 100%; height: 10%; position: absolute; bottom: 0px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; font-size: 7pt; text-align: center; font-weight: 1000; line-height: normal;"
@@ -94,10 +94,10 @@ exports[`Grid_integrations component > snapshots > should match Grid snapshot 1`
     </custom-link>
     <custom-link>
       <a
-        class="white custom-element p-8 rounded !no-underline "
+        class="white custom-element integration-grid-card p-8 rounded !no-underline "
         data-testid="docusaurus-link"
         href="/docs/test2"
-        style="position: relative; box-shadow: 0px 0px 12px -5px rgba(76, 76, 76, 0.48); background-color: white; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
+        style="position: relative; display: flex; flex-direction: column-reverse; align-items: center; aspect-ratio: 1/1; max-height: 100%; justify-content: space-around; margin: 10px; border-radius: 20px;"
       >
         <div
           style="width: 100%; height: 10%; position: absolute; bottom: 0px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; font-size: 7pt; text-align: center; font-weight: 1000; line-height: normal;"

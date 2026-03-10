@@ -15,7 +15,40 @@ margin-right: auto;
 
 custom-h7{
     font-weight: 1000;
-    color: black;
+    color: #101010;
+}
+
+html[data-theme='dark'] custom-h7 {
+    color: #f3f4f6;
+}
+
+.integration-grid-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0px 0px 12px -5px rgba(76, 76, 76, 0.48);
+    transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+html[data-theme='dark'] .integration-grid-card {
+    background-color: #141414 !important;
+    border-color: #2a2a2a;
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.8);
+}
+
+.integration-grid-card img[custom-image][data-logo-contrast-light='low'] {
+    filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.55));
+}
+
+.integration-grid-card img[custom-image][data-logo-contrast-light='unknown'] {
+    filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.42));
+}
+
+html[data-theme='dark'] .integration-grid-card img[custom-image][data-logo-contrast-dark='low'] {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.62));
+}
+
+html[data-theme='dark'] .integration-grid-card img[custom-image][data-logo-contrast-dark='unknown'] {
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.48));
 }
 
 
@@ -46,4 +79,3 @@ custom-link:hover custom-h7 {
     grid-template-columns: 18% 18% 18% 18% 18%;
 }
 }
-

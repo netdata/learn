@@ -652,6 +652,23 @@ html[data-theme='dark'] .prose a:hover {
 	@apply inline-block m-0 rounded dark:bg-gray-50;
 }
 
+/* Integration logo contrast enhancement (ingest-time classification) */
+.markdown img[data-integration-logo='true'][data-logo-contrast-light='low'] {
+	filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.55));
+}
+
+.markdown img[data-integration-logo='true'][data-logo-contrast-light='unknown'] {
+	filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.42));
+}
+
+html[data-theme='dark'] .markdown img[data-integration-logo='true'][data-logo-contrast-dark='low'] {
+	filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.62));
+}
+
+html[data-theme='dark'] .markdown img[data-integration-logo='true'][data-logo-contrast-dark='unknown'] {
+	filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.48));
+}
+
 .markdown blockquote p:before,
 .markdown blockquote p:after {
 	content: none !important;
@@ -750,19 +767,6 @@ html[data-theme='dark']:root {
 /* Dark theme: Subtle scrollbars */
 html[data-theme='dark'] .thin-scrollbar {
 	scrollbar-color: #333 transparent;
-}
-
-/* Light theme: Details/expandable items background */
-details, .details_lb9f {
-	--ifm-alert-background-color: #e8e8e8;
-	background-color: #e8e8e8 !important;
-}
-
-/* Dark theme: Details/expandable items - neutral dark background like code blocks */
-html[data-theme='dark'] details,
-html[data-theme='dark'] .details_lb9f {
-	--ifm-alert-background-color: #1a1a1a;
-	background-color: #1a1a1a !important;
 }
 
 /*
@@ -877,4 +881,3 @@ html[data-theme='dark'] [class*="searchHint"]:not([class*="Container"]) {
 		rgba(0, 203, 81, 0) 100%
 	);
 }
-
