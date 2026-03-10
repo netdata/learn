@@ -25,13 +25,11 @@ export const Box = ({ banner, banner_color, to, title, cta, image, children }) =
 
 			<Link
 				to={to}
-				className={`white custom-element p-8 rounded !no-underline `}
+				className={`white custom-element integration-grid-card p-8 rounded !no-underline `}
 				style={{
 					// borderColor: className,
 					// boxShadow: "0 4px 10px #0000006D",
 					position: "relative",
-					boxShadow: "0px 0px 12px -5px rgba(76, 76, 76, 0.48)",
-					backgroundColor: "white",
 					display: "flex",
 					flexDirection: 'column-reverse',
 					alignItems: 'center',
@@ -88,4 +86,3 @@ export const Box = ({ banner, banner_color, to, title, cta, image, children }) =
 		</custom-link>
 	);
 };
-
