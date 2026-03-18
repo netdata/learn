@@ -322,6 +322,8 @@
   learn_path: /docs/netdata-agent/configuration/using-custom-ca-certificates-with-netdata
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/README.md
   learn_path: /docs/netdata-agent/configuration
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/secrets-management.md
+  learn_path: /docs/netdata-agent/configuration/secrets-management
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md
   learn_path: /docs/netdata-agent/anonymous-telemetry-events
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts.md
@@ -436,6 +438,8 @@
   learn_path: /docs/collecting-metrics/containers-and-vms/kubernetes-api-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redis/README.md
   learn_path: /docs/collecting-metrics/databases/redis
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/powerstore/README.md
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/dell-powerstore
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/nvme/README.md
   learn_path: /docs/collecting-metrics/storage-and-filesystems/nvme-devices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/yugabytedb/README.md
@@ -648,6 +652,8 @@
   learn_path: /docs/collecting-metrics/databases/rethinkdb
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/pihole/README.md
   learn_path: /docs/collecting-metrics/networking/pi-hole
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/powervault/README.md
+  learn_path: /docs/collecting-metrics/storage-and-filesystems/dell-powervault-me4-me5
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dcgm/README.md
   learn_path: /docs/collecting-metrics/hardware-and-sensors/nvidia-data-center-gpu-manager-dcgm
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/clickhouse/README.md
