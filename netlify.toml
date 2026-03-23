@@ -6054,10 +6054,6 @@
   to="/docs/collecting-metrics/applications/github-repository"
 
 [[redirects]]
-  from="/docs/data-collection/observability/nagios"
-  to="/docs/collecting-metrics/applications/nagios"
-
-[[redirects]]
   from="/docs/data-collection/observability/hubble"
   to="/docs/collecting-metrics/cloud-and-devops/hubble"
 
@@ -9102,10 +9098,6 @@
   to="/docs/collecting-metrics/synthetic-testing/files-and-directories"
 
 [[redirects]]
-  from="/docs/collecting-metrics/observability/nagios"
-  to="/docs/collecting-metrics/applications/nagios"
-
-[[redirects]]
   from="/docs/collecting-metrics/observability/hubble"
   to="/docs/collecting-metrics/cloud-and-devops/hubble"
 
@@ -10828,10 +10820,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/cloud-and-devops/nextcloud-servers"
   to="/docs/collecting-metrics/applications/nextcloud-servers"
-
-[[redirects]]
-  from="/docs/collecting-metrics/cloud-and-devops/nagios"
-  to="/docs/collecting-metrics/applications/nagios"
 
 [[redirects]]
   from="/docs/collecting-metrics/cloud-and-devops/lustre-metadata"
