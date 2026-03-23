@@ -1229,7 +1229,8 @@ def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
                         val = "/"
 
                     if "Collecting Metrics" in val or "Collecting Metrics" in val:
-                        output += "toc_max_heading_level: 4\n"
+                        output += "toc_max_heading_level: 6\n"
+                        output += "toc_collapsible: true\n"
 
                 if field == "sidebar_position":
                     output += '{0}: "{1}"\n'.format(field, val.replace('"', ""))
