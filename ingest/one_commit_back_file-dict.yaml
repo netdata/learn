@@ -884,8 +884,6 @@
   learn_path: /docs/collecting-metrics/networking/openroadm-devices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/kannel.md
   learn_path: /docs/collecting-metrics/applications/kannel
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/nagios.md
-  learn_path: /docs/collecting-metrics/applications/nagios
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/4d_server.md
   learn_path: /docs/collecting-metrics/databases/4d-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/gitlab_runner.md
