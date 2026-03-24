@@ -758,6 +758,7 @@ def populate_integrations(markdownFiles):
     alerting_agent_entries = pd.DataFrame()
     alerting_cloud_entries = pd.DataFrame()
     authentication_entries = pd.DataFrame()
+    secretstore_entries = pd.DataFrame()
     logs_entries = pd.DataFrame()
 
     readmes_first = []
@@ -822,6 +823,8 @@ def populate_integrations(markdownFiles):
                 collectors_entries = pd.concat([collectors_entries, metadf])
                 # print(collectors_entries)
                 # quit()
+            elif "/secretstore/backends/" in normalized_file:
+                secretstore_entries = pd.concat([secretstore_entries, metadf])
             elif "exporting" in path:
                 exporting_entries = pd.concat([exporting_entries, metadf])
                 # print(exporting_entries)
@@ -872,6 +875,23 @@ def populate_integrations(markdownFiles):
         [
             upper,
             collectors_entries.sort_values(
+                by=["learn_rel_path", "sidebar_label"], key=lambda col: col.str.lower()
+            ),
+            lower,
+        ],
+        ignore_index=True,
+    )
+
+    replace_index = map_file.loc[
+        map_file["custom_edit_url"] == "secretstore_integrations"
+    ].index
+    upper = map_file.iloc[: replace_index[0]]
+    lower = map_file.iloc[replace_index[0] + 1 :]
+
+    map_file = pd.concat(
+        [
+            upper,
+            secretstore_entries.sort_values(
                 by=["learn_rel_path", "sidebar_label"], key=lambda col: col.str.lower()
             ),
             lower,
@@ -1229,7 +1249,8 @@ def insert_and_read_hidden_metadata_from_doc(path_to_file, dictionary):
                         val = "/"
 
                     if "Collecting Metrics" in val or "Collecting Metrics" in val:
-                        output += "toc_max_heading_level: 4\n"
+                        output += "toc_max_heading_level: 6\n"
+                        output += "toc_collapsible: true\n"
 
                 if field == "sidebar_position":
                     output += '{0}: "{1}"\n'.format(field, val.replace('"', ""))
