@@ -148,6 +148,20 @@ html[data-theme='dark'] .table-of-contents__link--active {
 	font-weight: 600;
 }
 
+/* Collapsible TOC: only show nested headings for the active section */
+.toc-collapsible .table-of-contents > li > ul {
+	overflow: hidden;
+	max-height: 0;
+	opacity: 0;
+	transition: max-height 0.2s ease-out, opacity 0.15s ease-out;
+}
+
+.toc-collapsible .table-of-contents > li:has(.table-of-contents__link--active) > ul {
+	max-height: 50rem;
+	opacity: 1;
+	transition: max-height 0.25s ease-in, opacity 0.15s ease-in;
+}
+
 
 /* .menu .menu__link{
 	font-weight: 600 !important;

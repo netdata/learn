@@ -49,7 +49,7 @@ function FullPageLayout({ children }) {
 // Standard doc layout (matches upstream default).
 function StandardLayout({ children }) {
   const docTOC = useDocTOC();
-  const { metadata } = useDoc();
+  const { metadata, frontMatter } = useDoc();
 
   return (
     <div className="row">
@@ -67,7 +67,11 @@ function StandardLayout({ children }) {
           <DocItemPaginator />
         </div>
       </div>
-      {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
+      {docTOC.desktop && (
+        <div className={clsx('col', 'col--3', frontMatter.toc_collapsible && 'toc-collapsible')}>
+          {docTOC.desktop}
+        </div>
+      )}
     </div>
   );
 }
