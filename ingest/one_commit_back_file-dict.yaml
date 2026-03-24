@@ -1085,7 +1085,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/REFERENCE.md
   learn_path: /docs/collecting-metrics/collectors-configuration
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/SECRETS.md
-  learn_path: /docs/netdata-agent/configuration/secrets-management
+  learn_path: /docs/collecting-metrics/secrets-management
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/diskspace.plugin/README.md
   learn_path: /docs/collecting-metrics/storage-and-filesystems/disk-space
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freeipmi.plugin/README.md

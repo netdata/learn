@@ -10865,4 +10865,8 @@
   from="/docs/top-consumers"
   to="/docs/live-view"
 
+[[redirects]]
+  from="/docs/netdata-agent/configuration/secrets-management"
+  to="/docs/collecting-metrics/secrets-management"
+
 # section: dynamic << END
