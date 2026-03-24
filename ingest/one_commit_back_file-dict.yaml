@@ -322,8 +322,6 @@
   learn_path: /docs/netdata-agent/configuration/using-custom-ca-certificates-with-netdata
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/README.md
   learn_path: /docs/netdata-agent/configuration
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/secrets-management.md
-  learn_path: /docs/netdata-agent/configuration/secrets-management
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/anonymous-telemetry-events.md
   learn_path: /docs/netdata-agent/anonymous-telemetry-events
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts.md
@@ -404,6 +402,14 @@
   learn_path: /docs/collecting-metrics/operating-systems/ibm-i-as-400
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/db2/README.md
   learn_path: /docs/collecting-metrics/databases/ibm-db2
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/azure/README.md
+  learn_path: /docs/collecting-metrics/secret-stores/azure-key-vault
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/gcp/README.md
+  learn_path: /docs/collecting-metrics/secret-stores/google-secret-manager
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/vault/README.md
+  learn_path: /docs/collecting-metrics/secret-stores/vault
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/aws/README.md
+  learn_path: /docs/collecting-metrics/secret-stores/aws-secrets-manager
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/README.md
   learn_path: /docs/developer-and-contributor-corner/external-plugins/go.d.plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/litespeed/README.md
@@ -1078,6 +1084,8 @@
   learn_path: /docs/welcome-to-netdata/monitor-anything
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/REFERENCE.md
   learn_path: /docs/collecting-metrics/collectors-configuration
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/SECRETS.md
+  learn_path: /docs/netdata-agent/configuration/secrets-management
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/diskspace.plugin/README.md
   learn_path: /docs/collecting-metrics/storage-and-filesystems/disk-space
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freeipmi.plugin/README.md
