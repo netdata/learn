@@ -162,6 +162,17 @@ html[data-theme='dark'] .table-of-contents__link--active {
 	transition: max-height 0.25s ease-in, opacity 0.15s ease-in;
 }
 
+/* Collapsible TOC: tree-style vertical guide lines for nested items */
+.toc-collapsible .table-of-contents ul {
+	padding-left: 0.75rem;
+	margin-left: 0.25rem;
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme='dark'] .toc-collapsible .table-of-contents ul {
+	border-left-color: rgba(255, 255, 255, 0.1);
+}
+
 
 /* .menu .menu__link{
 	font-weight: 600 !important;
