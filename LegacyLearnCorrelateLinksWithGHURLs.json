@@ -3023,5 +3023,6 @@
     "https://learn.netdata.cloud/docs/collecting-metrics/applications/files-and-directories": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/filecheck/README.md",
     "https://learn.netdata.cloud/docs/top-consumers/processes": "https://github.com/netdata/netdata/blob/master/docs/functions/processes.md",
     "https://learn.netdata.cloud/docs/top-consumers/database-queries": "https://github.com/netdata/netdata/blob/master/docs/functions/databases.md",
-    "https://learn.netdata.cloud/docs/top-consumers": "https://github.com/netdata/netdata/blob/master/docs/top-monitoring-netdata-functions.md"
+    "https://learn.netdata.cloud/docs/top-consumers": "https://github.com/netdata/netdata/blob/master/docs/top-monitoring-netdata-functions.md",
+    "https://learn.netdata.cloud/docs/netdata-agent/configuration/secrets-management": "https://github.com/netdata/netdata/blob/master/src/collectors/SECRETS.md"
 }
