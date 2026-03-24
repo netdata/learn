@@ -8626,10 +8626,6 @@
   to="/docs/collecting-metrics/operating-systems/processor"
 
 [[redirects]]
-  from="/docs/collecting-metrics/windows-systems/power-supply"
-  to="/docs/collecting-metrics/hardware-and-sensors/power-supply"
-
-[[redirects]]
   from="/docs/collecting-metrics/windows-systems/physical-and-logical-disk-performance-metrics"
   to="/docs/collecting-metrics/storage-and-filesystems/physical-and-logical-disk-performance-metrics"
 
@@ -8648,10 +8644,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/ms-exchange"
   to="/docs/collecting-metrics/applications/ms-exchange"
-
-[[redirects]]
-  from="/docs/collecting-metrics/windows-systems/memory-statistics"
-  to="/docs/collecting-metrics/operating-systems/memory-statistics"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/iis"

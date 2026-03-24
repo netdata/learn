@@ -1112,12 +1112,12 @@
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/asp.net
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_thermal_zone.md
   learn_path: /docs/collecting-metrics/hardware-and-sensors/system-thermal-zone
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/memory_statistics.md
-  learn_path: /docs/collecting-metrics/operating-systems/memory-statistics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hyper-v.md
   learn_path: /docs/collecting-metrics/containers-and-vms/hyper-v
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/semaphore_statistics.md
   learn_path: /docs/collecting-metrics/operating-systems/semaphore-statistics
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/memory_statistics_win.md
+  learn_path: /docs/collecting-metrics/operating-systems/memory-statistics-win
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/iis.md
   learn_path: /docs/collecting-metrics/web-servers-and-proxies/iis
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/windows_services.md
@@ -1132,8 +1132,8 @@
   learn_path: /docs/collecting-metrics/operating-systems/numa-architecture
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_exchange.md
   learn_path: /docs/collecting-metrics/applications/ms-exchange
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/power_supply.md
-  learn_path: /docs/collecting-metrics/hardware-and-sensors/power-supply
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/power_supply_win.md
+  learn_path: /docs/collecting-metrics/hardware-and-sensors/power-supply-win
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/physical_and_logical_disk_performance_metrics.md
   learn_path: /docs/collecting-metrics/storage-and-filesystems/physical-and-logical-disk-performance-metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hardware_information_collected_from_kernel_ring..md
