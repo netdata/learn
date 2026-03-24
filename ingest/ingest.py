@@ -2888,6 +2888,25 @@ if __name__ == "__main__":
             rest_files_dictionary[markdown] = {"tmpPath": markdown}
         del md_metadata
 
+    # Check for case-insensitive path collisions (e.g. "Power Supply.mdx" vs "Power supply.mdx").
+    # These cause problems on case-insensitive filesystems (macOS, Windows) and indicate
+    # duplicate sidebar_labels in upstream metadata.yaml files.
+    paths_lower = {}
+    for md_file, info in to_publish.items():
+        lp = info["learnPath"]
+        lp_lower = lp.lower()
+        if lp_lower in paths_lower:
+            prev_file = paths_lower[lp_lower]
+            print(
+                f"WARNING: Case-insensitive path collision detected!\n"
+                f"  '{to_publish[prev_file]['learnPath']}' (from {prev_file})\n"
+                f"  '{lp}' (from {md_file})\n"
+                f"  These files will overwrite each other on case-insensitive filesystems."
+            )
+        else:
+            paths_lower[lp_lower] = md_file
+    del paths_lower
+
     # FILE MOVING
     print("### Moving files ###\n")
 
