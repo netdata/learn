@@ -60,7 +60,7 @@
 		"@vitejs/plugin-react": "^5.1.2",
 		"@vitest/coverage-v8": "^4.0.18",
 		"autoprefixer": "^10.4.24",
-		"happy-dom": "^20.4.0",
+		"happy-dom": "^20.8.8",
 		"jsdom": "^28.0.0",
 		"postcss-loader": "^8.2.0",
 		"postcss-preset-env": "^11.1.2",
