@@ -1062,6 +1062,8 @@
   learn_path: /docs/collecting-metrics/applications/cups
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/user_groups.md
   learn_path: /docs/collecting-metrics/operating-systems/user-groups
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/windows_services.md
+  learn_path: /docs/collecting-metrics/operating-systems/windows-services
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/users.md
   learn_path: /docs/collecting-metrics/operating-systems/users
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/apps.plugin/integrations/applications.md
