@@ -51,9 +51,9 @@ Learn more about [how collectors work](/docs/collecting-metrics), and then learn
 
 Netdata can monitor virtually any application through generic collectors:
 
-- **[Prometheus collector](/docs/collecting-metrics/applications/prometheus-endpoint)** - Any application exposing Prometheus metrics
+- **[Prometheus collector](/docs/collecting-metrics/collectors/applications/prometheus-endpoint)** - Any application exposing Prometheus metrics
 - **[StatsD collector](/docs/collecting-metrics/statsd)** - Applications instrumented with [StatsD](https://blog.netdata.cloud/introduction-to-statsd/)
-- **[Pandas collector](/docs/collecting-metrics/databases/pandas)** - Structured data from CSV, JSON, XML, and more
+- **[Pandas collector](/docs/collecting-metrics/collectors/databases/pandas)** - Structured data from CSV, JSON, XML, and more
 
 Need a dedicated integration? [Submit a feature request](https://github.com/netdata/netdata/issues/new/choose) on GitHub.
 
@@ -64,531 +64,531 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 
 | Integration | Description |
 |-------------|-------------|
-| [4D Server](/docs/collecting-metrics/databases/4d-server) | Monitor 4D Server performance metrics for efficient application management and optimization. |
-| [ActiveMQ](/docs/collecting-metrics/databases/activemq) | This collector monitors ActiveMQ queues and topics. |
-| [Apache Pulsar](/docs/collecting-metrics/databases/apache-pulsar) | This collector monitors Pulsar servers. |
-| [AWS RDS](/docs/collecting-metrics/databases/aws-rds) | Monitor Amazon RDS (Relational Database Service) metrics for efficient cloud database management and performance. |
-| [Beanstalk](/docs/collecting-metrics/databases/beanstalk) | This collector monitors Beanstalk server performance and provides detailed statistics for each tube. |
-| [Cassandra](/docs/collecting-metrics/databases/cassandra) | This collector gathers metrics about client requests, cache hits, and many more, while also providing metrics per each thread pool. |
-| [ClickHouse](/docs/collecting-metrics/databases/clickhouse) | This collector retrieves performance data from ClickHouse for connections, queries, resources, replication, IO, and data operations (inserts, selects, merges) using HTTP requests and ClickHouse system tables. |
-| [ClusterControl CMON](/docs/collecting-metrics/databases/clustercontrol-cmon) | Track CMON metrics for Severalnines Cluster Control for efficient monitoring and management of database operations. |
-| [CockroachDB](/docs/collecting-metrics/databases/cockroachdb) | This collector monitors CockroachDB servers. |
-| [Couchbase](/docs/collecting-metrics/databases/couchbase) | This collector monitors Couchbase servers. |
-| [CouchDB](/docs/collecting-metrics/databases/couchdb) | This collector monitors CouchDB servers. |
-| [Elasticsearch](/docs/collecting-metrics/databases/elasticsearch) | This collector monitors the performance and health of the Elasticsearch cluster. |
-| [HANA](/docs/collecting-metrics/databases/hana) | Track SAP HANA database metrics for efficient data storage and query performance. |
+| [4D Server](/docs/collecting-metrics/collectors/databases/4d-server) | Monitor 4D Server performance metrics for efficient application management and optimization. |
+| [ActiveMQ](/docs/collecting-metrics/collectors/databases/activemq) | This collector monitors ActiveMQ queues and topics. |
+| [Apache Pulsar](/docs/collecting-metrics/collectors/databases/apache-pulsar) | This collector monitors Pulsar servers. |
+| [AWS RDS](/docs/collecting-metrics/collectors/databases/aws-rds) | Monitor Amazon RDS (Relational Database Service) metrics for efficient cloud database management and performance. |
+| [Beanstalk](/docs/collecting-metrics/collectors/databases/beanstalk) | This collector monitors Beanstalk server performance and provides detailed statistics for each tube. |
+| [Cassandra](/docs/collecting-metrics/collectors/databases/cassandra) | This collector gathers metrics about client requests, cache hits, and many more, while also providing metrics per each thread pool. |
+| [ClickHouse](/docs/collecting-metrics/collectors/databases/clickhouse) | This collector retrieves performance data from ClickHouse for connections, queries, resources, replication, IO, and data operations (inserts, selects, merges) using HTTP requests and ClickHouse system tables. |
+| [ClusterControl CMON](/docs/collecting-metrics/collectors/databases/clustercontrol-cmon) | Track CMON metrics for Severalnines Cluster Control for efficient monitoring and management of database operations. |
+| [CockroachDB](/docs/collecting-metrics/collectors/databases/cockroachdb) | This collector monitors CockroachDB servers. |
+| [Couchbase](/docs/collecting-metrics/collectors/databases/couchbase) | This collector monitors Couchbase servers. |
+| [CouchDB](/docs/collecting-metrics/collectors/databases/couchdb) | This collector monitors CouchDB servers. |
+| [Elasticsearch](/docs/collecting-metrics/collectors/databases/elasticsearch) | This collector monitors the performance and health of the Elasticsearch cluster. |
+| [HANA](/docs/collecting-metrics/collectors/databases/hana) | Track SAP HANA database metrics for efficient data storage and query performance. |
 | [IBM DB2](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/db2/integrations/ibm_db2.md) | Monitors IBM DB2 databases using system catalog views and MON_GET_* table functions to expose connections, locking, buffer pool efficiency, tablespace capacity, and workload performance metrics. |
-| [IBM MQ](/docs/collecting-metrics/databases/ibm-mq) | Keep tabs on IBM MQ message queue metrics for efficient message transport and performance. |
-| [InfluxDB](/docs/collecting-metrics/databases/influxdb) | Monitor InfluxDB time-series database metrics for efficient data storage and query performance. |
-| [Kafka](/docs/collecting-metrics/databases/kafka) | Keep an eye on Kafka message queue metrics for optimized data streaming and performance. |
-| [Kafka Consumer Lag](/docs/collecting-metrics/databases/kafka-consumer-lag) | Monitor Kafka consumer lag metrics for efficient message queue management and performance. |
-| [Kafka ZooKeeper](/docs/collecting-metrics/databases/kafka-zookeeper) | Monitor Kafka ZooKeeper metrics for optimized distributed coordination and management. |
-| [MariaDB](/docs/collecting-metrics/databases/mariadb) | This collector monitors the health and performance of MySQL servers and collects general statistics, replication and user metrics. |
-| [MaxScale](/docs/collecting-metrics/databases/maxscale) | This collector monitors the activity and performance of MaxScale servers. |
-| [Meilisearch](/docs/collecting-metrics/databases/meilisearch) | Track Meilisearch search engine metrics for efficient search performance and management. |
-| [Memcached](/docs/collecting-metrics/databases/memcached) | Monitor Memcached metrics for proficient in-memory key-value store operations. |
-| [Microsoft SQL Server](/docs/collecting-metrics/databases/microsoft-sql-server) | This collector monitors the health and performance of Microsoft SQL Server instances. |
-| [MongoDB](/docs/collecting-metrics/databases/mongodb) | This collector monitors MongoDB servers. |
-| [mosquitto](/docs/collecting-metrics/databases/mosquitto) | Keep an eye on Mosquitto MQTT broker metrics for efficient IoT message transport and performance. |
-| [MySQL](/docs/collecting-metrics/databases/mysql) | This collector monitors the health and performance of MySQL servers and collects general statistics, replication and user metrics. |
-| [NATS](/docs/collecting-metrics/databases/nats) | This collector monitors the activity and performance of NATS servers. |
-| [OpenSearch](/docs/collecting-metrics/databases/opensearch) | This collector monitors the performance and health of the Elasticsearch cluster. |
-| [Oracle DB](/docs/collecting-metrics/databases/oracle-db) | This collector monitors the health and performance of Oracle DB servers and collects general statistics, replication and user metrics. |
-| [Pandas](/docs/collecting-metrics/databases/pandas) | [Pandas](https://pandas.pydata.org/) is a de-facto standard in reading and processing most types of structured data in Python. |
-| [Patroni](/docs/collecting-metrics/databases/patroni) | Keep tabs on Patroni PostgreSQL high-availability metrics for efficient database management and performance. |
-| [Percona MySQL](/docs/collecting-metrics/databases/percona-mysql) | This collector monitors the health and performance of MySQL servers and collects general statistics, replication and user metrics. |
-| [pgBackRest](/docs/collecting-metrics/databases/pgbackrest) | Monitor pgBackRest PostgreSQL backup metrics for efficient database backup and management. |
-| [PgBouncer](/docs/collecting-metrics/databases/pgbouncer) | This collector monitors PgBouncer servers. |
-| [Pgpool-II](/docs/collecting-metrics/databases/pgpool-ii) | Track Pgpool-II PostgreSQL middleware metrics for efficient database connection management and performance. |
-| [Pika](/docs/collecting-metrics/databases/pika) | This collector monitors Pika servers. |
-| [PostgreSQL](/docs/collecting-metrics/databases/postgresql) | This collector monitors the activity and performance of Postgres servers, collects replication statistics, metrics for each database, table and index, and more. |
-| [ProxySQL](/docs/collecting-metrics/databases/proxysql) | This collector monitors ProxySQL servers. |
-| [RabbitMQ](/docs/collecting-metrics/databases/rabbitmq) | This collector monitors RabbitMQ instances. |
-| [Redis](/docs/collecting-metrics/databases/redis) | This collector monitors the health and performance of Redis servers and collects general statistics, CPU and memory consumption, replication information, command statistics, and more. |
-| [Redis Queue](/docs/collecting-metrics/databases/redis-queue) | Monitor Python RQ (Redis Queue) job queue metrics for efficient task management and performance. |
-| [RethinkDB](/docs/collecting-metrics/databases/rethinkdb) | It collects cluster-wide metrics such as server status, client connections, active clients, query rate, and document read/write rates. |
-| [Riak KV](/docs/collecting-metrics/databases/riak-kv) | This collector monitors RiakKV metrics about throughput, latency, resources and more. |
-| [ScyllaDB](/docs/collecting-metrics/databases/scylladb) | Track ScyllaDB NoSQL database metrics for efficient database management and performance with Netdata's Prometheus integration. |
-| [Sphinx](/docs/collecting-metrics/databases/sphinx) | Monitor Sphinx search engine metrics for efficient search and indexing performance. |
-| [SQL databases (generic)](/docs/collecting-metrics/databases/sql-databases-generic) | Metrics and charts for this collector are **entirely defined by your SQL configuration**. |
-| [Typesense](/docs/collecting-metrics/databases/typesense) | This collector monitors the overall health status and performance of your Typesense servers. |
-| [VerneMQ](/docs/collecting-metrics/databases/vernemq) | This collector monitors VerneMQ instances. |
-| [Vertica](/docs/collecting-metrics/databases/vertica) | Monitor Vertica analytics database platform metrics for efficient database performance and management. |
-| [Warp10](/docs/collecting-metrics/databases/warp10) | Monitor Warp 10 time-series database metrics for efficient time-series data management and performance. |
-| [YugabyteDB](/docs/collecting-metrics/databases/yugabytedb) | This collector monitors the activity and performance of YugabyteDB servers. |
+| [IBM MQ](/docs/collecting-metrics/collectors/databases/ibm-mq) | Keep tabs on IBM MQ message queue metrics for efficient message transport and performance. |
+| [InfluxDB](/docs/collecting-metrics/collectors/databases/influxdb) | Monitor InfluxDB time-series database metrics for efficient data storage and query performance. |
+| [Kafka](/docs/collecting-metrics/collectors/databases/kafka) | Keep an eye on Kafka message queue metrics for optimized data streaming and performance. |
+| [Kafka Consumer Lag](/docs/collecting-metrics/collectors/databases/kafka-consumer-lag) | Monitor Kafka consumer lag metrics for efficient message queue management and performance. |
+| [Kafka ZooKeeper](/docs/collecting-metrics/collectors/databases/kafka-zookeeper) | Monitor Kafka ZooKeeper metrics for optimized distributed coordination and management. |
+| [MariaDB](/docs/collecting-metrics/collectors/databases/mariadb) | This collector monitors the health and performance of MySQL servers and collects general statistics, replication and user metrics. |
+| [MaxScale](/docs/collecting-metrics/collectors/databases/maxscale) | This collector monitors the activity and performance of MaxScale servers. |
+| [Meilisearch](/docs/collecting-metrics/collectors/databases/meilisearch) | Track Meilisearch search engine metrics for efficient search performance and management. |
+| [Memcached](/docs/collecting-metrics/collectors/databases/memcached) | Monitor Memcached metrics for proficient in-memory key-value store operations. |
+| [Microsoft SQL Server](/docs/collecting-metrics/collectors/databases/microsoft-sql-server) | This collector monitors the health and performance of Microsoft SQL Server instances. |
+| [MongoDB](/docs/collecting-metrics/collectors/databases/mongodb) | This collector monitors MongoDB servers. |
+| [mosquitto](/docs/collecting-metrics/collectors/databases/mosquitto) | Keep an eye on Mosquitto MQTT broker metrics for efficient IoT message transport and performance. |
+| [MySQL](/docs/collecting-metrics/collectors/databases/mysql) | This collector monitors the health and performance of MySQL servers and collects general statistics, replication and user metrics. |
+| [NATS](/docs/collecting-metrics/collectors/databases/nats) | This collector monitors the activity and performance of NATS servers. |
+| [OpenSearch](/docs/collecting-metrics/collectors/databases/opensearch) | This collector monitors the performance and health of the Elasticsearch cluster. |
+| [Oracle DB](/docs/collecting-metrics/collectors/databases/oracle-db) | This collector monitors the health and performance of Oracle DB servers and collects general statistics, replication and user metrics. |
+| [Pandas](/docs/collecting-metrics/collectors/databases/pandas) | [Pandas](https://pandas.pydata.org/) is a de-facto standard in reading and processing most types of structured data in Python. |
+| [Patroni](/docs/collecting-metrics/collectors/databases/patroni) | Keep tabs on Patroni PostgreSQL high-availability metrics for efficient database management and performance. |
+| [Percona MySQL](/docs/collecting-metrics/collectors/databases/percona-mysql) | This collector monitors the health and performance of MySQL servers and collects general statistics, replication and user metrics. |
+| [pgBackRest](/docs/collecting-metrics/collectors/databases/pgbackrest) | Monitor pgBackRest PostgreSQL backup metrics for efficient database backup and management. |
+| [PgBouncer](/docs/collecting-metrics/collectors/databases/pgbouncer) | This collector monitors PgBouncer servers. |
+| [Pgpool-II](/docs/collecting-metrics/collectors/databases/pgpool-ii) | Track Pgpool-II PostgreSQL middleware metrics for efficient database connection management and performance. |
+| [Pika](/docs/collecting-metrics/collectors/databases/pika) | This collector monitors Pika servers. |
+| [PostgreSQL](/docs/collecting-metrics/collectors/databases/postgresql) | This collector monitors the activity and performance of Postgres servers, collects replication statistics, metrics for each database, table and index, and more. |
+| [ProxySQL](/docs/collecting-metrics/collectors/databases/proxysql) | This collector monitors ProxySQL servers. |
+| [RabbitMQ](/docs/collecting-metrics/collectors/databases/rabbitmq) | This collector monitors RabbitMQ instances. |
+| [Redis](/docs/collecting-metrics/collectors/databases/redis) | This collector monitors the health and performance of Redis servers and collects general statistics, CPU and memory consumption, replication information, command statistics, and more. |
+| [Redis Queue](/docs/collecting-metrics/collectors/databases/redis-queue) | Monitor Python RQ (Redis Queue) job queue metrics for efficient task management and performance. |
+| [RethinkDB](/docs/collecting-metrics/collectors/databases/rethinkdb) | It collects cluster-wide metrics such as server status, client connections, active clients, query rate, and document read/write rates. |
+| [Riak KV](/docs/collecting-metrics/collectors/databases/riak-kv) | This collector monitors RiakKV metrics about throughput, latency, resources and more. |
+| [ScyllaDB](/docs/collecting-metrics/collectors/databases/scylladb) | Track ScyllaDB NoSQL database metrics for efficient database management and performance with Netdata's Prometheus integration. |
+| [Sphinx](/docs/collecting-metrics/collectors/databases/sphinx) | Monitor Sphinx search engine metrics for efficient search and indexing performance. |
+| [SQL databases (generic)](/docs/collecting-metrics/collectors/databases/sql-databases-generic) | Metrics and charts for this collector are **entirely defined by your SQL configuration**. |
+| [Typesense](/docs/collecting-metrics/collectors/databases/typesense) | This collector monitors the overall health status and performance of your Typesense servers. |
+| [VerneMQ](/docs/collecting-metrics/collectors/databases/vernemq) | This collector monitors VerneMQ instances. |
+| [Vertica](/docs/collecting-metrics/collectors/databases/vertica) | Monitor Vertica analytics database platform metrics for efficient database performance and management. |
+| [Warp10](/docs/collecting-metrics/collectors/databases/warp10) | Monitor Warp 10 time-series database metrics for efficient time-series data management and performance. |
+| [YugabyteDB](/docs/collecting-metrics/collectors/databases/yugabytedb) | This collector monitors the activity and performance of YugabyteDB servers. |
 
 ### Web Servers and Proxies
 
 | Integration | Description |
 |-------------|-------------|
-| [Apache](/docs/collecting-metrics/web-servers-and-proxies/apache) | This collector monitors the activity and performance of Apache servers, and collects metrics such as the number of connections, workers, requests and more. |
-| [APIcast](/docs/collecting-metrics/web-servers-and-proxies/apicast) | Monitor APIcast performance metrics to optimize API gateway operations and management. |
-| [ASP.NET](/docs/collecting-metrics/web-servers-and-proxies/asp.net) | This collector monitors ASP.NET applications. |
-| [Envoy](/docs/collecting-metrics/web-servers-and-proxies/envoy) | This collector monitors Envoy proxies. |
-| [Gobetween](/docs/collecting-metrics/web-servers-and-proxies/gobetween) | Track Gobetween load balancer metrics for optimized network traffic management and performance. |
-| [HAProxy](/docs/collecting-metrics/web-servers-and-proxies/haproxy) | This collector monitors HAProxy servers. |
-| [HTTPD](/docs/collecting-metrics/web-servers-and-proxies/httpd) | This collector monitors the activity and performance of Apache servers, and collects metrics such as the number of connections, workers, requests and more. |
-| [IIS](/docs/collecting-metrics/web-servers-and-proxies/iis) | This collector monitors website requests and logins. |
-| [Lighttpd](/docs/collecting-metrics/web-servers-and-proxies/lighttpd) | This collector monitors the activity and performance of Lighttpd servers, and collects metrics such as the number of connections, workers, requests and more. |
-| [Litespeed](/docs/collecting-metrics/web-servers-and-proxies/litespeed) | Examine Litespeed metrics for insights into web server operations. |
-| [NGINX](/docs/collecting-metrics/web-servers-and-proxies/nginx) | This collector monitors the activity and performance of NGINX servers, and collects metrics such as the number of connections, their status, and client requests. |
-| [NGINX Plus](/docs/collecting-metrics/web-servers-and-proxies/nginx-plus) | This collector monitors NGINX Plus servers. |
-| [NGINX Unit](/docs/collecting-metrics/web-servers-and-proxies/nginx-unit) | This collector monitors the activity and performance of NGINX Unit servers, and collects metrics such as the number of connections, their status, and client requests. |
-| [NGINX VTS](/docs/collecting-metrics/web-servers-and-proxies/nginx-vts) | This collector monitors NGINX servers with [virtual host traffic status module](https://github.com/vozlt/nginx-module-vts). |
-| [PHP-FPM](/docs/collecting-metrics/web-servers-and-proxies/php-fpm) | This collector monitors PHP-FPM instances. |
-| [Squid](/docs/collecting-metrics/web-servers-and-proxies/squid) | This collector monitors statistics about the Squid Clients and Servers, like bandwidth and requests. |
-| [Squid log files](/docs/collecting-metrics/web-servers-and-proxies/squid-log-files) | his collector monitors Squid servers by parsing their access log files. |
-| [Tengine](/docs/collecting-metrics/web-servers-and-proxies/tengine) | This collector monitors Tengine servers. |
-| [Tomcat](/docs/collecting-metrics/web-servers-and-proxies/tomcat) | This collector monitors Tomcat metrics about bandwidth, processing time, threads and more. |
-| [Traefik](/docs/collecting-metrics/web-servers-and-proxies/traefik) | This collector monitors Traefik servers. |
-| [uWSGI](/docs/collecting-metrics/web-servers-and-proxies/uwsgi) | Monitors UWSGI worker health and performance by collecting metrics like requests, transmitted data, exceptions, and harakiris. |
-| [Varnish](/docs/collecting-metrics/web-servers-and-proxies/varnish) | This collector monitors Varnish instances, supporting both the open-source Varnish-Cache and the commercial Varnish-Plus. |
-| [Web server log files](/docs/collecting-metrics/web-servers-and-proxies/web-server-log-files) | This collector monitors web servers by parsing their log files. |
+| [Apache](/docs/collecting-metrics/collectors/web-servers-and-proxies/apache) | This collector monitors the activity and performance of Apache servers, and collects metrics such as the number of connections, workers, requests and more. |
+| [APIcast](/docs/collecting-metrics/collectors/web-servers-and-proxies/apicast) | Monitor APIcast performance metrics to optimize API gateway operations and management. |
+| [ASP.NET](/docs/collecting-metrics/collectors/web-servers-and-proxies/asp.net) | This collector monitors ASP.NET applications. |
+| [Envoy](/docs/collecting-metrics/collectors/web-servers-and-proxies/envoy) | This collector monitors Envoy proxies. |
+| [Gobetween](/docs/collecting-metrics/collectors/web-servers-and-proxies/gobetween) | Track Gobetween load balancer metrics for optimized network traffic management and performance. |
+| [HAProxy](/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy) | This collector monitors HAProxy servers. |
+| [HTTPD](/docs/collecting-metrics/collectors/web-servers-and-proxies/httpd) | This collector monitors the activity and performance of Apache servers, and collects metrics such as the number of connections, workers, requests and more. |
+| [IIS](/docs/collecting-metrics/collectors/web-servers-and-proxies/iis) | This collector monitors website requests and logins. |
+| [Lighttpd](/docs/collecting-metrics/collectors/web-servers-and-proxies/lighttpd) | This collector monitors the activity and performance of Lighttpd servers, and collects metrics such as the number of connections, workers, requests and more. |
+| [Litespeed](/docs/collecting-metrics/collectors/web-servers-and-proxies/litespeed) | Examine Litespeed metrics for insights into web server operations. |
+| [NGINX](/docs/collecting-metrics/collectors/web-servers-and-proxies/nginx) | This collector monitors the activity and performance of NGINX servers, and collects metrics such as the number of connections, their status, and client requests. |
+| [NGINX Plus](/docs/collecting-metrics/collectors/web-servers-and-proxies/nginx-plus) | This collector monitors NGINX Plus servers. |
+| [NGINX Unit](/docs/collecting-metrics/collectors/web-servers-and-proxies/nginx-unit) | This collector monitors the activity and performance of NGINX Unit servers, and collects metrics such as the number of connections, their status, and client requests. |
+| [NGINX VTS](/docs/collecting-metrics/collectors/web-servers-and-proxies/nginx-vts) | This collector monitors NGINX servers with [virtual host traffic status module](https://github.com/vozlt/nginx-module-vts). |
+| [PHP-FPM](/docs/collecting-metrics/collectors/web-servers-and-proxies/php-fpm) | This collector monitors PHP-FPM instances. |
+| [Squid](/docs/collecting-metrics/collectors/web-servers-and-proxies/squid) | This collector monitors statistics about the Squid Clients and Servers, like bandwidth and requests. |
+| [Squid log files](/docs/collecting-metrics/collectors/web-servers-and-proxies/squid-log-files) | his collector monitors Squid servers by parsing their access log files. |
+| [Tengine](/docs/collecting-metrics/collectors/web-servers-and-proxies/tengine) | This collector monitors Tengine servers. |
+| [Tomcat](/docs/collecting-metrics/collectors/web-servers-and-proxies/tomcat) | This collector monitors Tomcat metrics about bandwidth, processing time, threads and more. |
+| [Traefik](/docs/collecting-metrics/collectors/web-servers-and-proxies/traefik) | This collector monitors Traefik servers. |
+| [uWSGI](/docs/collecting-metrics/collectors/web-servers-and-proxies/uwsgi) | Monitors UWSGI worker health and performance by collecting metrics like requests, transmitted data, exceptions, and harakiris. |
+| [Varnish](/docs/collecting-metrics/collectors/web-servers-and-proxies/varnish) | This collector monitors Varnish instances, supporting both the open-source Varnish-Cache and the commercial Varnish-Plus. |
+| [Web server log files](/docs/collecting-metrics/collectors/web-servers-and-proxies/web-server-log-files) | This collector monitors web servers by parsing their log files. |
 
 ### Containers and VMs
 
 | Integration | Description |
 |-------------|-------------|
-| [AWS ECS Containers](/docs/collecting-metrics/containers-and-vms/aws-ecs-containers) | Monitor AWS ECS container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [Cilium Agent](/docs/collecting-metrics/containers-and-vms/cilium-agent) | Keep an eye on Cilium Agent metrics for optimized network security and connectivity. |
-| [Cilium Operator](/docs/collecting-metrics/containers-and-vms/cilium-operator) | Monitor Cilium Operator metrics for efficient Kubernetes network security management. |
-| [Cilium Proxy](/docs/collecting-metrics/containers-and-vms/cilium-proxy) | Track Cilium Proxy metrics for enhanced network security and performance. |
-| [containerd Containers](/docs/collecting-metrics/containers-and-vms/containerd-containers) | Monitor containerd container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [Containers](/docs/collecting-metrics/containers-and-vms/containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [Docker](/docs/collecting-metrics/containers-and-vms/docker) | This collector monitors Docker containers state, health status and more. |
-| [Docker Containers](/docs/collecting-metrics/containers-and-vms/docker-containers) | Monitor Docker container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [Docker Engine](/docs/collecting-metrics/containers-and-vms/docker-engine) | This collector monitors the activity and health of Docker Engine and Docker Swarm. |
-| [Docker Hub repository](/docs/collecting-metrics/containers-and-vms/docker-hub-repository) | This collector keeps track of DockerHub repositories statistics such as the number of stars, pulls, current status, and more. |
-| [Hyper-V](/docs/collecting-metrics/containers-and-vms/hyper-v) | This collector monitors website requests and logins. |
-| [Kubelet](/docs/collecting-metrics/containers-and-vms/kubelet) | This collector monitors Kubelet instances. |
-| [Kubeproxy](/docs/collecting-metrics/containers-and-vms/kubeproxy) | This collector monitors Kubeproxy instances. |
-| [Kubernetes API Server](/docs/collecting-metrics/containers-and-vms/kubernetes-api-server) | This collector monitors Kubernetes API Server health, performance, and request metrics. |
-| [Kubernetes Cluster State](/docs/collecting-metrics/containers-and-vms/kubernetes-cluster-state) | This collector monitors Kubernetes Nodes, Pods and Containers. |
-| [Kubernetes Containers](/docs/collecting-metrics/containers-and-vms/kubernetes-containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [Libvirt VMs and Containers](/docs/collecting-metrics/containers-and-vms/libvirt-vms-and-containers) | Monitor libvirt-managed VM and container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [LXC Containers](/docs/collecting-metrics/containers-and-vms/lxc-containers) | Monitor LXC/LXD/Incus container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [Mesos](/docs/collecting-metrics/containers-and-vms/mesos) | Monitor Apache Mesos cluster manager metrics for efficient resource management and performance. |
-| [Nomad Containers](/docs/collecting-metrics/containers-and-vms/nomad-containers) | Monitor HashiCorp Nomad container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [OpenShift Containers](/docs/collecting-metrics/containers-and-vms/openshift-containers) | Monitor Red Hat OpenShift container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [OpenStack VMs](/docs/collecting-metrics/containers-and-vms/openstack-vms) | Monitor OpenStack Nova virtual machine resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [oVirt VMs](/docs/collecting-metrics/containers-and-vms/ovirt-vms) | Monitor oVirt/RHEV virtual machine resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [Podman](/docs/collecting-metrics/containers-and-vms/podman) | Keep tabs on Podman container runtime metrics for efficient container management and performance. |
-| [Podman Containers](/docs/collecting-metrics/containers-and-vms/podman-containers) | Monitor Podman container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [Proxmox VE](/docs/collecting-metrics/containers-and-vms/proxmox-ve) | Keep tabs on Proxmox Virtual Environment metrics for efficient virtualization and container management. |
-| [Proxmox VE Monitoring](/docs/collecting-metrics/containers-and-vms/proxmox-ve-monitoring) | This guide describes how Netdata monitors Proxmox VE hypervisors. |
-| [Proxmox VMs and Containers](/docs/collecting-metrics/containers-and-vms/proxmox-vms-and-containers) | Monitor Proxmox VE virtual machine and container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [systemd-nspawn Containers](/docs/collecting-metrics/containers-and-vms/systemd-nspawn-containers) | Monitor systemd-nspawn container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [vCenter Server Appliance](/docs/collecting-metrics/containers-and-vms/vcenter-server-appliance) | This collector monitors [health statistics](https://developer.vmware.com/apis/vsphere-automation/latest/appliance/health/) of vCenter Server Appliance servers. |
-| [Virtual Machines](/docs/collecting-metrics/containers-and-vms/virtual-machines) | Monitor virtual machine resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [VMware vCenter Server](/docs/collecting-metrics/containers-and-vms/vmware-vcenter-server) | This collector monitors hosts, VMs, datastores, clusters, and resource pools from `vCenter` servers. |
-| [Xen XCP-ng](/docs/collecting-metrics/containers-and-vms/xen-xcp-ng) | This collector monitors XenServer and XCP-ng host and domains statistics. |
+| [AWS ECS Containers](/docs/collecting-metrics/collectors/containers-and-vms/aws-ecs-containers) | Monitor AWS ECS container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Cilium Agent](/docs/collecting-metrics/collectors/containers-and-vms/cilium-agent) | Keep an eye on Cilium Agent metrics for optimized network security and connectivity. |
+| [Cilium Operator](/docs/collecting-metrics/collectors/containers-and-vms/cilium-operator) | Monitor Cilium Operator metrics for efficient Kubernetes network security management. |
+| [Cilium Proxy](/docs/collecting-metrics/collectors/containers-and-vms/cilium-proxy) | Track Cilium Proxy metrics for enhanced network security and performance. |
+| [containerd Containers](/docs/collecting-metrics/collectors/containers-and-vms/containerd-containers) | Monitor containerd container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Containers](/docs/collecting-metrics/collectors/containers-and-vms/containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Docker](/docs/collecting-metrics/collectors/containers-and-vms/docker) | This collector monitors Docker containers state, health status and more. |
+| [Docker Containers](/docs/collecting-metrics/collectors/containers-and-vms/docker-containers) | Monitor Docker container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Docker Engine](/docs/collecting-metrics/collectors/containers-and-vms/docker-engine) | This collector monitors the activity and health of Docker Engine and Docker Swarm. |
+| [Docker Hub repository](/docs/collecting-metrics/collectors/containers-and-vms/docker-hub-repository) | This collector keeps track of DockerHub repositories statistics such as the number of stars, pulls, current status, and more. |
+| [Hyper-V](/docs/collecting-metrics/collectors/containers-and-vms/hyper-v) | This collector monitors website requests and logins. |
+| [Kubelet](/docs/collecting-metrics/collectors/containers-and-vms/kubelet) | This collector monitors Kubelet instances. |
+| [Kubeproxy](/docs/collecting-metrics/collectors/containers-and-vms/kubeproxy) | This collector monitors Kubeproxy instances. |
+| [Kubernetes API Server](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-api-server) | This collector monitors Kubernetes API Server health, performance, and request metrics. |
+| [Kubernetes Cluster State](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-cluster-state) | This collector monitors Kubernetes Nodes, Pods and Containers. |
+| [Kubernetes Containers](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Libvirt VMs and Containers](/docs/collecting-metrics/collectors/containers-and-vms/libvirt-vms-and-containers) | Monitor libvirt-managed VM and container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [LXC Containers](/docs/collecting-metrics/collectors/containers-and-vms/lxc-containers) | Monitor LXC/LXD/Incus container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Mesos](/docs/collecting-metrics/collectors/containers-and-vms/mesos) | Monitor Apache Mesos cluster manager metrics for efficient resource management and performance. |
+| [Nomad Containers](/docs/collecting-metrics/collectors/containers-and-vms/nomad-containers) | Monitor HashiCorp Nomad container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [OpenShift Containers](/docs/collecting-metrics/collectors/containers-and-vms/openshift-containers) | Monitor Red Hat OpenShift container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [OpenStack VMs](/docs/collecting-metrics/collectors/containers-and-vms/openstack-vms) | Monitor OpenStack Nova virtual machine resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [oVirt VMs](/docs/collecting-metrics/collectors/containers-and-vms/ovirt-vms) | Monitor oVirt/RHEV virtual machine resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Podman](/docs/collecting-metrics/collectors/containers-and-vms/podman) | Keep tabs on Podman container runtime metrics for efficient container management and performance. |
+| [Podman Containers](/docs/collecting-metrics/collectors/containers-and-vms/podman-containers) | Monitor Podman container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Proxmox VE](/docs/collecting-metrics/collectors/containers-and-vms/proxmox-ve) | Keep tabs on Proxmox Virtual Environment metrics for efficient virtualization and container management. |
+| [Proxmox VE Monitoring](/docs/collecting-metrics/collectors/containers-and-vms/proxmox-ve-monitoring) | This guide describes how Netdata monitors Proxmox VE hypervisors. |
+| [Proxmox VMs and Containers](/docs/collecting-metrics/collectors/containers-and-vms/proxmox-vms-and-containers) | Monitor Proxmox VE virtual machine and container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [systemd-nspawn Containers](/docs/collecting-metrics/collectors/containers-and-vms/systemd-nspawn-containers) | Monitor systemd-nspawn container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [vCenter Server Appliance](/docs/collecting-metrics/collectors/containers-and-vms/vcenter-server-appliance) | This collector monitors [health statistics](https://developer.vmware.com/apis/vsphere-automation/latest/appliance/health/) of vCenter Server Appliance servers. |
+| [Virtual Machines](/docs/collecting-metrics/collectors/containers-and-vms/virtual-machines) | Monitor virtual machine resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [VMware vCenter Server](/docs/collecting-metrics/collectors/containers-and-vms/vmware-vcenter-server) | This collector monitors hosts, VMs, datastores, clusters, and resource pools from `vCenter` servers. |
+| [Xen XCP-ng](/docs/collecting-metrics/collectors/containers-and-vms/xen-xcp-ng) | This collector monitors XenServer and XCP-ng host and domains statistics. |
 
 ### Operating Systems
 
 | Integration | Description |
 |-------------|-------------|
-| [Applications](/docs/collecting-metrics/operating-systems/applications) | Monitor Applications for optimal software performance and resource usage. |
-| [CPU performance](/docs/collecting-metrics/operating-systems/cpu-performance) | This collector monitors CPU performance metrics about cycles, instructions, migrations, cache operations and more. |
-| [dev.cpu.0.freq](/docs/collecting-metrics/operating-systems/dev.cpu.0.freq) | Read current CPU Scaling frequency. |
-| [eBPF Cachestat](/docs/collecting-metrics/operating-systems/ebpf-cachestat) | Monitor Linux page cache events giving for users a general vision about how his kernel is manipulating files. |
-| [eBPF DCstat](/docs/collecting-metrics/operating-systems/ebpf-dcstat) | Monitor directory cache events per application given an overall vision about files on memory or storage device. |
-| [eBPF Filedescriptor](/docs/collecting-metrics/operating-systems/ebpf-filedescriptor) | Monitor calls for functions responsible to open or close a file descriptor and possible errors. |
-| [eBPF Hardirq](/docs/collecting-metrics/operating-systems/ebpf-hardirq) | Monitor latency for each HardIRQ available. |
-| [eBPF OOMkill](/docs/collecting-metrics/operating-systems/ebpf-oomkill) | Monitor applications that reach out of memory. |
-| [eBPF Process](/docs/collecting-metrics/operating-systems/ebpf-process) | Monitor internal memory usage. |
-| [eBPF Processes](/docs/collecting-metrics/operating-systems/ebpf-processes) | Monitor calls for function creating tasks (threads and processes) inside Linux kernel. |
-| [eBPF SHM](/docs/collecting-metrics/operating-systems/ebpf-shm) | Monitor syscall responsible to manipulate shared memory. |
-| [eBPF SoftIRQ](/docs/collecting-metrics/operating-systems/ebpf-softirq) | Monitor latency for each SoftIRQ available. |
-| [eBPF SWAP](/docs/collecting-metrics/operating-systems/ebpf-swap) | Monitors when swap has I/O events and applications executing events. |
-| [Entropy](/docs/collecting-metrics/operating-systems/entropy) | Entropy, a measure of the randomness or unpredictability of data. |
-| [FreeBSD RCTL-RACCT](/docs/collecting-metrics/operating-systems/freebsd-rctl-racct) | Keep an eye on FreeBSD Resource Container metrics for optimized resource management and performance. |
-| [hw.intrcnt](/docs/collecting-metrics/operating-systems/hw.intrcnt) | Get total number of interrupts |
+| [Applications](/docs/collecting-metrics/collectors/operating-systems/applications) | Monitor Applications for optimal software performance and resource usage. |
+| [CPU performance](/docs/collecting-metrics/collectors/operating-systems/cpu-performance) | This collector monitors CPU performance metrics about cycles, instructions, migrations, cache operations and more. |
+| [dev.cpu.0.freq](/docs/collecting-metrics/collectors/operating-systems/dev.cpu.0.freq) | Read current CPU Scaling frequency. |
+| [eBPF Cachestat](/docs/collecting-metrics/collectors/operating-systems/ebpf-cachestat) | Monitor Linux page cache events giving for users a general vision about how his kernel is manipulating files. |
+| [eBPF DCstat](/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat) | Monitor directory cache events per application given an overall vision about files on memory or storage device. |
+| [eBPF Filedescriptor](/docs/collecting-metrics/collectors/operating-systems/ebpf-filedescriptor) | Monitor calls for functions responsible to open or close a file descriptor and possible errors. |
+| [eBPF Hardirq](/docs/collecting-metrics/collectors/operating-systems/ebpf-hardirq) | Monitor latency for each HardIRQ available. |
+| [eBPF OOMkill](/docs/collecting-metrics/collectors/operating-systems/ebpf-oomkill) | Monitor applications that reach out of memory. |
+| [eBPF Process](/docs/collecting-metrics/collectors/operating-systems/ebpf-process) | Monitor internal memory usage. |
+| [eBPF Processes](/docs/collecting-metrics/collectors/operating-systems/ebpf-processes) | Monitor calls for function creating tasks (threads and processes) inside Linux kernel. |
+| [eBPF SHM](/docs/collecting-metrics/collectors/operating-systems/ebpf-shm) | Monitor syscall responsible to manipulate shared memory. |
+| [eBPF SoftIRQ](/docs/collecting-metrics/collectors/operating-systems/ebpf-softirq) | Monitor latency for each SoftIRQ available. |
+| [eBPF SWAP](/docs/collecting-metrics/collectors/operating-systems/ebpf-swap) | Monitors when swap has I/O events and applications executing events. |
+| [Entropy](/docs/collecting-metrics/collectors/operating-systems/entropy) | Entropy, a measure of the randomness or unpredictability of data. |
+| [FreeBSD RCTL-RACCT](/docs/collecting-metrics/collectors/operating-systems/freebsd-rctl-racct) | Keep an eye on FreeBSD Resource Container metrics for optimized resource management and performance. |
+| [hw.intrcnt](/docs/collecting-metrics/collectors/operating-systems/hw.intrcnt) | Get total number of interrupts |
 | [IBM i (AS/400)](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/as400/integrations/ibm_i_as-400.md) | Monitors IBM i (AS/400) systems using SQL services and CL commands to expose CPU, memory, storage, job, and subsystem activity. |
-| [Inter Process Communication](/docs/collecting-metrics/operating-systems/inter-process-communication) | IPC stands for Inter-Process Communication. |
-| [Interrupts](/docs/collecting-metrics/operating-systems/interrupts) | Monitors `/proc/interrupts`, a file organized by CPU and then by the type of interrupt. |
-| [kern.cp_time](/docs/collecting-metrics/operating-systems/kern.cp_time) | Total CPU utilization |
-| [kern.ipc.msq](/docs/collecting-metrics/operating-systems/kern.ipc.msq) | Collect number of IPC message Queues |
-| [kern.ipc.sem](/docs/collecting-metrics/operating-systems/kern.ipc.sem) | Collect information about semaphore. |
-| [kern.ipc.shm](/docs/collecting-metrics/operating-systems/kern.ipc.shm) | Collect shared memory information. |
-| [Kernel Same-Page Merging](/docs/collecting-metrics/operating-systems/kernel-same-page-merging) | Kernel Samepage Merging (KSM) is a memory-saving feature in Linux that enables the kernel to examine the memory of different processes and identify identical pages. |
-| [Linux kernel SLAB allocator statistics](/docs/collecting-metrics/operating-systems/linux-kernel-slab-allocator-statistics) | Collects metrics on kernel SLAB cache utilization to monitor the low-level performance impact of workloads in the kernel. |
-| [Linux ZSwap](/docs/collecting-metrics/operating-systems/linux-zswap) | Collects zswap performance metrics on Linux systems. |
-| [macOS](/docs/collecting-metrics/operating-systems/macos) | Monitor macOS metrics for efficient operating system performance. |
-| [Memory Statistics](/docs/collecting-metrics/operating-systems/memory-statistics) | Linux Virtual memory subsystem. |
-| [Memory Statistics (Win)](/docs/collecting-metrics/operating-systems/memory-statistics-win) | This collector monitors swap and memory pool statistics on Windows systems. |
-| [Memory Usage](/docs/collecting-metrics/operating-systems/memory-usage) | `/proc/meminfo` provides detailed information about the system's current memory usage. |
-| [Non-Uniform Memory Access](/docs/collecting-metrics/operating-systems/non-uniform-memory-access) | Information about NUMA (Non-Uniform Memory Access) nodes on the system. |
-| [NUMA Architecture](/docs/collecting-metrics/operating-systems/numa-architecture) | This collector monitors NUMA Architecture on Windows. |
-| [OpenRC](/docs/collecting-metrics/operating-systems/openrc) | Keep tabs on OpenRC init system metrics for efficient system startup and service management. |
-| [Page types](/docs/collecting-metrics/operating-systems/page-types) | This integration provides metrics about the system's memory page types |
-| [Pressure Stall Information](/docs/collecting-metrics/operating-systems/pressure-stall-information) | Introduced in Linux kernel 4.20, `/proc/pressure` provides information about system pressure stall information (PSI). |
-| [Processor](/docs/collecting-metrics/operating-systems/processor) | This collector monitors processors statistics on host. |
-| [Semaphore statistics](/docs/collecting-metrics/operating-systems/semaphore-statistics) | Inter-Process Communication (IPC) enables different processes to communicate and coordinate with each other. |
-| [SoftIRQ statistics](/docs/collecting-metrics/operating-systems/softirq-statistics) | In the Linux kernel, handling of hardware interrupts is split into two halves: the top half and the bottom half. |
-| [Supervisor](/docs/collecting-metrics/operating-systems/supervisor) | This collector monitors Supervisor instances. |
-| [System Load Average](/docs/collecting-metrics/operating-systems/system-load-average) | The `/proc/loadavg` file provides information about the system load average. |
-| [System Memory Fragmentation](/docs/collecting-metrics/operating-systems/system-memory-fragmentation) | Collects memory fragmentation statistics from the Linux kernel |
-| [System statistics](/docs/collecting-metrics/operating-systems/system-statistics) | CPU utilization, states and frequencies and key Linux system performance metrics. |
-| [System statistics](/docs/collecting-metrics/operating-systems/system-statistics) | This collector monitors the current number of processes, threads, and context switches on Windows systems. |
-| [System Uptime](/docs/collecting-metrics/operating-systems/system-uptime) | The amount of time the system has been up (running). |
-| [system.ram](/docs/collecting-metrics/operating-systems/system.ram) | Show information about system memory usage. |
-| [Systemd Services](/docs/collecting-metrics/operating-systems/systemd-services) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [Systemd Units](/docs/collecting-metrics/operating-systems/systemd-units) | This collector monitors the state of Systemd units and unit files. |
-| [systemd-logind users](/docs/collecting-metrics/operating-systems/systemd-logind-users) | This collector monitors number of sessions and users as reported by the `org.freedesktop.login1` DBus API. |
-| [uptime](/docs/collecting-metrics/operating-systems/uptime) | Show period of time server is up. |
-| [User Groups](/docs/collecting-metrics/operating-systems/user-groups) | This integration monitors resource utilization on a user groups context. |
-| [Users](/docs/collecting-metrics/operating-systems/users) | This integration monitors resource utilization on a user context. |
-| [vm.loadavg](/docs/collecting-metrics/operating-systems/vm.loadavg) | System Load Average |
-| [vm.stats.sys.v_intr](/docs/collecting-metrics/operating-systems/vm.stats.sys.v_intr) | Device interrupts |
-| [vm.stats.sys.v_soft](/docs/collecting-metrics/operating-systems/vm.stats.sys.v_soft) | Software Interrupt |
-| [vm.stats.sys.v_swtch](/docs/collecting-metrics/operating-systems/vm.stats.sys.v_swtch) | CPU context switch |
-| [vm.stats.vm.v_pgfaults](/docs/collecting-metrics/operating-systems/vm.stats.vm.v_pgfaults) | Collect memory page faults events. |
-| [vm.stats.vm.v_swappgs](/docs/collecting-metrics/operating-systems/vm.stats.vm.v_swappgs) | The metric swap amount of data read from and written to SWAP. |
-| [vm.swap_info](/docs/collecting-metrics/operating-systems/vm.swap_info) | Collect information about SWAP memory. |
-| [vm.vmtotal](/docs/collecting-metrics/operating-systems/vm.vmtotal) | Collect Virtual Memory information from host. |
-| [Windows Services](/docs/collecting-metrics/operating-systems/windows-services) | This integration monitors resource utilization grouped by Windows Service. |
-| [Windows Services](/docs/collecting-metrics/operating-systems/windows-services) | This collector monitors Windows Services Status and States. |
-| [ZRAM](/docs/collecting-metrics/operating-systems/zram) | zRAM, or compressed RAM, is a block device that uses a portion of your system's RAM as a block device. |
+| [Inter Process Communication](/docs/collecting-metrics/collectors/operating-systems/inter-process-communication) | IPC stands for Inter-Process Communication. |
+| [Interrupts](/docs/collecting-metrics/collectors/operating-systems/interrupts) | Monitors `/proc/interrupts`, a file organized by CPU and then by the type of interrupt. |
+| [kern.cp_time](/docs/collecting-metrics/collectors/operating-systems/kern.cp_time) | Total CPU utilization |
+| [kern.ipc.msq](/docs/collecting-metrics/collectors/operating-systems/kern.ipc.msq) | Collect number of IPC message Queues |
+| [kern.ipc.sem](/docs/collecting-metrics/collectors/operating-systems/kern.ipc.sem) | Collect information about semaphore. |
+| [kern.ipc.shm](/docs/collecting-metrics/collectors/operating-systems/kern.ipc.shm) | Collect shared memory information. |
+| [Kernel Same-Page Merging](/docs/collecting-metrics/collectors/operating-systems/kernel-same-page-merging) | Kernel Samepage Merging (KSM) is a memory-saving feature in Linux that enables the kernel to examine the memory of different processes and identify identical pages. |
+| [Linux kernel SLAB allocator statistics](/docs/collecting-metrics/collectors/operating-systems/linux-kernel-slab-allocator-statistics) | Collects metrics on kernel SLAB cache utilization to monitor the low-level performance impact of workloads in the kernel. |
+| [Linux ZSwap](/docs/collecting-metrics/collectors/operating-systems/linux-zswap) | Collects zswap performance metrics on Linux systems. |
+| [macOS](/docs/collecting-metrics/collectors/operating-systems/macos) | Monitor macOS metrics for efficient operating system performance. |
+| [Memory Statistics](/docs/collecting-metrics/collectors/operating-systems/memory-statistics) | Linux Virtual memory subsystem. |
+| [Memory Statistics (Win)](/docs/collecting-metrics/collectors/operating-systems/memory-statistics-win) | This collector monitors swap and memory pool statistics on Windows systems. |
+| [Memory Usage](/docs/collecting-metrics/collectors/operating-systems/memory-usage) | `/proc/meminfo` provides detailed information about the system's current memory usage. |
+| [Non-Uniform Memory Access](/docs/collecting-metrics/collectors/operating-systems/non-uniform-memory-access) | Information about NUMA (Non-Uniform Memory Access) nodes on the system. |
+| [NUMA Architecture](/docs/collecting-metrics/collectors/operating-systems/numa-architecture) | This collector monitors NUMA Architecture on Windows. |
+| [OpenRC](/docs/collecting-metrics/collectors/operating-systems/openrc) | Keep tabs on OpenRC init system metrics for efficient system startup and service management. |
+| [Page types](/docs/collecting-metrics/collectors/operating-systems/page-types) | This integration provides metrics about the system's memory page types |
+| [Pressure Stall Information](/docs/collecting-metrics/collectors/operating-systems/pressure-stall-information) | Introduced in Linux kernel 4.20, `/proc/pressure` provides information about system pressure stall information (PSI). |
+| [Processor](/docs/collecting-metrics/collectors/operating-systems/processor) | This collector monitors processors statistics on host. |
+| [Semaphore statistics](/docs/collecting-metrics/collectors/operating-systems/semaphore-statistics) | Inter-Process Communication (IPC) enables different processes to communicate and coordinate with each other. |
+| [SoftIRQ statistics](/docs/collecting-metrics/collectors/operating-systems/softirq-statistics) | In the Linux kernel, handling of hardware interrupts is split into two halves: the top half and the bottom half. |
+| [Supervisor](/docs/collecting-metrics/collectors/operating-systems/supervisor) | This collector monitors Supervisor instances. |
+| [System Load Average](/docs/collecting-metrics/collectors/operating-systems/system-load-average) | The `/proc/loadavg` file provides information about the system load average. |
+| [System Memory Fragmentation](/docs/collecting-metrics/collectors/operating-systems/system-memory-fragmentation) | Collects memory fragmentation statistics from the Linux kernel |
+| [System statistics](/docs/collecting-metrics/collectors/operating-systems/system-statistics) | CPU utilization, states and frequencies and key Linux system performance metrics. |
+| [System statistics](/docs/collecting-metrics/collectors/operating-systems/system-statistics) | This collector monitors the current number of processes, threads, and context switches on Windows systems. |
+| [System Uptime](/docs/collecting-metrics/collectors/operating-systems/system-uptime) | The amount of time the system has been up (running). |
+| [system.ram](/docs/collecting-metrics/collectors/operating-systems/system.ram) | Show information about system memory usage. |
+| [Systemd Services](/docs/collecting-metrics/collectors/operating-systems/systemd-services) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Systemd Units](/docs/collecting-metrics/collectors/operating-systems/systemd-units) | This collector monitors the state of Systemd units and unit files. |
+| [systemd-logind users](/docs/collecting-metrics/collectors/operating-systems/systemd-logind-users) | This collector monitors number of sessions and users as reported by the `org.freedesktop.login1` DBus API. |
+| [uptime](/docs/collecting-metrics/collectors/operating-systems/uptime) | Show period of time server is up. |
+| [User Groups](/docs/collecting-metrics/collectors/operating-systems/user-groups) | This integration monitors resource utilization on a user groups context. |
+| [Users](/docs/collecting-metrics/collectors/operating-systems/users) | This integration monitors resource utilization on a user context. |
+| [vm.loadavg](/docs/collecting-metrics/collectors/operating-systems/vm.loadavg) | System Load Average |
+| [vm.stats.sys.v_intr](/docs/collecting-metrics/collectors/operating-systems/vm.stats.sys.v_intr) | Device interrupts |
+| [vm.stats.sys.v_soft](/docs/collecting-metrics/collectors/operating-systems/vm.stats.sys.v_soft) | Software Interrupt |
+| [vm.stats.sys.v_swtch](/docs/collecting-metrics/collectors/operating-systems/vm.stats.sys.v_swtch) | CPU context switch |
+| [vm.stats.vm.v_pgfaults](/docs/collecting-metrics/collectors/operating-systems/vm.stats.vm.v_pgfaults) | Collect memory page faults events. |
+| [vm.stats.vm.v_swappgs](/docs/collecting-metrics/collectors/operating-systems/vm.stats.vm.v_swappgs) | The metric swap amount of data read from and written to SWAP. |
+| [vm.swap_info](/docs/collecting-metrics/collectors/operating-systems/vm.swap_info) | Collect information about SWAP memory. |
+| [vm.vmtotal](/docs/collecting-metrics/collectors/operating-systems/vm.vmtotal) | Collect Virtual Memory information from host. |
+| [Windows Services](/docs/collecting-metrics/collectors/operating-systems/windows-services) | This integration monitors resource utilization grouped by Windows Service. |
+| [Windows Services](/docs/collecting-metrics/collectors/operating-systems/windows-services) | This collector monitors Windows Services Status and States. |
+| [ZRAM](/docs/collecting-metrics/collectors/operating-systems/zram) | zRAM, or compressed RAM, is a block device that uses a portion of your system's RAM as a block device. |
 
 ### Networking
 
 | Integration | Description |
 |-------------|-------------|
-| [8430FT modem](/docs/collecting-metrics/networking/8430ft-modem) | Keep track of vital metrics from the MTS 8430FT modem for streamlined network performance and diagnostics. |
-| [Access Points](/docs/collecting-metrics/networking/access-points) | This collector monitors various wireless access point metrics like connected clients, bandwidth, packets, transmit issues, signal strength, and bitrate for each device and its associated SSID. |
-| [Bird Routing Daemon](/docs/collecting-metrics/networking/bird-routing-daemon) | Keep an eye on Bird Routing Daemon metrics for optimized network routing and management. |
-| [Chrony](/docs/collecting-metrics/networking/chrony) | This collector monitors the system's clock performance and peers activity status |
-| [Clash](/docs/collecting-metrics/networking/clash) | Keep an eye on Clash proxy server metrics for optimized network performance and management. |
-| [Conntrack](/docs/collecting-metrics/networking/conntrack) | This integration monitors the connection tracking mechanism of Netfilter in the Linux Kernel. |
-| [CoreDNS](/docs/collecting-metrics/networking/coredns) | This collector monitors CoreDNS instances. |
-| [DNSBL](/docs/collecting-metrics/networking/dnsbl) | Monitor DNSBL metrics for efficient domain reputation and security management. |
-| [DNSdist](/docs/collecting-metrics/networking/dnsdist) | This collector monitors DNSDist servers. |
-| [Dnsmasq](/docs/collecting-metrics/networking/dnsmasq) | This collector monitors Dnsmasq servers. |
-| [Dnsmasq DHCP](/docs/collecting-metrics/networking/dnsmasq-dhcp) | This collector monitors Dnsmasq DHCP leases databases, depending on your configuration. |
-| [eBPF Socket](/docs/collecting-metrics/networking/ebpf-socket) | Monitor bandwidth consumption per application for protocols TCP and UDP. |
-| [Fastd](/docs/collecting-metrics/networking/fastd) | Monitor Fastd VPN metrics for efficient virtual private network management and performance. |
-| [Freifunk network](/docs/collecting-metrics/networking/freifunk-network) | Keep tabs on Freifunk community network metrics for optimized network performance and management. |
-| [FRRouting](/docs/collecting-metrics/networking/frrouting) | Monitor Free Range Routing (FRR) metrics for optimized network routing and management. |
-| [getifaddrs](/docs/collecting-metrics/networking/getifaddrs) | Collect traffic per network interface. |
-| [Hitron CODA Cable Modem](/docs/collecting-metrics/networking/hitron-coda-cable-modem) | Track Hitron CODA cable modem metrics for optimized internet connectivity and performance. |
-| [InfiniBand](/docs/collecting-metrics/networking/infiniband) | This integration monitors InfiniBand network inteface statistics. |
-| [IP Virtual Server](/docs/collecting-metrics/networking/ip-virtual-server) | This integration monitors IP Virtual Server statistics |
-| [ipfw](/docs/collecting-metrics/networking/ipfw) | Collect information about FreeBSD firewall. |
-| [IPv6 Socket Statistics](/docs/collecting-metrics/networking/ipv6-socket-statistics) | This integration provides IPv6 socket statistics. |
-| [ISC DHCP](/docs/collecting-metrics/networking/isc-dhcp) | This collector monitors ISC DHCP lease usage by reading the DHCP client lease database (dhcpd.leases). |
-| [Keepalived](/docs/collecting-metrics/networking/keepalived) | Track Keepalived metrics for efficient high-availability and load balancing management. |
-| [Libreswan](/docs/collecting-metrics/networking/libreswan) | Monitor Libreswan performance for optimal IPsec VPN operations. |
-| [net.inet.icmp.stats](/docs/collecting-metrics/networking/net.inet.icmp.stats) | Collect information about ICMP traffic. |
-| [net.inet.ip.stats](/docs/collecting-metrics/networking/net.inet.ip.stats) | Collect IP stats |
-| [net.inet.tcp.states](/docs/collecting-metrics/networking/net.inet.tcp.states) | This collector is supported on all platforms. |
-| [net.inet.tcp.stats](/docs/collecting-metrics/networking/net.inet.tcp.stats) | Collect overall information about TCP connections. |
-| [net.inet.udp.stats](/docs/collecting-metrics/networking/net.inet.udp.stats) | Collect information about UDP connections. |
-| [net.inet6.icmp6.stats](/docs/collecting-metrics/networking/net.inet6.icmp6.stats) | Collect information abou IPv6 ICMP |
-| [net.inet6.ip6.stats](/docs/collecting-metrics/networking/net.inet6.ip6.stats) | Collect information abou IPv6 stats. |
-| [net.isr](/docs/collecting-metrics/networking/net.isr) | Collect information about system softnet stat. |
-| [Netfilter](/docs/collecting-metrics/networking/netfilter) | Monitor Netfilter metrics for optimal packet filtering and manipulation. |
-| [Network Connections](/docs/collecting-metrics/networking/network-connections) | This plugin reads the system's socket tables to enumerate all active network connections, including TCP and UDP sockets in all states, for both IPv4 and IPv6. |
-| [Network interfaces](/docs/collecting-metrics/networking/network-interfaces) | Monitor network interface metrics about bandwidth, state, errors and more. |
-| [Network statistics](/docs/collecting-metrics/networking/network-statistics) | This integration provides metrics from the `netstat`, `snmp` and `snmp6` modules. |
-| [Network Subsystem](/docs/collecting-metrics/networking/network-subsystem) | Monitor network interface metrics about bandwidth, state, errors and more. |
-| [NextDNS](/docs/collecting-metrics/networking/nextdns) | Track NextDNS DNS resolver and security platform metrics for efficient DNS management and security. |
-| [NSD](/docs/collecting-metrics/networking/nsd) | This collector monitors NSD statistics like queries, zones, protocols, query types and more. |
-| [NTPd](/docs/collecting-metrics/networking/ntpd) | This collector monitors the system variables of the local `ntpd` daemon (optional incl. |
-| [Open vSwitch](/docs/collecting-metrics/networking/open-vswitch) | Keep an eye on Open vSwitch software-defined networking metrics for efficient network virtualization and performance. |
-| [OpenROADM devices](/docs/collecting-metrics/networking/openroadm-devices) | Monitor OpenROADM optical transport network metrics using the NETCONF protocol for efficient network management and performance. |
-| [OpenVPN](/docs/collecting-metrics/networking/openvpn) | This collector monitors OpenVPN servers. |
-| [OpenVPN status log](/docs/collecting-metrics/networking/openvpn-status-log) | This collector monitors OpenVPN server. |
-| [Optical modules](/docs/collecting-metrics/networking/optical-modules) | This collector monitors optical transceiver modules' diagnostic parameters (temperature, voltage, laser bias current, transmit/receive power levels) from network interfaces equipped with modules that support Digital Diagnostic Monitoring (DDM). |
-| [Pi-hole](/docs/collecting-metrics/networking/pi-hole) | This collector monitors Pi-hole instances using [Pi-hole API 6.0](https://ftl.pi-hole.net/master/docs/). |
-| [PowerDNS Authoritative Server](/docs/collecting-metrics/networking/powerdns-authoritative-server) | This collector monitors PowerDNS Authoritative Server instances. |
-| [PowerDNS Recursor](/docs/collecting-metrics/networking/powerdns-recursor) | This collector monitors PowerDNS Recursor instances. |
-| [RIPE Atlas](/docs/collecting-metrics/networking/ripe-atlas) | Keep tabs on RIPE Atlas Internet measurement platform metrics for efficient network monitoring and performance. |
-| [SCTP Statistics](/docs/collecting-metrics/networking/sctp-statistics) | This integration provides statistics about the Stream Control Transmission Protocol (SCTP). |
-| [SNMP devices](/docs/collecting-metrics/networking/snmp-devices) | This collector discovers and monitors any SNMP-enabled network device. |
-| [Socket statistics](/docs/collecting-metrics/networking/socket-statistics) | This integration provides socket statistics. |
-| [SoftEther VPN Server](/docs/collecting-metrics/networking/softether-vpn-server) | Monitor SoftEther VPN Server metrics for efficient virtual private network (VPN) management and performance. |
-| [Softnet Statistics](/docs/collecting-metrics/networking/softnet-statistics) | `/proc/net/softnet_stat` provides statistics that relate to the handling of network packets by softirq. |
-| [SONiC NOS](/docs/collecting-metrics/networking/sonic-nos) | Keep tabs on Software for Open Networking in the Cloud (SONiC) metrics for efficient network switch management and performance. |
-| [Starlink (SpaceX)](/docs/collecting-metrics/networking/starlink-spacex) | Monitor SpaceX Starlink satellite internet metrics for efficient internet service management and performance. |
-| [strongSwan](/docs/collecting-metrics/networking/strongswan) | Track strongSwan VPN and IPSec metrics using the vici interface for efficient virtual private network (VPN) management and performance. |
-| [Synproxy](/docs/collecting-metrics/networking/synproxy) | This integration provides statistics about the Synproxy netfilter module. |
-| [tc QoS classes](/docs/collecting-metrics/networking/tc-qos-classes) | Examine tc metrics to gain insights into Linux traffic control operations. |
-| [Timex](/docs/collecting-metrics/networking/timex) | Examine Timex metrics to gain insights into system clock operations. |
-| [Tor](/docs/collecting-metrics/networking/tor) | Tracks Tor's download and upload traffic, as well as its uptime. |
-| [Ubiquiti UFiber OLT](/docs/collecting-metrics/networking/ubiquiti-ufiber-olt) | Track Ubiquiti UFiber GPON (Gigabit Passive Optical Network) device metrics for efficient fiber-optic network management and performance. |
-| [Unbound](/docs/collecting-metrics/networking/unbound) | This collector monitors Unbound servers. |
-| [WireGuard](/docs/collecting-metrics/networking/wireguard) | This collector monitors WireGuard VPN devices and peers traffic. |
-| [Wireless network interfaces](/docs/collecting-metrics/networking/wireless-network-interfaces) | Monitor wireless devices with metrics about status, link quality, signal level, noise level and more. |
+| [8430FT modem](/docs/collecting-metrics/collectors/networking/8430ft-modem) | Keep track of vital metrics from the MTS 8430FT modem for streamlined network performance and diagnostics. |
+| [Access Points](/docs/collecting-metrics/collectors/networking/access-points) | This collector monitors various wireless access point metrics like connected clients, bandwidth, packets, transmit issues, signal strength, and bitrate for each device and its associated SSID. |
+| [Bird Routing Daemon](/docs/collecting-metrics/collectors/networking/bird-routing-daemon) | Keep an eye on Bird Routing Daemon metrics for optimized network routing and management. |
+| [Chrony](/docs/collecting-metrics/collectors/networking/chrony) | This collector monitors the system's clock performance and peers activity status |
+| [Clash](/docs/collecting-metrics/collectors/networking/clash) | Keep an eye on Clash proxy server metrics for optimized network performance and management. |
+| [Conntrack](/docs/collecting-metrics/collectors/networking/conntrack) | This integration monitors the connection tracking mechanism of Netfilter in the Linux Kernel. |
+| [CoreDNS](/docs/collecting-metrics/collectors/networking/coredns) | This collector monitors CoreDNS instances. |
+| [DNSBL](/docs/collecting-metrics/collectors/networking/dnsbl) | Monitor DNSBL metrics for efficient domain reputation and security management. |
+| [DNSdist](/docs/collecting-metrics/collectors/networking/dnsdist) | This collector monitors DNSDist servers. |
+| [Dnsmasq](/docs/collecting-metrics/collectors/networking/dnsmasq) | This collector monitors Dnsmasq servers. |
+| [Dnsmasq DHCP](/docs/collecting-metrics/collectors/networking/dnsmasq-dhcp) | This collector monitors Dnsmasq DHCP leases databases, depending on your configuration. |
+| [eBPF Socket](/docs/collecting-metrics/collectors/networking/ebpf-socket) | Monitor bandwidth consumption per application for protocols TCP and UDP. |
+| [Fastd](/docs/collecting-metrics/collectors/networking/fastd) | Monitor Fastd VPN metrics for efficient virtual private network management and performance. |
+| [Freifunk network](/docs/collecting-metrics/collectors/networking/freifunk-network) | Keep tabs on Freifunk community network metrics for optimized network performance and management. |
+| [FRRouting](/docs/collecting-metrics/collectors/networking/frrouting) | Monitor Free Range Routing (FRR) metrics for optimized network routing and management. |
+| [getifaddrs](/docs/collecting-metrics/collectors/networking/getifaddrs) | Collect traffic per network interface. |
+| [Hitron CODA Cable Modem](/docs/collecting-metrics/collectors/networking/hitron-coda-cable-modem) | Track Hitron CODA cable modem metrics for optimized internet connectivity and performance. |
+| [InfiniBand](/docs/collecting-metrics/collectors/networking/infiniband) | This integration monitors InfiniBand network inteface statistics. |
+| [IP Virtual Server](/docs/collecting-metrics/collectors/networking/ip-virtual-server) | This integration monitors IP Virtual Server statistics |
+| [ipfw](/docs/collecting-metrics/collectors/networking/ipfw) | Collect information about FreeBSD firewall. |
+| [IPv6 Socket Statistics](/docs/collecting-metrics/collectors/networking/ipv6-socket-statistics) | This integration provides IPv6 socket statistics. |
+| [ISC DHCP](/docs/collecting-metrics/collectors/networking/isc-dhcp) | This collector monitors ISC DHCP lease usage by reading the DHCP client lease database (dhcpd.leases). |
+| [Keepalived](/docs/collecting-metrics/collectors/networking/keepalived) | Track Keepalived metrics for efficient high-availability and load balancing management. |
+| [Libreswan](/docs/collecting-metrics/collectors/networking/libreswan) | Monitor Libreswan performance for optimal IPsec VPN operations. |
+| [net.inet.icmp.stats](/docs/collecting-metrics/collectors/networking/net.inet.icmp.stats) | Collect information about ICMP traffic. |
+| [net.inet.ip.stats](/docs/collecting-metrics/collectors/networking/net.inet.ip.stats) | Collect IP stats |
+| [net.inet.tcp.states](/docs/collecting-metrics/collectors/networking/net.inet.tcp.states) | This collector is supported on all platforms. |
+| [net.inet.tcp.stats](/docs/collecting-metrics/collectors/networking/net.inet.tcp.stats) | Collect overall information about TCP connections. |
+| [net.inet.udp.stats](/docs/collecting-metrics/collectors/networking/net.inet.udp.stats) | Collect information about UDP connections. |
+| [net.inet6.icmp6.stats](/docs/collecting-metrics/collectors/networking/net.inet6.icmp6.stats) | Collect information abou IPv6 ICMP |
+| [net.inet6.ip6.stats](/docs/collecting-metrics/collectors/networking/net.inet6.ip6.stats) | Collect information abou IPv6 stats. |
+| [net.isr](/docs/collecting-metrics/collectors/networking/net.isr) | Collect information about system softnet stat. |
+| [Netfilter](/docs/collecting-metrics/collectors/networking/netfilter) | Monitor Netfilter metrics for optimal packet filtering and manipulation. |
+| [Network Connections](/docs/collecting-metrics/collectors/networking/network-connections) | This plugin reads the system's socket tables to enumerate all active network connections, including TCP and UDP sockets in all states, for both IPv4 and IPv6. |
+| [Network interfaces](/docs/collecting-metrics/collectors/networking/network-interfaces) | Monitor network interface metrics about bandwidth, state, errors and more. |
+| [Network statistics](/docs/collecting-metrics/collectors/networking/network-statistics) | This integration provides metrics from the `netstat`, `snmp` and `snmp6` modules. |
+| [Network Subsystem](/docs/collecting-metrics/collectors/networking/network-subsystem) | Monitor network interface metrics about bandwidth, state, errors and more. |
+| [NextDNS](/docs/collecting-metrics/collectors/networking/nextdns) | Track NextDNS DNS resolver and security platform metrics for efficient DNS management and security. |
+| [NSD](/docs/collecting-metrics/collectors/networking/nsd) | This collector monitors NSD statistics like queries, zones, protocols, query types and more. |
+| [NTPd](/docs/collecting-metrics/collectors/networking/ntpd) | This collector monitors the system variables of the local `ntpd` daemon (optional incl. |
+| [Open vSwitch](/docs/collecting-metrics/collectors/networking/open-vswitch) | Keep an eye on Open vSwitch software-defined networking metrics for efficient network virtualization and performance. |
+| [OpenROADM devices](/docs/collecting-metrics/collectors/networking/openroadm-devices) | Monitor OpenROADM optical transport network metrics using the NETCONF protocol for efficient network management and performance. |
+| [OpenVPN](/docs/collecting-metrics/collectors/networking/openvpn) | This collector monitors OpenVPN servers. |
+| [OpenVPN status log](/docs/collecting-metrics/collectors/networking/openvpn-status-log) | This collector monitors OpenVPN server. |
+| [Optical modules](/docs/collecting-metrics/collectors/networking/optical-modules) | This collector monitors optical transceiver modules' diagnostic parameters (temperature, voltage, laser bias current, transmit/receive power levels) from network interfaces equipped with modules that support Digital Diagnostic Monitoring (DDM). |
+| [Pi-hole](/docs/collecting-metrics/collectors/networking/pi-hole) | This collector monitors Pi-hole instances using [Pi-hole API 6.0](https://ftl.pi-hole.net/master/docs/). |
+| [PowerDNS Authoritative Server](/docs/collecting-metrics/collectors/networking/powerdns-authoritative-server) | This collector monitors PowerDNS Authoritative Server instances. |
+| [PowerDNS Recursor](/docs/collecting-metrics/collectors/networking/powerdns-recursor) | This collector monitors PowerDNS Recursor instances. |
+| [RIPE Atlas](/docs/collecting-metrics/collectors/networking/ripe-atlas) | Keep tabs on RIPE Atlas Internet measurement platform metrics for efficient network monitoring and performance. |
+| [SCTP Statistics](/docs/collecting-metrics/collectors/networking/sctp-statistics) | This integration provides statistics about the Stream Control Transmission Protocol (SCTP). |
+| [SNMP devices](/docs/collecting-metrics/collectors/networking/snmp-devices) | This collector discovers and monitors any SNMP-enabled network device. |
+| [Socket statistics](/docs/collecting-metrics/collectors/networking/socket-statistics) | This integration provides socket statistics. |
+| [SoftEther VPN Server](/docs/collecting-metrics/collectors/networking/softether-vpn-server) | Monitor SoftEther VPN Server metrics for efficient virtual private network (VPN) management and performance. |
+| [Softnet Statistics](/docs/collecting-metrics/collectors/networking/softnet-statistics) | `/proc/net/softnet_stat` provides statistics that relate to the handling of network packets by softirq. |
+| [SONiC NOS](/docs/collecting-metrics/collectors/networking/sonic-nos) | Keep tabs on Software for Open Networking in the Cloud (SONiC) metrics for efficient network switch management and performance. |
+| [Starlink (SpaceX)](/docs/collecting-metrics/collectors/networking/starlink-spacex) | Monitor SpaceX Starlink satellite internet metrics for efficient internet service management and performance. |
+| [strongSwan](/docs/collecting-metrics/collectors/networking/strongswan) | Track strongSwan VPN and IPSec metrics using the vici interface for efficient virtual private network (VPN) management and performance. |
+| [Synproxy](/docs/collecting-metrics/collectors/networking/synproxy) | This integration provides statistics about the Synproxy netfilter module. |
+| [tc QoS classes](/docs/collecting-metrics/collectors/networking/tc-qos-classes) | Examine tc metrics to gain insights into Linux traffic control operations. |
+| [Timex](/docs/collecting-metrics/collectors/networking/timex) | Examine Timex metrics to gain insights into system clock operations. |
+| [Tor](/docs/collecting-metrics/collectors/networking/tor) | Tracks Tor's download and upload traffic, as well as its uptime. |
+| [Ubiquiti UFiber OLT](/docs/collecting-metrics/collectors/networking/ubiquiti-ufiber-olt) | Track Ubiquiti UFiber GPON (Gigabit Passive Optical Network) device metrics for efficient fiber-optic network management and performance. |
+| [Unbound](/docs/collecting-metrics/collectors/networking/unbound) | This collector monitors Unbound servers. |
+| [WireGuard](/docs/collecting-metrics/collectors/networking/wireguard) | This collector monitors WireGuard VPN devices and peers traffic. |
+| [Wireless network interfaces](/docs/collecting-metrics/collectors/networking/wireless-network-interfaces) | Monitor wireless devices with metrics about status, link quality, signal level, noise level and more. |
 
 ### Cloud and DevOps
 
 | Integration | Description |
 |-------------|-------------|
-| [AWS EC2 Compute instances](/docs/collecting-metrics/cloud-and-devops/aws-ec2-compute-instances) | Track AWS EC2 instances key metrics for optimized performance and cost management. |
-| [AWS Quota](/docs/collecting-metrics/cloud-and-devops/aws-quota) | Monitor AWS service quotas for effective resource usage and cost management. |
-| [Azure API Management](/docs/collecting-metrics/cloud-and-devops/azure-api-management) | :::info |
-| [Azure App Service](/docs/collecting-metrics/cloud-and-devops/azure-app-service) | :::info |
-| [Azure Application Gateway](/docs/collecting-metrics/cloud-and-devops/azure-application-gateway) | :::info |
-| [Azure Application Insights](/docs/collecting-metrics/cloud-and-devops/azure-application-insights) | :::info |
-| [Azure Cache for Redis](/docs/collecting-metrics/cloud-and-devops/azure-cache-for-redis) | :::info |
-| [Azure Cognitive Services](/docs/collecting-metrics/cloud-and-devops/azure-cognitive-services) | :::info |
-| [Azure Container Apps](/docs/collecting-metrics/cloud-and-devops/azure-container-apps) | :::info |
-| [Azure Container Instances](/docs/collecting-metrics/cloud-and-devops/azure-container-instances) | :::info |
-| [Azure Container Registry](/docs/collecting-metrics/cloud-and-devops/azure-container-registry) | :::info |
-| [Azure Cosmos DB Account](/docs/collecting-metrics/cloud-and-devops/azure-cosmos-db-account) | :::info |
-| [Azure Data Explorer Cluster](/docs/collecting-metrics/cloud-and-devops/azure-data-explorer-cluster) | :::info |
-| [Azure Data Factory](/docs/collecting-metrics/cloud-and-devops/azure-data-factory) | :::info |
-| [Azure Event Grid Topic](/docs/collecting-metrics/cloud-and-devops/azure-event-grid-topic) | :::info |
-| [Azure Event Hubs Namespace](/docs/collecting-metrics/cloud-and-devops/azure-event-hubs-namespace) | :::info |
-| [Azure ExpressRoute Circuit](/docs/collecting-metrics/cloud-and-devops/azure-expressroute-circuit) | :::info |
-| [Azure ExpressRoute Gateway](/docs/collecting-metrics/cloud-and-devops/azure-expressroute-gateway) | :::info |
-| [Azure Firewall](/docs/collecting-metrics/cloud-and-devops/azure-firewall) | :::info |
-| [Azure Front Door](/docs/collecting-metrics/cloud-and-devops/azure-front-door) | :::info |
-| [Azure Functions](/docs/collecting-metrics/cloud-and-devops/azure-functions) | :::info |
-| [Azure IoT Hub](/docs/collecting-metrics/cloud-and-devops/azure-iot-hub) | :::info |
-| [Azure Key Vault](/docs/collecting-metrics/cloud-and-devops/azure-key-vault) | :::info |
-| [Azure Kubernetes Service Cluster](/docs/collecting-metrics/cloud-and-devops/azure-kubernetes-service-cluster) | :::info |
-| [Azure Load Balancer](/docs/collecting-metrics/cloud-and-devops/azure-load-balancer) | :::info |
-| [Azure Log Analytics Workspace](/docs/collecting-metrics/cloud-and-devops/azure-log-analytics-workspace) | :::info |
-| [Azure Logic Apps Workflow](/docs/collecting-metrics/cloud-and-devops/azure-logic-apps-workflow) | :::info |
-| [Azure Machine Learning Workspace](/docs/collecting-metrics/cloud-and-devops/azure-machine-learning-workspace) | :::info |
-| [Azure Monitor](/docs/collecting-metrics/cloud-and-devops/azure-monitor) | This collector provides real-time visibility into your Azure infrastructure by collecting platform metrics from the Azure Monitor Metrics API. |
-| [Azure MySQL Flexible Server](/docs/collecting-metrics/cloud-and-devops/azure-mysql-flexible-server) | :::info |
-| [Azure NAT Gateway](/docs/collecting-metrics/cloud-and-devops/azure-nat-gateway) | :::info |
-| [Azure PostgreSQL Flexible Server](/docs/collecting-metrics/cloud-and-devops/azure-postgresql-flexible-server) | :::info |
-| [Azure Service Bus Namespace](/docs/collecting-metrics/cloud-and-devops/azure-service-bus-namespace) | :::info |
-| [Azure SQL Database](/docs/collecting-metrics/cloud-and-devops/azure-sql-database) | :::info |
-| [Azure SQL Elastic Pool](/docs/collecting-metrics/cloud-and-devops/azure-sql-elastic-pool) | :::info |
-| [Azure SQL Managed Instance](/docs/collecting-metrics/cloud-and-devops/azure-sql-managed-instance) | :::info |
-| [Azure Storage Account](/docs/collecting-metrics/cloud-and-devops/azure-storage-account) | :::info |
-| [Azure Stream Analytics Job](/docs/collecting-metrics/cloud-and-devops/azure-stream-analytics-job) | :::info |
-| [Azure Synapse Analytics Workspace](/docs/collecting-metrics/cloud-and-devops/azure-synapse-analytics-workspace) | :::info |
-| [Azure Virtual Machine](/docs/collecting-metrics/cloud-and-devops/azure-virtual-machine) | :::info |
-| [Azure Virtual Machine Scale Set](/docs/collecting-metrics/cloud-and-devops/azure-virtual-machine-scale-set) | :::info |
-| [Azure VPN Gateway](/docs/collecting-metrics/cloud-and-devops/azure-vpn-gateway) | :::info |
-| [BOSH](/docs/collecting-metrics/cloud-and-devops/bosh) | Keep an eye on BOSH deployment metrics for improved cloud orchestration and resource management. |
-| [Cloud Foundry](/docs/collecting-metrics/cloud-and-devops/cloud-foundry) | Track Cloud Foundry platform metrics for optimized application deployment and management. |
-| [Cloud Foundry Firehose](/docs/collecting-metrics/cloud-and-devops/cloud-foundry-firehose) | Monitor Cloud Foundry Firehose metrics for comprehensive platform diagnostics and management. |
-| [CloudWatch](/docs/collecting-metrics/cloud-and-devops/cloudwatch) | Monitor AWS CloudWatch metrics for comprehensive AWS resource management and performance optimization. |
-| [Concourse](/docs/collecting-metrics/cloud-and-devops/concourse) | Monitor Concourse CI/CD pipeline metrics for optimized workflow management and deployment. |
-| [Dynatrace](/docs/collecting-metrics/cloud-and-devops/dynatrace) | Monitor Dynatrace APM metrics for comprehensive application performance management. |
-| [GCP GCE](/docs/collecting-metrics/cloud-and-devops/gcp-gce) | Keep an eye on Google Cloud Platform Compute Engine metrics for efficient cloud resource management and performance. |
-| [GitLab Runner](/docs/collecting-metrics/cloud-and-devops/gitlab-runner) | Keep an eye on GitLab CI/CD job metrics for efficient development and deployment management. |
-| [Google Cloud Platform](/docs/collecting-metrics/cloud-and-devops/google-cloud-platform) | Monitor Google Cloud Platform metrics for comprehensive cloud resource management and performance optimization. |
-| [Google Stackdriver](/docs/collecting-metrics/cloud-and-devops/google-stackdriver) | Track Google Stackdriver monitoring metrics for optimized cloud performance and diagnostics. |
-| [Hubble](/docs/collecting-metrics/cloud-and-devops/hubble) | Monitor Hubble network observability metrics for efficient network visibility and management. |
-| [Jenkins](/docs/collecting-metrics/cloud-and-devops/jenkins) | Track Jenkins continuous integration server metrics for efficient development and build management. |
-| [Linode](/docs/collecting-metrics/cloud-and-devops/linode) | Monitor Linode cloud hosting metrics for efficient virtual server management and performance. |
+| [AWS EC2 Compute instances](/docs/collecting-metrics/collectors/cloud-and-devops/aws-ec2-compute-instances) | Track AWS EC2 instances key metrics for optimized performance and cost management. |
+| [AWS Quota](/docs/collecting-metrics/collectors/cloud-and-devops/aws-quota) | Monitor AWS service quotas for effective resource usage and cost management. |
+| [Azure API Management](/docs/collecting-metrics/collectors/cloud-and-devops/azure-api-management) | :::info |
+| [Azure App Service](/docs/collecting-metrics/collectors/cloud-and-devops/azure-app-service) | :::info |
+| [Azure Application Gateway](/docs/collecting-metrics/collectors/cloud-and-devops/azure-application-gateway) | :::info |
+| [Azure Application Insights](/docs/collecting-metrics/collectors/cloud-and-devops/azure-application-insights) | :::info |
+| [Azure Cache for Redis](/docs/collecting-metrics/collectors/cloud-and-devops/azure-cache-for-redis) | :::info |
+| [Azure Cognitive Services](/docs/collecting-metrics/collectors/cloud-and-devops/azure-cognitive-services) | :::info |
+| [Azure Container Apps](/docs/collecting-metrics/collectors/cloud-and-devops/azure-container-apps) | :::info |
+| [Azure Container Instances](/docs/collecting-metrics/collectors/cloud-and-devops/azure-container-instances) | :::info |
+| [Azure Container Registry](/docs/collecting-metrics/collectors/cloud-and-devops/azure-container-registry) | :::info |
+| [Azure Cosmos DB Account](/docs/collecting-metrics/collectors/cloud-and-devops/azure-cosmos-db-account) | :::info |
+| [Azure Data Explorer Cluster](/docs/collecting-metrics/collectors/cloud-and-devops/azure-data-explorer-cluster) | :::info |
+| [Azure Data Factory](/docs/collecting-metrics/collectors/cloud-and-devops/azure-data-factory) | :::info |
+| [Azure Event Grid Topic](/docs/collecting-metrics/collectors/cloud-and-devops/azure-event-grid-topic) | :::info |
+| [Azure Event Hubs Namespace](/docs/collecting-metrics/collectors/cloud-and-devops/azure-event-hubs-namespace) | :::info |
+| [Azure ExpressRoute Circuit](/docs/collecting-metrics/collectors/cloud-and-devops/azure-expressroute-circuit) | :::info |
+| [Azure ExpressRoute Gateway](/docs/collecting-metrics/collectors/cloud-and-devops/azure-expressroute-gateway) | :::info |
+| [Azure Firewall](/docs/collecting-metrics/collectors/cloud-and-devops/azure-firewall) | :::info |
+| [Azure Front Door](/docs/collecting-metrics/collectors/cloud-and-devops/azure-front-door) | :::info |
+| [Azure Functions](/docs/collecting-metrics/collectors/cloud-and-devops/azure-functions) | :::info |
+| [Azure IoT Hub](/docs/collecting-metrics/collectors/cloud-and-devops/azure-iot-hub) | :::info |
+| [Azure Key Vault](/docs/collecting-metrics/collectors/cloud-and-devops/azure-key-vault) | :::info |
+| [Azure Kubernetes Service Cluster](/docs/collecting-metrics/collectors/cloud-and-devops/azure-kubernetes-service-cluster) | :::info |
+| [Azure Load Balancer](/docs/collecting-metrics/collectors/cloud-and-devops/azure-load-balancer) | :::info |
+| [Azure Log Analytics Workspace](/docs/collecting-metrics/collectors/cloud-and-devops/azure-log-analytics-workspace) | :::info |
+| [Azure Logic Apps Workflow](/docs/collecting-metrics/collectors/cloud-and-devops/azure-logic-apps-workflow) | :::info |
+| [Azure Machine Learning Workspace](/docs/collecting-metrics/collectors/cloud-and-devops/azure-machine-learning-workspace) | :::info |
+| [Azure Monitor](/docs/collecting-metrics/collectors/cloud-and-devops/azure-monitor) | This collector provides real-time visibility into your Azure infrastructure by collecting platform metrics from the Azure Monitor Metrics API. |
+| [Azure MySQL Flexible Server](/docs/collecting-metrics/collectors/cloud-and-devops/azure-mysql-flexible-server) | :::info |
+| [Azure NAT Gateway](/docs/collecting-metrics/collectors/cloud-and-devops/azure-nat-gateway) | :::info |
+| [Azure PostgreSQL Flexible Server](/docs/collecting-metrics/collectors/cloud-and-devops/azure-postgresql-flexible-server) | :::info |
+| [Azure Service Bus Namespace](/docs/collecting-metrics/collectors/cloud-and-devops/azure-service-bus-namespace) | :::info |
+| [Azure SQL Database](/docs/collecting-metrics/collectors/cloud-and-devops/azure-sql-database) | :::info |
+| [Azure SQL Elastic Pool](/docs/collecting-metrics/collectors/cloud-and-devops/azure-sql-elastic-pool) | :::info |
+| [Azure SQL Managed Instance](/docs/collecting-metrics/collectors/cloud-and-devops/azure-sql-managed-instance) | :::info |
+| [Azure Storage Account](/docs/collecting-metrics/collectors/cloud-and-devops/azure-storage-account) | :::info |
+| [Azure Stream Analytics Job](/docs/collecting-metrics/collectors/cloud-and-devops/azure-stream-analytics-job) | :::info |
+| [Azure Synapse Analytics Workspace](/docs/collecting-metrics/collectors/cloud-and-devops/azure-synapse-analytics-workspace) | :::info |
+| [Azure Virtual Machine](/docs/collecting-metrics/collectors/cloud-and-devops/azure-virtual-machine) | :::info |
+| [Azure Virtual Machine Scale Set](/docs/collecting-metrics/collectors/cloud-and-devops/azure-virtual-machine-scale-set) | :::info |
+| [Azure VPN Gateway](/docs/collecting-metrics/collectors/cloud-and-devops/azure-vpn-gateway) | :::info |
+| [BOSH](/docs/collecting-metrics/collectors/cloud-and-devops/bosh) | Keep an eye on BOSH deployment metrics for improved cloud orchestration and resource management. |
+| [Cloud Foundry](/docs/collecting-metrics/collectors/cloud-and-devops/cloud-foundry) | Track Cloud Foundry platform metrics for optimized application deployment and management. |
+| [Cloud Foundry Firehose](/docs/collecting-metrics/collectors/cloud-and-devops/cloud-foundry-firehose) | Monitor Cloud Foundry Firehose metrics for comprehensive platform diagnostics and management. |
+| [CloudWatch](/docs/collecting-metrics/collectors/cloud-and-devops/cloudwatch) | Monitor AWS CloudWatch metrics for comprehensive AWS resource management and performance optimization. |
+| [Concourse](/docs/collecting-metrics/collectors/cloud-and-devops/concourse) | Monitor Concourse CI/CD pipeline metrics for optimized workflow management and deployment. |
+| [Dynatrace](/docs/collecting-metrics/collectors/cloud-and-devops/dynatrace) | Monitor Dynatrace APM metrics for comprehensive application performance management. |
+| [GCP GCE](/docs/collecting-metrics/collectors/cloud-and-devops/gcp-gce) | Keep an eye on Google Cloud Platform Compute Engine metrics for efficient cloud resource management and performance. |
+| [GitLab Runner](/docs/collecting-metrics/collectors/cloud-and-devops/gitlab-runner) | Keep an eye on GitLab CI/CD job metrics for efficient development and deployment management. |
+| [Google Cloud Platform](/docs/collecting-metrics/collectors/cloud-and-devops/google-cloud-platform) | Monitor Google Cloud Platform metrics for comprehensive cloud resource management and performance optimization. |
+| [Google Stackdriver](/docs/collecting-metrics/collectors/cloud-and-devops/google-stackdriver) | Track Google Stackdriver monitoring metrics for optimized cloud performance and diagnostics. |
+| [Hubble](/docs/collecting-metrics/collectors/cloud-and-devops/hubble) | Monitor Hubble network observability metrics for efficient network visibility and management. |
+| [Jenkins](/docs/collecting-metrics/collectors/cloud-and-devops/jenkins) | Track Jenkins continuous integration server metrics for efficient development and build management. |
+| [Linode](/docs/collecting-metrics/collectors/cloud-and-devops/linode) | Monitor Linode cloud hosting metrics for efficient virtual server management and performance. |
 | [OpenTelemetry](https://github.com/netdata/netdata/blob/master/src/crates/netdata-otel/otel-plugin/integrations/opentelemetry.md) | This plugin enables the Netdata Agent to receive OpenTelemetry metrics and logs via the OTLP/gRPC protocol from any compatible source — collectors, SDKs, or instrumented applications. |
-| [Puppet](/docs/collecting-metrics/cloud-and-devops/puppet) | This collector monitors Puppet metrics, including JVM heap and non-heap memory, CPU usage, and file descriptors. |
-| [Spacelift](/docs/collecting-metrics/cloud-and-devops/spacelift) | Track Spacelift infrastructure-as-code (IaC) platform metrics for efficient infrastructure automation and management. |
-| [Zerto](/docs/collecting-metrics/cloud-and-devops/zerto) | Monitor Zerto disaster recovery and data protection metrics for efficient backup and recovery management. |
+| [Puppet](/docs/collecting-metrics/collectors/cloud-and-devops/puppet) | This collector monitors Puppet metrics, including JVM heap and non-heap memory, CPU usage, and file descriptors. |
+| [Spacelift](/docs/collecting-metrics/collectors/cloud-and-devops/spacelift) | Track Spacelift infrastructure-as-code (IaC) platform metrics for efficient infrastructure automation and management. |
+| [Zerto](/docs/collecting-metrics/collectors/cloud-and-devops/zerto) | Monitor Zerto disaster recovery and data protection metrics for efficient backup and recovery management. |
 
 ### Hardware and Sensors
 
 | Integration | Description |
 |-------------|-------------|
-| [1-Wire Sensors](/docs/collecting-metrics/hardware-and-sensors/1-wire-sensors) | Monitor 1-Wire Sensors metrics with Netdata for optimal environmental conditions monitoring. |
-| [AM2320](/docs/collecting-metrics/hardware-and-sensors/am2320) | This collector monitors AM2320 sensor metrics about temperature and humidity. |
-| [AMD CPU & GPU](/docs/collecting-metrics/hardware-and-sensors/amd-cpu-&-gpu) | Monitor AMD System Management Interface performance for optimized hardware management. |
-| [AMD GPU](/docs/collecting-metrics/hardware-and-sensors/amd-gpu) | This integration monitors AMD GPU metrics, such as utilization, clock frequency and memory usage. |
-| [APC UPS](/docs/collecting-metrics/hardware-and-sensors/apc-ups) | This collector monitors Uninterruptible Power Supplies by polling the Apcupsd daemon. |
-| [Christ Elektronik CLM5IP power panel](/docs/collecting-metrics/hardware-and-sensors/christ-elektronik-clm5ip-power-panel) | Monitor Christ Elektronik CLM5IP device metrics for efficient performance and diagnostics. |
-| [CraftBeerPi](/docs/collecting-metrics/hardware-and-sensors/craftbeerpi) | Keep an eye on CraftBeerPi homebrewing metrics for optimized brewing process management. |
-| [dev.cpu.temperature](/docs/collecting-metrics/hardware-and-sensors/dev.cpu.temperature) | Get current CPU temperature |
-| [Dutch Electricity Smart Meter](/docs/collecting-metrics/hardware-and-sensors/dutch-electricity-smart-meter) | Keep tabs on Dutch smart meter P1 port metrics for efficient energy management and monitoring. |
-| [Elgato Key Light devices.](/docs/collecting-metrics/hardware-and-sensors/elgato-key-light-devices.) | Keep tabs on Elgato Key Light metrics for optimized lighting control and management. |
-| [Energomera smart power meters](/docs/collecting-metrics/hardware-and-sensors/energomera-smart-power-meters) | Track Energomera electricity meter metrics for efficient energy management and monitoring. |
-| [Hardware information collected from kernel ring.](/docs/collecting-metrics/hardware-and-sensors/hardware-information-collected-from-kernel-ring.) | This collector monitors cpu temperature on Windows systems. |
-| [IBM CryptoExpress (CEX) cards](/docs/collecting-metrics/hardware-and-sensors/ibm-cryptoexpress-cex-cards) | Track IBM Z Crypto Express device metrics for optimized cryptographic performance and management. |
-| [IBM Z Hardware Management Console](/docs/collecting-metrics/hardware-and-sensors/ibm-z-hardware-management-console) | Monitor IBM Z Hardware Management Console metrics for efficient mainframe management and performance. |
-| [Intel GPU](/docs/collecting-metrics/hardware-and-sensors/intel-gpu) | This collector gathers performance metrics for Intel integrated GPUs. |
-| [Intelligent Platform Management Interface (IPMI)](/docs/collecting-metrics/hardware-and-sensors/intelligent-platform-management-interface-ipmi) | "Monitor enterprise server sensor readings, event log entries, and hardware statuses to ensure reliable server operations." |
-| [Jarvis Standing Desk](/docs/collecting-metrics/hardware-and-sensors/jarvis-standing-desk) | Track Jarvis standing desk usage metrics for efficient workspace ergonomics and management. |
-| [Linux Sensors](/docs/collecting-metrics/hardware-and-sensors/linux-sensors) | This collector gathers real-time system sensor statistics using the [sysfs](https://www.kernel.org/doc/Documentation/hwmon/sysfs-interface) interface. |
-| [Memory modules (DIMMs)](/docs/collecting-metrics/hardware-and-sensors/memory-modules-dimms) | The Error Detection and Correction (EDAC) subsystem is detecting and reporting errors in the system's memory, primarily ECC (Error-Correcting Code) memory errors. |
-| [Modbus protocol](/docs/collecting-metrics/hardware-and-sensors/modbus-protocol) | Track Modbus RTU protocol metrics for efficient industrial automation and control performance. |
-| [Nature Remo E lite devices](/docs/collecting-metrics/hardware-and-sensors/nature-remo-e-lite-devices) | Monitor Nature Remo E series smart home device metrics for efficient home automation and energy management. |
-| [Netatmo sensors](/docs/collecting-metrics/hardware-and-sensors/netatmo-sensors) | Keep an eye on Netatmo smart home device metrics for efficient home automation and energy management. |
-| [Nvidia Data Center GPU Manager (DCGM)](/docs/collecting-metrics/hardware-and-sensors/nvidia-data-center-gpu-manager-dcgm) | This collector gathers NVIDIA GPU telemetry from a `dcgm-exporter` endpoint. |
-| [Nvidia GPU](/docs/collecting-metrics/hardware-and-sensors/nvidia-gpu) | This collector monitors GPUs performance metrics using the [nvidia-smi](https://developer.nvidia.com/nvidia-system-management-interface) CLI tool. |
-| [Personal Weather Station](/docs/collecting-metrics/hardware-and-sensors/personal-weather-station) | Track personal weather station metrics for efficient weather monitoring and management. |
-| [Philips Hue](/docs/collecting-metrics/hardware-and-sensors/philips-hue) | Keep an eye on Philips Hue smart lighting metrics for efficient home automation and energy management. |
-| [Pimoroni Enviro+](/docs/collecting-metrics/hardware-and-sensors/pimoroni-enviro+) | Track Pimoroni Enviro+ air quality and environmental metrics for efficient environmental monitoring and analysis. |
-| [Power Capping](/docs/collecting-metrics/hardware-and-sensors/power-capping) | Collects power capping performance metrics on Linux systems. |
-| [Power Supply](/docs/collecting-metrics/hardware-and-sensors/power-supply) | This integration monitors Power supply metrics, such as battery status, AC power status and more. |
-| [Power Supply (Win)](/docs/collecting-metrics/hardware-and-sensors/power-supply-win) | This collector monitors power supply statistics on Windows systems. |
-| [Powerpal devices](/docs/collecting-metrics/hardware-and-sensors/powerpal-devices) | Keep an eye on Powerpal smart meter metrics for efficient energy management and monitoring. |
-| [Radio Thermostat](/docs/collecting-metrics/hardware-and-sensors/radio-thermostat) | Monitor Radio Thermostat smart thermostat metrics for efficient home automation and energy management. |
-| [Raritan PDU](/docs/collecting-metrics/hardware-and-sensors/raritan-pdu) | Monitor Raritan Power Distribution Unit (PDU) metrics for efficient power management and monitoring. |
-| [Salicru EQX inverter](/docs/collecting-metrics/hardware-and-sensors/salicru-eqx-inverter) | Keep tabs on Salicru EQX solar inverter metrics for efficient solar energy management and monitoring. |
-| [Sense Energy](/docs/collecting-metrics/hardware-and-sensors/sense-energy) | Keep tabs on Sense Energy smart meter metrics for efficient energy management and monitoring. |
-| [Sensors](/docs/collecting-metrics/hardware-and-sensors/sensors) | This collector monitors sensors on Windows systems. |
-| [Shelly humidity sensor](/docs/collecting-metrics/hardware-and-sensors/shelly-humidity-sensor) | Monitor Shelly smart home device metrics for efficient home automation and energy management. |
-| [Siemens S7 PLC](/docs/collecting-metrics/hardware-and-sensors/siemens-s7-plc) | Monitor Siemens S7 Programmable Logic Controller (PLC) metrics for efficient industrial automation and control. |
-| [SMA Inverters](/docs/collecting-metrics/hardware-and-sensors/sma-inverters) | Monitor SMA solar inverter metrics for efficient solar energy management and monitoring. |
-| [Smart meters SML](/docs/collecting-metrics/hardware-and-sensors/smart-meters-sml) | Monitor Smart Message Language (SML) metrics for efficient smart metering and energy management. |
-| [Solar logging stick](/docs/collecting-metrics/hardware-and-sensors/solar-logging-stick) | Monitor solar energy metrics using a solar logging stick for efficient solar energy management and monitoring. |
-| [Solis Ginlong 5G inverters](/docs/collecting-metrics/hardware-and-sensors/solis-ginlong-5g-inverters) | Monitor Solis solar inverter metrics for efficient solar energy management and monitoring. |
-| [Sunspec Solar Energy](/docs/collecting-metrics/hardware-and-sensors/sunspec-solar-energy) | Monitor SunSpec Alliance solar energy metrics for efficient solar energy management and monitoring. |
-| [System thermal zone](/docs/collecting-metrics/hardware-and-sensors/system-thermal-zone) | This collector monitors thermal zone statistics on Windows systems. |
-| [Tado smart heating solution](/docs/collecting-metrics/hardware-and-sensors/tado-smart-heating-solution) | Monitor Tado smart thermostat metrics for efficient home heating and cooling management. |
-| [Tesla vehicle](/docs/collecting-metrics/hardware-and-sensors/tesla-vehicle) | Track Tesla vehicle metrics for efficient electric vehicle management and monitoring. |
-| [Tesla Wall Connector](/docs/collecting-metrics/hardware-and-sensors/tesla-wall-connector) | Monitor Tesla Wall Connector charging station metrics for efficient electric vehicle charging management. |
-| [UPS (NUT)](/docs/collecting-metrics/hardware-and-sensors/ups-nut) | This collector monitors Uninterruptible Power Supplies by polling the UPS daemon using the NUT network protocol. |
-| [Xiaomi Mi Flora](/docs/collecting-metrics/hardware-and-sensors/xiaomi-mi-flora) | Keep tabs on MiFlora plant monitor metrics for efficient plant care and growth management. |
+| [1-Wire Sensors](/docs/collecting-metrics/collectors/hardware-and-sensors/1-wire-sensors) | Monitor 1-Wire Sensors metrics with Netdata for optimal environmental conditions monitoring. |
+| [AM2320](/docs/collecting-metrics/collectors/hardware-and-sensors/am2320) | This collector monitors AM2320 sensor metrics about temperature and humidity. |
+| [AMD CPU & GPU](/docs/collecting-metrics/collectors/hardware-and-sensors/amd-cpu-&-gpu) | Monitor AMD System Management Interface performance for optimized hardware management. |
+| [AMD GPU](/docs/collecting-metrics/collectors/hardware-and-sensors/amd-gpu) | This integration monitors AMD GPU metrics, such as utilization, clock frequency and memory usage. |
+| [APC UPS](/docs/collecting-metrics/collectors/hardware-and-sensors/apc-ups) | This collector monitors Uninterruptible Power Supplies by polling the Apcupsd daemon. |
+| [Christ Elektronik CLM5IP power panel](/docs/collecting-metrics/collectors/hardware-and-sensors/christ-elektronik-clm5ip-power-panel) | Monitor Christ Elektronik CLM5IP device metrics for efficient performance and diagnostics. |
+| [CraftBeerPi](/docs/collecting-metrics/collectors/hardware-and-sensors/craftbeerpi) | Keep an eye on CraftBeerPi homebrewing metrics for optimized brewing process management. |
+| [dev.cpu.temperature](/docs/collecting-metrics/collectors/hardware-and-sensors/dev.cpu.temperature) | Get current CPU temperature |
+| [Dutch Electricity Smart Meter](/docs/collecting-metrics/collectors/hardware-and-sensors/dutch-electricity-smart-meter) | Keep tabs on Dutch smart meter P1 port metrics for efficient energy management and monitoring. |
+| [Elgato Key Light devices.](/docs/collecting-metrics/collectors/hardware-and-sensors/elgato-key-light-devices.) | Keep tabs on Elgato Key Light metrics for optimized lighting control and management. |
+| [Energomera smart power meters](/docs/collecting-metrics/collectors/hardware-and-sensors/energomera-smart-power-meters) | Track Energomera electricity meter metrics for efficient energy management and monitoring. |
+| [Hardware information collected from kernel ring.](/docs/collecting-metrics/collectors/hardware-and-sensors/hardware-information-collected-from-kernel-ring.) | This collector monitors cpu temperature on Windows systems. |
+| [IBM CryptoExpress (CEX) cards](/docs/collecting-metrics/collectors/hardware-and-sensors/ibm-cryptoexpress-cex-cards) | Track IBM Z Crypto Express device metrics for optimized cryptographic performance and management. |
+| [IBM Z Hardware Management Console](/docs/collecting-metrics/collectors/hardware-and-sensors/ibm-z-hardware-management-console) | Monitor IBM Z Hardware Management Console metrics for efficient mainframe management and performance. |
+| [Intel GPU](/docs/collecting-metrics/collectors/hardware-and-sensors/intel-gpu) | This collector gathers performance metrics for Intel integrated GPUs. |
+| [Intelligent Platform Management Interface (IPMI)](/docs/collecting-metrics/collectors/hardware-and-sensors/intelligent-platform-management-interface-ipmi) | "Monitor enterprise server sensor readings, event log entries, and hardware statuses to ensure reliable server operations." |
+| [Jarvis Standing Desk](/docs/collecting-metrics/collectors/hardware-and-sensors/jarvis-standing-desk) | Track Jarvis standing desk usage metrics for efficient workspace ergonomics and management. |
+| [Linux Sensors](/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors) | This collector gathers real-time system sensor statistics using the [sysfs](https://www.kernel.org/doc/Documentation/hwmon/sysfs-interface) interface. |
+| [Memory modules (DIMMs)](/docs/collecting-metrics/collectors/hardware-and-sensors/memory-modules-dimms) | The Error Detection and Correction (EDAC) subsystem is detecting and reporting errors in the system's memory, primarily ECC (Error-Correcting Code) memory errors. |
+| [Modbus protocol](/docs/collecting-metrics/collectors/hardware-and-sensors/modbus-protocol) | Track Modbus RTU protocol metrics for efficient industrial automation and control performance. |
+| [Nature Remo E lite devices](/docs/collecting-metrics/collectors/hardware-and-sensors/nature-remo-e-lite-devices) | Monitor Nature Remo E series smart home device metrics for efficient home automation and energy management. |
+| [Netatmo sensors](/docs/collecting-metrics/collectors/hardware-and-sensors/netatmo-sensors) | Keep an eye on Netatmo smart home device metrics for efficient home automation and energy management. |
+| [Nvidia Data Center GPU Manager (DCGM)](/docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-data-center-gpu-manager-dcgm) | This collector gathers NVIDIA GPU telemetry from a `dcgm-exporter` endpoint. |
+| [Nvidia GPU](/docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-gpu) | This collector monitors GPUs performance metrics using the [nvidia-smi](https://developer.nvidia.com/nvidia-system-management-interface) CLI tool. |
+| [Personal Weather Station](/docs/collecting-metrics/collectors/hardware-and-sensors/personal-weather-station) | Track personal weather station metrics for efficient weather monitoring and management. |
+| [Philips Hue](/docs/collecting-metrics/collectors/hardware-and-sensors/philips-hue) | Keep an eye on Philips Hue smart lighting metrics for efficient home automation and energy management. |
+| [Pimoroni Enviro+](/docs/collecting-metrics/collectors/hardware-and-sensors/pimoroni-enviro+) | Track Pimoroni Enviro+ air quality and environmental metrics for efficient environmental monitoring and analysis. |
+| [Power Capping](/docs/collecting-metrics/collectors/hardware-and-sensors/power-capping) | Collects power capping performance metrics on Linux systems. |
+| [Power Supply](/docs/collecting-metrics/collectors/hardware-and-sensors/power-supply) | This integration monitors Power supply metrics, such as battery status, AC power status and more. |
+| [Power Supply (Win)](/docs/collecting-metrics/collectors/hardware-and-sensors/power-supply-win) | This collector monitors power supply statistics on Windows systems. |
+| [Powerpal devices](/docs/collecting-metrics/collectors/hardware-and-sensors/powerpal-devices) | Keep an eye on Powerpal smart meter metrics for efficient energy management and monitoring. |
+| [Radio Thermostat](/docs/collecting-metrics/collectors/hardware-and-sensors/radio-thermostat) | Monitor Radio Thermostat smart thermostat metrics for efficient home automation and energy management. |
+| [Raritan PDU](/docs/collecting-metrics/collectors/hardware-and-sensors/raritan-pdu) | Monitor Raritan Power Distribution Unit (PDU) metrics for efficient power management and monitoring. |
+| [Salicru EQX inverter](/docs/collecting-metrics/collectors/hardware-and-sensors/salicru-eqx-inverter) | Keep tabs on Salicru EQX solar inverter metrics for efficient solar energy management and monitoring. |
+| [Sense Energy](/docs/collecting-metrics/collectors/hardware-and-sensors/sense-energy) | Keep tabs on Sense Energy smart meter metrics for efficient energy management and monitoring. |
+| [Sensors](/docs/collecting-metrics/collectors/hardware-and-sensors/sensors) | This collector monitors sensors on Windows systems. |
+| [Shelly humidity sensor](/docs/collecting-metrics/collectors/hardware-and-sensors/shelly-humidity-sensor) | Monitor Shelly smart home device metrics for efficient home automation and energy management. |
+| [Siemens S7 PLC](/docs/collecting-metrics/collectors/hardware-and-sensors/siemens-s7-plc) | Monitor Siemens S7 Programmable Logic Controller (PLC) metrics for efficient industrial automation and control. |
+| [SMA Inverters](/docs/collecting-metrics/collectors/hardware-and-sensors/sma-inverters) | Monitor SMA solar inverter metrics for efficient solar energy management and monitoring. |
+| [Smart meters SML](/docs/collecting-metrics/collectors/hardware-and-sensors/smart-meters-sml) | Monitor Smart Message Language (SML) metrics for efficient smart metering and energy management. |
+| [Solar logging stick](/docs/collecting-metrics/collectors/hardware-and-sensors/solar-logging-stick) | Monitor solar energy metrics using a solar logging stick for efficient solar energy management and monitoring. |
+| [Solis Ginlong 5G inverters](/docs/collecting-metrics/collectors/hardware-and-sensors/solis-ginlong-5g-inverters) | Monitor Solis solar inverter metrics for efficient solar energy management and monitoring. |
+| [Sunspec Solar Energy](/docs/collecting-metrics/collectors/hardware-and-sensors/sunspec-solar-energy) | Monitor SunSpec Alliance solar energy metrics for efficient solar energy management and monitoring. |
+| [System thermal zone](/docs/collecting-metrics/collectors/hardware-and-sensors/system-thermal-zone) | This collector monitors thermal zone statistics on Windows systems. |
+| [Tado smart heating solution](/docs/collecting-metrics/collectors/hardware-and-sensors/tado-smart-heating-solution) | Monitor Tado smart thermostat metrics for efficient home heating and cooling management. |
+| [Tesla vehicle](/docs/collecting-metrics/collectors/hardware-and-sensors/tesla-vehicle) | Track Tesla vehicle metrics for efficient electric vehicle management and monitoring. |
+| [Tesla Wall Connector](/docs/collecting-metrics/collectors/hardware-and-sensors/tesla-wall-connector) | Monitor Tesla Wall Connector charging station metrics for efficient electric vehicle charging management. |
+| [UPS (NUT)](/docs/collecting-metrics/collectors/hardware-and-sensors/ups-nut) | This collector monitors Uninterruptible Power Supplies by polling the UPS daemon using the NUT network protocol. |
+| [Xiaomi Mi Flora](/docs/collecting-metrics/collectors/hardware-and-sensors/xiaomi-mi-flora) | Keep tabs on MiFlora plant monitor metrics for efficient plant care and growth management. |
 
 ### Applications
 
 | Integration | Description |
 |-------------|-------------|
-| [Active Directory](/docs/collecting-metrics/applications/active-directory) | This collector monitors Active Directory IO and queries. |
-| [Active Directory Certificate Service](/docs/collecting-metrics/applications/active-directory-certificate-service) | This collector monitors Active Directory Certificate Services statistics. |
-| [Active Directory Federation Service](/docs/collecting-metrics/applications/active-directory-federation-service) | This collector monitors Active Directory Federation Services statistics. |
-| [Alamos FE2 server](/docs/collecting-metrics/applications/alamos-fe2-server) | Keep tabs on Alamos FE2 systems for improved performance and management. |
-| [AuthLog](/docs/collecting-metrics/applications/authlog) | Monitor authentication logs for security insights and efficient access management. |
-| [BOINC](/docs/collecting-metrics/applications/boinc) | This collector monitors task counts for the Berkeley Open Infrastructure Networking Computing (BOINC) distributed computing client. |
-| [BungeeCord](/docs/collecting-metrics/applications/bungeecord) | Track BungeeCord proxy server metrics for efficient load balancing and performance management. |
-| [Celery](/docs/collecting-metrics/applications/celery) | Keep an eye on Celery task queue metrics for optimized task processing and resource management. |
-| [Chia](/docs/collecting-metrics/applications/chia) | Track Chia blockchain metrics for optimized farming and resource allocation. |
-| [ClamAV daemon](/docs/collecting-metrics/applications/clamav-daemon) | Track ClamAV antivirus metrics for enhanced threat detection and management. |
-| [Clamscan results](/docs/collecting-metrics/applications/clamscan-results) | Monitor ClamAV scanning performance metrics for efficient malware detection and analysis. |
-| [Collectd](/docs/collecting-metrics/applications/collectd) | Monitor system and application metrics with Collectd for comprehensive performance analysis. |
-| [Consul](/docs/collecting-metrics/applications/consul) | This collector monitors [key metrics](https://developer.hashicorp.com/consul/docs/agent/telemetry#key-metrics) of Consul Agents: transaction timings, leadership changes, memory usage and more. |
-| [Crowdsec](/docs/collecting-metrics/applications/crowdsec) | Monitor Crowdsec security metrics for efficient threat detection and response. |
-| [Cryptowatch](/docs/collecting-metrics/applications/cryptowatch) | Keep tabs on Cryptowatch market data metrics for comprehensive cryptocurrency market analysis. |
-| [CUPS](/docs/collecting-metrics/applications/cups) | Monitor CUPS performance for achieving optimal printing system operations. |
-| [Discourse](/docs/collecting-metrics/applications/discourse) | Monitor Discourse forum metrics for efficient community management and engagement. |
-| [DMARC](/docs/collecting-metrics/applications/dmarc) | Track DMARC email authentication metrics for improved email security and deliverability. |
-| [Dovecot](/docs/collecting-metrics/applications/dovecot) | This collector monitors Dovecot metrics about sessions, logins, commands, page faults and more. |
-| [etcd](/docs/collecting-metrics/applications/etcd) | Track etcd database metrics for optimized distributed key-value store management and performance. |
-| [Exim](/docs/collecting-metrics/applications/exim) | This collector monitors Exim mail queue. |
-| [Fail2ban](/docs/collecting-metrics/applications/fail2ban) | This collector tracks two main metrics for each jail: currently banned IPs and active failure incidents. |
-| [Fluentd](/docs/collecting-metrics/applications/fluentd) | This collector monitors Fluentd servers. |
-| [FreeRADIUS](/docs/collecting-metrics/applications/freeradius) | This collector monitors FreeRADIUS servers. |
-| [Gearman](/docs/collecting-metrics/applications/gearman) | Monitors jobs activity, priority and available workers. |
-| [GitHub API rate limit](/docs/collecting-metrics/applications/github-api-rate-limit) | Monitor GitHub API rate limit metrics for efficient API usage and management. |
-| [GitHub repository](/docs/collecting-metrics/applications/github-repository) | Track GitHub repository metrics for optimized project and user analytics monitoring. |
-| [Go applications (EXPVAR)](/docs/collecting-metrics/applications/go-applications-expvar) | This collector monitors Go applications that expose their metrics with the use of the `expvar` package from the Go standard library. |
-| [Go-ethereum](/docs/collecting-metrics/applications/go-ethereum) | This collector monitors Go-ethereum instances. |
-| [Google Pagespeed](/docs/collecting-metrics/applications/google-pagespeed) | Keep an eye on Google PageSpeed Insights performance metrics for efficient web page optimization and performance. |
-| [gpsd](/docs/collecting-metrics/applications/gpsd) | Monitor GPSD (GPS daemon) metrics for efficient GPS data management and performance. |
-| [Grafana](/docs/collecting-metrics/applications/grafana) | Keep tabs on Grafana dashboard and visualization metrics for optimized monitoring and data analysis. |
-| [Graylog Server](/docs/collecting-metrics/applications/graylog-server) | Monitor Graylog server metrics for efficient log management and analysis. |
-| [Halon](/docs/collecting-metrics/applications/halon) | Monitor Halon email security and delivery metrics for optimized email management and protection. |
-| [Homebridge](/docs/collecting-metrics/applications/homebridge) | Monitor Homebridge smart home metrics for efficient home automation management and performance. |
-| [Homey](/docs/collecting-metrics/applications/homey) | Track Homey smart home controller metrics for efficient home automation and performance. |
-| [Honeypot](/docs/collecting-metrics/applications/honeypot) | Monitor honeypot metrics for efficient threat detection and management. |
-| [IBM AIX systems Njmon](/docs/collecting-metrics/applications/ibm-aix-systems-njmon) | Keep an eye on NJmon system performance monitoring metrics for efficient IT infrastructure management and performance. |
+| [Active Directory](/docs/collecting-metrics/collectors/applications/active-directory) | This collector monitors Active Directory IO and queries. |
+| [Active Directory Certificate Service](/docs/collecting-metrics/collectors/applications/active-directory-certificate-service) | This collector monitors Active Directory Certificate Services statistics. |
+| [Active Directory Federation Service](/docs/collecting-metrics/collectors/applications/active-directory-federation-service) | This collector monitors Active Directory Federation Services statistics. |
+| [Alamos FE2 server](/docs/collecting-metrics/collectors/applications/alamos-fe2-server) | Keep tabs on Alamos FE2 systems for improved performance and management. |
+| [AuthLog](/docs/collecting-metrics/collectors/applications/authlog) | Monitor authentication logs for security insights and efficient access management. |
+| [BOINC](/docs/collecting-metrics/collectors/applications/boinc) | This collector monitors task counts for the Berkeley Open Infrastructure Networking Computing (BOINC) distributed computing client. |
+| [BungeeCord](/docs/collecting-metrics/collectors/applications/bungeecord) | Track BungeeCord proxy server metrics for efficient load balancing and performance management. |
+| [Celery](/docs/collecting-metrics/collectors/applications/celery) | Keep an eye on Celery task queue metrics for optimized task processing and resource management. |
+| [Chia](/docs/collecting-metrics/collectors/applications/chia) | Track Chia blockchain metrics for optimized farming and resource allocation. |
+| [ClamAV daemon](/docs/collecting-metrics/collectors/applications/clamav-daemon) | Track ClamAV antivirus metrics for enhanced threat detection and management. |
+| [Clamscan results](/docs/collecting-metrics/collectors/applications/clamscan-results) | Monitor ClamAV scanning performance metrics for efficient malware detection and analysis. |
+| [Collectd](/docs/collecting-metrics/collectors/applications/collectd) | Monitor system and application metrics with Collectd for comprehensive performance analysis. |
+| [Consul](/docs/collecting-metrics/collectors/applications/consul) | This collector monitors [key metrics](https://developer.hashicorp.com/consul/docs/agent/telemetry#key-metrics) of Consul Agents: transaction timings, leadership changes, memory usage and more. |
+| [Crowdsec](/docs/collecting-metrics/collectors/applications/crowdsec) | Monitor Crowdsec security metrics for efficient threat detection and response. |
+| [Cryptowatch](/docs/collecting-metrics/collectors/applications/cryptowatch) | Keep tabs on Cryptowatch market data metrics for comprehensive cryptocurrency market analysis. |
+| [CUPS](/docs/collecting-metrics/collectors/applications/cups) | Monitor CUPS performance for achieving optimal printing system operations. |
+| [Discourse](/docs/collecting-metrics/collectors/applications/discourse) | Monitor Discourse forum metrics for efficient community management and engagement. |
+| [DMARC](/docs/collecting-metrics/collectors/applications/dmarc) | Track DMARC email authentication metrics for improved email security and deliverability. |
+| [Dovecot](/docs/collecting-metrics/collectors/applications/dovecot) | This collector monitors Dovecot metrics about sessions, logins, commands, page faults and more. |
+| [etcd](/docs/collecting-metrics/collectors/applications/etcd) | Track etcd database metrics for optimized distributed key-value store management and performance. |
+| [Exim](/docs/collecting-metrics/collectors/applications/exim) | This collector monitors Exim mail queue. |
+| [Fail2ban](/docs/collecting-metrics/collectors/applications/fail2ban) | This collector tracks two main metrics for each jail: currently banned IPs and active failure incidents. |
+| [Fluentd](/docs/collecting-metrics/collectors/applications/fluentd) | This collector monitors Fluentd servers. |
+| [FreeRADIUS](/docs/collecting-metrics/collectors/applications/freeradius) | This collector monitors FreeRADIUS servers. |
+| [Gearman](/docs/collecting-metrics/collectors/applications/gearman) | Monitors jobs activity, priority and available workers. |
+| [GitHub API rate limit](/docs/collecting-metrics/collectors/applications/github-api-rate-limit) | Monitor GitHub API rate limit metrics for efficient API usage and management. |
+| [GitHub repository](/docs/collecting-metrics/collectors/applications/github-repository) | Track GitHub repository metrics for optimized project and user analytics monitoring. |
+| [Go applications (EXPVAR)](/docs/collecting-metrics/collectors/applications/go-applications-expvar) | This collector monitors Go applications that expose their metrics with the use of the `expvar` package from the Go standard library. |
+| [Go-ethereum](/docs/collecting-metrics/collectors/applications/go-ethereum) | This collector monitors Go-ethereum instances. |
+| [Google Pagespeed](/docs/collecting-metrics/collectors/applications/google-pagespeed) | Keep an eye on Google PageSpeed Insights performance metrics for efficient web page optimization and performance. |
+| [gpsd](/docs/collecting-metrics/collectors/applications/gpsd) | Monitor GPSD (GPS daemon) metrics for efficient GPS data management and performance. |
+| [Grafana](/docs/collecting-metrics/collectors/applications/grafana) | Keep tabs on Grafana dashboard and visualization metrics for optimized monitoring and data analysis. |
+| [Graylog Server](/docs/collecting-metrics/collectors/applications/graylog-server) | Monitor Graylog server metrics for efficient log management and analysis. |
+| [Halon](/docs/collecting-metrics/collectors/applications/halon) | Monitor Halon email security and delivery metrics for optimized email management and protection. |
+| [Homebridge](/docs/collecting-metrics/collectors/applications/homebridge) | Monitor Homebridge smart home metrics for efficient home automation management and performance. |
+| [Homey](/docs/collecting-metrics/collectors/applications/homey) | Track Homey smart home controller metrics for efficient home automation and performance. |
+| [Honeypot](/docs/collecting-metrics/collectors/applications/honeypot) | Monitor honeypot metrics for efficient threat detection and management. |
+| [IBM AIX systems Njmon](/docs/collecting-metrics/collectors/applications/ibm-aix-systems-njmon) | Keep an eye on NJmon system performance monitoring metrics for efficient IT infrastructure management and performance. |
 | [IBM MQ](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/mq/integrations/ibm_mq.md) | Monitors IBM MQ queue managers, queues, channels, and topics using the PCF (Programmable Command Format) protocol. |
 | [IBM WebSphere JMX](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/websphere/jmx/integrations/ibm_websphere_jmx.md) | Collects JVM, thread pool, and middleware metrics from IBM WebSphere Application Server via the embedded JMX bridge helper. |
 | [IBM WebSphere MicroProfile](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/websphere/mp/integrations/ibm_websphere_microprofile.md) | Collects JVM, vendor, and REST endpoint metrics from WebSphere Liberty / Open Liberty servers via the MicroProfile Metrics (Prometheus/OpenMetrics) endpoint. |
 | [IBM WebSphere PMI](https://github.com/netdata/netdata/blob/master/src/go/plugin/ibm.d/modules/websphere/pmi/integrations/ibm_websphere_pmi.md) | Collects WebSphere Application Server performance metrics via the PerfServlet (PMI) interface, covering JVM, thread pools, JDBC/JMS resources, applications, and clustering information. |
-| [Icecast](/docs/collecting-metrics/applications/icecast) | This collector monitors Icecast listener counts. |
-| [JMX](/docs/collecting-metrics/applications/jmx) | Track Java Management Extensions (JMX) metrics for efficient Java application management and performance. |
-| [journald](/docs/collecting-metrics/applications/journald) | Keep an eye on systemd-journald metrics for efficient log management and analysis. |
-| [Kannel](/docs/collecting-metrics/applications/kannel) | Keep tabs on Kannel SMS gateway and WAP gateway metrics for efficient mobile communication and performance. |
-| [Logstash](/docs/collecting-metrics/applications/logstash) | This collector monitors Logstash instances. |
-| [loki](/docs/collecting-metrics/applications/loki) | Track Loki metrics. |
-| [Lynis audit reports](/docs/collecting-metrics/applications/lynis-audit-reports) | Track Lynis security auditing tool metrics for efficient system security and compliance management. |
-| [Minecraft](/docs/collecting-metrics/applications/minecraft) | Track Minecraft server metrics for efficient game server management and performance. |
-| [MS Exchange](/docs/collecting-metrics/applications/ms-exchange) | This collector monitors Microsoft Exchange. |
-| [mtail](/docs/collecting-metrics/applications/mtail) | Monitor log data metrics using mtail log data extractor and parser. |
-| [NET Framework](/docs/collecting-metrics/applications/net-framework) | This collector monitors application built with .NET |
-| [Nextcloud servers](/docs/collecting-metrics/applications/nextcloud-servers) | Keep an eye on Nextcloud cloud storage metrics for efficient file hosting and management. |
-| [NRPE daemon](/docs/collecting-metrics/applications/nrpe-daemon) | Monitor Nagios Remote Plugin Executor (NRPE) metrics for efficient system and network monitoring. |
-| [OBS Studio](/docs/collecting-metrics/applications/obs-studio) | Track OBS Studio live streaming and recording software metrics for efficient video production and performance. |
-| [OpenLDAP](/docs/collecting-metrics/applications/openldap) | This collector monitors OpenLDAP metrics about connections, operations, referrals and more. |
-| [OpenSIPS](/docs/collecting-metrics/applications/opensips) | Examine OpenSIPS metrics for insights into SIP server operations. |
-| [OpenWeatherMap](/docs/collecting-metrics/applications/openweathermap) | Track OpenWeatherMap weather data and air pollution metrics for efficient environmental monitoring and analysis. |
-| [phpDaemon](/docs/collecting-metrics/applications/phpdaemon) | This collector monitors phpDaemon instances. |
-| [Postfix](/docs/collecting-metrics/applications/postfix) | This collector retrieves statistics about the Postfix mail queue using the [postqueue](https://www.postfix.org/postqueue.1.html) command-line tool. |
-| [ProFTPD](/docs/collecting-metrics/applications/proftpd) | Monitor ProFTPD FTP server metrics for efficient file transfer and server performance. |
-| [Prometheus endpoint](/docs/collecting-metrics/applications/prometheus-endpoint) | This generic Prometheus collector gathers metrics from any [`Prometheus`](https://prometheus.io/) endpoints. |
-| [RADIUS](/docs/collecting-metrics/applications/radius) | Keep tabs on RADIUS (Remote Authentication Dial-In User Service) protocol metrics for efficient authentication and access management. |
-| [Rspamd](/docs/collecting-metrics/applications/rspamd) | This collector monitors the activity and performance of Rspamd servers. |
-| [SABnzbd](/docs/collecting-metrics/applications/sabnzbd) | Monitor SABnzbd Usenet client metrics for efficient file downloads and resource management. |
-| [Slurm](/docs/collecting-metrics/applications/slurm) | Track Slurm workload manager metrics for efficient high-performance computing (HPC) and cluster management. |
-| [SpigotMC](/docs/collecting-metrics/applications/spigotmc) | This collector monitors SpigotMC server server performance, in the form of ticks per second average, memory utilization, and active users. |
-| [StatusPage](/docs/collecting-metrics/applications/statuspage) | Monitor StatusPage.io incident and status metrics for efficient incident management and communication. |
-| [Steam](/docs/collecting-metrics/applications/steam) | Gain insights into Steam A2S-supported game servers for performance and availability through real-time metric monitoring. |
-| [Suricata](/docs/collecting-metrics/applications/suricata) | Keep an eye on Suricata network intrusion detection and prevention system (IDS/IPS) metrics for efficient network security and performance. |
-| [Sysload](/docs/collecting-metrics/applications/sysload) | Monitor system load metrics for efficient system performance and resource management. |
-| [TACACS](/docs/collecting-metrics/applications/tacacs) | Track Terminal Access Controller Access-Control System (TACACS) protocol metrics for efficient network authentication and authorization management. |
-| [Tankerkoenig API](/docs/collecting-metrics/applications/tankerkoenig-api) | Track Tankerknig API fuel price metrics for efficient fuel price monitoring and management. |
-| [Twitch](/docs/collecting-metrics/applications/twitch) | Track Twitch streaming platform metrics for efficient live streaming management and performance. |
-| [Vault PKI](/docs/collecting-metrics/applications/vault-pki) | Monitor HashiCorp Vault Public Key Infrastructure (PKI) metrics for efficient certificate management and security. |
-| [VSCode](/docs/collecting-metrics/applications/vscode) | Track Visual Studio Code editor metrics for efficient development environment management and performance. |
-| [YOURLS URL Shortener](/docs/collecting-metrics/applications/yourls-url-shortener) | Monitor YOURLS (Your Own URL Shortener) metrics for efficient URL shortening service management and performance. |
-| [ZooKeeper](/docs/collecting-metrics/applications/zookeeper) | It connects to the Zookeeper instance via a TCP and executes the following commands: |
+| [Icecast](/docs/collecting-metrics/collectors/applications/icecast) | This collector monitors Icecast listener counts. |
+| [JMX](/docs/collecting-metrics/collectors/applications/jmx) | Track Java Management Extensions (JMX) metrics for efficient Java application management and performance. |
+| [journald](/docs/collecting-metrics/collectors/applications/journald) | Keep an eye on systemd-journald metrics for efficient log management and analysis. |
+| [Kannel](/docs/collecting-metrics/collectors/applications/kannel) | Keep tabs on Kannel SMS gateway and WAP gateway metrics for efficient mobile communication and performance. |
+| [Logstash](/docs/collecting-metrics/collectors/applications/logstash) | This collector monitors Logstash instances. |
+| [loki](/docs/collecting-metrics/collectors/applications/loki) | Track Loki metrics. |
+| [Lynis audit reports](/docs/collecting-metrics/collectors/applications/lynis-audit-reports) | Track Lynis security auditing tool metrics for efficient system security and compliance management. |
+| [Minecraft](/docs/collecting-metrics/collectors/applications/minecraft) | Track Minecraft server metrics for efficient game server management and performance. |
+| [MS Exchange](/docs/collecting-metrics/collectors/applications/ms-exchange) | This collector monitors Microsoft Exchange. |
+| [mtail](/docs/collecting-metrics/collectors/applications/mtail) | Monitor log data metrics using mtail log data extractor and parser. |
+| [NET Framework](/docs/collecting-metrics/collectors/applications/net-framework) | This collector monitors application built with .NET |
+| [Nextcloud servers](/docs/collecting-metrics/collectors/applications/nextcloud-servers) | Keep an eye on Nextcloud cloud storage metrics for efficient file hosting and management. |
+| [NRPE daemon](/docs/collecting-metrics/collectors/applications/nrpe-daemon) | Monitor Nagios Remote Plugin Executor (NRPE) metrics for efficient system and network monitoring. |
+| [OBS Studio](/docs/collecting-metrics/collectors/applications/obs-studio) | Track OBS Studio live streaming and recording software metrics for efficient video production and performance. |
+| [OpenLDAP](/docs/collecting-metrics/collectors/applications/openldap) | This collector monitors OpenLDAP metrics about connections, operations, referrals and more. |
+| [OpenSIPS](/docs/collecting-metrics/collectors/applications/opensips) | Examine OpenSIPS metrics for insights into SIP server operations. |
+| [OpenWeatherMap](/docs/collecting-metrics/collectors/applications/openweathermap) | Track OpenWeatherMap weather data and air pollution metrics for efficient environmental monitoring and analysis. |
+| [phpDaemon](/docs/collecting-metrics/collectors/applications/phpdaemon) | This collector monitors phpDaemon instances. |
+| [Postfix](/docs/collecting-metrics/collectors/applications/postfix) | This collector retrieves statistics about the Postfix mail queue using the [postqueue](https://www.postfix.org/postqueue.1.html) command-line tool. |
+| [ProFTPD](/docs/collecting-metrics/collectors/applications/proftpd) | Monitor ProFTPD FTP server metrics for efficient file transfer and server performance. |
+| [Prometheus endpoint](/docs/collecting-metrics/collectors/applications/prometheus-endpoint) | This generic Prometheus collector gathers metrics from any [`Prometheus`](https://prometheus.io/) endpoints. |
+| [RADIUS](/docs/collecting-metrics/collectors/applications/radius) | Keep tabs on RADIUS (Remote Authentication Dial-In User Service) protocol metrics for efficient authentication and access management. |
+| [Rspamd](/docs/collecting-metrics/collectors/applications/rspamd) | This collector monitors the activity and performance of Rspamd servers. |
+| [SABnzbd](/docs/collecting-metrics/collectors/applications/sabnzbd) | Monitor SABnzbd Usenet client metrics for efficient file downloads and resource management. |
+| [Slurm](/docs/collecting-metrics/collectors/applications/slurm) | Track Slurm workload manager metrics for efficient high-performance computing (HPC) and cluster management. |
+| [SpigotMC](/docs/collecting-metrics/collectors/applications/spigotmc) | This collector monitors SpigotMC server server performance, in the form of ticks per second average, memory utilization, and active users. |
+| [StatusPage](/docs/collecting-metrics/collectors/applications/statuspage) | Monitor StatusPage.io incident and status metrics for efficient incident management and communication. |
+| [Steam](/docs/collecting-metrics/collectors/applications/steam) | Gain insights into Steam A2S-supported game servers for performance and availability through real-time metric monitoring. |
+| [Suricata](/docs/collecting-metrics/collectors/applications/suricata) | Keep an eye on Suricata network intrusion detection and prevention system (IDS/IPS) metrics for efficient network security and performance. |
+| [Sysload](/docs/collecting-metrics/collectors/applications/sysload) | Monitor system load metrics for efficient system performance and resource management. |
+| [TACACS](/docs/collecting-metrics/collectors/applications/tacacs) | Track Terminal Access Controller Access-Control System (TACACS) protocol metrics for efficient network authentication and authorization management. |
+| [Tankerkoenig API](/docs/collecting-metrics/collectors/applications/tankerkoenig-api) | Track Tankerknig API fuel price metrics for efficient fuel price monitoring and management. |
+| [Twitch](/docs/collecting-metrics/collectors/applications/twitch) | Track Twitch streaming platform metrics for efficient live streaming management and performance. |
+| [Vault PKI](/docs/collecting-metrics/collectors/applications/vault-pki) | Monitor HashiCorp Vault Public Key Infrastructure (PKI) metrics for efficient certificate management and security. |
+| [VSCode](/docs/collecting-metrics/collectors/applications/vscode) | Track Visual Studio Code editor metrics for efficient development environment management and performance. |
+| [YOURLS URL Shortener](/docs/collecting-metrics/collectors/applications/yourls-url-shortener) | Monitor YOURLS (Your Own URL Shortener) metrics for efficient URL shortening service management and performance. |
+| [ZooKeeper](/docs/collecting-metrics/collectors/applications/zookeeper) | It connects to the Zookeeper instance via a TCP and executes the following commands: |
 
 ### Storage and Filesystems
 
 | Integration | Description |
 |-------------|-------------|
-| [Adaptec RAID](/docs/collecting-metrics/storage-and-filesystems/adaptec-raid) | Monitors the health of Adaptec Hardware RAID by tracking the status of logical and physical devices in your storage system. |
-| [BCache](/docs/collecting-metrics/storage-and-filesystems/bcache) | Statistics for BCache (block layer cache) devices, including cache hit ratios, I/O operations, cache allocations, and bypass activity. |
-| [BTRFS](/docs/collecting-metrics/storage-and-filesystems/btrfs) | This integration provides usage and error statistics from the BTRFS filesystem. |
-| [Ceph](/docs/collecting-metrics/storage-and-filesystems/ceph) | This collector monitors the overall health status and performance of your Ceph clusters. |
-| [Dell EMC ScaleIO](/docs/collecting-metrics/storage-and-filesystems/dell-emc-scaleio) | This collector monitors ScaleIO (VxFlex OS) instances via VxFlex OS Gateway API. |
-| [Dell PowerStore](/docs/collecting-metrics/storage-and-filesystems/dell-powerstore) | This collector monitors Dell PowerStore storage arrays via the PowerStore REST API. |
-| [Dell PowerVault ME4/ME5](/docs/collecting-metrics/storage-and-filesystems/dell-powervault-me4-me5) | This collector monitors Dell PowerVault ME4 and ME5 storage arrays via the Management Controller Interface (MCI) REST API. |
-| [devstat](/docs/collecting-metrics/storage-and-filesystems/devstat) | Collect information per hard disk available on host. |
-| [Disk space](/docs/collecting-metrics/storage-and-filesystems/disk-space) | Monitor Disk space metrics for proficient storage management. |
-| [Disk Statistics](/docs/collecting-metrics/storage-and-filesystems/disk-statistics) | Detailed statistics for each of your system's disk devices and partitions. |
-| [DMCache devices](/docs/collecting-metrics/storage-and-filesystems/dmcache-devices) | This collector monitors DMCache, providing insights into capacity usage, efficiency, and activity. |
-| [eBPF Disk](/docs/collecting-metrics/storage-and-filesystems/ebpf-disk) | Measure latency for I/O events on disk. |
-| [eBPF Filesystem](/docs/collecting-metrics/storage-and-filesystems/ebpf-filesystem) | Monitor latency for main actions on filesystem like I/O events. |
-| [eBPF MDflush](/docs/collecting-metrics/storage-and-filesystems/ebpf-mdflush) | Monitor when flush events happen between disks. |
-| [eBPF Mount](/docs/collecting-metrics/storage-and-filesystems/ebpf-mount) | Monitor calls for mount and umount syscall. |
-| [eBPF Sync](/docs/collecting-metrics/storage-and-filesystems/ebpf-sync) | Monitor syscall responsible to move data from memory to storage device. |
-| [eBPF VFS](/docs/collecting-metrics/storage-and-filesystems/ebpf-vfs) | Monitor I/O events on Linux Virtual Filesystem. |
-| [EOS](/docs/collecting-metrics/storage-and-filesystems/eos) | Monitor CERN EOS metrics for efficient storage management. |
-| [FreeBSD NFS](/docs/collecting-metrics/storage-and-filesystems/freebsd-nfs) | Monitor FreeBSD Network File System metrics for efficient file sharing management and performance. |
-| [Generic storage enclosure tool](/docs/collecting-metrics/storage-and-filesystems/generic-storage-enclosure-tool) | Monitor storage enclosure metrics for efficient storage device management and performance. |
-| [getmntinfo](/docs/collecting-metrics/storage-and-filesystems/getmntinfo) | Collect information per mount point. |
-| [Hadoop Distributed File System (HDFS)](/docs/collecting-metrics/storage-and-filesystems/hadoop-distributed-file-system-hdfs) | This collector monitors HDFS nodes. |
-| [HDD temperature](/docs/collecting-metrics/storage-and-filesystems/hdd-temperature) | This collector monitors disk temperatures. |
-| [HPE Smart Arrays](/docs/collecting-metrics/storage-and-filesystems/hpe-smart-arrays) | Monitors the health of HPE Smart Arrays by tracking the status of controllers, arrays, logical and physical drives in your storage system. |
-| [IBM Spectrum](/docs/collecting-metrics/storage-and-filesystems/ibm-spectrum) | Monitor IBM Spectrum storage metrics for efficient data management and performance. |
-| [IBM Spectrum Virtualize](/docs/collecting-metrics/storage-and-filesystems/ibm-spectrum-virtualize) | Monitor IBM Spectrum Virtualize metrics for efficient storage virtualization and performance. |
-| [IPFS](/docs/collecting-metrics/storage-and-filesystems/ipfs) | This collector monitors IPFS daemon health and network activity. |
-| [Lustre metadata](/docs/collecting-metrics/storage-and-filesystems/lustre-metadata) | Keep tabs on Lustre clustered file system for efficient management and performance. |
-| [LVM logical volumes](/docs/collecting-metrics/storage-and-filesystems/lvm-logical-volumes) | This collector monitors the health of LVM logical volumes. |
-| [MD RAID](/docs/collecting-metrics/storage-and-filesystems/md-raid) | This integration monitors the status of MD RAID devices. |
-| [MegaCLI MegaRAID](/docs/collecting-metrics/storage-and-filesystems/megacli-megaraid) | Monitors the health of MegaCLI Hardware RAID by tracking the status of RAID adapters, physical drives, and backup batteries in your storage system. |
-| [MogileFS](/docs/collecting-metrics/storage-and-filesystems/mogilefs) | Monitor MogileFS distributed file system metrics for efficient storage management and performance. |
-| [Netapp ONTAP API](/docs/collecting-metrics/storage-and-filesystems/netapp-ontap-api) | Keep tabs on NetApp ONTAP storage system metrics for efficient data storage management and performance. |
-| [NetApp Solidfire](/docs/collecting-metrics/storage-and-filesystems/netapp-solidfire) | Track NetApp Solidfire storage system metrics for efficient data storage management and performance. |
-| [NFS Client](/docs/collecting-metrics/storage-and-filesystems/nfs-client) | This integration provides statistics from the Linux kernel's NFS Client. |
-| [NFS Server](/docs/collecting-metrics/storage-and-filesystems/nfs-server) | This integration provides statistics from the Linux kernel's NFS Server. |
-| [NVMe devices](/docs/collecting-metrics/storage-and-filesystems/nvme-devices) | This collector monitors the health of NVMe devices. |
-| [Physical and Logical Disk Performance Metrics](/docs/collecting-metrics/storage-and-filesystems/physical-and-logical-disk-performance-metrics) | Detailed statistics for all disk devices and volumes. |
-| [S.M.A.R.T.](/docs/collecting-metrics/storage-and-filesystems/s.m.a.r.t.) | This collector monitors the health status of storage devices by analyzing S.M.A.R.T. |
-| [Samba](/docs/collecting-metrics/storage-and-filesystems/samba) | This collector monitors Samba syscalls and SMB2 calls. |
-| [StoreCLI RAID](/docs/collecting-metrics/storage-and-filesystems/storecli-raid) | Monitors the health of StoreCLI Hardware RAID by tracking the status of RAID adapters, physical drives, and backup batteries in your storage system. |
-| [Storidge](/docs/collecting-metrics/storage-and-filesystems/storidge) | Keep an eye on Storidge storage metrics for efficient storage management and performance. |
-| [Synology ActiveBackup](/docs/collecting-metrics/storage-and-filesystems/synology-activebackup) | Track Synology Active Backup metrics for efficient backup and data protection management. |
-| [zfs](/docs/collecting-metrics/storage-and-filesystems/zfs) | Collect metrics for ZFS filesystem |
-| [ZFS Adaptive Replacement Cache](/docs/collecting-metrics/storage-and-filesystems/zfs-adaptive-replacement-cache) | This integration monitors ZFS Adadptive Replacement Cache (ARC) statistics. |
-| [ZFS Pools](/docs/collecting-metrics/storage-and-filesystems/zfs-pools) | This collector monitors the health and space usage of ZFS pools using the command line tool [zpool](https://openzfs.github.io/openzfs-docs/man/master/8/zpool-list.8.html). |
+| [Adaptec RAID](/docs/collecting-metrics/collectors/storage-and-filesystems/adaptec-raid) | Monitors the health of Adaptec Hardware RAID by tracking the status of logical and physical devices in your storage system. |
+| [BCache](/docs/collecting-metrics/collectors/storage-and-filesystems/bcache) | Statistics for BCache (block layer cache) devices, including cache hit ratios, I/O operations, cache allocations, and bypass activity. |
+| [BTRFS](/docs/collecting-metrics/collectors/storage-and-filesystems/btrfs) | This integration provides usage and error statistics from the BTRFS filesystem. |
+| [Ceph](/docs/collecting-metrics/collectors/storage-and-filesystems/ceph) | This collector monitors the overall health status and performance of your Ceph clusters. |
+| [Dell EMC ScaleIO](/docs/collecting-metrics/collectors/storage-and-filesystems/dell-emc-scaleio) | This collector monitors ScaleIO (VxFlex OS) instances via VxFlex OS Gateway API. |
+| [Dell PowerStore](/docs/collecting-metrics/collectors/storage-and-filesystems/dell-powerstore) | This collector monitors Dell PowerStore storage arrays via the PowerStore REST API. |
+| [Dell PowerVault ME4/ME5](/docs/collecting-metrics/collectors/storage-and-filesystems/dell-powervault-me4-me5) | This collector monitors Dell PowerVault ME4 and ME5 storage arrays via the Management Controller Interface (MCI) REST API. |
+| [devstat](/docs/collecting-metrics/collectors/storage-and-filesystems/devstat) | Collect information per hard disk available on host. |
+| [Disk space](/docs/collecting-metrics/collectors/storage-and-filesystems/disk-space) | Monitor Disk space metrics for proficient storage management. |
+| [Disk Statistics](/docs/collecting-metrics/collectors/storage-and-filesystems/disk-statistics) | Detailed statistics for each of your system's disk devices and partitions. |
+| [DMCache devices](/docs/collecting-metrics/collectors/storage-and-filesystems/dmcache-devices) | This collector monitors DMCache, providing insights into capacity usage, efficiency, and activity. |
+| [eBPF Disk](/docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-disk) | Measure latency for I/O events on disk. |
+| [eBPF Filesystem](/docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-filesystem) | Monitor latency for main actions on filesystem like I/O events. |
+| [eBPF MDflush](/docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-mdflush) | Monitor when flush events happen between disks. |
+| [eBPF Mount](/docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-mount) | Monitor calls for mount and umount syscall. |
+| [eBPF Sync](/docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-sync) | Monitor syscall responsible to move data from memory to storage device. |
+| [eBPF VFS](/docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-vfs) | Monitor I/O events on Linux Virtual Filesystem. |
+| [EOS](/docs/collecting-metrics/collectors/storage-and-filesystems/eos) | Monitor CERN EOS metrics for efficient storage management. |
+| [FreeBSD NFS](/docs/collecting-metrics/collectors/storage-and-filesystems/freebsd-nfs) | Monitor FreeBSD Network File System metrics for efficient file sharing management and performance. |
+| [Generic storage enclosure tool](/docs/collecting-metrics/collectors/storage-and-filesystems/generic-storage-enclosure-tool) | Monitor storage enclosure metrics for efficient storage device management and performance. |
+| [getmntinfo](/docs/collecting-metrics/collectors/storage-and-filesystems/getmntinfo) | Collect information per mount point. |
+| [Hadoop Distributed File System (HDFS)](/docs/collecting-metrics/collectors/storage-and-filesystems/hadoop-distributed-file-system-hdfs) | This collector monitors HDFS nodes. |
+| [HDD temperature](/docs/collecting-metrics/collectors/storage-and-filesystems/hdd-temperature) | This collector monitors disk temperatures. |
+| [HPE Smart Arrays](/docs/collecting-metrics/collectors/storage-and-filesystems/hpe-smart-arrays) | Monitors the health of HPE Smart Arrays by tracking the status of controllers, arrays, logical and physical drives in your storage system. |
+| [IBM Spectrum](/docs/collecting-metrics/collectors/storage-and-filesystems/ibm-spectrum) | Monitor IBM Spectrum storage metrics for efficient data management and performance. |
+| [IBM Spectrum Virtualize](/docs/collecting-metrics/collectors/storage-and-filesystems/ibm-spectrum-virtualize) | Monitor IBM Spectrum Virtualize metrics for efficient storage virtualization and performance. |
+| [IPFS](/docs/collecting-metrics/collectors/storage-and-filesystems/ipfs) | This collector monitors IPFS daemon health and network activity. |
+| [Lustre metadata](/docs/collecting-metrics/collectors/storage-and-filesystems/lustre-metadata) | Keep tabs on Lustre clustered file system for efficient management and performance. |
+| [LVM logical volumes](/docs/collecting-metrics/collectors/storage-and-filesystems/lvm-logical-volumes) | This collector monitors the health of LVM logical volumes. |
+| [MD RAID](/docs/collecting-metrics/collectors/storage-and-filesystems/md-raid) | This integration monitors the status of MD RAID devices. |
+| [MegaCLI MegaRAID](/docs/collecting-metrics/collectors/storage-and-filesystems/megacli-megaraid) | Monitors the health of MegaCLI Hardware RAID by tracking the status of RAID adapters, physical drives, and backup batteries in your storage system. |
+| [MogileFS](/docs/collecting-metrics/collectors/storage-and-filesystems/mogilefs) | Monitor MogileFS distributed file system metrics for efficient storage management and performance. |
+| [Netapp ONTAP API](/docs/collecting-metrics/collectors/storage-and-filesystems/netapp-ontap-api) | Keep tabs on NetApp ONTAP storage system metrics for efficient data storage management and performance. |
+| [NetApp Solidfire](/docs/collecting-metrics/collectors/storage-and-filesystems/netapp-solidfire) | Track NetApp Solidfire storage system metrics for efficient data storage management and performance. |
+| [NFS Client](/docs/collecting-metrics/collectors/storage-and-filesystems/nfs-client) | This integration provides statistics from the Linux kernel's NFS Client. |
+| [NFS Server](/docs/collecting-metrics/collectors/storage-and-filesystems/nfs-server) | This integration provides statistics from the Linux kernel's NFS Server. |
+| [NVMe devices](/docs/collecting-metrics/collectors/storage-and-filesystems/nvme-devices) | This collector monitors the health of NVMe devices. |
+| [Physical and Logical Disk Performance Metrics](/docs/collecting-metrics/collectors/storage-and-filesystems/physical-and-logical-disk-performance-metrics) | Detailed statistics for all disk devices and volumes. |
+| [S.M.A.R.T.](/docs/collecting-metrics/collectors/storage-and-filesystems/s.m.a.r.t.) | This collector monitors the health status of storage devices by analyzing S.M.A.R.T. |
+| [Samba](/docs/collecting-metrics/collectors/storage-and-filesystems/samba) | This collector monitors Samba syscalls and SMB2 calls. |
+| [StoreCLI RAID](/docs/collecting-metrics/collectors/storage-and-filesystems/storecli-raid) | Monitors the health of StoreCLI Hardware RAID by tracking the status of RAID adapters, physical drives, and backup batteries in your storage system. |
+| [Storidge](/docs/collecting-metrics/collectors/storage-and-filesystems/storidge) | Keep an eye on Storidge storage metrics for efficient storage management and performance. |
+| [Synology ActiveBackup](/docs/collecting-metrics/collectors/storage-and-filesystems/synology-activebackup) | Track Synology Active Backup metrics for efficient backup and data protection management. |
+| [zfs](/docs/collecting-metrics/collectors/storage-and-filesystems/zfs) | Collect metrics for ZFS filesystem |
+| [ZFS Adaptive Replacement Cache](/docs/collecting-metrics/collectors/storage-and-filesystems/zfs-adaptive-replacement-cache) | This integration monitors ZFS Adadptive Replacement Cache (ARC) statistics. |
+| [ZFS Pools](/docs/collecting-metrics/collectors/storage-and-filesystems/zfs-pools) | This collector monitors the health and space usage of ZFS pools using the command line tool [zpool](https://openzfs.github.io/openzfs-docs/man/master/8/zpool-list.8.html). |
 
 ### Synthetic Testing
 
 | Integration | Description |
 |-------------|-------------|
-| [Blackbox](/docs/collecting-metrics/synthetic-testing/blackbox) | Track external service availability and response times with Blackbox monitoring. |
-| [DNS query](/docs/collecting-metrics/synthetic-testing/dns-query) | This module monitors DNS query round-trip time (RTT). |
-| [Domain expiration date](/docs/collecting-metrics/synthetic-testing/domain-expiration-date) | This collector monitors the remaining time before the domain expires. |
-| [Files and directories](/docs/collecting-metrics/synthetic-testing/files-and-directories) | This collector monitors the existence, last modification time, and size of arbitrary files and directories on the system. |
-| [HTTP Endpoints](/docs/collecting-metrics/synthetic-testing/http-endpoints) | This collector monitors HTTP servers availability status and response time. |
-| [Idle OS Jitter](/docs/collecting-metrics/synthetic-testing/idle-os-jitter) | Monitor delays in timing for user processes caused by scheduling limitations to optimize the system to run latency sensitive applications with minimal jitter, improving consistency and quality of service. |
-| [IOPing](/docs/collecting-metrics/synthetic-testing/ioping) | Monitor IOPing metrics for efficient disk I/O latency tracking. |
-| [Monit](/docs/collecting-metrics/synthetic-testing/monit) | This collector monitors status of Monit's service checks. |
-| [MQTT Blackbox](/docs/collecting-metrics/synthetic-testing/mqtt-blackbox) | Track MQTT message transport performance using blackbox testing methods. |
-| [Nagios Plugins](/docs/collecting-metrics/synthetic-testing/nagios-plugins) | This collector runs [Nagios-compatible plugins](https://www.nagios-plugins.org/) and custom scripts. |
-| [Ping](/docs/collecting-metrics/synthetic-testing/ping) | This module measures round-trip time and packet loss by sending ping messages to network hosts. |
-| [Site 24x7](/docs/collecting-metrics/synthetic-testing/site-24x7) | Monitor Site24x7 website and infrastructure monitoring metrics for efficient performance tracking and management. |
-| [TCP/UDP Endpoints](/docs/collecting-metrics/synthetic-testing/tcp-udp-endpoints) | Collector for monitoring service availability and response time. |
-| [Uptimerobot](/docs/collecting-metrics/synthetic-testing/uptimerobot) | Monitor UptimeRobot website uptime monitoring metrics for efficient website availability tracking and management. |
-| [X.509 certificate](/docs/collecting-metrics/synthetic-testing/x.509-certificate) | This collectors monitors x509 certificates expiration time and revocation status. |
+| [Blackbox](/docs/collecting-metrics/collectors/synthetic-testing/blackbox) | Track external service availability and response times with Blackbox monitoring. |
+| [DNS query](/docs/collecting-metrics/collectors/synthetic-testing/dns-query) | This module monitors DNS query round-trip time (RTT). |
+| [Domain expiration date](/docs/collecting-metrics/collectors/synthetic-testing/domain-expiration-date) | This collector monitors the remaining time before the domain expires. |
+| [Files and directories](/docs/collecting-metrics/collectors/synthetic-testing/files-and-directories) | This collector monitors the existence, last modification time, and size of arbitrary files and directories on the system. |
+| [HTTP Endpoints](/docs/collecting-metrics/collectors/synthetic-testing/http-endpoints) | This collector monitors HTTP servers availability status and response time. |
+| [Idle OS Jitter](/docs/collecting-metrics/collectors/synthetic-testing/idle-os-jitter) | Monitor delays in timing for user processes caused by scheduling limitations to optimize the system to run latency sensitive applications with minimal jitter, improving consistency and quality of service. |
+| [IOPing](/docs/collecting-metrics/collectors/synthetic-testing/ioping) | Monitor IOPing metrics for efficient disk I/O latency tracking. |
+| [Monit](/docs/collecting-metrics/collectors/synthetic-testing/monit) | This collector monitors status of Monit's service checks. |
+| [MQTT Blackbox](/docs/collecting-metrics/collectors/synthetic-testing/mqtt-blackbox) | Track MQTT message transport performance using blackbox testing methods. |
+| [Nagios Plugins](/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins) | This collector runs [Nagios-compatible plugins](https://www.nagios-plugins.org/) and custom scripts. |
+| [Ping](/docs/collecting-metrics/collectors/synthetic-testing/ping) | This module measures round-trip time and packet loss by sending ping messages to network hosts. |
+| [Site 24x7](/docs/collecting-metrics/collectors/synthetic-testing/site-24x7) | Monitor Site24x7 website and infrastructure monitoring metrics for efficient performance tracking and management. |
+| [TCP/UDP Endpoints](/docs/collecting-metrics/collectors/synthetic-testing/tcp-udp-endpoints) | Collector for monitoring service availability and response time. |
+| [Uptimerobot](/docs/collecting-metrics/collectors/synthetic-testing/uptimerobot) | Monitor UptimeRobot website uptime monitoring metrics for efficient website availability tracking and management. |
+| [X.509 certificate](/docs/collecting-metrics/collectors/synthetic-testing/x.509-certificate) | This collectors monitors x509 certificates expiration time and revocation status. |
