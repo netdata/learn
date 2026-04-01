@@ -859,13 +859,13 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/collector/nagios/README.md
   learn_path: /docs/collecting-metrics/synthetic-testing/nagios-plugins
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/aws/README.md
-  learn_path: /docs/collecting-metrics/secret-stores/aws-secrets-manager
+  learn_path: /docs/collecting-metrics/secrets-management/secret-stores/aws-secrets-manager
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/vault/README.md
-  learn_path: /docs/collecting-metrics/secret-stores/vault
+  learn_path: /docs/collecting-metrics/secrets-management/secret-stores/vault
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/azure/README.md
-  learn_path: /docs/collecting-metrics/secret-stores/azure-key-vault
+  learn_path: /docs/collecting-metrics/secrets-management/secret-stores/azure-key-vault
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/gcp/README.md
-  learn_path: /docs/collecting-metrics/secret-stores/google-secret-manager
+  learn_path: /docs/collecting-metrics/secrets-management/secret-stores/google-secret-manager
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/daemon/README.md
   learn_path: /docs/netdata-agent/daemon
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md

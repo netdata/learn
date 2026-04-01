@@ -969,7 +969,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/SECRETS.md
   sidebar_label: Secrets Management
   learn_status: Published
-  learn_rel_path: Collecting Metrics
+  learn_rel_path: Collecting Metrics/Secrets Management
   keywords: null
   description: Use secret references to avoid storing credentials in plain text. Supports
     environment variables, files, commands, and secretstore backends.
@@ -978,7 +978,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/aws/README.md
   sidebar_label: AWS Secrets Manager
   learn_status: Published
-  learn_rel_path: Collecting Metrics/Secret Stores
+  learn_rel_path: Collecting Metrics/Secrets Management/Secret Stores
   keywords: '[''secretstore'', ''secrets'', ''aws'', ''aws-sm'', ''aws secrets manager'']'
   description: .nan
   meta_yaml: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/aws/metadata.yaml
@@ -987,7 +987,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/azure/README.md
   sidebar_label: Azure Key Vault
   learn_status: Published
-  learn_rel_path: Collecting Metrics/Secret Stores
+  learn_rel_path: Collecting Metrics/Secrets Management/Secret Stores
   keywords: '[''secretstore'', ''secrets'', ''azure'', ''azure-kv'', ''azure key vault'']'
   description: .nan
   meta_yaml: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/azure/metadata.yaml
@@ -996,7 +996,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/gcp/README.md
   sidebar_label: Google Secret Manager
   learn_status: Published
-  learn_rel_path: Collecting Metrics/Secret Stores
+  learn_rel_path: Collecting Metrics/Secrets Management/Secret Stores
   keywords: '[''secretstore'', ''secrets'', ''gcp'', ''gcp-sm'', ''google secret manager'']'
   description: .nan
   meta_yaml: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/gcp/metadata.yaml
@@ -1005,7 +1005,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/vault/README.md
   sidebar_label: Vault
   learn_status: Published
-  learn_rel_path: Collecting Metrics/Secret Stores
+  learn_rel_path: Collecting Metrics/Secrets Management/Secret Stores
   keywords: '[''secretstore'', ''secrets'', ''vault'', ''hashicorp vault'']'
   description: .nan
   meta_yaml: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/vault/metadata.yaml

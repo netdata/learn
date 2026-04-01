@@ -10861,4 +10861,20 @@
   from="/docs/netdata-agent/configuration/secrets-management"
   to="/docs/collecting-metrics/secrets-management"
 
+[[redirects]]
+  from="/docs/collecting-metrics/secret-stores/vault"
+  to="/docs/collecting-metrics/secrets-management/secret-stores/vault"
+
+[[redirects]]
+  from="/docs/collecting-metrics/secret-stores/google-secret-manager"
+  to="/docs/collecting-metrics/secrets-management/secret-stores/google-secret-manager"
+
+[[redirects]]
+  from="/docs/collecting-metrics/secret-stores/azure-key-vault"
+  to="/docs/collecting-metrics/secrets-management/secret-stores/azure-key-vault"
+
+[[redirects]]
+  from="/docs/collecting-metrics/secret-stores/aws-secrets-manager"
+  to="/docs/collecting-metrics/secrets-management/secret-stores/aws-secrets-manager"
+
 # section: dynamic << END
