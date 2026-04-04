@@ -253,10 +253,10 @@ module.exports = {
         'data-reo-client-id': '8a197d1119ef2d4',
       },
       // Nedi dependencies (CDN) - async to avoid blocking other scripts
-      { src: 'https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js', async: true },
-      { src: 'https://cdn.jsdelivr.net/npm/mermaid@11.13.0/dist/mermaid.min.js', async: true },
-      { src: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.24.0/dist/viz-global.js', async: true },
-      { src: 'https://cdn.jsdelivr.net/npm/turndown@7.2.2/dist/turndown.js', async: true },
+      { src: 'https://cdn.jsdelivr.net/npm/markdown-it@14.1.1/dist/markdown-it.min.js', async: true },
+      { src: 'https://cdn.jsdelivr.net/npm/mermaid@11.14.0/dist/mermaid.min.js', async: true },
+      { src: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.25.0/dist/viz-global.js', async: true },
+      { src: 'https://cdn.jsdelivr.net/npm/turndown@7.2.4/dist/turndown.js', async: true },
       { src: 'https://cdn.jsdelivr.net/npm/@guyplusplus/turndown-plugin-gfm@1.0.7/dist/turndown-plugin-gfm.js', async: true },
       // Nedi embed
       { src: 'https://nedi.netdata.cloud/ai-agent-public.js?v=17', async: true },
