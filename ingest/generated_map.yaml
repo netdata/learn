@@ -433,6 +433,14 @@
     and real-time visualizations with security and DDoS protection.
   meta_yaml: .nan
   message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/secure-your-netdata-agent-with-bearer-token.md
+  sidebar_label: Bearer Token Protection
+  learn_status: Published
+  learn_rel_path: Netdata Agent/Configuration/Securing Agents
+  keywords: null
+  description: null
+  meta_yaml: .nan
+  message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/README.md
   sidebar_label: Running the Agent behind a reverse proxy
   learn_status: Published

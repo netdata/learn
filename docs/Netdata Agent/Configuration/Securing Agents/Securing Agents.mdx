@@ -39,7 +39,7 @@ After restart, users accessing `http://NODE:19999` will be redirected to Netdata
 - Agent must be [claimed to Netdata Cloud](/docs/netdata-cloud/connect-agent)
 - Works with both Community (free) and Business plans
 
-For detailed configuration options, see [Secure Your Netdata Agent with Bearer Token Protection](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration/secure-your-netdata-agent-with-bearer-token.md).
+For detailed configuration options, see [Secure Your Netdata Agent with Bearer Token Protection](/docs/netdata-agent/configuration/securing-agents/bearer-token-protection).
 
 ---
 
@@ -56,7 +56,14 @@ Edit the `[web]` section in `netdata.conf` using the [`edit-config`](/docs/netda
     mode = none
 ```
 
-Restart your Agent to apply changes. After restart, the local dashboard (http://NODE:19999) will no longer be accessible, but all metrics remain available through Netdata Cloud.
+Restart your Agent to apply changes. After restart, the Agent's web server (default port `19999`) will no longer accept inbound connections.
+
+:::warning
+
+This disables inbound connections, including streams from Child Agents.
+**Do not use this setting on Parent Agents.**
+
+:::
 
 :::tip
 
