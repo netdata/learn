@@ -1520,6 +1520,8 @@
   learn_path: /docs/netdata-agent/configuration/performance-optimization
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/README.md
   learn_path: /docs/netdata-agent/configuration
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/secure-your-netdata-agent-with-bearer-token.md
+  learn_path: /docs/netdata-agent/configuration/securing-agents/bearer-token-protection
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-caddy.md
   learn_path: /docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/caddy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-nginx.md
