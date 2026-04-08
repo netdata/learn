@@ -10991,7 +10991,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/synthetic-testing/nagios-plugins"
-  to="/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins"
+  to="/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts"
 
 [[redirects]]
   from="/docs/collecting-metrics/synthetic-testing/mqtt-blackbox"
@@ -12708,5 +12708,9 @@
 [[redirects]]
   from="/docs/collecting-metrics/applications/active-directory"
   to="/docs/collecting-metrics/collectors/applications/active-directory"
+
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins"
+  to="/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts"
 
 # section: dynamic << END
