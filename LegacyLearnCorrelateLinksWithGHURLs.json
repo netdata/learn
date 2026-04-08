@@ -3486,5 +3486,6 @@
     "https://learn.netdata.cloud/docs/collecting-metrics/applications/alamos-fe2-server": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/prometheus/integrations/alamos_fe2_server.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/applications/active-directory-federation-service": "https://github.com/netdata/netdata/blob/master/src/collectors/windows.plugin/integrations/active_directory_federation_service.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/applications/active-directory-certificate-service": "https://github.com/netdata/netdata/blob/master/src/collectors/windows.plugin/integrations/active_directory_certificate_service.md",
-    "https://learn.netdata.cloud/docs/collecting-metrics/applications/active-directory": "https://github.com/netdata/netdata/blob/master/src/collectors/windows.plugin/integrations/active_directory.md"
+    "https://learn.netdata.cloud/docs/collecting-metrics/applications/active-directory": "https://github.com/netdata/netdata/blob/master/src/collectors/windows.plugin/integrations/active_directory.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins": "https://github.com/netdata/netdata/blob/master/src/go/plugin/scripts.d/collector/nagios/README.md"
 }
