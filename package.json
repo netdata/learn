@@ -32,7 +32,7 @@
 		"@tailwindcss/typography": "^0.5.19",
 		"@types/react": "^19.2.10",
 		"acorn": "^8.14.1",
-		"axios": "^1.13.4",
+		"axios": "^1.15.0",
 		"clsx": "^2.1.1",
 		"dotenv": "^17.2.3",
 		"mermaid": "^11.14.0",
