@@ -12,7 +12,7 @@ slug: "/netdata-agent/installation/kubernetes-helm-chart-reference"
 
 <a href="https://artifacthub.io/packages/search?repo=netdata" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/netdata" alt="Artifact HUB" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img></a>
 
-![Version: 3.7.162](https://img.shields.io/badge/Version-3.7.162-informational?style=flat-square)
+![Version: 3.7.163](https://img.shields.io/badge/Version-3.7.163-informational?style=flat-square)
 
 ![AppVersion: v2.9.0](https://img.shields.io/badge/AppVersion-v2.9.0-informational?style=flat-square)
 
@@ -377,6 +377,60 @@ See values.yaml for defaults
 </pre>
 </td>
 			<td>URL hostnames for the ingress (they need to resolve to the external IP of the ingress controller)</td>
+		</tr>
+		<tr>
+			<td>httpRoute.enabled</td>
+			<td>bool</td>
+			<td><pre lang="json">
+false
+</pre>
+</td>
+			<td>Create HTTPRoute to access the netdata web UI via Gateway API</td>
+		</tr>
+		<tr>
+			<td>httpRoute.annotations</td>
+			<td>object</td>
+			<td><pre lang="json">
+\{}
+</pre>
+</td>
+			<td>Additional annotations to add to the HTTPRoute</td>
+		</tr>
+		<tr>
+			<td>httpRoute.labels</td>
+			<td>object</td>
+			<td><pre lang="json">
+\{}
+</pre>
+</td>
+			<td>Additional labels to add to the HTTPRoute</td>
+		</tr>
+		<tr>
+			<td>httpRoute.parentRefs</td>
+			<td>list</td>
+			<td><pre lang="json">
+[]
+</pre>
+</td>
+			<td>Parent references for Gateway API HTTPRoute. Required when `httpRoute.enabled=true`</td>
+		</tr>
+		<tr>
+			<td>httpRoute.hostnames</td>
+			<td>list</td>
+			<td><pre lang="json">
+[]
+</pre>
+</td>
+			<td>Hostnames for the HTTPRoute</td>
+		</tr>
+		<tr>
+			<td>httpRoute.rules</td>
+			<td>list</td>
+			<td><pre lang="json">
+[]
+</pre>
+</td>
+			<td>Optional explicit HTTPRoute rules. If empty, a default PathPrefix `/` rule is generated</td>
 		</tr>
 		<tr>
 			<td>rbac.create</td>
