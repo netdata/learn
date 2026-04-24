@@ -6601,14 +6601,6 @@
   description: null
   meta_yaml: .nan
   message: .nan
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/netdata-web-client.md
-  sidebar_label: Netdata Web Client
-  learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
-  keywords: null
-  description: null
-  meta_yaml: .nan
-  message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-code.md
   sidebar_label: Claude Code
   learn_status: Published
