@@ -1366,8 +1366,6 @@
   learn_path: /docs/netdata-ai/mcp/mcp-clients/openai-codex-cli
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/jetbrains-ides.md
   learn_path: /docs/netdata-ai/mcp/mcp-clients/jetbrains-ides
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/netdata-web-client.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients/netdata-web-client
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-desktop.md
   learn_path: /docs/netdata-ai/mcp/mcp-clients/claude-desktop
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/vs-code.md
