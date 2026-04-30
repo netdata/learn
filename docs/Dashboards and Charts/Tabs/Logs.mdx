@@ -10,11 +10,27 @@ slug: "/dashboards-and-charts/tabs/logs"
 
 # Logs tab
 
-The Logs tab is using the [`systemd` journal plugin](/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference), to present a structured view into your infrastructure's `systemd` logs.
+The Logs tab provides a structured, searchable view of logs collected from across your infrastructure, supporting multiple log sources depending on the Node's operating system.
 
-We have a thorough section explaining how you can [work with logs](https://learn.netdata.cloud/docs/logs), detailing how the plugin works, and what other utilities are used under the hood to provide you with the visualizations and the log entries.
+## Log sources
 
-The [`systemd` journal plugin](/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference) documentation has information about:
+The Logs tab displays log entries from the following sources:
+
+- **systemd-journal** — reads logs from `systemd` journald on Linux Nodes. See the [Systemd Journal Plugin Reference](/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference) for details on journal sources, fields, and query performance.
+- **otel-logs** — displays logs received via OpenTelemetry (OTLP) log ingestion. See the [OpenTelemetry Signal Viewer plugin](https://github.com/netdata/netdata/blob/master/src/crates/netdata-log-viewer/otel-signal-viewer-plugin/README.md) for setup and configuration.
+- **Windows Event Logs** — reads Windows event logs on Windows Nodes. See the [Windows Events Plugin Reference](/docs/logs/windows-event-logs/windows-events-plugin-reference) for supported event channels and configuration.
+
+You can also display custom application logs, such as web server access logs, under the systemd-journal source by piping them into `systemd` journald using [log2journal](/docs/logs/log2journal) and [systemd-cat-native](/docs/logs/systemd-cat-native). For example, use the built-in `nginx-combined` log2journal configuration to pipe nginx access logs.
+
+:::tip
+
+For comprehensive documentation on log centralization and configuration, see [Working with Logs](https://learn.netdata.cloud/docs/logs). To keep custom log pipelines running persistently, create a systemd service unit and use `LogNamespace` to isolate piped logs from system journal entries. See the [log centralization points guide](/docs/logs/logs-centralization-points-with-systemd-journald) and [Monitor Nginx or Apache web server log files](/docs/developer-and-contributor-corner/monitor-nginx-or-apache-web-server-log-files-with-netdata) for setup details.
+
+:::
+
+## systemd journal plugin reference
+
+The systemd journal plugin is the primary log source for Linux systems. The [`systemd` journal plugin](/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference) documentation covers:
 
 - [Key features the plugin provides](/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference#key-features)
 - [Journal sources](/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference#journal-sources)
@@ -23,4 +39,4 @@ The [`systemd` journal plugin](/docs/logs/systemd-journal-logs/systemd-journal-p
 - [Query performance](/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference#query-performance)
 - [Performance at scale](/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference#performance-at-scale)
 
-We recommend you to read through that document, to better understand how the plugin and the visualizations work.
+We recommend reading through that document to better understand how the plugin and the visualizations work.
