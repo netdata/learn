@@ -588,6 +588,16 @@
   learn_path: /docs/collecting-metrics/collectors/databases/ibm-db2
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/README.md
   learn_path: /docs/developer-and-contributor-corner/external-plugins/go.d.plugin
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/k8ssd/README.md
+  learn_path: /docs/collecting-metrics/service-discovery/kubernetes
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/snmpsd/README.md
+  learn_path: /docs/collecting-metrics/service-discovery/snmp
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/dockersd/README.md
+  learn_path: /docs/collecting-metrics/service-discovery/docker
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/netlistensd/README.md
+  learn_path: /docs/collecting-metrics/service-discovery/local-listening-processes
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/httpsd/README.md
+  learn_path: /docs/collecting-metrics/service-discovery/http-endpoint
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/wireguard/README.md
   learn_path: /docs/collecting-metrics/collectors/networking/wireguard
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/monit/README.md
@@ -1406,6 +1416,8 @@
   learn_path: /docs/netdata-agent/maintenance/backup-and-restore-an-agent
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/start-stop-restart.md
   learn_path: /docs/netdata-agent/maintenance/service-control
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configure-netdata-for-cybersecurity-platforms.md
+  learn_path: /docs/netdata-agent/configuration/securing-agents/configure-netdata-for-cybersecurity-platforms
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/README.md
   learn_path: /docs/netdata-agent/resource-utilization
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md
