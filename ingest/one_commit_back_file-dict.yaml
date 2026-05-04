@@ -440,6 +440,8 @@
   learn_path: /docs/collecting-metrics/collectors/containers-and-vms/aws-ecs-containers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/power_capping.md
   learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/power-capping
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/linux_audit_subsystem.md
+  learn_path: /docs/collecting-metrics/collectors/operating-systems/linux-audit-subsystem
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/linux_zswap.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/linux-zswap
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/system_memory_fragmentation.md
@@ -462,6 +464,8 @@
   learn_path: /docs/collecting-metrics/collectors/applications/net-framework
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/numa_architecture.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/numa-architecture
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/smb_server_shares.md
+  learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/smb-server-shares
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/physical_and_logical_disk_performance_metrics.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/physical-and-logical-disk-performance-metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/sensors.md
