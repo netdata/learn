@@ -760,6 +760,7 @@ def populate_integrations(markdownFiles):
     authentication_entries = pd.DataFrame()
     secretstore_entries = pd.DataFrame()
     logs_entries = pd.DataFrame()
+    flows_entries = pd.DataFrame()
 
     readmes_first = []
     others_last = []
@@ -841,6 +842,11 @@ def populate_integrations(markdownFiles):
                 )
 
                 logs_entries = pd.concat([logs_entries, metadf])
+            elif "netflow-plugin/integrations" in normalized_file:
+                # Network Flow integrations live under
+                # src/crates/netflow-plugin/integrations/<slug>.md and are
+                # spliced into the map at the `flows_integrations` placeholder.
+                flows_entries = pd.concat([flows_entries, metadf])
             else:
                 alerting_agent_entries = pd.concat([alerting_agent_entries, metadf])
 
@@ -987,6 +993,25 @@ def populate_integrations(markdownFiles):
         ],
         ignore_index=True,
     )
+
+    replace_index = map_file.loc[
+        map_file["custom_edit_url"] == "flows_integrations"
+    ].index
+    if len(replace_index) > 0:
+        upper = map_file.iloc[: replace_index[0]]
+        lower = map_file.iloc[replace_index[0] + 1 :]
+
+        map_file = pd.concat(
+            [
+                upper,
+                flows_entries.sort_values(
+                    by=["learn_rel_path", "sidebar_label"],
+                    key=lambda col: col.str.lower(),
+                ),
+                lower,
+            ],
+            ignore_index=True,
+        )
 
     # Convert DataFrame to list of dicts and save as YAML
     generated_map_data = map_file.to_dict(orient="records")
