@@ -9,6 +9,7 @@ learn_link: "https://learn.netdata.cloud/docs/welcome-to-netdata/monitor-anythin
 slug: "/welcome-to-netdata/monitor-anything"
 ---
 
+
 # Monitor anything with Netdata
 
 **850+ integrations. Zero configuration. Deploy anywhere.**
@@ -594,3 +595,25 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [TCP/UDP Endpoints](/docs/collecting-metrics/collectors/synthetic-testing/tcp-udp-endpoints) | Collector for monitoring service availability and response time. |
 | [Uptimerobot](/docs/collecting-metrics/collectors/synthetic-testing/uptimerobot) | Monitor UptimeRobot website uptime monitoring metrics for efficient website availability tracking and management. |
 | [X.509 certificate](/docs/collecting-metrics/collectors/synthetic-testing/x.509-certificate) | This collectors monitors x509 certificates expiration time and revocation status. |
+
+### Network Flows
+
+| Integration | Description |
+|-------------|-------------|
+| [AWS IP Ranges](/docs/network-flows/enrichment-methods/aws-ip-ranges) | Annotate network flows with AWS service and region labels from AWS public IP ranges. |
+| [Azure IP Ranges](/docs/network-flows/enrichment-methods/azure-ip-ranges) | Annotate network flows with Azure service and region labels from Azure Service Tags. |
+| [bio-rd / RIPE RIS](/docs/network-flows/enrichment-methods/bio-rd-ripe-ris) | Enrich network flows with BGP routing context received from bio-rd / RIPE RIS over gRPC. |
+| [BMP (BGP Monitoring Protocol)](/docs/network-flows/enrichment-methods/bmp-bgp-monitoring-protocol) | Enrich network flows with BGP next-hop, AS path, communities, and routing context received directly from routers. |
+| [Classifiers](/docs/network-flows/enrichment-methods/classifiers) | Annotate network flows with exporter and interface labels derived from reusable classification rules. |
+| [Custom MMDB Database](/docs/network-flows/enrichment-methods/custom-mmdb-database) | Enrich network flows with ASN, geographic, or internal network context from operator-built MMDB databases. |
+| [DB-IP IP Intelligence](/docs/network-flows/enrichment-methods/db-ip-ip-intelligence) | Enrich network flows with ASN and geographic context from DB-IP Lite MMDB databases. |
+| [Decapsulation](/docs/network-flows/enrichment-methods/decapsulation) | Enrich network flows with inner source and destination endpoints from VXLAN or SRv6 encapsulated traffic. |
+| [GCP IP Ranges](/docs/network-flows/enrichment-methods/gcp-ip-ranges) | Annotate network flows with Google ownership, service, and scope labels from Google public IP ranges. |
+| [Generic JSON-over-HTTP IPAM](/docs/network-flows/enrichment-methods/generic-json-over-http-ipam) | Annotate network flows with network-identity labels from any JSON-over-HTTP IPAM or CMDB endpoint. |
+| [IPFIX](/docs/network-flows/flow-protocols/ipfix) | Collect network flow records from IPFIX (NetFlow v10) exporters. |
+| [IPtoASN](/docs/network-flows/enrichment-methods/iptoasn) | Enrich network flows with public ASN and country context from IPtoASN BGP-derived datasets. |
+| [MaxMind GeoIP / GeoLite2](/docs/network-flows/enrichment-methods/maxmind-geoip-geolite2) | Enrich network flows with ASN and geographic context from MaxMind GeoIP / GeoLite2 MMDB databases. |
+| [NetBox](/docs/network-flows/enrichment-methods/netbox) | Annotate network flows with tenant, site, role, VRF, and description metadata from NetBox. |
+| [NetFlow](/docs/network-flows/flow-protocols/netflow) | Collect network flow records from NetFlow v5, v7, and v9 exporters such as routers, switches, and firewalls. |
+| [sFlow](/docs/network-flows/flow-protocols/sflow) | Collect sampled network flow records from sFlow v5 agents. |
+| [Static Metadata](/docs/network-flows/enrichment-methods/static-metadata) | Annotate network flows with operator-defined labels for exporters, interfaces, networks, and sampling rates. |

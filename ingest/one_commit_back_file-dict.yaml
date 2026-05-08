@@ -1272,6 +1272,40 @@
   learn_path: /docs/collecting-metrics/secrets-management/secret-stores/aws-secrets-manager
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/gcp/README.md
   learn_path: /docs/collecting-metrics/secrets-management/secret-stores/google-secret-manager
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/aws_ip_ranges.md
+  learn_path: /docs/network-flows/enrichment-methods/aws-ip-ranges
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/classifiers.md
+  learn_path: /docs/network-flows/enrichment-methods/classifiers
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/ipfix.md
+  learn_path: /docs/network-flows/flow-protocols/ipfix
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/netflow.md
+  learn_path: /docs/network-flows/flow-protocols/netflow
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/sflow.md
+  learn_path: /docs/network-flows/flow-protocols/sflow
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/azure_ip_ranges.md
+  learn_path: /docs/network-flows/enrichment-methods/azure-ip-ranges
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/generic_json-over-http_ipam.md
+  learn_path: /docs/network-flows/enrichment-methods/generic-json-over-http-ipam
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/custom_mmdb_database.md
+  learn_path: /docs/network-flows/enrichment-methods/custom-mmdb-database
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/netbox.md
+  learn_path: /docs/network-flows/enrichment-methods/netbox
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/decapsulation.md
+  learn_path: /docs/network-flows/enrichment-methods/decapsulation
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/maxmind_geoip_-_geolite2.md
+  learn_path: /docs/network-flows/enrichment-methods/maxmind-geoip-geolite2
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/static_metadata.md
+  learn_path: /docs/network-flows/enrichment-methods/static-metadata
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/gcp_ip_ranges.md
+  learn_path: /docs/network-flows/enrichment-methods/gcp-ip-ranges
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/db-ip_ip_intelligence.md
+  learn_path: /docs/network-flows/enrichment-methods/db-ip-ip-intelligence
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/iptoasn.md
+  learn_path: /docs/network-flows/enrichment-methods/iptoasn
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/bio-rd_-_ripe_ris.md
+  learn_path: /docs/network-flows/enrichment-methods/bio-rd-ripe-ris
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/bmp_bgp_monitoring_protocol.md
+  learn_path: /docs/network-flows/enrichment-methods/bmp-bgp-monitoring-protocol
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netdata-otel/otel-plugin/README.md
   learn_path: /docs/collecting-metrics/opentelemetry/opentelemetry-metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md
@@ -1484,6 +1518,44 @@
   learn_path: /docs/developer-and-contributor-corner/dynamic-configuration
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/running-through-cf-tunnels.md
   learn_path: /docs/developer-and-contributor-corner/running-a-local-dashboard-through-cloudflare-tunnels
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/README.md
+  learn_path: /docs/network-flows
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/field-reference.md
+  learn_path: /docs/network-flows/field-reference
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/anti-patterns.md
+  learn_path: /docs/network-flows/anti-patterns
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/troubleshooting.md
+  learn_path: /docs/network-flows/troubleshooting
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/sizing-capacity.md
+  learn_path: /docs/network-flows/sizing-and-capacity-planning
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/enrichment.md
+  learn_path: /docs/network-flows/enrichment
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/investigation-playbooks.md
+  learn_path: /docs/network-flows/investigation-playbooks
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/validation.md
+  learn_path: /docs/network-flows/validation-and-data-quality
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/quick-start.md
+  learn_path: /docs/network-flows/quick-start
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/intel-downloader.md
+  learn_path: /docs/network-flows/enrichment-intel-downloader
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/installation.md
+  learn_path: /docs/network-flows/installation
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/configuration.md
+  learn_path: /docs/network-flows/configuration
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/retention-querying.md
+  learn_path: /docs/network-flows/retention-and-tiers
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/visualization/filters-facets.md
+  learn_path: /docs/network-flows/visualization/filters-and-facets
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/visualization/overview.md
+  learn_path: /docs/network-flows/visualization
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/visualization/summary-sankey.md
+  learn_path: /docs/network-flows/visualization/sankey-and-table
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/visualization/time-series.md
+  learn_path: /docs/network-flows/visualization/time-series
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/visualization/dashboard-cards.md
+  learn_path: /docs/network-flows/visualization/plugin-health-charts
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/network-flows/visualization/maps-globe.md
+  learn_path: /docs/network-flows/visualization/maps-and-globe
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/install/windows-release-channels.md
   learn_path: /docs/netdata-agent/installation/windows/switching-install-types-and-release-channels
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/deployment-guides/README.md
