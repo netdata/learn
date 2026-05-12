@@ -602,15 +602,19 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 |-------------|-------------|
 | [AWS IP Ranges](/docs/network-flows/enrichment-methods/aws-ip-ranges) | Annotate network flows with AWS service and region labels from AWS public IP ranges. |
 | [Azure IP Ranges](/docs/network-flows/enrichment-methods/azure-ip-ranges) | Annotate network flows with Azure service and region labels from Azure Service Tags. |
-| [bio-rd / RIPE RIS](/docs/network-flows/enrichment-methods/bio-rd-ripe-ris) | Enrich network flows with BGP routing context received from bio-rd / RIPE RIS over gRPC. |
+| [bio-rd / RIPE RIS](/docs/network-flows/enrichment-methods/bio-rd-ripe-ris) | Enrich network flows with BGP routing context received from a bio-rd-compatible `RoutingInformationService` gRPC endpoint. |
 | [BMP (BGP Monitoring Protocol)](/docs/network-flows/enrichment-methods/bmp-bgp-monitoring-protocol) | Enrich network flows with BGP next-hop, AS path, communities, and routing context received directly from routers. |
+| [CAIDA Routeviews Prefix-to-AS](/docs/network-flows/enrichment-methods/caida-routeviews-prefix-to-as) | Enrich network flows with AS numbers from CAIDA's Routeviews Prefix-to-AS mapping dataset. |
 | [Classifiers](/docs/network-flows/enrichment-methods/classifiers) | Annotate network flows with exporter and interface labels derived from reusable classification rules. |
 | [Custom MMDB Database](/docs/network-flows/enrichment-methods/custom-mmdb-database) | Enrich network flows with ASN, geographic, or internal network context from operator-built MMDB databases. |
 | [DB-IP IP Intelligence](/docs/network-flows/enrichment-methods/db-ip-ip-intelligence) | Enrich network flows with ASN and geographic context from DB-IP Lite MMDB databases. |
 | [Decapsulation](/docs/network-flows/enrichment-methods/decapsulation) | Enrich network flows with inner source and destination endpoints from VXLAN or SRv6 encapsulated traffic. |
 | [GCP IP Ranges](/docs/network-flows/enrichment-methods/gcp-ip-ranges) | Annotate network flows with Google ownership, service, and scope labels from Google public IP ranges. |
 | [Generic JSON-over-HTTP IPAM](/docs/network-flows/enrichment-methods/generic-json-over-http-ipam) | Annotate network flows with network-identity labels from any JSON-over-HTTP IPAM or CMDB endpoint. |
+| [IP2Location LITE IP-Country](/docs/network-flows/enrichment-methods/ip2location-lite-ip-country) | Enrich network flows with country codes from the IP2Location LITE IP-Country database. |
+| [IPDeny Country Zones](/docs/network-flows/enrichment-methods/ipdeny-country-zones) | Enrich network flows with country codes from IPDeny country zone files. |
 | [IPFIX](/docs/network-flows/flow-protocols/ipfix) | Collect network flow records from IPFIX (NetFlow v10) exporters. |
+| [IPIP Country Database](/docs/network-flows/enrichment-methods/ipip-country-database) | Enrich network flows with country codes from IPIP's country database. |
 | [IPtoASN](/docs/network-flows/enrichment-methods/iptoasn) | Enrich network flows with public ASN and country context from IPtoASN BGP-derived datasets. |
 | [MaxMind GeoIP / GeoLite2](/docs/network-flows/enrichment-methods/maxmind-geoip-geolite2) | Enrich network flows with ASN and geographic context from MaxMind GeoIP / GeoLite2 MMDB databases. |
 | [NetBox](/docs/network-flows/enrichment-methods/netbox) | Annotate network flows with tenant, site, role, VRF, and description metadata from NetBox. |

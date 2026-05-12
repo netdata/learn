@@ -1272,8 +1272,14 @@
   learn_path: /docs/collecting-metrics/secrets-management/secret-stores/aws-secrets-manager
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/gcp/README.md
   learn_path: /docs/collecting-metrics/secrets-management/secret-stores/google-secret-manager
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/ip2location_lite_ip-country.md
+  learn_path: /docs/network-flows/enrichment-methods/ip2location-lite-ip-country
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/caida_routeviews_prefix-to-as.md
+  learn_path: /docs/network-flows/enrichment-methods/caida-routeviews-prefix-to-as
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/aws_ip_ranges.md
   learn_path: /docs/network-flows/enrichment-methods/aws-ip-ranges
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/ipip_country_database.md
+  learn_path: /docs/network-flows/enrichment-methods/ipip-country-database
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/classifiers.md
   learn_path: /docs/network-flows/enrichment-methods/classifiers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/ipfix.md
@@ -1288,6 +1294,8 @@
   learn_path: /docs/network-flows/enrichment-methods/generic-json-over-http-ipam
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/custom_mmdb_database.md
   learn_path: /docs/network-flows/enrichment-methods/custom-mmdb-database
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/ipdeny_country_zones.md
+  learn_path: /docs/network-flows/enrichment-methods/ipdeny-country-zones
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/netbox.md
   learn_path: /docs/network-flows/enrichment-methods/netbox
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/decapsulation.md
