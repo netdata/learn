@@ -1195,6 +1195,15 @@ def _integration_source_suffix(custom_edit_url):
     return suffix
 
 
+def _publish_collision_identity(md_file, info):
+    metadata = info["metadata"]
+    return (
+        str(metadata.get("custom_edit_url", "")).lower(),
+        str(metadata.get("meta_yaml", "")).lower(),
+        str(md_file).lower(),
+    )
+
+
 def create_mdx_path_from_metadata(metadata, filename_suffix=None):
     """
     Create a path from the documents metadata
@@ -1303,10 +1312,14 @@ def resolve_publish_path_collisions(publish_map):
         if md_file not in collision_members
     }
 
-    order = {md_file: index for index, md_file in enumerate(publish_map)}
     for md_files in collision_groups:
-        md_files = sorted(md_files, key=lambda md_file: order[md_file])
-        keep_unsuffixed = md_files[-1]
+        md_files = sorted(
+            md_files,
+            key=lambda md_file: _publish_collision_identity(
+                md_file, publish_map[md_file]
+            ),
+        )
+        keep_unsuffixed = md_files[0]
         used_paths = set(reserved_paths)
         used_paths.add(publish_map[keep_unsuffixed]["learnPath"])
         used_slugs = set(reserved_slugs)
