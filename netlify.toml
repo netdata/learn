@@ -8603,7 +8603,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/windows-services"
-  to="/docs/collecting-metrics/collectors/operating-systems/windows-services"
+  to="/docs/collecting-metrics/collectors/operating-systems/windows-services-windows-plugin"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/system-thermal-zone"
@@ -8611,7 +8611,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/system-statistics"
-  to="/docs/collecting-metrics/collectors/operating-systems/system-statistics"
+  to="/docs/collecting-metrics/collectors/operating-systems/system-statistics-windows-plugin"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/sensors"
@@ -11219,7 +11219,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/operating-systems/windows-services"
-  to="/docs/collecting-metrics/collectors/operating-systems/windows-services"
+  to="/docs/collecting-metrics/collectors/operating-systems/windows-services-windows-plugin"
 
 [[redirects]]
   from="/docs/collecting-metrics/operating-systems/vm.vmtotal"
@@ -11576,10 +11576,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/networking/network-interfaces"
   to="/docs/collecting-metrics/collectors/networking/network-interfaces"
-
-[[redirects]]
-  from="/docs/collecting-metrics/networking/network-connections"
-  to="/docs/collecting-metrics/collectors/networking/network-connections"
 
 [[redirects]]
   from="/docs/collecting-metrics/networking/netfilter"
@@ -12712,5 +12708,13 @@
 [[redirects]]
   from="/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins"
   to="/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts"
+
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/operating-systems/windows-services"
+  to="/docs/collecting-metrics/collectors/operating-systems/windows-services-windows-plugin"
+
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/operating-systems/system-statistics"
+  to="/docs/collecting-metrics/collectors/operating-systems/system-statistics-windows-plugin"
 
 # section: dynamic << END
