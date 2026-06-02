@@ -74,6 +74,27 @@ class TestIntegrationSlugCollisions(unittest.TestCase):
             publish_map["proc.md"]["learnPath"],
         )
 
+    def test_duplicate_keeper_is_independent_of_input_order(self):
+        publish_map = {
+            "proc.md": self._publish_info(
+                "https://github.com/netdata/netdata/edit/master/src/collectors/proc.plugin/integrations/system_statistics.md"
+            ),
+            "windows.md": self._publish_info(
+                "https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_statistics.md"
+            ),
+        }
+
+        ingest_module.resolve_publish_path_collisions(publish_map)
+
+        self.assertEqual(
+            publish_map["proc.md"]["slug"],
+            "/collecting-metrics/operating-systems/system-statistics",
+        )
+        self.assertEqual(
+            publish_map["windows.md"]["slug"],
+            "/collecting-metrics/operating-systems/system-statistics-windows-plugin",
+        )
+
     def test_source_suffix_avoids_existing_page_path(self):
         publish_map = {
             "windows.md": self._publish_info(
