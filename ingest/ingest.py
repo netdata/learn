@@ -1162,7 +1162,40 @@ def clone_repo(
         )
 
 
-def create_mdx_path_from_metadata(metadata):
+def _sanitize_mdx_filename_source(value):
+    return " ".join(
+        (
+            value.replace("'", " ")
+            .replace(":", " ")
+            .replace("/", " ")
+            .replace(")", " ")
+            .replace(",", " ")
+            .replace("(", " ")
+            .replace("`", " ")
+        ).split()
+    )
+
+
+def _integration_source_suffix(custom_edit_url):
+    parsed = urllib.parse.urlparse(str(custom_edit_url or ""))
+    path_parts = [part for part in PurePosixPath(parsed.path).parts if part != "/"]
+
+    if "integrations" in path_parts:
+        integrations_index = path_parts.index("integrations")
+        if integrations_index > 0:
+            source = path_parts[integrations_index - 1]
+        else:
+            source = PurePosixPath(parsed.path).stem
+    else:
+        source = (
+            PurePosixPath(parsed.path).parent.name or PurePosixPath(parsed.path).stem
+        )
+
+    suffix = re.sub(r"[^a-z0-9]+", "-", source.lower()).strip("-")
+    return suffix
+
+
+def create_mdx_path_from_metadata(metadata, filename_suffix=None):
     """
     Create a path from the documents metadata
     REQUIRED KEYS in the metadata input:
@@ -1181,17 +1214,9 @@ def create_mdx_path_from_metadata(metadata):
         if function_slug:
             final_file_source = function_slug.replace("-", " ")
 
-    final_file = " ".join(
-        (
-            final_file_source.replace("'", " ")
-            .replace(":", " ")
-            .replace("/", " ")
-            .replace(")", " ")
-            .replace(",", " ")
-            .replace("(", " ")
-            .replace("`", " ")
-        ).split()
-    )
+    final_file = _sanitize_mdx_filename_source(final_file_source)
+    if filename_suffix:
+        final_file = _sanitize_mdx_filename_source(f"{final_file} {filename_suffix}")
 
     slug = (
         "/{}/{}".format(metadata["learn_rel_path"], final_file)
@@ -1227,6 +1252,126 @@ def create_mdx_path_from_metadata(metadata):
                 .replace(" ", "-"),
             ),
         ]
+
+
+def resolve_publish_path_collisions(publish_map):
+    """
+    Keep existing routes for non-colliding pages and suffix integration duplicates.
+
+    For duplicate destinations, the last source keeps the original route because
+    that is the page that would have survived the previous overwrite behavior.
+    """
+    by_path = {}
+    by_slug = {}
+    for md_file, info in publish_map.items():
+        by_path.setdefault(info["learnPath"], []).append(md_file)
+        by_slug.setdefault(info["slug"], []).append(md_file)
+
+    collisions = {}
+    for groups in (by_path.values(), by_slug.values()):
+        for md_files in groups:
+            if len(md_files) <= 1:
+                continue
+            for md_file in md_files:
+                collisions.setdefault(md_file, set()).update(md_files)
+
+    visited = set()
+    collision_groups = []
+    for md_file in publish_map:
+        if md_file not in collisions or md_file in visited:
+            continue
+        stack = [md_file]
+        group = []
+        while stack:
+            current = stack.pop()
+            if current in visited:
+                continue
+            visited.add(current)
+            group.append(current)
+            stack.extend(collisions.get(current, set()) - visited)
+        collision_groups.append(group)
+
+    collision_members = {md_file for group in collision_groups for md_file in group}
+    reserved_paths = {
+        info["learnPath"]
+        for md_file, info in publish_map.items()
+        if md_file not in collision_members
+    }
+    reserved_slugs = {
+        info["slug"]
+        for md_file, info in publish_map.items()
+        if md_file not in collision_members
+    }
+
+    order = {md_file: index for index, md_file in enumerate(publish_map)}
+    for md_files in collision_groups:
+        md_files = sorted(md_files, key=lambda md_file: order[md_file])
+        keep_unsuffixed = md_files[-1]
+        used_paths = set(reserved_paths)
+        used_paths.add(publish_map[keep_unsuffixed]["learnPath"])
+        used_slugs = set(reserved_slugs)
+        used_slugs.add(publish_map[keep_unsuffixed]["slug"])
+        for md_file in md_files:
+            if md_file == keep_unsuffixed:
+                continue
+
+            metadata = publish_map[md_file]["metadata"]
+            custom_edit_url = metadata.get("custom_edit_url", "")
+            if "/integrations/" not in str(custom_edit_url):
+                raise ValueError(
+                    "Exact Learn path/slug collision detected for "
+                    "non-integration pages:\n"
+                    + "\n".join(
+                        f"  {path} -> {publish_map[path]['learnPath']} "
+                        f"({publish_map[path]['slug']})"
+                        for path in md_files
+                    )
+                )
+
+            suffix = _integration_source_suffix(custom_edit_url)
+            if not suffix:
+                raise ValueError(
+                    f"Cannot derive integration source suffix for {md_file}: "
+                    f"{custom_edit_url}"
+                )
+
+            base_suffix = suffix
+            suffix_index = 2
+            response = create_mdx_path_from_metadata(metadata, suffix)
+            while response[0] in used_paths or response[1] in used_slugs:
+                suffix = f"{base_suffix}-{suffix_index}"
+                suffix_index += 1
+                response = create_mdx_path_from_metadata(metadata, suffix)
+
+            publish_map[md_file]["learnPath"] = str(response[0])
+            publish_map[md_file]["slug"] = response[1]
+            used_paths.add(response[0])
+            used_slugs.add(response[1])
+            reserved_paths.add(response[0])
+            reserved_slugs.add(response[1])
+
+    paths = {}
+    slugs = {}
+    for md_file, info in publish_map.items():
+        learn_path = info["learnPath"]
+        if learn_path in paths:
+            prev_file = paths[learn_path]
+            raise ValueError(
+                "Exact Learn path collision detected after integration suffixing:\n"
+                f"  {prev_file} -> {learn_path}\n"
+                f"  {md_file} -> {learn_path}"
+            )
+        paths[learn_path] = md_file
+
+        slug = info["slug"]
+        if slug in slugs:
+            prev_file = slugs[slug]
+            raise ValueError(
+                "Exact Learn slug collision detected after integration suffixing:\n"
+                f"  {prev_file} -> {slug}\n"
+                f"  {md_file} -> {slug}"
+            )
+        slugs[slug] = md_file
 
 
 def fetch_markdown_from_repo(output_folder):
@@ -2879,26 +3024,13 @@ if __name__ == "__main__":
                 and md_metadata["learn_status"] == "Published"
             ):
                 try:
-                    # check the type of the response (for more info of what the response can be check
-                    # the return statements of the function itself)
                     response = create_mdx_path_from_metadata(md_metadata)
                     to_publish[markdown] = {
                         "metadata": md_metadata,
                         "learnPath": str(response[0]),
+                        "slug": response[1],
                         "ingestedRepo": str(markdown.split("/", 2)[1]),
                     }
-
-                    # print(response[1])
-
-                    md_metadata.update(
-                        {
-                            "learn_link": "https://learn.netdata.cloud/docs"
-                            + response[1],
-                            "slug": response[1],
-                        }
-                    )
-
-                    update_metadata_of_file(markdown, md_metadata)
                 except KeyError as exc:
                     print(f"File {markdown} doesn't contain key-value", exc)
             else:
@@ -2912,6 +3044,18 @@ if __name__ == "__main__":
         elif not os.stat(markdown).st_size == 0:
             rest_files_dictionary[markdown] = {"tmpPath": markdown}
         del md_metadata
+
+    resolve_publish_path_collisions(to_publish)
+
+    for md_file, info in to_publish.items():
+        metadata = info["metadata"]
+        metadata.update(
+            {
+                "learn_link": "https://learn.netdata.cloud/docs" + info["slug"],
+                "slug": info["slug"],
+            }
+        )
+        update_metadata_of_file(md_file, metadata)
 
     # Check for case-insensitive path collisions (e.g. "Power Supply.mdx" vs "Power supply.mdx").
     # These cause problems on case-insensitive filesystems (macOS, Windows) and indicate
