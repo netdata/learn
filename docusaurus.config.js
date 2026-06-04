@@ -253,7 +253,7 @@ module.exports = {
         'data-reo-client-id': '8a197d1119ef2d4',
       },
       // Nedi dependencies (CDN) - async to avoid blocking other scripts
-      { src: 'https://cdn.jsdelivr.net/npm/markdown-it@14.1.1/dist/markdown-it.min.js', async: true },
+      { src: 'https://cdn.jsdelivr.net/npm/markdown-it@14.2.0/dist/markdown-it.min.js', async: true },
       { src: 'https://cdn.jsdelivr.net/npm/mermaid@11.15.0/dist/mermaid.min.js', async: true },
       { src: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.27.0/dist/viz-global.js', async: true },
       { src: 'https://cdn.jsdelivr.net/npm/turndown@7.2.4/dist/turndown.js', async: true },
