@@ -155,17 +155,17 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Cilium Operator](/docs/collecting-metrics/collectors/containers-and-vms/cilium-operator) | Monitor Cilium Operator metrics for efficient Kubernetes network security management. |
 | [Cilium Proxy](/docs/collecting-metrics/collectors/containers-and-vms/cilium-proxy) | Track Cilium Proxy metrics for enhanced network security and performance. |
 | [containerd Containers](/docs/collecting-metrics/collectors/containers-and-vms/containerd-containers) | Monitor containerd container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
-| [Containers](/docs/collecting-metrics/collectors/containers-and-vms/containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Containers](/docs/collecting-metrics/collectors/containers-and-vms/containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, network, and page cache activity — via Linux cgroups. |
 | [Docker](/docs/collecting-metrics/collectors/containers-and-vms/docker) | This collector monitors Docker containers state, health status and more. |
 | [Docker Containers](/docs/collecting-metrics/collectors/containers-and-vms/docker-containers) | Monitor Docker container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [Docker Engine](/docs/collecting-metrics/collectors/containers-and-vms/docker-engine) | This collector monitors the activity and health of Docker Engine and Docker Swarm. |
 | [Docker Hub repository](/docs/collecting-metrics/collectors/containers-and-vms/docker-hub-repository) | This collector keeps track of DockerHub repositories statistics such as the number of stars, pulls, current status, and more. |
-| [Hyper-V](/docs/collecting-metrics/collectors/containers-and-vms/hyper-v) | This collector monitors website requests and logins. |
+| [Hyper-V](/docs/collecting-metrics/collectors/containers-and-vms/hyper-v) | This collector monitors Hyper-V virtualization metrics including virtual machine health status, root partition virtualization layer statistics (TLB flushes, address spaces, attached devices, GPA space), per-VM CPU usage, memory allocation and pressure, storage device I/O and errors, network interface traffic and packets, and virtual switch traffic, packets, and dropped packets. |
 | [Kubelet](/docs/collecting-metrics/collectors/containers-and-vms/kubelet) | This collector monitors Kubelet instances. |
 | [Kubeproxy](/docs/collecting-metrics/collectors/containers-and-vms/kubeproxy) | This collector monitors Kubeproxy instances. |
 | [Kubernetes API Server](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-api-server) | This collector monitors Kubernetes API Server health, performance, and request metrics. |
 | [Kubernetes Cluster State](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-cluster-state) | This collector monitors Kubernetes Nodes, Pods and Containers. |
-| [Kubernetes Containers](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Kubernetes Containers](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, network, and page cache activity — via Linux cgroups. |
 | [Libvirt VMs and Containers](/docs/collecting-metrics/collectors/containers-and-vms/libvirt-vms-and-containers) | Monitor libvirt-managed VM and container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [LXC Containers](/docs/collecting-metrics/collectors/containers-and-vms/lxc-containers) | Monitor LXC/LXD/Incus container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [Mesos](/docs/collecting-metrics/collectors/containers-and-vms/mesos) | Monitor Apache Mesos cluster manager metrics for efficient resource management and performance. |
@@ -234,7 +234,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [System statistics](/docs/collecting-metrics/collectors/operating-systems/system-statistics-windows-plugin) | This collector monitors the current number of processes, threads, and context switches on Windows systems. |
 | [System Uptime](/docs/collecting-metrics/collectors/operating-systems/system-uptime) | The amount of time the system has been up (running). |
 | [system.ram](/docs/collecting-metrics/collectors/operating-systems/system.ram) | Show information about system memory usage. |
-| [Systemd Services](/docs/collecting-metrics/collectors/operating-systems/systemd-services) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
+| [Systemd Services](/docs/collecting-metrics/collectors/operating-systems/systemd-services) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, network, and page cache activity — via Linux cgroups. |
 | [Systemd Units](/docs/collecting-metrics/collectors/operating-systems/systemd-units) | This collector monitors the state of Systemd units and unit files. |
 | [systemd-logind users](/docs/collecting-metrics/collectors/operating-systems/systemd-logind-users) | This collector monitors number of sessions and users as reported by the `org.freedesktop.login1` DBus API. |
 | [uptime](/docs/collecting-metrics/collectors/operating-systems/uptime) | Show period of time server is up. |
@@ -309,6 +309,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [RIPE Atlas](/docs/collecting-metrics/collectors/networking/ripe-atlas) | Keep tabs on RIPE Atlas Internet measurement platform metrics for efficient network monitoring and performance. |
 | [SCTP Statistics](/docs/collecting-metrics/collectors/networking/sctp-statistics) | This integration provides statistics about the Stream Control Transmission Protocol (SCTP). |
 | [SNMP devices](/docs/collecting-metrics/collectors/networking/snmp-devices) | This collector discovers and monitors any SNMP-enabled network device. |
+| [SNMP trap listener](/docs/collecting-metrics/collectors/networking/snmp-trap-listener) | This collector listens for incoming SNMP Trap and INFORM notifications from network devices and persists them as enriched, structured log entries. |
 | [Socket statistics](/docs/collecting-metrics/collectors/networking/socket-statistics) | This integration provides socket statistics. |
 | [SoftEther VPN Server](/docs/collecting-metrics/collectors/networking/softether-vpn-server) | Monitor SoftEther VPN Server metrics for efficient virtual private network (VPN) management and performance. |
 | [Softnet Statistics](/docs/collecting-metrics/collectors/networking/softnet-statistics) | `/proc/net/softnet_stat` provides statistics that relate to the handling of network packets by softirq. |
