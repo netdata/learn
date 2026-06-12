@@ -57,15 +57,15 @@
 		"@testing-library/jest-dom": "^6.9.1",
 		"@testing-library/react": "^16.3.2",
 		"@testing-library/user-event": "^14.6.1",
-		"@vitejs/plugin-react": "^5.1.2",
-		"@vitest/coverage-v8": "^4.0.18",
+		"@vitejs/plugin-react": "^5.2.0",
+		"@vitest/coverage-v8": "^4.1.8",
 		"autoprefixer": "^10.4.24",
 		"happy-dom": "^20.8.9",
 		"jsdom": "^28.0.0",
 		"postcss-loader": "^8.2.0",
 		"postcss-preset-env": "^11.1.2",
 		"tailwindcss": "^4.1.18",
-		"vitest": "^4.0.18"
+		"vitest": "^4.1.8"
 	},
 	"browserslist": {
 		"production": [
