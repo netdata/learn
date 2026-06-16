@@ -121,7 +121,7 @@ The user running the script needs write and execute permissions in the temporary
 Before running the installation script, you can verify its integrity using the following command:
 
 ```bash
-[ "d473006a795f4b57810ab44ec081e23f" = "$(curl -Ss https://get.netdata.cloud/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "abc541147e05940960461cc21e6d47e6" = "$(curl -Ss https://get.netdata.cloud/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`. We recommend verifying script integrity before installation, especially in production environments.
