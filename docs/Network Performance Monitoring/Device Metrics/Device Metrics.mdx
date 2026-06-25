@@ -1,0 +1,44 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/npm/device-metrics/README.md"
+sidebar_label: "Device Metrics"
+learn_status: "Published"
+learn_rel_path: "Network Performance Monitoring/Device Metrics"
+description: "Poll routers, switches, firewalls, and other devices over SNMP with the Netdata Agent."
+sidebar_position: "10"
+learn_link: "https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics"
+slug: "/network-performance-monitoring/device-metrics"
+---
+
+
+<!-- markdownlint-disable-file -->
+
+# Device Metrics
+
+Netdata monitors your network devices over SNMP — routers, switches, firewalls, access points, load balancers, UPS and PDU units. It recognizes each device's model automatically and collects interface, health, and vendor-specific metrics, with no OID lists to build and no per-device dashboards to design.
+
+## What you can monitor
+
+- **Interfaces** — traffic, errors, discards, and operational status, per interface.
+- **Device health** — control-plane CPU and memory, and environmental sensors (temperature, fans, power supplies) where the device's profile exposes them.
+- **Vendor-specific metrics** — hardware, protocol, and feature metrics from the matched vendor profile, plus BGP peers and license state where the device reports them.
+- **Reachability** — optional ICMP latency and loss alongside every device.
+
+Each device becomes its own node, with live charts, labels, and alerts.
+
+## Model recognition
+
+Netdata matches each device to a profile by its `sysObjectID`, from a large built-in profile library. It collects standard interface and system metrics for any device that answers SNMP, and vendor-specific metrics where a profile matches; you can add custom profiles for anything special. It polls over SNMP v1, v2c, and v3.
+
+## Functions and alerts
+
+- **Live tables** — `snmp:interfaces` (traffic, status, errors, discards), `snmp:bgp-peers` (per-peer state and recency), and `snmp:licenses`.
+- **Stock alerts** — license expiry and BGP session health.
+
+## Where to start
+
+- **Your first device** — [Quick Start](/docs/network-performance-monitoring/device-metrics/quick-start).
+- **Credentials, SNMPv3, many devices, discovery** — [Configuration](/docs/network-performance-monitoring/device-metrics/configuration).
+- **Understand or extend model recognition** — [SNMP Profile Format](/docs/network-performance-monitoring/device-metrics/configuration/snmp-profile-format).
+- **Many devices or many sites** — [Sizing and Scaling](/docs/network-performance-monitoring/device-metrics/sizing-and-scaling).
+- **Trust the data** — [Validation](/docs/network-performance-monitoring/device-metrics/validation); avoid the common mistakes in [Anti-patterns](/docs/network-performance-monitoring/device-metrics/anti-patterns).
+- **Something's off** — [Troubleshooting](/docs/network-performance-monitoring/device-metrics/troubleshooting).
