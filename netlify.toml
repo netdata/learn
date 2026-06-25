@@ -719,7 +719,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/snmp"
-  to="/docs/collecting-metrics/collectors/networking/snmp-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/snmp-devices"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/squidlog"
@@ -1843,7 +1843,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/SNMP"
-  to="/docs/collecting-metrics/collectors/networking/snmp-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/snmp-devices"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Networking/OpenVPN-StatusLog"
@@ -2651,7 +2651,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/snmp"
-  to="/docs/collecting-metrics/collectors/networking/snmp-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/snmp-devices"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/networking/samba"
@@ -3939,7 +3939,7 @@
 
 [[redirects]]
   from="/docs/data-collection/snmp-and-networked-devices/snmp"
-  to="/docs/collecting-metrics/collectors/networking/snmp-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/snmp-devices"
 
 [[redirects]]
   from="/docs/data-collection/service-discovery-&-registry/zookeeper"
@@ -6247,7 +6247,7 @@
 
 [[redirects]]
   from="/docs/data-collection/generic-data-collection/snmp-devices"
-  to="/docs/collecting-metrics/collectors/networking/snmp-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/snmp-devices"
 
 [[redirects]]
   from="/docs/data-collection/generic-data-collection/prometheus-endpoint"
@@ -9655,7 +9655,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/generic-collecting-metrics/snmp-devices"
-  to="/docs/collecting-metrics/collectors/networking/snmp-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/snmp-devices"
 
 [[redirects]]
   from="/docs/collecting-metrics/generic-collecting-metrics/prometheus-endpoint"
@@ -10827,7 +10827,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/applications/snmp-devices"
-  to="/docs/collecting-metrics/collectors/networking/snmp-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/snmp-devices"
 
 [[redirects]]
   from="/docs/collecting-metrics/applications/pandas"
@@ -11511,7 +11511,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/networking/snmp-devices"
-  to="/docs/collecting-metrics/collectors/networking/snmp-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/snmp-devices"
 
 [[redirects]]
   from="/docs/collecting-metrics/networking/sctp-statistics"
@@ -12716,5 +12716,113 @@
 [[redirects]]
   from="/docs/collecting-metrics/collectors/operating-systems/system-statistics"
   to="/docs/collecting-metrics/collectors/operating-systems/system-statistics-windows-plugin"
+
+[[redirects]]
+  from="/docs/snmp-traps/snmp-trap-profile-format"
+  to="/docs/network-performance-monitoring/snmp-traps/snmp-trap-profile-format"
+
+[[redirects]]
+  from="/docs/network-flows/flow-protocols/sflow"
+  to="/docs/network-performance-monitoring/network-flows/flow-protocols/sflow"
+
+[[redirects]]
+  from="/docs/network-flows/flow-protocols/netflow"
+  to="/docs/network-performance-monitoring/network-flows/flow-protocols/netflow"
+
+[[redirects]]
+  from="/docs/network-flows/flow-protocols/ipfix"
+  to="/docs/network-performance-monitoring/network-flows/flow-protocols/ipfix"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/static-metadata"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/static-metadata"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/netbox"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/netbox"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/maxmind-geoip-geolite2"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/maxmind-geoip-geolite2"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/iptoasn"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/iptoasn"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/ipip-country-database"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/ipip-country-database"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/ipdeny-country-zones"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/ipdeny-country-zones"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/ip2location-lite-ip-country"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/ip2location-lite-ip-country"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/generic-json-over-http-ipam"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/generic-json-over-http-ipam"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/gcp-ip-ranges"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/gcp-ip-ranges"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/decapsulation"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/decapsulation"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/db-ip-ip-intelligence"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/db-ip-ip-intelligence"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/custom-mmdb-database"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/custom-mmdb-database"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/classifiers"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/classifiers"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/caida-routeviews-prefix-to-as"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/caida-routeviews-prefix-to-as"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/bmp-bgp-monitoring-protocol"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/bmp-bgp-monitoring-protocol"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/bio-rd-ripe-ris"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/bio-rd-ripe-ris"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/azure-ip-ranges"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/azure-ip-ranges"
+
+[[redirects]]
+  from="/docs/network-flows/enrichment-methods/aws-ip-ranges"
+  to="/docs/network-performance-monitoring/network-flows/enrichment-methods/aws-ip-ranges"
+
+[[redirects]]
+  from="/docs/collecting-metrics/snmp-profile-format"
+  to="/docs/network-performance-monitoring/device-metrics/configuration/snmp-profile-format"
+
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/networking/snmp-trap-listener"
+  to="/docs/network-performance-monitoring/snmp-traps/integrations/snmp-trap-listener"
+
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/networking/snmp-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/snmp-devices"
+
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/networking/palo-alto-networks-pan-os"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/palo-alto-networks-pan-os"
+
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/networking/cato-networks"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/cato-networks"
 
 # section: dynamic << END
