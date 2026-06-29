@@ -761,6 +761,7 @@ def populate_integrations(markdownFiles):
     secretstore_entries = pd.DataFrame()
     logs_entries = pd.DataFrame()
     flows_entries = pd.DataFrame()
+    service_discovery_entries = pd.DataFrame()
 
     readmes_first = []
     others_last = []
@@ -847,6 +848,11 @@ def populate_integrations(markdownFiles):
                 # src/crates/netflow-plugin/integrations/<slug>.md and are
                 # spliced into the map at the `flows_integrations` placeholder.
                 flows_entries = pd.concat([flows_entries, metadf])
+            elif "/discovery/sdext/discoverer/" in normalized_file:
+                # Service Discovery integrations live under
+                # src/go/plugin/go.d/discovery/sdext/discoverer/*/integrations/*.md
+                # and are spliced into the map at the `service_discovery_integrations` placeholder.
+                service_discovery_entries = pd.concat([service_discovery_entries, metadf])
             else:
                 alerting_agent_entries = pd.concat([alerting_agent_entries, metadf])
 
@@ -1005,6 +1011,25 @@ def populate_integrations(markdownFiles):
             [
                 upper,
                 flows_entries.sort_values(
+                    by=["learn_rel_path", "sidebar_label"],
+                    key=lambda col: col.str.lower(),
+                ),
+                lower,
+            ],
+            ignore_index=True,
+        )
+
+    replace_index = map_file.loc[
+        map_file["custom_edit_url"] == "service_discovery_integrations"
+    ].index
+    if len(replace_index) > 0:
+        upper = map_file.iloc[: replace_index[0]]
+        lower = map_file.iloc[replace_index[0] + 1 :]
+
+        map_file = pd.concat(
+            [
+                upper,
+                service_discovery_entries.sort_values(
                     by=["learn_rel_path", "sidebar_label"],
                     key=lambda col: col.str.lower(),
                 ),
