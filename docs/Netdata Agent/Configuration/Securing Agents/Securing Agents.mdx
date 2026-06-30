@@ -196,3 +196,9 @@ We provide detailed configuration guides for popular web servers:
 - [H2O](/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/h2o)
 
 </details>
+
+## Firewall and Egress Requirements for Cloud Connectivity
+
+The security measures above concern **inbound** access to your Agent's local dashboard (port `19999`). Claimed nodes — including Parent Agents that connect to Netdata Cloud — also require **outbound** access to Netdata Cloud over the encrypted Agent-Cloud Link ([ACLK](/docs/netdata-cloud/agent-cloud-link-aclk)) — an outbound WebSocket Secure (WSS) connection on TCP port `443`.
+
+IP addresses can change without notice and vary based on your geographic location due to CDN-edge servers, so **always prefer domain-based allowlisting**. For the complete list of required domains and ports (inbound and outbound), see [Required endpoints and ports](/docs/netdata-agent/configuration/securing-agents/configure-netdata-for-cybersecurity-platforms#required-endpoints-and-ports). If your Agent requires a proxy to reach the internet, see [proxy configuration](/docs/netdata-cloud/connect-agent#proxy-configuration).

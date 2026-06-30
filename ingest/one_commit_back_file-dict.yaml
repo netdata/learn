@@ -443,15 +443,15 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/README.md
   learn_path: /docs/developer-and-contributor-corner/external-plugins/go.d.plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/dockersd/README.md
-  learn_path: /docs/collecting-metrics/service-discovery/docker
+  learn_path: /docs/collecting-metrics/service-discovery/discoverer/docker
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/httpsd/README.md
-  learn_path: /docs/collecting-metrics/service-discovery/http-endpoint
+  learn_path: /docs/collecting-metrics/service-discovery/discoverer/http-endpoint
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/netlistensd/README.md
-  learn_path: /docs/collecting-metrics/service-discovery/local-listening-processes
+  learn_path: /docs/collecting-metrics/service-discovery/discoverer/local-listening-processes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/snmpsd/README.md
-  learn_path: /docs/collecting-metrics/service-discovery/snmp
+  learn_path: /docs/collecting-metrics/service-discovery/discoverer/snmp
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/k8ssd/README.md
-  learn_path: /docs/collecting-metrics/service-discovery/kubernetes
+  learn_path: /docs/collecting-metrics/service-discovery/discoverer/kubernetes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/config/go.d/snmp.trap-profiles/profile-format.md
   learn_path: /docs/network-performance-monitoring/snmp-traps/snmp-trap-profile-format
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/envoy/README.md
@@ -3202,6 +3202,8 @@
   learn_path: /docs/collecting-metrics/secrets-management
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/COLLECTORS.md
   learn_path: /docs/welcome-to-netdata/monitor-anything
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/SERVICE-DISCOVERY.md
+  learn_path: /docs/collecting-metrics/service-discovery
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md
   learn_path: /docs/logs/log2journal
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/net.inet6.icmp6.stats.md
@@ -3816,8 +3818,6 @@
   learn_path: /docs/netdata-agent/installation/windows
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md
   learn_path: /docs/developer-and-contributor-corner/health-command-api-tester
-- custom_edit_url: https://github.com/netdata/agent-service-discovery/edit/master/README.md
-  learn_path: /docs/collecting-metrics/service-discovery
 - custom_edit_url: https://github.com/netdata/helmchart/edit/master/charts/netdata/README.md
   learn_path: /docs/netdata-agent/installation/kubernetes-helm-chart-reference
 - custom_edit_url: https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md

@@ -3516,5 +3516,10 @@
     "https://learn.netdata.cloud/docs/collecting-metrics/collectors/networking/snmp-trap-listener": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/snmp_traps/README.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/collectors/networking/snmp-devices": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/snmp/README.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/collectors/networking/palo-alto-networks-pan-os": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/panos/README.md",
-    "https://learn.netdata.cloud/docs/collecting-metrics/collectors/networking/cato-networks": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/cato_networks/README.md"
+    "https://learn.netdata.cloud/docs/collecting-metrics/collectors/networking/cato-networks": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/cato_networks/README.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/service-discovery/snmp": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/discovery/sdext/discoverer/snmpsd/README.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/service-discovery/local-listening-processes": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/discovery/sdext/discoverer/netlistensd/README.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/service-discovery/kubernetes": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/discovery/sdext/discoverer/k8ssd/README.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/service-discovery/http-endpoint": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/discovery/sdext/discoverer/httpsd/README.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/service-discovery/docker": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/discovery/sdext/discoverer/dockersd/README.md"
 }
