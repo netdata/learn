@@ -2,7 +2,7 @@
 # section: static << START
 
 [build]
-  environment = { NPM_VERSION = "10.9.2", NODE_VERSION = "22.14.0", NETLIFY_USE_YARN = "true", NODE_OPTIONS = "--max_old_space_size=6144"}
+  environment = { NPM_VERSION = "10.9.2", NODE_VERSION = "22.14.0", NETLIFY_USE_YARN = "true", NODE_OPTIONS = "--max-old-space-size=8192"}
 
 
 [[redirects]]
@@ -712,10 +712,6 @@
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/scaleio"
   to="/docs/collecting-metrics/collectors/storage-and-filesystems/dell-emc-scaleio"
-
-[[redirects]]
-  from="/docs/agent/collectors/go.d.plugin/modules/service-discovery"
-  to="/docs/collecting-metrics/service-discovery"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/snmp"
@@ -3950,10 +3946,6 @@
   to="/docs/collecting-metrics/collectors/applications/consul"
 
 [[redirects]]
-  from="/docs/data-collection/service-discovery"
-  to="/docs/collecting-metrics/service-discovery"
-
-[[redirects]]
   from="/docs/data-collection/provisioning-systems/puppet"
   to="/docs/collecting-metrics/collectors/cloud-and-devops/puppet"
 
@@ -4570,10 +4562,6 @@
   to="/docs/developer-and-contributor-corner/contributing"
 
 [[redirects]]
-  from="/docs/configuring/service-discovery"
-  to="/docs/collecting-metrics/service-discovery"
-
-[[redirects]]
   from="/docs/configuring/securing-netdata-agents/web-server"
   to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
 
@@ -5024,10 +5012,6 @@
 [[redirects]]
   from="/docs/exporting/appoptics"
   to="/docs/exporting-metrics/connectors/appoptics"
-
-[[redirects]]
-  from="/docs/developer-and-contributor-corner/configuring/service-discovery"
-  to="/docs/collecting-metrics/service-discovery"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/configuring/securing-netdata-agents/web-server"
@@ -12824,5 +12808,25 @@
 [[redirects]]
   from="/docs/collecting-metrics/collectors/networking/cato-networks"
   to="/docs/network-performance-monitoring/device-metrics/integrations/cato-networks"
+
+[[redirects]]
+  from="/docs/collecting-metrics/service-discovery/snmp"
+  to="/docs/collecting-metrics/service-discovery/discoverer/snmp"
+
+[[redirects]]
+  from="/docs/collecting-metrics/service-discovery/local-listening-processes"
+  to="/docs/collecting-metrics/service-discovery/discoverer/local-listening-processes"
+
+[[redirects]]
+  from="/docs/collecting-metrics/service-discovery/kubernetes"
+  to="/docs/collecting-metrics/service-discovery/discoverer/kubernetes"
+
+[[redirects]]
+  from="/docs/collecting-metrics/service-discovery/http-endpoint"
+  to="/docs/collecting-metrics/service-discovery/discoverer/http-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/service-discovery/docker"
+  to="/docs/collecting-metrics/service-discovery/discoverer/docker"
 
 # section: dynamic << END
