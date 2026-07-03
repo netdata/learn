@@ -37,10 +37,22 @@ You can create multiple Spaces, but we recommend using a single Space for most u
 
 ### Set Up Team Access
 
-1. Click "Invite Users" in the Space's sidebar
-2. Set appropriate access levels:
-    - Rooms
-    - User roles
+You control what each team member can do in a Space by assigning them a **role**. The **Admin** role has full control over the Space, including users, nodes, rooms, and billing. To make someone an Admin, you must already be an Admin yourself — only current Admins can assign the Admin role to others. For the full list of roles and what each one permits, see the [role-based access model](/docs/netdata-cloud/authentication-&-authorization/role-based-access-model).
+
+#### Invite a new user and make them an Admin
+
+1. In the Space's sidebar, click **Invite Users**.
+2. Enter the invitee's email address.
+3. Select **Admin** as the role for the invitation.
+4. Send the invitation. The invitee becomes an Admin when they accept and join the Space.
+
+#### Change an existing member's role to Admin
+
+1. Click **Space Settings** (⚙️) on the left sidebar below the spaces list.
+2. Open the **User Management** tab.
+3. Find the member and change their role to **Admin**.
+
+Role changes take effect immediately — the member gains the new permissions right away, with no reload or restart needed.
 
 :::tip
 

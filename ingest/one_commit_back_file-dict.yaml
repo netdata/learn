@@ -42,6 +42,8 @@
   learn_path: /docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/oidc
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/okta_sso.md
   learn_path: /docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations/okta-sso
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/impact-on-resources.md
+  learn_path: /docs/netdata-agent/resource-utilization/impact-on-cloud-vms
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/streaming-routing.md
   learn_path: /docs/netdata-parents/streaming-routing-reference
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guidelines.md
@@ -504,6 +506,8 @@
   learn_path: /docs/collecting-metrics/collectors/web-servers-and-proxies/nginx
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/tor/README.md
   learn_path: /docs/collecting-metrics/collectors/networking/tor
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/cloudwatch/README.md
+  learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/amazon-cloudwatch
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/panos/README.md
   learn_path: /docs/network-performance-monitoring/device-metrics/integrations/palo-alto-networks-pan-os
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/dockerhub/README.md
