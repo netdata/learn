@@ -7810,10 +7810,6 @@
   to="/docs/welcome-to-netdata"
 
 [[redirects]]
-  from="/docs//at-a-glance"
-  to="/docs/welcome-to-netdata/enterprise-evaluation-guide"
-
-[[redirects]]
   from="/docs/observability-centralization-points/streaming-and-replication-reference"
   to="/docs/netdata-parents/parent-child-configuration-reference"
 
