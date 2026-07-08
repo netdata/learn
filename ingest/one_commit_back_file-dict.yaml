@@ -2,6 +2,8 @@
   learn_path: /docs/developer-and-contributor-corner/redistributed-software
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/windows_event_logs.md
   learn_path: /docs/logs/windows-event-logs
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/macos_unified_logs.md
+  learn_path: /docs/logs/macos-unified-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/systemd_journal_logs.md
   learn_path: /docs/logs/systemd-journal-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/opentelemetry_logs.md
@@ -50,10 +52,10 @@
   learn_path: /docs/developer-and-contributor-corner/contribute-to-the-documentation
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-oss-limitations.md
   learn_path: /docs/security-and-privacy-design/access-control-and-feature-availability
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation.md
+  learn_path: /docs/welcome-to-netdata/enterprise-evaluation-guide
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/nodes-ephemerality.md
   learn_path: /docs/netdata-parents/node-types-and-lifecycle-reference
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md
-  learn_path: /docs/welcome-to-netdata/enterprise-evaluation-guide
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/NIDL-Framework.md
   learn_path: /docs/dashboards-and-charts/nidl-framework
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/reporting.md

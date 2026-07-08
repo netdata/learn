@@ -12,7 +12,7 @@ slug: "/netdata-agent/installation/kubernetes-helm-chart-reference"
 
 <a href="https://artifacthub.io/packages/search?repo=netdata" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/netdata" alt="Artifact HUB" class="img_node_modules-@docusaurus-theme-classic-lib-theme-MDXComponents-Img-styles-module"></img></a>
 
-![Version: 3.7.168](https://img.shields.io/badge/Version-3.7.168-informational?style=flat-square)
+![Version: 3.7.169](https://img.shields.io/badge/Version-3.7.169-informational?style=flat-square)
 
 ![AppVersion: v2.10.3](https://img.shields.io/badge/AppVersion-v2.10.3-informational?style=flat-square)
 
@@ -467,6 +467,15 @@ true
 </pre>
 </td>
 			<td>The name of the service account to use. If not set and create is true, a name is generated using the fullname template</td>
+		</tr>
+		<tr>
+			<td>serviceAccount.annotations</td>
+			<td>object</td>
+			<td><pre lang="json">
+\{}
+</pre>
+</td>
+			<td>Annotations to add to the service account (e.g. an AWS IRSA `eks.amazonaws.com/role-arn`)</td>
 		</tr>
 		<tr>
 			<td>restarter.enabled</td>

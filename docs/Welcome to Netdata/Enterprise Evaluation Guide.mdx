@@ -1,5 +1,5 @@
 ---
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation-corrected.md"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation.md"
 sidebar_label: "Enterprise Evaluation Guide"
 learn_status: "Published"
 learn_rel_path: "Welcome to Netdata"
@@ -77,7 +77,7 @@ For more information and ways to further reduce Agent resource utilization, see 
 
 Parent nodes aggregate data from multiple child agents and require resources that scale with the volume of metrics collected and other deployment decisions (clustered parents, centralized machine learning, etc).
 
-The best practice is to have a cluster of Netdata Parents for every approximately 500 monitored nodes (2M metrics/second), like this:
+The best practice is to have a cluster of Netdata Parents for every approximately 500 monitored nodes (2M metrics/second, see [Parent Sizing Guidelines](/docs/welcome-to-netdata/scalability#parent-sizing-guidelines) for the full 100/250/500-node breakdown), like this:
 
 | Monitored Nodes | Metric/s  | CPU Cores | Memory | Network  | Storage                   |
 |-----------------|-----------|-----------|--------|----------|---------------------------|
