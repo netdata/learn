@@ -10,7 +10,14 @@ slug: "/netdata-ai/mcp"
 
 # Netdata MCP
 
-Netdata provides [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) servers that enable AI assistants to interact with your infrastructure monitoring data. You can connect via:
+[Model Context Protocol (MCP)](https://modelcontextprotocol.io/) works in **two directions** with Netdata:
+
+- **Netdata as an MCP server** — AI assistants and clients (Claude, Cursor, VS Code, CLIs, and more) connect *to* Netdata to query your infrastructure. **This page** covers server setup; for per-client instructions see [Supported AI Clients](/docs/netdata-ai/mcp/supported-ai-clients).
+- **Netdata as an MCP client** — Netdata Cloud connects *out* to your own MCP servers (GitHub, PagerDuty, Atlassian, or any custom HTTPS MCP server) so Netdata AI can pull your team's institutional context into troubleshooting. See [MCP Connections](/docs/netdata-ai/mcp/mcp-connections).
+
+The rest of this page covers **Netdata as an MCP server**.
+
+Netdata provides MCP servers that enable AI assistants to interact with your infrastructure monitoring data. You can connect via:
 
 - **[Netdata Cloud](#netdata-cloud-mcp)** — A single cloud-hosted endpoint at `https://app.netdata.cloud/api/v1/mcp` with full visibility across all your nodes. No bridges, no firewall changes.
 - **[Local Agent or Parent](#local-agent-or-parent-mcp)** —
@@ -120,7 +127,7 @@ claude mcp remove netdata-cloud -s user  # remove the server (match the scope yo
 
 Restart the Claude Code session after adding the server so the new tools load.
 
-For more Claude Code options — including connecting to a local Netdata Agent or Parent — see the [Claude Code guide](/docs/netdata-ai/mcp/mcp-clients/claude-code).
+For more Claude Code options — including connecting to a local Netdata Agent or Parent — see the [Claude Code guide](/docs/netdata-ai/mcp/supported-ai-clients/claude-code).
 
 #### Generic MCP Client (HTTP Transport)
 
@@ -664,16 +671,16 @@ For compatibility with older tooling, Netdata still accepts the `?api_key=YOUR_A
 For detailed configuration instructions for specific AI clients, see:
 
 **Chat Clients:**
-- [Claude Desktop](/docs/netdata-ai/mcp/mcp-clients/claude-desktop) - Anthropic's desktop AI assistant
-- [Cursor](/docs/netdata-ai/mcp/mcp-clients/cursor) - AI-powered code editor
-- [Visual Studio Code](/docs/netdata-ai/mcp/mcp-clients/visual-studio-code) - VS Code with MCP support
-- [JetBrains IDEs](/docs/netdata-ai/mcp/mcp-clients/jetbrains-ides) - IntelliJ, PyCharm, WebStorm, etc.
+- [Claude Desktop](/docs/netdata-ai/mcp/supported-ai-clients/claude-desktop) - Anthropic's desktop AI assistant
+- [Cursor](/docs/netdata-ai/mcp/supported-ai-clients/cursor) - AI-powered code editor
+- [Visual Studio Code](/docs/netdata-ai/mcp/supported-ai-clients/visual-studio-code) - VS Code with MCP support
+- [JetBrains IDEs](/docs/netdata-ai/mcp/supported-ai-clients/jetbrains-ides) - IntelliJ, PyCharm, WebStorm, etc.
 
 **DevOps Copilots:**
-- [Claude Code](/docs/netdata-ai/mcp/mcp-clients/claude-code) - Anthropic's CLI for Claude
-- [Gemini CLI](/docs/netdata-ai/mcp/mcp-clients/gemini-cli) - Google's Gemini CLI
-- [OpenAI Codex CLI](/docs/netdata-ai/mcp/mcp-clients/openai-codex-cli) - OpenAI's Codex CLI
-- [Crush](/docs/netdata-ai/mcp/mcp-clients/crush) - Charmbracelet's glamorous terminal AI
-- [OpenCode](/docs/netdata-ai/mcp/mcp-clients/opencode) - SST's terminal-based AI assistant
+- [Claude Code](/docs/netdata-ai/mcp/supported-ai-clients/claude-code) - Anthropic's CLI for Claude
+- [Gemini CLI](/docs/netdata-ai/mcp/supported-ai-clients/gemini-cli) - Google's Gemini CLI
+- [OpenAI Codex CLI](/docs/netdata-ai/mcp/supported-ai-clients/openai-codex-cli) - OpenAI's Codex CLI
+- [Crush](/docs/netdata-ai/mcp/supported-ai-clients/crush) - Charmbracelet's glamorous terminal AI
+- [OpenCode](/docs/netdata-ai/mcp/supported-ai-clients/opencode) - SST's terminal-based AI assistant
 
 Each guide includes specific transport support matrices and configuration examples optimized for that client.
