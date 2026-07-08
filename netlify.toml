@@ -12825,4 +12825,44 @@
   from="/docs/collecting-metrics/service-discovery/docker"
   to="/docs/collecting-metrics/service-discovery/discoverer/docker"
 
+[[redirects]]
+  from="/docs/netdata-ai/mcp/mcp-clients/visual-studio-code"
+  to="/docs/netdata-ai/mcp/supported-ai-clients/visual-studio-code"
+
+[[redirects]]
+  from="/docs/netdata-ai/mcp/mcp-clients/opencode"
+  to="/docs/netdata-ai/mcp/supported-ai-clients/opencode"
+
+[[redirects]]
+  from="/docs/netdata-ai/mcp/mcp-clients/openai-codex-cli"
+  to="/docs/netdata-ai/mcp/supported-ai-clients/openai-codex-cli"
+
+[[redirects]]
+  from="/docs/netdata-ai/mcp/mcp-clients/jetbrains-ides"
+  to="/docs/netdata-ai/mcp/supported-ai-clients/jetbrains-ides"
+
+[[redirects]]
+  from="/docs/netdata-ai/mcp/mcp-clients/gemini-cli"
+  to="/docs/netdata-ai/mcp/supported-ai-clients/gemini-cli"
+
+[[redirects]]
+  from="/docs/netdata-ai/mcp/mcp-clients/cursor"
+  to="/docs/netdata-ai/mcp/supported-ai-clients/cursor"
+
+[[redirects]]
+  from="/docs/netdata-ai/mcp/mcp-clients/crush"
+  to="/docs/netdata-ai/mcp/supported-ai-clients/crush"
+
+[[redirects]]
+  from="/docs/netdata-ai/mcp/mcp-clients/claude-desktop"
+  to="/docs/netdata-ai/mcp/supported-ai-clients/claude-desktop"
+
+[[redirects]]
+  from="/docs/netdata-ai/mcp/mcp-clients/claude-code"
+  to="/docs/netdata-ai/mcp/supported-ai-clients/claude-code"
+
+[[redirects]]
+  from="/docs/netdata-ai/mcp/mcp-clients"
+  to="/docs/netdata-ai/mcp/supported-ai-clients"
+
 # section: dynamic << END

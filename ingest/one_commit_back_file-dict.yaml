@@ -144,28 +144,30 @@
   learn_path: /docs/netdata-ai/alerts-automation
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/README.md
   learn_path: /docs/netdata-ai/mcp
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-connections.md
+  learn_path: /docs/netdata-ai/mcp/mcp-connections
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/ai-chat-netdata.md
   learn_path: /docs/netdata-ai/mcp/chat-with-netdata
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/ai-devops-copilot.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/codex-cli.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients/openai-codex-cli
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients/openai-codex-cli
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/vs-code.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients/visual-studio-code
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients/visual-studio-code
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/cursor.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients/cursor
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients/cursor
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-code.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients/claude-code
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients/claude-code
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-desktop.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients/claude-desktop
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients/claude-desktop
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/jetbrains-ides.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients/jetbrains-ides
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients/jetbrains-ides
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/crush.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients/crush
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients/crush
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/opencode.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients/opencode
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients/opencode
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/gemini-cli.md
-  learn_path: /docs/netdata-ai/mcp/mcp-clients/gemini-cli
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients/gemini-cli
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/investigations/custom-investigations.md
   learn_path: /docs/netdata-ai/investigations/custom-investigations
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/investigations/scheduled-investigations.md

@@ -17346,9 +17346,9 @@
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/ai-devops-copilot.md
-  sidebar_label: MCP Clients
+  sidebar_label: Supported AI Clients
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
+  learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
   description: null
   meta_yaml: .nan
@@ -17356,7 +17356,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-desktop.md
   sidebar_label: Claude Desktop
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
+  learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
   description: null
   meta_yaml: .nan
@@ -17364,7 +17364,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/cursor.md
   sidebar_label: Cursor
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
+  learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
   description: null
   meta_yaml: .nan
@@ -17372,7 +17372,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/vs-code.md
   sidebar_label: Visual Studio Code
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
+  learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
   description: null
   meta_yaml: .nan
@@ -17380,7 +17380,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/jetbrains-ides.md
   sidebar_label: JetBrains IDEs
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
+  learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
   description: null
   meta_yaml: .nan
@@ -17388,7 +17388,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-code.md
   sidebar_label: Claude Code
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
+  learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
   description: null
   meta_yaml: .nan
@@ -17396,7 +17396,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/gemini-cli.md
   sidebar_label: Gemini CLI
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
+  learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
   description: null
   meta_yaml: .nan
@@ -17404,7 +17404,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/codex-cli.md
   sidebar_label: OpenAI Codex CLI
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
+  learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
   description: null
   meta_yaml: .nan
@@ -17412,7 +17412,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/crush.md
   sidebar_label: Crush
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
+  learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
   description: null
   meta_yaml: .nan
@@ -17420,7 +17420,15 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/opencode.md
   sidebar_label: OpenCode
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP/MCP Clients
+  learn_rel_path: Netdata AI/MCP/Supported AI Clients
+  keywords: null
+  description: null
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-connections.md
+  sidebar_label: MCP Connections
+  learn_status: Published
+  learn_rel_path: Netdata AI/MCP
   keywords: null
   description: null
   meta_yaml: .nan
