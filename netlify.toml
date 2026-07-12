@@ -6398,10 +6398,6 @@
   to="/docs/collecting-metrics/collectors/cloud-and-devops/google-cloud-platform"
 
 [[redirects]]
-  from="/docs/data-collection/cloud-provider-managed/cloudwatch"
-  to="/docs/collecting-metrics/collectors/cloud-and-devops/cloudwatch"
-
-[[redirects]]
   from="/docs/data-collection/cloud-provider-managed/aws-quota"
   to="/docs/collecting-metrics/collectors/cloud-and-devops/aws-quota"
 
@@ -10038,10 +10034,6 @@
   to="/docs/collecting-metrics/collectors/cloud-and-devops/gcp-gce"
 
 [[redirects]]
-  from="/docs/collecting-metrics/cloud-provider-managed/cloudwatch"
-  to="/docs/collecting-metrics/collectors/cloud-and-devops/cloudwatch"
-
-[[redirects]]
   from="/docs/collecting-metrics/cloud-provider-managed/aws-quota"
   to="/docs/collecting-metrics/collectors/cloud-and-devops/aws-quota"
 
@@ -12184,10 +12176,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/cloud-and-devops/concourse"
   to="/docs/collecting-metrics/collectors/cloud-and-devops/concourse"
-
-[[redirects]]
-  from="/docs/collecting-metrics/cloud-and-devops/cloudwatch"
-  to="/docs/collecting-metrics/collectors/cloud-and-devops/cloudwatch"
 
 [[redirects]]
   from="/docs/collecting-metrics/cloud-and-devops/cloud-foundry-firehose"

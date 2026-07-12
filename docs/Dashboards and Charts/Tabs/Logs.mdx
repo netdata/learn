@@ -17,7 +17,7 @@ The Logs tab provides a structured, searchable view of logs collected from acros
 The Logs tab displays log entries from the following sources:
 
 - **systemd-journal** — reads logs from `systemd` journald on Linux Nodes. See the [Systemd Journal Plugin Reference](/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference) for details on journal sources, fields, and query performance.
-- **otel-logs** — displays logs received via OpenTelemetry (OTLP) log ingestion. See the [OpenTelemetry Signal Viewer plugin](https://github.com/netdata/netdata/blob/master/src/crates/netdata-log-viewer/otel-signal-viewer-plugin/README.md) for setup and configuration.
+- **otel-logs** — displays logs ingested via OpenTelemetry (OTLP/gRPC) by the [OpenTelemetry plugin](/docs/collecting-metrics/opentelemetry/opentelemetry-metrics), which indexes them for fast querying in this tab.
 - **Windows Event Logs** — reads Windows event logs on Windows Nodes. See the [Windows Events Plugin Reference](/docs/logs/windows-event-logs/windows-events-plugin-reference) for supported event channels and configuration.
 - **macOS Unified Logs** — reads native macOS unified logs through Apple's OSLog framework. See the [macOS Logs Plugin Reference](https://github.com/netdata/netdata/blob/master/src/collectors/macos-logs.plugin/README.md) for supported fields and query behavior.
 
