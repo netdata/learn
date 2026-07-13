@@ -795,32 +795,6 @@ html[data-theme='dark'] .thin-scrollbar {
 }
 
 /*
- * Mermaid diagrams - fix text colors for dark mode
- */
-
-/* Dark mode: Force dark text on mermaid node content (boxes with light backgrounds) */
-html[data-theme='dark'] svg .nodeLabel,
-html[data-theme='dark'] svg .nodeLabel *,
-html[data-theme='dark'] svg .label,
-html[data-theme='dark'] svg .label *,
-html[data-theme='dark'] svg foreignObject,
-html[data-theme='dark'] svg foreignObject *,
-html[data-theme='dark'] svg foreignObject strong,
-html[data-theme='dark'] svg foreignObject p,
-html[data-theme='dark'] svg foreignObject div,
-html[data-theme='dark'] svg foreignObject span {
-	color: #1a1a1a !important;
-}
-
-/* Dark mode: Edge labels (connectors) should have light text on dark background */
-html[data-theme='dark'] svg .edgeLabel,
-html[data-theme='dark'] svg .edgeLabel *,
-html[data-theme='dark'] svg .labelBkg,
-html[data-theme='dark'] svg .labelBkg * {
-	color: #e0e0e0 !important;
-}
-
-/*
  * Search plugin
  */
 
