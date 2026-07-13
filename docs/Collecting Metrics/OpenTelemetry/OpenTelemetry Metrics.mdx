@@ -1,5 +1,5 @@
 ---
-custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/crates/netdata-otel/otel-plugin/README.md"
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/crates/otel-plugin/README.md"
 sidebar_label: "OpenTelemetry Metrics"
 learn_status: "Published"
 toc_max_heading_level: "6"
@@ -30,8 +30,8 @@ via the OTLP/gRPC protocol from any compatible source — collectors, SDKs, or
 instrumented applications.
 
 Metrics are automatically visualized as Netdata charts with full alerting support.
-Logs are stored in systemd-compatible journal files and can be explored through
-the Netdata Logs tab.
+OpenTelemetry logs received on the same endpoint are covered by the separate
+"OpenTelemetry Logs" integration.
 
 
 The plugin listens on a configurable gRPC endpoint for incoming OTLP data.
@@ -51,9 +51,6 @@ data are automatically expired and removed.
 | `dimension_attribute_key` | Data point attribute whose value becomes the dimension name |
 | `interval_secs` | Per-metric collection interval override (1–3600 seconds) |
 | `grace_period_secs` | Per-metric grace period override |
-
-Incoming logs are written to journal files with configurable rotation and retention
-policies.
 
 
 This collector is only supported on the following platforms:
@@ -119,14 +116,6 @@ dots replaced by underscores — e.g. `endpoint.tls_cert_path` becomes
 | metrics.grace_period_secs | Grace period in seconds. After the last data point, the plugin waits this long before gap-filling. | 60 | no |
 | metrics.expiry_duration_secs | Expiry duration in seconds. Charts with no data for this long are removed. | 900 | no |
 | [metrics.max_new_charts_per_request](#option-metrics-max-new-charts-per-request) | Maximum new charts created per gRPC request. | 100 | no |
-| logs.journal_dir | Directory to store journal files for ingested logs. |  | yes |
-| logs.size_of_journal_file | Maximum file size before rotating to a new journal file. | 100MB | no |
-| logs.entries_of_journal_file | Maximum log entries per journal file. | 50000 | no |
-| logs.duration_of_journal_file | Maximum time span within a single journal file. | 2 hours | no |
-| logs.number_of_journal_files | Maximum number of journal files to keep. | 10 | no |
-| logs.size_of_journal_files | Maximum total size of all journal files. | 1GB | no |
-| logs.duration_of_journal_files | Maximum age of journal files. | 7 days | no |
-| [logs.store_otlp_json](#option-logs-store-otlp-json) | Store the complete OTLP JSON in each log entry. | no | no |
 
 <a id="option-metrics-chart-configs-dir"></a>
 ##### metrics.chart_configs_dir
@@ -141,12 +130,6 @@ ships stock mappings; user files in this directory take priority.
 ##### metrics.max_new_charts_per_request
 
 Limits cardinality explosion from high-cardinality label combinations.
-
-
-<a id="option-logs-store-otlp-json"></a>
-##### logs.store_otlp_json
-
-Useful for debugging and reprocessing, but increases storage usage.
 
 
 
@@ -182,8 +165,6 @@ metrics:
   grace_period_secs: 60
   expiry_duration_secs: 900
   max_new_charts_per_request: 100
-logs:
-  journal_dir: /var/log/netdata/otel-journals
 
 ```
 ###### Partial user override
@@ -199,9 +180,6 @@ forward compatibility.
 ```yaml
 endpoint:
   path: "0.0.0.0:4317"
-logs:
-  number_of_journal_files: 20
-  duration_of_journal_files: "14 days"
 
 ```
 </details>
@@ -255,8 +233,6 @@ metrics:
   grace_period_secs: 60
   expiry_duration_secs: 900
   max_new_charts_per_request: 100
-logs:
-  journal_dir: /var/log/netdata/otel-journals
 
 ```
 </details>

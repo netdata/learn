@@ -444,6 +444,8 @@
   learn_path: /docs/collecting-metrics/secrets-management/secret-stores/aws-secrets-manager
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/vault/README.md
   learn_path: /docs/collecting-metrics/secrets-management/secret-stores/vault
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/framework/charttpl/README.md
+  learn_path: /docs/collecting-metrics/chart-template-format
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/collector/nagios/README.md
   learn_path: /docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/README.md
@@ -510,6 +512,8 @@
   learn_path: /docs/collecting-metrics/collectors/web-servers-and-proxies/nginx
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/tor/README.md
   learn_path: /docs/collecting-metrics/collectors/networking/tor
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/cloudwatch/profile-format.md
+  learn_path: /docs/collecting-metrics/aws-cloudwatch-profile-format
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/cloudwatch/README.md
   learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/amazon-cloudwatch
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/panos/README.md
@@ -672,8 +676,6 @@
   learn_path: /docs/collecting-metrics/collectors/synthetic-testing/site-24x7
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/aws_rds.md
   learn_path: /docs/collecting-metrics/collectors/databases/aws-rds
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cloudwatch.md
-  learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/cloudwatch
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/cryptowatch.md
   learn_path: /docs/collecting-metrics/collectors/applications/cryptowatch
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/aws_ec2_compute_instances.md
@@ -3290,6 +3292,8 @@
   learn_path: /docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/linux_zswap.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/linux-zswap
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/linux_hardware_sensors_libsensors.md
+  learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/linux-hardware-sensors-libsensors
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/power_capping.md
   learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/power-capping
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/debugfs.plugin/integrations/linux_audit_subsystem.md
@@ -3582,8 +3586,6 @@
   learn_path: /docs/developer-and-contributor-corner/external-plugins/functions-v3-protocol-reference
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/plugins.d/FUNCTION_UI_DEVELOPER_GUIDE.md
   learn_path: /docs/developer-and-contributor-corner/external-plugins/functions-developer-guide
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netdata-otel/otel-plugin/README.md
-  learn_path: /docs/collecting-metrics/opentelemetry/opentelemetry-metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/classifiers.md
   learn_path: /docs/network-performance-monitoring/network-flows/enrichment-methods/classifiers
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/db-ip_ip_intelligence.md
@@ -3626,6 +3628,8 @@
   learn_path: /docs/network-performance-monitoring/network-flows/enrichment-methods/static-metadata
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/custom_mmdb_database.md
   learn_path: /docs/network-performance-monitoring/network-flows/enrichment-methods/custom-mmdb-database
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/otel-plugin/README.md
+  learn_path: /docs/collecting-metrics/opentelemetry/opentelemetry-metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/exporting/README.md
   learn_path: /docs/exporting-metrics/exporting-reference
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/exporting/mongodb/README.md
