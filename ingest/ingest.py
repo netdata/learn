@@ -129,6 +129,18 @@ LOGO_ANALYSIS_SUMMARY = {
     "unknown": 0,
 }
 
+# WCAG AA normal-text threshold. Mermaid classDef/style fill+color pairs below
+# this are rewritten to MERMAID_DEFAULT_* since a fixed hex fill can't adapt to
+# light/dark colorMode on its own.
+MERMAID_CONTRAST_THRESHOLD = 4.5
+MERMAID_DEFAULT_FILL = "#f0f0f0"
+MERMAID_DEFAULT_STROKE = "#666666"
+MERMAID_DEFAULT_TEXT = "#1a1a1a"
+MERMAID_CONTRAST_SUMMARY = {
+    "scanned": 0,
+    "fixed": 0,
+}
+
 MAP_COLUMNS = [
     "custom_edit_url",
     "sidebar_label",
@@ -1889,6 +1901,111 @@ def _analyze_remote_logo(url):
     return result
 
 
+_MERMAID_FENCE_RE = re.compile(r"```mermaid[ \t]*\n(.*?)```", re.DOTALL)
+_MERMAID_STYLE_LINE_RE = re.compile(r"^(\s*)(classDef|style)\s+(\S+)\s+(.+?)\s*$")
+
+
+def _parse_mermaid_style_props(props_str):
+    props = {}
+    for part in props_str.split(","):
+        if ":" not in part:
+            continue
+        key, _, value = part.partition(":")
+        props[key.strip().lower()] = value.strip()
+    return props
+
+
+def _rebuild_mermaid_style_props(props_str, updates):
+    rebuilt = []
+    for part in props_str.split(","):
+        if ":" not in part:
+            rebuilt.append(part)
+            continue
+        key, _, value = part.partition(":")
+        key_lower = key.strip().lower()
+        if key_lower in updates:
+            rebuilt.append(f"{key.strip()}: {updates[key_lower]}")
+        else:
+            rebuilt.append(f"{key.strip()}:{value}")
+    return ",".join(rebuilt)
+
+
+def _fix_mermaid_diagram_contrast_in_text(text):
+    changes = []
+
+    def _process_block(match):
+        block = match.group(1)
+        new_lines = []
+        for line in block.split("\n"):
+            style_match = _MERMAID_STYLE_LINE_RE.match(line)
+            if not style_match:
+                new_lines.append(line)
+                continue
+
+            indent, keyword, target, props_str = style_match.groups()
+            props = _parse_mermaid_style_props(props_str)
+            fill = props.get("fill")
+            color = props.get("color")
+            if not fill or not color:
+                new_lines.append(line)
+                continue
+
+            fill_rgb = _parse_css_color(fill)
+            color_rgb = _parse_css_color(color)
+            if not fill_rgb or not color_rgb:
+                new_lines.append(line)
+                continue
+
+            MERMAID_CONTRAST_SUMMARY["scanned"] += 1
+            ratio = _contrast_ratio(
+                _relative_luminance(fill_rgb[:3]),
+                _relative_luminance(color_rgb[:3]),
+            )
+            if ratio >= MERMAID_CONTRAST_THRESHOLD:
+                new_lines.append(line)
+                continue
+
+            updates = {"fill": MERMAID_DEFAULT_FILL, "color": MERMAID_DEFAULT_TEXT}
+            if "stroke" in props:
+                updates["stroke"] = MERMAID_DEFAULT_STROKE
+            new_lines.append(
+                f"{indent}{keyword} {target} "
+                f"{_rebuild_mermaid_style_props(props_str, updates)}"
+            )
+            changes.append((keyword, target, fill, color, ratio))
+
+        return "```mermaid\n" + "\n".join(new_lines) + "```"
+
+    new_text = _MERMAID_FENCE_RE.sub(_process_block, text)
+    return new_text, changes
+
+
+def fix_mermaid_diagram_contrast(docs_prefix):
+    for path in glob.glob(f"{docs_prefix}/**/*.mdx", recursive=True):
+        try:
+            with open(path, "r", encoding="utf-8") as fh:
+                original = fh.read()
+        except OSError:
+            continue
+
+        if "```mermaid" not in original:
+            continue
+
+        new_text, changes = _fix_mermaid_diagram_contrast_in_text(original)
+        if not changes:
+            continue
+
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(new_text)
+
+        MERMAID_CONTRAST_SUMMARY["fixed"] += len(changes)
+        for keyword, target, old_fill, old_color, ratio in changes:
+            print(
+                f"  {path}: {keyword} {target} contrast {ratio:.2f}:1 "
+                f"(fill {old_fill}, color {old_color}) -> default colorway"
+            )
+
+
 def _set_html_attr(tag, attr_name, attr_value):
     attr_regex = re.compile(rf'\s{re.escape(attr_name)}="[^"]*"')
     if attr_regex.search(tag):
@@ -3270,6 +3387,13 @@ if __name__ == "__main__":
     ensure_category_json_for_dirs(DOCS_PREFIX)
     # Normalize sibling sidebar positions (docs + _category_.json) to avoid UI ordering collisions
     normalize_sidebar_positions_by_parent(DOCS_PREFIX)
+
+    # Auto-remediate unreadable Mermaid classDef/style color pairs (contrast gate)
+    fix_mermaid_diagram_contrast(DOCS_PREFIX)
+    if MERMAID_CONTRAST_SUMMARY["scanned"] > 0:
+        print("\n### Mermaid diagram contrast analysis ###")
+        print(f"Scanned color pairs: {MERMAID_CONTRAST_SUMMARY['scanned']}")
+        print(f"Fixed (below {MERMAID_CONTRAST_THRESHOLD}:1): {MERMAID_CONTRAST_SUMMARY['fixed']}")
 
     if LOGO_ANALYSIS_SUMMARY["analyzed"] > 0:
         print("\n### Integration logo contrast analysis ###")
