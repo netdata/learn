@@ -3,7 +3,7 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/src/database/en
 sidebar_label: "Database Engine"
 learn_status: "Published"
 learn_rel_path: "Developer and Contributor Corner"
-sidebar_position: "30"
+sidebar_position: "40"
 learn_link: "https://learn.netdata.cloud/docs/developer-and-contributor-corner/database-engine"
 slug: "/developer-and-contributor-corner/database-engine"
 ---
@@ -126,6 +126,8 @@ data from lower tiers, so that the aggregation they provide will be accurate.
 
 Configuring how the number of tiers and the disk space allocated to each tier is how you can
 [change how long netdata stores metrics](/docs/netdata-agent/configuration/database#tiers).
+
+For how `update every` controls each tier's granularity and interacts with retention time and disk size, see [Update Every and Tier Granularity](/docs/netdata-agent/configuration/database#update-every-and-tier-granularity).
 
 ### Data loss
 
