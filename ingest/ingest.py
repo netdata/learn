@@ -881,7 +881,8 @@ def populate_integrations(markdownFiles):
         [
             upper,
             authentication_entries.sort_values(
-                by=["learn_rel_path", "sidebar_label"], key=lambda col: col.str.lower()
+                by=["learn_rel_path", "sidebar_label", "custom_edit_url"],
+                key=lambda col: col.str.lower(),
             ),
             lower,
         ],
@@ -899,7 +900,8 @@ def populate_integrations(markdownFiles):
         [
             upper,
             collectors_entries.sort_values(
-                by=["learn_rel_path", "sidebar_label"], key=lambda col: col.str.lower()
+                by=["learn_rel_path", "sidebar_label", "custom_edit_url"],
+                key=lambda col: col.str.lower(),
             ),
             lower,
         ],
@@ -916,7 +918,8 @@ def populate_integrations(markdownFiles):
         [
             upper,
             secretstore_entries.sort_values(
-                by=["learn_rel_path", "sidebar_label"], key=lambda col: col.str.lower()
+                by=["learn_rel_path", "sidebar_label", "custom_edit_url"],
+                key=lambda col: col.str.lower(),
             ),
             lower,
         ],
@@ -934,7 +937,7 @@ def populate_integrations(markdownFiles):
             [
                 upper,
                 live_functions_entries.sort_values(
-                    by=["learn_rel_path", "sidebar_label"],
+                    by=["learn_rel_path", "sidebar_label", "custom_edit_url"],
                     key=lambda col: col.str.lower(),
                 ),
                 lower,
@@ -953,7 +956,8 @@ def populate_integrations(markdownFiles):
         [
             upper,
             alerting_agent_entries.sort_values(
-                by=["learn_rel_path", "sidebar_label"], key=lambda col: col.str.lower()
+                by=["learn_rel_path", "sidebar_label", "custom_edit_url"],
+                key=lambda col: col.str.lower(),
             ),
             lower,
         ],
@@ -970,7 +974,8 @@ def populate_integrations(markdownFiles):
         [
             upper,
             alerting_cloud_entries.sort_values(
-                by=["learn_rel_path", "sidebar_label"], key=lambda col: col.str.lower()
+                by=["learn_rel_path", "sidebar_label", "custom_edit_url"],
+                key=lambda col: col.str.lower(),
             ),
             lower,
         ],
@@ -988,7 +993,8 @@ def populate_integrations(markdownFiles):
         [
             upper,
             exporting_entries.sort_values(
-                by=["learn_rel_path", "sidebar_label"], key=lambda col: col.str.lower()
+                by=["learn_rel_path", "sidebar_label", "custom_edit_url"],
+                key=lambda col: col.str.lower(),
             ),
             lower,
         ],
@@ -1005,7 +1011,8 @@ def populate_integrations(markdownFiles):
         [
             upper,
             logs_entries.sort_values(
-                by=["learn_rel_path", "sidebar_label"], key=lambda col: col.str.lower()
+                by=["learn_rel_path", "sidebar_label", "custom_edit_url"],
+                key=lambda col: col.str.lower(),
             ),
             lower,
         ],
@@ -1023,7 +1030,7 @@ def populate_integrations(markdownFiles):
             [
                 upper,
                 flows_entries.sort_values(
-                    by=["learn_rel_path", "sidebar_label"],
+                    by=["learn_rel_path", "sidebar_label", "custom_edit_url"],
                     key=lambda col: col.str.lower(),
                 ),
                 lower,
@@ -1042,7 +1049,7 @@ def populate_integrations(markdownFiles):
             [
                 upper,
                 service_discovery_entries.sort_values(
-                    by=["learn_rel_path", "sidebar_label"],
+                    by=["learn_rel_path", "sidebar_label", "custom_edit_url"],
                     key=lambda col: col.str.lower(),
                 ),
                 lower,
@@ -1426,8 +1433,9 @@ def resolve_publish_path_collisions(publish_map):
 
 def fetch_markdown_from_repo(output_folder):
     """Return markdown file paths recursively, including dot-directories."""
-    return glob.glob(output_folder + "/**/*.md*", recursive=True) + glob.glob(
-        output_folder + "/.**/*.md*", recursive=True
+    return sorted(
+        glob.glob(output_folder + "/**/*.md*", recursive=True)
+        + glob.glob(output_folder + "/.**/*.md*", recursive=True)
     )
 
 
@@ -3366,7 +3374,7 @@ if __name__ == "__main__":
     temp_dict["learn_path"] = new_learn_paths_array
 
     df = pd.DataFrame.from_dict(temp_dict)
-    df.set_index("custom_edit_url")
+    df = df.sort_values(by="custom_edit_url").reset_index(drop=True)
     # Convert DataFrame to list of dicts and save as YAML
     redirect_data = df.to_dict(orient="records")
     with open("./ingest/one_commit_back_file-dict.yaml", "w", encoding="utf-8") as fh:
