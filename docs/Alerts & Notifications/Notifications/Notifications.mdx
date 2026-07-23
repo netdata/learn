@@ -128,6 +128,15 @@ Netdata ships with hundreds of pre-configured alerts. You can also create your o
 - **[Alerts Configuration Manager](/docs/alerts-&-notifications/creating-alerts-with-the-alerts-configuration-manager)** — Visual UI wizard for creating and editing alerts
 - **[Manual configuration](/docs/alerts-&-notifications/alert-configuration-reference)** — Edit `health.d/*.conf` files directly for full control over alert syntax
 
+## On-Call Rotations and Escalation
+
+Netdata does not provide a native on-call rotation, escalation, or shift-scheduling engine. These capabilities are handled by the dedicated incident-management integrations that Netdata delivers alerts to.
+
+- **From the Agent:** incident-management and incident-response integrations such as [PagerDuty](/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/pagerduty), [Opsgenie](/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/opsgenie), [SIGNL4](/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/signl4), and [ilert](/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/ilert), where you define on-call schedules, escalation policies, and shift rotations. See the full list of [supported Agent integrations](https://learn.netdata.cloud/docs/alerts-&-notifications/notifications/agent-dispatched-notifications).
+- **From Cloud:** PagerDuty is available as a [paid-plan notification method](/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference#service-classification).
+
+To use on-call rotations, configure one of these integrations to receive your Netdata alerts, then set up your rotations, escalation policies, and shift schedules inside that service. To change where alerts are sent, see [Notification Methods](#notification-methods) or the [Cloud notification methods](/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-notification-methods) guide.
+
 ## Next Steps
 
 - [Set up Cloud Notifications](/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference)
