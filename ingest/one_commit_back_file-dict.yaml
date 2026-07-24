@@ -1580,8 +1580,6 @@
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/samba
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/scaleio/README.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/dell-emc-scaleio
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/sensors/README.md
-  learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/smartctl/README.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/s.m.a.r.t.
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/README.md
