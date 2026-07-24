@@ -478,10 +478,6 @@
   to="/docs/collecting-metrics/collectors/applications/opensips"
 
 [[redirects]]
-  from="/docs/agent/collectors/charts.d.plugin/sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
-
-[[redirects]]
   from="/docs/agent/collectors/cups.plugin"
   to="/docs/collecting-metrics/collectors/applications/cups"
 
@@ -1902,10 +1898,6 @@
   to="/docs/collecting-metrics/collectors/applications/fluentd"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Hardware/lm-sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/cups.plugin"
   to="/docs/collecting-metrics/collectors/applications/cups"
 
@@ -2718,10 +2710,6 @@
   to="/docs/collecting-metrics/collectors/hardware-and-sensors/1-wire-sensors"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/hardware/lm-sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/freeipmi"
   to="/docs/collecting-metrics/collectors/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
 
@@ -3088,10 +3076,6 @@
 [[redirects]]
   from="/docs/data-collection/service-discovery-/-registry/consul"
   to="/docs/collecting-metrics/collectors/applications/consul"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/lm-sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/typical-netdata-agent-configurations/securing-netdata-agents/web-server"
@@ -4000,10 +3984,6 @@
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/server-hardware"
   to="/docs/collecting-metrics/collectors/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/nvidia-smi"
@@ -5352,10 +5332,6 @@
 [[redirects]]
   from="/docs/data-collection/kubernetes/kubernetes-containers"
   to="/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-containers"
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-sysfs"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
@@ -7538,10 +7514,6 @@
   to="/docs/collecting-metrics/collectors/synthetic-testing/tcp-udp-endpoints"
 
 [[redirects]]
-  from="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors-lm-sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
-
-[[redirects]]
   from="/docs/working-with-logs/systemd-cat-native"
   to="/docs/logs/systemd-cat-native"
 
@@ -8150,10 +8122,6 @@
   to="/docs/collecting-metrics/collectors/applications/postfix"
 
 [[redirects]]
-  from="/docs/agent/collectors/python.d.plugin/sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
-
-[[redirects]]
   from="/docs/agent/collectors/python.d.plugin/smartd_log"
   to="/docs/collecting-metrics/collectors/storage-and-filesystems/s.m.a.r.t."
 
@@ -8222,10 +8190,6 @@
   to="/docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-gpu"
 
 [[redirects]]
-  from="/docs/data-collection/monitor-anything/Hardware/Sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
-
-[[redirects]]
   from="/docs/data-collection/monitor-anything/Hardware/S.M.A.R.T.-attributes"
   to="/docs/collecting-metrics/collectors/storage-and-filesystems/s.m.a.r.t."
 
@@ -8268,10 +8232,6 @@
 [[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication"
   to="/docs/netdata-agent/quickstart-deployment"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/hardware/sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/hardware/s.m.a.r.t.-attributes"
@@ -8322,10 +8282,6 @@
   to="/docs/collecting-metrics/collectors/storage-and-filesystems/hdd-temperature"
 
 [[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/linux-machine-sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
-
-[[redirects]]
   from="/docs/miscellaneous/build-a-custom-dashboard-html-page"
   to="/docs/dashboards-and-charts"
 
@@ -8352,10 +8308,6 @@
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/s.m.a.r.t."
   to="/docs/collecting-metrics/collectors/storage-and-filesystems/s.m.a.r.t."
-
-[[redirects]]
-  from="/docs/data-collection/hardware-devices-and-sensors/linux-sensors-lm-sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/data-collection/hardware-devices-and-sensors/hdd-temperature"
@@ -9582,10 +9534,6 @@
   to="/docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-data-center-gpu-manager-dcgm"
 
 [[redirects]]
-  from="/docs/collecting-metrics/hardware-devices-and-sensors/linux-sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
-
-[[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/intelligent-platform-management-interface-ipmi"
   to="/docs/collecting-metrics/collectors/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
 
@@ -10568,10 +10516,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/hardware-and-iot/modbus-protocol"
   to="/docs/collecting-metrics/collectors/hardware-and-sensors/modbus-protocol"
-
-[[redirects]]
-  from="/docs/collecting-metrics/hardware-and-iot/linux-sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-and-iot/jarvis-standing-desk"
@@ -11804,10 +11748,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/hardware-and-sensors/memory-modules-dimms"
   to="/docs/collecting-metrics/collectors/hardware-and-sensors/memory-modules-dimms"
-
-[[redirects]]
-  from="/docs/collecting-metrics/hardware-and-sensors/linux-sensors"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-and-sensors/jarvis-standing-desk"
