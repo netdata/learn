@@ -1560,6 +1560,8 @@
   learn_path: /docs/collecting-metrics/collectors/applications/yourls-url-shortener
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/zerto.md
   learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/zerto
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/profile-format.md
+  learn_path: /docs/collecting-metrics/prometheus-profile-format
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/proxysql/README.md
   learn_path: /docs/collecting-metrics/collectors/databases/proxysql
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/pulsar/README.md
