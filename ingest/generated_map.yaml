@@ -1133,6 +1133,34 @@
     metrics, statistics, and dynamic charts in reusable profiles.
   meta_yaml: .nan
   message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/profile-format.md
+  sidebar_label: Prometheus Profile Format
+  learn_status: Published
+  learn_rel_path: Collecting Metrics
+  keywords:
+  - prometheus
+  - profiles
+  - autogen
+  - collectors
+  - charts
+  description: Define curated chart profiles for Prometheus endpoints, with scoped
+    autogen selectors that filter the fallback charts of unmatched metrics.
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/relabel/README.md
+  sidebar_label: Prometheus Metric Relabeling
+  learn_status: Published
+  learn_rel_path: Collecting Metrics
+  keywords:
+  - prometheus
+  - relabeling
+  - metric_relabel_configs
+  - labels
+  - collectors
+  description: Rewrite, derive, or drop scraped Prometheus metrics and labels with
+    Prometheus-compatible metric_relabel_configs rules before charts are built.
+  meta_yaml: .nan
+  message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory.md
   sidebar_label: Active Directory
   learn_status: Published
