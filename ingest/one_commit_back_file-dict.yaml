@@ -116,6 +116,8 @@
   learn_path: /docs/exporting-metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/exporting-metrics/enable-an-exporting-connector.md
   learn_path: /docs/exporting-metrics/enable-an-exporting-connector
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/extreme-cardinality-protection.md
+  learn_path: /docs/netdata-agent/resource-utilization/extreme-cardinality-protection
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-configuration-management.md
   learn_path: /docs/welcome-to-netdata/fleet-deployment-and-configuration-management
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/functions/databases.md

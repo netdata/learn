@@ -371,6 +371,20 @@
   description: null
   meta_yaml: .nan
   message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/extreme-cardinality-protection.md
+  sidebar_label: Extreme Cardinality Protection
+  learn_status: Published
+  learn_rel_path: Netdata Agent/Resource Utilization
+  keywords:
+  - cardinality
+  - ephemerality
+  - retention
+  - metadata
+  - netdata-meta.db
+  description: How Netdata limits long-term resource use from short-lived chart instances,
+    and how metadata cleanup affects disk space.
+  meta_yaml: .nan
+  message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/impact-on-resources.md
   sidebar_label: Impact on Cloud VMs
   learn_status: Published
