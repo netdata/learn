@@ -16467,7 +16467,7 @@
   learn_rel_path: Network Performance Monitoring/SNMP Traps
   keywords: null
   description: Read receiver pipeline health, severity and category rates, processing
-    errors, deduplication, and per-source metrics.
+    errors, deduplication, and optional profile-defined metrics.
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/snmp-traps/alerts.md
