@@ -394,7 +394,7 @@ Check:
 - Only peers in `source.trusted_relays` may make `snmpTrapAddress.0` become the selected source.
 - `TRAP_REVERSE_DNS` is annotation only. It is not authoritative identity.
 - `TRAP_ENRICHMENT` explains selected, rejected, missing, ambiguous, or skipped enrichment decisions.
-- Source attribution metrics can show `ambiguous`, `failed`, `overflow_dropped`, and `source_transitions`.
+- Group rows by source fields to find unexpected senders, and inspect `TRAP_ENRICHMENT` for ambiguous, rejected, or changing source evidence.
 
 Keep `source.trusted_relays` narrow. A broad trusted-relay range lets senders on that path influence source attribution.
 
@@ -439,7 +439,7 @@ Choose retention based on how long operators need local forensic access. If an e
 - [Configuration](/docs/network-performance-monitoring/snmp-traps/configuration) - Configure jobs, listeners, allowlists, SNMP versions, SNMPv3, outputs, retention, rate limiting, and deduplication.
 - [Journal and Querying](/docs/network-performance-monitoring/snmp-traps/journal-and-querying) - Query direct-journal trap rows, decode errors, and dedup summaries.
 - [Field Reference](/docs/network-performance-monitoring/snmp-traps/field-reference) - Check every emitted field and OTLP mapping.
-- [Metrics](/docs/network-performance-monitoring/snmp-traps/metrics) - Interpret receiver pipeline, processing errors, dedup counters, and source metrics.
+- [Metrics](/docs/network-performance-monitoring/snmp-traps/metrics) - Interpret receiver pipeline, processing errors, dedup counters, and optional profile-defined metrics.
 - [Alerts](/docs/network-performance-monitoring/snmp-traps/alerts) - Understand the default health alerts and how to route or silence them.
 - [Validation and Data Quality](/docs/network-performance-monitoring/snmp-traps/validation-and-data-quality) - Validate source identity, profile coverage, output backends, and data handling.
-- [Trap Profiles](/docs/network-performance-monitoring/snmp-traps/trap-profiles) - Understand unknown OIDs, profile reloads, template failures, overrides, and profile-derived fields.
+- [Trap Profiles](/docs/network-performance-monitoring/snmp-traps/trap-profiles) - Understand unknown OIDs, profile loading, template failures, overrides, and profile-derived fields.
