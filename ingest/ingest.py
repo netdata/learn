@@ -540,6 +540,28 @@ def clean_and_lower_string(string):
     )
 
 
+def _strip_underscore_emphasis(text):
+    """
+    Remove underscores that act as Markdown emphasis delimiters, while preserving
+    underscores that are literal characters inside a word.
+
+    Per CommonMark, a run of underscores can only open/close emphasis when it is not
+    intraword, i.e. when it is not flanked by a word character on both sides (e.g.
+    `_italic_` or `foo _bar_`). A run flanked by word characters on both sides
+    (e.g. `fallback_type`) can never be emphasis, so it is left untouched.
+    """
+
+    def repl(match):
+        start, end = match.span()
+        before = text[start - 1] if start > 0 else ""
+        after = text[end] if end < len(text) else ""
+        if re.match(r"\w", before) and re.match(r"\w", after):
+            return match.group(0)
+        return ""
+
+    return re.sub(r"_+", repl, text)
+
+
 def extract_headers_from_file(file_path):
     """
     Extract all headers from a markdown file and return them as a set of anchor IDs.
@@ -553,14 +575,16 @@ def extract_headers_from_file(file_path):
         for match in re.finditer(header_pattern, content, re.MULTILINE):
             header_text = match.group(1).strip()
             # Convert header to anchor ID (similar to how markdown processors do it)
-            # Remove inline code backticks, bold/italic markers
-            anchor = re.sub(r"[`*_]", "", header_text)
+            # Remove inline code backticks and bold/italic asterisk markers
+            anchor = re.sub(r"[`*]", "", header_text)
+            # Remove underscores used as emphasis markup, keep literal ones (e.g. fallback_type)
+            anchor = _strip_underscore_emphasis(anchor)
             # Remove HTML tags
             anchor = re.sub(r"<[^>]+>", "", anchor)
             # Convert to lowercase, replace spaces with hyphens
             anchor = anchor.lower().replace(" ", "-")
-            # Remove special characters except hyphens
-            anchor = re.sub(r"[^a-z0-9-]", "", anchor)
+            # Remove special characters except hyphens and underscores
+            anchor = re.sub(r"[^a-z0-9_-]", "", anchor)
             # Remove multiple consecutive hyphens
             anchor = re.sub(r"-+", "-", anchor)
             # Remove leading/trailing hyphens
