@@ -1,6 +1,8 @@
 import { useRef, useEffect } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 
+import { ensureMarkdownItCompatibility } from './markdownItCompatibility';
+
 const NEDI_ENDPOINT = 'https://nedi.netdata.cloud';
 const PERSISTENT_ID = 'nedi-persistent';
 const SCROLL_KEY = 'nedi-scroll-y';
@@ -80,6 +82,7 @@ export default function Nedi() {
     const boot = () => {
       if (!mountRef.current) return;
       if (typeof window.AiAgentChatUI === 'undefined') return false;
+      if (!ensureMarkdownItCompatibility(window)) return false;
 
       const nediEl = getOrCreateNedi(colorMode);
 
