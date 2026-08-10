@@ -65,6 +65,7 @@
 		"postcss-loader": "^8.2.0",
 		"postcss-preset-env": "^11.1.2",
 		"tailwindcss": "^4.1.18",
+		"vite": "^8.1.5",
 		"vitest": "^4.1.8"
 	},
 	"browserslist": {
