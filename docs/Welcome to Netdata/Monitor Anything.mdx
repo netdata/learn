@@ -191,14 +191,16 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Applications](/docs/collecting-metrics/collectors/operating-systems/applications) | Monitor Applications for optimal software performance and resource usage. |
 | [CPU performance](/docs/collecting-metrics/collectors/operating-systems/cpu-performance) | This collector monitors CPU performance metrics about cycles, instructions, migrations, cache operations and more. |
 | [dev.cpu.0.freq](/docs/collecting-metrics/collectors/operating-systems/dev.cpu.0.freq) | Read current CPU Scaling frequency. |
-| [eBPF Cachestat](/docs/collecting-metrics/collectors/operating-systems/ebpf-cachestat) | Monitor Linux page cache events giving for users a general vision about how his kernel is manipulating files. |
+| [eBPF Cachestat](/docs/collecting-metrics/collectors/operating-systems/ebpf-cachestat) | Monitor Linux page cache events giving users a general vision about how the kernel is manipulating files. |
 | [eBPF DCstat](/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat) | Monitor directory cache events per application given an overall vision about files on memory or storage device. |
+| [eBPF DNS](/docs/collecting-metrics/collectors/operating-systems/ebpf-dns) | Monitor DNS query and response traffic at the kernel level, broken down by transport protocol (UDP/TCP) and IP family (IPv4/IPv6). |
 | [eBPF Filedescriptor](/docs/collecting-metrics/collectors/operating-systems/ebpf-filedescriptor) | Monitor calls for functions responsible to open or close a file descriptor and possible errors. |
 | [eBPF Hardirq](/docs/collecting-metrics/collectors/operating-systems/ebpf-hardirq) | Monitor latency for each HardIRQ available. |
 | [eBPF OOMkill](/docs/collecting-metrics/collectors/operating-systems/ebpf-oomkill) | Monitor applications that reach out of memory. |
 | [eBPF Process](/docs/collecting-metrics/collectors/operating-systems/ebpf-process) | Monitor internal memory usage. |
 | [eBPF Processes](/docs/collecting-metrics/collectors/operating-systems/ebpf-processes) | Monitor calls for function creating tasks (threads and processes) inside Linux kernel. |
 | [eBPF SHM](/docs/collecting-metrics/collectors/operating-systems/ebpf-shm) | Monitor syscall responsible to manipulate shared memory. |
+| [eBPF Socket](/docs/collecting-metrics/collectors/operating-systems/ebpf-socket) | Monitor TCP and UDP function calls, bandwidth, errors, and connection counts. |
 | [eBPF SoftIRQ](/docs/collecting-metrics/collectors/operating-systems/ebpf-softirq) | Monitor latency for each SoftIRQ available. |
 | [eBPF SWAP](/docs/collecting-metrics/collectors/operating-systems/ebpf-swap) | Monitors when swap has I/O events and applications executing events. |
 | [Entropy](/docs/collecting-metrics/collectors/operating-systems/entropy) | Entropy, a measure of the randomness or unpredictability of data. |
@@ -267,7 +269,6 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [DNSdist](/docs/collecting-metrics/collectors/networking/dnsdist) | This collector monitors DNSDist servers. |
 | [Dnsmasq](/docs/collecting-metrics/collectors/networking/dnsmasq) | This collector monitors Dnsmasq servers. |
 | [Dnsmasq DHCP](/docs/collecting-metrics/collectors/networking/dnsmasq-dhcp) | This collector monitors Dnsmasq DHCP leases databases, depending on your configuration. |
-| [eBPF Socket](/docs/collecting-metrics/collectors/networking/ebpf-socket) | Monitor bandwidth consumption per application for protocols TCP and UDP. |
 | [Fastd](/docs/collecting-metrics/collectors/networking/fastd) | Monitor Fastd VPN metrics for efficient virtual private network management and performance. |
 | [Freifunk network](/docs/collecting-metrics/collectors/networking/freifunk-network) | Keep tabs on Freifunk community network metrics for optimized network performance and management. |
 | [FRRouting](/docs/collecting-metrics/collectors/networking/frrouting) | Monitor Free Range Routing (FRR) metrics for optimized network routing and management. |
@@ -381,7 +382,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Hubble](/docs/collecting-metrics/collectors/cloud-and-devops/hubble) | Monitor Hubble network observability metrics for efficient network visibility and management. |
 | [Jenkins](/docs/collecting-metrics/collectors/cloud-and-devops/jenkins) | Track Jenkins continuous integration server metrics for efficient development and build management. |
 | [Linode](/docs/collecting-metrics/collectors/cloud-and-devops/linode) | Monitor Linode cloud hosting metrics for efficient virtual server management and performance. |
-| [OpenTelemetry](https://github.com/netdata/netdata/blob/master/src/crates/otel-plugin/integrations/opentelemetry.md) | This plugin enables the Netdata Agent to receive OpenTelemetry metrics and logs via the OTLP/gRPC protocol from any compatible source — collectors, SDKs, or instrumented applications. |
+| [OpenTelemetry](https://github.com/netdata/netdata/blob/master/src/crates/otel-plugin/integrations/opentelemetry.md) | Receive OpenTelemetry metrics and logs over OTLP/gRPC from Collectors, SDKs, and instrumented applications. |
 | [Puppet](/docs/collecting-metrics/collectors/cloud-and-devops/puppet) | This collector monitors Puppet metrics, including JVM heap and non-heap memory, CPU usage, and file descriptors. |
 | [Spacelift](/docs/collecting-metrics/collectors/cloud-and-devops/spacelift) | Track Spacelift infrastructure-as-code (IaC) platform metrics for efficient infrastructure automation and management. |
 | [Zerto](/docs/collecting-metrics/collectors/cloud-and-devops/zerto) | Monitor Zerto disaster recovery and data protection metrics for efficient backup and recovery management. |
@@ -490,6 +491,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [JMX](/docs/collecting-metrics/collectors/applications/jmx) | Track Java Management Extensions (JMX) metrics for efficient Java application management and performance. |
 | [journald](/docs/collecting-metrics/collectors/applications/journald) | Keep an eye on systemd-journald metrics for efficient log management and analysis. |
 | [Kannel](/docs/collecting-metrics/collectors/applications/kannel) | Keep tabs on Kannel SMS gateway and WAP gateway metrics for efficient mobile communication and performance. |
+| [LiteLLM](/docs/collecting-metrics/collectors/applications/litellm) | Monitor LiteLLM gateway workload, routing, provider performance, usage, cost, governance, and internal dependencies. |
 | [Logstash](/docs/collecting-metrics/collectors/applications/logstash) | This collector monitors Logstash instances. |
 | [loki](/docs/collecting-metrics/collectors/applications/loki) | Track Loki metrics. |
 | [Lynis audit reports](/docs/collecting-metrics/collectors/applications/lynis-audit-reports) | Track Lynis security auditing tool metrics for efficient system security and compliance management. |
@@ -520,6 +522,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Tankerkoenig API](/docs/collecting-metrics/collectors/applications/tankerkoenig-api) | Track Tankerknig API fuel price metrics for efficient fuel price monitoring and management. |
 | [Twitch](/docs/collecting-metrics/collectors/applications/twitch) | Track Twitch streaming platform metrics for efficient live streaming management and performance. |
 | [Vault PKI](/docs/collecting-metrics/collectors/applications/vault-pki) | Monitor HashiCorp Vault Public Key Infrastructure (PKI) metrics for efficient certificate management and security. |
+| [vLLM](/docs/collecting-metrics/collectors/applications/vllm) | Monitor vLLM inference-serving workload, latency, scheduling, token throughput, cache behavior, connector activity, and runtime health. |
 | [VSCode](/docs/collecting-metrics/collectors/applications/vscode) | Track Visual Studio Code editor metrics for efficient development environment management and performance. |
 | [YOURLS URL Shortener](/docs/collecting-metrics/collectors/applications/yourls-url-shortener) | Monitor YOURLS (Your Own URL Shortener) metrics for efficient URL shortening service management and performance. |
 | [ZooKeeper](/docs/collecting-metrics/collectors/applications/zookeeper) | It connects to the Zookeeper instance via a TCP and executes the following commands: |
@@ -532,6 +535,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [BCache](/docs/collecting-metrics/collectors/storage-and-filesystems/bcache) | Statistics for BCache (block layer cache) devices, including cache hit ratios, I/O operations, cache allocations, and bypass activity. |
 | [BTRFS](/docs/collecting-metrics/collectors/storage-and-filesystems/btrfs) | This integration provides usage and error statistics from the BTRFS filesystem. |
 | [Ceph](/docs/collecting-metrics/collectors/storage-and-filesystems/ceph) | This collector monitors the overall health status and performance of your Ceph clusters. |
+| [Ceph Prometheus](/docs/collecting-metrics/collectors/storage-and-filesystems/ceph-prometheus) | Monitor Ceph through its official Prometheus surfaces without narrowing the exporter to the native Ceph collector's different Dashboard REST API. |
 | [Dell EMC ScaleIO](/docs/collecting-metrics/collectors/storage-and-filesystems/dell-emc-scaleio) | This collector monitors ScaleIO (VxFlex OS) instances via VxFlex OS Gateway API. |
 | [Dell PowerStore](/docs/collecting-metrics/collectors/storage-and-filesystems/dell-powerstore) | This collector monitors Dell PowerStore storage arrays via the PowerStore REST API. |
 | [Dell PowerVault ME4/ME5](/docs/collecting-metrics/collectors/storage-and-filesystems/dell-powervault-me4-me5) | This collector monitors Dell PowerVault ME4 and ME5 storage arrays via the Management Controller Interface (MCI) REST API. |

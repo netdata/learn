@@ -5498,10 +5498,6 @@
   to="/docs/collecting-metrics/collectors/operating-systems/ebpf-softirq"
 
 [[redirects]]
-  from="/docs/data-collection/ebpf/ebpf-socket"
-  to="/docs/collecting-metrics/collectors/networking/ebpf-socket"
-
-[[redirects]]
   from="/docs/data-collection/ebpf/ebpf-shm"
   to="/docs/collecting-metrics/collectors/operating-systems/ebpf-shm"
 
@@ -5544,10 +5540,6 @@
 [[redirects]]
   from="/docs/data-collection/ebpf/ebpf-dcstat"
   to="/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat"
-
-[[redirects]]
-  from="/docs/data-collection/ebpf/ebpf-cachestat"
-  to="/docs/collecting-metrics/collectors/operating-systems/ebpf-cachestat"
 
 [[redirects]]
   from="/docs/data-collection/dns-and-dhcp-servers/name-server-daemon"
@@ -9758,10 +9750,6 @@
   to="/docs/collecting-metrics/collectors/operating-systems/ebpf-softirq"
 
 [[redirects]]
-  from="/docs/collecting-metrics/ebpf/ebpf-socket"
-  to="/docs/collecting-metrics/collectors/networking/ebpf-socket"
-
-[[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-shm"
   to="/docs/collecting-metrics/collectors/operating-systems/ebpf-shm"
 
@@ -9804,10 +9792,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/ebpf/ebpf-dcstat"
   to="/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat"
-
-[[redirects]]
-  from="/docs/collecting-metrics/ebpf/ebpf-cachestat"
-  to="/docs/collecting-metrics/collectors/operating-systems/ebpf-cachestat"
 
 [[redirects]]
   from="/docs/collecting-metrics/dns-and-dhcp-servers/unbound"
@@ -10344,10 +10328,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/operating-systems/ebpf-sync"
   to="/docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-sync"
-
-[[redirects]]
-  from="/docs/collecting-metrics/operating-systems/ebpf-socket"
-  to="/docs/collecting-metrics/collectors/networking/ebpf-socket"
 
 [[redirects]]
   from="/docs/collecting-metrics/operating-systems/ebpf-mount"
@@ -11354,10 +11334,6 @@
   to="/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat"
 
 [[redirects]]
-  from="/docs/collecting-metrics/operating-systems/ebpf-cachestat"
-  to="/docs/collecting-metrics/collectors/operating-systems/ebpf-cachestat"
-
-[[redirects]]
   from="/docs/collecting-metrics/operating-systems/dev.cpu.0.freq"
   to="/docs/collecting-metrics/collectors/operating-systems/dev.cpu.0.freq"
 
@@ -11576,10 +11552,6 @@
 [[redirects]]
   from="/docs/collecting-metrics/networking/fastd"
   to="/docs/collecting-metrics/collectors/networking/fastd"
-
-[[redirects]]
-  from="/docs/collecting-metrics/networking/ebpf-socket"
-  to="/docs/collecting-metrics/collectors/networking/ebpf-socket"
 
 [[redirects]]
   from="/docs/collecting-metrics/networking/dnsmasq-dhcp"
@@ -12792,5 +12764,9 @@
 [[redirects]]
   from="/docs/netdata-ai/mcp/mcp-clients"
   to="/docs/netdata-ai/mcp/supported-ai-clients"
+
+[[redirects]]
+  from="/docs/collecting-metrics/opentelemetry/opentelemetry-metrics"
+  to="/docs/collecting-metrics/opentelemetry"
 
 # section: dynamic << END
