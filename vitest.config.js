@@ -1,11 +1,23 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { transformWithOxc } from 'vite';
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
+const jsxInJavaScript = {
+  name: 'learn-jsx-in-javascript',
+  enforce: 'pre',
+  async transform(code, id) {
+    if (!/[/\\]src[/\\].*\.js(?:$|\?)/.test(id)) return null;
+    return transformWithOxc(code, id, {
+      lang: 'jsx',
+      jsx: { runtime: 'automatic' },
+    });
+  },
+};
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [jsxInJavaScript, react()],
 
   test: {
     // Use jsdom for DOM simulation
@@ -55,16 +67,9 @@ export default defineConfig({
     },
   },
 
-  esbuild: {
-    // Treat .js and .jsx files as JSX
-    loader: 'jsx',
-    include: /src\/.*\.jsx?$/,
-    exclude: [],
-  },
-
   optimizeDeps: {
-    esbuildOptions: {
-      loader: {
+    rolldownOptions: {
+      moduleTypes: {
         '.js': 'jsx',
         '.jsx': 'jsx',
       },
