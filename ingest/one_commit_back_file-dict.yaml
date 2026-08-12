@@ -374,6 +374,8 @@
   learn_path: /docs/network-performance-monitoring/syslog-from-network-devices/opentelemetry-collector-setup
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/topology/README.md
   learn_path: /docs/network-performance-monitoring/topologies
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/topology/dependency-mapping.md
+  learn_path: /docs/network-performance-monitoring/topologies/application-dependency-mapping
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/topology/discovery-methods.md
   learn_path: /docs/network-performance-monitoring/topologies/discovery-methods
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/best-practices.md
