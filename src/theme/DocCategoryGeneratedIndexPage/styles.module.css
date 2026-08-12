@@ -1,0 +1,17 @@
+.generatedIndexPage {
+  max-width: 800px;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.list article:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 996px) {
+  .generatedIndexPage {
+    margin: 0 auto;
+  }
+}

@@ -69,6 +69,14 @@ class TestIntegrationSlugCollisions(unittest.TestCase):
             publish_map["windows.md"]["slug"],
             "/collecting-metrics/operating-systems/system-statistics-windows-plugin",
         )
+        self.assertEqual(
+            publish_map["proc.md"]["metadata"]["seo_title"],
+            "System statistics (proc.plugin)",
+        )
+        self.assertEqual(
+            publish_map["windows.md"]["metadata"]["seo_title"],
+            "System statistics (windows.plugin)",
+        )
         self.assertNotEqual(
             publish_map["windows.md"]["learnPath"],
             publish_map["proc.md"]["learnPath"],
@@ -93,6 +101,14 @@ class TestIntegrationSlugCollisions(unittest.TestCase):
         self.assertEqual(
             publish_map["windows.md"]["slug"],
             "/collecting-metrics/operating-systems/system-statistics-windows-plugin",
+        )
+        self.assertEqual(
+            publish_map["proc.md"]["metadata"]["seo_title"],
+            "System statistics (proc.plugin)",
+        )
+        self.assertEqual(
+            publish_map["windows.md"]["metadata"]["seo_title"],
+            "System statistics (windows.plugin)",
         )
 
     def test_source_suffix_avoids_existing_page_path(self):
@@ -151,6 +167,44 @@ class TestIntegrationSlugCollisions(unittest.TestCase):
             publish_map["punctuation.md"]["slug"],
             "/collecting-metrics/operating-systems/system-statistics-windows-plugin",
         )
+        self.assertEqual(
+            publish_map["space.md"]["metadata"]["seo_title"],
+            "System statistics (proc.plugin)",
+        )
+        self.assertEqual(
+            publish_map["punctuation.md"]["metadata"]["seo_title"],
+            "System-statistics (windows.plugin)",
+        )
+
+    def test_duplicate_source_identity_fails_closed(self):
+        publish_map = {
+            "first.md": self._publish_info(
+                "https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/first.md"
+            ),
+            "second.md": self._publish_info(
+                "https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/second.md"
+            ),
+        }
+
+        with self.assertRaises(ValueError) as context:
+            ingest_module.resolve_publish_path_collisions(publish_map)
+
+        self.assertIn("Duplicate generated integration SEO title", str(context.exception))
+
+    def test_mixed_integration_and_document_collision_fails_closed(self):
+        publish_map = {
+            "integration.md": self._publish_info(
+                "https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_statistics.md"
+            ),
+            "document.md": self._publish_info(
+                "https://github.com/netdata/netdata/edit/master/docs/system-statistics.md"
+            ),
+        }
+
+        with self.assertRaises(ValueError) as context:
+            ingest_module.resolve_publish_path_collisions(publish_map)
+
+        self.assertIn("non-integration", str(context.exception))
 
     def test_non_integration_exact_collision_fails(self):
         publish_map = {

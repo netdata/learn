@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "owner": "netdata/website",
+  "algorithm": "sha256",
+  "files": {
+    "index.js": "24f3ac2fe595313725cff63d87c89399448ec1a28fd4ed4285bfa4d5e03f15bc",
+    "manifest.yml": "205558bcd226654d4d32304bab75d9bfe2b57e2b032a7b801412d8c3c4e360c3"
+  }
+}

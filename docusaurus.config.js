@@ -1,4 +1,5 @@
 const {themes: prismThemes} = require('prism-react-renderer');
+const {isIndexableRoute} = require('./seo.config');
 
 // Extend Dracula with missing token type mappings for YAML, config files, etc.
 const draculaExtended = {
@@ -207,6 +208,15 @@ module.exports = {
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
 					// docLayoutComponent: "@theme/DocPage",
 					showLastUpdateTime: true,
+				},
+				sitemap: {
+					lastmod: 'datetime',
+					changefreq: null,
+					priority: null,
+					createSitemapItems: async ({defaultCreateSitemapItems, ...params}) => {
+						const items = await defaultCreateSitemapItems(params);
+						return items.filter((item) => isIndexableRoute(item.url));
+					},
 				},
 				theme: {
 					customCss: [require.resolve('./src/css/custom.css')],

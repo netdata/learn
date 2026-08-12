@@ -1,0 +1,60 @@
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import {afterEach, describe, expect, it} from 'vitest';
+
+const require = createRequire(import.meta.url);
+const {exactRedirectSources, verifyRenderedLinks} = require('../../scripts/verify-rendered-links');
+const temporaryDirectories = [];
+
+async function fixture(html) {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'learn-rendered-links-'));
+  temporaryDirectories.push(root);
+  const publishDir = path.join(root, 'build');
+  const output = path.join(publishDir, 'docs', 'source', 'index.html');
+  const netlifyPath = path.join(root, 'netlify.toml');
+  await fs.mkdir(path.dirname(output), {recursive: true});
+  await fs.writeFile(output, html);
+  await fs.writeFile(
+    netlifyPath,
+    `[[redirects]]\n  from="/docs/old/"\n  to="/docs/new"\n\n` +
+      `[[redirects]]\n  from="/assets/*"\n  to="/static/:splat"\n`,
+  );
+  return {netlifyPath, publishDir};
+}
+
+afterEach(async () => {
+  await Promise.all(
+    temporaryDirectories.splice(0).map((directory) =>
+      fs.rm(directory, {recursive: true, force: true}),
+    ),
+  );
+});
+
+describe('rendered redirect-source link verifier', () => {
+  it('reads exact redirect sources and ignores wildcard rules', () => {
+    expect(exactRedirectSources('[[redirects]]\nfrom="/old/"\n\n[[redirects]]\nfrom="/x/*"'))
+      .toEqual(new Set(['/old/']));
+  });
+
+  it('accepts canonical, external, fragment, and wildcard-matched links', async () => {
+    const fixturePaths = await fixture(
+      '<a href="/docs/new">new</a><a href="https://example.com/docs/old">external</a>' +
+        '<a href="#local">local</a><a href="/assets/app.js">asset</a>',
+    );
+    expect(verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath)).toMatchObject({
+      htmlFiles: 1,
+      redirectSources: 1,
+    });
+  });
+
+  it('fails on relative and absolute same-host links to an exact redirect source', async () => {
+    const fixturePaths = await fixture(
+      '<a href="/docs/old/">relative</a>' +
+        '<a href="https://learn.netdata.cloud/docs/old/?from=test#part">absolute</a>',
+    );
+    expect(() => verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath))
+      .toThrow(/Rendered links target exact redirect sources/);
+  });
+});
