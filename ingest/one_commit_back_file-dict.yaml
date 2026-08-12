@@ -394,6 +394,16 @@
   learn_path: /docs/netdata-parents/metrics-centralization-points/faq-on-metrics-centralization-points
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples.md
   learn_path: /docs/netdata-parents/metrics-centralization-points/replication-of-past-samples
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/logs-collection.md
+  learn_path: /docs/collecting-metrics/opentelemetry/logs-collection
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/logs-to-metrics.md
+  learn_path: /docs/collecting-metrics/opentelemetry/logs-to-metrics
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/metrics-collection.md
+  learn_path: /docs/collecting-metrics/opentelemetry/metrics-collection
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/otlp-ingestion.md
+  learn_path: /docs/collecting-metrics/opentelemetry/otlp-ingestion
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/transformations.md
+  learn_path: /docs/collecting-metrics/opentelemetry/transformations
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/realtime-monitoring.md
   learn_path: /docs/welcome-to-netdata/real-time-monitoring
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/reporting.md
@@ -424,6 +434,8 @@
   learn_path: /docs/alerts-&-notifications/notifications/centralized-cloud-notifications/amazon-sns
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/discord.md
   learn_path: /docs/alerts-&-notifications/notifications/centralized-cloud-notifications/discord
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/group_email.md
+  learn_path: /docs/alerts-&-notifications/notifications/centralized-cloud-notifications/group-email
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/ilert.md
   learn_path: /docs/alerts-&-notifications/notifications/centralized-cloud-notifications/ilert
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/mattermost.md
@@ -582,8 +594,12 @@
   learn_path: /docs/collecting-metrics/collectors/operating-systems/system-memory-fragmentation
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/diskspace.plugin/README.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/disk-space
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_cachestat.md
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/ebpfgo.plugin/README.md
+  learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-socket
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/ebpfgo.plugin/integrations/ebpf_cachestat.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-cachestat
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/ebpfgo.plugin/integrations/ebpf_dns.md
+  learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-dns
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_dcstat.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_disk.md
@@ -606,8 +622,6 @@
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-processes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_shm.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-shm
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_socket.md
-  learn_path: /docs/collecting-metrics/collectors/networking/ebpf-socket
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_softirq.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-softirq
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_swap.md
@@ -879,7 +893,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/static_metadata.md
   learn_path: /docs/network-performance-monitoring/network-flows/enrichment-methods/static-metadata
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/otel-plugin/README.md
-  learn_path: /docs/collecting-metrics/opentelemetry/opentelemetry-metrics
+  learn_path: /docs/collecting-metrics/opentelemetry
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/daemon/README.md
   learn_path: /docs/netdata-agent/daemon
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md
@@ -1274,6 +1288,8 @@
   learn_path: /docs/collecting-metrics/collectors/applications/bungeecord
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/celery.md
   learn_path: /docs/collecting-metrics/collectors/applications/celery
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/ceph_prometheus.md
+  learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/ceph-prometheus
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/chia.md
   learn_path: /docs/collecting-metrics/collectors/applications/chia
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/christ_elektronik_clm5ip_power_panel.md
@@ -1406,6 +1422,8 @@
   learn_path: /docs/collecting-metrics/collectors/networking/keepalived
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/linode.md
   learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/linode
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/litellm.md
+  learn_path: /docs/collecting-metrics/collectors/applications/litellm
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/loki.md
   learn_path: /docs/collecting-metrics/collectors/applications/loki
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/lustre_metadata.md
@@ -1552,6 +1570,8 @@
   learn_path: /docs/collecting-metrics/collectors/applications/vault-pki
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/vertica.md
   learn_path: /docs/collecting-metrics/collectors/databases/vertica
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/vllm.md
+  learn_path: /docs/collecting-metrics/collectors/applications/vllm
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/vscode.md
   learn_path: /docs/collecting-metrics/collectors/applications/vscode
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/warp10.md
