@@ -4,7 +4,6 @@ import {
   useDoc,
   useSidebarBreadcrumbs,
 } from '@docusaurus/plugin-content-docs/client';
-import seoConfig from '@site/seo.config';
 import {composeDocTitle} from '@site/src/seo/title';
 
 export default function DocItemMetadata() {
@@ -17,16 +16,12 @@ export default function DocItemMetadata() {
     permalink: metadata.permalink,
     breadcrumbs,
   });
-  const indexable = seoConfig.isIndexableRoute(metadata.permalink);
-
   return (
     <PageMetadata
       title={title}
       description={metadata.description}
       keywords={frontMatter.keywords}
       image={assets.image ?? frontMatter.image}
-    >
-      {!indexable && <meta name="robots" content="noindex,follow" />}
-    </PageMetadata>
+    />
   );
 }

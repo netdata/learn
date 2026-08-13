@@ -1,5 +1,6 @@
 import hashlib
 import json
+import os
 import re
 import shutil
 import tempfile
@@ -328,6 +329,167 @@ class SeoGridGenerationTests(unittest.TestCase):
             (target / "Curated.mdx").write_text("# Curated\n", encoding="utf-8")
             ingest.ensure_category_json_for_dirs(docs_root)
             self.assertEqual(category.read_bytes(), authored_bytes)
+
+    def test_grid_generation_rejects_dangling_and_existing_output_symlinks(self):
+        for existing_target in (False, True):
+            with self.subTest(existing_target=existing_target), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                docs_root = root / "docs"
+                target = docs_root / "Synthetic"
+                target.mkdir(parents=True)
+                self._write_tiny_integration(target / "Integration.mdx", 1)
+                outside = root / "outside-grid.mdx"
+                original = b"outside-authored\n"
+                if existing_target:
+                    outside.write_bytes(original)
+                (target / "Synthetic.mdx").symlink_to(outside)
+
+                with self.assertRaisesRegex(RuntimeError, "symbolic link"):
+                    ingest.get_dir_make_file_and_recurse(
+                        docs_root, overwrite_generated=True, docs_root=docs_root
+                    )
+
+                if existing_target:
+                    self.assertEqual(outside.read_bytes(), original)
+                else:
+                    self.assertFalse(outside.exists())
+
+    def test_category_generation_rejects_symlink_without_external_write(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            docs_root = root / "docs"
+            target = docs_root / "Category"
+            target.mkdir(parents=True)
+            (target / "Note.mdx").write_text("# Note\n", encoding="utf-8")
+            outside = root / "outside-category.json"
+            (target / "_category_.json").symlink_to(outside)
+
+            with self.assertRaisesRegex(RuntimeError, "symbolic link"):
+                ingest.ensure_category_json_for_dirs(docs_root)
+
+            self.assertFalse(outside.exists())
+
+    def test_recovery_rejects_symlinked_directories_and_non_regular_files(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            docs_root = root / "docs"
+            docs_root.mkdir()
+            outside = root / "outside"
+            outside.mkdir()
+            marker = outside / "marker.txt"
+            marker.write_text("unchanged\n", encoding="utf-8")
+            (docs_root / "Linked").symlink_to(outside, target_is_directory=True)
+
+            with self.assertRaisesRegex(RuntimeError, "symbolic link"):
+                ingest.reconcile_generated_outputs(docs_root, netlify_path=None)
+            self.assertEqual(marker.read_text(encoding="utf-8"), "unchanged\n")
+
+            (docs_root / "Linked").unlink()
+            fifo = docs_root / "unexpected.fifo"
+            try:
+                fifo.parent.mkdir(parents=True, exist_ok=True)
+                os.mkfifo(fifo)
+                with self.assertRaisesRegex(RuntimeError, "non-regular"):
+                    ingest.reconcile_generated_outputs(docs_root, netlify_path=None)
+            finally:
+                if fifo.exists():
+                    fifo.unlink()
+
+    def test_grid_generation_rejects_a_starting_directory_outside_docs_root(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            docs_root = root / "docs"
+            docs_root.mkdir()
+            outside = root / "outside"
+            outside.mkdir()
+            marker = outside / "marker.txt"
+            marker.write_text("unchanged\n", encoding="utf-8")
+
+            with self.assertRaisesRegex(RuntimeError, "escapes configured docs root"):
+                ingest.get_dir_make_file_and_recurse(
+                    outside, overwrite_generated=True, docs_root=docs_root
+                )
+            self.assertEqual(marker.read_text(encoding="utf-8"), "unchanged\n")
+
+    def test_corpus_and_state_boundaries_reject_symlinks(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            docs_root = root / "docs"
+            docs_root.mkdir()
+            outside_doc = root / "outside.mdx"
+            outside_doc.write_text("# Outside\n", encoding="utf-8")
+            (docs_root / "Linked.mdx").symlink_to(outside_doc)
+            with self.assertRaisesRegex(RuntimeError, "symbolic link"):
+                ingest._source_corpus_sha256(docs_root)
+
+            (docs_root / "Linked.mdx").unlink()
+            (docs_root / "Note.mdx").write_text("# Note\n", encoding="utf-8")
+            state_path = root / "state.json"
+            self._write_state(docs_root, state_path, root)
+            outside_state = root / "outside-state.json"
+            state_path.replace(outside_state)
+            state_path.symlink_to(outside_state)
+            with self.assertRaisesRegex(RuntimeError, "symbolic link"):
+                ingest.load_sidebar_order_state(state_path, docs_root=docs_root)
+
+    def test_state_and_redirect_outputs_reject_symlinks_before_changes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            docs_root = root / "docs"
+            docs_root.mkdir()
+            note = docs_root / "Note.mdx"
+            note.write_text("# Note\n", encoding="utf-8")
+            map_path = root / "map.yaml"
+            map_path.write_text("sidebar: []\n", encoding="utf-8")
+
+            outside_state = root / "outside-state.json"
+            outside_state.write_text("unchanged\n", encoding="utf-8")
+            state_path = root / "state.json"
+            state_path.symlink_to(outside_state)
+            with self.assertRaisesRegex(RuntimeError, "symbolic link"):
+                ingest.write_sidebar_order_state(
+                    self.sidebar_order, map_path, docs_root, state_path=state_path
+                )
+            self.assertEqual(outside_state.read_text(encoding="utf-8"), "unchanged\n")
+
+            state_path.unlink()
+            outside_map = root / "outside-map.yaml"
+            outside_map.write_text("sidebar: []\n", encoding="utf-8")
+            map_path.unlink()
+            map_path.symlink_to(outside_map)
+            with self.assertRaisesRegex(RuntimeError, "symbolic link"):
+                ingest.write_sidebar_order_state(
+                    self.sidebar_order, map_path, docs_root, state_path=state_path
+                )
+            self.assertFalse(state_path.exists())
+
+            netlify_path, static_path = self._redirect_fixture(root)
+            outside_netlify = root / "outside-netlify.toml"
+            outside_netlify.write_bytes(netlify_path.read_bytes())
+            netlify_path.unlink()
+            netlify_path.symlink_to(outside_netlify)
+            before_docs = self._snapshot(docs_root)
+            before_netlify = outside_netlify.read_bytes()
+            with self.assertRaisesRegex(RuntimeError, "symbolic link"):
+                ingest.reconcile_generated_outputs(
+                    docs_root, netlify_path=netlify_path, static_path=static_path
+                )
+            self.assertEqual(self._snapshot(docs_root), before_docs)
+            self.assertEqual(outside_netlify.read_bytes(), before_netlify)
+
+            netlify_path.unlink()
+            netlify_path.write_bytes(outside_netlify.read_bytes())
+            outside_static = root / "outside-static.toml"
+            outside_static.write_bytes(static_path.read_bytes())
+            before_static = outside_static.read_bytes()
+            static_path.unlink()
+            static_path.symlink_to(outside_static)
+            with self.assertRaisesRegex(RuntimeError, "symbolic link"):
+                ingest.reconcile_generated_outputs(
+                    docs_root, netlify_path=netlify_path, static_path=static_path
+                )
+            self.assertEqual(self._snapshot(docs_root), before_docs)
+            self.assertEqual(outside_static.read_bytes(), before_static)
 
     def test_current_corpus_is_a_complete_fixed_point(self):
         generated_grids = self._generated_grids(self.source_docs)

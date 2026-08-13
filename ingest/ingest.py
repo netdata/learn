@@ -31,7 +31,9 @@ import hashlib
 import io
 import os
 import re
+import secrets
 import shutil
+import stat
 import urllib.parse
 from pathlib import Path, PurePosixPath
 import json
@@ -118,6 +120,252 @@ MAP_SCHEMA_EXIT_CODE = 2
 SIDEBAR_ORDER_STATE_PATH = Path(__file__).resolve().with_name(
     "generated_sidebar_order.json"
 )
+
+
+class UnsafeFilesystemPathError(RuntimeError):
+    """Raised when ingest would cross an owned filesystem boundary."""
+
+
+def _absolute_path(path):
+    return Path(os.path.abspath(os.fspath(path)))
+
+
+def _lstat(path, *, allow_missing=False):
+    path = _absolute_path(path)
+    try:
+        return path, path.lstat()
+    except FileNotFoundError:
+        if allow_missing:
+            return path, None
+        raise
+
+
+def _require_no_symlink_ancestors(path, *, include_leaf=False):
+    path = _absolute_path(path)
+    parts = path.parts
+    current = Path(parts[0])
+    limit = len(parts) if include_leaf else len(parts) - 1
+    for part in parts[1:limit]:
+        current /= part
+        _, current_stat = _lstat(current)
+        if stat.S_ISLNK(current_stat.st_mode):
+            raise UnsafeFilesystemPathError(f"Refusing symbolic link ancestor: {current}")
+        if not stat.S_ISDIR(current_stat.st_mode):
+            raise UnsafeFilesystemPathError(
+                f"Refusing non-directory ancestor: {current}"
+            )
+    return path
+
+
+def _require_regular_file(path, *, allow_missing=False):
+    path = _require_no_symlink_ancestors(path)
+    path, path_stat = _lstat(path, allow_missing=allow_missing)
+    if path_stat is None:
+        return path
+    if stat.S_ISLNK(path_stat.st_mode):
+        raise UnsafeFilesystemPathError(f"Refusing symbolic link: {path}")
+    if not stat.S_ISREG(path_stat.st_mode):
+        raise UnsafeFilesystemPathError(f"Refusing non-regular file: {path}")
+    return path
+
+
+def _require_regular_directory(path):
+    path = _require_no_symlink_ancestors(path)
+    path, path_stat = _lstat(path)
+    if stat.S_ISLNK(path_stat.st_mode):
+        raise UnsafeFilesystemPathError(f"Refusing symbolic link directory: {path}")
+    if not stat.S_ISDIR(path_stat.st_mode):
+        raise UnsafeFilesystemPathError(f"Refusing non-directory path: {path}")
+    return path
+
+
+def _validate_docs_tree(docs_root):
+    """Reject links and special files before an ingest recovery touches the tree."""
+    root = _require_regular_directory(docs_root)
+    stack = [root]
+    while stack:
+        directory = stack.pop()
+        with os.scandir(directory) as entries:
+            for entry in entries:
+                path = Path(entry.path)
+                if entry.is_symlink():
+                    raise UnsafeFilesystemPathError(f"Refusing symbolic link: {path}")
+                if entry.is_dir(follow_symlinks=False):
+                    stack.append(path)
+                elif not entry.is_file(follow_symlinks=False):
+                    raise UnsafeFilesystemPathError(
+                        f"Refusing non-regular filesystem entry: {path}"
+                    )
+    return root
+
+
+def _validate_path_under_root(
+    docs_root, path, *, allow_missing_leaf=False, expected="file"
+):
+    root = _require_regular_directory(docs_root)
+    candidate = _absolute_path(path)
+    try:
+        relative = candidate.relative_to(root)
+    except ValueError as error:
+        raise UnsafeFilesystemPathError(
+            f"Path escapes configured docs root {root}: {candidate}"
+        ) from error
+
+    if not relative.parts:
+        if expected != "directory":
+            raise UnsafeFilesystemPathError(
+                f"Expected a file below configured docs root {root}: {candidate}"
+            )
+        return root
+
+    current = root
+    parts = relative.parts
+    for index, part in enumerate(parts):
+        current /= part
+        is_leaf = index == len(parts) - 1
+        current, current_stat = _lstat(
+            current, allow_missing=allow_missing_leaf and is_leaf
+        )
+        if current_stat is None:
+            break
+        if stat.S_ISLNK(current_stat.st_mode):
+            raise UnsafeFilesystemPathError(f"Refusing symbolic link: {current}")
+        if not is_leaf and not stat.S_ISDIR(current_stat.st_mode):
+            raise UnsafeFilesystemPathError(
+                f"Refusing non-directory ancestor: {current}"
+            )
+        if is_leaf:
+            valid = (
+                stat.S_ISREG(current_stat.st_mode)
+                if expected == "file"
+                else stat.S_ISDIR(current_stat.st_mode)
+            )
+            if not valid:
+                noun = "file" if expected == "file" else "directory"
+                raise UnsafeFilesystemPathError(
+                    f"Refusing non-regular {noun}: {current}"
+                )
+
+    real_root = root.resolve(strict=True)
+    real_parent = candidate.parent.resolve(strict=True)
+    try:
+        real_parent.relative_to(real_root)
+    except ValueError as error:
+        raise UnsafeFilesystemPathError(
+            f"Path parent escapes configured docs root {root}: {candidate}"
+        ) from error
+    return candidate
+
+
+def _read_regular_bytes(path):
+    path = _require_regular_file(path)
+    flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0)
+    descriptor = os.open(path, flags)
+    try:
+        if not stat.S_ISREG(os.fstat(descriptor).st_mode):
+            raise UnsafeFilesystemPathError(f"Refusing non-regular file: {path}")
+        with os.fdopen(descriptor, "rb", closefd=False) as stream:
+            return stream.read()
+    finally:
+        os.close(descriptor)
+
+
+def _read_regular_text(path, *, encoding="utf-8"):
+    return _read_regular_bytes(path).decode(encoding)
+
+
+def _atomic_write_text(path, content, *, docs_root=None, encoding="utf-8"):
+    if docs_root is None:
+        destination = _require_regular_file(path, allow_missing=True)
+        _require_regular_directory(destination.parent)
+    else:
+        destination = _validate_path_under_root(
+            docs_root, path, allow_missing_leaf=True, expected="file"
+        )
+
+    parent_stat = destination.parent.lstat()
+    directory_flags = os.O_RDONLY | getattr(os, "O_DIRECTORY", 0) | getattr(os, "O_NOFOLLOW", 0)
+    parent_descriptor = os.open(destination.parent, directory_flags)
+    temporary_name = f".{destination.name}.{os.getpid()}.{secrets.token_hex(12)}"
+    descriptor = -1
+    try:
+        opened_parent_stat = os.fstat(parent_descriptor)
+        if (opened_parent_stat.st_dev, opened_parent_stat.st_ino) != (
+            parent_stat.st_dev,
+            parent_stat.st_ino,
+        ):
+            raise UnsafeFilesystemPathError(
+                f"Destination parent changed during validation: {destination.parent}"
+            )
+
+        existing_mode = 0o644
+        try:
+            destination_stat = os.stat(
+                destination.name, dir_fd=parent_descriptor, follow_symlinks=False
+            )
+        except FileNotFoundError:
+            destination_stat = None
+        if destination_stat is not None:
+            if stat.S_ISLNK(destination_stat.st_mode):
+                raise UnsafeFilesystemPathError(f"Refusing symbolic link: {destination}")
+            if not stat.S_ISREG(destination_stat.st_mode):
+                raise UnsafeFilesystemPathError(
+                    f"Refusing non-regular file: {destination}"
+                )
+            existing_mode = stat.S_IMODE(destination_stat.st_mode)
+
+        descriptor = os.open(
+            temporary_name,
+            os.O_WRONLY | os.O_CREAT | os.O_EXCL | getattr(os, "O_NOFOLLOW", 0),
+            existing_mode,
+            dir_fd=parent_descriptor,
+        )
+        os.fchmod(descriptor, existing_mode)
+        with os.fdopen(descriptor, "w", encoding=encoding) as stream:
+            descriptor = -1
+            stream.write(content)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(
+            temporary_name,
+            destination.name,
+            src_dir_fd=parent_descriptor,
+            dst_dir_fd=parent_descriptor,
+        )
+    finally:
+        if descriptor >= 0:
+            os.close(descriptor)
+        try:
+            os.unlink(temporary_name, dir_fd=parent_descriptor)
+        except FileNotFoundError:
+            pass
+        os.close(parent_descriptor)
+
+
+def _safe_unlink(path, docs_root):
+    target = _validate_path_under_root(docs_root, path, expected="file")
+    parent_stat = target.parent.lstat()
+    directory_flags = os.O_RDONLY | getattr(os, "O_DIRECTORY", 0) | getattr(os, "O_NOFOLLOW", 0)
+    parent_descriptor = os.open(target.parent, directory_flags)
+    try:
+        opened_parent_stat = os.fstat(parent_descriptor)
+        if (opened_parent_stat.st_dev, opened_parent_stat.st_ino) != (
+            parent_stat.st_dev,
+            parent_stat.st_ino,
+        ):
+            raise UnsafeFilesystemPathError(
+                f"Artifact parent changed during validation: {target.parent}"
+            )
+        target_stat = os.stat(
+            target.name, dir_fd=parent_descriptor, follow_symlinks=False
+        )
+        if stat.S_ISLNK(target_stat.st_mode):
+            raise UnsafeFilesystemPathError(f"Refusing symbolic link: {target}")
+        if not stat.S_ISREG(target_stat.st_mode):
+            raise UnsafeFilesystemPathError(f"Refusing non-regular file: {target}")
+        os.unlink(target.name, dir_fd=parent_descriptor)
+    finally:
+        os.close(parent_descriptor)
 SIDEBAR_ORDER_STATE_SOURCE = "netdata/docs/.map/map.yaml"
 SIDEBAR_ORDER_STATE_KEYS = {
     "schema_version",
@@ -362,13 +610,13 @@ def load_map_sidebar_order(map_path):
 
 def _source_corpus_sha256(docs_root):
     """Hash the non-generated corpus that a grid recovery is allowed to use."""
-    docs_root = Path(docs_root)
+    docs_root = _validate_docs_tree(docs_root)
     digest = hashlib.sha256()
     for path in sorted(candidate for candidate in docs_root.rglob("*") if candidate.is_file()):
         if _is_generated_grid_page(path) or _is_generated_category_file(path):
             continue
         relative = path.relative_to(docs_root).as_posix().encode("utf-8")
-        content = path.read_bytes()
+        content = _read_regular_bytes(path)
         digest.update(len(relative).to_bytes(8, "big"))
         digest.update(relative)
         digest.update(len(content).to_bytes(8, "big"))
@@ -380,7 +628,8 @@ def write_sidebar_order_state(
     order_map, map_path, docs_root, state_path=SIDEBAR_ORDER_STATE_PATH
 ):
     """Persist the exact full-ingest identity needed by offline grid recovery."""
-    source_bytes = Path(map_path).read_bytes()
+    _validate_docs_tree(docs_root)
+    source_bytes = _read_regular_bytes(map_path)
     entries = [
         {
             "parent_path": parent_path,
@@ -399,8 +648,10 @@ def write_sidebar_order_state(
         "order": entries,
     }
     payload["full_ingest_identity_sha256"] = _sidebar_state_identity(payload)
-    Path(state_path).write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    _atomic_write_text(
+        state_path,
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
     )
 
 
@@ -417,7 +668,7 @@ def _sidebar_state_identity(payload):
 
 def load_sidebar_order_state(state_path=SIDEBAR_ORDER_STATE_PATH, docs_root=None):
     """Load and validate the committed order used by grid-only recovery."""
-    payload = json.loads(Path(state_path).read_text(encoding="utf-8"))
+    payload = json.loads(_read_regular_text(state_path, encoding="utf-8"))
     if (
         not isinstance(payload, dict)
         or set(payload) != SIDEBAR_ORDER_STATE_KEYS
@@ -489,8 +740,8 @@ def _generated_category_payload(label, position):
 
 def _is_generated_category_file(path):
     try:
-        payload = json.loads(Path(path).read_text(encoding="utf-8"))
-    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        payload = json.loads(_read_regular_text(path, encoding="utf-8"))
+    except (FileNotFoundError, UnicodeDecodeError, json.JSONDecodeError):
         return False
     custom_props = payload.get("customProps") if isinstance(payload, dict) else None
     return (
@@ -505,6 +756,7 @@ def ensure_category_json_for_dirs(docs_root):
     - if <dir>/<basename(dir)>.mdx exists => treat as category overview; do nothing
     - else create or overwrite _category_.json using map-derived sibling order
     """
+    docs_root = _validate_docs_tree(docs_root)
     for dirpath, dirnames, filenames in os.walk(docs_root):
         abs_dir = os.path.abspath(dirpath)
         abs_root = os.path.abspath(docs_root)
@@ -518,13 +770,13 @@ def ensure_category_json_for_dirs(docs_root):
 
         if os.path.exists(os.path.join(dirpath, f"{base}.mdx")):
             if _is_generated_category_file(category_json):
-                Path(category_json).unlink()
+                _safe_unlink(category_json, docs_root)
             continue
 
         mdx_files = [f for f in filenames if f.lower().endswith(".mdx")]
         if not mdx_files:
             if _is_generated_category_file(category_json):
-                Path(category_json).unlink()
+                _safe_unlink(category_json, docs_root)
             continue
 
         rel_parts = Path(dirpath).relative_to(Path(docs_root)).parts
@@ -545,13 +797,12 @@ def ensure_category_json_for_dirs(docs_root):
 
         payload = _generated_category_payload(base, cat_pos)
 
-        try:
-            with open(category_json, "w", encoding="utf-8") as f:
-                json.dump(payload, f, ensure_ascii=False, indent=2)
-                f.write("\n")
-        except OSError as e:
-            print(f"WARNING: Failed to write category JSON '{category_json}': {e}")
-            continue
+        _atomic_write_text(
+            category_json,
+            json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+            docs_root=docs_root,
+            encoding="utf-8",
+        )
 
         print(f"CREATE {category_json} with position={cat_pos} label='{base}'")
 
@@ -559,7 +810,7 @@ def ensure_category_json_for_dirs(docs_root):
 def _read_sidebar_label(path_to_file):
     """Read sidebar_label from frontmatter; fallback to file stem."""
     try:
-        content = Path(path_to_file).read_text(encoding="utf-8")
+        content = _read_regular_text(path_to_file, encoding="utf-8")
     except OSError:
         return Path(path_to_file).stem
 
@@ -569,37 +820,42 @@ def _read_sidebar_label(path_to_file):
     return Path(path_to_file).stem
 
 
-def _set_sidebar_position(path_to_file, sidebar_position):
+def _set_sidebar_position(path_to_file, sidebar_position, docs_root):
     """Upsert sidebar_position in frontmatter."""
     path_obj = Path(path_to_file)
-    content = path_obj.read_text(encoding="utf-8")
+    content = _read_regular_text(path_obj, encoding="utf-8")
 
     if POS_RE.search(content):
         updated = POS_RE.sub(
             f'sidebar_position: "{sidebar_position}"', content, count=1
         )
-        path_obj.write_text(updated, encoding="utf-8")
+        _atomic_write_text(path_obj, updated, docs_root=docs_root, encoding="utf-8")
         return
 
     lines = content.splitlines()
     if lines and lines[0].strip() == "---":
         lines.insert(1, f'sidebar_position: "{sidebar_position}"')
-        path_obj.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        _atomic_write_text(
+            path_obj, "\n".join(lines) + "\n", docs_root=docs_root, encoding="utf-8"
+        )
 
 
-def _set_category_position(path_to_file, label, sidebar_position):
+def _set_category_position(path_to_file, label, sidebar_position, docs_root):
     """Upsert position in _category_.json preserving label."""
     path_obj = Path(path_to_file)
     try:
-        payload = json.loads(path_obj.read_text(encoding="utf-8"))
+        payload = json.loads(_read_regular_text(path_obj, encoding="utf-8"))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError):
         payload = {}
     if not isinstance(payload, dict):
         payload = {}
     payload["label"] = label
     payload["position"] = sidebar_position
-    path_obj.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    _atomic_write_text(
+        path_obj,
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        docs_root=docs_root,
+        encoding="utf-8",
     )
 
 
@@ -610,6 +866,7 @@ def normalize_sidebar_positions_by_parent(docs_root):
     ordering for injected/unknown siblings.
     """
 
+    docs_root = _validate_docs_tree(docs_root)
     for dirpath, dirnames, filenames in os.walk(docs_root):
         rel_parts = Path(dirpath).relative_to(Path(docs_root)).parts
         parent_key = "/".join(rel_parts) if rel_parts else "root"
@@ -655,7 +912,9 @@ def normalize_sidebar_positions_by_parent(docs_root):
                 )
             elif category_json.exists():
                 try:
-                    payload = json.loads(category_json.read_text(encoding="utf-8"))
+                    payload = json.loads(
+                        _read_regular_text(category_json, encoding="utf-8")
+                    )
                     label = str(payload.get("label") or child_dir)
                 except Exception:
                     label = child_dir
@@ -698,10 +957,10 @@ def normalize_sidebar_positions_by_parent(docs_root):
 
             if item.get("kind") == "category":
                 _set_category_position(
-                    item["path"], item["display_label"], position_value
+                    item["path"], item["display_label"], position_value, docs_root
                 )
             else:
-                _set_sidebar_position(item["path"], position_value)
+                _set_sidebar_position(item["path"], position_value, docs_root)
 
 
 def clean_and_lower_string(string):
@@ -2222,11 +2481,11 @@ def _fix_mermaid_diagram_contrast_in_text(text):
 
 
 def fix_mermaid_diagram_contrast(docs_prefix):
+    docs_prefix = _validate_docs_tree(docs_prefix)
     for path in glob.glob(f"{docs_prefix}/**/*.mdx", recursive=True):
         try:
-            with open(path, "r", encoding="utf-8") as fh:
-                original = fh.read()
-        except OSError:
+            original = _read_regular_text(path, encoding="utf-8")
+        except (FileNotFoundError, UnicodeDecodeError):
             continue
 
         if "```mermaid" not in original:
@@ -2236,8 +2495,9 @@ def fix_mermaid_diagram_contrast(docs_prefix):
         if not changes:
             continue
 
-        with open(path, "w", encoding="utf-8") as fh:
-            fh.write(new_text)
+        _atomic_write_text(
+            path, new_text, docs_root=docs_prefix, encoding="utf-8"
+        )
 
         MERMAID_CONTRAST_SUMMARY["fixed"] += len(changes)
         for keyword, target, old_fill, old_color, ratio in changes:
@@ -2871,10 +3131,19 @@ def sort_files(file_array):
     community_integrations = []
 
     for file in file_array:
-        if Path(file).is_file():
+        file_path, file_stat = _lstat(file, allow_missing=True)
+        if file_stat is not None:
+            if stat.S_ISLNK(file_stat.st_mode):
+                raise UnsafeFilesystemPathError(f"Refusing symbolic link: {file_path}")
+            if stat.S_ISDIR(file_stat.st_mode):
+                continue
+            if not stat.S_ISREG(file_stat.st_mode):
+                raise UnsafeFilesystemPathError(
+                    f"Refusing non-regular file: {file_path}"
+                )
             # [filename, filepath, banner message, banner color]
             try:
-                content = Path(file).read_text(encoding="utf-8")
+                content = _read_regular_text(file_path, encoding="utf-8")
             except (UnicodeDecodeError, OSError):
                 # Skip files that cannot be decoded or read
                 continue
@@ -2901,8 +3170,8 @@ GRID_PAGE_SIZE = 175
 
 def _is_generated_grid_page(path):
     try:
-        content = Path(path).read_text(encoding="utf-8")
-    except (OSError, UnicodeDecodeError):
+        content = _read_regular_text(path, encoding="utf-8")
+    except (FileNotFoundError, UnicodeDecodeError):
         return False
     if not content.startswith("---\n"):
         return False
@@ -2982,7 +3251,7 @@ import {{ Grid, Box, GridPagination }} from '@site/src/components/Grid_integrati
 
 
 def get_dir_make_file_and_recurse(
-    directory, overwrite_generated=False, docs_root=None
+    directory, overwrite_generated=False, docs_root=None, _filesystem_validated=False
 ):
     """
     Recursively process a directory to generate integration grid pages.
@@ -2996,8 +3265,11 @@ def get_dir_make_file_and_recurse(
       direct files are non-integrations
     - No existing overview file exists for this directory
     """
-    directory = Path(directory)
-    docs_root = Path(docs_root) if docs_root is not None else directory
+    directory = _absolute_path(directory)
+    docs_root = _absolute_path(docs_root) if docs_root is not None else directory
+    if not _filesystem_validated:
+        _validate_docs_tree(docs_root)
+    _validate_path_under_root(docs_root, directory, expected="directory")
     dir_name = os.path.dirname(directory)
     file_name = directory.name
     filename = str(Path(dir_name) / file_name / f"{file_name}.mdx")
@@ -3048,76 +3320,75 @@ def get_dir_make_file_and_recurse(
             file = file_array_entry[1]
             message = file_array_entry[2]
             color = file_array_entry[3]
-            if Path(file).is_file():
+            file_path = _require_regular_file(file)
+            try:
+                whole_file = _read_regular_text(file_path, encoding="utf-8")
+            except (UnicodeDecodeError, OSError) as e:
+                print(f"Skipping file {file} due to read/decode error: {e}")
+                continue
+
+            if Path(file) == Path(filename) or _is_generated_grid_page(file):
+                continue
+
+            direct_child = Path(file).parent == Path(directory)
+
+            if INTEGRATION_MARKER in whole_file:
+                if direct_child:
+                    direct_integrations += 1
+
+                meta_dict = read_metadata(whole_file)
+
+                # A sole published integration is content, not a generated grid.
+                if direct_child and direct_integrations == 1:
+                    is_published = meta_dict.get("learn_status") == "Published"
+                    has_custom_url = "custom_edit_url" in meta_dict
+                    if is_published or has_custom_url:
+                        direct_files = list(Path(directory).glob("*.mdx"))
+                        if (
+                            len(direct_files) == 1
+                            and direct_files[0].stem == Path(directory).name
+                        ):
+                            has_published_single_content = True
+
                 try:
-                    whole_file = Path(file).read_text(encoding="utf-8")
-                except (UnicodeDecodeError, OSError) as e:
-                    print(f"Skipping file {file} due to read/decode error: {e}")
-                    continue
+                    logo_match = re.search(
+                        r'<img\s+[^>]*src="https?:\/\/(?:www\.)?netdata\.cloud\/img[^\"]*"[^>]*\/?>',
+                        whole_file,
+                    )
+                    if not logo_match:
+                        raise ValueError("No integration logo image found")
 
-                if Path(file) == Path(filename) or _is_generated_grid_page(file):
-                    continue
-
-                direct_child = Path(file).parent == Path(directory)
-
-                if INTEGRATION_MARKER in whole_file:
-                    if direct_child:
-                        direct_integrations += 1
-
-                    meta_dict = read_metadata(whole_file)
-
-                    # Check if this is a single published integration that should be treated as content (not grid)
-                    if direct_child and direct_integrations == 1:
-                        is_published = meta_dict.get("learn_status") == "Published"
-                        has_custom_url = "custom_edit_url" in meta_dict
-                        if is_published or has_custom_url:
-                            # Count total direct files to check if this is the only one
-                            direct_files = list(Path(directory).glob("*.mdx"))
-                            if (
-                                len(direct_files) == 1
-                                and direct_files[0].stem == Path(directory).name
-                            ):
-                                has_published_single_content = True
-
-                    try:
-                        logo_match = re.search(
-                            r'<img\s+[^>]*src="https?:\/\/(?:www\.)?netdata\.cloud\/img[^\"]*"[^>]*\/?>',
-                            whole_file,
+                    img = (
+                        logo_match.group(0)
+                        .replace(
+                            'width="150"',
+                            "style={{width: '90%', maxHeight: '100%', verticalAlign: 'middle' }}",
                         )
-                        if not logo_match:
-                            raise ValueError("No integration logo image found")
+                        .replace("<img", "<img custom-image")
+                    )
+                    img = _set_html_attr(img, "alt", "")
+                except ValueError:
+                    img = ""
 
-                        img = (
-                            logo_match.group(0)
-                            .replace(
-                                'width="150"',
-                                "style={{width: '90%', maxHeight: '100%', verticalAlign: 'middle' }}",
-                            )
-                            .replace("<img", "<img custom-image")
-                        )
-                        img = _set_html_attr(img, "alt", "")
-                    except ValueError:
-                        img = ""
-
-                    try:
-                        box_to = meta_dict["learn_link"].replace(
-                            "https://learn.netdata.cloud", ""
-                        )
-                        box_title = meta_dict["sidebar_label"]
-                        cards.append(f"""
+                try:
+                    box_to = meta_dict["learn_link"].replace(
+                        "https://learn.netdata.cloud", ""
+                    )
+                    box_title = meta_dict["sidebar_label"]
+                    cards.append(f"""
 <Box banner="{message}" banner_color="{color}" to="{box_to}" title="{box_title}">
     {img}
 </Box>
 """.strip())
-                        integrations += 1
-                    except KeyError as e:
-                        print(
-                            f"Missing key {e} in grid generation logic for file {file}"
-                        )
-                        continue
-                else:
-                    if direct_child:
-                        direct_non_integrations += 1
+                    integrations += 1
+                except KeyError as e:
+                    print(
+                        f"Missing key {e} in grid generation logic for file {file}"
+                    )
+                    continue
+            else:
+                if direct_child:
+                    direct_non_integrations += 1
         # Create grid page if:
         # - Has integrations AND
         # - Integrations dominate (or all are in subdirs) AND
@@ -3172,10 +3443,10 @@ def get_dir_make_file_and_recurse(
 
         if overwrite_generated:
             for stale_path in _owned_grid_family(directory):
-                stale_path.unlink()
+                _safe_unlink(stale_path, docs_root)
 
         if should_create_grid:
-            Path(filename).parent.mkdir(parents=True, exist_ok=True)
+            _validate_path_under_root(docs_root, Path(filename).parent, expected="directory")
             context = " / ".join(relative_parts[-2:]) or sidebar_label
             description = (
                 f"Browse Netdata integrations for {context} and open the setup "
@@ -3184,7 +3455,8 @@ def get_dir_make_file_and_recurse(
             for page_number, output_path in enumerate(output_paths, start=1):
                 start = (page_number - 1) * GRID_PAGE_SIZE
                 page_cards = cards[start : start + GRID_PAGE_SIZE]
-                output_path.write_text(
+                _atomic_write_text(
+                    output_path,
                     _render_grid_page(
                         sidebar_label,
                         sidebar_position,
@@ -3195,12 +3467,16 @@ def get_dir_make_file_and_recurse(
                         page_number,
                         page_count,
                     ),
+                    docs_root=docs_root,
                     encoding="utf-8",
                 )
 
         for subdir in sorted(Path(directory).glob("*/")):
             get_dir_make_file_and_recurse(
-                subdir, overwrite_generated, docs_root=docs_root
+                subdir,
+                overwrite_generated,
+                docs_root=docs_root,
+                _filesystem_validated=True,
             )
 
 
@@ -3208,9 +3484,15 @@ def reconcile_generated_outputs(
     docs_root, netlify_path="netlify.toml", static_path="static.toml"
 ):
     """Run the shared generated-output reconciliation and finalization path."""
-    docs_root = Path(docs_root)
+    docs_root = _validate_docs_tree(docs_root)
+    if netlify_path is not None:
+        _require_regular_file(netlify_path)
+        _require_regular_file(static_path)
     get_dir_make_file_and_recurse(
-        docs_root, overwrite_generated=True, docs_root=docs_root
+        docs_root,
+        overwrite_generated=True,
+        docs_root=docs_root,
+        _filesystem_validated=True,
     )
     ensure_category_json_for_dirs(docs_root)
     normalize_sidebar_positions_by_parent(docs_root)

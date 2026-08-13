@@ -3,9 +3,11 @@
   "source_sow": "SOW-0017",
   "implementation_plan": [
     "Replace the client-only root redirect and add the missing blog heading, then validate rendered metadata, headings, sitemap membership, and lastmod coverage.",
+    "Keep sitemap exclusion separate from robots indexability, emit zero noindex directives across every rendered HTML route, and restore all public libnetdata references to the sitemap.",
     "Persist upstream sidebar ordering with exact source and corpus provenance, then make full ingest and grid-only recovery use one reconciliation and finalization path.",
     "Paginate every generated integration grid above the 175-card page capacity, emit every card exactly once, and safely reconcile grid creation, removal, and page-count transitions.",
     "Treat only explicit generated_grid_page ownership markers as authority to overwrite or delete a grid artifact; never infer ownership from status or component imports.",
+    "Reject symbolic links, non-regular files, and paths whose real ancestors escape the configured docs root before any recovery read, hash, write, replacement, or deletion.",
     "Replace random installer control IDs with React useId and prove uniqueness, label binding, repeatable SSR, and hydration stability.",
     "Expand the rendered-link gate to same-host HTTP links and terminal-wildcard redirect sources, then pin parser boundaries with mutations.",
     "Run all Learn and exact-source tests, two byte-identical production builds, rendered audits, provenance checks, and repository hygiene checks."
@@ -22,7 +24,12 @@
     {
       "id": "root-and-blog-rendering",
       "contract": "The root route is a useful server-rendered landing page with accurate metadata and exactly one H1, remains sitemap-eligible, and the functional blog page has exactly one H1 while remaining sitemap-excluded.",
-      "acceptance": "The sitemap contains 1969 URLs with lastmod on every URL; the root and blog render one H1 each."
+      "acceptance": "The sitemap contains 1980 URLs with lastmod on every URL; the root and blog render one H1 each."
+    },
+    {
+      "id": "zero-noindex-sitemap-separation",
+      "contract": "Public routes never emit a noindex robots directive. Sitemap exclusion is a separate discovery choice: blog, search, and the canonical ask-netdata replacement route remain excluded, while all 11 self-canonical libnetdata references remain included and indexable.",
+      "acceptance": "Every rendered HTML file contains zero noindex directives; all 11 libnetdata routes occur exactly once in the sitemap; blog, search, and ask-netdata remain absent from it."
     },
     {
       "id": "grid-recovery-equivalence",
@@ -38,6 +45,11 @@
       "id": "grid-state-provenance",
       "contract": "Offline recovery loads an exact-schema state written by full ingest, validates its canonical full-ingest identity, and validates both the upstream map identity and the non-generated source-corpus identity before changing files.",
       "acceptance": "Missing, malformed, duplicate, or source-corpus-drifted state fails closed; the current full-ingest state validates and recovers all owned grid artifacts."
+    },
+    {
+      "id": "recovery-filesystem-boundary",
+      "contract": "Grid recovery treats the configured docs root as a hard filesystem boundary. Every input and artifact path must have non-symlink ancestors under the real root and must be an expected regular file or absent leaf before it is read, hashed, written, replaced, or deleted.",
+      "acceptance": "Dangling and existing leaf symlinks, symlinked directories, non-regular files, category artifacts, state inputs, and source-corpus entries fail before any external target or corpus artifact changes."
     },
     {
       "id": "deterministic-install-control-ids",

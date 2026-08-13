@@ -1,18 +1,7 @@
-const NON_INDEXABLE_ROUTES = new Set([
+const SITEMAP_EXCLUDED_ROUTES = new Set([
 	'/blog',
 	'/search',
 	'/docs/ask-netdata',
-	'/docs/developer-and-contributor-corner/libnetdata',
-	'/docs/developer-and-contributor-corner/libnetdata/avl',
-	'/docs/developer-and-contributor-corner/libnetdata/buffer-library',
-	'/docs/developer-and-contributor-corner/libnetdata/circular-buffer',
-	'/docs/developer-and-contributor-corner/libnetdata/clocks',
-	'/docs/developer-and-contributor-corner/libnetdata/json',
-	'/docs/developer-and-contributor-corner/libnetdata/socket',
-	'/docs/developer-and-contributor-corner/libnetdata/statistical-functions',
-	'/docs/developer-and-contributor-corner/libnetdata/storage-number',
-	'/docs/developer-and-contributor-corner/libnetdata/threads',
-	'/docs/developer-and-contributor-corner/libnetdata/url',
 ]);
 
 function normalizeRoutePath(routePath) {
@@ -24,12 +13,12 @@ function normalizeRoutePath(routePath) {
 	return pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
 }
 
-function isIndexableRoute(routePath) {
-	return !NON_INDEXABLE_ROUTES.has(normalizeRoutePath(routePath));
+function isSitemapIncludedRoute(routePath) {
+	return !SITEMAP_EXCLUDED_ROUTES.has(normalizeRoutePath(routePath));
 }
 
 module.exports = {
-	NON_INDEXABLE_ROUTES,
-	isIndexableRoute,
+	SITEMAP_EXCLUDED_ROUTES,
+	isSitemapIncludedRoute,
 	normalizeRoutePath,
 };

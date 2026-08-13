@@ -6,7 +6,7 @@
 		"docusaurus": "docusaurus",
 		"start": "docusaurus start",
 		"build": "docusaurus build",
-		"build:netlify": "node scripts/verify-git-history.js && node scripts/verify-indexnow-vendor.js && docusaurus build && node scripts/verify-rendered-titles.js && node scripts/verify-functional-headings.js && node scripts/verify-rendered-links.js",
+		"build:netlify": "node scripts/verify-git-history.js && node scripts/verify-indexnow-vendor.js && docusaurus build && node scripts/verify-rendered-titles.js && node scripts/verify-functional-headings.js && node scripts/verify-rendered-links.js && node scripts/verify-rendered-indexability.js",
 		"swizzle": "docusaurus swizzle",
 		"deploy": "docusaurus deploy",
 		"clear": "docusaurus clear",
