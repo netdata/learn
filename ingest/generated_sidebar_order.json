@@ -2,6 +2,7 @@
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
   "source_sha256": "e97076d47ae359350aea3c92a36223602c91f9a1d98ce1ea4dbdb39ea962b421",
+  "source_corpus_sha256": "e1a3197b8972bb01e5ba7c8bc19d786da31dc96dea209dd8eecc6f158a60b535",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -1713,5 +1714,6 @@
       "child_name": "Developer and Contributor Corner",
       "position": 170
     }
-  ]
+  ],
+  "full_ingest_identity_sha256": "18548fe3f43402f01df554d7f8b351425aee4db240ea253a5f3153da1dfbc779"
 }

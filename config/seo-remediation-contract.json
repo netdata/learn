@@ -3,7 +3,9 @@
   "source_sow": "SOW-0017",
   "implementation_plan": [
     "Replace the client-only root redirect and add the missing blog heading, then validate rendered metadata, headings, sitemap membership, and lastmod coverage.",
-    "Persist upstream sidebar ordering and make grid-only recovery run the same relevant finalizers as full ingest, then prove full-corpus byte equivalence.",
+    "Persist upstream sidebar ordering with exact source and corpus provenance, then make full ingest and grid-only recovery use one reconciliation and finalization path.",
+    "Paginate every generated integration grid above the 175-card page capacity, emit every card exactly once, and safely reconcile grid creation, removal, and page-count transitions.",
+    "Treat only explicit generated_grid_page ownership markers as authority to overwrite or delete a grid artifact; never infer ownership from status or component imports.",
     "Replace random installer control IDs with React useId and prove uniqueness, label binding, repeatable SSR, and hydration stability.",
     "Expand the rendered-link gate to same-host HTTP links and terminal-wildcard redirect sources, then pin parser boundaries with mutations.",
     "Run all Learn and exact-source tests, two byte-identical production builds, rendered audits, provenance checks, and repository hygiene checks."
@@ -20,12 +22,22 @@
     {
       "id": "root-and-blog-rendering",
       "contract": "The root route is a useful server-rendered landing page with accurate metadata and exactly one H1, remains sitemap-eligible, and the functional blog page has exactly one H1 while remaining sitemap-excluded.",
-      "acceptance": "The sitemap contains 1968 URLs with lastmod on every URL; the root and blog render one H1 each."
+      "acceptance": "The sitemap contains 1969 URLs with lastmod on every URL; the root and blog render one H1 each."
     },
     {
       "id": "grid-recovery-equivalence",
-      "contract": "Grid-only recovery loads the committed map ordering and runs the same applicable finalizers as full ingest.",
-      "acceptance": "Grid-only recovery is byte-equivalent for all generated grid files to the grid subset from a full ingest using identical inputs, and repeated recovery is a fixed point."
+      "contract": "Full ingest and grid-only recovery use one reconciliation and finalization path. The path removes stale owned grids and pagination pages, reconciles generated category metadata, cleans redirects after generated routes exist, normalizes ordering, and applies content finalizers.",
+      "acceptance": "Grid-only recovery is byte-equivalent to a clean full-ingest grid subset for identical inputs across no-op, source removal, eligibility changes, pagination shrink and growth, overview/category transitions, redirect shadows, and recoverable grid corruption. Repeated recovery is a fixed point."
+    },
+    {
+      "id": "grid-completeness-and-ownership",
+      "contract": "A generated grid page holds at most 175 cards and every integration card appears on exactly one page. Overwrite and deletion authority requires generated_grid_page: true in front matter.",
+      "acceptance": "Boundary tests cover 0, 1, 175, 176, 400, and 401 cards; the real 179-card Device Metrics grid is complete; authored no-marker files survive every reconciliation mutation."
+    },
+    {
+      "id": "grid-state-provenance",
+      "contract": "Offline recovery loads an exact-schema state written by full ingest, validates its canonical full-ingest identity, and validates both the upstream map identity and the non-generated source-corpus identity before changing files.",
+      "acceptance": "Missing, malformed, duplicate, or source-corpus-drifted state fails closed; the current full-ingest state validates and recovers all owned grid artifacts."
     },
     {
       "id": "deterministic-install-control-ids",

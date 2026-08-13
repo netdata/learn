@@ -118,6 +118,17 @@ MAP_SCHEMA_EXIT_CODE = 2
 SIDEBAR_ORDER_STATE_PATH = Path(__file__).resolve().with_name(
     "generated_sidebar_order.json"
 )
+SIDEBAR_ORDER_STATE_SOURCE = "netdata/docs/.map/map.yaml"
+SIDEBAR_ORDER_STATE_KEYS = {
+    "schema_version",
+    "source",
+    "source_sha256",
+    "source_corpus_sha256",
+    "full_ingest_identity_sha256",
+    "order",
+}
+SIDEBAR_ORDER_ENTRY_KEYS = {"parent_path", "child_name", "position"}
+GENERATED_CATEGORY_OWNER = "netdata-learn-ingest"
 
 LOGO_ANALYSIS_TIMEOUT = 8
 LOGO_RASTER_SAMPLE_SIZE = 64
@@ -349,10 +360,26 @@ def load_map_sidebar_order(map_path):
     return order, doc_scope
 
 
+def _source_corpus_sha256(docs_root):
+    """Hash the non-generated corpus that a grid recovery is allowed to use."""
+    docs_root = Path(docs_root)
+    digest = hashlib.sha256()
+    for path in sorted(candidate for candidate in docs_root.rglob("*") if candidate.is_file()):
+        if _is_generated_grid_page(path) or _is_generated_category_file(path):
+            continue
+        relative = path.relative_to(docs_root).as_posix().encode("utf-8")
+        content = path.read_bytes()
+        digest.update(len(relative).to_bytes(8, "big"))
+        digest.update(relative)
+        digest.update(len(content).to_bytes(8, "big"))
+        digest.update(content)
+    return digest.hexdigest()
+
+
 def write_sidebar_order_state(
-    order_map, map_path, state_path=SIDEBAR_ORDER_STATE_PATH
+    order_map, map_path, docs_root, state_path=SIDEBAR_ORDER_STATE_PATH
 ):
-    """Persist the upstream map order needed by offline grid recovery."""
+    """Persist the exact full-ingest identity needed by offline grid recovery."""
     source_bytes = Path(map_path).read_bytes()
     entries = [
         {
@@ -366,24 +393,56 @@ def write_sidebar_order_state(
     ]
     payload = {
         "schema_version": 1,
-        "source": "netdata/docs/.map/map.yaml",
+        "source": SIDEBAR_ORDER_STATE_SOURCE,
         "source_sha256": hashlib.sha256(source_bytes).hexdigest(),
+        "source_corpus_sha256": _source_corpus_sha256(docs_root),
         "order": entries,
     }
+    payload["full_ingest_identity_sha256"] = _sidebar_state_identity(payload)
     Path(state_path).write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
 
-def load_sidebar_order_state(state_path=SIDEBAR_ORDER_STATE_PATH):
+def _sidebar_state_identity(payload):
+    identity_payload = {
+        key: payload[key]
+        for key in sorted(SIDEBAR_ORDER_STATE_KEYS - {"full_ingest_identity_sha256"})
+    }
+    canonical = json.dumps(
+        identity_payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest()
+
+
+def load_sidebar_order_state(state_path=SIDEBAR_ORDER_STATE_PATH, docs_root=None):
     """Load and validate the committed order used by grid-only recovery."""
     payload = json.loads(Path(state_path).read_text(encoding="utf-8"))
-    if payload.get("schema_version") != 1 or not isinstance(payload.get("order"), list):
+    if (
+        not isinstance(payload, dict)
+        or set(payload) != SIDEBAR_ORDER_STATE_KEYS
+        or payload.get("schema_version") != 1
+        or payload.get("source") != SIDEBAR_ORDER_STATE_SOURCE
+        or not isinstance(payload.get("order"), list)
+        or re.fullmatch(r"[0-9a-f]{64}", payload.get("source_sha256", "")) is None
+        or re.fullmatch(
+            r"[0-9a-f]{64}", payload.get("source_corpus_sha256", "")
+        )
+        is None
+        or re.fullmatch(
+            r"[0-9a-f]{64}", payload.get("full_ingest_identity_sha256", "")
+        )
+        is None
+    ):
         raise ValueError(f"Invalid generated sidebar order state: {state_path}")
 
+    if payload["full_ingest_identity_sha256"] != _sidebar_state_identity(payload):
+        raise ValueError(f"Invalid full-ingest identity in {state_path}")
+
     order = {}
+    positions_by_parent = {}
     for entry in payload["order"]:
-        if not isinstance(entry, dict):
+        if not isinstance(entry, dict) or set(entry) != SIDEBAR_ORDER_ENTRY_KEYS:
             raise ValueError(f"Invalid sidebar order entry in {state_path}")
         parent_path = entry.get("parent_path")
         child_name = entry.get("child_name")
@@ -393,16 +452,51 @@ def load_sidebar_order_state(state_path=SIDEBAR_ORDER_STATE_PATH):
             or not parent_path
             or not isinstance(child_name, str)
             or not child_name
-            or not isinstance(position, int)
+            or type(position) is not int
             or position <= 0
         ):
             raise ValueError(f"Invalid sidebar order entry in {state_path}: {entry}")
         key = (parent_path, child_name)
         if key in order:
             raise ValueError(f"Duplicate sidebar order entry in {state_path}: {key}")
+        parent_positions = positions_by_parent.setdefault(parent_path, set())
+        if position in parent_positions:
+            raise ValueError(
+                f"Duplicate sidebar order position in {state_path}: "
+                f"{parent_path} position {position}"
+            )
+        parent_positions.add(position)
         order[key] = position
 
+    if docs_root is not None:
+        actual_corpus_sha256 = _source_corpus_sha256(docs_root)
+        if actual_corpus_sha256 != payload["source_corpus_sha256"]:
+            raise ValueError(
+                "Generated sidebar order state does not match the current source "
+                f"corpus: {state_path}"
+            )
+
     return order
+
+
+def _generated_category_payload(label, position):
+    return {
+        "label": label,
+        "position": position,
+        "customProps": {"generated_by": GENERATED_CATEGORY_OWNER},
+    }
+
+
+def _is_generated_category_file(path):
+    try:
+        payload = json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return False
+    custom_props = payload.get("customProps") if isinstance(payload, dict) else None
+    return (
+        isinstance(custom_props, dict)
+        and custom_props.get("generated_by") == GENERATED_CATEGORY_OWNER
+    )
 
 
 def ensure_category_json_for_dirs(docs_root):
@@ -423,11 +517,14 @@ def ensure_category_json_for_dirs(docs_root):
         category_json = os.path.join(dirpath, "_category_.json")
 
         if os.path.exists(os.path.join(dirpath, f"{base}.mdx")):
+            if _is_generated_category_file(category_json):
+                Path(category_json).unlink()
             continue
 
         mdx_files = [f for f in filenames if f.lower().endswith(".mdx")]
         if not mdx_files:
-            # Do not create category files for stale empty directories.
+            if _is_generated_category_file(category_json):
+                Path(category_json).unlink()
             continue
 
         rel_parts = Path(dirpath).relative_to(Path(docs_root)).parts
@@ -441,7 +538,12 @@ def ensure_category_json_for_dirs(docs_root):
             # Fallback: use alphabetical-last bucket for unmapped categories
             cat_pos = 9999
 
-        payload = {"label": base, "position": cat_pos}
+        if os.path.exists(category_json) and not _is_generated_category_file(
+            category_json
+        ):
+            continue
+
+        payload = _generated_category_payload(base, cat_pos)
 
         try:
             with open(category_json, "w", encoding="utf-8") as f:
@@ -488,7 +590,14 @@ def _set_sidebar_position(path_to_file, sidebar_position):
 def _set_category_position(path_to_file, label, sidebar_position):
     """Upsert position in _category_.json preserving label."""
     path_obj = Path(path_to_file)
-    payload = {"label": label, "position": sidebar_position}
+    try:
+        payload = json.loads(path_obj.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        payload = {}
+    if not isinstance(payload, dict):
+        payload = {}
+    payload["label"] = label
+    payload["position"] = sidebar_position
     path_obj.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
@@ -514,6 +623,10 @@ def normalize_sidebar_positions_by_parent(docs_root):
 
             file_path = Path(dirpath) / fn
             if rel_parts and file_path.stem == rel_parts[-1]:
+                continue
+            # Pagination artifacts are linked by GridPagination and deliberately
+            # hidden from the sidebar. They must not consume sibling positions.
+            if _is_generated_grid_page(file_path):
                 continue
 
             label = _read_sidebar_label(file_path)
@@ -2784,8 +2897,6 @@ def sort_files(file_array):
 
 
 GRID_PAGE_SIZE = 175
-GRID_PAGINATION_THRESHOLD = 400
-GENERATED_GRID_PAGE_MARKER = 'generated_grid_page: true'
 
 
 def _is_generated_grid_page(path):
@@ -2793,28 +2904,48 @@ def _is_generated_grid_page(path):
         content = Path(path).read_text(encoding="utf-8")
     except (OSError, UnicodeDecodeError):
         return False
+    if not content.startswith("---\n"):
+        return False
+    end = content.find("\n---", 4)
+    if end < 0:
+        return False
+    try:
+        front_matter = yaml.safe_load(content[4:end]) or {}
+    except yaml.YAMLError:
+        return False
     return (
-        'learn_status: "AUTOGENERATED"' in content
-        and "@site/src/components/Grid_integrations" in content
+        isinstance(front_matter, dict)
+        and front_matter.get("generated_grid_page") is True
     )
 
 
 def _grid_page_count(card_count):
-    if card_count <= GRID_PAGINATION_THRESHOLD:
-        return 1
+    if card_count <= 0:
+        return 0
     return (card_count + GRID_PAGE_SIZE - 1) // GRID_PAGE_SIZE
+
+
+def _owned_grid_family(directory):
+    """Return only explicitly owned overview and pagination artifacts."""
+    directory = Path(directory)
+    base = directory.name
+    candidates = [directory / f"{base}.mdx"]
+    candidates.extend(sorted(directory.glob(f"{base} Page *.mdx")))
+    return [path for path in candidates if _is_generated_grid_page(path)]
 
 
 def _render_grid_page(
     sidebar_label,
     sidebar_position,
     slug_path,
+    context,
     description,
     cards,
     page_number,
     page_count,
 ):
     page_suffix = "" if page_number == 1 else f" (page {page_number})"
+    paginated_title = sidebar_label if page_number == 1 else f"{context} (page {page_number})"
     page_slug = slug_path if page_number == 1 else f"{slug_path}/page/{page_number}"
     hidden_sidebar = "" if page_number == 1 else 'sidebar_class_name: "generated-pagination-page"'
     position = sidebar_position if page_number == 1 else ""
@@ -2827,6 +2958,7 @@ def _render_grid_page(
 
     return f'''---
 sidebar_label: "{sidebar_label}{page_suffix}"
+title: "{paginated_title}"
 {position}
 {hidden_sidebar}
 hide_table_of_contents: true
@@ -2923,7 +3055,7 @@ def get_dir_make_file_and_recurse(
                     print(f"Skipping file {file} due to read/decode error: {e}")
                     continue
 
-                if Path(file) == Path(filename) or GENERATED_GRID_PAGE_MARKER in whole_file:
+                if Path(file) == Path(filename) or _is_generated_grid_page(file):
                     continue
 
                 direct_child = Path(file).parent == Path(directory)
@@ -3015,6 +3147,33 @@ def get_dir_make_file_and_recurse(
                 or has_nested_integrations_with_direct_docs
             )
         )
+        page_count = _grid_page_count(len(cards)) if should_create_grid else 0
+        output_paths = [
+            (
+                Path(filename)
+                if page_number == 1
+                else Path(filename).with_name(
+                    f"{Path(filename).stem} Page {page_number}.mdx"
+                )
+            )
+            for page_number in range(1, page_count + 1)
+        ]
+        conflicts = [
+            path
+            for path in output_paths
+            if path.exists() and not _is_generated_grid_page(path)
+        ]
+        if conflicts:
+            conflict_list = ", ".join(str(path) for path in conflicts)
+            raise RuntimeError(
+                "Refusing to overwrite non-generated grid artifacts: "
+                f"{conflict_list}"
+            )
+
+        if overwrite_generated:
+            for stale_path in _owned_grid_family(directory):
+                stale_path.unlink()
+
         if should_create_grid:
             Path(filename).parent.mkdir(parents=True, exist_ok=True)
             context = " / ".join(relative_parts[-2:]) or sidebar_label
@@ -3022,27 +3181,15 @@ def get_dir_make_file_and_recurse(
                 f"Browse Netdata integrations for {context} and open the setup "
                 "documentation for each supported technology."
             )
-            page_count = _grid_page_count(len(cards))
-            for stale_path in Path(filename).parent.glob(
-                f"{Path(filename).stem} Page *.mdx"
-            ):
-                if _is_generated_grid_page(stale_path):
-                    stale_path.unlink()
-            for page_number in range(1, page_count + 1):
+            for page_number, output_path in enumerate(output_paths, start=1):
                 start = (page_number - 1) * GRID_PAGE_SIZE
                 page_cards = cards[start : start + GRID_PAGE_SIZE]
-                output_path = (
-                    Path(filename)
-                    if page_number == 1
-                    else Path(filename).with_name(
-                        f"{Path(filename).stem} Page {page_number}.mdx"
-                    )
-                )
                 output_path.write_text(
                     _render_grid_page(
                         sidebar_label,
                         sidebar_position,
                         slug_path,
+                        context,
                         description,
                         page_cards,
                         page_number,
@@ -3057,21 +3204,43 @@ def get_dir_make_file_and_recurse(
             )
 
 
-def regenerate_grids_only(
-    docs_root, state_path=SIDEBAR_ORDER_STATE_PATH
+def reconcile_generated_outputs(
+    docs_root, netlify_path="netlify.toml", static_path="static.toml"
 ):
-    """Rebuild generated grids using the same state and finalizers as full ingest."""
-    sidebar_order = load_sidebar_order_state(state_path)
-    MAP_SIDEBAR_ORDER.clear()
-    MAP_SIDEBAR_ORDER.update(sidebar_order)
-    MAP_DOC_SCOPE.clear()
-
+    """Run the shared generated-output reconciliation and finalization path."""
+    docs_root = Path(docs_root)
     get_dir_make_file_and_recurse(
         docs_root, overwrite_generated=True, docs_root=docs_root
     )
     ensure_category_json_for_dirs(docs_root)
     normalize_sidebar_positions_by_parent(docs_root)
     fix_mermaid_diagram_contrast(docs_root)
+
+    if netlify_path is not None:
+        redirects = genRedirects.clean_redirects(
+            genRedirects.readRedirectsFromFile(netlify_path),
+            genRedirects.discover_current_routes(docs_root),
+        )
+        genRedirects.write_netlify_config(
+            redirects, output_path=netlify_path, static_path=static_path
+        )
+
+
+def regenerate_grids_only(
+    docs_root,
+    state_path=SIDEBAR_ORDER_STATE_PATH,
+    netlify_path="netlify.toml",
+    static_path="static.toml",
+):
+    """Recover generated outputs from a validated full-ingest identity."""
+    sidebar_order = load_sidebar_order_state(state_path, docs_root=docs_root)
+    MAP_SIDEBAR_ORDER.clear()
+    MAP_SIDEBAR_ORDER.update(sidebar_order)
+    MAP_DOC_SCOPE.clear()
+
+    reconcile_generated_outputs(
+        docs_root, netlify_path=netlify_path, static_path=static_path
+    )
 
 
 if __name__ == "__main__":
@@ -3397,7 +3566,6 @@ if __name__ == "__main__":
     MAP_SIDEBAR_ORDER.update(map_sidebar_order)
     MAP_DOC_SCOPE.clear()
     MAP_DOC_SCOPE.update(map_doc_scope)
-    write_sidebar_order_state(map_sidebar_order, "map.yaml")
 
     # We fetch the markdown files from the repositories
     all_markdown_files = fetch_markdown_from_repo(TEMP_FOLDER)
@@ -3629,25 +3797,10 @@ if __name__ == "__main__":
         )
 
     unsafe_cleanup_folders(TEMP_FOLDER)
+
+    reconcile_generated_outputs(DOCS_PREFIX)
+    write_sidebar_order_state(map_sidebar_order, "map.yaml", DOCS_PREFIX)
     os.remove("map.yaml")
-
-    # check if we need integration grid
-    get_dir_make_file_and_recurse(f"./{DOCS_PREFIX}")
-    # Generated grid routes are not present in the upstream mapping, so apply the
-    # live-route redirect guard again after their routes exist.
-    genRedirects.write_netlify_config(
-        genRedirects.clean_redirects(
-            genRedirects.readRedirectsFromFile("netlify.toml"),
-            genRedirects.discover_current_routes(DOCS_PREFIX),
-        )
-    )
-    # After needed grid pages are made, check if there are leftover dirs without overview pages
-    ensure_category_json_for_dirs(DOCS_PREFIX)
-    # Normalize sibling sidebar positions (docs + _category_.json) to avoid UI ordering collisions
-    normalize_sidebar_positions_by_parent(DOCS_PREFIX)
-
-    # Auto-remediate unreadable Mermaid classDef/style color pairs (contrast gate)
-    fix_mermaid_diagram_contrast(DOCS_PREFIX)
     if MERMAID_CONTRAST_SUMMARY["scanned"] > 0:
         print("\n### Mermaid diagram contrast analysis ###")
         print(f"Scanned color pairs: {MERMAID_CONTRAST_SUMMARY['scanned']}")

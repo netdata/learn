@@ -1,4 +1,6 @@
 import hashlib
+import json
+import re
 import shutil
 import tempfile
 import unittest
@@ -8,10 +10,210 @@ import ingest
 
 
 class SeoGridGenerationTests(unittest.TestCase):
-    def test_only_oversized_indexes_are_paginated(self):
-        self.assertEqual(ingest._grid_page_count(400), 1)
-        self.assertEqual(ingest._grid_page_count(401), 3)
-        self.assertEqual(ingest._grid_page_count(807), 5)
+    @classmethod
+    def setUpClass(cls):
+        cls.repository_root = Path(__file__).resolve().parents[1]
+        cls.source_docs = cls.repository_root / "docs"
+        payload = json.loads(ingest.SIDEBAR_ORDER_STATE_PATH.read_text(encoding="utf-8"))
+        cls.sidebar_order = {
+            (entry["parent_path"], entry["child_name"]): entry["position"]
+            for entry in payload["order"]
+        }
+
+    def setUp(self):
+        ingest.MAP_SIDEBAR_ORDER.clear()
+        ingest.MAP_SIDEBAR_ORDER.update(self.sidebar_order)
+        ingest.MAP_DOC_SCOPE.clear()
+
+    def _snapshot(self, root):
+        return {
+            path.relative_to(root).as_posix(): hashlib.sha256(
+                path.read_bytes()
+            ).hexdigest()
+            for path in sorted(Path(root).rglob("*"))
+            if path.is_file()
+        }
+
+    def _generated_grids(self, root):
+        return [
+            path
+            for path in sorted(Path(root).rglob("*.mdx"))
+            if ingest._is_generated_grid_page(path)
+        ]
+
+    def _strip_owned_outputs(self, root):
+        for path in self._generated_grids(root):
+            path.unlink()
+        for path in sorted(Path(root).rglob("_category_.json")):
+            if ingest._is_generated_category_file(path):
+                path.unlink()
+
+    def _integration_files(self, root, relative_directory):
+        directory = Path(root) / relative_directory
+        return [
+            path
+            for path in sorted(directory.rglob("*.mdx"))
+            if not ingest._is_generated_grid_page(path)
+            and ingest.INTEGRATION_MARKER in path.read_text(encoding="utf-8")
+        ]
+
+    def _copy_integration(self, source, target, ordinal):
+        text = Path(source).read_text(encoding="utf-8")
+        text = re.sub(
+            r'(?m)^sidebar_label: ".*"$',
+            f'sidebar_label: "Recovery integration {ordinal}"',
+            text,
+            count=1,
+        )
+        text = re.sub(
+            r'(?m)^learn_link: ".*"$',
+            f'learn_link: "https://learn.netdata.cloud/docs/recovery-{ordinal}"',
+            text,
+            count=1,
+        )
+        text = re.sub(
+            r'(?m)^slug: ".*"$',
+            f'slug: "/recovery-{ordinal}"',
+            text,
+            count=1,
+        )
+        Path(target).write_text(text, encoding="utf-8")
+
+    def _write_tiny_integration(self, target, ordinal):
+        Path(target).write_text(
+            "---\n"
+            f'sidebar_label: "Synthetic {ordinal:04d}"\n'
+            f'learn_link: "https://learn.netdata.cloud/docs/synthetic-{ordinal}"\n'
+            f'slug: "/synthetic-{ordinal}"\n'
+            "---\n"
+            f"{ingest.INTEGRATION_MARKER}\n",
+            encoding="utf-8",
+        )
+
+    def _redirect_fixture(self, root):
+        static_path = Path(root) / "static.toml"
+        netlify_path = Path(root) / "netlify.toml"
+        static_path.write_text(
+            "# section: static << START\n[build]\n  publish=\"build\"\n"
+            "# section: static << END\n",
+            encoding="utf-8",
+        )
+        netlify_path.write_text(
+            static_path.read_text(encoding="utf-8")
+            + "\n# section: dynamic << START\n"
+            + "[[redirects]]\n  from=\"/docs/transition\"\n  to=\"/docs/current\"\n"
+            + "# section: dynamic << END\n",
+            encoding="utf-8",
+        )
+        return netlify_path, static_path
+
+    def _write_state(self, docs_root, state_path, fixture_root):
+        map_path = Path(fixture_root) / "map.yaml"
+        map_path.write_text("sidebar: []\n", encoding="utf-8")
+        ingest.write_sidebar_order_state(
+            self.sidebar_order, map_path, docs_root, state_path=state_path
+        )
+
+    def _copy_owned_outputs(self, source, target):
+        for path in self._generated_grids(source):
+            destination = Path(target) / path.relative_to(source)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(path, destination)
+        for path in sorted(Path(source).rglob("_category_.json")):
+            if ingest._is_generated_category_file(path):
+                destination = Path(target) / path.relative_to(source)
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(path, destination)
+
+    def _assert_recovery_matches_clean_full(
+        self, mutate_sources, mutate_recovery=None
+    ):
+        with tempfile.TemporaryDirectory() as directory:
+            fixture_root = Path(directory)
+            clean_docs = fixture_root / "clean" / "docs"
+            recovery_docs = fixture_root / "recovery" / "docs"
+            shutil.copytree(self.source_docs, clean_docs)
+            self._strip_owned_outputs(clean_docs)
+            mutate_sources(clean_docs)
+
+            clean_netlify, clean_static = self._redirect_fixture(
+                fixture_root / "clean"
+            )
+            ingest.MAP_SIDEBAR_ORDER.clear()
+            ingest.MAP_SIDEBAR_ORDER.update(self.sidebar_order)
+            ingest.reconcile_generated_outputs(
+                clean_docs,
+                netlify_path=clean_netlify,
+                static_path=clean_static,
+            )
+
+            shutil.copytree(clean_docs, recovery_docs)
+            self._strip_owned_outputs(recovery_docs)
+            self._copy_owned_outputs(self.source_docs, recovery_docs)
+            if mutate_recovery is not None:
+                mutate_recovery(recovery_docs)
+
+            recovery_netlify, recovery_static = self._redirect_fixture(
+                fixture_root / "recovery"
+            )
+            state_path = fixture_root / "state.json"
+            self._write_state(clean_docs, state_path, fixture_root)
+            ingest.regenerate_grids_only(
+                recovery_docs,
+                state_path=state_path,
+                netlify_path=recovery_netlify,
+                static_path=recovery_static,
+            )
+
+            self.assertEqual(self._snapshot(recovery_docs), self._snapshot(clean_docs))
+            self.assertEqual(
+                recovery_netlify.read_bytes(), clean_netlify.read_bytes()
+            )
+            first = self._snapshot(recovery_docs)
+            self._write_state(recovery_docs, state_path, fixture_root)
+            ingest.regenerate_grids_only(
+                recovery_docs,
+                state_path=state_path,
+                netlify_path=recovery_netlify,
+                static_path=recovery_static,
+            )
+            self.assertEqual(self._snapshot(recovery_docs), first)
+
+    def test_page_count_covers_every_capacity_boundary(self):
+        expected = {0: 0, 1: 1, 175: 1, 176: 2, 400: 3, 401: 3}
+        self.assertEqual(
+            {count: ingest._grid_page_count(count) for count in expected},
+            expected,
+        )
+
+        for card_count, expected_pages in expected.items():
+            with (
+                self.subTest(card_count=card_count),
+                tempfile.TemporaryDirectory() as directory,
+            ):
+                docs_root = Path(directory) / "docs"
+                target = docs_root / "Synthetic"
+                target.mkdir(parents=True)
+                for ordinal in range(card_count):
+                    self._write_tiny_integration(
+                        target / f"Synthetic {ordinal:04d}.mdx", ordinal
+                    )
+
+                ingest.get_dir_make_file_and_recurse(
+                    docs_root, overwrite_generated=True, docs_root=docs_root
+                )
+                pages = self._generated_grids(target)
+                self.assertEqual(len(pages), expected_pages)
+                titles = []
+                for page in pages:
+                    titles.extend(
+                        re.findall(
+                            r'<Box [^>]*title="(Synthetic \d{4})">',
+                            page.read_text(encoding="utf-8"),
+                        )
+                    )
+                self.assertEqual(len(titles), card_count)
+                self.assertEqual(len(set(titles)), card_count)
 
     def test_set_html_attr_replaces_existing_value_without_duplicates(self):
         tag = '<img src="logo.svg" alt="old"/>'
@@ -26,6 +228,7 @@ class SeoGridGenerationTests(unittest.TestCase):
                 "Collectors",
                 'sidebar_position: "10"',
                 "collecting-metrics/collectors",
+                "Collectors",
                 "Browse Netdata collectors.",
                 [f"<Box>{page_number}</Box>"],
                 page_number,
@@ -36,56 +239,311 @@ class SeoGridGenerationTests(unittest.TestCase):
 
         self.assertIn('slug: "/collecting-metrics/collectors"', pages[0])
         self.assertIn('slug: "/collecting-metrics/collectors/page/2"', pages[1])
+        self.assertIn('title: "Collectors (page 2)"', pages[1])
         self.assertIn("# Collectors (page 3)", pages[2])
         self.assertIn("Page 2 of 3", pages[1])
         for page_number, page in enumerate(pages, start=1):
             self.assertIn(
-                f'currentPage={{{page_number}}} pageCount={{3}}',
+                f"currentPage={{{page_number}}} pageCount={{3}}",
                 page,
             )
 
-    def test_generated_grid_detection_rejects_authored_content(self):
+        device_page = ingest._render_grid_page(
+            "Integrations",
+            "",
+            "network-performance-monitoring/device-metrics/integrations",
+            "Device Metrics / Integrations",
+            "Browse integrations.",
+            ["<Box />"],
+            2,
+            2,
+        )
+        trap_page = ingest._render_grid_page(
+            "Integrations",
+            "",
+            "network-performance-monitoring/snmp-traps/integrations",
+            "SNMP Traps / Integrations",
+            "Browse integrations.",
+            ["<Box />"],
+            2,
+            5,
+        )
+        self.assertIn('title: "Device Metrics / Integrations (page 2)"', device_page)
+        self.assertIn('title: "SNMP Traps / Integrations (page 2)"', trap_page)
+
+    def test_generated_grid_ownership_requires_explicit_frontmatter_marker(self):
         with tempfile.TemporaryDirectory() as directory:
             generated = Path(directory) / "generated.mdx"
             generated.write_text(
+                "---\ngenerated_grid_page: true\n---\n# Generated\n",
+                encoding="utf-8",
+            )
+            heuristic_only = Path(directory) / "heuristic.mdx"
+            heuristic_only.write_text(
                 'learn_status: "AUTOGENERATED"\n'
                 "import { Grid } from '@site/src/components/Grid_integrations';\n",
                 encoding="utf-8",
             )
-            authored = Path(directory) / "authored.mdx"
-            authored.write_text("# Authored\n", encoding="utf-8")
+            marker_in_body = Path(directory) / "body.mdx"
+            marker_in_body.write_text(
+                "# Authored\n\n`generated_grid_page: true`\n",
+                encoding="utf-8",
+            )
             self.assertTrue(ingest._is_generated_grid_page(generated))
-            self.assertFalse(ingest._is_generated_grid_page(authored))
+            self.assertFalse(ingest._is_generated_grid_page(heuristic_only))
+            self.assertFalse(ingest._is_generated_grid_page(marker_in_body))
 
-    def test_grid_only_recovery_is_a_full_corpus_fixed_point(self):
-        repository_root = Path(__file__).resolve().parents[1]
-        source_docs = repository_root / "docs"
-
+    def test_reconciliation_refuses_to_overwrite_authored_pagination_page(self):
         with tempfile.TemporaryDirectory() as directory:
             docs_root = Path(directory) / "docs"
-            shutil.copytree(source_docs, docs_root)
+            target = docs_root / "Synthetic"
+            target.mkdir(parents=True)
+            for ordinal in range(176):
+                self._write_tiny_integration(
+                    target / f"Synthetic {ordinal:04d}.mdx", ordinal
+                )
+            authored_page = target / "Synthetic Page 2.mdx"
+            authored_bytes = b"---\nslug: /authored-page\n---\n# Authored page\n"
+            authored_page.write_bytes(authored_bytes)
 
-            def snapshot():
-                return {
-                    path.relative_to(docs_root).as_posix(): hashlib.sha256(
-                        path.read_bytes()
-                    ).hexdigest()
-                    for path in sorted(docs_root.rglob("*"))
-                    if path.is_file()
-                }
+            with self.assertRaisesRegex(RuntimeError, "Refusing to overwrite"):
+                ingest.get_dir_make_file_and_recurse(
+                    docs_root, overwrite_generated=True, docs_root=docs_root
+                )
+            self.assertEqual(authored_page.read_bytes(), authored_bytes)
+            self.assertFalse((target / "Synthetic.mdx").exists())
 
-            generated_grids = [
+    def test_category_reconciliation_never_deletes_authored_metadata(self):
+        with tempfile.TemporaryDirectory() as directory:
+            docs_root = Path(directory) / "docs"
+            target = docs_root / "Curated"
+            target.mkdir(parents=True)
+            (target / "Note.mdx").write_text("# Note\n", encoding="utf-8")
+            category = target / "_category_.json"
+            authored_bytes = b'{"label":"Curated","position":7}\n'
+            category.write_bytes(authored_bytes)
+
+            ingest.ensure_category_json_for_dirs(docs_root)
+            self.assertEqual(category.read_bytes(), authored_bytes)
+            (target / "Curated.mdx").write_text("# Curated\n", encoding="utf-8")
+            ingest.ensure_category_json_for_dirs(docs_root)
+            self.assertEqual(category.read_bytes(), authored_bytes)
+
+    def test_current_corpus_is_a_complete_fixed_point(self):
+        generated_grids = self._generated_grids(self.source_docs)
+        self.assertEqual(len(generated_grids), 33)
+
+        ingest.load_sidebar_order_state(
+            ingest.SIDEBAR_ORDER_STATE_PATH, docs_root=self.source_docs
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            docs_root = Path(directory) / "docs"
+            shutil.copytree(self.source_docs, docs_root)
+            state_path = Path(directory) / "state.json"
+            self._write_state(docs_root, state_path, directory)
+            expected = self._snapshot(docs_root)
+            ingest.regenerate_grids_only(
+                docs_root, state_path=state_path, netlify_path=None
+            )
+            self.assertEqual(self._snapshot(docs_root), expected)
+
+    def test_real_device_metrics_grid_contains_every_integration_once(self):
+        relative = Path(
+            "Network Performance Monitoring/Device Metrics/Integrations"
+        )
+        integration_count = len(self._integration_files(self.source_docs, relative))
+        pages = [
+            path
+            for path in self._generated_grids(self.source_docs / relative)
+            if path.stem == "Integrations" or path.stem.startswith("Integrations Page ")
+        ]
+        cards = sum(
+            path.read_text(encoding="utf-8").count("<Box ") for path in pages
+        )
+        self.assertEqual(integration_count, 179)
+        self.assertEqual(len(pages), 2)
+        self.assertEqual(cards, integration_count)
+
+    def test_recovery_removes_grid_after_last_integration_is_removed(self):
+        relative = Path(
+            "Network Performance Monitoring/Syslog from Network Devices/Integrations"
+        )
+
+        def mutate(root):
+            integrations = self._integration_files(root, relative)
+            self.assertEqual(len(integrations), 1)
+            integrations[0].unlink()
+
+        self._assert_recovery_matches_clean_full(mutate)
+
+    def test_recovery_replaces_disqualified_overview_with_generated_category(self):
+        relative = Path(
+            "Network Performance Monitoring/Syslog from Network Devices/Integrations"
+        )
+
+        def mutate(root):
+            directory = root / relative
+            for ordinal in range(2):
+                (directory / f"Authored {ordinal}.mdx").write_text(
+                    f"---\nsidebar_label: \"Authored {ordinal}\"\n---\n"
+                    f"# Authored {ordinal}\n",
+                    encoding="utf-8",
+                )
+
+        self._assert_recovery_matches_clean_full(mutate)
+
+    def test_recovery_reconciles_pagination_shrink_and_growth(self):
+        relative = Path(
+            "Network Performance Monitoring/Device Metrics/Integrations"
+        )
+
+        def shrink(root):
+            integrations = self._integration_files(root, relative)
+            self.assertEqual(len(integrations), 179)
+            for path in integrations[:5]:
+                path.unlink()
+
+        self._assert_recovery_matches_clean_full(shrink)
+
+        def grow(root):
+            integrations = self._integration_files(root, relative)
+            source = integrations[0]
+            for ordinal in range(172):
+                self._copy_integration(
+                    source,
+                    root / relative / f"Recovery integration {ordinal}.mdx",
+                    ordinal,
+                )
+
+        self._assert_recovery_matches_clean_full(grow)
+
+    def test_recovery_replaces_generated_category_and_cleans_redirect_shadow(self):
+        template = self._integration_files(
+            self.source_docs,
+            Path(
+                "Network Performance Monitoring/Syslog from Network Devices/Integrations"
+            ),
+        )[0]
+
+        def mutate_sources(root):
+            directory = root / "Transition"
+            directory.mkdir()
+            (directory / "Note.mdx").write_text(
+                '---\nsidebar_label: "Note"\n---\n# Note\n', encoding="utf-8"
+            )
+            for ordinal in range(2):
+                self._copy_integration(
+                    template,
+                    directory / f"Recovery integration {ordinal}.mdx",
+                    ordinal,
+                )
+
+        def mutate_recovery(root):
+            directory = root / "Transition"
+            for path in ingest._owned_grid_family(directory):
+                path.unlink()
+            (directory / "_category_.json").write_text(
+                json.dumps(ingest._generated_category_payload("Transition", 10))
+                + "\n",
+                encoding="utf-8",
+            )
+
+        self._assert_recovery_matches_clean_full(
+            mutate_sources, mutate_recovery=mutate_recovery
+        )
+
+    def test_recovery_repairs_corruption_without_overwriting_authored_pages(self):
+        relative = Path(
+            "Network Performance Monitoring/Syslog from Network Devices/Integrations"
+        )
+
+        def mutate_sources(root):
+            authored_dir = root / "Curated"
+            authored_dir.mkdir()
+            authored = authored_dir / "Curated.mdx"
+            authored.write_text(
+                '---\nlearn_status: "AUTOGENERATED"\nslug: "/curated"\n---\n'
+                "# Curated overview\n\nThis prose is intentionally curated.\n\n"
+                "import { Grid } from '@site/src/components/Grid_integrations';\n",
+                encoding="utf-8",
+            )
+            authored_page = authored_dir / "Curated Page 2.mdx"
+            authored_page.write_text(
+                authored.read_text(encoding="utf-8"), encoding="utf-8"
+            )
+            template = self._integration_files(root, relative)[0]
+            self._copy_integration(
+                template, authored_dir / "Recovery integration.mdx", 999
+            )
+
+        def mutate_recovery(root):
+            grid = root / relative / "Integrations.mdx"
+            grid.write_text(
+                grid.read_text(encoding="utf-8") + "\nCORRUPTED\n",
+                encoding="utf-8",
+            )
+
+        self._assert_recovery_matches_clean_full(
+            mutate_sources, mutate_recovery=mutate_recovery
+        )
+
+    def test_sidebar_state_rejects_schema_provenance_and_corpus_drift(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            docs_root = root / "docs"
+            shutil.copytree(self.source_docs, docs_root)
+            state_path = root / "state.json"
+            self._write_state(docs_root, state_path, root)
+            valid = json.loads(state_path.read_text(encoding="utf-8"))
+
+            with self.assertRaises(FileNotFoundError):
+                ingest.load_sidebar_order_state(
+                    root / "missing.json", docs_root=docs_root
+                )
+            malformed_json = root / "malformed.json"
+            malformed_json.write_text("not json", encoding="utf-8")
+            with self.assertRaises(json.JSONDecodeError):
+                ingest.load_sidebar_order_state(
+                    malformed_json, docs_root=docs_root
+                )
+
+            mutations = []
+            missing_hash = json.loads(json.dumps(valid))
+            missing_hash.pop("source_sha256")
+            mutations.append(missing_hash)
+            malformed_hash = json.loads(json.dumps(valid))
+            malformed_hash["source_sha256"] = "bad"
+            mutations.append(malformed_hash)
+            extra_key = json.loads(json.dumps(valid))
+            extra_key["unexpected"] = True
+            mutations.append(extra_key)
+            duplicate_entry = json.loads(json.dumps(valid))
+            duplicate_entry["order"].append(duplicate_entry["order"][0])
+            mutations.append(duplicate_entry)
+            false_position = json.loads(json.dumps(valid))
+            false_position["order"][0]["position"] = True
+            mutations.append(false_position)
+            wrong_identity = json.loads(json.dumps(valid))
+            wrong_identity["full_ingest_identity_sha256"] = "0" * 64
+            mutations.append(wrong_identity)
+
+            for index, payload in enumerate(mutations):
+                candidate = root / f"state-{index}.json"
+                candidate.write_text(json.dumps(payload), encoding="utf-8")
+                with self.assertRaises(ValueError):
+                    ingest.load_sidebar_order_state(candidate, docs_root=docs_root)
+
+            source_file = next(
                 path
                 for path in docs_root.rglob("*.mdx")
-                if ingest._is_generated_grid_page(path)
-            ]
-            self.assertEqual(len(generated_grids), 32)
-
-            expected = snapshot()
-            ingest.regenerate_grids_only(docs_root)
-            self.assertEqual(snapshot(), expected)
-            ingest.regenerate_grids_only(docs_root)
-            self.assertEqual(snapshot(), expected)
+                if not ingest._is_generated_grid_page(path)
+            )
+            source_file.write_text(
+                source_file.read_text(encoding="utf-8") + "\nDRIFT\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(ValueError, "does not match"):
+                ingest.load_sidebar_order_state(state_path, docs_root=docs_root)
 
 
 if __name__ == "__main__":
