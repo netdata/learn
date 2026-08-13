@@ -10,13 +10,13 @@ describe('SEO indexability configuration', () => {
   });
 
   it('excludes functional and libnetdata stub routes', () => {
-    expect(isIndexableRoute('/')).toBe(false);
     expect(isIndexableRoute('/blog/')).toBe(false);
     expect(isIndexableRoute('/search')).toBe(false);
     expect(isIndexableRoute('/docs/developer-and-contributor-corner/libnetdata/socket')).toBe(false);
   });
 
   it('keeps normal documentation routes indexable', () => {
+    expect(isIndexableRoute('/')).toBe(true);
     expect(isIndexableRoute('/docs/netdata-agent/quickstart-deployment')).toBe(true);
   });
 });

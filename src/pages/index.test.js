@@ -5,17 +5,22 @@ import Home from './index';
 
 describe('Home page', () => {
   describe('rendering', () => {
-    it('should render without crashing', () => {
-      render(<Home />);
-      // The Redirect component is mocked to render a div with data-redirect
-      const redirect = screen.getByTestId('redirect');
-      expect(redirect).toBeInTheDocument();
-    });
-
-    it('should redirect to /docs/ask-nedi', () => {
-      render(<Home />);
-      const redirect = screen.getByTestId('redirect');
-      expect(redirect).toHaveAttribute('data-to', '/docs/ask-nedi');
+    it('renders a useful server-renderable documentation landing page', () => {
+      const {container} = render(<Home />);
+      expect(container.firstChild).toHaveAttribute('data-title', 'Netdata documentation');
+      expect(container.firstChild).toHaveAttribute(
+        'data-description',
+        'Learn how to install, configure, monitor, and troubleshoot systems and applications with Netdata.',
+      );
+      expect(screen.getByRole('heading', {level: 1, name: 'Netdata documentation'}))
+        .toBeInTheDocument();
+      expect(screen.getAllByRole('heading', {level: 1})).toHaveLength(1);
+      expect(screen.getByRole('link', {name: 'Get started with Netdata'}))
+        .toHaveAttribute('href', '/docs/getting-started');
+      expect(screen.getByRole('link', {name: 'Browse collectors and integrations'}))
+        .toHaveAttribute('href', '/docs/collecting-metrics');
+      expect(screen.getByRole('link', {name: 'Ask Nedi about Netdata'}))
+        .toHaveAttribute('href', '/docs/ask-nedi');
     });
   });
 

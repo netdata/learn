@@ -22,21 +22,39 @@ function normalizePathname(value) {
   return pathname || '/';
 }
 
-function exactRedirectSources(netlifyToml) {
-  const sources = new Set();
+function redirectSourceRules(netlifyToml, host = HOST) {
+  const exact = new Set();
+  const terminalWildcards = new Set();
   for (const match of netlifyToml.matchAll(/(?:^|\n)\s*\[\[redirects\]\]([\s\S]*?)(?=(?:\n\s*\[\[)|$)/g)) {
     const from = match[1].match(/(?:^|\n)\s*from\s*=\s*"([^"]+)"/);
     if (!from) continue;
     let source = decodeHtml(from[1]);
     if (source.startsWith('http://') || source.startsWith('https://')) {
       const url = new URL(source);
-      if (url.hostname !== HOST) continue;
+      if (url.hostname !== host) continue;
       source = url.pathname;
     }
-    if (!source.startsWith('/') || /[*:]/.test(source)) continue;
-    sources.add(normalizePathname(source));
+    if (!source.startsWith('/')) continue;
+
+    if (source.endsWith('*') && !/[*:]/.test(source.slice(0, -1))) {
+      terminalWildcards.add(normalizePathname(source.slice(0, -1)));
+    } else if (!/[*:]/.test(source)) {
+      exact.add(normalizePathname(source));
+    }
   }
-  return sources;
+  return {exact, terminalWildcards};
+}
+
+function exactRedirectSources(netlifyToml, host = HOST) {
+  return redirectSourceRules(netlifyToml, host).exact;
+}
+
+function redirectSourceForPath(pathname, rules) {
+  if (rules.exact.has(pathname)) return pathname;
+  for (const prefix of rules.terminalWildcards) {
+    if (pathname.startsWith(prefix)) return `${prefix}*`;
+  }
+  return null;
 }
 
 function routeForFile(publishDir, filename) {
@@ -49,12 +67,14 @@ function routeForFile(publishDir, filename) {
 function renderedInternalLinks(html, sourceRoute, host = HOST) {
   const source = new URL(sourceRoute, `https://${host}/`);
   const links = [];
+  // Docusaurus emits quoted href attributes. Keeping this boundary explicit avoids
+  // pretending this small verifier is a general-purpose HTML parser.
   for (const match of html.matchAll(/<a\b[^>]*\bhref\s*=\s*(?:"([^"]*)"|'([^']*)')[^>]*>/gi)) {
     const href = decodeHtml(match[1] ?? match[2] ?? '').trim();
     if (!href || href.startsWith('#')) continue;
     try {
       const target = new URL(href, source);
-      if (target.protocol !== 'https:' || target.hostname !== host) continue;
+      if (!['http:', 'https:'].includes(target.protocol) || target.hostname !== host) continue;
       links.push({href, pathname: normalizePathname(target.pathname)});
     } catch {
       // Invalid hrefs belong to the broader link checker, not this exact redirect gate.
@@ -64,7 +84,7 @@ function renderedInternalLinks(html, sourceRoute, host = HOST) {
 }
 
 function verifyRenderedLinks(publishDir, netlifyPath, host = HOST) {
-  const redirectSources = exactRedirectSources(fs.readFileSync(netlifyPath, 'utf8'));
+  const redirectRules = redirectSourceRules(fs.readFileSync(netlifyPath, 'utf8'), host);
   const htmlFiles = [];
   const stack = [publishDir];
   while (stack.length) {
@@ -82,8 +102,9 @@ function verifyRenderedLinks(publishDir, netlifyPath, host = HOST) {
     const sourceRoute = routeForFile(publishDir, filename);
     for (const link of renderedInternalLinks(fs.readFileSync(filename, 'utf8'), sourceRoute, host)) {
       internalLinks += 1;
-      if (redirectSources.has(link.pathname)) {
-        violations.push({sourceRoute, href: link.href, redirectSource: link.pathname});
+      const redirectSource = redirectSourceForPath(link.pathname, redirectRules);
+      if (redirectSource) {
+        violations.push({sourceRoute, href: link.href, redirectSource});
       }
     }
   }
@@ -91,9 +112,15 @@ function verifyRenderedLinks(publishDir, netlifyPath, host = HOST) {
     const detail = violations
       .map(({sourceRoute, href, redirectSource}) => `  ${sourceRoute}: ${href} -> ${redirectSource}`)
       .join('\n');
-    throw new Error(`Rendered links target exact redirect sources:\n${detail}`);
+    throw new Error(`Rendered links target redirect sources:\n${detail}`);
   }
-  return {htmlFiles: htmlFiles.length, internalLinks, redirectSources: redirectSources.size};
+  return {
+    htmlFiles: htmlFiles.length,
+    internalLinks,
+    redirectSources: redirectRules.exact.size + redirectRules.terminalWildcards.size,
+    exactRedirectSources: redirectRules.exact.size,
+    wildcardRedirectSources: redirectRules.terminalWildcards.size,
+  };
 }
 
 if (require.main === module) {
@@ -102,7 +129,7 @@ if (require.main === module) {
     const netlifyPath = path.resolve(process.argv[3] || 'netlify.toml');
     const result = verifyRenderedLinks(publishDir, netlifyPath);
     console.log(
-      `Verified ${result.internalLinks} rendered internal links across ${result.htmlFiles} HTML files avoid ${result.redirectSources} exact redirect sources.`,
+      `Verified ${result.internalLinks} rendered internal links across ${result.htmlFiles} HTML files avoid ${result.exactRedirectSources} exact and ${result.wildcardRedirectSources} terminal-wildcard redirect sources.`,
     );
   } catch (error) {
     console.error(`Rendered link verification failed: ${error.message}`);
@@ -113,6 +140,8 @@ if (require.main === module) {
 module.exports = {
   exactRedirectSources,
   normalizePathname,
+  redirectSourceForPath,
+  redirectSourceRules,
   renderedInternalLinks,
   routeForFile,
   verifyRenderedLinks,

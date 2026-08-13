@@ -1,5 +1,4 @@
 const NON_INDEXABLE_ROUTES = new Set([
-	'/',
 	'/blog',
 	'/search',
 	'/docs/ask-netdata',

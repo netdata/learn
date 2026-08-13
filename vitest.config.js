@@ -100,6 +100,7 @@ export default defineConfig({
 
       // Mock theme components (specific paths first)
       { find: '@theme/CodeBlock', replacement: path.resolve(__dirname, './src/__mocks__/@theme/CodeBlock.js') },
+      { find: '@theme/Layout', replacement: path.resolve(__dirname, './src/__mocks__/@theme/Layout.js') },
       { find: '@theme/Heading', replacement: path.resolve(__dirname, './src/__mocks__/@theme/Heading.js') },
       { find: '@theme/MDXContent', replacement: path.resolve(__dirname, './src/__mocks__/@theme/MDXContent.js') },
       { find: '@theme/MDXComponents/Code', replacement: path.resolve(__dirname, './src/__mocks__/@theme/MDXComponents/Code.js') },

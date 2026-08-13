@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useId, useMemo, useState } from "react";
 import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import CodeBlock from "@theme/CodeBlock";
@@ -64,10 +64,8 @@ export function OneLineInstall({
 
   const currentCommand = `${baseCommand}${flags}`;
 
-  const idPrefix = useMemo(
-    () => `oli_${method}_${Math.random().toString(36).slice(2, 8)}`,
-    [method]
-  );
+  const reactId = useId();
+  const idPrefix = `oli_${method}_${reactId.replace(/[^A-Za-z0-9_-]/g, "_")}`;
 
   const privacyLink = useMemo(
     () =>

@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "source_sow": "SOW-0017",
+  "implementation_plan": [
+    "Replace the client-only root redirect and add the missing blog heading, then validate rendered metadata, headings, sitemap membership, and lastmod coverage.",
+    "Persist upstream sidebar ordering and make grid-only recovery run the same relevant finalizers as full ingest, then prove full-corpus byte equivalence.",
+    "Replace random installer control IDs with React useId and prove uniqueness, label binding, repeatable SSR, and hydration stability.",
+    "Expand the rendered-link gate to same-host HTTP links and terminal-wildcard redirect sources, then pin parser boundaries with mutations.",
+    "Run all Learn and exact-source tests, two byte-identical production builds, rendered audits, provenance checks, and repository hygiene checks."
+  ],
+  "excluded_work": [
+    "C8 shared build-gate work",
+    "Cloudflare RUM restoration",
+    "cross-repository IndexNow vendor alignment",
+    "upstream rebase",
+    "push, pull request, or deployment",
+    "macOS execution"
+  ],
+  "accepted_review_corrections": [
+    {
+      "id": "root-and-blog-rendering",
+      "contract": "The root route is a useful server-rendered landing page with accurate metadata and exactly one H1, remains sitemap-eligible, and the functional blog page has exactly one H1 while remaining sitemap-excluded.",
+      "acceptance": "The sitemap contains 1968 URLs with lastmod on every URL; the root and blog render one H1 each."
+    },
+    {
+      "id": "grid-recovery-equivalence",
+      "contract": "Grid-only recovery loads the committed map ordering and runs the same applicable finalizers as full ingest.",
+      "acceptance": "Grid-only recovery is byte-equivalent for all generated grid files to the grid subset from a full ingest using identical inputs, and repeated recovery is a fixed point."
+    },
+    {
+      "id": "deterministic-install-control-ids",
+      "contract": "One-line installer controls use React's server-stable ID mechanism and preserve unique label bindings across repeated instances.",
+      "acceptance": "Repeated same-method instances have unique bound IDs, server rendering is repeatable, and two unchanged production builds are byte-identical."
+    },
+    {
+      "id": "complete-redirect-source-gate",
+      "contract": "The rendered-link gate rejects exact and terminal-wildcard Netlify redirect sources, including same-host HTTP links; unquoted href attributes remain outside the parser because Docusaurus emits quoted attributes.",
+      "acceptance": "Current rendered output has no redirect-source links and regression mutations cover exact, encoded, terminal-wildcard, HTTP, slash, and quoted-attribute boundaries."
+    }
+  ]
+}

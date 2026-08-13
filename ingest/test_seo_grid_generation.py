@@ -1,3 +1,5 @@
+import hashlib
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -54,6 +56,36 @@ class SeoGridGenerationTests(unittest.TestCase):
             authored.write_text("# Authored\n", encoding="utf-8")
             self.assertTrue(ingest._is_generated_grid_page(generated))
             self.assertFalse(ingest._is_generated_grid_page(authored))
+
+    def test_grid_only_recovery_is_a_full_corpus_fixed_point(self):
+        repository_root = Path(__file__).resolve().parents[1]
+        source_docs = repository_root / "docs"
+
+        with tempfile.TemporaryDirectory() as directory:
+            docs_root = Path(directory) / "docs"
+            shutil.copytree(source_docs, docs_root)
+
+            def snapshot():
+                return {
+                    path.relative_to(docs_root).as_posix(): hashlib.sha256(
+                        path.read_bytes()
+                    ).hexdigest()
+                    for path in sorted(docs_root.rglob("*"))
+                    if path.is_file()
+                }
+
+            generated_grids = [
+                path
+                for path in docs_root.rglob("*.mdx")
+                if ingest._is_generated_grid_page(path)
+            ]
+            self.assertEqual(len(generated_grids), 32)
+
+            expected = snapshot()
+            ingest.regenerate_grids_only(docs_root)
+            self.assertEqual(snapshot(), expected)
+            ingest.regenerate_grids_only(docs_root)
+            self.assertEqual(snapshot(), expected)
 
 
 if __name__ == "__main__":

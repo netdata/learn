@@ -3,10 +3,45 @@
 exports[`Home page > snapshots > should match snapshot 1`] = `
 <div>
   <div
-    data-testid="redirect"
-    data-to="/docs/ask-nedi"
+    data-description="Learn how to install, configure, monitor, and troubleshoot systems and applications with Netdata."
+    data-title="Netdata documentation"
   >
-    Redirect to /docs/ask-nedi
+    <main
+      class="container margin-vert--xl"
+    >
+      <h1>
+        Netdata documentation
+      </h1>
+      <p>
+        Find practical guidance for installing Netdata, collecting metrics, and troubleshooting your infrastructure.
+      </p>
+      <ul>
+        <li>
+          <a
+            data-testid="docusaurus-link"
+            href="/docs/getting-started"
+          >
+            Get started with Netdata
+          </a>
+        </li>
+        <li>
+          <a
+            data-testid="docusaurus-link"
+            href="/docs/collecting-metrics"
+          >
+            Browse collectors and integrations
+          </a>
+        </li>
+        <li>
+          <a
+            data-testid="docusaurus-link"
+            href="/docs/ask-nedi"
+          >
+            Ask Nedi about Netdata
+          </a>
+        </li>
+      </ul>
+    </main>
   </div>
 </div>
 `;

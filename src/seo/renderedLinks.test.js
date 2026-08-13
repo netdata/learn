@@ -5,7 +5,12 @@ import {createRequire} from 'node:module';
 import {afterEach, describe, expect, it} from 'vitest';
 
 const require = createRequire(import.meta.url);
-const {exactRedirectSources, verifyRenderedLinks} = require('../../scripts/verify-rendered-links');
+const {
+  exactRedirectSources,
+  redirectSourceRules,
+  renderedInternalLinks,
+  verifyRenderedLinks,
+} = require('../../scripts/verify-rendered-links');
 const temporaryDirectories = [];
 
 async function fixture(html) {
@@ -33,19 +38,40 @@ afterEach(async () => {
 });
 
 describe('rendered redirect-source link verifier', () => {
-  it('reads exact redirect sources and ignores wildcard rules', () => {
+  it('reads exact and terminal-wildcard redirect sources', () => {
     expect(exactRedirectSources('[[redirects]]\nfrom="/old/"\n\n[[redirects]]\nfrom="/x/*"'))
       .toEqual(new Set(['/old/']));
+    expect(
+      redirectSourceRules('[[redirects]]\nfrom="/old/"\n\n[[redirects]]\nfrom="/x/*"'),
+    ).toEqual({exact: new Set(['/old/']), terminalWildcards: new Set(['/x/'])});
   });
 
-  it('accepts canonical, external, fragment, and wildcard-matched links', async () => {
+  it('covers every current terminal-wildcard redirect source', async () => {
+    const netlifyToml = await fs.readFile(
+      path.resolve(import.meta.dirname, '../../netlify.toml'),
+      'utf8',
+    );
+    expect([...redirectSourceRules(netlifyToml).terminalWildcards].sort()).toEqual([
+      '/docs/agent/kr/',
+      '/docs/agent/kr/docs/',
+      '/docs/agent/netdata-cloud/',
+      '/docs/agent/pt/',
+      '/docs/agent/pt/docs/',
+      '/docs/agent/zh/',
+      '/docs/agent/zh/docs/',
+      '/docs/cloud/monitoring/',
+    ]);
+  });
+
+  it('accepts canonical, external, and fragment links', async () => {
     const fixturePaths = await fixture(
       '<a href="/docs/new">new</a><a href="https://example.com/docs/old">external</a>' +
-        '<a href="#local">local</a><a href="/assets/app.js">asset</a>',
+        '<a href="#local">local</a>',
     );
     expect(verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath)).toMatchObject({
       htmlFiles: 1,
-      redirectSources: 1,
+      exactRedirectSources: 1,
+      wildcardRedirectSources: 1,
     });
   });
 
@@ -55,6 +81,29 @@ describe('rendered redirect-source link verifier', () => {
         '<a href="https://learn.netdata.cloud/docs/old/?from=test#part">absolute</a>',
     );
     expect(() => verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath))
-      .toThrow(/Rendered links target exact redirect sources/);
+      .toThrow(/Rendered links target redirect sources/);
+  });
+
+  it('fails on encoded, HTTP, and terminal-wildcard redirect sources', async () => {
+    const fixturePaths = await fixture(
+      '<a href="/docs/%6fld/">encoded exact</a>' +
+        '<a href="http://learn.netdata.cloud/docs/old/">http exact</a>' +
+        '<a href="/assets/app.js?v=1#load">wildcard</a>',
+    );
+    expect(() => verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath))
+      .toThrow(/\/assets\/\*/);
+  });
+
+  it('matches terminal wildcards without matching adjacent path prefixes', async () => {
+    const fixturePaths = await fixture('<a href="/assets-other/app.js">different path</a>');
+    expect(verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath))
+      .toMatchObject({wildcardRedirectSources: 1});
+  });
+
+  it('pins the quoted href boundary used by Docusaurus output', () => {
+    const html = '<a href="/quoted">quoted</a><a href=/unquoted>unquoted</a>';
+    expect(renderedInternalLinks(html, '/docs/source')).toEqual([
+      {href: '/quoted', pathname: '/quoted'},
+    ]);
   });
 });

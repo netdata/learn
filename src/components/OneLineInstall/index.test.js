@@ -1,18 +1,25 @@
 import React from 'react';
-import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
+import {act} from 'react';
+import {hydrateRoot} from 'react-dom/client';
+import {renderToString} from 'react-dom/server';
+import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { OneLineInstall } from './index';
 
+function normalizedIdSnapshot(container) {
+  const clone = container.cloneNode(true);
+  for (const input of clone.querySelectorAll('input[id]')) {
+    const suffix = input.id.split('__').at(-1);
+    const replacement = `stable-control-id__${suffix}`;
+    const label = clone.querySelector(`label[for="${input.id}"]`);
+    input.id = replacement;
+    if (label) label.htmlFor = replacement;
+  }
+  return clone;
+}
+
 describe('OneLineInstall component', () => {
-  // Mock Math.random for consistent snapshot IDs
-  const originalRandom = Math.random;
-  beforeEach(() => {
-    Math.random = vi.fn(() => 0.123456789);
-  });
-  afterEach(() => {
-    Math.random = originalRandom;
-  });
   describe('rendering', () => {
     it('should render without crashing', () => {
       render(<OneLineInstall />);
@@ -32,6 +39,59 @@ describe('OneLineInstall component', () => {
       const codeBlock = screen.getByTestId('code-block');
       expect(codeBlock.textContent).toContain('curl');
       expect(codeBlock.textContent).toContain('get.netdata.cloud/kickstart.sh');
+    });
+
+    it('binds unique selector-safe IDs for repeated instances of the same method', () => {
+      const {container} = render(
+        <>
+          <OneLineInstall method="wget" />
+          <OneLineInstall method="wget" />
+        </>,
+      );
+      const inputs = [...container.querySelectorAll('input[type="checkbox"]')];
+      const ids = inputs.map((input) => input.id);
+
+      expect(inputs).toHaveLength(8);
+      expect(new Set(ids)).toHaveLength(8);
+      for (const id of ids) {
+        expect(id).toMatch(/^[A-Za-z][A-Za-z0-9_-]*$/);
+        expect(container.querySelector(`label[for="${id}"]`)).toBeInTheDocument();
+      }
+    });
+
+    it('renders byte-identical server markup for the same tree', () => {
+      const tree = (
+        <>
+          <OneLineInstall method="wget" />
+          <OneLineInstall method="wget" />
+        </>
+      );
+      expect(renderToString(tree)).toBe(renderToString(tree));
+    });
+
+    it('hydrates server IDs without changing label bindings', async () => {
+      const tree = (
+        <>
+          <OneLineInstall method="wget" />
+          <OneLineInstall method="wget" />
+        </>
+      );
+      const container = document.createElement('div');
+      container.innerHTML = renderToString(tree);
+      const before = [...container.querySelectorAll('input')].map((input) => input.id);
+      let root;
+
+      await act(async () => {
+        root = hydrateRoot(container, tree);
+      });
+
+      const after = [...container.querySelectorAll('input')].map((input) => input.id);
+      expect(after).toEqual(before);
+      for (const id of after) {
+        expect(container.querySelector(`label[for="${id}"]`)).not.toBeNull();
+      }
+
+      await act(async () => root.unmount());
     });
   });
 
@@ -299,12 +359,12 @@ describe('OneLineInstall component', () => {
   describe('snapshots', () => {
     it('should match snapshot with defaults', () => {
       const { container } = render(<OneLineInstall />);
-      expect(container).toMatchSnapshot();
+      expect(normalizedIdSnapshot(container)).toMatchSnapshot();
     });
 
     it('should match snapshot with curl method', () => {
       const { container } = render(<OneLineInstall method="curl" />);
-      expect(container).toMatchSnapshot();
+      expect(normalizedIdSnapshot(container)).toMatchSnapshot();
     });
 
     it('should match snapshot with all flags disabled', () => {
@@ -317,7 +377,7 @@ describe('OneLineInstall component', () => {
           claimTokenPlaceholder="TEST_TOKEN"
         />
       );
-      expect(container).toMatchSnapshot();
+      expect(normalizedIdSnapshot(container)).toMatchSnapshot();
     });
   });
 });

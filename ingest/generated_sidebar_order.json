@@ -1,0 +1,1717 @@
+{
+  "schema_version": 1,
+  "source": "netdata/docs/.map/map.yaml",
+  "source_sha256": "e97076d47ae359350aea3c92a36223602c91f9a1d98ce1ea4dbdb39ea962b421",
+  "order": [
+    {
+      "parent_path": "Alerts & Notifications",
+      "child_name": "Creating Alerts with the Alerts Configuration Manager",
+      "position": 10
+    },
+    {
+      "parent_path": "Alerts & Notifications",
+      "child_name": "Notifications",
+      "position": 20
+    },
+    {
+      "parent_path": "Alerts & Notifications",
+      "child_name": "Alert Configuration Reference",
+      "position": 30
+    },
+    {
+      "parent_path": "Alerts & Notifications",
+      "child_name": "Alert Configuration Ordering",
+      "position": 40
+    },
+    {
+      "parent_path": "Alerts & Notifications",
+      "child_name": "Overriding Stock Alerts",
+      "position": 50
+    },
+    {
+      "parent_path": "Alerts & Notifications",
+      "child_name": "Health API Calls",
+      "position": 60
+    },
+    {
+      "parent_path": "Alerts & Notifications/Notifications",
+      "child_name": "Agent Dispatched Notifications",
+      "position": 10
+    },
+    {
+      "parent_path": "Alerts & Notifications/Notifications",
+      "child_name": "Centralized Cloud Notifications",
+      "position": 20
+    },
+    {
+      "parent_path": "Alerts & Notifications/Notifications/Agent Dispatched Notifications",
+      "child_name": "Agent Notifications Reference",
+      "position": 10
+    },
+    {
+      "parent_path": "Alerts & Notifications/Notifications/Centralized Cloud Notifications",
+      "child_name": "Centralized Cloud Notifications Reference",
+      "position": 10
+    },
+    {
+      "parent_path": "Alerts & Notifications/Notifications/Centralized Cloud Notifications",
+      "child_name": "Manage notification methods",
+      "position": 20
+    },
+    {
+      "parent_path": "Alerts & Notifications/Notifications/Centralized Cloud Notifications",
+      "child_name": "Manage alert notification silencing rules",
+      "position": 30
+    },
+    {
+      "parent_path": "Collecting Metrics",
+      "child_name": "Collectors configuration",
+      "position": 10
+    },
+    {
+      "parent_path": "Collecting Metrics",
+      "child_name": "Service Discovery",
+      "position": 20
+    },
+    {
+      "parent_path": "Collecting Metrics",
+      "child_name": "StatsD",
+      "position": 30
+    },
+    {
+      "parent_path": "Collecting Metrics",
+      "child_name": "Containers and cgroups",
+      "position": 40
+    },
+    {
+      "parent_path": "Collecting Metrics",
+      "child_name": "OpenTelemetry",
+      "position": 50
+    },
+    {
+      "parent_path": "Collecting Metrics",
+      "child_name": "Secrets Management",
+      "position": 60
+    },
+    {
+      "parent_path": "Collecting Metrics",
+      "child_name": "Chart Template Format",
+      "position": 70
+    },
+    {
+      "parent_path": "Collecting Metrics",
+      "child_name": "AWS CloudWatch Profile Format",
+      "position": 80
+    },
+    {
+      "parent_path": "Collecting Metrics",
+      "child_name": "Prometheus Profile Format",
+      "position": 90
+    },
+    {
+      "parent_path": "Collecting Metrics",
+      "child_name": "Prometheus Metric Relabeling",
+      "position": 100
+    },
+    {
+      "parent_path": "Collecting Metrics/OpenTelemetry",
+      "child_name": "OTLP Ingestion",
+      "position": 10
+    },
+    {
+      "parent_path": "Collecting Metrics/OpenTelemetry",
+      "child_name": "Metrics Collection",
+      "position": 20
+    },
+    {
+      "parent_path": "Collecting Metrics/OpenTelemetry",
+      "child_name": "Logs Collection",
+      "position": 30
+    },
+    {
+      "parent_path": "Collecting Metrics/OpenTelemetry",
+      "child_name": "Transformations",
+      "position": 40
+    },
+    {
+      "parent_path": "Collecting Metrics/OpenTelemetry",
+      "child_name": "Logs-to-Metrics",
+      "position": 50
+    },
+    {
+      "parent_path": "Dashboards and Charts",
+      "child_name": "Tabs",
+      "position": 10
+    },
+    {
+      "parent_path": "Dashboards and Charts",
+      "child_name": "Theme",
+      "position": 20
+    },
+    {
+      "parent_path": "Dashboards and Charts",
+      "child_name": "Grafana Plugin",
+      "position": 30
+    },
+    {
+      "parent_path": "Dashboards and Charts",
+      "child_name": "Charts",
+      "position": 40
+    },
+    {
+      "parent_path": "Dashboards and Charts",
+      "child_name": "Expanded Chart Analysis",
+      "position": 50
+    },
+    {
+      "parent_path": "Dashboards and Charts",
+      "child_name": "NIDL Framework",
+      "position": 60
+    },
+    {
+      "parent_path": "Dashboards and Charts",
+      "child_name": "Node Filter",
+      "position": 70
+    },
+    {
+      "parent_path": "Dashboards and Charts",
+      "child_name": "Time Controls",
+      "position": 80
+    },
+    {
+      "parent_path": "Dashboards and Charts/Tabs",
+      "child_name": "Alerts",
+      "position": 10
+    },
+    {
+      "parent_path": "Dashboards and Charts/Tabs",
+      "child_name": "Anomalies",
+      "position": 20
+    },
+    {
+      "parent_path": "Dashboards and Charts/Tabs",
+      "child_name": "Dashboards",
+      "position": 30
+    },
+    {
+      "parent_path": "Dashboards and Charts/Tabs",
+      "child_name": "Events",
+      "position": 40
+    },
+    {
+      "parent_path": "Dashboards and Charts/Tabs",
+      "child_name": "Kubernetes",
+      "position": 50
+    },
+    {
+      "parent_path": "Dashboards and Charts/Tabs",
+      "child_name": "Logs",
+      "position": 60
+    },
+    {
+      "parent_path": "Dashboards and Charts/Tabs",
+      "child_name": "Metrics",
+      "position": 70
+    },
+    {
+      "parent_path": "Dashboards and Charts/Tabs",
+      "child_name": "Nodes",
+      "position": 80
+    },
+    {
+      "parent_path": "Dashboards and Charts/Tabs",
+      "child_name": "Live",
+      "position": 90
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Netdata Support Bundle",
+      "position": 10
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "REST API",
+      "position": 20
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Dynamic Configuration",
+      "position": 30
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Database Engine",
+      "position": 40
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Contributing",
+      "position": 50
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Community code of conduct",
+      "position": 60
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Security Policy",
+      "position": 70
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "External Plugins",
+      "position": 80
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Contribute to the documentation",
+      "position": 90
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Glossary",
+      "position": 100
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "libnetdata",
+      "position": 110
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Running a Local Dashboard through Cloudflare Tunnels",
+      "position": 120
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Redistributed Software",
+      "position": 130
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Health command API tester",
+      "position": 140
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Import, export, and print a snapshot",
+      "position": 150
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Build a custom Dashboard HTML page",
+      "position": 160
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Monitor Nginx or Apache web server log files with Netdata",
+      "position": 170
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Monitor Unbound DNS servers with Netdata",
+      "position": 180
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Monitor a Hadoop cluster with Netdata",
+      "position": 190
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Monitor, troubleshoot, and debug applications with eBPF metrics",
+      "position": 200
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Build the Netdata Agent Yourself",
+      "position": 210
+    },
+    {
+      "parent_path": "Developer and Contributor Corner",
+      "child_name": "Install the Netdata Agent from a Git checkout",
+      "position": 220
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/Build the Netdata Agent Yourself",
+      "child_name": "Package Maintainers",
+      "position": 10
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/Build the Netdata Agent Yourself",
+      "child_name": "Compile from source code",
+      "position": 20
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/Build the Netdata Agent Yourself",
+      "child_name": "External build-system",
+      "position": 30
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/Build the Netdata Agent Yourself",
+      "child_name": "How to build native (DEB/RPM) packages locally for testing",
+      "position": 40
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/Build the Netdata Agent Yourself",
+      "child_name": "Netdata contrib",
+      "position": 50
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/Contribute to the documentation",
+      "child_name": "Netdata style guide",
+      "position": 10
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/External Plugins",
+      "child_name": "go.d.plugin",
+      "position": 10
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/External Plugins",
+      "child_name": "python.d.plugin",
+      "position": 20
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/External Plugins",
+      "child_name": "charts.d.plugin",
+      "position": 30
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/External Plugins",
+      "child_name": "profile.plugin",
+      "position": 40
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/External Plugins",
+      "child_name": "Functions v3 Protocol reference",
+      "position": 50
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/External Plugins",
+      "child_name": "Functions developer guide",
+      "position": 60
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/External Plugins/go.d.plugin",
+      "child_name": "How to write a Netdata collector in Go",
+      "position": 10
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API",
+      "child_name": "Queries",
+      "position": 10
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API",
+      "child_name": "Formatters",
+      "position": 20
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API",
+      "child_name": "Netdata badges",
+      "position": 30
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Formatters",
+      "child_name": "CSV formatter",
+      "position": 10
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Formatters",
+      "child_name": "JSON formatter",
+      "position": 20
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Formatters",
+      "child_name": "SSV formatter",
+      "position": 30
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Formatters",
+      "child_name": "Value formatter",
+      "position": 40
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Average or Mean",
+      "position": 10
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "CountIf",
+      "position": 20
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Double exponential smoothing",
+      "position": 30
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Incremental Sum (`incremental_sum`)",
+      "position": 40
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Max",
+      "position": 50
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Median",
+      "position": 60
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Min",
+      "position": 70
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Percentile",
+      "position": 80
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Single (or Simple) Exponential Smoothing (`ses`)",
+      "position": 90
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Standard deviation (`stddev`)",
+      "position": 100
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Sum",
+      "position": 110
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/REST API/Queries",
+      "child_name": "Trimmed Mean",
+      "position": 120
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Adaptive re-sortable list (ARL)",
+      "position": 10
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Array allocator",
+      "position": 20
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "AVL",
+      "position": 30
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "BUFFER library",
+      "position": 40
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Circular Buffer",
+      "position": 50
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Clocks",
+      "position": 60
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Netdata ini config files",
+      "position": 70
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "JSON",
+      "position": 80
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Locks",
+      "position": 90
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "One way allocator",
+      "position": 100
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "popen",
+      "position": 110
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "parser",
+      "position": 120
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "procfile",
+      "position": 130
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Simple patterns",
+      "position": 140
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Statistical functions",
+      "position": 150
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Storage number",
+      "position": 160
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "String",
+      "position": 170
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Threads",
+      "position": 180
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "URL",
+      "position": 190
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Worker Utilization",
+      "position": 200
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Dictionaries",
+      "position": 210
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "July interface",
+      "position": 220
+    },
+    {
+      "parent_path": "Developer and Contributor Corner/libnetdata",
+      "child_name": "Socket",
+      "position": 230
+    },
+    {
+      "parent_path": "Exporting Metrics",
+      "child_name": "Exporting reference",
+      "position": 10
+    },
+    {
+      "parent_path": "Exporting Metrics",
+      "child_name": "Enable an exporting connector",
+      "position": 20
+    },
+    {
+      "parent_path": "Exporting Metrics",
+      "child_name": "Prometheus",
+      "position": 30
+    },
+    {
+      "parent_path": "Exporting Metrics",
+      "child_name": "Shell Scripts",
+      "position": 40
+    },
+    {
+      "parent_path": "Live View",
+      "child_name": "Processes",
+      "position": 10
+    },
+    {
+      "parent_path": "Live View",
+      "child_name": "Database Queries",
+      "position": 20
+    },
+    {
+      "parent_path": "Logs",
+      "child_name": "Systemd Journal Logs",
+      "position": 10
+    },
+    {
+      "parent_path": "Logs",
+      "child_name": "Windows Event Logs",
+      "position": 20
+    },
+    {
+      "parent_path": "Logs",
+      "child_name": "log2journal",
+      "position": 30
+    },
+    {
+      "parent_path": "Logs",
+      "child_name": "systemd-cat-native",
+      "position": 40
+    },
+    {
+      "parent_path": "Logs",
+      "child_name": "Logs Centralization Points with systemd-journald",
+      "position": 50
+    },
+    {
+      "parent_path": "Logs/Logs Centralization Points with systemd-journald",
+      "child_name": "Passive journal centralization with encryption using self-signed certificates",
+      "position": 10
+    },
+    {
+      "parent_path": "Logs/Logs Centralization Points with systemd-journald",
+      "child_name": "Passive journal centralization without encryption",
+      "position": 20
+    },
+    {
+      "parent_path": "Logs/Logs Centralization Points with systemd-journald",
+      "child_name": "Active journal source without encryption",
+      "position": 30
+    },
+    {
+      "parent_path": "Logs/Systemd Journal Logs",
+      "child_name": "Systemd Journal Plugin Reference",
+      "position": 10
+    },
+    {
+      "parent_path": "Logs/Systemd Journal Logs",
+      "child_name": "Forward Secure Sealing (FSS) in Systemd-Journal",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata AI",
+      "child_name": "Conversations",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata AI",
+      "child_name": "Insights",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata AI",
+      "child_name": "Investigations",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata AI",
+      "child_name": "Troubleshooting",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata AI",
+      "child_name": "Alerts Automation",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata AI",
+      "child_name": "Anomaly Detection",
+      "position": 60
+    },
+    {
+      "parent_path": "Netdata AI",
+      "child_name": "MCP",
+      "position": 70
+    },
+    {
+      "parent_path": "Netdata AI/Anomaly Detection",
+      "child_name": "ML Configuration",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata AI/Anomaly Detection",
+      "child_name": "ML Accuracy",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata AI/Insights",
+      "child_name": "Infrastructure Summary",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata AI/Insights",
+      "child_name": "Performance Optimization",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata AI/Insights",
+      "child_name": "Capacity Planning",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata AI/Insights",
+      "child_name": "Anomaly Analysis",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata AI/Insights",
+      "child_name": "Scheduled Reports",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata AI/Investigations",
+      "child_name": "Custom Investigations",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata AI/Investigations",
+      "child_name": "Scheduled Investigations",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata AI/MCP",
+      "child_name": "Chat with Netdata",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata AI/MCP",
+      "child_name": "Supported AI Clients",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata AI/MCP",
+      "child_name": "MCP Connections",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata AI/MCP/Supported AI Clients",
+      "child_name": "Claude Desktop",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata AI/MCP/Supported AI Clients",
+      "child_name": "Cursor",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata AI/MCP/Supported AI Clients",
+      "child_name": "Visual Studio Code",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata AI/MCP/Supported AI Clients",
+      "child_name": "JetBrains IDEs",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata AI/MCP/Supported AI Clients",
+      "child_name": "Claude Code",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata AI/MCP/Supported AI Clients",
+      "child_name": "Gemini CLI",
+      "position": 60
+    },
+    {
+      "parent_path": "Netdata AI/MCP/Supported AI Clients",
+      "child_name": "OpenAI Codex CLI",
+      "position": 70
+    },
+    {
+      "parent_path": "Netdata AI/MCP/Supported AI Clients",
+      "child_name": "Crush",
+      "position": 80
+    },
+    {
+      "parent_path": "Netdata AI/MCP/Supported AI Clients",
+      "child_name": "OpenCode",
+      "position": 90
+    },
+    {
+      "parent_path": "Netdata AI/Troubleshooting",
+      "child_name": "Alert Troubleshooting",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata AI/Troubleshooting",
+      "child_name": "Anomaly Advisor",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata AI/Troubleshooting",
+      "child_name": "Metric Correlations",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Versions & Platforms",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Quickstart Deployment",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Installation",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Maintenance",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Resource Utilization",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Configuration",
+      "position": 60
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Daemon",
+      "position": 70
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Database",
+      "position": 80
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Logging",
+      "position": 90
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Registry",
+      "position": 100
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Agent CLI",
+      "position": 110
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Node Identities",
+      "position": 120
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "VM Templates",
+      "position": 130
+    },
+    {
+      "parent_path": "Netdata Agent",
+      "child_name": "Anonymous telemetry events",
+      "position": 140
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration",
+      "child_name": "Dynamic Configuration Manager",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration",
+      "child_name": "Daemon",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration",
+      "child_name": "Database",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration",
+      "child_name": "Registry",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration",
+      "child_name": "Securing Agents",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration",
+      "child_name": "Performance Optimization",
+      "position": 60
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration",
+      "child_name": "Organize systems, metrics, and alerts",
+      "position": 70
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration",
+      "child_name": "Using custom CA certificates with Netdata",
+      "position": 80
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration/Securing Agents",
+      "child_name": "Web Server Reference",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration/Securing Agents",
+      "child_name": "Bearer Token Protection",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration/Securing Agents",
+      "child_name": "Configure Netdata for cybersecurity platforms",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration/Securing Agents",
+      "child_name": "Running the Agent behind a reverse proxy",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy",
+      "child_name": "Nginx",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy",
+      "child_name": "HAProxy",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy",
+      "child_name": "Apache",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy",
+      "child_name": "Lighttpd v1.4.x",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy",
+      "child_name": "Caddy",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata Agent/Configuration/Securing Agents/Running the Agent behind a reverse proxy",
+      "child_name": "H2O",
+      "position": 60
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "Linux",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "Windows",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "Docker",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "Kubernetes",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "Kubernetes Helm chart reference",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "macOS",
+      "position": 60
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "FreeBSD",
+      "position": 70
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "pfSense",
+      "position": 80
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "Synology",
+      "position": 90
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "Ansible",
+      "position": 100
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "AWS",
+      "position": 110
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "Azure",
+      "position": 120
+    },
+    {
+      "parent_path": "Netdata Agent/Installation",
+      "child_name": "GCP",
+      "position": 130
+    },
+    {
+      "parent_path": "Netdata Agent/Installation/Linux",
+      "child_name": "Native Linux Distribution packages",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Agent/Installation/Linux",
+      "child_name": "Static binary Linux Packages",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Agent/Installation/Linux",
+      "child_name": "Switch Install Types and Release Channels",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Agent/Installation/Linux",
+      "child_name": "Offline systems",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Agent/Installation/Windows",
+      "child_name": "Switching Install Types and Release Channels",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Agent/Maintenance",
+      "child_name": "Service Control",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Agent/Maintenance",
+      "child_name": "Update",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Agent/Maintenance",
+      "child_name": "Reinstall",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Agent/Maintenance",
+      "child_name": "Uninstall",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Agent/Maintenance",
+      "child_name": "Backup and restore an Agent",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata Agent/Resource Utilization",
+      "child_name": "CPU",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Agent/Resource Utilization",
+      "child_name": "RAM",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Agent/Resource Utilization",
+      "child_name": "Bandwidth",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Agent/Resource Utilization",
+      "child_name": "Disk & Retention",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Agent/Resource Utilization",
+      "child_name": "Extreme Cardinality Protection",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata Agent/Resource Utilization",
+      "child_name": "Impact on Cloud VMs",
+      "position": 60
+    },
+    {
+      "parent_path": "Netdata Cloud",
+      "child_name": "Connect Agent",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Cloud",
+      "child_name": "Spaces and Rooms",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Cloud",
+      "child_name": "Authentication & Authorization",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Cloud",
+      "child_name": "Netdata Plans & Billing",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Cloud",
+      "child_name": "Agent-Cloud Link (ACLK)",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata Cloud",
+      "child_name": "Remove Agent",
+      "position": 60
+    },
+    {
+      "parent_path": "Netdata Cloud",
+      "child_name": "Node States and Transitions",
+      "position": 70
+    },
+    {
+      "parent_path": "Netdata Cloud",
+      "child_name": "Unclaim and Reclaim a Node",
+      "position": 80
+    },
+    {
+      "parent_path": "Netdata Cloud",
+      "child_name": "Account Deletion",
+      "position": 90
+    },
+    {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "Installation",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "Software Bill of Materials",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "Container Image Signature Verification",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "Security Hardening Guide",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "Kubernetes Network Policy Configuration",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "PoC without K8s",
+      "position": 60
+    },
+    {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "Mirroring image registry",
+      "position": 70
+    },
+    {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "Troubleshooting",
+      "position": 80
+    },
+    {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "Release Notes",
+      "position": 90
+    },
+    {
+      "parent_path": "Netdata Cloud/Authentication & Authorization",
+      "child_name": "Enterprise SSO Authentication",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Cloud/Authentication & Authorization",
+      "child_name": "Role-based access model",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Cloud/Authentication & Authorization",
+      "child_name": "API Tokens",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Cloud/Spaces and Rooms",
+      "child_name": "Node Rule-Based Room Assignment",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Parents",
+      "child_name": "Parent Configuration Best Practices",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Parents",
+      "child_name": "Parent-Child Configuration Reference",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Parents",
+      "child_name": "Configuration Examples",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Parents",
+      "child_name": "Streaming Routing Reference",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Parents",
+      "child_name": "Node Types and Lifecycle Reference",
+      "position": 50
+    },
+    {
+      "parent_path": "Netdata Parents",
+      "child_name": "Metrics Centralization Points",
+      "position": 60
+    },
+    {
+      "parent_path": "Netdata Parents/Metrics Centralization Points",
+      "child_name": "Configuring Metrics Centralization Points",
+      "position": 10
+    },
+    {
+      "parent_path": "Netdata Parents/Metrics Centralization Points",
+      "child_name": "Sizing Netdata Parents",
+      "position": 20
+    },
+    {
+      "parent_path": "Netdata Parents/Metrics Centralization Points",
+      "child_name": "Clustering and High Availability of Netdata Parents",
+      "position": 30
+    },
+    {
+      "parent_path": "Netdata Parents/Metrics Centralization Points",
+      "child_name": "Replication of Past Samples",
+      "position": 40
+    },
+    {
+      "parent_path": "Netdata Parents/Metrics Centralization Points",
+      "child_name": "FAQ on Metrics Centralization Points",
+      "position": 50
+    },
+    {
+      "parent_path": "Network Performance Monitoring",
+      "child_name": "Device Metrics",
+      "position": 10
+    },
+    {
+      "parent_path": "Network Performance Monitoring",
+      "child_name": "Licensing Monitoring",
+      "position": 20
+    },
+    {
+      "parent_path": "Network Performance Monitoring",
+      "child_name": "Topologies",
+      "position": 30
+    },
+    {
+      "parent_path": "Network Performance Monitoring",
+      "child_name": "BGP Monitoring",
+      "position": 40
+    },
+    {
+      "parent_path": "Network Performance Monitoring",
+      "child_name": "Network Flows",
+      "position": 50
+    },
+    {
+      "parent_path": "Network Performance Monitoring",
+      "child_name": "SNMP Traps",
+      "position": 60
+    },
+    {
+      "parent_path": "Network Performance Monitoring",
+      "child_name": "Syslog from Network Devices",
+      "position": 70
+    },
+    {
+      "parent_path": "Network Performance Monitoring/BGP Monitoring",
+      "child_name": "Metrics and Functions",
+      "position": 10
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Device Metrics",
+      "child_name": "Quick Start",
+      "position": 10
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Device Metrics",
+      "child_name": "Configuration",
+      "position": 20
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Device Metrics",
+      "child_name": "Sizing and Scaling",
+      "position": 30
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Device Metrics",
+      "child_name": "Validation",
+      "position": 40
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Device Metrics",
+      "child_name": "Troubleshooting",
+      "position": 50
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Device Metrics",
+      "child_name": "Anti-patterns",
+      "position": 60
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Device Metrics/Configuration",
+      "child_name": "SNMP Profile Format",
+      "position": 10
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Licensing Monitoring",
+      "child_name": "Metrics and Functions",
+      "position": 10
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Installation",
+      "position": 10
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Quick Start",
+      "position": 20
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Configuration",
+      "position": 30
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Enrichment",
+      "position": 40
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Enrichment Intel Downloader",
+      "position": 50
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Field Reference",
+      "position": 60
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Visualization",
+      "position": 70
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Retention and Tiers",
+      "position": 80
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Sizing and Capacity Planning",
+      "position": 90
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Validation and Data Quality",
+      "position": 100
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Investigation Playbooks",
+      "position": 110
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Anti-patterns",
+      "position": 120
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows",
+      "child_name": "Troubleshooting",
+      "position": 130
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows/Visualization",
+      "child_name": "Sankey and Table",
+      "position": 10
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows/Visualization",
+      "child_name": "Time-Series",
+      "position": 20
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows/Visualization",
+      "child_name": "Maps and Globe",
+      "position": 30
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows/Visualization",
+      "child_name": "Filters and Facets",
+      "position": 40
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Network Flows/Visualization",
+      "child_name": "Plugin Health Charts",
+      "position": 50
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Installation",
+      "position": 10
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Quick Start",
+      "position": 20
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Configuration",
+      "position": 30
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Trap Profiles",
+      "position": 40
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "SNMP Trap Profile Format",
+      "position": 50
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Enrichment",
+      "position": 60
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Usage and Output",
+      "position": 70
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Field Reference",
+      "position": 80
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Journal and Querying",
+      "position": 90
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Forwarding to SIEM",
+      "position": 100
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Metrics",
+      "position": 110
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Alerts",
+      "position": 120
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Sizing and Capacity Planning",
+      "position": 130
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Validation and Data Quality",
+      "position": 140
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Investigation Playbooks",
+      "position": 150
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Anti-patterns",
+      "position": 160
+    },
+    {
+      "parent_path": "Network Performance Monitoring/SNMP Traps",
+      "child_name": "Troubleshooting",
+      "position": 170
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Syslog from Network Devices",
+      "child_name": "OpenTelemetry Collector Setup",
+      "position": 10
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Topologies",
+      "child_name": "Discovery Methods",
+      "position": 10
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Topologies",
+      "child_name": "Application Dependency Mapping",
+      "position": 20
+    },
+    {
+      "parent_path": "Security and Privacy Design",
+      "child_name": "Access Control and Feature Availability",
+      "position": 10
+    },
+    {
+      "parent_path": "Security and Privacy Design",
+      "child_name": "Netdata Agent",
+      "position": 20
+    },
+    {
+      "parent_path": "Security and Privacy Design",
+      "child_name": "Netdata Cloud",
+      "position": 30
+    },
+    {
+      "parent_path": "Welcome to Netdata",
+      "child_name": "Enterprise Evaluation Guide",
+      "position": 10
+    },
+    {
+      "parent_path": "Welcome to Netdata",
+      "child_name": "Real-time Monitoring",
+      "position": 20
+    },
+    {
+      "parent_path": "Welcome to Netdata",
+      "child_name": "Scalability",
+      "position": 30
+    },
+    {
+      "parent_path": "Welcome to Netdata",
+      "child_name": "Monitor Anything",
+      "position": 40
+    },
+    {
+      "parent_path": "Welcome to Netdata",
+      "child_name": "Fleet Deployment and Configuration Management",
+      "position": 50
+    },
+    {
+      "parent_path": "Welcome to Netdata",
+      "child_name": "Reporting",
+      "position": 60
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Welcome to Netdata",
+      "position": 10
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Getting Started",
+      "position": 20
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Live Demo",
+      "position": 30
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Netdata Agent",
+      "position": 40
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Netdata Parents",
+      "position": 50
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Netdata Cloud",
+      "position": 60
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Netdata Cloud On-Prem",
+      "position": 70
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Collecting Metrics",
+      "position": 80
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Exporting Metrics",
+      "position": 90
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Network Performance Monitoring",
+      "position": 100
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Logs",
+      "position": 110
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Live View",
+      "position": 120
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Alerts & Notifications",
+      "position": 130
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Netdata AI",
+      "position": 140
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Dashboards and Charts",
+      "position": 150
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Security and Privacy Design",
+      "position": 160
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Developer and Contributor Corner",
+      "position": 170
+    }
+  ]
+}
