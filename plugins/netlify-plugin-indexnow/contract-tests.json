@@ -1,0 +1,40 @@
+{
+  "schema_version": 2,
+  "invalid_keys": [
+    "short",
+    "unsafe/key",
+    "unsafe_key"
+  ],
+  "malformed_sitemaps": [
+    "<sm:urlset><sm:url><sm:loc>https://www.netdata.cloud/</sm:loc></sm:url></sm:urlset>",
+    "<wrong:urlset xmlns:wrong=\"https://example.invalid\"><wrong:url><wrong:loc>https://www.netdata.cloud/</wrong:loc></wrong:url></wrong:urlset>",
+    "<!DOCTYPE urlset><urlset><url><loc>https://www.netdata.cloud/</loc></url></urlset>"
+  ],
+  "invalid_paths": [
+    "/one//",
+    "/./one/",
+    "/one/../two/",
+    "/%2E/one/",
+    "/%2E%2E/one/",
+    "/one%2Ftwo/",
+    "/one%5Ctwo/",
+    "/one\\two/",
+    "/bad%C3%28/",
+    "/bad%00path/",
+    "/bad%1Fpath/",
+    "/raw\"quote/",
+    "/raw<less/",
+    "/raw>greater/",
+    "/raw`tick/",
+    "/raw{open/",
+    "/raw}close/",
+    "/one/?",
+    "/one/#"
+  ],
+  "accepted_http_statuses": [
+    200,
+    202
+  ],
+  "receipt_schema_version": 2,
+  "maximum_batch_size": 10000
+}

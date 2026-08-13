@@ -1,9 +1,18 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "owner": "netdata/website",
   "algorithm": "sha256",
+  "dependencies": {
+    "@netlify/blobs": "10.7.13",
+    "saxes": "6.0.0"
+  },
+  "receipt_schema_version": 2,
+  "contract_tests_schema_version": 2,
   "files": {
-    "index.js": "24f3ac2fe595313725cff63d87c89399448ec1a28fd4ed4285bfa4d5e03f15bc",
-    "manifest.yml": "205558bcd226654d4d32304bab75d9bfe2b57e2b032a7b801412d8c3c4e360c3"
+    "contract-tests.json": "4d7e3f6272306c10721e77a146da9ec42dbb94d049c0a22a237a59c5fa10a699",
+    "index.js": "843d826e93a5f1363eab6631abdc27605bd874efd2ae8554badeed646d995c35",
+    "manifest.yml": "6ad2d0238e4836b0d4d8454b88fc0dd1dfafa9b2cf6197ef25d5cae71512ad6a",
+    "package.json": "ac8fb121eb21536576816db162f57ffdd99724b91dfddbce12f7cec921c0ed0b",
+    "receipt-schema.json": "e4a20ce04f2cce43fa7cf5bdcf11e1dc36da284b5709f60d77843a1392fa5145"
   }
 }

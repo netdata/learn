@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.netdata.cloud/schemas/indexnow-deploy-receipt-v2.json",
+  "title": "Netdata IndexNow production deploy receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "accepted_url_count",
+    "batch_count",
+    "batches",
+    "commit_ref",
+    "deploy_id",
+    "endpoint",
+    "host",
+    "pending_url_count",
+    "producer",
+    "schema_version",
+    "site_id",
+    "url_count"
+  ],
+  "properties": {
+    "schema_version": {"const": 2},
+    "producer": {"const": "netdata/website-indexnow"},
+    "endpoint": {"const": "https://api.indexnow.org/indexnow"},
+    "site_id": {"type": "string", "minLength": 1},
+    "deploy_id": {"type": "string", "minLength": 1},
+    "commit_ref": {"type": ["string", "null"], "minLength": 1},
+    "host": {"type": "string", "minLength": 1},
+    "batch_count": {"type": "integer", "minimum": 1},
+    "accepted_url_count": {"type": "integer", "minimum": 0},
+    "pending_url_count": {"type": "integer", "minimum": 0},
+    "url_count": {"type": "integer", "minimum": 1},
+    "batches": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "batch",
+          "batch_count",
+          "http_status",
+          "reason",
+          "status",
+          "url_count",
+          "urls"
+        ],
+        "properties": {
+          "batch": {"type": "integer", "minimum": 1},
+          "batch_count": {"type": "integer", "minimum": 1},
+          "status": {"enum": ["accepted", "pending"]},
+          "http_status": {"type": ["integer", "null"], "minimum": 100, "maximum": 599},
+          "reason": {
+            "enum": [null, "http-error", "invalid-response", "response-body-error", "timeout", "transport-error"]
+          },
+          "url_count": {"type": "integer", "minimum": 1, "maximum": 10000},
+          "urls": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10000,
+            "items": {"type": "string", "minLength": 1, "maxLength": 2048}
+          }
+        }
+      }
+    }
+  }
+}

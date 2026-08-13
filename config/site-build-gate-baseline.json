@@ -1,0 +1,11 @@
+{
+  "schema": "netdata-site-build-gate-baseline-v1",
+  "contract": "netdata-site-build-gate-v1",
+  "ruleset_version": 8,
+  "allowed": [
+    {
+      "identity": "missing-title|/docs/ask-netdata/",
+      "reason": "This pre-existing compatibility route is a client redirect to the canonical /docs/ask-nedi page; redirect metadata repair is outside the read-only C8 integration."
+    }
+  ]
+}

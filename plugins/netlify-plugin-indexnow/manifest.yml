@@ -7,5 +7,5 @@ inputs:
     description: Public IndexNow key.
     required: true
   - name: keyLocation
-    description: Public URL of the IndexNow key file.
+    description: Exact HTTPS URL of the root IndexNow key file.
     required: true

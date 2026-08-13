@@ -1,0 +1,60 @@
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import {createRequire} from 'node:module';
+import {afterEach, describe, expect, it} from 'vitest';
+
+const require = createRequire(import.meta.url);
+const {REPRESENTATIVE_ROUTES, SOURCE, TOKEN, verifyCloudflareRum, verifyPage} =
+  require('../../scripts/verify-cloudflare-rum');
+const roots = [];
+const beacon = `<script src="${SOURCE}" defer type="module" data-cf-beacon='{&quot;token&quot;:&quot;${TOKEN}&quot;}'></script>`;
+
+function fixture() {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'learn-cloudflare-rum-'));
+  roots.push(root);
+  for (const relative of REPRESENTATIVE_ROUTES) {
+    const filename = path.join(root, relative);
+    fs.mkdirSync(path.dirname(filename), {recursive: true});
+    fs.writeFileSync(filename, `<html><body>${beacon}</body></html>`);
+  }
+  return root;
+}
+
+afterEach(() => {
+  while (roots.length) fs.rmSync(roots.pop(), {recursive: true, force: true});
+});
+
+describe('rendered Cloudflare Web Analytics verifier', () => {
+  it('covers every HTML artifact and all representative route classes', () => {
+    const root = fixture();
+    expect(verifyCloudflareRum(root)).toEqual({
+      htmlFiles: REPRESENTATIVE_ROUTES.length,
+      representativeRoutes: REPRESENTATIVE_ROUTES.length,
+    });
+  });
+
+  it.each([
+    ['', /exactly one/],
+    [`${beacon}${beacon}`, /exactly one/],
+    [beacon.replace('type="module"', 'type="text/javascript"'), /deferred module/],
+    [beacon.replace(' defer', ''), /deferred module/],
+    [beacon.replace(' data-cf-beacon', ' integrity="sha256-test" data-cf-beacon'), /cannot use integrity/],
+    [beacon.replace(TOKEN, 'wrong-token'), /approved public token/],
+  ])('rejects an invalid rendered beacon', (markup, message) => {
+    expect(() => verifyPage(`<html><body>${markup}</body></html>`, 'test.html')).toThrow(message);
+  });
+
+  it('rejects a missing route class and symlinked output', () => {
+    const missing = fixture();
+    fs.rmSync(path.join(missing, REPRESENTATIVE_ROUTES[0]));
+    expect(() => verifyCloudflareRum(missing)).toThrow(/Missing representative/);
+
+    const linked = fixture();
+    const outside = path.join(path.dirname(linked), 'outside.html');
+    fs.writeFileSync(outside, `<html>${beacon}</html>`);
+    fs.symlinkSync(outside, path.join(linked, 'linked.html'));
+    expect(() => verifyCloudflareRum(linked)).toThrow(/symbolic link/);
+    fs.rmSync(outside);
+  });
+});

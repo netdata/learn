@@ -167,17 +167,6 @@ module.exports = {
 	},
 	plugins: [
 		[
-			'@docusaurus/plugin-client-redirects',
-			{
-				redirects: [
-					{
-						from: '/docs/ask-netdata',
-						to: '/docs/ask-nedi',
-					},
-				],
-			},
-		],
-		[
 			"posthog-docusaurus",
 			{
 				apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
@@ -257,6 +246,12 @@ module.exports = {
 		},
 	],
 	scripts: [
+      {
+        src: 'https://static.cloudflareinsights.com/beacon.min.js',
+        defer: true,
+        type: 'module',
+        'data-cf-beacon': '{"token":"7408c22ab930458a8467c91b5360b8f3"}',
+      },
       {
         src: 'https://static.reo.dev/8a197d1119ef2d4/reo.js',
         defer: true,
