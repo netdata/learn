@@ -6,7 +6,7 @@
 		"docusaurus": "docusaurus",
 		"start": "docusaurus start",
 		"build": "docusaurus build",
-		"build:netlify": "node scripts/verify-git-history.js && node scripts/verify-indexnow-vendor.js && npm ci --prefix scripts/site-build-gate --ignore-scripts --no-audit && docusaurus build && node scripts/verify-rendered-titles.js && node scripts/verify-functional-headings.js && node scripts/verify-rendered-links.js && node scripts/verify-rendered-indexability.js && node scripts/verify-cloudflare-rum.js build && node scripts/site-build-gate/site_build_gate.mjs --build-dir build --site-origin https://learn.netdata.cloud --baseline config/site-build-gate-baseline.json --format json",
+		"build:netlify": "node scripts/verify-git-history.js && node scripts/verify-indexnow-vendor.js && npm ci --prefix scripts/site-build-gate --ignore-scripts --no-audit && docusaurus build && node scripts/verify-rendered-titles.js && node scripts/verify-functional-headings.js && node scripts/verify-redirect-graph.js && node scripts/verify-rendered-links.js && node scripts/verify-rendered-indexability.js && node scripts/verify-cloudflare-rum.js build && node scripts/site-build-gate/site_build_gate.mjs --build-dir build --site-origin https://learn.netdata.cloud --baseline config/site-build-gate-baseline.json --format json",
 		"swizzle": "docusaurus swizzle",
 		"deploy": "docusaurus deploy",
 		"clear": "docusaurus clear",

@@ -52,14 +52,8 @@ describe('rendered redirect-source link verifier', () => {
       'utf8',
     );
     expect([...redirectSourceRules(netlifyToml).terminalWildcards].sort()).toEqual([
-      '/docs/agent/kr/',
-      '/docs/agent/kr/docs/',
       '/docs/agent/netdata-cloud/',
-      '/docs/agent/pt/',
-      '/docs/agent/pt/docs/',
-      '/docs/agent/zh/',
-      '/docs/agent/zh/docs/',
-      '/docs/cloud/monitoring/',
+      '/docs/network-flows/',
     ]);
   });
 

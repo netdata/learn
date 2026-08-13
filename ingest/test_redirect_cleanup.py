@@ -30,9 +30,51 @@ class RedirectCleanupTests(unittest.TestCase):
         cleaned = redirects.clean_redirects({"/a": "/b", "/b": "/a"})
         self.assertEqual(cleaned, {})
 
-    def test_preserves_legacy_source_spelling(self):
+    def test_repairs_legacy_source_spelling(self):
         cleaned = redirects.clean_redirects({"docs/old/": "/docs/current/"})
-        self.assertEqual(cleaned, {"docs/old/": "/docs/current/"})
+        self.assertEqual(cleaned, {"/docs/old": "/docs/current/"})
+
+    def test_parse_redirects_rejects_a_conflicting_identity_before_dict_coalescing(self):
+        document = """# section: dynamic << START
+[[redirects]]
+  from="/old"
+  to="/first"
+[[redirects]]
+  from="/old/"
+  to="/second"
+# section: dynamic << END
+"""
+        with self.assertRaisesRegex(ValueError, "Conflicting redirect identity /old"):
+            redirects.parseRedirects(document)
+
+    def test_parse_redirects_deduplicates_an_identical_target(self):
+        document = """# section: dynamic << START
+[[redirects]]
+  from="/old"
+  to="/current"
+[[redirects]]
+  from="/old/"
+  to="/current/"
+# section: dynamic << END
+"""
+        self.assertEqual(
+            redirects.clean_redirects(redirects.parseRedirects(document)),
+            {"/old": "/current"},
+        )
+
+    def test_merge_rejects_conflicting_identity(self):
+        with self.assertRaisesRegex(ValueError, "Conflicting redirect identity /old"):
+            redirects.combineDictsOverwrite(
+                {"/old": "/first"},
+                {"/old/": "/second"},
+            )
+
+    def test_merge_preserves_external_host_identity(self):
+        with self.assertRaisesRegex(ValueError, "Conflicting redirect identity /old"):
+            redirects.combineDictsOverwrite(
+                {"/old": "https://example.com/release"},
+                {"/old/": "https://example.net/release"},
+            )
 
 if __name__ == "__main__":
     unittest.main()

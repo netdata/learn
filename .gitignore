@@ -1,5 +1,6 @@
 # Dependencies
 /node_modules
+/scripts/site-build-gate/node_modules/
 
 # Production
 /build

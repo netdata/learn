@@ -10,6 +10,7 @@
     "Reject symbolic links, non-regular files, and paths whose real ancestors escape the configured docs root before any recovery read, hash, write, replacement, or deletion.",
     "Replace random installer control IDs with React useId and prove uniqueness, label binding, repeatable SSR, and hydration stability.",
     "Expand the rendered-link gate to same-host HTTP links and terminal-wildcard redirect sources, then pin parser boundaries with mutations.",
+    "Repair the complete Netlify redirect graph from its static owner: restore every historical Network Flows route, retarget every proved dead exact destination, replace non-terminal wildcard classes with archived exact mappings, remove duplicate and conflicting identities, and fail closed on graph regressions.",
     "Run all Learn and exact-source tests, two byte-identical production builds, rendered audits, provenance checks, and repository hygiene checks.",
     "Vendor the exact C8 ruleset-v8 bundle accepted in netdata/seo commit 0849022df128b87ad0ae0a829a5e444408e4937f with the canonical exporter. Every Netlify context performs a clean locked Node 22 install in that bundle, builds Docusaurus, and scans the complete build with the Learn origin and a read-only, reasoned baseline containing only exact pre-existing findings.",
     "Replace the legacy Learn IndexNow copy with every checksum-covered schema-2 artifact, dependency, verifier rule, and adversarial test from the website owner commit 52f3eb6e6ee01ecc1416d51dffedde0c22db62ff. Only the declared Learn host, key-location host, published build directory, and test fixture route shape may differ; receipt, retry, cache, URL, filesystem, and at-least-once semantics remain byte-identical.",
@@ -28,8 +29,8 @@
     },
     {
       "id": "zero-noindex-sitemap-separation",
-      "contract": "Public routes never emit a noindex robots directive. Sitemap exclusion is a separate discovery choice: blog, search, and the canonical ask-netdata replacement route remain excluded, while all 11 self-canonical libnetdata references remain included and indexable.",
-      "acceptance": "Every rendered HTML file contains zero noindex directives; all 11 libnetdata routes occur exactly once in the sitemap; blog, search, and ask-netdata remain absent from it."
+      "contract": "Public routes never emit a noindex robots directive. Sitemap exclusion is a separate discovery choice: blog, search, and the canonical ask-netdata replacement route remain excluded, while all current self-canonical libnetdata references remain included and indexable.",
+      "acceptance": "Every rendered HTML file contains zero noindex directives; all current libnetdata routes occur exactly once in the sitemap; blog, search, and ask-netdata remain absent from it."
     },
     {
       "id": "grid-recovery-equivalence",
@@ -62,9 +63,14 @@
       "acceptance": "Current rendered output has no redirect-source links and regression mutations cover exact, encoded, terminal-wildcard, HTTP, slash, and quoted-attribute boundaries."
     },
     {
+      "id": "terminal-redirect-graph",
+      "contract": "Netlify rules are one-hop and terminal under first-match order. The exact /docs/network-flows root precedes one terminal wildcard that preserves the suffix; generated rules subsumed or shadowed by static authority are omitted. Locale and cloud wildcard classes are replaced only by exact archived requests with proved current destinations.",
+      "acceptance": "All 42 routes moved by commit 7c5a438543 resolve to the same suffix under /docs/network-performance-monitoring/network-flows; every exact internal target renders; no source shadows a rendered route; and the graph has no duplicate or conflicting identity, malformed source, chain, cycle, non-terminal wildcard, or earlier-rule shadow. Mutation tests cover every failure class and wildcard counterexamples."
+    },
+    {
       "id": "canonical-c8-v8-build-gate",
       "contract": "scripts/site-build-gate is an exact canonical export from netdata/seo commit 0849022df128b87ad0ae0a829a5e444408e4937f. Netlify's one build command installs its exact lock with Node 22 before Docusaurus builds, then scans build/ for every context using https://learn.netdata.cloud and a non-widening site baseline.",
-      "acceptance": "The SEO owner verifier proves byte identity; a clean npm ci succeeds; mutation tests fail closed; two identical production builds produce the same bytes; and the complete C8 report contains no unaccepted finding."
+      "acceptance": "The SEO owner verifier proves byte identity; a clean npm ci succeeds; mutation tests fail closed; two identical production builds produce the same bytes; and the complete C8 report has an empty accepted-finding baseline."
     },
     {
       "id": "website-owned-indexnow-schema-2",

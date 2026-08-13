@@ -16,7 +16,15 @@
 
 [[redirects]]
   from="/guides/monitor/kubernetes-k8s-netdata"
-  to="/docs/collecting-metrics/kubernetes"
+  to="/docs/dashboards-and-charts/tabs/kubernetes"
+
+[[redirects]]
+  from="/docs/network-flows"
+  to="/docs/network-performance-monitoring/network-flows"
+
+[[redirects]]
+  from="/docs/network-flows/*"
+  to="/docs/network-performance-monitoring/network-flows/:splat"
 
 [[redirects]]
   from="/docs/netdata-agent/configuration/cheatsheet"
@@ -32,7 +40,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
-  to="/docs/collecting-metrics/windows-systems"
+  to="/docs/netdata-agent/installation/windows"
 
 [[redirects]]
   from="/docs/collect/system-metrics"
@@ -40,7 +48,7 @@
 
 [[redirects]]
   from="/docs/collect/container-metrics"
-  to="/docs/collecting-metrics/containers-and-vms/"
+  to="/docs/collecting-metrics/collectors/containers-and-vms"
 
 [[redirects]]
   from="/docs/rest-api/netdata-badges"
@@ -63,12 +71,12 @@
   to="/docs/collecting-metrics"
 
 [[redirects]]
-  from="docs/agent/collectors/proc.plugin"
+  from="/docs/agent/collectors/proc.plugin"
   to="/docs/collecting-metrics"
 
 [[redirects]]
   from="/docs/agent/collectors/cgroups.plugin"
-  to="/docs/collecting-metrics"
+  to="/docs/collecting-metrics/containers-and-cgroups"
 
 [[redirects]]
   from="/docs/agent/collectors/node.d.plugin/"
@@ -76,31 +84,23 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/wmi"
-  to="/docs/collecting-metrics/windows-systems"
+  to="/docs/netdata-agent/installation/windows"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/System%20Metrics/Windows-machines"
-  to="/docs/collecting-metrics/windows-systems"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
-  to="/docs/collecting-metrics/windows-systems"
-
-[[redirects]]
-  from="/docs/data-collection/monitor-anything/system-metrics/windows-machines"
-  to="/docs/collecting-metrics/windows-systems"
+  to="/docs/netdata-agent/installation/windows"
 
 [[redirects]]
   from="/docs/data-collection/windows-systems"
-  to="/docs/collecting-metrics/windows-systems"
+  to="/docs/netdata-agent/installation/windows"
 
 [[redirects]]
   from="/docs/data-collection/windows-systems/windows"
-  to="/docs/collecting-metrics/windows-systems"
+  to="/docs/netdata-agent/installation/windows"
 
 [[redirects]]
   from="/docs/nightly/operations/alerts/add-opsgenie-notification-configuration"
-  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-opsgenie-notification-configuration"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/opsgenie"
 
 [[redirects]]
   from="/docs/agent/changelog"
@@ -120,23 +120,23 @@
 
 [[redirects]]
   from="/docs/nightly/operations/alerts/add-discord-notification-configuration"
-  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-discord-notification-configuration"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/discord"
 
 [[redirects]]
   from="/docs/nightly/operations/alerts/add-webhook-notification-configuration"
-  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-webhook-notification-configuration"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/webhook"
 
 [[redirects]]
   from="/docs/nightly/operations/alerts/add-pagerduty-notification-configuration"
-  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-pagerduty-notification-configuration"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/nightly/operations/alerts/add-slack-notification-configuration"
-  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-slack-notification-configuration"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/slack"
 
 [[redirects]]
   from="/docs/nightly/operations/run-time-troubleshooting-with-functions"
-  to="/docs/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
+  to="/docs/live-view"
 
 [[redirects]]
   from="/docs/nightly/troubleshooting-and-machine-learning/events-feed"
@@ -152,27 +152,27 @@
 
 [[redirects]]
   from="/docs/nightly/deployment-in-production/security/role-based-access-model"
-  to="/docs/deployment-in-production/security/role-based-access-model"
+  to="/docs/netdata-cloud/authentication-&-authorization/role-based-access-model"
 
 [[redirects]]
   from="/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-discord-notification-configuration"
-  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-discord-notification-configuration"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/discord"
 
 [[redirects]]
   from="/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-webhook-notification-configuration"
-  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-webhook-notification-configuration"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/webhook"
 
 [[redirects]]
   from="/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-pagerduty-notification-configuration"
-  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-pagerduty-notification-configuration"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/pagerduty"
 
 [[redirects]]
   from="/docs/nightly/alerts-and-notifications/notifications/cloud-alert-notifications/add-slack-notification-configuration"
-  to="/docs/alerts-and-notifications/notifications/cloud-alert-notifications/add-slack-notification-configuration"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/slack"
 
 [[redirects]]
   from="/docs/nightly/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
-  to="/docs/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
+  to="/docs/live-view"
 
 [[redirects]]
   from="/guides"
@@ -181,5 +181,61 @@
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/windows"
   to="/docs/netdata-agent/installation/windows"
+
+[[redirects]]
+  from="/docs/agent/cheatsheet"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/cloud/monitoring/alarms"
+  to="/docs/dashboards-and-charts/tabs/alerts"
+
+[[redirects]]
+  from="/docs/cloud/monitor/alarms"
+  to="/docs/dashboards-and-charts/tabs/alerts"
+
+[[redirects]]
+  from="/docs/visualize/view-all-nodes"
+  to="/docs/dashboards-and-charts/tabs/nodes"
+
+[[redirects]]
+  from="/docs/agent/contributors"
+  to="/docs/developer-and-contributor-corner/contributing"
+
+[[redirects]]
+  from="/docs/agent/packaging/DISTRIBUTIONS"
+  to="/docs/netdata-agent/versions-&-platforms"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/energid"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/ntpd"
+  to="/docs/collecting-metrics/collectors/networking/ntpd"
+
+[[redirects]]
+  from="/docs/agent/zh/collectors/python.d.plugin/exim"
+  to="/docs/collecting-metrics/collectors/applications/exim"
+
+[[redirects]]
+  from="/docs/agent/zh/collectors/python.d.plugin/tomcat"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/tomcat"
+
+[[redirects]]
+  from="/docs/agent/zh/docs/step-by-step/step-00"
+  to="/docs/netdata-agent/quickstart-deployment"
+
+[[redirects]]
+  from="/docs/agent/zh/libnetdata/eval"
+  to="/docs/developer-and-contributor-corner/libnetdata"
+
+[[redirects]]
+  from="/docs/agent/zh/packaging/installer/methods/manual"
+  to="/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout"
+
+[[redirects]]
+  from="/docs/agent/zh/web/api/queries/ses"
+  to="/docs/developer-and-contributor-corner/rest-api/queries/single-or-simple-exponential-smoothing-ses"
 
 # section: static << END
