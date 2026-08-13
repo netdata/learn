@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source_sow": "SOW-0015",
-  "last_ingested_netdata_commit": "213080519e07550dc29dbd52c06e87f703f3cbd1",
+  "last_ingested_netdata_commit": "c5e2560dff2c31488db1eb1e79447bc83b4b7281",
   "last_ingested_netdata_cloud_onprem_commit": "08e18a7b02343027e32264199d30720f5de12d96",
   "must_be_ingested_before_closure": false,
   "approved_learn_contracts": [

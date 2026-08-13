@@ -19590,7 +19590,8 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: .nan
+  description: Use libnetdata clock APIs for wall-clock timestamps, monotonic elapsed
+    time, heartbeat scheduling, sleeps, and safe time arithmetic.
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/config/README.md
@@ -19727,7 +19728,8 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: .nan
+  description: Use libnetdata socket APIs for connections, listeners, polling, peer
+    details, access checks, and optional TLS transport.
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/running-through-cf-tunnels.md
