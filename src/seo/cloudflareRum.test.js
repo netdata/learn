@@ -87,6 +87,14 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     ['', /exactly one/],
     [`${beacon}${beacon}`, /exactly one/],
     [`<template>${beacon}</template>`, /exactly one/],
+    [
+      `<svg><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
+      /exactly one/,
+    ],
+    [
+      `<math><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></math>`,
+      /exactly one/,
+    ],
     [beacon.replace('type="module"', 'type="text/javascript"'), /deferred module/],
     [beacon.replace(' defer', ''), /deferred module/],
     [beacon.replace(' data-cf-beacon', ' integrity="sha256-test" data-cf-beacon'), /cannot use integrity/],

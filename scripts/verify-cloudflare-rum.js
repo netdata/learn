@@ -5,6 +5,7 @@ const {parse} = require('parse5');
 const SOURCE = 'https://static.cloudflareinsights.com/beacon.min.js';
 const TOKEN = '7408c22ab930458a8467c91b5360b8f3';
 const SITE_ORIGIN = 'https://learn.netdata.cloud';
+const HTML_NAMESPACE = 'http://www.w3.org/1999/xhtml';
 const REPRESENTATIVE_ROUTES = [
   'index.html',
   'blog/index.html',
@@ -45,7 +46,7 @@ function verifyPage(html, relative) {
       const sources = nodeAttrs
         .filter(({name}) => name === 'src' || name === 'href')
         .map(({value}) => scriptUrl(value));
-      scriptTags.push({attrs, sources});
+      scriptTags.push({attrs, namespace: node.namespaceURI, sources});
     }
     for (const child of node.childNodes || []) visit(child);
   };
@@ -67,7 +68,10 @@ function verifyPage(html, relative) {
     }
     return null;
   }
-  const scripts = scriptTags.filter(({sources}) => sources.some((url) => url && url.href === SOURCE));
+  const scripts = scriptTags.filter(
+    ({namespace, sources}) =>
+      namespace === HTML_NAMESPACE && sources.some((url) => url && url.href === SOURCE),
+  );
   if (scripts.length !== 1) {
     throw new Error(`${relative}: expected exactly one Cloudflare Web Analytics beacon, found ${scripts.length}`);
   }
