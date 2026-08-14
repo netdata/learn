@@ -52,6 +52,8 @@ function verifyPage(html, relative) {
   let hasInlineModuleScript = false;
   let hasModuleScript = false;
   let hasMetaContentSecurityPolicy = false;
+  let hasImportMap = false;
+  let hasModulePreload = false;
   const visit = (node, inShadowTree = false) => {
     const nodeAttrs = node.attrs || [];
     const attrs = new Map(nodeAttrs.map(({name, value}) => [name, value]));
@@ -62,6 +64,17 @@ function verifyPage(html, relative) {
       (attrs.get('http-equiv') || '').trim().toLowerCase() === 'content-security-policy'
     ) {
       hasMetaContentSecurityPolicy = true;
+    }
+    if (
+      node.nodeName === 'link' &&
+      node.namespaceURI === HTML_NAMESPACE &&
+      (attrs.get('rel') || '')
+        .trim()
+        .toLowerCase()
+        .split(/\s+/)
+        .includes('modulepreload')
+    ) {
+      hasModulePreload = true;
     }
     if (node.nodeName === 'iframe' && attrs.has('srcdoc')) hasIframeSrcdoc = true;
     const nestedDocumentAttribute = NESTED_DOCUMENT_ATTRIBUTES.get(node.nodeName);
@@ -85,7 +98,9 @@ function verifyPage(html, relative) {
       const sources = sourceAttribute
         ? nodeAttrs.filter(({name}) => name === sourceAttribute).map(({value}) => scriptUrl(value))
         : [];
-      const isModule = (attrs.get('type') || '').trim().toLowerCase() === 'module';
+      const scriptType = (attrs.get('type') || '').trim().toLowerCase();
+      const isModule = scriptType === 'module';
+      if (node.namespaceURI === HTML_NAMESPACE && scriptType === 'importmap') hasImportMap = true;
       if (isModule) hasModuleScript = true;
       if (isModule && sources.length === 0) hasInlineModuleScript = true;
       scriptTags.push({attrs, inShadowTree, namespace: node.namespaceURI, sources});
@@ -144,6 +159,11 @@ function verifyPage(html, relative) {
   }
   if (hasMetaContentSecurityPolicy) {
     throw new Error(`${relative}: analytics verification cannot prove a beacon under a meta CSP`);
+  }
+  if (hasImportMap || hasModulePreload) {
+    throw new Error(
+      `${relative}: analytics verification forbids import maps and module preloads`,
+    );
   }
   const scripts = scriptTags.filter(({sources}) => sources.some(isCloudflareBeaconResource));
   if (scripts.length !== 1) {

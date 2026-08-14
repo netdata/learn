@@ -141,6 +141,18 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
       /meta CSP/,
     ],
     [
+      `<script type="importmap">{"integrity":{"https:\\u002f\\u002fstatic.cloudflareinsights.com\\u002fbeacon.min.js":"sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="}}</script>${beacon}`,
+      /import maps and module preloads/,
+    ],
+    [
+      `<link rel="modulepreload" href="https://static.cloudflareinsights.com/&#98;eacon.min.js" integrity="sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=">${beacon}`,
+      /import maps and module preloads/,
+    ],
+    [
+      `<link rel="modulepreload" href="https://static.cloudflareinsights.com/beacon.min.js" crossorigin="use-credentials">${beacon}`,
+      /import maps and module preloads/,
+    ],
+    [
       `<svg><script href="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
       /HTML script/,
     ],
