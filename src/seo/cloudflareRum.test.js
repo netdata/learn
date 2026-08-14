@@ -89,6 +89,12 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     [`${beacon}${beacon}`, /exactly one/],
     [`<template>${beacon}</template>`, /exactly one/],
     [`${beacon}<div><template shadowrootmode="CLOSED">${beacon}</template></div>`, /exactly one/],
+    [`<div><template shadowrootmode="open">${beacon}</template></div>`, /document tree/],
+    [`<a><template shadowrootmode="open">${beacon}</template></a>`, /document tree/],
+    [
+      `<div><template shadowrootmode="open"></template><template shadowrootmode="closed">${beacon}</template></div>`,
+      /document tree/,
+    ],
     [
       `<svg><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
       /exactly one/,

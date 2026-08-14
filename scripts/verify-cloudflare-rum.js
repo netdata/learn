@@ -37,7 +37,7 @@ function htmlFilesUnder(root) {
 function verifyPage(html, relative) {
   const scriptTags = [];
   let sensitiveResolutionOverride = false;
-  const visit = (node) => {
+  const visit = (node, inShadowTree = false) => {
     const nodeAttrs = node.attrs || [];
     const attrs = new Map(nodeAttrs.map(({name, value}) => [name, value]));
     if (node.nodeName === 'base' && attrs.has('href')) sensitiveResolutionOverride = true;
@@ -46,9 +46,9 @@ function verifyPage(html, relative) {
       const sources = nodeAttrs
         .filter(({name}) => name === 'src' || name === 'href')
         .map(({value}) => scriptUrl(value));
-      scriptTags.push({attrs, namespace: node.namespaceURI, sources});
+      scriptTags.push({attrs, inShadowTree, namespace: node.namespaceURI, sources});
     }
-    for (const child of node.childNodes || []) visit(child);
+    for (const child of node.childNodes || []) visit(child, inShadowTree);
     const shadowRootMode = attrs.get('shadowrootmode')?.toLowerCase();
     if (
       node.nodeName === 'template' &&
@@ -56,7 +56,7 @@ function verifyPage(html, relative) {
       (shadowRootMode === 'open' || shadowRootMode === 'closed') &&
       node.content
     ) {
-      visit(node.content);
+      visit(node.content, true);
     }
   };
   visit(parse(html));
@@ -83,6 +83,9 @@ function verifyPage(html, relative) {
   );
   if (scripts.length !== 1) {
     throw new Error(`${relative}: expected exactly one Cloudflare Web Analytics beacon, found ${scripts.length}`);
+  }
+  if (scripts[0].inShadowTree) {
+    throw new Error(`${relative}: Cloudflare Web Analytics beacon must be in the document tree`);
   }
   const {attrs} = scripts[0];
   if (attrs.get('src') !== SOURCE) {
