@@ -64,7 +64,7 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
         '<iframe srcdoc="&lt;script src=&quot;https://example.com/code.js&quot;&gt;&lt;/script&gt;"></iframe>',
         '<div><template shadowrootmode="open"><script src="https://example.com/code.js"></script></template></div>',
       ]) {
-        expect(() => verifyPage(markup, relative)).toThrow(/must not load/);
+        expect(() => verifyPage(markup, relative)).toThrow(/must not load|forbids/);
       }
       expect(() =>
         verifyPage('<script src="/local.js" src="https://example.com/code.js"></script>', relative),
@@ -95,6 +95,11 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
       `<div><template shadowrootmode="open"></template><template shadowrootmode="closed">${beacon}</template></div>`,
       /document tree/,
     ],
+    [
+      `<base href="https://static.cloudflareinsights.com/">${beacon}<script src="beacon.min.js" defer type="module" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script>`,
+      /base URL overrides/,
+    ],
+    [`${beacon}<iframe srcdoc="&lt;p&gt;nested document&lt;/p&gt;"></iframe>`, /iframe srcdoc/],
     [
       `<svg><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
       /exactly one/,

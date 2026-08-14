@@ -36,12 +36,13 @@ function htmlFilesUnder(root) {
 
 function verifyPage(html, relative) {
   const scriptTags = [];
-  let sensitiveResolutionOverride = false;
+  let hasBaseUrlOverride = false;
+  let hasIframeSrcdoc = false;
   const visit = (node, inShadowTree = false) => {
     const nodeAttrs = node.attrs || [];
     const attrs = new Map(nodeAttrs.map(({name, value}) => [name, value]));
-    if (node.nodeName === 'base' && attrs.has('href')) sensitiveResolutionOverride = true;
-    if (node.nodeName === 'iframe' && attrs.has('srcdoc')) sensitiveResolutionOverride = true;
+    if (node.nodeName === 'base' && attrs.has('href')) hasBaseUrlOverride = true;
+    if (node.nodeName === 'iframe' && attrs.has('srcdoc')) hasIframeSrcdoc = true;
     if (node.nodeName === 'script') {
       const sources = nodeAttrs
         .filter(({name}) => name === 'src' || name === 'href')
@@ -61,6 +62,10 @@ function verifyPage(html, relative) {
   };
   visit(parse(html));
 
+  if (hasBaseUrlOverride || hasIframeSrcdoc) {
+    throw new Error(`${relative}: analytics verification forbids base URL overrides and iframe srcdoc`);
+  }
+
   function scriptUrl(source) {
     try {
       return new URL(source, `${SITE_ORIGIN}/`);
@@ -72,7 +77,7 @@ function verifyPage(html, relative) {
     const external = scriptTags.some(({sources}) =>
       sources.some((url) => url === false || url.origin !== SITE_ORIGIN),
     );
-    if (sensitiveResolutionOverride || external || html.includes(SOURCE) || html.includes(TOKEN)) {
+    if (external || html.includes(SOURCE) || html.includes(TOKEN)) {
       throw new Error(`${relative}: credential-handling HTML must not load third-party code`);
     }
     return null;
