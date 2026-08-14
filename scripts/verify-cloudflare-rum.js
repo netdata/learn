@@ -7,6 +7,12 @@ const SOURCE_URL = new URL(SOURCE);
 const TOKEN = '7408c22ab930458a8467c91b5360b8f3';
 const SITE_ORIGIN = 'https://learn.netdata.cloud';
 const HTML_NAMESPACE = 'http://www.w3.org/1999/xhtml';
+const NESTED_DOCUMENT_ATTRIBUTES = new Map([
+  ['iframe', 'src'],
+  ['frame', 'src'],
+  ['object', 'data'],
+  ['embed', 'src'],
+]);
 const REPRESENTATIVE_ROUTES = [
   'index.html',
   'blog/index.html',
@@ -39,11 +45,24 @@ function verifyPage(html, relative) {
   const scriptTags = [];
   let hasBaseUrlOverride = false;
   let hasIframeSrcdoc = false;
+  let hasNestedDocument = false;
+  let hasInlineNestedDocument = false;
   const visit = (node, inShadowTree = false) => {
     const nodeAttrs = node.attrs || [];
     const attrs = new Map(nodeAttrs.map(({name, value}) => [name, value]));
     if (node.nodeName === 'base' && attrs.has('href')) hasBaseUrlOverride = true;
     if (node.nodeName === 'iframe' && attrs.has('srcdoc')) hasIframeSrcdoc = true;
+    const nestedDocumentAttribute = NESTED_DOCUMENT_ATTRIBUTES.get(node.nodeName);
+    if (nestedDocumentAttribute && attrs.has(nestedDocumentAttribute)) {
+      hasNestedDocument = true;
+      const nestedDocumentUrl = scriptUrl(attrs.get(nestedDocumentAttribute));
+      if (
+        nestedDocumentUrl === false ||
+        (nestedDocumentUrl.protocol !== 'http:' && nestedDocumentUrl.protocol !== 'https:')
+      ) {
+        hasInlineNestedDocument = true;
+      }
+    }
     if (node.nodeName === 'script') {
       const sources = nodeAttrs
         .filter(({name}) => name === 'src' || name === 'href')
@@ -63,8 +82,10 @@ function verifyPage(html, relative) {
   };
   visit(parse(html));
 
-  if (hasBaseUrlOverride || hasIframeSrcdoc) {
-    throw new Error(`${relative}: analytics verification forbids base URL overrides and iframe srcdoc`);
+  if (hasBaseUrlOverride || hasIframeSrcdoc || hasInlineNestedDocument) {
+    throw new Error(
+      `${relative}: analytics verification forbids base URL overrides and inline nested documents`,
+    );
   }
 
   function scriptUrl(source) {
@@ -86,7 +107,7 @@ function verifyPage(html, relative) {
     const external = scriptTags.some(({sources}) =>
       sources.some((url) => url === false || url.origin !== SITE_ORIGIN),
     );
-    if (external || html.includes(SOURCE) || html.includes(TOKEN)) {
+    if (hasNestedDocument || external || html.includes(SOURCE) || html.includes(TOKEN)) {
       throw new Error(`${relative}: credential-handling HTML must not load third-party code`);
     }
     return null;

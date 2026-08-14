@@ -62,6 +62,10 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
         '<svg><script href="https://example.com/code.js"></script></svg>',
         '<svg><script xlink:href="https://example.com/code.js"></script></svg>',
         '<iframe srcdoc="&lt;script src=&quot;https://example.com/code.js&quot;&gt;&lt;/script&gt;"></iframe>',
+        '<iframe src="data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Fexample.com%2Fcode.js%3E%3C%2Fscript%3E"></iframe>',
+        '<object data="data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Fexample.com%2Fcode.js%3E%3C%2Fscript%3E"></object>',
+        '<embed src="data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Fexample.com%2Fcode.js%3E%3C%2Fscript%3E">',
+        '<html><frameset><frame src="data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Fexample.com%2Fcode.js%3E%3C%2Fscript%3E"></frameset></html>',
         '<div><template shadowrootmode="open"><script src="https://example.com/code.js"></script></template></div>',
       ]) {
         expect(() => verifyPage(markup, relative)).toThrow(/must not load|forbids/);
@@ -99,7 +103,7 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
       `<base href="https://static.cloudflareinsights.com/">${beacon}<script src="beacon.min.js" defer type="module" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script>`,
       /base URL overrides/,
     ],
-    [`${beacon}<iframe srcdoc="&lt;p&gt;nested document&lt;/p&gt;"></iframe>`, /iframe srcdoc/],
+    [`${beacon}<iframe srcdoc="&lt;p&gt;nested document&lt;/p&gt;"></iframe>`, /inline nested documents/],
     [
       `${beacon}<script src="HTTPS://STATIC.CLOUDFLAREINSIGHTS.COM/beacon.min.js#duplicate" defer type="module" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script>`,
       /exactly one/,
@@ -130,6 +134,19 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     [beacon.replace(TOKEN, 'wrong-token'), /approved public token/],
   ])('rejects an invalid rendered beacon', (markup, message) => {
     expect(() => verifyPage(`<html><body>${markup}</body></html>`, 'test.html')).toThrow(message);
+  });
+
+  it('rejects inline executable nested-document carriers on normal pages', () => {
+    const payload =
+      'data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Fstatic.cloudflareinsights.com%2Fbeacon.min.js%3E%3C%2Fscript%3E';
+    for (const markup of [
+      `<html><head>${beacon}</head><body><iframe src="${payload}"></iframe></body></html>`,
+      `<html><head>${beacon}</head><body><object data="${payload}"></object></body></html>`,
+      `<html><head>${beacon}</head><body><embed src="${payload}"></body></html>`,
+      `<html><head>${beacon}</head><frameset><frame src="${payload}"></frameset></html>`,
+    ]) {
+      expect(() => verifyPage(markup, 'test.html')).toThrow(/inline nested documents/);
+    }
   });
 
   it('rejects a missing route class and symlinked output', () => {
