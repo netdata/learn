@@ -91,15 +91,12 @@ function verifyPage(html, relative) {
     }
     return null;
   }
-  const scripts = scriptTags.filter(
-    ({namespace, sources}) =>
-      namespace === HTML_NAMESPACE && sources.some(isCloudflareBeaconResource),
-  );
+  const scripts = scriptTags.filter(({sources}) => sources.some(isCloudflareBeaconResource));
   if (scripts.length !== 1) {
     throw new Error(`${relative}: expected exactly one Cloudflare Web Analytics beacon, found ${scripts.length}`);
   }
-  if (scripts[0].inShadowTree) {
-    throw new Error(`${relative}: Cloudflare Web Analytics beacon must be in the document tree`);
+  if (scripts[0].namespace !== HTML_NAMESPACE || scripts[0].inShadowTree) {
+    throw new Error(`${relative}: Cloudflare Web Analytics beacon must be an HTML script in the document tree`);
   }
   const {attrs} = scripts[0];
   if (attrs.get('src') !== SOURCE) {

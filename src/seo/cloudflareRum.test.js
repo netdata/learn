@@ -113,12 +113,16 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
       /exactly one/,
     ],
     [
-      `<svg><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
+      `${beacon}<svg><script href="HTTPS://STATIC.CLOUDFLAREINSIGHTS.COM/beacon.min.js#svg" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script></svg>`,
       /exactly one/,
     ],
     [
+      `<svg><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
+      /HTML script/,
+    ],
+    [
       `<math><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></math>`,
-      /exactly one/,
+      /HTML script/,
     ],
     [beacon.replace('type="module"', 'type="text/javascript"'), /deferred module/],
     [beacon.replace(' defer', ''), /deferred module/],
