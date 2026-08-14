@@ -146,6 +146,7 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     ],
     [beacon.replace('type="module"', 'type="text/javascript"'), /deferred module/],
     [beacon.replace(' defer', ''), /deferred module/],
+    [beacon.replace(' defer', ' async defer'), /deferred module/],
     [beacon.replace(' data-cf-beacon', ' integrity="sha256-test" data-cf-beacon'), /cannot use integrity/],
     [beacon.replace(TOKEN, 'wrong-token'), /approved public token/],
   ])('rejects an invalid rendered beacon', (markup, message) => {

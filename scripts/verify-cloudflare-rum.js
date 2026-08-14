@@ -144,7 +144,7 @@ function verifyPage(html, relative) {
   if (attrs.get('src') !== SOURCE) {
     throw new Error(`${relative}: Cloudflare Web Analytics beacon source must use the exact approved URL`);
   }
-  if (attrs.get('type') !== 'module' || !attrs.has('defer')) {
+  if (attrs.get('type') !== 'module' || !attrs.has('defer') || attrs.has('async')) {
     throw new Error(`${relative}: Cloudflare Web Analytics beacon must be a deferred module`);
   }
   if (attrs.has('integrity')) {
