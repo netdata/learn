@@ -35,18 +35,23 @@ function htmlFilesUnder(root) {
 
 function verifyPage(html, relative) {
   const scriptTags = [];
+  let sensitiveResolutionOverride = false;
   const visit = (node) => {
+    const nodeAttrs = node.attrs || [];
+    const attrs = new Map(nodeAttrs.map(({name, value}) => [name, value]));
+    if (node.nodeName === 'base' && attrs.has('href')) sensitiveResolutionOverride = true;
+    if (node.nodeName === 'iframe' && attrs.has('srcdoc')) sensitiveResolutionOverride = true;
     if (node.nodeName === 'script') {
-      const attrs = new Map((node.attrs || []).map(({name, value}) => [name, value]));
-      scriptTags.push({attrs, url: scriptUrl(attrs)});
+      const sources = nodeAttrs
+        .filter(({name}) => name === 'src' || name === 'href')
+        .map(({value}) => scriptUrl(value));
+      scriptTags.push({attrs, sources});
     }
     for (const child of node.childNodes || []) visit(child);
   };
   visit(parse(html));
 
-  function scriptUrl(attrs) {
-    const source = attrs.get('src');
-    if (!source) return null;
+  function scriptUrl(source) {
     try {
       return new URL(source, `${SITE_ORIGIN}/`);
     } catch {
@@ -54,13 +59,15 @@ function verifyPage(html, relative) {
     }
   }
   if (SENSITIVE_ROUTES.includes(relative)) {
-    const external = scriptTags.some(({url}) => url === false || (url && url.origin !== SITE_ORIGIN));
-    if (external || html.includes(SOURCE) || html.includes(TOKEN)) {
+    const external = scriptTags.some(({sources}) =>
+      sources.some((url) => url === false || url.origin !== SITE_ORIGIN),
+    );
+    if (sensitiveResolutionOverride || external || html.includes(SOURCE) || html.includes(TOKEN)) {
       throw new Error(`${relative}: credential-handling HTML must not load third-party code`);
     }
     return null;
   }
-  const scripts = scriptTags.filter(({url}) => url && url.href === SOURCE);
+  const scripts = scriptTags.filter(({sources}) => sources.some((url) => url && url.href === SOURCE));
   if (scripts.length !== 1) {
     throw new Error(`${relative}: expected exactly one Cloudflare Web Analytics beacon, found ${scripts.length}`);
   }

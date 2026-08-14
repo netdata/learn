@@ -58,6 +58,10 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
         '<script src="&#104;ttps://example.com/code.js"></script>',
         '<script src="&Tab;https://example.com/code.js"></script>',
         '<script src="https://example.com/code.js" src="/local.js"></script>',
+        '<base href="https://example.com/assets/"><script src="code.js"></script>',
+        '<svg><script href="https://example.com/code.js"></script></svg>',
+        '<svg><script xlink:href="https://example.com/code.js"></script></svg>',
+        '<iframe srcdoc="&lt;script src=&quot;https://example.com/code.js&quot;&gt;&lt;/script&gt;"></iframe>',
       ]) {
         expect(() => verifyPage(markup, relative)).toThrow(/must not load/);
       }
