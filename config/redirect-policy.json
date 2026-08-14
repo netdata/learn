@@ -109,6 +109,7 @@
     ["/docs/api", "/docs/developer-and-contributor-corner/rest-api"],
     ["/docs/agent/collectors/cgroups.plugin", "/docs/collecting-metrics/containers-and-cgroups"],
     ["/docs/agent/collectors/proc.plugin", "/docs/collecting-metrics"],
-    ["/dbengine-calc", "/docs/netdata-agent/configuration/database"]
+    ["/dbengine-calc", "/docs/netdata-agent/configuration/database"],
+    ["/docs/ask-netdata", "/docs/ask-nedi"]
   ]
 }

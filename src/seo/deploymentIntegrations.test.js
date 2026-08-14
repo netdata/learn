@@ -79,17 +79,11 @@ describe('shared deployment integrations', () => {
     ]);
     expect(beacons[0]).not.toHaveProperty('integrity');
 
-    for (const relative of ['static/docs/ask-netdata/index.html']) {
-      const html = fs.readFileSync(path.join(root, relative), 'utf8');
-      expect(html.match(/static\.cloudflareinsights\.com\/beacon\.min\.js/g)).toHaveLength(1);
-      expect(html.match(/type="module"/g)).toHaveLength(1);
-      expect(html.match(/7408c22ab930458a8467c91b5360b8f3/g)).toHaveLength(1);
-      expect(html).not.toContain('integrity=');
-    }
     for (const relative of ['static/api.html', 'static/oauth2-redirect.html']) {
       const html = fs.readFileSync(path.join(root, relative), 'utf8');
       expect(html).not.toContain('static.cloudflareinsights.com');
       expect(html).not.toContain('7408c22ab930458a8467c91b5360b8f3');
     }
+    expect(fs.existsSync(path.join(root, 'static/docs/ask-netdata/index.html'))).toBe(false);
   });
 });

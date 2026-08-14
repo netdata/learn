@@ -28,6 +28,10 @@
   to="/docs/network-performance-monitoring/network-flows/:splat"
 
 [[redirects]]
+  from="/docs/ask-netdata"
+  to="/docs/ask-nedi"
+
+[[redirects]]
   from="/docs/netdata-agent/configuration/cheatsheet"
   to="/docs/netdata-agent/configuration/"
 

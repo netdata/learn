@@ -19,7 +19,6 @@ const REPRESENTATIVE_ROUTES = [
   'index.html',
   'blog/index.html',
   'search/index.html',
-  'docs/ask-netdata/index.html',
   'docs/collecting-metrics/collectors/index.html',
   'docs/netdata-agent/installation/linux/index.html',
 ];

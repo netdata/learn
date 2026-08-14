@@ -5,8 +5,14 @@ import {createRequire} from 'node:module';
 import {afterEach, describe, expect, it} from 'vitest';
 
 const require = createRequire(import.meta.url);
-const {REPRESENTATIVE_ROUTES, SENSITIVE_ROUTES, SOURCE, TOKEN, verifyCloudflareRum, verifyPage} =
-  require('../../scripts/verify-cloudflare-rum');
+const {
+  REPRESENTATIVE_ROUTES,
+  SENSITIVE_ROUTES,
+  SOURCE,
+  TOKEN,
+  verifyCloudflareRum,
+  verifyPage,
+} = require('../../scripts/verify-cloudflare-rum');
 const roots = [];
 const beacon = `<script src="${SOURCE}" defer type="module" data-cf-beacon='{&quot;token&quot;:&quot;${TOKEN}&quot;}'></script>`;
 

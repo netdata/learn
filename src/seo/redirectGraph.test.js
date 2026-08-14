@@ -81,7 +81,7 @@ describe('Netlify redirect graph gate', () => {
     const policy = JSON.parse(await fs.readFile(path.join(root, 'config/redirect-policy.json'), 'utf8'));
     expect(policy.archived_wildcard_requests).toHaveLength(6);
     expect(policy.required_exact_redirects).toHaveLength(27);
-    expect(policy.same_class_exact_redirects).toHaveLength(5);
+    expect(policy.same_class_exact_redirects).toHaveLength(6);
     const requiredSources = new Set(policy.required_exact_redirects.map(([source]) => source));
     expect(policy.archived_wildcard_requests.filter(([source]) => requiredSources.has(source))).toEqual([]);
   });
@@ -96,6 +96,15 @@ describe('Netlify redirect graph gate', () => {
     });
     expect(firstMatch(rules, '/docs/network-flows-archive/example')).toBeNull();
     expect(ruleMatches({from: '/docs/network-flows/*'}, '/docs/network-flows-archive/example')).toBe(false);
+  });
+
+  it('permanently redirects the obsolete Ask Netdata route in one hop', async () => {
+    const rules = parseRedirects(await fs.readFile(path.join(root, 'netlify.toml'), 'utf8'));
+    expect(firstMatch(rules, '/docs/ask-netdata')).toMatchObject({target: '/docs/ask-nedi'});
+    expect(publishedRoutes.has('/docs/ask-netdata')).toBe(false);
+    expect(publishedRoutes.has('/docs/ask-nedi')).toBe(true);
+    const robots = await fs.readFile(path.join(root, 'static/robots.txt'), 'utf8');
+    expect(robots).not.toMatch(/^Disallow:\s*\/docs\/ask-netdata\/?$/m);
   });
 
   it.each([
