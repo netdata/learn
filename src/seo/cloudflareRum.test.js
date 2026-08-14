@@ -62,6 +62,7 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
         '<svg><script href="https://example.com/code.js"></script></svg>',
         '<svg><script xlink:href="https://example.com/code.js"></script></svg>',
         '<iframe srcdoc="&lt;script src=&quot;https://example.com/code.js&quot;&gt;&lt;/script&gt;"></iframe>',
+        '<div><template shadowrootmode="open"><script src="https://example.com/code.js"></script></template></div>',
       ]) {
         expect(() => verifyPage(markup, relative)).toThrow(/must not load/);
       }
@@ -87,6 +88,7 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     ['', /exactly one/],
     [`${beacon}${beacon}`, /exactly one/],
     [`<template>${beacon}</template>`, /exactly one/],
+    [`${beacon}<div><template shadowrootmode="CLOSED">${beacon}</template></div>`, /exactly one/],
     [
       `<svg><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
       /exactly one/,

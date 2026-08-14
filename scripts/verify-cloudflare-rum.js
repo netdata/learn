@@ -49,6 +49,15 @@ function verifyPage(html, relative) {
       scriptTags.push({attrs, namespace: node.namespaceURI, sources});
     }
     for (const child of node.childNodes || []) visit(child);
+    const shadowRootMode = attrs.get('shadowrootmode')?.toLowerCase();
+    if (
+      node.nodeName === 'template' &&
+      node.namespaceURI === HTML_NAMESPACE &&
+      (shadowRootMode === 'open' || shadowRootMode === 'closed') &&
+      node.content
+    ) {
+      visit(node.content);
+    }
   };
   visit(parse(html));
 
