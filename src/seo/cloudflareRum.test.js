@@ -54,6 +54,16 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
       expect(() => verifyPage('<script src="https://example.com/code.js"></script>', relative)).toThrow(
         /must not load/,
       );
+      for (const markup of [
+        '<script src="&#104;ttps://example.com/code.js"></script>',
+        '<script src="&Tab;https://example.com/code.js"></script>',
+        '<script src="https://example.com/code.js" src="/local.js"></script>',
+      ]) {
+        expect(() => verifyPage(markup, relative)).toThrow(/must not load/);
+      }
+      expect(() =>
+        verifyPage('<script src="/local.js" src="https://example.com/code.js"></script>', relative),
+      ).not.toThrow();
       expect(() => verifyPage('<html><body></body></html>', relative)).not.toThrow();
     }
   });
@@ -72,6 +82,7 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
   it.each([
     ['', /exactly one/],
     [`${beacon}${beacon}`, /exactly one/],
+    [`<template>${beacon}</template>`, /exactly one/],
     [beacon.replace('type="module"', 'type="text/javascript"'), /deferred module/],
     [beacon.replace(' defer', ''), /deferred module/],
     [beacon.replace(' data-cf-beacon', ' integrity="sha256-test" data-cf-beacon'), /cannot use integrity/],

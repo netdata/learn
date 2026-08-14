@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const {parse} = require('parse5');
 
 const SOURCE = 'https://static.cloudflareinsights.com/beacon.min.js';
 const TOKEN = '7408c22ab930458a8467c91b5360b8f3';
@@ -13,23 +14,6 @@ const REPRESENTATIVE_ROUTES = [
   'docs/netdata-agent/installation/linux/index.html',
 ];
 const SENSITIVE_ROUTES = ['api.html', 'oauth2-redirect.html'];
-
-function decodeAttribute(value) {
-  return value
-    .replaceAll('&quot;', '"')
-    .replaceAll('&#34;', '"')
-    .replaceAll('&#x22;', '"')
-    .replaceAll('&amp;', '&');
-}
-
-function attributes(tag) {
-  const result = new Map();
-  const pattern = /([^\s=/>]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+)))?/g;
-  for (const match of tag.matchAll(pattern)) {
-    result.set(match[1].toLowerCase(), decodeAttribute(match[2] ?? match[3] ?? match[4] ?? ''));
-  }
-  return result;
-}
 
 function htmlFilesUnder(root) {
   const files = [];
@@ -50,20 +34,25 @@ function htmlFilesUnder(root) {
 }
 
 function verifyPage(html, relative) {
-  const scriptTags = [...html.matchAll(/<script\b[^>]*>/gi)].map((match) => {
-    const tag = match[0];
-    const attrs = attributes(tag);
-    const source = attrs.get('src');
-    let url = null;
-    if (source) {
-      try {
-        url = new URL(source, `${SITE_ORIGIN}/`);
-      } catch {
-        url = false;
-      }
+  const scriptTags = [];
+  const visit = (node) => {
+    if (node.nodeName === 'script') {
+      const attrs = new Map((node.attrs || []).map(({name, value}) => [name, value]));
+      scriptTags.push({attrs, url: scriptUrl(attrs)});
     }
-    return {tag, attrs, url};
-  });
+    for (const child of node.childNodes || []) visit(child);
+  };
+  visit(parse(html));
+
+  function scriptUrl(attrs) {
+    const source = attrs.get('src');
+    if (!source) return null;
+    try {
+      return new URL(source, `${SITE_ORIGIN}/`);
+    } catch {
+      return false;
+    }
+  }
   if (SENSITIVE_ROUTES.includes(relative)) {
     const external = scriptTags.some(({url}) => url === false || (url && url.origin !== SITE_ORIGIN));
     if (external || html.includes(SOURCE) || html.includes(TOKEN)) {
@@ -75,7 +64,7 @@ function verifyPage(html, relative) {
   if (scripts.length !== 1) {
     throw new Error(`${relative}: expected exactly one Cloudflare Web Analytics beacon, found ${scripts.length}`);
   }
-  const {tag, attrs} = scripts[0];
+  const {attrs} = scripts[0];
   if (attrs.get('src') !== SOURCE) {
     throw new Error(`${relative}: Cloudflare Web Analytics beacon source must use the exact approved URL`);
   }
@@ -97,7 +86,7 @@ function verifyPage(html, relative) {
   if (html.split(SOURCE).length !== 2 || html.split(TOKEN).length !== 2) {
     throw new Error(`${relative}: Cloudflare Web Analytics source or token occurs more than once`);
   }
-  return tag;
+  return attrs;
 }
 
 function verifyCloudflareRum(publishDir) {
@@ -146,7 +135,6 @@ module.exports = {
   TOKEN,
   REPRESENTATIVE_ROUTES,
   SENSITIVE_ROUTES,
-  attributes,
   verifyCloudflareRum,
   verifyPage,
 };
