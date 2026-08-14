@@ -3,6 +3,7 @@ const path = require('node:path');
 
 const SOURCE = 'https://static.cloudflareinsights.com/beacon.min.js';
 const TOKEN = '7408c22ab930458a8467c91b5360b8f3';
+const SITE_ORIGIN = 'https://learn.netdata.cloud';
 const REPRESENTATIVE_ROUTES = [
   'index.html',
   'blog/index.html',
@@ -41,7 +42,7 @@ function htmlFilesUnder(root) {
         throw new Error(`Rendered output contains a symbolic link: ${filename}`);
       }
       if (entry.isDirectory()) stack.push(filename);
-      else if (entry.isFile() && entry.name.endsWith('.html')) files.push(filename);
+      else if (entry.isFile() && entry.name.toLowerCase().endsWith('.html')) files.push(filename);
       else if (!entry.isFile()) throw new Error(`Rendered output contains a non-regular file: ${filename}`);
     }
   }
@@ -49,19 +50,35 @@ function htmlFilesUnder(root) {
 }
 
 function verifyPage(html, relative) {
-  const scripts = [...html.matchAll(/<script\b[^>]*>/gi)]
-    .map((match) => ({tag: match[0], attrs: attributes(match[0])}))
-    .filter(({attrs}) => attrs.get('src') === SOURCE);
+  const scriptTags = [...html.matchAll(/<script\b[^>]*>/gi)].map((match) => {
+    const tag = match[0];
+    const attrs = attributes(tag);
+    const source = attrs.get('src');
+    let url = null;
+    if (source) {
+      try {
+        url = new URL(source, `${SITE_ORIGIN}/`);
+      } catch {
+        url = false;
+      }
+    }
+    return {tag, attrs, url};
+  });
   if (SENSITIVE_ROUTES.includes(relative)) {
-    if (scripts.length || html.includes(SOURCE) || html.includes(TOKEN)) {
-      throw new Error(`${relative}: credential-handling HTML must not load Cloudflare code`);
+    const external = scriptTags.some(({url}) => url === false || (url && url.origin !== SITE_ORIGIN));
+    if (external || html.includes(SOURCE) || html.includes(TOKEN)) {
+      throw new Error(`${relative}: credential-handling HTML must not load third-party code`);
     }
     return null;
   }
+  const scripts = scriptTags.filter(({url}) => url && url.href === SOURCE);
   if (scripts.length !== 1) {
     throw new Error(`${relative}: expected exactly one Cloudflare Web Analytics beacon, found ${scripts.length}`);
   }
   const {tag, attrs} = scripts[0];
+  if (attrs.get('src') !== SOURCE) {
+    throw new Error(`${relative}: Cloudflare Web Analytics beacon source must use the exact approved URL`);
+  }
   if (attrs.get('type') !== 'module' || !attrs.has('defer')) {
     throw new Error(`${relative}: Cloudflare Web Analytics beacon must be a deferred module`);
   }

@@ -45,8 +45,28 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
       expect(() => verifyPage(`<html><body>${beacon}</body></html>`, relative)).toThrow(
         /must not load/,
       );
+      expect(() =>
+        verifyPage(
+          '<script src="HTTPS://STATIC.CLOUDFLAREINSIGHTS.COM/beacon.min.js"></script>',
+          relative,
+        ),
+      ).toThrow(/must not load/);
+      expect(() => verifyPage('<script src="https://example.com/code.js"></script>', relative)).toThrow(
+        /must not load/,
+      );
       expect(() => verifyPage('<html><body></body></html>', relative)).not.toThrow();
     }
+  });
+
+  it('checks HTML suffixes case-insensitively', () => {
+    const root = fixture();
+    const filename = path.join(root, 'extra.HTML');
+    fs.writeFileSync(filename, '<html><body></body></html>');
+    expect(() => verifyCloudflareRum(root)).toThrow(/extra\.HTML: expected exactly one/);
+    fs.writeFileSync(filename, `<html><body>${beacon}</body></html>`);
+    expect(verifyCloudflareRum(root).htmlFiles).toBe(
+      REPRESENTATIVE_ROUTES.length + SENSITIVE_ROUTES.length + 1,
+    );
   });
 
   it.each([
