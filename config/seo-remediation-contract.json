@@ -45,7 +45,23 @@
       "49abbd83acfedc62bc3fafb40157314d8e66a92d",
       "351e2909d5c6120734e334d2251efd6d9b91482b",
       "e3e1702c228ec3d33dfee08f875b0c1f2642c1ae",
-      "aebfd9e240d96b9f5b0b95455a39dacc3b549a41"
+      "aebfd9e240d96b9f5b0b95455a39dacc3b549a41",
+      "4eab40f62ec611e86f52d39adf7f4fdbcdd976ce",
+      "2942db87772eab90190c9b3d36e88d0807761f03",
+      "52889c9423fd2f77b72aa9ca02ed0651f550d6a2",
+      "015953e75a781c6073be299731697fa37574cdbd",
+      "02cd0d21b9c7e8b40a00c5e273ef9ade1f25c3c1",
+      "1554b043cef3ebfba7e35b2dc57aef51cc505aba",
+      "7f0949983e21de0c988254d04c29561713be2297",
+      "a7a516c0cfaa1cee913fee49d4ccb5dbf516562d",
+      "baa831b043f00147f2052ca324a4230d172a2558",
+      "3280d995ae421a805e19413014dfa2841975236c",
+      "5372d7189ab2d6a7eff084479bb46a1c94e7b728",
+      "bd86299a289df20282f5f7b3fa045edef6eebb9d",
+      "1758ef5b83b19c90afcfa34ad843399e91f13050",
+      "59eead708e20bf9006c73547c732111a7de533e0",
+      "73d78d08bd91aef1f0326fb3ed95d519a83cad98",
+      "8546dbf5ba1852d370ea9f006beaaf9d28870c33"
     ],
     "independent_agent_source_review": "production-grade-no-blockers",
     "six_source_full_ingest_runs": 2,
@@ -59,12 +75,12 @@
       "python_ingest": 41,
       "mdx_escaping": 54,
       "vitest_files": 26,
-      "vitest_tests": 334,
+      "vitest_tests": 361,
       "indexnow": 63,
       "canonical_c8": 4,
       "exact_agent_source": 76
     },
-    "redirect_rules": 3156,
+    "redirect_rules": 3157,
     "historical_network_flows_routes": 42,
     "build_runtime": {
       "node": "22.14.0",
@@ -73,10 +89,10 @@
       "node_heap_mib": 8192
     },
     "production_builds": 2,
-    "build_files": 4170,
-    "build_manifest_sha256": "38d73762ed8a987dbd3f58b8f54bd8f409d24b47e75dfcc11b2e292e197bb334",
+    "build_files": 4169,
+    "build_manifest_sha256": "dac7a4c6d609c3c6b1863f1e215547196e4d0d8e139c4b012ee70b52269e4ba2",
     "byte_identical": true,
-    "rendered_html_files": 1986,
+    "rendered_html_files": 1985,
     "sitemap_urls": 1980,
     "sitemap_urls_with_lastmod": 1980,
     "distinct_lastmod_timestamps": 47,
@@ -84,7 +100,7 @@
     "functional_routes_with_exactly_one_h1": 2,
     "rendered_internal_links": 823325,
     "noindex_directives": 0,
-    "cloudflare_normal_html_files": 1984,
+    "cloudflare_normal_html_files": 1983,
     "cloudflare_credential_html_files": 2,
     "cloudflare_beacons_per_normal_html": 1,
     "cloudflare_beacons_per_credential_html": 0,
@@ -111,7 +127,7 @@
     "Run all Learn and exact-source tests, two byte-identical production builds, rendered audits, provenance checks, and repository hygiene checks.",
     "Vendor the exact C8 ruleset-v8 bundle accepted in netdata/seo commit 0849022df128b87ad0ae0a829a5e444408e4937f with the canonical exporter. Every Netlify context performs a clean locked Node 22 install in that bundle, builds Docusaurus, and scans the complete build with the Learn origin and a read-only, reasoned baseline containing only exact pre-existing findings.",
     "Replace the legacy Learn IndexNow copy with every checksum-covered schema-2 artifact, dependency, verifier rule, and adversarial test from the website owner commit 52f3eb6e6ee01ecc1416d51dffedde0c22db62ff. Only the declared Learn host, key-location host, published build directory, and test fixture route shape may differ; receipt, retry, cache, URL, filesystem, and at-least-once semantics remain byte-identical.",
-    "Install the approved public Cloudflare Web Analytics token once through Docusaurus' shared document script configuration as an unversioned type=module beacon. Verify exactly one beacon in every normal rendered HTML artifact, including root, docs, generated indexes, blog, search, and redirect output; require zero third-party beacon code on the API console and OAuth callback, without edge configuration, secrets, noindex, content, or sitemap changes."
+    "Install the approved public Cloudflare Web Analytics token once through Docusaurus' shared document script configuration as an unversioned type=module beacon. Verify exactly one executable beacon in every normal rendered HTML artifact, including root, docs, generated indexes, blog, and search; require zero third-party script code on the API console and OAuth callback. Replace the obsolete Ask Netdata compatibility HTML with one permanent Netlify redirect to Ask Nedi so it is not an analytics-bearing document."
   ],
   "excluded_work": [
     "upstream rebase",
@@ -126,8 +142,8 @@
     },
     {
       "id": "zero-noindex-sitemap-separation",
-      "contract": "Public routes never emit a noindex robots directive. Sitemap exclusion is a separate discovery choice: blog, search, and the canonical ask-netdata replacement route remain excluded, while all current self-canonical libnetdata references remain included and indexable.",
-      "acceptance": "Every rendered HTML file contains zero noindex directives; all current libnetdata routes occur exactly once in the sitemap; blog, search, and ask-netdata remain absent from it."
+      "contract": "Public routes never emit a noindex robots directive. Sitemap exclusion is a separate discovery choice: blog and search remain excluded, the obsolete Ask Netdata path is a permanent redirect rather than an HTML route, and all current self-canonical libnetdata references remain included and indexable.",
+      "acceptance": "Every rendered HTML file contains zero noindex directives; all current libnetdata routes occur exactly once in the sitemap; blog, search, and the redirected Ask Netdata path remain absent from it."
     },
     {
       "id": "grid-recovery-equivalence",
@@ -177,12 +193,12 @@
     {
       "id": "manual-cloudflare-web-analytics",
       "contract": "Docusaurus' shared HTML script configuration emits one defer type=module Cloudflare beacon with the approved zone-level public token. The source remains unversioned and has no integrity attribute; the token is public and no Cloudflare credential enters the repository. The API console and OAuth callback are explicit security-sensitive exceptions and contain no third-party script code.",
-      "acceptance": "Every normal rendered HTML file, including each route class and redirect output, contains exactly one manual beacon and token. api.html and oauth2-redirect.html contain zero beacon code and reject external HTML or SVG scripts using WHATWG parsing and URL resolution; base URL overrides and executable iframe srcdoc documents fail closed. The zero-noindex, sitemap, content, and edge contracts remain unchanged."
+      "acceptance": "Every normal rendered HTML file contains exactly one executable manual beacon and token. api.html and oauth2-redirect.html contain zero third-party script code and fail closed on browser-active script, module, nested-document, shadow-DOM, URL-base, preload, import-map, and policy bypasses. The obsolete Ask Netdata compatibility document does not exist; its one-hop permanent redirect targets the rendered Ask Nedi route. The zero-noindex and sitemap contracts remain unchanged."
     },
     {
       "id": "exact-final-agent-source-ingest",
       "contract": "The final source refresh uses corrected committed, clean netdata/netdata source 34727a00b89df3886239ad1e0324d59269d5714d through the local-source ingest path. It replaces rejected candidates bf44bb561c6b59f35deab0d5df2f9be9dae92a01, 36d3a604e29765276c76b4e3f736a8d917bda371, and 7c999e225e4fa8eb5f9d04c2327515a873a4aca6 and must pass fresh independent source review before final staging or builds. Only exact upstream provenance plus pipeline-generated Learn documentation, maps, sidebar state, and redirect output may change; generated documentation is never hand-edited.",
-      "acceptance": "The committed dependency and generated state pin the exact source, map, corpus, and full-ingest hashes; all 40 newly completed source descriptions arrive byte-for-byte in their generated Learn pages; no generated description ends in an ASCII or Unicode ellipsis; redirect generation remains a fixed point at 3156 rules with all 42 historical Network Flows routes; and two Node 22.14.0, Yarn 1.22.22, 8 GiB Netlify-equivalent builds are byte-identical."
+      "acceptance": "The committed dependency and generated state pin the exact source, map, corpus, and full-ingest hashes; all 40 newly completed source descriptions arrive byte-for-byte in their generated Learn pages; no generated description ends in an ASCII or Unicode ellipsis; redirect generation remains a fixed point at 3157 rules with all 42 historical Network Flows routes; and two Node 22.14.0, Yarn 1.22.22, 8 GiB Netlify-equivalent builds are byte-identical."
     },
     {
       "id": "source-owned-onprem-trailing-whitespace",
