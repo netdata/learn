@@ -47,6 +47,8 @@ function verifyPage(html, relative) {
   let hasIframeSrcdoc = false;
   let hasNestedDocument = false;
   let hasInlineNestedDocument = false;
+  let hasInlineModuleScript = false;
+  let hasModuleScript = false;
   const visit = (node, inShadowTree = false) => {
     const nodeAttrs = node.attrs || [];
     const attrs = new Map(nodeAttrs.map(({name, value}) => [name, value]));
@@ -67,6 +69,9 @@ function verifyPage(html, relative) {
       const sources = nodeAttrs
         .filter(({name}) => name === 'src' || name === 'href')
         .map(({value}) => scriptUrl(value));
+      const isModule = (attrs.get('type') || '').trim().toLowerCase() === 'module';
+      if (isModule) hasModuleScript = true;
+      if (isModule && sources.length === 0) hasInlineModuleScript = true;
       scriptTags.push({attrs, inShadowTree, namespace: node.namespaceURI, sources});
     }
     for (const child of node.childNodes || []) visit(child, inShadowTree);
@@ -86,6 +91,9 @@ function verifyPage(html, relative) {
     throw new Error(
       `${relative}: analytics verification forbids base URL overrides and inline nested documents`,
     );
+  }
+  if (hasInlineModuleScript) {
+    throw new Error(`${relative}: analytics verification forbids inline module scripts`);
   }
 
   function scriptUrl(source) {
@@ -107,7 +115,13 @@ function verifyPage(html, relative) {
     const external = scriptTags.some(({sources}) =>
       sources.some((url) => url === false || url.origin !== SITE_ORIGIN),
     );
-    if (hasNestedDocument || external || html.includes(SOURCE) || html.includes(TOKEN)) {
+    if (
+      hasModuleScript ||
+      hasNestedDocument ||
+      external ||
+      html.includes(SOURCE) ||
+      html.includes(TOKEN)
+    ) {
       throw new Error(`${relative}: credential-handling HTML must not load third-party code`);
     }
     return null;

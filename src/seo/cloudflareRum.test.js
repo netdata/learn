@@ -66,6 +66,8 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
         '<object data="data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Fexample.com%2Fcode.js%3E%3C%2Fscript%3E"></object>',
         '<embed src="data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Fexample.com%2Fcode.js%3E%3C%2Fscript%3E">',
         '<html><frameset><frame src="data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Fexample.com%2Fcode.js%3E%3C%2Fscript%3E"></frameset></html>',
+        '<script type="module">import "https://example.com/code.js";</script>',
+        '<script type="module" src="/local-module.js"></script>',
         '<div><template shadowrootmode="open"><script src="https://example.com/code.js"></script></template></div>',
       ]) {
         expect(() => verifyPage(markup, relative)).toThrow(/must not load|forbids/);
@@ -119,6 +121,10 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     [
       `${beacon}<svg><script href="HTTPS://STATIC.CLOUDFLAREINSIGHTS.COM/beacon.min.js#svg" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script></svg>`,
       /exactly one/,
+    ],
+    [
+      `${beacon}<script type="module">import "HTTPS://STATIC.CLOUDFLAREINSIGHTS.COM/beacon.min.js#module";</script>`,
+      /inline module scripts/,
     ],
     [
       `<svg><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
