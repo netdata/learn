@@ -50,10 +50,18 @@ function verifyPage(html, relative) {
   let hasInlineNestedDocument = false;
   let hasInlineModuleScript = false;
   let hasModuleScript = false;
+  let hasMetaContentSecurityPolicy = false;
   const visit = (node, inShadowTree = false) => {
     const nodeAttrs = node.attrs || [];
     const attrs = new Map(nodeAttrs.map(({name, value}) => [name, value]));
     if (node.nodeName === 'base' && attrs.has('href')) hasBaseUrlOverride = true;
+    if (
+      node.nodeName === 'meta' &&
+      node.namespaceURI === HTML_NAMESPACE &&
+      (attrs.get('http-equiv') || '').trim().toLowerCase() === 'content-security-policy'
+    ) {
+      hasMetaContentSecurityPolicy = true;
+    }
     if (node.nodeName === 'iframe' && attrs.has('srcdoc')) hasIframeSrcdoc = true;
     const nestedDocumentAttribute = NESTED_DOCUMENT_ATTRIBUTES.get(node.nodeName);
     if (nestedDocumentAttribute && attrs.has(nestedDocumentAttribute)) {
@@ -132,6 +140,9 @@ function verifyPage(html, relative) {
       throw new Error(`${relative}: credential-handling HTML must not load third-party code`);
     }
     return null;
+  }
+  if (hasMetaContentSecurityPolicy) {
+    throw new Error(`${relative}: analytics verification cannot prove a beacon under a meta CSP`);
   }
   const scripts = scriptTags.filter(({sources}) => sources.some(isCloudflareBeaconResource));
   if (scripts.length !== 1) {

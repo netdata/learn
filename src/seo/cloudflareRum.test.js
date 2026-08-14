@@ -137,6 +137,10 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
       /inline module scripts/,
     ],
     [
+      `<meta http-equiv="Content-Security-Policy" content="script-src 'none'">${beacon}`,
+      /meta CSP/,
+    ],
+    [
       `<svg><script href="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
       /HTML script/,
     ],
