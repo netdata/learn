@@ -62,7 +62,8 @@
       "59eead708e20bf9006c73547c732111a7de533e0",
       "73d78d08bd91aef1f0326fb3ed95d519a83cad98",
       "8546dbf5ba1852d370ea9f006beaaf9d28870c33",
-      "c4cc125f41cc7d898a7999c42ad5a8f784890b24"
+      "c4cc125f41cc7d898a7999c42ad5a8f784890b24",
+      "c3aabf1982b4b2dabcbbc563fdbad82073a964e2"
     ],
     "independent_agent_source_review": "production-grade-no-blockers",
     "six_source_full_ingest_runs": 2,
@@ -76,7 +77,7 @@
       "python_ingest": 41,
       "mdx_escaping": 54,
       "vitest_files": 26,
-      "vitest_tests": 362,
+      "vitest_tests": 364,
       "indexnow": 63,
       "canonical_c8": 4,
       "exact_agent_source": 76
@@ -194,7 +195,7 @@
     {
       "id": "manual-cloudflare-web-analytics",
       "contract": "Docusaurus' shared HTML script configuration emits one defer type=module Cloudflare beacon with the approved zone-level public token. The source remains unversioned and has no integrity attribute; the token is public and no Cloudflare credential enters the repository. The API console and OAuth callback are explicit security-sensitive exceptions and contain no third-party script code.",
-      "acceptance": "Every normal rendered HTML file contains exactly one executable manual beacon and token. Equivalent resource spellings, including a DNS-root trailing dot on the Cloudflare hostname, count as the same beacon resource. api.html and oauth2-redirect.html contain zero third-party script code and fail closed on browser-active script, module, nested-document, shadow-DOM, URL-base, preload, import-map, and policy bypasses. The obsolete Ask Netdata compatibility document does not exist; its one-hop permanent redirect targets the rendered Ask Nedi route. The zero-noindex and sitemap contracts remain unchanged."
+      "acceptance": "Every normal rendered HTML file contains exactly one executable manual beacon and token. Equivalent Cloudflare host/path resource spellings count as the same beacon regardless of DNS-root trailing dot, HTTP-to-HTTPS redirect, or served HTTPS port; the sole allowed beacon still requires the exact approved URL. api.html and oauth2-redirect.html contain zero third-party script code and fail closed on browser-active script, module, nested-document, shadow-DOM, URL-base, preload, import-map, and policy bypasses. The obsolete Ask Netdata compatibility document does not exist; its one-hop permanent redirect targets the rendered Ask Nedi route. The zero-noindex and sitemap contracts remain unchanged."
     },
     {
       "id": "exact-final-agent-source-ingest",
