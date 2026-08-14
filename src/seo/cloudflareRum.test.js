@@ -5,7 +5,7 @@ import {createRequire} from 'node:module';
 import {afterEach, describe, expect, it} from 'vitest';
 
 const require = createRequire(import.meta.url);
-const {REPRESENTATIVE_ROUTES, SOURCE, TOKEN, verifyCloudflareRum, verifyPage} =
+const {REPRESENTATIVE_ROUTES, SENSITIVE_ROUTES, SOURCE, TOKEN, verifyCloudflareRum, verifyPage} =
   require('../../scripts/verify-cloudflare-rum');
 const roots = [];
 const beacon = `<script src="${SOURCE}" defer type="module" data-cf-beacon='{&quot;token&quot;:&quot;${TOKEN}&quot;}'></script>`;
@@ -18,6 +18,11 @@ function fixture() {
     fs.mkdirSync(path.dirname(filename), {recursive: true});
     fs.writeFileSync(filename, `<html><body>${beacon}</body></html>`);
   }
+  for (const relative of SENSITIVE_ROUTES) {
+    const filename = path.join(root, relative);
+    fs.mkdirSync(path.dirname(filename), {recursive: true});
+    fs.writeFileSync(filename, '<html><body></body></html>');
+  }
   return root;
 }
 
@@ -29,9 +34,19 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
   it('covers every HTML artifact and all representative route classes', () => {
     const root = fixture();
     expect(verifyCloudflareRum(root)).toEqual({
-      htmlFiles: REPRESENTATIVE_ROUTES.length,
+      htmlFiles: REPRESENTATIVE_ROUTES.length + SENSITIVE_ROUTES.length,
       representativeRoutes: REPRESENTATIVE_ROUTES.length,
+      sensitiveRoutes: SENSITIVE_ROUTES.length,
     });
+  });
+
+  it('rejects Cloudflare code on credential-handling HTML', () => {
+    for (const relative of SENSITIVE_ROUTES) {
+      expect(() => verifyPage(`<html><body>${beacon}</body></html>`, relative)).toThrow(
+        /must not load/,
+      );
+      expect(() => verifyPage('<html><body></body></html>', relative)).not.toThrow();
+    }
   });
 
   it.each([
@@ -49,6 +64,10 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     const missing = fixture();
     fs.rmSync(path.join(missing, REPRESENTATIVE_ROUTES[0]));
     expect(() => verifyCloudflareRum(missing)).toThrow(/Missing representative/);
+
+    const missingSensitive = fixture();
+    fs.rmSync(path.join(missingSensitive, SENSITIVE_ROUTES[0]));
+    expect(() => verifyCloudflareRum(missingSensitive)).toThrow(/Missing sensitive/);
 
     const linked = fixture();
     const outside = path.join(path.dirname(linked), 'outside.html');

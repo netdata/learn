@@ -115,6 +115,13 @@ class SeoGridGenerationTests(unittest.TestCase):
             self.sidebar_order, map_path, docs_root, state_path=state_path
         )
 
+    def _write_matching_state_checksum(self, state_path):
+        checksum_path = ingest._sidebar_state_checksum_path(state_path)
+        digest = hashlib.sha256(Path(state_path).read_bytes()).hexdigest()
+        checksum_path.write_text(
+            f"{digest}  {Path(state_path).name}\n", encoding="utf-8"
+        )
+
     def _copy_owned_outputs(self, source, target):
         for path in self._generated_grids(source):
             destination = Path(target) / path.relative_to(source)
@@ -657,6 +664,40 @@ class SeoGridGenerationTests(unittest.TestCase):
             state_path = root / "state.json"
             self._write_state(docs_root, state_path, root)
             valid = json.loads(state_path.read_text(encoding="utf-8"))
+            checksum_path = ingest._sidebar_state_checksum_path(state_path)
+
+            forged_source = json.loads(json.dumps(valid))
+            forged_source["source_sha256"] = "0" * 64
+            forged_source["full_ingest_identity_sha256"] = (
+                ingest._sidebar_state_identity(forged_source)
+            )
+            state_path.write_text(json.dumps(forged_source), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "checksum"):
+                ingest.load_sidebar_order_state(state_path, docs_root=docs_root)
+            self._write_state(docs_root, state_path, root)
+
+            checksum_path.unlink()
+            with self.assertRaises(FileNotFoundError):
+                ingest.load_sidebar_order_state(state_path, docs_root=docs_root)
+            self._write_state(docs_root, state_path, root)
+
+            checksum_path.write_text("not a checksum\n", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "checksum"):
+                ingest.load_sidebar_order_state(state_path, docs_root=docs_root)
+            self._write_state(docs_root, state_path, root)
+
+            outside_checksum = root / "outside.sha256"
+            outside_checksum.write_text("outside\n", encoding="utf-8")
+            checksum_path.unlink()
+            checksum_path.symlink_to(outside_checksum)
+            with self.assertRaises(ingest.UnsafeFilesystemPathError):
+                ingest.load_sidebar_order_state(state_path, docs_root=docs_root)
+            checksum_path.unlink()
+            checksum_path.mkdir()
+            with self.assertRaises(ingest.UnsafeFilesystemPathError):
+                ingest.load_sidebar_order_state(state_path, docs_root=docs_root)
+            checksum_path.rmdir()
+            self._write_state(docs_root, state_path, root)
 
             with self.assertRaises(FileNotFoundError):
                 ingest.load_sidebar_order_state(
@@ -664,6 +705,7 @@ class SeoGridGenerationTests(unittest.TestCase):
                 )
             malformed_json = root / "malformed.json"
             malformed_json.write_text("not json", encoding="utf-8")
+            self._write_matching_state_checksum(malformed_json)
             with self.assertRaises(json.JSONDecodeError):
                 ingest.load_sidebar_order_state(
                     malformed_json, docs_root=docs_root
@@ -692,6 +734,7 @@ class SeoGridGenerationTests(unittest.TestCase):
             for index, payload in enumerate(mutations):
                 candidate = root / f"state-{index}.json"
                 candidate.write_text(json.dumps(payload), encoding="utf-8")
+                self._write_matching_state_checksum(candidate)
                 with self.assertRaises(ValueError):
                     ingest.load_sidebar_order_state(candidate, docs_root=docs_root)
 

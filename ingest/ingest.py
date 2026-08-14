@@ -648,9 +648,13 @@ def write_sidebar_order_state(
         "order": entries,
     }
     payload["full_ingest_identity_sha256"] = _sidebar_state_identity(payload)
+    state_content = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+    _atomic_write_text(state_path, state_content, encoding="utf-8")
+    checksum = hashlib.sha256(state_content.encode("utf-8")).hexdigest()
+    checksum_path = _sidebar_state_checksum_path(state_path)
     _atomic_write_text(
-        state_path,
-        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        checksum_path,
+        f"{checksum}  {Path(state_path).name}\n",
         encoding="utf-8",
     )
 
@@ -666,9 +670,28 @@ def _sidebar_state_identity(payload):
     return hashlib.sha256(canonical).hexdigest()
 
 
+def _sidebar_state_checksum_path(state_path):
+    state_path = Path(state_path)
+    return state_path.with_name(f"{state_path.name}.sha256")
+
+
+def _read_verified_sidebar_state(state_path):
+    state_path = Path(state_path)
+    state_bytes = _read_regular_bytes(state_path)
+    checksum_path = _sidebar_state_checksum_path(state_path)
+    checksum_text = _read_regular_text(checksum_path, encoding="utf-8")
+    match = re.fullmatch(r"([0-9a-f]{64})  ([^\r\n]+)\n", checksum_text)
+    if match is None or match.group(2) != state_path.name:
+        raise ValueError(f"Invalid generated sidebar order checksum: {checksum_path}")
+    actual = hashlib.sha256(state_bytes).hexdigest()
+    if not secrets.compare_digest(match.group(1), actual):
+        raise ValueError(f"Generated sidebar order checksum mismatch: {state_path}")
+    return state_bytes.decode("utf-8")
+
+
 def load_sidebar_order_state(state_path=SIDEBAR_ORDER_STATE_PATH, docs_root=None):
     """Load and validate the committed order used by grid-only recovery."""
-    payload = json.loads(_read_regular_text(state_path, encoding="utf-8"))
+    payload = json.loads(_read_verified_sidebar_state(state_path))
     if (
         not isinstance(payload, dict)
         or set(payload) != SIDEBAR_ORDER_STATE_KEYS

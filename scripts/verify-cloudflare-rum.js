@@ -11,6 +11,7 @@ const REPRESENTATIVE_ROUTES = [
   'docs/collecting-metrics/collectors/index.html',
   'docs/netdata-agent/installation/linux/index.html',
 ];
+const SENSITIVE_ROUTES = ['api.html', 'oauth2-redirect.html'];
 
 function decodeAttribute(value) {
   return value
@@ -51,6 +52,12 @@ function verifyPage(html, relative) {
   const scripts = [...html.matchAll(/<script\b[^>]*>/gi)]
     .map((match) => ({tag: match[0], attrs: attributes(match[0])}))
     .filter(({attrs}) => attrs.get('src') === SOURCE);
+  if (SENSITIVE_ROUTES.includes(relative)) {
+    if (scripts.length || html.includes(SOURCE) || html.includes(TOKEN)) {
+      throw new Error(`${relative}: credential-handling HTML must not load Cloudflare code`);
+    }
+    return null;
+  }
   if (scripts.length !== 1) {
     throw new Error(`${relative}: expected exactly one Cloudflare Web Analytics beacon, found ${scripts.length}`);
   }
@@ -81,16 +88,26 @@ function verifyCloudflareRum(publishDir) {
   const pages = htmlFilesUnder(root);
   if (!pages.length) throw new Error(`No rendered HTML found under ${root}`);
   const covered = new Set();
+  const sensitive = new Set();
   for (const filename of pages) {
     const relative = path.relative(root, filename).split(path.sep).join('/');
     verifyPage(fs.readFileSync(filename, 'utf8'), relative);
     if (REPRESENTATIVE_ROUTES.includes(relative)) covered.add(relative);
+    if (SENSITIVE_ROUTES.includes(relative)) sensitive.add(relative);
   }
   const missing = REPRESENTATIVE_ROUTES.filter((relative) => !covered.has(relative));
   if (missing.length) {
     throw new Error(`Missing representative rendered route(s): ${missing.join(', ')}`);
   }
-  return {htmlFiles: pages.length, representativeRoutes: covered.size};
+  const missingSensitive = SENSITIVE_ROUTES.filter((relative) => !sensitive.has(relative));
+  if (missingSensitive.length) {
+    throw new Error(`Missing sensitive rendered route(s): ${missingSensitive.join(', ')}`);
+  }
+  return {
+    htmlFiles: pages.length,
+    representativeRoutes: covered.size,
+    sensitiveRoutes: sensitive.size,
+  };
 }
 
 if (require.main === module) {
@@ -98,7 +115,8 @@ if (require.main === module) {
     const result = verifyCloudflareRum(process.argv[2] || 'build');
     console.log(
       `Verified one Cloudflare Web Analytics beacon across ${result.htmlFiles} HTML files ` +
-      `and ${result.representativeRoutes} route classes.`,
+      `except ${result.sensitiveRoutes} credential-handling routes; ` +
+      `${result.representativeRoutes} normal route classes are covered.`,
     );
   } catch (error) {
     console.error(`Cloudflare Web Analytics verification failed: ${error.message}`);
@@ -106,4 +124,12 @@ if (require.main === module) {
   }
 }
 
-module.exports = {SOURCE, TOKEN, REPRESENTATIVE_ROUTES, attributes, verifyCloudflareRum, verifyPage};
+module.exports = {
+  SOURCE,
+  TOKEN,
+  REPRESENTATIVE_ROUTES,
+  SENSITIVE_ROUTES,
+  attributes,
+  verifyCloudflareRum,
+  verifyPage,
+};

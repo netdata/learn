@@ -53,7 +53,7 @@
       "python_ingest": 41,
       "mdx_escaping": 54,
       "vitest_files": 26,
-      "vitest_tests": 330,
+      "vitest_tests": 332,
       "indexnow": 63,
       "canonical_c8": 4,
       "exact_agent_source": 76
@@ -78,7 +78,10 @@
     "functional_routes_with_exactly_one_h1": 2,
     "rendered_internal_links": 823325,
     "noindex_directives": 0,
-    "cloudflare_beacons_per_html": 1,
+    "cloudflare_normal_html_files": 1984,
+    "cloudflare_credential_html_files": 2,
+    "cloudflare_beacons_per_normal_html": 1,
+    "cloudflare_beacons_per_credential_html": 0,
     "c8_counts": {},
     "c8_findings": [],
     "c8_accepted_findings": [],
@@ -102,7 +105,7 @@
     "Run all Learn and exact-source tests, two byte-identical production builds, rendered audits, provenance checks, and repository hygiene checks.",
     "Vendor the exact C8 ruleset-v8 bundle accepted in netdata/seo commit 0849022df128b87ad0ae0a829a5e444408e4937f with the canonical exporter. Every Netlify context performs a clean locked Node 22 install in that bundle, builds Docusaurus, and scans the complete build with the Learn origin and a read-only, reasoned baseline containing only exact pre-existing findings.",
     "Replace the legacy Learn IndexNow copy with every checksum-covered schema-2 artifact, dependency, verifier rule, and adversarial test from the website owner commit 52f3eb6e6ee01ecc1416d51dffedde0c22db62ff. Only the declared Learn host, key-location host, published build directory, and test fixture route shape may differ; receipt, retry, cache, URL, filesystem, and at-least-once semantics remain byte-identical.",
-    "Install the approved public Cloudflare Web Analytics token once through Docusaurus' shared document script configuration as an unversioned type=module beacon. Verify exactly one beacon in every rendered HTML artifact, including root, docs, generated indexes, blog, search, and redirect output, without edge configuration, secrets, noindex, content, or sitemap changes."
+    "Install the approved public Cloudflare Web Analytics token once through Docusaurus' shared document script configuration as an unversioned type=module beacon. Verify exactly one beacon in every normal rendered HTML artifact, including root, docs, generated indexes, blog, search, and redirect output; require zero third-party beacon code on the API console and OAuth callback, without edge configuration, secrets, noindex, content, or sitemap changes."
   ],
   "excluded_work": [
     "upstream rebase",
@@ -132,8 +135,8 @@
     },
     {
       "id": "grid-state-provenance",
-      "contract": "Offline recovery loads an exact-schema state written by full ingest, validates its canonical full-ingest identity, and validates both the upstream map identity and the non-generated source-corpus identity before changing files.",
-      "acceptance": "Missing, malformed, duplicate, or source-corpus-drifted state fails closed; the current full-ingest state validates and recovers all owned grid artifacts."
+      "contract": "Offline recovery loads an exact-schema state written by full ingest, verifies the complete state bytes against a separately generated companion checksum, validates its canonical full-ingest identity, and validates both the recorded upstream map identity and the non-generated source-corpus identity before changing files.",
+      "acceptance": "Missing, malformed, mismatched, symbolic-link, non-regular, duplicate, or source-corpus-drifted state or checksum fails closed; the current full-ingest state and companion checksum validate and recover all owned grid artifacts."
     },
     {
       "id": "recovery-filesystem-boundary",
@@ -167,8 +170,8 @@
     },
     {
       "id": "manual-cloudflare-web-analytics",
-      "contract": "Docusaurus' shared HTML script configuration emits one defer type=module Cloudflare beacon with the approved zone-level public token. The source remains unversioned and has no integrity attribute; the token is public and no Cloudflare credential enters the repository.",
-      "acceptance": "Every rendered HTML file, including each route class and redirect output, contains exactly one manual beacon and token, while the zero-noindex, sitemap, content, and edge contracts remain unchanged."
+      "contract": "Docusaurus' shared HTML script configuration emits one defer type=module Cloudflare beacon with the approved zone-level public token. The source remains unversioned and has no integrity attribute; the token is public and no Cloudflare credential enters the repository. The API console and OAuth callback are explicit security-sensitive exceptions and contain no third-party beacon code.",
+      "acceptance": "Every normal rendered HTML file, including each route class and redirect output, contains exactly one manual beacon and token; api.html and oauth2-redirect.html contain zero beacon code, while the zero-noindex, sitemap, content, and edge contracts remain unchanged."
     },
     {
       "id": "exact-final-agent-source-ingest",

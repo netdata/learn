@@ -35,6 +35,16 @@ describe('shared deployment integrations', () => {
     });
   });
 
+  it('pins the exact Yarn runtime without the deprecated Netlify selector', () => {
+    expect(packageJson.packageManager).toBe('yarn@1.22.22');
+    for (const relative of ['static.toml', 'netlify.toml']) {
+      const config = fs.readFileSync(path.join(root, relative), 'utf8');
+      expect(config).not.toContain('NETLIFY_USE_YARN');
+      expect(config).toContain('NODE_VERSION = "22.14.0"');
+      expect(config).toContain('NPM_VERSION = "10.9.2"');
+    }
+  });
+
   it('uses the complete website-owned IndexNow schema-2 contract', () => {
     const contract = require('../../plugins/netlify-plugin-indexnow/vendor-checksums.json');
     expect(contract).toMatchObject({
@@ -69,17 +79,17 @@ describe('shared deployment integrations', () => {
     ]);
     expect(beacons[0]).not.toHaveProperty('integrity');
 
-    const staticHtml = [
-      'static/api.html',
-      'static/docs/ask-netdata/index.html',
-      'static/oauth2-redirect.html',
-    ];
-    for (const relative of staticHtml) {
+    for (const relative of ['static/docs/ask-netdata/index.html']) {
       const html = fs.readFileSync(path.join(root, relative), 'utf8');
       expect(html.match(/static\.cloudflareinsights\.com\/beacon\.min\.js/g)).toHaveLength(1);
       expect(html.match(/type="module"/g)).toHaveLength(1);
       expect(html.match(/7408c22ab930458a8467c91b5360b8f3/g)).toHaveLength(1);
       expect(html).not.toContain('integrity=');
+    }
+    for (const relative of ['static/api.html', 'static/oauth2-redirect.html']) {
+      const html = fs.readFileSync(path.join(root, relative), 'utf8');
+      expect(html).not.toContain('static.cloudflareinsights.com');
+      expect(html).not.toContain('7408c22ab930458a8467c91b5360b8f3');
     }
   });
 });
