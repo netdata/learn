@@ -1,6 +1,44 @@
 {
   "schema_version": 1,
   "source_sow": "SOW-0017",
+  "final_ingest_source_snapshot": {
+    "netdata": {
+      "commit": "34727a00b89df3886239ad1e0324d59269d5714d",
+      "rejected_commits": [
+        "bf44bb561c6b59f35deab0d5df2f9be9dae92a01",
+        "36d3a604e29765276c76b4e3f736a8d917bda371",
+        "7c999e225e4fa8eb5f9d04c2327515a873a4aca6"
+      ],
+      "status": "accepted-by-independent-re-review"
+    },
+    "netdata-cloud-onprem": "08e18a7b02343027e32264199d30720f5de12d96",
+    ".github": "e4738392f8cb069418c6641ef01261c027e76b5f",
+    "agent-service-discovery": "e2c5bd784d5539bc83b46a0f923a05a1cf3e1587",
+    "netdata-grafana-datasource-plugin": "0d8338e60b62a9273c5c4a726d4b8672cde3c5c6",
+    "helmchart": "75c88bde4769327b4c58a02a002bfafdb5c8e562",
+    "map_sha256": "169ec6b8d7adc04fa72c3d8e22708e629fa0e03e30e80fbc9ca6eb09b6231d39",
+    "source_corpus_sha256": "b15e3feab38f34460aacc442a7640be2b383e7c1bb35d316aa2a7dcd3e9c4803",
+    "full_ingest_identity_sha256": "4fbcca31edfb43aa82f554f5005be6e798cd95cc1fea9582e7f50ad9d6f81703",
+    "fixed_point_diff_sha256": "c6ada88baa4826ecb658621b69f6a322667f7de641f9b32b70b1699a504bd94d",
+    "generated_output_diff_sha256": "4e9cee87c9bfe475675cbf92010556bba8f611fa5150db7e0ddd012b99466548"
+  },
+  "rejected_candidate_ingest_evidence": {
+    "netdata": "36d3a604e29765276c76b4e3f736a8d917bda371",
+    "map_sha256": "169ec6b8d7adc04fa72c3d8e22708e629fa0e03e30e80fbc9ca6eb09b6231d39",
+    "source_corpus_sha256": "b15e3feab38f34460aacc442a7640be2b383e7c1bb35d316aa2a7dcd3e9c4803",
+    "full_ingest_identity_sha256": "4fbcca31edfb43aa82f554f5005be6e798cd95cc1fea9582e7f50ad9d6f81703",
+    "fixed_point_diff_sha256": "2f4fa27d5d58e1b86891356cb3dc6d40015d4fb125d6d15e3a2aa0ec5867901e",
+    "accepted_for_release": false
+  },
+  "source_owned_diff_exceptions": [
+    "docs/Netdata Cloud On-Prem/PoC without K8s.mdx:60",
+    "docs/Netdata Cloud On-Prem/PoC without K8s.mdx:83",
+    "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:29",
+    "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:37",
+    "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:73",
+    "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:102",
+    "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:104"
+  ],
   "implementation_plan": [
     "Replace the client-only root redirect and add the missing blog heading, then validate rendered metadata, headings, sitemap membership, and lastmod coverage.",
     "Keep sitemap exclusion separate from robots indexability, emit zero noindex directives across every rendered HTML route, and restore all public libnetdata references to the sitemap.",
@@ -81,6 +119,16 @@
       "id": "manual-cloudflare-web-analytics",
       "contract": "Docusaurus' shared HTML script configuration emits one defer type=module Cloudflare beacon with the approved zone-level public token. The source remains unversioned and has no integrity attribute; the token is public and no Cloudflare credential enters the repository.",
       "acceptance": "Every rendered HTML file, including each route class and redirect output, contains exactly one manual beacon and token, while the zero-noindex, sitemap, content, and edge contracts remain unchanged."
+    },
+    {
+      "id": "exact-final-agent-source-ingest",
+      "contract": "The final source refresh uses corrected committed, clean netdata/netdata source 34727a00b89df3886239ad1e0324d59269d5714d through the local-source ingest path. It replaces rejected candidates bf44bb561c6b59f35deab0d5df2f9be9dae92a01, 36d3a604e29765276c76b4e3f736a8d917bda371, and 7c999e225e4fa8eb5f9d04c2327515a873a4aca6 and must pass fresh independent source review before final staging or builds. Only exact upstream provenance plus pipeline-generated Learn documentation, maps, sidebar state, and redirect output may change; generated documentation is never hand-edited.",
+      "acceptance": "The committed dependency and generated state pin the exact source, map, corpus, and full-ingest hashes; all 40 newly completed source descriptions arrive byte-for-byte in their generated Learn pages; no generated description ends in an ASCII or Unicode ellipsis; redirect generation remains a fixed point at 3156 rules with all 42 historical Network Flows routes; and two Node 22.14.0, Yarn 1.22.22, 8 GiB Netlify-equivalent builds are byte-identical."
+    },
+    {
+      "id": "source-owned-onprem-trailing-whitespace",
+      "contract": "The exact pinned netdata-cloud-onprem source contains seven trailing-space lines in PoC without K8s and Security Hardening Guide. Learn preserves those upstream bytes. The user explicitly rejected an on-prem cleanup PR and Learn-side normalization, so these seven lines are a closed source-owned diff exception rather than a product or CI blocker.",
+      "acceptance": "The full ingest is a fixed point against the six exact source commits; the seven reports match the immutable file-and-line inventory; every other changed path passes git diff --check; and rendered content, links, metadata, indexing, and two-build byte identity remain unchanged by the whitespace bytes."
     }
   ]
 }

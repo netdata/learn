@@ -26,7 +26,7 @@ This guide shows you how to harden your Netdata Cloud On-Prem installation using
 
 ## Introduction
 
-Your Netdata Cloud On-Prem Helm chart includes several default security measures. Most workloads use [Kubernetes Security Contexts](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) with settings like `readOnlyRootFilesystem: true`, `allowPrivilegeEscalation: false`, and `runAsNonRoot: true`. These settings help protect against potential vulnerabilities.
+Your Netdata Cloud On-Prem Helm chart includes several default security measures. Most workloads use [Kubernetes Security Contexts](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) with settings like `readOnlyRootFilesystem: true`, `allowPrivilegeEscalation: false`, and `runAsNonRoot: true`. These settings help protect against potential vulnerabilities. 
 
 We also scan container base images for known vulnerabilities. Each image includes its own **SBOM (Software Bill of Materials)** to give you a detailed inventory of components, which is crucial for **vulnerability management** and **compliance**. You can find more information in our [SBOM documentation](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/software-bill-of-materials).
 
@@ -34,7 +34,7 @@ We also scan container base images for known vulnerabilities. Each image include
 
 ### 1. Verify Your Image Signatures
 
-**Ensure the images in your deployment are signed and verified.** This prevents you from using tampered or untrusted images. Your Netdata Cloud On-Prem Helm chart is signed with Notary, and you can verify the signatures using the `notary` CLI tool.
+**Ensure the images in your deployment are signed and verified.** This prevents you from using tampered or untrusted images. Your Netdata Cloud On-Prem Helm chart is signed with Notary, and you can verify the signatures using the `notary` CLI tool. 
 
 For detailed steps, see our [Image Signature Verification guide](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/container-image-signature-verification).
 
@@ -70,7 +70,7 @@ global:
 
 ### 5. Secure Your Ingress
 
-**Protect your ingress controller** by configuring **TLS (Transport Layer Security) certificates**. This encrypts all communication with your Netdata Cloud On-Prem instance.
+**Protect your ingress controller** by configuring **TLS (Transport Layer Security) certificates**. This encrypts all communication with your Netdata Cloud On-Prem instance. 
 
 **Configure the TLS section** in your Helm values to specify your certificates:
 
@@ -99,9 +99,9 @@ global:
 
 ## Conclusion
 
-By implementing these security hardening steps, you **significantly enhance your Netdata Cloud On-Prem deployment's security**.
+By implementing these security hardening steps, you **significantly enhance your Netdata Cloud On-Prem deployment's security**. 
 
-**Stay current** with Kubernetes security best practices and **regularly patch your components** to address any known vulnerabilities.
+**Stay current** with Kubernetes security best practices and **regularly patch your components** to address any known vulnerabilities. 
 
 :::tip
 
