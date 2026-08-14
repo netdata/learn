@@ -7,6 +7,7 @@ const SOURCE_URL = new URL(SOURCE);
 const TOKEN = '7408c22ab930458a8467c91b5360b8f3';
 const SITE_ORIGIN = 'https://learn.netdata.cloud';
 const HTML_NAMESPACE = 'http://www.w3.org/1999/xhtml';
+const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
 const NESTED_DOCUMENT_ATTRIBUTES = new Map([
   ['iframe', 'src'],
   ['frame', 'src'],
@@ -66,9 +67,15 @@ function verifyPage(html, relative) {
       }
     }
     if (node.nodeName === 'script') {
-      const sources = nodeAttrs
-        .filter(({name}) => name === 'src' || name === 'href')
-        .map(({value}) => scriptUrl(value));
+      const sourceAttribute =
+        node.namespaceURI === HTML_NAMESPACE
+          ? 'src'
+          : node.namespaceURI === SVG_NAMESPACE
+            ? 'href'
+            : null;
+      const sources = sourceAttribute
+        ? nodeAttrs.filter(({name}) => name === sourceAttribute).map(({value}) => scriptUrl(value))
+        : [];
       const isModule = (attrs.get('type') || '').trim().toLowerCase() === 'module';
       if (isModule) hasModuleScript = true;
       if (isModule && sources.length === 0) hasInlineModuleScript = true;

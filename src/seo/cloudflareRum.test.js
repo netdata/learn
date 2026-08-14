@@ -67,6 +67,8 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
         '<embed src="data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Fexample.com%2Fcode.js%3E%3C%2Fscript%3E">',
         '<html><frameset><frame src="data:text/html,%3Cscript%20src%3Dhttps%3A%2F%2Fexample.com%2Fcode.js%3E%3C%2Fscript%3E"></frameset></html>',
         '<script type="module">import "https://example.com/code.js";</script>',
+        '<script type="module" href="/ignored.js">import "https://example.com/code.js";</script>',
+        '<svg><script type="module" src="/ignored.js">import "https://example.com/code.js";</script></svg>',
         '<script type="module" src="/local-module.js"></script>',
         '<div><template shadowrootmode="open"><script src="https://example.com/code.js"></script></template></div>',
       ]) {
@@ -127,12 +129,20 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
       /inline module scripts/,
     ],
     [
-      `<svg><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
+      `${beacon}<script type="module" href="/ignored.js">import "HTTPS://STATIC.CLOUDFLAREINSIGHTS.COM/beacon.min.js#module";</script>`,
+      /inline module scripts/,
+    ],
+    [
+      `${beacon}<svg><script type="module" src="/ignored.js">import "HTTPS://STATIC.CLOUDFLAREINSIGHTS.COM/beacon.min.js#module";</script></svg>`,
+      /inline module scripts/,
+    ],
+    [
+      `<svg><script href="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
       /HTML script/,
     ],
     [
       `<math><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></math>`,
-      /HTML script/,
+      /inline module scripts/,
     ],
     [beacon.replace('type="module"', 'type="text/javascript"'), /deferred module/],
     [beacon.replace(' defer', ''), /deferred module/],
