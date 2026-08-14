@@ -41,6 +41,7 @@
   ],
   "final_acceptance_evidence": {
     "learn_integration_commit": "08d5f5832b26d98cdc9a7c2feb611984401bb0c8",
+    "final_rereview_correction_commit": "49abbd83acfedc62bc3fafb40157314d8e66a92d",
     "independent_agent_source_review": "production-grade-no-blockers",
     "six_source_full_ingest_runs": 2,
     "detected_source_files": 2668,
@@ -68,7 +69,7 @@
     },
     "production_builds": 2,
     "build_files": 4170,
-    "build_manifest_sha256": "6479662afd8d9b98e253b7df44d805d349d91edb7742226d722cf611ee1052cc",
+    "build_manifest_sha256": "38d73762ed8a987dbd3f58b8f54bd8f409d24b47e75dfcc11b2e292e197bb334",
     "byte_identical": true,
     "rendered_html_files": 1986,
     "sitemap_urls": 1980,
