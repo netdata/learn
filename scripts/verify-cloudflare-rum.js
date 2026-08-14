@@ -8,6 +8,7 @@ const TOKEN = '7408c22ab930458a8467c91b5360b8f3';
 const SITE_ORIGIN = 'https://learn.netdata.cloud';
 const HTML_NAMESPACE = 'http://www.w3.org/1999/xhtml';
 const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
+const APPROVED_BEACON_ATTRIBUTES = new Set(['src', 'defer', 'type', 'data-cf-beacon']);
 const NESTED_DOCUMENT_ATTRIBUTES = new Map([
   ['iframe', 'src'],
   ['frame', 'src'],
@@ -160,6 +161,14 @@ function verifyPage(html, relative) {
   }
   if (attrs.has('integrity')) {
     throw new Error(`${relative}: unversioned Cloudflare Web Analytics beacon cannot use integrity`);
+  }
+  const unexpectedAttributes = [...attrs.keys()].filter(
+    (name) => !APPROVED_BEACON_ATTRIBUTES.has(name),
+  );
+  if (unexpectedAttributes.length) {
+    throw new Error(
+      `${relative}: Cloudflare Web Analytics beacon has unapproved attributes: ${unexpectedAttributes.join(', ')}`,
+    );
   }
   let payload;
   try {

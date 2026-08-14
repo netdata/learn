@@ -152,6 +152,10 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     [beacon.replace(' defer', ''), /deferred module/],
     [beacon.replace(' defer', ' async defer'), /deferred module/],
     [beacon.replace(' data-cf-beacon', ' integrity="sha256-test" data-cf-beacon'), /cannot use integrity/],
+    [beacon.replace(' data-cf-beacon', ' crossorigin="use-credentials" data-cf-beacon'), /unapproved attributes/],
+    [beacon.replace(' data-cf-beacon', ' crossorigin="anonymous" data-cf-beacon'), /unapproved attributes/],
+    [beacon.replace(' data-cf-beacon', ' nomodule data-cf-beacon'), /unapproved attributes/],
+    [beacon.replace(' data-cf-beacon', ' fetchpriority="low" data-cf-beacon'), /unapproved attributes/],
     [beacon.replace(TOKEN, 'wrong-token'), /approved public token/],
   ])('rejects an invalid rendered beacon', (markup, message) => {
     expect(() => verifyPage(`<html><body>${markup}</body></html>`, 'test.html')).toThrow(message);
