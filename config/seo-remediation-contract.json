@@ -44,7 +44,8 @@
     "final_rereview_correction_commits": [
       "49abbd83acfedc62bc3fafb40157314d8e66a92d",
       "351e2909d5c6120734e334d2251efd6d9b91482b",
-      "e3e1702c228ec3d33dfee08f875b0c1f2642c1ae"
+      "e3e1702c228ec3d33dfee08f875b0c1f2642c1ae",
+      "aebfd9e240d96b9f5b0b95455a39dacc3b549a41"
     ],
     "independent_agent_source_review": "production-grade-no-blockers",
     "six_source_full_ingest_runs": 2,
@@ -175,8 +176,8 @@
     },
     {
       "id": "manual-cloudflare-web-analytics",
-      "contract": "Docusaurus' shared HTML script configuration emits one defer type=module Cloudflare beacon with the approved zone-level public token. The source remains unversioned and has no integrity attribute; the token is public and no Cloudflare credential enters the repository. The API console and OAuth callback are explicit security-sensitive exceptions and contain no third-party beacon code.",
-      "acceptance": "Every normal rendered HTML file, including each route class and redirect output, contains exactly one manual beacon and token; api.html and oauth2-redirect.html contain zero beacon code, while the zero-noindex, sitemap, content, and edge contracts remain unchanged."
+      "contract": "Docusaurus' shared HTML script configuration emits one defer type=module Cloudflare beacon with the approved zone-level public token. The source remains unversioned and has no integrity attribute; the token is public and no Cloudflare credential enters the repository. The API console and OAuth callback are explicit security-sensitive exceptions and contain no third-party script code.",
+      "acceptance": "Every normal rendered HTML file, including each route class and redirect output, contains exactly one manual beacon and token. api.html and oauth2-redirect.html contain zero beacon code and reject external HTML or SVG scripts using WHATWG parsing and URL resolution; base URL overrides and executable iframe srcdoc documents fail closed. The zero-noindex, sitemap, content, and edge contracts remain unchanged."
     },
     {
       "id": "exact-final-agent-source-ingest",
