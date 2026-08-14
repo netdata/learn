@@ -101,6 +101,18 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     ],
     [`${beacon}<iframe srcdoc="&lt;p&gt;nested document&lt;/p&gt;"></iframe>`, /iframe srcdoc/],
     [
+      `${beacon}<script src="HTTPS://STATIC.CLOUDFLAREINSIGHTS.COM/beacon.min.js#duplicate" defer type="module" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script>`,
+      /exactly one/,
+    ],
+    [
+      `${beacon}<script src="https://static.cloudflareinsights.com/beacon.min.js?duplicate" defer type="module" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script>`,
+      /exactly one/,
+    ],
+    [
+      `${beacon}<script src="https://static.cloudflareinsights.com/%62eacon.min.js" defer type="module" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script>`,
+      /exactly one/,
+    ],
+    [
       `<svg><script src="${SOURCE}" defer type="module" data-cf-beacon='{"token":"${TOKEN}"}'></script></svg>`,
       /exactly one/,
     ],
