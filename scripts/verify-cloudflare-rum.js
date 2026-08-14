@@ -129,16 +129,12 @@ function verifyPage(html, relative) {
       return false;
     }
   }
-  function hasSameNetworkOrigin(url, approved) {
+  function hasSameBeaconHost(url, approved) {
     const hostname = (value) => value.endsWith('.') ? value.slice(0, -1) : value;
-    return (
-      url.protocol === approved.protocol &&
-      url.port === approved.port &&
-      hostname(url.hostname) === hostname(approved.hostname)
-    );
+    return hostname(url.hostname) === hostname(approved.hostname);
   }
   function isCloudflareBeaconResource(url) {
-    if (!url || !hasSameNetworkOrigin(url, SOURCE_URL)) return false;
+    if (!url || !hasSameBeaconHost(url, SOURCE_URL)) return false;
     try {
       return decodeURIComponent(url.pathname) === SOURCE_URL.pathname;
     } catch {

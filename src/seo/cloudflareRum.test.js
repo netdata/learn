@@ -123,6 +123,14 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
       /exactly one/,
     ],
     [
+      `${beacon}<script src="https://static.cloudflareinsights.com:8443/beacon.min.js" defer type="module" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script>`,
+      /exactly one/,
+    ],
+    [
+      `${beacon}<script src="http://static.cloudflareinsights.com/beacon.min.js" defer type="module" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script>`,
+      /exactly one/,
+    ],
+    [
       `${beacon}<script src="https://static.cloudflareinsights.com/beacon.min.js?duplicate" defer type="module" data-cf-beacon='{"token":"&#55;408c22ab930458a8467c91b5360b8f3"}'></script>`,
       /exactly one/,
     ],
