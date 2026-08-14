@@ -53,7 +53,7 @@ function verifyPage(html, relative) {
   let hasModuleScript = false;
   let hasMetaContentSecurityPolicy = false;
   let hasImportMap = false;
-  let hasModulePreload = false;
+  let hasScriptPreload = false;
   const visit = (node, inShadowTree = false) => {
     const nodeAttrs = node.attrs || [];
     const attrs = new Map(nodeAttrs.map(({name, value}) => [name, value]));
@@ -65,16 +65,12 @@ function verifyPage(html, relative) {
     ) {
       hasMetaContentSecurityPolicy = true;
     }
-    if (
-      node.nodeName === 'link' &&
-      node.namespaceURI === HTML_NAMESPACE &&
-      (attrs.get('rel') || '')
-        .trim()
-        .toLowerCase()
-        .split(/\s+/)
-        .includes('modulepreload')
-    ) {
-      hasModulePreload = true;
+    if (node.nodeName === 'link' && node.namespaceURI === HTML_NAMESPACE) {
+      const rel = (attrs.get('rel') || '').trim().toLowerCase().split(/\s+/);
+      const as = (attrs.get('as') || '').trim().toLowerCase();
+      if (rel.includes('modulepreload') || (rel.includes('preload') && as === 'script')) {
+        hasScriptPreload = true;
+      }
     }
     if (node.nodeName === 'iframe' && attrs.has('srcdoc')) hasIframeSrcdoc = true;
     const nestedDocumentAttribute = NESTED_DOCUMENT_ATTRIBUTES.get(node.nodeName);
@@ -160,9 +156,9 @@ function verifyPage(html, relative) {
   if (hasMetaContentSecurityPolicy) {
     throw new Error(`${relative}: analytics verification cannot prove a beacon under a meta CSP`);
   }
-  if (hasImportMap || hasModulePreload) {
+  if (hasImportMap || hasScriptPreload) {
     throw new Error(
-      `${relative}: analytics verification forbids import maps and module preloads`,
+      `${relative}: analytics verification forbids import maps and script preloads`,
     );
   }
   const scripts = scriptTags.filter(({sources}) => sources.some(isCloudflareBeaconResource));
