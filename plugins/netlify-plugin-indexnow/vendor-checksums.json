@@ -9,8 +9,9 @@
   "receipt_schema_version": 2,
   "contract_tests_schema_version": 2,
   "files": {
-    "contract-tests.json": "4d7e3f6272306c10721e77a146da9ec42dbb94d049c0a22a237a59c5fa10a699",
-    "index.js": "843d826e93a5f1363eab6631abdc27605bd874efd2ae8554badeed646d995c35",
+    "contract-tests.json": "ee42ff0683ed74dd969a4394fd357bc477e3fddcefe0b1821d33d3a036c0e882",
+    "core.js": "54c5c4dd8ddb06e51daec6ed653f6cbe789d7ad9334c8b67c1acb2a25b2a7193",
+    "index.js": "a9e4d1d3ede1e70cfc5d9c806bd29e29a38969b3576eef5120ee7b28f181abe1",
     "manifest.yml": "6ad2d0238e4836b0d4d8454b88fc0dd1dfafa9b2cf6197ef25d5cae71512ad6a",
     "package.json": "ac8fb121eb21536576816db162f57ffdd99724b91dfddbce12f7cec921c0ed0b",
     "receipt-schema.json": "e4a20ce04f2cce43fa7cf5bdcf11e1dc36da284b5709f60d77843a1392fa5145"

@@ -57,6 +57,7 @@ describe('shared deployment integrations', () => {
     });
     expect(Object.keys(contract.files).sort()).toEqual([
       'contract-tests.json',
+      'core.js',
       'index.js',
       'manifest.yml',
       'package.json',

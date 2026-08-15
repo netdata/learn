@@ -15,7 +15,7 @@ try {
     throw new Error('Unsupported IndexNow vendor contract');
   }
   const filenames = Object.keys(contract.files || {}).sort();
-  const required = 'contract-tests.json,index.js,manifest.yml,package.json,receipt-schema.json';
+  const required = 'contract-tests.json,core.js,index.js,manifest.yml,package.json,receipt-schema.json';
   if (filenames.join(',') !== required) {
     throw new Error(`IndexNow vendor contract must cover ${required}`);
   }
@@ -41,7 +41,8 @@ try {
   );
   if (receiptSchema.properties?.schema_version?.const !== contract.receipt_schema_version ||
       testContract.schema_version !== contract.contract_tests_schema_version ||
-      testContract.receipt_schema_version !== contract.receipt_schema_version) {
+      testContract.receipt_schema_version !== contract.receipt_schema_version ||
+      JSON.stringify(testContract.plugin_entry_events) !== JSON.stringify(['onPreBuild', 'onSuccess'])) {
     throw new Error('IndexNow receipt or test schema does not match the vendor contract');
   }
 

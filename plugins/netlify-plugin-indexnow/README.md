@@ -1,11 +1,17 @@
 # Vendored website IndexNow build plugin
 
 `netdata/website` owns this shared IndexNow implementation. Learn vendors the checksum-covered
-schema-2 bytes from website commit `52f3eb6e6ee01ecc1416d51dffedde0c22db62ff` and adapts only
+schema-2 bytes from website commit `eb6246fcf87e4fc2b9160ed77606f6322d953cc1` and adapts only
 the host and published-route fixtures outside those covered files.
-The plugin, manifest, dependency declaration, and receipt schema are the byte-identical vendor
-contract. Their SHA-256 values and exact dependency versions are recorded in
-`vendor-checksums.json` and checked before every Netlify website build.
+The thin Netlify entry adapter, core implementation, manifest, dependency declaration, contract
+fixtures, and receipt schema are the six-file byte-identical vendor contract. Their SHA-256 values
+and exact dependency versions are recorded in
+`vendor-checksums.json` and checked before every Netlify Learn build.
+
+`index.js` is only the Netlify lifecycle interface and exports exactly `onPreBuild` and
+`onSuccess`. Netlify validates every enumerable entry as an event, so implementation helpers must
+remain in `core.js`; tests import that module directly. The shared contract fixture pins the two
+allowed entry events and the owner suite rejects any extra export.
 
 The plugin restores its prior HTML-hash state before the build and runs only after a successful
 production deploy. It parses direct `url`/`loc` entries from a well-formed published sitemap,

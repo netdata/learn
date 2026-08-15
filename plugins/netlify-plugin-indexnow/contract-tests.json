@@ -1,5 +1,9 @@
 {
   "schema_version": 2,
+  "plugin_entry_events": [
+    "onPreBuild",
+    "onSuccess"
+  ],
   "invalid_keys": [
     "short",
     "unsafe/key",

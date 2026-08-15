@@ -6,7 +6,7 @@ const path = require('node:path');
 const test = require('node:test');
 
 const plugin = require('../plugins/netlify-plugin-indexnow');
-const {_test} = plugin;
+const core = require('../plugins/netlify-plugin-indexnow/core.js');
 const contractTests = require('../plugins/netlify-plugin-indexnow/contract-tests.json');
 
 const HOST = 'learn.netdata.cloud';
@@ -16,6 +16,13 @@ const INPUTS = {
   key: KEY,
   keyLocation: `https://${HOST}/${KEY}.txt`,
 };
+
+test('exports only supported Netlify lifecycle handlers', () => {
+  assert.deepEqual(Object.keys(plugin).sort(), [...contractTests.plugin_entry_events].sort());
+  for (const event of contractTests.plugin_entry_events) {
+    assert.equal(typeof plugin[event], 'function');
+  }
+});
 
 function sitemap(values) {
   const xmlText = (value) => value
@@ -87,7 +94,7 @@ async function fixture(t) {
 }
 
 async function run(dirs, overrides = {}) {
-  return _test.runOnSuccess({
+  return core.runOnSuccess({
     constants: {PUBLISH_DIR: dirs.publishDir},
     inputs: INPUTS,
     utils: {cache: dirs.cache},
@@ -168,7 +175,7 @@ test('sitemap parsing uses direct URL locations and enforces the exact HTTPS hos
     `<url><loc>https://${HOST}/one/</loc></url>`,
     '</urlset>',
   ].join('');
-  assert.deepEqual(_test.sitemapUrls(xml, HOST), [
+  assert.deepEqual(core.sitemapUrls(xml, HOST), [
     `https://${HOST}/a&b/`,
     `https://${HOST}/one/`,
   ]);
@@ -185,7 +192,7 @@ test('sitemap XML handles namespaces, comments, CDATA, and named or numeric enti
     `<sm:url><sm:loc>https://${HOST}/hex&#x2D;entity/</sm:loc></sm:url>`,
     '</sm:urlset>',
   ].join('');
-  assert.deepEqual(_test.sitemapUrls(xml, HOST), [
+  assert.deepEqual(core.sitemapUrls(xml, HOST), [
     `https://${HOST}/a&b/`,
     `https://${HOST}/decimal&entity/`,
     `https://${HOST}/hex-entity/`,
@@ -215,7 +222,7 @@ test('malformed sitemap XML fails closed', () => {
     '<!DOCTYPE urlset><urlset><url><loc>https://www.netdata.cloud/</loc></url></urlset>',
     ...contractTests.malformed_sitemaps,
   ]) {
-    assert.throws(() => _test.sitemapUrls(xml, HOST), /Malformed sitemap XML/);
+    assert.throws(() => core.sitemapUrls(xml, HOST), /Malformed sitemap XML/);
   }
 });
 
@@ -225,7 +232,7 @@ test('sitemap URL and loc elements must remain in the root sitemap namespace', (
     `<sm:url><sm:loc>https://${HOST}/one/</sm:loc></sm:url>`,
     '</sm:urlset>',
   ].join('');
-  assert.deepEqual(_test.sitemapUrls(valid, HOST), [`https://${HOST}/one/`]);
+  assert.deepEqual(core.sitemapUrls(valid, HOST), [`https://${HOST}/one/`]);
 
   for (const xml of [
     `<urlset xmlns=""><url><loc>https://${HOST}/one/</loc></url></urlset>`,
@@ -234,13 +241,13 @@ test('sitemap URL and loc elements must remain in the root sitemap namespace', (
     `<sm:urlset xmlns:sm="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:other="urn:other"><other:url><sm:loc>https://${HOST}/one/</sm:loc></other:url></sm:urlset>`,
     `<sm:urlset xmlns:sm="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:other="urn:other"><sm:url><other:loc>https://${HOST}/one/</other:loc></sm:url></sm:urlset>`,
   ]) {
-    assert.throws(() => _test.sitemapUrls(xml, HOST), /Malformed sitemap XML/);
+    assert.throws(() => core.sitemapUrls(xml, HOST), /Malformed sitemap XML/);
   }
 });
 
 test('canonical state ordering is JavaScript code-unit ordering', () => {
   const hash = 'a'.repeat(64);
-  const bytes = _test.stateBytes(HOST, {
+  const bytes = core.stateBytes(HOST, {
     [`https://${HOST}/i/`]: hash,
     [`https://${HOST}/I/`]: hash,
   });
@@ -258,7 +265,7 @@ test('page hashing supports Hugo trailing slashes, Docusaurus routes, and skips 
     `https://${HOST}/docs/two`,
     `https://${HOST}/llms.txt`,
   ];
-  const {pages, skipped} = await _test.hashPublishedPages(dirs.publishDir, urls);
+  const {pages, skipped} = await core.hashPublishedPages(dirs.publishDir, urls);
   assert.deepEqual(Object.keys(pages), urls.slice(0, 3));
   assert.deepEqual(skipped, [`https://${HOST}/llms.txt`]);
   assert.match(pages[`https://${HOST}/`], /^[0-9a-f]{64}$/);
@@ -268,7 +275,7 @@ test('page hashing supports Hugo trailing slashes, Docusaurus routes, and skips 
     `https://${HOST}/direct`,
     `https://${HOST}/caf%C3%A9/`,
   ];
-  const shaped = await _test.hashPublishedPages(dirs.publishDir, routeShapes);
+  const shaped = await core.hashPublishedPages(dirs.publishDir, routeShapes);
   assert.deepEqual(Object.keys(shaped.pages), routeShapes);
   assert.deepEqual(shaped.skipped, []);
 });
@@ -277,19 +284,19 @@ test('URL path mapping rejects ambiguous, duplicate, malformed, and unsafe paths
   const dirs = await fixture(t);
   for (const pathname of contractTests.invalid_paths) {
     const url = `https://${HOST}${pathname}`;
-    assert.deepEqual(_test.sitemapUrls(sitemap([url]), HOST), []);
-    await assert.rejects(_test.publishedFileForUrl(dirs.publishDir, url), /Cannot map/);
+    assert.deepEqual(core.sitemapUrls(sitemap([url]), HOST), []);
+    await assert.rejects(core.publishedFileForUrl(dirs.publishDir, url), /Cannot map/);
   }
 
   await fs.writeFile(path.join(dirs.publishDir, 'one.html'), 'ambiguous one');
   await assert.rejects(
-    _test.publishedFileForUrl(dirs.publishDir, `https://${HOST}/one/`),
+    core.publishedFileForUrl(dirs.publishDir, `https://${HOST}/one/`),
     /maps to multiple files/,
   );
   await fs.rm(path.join(dirs.publishDir, 'one.html'));
 
   await assert.rejects(
-    _test.hashPublishedPages(dirs.publishDir, [
+    core.hashPublishedPages(dirs.publishDir, [
       `https://${HOST}/one`,
       `https://${HOST}/one/`,
     ]),
@@ -299,7 +306,7 @@ test('URL path mapping rejects ambiguous, duplicate, malformed, and unsafe paths
   await fs.mkdir(path.join(dirs.publishDir, 'linked'), {recursive: true});
   await fs.symlink('../one/index.html', path.join(dirs.publishDir, 'linked', 'index.html'));
   await assert.rejects(
-    _test.publishedFileForUrl(dirs.publishDir, `https://${HOST}/linked/`),
+    core.publishedFileForUrl(dirs.publishDir, `https://${HOST}/linked/`),
     /symbolic link/,
   );
 });
@@ -350,7 +357,7 @@ test('missing sitemap HTML fails before state or submission can advance', async 
 });
 
 test('diff classifies added, updated, and removed URLs independently', () => {
-  const changes = _test.diffPages(
+  const changes = core.diffPages(
     {'https://example/removed': 'a', 'https://example/updated': 'b', 'https://example/same': 'c'},
     {'https://example/added': 'd', 'https://example/updated': 'e', 'https://example/same': 'c'},
   );
@@ -360,7 +367,7 @@ test('diff classifies added, updated, and removed URLs independently', () => {
     removed: ['https://example/removed'],
     all: ['https://example/added', 'https://example/removed', 'https://example/updated'],
   });
-  assert.deepEqual(_test.changedUrls(
+  assert.deepEqual(core.changedUrls(
     {'https://example/removed': 'a'},
     {'https://example/added': 'b'},
   ), ['https://example/added', 'https://example/removed']);
@@ -466,7 +473,7 @@ test('partial batch failure persists accepted state and retries only pending URL
     {status: 'accepted', httpStatus: 200, reason: null, urls: [`https://${HOST}/one/`]},
   ]);
 
-  const {pages: currentPages} = await _test.hashPublishedPages(dirs.publishDir, [
+  const {pages: currentPages} = await core.hashPublishedPages(dirs.publishDir, [
     `https://${HOST}/`, `https://${HOST}/docs/two`, `https://${HOST}/one/`,
   ]);
   const partialState = JSON.parse(await fs.readFile(dirs.statePath, 'utf8'));
@@ -591,11 +598,11 @@ test('partial acceptance is rolled back on state cache false or exception and al
 
 test('batching enforces the protocol limit', () => {
   assert.deepEqual(
-    _test.chunks(Array.from({length: 20_001}), 10_000).map((part) => part.length),
+    core.chunks(Array.from({length: 20_001}), 10_000).map((part) => part.length),
     [10_000, 10_000, 1],
   );
-  assert.throws(() => _test.chunks(['url'], 10_001), /between 1 and 10000/);
-  assert.throws(() => _test.chunks(['url'], 0), /between 1 and 10000/);
+  assert.throws(() => core.chunks(['url'], 10_001), /between 1 and 10000/);
+  assert.throws(() => core.chunks(['url'], 0), /between 1 and 10000/);
 });
 
 test('request and response-body timeouts leave only failed batches pending and continue', async () => {
@@ -606,7 +613,7 @@ test('request and response-body timeouts leave only failed batches pending and c
   ];
   const signals = [];
   let request = 0;
-  const result = await _test.submitUrlBatches({
+  const result = await core.submitUrlBatches({
     urls,
     inputs: INPUTS,
     batchSize: 1,
@@ -641,7 +648,7 @@ test('transport and response-body failures remain pending without stopping later
     `https://${HOST}/accepted/`,
   ];
   let request = 0;
-  const result = await _test.submitUrlBatches({
+  const result = await core.submitUrlBatches({
     urls,
     inputs: INPUTS,
     batchSize: 1,
@@ -664,7 +671,7 @@ test('transport and response-body failures remain pending without stopping later
 
 test('out-of-range and non-integer response statuses remain schema-valid invalid responses', async () => {
   for (const responseStatus of [undefined, null, '500', 99, 600, 200.5]) {
-    const result = await _test.submitUrlBatches({
+    const result = await core.submitUrlBatches({
       urls: [`https://${HOST}/invalid-status/`],
       inputs: INPUTS,
       fetchImpl: async () => ({status: responseStatus, text: async () => ''}),
@@ -674,7 +681,7 @@ test('out-of-range and non-integer response statuses remain schema-valid invalid
       status, httpStatus, reason,
     })), [{status: 'pending', httpStatus: null, reason: 'invalid-response'}]);
     assert.deepEqual(
-      _test.receiptDocument({
+      core.receiptDocument({
         host: HOST,
         batches: result.batches,
         deployId: 'deploy-test',
@@ -708,9 +715,9 @@ test('host, key, key location, and payload validation fail before network access
     {...INPUTS, keyLocation: `https://${HOST}/different.txt`},
     {...INPUTS, keyLocation: `https://${HOST}/keys/${KEY}.txt`},
   ]) {
-    assert.throws(() => _test.validateInputs(inputs));
+    assert.throws(() => core.validateInputs(inputs));
   }
-  assert.deepEqual(_test.validateInputs({
+  assert.deepEqual(core.validateInputs({
     host: HOST,
     key: 'valid-key-123',
     keyLocation: `https://${HOST}/valid-key-123.txt`,
@@ -722,7 +729,7 @@ test('host, key, key location, and payload validation fail before network access
 
   let fetches = 0;
   await assert.rejects(
-    _test.submitUrlBatches({
+    core.submitUrlBatches({
       urls: ['https://attacker.example/page'],
       inputs: INPUTS,
       fetchImpl: async () => { fetches += 1; },
@@ -733,7 +740,7 @@ test('host, key, key location, and payload validation fail before network access
   assert.equal(fetches, 0);
 
   await assert.rejects(
-    _test.submitUrlBatches({
+    core.submitUrlBatches({
       urls: [`https://${HOST}/page?unexpected=payload`],
       inputs: INPUTS,
       fetchImpl: async () => { fetches += 1; },
@@ -752,7 +759,7 @@ test('host, key, key location, and payload validation fail before network access
     `https://${HOST}/a%2Fb/`,
   ]) {
     await assert.rejects(
-      _test.submitUrlBatches({
+      core.submitUrlBatches({
         urls: [value],
         inputs: INPUTS,
         fetchImpl: async () => { fetches += 1; },
@@ -772,7 +779,7 @@ test('the configured public root key file exactly matches the submitted key', as
 
 test('request logs never contain the public key or key location', async () => {
   const output = logger();
-  await _test.submitUrlBatches({
+  await core.submitUrlBatches({
     urls: [`https://${HOST}/one/`],
     inputs: INPUTS,
     fetchImpl: async () => ({status: 202, text: async () => ''}),
@@ -789,7 +796,7 @@ test('a maximum-size batch keeps logs bounded while its result retains exact URL
     (_, index) => `https://${HOST}/receipt-${String(index).padStart(5, '0')}/`,
   );
   const output = logger();
-  const result = await _test.submitUrlBatches({
+  const result = await core.submitUrlBatches({
     urls,
     inputs: INPUTS,
     fetchImpl: async () => ({status: 202, text: async () => ''}),
@@ -820,13 +827,13 @@ test('receipt persistence is content-addressed, canonical, and verifies an exist
     }],
     store,
   };
-  const first = await _test.persistSubmissionReceipt(input);
-  const second = await _test.persistSubmissionReceipt(input);
+  const first = await core.persistSubmissionReceipt(input);
+  const second = await core.persistSubmissionReceipt(input);
   assert.equal(first.sha256, second.sha256);
   assert.equal(store.values.size, 1);
   const contents = store.values.get(first.blobKey);
   assert.equal(crypto.createHash('sha256').update(contents).digest('hex'), first.sha256);
-  assert.equal(contents, _test.canonicalJson(JSON.parse(contents)));
+  assert.equal(contents, core.canonicalJson(JSON.parse(contents)));
 });
 
 test('receipt persistence refuses missing deploy identity and digest collisions', async () => {
@@ -839,11 +846,11 @@ test('receipt persistence refuses missing deploy identity and digest collisions'
     urls: [`https://${HOST}/one/`],
   }];
   await assert.rejects(
-    _test.persistSubmissionReceipt({host: HOST, batches: batch, deployId: '', siteId: 'site', commitRef: null, store: blobStore()}),
+    core.persistSubmissionReceipt({host: HOST, batches: batch, deployId: '', siteId: 'site', commitRef: null, store: blobStore()}),
     /DEPLOY_ID and SITE_ID/,
   );
   await assert.rejects(
-    _test.persistSubmissionReceipt({
+    core.persistSubmissionReceipt({
       host: HOST,
       batches: batch,
       deployId: 'deploy',
@@ -856,7 +863,7 @@ test('receipt persistence refuses missing deploy identity and digest collisions'
 
   for (const commitRef of ['', ' ', ' commit', 'commit ', 42]) {
     await assert.rejects(
-      _test.persistSubmissionReceipt({
+      core.persistSubmissionReceipt({
         host: HOST,
         batches: batch,
         deployId: 'deploy',
