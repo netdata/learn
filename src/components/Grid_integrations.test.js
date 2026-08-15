@@ -1,7 +1,7 @@
 import React from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { Grid, Box } from './Grid_integrations';
+import { Grid, Box, GridPagination } from './Grid_integrations';
 
 describe('Grid_integrations component', () => {
   describe('Grid', () => {
@@ -99,6 +99,36 @@ describe('Grid_integrations component', () => {
       render(<Box to="/docs/test" title="Box">Content</Box>);
       const link = screen.getByTestId('docusaurus-link');
       expect(link).toHaveClass('rounded');
+    });
+  });
+
+  describe('GridPagination', () => {
+    it('renders crawlable links to every other page', () => {
+      render(
+        <GridPagination
+          basePath="/docs/integrations"
+          currentPage={2}
+          pageCount={3}
+        />
+      );
+
+      expect(screen.getByRole('navigation', {name: 'Integration index pages'})).toBeInTheDocument();
+      expect(screen.getByRole('link', {name: 'Page 1'})).toHaveAttribute(
+        'href',
+        '/docs/integrations',
+      );
+      expect(screen.getByText('Page 2')).toHaveAttribute('aria-current', 'page');
+      expect(screen.getByRole('link', {name: 'Page 3'})).toHaveAttribute(
+        'href',
+        '/docs/integrations/page/3',
+      );
+    });
+
+    it('does not render for a one-page grid', () => {
+      const {container} = render(
+        <GridPagination basePath="/docs/integrations" currentPage={1} pageCount={1} />
+      );
+      expect(container).toBeEmptyDOMElement();
     });
   });
 

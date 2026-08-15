@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "source_sow": "SOW-0017",
+  "delivery_boundary": {
+    "technical_pull_request": 2980,
+    "generated_output_branch": "ingest",
+    "generated_output_labels": [
+      "ingest",
+      "automation"
+    ],
+    "technical_pr_generated_paths": [],
+    "pipeline_owned_paths": [
+      "docs/**",
+      "ingest/generated_map.yaml",
+      "ingest/generated_sidebar_order.json",
+      "ingest/generated_sidebar_order.json.sha256"
+    ],
+    "runtime_generated_exception": "netlify.toml",
+    "strict_gate_marker": "ingest/generated_sidebar_order.json.sha256",
+    "merge_order": [
+      "technical source PR",
+      "automated ingest output PR"
+    ]
+  },
+  "final_ingest_source_snapshot": {
+    "netdata": {
+      "commit": "34727a00b89df3886239ad1e0324d59269d5714d",
+      "rejected_commits": [
+        "bf44bb561c6b59f35deab0d5df2f9be9dae92a01",
+        "36d3a604e29765276c76b4e3f736a8d917bda371",
+        "7c999e225e4fa8eb5f9d04c2327515a873a4aca6"
+      ],
+      "status": "accepted-by-independent-re-review"
+    },
+    "netdata-cloud-onprem": "08e18a7b02343027e32264199d30720f5de12d96",
+    ".github": "e4738392f8cb069418c6641ef01261c027e76b5f",
+    "agent-service-discovery": "e2c5bd784d5539bc83b46a0f923a05a1cf3e1587",
+    "netdata-grafana-datasource-plugin": "0d8338e60b62a9273c5c4a726d4b8672cde3c5c6",
+    "helmchart": "75c88bde4769327b4c58a02a002bfafdb5c8e562",
+    "map_sha256": "169ec6b8d7adc04fa72c3d8e22708e629fa0e03e30e80fbc9ca6eb09b6231d39",
+    "source_corpus_sha256": "b15e3feab38f34460aacc442a7640be2b383e7c1bb35d316aa2a7dcd3e9c4803",
+    "full_ingest_identity_sha256": "4fbcca31edfb43aa82f554f5005be6e798cd95cc1fea9582e7f50ad9d6f81703",
+    "fixed_point_diff_sha256": "c6ada88baa4826ecb658621b69f6a322667f7de641f9b32b70b1699a504bd94d",
+    "generated_output_diff_sha256": "4e9cee87c9bfe475675cbf92010556bba8f611fa5150db7e0ddd012b99466548"
+  },
+  "rejected_candidate_ingest_evidence": {
+    "netdata": "36d3a604e29765276c76b4e3f736a8d917bda371",
+    "map_sha256": "169ec6b8d7adc04fa72c3d8e22708e629fa0e03e30e80fbc9ca6eb09b6231d39",
+    "source_corpus_sha256": "b15e3feab38f34460aacc442a7640be2b383e7c1bb35d316aa2a7dcd3e9c4803",
+    "full_ingest_identity_sha256": "4fbcca31edfb43aa82f554f5005be6e798cd95cc1fea9582e7f50ad9d6f81703",
+    "fixed_point_diff_sha256": "2f4fa27d5d58e1b86891356cb3dc6d40015d4fb125d6d15e3a2aa0ec5867901e",
+    "accepted_for_release": false
+  },
+  "source_owned_diff_exceptions": [
+    "docs/Netdata Cloud On-Prem/PoC without K8s.mdx:60",
+    "docs/Netdata Cloud On-Prem/PoC without K8s.mdx:83",
+    "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:29",
+    "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:37",
+    "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:73",
+    "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:102",
+    "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:104"
+  ],
+  "final_acceptance_evidence": {
+    "status": "historical-pre-separation-proof-requires-ingest-pr-reproduction",
+    "learn_integration_commit": "08d5f5832b26d98cdc9a7c2feb611984401bb0c8",
+    "final_rereview_correction_commits": [
+      "49abbd83acfedc62bc3fafb40157314d8e66a92d",
+      "351e2909d5c6120734e334d2251efd6d9b91482b",
+      "e3e1702c228ec3d33dfee08f875b0c1f2642c1ae",
+      "aebfd9e240d96b9f5b0b95455a39dacc3b549a41",
+      "4eab40f62ec611e86f52d39adf7f4fdbcdd976ce",
+      "2942db87772eab90190c9b3d36e88d0807761f03",
+      "52889c9423fd2f77b72aa9ca02ed0651f550d6a2",
+      "015953e75a781c6073be299731697fa37574cdbd",
+      "02cd0d21b9c7e8b40a00c5e273ef9ade1f25c3c1",
+      "1554b043cef3ebfba7e35b2dc57aef51cc505aba",
+      "7f0949983e21de0c988254d04c29561713be2297",
+      "a7a516c0cfaa1cee913fee49d4ccb5dbf516562d",
+      "baa831b043f00147f2052ca324a4230d172a2558",
+      "3280d995ae421a805e19413014dfa2841975236c",
+      "5372d7189ab2d6a7eff084479bb46a1c94e7b728",
+      "bd86299a289df20282f5f7b3fa045edef6eebb9d",
+      "1758ef5b83b19c90afcfa34ad843399e91f13050",
+      "59eead708e20bf9006c73547c732111a7de533e0",
+      "73d78d08bd91aef1f0326fb3ed95d519a83cad98",
+      "8546dbf5ba1852d370ea9f006beaaf9d28870c33",
+      "c4cc125f41cc7d898a7999c42ad5a8f784890b24",
+      "c3aabf1982b4b2dabcbbc563fdbad82073a964e2"
+    ],
+    "independent_agent_source_review": "production-grade-no-blockers",
+    "six_source_full_ingest_runs": 2,
+    "detected_source_files": 2668,
+    "published_learn_sources": 1945,
+    "uncorrelated_links": 0,
+    "generated_integration_descriptions": 1618,
+    "new_agent_descriptions_exact": 40,
+    "terminal_description_ellipses": 0,
+    "tests": {
+      "python_ingest": 41,
+      "mdx_escaping": 54,
+      "vitest_files": 25,
+      "vitest_tests": 368,
+      "indexnow": 63,
+      "canonical_c8": 4,
+      "exact_agent_source": 76
+    },
+    "redirect_rules": 3158,
+    "historical_network_flows_routes": 42,
+    "build_runtime": {
+      "node": "22.14.0",
+      "npm": "10.9.2",
+      "yarn": "1.22.22",
+      "node_heap_mib": 8192
+    },
+    "production_builds": 2,
+    "build_files": 4166,
+    "build_manifest_sha256": "e859b0cee5dae7c463b876ebb0059f42b010c26437280ee3bde641428a06cfde",
+    "byte_identical": true,
+    "rendered_html_files": 1984,
+    "sitemap_urls": 1979,
+    "sitemap_urls_with_lastmod": 1979,
+    "distinct_lastmod_timestamps": 46,
+    "unique_rendered_titles": 1979,
+    "functional_routes_with_exactly_one_h1": 1,
+    "rendered_internal_links": 821342,
+    "noindex_directives": 0,
+    "cloudflare_normal_html_files": 1982,
+    "cloudflare_credential_html_files": 2,
+    "cloudflare_beacons_per_normal_html": 1,
+    "cloudflare_beacons_per_credential_html": 0,
+    "c8_counts": {},
+    "c8_findings": [],
+    "c8_accepted_findings": [],
+    "c8_regressions": [],
+    "c8_stale_baseline": [],
+    "source_owned_diff_check_reports": 7,
+    "all_other_changed_paths_diff_check_clean": true,
+    "high_confidence_secret_findings": 0,
+    "push_deploy_live_provider_or_macos_actions": 0
+  },
+  "implementation_plan": [
+    "Replace the client-only root redirect with a permanent source-owned Netlify redirect to Ask Nedi, keep the root out of rendered output and the sitemap, add the missing blog heading, and validate both route purposes without applying content-page rules to redirects.",
+    "Keep sitemap exclusion separate from robots indexability, emit zero noindex directives across every rendered HTML route, and restore all public libnetdata references to the sitemap.",
+    "Persist upstream sidebar ordering with exact source and corpus provenance, then make full ingest and grid-only recovery use one reconciliation and finalization path.",
+    "Paginate every generated integration grid above the 175-card page capacity, emit every card exactly once, and safely reconcile grid creation, removal, and page-count transitions.",
+    "Treat only explicit generated_grid_page ownership markers as authority to overwrite or delete a grid artifact; never infer ownership from status or component imports.",
+    "Reject symbolic links, non-regular files, and paths whose real ancestors escape the configured docs root before any recovery read, hash, write, replacement, or deletion.",
+    "Replace random installer control IDs with React useId and prove uniqueness, label binding, repeatable SSR, and hydration stability.",
+    "Expand the rendered-link gate to same-host HTTP links and terminal-wildcard redirect sources, while allowing only the stable public / entrypoint to hide its current redirect destination from callers; pin both the exception and parser boundaries with mutations.",
+    "Repair the complete Netlify redirect graph from its static owner: restore every historical Network Flows route, retarget every proved dead exact destination, replace non-terminal wildcard classes with archived exact mappings, remove duplicate and conflicting identities, and fail closed on graph regressions.",
+    "Run all Learn and exact-source tests, two byte-identical production builds, rendered audits, provenance checks, and repository hygiene checks.",
+    "Vendor the exact C8 ruleset-v9 bundle accepted in netdata/seo commit 4a9813f4f581966a84ab469cabf9e3c34d294c7e with the canonical exporter. Every Netlify context performs a clean locked Node 22 install in that bundle, builds Docusaurus, and scans the complete build with the Learn origin and a read-only, reasoned baseline containing only exact pre-existing findings. Heavy-page enforcement uses real bytes while its baseline identity is neutral to exact configured-origin length.",
+    "Replace the legacy Learn IndexNow copy with every checksum-covered schema-2 artifact, dependency, verifier rule, and adversarial test from the website owner commit eb6246fcf87e4fc2b9160ed77606f6322d953cc1. The six-file owner contract separates an event-only Netlify adapter from the shared core; only the declared Learn host, key-location host, published build directory, and test fixture route shape may differ. Receipt, retry, cache, URL, filesystem, and at-least-once semantics remain byte-identical.",
+    "Install the approved public Cloudflare Web Analytics token once through Docusaurus' shared document script configuration as an unversioned type=module beacon. Verify exactly one executable beacon in every normal rendered HTML artifact, including docs, generated indexes, blog, and search; require zero third-party script code on the API console and OAuth callback. Replace the obsolete Ask Netdata compatibility HTML and the root client redirect with permanent Netlify redirects to Ask Nedi so neither is an analytics-bearing document."
+  ],
+  "excluded_work": [
+    "upstream rebase",
+    "push, pull request, or deployment",
+    "macOS execution"
+  ],
+  "accepted_review_corrections": [
+    {
+      "id": "root-redirect-and-blog-rendering",
+      "contract": "The root route preserves its established Ask Nedi product journey as a permanent one-hop Netlify redirect. No root HTML artifact may shadow it and the root remains outside the sitemap. The navbar and other callers use stable / rather than knowing the current destination. The navbar uses Docusaurus' pathname escape with a same-window target so clicking it performs a normal document request through Netlify instead of client-side routing or opening another tab. The functional blog page has exactly one H1 while remaining sitemap-excluded.",
+      "acceptance": "The redirect graph requires / to terminate at the rendered /docs/ask-nedi route, the build contains no root index.html, the sitemap excludes /, the rendered navbar logo links to / using the pathname escape and target _self, and blog renders exactly one H1. The corrected Deploy Preview returns HTTP 301 with Location /docs/ask-nedi, a same-window browser logo click follows that edge redirect, and the destination returns HTTP 200."
+    },
+    {
+      "id": "zero-noindex-sitemap-separation",
+      "contract": "Public routes never emit a noindex robots directive. Sitemap exclusion is a separate discovery choice: blog and search remain excluded, the obsolete Ask Netdata path is a permanent redirect rather than an HTML route, and all current self-canonical libnetdata references remain included and indexable.",
+      "acceptance": "Every rendered HTML file contains zero noindex directives; all current libnetdata routes occur exactly once in the sitemap; blog, search, and the redirected Ask Netdata path remain absent from it."
+    },
+    {
+      "id": "grid-recovery-equivalence",
+      "contract": "Full ingest and grid-only recovery use one reconciliation and finalization path. The path removes stale owned grids and pagination pages, reconciles generated category metadata, cleans redirects after generated routes exist, normalizes ordering, and applies content finalizers.",
+      "acceptance": "Grid-only recovery is byte-equivalent to a clean full-ingest grid subset for identical inputs across no-op, source removal, eligibility changes, pagination shrink and growth, overview/category transitions, redirect shadows, and recoverable grid corruption. Repeated recovery is a fixed point."
+    },
+    {
+      "id": "grid-completeness-and-ownership",
+      "contract": "A generated grid page holds at most 175 cards and every integration card appears on exactly one page. Overwrite and deletion authority requires generated_grid_page: true in front matter.",
+      "acceptance": "Boundary tests cover 0, 1, 175, 176, 400, and 401 cards; the real 179-card Device Metrics grid is complete; authored no-marker files survive every reconciliation mutation."
+    },
+    {
+      "id": "grid-state-provenance",
+      "contract": "Offline recovery loads an exact-schema state written by full ingest, verifies the complete state bytes against a separately generated companion checksum, validates its canonical full-ingest identity, and validates both the recorded upstream map identity and the non-generated source-corpus identity before changing files.",
+      "acceptance": "Missing, malformed, mismatched, symbolic-link, non-regular, duplicate, or source-corpus-drifted state or checksum fails closed; the current full-ingest state and companion checksum validate and recover all owned grid artifacts."
+    },
+    {
+      "id": "recovery-filesystem-boundary",
+      "contract": "Grid recovery treats the configured docs root as a hard filesystem boundary. Every input and artifact path must have non-symlink ancestors under the real root and must be an expected regular file or absent leaf before it is read, hashed, written, replaced, or deleted.",
+      "acceptance": "Dangling and existing leaf symlinks, symlinked directories, non-regular files, category artifacts, state inputs, and source-corpus entries fail before any external target or corpus artifact changes."
+    },
+    {
+      "id": "deterministic-install-control-ids",
+      "contract": "One-line installer controls use React's server-stable ID mechanism and preserve unique label bindings across repeated instances.",
+      "acceptance": "Repeated same-method instances have unique bound IDs, server rendering is repeatable, and two unchanged production builds are byte-identical."
+    },
+    {
+      "id": "complete-redirect-source-gate",
+      "contract": "The rendered-link gate rejects exact and terminal-wildcard Netlify redirect sources, including same-host HTTP links. The stable public / entrypoint is the sole explicit exception so callers do not depend on its current destination; unquoted href attributes remain outside the parser because Docusaurus emits quoted attributes.",
+      "acceptance": "Current rendered output has no redirect-source links except links to the policy-owned / entrypoint. Regression mutations prove / is allowed only when explicitly configured, while every other exact, encoded, terminal-wildcard, HTTP, slash, and quoted-attribute boundary remains fail-closed."
+    },
+    {
+      "id": "terminal-redirect-graph",
+      "contract": "Netlify rules are one-hop and terminal under first-match order. The exact /docs/network-flows root precedes one terminal wildcard that preserves the suffix; generated rules subsumed or shadowed by static authority are omitted. Locale and cloud wildcard classes are replaced only by exact archived requests with proved current destinations.",
+      "acceptance": "All 42 routes moved by commit 7c5a438543 resolve to the same suffix under /docs/network-performance-monitoring/network-flows; every exact internal target renders; no source shadows a rendered route; and the graph has no duplicate or conflicting identity, malformed source, chain, cycle, non-terminal wildcard, or earlier-rule shadow. Mutation tests cover every failure class and wildcard counterexamples."
+    },
+    {
+      "id": "canonical-c8-v9-build-gate",
+      "contract": "scripts/site-build-gate is an exact canonical export from netdata/seo commit 4a9813f4f581966a84ab469cabf9e3c34d294c7e. Netlify's one build command installs its exact lock with Node 22 before Docusaurus builds, then scans build/ for every context using https://learn.netdata.cloud and a non-widening site baseline. Heavy-page enforcement uses real bytes; its accepted-debt identity removes exact configured-origin bytes and binds the remaining bytes plus occurrence count.",
+      "acceptance": "The SEO owner verifier proves byte identity; a clean npm ci succeeds; mutation tests fail closed; two identical production builds produce the same bytes; and the complete C8 report has an empty accepted-finding baseline."
+    },
+    {
+      "id": "website-owned-indexnow-schema-2",
+      "contract": "The Learn plugin is the complete website-owned schema-2 vendor contract from commit eb6246fcf87e4fc2b9160ed77606f6322d953cc1. All six checksum-covered artifacts, exact root and plugin dependencies, verifier, receipt validation, and adversarial tests are copied together. index.js exports only onPreBuild and onSuccess; core.js owns the implementation and direct test surface. Adaptation is limited to learn.netdata.cloud and Docusaurus build/ route fixtures.",
+      "acceptance": "The schema-2 checksum verifier passes, the entrypoint exposes exactly the two pinned Netlify events, all owner contract cases pass against the Learn host and route layout, receipt and durable recovery behavior is unchanged, and the production hook remains non-fatal with at-least-once evidence."
+    },
+    {
+      "id": "manual-cloudflare-web-analytics",
+      "contract": "Docusaurus' shared HTML script configuration emits one defer type=module Cloudflare beacon with the approved zone-level public token. The source remains unversioned and has no integrity attribute; the token is public and no Cloudflare credential enters the repository. The API console and OAuth callback are explicit security-sensitive exceptions and contain no third-party script code.",
+      "acceptance": "Every normal rendered HTML file contains exactly one executable manual beacon and token. Equivalent Cloudflare host/path resource spellings count as the same beacon regardless of DNS-root trailing dot, HTTP-to-HTTPS redirect, or served HTTPS port; the sole allowed beacon still requires the exact approved URL. api.html and oauth2-redirect.html contain zero third-party script code and fail closed on browser-active script, module, nested-document, shadow-DOM, URL-base, preload, import-map, and policy bypasses. The obsolete Ask Netdata compatibility document does not exist; its one-hop permanent redirect targets the rendered Ask Nedi route. The zero-noindex and sitemap contracts remain unchanged."
+    },
+    {
+      "id": "exact-final-agent-source-ingest",
+      "contract": "The final source refresh uses corrected committed, clean netdata/netdata source 34727a00b89df3886239ad1e0324d59269d5714d through the local-source ingest path. It replaces rejected candidates bf44bb561c6b59f35deab0d5df2f9be9dae92a01, 36d3a604e29765276c76b4e3f736a8d917bda371, and 7c999e225e4fa8eb5f9d04c2327515a873a4aca6 and must pass fresh independent source review before final staging or builds. Only exact upstream provenance plus pipeline-generated Learn documentation, maps, sidebar state, and redirect output may change; generated documentation is never hand-edited.",
+      "acceptance": "The committed dependency and generated state pin the exact source, map, corpus, and full-ingest hashes; all 40 newly completed source descriptions arrive byte-for-byte in their generated Learn pages; no generated description ends in an ASCII or Unicode ellipsis; redirect generation remains a fixed point at 3158 rules with all 42 historical Network Flows routes; and two Node 22.14.0, Yarn 1.22.22, 8 GiB Netlify-equivalent builds are byte-identical."
+    },
+    {
+      "id": "source-owned-onprem-trailing-whitespace",
+      "contract": "The exact pinned netdata-cloud-onprem source contains seven trailing-space lines in PoC without K8s and Security Hardening Guide. Learn preserves those upstream bytes. The user explicitly rejected an on-prem cleanup PR and Learn-side normalization, so these seven lines are a closed source-owned diff exception rather than a product or CI blocker.",
+      "acceptance": "The full ingest is a fixed point against the six exact source commits; the seven reports match the immutable file-and-line inventory; every other changed path passes git diff --check; and rendered content, links, metadata, indexing, and two-build byte identity remain unchanged by the whitespace bytes."
+    }
+  ]
+}

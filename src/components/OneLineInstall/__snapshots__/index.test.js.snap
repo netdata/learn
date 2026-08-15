@@ -25,12 +25,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with all f
         class="py-1 flex items-center"
       >
         <input
-          id="oli_wget_4fzzzx__updates"
+          id="stable-control-id___updates"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_wget_4fzzzx__updates"
+          for="stable-control-id___updates"
         >
           Do you want automatic updates? 
           <code>
@@ -42,12 +42,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with all f
         class="py-1 flex items-center"
       >
         <input
-          id="oli_wget_4fzzzx__type"
+          id="stable-control-id___type"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_wget_4fzzzx__type"
+          for="stable-control-id___type"
         >
           Do you want nightly or stable releases? 
           <code>
@@ -59,12 +59,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with all f
         class="py-1 flex items-center"
       >
         <input
-          id="oli_wget_4fzzzx__stats"
+          id="stable-control-id___stats"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_wget_4fzzzx__stats"
+          for="stable-control-id___stats"
         >
           Do you want to contribute
            
@@ -86,12 +86,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with all f
       >
         <input
           checked=""
-          id="oli_wget_4fzzzx__cloud"
+          id="stable-control-id___cloud"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_wget_4fzzzx__cloud"
+          for="stable-control-id___cloud"
         >
           Do you want to
            
@@ -140,12 +140,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with curl 
       >
         <input
           checked=""
-          id="oli_curl_4fzzzx__updates"
+          id="stable-control-id___updates"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_curl_4fzzzx__updates"
+          for="stable-control-id___updates"
         >
           Do you want automatic updates? 
           <code>
@@ -158,12 +158,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with curl 
       >
         <input
           checked=""
-          id="oli_curl_4fzzzx__type"
+          id="stable-control-id___type"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_curl_4fzzzx__type"
+          for="stable-control-id___type"
         >
           Do you want nightly or stable releases? 
           <code>
@@ -176,12 +176,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with curl 
       >
         <input
           checked=""
-          id="oli_curl_4fzzzx__stats"
+          id="stable-control-id___stats"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_curl_4fzzzx__stats"
+          for="stable-control-id___stats"
         >
           Do you want to contribute
            
@@ -202,12 +202,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with curl 
         class="py-1 flex items-center"
       >
         <input
-          id="oli_curl_4fzzzx__cloud"
+          id="stable-control-id___cloud"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_curl_4fzzzx__cloud"
+          for="stable-control-id___cloud"
         >
           Do you want to
            
@@ -256,12 +256,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with defau
       >
         <input
           checked=""
-          id="oli_wget_4fzzzx__updates"
+          id="stable-control-id___updates"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_wget_4fzzzx__updates"
+          for="stable-control-id___updates"
         >
           Do you want automatic updates? 
           <code>
@@ -274,12 +274,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with defau
       >
         <input
           checked=""
-          id="oli_wget_4fzzzx__type"
+          id="stable-control-id___type"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_wget_4fzzzx__type"
+          for="stable-control-id___type"
         >
           Do you want nightly or stable releases? 
           <code>
@@ -292,12 +292,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with defau
       >
         <input
           checked=""
-          id="oli_wget_4fzzzx__stats"
+          id="stable-control-id___stats"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_wget_4fzzzx__stats"
+          for="stable-control-id___stats"
         >
           Do you want to contribute
            
@@ -318,12 +318,12 @@ exports[`OneLineInstall component > snapshots > should match snapshot with defau
         class="py-1 flex items-center"
       >
         <input
-          id="oli_wget_4fzzzx__cloud"
+          id="stable-control-id___cloud"
           type="checkbox"
         />
         <label
           class="relative text-sm pl-2"
-          for="oli_wget_4fzzzx__cloud"
+          for="stable-control-id___cloud"
         >
           Do you want to
            

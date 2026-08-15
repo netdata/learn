@@ -1,0 +1,11 @@
+name: netlify-plugin-indexnow
+inputs:
+  - name: host
+    description: Hostname submitted to IndexNow.
+    required: true
+  - name: key
+    description: Public IndexNow key.
+    required: true
+  - name: keyLocation
+    description: Exact HTTPS URL of the root IndexNow key file.
+    required: true

@@ -10,10 +10,12 @@ import errno
 import git
 import json
 import ast
+import subprocess
 import yaml
 import autogenerateSupportedIntegrationsPage as genIntPage
 import pandas as pd
 import numpy as np
+from urllib.parse import urlsplit, urlunsplit
 
 
 def redirectUnit(FROM, TO):
@@ -46,10 +48,19 @@ def combineDictsJU(dict1, dict2):
 
 def combineDictsOverwrite(dict1, dict2):
     """
-    Combine two dictionaries and overwrite common keys of d1, d2 based on keys, values.
+    Combine redirect dictionaries while rejecting conflicting deployment identities.
     """
     new_dict = dict1.copy()
+    identities = {_normalize_route(key): _target_identity(value) for key, value in new_dict.items()}
     for key in dict2:
+        identity = _normalize_route(key)
+        normalized_value = _target_identity(dict2[key])
+        previous = identities.get(identity)
+        if previous is not None and previous != normalized_value:
+            raise ValueError(
+                f"Conflicting redirect identity {identity}: {previous} and {normalized_value}"
+            )
+        identities[identity] = normalized_value
         new_dict[key] = dict2[key]
     return (new_dict)
 
@@ -74,11 +85,35 @@ def readRawStaticRedirectsFromFile(pathToFile):
 	"""
 	redirects = ""
 	section_pattern = re.compile(r'#\s*section:\s*static\s*<<\s*START(.+?)#\s*section:\s*static\s*<<\s*END', re.DOTALL)
-	with open(pathToFile, "r+") as fd:
+	with open(pathToFile, "r") as fd:
 		document_text = "".join(fd.readlines())
 		sections = section_pattern.findall(document_text)
 		redirects += "".join(sections)
 	return (redirects)
+
+
+def parseRedirects(document_text):
+	redirects = dict()
+	identities = dict()
+	section_pattern = re.compile(r'#\s*section:\s*dynamic\s*<<\s*START(.+?)#\s*section:\s*dynamic\s*<<\s*END', re.DOTALL)
+	redirects_pattern = re.compile(r'\[\[redirects\]\]\s+from\s*=\s*"(.+?)"\s+to\s*=\s*"(.+?)"')
+	for section in section_pattern.findall(document_text):
+		for key, value in redirects_pattern.findall(section):
+			identity = _normalize_route(key)
+			normalized_value = _target_identity(value)
+			previous = identities.get(identity)
+			if previous is not None and previous != normalized_value:
+				raise ValueError(
+					f"Conflicting redirect identity {identity}: {previous} and {normalized_value}"
+				)
+			identities[identity] = normalized_value
+			redirects[key] = value
+	return redirects
+
+
+def parseAllRedirects(document_text):
+	redirects_pattern = re.compile(r'\[\[redirects\]\]\s+from\s*=\s*"(.+?)"\s+to\s*=\s*"(.+?)"')
+	return redirects_pattern.findall(document_text)
 
 
 def readRedirectsFromFile(pathToFile):
@@ -87,18 +122,9 @@ def readRedirectsFromFile(pathToFile):
 	the dynamic section between # section: dynamic START|END
 	and parse all the [[redirect]] rules in a dictionary.
 	"""
-	redirects = dict()
-	section_pattern = re.compile(r'#\s*section:\s*dynamic\s*<<\s*START(.+?)#\s*section:\s*dynamic\s*<<\s*END', re.DOTALL)
-	redirects_pattern = re.compile(r'\[\[redirects\]\]\s+from\s*=\s*"(.+?)"\s+to\s*=\s*"(.+?)"')
-	with open(pathToFile, "r+") as fd:
+	with open(pathToFile, "r") as fd:
 		document_text = "".join(fd.readlines())
-		sections = section_pattern.findall(document_text)
-		for section in sections:
-			redirectsList = redirects_pattern.findall(section)
-
-		for k, v in redirectsList.__iter__():
-			redirects[k] = v
-	return (redirects)
+	return parseRedirects(document_text)
 
 
 def readLegacyLearnDocMap(pathToFile):
@@ -169,6 +195,178 @@ def append_entries_to_json(dictionary):
 		json.dump(json_dictionary, json_file, indent=4)
 
 
+def _normalize_route(route):
+	if not route:
+		return "/"
+	path = urlsplit(route).path
+	if not path.startswith("/"):
+		path = "/" + path
+	return path.rstrip("/") or "/"
+
+
+def _target_identity(target):
+	parts = urlsplit(target)
+	if parts.scheme in {"http", "https"} and parts.netloc:
+		path = parts.path.rstrip("/") or "/"
+		return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), path, parts.query, parts.fragment))
+	return _normalize_route(target)
+
+
+def clean_redirects(redirects, active_routes=()):
+	"""Remove redirects that shadow live routes and collapse internal chains."""
+	active = {_normalize_route(route) for route in active_routes}
+	candidates = {}
+	targets_by_identity = {}
+	for source, target in redirects.items():
+		normalized_source = _normalize_route(source)
+		if normalized_source in active:
+			continue
+		if target.startswith("https://") or target.startswith("http://"):
+			continue
+		if normalized_source == _normalize_route(target):
+			continue
+		normalized_target = _normalize_route(target)
+		previous_target = targets_by_identity.get(normalized_source)
+		if previous_target is not None and previous_target != normalized_target:
+			raise ValueError(
+				f"Conflicting redirect identity {normalized_source}: "
+				f"{previous_target} and {normalized_target}"
+			)
+		targets_by_identity[normalized_source] = normalized_target
+		candidates.setdefault(normalized_source, target)
+
+	targets_by_route = {}
+	for source, target in candidates.items():
+		targets_by_route.setdefault(_normalize_route(source), target)
+
+	cleaned = {}
+	for source, initial_target in candidates.items():
+		target = initial_target
+		visited = {_normalize_route(source)}
+		while True:
+			target_route = _normalize_route(target)
+			if target_route in visited:
+				target = None
+				break
+			visited.add(target_route)
+			next_target = targets_by_route.get(target_route)
+			if next_target is None:
+				break
+			target = next_target
+
+		if target is not None and _normalize_route(source) != _normalize_route(target):
+			cleaned[source] = target
+
+	return cleaned
+
+
+def discover_current_routes(docs_path="docs", sitemap_path=None):
+	routes = set()
+	learn_link_pattern = re.compile(
+		r'^learn_link:\s*["\']?https://learn\.netdata\.cloud([^"\'\s]+)', re.MULTILINE
+	)
+	slug_pattern = re.compile(r'^slug:\s*["\']?([^"\'\s]+)', re.MULTILINE)
+
+	for doc_path in pathlib.Path(docs_path).rglob("*.mdx"):
+		try:
+			front_matter = doc_path.read_text(encoding="utf-8")[:8000]
+		except (OSError, UnicodeDecodeError):
+			continue
+		match = learn_link_pattern.search(front_matter)
+		if match:
+			routes.add(_normalize_route(match.group(1)))
+			continue
+		match = slug_pattern.search(front_matter)
+		if match:
+			routes.add(_normalize_route("/docs/" + match.group(1).lstrip("/")))
+
+	if sitemap_path and pathlib.Path(sitemap_path).is_file():
+		sitemap = pathlib.Path(sitemap_path).read_text(encoding="utf-8")
+		for url in re.findall(r"<loc>(.*?)</loc>", sitemap):
+			routes.add(_normalize_route(url))
+
+	return routes
+
+
+def write_netlify_config(
+	redirects, output_path="netlify.toml", static_path="static.toml"
+):
+	static_part = readRawStaticRedirectsFromFile(static_path)
+	static_rules = parseAllRedirects(static_part)
+	static_exact = {_normalize_route(source): target for source, target in static_rules if "*" not in source}
+	static_wildcards = [
+		(source[:-1], target[:-len(":splat")])
+		for source, target in static_rules
+		if source.endswith("*") and target.endswith(":splat")
+	]
+	policy_path = pathlib.Path("config/redirect-policy.json")
+	retired_sources = set()
+	if policy_path.is_file():
+		retired_sources = set(json.loads(policy_path.read_text(encoding="utf-8"))["retired_wildcard_sources"])
+
+	owned_redirects = {}
+	for source, target in redirects.items():
+		if source in retired_sources or _normalize_route(source) in static_exact:
+			continue
+		subsumed = False
+		for source_prefix, target_prefix in static_wildcards:
+			if source.startswith(source_prefix):
+				remainder = source[len(source_prefix):]
+				expected_target = target_prefix + remainder
+				if _normalize_route(target) != _normalize_route(expected_target):
+					raise ValueError(
+						f"Static wildcard conflicts with generated redirect {source}: "
+						f"expected {expected_target}, found {target}"
+					)
+				subsumed = True
+				break
+		if not subsumed:
+			owned_redirects[source] = target
+
+	unPackedDynamicPart = ''.join(
+		redirectUnit(key, value) for key, value in owned_redirects.items()
+	)
+	unPackedStaticPart = static_part
+	outputRedirectsFile = f"""# This document is autogenerated, to make your change permanently, include it in the static section.
+# section: static << START{unPackedStaticPart}# section: static << END
+
+# section: dynamic << START
+{unPackedDynamicPart}
+# section: dynamic << END"""
+
+	with open(output_path, "w", encoding="utf-8") as output_file:
+		output_file.write(outputRedirectsFile)
+
+
+def refresh_current_netlify_config():
+	active_routes = discover_current_routes(
+		"docs",
+		"build/sitemap.xml" if pathlib.Path("build/sitemap.xml").is_file() else None,
+	)
+	tracked_redirects = {}
+	try:
+		tracked_config = subprocess.run(
+			["git", "show", "HEAD:netlify.toml"],
+			check=True,
+			capture_output=True,
+			text=True,
+		).stdout
+		tracked_redirects = parseRedirects(tracked_config)
+	except (OSError, subprocess.CalledProcessError):
+		pass
+	current_redirects = readRedirectsFromFile("netlify.toml")
+	tracked_routes = {_normalize_route(source) for source in tracked_redirects}
+	current_redirects = {
+		source: target
+		for source, target in current_redirects.items()
+		if source in tracked_redirects or _normalize_route(source) not in tracked_routes
+	}
+	redirects = combineDictsOverwrite(tracked_redirects, current_redirects)
+	redirects = clean_redirects(redirects, active_routes)
+	write_netlify_config(redirects)
+	return redirects
+
+
 def main(GHLinksCorrelation):
 
 	mapping = reductTonew_learn_pathFromGHLinksCorrelation(GHLinksCorrelation)
@@ -186,10 +384,8 @@ def main(GHLinksCorrelation):
 	except Exception as e:
 		print(f"An exception occurred: {e}")
 
-	unPackedDynamicPart = ''
-	for key, value in finalDict.items():
-		if not value.startswith("https://"):
-			unPackedDynamicPart += redirectUnit(key, value)
+	active_routes = set(mapping.values())
+	finalDict = clean_redirects(finalDict, active_routes)
 	# print(unPackedDocument)
 	# print(readRawStaticRedirectsFromFile("netlify.toml"))
 	
@@ -198,16 +394,17 @@ def main(GHLinksCorrelation):
 	# 	if value.startswith("https://"):
 	# 		print(key, value)
 	
-	# Use a separate file for the static redirects, it's cleaner that way
-	unPackedStaticPart = readRawStaticRedirectsFromFile("static.toml")
-	outputRedirectsFile = f"""# This document is autogenerated, to make your change permanently, include it in the static section.
-# section: static << START{unPackedStaticPart}# section: static << END
-
-# section: dynamic << START
-{unPackedDynamicPart}
-# section: dynamic << END"""
-
-	f = open("netlify.toml", "w")
-	f.write(outputRedirectsFile)
-	f.close()
+	write_netlify_config(finalDict)
 	# print(unPackedDocument)
+
+
+if __name__ == "__main__":
+	parser = argparse.ArgumentParser(description="Regenerate Learn redirect configuration")
+	parser.add_argument(
+		"--refresh-current",
+		action="store_true",
+		help="Clean current generated redirects and resync the static Netlify configuration.",
+	)
+	args = parser.parse_args()
+	if args.refresh_current:
+		refresh_current_netlify_config()

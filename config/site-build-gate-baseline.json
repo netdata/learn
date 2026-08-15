@@ -1,0 +1,6 @@
+{
+  "schema": "netdata-site-build-gate-baseline-v1",
+  "contract": "netdata-site-build-gate-v1",
+  "ruleset_version": 9,
+  "allowed": []
+}

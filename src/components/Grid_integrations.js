@@ -86,3 +86,29 @@ export const Box = ({ banner, banner_color, to, title, cta, image, children }) =
 		</custom-link>
 	);
 };
+
+export const GridPagination = ({basePath, currentPage, pageCount}) => {
+	if (pageCount <= 1) {
+		return null;
+	}
+
+	return (
+		<nav aria-label="Integration index pages" className="pagination-nav">
+			<ul className="pagination-nav__list">
+				{Array.from({length: pageCount}, (_, index) => {
+					const page = index + 1;
+					const to = page === 1 ? basePath : `${basePath}/page/${page}`;
+					return (
+						<li key={page} className="pagination-nav__item">
+							{page === currentPage ? (
+								<span aria-current="page">Page {page}</span>
+							) : (
+								<Link to={to}>Page {page}</Link>
+							)}
+						</li>
+					);
+				})}
+			</ul>
+		</nav>
+	);
+};

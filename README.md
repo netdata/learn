@@ -33,21 +33,29 @@ Please also look at the [style guide](https://github.com/netdata/netdata/blob/ma
     cd learn
     ```
 
-2. `yarn` version `14.16` or higher should be installed on the system, usually with `npm install yarn` (you can also use the `--global` tag)
-3. `node.js`, version `12 - 16` should also be installed on the system, `nvm` works best for this, so you can hot-swap node.js versions.
-4. Install dependencies.
+2. Install Node.js 22.14.0, the version pinned by the Netlify build. With `nvm`:
 
     ```bash
-    yarn install
+    nvm install 22.14.0
+    nvm use 22.14.0
     ```
 
-5. To start the frontend end of Learn, running at port `3000`, use:
+3. Install Yarn Classic 1.22.22 and the locked dependencies. Netlify selects Yarn because
+   this repository tracks `yarn.lock`; npm 10.9.2 remains pinned for the nested build-gate
+   install run by `build:netlify`.
+
+    ```bash
+    npm install --global yarn@1.22.22
+    yarn install --frozen-lockfile
+    ```
+
+4. To start the frontend end of Learn, running at port `3000`, use:
 
 ```bash
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Markdown changes are reflected live without having to restart the server (removing/adding files will need a re-run of the command). If you want to suppress warnings you can run `yarn -s start`.
+This command starts a local development server and opens up a browser window. Markdown changes are reflected live without having to restart the server (removing/adding files will need a re-run of the command).
 
 ## Ingest and process documentation files
 
@@ -124,7 +132,12 @@ The ingest script is a python script and has its dependencies (separate from the
 
     If you don't use `--repos` the ingest will run on the master branches of netdata's repos.
 
-8. You then need to run `ingest/create_grid_integration_pages.py` to generate the dynamic integration pages.
+8. Normal ingest already reconciles the generated integration grids. To repair only those grids
+   from the committed full-ingest state without refreshing upstream documentation, run:
+
+   ```bash
+   python ingest/ingest.py --regenerate-grids-only
+   ```
 
    During ingest, integration logos from `netdata.cloud/img` are also analyzed for theme contrast.
    The ingest process tags low-contrast logos so Learn can apply a subtle glow only where needed.
@@ -144,7 +157,7 @@ The ingest script is a python script and has its dependencies (separate from the
     and then:
 
     ```bash
-    npm run serve
+    yarn serve
     ```
 
 ### Ingested repositories
@@ -163,9 +176,23 @@ Documentation arrives in this repository via the [`ingest.py`](/ingest/ingest.py
 
 This repo uses a GitHub Action called [`ingest.yml`](.github/workflows/ingest.yml) to run the `ingest/ingest.py` process.
 
-This action runs at 14:00 UTC every day.
+The action runs every three hours from 08:10 through 23:10 UTC, can be started manually, and
+runs after relevant generator, site-source, or documentation changes merge to `master`.
 
 If there are changes to any documentation file, the GitHub Action creates a PR that is then reviewed by a member of the Netdata team.
+
+Feature and technical PRs must contain only source, generator, and test changes. Pipeline-owned
+`docs/**`, `ingest/generated_map.yaml`, and generated sidebar-state artifacts belong only in the
+same-repository `ingest` automation PR carrying both the `ingest` and `automation` labels. A PR
+check enforces this boundary. `netlify.toml` is the narrow exception because Netlify reads that
+deployed configuration before the ingest or site build runs; it remains generated from
+`static.toml` and must match it.
+
+The first ingest after a generator change also creates the generated sidebar-state checksum. Its
+presence activates the strict rendered-title, redirect-source-link, and complete site-build gates.
+Before that generated PR lands, the source PR still enforces redirects, functional headings,
+zero-noindex, and Cloudflare RUM without pretending that the old documentation corpus has already
+been regenerated.
 
 The action can be configured to automatically assign one or more reviewers.
 To enable automatic assignments, uncomment the `# reviewers:` line at the end of [`ingest.yml`](/.github/workflows/ingest.yml) and add the appropriate GitHub username(s) either space or comma-separated.

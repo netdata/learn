@@ -1,0 +1,20 @@
+{
+  "schema": "netdata-site-build-gate-vendor-v2",
+  "contract": "netdata-site-build-gate-v1",
+  "ruleset_version": 9,
+  "node_major": 22,
+  "artifacts": [
+    {
+      "path": "package-lock.json",
+      "sha256": "fc4401552f006f521fb61684c533fe97747a8a8dcba73abdfa4ab9d3f3a43ef0"
+    },
+    {
+      "path": "package.json",
+      "sha256": "fcf96b638f7a47e5f7d0e23a893af49c5b1ea1526b9335afa6d07fc80e976839"
+    },
+    {
+      "path": "site_build_gate.mjs",
+      "sha256": "182c683910ec565e007f0d5d5f5fee5ec3050bf6b592e3885bdc1e4972de9fd8"
+    }
+  ]
+}

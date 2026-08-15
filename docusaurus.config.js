@@ -1,4 +1,5 @@
 const {themes: prismThemes} = require('prism-react-renderer');
+const {isSitemapIncludedRoute} = require('./seo.config');
 
 // Extend Dracula with missing token type mappings for YAML, config files, etc.
 const draculaExtended = {
@@ -23,6 +24,19 @@ module.exports = {
 	favicon: 'img/favicon-32x32.png',
 	organizationName: 'netdata',
 	projectName: 'netdata',
+	future: {
+		faster: {
+			swcJsLoader: true,
+			swcJsMinimizer: true,
+			swcHtmlMinimizer: true,
+			lightningCssMinimizer: true,
+			rspackBundler: true,
+			rspackPersistentCache: false,
+			ssgWorkerThreads: false,
+			mdxCrossCompilerCache: true,
+			gitEagerVcs: true,
+		},
+	},
 	markdown: {
 		mermaid: true,
 		hooks: {
@@ -62,6 +76,9 @@ module.exports = {
 			title: '',
 			logo: {
 				alt: 'Netdata Logo',
+				// Force a document request so Netlify owns the stable root redirect.
+				href: 'pathname:///',
+				target: '_self',
 				src: 'img/logo-letter-green-black.svg',
 				srcDark: 'img/logo-letter-green-white.svg',
 			},
@@ -166,17 +183,6 @@ module.exports = {
 	},
 	plugins: [
 		[
-			'@docusaurus/plugin-client-redirects',
-			{
-				redirects: [
-					{
-						from: '/docs/ask-netdata',
-						to: '/docs/ask-nedi',
-					},
-				],
-			},
-		],
-		[
 			"posthog-docusaurus",
 			{
 				apiKey: 'phc_hnhlqe6D2Q4IcQNrFItaqdXJAxQ8RcHkPAFAp74pubv',
@@ -207,6 +213,15 @@ module.exports = {
 					editUrl: 'https://github.com/netdata/netdata/edit/master/',
 					// docLayoutComponent: "@theme/DocPage",
 					showLastUpdateTime: true,
+				},
+				sitemap: {
+					lastmod: 'datetime',
+					changefreq: null,
+					priority: null,
+					createSitemapItems: async ({defaultCreateSitemapItems, ...params}) => {
+						const items = await defaultCreateSitemapItems(params);
+						return items.filter((item) => isSitemapIncludedRoute(item.url));
+					},
 				},
 				theme: {
 					customCss: [require.resolve('./src/css/custom.css')],
@@ -247,6 +262,12 @@ module.exports = {
 		},
 	],
 	scripts: [
+      {
+        src: 'https://static.cloudflareinsights.com/beacon.min.js',
+        defer: true,
+        type: 'module',
+        'data-cf-beacon': '{"token":"7408c22ab930458a8467c91b5360b8f3"}',
+      },
       {
         src: 'https://static.reo.dev/8a197d1119ef2d4/reo.js',
         defer: true,

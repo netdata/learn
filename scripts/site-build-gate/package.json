@@ -1,0 +1,14 @@
+{
+  "name": "@netdata/site-build-gate",
+  "version": "9.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "css-tree": "3.2.1",
+    "parse5": "8.0.1",
+    "saxes": "6.0.0"
+  }
+}

@@ -880,3 +880,8 @@ html[data-theme='dark'] [class*="searchHint"]:not([class*="Container"]) {
 		rgba(0, 203, 81, 0) 100%
 	);
 }
+
+/* Pagination pages remain crawlable but do not crowd the documentation sidebar. */
+.generated-pagination-page {
+	display: none;
+}

@@ -7,9 +7,11 @@ on:
     branches:
       - master
     paths:
+      - ingest/**
       - plugins/**
       - src/**
       - static/**
+      - static.toml
       - sidebar.js
       - package.json
       - yarn.lock

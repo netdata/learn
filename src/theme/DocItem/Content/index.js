@@ -5,6 +5,7 @@ import { useDoc } from '@docusaurus/plugin-content-docs/client';
 import Heading from '@theme/Heading';
 import MDXContent from '@theme/MDXContent';
 import EditThisPage from '@theme/EditThisPage';
+import styles from './styles.module.css';
 /**
  Title can be declared inside md content or declared through
  front matter and added manually. To make both cases consistent,
@@ -56,7 +57,13 @@ export default function DocItemContent({ children }) {
 
   // Full-page layout: render content only, no chrome.
   if (frontMatter.full_page) {
-    return <MDXContent>{children}</MDXContent>;
+    const accessibleTitle = frontMatter.sidebar_label || metadata.title;
+    return (
+      <>
+        {accessibleTitle && <h1 className={styles.visuallyHidden}>{accessibleTitle}</h1>}
+        <MDXContent>{children}</MDXContent>
+      </>
+    );
   }
 
   return (
