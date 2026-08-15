@@ -64,15 +64,15 @@ jobs:
           echo "$OUTPUT" >> $GITHUB_OUTPUT
           echo "$EOF" >> $GITHUB_OUTPUT
           
-          # Check if there are broken links (exit code 1 means broken links found)
-          if [ $EXIT_CODE -eq 1 ]; then
+          # Accept only final states emitted after every ingest stage completed.
+          RESULT=$(printf '%s' "$OUTPUT" | python ingest/classify_ingest_result.py "$EXIT_CODE")
+          if [ "$RESULT" = "broken_links" ]; then
             echo "has_broken_links=true" >> $GITHUB_OUTPUT
-          elif [ $EXIT_CODE -eq 0 ]; then
+          elif [ "$RESULT" = "success" ]; then
             echo "has_broken_links=false" >> $GITHUB_OUTPUT
           else
-            echo "has_broken_links=false" >> $GITHUB_OUTPUT
-            echo "Ingest failed with non-broken-links error (exit code: $EXIT_CODE)"
-            exit $EXIT_CODE
+            echo "Unexpected ingest classification: $RESULT"
+            exit 2
           fi
 
           # Don't fail the workflow on broken links - we'll create an issue instead
@@ -108,7 +108,24 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const output = `${{ steps.ingest.outputs.output }}`;
-            const assignees = '${{ env.BROKEN_LINKS_ASSIGNEES }}'.split(',').map(s => s.trim()).filter(s => s);
+            const configuredAssignees = '${{ env.BROKEN_LINKS_ASSIGNEES }}'.split(',').map(s => s.trim()).filter(s => s);
+            const assignees = [];
+            for (const assignee of configuredAssignees) {
+              try {
+                await github.request('GET /repos/{owner}/{repo}/assignees/{assignee}', {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  assignee,
+                });
+                assignees.push(assignee);
+              } catch (error) {
+                if (error.status === 404) {
+                  console.warn(`Skipping unavailable issue assignee: ${assignee}`);
+                  continue;
+                }
+                throw error;
+              }
+            }
             const today = new Date().toISOString().split('T')[0];
             
             // Build issue body with the script output
