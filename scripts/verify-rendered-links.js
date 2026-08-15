@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const {parse} = require('parse5');
 
 const HOST = 'learn.netdata.cloud';
 
@@ -88,17 +89,25 @@ function routeForFile(publishDir, filename) {
 function renderedInternalLinks(html, sourceRoute, host = HOST) {
   const source = new URL(sourceRoute, `https://${host}/`);
   const links = [];
-  // Docusaurus emits quoted href attributes. Keeping this boundary explicit avoids
-  // pretending this small verifier is a general-purpose HTML parser.
-  for (const match of html.matchAll(/<a\b[^>]*\bhref\s*=\s*(?:"([^"]*)"|'([^']*)')[^>]*>/gi)) {
-    const href = decodeHtml(match[1] ?? match[2] ?? '').trim();
-    if (!href || href.startsWith('#')) continue;
-    try {
-      const target = new URL(href, source);
-      if (!['http:', 'https:'].includes(target.protocol) || target.hostname !== host) continue;
-      links.push({href, pathname: normalizePathname(target.pathname)});
-    } catch {
-      // Invalid hrefs belong to the broader link checker, not this exact redirect gate.
+  const stack = [parse(html)];
+  while (stack.length) {
+    const node = stack.pop();
+    if (node.nodeName === 'a') {
+      const hrefAttribute = node.attrs?.find((attribute) => attribute.name === 'href');
+      const href = hrefAttribute?.value.trim();
+      if (href && !href.startsWith('#')) {
+        try {
+          const target = new URL(href, source);
+          if (['http:', 'https:'].includes(target.protocol) && target.hostname === host) {
+            links.push({href, pathname: normalizePathname(target.pathname)});
+          }
+        } catch {
+          // Invalid hrefs belong to the broader link checker, not this exact redirect gate.
+        }
+      }
+    }
+    for (let index = (node.childNodes?.length ?? 0) - 1; index >= 0; index -= 1) {
+      stack.push(node.childNodes[index]);
     }
   }
   return links;
@@ -126,6 +135,9 @@ function verifyRenderedLinks(
       else if (entry.isFile() && entry.name.endsWith('.html')) htmlFiles.push(filename);
     }
   }
+  if (htmlFiles.length === 0) {
+    throw new Error(`Rendered link verification found no HTML files in ${publishDir}`);
+  }
 
   const violations = [];
   let internalLinks = 0;
@@ -143,6 +155,11 @@ function verifyRenderedLinks(
         violations.push({sourceRoute, href: link.href, redirectSource});
       }
     }
+  }
+  if (internalLinks === 0) {
+    throw new Error(
+      `Rendered link verification found zero internal links across ${htmlFiles.length} HTML files`,
+    );
   }
   if (violations.length) {
     const detail = violations

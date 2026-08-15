@@ -90,6 +90,12 @@ describe('rendered redirect-source link verifier', () => {
       .toThrow(/Rendered links target redirect sources/);
   });
 
+  it('fails on an unquoted link to an exact redirect source', async () => {
+    const fixturePaths = await fixture('<a href=/docs/old/>unquoted redirect source</a>');
+    expect(() => verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath))
+      .toThrow(/Rendered links target redirect sources/);
+  });
+
   it('allows only an explicitly configured root entrypoint redirect', async () => {
     const fixturePaths = await fixture('<a href="/">documentation entrypoint</a>', {
       includeRoot: true,
@@ -135,10 +141,46 @@ describe('rendered redirect-source link verifier', () => {
       .toMatchObject({wildcardRedirectSources: 1});
   });
 
-  it('pins the quoted href boundary used by Docusaurus output', () => {
-    const html = '<a href="/quoted">quoted</a><a href=/unquoted>unquoted</a>';
+  it('parses quoted, unquoted, and character-reference href attributes', () => {
+    const html =
+      '<a href="/quoted">quoted</a><a href=/unquoted>unquoted</a>' +
+      '<a href="/character-&#114;ef">character reference</a>';
     expect(renderedInternalLinks(html, '/docs/source')).toEqual([
       {href: '/quoted', pathname: '/quoted'},
+      {href: '/unquoted', pathname: '/unquoted'},
+      {href: '/character-ref', pathname: '/character-ref'},
     ]);
+  });
+
+  it('uses parser-defined first-attribute semantics for duplicate hrefs', () => {
+    expect(
+      renderedInternalLinks(
+        '<a href=/docs/old/ href=/docs/new>duplicate href</a>',
+        '/docs/source',
+      ),
+    ).toEqual([{href: '/docs/old/', pathname: '/docs/old/'}]);
+  });
+
+  it('ignores anchor-shaped text outside parsed elements', () => {
+    const html =
+      '<script>const sample = \'<a href="/docs/old/">not markup</a>\';</script>' +
+      '<!-- <a href=/docs/old/>not markup either</a> -->';
+    expect(renderedInternalLinks(html, '/docs/source')).toEqual([]);
+  });
+
+  it('fails closed when a rendered site has no internal links', async () => {
+    const fixturePaths = await fixture('<a href="https://example.com/">external only</a>');
+    expect(() => verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath))
+      .toThrow(/zero internal links/);
+  });
+
+  it('fails closed when the publish directory has no HTML files', async () => {
+    const root = await fs.mkdtemp(path.join(os.tmpdir(), 'learn-rendered-links-empty-'));
+    temporaryDirectories.push(root);
+    const publishDir = path.join(root, 'build');
+    const netlifyPath = path.join(root, 'netlify.toml');
+    await fs.mkdir(publishDir, {recursive: true});
+    await fs.writeFile(netlifyPath, '[[redirects]]\nfrom="/docs/old/"\nto="/docs/new"\n');
+    expect(() => verifyRenderedLinks(publishDir, netlifyPath)).toThrow(/no HTML files/);
   });
 });
