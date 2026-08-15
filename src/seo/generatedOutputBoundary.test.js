@@ -104,4 +104,26 @@ describe('generated output ownership', () => {
     expect(workflow).toContain('- ingest/**');
     expect(workflow).toContain('- static.toml');
   });
+
+  it('fails closed before publishing incomplete ingest output', () => {
+    const workflow = readFileSync(
+      path.join(repositoryRoot, '.github/workflows/ingest.yml'),
+      'utf8',
+    );
+    const classifier = 'python ingest/classify_ingest_result.py "$EXIT_CODE"';
+    expect(workflow).toContain(classifier);
+    expect(workflow.indexOf(classifier)).toBeLessThan(
+      workflow.indexOf('- name: Create pull request'),
+    );
+  });
+
+  it('checks broken-link assignee eligibility before issue publication', () => {
+    const workflow = readFileSync(
+      path.join(repositoryRoot, '.github/workflows/ingest.yml'),
+      'utf8',
+    );
+    expect(workflow).toContain(
+      'GET /repos/{owner}/{repo}/assignees/{assignee}',
+    );
+  });
 });

@@ -199,6 +199,24 @@ def _validate_docs_tree(docs_root):
     return root
 
 
+def _child_directories(directory):
+    """Return real child directories without relying on glob suffix behavior."""
+    directory = _require_regular_directory(directory)
+    children = []
+    with os.scandir(directory) as entries:
+        for entry in entries:
+            path = Path(entry.path)
+            if entry.is_symlink():
+                raise UnsafeFilesystemPathError(f"Refusing symbolic link: {path}")
+            if entry.is_dir(follow_symlinks=False):
+                children.append(path)
+            elif not entry.is_file(follow_symlinks=False):
+                raise UnsafeFilesystemPathError(
+                    f"Refusing non-regular filesystem entry: {path}"
+                )
+    return sorted(children, key=lambda path: path.name)
+
+
 def _validate_path_under_root(
     docs_root, path, *, allow_missing_leaf=False, expected="file"
 ):
@@ -3494,7 +3512,7 @@ def get_dir_make_file_and_recurse(
                     encoding="utf-8",
                 )
 
-        for subdir in sorted(Path(directory).glob("*/")):
+        for subdir in _child_directories(directory):
             get_dir_make_file_and_recurse(
                 subdir,
                 overwrite_generated,
