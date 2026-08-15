@@ -92,7 +92,7 @@
     },
     "production_builds": 2,
     "build_files": 4166,
-    "build_manifest_sha256": "53b43c5bbc7cb773c3f8bb58a46f3239c10724c0cd4bcfcb946097f1724e1eb2",
+    "build_manifest_sha256": "e859b0cee5dae7c463b876ebb0059f42b010c26437280ee3bde641428a06cfde",
     "byte_identical": true,
     "rendered_html_files": 1984,
     "sitemap_urls": 1979,
@@ -139,8 +139,8 @@
   "accepted_review_corrections": [
     {
       "id": "root-redirect-and-blog-rendering",
-      "contract": "The root route preserves its established Ask Nedi product journey as a permanent one-hop Netlify redirect. No root HTML artifact may shadow it and the root remains outside the sitemap. The functional blog page has exactly one H1 while remaining sitemap-excluded.",
-      "acceptance": "The redirect graph requires / to terminate at the rendered /docs/ask-nedi route, the build contains no root index.html, the sitemap excludes /, and blog renders exactly one H1. The corrected Deploy Preview returns HTTP 301 with Location /docs/ask-nedi and the destination returns HTTP 200."
+      "contract": "The root route preserves its established Ask Nedi product journey as a permanent one-hop Netlify redirect. No root HTML artifact may shadow it and the root remains outside the sitemap. The navbar and other callers use stable / rather than knowing the current destination. The navbar uses Docusaurus' pathname escape with a same-window target so clicking it performs a normal document request through Netlify instead of client-side routing or opening another tab. The functional blog page has exactly one H1 while remaining sitemap-excluded.",
+      "acceptance": "The redirect graph requires / to terminate at the rendered /docs/ask-nedi route, the build contains no root index.html, the sitemap excludes /, the rendered navbar logo links to / using the pathname escape and target _self, and blog renders exactly one H1. The corrected Deploy Preview returns HTTP 301 with Location /docs/ask-nedi, a same-window browser logo click follows that edge redirect, and the destination returns HTTP 200."
     },
     {
       "id": "zero-noindex-sitemap-separation",

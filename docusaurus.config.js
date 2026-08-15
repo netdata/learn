@@ -63,7 +63,9 @@ module.exports = {
 			title: '',
 			logo: {
 				alt: 'Netdata Logo',
-				href: '/docs/ask-nedi',
+				// Force a document request so Netlify owns the stable root redirect.
+				href: 'pathname:///',
+				target: '_self',
 				src: 'img/logo-letter-green-black.svg',
 				srcDark: 'img/logo-letter-green-white.svg',
 			},

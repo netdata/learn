@@ -45,9 +45,10 @@ describe('shared deployment integrations', () => {
     }
   });
 
-  it('keeps the root as a redirect-only Ask Nedi product entry point', () => {
+  it('keeps the root redirect-only and forces logo clicks through Netlify', () => {
     expect(fs.existsSync(path.join(root, 'src/pages/index.js'))).toBe(false);
-    expect(docusaurus.themeConfig.navbar.logo.href).toBe('/docs/ask-nedi');
+    expect(docusaurus.themeConfig.navbar.logo.href).toBe('pathname:///');
+    expect(docusaurus.themeConfig.navbar.logo.target).toBe('_self');
   });
 
   it('uses the complete website-owned IndexNow schema-2 contract', () => {
