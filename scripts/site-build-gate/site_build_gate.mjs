@@ -21,7 +21,7 @@ export const CONTRACT_SCHEMA = "netdata-site-build-gate-v1";
 export const MANIFEST_SCHEMA = "netdata-site-build-gate-vendor-v2";
 export const BASELINE_SCHEMA = "netdata-site-build-gate-baseline-v1";
 export const REPORT_SCHEMA = "netdata-site-build-gate-report-v1";
-export const RULESET_VERSION = 8;
+export const RULESET_VERSION = 9;
 export const REQUIRED_NODE_MAJOR = 22;
 export const HEAVY_BYTES = 500_000;
 
@@ -755,7 +755,26 @@ function firstDirectSummary(details) {
   return (details.childNodes || []).find((node) => node.tagName === "summary" && node.namespaceURI === HTML_NAMESPACE) || null;
 }
 
-export function parsePage(route, file, { inSitemap, policyPath = route }) {
+function originNeutralByteState(payload, siteOrigin) {
+  if (siteOrigin === null || siteOrigin === undefined) {
+    return { bytes_without_site_origin: payload.length, site_origin_occurrences: 0 };
+  }
+  const originBytes = Buffer.from(siteOrigin, "utf8");
+  let occurrences = 0;
+  let offset = 0;
+  while (offset <= payload.length - originBytes.length) {
+    const found = payload.indexOf(originBytes, offset);
+    if (found < 0) break;
+    occurrences += 1;
+    offset = found + originBytes.length;
+  }
+  return {
+    bytes_without_site_origin: payload.length - occurrences * originBytes.length,
+    site_origin_occurrences: occurrences,
+  };
+}
+
+export function parsePage(route, file, { inSitemap, policyPath = route, siteOrigin = null }) {
   let payload;
   try {
     payload = readFileSync(file);
@@ -828,6 +847,7 @@ export function parsePage(route, file, { inSitemap, policyPath = route }) {
   }
   visit(document, { hard: false, display: "block", visibility: "visible", contentVisibility: "visible" }, false);
   const h1s = h1Records.filter((record) => record.exposed).map((record) => normalizedWhitespace(record.parts.join("")));
+  const byteState = originNeutralByteState(payload, siteOrigin);
 
   return {
     route,
@@ -835,6 +855,8 @@ export function parsePage(route, file, { inSitemap, policyPath = route }) {
     file,
     in_sitemap: inSitemap,
     html_bytes: payload.length,
+    html_bytes_without_site_origin: byteState.bytes_without_site_origin,
+    site_origin_occurrences: byteState.site_origin_occurrences,
     title,
     description,
     noindex: robotsDisallowIndexing(robots),
@@ -898,7 +920,11 @@ export function scanBuiltHtml(buildDir, siteOrigin) {
     const mapped = sitemapRoutes.get(item.file) || inferredRoute(root, item.publicFile);
     if (seenRoutes.has(mapped.route)) throw new GateError(`more than one built HTML file maps to route ${JSON.stringify(mapped.route)}`);
     seenRoutes.add(mapped.route);
-    pages.push(parsePage(mapped.route, item.file, { inSitemap: sitemapRoutes.has(item.file), policyPath: mapped.policyPath }));
+    pages.push(parsePage(mapped.route, item.file, {
+      inSitemap: sitemapRoutes.has(item.file),
+      policyPath: mapped.policyPath,
+      siteOrigin: origin,
+    }));
   }
 
   const findings = [];
@@ -908,7 +934,10 @@ export function scanBuiltHtml(buildDir, siteOrigin) {
       findings.push(finding("images-missing-alt", page.route, `${page.images_without_alt} statically exposed HTML image(s) lack an alt attribute`, stateSignature({ count: page.images_without_alt })));
     }
     if (page.html_bytes > HEAVY_BYTES) {
-      findings.push(finding("heavy-page", page.route, `${page.html_bytes} bytes exceeds the ${HEAVY_BYTES}-byte estate guardrail`, stateSignature({ bytes: page.html_bytes })));
+      findings.push(finding("heavy-page", page.route, `${page.html_bytes} bytes exceeds the ${HEAVY_BYTES}-byte estate guardrail`, stateSignature({
+        bytes_without_site_origin: page.html_bytes_without_site_origin,
+        site_origin_occurrences: page.site_origin_occurrences,
+      })));
     }
     const guide = page.policy_path === "/guides" || page.policy_path === "/guides/" || page.policy_path.startsWith("/guides/");
     if ((!page.in_sitemap || page.noindex) && !guide) continue;

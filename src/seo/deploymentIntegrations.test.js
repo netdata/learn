@@ -30,7 +30,7 @@ describe('shared deployment integrations', () => {
     expect(manifest).toMatchObject({
       schema: 'netdata-site-build-gate-vendor-v2',
       contract: 'netdata-site-build-gate-v1',
-      ruleset_version: 8,
+      ruleset_version: 9,
       node_major: 22,
     });
   });
