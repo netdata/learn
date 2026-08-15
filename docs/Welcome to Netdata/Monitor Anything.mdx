@@ -165,7 +165,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Kubeproxy](/docs/collecting-metrics/collectors/containers-and-vms/kubeproxy) | This collector monitors Kubeproxy instances. |
 | [Kubernetes API Server](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-api-server) | This collector monitors Kubernetes API Server health, performance, and request metrics. |
 | [Kubernetes Cluster State](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-cluster-state) | This collector monitors Kubernetes Nodes, Pods and Containers. |
-| [Kubernetes Containers](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-containers) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, network, and page cache activity — via Linux cgroups. |
+| [Kubernetes Containers](/docs/collecting-metrics/collectors/containers-and-vms/kubernetes-containers) | Monitor Kubernetes pod and container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [Libvirt VMs and Containers](/docs/collecting-metrics/collectors/containers-and-vms/libvirt-vms-and-containers) | Monitor libvirt-managed VM and container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [LXC Containers](/docs/collecting-metrics/collectors/containers-and-vms/lxc-containers) | Monitor LXC/LXD/Incus container resource utilization — CPU, memory, disk I/O, and network — via Linux cgroups. |
 | [Mesos](/docs/collecting-metrics/collectors/containers-and-vms/mesos) | Monitor Apache Mesos cluster manager metrics for efficient resource management and performance. |
@@ -198,11 +198,11 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [eBPF Hardirq](/docs/collecting-metrics/collectors/operating-systems/ebpf-hardirq) | Monitor latency for each HardIRQ available. |
 | [eBPF OOMkill](/docs/collecting-metrics/collectors/operating-systems/ebpf-oomkill) | Monitor applications that reach out of memory. |
 | [eBPF Process](/docs/collecting-metrics/collectors/operating-systems/ebpf-process) | Monitor internal memory usage. |
-| [eBPF Processes](/docs/collecting-metrics/collectors/operating-systems/ebpf-processes) | Monitor calls for function creating tasks (threads and processes) inside Linux kernel. |
+| [eBPF Processes](/docs/collecting-metrics/collectors/operating-systems/ebpf-processes) | Monitor Linux process and thread creation by tracing kernel task-creation functions with eBPF. |
 | [eBPF SHM](/docs/collecting-metrics/collectors/operating-systems/ebpf-shm) | Monitor syscall responsible to manipulate shared memory. |
 | [eBPF Socket](/docs/collecting-metrics/collectors/operating-systems/ebpf-socket) | Monitor TCP and UDP function calls, bandwidth, errors, and connection counts. |
 | [eBPF SoftIRQ](/docs/collecting-metrics/collectors/operating-systems/ebpf-softirq) | Monitor latency for each SoftIRQ available. |
-| [eBPF SWAP](/docs/collecting-metrics/collectors/operating-systems/ebpf-swap) | Monitors when swap has I/O events and applications executing events. |
+| [eBPF SWAP](/docs/collecting-metrics/collectors/operating-systems/ebpf-swap) | Monitor Linux swap reads and writes by tracing kernel swap I/O functions with eBPF. |
 | [Entropy](/docs/collecting-metrics/collectors/operating-systems/entropy) | Entropy, a measure of the randomness or unpredictability of data. |
 | [FreeBSD RCTL-RACCT](/docs/collecting-metrics/collectors/operating-systems/freebsd-rctl-racct) | Keep an eye on FreeBSD Resource Container metrics for optimized resource management and performance. |
 | [hw.intrcnt](/docs/collecting-metrics/collectors/operating-systems/hw.intrcnt) | Get total number of interrupts |
@@ -226,7 +226,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [OpenRC](/docs/collecting-metrics/collectors/operating-systems/openrc) | Keep tabs on OpenRC init system metrics for efficient system startup and service management. |
 | [Page types](/docs/collecting-metrics/collectors/operating-systems/page-types) | This integration provides metrics about the system's memory page types |
 | [Pressure Stall Information](/docs/collecting-metrics/collectors/operating-systems/pressure-stall-information) | Introduced in Linux kernel 4.20, `/proc/pressure` provides information about system pressure stall information (PSI). |
-| [Processor](/docs/collecting-metrics/collectors/operating-systems/processor) | This collector monitors processors statistics on host. |
+| [Processor](/docs/collecting-metrics/collectors/operating-systems/processor) | Monitor processor performance statistics on Windows hosts through Perflib. |
 | [Semaphore statistics](/docs/collecting-metrics/collectors/operating-systems/semaphore-statistics) | Inter-Process Communication (IPC) enables different processes to communicate and coordinate with each other. |
 | [SoftIRQ statistics](/docs/collecting-metrics/collectors/operating-systems/softirq-statistics) | In the Linux kernel, handling of hardware interrupts is split into two halves: the top half and the bottom half. |
 | [Supervisor](/docs/collecting-metrics/collectors/operating-systems/supervisor) | This collector monitors Supervisor instances. |
@@ -236,7 +236,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [System statistics](/docs/collecting-metrics/collectors/operating-systems/system-statistics-windows-plugin) | This collector monitors the current number of processes, threads, and context switches on Windows systems. |
 | [System Uptime](/docs/collecting-metrics/collectors/operating-systems/system-uptime) | The amount of time the system has been up (running). |
 | [system.ram](/docs/collecting-metrics/collectors/operating-systems/system.ram) | Show information about system memory usage. |
-| [Systemd Services](/docs/collecting-metrics/collectors/operating-systems/systemd-services) | Monitor containers and virtual machines resource utilization — CPU, memory, disk I/O, network, and page cache activity — via Linux cgroups. |
+| [Systemd Services](/docs/collecting-metrics/collectors/operating-systems/systemd-services) | Monitor systemd service resource utilization — CPU, memory, and disk I/O — via Linux cgroups. |
 | [Systemd Units](/docs/collecting-metrics/collectors/operating-systems/systemd-units) | This collector monitors the state of Systemd units and unit files. |
 | [systemd-logind users](/docs/collecting-metrics/collectors/operating-systems/systemd-logind-users) | This collector monitors number of sessions and users as reported by the `org.freedesktop.login1` DBus API. |
 | [uptime](/docs/collecting-metrics/collectors/operating-systems/uptime) | Show period of time server is up. |
@@ -252,7 +252,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [vm.vmtotal](/docs/collecting-metrics/collectors/operating-systems/vm.vmtotal) | Collect Virtual Memory information from host. |
 | [Windows Services](/docs/collecting-metrics/collectors/operating-systems/windows-services) | This integration monitors resource utilization grouped by Windows Service. |
 | [Windows Services](/docs/collecting-metrics/collectors/operating-systems/windows-services-windows-plugin) | This collector monitors Windows Services Status and States. |
-| [ZRAM](/docs/collecting-metrics/collectors/operating-systems/zram) | zRAM, or compressed RAM, is a block device that uses a portion of your system's RAM as a block device. |
+| [ZRAM](/docs/collecting-metrics/collectors/operating-systems/zram) | Monitor zRAM device capacity, compression, memory use, and I/O activity on Linux systems. |
 
 ### Networking
 
@@ -268,13 +268,13 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [DNSBL](/docs/collecting-metrics/collectors/networking/dnsbl) | Monitor DNSBL metrics for efficient domain reputation and security management. |
 | [DNSdist](/docs/collecting-metrics/collectors/networking/dnsdist) | This collector monitors DNSDist servers. |
 | [Dnsmasq](/docs/collecting-metrics/collectors/networking/dnsmasq) | This collector monitors Dnsmasq servers. |
-| [Dnsmasq DHCP](/docs/collecting-metrics/collectors/networking/dnsmasq-dhcp) | This collector monitors Dnsmasq DHCP leases databases, depending on your configuration. |
+| [Dnsmasq DHCP](/docs/collecting-metrics/collectors/networking/dnsmasq-dhcp) | Monitor Dnsmasq DHCP leases and utilization across configured address ranges. |
 | [Fastd](/docs/collecting-metrics/collectors/networking/fastd) | Monitor Fastd VPN metrics for efficient virtual private network management and performance. |
 | [Freifunk network](/docs/collecting-metrics/collectors/networking/freifunk-network) | Keep tabs on Freifunk community network metrics for optimized network performance and management. |
 | [FRRouting](/docs/collecting-metrics/collectors/networking/frrouting) | Monitor Free Range Routing (FRR) metrics for optimized network routing and management. |
 | [getifaddrs](/docs/collecting-metrics/collectors/networking/getifaddrs) | Collect traffic per network interface. |
 | [Hitron CODA Cable Modem](/docs/collecting-metrics/collectors/networking/hitron-coda-cable-modem) | Track Hitron CODA cable modem metrics for optimized internet connectivity and performance. |
-| [InfiniBand](/docs/collecting-metrics/collectors/networking/infiniband) | This integration monitors InfiniBand network inteface statistics. |
+| [InfiniBand](/docs/collecting-metrics/collectors/networking/infiniband) | Monitor InfiniBand network interface traffic and errors. |
 | [IP Virtual Server](/docs/collecting-metrics/collectors/networking/ip-virtual-server) | This integration monitors IP Virtual Server statistics |
 | [ipfw](/docs/collecting-metrics/collectors/networking/ipfw) | Collect information about FreeBSD firewall. |
 | [IPv6 Socket Statistics](/docs/collecting-metrics/collectors/networking/ipv6-socket-statistics) | This integration provides IPv6 socket statistics. |
@@ -498,7 +498,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Minecraft](/docs/collecting-metrics/collectors/applications/minecraft) | Track Minecraft server metrics for efficient game server management and performance. |
 | [MS Exchange](/docs/collecting-metrics/collectors/applications/ms-exchange) | This collector monitors Microsoft Exchange. |
 | [mtail](/docs/collecting-metrics/collectors/applications/mtail) | Monitor log data metrics using mtail log data extractor and parser. |
-| [NET Framework](/docs/collecting-metrics/collectors/applications/net-framework) | This collector monitors application built with .NET |
+| [NET Framework](/docs/collecting-metrics/collectors/applications/net-framework) | Monitor runtime and performance statistics for applications built with .NET Framework through Perflib. |
 | [Nextcloud servers](/docs/collecting-metrics/collectors/applications/nextcloud-servers) | Keep an eye on Nextcloud cloud storage metrics for efficient file hosting and management. |
 | [NRPE daemon](/docs/collecting-metrics/collectors/applications/nrpe-daemon) | Monitor Nagios Remote Plugin Executor (NRPE) metrics for efficient system and network monitoring. |
 | [OBS Studio](/docs/collecting-metrics/collectors/applications/obs-studio) | Track OBS Studio live streaming and recording software metrics for efficient video production and performance. |
@@ -534,7 +534,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Adaptec RAID](/docs/collecting-metrics/collectors/storage-and-filesystems/adaptec-raid) | Monitors the health of Adaptec Hardware RAID by tracking the status of logical and physical devices in your storage system. |
 | [BCache](/docs/collecting-metrics/collectors/storage-and-filesystems/bcache) | Statistics for BCache (block layer cache) devices, including cache hit ratios, I/O operations, cache allocations, and bypass activity. |
 | [BTRFS](/docs/collecting-metrics/collectors/storage-and-filesystems/btrfs) | This integration provides usage and error statistics from the BTRFS filesystem. |
-| [Ceph](/docs/collecting-metrics/collectors/storage-and-filesystems/ceph) | This collector monitors the overall health status and performance of your Ceph clusters. |
+| [Ceph](/docs/collecting-metrics/collectors/storage-and-filesystems/ceph) | Monitor Ceph cluster, OSD, and pool metrics. |
 | [Ceph Prometheus](/docs/collecting-metrics/collectors/storage-and-filesystems/ceph-prometheus) | Monitor Ceph through its official Prometheus surfaces without narrowing the exporter to the native Ceph collector's different Dashboard REST API. |
 | [Dell EMC ScaleIO](/docs/collecting-metrics/collectors/storage-and-filesystems/dell-emc-scaleio) | This collector monitors ScaleIO (VxFlex OS) instances via VxFlex OS Gateway API. |
 | [Dell PowerStore](/docs/collecting-metrics/collectors/storage-and-filesystems/dell-powerstore) | This collector monitors Dell PowerStore storage arrays via the PowerStore REST API. |
@@ -577,7 +577,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Storidge](/docs/collecting-metrics/collectors/storage-and-filesystems/storidge) | Keep an eye on Storidge storage metrics for efficient storage management and performance. |
 | [Synology ActiveBackup](/docs/collecting-metrics/collectors/storage-and-filesystems/synology-activebackup) | Track Synology Active Backup metrics for efficient backup and data protection management. |
 | [zfs](/docs/collecting-metrics/collectors/storage-and-filesystems/zfs) | Collect metrics for ZFS filesystem |
-| [ZFS Adaptive Replacement Cache](/docs/collecting-metrics/collectors/storage-and-filesystems/zfs-adaptive-replacement-cache) | This integration monitors ZFS Adadptive Replacement Cache (ARC) statistics. |
+| [ZFS Adaptive Replacement Cache](/docs/collecting-metrics/collectors/storage-and-filesystems/zfs-adaptive-replacement-cache) | Monitor ZFS Adaptive Replacement Cache (ARC) performance and memory statistics. |
 | [ZFS Pools](/docs/collecting-metrics/collectors/storage-and-filesystems/zfs-pools) | This collector monitors the health and space usage of ZFS pools using the command line tool [zpool](https://openzfs.github.io/openzfs-docs/man/master/8/zpool-list.8.html). |
 
 ### Synthetic Testing
