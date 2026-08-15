@@ -3,6 +3,27 @@ const path = require('node:path');
 
 const HOST = 'learn.netdata.cloud';
 
+function allowedRenderedRedirectSources(policy) {
+  const configured = policy.allowed_rendered_redirect_sources ?? [];
+  if (!Array.isArray(configured)) {
+    throw new Error('allowed_rendered_redirect_sources must be an array');
+  }
+  const allowed = new Set();
+  for (const source of configured) {
+    if (
+      typeof source !== 'string' ||
+      !source.startsWith('/') ||
+      /[*:?#]/.test(source) ||
+      normalizePathname(source) !== source ||
+      allowed.has(source)
+    ) {
+      throw new Error(`Invalid allowed rendered redirect source: ${JSON.stringify(source)}`);
+    }
+    allowed.add(source);
+  }
+  return allowed;
+}
+
 function decodeHtml(value) {
   return value
     .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
@@ -83,8 +104,18 @@ function renderedInternalLinks(html, sourceRoute, host = HOST) {
   return links;
 }
 
-function verifyRenderedLinks(publishDir, netlifyPath, host = HOST) {
+function verifyRenderedLinks(
+  publishDir,
+  netlifyPath,
+  host = HOST,
+  allowedRedirectSources = new Set(),
+) {
   const redirectRules = redirectSourceRules(fs.readFileSync(netlifyPath, 'utf8'), host);
+  for (const source of allowedRedirectSources) {
+    if (!redirectRules.exact.has(source)) {
+      throw new Error(`Allowed rendered redirect source is not an exact redirect: ${source}`);
+    }
+  }
   const htmlFiles = [];
   const stack = [publishDir];
   while (stack.length) {
@@ -98,12 +129,17 @@ function verifyRenderedLinks(publishDir, netlifyPath, host = HOST) {
 
   const violations = [];
   let internalLinks = 0;
+  let allowedRedirectLinks = 0;
   for (const filename of htmlFiles.sort()) {
     const sourceRoute = routeForFile(publishDir, filename);
     for (const link of renderedInternalLinks(fs.readFileSync(filename, 'utf8'), sourceRoute, host)) {
       internalLinks += 1;
       const redirectSource = redirectSourceForPath(link.pathname, redirectRules);
       if (redirectSource) {
+        if (allowedRedirectSources.has(redirectSource)) {
+          allowedRedirectLinks += 1;
+          continue;
+        }
         violations.push({sourceRoute, href: link.href, redirectSource});
       }
     }
@@ -120,6 +156,8 @@ function verifyRenderedLinks(publishDir, netlifyPath, host = HOST) {
     redirectSources: redirectRules.exact.size + redirectRules.terminalWildcards.size,
     exactRedirectSources: redirectRules.exact.size,
     wildcardRedirectSources: redirectRules.terminalWildcards.size,
+    allowedRedirectLinks,
+    allowedRedirectSources: allowedRedirectSources.size,
   };
 }
 
@@ -127,9 +165,17 @@ if (require.main === module) {
   try {
     const publishDir = path.resolve(process.argv[2] || 'build');
     const netlifyPath = path.resolve(process.argv[3] || 'netlify.toml');
-    const result = verifyRenderedLinks(publishDir, netlifyPath);
+    const policyPath = path.resolve(process.argv[4] || 'config/redirect-policy.json');
+    const policy = JSON.parse(fs.readFileSync(policyPath, 'utf8'));
+    const allowedRedirectSources = allowedRenderedRedirectSources(policy);
+    const result = verifyRenderedLinks(
+      publishDir,
+      netlifyPath,
+      HOST,
+      allowedRedirectSources,
+    );
     console.log(
-      `Verified ${result.internalLinks} rendered internal links across ${result.htmlFiles} HTML files avoid ${result.exactRedirectSources} exact and ${result.wildcardRedirectSources} terminal-wildcard redirect sources.`,
+      `Verified ${result.internalLinks} rendered internal links across ${result.htmlFiles} HTML files avoid ${result.exactRedirectSources} exact and ${result.wildcardRedirectSources} terminal-wildcard redirect sources, except ${result.allowedRedirectLinks} links to ${result.allowedRedirectSources} policy-owned entrypoint.`,
     );
   } catch (error) {
     console.error(`Rendered link verification failed: ${error.message}`);
@@ -138,6 +184,7 @@ if (require.main === module) {
 }
 
 module.exports = {
+  allowedRenderedRedirectSources,
   exactRedirectSources,
   normalizePathname,
   redirectSourceForPath,

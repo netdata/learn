@@ -41,7 +41,7 @@ function parseRedirects(text) {
 }
 
 function routeSet(publishDir) {
-  const routes = new Set(['/']);
+  const routes = new Set();
   const stack = [publishDir];
   while (stack.length) {
     const directory = stack.pop();

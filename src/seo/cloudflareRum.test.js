@@ -37,6 +37,10 @@ afterEach(() => {
 });
 
 describe('rendered Cloudflare Web Analytics verifier', () => {
+  it('does not require a rendered artifact for the redirect-only root route', () => {
+    expect(REPRESENTATIVE_ROUTES).not.toContain('index.html');
+  });
+
   it('covers every HTML artifact and all representative route classes', () => {
     const root = fixture();
     expect(verifyCloudflareRum(root)).toEqual({

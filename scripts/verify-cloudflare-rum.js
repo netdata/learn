@@ -16,7 +16,6 @@ const NESTED_DOCUMENT_ATTRIBUTES = new Map([
   ['embed', 'src'],
 ]);
 const REPRESENTATIVE_ROUTES = [
-  'index.html',
   'blog/index.html',
   'search/index.html',
   'docs/collecting-metrics/collectors/index.html',

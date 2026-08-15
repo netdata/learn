@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const REQUIRED_ROUTES = ['/', '/blog'];
+const REQUIRED_ROUTES = ['/blog'];
 
 function renderedFile(publishDir, route) {
   const pathname = route.replace(/^\/+|\/+$/g, '');

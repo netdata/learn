@@ -1,5 +1,8 @@
 {
   "schema": "netdata-learn-redirect-policy-v1",
+  "allowed_rendered_redirect_sources": [
+    "/"
+  ],
   "network_flows": {
     "source_prefix": "/docs/network-flows",
     "target_prefix": "/docs/network-performance-monitoring/network-flows",
@@ -105,6 +108,7 @@
     ["/docs/agent/collectors/python.d.plugin/ntpd", "/docs/collecting-metrics/collectors/networking/ntpd"]
   ],
   "same_class_exact_redirects": [
+    ["/", "/docs/ask-nedi"],
     ["/docs/collect/system-metrics", "/docs/collecting-metrics"],
     ["/docs/api", "/docs/developer-and-contributor-corner/rest-api"],
     ["/docs/agent/collectors/cgroups.plugin", "/docs/collecting-metrics/containers-and-cgroups"],

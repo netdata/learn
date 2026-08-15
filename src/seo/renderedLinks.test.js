@@ -6,6 +6,7 @@ import {afterEach, describe, expect, it} from 'vitest';
 
 const require = createRequire(import.meta.url);
 const {
+  allowedRenderedRedirectSources,
   exactRedirectSources,
   redirectSourceRules,
   renderedInternalLinks,
@@ -13,7 +14,7 @@ const {
 } = require('../../scripts/verify-rendered-links');
 const temporaryDirectories = [];
 
-async function fixture(html) {
+async function fixture(html, {includeRoot = false} = {}) {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'learn-rendered-links-'));
   temporaryDirectories.push(root);
   const publishDir = path.join(root, 'build');
@@ -23,7 +24,8 @@ async function fixture(html) {
   await fs.writeFile(output, html);
   await fs.writeFile(
     netlifyPath,
-    `[[redirects]]\n  from="/docs/old/"\n  to="/docs/new"\n\n` +
+    (includeRoot ? `[[redirects]]\n  from="/"\n  to="/docs/new"\n\n` : '') +
+      `[[redirects]]\n  from="/docs/old/"\n  to="/docs/new"\n\n` +
       `[[redirects]]\n  from="/assets/*"\n  to="/static/:splat"\n`,
   );
   return {netlifyPath, publishDir};
@@ -38,6 +40,16 @@ afterEach(async () => {
 });
 
 describe('rendered redirect-source link verifier', () => {
+  it('pins the stable root as the sole policy-owned redirect-source exception', async () => {
+    const policy = JSON.parse(
+      await fs.readFile(
+        path.resolve(import.meta.dirname, '../../config/redirect-policy.json'),
+        'utf8',
+      ),
+    );
+    expect(allowedRenderedRedirectSources(policy)).toEqual(new Set(['/']));
+  });
+
   it('reads exact and terminal-wildcard redirect sources', () => {
     expect(exactRedirectSources('[[redirects]]\nfrom="/old/"\n\n[[redirects]]\nfrom="/x/*"'))
       .toEqual(new Set(['/old/']));
@@ -76,6 +88,35 @@ describe('rendered redirect-source link verifier', () => {
     );
     expect(() => verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath))
       .toThrow(/Rendered links target redirect sources/);
+  });
+
+  it('allows only an explicitly configured root entrypoint redirect', async () => {
+    const fixturePaths = await fixture('<a href="/">documentation entrypoint</a>', {
+      includeRoot: true,
+    });
+    expect(() => verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath))
+      .toThrow(/Rendered links target redirect sources/);
+    expect(
+      verifyRenderedLinks(
+        fixturePaths.publishDir,
+        fixturePaths.netlifyPath,
+        'learn.netdata.cloud',
+        new Set(['/']),
+      ),
+    ).toMatchObject({allowedRedirectLinks: 1, allowedRedirectSources: 1});
+
+    await fs.writeFile(
+      path.join(fixturePaths.publishDir, 'docs', 'source', 'index.html'),
+      '<a href="/">entrypoint</a><a href="/docs/old/">stale route</a>',
+    );
+    expect(() =>
+      verifyRenderedLinks(
+        fixturePaths.publishDir,
+        fixturePaths.netlifyPath,
+        'learn.netdata.cloud',
+        new Set(['/']),
+      ),
+    ).toThrow(/\/docs\/old\//);
   });
 
   it('fails on encoded, HTTP, and terminal-wildcard redirect sources', async () => {

@@ -1,4 +1,5 @@
 const SITEMAP_EXCLUDED_ROUTES = new Set([
+	'/',
 	'/blog',
 	'/search',
 	'/docs/ask-netdata',

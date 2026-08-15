@@ -10,13 +10,13 @@ describe('SEO sitemap configuration', () => {
   });
 
   it('excludes only functional and canonical replacement routes', () => {
+    expect(isSitemapIncludedRoute('/')).toBe(false);
     expect(isSitemapIncludedRoute('/blog/')).toBe(false);
     expect(isSitemapIncludedRoute('/search')).toBe(false);
     expect(isSitemapIncludedRoute('/docs/ask-netdata')).toBe(false);
   });
 
   it('includes normal documentation and all libnetdata routes', () => {
-    expect(isSitemapIncludedRoute('/')).toBe(true);
     expect(isSitemapIncludedRoute('/docs/netdata-agent/quickstart-deployment')).toBe(true);
     expect(isSitemapIncludedRoute('/docs/developer-and-contributor-corner/libnetdata')).toBe(true);
     expect(isSitemapIncludedRoute('/docs/developer-and-contributor-corner/libnetdata/socket')).toBe(true);

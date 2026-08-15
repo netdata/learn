@@ -19,6 +19,10 @@
   to="/docs/dashboards-and-charts/tabs/kubernetes"
 
 [[redirects]]
+  from="/"
+  to="/docs/ask-nedi"
+
+[[redirects]]
   from="/docs/network-flows"
   to="/docs/network-performance-monitoring/network-flows"
 

@@ -81,7 +81,7 @@ describe('Netlify redirect graph gate', () => {
     const policy = JSON.parse(await fs.readFile(path.join(root, 'config/redirect-policy.json'), 'utf8'));
     expect(policy.archived_wildcard_requests).toHaveLength(6);
     expect(policy.required_exact_redirects).toHaveLength(27);
-    expect(policy.same_class_exact_redirects).toHaveLength(6);
+    expect(policy.same_class_exact_redirects).toHaveLength(7);
     const requiredSources = new Set(policy.required_exact_redirects.map(([source]) => source));
     expect(policy.archived_wildcard_requests.filter(([source]) => requiredSources.has(source))).toEqual([]);
   });
@@ -105,6 +105,23 @@ describe('Netlify redirect graph gate', () => {
     expect(publishedRoutes.has('/docs/ask-nedi')).toBe(true);
     const robots = await fs.readFile(path.join(root, 'static/robots.txt'), 'utf8');
     expect(robots).not.toMatch(/^Disallow:\s*\/docs\/ask-netdata\/?$/m);
+  });
+
+  it('permanently redirects the root product entry point to Ask Nedi without a shadowing artifact', async () => {
+    const rules = parseRedirects(await fs.readFile(path.join(root, 'netlify.toml'), 'utf8'));
+    expect(firstMatch(rules, '/')).toMatchObject({target: '/docs/ask-nedi'});
+    expect(publishedRoutes.has('/')).toBe(false);
+    expect(publishedRoutes.has('/docs/ask-nedi')).toBe(true);
+    const sitemap = await fs.readFile(path.join(root, 'build/sitemap.xml'), 'utf8');
+    expect(sitemap).not.toContain('<loc>https://learn.netdata.cloud/</loc>');
+  });
+
+  it('does not invent a rendered root route when the build has no root artifact', async () => {
+    const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'learn-route-set-'));
+    temporaryDirectories.push(directory);
+    await fs.mkdir(path.join(directory, 'docs'), {recursive: true});
+    await fs.writeFile(path.join(directory, 'docs', 'index.html'), '<h1>Docs</h1>');
+    expect(routeSet(directory)).toEqual(new Set(['/docs', '/docs/index.html']));
   });
 
   it.each([

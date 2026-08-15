@@ -63,6 +63,7 @@ module.exports = {
 			title: '',
 			logo: {
 				alt: 'Netdata Logo',
+				href: '/docs/ask-nedi',
 				src: 'img/logo-letter-green-black.svg',
 				srcDark: 'img/logo-letter-green-white.svg',
 			},

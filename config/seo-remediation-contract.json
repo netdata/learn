@@ -76,13 +76,13 @@
     "tests": {
       "python_ingest": 41,
       "mdx_escaping": 54,
-      "vitest_files": 26,
-      "vitest_tests": 364,
+      "vitest_files": 25,
+      "vitest_tests": 368,
       "indexnow": 63,
       "canonical_c8": 4,
       "exact_agent_source": 76
     },
-    "redirect_rules": 3157,
+    "redirect_rules": 3158,
     "historical_network_flows_routes": 42,
     "build_runtime": {
       "node": "22.14.0",
@@ -91,18 +91,18 @@
       "node_heap_mib": 8192
     },
     "production_builds": 2,
-    "build_files": 4169,
-    "build_manifest_sha256": "dac7a4c6d609c3c6b1863f1e215547196e4d0d8e139c4b012ee70b52269e4ba2",
+    "build_files": 4166,
+    "build_manifest_sha256": "53b43c5bbc7cb773c3f8bb58a46f3239c10724c0cd4bcfcb946097f1724e1eb2",
     "byte_identical": true,
-    "rendered_html_files": 1985,
-    "sitemap_urls": 1980,
-    "sitemap_urls_with_lastmod": 1980,
-    "distinct_lastmod_timestamps": 47,
-    "unique_rendered_titles": 1980,
-    "functional_routes_with_exactly_one_h1": 2,
-    "rendered_internal_links": 823325,
+    "rendered_html_files": 1984,
+    "sitemap_urls": 1979,
+    "sitemap_urls_with_lastmod": 1979,
+    "distinct_lastmod_timestamps": 46,
+    "unique_rendered_titles": 1979,
+    "functional_routes_with_exactly_one_h1": 1,
+    "rendered_internal_links": 821342,
     "noindex_directives": 0,
-    "cloudflare_normal_html_files": 1983,
+    "cloudflare_normal_html_files": 1982,
     "cloudflare_credential_html_files": 2,
     "cloudflare_beacons_per_normal_html": 1,
     "cloudflare_beacons_per_credential_html": 0,
@@ -117,19 +117,19 @@
     "push_deploy_live_provider_or_macos_actions": 0
   },
   "implementation_plan": [
-    "Replace the client-only root redirect and add the missing blog heading, then validate rendered metadata, headings, sitemap membership, and lastmod coverage.",
+    "Replace the client-only root redirect with a permanent source-owned Netlify redirect to Ask Nedi, keep the root out of rendered output and the sitemap, add the missing blog heading, and validate both route purposes without applying content-page rules to redirects.",
     "Keep sitemap exclusion separate from robots indexability, emit zero noindex directives across every rendered HTML route, and restore all public libnetdata references to the sitemap.",
     "Persist upstream sidebar ordering with exact source and corpus provenance, then make full ingest and grid-only recovery use one reconciliation and finalization path.",
     "Paginate every generated integration grid above the 175-card page capacity, emit every card exactly once, and safely reconcile grid creation, removal, and page-count transitions.",
     "Treat only explicit generated_grid_page ownership markers as authority to overwrite or delete a grid artifact; never infer ownership from status or component imports.",
     "Reject symbolic links, non-regular files, and paths whose real ancestors escape the configured docs root before any recovery read, hash, write, replacement, or deletion.",
     "Replace random installer control IDs with React useId and prove uniqueness, label binding, repeatable SSR, and hydration stability.",
-    "Expand the rendered-link gate to same-host HTTP links and terminal-wildcard redirect sources, then pin parser boundaries with mutations.",
+    "Expand the rendered-link gate to same-host HTTP links and terminal-wildcard redirect sources, while allowing only the stable public / entrypoint to hide its current redirect destination from callers; pin both the exception and parser boundaries with mutations.",
     "Repair the complete Netlify redirect graph from its static owner: restore every historical Network Flows route, retarget every proved dead exact destination, replace non-terminal wildcard classes with archived exact mappings, remove duplicate and conflicting identities, and fail closed on graph regressions.",
     "Run all Learn and exact-source tests, two byte-identical production builds, rendered audits, provenance checks, and repository hygiene checks.",
     "Vendor the exact C8 ruleset-v9 bundle accepted in netdata/seo commit 4a9813f4f581966a84ab469cabf9e3c34d294c7e with the canonical exporter. Every Netlify context performs a clean locked Node 22 install in that bundle, builds Docusaurus, and scans the complete build with the Learn origin and a read-only, reasoned baseline containing only exact pre-existing findings. Heavy-page enforcement uses real bytes while its baseline identity is neutral to exact configured-origin length.",
     "Replace the legacy Learn IndexNow copy with every checksum-covered schema-2 artifact, dependency, verifier rule, and adversarial test from the website owner commit eb6246fcf87e4fc2b9160ed77606f6322d953cc1. The six-file owner contract separates an event-only Netlify adapter from the shared core; only the declared Learn host, key-location host, published build directory, and test fixture route shape may differ. Receipt, retry, cache, URL, filesystem, and at-least-once semantics remain byte-identical.",
-    "Install the approved public Cloudflare Web Analytics token once through Docusaurus' shared document script configuration as an unversioned type=module beacon. Verify exactly one executable beacon in every normal rendered HTML artifact, including root, docs, generated indexes, blog, and search; require zero third-party script code on the API console and OAuth callback. Replace the obsolete Ask Netdata compatibility HTML with one permanent Netlify redirect to Ask Nedi so it is not an analytics-bearing document."
+    "Install the approved public Cloudflare Web Analytics token once through Docusaurus' shared document script configuration as an unversioned type=module beacon. Verify exactly one executable beacon in every normal rendered HTML artifact, including docs, generated indexes, blog, and search; require zero third-party script code on the API console and OAuth callback. Replace the obsolete Ask Netdata compatibility HTML and the root client redirect with permanent Netlify redirects to Ask Nedi so neither is an analytics-bearing document."
   ],
   "excluded_work": [
     "upstream rebase",
@@ -138,9 +138,9 @@
   ],
   "accepted_review_corrections": [
     {
-      "id": "root-and-blog-rendering",
-      "contract": "The root route is a useful server-rendered landing page with accurate metadata and exactly one H1, remains sitemap-eligible, and the functional blog page has exactly one H1 while remaining sitemap-excluded.",
-      "acceptance": "The sitemap contains 1980 URLs with lastmod on every URL; the root and blog render one H1 each."
+      "id": "root-redirect-and-blog-rendering",
+      "contract": "The root route preserves its established Ask Nedi product journey as a permanent one-hop Netlify redirect. No root HTML artifact may shadow it and the root remains outside the sitemap. The functional blog page has exactly one H1 while remaining sitemap-excluded.",
+      "acceptance": "The redirect graph requires / to terminate at the rendered /docs/ask-nedi route, the build contains no root index.html, the sitemap excludes /, and blog renders exactly one H1. The corrected Deploy Preview returns HTTP 301 with Location /docs/ask-nedi and the destination returns HTTP 200."
     },
     {
       "id": "zero-noindex-sitemap-separation",
@@ -174,8 +174,8 @@
     },
     {
       "id": "complete-redirect-source-gate",
-      "contract": "The rendered-link gate rejects exact and terminal-wildcard Netlify redirect sources, including same-host HTTP links; unquoted href attributes remain outside the parser because Docusaurus emits quoted attributes.",
-      "acceptance": "Current rendered output has no redirect-source links and regression mutations cover exact, encoded, terminal-wildcard, HTTP, slash, and quoted-attribute boundaries."
+      "contract": "The rendered-link gate rejects exact and terminal-wildcard Netlify redirect sources, including same-host HTTP links. The stable public / entrypoint is the sole explicit exception so callers do not depend on its current destination; unquoted href attributes remain outside the parser because Docusaurus emits quoted attributes.",
+      "acceptance": "Current rendered output has no redirect-source links except links to the policy-owned / entrypoint. Regression mutations prove / is allowed only when explicitly configured, while every other exact, encoded, terminal-wildcard, HTTP, slash, and quoted-attribute boundary remains fail-closed."
     },
     {
       "id": "terminal-redirect-graph",
@@ -200,7 +200,7 @@
     {
       "id": "exact-final-agent-source-ingest",
       "contract": "The final source refresh uses corrected committed, clean netdata/netdata source 34727a00b89df3886239ad1e0324d59269d5714d through the local-source ingest path. It replaces rejected candidates bf44bb561c6b59f35deab0d5df2f9be9dae92a01, 36d3a604e29765276c76b4e3f736a8d917bda371, and 7c999e225e4fa8eb5f9d04c2327515a873a4aca6 and must pass fresh independent source review before final staging or builds. Only exact upstream provenance plus pipeline-generated Learn documentation, maps, sidebar state, and redirect output may change; generated documentation is never hand-edited.",
-      "acceptance": "The committed dependency and generated state pin the exact source, map, corpus, and full-ingest hashes; all 40 newly completed source descriptions arrive byte-for-byte in their generated Learn pages; no generated description ends in an ASCII or Unicode ellipsis; redirect generation remains a fixed point at 3157 rules with all 42 historical Network Flows routes; and two Node 22.14.0, Yarn 1.22.22, 8 GiB Netlify-equivalent builds are byte-identical."
+      "acceptance": "The committed dependency and generated state pin the exact source, map, corpus, and full-ingest hashes; all 40 newly completed source descriptions arrive byte-for-byte in their generated Learn pages; no generated description ends in an ASCII or Unicode ellipsis; redirect generation remains a fixed point at 3158 rules with all 42 historical Network Flows routes; and two Node 22.14.0, Yarn 1.22.22, 8 GiB Netlify-equivalent builds are byte-identical."
     },
     {
       "id": "source-owned-onprem-trailing-whitespace",
