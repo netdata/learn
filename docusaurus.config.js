@@ -24,6 +24,19 @@ module.exports = {
 	favicon: 'img/favicon-32x32.png',
 	organizationName: 'netdata',
 	projectName: 'netdata',
+	future: {
+		faster: {
+			swcJsLoader: true,
+			swcJsMinimizer: true,
+			swcHtmlMinimizer: true,
+			lightningCssMinimizer: true,
+			rspackBundler: true,
+			rspackPersistentCache: false,
+			ssgWorkerThreads: false,
+			mdxCrossCompilerCache: true,
+			gitEagerVcs: true,
+		},
+	},
 	markdown: {
 		mermaid: true,
 		hooks: {

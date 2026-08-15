@@ -56,6 +56,29 @@ describe('shared deployment integrations', () => {
     }
   });
 
+  it('uses the stable Docusaurus Faster engine within the Netlify memory bound', () => {
+    expect(packageJson.devDependencies['@docusaurus/faster']).toBe('3.10.2');
+    expect(packageJson.dependencies['@easyops-cn/docusaurus-search-local']).toBe('0.55.3');
+    expect(packageJson.dependencies).not.toHaveProperty('@docusaurus/plugin-client-redirects');
+    expect(docusaurus.future?.faster).toEqual({
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      rspackBundler: true,
+      rspackPersistentCache: false,
+      ssgWorkerThreads: false,
+      mdxCrossCompilerCache: true,
+      gitEagerVcs: true,
+    });
+
+    for (const relative of ['static.toml', 'netlify.toml']) {
+      const config = fs.readFileSync(path.join(root, relative), 'utf8');
+      expect(config).toContain('NODE_OPTIONS = "--max-old-space-size=3072"');
+      expect(config).toContain('DOCUSAURUS_SSR_CONCURRENCY = "4"');
+    }
+  });
+
   it('keeps the root redirect-only and forces logo clicks through Netlify', () => {
     expect(fs.existsSync(path.join(root, 'src/pages/index.js'))).toBe(false);
     expect(docusaurus.themeConfig.navbar.logo.href).toBe('pathname:///');
