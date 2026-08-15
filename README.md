@@ -176,9 +176,23 @@ Documentation arrives in this repository via the [`ingest.py`](/ingest/ingest.py
 
 This repo uses a GitHub Action called [`ingest.yml`](.github/workflows/ingest.yml) to run the `ingest/ingest.py` process.
 
-This action runs at 14:00 UTC every day.
+The action runs every three hours from 08:10 through 23:10 UTC, can be started manually, and
+runs after relevant generator, site-source, or documentation changes merge to `master`.
 
 If there are changes to any documentation file, the GitHub Action creates a PR that is then reviewed by a member of the Netdata team.
+
+Feature and technical PRs must contain only source, generator, and test changes. Pipeline-owned
+`docs/**`, `ingest/generated_map.yaml`, and generated sidebar-state artifacts belong only in the
+same-repository `ingest` automation PR carrying both the `ingest` and `automation` labels. A PR
+check enforces this boundary. `netlify.toml` is the narrow exception because Netlify reads that
+deployed configuration before the ingest or site build runs; it remains generated from
+`static.toml` and must match it.
+
+The first ingest after a generator change also creates the generated sidebar-state checksum. Its
+presence activates the strict rendered-title, redirect-source-link, and complete site-build gates.
+Before that generated PR lands, the source PR still enforces redirects, functional headings,
+zero-noindex, and Cloudflare RUM without pretending that the old documentation corpus has already
+been regenerated.
 
 The action can be configured to automatically assign one or more reviewers.
 To enable automatic assignments, uncomment the `# reviewers:` line at the end of [`ingest.yml`](/.github/workflows/ingest.yml) and add the appropriate GitHub username(s) either space or comma-separated.

@@ -1,6 +1,27 @@
 {
   "schema_version": 1,
   "source_sow": "SOW-0017",
+  "delivery_boundary": {
+    "technical_pull_request": 2980,
+    "generated_output_branch": "ingest",
+    "generated_output_labels": [
+      "ingest",
+      "automation"
+    ],
+    "technical_pr_generated_paths": [],
+    "pipeline_owned_paths": [
+      "docs/**",
+      "ingest/generated_map.yaml",
+      "ingest/generated_sidebar_order.json",
+      "ingest/generated_sidebar_order.json.sha256"
+    ],
+    "runtime_generated_exception": "netlify.toml",
+    "strict_gate_marker": "ingest/generated_sidebar_order.json.sha256",
+    "merge_order": [
+      "technical source PR",
+      "automated ingest output PR"
+    ]
+  },
   "final_ingest_source_snapshot": {
     "netdata": {
       "commit": "34727a00b89df3886239ad1e0324d59269d5714d",
@@ -40,6 +61,7 @@
     "docs/Netdata Cloud On-Prem/Security Hardening Guide.mdx:104"
   ],
   "final_acceptance_evidence": {
+    "status": "historical-pre-separation-proof-requires-ingest-pr-reproduction",
     "learn_integration_commit": "08d5f5832b26d98cdc9a7c2feb611984401bb0c8",
     "final_rereview_correction_commits": [
       "49abbd83acfedc62bc3fafb40157314d8e66a92d",

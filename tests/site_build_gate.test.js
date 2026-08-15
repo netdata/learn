@@ -48,16 +48,26 @@ test('the site vendors the exact accepted ruleset-v9 bundle', () => {
   }
 });
 
-test('every Netlify context runs the clean-installed gate after Docusaurus', () => {
+test('every Netlify context stages the clean-installed gate after Docusaurus', async () => {
   const packageJson = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
   const command = packageJson.scripts['build:netlify'];
   const install = 'npm ci --prefix scripts/site-build-gate --ignore-scripts --no-audit';
   const build = 'docusaurus build';
-  const gateCommand = 'node scripts/site-build-gate/site_build_gate.mjs --build-dir build ' +
-    '--site-origin https://learn.netdata.cloud --baseline config/site-build-gate-baseline.json';
+  const gateRunner = 'node scripts/run-post-build-gates.mjs';
+  const {postBuildGateCommands} = await import('../scripts/run-post-build-gates.mjs');
+  const gateCommand = postBuildGateCommands({generatedOutputReady: true}).find(
+    ([script]) => script === 'scripts/site-build-gate/site_build_gate.mjs',
+  );
+  assert.deepEqual(gateCommand, [
+    'scripts/site-build-gate/site_build_gate.mjs',
+    '--build-dir', 'build',
+    '--site-origin', 'https://learn.netdata.cloud',
+    '--baseline', 'config/site-build-gate-baseline.json',
+    '--format', 'json',
+  ]);
   assert.match(command, new RegExp(install));
   assert.ok(command.indexOf(install) < command.indexOf(build));
-  assert.ok(command.indexOf(build) < command.indexOf(gateCommand));
+  assert.ok(command.indexOf(build) < command.indexOf(gateRunner));
 
   for (const filename of ['static.toml', 'netlify.toml']) {
     const netlify = fs.readFileSync(path.join(root, filename), 'utf8');

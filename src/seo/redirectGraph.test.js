@@ -138,7 +138,7 @@ describe('Netlify redirect graph gate', () => {
     ['source fragment', '/test/fragment#part', '/docs/getting-started', /Malformed redirect source/],
     ['target query', '/test/target-query', '/docs/getting-started?value=1', /Malformed redirect target/],
     ['target fragment', '/test/target-fragment', '/docs/getting-started#part', /Malformed redirect target/],
-    ['active wildcard source', '/docs/collecting-metrics/collectors/page/*', '/docs/getting-started', /Wildcard redirect source shadows rendered route/],
+    ['active wildcard source', '/docs/netdata-ai/investigations/*', '/docs/getting-started', /Wildcard redirect source shadows rendered route/],
     ['wildcard to exact chain', '/test/wild/*', '/docs/rest-api/netdata-badges', /chain or cycle/],
     ['wildcard self-cycle', '/test/self/*', '/test/self/:splat', /chain or cycle/],
   ])('fails closed on a %s mutation', async (_name, from, to, message) => {

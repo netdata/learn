@@ -3,26 +3,37 @@ import path from 'node:path';
 import {createRequire} from 'node:module';
 import {describe, expect, it} from 'vitest';
 
+import {postBuildGateCommands} from '../../scripts/run-post-build-gates.mjs';
+
 const require = createRequire(import.meta.url);
 const root = path.resolve(import.meta.dirname, '../..');
 const packageJson = require('../../package.json');
 const docusaurus = require('../../docusaurus.config.js');
 
 describe('shared deployment integrations', () => {
-  it('runs the exact C8 bundle after every Netlify Docusaurus build', () => {
+  it('runs the exact C8 bundle after generated output activates strict gates', () => {
     const command = packageJson.scripts['build:netlify'];
     const install = 'npm ci --prefix scripts/site-build-gate --ignore-scripts --no-audit';
     const build = 'docusaurus build';
-    const scan = [
-      'node scripts/site-build-gate/site_build_gate.mjs',
-      '--build-dir build',
-      '--site-origin https://learn.netdata.cloud',
-      '--baseline config/site-build-gate-baseline.json',
-    ].join(' ');
+    const gateRunner = 'node scripts/run-post-build-gates.mjs';
+    const scan = postBuildGateCommands({generatedOutputReady: true}).find(
+      ([script]) => script === 'scripts/site-build-gate/site_build_gate.mjs',
+    );
+    expect(scan).toEqual([
+      'scripts/site-build-gate/site_build_gate.mjs',
+      '--build-dir',
+      'build',
+      '--site-origin',
+      'https://learn.netdata.cloud',
+      '--baseline',
+      'config/site-build-gate-baseline.json',
+      '--format',
+      'json',
+    ]);
     expect(command).toContain(install);
-    expect(command).toContain(scan);
+    expect(command).toContain(gateRunner);
     expect(command.indexOf(install)).toBeLessThan(command.indexOf(build));
-    expect(command.indexOf(build)).toBeLessThan(command.indexOf(scan));
+    expect(command.indexOf(build)).toBeLessThan(command.indexOf(gateRunner));
 
     const manifest = JSON.parse(
       fs.readFileSync(path.join(root, 'scripts/site-build-gate/manifest.json'), 'utf8'),
