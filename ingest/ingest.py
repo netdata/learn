@@ -3994,7 +3994,13 @@ if __name__ == "__main__":
     for md_file in to_publish:
         convert_github_links(file_dict[md_file]["learnPath"], file_dict)
 
-    genRedirects.main(file_dict)
+    ignored_redirect_repositories = set()
+    if IGNORE_ON_PREM_REPO:
+        ignored_redirect_repositories.add("netdata/netdata-cloud-onprem")
+    genRedirects.main(
+        file_dict,
+        ignored_github_repositories=ignored_redirect_repositories,
+    )
     print(
         "Done.",
         "Uncorrelated links (links from our github repos that the files are not in Learn):",

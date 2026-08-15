@@ -1,4 +1,5 @@
 import unittest
+from unittest import mock
 
 import autogenerateRedirects as redirects
 
@@ -75,6 +76,90 @@ class RedirectCleanupTests(unittest.TestCase):
                 {"/old": "https://example.com/release"},
                 {"/old/": "https://example.net/release"},
             )
+
+    def test_ignored_repository_removes_only_its_unresolved_legacy_redirect(self):
+        legacy = {
+            "/on-prem": (
+                "https://github.com/netdata/netdata-cloud-onprem/"
+                "blob/master/docs/page.md"
+            ),
+            "/agent": "https://github.com/netdata/netdata/blob/master/docs/page.md",
+        }
+        self.assertEqual(
+            redirects.UpdateGHLinksBasedOnMap(
+                {},
+                legacy,
+                ignored_github_repositories={"netdata/netdata-cloud-onprem"},
+            ),
+            {"/agent": "https://github.com/netdata/netdata/blob/master/docs/page.md"},
+        )
+
+    def test_non_ignored_unresolved_legacy_redirect_is_preserved(self):
+        legacy = {
+            "/on-prem": (
+                "https://github.com/netdata/netdata-cloud-onprem/"
+                "blob/master/docs/page.md"
+            )
+        }
+        self.assertEqual(redirects.UpdateGHLinksBasedOnMap({}, legacy), legacy)
+
+    def test_ignored_on_prem_mapping_preserves_the_tracked_internal_redirect(self):
+        source = "/docs/netdata-cloud-on-prem/light-poc-deployment"
+        tracked = {source: "/docs/netdata-cloud-on-prem/poc-without-k8s"}
+        legacy = {
+            source: (
+                "https://github.com/netdata/netdata-cloud-onprem/"
+                "blob/master/docs/learn.netdata.cloud/poc-without-k8s.md"
+            )
+        }
+        filtered = redirects.UpdateGHLinksBasedOnMap(
+            {},
+            legacy,
+            ignored_github_repositories={"netdata/netdata-cloud-onprem"},
+        )
+        self.assertEqual(redirects.combineDictsOverwrite(tracked, filtered), tracked)
+        with self.assertRaisesRegex(ValueError, "Conflicting redirect identity"):
+            redirects.combineDictsOverwrite(
+                tracked,
+                redirects.UpdateGHLinksBasedOnMap({}, legacy),
+            )
+
+    def test_current_mapping_wins_even_when_its_repository_is_ignored(self):
+        github_url = (
+            "https://github.com/netdata/netdata-cloud-onprem/"
+            "blob/master/docs/page.md"
+        )
+        self.assertEqual(
+            redirects.UpdateGHLinksBasedOnMap(
+                {github_url: "/docs/current"},
+                {"/old": github_url},
+                ignored_github_repositories={"netdata/netdata-cloud-onprem"},
+            ),
+            {"/old": "/docs/current"},
+        )
+
+    def test_main_does_not_hide_redirect_conflicts(self):
+        with (
+            mock.patch.object(
+                redirects,
+                "reductTonew_learn_pathFromGHLinksCorrelation",
+                return_value={},
+            ),
+            mock.patch.object(redirects, "addMovedRedirects", return_value={}),
+            mock.patch.object(redirects, "append_entries_to_json"),
+            mock.patch.object(
+                redirects,
+                "readLegacyLearnDocMap",
+                return_value={"/old": "/second"},
+            ),
+            mock.patch.object(
+                redirects,
+                "readRedirectsFromFile",
+                return_value={"/old": "/first"},
+            ),
+        ):
+            with self.assertRaisesRegex(ValueError, "Conflicting redirect identity /old"):
+                redirects.main({})
 
 if __name__ == "__main__":
     unittest.main()

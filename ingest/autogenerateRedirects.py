@@ -138,13 +138,27 @@ def readLegacyLearnDocMap(pathToFile):
 		return ({key.replace("https://learn.netdata.cloud", ""): value for key, value in json.load(json_file).items()})
 
 
-def UpdateGHLinksBasedOnMap(mapMatrix, inputDictionary):
+def _github_repository_identity(url):
+	parts = urlsplit(url)
+	if parts.scheme not in {"http", "https"} or parts.netloc.lower() != "github.com":
+		return None
+	segments = [segment for segment in parts.path.split("/") if segment]
+	if len(segments) < 2:
+		return None
+	return f"{segments[0]}/{segments[1]}".lower()
+
+
+def UpdateGHLinksBasedOnMap(
+	mapMatrix, inputDictionary, ignored_github_repositories=()
+):
+	ignored = {repository.lower() for repository in ignored_github_repositories}
+	updated = {}
 	for k, v in inputDictionary.items():
 		if v in mapMatrix.keys():
-			inputDictionary[k] = mapMatrix[v]
-		else:
-			pass
-	return (inputDictionary)
+			updated[k] = mapMatrix[v]
+		elif _github_repository_identity(v) not in ignored:
+			updated[k] = v
+	return (updated)
 
 
 def addMovedRedirects(mapping):
@@ -367,22 +381,23 @@ def refresh_current_netlify_config():
 	return redirects
 
 
-def main(GHLinksCorrelation):
+def main(GHLinksCorrelation, ignored_github_repositories=()):
 
 	mapping = reductTonew_learn_pathFromGHLinksCorrelation(GHLinksCorrelation)
 	append_entries_to_json(addMovedRedirects(mapping))
 	# print(GHLinksCorrelation)
 	oldLearn = readLegacyLearnDocMap("LegacyLearnCorrelateLinksWithGHURLs.json")
 	# print(oldLearn)
-	oldLearn_redirects = UpdateGHLinksBasedOnMap(mapping, oldLearn)
+	oldLearn_redirects = UpdateGHLinksBasedOnMap(
+		mapping,
+		oldLearn,
+		ignored_github_repositories=ignored_github_repositories,
+	)
 	# print(mapping)
 
 	# print(oldLearn)
-	try:
-		finalDict = combineDictsOverwrite(readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
-		# print(finalDict)
-	except Exception as e:
-		print(f"An exception occurred: {e}")
+	finalDict = combineDictsOverwrite(readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
+	# print(finalDict)
 
 	active_routes = set(mapping.values())
 	finalDict = clean_redirects(finalDict, active_routes)
