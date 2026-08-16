@@ -114,6 +114,9 @@ describe('Netlify redirect graph gate', () => {
     expect(publishedRoutes.has('/docs/ask-nedi')).toBe(true);
     const sitemap = await fs.readFile(path.join(root, 'build/sitemap.xml'), 'utf8');
     expect(sitemap).not.toContain('<loc>https://learn.netdata.cloud/</loc>');
+    expect(sitemap).not.toContain('<loc>https://learn.netdata.cloud/docs/ask-nedi</loc>');
+    const robots = await fs.readFile(path.join(root, 'static/robots.txt'), 'utf8');
+    expect(robots).toMatch(/^Disallow:\s*\/docs\/ask-nedi\/?$/m);
   });
 
   it('does not invent a rendered root route when the build has no root artifact', async () => {

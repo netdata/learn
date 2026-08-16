@@ -14,6 +14,7 @@ describe('SEO sitemap configuration', () => {
     expect(isSitemapIncludedRoute('/blog/')).toBe(false);
     expect(isSitemapIncludedRoute('/search')).toBe(false);
     expect(isSitemapIncludedRoute('/docs/ask-netdata')).toBe(false);
+    expect(isSitemapIncludedRoute('/docs/ask-nedi')).toBe(false);
   });
 
   it('includes normal documentation and all libnetdata routes', () => {
