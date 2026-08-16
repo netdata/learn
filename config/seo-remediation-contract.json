@@ -96,11 +96,11 @@
     "new_agent_descriptions_exact": 40,
     "terminal_description_ellipses": 0,
     "tests": {
-      "python_ingest": 41,
+      "python_ingest": 54,
       "mdx_escaping": 54,
-      "vitest_files": 25,
-      "vitest_tests": 368,
-      "indexnow": 63,
+      "vitest_files": 27,
+      "vitest_tests": 394,
+      "indexnow": 64,
       "canonical_c8": 4,
       "exact_agent_source": 76
     },
@@ -113,14 +113,14 @@
       "node_heap_mib": 8192
     },
     "production_builds": 2,
-    "build_files": 4166,
-    "build_manifest_sha256": "e859b0cee5dae7c463b876ebb0059f42b010c26437280ee3bde641428a06cfde",
+    "build_files": 4157,
+    "build_manifest_sha256": "fefdc6d0b9f5cef71b1e1127f32b84f30391673e106e006bb6e1ac79a69b5912",
     "byte_identical": true,
     "rendered_html_files": 1984,
-    "sitemap_urls": 1979,
-    "sitemap_urls_with_lastmod": 1979,
-    "distinct_lastmod_timestamps": 46,
-    "unique_rendered_titles": 1979,
+    "sitemap_urls": 1978,
+    "sitemap_urls_with_lastmod": 1978,
+    "distinct_lastmod_timestamps": 45,
+    "unique_rendered_titles": 1978,
     "functional_routes_with_exactly_one_h1": 1,
     "rendered_internal_links": 821342,
     "noindex_directives": 0,
@@ -139,7 +139,7 @@
     "push_deploy_live_provider_or_macos_actions": 0
   },
   "implementation_plan": [
-    "Replace the client-only root redirect with a permanent source-owned Netlify redirect to Ask Nedi, keep the root out of rendered output and the sitemap, add the missing blog heading, and validate both route purposes without applying content-page rules to redirects.",
+    "Replace the client-only root redirect with a permanent source-owned Netlify redirect to Ask Nedi, keep both the root and the robots-disallowed Ask Nedi application route out of the sitemap, add the missing blog heading, and validate both route purposes without applying content-page rules to redirects.",
     "Keep sitemap exclusion separate from robots indexability, emit zero noindex directives across every rendered HTML route, and restore all public libnetdata references to the sitemap.",
     "Persist upstream sidebar ordering with exact source and corpus provenance, then make full ingest and grid-only recovery use one reconciliation and finalization path.",
     "Paginate every generated integration grid above the 175-card page capacity, emit every card exactly once, and safely reconcile grid creation, removal, and page-count transitions.",
@@ -162,12 +162,12 @@
     {
       "id": "root-redirect-and-blog-rendering",
       "contract": "The root route preserves its established Ask Nedi product journey as a permanent one-hop Netlify redirect. No root HTML artifact may shadow it and the root remains outside the sitemap. The navbar and other callers use stable / rather than knowing the current destination. The navbar uses Docusaurus' pathname escape with a same-window target so clicking it performs a normal document request through Netlify instead of client-side routing or opening another tab. The functional blog page has exactly one H1 while remaining sitemap-excluded.",
-      "acceptance": "The redirect graph requires / to terminate at the rendered /docs/ask-nedi route, the build contains no root index.html, the sitemap excludes /, the rendered navbar logo links to / using the pathname escape and target _self, and blog renders exactly one H1. The corrected Deploy Preview returns HTTP 301 with Location /docs/ask-nedi, a same-window browser logo click follows that edge redirect, and the destination returns HTTP 200."
+      "acceptance": "The redirect graph requires / to terminate at the rendered /docs/ask-nedi route, the build contains no root index.html, the sitemap excludes both / and /docs/ask-nedi, static/robots.txt continues to disallow /docs/ask-nedi, the rendered navbar logo links to / using the pathname escape and target _self, and blog renders exactly one H1. The corrected Deploy Preview returns HTTP 301 with Location /docs/ask-nedi, a same-window browser logo click follows that edge redirect, and the destination returns HTTP 200."
     },
     {
       "id": "zero-noindex-sitemap-separation",
-      "contract": "Public routes never emit a noindex robots directive. Sitemap exclusion is a separate discovery choice: blog and search remain excluded, the obsolete Ask Netdata path is a permanent redirect rather than an HTML route, and all current self-canonical libnetdata references remain included and indexable.",
-      "acceptance": "Every rendered HTML file contains zero noindex directives; all current libnetdata routes occur exactly once in the sitemap; blog, search, and the redirected Ask Netdata path remain absent from it."
+      "contract": "Public routes never emit a noindex robots directive. Sitemap exclusion is a separate discovery choice: blog and search remain excluded, the obsolete Ask Netdata path is a permanent redirect rather than an HTML route, the crawler-blocked Ask Nedi application remains outside automated sitemap submission, and all current self-canonical libnetdata references remain included and indexable.",
+      "acceptance": "Every rendered HTML file contains zero noindex directives; every sitemap URL is crawlable under the wildcard robots.txt policy; all current libnetdata routes occur exactly once in the sitemap; blog, search, the redirected Ask Netdata path, and the robots-disallowed Ask Nedi application remain absent from it."
     },
     {
       "id": "grid-recovery-equivalence",
@@ -217,7 +217,7 @@
     {
       "id": "manual-cloudflare-web-analytics",
       "contract": "Docusaurus' shared HTML script configuration emits one defer type=module Cloudflare beacon with the approved zone-level public token. The source remains unversioned and has no integrity attribute; the token is public and no Cloudflare credential enters the repository. The API console and OAuth callback are explicit security-sensitive exceptions and contain no third-party script code.",
-      "acceptance": "Every normal rendered HTML file contains exactly one executable manual beacon and token. Equivalent Cloudflare host/path resource spellings count as the same beacon regardless of DNS-root trailing dot, HTTP-to-HTTPS redirect, or served HTTPS port; the sole allowed beacon still requires the exact approved URL. api.html and oauth2-redirect.html contain zero third-party script code and fail closed on browser-active script, module, nested-document, shadow-DOM, URL-base, preload, import-map, and policy bypasses. The obsolete Ask Netdata compatibility document does not exist; its one-hop permanent redirect targets the rendered Ask Nedi route. The zero-noindex and sitemap contracts remain unchanged."
+      "acceptance": "Every normal rendered HTML file contains exactly one executable manual beacon and token. Equivalent Cloudflare host/path resource spellings count as the same beacon regardless of DNS-root trailing dot, HTTP-to-HTTPS redirect, or served HTTPS port; the sole allowed beacon still requires the exact approved URL. api.html and oauth2-redirect.html contain zero third-party script code and fail closed on browser-active script, module, nested-document, shadow-DOM, URL-base, preload, import-map, and policy bypasses. The obsolete Ask Netdata compatibility document does not exist; its one-hop permanent redirect targets the rendered Ask Nedi route. The zero-noindex and robots-safe sitemap contracts remain enforced."
     },
     {
       "id": "exact-final-agent-source-ingest",

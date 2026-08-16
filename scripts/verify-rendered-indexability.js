@@ -1,7 +1,10 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
+const {sitemapUrls} = require('./verify-rendered-titles');
+
 const ROBOTS_NAMES = new Set(['robots', 'googlebot', 'bingbot']);
+const SITE_HOST = 'learn.netdata.cloud';
 
 function attributes(tag) {
   const result = new Map();
@@ -48,6 +51,73 @@ function noindexResponseHeaders(netlifyToml) {
   return directives;
 }
 
+function wildcardRobotsRules(robotsText) {
+  const rules = [];
+  let userAgents = [];
+  let rulesStarted = false;
+
+  for (const rawLine of robotsText.split(/\r?\n/)) {
+    const line = rawLine.replace(/#.*$/, '').trim();
+    if (!line) {
+      userAgents = [];
+      rulesStarted = false;
+      continue;
+    }
+
+    const separator = line.indexOf(':');
+    if (separator < 0) continue;
+    const field = line.slice(0, separator).trim().toLowerCase();
+    const value = line.slice(separator + 1).trim();
+
+    if (field === 'user-agent') {
+      if (rulesStarted) {
+        userAgents = [];
+        rulesStarted = false;
+      }
+      userAgents.push(value.toLowerCase());
+      continue;
+    }
+
+    if (field !== 'allow' && field !== 'disallow') continue;
+    rulesStarted = true;
+    if (!userAgents.includes('*') || !value) continue;
+    rules.push({allow: field === 'allow', pattern: value});
+  }
+
+  return rules;
+}
+
+function robotsRuleRegex(pattern) {
+  const endAnchored = pattern.endsWith('$');
+  const body = endAnchored ? pattern.slice(0, -1) : pattern;
+  const source = body
+    .split('*')
+    .map((part) => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('.*');
+  return new RegExp(`^${source}${endAnchored ? '$' : ''}`);
+}
+
+function wildcardRobotsAllows(pathname, rules) {
+  const matches = rules
+    .filter((rule) => robotsRuleRegex(rule.pattern).test(pathname))
+    .map((rule) => ({
+      ...rule,
+      specificity: rule.pattern.length,
+    }));
+
+  if (!matches.length) return true;
+  const mostSpecific = Math.max(...matches.map((rule) => rule.specificity));
+  return matches.some((rule) => rule.specificity === mostSpecific && rule.allow);
+}
+
+function sitemapRobotsViolations(sitemapXml, robotsText, host = SITE_HOST) {
+  const rules = wildcardRobotsRules(robotsText);
+  return sitemapUrls(sitemapXml, host).filter((value) => {
+    const url = new URL(value);
+    return !wildcardRobotsAllows(`${url.pathname}${url.search}`, rules);
+  });
+}
+
 function regularFile(filename) {
   const stat = fs.lstatSync(filename);
   if (stat.isSymbolicLink()) throw new Error(`Rendered output contains a symbolic link: ${filename}`);
@@ -72,7 +142,12 @@ function htmlFilesUnder(root) {
   return files.sort();
 }
 
-function verifyRenderedIndexability(publishDir, netlifyPath) {
+function verifyRenderedIndexability(
+  publishDir,
+  netlifyPath,
+  robotsPath = path.resolve('static/robots.txt'),
+  host = SITE_HOST,
+) {
   const violations = [];
   const htmlFiles = htmlFilesUnder(publishDir);
   for (const filename of htmlFiles) {
@@ -88,18 +163,47 @@ function verifyRenderedIndexability(publishDir, netlifyPath) {
     violations.push(`X-Robots-Tag at ${netlifyPath}:${directive.line}: ${directive.value}`);
   }
 
+  const sitemapPath = path.join(publishDir, 'sitemap.xml');
+  regularFile(sitemapPath);
+  regularFile(robotsPath);
+  const sitemapXml = fs.readFileSync(sitemapPath, 'utf8');
+  const robotsText = fs.readFileSync(robotsPath, 'utf8');
+  const urls = sitemapUrls(sitemapXml, host);
+  if (!urls.length) {
+    throw new Error(`No ${host} URLs found in ${sitemapPath}`);
+  }
+  const blockedSitemapUrls = sitemapRobotsViolations(sitemapXml, robotsText, host);
+  if (blockedSitemapUrls.length) {
+    throw new Error(
+      'Sitemap URL(s) are blocked by the wildcard robots.txt policy:\n  ' +
+      `${blockedSitemapUrls.join('\n  ')}\n` +
+      'Remove the URL from the sitemap when the block is intentional. ' +
+      'Change the robots crawling policy only when crawling is intended and explicitly approved. ' +
+      'Do not weaken this gate to make the build pass without explicit user approval.',
+    );
+  }
+
   if (violations.length) {
     throw new Error(`Found noindex directive(s):\n  ${violations.join('\n  ')}`);
   }
-  return {htmlFiles: htmlFiles.length, noindexDirectives: 0};
+  return {
+    htmlFiles: htmlFiles.length,
+    noindexDirectives: 0,
+    sitemapUrls: urls.length,
+    blockedSitemapUrls: 0,
+  };
 }
 
 if (require.main === module) {
   try {
     const publishDir = path.resolve(process.argv[2] || 'build');
     const netlifyPath = path.resolve(process.argv[3] || 'netlify.toml');
-    const result = verifyRenderedIndexability(publishDir, netlifyPath);
-    console.log(`Verified zero noindex directives across ${result.htmlFiles} rendered HTML files.`);
+    const robotsPath = path.resolve(process.argv[4] || 'static/robots.txt');
+    const result = verifyRenderedIndexability(publishDir, netlifyPath, robotsPath);
+    console.log(
+      `Verified zero noindex directives across ${result.htmlFiles} rendered HTML files and ` +
+      `zero robots-blocked URLs across ${result.sitemapUrls} sitemap URLs.`,
+    );
   } catch (error) {
     console.error(`Rendered indexability verification failed: ${error.message}`);
     process.exitCode = 1;
@@ -109,5 +213,8 @@ if (require.main === module) {
 module.exports = {
   noindexMetaDirectives,
   noindexResponseHeaders,
+  sitemapRobotsViolations,
   verifyRenderedIndexability,
+  wildcardRobotsAllows,
+  wildcardRobotsRules,
 };
