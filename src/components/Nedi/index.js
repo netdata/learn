@@ -1,11 +1,18 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
 
-import { ensureMarkdownItCompatibility } from './markdownItCompatibility';
+import {
+  NEDI_ENDPOINT,
+  loadNediAssets,
+  reloadNediAssets,
+  nediAssetsFailed,
+  nediDependenciesReady,
+} from './assets';
 
-const NEDI_ENDPOINT = 'https://nedi.netdata.cloud';
 const PERSISTENT_ID = 'nedi-persistent';
 const SCROLL_KEY = 'nedi-scroll-y';
+const READY_POLL_INTERVAL = 150;
+const READY_TIMEOUT = 15000;
 
 // Match Docusaurus theme colors for seamless integration
 const CSS_VARIABLES = {
@@ -34,10 +41,7 @@ const CSS_VARIABLES = {
   },
 };
 
-// Set source identifier for Nedi analytics
-if (typeof window !== 'undefined') {
-  window.AI_AGENT_UI_SOURCE = 'learn';
-}
+const STATUS_STYLE = { textAlign: 'center', padding: '40px' };
 
 // Persistent container + instance, survives React unmounts
 function getOrCreateNedi(theme) {
@@ -73,72 +77,100 @@ function getOrCreateNedi(theme) {
 export default function Nedi() {
   const mountRef = useRef(null);
   const { colorMode } = useColorMode();
+  const colorModeRef = useRef(colorMode);
+  colorModeRef.current = colorMode;
 
+  const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+
+  const retry = useCallback(() => {
+    reloadNediAssets();
+    setFailed(false);
+    setAttempt((count) => count + 1);
+  }, []);
+
+  // Inject the embed and its dependencies, then wait for them to become usable.
   useEffect(() => {
-    if (!mountRef.current) return;
+    if (ready || failed) return undefined;
 
-    let cleanups = [];
-
-    const boot = () => {
-      if (!mountRef.current) return;
-      if (typeof window.AiAgentChatUI === 'undefined') return false;
-      if (!ensureMarkdownItCompatibility(window)) return false;
-
-      const nediEl = getOrCreateNedi(colorMode);
-
-      // Move persistent container into the mount point
-      mountRef.current.appendChild(nediEl);
-      nediEl.style.display = '';
-
-      // Ensure containers fill viewport so sticky footer stays at bottom even when empty.
-      // Uses document-relative position (rect.top + scrollY) so the value stays
-      // correct even when a resize fires while the user is scrolled down.
-      const setMinHeight = () => {
-        const top = mountRef.current.getBoundingClientRect().top + window.scrollY;
-        const vh = `calc(100vh - ${top}px)`;
-        mountRef.current.style.minHeight = vh;
-        nediEl.style.minHeight = vh;
-        const wrapper = nediEl.querySelector('.ai-agent-wrapper');
-        if (wrapper) wrapper.style.minHeight = vh;
-      };
-      requestAnimationFrame(setMinHeight);
-      // SPA back-navigation: layout may need extra time to settle
-      const settleTimer = setTimeout(setMinHeight, 150);
-      window.addEventListener('resize', setMinHeight);
-
-      // Save scroll position continuously while on this page
-      const onScroll = () => sessionStorage.setItem(SCROLL_KEY, String(window.scrollY));
-      window.addEventListener('scroll', onScroll, { passive: true });
-
-      // Restore scroll position after DOM settles
-      const savedScroll = sessionStorage.getItem(SCROLL_KEY);
-      if (savedScroll) {
-        setTimeout(() => window.scrollTo(0, parseInt(savedScroll, 10)), 50);
-      }
-
-      // Focus the chat input after DOM settles
-      requestAnimationFrame(() => {
-        const input = nediEl.querySelector('.ai-agent-input');
-        if (input) input.focus();
-      });
-
-      cleanups = [
-        () => clearTimeout(settleTimer),
-        () => window.removeEventListener('scroll', onScroll),
-        () => window.removeEventListener('resize', setMinHeight),
-        () => { nediEl.style.display = 'none'; document.body.appendChild(nediEl); },
-      ];
-      return true;
-    };
-
-    // Try immediately; poll if async script hasn't loaded yet
-    if (!boot()) {
-      const poll = setInterval(() => { if (boot()) clearInterval(poll); }, 150);
-      cleanups.push(() => clearInterval(poll));
+    loadNediAssets();
+    if (nediDependenciesReady()) {
+      setReady(true);
+      return undefined;
     }
 
-    return () => cleanups.forEach(fn => fn());
-  }, []);
+    const poll = setInterval(() => {
+      if (nediDependenciesReady()) setReady(true);
+      else if (nediAssetsFailed()) setFailed(true);
+    }, READY_POLL_INTERVAL);
+
+    const timeout = setTimeout(() => setFailed(true), READY_TIMEOUT);
+
+    return () => {
+      clearInterval(poll);
+      clearTimeout(timeout);
+    };
+  }, [ready, failed, attempt]);
+
+  useEffect(() => {
+    if (!ready || !mountRef.current) return undefined;
+
+    const mount = mountRef.current;
+    let nediEl;
+    try {
+      nediEl = getOrCreateNedi(colorModeRef.current);
+    } catch {
+      setReady(false);
+      setFailed(true);
+      return undefined;
+    }
+
+    // Move persistent container into the mount point
+    mount.appendChild(nediEl);
+    nediEl.style.display = '';
+
+    // Ensure containers fill viewport so sticky footer stays at bottom even when empty.
+    // Uses document-relative position (rect.top + scrollY) so the value stays
+    // correct even when a resize fires while the user is scrolled down.
+    const setMinHeight = () => {
+      const top = mount.getBoundingClientRect().top + window.scrollY;
+      const vh = `calc(100vh - ${top}px)`;
+      mount.style.minHeight = vh;
+      nediEl.style.minHeight = vh;
+      const wrapper = nediEl.querySelector('.ai-agent-wrapper');
+      if (wrapper) wrapper.style.minHeight = vh;
+    };
+    requestAnimationFrame(setMinHeight);
+    // SPA back-navigation: layout may need extra time to settle
+    const settleTimer = setTimeout(setMinHeight, 150);
+    window.addEventListener('resize', setMinHeight);
+
+    // Save scroll position continuously while on this page
+    const onScroll = () => sessionStorage.setItem(SCROLL_KEY, String(window.scrollY));
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Restore scroll position after DOM settles
+    const savedScroll = sessionStorage.getItem(SCROLL_KEY);
+    const scrollTimer = savedScroll
+      ? setTimeout(() => window.scrollTo(0, parseInt(savedScroll, 10)), 50)
+      : undefined;
+
+    // Focus the chat input after DOM settles
+    requestAnimationFrame(() => {
+      const input = nediEl.querySelector('.ai-agent-input');
+      if (input) input.focus();
+    });
+
+    return () => {
+      clearTimeout(settleTimer);
+      clearTimeout(scrollTimer);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', setMinHeight);
+      nediEl.style.display = 'none';
+      document.body.appendChild(nediEl);
+    };
+  }, [ready]);
 
   // Sync Docusaurus theme changes to Nedi
   useEffect(() => {
@@ -148,5 +180,23 @@ export default function Nedi() {
     }
   }, [colorMode]);
 
-  return <div ref={mountRef} />;
+  return (
+    <>
+      <div ref={mountRef} />
+      {!ready && (
+        <div style={STATUS_STYLE} role="status" aria-live="polite">
+          {failed ? (
+            <>
+              <p>Ask Nedi could not be loaded.</p>
+              <button type="button" onClick={retry}>
+                Retry
+              </button>
+            </>
+          ) : (
+            <p>Loading Ask Nedi...</p>
+          )}
+        </div>
+      )}
+    </>
+  );
 }

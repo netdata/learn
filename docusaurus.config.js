@@ -230,8 +230,6 @@ module.exports = {
 		],
 	],
 	stylesheets: [
-		// Nedi embed styles
-			'https://nedi.netdata.cloud/ai-agent-ui.css?v=19',
 		{
 			href: '/font/ibm-plex-sans-v8-latin-regular.woff2',
 			rel: 'preload',
@@ -273,15 +271,8 @@ module.exports = {
         defer: true,
         'data-reo-client-id': '8a197d1119ef2d4',
       },
-      // Nedi dependencies (CDN) - async to avoid blocking other scripts
-      { src: 'https://cdn.jsdelivr.net/npm/markdown-it@15.0.0/dist/browser/markdown-it.umd.min.js', async: true },
-      { src: 'https://cdn.jsdelivr.net/npm/mermaid@11.16.1/dist/mermaid.min.js', async: true },
-      { src: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.29.0/dist/viz-global.js', async: true },
-      { src: 'https://cdn.jsdelivr.net/npm/turndown@7.2.4/dist/turndown.js', async: true },
-      { src: 'https://cdn.jsdelivr.net/npm/@guyplusplus/turndown-plugin-gfm@1.0.7/dist/turndown-plugin-gfm.js', async: true },
-      // Nedi embed
-      { src: 'https://nedi.netdata.cloud/ai-agent-public.js?v=19', async: true },
-      { src: 'https://nedi.netdata.cloud/ai-agent-ui.js?v=19', async: true },
+      // The Nedi embed, its stylesheet and its CDN dependencies are route-scoped:
+      // src/components/Nedi/assets.js injects them on the Ask Nedi page only.
     ],
     headTags: [
       {
