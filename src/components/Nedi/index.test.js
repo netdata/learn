@@ -247,4 +247,28 @@ describe('Nedi component', () => {
 
     expect(screen.getByRole('button', { name: 'Retry' })).toBeInTheDocument();
   });
+
+  it('discards the container of an embed that failed to start', () => {
+    let attempts = 0;
+    window.AiAgentChatUI = function AiAgentChatUI(container, options) {
+      attempts += 1;
+      if (attempts === 1) throw new Error('embed unavailable');
+      embedOptions = options;
+      container.innerHTML =
+        '<div class="ai-agent-wrapper"><input class="ai-agent-input" /></div>';
+      this.setTheme = setTheme;
+      container.__nediInstance = this;
+    };
+    nediDependenciesReady.mockReturnValue(true);
+    render(<Nedi />);
+
+    expect(document.getElementById(PERSISTENT_ID)).toBeNull();
+
+    act(() => screen.getByRole('button', { name: 'Retry' }).click());
+    tick(150);
+
+    expect(attempts).toBe(2);
+    expect(document.getElementById(PERSISTENT_ID).__nediInstance).toBeDefined();
+    expect(screen.queryByRole('status')).toBeNull();
+  });
 });

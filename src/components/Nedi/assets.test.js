@@ -122,6 +122,22 @@ describe('Nedi asset loader', () => {
     expect(nediAssetsFailed()).toBe(true);
   });
 
+  it('keeps an already usable set on reload instead of re-requesting it', async () => {
+    const { NEDI_ASSETS, loadNediAssets, reloadNediAssets, nediAssetsFailed } =
+      await freshAssets();
+
+    loadNediAssets();
+    const first = injectedElements();
+    stubEmbed();
+    stubMarkdownIt();
+
+    reloadNediAssets();
+
+    expect(nediAssetsFailed()).toBe(false);
+    expect(injectedElements()).toEqual(first);
+    expect(injectedElements()).toHaveLength(NEDI_ASSETS.length);
+  });
+
   it('replaces a failed injection with fresh elements on reload', async () => {
     const { NEDI_ASSETS, loadNediAssets, reloadNediAssets, nediAssetsFailed } =
       await freshAssets();

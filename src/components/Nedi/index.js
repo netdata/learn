@@ -55,22 +55,28 @@ function getOrCreateNedi(theme) {
 
   window.AiAgentChatConfig = { endpoint: NEDI_ENDPOINT };
 
-  const instance = new window.AiAgentChatUI(container, {
-    mode: 'div',
-    agentId: 'support-public',
-    theme,
-    showThemeToggle: false,
-    stickyInput: true,
-    cssVariables: CSS_VARIABLES,
-    urlParams: ['q', 'question'],
-    onEvent: (event) => {
-      if (event.type === 'user-message' && window.posthog) {
-        window.posthog.capture('nedi_question', { question: event.content });
-      }
-    },
-  });
+  try {
+    container.__nediInstance = new window.AiAgentChatUI(container, {
+      mode: 'div',
+      agentId: 'support-public',
+      theme,
+      showThemeToggle: false,
+      stickyInput: true,
+      cssVariables: CSS_VARIABLES,
+      urlParams: ['q', 'question'],
+      onEvent: (event) => {
+        if (event.type === 'user-message' && window.posthog) {
+          window.posthog.capture('nedi_question', { question: event.content });
+        }
+      },
+    });
+  } catch (error) {
+    // The container is attached before the embed starts, so a failed start must not
+    // leave an instance-less container behind: the next attempt would adopt it.
+    container.remove();
+    throw error;
+  }
 
-  container.__nediInstance = instance;
   return container;
 }
 

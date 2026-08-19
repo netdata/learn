@@ -95,8 +95,13 @@ export function loadNediAssets() {
   });
 }
 
-// Discards a failed injection so the next load starts from a clean head.
+// Discards a failed injection so the next load starts from a clean head. An already
+// usable set is kept: removing a <script> element does not undo its side effects, so
+// re-requesting it would only cost the stylesheet another round trip.
 export function reloadNediAssets() {
+  loadFailed = false;
+  if (nediDependenciesReady()) return;
+
   removeNediAssets();
   loadNediAssets();
 }
