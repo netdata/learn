@@ -39,6 +39,32 @@ export const NEDI_ASSETS = [
   { type: 'js', src: `${NEDI_ENDPOINT}/ai-agent-ui.js?v=19` },
 ];
 
+// Route that owns the embed. Docusaurus serves it with and without a trailing slash.
+export const NEDI_ROUTE = '/docs/ask-nedi';
+
+export const isNediRoute = (pathname) =>
+  typeof pathname === 'string' && pathname.replace(/\/+$/, '') === NEDI_ROUTE;
+
+// The route a document was rendered for: its entry URL in the browser, or the route
+// being rendered on the server, where there is no entry URL to read.
+export const documentPathname = (routePathname) =>
+  typeof window === 'undefined' ? routePathname : window.location.pathname;
+
+// Shapes for the server-rendered declaration in src/theme/Root.js. react-helmet-async
+// builds its client tags with setAttribute, so a boolean attribute must be declared as
+// an empty string for the client tag to be isEqualNode-equal to the rendered one.
+export const NEDI_HEAD_TAGS = {
+  link: NEDI_ASSETS.filter((asset) => asset.type === 'css').map((asset) => ({
+    rel: 'stylesheet',
+    href: asset.src,
+  })),
+  script: NEDI_ASSETS.filter((asset) => asset.type === 'js').map((asset) =>
+    asset.integrity
+      ? { src: asset.src, async: '', integrity: asset.integrity, crossorigin: 'anonymous' }
+      : { src: asset.src, async: '' },
+  ),
+};
+
 let injected = [];
 let loadFailed = false;
 
@@ -68,6 +94,15 @@ function createAssetElement(asset) {
   return script;
 }
 
+// A tag the server already rendered for this route is loading the asset itself.
+function assetIsDeclared(asset) {
+  const selector =
+    asset.type === 'css'
+      ? `link[rel="stylesheet"][href="${asset.src}"]`
+      : `script[src="${asset.src}"]`;
+  return document.head.querySelector(selector) !== null;
+}
+
 function removeNediAssets() {
   injected.forEach((element) => {
     element.onerror = null;
@@ -77,17 +112,14 @@ function removeNediAssets() {
   loadFailed = false;
 }
 
-export function loadNediAssets() {
-  if (injected.length || nediDependenciesReady()) return;
-
-  // The embed reports this identifier with every conversation it starts.
-  window.AI_AGENT_UI_SOURCE = 'learn';
-
+function injectNediAssets({ force }) {
   const onError = () => {
     loadFailed = true;
   };
 
   NEDI_ASSETS.forEach((asset) => {
+    if (!force && assetIsDeclared(asset)) return;
+
     const element = createAssetElement(asset);
     element.onerror = onError;
     document.head.appendChild(element);
@@ -95,13 +127,27 @@ export function loadNediAssets() {
   });
 }
 
-// Discards a failed injection so the next load starts from a clean head. An already
-// usable set is kept: removing a <script> element does not undo its side effects, so
-// re-requesting it would only cost the stylesheet another round trip.
+// Requests whatever the document is not already loading. On a direct load of the route
+// every asset is declared server-side and nothing is injected; on a client-side entry
+// none are and all are injected. A server-rendered tag that failed is not detected
+// here, because its error fired before this runs; the readiness timeout covers it.
+export function loadNediAssets() {
+  // The embed reads this identifier when it is constructed.
+  window.AI_AGENT_UI_SOURCE = 'learn';
+
+  if (injected.length || nediDependenciesReady()) return;
+
+  injectNediAssets({ force: false });
+}
+
+// Discards a failed attempt and requests every asset again, including any that a
+// server-rendered tag failed to deliver. An already usable set is kept instead:
+// removing a <script> element does not undo its side effects, so re-requesting it
+// would only cost the stylesheet another round trip.
 export function reloadNediAssets() {
   loadFailed = false;
   if (nediDependenciesReady()) return;
 
   removeNediAssets();
-  loadNediAssets();
+  injectNediAssets({ force: true });
 }

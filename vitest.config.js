@@ -85,6 +85,7 @@ export default defineConfig({
       { find: '@site', replacement: path.resolve(__dirname, './') },
 
       // Mock Docusaurus core modules
+      { find: '@docusaurus/Head', replacement: path.resolve(__dirname, './src/__mocks__/@docusaurus/Head.js') },
       { find: '@docusaurus/Link', replacement: path.resolve(__dirname, './src/__mocks__/@docusaurus/Link.js') },
       { find: '@docusaurus/router', replacement: path.resolve(__dirname, './src/__mocks__/@docusaurus/router.js') },
       { find: '@docusaurus/theme-common/Details', replacement: path.resolve(__dirname, './src/__mocks__/@docusaurus/theme-common/Details.js') },

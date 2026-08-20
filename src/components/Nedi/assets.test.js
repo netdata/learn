@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const freshAssets = async () => {
   vi.resetModules();
@@ -97,7 +97,7 @@ describe('Nedi asset loader', () => {
     loadNediAssets();
 
     expect(injectedElements()).toHaveLength(0);
-    expect(window.AI_AGENT_UI_SOURCE).toBeUndefined();
+    expect(window.AI_AGENT_UI_SOURCE).toBe('learn');
   });
 
   it('reports dependencies as unusable until both the embed and markdown-it exist', async () => {
@@ -138,6 +138,52 @@ describe('Nedi asset loader', () => {
     expect(injectedElements()).toHaveLength(NEDI_ASSETS.length);
   });
 
+  it('adopts a declared asset instead of requesting it twice', async () => {
+    const { NEDI_ASSETS, loadNediAssets } = await freshAssets();
+    const declared = document.createElement('script');
+    declared.src = NEDI_ASSETS[1].src;
+    document.head.appendChild(declared);
+
+    loadNediAssets();
+
+    const scripts = injectedScripts();
+    expect(scripts.filter((script) => script.src === NEDI_ASSETS[1].src)).toEqual([declared]);
+    expect(injectedElements()).toHaveLength(NEDI_ASSETS.length);
+  });
+
+  it('injects nothing when every asset is already declared', async () => {
+    const { NEDI_ASSETS, loadNediAssets } = await freshAssets();
+    NEDI_ASSETS.forEach((asset) => {
+      const element = document.createElement(asset.type === 'css' ? 'link' : 'script');
+      if (asset.type === 'css') {
+        element.rel = 'stylesheet';
+        element.href = asset.src;
+      } else {
+        element.src = asset.src;
+      }
+      document.head.appendChild(element);
+    });
+
+    loadNediAssets();
+
+    expect(injectedElements()).toHaveLength(NEDI_ASSETS.length);
+    expect(window.AI_AGENT_UI_SOURCE).toBe('learn');
+  });
+
+  it('requests every asset again on reload, including declared ones', async () => {
+    const { NEDI_ASSETS, loadNediAssets, reloadNediAssets } = await freshAssets();
+    const declared = document.createElement('script');
+    declared.src = NEDI_ASSETS[1].src;
+    document.head.appendChild(declared);
+    loadNediAssets();
+
+    reloadNediAssets();
+
+    // The declared tag is left alone; a retry re-requests the asset it failed to deliver.
+    expect(declared.isConnected).toBe(true);
+    expect(injectedScripts().filter((script) => script.src === NEDI_ASSETS[1].src)).toHaveLength(2);
+  });
+
   it('replaces a failed injection with fresh elements on reload', async () => {
     const { NEDI_ASSETS, loadNediAssets, reloadNediAssets, nediAssetsFailed } =
       await freshAssets();
@@ -153,5 +199,45 @@ describe('Nedi asset loader', () => {
     expect(second).toHaveLength(NEDI_ASSETS.length);
     expect(second.some((element) => first.includes(element))).toBe(false);
     expect(first.every((element) => element.isConnected === false)).toBe(true);
+  });
+});
+
+describe('Nedi route matching', () => {
+  it('matches the route with and without a trailing slash', async () => {
+    const { NEDI_ROUTE, isNediRoute } = await freshAssets();
+
+    expect(isNediRoute(NEDI_ROUTE)).toBe(true);
+    expect(isNediRoute(`${NEDI_ROUTE}/`)).toBe(true);
+  });
+
+  it('does not match another route or a missing pathname', async () => {
+    const { isNediRoute } = await freshAssets();
+
+    expect(isNediRoute('/docs/netdata-agent')).toBe(false);
+    expect(isNediRoute('/docs/ask-nedi/extra')).toBe(false);
+    expect(isNediRoute('/')).toBe(false);
+    expect(isNediRoute(null)).toBe(false);
+  });
+});
+
+describe('Nedi document pathname', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it('reads the entry URL in the browser', async () => {
+    const { documentPathname } = await freshAssets();
+    window.history.replaceState({}, '', '/docs/ask-nedi');
+
+    expect(documentPathname('/docs/netdata-agent')).toBe('/docs/ask-nedi');
+
+    window.history.replaceState({}, '', '/');
+  });
+
+  it('falls back to the rendered route on the server', async () => {
+    const { documentPathname } = await freshAssets();
+    vi.stubGlobal('window', undefined);
+
+    expect(documentPathname('/docs/ask-nedi')).toBe('/docs/ask-nedi');
   });
 });
