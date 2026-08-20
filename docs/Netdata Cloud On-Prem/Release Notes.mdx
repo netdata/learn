@@ -10,6 +10,34 @@ slug: "/netdata-cloud-on-prem/release-notes"
 
 # Release notes
 
+## 2.6.0 (2026-08-20)
+
+### Features
+
+- Introduced AI features on on-prem, powered by the new `cloud-insights-service`: conversations grounded in your charts and alerts, generated investigation reports, and MCP client support
+- Home page revamp with nodes grouped into hexagons, selectable grouping and sorting, and significantly faster loading
+- Introduced Nodes fleet operations views for inspecting and acting on the fleet at scale
+- Introduced alerts history and detection of misconfigured alerts
+- Silencing rules improvements: timezone selector, active/inactive distinction, automatic deletion on expiration, and correct handling of multi-day recurring windows
+- Custom dashboards: import/export, playlist mode, and new cards including state timeline and alert count
+- New visualizations: heatmap charts, a geomap of node locations, topology maps with network flows, and an SNMP overview tab
+- Added Group Email notification integration, a space-wide channel delivering alert notifications to a single mailing-list address
+- Alert and reachability notifications now include host labels, and Slack/Mattermost notifications show message previews
+- Scaling and performance: Nodes and Alerts now handle rooms of up to 50,000 nodes, and data queries use less memory and return faster
+- New cronjobs notify about misconfigured alerts and clean up expired silencing rules
+- Replaced the Help & Resources panel with the Nedi AI assistant
+- Improved the global date picker
+- SCIM filter matching and sorting are now case-insensitive, per RFC
+- Hardened rate limiting for Agent authentication
+
+### Bug fixes
+
+- Dyncfg: fixed job list corruption with slashes in names, invalid request timeouts, and checkbox rendering
+- Fixed percentage aggregation returning incorrect values on empty points and on multi-agent queries
+- Fixed joining a space from an invitation link
+- SCIM: SSO-to-SCIM mapping now compares emails case-insensitively, and `idp-default` attributes are accepted
+- Node recreation flow stability improvements
+
 ## 2.5.0 (2026-03-13)
 
 ### Features
