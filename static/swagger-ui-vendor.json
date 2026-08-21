@@ -1,0 +1,37 @@
+{
+  "schema_version": 2,
+  "package": "swagger-ui-dist",
+  "version": "5.32.14",
+  "resolved": "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-5.32.14.tgz#bb3a3e738bf17bc2ee2640a711fcc44be76fde4c",
+  "integrity": "sha512-nOA2pSQhcmODMUQZpJHYKNuwniDUqcOWGNaSCOoZv12FdOSJ9JxV95HtyRGNMqEBj6h6lCNTy20TgZDYTSuUIg==",
+  "algorithm": "sha256",
+  "files": {
+    "favicon-16x16.png": "af24ad604dd7b3bcda8f975ab973075f4a2f70a4087944a12f8ef8b63a3e07c2",
+    "favicon-32x32.png": "3ed612f41e050ca5e7000cad6f1cbe7e7da39f65fca99c02e99e6591056e5837",
+    "index.css": "9324807d424565a1639bb29f3754c8d4d45c1009c67674e996e33355f6929ce7",
+    "oauth2-redirect.html": "f3546c5b74b44eac7de5b4193a641b4f23365470c109b490c566bac0de446745",
+    "oauth2-redirect.js": "a5c8a34e09e49737382cc5019446eec7c3db3461963fc5bfe448361d3c5549e9",
+    "swagger-ui-bundle.js": "16d93d5cc19e54c98fb0b81157dbb3bd90780aa36b914e128a643b31e54a93f4",
+    "swagger-ui-bundle.js.LICENSE.txt": "c07853f3704b510a864eb56561ca4f36e0347fdaefc5176611c57575e4b5593d",
+    "swagger-ui-bundle.js.map": "5c0d0705c0079e3c1b24ae88062dfc25968f4f9754de8fa14cbb548af8996954",
+    "swagger-ui-es-bundle-core.js": "4c86932555c419ca780d4ad220e5d02b1a9632da7af14d961ca02d0ade8b0f75",
+    "swagger-ui-es-bundle-core.js.LICENSE.txt": "bf5cc2bed1ccdb8226570e53b495cf514d0344dbc3f8718e59b7ebec9e0d9280",
+    "swagger-ui-es-bundle-core.js.map": "b1845b685bdd581d8512c8c11b59a879f62f38d93bef275e16394e0e08f62b13",
+    "swagger-ui-es-bundle.js": "890638378b1e73061b8332469ef07a30f0865b4b5577f09d0b34a190d7fb5953",
+    "swagger-ui-es-bundle.js.LICENSE.txt": "c07853f3704b510a864eb56561ca4f36e0347fdaefc5176611c57575e4b5593d",
+    "swagger-ui-es-bundle.js.map": "171f05a871126ae4df66ed40a03df7ad0b9731ab4c32fdf69a3abb8cfed35bb2",
+    "swagger-ui-standalone-preset.js": "b6c3e519a7b920b9bfd48eb92521a768da1bc86343b926ef74ba6d481da6844b",
+    "swagger-ui-standalone-preset.js.LICENSE.txt": "ad43bb2dce8515f9b917266073e3b3b132c4778ed7190726004ca0e47f24337e",
+    "swagger-ui-standalone-preset.js.map": "636241e41c2be5a7f2c2f5e6c3f97221119b79f47acefc61b209568a8585bfd4",
+    "swagger-ui.css": "d7f39f764aa18c7b47dd05b9af5613e373e4ac0f3557c2693d52d0abc2464d76",
+    "swagger-ui.css.map": "b973557b18c1bd9bfa0dc6c60b0da1ea7e22b3b56e88f2e1a1b9367f504887ee",
+    "swagger-ui.js": "d37a2590d5f53c32ae3608282d118ab34d528c21237e9f24d9ddb642e82a1122",
+    "swagger-ui.js.map": "a2962a4c24162f3254a3e4099ae3bd1bf3f2579a76795d4542eb1d838da80b78"
+  },
+  "local_overrides": {
+    "oauth2-redirect.html": {
+      "reason": "Adds the non-empty document title required by the Learn static-site gate without changing OAuth redirect behavior.",
+      "sha256": "f7547528cac32efc2774cf2bac10461c9e2d2361c68aa32d83cc682fcbba22ce"
+    }
+  }
+}

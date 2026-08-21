@@ -13696,6 +13696,13 @@ swagger-client@^3.37.7:
     "@swagger-api/apidom-parser-adapter-openapi-yaml-3-2" "^1.11.3"
     "@swagger-api/apidom-parser-adapter-yaml-1-2" "^1.11.3"
 
+swagger-ui-dist@5.32.14:
+  version "5.32.14"
+  resolved "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-5.32.14.tgz#bb3a3e738bf17bc2ee2640a711fcc44be76fde4c"
+  integrity sha512-nOA2pSQhcmODMUQZpJHYKNuwniDUqcOWGNaSCOoZv12FdOSJ9JxV95HtyRGNMqEBj6h6lCNTy20TgZDYTSuUIg==
+  dependencies:
+    "@scarf/scarf" "=1.4.0"
+
 swagger-ui@^5.32.11:
   version "5.32.11"
   resolved "https://registry.yarnpkg.com/swagger-ui/-/swagger-ui-5.32.11.tgz#e5b782639c8117ae2075d67ed4b258097dd9b7c4"

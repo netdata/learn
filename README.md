@@ -57,6 +57,15 @@ yarn start
 
 This command starts a local development server and opens up a browser window. Markdown changes are reflected live without having to restart the server (removing/adding files will need a re-run of the command).
 
+### Static Swagger UI distribution
+
+`/api` serves the static Swagger UI distribution. Its exact source package, Yarn resolution, and
+SHA-256 file hashes are recorded in `static/swagger-ui-vendor.json`. After intentionally changing
+the exact `swagger-ui-dist` development dependency, run `yarn vendor:swagger-ui` and then
+`yarn test:swagger-ui-vendor`. The vendor command updates only the published distribution assets;
+`static/api.html` and `static/swagger-initializer.js` remain Netdata-specific configuration. The
+vendor contract also records the title-only local accessibility overlay on its OAuth redirect page.
+
 ## Ingest and process documentation files
 
 As explained in the [contributing to Netdata Learn](#contributing-to-netdata-learn) section above,
