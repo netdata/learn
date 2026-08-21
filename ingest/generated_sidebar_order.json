@@ -2,7 +2,7 @@
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
   "source_sha256": "169ec6b8d7adc04fa72c3d8e22708e629fa0e03e30e80fbc9ca6eb09b6231d39",
-  "source_corpus_sha256": "652a03f07481337b31f226a05c073e01087cbbfe8084afac96ef174631dc07dc",
+  "source_corpus_sha256": "6601e4668476e13fbd03868bc59c410078c9b4198ddcffc1c8ec352221fb64f4",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -1715,5 +1715,5 @@
       "position": 170
     }
   ],
-  "full_ingest_identity_sha256": "c7690b3088e5bfedef136fafce3d32a2c242c8d64a8ec7d0e167aba31de5e7fd"
+  "full_ingest_identity_sha256": "3d80b742143b093520092f7075beca4cebb2235cebdb8fdfc87059128ea574bb"
 }
