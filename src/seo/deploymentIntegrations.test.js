@@ -13,6 +13,7 @@ const docusaurus = require('../../docusaurus.config.js');
 describe('shared deployment integrations', () => {
   it('runs the exact C8 bundle after generated output activates strict gates', () => {
     const command = packageJson.scripts['build:netlify'];
+    const swaggerVendor = 'node scripts/verify-swagger-ui-vendor.js';
     const install = 'npm ci --prefix scripts/site-build-gate --ignore-scripts --no-audit';
     const build = 'docusaurus build';
     const gateRunner = 'node scripts/run-post-build-gates.mjs';
@@ -30,8 +31,10 @@ describe('shared deployment integrations', () => {
       '--format',
       'json',
     ]);
+    expect(command).toContain(swaggerVendor);
     expect(command).toContain(install);
     expect(command).toContain(gateRunner);
+    expect(command.indexOf(swaggerVendor)).toBeLessThan(command.indexOf(install));
     expect(command.indexOf(install)).toBeLessThan(command.indexOf(build));
     expect(command.indexOf(build)).toBeLessThan(command.indexOf(gateRunner));
 
