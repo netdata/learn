@@ -66,6 +66,16 @@ the exact `swagger-ui-dist` development dependency, run `yarn vendor:swagger-ui`
 `static/api.html` and `static/swagger-initializer.js` remain Netdata-specific configuration. The
 vendor contract also records the title-only local accessibility overlay on its OAuth redirect page.
 
+### Dependency update authority
+
+The root JavaScript dependency authority is `package.json` plus Yarn Classic `yarn.lock`. Do not
+add a root `package-lock.json`. The npm lock below `scripts/site-build-gate/` is a separate,
+website-owned vendor contract and remains npm-managed. Dependabot watches the root Yarn graph and
+GitHub Actions; owner-controlled vendor packages are intentionally excluded from automatic updates.
+
+Root Yarn resolutions are only used for security releases that are compatible with every selected
+parent range. Do not use a resolution to bypass an incompatible upstream dependency constraint.
+
 ## Ingest and process documentation files
 
 As explained in the [contributing to Netdata Learn](#contributing-to-netdata-learn) section above,
