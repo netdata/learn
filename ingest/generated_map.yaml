@@ -3,7 +3,7 @@
   learn_status: Published
   learn_rel_path: Welcome to Netdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation.md
@@ -50,7 +50,7 @@
   learn_status: Published
   learn_rel_path: Welcome to Netdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/reporting.md
@@ -81,7 +81,7 @@
   learn_status: Published
   learn_rel_path: root
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/Demo-Sites.md
@@ -89,7 +89,7 @@
   learn_status: Published
   learn_rel_path: root
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/deployment-guides/standalone-deployment.md
@@ -97,7 +97,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/PLATFORM_SUPPORT.md
@@ -113,7 +113,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/README.md
@@ -121,7 +121,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Installation
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kickstart.md
@@ -155,7 +155,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Installation/Linux
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/offline.md
@@ -172,7 +172,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Installation/Windows
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/install/windows-release-channels.md
@@ -189,7 +189,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Installation
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/kubernetes.md
@@ -207,7 +207,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Installation
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/macos.md
@@ -215,7 +215,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Installation
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/freebsd.md
@@ -286,7 +286,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Maintenance
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/start-stop-restart.md
@@ -339,7 +339,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Resource Utilization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/cpu-requirements.md
@@ -347,7 +347,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Resource Utilization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/ram-requirements.md
@@ -355,7 +355,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Resource Utilization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/bandwidth-requirements.md
@@ -363,7 +363,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Resource Utilization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/sizing-netdata-agents/disk-requirements-and-retention.md
@@ -371,7 +371,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Resource Utilization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/extreme-cardinality-protection.md
@@ -465,7 +465,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Configuration/Securing Agents
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configure-netdata-for-cybersecurity-platforms.md
@@ -490,7 +490,7 @@
   learn_rel_path: Netdata Agent/Configuration/Securing Agents/Running the Agent behind
     a reverse proxy
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-nginx.md
@@ -499,7 +499,7 @@
   learn_rel_path: Netdata Agent/Configuration/Securing Agents/Running the Agent behind
     a reverse proxy
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-haproxy.md
@@ -508,7 +508,7 @@
   learn_rel_path: Netdata Agent/Configuration/Securing Agents/Running the Agent behind
     a reverse proxy
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-apache.md
@@ -517,7 +517,7 @@
   learn_rel_path: Netdata Agent/Configuration/Securing Agents/Running the Agent behind
     a reverse proxy
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-lighttpd.md
@@ -526,7 +526,7 @@
   learn_rel_path: Netdata Agent/Configuration/Securing Agents/Running the Agent behind
     a reverse proxy
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-caddy.md
@@ -535,7 +535,7 @@
   learn_rel_path: Netdata Agent/Configuration/Securing Agents/Running the Agent behind
     a reverse proxy
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/running-the-netdata-agent-behind-a-reverse-proxy/Running-behind-h2o.md
@@ -544,7 +544,7 @@
   learn_rel_path: Netdata Agent/Configuration/Securing Agents/Running the Agent behind
     a reverse proxy
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/optimize-the-netdata-agents-performance.md
@@ -561,7 +561,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Configuration
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-agent/configuration/using-custom-ca-certificates-with-netdata.md
@@ -569,7 +569,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent/Configuration
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/daemon/README.md
@@ -577,7 +577,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/database/README.md
@@ -585,7 +585,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md
@@ -593,7 +593,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/registry/README.md
@@ -652,7 +652,7 @@
   learn_status: Published
   learn_rel_path: Netdata Agent
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/deployment-guides/deployment-with-centralization-points.md
@@ -660,7 +660,7 @@
   learn_status: Published
   learn_rel_path: Netdata Parents
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/best-practices.md
@@ -668,7 +668,7 @@
   learn_status: Published
   learn_rel_path: Netdata Parents
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/streaming/README.md
@@ -685,7 +685,7 @@
   learn_status: Published
   learn_rel_path: Netdata Parents
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/streaming-routing.md
@@ -693,7 +693,7 @@
   learn_status: Published
   learn_rel_path: Netdata Parents
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/nodes-ephemerality.md
@@ -701,7 +701,7 @@
   learn_status: Published
   learn_rel_path: Netdata Parents
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/README.md
@@ -709,7 +709,7 @@
   learn_status: Published
   learn_rel_path: Netdata Parents/Metrics Centralization Points
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/configuration.md
@@ -726,7 +726,7 @@
   learn_status: Published
   learn_rel_path: Netdata Parents/Metrics Centralization Points
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents.md
@@ -761,7 +761,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/claim/README.md
@@ -769,7 +769,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/organize-your-infrastructure-invite-your-team.md
@@ -777,7 +777,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud/Spaces and Rooms
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-rule-based-room-assignment.md
@@ -785,7 +785,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud/Spaces and Rooms
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/README.md
@@ -793,7 +793,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud/Authentication & Authorization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/enterprise-sso-authentication.md
@@ -801,7 +801,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud/Authentication & Authorization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/role-based-access-model.md
@@ -817,7 +817,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud/Authentication & Authorization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/cloud-authentication/integrations/oidc.md
@@ -858,7 +858,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/aclk/README.md
@@ -875,7 +875,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-states-and-transitions.md
@@ -898,7 +898,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/delete/netdata/account.md
@@ -906,7 +906,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/README.md
@@ -914,7 +914,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud On-Prem
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md
@@ -931,7 +931,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud On-Prem
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/image-signature-verification.md
@@ -939,7 +939,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud On-Prem
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/hardening-guide.md
@@ -947,7 +947,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud On-Prem
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/netpol.md
@@ -955,7 +955,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud On-Prem
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/poc-without-k8s.md
@@ -963,7 +963,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud On-Prem
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/ecr-mirror.md
@@ -980,7 +980,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud On-Prem
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/netdata-cloud-onprem/RELEASE-NOTES.md
@@ -988,7 +988,7 @@
   learn_status: Published
   learn_rel_path: Netdata Cloud On-Prem
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/README.md
@@ -996,7 +996,7 @@
   learn_status: Published
   learn_rel_path: Collecting Metrics
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/REFERENCE.md
@@ -1004,7 +1004,7 @@
   learn_status: Published
   learn_rel_path: Collecting Metrics
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/SERVICE-DISCOVERY.md
@@ -1012,7 +1012,7 @@
   learn_status: Published
   learn_rel_path: Collecting Metrics/Service Discovery
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/dockersd/README.md
@@ -1074,7 +1074,7 @@
   learn_status: Published
   learn_rel_path: Collecting Metrics
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/cgroups.plugin/README.md
@@ -17307,7 +17307,7 @@
   learn_status: Published
   learn_rel_path: Exporting Metrics
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/README.md
@@ -17460,7 +17460,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/network-flows/quick-start.md
@@ -17747,7 +17747,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows/Visualization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/network-flows/visualization/time-series.md
@@ -17755,7 +17755,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows/Visualization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/network-flows/visualization/maps-globe.md
@@ -17763,7 +17763,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows/Visualization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/network-flows/visualization/filters-facets.md
@@ -17771,7 +17771,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows/Visualization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/network-flows/visualization/dashboard-cards.md
@@ -17779,7 +17779,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows/Visualization
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/network-flows/retention-querying.md
@@ -17787,7 +17787,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/network-flows/sizing-capacity.md
@@ -17804,7 +17804,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/network-flows/investigation-playbooks.md
@@ -17812,7 +17812,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/network-flows/anti-patterns.md
@@ -17820,7 +17820,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/network-flows/troubleshooting.md
@@ -17828,7 +17828,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Network Flows
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/snmp-traps/README.md
@@ -17845,7 +17845,7 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/SNMP Traps
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/snmp-traps/quick-start.md
@@ -18022,7 +18022,7 @@
   learn_status: Published
   learn_rel_path: Logs/Systemd Journal Logs
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows-events.plugin/README.md
@@ -18030,7 +18030,7 @@
   learn_status: Published
   learn_rel_path: Logs/Windows Event Logs
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md
@@ -18038,7 +18038,7 @@
   learn_status: Published
   learn_rel_path: Logs/log2journal
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md
@@ -18046,7 +18046,7 @@
   learn_status: Published
   learn_rel_path: Logs
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/README.md
@@ -18054,7 +18054,7 @@
   learn_status: Published
   learn_rel_path: Logs/Logs Centralization Points with systemd-journald
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates.md
@@ -18063,7 +18063,7 @@
   learn_status: Published
   learn_rel_path: Logs/Logs Centralization Points with systemd-journald
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption.md
@@ -18071,7 +18071,7 @@
   learn_status: Published
   learn_rel_path: Logs/Logs Centralization Points with systemd-journald
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/active_journal_centralization_guide_no_encryption.md
@@ -18079,7 +18079,7 @@
   learn_status: Published
   learn_rel_path: Logs/Logs Centralization Points with systemd-journald
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/macos_unified_logs.md
@@ -18136,7 +18136,7 @@
   learn_status: Published
   learn_rel_path: Live View
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/functions/databases.md
@@ -18153,7 +18153,7 @@
   learn_status: Published
   learn_rel_path: Alerts & Notifications
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/creating-alerts-with-netdata-alerts-configuration-manager.md
@@ -18161,7 +18161,7 @@
   learn_status: Published
   learn_rel_path: Alerts & Notifications
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/alerts-and-notifications/notifications/README.md
@@ -18178,7 +18178,7 @@
   learn_status: Published
   learn_rel_path: Alerts & Notifications/Notifications/Agent Dispatched Notifications
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/health/notifications/alerta/README.md
@@ -18723,7 +18723,7 @@
   learn_status: Published
   learn_rel_path: Alerts & Notifications
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/health/alert-configuration-ordering.md
@@ -18737,7 +18737,7 @@
   - precedence
   - templates
   - alarms
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/health/overriding-stock-alerts.md
@@ -18751,7 +18751,7 @@
   - stock
   - templates
   - alarms
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/health/README.md
@@ -18759,7 +18759,7 @@
   learn_status: Published
   learn_rel_path: Alerts & Notifications
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/machine-learning-and-assisted-troubleshooting.md
@@ -18767,7 +18767,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/conversations.md
@@ -18779,7 +18779,7 @@
   - chat
   - real-time
   - live exhibits
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-insights.md
@@ -18787,7 +18787,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Insights
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/infrastructure-summary.md
@@ -18795,7 +18795,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Insights
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/performance-optimization.md
@@ -18803,7 +18803,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Insights
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/capacity-planning.md
@@ -18811,7 +18811,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Insights
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/anomaly-analysis.md
@@ -18819,7 +18819,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Insights
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/scheduled-reports.md
@@ -18827,7 +18827,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Insights
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/investigations/index.md
@@ -18835,7 +18835,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Investigations
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/investigations/custom-investigations.md
@@ -18843,7 +18843,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Investigations
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/investigations/scheduled-investigations.md
@@ -18851,7 +18851,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Investigations
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/troubleshooting/index.md
@@ -18859,7 +18859,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Troubleshooting
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/troubleshooting/troubleshoot.md
@@ -18876,7 +18876,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Troubleshooting
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md
@@ -18904,7 +18904,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Anomaly Detection
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/ml/ml-configuration.md
@@ -18912,7 +18912,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/Anomaly Detection
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/ml-ai/ml-anomaly-detection/ml-accuracy.md
@@ -18929,7 +18929,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/ai-chat-netdata.md
@@ -18937,7 +18937,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/ai-devops-copilot.md
@@ -18945,7 +18945,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-desktop.md
@@ -18953,7 +18953,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/cursor.md
@@ -18961,7 +18961,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/vs-code.md
@@ -18969,7 +18969,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/jetbrains-ides.md
@@ -18977,7 +18977,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-code.md
@@ -18985,7 +18985,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/gemini-cli.md
@@ -18993,7 +18993,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/codex-cli.md
@@ -19001,7 +19001,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/crush.md
@@ -19009,7 +19009,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/opencode.md
@@ -19017,7 +19017,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP/Supported AI Clients
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-connections.md
@@ -19025,7 +19025,7 @@
   learn_status: Published
   learn_rel_path: Netdata AI/MCP
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/README.md
@@ -19033,7 +19033,7 @@
   learn_status: Published
   learn_rel_path: Dashboards and Charts
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/home-tab.md
@@ -19050,7 +19050,7 @@
   learn_status: Published
   learn_rel_path: Dashboards and Charts/Tabs
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/anomaly-advisor-tab.md
@@ -19093,7 +19093,7 @@
   learn_status: Published
   learn_rel_path: Dashboards and Charts/Tabs
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs.md
@@ -19101,7 +19101,7 @@
   learn_status: Published
   learn_rel_path: Dashboards and Charts/Tabs
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/nodes-tab.md
@@ -19126,7 +19126,7 @@
   learn_status: Published
   learn_rel_path: Dashboards and Charts
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata-grafana-datasource-plugin/edit/master/README.md
@@ -19134,7 +19134,7 @@
   learn_status: Published
   learn_rel_path: Dashboards and Charts
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/netdata-charts.md
@@ -19142,7 +19142,7 @@
   learn_status: Published
   learn_rel_path: Dashboards and Charts
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/expanded-chart-analysis.md
@@ -19150,7 +19150,7 @@
   learn_status: Published
   learn_rel_path: Dashboards and Charts
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/NIDL-Framework.md
@@ -19167,7 +19167,7 @@
   learn_status: Published
   learn_rel_path: Dashboards and Charts
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/visualization-date-and-time-controls.md
@@ -19175,7 +19175,7 @@
   learn_status: Published
   learn_rel_path: Dashboards and Charts
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/security-and-privacy-design/README.md
@@ -19219,7 +19219,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/netdata-support-bundle.md
@@ -19242,7 +19242,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/README.md
@@ -19250,7 +19250,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Queries
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/average/README.md
@@ -19258,7 +19258,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Queries
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/countif/README.md
@@ -19266,7 +19266,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Queries
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/des/README.md
@@ -19274,7 +19274,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Queries
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/incremental_sum/README.md
@@ -19282,7 +19282,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Queries
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/max/README.md
@@ -19290,7 +19290,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Queries
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/median/README.md
@@ -19307,7 +19307,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Queries
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/percentile/README.md
@@ -19324,7 +19324,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Queries
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/stddev/README.md
@@ -19332,7 +19332,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Queries
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/sum/README.md
@@ -19340,7 +19340,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Queries
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/trimmed_mean/README.md
@@ -19357,7 +19357,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Formatters
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/formatters/csv/README.md
@@ -19383,7 +19383,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Formatters
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/formatters/value/README.md
@@ -19391,7 +19391,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API/Formatters
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/badges/README.md
@@ -19399,7 +19399,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/REST API
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/dyncfg.md
@@ -19416,7 +19416,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/.github/edit/main/CONTRIBUTING.md
@@ -19424,7 +19424,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/.github/edit/main/CODE_OF_CONDUCT.md
@@ -19432,7 +19432,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/.github/edit/main/SECURITY.md
@@ -19449,7 +19449,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/External Plugins
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/README.md
@@ -19476,7 +19476,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/External Plugins
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/charts.d.plugin/README.md
@@ -19484,7 +19484,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/External Plugins
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/profile.plugin/README.md
@@ -19492,7 +19492,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/External Plugins
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/plugins.d/FUNCTION_UI_REFERENCE.md
@@ -19500,7 +19500,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/External Plugins
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/plugins.d/FUNCTION_UI_DEVELOPER_GUIDE.md
@@ -19508,7 +19508,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/External Plugins
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guidelines.md
@@ -19516,7 +19516,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/Contribute to the documentation
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/style-guide.md
@@ -19534,7 +19534,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/README.md
@@ -19542,7 +19542,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/adaptive_resortable_list/README.md
@@ -19550,7 +19550,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/aral/README.md
@@ -19558,7 +19558,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/avl/README.md
@@ -19566,7 +19566,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/buffer/README.md
@@ -19574,7 +19574,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/circular_buffer/README.md
@@ -19582,7 +19582,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/clocks/README.md
@@ -19599,7 +19599,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md
@@ -19607,7 +19607,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md
@@ -19615,7 +19615,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/onewayalloc/README.md
@@ -19623,7 +19623,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/popen/README.md
@@ -19631,7 +19631,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/parser/README.md
@@ -19639,7 +19639,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/procfile/README.md
@@ -19647,7 +19647,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/simple_pattern/README.md
@@ -19664,7 +19664,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/storage_number/README.md
@@ -19672,7 +19672,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/string/README.md
@@ -19680,7 +19680,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/threads/README.md
@@ -19688,7 +19688,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/url/README.md
@@ -19696,7 +19696,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/worker_utilization/README.md
@@ -19704,7 +19704,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/dictionary/README.md
@@ -19712,7 +19712,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/july/README.md
@@ -19720,7 +19720,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/libnetdata
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/socket/README.md
@@ -19737,7 +19737,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/REDISTRIBUTED.md
@@ -19745,7 +19745,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md
@@ -19753,7 +19753,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/import-export-print-snapshot.md
@@ -19779,7 +19779,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/collect-unbound-metrics.md
@@ -19787,7 +19787,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/monitor-hadoop-cluster.md
@@ -19795,7 +19795,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/developer-and-contributor-corner/monitor-debug-applications-ebpf.md
@@ -19812,7 +19812,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/Build the Netdata Agent Yourself
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/maintainers/README.md
@@ -19820,7 +19820,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/Build the Netdata Agent Yourself
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/source.md
@@ -19837,7 +19837,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/Build the Netdata Agent Yourself
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md
@@ -19854,7 +19854,7 @@
   learn_status: Published
   learn_rel_path: Developer and Contributor Corner/Build the Netdata Agent Yourself
   keywords: null
-  description: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/methods/manual.md
