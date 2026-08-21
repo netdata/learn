@@ -87,7 +87,7 @@
 		"postcss-loader": "^8.2.0",
 		"postcss-preset-env": "^11.1.2",
 		"swagger-ui-dist": "5.32.14",
-		"tailwindcss": "^4.1.18",
+		"tailwindcss": "^4.3.3",
 		"vite": "^8.1.5",
 		"vitest": "^4.1.8"
 	},
