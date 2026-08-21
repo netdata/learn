@@ -78,18 +78,18 @@
 		"@testing-library/dom": "^10.4.1",
 		"@testing-library/jest-dom": "^6.9.1",
 		"@testing-library/react": "^16.3.2",
-		"@testing-library/user-event": "^14.6.1",
+		"@testing-library/user-event": "^14.6.5",
 		"@vitejs/plugin-react": "^5.2.0",
-		"@vitest/coverage-v8": "^4.1.8",
+		"@vitest/coverage-v8": "^4.1.11",
 		"autoprefixer": "^10.5.4",
-		"happy-dom": "^20.8.9",
+		"happy-dom": "^20.11.2",
 		"jsdom": "^28.0.0",
 		"postcss-loader": "^8.2.1",
 		"postcss-preset-env": "^11.4.0",
 		"swagger-ui-dist": "5.32.14",
 		"tailwindcss": "^4.3.3",
-		"vite": "^8.1.5",
-		"vitest": "^4.1.8"
+		"vite": "^8.2.1",
+		"vitest": "^4.1.11"
 	},
 	"browserslist": {
 		"production": [
