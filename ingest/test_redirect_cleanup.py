@@ -143,14 +143,14 @@ class RedirectCleanupTests(unittest.TestCase):
             mock.patch.object(
                 redirects,
                 "reductTonew_learn_pathFromGHLinksCorrelation",
-                return_value={},
+                return_value={"https://github.com/netdata/netdata/blob/master/docs/second.md": "/second"},
             ),
             mock.patch.object(redirects, "addMovedRedirects", return_value={}),
             mock.patch.object(redirects, "append_entries_to_json"),
             mock.patch.object(
                 redirects,
                 "readLegacyLearnDocMap",
-                return_value={"/old": "/second"},
+                return_value={"/old": "https://github.com/netdata/netdata/blob/master/docs/second.md"},
             ),
             mock.patch.object(
                 redirects,

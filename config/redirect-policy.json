@@ -115,5 +115,17 @@
     ["/docs/agent/collectors/proc.plugin", "/docs/collecting-metrics"],
     ["/dbengine-calc", "/docs/netdata-agent/configuration/database"],
     ["/docs/ask-netdata", "/docs/ask-nedi"]
+  ],
+  "legacy_catalogue_retirements": [
+    {
+      "route": "/docs/logs",
+      "source": "https://github.com/netdata/netdata/blob/master/docs/category-overview-pages/working-with-logs.md",
+      "reason": "The route /docs/logs is served by the generated Logs grid page; the catalogue source is not a published page and no redirect applies.",
+      "evidence": [
+        "docs/category-overview-pages/working-with-logs.md exists on netdata master c6a3842bd819 but is not a published Learn page (absent from docs/.map/map.yaml)",
+        "docs/Logs/Logs.mdx is the generated Logs grid page with learn_link https://learn.netdata.cloud/docs/logs, so the route renders and a catalogue redirect would shadow it"
+      ],
+      "reviewed": "2026-08-21"
+    }
   ]
 }
