@@ -226,6 +226,194 @@ def _target_identity(target):
 	return _normalize_route(target)
 
 
+POLICY_PATH = "config/redirect-policy.json"
+LEGACY_CATALOGUE_PATH = "LegacyLearnCorrelateLinksWithGHURLs.json"
+RETIREMENT_FIELDS = ("route", "source", "reason", "evidence", "reviewed")
+
+
+class LegacyRedirectGateError(Exception):
+	"""A legacy catalogue entry is neither resolved, retained by a live tracked redirect, nor retired."""
+
+
+def _is_external_target(target):
+	return target.startswith("https://") or target.startswith("http://")
+
+
+def read_legacy_catalogue_retirements(policy_path=POLICY_PATH):
+	"""Return the reviewed catalogue retirements keyed by normalized route.
+
+	Every retirement must carry the route, the catalogue source it retires, the reason,
+	the source-history evidence, and the review date. Incomplete entries are rejected so
+	the inventory cannot widen silently.
+	"""
+	policy_file = pathlib.Path(policy_path)
+	if not policy_file.is_file():
+		return {}
+	policy = json.loads(policy_file.read_text(encoding="utf-8"))
+	retirements = {}
+	for entry in policy.get("legacy_catalogue_retirements", []):
+		missing = [
+			field
+			for field in RETIREMENT_FIELDS
+			if not entry.get(field) or (isinstance(entry.get(field), list) and not any(entry[field]))
+		]
+		if missing:
+			raise ValueError(
+				f"Incomplete legacy catalogue retirement {entry.get('route')!r}: missing {', '.join(missing)}"
+			)
+		route = _normalize_route(entry["route"])
+		if route in retirements:
+			raise ValueError(f"Duplicate legacy catalogue retirement for {route}")
+		retirements[route] = entry
+	return retirements
+
+
+def _covering_rule(route, exact_rules, wildcard_rules):
+	"""Return the target a set of redirect rules produces for route, or None."""
+	target = exact_rules.get(route)
+	if target is not None:
+		return target
+	for source_prefix, target_prefix in wildcard_rules:
+		if route.startswith(source_prefix):
+			return target_prefix + route[len(source_prefix):]
+	return None
+
+
+def gate_legacy_redirects(
+	legacy_redirects,
+	tracked_redirects,
+	active_routes,
+	static_path="static.toml",
+	policy_path=POLICY_PATH,
+):
+	"""Classify catalogue-derived redirects before they are merged with the tracked rules.
+
+	Each legacy route is one of:
+	- resolved: the catalogue source is a published page, so its current redirect is generated;
+	- retained: the source is unresolved but a static rule or a tracked redirect to a live page
+	  already covers the route, so that redirect is kept and the stale entry is reported;
+	- retired: the source is unresolved and config/redirect-policy.json records a reviewed
+	  retirement for exactly this route and source;
+	- failed: anything else. The caller must fail instead of dropping the entry.
+
+	Static rules are human-owned and verified against rendered routes by the post-build
+	redirect gate, so they are trusted without a liveness check; tracked dynamic rules must
+	target a route in active_routes.
+	"""
+	active = {_normalize_route(route) for route in active_routes}
+	tracked_exact = {
+		_normalize_route(source): target for source, target in tracked_redirects.items() if "*" not in source
+	}
+	tracked_wildcards = [
+		(source[:-1], target[: -len(":splat")])
+		for source, target in tracked_redirects.items()
+		if source.endswith("*") and target.endswith(":splat")
+	]
+	# The static section and the policy are consulted only for unresolved entries.
+	coverage = {}
+
+	def reviewed_coverage():
+		if not coverage:
+			static_rules = parseAllRedirects(readRawStaticRedirectsFromFile(static_path))
+			coverage["retirements"] = read_legacy_catalogue_retirements(policy_path)
+			coverage["static_exact"] = {
+				_normalize_route(source): target for source, target in static_rules if "*" not in source
+			}
+			coverage["static_wildcards"] = [
+				(source[:-1], target[: -len(":splat")])
+				for source, target in static_rules
+				if source.endswith("*") and target.endswith(":splat")
+			]
+		return coverage
+
+	result = {"resolved": {}, "retained": [], "retired": [], "failed": []}
+	for route, target in legacy_redirects.items():
+		if not _is_external_target(target):
+			result["resolved"][route] = target
+			continue
+		identity = _normalize_route(route)
+		reviewed = reviewed_coverage()
+		retirement = reviewed["retirements"].get(identity)
+		if retirement is not None:
+			if retirement["source"] == target:
+				result["retired"].append({"route": route, "source": target})
+				continue
+			result["failed"].append(
+				{
+					"route": route,
+					"source": target,
+					"detail": f"policy retirement names a different source: {retirement['source']}",
+				}
+			)
+			continue
+		static_target = _covering_rule(identity, reviewed["static_exact"], reviewed["static_wildcards"])
+		if static_target is not None:
+			result["retained"].append(
+				{"route": route, "source": target, "redirect": static_target, "kind": "static"}
+			)
+			continue
+		tracked_target = _covering_rule(identity, tracked_exact, tracked_wildcards)
+		if tracked_target is not None:
+			if not _is_external_target(tracked_target) and _normalize_route(tracked_target) in active:
+				result["retained"].append(
+					{"route": route, "source": target, "redirect": tracked_target, "kind": "tracked"}
+				)
+				continue
+			result["failed"].append(
+				{
+					"route": route,
+					"source": target,
+					"detail": f"tracked redirect target is not a published page: {tracked_target}",
+				}
+			)
+			continue
+		result["failed"].append({"route": route, "source": target, "detail": "no tracked redirect"})
+	return result
+
+
+def format_legacy_redirect_report(gate_result):
+	lines = [
+		"### Legacy redirect catalogue gate ###",
+		f"Resolved catalogue entries: {len(gate_result['resolved'])}",
+		f"Retired by {POLICY_PATH}: {len(gate_result['retired'])}",
+		f"Stale catalogue entries kept by an existing redirect: {len(gate_result['retained'])}",
+	]
+	for entry in gate_result["retained"]:
+		lines.append(
+			f"  - STALE https://learn.netdata.cloud{entry['route']} -> {entry['redirect']} "
+			f"({entry['kind']} redirect kept) | missing source: {entry['source']}"
+		)
+	if gate_result["retained"]:
+		lines.append(
+			"  Migrate each stale entry in "
+			f"{LEGACY_CATALOGUE_PATH}: repoint it to the GitHub source of the page it should reach, "
+			f"or record a reviewed retirement in {POLICY_PATH}."
+		)
+	return "\n".join(lines)
+
+
+def format_legacy_redirect_failure(gate_result):
+	failed = gate_result["failed"]
+	lines = [
+		"### LEGACY REDIRECT CATALOGUE GATE FAILED ###",
+		f"{len(failed)} historical learn.netdata.cloud URL(s) in {LEGACY_CATALOGUE_PATH} point at a GitHub "
+		"source that is not a published Learn page and have neither a live tracked redirect nor a reviewed "
+		"retirement. Without a redirect these URLs return 404.",
+	]
+	for entry in failed:
+		lines.append(
+			f"  - https://learn.netdata.cloud{entry['route']} | missing source: {entry['source']} "
+			f"| {entry['detail']}"
+		)
+	lines.append(
+		"Do not weaken this gate. A Learn catalogue migration is required in netdata/learn: repoint each "
+		f"entry in {LEGACY_CATALOGUE_PATH} to the GitHub source of the page it should reach (the moved file, "
+		"or a reviewed replacement page), or record a reviewed retirement with route, source, reason, "
+		f"evidence and review date under legacy_catalogue_retirements in {POLICY_PATH}."
+	)
+	return "\n".join(lines)
+
+
 def clean_redirects(redirects, active_routes=()):
 	"""Remove redirects that shadow live routes and collapse internal chains."""
 	active = {_normalize_route(route) for route in active_routes}
@@ -303,7 +491,7 @@ def discover_current_routes(docs_path="docs", sitemap_path=None):
 
 
 def write_netlify_config(
-	redirects, output_path="netlify.toml", static_path="static.toml"
+	redirects, output_path="netlify.toml", static_path="static.toml", policy_path=POLICY_PATH
 ):
 	static_part = readRawStaticRedirectsFromFile(static_path)
 	static_rules = parseAllRedirects(static_part)
@@ -313,10 +501,10 @@ def write_netlify_config(
 		for source, target in static_rules
 		if source.endswith("*") and target.endswith(":splat")
 	]
-	policy_path = pathlib.Path("config/redirect-policy.json")
+	policy_file = pathlib.Path(policy_path)
 	retired_sources = set()
-	if policy_path.is_file():
-		retired_sources = set(json.loads(policy_path.read_text(encoding="utf-8"))["retired_wildcard_sources"])
+	if policy_file.is_file():
+		retired_sources = set(json.loads(policy_file.read_text(encoding="utf-8"))["retired_wildcard_sources"])
 
 	owned_redirects = {}
 	for source, target in redirects.items():
@@ -381,36 +569,43 @@ def refresh_current_netlify_config():
 	return redirects
 
 
-def main(GHLinksCorrelation, ignored_github_repositories=()):
-
+def main(
+	GHLinksCorrelation,
+	ignored_github_repositories=(),
+	netlify_path="netlify.toml",
+	static_path="static.toml",
+	policy_path=POLICY_PATH,
+):
 	mapping = reductTonew_learn_pathFromGHLinksCorrelation(GHLinksCorrelation)
 	append_entries_to_json(addMovedRedirects(mapping))
-	# print(GHLinksCorrelation)
-	oldLearn = readLegacyLearnDocMap("LegacyLearnCorrelateLinksWithGHURLs.json")
-	# print(oldLearn)
+	oldLearn = readLegacyLearnDocMap(LEGACY_CATALOGUE_PATH)
 	oldLearn_redirects = UpdateGHLinksBasedOnMap(
 		mapping,
 		oldLearn,
 		ignored_github_repositories=ignored_github_repositories,
 	)
-	# print(mapping)
 
-	# print(oldLearn)
-	finalDict = combineDictsOverwrite(readRedirectsFromFile("netlify.toml"), oldLearn_redirects)
-	# print(finalDict)
-
+	tracked_redirects = readRedirectsFromFile(netlify_path)
 	active_routes = set(mapping.values())
+	# Unresolved catalogue entries never reach clean_redirects: they are retained by an
+	# existing redirect, retired by policy, or fatal. Only resolved entries are merged.
+	gate_result = gate_legacy_redirects(
+		oldLearn_redirects,
+		tracked_redirects,
+		active_routes,
+		static_path=static_path,
+		policy_path=policy_path,
+	)
+	print(format_legacy_redirect_report(gate_result))
+	if gate_result["failed"]:
+		raise LegacyRedirectGateError(format_legacy_redirect_failure(gate_result))
+
+	finalDict = combineDictsOverwrite(tracked_redirects, gate_result["resolved"])
 	finalDict = clean_redirects(finalDict, active_routes)
-	# print(unPackedDocument)
-	# print(readRawStaticRedirectsFromFile("netlify.toml"))
-	
-	# print("Links from the legacy learn that are not matched:")
-	# for key, value in finalDict.items():
-	# 	if value.startswith("https://"):
-	# 		print(key, value)
-	
-	write_netlify_config(finalDict)
-	# print(unPackedDocument)
+	write_netlify_config(
+		finalDict, output_path=netlify_path, static_path=static_path, policy_path=policy_path
+	)
+	return gate_result
 
 
 if __name__ == "__main__":
