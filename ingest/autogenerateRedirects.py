@@ -279,6 +279,13 @@ def _covering_rule(route, exact_rules, wildcard_rules):
 	return None
 
 
+def _retained(route, source, redirect, kind, note=None):
+	entry = {"route": route, "source": source, "redirect": redirect, "kind": kind}
+	if note:
+		entry["note"] = note
+	return entry
+
+
 def gate_legacy_redirects(
 	legacy_redirects,
 	tracked_redirects,
@@ -288,10 +295,13 @@ def gate_legacy_redirects(
 ):
 	"""Classify catalogue-derived redirects before they are merged with the tracked rules.
 
-	Each legacy route is one of:
-	- resolved: the catalogue source is a published page, so its current redirect is generated;
+	Each legacy route is one of, in this order:
+	- resolved: the catalogue source is a published page (the mapping turned it into a route in
+	  active_routes), so its current redirect is generated; a catalogue value that is not a
+	  GitHub URL counts as resolved only when it is itself a route in active_routes;
 	- retained: the source is unresolved but a static rule or a tracked redirect to a live page
-	  already covers the route, so that redirect is kept and the stale entry is reported;
+	  already covers the route, so that redirect is kept and the stale entry is reported (a
+	  retirement recorded for the same route is reported with it);
 	- retired: the source is unresolved and config/redirect-policy.json records a reviewed
 	  retirement for exactly this route and source;
 	- failed: anything else. The caller must fail instead of dropping the entry.
@@ -329,45 +339,54 @@ def gate_legacy_redirects(
 	result = {"resolved": {}, "retained": [], "retired": [], "failed": []}
 	for route, target in legacy_redirects.items():
 		if not _is_external_target(target):
-			result["resolved"][route] = target
+			if target.startswith("/") and _normalize_route(target) in active:
+				result["resolved"][route] = target
+			else:
+				result["failed"].append(
+					{
+						"route": route,
+						"source": target,
+						"detail": "catalogue value is neither a GitHub source URL nor a published Learn route",
+					}
+				)
 			continue
 		identity = _normalize_route(route)
 		reviewed = reviewed_coverage()
 		retirement = reviewed["retirements"].get(identity)
-		if retirement is not None:
-			if retirement["source"] == target:
-				result["retired"].append({"route": route, "source": target})
-				continue
-			result["failed"].append(
-				{
-					"route": route,
-					"source": target,
-					"detail": f"policy retirement names a different source: {retirement['source']}",
-				}
-			)
-			continue
+		retirement_note = None
+		if retirement is not None and retirement["source"] != target:
+			retirement_note = f"policy retirement names a different source: {retirement['source']}"
+		elif retirement is not None:
+			retirement_note = "policy also records a retirement for this route"
+
 		static_target = _covering_rule(identity, reviewed["static_exact"], reviewed["static_wildcards"])
 		if static_target is not None:
-			result["retained"].append(
-				{"route": route, "source": target, "redirect": static_target, "kind": "static"}
-			)
+			result["retained"].append(_retained(route, target, static_target, "static", retirement_note))
 			continue
 		tracked_target = _covering_rule(identity, tracked_exact, tracked_wildcards)
 		if tracked_target is not None:
 			if not _is_external_target(tracked_target) and _normalize_route(tracked_target) in active:
-				result["retained"].append(
-					{"route": route, "source": target, "redirect": tracked_target, "kind": "tracked"}
-				)
+				result["retained"].append(_retained(route, target, tracked_target, "tracked", retirement_note))
 				continue
 			result["failed"].append(
 				{
 					"route": route,
 					"source": target,
-					"detail": f"tracked redirect target is not a published page: {tracked_target}",
+					"detail": f"tracked redirect target is not a published page: {tracked_target}"
+					+ (f"; {retirement_note}" if retirement_note else ""),
 				}
 			)
 			continue
-		result["failed"].append({"route": route, "source": target, "detail": "no tracked redirect"})
+		if retirement is not None and retirement["source"] == target:
+			result["retired"].append({"route": route, "source": target})
+			continue
+		result["failed"].append(
+			{
+				"route": route,
+				"source": target,
+				"detail": "no tracked redirect" + (f"; {retirement_note}" if retirement_note else ""),
+			}
+		)
 	return result
 
 
@@ -382,6 +401,7 @@ def format_legacy_redirect_report(gate_result):
 		lines.append(
 			f"  - STALE https://learn.netdata.cloud{entry['route']} -> {entry['redirect']} "
 			f"({entry['kind']} redirect kept) | missing source: {entry['source']}"
+			+ (f" | {entry['note']}" if entry.get("note") else "")
 		)
 	if gate_result["retained"]:
 		lines.append(
@@ -396,8 +416,8 @@ def format_legacy_redirect_failure(gate_result):
 	failed = gate_result["failed"]
 	lines = [
 		"### LEGACY REDIRECT CATALOGUE GATE FAILED ###",
-		f"{len(failed)} historical learn.netdata.cloud URL(s) in {LEGACY_CATALOGUE_PATH} point at a GitHub "
-		"source that is not a published Learn page and have neither a live tracked redirect nor a reviewed "
+		f"{len(failed)} historical learn.netdata.cloud URL(s) in {LEGACY_CATALOGUE_PATH} point at a value "
+		"that is not a published Learn page and have neither a live tracked redirect nor a reviewed "
 		"retirement. Without a redirect these URLs return 404.",
 	]
 	for entry in failed:
@@ -577,8 +597,13 @@ def main(
 	policy_path=POLICY_PATH,
 ):
 	mapping = reductTonew_learn_pathFromGHLinksCorrelation(GHLinksCorrelation)
-	append_entries_to_json(addMovedRedirects(mapping))
+	# Entries for pages moved since the previous ingest join the catalogue only after the gate
+	# passes, so a failing run leaves the catalogue and netlify.toml untouched.
+	moved_entries = addMovedRedirects(mapping)
 	oldLearn = readLegacyLearnDocMap(LEGACY_CATALOGUE_PATH)
+	oldLearn.update(
+		{key.replace("https://learn.netdata.cloud", ""): value for key, value in moved_entries.items()}
+	)
 	oldLearn_redirects = UpdateGHLinksBasedOnMap(
 		mapping,
 		oldLearn,
@@ -600,6 +625,7 @@ def main(
 	if gate_result["failed"]:
 		raise LegacyRedirectGateError(format_legacy_redirect_failure(gate_result))
 
+	append_entries_to_json(moved_entries)
 	finalDict = combineDictsOverwrite(tracked_redirects, gate_result["resolved"])
 	finalDict = clean_redirects(finalDict, active_routes)
 	write_netlify_config(

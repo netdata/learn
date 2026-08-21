@@ -4004,8 +4004,9 @@ if __name__ == "__main__":
             ignored_github_repositories=ignored_redirect_repositories,
         )
     except genRedirects.LegacyRedirectGateError as exc:
-        # The legacy redirect catalogue cannot be reconciled: stop before any redirect or
-        # mapping state is written so the stale entries cannot be dropped silently.
+        # The legacy redirect catalogue cannot be reconciled. The gate runs before the
+        # catalogue, netlify.toml, and the ingest mapping state are written, so stopping here
+        # leaves all of them unchanged and no stale entry is dropped silently.
         print(f"\n{exc}")
         exit(REDIRECT_GATE_EXIT_CODE)
     print(

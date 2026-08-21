@@ -330,8 +330,10 @@ catalogue gate in `ingest/autogenerateRedirects.py`:
    page already covers the route: that redirect is kept and the stale entry is reported on stdout.
 3. The source does not resolve and `config/redirect-policy.json` records a reviewed retirement
    for exactly that route and source under `legacy_catalogue_retirements`: accepted, no redirect.
-4. Anything else fails the ingest (exit code 3 from `ingest/ingest.py`) with the historical URL
-   and the missing source. This runs in the scheduled ingest and in the Agent repository's
+4. Anything else, including a catalogue value that is neither a GitHub source URL nor a
+   published Learn route, fails the ingest (exit code 3 from `ingest/ingest.py`) with the
+   historical URL and the offending value, before the catalogue, `netlify.toml`, or the ingest
+   mapping state are written. This runs in the scheduled ingest and in the Agent repository's
    documentation check, which ingests with `--local-repo`.
 
 Unresolved catalogue entries are never dropped silently; a failing gate must be fixed by a
@@ -344,8 +346,9 @@ catalogue migration in this repository, never by weakening the gate:
   the subject, or to the owning section page (the conventions already used by the policy file,
   for example a removed collector redirects to the collectors index).
 - No sensible page exists: add a retirement with `route`, `source`, `reason`, `evidence` and
-  `reviewed` to `legacy_catalogue_retirements`. Retirements are reviewed by hand; no script
-  writes that section, and `ingest/test_legacy_redirect_gate.py` rejects incomplete entries.
+  `reviewed` to `legacy_catalogue_retirements`. Retirements are reviewed by hand and no script
+  writes that section. The ingest rejects an incomplete entry, and
+  `ingest/test_legacy_redirect_gate.py` asserts that behavior.
 
 `ingest/test_legacy_redirect_gate.py` asserts that the committed catalogue, tracked redirects and
 policy classify completely against the mapping the ingest records on every run

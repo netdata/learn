@@ -138,7 +138,8 @@ class LegacyRedirectGateBranchTests(unittest.TestCase):
         fixture = self.fixture(retirements=[RETIREMENT])
         result = fixture.gate({"/docs/gone": GH + "docs/other.md"}, set())
         self.assertEqual(result["retired"], [])
-        self.assertIn("different source", result["failed"][0]["detail"])
+        self.assertIn("no tracked redirect", result["failed"][0]["detail"])
+        self.assertIn("different source: " + GH + "docs/gone.md", result["failed"][0]["detail"])
 
     def test_unresolved_source_without_coverage_fails_with_an_actionable_message(self):
         fixture = self.fixture()
@@ -151,6 +152,57 @@ class LegacyRedirectGateBranchTests(unittest.TestCase):
         self.assertIn("catalogue migration is required", message)
         self.assertIn("LegacyLearnCorrelateLinksWithGHURLs.json", message)
         self.assertIn("legacy_catalogue_retirements", message)
+
+    def test_catalogue_value_that_is_not_a_url_fails(self):
+        fixture = self.fixture(tracked_rules=rule("/docs/x", "/docs/current"))
+        result = fixture.gate({"/docs/x": "not-a-published-source"}, {"/docs/current"})
+        self.assertEqual(result["resolved"], {})
+        self.assertEqual(result["retained"], [])
+        self.assertEqual(result["failed"][0]["route"], "/docs/x")
+        self.assertIn("neither a GitHub source URL nor a published Learn route", result["failed"][0]["detail"])
+        message = redirects.format_legacy_redirect_failure(result)
+        self.assertIn("not-a-published-source", message)
+        self.assertIn("Do not weaken this gate", message)
+
+    def test_learn_route_value_is_resolved_only_when_it_is_live(self):
+        fixture = self.fixture()
+        live = fixture.gate({"/docs/old": "/docs/current"}, {"/docs/current"})
+        self.assertEqual(live["resolved"], {"/docs/old": "/docs/current"})
+        dead = fixture.gate({"/docs/old": "/docs/not-live"}, {"/docs/current"})
+        self.assertEqual(dead["resolved"], {})
+        self.assertEqual(len(dead["failed"]), 1)
+        self.assertIn("neither a GitHub source URL nor a published Learn route", dead["failed"][0]["detail"])
+
+    def test_live_tracked_redirect_wins_over_a_mismatched_retirement_and_reports_it(self):
+        fixture = self.fixture(tracked_rules=rule("/docs/gone", "/docs/current"), retirements=[RETIREMENT])
+        result = fixture.gate({"/docs/gone": GH + "docs/other.md"}, {"/docs/current"})
+        self.assertEqual(result["failed"], [])
+        self.assertEqual(result["retired"], [])
+        self.assertEqual(result["retained"][0]["redirect"], "/docs/current")
+        self.assertIn("different source", result["retained"][0]["note"])
+        report = redirects.format_legacy_redirect_report(result)
+        self.assertIn("STALE https://learn.netdata.cloud/docs/gone -> /docs/current", report)
+        self.assertIn("policy retirement names a different source: " + GH + "docs/gone.md", report)
+
+    def test_live_tracked_redirect_wins_over_a_matching_retirement(self):
+        fixture = self.fixture(tracked_rules=rule("/docs/gone", "/docs/current"), retirements=[RETIREMENT])
+        result = fixture.gate({"/docs/gone": GH + "docs/gone.md"}, {"/docs/current"})
+        self.assertEqual(result["retired"], [])
+        self.assertEqual(result["retained"][0]["kind"], "tracked")
+        self.assertIn("also records a retirement", result["retained"][0]["note"])
+
+    def test_static_rule_wins_over_a_retirement(self):
+        fixture = self.fixture(static_rules=rule("/docs/gone", "/api"), retirements=[RETIREMENT])
+        result = fixture.gate({"/docs/gone": GH + "docs/gone.md"}, set())
+        self.assertEqual(result["retired"], [])
+        self.assertEqual(result["retained"][0]["kind"], "static")
+
+    def test_mismatched_retirement_with_a_dead_tracked_redirect_fails_with_both_details(self):
+        fixture = self.fixture(tracked_rules=rule("/docs/gone", "/docs/vanished"), retirements=[RETIREMENT])
+        result = fixture.gate({"/docs/gone": GH + "docs/other.md"}, {"/docs/current"})
+        self.assertEqual(result["retained"], [])
+        self.assertIn("not a published page: /docs/vanished", result["failed"][0]["detail"])
+        self.assertIn("different source", result["failed"][0]["detail"])
 
     def test_incomplete_retirement_entries_are_rejected(self):
         for missing_field in redirects.RETIREMENT_FIELDS:
@@ -176,11 +228,12 @@ class LegacyRedirectGateMainTests(unittest.TestCase):
     def tearDown(self):
         self.fixture.close()
 
-    def run_main(self, mapping, legacy, ignored=()):
+    def run_main(self, mapping, legacy, ignored=(), moved=None):
+        self.appended = mock.Mock()
         with (
             mock.patch.object(redirects, "reductTonew_learn_pathFromGHLinksCorrelation", return_value=mapping),
-            mock.patch.object(redirects, "addMovedRedirects", return_value={}),
-            mock.patch.object(redirects, "append_entries_to_json"),
+            mock.patch.object(redirects, "addMovedRedirects", return_value=moved or {}),
+            mock.patch.object(redirects, "append_entries_to_json", self.appended),
             mock.patch.object(redirects, "readLegacyLearnDocMap", return_value=legacy),
             contextlib.redirect_stdout(io.StringIO()) as stdout,
         ):
@@ -220,11 +273,31 @@ class LegacyRedirectGateMainTests(unittest.TestCase):
         before = self.fixture.netlify_path.read_text(encoding="utf-8")
         legacy = {"/docs/old": GH + "docs/moved.md", "/docs/fine": GH + "docs/fine.md"}
         mapping = {GH + "docs/fine.md": "/docs/fine-current"}
+        moved = {"https://learn.netdata.cloud/docs/previous": GH + "docs/fine.md"}
         with self.assertRaises(redirects.LegacyRedirectGateError) as raised:
-            self.run_main(mapping, legacy)
+            self.run_main(mapping, legacy, moved=moved)
         self.assertIn("https://learn.netdata.cloud/docs/old", str(raised.exception))
         self.assertNotIn("/docs/fine", str(raised.exception))
         self.assertEqual(self.fixture.netlify_path.read_text(encoding="utf-8"), before)
+        self.appended.assert_not_called()
+
+    def test_moved_entries_join_the_catalogue_only_after_the_gate_passes(self):
+        legacy = {"/docs/fine": GH + "docs/fine.md"}
+        mapping = {GH + "docs/fine.md": "/docs/fine-current"}
+        moved = {"https://learn.netdata.cloud/docs/previous": GH + "docs/fine.md"}
+        result, _ = self.run_main(mapping, legacy, moved=moved)
+        self.appended.assert_called_once_with(moved)
+        # The moved entry is gated in memory and already produces its redirect in this run.
+        self.assertEqual(result["resolved"], {"/docs/fine": "/docs/fine-current", "/docs/previous": "/docs/fine-current"})
+        written = redirects.readRedirectsFromFile(str(self.fixture.netlify_path))
+        self.assertEqual(written, {"/docs/fine": "/docs/fine-current", "/docs/previous": "/docs/fine-current"})
+
+    def test_unresolved_moved_entry_is_gated_before_it_is_written(self):
+        mapping = {GH + "docs/fine.md": "/docs/fine-current"}
+        moved = {"https://learn.netdata.cloud/docs/previous": "not-a-published-source"}
+        with self.assertRaises(redirects.LegacyRedirectGateError):
+            self.run_main(mapping, {}, moved=moved)
+        self.appended.assert_not_called()
 
     def test_ignored_repository_entries_do_not_reach_the_gate(self):
         legacy = {
