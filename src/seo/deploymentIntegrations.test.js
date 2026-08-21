@@ -51,9 +51,16 @@ describe('shared deployment integrations', () => {
     for (const relative of ['static.toml', 'netlify.toml']) {
       const config = fs.readFileSync(path.join(root, relative), 'utf8');
       expect(config).not.toContain('NETLIFY_USE_YARN');
-      expect(config).toContain('NODE_VERSION = "22.14.0"');
-      expect(config).toContain('NPM_VERSION = "10.9.2"');
+      expect(config).toContain('NODE_VERSION = "22.23.2"');
+      expect(config).toContain('NPM_VERSION = "10.9.8"');
     }
+  });
+
+  it('aligns the development container with the pinned production Node runtime', () => {
+    const devcontainer = JSON.parse(
+      fs.readFileSync(path.join(root, '.devcontainer/devcontainer.json'), 'utf8'),
+    );
+    expect(devcontainer.image).toBe('node:22.23.2');
   });
 
   it('uses the stable Docusaurus Faster engine within the Netlify memory bound', () => {
