@@ -17,6 +17,24 @@ const expectedResolutions = {
   '**/svgo': '3.3.4',
 };
 
+function getUpdateBlock(dependabot, ecosystem) {
+  const starts = [...dependabot.matchAll(/^[ \t]*-[ \t]*package-ecosystem:[ \t]*([^\s#]+)[ \t]*$/gm)];
+  const matchingBlocks = starts
+    .map((match, index) => ({
+      ecosystem: match[1],
+      contents: dependabot.slice(match.index, starts[index + 1]?.index),
+    }))
+    .filter((block) => block.ecosystem === ecosystem);
+
+  assert.equal(matchingBlocks.length, 1, `expected one ${ecosystem} Dependabot update block`);
+  return matchingBlocks[0].contents;
+}
+
+function assertRootScopedUpdateBlock(dependabot, ecosystem) {
+  const block = getUpdateBlock(dependabot, ecosystem);
+  assert.match(block, /^[ \t]*directory:[ \t]*\/[ \t]*$/m, `${ecosystem} must be scoped to the root directory`);
+}
+
 test('uses one root Yarn authority and isolates owner-controlled npm vendors', () => {
   const packageJson = require('../package.json');
   assert.equal(packageJson.packageManager, 'yarn@1.22.22');
@@ -26,7 +44,23 @@ test('uses one root Yarn authority and isolates owner-controlled npm vendors', (
   assert.equal(fs.existsSync(path.join(root, 'scripts/site-build-gate/package-lock.json')), true);
 
   const dependabot = fs.readFileSync(path.join(root, '.github/dependabot.yml'), 'utf8');
-  assert.match(dependabot, /package-ecosystem: npm/);
-  assert.match(dependabot, /package-ecosystem: github-actions/);
+  assertRootScopedUpdateBlock(dependabot, 'npm');
+  assertRootScopedUpdateBlock(dependabot, 'github-actions');
   assert.doesNotMatch(dependabot, /scripts\/site-build-gate/);
+
+  assert.throws(
+    () => assertRootScopedUpdateBlock(dependabot.replace('directory: /', 'directory: /packages'), 'npm'),
+    /npm must be scoped to the root directory/,
+  );
+  assert.throws(
+    () =>
+      assertRootScopedUpdateBlock(
+        dependabot.replace(
+          'package-ecosystem: github-actions\n    directory: /',
+          'package-ecosystem: github-actions\n    directory: /actions',
+        ),
+        'github-actions',
+      ),
+    /github-actions must be scoped to the root directory/,
+  );
 });
