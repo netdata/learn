@@ -57,7 +57,7 @@
 		"mermaid": "^11.17.0",
 		"parse5": "7.3.0",
 		"postcss": "^8.5.26",
-		"postcss-import": "^16.2.0",
+		"postcss-import": "^17.0.0",
 		"postcss-nesting": "^14.0.1",
 		"posthog-docusaurus": "^2.0.5",
 		"react": "^19.2.8",
