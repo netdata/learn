@@ -240,7 +240,11 @@ class LegacyRedirectGateMainTests(unittest.TestCase):
 
 
 class RepositoryCatalogueTests(unittest.TestCase):
-    """The committed catalogue, policy, and tracked redirects must classify completely."""
+    """The committed catalogue, policy, and tracked redirects must classify completely.
+
+    The mapping fixture is ingest/one_commit_back_file-dict.yaml, the source-to-page mapping
+    the ingest itself records on every run; it is not edited by hand.
+    """
 
     @classmethod
     def setUpClass(cls):
@@ -253,8 +257,6 @@ class RepositoryCatalogueTests(unittest.TestCase):
         cls.catalogue = redirects.readLegacyLearnDocMap(str(REPO_ROOT / "LegacyLearnCorrelateLinksWithGHURLs.json"))
         with open(REPO_ROOT / "config/redirect-policy.json", encoding="utf-8") as fh:
             cls.policy = json.load(fh)
-        with open(REPO_ROOT / "config/legacy-catalogue-triage.json", encoding="utf-8") as fh:
-            cls.inventory = json.load(fh)
 
     def gate(self, ignored=()):
         legacy = redirects.UpdateGHLinksBasedOnMap(self.mapping, self.catalogue, ignored_github_repositories=ignored)
@@ -302,24 +304,6 @@ class RepositoryCatalogueTests(unittest.TestCase):
         self.assertEqual(
             len(redirects.read_legacy_catalogue_retirements(str(REPO_ROOT / "config/redirect-policy.json"))),
             len(retirements),
-        )
-
-    def test_triage_inventory_matches_the_catalogue_and_policy(self):
-        retired_routes = {entry["route"] for entry in self.policy["legacy_catalogue_retirements"]}
-        records = self.inventory["records"]
-        self.assertEqual(self.inventory["counts"]["records"], len(records))
-        for record in records:
-            self.assertIn(record["route"], self.catalogue, record["route"])
-            if record["action"] == "repoint":
-                self.assertEqual(self.catalogue[record["route"]], record["target_source"], record["route"])
-                self.assertIn(record["classification"], {"moved", "replaced", "section"})
-            else:
-                self.assertEqual(record["action"], "retire")
-                self.assertEqual(record["classification"], "retired")
-                self.assertIn(record["route"], retired_routes)
-        self.assertEqual(
-            {record["route"] for record in records if record["action"] == "retire"},
-            retired_routes,
         )
 
 

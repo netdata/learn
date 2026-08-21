@@ -347,11 +347,9 @@ catalogue migration in this repository, never by weakening the gate:
   `reviewed` to `legacy_catalogue_retirements`. Retirements are reviewed by hand; no script
   writes that section, and `ingest/test_legacy_redirect_gate.py` rejects incomplete entries.
 
-`config/legacy-catalogue-triage.json` records the disposition, evidence and target of every
-catalogue entry whose original source stopped resolving, and `ingest/test_legacy_redirect_gate.py`
-asserts that the committed catalogue, tracked redirects and policy classify completely against
-the recorded ingest mapping (`ingest/one_commit_back_file-dict.yaml`). Run the gate locally the
-way the Agent check does:
+`ingest/test_legacy_redirect_gate.py` asserts that the committed catalogue, tracked redirects and
+policy classify completely against the mapping the ingest records on every run
+(`ingest/one_commit_back_file-dict.yaml`). Run the gate locally the way the Agent check does:
 
 ```bash
 python ingest/ingest.py --local-repo netdata:/path/to/netdata --ignore-on-prem-repo --fail-links-netdata
