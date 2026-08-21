@@ -79,7 +79,7 @@ The ingest script is a python script and has its dependencies (separate from the
 
 #### Prerequisites
 
-- Python v3.9+
+- Python 3.13
 
 #### Steps
 
@@ -90,7 +90,7 @@ The ingest script is a python script and has its dependencies (separate from the
 3. Create a python virtual environment.
 
     ```bash
-    python -m venv myenv
+    python3.13 -m venv myenv
     ```
 
     The name `myenv` is included in the `.gitignore` file of this repo.
@@ -104,7 +104,17 @@ The ingest script is a python script and has its dependencies (separate from the
 5. Install the required packages, via pip
 
     ```bash
-    pip install -r .learn_environment/ingest-requirements.txt
+    python -m pip install --require-hashes -r .learn_environment/ingest-requirements.txt
+    ```
+
+    The checked-in requirements file pins every transitive package and its allowed distribution
+    hashes for Python 3.13. Update direct requirements in
+    `.learn_environment/ingest-requirements.in`, then regenerate the lock with:
+
+    ```bash
+    uv pip compile --generate-hashes --universal --python-version 3.13 \
+      --output-file .learn_environment/ingest-requirements.txt \
+      .learn_environment/ingest-requirements.in
     ```
 
 6. The organization of the files is handled by the [`map.yaml` file](https://github.com/netdata/netdata/blob/master/docs/.map/map.yaml), that contains metadata for every file. That file should only be edited by members of the Netdata team.
