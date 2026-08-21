@@ -20,7 +20,7 @@ try {
     throw new Error(`IndexNow vendor contract must cover ${required}`);
   }
 
-  const expectedDependencies = {'@netlify/blobs': '10.7.13', saxes: '6.0.0'};
+  const expectedDependencies = {'@netlify/blobs': '11.0.1', saxes: '6.0.0'};
   if (JSON.stringify(contract.dependencies) !== JSON.stringify(expectedDependencies)) {
     throw new Error('IndexNow vendor dependency contract is invalid');
   }
@@ -28,6 +28,9 @@ try {
     fs.readFileSync(path.join(pluginDirectory, 'package.json'), 'utf8'),
   );
   const rootPackage = JSON.parse(fs.readFileSync(path.resolve('package.json'), 'utf8'));
+  if (pluginPackage.engines?.node !== '>=22.12.0') {
+    throw new Error('IndexNow plugin must require the Node runtime supported by @netlify/blobs');
+  }
   for (const [name, version] of Object.entries(expectedDependencies)) {
     if (pluginPackage.dependencies?.[name] !== version || rootPackage.dependencies?.[name] !== version) {
       throw new Error(`IndexNow dependency ${name} must be pinned to ${version} in both package files`);
