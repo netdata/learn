@@ -4281,7 +4281,7 @@
   learn_status: Published
   learn_rel_path: Collecting Metrics/Collectors/Networking
   keywords: '[''network'', ''connections'', ''sockets'', ''tcp'', ''udp'', ''ports'',
-    ''freebsd'', ''macos'']'
+    ''freebsd'', ''macos'', ''windows'']'
   description: This plugin reads the system's socket tables to enumerate all active
     network connections, including TCP and UDP sockets in all states, for both IPv4
     and IPv6.
