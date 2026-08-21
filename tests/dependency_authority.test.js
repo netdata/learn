@@ -54,43 +54,68 @@ function assertScopedUpdateBlock(dependabot, ecosystem, directory) {
 }
 
 function getVersionGroup(updateBlock, groupName) {
-  const starts = [...updateBlock.matchAll(/^ {6}([a-z][a-z-]*):\s*$/gm)];
-  const matchingGroups = starts
-    .map((match, index) => ({
-      name: match[1],
-      contents: updateBlock.slice(match.index, starts[index + 1]?.index),
-    }))
+  const matchingGroups = getVersionGroups(updateBlock)
     .filter((group) => group.name === groupName);
 
   assert.equal(matchingGroups.length, 1, `expected one ${groupName} update group`);
   return matchingGroups[0].contents;
 }
 
-function escapeRegularExpression(value) {
-  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+function getVersionGroups(updateBlock) {
+  const starts = [...updateBlock.matchAll(
+    /^ {6}(?:(["'])([A-Za-z](?:[A-Za-z_|-]*[A-Za-z])?)\1|([A-Za-z](?:[A-Za-z_|-]*[A-Za-z])?)):\s*$/gm,
+  )];
+  return starts
+    .map((match, index) => ({
+      name: match[2] ?? match[3],
+      contents: updateBlock.slice(match.index, starts[index + 1]?.index),
+    }));
+}
+
+function getGroupList(group, key) {
+  const starts = [...group.matchAll(/^ {8}([a-z][a-z-]*):(?:\s+.*)?$/gm)];
+  const matchingLists = starts
+    .map((match, index) => ({
+      key: match[1],
+      contents: group.slice(match.index, starts[index + 1]?.index),
+    }))
+    .filter((list) => list.key === key);
+
+  assert.equal(matchingLists.length, 1, `expected one ${key} list`);
+  return [...matchingLists[0].contents.matchAll(/^ {10}- (.+)$/gm)].map((match) => match[1]);
 }
 
 function assertNpmVersionGroups(dependabot) {
   const npmBlock = getUpdateBlock(dependabot, 'npm');
+  const groups = getVersionGroups(npmBlock);
+  assert.deepEqual(
+    groups.map((group) => group.name).sort(),
+    Object.keys(expectedNpmVersionGroups).sort(),
+    'npm update groups must match the approved validation surfaces',
+  );
   for (const [groupName, patterns] of Object.entries(expectedNpmVersionGroups)) {
     const group = getVersionGroup(npmBlock, groupName);
     assert.match(group, /^ {8}applies-to: version-updates$/m, `${groupName} must exclude security updates`);
     assert.match(group, /^ {8}update-types:\n {10}- minor\n {10}- patch$/m, `${groupName} must leave majors separate`);
-    patterns.forEach((pattern) => {
-      assert.match(
-        group,
-        new RegExp(`^ {10}- ${escapeRegularExpression(pattern)}$`, 'm'),
-        `${groupName} must include ${pattern}`,
-      );
-    });
+    assert.deepEqual(
+      getGroupList(group, 'patterns').sort(),
+      [...patterns].sort(),
+      `${groupName} patterns must match its approved validation surface`,
+    );
   }
   assert.doesNotMatch(npmBlock, /swagger-ui/, 'Swagger UI must retain its independent vendor validation');
 }
 
 function assertCompatibleVersionGroup(updateBlock, groupName) {
+  const groups = getVersionGroups(updateBlock);
+  assert.deepEqual(
+    groups.map((group) => group.name),
+    [groupName],
+    `${groupName} must be the only update group`,
+  );
   const group = getVersionGroup(updateBlock, groupName);
   assert.match(group, /^ {8}applies-to: version-updates$/m, `${groupName} must exclude security updates`);
-  assert.match(group, /^ {8}patterns:\n {10}- "\*"$/m, `${groupName} must cover its whole ecosystem`);
+  assert.deepEqual(getGroupList(group, 'patterns'), ['"*"'], `${groupName} must cover its whole ecosystem`);
   assert.match(group, /^ {8}update-types:\n {10}- minor\n {10}- patch$/m, `${groupName} must leave majors separate`);
 }
 
@@ -134,6 +159,23 @@ test('groups only compatible version updates by validation surface', () => {
     () => assertNpmVersionGroups(dependabot.replace('- patch', '- major')),
     /must leave majors separate/,
   );
+  assert.throws(
+    () =>
+      assertNpmVersionGroups(
+        dependabot.replace('          - "@tailwindcss/*"', '          - "@tailwindcss/*"\n          - "*"'),
+      ),
+    /css-toolchain patterns must match its approved validation surface/,
+  );
+  assert.throws(
+    () =>
+      assertNpmVersionGroups(
+        dependabot.replace(
+          '      css-toolchain:',
+          '      "unapproved_group":\n        applies-to: version-updates\n        patterns:\n          - unapproved\n        update-types:\n          - minor\n          - patch\n      css-toolchain:',
+        ),
+      ),
+    /npm update groups must match the approved validation surfaces/,
+  );
 });
 
 test('groups compatible Actions and Python updates without absorbing security fixes or majors', () => {
@@ -155,5 +197,16 @@ test('groups compatible Actions and Python updates without absorbing security fi
         'compatible-python',
       ),
     /must exclude security updates/,
+  );
+  assert.throws(
+    () =>
+      assertCompatibleVersionGroup(
+        actionsBlock.replace(
+          '      compatible-actions:',
+          '      selective_actions:\n        applies-to: version-updates\n        patterns:\n          - "actions/*"\n        update-types:\n          - minor\n          - patch\n      compatible-actions:',
+        ),
+        'compatible-actions',
+      ),
+    /compatible-actions must be the only update group/,
   );
 });
