@@ -94,7 +94,7 @@ describe('shared deployment integrations', () => {
       schema_version: 2,
       owner: 'netdata/website',
       algorithm: 'sha256',
-      dependencies: {'@netlify/blobs': '10.7.13', saxes: '6.0.0'},
+      dependencies: {'@netlify/blobs': '11.0.1', saxes: '6.0.0'},
       receipt_schema_version: 2,
       contract_tests_schema_version: 2,
     });

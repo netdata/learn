@@ -3326,24 +3326,24 @@
   dependencies:
     "@tybys/wasm-util" "^0.10.3"
 
-"@netlify/blobs@10.7.13":
-  version "10.7.13"
-  resolved "https://registry.yarnpkg.com/@netlify/blobs/-/blobs-10.7.13.tgz#89f02955c698fff7d2a5d32e34f5cd3c45ad1c0d"
-  integrity sha512-LJnmGtQQ2/NdTo0Cm+YP2xR1vtRle6V3kkzMrAOJgRm1SEFOJOcaAFQrth7RnbxCH/IzCM8QakTaCHHKY+K2qA==
+"@netlify/blobs@11.0.1":
+  version "11.0.1"
+  resolved "https://registry.npmjs.org/@netlify/blobs/-/blobs-11.0.1.tgz#5babab4745f38def2823346945b9c6d0975a0f96"
+  integrity sha512-ohmcoesUSdIU6FSZhq4EwDu6sYBWrfywRQdyUOYo/a7Rnc1VLot8w2d0npQzr/YuRgJFqV50OZ0Eg3GOCnRUcQ==
   dependencies:
-    "@netlify/dev-utils" "5.0.0"
-    "@netlify/otel" "^6.0.6"
-    "@netlify/runtime-utils" "2.3.0"
+    "@netlify/dev-utils" "6.0.1"
+    "@netlify/otel" "^7.0.1"
+    "@netlify/runtime-utils" "3.0.0"
 
-"@netlify/dev-utils@5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@netlify/dev-utils/-/dev-utils-5.0.0.tgz#495c07ed4f089220df768e6f719848013ad2fa57"
-  integrity sha512-ICAsnvbJW9Dv9PGfmJGdjMBsX6uXdJxrA76QE3l3rnGKL5ZcyaA2cJZXacdEmE2ZmtkiVhEJogM15a9nK/ZxDw==
+"@netlify/dev-utils@6.0.1":
+  version "6.0.1"
+  resolved "https://registry.npmjs.org/@netlify/dev-utils/-/dev-utils-6.0.1.tgz#1b8059b098494312c49308179301af5177c5cdc2"
+  integrity sha512-q5g70dO3q/M/XTBQz7uIECJxVlJoS8UBlzpjf22DV6q61UzXa8EONTPXPmvisrFcUi1I3AUKplPcHGQYZZj+Vw==
   dependencies:
     "@whatwg-node/server" "^0.11.0"
     ansis "^4.1.0"
     atomically "^2.0.3"
-    chokidar "^4.0.1"
+    chokidar "^5.0.0"
     decache "^4.6.2"
     dettle "^1.0.5"
     dot-prop "9.0.0"
@@ -3352,10 +3352,10 @@
     parse-gitignore "^2.0.0"
     semver "^7.7.2"
 
-"@netlify/otel@^6.0.6":
-  version "6.0.6"
-  resolved "https://registry.yarnpkg.com/@netlify/otel/-/otel-6.0.6.tgz#668d5be402e5a1179bbe3a64f82d169d040ad255"
-  integrity sha512-KpiJ8c4V4GvgpQH5E1axg43kYdIN9saToLbzvgrDzPun4XMGwz/tLfoIkwJ4jwrVmbPj35+8+dj3gkggQAtjtg==
+"@netlify/otel@^7.0.1":
+  version "7.0.1"
+  resolved "https://registry.npmjs.org/@netlify/otel/-/otel-7.0.1.tgz#a2e3e92df6594c53180b8029d75bb28d28fabe2d"
+  integrity sha512-9GVV5b/Fb1nfXbooy46YcR6YrzTV0wjTC70y4Em6xgcckpvgi5F9hWQssl7UGIMp0abx9WxTAz2LPITTCnarKQ==
   dependencies:
     "@opentelemetry/api" "1.9.1"
     "@opentelemetry/core" "2.8.0"
@@ -3363,10 +3363,10 @@
     "@opentelemetry/resources" "2.9.0"
     "@opentelemetry/sdk-trace-node" "2.9.0"
 
-"@netlify/runtime-utils@2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@netlify/runtime-utils/-/runtime-utils-2.3.0.tgz#56dd62b7286a04182e118226aab28dd63ee67022"
-  integrity sha512-cW8weDvsKV7zfia2m5EcBy6KILGoPD+eYZ3qWNGnIo05DGF28goPES0xKSDkNYgAF/2rRSIhie2qcBhbGVgSRg==
+"@netlify/runtime-utils@3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/@netlify/runtime-utils/-/runtime-utils-3.0.0.tgz#41866acfa9472e32025f9cafa97cdb8c4c4d92fc"
+  integrity sha512-OHo40+V3QZkR+UrDjqhN+LekrAby/dSSJxsvyYs9i88E/mSl3goB/ysoL+VYROm190egxmQyRYlHK7vL4GeHBQ==
 
 "@noble/hashes@1.4.0":
   version "1.4.0"
@@ -6671,12 +6671,12 @@ chokidar@^3.5.3, chokidar@^3.6.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
-chokidar@^4.0.1:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-4.0.3.tgz#7be37a4c03c9aee1ecfe862a4a23b2c70c205d30"
-  integrity sha512-Qgzu8kfBvo+cA4962jnP1KkS6Dop5NS6g7R5LFYJr4b8Ub94PPQXUksCw9PvXoeXPRRddRNC5C1JQUR2SMGtnA==
+chokidar@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/chokidar/-/chokidar-5.0.0.tgz#949c126a9238a80792be9a0265934f098af369a5"
+  integrity sha512-TQMmc3w+5AxjpL8iIiwebF73dRDF4fBIieAqGn9RGCWaEVwQ6Fb2cGe31Yns0RRIzii5goJ1Y7xbMwo1TxMplw==
   dependencies:
-    readdirp "^4.0.1"
+    readdirp "^5.0.0"
 
 chrome-trace-event@^1.0.2:
   version "1.0.4"
@@ -12749,10 +12749,10 @@ readable-stream@^3.0.6:
     string_decoder "^1.1.1"
     util-deprecate "^1.0.1"
 
-readdirp@^4.0.1:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-4.1.2.tgz#eb85801435fbf2a7ee58f19e0921b068fc69948d"
-  integrity sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg==
+readdirp@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.npmjs.org/readdirp/-/readdirp-5.1.1.tgz#520bca06f9d1ae1b96cc0800dbe84b983d19422c"
+  integrity sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==
 
 readdirp@~3.6.0:
   version "3.6.0"
