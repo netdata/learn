@@ -6,9 +6,91 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 10
+    groups:
+      css-toolchain:
+        applies-to: version-updates
+        patterns:
+          - "@tailwindcss/*"
+          - tailwindcss
+          - autoprefixer
+          - postcss
+          - "postcss-*"
+        update-types:
+          - minor
+          - patch
+      javascript-build-parser:
+        applies-to: version-updates
+        patterns:
+          - "@babel/*"
+          - acorn
+          - dotenv
+          - parse5
+          - typescript
+          - webpack
+        update-types:
+          - minor
+          - patch
+      test-runtime:
+        applies-to: version-updates
+        patterns:
+          - "@testing-library/*"
+          - "@vitejs/*"
+          - "@vitest/*"
+          - happy-dom
+          - jsdom
+          - vite
+          - vitest
+        update-types:
+          - minor
+          - patch
+      browser-runtime:
+        applies-to: version-updates
+        patterns:
+          - "@types/react"
+          - axios
+          - mermaid
+          - react
+          - react-dom
+          - react-inlinesvg
+        update-types:
+          - minor
+          - patch
+      docusaurus-renderer:
+        applies-to: version-updates
+        patterns:
+          - "@docusaurus/*"
+          - "@easyops-cn/docusaurus-search-local"
+          - "@mdx-js/*"
+          - posthog-docusaurus
+        update-types:
+          - minor
+          - patch
 
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
     open-pull-requests-limit: 10
+    groups:
+      compatible-actions:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
+
+  # The ingest runtime is independently hash-locked and tested on Python 3.13.
+  - package-ecosystem: pip
+    directory: "/.learn_environment"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    groups:
+      compatible-python:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
