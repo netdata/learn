@@ -1,5 +1,5 @@
 {
-    "image": "node:16", 
+    "image": "node:22.23.2",
     "extensions":[
 		"DavidAnson.vscode-markdownlint"
 	],
