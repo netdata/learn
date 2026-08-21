@@ -28,24 +28,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Access Token
-        uses: actions/checkout@v3
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: github authentication
-        uses: webfactory/ssh-agent@v0.9.1
+        uses: webfactory/ssh-agent@e83874834305fe9a4a2997156cb26c5de65a8555 # v0.10.0
         with:
           ssh-private-key: ${{ secrets.NETDATABOT_SSH_PRIVATE_KEY }}
 
       - name: Init python env
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
-          python-version: "3.10"
+          python-version: "3.13"
 
       - name: Setup python env
         run: |
-          pip install -r .learn_environment/ingest-requirements.txt
+          python -m pip install --require-hashes -r .learn_environment/ingest-requirements.txt
 
       - name: Ingest process, integration generation and learn_link checking
         id: ingest
@@ -87,7 +87,7 @@ jobs:
           mv tmp "${docfile}" || exit 1
 
       - name: Create pull request
-        uses: peter-evans/create-pull-request@v6.0.1
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: Ingest new documentation
@@ -103,7 +103,7 @@ jobs:
 
       - name: Create or update broken links issue
         if: steps.ingest.outputs.has_broken_links == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
