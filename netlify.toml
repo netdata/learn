@@ -6157,7 +6157,7 @@
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/energomera-smart-power-meters"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/energomera-smart-power-meters"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
 
 [[redirects]]
   from="/docs/data-collection/iot-devices/craftbeerpi"
@@ -9417,7 +9417,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/energomera-smart-power-meters"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/energomera-smart-power-meters"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
 
 [[redirects]]
   from="/docs/collecting-metrics/iot-devices/elgato-key-light-devices."
@@ -10465,7 +10465,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-and-iot/energomera-smart-power-meters"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/energomera-smart-power-meters"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-and-iot/elgato-key-light-devices."
@@ -11681,7 +11681,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-and-sensors/energomera-smart-power-meters"
-  to="/docs/collecting-metrics/collectors/hardware-and-sensors/energomera-smart-power-meters"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-and-sensors/elgato-key-light-devices."

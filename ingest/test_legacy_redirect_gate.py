@@ -366,6 +366,9 @@ class RepositoryCatalogueTests(unittest.TestCase):
             "https://github.com/netdata/netdata/blob/master/"
             "src/go/plugin/go.d/collector/prometheus/README.md"
         )
+        prometheus_route = (
+            "/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+        )
         routes = {
             "/docs/data-collection/iot-devices/energomera-smart-power-meters",
             "/docs/collecting-metrics/iot-devices/energomera-smart-power-meters",
@@ -376,6 +379,14 @@ class RepositoryCatalogueTests(unittest.TestCase):
         result = self.gate()
         for route in routes:
             self.assertIn(route, result["resolved"])
+            self.assertEqual(result["resolved"][route], prometheus_route)
+
+        merged = redirects.combineDictsOverwrite(
+            redirects.readRedirectsFromFile(str(REPO_ROOT / "netlify.toml")),
+            result["resolved"],
+        )
+        for route in routes:
+            self.assertEqual(merged[route], prometheus_route)
 
     def test_policy_retirements_are_complete_and_match_the_catalogue(self):
         retirements = self.policy["legacy_catalogue_retirements"]
