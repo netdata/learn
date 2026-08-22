@@ -290,6 +290,7 @@ class SeoGridGenerationTests(unittest.TestCase):
         self.assertIn("# Collectors (page 3)", pages[2])
         self.assertIn("Page 2 of 3", pages[1])
         for page_number, page in enumerate(pages, start=1):
+            self.assertIn("custom_edit_url: null", page)
             self.assertIn(
                 f"currentPage={{{page_number}}} pageCount={{3}}",
                 page,

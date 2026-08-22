@@ -4,6 +4,10 @@ import {ThemeClassNames} from '@docusaurus/theme-common';
 import IconEdit from '@theme/Icon/Edit';
 
 export default function EditThisPage({editUrl}) {
+  if (!editUrl) {
+    return null;
+  }
+
   return (
     <a
       href={editUrl}

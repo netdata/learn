@@ -7,6 +7,11 @@ describe('EditThisPage component', () => {
   const editUrl = 'https://github.com/netdata/learn/edit/master/docs/test.md';
 
   describe('rendering', () => {
+    it.each([undefined, null, ''])('should not render for a falsy edit URL', (falsyEditUrl) => {
+      const { container } = render(<EditThisPage editUrl={falsyEditUrl} />);
+      expect(container).toBeEmptyDOMElement();
+    });
+
     it('should render without crashing', () => {
       render(<EditThisPage editUrl={editUrl} />);
       const link = screen.getByRole('link');
@@ -55,6 +60,13 @@ describe('EditThisPage component', () => {
   });
 
   describe('different URLs', () => {
+    it('should preserve an explicit private repository edit URL', () => {
+      const privateEditUrl = 'https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/README.md';
+      render(<EditThisPage editUrl={privateEditUrl} />);
+      const link = screen.getByRole('link');
+      expect(link).toHaveAttribute('href', privateEditUrl);
+    });
+
     it('should handle GitHub URL', () => {
       const githubUrl = 'https://github.com/org/repo/edit/main/file.md';
       render(<EditThisPage editUrl={githubUrl} />);
