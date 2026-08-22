@@ -1,0 +1,16 @@
+{
+  "schema": "netdata-rendered-link-policy-v1",
+  "site_origin": "https://learn.netdata.cloud",
+  "netdata_domain": "netdata.cloud",
+  "opaque_fragment_hosts": [
+    "app.netdata.cloud"
+  ],
+  "request": {
+    "concurrency": 8,
+    "per_host_concurrency": 2,
+    "timeout_ms": 12000,
+    "max_redirects": 5,
+    "max_body_bytes": 2097152,
+    "user_agent": "Netdata-Learn-Link-Integrity/1.0 (+https://github.com/netdata/learn)"
+  }
+}

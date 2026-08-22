@@ -1,0 +1,276 @@
+name: Rendered link integrity
+
+on:
+  pull_request:
+  merge_group:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rendered-link-integrity-${{ github.event.pull_request.number || github.event.merge_group.head_sha }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22.23.2"
+  NODE_OPTIONS: "--max-old-space-size=3072"
+  DOCUSAURUS_SSR_CONCURRENCY: "4"
+
+jobs:
+  render-head:
+    name: Render PR link inventory
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out the pull-request revision with history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - name: Install and test the isolated checker
+        run: |
+          npm ci --prefix scripts/link-integrity --ignore-scripts --no-audit
+          node --test tests/link_integrity.test.mjs
+
+      - name: Install the documentation build
+        run: yarn install --frozen-lockfile
+
+      - name: Render the pull-request revision
+        run: yarn build
+
+      - name: Build the rendered-link inventory
+        run: >-
+          node scripts/link-integrity/check.mjs inventory
+          --build-dir build
+          --redirects netlify.toml
+          --policy config/link-integrity.json
+          --output "$RUNNER_TEMP/link-inventory.json"
+
+      - name: Upload the pull-request inventory
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: rendered-link-head-inventory
+          path: ${{ runner.temp }}/link-inventory.json
+          if-no-files-found: error
+          retention-days: 3
+
+  same-site:
+    name: Required same-site links
+    needs: render-head
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Require a valid rendered inventory
+        if: ${{ needs.render-head.result != 'success' }}
+        run: |
+          echo "The pull-request render did not produce a valid link inventory."
+          exit 1
+
+      - name: Check out checker code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Download the rendered inventory
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: rendered-link-head-inventory
+          path: .link-integrity/head
+
+      - name: Validate same-site paths and fragments
+        run: >-
+          node scripts/link-integrity/check.mjs same-site
+          --inventory .link-integrity/head/link-inventory.json
+          --report "$RUNNER_TEMP/same-site-report.json"
+
+      - name: Upload the same-site report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: rendered-link-same-site-report
+          path: ${{ runner.temp }}/same-site-report.json
+          if-no-files-found: warn
+          retention-days: 3
+
+  cross-site:
+    name: Advisory cross-site links
+    needs: render-head
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Require a valid rendered inventory
+        if: ${{ needs.render-head.result != 'success' }}
+        run: |
+          echo "The pull-request render did not produce a valid link inventory."
+          exit 1
+
+      - name: Check out checker code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install the isolated checker
+        run: npm ci --prefix scripts/link-integrity --ignore-scripts --no-audit
+
+      - name: Download the rendered inventory
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: rendered-link-head-inventory
+          path: .link-integrity/head
+
+      - name: Validate cross-Netdata-site targets
+        run: >-
+          node scripts/link-integrity/check.mjs cross-site
+          --inventory .link-integrity/head/link-inventory.json
+          --policy config/link-integrity.json
+          --report "$RUNNER_TEMP/cross-site-report.json"
+
+      - name: Upload the cross-site report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: rendered-link-cross-site-report
+          path: ${{ runner.temp }}/cross-site-report.json
+          if-no-files-found: warn
+          retention-days: 3
+
+  render-base:
+    name: Render merge-base link inventory
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out the pull-request revision with history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Preserve the pull-request checker for the base render
+        run: |
+          mkdir -p "$RUNNER_TEMP/link-integrity"
+          cp -R scripts/link-integrity/. "$RUNNER_TEMP/link-integrity/"
+          cp config/link-integrity.json "$RUNNER_TEMP/link-integrity-policy.json"
+
+      - name: Switch to the merge-base revision
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+        run: |
+          merge_base=$(git merge-base "$BASE_SHA" "$HEAD_SHA")
+          test -n "$merge_base"
+          git switch --detach "$merge_base"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: yarn
+
+      - name: Install the isolated checker
+        run: npm ci --prefix "$RUNNER_TEMP/link-integrity" --ignore-scripts --no-audit
+
+      - name: Install the documentation build
+        run: yarn install --frozen-lockfile
+
+      - name: Render the merge-base revision
+        run: yarn build
+
+      - name: Build the merge-base rendered-link inventory
+        run: >-
+          node "$RUNNER_TEMP/link-integrity/check.mjs" inventory
+          --build-dir build
+          --redirects netlify.toml
+          --policy "$RUNNER_TEMP/link-integrity-policy.json"
+          --output "$RUNNER_TEMP/link-inventory.json"
+
+      - name: Upload the merge-base inventory
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: rendered-link-base-inventory
+          path: ${{ runner.temp }}/link-inventory.json
+          if-no-files-found: error
+          retention-days: 3
+
+  new-third-party:
+    name: Advisory new third-party links
+    needs: [render-head, render-base]
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Require valid head and merge-base inventories
+        if: ${{ needs.render-head.result != 'success' || needs.render-base.result != 'success' }}
+        run: |
+          echo "The head or merge-base render did not produce a valid link inventory."
+          exit 1
+
+      - name: Check out checker code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install the isolated checker
+        run: npm ci --prefix scripts/link-integrity --ignore-scripts --no-audit
+
+      - name: Download the pull-request inventory
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: rendered-link-head-inventory
+          path: .link-integrity/head
+
+      - name: Download the merge-base inventory
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: rendered-link-base-inventory
+          path: .link-integrity/base
+
+      - name: Validate newly introduced third-party targets
+        run: >-
+          node scripts/link-integrity/check.mjs new-third-party
+          --head-inventory .link-integrity/head/link-inventory.json
+          --base-inventory .link-integrity/base/link-inventory.json
+          --policy config/link-integrity.json
+          --report "$RUNNER_TEMP/new-third-party-report.json"
+
+      - name: Upload the new-third-party report
+        if: ${{ always() }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: rendered-link-new-third-party-report
+          path: ${{ runner.temp }}/new-third-party-report.json
+          if-no-files-found: warn
+          retention-days: 3

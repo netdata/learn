@@ -1,0 +1,8 @@
+{
+  "name": "@netdata/learn-link-integrity",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "parse5": "8.0.1"
+  }
+}
