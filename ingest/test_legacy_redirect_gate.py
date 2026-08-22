@@ -361,6 +361,22 @@ class RepositoryCatalogueTests(unittest.TestCase):
         for route in routes:
             self.assertTrue(route in result["resolved"] or route in retained, route)
 
+    def test_retired_energomera_routes_resolve_to_generic_prometheus_collector(self):
+        prometheus_source = (
+            "https://github.com/netdata/netdata/blob/master/"
+            "src/go/plugin/go.d/collector/prometheus/README.md"
+        )
+        routes = {
+            "/docs/data-collection/iot-devices/energomera-smart-power-meters",
+            "/docs/collecting-metrics/iot-devices/energomera-smart-power-meters",
+            "/docs/collecting-metrics/hardware-and-iot/energomera-smart-power-meters",
+            "/docs/collecting-metrics/hardware-and-sensors/energomera-smart-power-meters",
+        }
+        self.assertEqual({self.catalogue[route] for route in routes}, {prometheus_source})
+        result = self.gate()
+        for route in routes:
+            self.assertIn(route, result["resolved"])
+
     def test_policy_retirements_are_complete_and_match_the_catalogue(self):
         retirements = self.policy["legacy_catalogue_retirements"]
         self.assertTrue(retirements)
