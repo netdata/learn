@@ -11,6 +11,13 @@ a published path or fragment exists.
 Implementation status: policy specified; enforcement is unsupported until the standalone GitHub
 jobs and corresponding branch-protection settings exist.
 
+Learn link validation is repository-owned and self-contained. This repository owns its checker
+code, fixtures, workflows, schedule, artifacts, issue maintenance, branch-protection integration,
+repair automation, implementation plan, and validation evidence. No Learn link-validation job may
+fetch, import, vendor, or execute production code from `netdata/seo`, and Learn CI must not require
+an SEO checkout, workflow, artifact, service, or repository permission. SEO may consume published
+results for measurement, but it is never a production dependency.
+
 Link validation has four distinct failure domains. Do not collapse them into one job or make a
 Netlify build or deployment responsible for merge eligibility:
 
@@ -27,9 +34,9 @@ Netlify build or deployment responsible for merge eligibility:
   outside Netlify. The pull-request job checks only these newly introduced targets; its findings
   cannot block merging or deployment.
 - **Complete third-party reconciliation:** the full rendered third-party link inventory is checked
-  by a weekly scheduled job, not by every pull request. Workflow ownership, confirmation policy,
-  issue lifecycle, request policy, and optional AI-assisted repair require explicit user decisions
-  before implementation.
+  by a Learn-owned weekly scheduled job, not by every pull request. Its issue and any repair pull
+  request stay in this repository. Confirmation policy, issue lifecycle behavior, request policy,
+  and optional AI-assisted repair require explicit user decisions before implementation.
 
 ## Change discipline
 
