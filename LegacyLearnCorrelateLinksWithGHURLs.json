@@ -3532,5 +3532,6 @@
     "https://learn.netdata.cloud/docs/netdata-ai/mcp/mcp-clients/claude-desktop": "https://github.com/netdata/netdata/blob/master/docs/netdata-ai/mcp/mcp-clients/claude-desktop.md",
     "https://learn.netdata.cloud/docs/netdata-ai/mcp/mcp-clients/claude-code": "https://github.com/netdata/netdata/blob/master/docs/netdata-ai/mcp/mcp-clients/claude-code.md",
     "https://learn.netdata.cloud/docs/netdata-ai/mcp/mcp-clients": "https://github.com/netdata/netdata/blob/master/docs/netdata-ai/mcp/mcp-clients/ai-devops-copilot.md",
-    "https://learn.netdata.cloud/docs/collecting-metrics/opentelemetry/opentelemetry-metrics": "https://github.com/netdata/netdata/blob/master/src/crates/otel-plugin/README.md"
+    "https://learn.netdata.cloud/docs/collecting-metrics/opentelemetry/opentelemetry-metrics": "https://github.com/netdata/netdata/blob/master/src/crates/otel-plugin/README.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat": "https://github.com/netdata/netdata/blob/master/src/collectors/ebpf.plugin/integrations/ebpf_dcstat.md"
 }

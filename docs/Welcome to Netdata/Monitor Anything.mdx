@@ -31,21 +31,21 @@ Learn more about [how collectors work](/docs/collecting-metrics), and then learn
 **Select your primary infrastructure to jump directly to relevant integrations:**
 
 **Cloud & Infrastructure:**
-[AWS](#cloud-provider-managed) • [Azure](#cloud-provider-managed) • [GCP](#cloud-provider-managed) • [Kubernetes](#kubernetes) • [Docker](#containers-and-vms) • [VMware](#containers-and-vms)
+[AWS](#cloud-and-devops) • [Azure](#cloud-and-devops) • [GCP](#cloud-and-devops) • [Kubernetes](#containers-and-vms) • [Docker](#containers-and-vms) • [VMware](#containers-and-vms)
 
 **Databases & Caching:**
-[MySQL](#databases) • [PostgreSQL](#databases) • [MongoDB](#databases) • [Redis](#databases) • [Elasticsearch](#search-engines) • [Oracle](#databases)
+[MySQL](#databases) • [PostgreSQL](#databases) • [MongoDB](#databases) • [Redis](#databases) • [Elasticsearch](#databases) • [Oracle](#databases)
 
 **Web & Application:**
-[NGINX](#web-servers-and-web-proxies) • [Apache](#web-servers-and-web-proxies) • [HAProxy](#web-servers-and-web-proxies) • [Tomcat](#web-servers-and-web-proxies) • [PHP-FPM](#web-servers-and-web-proxies)
+[NGINX](#web-servers-and-proxies) • [Apache](#web-servers-and-proxies) • [HAProxy](#web-servers-and-proxies) • [Tomcat](#web-servers-and-proxies) • [PHP-FPM](#web-servers-and-proxies)
 
 **Message Queues:**
-[Kafka](#message-brokers) • [RabbitMQ](#message-brokers) • [ActiveMQ](#message-brokers) • [NATS](#message-brokers) • [Pulsar](#message-brokers)
+[Kafka](#databases) • [RabbitMQ](#databases) • [ActiveMQ](#databases) • [NATS](#databases) • [Pulsar](#databases)
 
 **Operating Systems:**
-[Linux](#linux-systems) • [Windows](#windows-systems) • [macOS](#macos-systems) • [FreeBSD](#freebsd)
+[Linux](#operating-systems) • [Windows](#operating-systems) • [macOS](#operating-systems) • [FreeBSD](#operating-systems)
 
-**Don't see what you need?** We support [Prometheus endpoints](#generic-data-collection), [SNMP devices](#generic-data-collection), [StatsD](#beyond-the-850-integrations), and [custom data sources](#generic-data-collection).
+**Don't see what you need?** We support [Prometheus endpoints](#beyond-the-850-integrations), [SNMP devices](#networking), [StatsD](#beyond-the-850-integrations), and [custom data sources](#beyond-the-850-integrations).
 
 
 ## Beyond the 850+ integrations
@@ -192,7 +192,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [CPU performance](/docs/collecting-metrics/collectors/operating-systems/cpu-performance) | This collector monitors CPU performance metrics about cycles, instructions, migrations, cache operations and more. |
 | [dev.cpu.0.freq](/docs/collecting-metrics/collectors/operating-systems/dev.cpu.0.freq) | Read current CPU Scaling frequency. |
 | [eBPF Cachestat](/docs/collecting-metrics/collectors/operating-systems/ebpf-cachestat) | Monitor Linux page cache events giving users a general vision about how the kernel is manipulating files. |
-| [eBPF DCstat](/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat) | Monitor directory cache events per application given an overall vision about files on memory or storage device. |
+| [eBPF DCstat](/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat) | Monitor directory cache events given an overall vision about files on memory or storage device. |
 | [eBPF DNS](/docs/collecting-metrics/collectors/operating-systems/ebpf-dns) | Monitor DNS query and response traffic at the kernel level, broken down by transport protocol (UDP/TCP) and IP family (IPv4/IPv6). |
 | [eBPF Filedescriptor](/docs/collecting-metrics/collectors/operating-systems/ebpf-filedescriptor) | Monitor calls for functions responsible to open or close a file descriptor and possible errors. |
 | [eBPF Hardirq](/docs/collecting-metrics/collectors/operating-systems/ebpf-hardirq) | Monitor latency for each HardIRQ available. |
