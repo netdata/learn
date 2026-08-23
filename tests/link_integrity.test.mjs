@@ -369,6 +369,9 @@ test('keeps required and advisory jobs standalone, pinned, and outside Netlify',
   ]) assert.match(workflow, new RegExp(`name: ${name}`));
   assert.match(workflow, /same-site:\n[\s\S]*?needs: render-head\n\s+if: \$\{\{ always\(\) \}\}/);
   assert.match(workflow, /merge_group:/);
+  assert.match(workflow, /workflow_dispatch:\n\s+inputs:\n\s+pr_number:/);
+  assert.match(workflow, /inputs\.head_sha \|\| github\.event\.pull_request\.head\.sha/);
+  assert.match(workflow, /inputs\.base_sha \|\| github\.event\.pull_request\.base\.sha/);
   assert.ok(
     workflow.indexOf('Preserve the pull-request checker for the base render') <
     workflow.indexOf('Switch to the merge-base revision'),
@@ -378,4 +381,17 @@ test('keeps required and advisory jobs standalone, pinned, and outside Netlify',
     .filter((reference) => !/@[0-9a-f]{40}$/.test(reference));
   assert.deepEqual(unpinned, []);
   assert.doesNotMatch(netlify, /link-integrity|same-site links|third-party links/i);
+});
+
+test('ingest automation explicitly dispatches rendered link checks for its PR head', async () => {
+  const root = path.resolve(import.meta.dirname, '..');
+  const workflow = await fs.readFile(path.join(root, '.github/workflows/ingest.yml'), 'utf8');
+  assert.match(workflow, /permissions:\n\s+actions: write/);
+  assert.match(workflow, /id: create-pr\n\s+uses: peter-evans\/create-pull-request@[0-9a-f]{40}/);
+  assert.match(workflow, /pull-request-operation == 'created'/);
+  assert.match(workflow, /pull-request-operation == 'updated'/);
+  assert.match(workflow, /workflow_id: 'rendered-link-integrity\.yml'/);
+  assert.match(workflow, /ref: pull\.head\.ref/);
+  assert.match(workflow, /base_sha: pull\.base\.sha/);
+  assert.match(workflow, /head_sha: pull\.head\.sha/);
 });
