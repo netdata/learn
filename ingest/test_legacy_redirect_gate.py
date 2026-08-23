@@ -375,6 +375,10 @@ class RepositoryCatalogueTests(unittest.TestCase):
             "/docs/collecting-metrics/hardware-and-iot/energomera-smart-power-meters",
             "/docs/collecting-metrics/hardware-and-sensors/energomera-smart-power-meters",
         }
+        published_route = (
+            "/docs/collecting-metrics/collectors/hardware-and-sensors/"
+            "energomera-smart-power-meters"
+        )
         self.assertEqual({self.catalogue[route] for route in routes}, {prometheus_source})
         result = self.gate()
         for route in routes:
@@ -385,7 +389,7 @@ class RepositoryCatalogueTests(unittest.TestCase):
             redirects.readRedirectsFromFile(str(REPO_ROOT / "netlify.toml")),
             result["resolved"],
         )
-        for route in routes:
+        for route in routes | {published_route}:
             self.assertEqual(merged[route], prometheus_route)
 
     def test_policy_retirements_are_complete_and_match_the_catalogue(self):
