@@ -130,6 +130,8 @@
   learn_path: /docs/developer-and-contributor-corner/glossary
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guidelines.md
   learn_path: /docs/developer-and-contributor-corner/contribute-to-the-documentation
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/ceph/README.md
+  learn_path: /docs/collecting-metrics/ceph
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/impact-on-resources.md
   learn_path: /docs/netdata-agent/resource-utilization/impact-on-cloud-vms
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/install/windows-release-channels.md
