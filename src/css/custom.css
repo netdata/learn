@@ -604,7 +604,95 @@ html[data-theme='dark'] .sui-layout .sui-result em {
 	display: none;
 }
 
+.markdown [data-prometheus-profile-catalog] [hidden] {
+	display: none !important;
+}
+
+.markdown [data-prometheus-profile-catalog] code {
+	overflow-wrap: anywhere;
+	word-break: break-word;
+}
+
+.prometheus-profile-tools {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	gap: 0.75rem 1rem;
+	padding: 1rem;
+	border-bottom: 1px solid var(--ifm-color-emphasis-300);
+	background: var(--ifm-color-emphasis-100);
+}
+
+.prometheus-profile-search-field {
+	display: grid;
+	gap: 0.375rem;
+}
+
+.prometheus-profile-search-field label {
+	font-size: 0.875rem;
+	font-weight: 700;
+}
+
+.prometheus-profile-search-field input {
+	width: 100%;
+	min-width: 0;
+	padding: 0.625rem 0.75rem;
+	border: 1px solid var(--ifm-color-emphasis-300);
+	border-radius: var(--ifm-global-radius);
+	color: var(--ifm-font-color-base);
+	background: var(--ifm-background-color);
+}
+
+.prometheus-profile-search-field input:focus {
+	border-color: var(--ifm-color-primary);
+	outline: 2px solid var(--ifm-color-primary);
+	outline-offset: 2px;
+}
+
+.prometheus-profile-actions {
+	display: flex;
+	align-items: end;
+	gap: 0.5rem;
+}
+
+.prometheus-profile-actions button {
+	min-height: 42px;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--ifm-color-emphasis-300);
+	border-radius: var(--ifm-global-radius);
+	color: var(--ifm-font-color-base);
+	background: var(--ifm-background-color);
+	cursor: pointer;
+}
+
+.prometheus-profile-actions button:hover,
+.prometheus-profile-actions button:focus-visible {
+	border-color: var(--ifm-color-primary);
+}
+
+.prometheus-profile-search-status {
+	grid-column: 1 / -1;
+	min-height: 1.25rem;
+	margin: 0;
+	font-size: 0.875rem;
+}
+
+.prometheus-profile-search-status.is-empty {
+	font-weight: 700;
+}
+
 @media (max-width: 640px) {
+	.prometheus-profile-tools {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.prometheus-profile-actions {
+		align-items: stretch;
+	}
+
+	.prometheus-profile-actions button {
+		flex: 1;
+	}
+
 	.markdown table.integration-alert-table,
 	.markdown table.integration-alert-table tbody,
 	.markdown table.integration-alert-table tr,

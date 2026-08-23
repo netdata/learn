@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from '@docusaurus/Head';
 import { useLocation } from '@docusaurus/router';
 
 import { NEDI_HEAD_TAGS, documentPathname, isNediRoute } from '@site/src/components/Nedi/assets';
+import { enhancePrometheusProfileCatalogs } from '@site/src/theme/PrometheusProfileCatalog';
 
 // The Ask Nedi route is the only page that uses the embed, so its stylesheet and
 // scripts are declared here rather than in the site-wide head. Rendering them on the
@@ -23,6 +24,10 @@ export default function Root({ children }) {
   // Root is mounted once per document, so this stays the pathname the document was
   // rendered for even after client-side navigation.
   const [renderedPathname] = useState(() => documentPathname(pathname));
+
+  useEffect(() => {
+    enhancePrometheusProfileCatalogs();
+  }, [pathname]);
 
   return (
     <>
