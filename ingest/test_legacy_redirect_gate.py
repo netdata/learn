@@ -355,11 +355,29 @@ class RepositoryCatalogueTests(unittest.TestCase):
 
     def test_ebpf_dcstat_routes_are_resolved_or_retained_across_the_upstream_move(self):
         result = self.gate()
-        routes = {route for route, source in self.catalogue.items() if source.endswith("integrations/ebpf_dcstat.md")}
+        source = (
+            "https://github.com/netdata/netdata/blob/master/"
+            "src/collectors/ebpf.plugin/ebpfgo.plugin/integrations/ebpf_dcstat.md"
+        )
+        routes = {
+            route
+            for route, catalogue_source in self.catalogue.items()
+            if catalogue_source == source
+        }
         self.assertEqual(len(routes), 3)
         retained = {entry["route"] for entry in result["retained"]}
         for route in routes:
             self.assertTrue(route in result["resolved"] or route in retained, route)
+
+        canonical_route = "/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat"
+        final_redirects = redirects.clean_redirects(
+            redirects.combineDictsOverwrite(
+                redirects.readRedirectsFromFile(str(REPO_ROOT / "netlify.toml")),
+                result["resolved"],
+            ),
+            set(self.mapping.values()),
+        )
+        self.assertNotIn(canonical_route, final_redirects)
 
     def test_retired_energomera_routes_resolve_to_generic_prometheus_collector(self):
         prometheus_source = (

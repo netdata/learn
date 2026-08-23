@@ -23,6 +23,12 @@ env:
   # Assignees for broken links issues (all repos)
   BROKEN_LINKS_ASSIGNEES: "kanelatechnical,ilyam8"
 
+permissions:
+  actions: write
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   ingest:
     runs-on: ubuntu-latest
@@ -87,6 +93,7 @@ jobs:
           mv tmp "${docfile}" || exit 1
 
       - name: Create pull request
+        id: create-pr
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -100,6 +107,42 @@ jobs:
             [1]: https://github.com/peter-evans/create-pull-request:
           branch: ingest
           labels: ingest, automation
+
+      - name: Run rendered link checks for the automated PR
+        if: >-
+          steps.create-pr.outputs.pull-request-operation == 'created' ||
+          steps.create-pr.outputs.pull-request-operation == 'updated'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        env:
+          PULL_REQUEST_NUMBER: ${{ steps.create-pr.outputs.pull-request-number }}
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pullNumber = Number(process.env.PULL_REQUEST_NUMBER);
+            if (!Number.isSafeInteger(pullNumber) || pullNumber <= 0) {
+              throw new Error(`Invalid pull-request number: ${process.env.PULL_REQUEST_NUMBER}`);
+            }
+
+            const { data: pull } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: pullNumber,
+            });
+            if (pull.head.repo.full_name !== `${context.repo.owner}/${context.repo.repo}`) {
+              throw new Error(`Refusing to dispatch checks for external head repository ${pull.head.repo.full_name}`);
+            }
+
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'rendered-link-integrity.yml',
+              ref: pull.head.ref,
+              inputs: {
+                pr_number: String(pull.number),
+                base_sha: pull.base.sha,
+                head_sha: pull.head.sha,
+              },
+            });
 
       - name: Create or update broken links issue
         if: steps.ingest.outputs.has_broken_links == 'true'

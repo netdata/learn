@@ -3,12 +3,26 @@ name: Rendered link integrity
 on:
   pull_request:
   merge_group:
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Pull request that owns the dispatched checks
+        required: true
+        type: string
+      base_sha:
+        description: Pull-request base revision
+        required: true
+        type: string
+      head_sha:
+        description: Pull-request head revision
+        required: true
+        type: string
 
 permissions:
   contents: read
 
 concurrency:
-  group: rendered-link-integrity-${{ github.event.pull_request.number || github.event.merge_group.head_sha }}
+  group: rendered-link-integrity-${{ inputs.pr_number || github.event.pull_request.number || github.event.merge_group.head_sha }}
   cancel-in-progress: true
 
 env:
@@ -26,7 +40,7 @@ jobs:
       - name: Check out the pull-request revision with history
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          ref: ${{ inputs.head_sha || github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
           fetch-depth: 0
           persist-credentials: false
 
@@ -80,7 +94,7 @@ jobs:
       - name: Check out checker code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          ref: ${{ inputs.head_sha || github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
           persist-credentials: false
 
       - name: Set up Node.js
@@ -126,7 +140,7 @@ jobs:
       - name: Check out checker code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          ref: ${{ inputs.head_sha || github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
           persist-credentials: false
 
       - name: Set up Node.js
@@ -168,7 +182,7 @@ jobs:
       - name: Check out the pull-request revision with history
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          ref: ${{ inputs.head_sha || github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
           fetch-depth: 0
           persist-credentials: false
 
@@ -180,8 +194,8 @@ jobs:
 
       - name: Switch to the merge-base revision
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.merge_group.base_sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          BASE_SHA: ${{ inputs.base_sha || github.event.pull_request.base.sha || github.event.merge_group.base_sha }}
+          HEAD_SHA: ${{ inputs.head_sha || github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
         run: |
           merge_base=$(git merge-base "$BASE_SHA" "$HEAD_SHA")
           test -n "$merge_base"
@@ -235,7 +249,7 @@ jobs:
       - name: Check out checker code
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: ${{ github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
+          ref: ${{ inputs.head_sha || github.event.pull_request.head.sha || github.event.merge_group.head_sha }}
           persist-credentials: false
 
       - name: Set up Node.js
