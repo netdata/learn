@@ -46,3 +46,12 @@ Netlify build or deployment responsible for merge eligibility:
 - Generated documentation must be repaired through its owning producer and normal ingestion path;
   do not hand-edit output that regeneration will replace.
 - Use explicit file paths when staging changes; never stage the whole worktree.
+
+## Generated Prometheus profile catalogues
+
+Agent-generated Prometheus profile catalogues carry static `data-prometheus-profile-catalog`,
+`data-prometheus-profile`, `data-prometheus-profile-family`, and
+`data-prometheus-profile-chart` hooks. The Learn theme root enhances those disclosures with
+catalogue-scoped search, counts, and expand/collapse controls after initial render and client-side
+navigation. Keep all catalogue content in the generated HTML for no-JavaScript use; Learn must not
+parse Agent profile source contracts or hand-edit generated integration pages.
