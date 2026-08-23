@@ -1283,6 +1283,26 @@
     Prometheus-compatible metric_relabel_configs rules before charts are built.
   meta_yaml: .nan
   message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/guides/ceph/README.md
+  sidebar_label: Ceph
+  learn_status: Published
+  learn_rel_path: Collecting Metrics
+  keywords:
+  - ceph
+  - prometheus
+  - mgr
+  - exporter
+  - dashboard
+  - alerts
+  - retention
+  - parent
+  - rgw
+  - nvme-of
+  description: Deploy distributed Ceph monitoring with the MGR Prometheus module,
+    ceph-exporter, the NVMe-oF gateway exporter, the Dashboard API collector, alerts,
+    Parents, retention, and integrations.
+  meta_yaml: .nan
+  message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory.md
   sidebar_label: Active Directory
   learn_status: Published
