@@ -572,6 +572,75 @@ html[data-theme='dark'] .sui-layout .sui-result em {
 	@apply prose max-w-none;
 }
 
+.markdown table.integration-alert-table {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.markdown table.integration-alert-table th:nth-child(1) {
+	width: 25%;
+}
+
+.markdown table.integration-alert-table th:nth-child(2) {
+	width: 30%;
+}
+
+.markdown table.integration-alert-table th:nth-child(3) {
+	width: 45%;
+}
+
+.markdown table.integration-alert-table th:nth-child(-n + 2),
+.markdown table.integration-alert-table td:nth-child(-n + 2) {
+	overflow-wrap: anywhere;
+	word-break: normal;
+}
+
+.markdown table.integration-alert-table td {
+	vertical-align: top;
+}
+
+.integration-alert-table__mobile-label {
+	display: none;
+}
+
+@media (max-width: 640px) {
+	.markdown table.integration-alert-table,
+	.markdown table.integration-alert-table tbody,
+	.markdown table.integration-alert-table tr,
+	.markdown table.integration-alert-table td {
+		display: block;
+		width: 100%;
+	}
+
+	.markdown table.integration-alert-table thead {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		clip-path: inset(50%);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.markdown table.integration-alert-table tbody tr {
+		margin-bottom: 16px;
+		overflow: hidden;
+		border: 1px solid var(--ifm-table-border-color);
+		border-radius: var(--ifm-global-radius);
+	}
+
+	.markdown .integration-alert-table__mobile-label {
+		display: block;
+		margin-bottom: 4px;
+		color: var(--ifm-font-color-base);
+		font-weight: 700;
+	}
+}
+
 /* Prevent Tailwind prose from adding backtick characters around inline code */
 .markdown code::before,
 .markdown code::after,
