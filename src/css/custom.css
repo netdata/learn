@@ -610,7 +610,6 @@ html[data-theme='dark'] .sui-layout .sui-result em {
 
 .markdown [data-prometheus-profile-catalog] code {
 	overflow-wrap: anywhere;
-	word-break: break-word;
 }
 
 .prometheus-profile-tools {
