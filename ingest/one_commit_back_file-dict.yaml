@@ -1338,8 +1338,6 @@
   learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/dynatrace
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/elgato_key_light_devices..md
   learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/elgato-key-light-devices.
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/energomera_smart_power_meters.md
-  learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/energomera-smart-power-meters
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/eos.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/eos
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/etcd.md
@@ -3484,6 +3482,8 @@
   learn_path: /docs/network-performance-monitoring/snmp-traps/integrations/tylink-snmp-traps
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/u_c_davis_ece_dept_tom_snmp_traps.md
   learn_path: /docs/network-performance-monitoring/snmp-traps/integrations/u-c-davis-ece-dept-tom-snmp-traps
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/ubiquiti_net-snmp_devices.md
+  learn_path: /docs/network-performance-monitoring/device-metrics/integrations/ubiquiti-net-snmp-devices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/ubiquiti_unifi.md
   learn_path: /docs/network-performance-monitoring/device-metrics/integrations/ubiquiti-unifi
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/ubiquiti_unifi_security_gateway.md
