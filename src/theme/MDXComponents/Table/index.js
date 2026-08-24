@@ -1,6 +1,9 @@
 import React from 'react';
 
 const ALERT_TABLE_HEADERS = ['Alert name', 'On metric', 'Description'];
+const PROMETHEUS_METRIC_TABLE_HEADERS = [
+  'Prometheus metric', 'Netdata chart', 'Dimension', 'Unit', 'Scope',
+];
 
 const nodeText = (node) => React.Children.toArray(node)
   .map((child) => (React.isValidElement(child) ? nodeText(child.props.children) : String(child)))
@@ -20,6 +23,12 @@ const isAlertTable = (children) => {
   const headers = tableHeaders(children);
   return headers.length === ALERT_TABLE_HEADERS.length &&
     ALERT_TABLE_HEADERS.every((header, index) => headers[index] === header);
+};
+
+const isPrometheusMetricTable = (children) => {
+  const headers = tableHeaders(children);
+  return headers.length === PROMETHEUS_METRIC_TABLE_HEADERS.length &&
+    PROMETHEUS_METRIC_TABLE_HEADERS.every((header, index) => headers[index] === header);
 };
 
 const labelBody = (body) => React.cloneElement(body, undefined,
@@ -42,6 +51,11 @@ const labelBody = (body) => React.cloneElement(body, undefined,
 );
 
 export default function ResponsiveAlertTable({ children, className, ...props }) {
+  if (isPrometheusMetricTable(children)) {
+    const classes = [className, 'prometheus-profile-metrics-table'].filter(Boolean).join(' ');
+    return <table className={classes} {...props}>{children}</table>;
+  }
+
   if (!isAlertTable(children)) {
     return <table className={className} {...props}>{children}</table>;
   }
