@@ -1156,8 +1156,6 @@
   learn_path: /docs/collecting-metrics/collectors/applications/gearman
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/geth/README.md
   learn_path: /docs/collecting-metrics/collectors/applications/go-ethereum
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/haproxy/README.md
-  learn_path: /docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/hddtemp/README.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/hdd-temperature
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/hdfs/README.md
