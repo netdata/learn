@@ -589,7 +589,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/haproxy"
-  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus"
 
 [[redirects]]
   from="/docs/agent/collectors/go.d.plugin/modules/hdfs"
@@ -1657,7 +1657,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/haproxy-go.d.plugin-Recommended"
-  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/Web-server-logs-Squid"
@@ -2509,7 +2509,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/haproxy-go.d.plugin-recommended"
-  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/web-servers/apache"
@@ -4237,11 +4237,11 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/haproxy"
-  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Web%20Servers/haproxy-python.d.plugin"
-  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus"
 
 [[redirects]]
   from="/docs/data-collection/task-queues/beanstalk"
@@ -5845,7 +5845,7 @@
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/haproxy"
-  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/gobetween"
@@ -8593,7 +8593,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/web-servers-and-web-proxies/haproxy"
-  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus"
 
 [[redirects]]
   from="/docs/collecting-metrics/web-servers-and-web-proxies/gobetween"
@@ -10777,7 +10777,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/web-servers-and-proxies/haproxy"
-  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus"
 
 [[redirects]]
   from="/docs/collecting-metrics/web-servers-and-proxies/gobetween"
