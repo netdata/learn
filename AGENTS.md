@@ -57,11 +57,9 @@ Netlify build or deployment responsible for merge eligibility:
 - `config/site-build-gate-baseline.json` contains only exact, reasoned current findings. Never add
   or widen an entry to make a build pass without an explicit policy decision.
 
-## Generated Prometheus profile catalogues
+## Generated Prometheus profile metrics
 
-Agent-generated Prometheus profile catalogues carry static `data-prometheus-profile-catalog`,
-`data-prometheus-profile`, `data-prometheus-profile-family`, and
-`data-prometheus-profile-chart` hooks. The Learn theme root enhances those disclosures with
-catalogue-scoped search, counts, and expand/collapse controls after initial render and client-side
-navigation. Keep all catalogue content in the generated HTML for no-JavaScript use; Learn must not
-parse Agent profile source contracts or hand-edit generated integration pages.
+Agent-generated Prometheus profile coverage is rendered as ordinary tables grouped by each
+profile's top-level metric family. Learn identifies the exact generated table header only to apply
+responsive wrapping; it does not add search, disclosure, or other interactive catalogue behavior.
+Learn must not parse Agent profile source contracts or hand-edit generated integration pages.

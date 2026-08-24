@@ -60,6 +60,36 @@ describe('ResponsiveAlertTable', () => {
     expect(screen.getByRole('table')).not.toHaveClass('integration-alert-table');
   });
 
+  it('marks generated Prometheus metric tables without changing their content', () => {
+    render(
+      <ResponsiveAlertTable className="existing">
+        <thead>
+          <tr>
+            <th>Prometheus metric</th>
+            <th>Netdata chart</th>
+            <th>Dimension</th>
+            <th>Unit</th>
+            <th>Scope</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ceph_health_status</td>
+            <td>Health / Overall — Cluster Health</td>
+            <td>status</td>
+            <td>status</td>
+            <td>Ceph cluster endpoint</td>
+          </tr>
+        </tbody>
+      </ResponsiveAlertTable>,
+    );
+
+    const table = screen.getByRole('table');
+    expect(table).toHaveClass('existing', 'prometheus-profile-metrics-table');
+    expect(within(table).getAllByRole('columnheader')).toHaveLength(5);
+    expect(within(table).getByText('ceph_health_status')).toBeInTheDocument();
+  });
+
   it('keeps non-cell body children and extra cells when enhancing a valid header', () => {
     const { container } = render(
       <ResponsiveAlertTable>
