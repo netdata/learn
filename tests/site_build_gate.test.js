@@ -13,20 +13,20 @@ const gate = path.join(vendor, 'site_build_gate.mjs');
 const expectedManifest = {
   schema: 'netdata-site-build-gate-vendor-v2',
   contract: 'netdata-site-build-gate-v1',
-  ruleset_version: 9,
+  ruleset_version: 10,
   node_major: 22,
   artifacts: [
     {
       path: 'package-lock.json',
-      sha256: 'fc4401552f006f521fb61684c533fe97747a8a8dcba73abdfa4ab9d3f3a43ef0',
+      sha256: '2f474bd510cf012a3601d439268c19f25e8f42e6d643598563f65e411fe244f9',
     },
     {
       path: 'package.json',
-      sha256: 'fcf96b638f7a47e5f7d0e23a893af49c5b1ea1526b9335afa6d07fc80e976839',
+      sha256: '5cd23bae2605a5fcd2bed67b547ae7a4be0f9102dde6265eb4a770c59dce9fe4',
     },
     {
       path: 'site_build_gate.mjs',
-      sha256: '182c683910ec565e007f0d5d5f5fee5ec3050bf6b592e3885bdc1e4972de9fd8',
+      sha256: '171cc249076efa1e9e1edb5cecdbd83b5487f9ea6c7e5b94caa73a1be2f44d4f',
     },
   ],
 };
@@ -40,7 +40,7 @@ function writeFixture(directory, sitemap, html) {
   fs.writeFileSync(path.join(directory, 'index.html'), html);
 }
 
-test('the site vendors the exact accepted ruleset-v9 bundle', () => {
+test('the site vendors the exact accepted ruleset-v10 bundle', () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(vendor, 'manifest.json'), 'utf8'));
   assert.deepEqual(manifest, expectedManifest);
   for (const artifact of manifest.artifacts) {
@@ -63,6 +63,7 @@ test('every Netlify context stages the clean-installed gate after Docusaurus', a
     '--build-dir', 'build',
     '--site-origin', 'https://learn.netdata.cloud',
     '--baseline', 'config/site-build-gate-baseline.json',
+    '--integration-route-prefix', '/docs/collecting-metrics/collectors',
     '--format', 'json',
   ]);
   assert.match(command, new RegExp(install));

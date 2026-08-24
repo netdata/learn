@@ -28,6 +28,8 @@ describe('shared deployment integrations', () => {
       'https://learn.netdata.cloud',
       '--baseline',
       'config/site-build-gate-baseline.json',
+      '--integration-route-prefix',
+      '/docs/collecting-metrics/collectors',
       '--format',
       'json',
     ]);
@@ -44,7 +46,7 @@ describe('shared deployment integrations', () => {
     expect(manifest).toMatchObject({
       schema: 'netdata-site-build-gate-vendor-v2',
       contract: 'netdata-site-build-gate-v1',
-      ruleset_version: 9,
+      ruleset_version: 10,
       node_major: 22,
     });
   });
