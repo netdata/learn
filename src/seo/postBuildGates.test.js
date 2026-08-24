@@ -39,6 +39,8 @@ describe('post-build gate rollout', () => {
         'https://learn.netdata.cloud',
         '--baseline',
         'config/site-build-gate-baseline.json',
+        '--integration-route-prefix',
+        '/docs/collecting-metrics/collectors',
         '--format',
         'json',
       ],

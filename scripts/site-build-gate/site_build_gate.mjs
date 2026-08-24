@@ -21,7 +21,7 @@ export const CONTRACT_SCHEMA = "netdata-site-build-gate-v1";
 export const MANIFEST_SCHEMA = "netdata-site-build-gate-vendor-v2";
 export const BASELINE_SCHEMA = "netdata-site-build-gate-baseline-v1";
 export const REPORT_SCHEMA = "netdata-site-build-gate-report-v1";
-export const RULESET_VERSION = 9;
+export const RULESET_VERSION = 10;
 export const REQUIRED_NODE_MAJOR = 22;
 export const HEAVY_BYTES = 500_000;
 
@@ -231,6 +231,25 @@ export function normalizeSiteOrigin(value) {
     throw new GateError(`site origin must not contain a path, query, or fragment: ${JSON.stringify(value)}`);
   }
   return parsed.origin;
+}
+
+export function normalizeIntegrationRoutePrefixes(values = []) {
+  if (!Array.isArray(values)) throw new GateError("integration route prefixes must be a list");
+  const policyOrigin = "https://integration-policy.invalid";
+  const normalized = values.map((value) => {
+    if (typeof value !== "string" || !value.startsWith("/")) {
+      throw new GateError(`integration route prefix must be an absolute path: ${JSON.stringify(value)}`);
+    }
+    const parsed = checkedUrl(`${policyOrigin}${value}`, policyOrigin, "integration route prefix");
+    const decoded = safeUrlPath(parsed, "integration route prefix").decodedPath;
+    const prefix = decoded.length > 1 && decoded.endsWith("/") ? decoded.slice(0, -1) : decoded;
+    if (prefix === "/") throw new GateError("integration route prefix cannot cover the site root");
+    return prefix;
+  }).sort(compareText);
+  if (new Set(normalized).size !== normalized.length) {
+    throw new GateError("integration route prefixes must be unique after normalization");
+  }
+  return normalized;
 }
 
 function safeUrlPath(parsed, label) {
@@ -891,11 +910,18 @@ function sortedFindings(findings) {
   return findings.sort((a, b) => compareText(a.rule, b.rule) || compareText(a.path, b.path) || compareText(a.identity, b.identity));
 }
 
-export function scanBuiltHtml(buildDir, siteOrigin) {
+function isIntegrationPolicyPath(policyPath, integrationRoutePrefixes) {
+  return integrationRoutePrefixes.some((prefix) =>
+    policyPath === prefix || policyPath.startsWith(`${prefix}/`),
+  );
+}
+
+export function scanBuiltHtml(buildDir, siteOrigin, { integrationRoutePrefixes = [] } = {}) {
   const rootInput = resolve(buildDir);
   if (!existsSync(rootInput) || !statSync(rootInput).isDirectory()) throw new GateError(`build directory does not exist: ${buildDir}`);
   const root = realpathSync(rootInput);
   const origin = typeof siteOrigin === "string" ? normalizeSiteOrigin(siteOrigin) : siteOrigin;
+  const integrationPrefixes = normalizeIntegrationRoutePrefixes(integrationRoutePrefixes);
   const sitemapRoutes = new Map();
   const sitemapArtifacts = new Map();
   for (const location of sitemapUrls(root, origin)) {
@@ -933,7 +959,7 @@ export function scanBuiltHtml(buildDir, siteOrigin) {
     if (page.images_without_alt) {
       findings.push(finding("images-missing-alt", page.route, `${page.images_without_alt} statically exposed HTML image(s) lack an alt attribute`, stateSignature({ count: page.images_without_alt })));
     }
-    if (page.html_bytes > HEAVY_BYTES) {
+    if (page.html_bytes > HEAVY_BYTES && !isIntegrationPolicyPath(page.policy_path, integrationPrefixes)) {
       findings.push(finding("heavy-page", page.route, `${page.html_bytes} bytes exceeds the ${HEAVY_BYTES}-byte estate guardrail`, stateSignature({
         bytes_without_site_origin: page.html_bytes_without_site_origin,
         site_origin_occurrences: page.site_origin_occurrences,
@@ -965,7 +991,11 @@ export function scanBuiltHtml(buildDir, siteOrigin) {
       for (const page of group) findings.push(finding(rule, page.route, `value is shared by ${group.length} pages`, signature));
     }
   }
-  return { pages: pages.sort((a, b) => compareText(a.route, b.route)), findings: sortedFindings(findings) };
+  return {
+    pages: pages.sort((a, b) => compareText(a.route, b.route)),
+    findings: sortedFindings(findings),
+    integrationRoutePrefixes: integrationPrefixes,
+  };
 }
 
 export function loadBaseline(path) {
@@ -988,10 +1018,11 @@ export function loadBaseline(path) {
   return allowed;
 }
 
-export function runGate(buildDir, { siteOrigin, baselinePath = null }) {
+export function runGate(buildDir, { siteOrigin, baselinePath = null, integrationRoutePrefixes = [] }) {
   requireNode22();
   const origin = normalizeSiteOrigin(siteOrigin);
-  const { pages, findings } = scanBuiltHtml(buildDir, origin);
+  const { pages, findings, integrationRoutePrefixes: normalizedIntegrationPrefixes } =
+    scanBuiltHtml(buildDir, origin, { integrationRoutePrefixes });
   const allowed = loadBaseline(baselinePath);
   const identities = new Set(findings.map((item) => item.identity));
   const regressions = findings.filter((item) => !allowed.has(item.identity));
@@ -1004,6 +1035,7 @@ export function runGate(buildDir, { siteOrigin, baselinePath = null }) {
     contract: CONTRACT_SCHEMA,
     ruleset_version: RULESET_VERSION,
     site_origin: origin,
+    integration_route_prefixes: normalizedIntegrationPrefixes,
     checked_pages: pages.length,
     checked_index_pages: pages.filter((page) => page.in_sitemap && !page.noindex).length,
     counts: Object.fromEntries(Object.entries(counts).sort(([a], [b]) => compareText(a, b))),
@@ -1022,16 +1054,17 @@ function printText(report) {
 }
 
 function parseArgs(argv) {
-  const args = { buildDir: null, siteOrigin: null, baseline: null, manifest: join(dirname(fileURLToPath(import.meta.url)), "manifest.json"), format: "text" };
+  const args = { buildDir: null, siteOrigin: null, baseline: null, manifest: join(dirname(fileURLToPath(import.meta.url)), "manifest.json"), format: "text", integrationRoutePrefixes: [] };
   for (let index = 0; index < argv.length; index += 2) {
     const name = argv[index];
     const value = argv[index + 1];
-    if (!value || !new Set(["--build-dir", "--site-origin", "--baseline", "--manifest", "--format"]).has(name)) throw new GateError(`invalid or incomplete argument: ${name || "<missing>"}`);
+    if (!value || !new Set(["--build-dir", "--site-origin", "--baseline", "--manifest", "--format", "--integration-route-prefix"]).has(name)) throw new GateError(`invalid or incomplete argument: ${name || "<missing>"}`);
     if (name === "--build-dir") args.buildDir = value;
     else if (name === "--site-origin") args.siteOrigin = value;
     else if (name === "--baseline") args.baseline = value;
     else if (name === "--manifest") args.manifest = value;
-    else args.format = value;
+    else if (name === "--format") args.format = value;
+    else args.integrationRoutePrefixes.push(value);
   }
   if (!args.buildDir || !args.siteOrigin) throw new GateError("--build-dir and --site-origin are required");
   if (!new Set(["text", "json"]).has(args.format)) throw new GateError("--format must be text or json");
@@ -1043,7 +1076,11 @@ export function main(argv = process.argv.slice(2)) {
     const args = parseArgs(argv);
     const artifact = fileURLToPath(import.meta.url);
     verifyContract(artifact, resolve(args.manifest));
-    const report = runGate(args.buildDir, { siteOrigin: args.siteOrigin, baselinePath: args.baseline });
+    const report = runGate(args.buildDir, {
+      siteOrigin: args.siteOrigin,
+      baselinePath: args.baseline,
+      integrationRoutePrefixes: args.integrationRoutePrefixes,
+    });
     if (args.format === "json") console.log(JSON.stringify(report, null, 2));
     else printText(report);
     return report.regressions.length ? 1 : 0;
