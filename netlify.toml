@@ -14447,4 +14447,8 @@
   from="/docs/collecting-metrics/cloud-and-devops/cloudwatch"
   to="/docs/collecting-metrics/collectors/cloud-and-devops/amazon-cloudwatch"
 
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus"
+
 # section: dynamic << END
