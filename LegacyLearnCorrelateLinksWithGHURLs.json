@@ -3046,6 +3046,7 @@
     "https://learn.netdata.cloud/docs/collecting-metrics/web-servers-and-proxies/lighttpd": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/lighttpd/README.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/web-servers-and-proxies/iis": "https://github.com/netdata/netdata/blob/master/src/collectors/windows.plugin/integrations/iis.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/web-servers-and-proxies/httpd": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/apache/integrations/httpd.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/prometheus/integrations/haproxy_prometheus.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/web-servers-and-proxies/haproxy": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/prometheus/integrations/haproxy_prometheus.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/web-servers-and-proxies/gobetween": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/prometheus/integrations/gobetween.md",
     "https://learn.netdata.cloud/docs/collecting-metrics/web-servers-and-proxies/envoy": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/envoy/README.md",
