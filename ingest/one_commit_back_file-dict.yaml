@@ -1382,6 +1382,8 @@
   learn_path: /docs/collecting-metrics/collectors/applications/halon
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/hana.md
   learn_path: /docs/collecting-metrics/collectors/databases/hana
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/haproxy_prometheus.md
+  learn_path: /docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/hitron_coda_cable_modem.md
   learn_path: /docs/collecting-metrics/collectors/networking/hitron-coda-cable-modem
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/integrations/homebridge.md
