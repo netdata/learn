@@ -172,6 +172,12 @@ class SeoGridGenerationTests(unittest.TestCase):
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(path, destination)
 
+    def _kickstart_document(self, docs_root, content):
+        document = Path(docs_root) / ingest.KICKSTART_CHECKSUM_DOC
+        document.parent.mkdir(parents=True, exist_ok=True)
+        document.write_text(content, encoding="utf-8")
+        return document
+
     def _assert_recovery_matches_clean_full(
         self, mutate_sources, mutate_recovery=None
     ):
@@ -479,6 +485,180 @@ class SeoGridGenerationTests(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError, "symbolic link"):
                 ingest.load_sidebar_order_state(state_path, docs_root=docs_root)
 
+    def test_kickstart_checksum_is_part_of_recoverable_corpus_identity(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            docs_root = root / "docs"
+            docs_root.mkdir()
+            document = self._kickstart_document(
+                docs_root,
+                f"checksum={ingest.KICKSTART_CHECKSUM_PLACEHOLDER}\n",
+            )
+            checksum = "0123456789abcdef0123456789abcdef"
+
+            ingest.apply_kickstart_checksum(docs_root, checksum.upper())
+            self.assertEqual(
+                document.read_text(encoding="utf-8"), f"checksum={checksum}\n"
+            )
+
+            state_path = root / "state.json"
+            self._write_state(docs_root, state_path, root)
+            self.assertEqual(
+                ingest.load_sidebar_order_state(
+                    state_path, docs_root=docs_root
+                ),
+                self.sidebar_order,
+            )
+            ingest.regenerate_grids_only(
+                docs_root, state_path=state_path, netlify_path=None
+            )
+
+    def test_full_ingest_requires_a_valid_kickstart_checksum(self):
+        with self.assertRaisesRegex(ValueError, "Full ingest requires"):
+            ingest.resolve_kickstart_checksum(None, False, {})
+        with self.assertRaisesRegex(ValueError, "32 hexadecimal"):
+            ingest.resolve_kickstart_checksum("not-a-checksum", False, {})
+
+        checksum = "0123456789ABCDEF0123456789ABCDEF"
+        self.assertEqual(
+            ingest.resolve_kickstart_checksum(checksum, False, {}),
+            checksum.lower(),
+        )
+
+    def test_grid_recovery_does_not_require_a_kickstart_checksum(self):
+        self.assertIsNone(
+            ingest.resolve_kickstart_checksum(None, True, {})
+        )
+
+    def test_local_agent_checkout_supplies_the_kickstart_checksum(self):
+        with tempfile.TemporaryDirectory() as directory:
+            repository_root = Path(directory) / "netdata"
+            script = repository_root / ingest.KICKSTART_SCRIPT_PATH
+            script.parent.mkdir(parents=True)
+            script.write_bytes(b"#!/bin/sh\necho local source\n")
+            expected = hashlib.md5(
+                script.read_bytes(), usedforsecurity=False
+            ).hexdigest()
+
+            self.assertEqual(
+                ingest.resolve_kickstart_checksum(
+                    None, False, {"netdata": repository_root}
+                ),
+                expected,
+            )
+
+    def test_explicit_checksum_takes_precedence_over_local_agent_checkout(self):
+        with tempfile.TemporaryDirectory() as directory:
+            repository_root = Path(directory) / "netdata"
+            repository_root.mkdir()
+            checksum = "0123456789ABCDEF0123456789ABCDEF"
+
+            self.assertEqual(
+                ingest.resolve_kickstart_checksum(
+                    checksum, False, {"netdata": repository_root}
+                ),
+                checksum.lower(),
+            )
+
+    def test_local_kickstart_source_must_be_a_regular_file(self):
+        for source_kind, expected_error in [
+            ("missing", FileNotFoundError),
+            ("directory", ingest.UnsafeFilesystemPathError),
+            ("symlink", ingest.UnsafeFilesystemPathError),
+        ]:
+            with (
+                self.subTest(source_kind=source_kind),
+                tempfile.TemporaryDirectory() as directory,
+            ):
+                root = Path(directory)
+                repository_root = root / "netdata"
+                script = repository_root / ingest.KICKSTART_SCRIPT_PATH
+                script.parent.mkdir(parents=True)
+                if source_kind == "directory":
+                    script.mkdir()
+                elif source_kind == "symlink":
+                    outside = root / "outside-kickstart.sh"
+                    outside.write_text("unchanged\n", encoding="utf-8")
+                    script.symlink_to(outside)
+
+                with self.assertRaises(expected_error):
+                    ingest.resolve_kickstart_checksum(
+                        None, False, {"netdata": repository_root}
+                    )
+                if source_kind == "symlink":
+                    self.assertEqual(
+                        outside.read_text(encoding="utf-8"), "unchanged\n"
+                    )
+
+    def test_kickstart_checksum_rejects_invalid_input_without_changes(self):
+        invalid_values = [
+            None,
+            "",
+            "not-a-checksum",
+            "0" * 31,
+            "0" * 33,
+            "g" * 32,
+        ]
+        for invalid in invalid_values:
+            with (
+                self.subTest(checksum=invalid),
+                tempfile.TemporaryDirectory() as directory,
+            ):
+                docs_root = Path(directory) / "docs"
+                docs_root.mkdir()
+                document = self._kickstart_document(
+                    docs_root, ingest.KICKSTART_CHECKSUM_PLACEHOLDER
+                )
+
+                with self.assertRaisesRegex(ValueError, "32 hexadecimal"):
+                    ingest.apply_kickstart_checksum(docs_root, invalid)
+                self.assertEqual(
+                    document.read_text(encoding="utf-8"),
+                    ingest.KICKSTART_CHECKSUM_PLACEHOLDER,
+                )
+
+    def test_kickstart_checksum_requires_exactly_one_placeholder(self):
+        for content, expected_count in [
+            ("no placeholder\n", 0),
+            (
+                f"{ingest.KICKSTART_CHECKSUM_PLACEHOLDER}\n"
+                f"{ingest.KICKSTART_CHECKSUM_PLACEHOLDER}\n",
+                2,
+            ),
+        ]:
+            with (
+                self.subTest(expected_count=expected_count),
+                tempfile.TemporaryDirectory() as directory,
+            ):
+                docs_root = Path(directory) / "docs"
+                docs_root.mkdir()
+                document = self._kickstart_document(docs_root, content)
+
+                with self.assertRaisesRegex(
+                    ValueError, f"found {expected_count}"
+                ):
+                    ingest.apply_kickstart_checksum(docs_root, "0" * 32)
+                self.assertEqual(document.read_text(encoding="utf-8"), content)
+
+    def test_kickstart_checksum_rejects_symlinked_document(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            docs_root = root / "docs"
+            document = docs_root / ingest.KICKSTART_CHECKSUM_DOC
+            document.parent.mkdir(parents=True)
+            outside = root / "outside.mdx"
+            outside.write_text(
+                ingest.KICKSTART_CHECKSUM_PLACEHOLDER, encoding="utf-8"
+            )
+            document.symlink_to(outside)
+
+            with self.assertRaisesRegex(RuntimeError, "symbolic link"):
+                ingest.apply_kickstart_checksum(docs_root, "0" * 32)
+            self.assertEqual(
+                outside.read_text(encoding="utf-8"),
+                ingest.KICKSTART_CHECKSUM_PLACEHOLDER,
+            )
+
     def test_state_and_redirect_outputs_reject_symlinks_before_changes(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -566,7 +746,7 @@ class SeoGridGenerationTests(unittest.TestCase):
         cards = sum(
             path.read_text(encoding="utf-8").count("<Box ") for path in pages
         )
-        self.assertEqual(integration_count, 179)
+        self.assertEqual(integration_count, 180)
         self.assertEqual(len(pages), 2)
         self.assertEqual(cards, integration_count)
 
@@ -605,7 +785,7 @@ class SeoGridGenerationTests(unittest.TestCase):
 
         def shrink(root):
             integrations = self._integration_files(root, relative)
-            self.assertEqual(len(integrations), 179)
+            self.assertEqual(len(integrations), 180)
             for path in integrations[:5]:
                 path.unlink()
 

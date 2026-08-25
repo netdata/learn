@@ -129,10 +129,30 @@ The ingest script is a python script and has its dependencies (separate from the
 
 6. The organization of the files is handled by the [`map.yaml` file](https://github.com/netdata/netdata/blob/master/docs/.map/map.yaml), that contains metadata for every file. That file should only be edited by members of the Netdata team.
 
-7. Run the ingest process to fetch the documents you are working on from one or multiple repos.
+7. Calculate the checksum of `packaging/installer/kickstart.sh` from the exact Agent source that
+   the full ingest will use. For the default Agent `master` branch:
 
     ```bash
-    python ingest/ingest.py --repos <owner>/<repo>:<branch>
+    kickstart_file="$(mktemp)"
+    trap 'rm -f -- "$kickstart_file"' EXIT
+    curl --fail --location --silent --show-error \
+      --output "$kickstart_file" \
+      https://raw.githubusercontent.com/netdata/netdata/master/packaging/installer/kickstart.sh
+    KICKSTART_CHECKSUM="$(python -c 'import hashlib, pathlib, sys; print(hashlib.md5(pathlib.Path(sys.argv[1]).read_bytes(), usedforsecurity=False).hexdigest())' "$kickstart_file")"
+    rm -f -- "$kickstart_file"
+    trap - EXIT
+    unset kickstart_file
+    ```
+
+   When selecting another remote Agent branch, calculate the checksum from that branch instead.
+   When an explicit local `netdata` checkout is selected, ingestion derives the checksum from that
+   checkout if `--kickstart-checksum` is omitted. An explicit checksum always takes precedence.
+
+8. Run the ingest process to fetch the documents you are working on from one or multiple repos.
+
+    ```bash
+    python ingest/ingest.py --kickstart-checksum "$KICKSTART_CHECKSUM" \
+      --repos <owner>/<repo>:<branch>
     ```
 
     You can also use local paths instead of GitHub repos:
@@ -150,18 +170,20 @@ The ingest script is a python script and has its dependencies (separate from the
     Examples combining GitHub and local paths:
 
     ```bash
-    python ingest/ingest.py --repos netdata/netdata:patch1 /path/to/local/go.d.plugin
+    python ingest/ingest.py --kickstart-checksum "$KICKSTART_CHECKSUM" \
+      --repos netdata/netdata:patch1 /path/to/local/go.d.plugin
     ```
 
     Or if you have your own fork:
 
     ```bash
-    python ingest/ingest.py --repos netdata/netdata:patch1 user1/go.d.plugin:user1-patch
+    python ingest/ingest.py --kickstart-checksum "$KICKSTART_CHECKSUM" \
+      --repos netdata/netdata:patch1 user1/go.d.plugin:user1-patch
     ```
 
     If you don't use `--repos` the ingest will run on the master branches of netdata's repos.
 
-8. Normal ingest already reconciles the generated integration grids. To repair only those grids
+9. Normal ingest already reconciles the generated integration grids. To repair only those grids
    from the committed full-ingest state without refreshing upstream documentation, run:
 
    ```bash
@@ -171,7 +193,7 @@ The ingest script is a python script and has its dependencies (separate from the
    During ingest, integration logos from `netdata.cloud/img` are also analyzed for theme contrast.
    The ingest process tags low-contrast logos so Learn can apply a subtle glow only where needed.
    
-9.  Build a local website  
+10. Build a local website
 
     ```bash
     yarn start
@@ -207,6 +229,12 @@ This repo uses a GitHub Action called [`ingest.yml`](.github/workflows/ingest.ym
 
 The action runs every three hours from 08:10 through 23:10 UTC, can be started manually, and
 runs after relevant generator, site-source, or documentation changes merge to `master`.
+
+Before ingestion, the action resolves the checksum of the Agent `master` kickstart script and
+passes it to `ingest.py`. Ingestion validates and replaces exactly one documented placeholder
+before it records generated sidebar and corpus identities. The action then runs grid-only recovery
+and compares every generated output before and after that recovery as a fixed-point check before
+it publishes an automation pull request; no later workflow step modifies the ingested documentation.
 
 If there are changes to any documentation file, the GitHub Action creates a PR that is then reviewed by a member of the Netdata team.
 
@@ -384,5 +412,6 @@ policy classify completely against the mapping the ingest records on every run
 (`ingest/one_commit_back_file-dict.yaml`). Run the gate locally the way the Agent check does:
 
 ```bash
-python ingest/ingest.py --local-repo netdata:/path/to/netdata --ignore-on-prem-repo --fail-links-netdata
+python ingest/ingest.py --local-repo netdata:/path/to/netdata \
+  --ignore-on-prem-repo --fail-links-netdata
 ```
