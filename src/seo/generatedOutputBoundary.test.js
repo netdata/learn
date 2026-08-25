@@ -105,6 +105,30 @@ describe('generated output ownership', () => {
     expect(workflow).toContain('- static.toml');
   });
 
+  it('writes the kickstart checksum inside ingest before validating recovery state', () => {
+    const workflow = readFileSync(
+      path.join(repositoryRoot, '.github/workflows/ingest.yml'),
+      'utf8',
+    );
+    const resolveChecksum = workflow.indexOf('- name: Resolve kickstart checksum');
+    const runIngest = workflow.indexOf(
+      '- name: Ingest process, integration generation and learn_link checking',
+    );
+    const verifyRecovery = workflow.indexOf('- name: Verify generated recovery state');
+    const publish = workflow.indexOf('- name: Create pull request');
+
+    expect(resolveChecksum).toBeGreaterThan(-1);
+    expect(resolveChecksum).toBeLessThan(runIngest);
+    expect(workflow).toContain('--kickstart-checksum "$KICKSTART_CHECKSUM"');
+    expect(workflow).not.toContain('s/@KICKSTART_CHECKSUM@/');
+    expect(verifyRecovery).toBeGreaterThan(runIngest);
+    expect(verifyRecovery).toBeLessThan(publish);
+    expect(workflow).toContain('python ingest/ingest.py --regenerate-grids-only');
+    expect(workflow).toContain('generated-before.sha256');
+    expect(workflow).toContain('generated-after.sha256');
+    expect(workflow).toContain('diff -u');
+  });
+
   it('fails closed before publishing incomplete ingest output', () => {
     const workflow = readFileSync(
       path.join(repositoryRoot, '.github/workflows/ingest.yml'),

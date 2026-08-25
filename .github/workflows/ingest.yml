@@ -53,12 +53,22 @@ jobs:
         run: |
           python -m pip install --require-hashes -r .learn_environment/ingest-requirements.txt
 
+      - name: Resolve kickstart checksum
+        run: |
+          wget -O "$RUNNER_TEMP/kickstart.sh" https://raw.githubusercontent.com/netdata/netdata/master/packaging/installer/kickstart.sh
+          checksum="$(md5sum "$RUNNER_TEMP/kickstart.sh" | cut -d ' ' -f 1)"
+          if [[ ! "$checksum" =~ ^[0-9a-f]{32}$ ]]; then
+            echo "Invalid kickstart checksum: $checksum" >&2
+            exit 1
+          fi
+          printf 'KICKSTART_CHECKSUM=%s\n' "$checksum" >> "$GITHUB_ENV"
+
       - name: Ingest process, integration generation and learn_link checking
         id: ingest
         run: |
           # Run ingest and capture output
           set +e
-          OUTPUT=$(python ingest/ingest.py --fail-links 2>&1)
+          OUTPUT=$(python ingest/ingest.py --fail-links --kickstart-checksum "$KICKSTART_CHECKSUM" 2>&1)
           EXIT_CODE=$?
           set -e
           
@@ -84,13 +94,25 @@ jobs:
           # Don't fail the workflow on broken links - we'll create an issue instead
           exit 0
 
-      - name: Update kickstart checksum
+      - name: Verify generated recovery state
         run: |
-          docfile="docs/Netdata Agent/Installation/Linux/Linux.mdx"
-          wget -O /tmp/kickstart.sh https://raw.githubusercontent.com/netdata/netdata/master/packaging/installer/kickstart.sh || exit 1
-          checksum="$(md5sum /tmp/kickstart.sh | cut -d ' ' -f 1)"
-          sed -e "s/@KICKSTART_CHECKSUM@/${checksum}/" "${docfile}" > tmp || exit 1
-          mv tmp "${docfile}" || exit 1
+          snapshot_generated_outputs() {
+            {
+              find docs -type f -print0 | sort -z | xargs -0 sha256sum
+              sha256sum \
+                ingest/generated_map.yaml \
+                ingest/generated_sidebar_order.json \
+                ingest/generated_sidebar_order.json.sha256 \
+                netlify.toml
+            } | LC_ALL=C sort
+          }
+
+          snapshot_generated_outputs > "$RUNNER_TEMP/generated-before.sha256"
+          python ingest/ingest.py --regenerate-grids-only
+          snapshot_generated_outputs > "$RUNNER_TEMP/generated-after.sha256"
+          diff -u \
+            "$RUNNER_TEMP/generated-before.sha256" \
+            "$RUNNER_TEMP/generated-after.sha256"
 
       - name: Create pull request
         id: create-pr
