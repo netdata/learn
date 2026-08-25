@@ -123,10 +123,19 @@ describe('generated output ownership', () => {
     expect(workflow).not.toContain('s/@KICKSTART_CHECKSUM@/');
     expect(verifyRecovery).toBeGreaterThan(runIngest);
     expect(verifyRecovery).toBeLessThan(publish);
-    expect(workflow).toContain('python ingest/ingest.py --regenerate-grids-only');
-    expect(workflow).toContain('generated-before.sha256');
-    expect(workflow).toContain('generated-after.sha256');
-    expect(workflow).toContain('diff -u');
+    const recoveryStep = workflow.slice(verifyRecovery, publish);
+    expect(recoveryStep).toContain('python ingest/ingest.py --regenerate-grids-only');
+    expect(recoveryStep).toContain('generated-before.sha256');
+    expect(recoveryStep).toContain('generated-after.sha256');
+    expect(recoveryStep).toContain('diff -u');
+    expect(recoveryStep).toContain('set -o pipefail');
+    expect(recoveryStep).toContain(
+      'if ! find docs -type f -print0 | sort -z | xargs -0 sha256sum',
+    );
+    expect(recoveryStep).toContain('if ! sha256sum');
+    expect(recoveryStep).toContain('Failed to hash the generated documentation corpus');
+    expect(recoveryStep).toContain('Failed to hash the generated recovery artifacts');
+    expect(recoveryStep.match(/return 1/g)).toHaveLength(3);
   });
 
   it('fails closed before publishing incomplete ingest output', () => {

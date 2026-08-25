@@ -96,15 +96,30 @@ jobs:
 
       - name: Verify generated recovery state
         run: |
+          set -o pipefail
+
           snapshot_generated_outputs() {
-            {
-              find docs -type f -print0 | sort -z | xargs -0 sha256sum
-              sha256sum \
-                ingest/generated_map.yaml \
-                ingest/generated_sidebar_order.json \
-                ingest/generated_sidebar_order.json.sha256 \
-                netlify.toml
-            } | LC_ALL=C sort
+            local docs_manifest="$RUNNER_TEMP/generated-docs.sha256"
+            local fixed_manifest="$RUNNER_TEMP/generated-fixed.sha256"
+
+            if ! find docs -type f -print0 | sort -z | xargs -0 sha256sum > "$docs_manifest"; then
+              echo "Failed to hash the generated documentation corpus" >&2
+              return 1
+            fi
+
+            if ! sha256sum \
+              ingest/generated_map.yaml \
+              ingest/generated_sidebar_order.json \
+              ingest/generated_sidebar_order.json.sha256 \
+              netlify.toml > "$fixed_manifest"; then
+              echo "Failed to hash the generated recovery artifacts" >&2
+              return 1
+            fi
+
+            if ! LC_ALL=C sort "$docs_manifest" "$fixed_manifest"; then
+              echo "Failed to sort the generated recovery manifest" >&2
+              return 1
+            fi
           }
 
           snapshot_generated_outputs > "$RUNNER_TEMP/generated-before.sha256"
