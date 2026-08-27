@@ -893,6 +893,21 @@
     Cloud
   meta_yaml: .nan
   message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-outbound-ips.md
+  sidebar_label: Netdata Cloud Outbound IP Addresses
+  learn_status: Published
+  learn_rel_path: Netdata Cloud
+  keywords:
+  - outbound ips
+  - source ip
+  - firewall
+  - allowlist
+  - webhook
+  - mcp
+  description: The public endpoint listing the source IP addresses Netdata Cloud connects
+    from, for firewall and IP allowlist hardening
+  meta_yaml: .nan
+  message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/learn/unclaim-reclaim-node.md
   sidebar_label: Unclaim and Reclaim a Node
   learn_status: Published

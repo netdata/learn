@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "05122ef9d443a3bbbe202189d839b27c34108f2065ef11b1aa5a9747c858f16a",
-  "source_corpus_sha256": "21a1fa903e281806b3c043bc1b5771e3a8cea817d064eda4bd9ce6b36dc19533",
+  "source_sha256": "99485c694e5d686dd5eec68f7ccf4e42defb0e993a0439c4b57e40a0bd9b3caf",
+  "source_corpus_sha256": "98e42804742d4fc1eb48bb205694632879993cc5214e0371a34361f37c9e6e52",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -1191,13 +1191,18 @@
     },
     {
       "parent_path": "Netdata Cloud",
-      "child_name": "Unclaim and Reclaim a Node",
+      "child_name": "Netdata Cloud Outbound IP Addresses",
       "position": 80
     },
     {
       "parent_path": "Netdata Cloud",
-      "child_name": "Account Deletion",
+      "child_name": "Unclaim and Reclaim a Node",
       "position": 90
+    },
+    {
+      "parent_path": "Netdata Cloud",
+      "child_name": "Account Deletion",
+      "position": 100
     },
     {
       "parent_path": "Netdata Cloud On-Prem",
@@ -1720,5 +1725,5 @@
       "position": 170
     }
   ],
-  "full_ingest_identity_sha256": "0e4160ef9446f3f069f60dc7595be651c3331187b60a19bf503440a681904d42"
+  "full_ingest_identity_sha256": "37af03fadb694153a66a8891cdded21973d0734d5ab556df999283137dbe892f"
 }
