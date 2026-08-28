@@ -260,6 +260,8 @@
   learn_path: /docs/netdata-cloud/authentication-&-authorization/enterprise-sso-authentication
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/authentication-and-authorization/role-based-access-model.md
   learn_path: /docs/netdata-cloud/authentication-&-authorization/role-based-access-model
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/netdata-cloud-outbound-ips.md
+  learn_path: /docs/netdata-cloud/netdata-cloud-outbound-ip-addresses
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-rule-based-room-assignment.md
   learn_path: /docs/netdata-cloud/spaces-and-rooms/node-rule-based-room-assignment
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/node-states-and-transitions.md
