@@ -4,12 +4,11 @@ import process from 'node:process';
 import {parse} from 'parse5';
 import {describe, expect, it} from 'vitest';
 
-import {
-  ASK_NEDI_DESCRIPTION,
-  resolveDocDescription,
-} from './description';
+import {resolveDocDescription} from './description';
 
 const buildRoot = process.env.BUILT_SITE_DIR;
+const expectedAskNediDescription =
+  "Ask Nedi, Netdata's AI assistant, questions about Netdata documentation, configuration, monitoring, and troubleshooting.";
 
 function renderedMetadata(html) {
   const values = new Map();
@@ -32,7 +31,7 @@ describe('ask Nedi metadata', () => {
         description: 'Generated loading fallback',
         permalink: '/docs/ask-nedi',
       }),
-    ).toBe(ASK_NEDI_DESCRIPTION);
+    ).toBe(expectedAskNediDescription);
     expect(
       resolveDocDescription({
         description: 'Another page description',
@@ -53,8 +52,8 @@ describe('ask Nedi metadata', () => {
       'utf8',
     );
     const metadata = renderedMetadata(html);
-    expect(metadata.get('description')).toBe(ASK_NEDI_DESCRIPTION);
-    expect(metadata.get('og:description')).toBe(ASK_NEDI_DESCRIPTION);
+    expect(metadata.get('description')).toBe(expectedAskNediDescription);
+    expect(metadata.get('og:description')).toBe(expectedAskNediDescription);
     expect(metadata.get('description')).not.toContain('Loading Ask Nedi');
     expect(metadata.get('og:description')).not.toContain('Loading Ask Nedi');
   });
