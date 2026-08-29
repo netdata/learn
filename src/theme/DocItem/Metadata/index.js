@@ -4,6 +4,7 @@ import {
   useDoc,
   useSidebarBreadcrumbs,
 } from '@docusaurus/plugin-content-docs/client';
+import {resolveDocDescription} from '@site/src/seo/description';
 import {composeDocTitle} from '@site/src/seo/title';
 
 export default function DocItemMetadata() {
@@ -16,10 +17,14 @@ export default function DocItemMetadata() {
     permalink: metadata.permalink,
     breadcrumbs,
   });
+  const description = resolveDocDescription({
+    description: metadata.description,
+    permalink: metadata.permalink,
+  });
   return (
     <PageMetadata
       title={title}
-      description={metadata.description}
+      description={description}
       keywords={frontMatter.keywords}
       image={assets.image ?? frontMatter.image}
     />

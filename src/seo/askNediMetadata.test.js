@@ -1,17 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
 import {parse} from 'parse5';
 import {describe, expect, it} from 'vitest';
 
+import {
+  ASK_NEDI_DESCRIPTION,
+  resolveDocDescription,
+} from './description';
 
-const root = path.resolve(import.meta.dirname, '../..');
-const expectedDescription =
-  "Ask Nedi, Netdata's AI assistant, questions about Netdata documentation, configuration, monitoring, and troubleshooting.";
-
-function frontMatterDescription(source) {
-  const match = source.match(/^description:\s*["'](.*)["']\s*$/m);
-  return match?.[1] ?? null;
-}
+const buildRoot = process.env.BUILT_SITE_DIR;
 
 function renderedMetadata(html) {
   const values = new Map();
@@ -27,20 +25,36 @@ function renderedMetadata(html) {
   return values;
 }
 
-describe('Ask Nedi metadata', () => {
-  it('pins the exact authored description in document front matter', () => {
-    const source = fs.readFileSync(path.join(root, 'docs/ask-nedi.mdx'), 'utf8');
-    expect(frontMatterDescription(source)).toBe(expectedDescription);
+describe('ask Nedi metadata', () => {
+  it('uses the approved description only for the exact Ask Nedi permalink', () => {
+    expect(
+      resolveDocDescription({
+        description: 'Generated loading fallback',
+        permalink: '/docs/ask-nedi',
+      }),
+    ).toBe(ASK_NEDI_DESCRIPTION);
+    expect(
+      resolveDocDescription({
+        description: 'Another page description',
+        permalink: '/docs/ask-nedi/extra',
+      }),
+    ).toBe('Another page description');
+    expect(
+      resolveDocDescription({
+        description: 'Another page description',
+        permalink: '/docs/netdata-agent',
+      }),
+    ).toBe('Another page description');
   });
 
-  it.skipIf(!process.env.BUILT_SITE_DIR)('renders the exact description and Open Graph description', () => {
+  it.skipIf(!buildRoot)('renders the exact description and Open Graph description', () => {
     const html = fs.readFileSync(
-      path.join(process.env.BUILT_SITE_DIR, 'docs/ask-nedi/index.html'),
+      path.join(buildRoot, 'docs/ask-nedi/index.html'),
       'utf8',
     );
     const metadata = renderedMetadata(html);
-    expect(metadata.get('description')).toBe(expectedDescription);
-    expect(metadata.get('og:description')).toBe(expectedDescription);
+    expect(metadata.get('description')).toBe(ASK_NEDI_DESCRIPTION);
+    expect(metadata.get('og:description')).toBe(ASK_NEDI_DESCRIPTION);
     expect(metadata.get('description')).not.toContain('Loading Ask Nedi');
     expect(metadata.get('og:description')).not.toContain('Loading Ask Nedi');
   });
