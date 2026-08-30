@@ -286,6 +286,8 @@
   learn_path: /docs/network-performance-monitoring/device-metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/device-metrics/anti-patterns.md
   learn_path: /docs/network-performance-monitoring/device-metrics/anti-patterns
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/device-metrics/collect-snmp-troubleshooting-data.md
+  learn_path: /docs/network-performance-monitoring/device-metrics/collect-troubleshooting-data
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/device-metrics/configuration.md
   learn_path: /docs/network-performance-monitoring/device-metrics/configuration
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/device-metrics/quick-start.md
@@ -1608,6 +1610,8 @@
   learn_path: /docs/collecting-metrics/collectors/databases/riak-kv
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/rspamd/README.md
   learn_path: /docs/collecting-metrics/collectors/applications/rspamd
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/s3check/README.md
+  learn_path: /docs/collecting-metrics/collectors/synthetic-testing/s3-compatible-object-storage
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/samba/README.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/samba
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/scaleio/README.md
