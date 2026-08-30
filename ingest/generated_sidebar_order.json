@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "99485c694e5d686dd5eec68f7ccf4e42defb0e993a0439c4b57e40a0bd9b3caf",
-  "source_corpus_sha256": "98e42804742d4fc1eb48bb205694632879993cc5214e0371a34361f37c9e6e52",
+  "source_sha256": "2e890b8bda827704c6e5e56cc02b5470a61b48e1fb22ae2170a9cd400f79fdb9",
+  "source_corpus_sha256": "b993b5cc8bd95f9aa60c9db6f8cd5e333b5df1463789b5dab15a081f12589e91",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -1391,8 +1391,13 @@
     },
     {
       "parent_path": "Network Performance Monitoring/Device Metrics",
-      "child_name": "Anti-patterns",
+      "child_name": "Collect Troubleshooting Data",
       "position": 60
+    },
+    {
+      "parent_path": "Network Performance Monitoring/Device Metrics",
+      "child_name": "Anti-patterns",
+      "position": 70
     },
     {
       "parent_path": "Network Performance Monitoring/Device Metrics/Configuration",
@@ -1725,5 +1730,5 @@
       "position": 170
     }
   ],
-  "full_ingest_identity_sha256": "37af03fadb694153a66a8891cdded21973d0734d5ab556df999283137dbe892f"
+  "full_ingest_identity_sha256": "184aaca2b8d180339bda711c91452480205c6502a129198b4a59529d779705db"
 }
