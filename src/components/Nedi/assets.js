@@ -12,13 +12,13 @@ export const NEDI_ASSETS = [
   { type: 'css', src: `${NEDI_ENDPOINT}/ai-agent-ui.css?v=19` },
   {
     type: 'js',
-    src: 'https://cdn.jsdelivr.net/npm/markdown-it@15.0.0/dist/browser/markdown-it.umd.min.js',
-    integrity: 'sha384-RFgiWKVXntFwXKC7cM/vTNo+YCPWtoe5WjzaQWX8NMxIt3CnW1Sjhgt6YPVyrGT5',
+    src: 'https://cdn.jsdelivr.net/npm/markdown-it@15.0.1/dist/browser/markdown-it.umd.min.js',
+    integrity: 'sha384-lX8HkDCIMBsB/UN/Vv18JAmM0RGX9rzKdL1513w2k3hKLBDcvj5jHUaMZdQpbOm4',
   },
   {
     type: 'js',
-    src: 'https://cdn.jsdelivr.net/npm/mermaid@11.16.1/dist/mermaid.min.js',
-    integrity: 'sha384-aBQXj4hK6Jm05i7aQAsUV3bLdSUrHX1BGYfMB0166TtWt/RRaw+h0Eelme9OCOvy',
+    src: 'https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js',
+    integrity: 'sha384-EOXBFmc3gx5mb+vn0vPvvGqACToJD24hhacX5Yx+8NUUQrHIle/Qi5Bg9o3zKwW2',
   },
   {
     type: 'js',
