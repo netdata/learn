@@ -70,7 +70,7 @@
 		"saxes": "6.0.0",
 		"swagger-ui": "^5.32.14",
 		"typescript": "^6.0.3",
-		"webpack": "^5.109.2"
+		"webpack": "^5.110.1"
 	},
 	"devDependencies": {
 		"@docusaurus/faster": "3.10.2",
