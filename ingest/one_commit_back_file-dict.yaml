@@ -2800,6 +2800,8 @@
   learn_path: /docs/network-performance-monitoring/device-metrics/integrations/mikrotik-router
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/mikrotik_snmp_traps.md
   learn_path: /docs/network-performance-monitoring/snmp-traps/integrations/mikrotik-snmp-traps
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/mikrotik_switch.md
+  learn_path: /docs/network-performance-monitoring/device-metrics/integrations/mikrotik-switch
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/milestone_systems_a_s_snmp_traps.md
   learn_path: /docs/network-performance-monitoring/snmp-traps/integrations/milestone-systems-a-s-snmp-traps
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/mimosa_networks_inc_snmp_traps.md
