@@ -5785,11 +5785,11 @@
 
 [[redirects]]
   from="/docs/logs/passive-journal-centralization-without-encryption"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-without-encryption"
 
 [[redirects]]
   from="/docs/logs/passive-journal-centralization-with-encryption-using-self-signed-certificates"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-with-encryption-using-self-signed-certificates"
 
 [[redirects]]
   from="/docs/streaming/streaming-configuration-reference"
@@ -5797,11 +5797,11 @@
 
 [[redirects]]
   from="/docs/logs/systemd-journal/passive-journal-centralization-without-encryption"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-without-encryption"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/passive-journal-centralization-with-encryption-using-self-signed-certificates"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-with-encryption-using-self-signed-certificates"
 
 [[redirects]]
   from="/docs/data-collection/web-servers-and-web-proxies/web-server-log-files"
@@ -7489,11 +7489,11 @@
 
 [[redirects]]
   from="/docs/working-with-logs/systemd-cat-native"
-  to="/docs/logs/systemd-cat-native"
+  to="/docs/logs-management/text-files-to-journals/systemd-cat-native"
 
 [[redirects]]
   from="/docs/working-with-logs/log2journal"
-  to="/docs/logs/log2journal"
+  to="/docs/logs-management/text-files-to-journals/log2journal"
 
 [[redirects]]
   from="/docs/netdata-agent/maintenance/update-netdata-agents"
@@ -7645,7 +7645,7 @@
 
 [[redirects]]
   from="/docs/dashboards-and-charts/logs-tab"
-  to="/docs/dashboards-and-charts/tabs/logs"
+  to="/docs/logs-management/managing-logs"
 
 [[redirects]]
   from="/docs/dashboards-and-charts/kubernetes-tab"
@@ -7745,15 +7745,15 @@
 
 [[redirects]]
   from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-without-encryption"
 
 [[redirects]]
   from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-with-encryption-using-self-signed-certificates"
 
 [[redirects]]
   from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points"
 
 [[redirects]]
   from="/docs/observability-centralization-points/best-practices-for-observability-centralization-points"
@@ -8425,35 +8425,35 @@
 
 [[redirects]]
   from="/docs/data-collection/systemd-journal"
-  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+  to="/docs/logs-management/systemd-journal-logs/systemd-journal-plugin-reference"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/active-journal-centralization-without-encryption"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/active-journal-source-without-encryption"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/active-journal-source-without-encryption"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/active-journal-source-without-encryption"
 
 [[redirects]]
   from="/docs/logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
-  to="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
+  to="/docs/logs-management/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
 
 [[redirects]]
   from="/docs/logs/systemd-journal"
-  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+  to="/docs/logs-management/systemd-journal-logs/systemd-journal-plugin-reference"
 
 [[redirects]]
   from="/docs/working-with-logs/systemd-journal/forward-secure-sealing-fss-in-systemd-journal"
-  to="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
+  to="/docs/logs-management/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
 
 [[redirects]]
   from="/docs/working-with-logs/systemd-journal"
-  to="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+  to="/docs/logs-management/systemd-journal-logs/systemd-journal-plugin-reference"
 
 [[redirects]]
   from="/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
-  to="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/active-journal-source-without-encryption"
 
 [[redirects]]
   from="/docs/collecting-metrics/windows-systems/windows-services"
@@ -12613,7 +12613,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/opentelemetry/opentelemetry-metrics"
-  to="/docs/collecting-metrics/opentelemetry"
+  to="/docs/opentelemetry/opentelemetry-plugin-reference"
 
 [[redirects]]
   from="/docs/netdata-cloud-on-prem/light-poc-deployment"
@@ -13717,7 +13717,7 @@
 
 [[redirects]]
   from="/docs/working-with-logs/logs"
-  to="/docs/dashboards-and-charts/tabs/logs"
+  to="/docs/logs-management/managing-logs"
 
 [[redirects]]
   from="/docs/netdata-agent/configuration/cheatshet"
@@ -14450,5 +14450,153 @@
 [[redirects]]
   from="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy"
   to="/docs/collecting-metrics/collectors/web-servers-and-proxies/haproxy-prometheus"
+
+[[redirects]]
+  from="/docs/logs/systemd-cat-native"
+  to="/docs/logs-management/text-files-to-journals/systemd-cat-native"
+
+[[redirects]]
+  from="/docs/logs/log2journal"
+  to="/docs/logs-management/text-files-to-journals/log2journal"
+
+[[redirects]]
+  from="/docs/logs"
+  to="/docs/logs-management"
+
+[[redirects]]
+  from="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-without-encryption"
+
+[[redirects]]
+  from="/docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+
+[[redirects]]
+  from="/docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/active-journal-source-without-encryption"
+
+[[redirects]]
+  from="/docs/logs/logs-centralization-points-with-systemd-journald"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points"
+
+[[redirects]]
+  from="/docs/dashboards-and-charts/tabs/logs"
+  to="/docs/logs-management/managing-logs"
+
+[[redirects]]
+  from="/docs/logs/windows-event-logs/windows-events-plugin-reference"
+  to="/docs/logs-management/windows-event-logs"
+
+[[redirects]]
+  from="/docs/logs/windows-event-logs"
+  to="/docs/logs-management/integrations/windows-event-logs"
+
+[[redirects]]
+  from="/docs/logs/text-files-to-journals/systemd-cat-native"
+  to="/docs/logs-management/text-files-to-journals/systemd-cat-native"
+
+[[redirects]]
+  from="/docs/logs/text-files-to-journals/log2journal"
+  to="/docs/logs-management/text-files-to-journals/log2journal"
+
+[[redirects]]
+  from="/docs/logs/text-files-to-journals"
+  to="/docs/logs-management/text-files-to-journals"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal-logs/systemd-journal-plugin-reference"
+  to="/docs/logs-management/systemd-journal-logs/systemd-journal-plugin-reference"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
+  to="/docs/logs-management/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal"
+
+[[redirects]]
+  from="/docs/logs/systemd-journal-logs"
+  to="/docs/logs-management/integrations/systemd-journal-logs"
+
+[[redirects]]
+  from="/docs/logs/opentelemetry-logs"
+  to="/docs/logs-management/integrations/opentelemetry-logs"
+
+[[redirects]]
+  from="/docs/logs/macos-unified-logs/macos-logs-plugin-reference"
+  to="/docs/logs-management/macos-unified-logs"
+
+[[redirects]]
+  from="/docs/logs/macos-unified-logs"
+  to="/docs/logs-management/integrations/macos-unified-logs"
+
+[[redirects]]
+  from="/docs/logs/logs-centralization-points/passive-journal-centralization-without-encryption"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-without-encryption"
+
+[[redirects]]
+  from="/docs/logs/logs-centralization-points/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-with-encryption-using-self-signed-certificates"
+
+[[redirects]]
+  from="/docs/logs/logs-centralization-points/centralizing-journal-namespaces"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/centralizing-journal-namespaces"
+
+[[redirects]]
+  from="/docs/logs/logs-centralization-points/active-journal-source-without-encryption"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points/active-journal-source-without-encryption"
+
+[[redirects]]
+  from="/docs/logs/logs-centralization-points"
+  to="/docs/logs-management/systemd-journal-logs/logs-centralization-points"
+
+[[redirects]]
+  from="/docs/logs/exploring-logs"
+  to="/docs/logs-management/managing-logs"
+
+[[redirects]]
+  from="/docs/collecting-metrics/opentelemetry/transformations"
+  to="/docs/opentelemetry/transformations"
+
+[[redirects]]
+  from="/docs/collecting-metrics/opentelemetry/otlp-ingestion"
+  to="/docs/opentelemetry/otlp-ingestion"
+
+[[redirects]]
+  from="/docs/collecting-metrics/opentelemetry/metrics-collection"
+  to="/docs/opentelemetry/metrics-collection"
+
+[[redirects]]
+  from="/docs/collecting-metrics/opentelemetry/logs-to-metrics"
+  to="/docs/opentelemetry/logs-to-metrics"
+
+[[redirects]]
+  from="/docs/collecting-metrics/opentelemetry/logs-collection"
+  to="/docs/opentelemetry/logs-collection"
+
+[[redirects]]
+  from="/docs/collecting-metrics/opentelemetry"
+  to="/docs/opentelemetry/opentelemetry-plugin-reference"
+
+[[redirects]]
+  from="/docs/network-performance-monitoring/syslog-from-network-devices/opentelemetry-collector-setup"
+  to="/docs/opentelemetry/syslog-from-network-devices/opentelemetry-collector-setup"
+
+[[redirects]]
+  from="/docs/network-performance-monitoring/syslog-from-network-devices"
+  to="/docs/opentelemetry/syslog-from-network-devices"
+
+[[redirects]]
+  from="/docs/network-performance-monitoring/syslog-from-network-devices/integrations/syslog-from-network-devices"
+  to="/docs/opentelemetry/syslog-from-network-devices/integrations/syslog-from-network-devices"
+
+[[redirects]]
+  from="/docs/logs-management/windows-event-logs/windows-events-plugin-reference"
+  to="/docs/logs-management/windows-event-logs"
+
+[[redirects]]
+  from="/docs/logs-management/macos-unified-logs/macos-logs-plugin-reference"
+  to="/docs/logs-management/macos-unified-logs"
+
+[[redirects]]
+  from="/docs/network-performance-monitoring/syslog/syslog-from-network-devices"
+  to="/docs/network-performance-monitoring/syslog"
 
 # section: dynamic << END
