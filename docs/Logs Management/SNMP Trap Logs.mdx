@@ -1,0 +1,34 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/logs/snmp-trap-logs.md"
+sidebar_label: "SNMP Trap Logs"
+learn_status: "Published"
+learn_rel_path: "Logs Management"
+keywords: [snmp traps, logs, journal, journalctl, network devices]
+description: "SNMP traps as journal-compatible files written by Netdata — where they are stored, how they are queried in the Logs tab and with journalctl, and where the collector is documented."
+sidebar_position: "50"
+learn_link: "https://learn.netdata.cloud/docs/logs-management/snmp-trap-logs"
+slug: "/logs-management/snmp-trap-logs"
+---
+
+# SNMP Trap Logs
+
+Netdata receives SNMP traps from network devices and writes them, decoded, into journal-compatible files on the node
+that runs the trap collector: the systemd journal file format, produced by Netdata's own writer, without
+`systemd-journald`. They appear in the Logs tab as **SNMP Trap Logs** (`snmp:traps`), with the same field filters,
+full-text search, histograms, and live tail as every other source.
+
+- **Where they are stored:** `traps/<job>/<machine-id>/` under the Netdata log directory (`/var/log/netdata` by
+  default), one directory per collector job.
+- **Retention:** per job, `retention.max_size` (`10GB` by default) and an optional `max_duration`; see
+  [Log Storage and Retention](/docs/logs-management/log-storage-and-retention#journals-written-by-netdata).
+- **Command line and SIEM:** on Linux with systemd 252 or later, `journalctl --directory=<dir>` reads the files, and
+  so do SIEM agents that ingest journal files. Netdata reads them on every platform it writes them on.
+- **Forwarding:** traps can also be sent over OTLP to any OpenTelemetry backend.
+
+The collector, its configuration, the trap fields, and the query workflows are documented under Network Performance
+Monitoring:
+
+- [SNMP Traps](/docs/network-performance-monitoring/snmp-traps) — setup and overview.
+- [Journal and Querying](/docs/network-performance-monitoring/snmp-traps/journal-and-querying) — paths, `journalctl` commands, export.
+- [Forwarding to SIEM](/docs/network-performance-monitoring/snmp-traps/forwarding-to-siem) — journal shippers and OTLP forwarding.
+- [Configuration](/docs/network-performance-monitoring/snmp-traps/configuration) — listeners, decoding, retention.

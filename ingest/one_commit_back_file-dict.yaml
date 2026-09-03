@@ -48,6 +48,10 @@
   learn_path: /docs/netdata-ai
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/maintenance-operations-on-netdata-agents.md
   learn_path: /docs/netdata-agent/maintenance
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/opentelemetry.md
+  learn_path: /docs/opentelemetry
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/category-overview-pages/working-with-logs.md
+  learn_path: /docs/logs-management
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/README.md
   learn_path: /docs/dashboards-and-charts
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/alerts-tab.md
@@ -69,7 +73,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/live-tab.md
   learn_path: /docs/dashboards-and-charts/tabs/live
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/logs-tab.md
-  learn_path: /docs/dashboards-and-charts/tabs/logs
+  learn_path: /docs/logs-management/managing-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/metrics-tab-and-single-node-tabs.md
   learn_path: /docs/dashboards-and-charts/tabs/metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/netdata-charts.md
@@ -146,6 +150,16 @@
   learn_path: /docs/netdata-cloud/unclaim-and-reclaim-a-node
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/learn/vm-templates.md
   learn_path: /docs/netdata-agent/vm-templates
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/logs/centralizing-logs-with-opentelemetry.md
+  learn_path: /docs/logs-management/centralizing-logs-with-opentelemetry
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/logs/log-storage-and-retention.md
+  learn_path: /docs/logs-management/log-storage-and-retention
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/logs/network-flows.md
+  learn_path: /docs/logs-management/network-flows
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/logs/snmp-trap-logs.md
+  learn_path: /docs/logs-management/snmp-trap-logs
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/logs/text-files-to-journals.md
+  learn_path: /docs/logs-management/text-files-to-journals
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/metric-correlations.md
   learn_path: /docs/netdata-ai/troubleshooting/metric-correlations
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-insights.md
@@ -374,10 +388,12 @@
   learn_path: /docs/network-performance-monitoring/snmp-traps/usage-and-output
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/snmp-traps/validation-and-data-quality.md
   learn_path: /docs/network-performance-monitoring/snmp-traps/validation-and-data-quality
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/syslog-pointer.md
+  learn_path: /docs/network-performance-monitoring/syslog
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/syslog/README.md
-  learn_path: /docs/network-performance-monitoring/syslog-from-network-devices
+  learn_path: /docs/opentelemetry/syslog-from-network-devices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/syslog/otel-collector.md
-  learn_path: /docs/network-performance-monitoring/syslog-from-network-devices/opentelemetry-collector-setup
+  learn_path: /docs/opentelemetry/syslog-from-network-devices/opentelemetry-collector-setup
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/topology/README.md
   learn_path: /docs/network-performance-monitoring/topologies
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/topology/dependency-mapping.md
@@ -387,11 +403,13 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/best-practices.md
   learn_path: /docs/netdata-parents/parent-configuration-best-practices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/README.md
-  learn_path: /docs/logs/logs-centralization-points-with-systemd-journald
+  learn_path: /docs/logs-management/systemd-journal-logs/logs-centralization-points
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/centralizing-journal-namespaces.md
+  learn_path: /docs/logs-management/systemd-journal-logs/logs-centralization-points/centralizing-journal-namespaces
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates.md
-  learn_path: /docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-with-encryption-using-self-signed-certificates
+  learn_path: /docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-with-encryption-using-self-signed-certificates
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption.md
-  learn_path: /docs/logs/logs-centralization-points-with-systemd-journald/passive-journal-centralization-without-encryption
+  learn_path: /docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-without-encryption
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/README.md
   learn_path: /docs/netdata-parents/metrics-centralization-points
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents.md
@@ -403,15 +421,17 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/observability-centralization-points/metrics-centralization-points/replication-of-past-samples.md
   learn_path: /docs/netdata-parents/metrics-centralization-points/replication-of-past-samples
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/logs-collection.md
-  learn_path: /docs/collecting-metrics/opentelemetry/logs-collection
+  learn_path: /docs/opentelemetry/logs-collection
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/logs-to-metrics.md
-  learn_path: /docs/collecting-metrics/opentelemetry/logs-to-metrics
+  learn_path: /docs/opentelemetry/logs-to-metrics
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/metrics-collection.md
-  learn_path: /docs/collecting-metrics/opentelemetry/metrics-collection
+  learn_path: /docs/opentelemetry/metrics-collection
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/otlp-ingestion.md
-  learn_path: /docs/collecting-metrics/opentelemetry/otlp-ingestion
+  learn_path: /docs/opentelemetry/otlp-ingestion
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/securing-the-otlp-endpoint.md
+  learn_path: /docs/opentelemetry/securing-the-otlp-endpoint
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/transformations.md
-  learn_path: /docs/collecting-metrics/opentelemetry/transformations
+  learn_path: /docs/opentelemetry/transformations
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/realtime-monitoring.md
   learn_path: /docs/welcome-to-netdata/real-time-monitoring
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/reporting.md
@@ -471,13 +491,13 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/cloud-notifications/integrations/webhook.md
   learn_path: /docs/alerts-&-notifications/notifications/centralized-cloud-notifications/webhook
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/macos_unified_logs.md
-  learn_path: /docs/logs/macos-unified-logs
+  learn_path: /docs/logs-management/integrations/macos-unified-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/opentelemetry_logs.md
-  learn_path: /docs/logs/opentelemetry-logs
+  learn_path: /docs/logs-management/integrations/opentelemetry-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/systemd_journal_logs.md
-  learn_path: /docs/logs/systemd-journal-logs
+  learn_path: /docs/logs-management/integrations/systemd-journal-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/windows_event_logs.md
-  learn_path: /docs/logs/windows-event-logs
+  learn_path: /docs/logs-management/integrations/windows-event-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/PLATFORM_SUPPORT.md
   learn_path: /docs/netdata-agent/versions-&-platforms
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/building-native-packages-locally.md
@@ -709,7 +729,9 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ioping.plugin/README.md
   learn_path: /docs/collecting-metrics/collectors/synthetic-testing/ioping
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/log2journal/README.md
-  learn_path: /docs/logs/log2journal
+  learn_path: /docs/logs-management/text-files-to-journals/log2journal
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/macos-logs.plugin/README.md
+  learn_path: /docs/logs-management/macos-unified-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/macos.plugin/README.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/macos
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/network-viewer.plugin/integrations/network_connections.md
@@ -805,17 +827,17 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/statsd.plugin/README.md
   learn_path: /docs/collecting-metrics/statsd
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/README.md
-  learn_path: /docs/logs/systemd-journal-logs/systemd-journal-plugin-reference
+  learn_path: /docs/logs-management/systemd-journal-logs/systemd-journal-plugin-reference
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/active_journal_centralization_guide_no_encryption.md
-  learn_path: /docs/logs/logs-centralization-points-with-systemd-journald/active-journal-source-without-encryption
+  learn_path: /docs/logs-management/systemd-journal-logs/logs-centralization-points/active-journal-source-without-encryption
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/systemd-journal.plugin/forward_secure_sealing.md
-  learn_path: /docs/logs/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal
+  learn_path: /docs/logs-management/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/tc.plugin/README.md
   learn_path: /docs/collecting-metrics/collectors/networking/tc-qos-classes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/timex.plugin/README.md
   learn_path: /docs/collecting-metrics/collectors/networking/timex
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows-events.plugin/README.md
-  learn_path: /docs/logs/windows-event-logs/windows-events-plugin-reference
+  learn_path: /docs/logs-management/windows-event-logs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory.md
   learn_path: /docs/collecting-metrics/collectors/applications/active-directory
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/active_directory_certificate_service.md
@@ -903,7 +925,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/netflow-plugin/integrations/static_metadata.md
   learn_path: /docs/network-performance-monitoring/network-flows/enrichment-methods/static-metadata
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/crates/otel-plugin/README.md
-  learn_path: /docs/collecting-metrics/opentelemetry
+  learn_path: /docs/opentelemetry/opentelemetry-plugin-reference
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/daemon/README.md
   learn_path: /docs/netdata-agent/daemon
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/daemon/config/README.md
@@ -3391,7 +3413,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/synso_inc_snmp_traps.md
   learn_path: /docs/network-performance-monitoring/snmp-traps/integrations/synso-inc-snmp-traps
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/syslog_from_network_devices.md
-  learn_path: /docs/network-performance-monitoring/syslog-from-network-devices/integrations/syslog-from-network-devices
+  learn_path: /docs/opentelemetry/syslog-from-network-devices/integrations/syslog-from-network-devices
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/system_engineering_international_snmp_traps.md
   learn_path: /docs/network-performance-monitoring/snmp-traps/integrations/system-engineering-international-snmp-traps
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/system_management_arts_inc_snmp_traps.md
@@ -3819,7 +3841,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/log/README.md
   learn_path: /docs/netdata-agent/logging
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/log/systemd-cat-native.md
-  learn_path: /docs/logs/systemd-cat-native
+  learn_path: /docs/logs-management/text-files-to-journals/systemd-cat-native
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/onewayalloc/README.md
   learn_path: /docs/developer-and-contributor-corner/libnetdata/one-way-allocator
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/procfile/README.md
