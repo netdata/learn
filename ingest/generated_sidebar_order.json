@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "2e890b8bda827704c6e5e56cc02b5470a61b48e1fb22ae2170a9cd400f79fdb9",
-  "source_corpus_sha256": "1b791110fefa62a4ff33a2eace8cfacce96cec83f18554ddb3913fa2368ed476",
+  "source_sha256": "97f2d5d2ec5f85e9da3070f56713a6c2d5f9bc34201c06ed16765169ee05bd3e",
+  "source_corpus_sha256": "89f9dc4d8bd76d4a1c8078edced01f1c09251446de5c7709305badb33a5abe22",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -86,63 +86,33 @@
     },
     {
       "parent_path": "Collecting Metrics",
-      "child_name": "OpenTelemetry",
-      "position": 50
-    },
-    {
-      "parent_path": "Collecting Metrics",
       "child_name": "Secrets Management",
-      "position": 60
+      "position": 50
     },
     {
       "parent_path": "Collecting Metrics",
       "child_name": "Chart Template Format",
-      "position": 70
+      "position": 60
     },
     {
       "parent_path": "Collecting Metrics",
       "child_name": "AWS CloudWatch Profile Format",
-      "position": 80
+      "position": 70
     },
     {
       "parent_path": "Collecting Metrics",
       "child_name": "Prometheus Profile Format",
-      "position": 90
+      "position": 80
     },
     {
       "parent_path": "Collecting Metrics",
       "child_name": "Prometheus Metric Relabeling",
-      "position": 100
+      "position": 90
     },
     {
       "parent_path": "Collecting Metrics",
       "child_name": "Ceph",
-      "position": 110
-    },
-    {
-      "parent_path": "Collecting Metrics/OpenTelemetry",
-      "child_name": "OTLP Ingestion",
-      "position": 10
-    },
-    {
-      "parent_path": "Collecting Metrics/OpenTelemetry",
-      "child_name": "Metrics Collection",
-      "position": 20
-    },
-    {
-      "parent_path": "Collecting Metrics/OpenTelemetry",
-      "child_name": "Logs Collection",
-      "position": 30
-    },
-    {
-      "parent_path": "Collecting Metrics/OpenTelemetry",
-      "child_name": "Transformations",
-      "position": 40
-    },
-    {
-      "parent_path": "Collecting Metrics/OpenTelemetry",
-      "child_name": "Logs-to-Metrics",
-      "position": 50
+      "position": 100
     },
     {
       "parent_path": "Dashboards and Charts",
@@ -211,23 +181,18 @@
     },
     {
       "parent_path": "Dashboards and Charts/Tabs",
-      "child_name": "Logs",
+      "child_name": "Metrics",
       "position": 60
     },
     {
       "parent_path": "Dashboards and Charts/Tabs",
-      "child_name": "Metrics",
+      "child_name": "Nodes",
       "position": 70
     },
     {
       "parent_path": "Dashboards and Charts/Tabs",
-      "child_name": "Nodes",
-      "position": 80
-    },
-    {
-      "parent_path": "Dashboards and Charts/Tabs",
       "child_name": "Live",
-      "position": 90
+      "position": 80
     },
     {
       "parent_path": "Developer and Contributor Corner",
@@ -645,53 +610,98 @@
       "position": 20
     },
     {
-      "parent_path": "Logs",
-      "child_name": "Systemd Journal Logs",
+      "parent_path": "Logs Management",
+      "child_name": "Managing Logs",
       "position": 10
     },
     {
-      "parent_path": "Logs",
-      "child_name": "Windows Event Logs",
+      "parent_path": "Logs Management",
+      "child_name": "Systemd Journal Logs",
       "position": 20
     },
     {
-      "parent_path": "Logs",
-      "child_name": "log2journal",
+      "parent_path": "Logs Management",
+      "child_name": "Windows Event Logs",
       "position": 30
     },
     {
-      "parent_path": "Logs",
-      "child_name": "systemd-cat-native",
+      "parent_path": "Logs Management",
+      "child_name": "macOS Unified Logs",
       "position": 40
     },
     {
-      "parent_path": "Logs",
-      "child_name": "Logs Centralization Points with systemd-journald",
+      "parent_path": "Logs Management",
+      "child_name": "SNMP Trap Logs",
       "position": 50
     },
     {
-      "parent_path": "Logs/Logs Centralization Points with systemd-journald",
-      "child_name": "Passive journal centralization with encryption using self-signed certificates",
-      "position": 10
+      "parent_path": "Logs Management",
+      "child_name": "Network Flows",
+      "position": 60
     },
     {
-      "parent_path": "Logs/Logs Centralization Points with systemd-journald",
-      "child_name": "Passive journal centralization without encryption",
-      "position": 20
+      "parent_path": "Logs Management",
+      "child_name": "Text Files to Journals",
+      "position": 70
     },
     {
-      "parent_path": "Logs/Logs Centralization Points with systemd-journald",
-      "child_name": "Active journal source without encryption",
-      "position": 30
+      "parent_path": "Logs Management",
+      "child_name": "Centralizing Logs with OpenTelemetry",
+      "position": 80
     },
     {
-      "parent_path": "Logs/Systemd Journal Logs",
+      "parent_path": "Logs Management",
+      "child_name": "Log Storage and Retention",
+      "position": 90
+    },
+    {
+      "parent_path": "Logs Management",
+      "child_name": "Integrations",
+      "position": 100
+    },
+    {
+      "parent_path": "Logs Management/Systemd Journal Logs",
       "child_name": "Systemd Journal Plugin Reference",
       "position": 10
     },
     {
-      "parent_path": "Logs/Systemd Journal Logs",
+      "parent_path": "Logs Management/Systemd Journal Logs",
       "child_name": "Forward Secure Sealing (FSS) in Systemd-Journal",
+      "position": 20
+    },
+    {
+      "parent_path": "Logs Management/Systemd Journal Logs",
+      "child_name": "Logs Centralization Points",
+      "position": 30
+    },
+    {
+      "parent_path": "Logs Management/Systemd Journal Logs/Logs Centralization Points",
+      "child_name": "Passive journal centralization with encryption using self-signed certificates",
+      "position": 10
+    },
+    {
+      "parent_path": "Logs Management/Systemd Journal Logs/Logs Centralization Points",
+      "child_name": "Passive journal centralization without encryption",
+      "position": 20
+    },
+    {
+      "parent_path": "Logs Management/Systemd Journal Logs/Logs Centralization Points",
+      "child_name": "Active journal source without encryption",
+      "position": 30
+    },
+    {
+      "parent_path": "Logs Management/Systemd Journal Logs/Logs Centralization Points",
+      "child_name": "Centralizing Journal Namespaces",
+      "position": 40
+    },
+    {
+      "parent_path": "Logs Management/Text Files to Journals",
+      "child_name": "log2journal",
+      "position": 10
+    },
+    {
+      "parent_path": "Logs Management/Text Files to Journals",
+      "child_name": "systemd-cat-native",
       "position": 20
     },
     {
@@ -1356,7 +1366,7 @@
     },
     {
       "parent_path": "Network Performance Monitoring",
-      "child_name": "Syslog from Network Devices",
+      "child_name": "Syslog",
       "position": 70
     },
     {
@@ -1585,11 +1595,6 @@
       "position": 170
     },
     {
-      "parent_path": "Network Performance Monitoring/Syslog from Network Devices",
-      "child_name": "OpenTelemetry Collector Setup",
-      "position": 10
-    },
-    {
       "parent_path": "Network Performance Monitoring/Topologies",
       "child_name": "Discovery Methods",
       "position": 10
@@ -1598,6 +1603,51 @@
       "parent_path": "Network Performance Monitoring/Topologies",
       "child_name": "Application Dependency Mapping",
       "position": 20
+    },
+    {
+      "parent_path": "OpenTelemetry",
+      "child_name": "OTLP Ingestion",
+      "position": 10
+    },
+    {
+      "parent_path": "OpenTelemetry",
+      "child_name": "Securing the OTLP Endpoint",
+      "position": 20
+    },
+    {
+      "parent_path": "OpenTelemetry",
+      "child_name": "Metrics Collection",
+      "position": 30
+    },
+    {
+      "parent_path": "OpenTelemetry",
+      "child_name": "Logs Collection",
+      "position": 40
+    },
+    {
+      "parent_path": "OpenTelemetry",
+      "child_name": "Transformations",
+      "position": 50
+    },
+    {
+      "parent_path": "OpenTelemetry",
+      "child_name": "Logs-to-Metrics",
+      "position": 60
+    },
+    {
+      "parent_path": "OpenTelemetry",
+      "child_name": "Syslog from Network Devices",
+      "position": 70
+    },
+    {
+      "parent_path": "OpenTelemetry",
+      "child_name": "OpenTelemetry Plugin Reference",
+      "position": 80
+    },
+    {
+      "parent_path": "OpenTelemetry/Syslog from Network Devices",
+      "child_name": "OpenTelemetry Collector Setup",
+      "position": 10
     },
     {
       "parent_path": "Security and Privacy Design",
@@ -1696,39 +1746,44 @@
     },
     {
       "parent_path": "root",
-      "child_name": "Logs",
+      "child_name": "Logs Management",
       "position": 110
     },
     {
       "parent_path": "root",
-      "child_name": "Live View",
+      "child_name": "OpenTelemetry",
       "position": 120
     },
     {
       "parent_path": "root",
-      "child_name": "Alerts & Notifications",
+      "child_name": "Live View",
       "position": 130
     },
     {
       "parent_path": "root",
-      "child_name": "Netdata AI",
+      "child_name": "Alerts & Notifications",
       "position": 140
     },
     {
       "parent_path": "root",
-      "child_name": "Dashboards and Charts",
+      "child_name": "Netdata AI",
       "position": 150
     },
     {
       "parent_path": "root",
-      "child_name": "Security and Privacy Design",
+      "child_name": "Dashboards and Charts",
       "position": 160
     },
     {
       "parent_path": "root",
-      "child_name": "Developer and Contributor Corner",
+      "child_name": "Security and Privacy Design",
       "position": 170
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Developer and Contributor Corner",
+      "position": 180
     }
   ],
-  "full_ingest_identity_sha256": "8b037d4a13020b338e5c20be0dfe253c081d7ea63fbbaa172df8ecb1a9de43ba"
+  "full_ingest_identity_sha256": "f4814e4cc94af8883229936740fa1fb129ffcaf6c9796a1aaf50eb1a49684d1d"
 }

@@ -1,0 +1,7 @@
+{
+  "label": "Systemd Journal Logs",
+  "position": 20,
+  "customProps": {
+    "generated_by": "netdata-learn-ingest"
+  }
+}
