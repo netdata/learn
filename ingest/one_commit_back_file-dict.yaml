@@ -878,6 +878,8 @@
   learn_path: /docs/collecting-metrics/collectors/operating-systems/system-statistics-windows-plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_thermal_zone.md
   learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/system-thermal-zone
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/terminal_services_sessions.md
+  learn_path: /docs/collecting-metrics/collectors/operating-systems/terminal-services-sessions
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/windows_services.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/windows-services-windows-plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/xenstat.plugin/README.md
