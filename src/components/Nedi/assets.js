@@ -22,8 +22,8 @@ export const NEDI_ASSETS = [
   },
   {
     type: 'js',
-    src: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.29.0/dist/viz-global.js',
-    integrity: 'sha384-39ZxW8vr+xPchaaptsOWpdQjpckcdy40zkLeHLA4Yv3x0el06s2iBnWQ/s/ppFXQ',
+    src: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.30.0/dist/viz-global.js',
+    integrity: 'sha384-KtL79YzRfvZ8ULC1SlgbwCIy18KoEk5fAudzHYqetJVonV6ubRN1KD2sDvNT9uuX',
   },
   {
     type: 'js',
