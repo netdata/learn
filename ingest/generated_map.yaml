@@ -19305,9 +19305,18 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-connections.md
   sidebar_label: MCP Connections
   learn_status: Published
-  learn_rel_path: Netdata AI/MCP
+  learn_rel_path: Netdata AI/MCP/MCP Connections
   keywords: null
   description: .nan
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-connections/pagerduty.md
+  sidebar_label: PagerDuty
+  learn_status: Published
+  learn_rel_path: Netdata AI/MCP/MCP Connections
+  keywords: null
+  description: Connect Netdata AI to PagerDuty incidents, on-call schedules and change
+    events through MCP
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/README.md

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "97f2d5d2ec5f85e9da3070f56713a6c2d5f9bc34201c06ed16765169ee05bd3e",
-  "source_corpus_sha256": "9922d35374f36fd31c98881f85aa3d6eb11ccdaadb350108e2997609ff4ec442",
+  "source_sha256": "eb510fc51177721c0f4253459d3480c243882390ea2a94b8fabde25bd354d20a",
+  "source_corpus_sha256": "6bf4bcb511ea93138aded264f7cdce253d4aa7a695f9f89360ffc4dfc98485d6",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -798,6 +798,11 @@
       "parent_path": "Netdata AI/MCP",
       "child_name": "MCP Connections",
       "position": 30
+    },
+    {
+      "parent_path": "Netdata AI/MCP/MCP Connections",
+      "child_name": "PagerDuty",
+      "position": 10
     },
     {
       "parent_path": "Netdata AI/MCP/Supported AI Clients",
@@ -1785,5 +1790,5 @@
       "position": 180
     }
   ],
-  "full_ingest_identity_sha256": "be63a901d5401c3b5798f95697b1a97fdce97f58ade01ed500449a7747208eb5"
+  "full_ingest_identity_sha256": "dbac38945e6be2ab8a21c29ce8be585e459209369b6c7f36c1076a7f866ddbd7"
 }

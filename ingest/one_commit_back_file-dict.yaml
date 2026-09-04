@@ -262,6 +262,8 @@
   learn_path: /docs/netdata-ai/mcp/supported-ai-clients/visual-studio-code
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-connections.md
   learn_path: /docs/netdata-ai/mcp/mcp-connections
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-connections/pagerduty.md
+  learn_path: /docs/netdata-ai/mcp/mcp-connections/pagerduty
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/troubleshooting/index.md
   learn_path: /docs/netdata-ai/troubleshooting
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/README.md
