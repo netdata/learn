@@ -58,6 +58,8 @@
   learn_path: /docs/dashboards-and-charts/tabs/alerts
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/anomaly-advisor-tab.md
   learn_path: /docs/dashboards-and-charts/tabs/anomalies
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/chart-annotations.md
+  learn_path: /docs/dashboards-and-charts/chart-annotations
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/dashboards-tab.md
   learn_path: /docs/dashboards-and-charts/tabs/dashboards
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/events-feed.md
