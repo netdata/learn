@@ -19428,6 +19428,19 @@
   description: .nan
   meta_yaml: .nan
   message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/chart-annotations.md
+  sidebar_label: Chart Annotations
+  learn_status: Published
+  learn_rel_path: Dashboards and Charts
+  keywords:
+  - annotations
+  - chart annotations
+  - notes
+  - deployments
+  - incidents
+  description: Pin notes to a moment on a chart and share them with your Space.
+  meta_yaml: .nan
+  message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/dashboards-and-charts/expanded-chart-analysis.md
   sidebar_label: Expanded Chart Analysis
   learn_status: Published

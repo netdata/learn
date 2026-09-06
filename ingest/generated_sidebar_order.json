@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "eb510fc51177721c0f4253459d3480c243882390ea2a94b8fabde25bd354d20a",
-  "source_corpus_sha256": "d85eeab16f803303f0c05731bbd66ecdb9c49616a70c3c2fc59f0850808346be",
+  "source_sha256": "1cef48e724c3a5e84716c53887a666fb3b41e5e6d3fdc27319539816e6cb9094",
+  "source_corpus_sha256": "a3b1caaf5acd4f8be60b2671eeab814a56465ab641990f96fce5828cf4d0c0b7",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -136,23 +136,28 @@
     },
     {
       "parent_path": "Dashboards and Charts",
-      "child_name": "Expanded Chart Analysis",
+      "child_name": "Chart Annotations",
       "position": 50
     },
     {
       "parent_path": "Dashboards and Charts",
-      "child_name": "NIDL Framework",
+      "child_name": "Expanded Chart Analysis",
       "position": 60
     },
     {
       "parent_path": "Dashboards and Charts",
-      "child_name": "Node Filter",
+      "child_name": "NIDL Framework",
       "position": 70
     },
     {
       "parent_path": "Dashboards and Charts",
-      "child_name": "Time Controls",
+      "child_name": "Node Filter",
       "position": 80
+    },
+    {
+      "parent_path": "Dashboards and Charts",
+      "child_name": "Time Controls",
+      "position": 90
     },
     {
       "parent_path": "Dashboards and Charts/Tabs",
@@ -1790,5 +1795,5 @@
       "position": 180
     }
   ],
-  "full_ingest_identity_sha256": "87705d9a56cab17c1d4feccc41f6db3327ab21861b71db29876cd2fbdbf39bb6"
+  "full_ingest_identity_sha256": "7ae9c3bfd35c27082047ed017c71f4883e11be3254c33823f2404ff999511024"
 }
