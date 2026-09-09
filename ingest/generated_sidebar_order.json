@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "1cef48e724c3a5e84716c53887a666fb3b41e5e6d3fdc27319539816e6cb9094",
-  "source_corpus_sha256": "a3b1caaf5acd4f8be60b2671eeab814a56465ab641990f96fce5828cf4d0c0b7",
+  "source_sha256": "d0e76a8b2a2f7602b5832db7ff77c2169aab960a29ace7194a5e3422c113e997",
+  "source_corpus_sha256": "f50fe7d99408a952df372fe5b676bc7ede8ad9574f5f95a6ef22a80618f000c3",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -716,33 +716,38 @@
     },
     {
       "parent_path": "Netdata AI",
-      "child_name": "Insights",
+      "child_name": "Infrastructure Knowledge",
       "position": 20
     },
     {
       "parent_path": "Netdata AI",
-      "child_name": "Investigations",
+      "child_name": "Insights",
       "position": 30
     },
     {
       "parent_path": "Netdata AI",
-      "child_name": "Troubleshooting",
+      "child_name": "Investigations",
       "position": 40
     },
     {
       "parent_path": "Netdata AI",
-      "child_name": "Alerts Automation",
+      "child_name": "Troubleshooting",
       "position": 50
     },
     {
       "parent_path": "Netdata AI",
-      "child_name": "Anomaly Detection",
+      "child_name": "Alerts Automation",
       "position": 60
     },
     {
       "parent_path": "Netdata AI",
-      "child_name": "MCP",
+      "child_name": "Anomaly Detection",
       "position": 70
+    },
+    {
+      "parent_path": "Netdata AI",
+      "child_name": "MCP",
+      "position": 80
     },
     {
       "parent_path": "Netdata AI/Anomaly Detection",
@@ -1795,5 +1800,5 @@
       "position": 180
     }
   ],
-  "full_ingest_identity_sha256": "7ae9c3bfd35c27082047ed017c71f4883e11be3254c33823f2404ff999511024"
+  "full_ingest_identity_sha256": "446e7382fac42a34aeee0c5de9432287bd47abd76421c4f78141cbd9f5b2388f"
 }
