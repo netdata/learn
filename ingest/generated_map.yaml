@@ -17372,8 +17372,8 @@
   learn_status: Published
   learn_rel_path: Network Performance Monitoring/Device Metrics
   keywords: null
-  description: Collect raw SNMP data without credentials for Netdata Support to investigate
-    metrics and topology issues.
+  description: Include built-in SNMP diagnostics in a private support bundle for metrics,
+    BGP, licensing, and topology issues.
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/device-metrics/anti-patterns.md
@@ -19062,6 +19062,19 @@
   - real-time
   - live exhibits
   description: .nan
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/infrastructure-knowledge.md
+  sidebar_label: Infrastructure Knowledge
+  learn_status: Published
+  learn_rel_path: Netdata AI
+  keywords:
+  - infrastructure knowledge
+  - context
+  - memory
+  - infra.md
+  description: Teach Netdata AI about your infrastructure, in a shared document or
+    in conversation
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/ml-ai/ai-insights.md

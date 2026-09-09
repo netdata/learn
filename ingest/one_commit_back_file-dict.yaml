@@ -222,6 +222,8 @@
   learn_path: /docs/netdata-ai/alerts-automation
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/conversations.md
   learn_path: /docs/netdata-ai/conversations
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/infrastructure-knowledge.md
+  learn_path: /docs/netdata-ai/infrastructure-knowledge
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/anomaly-analysis.md
   learn_path: /docs/netdata-ai/insights/anomaly-analysis
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/insights/capacity-planning.md
