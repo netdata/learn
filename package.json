@@ -68,7 +68,7 @@
 		"react-player": "^3.4.0",
 		"remark-gfm": "^4.0.1",
 		"saxes": "6.0.0",
-		"swagger-ui": "^5.32.14",
+		"swagger-ui": "^5.32.15",
 		"typescript": "^6.0.3",
 		"webpack": "^5.109.2"
 	},
