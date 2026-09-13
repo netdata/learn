@@ -127,7 +127,7 @@ describe('shared deployment integrations', () => {
         src: 'https://static.cloudflareinsights.com/beacon.min.js',
         defer: true,
         type: 'module',
-        'data-cf-beacon': '{"token":"7408c22ab930458a8467c91b5360b8f3"}',
+        'data-cf-beacon': '{"token":"7408c22ab930458a8467c91b5360b8f3","send":{"to":"/cdn-cgi/rum"}}',
       },
     ]);
     expect(beacons[0]).not.toHaveProperty('integrity');

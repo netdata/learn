@@ -76,6 +76,33 @@ GitHub Actions; owner-controlled vendor packages are intentionally excluded from
 Root Yarn resolutions are only used for security releases that are compatible with every selected
 parent range. Do not use a resolution to bypass an incompatible upstream dependency constraint.
 
+### Cloudflare Web Analytics
+
+The shared `docusaurus.config.js` script configuration installs one deferred module beacon on
+each rendered page except the credential-handling `api.html` and `oauth2-redirect.html` artifacts.
+Its public site token identifies the existing Cloudflare analytics site. The payload sets
+`send.to` to `/cdn-cgi/rum` so production browser reports use the Learn origin's Cloudflare receiver.
+The build verifier requires exactly that token and destination and rejects additional payload
+fields, duplicate beacons, and third-party code on the credential-handling artifacts.
+
+`send.to` is an undocumented option implemented by the unversioned Cloudflare beacon. It is a
+provider compatibility dependency that may change independently of Learn releases. The
+[Cloudflare collection documentation](https://developers.cloudflare.com/web-analytics/data-metrics/data-origin-and-collection/)
+describes the same-origin receiver for proxied sites, but does not document this configuration
+option. Source validation alone cannot establish reporting acceptance.
+
+After deployment, verify a production page in a browser: the official beacon must load once,
+its actual reporting POST to `/cdn-cgi/rum` must complete successfully, and fresh analytics for
+the exact `learn.netdata.cloud` host must appear in Cloudflare. A loaded script, a successful
+OPTIONS request, or a successful POST without fresh provider data is insufficient for full
+recovery acceptance. Test normal documentation and Ask Nedi pages, and confirm that `/api` and
+`/oauth2-redirect.html` still load no third-party analytics.
+
+Local servers and Netlify deploy previews do not provide the production Cloudflare receiver at
+`/cdn-cgi/rum`; their failed reporting requests cannot validate production ingestion. Validate
+their rendered snippet and page behavior, then verify reporting on the production host. Keep the
+shared Cloudflare site's automatic-installation mode and other hosts' settings unchanged.
+
 ## Ingest and process documentation files
 
 As explained in the [contributing to Netdata Learn](#contributing-to-netdata-learn) section above,
