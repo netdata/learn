@@ -10,11 +10,13 @@ const {
   SENSITIVE_ROUTES,
   SOURCE,
   TOKEN,
+  REPORTING_PATH,
   verifyCloudflareRum,
   verifyPage,
 } = require('../../scripts/verify-cloudflare-rum');
 const roots = [];
-const beacon = `<script src="${SOURCE}" defer type="module" data-cf-beacon='{&quot;token&quot;:&quot;${TOKEN}&quot;}'></script>`;
+const approvedPayload = {token: TOKEN, send: {to: REPORTING_PATH}};
+const beacon = `<script src="${SOURCE}" defer type="module" data-cf-beacon='${JSON.stringify(approvedPayload).replaceAll('"', '&quot;')}'></script>`;
 
 function fixture() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'learn-cloudflare-rum-'));
@@ -100,6 +102,46 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     expect(verifyCloudflareRum(root).htmlFiles).toBe(
       REPRESENTATIVE_ROUTES.length + SENSITIVE_ROUTES.length + 1,
     );
+  });
+
+  it('accepts equivalent JSON whitespace and property order', () => {
+    const payload = JSON.stringify({send: {to: REPORTING_PATH}, token: TOKEN}, null, 2);
+    const markup = beacon.replace(/data-cf-beacon='[^']*'/, `data-cf-beacon='${payload}'`);
+    expect(() => verifyPage(markup, 'test.html')).not.toThrow();
+  });
+
+  it.each([
+    ['missing destination', {token: TOKEN}],
+    ['missing token', {send: {to: REPORTING_PATH}}],
+    ['null payload', null],
+    ['array payload', [TOKEN, REPORTING_PATH]],
+    ['string payload', TOKEN],
+    ['boolean payload', true],
+    ['additional top-level field', {...approvedPayload, spa: false}],
+    ['provider version override', {...approvedPayload, version: '2026.09.13'}],
+    ['null send configuration', {token: TOKEN, send: null}],
+    ['array send configuration', {token: TOKEN, send: [REPORTING_PATH]}],
+    ['string send configuration', {token: TOKEN, send: REPORTING_PATH}],
+    ['missing send.to', {token: TOKEN, send: {}}],
+    ['non-string send.to', {token: TOKEN, send: {to: false}}],
+    ['wrong relative destination', {token: TOKEN, send: {to: '/rum'}}],
+    ['external destination', {token: TOKEN, send: {to: 'https://cloudflareinsights.com/cdn-cgi/rum'}}],
+    ['absolute same-site destination', {token: TOKEN, send: {to: 'https://learn.netdata.cloud/cdn-cgi/rum'}}],
+    ['protocol-relative destination', {token: TOKEN, send: {to: '//learn.netdata.cloud/cdn-cgi/rum'}}],
+    ['destination query string', {token: TOKEN, send: {to: `${REPORTING_PATH}?sample=1`}}],
+    ['destination fragment', {token: TOKEN, send: {to: `${REPORTING_PATH}#sample`}}],
+    ['additional send field', {token: TOKEN, send: {to: REPORTING_PATH, method: 'POST'}}],
+  ])('rejects %s', (_label, payload) => {
+    const markup = beacon.replace(
+      /data-cf-beacon='[^']*'/,
+      `data-cf-beacon='${JSON.stringify(payload)}'`,
+    );
+    expect(() => verifyPage(markup, 'test.html')).toThrow(/approved public token|must report only/);
+  });
+
+  it.each(['', '{', '{"token":', 'undefined'])('rejects malformed JSON %s', (payload) => {
+    const markup = beacon.replace(/data-cf-beacon='[^']*'/, `data-cf-beacon='${payload}'`);
+    expect(() => verifyPage(markup, 'test.html')).toThrow(/not valid JSON/);
   });
 
   it.each([
@@ -189,6 +231,7 @@ describe('rendered Cloudflare Web Analytics verifier', () => {
     [beacon.replace('type="module"', 'type="text/javascript"'), /deferred module/],
     [beacon.replace(' defer', ''), /deferred module/],
     [beacon.replace(' defer', ' async defer'), /deferred module/],
+    [beacon.replace(/ data-cf-beacon='[^']*'/, ''), /not valid JSON/],
     [beacon.replace(' data-cf-beacon', ' integrity="sha256-test" data-cf-beacon'), /cannot use integrity/],
     [beacon.replace(' data-cf-beacon', ' crossorigin="use-credentials" data-cf-beacon'), /unapproved attributes/],
     [beacon.replace(' data-cf-beacon', ' crossorigin="anonymous" data-cf-beacon'), /unapproved attributes/],

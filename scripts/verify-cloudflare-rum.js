@@ -5,6 +5,7 @@ const {parse} = require('parse5');
 const SOURCE = 'https://static.cloudflareinsights.com/beacon.min.js';
 const SOURCE_URL = new URL(SOURCE);
 const TOKEN = '7408c22ab930458a8467c91b5360b8f3';
+const REPORTING_PATH = '/cdn-cgi/rum';
 const SITE_ORIGIN = 'https://learn.netdata.cloud';
 const HTML_NAMESPACE = 'http://www.w3.org/1999/xhtml';
 const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
@@ -194,8 +195,28 @@ function verifyPage(html, relative) {
   } catch {
     throw new Error(`${relative}: Cloudflare Web Analytics beacon payload is not valid JSON`);
   }
-  if (Object.keys(payload).length !== 1 || payload.token !== TOKEN) {
-    throw new Error(`${relative}: Cloudflare Web Analytics beacon token does not match the approved public token`);
+  if (
+    !payload ||
+    typeof payload !== 'object' ||
+    Array.isArray(payload) ||
+    Object.keys(payload).length !== 2 ||
+    payload.token !== TOKEN ||
+    !Object.hasOwn(payload, 'send')
+  ) {
+    throw new Error(
+      `${relative}: Cloudflare Web Analytics beacon must contain only the approved public token and send configuration`,
+    );
+  }
+  if (
+    !payload.send ||
+    typeof payload.send !== 'object' ||
+    Array.isArray(payload.send) ||
+    Object.keys(payload.send).length !== 1 ||
+    payload.send.to !== REPORTING_PATH
+  ) {
+    throw new Error(
+      `${relative}: Cloudflare Web Analytics beacon must report only to ${REPORTING_PATH} on the same origin`,
+    );
   }
   if (html.split(SOURCE).length !== 2 || html.split(TOKEN).length !== 2) {
     throw new Error(`${relative}: Cloudflare Web Analytics source or token occurs more than once`);
@@ -247,6 +268,7 @@ if (require.main === module) {
 module.exports = {
   SOURCE,
   TOKEN,
+  REPORTING_PATH,
   REPRESENTATIVE_ROUTES,
   SENSITIVE_ROUTES,
   verifyCloudflareRum,
