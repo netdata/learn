@@ -37,7 +37,7 @@
 		"test:ui": "vitest --ui"
 	},
 	"dependencies": {
-		"@babel/core": "^7.29.7",
+		"@babel/core": "^8.0.1",
 		"@docusaurus/core": "^3.10.2",
 		"@docusaurus/mdx-loader": "^3.10.2",
 		"@docusaurus/plugin-google-gtag": "^3.10.2",
