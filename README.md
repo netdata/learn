@@ -73,8 +73,13 @@ add a root `package-lock.json`. The npm lock below `scripts/site-build-gate/` is
 website-owned vendor contract and remains npm-managed. Dependabot watches the root Yarn graph and
 GitHub Actions; owner-controlled vendor packages are intentionally excluded from automatic updates.
 
-Root Yarn resolutions are only used for security releases that are compatible with every selected
-parent range. Do not use a resolution to bypass an incompatible upstream dependency constraint.
+Root Yarn resolutions normally select security releases compatible with every selected parent
+range. Mermaid 12.0.0 is a qualified exception: Chevrotain 11.1.2 and its parser helpers pin
+`lodash-es` 4.17.23, which is affected by GHSA-r5fr-rjxr-66jc and GHSA-f23m-r3pf-42rh.
+The root resolution selects fixed 4.18.1, validated through the documentation build and real
+light/dark diagram rendering. Remove this exception when Mermaid's parser dependencies accept
+a fixed release. The resolution affects Learn's bundled documentation renderer; it does not
+rewrite the separately pinned, integrity-checked Nedi CDN asset.
 
 ### Cloudflare Web Analytics
 

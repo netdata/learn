@@ -12,18 +12,18 @@ export const NEDI_ASSETS = [
   { type: 'css', src: `${NEDI_ENDPOINT}/ai-agent-ui.css?v=19` },
   {
     type: 'js',
-    src: 'https://cdn.jsdelivr.net/npm/markdown-it@15.0.1/dist/browser/markdown-it.umd.min.js',
-    integrity: 'sha384-lX8HkDCIMBsB/UN/Vv18JAmM0RGX9rzKdL1513w2k3hKLBDcvj5jHUaMZdQpbOm4',
+    src: 'https://cdn.jsdelivr.net/npm/markdown-it@15.0.2/dist/browser/markdown-it.umd.min.js',
+    integrity: 'sha384-eaXixoauKhs0THQDG40r2SPao0FZmzCXLMECD9sbA02doHE3APxry0Az2P/oBq9E',
   },
   {
     type: 'js',
-    src: 'https://cdn.jsdelivr.net/npm/mermaid@11.17.2/dist/mermaid.min.js',
-    integrity: 'sha384-EOXBFmc3gx5mb+vn0vPvvGqACToJD24hhacX5Yx+8NUUQrHIle/Qi5Bg9o3zKwW2',
+    src: 'https://cdn.jsdelivr.net/npm/mermaid@12.0.0/dist/mermaid.min.js',
+    integrity: 'sha384-xzghz1GQ5u9HCpVskeDPqMsdogD1yvuMQbEK53+wi+G70+6J1AG0L2cfi9PHjDWI',
   },
   {
     type: 'js',
-    src: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.29.0/dist/viz-global.js',
-    integrity: 'sha384-39ZxW8vr+xPchaaptsOWpdQjpckcdy40zkLeHLA4Yv3x0el06s2iBnWQ/s/ppFXQ',
+    src: 'https://cdn.jsdelivr.net/npm/@viz-js/viz@3.30.0/dist/viz-global.js',
+    integrity: 'sha384-KtL79YzRfvZ8ULC1SlgbwCIy18KoEk5fAudzHYqetJVonV6ubRN1KD2sDvNT9uuX',
   },
   {
     type: 'js',
