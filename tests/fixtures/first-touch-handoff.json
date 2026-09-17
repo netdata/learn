@@ -2,6 +2,16 @@
   "now": "2026-09-17T12:00:00.000Z",
   "cases": [
     {
+      "name": "future diagnostic identity does not replace entry chronology",
+      "input": {"version": 2, "entry": {"surface": "learn", "path": "/", "ts": "2026-09-01T10:00:00.000Z", "identities": [{"distinct_id": "synthetic-id", "project_token": "synthetic-token", "surface": "learn", "status": "anonymous", "observed_at": "2099-01-01T00:00:00.000Z"}]}},
+      "expected": {"surface": "learn", "path": "/"}
+    },
+    {
+      "name": "older diagnostic identity does not expire valid entry",
+      "input": {"version": 2, "entry": {"surface": "learn", "path": "/", "ts": "2026-09-01T10:00:00.000Z", "identities": [{"distinct_id": "synthetic-id", "project_token": "synthetic-token", "surface": "learn", "status": "anonymous", "observed_at": "2020-01-01T00:00:00.000Z"}]}},
+      "expected": {"surface": "learn", "path": "/"}
+    },
+    {
       "name": "legacy Website projection",
       "input": {"landing_page": "/guides/example/", "referrer": "https://search.example/?q=netdata", "ts": "2026-09-01T10:00:00.000Z"},
       "expected": {"surface": "website", "path": "/guides/example/", "referrer": "https://search.example/"}

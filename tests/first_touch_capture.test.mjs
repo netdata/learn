@@ -42,6 +42,7 @@ test('common Website/Learn projection fixtures preserve the whole-observation co
       assert.equal(output.version, 2, fixture.name);
       for (const [key, value] of Object.entries(fixture.expected)) assert.equal(output.entry[key], value, fixture.name);
       assert.equal(output.entry.ts, fixture.input.entry?.ts || fixture.input.ts, fixture.name);
+      if (fixture.input.entry?.identities) assert.deepEqual(JSON.parse(JSON.stringify(output.entry.identities)), fixture.input.entry.identities, fixture.name);
       if (fixture.input.landing_page) assert.equal(output.landing_page, fixture.input.landing_page, fixture.name);
     }
     assert.equal(JSON.stringify(fixture.input), input, fixture.name);
@@ -97,6 +98,23 @@ test('preserves v1 storage bytes and transports Website roots without upgrading 
   assert.equal(output.entry.path, '/first');
   assert.equal(output.landing_page, '/first');
   assert.equal(output.ts, first.ts);
+});
+
+test('href mutations decorate anchors but leave resource links and SVG references untouched', async t => {
+  const w = browser(t);
+  for (const element of [w.document.createElement('link'),
+    w.document.createElementNS('http://www.w3.org/2000/svg', 'use')]) {
+    w.document.body.append(element);
+    await tick();
+    const href = 'https://app.netdata.cloud/resource?preserve=%20#asset';
+    element.setAttribute('href', href);
+    await tick();
+    assert.equal(element.getAttribute('href'), href, element.tagName);
+  }
+  const anchor = w.document.querySelector('#app');
+  anchor.setAttribute('href', 'https://app.netdata.cloud/sign-up?changed=1');
+  await tick();
+  assert.equal(carried(anchor).entry.path, '/docs/first');
 });
 
 test('preserves v2 observation, identities and original cookie expiry without any write', t => {

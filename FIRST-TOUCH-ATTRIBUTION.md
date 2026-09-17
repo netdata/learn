@@ -19,6 +19,8 @@ Every existing cookie remains byte-for-byte unchanged, including v1, unsupported
 malformed records and earlier observations. Reading does not renew expiry. A supported v1 record
 can be projected into a v2 URL envelope without physically upgrading the cookie. No SDK identities
 are collected, reset or merged; valid already-associated candidates are retained by projection.
+Identity `observed_at` must be canonical UTC ISO syntax. It is diagnostic metadata, not the
+first-touch timestamp: the App contract does not use its age to expire, order or merge observations.
 
 ## Links and authentication boundary
 

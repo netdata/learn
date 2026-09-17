@@ -33,7 +33,28 @@ links, destination safety and query preservation. Test output against Cloud's ex
 Run existing Learn tests and production build/gates without weakening baseline rules. Public
 deployment and synthetic-account validation are separate acceptance work, not local test claims.
 
-## Rollback
+## Review-qualified resource-link repair — 2026-09-17
+
+Review comment 4040311529 reproduces: an attribute mutation on a non-anchor resource link
+receives `nd_ft`. The approved repair guards the central decorator with `a[href]`, covering
+every invocation without changing capture or anchor behavior. A native DOM regression fails
+before the guard; resource-link and SVG-reference mutations must remain byte-identical afterward.
+Website/Fleet already reject non-anchor targets in `isAppLink`.
+
+Comments 4040290361 and 4040311545 propose identity timestamp eligibility not present in the
+App reader contract. `firstTouchCookie.js:validIdentity` requires canonical finite `observed_at`;
+`firstTouchHandoff.js:readFirstTouchHandoff` applies age/signup eligibility only to entry and
+Website-root `ts`. Identity candidates remain diagnostic, not ordering or merge authority.
+Shared conformance fixtures retain valid diagnostic candidates independently of entry age.
+
+Qualification: 26 first-touch native checks pass on Node 22.23.2. The resource mutation regression
+fails before the guard and passes afterward; intercepted Chromium confirms resource URLs remain
+unchanged while real anchors are decorated on both Learn and Website. Both identity cases also
+pass the actual App reader with metadata unchanged. The shared helper runtime remains byte-identical.
+Before publishing this repair, all checks on implementation head `f64efcd784b67e9f74838dc747e4ed03b8a582ad`
+were complete and passing (Netlify informational checks neutral). No build-policy changes are made.
+
+## Rollback procedure
 
 Remove the script inclusions to disable capture and decoration; existing cookie contents and
 analytics initialization remain unchanged. Do not delete or reset cookies during rollback.
@@ -58,9 +79,10 @@ analytics initialization remain unchanged. Do not delete or reset cookies during
   Both rendered artifacts contain the scripts in order without async/defer attributes.
 - The pure handoff helper is byte-identical to the Website copy (SHA-256
   `ede4fb9c66c4301f24a2b584ab2a8912ad922919f2113c336446a347fe6c6013`).
-- `tests/fixtures/first-touch-handoff.json` defines eight shared Website/Learn projection cases:
+- `tests/fixtures/first-touch-handoff.json` defines ten shared Website/Learn projection cases:
   legacy Website, Learn, Learn with Website roots, safe sender projection, unsupported versions,
-  private senders, future timestamps and expired timestamps. Native tests execute the actual helper.
+  private senders, future timestamps, expired timestamps and future/older diagnostic identity metadata.
+  Native tests execute the actual helper.
 
 App-reader/auth interoperability and deployed signup reconciliation belong to the coordinated
 release evidence; no local result certifies backend deployment or whole-history identity linkage.

@@ -69,6 +69,7 @@
 
   function decorate(anchor) {
     try {
+      if (!anchor || !anchor.matches || !anchor.matches('a[href]')) return;
       var href = anchor.getAttribute('href');
       var previous = links.get(anchor);
       var source = previous && previous.decorated === href ? previous.source : href;
