@@ -1,0 +1,55 @@
+{
+  "now": "2026-09-17T12:00:00.000Z",
+  "cases": [
+    {
+      "name": "future diagnostic identity does not replace entry chronology",
+      "input": {"version": 2, "entry": {"surface": "learn", "path": "/", "ts": "2026-09-01T10:00:00.000Z", "identities": [{"distinct_id": "synthetic-id", "project_token": "synthetic-token", "surface": "learn", "status": "anonymous", "observed_at": "2099-01-01T00:00:00.000Z"}]}},
+      "expected": {"surface": "learn", "path": "/"}
+    },
+    {
+      "name": "older diagnostic identity does not expire valid entry",
+      "input": {"version": 2, "entry": {"surface": "learn", "path": "/", "ts": "2026-09-01T10:00:00.000Z", "identities": [{"distinct_id": "synthetic-id", "project_token": "synthetic-token", "surface": "learn", "status": "anonymous", "observed_at": "2020-01-01T00:00:00.000Z"}]}},
+      "expected": {"surface": "learn", "path": "/"}
+    },
+    {
+      "name": "legacy Website projection",
+      "input": {"landing_page": "/guides/example/", "referrer": "https://search.example/?q=netdata", "ts": "2026-09-01T10:00:00.000Z"},
+      "expected": {"surface": "website", "path": "/guides/example/", "referrer": "https://search.example/"}
+    },
+    {
+      "name": "Learn first observation",
+      "input": {"version": 2, "entry": {"surface": "learn", "path": "/docs/getting-started", "referrer": "https://search.example/", "ts": "2026-09-01T10:00:00.000Z"}},
+      "expected": {"surface": "learn", "path": "/docs/getting-started", "referrer": "https://search.example/"}
+    },
+    {
+      "name": "Learn entry with later Website roots",
+      "input": {"version": 2, "landing_page": "/guides/example/", "referrer": "https://learn.netdata.cloud/docs/getting-started", "ts": "2026-09-02T10:00:00.000Z", "entry": {"surface": "learn", "path": "/docs/getting-started", "referrer": "https://search.example/", "ts": "2026-09-01T10:00:00.000Z"}},
+      "expected": {"surface": "learn", "path": "/docs/getting-started", "referrer": "https://search.example/"}
+    },
+    {
+      "name": "public sender query projection",
+      "input": {"version": 2, "entry": {"surface": "website", "path": "/", "referrer": "https://search.example/search?q=netdata#result", "ts": "2026-09-01T10:00:00.000Z"}},
+      "expected": {"surface": "website", "path": "/", "referrer": "https://search.example/search"}
+    },
+    {
+      "name": "unsupported cookie is not upgraded",
+      "input": {"version": 3, "entry": {"surface": "learn", "path": "/", "ts": "2026-09-01T10:00:00.000Z"}},
+      "expected": null
+    },
+    {
+      "name": "private sender is not blanked",
+      "input": {"version": 2, "entry": {"surface": "learn", "path": "/", "referrer": "http://192.168.1.1:19999/", "ts": "2026-09-01T10:00:00.000Z"}},
+      "expected": null
+    },
+    {
+      "name": "future timestamp is ineligible",
+      "input": {"version": 2, "entry": {"surface": "learn", "path": "/", "ts": "2026-09-18T10:00:00.000Z"}},
+      "expected": null
+    },
+    {
+      "name": "expired timestamp is ineligible",
+      "input": {"version": 2, "entry": {"surface": "learn", "path": "/", "ts": "2026-01-01T10:00:00.000Z"}},
+      "expected": null
+    }
+  ]
+}

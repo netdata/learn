@@ -260,6 +260,9 @@ module.exports = {
 		},
 	],
 	scripts: [
+      // Synchronous head execution retains the entry before client routing or hydration.
+      { src: '/js/first-touch-handoff.js', async: false, defer: false },
+      { src: '/js/first-touch.js', async: false, defer: false },
       {
         src: 'https://static.cloudflareinsights.com/beacon.min.js',
         defer: true,
