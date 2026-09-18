@@ -9606,7 +9606,7 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
-katex@^0.16.45, katex@^0.16.47:
+katex@^0.16.47:
   version "0.16.47"
   resolved "https://registry.npmjs.org/katex/-/katex-0.16.47.tgz#0a13a42c2deb4f74e61f162d440b9165a548030f"
   integrity sha512-Eeo8Ys1doU1z+x8AZsPpQu+p/QcZBI5PeOo7QGQdy2x2m0MU/hYagBbGOmXwr5KVbEfVuWv9LpnQWeehogurjg==
@@ -13691,10 +13691,10 @@ swagger-client@^3.38.0:
     "@swagger-api/apidom-parser-adapter-openapi-yaml-3-2" "^1.12.0"
     "@swagger-api/apidom-parser-adapter-yaml-1-2" "^1.12.0"
 
-swagger-ui-dist@5.32.14:
-  version "5.32.14"
-  resolved "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-5.32.14.tgz#bb3a3e738bf17bc2ee2640a711fcc44be76fde4c"
-  integrity sha512-nOA2pSQhcmODMUQZpJHYKNuwniDUqcOWGNaSCOoZv12FdOSJ9JxV95HtyRGNMqEBj6h6lCNTy20TgZDYTSuUIg==
+swagger-ui-dist@5.32.15:
+  version "5.32.15"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.32.15.tgz#0bbaa62695104dbf2db06ad9bbbaaa127d830614"
+  integrity sha512-TSFER+rFQlf1nzk6WvKkMaHTxAPQ3eAAxigFThnxQedSREanfZgSbJFayZVs/ULnSbNdrJOb99vLD6xpb3R3eg==
   dependencies:
     "@scarf/scarf" "=1.4.0"
 
