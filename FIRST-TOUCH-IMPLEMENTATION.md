@@ -54,7 +54,24 @@ pass the actual App reader with metadata unchanged. The shared helper runtime re
 Before publishing this repair, all checks on implementation head `f64efcd784b67e9f74838dc747e4ed03b8a582ad`
 were complete and passing (Netlify informational checks neutral). No build-policy changes are made.
 
-## Rollback procedure
+## Test sensitivity repair — 2026-09-18
+
+Review comments 4040420748 and 4040420754 identify verified coverage gaps: removing the auxclick
+handler or injecting an existing-cookie renewal still passes the respective tests. Strengthen the
+middle-click test to assert synchronous decoration before observer delivery. Seed a real expiring
+cookie in the DOM cookie jar, intercept producer writes, and compare expiry after handoff/refresh.
+Apply the same inherited test corrections to the offline Community tests; runtime bytes are unchanged.
+
+Qualification on Node 22.23.2: all 26 Learn native checks and all 30 offline Community checks pass.
+Four in-memory mutation controls fail for the intended reason: disabling the auxclick listener
+leaves the synchronous link undecorated; injecting a same-value 90-day cookie renewal triggers the
+write assertion, on both surfaces. Neither mutation writes runtime files. Both original Learn tests
+pass those deliberately broken variants, establishing their prior insensitivity. Community desktop
+and mobile Chromium cases also assert decoration in the same JavaScript turn as insertion/auxclick.
+All PR checks on `e81bb688be80477889d5279850b3e5468afd4b51` were complete and passing before this
+tests-only publication; no production rebuild is needed to qualify unchanged runtime bytes.
+
+## Runtime rollback
 
 Remove the script inclusions to disable capture and decoration; existing cookie contents and
 analytics initialization remain unchanged. Do not delete or reset cookies during rollback.

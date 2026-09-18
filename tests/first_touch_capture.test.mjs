@@ -21,7 +21,7 @@ function browser(t, { cookie, referrer = 'https://www.google.com/search?q=netdat
   t.after(() => dom.window.close());
   const { window } = dom;
   if (cookie !== undefined) window.document.cookie = `nd_first_touch=${cookie}; Path=/; Secure`;
-  before?.(window);
+  before?.(window, dom.cookieJar);
   window.eval(handoff);
   window.eval(producer);
   return window;
@@ -76,10 +76,11 @@ test('SPA routes, script reexecution, dynamic content and middle-click preserve 
   link.href = 'https://app.netdata.cloud/sign-in?utm_content=dynamic';
   link.textContent = 'dynamic';
   w.document.body.append(link);
-  await tick();
+  assert.equal(carried(link), null);
+  // Dispatch before the mutation observer can decorate the inserted anchor.
+  link.dispatchEvent(new w.MouseEvent('auxclick', { bubbles: true, button: 1 }));
   assert.equal(carried(link).entry.path, '/docs/first');
   assert.equal(carried(link).entry.utm_source, 'google');
-  link.dispatchEvent(new w.MouseEvent('auxclick', { bubbles: true, button: 1 }));
   assert.equal(cookieValue(w), raw);
   assert.equal(new URL(link.href).searchParams.getAll('nd_ft').length, 1);
   link.setAttribute('href', 'https://app.netdata.cloud/spaces/netdata-demo?utm_content=replaced');
@@ -91,13 +92,28 @@ test('SPA routes, script reexecution, dynamic content and middle-click preserve 
 test('preserves v1 storage bytes and transports Website roots without upgrading expiry', t => {
   const first = entry();
   const raw = encoded({ landing_page: first.path, referrer: first.referrer, ts: first.ts });
-  const w = browser(t, { cookie: raw });
+  const expires = new Date(Date.now() + 3600000).toUTCString();
+  const writes = [];
+  let jar;
+  const w = browser(t, { before(window, cookieJar) {
+    jar = cookieJar;
+    window.document.cookie = `nd_first_touch=${raw}; Path=/; Secure; Expires=${expires}`;
+    const access = Object.getOwnPropertyDescriptor(window.Document.prototype, 'cookie');
+    Object.defineProperty(window.document, 'cookie', {
+      get: () => access.get.call(window.document),
+      set: value => { writes.push(value); access.set.call(window.document, value); }
+    });
+  } });
   assert.equal(cookieValue(w), raw);
   const output = carried(w.document.querySelector('#app'));
   assert.equal(output.entry.surface, 'website');
   assert.equal(output.entry.path, '/first');
   assert.equal(output.landing_page, '/first');
   assert.equal(output.ts, first.ts);
+  w.dispatchEvent(new w.Event('focus'));
+  assert.deepEqual(writes, [], 'reading and refreshing existing attribution must not write cookies');
+  const stored = jar.getCookiesSync(w.location.href).find(cookie => cookie.key === 'nd_first_touch');
+  assert.equal(stored.expires.toUTCString(), expires);
 });
 
 test('href mutations decorate anchors but leave resource links and SVG references untouched', async t => {
