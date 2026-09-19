@@ -636,12 +636,12 @@
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/ebpfgo.plugin/integrations/ebpf_dns.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-dns
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/ebpfgo.plugin/integrations/ebpf_filedescriptor.md
+  learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-filedescriptor
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_dcstat.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat-ebpf-plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_disk.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-disk
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_filedescriptor.md
-  learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-filedescriptor
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_filesystem.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-filesystem
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_hardirq.md
@@ -1632,6 +1632,8 @@
   learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/puppet
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/rabbitmq/README.md
   learn_path: /docs/collecting-metrics/collectors/databases/rabbitmq
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redfish/README.md
+  learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/redfish
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redis/README.md
   learn_path: /docs/collecting-metrics/collectors/databases/redis
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/rethinkdb/README.md
