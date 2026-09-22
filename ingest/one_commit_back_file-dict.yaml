@@ -1016,6 +1016,8 @@
   learn_path: /docs/exporting-metrics/connectors/prometheus-remote-write
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/exporting/pubsub/README.md
   learn_path: /docs/exporting-metrics/connectors/google-cloud-pub-sub
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/pkg/relabel/README.md
+  learn_path: /docs/collecting-metrics/prometheus-metric-relabeling
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/aws/README.md
   learn_path: /docs/collecting-metrics/secrets-management/secret-stores/aws-secrets-manager
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/azure/README.md
@@ -1622,8 +1624,6 @@
   learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/zerto
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/profile-format.md
   learn_path: /docs/collecting-metrics/prometheus-profile-format
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/prometheus/relabel/README.md
-  learn_path: /docs/collecting-metrics/prometheus-metric-relabeling
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/proxysql/README.md
   learn_path: /docs/collecting-metrics/collectors/databases/proxysql
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/pulsar/README.md
