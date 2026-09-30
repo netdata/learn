@@ -18216,7 +18216,6 @@
   - opentelemetry
   - otlp
   - collector
-  - tenant
   - object storage
   description: When to centralize a log source into Netdata's log store with OpenTelemetry,
     and the two things to set up — the receiving Agent and the Collector recipes per
@@ -18235,13 +18234,12 @@
   - systemmaxuse
   - wevtutil
   - otel
-  - tenant
   - s3
   - object storage
   - cost
   description: Control what logs cost — journald disk limits and namespaces, Windows
-    event channel sizing, Netdata's log store retention per tenant, and offloading
-    to object storage.
+    event channel sizing, Netdata's log store retention, and offloading to object
+    storage.
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/integrations/logs/integrations/macos_unified_logs.md
@@ -18295,10 +18293,10 @@
   - grpc
   - metrics
   - logs
+  - traces
   - collector
-  - tenant
   description: The Netdata Agent as an OTLP/gRPC receiver — metrics become charts,
-    logs land in Netdata's indexed log store, with TLS, tenants, and Collector recipes.
+    logs and traces are stored indexed on the Agent, with TLS and Collector recipes.
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/otlp-ingestion.md
@@ -18312,9 +18310,10 @@
   - grpc
   - metrics
   - logs
+  - traces
   - collector
-  description: Export metrics and logs from an OpenTelemetry Collector to a Netdata
-    Agent
+  description: Export metrics, logs, and traces from an OpenTelemetry Collector or
+    SDK to a Netdata Agent
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/securing-the-otlp-endpoint.md
@@ -18327,11 +18326,10 @@
   - tls
   - mutual tls
   - certificates
-  - tenants
   - security
   description: Bind the OTLP endpoint safely — loopback by default, TLS and mutual
-    TLS for remote senders, network controls, certificate rotation, and what tenant
-    selection does and does not protect.
+    TLS for remote senders, network controls, certificate rotation, and what reaches
+    Netdata Cloud.
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/metrics-collection.md
@@ -18402,6 +18400,23 @@
   description: Count matching OpenTelemetry log records and chart their rate in Netdata
   meta_yaml: .nan
   message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/trace-storage-and-retention.md
+  sidebar_label: Trace Storage and Retention
+  learn_status: Published
+  learn_rel_path: OpenTelemetry
+  keywords:
+  - opentelemetry
+  - otel
+  - traces
+  - spans
+  - retention
+  - storage
+  - object storage
+  - s3
+  description: How the Netdata Agent stores OpenTelemetry traces — retention, offloading
+    to object storage with read-back, and sizing the receiving node.
+  meta_yaml: .nan
+  message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/npm/syslog/README.md
   sidebar_label: Syslog from Network Devices
   learn_status: Published
@@ -18424,7 +18439,7 @@
   learn_status: Published
   learn_rel_path: OpenTelemetry
   keywords: null
-  description: Ingest OpenTelemetry metrics and logs with the Netdata Agent.
+  description: Ingest OpenTelemetry metrics, logs, and traces with the Netdata Agent.
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md

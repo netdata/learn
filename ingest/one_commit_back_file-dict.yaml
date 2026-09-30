@@ -436,6 +436,8 @@
   learn_path: /docs/opentelemetry/otlp-ingestion
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/securing-the-otlp-endpoint.md
   learn_path: /docs/opentelemetry/securing-the-otlp-endpoint
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/trace-storage-and-retention.md
+  learn_path: /docs/opentelemetry/trace-storage-and-retention
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/transformations.md
   learn_path: /docs/opentelemetry/transformations
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/realtime-monitoring.md
