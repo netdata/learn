@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "7c3c11c1f619d58919a2de0ce2280e362a898f58be3c012cab23d377eb06aa0f",
-  "source_corpus_sha256": "b449f3dbe64d2f5be835ba0b761dabd422271becb815121823737dc14a558eda",
+  "source_sha256": "ca0f74e77e5b04b4c33be8d461b89e634f5bd9c9e49e0b7b311790fdb6b259bc",
+  "source_corpus_sha256": "c819f86518a1dddb39cfcd7e66a01c23d67b2d5a5903941bd37949c5efb57510",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -1651,13 +1651,18 @@
     },
     {
       "parent_path": "OpenTelemetry",
-      "child_name": "Syslog from Network Devices",
+      "child_name": "Trace Storage and Retention",
       "position": 70
     },
     {
       "parent_path": "OpenTelemetry",
-      "child_name": "OpenTelemetry Plugin Reference",
+      "child_name": "Syslog from Network Devices",
       "position": 80
+    },
+    {
+      "parent_path": "OpenTelemetry",
+      "child_name": "OpenTelemetry Plugin Reference",
+      "position": 90
     },
     {
       "parent_path": "OpenTelemetry/Syslog from Network Devices",
@@ -1800,5 +1805,5 @@
       "position": 180
     }
   ],
-  "full_ingest_identity_sha256": "6edfe1bfd8cf03a9fe68f2ab301591a9fe470b0d251f55dac76c15954dd966f4"
+  "full_ingest_identity_sha256": "12f81ace061ce2991f03e707c08599ccb25333dd66119d89ccad0d7776ae2952"
 }
