@@ -1638,6 +1638,16 @@
   learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/redfish
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redis/README.md
   learn_path: /docs/collecting-metrics/collectors/databases/redis
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redis/integrations/dragonfly.md
+  learn_path: /docs/collecting-metrics/collectors/databases/dragonfly
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redis/integrations/garnet.md
+  learn_path: /docs/collecting-metrics/collectors/databases/garnet
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redis/integrations/keydb.md
+  learn_path: /docs/collecting-metrics/collectors/databases/keydb
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redis/integrations/kvrocks.md
+  learn_path: /docs/collecting-metrics/collectors/databases/kvrocks
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/redis/integrations/valkey.md
+  learn_path: /docs/collecting-metrics/collectors/databases/valkey
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/rethinkdb/README.md
   learn_path: /docs/collecting-metrics/collectors/databases/rethinkdb
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/riakkv/README.md
