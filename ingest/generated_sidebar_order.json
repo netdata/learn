@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "ca0f74e77e5b04b4c33be8d461b89e634f5bd9c9e49e0b7b311790fdb6b259bc",
-  "source_corpus_sha256": "6b690692b4d843824ff3681d762f785ff69f31a0007425ed853942e6bd1e4ad9",
+  "source_sha256": "3d1e65fa61aee72e5696641a2698e8845a4ef892755addbcfa0c987e583fb315",
+  "source_corpus_sha256": "d0b06f1a407042aabcca0c8518a6d217a94125687f26ca5b32d05796263faca5",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -583,6 +583,41 @@
       "parent_path": "Developer and Contributor Corner/libnetdata",
       "child_name": "Socket",
       "position": 230
+    },
+    {
+      "parent_path": "Edge Device Monitoring",
+      "child_name": "Deploy and Identify Fleet Devices",
+      "position": 10
+    },
+    {
+      "parent_path": "Edge Device Monitoring",
+      "child_name": "Minimize Disk Footprint",
+      "position": 20
+    },
+    {
+      "parent_path": "Edge Device Monitoring",
+      "child_name": "Minimize CPU and Memory",
+      "position": 30
+    },
+    {
+      "parent_path": "Edge Device Monitoring",
+      "child_name": "Minimize Cellular Traffic",
+      "position": 40
+    },
+    {
+      "parent_path": "Edge Device Monitoring",
+      "child_name": "Disconnected Devices and Failover",
+      "position": 50
+    },
+    {
+      "parent_path": "Edge Device Monitoring",
+      "child_name": "Monitor the Fleet",
+      "position": 60
+    },
+    {
+      "parent_path": "Edge Device Monitoring",
+      "child_name": "Updates and Troubleshooting",
+      "position": 70
     },
     {
       "parent_path": "Exporting Metrics",
@@ -1776,34 +1811,39 @@
     },
     {
       "parent_path": "root",
-      "child_name": "Live View",
+      "child_name": "Edge Device Monitoring",
       "position": 130
     },
     {
       "parent_path": "root",
-      "child_name": "Alerts & Notifications",
+      "child_name": "Live View",
       "position": 140
     },
     {
       "parent_path": "root",
-      "child_name": "Netdata AI",
+      "child_name": "Alerts & Notifications",
       "position": 150
     },
     {
       "parent_path": "root",
-      "child_name": "Dashboards and Charts",
+      "child_name": "Netdata AI",
       "position": 160
     },
     {
       "parent_path": "root",
-      "child_name": "Security and Privacy Design",
+      "child_name": "Dashboards and Charts",
       "position": 170
     },
     {
       "parent_path": "root",
-      "child_name": "Developer and Contributor Corner",
+      "child_name": "Security and Privacy Design",
       "position": 180
+    },
+    {
+      "parent_path": "root",
+      "child_name": "Developer and Contributor Corner",
+      "position": 190
     }
   ],
-  "full_ingest_identity_sha256": "9eb2dc567a6c07dbc3e2c444d7e469fa77cc1cc48114045dbd52c61550ee7b90"
+  "full_ingest_identity_sha256": "16f4787caeb2dd6fcb32bb1f9a056e373c78e9db4c7593d0c1577281f054e5ba"
 }

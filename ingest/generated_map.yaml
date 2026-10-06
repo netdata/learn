@@ -18342,12 +18342,14 @@
   - otel
   - otlp
   - grpc
+  - http
   - metrics
   - logs
   - traces
   - collector
-  description: The Netdata Agent as an OTLP/gRPC receiver — metrics become charts,
-    logs and traces are stored indexed on the Agent, with TLS and Collector recipes.
+  description: The Netdata Agent as an OTLP receiver over gRPC and HTTP — metrics
+    become charts, logs and traces are stored indexed on the Agent, with TLS and Collector
+    recipes.
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/otlp-ingestion.md
@@ -18359,12 +18361,13 @@
   - otel
   - otlp
   - grpc
+  - http
   - metrics
   - logs
   - traces
   - collector
-  description: Export metrics, logs, and traces from an OpenTelemetry Collector or
-    SDK to a Netdata Agent
+  description: Export metrics, logs, and traces from an OpenTelemetry Collector to
+    a Netdata Agent
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/opentelemetry/securing-the-otlp-endpoint.md
@@ -18491,6 +18494,71 @@
   learn_rel_path: OpenTelemetry
   keywords: null
   description: Ingest OpenTelemetry metrics, logs, and traces with the Netdata Agent.
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/README.md
+  sidebar_label: Edge Device Monitoring
+  learn_status: Published
+  learn_rel_path: Edge Device Monitoring
+  keywords: null
+  description: Monitor robots, signage, gateways and other edge devices centrally
+    while reducing device disk, CPU, memory and cellular use.
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/deployment-and-identity.md
+  sidebar_label: Deploy and Identify Fleet Devices
+  learn_status: Published
+  learn_rel_path: Edge Device Monitoring
+  keywords: null
+  description: .nan
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/minimize-disk-footprint.md
+  sidebar_label: Minimize Disk Footprint
+  learn_status: Published
+  learn_rel_path: Edge Device Monitoring
+  keywords: null
+  description: .nan
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/minimize-cpu-and-memory.md
+  sidebar_label: Minimize CPU and Memory
+  learn_status: Published
+  learn_rel_path: Edge Device Monitoring
+  keywords: null
+  description: .nan
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/minimize-cellular-traffic.md
+  sidebar_label: Minimize Cellular Traffic
+  learn_status: Published
+  learn_rel_path: Edge Device Monitoring
+  keywords: null
+  description: .nan
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/disconnected-devices-and-failover.md
+  sidebar_label: Disconnected Devices and Failover
+  learn_status: Published
+  learn_rel_path: Edge Device Monitoring
+  keywords: null
+  description: .nan
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/monitor-the-fleet.md
+  sidebar_label: Monitor the Fleet
+  learn_status: Published
+  learn_rel_path: Edge Device Monitoring
+  keywords: null
+  description: .nan
+  meta_yaml: .nan
+  message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/updates-and-troubleshooting.md
+  sidebar_label: Updates and Troubleshooting
+  learn_status: Published
+  learn_rel_path: Edge Device Monitoring
+  keywords: null
+  description: .nan
   meta_yaml: .nan
   message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/top-monitoring-netdata-functions.md

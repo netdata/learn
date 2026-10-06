@@ -3,8 +3,8 @@ custom_edit_url: "https://github.com/netdata/netdata/edit/master/docs/category-o
 sidebar_label: "OpenTelemetry"
 learn_status: "Published"
 learn_rel_path: "OpenTelemetry"
-keywords: [opentelemetry, otel, otlp, grpc, metrics, logs, traces, collector]
-description: "The Netdata Agent as an OTLP/gRPC receiver — metrics become charts, logs and traces are stored indexed on the Agent, with TLS and Collector recipes."
+keywords: [opentelemetry, otel, otlp, grpc, http, metrics, logs, traces, collector]
+description: "The Netdata Agent as an OTLP receiver over gRPC and HTTP — metrics become charts, logs and traces are stored indexed on the Agent, with TLS and Collector recipes."
 sidebar_position: "130"
 learn_link: "https://learn.netdata.cloud/docs/opentelemetry"
 slug: "/opentelemetry"
@@ -12,10 +12,11 @@ slug: "/opentelemetry"
 
 # OpenTelemetry Overview
 
-The Netdata Agent receives OpenTelemetry telemetry over OTLP/gRPC, on port 4317: metrics become Netdata charts, and logs
-and traces are stored, indexed, on the receiving Agent. Anything that speaks OTLP/gRPC can send to it — an OpenTelemetry
-Collector, an instrumented application, an SDK — with TLS or mutual TLS on the endpoint. Start with
-[OTLP Ingestion](/docs/opentelemetry/otlp-ingestion) for the endpoint, the exporter block, and two smoke tests.
+The Netdata Agent receives OpenTelemetry telemetry over OTLP: gRPC on port 4317, and HTTP on port 4318 when you turn
+the HTTP listener on. Metrics become
+Netdata charts. Logs and traces are stored and indexed on the receiving Agent. Send the data through an OpenTelemetry
+Collector, with TLS or mutual TLS when the Collector runs on another host. Start with
+[OTLP Ingestion](/docs/opentelemetry/otlp-ingestion) for the endpoints, the exporter blocks, and two smoke tests.
 
 ## Metrics
 
@@ -39,7 +40,7 @@ source are in [Logs Collection](/docs/opentelemetry/logs-collection), and retent
 
 Traces land on the receiving Agent too: spans indexed, their own retention settings, and the same optional
 offloading to S3-compatible object storage as logs, read back through the download cache both signals share. You
-explore them in the Traces tab. Sending traces from an SDK or a Collector is in
+explore them in the Traces tab. Sending traces through a Collector is in
 [OTLP Ingestion](/docs/opentelemetry/otlp-ingestion#send-traces); storage, retention, offloading, and sizing are in
 [Trace Storage and Retention](/docs/opentelemetry/trace-storage-and-retention).
 
@@ -54,7 +55,7 @@ explore them in the Traces tab. Sending traces from an SDK or a Collector is in
 
 ## In this section
 
-- [OTLP Ingestion](/docs/opentelemetry/otlp-ingestion) — the endpoint, the exporter, smoke tests, troubleshooting.
+- [OTLP Ingestion](/docs/opentelemetry/otlp-ingestion) — the endpoints, the exporters, smoke tests, troubleshooting.
 - [Securing the OTLP Endpoint](/docs/opentelemetry/securing-the-otlp-endpoint) — TLS, mutual TLS, network
   controls, certificate rotation.
 - [Metrics Collection](/docs/opentelemetry/metrics-collection) — receiver recipes for hosts and applications.
