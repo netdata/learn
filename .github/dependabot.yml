@@ -65,6 +65,26 @@ updates:
         update-types:
           - minor
           - patch
+      # Security updates ignore the schedule and are not covered by the groups
+      # above. A dependency joins the first group it matches: packages that ship
+      # to visitors' browsers need a visual check, everything else only a build.
+      # No update-types filter: a fix may require a major version.
+      security-browser:
+        applies-to: security-updates
+        patterns:
+          - react
+          - react-dom
+          - react-inlinesvg
+          - mermaid
+          - dompurify
+          - swagger-ui
+          - swagger-ui-dist
+          - "@easyops-cn/*"
+          - posthog-docusaurus
+      security-build:
+        applies-to: security-updates
+        patterns:
+          - "*"
 
   - package-ecosystem: github-actions
     directory: /
@@ -79,6 +99,10 @@ updates:
         update-types:
           - minor
           - patch
+      security-actions:
+        applies-to: security-updates
+        patterns:
+          - "*"
 
   # The ingest runtime is independently hash-locked and tested on Python 3.13.
   - package-ecosystem: pip
@@ -94,3 +118,7 @@ updates:
         update-types:
           - minor
           - patch
+      security-python:
+        applies-to: security-updates
+        patterns:
+          - "*"

@@ -1,0 +1,15 @@
+# Code owners are requested for review on pull requests that touch these paths.
+# Later lines take precedence over earlier ones for the same file.
+
+# Dependency-impact tooling: the local and CI checker, its workflow, and the
+# Dependabot configuration it reviews.
+/scripts/dep-impact/                       @netdata/cloud-sre
+/.github/workflows/dependency-impact.yml   @netdata/cloud-sre
+/.github/dependabot.yml                    @netdata/cloud-sre
+
+# Files Dependabot updates, so every Dependabot PR requests a review.
+# Ownership is by path, not author: other PRs touching these files request it too.
+/package.json                              @netdata/cloud-sre
+/yarn.lock                                 @netdata/cloud-sre
+/.learn_environment/                       @netdata/cloud-sre
+/.github/workflows/                        @netdata/cloud-sre

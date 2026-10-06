@@ -34,3 +34,4 @@ venv
 
 # Test coverage reports
 /coverage/
+/scripts/dep-impact/node_modules/
