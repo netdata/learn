@@ -126,6 +126,22 @@
   learn_path: /docs/netdata-agent/resource-utilization/extreme-cardinality-protection
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-configuration-management.md
   learn_path: /docs/welcome-to-netdata/fleet-deployment-and-configuration-management
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/README.md
+  learn_path: /docs/edge-device-monitoring
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/deployment-and-identity.md
+  learn_path: /docs/edge-device-monitoring/deploy-and-identify-fleet-devices
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/disconnected-devices-and-failover.md
+  learn_path: /docs/edge-device-monitoring/disconnected-devices-and-failover
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/minimize-cellular-traffic.md
+  learn_path: /docs/edge-device-monitoring/minimize-cellular-traffic
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/minimize-cpu-and-memory.md
+  learn_path: /docs/edge-device-monitoring/minimize-cpu-and-memory
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/minimize-disk-footprint.md
+  learn_path: /docs/edge-device-monitoring/minimize-disk-footprint
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/monitor-the-fleet.md
+  learn_path: /docs/edge-device-monitoring/monitor-the-fleet
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/fleet-management/updates-and-troubleshooting.md
+  learn_path: /docs/edge-device-monitoring/updates-and-troubleshooting
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/functions/databases.md
   learn_path: /docs/live-view/database-queries
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/functions/processes.md
