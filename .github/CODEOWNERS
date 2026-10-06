@@ -6,6 +6,7 @@
 /scripts/dep-impact/                       @netdata/cloud-sre
 /.github/workflows/dependency-impact.yml   @netdata/cloud-sre
 /.github/dependabot.yml                    @netdata/cloud-sre
+/.github/CODEOWNERS                        @netdata/cloud-sre
 
 # Files Dependabot updates, so every Dependabot PR requests a review.
 # Ownership is by path, not author: other PRs touching these files request it too.
