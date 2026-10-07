@@ -73,7 +73,9 @@ describe('generated output ownership', () => {
         if (entry.isDirectory()) walk(entryPath);
         else if (/\.mdx?$/.test(entry.name)) {
           const frontMatter = readFileSync(entryPath, 'utf8').match(/^---\n([\s\S]*?)\n---/);
-          if (frontMatter && /^part_of_learn:\s*["']?True["']?\s*$/m.test(frontMatter[1])) {
+          // Ingest keeps a page whenever the key is present, whatever its value
+          // (safe_cleanup_learn_folders in ingest/ingest.py).
+          if (frontMatter && /^part_of_learn: /m.test(frontMatter[1])) {
             preserved.push(path.relative(repositoryRoot, entryPath).split(path.sep).join('/'));
           }
         }
