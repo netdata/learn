@@ -133,7 +133,8 @@ describe('Netlify redirect graph gate', () => {
     ['malformed source', 'missing-leading-slash', '/docs/getting-started', /Malformed redirect source/],
     ['dead target', '/test/dead-target', '/docs/does-not-exist', /does not render/],
     ['chain', '/test/chain', '/docs/rest-api/netdata-badges', /chain or cycle/],
-    ['rendered source', '/docs/alerts-&-notifications/notifications/agent-dispatched-notifications', '/docs/getting-started', /shadows rendered route/],
+    // A rendered route that no rule targets; a targeted one trips the chain check first.
+    ['rendered source', '/docs/dashboards-and-charts/chart-annotations', '/docs/getting-started', /shadows rendered route/],
     ['retired wildcard', '/docs/agent/pt/*', '/docs/getting-started', /Retired wildcard returned/],
     ['bad percent escape', '/test/bad-%escape', '/docs/getting-started', /Malformed redirect source/],
     ['encoded separator', '/test/encoded%2Fseparator', '/docs/getting-started', /Malformed redirect source/],
