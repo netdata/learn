@@ -102,7 +102,7 @@ def _is_product_description(front_matter):
     return str(front_matter.get("custom_edit_url") or "").endswith(PRODUCT_DESCRIPTION_SOURCE)
 
 
-def _is_indexed(front_matter):
+def _is_indexed(front_matter, generated_integration):
     if (
         _is_product_description(front_matter)
         or "part_of_learn" in front_matter
@@ -111,10 +111,7 @@ def _is_indexed(front_matter):
         return False
     if front_matter.get("generated_grid_page") is True:
         return front_matter.get("sidebar_class_name") != PAGINATION_CLASS
-    return (
-        front_matter.get("learn_status") == "Published"
-        and GENERATED_INTEGRATION_MARKER not in str(front_matter.get("message") or "")
-    )
+    return front_matter.get("learn_status") == "Published" and not generated_integration
 
 
 def _sort_key(front_matter, label):
@@ -145,17 +142,17 @@ def _entry(front_matter, label):
     return f"{line}: {description}" if description else line
 
 
-def _section_entries(directory, front_matters, crumbs):
+def _section_entries(directory, front_matters, generated, crumbs):
     entries = []
     index = directory / f"{directory.name}.mdx"
     index_front_matter = front_matters.get(index)
-    if index_front_matter is not None and _is_indexed(index_front_matter):
+    if index_front_matter is not None and _is_indexed(index_front_matter, index in generated):
         label = " › ".join(crumbs) if crumbs else _label(index_front_matter, directory.name)
         entries.append(_entry(index_front_matter, label))
     for kind, path, front_matter, label in _ordered_items(directory, front_matters):
         if kind == "category":
-            entries.extend(_section_entries(path, front_matters, crumbs + [label]))
-        elif _is_indexed(front_matter):
+            entries.extend(_section_entries(path, front_matters, generated, crumbs + [label]))
+        elif _is_indexed(front_matter, path in generated):
             entries.append(_entry(front_matter, " › ".join(crumbs + [label])))
     return entries
 
@@ -164,10 +161,15 @@ def build_llms_files(docs_root, read_text=None):
     """Return (llms.txt, llms-full.txt) contents, or None when the product description is missing."""
     docs_root = Path(docs_root)
     front_matters = {}
+    generated = set()
     product_description = None
     for path in sorted(docs_root.rglob("*.mdx")):
-        front_matter, body = split_front_matter(_read(path, read_text))
+        text = _read(path, read_text)
+        front_matter, body = split_front_matter(text)
         front_matters[path] = front_matter
+        # Ingest identifies generated integration pages by the marker anywhere in the file.
+        if GENERATED_INTEGRATION_MARKER in text:
+            generated.add(path)
         if _is_product_description(front_matter):
             product_description = (front_matter, body)
     if product_description is None:
@@ -193,9 +195,13 @@ def build_llms_files(docs_root, read_text=None):
     ]
     for kind, path, front_matter, label in _ordered_items(docs_root, front_matters):
         entries = (
-            _section_entries(path, front_matters, [])
+            _section_entries(path, front_matters, generated, [])
             if kind == "category"
-            else ([_entry(front_matter, label)] if _is_indexed(front_matter) else [])
+            else (
+                [_entry(front_matter, label)]
+                if _is_indexed(front_matter, path in generated)
+                else []
+            )
         )
         if entries:
             lines += ["", f"## {label}", ""] + entries
