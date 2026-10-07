@@ -1,55 +1,17 @@
 #!/usr/bin/env python3
 """
-Thorough tests for _escape_mdx_braces().
+Thorough tests for ingest's MDX escaping (_escape_mdx in ingest/ingest.py).
 
 Tests cover: basic escaping, code block preservation, inline code preservation,
 already-escaped braces, template literals, double braces, JSX style attributes,
 real-world metadata content, and edge cases.
 """
-import re
 import sys
+from pathlib import Path
 
-# --- Copy of the function under test (must match ingest.py exactly) ---
-
-def _escape_mdx_braces(body):
-    """
-    Escape bare { outside of fenced code blocks and inline code for MDX 3.
-
-    MDX interprets {word} as a JSX expression, which breaks when the content
-    is plain text from metadata (e.g. metric names like zabbix.{context}).
-
-    This function:
-    - Preserves fenced code blocks (```...```) and inline code (`...`)
-    - Escapes every bare { that isn't already escaped
-    - Restores style={{ which is valid JSX
-    """
-    preserved = []
-
-    def _save(match):
-        preserved.append(match.group(0))
-        return f"\x00MDXBRACE{len(preserved) - 1}\x00"
-
-    # Preserve fenced code blocks — must come before inline code
-    body = re.sub(r"```.*?```", _save, body, flags=re.DOTALL)
-    # Preserve inline code
-    body = re.sub(r"`[^`\n]+`", _save, body)
-    # Preserve MDX import/export statements (ESM syntax uses { for destructuring)
-    body = re.sub(r"^import\s+.*$", _save, body, flags=re.MULTILINE)
-    body = re.sub(r"^export\s+(?:default|function|const|let|var|\{).*$", _save, body, flags=re.MULTILINE)
-
-    # Escape every bare { not already preceded by a backslash
-    body = re.sub(r"(?<!\\)\{", r"\\{", body)
-
-    # Restore style={{ which is valid JSX (the above turns it into style=\{\{)
-    body = body.replace("style=\\{\\{", "style={{")
-
-    # Restore preserved code sections
-    for i, original in enumerate(preserved):
-        body = body.replace(f"\x00MDXBRACE{i}\x00", original)
-
-    return body
-
-# --- End of function copy ---
+# Test the function ingest uses; ingest's dependencies must be installed.
+sys.path.insert(0, str(Path(__file__).resolve().parent / "ingest"))
+from ingest import _escape_mdx  # noqa: E402
 
 passed = 0
 failed = 0
@@ -57,7 +19,7 @@ failed = 0
 
 def check(name, input_text, expected):
     global passed, failed
-    result = _escape_mdx_braces(input_text)
+    result = _escape_mdx(input_text)
     if result == expected:
         passed += 1
         print(f"  PASS: {name}")

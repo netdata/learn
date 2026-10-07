@@ -195,16 +195,20 @@ class LlmsFilesTests(unittest.TestCase):
         )
 
     def test_full_file_restores_text_that_ingest_escaped_as_prose(self):
-        # MDX has no indented code, and ingest escapes braces in code spans that cross lines
-        # like prose, so llms-full.txt undoes those escapes too and gets the source text back.
+        # MDX has no indented code, so ingest escapes indented text like prose and llms-full.txt
+        # undoes that. Code, including a code span that crosses lines and a backslash the source
+        # wrote, is left alone on both sides.
         source = (
-            "Set {name} here.\n\n"
+            "Set {name} here, when a <= b.\n\n"
             "    an indented {line} is a paragraph in MDX\n\n"
-            "A `multi-line\ncode {span}` example.\n\n"
-            "```yaml\nkey: {value}\n```\n"
+            "A `multi-line\ncode {span}` example, and `a <= b`.\n\n"
+            "```yaml\nkey: {value}\npattern: '\\{x\\}'\n```\n"
         )
-        escaped = ingest._escape_mdx_braces(source)
-        self.assertNotEqual(escaped, source)
+        escaped = ingest._escape_mdx(source)
+        self.assertIn("Set \\{name} here, when a \\<= b.", escaped)
+        self.assertIn("an indented \\{line}", escaped)
+        self.assertIn("A `multi-line\ncode {span}` example, and `a <= b`.", escaped)
+        self.assertIn("```yaml\nkey: {value}\npattern: '\\{x\\}'\n```", escaped)
         self.assertEqual(llms_files.llms_full_text(escaped), source)
 
     def test_index_skips_integration_pages_marked_outside_the_message(self):

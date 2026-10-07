@@ -53,6 +53,7 @@ except Exception:
 import autogenerateRedirects as genRedirects
 import learn_links
 import llms_files
+import mdx_code
 
 DRY_RUN = False
 DEBUG = False
@@ -2654,48 +2655,41 @@ def _annotate_integration_logo_tags(body):
     return img_pattern.sub(_repl, body)
 
 
-def _escape_mdx_braces(body):
+# MDX import/export statements are JavaScript (ESM uses { for destructuring).
+_MDX_ESM_LINE = re.compile(
+    r"^import\s+.*$|^export\s+(?:default|function|const|let|var|\{).*$", re.MULTILINE
+)
+# A character is already escaped when an odd number of backslashes precedes it.
+_UNESCAPED_BRACE = re.compile(r"(?<!\\)((?:\\\\)*)\{")
+_UNESCAPED_TAG_START = re.compile(r"(?<!\\)((?:\\\\)*)<(?==|->)")
+
+
+def _escape_mdx_prose(text):
+    """Rewrite one stretch of prose so that MDX 3 compiles it; escaped characters stay as they are."""
+    text = text.replace("<details><summary>", "<details>\n<summary>")
+    text = text.replace("<details open><summary>", "<details open>\n<summary>")
+    # MDX reads {word} as an expression, e.g. in metric names like zabbix.{context}.
+    text = _UNESCAPED_BRACE.sub(r"\1\\{", text)
+    # style={{ ... }} is a JSX attribute value and must stay an expression.
+    text = text.replace("style=\\{\\{", "style={{")
+    # MDX reads < as the start of a JSX tag.
+    text = _UNESCAPED_TAG_START.sub(r"\1\\<", text)
+    text = text.replace("%<", r"%\<")
+    # MDX has no autolinks: <url> becomes [url](url).
+    text = re.sub(r"<(https://[^>]+)>", r"[\1](\1)", text)
+    text = re.sub(r"<(http://[^>]+)>", r"[\1](\1)", text)
+    return re.sub(r"<([\w\.-]+@[\w\.-]+\.\w+)>", r"[\1](mailto:\1)", text)
+
+
+def _escape_mdx(body):
+    """Make a page's prose compile as MDX 3 without changing its code.
+
+    MDX renders fenced code blocks and code spans literally, so an escape there would show as a
+    stray backslash; they stay byte for byte, as do MDX import/export lines.
     """
-    Escape bare { outside of fenced code blocks and inline code for MDX 3.
-
-    MDX interprets {word} as a JSX expression, which breaks when the content
-    is plain text from metadata (e.g. metric names like zabbix.{context}).
-
-    This function:
-    - Preserves fenced code blocks (```...```) and inline code (`...`)
-    - Escapes every bare { that isn't already escaped
-    - Restores style={{ which is valid JSX
-    """
-    preserved = []
-
-    def _save(match):
-        preserved.append(match.group(0))
-        return f"\x00MDXBRACE{len(preserved) - 1}\x00"
-
-    # Preserve fenced code blocks — must come before inline code
-    body = re.sub(r"```.*?```", _save, body, flags=re.DOTALL)
-    # Preserve inline code
-    body = re.sub(r"`[^`\n]+`", _save, body)
-    # Preserve MDX import/export statements (ESM syntax uses { for destructuring)
-    body = re.sub(r"^import\s+.*$", _save, body, flags=re.MULTILINE)
-    body = re.sub(
-        r"^export\s+(?:default|function|const|let|var|\{).*$",
-        _save,
-        body,
-        flags=re.MULTILINE,
-    )
-
-    # Escape every bare { not already preceded by a backslash
-    body = re.sub(r"(?<!\\)\{", r"\\{", body)
-
-    # Restore style={{ which is valid JSX (the above turns it into style=\{\{)
-    body = body.replace("style=\\{\\{", "style={{")
-
-    # Restore preserved code sections
-    for i, original in enumerate(preserved):
-        body = body.replace(f"\x00MDXBRACE{i}\x00", original)
-
-    return body
+    protected = mdx_code.code_ranges(body)
+    protected += [match.span() for match in _MDX_ESM_LINE.finditer(body)]
+    return mdx_code.transform_outside(body, protected, _escape_mdx_prose)
 
 
 def sanitize_page(path):
@@ -2719,20 +2713,10 @@ def sanitize_page(path):
     body = body.replace("<!--unhideme", "")
     body = body.replace("unhideme-->", "")
 
-    # MDX 3 compatibility replacements
-    body = body.replace("<details><summary>", "<details>\n<summary>")
-    body = body.replace("<details open><summary>", "<details open>\n<summary>")
-    body = _escape_mdx_braces(body)
+    # MDX 3 compatibility rewrites, applied to prose only
+    body = _escape_mdx(body)
     if INTEGRATION_MARKER in body:
         body = _annotate_integration_logo_tags(body)
-    body = body.replace("<=", r"\<=")
-    body = body.replace("%<", r"%\<")
-    body = body.replace("<->", r"\<->")
-
-    # <url> into [url](url)
-    body = re.sub(r"<(https://[^>]+)>", r"[\1](\1)", body)
-    body = re.sub(r"<(http://[^>]+)>", r"[\1](\1)", body)
-    body = re.sub(r"<([\w\.-]+@[\w\.-]+\.\w+)>", r"[\1](mailto:\1)", body)
 
     match_group = re.search(r'meta_yaml: "(.*)"', body)
     if match_group:
