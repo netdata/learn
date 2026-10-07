@@ -1,3 +1,8 @@
+# The Ask Nedi page itself is crawlable. Question links (?q=, ?question= and any other
+# variant) stay blocked, so crawlers never open a page with a question in it.
 User-agent: *
+Allow: /docs/ask-nedi$
 Disallow: /docs/ask-nedi
+Disallow: /?q=
+Disallow: /?question=
 Sitemap: https://learn.netdata.cloud/sitemap.xml

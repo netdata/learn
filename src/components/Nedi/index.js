@@ -43,6 +43,27 @@ const CSS_VARIABLES = {
 
 const STATUS_STYLE = { textAlign: 'center', padding: '40px' };
 
+// Question links (?q= / ?question=) prefill the input instead of asking: a question is
+// sent only by a person (Enter or the send button), so crawlers that render pages never
+// trigger LLM requests.
+const QUESTION_PARAMS = ['q', 'question'];
+
+function takeUrlQuestion() {
+  const params = new URLSearchParams(window.location.search);
+  const name = QUESTION_PARAMS.find((key) => (params.get(key) || '').trim());
+  if (!name) return null;
+
+  const question = params.get(name).trim();
+  QUESTION_PARAMS.forEach((key) => params.delete(key));
+  const search = params.toString();
+  window.history.replaceState(
+    window.history.state,
+    '',
+    `${window.location.pathname}${search ? `?${search}` : ''}${window.location.hash}`,
+  );
+  return question;
+}
+
 // Persistent container + instance, survives React unmounts
 function getOrCreateNedi(theme) {
   let container = document.getElementById(PERSISTENT_ID);
@@ -63,7 +84,6 @@ function getOrCreateNedi(theme) {
       showThemeToggle: false,
       stickyInput: true,
       cssVariables: CSS_VARIABLES,
-      urlParams: ['q', 'question'],
       onEvent: (event) => {
         if (event.type === 'user-message' && window.posthog) {
           window.posthog.capture('nedi_question', { question: event.content });
@@ -162,10 +182,16 @@ export default function Nedi() {
       ? setTimeout(() => window.scrollTo(0, parseInt(savedScroll, 10)), 50)
       : undefined;
 
-    // Focus the chat input after DOM settles
+    // Focus the chat input after DOM settles, prefilled with a linked question
     requestAnimationFrame(() => {
       const input = nediEl.querySelector('.ai-agent-input');
-      if (input) input.focus();
+      if (!input) return;
+      const question = takeUrlQuestion();
+      if (question) {
+        input.value = question;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+      input.focus();
     });
 
     return () => {
