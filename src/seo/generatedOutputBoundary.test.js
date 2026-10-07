@@ -175,13 +175,22 @@ describe('generated output ownership', () => {
     expect(recoveryStep).toContain('generated-after.sha256');
     expect(recoveryStep).toContain('diff -u');
     expect(recoveryStep).toContain('set -o pipefail');
+    // The llms files join the find corpus, so a run before their first generation hashes nothing.
+    expect(recoveryStep).toContain('if ! find docs static -type f');
     expect(recoveryStep).toContain(
-      'if ! find docs -type f -print0 | sort -z | xargs -0 sha256sum',
+      "\\( -path 'docs/*' -o -path static/llms.txt -o -path static/llms-full.txt \\)",
     );
+    expect(recoveryStep).toContain('-print0 | sort -z | xargs -0 sha256sum');
     expect(recoveryStep).toContain('if ! sha256sum');
-    expect(recoveryStep).toContain('static/llms.txt');
-    expect(recoveryStep).toContain('static/llms-full.txt');
-    expect(recoveryStep).toContain('Failed to hash the generated documentation corpus');
+    const fixedArtifacts = recoveryStep.slice(
+      recoveryStep.indexOf('if ! sha256sum'),
+      recoveryStep.indexOf('> "$fixed_manifest"'),
+    );
+    expect(fixedArtifacts).toContain('netlify.toml');
+    expect(fixedArtifacts).not.toContain('llms');
+    expect(recoveryStep).toContain(
+      'Failed to hash the generated documentation corpus and llms files',
+    );
     expect(recoveryStep).toContain('Failed to hash the generated recovery artifacts');
     expect(recoveryStep.match(/return 1/g)).toHaveLength(3);
   });
