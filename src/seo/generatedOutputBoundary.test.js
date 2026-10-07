@@ -37,13 +37,27 @@ describe('generated output ownership', () => {
         'ingest/ingest.py',
         'static.toml',
         'netlify.toml',
+        'static/llms.txt',
+        'static/llms-full.txt',
+        'static/robots.txt',
       ]),
     ).toEqual([
       'docs/Netdata Agent/Installation/Linux/Linux.mdx',
       'ingest/generated_map.yaml',
       'ingest/generated_sidebar_order.json',
       'ingest/generated_sidebar_order.json.sha256',
+      'static/llms.txt',
+      'static/llms-full.txt',
     ]);
+  });
+
+  it('rejects hand edits of the generated llms files in an ordinary pull request', () => {
+    expect(() =>
+      verifyGeneratedOutputBoundary({
+        ...ordinaryPullRequest,
+        changedPaths: ['static/llms-full.txt'],
+      }),
+    ).toThrow(/llms-full\.txt/);
   });
 
   it('allows source-only changes in an ordinary pull request', () => {
@@ -165,6 +179,8 @@ describe('generated output ownership', () => {
       'if ! find docs -type f -print0 | sort -z | xargs -0 sha256sum',
     );
     expect(recoveryStep).toContain('if ! sha256sum');
+    expect(recoveryStep).toContain('static/llms.txt');
+    expect(recoveryStep).toContain('static/llms-full.txt');
     expect(recoveryStep).toContain('Failed to hash the generated documentation corpus');
     expect(recoveryStep).toContain('Failed to hash the generated recovery artifacts');
     expect(recoveryStep.match(/return 1/g)).toHaveLength(3);

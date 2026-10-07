@@ -111,6 +111,8 @@ jobs:
               ingest/generated_map.yaml \
               ingest/generated_sidebar_order.json \
               ingest/generated_sidebar_order.json.sha256 \
+              static/llms.txt \
+              static/llms-full.txt \
               netlify.toml > "$fixed_manifest"; then
               echo "Failed to hash the generated recovery artifacts" >&2
               return 1

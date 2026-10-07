@@ -14,6 +14,11 @@
     key = "69893e732658435694bf647d5a6fed1d"
     keyLocation = "https://learn.netdata.cloud/69893e732658435694bf647d5a6fed1d.txt"
 
+[[headers]]
+  for = "/llms-full.txt"
+  [headers.values]
+    Link = '<https://learn.netdata.cloud/docs/welcome-to-netdata/complete-product-description>; rel="canonical"'
+
 
 [[redirects]]
   from="/guides/monitor/kubernetes-k8s-netdata"

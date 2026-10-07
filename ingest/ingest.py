@@ -52,6 +52,7 @@ except Exception:
 
 import autogenerateRedirects as genRedirects
 import learn_links
+import llms_files
 
 DRY_RUN = False
 DEBUG = False
@@ -3590,8 +3591,22 @@ def get_dir_make_file_and_recurse(
             )
 
 
+def write_llms_files(docs_root, output_dir):
+    """Write llms.txt and llms-full.txt; keep the previous files if the source page is missing."""
+    built = llms_files.build_llms_files(docs_root, read_text=_read_regular_text)
+    if built is None:
+        print(
+            "WARNING: The Complete Product Description page was not ingested; "
+            f"{output_dir}/llms.txt and {output_dir}/llms-full.txt were left unchanged."
+        )
+        return
+    index, full = built
+    _atomic_write_text(os.path.join(output_dir, "llms.txt"), index)
+    _atomic_write_text(os.path.join(output_dir, "llms-full.txt"), full)
+
+
 def reconcile_generated_outputs(
-    docs_root, netlify_path="netlify.toml", static_path="static.toml"
+    docs_root, netlify_path="netlify.toml", static_path="static.toml", llms_output_dir=None
 ):
     """Run the shared generated-output reconciliation and finalization path."""
     docs_root = _validate_docs_tree(docs_root)
@@ -3617,12 +3632,16 @@ def reconcile_generated_outputs(
             redirects, output_path=netlify_path, static_path=static_path
         )
 
+    if llms_output_dir is not None:
+        write_llms_files(docs_root, llms_output_dir)
+
 
 def regenerate_grids_only(
     docs_root,
     state_path=SIDEBAR_ORDER_STATE_PATH,
     netlify_path="netlify.toml",
     static_path="static.toml",
+    llms_output_dir=None,
 ):
     """Recover generated outputs from a validated full-ingest identity."""
     sidebar_order = load_sidebar_order_state(state_path, docs_root=docs_root)
@@ -3631,7 +3650,10 @@ def regenerate_grids_only(
     MAP_DOC_SCOPE.clear()
 
     reconcile_generated_outputs(
-        docs_root, netlify_path=netlify_path, static_path=static_path
+        docs_root,
+        netlify_path=netlify_path,
+        static_path=static_path,
+        llms_output_dir=llms_output_dir,
     )
 
 
@@ -3912,7 +3934,7 @@ if __name__ == "__main__":
     USE_PLAIN_HTTPS = USE_PLAIN_HTTPS or IGNORE_ON_PREM_REPO
 
     if args.regenerate_grids_only:
-        regenerate_grids_only(DOCS_PREFIX)
+        regenerate_grids_only(DOCS_PREFIX, llms_output_dir="static")
         raise SystemExit(0)
 
     # Clean up old clones into a temp dir
@@ -4233,7 +4255,7 @@ if __name__ == "__main__":
 
     unsafe_cleanup_folders(TEMP_FOLDER)
 
-    reconcile_generated_outputs(DOCS_PREFIX)
+    reconcile_generated_outputs(DOCS_PREFIX, llms_output_dir="static")
     write_sidebar_order_state(map_sidebar_order, "map.yaml", DOCS_PREFIX)
     os.remove("map.yaml")
 

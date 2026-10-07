@@ -7,6 +7,8 @@ const GENERATED_STATE_PATHS = new Set([
   'ingest/generated_map.yaml',
   'ingest/generated_sidebar_order.json',
   'ingest/generated_sidebar_order.json.sha256',
+  'static/llms.txt',
+  'static/llms-full.txt',
 ]);
 
 // Hand-maintained pages that live inside docs/. Ingest keeps them (their front matter has a

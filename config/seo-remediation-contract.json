@@ -13,7 +13,9 @@
       "docs/**",
       "ingest/generated_map.yaml",
       "ingest/generated_sidebar_order.json",
-      "ingest/generated_sidebar_order.json.sha256"
+      "ingest/generated_sidebar_order.json.sha256",
+      "static/llms.txt",
+      "static/llms-full.txt"
     ],
     "runtime_generated_exception": "netlify.toml",
     "strict_gate_marker": "ingest/generated_sidebar_order.json.sha256",
@@ -238,6 +240,11 @@
       "id": "learn-owned-ask-nedi-page",
       "contract": "docs/ask-nedi.mdx is hand-maintained inside the pipeline-owned docs/ tree: ingest preserves files whose front matter has a part_of_learn key, whatever its value, instead of generating them. Ordinary pull requests own it, so scripts/verify-generated-output-boundary.mjs exempts the Learn-owned list (user decision, 2026-10-07). Every other docs/** change still belongs to the ingest automation pull request. The page's server-rendered fallback keeps 'Loading Ask Nedi...' and adds one sentence with links to the Complete Product Description and Getting Started, for clients that do not run JavaScript.",
       "acceptance": "src/seo/generatedOutputBoundary.test.js: an ordinary pull request may change docs/ask-nedi.mdx; LEARN_OWNED_DOCS equals the set of docs files whose front matter has a part_of_learn key; other docs/** paths and generated ingest state are still rejected outside the ingest automation pull request."
+    },
+    {
+      "id": "ingest-generated-llms-files",
+      "contract": "Ingest writes static/llms.txt and static/llms-full.txt in the shared reconciliation step, so --regenerate-grids-only reproduces them and the ingest workflow's recovery check hashes them (user decisions L7 A, M1 A, M2 A, 2026-10-06/07). llms-full.txt is the Complete Product Description (netdata/netdata docs/netdata-complete-product-description.md) as plain markdown: front matter removed, MDX escapes undone outside code, site-relative links made absolute. llms.txt is a link index: the product description first, then the hand-written docs in sidebar order, with one entry per integration catalog overview page instead of the generated integration pages; pagination pages and part_of_learn pages are left out. Both files are pipeline-owned, so only the ingest automation pull request may change them. /llms-full.txt carries a Link rel=canonical header to the Complete Product Description page instead of a noindex directive, which the zero-noindex rule forbids.",
+      "acceptance": "ingest/test_llms_files.py covers the transformation and the index; src/seo/generatedOutputBoundary.test.js rejects the two files outside the ingest automation pull request and checks that the recovery step hashes them; static.toml and the static section of netlify.toml carry the same [[headers]] block for /llms-full.txt."
     },
     {
       "id": "ingest-checks-absolute-learn-links",
