@@ -6,6 +6,19 @@
   description: .nan
   meta_yaml: .nan
   message: .nan
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-complete-product-description.md
+  sidebar_label: Complete Product Description
+  learn_status: Published
+  learn_rel_path: Welcome to Netdata
+  keywords:
+  - netdata features
+  - product overview
+  - observability platform
+  description: Everything Netdata does in one reference, from architecture, infrastructure,
+    network, databases, logs and OpenTelemetry to cloud, edge, AI, alerting and pricing,
+    with links to the documentation.
+  meta_yaml: .nan
+  message: .nan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation.md
   sidebar_label: Enterprise Evaluation Guide
   learn_status: Published

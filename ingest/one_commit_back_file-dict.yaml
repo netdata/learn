@@ -306,6 +306,8 @@
   learn_path: /docs/netdata-cloud/spaces-and-rooms
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-cloud/view-plan-and-billing.md
   learn_path: /docs/netdata-cloud/netdata-plans-&-billing
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-complete-product-description.md
+  learn_path: /docs/welcome-to-netdata/complete-product-description
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-enterprise-evaluation.md
   learn_path: /docs/welcome-to-netdata/enterprise-evaluation-guide
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-oss-limitations.md
