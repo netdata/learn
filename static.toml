@@ -251,4 +251,857 @@
   from="/docs/agent/zh/web/api/queries/ses"
   to="/docs/developer-and-contributor-corner/rest-api/queries/single-or-simple-exponential-smoothing-ses"
 
+# Broken backlinks (2026-10-07): verified successors of dead URLs that still receive backlinks.
+
+[[redirects]]
+  from="/academy"
+  to="https://www.netdata.cloud/academy/"
+
+[[redirects]]
+  from="/changelog"
+  to="https://github.com/netdata/netdata/blob/master/CHANGELOG.md"
+
+[[redirects]]
+  from="/contribute"
+  to="/docs/developer-and-contributor-corner/contributing"
+
+[[redirects]]
+  from="/docs/agent/),"
+  to="/docs/netdata-agent"
+
+[[redirects]]
+  from="/docs/agent/backends/opentsdb"
+  to="/docs/exporting-metrics/connectors/opentsdb"
+
+[[redirects]]
+  from="/docs/agent/backends/prometheus/remote_write"
+  to="/docs/exporting-metrics/connectors/prometheus-remote-write"
+
+[[redirects]]
+  from="/docs/agent/charts"
+  to="/docs/dashboards-and-charts/charts"
+
+[[redirects]]
+  from="/docs/agent/collectors/ebpf.d"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/modules/lighttpd2"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies/lighttpd"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/modules/ntpd"
+  to="/docs/collecting-metrics/collectors/networking/ntpd"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/modules/postgressql"
+  to="/docs/collecting-metrics/collectors/databases/postgresql"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/snmp"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/snmp-devices"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/unbound"
+  to="/docs/collecting-metrics/collectors/networking/unbound"
+
+[[redirects]]
+  from="/docs/agent/exporters"
+  to="/docs/exporting-metrics"
+
+[[redirects]]
+  from="/docs/agent/gettingstarted"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/agent/installer"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/agent/packaging/apt"
+  to="/docs/netdata-agent/installation/linux/native-linux-distribution-packages"
+
+[[redirects]]
+  from="/docs/agent/packaging/helm"
+  to="/docs/netdata-agent/installation/kubernetes"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/installation"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/methods/kickstar"
+  to="/docs/netdata-agent/installation/linux"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/methods/windows"
+  to="/docs/netdata-agent/installation/windows"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/windows"
+  to="/docs/netdata-agent/installation/windows"
+
+[[redirects]]
+  from="/docs/agent/packaging/manual"
+  to="/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout"
+
+[[redirects]]
+  from="/docs/agent/packaging/yum"
+  to="/docs/netdata-agent/installation/linux/native-linux-distribution-packages"
+
+[[redirects]]
+  from="/docs/agent/securing-netdata-agents"
+  to="/docs/netdata-agent/configuration/securing-agents"
+
+[[redirects]]
+  from="/docs/agent/step-by-step/step-03"
+  to="/docs/netdata-cloud"
+
+[[redirects]]
+  from="/docs/agent/step-by-step/step-09"
+  to="/docs/netdata-agent/configuration/database"
+
+[[redirects]]
+  from="/docs/agent/tutorials/longer-metrics-storage"
+  to="/docs/netdata-agent/configuration/database"
+
+[[redirects]]
+  from="/docs/agent/tutorials/monitor-cockroachdb"
+  to="/docs/collecting-metrics/collectors/databases/cockroachdb"
+
+[[redirects]]
+  from="/docs/agent/tutorials/monitor-hadoop-cluster"
+  to="/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata"
+
+[[redirects]]
+  from="/docs/agent/tutorials/using-host-labels"
+  to="/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts"
+
+[[redirects]]
+  from="/docs/agent/zh/streaming"
+  to="/docs/netdata-parents/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/docs/agents/root-cause-analysis"
+  to="/docs/netdata-ai/troubleshooting"
+
+[[redirects]]
+  from="/docs/ai-and-machine-learning/ml-models-and-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/alerting/notifications/agent-dispatched-notifications"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications"
+
+[[redirects]]
+  from="/docs/alerting/notifications/centralized-cloud-notifications"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications"
+
+[[redirects]]
+  from="/docs/alerts"
+  to="/docs/alerts-&-notifications"
+
+[[redirects]]
+  from="/docs/architecture"
+  to="/docs/welcome-to-netdata"
+
+[[redirects]]
+  from="/docs/architecture/database-engine"
+  to="/docs/developer-and-contributor-corner/database-engine"
+
+[[redirects]]
+  from="/docs/architecture/distributed-data-architecture"
+  to="/docs/welcome-to-netdata/scalability"
+
+[[redirects]]
+  from="/docs/architecture/the-role-of-netdata-cloud"
+  to="/docs/netdata-cloud"
+
+[[redirects]]
+  from="/docs/at-a-glance"
+  to="/docs/welcome-to-netdata/enterprise-evaluation-guide"
+
+[[redirects]]
+  from="/docs/cloud/monitoring/notifications"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
+
+[[redirects]]
+  from="/docs/cloud/visualize/interact-with-new-charts"
+  to="/docs/dashboards-and-charts/charts"
+
+[[redirects]]
+  from="/docs/collecting-metrics/apm"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/apm/apache-airflow"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/apm/apache-flink"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/apm/bpftrace-variables"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/application-metrics"
+  to="/docs/collecting-metrics/collectors/operating-systems/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/applications"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/authentication-and-authorization"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/authentication-and-authorization/ldap"
+  to="/docs/collecting-metrics/collectors/applications/openldap"
+
+[[redirects]]
+  from="/docs/collecting-metrics/authentication-and-authorization/ssh"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/blockchain-servers"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/cicd-platforms"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops"
+
+[[redirects]]
+  from="/docs/collecting-metrics/cloud-provider-managed"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops"
+
+[[redirects]]
+  from="/docs/collecting-metrics/cloud-provider-managed/aws-ec2-spot-instance"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/cloud-provider-managed/aws-ecs"
+  to="/docs/collecting-metrics/collectors/containers-and-vms/aws-ecs-containers"
+
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-sensors"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-hardware-sensors-libsensors"
+
+[[redirects]]
+  from="/docs/collecting-metrics/container-metrics"
+  to="/docs/collecting-metrics/containers-and-cgroups"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-vms"
+  to="/docs/collecting-metrics/collectors/containers-and-vms"
+
+[[redirects]]
+  from="/docs/collecting-metrics/containers-and-vms/cadvisor"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/databases"
+  to="/docs/collecting-metrics/collectors/databases"
+
+[[redirects]]
+  from="/docs/collecting-metrics/databases/oracle-db-community"
+  to="/docs/collecting-metrics/collectors/databases/oracle-db"
+
+[[redirects]]
+  from="/docs/collecting-metrics/distributed-computing-systems"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/dns-and-dhcp-servers"
+  to="/docs/collecting-metrics/collectors/networking"
+
+[[redirects]]
+  from="/docs/collecting-metrics/ebpf"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/collecting-metrics/freebsd"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/collecting-metrics/gaming"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/gaming/cs-go"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/generic-collecting-metrics"
+  to="/docs/welcome-to-netdata/monitor-anything"
+
+[[redirects]]
+  from="/docs/collecting-metrics/generic-collecting-metrics/custom-exporter"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/generic-collecting-metrics/excel-spreadsheet"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/generic-collecting-metrics/shell-command"
+  to="/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-sensors"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-devices-and-sensors"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-devices-and-sensors/hp-ilo"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/hp-ilo"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-devices-and-sensors/ipmi-by-soundcloud"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-devices-and-sensors/nvml"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t"
+  to="/docs/collecting-metrics/collectors/storage-and-filesystems/s.m.a.r.t."
+
+[[redirects]]
+  from="/docs/collecting-metrics/incident-management"
+  to="/docs/collecting-metrics/collectors/applications/statuspage"
+
+[[redirects]]
+  from="/docs/collecting-metrics/iot-devices"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors"
+
+[[redirects]]
+  from="/docs/collecting-metrics/iot-devices/openhab"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/kubernetes"
+  to="/docs/collecting-metrics/collectors/containers-and-vms"
+
+[[redirects]]
+  from="/docs/collecting-metrics/linux-systems"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/collecting-metrics/linux-systems/filesystem/zfs/zfs-pools"
+  to="/docs/collecting-metrics/collectors/storage-and-filesystems/zfs-pools"
+
+[[redirects]]
+  from="/docs/collecting-metrics/linux-systems/network"
+  to="/docs/collecting-metrics/collectors/networking"
+
+[[redirects]]
+  from="/docs/collecting-metrics/logs-servers"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/macos-systems"
+  to="/docs/collecting-metrics/collectors/operating-systems/macos"
+
+[[redirects]]
+  from="/docs/collecting-metrics/mail-servers"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/media-services"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/message-brokers"
+  to="/docs/collecting-metrics/collectors/databases"
+
+[[redirects]]
+  from="/docs/collecting-metrics/message-brokers/kafka-connect"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/networking"
+  to="/docs/collecting-metrics/collectors/networking"
+
+[[redirects]]
+  from="/docs/collecting-metrics/networking-stack-and-network-interfaces"
+  to="/docs/collecting-metrics/collectors/networking"
+
+[[redirects]]
+  from="/docs/collecting-metrics/networking-stack-and-network-interfaces/cisco-aci"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/networking-stack-and-network-interfaces/fortigate-firewall"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/fortinet-fortigate"
+
+[[redirects]]
+  from="/docs/collecting-metrics/networking-stack-and-network-interfaces/mikrotik-routeros-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/mikrotik-router"
+
+[[redirects]]
+  from="/docs/collecting-metrics/networking-stack-and-network-interfaces/netflow"
+  to="/docs/network-performance-monitoring/network-flows/flow-protocols/netflow"
+
+[[redirects]]
+  from="/docs/collecting-metrics/observability"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/operating-systems"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/collecting-metrics/other"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/other/netdata-agent-alarms"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/collecting-metrics/processes-and-system-services"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/collecting-metrics/prometheus"
+  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+
+[[redirects]]
+  from="/docs/collecting-metrics/search-engines"
+  to="/docs/collecting-metrics/collectors/databases"
+
+[[redirects]]
+  from="/docs/collecting-metrics/security-systems"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/adaptecraid"
+  to="/docs/collecting-metrics/collectors/storage-and-filesystems/adaptec-raid"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage,-mount-points-and-filesystems/dell-emc-isilon-cluster"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/isilon"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage-mount-points-and-filesystems"
+  to="/docs/collecting-metrics/collectors/storage-and-filesystems"
+
+[[redirects]]
+  from="/docs/collecting-metrics/synthetic-checks"
+  to="/docs/collecting-metrics/collectors/synthetic-testing"
+
+[[redirects]]
+  from="/docs/collecting-metrics/system-metrics"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/collecting-metrics/systemd"
+  to="/docs/collecting-metrics/collectors/operating-systems/systemd-units"
+
+[[redirects]]
+  from="/docs/collecting-metrics/task-queues"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collecting-metrics/ups"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors"
+
+[[redirects]]
+  from="/docs/collecting-metrics/vpns"
+  to="/docs/collecting-metrics/collectors/networking"
+
+[[redirects]]
+  from="/docs/collecting-metrics/web-servers-and-proxies"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies"
+
+[[redirects]]
+  from="/docs/collecting-metrics/web-servers-and-web-proxies"
+  to="/docs/collecting-metrics/collectors/web-servers-and-proxies"
+
+[[redirects]]
+  from="/docs/collecting-metrics/windows-systems"
+  to="/docs/netdata-agent/installation/windows"
+
+[[redirects]]
+  from="/docs/configure"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/configure/centralize-netdata"
+  to="/docs/netdata-agent/registry"
+
+[[redirects]]
+  from="/docs/configure/machine-learning"
+  to="/docs/netdata-ai/anomaly-detection/ml-configuration"
+
+[[redirects]]
+  from="/docs/configuring/troubleshoot-agent-cloud-connectivity-issues"
+  to="/docs/netdata-cloud/connect-agent"
+
+[[redirects]]
+  from="/docs/contributing/web"
+  to="/docs/dashboards-and-charts"
+
+[[redirects]]
+  from="/docs/dashboard"
+  to="/docs/dashboards-and-charts"
+
+[[redirects]]
+  from="/docs/dashboard/select-timeframes"
+  to="/docs/dashboards-and-charts/time-controls"
+
+[[redirects]]
+  from="/docs/dashboards-and-charts/home-overview-and-single-node-view"
+  to="/docs/dashboards-and-charts/tabs/metrics"
+
+[[redirects]]
+  from="/docs/data-collection/apm"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/data-collection/apm/application-monitoring"
+  to="/docs/collecting-metrics/collectors/operating-systems/applications"
+
+[[redirects]]
+  from="/docs/data-collection/apm/statsd"
+  to="/docs/collecting-metrics/statsd"
+
+[[redirects]]
+  from="/docs/data-collection/authentication-and-authorization"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/data-collection/blockchain-servers"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops"
+
+[[redirects]]
+  from="/docs/data-collection/containers-and-vms"
+  to="/docs/collecting-metrics/collectors/containers-and-vms"
+
+[[redirects]]
+  from="/docs/data-collection/containers-and-vms/cgroups"
+  to="/docs/collecting-metrics/containers-and-cgroups"
+
+[[redirects]]
+  from="/docs/data-collection/databases"
+  to="/docs/collecting-metrics/collectors/databases"
+
+[[redirects]]
+  from="/docs/data-collection/distributed-computing-systems"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/data-collection/dns-and-dhcp-servers"
+  to="/docs/collecting-metrics/collectors/networking"
+
+[[redirects]]
+  from="/docs/data-collection/ebpf"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/examples/example-module-in-go"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/data-collection/freebsd"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/data-collection/gaming"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/data-collection/generic-data-collection"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors"
+
+[[redirects]]
+  from="/docs/data-collection/kubernetes"
+  to="/docs/collecting-metrics/collectors/containers-and-vms"
+
+[[redirects]]
+  from="/docs/data-collection/linux-systems"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/data-collection/linux-systems/ebpf-for-systems-monitoring"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/linux-systems/os-provided-metrics"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/data-collection/media-services"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/data-collection/message-brokers"
+  to="/docs/collecting-metrics/collectors/databases"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/hardware/nvidia"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-gpu"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system%20metrics/application-monitoring"
+  to="/docs/developer-and-contributor-corner/external-plugins"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system%20metrics/windows-machines"
+  to="/docs/netdata-agent/installation/windows"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/virtualized%20environments/docker"
+  to="/docs/collecting-metrics/collectors/containers-and-vms/docker"
+
+[[redirects]]
+  from="/docs/data-collection/netdata-specific/anomalies"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces"
+  to="/docs/collecting-metrics/collectors/networking"
+
+[[redirects]]
+  from="/docs/data-collection/observability"
+  to="/docs/collecting-metrics/collectors"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks"
+  to="/docs/collecting-metrics/collectors/synthetic-testing"
+
+[[redirects]]
+  from="/docs/data-collection/synthetic-checks/k6-load-test"
+  to="/docs/collecting-metrics/statsd"
+
+[[redirects]]
+  from="/docs/data-collection/telephony-servers/asterisk"
+  to="/docs/collecting-metrics/statsd"
+
+[[redirects]]
+  from="/docs/data-collection/vpns"
+  to="/docs/collecting-metrics/collectors/networking"
+
+[[redirects]]
+  from="/docs/deployment-in-production"
+  to="/docs/netdata-agent/quickstart-deployment"
+
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin/develop-a-custom-data-collector-in-python"
+  to="/docs/developer-and-contributor-corner/external-plugins/python.d.plugin"
+
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/kubernetes-monitoring-with-netdata-overview-and-visualizations"
+  to="/docs/dashboards-and-charts/tabs/kubernetes"
+
+[[redirects]]
+  from="/docs/developer-guide"
+  to="/docs/developer-and-contributor-corner"
+
+[[redirects]]
+  from="/docs/exporting"
+  to="/docs/exporting-metrics"
+
+[[redirects]]
+  from="/docs/exporting-metrics/influxdb"
+  to="/docs/exporting-metrics"
+
+[[redirects]]
+  from="/docs/exporting/prometheus/user-guide-netdata-prometheus-grafana-stack"
+  to="/docs/exporting-metrics/prometheus"
+
+[[redirects]]
+  from="/docs/get-started/web-protect"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy"
+
+[[redirects]]
+  from="/docs/getting-started/introduction"
+  to="/docs/welcome-to-netdata"
+
+[[redirects]]
+  from="/docs/getting-started/monitor-your-infrastructure/troubleshoot-agent-cloud-connectivity-issues"
+  to="/docs/netdata-cloud/connect-agent"
+
+[[redirects]]
+  from="/docs/install-the-netdata-agent/install-with-a-cicd-provisioning-system"
+  to="/docs/netdata-agent/installation/ansible"
+
+[[redirects]]
+  from="/docs/installation"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/installation/install-on-specific-environments"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/installation/installation-methods"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/installing/install-netdata-on-embedded-systems"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/installing/install-with-a-cicd-provisioning-system"
+  to="/docs/netdata-agent/installation/ansible"
+
+[[redirects]]
+  from="/docs/live-demos"
+  to="/docs/live-demo"
+
+[[redirects]]
+  from="/docs/maintaining"
+  to="/docs/netdata-agent/maintenance"
+
+[[redirects]]
+  from="/docs/maintaining/starting-and-stopping-netdata-agents"
+  to="/docs/netdata-agent/maintenance/service-control"
+
+[[redirects]]
+  from="/docs/maintaining/uninstall-netdata-agents"
+  to="/docs/netdata-agent/maintenance/uninstall"
+
+[[redirects]]
+  from="/docs/miscellaneous"
+  to="/docs/developer-and-contributor-corner"
+
+[[redirects]]
+  from="/docs/miscellaneous/netdata-for-iot"
+  to="/docs/edge-device-monitoring"
+
+[[redirects]]
+  from="/docs/ml-and-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/monitor-your-infrastructure"
+  to="/docs/netdata-cloud/spaces-and-rooms"
+
+[[redirects]]
+  from="/docs/monitor/configure-alerts"
+  to="/docs/alerts-&-notifications/alert-configuration-reference"
+
+[[redirects]]
+  from="/docs/netdata-agent/changelog"
+  to="https://github.com/netdata/netdata/blob/master/CHANGELOG.md"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/optimizing-metrics-database"
+  to="/docs/netdata-agent/database"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/optimizing-metrics-database/change-how-long-netdata-stores-metrics"
+  to="/docs/netdata-agent/configuration/database"
+
+[[redirects]]
+  from="/docs/netdata-agent/installation/docker)"
+  to="/docs/netdata-agent/installation/docker"
+
+[[redirects]]
+  from="/docs/netdata-agent/security/overview"
+  to="/docs/netdata-agent/configuration/securing-agents"
+
+[[redirects]]
+  from="/docs/netdata-ai/ai-powered-alert-configuration"
+  to="/docs/netdata-ai/alerts-automation"
+
+[[redirects]]
+  from="/docs/netdata-cloud/monitor-your-infrastructure"
+  to="/docs/getting-started"
+
+[[redirects]]
+  from="/docs/netdata-cloud/netdata-plans"
+  to="/docs/netdata-cloud/netdata-plans-&-billing"
+
+[[redirects]]
+  from="/docs/netdata-cloud/security"
+  to="/docs/security-and-privacy-design/netdata-cloud"
+
+[[redirects]]
+  from="/docs/network-performance-monitoring/syslog-from-network-devices/integrations"
+  to="/docs/opentelemetry/syslog-from-network-devices/integrations"
+
+[[redirects]]
+  from="/docs/nightly/operations/alert-notifications"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
+
+[[redirects]]
+  from="/docs/nightly/operations/alerts/alert-notifications"
+  to="/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference"
+
+[[redirects]]
+  from="/docs/nightly/operations/anomaly-advisor"
+  to="/docs/dashboards-and-charts/tabs/anomalies"
+
+[[redirects]]
+  from="/docs/nightly/setup/configure-machine-learning-ml-powered-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/observability-centralization-points"
+  to="/docs/netdata-parents"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points/sizing-netdata-parents"
+  to="/docs/netdata-agent/resource-utilization"
+
+[[redirects]]
+  from="/docs/overview"
+  to="/docs/welcome-to-netdata"
+
+[[redirects]]
+  from="/docs/security"
+  to="/docs/security-and-privacy-design"
+
+[[redirects]]
+  from="/docs/snmp-traps"
+  to="/docs/network-performance-monitoring/snmp-traps"
+
+[[redirects]]
+  from="/docs/top-monitoring-netdata-functions"
+  to="/docs/live-view"
+
+[[redirects]]
+  from="/docs/troubleshooting-and-machine-learning"
+  to="/docs/netdata-ai"
+
+[[redirects]]
+  from="/docs/visualizations"
+  to="/docs/dashboards-and-charts"
+
+[[redirects]]
+  from="/docs/visualizations/legacy-agent-dashboard"
+  to="/docs/dashboards-and-charts"
+
+[[redirects]]
+  from="/docs/working-with-logs"
+  to="/docs/logs-management"
+
+[[redirects]]
+  from="/glossary"
+  to="/docs/developer-and-contributor-corner/glossary"
+
+[[redirects]]
+  from="/guides/mo"
+  to="/docs/dashboards-and-charts/tabs/anomalies"
+
+[[redirects]]
+  from="/guides/troubleshoot/troubleshooting-agent-with-cloud-connection"
+  to="/docs/netdata-cloud/connect-agent"
 # section: static << END
