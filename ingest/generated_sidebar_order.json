@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "3d1e65fa61aee72e5696641a2698e8845a4ef892755addbcfa0c987e583fb315",
-  "source_corpus_sha256": "d0b06f1a407042aabcca0c8518a6d217a94125687f26ca5b32d05796263faca5",
+  "source_sha256": "02d2fd5d0573c8fcdf92e04a3e7bcb8a36c6eb11510c9969111b9b01675a088c",
+  "source_corpus_sha256": "9b031740292fa982fda7514e3f9e49da10428d1dfc764fdcf6f195d6d3c2c1f4",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -1721,33 +1721,38 @@
     },
     {
       "parent_path": "Welcome to Netdata",
-      "child_name": "Enterprise Evaluation Guide",
+      "child_name": "Complete Product Description",
       "position": 10
     },
     {
       "parent_path": "Welcome to Netdata",
-      "child_name": "Real-time Monitoring",
+      "child_name": "Enterprise Evaluation Guide",
       "position": 20
     },
     {
       "parent_path": "Welcome to Netdata",
-      "child_name": "Scalability",
+      "child_name": "Real-time Monitoring",
       "position": 30
     },
     {
       "parent_path": "Welcome to Netdata",
-      "child_name": "Monitor Anything",
+      "child_name": "Scalability",
       "position": 40
     },
     {
       "parent_path": "Welcome to Netdata",
-      "child_name": "Fleet Deployment and Configuration Management",
+      "child_name": "Monitor Anything",
       "position": 50
     },
     {
       "parent_path": "Welcome to Netdata",
-      "child_name": "Reporting",
+      "child_name": "Fleet Deployment and Configuration Management",
       "position": 60
+    },
+    {
+      "parent_path": "Welcome to Netdata",
+      "child_name": "Reporting",
+      "position": 70
     },
     {
       "parent_path": "root",
@@ -1845,5 +1850,5 @@
       "position": 190
     }
   ],
-  "full_ingest_identity_sha256": "16f4787caeb2dd6fcb32bb1f9a056e373c78e9db4c7593d0c1577281f054e5ba"
+  "full_ingest_identity_sha256": "874db603a19e76a01dd2fe21adc5d7d49ac2626e6c009b93a7188f0c888ebc50"
 }
