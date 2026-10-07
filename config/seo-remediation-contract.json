@@ -234,7 +234,7 @@
     {
       "id": "ask-nedi-bare-page-crawlable",
       "contract": "Supersedes the robots part of root-redirect-and-blog-rendering and zero-noindex-sitemap-separation (user decision, 2026-10-06): the bare Ask Nedi page is crawlable, so the permanent root redirect no longer ends at a robots-blocked page, while every question URL stays blocked. Question links prefill the Nedi input instead of asking, so no crawler can trigger an LLM request. The root redirect, the sitemap exclusions of / and /docs/ask-nedi, and the zero-noindex rule are unchanged.",
-      "acceptance": "static/robots.txt has one wildcard group with Allow: /docs/ask-nedi$, Disallow: /docs/ask-nedi, Disallow: /?q= and Disallow: /?question=; under the robots semantics of scripts/verify-rendered-indexability.js, /docs/ask-nedi is allowed and /docs/ask-nedi?q=..., /docs/ask-nedi/..., /?q=... and /?question=... are blocked. src/components/Nedi passes no urlParams to the embed and prefills ?q= or ?question= into the input without sending (src/components/Nedi/index.test.js)."
+      "acceptance": "static/robots.txt has one wildcard group with Allow: /docs/ask-nedi$, Disallow: /docs/ask-nedi, Disallow: /?q=, Disallow: /?question=, Disallow: /?*&q= and Disallow: /?*&question=; under the robots semantics of scripts/verify-rendered-indexability.js (src/seo/renderedIndexability.test.js), / and /docs/ask-nedi are allowed and /docs/ask-nedi?q=..., /docs/ask-nedi/..., /?q=..., /?question=... and the same question parameters after other query parameters are blocked. src/components/Nedi passes no urlParams to the embed and prefills ?q= or ?question= into the input without sending (src/components/Nedi/index.test.js)."
     },
     {
       "id": "learn-owned-ask-nedi-page",
