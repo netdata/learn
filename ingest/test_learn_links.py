@@ -235,6 +235,36 @@ class LearnLinkTests(unittest.TestCase):
         )
         self.assertEqual(anchors, {"real-heading"})
 
+    def test_fences_inside_quotes_and_list_items_are_code(self):
+        fence = "```"
+        body = (
+            f"> {fence}markdown\n> ## Not a heading\n"
+            f"> [x](https://learn.netdata.cloud/docs/gone-in-quoted-code)\n> {fence}\n\n"
+            f"- {fence}markdown\n  [x](https://learn.netdata.cloud/docs/gone-in-list-code)\n"
+            f"  ## Not heading\n  {fence}\n\n"
+            f"{fence}text\n> {fence}\n[x](https://learn.netdata.cloud/docs/gone-in-code)\n{fence}\n\n"
+            "## Real heading\n"
+        )
+        self.assertEqual(learn_links.page_anchors(body), {"real-heading"})
+        self.assertEqual(self.broken(body), [])
+
+    def test_quote_end_and_inline_backticks_do_not_hide_prose(self):
+        fence = "```"
+        body = (
+            f"> {fence}\n> code\nPlain [x](https://learn.netdata.cloud/docs/gone-after-quote) text.\n\n"
+            f"{fence}inline{fence} code, then "
+            "[y](https://learn.netdata.cloud/docs/gone-after-inline-code).\n\n"
+            "## Heading after\n"
+        )
+        self.assertEqual(learn_links.page_anchors(body), {"heading-after"})
+        self.assertEqual(
+            [item.url for item in self.broken(body)],
+            [
+                "https://learn.netdata.cloud/docs/gone-after-inline-code",
+                "https://learn.netdata.cloud/docs/gone-after-quote",
+            ],
+        )
+
     def test_front_matter_is_not_a_setext_heading(self):
         broken = self.broken("[x](https://learn.netdata.cloud/docs/target#slug-target)")
         self.assertEqual([item.reason for item in broken], ["missing anchor #slug-target"])

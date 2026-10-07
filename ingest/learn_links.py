@@ -39,7 +39,8 @@ _CODE_PLACEHOLDER = re.compile(r"\x00(\d+)\x00")
 _CHARACTER_REFERENCE = re.compile(
     r"&(?:#[0-9]{1,7}|#[xX][0-9a-fA-F]{1,6}|[A-Za-z][A-Za-z0-9]{1,31});"
 )
-_FENCE = re.compile(r"(`{3,}|~{3,})")
+# A backtick fence's info string cannot contain backticks, so ```code``` text is inline code.
+_FENCE_OPENING = re.compile(r"(`{3,})[^`]*$|(~{3,})")
 # MDX has no indented code, so headings, underlines and list markers may be indented.
 _HEADING = re.compile(r"^[ \t]*(#{1,6})[ \t]+(.*?)[ \t]*$")
 _CLOSING_HASHES = re.compile(r"[ \t]+#+$")
@@ -91,23 +92,41 @@ def split_front_matter(text):
     return (front_matter if isinstance(front_matter, dict) else {}), body
 
 
+def _unquote(line):
+    """Return a line's blockquote depth and the line without its > markers."""
+    depth = 0
+    while (marker := _BLOCKQUOTE.match(line)) is not None:
+        depth += 1
+        line = line[marker.end() :]
+    return depth, line
+
+
 def _lines_outside_fences(body):
-    """Yield the lines of a markdown body with fenced code blocks blanked out."""
-    fence = None
+    """Yield the lines of a markdown body with fenced code blocks blanked out.
+
+    A fence may sit inside a blockquote or follow a list marker. It closes with a fence line
+    at its own blockquote depth, or when that blockquote ends.
+    """
+    fence = None  # (marker, blockquote depth)
     for line in body.split("\n"):
-        stripped = line.strip()
+        depth, content = _unquote(line)
+        stripped = content.strip()
+        if fence is not None and depth < fence[1]:
+            fence = None
         if fence is None:
-            opening = _FENCE.match(stripped)
+            opening = _FENCE_OPENING.match(_LIST_ITEM.sub("", stripped, count=1))
             if opening:
-                fence = opening.group(1)
+                fence = (opening.group(1) or opening.group(2), depth)
                 yield ""
                 continue
             yield line
         else:
+            marker, fence_depth = fence
             if (
-                stripped
-                and set(stripped) == {fence[0]}
-                and len(stripped) >= len(fence)
+                depth == fence_depth
+                and stripped
+                and set(stripped) == {marker[0]}
+                and len(stripped) >= len(marker)
             ):
                 fence = None
             yield ""
@@ -194,10 +213,7 @@ def _headings(body):
     paragraph_indent = 0
     in_table = False
     for line in _lines_outside_fences(body):
-        quote = 0
-        while (marker := _BLOCKQUOTE.match(line)) is not None:
-            quote += 1
-            line = line[marker.end() :]
+        quote, line = _unquote(line)
         stripped = line.strip()
         if not stripped:
             paragraph, in_table = [], False
