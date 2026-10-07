@@ -167,7 +167,7 @@ export default function Nedi() {
       const wrapper = nediEl.querySelector('.ai-agent-wrapper');
       if (wrapper) wrapper.style.minHeight = vh;
     };
-    requestAnimationFrame(setMinHeight);
+    const sizeFrame = requestAnimationFrame(setMinHeight);
     // SPA back-navigation: layout may need extra time to settle
     const settleTimer = setTimeout(setMinHeight, 150);
     window.addEventListener('resize', setMinHeight);
@@ -183,7 +183,7 @@ export default function Nedi() {
       : undefined;
 
     // Focus the chat input after DOM settles, prefilled with a linked question
-    requestAnimationFrame(() => {
+    const focusFrame = requestAnimationFrame(() => {
       const input = nediEl.querySelector('.ai-agent-input');
       if (!input) return;
       const question = takeUrlQuestion();
@@ -195,6 +195,9 @@ export default function Nedi() {
     });
 
     return () => {
+      // A frame that fires after navigation would read the next page's URL.
+      cancelAnimationFrame(sizeFrame);
+      cancelAnimationFrame(focusFrame);
       clearTimeout(settleTimer);
       clearTimeout(scrollTimer);
       window.removeEventListener('scroll', onScroll);

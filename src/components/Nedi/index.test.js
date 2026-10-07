@@ -129,6 +129,21 @@ describe('Nedi component', () => {
     expect(window.location.search).toBe('');
   });
 
+  it('drops its pending frames when it unmounts before they run', () => {
+    installEmbed();
+    nediDependenciesReady.mockReturnValue(true);
+    const { unmount } = render(<Nedi />);
+
+    unmount();
+    window.history.replaceState(null, '', '/docs/getting-started?q=next%20page');
+    tick(150);
+
+    const parked = document.getElementById(PERSISTENT_ID);
+    expect(window.location.search).toBe('?q=next%20page');
+    expect(parked.querySelector('.ai-agent-input').value).toBe('');
+    expect(parked.style.minHeight).toBe('');
+  });
+
   it('leaves the input empty when the link carries no question', () => {
     window.history.replaceState(null, '', '/docs/ask-nedi?q=%20%20&utm_source=docs');
     installEmbed();
