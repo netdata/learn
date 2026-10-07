@@ -34,9 +34,6 @@ function configError(message) {
   console.error(`browser-check: invalid config ${args.config}: ${message}`);
   process.exit(2);
 }
-if ('maxDiffRatio' in config) {
-  configError('"maxDiffRatio" was replaced by "maxDiffPixels" (an absolute pixel count, 5 in the shipped config)');
-}
 const REQUIRED_NUMBERS = [
   'navigationTimeoutMs', 'networkIdleTimeoutMs', 'waitForTimeoutMs', 'checkTimeoutMs', 'settleMs',
   'maxScreenshotHeight', 'pixelThreshold', 'maxDiffPixels', 'retries',
@@ -261,8 +258,11 @@ async function comparePage(browser, pageConfig, attempt) {
     name: pageConfig.name,
     path: pageConfig.path,
     attempt,
-    problems: [],
-    notes: [],
+    // One list per verdict: each entry is both the reason and the trigger.
+    problems: [], // caused by the change: REGRESSION
+    broken: [], // fails before and after the change, fix on master first: BROKEN
+    changes: [], // altered without breaking, improvements included: REVIEW
+    notes: [], // information only, never affects the verdict
     visual: null,
     newErrors: without(b.errors, a.errors),
     goneErrors: without(a.errors, b.errors),
@@ -270,24 +270,20 @@ async function comparePage(browser, pageConfig, attempt) {
     checks: [],
   };
 
-  if (a.loadError && b.loadError) report.problems.push(`page failed on both sides: ${b.loadError}`);
-  else if (b.loadError) report.problems.push(`page failed only after the change: ${b.loadError}`);
-  else if (a.loadError) report.notes.push(`page failed only before the change: ${a.loadError}`);
+  if (a.loadError && b.loadError) report.broken.push(`page fails to load before and after the change: ${b.loadError}`);
+  else if (b.loadError) report.problems.push(`page fails to load only after the change: ${b.loadError}`);
+  else if (a.loadError) report.changes.push(`page loads only after the change (before: ${a.loadError})`);
 
-  let visualChange = false;
   if (a.shot && b.shot) {
     report.visual = compareImages(dir);
-    if (report.visual.pixels > (config.maxDiffPixels ?? 20)) {
-      visualChange = true;
-      report.notes.push('visual difference above tolerance');
-    }
+    if (report.visual.pixels > config.maxDiffPixels) report.changes.push('visual difference above tolerance');
   }
   if (a.pageSize && b.pageSize && a.pageSize !== b.pageSize) {
-    visualChange = true;
-    report.notes.push(`page size changed: ${a.pageSize} → ${b.pageSize} px`);
+    report.changes.push(`page size changed: ${a.pageSize} → ${b.pageSize} px`);
   }
   if (report.newErrors.length > 0) report.problems.push(`${report.newErrors.length} new console error(s)`);
   if (report.newFailed.length > 0) report.problems.push(`${report.newFailed.length} new failed request(s)`);
+  if (report.goneErrors.length > 0) report.changes.push(`${report.goneErrors.length} console error(s) gone after the change`);
 
   const checksB = new Map(b.checks.map((check) => [check.name, check.pass]));
   for (const { name, pass: passA } of a.checks) {
@@ -297,23 +293,26 @@ async function comparePage(browser, pageConfig, attempt) {
       state = 'REGRESSION';
       report.problems.push(`check "${name}" broke`);
     } else if (!passA && !passB) {
-      state = 'fails on both (fix the check selector)';
+      state = 'BROKEN: fails before and after the change (wrong selector, broken on master, or service unavailable)';
+      report.broken.push(`check "${name}" fails before and after the change`);
     } else if (!passA && passB) {
       state = 'fixed by the change';
+      report.changes.push(`check "${name}" fails before and passes after the change`);
     }
     report.checks.push({ name, state });
   }
 
   if (report.problems.length > 0) report.verdict = 'REGRESSION';
-  else if (visualChange) report.verdict = 'REVIEW';
+  else if (report.broken.length > 0) report.verdict = 'BROKEN';
+  else if (report.changes.length > 0) report.verdict = 'REVIEW';
   // Changed pixels within the tolerance: not a failure, but never shown as OK.
   else if (report.visual?.pixels > 0) report.verdict = 'MINOR';
   else report.verdict = 'OK';
   return report;
 }
 
-// REVIEW and REGRESSION fail the run and are retried; OK and MINOR do not.
-const needsAttention = (report) => report.verdict === 'REVIEW' || report.verdict === 'REGRESSION';
+// REVIEW, REGRESSION and BROKEN fail the run and are retried; OK and MINOR do not.
+const needsAttention = (report) => ['REVIEW', 'REGRESSION', 'BROKEN'].includes(report.verdict);
 
 // Exit 2 = the tool failed (Chromium missing, crash), never a verdict on the
 // change; run.sh and CI rely on 1 meaning only "the change needs attention".
@@ -338,7 +337,7 @@ try {
     for (let attempt = 2; needsAttention(report) && attempt <= config.retries + 1; attempt += 1) {
       const retry = await comparePage(browser, pageConfig, attempt);
       if (!needsAttention(retry)) {
-        const reasons = [...report.problems, ...report.notes, ...report.newErrors.map((e) => `new error: ${e}`), ...report.newFailed.map((f) => `new failed request: ${f}`)];
+        const reasons = [...report.problems, ...report.broken, ...report.changes, ...report.newErrors.map((e) => `new error: ${e}`), ...report.newFailed.map((f) => `new failed request: ${f}`)];
         retry.notes.push(`flaky: attempt ${attempt - 1} was ${report.verdict} (${reasons.join('; ') || 'no details'})`);
       }
       report = retry;
@@ -368,6 +367,8 @@ lines.push('');
 for (const r of reports) {
   const details = [];
   for (const problem of r.problems) details.push(`- Problem: ${problem}`);
+  for (const broken of r.broken) details.push(`- Broken before the change (fix on master first): ${broken}`);
+  for (const change of r.changes) details.push(`- Change (review): ${change}`);
   for (const note of r.notes) details.push(`- Note: ${note}`);
   for (const check of r.checks.filter((c) => c.state !== 'pass')) details.push(`- Check "${check.name}": ${check.state}`);
   for (const error of r.newErrors) details.push(`- New error: \`${error}\``);
@@ -404,7 +405,7 @@ function pageSection(r) {
   return `<section id="${r.name}">
     <h2>${escape(r.name)} <span class="verdict ${r.verdict}">${r.verdict}</span></h2>
     <p>Live (while <code>run.sh serve</code> runs): <a href="${args.a}${r.path}" target="_blank">A ${escape(r.path)}</a> · <a href="${args.b}${r.path}" target="_blank">B ${escape(r.path)}</a></p>
-    ${list('Problems', r.problems)}${list('Notes', r.notes)}
+    ${list('Problems', r.problems)}${list('Broken before the change (fix on master first)', r.broken)}${list('Changes (review)', r.changes)}${list('Notes', r.notes)}
     ${list('Checks not passing', r.checks.filter((c) => c.state !== 'pass').map((c) => `${c.name}: ${c.state}`))}
     ${list('New console errors (only in B)', r.newErrors)}${list('New failed requests (only in B)', r.newFailed)}
     ${list('Errors gone after the change', r.goneErrors)}
@@ -428,7 +429,7 @@ const html = `<!doctype html>
   img { width: 100%; border: 1px solid #d0d7de; }
   .flip { cursor: pointer; } .flip img { outline: 3px solid #0969da; }
   .verdict { font-size: 13px; padding: 2px 8px; border-radius: 4px; color: #fff; }
-  .OK { background: #1a7f37; } .MINOR { background: #57606a; } .REVIEW { background: #9a6700; } .REGRESSION { background: #cf222e; }
+  .OK { background: #1a7f37; } .MINOR { background: #57606a; } .REVIEW { background: #9a6700; } .REGRESSION, .BROKEN { background: #cf222e; }
   .quiet { color: #57606a; } code { font-size: 12px; }
 </style></head><body>
 <h1>Dependency impact report</h1>

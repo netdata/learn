@@ -96,7 +96,7 @@ jobs:
           EXIT_CODE: ${{ steps.impact.outputs.exit_code }}
         run: |
           if [ "$EXIT_CODE" = "1" ]; then
-            echo "::error::The dependency change affects the rendered site. Download the dependency-impact-report artifact and open report.html."
+            echo "::error::Needs attention: REGRESSION or REVIEW = caused by the dependency change; BROKEN = already failing before the change (fix it on master first). Details: run summary and the dependency-impact-report artifact (report.html)."
           else
             echo "::error::The impact check could not complete (exit $EXIT_CODE). See the step log and the attached logs."
           fi

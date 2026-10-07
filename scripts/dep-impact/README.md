@@ -46,7 +46,6 @@ Both should end with `NO IMPACT FOUND`. If not, tune `config.json` (see below) a
 
 ```bash
 scripts/dep-impact/run.sh pr 3091
-scripts/dep-impact/run.sh pr 3091 --unit-tests     # also compare yarn test:run results
 scripts/dep-impact/run.sh refs <base> <head>       # any two revisions
 ```
 
@@ -65,8 +64,9 @@ When there is a difference, inspect it in this order:
 |---|---|---|
 | `NO IMPACT FOUND` | Output identical, or no page needs review (each page OK or MINOR) | Merge; comment "no rendered impact" |
 | `MINOR` (page) | 1 to `maxDiffPixels` pixels changed, nothing broken | Not a failure. Glance at `report.html` if the PR should not change anything visible |
-| `REVIEW` (page) | Screenshot differs above tolerance, nothing broken | Open `report.html`, flip A/B, judge whether it is acceptable |
-| `REGRESSION` (page) | New console errors, new failed requests, a check that broke, or the page fails to load | Do not merge; attach the details to the PR |
+| `REVIEW` (page) | The change altered the page without breaking it: screenshot or page size differs, or something improved (a check that failed now passes, console errors gone, a page that failed now loads) | Open `report.html`, flip A/B, confirm the difference or improvement is real and wanted |
+| `REGRESSION` (page) | New console errors, new failed requests, a check that broke, or the page fails to load, only after the change | Do not merge; attach the details to the PR |
+| `BROKEN` (page) | A check fails, or the page fails to load, before **and** after the change | Not caused by the change, but the run fails on purpose: find the root cause on `master` (wrong selector, feature already broken, or an external service such as Ask Nedi or the swagger spec unavailable), fix it, then come back to the Dependabot PRs |
 | Build failed (B only) | The change breaks the build | Do not merge; comment with the log tail |
 
 "Changed JavaScript contains code of: …" in the output section names the features whose code changed (mermaid, swagger-ui, search…). Look at those pages first.
@@ -89,7 +89,7 @@ Exit codes: `0` no impact found, `1` needs attention, `2` tool or setup problem.
 
 The Ask Nedi widget (`#nedi-persistent`) must stay masked: it shows a different greeting on every load, so its pixels never match. The "chat input appears" check still verifies that it loads.
 
-A check that fails on **both** sides is reported as "fails on both". The failure predates the change, so it is not a regression, but find out why before changing anything: the selector may be wrong, the feature may already be broken on `master`, or an external service (Ask Nedi, the swagger spec) may have been unavailable. Fix the cause, then rerun with `--skip-build`.
+A check that fails on **both** sides makes the page `BROKEN` and fails the run, even though the change did not cause it. That is deliberate: it stops Dependabot reviews until the root cause is fixed on `master`. If an external service was only briefly unavailable, rerun the job.
 
 ## Safety
 

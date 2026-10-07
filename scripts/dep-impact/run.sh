@@ -17,7 +17,6 @@ PARALLEL=0
 SAME_BUILD=0
 SKIP_BUILD=0
 ALLOW_SCRIPTS=0
-UNIT_TESTS=0
 FORCE=0
 ALWAYS_BROWSER=0
 CHILD_PIDS=""
@@ -37,7 +36,6 @@ Options:
   --same-build      calibrate only: serve one build twice (browser noise only, no second build)
   --skip-build      Reuse the worktrees and builds from the previous run
   --allow-scripts   Run dependency install scripts (default: yarn install --ignore-scripts)
-  --unit-tests      Also run "yarn test:run" on both sides and compare the results
   --always-browser  Run the browser comparison even when the rendered output is identical
   --force           Run even when the change touches no npm dependency file
 
@@ -206,26 +204,6 @@ build_both() {
   BUILD_RESULT="both builds succeeded"
 }
 
-unit_tests_both() {
-  local rcA=0 rcB=0
-  log "Running unit tests on both sides"
-  (cd "$WORK_DIR/A" && yarn test:run) >"$WORK_DIR/logs/A-tests.log" 2>&1 || rcA=$?
-  (cd "$WORK_DIR/$SIDE_B" && yarn test:run) >"$WORK_DIR/logs/B-tests.log" 2>&1 || rcB=$?
-  if [ "$rcA" = 0 ] && [ "$rcB" != 0 ]; then
-    UNIT_RESULT="**REGRESSION**: tests pass before the change and fail after it (see logs/B-tests.log)"
-    ATTENTION=1
-  elif [ "$rcA" != 0 ] && [ "$rcB" != 0 ]; then
-    # A failure that already exists in A can hide a new one in B, so this is
-    # not proof that the change is harmless.
-    UNIT_RESULT="**INCONCLUSIVE**: tests fail on both sides, so a new failure in B could be hidden (compare logs/A-tests.log and logs/B-tests.log)"
-    ATTENTION=1
-  elif [ "$rcA" != 0 ]; then
-    UNIT_RESULT="tests fixed by the change"
-  else
-    UNIT_RESULT="tests pass on both sides"
-  fi
-}
-
 http_code() {
   curl -sS -o /dev/null -w '%{http_code}' "$1" 2>/dev/null || true
 }
@@ -319,7 +297,6 @@ main() {
       --same-build) SAME_BUILD=1 ;;
       --skip-build) SKIP_BUILD=1 ;;
       --allow-scripts) ALLOW_SCRIPTS=1 ;;
-      --unit-tests) UNIT_TESTS=1 ;;
       --always-browser) ALWAYS_BROWSER=1 ;;
       --force) FORCE=1 ;;
       -*) die "unknown option: $1" ;;
@@ -373,7 +350,6 @@ main() {
   mkdir -p "$result"
   ATTENTION=0
   BUILD_RESULT="reused builds from the previous run (--skip-build)"
-  UNIT_RESULT="not run (use --unit-tests)"
 
   if [ "$SKIP_BUILD" = 1 ]; then
     if [ ! -d "$WORK_DIR/A/build" ] || [ ! -d "$WORK_DIR/$SIDE_B/build" ]; then die "--skip-build: no previous builds in $WORK_DIR"; fi
@@ -403,8 +379,6 @@ main() {
     finish "$result"
   fi
 
-  if [ "$UNIT_TESTS" = 1 ]; then unit_tests_both; fi
-  echo "- Unit tests: $UNIT_RESULT" >>"$result/summary.md"
   echo >>"$result/summary.md"
 
   log "Comparing rendered output"
