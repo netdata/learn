@@ -387,6 +387,26 @@ def gate_legacy_redirects(
 				"detail": "no tracked redirect" + (f"; {retirement_note}" if retirement_note else ""),
 			}
 		)
+
+	# Spellings of one route (e.g. with and without a trailing slash) must reach the same page.
+	targets_by_route = {}
+	for route, target in result["resolved"].items():
+		targets_by_route.setdefault(_normalize_route(route), {})[route] = target
+	for spellings in targets_by_route.values():
+		if len({_target_identity(target) for target in spellings.values()}) < 2:
+			continue
+		for route, target in spellings.items():
+			others = ", ".join(
+				f"{other} -> {other_target}" for other, other_target in spellings.items() if other != route
+			)
+			result["failed"].append(
+				{
+					"route": route,
+					"source": legacy_redirects[route],
+					"detail": f"resolves to {target}, but another spelling of this route resolves elsewhere: {others}",
+				}
+			)
+			del result["resolved"][route]
 	return result
 
 
@@ -625,9 +645,19 @@ def main(
 	if gate_result["failed"]:
 		raise LegacyRedirectGateError(format_legacy_redirect_failure(gate_result))
 
-	append_entries_to_json(moved_entries)
-	finalDict = combineDictsOverwrite(tracked_redirects, gate_result["resolved"])
+	# A resolved entry's target is where its catalogue source is published now, so it replaces
+	# the tracked target for the same route, in place to keep the rule order: the redirect
+	# follows the page when the page moves.
+	resolved_targets = {
+		_normalize_route(route): target for route, target in gate_result["resolved"].items()
+	}
+	carried_redirects = {
+		route: resolved_targets.get(_normalize_route(route), target)
+		for route, target in tracked_redirects.items()
+	}
+	finalDict = combineDictsOverwrite(carried_redirects, gate_result["resolved"])
 	finalDict = clean_redirects(finalDict, active_routes)
+	append_entries_to_json(moved_entries)
 	write_netlify_config(
 		finalDict, output_path=netlify_path, static_path=static_path, policy_path=policy_path
 	)
