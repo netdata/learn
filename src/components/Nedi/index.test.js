@@ -109,6 +109,7 @@ describe('Nedi component', () => {
 
     const input = document.querySelector(`#${PERSISTENT_ID} .ai-agent-input`);
     expect(input.value).toBe('why is my disk full');
+    expect(embedOptions).not.toHaveProperty('urlParams');
     expect(document.activeElement).toBe(input);
     expect(window.location.pathname).toBe('/docs/ask-nedi');
     expect(window.location.search).toBe('?utm_source=docs');
