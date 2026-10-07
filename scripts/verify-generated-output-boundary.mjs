@@ -9,9 +9,15 @@ const GENERATED_STATE_PATHS = new Set([
   'ingest/generated_sidebar_order.json.sha256',
 ]);
 
+// Hand-maintained pages that live inside docs/. Ingest keeps them (front matter
+// `part_of_learn: True`) instead of generating them, so ordinary pull requests own them.
+export const LEARN_OWNED_DOCS = new Set(['docs/ask-nedi.mdx']);
+
 export function generatedOutputChanges(changedPaths) {
   return changedPaths.filter(
-    (changedPath) => changedPath.startsWith('docs/') || GENERATED_STATE_PATHS.has(changedPath),
+    (changedPath) =>
+      (changedPath.startsWith('docs/') && !LEARN_OWNED_DOCS.has(changedPath)) ||
+      GENERATED_STATE_PATHS.has(changedPath),
   );
 }
 

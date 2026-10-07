@@ -233,6 +233,11 @@
       "id": "ask-nedi-bare-page-crawlable",
       "contract": "Supersedes the robots part of root-redirect-and-blog-rendering and zero-noindex-sitemap-separation (user decision, 2026-10-06): the bare Ask Nedi page is crawlable, so the permanent root redirect no longer ends at a robots-blocked page, while every question URL stays blocked. Question links prefill the Nedi input instead of asking, so no crawler can trigger an LLM request. The root redirect, the sitemap exclusions of / and /docs/ask-nedi, and the zero-noindex rule are unchanged.",
       "acceptance": "static/robots.txt has one wildcard group with Allow: /docs/ask-nedi$, Disallow: /docs/ask-nedi, Disallow: /?q= and Disallow: /?question=; under the robots semantics of scripts/verify-rendered-indexability.js, /docs/ask-nedi is allowed and /docs/ask-nedi?q=..., /docs/ask-nedi/..., /?q=... and /?question=... are blocked. src/components/Nedi passes no urlParams to the embed and prefills ?q= or ?question= into the input without sending (src/components/Nedi/index.test.js)."
+    },
+    {
+      "id": "learn-owned-ask-nedi-page",
+      "contract": "docs/ask-nedi.mdx is hand-maintained inside the pipeline-owned docs/ tree: ingest preserves files whose front matter has part_of_learn: True instead of generating them. Ordinary pull requests own it, so scripts/verify-generated-output-boundary.mjs exempts the Learn-owned list (user decision, 2026-10-07). Every other docs/** change still belongs to the ingest automation pull request. The page's server-rendered fallback keeps 'Loading Ask Nedi...' and adds one sentence with links to the Complete Product Description and Getting Started, for clients that do not run JavaScript.",
+      "acceptance": "src/seo/generatedOutputBoundary.test.js: an ordinary pull request may change docs/ask-nedi.mdx; LEARN_OWNED_DOCS equals the set of docs files with part_of_learn: True; other docs/** paths and generated ingest state are still rejected outside the ingest automation pull request."
     }
   ]
 }

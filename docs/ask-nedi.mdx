@@ -18,7 +18,7 @@ part_of_learn: True
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import Nedi from '@site/src/components/Nedi';
 
-<BrowserOnly fallback={<div style={{textAlign: 'center', padding: '40px'}}>Loading Ask Nedi...</div>}>
+<BrowserOnly fallback={<div style={{textAlign: 'center', padding: '40px'}}><p>Loading Ask Nedi...</p><p>Nedi, Netdata's AI assistant, answers questions about Netdata from its documentation and source code. You can also read the <a href="/docs/welcome-to-netdata/complete-product-description">Complete Product Description</a> or start with <a href="/docs/getting-started">Getting Started</a>.</p></div>}>
   {() => <Nedi />}
 </BrowserOnly>
 

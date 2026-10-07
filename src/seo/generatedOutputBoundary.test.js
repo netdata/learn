@@ -1,10 +1,11 @@
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { describe, expect, it } from 'vitest';
 
 import {
+  LEARN_OWNED_DOCS,
   generatedOutputChanges,
   verifyGeneratedOutputBoundary,
 } from '../../scripts/verify-generated-output-boundary.mjs';
@@ -52,6 +53,35 @@ describe('generated output ownership', () => {
         changedPaths: ['ingest/ingest.py', 'src/seo/title.js', 'netlify.toml'],
       }),
     ).not.toThrow();
+  });
+
+  it('allows the hand-maintained Ask Nedi page in an ordinary pull request', () => {
+    expect(() =>
+      verifyGeneratedOutputBoundary({
+        ...ordinaryPullRequest,
+        changedPaths: ['docs/ask-nedi.mdx', 'src/components/Nedi/index.js'],
+      }),
+    ).not.toThrow();
+  });
+
+  it('lists exactly the documentation pages that ingest preserves as Learn-owned', () => {
+    const docsRoot = path.join(repositoryRoot, 'docs');
+    const preserved = [];
+    const walk = (directory) => {
+      for (const entry of readdirSync(directory, { withFileTypes: true })) {
+        const entryPath = path.join(directory, entry.name);
+        if (entry.isDirectory()) walk(entryPath);
+        else if (/\.mdx?$/.test(entry.name)) {
+          const frontMatter = readFileSync(entryPath, 'utf8').match(/^---\n([\s\S]*?)\n---/);
+          if (frontMatter && /^part_of_learn:\s*["']?True["']?\s*$/m.test(frontMatter[1])) {
+            preserved.push(path.relative(repositoryRoot, entryPath).split(path.sep).join('/'));
+          }
+        }
+      }
+    };
+    walk(docsRoot);
+
+    expect(preserved.sort()).toEqual([...LEARN_OWNED_DOCS].sort());
   });
 
   it('rejects generated documentation in an ordinary pull request', () => {
