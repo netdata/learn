@@ -1233,7 +1233,7 @@ All rules below produce semantic validation errors unless noted:
 |-----------------------------------------|------------------------------------------------------------------------------------------|
 | Missing `chart.id`                      | `id` derived from `context` (`.` replaced with `_`).                                     |
 | Missing `chart.algorithm`               | Resolved per rendered dimension from runtime series kind: counter = `incremental`; every other kind = `absolute`. |
-| Effective `chart.priority \<= 0` after group inheritance | Treated as `70000` (engine default).                                        |
+| Effective `chart.priority <= 0` after group inheritance | Treated as `70000` (engine default).                                        |
 | Root/nested family hierarchy + `chart.family` | Nonblank segments compose into a `/`-separated chart family.                         |
 | `options.multiplier = 0`                | Treated as `1`.                                                                          |
 | `options.divisor = 0`                   | Treated as `1`.                                                                          |

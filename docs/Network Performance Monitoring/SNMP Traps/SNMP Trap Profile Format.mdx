@@ -298,7 +298,7 @@ Predicate behavior:
   `less_than`, or `range`.
 - `equals` and `in` match enum labels when the referenced varbind has an enum.
 - Numeric predicates support `greater_than`, `less_than`, and inclusive two-value `range`; bounds must be finite numbers
-  and `range` must have exactly two values ordered with `lower \<= upper`.
+  and `range` must have exactly two values ordered with `lower <= upper`.
 - Non-finite runtime varbind values such as `NaN` or `Inf` do not match numeric predicates and increment the rule-miss
   diagnostic.
 - `exists` and `absent` match varbind presence.

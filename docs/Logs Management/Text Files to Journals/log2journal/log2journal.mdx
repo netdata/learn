@@ -697,7 +697,7 @@ Options:
          - key: KEY1
            value: 'VALUE1'
          - key: KEY2
-           value: '$\{KEY3}$\{KEY4}' # gets the values of KEY3 and KEY4
+           value: '${KEY3}${KEY4}' # gets the values of KEY3 and KEY4
          # add as many as required
        ```
 
@@ -744,12 +744,12 @@ Options:
          # the order if these rules in important - processed top to bottom
          - key: KEY1
            match: 'PCRE2 PATTERN WITH NAMED GROUPS'
-           value: 'all match fields and input keys as $\{VARIABLE}'
+           value: 'all match fields and input keys as ${VARIABLE}'
            inject: BOOLEAN # yes = inject the field, don't just rewrite it
            stop: BOOLEAN # no = continue processing, don't stop if matched
          - key: KEY2
-           non_empty: '$\{KEY3}$\{KEY4}' # match only if this evaluates to non empty
-           value: 'all input keys as $\{VARIABLE}'
+           non_empty: '${KEY3}${KEY4}' # match only if this evaluates to non empty
+           value: 'all input keys as ${VARIABLE}'
            inject: BOOLEAN # yes = inject the field, don't just rewrite it
            stop: BOOLEAN # no = continue processing, don't stop if matched
          # add as many rewrites as required

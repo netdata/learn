@@ -352,7 +352,7 @@ The monitoring user must have SELECT privilege on `V$SQLSTATS` and related views
 2. Verify access:
 
    ```sql
-   SELECT COUNT(*) FROM V$SQLSTATS WHERE ROWNUM \<= 1;
+   SELECT COUNT(*) FROM V$SQLSTATS WHERE ROWNUM <= 1;
    ```
 
 :::info
@@ -434,7 +434,7 @@ The monitoring user must have SELECT privilege on `V$SESSION` and `V$SQL`.
 2. Verify access:
 
    ```sql
-   SELECT COUNT(*) FROM V$SESSION WHERE ROWNUM \<= 1;
+   SELECT COUNT(*) FROM V$SESSION WHERE ROWNUM <= 1;
    ```
 
 :::info

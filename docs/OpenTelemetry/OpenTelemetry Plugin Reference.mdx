@@ -174,7 +174,7 @@ User mappings take priority over the stock mappings compiled into the plugin. Fi
 <a id="option-metrics-interval-secs"></a>
 ##### metrics.interval_secs
 
-Timing must satisfy `0 < interval \<= 3600`, `interval < grace`, and `grace \<= expiry`. Because the stock configuration explicitly sets all three values, set compatible values together when changing the global timing. An invalid resolved timing configuration logs a warning and falls back to the plugin's hardcoded chart defaults.
+Timing must satisfy `0 < interval <= 3600`, `interval < grace`, and `grace <= expiry`. Because the stock configuration explicitly sets all three values, set compatible values together when changing the global timing. An invalid resolved timing configuration logs a warning and falls back to the plugin's hardcoded chart defaults.
 
 
 <a id="option-metrics-max-new-charts-per-request"></a>

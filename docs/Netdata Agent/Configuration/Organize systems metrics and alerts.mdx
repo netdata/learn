@@ -142,10 +142,10 @@ Add your own labels to categorize systems by any criteria you need.
 
     ```text
     [host labels]
-        region = $\{REGION}
-        rack = $\{RACK:-unknown}
-        env = $\{DEPLOYMENT_ENV:-production}
-        location = $\{DC}-$\{RACK:-default}
+        region = ${REGION}
+        rack = ${RACK:-unknown}
+        env = ${DEPLOYMENT_ENV:-production}
+        location = ${DC}-${RACK:-default}
     ```
 
     | Syntax            | Behavior                                                                              |
