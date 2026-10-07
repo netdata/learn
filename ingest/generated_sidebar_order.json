@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "02d2fd5d0573c8fcdf92e04a3e7bcb8a36c6eb11510c9969111b9b01675a088c",
-  "source_corpus_sha256": "9b031740292fa982fda7514e3f9e49da10428d1dfc764fdcf6f195d6d3c2c1f4",
+  "source_sha256": "5c613e8fa52bfee42b4c57d2ad18bf26ad3c1865ca5a5654eca0c66042d0c280",
+  "source_corpus_sha256": "450b247bb738cf93a3ce8acb27a6da2802a54dd8015e918af59e96302430f123",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -276,38 +276,33 @@
     },
     {
       "parent_path": "Developer and Contributor Corner",
-      "child_name": "Build a custom Dashboard HTML page",
+      "child_name": "Monitor Nginx or Apache web server log files with Netdata",
       "position": 160
     },
     {
       "parent_path": "Developer and Contributor Corner",
-      "child_name": "Monitor Nginx or Apache web server log files with Netdata",
+      "child_name": "Monitor Unbound DNS servers with Netdata",
       "position": 170
     },
     {
       "parent_path": "Developer and Contributor Corner",
-      "child_name": "Monitor Unbound DNS servers with Netdata",
+      "child_name": "Monitor a Hadoop cluster with Netdata",
       "position": 180
     },
     {
       "parent_path": "Developer and Contributor Corner",
-      "child_name": "Monitor a Hadoop cluster with Netdata",
+      "child_name": "Monitor, troubleshoot, and debug applications with eBPF metrics",
       "position": 190
     },
     {
       "parent_path": "Developer and Contributor Corner",
-      "child_name": "Monitor, troubleshoot, and debug applications with eBPF metrics",
+      "child_name": "Build the Netdata Agent Yourself",
       "position": 200
     },
     {
       "parent_path": "Developer and Contributor Corner",
-      "child_name": "Build the Netdata Agent Yourself",
-      "position": 210
-    },
-    {
-      "parent_path": "Developer and Contributor Corner",
       "child_name": "Install the Netdata Agent from a Git checkout",
-      "position": 220
+      "position": 210
     },
     {
       "parent_path": "Developer and Contributor Corner/Build the Netdata Agent Yourself",
@@ -321,18 +316,8 @@
     },
     {
       "parent_path": "Developer and Contributor Corner/Build the Netdata Agent Yourself",
-      "child_name": "External build-system",
-      "position": 30
-    },
-    {
-      "parent_path": "Developer and Contributor Corner/Build the Netdata Agent Yourself",
       "child_name": "How to build native (DEB/RPM) packages locally for testing",
-      "position": 40
-    },
-    {
-      "parent_path": "Developer and Contributor Corner/Build the Netdata Agent Yourself",
-      "child_name": "Netdata contrib",
-      "position": 50
+      "position": 30
     },
     {
       "parent_path": "Developer and Contributor Corner/Contribute to the documentation",
@@ -521,68 +506,53 @@
     },
     {
       "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "popen",
+      "child_name": "procfile",
       "position": 110
     },
     {
       "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "parser",
+      "child_name": "Simple patterns",
       "position": 120
     },
     {
       "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "procfile",
+      "child_name": "Statistical functions",
       "position": 130
     },
     {
       "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "Simple patterns",
+      "child_name": "Storage number",
       "position": 140
     },
     {
       "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "Statistical functions",
+      "child_name": "String",
       "position": 150
     },
     {
       "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "Storage number",
+      "child_name": "Threads",
       "position": 160
     },
     {
       "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "String",
+      "child_name": "URL",
       "position": 170
     },
     {
       "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "Threads",
+      "child_name": "Worker Utilization",
       "position": 180
     },
     {
       "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "URL",
+      "child_name": "Dictionaries",
       "position": 190
     },
     {
       "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "Worker Utilization",
-      "position": 200
-    },
-    {
-      "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "Dictionaries",
-      "position": 210
-    },
-    {
-      "parent_path": "Developer and Contributor Corner/libnetdata",
-      "child_name": "July interface",
-      "position": 220
-    },
-    {
-      "parent_path": "Developer and Contributor Corner/libnetdata",
       "child_name": "Socket",
-      "position": 230
+      "position": 200
     },
     {
       "parent_path": "Edge Device Monitoring",
@@ -1171,18 +1141,13 @@
     },
     {
       "parent_path": "Netdata Agent/Maintenance",
-      "child_name": "Reinstall",
+      "child_name": "Uninstall",
       "position": 30
     },
     {
       "parent_path": "Netdata Agent/Maintenance",
-      "child_name": "Uninstall",
-      "position": 40
-    },
-    {
-      "parent_path": "Netdata Agent/Maintenance",
       "child_name": "Backup and restore an Agent",
-      "position": 50
+      "position": 40
     },
     {
       "parent_path": "Netdata Agent/Resource Utilization",
@@ -1366,23 +1331,18 @@
     },
     {
       "parent_path": "Netdata Parents/Metrics Centralization Points",
-      "child_name": "Sizing Netdata Parents",
+      "child_name": "Clustering and High Availability of Netdata Parents",
       "position": 20
     },
     {
       "parent_path": "Netdata Parents/Metrics Centralization Points",
-      "child_name": "Clustering and High Availability of Netdata Parents",
+      "child_name": "Replication of Past Samples",
       "position": 30
     },
     {
       "parent_path": "Netdata Parents/Metrics Centralization Points",
-      "child_name": "Replication of Past Samples",
-      "position": 40
-    },
-    {
-      "parent_path": "Netdata Parents/Metrics Centralization Points",
       "child_name": "FAQ on Metrics Centralization Points",
-      "position": 50
+      "position": 40
     },
     {
       "parent_path": "Network Performance Monitoring",
@@ -1850,5 +1810,5 @@
       "position": 190
     }
   ],
-  "full_ingest_identity_sha256": "874db603a19e76a01dd2fe21adc5d7d49ac2626e6c009b93a7188f0c888ebc50"
+  "full_ingest_identity_sha256": "201413867b0302c51aff63f200300980f2f3af6d1b296d8d9cf4ad2413dcb426"
 }

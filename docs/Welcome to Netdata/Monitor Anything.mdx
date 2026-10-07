@@ -196,6 +196,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Applications](/docs/collecting-metrics/collectors/operating-systems/applications) | Monitor Applications for optimal software performance and resource usage. |
 | [CPU performance](/docs/collecting-metrics/collectors/operating-systems/cpu-performance) | This collector monitors CPU performance metrics about cycles, instructions, migrations, cache operations and more. |
 | [dev.cpu.0.freq](/docs/collecting-metrics/collectors/operating-systems/dev.cpu.0.freq) | Read current CPU Scaling frequency. |
+| [DNS Server](/docs/collecting-metrics/collectors/operating-systems/dns-server) | Monitor DNS Server query traffic, recursion, zone transfers, dynamic updates, memory, response handling, and WINS lookups on Windows. |
 | [eBPF Cachestat](/docs/collecting-metrics/collectors/operating-systems/ebpf-cachestat) | Monitor Linux page cache events giving users a general vision about how the kernel is manipulating files. |
 | [eBPF DCstat](/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat) | Monitor directory cache events given an overall vision about files on memory or storage device. |
 | [eBPF DNS](/docs/collecting-metrics/collectors/operating-systems/ebpf-dns) | Monitor DNS query and response traffic at the kernel level, broken down by transport protocol (UDP/TCP) and IP family (IPv4/IPv6). |
@@ -388,7 +389,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Hubble](/docs/collecting-metrics/collectors/cloud-and-devops/hubble) | Monitor Hubble network observability metrics for efficient network visibility and management. |
 | [Jenkins](/docs/collecting-metrics/collectors/cloud-and-devops/jenkins) | Track Jenkins continuous integration server metrics for efficient development and build management. |
 | [Linode](/docs/collecting-metrics/collectors/cloud-and-devops/linode) | Monitor Linode cloud hosting metrics for efficient virtual server management and performance. |
-| [OpenTelemetry](https://github.com/netdata/netdata/blob/master/src/crates/otel-plugin/integrations/opentelemetry.md) | Receive OpenTelemetry metrics, logs, and traces over OTLP/gRPC from Collectors, SDKs, and instrumented applications. |
+| [OpenTelemetry](https://github.com/netdata/netdata/blob/master/src/crates/otel-plugin/integrations/opentelemetry.md) | Receive OpenTelemetry metrics, logs, and traces from an OpenTelemetry Collector over OTLP/gRPC or OTLP/HTTP. |
 | [Puppet](/docs/collecting-metrics/collectors/cloud-and-devops/puppet) | This collector monitors Puppet metrics, including JVM heap and non-heap memory, CPU usage, and file descriptors. |
 | [Spacelift](/docs/collecting-metrics/collectors/cloud-and-devops/spacelift) | Track Spacelift infrastructure-as-code (IaC) platform metrics for efficient infrastructure automation and management. |
 | [Zerto](/docs/collecting-metrics/collectors/cloud-and-devops/zerto) | Monitor Zerto disaster recovery and data protection metrics for efficient backup and recovery management. |
@@ -412,6 +413,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [IBM Z Hardware Management Console](/docs/collecting-metrics/collectors/hardware-and-sensors/ibm-z-hardware-management-console) | Monitor IBM Z Hardware Management Console metrics for efficient mainframe management and performance. |
 | [Intel GPU](/docs/collecting-metrics/collectors/hardware-and-sensors/intel-gpu) | This collector gathers performance metrics for Intel integrated GPUs. |
 | [Intelligent Platform Management Interface (IPMI)](/docs/collecting-metrics/collectors/hardware-and-sensors/intelligent-platform-management-interface-ipmi) | "Monitor enterprise server sensor readings, event log entries, and hardware statuses to ensure reliable server operations." |
+| [IPMI (experimental Go collector)](/docs/collecting-metrics/collectors/hardware-and-sensors/ipmi-experimental-go-collector) | Monitor hardware sensor readings, sensor health and System Event Log entries through IPMI. |
 | [Jarvis Standing Desk](/docs/collecting-metrics/collectors/hardware-and-sensors/jarvis-standing-desk) | Track Jarvis standing desk usage metrics for efficient workspace ergonomics and management. |
 | [Linux Hardware Sensors (libsensors)](/docs/collecting-metrics/collectors/hardware-and-sensors/linux-hardware-sensors-libsensors) | Collects hardware sensor readings (temperature, voltage, fan speed, current, power, energy, humidity and intrusion state) from all hardware monitoring chips exposed by the Linux hwmon subsystem. |
 | [Memory modules (DIMMs)](/docs/collecting-metrics/collectors/hardware-and-sensors/memory-modules-dimms) | The Error Detection and Correction (EDAC) subsystem is detecting and reporting errors in the system's memory, primarily ECC (Error-Correcting Code) memory errors. |
@@ -420,6 +422,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Netatmo sensors](/docs/collecting-metrics/collectors/hardware-and-sensors/netatmo-sensors) | Keep an eye on Netatmo smart home device metrics for efficient home automation and energy management. |
 | [Nvidia Data Center GPU Manager (DCGM)](/docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-data-center-gpu-manager-dcgm) | This collector gathers NVIDIA GPU telemetry from a `dcgm-exporter` endpoint. |
 | [Nvidia GPU](/docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-gpu) | This collector monitors GPUs performance metrics using the [nvidia-smi](https://developer.nvidia.com/nvidia-system-management-interface) CLI tool. |
+| [NVIDIA Jetson](/docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-jetson) | Monitor GPU and memory controller utilization and clock frequencies on NVIDIA Jetson devices. |
 | [Personal Weather Station](/docs/collecting-metrics/collectors/hardware-and-sensors/personal-weather-station) | Track personal weather station metrics for efficient weather monitoring and management. |
 | [Philips Hue](/docs/collecting-metrics/collectors/hardware-and-sensors/philips-hue) | Keep an eye on Philips Hue smart lighting metrics for efficient home automation and energy management. |
 | [Pimoroni Enviro+](/docs/collecting-metrics/collectors/hardware-and-sensors/pimoroni-enviro+) | Track Pimoroni Enviro+ air quality and environmental metrics for efficient environmental monitoring and analysis. |
@@ -517,7 +520,9 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [ProFTPD](/docs/collecting-metrics/collectors/applications/proftpd) | Monitor ProFTPD FTP server metrics for efficient file transfer and server performance. |
 | [Prometheus endpoint](/docs/collecting-metrics/collectors/applications/prometheus-endpoint) | This generic Prometheus collector gathers metrics from any [`Prometheus`](https://prometheus.io/) endpoints. |
 | [RADIUS](/docs/collecting-metrics/collectors/applications/radius) | Keep tabs on RADIUS (Remote Authentication Dial-In User Service) protocol metrics for efficient authentication and access management. |
+| [Real User Monitoring](/docs/collecting-metrics/collectors/applications/real-user-monitoring) | Monitor browser Web Vitals, document and application-view traffic, JavaScript errors and resource timing. |
 | [Rspamd](/docs/collecting-metrics/collectors/applications/rspamd) | This collector monitors the activity and performance of Rspamd servers. |
+| [RUM Receiver](/docs/collecting-metrics/collectors/applications/rum-receiver) | Monitor the availability and HTTP request outcomes of the browser telemetry receiver. |
 | [SABnzbd](/docs/collecting-metrics/collectors/applications/sabnzbd) | Monitor SABnzbd Usenet client metrics for efficient file downloads and resource management. |
 | [Slurm](/docs/collecting-metrics/collectors/applications/slurm) | Track Slurm workload manager metrics for efficient high-performance computing (HPC) and cluster management. |
 | [SpigotMC](/docs/collecting-metrics/collectors/applications/spigotmc) | This collector monitors SpigotMC server server performance, in the form of ticks per second average, memory utilization, and active users. |
@@ -592,12 +597,14 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | Integration | Description |
 |-------------|-------------|
 | [Blackbox](/docs/collecting-metrics/collectors/synthetic-testing/blackbox) | Track external service availability and response times with Blackbox monitoring. |
+| [Browser Journey](/docs/collecting-metrics/collectors/synthetic-testing/browser-journey) | Monitor whether browser workflow checks execute and pass with real Playwright Test. |
 | [DNS query](/docs/collecting-metrics/collectors/synthetic-testing/dns-query) | This module monitors DNS query round-trip time (RTT). |
 | [Domain expiration date](/docs/collecting-metrics/collectors/synthetic-testing/domain-expiration-date) | This collector monitors the remaining time before the domain expires. |
 | [Files and directories](/docs/collecting-metrics/collectors/synthetic-testing/files-and-directories) | This collector monitors the existence, last modification time, and size of arbitrary files and directories on the system. |
 | [HTTP Endpoints](/docs/collecting-metrics/collectors/synthetic-testing/http-endpoints) | This collector monitors HTTP servers availability status and response time. |
 | [Idle OS Jitter](/docs/collecting-metrics/collectors/synthetic-testing/idle-os-jitter) | Monitor delays in timing for user processes caused by scheduling limitations to optimize the system to run latency sensitive applications with minimal jitter, improving consistency and quality of service. |
 | [IOPing](/docs/collecting-metrics/collectors/synthetic-testing/ioping) | Monitor IOPing metrics for efficient disk I/O latency tracking. |
+| [Lighthouse Desktop Audit](/docs/collecting-metrics/collectors/synthetic-testing/lighthouse-desktop-audit) | Monitor desktop lab performance for a web page with Lighthouse. |
 | [Monit](/docs/collecting-metrics/collectors/synthetic-testing/monit) | This collector monitors status of Monit's service checks. |
 | [MQTT Blackbox](/docs/collecting-metrics/collectors/synthetic-testing/mqtt-blackbox) | Track MQTT message transport performance using blackbox testing methods. |
 | [Nagios Plugins and Custom Scripts](/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts) | This collector runs [Nagios-compatible plugins](https://www.nagios-plugins.org/) and custom scripts in any language (Bash, PowerShell, Python, Go, etc.). |

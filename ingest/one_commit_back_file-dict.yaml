@@ -872,6 +872,8 @@
   learn_path: /docs/collecting-metrics/collectors/applications/active-directory-federation-service
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/asp.net.md
   learn_path: /docs/collecting-metrics/collectors/web-servers-and-proxies/asp.net
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/dns_server.md
+  learn_path: /docs/collecting-metrics/collectors/operating-systems/dns-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hardware_information_collected_from_kernel_ring..md
   learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/hardware-information-collected-from-kernel-ring.
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hyper-v.md
@@ -1046,6 +1048,14 @@
   learn_path: /docs/collecting-metrics/secrets-management/secret-stores/google-secret-manager
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/agent/secrets/secretstore/backends/vault/README.md
   learn_path: /docs/collecting-metrics/secrets-management/secret-stores/vault
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/dem/collector/journey/README.md
+  learn_path: /docs/collecting-metrics/collectors/synthetic-testing/browser-journey
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/dem/collector/lighthouse/README.md
+  learn_path: /docs/collecting-metrics/collectors/synthetic-testing/lighthouse-desktop-audit
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/dem/collector/receiver/README.md
+  learn_path: /docs/collecting-metrics/collectors/applications/rum-receiver
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/dem/collector/rum/README.md
+  learn_path: /docs/collecting-metrics/collectors/applications/real-user-monitoring
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/framework/charttpl/README.md
   learn_path: /docs/collecting-metrics/chart-template-format
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/README.md
@@ -1228,6 +1238,8 @@
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/ipfs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/isc_dhcpd/README.md
   learn_path: /docs/collecting-metrics/collectors/networking/isc-dhcp
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/jetson/README.md
+  learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-jetson
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/k8s_apiserver/README.md
   learn_path: /docs/collecting-metrics/collectors/containers-and-vms/kubernetes-api-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/k8s_kubelet/README.md
@@ -3780,6 +3792,8 @@
   learn_path: /docs/collecting-metrics/service-discovery/discoverer/local-listening-processes
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/discovery/sdext/discoverer/snmpsd/README.md
   learn_path: /docs/collecting-metrics/service-discovery/discoverer/snmp
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/docs/how-to-write-a-collector.md
+  learn_path: /docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/as400/README.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ibm-i-as-400
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/db2/README.md
@@ -3792,6 +3806,8 @@
   learn_path: /docs/collecting-metrics/collectors/applications/ibm-websphere-microprofile
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/websphere/pmi/README.md
   learn_path: /docs/collecting-metrics/collectors/applications/ibm-websphere-pmi
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ipmi/collector/ipmi/README.md
+  learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/ipmi-experimental-go-collector
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/collector/nagios/README.md
   learn_path: /docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/health/README.md
@@ -3876,6 +3892,8 @@
   learn_path: /docs/developer-and-contributor-corner/libnetdata/clocks
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/dictionary/README.md
   learn_path: /docs/developer-and-contributor-corner/libnetdata/dictionaries
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/inicfg/README.md
+  learn_path: /docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/json/README.md
   learn_path: /docs/developer-and-contributor-corner/libnetdata/json
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/libnetdata/locks/README.md
@@ -3960,6 +3978,8 @@
   learn_path: /docs/developer-and-contributor-corner/rest-api/queries/sum
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/queries/trimmed_mean/README.md
   learn_path: /docs/developer-and-contributor-corner/rest-api/queries/trimmed-mean
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/api/v1/api_v1_badge/README.md
+  learn_path: /docs/developer-and-contributor-corner/rest-api/netdata-badges
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/web/server/README.md
   learn_path: /docs/netdata-agent/configuration/securing-agents/web-server-reference
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/tests/health_mgmtapi/README.md
