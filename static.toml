@@ -45,7 +45,7 @@
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
-  to="/docs/netdata-agent/installation/"
+  to="/docs/collecting-metrics/collectors/networking/pi-hole"
 
 [[redirects]]
   from="/docs/developer-and-contributor-corner/build-a-custom-dashboard-html-page"
@@ -519,7 +519,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/ebpf"
-  to="/docs/collecting-metrics/collectors/operating-systems"
+  to="/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics"
 
 [[redirects]]
   from="/docs/collecting-metrics/freebsd"
@@ -699,7 +699,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/system-metrics"
-  to="/docs/collecting-metrics/collectors/operating-systems"
+  to="/docs/collecting-metrics"
 
 [[redirects]]
   from="/docs/collecting-metrics/systemd"
@@ -843,7 +843,7 @@
 
 [[redirects]]
   from="/docs/data-collection/linux-systems/os-provided-metrics"
-  to="/docs/collecting-metrics/collectors/operating-systems"
+  to="/docs/collecting-metrics"
 
 [[redirects]]
   from="/docs/data-collection/media-services"
@@ -1106,8 +1106,9 @@
   to="/docs/netdata-cloud/connect-agent"
 
 # Corrected generated redirects (2026-10-07): these dead pages went to an unrelated or generic page
-# although a page with their content, or a native page for the same product, exists. Each rule
-# overrides the generated rule with the same source.
+# although a page with their content, a native page for the same product, or the page that now
+# covers their subject exists. Each rule overrides the generated rule with the same source; a few
+# cover another spelling of the same page that had no rule.
 
 [[redirects]]
   from="/docs/agent/collectors/apps.plugin"
@@ -1116,6 +1117,18 @@
 [[redirects]]
   from="/docs/agent/collectors/freebsd.plugin"
   to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/changefinder"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/agent/collectors/python.d.plugin/zscores"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/agent/netdata-for-iot"
+  to="/docs/edge-device-monitoring"
 
 [[redirects]]
   from="/docs/agent/packaging/installer/methods/packages"
@@ -1128,6 +1141,18 @@
 [[redirects]]
   from="/docs/collect/application-metrics"
   to="/docs/welcome-to-netdata/monitor-anything"
+
+[[redirects]]
+  from="/docs/collecting-metrics/databases/sql-database-agnostic"
+  to="/docs/collecting-metrics/collectors/databases/sql-databases-generic"
+
+[[redirects]]
+  from="/docs/collecting-metrics/other/python.d-changefinder"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/collecting-metrics/other/python.d-zscores"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/dell-emc-isilon-cluster"
@@ -1186,6 +1211,10 @@
   to="/docs/collecting-metrics/collectors/databases/oracle-db"
 
 [[redirects]]
+  from="/docs/data-collection/databases/sql-database-agnostic"
+  to="/docs/collecting-metrics/collectors/databases/sql-databases-generic"
+
+[[redirects]]
   from="/docs/data-collection/generic-data-collection/generic-command-line-output"
   to="/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts"
 
@@ -1203,6 +1232,14 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Anomalies"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Netdata/zscores"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Qos/changefinder"
   to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
@@ -1226,6 +1263,14 @@
   to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
+  from="/docs/data-collection/monitor-anything/netdata/zscores"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/qos/changefinder"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
   from="/docs/data-collection/monitor-anything/system-metrics/application-monitoring"
   to="/docs/collecting-metrics/collectors/operating-systems/applications"
 
@@ -1240,6 +1285,14 @@
 [[redirects]]
   from="/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups"
   to="/docs/collecting-metrics/containers-and-cgroups"
+
+[[redirects]]
+  from="/docs/data-collection/netdata-specific/change-finder"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/data-collection/netdata-specific/zscores"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/docs/data-collection/networking-stack-and-network-interfaces/a10-acos-network-devices"
@@ -1270,6 +1323,14 @@
   to="/docs/network-performance-monitoring/device-metrics/integrations/mikrotik-router"
 
 [[redirects]]
+  from="/docs/data-collection/other/python.d-changefinder"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/data-collection/other/python.d-zscores"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
   from="/docs/data-collection/security-systems/ssl-certificate"
   to="/docs/collecting-metrics/collectors/synthetic-testing/x.509-certificate"
 
@@ -1294,8 +1355,20 @@
   to="/docs/collecting-metrics/collectors/containers-and-vms/hyper-v"
 
 [[redirects]]
+  from="/docs/deployment-in-production/streaming-and-replication"
+  to="/docs/netdata-parents"
+
+[[redirects]]
   from="/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference"
   to="/docs/netdata-parents/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/docs/metrics-storage-management/enable-streaming"
+  to="/docs/netdata-parents"
+
+[[redirects]]
+  from="/docs/metrics-storage-management/how-streaming-works"
+  to="/docs/netdata-parents"
 
 [[redirects]]
   from="/docs/metrics-storage-management/reference-streaming"
@@ -1306,6 +1379,22 @@
   to="/docs/netdata-parents/parent-child-configuration-reference"
 
 [[redirects]]
+  from="/docs/metrics-streaming-and-replication/understanding-how-streaming-works"
+  to="/docs/netdata-parents"
+
+[[redirects]]
+  from="/docs/miscellaneous/monitor-pi-hole-and-a-raspberry-pi-with-netdata"
+  to="/docs/collecting-metrics/collectors/networking/pi-hole"
+
+[[redirects]]
   from="/docs/streaming/streaming-configuration-reference"
   to="/docs/netdata-parents/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/guides/monitor/pi-hole-raspberry-pi"
+  to="/docs/collecting-metrics/collectors/networking/pi-hole"
+
+[[redirects]]
+  from="/streaming"
+  to="/docs/netdata-parents"
 # section: static << END
