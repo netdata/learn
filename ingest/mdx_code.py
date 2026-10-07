@@ -173,7 +173,8 @@ class _Scanner:
                     offset += len(line) + 1
                 index = closing + 1
         for line in lines[index:]:
-            self._line(line, offset)
+            # Like MDX, read CRLF as a line ending: a fence line ending in \r still closes.
+            self._line(line[:-1] if line.endswith("\r") else line, offset)
             offset += len(line) + 1
         self._close_leaf()
         return _merge(self.ranges)

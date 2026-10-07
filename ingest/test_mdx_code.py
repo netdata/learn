@@ -75,6 +75,10 @@ class FencedCodeTests(unittest.TestCase):
         )
         self.assertEqual(code("    {a}\n"), [])
 
+    def test_crlf_line_endings_end_lines_as_in_mdx(self):
+        self.assertEqual(code("a\r\n```\r\n{x}\r\n```\r\n`y` {z}\r\n"), ["```\r\n{x}\r\n```", "`y`"])
+        self.assertEqual(code("> ```\r\n> a\r\nb\r\n"), ["> ```\r\n> a"])
+
     def test_tilde_fence_and_unclosed_fence(self):
         self.assertEqual(code("~~~ `info`\n{a}\n~~~\n{b}\n"), ["~~~ `info`\n{a}\n~~~"])
         self.assertEqual(code("text {a}\n```\n{b}\n"), ["```\n{b}\n"])
