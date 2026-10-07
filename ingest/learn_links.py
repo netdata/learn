@@ -7,9 +7,11 @@ Checking them against the final ingest output (pages, redirects, static files) l
 documentation check of the repository that introduced the link fail instead.
 """
 
+import html
 import os
 import re
 import tomllib
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -20,9 +22,37 @@ _LINK_TARGET = re.compile(r"\]\(\s*<?(https?://learn\.netdata\.cloud(?:[/?#][^)\
 _HREF_TARGET = re.compile(
     r"""\bhref\s*=\s*["'](https?://learn\.netdata\.cloud(?:[/?#][^"']*)?)["']"""
 )
+_DEFINITION_TARGET = re.compile(
+    r"^[ \t]*(?:>[ \t]*)*\[(?:[^\]\\]|\\.)+\]:[ \t]*<?"
+    r"(https?://learn\.netdata\.cloud(?:[/?#][^\s>]*)?)"
+)
+# remark-gfm turns a bare URL into a link when no ASCII letter precedes it.
+_BARE_URL = re.compile(
+    r"(?<![A-Za-z])https?://learn\.netdata\.cloud(?![\w-]|\.[\w-])[^\s<]*"
+)
+_INLINE_LINK = re.compile(r"!?\[[^\]]*\](?:\([^)]*\)|\[[^\]]*\])")
+_HTML_TAG = re.compile(r"<[^>]*>")
+_AUTOLINK_TRAIL = "!\"')*,.:;?_~]"
+_ENTITY_SUFFIX = re.compile(r"&[A-Za-z]+;$")
 _INLINE_CODE = re.compile(r"(`+)(?:(?!\1).)+?\1")
-_HEADING = re.compile(r"^(#{1,6})[ \t]+(.*?)[ \t]*$")
+_CODE_PLACEHOLDER = re.compile(r"\x00(\d+)\x00")
+_CHARACTER_REFERENCE = re.compile(
+    r"&(?:#[0-9]{1,7}|#[xX][0-9a-fA-F]{1,6}|[A-Za-z][A-Za-z0-9]{1,31});"
+)
+_FENCE = re.compile(r"(`{3,}|~{3,})")
+# MDX has no indented code, so headings, underlines and list markers may be indented.
+_HEADING = re.compile(r"^[ \t]*(#{1,6})[ \t]+(.*?)[ \t]*$")
 _CLOSING_HASHES = re.compile(r"[ \t]+#+$")
+_SETEXT_UNDERLINE = re.compile(r"^[ \t]*(?:=+|-+)[ \t]*$")
+_THEMATIC_BREAK = re.compile(r"^[ \t]*([-*_])(?:[ \t]*\1){2,}[ \t]*$")
+_LIST_ITEM = re.compile(r"^[ \t]*(?:[-+*]|\d{1,9}[.)])(?:[ \t]+|$)")
+_BLOCKQUOTE = re.compile(r"^[ \t]*>[ ]?")
+_TABLE_DELIMITER = re.compile(
+    r"^[ \t]*\|?(?:[ \t]*:?-+:?[ \t]*\|)*[ \t]*:?-+:?[ \t]*\|?[ \t]*$"
+)
+_DEFINITION = re.compile(r"^[ \t]*\[(?:[^\]\\]|\\.)+\]:")
+# JSX or HTML alone on a line, a directive fence (:::), ESM or an expression: never paragraph text.
+_NON_PARAGRAPH = re.compile(r"^[ \t]*(?:<.*>|:::.*|\{.*\})[ \t]*$|^(?:import|export)\s")
 _EXPLICIT_ID = re.compile(r"[ \t]*\{#([^}\s]+)\}$")
 _ID_ATTRIBUTE = re.compile(r"""\b(?:id|name)\s*=\s*["']([^"']+)["']""")
 _EDIT_URL_REPOSITORY = re.compile(r"^https://github\.com/netdata/([^/]+)/")
@@ -61,18 +91,18 @@ def split_front_matter(text):
     return (front_matter if isinstance(front_matter, dict) else {}), body
 
 
-def prose_lines(body):
-    """Yield the lines of a markdown body with code blocks and inline code blanked out."""
+def _lines_outside_fences(body):
+    """Yield the lines of a markdown body with fenced code blocks blanked out."""
     fence = None
     for line in body.split("\n"):
         stripped = line.strip()
         if fence is None:
-            opening = re.match(r"(`{3,}|~{3,})", stripped)
+            opening = _FENCE.match(stripped)
             if opening:
                 fence = opening.group(1)
                 yield ""
                 continue
-            yield _INLINE_CODE.sub(" ", line)
+            yield line
         else:
             if (
                 stripped
@@ -83,32 +113,150 @@ def prose_lines(body):
             yield ""
 
 
+def prose_lines(body):
+    """Yield the lines of a markdown body with code blocks and inline code blanked out."""
+    for line in _lines_outside_fences(body):
+        yield _INLINE_CODE.sub(" ", line)
+
+
+def _trim_autolink(url):
+    """Drop what GFM leaves out of a bare URL: trailing punctuation, entities, unmatched ')'."""
+    url = re.split(r"\][(\[]", url, maxsplit=1)[0]
+    while True:
+        entity = _ENTITY_SUFFIX.search(url)
+        if entity:
+            url = url[: entity.start()]
+        elif url[-1] in _AUTOLINK_TRAIL and not (
+            url[-1] == ")" and url.count(")") <= url.count("(")
+        ):
+            url = url[:-1]
+        else:
+            return url
+
+
+def _bare_urls(line):
+    # Link text, link destinations and tag attributes are not autolinked.
+    text = _HTML_TAG.sub(" ", _INLINE_LINK.sub(" ", line))
+    return [_trim_autolink(match.group(0)) for match in _BARE_URL.finditer(text)]
+
+
 def learn_links(body):
+    """Return the absolute Learn URLs a page links to: inline, reference, HTML and bare links."""
     links = []
     for line in prose_lines(body):
         links.extend(_LINK_TARGET.findall(line))
         links.extend(_HREF_TARGET.findall(line))
+        links.extend(_DEFINITION_TARGET.findall(line))
+        links.extend(_bare_urls(line))
     return links
 
 
+def _code_span_text(match):
+    content = match.group(0)[len(match.group(1)) : -len(match.group(1))]
+    # CommonMark drops one space on each side when both are present.
+    if content[:1] == content[-1:] == " " and content.strip(" "):
+        content = content[1:-1]
+    return content
+
+
 def _heading_text(raw):
-    text = re.sub(r"!\[([^\]]*)\]\([^)]*\)", r"\1", raw)
-    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    """Return the text Docusaurus slugs: markup removed, inline code kept verbatim."""
+    spans = []
+
+    def protect(match):
+        spans.append(_code_span_text(match))
+        return f"\x00{len(spans) - 1}\x00"
+
+    text = _INLINE_CODE.sub(protect, raw)
+    text = re.sub(r"!?\[([^\]]*)\]\([^)]*\)", r"\1", text)
     text = re.sub(r"<[^>]+>", "", text)
-    text = text.replace("\\", "")
-    text = re.sub(r"[`*]", "", text)
+    text = _CHARACTER_REFERENCE.sub(lambda match: html.unescape(match.group(0)), text)
+    text = text.replace("\\", "").replace("*", "")
     text = re.sub(r"(?<!\w)_(.+?)_(?!\w)", r"\1", text)
-    return text.strip()
+    return _CODE_PLACEHOLDER.sub(lambda match: spans[int(match.group(1))], text).strip()
+
+
+def _indent(line):
+    return len(line) - len(line.lstrip(" \t"))
+
+
+def _headings(body):
+    """Yield the raw text of each ATX and Setext heading in document order.
+
+    A Setext underline (=== or ---) turns the paragraph right above it into a heading only
+    when it stays in that paragraph's container: the same blockquote depth and, for a
+    paragraph that starts indented (list item content), at least the same indentation.
+    Otherwise --- is a thematic break and === is paragraph text. Table rows, list markers,
+    JSX lines and link definitions are not paragraph text.
+    """
+    paragraph = []
+    paragraph_quote = 0
+    paragraph_indent = 0
+    in_table = False
+    for line in _lines_outside_fences(body):
+        quote = 0
+        while (marker := _BLOCKQUOTE.match(line)) is not None:
+            quote += 1
+            line = line[marker.end() :]
+        stripped = line.strip()
+        if not stripped:
+            paragraph, in_table = [], False
+            continue
+        atx = _HEADING.match(line)
+        if atx:
+            paragraph, in_table = [], False
+            yield _CLOSING_HASHES.sub("", atx.group(2))
+            continue
+        if paragraph and _SETEXT_UNDERLINE.match(line):
+            if quote == paragraph_quote and _indent(line) >= paragraph_indent:
+                yield "\n".join(paragraph)
+                paragraph = []
+            elif stripped[0] == "=":
+                paragraph.append(stripped)
+            else:
+                paragraph = []
+            continue
+        if _THEMATIC_BREAK.match(line):
+            paragraph, in_table = [], False
+            continue
+        if in_table:
+            continue
+        if paragraph and "|" in line and _TABLE_DELIMITER.match(line):
+            paragraph, in_table = [], True
+            continue
+        if _NON_PARAGRAPH.match(line) or (not paragraph and _DEFINITION.match(line)):
+            paragraph = []
+            continue
+        item = _LIST_ITEM.match(line)
+        if item:
+            content = line[item.end() :].strip()
+            atx = _HEADING.match(content)
+            if atx:
+                yield _CLOSING_HASHES.sub("", atx.group(2))
+                content = ""
+            paragraph = [content] if content else []
+            paragraph_quote, paragraph_indent = quote, item.end()
+            continue
+        if paragraph and quote <= paragraph_quote:
+            paragraph.append(stripped)
+        else:
+            paragraph = [stripped]
+            paragraph_quote, paragraph_indent = quote, _indent(line)
 
 
 def github_slug(text):
-    """Slug a heading the way github-slugger, used by Docusaurus, does."""
+    """Slug a heading the way github-slugger, used by Docusaurus, does.
+
+    github-slugger keeps letters, marks (such as the emoji variation selector), decimal and
+    letter numbers, connector punctuation and hyphens, and turns spaces into hyphens.
+    """
     slug = []
     for character in text.lower():
-        if character.isalnum() or character in "-_":
-            slug.append(character)
-        elif character == " ":
+        category = unicodedata.category(character)
+        if character == " ":
             slug.append("-")
+        elif character == "-" or category[0] in "LM" or category in ("Nd", "Nl", "Pc"):
+            slug.append(character)
     return "".join(slug)
 
 
@@ -116,23 +264,21 @@ def page_anchors(body):
     """Return the fragment identifiers a rendered page exposes."""
     anchors = set()
     occurrences = {}
+    for text in _headings(body):
+        explicit = _EXPLICIT_ID.search(text)
+        if explicit:
+            anchors.add(explicit.group(1))
+            continue
+        slug = github_slug(_heading_text(text))
+        original = slug
+        while slug in occurrences:
+            occurrences[original] += 1
+            slug = f"{original}-{occurrences[original]}"
+        occurrences[slug] = 0
+        anchors.add(slug)
+        # Older ingested links collapse repeated hyphens; accept that spelling too.
+        anchors.add(re.sub(r"-+", "-", slug).strip("-"))
     for line in prose_lines(body):
-        heading = _HEADING.match(line)
-        if heading:
-            text = _CLOSING_HASHES.sub("", heading.group(2))
-            explicit = _EXPLICIT_ID.search(text)
-            if explicit:
-                anchors.add(explicit.group(1))
-            else:
-                slug = github_slug(_heading_text(text))
-                original = slug
-                while slug in occurrences:
-                    occurrences[original] += 1
-                    slug = f"{original}-{occurrences[original]}"
-                occurrences[slug] = 0
-                anchors.add(slug)
-                # Older ingested links collapse repeated hyphens; accept that spelling too.
-                anchors.add(re.sub(r"-+", "-", slug).strip("-"))
         anchors.update(_ID_ATTRIBUTE.findall(line))
     anchors.discard("")
     return anchors

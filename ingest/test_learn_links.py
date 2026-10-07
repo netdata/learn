@@ -171,10 +171,101 @@ class LearnLinkTests(unittest.TestCase):
         self.assertEqual(learn_links.github_slug("Fish & Chips"), "fish--chips")
         self.assertEqual(learn_links.github_slug("Use `netdata.conf` Options"), "use-netdataconf-options")
         self.assertEqual(learn_links.github_slug("fallback_type"), "fallback_type")
+        # github-slugger keeps marks such as the emoji variation selector and drops symbols.
+        self.assertEqual(learn_links.github_slug("⚠️ Warning"), "️-warning")
+        self.assertEqual(learn_links.github_slug("x² growth"), "x-growth")
         self.assertEqual(
             sorted(learn_links.page_anchors("## A\n## A\n## A\n")),
             ["a", "a-1", "a-2"],
         )
+
+    def test_heading_anchors_keep_inline_code_and_decode_entities(self):
+        anchors = learn_links.page_anchors(
+            "#### Alert Line `lookup`\n"
+            "## The `<name>` option\n"
+            "## Disk Requirements &amp; Retention\n"
+            "## ⚠️ Critical Considerations\n"
+            "   ## Indented heading\n"
+            "> ## Quoted heading\n"
+            "1. ## List heading\n"
+        )
+        expected = {
+            "alert-line-lookup",
+            "the-name-option",
+            "disk-requirements--retention",
+            "️-critical-considerations",
+            "indented-heading",
+            "quoted-heading",
+            "list-heading",
+        }
+        self.assertEqual(expected - anchors, set())
+        self.assertNotIn("alert-line", anchors)
+
+    def test_setext_headings_are_anchors(self):
+        anchors = learn_links.page_anchors(
+            "Setext title\n============\n\n"
+            "Setext section\n--------------\n\n"
+            "Two line\nheading\n---\n\n"
+            "- Item title\n  ---\n\n"
+            "> Quoted title\n> ===\n\n"
+            "## Setext section\n"
+        )
+        self.assertEqual(
+            anchors,
+            {
+                "setext-title",
+                "setext-section",
+                "two-lineheading",
+                "item-title",
+                "quoted-title",
+                "setext-section-1",
+            },
+        )
+
+    def test_thematic_breaks_tables_and_lists_are_not_setext_headings(self):
+        anchors = learn_links.page_anchors(
+            "Intro paragraph\n\n---\n\n"
+            "Stars\n***\n\n"
+            "Spaced\n- - -\n\n"
+            "- List item\n---\n\n"
+            "> Quoted\n---\n\n"
+            "| Name | Value |\n| --- | --- |\n| a | b |\n---\n\n"
+            "Executed commands:\n- `ls`\n\n"
+            "## Real heading\n"
+        )
+        self.assertEqual(anchors, {"real-heading"})
+
+    def test_front_matter_is_not_a_setext_heading(self):
+        broken = self.broken("[x](https://learn.netdata.cloud/docs/target#slug-target)")
+        self.assertEqual([item.reason for item in broken], ["missing anchor #slug-target"])
+
+    def test_checks_reference_definitions_and_bare_urls(self):
+        broken = self.broken(
+            "[gone]: https://learn.netdata.cloud/docs/gone-reference\n"
+            '[ok]: <https://learn.netdata.cloud/docs/target> "Title"\n\n'
+            "Read https://learn.netdata.cloud/docs/gone-bare. "
+            "Or see (https://learn.netdata.cloud/docs/target#virtual-nodes).\n\n"
+            "**https://learn.netdata.cloud/docs/gone-emphasis**\n\n"
+            "See [the reference][gone] and [the target][ok].\n"
+        )
+        self.assertEqual(
+            [item.url for item in broken],
+            [
+                "https://learn.netdata.cloud/docs/gone-bare",
+                "https://learn.netdata.cloud/docs/gone-emphasis",
+                "https://learn.netdata.cloud/docs/gone-reference",
+            ],
+        )
+
+    def test_url_text_that_is_not_an_autolink_is_ignored(self):
+        body = (
+            "[https://learn.netdata.cloud/docs/gone-text](https://learn.netdata.cloud/docs/target)\n\n"
+            '<a href="https://learn.netdata.cloud/docs/target" '
+            'title="https://learn.netdata.cloud/docs/gone-attribute">x</a>\n\n'
+            "prefixhttps://learn.netdata.cloud/docs/gone-glued and "
+            "https://learn.netdata.cloud.example.com/docs/gone-domain\n"
+        )
+        self.assertEqual(self.broken(body), [])
 
 
 if __name__ == "__main__":
