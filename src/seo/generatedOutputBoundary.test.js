@@ -1,10 +1,11 @@
-import { readFileSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { describe, expect, it } from 'vitest';
 
 import {
+  LEARN_OWNED_DOCS,
   generatedOutputChanges,
   verifyGeneratedOutputBoundary,
 } from '../../scripts/verify-generated-output-boundary.mjs';
@@ -36,13 +37,27 @@ describe('generated output ownership', () => {
         'ingest/ingest.py',
         'static.toml',
         'netlify.toml',
+        'static/llms.txt',
+        'static/llms-full.txt',
+        'static/robots.txt',
       ]),
     ).toEqual([
       'docs/Netdata Agent/Installation/Linux/Linux.mdx',
       'ingest/generated_map.yaml',
       'ingest/generated_sidebar_order.json',
       'ingest/generated_sidebar_order.json.sha256',
+      'static/llms.txt',
+      'static/llms-full.txt',
     ]);
+  });
+
+  it('rejects hand edits of the generated llms files in an ordinary pull request', () => {
+    expect(() =>
+      verifyGeneratedOutputBoundary({
+        ...ordinaryPullRequest,
+        changedPaths: ['static/llms-full.txt'],
+      }),
+    ).toThrow(/llms-full\.txt/);
   });
 
   it('allows source-only changes in an ordinary pull request', () => {
@@ -52,6 +67,37 @@ describe('generated output ownership', () => {
         changedPaths: ['ingest/ingest.py', 'src/seo/title.js', 'netlify.toml'],
       }),
     ).not.toThrow();
+  });
+
+  it('allows the hand-maintained Ask Nedi page in an ordinary pull request', () => {
+    expect(() =>
+      verifyGeneratedOutputBoundary({
+        ...ordinaryPullRequest,
+        changedPaths: ['docs/ask-nedi.mdx', 'src/components/Nedi/index.js'],
+      }),
+    ).not.toThrow();
+  });
+
+  it('lists exactly the documentation pages that ingest preserves as Learn-owned', () => {
+    const docsRoot = path.join(repositoryRoot, 'docs');
+    const preserved = [];
+    const walk = (directory) => {
+      for (const entry of readdirSync(directory, { withFileTypes: true })) {
+        const entryPath = path.join(directory, entry.name);
+        if (entry.isDirectory()) walk(entryPath);
+        else if (/\.mdx?$/.test(entry.name)) {
+          const frontMatter = readFileSync(entryPath, 'utf8').match(/^---\n([\s\S]*?)\n---/);
+          // Ingest keeps a page whenever the key is present, whatever its value
+          // (safe_cleanup_learn_folders in ingest/ingest.py).
+          if (frontMatter && /^part_of_learn: /m.test(frontMatter[1])) {
+            preserved.push(path.relative(repositoryRoot, entryPath).split(path.sep).join('/'));
+          }
+        }
+      }
+    };
+    walk(docsRoot);
+
+    expect(preserved.sort()).toEqual([...LEARN_OWNED_DOCS].sort());
   });
 
   it('rejects generated documentation in an ordinary pull request', () => {
@@ -129,11 +175,22 @@ describe('generated output ownership', () => {
     expect(recoveryStep).toContain('generated-after.sha256');
     expect(recoveryStep).toContain('diff -u');
     expect(recoveryStep).toContain('set -o pipefail');
+    // The llms files join the find corpus, so a run before their first generation hashes nothing.
+    expect(recoveryStep).toContain('if ! find docs static -type f');
     expect(recoveryStep).toContain(
-      'if ! find docs -type f -print0 | sort -z | xargs -0 sha256sum',
+      "\\( -path 'docs/*' -o -path static/llms.txt -o -path static/llms-full.txt \\)",
     );
+    expect(recoveryStep).toContain('-print0 | sort -z | xargs -0 sha256sum');
     expect(recoveryStep).toContain('if ! sha256sum');
-    expect(recoveryStep).toContain('Failed to hash the generated documentation corpus');
+    const fixedArtifacts = recoveryStep.slice(
+      recoveryStep.indexOf('if ! sha256sum'),
+      recoveryStep.indexOf('> "$fixed_manifest"'),
+    );
+    expect(fixedArtifacts).toContain('netlify.toml');
+    expect(fixedArtifacts).not.toContain('llms');
+    expect(recoveryStep).toContain(
+      'Failed to hash the generated documentation corpus and llms files',
+    );
     expect(recoveryStep).toContain('Failed to hash the generated recovery artifacts');
     expect(recoveryStep.match(/return 1/g)).toHaveLength(3);
   });

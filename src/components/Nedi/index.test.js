@@ -57,6 +57,7 @@ describe('Nedi component', () => {
     delete window.AiAgentChatUI;
     delete window.AiAgentChatConfig;
     delete window.posthog;
+    window.history.replaceState(null, '', '/');
   });
 
   it('requests the assets and reports progress while they load', () => {
@@ -87,6 +88,72 @@ describe('Nedi component', () => {
     const { container } = render(<Nedi />);
 
     expect(container.querySelector(`#${PERSISTENT_ID}`)).not.toBeNull();
+  });
+
+  it('never asks a question on its own', () => {
+    installEmbed();
+    nediDependenciesReady.mockReturnValue(true);
+
+    render(<Nedi />);
+
+    expect(embedOptions).not.toHaveProperty('urlParams');
+  });
+
+  it('prefills a linked question and leaves sending to the visitor', () => {
+    window.history.replaceState(null, '', '/docs/ask-nedi?q=why%20is%20my%20disk%20full&utm_source=docs#top');
+    installEmbed();
+    nediDependenciesReady.mockReturnValue(true);
+
+    render(<Nedi />);
+    tick(150);
+
+    const input = document.querySelector(`#${PERSISTENT_ID} .ai-agent-input`);
+    expect(input.value).toBe('why is my disk full');
+    expect(embedOptions).not.toHaveProperty('urlParams');
+    expect(document.activeElement).toBe(input);
+    expect(window.location.pathname).toBe('/docs/ask-nedi');
+    expect(window.location.search).toBe('?utm_source=docs');
+    expect(window.location.hash).toBe('#top');
+  });
+
+  it('accepts the question parameter as well', () => {
+    window.history.replaceState(null, '', '/docs/ask-nedi?question=%20how%20do%20I%20add%20a%20parent%20');
+    installEmbed();
+    nediDependenciesReady.mockReturnValue(true);
+
+    render(<Nedi />);
+    tick(150);
+
+    const input = document.querySelector(`#${PERSISTENT_ID} .ai-agent-input`);
+    expect(input.value).toBe('how do I add a parent');
+    expect(window.location.search).toBe('');
+  });
+
+  it('drops its pending frames when it unmounts before they run', () => {
+    installEmbed();
+    nediDependenciesReady.mockReturnValue(true);
+    const { unmount } = render(<Nedi />);
+
+    unmount();
+    window.history.replaceState(null, '', '/docs/getting-started?q=next%20page');
+    tick(150);
+
+    const parked = document.getElementById(PERSISTENT_ID);
+    expect(window.location.search).toBe('?q=next%20page');
+    expect(parked.querySelector('.ai-agent-input').value).toBe('');
+    expect(parked.style.minHeight).toBe('');
+  });
+
+  it('leaves the input empty when the link carries no question', () => {
+    window.history.replaceState(null, '', '/docs/ask-nedi?q=%20%20&utm_source=docs');
+    installEmbed();
+    nediDependenciesReady.mockReturnValue(true);
+
+    render(<Nedi />);
+    tick(150);
+
+    expect(document.querySelector(`#${PERSISTENT_ID} .ai-agent-input`).value).toBe('');
+    expect(window.location.search).toBe('?q=%20%20&utm_source=docs');
   });
 
   it('sizes the mount and the embed to the remaining viewport', () => {

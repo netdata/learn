@@ -1,3 +1,5 @@
+import contextlib
+import io
 import unittest
 from unittest import mock
 
@@ -138,28 +140,32 @@ class RedirectCleanupTests(unittest.TestCase):
             {"/old": "/docs/current"},
         )
 
-    def test_main_does_not_hide_redirect_conflicts(self):
+    def test_main_reports_conflicting_catalogue_spellings_through_the_gate(self):
+        first = "https://github.com/netdata/netdata/blob/master/docs/first.md"
+        second = "https://github.com/netdata/netdata/blob/master/docs/second.md"
         with (
             mock.patch.object(
                 redirects,
                 "reductTonew_learn_pathFromGHLinksCorrelation",
-                return_value={"https://github.com/netdata/netdata/blob/master/docs/second.md": "/second"},
+                return_value={first: "/first", second: "/second"},
             ),
             mock.patch.object(redirects, "addMovedRedirects", return_value={}),
-            mock.patch.object(redirects, "append_entries_to_json"),
+            mock.patch.object(redirects, "append_entries_to_json") as appended,
             mock.patch.object(
                 redirects,
                 "readLegacyLearnDocMap",
-                return_value={"/old": "https://github.com/netdata/netdata/blob/master/docs/second.md"},
+                return_value={"/old": first, "/old/": second},
             ),
-            mock.patch.object(
-                redirects,
-                "readRedirectsFromFile",
-                return_value={"/old": "/first"},
-            ),
+            mock.patch.object(redirects, "readRedirectsFromFile", return_value={"/old": "/first"}),
+            mock.patch.object(redirects, "write_netlify_config") as written,
+            contextlib.redirect_stdout(io.StringIO()),
         ):
-            with self.assertRaisesRegex(ValueError, "Conflicting redirect identity /old"):
+            with self.assertRaisesRegex(
+                redirects.LegacyRedirectGateError, "another spelling of this route resolves elsewhere"
+            ):
                 redirects.main({})
+        appended.assert_not_called()
+        written.assert_not_called()
 
 if __name__ == "__main__":
     unittest.main()

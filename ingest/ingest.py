@@ -51,6 +51,9 @@ except Exception:
     Image = None
 
 import autogenerateRedirects as genRedirects
+import learn_links
+import llms_files
+import mdx_code
 
 DRY_RUN = False
 DEBUG = False
@@ -2652,48 +2655,41 @@ def _annotate_integration_logo_tags(body):
     return img_pattern.sub(_repl, body)
 
 
-def _escape_mdx_braces(body):
+# MDX import/export statements are JavaScript (ESM uses { for destructuring).
+_MDX_ESM_LINE = re.compile(
+    r"^import\s+.*$|^export\s+(?:default|function|const|let|var|\{).*$", re.MULTILINE
+)
+# A character is already escaped when an odd number of backslashes precedes it.
+_UNESCAPED_BRACE = re.compile(r"(?<!\\)((?:\\\\)*)\{")
+_UNESCAPED_TAG_START = re.compile(r"(?<!\\)((?:\\\\)*)<(?==|->)")
+
+
+def _escape_mdx_prose(text):
+    """Rewrite one stretch of prose so that MDX 3 compiles it; escaped characters stay as they are."""
+    text = text.replace("<details><summary>", "<details>\n<summary>")
+    text = text.replace("<details open><summary>", "<details open>\n<summary>")
+    # MDX reads {word} as an expression, e.g. in metric names like zabbix.{context}.
+    text = _UNESCAPED_BRACE.sub(r"\1\\{", text)
+    # style={{ ... }} is a JSX attribute value and must stay an expression.
+    text = text.replace("style=\\{\\{", "style={{")
+    # MDX reads < as the start of a JSX tag.
+    text = _UNESCAPED_TAG_START.sub(r"\1\\<", text)
+    text = text.replace("%<", r"%\<")
+    # MDX has no autolinks: <url> becomes [url](url).
+    text = re.sub(r"<(https://[^>]+)>", r"[\1](\1)", text)
+    text = re.sub(r"<(http://[^>]+)>", r"[\1](\1)", text)
+    return re.sub(r"<([\w\.-]+@[\w\.-]+\.\w+)>", r"[\1](mailto:\1)", text)
+
+
+def _escape_mdx(body):
+    """Make a page's prose compile as MDX 3 without changing its code.
+
+    MDX renders fenced code blocks and code spans literally, so an escape there would show as a
+    stray backslash; they stay byte for byte, as do MDX import/export lines.
     """
-    Escape bare { outside of fenced code blocks and inline code for MDX 3.
-
-    MDX interprets {word} as a JSX expression, which breaks when the content
-    is plain text from metadata (e.g. metric names like zabbix.{context}).
-
-    This function:
-    - Preserves fenced code blocks (```...```) and inline code (`...`)
-    - Escapes every bare { that isn't already escaped
-    - Restores style={{ which is valid JSX
-    """
-    preserved = []
-
-    def _save(match):
-        preserved.append(match.group(0))
-        return f"\x00MDXBRACE{len(preserved) - 1}\x00"
-
-    # Preserve fenced code blocks — must come before inline code
-    body = re.sub(r"```.*?```", _save, body, flags=re.DOTALL)
-    # Preserve inline code
-    body = re.sub(r"`[^`\n]+`", _save, body)
-    # Preserve MDX import/export statements (ESM syntax uses { for destructuring)
-    body = re.sub(r"^import\s+.*$", _save, body, flags=re.MULTILINE)
-    body = re.sub(
-        r"^export\s+(?:default|function|const|let|var|\{).*$",
-        _save,
-        body,
-        flags=re.MULTILINE,
-    )
-
-    # Escape every bare { not already preceded by a backslash
-    body = re.sub(r"(?<!\\)\{", r"\\{", body)
-
-    # Restore style={{ which is valid JSX (the above turns it into style=\{\{)
-    body = body.replace("style=\\{\\{", "style={{")
-
-    # Restore preserved code sections
-    for i, original in enumerate(preserved):
-        body = body.replace(f"\x00MDXBRACE{i}\x00", original)
-
-    return body
+    protected = mdx_code.code_ranges(body)
+    protected += [match.span() for match in _MDX_ESM_LINE.finditer(body)]
+    return mdx_code.transform_outside(body, protected, _escape_mdx_prose)
 
 
 def sanitize_page(path):
@@ -2717,20 +2713,10 @@ def sanitize_page(path):
     body = body.replace("<!--unhideme", "")
     body = body.replace("unhideme-->", "")
 
-    # MDX 3 compatibility replacements
-    body = body.replace("<details><summary>", "<details>\n<summary>")
-    body = body.replace("<details open><summary>", "<details open>\n<summary>")
-    body = _escape_mdx_braces(body)
+    # MDX 3 compatibility rewrites, applied to prose only
+    body = _escape_mdx(body)
     if INTEGRATION_MARKER in body:
         body = _annotate_integration_logo_tags(body)
-    body = body.replace("<=", r"\<=")
-    body = body.replace("%<", r"%\<")
-    body = body.replace("<->", r"\<->")
-
-    # <url> into [url](url)
-    body = re.sub(r"<(https://[^>]+)>", r"[\1](\1)", body)
-    body = re.sub(r"<(http://[^>]+)>", r"[\1](\1)", body)
-    body = re.sub(r"<([\w\.-]+@[\w\.-]+\.\w+)>", r"[\1](mailto:\1)", body)
 
     match_group = re.search(r'meta_yaml: "(.*)"', body)
     if match_group:
@@ -3589,8 +3575,22 @@ def get_dir_make_file_and_recurse(
             )
 
 
+def write_llms_files(docs_root, output_dir):
+    """Write llms.txt and llms-full.txt; keep the previous files if the source page is missing."""
+    built = llms_files.build_llms_files(docs_root, read_text=_read_regular_text)
+    if built is None:
+        print(
+            "WARNING: The Complete Product Description page was not ingested; "
+            f"{output_dir}/llms.txt and {output_dir}/llms-full.txt were left unchanged."
+        )
+        return
+    index, full = built
+    _atomic_write_text(os.path.join(output_dir, "llms.txt"), index)
+    _atomic_write_text(os.path.join(output_dir, "llms-full.txt"), full)
+
+
 def reconcile_generated_outputs(
-    docs_root, netlify_path="netlify.toml", static_path="static.toml"
+    docs_root, netlify_path="netlify.toml", static_path="static.toml", llms_output_dir=None
 ):
     """Run the shared generated-output reconciliation and finalization path."""
     docs_root = _validate_docs_tree(docs_root)
@@ -3616,12 +3616,16 @@ def reconcile_generated_outputs(
             redirects, output_path=netlify_path, static_path=static_path
         )
 
+    if llms_output_dir is not None:
+        write_llms_files(docs_root, llms_output_dir)
+
 
 def regenerate_grids_only(
     docs_root,
     state_path=SIDEBAR_ORDER_STATE_PATH,
     netlify_path="netlify.toml",
     static_path="static.toml",
+    llms_output_dir=None,
 ):
     """Recover generated outputs from a validated full-ingest identity."""
     sidebar_order = load_sidebar_order_state(state_path, docs_root=docs_root)
@@ -3630,7 +3634,10 @@ def regenerate_grids_only(
     MAP_DOC_SCOPE.clear()
 
     reconcile_generated_outputs(
-        docs_root, netlify_path=netlify_path, static_path=static_path
+        docs_root,
+        netlify_path=netlify_path,
+        static_path=static_path,
+        llms_output_dir=llms_output_dir,
     )
 
 
@@ -3911,11 +3918,21 @@ if __name__ == "__main__":
     USE_PLAIN_HTTPS = USE_PLAIN_HTTPS or IGNORE_ON_PREM_REPO
 
     if args.regenerate_grids_only:
-        regenerate_grids_only(DOCS_PREFIX)
+        regenerate_grids_only(DOCS_PREFIX, llms_output_dir="static")
         raise SystemExit(0)
 
     # Clean up old clones into a temp dir
     unsafe_cleanup_folders(TEMP_FOLDER)
+    # Pages of a skipped repository disappear with the cleanup below; keep their routes and
+    # anchors so links to them are not reported as broken.
+    preserved_learn_pages = {}
+    if IGNORE_ON_PREM_REPO:
+        preserved_learn_pages = learn_links.snapshot_pages(
+            DOCS_PREFIX,
+            lambda front_matter: "/netdata-cloud-onprem/"
+            in str(front_matter.get("custom_edit_url") or ""),
+            read_text=_read_regular_text,
+        )
     # Clean up old ingested docs
     safe_cleanup_learn_folders(DOCS_PREFIX)
     print("Creating a temp directory: ", TEMP_FOLDER)
@@ -4222,9 +4239,34 @@ if __name__ == "__main__":
 
     unsafe_cleanup_folders(TEMP_FOLDER)
 
-    reconcile_generated_outputs(DOCS_PREFIX)
+    reconcile_generated_outputs(DOCS_PREFIX, llms_output_dir="static")
     write_sidebar_order_state(map_sidebar_order, "map.yaml", DOCS_PREFIX)
     os.remove("map.yaml")
+
+    # Absolute learn.netdata.cloud links bypass the conversion checks above; check them against
+    # the final pages, redirects and static files.
+    broken_learn_links = learn_links.find_broken_learn_links(
+        DOCS_PREFIX,
+        "netlify.toml",
+        "static",
+        preserved_pages=preserved_learn_pages,
+        read_text=_read_regular_text,
+    )
+    if broken_learn_links:
+        print(learn_links.format_report(broken_learn_links))
+        failing_repos = sorted(
+            {
+                link.repository
+                for link in broken_learn_links
+                if FAIL_ON_ALL_BROKEN_LINKS or link.repository in FAIL_ON_REPOS
+            }
+        )
+        if failing_repos:
+            SHOULD_EXIT_WITH_FAILURE = True
+            print(
+                "\n### BROKEN learn.netdata.cloud LINKS DETECTED in repos: "
+                f"{', '.join(failing_repos)} ###"
+            )
     if MERMAID_CONTRAST_SUMMARY["scanned"] > 0:
         print("\n### Mermaid diagram contrast analysis ###")
         print(f"Scanned color pairs: {MERMAID_CONTRAST_SUMMARY['scanned']}")

@@ -204,6 +204,19 @@ class LegacyRedirectGateBranchTests(unittest.TestCase):
         self.assertIn("not a published page: /docs/vanished", result["failed"][0]["detail"])
         self.assertIn("different source", result["failed"][0]["detail"])
 
+    def test_spellings_of_one_route_must_resolve_to_the_same_page(self):
+        fixture = self.fixture()
+        same = fixture.gate({"/docs/old": "/docs/a", "/docs/old/": "/docs/a/"}, {"/docs/a"})
+        self.assertEqual(same["resolved"], {"/docs/old": "/docs/a", "/docs/old/": "/docs/a/"})
+        self.assertEqual(same["failed"], [])
+        split = fixture.gate({"/docs/old": "/docs/a", "/docs/old/": "/docs/b"}, {"/docs/a", "/docs/b"})
+        self.assertEqual(split["resolved"], {})
+        self.assertEqual([entry["route"] for entry in split["failed"]], ["/docs/old", "/docs/old/"])
+        self.assertIn(
+            "resolves to /docs/a, but another spelling of this route resolves elsewhere: /docs/old/ -> /docs/b",
+            split["failed"][0]["detail"],
+        )
+
     def test_incomplete_retirement_entries_are_rejected(self):
         for missing_field in redirects.RETIREMENT_FIELDS:
             entry = {field: value for field, value in RETIREMENT.items() if field != missing_field}
@@ -268,6 +281,33 @@ class LegacyRedirectGateMainTests(unittest.TestCase):
         self.assertNotIn("STALE", output)
         written = redirects.readRedirectsFromFile(str(self.fixture.netlify_path))
         self.assertEqual(written, {"/docs/old/dcstat": "/docs/current/dcstat"})
+
+    def test_moved_page_takes_its_tracked_catalogue_redirects_along(self):
+        # An earlier ingest published the catalogue source at /docs/first and wrote
+        # /docs/old -> /docs/first. The page moves to /docs/second: the tracked redirect follows it
+        # and the old location joins the catalogue, instead of the merge failing on the tracked rule.
+        tracked = (
+            rule("/docs/before", "/docs/kept")
+            + rule("/docs/old", "/docs/first")
+            + rule("/docs/after", "/docs/kept")
+        )
+        self.fixture.netlify_path.write_text(NETLIFY_TEMPLATE.format(rules=tracked), encoding="utf-8")
+        source = GH + "docs/page.md"
+        moved = {"https://learn.netdata.cloud/docs/first": source}
+        result, _ = self.run_main({source: "/docs/second"}, {"/docs/old": source}, moved=moved)
+        self.assertEqual(result["failed"], [])
+        self.appended.assert_called_once_with(moved)
+        written = redirects.readRedirectsFromFile(str(self.fixture.netlify_path))
+        # The tracked rule changes in place, so the order of the other rules is kept.
+        self.assertEqual(
+            list(written.items()),
+            [
+                ("/docs/before", "/docs/kept"),
+                ("/docs/old", "/docs/second"),
+                ("/docs/after", "/docs/kept"),
+                ("/docs/first", "/docs/second"),
+            ],
+        )
 
     def test_unresolved_entry_fails_and_leaves_the_tracked_configuration_untouched(self):
         before = self.fixture.netlify_path.read_text(encoding="utf-8")
@@ -409,6 +449,41 @@ class RepositoryCatalogueTests(unittest.TestCase):
         )
         for route in routes | {published_route}:
             self.assertEqual(merged[route], prometheus_route)
+
+    def test_next_ingest_moving_a_catalogue_page_keeps_every_route_on_it(self):
+        # Fifteen catalogue routes and the tracked redirects reach the libsensors page. Simulate the
+        # next ingest publishing it under a new route: every route must follow the page.
+        source = GH + "src/collectors/debugfs.plugin/integrations/linux_hardware_sensors_libsensors.md"
+        old_route = self.mapping[source]
+        new_route = old_route.rsplit("/", 1)[0] + "/libsensors"
+        mapping = {
+            url: (new_route if route == old_route else route) for url, route in self.mapping.items()
+        }
+        routes = [route for route, value in self.catalogue.items() if value == source]
+        self.assertEqual(len(routes), 15)
+        moved = {"https://learn.netdata.cloud" + old_route: source}
+        with tempfile.TemporaryDirectory() as directory:
+            netlify_path = pathlib.Path(directory) / "netlify.toml"
+            netlify_path.write_text((REPO_ROOT / "netlify.toml").read_text(encoding="utf-8"), encoding="utf-8")
+            with (
+                mock.patch.object(redirects, "reductTonew_learn_pathFromGHLinksCorrelation", return_value=mapping),
+                mock.patch.object(redirects, "addMovedRedirects", return_value=moved),
+                mock.patch.object(redirects, "append_entries_to_json") as appended,
+                mock.patch.object(redirects, "readLegacyLearnDocMap", return_value=dict(self.catalogue)),
+                contextlib.redirect_stdout(io.StringIO()),
+            ):
+                result = redirects.main(
+                    {},
+                    netlify_path=str(netlify_path),
+                    static_path=str(REPO_ROOT / "static.toml"),
+                    policy_path=str(REPO_ROOT / "config/redirect-policy.json"),
+                )
+            written = redirects.readRedirectsFromFile(str(netlify_path))
+        self.assertEqual(result["failed"], [])
+        appended.assert_called_once_with(moved)
+        for route in routes + [old_route]:
+            self.assertEqual(written.get(route), new_route, route)
+        self.assertNotIn(new_route, written)
 
     def test_policy_retirements_are_complete_and_match_the_catalogue(self):
         retirements = self.policy["legacy_catalogue_retirements"]

@@ -8,6 +8,8 @@ import {
   noindexResponseHeaders,
   sitemapRobotsViolations,
   verifyRenderedIndexability,
+  wildcardRobotsAllows,
+  wildcardRobotsRules,
 } from '../../scripts/verify-rendered-indexability';
 
 const roots = [];
@@ -109,6 +111,26 @@ describe('rendered indexability verifier', () => {
       '<urlset><url><loc>https://learn.netdata.cloud/docs/public</loc></url></urlset>',
       robots,
     )).toEqual([]);
+  });
+
+  it('blocks every Ask Nedi question link while the bare page stays crawlable', () => {
+    const rules = wildcardRobotsRules(
+      fs.readFileSync(path.resolve(import.meta.dirname, '../../static/robots.txt'), 'utf8'),
+    );
+    for (const allowed of ['/', '/?utm_source=docs', '/docs/ask-nedi', '/docs/getting-started']) {
+      expect(wildcardRobotsAllows(allowed, rules), allowed).toBe(true);
+    }
+    for (const blocked of [
+      '/docs/ask-nedi?q=disk',
+      '/docs/ask-nedi/',
+      '/docs/ask-nedi/question',
+      '/?q=disk',
+      '/?question=disk',
+      '/?utm_source=docs&q=disk',
+      '/?utm_source=docs&question=disk',
+    ]) {
+      expect(wildcardRobotsAllows(blocked, rules), blocked).toBe(false);
+    }
   });
 
   it('uses the complete rule-path length for wildcard precedence', () => {

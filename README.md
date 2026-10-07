@@ -409,16 +409,18 @@ If there are questions about deployment, please create an issue.
 Before the generated redirects are written, every catalogue entry passes the legacy redirect
 catalogue gate in `ingest/autogenerateRedirects.py`:
 
-1. The source resolves to a published page: its current redirect is generated.
+1. The source resolves to a published page: its current redirect is generated and replaces the
+   tracked redirect for the same route, so the redirect follows the page when it moves.
 2. The source does not resolve, but a `static.toml` rule or a tracked redirect to a published
    page already covers the route: that redirect is kept and the stale entry is reported on stdout.
 3. The source does not resolve and `config/redirect-policy.json` records a reviewed retirement
    for exactly that route and source under `legacy_catalogue_retirements`: accepted, no redirect.
 4. Anything else, including a catalogue value that is neither a GitHub source URL nor a
-   published Learn route, fails the ingest (exit code 3 from `ingest/ingest.py`) with the
-   historical URL and the offending value, before the catalogue, `netlify.toml`, or the ingest
-   mapping state are written. This runs in the scheduled ingest and in the Agent repository's
-   documentation check, which ingests with `--local-repo`.
+   published Learn route, or two spellings of one route that resolve to different pages, fails
+   the ingest (exit code 3 from `ingest/ingest.py`) with the historical URL and the offending
+   value, before the catalogue, `netlify.toml`, or the ingest mapping state are written. This
+   runs in the scheduled ingest and in the Agent repository's documentation check, which
+   ingests with `--local-repo`.
 
 Unresolved catalogue entries are never dropped silently; a failing gate must be fixed by a
 catalogue migration in this repository, never by weakening the gate:
