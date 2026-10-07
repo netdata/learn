@@ -81,7 +81,7 @@
 
 [[redirects]]
   from="/docs/agent/collectors/python.d.plugin/anomalies"
-  to="/docs/collecting-metrics"
+  to="/docs/netdata-ai/anomaly-detection"
 
 [[redirects]]
   from="/docs/agent/collectors/proc.plugin"
@@ -447,7 +447,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/application-metrics"
-  to="/docs/collecting-metrics/collectors/operating-systems/applications"
+  to="/docs/welcome-to-netdata/monitor-anything"
 
 [[redirects]]
   from="/docs/collecting-metrics/applications"
@@ -567,7 +567,7 @@
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/nvml"
-  to="/docs/collecting-metrics/collectors/applications/prometheus-endpoint"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-gpu"
 
 [[redirects]]
   from="/docs/collecting-metrics/hardware-devices-and-sensors/s.m.a.r.t"
@@ -859,7 +859,7 @@
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system%20metrics/application-monitoring"
-  to="/docs/developer-and-contributor-corner/external-plugins"
+  to="/docs/collecting-metrics/collectors/operating-systems/applications"
 
 [[redirects]]
   from="/docs/data-collection/monitor-anything/system%20metrics/windows-machines"
@@ -1104,4 +1104,208 @@
 [[redirects]]
   from="/guides/troubleshoot/troubleshooting-agent-with-cloud-connection"
   to="/docs/netdata-cloud/connect-agent"
+
+# Corrected generated redirects (2026-10-07): these dead pages went to an unrelated or generic page
+# although a page with their content, or a native page for the same product, exists. Each rule
+# overrides the generated rule with the same source.
+
+[[redirects]]
+  from="/docs/agent/collectors/apps.plugin"
+  to="/docs/collecting-metrics/collectors/operating-systems/applications"
+
+[[redirects]]
+  from="/docs/agent/collectors/freebsd.plugin"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/methods/packages"
+  to="/docs/netdata-agent/installation/linux/native-linux-distribution-packages"
+
+[[redirects]]
+  from="/docs/agent/streaming"
+  to="/docs/netdata-parents/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/docs/collect/application-metrics"
+  to="/docs/welcome-to-netdata/monitor-anything"
+
+[[redirects]]
+  from="/docs/collecting-metrics/storage%20-mount-points-and-filesystems/dell-emc-isilon-cluster"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/isilon"
+
+[[redirects]]
+  from="/docs/data-collection/application-metrics"
+  to="/docs/welcome-to-netdata/monitor-anything"
+
+[[redirects]]
+  from="/docs/data-collection/authentication-and-authorization/openldap-community"
+  to="/docs/collecting-metrics/collectors/applications/openldap"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/aws-ecs"
+  to="/docs/collecting-metrics/collectors/containers-and-vms/aws-ecs-containers"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/aws-instance-health"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops/amazon-cloudwatch"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/aws-s3-buckets"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops/amazon-cloudwatch"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/aws-sqs"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops/amazon-cloudwatch"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/azure-application"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops/azure-monitor"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/azure-elastic-pool-sql"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops/azure-sql-elastic-pool"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/azure-resources"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops/azure-monitor"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/azure-service-bus"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops/azure-service-bus-namespace"
+
+[[redirects]]
+  from="/docs/data-collection/cloud-provider-managed/azure-sql"
+  to="/docs/collecting-metrics/collectors/cloud-and-devops/azure-sql-database"
+
+[[redirects]]
+  from="/docs/data-collection/databases/memcached-community"
+  to="/docs/collecting-metrics/collectors/databases/memcached"
+
+[[redirects]]
+  from="/docs/data-collection/databases/oracle-db-community"
+  to="/docs/collecting-metrics/collectors/databases/oracle-db"
+
+[[redirects]]
+  from="/docs/data-collection/generic-data-collection/generic-command-line-output"
+  to="/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts"
+
+[[redirects]]
+  from="/docs/data-collection/generic-data-collection/shell-command"
+  to="/docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/ipmi-by-soundcloud"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors/intelligent-platform-management-interface-ipmi"
+
+[[redirects]]
+  from="/docs/data-collection/hardware-devices-and-sensors/nvml"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors/nvidia-gpu"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Any%20Application%20-%20Generic%20Collectors/Anomalies"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/Application-monitoring"
+  to="/docs/collecting-metrics/collectors/operating-systems/applications"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/FreeBSD-system-metrics-freebsd.plugin"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/System%20Metrics/OS-provided-metrics-proc.plugin"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/Virtualized%20Environments/Containers-and-VMs-cgroups"
+  to="/docs/collecting-metrics/containers-and-cgroups"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/any-application---generic-collectors/anomalies"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/application-monitoring"
+  to="/docs/collecting-metrics/collectors/operating-systems/applications"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/freebsd-system-metrics-freebsd.plugin"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/system-metrics/os-provided-metrics-proc.plugin"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/monitor-anything/virtualized-environments/containers-and-vms-cgroups"
+  to="/docs/collecting-metrics/containers-and-cgroups"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/a10-acos-network-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/a10-thunder"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/aruba-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/aruba"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/checkpoint-device"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/checkpoint"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/fortigate-firewall"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/fortinet-fortigate"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/meraki-dashboard"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/cisco-meraki-cloud-controller"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/mikrotik-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/mikrotik-router"
+
+[[redirects]]
+  from="/docs/data-collection/networking-stack-and-network-interfaces/mikrotik-routeros-devices"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/mikrotik-router"
+
+[[redirects]]
+  from="/docs/data-collection/security-systems/ssl-certificate"
+  to="/docs/collecting-metrics/collectors/synthetic-testing/x.509-certificate"
+
+[[redirects]]
+  from="/docs/data-collection/storage%20-mount-points-and-filesystems/lagerist-disk-latency"
+  to="/docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-disk"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/dell-emc-isilon-cluster"
+  to="/docs/network-performance-monitoring/device-metrics/integrations/isilon"
+
+[[redirects]]
+  from="/docs/data-collection/storage,-mount-points-and-filesystems/lagerist-disk-latency"
+  to="/docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-disk"
+
+[[redirects]]
+  from="/docs/data-collection/system-metrics"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/data-collection/windows-systems/hyperv"
+  to="/docs/collecting-metrics/collectors/containers-and-vms/hyper-v"
+
+[[redirects]]
+  from="/docs/deployment-in-production/streaming-and-replication/streaming-configuration-reference"
+  to="/docs/netdata-parents/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/docs/metrics-storage-management/reference-streaming"
+  to="/docs/netdata-parents/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/docs/metrics-streaming-and-replication/streaming-configuration-reference"
+  to="/docs/netdata-parents/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/docs/streaming/streaming-configuration-reference"
+  to="/docs/netdata-parents/parent-child-configuration-reference"
 # section: static << END
