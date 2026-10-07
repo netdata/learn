@@ -51,6 +51,7 @@ except Exception:
     Image = None
 
 import autogenerateRedirects as genRedirects
+import learn_links
 
 DRY_RUN = False
 DEBUG = False
@@ -3916,6 +3917,16 @@ if __name__ == "__main__":
 
     # Clean up old clones into a temp dir
     unsafe_cleanup_folders(TEMP_FOLDER)
+    # Pages of a skipped repository disappear with the cleanup below; keep their routes and
+    # anchors so links to them are not reported as broken.
+    preserved_learn_pages = {}
+    if IGNORE_ON_PREM_REPO:
+        preserved_learn_pages = learn_links.snapshot_pages(
+            DOCS_PREFIX,
+            lambda front_matter: "/netdata-cloud-onprem/"
+            in str(front_matter.get("custom_edit_url") or ""),
+            read_text=_read_regular_text,
+        )
     # Clean up old ingested docs
     safe_cleanup_learn_folders(DOCS_PREFIX)
     print("Creating a temp directory: ", TEMP_FOLDER)
@@ -4225,6 +4236,31 @@ if __name__ == "__main__":
     reconcile_generated_outputs(DOCS_PREFIX)
     write_sidebar_order_state(map_sidebar_order, "map.yaml", DOCS_PREFIX)
     os.remove("map.yaml")
+
+    # Absolute learn.netdata.cloud links bypass the conversion checks above; check them against
+    # the final pages, redirects and static files.
+    broken_learn_links = learn_links.find_broken_learn_links(
+        DOCS_PREFIX,
+        "netlify.toml",
+        "static",
+        preserved_pages=preserved_learn_pages,
+        read_text=_read_regular_text,
+    )
+    if broken_learn_links:
+        print(learn_links.format_report(broken_learn_links))
+        failing_repos = sorted(
+            {
+                link.repository
+                for link in broken_learn_links
+                if FAIL_ON_ALL_BROKEN_LINKS or link.repository in FAIL_ON_REPOS
+            }
+        )
+        if failing_repos:
+            SHOULD_EXIT_WITH_FAILURE = True
+            print(
+                "\n### BROKEN learn.netdata.cloud LINKS DETECTED in repos: "
+                f"{', '.join(failing_repos)} ###"
+            )
     if MERMAID_CONTRAST_SUMMARY["scanned"] > 0:
         print("\n### Mermaid diagram contrast analysis ###")
         print(f"Scanned color pairs: {MERMAID_CONTRAST_SUMMARY['scanned']}")
