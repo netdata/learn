@@ -398,7 +398,7 @@ returning until they idle out.
 
 #### A rule with `>` or `<` aborts the rule list
 
-Comparing a string-typed identifier with `>` / `<` / `>=` / `\<=` raises
+Comparing a string-typed identifier with `>` / `<` / `>=` / `<=` raises
 a runtime error, and the loop breaks out for that record. Subsequent rules in
 the list are skipped for that record. Use `matches`, `startsWith`,
 `endsWith`, `contains`, or `==` / `!=` on string fields. Keep `>` / `<`

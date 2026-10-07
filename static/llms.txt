@@ -1,0 +1,449 @@
+# Netdata
+
+> Netdata is a distributed, real-time observability platform for metrics, logs and traces. Netdata Agents collect, store and analyze data where it is generated — per second, with machine learning anomaly detection on every metric — and Netdata Parents and Netdata Cloud combine them into one view, without centralizing the data.
+
+This index lists the Netdata documentation on learn.netdata.cloud in sidebar order. The Complete Product Description describes everything Netdata does in one file, with links to the pages below.
+
+## Complete Product Description
+
+- [Complete Product Description](https://learn.netdata.cloud/llms-full.txt): Everything Netdata does in one reference, from architecture, infrastructure, network, databases, logs and OpenTelemetry to cloud, edge, AI, alerting and pricing, with links to the documentation.
+- [Complete Product Description web page](https://learn.netdata.cloud/docs/welcome-to-netdata/complete-product-description)
+
+## Welcome to Netdata
+
+- [Welcome to Netdata](https://learn.netdata.cloud/docs/welcome-to-netdata)
+- [Enterprise Evaluation Guide](https://learn.netdata.cloud/docs/welcome-to-netdata/enterprise-evaluation-guide): Evaluate Netdata architecture, deployment models, infrastructure requirements, security, integrations, and operational capabilities.
+- [Real-time Monitoring](https://learn.netdata.cloud/docs/welcome-to-netdata/real-time-monitoring): Learn how Netdata delivers one-second collection and sub-two-second visibility without sacrificing fidelity as infrastructure scales.
+- [Scalability](https://learn.netdata.cloud/docs/welcome-to-netdata/scalability): See how Netdata scales from one node to large infrastructures with distributed processing, per-second metrics, and horizontal Parent clusters.
+- [Monitor Anything](https://learn.netdata.cloud/docs/welcome-to-netdata/monitor-anything): Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box.
+- [Fleet Deployment and Configuration Management](https://learn.netdata.cloud/docs/welcome-to-netdata/fleet-deployment-and-configuration-management)
+- [Reporting](https://learn.netdata.cloud/docs/welcome-to-netdata/reporting): Extract infrastructure insights for stakeholders and BI tools using AI Insights, AI assistants (MCP), Grafana, or data export to Power BI, Tableau, and other analytics platforms.
+
+## Getting Started
+
+- [Getting Started](https://learn.netdata.cloud/docs/getting-started)
+
+## Live Demo
+
+- [Live Demo](https://learn.netdata.cloud/docs/live-demo)
+
+## Netdata Agent
+
+- [Netdata Agent](https://learn.netdata.cloud/docs/netdata-agent)
+- [Versions & Platforms](https://learn.netdata.cloud/docs/netdata-agent/versions-&-platforms): Present all the supported platform in the Netdata solution
+- [Quickstart Deployment](https://learn.netdata.cloud/docs/netdata-agent/quickstart-deployment)
+- [Installation](https://learn.netdata.cloud/docs/netdata-agent/installation)
+- [Installation › Linux](https://learn.netdata.cloud/docs/netdata-agent/installation/linux): The kickstart.sh script installs Netdata from source, including all dependencies required to connect to Netdata Cloud, with a single command.
+- [Installation › Linux › Native Linux Distribution packages](https://learn.netdata.cloud/docs/netdata-agent/installation/linux/native-linux-distribution-packages): Instructions for how to install Netdata using native DEB or RPM packages.
+- [Installation › Linux › Static binary Linux Packages](https://learn.netdata.cloud/docs/netdata-agent/installation/linux/static-binary-linux-packages): Users can build the static 64-bit binary package that we ship with every release of the open-source Netdata Agent for debugging or specialize purposes.
+- [Installation › Linux › Switch Install Types and Release Channels](https://learn.netdata.cloud/docs/netdata-agent/installation/linux/switch-install-types-and-release-channels)
+- [Installation › Linux › Offline systems](https://learn.netdata.cloud/docs/netdata-agent/installation/linux/offline-systems): Install the Netdata Agent on offline/air gapped systems to benefit from real-time, per-second monitoring without connecting to the internet.
+- [Installation › Windows](https://learn.netdata.cloud/docs/netdata-agent/installation/windows)
+- [Installation › Windows › Switching Install Types and Release Channels](https://learn.netdata.cloud/docs/netdata-agent/installation/windows/switching-install-types-and-release-channels): Guide to choosing and switching between different Netdata Windows installation methods and release channels
+- [Installation › Docker](https://learn.netdata.cloud/docs/netdata-agent/installation/docker)
+- [Installation › Kubernetes](https://learn.netdata.cloud/docs/netdata-agent/installation/kubernetes): Deploy Netdata to monitor a Kubernetes cluster to monitor the health, performance, resource utilization, and application metrics of a Kubernetes cluster in real time.
+- [Installation › Kubernetes Helm chart reference](https://learn.netdata.cloud/docs/netdata-agent/installation/kubernetes-helm-chart-reference)
+- [Installation › macOS](https://learn.netdata.cloud/docs/netdata-agent/installation/macos)
+- [Installation › FreeBSD](https://learn.netdata.cloud/docs/netdata-agent/installation/freebsd): Install Netdata on FreeBSD to monitor the health and performance of bare metal or VMs with thousands of real-time, per-second metrics.
+- [Installation › pfSense](https://learn.netdata.cloud/docs/netdata-agent/installation/pfsense): Install Netdata on pfSense to monitor the health and performance of firewalls with thousands of real-time, per-second metrics.
+- [Installation › Synology](https://learn.netdata.cloud/docs/netdata-agent/installation/synology): The Netdata Agent can be installed on AMD64-compatible NAS systems using the 64-bit pre-compiled static binary.
+- [Installation › Ansible](https://learn.netdata.cloud/docs/netdata-agent/installation/ansible): Deploy an infrastructure monitoring solution in minutes with the Netdata Agent and Ansible. Use and customize a simple playbook for monitoring as code.
+- [Installation › AWS](https://learn.netdata.cloud/docs/netdata-agent/installation/aws): Install Netdata on AWS instances or EKS, then configure network access and cloud-specific monitoring integrations.
+- [Installation › Azure](https://learn.netdata.cloud/docs/netdata-agent/installation/azure): Install Netdata on Azure virtual machines, then configure network access and Azure-specific monitoring integrations.
+- [Installation › GCP](https://learn.netdata.cloud/docs/netdata-agent/installation/gcp): Install Netdata on Google Cloud instances, then configure VPC access and Google Cloud monitoring integrations.
+- [Maintenance](https://learn.netdata.cloud/docs/netdata-agent/maintenance)
+- [Maintenance › Service Control](https://learn.netdata.cloud/docs/netdata-agent/maintenance/service-control): Manage the Netdata Agent daemon, load configuration changes, and troubleshoot stuck processes on systemd and non-systemd nodes.
+- [Maintenance › Update](https://learn.netdata.cloud/docs/netdata-agent/maintenance/update): If you opted out of automatic updates, you need to update your Netdata Agent to the latest nightly or stable version.
+- [Maintenance › Uninstall](https://learn.netdata.cloud/docs/netdata-agent/maintenance/uninstall): If you are no longer interested in using the Netdata Agent, use the self-contained uninstaller to remove all traces of binaries and configuration files.
+- [Maintenance › Backup and restore an Agent](https://learn.netdata.cloud/docs/netdata-agent/maintenance/backup-and-restore-an-agent): What actions you need to do to backup and Agent and restore it.
+- [Resource Utilization](https://learn.netdata.cloud/docs/netdata-agent/resource-utilization)
+- [Resource Utilization › CPU](https://learn.netdata.cloud/docs/netdata-agent/resource-utilization/cpu)
+- [Resource Utilization › RAM](https://learn.netdata.cloud/docs/netdata-agent/resource-utilization/ram)
+- [Resource Utilization › Bandwidth](https://learn.netdata.cloud/docs/netdata-agent/resource-utilization/bandwidth)
+- [Resource Utilization › Disk & Retention](https://learn.netdata.cloud/docs/netdata-agent/resource-utilization/disk-&-retention)
+- [Resource Utilization › Extreme Cardinality Protection](https://learn.netdata.cloud/docs/netdata-agent/resource-utilization/extreme-cardinality-protection): How Netdata limits long-term resource use from short-lived chart instances, and how metadata cleanup affects disk space.
+- [Resource Utilization › Impact on Cloud VMs](https://learn.netdata.cloud/docs/netdata-agent/resource-utilization/impact-on-cloud-vms): Recommended VM sizing and the resource impact of running Netdata on cloud VMs (AWS, Azure, GCP).
+- [Configuration](https://learn.netdata.cloud/docs/netdata-agent/configuration): Netdata is zero-configuration for most users, but complex infrastructures may require you to tweak some of the Agent's granular settings.
+- [Configuration › Dynamic Configuration Manager](https://learn.netdata.cloud/docs/netdata-agent/configuration/dynamic-configuration-manager): Create, test, deploy, enable, and disable collector and alert configurations across nodes from the Netdata UI.
+- [Configuration › Daemon](https://learn.netdata.cloud/docs/netdata-agent/configuration/daemon): The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
+- [Configuration › Database](https://learn.netdata.cloud/docs/netdata-agent/configuration/database): With a single configuration change, the Netdata Agent can store days, weeks, or months of metrics at its famous per-second granularity.
+- [Configuration › Registry](https://learn.netdata.cloud/docs/netdata-agent/configuration/registry): Configure a private Netdata Registry, access controls, retention, cookies, and Agent settings for cross-server dashboards.
+- [Configuration › Securing Agents](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents): Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
+- [Configuration › Securing Agents › Web Server Reference](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/web-server-reference): The Netdata Agent's local static-threaded web server serves dashboards and real-time visualizations with security and DDoS protection.
+- [Configuration › Securing Agents › Bearer Token Protection](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/bearer-token-protection)
+- [Configuration › Securing Agents › Configure Netdata for cybersecurity platforms](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/configure-netdata-for-cybersecurity-platforms): Configure Netdata behind cybersecurity platforms such as Sophos, reverse proxies, firewalls, and secure-access gateways.
+- [Configuration › Securing Agents › Running the Agent behind a reverse proxy](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy)
+- [Configuration › Securing Agents › Running the Agent behind a reverse proxy › Nginx](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/nginx)
+- [Configuration › Securing Agents › Running the Agent behind a reverse proxy › HAProxy](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/haproxy)
+- [Configuration › Securing Agents › Running the Agent behind a reverse proxy › Apache](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/apache)
+- [Configuration › Securing Agents › Running the Agent behind a reverse proxy › Lighttpd v1.4.x](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/lighttpd-v1.4.x)
+- [Configuration › Securing Agents › Running the Agent behind a reverse proxy › Caddy](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/caddy)
+- [Configuration › Securing Agents › Running the Agent behind a reverse proxy › H2O](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy/h2o)
+- [Configuration › Performance Optimization](https://learn.netdata.cloud/docs/netdata-agent/configuration/performance-optimization): While the Netdata Agent is designed to monitor a system with only 1% CPU, you can optimize its performance for low-resource systems.
+- [Configuration › Organize systems, metrics, and alerts](https://learn.netdata.cloud/docs/netdata-agent/configuration/organize-systems-metrics-and-alerts)
+- [Configuration › Using custom CA certificates with Netdata](https://learn.netdata.cloud/docs/netdata-agent/configuration/using-custom-ca-certificates-with-netdata)
+- [Daemon](https://learn.netdata.cloud/docs/netdata-agent/daemon)
+- [Database](https://learn.netdata.cloud/docs/netdata-agent/database)
+- [Logging](https://learn.netdata.cloud/docs/netdata-agent/logging)
+- [Registry](https://learn.netdata.cloud/docs/netdata-agent/registry): Understand how the Netdata Registry links browsers, Agents, URLs, and accounts to support unified cross-Agent dashboards.
+- [Agent CLI](https://learn.netdata.cloud/docs/netdata-agent/agent-cli): The Netdata Agent includes a command-line experience for reloading health configuration, reopening log files, halting the daemon, and more.
+- [Node Identities](https://learn.netdata.cloud/docs/netdata-agent/node-identities): Understanding how Netdata identifies nodes across Agents Parents and Cloud
+- [VM Templates](https://learn.netdata.cloud/docs/netdata-agent/vm-templates): Prepare VM templates so each clone gets a unique Netdata identity
+- [Anonymous telemetry events](https://learn.netdata.cloud/docs/netdata-agent/anonymous-telemetry-events)
+
+## Netdata Parents
+
+- [Netdata Parents](https://learn.netdata.cloud/docs/netdata-parents)
+- [Parent Configuration Best Practices](https://learn.netdata.cloud/docs/netdata-parents/parent-configuration-best-practices)
+- [Parent-Child Configuration Reference](https://learn.netdata.cloud/docs/netdata-parents/parent-child-configuration-reference): Configure real-time metric streaming and historical replication between Netdata Children and Parents.
+- [Configuration Examples](https://learn.netdata.cloud/docs/netdata-parents/configuration-examples)
+- [Streaming Routing Reference](https://learn.netdata.cloud/docs/netdata-parents/streaming-routing-reference)
+- [Node Types and Lifecycle Reference](https://learn.netdata.cloud/docs/netdata-parents/node-types-and-lifecycle-reference)
+- [Metrics Centralization Points](https://learn.netdata.cloud/docs/netdata-parents/metrics-centralization-points)
+- [Metrics Centralization Points › Configuring Metrics Centralization Points](https://learn.netdata.cloud/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points): Configure stream.conf for Netdata Children and Parents, including API keys, TLS encryption, routing, and troubleshooting.
+- [Metrics Centralization Points › Clustering and High Availability of Netdata Parents](https://learn.netdata.cloud/docs/netdata-parents/metrics-centralization-points/clustering-and-high-availability-of-netdata-parents): Build highly available Netdata Parent clusters with Child failover, Parent synchronization, and safe maintenance procedures.
+- [Metrics Centralization Points › Replication of Past Samples](https://learn.netdata.cloud/docs/netdata-parents/metrics-centralization-points/replication-of-past-samples): Learn how Netdata replicates historical samples after reconnection to fill gaps between Children and Parents.
+- [Metrics Centralization Points › FAQ on Metrics Centralization Points](https://learn.netdata.cloud/docs/netdata-parents/metrics-centralization-points/faq-on-metrics-centralization-points): Find answers about Netdata Parent sizing, clustering, retention, encryption, replication, and centralization troubleshooting.
+
+## Netdata Cloud
+
+- [Netdata Cloud](https://learn.netdata.cloud/docs/netdata-cloud)
+- [Connect Agent](https://learn.netdata.cloud/docs/netdata-cloud/connect-agent)
+- [Spaces and Rooms](https://learn.netdata.cloud/docs/netdata-cloud/spaces-and-rooms)
+- [Spaces and Rooms › Node Rule-Based Room Assignment](https://learn.netdata.cloud/docs/netdata-cloud/spaces-and-rooms/node-rule-based-room-assignment)
+- [Authentication & Authorization](https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization)
+- [Authentication & Authorization › Enterprise SSO Authentication](https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization/enterprise-sso-authentication)
+- [Authentication & Authorization › Role-based access model](https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization/role-based-access-model): Explanation of Netdata roles and permissions linked to them
+- [Authentication & Authorization › API Tokens](https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization/api-tokens)
+- [Authentication & Authorization › Cloud Authentication & Authorization Integrations](https://learn.netdata.cloud/docs/netdata-cloud/authentication-&-authorization/cloud-authentication-&-authorization-integrations): Browse Netdata integrations for Authentication & Authorization / Cloud Authentication & Authorization Integrations and open the setup documentation for each supported technology.
+- [Netdata Plans & Billing](https://learn.netdata.cloud/docs/netdata-cloud/netdata-plans-&-billing)
+- [Agent-Cloud Link (ACLK)](https://learn.netdata.cloud/docs/netdata-cloud/agent-cloud-link-aclk): The Agent-Cloud link (ACLK) is the mechanism responsible for connecting a Netdata agent to Netdata Cloud.
+- [Remove Agent](https://learn.netdata.cloud/docs/netdata-cloud/remove-agent)
+- [Node States and Transitions](https://learn.netdata.cloud/docs/netdata-cloud/node-states-and-transitions): Understanding node connection states and state transitions in Netdata Cloud
+- [Netdata Cloud Outbound IP Addresses](https://learn.netdata.cloud/docs/netdata-cloud/netdata-cloud-outbound-ip-addresses): The public endpoint listing the source IP addresses Netdata Cloud connects from, for firewall and IP allowlist hardening
+- [Unclaim and Reclaim a Node](https://learn.netdata.cloud/docs/netdata-cloud/unclaim-and-reclaim-a-node)
+- [Account Deletion](https://learn.netdata.cloud/docs/netdata-cloud/account-deletion)
+
+## Netdata Cloud On-Prem
+
+- [Netdata Cloud On-Prem](https://learn.netdata.cloud/docs/netdata-cloud-on-prem)
+- [Installation](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/installation): Install Netdata Cloud On-Prem on Kubernetes with Helm, required dependencies, TLS, storage, and Amazon ECR access.
+- [Software Bill of Materials](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/software-bill-of-materials)
+- [Container Image Signature Verification](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/container-image-signature-verification)
+- [Security Hardening Guide](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/security-hardening-guide)
+- [Kubernetes Network Policy Configuration](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/kubernetes-network-policy-configuration)
+- [PoC without K8s](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/poc-without-k8s)
+- [Mirroring image registry](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/mirroring-image-registry): Mirror Netdata Cloud On-Prem container images from Amazon ECR into a private registry for restricted environments.
+- [Troubleshooting](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/troubleshooting)
+- [Release Notes](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/release-notes)
+
+## Collecting Metrics
+
+- [Collecting Metrics](https://learn.netdata.cloud/docs/collecting-metrics)
+- [Collectors configuration](https://learn.netdata.cloud/docs/collecting-metrics/collectors-configuration)
+- [Service Discovery](https://learn.netdata.cloud/docs/collecting-metrics/service-discovery)
+- [Service Discovery › Discoverer](https://learn.netdata.cloud/docs/collecting-metrics/service-discovery/discoverer): Browse Netdata integrations for Service Discovery / Discoverer and open the setup documentation for each supported technology.
+- [StatsD](https://learn.netdata.cloud/docs/collecting-metrics/statsd)
+- [Containers and cgroups](https://learn.netdata.cloud/docs/collecting-metrics/containers-and-cgroups): Monitor containers and virtual machines via Linux cgroups, with friendly name resolution for Docker, Kubernetes, Podman, LXC, libvirt, Proxmox, and more.
+- [Secrets Management](https://learn.netdata.cloud/docs/collecting-metrics/secrets-management): Use secret references to avoid storing credentials in plain text. Supports environment variables, files, commands, and secretstore backends.
+- [Secrets Management › Secret Stores](https://learn.netdata.cloud/docs/collecting-metrics/secrets-management/secret-stores): Browse Netdata integrations for Secrets Management / Secret Stores and open the setup documentation for each supported technology.
+- [Chart Template Format](https://learn.netdata.cloud/docs/collecting-metrics/chart-template-format): Define dynamic Netdata chart groups, instances, labels, dimensions, lifecycle, and presentation using declarative templates.
+- [AWS CloudWatch Profile Format](https://learn.netdata.cloud/docs/collecting-metrics/aws-cloudwatch-profile-format): Define CloudWatch namespaces, supported regions, resource dimensions, metrics, statistics, and dynamic charts in reusable profiles.
+- [Prometheus Profile Format](https://learn.netdata.cloud/docs/collecting-metrics/prometheus-profile-format): Define curated chart profiles for Prometheus endpoints, with scoped autogen selectors that filter the fallback charts of unmatched metrics.
+- [Prometheus Metric Relabeling](https://learn.netdata.cloud/docs/collecting-metrics/prometheus-metric-relabeling): Rewrite, derive, or drop scraped Prometheus metrics and labels with Prometheus-compatible metric_relabel_configs rules before charts are built.
+- [Ceph](https://learn.netdata.cloud/docs/collecting-metrics/ceph): Deploy distributed Ceph monitoring with the MGR Prometheus module, ceph-exporter, the NVMe-oF gateway exporter, the Dashboard API collector, alerts, Parents, retention, and integrations.
+- [Collectors](https://learn.netdata.cloud/docs/collecting-metrics/collectors): Browse Netdata integrations for Collecting Metrics / Collectors and open the setup documentation for each supported technology.
+- [Collectors › Applications](https://learn.netdata.cloud/docs/collecting-metrics/collectors/applications): Browse Netdata integrations for Collectors / Applications and open the setup documentation for each supported technology.
+- [Collectors › Cloud and DevOps](https://learn.netdata.cloud/docs/collecting-metrics/collectors/cloud-and-devops): Browse Netdata integrations for Collectors / Cloud and DevOps and open the setup documentation for each supported technology.
+- [Collectors › Containers and VMs](https://learn.netdata.cloud/docs/collecting-metrics/collectors/containers-and-vms): Browse Netdata integrations for Collectors / Containers and VMs and open the setup documentation for each supported technology.
+- [Collectors › Databases](https://learn.netdata.cloud/docs/collecting-metrics/collectors/databases): Browse Netdata integrations for Collectors / Databases and open the setup documentation for each supported technology.
+- [Collectors › Hardware and Sensors](https://learn.netdata.cloud/docs/collecting-metrics/collectors/hardware-and-sensors): Browse Netdata integrations for Collectors / Hardware and Sensors and open the setup documentation for each supported technology.
+- [Collectors › Networking](https://learn.netdata.cloud/docs/collecting-metrics/collectors/networking): Browse Netdata integrations for Collectors / Networking and open the setup documentation for each supported technology.
+- [Collectors › Operating Systems](https://learn.netdata.cloud/docs/collecting-metrics/collectors/operating-systems): Browse Netdata integrations for Collectors / Operating Systems and open the setup documentation for each supported technology.
+- [Collectors › Storage and Filesystems](https://learn.netdata.cloud/docs/collecting-metrics/collectors/storage-and-filesystems): Browse Netdata integrations for Collectors / Storage and Filesystems and open the setup documentation for each supported technology.
+- [Collectors › Synthetic Testing](https://learn.netdata.cloud/docs/collecting-metrics/collectors/synthetic-testing): Browse Netdata integrations for Collectors / Synthetic Testing and open the setup documentation for each supported technology.
+- [Collectors › Web Servers and Proxies](https://learn.netdata.cloud/docs/collecting-metrics/collectors/web-servers-and-proxies): Browse Netdata integrations for Collectors / Web Servers and Proxies and open the setup documentation for each supported technology.
+
+## Exporting Metrics
+
+- [Exporting Metrics](https://learn.netdata.cloud/docs/exporting-metrics): Use the exporting engine to send Netdata metrics to popular external time series databases for long-term storage or further analysis.
+- [Exporting reference](https://learn.netdata.cloud/docs/exporting-metrics/exporting-reference): With the exporting engine, you can archive your Netdata metrics to multiple external databases for long-term storage or further analysis.
+- [Enable an exporting connector](https://learn.netdata.cloud/docs/exporting-metrics/enable-an-exporting-connector): Learn how to enable and configure any connector using examples to start exporting metrics to external time-series databases in minutes.
+- [Prometheus](https://learn.netdata.cloud/docs/exporting-metrics/prometheus): Export Netdata metrics to Prometheus for archiving and further analysis.
+- [Shell Scripts](https://learn.netdata.cloud/docs/exporting-metrics/shell-scripts)
+- [Connectors](https://learn.netdata.cloud/docs/exporting-metrics/connectors): Browse Netdata integrations for Exporting Metrics / Connectors and open the setup documentation for each supported technology.
+
+## Network Performance Monitoring
+
+- [Network Performance Monitoring](https://learn.netdata.cloud/docs/network-performance-monitoring): Monitor your whole network from one Agent per site — devices, topology, flows, traps, and logs, unified in Netdata Cloud.
+- [Device Metrics](https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics): Poll routers, switches, firewalls, and other devices over SNMP with the Netdata Agent.
+- [Device Metrics › Quick Start](https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics/quick-start): Get one device polling and auto-detected in a few minutes.
+- [Device Metrics › Configuration](https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics/configuration): Credentials, SNMPv3, multiple devices, and the polling options.
+- [Device Metrics › Configuration › SNMP Profile Format](https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics/configuration/snmp-profile-format): Learn how Netdata’s SNMP collector uses profiles.
+- [Device Metrics › Sizing and Scaling](https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics/sizing-and-scaling): How many devices one Agent should poll, and how to scale with hubs and Parents.
+- [Device Metrics › Validation](https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics/validation): Confirm profile match, 64-bit counters, and clean polling before you trust the data.
+- [Device Metrics › Troubleshooting](https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics/troubleshooting): Timeouts, missing metrics, SNMPv3 auth, gaps, and phantom spikes.
+- [Device Metrics › Collect Troubleshooting Data](https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics/collect-troubleshooting-data): Include built-in SNMP diagnostics in a private support bundle for metrics, BGP, licensing, and topology issues.
+- [Device Metrics › Anti-patterns](https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics/anti-patterns): The common SNMP polling mistakes and how to avoid them.
+- [Device Metrics › Integrations](https://learn.netdata.cloud/docs/network-performance-monitoring/device-metrics/integrations): Browse Netdata integrations for Device Metrics / Integrations and open the setup documentation for each supported technology.
+- [Licensing Monitoring](https://learn.netdata.cloud/docs/network-performance-monitoring/licensing-monitoring): Track license state and expiry across your network devices before a feature silently stops.
+- [Licensing Monitoring › Metrics and Functions](https://learn.netdata.cloud/docs/network-performance-monitoring/licensing-monitoring/metrics-and-functions): The snmp.license.* charts and the snmp:licenses function.
+- [Licensing Monitoring › Integrations](https://learn.netdata.cloud/docs/network-performance-monitoring/licensing-monitoring/integrations): Browse Netdata integrations for Licensing Monitoring / Integrations and open the setup documentation for each supported technology.
+- [Topologies](https://learn.netdata.cloud/docs/network-performance-monitoring/topologies): See how your infrastructure is connected — Layer 2 and Layer 3 device topology, application dependencies, and virtual infrastructure.
+- [Topologies › Discovery Methods](https://learn.netdata.cloud/docs/network-performance-monitoring/topologies/discovery-methods): What LLDP, CDP, FDB, ARP, STP, BGP, and OSPF each contribute to the map.
+- [Topologies › Application Dependency Mapping](https://learn.netdata.cloud/docs/network-performance-monitoring/topologies/application-dependency-mapping): Which process, container, and Kubernetes workload talks to which, read from the kernel with no instrumentation.
+- [Topologies › Integrations](https://learn.netdata.cloud/docs/network-performance-monitoring/topologies/integrations): Browse Netdata integrations for Topologies / Integrations and open the setup documentation for each supported technology.
+- [BGP Monitoring](https://learn.netdata.cloud/docs/network-performance-monitoring/bgp-monitoring): Monitor BGP peer state, prefixes, and session health on your routers.
+- [BGP Monitoring › Metrics and Functions](https://learn.netdata.cloud/docs/network-performance-monitoring/bgp-monitoring/metrics-and-functions): The snmp.bgp.* charts and the snmp:bgp-peers function.
+- [BGP Monitoring › Integrations](https://learn.netdata.cloud/docs/network-performance-monitoring/bgp-monitoring/integrations): Browse Netdata integrations for BGP Monitoring / Integrations and open the setup documentation for each supported technology.
+- [Network Flows](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows): Collect, enrich, and visualize NetFlow, IPFIX, and sFlow data with the Netdata Agent.
+- [Network Flows › Installation](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/installation)
+- [Network Flows › Quick Start](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/quick-start): Get network flow monitoring running in five minutes.
+- [Network Flows › Configuration](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/configuration): Full reference for netflow.yaml configuration options.
+- [Network Flows › Enrichment](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/enrichment): Order of evaluation, provider chains, MMDB shared mechanism, and the cross-cutting properties that span every enrichment method.
+- [Network Flows › Enrichment Intel Downloader](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/enrichment-intel-downloader): The bundled tool that fetches IP intelligence data sources and writes MMDB files the netflow plugin reads.
+- [Network Flows › Field Reference](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/field-reference): Complete list of flow fields with per-protocol availability.
+- [Network Flows › Visualization](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/visualization): How queries work, the controls every panel shares, and where each panel fits.
+- [Network Flows › Visualization › Sankey and Table](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/visualization/sankey-and-table)
+- [Network Flows › Visualization › Time-Series](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/visualization/time-series)
+- [Network Flows › Visualization › Maps and Globe](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/visualization/maps-and-globe)
+- [Network Flows › Visualization › Filters and Facets](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/visualization/filters-and-facets)
+- [Network Flows › Visualization › Plugin Health Charts](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/visualization/plugin-health-charts)
+- [Network Flows › Retention and Tiers](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/retention-and-tiers)
+- [Network Flows › Sizing and Capacity Planning](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/sizing-and-capacity-planning): Practical scaling guide -- plugin cap, storage, memory, and distributed deployment.
+- [Network Flows › Validation and Data Quality](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/validation-and-data-quality)
+- [Network Flows › Investigation Playbooks](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/investigation-playbooks)
+- [Network Flows › Anti-patterns](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/anti-patterns)
+- [Network Flows › Troubleshooting](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/troubleshooting)
+- [Network Flows › Enrichment Methods](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/enrichment-methods): Browse Netdata integrations for Network Flows / Enrichment Methods and open the setup documentation for each supported technology.
+- [Network Flows › Flow Protocols](https://learn.netdata.cloud/docs/network-performance-monitoring/network-flows/flow-protocols): Browse Netdata integrations for Network Flows / Flow Protocols and open the setup documentation for each supported technology.
+- [SNMP Traps](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps): Receive, decode, store, query, and forward SNMP Trap and INFORM events with the Netdata Agent.
+- [SNMP Traps › Installation](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/installation)
+- [SNMP Traps › Quick Start](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/quick-start): Configure a listener, send a test trap, and prove Netdata received it.
+- [SNMP Traps › Configuration](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/configuration): Configure listener endpoints, SNMP versions, source controls, storage, forwarding, deduplication, and profile metrics.
+- [SNMP Traps › Trap Profiles](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/trap-profiles): Understand stock trap coverage, custom profiles, overrides, MIB conversion, and profile-defined metrics.
+- [SNMP Traps › SNMP Trap Profile Format](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/snmp-trap-profile-format): Reference for SNMP trap profile YAML, trap definitions, varbind metadata, rendering, and profile metric rules.
+- [SNMP Traps › Enrichment](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/enrichment): Understand source identity, trusted relays, reverse DNS, device identity, interface context, and enrichment audit fields.
+- [SNMP Traps › Usage and Output](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/usage-and-output): Read normal trap rows, decode errors, deduplication summaries, varbinds, tags, and payload fields.
+- [SNMP Traps › Field Reference](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/field-reference): Complete reference for journal fields, report types, enrichment fields, varbind fields, tags, and OTLP mappings.
+- [SNMP Traps › Journal and Querying](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/journal-and-querying): Query, export, copy, and inspect direct-journal trap data with Netdata Logs and journalctl-compatible workflows.
+- [SNMP Traps › Forwarding to SIEM](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/forwarding-to-siem): Forward trap events through journal-native workflows or OTLP/gRPC and map fields in downstream log systems.
+- [SNMP Traps › Metrics](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/metrics): Read receiver pipeline health, severity and category rates, processing errors, deduplication, and optional profile-defined metrics.
+- [SNMP Traps › Alerts](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/alerts): Understand, route, and silence the default SNMP trap health alerts.
+- [SNMP Traps › Sizing and Capacity Planning](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/sizing-and-capacity-planning): Plan receiver capacity, output backends, retention, storm controls, profile metrics, source visibility, and validation.
+- [SNMP Traps › Validation and Data Quality](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/validation-and-data-quality): Prove first receipt, source identity, profile coverage, enrichment quality, backend health, retention, and downstream fields.
+- [SNMP Traps › Investigation Playbooks](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/investigation-playbooks): Follow operator playbooks for storms, critical traps, interface changes, restart signals, missing traps, unknown OIDs, SNMPv3 failures, and forwarding checks.
+- [SNMP Traps › Anti-patterns](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/anti-patterns): Avoid unsafe listeners, broad relay trust, inline secrets, high-cardinality metrics, noisy alerting, and storage blind spots.
+- [SNMP Traps › Troubleshooting](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/troubleshooting): Diagnose missing rows, inactive listeners, UDP delivery, allowlist drops, SNMPv3 failures, profile issues, backend failures, and retention problems.
+- [SNMP Traps › Integrations](https://learn.netdata.cloud/docs/network-performance-monitoring/snmp-traps/integrations): Browse Netdata integrations for SNMP Traps / Integrations and open the setup documentation for each supported technology.
+- [Syslog](https://learn.netdata.cloud/docs/network-performance-monitoring/syslog): Where syslog ingestion is documented — through an OpenTelemetry Collector into Netdata's log store, next to the devices' SNMP metrics, traps, and flows.
+
+## Logs Management
+
+- [Logs Management](https://learn.netdata.cloud/docs/logs-management): Logs management with Netdata — ingestion, storage, indexing, and querying of logs from native OS stores, text files, and OpenTelemetry, distributed or centralized.
+- [Managing Logs](https://learn.netdata.cloud/docs/logs-management/managing-logs): How logs are organized, stored, queried, and explored in Netdata — sources, field filters with counters, full-text search, histograms, live tail, and sampling at scale.
+- [Windows Event Logs](https://learn.netdata.cloud/docs/logs-management/windows-event-logs): View, explore and analyze Windows event channels from the Netdata dashboard, including forwarded-events channels on a Windows Event Collector.
+- [macOS Unified Logs](https://learn.netdata.cloud/docs/logs-management/macos-unified-logs): View, explore and analyze the macOS unified log from the Netdata dashboard.
+- [SNMP Trap Logs](https://learn.netdata.cloud/docs/logs-management/snmp-trap-logs): SNMP traps as journal-compatible files written by Netdata — where they are stored, how they are queried in the Logs tab and with journalctl, and where the collector is documented.
+- [Network Flows](https://learn.netdata.cloud/docs/logs-management/network-flows): NetFlow, sFlow, and IPFIX flows as journal-compatible files written by Netdata — the four storage tiers, retention, journalctl access, and where the plugin is documented.
+- [Text Files to Journals](https://learn.netdata.cloud/docs/logs-management/text-files-to-journals): Bring application text log files under Netdata logs management — convert them to structured journal entries with log2journal, or ship them as OpenTelemetry logs, and when each path is the right one.
+- [Text Files to Journals › log2journal](https://learn.netdata.cloud/docs/logs-management/text-files-to-journals/log2journal)
+- [Text Files to Journals › systemd-cat-native](https://learn.netdata.cloud/docs/logs-management/text-files-to-journals/systemd-cat-native)
+- [Centralizing Logs with OpenTelemetry](https://learn.netdata.cloud/docs/logs-management/centralizing-logs-with-opentelemetry): When to centralize a log source into Netdata's log store with OpenTelemetry, and the two things to set up — the receiving Agent and the Collector recipes per source.
+- [Log Storage and Retention](https://learn.netdata.cloud/docs/logs-management/log-storage-and-retention): Control what logs cost — journald disk limits and namespaces, Windows event channel sizing, Netdata's log store retention, and offloading to object storage.
+- [Integrations](https://learn.netdata.cloud/docs/logs-management/integrations): Browse Netdata integrations for Logs Management / Integrations and open the setup documentation for each supported technology.
+- [Systemd Journal Logs › Systemd Journal Plugin Reference](https://learn.netdata.cloud/docs/logs-management/systemd-journal-logs/systemd-journal-plugin-reference): View and analyze logs available in systemd journal
+- [Systemd Journal Logs › Forward Secure Sealing (FSS) in Systemd-Journal](https://learn.netdata.cloud/docs/logs-management/systemd-journal-logs/forward-secure-sealing-fss-in-systemd-journal)
+- [Systemd Journal Logs › Logs Centralization Points](https://learn.netdata.cloud/docs/logs-management/systemd-journal-logs/logs-centralization-points)
+- [Systemd Journal Logs › Logs Centralization Points › Passive journal centralization with encryption using self-signed certificates](https://learn.netdata.cloud/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-with-encryption-using-self-signed-certificates)
+- [Systemd Journal Logs › Logs Centralization Points › Passive journal centralization without encryption](https://learn.netdata.cloud/docs/logs-management/systemd-journal-logs/logs-centralization-points/passive-journal-centralization-without-encryption)
+- [Systemd Journal Logs › Logs Centralization Points › Active journal source without encryption](https://learn.netdata.cloud/docs/logs-management/systemd-journal-logs/logs-centralization-points/active-journal-source-without-encryption)
+- [Systemd Journal Logs › Logs Centralization Points › Centralizing Journal Namespaces](https://learn.netdata.cloud/docs/logs-management/systemd-journal-logs/logs-centralization-points/centralizing-journal-namespaces): Forward per-namespace systemd-journal logs to a central systemd-journal-remote server, including on systemd versions prior to 254.
+
+## OpenTelemetry
+
+- [OpenTelemetry](https://learn.netdata.cloud/docs/opentelemetry): The Netdata Agent as an OTLP receiver over gRPC and HTTP — metrics become charts, logs and traces are stored indexed on the Agent, with TLS and Collector recipes.
+- [OTLP Ingestion](https://learn.netdata.cloud/docs/opentelemetry/otlp-ingestion): Export metrics, logs, and traces from an OpenTelemetry Collector to a Netdata Agent
+- [Securing the OTLP Endpoint](https://learn.netdata.cloud/docs/opentelemetry/securing-the-otlp-endpoint): Bind the OTLP endpoint safely — loopback by default, TLS and mutual TLS for remote senders, network controls, certificate rotation, and what reaches Netdata Cloud.
+- [Metrics Collection](https://learn.netdata.cloud/docs/opentelemetry/metrics-collection): Collect Prometheus, Redis, NGINX, PostgreSQL, and host metrics through OpenTelemetry Collector receivers
+- [Logs Collection](https://learn.netdata.cloud/docs/opentelemetry/logs-collection): Collect systemd journal, application file, Windows event channel, Kubernetes container, macOS unified log, and syslog records through OpenTelemetry Collector receivers
+- [Transformations](https://learn.netdata.cloud/docs/opentelemetry/transformations): Parse, enrich, normalize, and filter OpenTelemetry logs before exporting them to Netdata
+- [Logs-to-Metrics](https://learn.netdata.cloud/docs/opentelemetry/logs-to-metrics): Count matching OpenTelemetry log records and chart their rate in Netdata
+- [Trace Storage and Retention](https://learn.netdata.cloud/docs/opentelemetry/trace-storage-and-retention): How the Netdata Agent stores OpenTelemetry traces — retention, offloading to object storage with read-back, and sizing the receiving node.
+- [Syslog from Network Devices](https://learn.netdata.cloud/docs/opentelemetry/syslog-from-network-devices): Ingest syslog from network devices through the OpenTelemetry Collector and explore it in the Logs tab.
+- [Syslog from Network Devices › OpenTelemetry Collector Setup](https://learn.netdata.cloud/docs/opentelemetry/syslog-from-network-devices/opentelemetry-collector-setup): A working syslog receiver configuration and how to make it durable.
+- [Syslog from Network Devices › Integrations](https://learn.netdata.cloud/docs/opentelemetry/syslog-from-network-devices/integrations): Browse Netdata integrations for Syslog from Network Devices / Integrations and open the setup documentation for each supported technology.
+- [OpenTelemetry Plugin Reference](https://learn.netdata.cloud/docs/opentelemetry/opentelemetry-plugin-reference): Ingest OpenTelemetry metrics, logs, and traces with the Netdata Agent.
+
+## Edge Device Monitoring
+
+- [Edge Device Monitoring](https://learn.netdata.cloud/docs/edge-device-monitoring): Monitor robots, signage, gateways and other edge devices centrally while reducing device disk, CPU, memory and cellular use.
+- [Deploy and Identify Fleet Devices](https://learn.netdata.cloud/docs/edge-device-monitoring/deploy-and-identify-fleet-devices)
+- [Minimize Disk Footprint](https://learn.netdata.cloud/docs/edge-device-monitoring/minimize-disk-footprint)
+- [Minimize CPU and Memory](https://learn.netdata.cloud/docs/edge-device-monitoring/minimize-cpu-and-memory)
+- [Minimize Cellular Traffic](https://learn.netdata.cloud/docs/edge-device-monitoring/minimize-cellular-traffic)
+- [Disconnected Devices and Failover](https://learn.netdata.cloud/docs/edge-device-monitoring/disconnected-devices-and-failover)
+- [Monitor the Fleet](https://learn.netdata.cloud/docs/edge-device-monitoring/monitor-the-fleet)
+- [Updates and Troubleshooting](https://learn.netdata.cloud/docs/edge-device-monitoring/updates-and-troubleshooting)
+
+## Live View
+
+- [Live View](https://learn.netdata.cloud/docs/live-view): Present the Netdata Functions what these are and why they should be used.
+- [Processes](https://learn.netdata.cloud/docs/live-view/processes)
+- [Database Queries](https://learn.netdata.cloud/docs/live-view/database-queries): Top and running database queries with deadlock and error attribution for 13 databases.
+
+## Alerts & Notifications
+
+- [Alerts & Notifications](https://learn.netdata.cloud/docs/alerts-&-notifications)
+- [Creating Alerts with the Alerts Configuration Manager](https://learn.netdata.cloud/docs/alerts-&-notifications/creating-alerts-with-the-alerts-configuration-manager)
+- [Notifications](https://learn.netdata.cloud/docs/alerts-&-notifications/notifications): Send Netdata alerts from a centralized place with Netdata Cloud, or configure nodes individually, to enable incident response and faster resolution.
+- [Notifications › Agent Dispatched Notifications](https://learn.netdata.cloud/docs/alerts-&-notifications/notifications/agent-dispatched-notifications): Browse Netdata integrations for Notifications / Agent Dispatched Notifications and open the setup documentation for each supported technology.
+- [Notifications › Agent Dispatched Notifications › Agent Notifications Reference](https://learn.netdata.cloud/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/agent-notifications-reference)
+- [Notifications › Centralized Cloud Notifications](https://learn.netdata.cloud/docs/alerts-&-notifications/notifications/centralized-cloud-notifications): Browse Netdata integrations for Notifications / Centralized Cloud Notifications and open the setup documentation for each supported technology.
+- [Notifications › Centralized Cloud Notifications › Centralized Cloud Notifications Reference](https://learn.netdata.cloud/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/centralized-cloud-notifications-reference): Configure Netdata Cloud to send notifications to your team whenever any node on your infrastructure triggers an alert threshold.
+- [Notifications › Centralized Cloud Notifications › Manage notification methods](https://learn.netdata.cloud/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-notification-methods): Instructions on how to manage notification methods
+- [Notifications › Centralized Cloud Notifications › Manage alert notification silencing rules](https://learn.netdata.cloud/docs/alerts-&-notifications/notifications/centralized-cloud-notifications/manage-alert-notification-silencing-rules): Master Netdata alert management via notification silencing rules for efficient and focused monitoring.
+- [Alert Configuration Reference](https://learn.netdata.cloud/docs/alerts-&-notifications/alert-configuration-reference)
+- [Alert Configuration Ordering](https://learn.netdata.cloud/docs/alerts-&-notifications/alert-configuration-ordering)
+- [Overriding Stock Alerts](https://learn.netdata.cloud/docs/alerts-&-notifications/overriding-stock-alerts)
+- [Health API Calls](https://learn.netdata.cloud/docs/alerts-&-notifications/health-api-calls)
+
+## Netdata AI
+
+- [Netdata AI](https://learn.netdata.cloud/docs/netdata-ai)
+- [Conversations](https://learn.netdata.cloud/docs/netdata-ai/conversations)
+- [Infrastructure Knowledge](https://learn.netdata.cloud/docs/netdata-ai/infrastructure-knowledge): Teach Netdata AI about your infrastructure, in a shared document or in conversation
+- [Insights](https://learn.netdata.cloud/docs/netdata-ai/insights)
+- [Insights › Infrastructure Summary](https://learn.netdata.cloud/docs/netdata-ai/insights/infrastructure-summary)
+- [Insights › Performance Optimization](https://learn.netdata.cloud/docs/netdata-ai/insights/performance-optimization)
+- [Insights › Capacity Planning](https://learn.netdata.cloud/docs/netdata-ai/insights/capacity-planning)
+- [Insights › Anomaly Analysis](https://learn.netdata.cloud/docs/netdata-ai/insights/anomaly-analysis)
+- [Insights › Scheduled Reports](https://learn.netdata.cloud/docs/netdata-ai/insights/scheduled-reports)
+- [Investigations](https://learn.netdata.cloud/docs/netdata-ai/investigations)
+- [Investigations › Custom Investigations](https://learn.netdata.cloud/docs/netdata-ai/investigations/custom-investigations)
+- [Investigations › Scheduled Investigations](https://learn.netdata.cloud/docs/netdata-ai/investigations/scheduled-investigations)
+- [Troubleshooting](https://learn.netdata.cloud/docs/netdata-ai/troubleshooting)
+- [Troubleshooting › Alert Troubleshooting](https://learn.netdata.cloud/docs/netdata-ai/troubleshooting/alert-troubleshooting): Use Netdata AI to investigate alerts, correlate abnormal metrics and logs, assess urgency, and develop a root-cause hypothesis.
+- [Troubleshooting › Anomaly Advisor](https://learn.netdata.cloud/docs/netdata-ai/troubleshooting/anomaly-advisor)
+- [Troubleshooting › Metric Correlations](https://learn.netdata.cloud/docs/netdata-ai/troubleshooting/metric-correlations): Quickly find metrics and charts closely related to a particular timeframe of interest anywhere in your infrastructure to discover the root cause faster.
+- [Alerts Automation](https://learn.netdata.cloud/docs/netdata-ai/alerts-automation): AI-powered alert creation and suggestions
+- [Anomaly Detection](https://learn.netdata.cloud/docs/netdata-ai/anomaly-detection)
+- [Anomaly Detection › ML Configuration](https://learn.netdata.cloud/docs/netdata-ai/anomaly-detection/ml-configuration)
+- [Anomaly Detection › ML Accuracy](https://learn.netdata.cloud/docs/netdata-ai/anomaly-detection/ml-accuracy): Analysis of Netdata's ML anomaly detection accuracy, false positive rates, and comparison with other approaches
+- [MCP](https://learn.netdata.cloud/docs/netdata-ai/mcp)
+- [MCP › Chat with Netdata](https://learn.netdata.cloud/docs/netdata-ai/mcp/chat-with-netdata)
+- [MCP › Supported AI Clients](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients)
+- [MCP › Supported AI Clients › Claude Desktop](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/claude-desktop)
+- [MCP › Supported AI Clients › Cursor](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/cursor)
+- [MCP › Supported AI Clients › Visual Studio Code](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/visual-studio-code)
+- [MCP › Supported AI Clients › JetBrains IDEs](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/jetbrains-ides)
+- [MCP › Supported AI Clients › Claude Code](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/claude-code)
+- [MCP › Supported AI Clients › Gemini CLI](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/gemini-cli)
+- [MCP › Supported AI Clients › OpenAI Codex CLI](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/openai-codex-cli)
+- [MCP › Supported AI Clients › Crush](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/crush)
+- [MCP › Supported AI Clients › OpenCode](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/opencode)
+- [MCP › MCP Connections](https://learn.netdata.cloud/docs/netdata-ai/mcp/mcp-connections)
+- [MCP › MCP Connections › PagerDuty](https://learn.netdata.cloud/docs/netdata-ai/mcp/mcp-connections/pagerduty): Connect Netdata AI to PagerDuty incidents, on-call schedules and change events through MCP
+
+## Dashboards and Charts
+
+- [Dashboards and Charts](https://learn.netdata.cloud/docs/dashboards-and-charts)
+- [Tabs](https://learn.netdata.cloud/docs/dashboards-and-charts/tabs): With Netdata Cloud's War Rooms, you can see real-time metrics, from any number of nodes in your infrastructure, in composite charts.
+- [Tabs › Alerts](https://learn.netdata.cloud/docs/dashboards-and-charts/tabs/alerts)
+- [Tabs › Anomalies](https://learn.netdata.cloud/docs/dashboards-and-charts/tabs/anomalies): Quickly find anomalous metrics anywhere in your infrastructure.
+- [Tabs › Dashboards](https://learn.netdata.cloud/docs/dashboards-and-charts/tabs/dashboards): Design new dashboards that target your infrastructure's unique needs and share them with your team fortargeted visual anomaly detection or incident response.
+- [Tabs › Events](https://learn.netdata.cloud/docs/dashboards-and-charts/tabs/events): Present the Netdata Events feed.
+- [Tabs › Kubernetes](https://learn.netdata.cloud/docs/dashboards-and-charts/tabs/kubernetes): Netdata Cloud features rich, zero-configuration Kubernetes monitoring for the resource utilization and application metrics of Kubernetes (k8s) clusters.
+- [Tabs › Metrics](https://learn.netdata.cloud/docs/dashboards-and-charts/tabs/metrics)
+- [Tabs › Nodes](https://learn.netdata.cloud/docs/dashboards-and-charts/tabs/nodes): See charts from all your nodes in one pane of glass, then dive in to embedded dashboards for granular troubleshooting of ongoing issues.
+- [Tabs › Live](https://learn.netdata.cloud/docs/dashboards-and-charts/tabs/live): Access live information from monitored nodes through Netdata Functions
+- [Theme](https://learn.netdata.cloud/docs/dashboards-and-charts/theme)
+- [Grafana Plugin](https://learn.netdata.cloud/docs/dashboards-and-charts/grafana-plugin)
+- [Charts](https://learn.netdata.cloud/docs/dashboards-and-charts/charts)
+- [Chart Annotations](https://learn.netdata.cloud/docs/dashboards-and-charts/chart-annotations): Pin notes to a moment on a chart and share them with your Space.
+- [Expanded Chart Analysis](https://learn.netdata.cloud/docs/dashboards-and-charts/expanded-chart-analysis)
+- [NIDL Framework](https://learn.netdata.cloud/docs/dashboards-and-charts/nidl-framework): Understand Netdata's Nodes, Instances, Dimensions, and Labels model for organizing, exploring, and designing metrics.
+- [Node Filter](https://learn.netdata.cloud/docs/dashboards-and-charts/node-filter)
+- [Time Controls](https://learn.netdata.cloud/docs/dashboards-and-charts/time-controls)
+
+## Security and Privacy Design
+
+- [Security and Privacy Design](https://learn.netdata.cloud/docs/security-and-privacy-design): Understand Netdata's security and privacy architecture, data boundaries, encryption, access controls, and compliance practices.
+- [Access Control and Feature Availability](https://learn.netdata.cloud/docs/security-and-privacy-design/access-control-and-feature-availability): Feature availability across Anonymous access Netdata Cloud Community and Business tiers
+- [Netdata Agent](https://learn.netdata.cloud/docs/security-and-privacy-design/netdata-agent): Learn how Netdata Agent protects raw data, isolates collectors, limits privileges, encrypts communications, and controls access.
+- [Netdata Cloud](https://learn.netdata.cloud/docs/security-and-privacy-design/netdata-cloud): Learn how Netdata Cloud secures metadata, live metric access, authentication, authorization, communications, and infrastructure.
+
+## Developer and Contributor Corner
+
+- [Developer and Contributor Corner](https://learn.netdata.cloud/docs/developer-and-contributor-corner)
+- [Netdata Support Bundle](https://learn.netdata.cloud/docs/developer-and-contributor-corner/netdata-support-bundle): Collect a sanitized diagnostics archive from a Netdata Agent and attach it to a support ticket or bug report.
+- [REST API](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api)
+- [REST API › Queries](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries)
+- [REST API › Queries › Average or Mean](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/average-or-mean)
+- [REST API › Queries › CountIf](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/countif)
+- [REST API › Queries › Double exponential smoothing](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/double-exponential-smoothing)
+- [REST API › Queries › Incremental Sum (`incremental_sum`)](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/incremental-sum-incremental_sum)
+- [REST API › Queries › Max](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/max)
+- [REST API › Queries › Median](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/median): Use median in API queries and health entities to find the 'middle' value from a sample, eliminating any unwanted spikes in the returned metrics.
+- [REST API › Queries › Min](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/min)
+- [REST API › Queries › Percentile](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/percentile): Use percentile in API queries and health entities to find the 'percentile' value from a sample, eliminating any unwanted spikes in the returned metrics.
+- [REST API › Queries › Single (or Simple) Exponential Smoothing (`ses`)](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/single-or-simple-exponential-smoothing-ses)
+- [REST API › Queries › Standard deviation (`stddev`)](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/standard-deviation-stddev)
+- [REST API › Queries › Sum](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/sum)
+- [REST API › Queries › Trimmed Mean](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/queries/trimmed-mean): Use trimmed-mean in API queries and health entities to find the average value from a sample, eliminating any unwanted spikes in the returned metrics.
+- [REST API › Formatters](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/formatters)
+- [REST API › Formatters › CSV formatter](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/formatters/csv-formatter): Format Netdata metric query results as CSV, TSV, HTML, Markdown tables, or JSON arrays with supported data options.
+- [REST API › Formatters › JSON formatter](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/formatters/json-formatter): Format Netdata metric query results as JSON, JSONP, Google DataTable, or DataSource responses with supported options.
+- [REST API › Formatters › SSV formatter](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/formatters/ssv-formatter)
+- [REST API › Formatters › Value formatter](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/formatters/value-formatter)
+- [REST API › Netdata badges](https://learn.netdata.cloud/docs/developer-and-contributor-corner/rest-api/netdata-badges)
+- [Dynamic Configuration](https://learn.netdata.cloud/docs/developer-and-contributor-corner/dynamic-configuration): Integrate plugins and modules with Netdata Dynamic Configuration using JSON Schema, validation, persistence, and generated UI forms.
+- [Database Engine](https://learn.netdata.cloud/docs/developer-and-contributor-corner/database-engine)
+- [Contributing](https://learn.netdata.cloud/docs/developer-and-contributor-corner/contributing)
+- [Community code of conduct](https://learn.netdata.cloud/docs/developer-and-contributor-corner/community-code-of-conduct)
+- [Security Policy](https://learn.netdata.cloud/docs/developer-and-contributor-corner/security-policy): The Netdata team maintains and adheres to a formal process any time a member of the community reports a security vulnerability.
+- [External Plugins](https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins)
+- [External Plugins › go.d.plugin](https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins/go.d.plugin): go.d.plugin is an external plugin for Netdata, responsible for running individual data collectors written in Go.
+- [External Plugins › go.d.plugin › How to write a Netdata collector in Go](https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins/go.d.plugin/how-to-write-a-netdata-collector-in-go): This guide will walk you through the technical implementation of writing a new Netdata collector in Golang, with tips on interfaces, structure, configuration files, and more.
+- [External Plugins › python.d.plugin](https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins/python.d.plugin)
+- [External Plugins › charts.d.plugin](https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins/charts.d.plugin)
+- [External Plugins › profile.plugin](https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins/profile.plugin)
+- [External Plugins › Functions v3 Protocol reference](https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins/functions-v3-protocol-reference)
+- [External Plugins › Functions developer guide](https://learn.netdata.cloud/docs/developer-and-contributor-corner/external-plugins/functions-developer-guide)
+- [Contribute to the documentation](https://learn.netdata.cloud/docs/developer-and-contributor-corner/contribute-to-the-documentation)
+- [Contribute to the documentation › Netdata style guide](https://learn.netdata.cloud/docs/developer-and-contributor-corner/contribute-to-the-documentation/netdata-style-guide): The Netdata style guide establishes editorial guidelines for all of Netdata's writing, including documentation, blog posts, in-product UX copy, and more.
+- [Glossary](https://learn.netdata.cloud/docs/developer-and-contributor-corner/glossary)
+- [libnetdata](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata)
+- [libnetdata › Adaptive re-sortable list (ARL)](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/adaptive-re-sortable-list-arl)
+- [libnetdata › Array allocator](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/array-allocator)
+- [libnetdata › AVL](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/avl)
+- [libnetdata › BUFFER library](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/buffer-library)
+- [libnetdata › Circular Buffer](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/circular-buffer)
+- [libnetdata › Clocks](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/clocks): Use libnetdata clock APIs for wall-clock timestamps, monotonic elapsed time, heartbeat scheduling, sleeps, and safe time arithmetic.
+- [libnetdata › Netdata ini config files](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/netdata-ini-config-files)
+- [libnetdata › JSON](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/json)
+- [libnetdata › Locks](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/locks)
+- [libnetdata › One way allocator](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/one-way-allocator)
+- [libnetdata › procfile](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/procfile)
+- [libnetdata › Simple patterns](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/simple-patterns): Netdata supports simple patterns, which are less cryptic versions of regular expressions. Use familiar notation for powerful results.
+- [libnetdata › Statistical functions](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/statistical-functions)
+- [libnetdata › Storage number](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/storage-number)
+- [libnetdata › String](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/string)
+- [libnetdata › Threads](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/threads)
+- [libnetdata › URL](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/url)
+- [libnetdata › Worker Utilization](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/worker-utilization)
+- [libnetdata › Dictionaries](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/dictionaries)
+- [libnetdata › Socket](https://learn.netdata.cloud/docs/developer-and-contributor-corner/libnetdata/socket): Use libnetdata socket APIs for connections, listeners, polling, peer details, access checks, and optional TLS transport.
+- [Running a Local Dashboard through Cloudflare Tunnels](https://learn.netdata.cloud/docs/developer-and-contributor-corner/running-a-local-dashboard-through-cloudflare-tunnels)
+- [Redistributed Software](https://learn.netdata.cloud/docs/developer-and-contributor-corner/redistributed-software)
+- [Health command API tester](https://learn.netdata.cloud/docs/developer-and-contributor-corner/health-command-api-tester)
+- [Import, export, and print a snapshot](https://learn.netdata.cloud/docs/developer-and-contributor-corner/import-export-and-print-a-snapshot): Snapshots can be incredibly useful for diagnosing anomalies after they've already happened, and are interoperable with any other node running Netdata.
+- [Monitor Nginx or Apache web server log files with Netdata](https://learn.netdata.cloud/docs/developer-and-contributor-corner/monitor-nginx-or-apache-web-server-log-files-with-netdata)
+- [Monitor Unbound DNS servers with Netdata](https://learn.netdata.cloud/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata)
+- [Monitor a Hadoop cluster with Netdata](https://learn.netdata.cloud/docs/developer-and-contributor-corner/monitor-a-hadoop-cluster-with-netdata)
+- [Monitor, troubleshoot, and debug applications with eBPF metrics](https://learn.netdata.cloud/docs/developer-and-contributor-corner/monitor-troubleshoot-and-debug-applications-with-ebpf-metrics): Use Netdata's built-in eBPF metrics collector to monitor, troubleshoot, and debug your custom application using low-level kernel feedback.
+- [Build the Netdata Agent Yourself](https://learn.netdata.cloud/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself)
+- [Build the Netdata Agent Yourself › Package Maintainers](https://learn.netdata.cloud/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/package-maintainers)
+- [Build the Netdata Agent Yourself › Compile from source code](https://learn.netdata.cloud/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/compile-from-source-code): Package maintainers and power users may be interested in manually building Netdata from source without using any of our installation scripts.
+- [Build the Netdata Agent Yourself › How to build native (DEB/RPM) packages locally for testing](https://learn.netdata.cloud/docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing): Instructions for developers who need to build native packages locally for testing.
+- [Install the Netdata Agent from a Git checkout](https://learn.netdata.cloud/docs/developer-and-contributor-corner/install-the-netdata-agent-from-a-git-checkout): Use the Netdata Agent source code from GitHub, plus helper scripts to set up your system, to install Netdata without packages or binaries.

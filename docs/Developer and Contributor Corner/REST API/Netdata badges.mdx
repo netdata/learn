@@ -219,7 +219,7 @@ These are options dedicated to badges:
         These colors are taken from [https://github.com/badges/shields](https://github.com/badges/shields), which makes them compatible with standard
         badges.
 
-    -   `value_color=COLOR:null|COLOR<VALUE|COLOR>VALUE|COLOR>=VALUE|COLOR\<=VALUE|...`
+    -   `value_color=COLOR:null|COLOR<VALUE|COLOR>VALUE|COLOR>=VALUE|COLOR<=VALUE|...`
 
         You can add a pipe delimited list of conditions to pick the value color. The first matching (left to right) will
         be used.
@@ -230,7 +230,7 @@ These are options dedicated to badges:
         `netdata.conf` for the chart), `green` if the value is less than 10, `yellow` if the value is less than 100, and
         so on. Netdata will use `red` if no other conditions match. Only integers are supported as values.
 
-        The supported operators are `<`, `>`, `\<=`, `>=`, `=` (or `:`), and `!=` (or `<>`).
+        The supported operators are `<`, `>`, `<=`, `>=`, `=` (or `:`), and `!=` (or `<>`).
 
         You can also use the same syntax as the `label_color` parameter to define each of these colors. You can
         reference a predefined color by name or `RGB`/`RRGGBB` hex notation.

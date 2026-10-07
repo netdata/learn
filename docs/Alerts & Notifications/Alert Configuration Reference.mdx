@@ -600,7 +600,7 @@ lookup: METHOD(GROUPING OPTIONS) AFTER [at BEFORE] [every DURATION] [OPTIONS] [o
 
 | Parameter          | Purpose                     | Details                                                                                    |
 |--------------------|-----------------------------|--------------------------------------------------------------------------------------------|
-| `GROUPING OPTIONS` | Conditional processing      | `CONDITION VALUE` where condition is `!=`, `=`, `==`, `\<=`, `<`, `>`, `>=`                 |
+| `GROUPING OPTIONS` | Conditional processing      | `CONDITION VALUE` where condition is `!=`, `=`, `==`, `<=`, `<`, `>`, `>=`                 |
 | `at BEFORE`        | End of lookup timeframe     | Default is 0 (now)                                                                         |
 | `every DURATION`   | Update frequency            | Supports `s`, `m`, `h`, `d` units                                                          |
 | `OPTIONS`          | Processing modifiers        | See options table below                                                                    |
@@ -960,7 +960,7 @@ How to write calculations and use variables in your alert definitions. Essential
 | Type       | Operators                              | Result                    |
 |------------|----------------------------------------|---------------------------|
 | Arithmetic | `+`, `-`, `*`, `/`                     | Numeric values            |
-| Comparison | `<`, `==`, `\<=`, `<>`, `!=`, `>`, `>=` | `1` (true) or `0` (false) |
+| Comparison | `<`, `==`, `<=`, `<>`, `!=`, `>`, `>=` | `1` (true) or `0` (false) |
 | Logical    | `&&`, `||`,`!`,`AND`,`OR`,`NOT`        | `1` (true) or `0` (false) |
 
 **Special Functions:**
