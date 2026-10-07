@@ -61,7 +61,7 @@
 
 [[redirects]]
   from="/docs/collect/container-metrics"
-  to="/docs/collecting-metrics/collectors/containers-and-vms"
+  to="/docs/collecting-metrics/containers-and-cgroups"
 
 [[redirects]]
   from="/docs/rest-api/netdata-badges"
@@ -149,7 +149,7 @@
 
 [[redirects]]
   from="/docs/nightly/operations/run-time-troubleshooting-with-functions"
-  to="/docs/live-view"
+  to="/docs/dashboards-and-charts/tabs/live"
 
 [[redirects]]
   from="/docs/nightly/troubleshooting-and-machine-learning/events-feed"
@@ -185,7 +185,7 @@
 
 [[redirects]]
   from="/docs/nightly/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
-  to="/docs/live-view"
+  to="/docs/dashboards-and-charts/tabs/live"
 
 [[redirects]]
   from="/guides"
@@ -1159,6 +1159,10 @@
   to="/docs/network-performance-monitoring/device-metrics/integrations/isilon"
 
 [[redirects]]
+  from="/docs/dashboards-and-charts/tabs/top"
+  to="/docs/dashboards-and-charts/tabs/live"
+
+[[redirects]]
   from="/docs/data-collection/application-metrics"
   to="/docs/welcome-to-netdata/monitor-anything"
 
@@ -1363,6 +1367,14 @@
   to="/docs/netdata-parents/parent-child-configuration-reference"
 
 [[redirects]]
+  from="/docs/machine-learning-and-anomaly-detection/run-time-troubleshooting-with-functions"
+  to="/docs/dashboards-and-charts/tabs/live"
+
+[[redirects]]
+  from="/docs/machine-learning-and-assisted-troubleshooting/run-time-troubleshooting-with-functions"
+  to="/docs/dashboards-and-charts/tabs/live"
+
+[[redirects]]
   from="/docs/metrics-storage-management/enable-streaming"
   to="/docs/netdata-parents"
 
@@ -1387,8 +1399,16 @@
   to="/docs/collecting-metrics/collectors/networking/pi-hole"
 
 [[redirects]]
+  from="/docs/ml-and-troubleshooting/run-time-troubleshooting-with-functions"
+  to="/docs/dashboards-and-charts/tabs/live"
+
+[[redirects]]
   from="/docs/streaming/streaming-configuration-reference"
   to="/docs/netdata-parents/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/docs/troubleshooting-and-machine-learning/run-time-troubleshooting-with-functions"
+  to="/docs/dashboards-and-charts/tabs/live"
 
 [[redirects]]
   from="/guides/monitor/pi-hole-raspberry-pi"
