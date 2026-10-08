@@ -18,7 +18,7 @@ const expectedManifest = {
   artifacts: [
     {
       path: 'package-lock.json',
-      sha256: '2f474bd510cf012a3601d439268c19f25e8f42e6d643598563f65e411fe244f9',
+      sha256: '9b8264632d70dcaedd2e6de1c3b50de000e72dd307c5fcd010f427d3289f835e',
     },
     {
       path: 'package.json',
