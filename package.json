@@ -51,7 +51,7 @@
 		"@netlify/blobs": "11.0.1",
 		"@tailwindcss/typography": "^0.5.20",
 		"@types/react": "^19.3.0",
-		"acorn": "^8.18.0",
+		"acorn": "^8.19.0",
 		"axios": "^1.20.0",
 		"clsx": "^2.1.1",
 		"dotenv": "^17.4.2",
@@ -71,7 +71,7 @@
 		"saxes": "6.0.0",
 		"swagger-ui": "^5.32.14",
 		"typescript": "^7.0.2",
-		"webpack": "^5.109.2"
+		"webpack": "^5.111.1"
 	},
 	"devDependencies": {
 		"@docusaurus/faster": "3.10.2",
