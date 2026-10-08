@@ -1,0 +1,103 @@
+name: Dependency impact
+
+# Advisory check for Dependabot npm updates: builds the merge base (A) and the
+# pull request (B), which differ only in dependencies, and compares the rendered
+# output and key pages in a headless browser. Never a required check.
+on:
+  pull_request:
+    paths:
+      - package.json
+      - yarn.lock
+
+permissions:
+  contents: read
+
+concurrency:
+  group: dependency-impact-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  compare:
+    name: Advisory dependency impact
+    # The PR author, not github.actor: a maintainer re-running the job must not skip it.
+    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Check out the pull-request revision with history
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          # Full history: both revisions must exist locally, and the build
+          # reads page dates from git log.
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Show runner resources
+        run: nproc; free -h; df -h /
+
+      # netlify.toml is the single source of the Node version; run.sh enforces
+      # the same file, so the two can never drift.
+      - name: Read the Node version Netlify builds with
+        id: node
+        run: |
+          version="$(sed -nE 's/.*NODE_VERSION = "([0-9.]+)".*/\1/p' netlify.toml | head -n 1)"
+          test -n "$version" || { echo "::error::NODE_VERSION not found in netlify.toml"; exit 1; }
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ steps.node.outputs.version }}
+          cache: yarn
+
+      - name: Install the impact checker
+        run: scripts/dep-impact/run.sh setup
+
+      - name: Compare the merge base with the pull request
+        id: impact
+        env:
+          DEP_IMPACT_WORKDIR: ${{ runner.temp }}/dep-impact
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          merge_base="$(git merge-base "$BASE_SHA" HEAD)"
+          set +e
+          scripts/dep-impact/run.sh refs "$merge_base" HEAD
+          rc=$?
+          set -e
+          echo "exit_code=$rc" >> "$GITHUB_OUTPUT"
+
+          # run.sh points results/latest at the run it finished; absent if it
+          # stopped before producing a report.
+          result_dir="$(readlink -f "$DEP_IMPACT_WORKDIR/results/latest" 2>/dev/null || true)"
+          echo "result_dir=$result_dir" >> "$GITHUB_OUTPUT"
+          if [ -f "$result_dir/summary.md" ]; then
+            cat "$result_dir/summary.md" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "$rc" != 0 ]; then
+            printf '\nThe report (report.html with screenshots) and build logs are attached to this run as the dependency-impact-report artifact.\n' >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Upload the impact report
+        if: ${{ steps.impact.outputs.exit_code != '0' }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: dependency-impact-report
+          path: |
+            ${{ steps.impact.outputs.result_dir }}
+            ${{ runner.temp }}/dep-impact/logs
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Report the verdict
+        if: ${{ steps.impact.outputs.exit_code != '0' }}
+        env:
+          EXIT_CODE: ${{ steps.impact.outputs.exit_code }}
+        run: |
+          if [ "$EXIT_CODE" = "1" ]; then
+            echo "::error::Needs attention: REGRESSION or REVIEW = caused by the dependency change; BROKEN = already failing before the change (fix it on master first). Details: run summary and the dependency-impact-report artifact (report.html)."
+          else
+            echo "::error::The impact check could not complete (exit $EXIT_CODE). See the step log and the attached logs."
+          fi
+          exit 1

@@ -1,0 +1,118 @@
+{
+	"viewport": { "width": 1280, "height": 900 },
+	"navigationTimeoutMs": 60000,
+	"networkIdleTimeoutMs": 15000,
+	"waitForTimeoutMs": 20000,
+	"checkTimeoutMs": 10000,
+	"settleMs": 1500,
+	"maxScreenshotHeight": 8000,
+	"pixelThreshold": 0.1,
+	"maxDiffPixels": 5,
+	"retries": 1,
+	"blockHosts": [
+		"posthog.com",
+		"googletagmanager.com",
+		"google-analytics.com",
+		"cloudflareinsights.com",
+		"doubleclick.net"
+	],
+	"globalMask": [],
+	"outputIgnorePaths": [],
+	"contentIgnorePatterns": [],
+	"featureMarkers": {
+		"mermaid": "mermaid",
+		"swagger-ui": "swagger",
+		"search": "lunr",
+		"react-dom": "react-dom",
+		"dompurify": "DOMPurify",
+		"posthog": "posthog"
+	},
+	"pages": [
+		{
+			"name": "ask-nedi",
+			"path": "/docs/ask-nedi",
+			"mask": ["#nedi-persistent", "[role='status']"],
+			"checks": [
+				{
+					"name": "chat input appears",
+					"type": "selectorCount",
+					"selector": "#nedi-persistent .ai-agent-input",
+					"min": 1,
+					"timeoutMs": 20000
+				}
+			]
+		},
+		{
+			"name": "doc-page",
+			"path": "/docs/getting-started",
+			"checks": [
+				{ "name": "article heading", "type": "selectorCount", "selector": "article h1", "min": 1 },
+				{
+					"name": "search shows results",
+					"type": "search",
+					"input": "input[type='search'], .navbar__search-input",
+					"query": "streaming",
+					"result": "[role='option'], [class*='suggestion'], [class*='Suggestion'], .aa-suggestion"
+				},
+				{
+					"name": "sidebar navigation",
+					"type": "clickNavigates",
+					"selector": ".theme-doc-sidebar-menu a.menu__link[href^='/docs/']:not(.menu__link--active)"
+				}
+			]
+		},
+		{
+			"name": "mermaid",
+			"path": "/docs/netdata-parents/streaming-routing-reference",
+			"waitFor": ".docusaurus-mermaid-container svg",
+			"checks": [
+				{ "name": "diagram rendered", "type": "selectorCount", "selector": ".docusaurus-mermaid-container svg", "min": 1 }
+			]
+		},
+		{
+			"name": "install",
+			"path": "/docs/netdata-agent/installation/linux",
+			"checks": [
+				{ "name": "article heading", "type": "selectorCount", "selector": "article h1", "min": 1 }
+			]
+		},
+		{
+			"name": "collector",
+			"path": "/docs/collecting-metrics/collectors/databases/postgresql",
+			"checks": [
+				{ "name": "tables rendered", "type": "selectorCount", "selector": "article table", "min": 1 }
+			]
+		},
+		{
+			"name": "api",
+			"path": "/api.html",
+			"waitFor": ".swagger-ui .opblock",
+			"checks": [
+				{ "name": "endpoints listed", "type": "selectorCount", "selector": ".swagger-ui .opblock", "min": 1 }
+			]
+		},
+		{
+			"name": "not-found",
+			"path": "/docs/dep-impact-page-that-does-not-exist",
+			"checks": [
+				{ "name": "404 heading", "type": "selectorCount", "selector": "h1", "min": 1 }
+			]
+		},
+		{
+			"name": "dark-mode",
+			"path": "/docs/getting-started",
+			"colorScheme": "dark",
+			"checks": [
+				{ "name": "dark theme applied", "type": "selectorCount", "selector": "html[data-theme='dark']", "min": 1 }
+			]
+		},
+		{
+			"name": "mobile",
+			"path": "/docs/getting-started",
+			"viewport": { "width": 390, "height": 844 },
+			"checks": [
+				{ "name": "mobile menu button", "type": "selectorCount", "selector": ".navbar__toggle", "min": 1 }
+			]
+		}
+	]
+}
