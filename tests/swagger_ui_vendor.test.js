@@ -12,7 +12,7 @@ const {
 test('the static Swagger UI distribution matches its locked provenance contract', () => {
   assert.deepEqual(verifyVendor(), {
     package: 'swagger-ui-dist',
-    version: '5.32.14',
+    version: '5.33.1',
     files: assetFilenames.length,
   });
 });
