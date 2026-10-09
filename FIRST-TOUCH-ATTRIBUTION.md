@@ -63,7 +63,7 @@ authentication callback size.
 
 ## Validation and rollback
 
-Use Node.js 22.23.2 and the existing Yarn lockfile:
+Use Node.js 22.23.3 and the existing Yarn lockfile:
 
 ```sh
 npm run test:first-touch

@@ -33,15 +33,15 @@ Please also look at the [style guide](https://github.com/netdata/netdata/blob/ma
     cd learn
     ```
 
-2. Install Node.js 22.14.0, the version pinned by the Netlify build. With `nvm`:
+2. Install Node.js 22.23.3, the version pinned by the Netlify build. With `nvm`:
 
     ```bash
-    nvm install 22.14.0
-    nvm use 22.14.0
+    nvm install 22.23.3
+    nvm use 22.23.3
     ```
 
 3. Install Yarn Classic 1.22.22 and the locked dependencies. Netlify selects Yarn because
-   this repository tracks `yarn.lock`; npm 10.9.2 remains pinned for the nested build-gate
+   this repository tracks `yarn.lock`; npm 10.9.9 remains pinned for the nested build-gate
    install run by `build:netlify`.
 
     ```bash
