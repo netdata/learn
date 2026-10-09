@@ -1,7 +1,7 @@
 # Vendored website IndexNow build plugin
 
 `netdata/website` owns this shared IndexNow implementation. Learn vendors the checksum-covered
-schema-2 bytes from website commit `eb6246fcf87e4fc2b9160ed77606f6322d953cc1` and adapts only
+schema-2 bytes from website commit `5670562137379be4cfeac2538297d13ad503138b` and adapts only
 the host and published-route fixtures outside those covered files.
 The thin Netlify entry adapter, core implementation, manifest, dependency declaration, contract
 fixtures, and receipt schema are the six-file byte-identical vendor contract. Their SHA-256 values

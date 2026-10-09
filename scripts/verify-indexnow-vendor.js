@@ -20,7 +20,7 @@ try {
     throw new Error(`IndexNow vendor contract must cover ${required}`);
   }
 
-  const expectedDependencies = {'@netlify/blobs': '11.0.1', saxes: '6.0.0'};
+  const expectedDependencies = {'@netlify/blobs': '11.1.4', saxes: '6.0.0'};
   if (JSON.stringify(contract.dependencies) !== JSON.stringify(expectedDependencies)) {
     throw new Error('IndexNow vendor dependency contract is invalid');
   }
