@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
   "source_sow": "SOW-0017",
+  "record_scope": "Historical SOW-0017 acceptance snapshot. Commits, runtime versions and counts identify that acceptance. Current vendor versions and byte identity are recorded in scripts/site-build-gate/manifest.json and plugins/netlify-plugin-indexnow/vendor-checksums.json; their READMEs describe current provenance.",
   "delivery_boundary": {
     "technical_pull_request": 2980,
     "generated_output_branch": "ingest",
