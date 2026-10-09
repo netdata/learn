@@ -20,6 +20,8 @@ export default defineConfig({
   plugins: [jsxInJavaScript, react()],
 
   test: {
+    // Preserve the previous runner's mock lifecycle across the v5 default change.
+    clearMocks: false,
     // Use jsdom for DOM simulation
     environment: 'jsdom',
 

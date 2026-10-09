@@ -5,16 +5,16 @@ const test = require('node:test');
 
 const root = path.resolve(__dirname, '..');
 const expectedResolutions = {
-  '**/@11ty/gray-matter/js-yaml': '4.3.1',
-  '**/@docusaurus/plugin-content-docs/js-yaml': '4.3.1',
-  '**/@docusaurus/utils-validation/js-yaml': '4.3.1',
-  '**/@docusaurus/utils/js-yaml': '4.3.1',
-  '**/cosmiconfig/js-yaml': '4.3.1',
-  '**/gray-matter/js-yaml': '3.15.1',
+  '**/@11ty/gray-matter/js-yaml': '4.3.2',
+  '**/@docusaurus/plugin-content-docs/js-yaml': '4.3.2',
+  '**/@docusaurus/utils-validation/js-yaml': '4.3.2',
+  '**/@docusaurus/utils/js-yaml': '4.3.2',
+  '**/cosmiconfig/js-yaml': '4.3.2',
+  '**/gray-matter/js-yaml': '3.15.2',
   '**/http-proxy-middleware': '2.0.10',
-  '**/joi': '17.13.6',
-  '**/nanoid': '3.3.18',
-  '**/svgo': '3.3.4',
+  '**/joi': '17.13.8',
+  '**/nanoid': '3.3.20',
+  '**/svgo': '3.3.5',
 };
 
 const expectedNpmVersionGroups = {

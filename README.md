@@ -33,15 +33,15 @@ Please also look at the [style guide](https://github.com/netdata/netdata/blob/ma
     cd learn
     ```
 
-2. Install Node.js 22.14.0, the version pinned by the Netlify build. With `nvm`:
+2. Install Node.js 22.23.3, the version pinned by the Netlify build. With `nvm`:
 
     ```bash
-    nvm install 22.14.0
-    nvm use 22.14.0
+    nvm install 22.23.3
+    nvm use 22.23.3
     ```
 
 3. Install Yarn Classic 1.22.22 and the locked dependencies. Netlify selects Yarn because
-   this repository tracks `yarn.lock`; npm 10.9.2 remains pinned for the nested build-gate
+   this repository tracks `yarn.lock`; npm 10.9.9 remains pinned for the nested build-gate
    install run by `build:netlify`.
 
     ```bash
@@ -76,6 +76,16 @@ GitHub Actions; owner-controlled vendor packages are intentionally excluded from
 Root Yarn resolutions are only used for security releases that are compatible with every selected
 parent range. Do not use a resolution to bypass an incompatible upstream dependency constraint.
 
+### Diagram browser compatibility
+
+Documentation diagrams and Ask Nedi use Mermaid 12.1.0 with its version 12 rendering defaults.
+The renderer requires an ES2024-capable browser, including Safari 17.4 or newer. The local
+Docusaurus dependency and the separately loaded, integrity-checked Nedi asset use the same
+version; updating a local lock does not update the CDN bytes.
+The supported Mermaid theme wrapper remounts the upstream renderer when the color mode changes,
+so theme hydration cannot reuse a diagram's previous render identity. Rendering options remain
+owned by Docusaurus and Mermaid.
+
 ### Cloudflare Web Analytics
 
 The shared `docusaurus.config.js` script configuration installs one deferred module beacon on
@@ -102,6 +112,19 @@ Local servers and Netlify deploy previews do not provide the production Cloudfla
 `/cdn-cgi/rum`; their failed reporting requests cannot validate production ingestion. Validate
 their rendered snippet and page behavior, then verify reporting on the production host. Keep the
 shared Cloudflare site's automatic-installation mode and other hosts' settings unchanged.
+
+## Dependency tooling compatibility
+
+- Vitest and its V8 coverage provider use version 5 together. The configuration explicitly
+  keeps `clearMocks: false`, preserving the previous runner's mock lifecycle; coverage
+  scopes and thresholds are unchanged.
+- Ingest uses dotenv 18 through its existing `config()` API. Removed preload and encrypted
+  vault APIs are unused; no live ingestion is required to verify environment-file loading.
+- The local dependency-impact tool uses Playwright 1.64 and Pixelmatch 8. Pixelmatch now
+  measures color distance with OKLab/HyAB. Keep the existing comparison thresholds and
+  run the documented same-build calibration after updating the checker.
+- Node 22.23.3 retains its approved bundled npm 10.9.9 line. A separate npm-major
+  migration is not required by these packages or the nested locked-install commands.
 
 ## Ingest and process documentation files
 
@@ -149,7 +172,7 @@ The ingest script is a python script and has its dependencies (separate from the
     `.learn_environment/ingest-requirements.in`, then regenerate the lock with:
 
     ```bash
-    uv pip compile --generate-hashes --universal --python-version 3.13 \
+    uv pip compile --generate-hashes --universal --python-version 3.13 --upgrade \
       --output-file .learn_environment/ingest-requirements.txt \
       .learn_environment/ingest-requirements.in
     ```

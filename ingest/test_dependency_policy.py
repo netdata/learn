@@ -43,7 +43,7 @@ class IngestDependencyPolicyTests(unittest.TestCase):
     def test_active_workflows_pin_actions_and_install_the_hash_lock(self):
         expected_actions = {
             "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1",
-            "actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0",
+            "actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0",
             "actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0",
             "actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0",
             "webfactory/ssh-agent@e83874834305fe9a4a2997156cb26c5de65a8555 # v0.10.0",

@@ -4,8 +4,8 @@
 	"private": true,
 	"description": "Local reviewer tool: compares the rendered Learn site before and after a dependency change.",
 	"dependencies": {
-		"pixelmatch": "6.0.0",
-		"playwright": "1.55.1",
+		"pixelmatch": "8.0.0",
+		"playwright": "1.64.0",
 		"pngjs": "7.0.0"
 	}
 }

@@ -4,7 +4,7 @@
   "private": true,
   "main": "index.js",
   "dependencies": {
-    "@netlify/blobs": "11.0.1",
+    "@netlify/blobs": "11.1.4",
     "saxes": "6.0.0"
   },
   "engines": {
