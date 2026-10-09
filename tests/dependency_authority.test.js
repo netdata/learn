@@ -13,7 +13,7 @@ const expectedResolutions = {
   '**/gray-matter/js-yaml': '3.15.1',
   '**/http-proxy-middleware': '2.0.10',
   '**/joi': '17.13.6',
-  '**/nanoid': '3.3.18',
+  '**/nanoid': '3.3.20',
   '**/svgo': '3.3.4',
 };
 
