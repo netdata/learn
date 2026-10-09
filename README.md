@@ -76,6 +76,16 @@ GitHub Actions; owner-controlled vendor packages are intentionally excluded from
 Root Yarn resolutions are only used for security releases that are compatible with every selected
 parent range. Do not use a resolution to bypass an incompatible upstream dependency constraint.
 
+### Diagram browser compatibility
+
+Documentation diagrams and Ask Nedi use Mermaid 12.1.0 with its version 12 rendering defaults.
+The renderer requires an ES2024-capable browser, including Safari 17.4 or newer. The local
+Docusaurus dependency and the separately loaded, integrity-checked Nedi asset use the same
+version; updating a local lock does not update the CDN bytes.
+The supported Mermaid theme wrapper remounts the upstream renderer when the color mode changes,
+so theme hydration cannot reuse a diagram's previous render identity. Rendering options remain
+owned by Docusaurus and Mermaid.
+
 ### Cloudflare Web Analytics
 
 The shared `docusaurus.config.js` script configuration installs one deferred module beacon on
