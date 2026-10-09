@@ -56,8 +56,8 @@ describe('shared deployment integrations', () => {
     for (const relative of ['static.toml', 'netlify.toml']) {
       const config = fs.readFileSync(path.join(root, relative), 'utf8');
       expect(config).not.toContain('NETLIFY_USE_YARN');
-      expect(config).toContain('NODE_VERSION = "22.23.2"');
-      expect(config).toContain('NPM_VERSION = "10.9.8"');
+      expect(config).toContain('NODE_VERSION = "22.23.3"');
+      expect(config).toContain('NPM_VERSION = "10.9.9"');
     }
   });
 
@@ -65,7 +65,7 @@ describe('shared deployment integrations', () => {
     const devcontainer = JSON.parse(
       fs.readFileSync(path.join(root, '.devcontainer/devcontainer.json'), 'utf8'),
     );
-    expect(devcontainer.image).toBe('node:22.23.2');
+    expect(devcontainer.image).toBe('node:22.23.3');
   });
 
   it('uses the stable Docusaurus Faster engine within the Netlify memory bound', () => {
@@ -103,7 +103,7 @@ describe('shared deployment integrations', () => {
       schema_version: 2,
       owner: 'netdata/website',
       algorithm: 'sha256',
-      dependencies: {'@netlify/blobs': '11.0.1', saxes: '6.0.0'},
+      dependencies: {'@netlify/blobs': '11.1.4', saxes: '6.0.0'},
       receipt_schema_version: 2,
       contract_tests_schema_version: 2,
     });
