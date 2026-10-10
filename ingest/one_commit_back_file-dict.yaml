@@ -658,8 +658,6 @@
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-dns
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/ebpfgo.plugin/integrations/ebpf_filedescriptor.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-filedescriptor
-- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_dcstat.md
-  learn_path: /docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat-ebpf-plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_disk.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-disk
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/ebpf.plugin/integrations/ebpf_filesystem.md
