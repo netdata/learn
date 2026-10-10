@@ -15454,4 +15454,8 @@
   from="/docs/network-performance-monitoring/syslog/syslog-from-network-devices"
   to="/docs/network-performance-monitoring/syslog"
 
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat-ebpf-plugin"
+  to="/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat"
+
 # section: dynamic << END
