@@ -404,7 +404,13 @@ class RepositoryCatalogueTests(unittest.TestCase):
             for route, catalogue_source in self.catalogue.items()
             if catalogue_source == source
         }
-        self.assertEqual(len(routes), 3)
+        self.assertEqual(routes, {
+            "/docs/data-collection/ebpf/ebpf-dcstat",
+            "/docs/collecting-metrics/ebpf/ebpf-dcstat",
+            "/docs/collecting-metrics/operating-systems/ebpf-dcstat",
+            "/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat",
+            "/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat-ebpf-plugin",
+        })
         retained = {entry["route"] for entry in result["retained"]}
         for route in routes:
             self.assertTrue(route in result["resolved"] or route in retained, route)
