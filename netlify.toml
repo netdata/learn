@@ -1106,6 +1106,53 @@
   from="/guides/troubleshoot/troubleshooting-agent-with-cloud-connection"
   to="/docs/netdata-cloud/connect-agent"
 
+# Broken backlinks follow-up (2026-10-11): dead URLs that still hold a confirmed live backlink, sent to
+# the page that covers the subject today or, when none does, to the closest parent section.
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/grpc"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/pkg/web"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/agent/go.d.plugin"
+  to="/docs/developer-and-contributor-corner/external-plugins/go.d.plugin"
+
+[[redirects]]
+  from="/docs/agent/health/tutorials/dimension-templates"
+  to="/docs/alerts-&-notifications"
+
+[[redirects]]
+  from="/docs/agent/libnetdata/eval"
+  to="/docs/developer-and-contributor-corner/libnetdata"
+
+[[redirects]]
+  from="/docs/agent/packaging/distributions"
+  to="/docs/netdata-agent/versions-&-platforms"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/browser-pop-ups"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/agent-notifications-reference"
+
+[[redirects]]
+  from="/docs/alerting/notifications/netdata-agent-notifications/stackpulse"
+  to="/docs/alerts-&-notifications/notifications/agent-dispatched-notifications/agent-notifications-reference"
+
+[[redirects]]
+  from="/docs/collecting-metrics/service-discovery-"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/data-collection/dns-and-dhcp-servers/bind9"
+  to="https://www.netdata.cloud/monitoring-101/bind9-monitoring/"
+
+[[redirects]]
+  from="/docs/developer-and-contributor-corner/customize-the-standard-dashboard"
+  to="/docs/dashboards-and-charts/tabs/dashboards"
+
 # Corrected generated redirects (2026-10-07): these dead pages went to an unrelated or generic page
 # although a page with their content, a native page for the same product, or the page that now
 # covers their subject exists. Each rule overrides the generated rule with the same source; a few
