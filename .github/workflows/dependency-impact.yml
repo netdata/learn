@@ -1,6 +1,6 @@
 name: Dependency impact
 
-# Advisory check for Dependabot npm updates: builds the merge base (A) and the
+# Advisory check for npm updates: builds the merge base (A) and the
 # pull request (B), which differ only in dependencies, and compares the rendered
 # output and key pages in a headless browser. Never a required check.
 on:
@@ -19,8 +19,6 @@ concurrency:
 jobs:
   compare:
     name: Advisory dependency impact
-    # The PR author, not github.actor: a maintainer re-running the job must not skip it.
-    if: ${{ github.event.pull_request.user.login == 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
 

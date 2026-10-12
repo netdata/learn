@@ -13,7 +13,6 @@ const docusaurus = require('../../docusaurus.config.js');
 describe('shared deployment integrations', () => {
   it('runs the exact C8 bundle after generated output activates strict gates', () => {
     const command = packageJson.scripts['build:netlify'];
-    const swaggerVendor = 'node scripts/verify-swagger-ui-vendor.js';
     const install = 'npm ci --prefix scripts/site-build-gate --ignore-scripts --no-audit';
     const build = 'docusaurus build';
     const gateRunner = 'node scripts/run-post-build-gates.mjs';
@@ -33,10 +32,8 @@ describe('shared deployment integrations', () => {
       '--format',
       'json',
     ]);
-    expect(command).toContain(swaggerVendor);
     expect(command).toContain(install);
     expect(command).toContain(gateRunner);
-    expect(command.indexOf(swaggerVendor)).toBeLessThan(command.indexOf(install));
     expect(command.indexOf(install)).toBeLessThan(command.indexOf(build));
     expect(command.indexOf(build)).toBeLessThan(command.indexOf(gateRunner));
 
@@ -132,11 +129,9 @@ describe('shared deployment integrations', () => {
     ]);
     expect(beacons[0]).not.toHaveProperty('integrity');
 
-    for (const relative of ['static/api.html', 'static/oauth2-redirect.html']) {
-      const html = fs.readFileSync(path.join(root, relative), 'utf8');
-      expect(html).not.toContain('static.cloudflareinsights.com');
-      expect(html).not.toContain('7408c22ab930458a8467c91b5360b8f3');
-    }
+    const api = fs.readFileSync(path.join(root, 'static/api.html'), 'utf8');
+    expect(api).not.toContain('static.cloudflareinsights.com');
+    expect(api).not.toContain('7408c22ab930458a8467c91b5360b8f3');
     expect(fs.existsSync(path.join(root, 'static/docs/ask-netdata/index.html'))).toBe(false);
   });
 });

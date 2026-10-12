@@ -52,6 +52,7 @@ updates:
           - react
           - react-dom
           - react-inlinesvg
+          - swagger-ui-dist
         update-types:
           - minor
           - patch
