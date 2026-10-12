@@ -59,12 +59,17 @@ This command starts a local development server and opens up a browser window. Ma
 
 ### Static Swagger UI distribution
 
-`/api` serves the static Swagger UI distribution. Its exact source package, Yarn resolution, and
-SHA-256 file hashes are recorded in `static/swagger-ui-vendor.json`. After intentionally changing
-the exact `swagger-ui-dist` development dependency, run `yarn vendor:swagger-ui` and then
-`yarn test:swagger-ui-vendor`. The vendor command updates only the published distribution assets;
-`static/api.html` and `static/swagger-initializer.js` remain Netdata-specific configuration. The
-vendor contract also records the title-only local accessibility overlay on its OAuth redirect page.
+`/api` is the hand-written `static/api.html` page with Netdata's `static/swagger-initializer.js`.
+The Swagger UI files it loads are not committed: `src/plugins/swagger-ui-assets.js` copies them
+from the installed `swagger-ui-dist` package into the ignored `generated-static/swagger-ui/`
+directory on every `yarn start` and `yarn build`, and Docusaurus publishes that directory next to
+`static/`. The served version is therefore always the one locked in `yarn.lock`, and a
+`swagger-ui-dist` update needs no manual step. The build fails if the package stops shipping a
+listed file.
+
+Learn does not publish Swagger UI's `oauth2-redirect.html`, because the Netdata API defines no
+OAuth2 security scheme. If one is added, add `oauth2-redirect.html` and `oauth2-redirect.js` to
+the plugin's asset list; the site build gate requires the page to have a title.
 
 ### Dependency update authority
 
@@ -89,11 +94,11 @@ owned by Docusaurus and Mermaid.
 ### Cloudflare Web Analytics
 
 The shared `docusaurus.config.js` script configuration installs one deferred module beacon on
-each rendered page except the credential-handling `api.html` and `oauth2-redirect.html` artifacts.
+each rendered page except the credential-handling `api.html` artifact.
 Its public site token identifies the existing Cloudflare analytics site. The payload sets
 `send.to` to `/cdn-cgi/rum` so production browser reports use the Learn origin's Cloudflare receiver.
 The build verifier requires exactly that token and destination and rejects additional payload
-fields, duplicate beacons, and third-party code on the credential-handling artifacts.
+fields, duplicate beacons, and third-party code on the credential-handling artifact.
 
 `send.to` is an undocumented option implemented by the unversioned Cloudflare beacon. It is a
 provider compatibility dependency that may change independently of Learn releases. The
@@ -105,8 +110,8 @@ After deployment, verify a production page in a browser: the official beacon mus
 its actual reporting POST to `/cdn-cgi/rum` must complete successfully, and fresh analytics for
 the exact `learn.netdata.cloud` host must appear in Cloudflare. A loaded script, a successful
 OPTIONS request, or a successful POST without fresh provider data is insufficient for full
-recovery acceptance. Test normal documentation and Ask Nedi pages, and confirm that `/api` and
-`/oauth2-redirect.html` still load no third-party analytics.
+recovery acceptance. Test normal documentation and Ask Nedi pages, and confirm that `/api` still
+loads no third-party analytics.
 
 Local servers and Netlify deploy previews do not provide the production Cloudflare receiver at
 `/cdn-cgi/rum`; their failed reporting requests cannot validate production ingestion. Validate

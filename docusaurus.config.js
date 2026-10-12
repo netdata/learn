@@ -1,5 +1,6 @@
 const {themes: prismThemes} = require('prism-react-renderer');
 const {isSitemapIncludedRoute} = require('./seo.config');
+const {SWAGGER_UI_STATIC_DIR} = require('./src/plugins/swagger-ui-assets');
 
 // Extend Dracula with missing token type mappings for YAML, config files, etc.
 const draculaExtended = {
@@ -22,6 +23,7 @@ module.exports = {
 	baseUrl: '/',
 	onBrokenLinks: 'warn',
 	favicon: 'img/favicon-32x32.png',
+	staticDirectories: ['static', SWAGGER_UI_STATIC_DIR],
 	organizationName: 'netdata',
 	projectName: 'netdata',
 	future: {
@@ -182,6 +184,7 @@ module.exports = {
 		// },
 	},
 	plugins: [
+		require.resolve('./src/plugins/swagger-ui-assets'),
 		[
 			"posthog-docusaurus",
 			{

@@ -21,7 +21,15 @@ const expectedNpmVersionGroups = {
   'css-toolchain': ['"@tailwindcss/*"', 'tailwindcss', 'autoprefixer', 'postcss', '"postcss-*"'],
   'javascript-build-parser': ['"@babel/*"', 'acorn', 'dotenv', 'parse5', 'typescript', 'webpack'],
   'test-runtime': ['"@testing-library/*"', '"@vitejs/*"', '"@vitest/*"', 'happy-dom', 'jsdom', 'vite', 'vitest'],
-  'browser-runtime': ['"@types/react"', 'axios', 'mermaid', 'react', 'react-dom', 'react-inlinesvg'],
+  'browser-runtime': [
+    '"@types/react"',
+    'axios',
+    'mermaid',
+    'react',
+    'react-dom',
+    'react-inlinesvg',
+    'swagger-ui-dist',
+  ],
   'docusaurus-renderer': [
     '"@docusaurus/*"',
     '"@easyops-cn/docusaurus-search-local"',
@@ -103,7 +111,6 @@ function assertNpmVersionGroups(dependabot) {
       `${groupName} patterns must match its approved validation surface`,
     );
   }
-  assert.doesNotMatch(npmBlock, /swagger-ui/, 'Swagger UI must retain its independent vendor validation');
 }
 
 function assertCompatibleVersionGroup(updateBlock, groupName) {

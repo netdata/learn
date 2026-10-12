@@ -219,14 +219,13 @@ test('only exact App HTTPS links are eligible; preview and localhost do not capt
   }
 });
 
-test('Docusaurus head and standalone API use the same synchronous scripts; OAuth utility does not', () => {
+test('Docusaurus head and standalone API use the same synchronous scripts', () => {
   const scripts = config.scripts.filter(item => item.src?.includes('first-touch'));
   assert.deepEqual(scripts.map(item => item.src), ['/js/first-touch-handoff.js', '/js/first-touch.js']);
   assert.ok(scripts.every(item => item.async === false && item.defer === false));
   const api = readFileSync(new URL('../static/api.html', import.meta.url), 'utf8');
   assert.ok(api.indexOf('first-touch-handoff.js') < api.indexOf('first-touch.js'));
   assert.ok(api.indexOf('first-touch.js') < api.indexOf('</head>'));
-  assert.ok(!readFileSync(new URL('../static/oauth2-redirect.html', import.meta.url), 'utf8').includes('first-touch'));
 });
 
 test('preserves query bytes, fragments and existing envelopes, with a complete URL size cap', async t => {

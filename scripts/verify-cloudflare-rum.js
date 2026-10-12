@@ -22,7 +22,7 @@ const REPRESENTATIVE_ROUTES = [
   'docs/collecting-metrics/collectors/index.html',
   'docs/netdata-agent/installation/linux/index.html',
 ];
-const SENSITIVE_ROUTES = ['api.html', 'oauth2-redirect.html'];
+const SENSITIVE_ROUTES = ['api.html'];
 
 function htmlFilesUnder(root) {
   const files = [];
