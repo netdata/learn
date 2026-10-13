@@ -3176,10 +3176,10 @@
   dependencies:
     "@tybys/wasm-util" "^0.10.3"
 
-"@netdata/site-build-gate@10.1.0-test.0":
-  version "10.1.0-test.0"
-  resolved "https://registry.npmjs.org/@netdata/site-build-gate/-/site-build-gate-10.1.0-test.0.tgz#8ff61b3a6c3c9e350d247b9cfeb043c0e8fb4045"
-  integrity sha512-Eh2Fr5afMFWeyXjRHD6VJI7NC/fEpTVhU4UxzsHuf/+rXWjCniPp+xd4froc/IxgTyRLlAkDT1Em1CTVGvMSVQ==
+"@netdata/site-build-gate@^10.1.0":
+  version "10.1.0"
+  resolved "https://registry.npmjs.org/@netdata/site-build-gate/-/site-build-gate-10.1.0.tgz#08c5aa479c00652762a86670444c12a72945b372"
+  integrity sha512-MhzcxUyIHXNrP/CPWcRNrYanGMEvM4d77AFQJ6Ax3NyoS8Wh+5UOrtLTRGqGIfbLigqoNJc6/SW4ugAmHCGZJQ==
   dependencies:
     css-tree "^3.2.1"
     parse5 "^8.0.1"

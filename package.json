@@ -73,7 +73,7 @@
 	},
 	"devDependencies": {
 		"@docusaurus/faster": "3.10.2",
-		"@netdata/site-build-gate": "10.1.0-test.0",
+		"@netdata/site-build-gate": "^10.1.0",
 		"@tailwindcss/postcss": "^4.3.3",
 		"@testing-library/dom": "^10.4.2",
 		"@testing-library/jest-dom": "^7.0.1",
