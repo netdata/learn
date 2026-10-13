@@ -1152,6 +1152,80 @@
   from="/docs/developer-and-contributor-corner/customize-the-standard-dashboard"
   to="/docs/dashboards-and-charts/tabs/dashboards"
 
+# Broken backlinks, third batch (2026-10-13): more dead URLs that hold a confirmed live backlink.
+
+[[redirects]]
+  from="/docs/agent/architecture/overview"
+  to="/docs/netdata-agent"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/modules/adaptec_raid"
+  to="/docs/collecting-metrics/collectors/storage-and-filesystems/adaptec-raid"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/modules/ap"
+  to="/docs/collecting-metrics/collectors/networking/access-points"
+
+[[redirects]]
+  from="/docs/agent/collectors/go.d.plugin/modules/apcupsd"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors/apc-ups"
+
+[[redirects]]
+  from="/docs/agent/collectors/health"
+  to="/docs/alerts-&-notifications"
+
+[[redirects]]
+  from="/docs/agent/collectors/nfacct.plug"
+  to="/docs/collecting-metrics/collectors/networking/netfilter"
+
+[[redirects]]
+  from="/docs/agent/configuration"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/agent/installation"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/methods"
+  to="/docs/netdata-agent/installation"
+
+[[redirects]]
+  from="/docs/agent/packaging/installer/methods/one-line-install"
+  to="/docs/netdata-agent/installation/linux"
+
+[[redirects]]
+  from="/docs/agent/tutorials/collect-unbound-metrics"
+  to="/docs/developer-and-contributor-corner/monitor-unbound-dns-servers-with-netdata"
+
+[[redirects]]
+  from="/docs/backends/prometheus"
+  to="/docs/exporting-metrics/prometheus"
+
+[[redirects]]
+  from="/docs/collecting-metrics/hardware-and-system/hardware-sensors"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors/linux-hardware-sensors-libsensors"
+
+[[redirects]]
+  from="/docs/collecting-metrics/monitor-the-monitor/applications"
+  to="/docs/collecting-metrics/collectors/applications"
+
+[[redirects]]
+  from="/docs/collectors/go.d.plugin/modules/iptables"
+  to="/docs/collecting-metrics/collectors/networking/netfilter"
+
+[[redirects]]
+  from="/docs/integrations/prometheus"
+  to="/docs/exporting-metrics/prometheus"
+
+[[redirects]]
+  from="/docs/monitoring/bandwidth"
+  to="/docs/collecting-metrics/collectors/networking/network-interfaces"
+
+[[redirects]]
+  from="/docs/visualization/grafana"
+  to="/docs/dashboards-and-charts/grafana-plugin"
+
 # Corrected generated redirects (2026-10-07): these dead pages went to an unrelated or generic page
 # although a page with their content, a native page for the same product, or the page that now
 # covers their subject exists. Each rule overrides the generated rule with the same source; a few
