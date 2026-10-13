@@ -32,7 +32,7 @@ describe('post-build gate rollout', () => {
       ['scripts/verify-rendered-indexability.js'],
       ['scripts/verify-cloudflare-rum.js', 'build'],
       [
-        'scripts/site-build-gate/site_build_gate.mjs',
+        'node_modules/@netdata/site-build-gate/site_build_gate.mjs',
         '--build-dir',
         'build',
         '--site-origin',

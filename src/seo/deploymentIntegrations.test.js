@@ -11,16 +11,15 @@ const packageJson = require('../../package.json');
 const docusaurus = require('../../docusaurus.config.js');
 
 describe('shared deployment integrations', () => {
-  it('runs the exact C8 bundle after generated output activates strict gates', () => {
+  it('runs the installed C8 gate after generated output activates strict gates', () => {
     const command = packageJson.scripts['build:netlify'];
-    const install = 'npm ci --prefix scripts/site-build-gate --ignore-scripts --no-audit';
     const build = 'docusaurus build';
     const gateRunner = 'node scripts/run-post-build-gates.mjs';
     const scan = postBuildGateCommands({generatedOutputReady: true}).find(
-      ([script]) => script === 'scripts/site-build-gate/site_build_gate.mjs',
+      ([script]) => script === 'node_modules/@netdata/site-build-gate/site_build_gate.mjs',
     );
     expect(scan).toEqual([
-      'scripts/site-build-gate/site_build_gate.mjs',
+      'node_modules/@netdata/site-build-gate/site_build_gate.mjs',
       '--build-dir',
       'build',
       '--site-origin',
@@ -32,20 +31,8 @@ describe('shared deployment integrations', () => {
       '--format',
       'json',
     ]);
-    expect(command).toContain(install);
     expect(command).toContain(gateRunner);
-    expect(command.indexOf(install)).toBeLessThan(command.indexOf(build));
     expect(command.indexOf(build)).toBeLessThan(command.indexOf(gateRunner));
-
-    const manifest = JSON.parse(
-      fs.readFileSync(path.join(root, 'scripts/site-build-gate/manifest.json'), 'utf8'),
-    );
-    expect(manifest).toMatchObject({
-      schema: 'netdata-site-build-gate-vendor-v2',
-      contract: 'netdata-site-build-gate-v1',
-      ruleset_version: 10,
-      node_major: 22,
-    });
   });
 
   it('pins the exact Yarn runtime without the deprecated Netlify selector', () => {

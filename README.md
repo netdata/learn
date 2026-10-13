@@ -74,8 +74,8 @@ the plugin's asset list; the site build gate requires the page to have a title.
 ### Dependency update authority
 
 The root JavaScript dependency authority is `package.json` plus Yarn Classic `yarn.lock`. Do not
-add a root `package-lock.json`. The npm lock below `scripts/site-build-gate/` is a separate,
-website-owned vendor contract and remains npm-managed. Dependabot watches the root Yarn graph and
+add a root `package-lock.json`. The site build gate is the published `@netdata/site-build-gate`
+package, so its parser dependencies are part of the root Yarn graph. Dependabot watches that graph and
 GitHub Actions; owner-controlled vendor packages are intentionally excluded from automatic updates.
 
 Root Yarn resolutions are only used for security releases that are compatible with every selected
