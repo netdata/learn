@@ -41,8 +41,7 @@ Please also look at the [style guide](https://github.com/netdata/netdata/blob/ma
     ```
 
 3. Install Yarn Classic 1.22.22 and the locked dependencies. Netlify selects Yarn because
-   this repository tracks `yarn.lock`; npm 10.9.9 remains pinned for the nested build-gate
-   install run by `build:netlify`.
+   this repository tracks `yarn.lock`.
 
     ```bash
     npm install --global yarn@1.22.22
