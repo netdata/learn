@@ -81,25 +81,17 @@ describe('shared deployment integrations', () => {
     expect(docusaurus.themeConfig.navbar.logo.target).toBe('_self');
   });
 
-  it('uses the complete website-owned IndexNow schema-2 contract', () => {
-    const contract = require('../../plugins/netlify-plugin-indexnow/vendor-checksums.json');
-    expect(contract).toMatchObject({
+  it('installs the website-owned IndexNow schema-2 plugin from npm', () => {
+    const plugin = '@netdata/netlify-plugin-indexnow';
+    expect(packageJson.devDependencies).toHaveProperty(plugin);
+    for (const relative of ['static.toml', 'netlify.toml']) {
+      const config = fs.readFileSync(path.join(root, relative), 'utf8');
+      expect(config).toContain(`package = "${plugin}"`);
+    }
+    expect(require(`${plugin}/contract-tests.json`)).toMatchObject({
       schema_version: 2,
-      owner: 'netdata/website',
-      algorithm: 'sha256',
-      dependencies: {'@netlify/blobs': '11.1.4', saxes: '6.0.0'},
       receipt_schema_version: 2,
-      contract_tests_schema_version: 2,
     });
-    expect(Object.keys(contract.files).sort()).toEqual([
-      'contract-tests.json',
-      'core.js',
-      'index.js',
-      'manifest.yml',
-      'package.json',
-      'receipt-schema.json',
-    ]);
-    expect(packageJson.dependencies).toMatchObject(contract.dependencies);
   });
 
   it('installs exactly one manual Cloudflare module beacon through shared configuration', () => {
