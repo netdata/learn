@@ -3176,6 +3176,14 @@
   dependencies:
     "@tybys/wasm-util" "^0.10.3"
 
+"@netdata/netlify-plugin-indexnow@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@netdata/netlify-plugin-indexnow/-/netlify-plugin-indexnow-1.0.0.tgz#b6a67116ba547be46fd70608ab700197b82134f5"
+  integrity sha512-k9TaaHsIEopPpgoXhz5kzihITcsxEiYsj7kon/e4TNR4juFG9S9IDCJKX9nwwCvfEUYXAjusNrRfEIsgJMu9Yw==
+  dependencies:
+    "@netlify/blobs" "^11.1.4"
+    saxes "^6.0.0"
+
 "@netdata/site-build-gate@^10.1.0":
   version "10.1.0"
   resolved "https://registry.npmjs.org/@netdata/site-build-gate/-/site-build-gate-10.1.0.tgz#08c5aa479c00652762a86670444c12a72945b372"
@@ -3185,7 +3193,7 @@
     parse5 "^8.0.1"
     saxes "^6.0.0"
 
-"@netlify/blobs@11.1.4":
+"@netlify/blobs@^11.1.4":
   version "11.1.4"
   resolved "https://registry.npmjs.org/@netlify/blobs/-/blobs-11.1.4.tgz#74e4cd58b8f6a92c4b7254d644065d8610e8783d"
   integrity sha512-rtvtXG0NQkmIdpdI8AI/LKesf3TdZJwNP0VaxodPpb/yYzME62YAaqYVmB2MC5gO5Wxls1aIzcCK2xJFRNRhoQ==
@@ -11880,7 +11888,7 @@ sax@^1.2.4, sax@^1.5.0:
   resolved "https://registry.npmjs.org/sax/-/sax-1.6.1.tgz#4c23cf608c0b693ab54b4b5888e92cfe977b9843"
   integrity sha512-42tBVwLWnaQvW5zc4HbZrTuWccECCZfBi92FDuwtqxasH+JbPB3/FOKb1m222K42R4WxuxzzMsTswfzgtSu64Q==
 
-saxes@6.0.0, saxes@^6.0.0:
+saxes@^6.0.0:
   version "6.0.0"
   resolved "https://registry.npmjs.org/saxes/-/saxes-6.0.0.tgz#fe5b4a4768df4f14a201b1ba6a65c1f3d9988cc5"
   integrity sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==

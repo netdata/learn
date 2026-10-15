@@ -74,8 +74,10 @@ the plugin's asset list; the site build gate requires the page to have a title.
 
 The root JavaScript dependency authority is `package.json` plus Yarn Classic `yarn.lock`. Do not
 add a root `package-lock.json`. The site build gate is the published `@netdata/site-build-gate`
-package, so its parser dependencies are part of the root Yarn graph. Dependabot watches that graph and
-GitHub Actions; owner-controlled vendor packages are intentionally excluded from automatic updates.
+package, so its parser dependencies are part of the root Yarn graph. The IndexNow build plugin is
+the published `@netdata/netlify-plugin-indexnow` package, owned by `netdata/website`; its releases
+and its dependencies arrive as ordinary root Yarn updates. Dependabot watches that graph and GitHub
+Actions.
 
 Root Yarn resolutions are only used for security releases that are compatible with every selected
 parent range. Do not use a resolution to bypass an incompatible upstream dependency constraint.

@@ -7,7 +7,7 @@
   environment = { NPM_VERSION = "10.9.9", NODE_VERSION = "22.23.3", NODE_OPTIONS = "--max-old-space-size=3072", DOCUSAURUS_SSR_CONCURRENCY = "4"}
 
 [[plugins]]
-  package = "./plugins/netlify-plugin-indexnow"
+  package = "@netdata/netlify-plugin-indexnow"
 
   [plugins.inputs]
     host = "learn.netdata.cloud"

@@ -5,9 +5,9 @@ const os = require('node:os');
 const path = require('node:path');
 const test = require('node:test');
 
-const plugin = require('../plugins/netlify-plugin-indexnow');
-const core = require('../plugins/netlify-plugin-indexnow/core.js');
-const contractTests = require('../plugins/netlify-plugin-indexnow/contract-tests.json');
+const plugin = require('@netdata/netlify-plugin-indexnow');
+const core = require('@netdata/netlify-plugin-indexnow/core.js');
+const contractTests = require('@netdata/netlify-plugin-indexnow/contract-tests.json');
 
 const HOST = 'learn.netdata.cloud';
 const KEY = '69893e732658435694bf647d5a6fed1d';
