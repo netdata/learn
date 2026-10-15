@@ -49,8 +49,10 @@ Netlify build or deployment responsible for merge eligibility:
 
 ## Static build gate contract
 
-- Learn commits the complete checksum-bound Node.js 22 gate under `scripts/site-build-gate/` and
-  runs it locally after Docusaurus. CI and deployment do not fetch or execute the SEO repository.
+- Learn installs the SEO-owned Node.js 22 gate as the published npm package
+  `@netdata/site-build-gate` and runs it locally after Docusaurus. Its major version is the
+  ruleset version and must match `config/site-build-gate-baseline.json`. CI and deployment do not
+  fetch or execute the SEO repository.
 - Learn declares `/docs/collecting-metrics/collectors` as its segment-safe integration route
   prefix. The generic page-weight diagnostic excludes that route family; integration pages remain
   subject to every non-weight rule, so this is not a whole-page validation bypass.

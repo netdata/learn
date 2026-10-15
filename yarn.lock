@@ -3176,6 +3176,15 @@
   dependencies:
     "@tybys/wasm-util" "^0.10.3"
 
+"@netdata/site-build-gate@^10.1.0":
+  version "10.1.0"
+  resolved "https://registry.npmjs.org/@netdata/site-build-gate/-/site-build-gate-10.1.0.tgz#08c5aa479c00652762a86670444c12a72945b372"
+  integrity sha512-MhzcxUyIHXNrP/CPWcRNrYanGMEvM4d77AFQJ6Ax3NyoS8Wh+5UOrtLTRGqGIfbLigqoNJc6/SW4ugAmHCGZJQ==
+  dependencies:
+    css-tree "^3.2.1"
+    parse5 "^8.0.1"
+    saxes "^6.0.0"
+
 "@netlify/blobs@11.1.4":
   version "11.1.4"
   resolved "https://registry.npmjs.org/@netlify/blobs/-/blobs-11.1.4.tgz#74e4cd58b8f6a92c4b7254d644065d8610e8783d"

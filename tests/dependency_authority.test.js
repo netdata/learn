@@ -126,19 +126,17 @@ function assertCompatibleVersionGroup(updateBlock, groupName) {
   assert.match(group, /^ {8}update-types:\n {10}- minor\n {10}- patch$/m, `${groupName} must leave majors separate`);
 }
 
-test('uses one root Yarn authority and isolates owner-controlled npm vendors', () => {
+test('uses one root Yarn authority', () => {
   const packageJson = require('../package.json');
   assert.equal(packageJson.packageManager, 'yarn@1.22.22');
   assert.deepEqual(packageJson.resolutions, expectedResolutions);
   assert.equal(fs.existsSync(path.join(root, 'yarn.lock')), true);
   assert.equal(fs.existsSync(path.join(root, 'package-lock.json')), false);
-  assert.equal(fs.existsSync(path.join(root, 'scripts/site-build-gate/package-lock.json')), true);
 
   const dependabot = fs.readFileSync(path.join(root, '.github/dependabot.yml'), 'utf8');
   assertScopedUpdateBlock(dependabot, 'npm', '/');
   assertScopedUpdateBlock(dependabot, 'github-actions', '/');
   assertScopedUpdateBlock(dependabot, 'pip', '"/.learn_environment"');
-  assert.doesNotMatch(dependabot, /scripts\/site-build-gate/);
 
   assert.throws(
     () => assertScopedUpdateBlock(dependabot.replace('directory: /', 'directory: /packages'), 'npm', '/'),

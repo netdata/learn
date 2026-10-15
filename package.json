@@ -19,7 +19,7 @@
 		"docusaurus": "docusaurus",
 		"start": "docusaurus start",
 		"build": "docusaurus build",
-		"build:netlify": "node scripts/verify-git-history.js && node scripts/verify-indexnow-vendor.js && npm ci --prefix scripts/site-build-gate --ignore-scripts --no-audit && docusaurus build && node scripts/run-post-build-gates.mjs",
+		"build:netlify": "node scripts/verify-git-history.js && node scripts/verify-indexnow-vendor.js && docusaurus build && node scripts/run-post-build-gates.mjs",
 		"swizzle": "docusaurus swizzle",
 		"deploy": "docusaurus deploy",
 		"clear": "docusaurus clear",
@@ -73,6 +73,7 @@
 	},
 	"devDependencies": {
 		"@docusaurus/faster": "3.10.2",
+		"@netdata/site-build-gate": "^10.1.0",
 		"@tailwindcss/postcss": "^4.3.3",
 		"@testing-library/dom": "^10.4.2",
 		"@testing-library/jest-dom": "^7.0.1",
