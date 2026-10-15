@@ -3176,10 +3176,10 @@
   dependencies:
     "@tybys/wasm-util" "^0.10.3"
 
-"@netdata/netlify-plugin-indexnow@^1.0.0-test.0":
-  version "1.0.0-test.0"
-  resolved "https://registry.npmjs.org/@netdata/netlify-plugin-indexnow/-/netlify-plugin-indexnow-1.0.0-test.0.tgz#0b0e1f1b435c239cffa5ec22f2095e1438737e82"
-  integrity sha512-S+DNhAYPI9KkLE+FQH1nkA+sE45QZf2w5b+wCyHbvZZpZOtTOwmugvVXiKwBEXI2xY+JOw86UDtz5ckvN355Tw==
+"@netdata/netlify-plugin-indexnow@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@netdata/netlify-plugin-indexnow/-/netlify-plugin-indexnow-1.0.0.tgz#b6a67116ba547be46fd70608ab700197b82134f5"
+  integrity sha512-k9TaaHsIEopPpgoXhz5kzihITcsxEiYsj7kon/e4TNR4juFG9S9IDCJKX9nwwCvfEUYXAjusNrRfEIsgJMu9Yw==
   dependencies:
     "@netlify/blobs" "^11.1.4"
     saxes "^6.0.0"
