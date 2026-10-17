@@ -874,6 +874,8 @@
   learn_path: /docs/collecting-metrics/collectors/operating-systems/dns-server
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hardware_information_collected_from_kernel_ring..md
   learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/hardware-information-collected-from-kernel-ring.
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/http_service.md
+  learn_path: /docs/collecting-metrics/collectors/web-servers-and-proxies/http-service
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/hyper-v.md
   learn_path: /docs/collecting-metrics/collectors/containers-and-vms/hyper-v
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/iis.md
