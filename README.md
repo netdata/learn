@@ -84,7 +84,7 @@ parent range. Do not use a resolution to bypass an incompatible upstream depende
 
 ### Diagram browser compatibility
 
-Documentation diagrams and Ask Nedi use Mermaid 12.1.0 with its version 12 rendering defaults.
+Documentation diagrams and Ask Nedi use Mermaid 12.2.0 with its version 12 rendering defaults.
 The renderer requires an ES2024-capable browser, including Safari 17.4 or newer. The local
 Docusaurus dependency and the separately loaded, integrity-checked Nedi asset use the same
 version; updating a local lock does not update the CDN bytes.

@@ -9,16 +9,16 @@ export const NEDI_ENDPOINT = 'https://nedi.netdata.cloud';
 // hashes. The endpoint's own bundles are redeployed in place behind a short cache, so a
 // pinned hash there would reject the asset after the next endpoint release.
 export const NEDI_ASSETS = [
-  { type: 'css', src: `${NEDI_ENDPOINT}/ai-agent-ui.css?v=19` },
+  { type: 'css', src: `${NEDI_ENDPOINT}/ai-agent-ui.css?v=20` },
   {
     type: 'js',
-    src: 'https://cdn.jsdelivr.net/npm/markdown-it@15.0.2/dist/browser/markdown-it.umd.min.js',
-    integrity: 'sha384-eaXixoauKhs0THQDG40r2SPao0FZmzCXLMECD9sbA02doHE3APxry0Az2P/oBq9E',
+    src: 'https://cdn.jsdelivr.net/npm/markdown-it@15.0.3/dist/browser/markdown-it.umd.min.js',
+    integrity: 'sha384-ARStLecQmtLYjBgfD3+w+irhiSoLTnFk/ne6c0gRWQKQtC9791ZLMQ9D3OaBISt3',
   },
   {
     type: 'js',
-    src: 'https://cdn.jsdelivr.net/npm/mermaid@12.1.0/dist/mermaid.min.js',
-    integrity: 'sha384-EbBpjO7rlR6eqZEcG7GaPpyk9H9WrMyPWX4d3KvPYltgt8Z8l0z6R56B1qP40pR4',
+    src: 'https://cdn.jsdelivr.net/npm/mermaid@12.2.0/dist/mermaid.min.js',
+    integrity: 'sha384-8xUhuLNMjW/cI2Dacg3DR4WliYznvIg0LVG1stctThKD/YVrJFI9TNCFxft5NYgp',
   },
   {
     type: 'js',
@@ -35,8 +35,8 @@ export const NEDI_ASSETS = [
     src: 'https://cdn.jsdelivr.net/npm/@guyplusplus/turndown-plugin-gfm@1.0.7/dist/turndown-plugin-gfm.js',
     integrity: 'sha384-b4AQtiEmaWubq+mFwFnRJCHtHL9HxF2bSrT67eGId8giR2orvUqJFaLQN5NsUP89',
   },
-  { type: 'js', src: `${NEDI_ENDPOINT}/ai-agent-public.js?v=19` },
-  { type: 'js', src: `${NEDI_ENDPOINT}/ai-agent-ui.js?v=19` },
+  { type: 'js', src: `${NEDI_ENDPOINT}/ai-agent-public.js?v=20` },
+  { type: 'js', src: `${NEDI_ENDPOINT}/ai-agent-ui.js?v=20` },
 ];
 
 // Route that owns the embed. Docusaurus serves it with and without a trailing slash.
