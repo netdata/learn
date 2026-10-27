@@ -55,7 +55,7 @@
 		"dotenv": "^18.0.8",
 		"mermaid": "^12.2.0",
 		"parse5": "8.0.1",
-		"postcss": "^8.5.30",
+		"postcss": "^8.5.31",
 		"postcss-import": "^17.0.1",
 		"postcss-nesting": "^14.0.2",
 		"posthog-docusaurus": "^2.0.5",
