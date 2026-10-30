@@ -882,6 +882,8 @@
   learn_path: /docs/collecting-metrics/collectors/web-servers-and-proxies/iis
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/memory_statistics_win.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/memory-statistics-win
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/microsoft_message_queuing.md
+  learn_path: /docs/collecting-metrics/collectors/applications/microsoft-message-queuing
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/ms_exchange.md
   learn_path: /docs/collecting-metrics/collectors/applications/ms-exchange
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/net_framework.md
@@ -1076,6 +1078,8 @@
   learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/azure-api-management
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/azure_monitor/integrations/azure_app_service.md
   learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/azure-app-service
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/azure_monitor/integrations/azure_app_service_plan.md
+  learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/azure-app-service-plan
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/azure_monitor/integrations/azure_application_gateway.md
   learn_path: /docs/collecting-metrics/collectors/cloud-and-devops/azure-application-gateway
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/azure_monitor/integrations/azure_application_insights.md
