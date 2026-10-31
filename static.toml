@@ -1311,39 +1311,39 @@
 
 # HTML-escaped ampersands (2026-10-31): some sites publish Learn links with "&" written as "&amp;",
 # which arrives as a literal path that does not exist. Each such section or page goes to its real
-# spelling; sections with children keep the rest of the path. Sources are percent-encoded so the
+# spelling; sections with children keep the rest of the path. Each source encodes only the ";" so the
 # rendered-link gate, which HTML-decodes sources, does not read them as the real "&" routes.
 
 [[redirects]]
-  from="/docs/alerts-%26amp%3B-notifications"
+  from="/docs/alerts-&amp%3B-notifications"
   to="/docs/alerts-&-notifications"
 
 [[redirects]]
-  from="/docs/alerts-%26amp%3B-notifications/*"
+  from="/docs/alerts-&amp%3B-notifications/*"
   to="/docs/alerts-&-notifications/:splat"
 
 [[redirects]]
-  from="/docs/collecting-metrics/collectors/hardware-and-sensors/amd-cpu-%26amp%3B-gpu"
+  from="/docs/collecting-metrics/collectors/hardware-and-sensors/amd-cpu-&amp%3B-gpu"
   to="/docs/collecting-metrics/collectors/hardware-and-sensors/amd-cpu-&-gpu"
 
 [[redirects]]
-  from="/docs/netdata-agent/resource-utilization/disk-%26amp%3B-retention"
+  from="/docs/netdata-agent/resource-utilization/disk-&amp%3B-retention"
   to="/docs/netdata-agent/resource-utilization/disk-&-retention"
 
 [[redirects]]
-  from="/docs/netdata-agent/versions-%26amp%3B-platforms"
+  from="/docs/netdata-agent/versions-&amp%3B-platforms"
   to="/docs/netdata-agent/versions-&-platforms"
 
 [[redirects]]
-  from="/docs/netdata-cloud/authentication-%26amp%3B-authorization"
+  from="/docs/netdata-cloud/authentication-&amp%3B-authorization"
   to="/docs/netdata-cloud/authentication-&-authorization"
 
 [[redirects]]
-  from="/docs/netdata-cloud/authentication-%26amp%3B-authorization/*"
+  from="/docs/netdata-cloud/authentication-&amp%3B-authorization/*"
   to="/docs/netdata-cloud/authentication-&-authorization/:splat"
 
 [[redirects]]
-  from="/docs/netdata-cloud/netdata-plans-%26amp%3B-billing"
+  from="/docs/netdata-cloud/netdata-plans-&amp%3B-billing"
   to="/docs/netdata-cloud/netdata-plans-&-billing"
 
 # Corrected generated redirects (2026-10-07): these dead pages went to an unrelated or generic page
