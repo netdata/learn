@@ -1226,6 +1226,125 @@
   from="/docs/visualization/grafana"
   to="/docs/dashboards-and-charts/grafana-plugin"
 
+# Broken backlinks, fourth batch (2026-10-31): dead URLs that hold a confirmed live backlink, sent to
+# the page that covers the subject today or, when none does, to the closest parent section.
+
+[[redirects]]
+  from="/docs/agent/collectors/plugins.d.plugin/graphite.plugin"
+  to="/docs/exporting-metrics/connectors/graphite"
+
+[[redirects]]
+  from="/docs/collecting-metrics/container-services/docker"
+  to="/docs/collecting-metrics/service-discovery/discoverer/docker"
+
+[[redirects]]
+  from="/docs/collecting-metrics/docker-discovery"
+  to="/docs/collecting-metrics/service-discovery/discoverer/docker"
+
+[[redirects]]
+  from="/docs/collecting-metrics/monitoring-hosts-and-containers/monitoring-proxmox"
+  to="/docs/collecting-metrics/collectors/containers-and-vms/proxmox-ve"
+
+[[redirects]]
+  from="/docs/collecting-metrics/monitoring-hosts/virtualization/proxmox-ve"
+  to="/docs/collecting-metrics/collectors/containers-and-vms/proxmox-ve"
+
+[[redirects]]
+  from="/docs/collecting-metrics/monitoring-linux-systems"
+  to="/docs/collecting-metrics/collectors/operating-systems"
+
+[[redirects]]
+  from="/docs/collecting-metrics/monitoring-virtual-machines-and-containers/proxmox-ve"
+  to="/docs/collecting-metrics/collectors/containers-and-vms/proxmox-ve"
+
+[[redirects]]
+  from="/docs/collecting-metrics/network-devices/snmp"
+  to="/docs/collecting-metrics/service-discovery/discoverer/snmp"
+
+[[redirects]]
+  from="/docs/collecting-metrics/virtual-machines-and-containers/proxmox"
+  to="/docs/collecting-metrics/collectors/containers-and-vms/proxmox-ve"
+
+[[redirects]]
+  from="/docs/collecting-metrics/virtualization/proxmox-ve"
+  to="/docs/collecting-metrics/collectors/containers-and-vms/proxmox-ve"
+
+[[redirects]]
+  from="/docs/configure/acl"
+  to="/docs/netdata-agent/configuration/securing-agents/web-server-reference"
+
+[[redirects]]
+  from="/docs/configuring/health"
+  to="/docs/alerts-&-notifications/alert-configuration-reference"
+
+[[redirects]]
+  from="/docs/deployment-guides/parents-your-centralization-points"
+  to="/docs/netdata-parents"
+
+[[redirects]]
+  from="/docs/integrations/proxmox"
+  to="/docs/collecting-metrics/collectors/containers-and-vms/proxmox-ve"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/configuration"
+  to="/docs/netdata-agent/configuration"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/optimization/performance"
+  to="/docs/netdata-agent/configuration/performance-optimization"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/securing-netdata-agents"
+  to="/docs/netdata-agent/configuration/securing-agents"
+
+[[redirects]]
+  from="/docs/netdata-agent/netdata.conf"
+  to="/docs/netdata-agent/configuration/daemon"
+
+[[redirects]]
+  from="/docs/netdata-agent/observability-centrality-points/streaming/reference"
+  to="/docs/netdata-parents/parent-child-configuration-reference"
+
+[[redirects]]
+  from="/docs/observability-centralization-points/metrics-centralization-points/configuration"
+  to="/docs/netdata-parents/metrics-centralization-points/configuring-metrics-centralization-points"
+
+# HTML-escaped ampersands (2026-10-31): some sites publish Learn links with "&" written as "&amp;",
+# which arrives as a literal path that does not exist. Each such section or page goes to its real
+# spelling; sections with children keep the rest of the path.
+
+[[redirects]]
+  from="/docs/alerts-&amp;-notifications"
+  to="/docs/alerts-&-notifications"
+
+[[redirects]]
+  from="/docs/alerts-&amp;-notifications/*"
+  to="/docs/alerts-&-notifications/:splat"
+
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/hardware-and-sensors/amd-cpu-&amp;-gpu"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors/amd-cpu-&-gpu"
+
+[[redirects]]
+  from="/docs/netdata-agent/resource-utilization/disk-&amp;-retention"
+  to="/docs/netdata-agent/resource-utilization/disk-&-retention"
+
+[[redirects]]
+  from="/docs/netdata-agent/versions-&amp;-platforms"
+  to="/docs/netdata-agent/versions-&-platforms"
+
+[[redirects]]
+  from="/docs/netdata-cloud/authentication-&amp;-authorization"
+  to="/docs/netdata-cloud/authentication-&-authorization"
+
+[[redirects]]
+  from="/docs/netdata-cloud/authentication-&amp;-authorization/*"
+  to="/docs/netdata-cloud/authentication-&-authorization/:splat"
+
+[[redirects]]
+  from="/docs/netdata-cloud/netdata-plans-&amp;-billing"
+  to="/docs/netdata-cloud/netdata-plans-&-billing"
+
 # Corrected generated redirects (2026-10-07): these dead pages went to an unrelated or generic page
 # although a page with their content, a native page for the same product, or the page that now
 # covers their subject exists. Each rule overrides the generated rule with the same source; a few

@@ -25,15 +25,6 @@ function allowedRenderedRedirectSources(policy) {
   return allowed;
 }
 
-function decodeHtml(value) {
-  return value
-    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number(code)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)))
-    .replaceAll('&amp;', '&')
-    .replaceAll('&quot;', '"')
-    .replaceAll('&apos;', "'");
-}
-
 function normalizePathname(value) {
   let pathname;
   try {
@@ -50,7 +41,9 @@ function redirectSourceRules(netlifyToml, host = HOST) {
   for (const match of netlifyToml.matchAll(/(?:^|\n)\s*\[\[redirects\]\]([\s\S]*?)(?=(?:\n\s*\[\[)|$)/g)) {
     const from = match[1].match(/(?:^|\n)\s*from\s*=\s*"([^"]+)"/);
     if (!from) continue;
-    let source = decodeHtml(from[1]);
+    // Sources are TOML strings that Netlify compares literally, so "&amp;" is never an
+    // entity here: a rule for that spelling must not shadow the real "&" route.
+    let source = from[1];
     if (source.startsWith('http://') || source.startsWith('https://')) {
       const url = new URL(source);
       if (url.hostname !== host) continue;

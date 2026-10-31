@@ -58,6 +58,29 @@ describe('rendered redirect-source link verifier', () => {
     ).toEqual({exact: new Set(['/old/']), terminalWildcards: new Set(['/x/'])});
   });
 
+  it('reads redirect sources literally, not as HTML', () => {
+    expect(
+      redirectSourceRules(
+        '[[redirects]]\nfrom="/docs/a-&amp;-b"\n\n[[redirects]]\nfrom="/docs/c-&amp;-d/*"',
+      ),
+    ).toEqual({
+      exact: new Set(['/docs/a-&amp;-b']),
+      terminalWildcards: new Set(['/docs/c-&amp;-d/']),
+    });
+  });
+
+  it('accepts links to a real "&" route when only its escaped spelling redirects', async () => {
+    const fixturePaths = await fixture('<a href="/docs/alerts-&amp;-notifications/x">real route</a>');
+    await fs.appendFile(
+      fixturePaths.netlifyPath,
+      '\n[[redirects]]\n  from="/docs/alerts-&amp;-notifications/*"\n' +
+        '  to="/docs/alerts-&-notifications/:splat"\n',
+    );
+    expect(verifyRenderedLinks(fixturePaths.publishDir, fixturePaths.netlifyPath)).toMatchObject({
+      internalLinks: 1,
+    });
+  });
+
   it('covers every current terminal-wildcard redirect source', async () => {
     const netlifyToml = await fs.readFile(
       path.resolve(import.meta.dirname, '../../netlify.toml'),
@@ -65,6 +88,8 @@ describe('rendered redirect-source link verifier', () => {
     );
     expect([...redirectSourceRules(netlifyToml).terminalWildcards].sort()).toEqual([
       '/docs/agent/netdata-cloud/',
+      '/docs/alerts-&amp;-notifications/',
+      '/docs/netdata-cloud/authentication-&amp;-authorization/',
       '/docs/network-flows/',
     ]);
   });
