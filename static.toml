@@ -1345,6 +1345,78 @@
   from="/docs/netdata-cloud/netdata-plans-&amp;-billing"
   to="/docs/netdata-cloud/netdata-plans-&-billing"
 
+# Guessed addresses (2026-11-01): AI assistants and their crawlers keep requesting these paths,
+# which never existed or no longer do, hundreds of times a month. Each goes to the page that
+# covers the subject; guesses without one clear subject are left to the 404 page.
+
+[[redirects]]
+  from="/docs/netdata-ai/machine-learning-and-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/netdata-ai/machine-learning-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/netdata-agent/machine-learning-and-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/netdata-agent/machine-learning-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/netdata-agent/ml-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/netdata-agent/ml"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/netdata-anomaly-detection"
+  to="/docs/netdata-ai/anomaly-detection"
+
+[[redirects]]
+  from="/docs/netdata-ai/anomaly-advisor"
+  to="/docs/netdata-ai/troubleshooting/anomaly-advisor"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/optimize-the-netdata-agents-performance"
+  to="/docs/netdata-agent/configuration/performance-optimization"
+
+[[redirects]]
+  from="/docs/netdata-agent/configuration/running-the-agent-behind-a-reverse-proxy"
+  to="/docs/netdata-agent/configuration/securing-agents/running-the-agent-behind-a-reverse-proxy"
+
+[[redirects]]
+  from="/docs/netdata-agent/observability-centralization-points"
+  to="/docs/netdata-parents"
+
+[[redirects]]
+  from="/docs/netdata-agent/streaming"
+  to="/docs/netdata-parents"
+
+[[redirects]]
+  from="/docs/netdata-agent/daemons"
+  to="/docs/netdata-agent/daemon"
+
+[[redirects]]
+  from="/docs/collectors"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/netdata-agent/collectors"
+  to="/docs/collecting-metrics"
+
+[[redirects]]
+  from="/docs/collecting-metrics/system-metrics/system-statistics"
+  to="/docs/collecting-metrics/collectors/operating-systems/system-statistics"
+
+[[redirects]]
+  from="/docs/alerts-&-notifications/configure-health-alerts"
+  to="/docs/alerts-&-notifications/alert-configuration-reference"
+
 # Corrected generated redirects (2026-10-07): these dead pages went to an unrelated or generic page
 # although a page with their content, a native page for the same product, or the page that now
 # covers their subject exists. Each rule overrides the generated rule with the same source; a few
