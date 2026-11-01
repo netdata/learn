@@ -1403,11 +1403,11 @@
 
 [[redirects]]
   from="/docs/collectors"
-  to="/docs/collecting-metrics"
+  to="/docs/collecting-metrics/collectors"
 
 [[redirects]]
   from="/docs/netdata-agent/collectors"
-  to="/docs/collecting-metrics"
+  to="/docs/collecting-metrics/collectors"
 
 [[redirects]]
   from="/docs/collecting-metrics/system-metrics/system-statistics"
