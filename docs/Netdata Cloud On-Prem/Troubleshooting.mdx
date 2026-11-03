@@ -151,7 +151,7 @@ wget https://netdata-cloud-netdata-static-content.s3.amazonaws.com/netdata-suppo
 | **SSO Login Failure**             | Can't authenticate via SSO providers             | Invalid callback URLs, expired SSO tokens, untrusted certificates, incorrect FQDN in `global.public`        | Update SSO configuration in your `values.yaml`, verify certificates are valid and trusted, ensure FQDN matches your certificate |
 | **MailCatcher Login (Light PoC)** | Magic links don't arrive, "Invalid token" errors | Incorrect hostname during installation, modified default MailCatcher values                                 | Reinstall with correct FQDN, restore default MailCatcher settings, ensure hostname matches certificate                          |
 | **Custom Mail Server Login**      | Magic links don't arrive                         | Incorrect SMTP configuration, network connectivity issues                                                   | Update SMTP settings in your `values.yaml`, verify network allows SMTP traffic, check your mail server logs                     |
-| **Invalid Token Error**           | "Something went wrong - invalid token" message   | Mismatched `netdata-cloud-common` secret, database hash mismatch, namespace change without secret migration | Migrate secret before namespace change, perform fresh installation, or contact support for data recovery                        |
+| **Invalid Token Error**           | "Something went wrong - invalid token" message   | Mismatched `netdata-cloud-common` secret, database hash mismatch, namespace change without secret migration | Restore the keys from your [backup](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/high-availability-and-disaster-recovery#backup-and-restore), perform fresh installation, or contact support for data recovery |
 
 :::warning
 
@@ -161,7 +161,7 @@ If you're changing your installation namespace, the `netdata-cloud-common` secre
 
 **Before you proceed**
 
-Back up your existing `netdata-cloud-common` secret, or wipe your PostgreSQL database to prevent data conflicts.
+Back up your existing `netdata-cloud-common` secret, or wipe your PostgreSQL database to prevent data conflicts. To keep your data, [move the keys to your own secret](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/high-availability-and-disaster-recovery#move-the-keys-to-your-own-secret) and create it in the new namespace before the installation.
 
 :::
 

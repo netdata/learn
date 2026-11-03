@@ -3563,5 +3563,6 @@
     "https://learn.netdata.cloud/docs/network-performance-monitoring/syslog-from-network-devices/integrations/syslog-from-network-devices": "https://github.com/netdata/netdata/blob/master/src/go/plugin/go.d/collector/snmp/npm-catalog/integrations/syslog_from_network_devices.md",
     "https://learn.netdata.cloud/docs/logs-management/windows-event-logs/windows-events-plugin-reference": "https://github.com/netdata/netdata/blob/master/src/collectors/windows-events.plugin/README.md",
     "https://learn.netdata.cloud/docs/logs-management/macos-unified-logs/macos-logs-plugin-reference": "https://github.com/netdata/netdata/blob/master/src/collectors/macos-logs.plugin/README.md",
-    "https://learn.netdata.cloud/docs/network-performance-monitoring/syslog/syslog-from-network-devices": "https://github.com/netdata/netdata/blob/master/docs/npm/syslog-pointer.md"
+    "https://learn.netdata.cloud/docs/network-performance-monitoring/syslog/syslog-from-network-devices": "https://github.com/netdata/netdata/blob/master/docs/npm/syslog-pointer.md",
+    "https://learn.netdata.cloud/docs/collecting-metrics/collectors/hardware-and-sensors/ipmi-experimental-go-collector": "https://github.com/netdata/netdata/blob/master/src/go/plugin/ipmi/collector/ipmi/README.md"
 }

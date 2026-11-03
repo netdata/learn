@@ -15698,4 +15698,8 @@
   from="/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat-ebpf-plugin"
   to="/docs/collecting-metrics/collectors/operating-systems/ebpf-dcstat"
 
+[[redirects]]
+  from="/docs/collecting-metrics/collectors/hardware-and-sensors/ipmi-experimental-go-collector"
+  to="/docs/collecting-metrics/collectors/hardware-and-sensors/ipmi-go-collector"
+
 # section: dynamic << END

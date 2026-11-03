@@ -3811,7 +3811,7 @@
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ibm.d/modules/websphere/pmi/README.md
   learn_path: /docs/collecting-metrics/collectors/applications/ibm-websphere-pmi
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/ipmi/collector/ipmi/README.md
-  learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/ipmi-experimental-go-collector
+  learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/ipmi-go-collector
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/collector/nagios/README.md
   learn_path: /docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/health/README.md
