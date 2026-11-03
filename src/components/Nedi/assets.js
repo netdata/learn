@@ -9,7 +9,7 @@ export const NEDI_ENDPOINT = 'https://nedi.netdata.cloud';
 // hashes. The endpoint's own bundles are redeployed in place behind a short cache, so a
 // pinned hash there would reject the asset after the next endpoint release.
 export const NEDI_ASSETS = [
-  { type: 'css', src: `${NEDI_ENDPOINT}/ai-agent-ui.css?v=20` },
+  { type: 'css', src: `${NEDI_ENDPOINT}/ai-agent-ui.css?v=21` },
   {
     type: 'js',
     src: 'https://cdn.jsdelivr.net/npm/markdown-it@15.0.3/dist/browser/markdown-it.umd.min.js',
@@ -35,8 +35,8 @@ export const NEDI_ASSETS = [
     src: 'https://cdn.jsdelivr.net/npm/@guyplusplus/turndown-plugin-gfm@1.0.7/dist/turndown-plugin-gfm.js',
     integrity: 'sha384-b4AQtiEmaWubq+mFwFnRJCHtHL9HxF2bSrT67eGId8giR2orvUqJFaLQN5NsUP89',
   },
-  { type: 'js', src: `${NEDI_ENDPOINT}/ai-agent-public.js?v=20` },
-  { type: 'js', src: `${NEDI_ENDPOINT}/ai-agent-ui.js?v=20` },
+  { type: 'js', src: `${NEDI_ENDPOINT}/ai-agent-public.js?v=21` },
+  { type: 'js', src: `${NEDI_ENDPOINT}/ai-agent-ui.js?v=21` },
 ];
 
 // Route that owns the embed. Docusaurus serves it with and without a trailing slash.
