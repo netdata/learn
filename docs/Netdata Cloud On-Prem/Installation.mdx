@@ -142,7 +142,7 @@ helm upgrade --wait --install netdata-cloud-onprem -n netdata-cloud --create-nam
 
 :::warning
 
-**Critical**: During first installation, a `netdata-cloud-common` secret is created containing critical encryption data. This secret persists through reinstalls and **should never be deleted** as this will result in data loss.
+**Critical**: During first installation, a `netdata-cloud-common` secret is created containing critical encryption data. This secret persists through reinstalls and **should never be deleted** as this will result in data loss. Back it up together with your database, see [Backup and Restore](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/high-availability-and-disaster-recovery#backup-and-restore).
 
 :::
 
