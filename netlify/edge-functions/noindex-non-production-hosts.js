@@ -13,7 +13,8 @@ export default async function noindexNonProductionHosts(request, context) {
   // Netlify's normal static serving, conditional requests included.
   if (isIndexableHost(new URL(request.url).hostname)) return undefined;
 
-  const response = await context.next();
+  // A conditional request keeps its 304 answer; the header is added to it too.
+  const response = await context.next({sendConditionalRequest: true});
   response.headers.set('X-Robots-Tag', 'noindex');
   return response;
 }

@@ -8,12 +8,13 @@ import noindexNonProductionHosts, {
 } from '../netlify/edge-functions/noindex-non-production-hosts.js';
 
 function contextServing(body = '<html></html>') {
-  const calls = {next: 0};
+  const calls = {next: 0, options: []};
   return {
     calls,
     context: {
-      next: async () => {
+      next: async (options) => {
         calls.next += 1;
+        calls.options.push(options);
         return new Response(body, {
           status: 200,
           headers: {'content-type': 'text/html; charset=UTF-8', 'cache-control': 'public'},
@@ -50,6 +51,7 @@ test('every other host answers noindex with the original response kept', async (
     const {calls, context} = contextServing('<p>page</p>');
     const response = await noindexNonProductionHosts(new Request(url), context);
     assert.equal(calls.next, 1, url);
+    assert.deepEqual(calls.options, [{sendConditionalRequest: true}], url);
     assert.equal(response.headers.get('x-robots-tag'), 'noindex', url);
     assert.equal(response.status, 200, url);
     assert.equal(response.headers.get('cache-control'), 'public', url);
