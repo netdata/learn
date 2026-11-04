@@ -12,6 +12,8 @@
   learn_path: /docs/netdata-cloud-on-prem/mirroring-image-registry
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/hardening-guide.md
   learn_path: /docs/netdata-cloud-on-prem/security-hardening-guide
+- custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/high-availability-and-disaster-recovery.md
+  learn_path: /docs/netdata-cloud-on-prem/high-availability-and-disaster-recovery
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/image-signature-verification.md
   learn_path: /docs/netdata-cloud-on-prem/container-image-signature-verification
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md
@@ -1268,6 +1270,8 @@
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/megacli-megaraid
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/memcached/README.md
   learn_path: /docs/collecting-metrics/collectors/databases/memcached
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/meraki/README.md
+  learn_path: /docs/network-performance-monitoring/device-metrics/integrations/cisco-meraki
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/mongodb/README.md
   learn_path: /docs/collecting-metrics/collectors/databases/mongodb
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/go.d/collector/monit/README.md
