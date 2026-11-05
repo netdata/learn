@@ -10,6 +10,42 @@ slug: "/netdata-cloud-on-prem/release-notes"
 
 # Release notes
 
+## 2.7.0 (2026-11-04)
+
+### Breaking changes
+
+- Stricter OIDC SSO token verification: an ID token is required, and `aud`, `azp`, expiry and nonce are strictly validated. Identity providers that issue non-standard tokens may fail at login after the upgrade
+- Removed nine unused charts `/api/v2` endpoints. Scripts or integrations calling them now get a 404
+- Silencing rules API: removed `severities`, use `notification_options` instead
+- Feed lean search: the `sort` value of each hit now also includes the event ID, which can break clients decoding it strictly as integers
+
+### Features
+
+- Helm chart supports active/passive high availability, with a standby mode and keys managed in a single Kubernetes secret outside the chart. Documentation is available at https://learn.netdata.cloud/docs/netdata-cloud-on-prem/high-availability-and-disaster-recovery
+- Notification channels can be limited to alerts of a given role, class, type and component
+- Alert Markers: custom alert styles and sounds driven by personal or space rules
+- Decommission nodes from the UI or through a new bulk API. Notifications for decommissioned nodes are skipped
+- Anomalies replaced by a new incident investigation workspace
+- Run metric correlations directly from a chart highlight. Metric Correlations now defaults to Volume instead of KS2
+- Custom node groups can keep their nodes out of the default groups
+- Added a Raised Alerts table card to custom dashboards
+- Topology maps handle larger topologies, using WebGPU on capable devices
+- New dashboard coverage for Windows, IIS, Exchange, MSMQ, DNS, Redfish, Linux Audit and SMBIOS memory
+- AI features (when `cloud-insights-service` is enabled): Infrastructure Knowledge with AI memories, chat answers that keep generating if the connection drops, filtering reports by node, AI analysis from Anomalies and Metric Correlations, and GitLab and PagerDuty OAuth for MCP
+- Rooms with Agents below v2.12.2 now show a critical security notice
+
+### Bug fixes
+
+- Fixed OIDC SSO with providers that send `aud` as an array, such as JumpCloud
+- Alerts: fixed filtering for multi-role alerts, incomplete transition history, room transitions including other rooms' nodes, and notification dispatcher deadlocks
+- Silencing rules: recurrences and dates now follow the rule's timezone
+- Fixed large parent Agents dropping messages on reconnect due to rate limits
+- Dyncfg: fixed dependent fields, array tabs and per-node addressing on Agent dashboards
+- Fixed lean feed search skipping events that share a timestamp
+- Helm chart: the webhook certificate is no longer regenerated on every upgrade, and `helm upgrade --reuse-values` from older releases no longer fails
+- Agent dashboards now honour the Agent telemetry opt-out
+- Update Golang to 1.27.3 and dependencies
+
 ## 2.6.0 (2026-08-20)
 
 ### Features

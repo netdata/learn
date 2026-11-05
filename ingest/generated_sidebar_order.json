@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "5c613e8fa52bfee42b4c57d2ad18bf26ad3c1865ca5a5654eca0c66042d0c280",
-  "source_corpus_sha256": "b53976e3edd8e0efa7b18b4a2fb2378f5ef143f4cfddebbd6f7d3732c1efd348",
+  "source_sha256": "558fbc459bc4aa78c310e4685b8d937d0b49cffad6180303a1e12b701d8eaa2a",
+  "source_corpus_sha256": "9bb6acd1a441ce3c6703663b959f850af5c0d097cf6984d7e1364bbdf38be1ca",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -1275,6 +1275,11 @@
       "position": 90
     },
     {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "High Availability and Disaster Recovery",
+      "position": 100
+    },
+    {
       "parent_path": "Netdata Cloud/Authentication & Authorization",
       "child_name": "Enterprise SSO Authentication",
       "position": 10
@@ -1810,5 +1815,5 @@
       "position": 190
     }
   ],
-  "full_ingest_identity_sha256": "48320677b9aed60f9545c60fb53cf7e11da693bcf844aedeafae6c7cbdf609d5"
+  "full_ingest_identity_sha256": "f5ebbba4d751644db267857325ff232e8cec66b7bb827a4dcb6f60bcb49568fc"
 }
