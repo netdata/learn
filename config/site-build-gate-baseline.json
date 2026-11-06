@@ -2,5 +2,10 @@
   "schema": "netdata-site-build-gate-baseline-v1",
   "contract": "netdata-site-build-gate-v1",
   "ruleset_version": 10,
-  "allowed": []
+  "allowed": [
+    {
+      "identity": "heavy-page|/docs/network-performance-monitoring/device-metrics/configuration/snmp-profile-format|2d79e3505109c7ae1c9db5dfdf3eca8828e506e8d07ce4ecdbb1c88d55ccc4ae",
+      "reason": "Temporary: SNMP Profile Format (518,341 bytes, mostly highlighted YAML examples) until netdata splits src/go/plugin/go.d/collector/snmp/profile-format.md into smaller pages. Remove this entry after the split."
+    }
+  ]
 }
