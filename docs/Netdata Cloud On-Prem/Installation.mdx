@@ -146,6 +146,12 @@ helm upgrade --wait --install netdata-cloud-onprem -n netdata-cloud --create-nam
 
 :::
 
+:::tip
+
+To use the AI features of Netdata Cloud, enable the `cloud-insights-service` and configure your LLM provider, see [Netdata AI](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/netdata-ai).
+
+:::
+
 ## Verify It Works
 
 After completing the installation steps, verify that everything is running correctly:
@@ -199,6 +205,7 @@ kubectl get svc -n netdata-cloud
 | **cloud-feed-service**                     | **Processes incoming feed events** and stores them in **Elasticsearch**. **Exposes API endpoints** to fetch **feed events** from Elasticsearch                                                                                                                                                                                                                                                             |
 | **cloud-frontend**                         | Contains the **OCP website**. **Serves static content**.                                                                                                                                                                                                                                                                                                                                                   |
 | **cloud-iam-user-service**                 | Acts as a **middleware for authentication** on most of the API endpoints. **Validates incoming token headers**, injects the relevant ones, and **forwards the requests**                                                                                                                                                                                                                                   |
+| **cloud-insights-service**                 | Runs **[Netdata AI](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/netdata-ai)** features using the configured **LLM provider**. **Disabled by default**.                                                                                                                                                                                                                                           |
 | **cloud-metrics-exporter**                 | **Exports various metrics** from an OCP installation. Uses the **Prometheus metric exposition format**                                                                                                                                                                                                                                                                                                     |
 | **cloud-netdata-assistant**                | **Exposes API endpoints** to fetch a **human-friendly explanation** of various Netdata configuration options, namely the **Alerts**.                                                                                                                                                                                                                                                                       |
 | **cloud-node-mqtt-input-service**          | **Forwards MQTT messages** emitted by the Agent related to the **node entities** to the internal **Pulsar broker**. These include the **node metadata** as well as their **connectivity state**, either direct or via Parents                                                                                                                                                                              |

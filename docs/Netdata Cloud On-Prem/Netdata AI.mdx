@@ -1,0 +1,69 @@
+---
+custom_edit_url: "https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/netdata-ai.md"
+sidebar_label: "Netdata AI"
+learn_status: "Published"
+learn_rel_path: "Netdata Cloud On-Prem"
+sidebar_position: "90"
+learn_link: "https://learn.netdata.cloud/docs/netdata-cloud-on-prem/netdata-ai"
+slug: "/netdata-cloud-on-prem/netdata-ai"
+---
+
+# Netdata AI
+
+Netdata Cloud On-Prem can run [Netdata AI](https://learn.netdata.cloud/docs/netdata-ai), the AI features of Netdata Cloud. They are provided by the `cloud-insights-service`, which works with an LLM provider of your choice.
+
+The service is available since chart version **2.6.0** and is **disabled by default**, because it cannot work without an LLM provider.
+
+:::note
+
+To answer your questions, Netdata AI sends data about your infrastructure, such as metrics, alerts and node information, to the configured LLM provider.
+
+:::
+
+## Usage and Credits
+
+On-Prem does not use Netdata AI credits. The [Usage and credits](https://learn.netdata.cloud/docs/netdata-ai#usage-and-credits) section of the Netdata AI documentation does not apply. Your LLM provider bills you directly for the tokens used.
+
+## Enable Netdata AI
+
+**Step 1: Store the API key in a secret**
+
+```bash
+kubectl -n netdata-cloud create secret generic netdata-ai-llm \
+  --from-literal=api-key="<your LLM provider API key>"
+```
+
+**Step 2: Configure the service in the `values.yaml` of the `netdata-cloud-onprem` chart**
+
+```yaml
+cloud_insights_service:
+  enabled: true
+  llm_provider:
+    name: anthropic
+    model: "<model name>"
+    api_key:
+      secretBased:
+        existingSecret: netdata-ai-llm
+```
+
+Supported providers: `anthropic`, `aws-bedrock`, `minimax`, `openai`, `openai-compatible`, `openrouter`. The model name depends on the provider.
+
+`openai-compatible` also needs `llm_provider.options.api_base_url`, and `aws-bedrock` needs `llm_provider.options.aws_region` and either AWS access keys or IRSA. See the `cloud_insights_service` section of the chart's `values.yaml` for all options.
+
+**Step 3: Upgrade the chart**
+
+```bash
+helm upgrade --wait --install netdata-cloud-onprem -n netdata-cloud -f values.yaml .
+```
+
+The chart validates the `llm_provider` section and fails with a message describing what is missing. It also creates the `insights` database in PostgreSQL.
+
+:::note
+
+Installations created by a chart version older than **2.7.0** fail when Netdata AI is enabled for the first time, because the `INSIGHTS_SECRETS_KEY` key does not exist yet. Run the `kubectl patch` command printed in the error message and upgrade again. Back up the key together with the other keys, see [Backup and Restore](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/high-availability-and-disaster-recovery#backup-and-restore).
+
+:::
+
+## Network Policies
+
+When [network policies](https://learn.netdata.cloud/docs/netdata-cloud-on-prem/kubernetes-network-policy-configuration) are enabled, the service can reach the internet only over TCP port 443. If your LLM provider is reachable in a different way, for example runs in your cluster or listens on a different port, change `cloud_insights_service.networkPolicy.allowInternetAccess.egressRule`.

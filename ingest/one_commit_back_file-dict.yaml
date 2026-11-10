@@ -18,6 +18,8 @@
   learn_path: /docs/netdata-cloud-on-prem/container-image-signature-verification
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/installation.md
   learn_path: /docs/netdata-cloud-on-prem/installation
+- custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/netdata-ai.md
+  learn_path: /docs/netdata-cloud-on-prem/netdata-ai
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/netpol.md
   learn_path: /docs/netdata-cloud-on-prem/kubernetes-network-policy-configuration
 - custom_edit_url: https://github.com/netdata/netdata-cloud-onprem/edit/master/docs/learn.netdata.cloud/poc-without-k8s.md
@@ -696,6 +698,8 @@
   learn_path: /docs/collecting-metrics/collectors/networking/getifaddrs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/getmntinfo.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/getmntinfo
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/hw.acpi.battery.md
+  learn_path: /docs/collecting-metrics/collectors/operating-systems/hw.acpi.battery
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/hw.intrcnt.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/hw.intrcnt
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/ipfw.md
@@ -742,6 +746,8 @@
   learn_path: /docs/collecting-metrics/collectors/operating-systems/vm.stats.vm.v_swappgs
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.swap_info.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/vm.swap_info
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.swap_reserved.md
+  learn_path: /docs/collecting-metrics/collectors/operating-systems/vm.swap_reserved
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/vm.vmtotal.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/vm.vmtotal
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/freebsd.plugin/integrations/zfs.md

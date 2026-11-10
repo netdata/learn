@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "558fbc459bc4aa78c310e4685b8d937d0b49cffad6180303a1e12b701d8eaa2a",
-  "source_corpus_sha256": "0e651af68df0d808b7a90ad1ea598e0eb4ea507b77e9fef947d8ddc2b99e7ba2",
+  "source_sha256": "5698c9d3165092d14d51796e330617b81a5819e99fe0d9b978b93f302fff6f93",
+  "source_corpus_sha256": "5b718749f64eebf32483f9da5e6bb86339cd09459f7d91038f1289c66e2ac605",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -1266,18 +1266,23 @@
     },
     {
       "parent_path": "Netdata Cloud On-Prem",
-      "child_name": "Troubleshooting",
+      "child_name": "High Availability and Disaster Recovery",
       "position": 80
     },
     {
       "parent_path": "Netdata Cloud On-Prem",
-      "child_name": "Release Notes",
+      "child_name": "Netdata AI",
       "position": 90
     },
     {
       "parent_path": "Netdata Cloud On-Prem",
-      "child_name": "High Availability and Disaster Recovery",
+      "child_name": "Troubleshooting",
       "position": 100
+    },
+    {
+      "parent_path": "Netdata Cloud On-Prem",
+      "child_name": "Release Notes",
+      "position": 110
     },
     {
       "parent_path": "Netdata Cloud/Authentication & Authorization",
@@ -1815,5 +1820,5 @@
       "position": 190
     }
   ],
-  "full_ingest_identity_sha256": "12275ba59dc660d868bc49e470659147836c117b2b98e4ec41bdff353ed165f0"
+  "full_ingest_identity_sha256": "bd473df9a3c4e3c9be22dcc948bf943cd27f49bfac146acb7216e8c89d34624d"
 }
