@@ -38,7 +38,7 @@
 		"test:ui": "vitest --ui"
 	},
 	"dependencies": {
-		"@babel/core": "^8.0.10",
+		"@babel/core": "^8.1.0",
 		"@docusaurus/core": "^3.10.2",
 		"@docusaurus/mdx-loader": "^3.10.2",
 		"@docusaurus/plugin-google-gtag": "^3.10.2",
@@ -55,7 +55,7 @@
 		"clsx": "^2.1.1",
 		"dotenv": "^18.0.9",
 		"mermaid": "^12.2.0",
-		"parse5": "8.0.1",
+		"parse5": "8.1.0",
 		"postcss": "^8.5.32",
 		"postcss-import": "^17.0.1",
 		"postcss-nesting": "^14.0.2",
