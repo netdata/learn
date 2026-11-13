@@ -233,6 +233,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [NUMA Architecture](/docs/collecting-metrics/collectors/operating-systems/numa-architecture) | This collector monitors NUMA Architecture on Windows. |
 | [OpenRC](/docs/collecting-metrics/collectors/operating-systems/openrc) | Keep tabs on OpenRC init system metrics for efficient system startup and service management. |
 | [Page types](/docs/collecting-metrics/collectors/operating-systems/page-types) | This integration provides metrics about the system's memory page types |
+| [Paging Files (Win)](/docs/collecting-metrics/collectors/operating-systems/paging-files-win) | This collector monitors the size and usage of each paging file (`pagefile.sys`) on Windows systems. |
 | [Pressure Stall Information](/docs/collecting-metrics/collectors/operating-systems/pressure-stall-information) | Introduced in Linux kernel 4.20, `/proc/pressure` provides information about system pressure stall information (PSI). |
 | [Processor](/docs/collecting-metrics/collectors/operating-systems/processor) | Monitor processor performance statistics on Windows hosts through Perflib. |
 | [Semaphore statistics](/docs/collecting-metrics/collectors/operating-systems/semaphore-statistics) | Inter-Process Communication (IPC) enables different processes to communicate and coordinate with each other. |
@@ -260,6 +261,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [vm.swap_info](/docs/collecting-metrics/collectors/operating-systems/vm.swap_info) | Collect information about SWAP memory. |
 | [vm.swap_reserved](/docs/collecting-metrics/collectors/operating-systems/vm.swap_reserved) | Read how much anonymous memory the kernel has reserved for running processes. |
 | [vm.vmtotal](/docs/collecting-metrics/collectors/operating-systems/vm.vmtotal) | Collect Virtual Memory information from host. |
+| [Windows printers](/docs/collecting-metrics/collectors/operating-systems/windows-printers) | This collector monitors Windows print queues: queued jobs, printer status, and jobs by status. |
 | [Windows Services](/docs/collecting-metrics/collectors/operating-systems/windows-services) | This integration monitors resource utilization grouped by Windows Service. |
 | [Windows Services](/docs/collecting-metrics/collectors/operating-systems/windows-services-windows-plugin) | This collector monitors Windows Services Status and States. |
 | [ZRAM](/docs/collecting-metrics/collectors/operating-systems/zram) | Monitor zRAM device capacity, compression, memory use, and I/O activity on Linux systems. |
@@ -330,7 +332,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Ubiquiti UFiber OLT](/docs/collecting-metrics/collectors/networking/ubiquiti-ufiber-olt) | Track Ubiquiti UFiber GPON (Gigabit Passive Optical Network) device metrics for efficient fiber-optic network management and performance. |
 | [Unbound](/docs/collecting-metrics/collectors/networking/unbound) | This collector monitors Unbound servers. |
 | [Windows Network Protocols](/docs/collecting-metrics/collectors/networking/windows-network-protocols) | This collector exposes TCP and UDP stack statistics on Windows systems via a real-time table function. |
-| [WireGuard](/docs/collecting-metrics/collectors/networking/wireguard) | This collector monitors WireGuard VPN devices and peers traffic. |
+| [WireGuard](/docs/collecting-metrics/collectors/networking/wireguard) | Monitor WireGuard VPN interfaces and their peers: traffic, peer counts, and the time since each peer's latest handshake. |
 | [Wireless network interfaces](/docs/collecting-metrics/collectors/networking/wireless-network-interfaces) | Monitor wireless devices with metrics about status, link quality, signal level, noise level and more. |
 
 ### Cloud and DevOps
@@ -568,6 +570,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [eBPF VFS](/docs/collecting-metrics/collectors/storage-and-filesystems/ebpf-vfs) | Monitor I/O events on Linux Virtual Filesystem. |
 | [EOS](/docs/collecting-metrics/collectors/storage-and-filesystems/eos) | Monitor CERN EOS metrics for efficient storage management. |
 | [FreeBSD NFS](/docs/collecting-metrics/collectors/storage-and-filesystems/freebsd-nfs) | Monitor FreeBSD Network File System metrics for efficient file sharing management and performance. |
+| [FSRM Quotas](/docs/collecting-metrics/collectors/storage-and-filesystems/fsrm-quotas) | This collector monitors File Server Resource Manager (FSRM) quotas on Windows: space used, the highest usage recorded, the quota limit, and whether each quota is disabled, a soft limit, or still matches its template. |
 | [Generic storage enclosure tool](/docs/collecting-metrics/collectors/storage-and-filesystems/generic-storage-enclosure-tool) | Monitor storage enclosure metrics for efficient storage device management and performance. |
 | [getmntinfo](/docs/collecting-metrics/collectors/storage-and-filesystems/getmntinfo) | Collect information per mount point. |
 | [Hadoop Distributed File System (HDFS)](/docs/collecting-metrics/collectors/storage-and-filesystems/hadoop-distributed-file-system-hdfs) | This collector monitors HDFS nodes. |
@@ -589,6 +592,7 @@ Need a dedicated integration? [Submit a feature request](https://github.com/netd
 | [Physical and Logical Disk Performance Metrics](/docs/collecting-metrics/collectors/storage-and-filesystems/physical-and-logical-disk-performance-metrics) | Detailed statistics for all disk devices and volumes. |
 | [S.M.A.R.T.](/docs/collecting-metrics/collectors/storage-and-filesystems/s.m.a.r.t.) | This collector monitors the health status of storage devices by analyzing S.M.A.R.T. |
 | [Samba](/docs/collecting-metrics/collectors/storage-and-filesystems/samba) | This collector monitors Samba syscalls and SMB2 calls. |
+| [SMB Client Shares](/docs/collecting-metrics/collectors/storage-and-filesystems/smb-client-shares) | Monitor the remote SMB shares this Windows host uses as a client: traffic, requests, queues, and latency. |
 | [SMB Server Shares](/docs/collecting-metrics/collectors/storage-and-filesystems/smb-server-shares) | Monitor SMB server share activity and throughput counters on Windows systems. |
 | [StoreCLI RAID](/docs/collecting-metrics/collectors/storage-and-filesystems/storecli-raid) | Monitors the health of StoreCLI Hardware RAID by tracking the status of RAID adapters, physical drives, and backup batteries in your storage system. |
 | [Storidge](/docs/collecting-metrics/collectors/storage-and-filesystems/storidge) | Keep an eye on Storidge storage metrics for efficient storage management and performance. |
