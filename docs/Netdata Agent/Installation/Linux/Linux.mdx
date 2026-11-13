@@ -91,7 +91,7 @@ Use these flags to customize your installation.
 |                         | `--old-install-prefix` | Clean previous install directory    |
 | **Interactivity**       | `--non-interactive`    | No prompts (good for scripts)       |
 |                         | `--interactive`        | Force interactive prompts           |
-| **Release Channel**     | `--release-channel`    | `nightly` or `stable`               |
+| **Release Channel**     | `--release-channel`    | `nightly`, `stable`, `preview`, or `default` (automatic selection)               |
 |                         | `--install-version`    | Install specific version            |
 | **Auto-Updates**        | `--auto-update`        | Enable updates                      |
 |                         | `--no-updates`         | Disable updates                     |
@@ -106,6 +106,12 @@ Use these flags to customize your installation.
 **Managing auto-updates after installation:** `kickstart.sh` enables daily auto-updates by default. To disable, check, or re-enable auto-updates — including why `netdata-updater.conf` cannot disable them — see [Managing Automatic Updates](/docs/netdata-agent/maintenance/update#managing-automatic-updates) in the Update guide.
 
 :::
+
+To use preview releases, pass `--release-channel=preview`. This channel includes prereleases and final releases.
+Without a version pin, preview installs the latest version published to that channel.
+Native installations use the `netdata-preview` repository. Static and source builds use only preview artifacts from
+`artifacts.netdata.cloud`, with no GitHub fallback.
+You can pin a prerelease with `--install-version`, for example `--install-version 2.13.0-rc1`.
 
 ## Optional browser runtime for synthetic monitoring
 
@@ -156,7 +162,7 @@ The user running the script needs write and execute permissions in the temporary
 Before running the installation script, you can verify its integrity using the following command:
 
 ```bash
-[ "adf84931818870d8bcf6755238b1cb6e" = "$(curl -Ss https://get.netdata.cloud/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
+[ "7a33e4cdbca2b2fa490b5fedd6f89a7c" = "$(curl -Ss https://get.netdata.cloud/kickstart.sh | md5sum | cut -d ' ' -f 1)" ] && echo "OK, VALID" || echo "FAILED, INVALID"
 ```
 
 If the script is valid, this command will return `OK, VALID`. We recommend verifying script integrity before installation, especially in production environments.
