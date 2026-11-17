@@ -46,9 +46,9 @@ cloud_insights_service:
         existingSecret: netdata-ai-llm
 ```
 
-Supported providers: `anthropic`, `aws-bedrock`, `minimax`, `openai`, `openai-compatible`, `openrouter`. The model name depends on the provider.
+Supported providers: `anthropic`, `aws-bedrock`, `litellm`, `minimax`, `openai`, `openrouter`. The model name depends on the provider.
 
-`openai-compatible` also needs `llm_provider.options.api_base_url`, and `aws-bedrock` needs `llm_provider.options.aws_region` and either AWS access keys or IRSA. See the `cloud_insights_service` section of the chart's `values.yaml` for all options.
+`litellm` connects to your own [LiteLLM](https://docs.litellm.ai/docs/simple_proxy) proxy and also needs `llm_provider.options.api_base_url` (e.g. `http://litellm.llm.svc:4000/v1`), and `aws-bedrock` needs `llm_provider.options.aws_region` and either AWS access keys or IRSA. See the `cloud_insights_service` section of the chart's `values.yaml` for all options.
 
 **Step 3: Upgrade the chart**
 
