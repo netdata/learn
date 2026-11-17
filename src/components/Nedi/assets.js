@@ -17,8 +17,8 @@ export const NEDI_ASSETS = [
   },
   {
     type: 'js',
-    src: 'https://cdn.jsdelivr.net/npm/mermaid@12.2.0/dist/mermaid.min.js',
-    integrity: 'sha384-8xUhuLNMjW/cI2Dacg3DR4WliYznvIg0LVG1stctThKD/YVrJFI9TNCFxft5NYgp',
+    src: 'https://cdn.jsdelivr.net/npm/mermaid@12.3.0/dist/mermaid.min.js',
+    integrity: 'sha384-HHW54r639fK42Ip0coGF3mz8oSiGn0eEoWNTLs75X7H63pLSDBa0Tqs0RwGmLlXE',
   },
   {
     type: 'js',
@@ -27,8 +27,8 @@ export const NEDI_ASSETS = [
   },
   {
     type: 'js',
-    src: 'https://cdn.jsdelivr.net/npm/turndown@7.2.4/dist/turndown.js',
-    integrity: 'sha384-VRHmZZ8b5mH5yknWcg48OJS6RmXZmlgvsqhOXJqY0rwvwirs1M12xd+49c3NpW6a',
+    src: 'https://cdn.jsdelivr.net/npm/turndown@7.2.5/dist/turndown.js',
+    integrity: 'sha384-HeSizhYqpEWYZr7f0vP+Ux9mam1bC3OSwAq6gkZO6AGz0joM/J4qAqVgjwdgawrf',
   },
   {
     type: 'js',
