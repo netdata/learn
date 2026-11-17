@@ -1,18 +1,18 @@
 # Netdata
 
-> Netdata is a distributed, real-time observability platform for metrics, logs and traces. Netdata Agents collect, store and analyze data where it is generated — per second, with machine learning anomaly detection on every metric — and Netdata Parents and Netdata Cloud combine them into one view, without centralizing the data.
+> Netdata is a full-stack observability platform: infrastructure, application performance monitoring (OpenTelemetry traces, service maps, RED), digital experience (real user monitoring, synthetic monitoring), network performance monitoring (SNMP, topology, NetFlow/IPFIX/sFlow, traps, BGP), databases, logs and cloud, with AI troubleshooting over all of it.
 
 This index lists the Netdata documentation on learn.netdata.cloud in sidebar order. The Complete Product Description describes everything Netdata does in one file, with links to the pages below.
 
 ## Complete Product Description
 
-- [Complete Product Description](https://learn.netdata.cloud/llms-full.txt): Everything Netdata does in one reference, from architecture, infrastructure, network, databases, logs and OpenTelemetry to cloud, edge, AI, alerting and pricing, with links to the documentation.
+- [Complete Product Description](https://learn.netdata.cloud/llms-full.txt): Netdata is a full-stack observability platform: infrastructure, APM with OpenTelemetry traces, real user and synthetic monitoring, network (SNMP, flows, topology), databases, logs, cloud and AI.
 - [Complete Product Description web page](https://learn.netdata.cloud/docs/welcome-to-netdata/complete-product-description)
 
 ## Welcome to Netdata
 
-- [Welcome to Netdata](https://learn.netdata.cloud/docs/welcome-to-netdata)
-- [Enterprise Evaluation Guide](https://learn.netdata.cloud/docs/welcome-to-netdata/enterprise-evaluation-guide): Evaluate Netdata architecture, deployment models, infrastructure requirements, security, integrations, and operational capabilities.
+- [Welcome to Netdata](https://learn.netdata.cloud/docs/welcome-to-netdata): Start here. What it is like to work with Netdata, the principles behind it, who it is for, how Agents, Parents and Netdata Cloud fit together, how to get started and where to go next.
+- [Netdata Design](https://learn.netdata.cloud/docs/welcome-to-netdata/netdata-design): What Netdata believes about observability and how its design delivers it. Understanding over traffic lights, everything every second, independent hubs unified by Netdata Cloud, meaning at collection time, machine learning as evidence, AI at the core, and expertise built in.
 - [Real-time Monitoring](https://learn.netdata.cloud/docs/welcome-to-netdata/real-time-monitoring): Learn how Netdata delivers one-second collection and sub-two-second visibility without sacrificing fidelity as infrastructure scales.
 - [Scalability](https://learn.netdata.cloud/docs/welcome-to-netdata/scalability): See how Netdata scales from one node to large infrastructures with distributed processing, per-second metrics, and horizontal Parent clusters.
 - [Monitor Anything](https://learn.netdata.cloud/docs/welcome-to-netdata/monitor-anything): Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box.
