@@ -420,7 +420,11 @@
 
 [[redirects]]
   from="/docs/at-a-glance"
-  to="/docs/welcome-to-netdata/enterprise-evaluation-guide"
+  to="/docs/welcome-to-netdata/complete-product-description"
+
+[[redirects]]
+  from="/docs/welcome-to-netdata/enterprise-evaluation-guide"
+  to="/docs/welcome-to-netdata/complete-product-description"
 
 [[redirects]]
   from="/docs/cloud/monitoring/notifications"
