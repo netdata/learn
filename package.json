@@ -38,7 +38,7 @@
 		"test:ui": "vitest --ui"
 	},
 	"dependencies": {
-		"@babel/core": "^8.0.10",
+		"@babel/core": "^8.1.2",
 		"@docusaurus/core": "^3.10.2",
 		"@docusaurus/mdx-loader": "^3.10.2",
 		"@docusaurus/plugin-google-gtag": "^3.10.2",
@@ -53,9 +53,9 @@
 		"acorn": "^8.19.0",
 		"axios": "^1.21.0",
 		"clsx": "^2.1.1",
-		"dotenv": "^18.0.9",
+		"dotenv": "^18.0.10",
 		"mermaid": "^12.2.0",
-		"parse5": "8.0.1",
+		"parse5": "8.1.1",
 		"postcss": "^8.5.32",
 		"postcss-import": "^17.0.1",
 		"postcss-nesting": "^14.0.2",
