@@ -266,6 +266,8 @@
   learn_path: /docs/netdata-ai/mcp/chat-with-netdata
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/ai-devops-copilot.md
   learn_path: /docs/netdata-ai/mcp/supported-ai-clients
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/chatgpt.md
+  learn_path: /docs/netdata-ai/mcp/supported-ai-clients/chatgpt
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-code.md
   learn_path: /docs/netdata-ai/mcp/supported-ai-clients/claude-code
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/docs/netdata-ai/mcp/mcp-clients/claude-desktop.md
