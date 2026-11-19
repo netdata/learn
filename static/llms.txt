@@ -11,13 +11,13 @@ This index lists the Netdata documentation on learn.netdata.cloud in sidebar ord
 
 ## Welcome to Netdata
 
-- [Welcome to Netdata](https://learn.netdata.cloud/docs/welcome-to-netdata): Start here. What it is like to work with Netdata, the principles behind it, who it is for, how Agents, Parents and Netdata Cloud fit together, how to get started and where to go next.
+- [Welcome to Netdata](https://learn.netdata.cloud/docs/welcome-to-netdata): Start here. Netdata is full-stack observability, the AI SRE that learns your stack. What it is like to work with Netdata, the principles behind it, who it is for, how Agents, Parents and Netdata Cloud fit together, how to get started and where to go next.
 - [Netdata Design](https://learn.netdata.cloud/docs/welcome-to-netdata/netdata-design): What Netdata believes about observability and how its design delivers it. Understanding over traffic lights, everything every second, independent hubs unified by Netdata Cloud, meaning at collection time, machine learning as evidence, AI at the core, and expertise built in.
-- [Real-time Monitoring](https://learn.netdata.cloud/docs/welcome-to-netdata/real-time-monitoring): Learn how Netdata delivers one-second collection and sub-two-second visibility without sacrificing fidelity as infrastructure scales.
-- [Scalability](https://learn.netdata.cloud/docs/welcome-to-netdata/scalability): See how Netdata scales from one node to large infrastructures with distributed processing, per-second metrics, and horizontal Parent clusters.
+- [Real-time Monitoring](https://learn.netdata.cloud/docs/welcome-to-netdata/real-time-monitoring): Learn how Netdata delivers one-second collection and sub-two-second visibility without sacrificing fidelity as your stack scales.
+- [Scalability](https://learn.netdata.cloud/docs/welcome-to-netdata/scalability): See how Netdata scales from one node to 100,000+ nodes with distributed processing, per-second metrics, and horizontal Parent clusters.
 - [Monitor Anything](https://learn.netdata.cloud/docs/welcome-to-netdata/monitor-anything): Netdata gathers real-time metrics from hundreds of data sources using collectors. Most require zero configuration and are pre-configured out of the box.
 - [Fleet Deployment and Configuration Management](https://learn.netdata.cloud/docs/welcome-to-netdata/fleet-deployment-and-configuration-management)
-- [Reporting](https://learn.netdata.cloud/docs/welcome-to-netdata/reporting): Extract infrastructure insights for stakeholders and BI tools using AI Insights, AI assistants (MCP), Grafana, or data export to Power BI, Tableau, and other analytics platforms.
+- [Reporting](https://learn.netdata.cloud/docs/welcome-to-netdata/reporting): Turn observability data into reports for stakeholders and BI tools using AI Insights, AI assistants (MCP), Grafana, or data export to Power BI, Tableau, and other analytics platforms.
 
 ## Getting Started
 
@@ -47,7 +47,7 @@ This index lists the Netdata documentation on learn.netdata.cloud in sidebar ord
 - [Installation › FreeBSD](https://learn.netdata.cloud/docs/netdata-agent/installation/freebsd): Install Netdata on FreeBSD to monitor the health and performance of bare metal or VMs with thousands of real-time, per-second metrics.
 - [Installation › pfSense](https://learn.netdata.cloud/docs/netdata-agent/installation/pfsense): Install Netdata on pfSense to monitor the health and performance of firewalls with thousands of real-time, per-second metrics.
 - [Installation › Synology](https://learn.netdata.cloud/docs/netdata-agent/installation/synology): The Netdata Agent can be installed on AMD64-compatible NAS systems using the 64-bit pre-compiled static binary.
-- [Installation › Ansible](https://learn.netdata.cloud/docs/netdata-agent/installation/ansible): Deploy an infrastructure monitoring solution in minutes with the Netdata Agent and Ansible. Use and customize a simple playbook for monitoring as code.
+- [Installation › Ansible](https://learn.netdata.cloud/docs/netdata-agent/installation/ansible): Deploy Netdata across your fleet in minutes with Ansible. Customize the playbook to manage Netdata as code.
 - [Installation › AWS](https://learn.netdata.cloud/docs/netdata-agent/installation/aws): Install Netdata on AWS instances or EKS, then configure network access and cloud-specific monitoring integrations.
 - [Installation › Azure](https://learn.netdata.cloud/docs/netdata-agent/installation/azure): Install Netdata on Azure virtual machines, then configure network access and Azure-specific monitoring integrations.
 - [Installation › GCP](https://learn.netdata.cloud/docs/netdata-agent/installation/gcp): Install Netdata on Google Cloud instances, then configure VPC access and Google Cloud monitoring integrations.
@@ -68,7 +68,7 @@ This index lists the Netdata documentation on learn.netdata.cloud in sidebar ord
 - [Configuration › Daemon](https://learn.netdata.cloud/docs/netdata-agent/configuration/daemon): The Netdata Agent's daemon is installed preconfigured to collect thousands of metrics every second, but is highly configurable for real-world workloads.
 - [Configuration › Database](https://learn.netdata.cloud/docs/netdata-agent/configuration/database): With a single configuration change, the Netdata Agent can store days, weeks, or months of metrics at its famous per-second granularity.
 - [Configuration › Registry](https://learn.netdata.cloud/docs/netdata-agent/configuration/registry): Configure a private Netdata Registry, access controls, retention, cookies, and Agent settings for cross-server dashboards.
-- [Configuration › Securing Agents](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents): Your data and systems are safe with Netdata, but we recommend a few easy ways to improve the security of your infrastructure.
+- [Configuration › Securing Agents](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents): Your data and systems are safe with Netdata, but we recommend a few steps to harden your Netdata deployment.
 - [Configuration › Securing Agents › Web Server Reference](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/web-server-reference): The Netdata Agent's local static-threaded web server serves dashboards and real-time visualizations with security and DDoS protection.
 - [Configuration › Securing Agents › Bearer Token Protection](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/bearer-token-protection)
 - [Configuration › Securing Agents › Configure Netdata for cybersecurity platforms](https://learn.netdata.cloud/docs/netdata-agent/configuration/securing-agents/configure-netdata-for-cybersecurity-platforms): Configure Netdata behind cybersecurity platforms such as Sophos, reverse proxies, firewalls, and secure-access gateways.
@@ -342,6 +342,7 @@ This index lists the Netdata documentation on learn.netdata.cloud in sidebar ord
 - [MCP › Supported AI Clients › Claude Code](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/claude-code)
 - [MCP › Supported AI Clients › Gemini CLI](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/gemini-cli)
 - [MCP › Supported AI Clients › OpenAI Codex CLI](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/openai-codex-cli)
+- [MCP › Supported AI Clients › ChatGPT](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/chatgpt)
 - [MCP › Supported AI Clients › Crush](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/crush)
 - [MCP › Supported AI Clients › OpenCode](https://learn.netdata.cloud/docs/netdata-ai/mcp/supported-ai-clients/opencode)
 - [MCP › MCP Connections](https://learn.netdata.cloud/docs/netdata-ai/mcp/mcp-connections)
