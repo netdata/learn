@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source": "netdata/docs/.map/map.yaml",
-  "source_sha256": "d30ac60eed1e16c2507cd6e53770d9726735ed9b694610acba03778b38bb96e8",
-  "source_corpus_sha256": "63260165123cdf37b7029543f206f6786c9d78670913dfa51b8aad2f6117189c",
+  "source_sha256": "4e8d1aaae20fe6c6a92daffa8787cc66d3af4a84c7fa1dc66d3a6f28e78f1963",
+  "source_corpus_sha256": "40c2c5a9119fe5558aabfb92404273db6696c8c51385eec2608d240f2be6bd95",
   "order": [
     {
       "parent_path": "Alerts & Notifications",
@@ -1130,6 +1130,11 @@
       "position": 40
     },
     {
+      "parent_path": "Netdata Agent/Installation/Linux",
+      "child_name": "Browser runtime for synthetic monitoring",
+      "position": 50
+    },
+    {
       "parent_path": "Netdata Agent/Installation/Windows",
       "child_name": "Switching Install Types and Release Channels",
       "position": 10
@@ -1825,5 +1830,5 @@
       "position": 190
     }
   ],
-  "full_ingest_identity_sha256": "8f5809dd67492b6d9e6d6169ff4968065bd6cce1ea05b4cad8c6bf1aac8ab61d"
+  "full_ingest_identity_sha256": "6cbe48cc185b9f69d0ec9abb60578db0438604f0eab048ca67746e37776ff409"
 }
