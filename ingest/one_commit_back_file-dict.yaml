@@ -536,6 +536,8 @@
   learn_path: /docs/developer-and-contributor-corner/build-the-netdata-agent-yourself/how-to-build-native-deb-rpm-packages-locally-for-testing
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/docker/README.md
   learn_path: /docs/netdata-agent/installation/docker
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/DEM-RUNTIME.md
+  learn_path: /docs/netdata-agent/installation/linux/browser-runtime-for-synthetic-monitoring
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/README.md
   learn_path: /docs/netdata-agent/installation
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/packaging/installer/UNINSTALL.md

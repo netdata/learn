@@ -73,7 +73,7 @@ Keep the Agent running while kickstart downloads and verifies the runtime. After
 run `docker restart netdata` to activate it. Replace `netdata` with your container name.
 Later image updates must switch the matching runtime selection and pinned image together. RUM works without the
 runtime. For paired updates, optional local qualification, rootless, nested or remote deployments, and removal,
-see [Docker browser runtime setup](https://github.com/netdata/netdata/blob/master/packaging/installer/DEM-RUNTIME.md#docker-host-preparation).
+see [Docker browser runtime setup](/docs/netdata-agent/installation/linux/browser-runtime-for-synthetic-monitoring#docker-host-preparation).
 
 :::info If you remove `pid: host`
 If you choose **not** to use `pid: host`, you **must** add [`--init`](https://docs.docker.com/reference/cli/docker/container/run/#init) (or [`init: true`](https://docs.docker.com/reference/compose-file/services/#init) in Compose).
