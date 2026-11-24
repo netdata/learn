@@ -12386,10 +12386,10 @@ svgo@3.3.5, svgo@^3.0.2, svgo@^3.2.0:
     picocolors "^1.0.0"
     sax "^1.5.0"
 
-swagger-ui-dist@5.35.0:
-  version "5.35.0"
-  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.35.0.tgz#5c3b487ae5a2121b2c668d6f92b550707521876a"
-  integrity sha512-U06rpMtW9V3XPGOBeamTUSr0Z09jMX4IJuANpE/EZbAhw0G8CgwrzU4YmXkn/h0wCDNsXdGarTNNHC3sU8yVUQ==
+swagger-ui-dist@5.35.1:
+  version "5.35.1"
+  resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.35.1.tgz#5b593b385fbad1cc77831983c8724405756b1f88"
+  integrity sha512-XPBzLiPyIvwg2KYyNZIxOVS77pD0SNMbiSIwvpPXbU5bC/F4zvXxGraK3Hpyxug1b89fH5T29gSsW6rBxMmPyg==
   dependencies:
     "@scarf/scarf" "=1.4.0"
 

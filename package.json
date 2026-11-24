@@ -86,7 +86,7 @@
 		"jsdom": "^31.0.1",
 		"postcss-loader": "^8.2.1",
 		"postcss-preset-env": "^11.6.2",
-		"swagger-ui-dist": "5.35.0",
+		"swagger-ui-dist": "5.35.1",
 		"tailwindcss": "^4.3.3",
 		"vite": "^8.3.8",
 		"vitest": "^5.1.0"
