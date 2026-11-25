@@ -11102,10 +11102,10 @@ postcss@^8.4.21, postcss@^8.4.24, postcss@^8.4.33, postcss@^8.5.25, postcss@^8.5
     picocolors "^1.1.1"
     source-map-js "^1.2.2"
 
-posthog-docusaurus@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.npmjs.org/posthog-docusaurus/-/posthog-docusaurus-2.0.5.tgz#5ce7ea9659a3845cba094712743194eaf84aa527"
-  integrity sha512-Ray65LYEJrMMqDtsBUBXunEVP/g4wtATvq/xz9rchUoLy/9mSkkFgUko/8DVtGxgiP3vivpFMgfb9HpCuDrBHg==
+posthog-docusaurus@^2.0.7:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/posthog-docusaurus/-/posthog-docusaurus-2.0.7.tgz#3b2649b78fe026e05c3a18d5f93876dd13ecab59"
+  integrity sha512-BHWk/y6UtpzhRb2tLMs7ksDXTkVPTvqDN5jF6exX24WgiGcATKfP1ms+xBT3scWz22c8iJsG9lX4dy1QxDdSEg==
 
 pretty-error@^4.0.0:
   version "4.0.0"
