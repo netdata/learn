@@ -78,9 +78,9 @@
 		"@testing-library/dom": "^10.4.2",
 		"@testing-library/jest-dom": "^8.0.0",
 		"@testing-library/react": "^16.3.3",
-		"@testing-library/user-event": "^14.6.10",
+		"@testing-library/user-event": "^14.6.13",
 		"@vitejs/plugin-react": "^6.3.0",
-		"@vitest/coverage-v8": "^5.1.0",
+		"@vitest/coverage-v8": "^5.1.1",
 		"autoprefixer": "^10.6.2",
 		"happy-dom": "^21.0.4",
 		"jsdom": "^31.0.1",
@@ -89,7 +89,7 @@
 		"swagger-ui-dist": "5.35.0",
 		"tailwindcss": "^4.3.3",
 		"vite": "^8.3.8",
-		"vitest": "^5.1.0"
+		"vitest": "^5.1.1"
 	},
 	"browserslist": {
 		"production": [
