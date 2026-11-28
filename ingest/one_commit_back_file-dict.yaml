@@ -922,6 +922,8 @@
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/smb-client-shares
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/smb_server_shares.md
   learn_path: /docs/collecting-metrics/collectors/storage-and-filesystems/smb-server-shares
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_memory_win.md
+  learn_path: /docs/collecting-metrics/collectors/operating-systems/system-memory-win
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_statistics.md
   learn_path: /docs/collecting-metrics/collectors/operating-systems/system-statistics-windows-plugin
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/collectors/windows.plugin/integrations/system_thermal_zone.md
@@ -3836,6 +3838,8 @@
   learn_path: /docs/collecting-metrics/collectors/hardware-and-sensors/ipmi-go-collector
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/scripts.d/collector/nagios/README.md
   learn_path: /docs/collecting-metrics/collectors/synthetic-testing/nagios-plugins-and-custom-scripts
+- custom_edit_url: https://github.com/netdata/netdata/edit/master/src/go/plugin/wmi/collector/windows/README.md
+  learn_path: /docs/collecting-metrics/collectors/operating-systems/windows-wmi
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/health/README.md
   learn_path: /docs/alerts-&-notifications
 - custom_edit_url: https://github.com/netdata/netdata/edit/master/src/health/REFERENCE.md
