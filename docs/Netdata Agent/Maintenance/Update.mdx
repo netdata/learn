@@ -86,6 +86,12 @@ The following table contains all possible installation types:
 
 In most cases, you can update Netdata using our one-line kickstart script. This script will automatically run the update script installed as part of the initial install and preserve the existing installation options you specified.
 
+Source and static installers that ship the bundled dashboard remove obsolete regular files from the
+installed `web/v3/` directory, including locally added files. Keep custom dashboards elsewhere in the web root.
+Cleanup skips linked or separately mounted web paths. This includes a separate `/usr` mount when the install prefix is `/`.
+If `web/v3` is a directory symlink, a source upgrade still updates the packaged files through it and preserves the target directory's permissions.
+If cleanup fails, the installer logs a warning and continues the upgrade. Installation and activation failures still return an error.
+
 If you installed Netdata using an installation prefix, you will need to add an `--install-prefix` option specifying that prefix to this command to make sure it finds Netdata.
 
 ```bash
@@ -150,7 +156,9 @@ If you installed Netdata with any optional parameters, such as `--install-prefix
 <details>
 <summary><strong>Docker (OCI)</strong></summary><br/>
 
-Docker-based installations are updated by pulling a new image and recreating the container. Persistent volumes preserve your configuration and metrics data across updates.
+Update a Docker installation by pulling a new image and recreating the container. Persistent volumes preserve
+configuration and metrics. If you use DEM, pull the corresponding `-dem` tag to update the Agent, DEM plugin
+and browser runtime together.
 
 For detailed instructions, see [Update your Netdata Docker container](/docs/netdata-agent/installation/docker#update-your-netdata-docker-container).
 
